@@ -1,62 +1,69 @@
 ---
-title:                "Análisis de HTML"
-date:                  2024-01-20T15:30:12.471770-07:00
-simple_title:         "Análisis de HTML"
-
+title:                "Analizando HTML"
+date:                  2024-02-03T17:59:33.745765-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Analizando HTML"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/c/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Qué & Por Qué?
-El análisis de HTML implica examinar y procesar el código HTML para obtener su estructura y contenidos. Los programadores lo hacen para extraer datos, modificar páginas de manera programática o hacer scraping web para recopilar información.
+## Qué y Por Qué?
 
-## Cómo Hacerlo:
-Para analizar HTML en C, uno podría usar librerías como `libxml2`. Aquí hay un ejemplo básico de cómo usarla para extraer información:
+Analizar HTML en C implica examinar documentos HTML para extraer datos, estructura o partes específicas de forma eficiente, a menudo como precursor de la minería de datos o el web scraping. Los programadores lo hacen para automatizar la extracción de información, permitiendo procesar o reutilizar el contenido web programáticamente.
 
-```C
+## Cómo hacerlo:
+
+Parecería desalentador analizar HTML debido a la complejidad del HTML y sus frecuentes desviaciones de estructuras limpias y bien formadas. Sin embargo, utilizar una biblioteca como `libxml2`, específicamente su módulo de análisis de HTML, simplifica el proceso. Este ejemplo demuestra cómo usar `libxml2` para analizar HTML y extraer información.
+
+Primero, asegúrate de que `libxml2` esté instalado en tu entorno. En muchas distribuciones de Linux, puedes instalarlo a través del gestor de paquetes. Por ejemplo, en Ubuntu:
+
+```bash
+sudo apt-get install libxml2 libxml2-dev
+```
+
+Ahora, escribamos un simple programa en C que utiliza `libxml2` para analizar una cadena HTML e imprimir el texto dentro de un elemento específico:
+
+```c
 #include <stdio.h>
 #include <libxml/HTMLparser.h>
 
-int main() {
-    // Imagina que esta es tu cadena HTML
-    const char *html = "<html><body><p>Hola, mundo!</p></body></html>";
+void parsearHTML(const char *html) {
+    htmlDocPtr doc = htmlReadDoc((const xmlChar *)html, NULL, NULL, HTML_PARSE_RECOVER | HTML_PARSE_NOERROR | HTML_PARSE_NOWARNING);
 
-    // Parsear la cadena HTML a un documento DOM
-    htmlDocPtr doc = htmlReadDoc((xmlChar *)html, NULL, NULL, 0);
-
-    // Obtener el nodo raíz
-    xmlNode *root_element = xmlDocGetRootElement(doc);
-
-    // Tu lógica de procesamiento aquí, por ejemplo, imprimir 'Hola, mundo!'
-    if (root_element->type == XML_ELEMENT_NODE) {
-        xmlNode *p = root_element->children->next;
-        printf("%s\n", (char *)p->children->content);
+    // Asumiendo que estamos buscando contenido dentro de etiquetas <p>
+    xmlNode *elemento_raíz = xmlDocGetRootElement(doc);
+    for (xmlNode *nodo_actual = elemento_raíz; nodo_actual; nodo_actual = nodo_actual->next) {
+        if (nodo_actual->type == XML_ELEMENT_NODE && strcmp((const char *)nodo_actual->name, "p") == 0) {
+            printf("Se encontró párrafo: %s\n", xmlNodeGetContent(nodo_actual));
+        }
     }
 
-    // Limpiar y liberar recursos
     xmlFreeDoc(doc);
+    xmlCleanupParser();
+}
+
+int main() {
+    const char *html = "<html><body><p>Hola, mundo!</p></body></html>";
+    parsearHTML(html);
     return 0;
 }
 ```
 
-Salida esperada:
+Salida de muestra:
 ```
-Hola, mundo!
+Se encontró párrafo: Hola, mundo!
 ```
 
-## Inmersión Profunda:
-Análisis de HTML nace de la necesidad de entender y manipular el código HTML. Antes, en los primeros días de la web, el HTML era a menudo más simple y predecible. Ahora es más complejo, con JavaScript y CSS imbricado, lo que requiere herramientas más sofisticadas.
+Este ejemplo se enfoca en extraer texto dentro de las etiquetas de párrafo, pero `libxml2` ofrece un sólido soporte para navegar y consultar diversas partes de un documento HTML.
 
-Alternativas incluyen otras librerías como `Gumbo` o `htmlcxx` en C, o incluso lenguajes más orientados a la manipulación de texto como Python con `BeautifulSoup`.
+## Profundización
 
-La mayoría de las librerías de análisis de HTML en C manejan bien los documentos mal formados, un detalle importante ya que el HTML en la web no siempre sigue las normas.
+Analizar HTML en C se remonta a los primeros días del desarrollo web. Inicialmente, los desarrolladores tenían que depender de soluciones de análisis personalizadas, a menudo rudimentarias, debido a la falta de bibliotecas estandarizadas y el estado caótico del HTML en la web. La introducción de bibliotecas como `libxml2` marcó un progreso significativo, ofreciendo enfoques más estandarizados, eficientes y resilientes para analizar HTML.
 
-Implementación detallada puede variar, pero un flujo común es: convertir la cadena HTML a un DOM (Document Object Model), navegar y manipular dicho DOM, y extraer la información necesaria.
+A pesar de la velocidad y el control inigualables de C, vale la pena señalar que C no siempre puede ser la mejor herramienta para analizar HTML, especialmente para tareas que requieren ciclos de desarrollo rápidos o que tratan con HTML excepcionalmente mal formado. Los lenguajes con bibliotecas de análisis de HTML de alto nivel, como Python con Beautiful Soup, proporcionan interfaces más abstractas y amigables para el usuario a costa de algo de rendimiento.
 
-## Véase También:
-- Documentación de `libxml2`: http://xmlsoft.org/html/libxml-HTMLparser.html
-- Proyecto `Gumbo` de Google: https://github.com/google/gumbo-parser
-- `htmlcxx`: http://htmlcxx.sourceforge.net/
-- Tutorial de `BeautifulSoup`: https://www.crummy.com/software/BeautifulSoup/bs4/doc/
+Sin embargo, para aplicaciones críticas en términos de rendimiento o cuando se opera en entornos con recursos limitados, analizar HTML en C sigue siendo un método viable y a menudo preferido. La clave es aprovechar bibliotecas robustas como `libxml2` para manejar las complejidades del HTML, permitiendo a los desarrolladores centrarse en extraer los datos que necesitan sin quedar atrapados en los detalles de la mecánica de análisis.

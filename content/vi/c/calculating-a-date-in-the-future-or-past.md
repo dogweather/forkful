@@ -1,64 +1,62 @@
 ---
 title:                "Tính toán ngày trong tương lai hoặc quá khứ"
-date:                  2024-01-28T21:55:51.193223-07:00
+date:                  2024-02-03T17:53:38.760608-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Tính toán ngày trong tương lai hoặc quá khứ"
-
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/c/calculating-a-date-in-the-future-or-past.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
-
-Việc tính toán một ngày trong tương lai hoặc quá khứ liên quan đến việc xác định chính xác ngày nào đó cách một ngày đã biết một khoảng thời gian nhất định. Các lập trình viên làm điều này cho việc lên lịch sự kiện, hết hạn token, nhắc nhở, v.v.
+Việc tính toán một ngày trong tương lai hoặc quá khứ bao gồm việc xác định một ngày cụ thể bằng cách cộng hoặc trừ một số lượng nhất định các ngày, tháng, hoặc năm từ một ngày đã cho. Các lập trình viên thực hiện điều này cho các nhiệm vụ như lên lịch cho sự kiện, tạo nhắc nhở, hoặc xử lý các ngày hết hạn, làm cho đó trở thành một chức năng thiết yếu trong các ứng dụng khác nhau, từ hệ thống lịch đến phần mềm tài chính.
 
 ## Làm thế nào:
-
-Dưới đây là đoạn code C trực tiếp để tính toán một ngày trong tương lai. Chúng tôi sử dụng các hàm từ `time.h`.
+Mặc dù thư viện chuẩn C không cung cấp các hàm trực tiếp cho tính toán ngày, bạn có thể thao tác với ngày tháng sử dụng thư viện `time.h`, cụ thể là làm việc với kiểu dữ liệu `time_t` và `struct tm`. Dưới đây là một ví dụ đơn giản về cách thêm ngày vào ngày hiện tại:
 
 ```c
 #include <stdio.h>
 #include <time.h>
 
+void addDays(struct tm* date, int daysToAdd) {
+    const time_t ONE_DAY = 24 * 60 * 60; // giây trong một ngày
+    // Chuyển đổi cấu trúc tm thành time_t, cộng thêm các ngày, và chuyển đổi trở lại
+    time_t date_seconds = mktime(date) + (daysToAdd * ONE_DAY);
+    *date = *localtime(&date_seconds);
+}
+
 int main() {
     time_t now;
-    struct tm new_date;
-    double daysToAdd = 10; // 10 ngày vào tương lai
-
-    // Lấy thời gian hiện tại và chuyển đổi sang cấu trúc tm
     time(&now);
-    new_date = *localtime(&now);
+    struct tm futureDate = *localtime(&now);
 
-    // Thêm các ngày vào ngày hiện tại
-    new_date.tm_mday += daysToAdd;
-    mktime(&new_date);
+    int daysToAdd = 10; // Điều chỉnh này cho số ngày muốn thêm
+    addDays(&futureDate, daysToAdd);
 
-    // Xuất ngày mới:
-    printf("Ngày trong 10 ngày tới sẽ là: %02d-%02d-%04d\n",
-           new_date.tm_mday,
-           new_date.tm_mon + 1, // tm_mon là 0-11
-           new_date.tm_year + 1900); // tm_year là số năm từ năm 1900
+    printf("Ngày tương lai: %d-%d-%d\n", futureDate.tm_year + 1900, futureDate.tm_mon + 1, futureDate.tm_mday);
 
     return 0;
 }
 ```
 
-Đầu ra mẫu: `Ngày trong 10 ngày tới sẽ là: 12-04-2023`
+Mã này thêm một số lượng ngày cụ thể vào ngày hiện tại và in ngày tương lai. Lưu ý rằng cách tiếp cận này xem xét tới giây nhuận và điều chỉnh giờ mùa hè như được xử lý bởi `mktime` và `localtime`.
 
-## Tìm hiểu sâu
+Đầu ra mẫu:
 
-Trong quá khứ, việc tính toán các ngày trong tương lai hoặc quá khứ là một công việc gây phiền toái - không có hàm tích hợp, chỉ có niềm vui thuần túy từ thuật toán. Hiện nay, `time.h` của C cung cấp cho bạn `time_t`, `struct tm`, và các hàm như `mktime()` để làm cho cuộc sống dễ dàng hơn.
+```
+Ngày tương lai: 2023-04-23
+```
 
-Có phương án thay thế không? Chắc chắn rồi. Đối với việc điều chỉnh ngày giờ phức tạp, một số nhà phát triển chọn thư viện như `date.h` cho C++ hoặc mô-đun 'chrono'.
+Hãy ghi nhớ, ví dụ này chỉ thêm ngày, nhưng với các phép tính phức tạp hơn (như thêm tháng hoặc năm, xem xét năm nhuận), bạn sẽ cần logic phức tạp hơn hoặc các thư viện như `date.h` trong C++ hoặc các thư viện bên thứ ba trong C.
 
-Chi tiết? Hàm `mktime()` chuẩn hóa `struct tm`. Nghĩa là nếu bạn thêm 40 vào số ngày, nó sẽ chuyển qua các tháng, thậm chí là các năm. Điều này đáng biết, trừ khi bạn tự mình phát minh ra một cỗ máy thời gian đi lạc.
+## Đi sâu vào
+Thao tác với ngày tháng trong C sử dụng thư viện time.h liên quan đến việc thao tác trực tiếp với thời gian theo giây kể từ thời điểm Unix epoch (00:00, ngày 1 tháng 1 năm 1970, UTC), tiếp theo là chuyển đổi những giây đó trở lại thành định dạng ngày tháng dễ đọc hơn (`struct tm`). Cách tiếp cận này đơn giản nhưng hiệu quả cho các thao tác cơ bản và có lợi từ việc được xử lý đa nền tảng và là một phần của thư viện chuẩn C.
 
-## Xem Thêm
+Tuy nhiên, sự đơn giản của phương pháp này cũng là một hạn chế. Đối phó với các tính toán ngày tháng phức tạp hơn (như xem xét đến độ dài tháng biến đổi, năm nhuận, và múi giờ) trở nên không đơn giản. Các ngôn ngữ như Python với `datetime` hoặc Java với `java.time` cung cấp các API trực quan hơn cho tính toán ngày tháng, áp dụng các nguyên lý hướng đối tượng cho sự rõ ràng và dễ sử dụng.
 
-- Thư viện Chuẩn C - `time.h`: https://en.cppreference.com/w/c/chrono
-- Thư viện ngày và giờ thay thế, như thư viện `date.h` của Howard Hinnant dành cho C++: https://github.com/HowardHinnant/date
-- Giải thích về hàm `mktime()`: https://www.cplusplus.com/reference/ctime/mktime/
+Trên thực tế, khi làm việc trên các dự án yêu cầu thao tác ngày tháng rộng rãi trong C, các nhà phát triển thường chuyển sang sử dụng các thư viện bên thứ ba cho các giải pháp mạnh mẽ hơn. Những thư viện này có thể cung cấp các chức năng ngày và giờ toàn diện, bao gồm xử lý múi giờ, các tùy chọn định dạng, và khả năng tính toán ngày tháng tinh tế hơn, đơn giản hóa đáng kể nhiệm vụ của nhà phát triển.
+
+Mặc dù có sẵn các lựa chọn hiện đại hơn, việc hiểu cách thao tác với ngày tháng sử dụng thư viện chuẩn C vẫn là một kỹ năng quý giá. Nó cung cấp cái nhìn sâu sắc về cách máy tính biểu diễn và làm việc với thời gian, một khái niệm cơ bản vượt ra ngoài các ngôn ngữ lập trình cụ thể.

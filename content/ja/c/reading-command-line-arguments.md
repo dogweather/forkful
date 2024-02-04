@@ -1,55 +1,52 @@
 ---
 title:                "コマンドライン引数の読み取り"
-date:                  2024-01-20T17:55:24.796844-07:00
-model:                 gpt-4-1106-preview
+date:                  2024-02-03T18:06:32.478846-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "コマンドライン引数の読み取り"
-
 tag:                  "Files and I/O"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/c/reading-command-line-arguments.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (何となぜ？)
+## 何となぜ？
 
-コマンドライン引数を読むことは、プログラムに外部から追加の情報を与えて動作を変える方法です。プログラマはこの機能を使って、柔軟性とユーザーのコントロールを高めます。
+Cプログラミングにおいて、コマンドライン引数を読み取ることは、プログラムが端末から直接入力を受け付けることを可能にし、柔軟性と使いやすさを向上させます。プログラマーはこれを利用して、コードを修正することなくスクリプトの振る舞いを設定し、アプリケーションを適応性があり効率的なものにします。
 
-## How to: (やり方)
+## 方法：
 
-```C
+Cでは、`main`関数を`int argc`と`char *argv[]`のパラメータを使ってコマンドライン引数を受け付けるように設計することができます。ここで、`argc`は渡された引数の数を表し、`argv`はすべての引数をリストする文字ポインタの配列です。以下に簡単な例を示します：
+
+```c
 #include <stdio.h>
 
 int main(int argc, char *argv[]) {
     printf("Program Name: %s\n", argv[0]);
-    if(argc > 1) {
-        for(int i = 1; i < argc; i++) {
-            printf("Argument %d: %s\n", i, argv[i]);
-        }
-    } else {
-        printf("No additional arguments were provided.\n");
+    printf("Number of Arguments: %d\n", argc - 1);
+    for (int i = 1; i < argc; i++) {
+        printf("Argument %d: %s\n", i, argv[i]);
     }
-
     return 0;
 }
 ```
 
-実行例:
+上記のコードを使用して、プログラムが`./programName -a example`として実行された場合、出力は以下のようになります：
 
 ```
-$ ./your_program foo bar baz
-Program Name: ./your_program
-Argument 1: foo
-Argument 2: bar
-Argument 3: baz
+Program Name: ./programName
+Number of Arguments: 2
+Argument 1: -a
+Argument 2: example
 ```
 
-## Deep Dive (詳細な解説)
+これは、コマンドライン引数がCプログラム内でどのようにパースそして利用されるかを示しています。
 
-コマンドライン引数はUNIX時代から存在します。`main`関数は`argc`（引数の数）、`argv`（引数の値の配列）を受け取ります。`argv[0]`はプログラム名。`argc`は常に1以上です。他の方法として、ライブラリやフレームワークが提供する引数解析のための機能もあります。例えば、`getopt`関数や`argp`ライブラリーなど。これらはコマンドライン引数を扱う際に追加の便利機能を提供します。
+## 深掘り
 
-## See Also (関連情報)
+プログラムへの引数の渡し方はUnixの初期の時代までさかのぼります。この伝統的なアプローチでは、`argc`と`argv`はコマンドラインとのやり取りのためのシンプルでありながら強力なインターフェースを提供し、小さくモジュラーなユーティリティが協力して動作するUnixの哲学を体現しています。現代の言語ではより洗練されたライブラリやフレームワークがコマンドライン引数の解析のために導入されることが多いですが、Cの方法の直接性は透明性と制御の面で比類のないものを提供します。
 
-- C Standard Library Reference: https://en.cppreference.com/w/c
-- GNU C Library (glibc): https://www.gnu.org/software/libc/manual/
-- C FAQs on Command Line Arguments: https://c-faq.com/aryptr/index.html
+最近の進展では、POSIXシステムの`getopt`のようなライブラリが、長いオプション名を扱うや引数が欠けている場合のデフォルト値をサポートするなど、より複雑な解析ニーズに対応するように進化しました。それでも、`argc`と`argv`の基本的な仕組みは、Cでのプログラムがランタイム環境とどのように相互作用するかを理解する上で不可欠です。
+
+批評家は、`argc`と`argv`を直接扱うことはエラーを起こしやすいと主張し、より高レベルの抽象化の使用を推奨するかもしれません。それでも、Cの詳細とその低レベル操作の微妙さをマスターしようとする人々にとって、コマンドライン引数の解析をマスターすることは通過儀礼です。この歴史的な方法論と実用的な有用性の混合は、システムプログラミングとソフトウェア開発におけるCの持続的な魅力の多くを要約しています。

@@ -1,9 +1,8 @@
 ---
 title:                "Sending an HTTP request"
-date:                  2024-01-20T17:59:09.673014-07:00
-model:                 gpt-4-1106-preview
+date:                  2024-02-03T17:50:08.096430-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Sending an HTTP request"
-
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/c/sending-an-http-request.md"
 ---
@@ -12,15 +11,15 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Sending an HTTP request is how your program asks for data or sends data to a web server. Programmers use it to interact with APIs, grab web content, or communicate with other services.
+Sending an HTTP request involves creating and dispatching a request to a web server to retrieve or submit data. Programmers do this in C to interact with web APIs, download web pages, or communicate with other networked services directly from their applications.
 
 ## How to:
 
-In C, we'll leverage `libcurl` for this task. It's a powerful library for transferring data with URLs. First, get `libcurl` installed. On Debian-based systems, you could use `sudo apt-get install libcurl4-openssl-dev`.
+To send an HTTP request in C, you'll generally lean on libraries like libcurl, as C does not have built-in support for web protocols. Here's a simple example using libcurl to perform a GET request:
 
-Here's a snippet for making a simple GET request:
+First, ensure you have libcurl installed on your system. Then, include the necessary headers and link against the libcurl library in your source file:
 
-```C
+```c
 #include <stdio.h>
 #include <curl/curl.h>
 
@@ -28,37 +27,39 @@ int main(void) {
     CURL *curl;
     CURLcode res;
 
-    curl = curl_easy_init();
+    curl = curl_easy_init(); // Initialize a libcurl handle
     if(curl) {
+        // Set the URL that receives the libcurl handle
         curl_easy_setopt(curl, CURLOPT_URL, "http://example.com");
+        // Define a callback to get the data
+        curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, NULL); 
         
-        /* Perform the request, res will get the return code */ 
+        // Perform the request, res will get the return code
         res = curl_easy_perform(curl);
-        
-        /* Check for errors */ 
+        // Check for errors
         if(res != CURLE_OK)
             fprintf(stderr, "curl_easy_perform() failed: %s\n",
                     curl_easy_strerror(res));
-        
-        /* always cleanup */ 
+
+        // Always cleanup
         curl_easy_cleanup(curl);
     }
     return 0;
 }
 ```
 
-Running this, you won't get a visible output as we haven't handled the response, but it'll fetch the content from `http://example.com`.
+Compile this with something akin to `gcc -o http_request http_request.c -lcurl`, running it should perform a simple GET request to "http://example.com".
+
+### Sample Output
+
+Since the example doesn't process the server's response, running it won't produce a visible output beyond potential error messages. Integrating the callback function for processing received data is essential for meaningful interaction.
 
 ## Deep Dive
 
-`libcurl` started in 1997 and has become a go-to library for C programmers. It supports a vast number of protocols, not just HTTP. Alternatives for HTTP in C might include writing your own implementation, but that’s a bumpy ride through socket programming and complex RFCs.
+The concept of sending HTTP requests from a C program hinges on the language's powerful networking capabilities, coupled with external libraries since C itself is a low-level language without built-in high-level internet protocol support. Historically, programmers would manually use socket programming in C, a complex and tedious process, to interact with web servers before the advent of dedicated libraries like libcurl.
 
-`libcurl` is convenient because it handles all the nitty-gritty details for you, like protocol negotiation, error handling, and data transfer. Plus, it's cross-platform—use the same code on Linux, Windows, Mac, you name it.
+Libcurl, built on top of C, streamlines the process, abstracting away the gritty details of socket programming and HTTP protocol specifics. It supports a multitude of protocols beyond HTTP/HTTPS, including FTP, SMTP, and more, making it a versatile tool for network programming in C.
 
-Remember, `libcurl` uses a synchronous API by default, which might block your main thread. If you're building something where that matters, you might have to dive into multi-threading or the `curl_multi_*` set of asynchronous functions.
+While using libcurl for HTTP requests in C is practical, modern programming often gravitates towards languages with built-in support for such tasks, like Python (requests library) or JavaScript (Fetch API). These alternatives offer simpler, more readable syntax at the expense of the granular control and performance optimizations possible in C through direct socket manipulation and finely-tuned library use. 
 
-## See Also
-
-- Official libcurl website for documentation and examples: [https://curl.se/libcurl/](https://curl.se/libcurl/)
-- HTTP protocol details for background knowledge: [https://www.ietf.org/rfc/rfc2616.txt](https://www.ietf.org/rfc/rfc2616.txt)
-- For broader perspectives on C network programming: [Beej's Guide to Network Programming](https://beej.us/guide/bgnet/)
+For critical performance applications or where direct system-level interaction is necessary, C remains a viable option, particularly with libcurl smoothing over the complexities of web communication. However, for most high-level web interactions, exploring more dedicated web programming languages might prove more efficient.

@@ -1,86 +1,94 @@
 ---
 title:                "Làm việc với YAML"
-date:                  2024-01-28T22:12:15.498749-07:00
+date:                  2024-02-03T18:14:02.522253-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Làm việc với YAML"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/c/working-with-yaml.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Cái gì & Tại sao?
+## Gì và Tại sao?
 
-YAML là một định dạng tuần tự hóa dữ liệu dễ đọc dành cho con người, được sử dụng cho các tệp cấu hình, trao đổi dữ liệu giữa các ngôn ngữ, và lưu trữ dữ liệu. Các lập trình viên chọn YAML vì sự đơn giản và dễ đọc của nó, giúp việc sử dụng cho cấu hình nhanh và các tác vụ phát triển trở nên dễ dàng.
+YAML, viết tắt của "YAML Ain't Markup Language," là một chuẩn hóa chuỗi dữ liệu dễ đọc với con người, có thể được sử dụng cho hàng loạt ứng dụng, từ tệp cấu hình đến lưu trữ dữ liệu. Lập trình viên thường làm việc với YAML khi họ cần một định dạng dễ đọc và dễ viết cho tệp cấu hình hoặc trao đổi dữ liệu giữa các ngôn ngữ và hệ thống.
 
-## Làm thế nào:
+## Cách làm:
 
-C không có chức năng phân tích cú pháp YAML tích hợp, do đó chúng ta sử dụng một thư viện như `libyaml` để xử lý các tệp YAML. Dưới đây là một ví dụ đơn giản về phân tích cú pháp một tệp YAML trong C.
+Để làm việc với YAML trong C cần có một thư viện, vì thư viện chuẩn C không cung cấp hỗ trợ trực tiếp cho việc phân tích cú pháp hoặc chuỗi hóa YAML. Một trong những thư viện YAML phổ biến nhất cho C là `libyaml`, cung cấp cả giao diện cấp thấp và cấp cao để phân tích cú pháp và phát sinh YAML. Dưới đây là một ví dụ về cách phân tích một tệp YAML đơn giản sử dụng `libyaml`:
 
-Đầu tiên, bao gồm thư viện:
-```C
-#include <yaml.h>
+**Đầu tiên**, bạn cần cài đặt thư viện `libyaml`. Nếu bạn sử dụng hệ thống giống Unix, bạn có thể thường xuyên cài đặt nó qua trình quản lý gói. Chẳng hạn, trên Ubuntu:
+
+```bash
+sudo apt-get install libyaml-dev
 ```
 
-Tiếp theo, khởi tạo một trình phân tích cú pháp, mở một tệp, và bắt đầu phân tích cú pháp:
-```C
-FILE *fh = fopen("config.yaml", "r");
-yaml_parser_t parser;
-yaml_parser_initialize(&parser);
-yaml_parser_set_input_file(&parser, fh);
+**Tiếp theo**, xem xét một tệp YAML đơn giản có tên là `config.yaml`:
 
-yaml_event_t event;
-/* Đọc chuỗi sự kiện */
-while (true) {
-    if (!yaml_parser_parse(&parser, &event)) {
-        printf("Lỗi phân tích cú pháp %d\n", parser.error);
-        exit(EXIT_FAILURE);
-    }
-
-    if (event.type == YAML_SCALAR_EVENT) {
-        printf("Nhận scalar (giá trị): %s\n", event.data.scalar.value);
-    }
-
-    if (event.type == YAML_STREAM_END_EVENT) {
-        break;
-    }
-
-    yaml_event_delete(&event);
-}
-
-/* Dọn dẹp */
-yaml_parser_delete(&parser);
-fclose(fh);
-```
-
-Nội dung mẫu `config.yaml`:
 ```yaml
 name: John Doe
-age: 30
+age: 29
+married: false
 ```
 
-Đầu ra mẫu:
+**Dưới đây** là một ví dụ cơ bản về cách phân tích tệp YAML này trong C:
+
+```c
+#include <yaml.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+void process_yaml_file(const char *filename) {
+    FILE *fh = fopen(filename, "rb");
+    yaml_parser_t parser;
+    yaml_event_t event;
+
+    if (!yaml_parser_initialize(&parser))
+        fputs("Failed to initialize YAML parser!\n", stderr);
+
+    if (fh == NULL)
+        fputs("Failed to open file!\n", stderr);
+
+    yaml_parser_set_input_file(&parser, fh);
+
+    while (1) {
+        if (!yaml_parser_parse(&parser, &event))
+            break;
+
+        if (event.type == YAML_SCALAR_EVENT) {
+            printf("Giá trị: %s\n", event.data.scalar.value);
+        }
+
+        if (event.type == YAML_STREAM_END_EVENT)
+            break;
+
+        yaml_event_delete(&event);
+    }
+
+    yaml_parser_delete(&parser);
+    fclose(fh);
+}
+
+int main() {
+    process_yaml_file("config.yaml");
+    return 0;
+}
 ```
-Nhận scalar (giá trị): name
-Nhận scalar (giá trị): John Doe
-Nhận scalar (giá trị): age
-Nhận scalar (giá trị): 30
+
+Chương trình đơn giản này mở một tệp YAML, khởi tạo bộ phân tích cú pháp YAML và đọc tệp, in ra giá trị scalar (trong ví dụ này, các trường của YAML đơn giản của chúng tôi). Lưu ý rằng việc kiểm tra lỗi trong ví dụ đơn giản này là tối thiểu và cần được chú trọng hơn trong mã sản phẩm.
+
+Chạy chương trình với `config.yaml` của chúng tôi sẽ cho ra kết quả:
+
+```plaintext
+Giá trị: John Doe
+Giá trị: 29
+Giá trị: false
 ```
 
-## Tìm hiểu sâu
+## Sâu hơn
 
-YAML có nghĩa là "YAML Ain't Markup Language" (YAML không phải là ngôn ngữ đánh dấu). Nó xuất hiện vào đầu những năm 2000 như một lựa chọn thay thế cho XML đối với các tệp cấu hình, nhằm mục đích dễ đọc cho con người. YAML được sử dụng trong nhiều công cụ (như Docker, Kubernetes, v.v.) và thường được ưu tiên hơn JSON cho cấu hình do hỗ trợ các bình luận và cú pháp sạch sẽ hơn.
+YAML được phát hành lần đầu vào năm 2001 và được thiết kế để dễ đọc và thân thiện với người dùng hơn các định dạng hàng chuỗi dữ liệu khác như XML hoặc JSON, vay mượn từ một số ngôn ngữ như C, Perl và Python cho triết lý thiết kế của mình. Mặc dù có lợi thế về độ dễ đọc và dễ chỉnh sửa bởi con người, YAML có thể phức tạp khi phân tích cú pháp một cách tự động do nó phụ thuộc vào thụt dòng và bộ tính năng rộng lớn của mình, bao gồm tham chiếu và các loại tùy chỉnh.
 
-Các lựa chọn phổ biến trong C khi làm việc với YAML là `libyaml` và `yaml-cpp` (mặc dù cái sau là cho C++). Những thư viện này cho phép các chương trình C/C++ tuần tự hóa và giải tuần tự hóa dữ liệu YAML.
-
-Khi phân tích cú pháp YAML, chương trình của bạn tạo một cây trong bộ nhớ. Các nút trong cây này có thể là ánh xạ (như từ điển hoặc bảng băm), chuỗi (như mảng), hoặc scalar (chuỗi, số, v.v.). Trình phân tích cú pháp của libyaml là dựa trên sự kiện, có nghĩa là nó đọc dòng YAML và phát ra các sự kiện cho mỗi cấu trúc YAML gặp phải. Xử lý những sự kiện này cho phép bạn xây dựng hoặc vận hành trên cấu trúc dữ liệu tương ứng.
-
-## Xem thêm
-
-- `libyaml` GitHub: https://github.com/yaml/libyaml
-- Quy định chính thức của YAML: https://yaml.org/spec/1.2/spec.html
-- Hướng dẫn "Lập trình với libyaml": https://libyaml.docsforge.com/master/programming-with-libyaml/
-- So sánh các định dạng tuần tự hóa dữ liệu: https://en.wikipedia.org/wiki/Comparison_of_data-serialization_formats
+Mặc dù `libyaml` cung cấp quyền truy cập mạnh mẽ, cấp thấp để phân tích cú pháp và phát sinh YAML trong C, nó có thể gây rắc rối cho các nhiệm vụ đơn giản do API rườm rà của mình. Vì những lý do này, một số lập trình viên thích sử dụng các thư viện cấp cao hơn hoặc thậm chí các định dạng hàng chuỗi dữ liệu khác như JSON khi làm việc trong C, đặc biệt khi cần phân tích cú pháp hiệu suất cao với tải mã tối thiểu. Tuy nhiên YAML vẫn là lựa chọn phổ biến cho các tệp cấu hình và các tình huống mà độ dễ đọc bởi con người là quan trọng nhất. Các lựa chọn thay thế như TinyYAML hoặc nhúng một bộ thông dịch cấp cao (ví dụ, nhúng Python hoặc Lua) có thể cung cấp sự thuận tiện hơn cho các ứng dụng cụ thể, cân bằng giữa sự dễ sử dụng và nhu cầu về hiệu suất.

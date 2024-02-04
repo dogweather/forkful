@@ -1,68 +1,71 @@
 ---
 title:                "Reguliere expressies gebruiken"
-date:                  2024-01-28T22:09:14.407378-07:00
+date:                  2024-02-03T18:10:49.880931-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Reguliere expressies gebruiken"
-
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/c/using-regular-expressions.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Wat & Waarom?
-Reguliere expressies (regex) zoeken, matchen en manipuleren strings. Programmeurs gebruiken ze voor tekstvalidatie, zoeken en transformaties, wat de verwerking van tekst versnelt.
+
+Reguliere expressies (regex) bieden een manier om te zoeken, overeenkomsten te vinden en strings te manipuleren met behulp van gedefinieerde patronen. Programmeurs gebruiken ze uitgebreid voor taken zoals het valideren van invoer, het parsen van tekstgegevens en het vinden van patronen in grote tekstbestanden, waardoor ze een krachtig hulpmiddel zijn in elke taal, inclusief C.
 
 ## Hoe:
-C heeft geen ingebouwde regex-ondersteuning, maar je kunt bibliotheken zoals `regex.h` gebruiken. Hier is een eenvoudige patroonmatch.
+
+Om reguliere expressies in C te gebruiken, werk je voornamelijk met de POSIX regex-bibliotheek (`<regex.h>`). Dit voorbeeld demonstreert basispatroonmatching:
 
 ```c
 #include <stdio.h>
+#include <stdlib.h>
 #include <regex.h>
 
-int main() {
+int main(){
     regex_t regex;
-    int resultaat;
-    char *patroon = "^hallo";
-    char *tekst = "hallo wereld";
+    int return_value;
+    char *pattern = "^a[[:alnum:]]"; // Patroon om strings te matchen die beginnen met 'a' gevolgd door alfanumerieke tekens
+    char *test_string = "apple123";
 
-    // Compileer regex
-    resultaat = regcomp(&regex, patroon, REG_EXTENDED);
-
-    if (resultaat) {
-        printf("Regex compilatie mislukt.\n");
-        return 1;
+    // Compileer de reguliere expressie
+    return_value = regcomp(&regex, pattern, REG_EXTENDED);
+    if (return_value) {
+        printf("Kon regex niet compileren\n");
+        exit(1);
     }
 
-    // Voer regex uit
-    resultaat = regexec(&regex, tekst, 0, NULL, 0);
-    
-    // Controleer op match
-    if (!resultaat) {
-        printf("Match gevonden.\n");
-    } else if (resultaat == REG_NOMATCH) {
-        printf("Geen match.\n");
+    // Voer de reguliere expressie uit
+    return_value = regexec(&regex, test_string, 0, NULL, 0);
+    if (!return_value) {
+        printf("Match gevonden\n");
+    } else if (return_value == REG_NOMATCH) {
+        printf("Geen match gevonden\n");
     } else {
-        printf("Regex uitvoering mislukt.\n");
+        printf("Regex match mislukt\n");
+        exit(1);
     }
 
-    // Ruim regex op
+    // Vrijgegeven geheugen in gebruik door de regex vrijmaken
     regfree(&regex);
 
     return 0;
 }
 ```
-Voorbeelduitvoer:
+
+Voorbeelduitvoer voor een matchende string ("apple123"):
 ```
-Match gevonden.
+Match gevonden
+```
+En voor een niet-matchende string ("banana"):
+```
+Geen match gevonden
 ```
 
-## Diepgaand
-Reguliere expressies worden sinds de jaren '50 gebruikt en zijn wijdverspreid geraakt met Unix's `ed` en `grep`. Alternatieven in C omvatten stringfunctiebibliotheken en aangepaste parsers, maar regex is veelzijdiger. Achter de schermen implementeert `regex.h` regex-functionaliteit, meestal via NFA (Niet-deterministische Eindige Automaat) of DFA (Deterministische Eindige Automaat) engines.
+## Diepere duik:
 
-## Zie ook
-- POSIX standaard: https://pubs.opengroup.org/onlinepubs/9699919799/
-- Reguliere Expressies (regex) tutorial: https://www.regular-expressions.info/
-- POSIX regex in C: http://man7.org/linux/man-pages/man3/regcomp.3.html
+Reguliere expressies in C, als onderdeel van de POSIX-standaard, bieden een robuuste manier om stringmatching en -manipulatie uit te voeren. Echter, de API van de POSIX regex-bibliotheek in C wordt beschouwd als omslachtiger dan die in talen die ontworpen zijn met eersteklas stringmanipulatiefuncties zoals Python of Perl. De syntaxis voor patronen is vergelijkbaar in verschillende talen, maar C vereist handmatig geheugenbeheer en meer boilerplate-code om de regex patronen voor te bereiden, uit te voeren en op te ruimen.
+
+Ondanks deze uitdagingen is leren om regex in C te gebruiken lonend omdat het een dieper begrip van low-level programmeerconcepten geeft. Daarnaast opent het mogelijkheden voor C-programmering op gebieden zoals tekstverwerking en gegevensextractie waar regex onmisbaar is. Voor meer complexe patronen of regex-operaties kunnen alternatieven zoals de PCRE (Perl Compatible Regular Expressions) bibliotheek een meer functierijke en enigszins gemakkelijkere interface bieden, hoewel het integreren van een externe bibliotheek in je C-project vereist is.

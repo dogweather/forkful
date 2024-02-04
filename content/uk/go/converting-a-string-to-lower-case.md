@@ -1,40 +1,51 @@
 ---
-title:                "Перетворення рядка у нижній регістр"
-date:                  2024-01-20T17:38:19.883453-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Перетворення рядка у нижній регістр"
-
+title:                "Перетворення рядка в нижній регістр"
+date:                  2024-02-03T17:55:39.410237-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Перетворення рядка в нижній регістр"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/go/converting-a-string-to-lower-case.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Що і чому?)
-Converting a string to lower case means changing all uppercase letters within the string to their lower case counterparts. Developers use this for consistency in data processing, easier comparisons, and search optimization.
+## Що і чому?
 
-## How to: (Як це зробити:)
+Перетворення рядка в нижній регістр є фундаментальною операцією, яка забезпечує єдність та послідовність при обробці тексту, необхідну для завдань, таких як порівняння без урахування регістру або нормалізація тексту. Програмісти часто виконують цю операцію для підготовки даних до подальшої обробки або для забезпечення сумісності між різними системами та локалізаціями.
+
+## Як:
+
+У Go перетворення рядка в нижній регістр може бути легко досягнуте за допомогою пакету `strings`, а саме функції `ToLower()`. Ця функція приймає рядок як вхідний параметр і повертає новий рядок з усіма символами у верхньому регістрі, перетвореними на нижній регістр. Ось швидкий приклад:
 ```go
 package main
 
 import (
-	"fmt"
-	"strings"
+    "fmt"
+    "strings"
 )
 
 func main() {
-	originalString := "Привіт, Як справи?"
-	lowerCaseString := strings.ToLower(originalString)
-	fmt.Println(lowerCaseString) // "привіт, як справи?"
+    originalString := "Hello, World!"
+    lowerCaseString := strings.ToLower(originalString)
+    fmt.Println("Original:", originalString)
+    fmt.Println("Lowercase:", lowerCaseString)
 }
 ```
+Вивід:
+```
+Original: Hello, World!
+Lowercase: hello, world!
+```
+Цей приклад демонструє прямолінійний підхід до перетворення будь-якого заданого рядка в нижній регістр в Go. Це просто, з великою роботою, що виконується методом `ToLower()`, який абстрагує складність різних кодувань символів та специфіки правил регістрів для різних локалей.
 
-## Deep Dive (Поглиблений Аналіз)
-Converting to lower case has always been a staple in text processing. Historically, it facilitated database searches and user input normalization. As for alternatives, you could manually map each upper case character to its lower case equivalent - tedious and not recommended.
+## Поглиблений огляд
 
-The `strings.ToLower` function in Go under the hood uses Unicode's case mapping to properly handle different languages, ensuring your Ukrainian characters are correctly transformed.
+Реалізація `strings.ToLower()` в стандартній бібліотеці Go є ефективною та свідомою щодо Unicode, що означає, що вона правильно обробляє символи за межами базового набору ASCII, включно з літерами з нелатинських алфавітів. Це особливо важливо в глобальному контексті, де програмне забезпечення може обробляти текст з різноманітних мов та наборів символів.
 
-## See Also (Дивіться також)
-- Go documentation on `strings` package: https://pkg.go.dev/strings
-- Unicode standard for case mapping: https://www.unicode.org/reports/tr21/tr21-5.html
-- More text operations in Go: https://golang.org/doc/articles/strings
+Історично, обробка перетворення регістру в мовах програмування значно еволюціонувала. Ранні мови часто не мали нативної підтримки таких операцій, або їхні реалізації були обмежені набором символів ASCII, що призводило до некоректної поведінки з іншими алфавітами. Go була розроблена з підтримкою Unicode "з нуля", відображаючи сучасний підхід до маніпуляції з рядками.
+
+Хоча `strings.ToLower()` достатньо для більшості випадків використання, важливо відзначити, що деякі специфічні для локалі правила можливо не будуть повністю підтримані. Наприклад, перетворення турецької літери без точки 'i' і літери з точкою 'I' не може бути точно виконане лише за допомогою `ToLower()`, через її незалежну від мови реалізацію. У контекстах, де критично важливі специфічні для локалі правила розрізнення регістрів, може бути необхідним використання додаткових бібліотек або користувацьких функцій для правильної обробки цих особливих випадків.
+
+Незважаючи на ці обмеження, для переважної більшості застосувань простота та ефективність `strings.ToLower()` робить його найкращим вибором для перетворення рядків в нижній регістр в Go. Його усвідомленість Unicode забезпечує широку сумісність та правильність поперек різних мов та алфавітів, роблячи його потужним інструментом у наборі засобів програміста.

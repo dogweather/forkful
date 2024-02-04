@@ -1,86 +1,59 @@
 ---
 title:                "Sinh số ngẫu nhiên"
-date:                  2024-01-28T22:01:47.380531-07:00
+date:                  2024-02-03T17:58:00.824135-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Sinh số ngẫu nhiên"
-
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/c/generating-random-numbers.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Cái gì & Tại sao?
+## Cái gì và Tại sao?
 
-Việc tạo số ngẫu nhiên trong C liên quan đến việc tạo ra chuỗi số không có bất kỳ mô hình nhận dạng nào, mô phỏng khái niệm về sự ngẫu nhiên. Các lập trình viên sử dụng số ngẫu nhiên cho hàng loạt mục đích, bao gồm mô phỏng dữ liệu, ứng dụng mật mã học và phát triển trò chơi, khiến nó trở thành một khía cạnh quan trọng của lập trình.
+Việc tạo ra các số ngẫu nhiên trong C liên quan đến việc tạo ra các giá trị không thể dự đoán trước và tuân theo một phân phối cụ thể, chẳng hạn như đồng đều hoặc chuẩn. Khả năng này rất quan trọng đối với các ứng dụng từ mô phỏng và trò chơi tới các hoạt động mật mã, nơi tính không dự đoán trước hoặc việc mô phỏng sự ngẫu nhiên của thế giới thực là thiết yếu.
 
 ## Làm thế nào:
 
-Để tạo số ngẫu nhiên trong C, bạn thường sử dụng hàm `rand()` được tìm thấy trong `stdlib.h`. Tuy nhiên, điều quan trọng là phải cấy mầm cho trình sinh số ngẫu nhiên để đảm bảo tính biến thiên trong các số được tạo ra qua các lần thực thi chương trình khác nhau. Hàm `srand()`, đã cấy mầm với một giá trị, thường là thời gian hiện tại, hỗ trợ điều này.
+Trong C, số ngẫu nhiên có thể được tạo ra sử dụng hàm `rand()`, là một phần của thư viện tiêu chuẩn C `<stdlib.h>`. Theo mặc định, `rand()` tạo ra các số giả ngẫu nhiên trong phạm vi từ 0 đến `RAND_MAX` (hằng số được định nghĩa trong `<stdlib.h>`). Để kiểm soát chặt chẽ hơn về phạm vi, các lập trình viên có thể điều chỉnh kết quả đầu ra của `rand()`.
 
-Dưới đây là một ví dụ đơn giản về việc tạo một số ngẫu nhiên từ 0 đến 99:
+Dưới đây là một ví dụ đơn giản về việc tạo ra một số ngẫu nhiên từ 0 đến 99:
 
 ```c
 #include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
+#include <stdlib.h> // Cho rand() và srand()
+#include <time.h>   // Cho time()
 
 int main() {
-    // Cấy mầm cho trình sinh số ngẫu nhiên
+    // Gieo hạt cho bộ sinh số ngẫu nhiên
     srand((unsigned) time(NULL));
 
-    // Tạo một số ngẫu nhiên từ 0 đến 99
+    // Tạo ra một số ngẫu nhiên từ 0 đến 99
     int randomNumber = rand() % 100;
 
-    // In số ngẫu nhiên
     printf("Số Ngẫu Nhiên: %d\n", randomNumber);
 
     return 0;
 }
 ```
 
-Kết quả mẫu:
+Kết quả mẫu có thể thay đổi mỗi lần bạn chạy chương trình này:
 
 ```
 Số Ngẫu Nhiên: 42
 ```
+Để tạo ra số ngẫu nhiên trong một phạm vi khác, bạn có thể điều chỉnh toán tử mô-đun (`%`) một cách phù hợp. Ví dụ, `rand() % 10` tạo ra các số từ 0 đến 9.
 
-Điều quan trọng cần lưu ý là mỗi lần thực thi chương trình này sẽ tạo ra một số ngẫu nhiên mới, nhờ vào việc cấy mầm với thời gian hiện tại.
+Quan trọng là phải ghi nhận rằng, việc gieo hạt cho bộ sinh số giả ngẫu nhiên (`srand()`) bằng thời gian hiện tại (`time(NULL)`) đảm bảo các chuỗi số ngẫu nhiên khác nhau qua các lần thực thi chương trình. Nếu không gieo hạt (`srand()`), `rand()` sẽ tạo ra cùng một chuỗi số mỗi lần chương trình được chạy.
 
-## Sâu hơn
+## Sâu hơn nữa
 
-Cách truyền thống để tạo số ngẫu nhiên trong C, sử dụng `rand()` và `srand()`, không thực sự ngẫu nhiên. Nó là giả ngẫu nhiên. Điều này ổn cho nhiều ứng dụng, nhưng không đủ trong các tình huống cần độ ngẫu nhiên cao, ví dụ như trong một số ứng dụng mật mã học nghiêm túc. Chuỗi được tạo bởi `rand()` hoàn toàn được xác định bởi hạt giống cung cấp cho `srand()`. Do đó, nếu hạt giống được biết, chuỗi có thể được dự đoán, làm giảm sự ngẫu nhiên.
+Hàm `rand()` và hàm gieo hạt tương ứng `srand()` đã là một phần của thư viện tiêu chuẩn C trong nhiều thập kỷ. Chúng dựa trên các thuật toán tạo ra các chuỗi số chỉ có vẻ là ngẫu nhiên—do đó thuật ngữ "giả ngẫu nhiên." Thuật toán tiềm ẩn trong `rand()` thường là một bộ sinh số tuyến tính đồng nhất (LCG).
 
-Trong quá khứ, hàm `rand()` đã bị chỉ trích vì sự ngẫu nhiên kém chất lượng và phạm vi hạn chế. Các phương pháp hiện đại bao gồm sử dụng các API đặc trưng cho thiết bị hoặc thư viện bên ngoài cung cấp gần đúng với sự ngẫu nhiên thực sự hơn hoặc, trong các hệ thống giống UNIX, đọc từ `/dev/random` hoặc `/dev/urandom` cho mục đích mật mã học.
+Mặc dù `rand()` và `srand()` đủ cho nhiều ứng dụng, chúng có những hạn chế được biết đến, đặc biệt liên quan đến chất lượng của sự ngẫu nhiên và khả năng dự đoán. Đối với các ứng dụng yêu cầu sự ngẫu nhiên cao cấp, chẳng hạn như các hoạt động mật mã, các lựa chọn thay thế như `/dev/random` hoặc `/dev/urandom` (trên các hệ thống giống Unix), hoặc các API do các thư viện mật mã cung cấp, nên được xem xét.
 
-Ví dụ, sử dụng `/dev/urandom` trong C:
+Với sự ra đời của C11, tiêu chuẩn ISO C đã bao gồm một header mới, `<stdatomic.h>`, cung cấp một sự kiểm soát tinh tế hơn cho các thao tác đồng thời, nhưng không trực tiếp liên quan đến sự ngẫu nhiên. Để đạt được sự ngẫu nhiên thực sự trong C, các nhà phát triển thường chuyển sang các thư viện cụ thể của nền tảng hoặc bên ngoài cung cấp các thuật toán tốt hơn hoặc tận dụng các nguồn entropy phần cứng.
 
-```c
-#include <stdio.h>
-#include <stdlib.h>
-
-int main() {
-    FILE *fp;
-    unsigned int randomNumber;
-
-    // Mở /dev/urandom để đọc
-    fp = fopen("/dev/urandom", "r");
-
-    // Đọc một số ngẫu nhiên
-    fread(&randomNumber, sizeof(randomNumber), 1, fp);
-
-    // In số ngẫu nhiên
-    printf("Số Ngẫu Nhiên: %u\n", randomNumber);
-
-    // Đóng tập tin
-    fclose(fp);
-
-    return 0;
-}
-```
-
-Phương pháp này đọc trực tiếp từ hồ năng lượng entropy của hệ thống, cung cấp chất lượng ngẫu nhiên cao hơn phù hợp cho các ứng dụng nhạy cảm hơn. Tuy nhiên, cách tiếp cận này có thể gặp phải vấn đề về tính di động trên các nền tảng khác nhau, làm cho nó ít phổ quát hơn so với sử dụng `rand()`.
-
-Bất kể phương pháp nào, việc hiểu về bản chất của sự ngẫu nhiên và cách triển khai nó trong C là cực kỳ quan trọng cho việc phát triển những ứng dụng hiệu quả, an toàn và hấp dẫn.
+Nhớ rằng, trong khi `rand()` phục vụ như một phương tiện đơn giản và dễ tiếp cận để tạo ra số giả ngẫu nhiên, việc sử dụng nó trong các ứng dụng hiện đại bị hạn chế bởi chất lượng và sự dự đoán của đầu ra. Khi cần các giải pháp mạnh mẽ hơn, đặc biệt là đối với các ứng dụng quan tâm đến bảo mật, việc tìm kiếm ngoài thư viện tiêu chuẩn được khuyến khích cao.

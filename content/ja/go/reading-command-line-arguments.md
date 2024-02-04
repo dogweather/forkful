@@ -1,50 +1,59 @@
 ---
 title:                "コマンドライン引数の読み取り"
-date:                  2024-01-20T17:56:20.416421-07:00
-model:                 gpt-4-1106-preview
+date:                  2024-02-03T18:06:24.080176-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "コマンドライン引数の読み取り"
-
 tag:                  "Files and I/O"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/go/reading-command-line-arguments.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (何とその理由？)
-コマンドライン引数とは、プログラム実行時にユーザーが提供するパラメータのことです。プログラマーは、様々な状況下で動作をカスタマイズするため、これらの引数を使用します。
+## 何となぜ？
 
-## How to: (やり方)
-```Go
+Goでコマンドライン引数を読み取ることは、端末やコマンドプロンプトからプログラムに提供された引数を抽出することを含みます。プログラマーはこれを行って、コードを変更せずにプログラムの実行をカスタマイズし、アプリケーションをより柔軟でユーザ主導にします。
+
+## 方法:
+
+Goは`os`パッケージを通じてコマンドライン引数への直接アクセスを提供し、具体的には文字列の配列である`os.Args`を使用します。以下は、簡単な例です：
+
+```go
 package main
 
 import (
-	"fmt"
-	"os"
+    "fmt"
+    "os"
 )
 
 func main() {
-	args := os.Args[1:]
-	fmt.Println("Command Line Arguments:", args)
-	if len(args) > 0 {
-		fmt.Println("First Argument:", args[0])
-	}
+    // os.Argsは生のコマンドライン引数へのアクセスを提供します
+    fmt.Println("コマンドライン引数:", os.Args)
+
+    if len(os.Args) > 1 {
+        // 引数をループ処理し、最初の1つ（プログラム名）をスキップします
+        for i, arg := range os.Args[1:] {
+            fmt.Printf("引数 %d: %s\n", i+1, arg)
+        }
+    } else {
+        fmt.Println("コマンドライン引数が提供されていません。")
+    }
 }
 ```
-出力例:
+
+`go run yourprogram.go arg1 arg2`で実行した場合のサンプル出力は次のようになります：
+
 ```
-$ go run myprogram.go arg1 arg2
-Command Line Arguments: [arg1 arg2]
-First Argument: arg1
+コマンドライン引数: [/tmp/go-build123456789/b001/exe/yourprogram arg1 arg2]
+引数 1: arg1
+引数 2: arg2
 ```
 
-## Deep Dive (深掘り)
-コマンドライン引数はUNIXの初期から存在します。`os.Args`を使うのがGo言語のスタンダードですが、フラグ解析をするには`flag`パッケージが有用です。`os.Args`は、`main`関数が起動するときに自動的に生成されるスライスです。このスライスには、プログラム名が`os.Args[0]`として含まれ、残りが実際の引数です。
+これは、プログラム名を含むすべての引数（通常はインデックス0にあります）を印刷し、提供された各引数を繰り返し処理して出力します。より制御された引数解析には、コマンドラインオプションの解析用に`flag`パッケージを検討するとよいでしょう。
 
-また、環境変数を読み取るためには`os.Getenv`や`os.LookupEnv`が役立ちます。引数と環境変数の主な違いは、引数が一時的な設定に適しているのに対し、環境変数はより永続的な設定に使われる点です。
+## 深掘り
 
-## See Also (関連リンク)
-- Go言語ドキュメントの`os`パッケージ: https://pkg.go.dev/os
-- `flag`パッケージについてのGo言語ドキュメント: https://pkg.go.dev/flag
-- コマンドライン引数についてより深く学ぶためのチュートリアル: https://gobyexample.com/command-line-arguments
-- 環境変数を使ったプログラミングの例: https://gobyexample.com/environment-variables
+歴史的に、コマンドライン引数へのアクセスはCプログラミングと同じくらい古くからの実践であり、`argc`および`argv[]`は同様の目的を果たします。Goでは、`os.Args`はそれを単純だが意図的に基本的なものにしています。フラグやオプションの処理など、より複雑なシナリオに対しては、強力な解析機能を提供する`flag`パッケージをGoが提供しています。これは、アプリケーションが位置引数以上のものを必要とする場合の「より良い」代替手段と見なすことができます。
+
+コマンドライン引数を連想配列やオブジェクトに組み込み解析するスクリプト言語とは異なり、Goのアプローチでは、基本的なニーズには`os.Args`を手動で解析するか、より高度なシナリオのために`flag`パッケージを活用することが求められます。この設計は、コア言語をシンプルに保ちつつ、一般的なタスクのための強力な標準ライブラリを提供するGoの哲学を反映しています。組み込み解析に慣れている人にとってはわずかな学習曲線を導入するかもしれませんが、より大きな柔軟性を提供し、コマンドライン引数の処理の深い理解を促進します。

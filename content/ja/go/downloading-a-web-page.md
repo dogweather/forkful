@@ -1,79 +1,73 @@
 ---
 title:                "ウェブページのダウンロード"
-date:                  2024-01-20T17:44:36.403924-07:00
-model:                 gpt-4-1106-preview
+date:                  2024-02-03T17:56:20.064818-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "ウェブページのダウンロード"
-
 tag:                  "HTML and the Web"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/go/downloading-a-web-page.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (何となぜ？)
-Webページをダウンロードするって？ 簡単に言うと、インターネットからコンテンツを取得することだ。なぜプログラマーはこれをするの？ データ分析、ウェブクローリング、バックアップ作成など、色々な理由がある。
+## 何となぜ？
 
-## How to: (方法)
-```Go
+ウェブページをダウンロードするとは、HTTP/HTTPSプロトコルを介してウェブページのHTMLコンテンツを取得することです。プログラマーは、ウェブスクレイピング、データ分析、または単純にプログラム的にウェブサイトと対話してタスクを自動化するために、しばしばこれを行います。
+
+## 方法：
+
+Goでは、標準ライブラリがウェブリクエストのための強力なツールを提供しており、特に`net/http`パッケージが注目されます。ウェブページをダウンロードするためには、主に`http.Get`メソッドを使用します。以下は基本的な例です：
+
+```go
 package main
 
 import (
-	"fmt"
-	"io/ioutil"
-	"net/http"
+    "fmt"
+    "io/ioutil"
+    "net/http"
 )
 
 func main() {
-	url := "http://example.com"
-	resp, err := http.Get(url)
-	if err != nil {
-		fmt.Println("Error:", err)
-		return
-	}
-	defer resp.Body.Close()
+    url := "http://example.com"
+    response, err := http.Get(url)
+    if err != nil {
+        fmt.Println("Error:", err)
+        return
+    }
+    defer response.Body.Close()
 
-	body, err := ioutil.ReadAll(resp.Body)
-	if err != nil {
-		fmt.Println("Error:", err)
-		return
-	}
-	fmt.Println(string(body))
+    body, err := ioutil.ReadAll(response.Body)
+    if err != nil {
+        fmt.Println("Error reading body:", err)
+        return
+    }
+
+    fmt.Println(string(body))
 }
 ```
 
-実行結果のサンプル:
+サンプル出力は、基本的な例のウェブページである`http://example.com`のHTMLコンテンツとなる可能性があります：
+
 ```
 <!doctype html>
 <html>
 <head>
     <title>Example Domain</title>
-    ...
-</head>
-<body>
-    ...
-</body>
+...
 </html>
 ```
 
-これで`http://example.com`のHTMLがコンソールに表示される。
+このシンプルなプログラムは、指定されたURLにHTTP GETリクエストを行い、レスポンスのボディを読んで出力します。
 
-## Deep Dive (深掘り)
-**歴史的背景**: ウェブは元々テキストとハイパーリンクを共有するために作られた。だが今のインターネットはデータの宝庫であり、プログラムで自動的にデータを収集する方法が必要とされた。それがウェブページのダウンロードだ。
+注：現代のGoプログラミングでは、`ioutil.ReadAll`はGo 1.16から`io.ReadAll`を好むため非推奨とされています。
 
-**代替手段**: `http.Get`は最もシンプルだが、他にも方法はある。例えば、`http.Client`を使うとタイムアウトを設定したり、リクエストヘッダをカスタマイズしたりできる。
+## 深く掘り下げる
 
-```Go
-client := &http.Client{Timeout: time.Second * 10}
-req, _ := http.NewRequest("GET", url, nil)
-req.Header.Add("User-Agent", "MyCustomUserAgent")
-resp, _ := client.Do(req)
-...
-```
+Go言語には、シンプルさ、効率性、信頼性の高いエラー処理を強調する設計哲学があります。ネットワークプログラミング、特にウェブページのダウンロードに関して言えば、Goの標準ライブラリ、特に`net/http`は、HTTPリクエストとレスポンス操作を効率的に処理するように設計されています。
 
-**実装の詳細**: `http.Get`や`http.Client`は内部でTCP接続を開いてHTTPプロトコルに従いサーバーと通信している。Goの標準ライブラリはこれらの処理をカプセル化してくれており、開発者は簡単にデータを扱える。
+Goでのネットワークリクエストのアプローチは、言語の起源にさかのぼりますが、先行言語からの概念を借用しつつ、効率性とシンプルさを大幅に向上させています。コンテンツのダウンロードにおいて、Goの並行性モデルであるゴルーチンを使用することで、何千ものリクエストを並行して簡単に処理する非常に強力なツールとなります。
 
-## See Also (関連情報)
-- [Goのhttpパッケージドキュメント](https://pkg.go.dev/net/http)
-- [Go言語によるウェブプログラミング](https://golang.org/doc/articles/wiki/)
-- [HTTPクライアントの使い方](https://gobyexample.com/http-clients)
+歴史的に、プログラマーは他の言語での単純なHTTPリクエストのためにサードパーティのライブラリに大きく依存していましたが、Goの標準ライブラリは最も一般的なユースケースのためにこの必要性を効果的に排除します。ウェブスクレイピングのための`Colly`のように、複雑なシナリオのための代替品やより包括的なパッケージが利用可能である一方で、ウェブページをダウンロードするためにはネイティブの`net/http`パッケージがしばしば十分であり、組み込まれた、飾り気のない解決法を探している開発者にとって魅力的な選択肢となっています。
+
+他の言語と比較して、Goはネットワーク操作を行うための顕著に直接的でパフォーマンスの高い方法を提供し、より少ないものでより多くを行うという言語の哲学を強調しています。専門的なタスクのためにより良い代替品が利用可能であっても、Goの組み込み機能は使いやすさとパフォーマンスのバランスをとっており、ウェブコンテンツをダウンロードするための魅力的なオプションとなっています。

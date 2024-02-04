@@ -1,20 +1,25 @@
 ---
-title:                "Konwersja daty na łańcuch znaków"
-date:                  2024-01-20T17:37:13.971326-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Konwersja daty na łańcuch znaków"
-
+title:                "Konwersja daty na ciąg znaków"
+date:                  2024-02-03T17:54:33.501451-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Konwersja daty na ciąg znaków"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/go/converting-a-date-into-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Co i dlaczego?
-Konwersja daty do stringa to proces zamiany obiektu reprezentującego datę na tekst. Programiści robią to, by ułatwić wyświetlanie i zapisywanie dat w zrozumiałej formie dla użytkownika i innych systemów.
+
+Konwersja daty na ciąg znaków w Go polega na przekształceniu obiektu `time.Time` na czytelny format ciągu znaków. Programiści często wykonują tę operację, aby wyświetlać daty w przyjazny dla użytkownika sposób lub serializować daty do przechowywania i transmisji w spójnym formacie.
 
 ## Jak to zrobić:
-Go używa pakietu `time` do obsługi dat i czasu. Oto prosty sposób na konwersję daty na string:
+
+W Go pakiet `time` zapewnia funkcjonalności do pracy z datami i czasem, w tym formatowanie obiektu `time.Time` na ciąg znaków. Metoda `Format` typu `time.Time` jest używana do tego celu, gdzie określasz ciąg znaków układu zgodnie z czasem referencyjnym "Mon Jan 2 15:04:05 MST 2006".
+
+### Przykład:
 
 ```go
 package main
@@ -25,22 +30,33 @@ import (
 )
 
 func main() {
-	now := time.Now()
-	fmt.Println("Data w formacie RFC3339:", now.Format(time.RFC3339))
-	fmt.Println("Data w polskim formacie:", now.Format("02-01-2006 15:04:05"))
+	currentTime := time.Now() // pobiera aktualną datę i czas
+	fmt.Println("Aktualny Czas:", currentTime)
+
+	// Formatuje aktualny czas w formacie dd-mm-yyyy
+	formattedDate := currentTime.Format("02-01-2006")
+	fmt.Println("Sformatowana Data:", formattedDate)
+
+	// Formatuje aktualny czas bardziej szczegółowo
+	detailedFormat := currentTime.Format("Mon, 02 Jan 2006 15:04:05 MST")
+	fmt.Println("Szczegółowo Sformatowana Data:", detailedFormat)
 }
 ```
 
-Przykładowe wyjście:
+#### Przykładowe wyniki:
+
 ```
-Data w formacie RFC3339: 2023-03-17T14:57:36+01:00
-Data w polskim formacie: 17-03-2023 14:57:36
+Aktualny Czas: 2023-04-12 11:45:20.312457 +0000 UTC
+Sformatowana Data: 12-04-2023
+Szczegółowo Sformatowana Data: Śro, 12 Kwi 2023 11:45:20 UTC
 ```
 
-## Deep Dive
-Konwersja daty do stringa w Go ma korzenie w pakiecie time, wprowadzonym w pierwszej wersji Go. Pakiet time pozwala na wiele formatów, włącznie z predefiniowanymi jak `time.RFC3339`, lub własnymi, dzięki metodzie `Format`. Alternatywą dla `time.Format` może być np. `time.String`, ale zwraca on mniej elastyczne reprezentacje. Implementacje konwersji mogą różnić się zależnie od użytych bibliotek; jednak `time` oferuje jednolity i sprawdzony interfejs.
+Wyniki będą się różnić w zależności od aktualnej daty i czasu podczas uruchamiania programu.
 
-## Zobacz także
-- Dokumentacja pakietu `time`: [golang.org/pkg/time/](https://golang.org/pkg/time/)
-- Go by Example: Time Formatting/Parsing: [gobyexample.com/time-formatting-parsing](https://gobyexample.com/time-formatting-parsing)
-- Pakiet `time` na Go Playground: [play.golang.org/](https://play.golang.org/) (wystarczy wyszukać przykłady związane z czasem)
+## Szczegółowa analiza:
+
+W kontekście Go manipulacja datą i czasem, w tym formatowanie, jest przede wszystkim obsługiwana przez pakiet `time`. Metoda formatowania dat w Go, określana przez metodę `Format` za pomocą określonego ciągu znaków układu, jest unikalna w porównaniu do wielu innych języków programowania, które mogą używać prostych specyfikatorów formatu, takich jak `%Y` dla czterocyfrowego roku. Metoda Go wymaga od programistów zapamiętania konkretnego czasu referencyjnego: Mon Jan 2 15:04:05 MST 2006, ponieważ służy on jako wzorzec do formatowania lub analizowania dat.
+
+Ta metoda, chociaż początkowo nieintuicyjna dla programistów znających funkcje formatowania podobne do strftime, została zaprojektowana dla jasności i aby uniknąć zamieszania związanego z formatami zależnymi od ustawień regionalnych. Po przyzwyczajeniu się do niej, wielu programistów uważa, że podejście to zmniejsza błędy i poprawia czytelność kodu.
+
+Co więcej, podejście biblioteki standardowej Go oznacza, że dla większości typowych przypadków użycia niepotrzebne są biblioteki zewnętrzne. Upraszcza to zarządzanie zależnościami i zapewnia spójne zachowanie w różnych projektach. Jednak przy pracy z bardziej złożonymi konwersjami stref czasowych lub obliczeniami powtarzających się dat, programiści mogą potrzebować zapoznać się z dodatkowymi pakietami, takimi jak `github.com/rickar/cal` dla obliczeń świąt czy `github.com/golang/time` dla bardziej niuansowanej manipulacji czasem, wykraczającej poza to, co oferuje standardowy pakiet `time`.

@@ -1,53 +1,86 @@
 ---
 title:                "Drukowanie komunikatów debugowania"
-date:                  2024-01-20T17:52:38.605262-07:00
-model:                 gpt-4-1106-preview
+date:                  2024-02-03T18:05:27.073231-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Drukowanie komunikatów debugowania"
-
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/go/printing-debug-output.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
-Drukowanie informacji diagnostycznych (debug output) to wyświetlanie danych pomocnych przy łapaniu błędów i zrozumieniu, co się dzieje w programie. Robimy to, by szybko znaleźć źródło problemu i naprawić kod bez strzelania w ciemno.
+## Co i dlaczego?
+
+W programowaniu komputerowym "Drukowanie wyjścia debugowania" polega na produkowaniu szczegółowych komunikatów informacyjnych, które pomagają programistom zrozumieć przepływ wykonania ich programu lub zlokalizować problemy. Programiści robią to, aby diagnozować i rozwiązywać problemy bardziej efektywnie, co czyni to niezbędną umiejętnością w każdym zestawie narzędzi programistycznych, w tym w Go.
 
 ## Jak to zrobić:
-```Go
+
+W Go możesz użyć standardowego pakietu `fmt` do drukowania wyjścia debugowania na konsolę. Pakiet `fmt` oferuje różnorodne funkcje, takie jak `Println`, `Printf` i `Print`, które odpowiadają różnym potrzebom formatowania.
+
+```go
 package main
 
 import (
 	"fmt"
-	"log"
 )
 
 func main() {
-	// Proste wyświetlanie komunikatu
-	fmt.Println("Hello, debug!")
+	// Prosta wiadomość
+	fmt.Println("Debugowanie: Wejście do funkcji main")
 
-	// Formatowanie stringów
-	name := "Go Programmer"
-	fmt.Printf("Good to see you, %s!\n", name)
+	var name = "Gopher"
+	// Sformatowana wiadomość
+	fmt.Printf("Witaj, %s! To jest wiadomość debugowania.\n", name)
 
-	// Użycie standardowego loggera do debugowania
-	debug := false
-	if debug {
-		log.Printf("Debug info: Memory address of 'name' variable: %p", &name)
-	}
+	// Używanie fmt.Print
+	debugMsg := "To jest kolejna wiadomość debugowania."
+	fmt.Print("Debugowanie: ", debugMsg, "\n")
 }
 ```
 
-Wynik:
+Przykładowe wyjście:
 ```
-Hello, debug!
-Good to see you, Go Programmer!
+Debugowanie: Wejście do funkcji main
+Witaj, Gopher! To jest wiadomość debugowania.
+Debugowanie: To jest kolejna wiadomość debugowania.
 ```
 
-## Pogłębione informacje:
-Kiedyś, przed logerami i zintegrowanymi środowiskami programistycznymi (IDE), debugowanie było dużo trudniejsze – często bazowało na prostym wydruku na ekran lub do pliku. W Go, poza standardowym pakietem `fmt`, warto znać pakiet `log`, który oferuje więcej możliwości, jak logowanie z poziomem ważności czy zapis do pliku. Implementacja logera w Go zapewnia też mechanizmy do uniknięcia wypisywania debugu na produkcji dzięki flagom i poziomom logowania.
+Dla bardziej zaawansowanego debugowania, pakiet `log` w Go może być wykorzystany do dołączania znaczników czasu oraz wyprowadzania na różne miejsca docelowe, nie tylko na konsolę.
 
-## Zobacz także:
-- Dokumentacja fmt: https://pkg.go.dev/fmt
-- Dokumentacja log: https://pkg.go.dev/log
-- Artykuł o efektywnym debugowaniu w Go: https://blog.golang.org/debugging-what-you-deploy
+```go
+package main
+
+import (
+	"log"
+	"os"
+)
+
+func main() {
+	// Tworzenie pliku dziennika
+	file, err := os.OpenFile("debug.log", os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0666)
+	if err != nil {
+		log.Fatal("Błąd przy tworzeniu pliku logów:", err)
+	}
+	defer file.Close()
+
+	// Ustawianie wyjścia dzienników do pliku
+	log.SetOutput(file)
+
+	log.Println("To jest wiadomość debugowania z znacznikiem czasu.")
+}
+```
+
+Wiadomość w `debug.log` będzie wyglądać mniej więcej tak:
+```
+2023/04/01 15:00:00 To jest wiadomość debugowania z znacznikiem czasu.
+```
+
+## Więcej informacji
+
+Drukowanie wyjścia debugowania to długoletnia praktyka w programowaniu komputerowym, przy czym implementacja różni się w zależności od języka. W Go, standardowe biblioteki `fmt` i `log` zapewniają proste i wszechstronne opcje. Choć pakiet `fmt` wystarcza dla podstawowych potrzeb debugowania, pakiet `log` oferuje zaawansowaną funkcjonalność, taką jak poziomy dziennikowania i konfigurowalne miejsca docelowe wyprowadzania.
+
+Ponadto, w miarę komplikowania się aplikacji, frameworki do logowania takie jak `zap` i `logrus` mogą oferować bardziej zaawansowane funkcje, takie jak strukturalne logowanie i lepszą wydajność. Te pakiety innych firm dają deweloperom elastyczność w dostosowywaniu swojej strategii logowania do ich konkretnych potrzeb.
+
+Jednakże, kluczowe jest znalezienie właściwej równowagi w logowaniu. Nadmierna ilość wyjścia debugowania może zaśmiecić logi i utrudnić znalezienie przydatnych informacji. Deweloperzy powinni rozważyć używanie różnych poziomów logów (np. debug, info, warn, error), aby kategoryzować znaczenie wiadomości, co ułatwia nawigację po logach i czyni je bardziej znaczącymi.

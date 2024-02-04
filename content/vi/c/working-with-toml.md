@@ -1,74 +1,86 @@
 ---
 title:                "Làm việc với TOML"
-date:                  2024-01-28T22:11:40.953515-07:00
+date:                  2024-02-03T18:12:45.320918-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Làm việc với TOML"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/c/working-with-toml.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Gì và Tại sao?
-TOML là một ngôn ngữ tuần tự hóa dữ liệu được thiết kế để dễ đọc và viết. Các lập trình viên sử dụng nó cho các tệp cấu hình, lưu trữ dữ liệu đơn giản và trao đổi dữ liệu giữa các ngôn ngữ do sự rõ ràng và thân thiện với con người.
+## Cái gì & Tại sao?
+
+TOML (Tom's Obvious, Minimal Language) là một định dạng file cấu hình dễ đọc do ngữ nghĩa rõ ràng của nó. Các lập trình viên sử dụng nó cho các file cấu hình trong ứng dụng bởi vì sự đơn giản và dễ đọc của nó làm cho nó trở thành lựa chọn xuất sắc hơn so với các định dạng như XML hoặc JSON trong một số bối cảnh.
 
 ## Làm thế nào:
-Hãy phân tích một tệp cấu hình TOML trong C sử dụng thư viện "tomlc99". Đầu tiên, cài đặt thư viện. Sau đó, tạo một `config.toml`:
 
+Để làm việc với TOML trong C, bạn đầu tiên cần một thư viện có khả năng phân tích cú pháp các file TOML, vì thư viện chuẩn C không bao gồm chức năng này. Một lựa chọn phổ biến là `tomlc99`, một bộ phân tích cú pháp TOML nhẹ cho C99. Dưới đây là hướng dẫn nhanh để đọc một file cấu hình TOML đơn giản:
+
+Đầu tiên, đảm bảo bạn đã cài đặt và liên kết đúng cách `tomlc99` trong dự án của mình.
+
+**File TOML mẫu (`config.toml`):**
 ```toml
-title = "Ví dụ TOML"
-
-[owner]
-name = "Tom Preston-Werner"
-dob = 1979-05-27T07:32:00Z
+[database]
+server = "192.168.1.1"
+ports = [ 8001, 8001, 8002 ]
+connection_max = 5000
+enabled = true
 ```
 
-Bây giờ, phân tích nó trong C:
+**Mã C để phân tích file này:**
 
 ```c
 #include <stdio.h>
+#include <stdlib.h>
 #include "toml.h"
 
 int main() {
-    FILE* fp;
-    char errbuf[200];
-
-    if (0 == (fp = fopen("config.toml", "r"))) {
-        printf("Lỗi: không thể mở tệp cấu hình\n");
-        return 1;
-    }
-    
-    toml_table_t* conf = toml_parse_file(fp, errbuf, sizeof(errbuf));
-    fclose(fp);
-    if (0 == conf) {
-        printf("Lỗi: %s\n", errbuf);
-        return 1;
+    FILE *configFile;
+    configFile = fopen("config.toml", "r");
+    if (!configFile) {
+        perror("Cannot open file");
+        return EXIT_FAILURE;
     }
 
-    printf("Tiêu đề: %s\n", toml_raw_in(conf, "title"));
+    toml_table_t *config = toml_parse_file(configFile, NULL, 0);
+    if (!config) {
+        fprintf(stderr, "Error parsing file\n");
+        fclose(configFile);
+        return EXIT_FAILURE;
+    }
 
-    toml_table_t* owner = toml_table_in(conf, "owner");
-    printf("Tên Chủ sở hữu: %s\n", toml_raw_in(owner, "name"));
+    toml_table_t *database = toml_table_in(config, "database");
+    if (database) {
+        const char *server = toml_raw_in(database, "server");
+        printf("Máy chủ cơ sở dữ liệu: %s\n", server);
 
-    toml_free(conf);
-    return 0;
+        toml_array_t *ports = toml_array_in(database, "ports");
+        for (int i = 0; i < toml_array_nelem(ports); i++) {
+            int64_t port;
+            toml_int_at(ports, i, &port);
+            printf("Cổng %d: %ld\n", i, port);
+        }
+    }
+
+    toml_free(config);
+    fclose(configFile);
+    return EXIT_SUCCESS;
 }
 ```
-Kết quả mẫu:
+
+**Kết quả:**
 ```
-Tiêu đề: "Ví dụ TOML"
-Tên Chủ sở hữu: "Tom Preston-Werner"
+Máy chủ cơ sở dữ liệu: "192.168.1.1"
+Cổng 0: 8001
+Cổng 1: 8001
+Cổng 2: 8002
 ```
 
-## Đi sâu hơn
-TOML, viết tắt của Tom's Obvious, Minimal Language, được tạo ra bởi Tom Preston-Werner vào năm 2013. Nó phục vụ như một phương án đơn giản hơn so với các định dạng như XML và YAML, tập trung vào việc trở nên dễ đọc và viết hơn cho con người. Mặc dù JSON là một phương án thay thế khác, TOML giữ một cấu trúc dễ dàng phân tích một cách trực quan bởi con người, đó là một trong những lí do chính cho sự chấp nhận của nó trong các tệp cấu hình.
+## Tìm hiểu sâu
 
-Trong C, làm việc với TOML đòi hỏi phải chọn một thư viện phân tích cú pháp do ngôn ngữ không hỗ trợ nó một cách tự nhiên. Các thư viện như "tomlc99" tuân thủ C99 và cung cấp một API để giải mã văn bản TOML. Khi xem xét về hiệu suất, việc xử lý lỗi đúng cách và quản lý bộ nhớ là quan trọng vì C không có tính năng thu gom rác tự động.
+TOML được tạo ra bởi Tom Preston-Werner, đồng sáng lập GitHub, như một phản hồi đối với các hạn chế mà ông nhận thấy trong các định dạng file cấu hình khác. Mục tiêu của nó là sự rõ ràng và không mơ hồ, cả đối với con người và máy tính, để đọc và viết mà không cần các quy tắc phức tạp trong việc phân tích cú pháp. Trong hệ sinh thái C, TOML không phải là một công dân hạng nhất như nó có thể là trong các ngôn ngữ cấp cao hơn như Rust với `serde_toml` của nó hay Python với `toml`, mà có các thư viện với hỗ trợ bản địa. Thay vào đó, các nhà phát triển C cần phải dựa vào các thư viện bên ngoài như `tomlc99`, nhưng điều này là điển hình với sự nhấn mạnh vào sự tối giản và hiệu suất của C.
 
-## Xem thêm:
-1. TOML Spec: [https://toml.io/en/](https://toml.io/en/)
-2. tomlc99 GitHub repo: [https://github.com/cktan/tomlc99](https://github.com/cktan/tomlc99)
-3. So sánh Các Định dạng Tuần tự hóa Dữ liệu: [https://labs.eleks.com/2015/07/comparison-of-data-serialization-formats.html](https://labs.eleks.com/2015/07/comparison-of-data-serialization-formats.html)
+Mặc dù TOML được ca ngợi vì sự rõ ràng của nó, khi chọn một định dạng file cấu hình, điều quan trọng là phải xem xét nhu cầu của dự án. Trong các kịch bản yêu cầu cấu trúc phức tạp hơn hoặc tương tác với các API web, JSON hoặc thậm chí YAML có thể cung cấp sự phù hợp tốt hơn bất chấp sự phức tạp tăng lên của chúng. TOML tỏa sáng trong các cấu hình nơi sự dễ đọc và đơn giản là quan trọng nhất, không nhất thiết là nơi cần những cấu trúc dữ liệu tiên tiến nhất.

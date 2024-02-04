@@ -1,26 +1,25 @@
 ---
-title:                "Nội suy chuỗi ký tự"
-date:                  2024-01-28T22:02:20.990610-07:00
+title:                "Nội suy một chuỗi ký tự"
+date:                  2024-02-03T17:58:49.660019-07:00
 model:                 gpt-4-0125-preview
-simple_title:         "Nội suy chuỗi ký tự"
-
+simple_title:         "Nội suy một chuỗi ký tự"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/go/interpolating-a-string.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Cái Gì & Tại Sao?
+## Gì & Tại sao?
 
-Nội suy chuỗi cho phép bạn nhúng biến vào trong chuỗi. Nó rất tiện lợi cho việc tạo thông báo, định dạng dữ liệu và xây dựng truy vấn SQL mà không cần nhiều dấu cộng và dấu ngoặc kép.
+Nội suy chuỗi là một phương pháp để xây dựng chuỗi có chứa biến, cho phép tạo chuỗi động. Lập trình viên làm điều này để tùy chỉnh thông điệp, xây dựng URL, tạo truy vấn SQL, và nhiều hơn nữa, giúp mã dễ đọc và bảo trì hơn.
 
-## Cách thực hiện:
+## Làm thế nào:
 
-Trong Go, bạn sử dụng gói `fmt` để nội suy chuỗi.
+Trong Go, nội suy chuỗi thường được thực hiện bằng cách sử dụng gói `fmt`, đặc biệt là với hàm `Sprintf`, cho phép bạn chèn biến vào chuỗi bằng cách chỉ rõ các động từ định dạng. Các động từ là các trình giữ chỗ trong chuỗi định dạng và được thay thế bằng giá trị của các biến đã cho. Đây là cách bạn sử dụng nó:
 
-```Go
+```go
 package main
 
 import (
@@ -28,27 +27,33 @@ import (
 )
 
 func main() {
-    name := "Morgan"
+    name := "Jane"
     age := 28
-    message := fmt.Sprintf("Xin chào, tên tôi là %s và tôi %d tuổi.", name, age)
-    fmt.Println(message)
-}
 
-// Kết quả: Xin chào, tên tôi là Morgan và tôi 28 tuổi.
+    // Sử dụng Sprintf cho nội suy chuỗi
+    message := fmt.Sprintf("Xin chào, tên tôi là %s và tôi %d tuổi.", name, age)
+    fmt.Println(message) // Đầu ra: Xin chào, tên tôi là Jane và tôi 28 tuổi.
+}
 ```
 
-Sử dụng `%s` cho chuỗi, `%d` cho số nguyên, `%f` cho số thực. Có nhiều đại từ chỉ định khác cho các kiểu dữ liệu khác.
+Lưu ý rằng `%s` được sử dụng cho chuỗi, và `%d` cho số nguyên. Tài liệu của gói `fmt` cung cấp một danh sách toàn diện về các động từ định dạng cho các loại dữ liệu khác nhau.
 
-## Sâu hơn:
+## Sâu hơn
 
-Nội suy chuỗi đã là tính năng cơ bản trong nhiều ngôn ngữ - Python, Ruby, và hơn thế nữa. Trong Go, nó không phải là một phần của ngôn ngữ per se nhưng được cung cấp qua gói `fmt`. Cách tiếp cận này cho bạn kiểm soát và an toàn hơn, đặc biệt là với các đại từ chỉ định cụ thể theo kiểu.
+Khái niệm về nội suy chuỗi tồn tại trong nhiều ngôn ngữ lập trình, mặc dù với các cú pháp và khả năng khác nhau. Trong Go, mặc dù hàm `Sprintf` của gói `fmt` là phương pháp thường được sử dụng nhất, nó có thể không phải là phương pháp hiệu quả nhất, đặc biệt là đối với các nối chuỗi đơn giản hoặc khi làm việc trong mã với yêu cầu hiệu suất cao.
 
-Có phương án thay thế? Có - ngoài `fmt.Sprintf`, còn có `fmt.Fprintf` để viết vào bất kỳ writer nào, và `fmt.Printf` để in trực tiếp. Trước những ngày của Go 1.10, mọi người đã thấy kết nối chuỗi với `+` hoặc sử dụng `bytes.Buffer`. Những phương pháp này vẫn còn hợp lệ nhưng kém tiện lợi hơn.
+Gói `fmt` sử dụng phản xạ để động giải thích các loại của biến tại thời gian chạy, có tính linh hoạt nhưng gây ra tải. Trong các tình huống mà hiệu suất là quan trọng, nối chuỗi trực tiếp hoặc kiểu `strings.Builder` có thể cung cấp các lựa chọn tốt hơn. Nối chuỗi trực tiếp thì đơn giản nhưng có thể trở nên khó quản lý với nhiều biến. `strings.Builder`, mặt khác, cung cấp một cách hiệu suất cao và dễ đọc hơn để xây dựng chuỗi phức tạp trong một vòng lặp hoặc khi xử lý nhiều biến:
 
-Chi tiết triển khai? Gói `fmt` sử dụng phản xạ để xử lý định dạng dựa trên các đại từ chỉ định và kiểu của biến. Nó hiệu quả nhưng nhớ rằng sử dụng sai đại từ chỉ định cho một kiểu có thể dẫn đến lỗi thời gian chạy.
+```go
+var sb strings.Builder
+sb.WriteString("Xin chào, tên tôi là ")
+sb.WriteString(name)
+sb.WriteString(" và tôi ")
+sb.WriteString(strconv.Itoa(age))
+sb.WriteString(" tuổi.")
+message := sb.String()
 
-## Xem thêm:
+fmt.Println(message) // Đầu ra giống như trước
+```
 
-- Tài liệu gói `fmt` của Go: https://pkg.go.dev/fmt
-- Cách tiếp cận của Go by Example về định dạng chuỗi: https://gobyexample.com/string-formatting
-- Một bài đăng trên blog về các chiến lược nối chuỗi trong Go: https://blog.golang.org/strings
+Cuối cùng, sự lựa chọn giữa `fmt.Sprintf`, nối chuỗi trực tiếp, và `strings.Builder` phụ thuộc vào các yêu cầu cụ thể của ứng dụng của bạn, như độ phức tạp của chuỗi được xây dựng và các xem xét về hiệu suất.

@@ -1,55 +1,85 @@
 ---
-title:                "Hantering av fel"
-date:                  2024-01-26T00:49:28.480737-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Hantering av fel"
-
+title:                "Hantera fel"
+date:                  2024-02-03T17:58:14.552011-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Hantera fel"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/c/handling-errors.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att hantera fel i C handlar om att förvänta sig det oväntade. Det förhindrar program från att spåra ur när de stöter på problem. Programmerare gör detta för att hantera misstag på ett smidigt sätt och för att hålla sin kod tillförlitlig.
+
+Att hantera fel i C innebär att upptäcka och bemöta onormala förhållanden som uppstår under programkörning. Programmerare gör detta för att förhindra buggar, krascher och oförutsägbart beteende, vilket säkerställer att programvaran fungerar pålitligt och effektivt under olika scenarier.
 
 ## Hur man gör:
 
-Låt oss se hur man gör detta i C:
+C har inte inbyggt stöd för undantag som vissa andra språk har. Istället förlitar det sig på några konventionella strategier för felhantering, såsom att returnera speciella värden från funktioner och att ställa in globala variabler som `errno`.
 
-```C
+**Returnera Speciella Värden**
+
+Funktioner kan indikera fel genom att returnera ett specifikt värde som är osannolikt att vara ett giltigt resultat. Här är ett exempel med heltal:
+
+```c
 #include <stdio.h>
-#include <stdlib.h>
-#include <errno.h>
+
+int inverse(int number, double *result) {
+    if (number == 0) {
+        return -1; // Felaktigt fall
+    } else {
+        *result = 1.0 / number;
+        return 0; // Framgång
+    }
+}
 
 int main() {
-    FILE *fp = fopen("obefintligfil.txt", "r");
-    if (fp == NULL) {
-        perror("Fel vid öppning av fil");
-        return EXIT_FAILURE;
+    double result;
+    if (inverse(0, &result) < 0) {
+        printf("Fel: Division med noll.\n");
+    } else {
+        printf("Inversen är: %f\n", result);
     }
-    // Gör något med filen
-    fclose(fp);
-    return EXIT_SUCCESS;
+    
+    return 0;
 }
 ```
 
-Exempelutdata när filen inte finns:
+**Utskrift:**
 ```
-Fel vid öppning av fil: Ingen sådan fil eller katalog
+Fel: Division med noll.
 ```
 
-## Fördjupning
+**Kontrollera `errno`**
 
-I C:s tidiga dagar var felsökningen grundläggande - mestadels returkoder och manuella kontroller. Entré `errno`, en global variabel som uppdateras när funktioner misslyckas. Den är dock inte trådsäker i sig själv, så de nyare funktionerna `strerror` och `perror` introducerades för bättre felrapportering.
+För biblioteksfunktioner, särskilt de som interagerar med systemet eller operativsystemet (som fil-I/O), ställs `errno` in när ett fel uppstår. För att använda det, inkludera `errno.h` och kontrollera `errno` efter en misstänkt misslyckande:
 
-Alternativ? Modern C är inte begränsad till `errno`. Det finns `setjmp` och `longjmp` för icke-lokala hopp när katastrofen är framme. En del föredrar att definiera sina egna felfunktioner, medan andra optar för exception-liknande strukturer i C++.
+```c
+#include <stdio.h>
+#include <errno.h>
+#include <string.h>
 
-Implementeringsdetaljerna kan vara komplicerade. Till exempel är `errno` trådsäkert i POSIX-kompatibla system tack vare magin med Thread Local Storage (TLS). I inbyggda system, där resurserna är dyrbart, kan personlig felsökningskod föredras över standardmetoder som kan svälla mjukvaran.
+int main() {
+    FILE *file = fopen("nonexistent.txt", "r");
+    if (file == NULL) {
+        printf("Fel vid filöppning: %s\n", strerror(errno));
+    }
+    
+    return 0;
+}
+```
 
-## Se även
+**Utskrift:**
+```
+Fel vid filöppning: Filen eller katalogen finns inte
+```
 
-- En detaljerad dykning i `errno`: https://en.cppreference.com/w/c/error/errno
-- För trådsäkerhet, se POSIX-trådar och errno: http://man7.org/linux/man-pages/man3/pthread_self.3.html
-- En introduktion till setjmp och longjmp: https://www.cplusplus.com/reference/csetjmp/
-- För exception-hantering i C++, se: https://isocpp.org/wiki/faq/exceptions
+## Djupdykning
+
+Historiskt sett har C-programmeringsspråkets minimalistiska design uteslutit en inbyggd mekanism för undantagshantering, vilket återspeglar dess ursprung i lågnivå, systemprogrammering där maximal prestanda och kontroll nära maskinvaran är kritiska. Istället antar C en mer manuell approach till felhantering som passar dess filosofi att ge programmerare så mycket kontroll som möjligt, även på bekostnad av bekvämlighet.
+
+Även om denna metod ligger väl i linje med C:s designmål, kan den också leda till utförlig kod för felkontroll och potentialen för missade felkontroller, vilket moderna språk adresserar med strukturerade undantagshanteringsmekanismer. Till exempel tillåter undantag i språk som Java eller C# centraliserad felbehandling, vilket gör koden renare och felhanteringen mer rakt på sak. Dock introducerar undantag egna överhuvuden och komplexitet, vilket kanske inte är idealiskt för systemnivåprogrammering där C utmärker sig.
+
+Trots dess grovhet har denna manuella felhantering i C informerat designen av felhantering i många andra språk, vilket erbjuder en modell där explicita felförhållanden kan leda till mer förutsägbar och felsökbar kod. För kritiska system, där fel måste hanteras nådigt, säkerställer C:s felhanteringsparadigm - kombinerat med moderna bästa praxis som felhanteringsbibliotek och konventioner - robusthet och tillförlitlighet.

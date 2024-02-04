@@ -1,73 +1,99 @@
 ---
 title:                "연관 배열 사용하기"
-date:                  2024-01-30T19:13:04.756435-07:00
+date:                  2024-02-03T18:10:52.955909-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "연관 배열 사용하기"
-
 tag:                  "Data Structures"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/c/using-associative-arrays.md"
 changelog:
-  - 2024-01-30, gpt-4-0125-preview, translated from English
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜?
+## 무엇이며 왜?
 
-연관 배열, 또는 해시 맵은 키와 값을 쌍으로 저장하고 키를 사용해 데이터를 검색할 수 있는 방법입니다. 특히 대량의 데이터를 다룰 때 리스트에 비해 데이터 접근 속도가 빠르기 때문에 C언어에서 매우 유용합니다.
+연관 배열은 다른 언어에서는 맵 또는 사전으로 알려져 있는데, 효율적인 데이터 조회 및 조작을 위해 사용되는 키-값 쌍입니다. 정수 인덱스를 사용하는 전통적인 배열과 달리, 연관 배열은 키를 사용하여 데이터 접근을 더 직관적이고 유연하게 만들어 프로그래머에게 이점을 제공합니다.
 
-## 사용 방법:
+## 방법:
 
-C에는 다른 언어처럼 연관 배열에 대한 기본 지원이 없지만, 구조체와 일부 라이브러리 함수를 사용해 비슷한 기능을 구현할 수 있습니다. 여기 `uthash` 라이브러리를 사용한 간단한 구현 방법이 있습니다. 이 라이브러리를 프로젝트에 포함시켜야 합니다.
+C는 고급 언어와 같은 내장 지원이 없기 때문에, 구조체와 해싱을 사용하여 연관 배열을 모방할 수 있습니다. 아래는 구조체와 간단한 해싱 함수의 조합을 사용하여 문자열 키로 정수를 저장하고 접근하기 위한 연관 배열을 구현하는 단순 예시입니다.
 
-먼저, 키-값 쌍을 저장할 구조체를 정의합니다:
+먼저 단일 키-값 쌍을 표현할 구조체와 연관 배열 자체를 표현할 다른 구조체를 정의합니다:
 
-```C
+```c
 #include <stdio.h>
-#include "uthash.h"
+#include <stdlib.h>
+#include <string.h>
+
+#define TABLE_SIZE 128
 
 typedef struct {
-    int id; // 이것이 우리의 키가 됩니다.
-    char name[10]; // 이것은 우리 키와 연결된 값입니다.
-    UT_hash_handle hh; // 이 구조체를 해시 가능하게 만듭니다.
-} person;
-```
+    char* key;
+    int value;
+} KeyValuePair;
 
-다음으로, 몇몇 항목을 추가하고 검색해봅시다:
+typedef struct {
+    KeyValuePair* items[TABLE_SIZE];
+} AssocArray;
 
-```C
-int main() {
-    person *my_people = NULL, *s;
+unsigned int hash(char* key) {
+    unsigned long int value = 0;
+    unsigned int i = 0;
+    unsigned int key_len = strlen(key);
 
-    // 항목 추가
-    s = (person*)malloc(sizeof(person));
-    s->id = 1;
-    strcpy(s->name, "Alice");
-    HASH_ADD_INT(my_people, id, s);
-
-    // 항목 검색
-    int user_id = 1;
-    HASH_FIND_INT(my_people, &user_id, s);
-    if (s) {
-        printf("Found: %s\n", s->name);
+    for (; i < key_len; ++i) {
+        value = value * 37 + key[i];
     }
-    
+
+    value = value % TABLE_SIZE;
+
+    return value;
+}
+
+void initArray(AssocArray* array) {
+    for (int i = 0; i < TABLE_SIZE; ++i) {
+        array->items[i] = NULL;
+    }
+}
+
+void insert(AssocArray* array, char* key, int value) {
+    unsigned int slot = hash(key);
+
+    KeyValuePair* item = (KeyValuePair*)malloc(sizeof(KeyValuePair));
+    item->key = strdup(key);
+    item->value = value;
+
+    array->items[slot] = item;
+}
+
+int find(AssocArray* array, char* key) {
+    unsigned int slot = hash(key);
+
+    if (array->items[slot]) {
+        return array->items[slot]->value;
+    }
+    return -1;
+}
+
+int main() {
+    AssocArray a;
+    initArray(&a);
+
+    insert(&a, "key1", 1);
+    insert(&a, "key2", 2);
+
+    printf("%d\n", find(&a, "key1")); // 출력: 1
+    printf("%d\n", find(&a, "key2")); // 출력: 2
+
     return 0;
 }
 ```
 
-샘플 출력 결과는:
+이 예시는 연관 배열을 초기화하고, 키-값 쌍을 삽입하고, 키로 값들을 찾는 기본적인 작업들을 보여줍니다. 이 코드는 충돌 처리를 다루지 않으며 교육용으로 의도되었다는 점에 주목하세요.
 
-```
-Found: Alice
-```
+## 심층 분석
 
-사용한 메모리를 해제하고, 메모리 누수를 방지하기 위해 작업을 마친 후에는 해시 테이블을 해제하는 것을 잊지 마세요.
+연관 배열의 개념은 C보다 앞서 있었지만, 이 언어의 저수준 특성은 내장된 유형으로 직접 지원하지 않습니다. 이는 데이터 구조와 알고리즘에 대한 더 깊은 이해를 촉진시키며, 키-값 매핑을 효율적으로 하기 위한 해싱 메커니즘을 포함합니다. 많은 C 라이브러리와 프레임워크는 충돌 처리, 동적 크기 조정 및 임의의 키 및 값 유형 지원을 완비한 강력한 구현을 제공하는 `GHashTable`과 같은 연관 배열을 구현하기 위한 더 정교한 접근법을 제공합니다.
 
-## 심도 있는 탐구
-
-연관 배열이 C에 기본적으로 포함되어 있지 않지만, `uthash` 같은 라이브러리는 이 기능을 사용하는 꽤 직관적인 방법을 제공합니다. 역사적으로 C 개발자들은 이러한 데이터 구조를 직접 구현해야 했으며, 언어에 처음 접하는 사람들에게는 다양하고 종종 복잡한 구현이 이루어지곤 했습니다.
-
-연관 배열을 C에서 사용할 때의 효율성은 해시 함수가 값들을 테이블에 충돌을 최소화하며 얼마나 잘 분산시키는지에 크게 의존합니다. `uthash` 같은 라이브러리는 사용의 용이성과 성능 사이에 좋은 균형을 제공하지만, 성능이 중요한 애플리케이션에서는 자체 해시 테이블을 조정하거나 구현할 수도 있습니다.
-
-최대한의 효율성이 필요한 애플리케이션의 경우, 대안적인 데이터 구조나 연관 배열에 대한 기본 지원이 있는 다른 프로그래밍 언어가 더 나은 선택일 수 있습니다. 그러나 많은 상황에서, 특히 이미 C 환경 내에서 작업하고 있는 경우, `uthash`와 같은 라이브러리를 사용하는 것은 성능과 편의성 사이에 실용적인 균형을 제공합니다.
+내장 지원이 있는 언어에 비해 C에서 수동으로 연관 배열을 구성하는 것은 번거로워 보일 수 있지만, 데이터 구조의 내부 작동에 대한 소중한 통찰을 제공하고, 문제 해결과 최적화에서 프로그래머의 기술을 갈고닦게 합니다. 그러나, 생산 코드나 더 복잡한 애플리케이션의 경우, GLib과 같은 기존 라이브러리를 활용하는 것이 종종 더 실용적이고 시간 효율적인 접근 방식입니다.

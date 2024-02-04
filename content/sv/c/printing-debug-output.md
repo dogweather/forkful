@@ -1,45 +1,72 @@
 ---
-title:                "Skriva ut felsökningsdata"
-date:                  2024-01-20T17:52:04.020040-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Skriva ut felsökningsdata"
-
+title:                "Skriva ut felsökningsutdata"
+date:                  2024-02-03T18:05:16.178503-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Skriva ut felsökningsutdata"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/c/printing-debug-output.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att skriva ut felsökningsutdata innebär att visa tillfälliga meddelanden i konsolen för att förstå vad koden gör vid exekvering. Programmerare gör detta för att snabbt identifiera buggar och spåra variabler under utvecklingen.
+
+Att skriva ut felsökningsmeddelanden handlar om att generera tillfälliga, informativa loggmeddelanden som kan hjälpa programmerare att förstå flödet och tillståndet i ett program under dess körning. Programmerare gör detta för att identifiera och diagnostisera mjukvarubuggar eller oväntat beteende i programmets logik.
 
 ## Hur gör man:
-```C
+
+I C är det vanligaste sättet att skriva ut felsökningsmeddelanden att använda funktionen `printf` från standard I/O-biblioteket. Funktionen `printf` tillåter formaterad utskrift till standardutenhetsutmatningen, vanligtvis skärmen. Här är ett enkelt exempel:
+
+```c
 #include <stdio.h>
 
 int main() {
-    int loopCounter = 0;
-    for (int i = 0; i < 5; i++) {
-        loopCounter++;
-        printf("Loop iteration: %d\n", loopCounter);
-        // Debug output to track the value of loopCounter
-    }
+    int x = 5;
+    printf("Debug: Värdet på x är %d\n", x);
+    
+    // Din programlogik här
+    
     return 0;
 }
 ```
-Sample Output:
+
+Exempel på utskrift:
+
 ```
-Loop iteration: 1
-Loop iteration: 2
-Loop iteration: 3
-Loop iteration: 4
-Loop iteration: 5
+Debug: Värdet på x är 5
 ```
 
-## Fördjupning:
-Felsökningsutskrifter har använts sedan de tidigaste dagarna av programmering. Historiskt sett skulle datorer skriva ut resultat på papper. Idag använder vi konsolen eller logger. Alternativ till felsökningsutskrifter inkluderar användning av debuggers som GDB, instrumentering av kod, eller loggning med olika nivåer av detaljer. Viktiga detaljer vid implementering av felsökningsutskrifter innebär att välja relevanta meddelanden och att komma ihåg att ta bort eller dölja dem i produktionskoden.
+För en mer sofistikerad felsökningsutskrift kanske du vill inkludera filnamn- och radnummerinformation. Detta kan göras med hjälp av de fördefinierade makrona `__FILE__` och `__LINE__` så här:
 
-## Se även:
-- GDB Manual: https://sourceware.org/gdb/current/onlinedocs/gdb/
-- Logging in C with syslog: https://www.gnu.org/software/libc/manual/html_node/Syslog.html
-- C Programming Language (2nd Edition) by Brian W. Kernighan and Dennis M. Ritchie: ISBN 0-13-110362-8 (Provides foundational knowledge on C programming, including code tracing and debugging techniques).
+```c
+#define DEBUG_PRINT(fmt, args...) fprintf(stderr, "DEBUG: %s:%d: " fmt, __FILE__, __LINE__, ##args)
+
+int main() {
+    int testValue = 10;
+    DEBUG_PRINT("Testvärdet är %d\n", testValue);
+    
+    // Din programlogik här
+    
+    return 0;
+}
+```
+
+Exempel på utskrift:
+
+```
+DEBUG: example.c:6: Testvärdet är 10
+```
+
+Observera att vi i detta exempel använder `fprintf` för att skriva ut till standardfelströmmen (`stderr`), vilket ofta är mer lämpligt för felsökningsmeddelanden.
+
+## Djupdykning
+
+Historiskt sett har felsökningstekniker i C varit manuella och rudimentära, på grund av språkets närhet-till-maskinen-filosofi och ålder. Medan moderna språk kan innefatta sofistikerade, inbyggda felsökningsbibliotek eller förlita sig starkt på funktioner i Integrerade Utvecklingsmiljöer (IDE:er), tenderar C-programmerare ofta att manuellt infoga utskriftsuttryck som de ovan visas för att spåra programmets utförande.
+
+En sak att varna för med felsökningsutskrifter är deras potential att skapa röra i utmatningen och leda till prestandaproblem, speciellt om de oavsiktligt lämnas kvar i produktionskod. Av dessa skäl kan användning av villkorlig kompilering (t.ex., `#ifdef DEBUG ... #endif`) vara en bättre metod, vilket gör det möjligt för felsökningsuttryck att inkluderas eller exkluderas baserat på kompileringstidsflaggor.
+
+Dessutom finns det nu mer avancerade verktyg och bibliotek tillgängliga för felsökning i C, såsom GDB (GNU Debugger) och Valgrind för upptäckt av minnesläckor. Dessa verktyg erbjuder en mer integrerad ansats till felsökning, utan behovet av att modifiera kod genom att infoga utskriftsuttryck.
+
+Ändå kan enkelheten och den omedelbara återkopplingen från `printf`-felsökning inte underskattas, vilket gör den till ett användbart verktyg i programmerarens verktygslåda, särskilt för dem som precis lär sig C:s intrikatesser.

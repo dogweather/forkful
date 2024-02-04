@@ -1,29 +1,23 @@
 ---
 title:                "ウェブページのダウンロード"
-date:                  2024-01-20T17:44:22.949050-07:00
-model:                 gpt-4-1106-preview
+date:                  2024-02-03T17:56:06.033726-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "ウェブページのダウンロード"
-
 tag:                  "HTML and the Web"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/c/downloading-a-web-page.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
 ## 何となぜ？
 
-Downloading a web page is about fetching the content of a page from the internet. Programmers do this to process or analyze data, automate tasks, or just to save for offline use.
+Cでウェブページをダウンロードすることは、インターネット経由でウェブページのコンテンツにプログラム的にアクセスし、処理やオフライン使用のためにローカルに保存することを意味します。プログラマーはしばしば、Webサービスを消費したり、Webコンテンツをスクレイピングしたり、アプリケーションから直接オンラインリソースとやり取りするためにこれを行います。
 
-ウェブページをダウンロードするとは、インターネットからページの内容を取得することです。プログラマーはこれをデータ処理や分析、タスクの自動化、あるいはオフライン使用のために行います。
+## どのようにして：
 
-## How to:
-## 方法：
-
-To download a web page in C, you'll typically use a library called cURL. This example shows you how:
-
-C言語でウェブページをダウンロードするためには、通常cURLというライブラリが使われます。以下の例を見てみましょう：
+Cでウェブページをダウンロードするには、libcurlライブラリを使う方法が一般的です。これは、効率的でポータブルなクライアント側URL転送ライブラリです。プロジェクトにlibcurlがインストールされてリンクされていることを確認してください。以下は、libcurlを使用してWebページのコンテンツをダウンロードする方法を示す例です：
 
 ```c
 #include <stdio.h>
@@ -39,44 +33,32 @@ int main(void) {
     FILE *fp;
     CURLcode res;
     char *url = "http://example.com";
-    char outfilename[FILENAME_MAX] = "downloaded_page.html";
-    
-    curl = curl_easy_init();
-    if(curl) {
+    char outfilename[FILENAME_MAX] = "./downloaded_page.html";
+
+    curl = curl_easy_init(); // libcurlイージーセッションを初期化
+    if (curl) {
         fp = fopen(outfilename,"wb");
         curl_easy_setopt(curl, CURLOPT_URL, url);
-        curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, write_data);
-        curl_easy_setopt(curl, CURLOPT_WRITEDATA, fp);
-        res = curl_easy_perform(curl);
-        curl_easy_cleanup(curl);
-        fclose(fp);
+        curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, write_data); // 受信データを書き込むためのコールバック
+        curl_easy_setopt(curl, CURLOPT_WRITEDATA, fp); // データを書き込むファイルポインタを設定
+
+        res = curl_easy_perform(curl); // ファイルダウンロードを実行
+        if(res != CURLE_OK) {
+            fprintf(stderr, "curl_easy_perform() failed: %s\n",
+                    curl_easy_strerror(res));
+        }
+
+        /* 常にクリーンアップ */
+        curl_easy_cleanup(curl); // イージーセッションをクリーンアップ
+        fclose(fp); // ファイルストリームを閉じる
     }
     return 0;
 }
 ```
+サンプル出力（コンソールでの表示出力なし）：このコードは、指定されたURLのコンテンツをダウンロードして、`downloaded_page.html`という名前のファイルに保存します。ダウンロードしたコンテンツを見るために、プログラムのディレクトリを確認してください。
 
-Running this code will create a file named `downloaded_page.html` containing the HTML from "http://example.com".
+## より深く：
 
-このコードを実行すると、"http://example.com"からHTMLが含まれた`downloaded_page.html`というファイルが作成されます。
+歴史的に、Cでウェブコンテンツをダウンロードすることは、手動でのソケットプログラミングとHTTPプロトコルの処理を必要とし、より手間がかかりました。Libcurlはこれらの複雑さを抽象化し、Web上でのデータ転送のための堅牢で高レベルのAPIを提供します。
 
-## Deep Dive
-## 詳細な情報：
-
-Before cURL, downloading web content was more manual and complex, often requiring socket programming. cURL simplifies the process with a library that handles many of the underlying HTTP protocol details.
-
-cURLの前では、ウェブコンテンツのダウンロードはより手作業の多い複雑なもので、しばしばソケットプログラミングが必要でした。cURLは多くの根底にあるHTTPプロトコルの詳細を処理するライブラリを使いプロセスを単純化します。
-
-There are alternatives to cURL, such as libcurl and WinINet on Windows, but cURL is widely supported across various platforms. When using cURL, consider the security implications and ensure to use HTTPS to protect sensitive data.
-
-cURLの代わりにはlibcurlやWindowsのWinINet等がありますが、cURLは様々なプラットフォームで広くサポートされています。cURLを利用する際にはセキュリティの影響を考慮し、機密データを守るためHTTPSの使用を確実にしてください。
-
-## See Also
-## 関連リンク：
-
-- cURL programming basics: https://curl.haxx.se/libcurl/c/libcurl-tutorial.html
-- cURL official website: https://curl.haxx.se/
-- HTTP protocol overview: https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview
-
-cURLプログラミングの基礎: https://curl.haxx.se/libcurl/c/libcurl-tutorial.html
-cURL公式ウェブサイト: https://curl.haxx.se/
-HTTPプロトコル概要: https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview
+LibcurlはCでのHTTPリクエストを簡素化しますが、`requests`ライブラリを持つPythonや、様々なHTTPクライアントライブラリを持つJavaScript（Node.js）のような現代のプログラミング言語は、Web通信で一般的に使用されるJSONや他のデータ形式のためのより直感的な構文と組み込みサポートを提供するかもしれません。しかし、Cとlibcurlは、効率性、細かい制御、または既存のCコードベースへの統合が重要なシステムにおいて、高性能かつ安定した解決策を提供します。Cとlibcurlが単にウェブページをダウンロードするだけでなく、FTP、SMTPなど、遥かに多くのことに使用できるため、プログラマーのツールキットで多用途なツールとなっていることも注目に値します。

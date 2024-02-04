@@ -1,63 +1,62 @@
 ---
 title:                "Beregning av en dato i fremtiden eller fortiden"
-date:                  2024-01-20T17:30:58.330241-07:00
-model:                 gpt-4-1106-preview
+date:                  2024-02-03T17:52:57.308394-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Beregning av en dato i fremtiden eller fortiden"
-
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/c/calculating-a-date-in-the-future-or-past.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Å beregne en dato i fremtiden eller fortiden betyr å finne en dato før eller etter en gitt startdato. Programmere bruker dette for å håndtere hendelser, frister, påminnelser og tidsstyring generelt.
+Å beregne en dato i fremtiden eller fortiden innebærer å bestemme en spesifikk dato ved å legge til eller trekke fra et visst antall dager, måneder eller år fra en gitt dato. Programmerere gjør dette for oppgaver som å planlegge arrangementer, generere påminnelser eller håndtere utløpsdatoer, noe som gjør det til en essensiell funksjonalitet i ulike applikasjoner, fra kalendersystemer til finansiell programvare.
 
-## Hvordan til:
-Lagring av tid og dato i C gjøres vanligvis med `time.h` biblioteket, som lar oss jobbe med `time_t` strukturen for å utføre tidberegninger. Her er et eksempel på hvordan man legger til en uke til gjeldende dato:
+## Hvordan:
+Selv om C-standardbiblioteket ikke tilbyr direkte funksjoner for datumsaritmetikk, kan du manipulere datoer ved hjelp av `time.h`-biblioteket, spesifikt ved å arbeide med datatypen `time_t` og `struct tm`. Her er et forenklet eksempel på hvordan du legger til dager på dagens dato:
 
 ```c
 #include <stdio.h>
 #include <time.h>
 
+void addDays(struct tm* date, int daysToAdd) {
+    const time_t ONE_DAY = 24 * 60 * 60; // sekunder i én dag
+    // Konverter tm-struktur til time_t, legg til dagene, og konverter tilbake
+    time_t date_seconds = mktime(date) + (daysToAdd * ONE_DAY);
+    *date = *localtime(&date_seconds);
+}
+
 int main() {
     time_t now;
-    struct tm new_date;
-    double seconds = 60 * 60 * 24 * 7; // En uke
-
-    // Få nåværende tid og dato
     time(&now);
+    struct tm futureDate = *localtime(&now);
 
-    // Konverter time_t til tm struktur for enkel manipulasjon
-    new_date = *localtime(&now);
+    int daysToAdd = 10; // Juster dette for ønskede dager å legge til
+    addDays(&futureDate, daysToAdd);
 
-    // Legg til en uke
-    new_date.tm_sec += seconds; 
-
-    // Normaliser tm strukturen og konverter tilbake til time_t
-    time_t one_week_from_now = mktime(&new_date);
-
-    // Konverter til lesbar format
-    printf("En uke fra nå: %s", asctime(&new_date));
+    printf("Fremtidig Dato: %d-%d-%d\n", futureDate.tm_year + 1900, futureDate.tm_mon + 1, futureDate.tm_mday);
 
     return 0;
 }
 ```
 
-Sample output:
+Denne koden legger til et spesifisert antall dager på dagens dato og skriver ut den fremtidige datoen. Merk at denne tilnærmingen tar hensyn til skuddsekunder og justeringer for sommertid som håndteres av `mktime` og `localtime`.
+
+Eksempelutskrift:
+
 ```
-En uke fra nå: Mon Mar 15 14:22:36 2021
+Fremtidig Dato: 2023-04-23
 ```
 
-## Deep Dive
-Tid og dato i programmering har variert over tid, fra enkle tidtakere til komplekse bibliotek med tidssoner og skuddårstøtte. C har støttet tidberegninger med `time.h` siden C89/C90 standarden. Alternativer til standard C-biblioteket inkluderer POSIX `time.h` og moderne biblioteker som `date.h`.
+Husk at dette eksempelet legger til dager, men med mer komplekse beregninger (som måneder eller år, med tanke på skuddår), ville du trenge mer sofistikert logikk eller biblioteker som `date.h` i C++ eller tredjepartsbiblioteker i C.
 
-Når vi legger til sekunder til `tm_sec`, tar `mktime` hånd om overflyt og oppdaterer de andre feltene (minutter, timer, dager, osv.) tilsvarende. Men vær forsiktig med tidsskjell og skuddsekunder; disse blir ofte håndtert av operativsystemet eller spesifikke biblioteker.
+## Dypdykk
+Å manipulere datoer i C ved hjelp av time.h-biblioteket innebærer direkte manipulasjon av tid i sekunder siden Unix epoch (00:00, 1. januar 1970, UTC), etterfulgt av å konvertere disse sekundene tilbake til et mer menneskelesbart datoformat (`struct tm`). Denne tilnærmingen er enkel, men effektiv for grunnleggende operasjoner og har fordelen av å være plattformuavhengig og en del av C-standardbiblioteket.
 
-En annen ting å være klar over er håndtering av tidssoner. `localtime` bruker systemets lokale tidssone, mens `gmtime` gir Coordinated Universal Time (UTC). Valget avhenger av applikasjonens behov.
+Men, denne metodens enkelhet er også en begrensning. Å håndtere mer komplekse datoberegninger (som å ta hensyn til varierende månedslengder, skuddår og tidssoner) blir raskt ikke-trivielt. Språk som Python med `datetime` eller Java med `java.time` tilbyr mer intuitive API-er for datumsaritmetikk, og omfavner objektorienterte prinsipper for klarhet og brukervennlighet.
 
-## Se Også
-- `man 3 time` og `man 3 localtime` for Linux man-sider.
-- C Standard Library - https://en.cppreference.com/w/c/chrono
-- POSIX Programmer's Manual - https://pubs.opengroup.org/onlinepubs/9699919799/
-- Howard Hinnant's Date library (for mer moderne C++ støtte) - https://github.com/HowardHinnant/date
+I praksis, når man jobber med prosjekter som krever omfattende datomanipulering i C, vender utviklere ofte til tredjepartsbiblioteker for mer robuste løsninger. Disse bibliotekene kan tilby omfattende dato- og tidsfunksjonaliteter, inkludert tidssonehåndtering, formatteringsalternativer og mer nyanserte datumsaritmetikkkapasiteter, noe som betydelig forenkler utviklerens oppgave.
+
+Til tross for tilgjengeligheten av mer moderne alternativer, forblir forståelsen av hvordan man manipulerer datoer ved bruk av C-standardbiblioteket en verdifull ferdighet. Det gir dyp innsikt i hvordan datamaskiner representerer og arbeider med tid, et grunnleggende konsept som transcenderer spesifikke programmeringsspråk.

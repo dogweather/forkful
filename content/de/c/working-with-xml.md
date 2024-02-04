@@ -1,58 +1,87 @@
 ---
 title:                "Arbeiten mit XML"
-date:                  2024-01-26T04:27:48.589372-07:00
+date:                  2024-02-03T18:13:02.771376-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Arbeiten mit XML"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/c/working-with-xml.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Die Arbeit mit XML in C umfasst das Parsen, Erstellen und Manipulieren von XML-Dateien - also strukturierte Datenspeicherung. Programmierer tun dies, um mit Daten in einem portablen und menschenlesbaren Format zu interagieren, das oft für Konfiguration, Datenaustausch und mehr verwendet wird.
+
+Die Arbeit mit XML in C umfasst das Parsen, Abfragen und Manipulieren von XML-Dokumenten unter Verwendung verschiedener Bibliotheken. Programmierer beschäftigen sich aufgrund seiner weiten Verbreitung in Webdiensten, Konfigurationsdateien und dem Datenaustausch zwischen verschiedenen Systemen mit XML, was Fähigkeiten im effizienten Umgang mit XML für die robuste Anwendungsentwicklung erfordert.
 
 ## Wie:
-Unten ist ein Schnipsel, der die `libxml2`-Bibliothek zum Parsen einer XML-Datei verwendet und das Wurzelelement abruft.
 
-```C
+C unterstützt XML nicht eingebaut, daher müssen externe Bibliotheken verwendet werden. Eine beliebte Wahl ist `libxml2`, eine stabile und funktionsreiche Bibliothek. So lesen und parsen Sie eine XML-Datei mit `libxml2`.
+
+Zuerst stellen Sie sicher, dass `libxml2` auf Ihrem System installiert ist. Möglicherweise müssen Sie es über Ihren Paketmanager installieren (z.B. `apt-get install libxml2-dev` auf Debian-Systemen).
+
+Fügen Sie als Nächstes den `libxml2`-Header in Ihr C-Programm ein:
+
+```c
+#include <libxml/parser.h>
+#include <libxml/tree.h>
+```
+
+Nun schreiben wir ein einfaches Programm, um eine XML-Datei zu parsen und die Namen der Elemente der ersten Ebene auszugeben:
+
+```c
 #include <stdio.h>
 #include <libxml/parser.h>
 #include <libxml/tree.h>
 
-int main() {
-    xmlDoc *doc = NULL;
-    xmlNode *root_element = NULL;
+int main(void) {
+    xmlDoc *Dokument = NULL;
+    xmlNode *Wurzelelement = NULL;
 
-    // Die XML-Datei parsen
-    doc = xmlReadFile("example.xml", NULL, 0);
+    // Initialisieren der Bibliothek und Überprüfen auf potenzielle ABI-Unstimmigkeiten
+    LIBXML_TEST_VERSION
 
-    // Das Wurzelelement abrufen
-    root_element = xmlDocGetRootElement(doc);
+    // Die Datei parsen und das DOM erhalten
+    Dokument = xmlReadFile("ihre_datei.xml", NULL, 0);
 
-    printf("Wurzelelement: %s\n", root_element->name);
+    if (Dokument == NULL) {
+        printf("Das Parsen der XML-Datei ist fehlgeschlagen\n");
+        return -1;
+    }
 
-    // Das Dokument freigeben
-    xmlFreeDoc(doc);
+    // Das Wurzelelement-Knoten abrufen
+    Wurzelelement = xmlDocGetRootElement(Dokument);
 
-    // Parser aufräumen
+    for (xmlNode *AktuellerKnoten = Wurzelelement; AktuellerKnoten; AktuellerKnoten = AktuellerKnoten->next) {
+        if (AktuellerKnoten->type == XML_ELEMENT_NODE) {
+            printf("Knotentyp: Element, Name: %s\n", AktuellerKnoten->name);
+        }
+    }
+
+    // Den für den Parser und das DOM allokierten Speicher freigeben
+    xmlFreeDoc(Dokument);
+
+    // Aufräumen und Lecks überprüfen
     xmlCleanupParser();
+    xmlMemoryDump(); // Optional
 
     return 0;
 }
 ```
 
-Beispielausgabe für ein XML mit Wurzel `<data>` könnte sein:
+Um dieses Programm zu kompilieren, stellen Sie sicher, dass es gegen `libxml2` gelinkt ist:
+
+```sh
+gcc -o xml_beispiel xml_beispiel.c $(xml2-config --cflags --libs)
 ```
-Wurzelelement: data
-```
+
+Wenn Sie eine XML-Datei namens `ihre_datei.xml` haben, sollte das Ausführen des kompilierten Programms die Namen seiner Elemente der ersten Ebene ausgeben.
 
 ## Tiefergehend
-XML, oder Extensible Markup Language, geht zurück auf die späten 90er Jahre und bietet eine Möglichkeit, Daten zu beschreiben und zu strukturieren. In C ist `libxml2` das Mittel der Wahl. Es ist robust, aber nicht das einfachste für XML-Anfänger. Alternativen umfassen `tinyxml2`, das leichter und anfängerfreundlicher ist. Was die Implementierung betrifft, so hat C keine eingebaute XML-Unterstützung, daher füllen Bibliotheken diese Lücke. Sie variieren in Größe, Geschwindigkeit, Komplexität und Portabilität. Die meisten bieten DOM- und SAX-Parsing-Methoden an: DOM lädt alles in den Speicher, gut für kleine Dokumente; SAX ist ereignisgesteuert und verarbeitet Elemente on the fly, besser für große Dateien. Beide haben ihre Anwendungsfälle und Kompromisse.
 
-## Siehe auch
-- [libxml2](http://xmlsoft.org/)
-- [tinyxml2 auf GitHub](https://github.com/leethomason/tinyxml2)
-- [XML-Tutorial auf w3schools](https://www.w3schools.com/xml/)
-- [XML-Spezifikation von W3C](https://www.w3.org/XML/)
+Die Interaktion zwischen C und XML ist eine Geschichte darüber, wie zwei völlig unterschiedliche Welten zusammengebracht werden: das strukturierte, byte-orientierte, prozedurale Paradigma von C und das hierarchische, wortreiche und dokumentenzentrierte Modell von XML. Bei der Integration von XML-Verarbeitungsfähigkeiten in C-Programme nutzen Entwickler die Stärken von C - wie Geschwindigkeit und direkter Speicherzugriff - um XML-Dokumente effizient zu parsen und zu manipulieren.
+
+`libxml2`, entwickelt im Rahmen des GNOME-Projekts, hat sich aufgrund seiner umfassenden Unterstützung von XML-Standards und seiner Leistungsfähigkeit als de facto Standard für XML-Verarbeitung in C etabliert. Es verkörpert jahrelange Entwicklungsarbeit und Community-Beiträge, was es robust und effizient für die meisten XML-Aufgaben macht.
+
+Obwohl `libxml2` leistungsfähige Funktionen bietet, ist zu beachten, dass die Komplexität des XML-Parsens und -Manipulierens eine erhebliche Belastung darstellen kann. In Szenarien, in denen die Weitschweifigkeit und Komplexität von XML ungerechtfertigt sind, könnten Alternativen wie JSON für den Datenaustausch vorzuziehen sein. Dennoch, für auf XML ausgerichtete Anwendungen oder Umgebungen, in denen der Einsatz von XML fest verankert ist, erschließt die Beherrschung des Umgangs mit `libxml2` in C die Fähigkeit, mit einer breiten Palette von XML-Dokumenten und APIs zu arbeiten und schließt die Lücke zwischen der Programmiersprache C und der Welt der strukturierten Dokumentenverarbeitung.

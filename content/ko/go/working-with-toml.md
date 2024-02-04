@@ -1,36 +1,60 @@
 ---
-title:                "프로그래머를 위한 TOML 다루기"
-date:                  2024-01-26T04:22:20.056873-07:00
+title:                "TOML과 함께 작업하기"
+date:                  2024-02-03T18:12:56.522896-07:00
 model:                 gpt-4-0125-preview
-simple_title:         "프로그래머를 위한 TOML 다루기"
-
+simple_title:         "TOML과 함께 작업하기"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/go/working-with-toml.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## 무엇 & 왜?
-TOML을 사용한다는 것은 Go에서 TOML(Tom's Obvious, Minimal Language) 파일을 파싱하고 인코딩하는 것을 의미합니다. 프로그래머들은 읽기 쉽고 데이터 구조에 쉽게 매핑할 수 있다는 이유로 TOML을 선택하는 경우가 많으며, 이는 설정 파일에 아주 적합합니다.
 
-## 방법:
-Go에서 TOML을 사용하기 위해서는 `BurntSushi/toml`과 같은 라이브러리를 일반적으로 사용합니다. 다음은 TOML 설정 파일을 파싱하는 방법에 대한 간단한 예시입니다:
+TOML(Tom's Obvious, Minimal Language)은 단순한 구문으로 인해 읽기 쉬운 설정 파일 형식입니다. 프로그래머들은 그것의 명확성과 데이터 구조로의 직관적인 매핑 때문에 애플리케이션 설정과 의존성을 구성하기 위해 TOML을 사용합니다. 이것은 많은 Go 프로젝트에서 설정을 설정하고 관리하기 위한 인기 있는 선택이 되었습니다.
 
-```Go
+## 어떻게 사용하나요:
+
+Go에서 TOML로 작업을 시작하려면 Go 표준 라이브러리가 TOML을 기본적으로 지원하지 않으므로 TOML 파일을 구문 분석할 수 있는 라이브러리를 포함해야 합니다. `BurntSushi/toml` 패키지는 이를 위한 인기 있는 선택입니다. 먼저 설치를 확인하세요:
+
+```bash
+go get github.com/BurntSushi/toml
+```
+
+다음은 그것을 사용하는 간단한 예입니다. `config.toml`이라는 이름의 설정 파일이 다음과 같은 내용을 가지고 있다고 가정해 보세요:
+
+```toml
+title = "TOML Example"
+
+[database]
+server = "192.168.1.1"
+ports = [ 8001, 8001, 8002 ]
+connection_max = 5000
+enabled = true
+```
+
+이제 TOML 구조를 반영하는 Go 구조체를 생성해야 합니다:
+
+```go
 package main
 
 import (
     "fmt"
-    "os"
-
     "github.com/BurntSushi/toml"
 )
 
 type Config struct {
-    Title   string
-    Owner   struct {
-        Name string
-    }
+    Title    string
+    Database Database `toml:"database"`
+}
+
+type Database struct {
+    Server        string
+    Ports         []int
+    ConnectionMax int `toml:"connection_max"`
+    Enabled       bool
 }
 
 func main() {
@@ -39,32 +63,22 @@ func main() {
         fmt.Println(err)
         return
     }
-    fmt.Printf("제목: %s, 소유자: %s\n", config.Title, config.Owner.Name)
+    fmt.Printf("Title: %s\n", config.Title)
+    fmt.Printf("Database Server: %s\n", config.Database.Server)
 }
 ```
 
-`config.toml` 예시:
-
-```Toml
-title = "예제 TOML"
-[owner]
-name = "Tom Preston-Werner"
-```
-
-출력 예시:
+샘플 출력:
 
 ```
-제목: 예제 TOML, 소유자: Tom Preston-Werner
+Title: TOML Example
+Database Server: 192.168.1.1
 ```
 
-## 심층 분석
-TOML은 Tom Preston-Werner에 의해 2013년에 도입되었으며, 명확한 의미론 때문에 읽기 쉬운 최소한의 설정 파일 형식으로 설계되었습니다. Go 개발자들은 종종 JSON이나 YAML 같은 다른 대안들보다 설정 용도로 TOML을 사용하는데, 이는 그 직관성과 복잡한 계층구조를 간단히 표현할 수 있다는 장점 때문입니다.
+## 심층 탐구
 
-복잡한 기능과 잠재적 보안 문제점이 있는 YAML에 비해, TOML의 플랫한 설계는 복잡성과 오타로 인한 오류를 줄입니다. 그리고 JSON과 달리, TOML은 주석을 지원하여 설정을 직관적으로 설명할 수 있게 해줍니다.
+TOML은 GitHub의 공동 창립자 중 한 명인 Tom Preston-Werner이 해시 테이블에 쉽게 매핑할 수 있으며 형식에 대한 사전 지식 없이도 한눈에 이해할 수 있는 직관적인 설정 파일 형식을 제공하기 위해 만들었습니다. 이것은 중괄호, 따옴표, 들여쓰기 문제 때문에 구성 파일에 대해 덜 인간 친화적일 수 있는 JSON이나 YAML과 반대됩니다.
 
-Go에서 TOML을 사용할 때 고려해야 할 뉘앙스가 있습니다. 구조체 태그는 구조체가 TOML 구조에 매핑되는 방식을 사용자 정의할 수 있으며, TOML 배열과 인라인 테이블이 Go 슬라이스와 맵으로 파싱되는 방법에 대해서도 알고 있어야 합니다.
+Go에서의 `BurntSushi/toml` 패키지는 단순히 디코딩뿐만 아니라 TOML 파일의 인코딩도 허용하는 강력한 라이브러리로, 이 형식의 구성 파일을 읽고 쓸 필요가 있는 응용 프로그램에 다양하게 적합한 선택입니다. 하지만, 기술의 발전과 새로운 Go 버전의 도입으로 인해 `pelletier/go-toml`과 같은 대안이 등장, 향상된 성능과 트리 조작 및 쿼리 지원과 같은 추가 기능을 제공하게 되었음을 유념해야 합니다.
 
-## 참조
-- TOML 사양: https://toml.io/en/
-- BurntSushi/toml 라이브러리: https://github.com/BurntSushi/toml
-- 설정 파일 형식 비교: https://www.redhat.com/sysadmin/yaml-toml-json-differences
+TOML은 많은 애플리케이션에 좋은 선택이지만, 애플리케이션 구성의 복잡성 및 개인 또는 팀의 선호에 따라, TOML의 장황한 특성이 우아하게 포착하지 못할 수 있는 더 복잡한 데이터 구조가 필요한 경우 YAML이나 JSON과 같은 다른 형식이 더 적합할 수 있습니다. 그럼에도 불구하고, 직관적이고 읽기 쉽고 쉽게 편집할 수 있는 구성을 위해서는, 앞서 언급한 라이브러리와 함께 Go의 강력한 타입 시스템을 사용한 TOML이 탁월한 선택입니다.

@@ -1,87 +1,81 @@
 ---
 title:                "Gebruik van associatieve arrays"
-date:                  2024-01-30T19:11:21.071366-07:00
+date:                  2024-02-03T18:10:49.487598-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Gebruik van associatieve arrays"
-
 tag:                  "Data Structures"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/go/using-associative-arrays.md"
 changelog:
-  - 2024-01-30, gpt-4-0125-preview, translated from English
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Wat & Waarom?
 
-Associatieve arrays, in Go bekend als maps, laten je data opslaan en toegang krijgen tot data met sleutel-waardeparen. Ze zijn essentieel voor het beheren van collecties waar je waarden snel kunt opzoeken op een unieke sleutel, wat data-manipulatie en -opvraging in je programma's vereenvoudigt.
+Associatieve arrays, bekend als maps in Go, stellen je in staat om sleutel-waardeparen op te slaan waarbij elke unieke sleutel naar een waarde wijst. Programmeurs gebruiken maps voor efficiënte gegevensopvraging, aanpassing en om een verzameling van elementen te onderhouden die snel toegankelijk zijn met unieke sleutels.
 
 ## Hoe te:
 
-In Go zijn maps eenvoudig in gebruik. Hier is een simpele gids om dingen af te trappen:
+Het creëren en initialiseren van een map in Go kan op verschillende manieren worden gedaan. Hier is een eenvoudig voorbeeld om je op weg te helpen:
 
-1. **Verklaren en Initialiseren van Maps**
-
-```Go
+```go
 package main
 
 import "fmt"
 
 func main() {
-    // Initialiseert een lege map met string sleutels en int waarden
-    var scores map[string]int
-    fmt.Println(scores) // Print: map[]
-
-    // Verklaren en initialiseren van een niet-lege map
+    // Verklaren en initialiseren van een map
     colors := map[string]string{
-        "rood": "#ff0000",
-        "groen": "#00ff00",
+        "red":   "#FF0000",
+        "green": "#00FF00",
+        "blue":  "#0000FF",
     }
-    fmt.Println(colors) // Print: map[groen:#00ff00 rood:#ff0000]
+
+    fmt.Println(colors)
+    // Uitvoer: map[blue:#0000FF green:#00FF00 red:#FF0000]
 }
 ```
 
-2. **Elementen Toevoegen en Toegang Krijgen Tot**
+Om elementen toe te voegen of bij te werken, wijs je zo een waarde aan een sleutel toe:
 
-```Go
-func main() {
-    fruits := make(map[string]int)
-    fruits["appels"] = 5
-    fruits["bananen"] = 10
+```go
+colors["white"] = "#FFFFFF"
+fmt.Println(colors)
+// Uitvoer: map[blue:#0000FF green:#00FF00 red:#FF0000 white:#FFFFFF]
+```
 
-    fmt.Println(fruits["appels"]) // Print: 5
+Toegang tot een waarde via de sleutel is eenvoudig:
+
+```go
+fmt.Println("De hexcode voor rood is:", colors["red"])
+// Uitvoer: De hexcode voor rood is: #FF0000
+```
+
+Om een element te verwijderen, gebruik je de `delete` functie:
+
+```go
+delete(colors, "red")
+fmt.Println(colors)
+// Uitvoer: map[blue:#0000FF green:#00FF00 white:#FFFFFF]
+```
+
+Het itereren over een map gebeurt met een for-lus:
+
+```go
+for color, hex := range colors {
+    fmt.Printf("Sleutel: %s Waarde: %s\n", color, hex)
 }
 ```
 
-3. **Itereren Over Maps**
+Onthoud, maps in Go zijn ongeordend. De volgorde van iteratie is niet gegarandeerd.
 
-```Go
-func main() {
-    pets := map[string]string{"hond": "blaf", "kat": "miauw"}
+## Diepgaand
 
-    for key, value := range pets {
-        fmt.Printf("%s gaat %s\n", key, value)
-    }
-    // De volgorde van uitvoer kan variëren, aangezien maps geen volgorde garanderen.
-}
-```
+In Go zijn maps geïmplementeerd als hashtabellen. Elk item in de map bestaat uit twee onderdelen: een sleutel en een waarde. De sleutel wordt gehasht om het item op te slaan, wat constante tijdoperaties mogelijk maakt voor een kleine set aan data en gemiddelde tijdscomplexiteit van O(1) met goede hashing, wat kan verslechteren tot O(n) in het slechtste geval met veel hashbotsingen.
 
-4. **Elementen Verwijderen**
+Een belangrijke opmerking voor nieuwe Go-programmeurs is dat map-typen referentietypen zijn. Dit betekent dat wanneer je een map aan een functie doorgeeft, eventuele wijzigingen die binnen die functie aan de map worden gemaakt, zichtbaar zijn voor de aanroeper. Dit is anders dan bijvoorbeeld het doorgeven van een struct aan een functie, waarbij de struct gekopieerd wordt, tenzij deze door een pointer wordt doorgegeven.
 
-```Go
-func main() {
-    maaltijden := map[string]int{"ontbijt": 300, "lunch": 600}
-    fmt.Println(maaltijden) // Voor het verwijderen
+Hoewel maps ongelooflijk veelzijdig en efficiënt zijn voor de meeste gebruiksscenario's met associatieve arrays, kan het in prestatie-kritieke toepassingen voordelig zijn om gegevensstructuren met meer voorspelbare prestatiekenmerken te gebruiken, vooral als sleutelverdelingen frequent botsingen kunnen veroorzaken.
 
-    delete(maaltijden, "lunch")
-    fmt.Println(maaltijden) // Na het verwijderen
-}
-```
-
-## Diep Duiken
-
-Geïntroduceerd in Go 1, bieden maps een ingebouwde manier om efficiënt om te gaan met associatieve arrays. In tegenstelling tot slices, die geordende collecties zijn, zijn maps ongeordend. Dit betekent dat de iteratievolgorde over map-elementen niet gegarandeerd hetzelfde is bij uitvoeringen, een afweging voor zijn vermogen om sleutel-waardepairs dynamisch en met significante flexibiliteit te behandelen.
-
-Onder de motorkap implementeert Go maps als hashtabellen, wat zorgt dat de gemiddelde complexiteit van toegangs-, invoeg-, en verwijderoperaties onder de meeste omstandigheden O(1) is. Het is echter de moeite waard om op te merken dat deze efficiëntie kan variëren op basis van factoren zoals hash-collisies.
-
-Voor gebruikssituaties die geordende sleuteltraversering vereisen, zou je kunnen overwegen om maps te combineren met slices of derde partijen te verkennen die aanvullende datastructuren bieden zoals geordende maps of bomen. Ondanks hun beperkingen, zijn Go's maps een krachtig en essentieel hulpmiddel voor veel programmeerscenario's.
+Een ander alternatief om te overwegen is de `sync.Map`, beschikbaar sinds Go 1.9, ontworpen voor gebruiksscenario's waarbij sleutels slechts eenmaal worden geschreven maar vele malen worden gelezen, wat efficiëntieverbeteringen in deze scenario's biedt. Echter, voor conventionele Go-toepassingen is het reguliere gebruik van maps idiomatisch en vaak de aanbevolen aanpak vanwege de eenvoud en directe ondersteuning in de taal.

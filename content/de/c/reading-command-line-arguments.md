@@ -1,52 +1,52 @@
 ---
-title:                "Lesen von Kommandozeilenargumenten"
-date:                  2024-01-20T17:55:37.774683-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Lesen von Kommandozeilenargumenten"
-
+title:                "Kommandozeilenargumente lesen"
+date:                  2024-02-03T18:05:58.013267-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Kommandozeilenargumente lesen"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/c/reading-command-line-arguments.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Was & Warum?
 
-Kommandozeilenargumente zu lesen bedeutet, dass dein Programm beim Start Werte von außen aufnehmen kann. Diese Flexibilität erlaubt es, das Verhalten des Programms ohne Codeänderungen anzupassen.
+In der C-Programmierung ermöglicht das Lesen von Befehlszeilenargumenten, dass Programme Eingaben direkt aus dem Terminal akzeptieren können, was Flexibilität und Benutzerfreundlichkeit erhöht. Programmierer nutzen dies, um Skriptverhalten zu konfigurieren, ohne den Code zu ändern, was Anwendungen anpassbar und effizient macht.
 
-## So geht’s:
+## Wie geht das:
 
-```C
+In C kann die `main`-Funktion so gestaltet werden, dass sie Befehlszeilenargumente mit den Parametern `int argc` und `char *argv[]` akzeptiert. Hierbei stellt `argc` die Anzahl der übergebenen Argumente dar, und `argv` ist ein Array von Zeichenzeiger, die alle Argumente auflisten. Hier ist ein schnelles Beispiel zur Veranschaulichung:
+
+```c
 #include <stdio.h>
 
 int main(int argc, char *argv[]) {
-    printf("Argumentanzahl: %d\n", argc);
-    for(int i = 0; i < argc; i++) {
+    printf("Programmname: %s\n", argv[0]);
+    printf("Anzahl der Argumente: %d\n", argc - 1);
+    for (int i = 1; i < argc; i++) {
         printf("Argument %d: %s\n", i, argv[i]);
     }
     return 0;
 }
 ```
 
-Wird das Programm so ausgeführt: `./deinprogramm Hallo Welt`, ist die Ausgabe:
+Wird das Programm zum Beispiel als `./programName -a example` ausgeführt, wäre die Ausgabe:
 
 ```
-Argumentanzahl: 3
-Argument 0: ./deinprogramm
-Argument 1: Hallo
-Argument 2: Welt
+Programmname: ./programName
+Anzahl der Argumente: 2
+Argument 1: -a
+Argument 2: example
 ```
 
-## Tiefgang:
+Dies demonstriert, wie Befehlszeilenargumente in einem C-Programm geparst und genutzt werden können.
 
-Die Übergabe von Kommandozeilenargumenten ist so alt wie C selbst, zurückgehend auf die 1970er Jahre. Ursprünglich für Unix-Systeme entwickelt, ist dieser Ansatz standardmäßig in fast allen Betriebssystemen zu finden.
+## Tiefergehende Einblicke
 
-Es gibt Alternativen – wie Umgebungsvariablen oder Konfigurationsdateien – doch direkte Kommandozeilenargumente bieten die schnellste und einfachste Methode zur Parameterübergabe.
+Die Konvention, Argumente an Programme zu übergeben, reicht zurück bis zu den frühesten Tagen von Unix. In diesem traditionellen Ansatz bieten `argc` und `argv` eine einfache, aber leistungsstarke Schnittstelle für die Interaktion mit der Befehlszeile und verkörpern die Philosophie von Unix von kleinen, modularen Hilfsprogrammen, die zusammenarbeiten. Während moderne Sprachen oft anspruchsvollere Bibliotheken oder Frameworks für das Parsen von Befehlszeilenargumenten einführen, bietet die Direktheit der C-Methode unübertroffene Transparenz und Kontrolle.
 
-Die `main()`-Funktion akzeptiert hier zwei Parameter: `argc` (argument count) gibt die Anzahl der Argumente an, `argv` (argument vector) ist ein Array aus Zeigern auf die Argumente selbst. Der erste Eintrag in `argv` (`argv[0]`) ist immer der Name bzw. der Pfad des ausgeführten Programms.
+In jüngeren Entwicklungen haben Bibliotheken wie `getopt` in POSIX-Systemen sich entwickelt, um komplexere Parsing-Bedürfnisse zu unterstützen, wie die Handhabung von langen Optionsnamen oder Standardwerte für fehlende Argumente. Doch bleibt der grundlegende Mechanismus von `argc` und `argv` wesentlich, um zu verstehen, wie Programme in C mit ihrer Laufzeitumgebung interagieren.
 
-## Siehe auch:
-
-- C Standard Library Dokumentation zu `<stdlib.h>` und `<stdio.h>`: https://en.cppreference.com/w/c/header
-- GNU Program Documentation on Command Line Arguments: https://www.gnu.org/software/libc/manual/html_node/Program-Arguments.html
-- "C Programming Language" (2. Ausgabe) von Brian W. Kernighan und Dennis M. Ritchie – eine gründliche Einführung in die Programmierung in C.
+Kritiker könnten argumentieren, dass der direkte Umgang mit `argc` und `argv` fehleranfällig sein kann und plädieren für die Nutzung von höheren Abstraktionen. Dennoch, für diejenigen, die bestrebt sind, die Feinheiten von C zu meistern und die Nuancen seines Low-Level-Betriebs zu schätzen, ist das Beherrschen des Parsens von Befehlszeilenargumenten ein Initiationsritus. Diese Mischung aus historischer Methodik und praktischem Nutzen umfasst viel von Cs anhaltender Anziehungskraft in der Systemprogrammierung und Softwareentwicklung.

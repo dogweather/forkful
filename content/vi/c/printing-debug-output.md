@@ -1,65 +1,72 @@
 ---
-title:                "In ra thông tin gỡ lỗi"
-date:                  2024-01-28T22:04:56.678775-07:00
+title:                "In đầu ra debug"
+date:                  2024-02-03T18:06:32.670977-07:00
 model:                 gpt-4-0125-preview
-simple_title:         "In ra thông tin gỡ lỗi"
-
+simple_title:         "In đầu ra debug"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/c/printing-debug-output.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Cái gì & Tại sao?
+## Gì và Tại sao?
 
-In thông tin gỡ lỗi giống như việc chèn các điểm kiểm tra nhỏ vào trong mã của bạn để phun ra thông tin, giúp xác định xem điều gì đang xảy ra bên trong đó. Lập trình viên làm điều này để xác định lỗi hoặc để đảm bảo mã của họ thực hiện đúng như mong đợi, từng bước một.
+Việc in thông điệp gỡ lỗi là việc tạo ra những thông báo nhật ký tạm thời, mang tính thông tin giúp lập trình viên hiểu được dòng chảy và trạng thái của chương trình trong quá trình thực hiện. Lập trình viên thực hiện điều này để xác định và chẩn đoán các lỗi phần mềm hay hành vi không mong muốn trong lôgic của chương trình.
 
-## Làm thế nào:
+## Cách thực hiện:
 
-Đây là vấn đề—in thông tin gỡ lỗi rất dễ dàng. Công cụ chính trong C là `printf`. Xem ví dụ đơn giản sau:
+Trong C, cách phổ biến nhất để in thông điệp gỡ lỗi là sử dụng hàm `printf` từ thư viện I/O chuẩn. Hàm `printf` cho phép định dạng đầu ra đến thiết bị đầu ra chuẩn, thường là màn hình. Dưới đây là một ví dụ đơn giản:
 
 ```c
 #include <stdio.h>
 
 int main() {
-    int loopCounter = 0;
-    for(loopCounter = 0; loopCounter < 5; loopCounter++) {
-        printf("Lần lặp: %d\n", loopCounter);
-        // Mã phức tạp hơn ở đây.
-    }
-    printf("Vòng lặp kết thúc.\n");
-    // Phần còn lại của mã của bạn.
+    int x = 5;
+    printf("Gỡ lỗi: Giá trị của x là %d\n", x);
+    
+    // Lôgic chương trình của bạn ở đây
+    
     return 0;
 }
 ```
 
-Chạy đoạn mã này sẽ hiển thị trên màn hình của bạn:
+Đầu ra mẫu:
 
 ```
-Lần lặp: 0
-Lần lặp: 1
-Lần lặp: 2
-Lần lặp: 3
-Lần lặp: 4
-Vòng lặp kết thúc.
+Gỡ lỗi: Giá trị của x là 5
 ```
 
-Đơn giản, phải không? Chỉ cần nhớ xóa hoặc ghi chú những dòng này khi bạn hoàn tất để bảng điều khiển của bạn không bị lộn xộn.
+Đối với việc in gỡ lỗi phức tạp hơn, bạn có thể muốn bao gồm thông tin về tên tệp và số dòng. Điều này có thể được thực hiện bằng cách sử dụng các macro định nghĩa trước `__FILE__` và `__LINE__` như sau:
+
+```c
+#define DEBUG_PRINT(fmt, args...) fprintf(stderr, "GỠ LỖI: %s:%d: " fmt, __FILE__, __LINE__, ##args)
+
+int main() {
+    int giatriKiemtra = 10;
+    DEBUG_PRINT("Giá trị kiểm tra là %d\n", giatriKiemtra);
+    
+    // Lôgic chương trình của bạn ở đây
+    
+    return 0;
+}
+```
+
+Đầu ra mẫu:
+
+```
+GỠ LỖI: example.c:6: Giá trị kiểm tra là 10
+```
+
+Lưu ý rằng trong ví dụ này, chúng ta đang sử dụng `fprintf` để xuất ra luồng lỗi chuẩn (`stderr`), thường phù hợp hơn cho các thông điệp gỡ lỗi.
 
 ## Sâu hơn nữa
 
-Ngày xưa, không có bất kỳ Trình gỡ lỗi Môi trường Phát triển Tích hợp (IDE) nào để hỗ trợ bạn. Đầu ra thô tới terminal là những gì bạn có. Ngày nay, nó vẫn là vàng cho việc chẩn đoán nhanh và bẩn.
+Về mặt lịch sử, các kỹ thuật gỡ lỗi trong C đã được thực hiện một cách thủ công và cơ bản, do triết lý gần với phần cứng và tuổi đời của ngôn ngữ. Trong khi các ngôn ngữ hiện đại có thể bao gồm các thư viện gỡ lỗi tích hợp sẵn phức tạp hoặc phụ thuộc nhiều vào các tính năng của Môi trường Phát triển Tích hợp (IDE), các lập trình viên C thường tự chèn các câu lệnh in ra như được hiển thị ở trên để theo dõi việc thực thi chương trình của họ.
 
-Có phương án thay thế không? Chà, cho việc gỡ lỗi nặng nề, bạn có thể chuyển sang sử dụng trình gỡ lỗi của IDE chính thức, hoặc các tiện ích đăng nhập cung cấp nhiều quyền kiểm soát hơn.
+Một điều cần cảnh báo với các thông điệp gỡ lỗi là khả năng chúng làm rối loạn đầu ra và dẫn đến vấn đề về hiệu suất, đặc biệt là nếu chúng vô tình được để lại trong mã sản phẩm. Vì những lý do này, sử dụng biên dịch có điều kiện (ví dụ, `#ifdef DEBUG ... #endif`) có thể là cách tiếp cận tốt hơn, cho phép bao gồm hoặc loại bỏ các câu lệnh gỡ lỗi dựa trên các cờ biên dịch.
 
-`printf` là lựa chọn của bạn, nhưng có nhiều điều hơn dưới lớp vỏ. Ví dụ, `fprintf(stderr, ...)` có thể chuyển hướng thông điệp của bạn đến luồng lỗi chuẩn, làm cho chúng dễ phân biệt hơn so với đầu ra chuẩn.
+Hơn nữa, hiện nay có những công cụ và thư viện nâng cao hơn cho việc gỡ lỗi C, như GDB (GNU Debugger) và Valgrind cho việc phát hiện rò rỉ bộ nhớ. Những công cụ này cung cấp một cách tiếp cận tích hợp hơn cho việc gỡ lỗi, mà không cần phải sửa đổi mã bằng cách chèn các câu lệnh in.
 
-Ngoài ra, nếu hiệu suất là quan trọng, bạn có thể tránh ghi nhật ký trong các vòng lặp chặt chẽ hoặc xem xét biên dịch với các macro cho phép bạn loại bỏ mã gỡ lỗi trong sản phẩm.
-
-## Xem thêm
-
-- [GNU Debugger (GDB)](https://www.gnu.org/software/gdb/) cho khi bạn sẵn sàng để vượt qua `printf`.
-- [Thư viện Ghi nhật ký C](https://www.slant.co/topics/1183/~best-logging-add-ons-for-c-programming) cho việc ghi nhật ký có cấu trúc.
-- [Học C Cách Khó Khăn](https://learncodethehardway.org/c/) cho một cái nhìn sâu hơn vào thế giới rộng lớn của lập trình C.
+Tuy nhiên, sự đơn giản và phản hồi tức thì của việc gỡ lỗi bằng `printf` không thể được đánh giá thấp, làm cho nó trở thành một công cụ hữu ích trong bộ công cụ của lập trình viên, đặc biệt là cho những ai mới học những điều tinh tế của C.

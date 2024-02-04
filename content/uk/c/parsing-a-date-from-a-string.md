@@ -1,42 +1,60 @@
 ---
-title:                "Аналіз дати з рядка"
-date:                  2024-01-20T15:34:45.059656-07:00
-simple_title:         "Аналіз дати з рядка"
-
+title:                "Розбір дати з рядка"
+date:                  2024-02-03T18:05:46.300822-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Розбір дати з рядка"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/c/parsing-a-date-from-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Що та Чому?)
-Parsing a date from a string means pulling out date information from text. Programmers do this to make dates usable for operations like comparisons, sorting, or storage in a standardized format.
+## Що та чому?
 
-## How to: (Як це зробити:)
-```C
-#include <stdio.h>
+Розбір дати з рядка у мові програмування С полягає у конвертації текстового представлення дат у формат, з яким програми можуть ефективніше працювати та проводити аналіз. Це важливо для завдань, таких як арифметика дат, порівняння та форматування для різних локалей, оскільки це дозволяє програмістам стандартизовано обробляти вхід користувача або записи даних.
+
+## Як це зробити:
+
+C не надає вбудованого способу безпосередньо аналізувати дати з рядків, тому ми часто звертаємось до функції `strptime`, доступної у бібліотеці `<time.h>` для систем POSIX. Ця функція дозволяє нам вказати очікуваний формат вхідного рядка та аналізувати його у `struct tm`, яка представляє календарну дату та час, розділені на компоненти.
+
+Ось простий приклад використання `strptime` для розбору дати з рядка:
+
+```c
 #include <time.h>
+#include <stdio.h>
 
 int main() {
-    const char *date_str = "2023-03-15";
+    const char *dateStr = "2023-04-01";
     struct tm tm;
-    if (strptime(date_str, "%Y-%m-%d", &tm)) {
-        printf("Year: %d, Month: %d, Day: %d\n", tm.tm_year + 1900, tm.tm_mon + 1, tm.tm_mday);
+    char buf[255];
+
+    // Розбір рядка дати у struct tm
+    if (strptime(dateStr, "%Y-%m-%d", &tm) == NULL) {
+        printf("Не вдалося розібрати дату.\n");
     } else {
-        printf("Failed to parse the date.\n");
+        // Використання strftime для виведення дати у читабельному форматі
+        strftime(buf, sizeof(buf), "%A, %B %d, %Y", &tm);
+        printf("Розібрана дата: %s\n", buf);
     }
+
     return 0;
 }
 ```
-Sample Output:
+
+Приклад виводу для цієї програми:
+
 ```
-Year: 2023, Month: 3, Day: 15
+Розібрана дата: субота, квітень 01, 2023
 ```
 
-## Deep Dive (Поглиблений Аналіз)
-Parsing dates from strings is common in C, especially before JSON became prevalent. In the early days, programmers mostly handled dates manually. `strptime()` is now our go-to for parsing, introduced in POSIX. It's not part of standard C, so check for compatibility. Alternatives? `sscanf()` - more manual, less safe. `strptime()` lets us specify the expected format and handles various locales. Implementation-wise, it fills a `struct tm` with info, which we can use as needed.
+Важливо обробляти потенційні помилки, такі як невдале співставлення шаблону `strptime` або зіткнення з неочікуваним вводом.
 
-## See Also (Дивіться також)
-- C Standard Library documentation: https://en.cppreference.com/w/c
-- POSIX `strptime` function details: http://man7.org/linux/man-pages/man3/strptime.3.html
-- Date and time tutorial in C: https://www.tutorialspoint.com/c_standard_library/c_function_strptime.htm
+## Поглиблений аналіз
+
+Функція `strptime`, хоча й потужна, не є частиною стандартної бібліотеки С та зазвичай знаходиться в системах, сумісних з POSIX, таких як Linux та UNIX. Це обмеження означає, що програми, які покладаються на `strptime` для аналізу дат з рядків, можуть не бути портативними до не-POSIX систем, таких як Windows, без додаткових шарів сумісності або бібліотек.
+
+Історично, робота з датами та часом у C вимагала багато ручної маніпуляції та обережності, особливо враховуючи різні локалі та часові зони. Сучасні альтернативи і розширення до C, такі як бібліотека `<chrono>` для C++ та сторонні бібліотеки, наприклад, бібліотека дат Howard Hinnant для C++, пропонують більш міцні рішення для маніпуляції з датою та часом, включаючи аналіз. Ці бібліотеки зазвичай надають кращу підтримку широкого спектру форматів дат, часових зон і механізмів обробки помилок, роблячи їх переважними для нових проектів, які вимагають обширних можливостей маніпуляції з датою та часом.
+
+Проте, розуміння способу розбору дат з рядків у C може бути корисним, особливо при роботі над або обслуговуванні проектів, які мають бути сумісними з системами, де ці сучасні інструменти недоступні, або при роботі у рамках строгих умов програмування на мові С.

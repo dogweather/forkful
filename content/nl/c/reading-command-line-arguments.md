@@ -1,56 +1,52 @@
 ---
 title:                "Commandoregelargumenten lezen"
-date:                  2024-01-28T22:05:12.539425-07:00
+date:                  2024-02-03T18:06:12.801397-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Commandoregelargumenten lezen"
-
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/c/reading-command-line-arguments.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Wat & Waarom?
 
-Elke programmeur is ongetwijfeld wel eens commandoregelargumenten tegengekomen. Ze laten gebruikers data invoeren in je programma. Ze gebruiken kan drastisch veranderen hoe je programma zich gedraagt zonder de code te wijzigen—denk aan cheatcodes voor gamers, maar dan voor programmeurs.
+In C-programmering maakt het lezen van commandoregelargumenten het mogelijk dat programma's invoer rechtstreeks vanuit de terminal accepteren, wat de flexibiliteit en bruikbaarheid verhoogt. Programmeurs benutten dit voor het configureren van scriptgedrag zonder code te wijzigen, waardoor applicaties aanpasbaar en efficiënt worden.
 
 ## Hoe:
 
-```C
+In C kan de `main`-functie zo worden ontworpen dat ze commandoregelargumenten accepteert met behulp van de parameters `int argc` en `char *argv[]`. Hier vertegenwoordigt `argc` het aantal doorgegeven argumenten, en `argv` is een array van karakterwijzers die alle argumenten opsomt. Hier is een snel voorbeeld om te illustreren:
+
+```c
 #include <stdio.h>
 
 int main(int argc, char *argv[]) {
-    printf("Je hebt %d argumenten ingevoerd:\n", argc);
-    for(int i = 0; i < argc; i++) {
-        printf("arg%d: %s\n", i, argv[i]);
+    printf("Programmanaam: %s\n", argv[0]);
+    printf("Aantal Argumenten: %d\n", argc - 1);
+    for (int i = 1; i < argc; i++) {
+        printf("Argument %d: %s\n", i, argv[i]);
     }
     return 0;
 }
 ```
 
-Voorbeeld van uitvoer bij aanroepen van `./yourprogram Hello World!`:
+Als het bovenstaande programma wordt uitgevoerd als `./programNaam -a voorbeeld`, zou de uitvoer zijn:
 
 ```
-Je hebt 3 argumenten ingevoerd:
-arg0: ./yourprogram
-arg1: Hello
-arg2: World!
+Programmanaam: ./programNaam
+Aantal Argumenten: 2
+Argument 1: -a
+Argument 2: voorbeeld
 ```
 
-## Diepere Duik
+Dit laat zien hoe commandoregelargumenten in een C-programma geparseerd en gebruikt kunnen worden.
 
-Er was eens, in het Unix-tijdperk, toen commandoregelopdrachten de voorkeur hadden. Tegenwoordig zijn GUI's koning, maar commandoregelargumenten zijn verre van uitgestorven—denk aan scripts, geautomatiseerde taken, of complexe applicatieparameters.
+## Diepgaand
 
-Argumenten in C arriveren via twee parameters in `main()`: `argc` (aantal argumenten) en `argv` (argumentvector). `argc` vertelt je hoeveel argumenten er zijn, terwijl `argv` een array van strings is die de daadwerkelijke argumenten bevat, met `argv[0]` als de naam van het programma.
+De conventie om argumenten aan programma's door te geven gaat terug tot de vroegste dagen van Unix. In deze traditionele aanpak bieden `argc` en `argv` een eenvoudige maar krachtige interface voor commandoregelinteractie, belichamend de filosofie van Unix van kleine, modulaire hulpprogramma's die samenwerken. Hoewel moderne talen vaak meer gesofisticeerde bibliotheken of frameworks introduceren voor het parsen van commandoregelargumenten, biedt de directheid van C's methode ongeëvenaarde transparantie en controle.
 
-Er zijn alternatieven zoals `getopt()` voor Unix-achtige systemen, die opties en hun argumenten netjes kunnen analyseren. Ook zijn er bibliotheken zoals `argp` die je een handje helpen bij meer complexe analyse scenario's.
+In recente ontwikkelingen zijn bibliotheken zoals `getopt` in POSIX-systemen geëvolueerd om complexere parsingbehoeften te ondersteunen, zoals het afhandelen van lange optienamen of standaardwaarden voor ontbrekende argumenten. Toch blijft het basismechanisme van `argc` en `argv` essentieel voor het begrijpen van hoe programma's in C interageren met hun runtime-omgeving.
 
-De kern van de zaak gaat over het kennen van pointers en arrays, aangezien `argv` een array van tekenwijzer is—essentieel een reeks strings. Wanneer je door de commandoregel heen kauwt, behandelt je programma spaties als scheidingstekens voor argumenten, tenzij aanhalingstekens als je vrienden ziet die een enkel argument omsluiten.
-
-## Zie Ook
-
-- De sectie over [Programma-argumenten](https://www.gnu.org/software/libc/manual/html_node/Program-Arguments.html) in de Handleiding van de GNU C-bibliotheek
-- [Wikipedia-pagina over Commandoregelinterface](https://nl.wikipedia.org/wiki/Opdrachtregelinterface#Argumenten)
-- ["C Commandoregelargumenten" op tutorialspoint](https://www.tutorialspoint.com/cprogramming/c_command_line_arguments.htm)
+Critici zouden kunnen beweren dat het direct omgaan met `argc` en `argv` foutgevoelig kan zijn en pleiten voor het gebruik van hogere abstracties. Desalniettemin, voor degenen die de complexiteiten van C willen beheersen en de nuances van de laag-niveau werking ervan willen waarderen, is het beheersen van het parseren van commandoregelargumenten een inwijdingsritueel. Deze mix van historische methodologie en praktische bruikbaarheid vat een groot deel van de blijvende aantrekkingskracht van C in systeemprogrammering en softwareontwikkeling samen.

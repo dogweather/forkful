@@ -1,82 +1,82 @@
 ---
 title:                "Suchen und Ersetzen von Text"
-date:                  2024-01-20T17:57:11.779339-07:00
-model:                 gpt-4-1106-preview
+date:                  2024-02-03T18:08:17.276500-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Suchen und Ersetzen von Text"
-
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/c/searching-and-replacing-text.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Im Kern geht es beim Suchen und Ersetzen von Text darum, eine Zeichenkette in einem größeren Textblock zu finden und sie durch eine andere zu ersetzen. Programmierer nutzen das, um Daten zu aktualisieren, Fehler zu korrigieren oder Massenbearbeitungen durchzuführen.
 
-## How To / Wie geht's?
-Hier ist ein einfacher C-Code, der illustriert, wie man eine Funktion schreibt, um ein Wort in einem String zu suchen und zu ersetzen:
+Das Suchen und Ersetzen von Text in C beinhaltet das Identifizieren spezifischer Teilstrings innerhalb eines größeren Strings und deren Substituierung durch verschiedene Teilstrings. Programmierer führen diese Operationen durch, um Textdaten zu manipulieren - für Aufgaben, die von der Datenbereinigung und Formatierung bis zur dynamischen Generierung von Inhalten reichen.
 
-```C
+## Wie geht das:
+
+C bietet keine integrierten Funktionen für das direkte Suchen und Ersetzen von Strings. Sie können dies jedoch erreichen, indem Sie verschiedene in der `<string.h>`-Bibliothek verfügbare String-Handling-Funktionen kombinieren zusammen mit einiger benutzerdefinierter Logik. Unten ist ein grundlegendes Beispiel dafür, wie man nach einem Teilstring innerhalb eines Strings sucht und ihn ersetzt. Der Einfachheit halber geht dieses Beispiel von ausreichender Puffergröße aus und behandelt keine Speicherzuweisungsprobleme, die Sie in Produktionscode berücksichtigen sollten.
+
+```c
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 
-void searchAndReplace(char *source, const char *search, const char *replace) {
+void replaceSubstring(char *source, char *sub, char *new_sub) {
     char buffer[1024];
     char *insert_point = &buffer[0];
     const char *tmp = source;
-    size_t len_search = strlen(search);
-    size_t len_replace = strlen(replace);
+    size_t len_sub = strlen(sub), len_new_sub = strlen(new_sub);
+    size_t len_up_to_match;
 
-    while (1) {
-        const char *p = strstr(tmp, search);
-
-        // Kein weiteres Vorkommen gefunden
-        if (p == NULL) {
-            strcpy(insert_point, tmp);
-            break;
-        }
-
-        // Kopiere den Teil vor dem Vorkommen
-        memcpy(insert_point, tmp, p - tmp);
-        insert_point += p - tmp;
-
-        // Kopiere die Ersetzung
-        memcpy(insert_point, replace, len_replace);
-        insert_point += len_replace;
-
-        // Fortfahren nach dem Vorkommen
-        tmp = p + len_search;
+    while ((tmp = strstr(tmp, sub))) {
+        // Länge bis zur Übereinstimmung berechnen
+        len_up_to_match = tmp - source;
+        
+        // Teil vor der Übereinstimmung kopieren
+        memcpy(insert_point, source, len_up_to_match);
+        insert_point += len_up_to_match;
+        
+        // Neuen Teilstring kopieren
+        memcpy(insert_point, new_sub, len_new_sub);
+        insert_point += len_new_sub;
+        
+        // Im Quellstring hinter der Übereinstimmung weitermachen
+        tmp += len_sub;
+        source = tmp;
     }
-
-    // Resultat kopieren
-    strcpy(source, buffer);
+    
+    // Verbleibenden Teil des Quellstrings kopieren
+    strcpy(insert_point, source);
+    
+    // Modifizierten String ausgeben
+    printf("Modifizierter String: %s\n", buffer);
 }
 
 int main() {
-    char data[] = "Das ist ein Text mit einigen Worten. Diese Worten sind simpel.";
-    searchAndReplace(data, "Worten", "Wörtern");
-
-    printf("Ersetzter Text: %s\n", data);
+    char sourceStr[] = "Hallo, dies ist ein Test. Dieser Test ist einfach.";
+    char sub[] = "Test";
+    char newSub[] = "Beispiel";
+    
+    replaceSubstring(sourceStr, sub, newSub);
+    
     return 0;
 }
 ```
 
-Sample Output:
-
+Beispielausgabe:
 ```
-Ersetzter Text: Das ist ein Text mit einigen Wörtern. Diese Wörtern sind simpel.
+Modifizierter String: Hallo, dies ist ein Beispiel. Dieses Beispiel ist einfach.
 ```
 
-## Deep Dive / Tieftauchen
-Suchen und Ersetzen von Text in C ohne Standardbibliotheken war eine Herausforderung. Frühe C-Versionen boten nicht viel Unterstützung dafür. Heute nutzen wir `strstr` zum Suchen und `strcpy`, sowie `memcpy` zum Manipulieren von Strings.
+Dieser Code demonstriert einen einfachen Ansatz, um nach allen Instanzen eines Teilstrings (`sub`) in einem Quellstring zu suchen und sie durch einen anderen Teilstring (`newSub`) zu ersetzen, wobei die Funktion `strstr` verwendet wird, um den Startpunkt jeder Übereinstimmung zu finden. Es ist ein sehr grundlegendes Beispiel, das komplexe Szenarien wie überlappende Teilstrings nicht behandelt.
 
-Alternativen? Bibliotheken wie `regex.h` bieten reguläre Ausdrücke für komplexe Suchmuster. Andere Sprachen bieten hier oft mehr, zum Beispiel Python mit `str.replace`.
+## Tiefere Einblicke
 
-Die Implementierung oben arbeitet in-place, um den Speicherbedarf zu minimieren. Größere Texte oder komplexere Muster erfordern jedoch oft robustere Lösungen mit dynamischem Speicher.
+Der Ansatz im Abschnitt "Wie geht das" ist grundlegend und veranschaulicht, wie man Textsuche und -ersatz in C ohne jegliche Drittanbieterbibliotheken erreichen kann. Historisch gesehen, aufgrund der Betonung von C auf Low-Level-Speicherverwaltung und Leistung, kapselt seine Standardbibliothek keine hochstufigen String-Manipulationsfunktionalitäten ein, wie sie in Sprachen wie Python oder JavaScript zu finden sind. Programmierer müssen den Speicher manuell verwalten und verschiedene String-Operationen kombinieren, um gewünschte Ergebnisse zu erzielen, was die Komplexität erhöht, aber mehr Kontrolle und Effizienz bietet.
 
-## See Also / Siehe Auch
-Weiterführende Links für neugierige Leser:
+Es ist wichtig zu beachten, dass dieser manuelle Ansatz fehleranfällig sein kann, insbesondere bei der Verwaltung von Speicherzuweisungen und Puffergrößen. Eine falsche Handhabung kann zu Pufferüberläufen und Speicherkorruption führen, was den Code für Sicherheitsrisiken anfällig macht.
 
-- [C Standard Library](https://en.cppreference.com/w/c/header)
-- [C Dynamic Memory Allocation](https://en.cppreference.com/w/c/memory)
-- [POSIX regex.h](https://pubs.opengroup.org/onlinepubs/7908799/xsh/regex.h.html)
+In vielen praktischen Szenarien, insbesondere solchen, die komplexe Textverarbeitung erfordern, ist es oft erwägenswert, Drittanbieterbibliotheken wie PCRE (Perl Compatible Regular Expressions) für Regex-basierte Suche und Ersetzung zu integrieren, um den Code zu vereinfachen und das Potenzial für Fehler zu reduzieren. Zusätzlich bieten moderne C-Standards und Compiler zunehmend integrierte Funktionen und sicherere Alternativen für die String-Manipulation an, um gängige Fallstricke in älteren C-Codebasen zu mildern. Dennoch bleibt das grundlegende Verständnis der manuellen Textverarbeitung eine wertvolle Fähigkeit im Werkzeugkasten eines Programmierers, insbesondere für die Optimierung leistungskritischer Anwendungen.

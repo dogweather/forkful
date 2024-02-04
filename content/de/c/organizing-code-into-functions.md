@@ -1,75 +1,80 @@
 ---
-title:                "Code in Funktionen organisieren"
-date:                  2024-01-26T01:08:59.137032-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Code in Funktionen organisieren"
-
+title:                "Organisation von Code in Funktionen"
+date:                  2024-02-03T17:59:10.686488-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Organisation von Code in Funktionen"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/c/organizing-code-into-functions.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Code in Funktionen zu organisieren bedeutet, den Code in wiederverwendbare Blöcke zu unterteilen, die spezifische Aufgaben ausführen. Dies macht den Code leichter lesbar, zu debuggen und zu warten.
+
+Code in Funktionen in C zu organisieren, bedeutet komplexe Aufgaben in kleinere, wiederverwendbare Codeblöcke zu unterteilen. Diese Praxis verbessert die Lesbarkeit, erleichtert das Debugging und fördert die Wiederverwendbarkeit von Code, was Anwendungen modularer und wartbarer macht.
 
 ## Wie geht das:
-Nehmen wir ein einfaches Beispiel: Nehmen wir an, Sie möchten mehrmals zwei Zahlen addieren.
 
-Ohne Funktionen:
-```C
+In C wird eine Funktion mit einem Rückgabetyp, einem Namen und Parametern (falls vorhanden) deklariert, gefolgt von einem Block aus Code. Beginnen wir mit einem einfachen Beispiel: einer Funktion, die zwei Ganzzahlen addiert.
+
+```c
 #include <stdio.h>
 
-int main() {
-    int summe1 = 5 + 3;
-    printf("Summe1: %d\n", summe1);
-    
-    int summe2 = 2 + 8;
-    printf("Summe2: %d\n", summe2);
-    
-    // Weitere Additionen hier...
-    
-    return 0;
-}
-```
-
-Mit Funktionen:
-```C
-#include <stdio.h>
-
-int addiere(int a, int b) {
-    return a + b;
-}
+// Funktionsdeklaration
+int add(int a, int b);
 
 int main() {
-    int summe1 = addiere(5, 3);
-    printf("Summe1: %d\n", summe1);
-    
-    int summe2 = addiere(2, 8);
-    printf("Summe2: %d\n", summe2);
-    
-    // Verwenden Sie die Funktion addiere() für weitere Additionen...
-    
-    return 0;
+  int summe = add(5, 3);
+  printf("Die Summe ist: %d\n", summe);
+  return 0;
+}
+
+// Funktionsdefinition
+int add(int a, int b) {
+  return a + b;
 }
 ```
 
 Ausgabe:
 ```
-Summe1: 8
-Summe2: 10
+Die Summe ist: 8
 ```
 
-## Vertiefender Einblick
-Bevor es in C Funktionen gab, wurde Programmierung oft in linearer Weise durchgeführt, ähnlich wie ein Rezept. Aber als Programme größer wurden, wurde die Code-Duplizierung zu einem Problem. Funktionen waren die Lösung – sie ermöglichten es uns, denselben Codeblock von verschiedenen Teilen eines Programms aus auszuführen, ohne ihn jedes Mal neu schreiben zu müssen. Dadurch spart man nicht nur Platz, sondern auch Zeit bei Updates: Ändert man die Funktion an einem Ort, wird jeder Teil Ihres Codes, der sie verwendet, aktualisiert.
+Betrachten wir nun ein komplexeres Beispiel, das einen benutzerdefinierten Datentyp verwendet. Diese Funktion berechnet die Fläche eines Rechtecks.
 
-Alternativen zu Funktionen könnten Inline-Code, Makros oder Copy-Paste-Coding sein, aber diese können zu aufgeblähtem, fehleranfälligem und schwer zu wartendem Code führen. Funktionen hingegen kapseln Funktionalität, definieren klare Schnittstellen und können Nebenwirkungen durch die richtige Verwendung von Scope reduzieren.
+```c
+#include <stdio.h>
 
-Wenn Sie Funktionen implementieren, sollten Sie ein paar Details beachten: Erstens versuchen Sie, sie nur eine Sache tun zu lassen – dies ist als Single Responsibility Principle bekannt. Zweitens sind Namen wichtig – wählen Sie aussagekräftige Namen für Funktionen und deren Parameter, um Ihren Code selbstdokumentierend zu gestalten.
+// Definiert eine Struktur für ein Rechteck
+typedef struct {
+  int Breite;
+  int Höhe;
+} Rechteck;
 
-## Siehe auch
-Für mehr über Funktionen in C, erkundigen Sie sich hier:
+// Funktion zur Berechnung der Fläche eines Rechtecks
+int berechneFlaeche(Rechteck rechteck) {
+  return rechteck.Breite * rechteck.Höhe;
+}
 
-- C-Standardbibliothek Referenz: https://en.cppreference.com/w/c/header
-- C Programmierung: Ein moderner Ansatz von K.N. King: Ein Buch mit einer detaillierten Betrachtung von Funktionen.
-- Learn-C.org: Abschnitt über Funktionen: https://www.learn-c.org/de/Functions
+int main() {
+  Rechteck meinRechteck = {5, 10};
+  int flaeche = berechneFlaeche(meinRechteck);
+  printf("Die Fläche des Rechtecks ist: %d\n", flaeche);
+  return 0;
+}
+```
+
+Ausgabe:
+```
+Die Fläche des Rechtecks ist: 50
+```
+
+## Tiefer Eintauchen
+
+Das Konzept von Funktionen in C, das von früheren Programmierpraktiken übernommen wurde, ist grundlegend für die strukturierte Programmierung. Funktionen ermöglichen es Entwicklern, Details abstrahieren, Komplexität zu verwalten und ihren Code logisch zu organisieren. Seit seiner Einführung ist die Funktion ein Kernkonstrukt in C und hat zahlreiche andere Sprachen beeinflusst.
+
+Jedoch haben sich, da sich die Programmierparadigmen weiterentwickelt haben, alternative Ansätze wie die objektorientierte Programmierung (OOP) in Sprachen wie C++ und Java herausgebildet, die das Konzept von Funktionen mit Methoden, die mit Objekten verbunden sind, erweitert haben. Obwohl C OOP nicht direkt unterstützt, ist es möglich, objektorientierte Designs durch sorgfältig strukturierte Funktionen und Daten nachzuahmen.
+
+In der modernen Programmierung bleiben Funktionen entscheidend, aber mit Fortschritten in Compiler-Optimierungen und Sprachfunktionen könnte der Schwerpunkt auf Inline-Funktionen und Templates in C++ oder Lambdas in Sprachen wie Python und JavaScript liegen. Diese bieten mehr Flexibilität und oft eine prägnantere Syntax, um ähnliche Modularität und Wiederverwendbarkeit zu erreichen. Dennoch sind die grundlegenden Prinzipien, die man durch die Organisation von Code in Funktionen in C erlernt, universell anwendbar und bilden die Grundlage für effiziente und effektive Softwareentwicklung.

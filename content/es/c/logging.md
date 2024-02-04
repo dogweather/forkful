@@ -1,64 +1,100 @@
 ---
-title:                "Registro de Actividades en Programación"
-date:                  2024-01-26T01:00:05.923198-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Registro de Actividades en Programación"
-
+title:                "Registro"
+date:                  2024-02-03T17:58:45.003668-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Registro"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/c/logging.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
-El registro (logging) es básicamente anotar lo que está haciendo tu programa, típicamente escribiendo mensajes a un archivo o terminal. Los programadores lo hacen para hacer seguimiento de eventos, diagnosticar problemas y para tener un registro de auditoría que cuenta la historia de la operación de una aplicación a lo largo del tiempo.
+
+El registro de actividades en C implica grabar el flujo y los eventos notables de un programa durante su tiempo de ejecución, proporcionando una revisión tangible de su comportamiento y rendimiento. Los programadores utilizan el registro para fines de depuración, monitoreo de la salud del software y aseguramiento de la seguridad del sistema.
 
 ## Cómo hacerlo:
-Comencemos con algunos conceptos básicos. C no tiene un marco de trabajo de registro incorporado, pero puedes armar algo simple con `stdio.h`. Aquí te muestro cómo:
+
+En C, el registro se puede lograr con operaciones básicas de archivos o usando bibliotecas más sofisticadas. Por simplicidad, empezaremos con la biblioteca estándar de E/S. Los siguientes fragmentos muestran implementaciones básicas de registro.
+
+Para registrar mensajes simples:
+
+```c
+#include <stdio.h>
+
+int main() {
+    FILE *logFile;
+    logFile = fopen("application.log", "a"); // Abrir el archivo de registro en modo de agregado
+    
+    if (logFile == NULL) {
+        perror("Error al abrir el archivo de registro.");
+        return -1;
+    }
+    
+    fprintf(logFile, "Iniciando aplicación.\n");
+    
+    // La lógica de tu aplicación aquí
+    
+    fprintf(logFile, "Aplicación finalizada exitosamente.\n");
+    fclose(logFile);
+    
+    return 0;
+}
+```
+
+Salida en `application.log`:
+
+```
+Iniciando aplicación.
+Aplicación finalizada exitosamente.
+```
+
+Para incluir registros más detallados con marcas de tiempo y niveles de registro:
 
 ```c
 #include <stdio.h>
 #include <time.h>
 
-void logMessage(const char* message) {
+void logMessage(FILE *logFile, const char* level, const char* message) {
     time_t now;
     time(&now);
-    char *date = ctime(&now);
-    date[strlen(date) - 1] = '\0'; // Elimina el salto de línea al final del resultado de ctime()
-    printf("[%s] %s\n", date, message);
+    char* datetime = ctime(&now);
+    datetime[strlen(datetime)-1] = '\0'; // Remover el carácter de nueva línea
+    fprintf(logFile, "[%s] %s - %s\n", datetime, level, message);
 }
 
 int main() {
-    logMessage("La aplicación ha iniciado.");
-    // ... tu código va aquí ...
-    logMessage("La aplicación está haciendo algo importante.");
-    // ... tu código continúa ...
-    logMessage("La aplicación ha terminado.");
+    FILE *logFile;
+    logFile = fopen("detailed.log", "a");
+    
+    if (logFile == NULL) {
+        perror("Error al abrir el archivo de registro.");
+        return -1;
+    }
+    
+    logMessage(logFile, "INFO", "Iniciando aplicación");
+    // La lógica de tu aplicación aquí
+    logMessage(logFile, "ERROR", "Un error de ejemplo");
+    
+    fclose(logFile);
+    
     return 0;
 }
 ```
 
-Una salida de muestra podría verse así:
+Salida en `detailed.log`:
 
 ```
-[Tue Mar 9 12:00:01 2023] La aplicación ha iniciado.
-[Tue Mar 9 12:00:02 2023] La aplicación está haciendo algo importante.
-[Tue Mar 9 12:00:03 2023] La aplicación ha terminado.
+[Thu Mar 10 14:32:01 2023] INFO - Iniciando aplicación
+[Thu Mar 10 14:32:02 2023] ERROR - Un error de ejemplo
 ```
 
-Por supuesto, en el mundo real probablemente querrías escribir en un archivo en lugar de la terminal, manejar diferentes niveles de registro, y tal vez usar una biblioteca predefinida.
+## Análisis Profundo
 
-## Estudio Profundo
-El registro en C tiene un encanto particular: es tan de bajo nivel como la mayor parte del resto del lenguaje. Históricamente, el registro se realizaba utilizando `fprintf` con `stderr` o un puntero a un archivo. A medida que los programas se volvían más complejos, también lo hacían las necesidades de registro, lo que llevó al desarrollo de bibliotecas como `syslog` en sistemas Unix, que podrían manejar registros de múltiples fuentes con varios niveles de importancia.
+El registro en C, como se demostró, se basa en operaciones simples de archivos, lo cual es efectivo pero no tan poderoso ni flexible como las instalaciones de registro en otros idiomas, como el módulo `logging` de Python o `Log4j` de Java. Para capacidades de registro más avanzadas en C, los desarrolladores a menudo recurren a bibliotecas como `syslog` en sistemas similares a Unix, que proporciona gestión de registro a nivel de sistema, o bibliotecas de terceros como `log4c`.
 
-En el panorama moderno, existen muchas bibliotecas de registro en C, como `zlog`, `log4c` y `glog`, que ofrecen un conjunto de características rico que incluye rotación de registros, registro estructurado y registro multihilo. Estas soluciones permiten un control detallado sobre la verbosidad, destinos y formatos del registro.
+Históricamente, el registro ha sido una parte integral de la programación, remontándose a prácticas de programación tempranas donde el seguimiento y la comprensión del flujo del programa y los errores se realizaban principalmente a través de impresiones físicas. A medida que los sistemas evolucionaron, el registro se volvió más sofisticado, ahora admitiendo varios niveles de gravedad, rotación de registros y registro asincrónico.
 
-Al implementar un sistema de registro, se deben considerar detalles como el formato de las marcas de tiempo, la gestión de archivos de registro y el rendimiento. Registrar las marcas de tiempo en los registros es crucial para correlacionar eventos, mientras que la rotación de registros asegura que los archivos de registro no consuman demasiado espacio en disco. El acto de registro también debe ser rápido y no bloquear el flujo principal de la aplicación para evitar que el registro se convierta en un cuello de botella.
-
-## Ver También
-Para profundizar más en bibliotecas y prácticas de registro en C, consulta estos recursos:
-
-- Manual de `syslog` de GNU: https://www.gnu.org/software/libc/manual/html_node/Syslog.html
-- `zlog`: Una biblioteca de registro altamente configurable para C - https://github.com/HardySimpson/zlog
-- `log4c`: Un marco de trabajo de registro para C modelado después de Log4j - http://log4c.sourceforge.net/
-- `glog`: La biblioteca de registro a nivel de aplicación de Google - https://github.com/google/glog
+Si bien la biblioteca estándar de C proporciona las herramientas básicas para implementar el registro, sus limitaciones a menudo llevan a la creación de marcos de registro personalizados o a la adopción de bibliotecas externas para soluciones de registro más ricas en funciones y flexibles. A pesar de estas limitaciones, comprender e implementar el registro básico en C es crucial para la depuración y el mantenimiento del software, especialmente en entornos donde se deben minimizar las dependencias externas.

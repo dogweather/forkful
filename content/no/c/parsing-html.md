@@ -1,59 +1,69 @@
 ---
-title:                "Analyse av HTML"
-date:                  2024-01-20T15:30:05.240707-07:00
-simple_title:         "Analyse av HTML"
-
+title:                "Analysering av HTML"
+date:                  2024-02-03T17:59:54.287380-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Analysering av HTML"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/c/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Hva & Hvorfor?)
-Parsing HTML innebærer å tolke og analysere HTML-koden for å forstå dens struktur og innhold. Programmerere gjør dette for å hente ut eller manipulere data, trappe opp web scraping, eller bygge innholdsdrevne applikasjoner.
+## Hva & Hvorfor?
 
-## How to: (Slik gjør du:)
-For å parse HTML i C, kan du bruke biblioteket `libxml2`. Her er et eksempel som viser grunnleggende bruk:
+Parsing av HTML i C innebærer analyse av HTML-dokumenter for effektivt å trekke ut data, struktur eller spesifikke deler, ofte som et forstadium til datamining eller webskraping. Programmerere gjør dette for å automatisere informasjonsekstraksjon, noe som muliggjør programmatisk behandling eller gjenbruk av webinnhold.
 
-```C
+## Hvordan:
+
+Å parse HTML kan virke avskrekkende på grunn av HTMLs kompleksitet og dens hyppige avvik fra rene, velformede strukturer. Men ved å bruke et bibliotek som `libxml2`, spesifikt dets HTML-parsemodul, forenkles prosessen. Dette eksempelet demonstrerer hvordan man bruker `libxml2` for å parse HTML og trekke ut informasjon.
+
+Først, sørg for at `libxml2` er installert i ditt miljø. I mange Linux-distribusjoner kan du installere det via pakkehåndtereren. For eksempel, på Ubuntu:
+
+```bash
+sudo apt-get install libxml2 libxml2-dev
+```
+
+Nå, la oss skrive et enkelt C-program som bruker `libxml2` for å parse en HTML-streng og skrive ut teksten inne i et spesifikt element:
+
+```c
 #include <stdio.h>
 #include <libxml/HTMLparser.h>
 
-int main() {
-    htmlDocPtr doc;
-    htmlNodePtr root;
-
-    // Parse HTML fra en streng
-    const char *html = "<html><body><p>Hello, Norway!</p></body></html>";
-    doc = htmlReadDoc((xmlChar*)html, NULL, NULL, HTML_PARSE_NOERROR | HTML_PARSE_NOWARNING);
-
-    // Få rotnoden
-    root = xmlDocGetRootElement(doc);
+void parseHTML(const char *html) {
+    htmlDocPtr doc = htmlReadDoc((const xmlChar *)html, NULL, NULL, HTML_PARSE_RECOVER | HTML_PARSE_NOERROR | HTML_PARSE_NOWARNING);
     
-    // Skriv ut rotnoden
-    printf("Root element: %s\n", (char *)root->name);
-
-    // Rydd opp
+    // Anta at vi leter etter innholdet inne i <p>-tagger
+    xmlNode *root_element = xmlDocGetRootElement(doc);
+    for (xmlNode *current_node = root_element; current_node; current_node = current_node->next) {
+        if (current_node->type == XML_ELEMENT_NODE && strcmp((const char *)current_node->name, "p") == 0) {
+            printf("Fant avsnitt: %s\n", xmlNodeGetContent(current_node));
+        }
+    }
+    
     xmlFreeDoc(doc);
     xmlCleanupParser();
+}
 
+int main() {
+    const char *html = "<html><body><p>Hei, verden!</p></body></html>";
+    parseHTML(html);
     return 0;
 }
 ```
 
 Eksempelutdata:
 ```
-Root element: html
+Fant avsnitt: Hei, verden!
 ```
 
-## Deep Dive (Dypdykk)
-Parsing HTML med C har ikke alltid vært greit. Før biblioteker som `libxml2`, måtte man ofte skrive sin egen parser, et arbeid som er både komplekst og feilutsatt.
+Dette eksempelet fokuserer på å trekke ut tekst innenfor avsnittstagger, men `libxml2` tilbyr robust støtte for å navigere og forespørre forskjellige deler av et HTML-dokument.
 
-Alternativer inkluderer å bruke regulære uttrykk for enkel dataekstraksjon eller koble seg til en nettlesermotor for å gjøre jobben. Men disse metodene kommer med egne problemer – regex er upålitelig for komplekse HTML og nettlesermotorer er tyngre løsninger.
+## Dypdykk
 
-Det settes pris på `libxml2` fordi det tilbyr en rimelig balanse av ytelse og fleksibilitet. Det håndterer feil i HTML på en vennlig måte og tar seg av utfordringene som kommer med å tolke "ekte verden" HTML.
+Parsing av HTML i C går tilbake til de tidlige dagene av webutviklingen. I begynnelsen måtte utviklere stole på egentilpassede, ofte grunnleggende parsingsløsninger, på grunn av mangel på standardiserte biblioteker og den kaotiske tilstanden til HTML på nettet. Introduksjonen av biblioteker som `libxml2` markerte en betydelig fremgang, som tilbyr mer standardiserte, effektive og motstandsdyktige tilnærminger til HTML-parsing.
 
-## See Also (Se Også)
-- Offisiell `libxml2` nettside: http://xmlsoft.org/
-- W3C HTML spesifikasjon: https://www.w3.org/TR/html52/
-- TutorialsPoint's guide til `libxml2`: https://www.tutorialspoint.com/libxml/index.htm
+Til tross for Cs uovertrufne hastighet og kontroll, er det verdt å merke seg at C kanskje ikke alltid er det beste verktøyet for parsing av HTML, spesielt for oppgaver som krever raske utviklingssykluser eller håndtering av eksepsjonelt dårlig formulert HTML. Språk med høynivå HTML-parsebiblioteker, som Python med Beautiful Soup, tilbyr mer abstraherte, brukervennlige grensesnitt på bekostning av noe ytelse.
+
+Likevel, for ytelseskritiske applikasjoner, eller når man opererer i ressursbegrensede miljøer, forblir parsing av HTML i C en levedyktig og ofte foretrukket metode. Nøkkelen er å utnytte robuste biblioteker som `libxml2` for å håndtere HTMLs intrikate detaljer, slik at utviklere kan fokusere på å trekke ut dataene de trenger uten å bli hindret i detaljene i parsemekanismen.

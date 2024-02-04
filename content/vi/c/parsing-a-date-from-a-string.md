@@ -1,72 +1,60 @@
 ---
-title:                "Phân tích ngày từ chuỗi kí tự"
-date:                  2024-01-28T22:04:48.064667-07:00
+title:                "Phân tích ngày tháng từ một chuỗi"
+date:                  2024-02-03T18:05:44.325563-07:00
 model:                 gpt-4-0125-preview
-simple_title:         "Phân tích ngày từ chuỗi kí tự"
-
+simple_title:         "Phân tích ngày tháng từ một chuỗi"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/c/parsing-a-date-from-a-string.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 
-Phân tích cú pháp một ngày từ một chuỗi nghĩa là trích xuất và chuyển đổi ngày thể hiện dưới dạng văn bản thành một định dạng có cấu trúc mà chương trình có thể hiểu và làm việc với. Lập trình viên làm điều này bởi vì ngày dưới dạng văn bản không tiện lợi cho việc tính toán, so sánh, hoặc lưu trữ theo một định dạng chuẩn.
+Phân tích cú pháp ngày từ chuỗi trong C liên quan đến việc chuyển đổi các biểu diễn văn bản của ngày thành định dạng mà chương trình có thể thao tác và phân tích hiệu quả hơn. Điều này rất quan trọng cho các tác vụ như toán học ngày, so sánh và định dạng cho các địa phương khác nhau, vì nó cho phép lập trình viên xử lý đầu vào từ người dùng hoặc các mục nhập dữ liệu trong một cách thức chuẩn hóa.
 
 ## Làm thế nào:
 
-Đây là hướng dẫn nhỏ về cách phân tích cú pháp một chuỗi ngày trong C sử dụng `strptime()` từ `time.h`. Nó đọc ngày ở định dạng `"YYYY-MM-DD"` và chuyển nó thành một `struct tm`.
+C không cung cấp một cách tích hợp sẵn để phân tích cú pháp ngày từ chuỗi một cách trực tiếp, vì vậy chúng ta thường phải sử dụng hàm `strptime` có trong thư viện `<time.h>` cho các hệ thống POSIX. Hàm này cho phép chúng ta chỉ định định dạng mong đợi của chuỗi đầu vào và phân tích cú pháp nó thành `struct tm`, đại diện cho ngày và giờ lịch dựa vào các thành phần của chúng.
 
-```C
-#include <stdio.h>
+Dưới đây là một ví dụ đơn giản về cách sử dụng `strptime` để phân tích cú pháp một ngày từ chuỗi:
+
+```c
 #include <time.h>
+#include <stdio.h>
 
 int main() {
-    const char *date_str = "2023-03-14";
+    const char *dateStr = "2023-04-01";
     struct tm tm;
-    
-    // Xóa cấu trúc để tránh các giá trị rác
-    memset(&tm, 0, sizeof(struct tm));
-    
-    // Phân tích cú pháp chuỗi ngày
-    if (strptime(date_str, "%Y-%m-%d", &tm) == NULL) {
-        printf("Phân tích cú pháp ngày thất bại.\n");
-        return 1;
-    }
+    char buf[255];
 
-    // In ngày đã phân tích cú pháp
-    printf("Năm: %d, Tháng: %d, Ngày: %d\n", tm.tm_year + 1900, tm.tm_mon + 1, tm.tm_mday);
+    // Phân tích cú pháp chuỗi ngày vào struct tm
+    if (strptime(dateStr, "%Y-%m-%d", &tm) == NULL) {
+        printf("Không thể phân tích cú pháp ngày.\n");
+    } else {
+        // Sử dụng strftime để in ngày ở định dạng dễ đọc
+        strftime(buf, sizeof(buf), "%A, %B %d, %Y", &tm);
+        printf("Ngày đã phân tích: %s\n", buf);
+    }
 
     return 0;
 }
 ```
 
-Kết quả mẫu:
+Kết quả mẫu cho chương trình này sẽ là:
+
 ```
-Năm: 2023, Tháng: 3, Ngày: 14
+Ngày đã phân tích: Thứ Bảy, Tháng Tư 01, 2023
 ```
 
-## Kỹ lưỡng hơn
+Rất cần thiết phải xử lý các lỗi tiềm ẩn, chẳng hạn như `strptime` không khớp mẫu hoặc gặp đầu vào không mong đợi.
 
-Một thời gian, việc xử lý ngày trong C khá là rắc rối, khi lập trình viên phải tự mình phân tích cú pháp chuỗi bằng cách nhồi nhét `strtok()`, `sscanf()` hoặc thậm chí là dùng vòng lặp và kiểm tra kí tự thô. Nhưng rồi `strptime()` xuất hiện như một phần của POSIX, cho phép chúng ta chuyển đổi chuỗi biểu diễn thời gian thành `struct tm` với các định dạng được định nghĩa trước.
+## Đi sâu vào vấn đề
 
-Có các phương pháp thay thế như `getdate()` nhưng chúng không được sử dụng rộng rãi. Và có cách thủ công - tự mình thao tác trực tiếp với chuỗi, nhưng chúng ta không nên quay trở lại thời kỳ đen tối, phải không?
+Hàm `strptime`, dù mạnh mẽ, không phải là một phần của thư viện chuẩn C và chủ yếu được tìm thấy trên các hệ thống tuân thủ POSIX như Linux và UNIX. Hạn chế này có nghĩa là các chương trình dựa vào `strptime` để phân tích cú pháp ngày từ chuỗi có thể không di động sang các hệ thống không phải POSIX như Windows mà không cần thêm các lớp tương thích hoặc thư viện phụ trợ.
 
-Về mặt thực thi, `strptime()` yêu cầu bạn phải xóa sổ cấu trúc `struct tm` của mình vì nó không tự làm điều đó cho bạn. Nếu bạn bỏ qua việc làm sạch bằng `memset()`, bạn có thể nhận được các giá trị rác ngẫu nhiên trong các trường không sử dụng, dẫn đến kết quả không mong muốn.
+Truyền thống, việc xử lý ngày và giờ trong C yêu cầu nhiều thao tác thủ công và sự chú ý đặc biệt, đặc biệt là xem xét các địa phương và múi giờ khác nhau. Các lựa chọn và mở rộng hiện đại cho C, như thư viện `<chrono>` của C++ và các thư viện bên thứ ba như thư viện ngày của Howard Hinnant cho C++, cung cấp các giải pháp mạnh mẽ hơn cho việc thao tác ngày và giờ, bao gồm cả phân tích cú pháp. Các thư viện này thường cung cấp hỗ trợ tốt hơn cho một loạt định dạng ngày, múi giờ và cơ chế xử lý lỗi, khiến chúng trở nên ưu tiên hơn cho các dự án mới yêu cầu khả năng thao tác ngày và giờ mở rộng.
 
-Nhớ rằng, `strptime()` là một phần của POSIX, vì vậy nếu bạn đang ở trên một hệ thống không phải POSIX như Windows, bạn sẽ cần tìm một giải pháp khác hoặc một lớp tương thích, như các triển khai `win32` hoặc thư viện bên thứ ba.
-
-## Xem thêm
-
-- [Thư viện `<chrono>` của C++](https://en.cppreference.com/w/cpp/header/chrono)
-Dành cho những ai cũng muốn tiếp xúc với C++ và tìm kiếm một cách tiếp cận hiện đại hơn về việc thao tác ngày và giờ.
-
-Mặc dù trọng tâm ở đây là C, nhưng việc hiểu sâu hơn về các hàm thời gian của POSIX luôn là một điểm cộng.
-
-- [Hành vi của strftime và strptime](https://man7.org/linux/man-pages/man3/strptime.3.html)
-Trang hướng dẫn cho `strptime()` và `strftime()` để hiểu cách định dạng thời gian trong C.
-
-Khi nghịch ngợm với thời gian và ngày, hãy chú ý đến múi giờ và các thay đổi giờ tiết kiệm ánh sáng ban ngày - những điều này có thể gây trở ngại nếu không được xử lý đúng cách. Chúc các bạn lập trình vui vẻ!
+Tuy nhiên, việc hiểu cách phân tích cú pháp ngày từ chuỗi trong C có thể có ích, đặc biệt là khi làm việc trên hoặc bảo trì các dự án cần phải tương thích với các hệ thống mà những công cụ hiện đại này không khả dụng hoặc khi làm việc trong các môi trường lập trình C nghiêm ngặt.

@@ -1,63 +1,63 @@
 ---
 title:                "Afronden van getallen"
-date:                  2024-01-28T22:06:27.284728-07:00
+date:                  2024-02-03T18:07:38.470018-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Afronden van getallen"
-
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/c/rounding-numbers.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Wat & Waarom?
-Het afronden van getallen betekent het afsnijden van de cijfers na een bepaald punt, terwijl eventueel het laatste bewaarde cijfer wordt aangepast. Programmeurs ronden af om de nauwkeurigheid te verminderen wanneer exacte waarden niet noodzakelijk zijn, om te gaan met fouten in floating-point getallen, of om getallen voor te bereiden voor een gebruiksvriendelijke weergave.
 
-## Hoe te:
-In C gebruik je typisch de functies `floor()`, `ceil()`, of `round()`. Hier is een snelle demonstratie:
+Getallen afronden is het proces waarbij de cijfers van een nummer worden aangepast om de precisie volgens bepaalde regels te verminderen, hetzij naar het dichtstbijzijnde hele getal of een gespecificeerd aantal decimalen. Programmeurs doen dit om redenen variërend van het beperken van de hoeveelheid opslag die nodig is, tot het vereenvoudigen van de uitvoer voor consumptie door de gebruiker, of het verzekeren van nauwkeurige wiskundige bewerkingen die gevoelig zijn voor zeer kleine varianties.
 
-```C
+## Hoe:
+
+Getallen afronden in C kan worden bereikt met behulp van verschillende functies, maar de meest voorkomende benadering omvat de `floor()`, `ceil()`, en `round()` functies. Deze functies maken deel uit van de standaard wiskunde-bibliotheek, dus je moet `math.h` in je programma opnemen.
+
+```c
 #include <stdio.h>
 #include <math.h>
 
 int main() {
-    double num = 3.14159;
-    double num_floor = floor(num);
-    double num_ceil = ceil(num);
-    double num_round = round(num);
+    double num = 9.527;
 
-    printf("Floor: %.2f\n", num_floor); // Floor: 3.00
-    printf("Ceil: %.2f\n", num_ceil);   // Ceil: 4.00
-    printf("Round: %.2f\n", num_round); // Round: 3.00
+    // Met floor() naar beneden afronden
+    double floorResult = floor(num);
+    printf("floor(9.527) = %.0f\n", floorResult);
+
+    // Met ceil() naar boven afronden
+    double ceilResult = ceil(num);
+    printf("ceil(9.527) = %.0f\n", ceilResult);
+
+    // Met round() naar het dichtstbijzijnde gehele getal afronden
+    double roundResult = round(num);
+    printf("round(9.527) = %.0f\n", roundResult);
+
+    // Afronden op een gespecificeerd aantal decimalen involves vermenigvuldiging en deling
+    double twoDecimalPlaces = round(num * 100) / 100;
+    printf("Afronden op twee decimalen: %.2f\n", twoDecimalPlaces);
+
     return 0;
 }
 ```
 
-Voor meer controle, zoals afronden op een specifieke plaats, vermenigvuldig je, rond je af en deel je:
-
-```C
-double roundToPlace(double num, int place) {
-    double scale = pow(10.0, place);
-    return round(num * scale) / scale;
-}
-
-// ...
-
-double num = 3.14159;
-double num_rounded = roundToPlace(num, 2);
-printf("Afgerond op 2 decimalen: %.2f\n", num_rounded); // Afgerond op 2 decimalen: 3.14
+Uitvoer:
+```
+floor(9.527) = 9
+ceil(9.527) = 10
+round(9.527) = 10
+Afronden op twee decimalen: 9.53
 ```
 
-## Diepe Duik
-Vroeger betekende afronden vaak een handmatig proces - een zware taak met alleen pen en papier. Met computing hebben we dit geautomatiseerd, maar floating-point rekenkunde bracht nuances met zich mee vanwege de binaire aard, waar sommige getallen niet precies kunnen worden weergegeven.
+## Diepgaande Duik
 
-Alternatieven voor standaardafronding zijn onder meer truncatie (simpelweg het laten vallen van extra cijfers) of bankers' rounding, wat afrondt op het dichtstbijzijnde even getal wanneer het precies tussen twee waarden in staat, waardoor de vooringenomenheid bij herhaalde berekeningen wordt verkleind.
+Getallen afronden heeft diepe historische wortels in wiskunde en berekeningen, essentieel voor zowel theoretische als toegepaste aspecten. In C, hoewel `floor()`, `ceil()`, en `round()` basisfunctionaliteit bieden, is de essentie van het afronden van floats naar gehele getallen of specifieke decimalen genuanceerder vanwege de binaire representatie van zwevende-kommagetallen. Deze representatie kan leiden tot onverwachte resultaten vanwege hoe getallen die niet precies in binair kunnen worden gerepresenteerd (zoals 0.1) worden behandeld.
 
-Implementatie wordt lastig wanneer je moet afronden op willekeurige nauwkeurige getallen of speciale gevallen zoals oneindigheid, signalerende NaNs, of subnormale waarden moet behandelen. De standaardbibliotheekfuncties van C behandelen de basis, maar als je decimalen op maat moet afronden, heb je meer nodig dan `math.h`.
+Deze functies maken deel uit van de C-standaardbibliotheek, gedefinieerd in `<math.h>`. Bij het afronden van getallen, vooral voor financiële of precieze technische berekeningen, moet men de implicaties van het gebruik van binaire zwevende-kommagetallen overwegen. Alternatieven voor de ingebouwde C-functies voor zeer nauwkeurige of specifiek decimale afronding kunnen het implementeren van aangepaste afrondingsfuncties of het gebruik van bibliotheken voor willekeurige-precisie rekenkunde, zoals GMP of MPFR, omvatten, hoewel deze extra complexiteit en afhankelijkheden introduceren.
 
-## Zie Ook
-- [Documentatie van `<math.h>`](https://en.cppreference.com/w/c/numeric/math)
-- [Floating-point rekenkunde](https://en.wikipedia.org/wiki/Floating-point_arithmetic)
-- [De valkuilen van het verifiëren van floating-point berekeningen](https://dl.acm.org/doi/10.1145/1186736.1186737)
+In de praktijk, de juiste benadering kiezen voor afronden in C betekent een evenwicht vinden tussen de behoefte aan precisie, prestatie en praktische bruikbaarheid, met een scherp begrip van de domeinspecifieke vereisten van de applicatie die wordt ontwikkeld.

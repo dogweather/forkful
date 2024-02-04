@@ -1,56 +1,60 @@
 ---
-title:                "Slik får du tak i dagens dato"
-date:                  2024-01-20T15:13:10.499195-07:00
-simple_title:         "Slik får du tak i dagens dato"
-
+title:                "Få dagens dato"
+date:                  2024-02-03T17:57:23.453916-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Få dagens dato"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/c/getting-the-current-date.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-("Hva & Hvorfor?")
-Å hente gjeldende dato i C betyr å finne ut den nøyaktige datoen akkurat nå. Programmerere gjør dette for funksjonalitet som logger, tidsstempel og tid-sensitive operasjoner.
+## Hva & Hvorfor?
 
-## How to:
-("Hvordan gjøre det:")
-Nedenfor finner du en enkel kode for å hente og vise gjeldende dato:
+Å hente den nåværende datoen i C innebærer å benytte seg av det standard C-biblioteket for å hente og formatere systemets nåværende dato og tid. Programmerere trenger ofte denne funksjonaliteten for logging, tidsstempling eller planleggingsfunksjoner i applikasjonene sine.
 
-```C
+## Hvordan:
+
+I C gir `<time.h>`-headeren de nødvendige funksjonene og typene for å arbeide med datoer og tider. `time()`-funksjonen henter den nåværende tiden, mens `localtime()` konverterer denne tiden til den lokale tidssonen. For å vise datoen bruker vi `strftime()` for å formatere den som en streng.
+
+Her er et grunnleggende eksempel:
+
+```c
 #include <stdio.h>
 #include <time.h>
 
 int main() {
-    time_t t = time(NULL);
-    struct tm *tm = localtime(&t);
-    printf("Dagens dato er: %02d-%02d-%d\n",
-           tm->tm_mday, tm->tm_mon + 1, tm->tm_year + 1900);
+    char buffer[80];
+    time_t råtid;
+    struct tm *tidinfo;
+
+    // Hent den nåværende tiden
+    time(&råtid);
+    // Konverter den til lokal tid
+    tidinfo = localtime(&råtid);
+    
+    // Formater datoen og skriv den ut
+    strftime(buffer, 80, "Dagens dato er %Y-%m-%d", tidinfo);
+    printf("%s\n", buffer);
+
     return 0;
 }
 ```
 
-Når du kjører denne koden, får du noe sånt:
+Eksempel på utskrift kan se slik ut:
+
 ```
-Dagens dato er: 24-03-2023
+Dagens dato er 2023-04-12
 ```
 
-## Deep Dive:
-("Dypdykk")
-Historisk sett har håndtering av datoer og klokkeslett i C ikke forandret seg mye. `time.h` biblioteket har vært standarden siden C ble til. Andre biblioteker som `sys/time.h` gir noe høyere presisjon og funksjoner, men `time.h` dekker de grunnleggende behovene.
+## Dypdykk
 
-Det finnes alternative måter å hente datoer på, som POSIX funksjoner `gettimeofday` og tidssoner håndtert av `gmtime`, men for mange behov er `localtime` mer enn nok.
+Håndteringen av tid i C, som tilrettelegges av `<time.h>`, går tilbake til de aller første dagene av språket og UNIX-systemene. Det er bygget rundt `time_t`-datatype, som representerer den nåværende tiden som antall sekunder siden Unix Epoch (1. januar 1970). Selv om dette er effektivt og universelt kompatibelt, betyr det også at det standard C-bibliotekets tidsfunksjoner er iboende begrenset av rekkevidden og oppløsningen til `time_t`.
 
-Når du henter den lokale tiden med `localtime`, tolkes tiden som om den er i systemets lokale tidssone. Dette kan være viktig å vurdere om programmet ditt skal fungere i flere tidssoner.
+Moderne applikasjoner, spesielt de som krever høyoppløselige tidsstempler eller håndterer datoer langt inn i fremtiden eller fortiden, kan finne disse begrensningene utfordrende. For eksempel er Year 2038-problemet en berømt illustrasjon der systemer som bruker en 32-bits `time_t` vil overflyt.
 
-## See Also:
-("Se også")
-For mer informasjon, se den offisielle dokumentasjonen for `time.h`:
-- https://en.cppreference.com/w/c/chrono
+For mer kompleks håndtering av tid og dato, tyr mange programmerere til eksterne biblioteker eller funksjonalitetene som tilbys av operativsystemet. I C++, for eksempel, tilbyr `<chrono>`-biblioteket mer presise og allsidige tidshåndteringskapasiteter.
 
-Introduksjoner til tidshåndtering i C:
-- https://www.tutorialspoint.com/c_standard_library/time_h.htm
-- https://www.geeksforgeeks.org/time-h-header-file-in-c-with-examples/
-
-Å lære mer om tidssoner og `gmtime`:
-- https://man7.org/linux/man-pages/man3/gmtime.3.html
+Tross sine begrensninger, er enkelheten og allestedsnærværen av Cs tidsfunksjoner mer enn egnet for mange applikasjoner. Å forstå disse verktøyene er fundamentalt for C-programmerere, og tilbyr en blanding av historisk programmeringskontekst og praktisk, hverdagslig nytte.

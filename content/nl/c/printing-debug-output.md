@@ -1,65 +1,72 @@
 ---
-title:                "Debug-output afdrukken"
-date:                  2024-01-28T22:04:27.472498-07:00
+title:                "Debug output afdrukken"
+date:                  2024-02-03T18:05:13.475439-07:00
 model:                 gpt-4-0125-preview
-simple_title:         "Debug-output afdrukken"
-
+simple_title:         "Debug output afdrukken"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/c/printing-debug-output.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Wat & Waarom?
 
-Debuguitvoer afdrukken is als het invoegen van kleine controlepunten in je code om informatie uit te spugen, wat helpt om erachter te komen wat er in godsnaam allemaal gebeurt. Programmeurs doen dit om bugs te lokaliseren of om te zorgen dat hun code stap-voor-stap doet wat het moet doen.
+Het afdrukken van debuginformatie gaat over het genereren van tijdelijke, informatieve logberichten die programmeurs kunnen helpen om de stroom en staat van een programma tijdens de uitvoering ervan te begrijpen. Programmeurs doen dit om softwarefouten of onverwacht gedrag in de logica van een programma te identificeren en te diagnosticeren.
 
 ## Hoe:
 
-Hier is het addertje onder het gras—debuguitvoer afdrukken is eenvoudig. De zware last in C is `printf`. Bekijk dit eenvoudige voorbeeld:
+In C is de meest voorkomende manier om debuginformatie af te drukken het gebruik van de `printf` functie uit de standaard I/O-bibliotheek. De `printf` functie maakt geformatteerde uitvoer naar het standaard uitvoerapparaat, meestal het scherm, mogelijk. Hier is een eenvoudig voorbeeld:
 
 ```c
 #include <stdio.h>
 
 int main() {
-    int loopCounter = 0;
-    for(loopCounter = 0; loopCounter < 5; loopCounter++) {
-        printf("Loop iteratie: %d\n", loopCounter);
-        // Meer complexe code hier.
-    }
-    printf("Loop afgerond.\n");
-    // Rest van je code.
+    int x = 5;
+    printf("Debug: De waarde van x is %d\n", x);
+    
+    // Uw programmalogica hier
+    
     return 0;
 }
 ```
 
-Als je dit uitvoert, verschijnt er op je scherm:
+Voorbeelduitvoer:
 
 ```
-Loop iteratie: 0
-Loop iteratie: 1
-Loop iteratie: 2
-Loop iteratie: 3
-Loop iteratie: 4
-Loop afgerond.
+Debug: De waarde van x is 5
 ```
 
-Simpel, toch? Vergeet alleen niet om deze regels te verwijderen of uit te commentariëren als je klaar bent, zodat je console niet vol raakt.
+Voor meer geavanceerde debuguitvoer wilt u misschien bestandsnaam- en regelnummerinformatie opnemen. Dit kan gedaan worden met behulp van de `__FILE__` en `__LINE__` vooraf gedefinieerde macro's zoals volgt:
 
-## Diepe Duik
+```c
+#define DEBUG_PRINT(fmt, args...) fprintf(stderr, "DEBUG: %s:%d: " fmt, __FILE__, __LINE__, ##args)
 
-Vroeger waren er geen fancy Integrated Development Environment (IDE) debuggers om je bij de hand te nemen. Ruwe output naar de terminal was alles wat je had. Vandaag de dag is het nog steeds goud waard voor snelle en vuile diagnostiek.
+int main() {
+    int testWaarde = 10;
+    DEBUG_PRINT("De testwaarde is %d\n", testWaarde);
+    
+    // Uw programmalogica hier
+    
+    return 0;
+}
+```
 
-Alternatieven? Nou, voor zwaar debuggen, kun je overschakelen naar het gebruik van echte IDE debuggers, of logfaciliteiten die meer controle bieden.
+Voorbeelduitvoer:
 
-`printf` is je go-to, maar er is meer onder de motorkap. Bijvoorbeeld, `fprintf(stderr, ...)` kan je berichten omleiden naar de standaardfoutstroom, waardoor ze makkelijker te scheiden zijn van standaarduitvoer.
+```
+DEBUG: voorbeeld.c:6: De testwaarde is 10
+```
 
-Ook, als prestaties belangrijk zijn, wil je misschien loggen in strakke lussen vermijden of overwegen om te compileren met macro's die je in staat stellen om debugcode in productie uit te strippen.
+Merk op dat we in dit voorbeeld `fprintf` gebruiken om naar de standaard foutenstroom (`stderr`) uit te voeren, wat vaak geschikter is voor debugberichten.
 
-## Zie Ook
+## Diepgaand
 
-- [GNU Debugger (GDB)](https://www.gnu.org/software/gdb/) voor wanneer je klaar bent om verder te gaan dan `printf`.
-- [C Logging Bibliotheken](https://www.slant.co/topics/1183/~best-logging-add-ons-for-c-programming) voor gestructureerd loggen.
-- [Learn C The Hard Way](https://learncodethehardway.org/c/) voor een diepere duik in de bredere wereld van C-programmering.
+Historisch gezien zijn debugtechnieken in C handmatig en basaal geweest, vanwege de filosofie en ouderdom van de taal die dicht bij de hardware staat. Terwijl moderne talen mogelijk geavanceerde, ingebouwde debugbibliotheken bevatten of sterk leunen op functies van de Integrated Development Environment (IDE), moeten C-programmeurs vaak handmatig printf-instructies invoegen zoals hierboven getoond om de uitvoering van hun programma te traceren.
+
+Eén ding waartegen gewaarschuwd moet worden met debugprints is hun potentieel om de uitvoer te verstoppen en prestatieproblemen te veroorzaken, vooral als ze per ongeluk in productiecode worden achtergelaten. Om deze redenen kan het gebruik van voorwaardelijke compilatie (bijv. `#ifdef DEBUG ... #endif`) een betere aanpak zijn, waardoor debugverklaringen op basis van compilatietijdvlaggen kunnen worden in- of uitgesloten.
+
+Bovendien zijn er nu geavanceerdere hulpmiddelen en bibliotheken beschikbaar voor C-debugging, zoals GDB (GNU Debugger) en Valgrind voor detectie van geheugenlekken. Deze hulpmiddelen bieden een meer geïntegreerde benadering van debugging, zonder de noodzaak om code te wijzigen door printinstructies in te voegen.
+
+Desalniettemin kan de eenvoud en onmiddellijke feedback van `printf` debugging niet onderschat worden, waardoor het een nuttig hulpmiddel is in de gereedschapskist van de programmeur, met name voor degenen die net de complexiteiten van C leren.

@@ -1,58 +1,87 @@
 ---
-title:                "XML 다루기"
-date:                  2024-01-26T04:28:27.987552-07:00
+title:                "XML로 작업하기"
+date:                  2024-02-03T18:13:29.773466-07:00
 model:                 gpt-4-0125-preview
-simple_title:         "XML 다루기"
-
+simple_title:         "XML로 작업하기"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/c/working-with-xml.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## 무엇 & 왜?
-C에서 XML을 다루는 것은 XML 파일을 파싱, 생성, 그리고 조작하는 것을 포함하며 - 기본적으로 구조화된 데이터 저장소입니다. 프로그래머들은 이러한 작업을 설정, 데이터 교환 등을 위해 이동 가능하고 인간이 읽을 수 있는 형식으로 데이터와 상호작용하기 위해 수행합니다.
+
+C에서 XML을 다루는 것은 다양한 라이브러리를 사용하여 XML 문서를 파싱, 쿼리, 조작하는 것을 포함합니다. 프로그래머들은 웹 서비스, 설정 파일, 다른 시스템 간의 데이터 교환에 널리 사용되기 때문에 XML을 사용하게 되며, 강력한 어플리케이션 개발을 위해 XML을 효율적으로 다룰 수 있는 기술이 필요합니다.
 
 ## 방법:
-다음은 `libxml2` 라이브러리를 사용하여 XML 파일을 파싱하고 루트 요소를 가져오는 코드 조각입니다.
 
-```C
+C는 XML에 대한 내장 지원이 없으므로 외부 라이브러리를 사용해야 합니다. 한 가지 인기 있는 선택은 안정적이고 기능이 풍부한 라이브러리인 `libxml2`입니다. 다음은 `libxml2`를 사용하여 XML 파일을 읽고 파싱하는 방법입니다.
+
+먼저 시스템에 `libxml2`가 설치되어 있는지 확인하세요. 패키지 매니저를 통해 설치해야 할 수도 있습니다(예: Debian 시스템에서 `apt-get install libxml2-dev`).
+
+그 다음 C 프로그램에 `libxml2` 헤더를 포함하세요:
+
+```c
+#include <libxml/parser.h>
+#include <libxml/tree.h>
+```
+
+이제 XML 파일을 파싱하고 첫 번째 레벨 요소의 이름을 출력하는 간단한 프로그램을 작성해보겠습니다:
+
+```c
 #include <stdio.h>
 #include <libxml/parser.h>
 #include <libxml/tree.h>
 
-int main() {
-    xmlDoc *doc = NULL;
-    xmlNode *root_element = NULL;
+int main(void) {
+    xmlDoc *문서 = NULL;
+    xmlNode *루트_요소 = NULL;
 
-    // XML 파일 파싱
-    doc = xmlReadFile("example.xml", NULL, 0);
+    // 라이브러리를 초기화하고 잠재적 ABI 불일치를 확인
+    LIBXML_TEST_VERSION
 
-    // 루트 요소 가져오기
-    root_element = xmlDocGetRootElement(doc);
+    // 파일을 파싱하고 DOM을 가져옴
+    문서 = xmlReadFile("your_file.xml", NULL, 0);
 
-    printf("루트 요소: %s\n", root_element->name);
+    if (문서 == NULL) {
+        printf("XML 파일 파싱에 실패했습니다\n");
+        return -1;
+    }
 
-    // 문서 해제
-    xmlFreeDoc(doc);
+    //루트 요소 노드를 가져옴
+    루트_요소 = xmlDocGetRootElement(문서);
 
-    // 파서 정리
+    for (xmlNode *현재노드 = 루트_요소; 현재노드; 현재노드 = 현재노드->next) {
+        if (현재노드->type == XML_ELEMENT_NODE) {
+            printf("노드 타입: 요소, 이름: %s\n", 현재노드->name);
+        }
+    }
+
+    // 파서와 DOM에 할당된 메모리를 해제
+    xmlFreeDoc(문서);
+
+    // 클린업 및 누수 확인
     xmlCleanupParser();
+    xmlMemoryDump(); // 선택사항
 
     return 0;
 }
 ```
 
-루트가 `<data>`인 XML의 샘플 출력은 다음과 같습니다:
-```
-루트 요소: data
+이 프로그램을 컴파일하기 위해 `libxml2`에 대해 링크를 해야 합니다:
+
+```sh
+gcc -o xml_example xml_example.c $(xml2-config --cflags --libs)
 ```
 
-## 심층 탐구
-XML, 또는 Extensible Markup Language는 90년대 후반으로 거슬러 올라가며 데이터를 기술하고 구조화하는 방법을 제공합니다. C에서는 `libxml2`가 주요 선택지입니다. 이는 견고하지만 XML 초보자에게는 가장 쉽지 않습니다. 대안으로는 `tinyxml2`가 있으며, 이는 더 가볍고 초보자에게 친숙합니다. 구현과 관련하여, C는 기본적인 XML 지원을 갖추고 있지 않으므로 라이브러리가 이 공백을 메웁니다. 이들은 크기, 속도, 복잡성 및 이식성에 있어 다양합니다. 대부분 DOM 및 SAX 파싱 방법을 제공합니다: DOM은 전체 문서를 메모리에 로드하는 것이 좋으며, 작은 문서에 유용; SAX는 이벤트 주도로, 요소를 실시간으로 처리하며, 큰 파일에 더 나은 선택입니다. 둘 다 사용 사례와 트레이드오프가 있습니다.
+`your_file.xml`이라는 이름의 XML 파일이 있다고 가정할 때, 컴파일된 프로그램을 실행하면 첫 번째 레벨 요소의 이름이 출력됩니다.
 
-## 참고자료
-- [libxml2](http://xmlsoft.org/)
-- [tinyxml2 on GitHub](https://github.com/leethomason/tinyxml2)
-- [w3schools의 XML 튜토리얼](https://www.w3schools.com/xml/)
-- [W3C의 XML 명세](https://www.w3.org/XML/)
+## 심층 분석
+
+C와 XML 사이의 상호 작용은 구조화된, 바이트 레벨의 절차적 패러다임인 C와 계층적이고 장황하며 문서 중심적인 모델인 XML을 함께 가져오는 이야기입니다. XML 처리 기능을 C 프로그램에 통합할 때, 개발자들은 XML 문서를 효율적으로 파싱 및 조작하기 위해 C의 강점인 속도와 저수준 메모리 액세스를 활용합니다.
+
+GNOME 프로젝트의 일부로 개발된 `libxml2`는 XML 표준에 대한 포괄적인 지원과 성능으로 인해 C에서 XML 처리를 위한 사실상의 표준으로 부상했습니다. 이는 수년 간의 개발 노력과 커뮤니티 기여의 결과로, 대부분의 XML 작업에 대해 강력하고 효율적입니다.
+
+`libxml2`는 강력한 기능을 제공하지만, XML 파싱 및 조작의 복잡성은 상당한 오버헤드를 도입할 수 있음을 유의해야 합니다. XML의 장황함과 복잡성이 정당화되기 어려운 시나리오에서는 JSON과 같은 대안이 데이터 교환을 위해 선호될 수 있습니다. 그럼에도 불구하고, XML 중심의 어플리케이션이나 XML 사용이 뿌리 깊은 환경에서는 C에서 `libxml2` 사용을 마스터하면 구조화된 문서 처리의 세계와 C 프로그래밍 언어 간의 격차를 해소할 수 있는 다양한 XML 문서와 API를 다룰 수 있는 능력을 열어줍니다.

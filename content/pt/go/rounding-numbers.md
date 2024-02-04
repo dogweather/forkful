@@ -1,20 +1,27 @@
 ---
-title:                "Arredondamento de números"
-date:                  2024-01-26T03:45:52.901928-07:00
+title:                "Arredondando números"
+date:                  2024-02-03T18:07:40.210715-07:00
 model:                 gpt-4-0125-preview
-simple_title:         "Arredondamento de números"
-
+simple_title:         "Arredondando números"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/go/rounding-numbers.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## O Que & Por Que?
-Arredondar números significa ajustar um número para o inteiro mais próximo ou para o decimal especificado. Isso é feito para simplificar valores, torná-los mais legíveis, ou adequá-los a certas restrições, como ao trabalhar com moedas.
+## O Que & Porquê?
+
+Arredondar números é ajustar o valor de um número para o inteiro mais próximo ou para um número específico de casas decimais. Programadores fazem isso por razões como melhorar a legibilidade, simplificar cálculos ou atender a requisitos de precisão específicos do domínio.
 
 ## Como fazer:
-O pacote `math` do Go é seu amigo para arredondamentos. Use `math.Round`, `math.Floor` e `math.Ceil` para simplificar:
+
+Em Go, não há uma função integrada que arredonde números diretamente para um número específico de casas decimais no pacote math. No entanto, você pode alcançar o arredondamento por meio de uma combinação de funções para números inteiros ou implementar uma função personalizada para casas decimais.
+
+### Arredondando para o inteiro mais próximo:
+
+Para arredondar para o inteiro mais próximo, você pode usar a função `math.Floor()` adicionada de 0.5 para números positivos, e `math.Ceil()` menos 0.5 para números negativos, dependendo da direção para a qual você quer arredondar.
 
 ```go
 package main
@@ -25,47 +32,40 @@ import (
 )
 
 func main() {
-	number := 3.14159
-	fmt.Println("Round:", math.Round(number))  // Arredonda para o inteiro mais próximo
-	fmt.Println("Floor:", math.Floor(number)) // Arredonda para baixo
-	fmt.Println("Ceil: ", math.Ceil(number))  // Arredonda para cima
+	fmt.Println(math.Floor(3.75 + 0.5))  // Saída: 4
+	fmt.Println(math.Ceil(-3.75 - 0.5)) // Saída: -4
 }
 ```
 
-Saída de exemplo:
-```
-Round: 3
-Floor: 3
-Ceil: 4
-```
+### Arredondando para um número específico de casas decimais:
 
-Para casas decimais específicas, multiplique, arredonde, depois divida:
+Para arredondar para um número específico de casas decimais, pode-se usar uma função personalizada onde você multiplica o número por 10^n (onde n é o número de casas decimais), arredonda para o inteiro mais próximo como antes, e então divide por 10^n.
 
 ```go
-func roundToDecimalPlace(number float64, decimalPlaces int) float64 {
-	shift := math.Pow(10, float64(decimalPlaces))
+package main
+
+import (
+	"fmt"
+	"math"
+)
+
+func roundToDecimalPlace(number float64, places int) float64 {
+	shift := math.Pow(10, float64(places))
 	return math.Round(number*shift) / shift
 }
 
 func main() {
-	number := 3.14159
-	fmt.Println("Arredondado para 2 casas decimais:", roundToDecimalPlace(number, 2))
+	fmt.Println(roundToDecimalPlace(3.14159, 2)) // Saída: 3.14
+	fmt.Println(roundToDecimalPlace(-3.14159, 3)) // Saída: -3.142
 }
 ```
 
-Saída de exemplo:
-```
-Arredondado para 2 casas decimais: 3.14
-```
+## Aprofundamento
 
-## Aprofundando
-Arredondar números não é novidade—data de antigas matemáticas, sempre visando a simplicidade. O `math.Round` em Go utiliza o [arredondamento dos banqueiros](https://pt.wikipedia.org/wiki/Arredondamento#Arredondar_para_o_mais_próximo), significando que 0.5 arredonda para o número par mais próximo, reduzindo um viés que poderia afetar somas.
+Arredondar números é uma operação fundamental na programação de computadores, ligada ao desafio histórico de representar números reais em um sistema binário. A necessidade de arredondamento surge porque muitos números reais não podem ser representados com precisão em binário, levando a erros de aproximação.
 
-Números de ponto flutuante podem ser complicados devido à sua representação binária, que pode não representar exatamente todos os decimais. No entanto, a abordagem do Go mantém o comportamento esperado na maioria das vezes.
+Em Go, a abordagem para o arredondamento é um tanto manual comparada com linguagens que oferecem funções integradas de arredondamento para casas decimais específicas. No entanto, o pacote `math` da biblioteca padrão do Go fornece os blocos de construção básicos (como `math.Floor` e `math.Ceil`) para construir qualquer mecanismo de arredondamento necessário pela aplicação.
 
-Existem outros métodos de arredondamento, como "arredondar para cima a metade" ou "arredondar a metade para longe de zero", mas a biblioteca padrão do Go é o que está prontamente disponível. Para necessidades mais complexas, você pode precisar de uma biblioteca de terceiros ou criar sua própria solução.
+Esta abordagem manual, embora aparentemente mais trabalhosa, oferece aos programadores um controle mais fino sobre como os números são arredondados, atendendo às necessidades de precisão e exatidão de diferentes aplicações. Alternativas como bibliotecas de terceiros ou projetar funções de arredondamento personalizadas podem fornecer soluções mais diretas quando se lida com números complexos ou requerendo operações matemáticas mais avançadas não cobertas pela biblioteca padrão.
 
-## Veja Também
-- Pacote `math` do Go: [https://pkg.go.dev/math](https://pkg.go.dev/math)
-- Padrão IEEE 754 para aritmética de ponto flutuante (base do Go para manipulação de floats): [https://ieeexplore.ieee.org/document/4610935](https://ieeexplore.ieee.org/document/4610935)
-- Entendendo ponto flutuante: ["What Every Computer Scientist Should Know About Floating-Point Arithmetic"](https://docs.oracle.com/cd/E19957-01/806-3568/ncg_goldberg.html)
+Em conclusão, embora a biblioteca padrão de Go possa não oferecer funcionalidade direta de arredondamento para casas decimais, seu conjunto abrangente de funções matemáticas permite que os desenvolvedores implementem soluções robustas de arredondamento adaptadas às suas necessidades específicas.

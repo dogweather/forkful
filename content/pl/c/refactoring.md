@@ -1,81 +1,69 @@
 ---
 title:                "Refaktoryzacja"
-date:                  2024-01-26T01:16:46.107355-07:00
+date:                  2024-02-03T18:06:52.749316-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Refaktoryzacja"
-
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/c/refactoring.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Co i dlaczego?
-Refaktoryzacja to proces restrukturyzacji istniejącego kodu komputerowego bez zmieniania jego zewnętrznego zachowania. Programiści robią to, aby poprawić czytelność, zmniejszyć złożoność lub sprawić, że kod będzie łatwiejszy w utrzymaniu i skalowaniu, co może zaoszczędzić mnóstwo czasu i bólów głowy w przyszłości.
+
+Refaktoryzacja w programowaniu polega na restrukturyzacji istniejącego kodu bez zmiany jego zewnętrznego zachowania, mając na celu poprawę atrybutów niefunkcjonalnych, takich jak czytelność, redukcję złożoności i zwiększenie utrzymywalności. Programiści refaktoryzują, aby utrzymać kod w czystości, zminimalizować dług techniczny i ułatwić oraz bezpieczniej wprowadzać przyszłe zmiany.
 
 ## Jak to zrobić:
-Odświeżmy trochę kodu. Wyobraź sobie, że masz funkcję, która oblicza średnią z liczb całkowitych w tablicy. Na pierwszy rzut oka to trochę skomplikowany bałagan.
 
-**Przed refaktoryzacją:**
-```C
+Refaktoryzacja może obejmować szereg działań, od zmiany nazw zmiennych dla większej jasności po zmianę struktury kodu w celu lepszej modularizacji. Oto prosty przykład pokazujący, jak zrefaktoryzować fragment kodu C dla lepszej jasności i wydajności.
+
+Przed refaktoryzacją:
+```c
 #include <stdio.h>
 
-double calculateStuff(int numbers[], int size) {
-    int sum = 0;
-    double average;
-    for(int i = 0; i < size; sum += numbers[i++]); // Sumowanie w warunku pętli for, auć!
-    average = (double)sum / size;
-    return average;
-}
-
 int main() {
-    int array[] = {23, 42, 57, 16, 5, 102};
-    int length = sizeof(array) / sizeof(array[0]);
-    printf("Średnia: %f\n", calculateStuff(array, length));
-
+    int x = 10, y = 20;
+    printf("Przed zamianą: x = %d, y = %d\n", x, y);
+    x = x + y; // x staje się teraz 30
+    y = x - y; // y staje się 10
+    x = x - y; // x staje się 20
+    printf("Po zamianie: x = %d, y = %d\n", x, y);
     return 0;
 }
 ```
-
-**Po refaktoryzacji:**
-```C
+Wynik:
+```
+Przed zamianą: x = 10, y = 20
+Po zamianie: x = 20, y = 10
+```
+Po refaktoryzacji:
+```c
 #include <stdio.h>
 
-int calculateSum(const int numbers[], int size) {
-    int sum = 0;
-    for (int i = 0; i < size; ++i) {
-        sum += numbers[i];
-    }
-    return sum;
-}
-
-double calculateAverage(const int numbers[], int size) {
-    int sum = calculateSum(numbers, size);
-    return (double)sum / size;
+void swap(int *a, int *b) {
+    *a = *a + *b;
+    *b = *a - *b;
+    *a = *a - *b;
 }
 
 int main() {
-    int array[] = {23, 42, 57, 16, 5, 102};
-    int length = sizeof(array) / sizeof(array[0]);
-    printf("Średnia: %f\n", calculateAverage(array, length));
+    int x = 10, y = 20;
+    printf("Przed zamianą: x = %d, y = %d\n", x, y);
+    swap(&x, &y);
+    printf("Po zamianie: x = %d, y = %d\n", x, y);
     return 0;
 }
 ```
-Nawet na tym prostym przykładzie widać, jak podział funkcji sprawia, że kod jest czystszy i łatwiejszy w utrzymaniu. Każda funkcja ma teraz pojedyncze zadanie – kluczową zasadę w pisaniu przejrzystego kodu.
+Wynik pozostaje niezmieniony, ale funkcjonalność zamiany wartości została przeniesiona do oddzielnej funkcji (`swap`), co poprawia czytelność i możliwość ponownego użycia.
 
-## Głębsze spojrzenie
-Termin "refaktoryzacja" zyskał popularność pod koniec lat 90., szczególnie po publikacji książki Martina Fowlera "Refaktoryzacja: Ulepszanie struktury istniejącego kodu". Refaktoryzacja nie oznacza naprawiania błędów czy dodawania nowych funkcji, lecz polega na ulepszaniu struktury kodu.
+## Dogłębna analiza
 
-Istnieje wiele znakomitych narzędzi i środowisk programistycznych (IDE - Integrated Development Environments) wspomagających proces refaktoryzacji, takich jak CLion dla C i C++, ale zrozumienie tego, co dzieje się za kulisami, pozostaje kluczowe.
+Praktyka refaktoryzacji kodu istnieje tak długo, jak rozwój oprogramowania, ewoluując wraz z paradygmatami i językami programowania. W C, języku zarówno potężnym, jak i pełnym możliwości do nieefektywności i błędów ze względu na jego niskopoziomowy charakter, refaktoryzacja jest szczególnie kluczowa. Może oznaczać różnicę między bazą kodu, która jest utrzymywalna, a taką, która jest plątaniną nieefektywności.
 
-Alternatywami dla refaktoryzacji mogą być przepisanie kodu od nowa (ryzykowne i często niepotrzebne) lub życie z długiem technicznym (co może być droższe w dłuższej perspektywie). Szczegóły implementacji różnią się w zależności od projektu, ale do wspólnych refaktoryzacji należy zmiana nazw zmiennych dla większej jasności, dzielenie dużych funkcji na mniejsze i zastępowanie magicznych liczb nazwanymi stałymi.
+Specyficzna uwaga dotycząca C to balans między mikrooptymalizacjami a czytelnością/utrzymywalnością. Chociaż kuszące jest ręczne dostosowywanie kodu C dla każdej kropli wydajności, takie optymalizacje mogą uczynić kod bardziej kruchym i trudniejszym do odczytania. Dlatego zwykle lepiej jest priorytetowo traktować czysty, czytelny kod i polegać na optymalizatorze kompilatora, aby możliwie poprawić wydajność, gdzie to możliwe.
 
-Ponadto, wzorce takie jak DRY (Don't Repeat Yourself) i zasady SOLID mogą prowadzić twoją podróż refaktoryzacyjną, dążąc do bazy kodu, która jest łatwiejsza do testowania, zrozumienia i współpracy.
+Ponadto, narzędzia i techniki refaktoryzacji w C, takie jak statyczne analizatory kodu (np. Clang Static Analyzer, cppcheck) i zasady programowania modularnego, znacznie się rozwinęły. Jednak ze względu na ręczne zarządzanie pamięcią i arytmetykę wskaźnikową, refaktoryzacja może wprowadzić błędy, jeśli nie jest przeprowadzana ostrożnie. Techniki takie jak testowanie jednostkowe i przegląd kodu są tu nieocenione.
 
-## Zobacz również
-Aby zagłębić się w świat refaktoryzacji, zerknij na:
-
-- Strona domowa Martina Fowlera: https://martinfowler.com/ z bogactwem artykułów i zasobów na temat refaktoryzacji i projektowania oprogramowania.
-- Refactoring.com: https://refactoring.com/ oferuje przykłady i katalogi technik refaktoryzacji.
-- Książka "Refaktoryzacja": Uważana za biblię refaktoryzacji, jej przeczytanie daje kompletny obraz metodologii.
-- "Czysty kod: Podręcznik dobrego rzemieślnika oprogramowania" autorstwa Roberta C. Martina, który omawia pisanie kodu, który jest łatwy do zrozumienia i utrzymania.
+Chociaż nowsze języki oferują więcej wbudowanego wsparcia dla bezpiecznej refaktoryzacji z funkcjami takimi jak automatyczne zarządzanie pamięcią i bogate systemy typów, C pozostaje niezrównane w scenariuszach wymagających wydajności bliskiej sprzętowi i drobiazgowej kontroli. W takich przypadkach refaktoryzacja polega mniej na wykorzystaniu funkcji języka, a bardziej na dyscyplinowanym, przemyślanym restrukturyzowaniu kodu.

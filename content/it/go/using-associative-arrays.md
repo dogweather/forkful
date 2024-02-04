@@ -1,87 +1,81 @@
 ---
 title:                "Utilizzo di array associativi"
-date:                  2024-01-30T19:11:26.531531-07:00
+date:                  2024-02-03T18:10:56.616038-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Utilizzo di array associativi"
-
 tag:                  "Data Structures"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/go/using-associative-arrays.md"
 changelog:
-  - 2024-01-30, gpt-4-0125-preview, translated from English
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Cosa & Perché?
 
-Gli array associativi, noti come mappe in Go, ti permettono di memorizzare e accedere ai dati tramite coppie chiave-valore. Sono essenziali per gestire collezioni in cui è possibile cercare valori rapidamente tramite una chiave unica, semplificando la manipolazione e il recupero dei dati nei tuoi programmi.
+Gli array associativi, noti come mappe in Go, ti permettono di memorizzare coppie chiave-valore dove ogni chiave unica è mappata a un valore. I programmatori utilizzano le mappe per il recupero efficiente dei dati, la modifica e per mantenere una collezione di elementi che possono essere rapidamente accessibili utilizzando chiavi uniche.
 
 ## Come fare:
 
-In Go, le mappe sono semplici da usare. Ecco una guida semplice per iniziare:
+Creare e inizializzare una mappa in Go può essere fatto in vari modi. Ecco un esempio basilare per iniziare:
 
-1. **Dichiarare e Inizializzare le Mappe**
-
-```Go
+```go
 package main
 
 import "fmt"
 
 func main() {
-    // Inizializza una mappa vuota con chiavi stringa e valori int
-    var scores map[string]int
-    fmt.Println(scores) // Stampa: map[]
-
-    // Dichiarare e inizializzare una mappa non vuota
+    // Dichiarare e inizializzare una mappa
     colors := map[string]string{
-        "red": "#ff0000",
-        "green": "#00ff00",
+        "rosso":   "#FF0000",
+        "verde": "#00FF00",
+        "blu":  "#0000FF",
     }
-    fmt.Println(colors) // Stampa: map[green:#00ff00 red:#ff0000]
+
+    fmt.Println(colors)
+    // Output: map[blu:#0000FF verde:#00FF00 rosso:#FF0000]
 }
 ```
 
-2. **Aggiungere e Accedere agli Elementi**
+Per aggiungere o aggiornare elementi, assegni un valore a una chiave in questo modo:
 
-```Go
-func main() {
-    fruits := make(map[string]int)
-    fruits["apples"] = 5
-    fruits["bananas"] = 10
+```go
+colors["bianco"] = "#FFFFFF"
+fmt.Println(colors)
+// Output: map[blu:#0000FF verde:#00FF00 rosso:#FF0000 bianco:#FFFFFF]
+```
 
-    fmt.Println(fruits["apples"]) // Stampa: 5
+Accedere a un valore tramite la sua chiave è semplice:
+
+```go
+fmt.Println("Il codice esadecimale per il rosso è:", colors["rosso"])
+// Output: Il codice esadecimale per il rosso è: #FF0000
+```
+
+Per eliminare un elemento, utilizzare la funzione `delete`:
+
+```go
+delete(colors, "rosso")
+fmt.Println(colors)
+// Output: map[blu:#0000FF verde:#00FF00 bianco:#FFFFFF]
+```
+
+Iterare su una mappa si esegue utilizzando un ciclo for:
+
+```go
+for color, hex := range colors {
+    fmt.Printf("Chiave: %s Valore: %s\n", color, hex)
 }
 ```
 
-3. **Iterare Sulle Mappe**
-
-```Go
-func main() {
-    pets := map[string]string{"dog": "bark", "cat": "meow"}
-
-    for key, value := range pets {
-        fmt.Printf("%s fa %s\n", key, value)
-    }
-    // L'ordine dell'output può variare, poiché le mappe non garantiscono un ordine.
-}
-```
-
-4. **Eliminare Elementi**
-
-```Go
-func main() {
-    meals := map[string]int{"breakfast": 300, "lunch": 600}
-    fmt.Println(meals) // Prima dell'eliminazione
-
-    delete(meals, "lunch")
-    fmt.Println(meals) // Dopo l'eliminazione
-}
-```
+Ricorda, le mappe in Go non sono ordinate. L'ordine di iterazione non è garantito.
 
 ## Approfondimento
 
-Introdotta in Go 1, le mappe forniscono un modo integrato per gestire gli array associativi in modo efficiente. A differenza delle slice, che sono collezioni ordinate, le mappe sono disordinate. Ciò significa che l'ordine di iterazione sugli elementi della mappa non è garantito essere lo stesso tra le esecuzioni, un compromesso per la sua capacità di gestire coppie chiave-valore dinamicamente e con notevole flessibilità.
+In Go, le mappe sono implementate come tabelle hash. Ogni entrata nella mappa consiste di due elementi: una chiave e un valore. La chiave è hashata per memorizzare l'entrata, il che permette operazioni in tempo costante per un piccolo insieme di dati e complessità temporale media di O(1) con un hashing adeguato, che può degradare a O(n) nel caso peggiore con molte collisioni hash.
 
-Sotto il cofano, Go implementa le mappe come tabelle hash, garantendo che la complessità media delle operazioni di accesso, inserimento ed eliminazione sia O(1), nella maggior parte delle circostanze. Tuttavia, vale la pena notare che questa efficienza può variare in base a fattori come le collisioni hash.
+Un'annotazione significativa per i nuovi programmatori di Go è che i tipi mappa sono tipi di riferimento. Questo significa che quando passi una mappa a una funzione, qualsiasi modifica apportata alla mappa all'interno di quella funzione è visibile al chiamante. Questo è diverso, per esempio, dal passare una struct a una funzione, dove la struct viene copiata a meno che non venga passata tramite un puntatore.
 
-Per casi d'uso che richiedono un attraversamento chiave ordinato, potresti considerare di combinare mappe con slice o esplorare pacchetti di terze parti che offrono strutture dati aggiuntive come mappe ordinate o alberi. Nonostante i loro limiti, le mappe di Go sono uno strumento potente ed essenziale per molti scenari di programmazione.
+Sebbene le mappe siano incredibilmente versatili ed efficienti per la maggior parte dei casi d'uso che coinvolgono array associativi, in applicazioni critici per le prestazioni, può essere vantaggioso utilizzare strutture dati con caratteristiche di prestazione più prevedibili, specialmente se le distribuzioni chiave possono causare frequenti collisioni.
+
+Un'altra alternativa da considerare è la `sync.Map`, disponibile da Go 1.9, progettata per casi d'uso in cui le chiavi sono scritte una sola volta ma lette molte volte, offrendo miglioramenti dell'efficienza in questi scenari. Tuttavia, per le applicazioni Go convenzionali, l'uso della mappa regolare è idiomatico e spesso l'approccio consigliato per la sua semplicità e il supporto diretto nel linguaggio.

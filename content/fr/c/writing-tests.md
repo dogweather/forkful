@@ -1,71 +1,57 @@
 ---
 title:                "Rédaction de tests"
-date:                  2024-01-19
+date:                  2024-02-03T18:15:14.560312-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Rédaction de tests"
-
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/c/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Quoi & Pourquoi ?)
-Écrire des tests consiste à créer un ensemble de cas pour vérifier que le code fonctionne comme prévu. Les développeurs écrivent des tests pour détecter les bugs tôt, simplifier les modifications et assurer une base de code de qualité.
+## Quoi & Pourquoi ?
+Écrire des tests en C implique de créer des programmes ou des fonctions auxiliaires plus petits qui vérifient automatiquement la fonctionnalité de votre code. Les programmeurs le font pour s'assurer que leur logiciel fonctionne comme prévu, pour attraper les bugs tôt et pour faciliter les modifications futures du code sans effets secondaires non désirés.
 
-## How to (Comment faire : )
-Voici un exemple simple de test unitaire en C en utilisant MinUnit, un micro-framework de test unitaire minimaliste :
+## Comment faire :
+Bien que C ne dispose pas d'un framework de test intégré comme certains autres langages, vous pouvez toujours écrire des tests efficaces en utilisant assert.h pour des assertions simples ou intégrer des frameworks tiers comme CUnit ou Unity pour des tests plus structurés. Voici un exemple basique utilisant assert.h pour tester une fonction qui ajoute deux entiers :
 
-```C
-#include <stdio.h>
+```c
+#include <assert.h>
+#include "my_math.h"
 
-// MinUnit test framework
-#define mu_assert(message, test) do { if (!(test)) return message; } while (0)
-#define mu_run_test(test) do { char *message = test(); tests_run++; \
-                                if (message) return message; } while (0)
-int tests_run = 0;
+void test_addition() {
+    assert(add(1, 2) == 3);
+    assert(add(-1, -2) == -3);
+    assert(add(0, 0) == 0);
+    printf("Tous les tests d'addition ont réussi.\n");
+}
 
-// Fonction à tester
-int additionner(int a, int b) {
+int main() {
+    test_addition();
+    return 0;
+}
+```
+
+Dans `my_math.h`, vous pourriez avoir :
+
+```c
+// Fonction d'addition simple
+int add(int a, int b) {
     return a + b;
 }
-
-// Test
-static char * test_addition() {
-    mu_assert("Erreur, additionner(1,1) != 2", additionner(1,1) == 2);
-    return 0;
-}
-
-// Routine principale des tests
-static char * tous_les_tests() {
-    mu_run_test(test_addition);
-    return 0;
-}
-
-int main(int argc, char **argv) {
-    char *resultat = tous_les_tests();
-    if (resultat != 0) {
-        printf("%s\n", resultat);
-    } else {
-        printf("Tous les tests passent.\n");
-    }
-    printf("Tests effectués: %d\n", tests_run);
-
-    return resultat != 0;
-}
 ```
 
-Sortie attendue si le test réussit :
+Exécuter la fonction de test dans votre fonction `main` affiche :
 
 ```
-Tous les tests passent.
-Tests effectués: 1
+Tous les tests d'addition ont réussi.
 ```
 
-## Deep Dive (Plongée en profondeur)
-Le test de logiciel existe depuis les années 1950. Avec l'évolution de la programmation, les tests ont aussi progressé. Des alternatives comme CUnit, Check, et cmocka offrent plus de fonctionnalités que MinUnit. L'écriture de tests unitaires en C s’appuie souvent sur des macros et des fonctions d'assertion pour valider les résultats.
+Pour une configuration de test plus complète en utilisant un framework comme Unity, vous intégreriez le framework dans votre projet, puis écririez des cas de test de manière similaire, mais en utilisant l'API du framework pour les assertions et l'exécution des tests.
 
-## See Also (Voir aussi)
-- [CUnit](http://cunit.sourceforge.net/)
-- [Check](https://libcheck.github.io/check/)
-- [cmocka](https://cmocka.org/)
-- [Test-Driven Development](https://en.wikipedia.org/wiki/Test-driven_development)
+## Approfondissement
+Les tests en C ont historiquement été un processus manuel et quelque peu ad hoc en raison de la nature de bas niveau du langage et de l'absence d'un framework de test standardisé. Cette approche manuelle a souvent conduit à des pratiques de test moins approfondies par rapport aux langages avec un support de test intégré. Comme le langage C a été crucial dans le développement des systèmes logiciels fondamentaux, cette absence de frameworks de test formels a incité la communauté C à développer des solutions tierces, comme CUnit et Unity.
+
+Ces outils, bien qu'externes à la bibliothèque standard C, offrent une fonctionnalité semblable aux frameworks de test dans d'autres langues, offrant une manière structurée de définir, d'exécuter et d'évaluer les tests. Ils aident à combler le fossé entre l'accès puissant au niveau système de C et la pratique moderne de développement de tests automatisés. Il convient de noter que bien que ces outils améliorent grandement le processus de test en C, ils peuvent introduire une courbe d'apprentissage et augmenter la complexité de la configuration du projet par rapport aux langues avec un support de test intégré. Ainsi, pour les projets où la fiabilité et la maintenabilité sont primordiales, l'investissement dans la mise en place d'un environnement de test adéquat en C est bien justifié, même à la lumière des alternatives possibles.

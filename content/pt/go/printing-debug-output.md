@@ -1,60 +1,86 @@
 ---
-title:                "Exibindo saídas de depuração"
-date:                  2024-01-20T17:52:44.524345-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Exibindo saídas de depuração"
-
+title:                "Imprimindo saída de depuração"
+date:                  2024-02-03T18:05:15.687788-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Imprimindo saída de depuração"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/go/printing-debug-output.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## O Que é & Por Que?
-"Debug output" é o ato de imprimir informações no console para entender o que tá rolando no código. Programadores fazem isso para rastrear bugs e monitorar o fluxo dos programas.
+## O Quê & Porquê?
 
-## Como Fazer:
-```Go
+Na programação de computadores, "Imprimir saída de depuração" envolve produzir mensagens detalhadas de informação que ajudam os desenvolvedores a entender o fluxo de execução de seu programa ou identificar problemas. Os programadores fazem isso para diagnosticar e resolver problemas de forma mais eficiente, tornando isso uma habilidade essencial em qualquer kit de ferramentas de programação, incluindo Go.
+
+## Como fazer:
+
+Em Go, você pode usar o pacote padrão `fmt` para imprimir saída de depuração no console. O pacote `fmt` oferece uma variedade de funções, como `Println`, `Printf` e `Print`, atendendo a diferentes necessidades de formatação.
+
+```go
 package main
 
 import (
-    "fmt"
-    "log"
-    "os"
+	"fmt"
 )
 
 func main() {
-    // Usando fmt
-    fmt.Println("Isto é uma mensagem de debug usando fmt")
+	// Mensagem simples
+	fmt.Println("Debug: Entrando na função principal")
 
-    // Usando log, com data e hora
-    log.Println("Isto é uma mensagem de debug usando log")
+	var name = "Gopher"
+	// Mensagem formatada
+	fmt.Printf("Olá, %s! Esta é uma mensagem de depuração.\n", name)
 
-    // Configurando o log para um arquivo
-    file, err := os.OpenFile("debug.log", os.O_CREATE|os.O_APPEND|os.O_WRONLY, 0666)
-    if err != nil {
-        log.Fatal(err)
-    }
-    defer file.Close()
-    log.SetOutput(file)
-    log.Println("Isto foi salvo no arquivo debug.log")
+	// Usando fmt.Print
+	debugMsg := "Esta é outra mensagem de depuração."
+	fmt.Print("Debug: ", debugMsg, "\n")
 }
 ```
-Sample output:
+
+Saída de amostra:
 ```
-Isto é uma mensagem de debug usando fmt
-2023/01/02 15:04:05 Isto é uma mensagem de debug usando log
+Debug: Entrando na função principal
+Olá, Gopher! Esta é uma mensagem de depuração.
+Debug: Esta é outra mensagem de depuração.
 ```
-## Mergulho Profundo
-Antes do `fmt` e `log`, a galera imprimia mensagem na tela com coisas como `printf` em linguagens tipo C. No Go, `fmt` é simples, sem frescura, mas não registra data/hora. Já `log` joga essa informação junto, o que é uma mão na roda para rastrear o histórico. Além do mais, com `log` você pode direcionar o output para um arquivo, se quiser guardar os registros.
 
-Alternativas incluem pacotes de terceiros com mais recursos, como o `zap` ou `logrus`, que oferecem estruturação de logs em JSON, filtragem de níveis de log e mais.
+Para uma depuração mais sofisticada, o pacote `log` de Go pode ser utilizado para incluir carimbos de data/hora e para saída em diferentes destinos, não apenas no console.
 
-Os detalhes importantes de implementação: ao usar `log.SetOutput`, você muda onde os logs são escritos – podem ser arquivos, buffers ou qualquer coisa que implemente a interface `io.Writer`.
+```go
+package main
 
-## Veja Também
-- Documentação Go para o pacote fmt: https://pkg.go.dev/fmt
-- Documentação Go para o pacote log: https://pkg.go.dev/log
-- Uma comparação de pacotes de log em Go: https://medium.com/@nate510/don-t-use-go-s-default-logger-4804cb19f779
-- Repo de um logger popular, Logrus: https://github.com/sirupsen/logrus
-- Repo de um logger de alta performance, Zap: https://github.com/uber-go/zap
+import (
+	"log"
+	"os"
+)
+
+func main() {
+	// Criando um arquivo de log
+	file, err := os.OpenFile("debug.log", os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0666)
+	if err != nil {
+		log.Fatal("Erro ao criar arquivo de log:", err)
+	}
+	defer file.Close()
+
+	// Definindo saída dos logs para o arquivo
+	log.SetOutput(file)
+
+	log.Println("Esta é uma mensagem de depuração com carimbo de data/hora.")
+}
+```
+
+A mensagem em `debug.log` ficaria algo como isto:
+```
+2023/04/01 15:00:00 Esta é uma mensagem de depuração com carimbo de data/hora.
+```
+
+## Aprofundamento
+
+Imprimir saída de depuração é uma prática de longa data na programação de computadores, com sua implementação variando entre diferentes linguagens. Em Go, os pacotes padrão da biblioteca `fmt` e `log` fornecem opções diretas e versáteis. Enquanto o pacote `fmt` é suficiente para necessidades básicas de depuração, o pacote `log` oferece funcionalidade aprimorada como níveis de log e destinos de saída configuráveis.
+
+Além disso, à medida que as aplicações se tornam mais complexas, frameworks de log como `zap` e `logrus` podem oferecer recursos mais avançados como log estruturado e melhor desempenho. Esses pacotes de terceiros dão aos desenvolvedores a flexibilidade de adaptar sua estratégia de log às suas necessidades específicas.
+
+No entanto, é essencial encontrar o equilíbrio certo no registro de logs. Saída de depuração excessiva pode poluir os logs e tornar mais difícil encontrar informações úteis. Os desenvolvedores devem considerar o uso de diferentes níveis de log (por exemplo, debug, info, warn, error) para categorizar a importância das mensagens, tornando os logs mais fáceis de navegar e mais significativos.

@@ -1,67 +1,94 @@
 ---
 title:                "Робота з YAML"
-date:                  2024-01-19
+date:                  2024-02-03T18:14:25.715876-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Робота з YAML"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/c/working-with-yaml.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Що і Чому?)
-YAML — це формат даних для конфігурації, що легко читається людиною. Програмісти використовують його для налаштування програм, середовищ і для обміну даними між службами та додатками.
+## Що і чому?
 
-## How to: (Як це робити:)
-```C
-#include <stdio.h>
+YAML, що означає "YAML Ain't Markup Language" (YAML – це не мова розмітки), являє собою легко читабельний стандарт серіалізації даних, який можна використовувати для різноманітних застосунків, від файлів конфігурації до зберігання даних. Програмісти часто працюють з YAML, коли їм потрібен формат, який легко читати та легко записувати, для файлів конфігурації або обміну даними між мовами та системами.
+
+## Як це зробити:
+
+Робота з YAML у C вимагає бібліотеки, оскільки стандартна бібліотека C не надає прямої підтримки для аналізу YAML або серіалізації. Однією з найпопулярніших бібліотек YAML для C є `libyaml`, яка пропонує інтерфейси низького та високого рівнів для аналізу та створення YAML. Нижче наведено приклад того, як проаналізувати простий YAML-файл, використовуючи `libyaml`:
+
+**Перше**, вам потрібно встановити бібліотеку `libyaml`. Якщо ви використовуєте Unix-подібну систему, зазвичай ви можете встановити її за допомогою менеджера пакунків. Наприклад, на Ubuntu:
+
+```bash
+sudo apt-get install libyaml-dev
+```
+
+**Далі**, розглянемо простий YAML-файл під назвою `config.yaml`:
+
+```yaml
+name: John Doe
+age: 29
+married: false
+```
+
+**Ось** простий приклад того, як проаналізувати цей YAML-файл у C:
+
+```c
 #include <yaml.h>
+#include <stdio.h>
+#include <stdlib.h>
 
-int main() {
-    FILE *fh = fopen("config.yaml", "r");
+void process_yaml_file(const char *filename) {
+    FILE *fh = fopen(filename, "rb");
     yaml_parser_t parser;
-    yaml_token_t  token;
+    yaml_event_t event;
 
-    if(!yaml_parser_initialize(&parser))
-        fputs("Failed to initialize parser!\n", stderr);
-    if(fh == NULL)
-        fputs("Failed to open file!\n", stderr);
+    if (!yaml_parser_initialize(&parser))
+        fputs("Не вдалося ініціалізувати парсер YAML!\n", stderr);
+
+    if (fh == NULL)
+        fputs("Не вдалося відкрити файл!\n", stderr);
 
     yaml_parser_set_input_file(&parser, fh);
 
-    do {
-        yaml_parser_scan(&parser, &token);
-        switch(token.type) {
-        /* Token types are PROCESSED HERE */
-        case YAML_STREAM_START_TOKEN: puts("Start Stream"); break;
-        case YAML_STREAM_END_TOKEN:   puts("End Stream");   break;
-        // Handle other tokens...
-        default: /* Do nothing */; 
-        }
-        if(token.type != YAML_STREAM_END_TOKEN)
-            yaml_token_delete(&token);
-    } while(token.type != YAML_STREAM_END_TOKEN);
-    yaml_token_delete(&token);
+    while (1) {
+        if (!yaml_parser_parse(&parser, &event))
+            break;
 
-    /* Cleanup */
+        if (event.type == YAML_SCALAR_EVENT) {
+            printf("Значення: %s\n", event.data.scalar.value);
+        }
+
+        if (event.type == YAML_STREAM_END_EVENT)
+            break;
+
+        yaml_event_delete(&event);
+    }
+
     yaml_parser_delete(&parser);
     fclose(fh);
+}
+
+int main() {
+    process_yaml_file("config.yaml");
     return 0;
 }
 ```
 
-*Sample output:*
-```
-Start Stream
-End Stream
+Ця проста програма відкриває YAML-файл, ініціалізує парсер YAML і читає файл, друкуючи скалярні значення (у цьому прикладі, поля нашого простого YAML). Зверніть увагу, що перевірка на помилки у цьому простому прикладі мінімальна і повинна бути більш ретельною у виробничому коді.
+
+Запуск програми з нашим `config.yaml` виведе:
+
+```plaintext
+Значення: John Doe
+Значення: 29
+Значення: false
 ```
 
-## Deep Dive (Занурення у контекст):
-YAML створено у 2001 році як зручну альтернативу XML. Зараз існує кілька бібліотек для роботи з YAML у C, такі як libyaml (демонструється вище). Ця бібліотека дає детальний інтерфейс для аналізу та генерації YAML даних. YAML робить легшим серіалізацію структур даних, але вимагає пильності через свої особливості обробки типів і відступів.
+## Поглиблено
 
-## See Also (Додатково):
-- Official YAML website: [http://yaml.org](http://yaml.org)
-- libyaml GitHub repository: [https://github.com/yaml/libyaml](https://github.com/yaml/libyaml)
-- YAML 1.2 specification: [https://yaml.org/spec/1.2/spec.html](https://yaml.org/spec/1.2/spec.html)
-- An article about YAML syntax: [https://en.wikipedia.org/wiki/YAML](https://en.wikipedia.org/wiki/YAML)
-- Stack Overflow discussions on YAML usage in C: [https://stackoverflow.com/questions/tagged/yaml?tab=Newest](https://stackoverflow.com/questions/tagged/yaml?tab=Newest)
+Вперше YAML був випущений у 2001 році та був розроблений для більшої зручності читання та зручності для людського втручання, ніж інші формати серіалізації даних, такі як XML або JSON, запозичаючи з кількох мов, таких як C, Perl та Python, для своєї концепції дизайну. Незважаючи на свої переваги в читабельності та легкості модифікації людиною, YAML може бути складним для програмного аналізу через свою залежність від відступів та широкий набір функцій, включаючи посилання та користувацькі типи.
+
+Хоча `libyaml` надає надійний доступ на низькому рівні до аналізу та створення YAML у С, вона може бути громіздкою для простих завдань через свій многослівний API. З цих причин деякі програмісти віддають перевагу використовувати бібліотеки вищого рівня або навіть інші формати серіалізації даних, такі як JSON, при роботі в C, особливо коли пріоритетом є швидкий аналіз з мінімальними витратами коду. Однак YAML залишається популярним вибором для файлів конфігурації та ситуацій, коли людська читабельність є первинною. Альтернативи, як-от TinyYAML або вбудовування інтерпретатора вищого рівня (наприклад, вбудовування Python або Lua), можуть забезпечити більшу зручність для певних застосунків, знаходячи баланс між легкістю використання та потребами продуктивності.

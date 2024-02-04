@@ -1,47 +1,59 @@
 ---
-title:                "Interpolando uma string"
-date:                  2024-01-20T17:50:54.394818-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Interpolando uma string"
-
+title:                "Interpolando uma String"
+date:                  2024-02-03T17:58:26.296088-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Interpolando uma String"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/go/interpolating-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## O que é & Porquê?
-Interpolação de strings é o jeito de encaixar valores de variáveis diretamente dentro de uma string. Programadores fazem isso para construir strings de maneira dinâmica e legível, facilitando a inclusão de dados variáveis em mensagens, logs ou qualquer outra saída de texto.
+## O Quê & Porquê?
+
+A interpolação de strings é um método para construir strings que incorporam variáveis, permitindo a criação dinâmica de strings. Programadores fazem isso para personalizar mensagens, construir URLs, criar consultas SQL e mais, permitindo um código mais legível e mantível.
 
 ## Como fazer:
-```Go
+
+No Go, a interpolação de strings é comumente alcançada usando o pacote `fmt`, particularmente com a função `Sprintf`, que permite injetar variáveis em uma string especificando verbos de formatação. Os verbos são placeholders na string de formato e são substituídos pelos valores das variáveis dadas. Aqui está como usá-la:
+
+```go
 package main
 
 import (
-	"fmt"
+    "fmt"
 )
 
 func main() {
-	nome := "José"
-	idade := 29
-	// Interpolação usando Sprintf
-	mensagem := fmt.Sprintf("Olá, meu nome é %s e eu tenho %d anos.", nome, idade)
-	fmt.Println(mensagem)
+    name := "Jane"
+    age := 28
+
+    // Usando Sprintf para interpolação de string
+    message := fmt.Sprintf("Olá, meu nome é %s e eu tenho %d anos.", name, age)
+    fmt.Println(message) // Saída: Olá, meu nome é Jane e eu tenho 28 anos.
 }
 ```
-Saída da amostra:
+
+Note que `%s` é usado para strings, e `%d` para inteiros. A documentação do pacote `fmt` fornece uma lista abrangente de verbos de formatação para diferentes tipos de dados.
+
+## Aprofundamento
+
+O conceito de interpolação de strings existe em muitas linguagens de programação, embora com diferentes sintaxes e capacidades. No Go, enquanto a função `Sprintf` do pacote `fmt` é a abordagem mais comumente usada, ela pode nem sempre ser a mais eficiente, especialmente para concatenações simples ou quando se trabalha dentro de código altamente sensível à performance.
+
+O pacote `fmt` usa reflexão para interpretar dinamicamente os tipos das variáveis em tempo de execução, o que, embora flexível, acarreta sobrecarga. Para cenários onde a performance é crítica, a concatenação direta de strings ou o tipo `strings.Builder` podem oferecer alternativas melhores. A concatenação direta é simples, mas pode se tornar difícil de gerenciar com múltiplas variáveis. O `strings.Builder`, por outro lado, fornece uma maneira mais performática e legível de construir strings complexas em um loop ou quando se lida com muitas variáveis:
+
+```go
+var sb strings.Builder
+sb.WriteString("Olá, meu nome é ")
+sb.WriteString(name)
+sb.WriteString(" e eu tenho ")
+sb.WriteString(strconv.Itoa(age))
+sb.WriteString(" anos.")
+message := sb.String()
+
+fmt.Println(message) // Produz o mesmo resultado que antes
 ```
-Olá, meu nome é José e eu tenho 29 anos.
-```
 
-## Mergulho Profundo
-Antes do Go, as linguagens como PHP e Ruby já suportavam interpolação de strings de uma forma ainda mais direta. Go não tem interpolação de string incorporada de forma pura, mas a função `fmt.Sprintf` é a ferramenta padrão para isso.
-
-Alternativas incluem a concatenação direta com o operador `+`, mas isso pode ser verboso e menos eficiente. Outra opção é o uso de `strings.Builder` para montagens complexas de strings, que é mais eficiente para strings com múltiplas operações.
-
-Na implementação, `fmt.Sprintf` faz uso de verbos de formatação (`%s` para strings, `%d` para números inteiros, etc.) que direcionam como a variável será formatada na string final. Isso dá flexibilidade e controle ao programador sobre a apresentação dos dados.
-
-## Veja Também
-- Documentação oficial do pacote `fmt`: https://pkg.go.dev/fmt
-- Artigo sobre `strings.Builder`: https://pkg.go.dev/strings#Builder
-- Tutorial sobre `fmt.Sprintf`: https://gobyexample.com/string-formatting
+Ultimamente, a escolha entre `fmt.Sprintf`, concatenação direta e `strings.Builder` depende dos requisitos específicos da sua aplicação, como a complexidade da string sendo construída e considerações de performance.

@@ -1,71 +1,106 @@
 ---
 title:                "Een HTTP-verzoek verzenden"
-date:                  2024-01-28T22:07:41.702237-07:00
+date:                  2024-02-03T18:08:42.473950-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een HTTP-verzoek verzenden"
-
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/go/sending-an-http-request.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Wat & Waarom?
-Het verzenden van een HTTP-verzoek is hoe je programma een ander systeem vraagt om gegevens of gegevens naar het verzendt. Programmeurs doen dit om te interageren met webservices, API's en om informatie uit te wisselen via het internet.
 
-## Hoe:
-Hier is een fragment in Go voor het verzenden van een GET-verzoek en het verwerken van de respons:
+Het verzenden van een HTTP-verzoek houdt in dat er vanuit je Go-applicatie een oproep wordt gedaan naar een webserver, API of een andere op HTTP-gebaseerde dienst. Programmeurs doen dit om te communiceren met webbronnen, gegevens op te halen, formulieren in te dienen of te communiceren met andere services op het internet.
 
-```Go
+## Hoe te:
+
+In Go, het verzenden van een HTTP-verzoek en het afhandelen van de response, betekent gebruik maken van het `net/http` pakket. Hier is een stap-voor-stap voorbeeld dat laat zien hoe je een eenvoudige GET-aanvraag stuurt en de response leest:
+
+```go
 package main
 
 import (
-	"io"
-	"log"
-	"net/http"
-	"os"
+    "fmt"
+    "io/ioutil"
+    "log"
+    "net/http"
 )
 
 func main() {
-	response, err := http.Get("https://api.example.com/data")
-	if err != nil {
-		log.Fatal(err)
-	}
-	defer response.Body.Close()
+    // Definieer de URL van de bron
+    url := "http://example.com"
 
-	if response.StatusCode == http.StatusOK {
-		body, readErr := io.ReadAll(response.Body)
-		if readErr != nil {
-			log.Fatal(readErr)
-		}
-		os.Stdout.Write(body)
-	} else {
-		log.Printf("Niet-OK response status ontvangen: %s", response.Status)
-	}
+    // Gebruik http.Get om het GET-verzoek te verzenden
+    resp, err := http.Get(url)
+    if err != nil {
+        log.Fatal(err)
+    }
+    // Sluit het response body wanneer de functie eindigt
+    defer resp.Body.Close()
+
+    // Lees het response body
+    body, err := ioutil.ReadAll(resp.Body)
+    if err != nil {
+        log.Fatal(err)
+    }
+
+    // Zet het response body om in een string en druk het af
+    fmt.Println(string(body))
 }
 ```
 
-Dit is wat je mogelijk ziet na het uitvoeren hiervan:
-
+Voorbeelduitvoer (ingekort voor de beknopte vorm):
 ```
-{"name":"John Doe","occupation":"Software Developer"}
+<!doctype html>
+<html>
+<head>
+    <title>Voorbeeld Domein</title>
+...
+</html>
 ```
 
-## Diepgaande analyse
+Om een POST-verzoek met formuliergegevens te sturen, kun je `http.PostForm` gebruiken:
 
-Voordat Go's `net/http`-pakket het leven makkelijker maakte, was het verzenden van HTTP-verzoeken lastig. In de begindagen hielden we ons bezig met low-level socketprogrammering dat veel ging over het handmatig beheren van TCP-verbindingen en -protocollen. Vandaag de dag abstraheert de standaardbibliotheek deze complexiteiten.
+```go
+package main
 
-Hoewel `http.Get` handig is voor eenvoudige verzoeken, wanneer je meer controle nodig hebt, zijn `http.NewRequest` en `http.Client` je vrienden. Ze laten je headers wijzigen, timeouts instellen, en redirects nauwkeuriger beheren.
+import (
+    "fmt"
+    "io/ioutil"
+    "net/http"
+    "net/url"
+)
 
-Een punt om over na te denken: `http.Get` en zijn vrienden zijn blocking calls. Ze retourneren niet tot de HTTP-respons volledig is ontvangen. Gebruik in een app met veel verkeer de gelijktijdigheidsfuncties van Go, zoals goroutines en kanalen, om vertraging te voorkomen.
+func main() {
+    // Definieer de URL en de formuliergegevens
+    url := "http://example.com/form"
+    data := url.Values{}
+    data.Set("key", "value")
 
-Alternatieven zijn third-party pakketten zoals `Resty` of `GoReq`. Sommigen geven de voorkeur aan deze vanwege hun vloeiende interfaces en extra functionaliteit. Overweeg altijd of de voordelen opwegen tegen de kosten van het toevoegen van een afhankelijkheid.
+    // Verzend het POST-verzoek met formuliergegevens
+    resp, err := http.PostForm(url, data)
+    if err != nil {
+        panic(err)
+    }
+    defer resp.Body.Close()
 
-## Zie ook
+    // Lees en druk de response af
+    body, err := ioutil.ReadAll(resp.Body)
+    if err != nil {
+        panic(err)
+    }
 
-- De Go net/http-pakketdocumentatie: [https://golang.org/pkg/net/http/](https://golang.org/pkg/net/http/)
-- Effectief Go – Gelijktijdigheid: [https://golang.org/doc/effective_go#concurrency](https://golang.org/doc/effective_go#concurrency)
-- Go bij Voorbeeld – HTTP-clients: [https://gobyexample.com/http-clients](https://gobyexample.com/http-clients)
-- Het boek "De Go Programmeertaal" voor een diepgaand begrip van Go's standaardbibliotheek.
+    fmt.Println(string(body))
+}
+```
+
+## Diepgaande duik
+
+Het `net/http` pakket in Go biedt een krachtige en flexibele manier om te interageren met HTTP-servers. Het ontwerp weerspiegelt de nadruk van Go op eenvoud, efficiëntie en robuustheid. Oorspronkelijk vereisten functionaliteiten zoals het afhandelen van JSON of XML payloads het handmatig samenstellen van het request body en het instellen van geschikte headers. Naarmate Go zich ontwikkelde, heeft de community hoger-niveau pakketten ontwikkeld die deze taken verder vereenvoudigen, zoals `gorilla/mux` voor routing en `gjson` voor JSON-manipulatie.
+
+Een opmerkelijk aspect van de HTTP-client van Go is het gebruik van interfaces en structs, zoals `http.Client` en `http.Request`, die uitgebreide aanpassing en testen mogelijk maken. Je kunt bijvoorbeeld de `http.Client` wijzigen om verzoeken te laten verlopen of verbindingen levend te houden voor de prestatie.
+
+Een overwogen alternatief voor eenvoudigere HTTP-interacties is het gebruik van bibliotheken van derden zoals "Resty" of "Gentleman." Deze pakketten bieden een hoger abstractieniveau voor HTTP-verzoeken, waardoor veelvoorkomende taken bondiger worden. Het begrijpen en gebruiken van het onderliggende `net/http` pakket is echter cruciaal voor het omgaan met complexere of unieke HTTP-interactiescenario's, en biedt een fundament waarop de gelijktijdigheidsfuncties van Go en de krachtige standaardbibliotheek volledig kunnen worden benut.

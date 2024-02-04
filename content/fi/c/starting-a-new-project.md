@@ -1,36 +1,56 @@
 ---
 title:                "Uuden projektin aloittaminen"
-date:                  2024-01-20T18:03:10.723126-07:00
-model:                 gpt-4-1106-preview
+date:                  2024-02-03T18:09:20.395864-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Uuden projektin aloittaminen"
-
 tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c/starting-a-new-project.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? - Mikä ja Miksi?
-Aloitamme uuden projektin koodaamiseen, koska haluamme luoda jotain uutta tai ratkaista ongelman. Se on kuin tyhjän kankaan maalaamista koodilla.
+## Mikä & Miksi?
 
-## How to: - Kuinka:
-```C
-#include <stdio.h>
+Uuden projektin aloittaminen C-kielellä sisältää perustavanlaatuisen koodirakenteen ja ympäristön pystyttämisen, jotta kehitystehtävät voidaan hallita tehokkaasti. Ohjelmoijat tekevät näin virtaviivaistaakseen rakennusprosessia, ylläpitääkseen johdonmukaisuutta sekä helpottaakseen ohjelmiston ylläpitoa ja skaalautuvuutta ajan myötä.
 
-int main() {
-    printf("Hei Maailma!\n");
-    return 0;
-}
+## Kuinka:
+
+Minkä tahansa C-projektin ytimessä on lähdekoodi. Tyypillinen aloituspiste sisältää `main.c` -nimisen pääfileen luomisen, joka toimii ohjelman aloituspisteenä. Lisäksi `Makefile` on olennainen osa käännösten hallintaa projektin rakentamisen virtaviivaistamiseksi.
+
+Tässä on minimaalinen esimerkki:
+
+1. **"main.c" pystytys**: Tämä tiedosto sisältää `main`-funktion, ohjelman aloituspisteen.
+
+    ```c
+    // main.c
+    #include <stdio.h>
+
+    int main() {
+        printf("Hello, world!\n");
+        return 0;
+    }
+    ```
+
+2. **Makefilen luominen**: Automaattistaa rakennusprosessin, tehden projektisi kääntämisestä helppoa yhdellä komennolla.
+
+    ```makefile
+    # Makefile
+    all: main
+
+    main: main.c
+        gcc -o main main.c
+
+    clean:
+        rm -f main
+    ```
+
+Terminaalissa `make`-komennon suorittaminen kääntää `main.c`:n suoritettavaksi nimeltä `main`, ja `./main` suorittamisen pitäisi tulostaa:
 ```
-Kun ajat tämän, näet:
-```
-Hei Maailma!
+Hello, world!
 ```
 
-## Deep Dive - Syväsukellus
-Projektin aloittaminen C-kielellä on muuttunut vuosien varrella. "Hello World" on perinteinen ensimmäinen ohjelma - se on tapa tuntea itsensä tekijäksi. Vaihtoehtoiset aloitustavat riippuvat tavoitteista: web-kehitys, systeemi ohjelmointi, ja niin edelleen. Yksinkertaisuus, kuten yllä, opettaa ohjelman rakennetta; `#include` tuodaan kirjastoja, `main()` on aloituspiste ja `printf()` ilmaisee tulosteen. Huomaa, että nykyinen C-standardi (C17/ISO/IEC 9899:2018) suosii `int main(void)` allekirjoitusta.
+## Syväsukellus
 
-## See Also - Katso Myös
-- C Standard - ISO/IEC 9899: http://www.open-std.org/JTC1/sc22/wg14/www/docs/n2310.pdf
-- C Tutorial - https://www.learn-c.org/
-- Stack Overflow C questions - https://stackoverflow.com/questions/tagged/c
+Projektin aloittaminen C-kielessä ei ole vain koodin kirjoittamista; se on vankka perusta projektinhallinnalle. Tämä käytäntö on kehittynyt ohjelmoinnin alkuaikojen tarpeesta järjestää ja virtaviivaistaa suurten, monimutkaisten järjestelmien kokoamisprosessia UNIX-maailmasta. GNU Make -järjestelmän esittely 80-luvulla mullisti tämän automatisoimalla rakennusprosessin, mikä teki siitä kriittisen työkalun moderneissa C-projekteissa. Kuitenkin integroitujen kehitysympäristöjen (IDE) ja muiden korkean tason ohjelmointikielten nousu esitteli erilaisia projekti-initalisointikäytäntöjä, jotka saattavat sisältää automatisoidumpia rakennusjärjestelmiä, riippuvuuksien hallintaa ja versionhallinnan integrointia alusta alkaen. Näistä edistysaskeleista huolimatta Makefilen ja hyvin järjestetyn lähdekoodihakemiston tarjoama yksinkertaisuus ja kontrolli ovat edelleen arvokkaita, erityisesti järjestelmätason ohjelmoinnissa, missä tehokkuus ja resurssien hallinta ovat ensiarvoisen tärkeitä. Siitä huolimatta suuremmissa projekteissa työkalut kuten CMake tai Meson ovat tulossa suositummiksi niiden kyvyn hallita monimutkaisia rakennuksia ja poikittaisalusta-yhteensopivuutta, mikä viittaa suuntaukseen kohti monimutkaisempia projektin aloitustyökaluja C-ekosysteemissä.

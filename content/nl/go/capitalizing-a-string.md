@@ -1,65 +1,59 @@
 ---
-title:                "Een string met hoofdletters maken"
-date:                  2024-01-28T21:56:04.988056-07:00
+title:                "Een string kapitaliseren"
+date:                  2024-02-03T17:52:46.309129-07:00
 model:                 gpt-4-0125-preview
-simple_title:         "Een string met hoofdletters maken"
-
+simple_title:         "Een string kapitaliseren"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/go/capitalizing-a-string.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Wat & Waarom?
-Het kapitaliseren van een string verandert de eerste letter van een gegeven string in een hoofdletter. Programmeurs doen dit voor het formatteren van uitvoer, het naleven van grammaticale regels, of het leesbaarder maken van tekst.
 
-## Hoe:
-In Go zijn strings onveranderlijk, dus je moet een nieuwe gekapitaliseerde versie van de string creëren. We gebruiken het `strings` pakket en zijn `Title` functie of manipuleren de string-runen direct:
+Het kapitaliseren van een tekenreeks houdt in dat het eerste karakter van een gegeven string naar een hoofdletter wordt getransformeerd als het in kleine letters staat, om ervoor te zorgen dat de string opvalt of voldoet aan specifieke grammaticale normen. Programmeurs voeren deze bewerking vaak uit voor het formatteren van gebruikersinvoer, het weergeven van eigennamen of het waarborgen van gegevensconsistentie in softwaretoepassingen.
 
-```Go
+## Hoe te:
+
+In Go biedt het `strings`-pakket geen directe functie om alleen de eerste letter van een string te kapitaliseren. Daarom combineren we de `strings.ToUpper()`-functie, die een string naar hoofdletters omzet, met slicen om ons doel te bereiken. Hier is hoe je dat doet:
+
+```go
 package main
 
 import (
-	"fmt"
-	"strings"
-	"unicode"
+    "fmt"
+    "strings"
+    "unicode/utf8"
 )
 
+func CapitalizeFirst(str string) string {
+    if str == "" {
+        return ""
+    }
+    // Controleer of het eerste teken al een hoofdletter is.
+    if utf8.ValidString(str) && unicode.IsUpper([]rune(str)[0]) {
+        return str
+    }
+    
+    // Zet het eerste teken om naar een hoofdletter
+    r, size := utf8.DecodeRuneInString(str)
+    return string(unicode.ToUpper(r)) + str[size:]
+}
+
 func main() {
-	// Voorbeeld 1: Gebruik van strings.Title om elk woord te kapitaliseren
-	fmt.Println(strings.Title("hallo wereld!")) // Geeft als output: Hallo Wereld!
-
-	// Voorbeeld 2: Alleen de eerste karakter kapitaliseren
-	input := "hallo opnieuw!"
-	if len(input) > 0 {
-		fmt.Println(strings.ToUpper(string(input[0])) + input[1:]) // Geeft als output: Hallo opnieuw!
-	}
-
-	// Voorbeeld 3: Meer robuuste kapitalisatie, behandelt multi-byte karakters
-	capitalizeFirst := func(s string) string {
-		for i, v := range s {
-			return string(unicode.ToUpper(v)) + s[i+utf8.RuneLen(v):]
-		}
-		return ""
-	}
-
-	fmt.Println(capitalizeFirst("привет мир!")) // Geeft als output: Привет мир!
+    example := "hello, World!"
+    fmt.Println(CapitalizeFirst(example)) // Uitvoer: "Hello, World!"
 }
 ```
 
-## Uitdieping
-Stringkapitalisatie is geen ingewikkeld proces, maar er gebeurt veel onder de motorkap. Voordat de `strings.Title` functie bestond, moest je strings op het niveau van runen manipuleren voor een correcte kapitalisatie.
+Deze functie controleert of de string leeg is of dat het eerste karakter al een hoofdletter is. Het gebruikt het `unicode/utf8`-pakket om Unicode-tekens correct af te handelen, wat ervoor zorgt dat onze functie werkt met een breed scala aan invoer, naast basale ASCII.
 
-In oudere programmeertalen was het lastig om niet-ASCII karakters te behandelen tijdens het kapitaliseren door het gebrek aan goede Unicode-ondersteuning. Go maakt het makkelijker met ingebouwde ondersteuning voor UTF-8 codering in de `unicode` en `utf8` standaardpakketten.
+## Diepgaand
 
-Wanneer je handmatig strings kapitaliseert in Go, vergeet dan niet om multi-byte karakters te behandelen. Daarom lopen we door de string heen met `range` in het robuuste voorbeeld, wat itereert over runen in plaats van bytes.
+De noodzaak om tekenreeksen in Go te kapitaliseren zonder een ingebouwde functie kan overkomen als een beperking, vooral voor programmeurs die komen uit talen waar functies voor tekenreeksmanipulatie uitgebreider zijn. Deze beperking stimuleert het begrip van tekenreeksbehandeling en het belang van Unicode in moderne softwareontwikkeling.
 
-Er zijn alternatieven voor de ingebouwde Go-methoden, zoals het gebruik van externe bibliotheken voor complexere tekstmanipulatiebehoeften. Echter, voor eenvoudige kapitalisatie is de standaardbibliotheek van Go meestal voldoende.
+Historisch gezien hebben programmeertalen zich ontwikkeld in hun behandeling van tekenreeksen, waarbij vroege talen vaak internationalisering over het hoofd zagen. Go's benadering, hoewel het mogelijk iets meer code vereist voor schijnbaar eenvoudige taken, zorgt ervoor dat ontwikkelaars vanaf het begin rekening houden met wereldwijde gebruikers.
 
-## Zie Ook
-- Go strings pakket: [https://golang.org/pkg/strings/](https://golang.org/pkg/strings/)
-- Go unicode pakket: [https://golang.org/pkg/unicode/](https://golang.org/pkg/unicode/)
-- Go utf8 pakket: [https://golang.org/pkg/unicode/utf8/](https://golang.org/pkg/unicode/utf8/)
-- Een cool artikel over strings en runen in Go: [https://blog.golang.org/strings](https://blog.golang.org/strings)
+Er zijn bibliotheken buiten de standaardbibliotheek, zoals `golang.org/x/text`, die meer geavanceerde mogelijkheden voor tekstmanipulatie bieden. Echter, het gebruik van deze moet worden afgewogen tegen het toevoegen van externe afhankelijkheden aan uw project. Voor veel toepassingen bieden de `strings`- en `unicode/utf8`-pakketten van de standaardbibliotheek voldoende hulpmiddelen voor effectieve en efficiënte tekenreeksmanipulatie, zoals getoond in ons voorbeeld. Dit houdt Go-programma’s slank en onderhoudbaar, wat de filosofie van de taal van eenvoud en helderheid weerspiegelt.

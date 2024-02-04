@@ -1,48 +1,57 @@
 ---
 title:                "Escrevendo testes"
-date:                  2024-01-19
+date:                  2024-02-03T18:14:37.375992-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Escrevendo testes"
-
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/c/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## O que é & Por quê?
-Escrever testes é o processo de checar se o seu código faz exatamente aquilo que você espera que ele faça. Programadores testam para evitar bugs, garantir a qualidade do software e facilitar manutenções futuras.
+## O Quê & Por Quê?
+Escrever testes em C envolve criar programas ou funções auxiliares menores que verificam automaticamente a funcionalidade do seu código. Os programadores fazem isso para garantir que seu software funcione conforme esperado, para capturar bugs precocemente e facilitar futuras modificações no código sem efeitos colaterais indesejados.
 
 ## Como fazer:
-```C
+Embora o C não tenha uma framework de testes integrada como algumas outras linguagens, ainda é possível escrever testes eficazes usando assert.h para asserções simples ou integrar frameworks de terceiros como CUnit ou Unity para testes mais estruturados. Aqui está um exemplo básico usando assert.h para testar uma função que adiciona dois inteiros:
+
+```c
 #include <assert.h>
+#include "my_math.h"
 
-// Função para testar
-int soma(int a, int b) {
-    return a + b;
-}
-
-// Teste da função
-void testeSoma() {
-    assert(soma(2, 2) == 4);
-    assert(soma(-1, 1) == 0);
+void test_addition() {
+    assert(add(1, 2) == 3);
+    assert(add(-1, -2) == -3);
+    assert(add(0, 0) == 0);
+    printf("Todos os testes de adição passaram.\n");
 }
 
 int main() {
-    testeSoma();
-    printf("Todos os testes passaram!\n");
+    test_addition();
     return 0;
 }
 ```
-Saída esperada:
+
+Em `my_math.h`, você poderia ter:
+
+```c
+// Função simples de adição
+int add(int a, int b) {
+    return a + b;
+}
 ```
-Todos os testes passaram!
+
+Executar a função de teste na sua função `main` exibe:
+
 ```
+Todos os testes de adição passaram.
+```
+
+Para uma configuração de teste mais abrangente usando uma framework como Unity, você incorporaria a framework ao seu projeto, e então escreveria casos de teste de maneira similar, mas utilizando a API da framework para asserções e execução de testes.
 
 ## Aprofundando
-Historicamente, o teste de software começou como um processo manual, mas evoluiu para incluir testes automáticos e frameworks especializados. Alternativas modernas em C incluem frameworks como CUnit, Check e Unity. Ao escrever testes, é crucial considerar casos de borda, verificar tanto a correção quanto o desempenho e manter os testes atualizados conforme o código evolui.
+Testar em C historicamente foi um processo manual e um tanto quanto ad hoc devido à natureza de baixo nível da linguagem e à falta de uma framework de testes padronizada. Esta abordagem manual muitas vezes levava a práticas de teste menos rigorosas comparadas às linguagens com suporte integrado para testes. Como a linguagem C tem sido crucial no desenvolvimento de sistemas de software fundamentais, essa falta de frameworks de teste formais incentivou a comunidade C a desenvolver soluções de terceiros, como CUnit e Unity.
 
-## Veja também
-- Documentação do CUnit: https://cunit.sourceforge.io/doc/index.html
-- Check: https://libcheck.github.io/check/
-- Unity Test API: http://www.throwtheswitch.org/unity
-- Artigo sobre Test-Driven Development (TDD): https://en.wikipedia.org/wiki/Test-driven_development
+Essas ferramentas, apesar de externas à biblioteca padrão do C, fornecem funcionalidades semelhantes às frameworks de teste de outras linguagens, oferecendo uma maneira estruturada de definir, executar e avaliar testes. Elas ajudam a preencher a lacuna entre o poderoso acesso ao sistema do C e a prática moderna de desenvolvimento de testes automatizados. Vale ressaltar que, embora essas ferramentas aprimorem significativamente o processo de teste em C, elas podem introduzir uma curva de aprendizado e aumentar a complexidade da configuração do projeto em comparação a linguagens com suporte integrado para testes. Assim, para projetos onde a confiabilidade e a manutenibilidade são primordiais, o investimento na configuração de um ambiente de teste adequado em C é bem justificado, mesmo frente às possíveis alternativas.

@@ -1,87 +1,81 @@
 ---
 title:                "Assosiatiivisten taulukoiden käyttö"
-date:                  2024-01-30T19:11:23.062500-07:00
+date:                  2024-02-03T18:11:02.869709-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Assosiatiivisten taulukoiden käyttö"
-
 tag:                  "Data Structures"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/go/using-associative-arrays.md"
 changelog:
-  - 2024-01-30, gpt-4-0125-preview, translated from English
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
+## Mitä & Miksi?
 
-Assosiatiiviset taulukot, jotka Go:ssa tunnetaan nimellä mapit, mahdollistavat tietojen tallentamisen ja käyttämisen avain-arvo -pareina. Ne ovat olennaisia kokoelmien hallinnassa, kun haluat hakea arvoja nopeasti uniikin avaimen avulla, mikä yksinkertaistaa datan käsittelyä ja hakua ohjelmissasi.
+Assosiatiiviset taulukot, tunnetaan Go:ssa nimellä mapit, mahdollistavat avain-arvo parien tallentamisen, missä jokainen uniikki avain mappautuu arvoon. Ohjelmoijat käyttävät mappeja tehokkaaseen datan hakemiseen, muokkaamiseen ja elementtikokoelman ylläpitämiseen, joka voidaan nopeasti hakea käyttäen uniikkeja avaimia.
 
 ## Kuinka:
 
-Go:ssa mapit ovat suoraviivaisia käyttää. Tässä yksinkertainen opas aloittamiseen:
+Mapin luominen ja alustaminen Go:ssa voidaan tehdä monilla eri tavoilla. Tässä on perusesimerkki, jolla pääset alkuun:
 
-1. **Mapin määrittäminen ja alustaminen**
-
-```Go
+```go
 package main
 
 import "fmt"
 
 func main() {
-    // Alustaa tyhjän mapin, jossa on merkkijonoavaimet ja kokonaisluku arvot
-    var scores map[string]int
-    fmt.Println(scores) // Tulostaa: map[]
-
-    // Määrittää ja alustaa ei-tyhjän mapin
+    // Mapin julistaminen ja alustaminen
     colors := map[string]string{
-        "red": "#ff0000",
-        "green": "#00ff00",
+        "red":   "#FF0000",
+        "green": "#00FF00",
+        "blue":  "#0000FF",
     }
-    fmt.Println(colors) // Tulostaa: map[green:#00ff00 red:#ff0000]
+
+    fmt.Println(colors)
+    // Tuloste: map[blue:#0000FF green:#00FF00 red:#FF0000]
 }
 ```
 
-2. **Elementtien lisääminen ja käyttäminen**
+Elementtien lisääminen tai päivittäminen tapahtuu näin:
 
-```Go
-func main() {
-    fruits := make(map[string]int)
-    fruits["apples"] = 5
-    fruits["bananas"] = 10
+```go
+colors["white"] = "#FFFFFF"
+fmt.Println(colors)
+// Tuloste: map[blue:#0000FF green:#00FF00 red:#FF0000 white:#FFFFFF]
+```
 
-    fmt.Println(fruits["apples"]) // Tulostaa: 5
+Arvon hakeminen avaimen perusteella on suoraviivaista:
+
+```go
+fmt.Println("Punaisen heksakoodi on:", colors["red"])
+// Tuloste: Punaisen heksakoodi on: #FF0000
+```
+
+Elementin poistaminen tapahtuu `delete` funktion avulla:
+
+```go
+delete(colors, "red")
+fmt.Println(colors)
+// Tuloste: map[blue:#0000FF green:#00FF00 white:#FFFFFF]
+```
+
+Mapin ylitse iterointi tapahtuu for-silmukalla:
+
+```go
+for color, hex := range colors {
+    fmt.Printf("Avain: %s Arvo: %s\n", color, hex)
 }
 ```
 
-3. **Iterointi mapin yli**
-
-```Go
-func main() {
-    pets := map[string]string{"dog": "bark", "cat": "meow"}
-
-    for key, value := range pets {
-        fmt.Printf("%s goes %s\n", key, value)
-    }
-    // Tulostusjärjestys saattaa vaihdella, koska mapit eivät takaa järjestystä.
-}
-```
-
-4. **Elementtien poistaminen**
-
-```Go
-func main() {
-    meals := map[string]int{"breakfast": 300, "lunch": 600}
-    fmt.Println(meals) // Ennen poistoa
-
-    delete(meals, "lunch")
-    fmt.Println(meals) // Poiston jälkeen
-}
-```
+Muista, Go:n mapit ovat järjestämättömiä. Iteraation järjestystä ei taata.
 
 ## Syväsukellus
 
-Go 1:ssä esitellyt mapit tarjoavat sisäänrakennetun tavan käsitellä assosiatiivisia taulukoita tehokkaasti. Toisin kuin järjestetyt kokoelmat, joita kutsutaan sliceiksi, mapit ovat järjestämättömiä. Tämä tarkoittaa, että iterointijärjestys mapin elementtien yli ei ole taattu olevan sama suorituskertojen välillä, mikä on kompromissi sen kyvylle käsitellä avain-arvo -pareja dynaamisesti ja merkittävällä joustavuudella.
+Go:ssa mapit on toteutettu hajautustauluina. Jokainen merkintä mapissa koostuu kahdesta osasta: avaimesta ja arvosta. Avain hajautetaan tallentaakseen merkinnän, mikä mahdollistaa vakioaikaiset operaatiot pienelle datamäärälle ja keskimääräisen aikavaativuuden O(1) asianmukaisella hajautuksella, joka voi heikentyä O(n):ksi pahimmassa tapauksessa monien hajautusyhteentörmäysten kanssa.
 
-Taustalla Go toteuttaa mapit hajautustauluina, varmistaen pääsyn, lisäyksen ja poiston operaatioiden keskimääräisen monimutkaisuuden olevan O(1) useimmissa olosuhteissa. On kuitenkin huomionarvoista, että tämä tehokkuus voi vaihdella tekijöiden, kuten hajautuskolarien, perusteella.
+Merkittävä huomio uusille Go-ohjelmoijille on, että map-tyypit ovat viitetyyppejä. Tämä tarkoittaa, kun passaat mapin funktioon, kaikki funktiossa tehdyt muutokset mapissa ovat näkyvissä kutsujalle. Tämä on erilaista esimerkiksi structin passaamisesta funktioon, missä struct kopioidaan, ellei sitä passata pointerin avulla.
 
-Käyttötapauksissa, jotka vaativat avainten järjestettyä läpikäyntiä, saatat harkita mapin yhdistämistä sliceihin tai tutkia kolmannen osapuolen paketteja, jotka tarjoavat lisätietorakenteita, kuten järjestettyjä mappeja tai puita. Huolimatta rajoituksistaan, Go:n mapit ovat tehokas ja olennainen työkalu monissa ohjelmointitilanteissa.
+Vaikka mapit ovat uskomattoman monipuolisia ja tehokkaita useimmissa käyttötapauksissa, jotka liittyvät assosiatiivisiin taulukoihin, suorituskykykritiikissä sovelluksissa saattaa olla hyödyllistä käyttää tietorakenteita, joilla on ennustettavampi suorituskyky, erityisesti jos avainjakaumat voivat aiheuttaa usein yhteentörmäyksiä.
+
+Toinen vaihtoehto on harkita `sync.Map`:ia, joka on ollut saatavilla Go 1.9:stä lähtien, suunniteltu käyttötapauksiin, joissa avaimet kirjoitetaan vain kerran mutta luetaan monta kertaa, tarjoten tehokkuusparannuksia näissä skenaarioissa. Kuitenkin, tavanomaisissa Go-sovelluksissa, säännöllinen mapin käyttö on idiomaattista ja usein suositeltu lähestymistapa sen yksinkertaisuuden ja suoran tuen kielen puolesta.

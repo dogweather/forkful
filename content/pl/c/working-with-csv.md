@@ -1,55 +1,101 @@
 ---
 title:                "Praca z plikami CSV"
-date:                  2024-01-19
+date:                  2024-02-03T18:11:49.480327-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Praca z plikami CSV"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/c/working-with-csv.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Co i Dlaczego?)
-CSV to pliki 'Comma-Separated Values', proste i popularne w przenoszeniu danych tabelarycznych. Programiści używają ich do importu, eksportu, analizy danych i ich szybkiego przetwarzania.
+## Co i dlaczego?
 
-## How to: (Jak to zrobić:)
-Przykład czytania CSV w C:
+W świecie programowania praca z plikami CSV (Comma-Separated Values) obejmuje odczyt z plików tekstowych oraz zapis danych do nich, zorganizowanych w wiersze, gdzie każdy wiersz reprezentuje rekord, a poszczególne pola rekordu są oddzielone przecinkami. Programiści manipulują plikami CSV dla łatwości importu/eksportu danych między różnymi systemami, ze względu na ich powszechne wsparcie i prostotę przechowywania danych tablicowych.
 
-```C
+## Jak:
+
+### Odczytywanie plików CSV
+Aby odczytać plik CSV w języku C, używamy standardowych funkcji wejścia/wyjścia plików wraz z funkcjami manipulacji ciągami znaków do parsowania każdej linii. Poniżej znajduje się podstawowy przykład odczytu pliku CSV i wyświetlania pól każdego wiersza na konsoli.
+
+```c
 #include <stdio.h>
-#include <stdlib.h>
 #include <string.h>
-#define MAX_LINE_SIZE 1024
 
 int main() {
-    FILE *fp = fopen("data.csv", "r");
+    FILE *fp = fopen("dane.csv", "r");
     if (!fp) {
-        printf("Nie można otworzyć pliku.\n");
-        return EXIT_FAILURE;
+        printf("Nie można otworzyć pliku\n");
+        return 1;
     }
 
-    char line[MAX_LINE_SIZE];
-    while (fgets(line, MAX_LINE_SIZE, fp)) {
-        // Usuń znak nowej linii z wczytanej linii.
-        line[strcspn(line, "\n")] = 0;
-
-        char *token = strtok(line, ",");
-        while(token) {
-            printf("%s ", token);
-            token = strtok(NULL, ",");
+    char buf[1024];
+    while (fgets(buf, 1024, fp)) {
+        char *pole = strtok(buf, ",");
+        while(pole) {
+            printf("%s\n", pole);
+            pole = strtok(NULL, ",");
         }
-        printf("\n");
     }
+
     fclose(fp);
-    return EXIT_SUCCESS;
+    return 0;
 }
 ```
-Wyjście (output) będzie reprezentacją danych z pliku `data.csv` wydrukowaną w konsoli.
+Przykładowy `dane.csv`:
+```
+Imię,Wiek,Zawód
+John Doe,29,Inżynier oprogramowania
+```
 
-## Deep Dive (Dogłębna analiza)
-CSV powstało w latach `70 i jest formatem tekstowym, co oznacza prostotę i szerokie wsparcie. Istnieją alternatywnie: JSON, XML, ale CSV jest wydajniejsze dla dużych zbiorów prostych danych. W C brak biblioteki standardowej dla CSV - musisz samodzielnie zarządzać pamięcią i strukturami danych.
+Przykładowy wynik:
+```
+Imię
+Wiek
+Zawód
+John Doe
+29
+Inżynier oprogramowania
+```
 
-## See Also (Zobacz również)
-- Do nauki i eksperymentów użyj tutoriali online jak [tutorialspoint.com](https://www.tutorialspoint.com/c_standard_library/c_function_strtok.htm) na temat `strtok()`.
-- Specyfikacja CSV oferowana przez [RFC 4180](https://tools.ietf.org/html/rfc4180).
-- Szukaj na [Stack Overflow](https://stackoverflow.com/questions/tagged/c+csv) dla przykładów i pomocy w precyzowaniu kodu do specyficznych wymagań.
+### Zapisywanie do plików CSV
+Podobnie, zapis do pliku CSV wiąże się z użyciem `fprintf` do zapisu danych w formacie oddzielonym przecinkami.
+
+```c
+#include <stdio.h>
+
+int main() {
+    FILE *fp = fopen("wynik.csv", "w");
+    if (!fp) {
+        printf("Nie można otworzyć pliku\n");
+        return 1;
+    }
+
+    char *nagłówki[] = {"Imię", "Wiek", "Zawód", NULL};
+    for (int i = 0; nagłówki[i] != NULL; i++) {
+        fprintf(fp, "%s%s", nagłówki[i], (nagłówki[i+1] != NULL) ? "," : "\n");
+    }
+    fprintf(fp, "%s,%d,%s\n", "Jane Doe", 27, "Naukowiec danych");
+
+    fclose(fp);
+    return 0;
+}
+```
+
+Przykładowa zawartość `wynik.csv`:
+```
+Imię,Wiek,Zawód
+Jane Doe,27,Naukowiec danych
+```
+
+## Szczegółowa analiza
+
+Format CSV, mimo że wydaje się prosty, kryje w sobie niuanse, takie jak obsługa przecinków w polach oraz otaczanie pól cudzysłowami. Pokazane przykładowe przykłady nie uwzględniają takich złożoności, ani nie obsługują błędów w sposób niezawodny.
+
+Historycznie rzecz biorąc, obsługa plików CSV w C była w dużej mierze ręczna ze względu na niskopoziomową naturę języka oraz brak wbudowanych wysokopoziomowych abstrakcji dla takich zadań. Ta ręczna obsługa obejmuje otwieranie plików, czytanie linii, dzielenie ciągów znaków i konwertowanie typów danych w razie potrzeby.
+
+Chociaż bezpośrednia manipulacja plikami CSV w C dostarcza cenne doświadczenia z zakresu wejścia/wyjścia plików i obsługi ciągów znaków, istnieje kilka nowoczesnych alternatyw obiecujących większą wydajność i mniej podatność na błędy. Biblioteki takie jak `libcsv` i `csv-parser` oferują kompleksowe funkcje do odczytu i zapisu plików CSV, w tym wsparcie dla pól otoczonych cudzysłowami i niestandardowych separatorów.
+
+Alternatywnie, przy pracy w ekosystemach, które to wspierają, integracja z językami lub platformami oferującymi wysokopoziomowe funkcje manipulacji plikami CSV (takie jak Python z biblioteką `pandas`) może być bardziej produktywną drogą dla aplikacji wymagających intensywnej obróbki plików CSV. To podejście międzyjęzykowe wykorzystuje wydajność C oraz możliwości programowania systemowego, przy jednoczesnym wykorzystaniu łatwości użytkowania z innych języków do konkretnych zadań, takich jak obsługa CSV.

@@ -1,45 +1,56 @@
 ---
-title:                "Починаємо новий проект"
-date:                  2024-01-20T18:02:57.287813-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Починаємо новий проект"
-
+title:                "Початок нового проекту"
+date:                  2024-02-03T18:09:49.978304-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Початок нового проекту"
 tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/c/starting-a-new-project.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Що та Чому?)
-Every now and then, a coder gets to kick off a new project. It's fresh, exciting, and often starts with a simple "Hello, World!". We do it to solve problems, to learn, or sometimes just for the fun of tinkering with ideas.
+## Що та чому?
 
-## How to: (Як це зробити:)
-Let's spin up a new C project. Here's a basic but mighty 'Hello, World!' in C, the mother tongue of programming:
+Розпочинання нового проєкту на мові C передбачає налаштування основної структури коду та середовища для ефективного керування завданнями розробки. Програмісти роблять це, щоб оптимізувати процес збирання, забезпечити однорідність та полегшити обслуговування та масштабування програмного забезпечення з часом.
 
-```c
-#include <stdio.h>
+## Як це зробити:
 
-int main() {
-    printf("Привіт, світ!\n");
-    return 0;
-}
-```
+В основі будь-якого проєкту на мові C лежить вихідний код. Типова відправна точка включає створення основного файлу, який часто має назву `main.c` і містить точку входу програми. Крім того, `Makefile` є невід'ємним для управління компіляцією з метою оптимізації збірки проєкту.
 
-Compile and run. Your terminal should greet you:
+Ось мінімальний приклад:
 
+1. **Налаштування "main.c"**: Цей файл містить функцію `main`, точку входу програми.
+
+    ```c
+    // main.c
+    #include <stdio.h>
+
+    int main() {
+        printf("Привіт, світ!\n");
+        return 0;
+    }
+    ```
+
+2. **Створення Makefile**: Автоматизує процес збирання, роблячи легким компілювання вашого проєкту за допомогою однієї команди.
+
+    ```makefile
+    # Makefile
+    all: main
+
+    main: main.c
+        gcc -o main main.c
+
+    clean:
+        rm -f main
+    ```
+
+У терміналі, виконання `make` компілює `main.c` в виконуваний файл з назвою `main`, а виконання `./main` має вивести:
 ```
 Привіт, світ!
 ```
 
-## Deep Dive (Занурення у глибину)
-Starting a new project hasn't always been this simple. In ancient times (think 1970s), programming meant punch cards and time-sharing systems. Today, we've got Integrated Development Environments (IDEs) and powerful tools like `gcc` for compiling C.
+## Поглиблений розгляд
 
-Alternatives? Other languages, sure. But often the right tool for the job is a fast, compiled language like C. It deals closely with system hardware and is great for performance-critical apps.
-
-Implementation means setting the project up properly. Structuring your files, choosing a build system (like `make`), and considering version control (git is your friend here) from the get-go can save headaches later.
-
-## See Also (Дивіться також)
-- C Standard Library documentation: http://www.cplusplus.com/reference/clibrary/
-- GCC, the GNU Compiler Collection: https://gcc.gnu.org/
-- Make manual: https://www.gnu.org/software/make/manual/make.html
-- Git version control system: https://git-scm.com/
+Ініціювання проєкту на мові C – це не просто написання коду; це про створення міцного фундаменту для керування проєктом. Ця практика еволюціонувала з ранніх днів програмування, заимствуючи потребу в організації та оптимізації процесу компіляції великих, складних систем з UNIX-світу. Система GNU Make, представлена у 80-х роках, революціонізувала це, автоматизувавши процес збірки, зробивши її критично важливим інструментом у сучасних проєктах на мові C. Однак, поява інтегрованих середовищ розробки (IDE) та інших високорівневих мов програмування ввела інші практики ініціалізації проєкту, які можуть включати більш автоматизовані системи збирання, управління залежностями та інтеграцію системи контролю версій з самого початку. Незважаючи на ці досягнення, простота та контроль, які надає Makefile та добре організована директорія вихідного коду, є незамінними, особливо для програмування на рівні системи, де ефективність та управління ресурсами мають вирішальне значення. Тим не менш, для більших проєктів інструменти на кшталт CMake або Meson стають більш бажаними за їх здатність обробляти складні збірки та міжплатформену сумісність, що свідчить про тенденцію до більш складних інструментів ініціації проєктів в екосистемі C.

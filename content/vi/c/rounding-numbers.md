@@ -1,63 +1,63 @@
 ---
 title:                "Làm tròn số"
-date:                  2024-01-28T22:06:36.756196-07:00
+date:                  2024-02-03T18:08:09.496667-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Làm tròn số"
-
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/c/rounding-numbers.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
-Làm tròn số là việc loại bỏ các chữ số sau một điểm nhất định và tùy chọn điều chỉnh chữ số cuối cùng được giữ lại. Các lập trình viên làm tròn để giảm độ chính xác khi các giá trị chính xác không cần thiết, quản lý lỗi dấu phẩy động, hoặc chuẩn bị số cho hiển thị thân thiện với người dùng.
+
+Làm tròn số là quá trình điều chỉnh các chữ số của một số để giảm độ chính xác theo những quy tắc nhất định, hoặc về phía số nguyên gần nhất hoặc một số lượng chữ số thập phân được chỉ định. Lập trình viên thực hiện điều này vì nhiều lý do, từ việc giới hạn lượng bộ nhớ cần thiết, đến việc đơn giản hóa đầu ra cho người dùng, hoặc đảm bảo các phép toán toán học chính xác nhạy cảm với những biến động nhỏ.
 
 ## Làm thế nào:
-Trong C, bạn thường dùng các hàm `floor()`, `ceil()`, hoặc `round()`. Dưới đây là các ví dụ nhanh:
 
-```C
+Làm tròn số trong C có thể được hoàn thành bằng cách sử dụng các hàm khác nhau, nhưng phương pháp phổ biến nhất bao gồm việc sử dụng các hàm `floor()`, `ceil()`, và `round()`. Những hàm này là một phần của thư viện toán học chuẩn, vì vậy bạn sẽ cần phải bao gồm `math.h` trong chương trình của mình.
+
+```c
 #include <stdio.h>
 #include <math.h>
 
 int main() {
-    double num = 3.14159;
-    double num_floor = floor(num);
-    double num_ceil = ceil(num);
-    double num_round = round(num);
+    double num = 9.527;
 
-    printf("Floor: %.2f\n", num_floor); // Floor: 3.00
-    printf("Ceil: %.2f\n", num_ceil);   // Ceil: 4.00
-    printf("Round: %.2f\n", num_round); // Round: 3.00
+    // Sử dụng floor() để làm tròn xuống
+    double floorResult = floor(num);
+    printf("floor(9.527) = %.0f\n", floorResult);
+
+    // Sử dụng ceil() để làm tròn lên
+    double ceilResult = ceil(num);
+    printf("ceil(9.527) = %.0f\n", ceilResult);
+
+    // Sử dụng round() để làm tròn đến số nguyên gần nhất
+    double roundResult = round(num);
+    printf("round(9.527) = %.0f\n", roundResult);
+
+    // Làm tròn đến một số lượng chữ số thập phân được chỉ định liên quan đến phép nhân và chia
+    double twoDecimalPlaces = round(num * 100) / 100;
+    printf("Làm tròn đến hai chữ số thập phân: %.2f\n", twoDecimalPlaces);
+
     return 0;
 }
 ```
 
-Để kiểm soát nhiều hơn, như làm tròn đến một vị trí cụ thể, bạn nhân, làm tròn, và chia:
-
-```C
-double roundToPlace(double num, int place) {
-    double scale = pow(10.0, place);
-    return round(num * scale) / scale;
-}
-
-// ...
-
-double num = 3.14159;
-double num_rounded = roundToPlace(num, 2);
-printf("Làm tròn đến 2 chữ số thập phân: %.2f\n", num_rounded); // Làm tròn đến 2 chữ số thập phân: 3.14
+Đầu ra:
+```
+floor(9.527) = 9
+ceil(9.527) = 10
+round(9.527) = 10
+Làm tròn đến hai chữ số thập phân: 9.53
 ```
 
-## Sâu hơn
-Ngày xưa, làm tròn thường có nghĩa là quá trình thủ công - một công việc nặng nhọc chỉ với bút và giấy. Với máy tính, chúng ta đã tự động hóa điều này, nhưng số học dấu phẩy động đã mang lại những subtlety do bản chất nhị phân của nó, nơi mà một số số không thể được biểu diễn một cách chính xác.
+## Đi sâu hơn
 
-Các phương pháp thay thế cho việc làm tròn tiêu chuẩn bao gồm cắt (đơn giản là bỏ đi các chữ số thừa) hoặc làm tròn kiểu ngân hàng, làm tròn về số chẵn gần nhất khi chính xác ở giữa hai giá trị, giảm thiểu sự thiên vị trong các tính toán lặp lại.
+Làm tròn số có bản chất lịch sử sâu rộng trong toán học và tính toán, thiết yếu cho cả khía cạnh lý thuyết và ứng dụng. Trong C, trong khi `floor()`, `ceil()`, và `round()` cung cấp chức năng cơ bản, bản chất của việc làm tròn số thực sang số nguyên hoặc số chữ số thập phân cụ thể còn tinh tế hơn do biểu diễn nhị phân của số thực chấm động. Biểu diễn này có thể dẫn đến kết quả không mong đợi do cách xử lý các số không thể được biểu diễn chính xác trong nhị phân (như 0.1).
 
-Việc thực hiện trở nên phức tạp khi bạn cần làm tròn số với độ chính xác tùy ý hoặc xử lý các trường hợp đặc biệt như vô cùng, NaN có tín hiệu, hoặc các giá trị subnormal. Các hàm thư viện chuẩn của C xử lý các điều cơ bản, nhưng nếu bạn cần làm tròn số thập phân theo cách tùy chỉnh, bạn sẽ cần nhiều hơn `math.h`.
+Những hàm này là một phần của thư viện chuẩn C, được định nghĩa trong `<math.h>`. Khi làm tròn số, đặc biệt là cho các tính toán tài chính hoặc kỹ thuật chính xác, cần phải xem xét tác động của việc sử dụng số thực chấm động nhị phân. Các phương án thay thế cho các hàm C tích hợp để làm tròn chính xác cao hoặc cụ thể vào số thập phân có thể bao gồm việc thực hiện các hàm làm tròn tùy chỉnh hoặc sử dụng thư viện được thiết kế cho các phép toán số học độ chính xác tùy ý, như GMP hoặc MPFR, mặc dù những điều này giới thiệu thêm độ phức tạp và phụ thuộc.
 
-## Xem thêm
-- [Tài liệu `<math.h>`](https://en.cppreference.com/w/c/numeric/math)
-- [Số học dấu phẩy động](https://en.wikipedia.org/wiki/Floating-point_arithmetic)
-- [Những khó khăn khi xác minh tính toán dấu phẩy động](https://dl.acm.org/doi/10.1145/1186736.1186737)
+Trên thực tế, việc chọn phương pháp làm tròn phù hợp trong C đòi hỏi cân nhắc giữa nhu cầu về độ chính xác, hiệu suất và tính thiết thực, với sự hiểu biết sâu sắc về các yêu cầu cụ thể của lĩnh vực ứng dụng đang được phát triển.

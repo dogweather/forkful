@@ -1,50 +1,59 @@
 ---
-title:                "Перетворення рядка на великі літери"
-date:                  2024-01-19
-simple_title:         "Перетворення рядка на великі літери"
-
+title:                "Великі літери в рядку"
+date:                  2024-02-03T17:53:04.032710-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Великі літери в рядку"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/go/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
 ## Що і чому?
 
-Capitalizing a string means making the first character in each word uppercase. Programmers often use this to format text for a human-friendly display - like turning "john doe" into "John Doe."
+Великою літерою на початку рядка робиться перетворення першого символу даного рядка в верхній регістр, якщо він у нижньому, забезпечуючи виділення рядка або дотримання певних граматичних норм. Програмісти часто виконують цю операцію для форматування введених користувачем даних, виведення власних імен чи забезпечення консистентності даних у програмних застосунках.
 
-## How to:
-## Як це зробити:
+## Як зробити:
 
-```Go
+У Go пакет `strings` не надає прямої функції для великої літери тільки першої літери рядка. Тому ми поєднуємо функцію `strings.ToUpper()`, яка перетворює рядок у верхній регістр, зі зрізанням, щоб досягти нашої мети. Ось як це зробити:
+
+```go
 package main
 
 import (
-	"fmt"
-	"strings"
+    "fmt"
+    "strings"
+    "unicode/utf8"
 )
 
+func CapitalizeFirst(str string) string {
+    if str == "" {
+        return ""
+    }
+    // Перевірка, чи перший символ вже є великою літерою.
+    if utf8.ValidString(str) && unicode.IsUpper([]rune(str)[0]) {
+        return str
+    }
+    
+    // Перетворення першого символу на велику літеру
+    r, size := utf8.DecodeRuneInString(str)
+    return string(unicode.ToUpper(r)) + str[size:]
+}
+
 func main() {
-	text := "це приклад рядка"
-	capitalized := strings.Title(strings.ToLower(text))
-	fmt.Println(capitalized)
+    example := "hello, World!"
+    fmt.Println(CapitalizeFirst(example)) // Вивід: "Hello, World!"
 }
 ```
 
-Sample output:
-```
-Це Приклад Рядка
-```
+Ця функція перевіряє, чи рядок порожній, або чи перший символ вже є великою літерою. Вона використовує пакет `unicode/utf8`, щоб правильно обробляти символи Unicode, забезпечуючи роботу нашої функції з широким спектром введення, що виходить за рамки базового ASCII.
 
-## Deep Dive
-## Поглиблений огляд
+## Поглиблений аналіз
 
-In Go, strings are immutable sequences of bytes. Capitalizing strings has been around since people started computerizing records - helping sort and present data neatly. The `strings` package in Go provides the `Title` function, which capitalizes the first letter of each word. But beware, `Title` is quite simple minded - it doesn't properly handle cases like "McDonald" or "O'Neil" or some non-English letter capitalization rules. For these cases, custom logic or libraries like `golang.org/x/text` are used.
+Потреба у великій літері на початку рядків у Go без вбудованої функції може здатися обмеженням, особливо для програмістів, що приходять з мов, де функції маніпуляції з рядками є більш всеохоплюючими. Це обмеження спонукає до розуміння обробки рядків і значення Unicode у сучасній розробці програмного забезпечення.
 
-## See Also
-## Дивись також
+Історично мови програмування розвивалися в їхньому ставленні до рядків, часто ігноруючи інтернаціоналізацію на початкових етапах. Підхід Go, хоча й потребує трохи більше коду для видимо простих завдань, забезпечує, щоб розробники з самого початку мали на увазі глобальних користувачів.
 
-- Go strings package: https://pkg.go.dev/strings
-- Go `golang.org/x/text` package: https://pkg.go.dev/golang.org/x/text
-- Unicode Standard Annex #29 on text boundaries (for complex capitalization logic): https://unicode.org/reports/tr29/
+Є бібліотеки за межами стандартної бібліотеки, як `golang.org/x/text`, що пропонують більш витончені можливості маніпуляції з текстом. Проте, використання цих слід відважувати відносно додавання зовнішніх залежностей до вашого проєкту. Для багатьох застосунків стандартні пакети `strings` та `unicode/utf8` забезпечують достатні інструменти для ефективної та дієвої маніпуляції з рядками, як показано на нашому прикладі. Це зберігає програми Go стрункими та легко підтримуваними, відгукуючись на філософію мови простоти та ясності.

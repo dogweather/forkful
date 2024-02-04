@@ -1,64 +1,100 @@
 ---
 title:                "Loggning"
-date:                  2024-01-26T01:00:50.848826-07:00
-model:                 gpt-4-1106-preview
+date:                  2024-02-03T17:59:02.503679-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Loggning"
-
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/c/logging.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att logga är i grund och botten att skriva ner vad ditt program gör, vanligen genom att skicka ut meddelanden till en fil eller terminal. Programmerare gör det för att hålla koll på händelser, felsöka problem, och för att ha en revisionsspårning som berättar historien om en applikations funktion över tid.
 
-## Hur man gör:
-Låt oss börja med några grunder. C har inget inbyggt ramverk för loggning, men du kan skapa något enkelt med `stdio.h`. Så här gör du:
+Att logga i C innebär att man registrerar flödet och betydande händelser i ett program under dess körtid, vilket ger en konkret översikt av dess beteende och prestanda. Programmerare använder loggning för felsökning, övervakning av mjukvaruhälsa och för att säkerställa systemets säkerhet.
+
+## Hur gör man:
+
+I C kan loggning uppnås med grundläggande filoperationer eller genom att använda mer sofistikerade bibliotek. För enkelhetens skull startar vi med standard I/O-biblioteket. Följande kodsnuttar visar grundläggande implementationer av loggning.
+
+För att logga enkla meddelanden:
+
+```c
+#include <stdio.h>
+
+int main() {
+    FILE *logFile;
+    logFile = fopen("application.log", "a"); // Öppna loggfilen i lägga till-läge
+    
+    if (logFile == NULL) {
+        perror("Fel vid öppning av loggfil.");
+        return -1;
+    }
+    
+    fprintf(logFile, "Startar applikationen.\n");
+    
+    // Din applikationslogik här
+    
+    fprintf(logFile, "Applikationen avslutades framgångsrikt.\n");
+    fclose(logFile);
+    
+    return 0;
+}
+```
+
+Utdata i `application.log`:
+
+```
+Startar applikationen.
+Applikationen avslutades framgångsrikt.
+```
+
+För att inkludera mer detaljerade loggar med tidsstämplar och loggnivåer:
 
 ```c
 #include <stdio.h>
 #include <time.h>
 
-void logMessage(const char* message) {
+void logMessage(FILE *logFile, const char* level, const char* message) {
     time_t now;
     time(&now);
-    char *date = ctime(&now);
-    date[strlen(date) - 1] = '\0'; // Ta bort radslutet i slutet av ctime()'s resultat
-    printf("[%s] %s\n", date, message);
+    char* datetime = ctime(&now);
+    datetime[strlen(datetime)-1] = '\0'; // Ta bort radbrytningstecken
+    fprintf(logFile, "[%s] %s - %s\n", datetime, level, message);
 }
 
 int main() {
-    logMessage("Applikationen har startat.");
-    // ... din kod kommer här ...
-    logMessage("Applikationen utför något viktigt.");
-    // ... din kod fortsätter ...
-    logMessage("Applikationen har avslutats.");
+    FILE *logFile;
+    logFile = fopen("detailed.log", "a");
+    
+    if (logFile == NULL) {
+        perror("Fel vid öppning av loggfil.");
+        return -1;
+    }
+    
+    logMessage(logFile, "INFO", "Applikationen startar");
+    // Din applikationslogik här
+    logMessage(logFile, "ERROR", "Ett exempelfel");
+    
+    fclose(logFile);
+    
     return 0;
 }
 ```
 
-Ett exempel på utskrift kan se ut så här:
+Utdata i `detailed.log`:
 
 ```
-[Tis Mar 9 12:00:01 2023] Applikationen har startat.
-[Tis Mar 9 12:00:02 2023] Applikationen utför något viktigt.
-[Tis Mar 9 12:00:03 2023] Applikationen har avslutats.
+[Tor Mar 10 14:32:01 2023] INFO - Applikationen startar
+[Tor Mar 10 14:32:02 2023] ERROR - Ett exempelfel
 ```
 
-Självklart skulle du i verkliga världen förmodligen vilja skriva till en fil istället för terminalen, hantera olika loggnivåer och kanske använda ett fördefinierat bibliotek.
+## Djupdykning
 
-## Fördjupning
-Att logga i C har en egen charm – det är lika lågnivå som resten av språket. Historiskt sätt utfördes loggning med `fprintf` tillsammans med `stderr` eller en filpekare. När program blev mer komplexa, blev också behoven för loggning det, vilket ledde till utvecklingen av bibliotek som `syslog` på Unix-system, som kunde hantera loggning från flera källor med olika viktnivåer.
+Som demonstrerat, beror loggning i C på enkla filoperationer, vilket är effektivt men inte lika kraftfullt eller flexibelt som loggningsverktyg i andra språk, såsom Pythons `logging`-modul eller Javas `Log4j`. För mer avancerade loggningsmöjligheter i C vänder sig utvecklare ofta till bibliotek som `syslog` på Unix-liknande system, vilket ger systemomfattande logghantering, eller tredjepartsbibliotek som `log4c`.
 
-I det moderna landskapet finns det gott om loggbibliotek för C, såsom `zlog`, `log4c` och `glog`, som erbjuder en rik uppsättning funktioner inklusive loggrotation, strukturerad loggning och multitrådad loggning. Dessa lösningar tillåter finjusterad kontroll över loggningens verbositet, destinationer och format.
+Historiskt sett har loggning varit en integrerad del av programmering, vilket går tillbaka till tidiga programmeringspraxis där spårning och förståelse för programflödet och fel gjordes främst genom fysiska utskrifter. När systemen utvecklades blev loggningen mer sofistikerad, och stöder nu olika allvarlighetsnivåer, loggrotation och asynkron loggning.
 
-När du implementerar ett loggsystem behöver detaljer som tidsstämpelformat, hantering av loggfiler och prestanda övervägas. Tidsstämpling av loggar är avgörande för att korrelera händelser, medan loggrotation säkerställer att loggfiler inte förbrukar för mycket diskutrymme. Själva loggningshandlingen bör också vara snabb och icke-blockerande för applikationens huvudflöde för att förhindra att loggningen blir en flaskhals.
-
-## Se även
-För att fördjupa dig ytterligare i loggbibliotek och praxis i C, kolla in dessa resurser:
-
-- GNU `syslog` manual: https://www.gnu.org/software/libc/manual/html_node/Syslog.html
-- `zlog`: Ett högt konfigurerbart loggbibliotek för C - https://github.com/HardySimpson/zlog
-- `log4c`: Ett loggningsramverk för C modellerat efter Log4j - http://log4c.sourceforge.net/
-- `glog`: Googles programnivå loggbibliotek - https://github.com/google/glog
+Även om C:s standardbibliotek tillhandahåller de grundläggande verktygen för att implementera loggning, leder dess begränsningar ofta till skapandet av anpassade loggningsramverk eller användning av externa bibliotek för mer funktionsrika och flexibla loggningslösningar. Trots dessa begränsningar är förståelsen och implementeringen av grundläggande loggning i C avgörande för felsökning och underhåll av mjukvara, särskilt i miljöer där externa beroenden ska minimeras.

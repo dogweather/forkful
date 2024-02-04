@@ -1,50 +1,63 @@
 ---
-title:                "Een string met hoofdletters maken"
-date:                  2024-01-28T21:55:30.773537-07:00
+title:                "Een string kapitaliseren"
+date:                  2024-02-03T17:52:50.382197-07:00
 model:                 gpt-4-0125-preview
-simple_title:         "Een string met hoofdletters maken"
-
+simple_title:         "Een string kapitaliseren"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/c/capitalizing-a-string.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Wat & Waarom?
-Het capitaliseren van een string betekent het omzetten van alle kleine letters naar hoofdletters. Programmeurs kapitaliseren vaak strings voor consistentie, weergaveformattering, of als onderdeel van datanormalisatieprocessen.
+
+Een string met hoofdletters schrijven in C houdt in dat je het eerste teken van elk woord in een gegeven string omzet naar een hoofdletter als het een kleine letter is. Programmeurs voeren deze bewerking vaak uit om gebruikersinvoer te standaardiseren voor zoekopdrachten, sorteerbewerkingen of weergavedoeleinden, om consistentie en leesbaarheid in tekstgegevens te waarborgen.
 
 ## Hoe te:
-De C-taal heeft geen ingebouwde functie om strings te capitaliseren. Je zult doorgaans door elk karakter lopen, terwijl je onderweg kapitaliseert:
+
+Het met hoofdletters schrijven van een string in C vereist een basisbegrip van karaktermanipulatie en het doorlopen van strings. Aangezien C geen ingebouwde functie hiervoor heeft, zul je doorgaans elk teken controleren, en indien nodig de hoofdletter aanpassen. Hieronder staat een eenvoudige implementatie:
 
 ```c
 #include <stdio.h>
-#include <ctype.h>
+#include <ctype.h> // Voor de functies islower en toupper
 
 void capitalizeString(char *str) {
-    while (*str) {
-        *str = toupper((unsigned char) *str);
-        str++;
+    if (str == NULL) return; // Veiligheidscontrole
+    
+    int capNext = 1; // Vlag om aan te geven of de volgende letter een hoofdletter moet zijn
+    for (int i = 0; str[i] != '\0'; i++) {
+        if (capNext && islower(str[i])) {
+            str[i] = toupper(str[i]); // Zet teken om naar hoofdletter
+            capNext = 0; // Reset vlag
+        } else if (str[i] == ' ') {
+            capNext = 1; // Volgende teken moet een hoofdletter zijn
+        }
     }
 }
 
 int main() {
-    char myString[] = "hello world!";
-    capitalizeString(myString);
-    printf("%s\n", myString);  // Uitvoer: HELLO WORLD!
+    char exampleString[] = "hello world. programming in c!";
+    capitalizeString(exampleString);
+    printf("String met hoofdletters: %s\n", exampleString);
     return 0;
 }
 ```
 
+Voorbeelduitvoer:
+```
+String met hoofdletters: Hello World. Programming In C!
+```
+
+Dit programma doorloopt de string `exampleString`, controleerend elk teken of het met een hoofdletter moet worden geschreven. De functie `islower` controleert of een teken een kleine letter is, terwijl `toupper` het omzet naar een hoofdletter. De vlag `capNext` bepaalt of de volgende letter die wordt aangetroffen omgezet dient te worden, deze wordt ingesteld na elke spatie (' ') die wordt gevonden, en aanvankelijk om het eerste teken van de string een hoofdletter te maken.
+
 ## Diepere Duik
-In de begindagen van computing waren bewerkingen op strings basisch en handmatig. C, ontwikkeld in de vroege jaren 70, weerspiegelt dit met eenvoudige stringmanipulatiefuncties in zijn standaardbibliotheek. De functie `toupper` is ontworpen om een enkel karakter naar hoofdletters te converteren. Het maakt deel uit van `<ctype.h>`, een header die functies bevat om karakters te testen en te mappen.
 
-Er zijn alternatieven voor het doorlopen van een string om deze te capitaliseren. Bibliotheken zoals `libCStringUtils` bieden meer complexe stringbewerkingen, waaronder kapitalisatie. Sommige ontwikkelaars schrijven ook hun eigen functies met kenmerken zoals lokale gevoeligheid.
+De getoonde techniek is eenvoudig maar mist efficiëntie voor zeer grote strings of wanneer ze herhaaldelijk wordt uitgevoerd in prestatie-kritieke toepassingen. In historische en implementatie-contexten omvat stringmanipulatie in C, inclusief kapitalisatie, vaak directe buffermanipulatie, wat de low-level benadering van C weerspiegelt en de programmeur volledige controle geeft over geheugen en prestatie-afwegingen.
 
-Intern hebben ASCII-karakters numerieke equivalenten, die 32 verschillen tussen hoofdletters en kleine letters. De `toupper`-functie gebruikt dit verschil om karakters te converteren. Echter, het direct vertrouwen op ASCII-waarden wordt niet aanbevolen vanwege leesbaarheids- en lokalisatieproblemen.
+Er zijn alternatieve, meer geavanceerde methoden voor het met hoofdletters schrijven van strings, vooral wanneer rekening wordt gehouden met landinstellingen en unicode-tekens, waar kapitalisatieregels aanzienlijk kunnen verschillen van het eenvoudige ASCII-scenario. Bibliotheken zoals ICU (International Components for Unicode) bieden robuuste oplossingen voor deze gevallen, maar introduceren afhankelijkheden en overhead die mogelijk niet noodzakelijk zijn voor alle toepassingen.
 
-## Zie Ook
-- Documentatie van de C Standaardbibliotheek: https://en.cppreference.com/w/c/header
-- ASCII Tabel en Beschrijving: http://www.asciitable.com/
-- GNU Libc handboek: https://www.gnu.org/software/libc/manual/html_node/String-and-Array-Utilities.html
+Verder, hoewel het voorbeeld de C Standard Library-functies `islower` en `toupper` gebruikt, die deel uitmaken van `<ctype.h>`, is het essentieel om te begrijpen dat deze werken binnen het ASCII-bereik. Voor toepassingen die verwerking van karakters buiten ASCII vereisen, zoals het hanteren van accenttekens in Europese talen, zal aanvullende logica of externe bibliotheken nodig zijn om kapitalisatie nauwkeurig uit te voeren.
+
+Concluderend, hoewel de uiteengezette methode geschikt is voor veel toepassingen, is het cruciaal om de beperkingen en de beschikbare alternatieven te begrijpen voor het ontwikkelen van robuuste, geïnternationaliseerde software in C.

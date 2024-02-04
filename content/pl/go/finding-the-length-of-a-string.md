@@ -1,21 +1,23 @@
 ---
-title:                "Znalezienie długości ciągu znaków"
-date:                  2024-01-20T17:47:23.918923-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Znalezienie długości ciągu znaków"
-
+title:                "Znajdowanie długości łańcucha"
+date:                  2024-02-03T17:57:04.445716-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Znajdowanie długości łańcucha"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/go/finding-the-length-of-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Co i dlaczego? Znalezienie długości łańcucha znaków to sprawdzenie, ile znaków zawiera. Programiści robią to, by przykładowo weryfikować dane wejściowe lub zarządzać nimi podczas operacji na tekstach.
+## Co i dlaczego?
+Znalezienie długości ciągu znaków w Go polega na określeniu liczby znaków, które zawiera. Programiści regularnie wykonują tę operację, aby efektywnie manipulować ciągami znaków, czy to dla celów weryfikacji, ekstrakcji podciągów, czy po prostu do egzekwowania ograniczeń w danych wejściowych użytkownika.
 
-## How to:
-Jak to zrobić:
-```Go
+## Jak to zrobić:
+W Go, ciągi znaków traktowane są jako niezmienne sekwencje bajtów. Długość ciągu znaków można znaleźć za pomocą wbudowanej funkcji `len()`, która zwraca liczbę bajtów, a niekoniecznie liczbę znaków. Oto jak jej użyć:
+
+```go
 package main
 
 import (
@@ -24,21 +26,23 @@ import (
 )
 
 func main() {
-	sampleText := "Witaj, świecie!"
-	fmt.Println("UTF-8 runes:", utf8.RuneCountInString(sampleText)) // Użycie RuneCountInString dla UTF-8
-	fmt.Println("Bytes:", len(sampleText))                           // Użycie len dla bajtów
+	// Używanie len() do znalezienia długości w bajtach
+	str := "Hello, 世界"
+	byteLength := len(str)
+	fmt.Println("Długość w bajtach:", byteLength) // Wyjście: Długość w bajtach: 13
+
+	// Aby dokładnie uzyskać liczbę znaków lub runów w ciągu znaków
+	runeLength := utf8.RuneCountInString(str)
+	fmt.Println("Długość Runów:", runeLength) // Wyjście: Długość Runów: 9
 }
 ```
-Output:
-```
-UTF-8 runes: 15
-Bytes: 17
-```
+Pierwsza metoda przy użyciu `len()` może nie zawsze dawać oczekiwany wynik, ponieważ liczy bajty. Dla ciągów zawierających znaki inne niż ASCII (jak "世界"), zamiast tego należy użyć `RuneCountInString` z pakietu `unicode/utf8`, aby dokładnie zliczyć punkty kodowe Unicode.
 
-## Deep Dive
-Szczegółowe spojrzenie: W Go, `len` zwraca liczbę bajtów, ale ze względu na UTF-8, który jest zmienną długością kodowania, to różni się od liczby znaków. Historia Unicode i UTF-8 zaczyna się w latach 80-tych i 90-tych, kiedy potrzeba uniwersalnego kodowania znaków stała się oczywista. W Go, używamy `utf8.RuneCountInString` do prawidłowego policzenia znaków. Alternatywą jest iteracja po łańcuchu runach, ale to bardziej złożone i rzadziej potrzebne.
+## Pogłębiona analiza
+Przed Go 1 nie było ścisłego rozgraniczenia dla obsługi ciągów znaków jako sekwencje bajtów w porównaniu z sekwencjami znaków. Po Go 1, przyjęcie UTF-8 jako standardowego schematu kodowania dla ciągów znaków wymagało jaśniejszych podejść. Funkcja `len()` doskonale nadaje się do ciągów ASCII, gdzie znaki są reprezentowane w pojedynczym bajcie. Jednak, gdy aplikacje Go stały się bardziej globalne, a potrzeba wsparcia mnóstwa języków i zestawów znaków wzrosła, proste podejście `len()` pokazało ograniczenia.
 
-## See Also
-Zobacz także:
-- Dokumentacja Go o stringach i runach: https://golang.org/ref/spec#String_types
-- Artykuł o kodowaniu UTF-8: https://blog.golang.org/strings
+Wprowadzenie i użycie `utf8.RuneCountInString()` odpowiada na te ograniczenia, zapewniając sposób na zliczanie rzeczywistych znaków Unicode (runów w terminologii Go). Ta metoda zapewnia, że obliczenie długości jest niezależne od specyfiki kodowania UTF-8, gdzie znaki mogą zajmować wiele bajtów.
+
+Alternatywne podejście do przeglądania i manipulowania ciągami znaków, bardziej zgodne z etosem współbieżności i efektywności Go, może polegać na traktowaniu ciągów znaków jako wycinków runów. Jednak ta metoda wymaga kroku konwersji i nie rozwiązuje natychmiast wszystkich subtelności Unicode (np. znaków łączących).
+
+Podsumowując, chociaż `len()` nadaje się do określania długości w bajtach i jest wydajne dla tekstu ASCII, `utf8.RuneCountInString()` jest bardziej niezawodnym wyborem dla aplikacji kompatybilnej globalnie. Mimo to, zachęca się programistów do zrozumienia kompromisów w zakresie wydajności i użycia pamięci, które te wybory niosą.

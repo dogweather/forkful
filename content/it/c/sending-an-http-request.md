@@ -1,68 +1,67 @@
 ---
-title:                "Inviare una richiesta http"
-date:                  2024-01-20T17:59:11.514084-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Inviare una richiesta http"
-
+title:                "Inviare una richiesta HTTP"
+date:                  2024-02-03T18:08:22.906309-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Inviare una richiesta HTTP"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/c/sending-an-http-request.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Cosa & Perché?)
-Inviamo richieste HTTP per comunicare con server web e scambiare dati. Lo facciamo perché è alla base di quasi ogni interazione tra client e Internet: da richiedere una pagina web fino all'interazione con servizi API.
+## Cosa e perché?
 
-## How to: (Come fare:)
-```C
+Inviare una richiesta HTTP implica creare e inviare una richiesta a un server web per recuperare o inviare dati. I programmatori lo fanno in C per interagire con le API web, scaricare pagine web o comunicare direttamente con altri servizi in rete dalle loro applicazioni.
+
+## Come fare:
+
+Per inviare una richiesta HTTP in C, generalmente ci si affida a librerie come libcurl, poiché C non ha un supporto incorporato per i protocolli web. Ecco un semplice esempio che utilizza libcurl per eseguire una richiesta GET:
+
+Prima di tutto, assicurati di avere libcurl installato sul tuo sistema. Poi, includi gli header necessari e collega la tua libreria libcurl nel file sorgente:
+
+```c
 #include <stdio.h>
 #include <curl/curl.h>
 
-int main() {
+int main(void) {
     CURL *curl;
     CURLcode res;
 
-    // Inizializza libCURL
-    curl_global_init(CURL_GLOBAL_DEFAULT);
-    
-    // Crea l'oggetto CURL
-    curl = curl_easy_init();
+    curl = curl_easy_init(); // Inizializza un handle libcurl
     if(curl) {
-        // Imposta l'URL da cui effettuare la richiesta HTTP
+        // Imposta l'URL che riceve l'handle libcurl
         curl_easy_setopt(curl, CURLOPT_URL, "http://example.com");
+        // Definisce una callback per ottenere i dati
+        curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, NULL); 
         
-        // Esegui la richiesta HTTP
+        // Esegue la richiesta, res riceverà il codice di ritorno
         res = curl_easy_perform(curl);
-        
-        // Verifica che non ci siano errori
-        if(res != CURLE_OK) {
-            fprintf(stderr, "curl_easy_perform() failed: %s\n", curl_easy_strerror(res));
-        }
+        // Controlla gli errori
+        if(res != CURLE_OK)
+            fprintf(stderr, "curl_easy_perform() failed: %s\n",
+                    curl_easy_strerror(res));
 
-        // Libera le risorse di CURL
+        // Pulizia sempre
         curl_easy_cleanup(curl);
     }
-
-    // Pulisci globalmente libCURL
-    curl_global_cleanup();
-
     return 0;
 }
 ```
-Output:
-```
-<!doctype html>
-<html>
-<head>
-    <title>Example Domain</title>
-...
-</html>
-```
 
-## Deep Dive (Approfondimento)
-Invio di richieste HTTP non è una funzione nativa del linguaggio C. Bisogna usare librerie esterne come libCURL, che è stata creata nel 1997 e da allora è divenuta il modo standard per le richieste HTTP in C. Un'alternativa è scrivere codice a basso livello direttamente con le socket API di POSIX, ma è più complesso. Implementare la propria soluzione richiede conoscenza di protocolli di rete e gestione delle connessioni, mentre libCURL nasconde questa complessità.
+Compila questo con qualcosa del tipo `gcc -o http_request http_request.c -lcurl`, l'esecuzione dovrebbe effettuare una semplice richiesta GET a "http://example.com".
 
-## See Also (Vedi Anche)
-- [libcurl - the multiprotocol file transfer library](https://curl.haxx.se/libcurl/)
-- [HTTP Made Really Easy - A Practical Guide to Writing Clients and Servers](http://www.jmarshall.com/easy/http/)
-- [POSIX Sockets - Beej's Guide to Network Programming](https://beej.us/guide/bgnet/)
+### Output di esempio
+
+Poiché l'esempio non elabora la risposta del server, l'esecuzione non produrrà un output visibile al di là di eventuali messaggi di errore. Integrare la funzione di callback per elaborare i dati ricevuti è essenziale per un'interazione significativa.
+
+## Approfondimento
+
+Il concetto di invio di richieste HTTP da un programma C si basa sulle potenti capacità di rete del linguaggio, unite a librerie esterne, poiché C stesso è un linguaggio di basso livello senza supporto incorporato per i protocolli internet di alto livello. Storicamente, i programmatori utilizzavano manualmente la programmazione socket in C, un processo complesso e tedioso, per interagire con i server web prima dell'avvento di librerie dedicate come libcurl.
+
+Libcurl, costruito sopra C, semplifica il processo, astratto i dettagli complessi della programmazione socket e le specifiche del protocollo HTTP. Supporta molti protocolli oltre a HTTP/HTTPS, inclusi FTP, SMTP e altri, rendendolo uno strumento versatile per la programmazione di rete in C.
+
+Sebbene l'uso di libcurl per le richieste HTTP in C sia pratico, la programmazione moderna spesso si orienta verso lingue con supporto incorporato per tali compiti, come Python (libreria requests) o JavaScript (Fetch API). Queste alternative offrono una sintassi più semplice e leggibile a scapito del controllo granulare e delle ottimizzazioni delle prestazioni possibili in C attraverso la manipolazione diretta dei socket e l'uso accurato delle librerie.
+
+Per applicazioni critiche in termini di prestazioni o dove è necessaria un'interazione diretta a livello di sistema, C rimane un'opzione valida, in particolare con libcurl che semplifica le complessità della comunicazione web. Tuttavia, per la maggior parte delle interazioni web di alto livello, esplorare linguaggi di programmazione web più dedicati potrebbe rivelarsi più efficiente.

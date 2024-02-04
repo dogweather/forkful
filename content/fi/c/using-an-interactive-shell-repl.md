@@ -1,47 +1,61 @@
 ---
-title:                "Interaktiivisen komentotulkin (REPL) käyttö"
-date:                  2024-01-26T04:11:34.551212-07:00
+title:                "Interaktiivisen kuoren (REPL) käyttäminen"
+date:                  2024-02-03T18:10:37.537744-07:00
 model:                 gpt-4-0125-preview
-simple_title:         "Interaktiivisen komentotulkin (REPL) käyttö"
-
+simple_title:         "Interaktiivisen kuoren (REPL) käyttäminen"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c/using-an-interactive-shell-repl.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Mikä & Miksi?
-Interaktiivinen kuori, tai Lue-Arvo-Tulosta-Silmukka (REPL), on työkalu, joka tarjoaa reaaliaikaisen koodausympäristön koodinpätkien välittömään testaamiseen. Ohjelmoijat käyttävät sitä nopean palautteen saamiseen kehityksen, oppimisen ja virheenkorjauksen aikana.
+
+Interaktiivinen komentotulkki, joka on tunnettu myös nimityksellä Lue-Arvo-Tulosta-Silmukka (REPL), mahdollistaa ohjelmoijille ilmaisujen tai koodin kirjoittamisen ja välittömien tulosten näkemisen, mikä parantaa oppimista ja virheenkorjausta. Vaikka C ei perinteisesti tue REPL-ympäristöjä natiivisti, nykyaikainen työkalusto kuroo tämän kuilun umpeen tarjoten dynaamista tutkimusta C-ohjelmiin.
 
 ## Kuinka:
-C ei sisällä sisäänrakennettua REPL:iä, mutta voit käyttää kolmannen osapuolen työkaluja. Tässä vilkaisu Clingiin, C++-tulkkiiin, joka pystyy käsittelemään myös C-koodia:
 
-```C
-#include <stdio.h>
+C-REPL:n kanssa työskentely ei ehkä ole yhtä suoraviivaista kuin esimerkiksi Pythonin tai JavaScriptin kanssa. Tools like `Cling`, C/C++-tulkkia, joka perustuu Clangin ja LLVM-teknologiaan, tekevät tämän kuitenkin mahdolliseksi. Tässä on kuinka pääset alkuun:
 
-int main() {
-    printf("Hello, REPL world!\n");
-    return 0;
-}
+1. **Asenna Cling**: Käyttöjärjestelmästäsi riippuen saatat löytää Clingin pakettienhallintajärjestelmästäsi tai sinun tarvitsee kenties rakentaa se lähdekoodista. Esimerkiksi Ubuntussa, se voi olla yhtä helppoa kuin `sudo apt-get install cling`.
+
+2. **Clingin käynnistäminen**: Avaa päätelaite ja kirjoita `cling` käynnistääksesi interaktiivisen komentotulkin.
+
+```bash
+$ cling
 ```
 
-Tuloste Cling REPL:ssä:
+3. **Koodin kirjoittaminen**: Nyt voit kirjoittaa C-koodia suoraan komentotulkin sisään ja nähdä välittömiä tuloksia. Tässä on yksinkertainen esimerkki:
+
+```c
+[cling]$ #include <stdio.h>
+[cling]$ printf("Hei, REPL-maailma!\n");
+Hei, REPL-maailma!
 ```
-[cling]$ .x yourscript.c
-Hello, REPL world!
+
+4. **Esimerkki muuttujien ja operaatioiden kanssa**: Kokeile muuttujia ja näe välitön palaute.
+
+```c
+[cling]$ int a = 5;
+[cling]$ int b = 3;
+[cling]$ printf("%d + %d = %d\n", a, b, a+b);
+5 + 3 = 8
 ```
 
-Cling suorittaa skriptin ja tulostaa tuloksen välittömästi.
+5. **Kirjastojen sisällyttäminen**: Cling mahdollistaa kirjastojen sisällyttämisen lennosta, näin mahdollistaen laajan valikoiman C-toiminnallisuuksia.
 
-## Syväsukellus
-REPL:t ovat vakioita dynaamisissa kielissä kuten Python tai Ruby, mutta käännetyille kielille kuten C, ne ovat harvinaisempia. Historiallisesti käännä-suorita-virheenkorjaus-sykli ei soveltunut interaktiiviseen tutkimiseen. Työkalut kuten Cling ja online C-kääntäjät tarjoavat REPL:n kaltaisia kokemuksia käärimällä C-koodisi C++-ympäristöön.
+```c
+[cling]$ #include <math.h>
+[cling]$ printf("Neliöjuuri luvusta %f on %f\n", 4.0, sqrt(4.0));
+Neliöjuuri luvusta 4.000000 on 2.000000
+```
 
-Vaihtoehtoja Clingille ovat C-tulkit kuten CINT ja Ch. Nämä työkalut mahdollistavat nopean iteraation, mutta eivät ehkä sovellu kaikkiin kehitysskenaarioihin suorituskykyrajoitteiden ja monimutkaisten ominaisuuksien tukemisen vuoksi.
+## Syväsukellus:
 
-REPL:n toteutus käännetyssä kielessä sisältää koodinpätkien kokoamisen ja suorittamisen lennosta, mikä ei ole triviaalia ja saattaa olla rajoitteita verrattuna koko kielen mahdollisuuksiin.
+REPL-ympäristöjen synty juontaa juurensa Lispistä 1960-luvulla, jonka oli suunniteltu tukemaan interaktiivista koodiarviointia. C:n staattisen ja koottavan luonteen vuoksi oli kuitenkin haasteita toteuttaa vastaavaa välittömyyttä koodin suoritusten säätöön. Clingin ja muiden C/C++-tulkinnanjärjestelmien kehitys merkitsee merkittäviä edistysaskelia dynaamisen arvioinnin integroimisessa staattisiin kielityyppeihin.
 
-## Katso myös
-- Cling: https://github.com/root-project/cling
-- Online C Kääntäjä ja REPL: https://repl.it/languages/c
-- CINT: http://root.cern.ch/drupal/content/cint
-- Ch Tulkki: http://www.softintegration.com/products/chstandard/
+On huomattava, että tulkinnanjärjestelmän, kuten Clingin, käyttö ei välttämättä täysin toista koottujen C-koodien käytöstä johtuvaa käyttäytymistä optimoinnin ja suorituksen erojen vuoksi. Vaikka REPL-ympäristöt ovatkin erittäin arvokkaita oppimistarkoituksiin, nopeaan prototyyppien luomiseen ja virheenkorjaukseen, C:lle tarkoitetut REPL-ympäristöt voivat joskus olla hitaampia ja käytännöllisempiä tuotantotason koodikehitykseen verrattuna perinteiseen käännä-suorita-virheenkorjaus-syklikkeihin.
+
+Vaihtoehtoja interaktiiviselle C-ohjelmoinnille sisältävät pienten, itsenäisten ohjelmien kirjoittaminen ja robustien IDE:den käyttäminen integroiduilla virheenkorjaustyökaluilla, jotka voivat tarjota enemmän kontrollia ja näkemystä suoritukseen, vaikkakin vähemmän välittömyyttä. Huolimatta näistä vaihtoehdoista, REPL-ympäristöjen tulo C:hen edustaa kiehtovaa kielen monipuolistumisen laajennusta, omaksuen modernin aikakauden vaatimukset kehityssyklien joustavuudesta ja nopeudesta.

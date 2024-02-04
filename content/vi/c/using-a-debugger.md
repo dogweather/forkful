@@ -1,73 +1,82 @@
 ---
-title:                "Sử dụng bộ gỡ lỗi"
-date:                  2024-01-28T22:09:09.235288-07:00
+title:                "Sử dụng trình gỡ lỗi"
+date:                  2024-02-03T18:10:25.896433-07:00
 model:                 gpt-4-0125-preview
-simple_title:         "Sử dụng bộ gỡ lỗi"
-
+simple_title:         "Sử dụng trình gỡ lỗi"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/c/using-a-debugger.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Gì & Tại sao?
-Trình gỡ lỗi là công cụ cho phép bạn kiểm tra mã C của mình khi nó chạy, từng bước một, để tìm và khắc phục lỗi. Các lập trình viên sử dụng trình gỡ lỗi để hiểu cách mã của họ hoạt động, sửa chữa vấn đề và tối ưu hóa hiệu suất mà không cần phải đoán mò.
 
-## Cách thức:
-Giả sử bạn đang làm việc với một chương trình C đơn giản tính giai thừa của một số, nhưng có một sự cố. Để sử dụng trình gỡ lỗi như `gdb` (GNU Debugger), trước tiên hãy biên dịch với cờ `-g` để bao gồm thông tin gỡ lỗi:
+Debuggers trong C là những công cụ chuyên biệt cho phép các nhà phát triển đi qua từng dòng code của họ, kiểm tra các biến và theo dõi luồng thực thi. Quá trình này rất quan trọng để xác định và sửa chữa lỗi, đảm bảo rằng code hoạt động như mong đợi.
+
+## Làm thế nào:
+
+GDB (GNU Debugger) là công cụ debugger được sử dụng phổ biến nhất cho lập trình C. Dưới đây là hướng dẫn ngắn gọn về việc sử dụng GDB để gỡ lỗi một chương trình C đơn giản.
+
+Trước tiên, biên dịch chương trình C của bạn với cờ `-g` để bao gồm thông tin gỡ lỗi:
 
 ```c
-// biên dịch với: gcc factorial.c -o factorial -g
+gcc -g program.c -o program
+```
+
+Tiếp theo, bắt đầu GDB với chương trình đã biên dịch của bạn:
+
+```bash
+gdb ./program
+```
+
+Bây giờ, bạn có thể sử dụng các lệnh khác nhau trong GDB để điều khiển hoạt động của nó. Dưới đây là một số lệnh cơ bản:
+
+- `break`: Đặt một điểm dừng tại một dòng hoặc hàm đã chỉ định để tạm dừng thực thi.
+  - Ví dụ: `break 10` hoặc `break main`
+- `run`: Bắt đầu thực thi chương trình của bạn trong GDB.
+- `next`: Thực thi dòng tiếp theo của mã mà không bước vào các hàm.
+- `step`: Thực thi dòng tiếp theo của mã, bước vào các hàm.
+- `print`: Hiển thị giá trị của một biến.
+- `continue`: Tiếp tục thực thi cho đến điểm dừng tiếp theo.
+- `quit`: Thoát khỏi GDB.
+
+Dưới đây là một phiên làm việc ví dụ về việc gỡ lỗi một chương trình đơn giản:
+
+```c
 #include <stdio.h>
 
-long factorial(int n) {
-    if (n < 0) return 0; // Một kiểm tra đơn giản cho đầu vào âm
-    long result = 1;
-    while (n > 1)
-        result *= n--;
-    return result;
-}
-
 int main() {
-    int number = 5;
-    long result = factorial(number);
-    printf("Giai thừa của %d là %ld\n", number, result);
+    int i;
+    for (i = 0; i < 5; i++) {
+        printf("%d\n", i);
+    }
     return 0;
 }
 ```
 
-Sau đó, chạy nó trong gdb:
+Biên dịch và bắt đầu GDB như đã mô tả. Đặt một điểm dừng tại dòng `printf` với `break 5` sau đó `run`. Sử dụng `next` để bước qua vòng lặp và `print i` để kiểm tra biến vòng lặp.
 
-```shell
-$ gdb ./factorial
+Kết quả mẫu sau khi đặt điểm dừng và trước lần lặp đầu tiên:
+
+```
+Breakpoint 1, main () at program.c:5
+5         printf("%d\n", i);
 ```
 
-Đặt một điểm dừng tại hàm `factorial` và chạy chương trình:
+Sử dụng `print i` sau một vài lần lặp:
 
-```gdb
-(gdb) break factorial
-(gdb) run
+```
+$3 = 2
 ```
 
-Khi đến điểm dừng, bước qua từng dòng một sử dụng `next` hoặc `n` và kiểm tra biến với `print` hoặc `p`:
+Điều này minh họa việc xem xét trạng thái và luồng của một chương trình đơn giản.
 
-```gdb
-(gdb) next
-(gdb) print result
-$1 = 1
-```
+## Tìm hiểu sâu hơn
 
-Kết quả mẫu sẽ cung cấp giá trị thực tế và dòng chảy thực thi của chương trình.
+Khái niệm về gỡ lỗi đã phát triển đáng kể kể từ những ngày đầu của lập trình, nơi mà các lỗi vật lý (côn trùng thực sự) có thể gây ra vấn đề trong máy tính cơ học. Ngày nay, những trình gỡ lỗi như GDB cung cấp những tính năng tiên tiến hơn ngoài việc bước qua và kiểm tra biến, chẳng hạn như gỡ lỗi ngược (thực thi chương trình theo hướng ngược lại), điểm dừng có điều kiện, và viết kịch bản cho các nhiệm vụ gỡ lỗi tự động.
 
-## Sâu hơn
-Trình gỡ lỗi đã tồn tại từ những năm 1960, phát triển từ những màn hình giám sát đơn giản đến các ứng dụng phức tạp dựa trên giao diện đồ họa. Kỹ thuật gỡ lỗi dựa vào in ấn thông tin ra màn hình đã phổ biến trước khi các trình gỡ lỗi hoàn chỉnh được phát triển. Các lựa chọn khác cho `gdb` bao gồm `lldb`, `dbx`, hoặc trình gỡ lỗi tích hợp trong IDE như trong Visual Studio hoặc CLion.
+Mặc dù GDB mạnh mẽ và được sử dụng rộng rãi, nó có thể phức tạp và khó khăn cho người mới bắt đầu. Các công cụ và môi trường phát triển tích hợp (IDEs) thay thế như Visual Studio Code, CLion, hoặc Eclipse cung cấp các giao diện thân thiện hơn cho việc gỡ lỗi mã C, thường kết hợp các phụ trợ trực quan và điều khiển trực quan hơn. Những sự thay thế này có thể không cung cấp đầy đủ chiều sâu chức năng của GDB nhưng có thể dễ tiếp cận hơn với người mới bắt đầu lập trình C.
 
-Khi làm việc với trình gỡ lỗi, cách thực hiện có thể khác nhau—một số có thể bắt lỗi thời gian chạy, kiểm tra bộ nhớ, hoặc thậm chí đảo ngược quá trình thực thi của chương trình. `gdb` có thể được gắn vào các quy trình đang chạy, cho phép gỡ lỗi phần mềm đang chạy, một lợi ích để sửa chữa lỗi hệ thống trực tiếp.
-
-## Xem thêm
-- GNU Debugger (GDB): https://www.gnu.org/software/gdb/documentation/
-- Gỡ lỗi với GDB: https://sourceware.org/gdb/current/onlinedocs/gdb
-- LLDB Debugger: https://lldb.llvm.org/use/tutorial.html
-- Kỹ thuật gỡ lỗi trong C: http://www.cprogramming.com/debugging/debugging.html
+Hơn nữa, sự xuất hiện của các giao thức máy chủ ngôn ngữ và tiêu chuẩn gỡ lỗi đã tạo điều kiện cho các giải pháp gỡ lỗi đa nền tảng, làm cho trải nghiệm gỡ lỗi trở nên nhất quán hơn qua các công cụ và môi trường khác nhau. Mặc dù có những tiến bộ này, việc học hỏi những điều cơ bản và sâu sắc của một trình gỡ lỗi truyền thống như GDB cung cấp cái nhìn sâu sắc về việc thực thi của chương trình C và vẫn là kỹ năng quan trọng trong bộ công cụ của nhà phát triển.

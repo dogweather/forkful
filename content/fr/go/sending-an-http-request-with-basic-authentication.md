@@ -1,20 +1,25 @@
 ---
-title:                "Envoi d'une requête HTTP avec authentification de base"
-date:                  2024-01-20T18:01:34.036200-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Envoi d'une requête HTTP avec authentification de base"
-
+title:                "Envoyer une requête HTTP avec une authentification de base"
+date:                  2024-02-03T18:09:02.431175-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Envoyer une requête HTTP avec une authentification de base"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/go/sending-an-http-request-with-basic-authentication.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
-Envoyer une requête HTTP avec une authentification de base signifie joindre vos identifiants (nom d'utilisateur et mot de passe) pour accéder à une ressource protégée. Les programmeurs font cela pour interagir avec des APIs sécurisées ou des services web qui exigent une identification.
+
+Envoyer une requête HTTP avec authentification de base en Go implique d'ajouter un en-tête d'autorisation à votre requête qui comprend un nom d'utilisateur et un mot de passe sous forme de chaîne encodée en Base64. Les programmeurs utilisent cette méthode pour accéder à des ressources nécessitant une vérification de l'utilisateur, garantissant que leurs applications peuvent interagir de manière sécurisée avec des services sur le web.
 
 ## Comment faire :
-```Go
+
+Pour effectuer une requête HTTP avec authentification de base en Go, vous devez préparer vos en-têtes de requête pour inclure le champ `Authorization`, rempli avec vos identifiants dans le format correct. Ci-dessous, un exemple qui montre comment effectuer une requête GET vers un point d'API qui nécessite une authentification de base :
+
+```go
 package main
 
 import (
@@ -25,32 +30,38 @@ import (
 
 func main() {
 	client := &http.Client{}
-	req, err := http.NewRequest("GET", "https://exemple.com/ressource", nil)
+	req, err := http.NewRequest("GET", "http://example.com/api/data", nil)
 	if err != nil {
 		panic(err)
 	}
 
-	req.Header.Add("Authorization", "Basic " + base64.StdEncoding.EncodeToString([]byte("user:password")))
+	username := "yourUsername"
+	password := "yourPassword"
+    // Encoder les identifiants
+	auth := base64.StdEncoding.EncodeToString([]byte(username + ":" + password))
+    // Définir l'en-tête d'autorisation
+	req.Header.Add("Authorization", "Basic " + auth)
+
 	resp, err := client.Do(req)
 	if err != nil {
 		panic(err)
 	}
 	defer resp.Body.Close()
 
-	fmt.Println("Status Code:", resp.StatusCode)
+	fmt.Println("Statut de la réponse :", resp.Status)
 }
 ```
-Sortie (exemple) :
+
+Exécuter ce code enverra une requête GET à l'URL spécifiée avec l'en-tête d'autorisation nécessaire. La sortie ressemblera à quelque chose comme ceci, en fonction de votre point de terminaison et service :
+
 ```
-Status Code: 200
+Statut de la réponse : 200 OK
 ```
 
-## Plongée profonde
-Historiquement, l'authentification de base HTTP a été conçue pour permettre une méthode simple d'identification. Bien qu'elle soit moins sécurisée que d'autres méthodes comme l'authentification Digest ou OAuth, elle reste largement utilisée pour sa simplicité. En pratique, les données d'identification sont encodées avec Base64, qui n'est pas un chiffrement mais juste un encodage. Les alternatives contemporaines incluent les tokens JWT ou l'utilisation d'API keys. Ces méthodes sont à privilégier pour une meilleure sécurité.
+## Approfondissement
 
-En Go, l'exécution d'une telle authentification nécessite l'utilisation du package `net/http` et souvent `encoding/base64`. Il est crucial d'utiliser HTTPS pour protéger les identifiants lors de l'envoi. Bien que l'exemple ci-dessus utilise la méthode GET, la même logique d'authentification s'applique à d'autres méthodes HTTP comme POST, PUT, etc.
+L'authentification de base dans les requêtes HTTP est une méthode largement prise en charge pour renforcer les contrôles d'accès aux ressources web. Elle envoie simplement un nom d'utilisateur et un mot de passe avec chaque requête, ce qui la rend facile à mettre en œuvre, mais ce n'est pas la méthode la plus sécurisée disponible. Un inconvénient majeur est que, sauf utilisation conjointe avec SSL/TLS, les identifiants sont envoyés en clair (puisque Base64 est facilement décodé), ce qui peut potentiellement exposer des informations sensibles aux attaques de type man-in-the-middle.
 
-## Voir également
-- Documentation Go pour `net/http`: [https://pkg.go.dev/net/http](https://pkg.go.dev/net/http)
-- Spécifications HTTP Basic Authentication: [https://tools.ietf.org/html/rfc7617](https://tools.ietf.org/html/rfc7617)
-- JWT (JSON Web Tokens): [https://jwt.io/](https://jwt.io/)
+En Go, l'envoi de ces requêtes implique de manipuler directement l'en-tête `Authorization`. Alors que la bibliothèque standard de Go (`net/http`) fournit des primitives puissantes pour traiter les communications HTTP(s), elle est relativement bas niveau, obligeant les développeurs à gérer manuellement divers aspects du traitement des requêtes/réponses HTTP. Cela offre beaucoup de flexibilité aux programmeurs, mais cela signifie également qu'il faut prêter une attention particulière aux implications en matière de sécurité, au codage et à la gestion correcte des en-têtes.
+
+Pour les applications nécessitant une sécurité plus élevée, des systèmes d'authentification plus avancés tels que OAuth2 ou JWT (Jetons Web JSON) devraient être envisagés. Ces approches fournissent des fonctionnalités de sécurité plus robustes et sont largement supportées à travers les API et services modernes. L'écosystème en expansion de Go comprend de nombreuses bibliothèques et outils (tels que `golang.org/x/oauth2`, parmi d'autres) pour faciliter ces méthodes d'authentification plus sécurisées, rendant plus facile pour les développeurs de mettre en œuvre des mécanismes d'autorisation sûrs, efficaces et modernes dans leurs applications.

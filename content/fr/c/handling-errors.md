@@ -1,55 +1,85 @@
 ---
 title:                "Gestion des erreurs"
-date:                  2024-01-26T00:36:50.713024-07:00
-model:                 gpt-4-1106-preview
+date:                  2024-02-03T17:57:47.461359-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Gestion des erreurs"
-
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/c/handling-errors.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Quoi et pourquoi ?
-La gestion des erreurs en C consiste à anticiper l'inattendu. Elle empêche les programmes de dérailler lorsqu'ils rencontrent des problèmes. Les programmeurs le font pour gérer les erreurs avec élégance et maintenir leur code fiable.
+## Quoi & Pourquoi ?
+
+La gestion des erreurs en C consiste à détecter et répondre aux conditions anomales qui surviennent pendant l'exécution d'un programme. Les programmeurs font cela pour prévenir les bugs, les plantages et les comportements imprévisibles, assurant ainsi que le logiciel fonctionne de manière fiable et efficace dans divers scénarios.
 
 ## Comment faire :
 
-Voyons comment faire cela en C :
+C ne dispose pas de support intégré pour les exceptions comme certains autres langages. Il repose plutôt sur quelques stratégies conventionnelles de gestion des erreurs, telles que le retour de valeurs spéciales des fonctions et la définition de variables globales comme `errno`.
 
-```C
+**Retourner des Valeurs Spéciales**
+
+Les fonctions peuvent indiquer des erreurs en retournant une valeur spécifique qui est peu susceptible d'être un résultat valide. Voici un exemple avec des entiers :
+
+```c
 #include <stdio.h>
-#include <stdlib.h>
-#include <errno.h>
+
+int inverse(int number, double *result) {
+    if (number == 0) {
+        return -1; // Cas d'erreur
+    } else {
+        *result = 1.0 / number;
+        return 0; // Succès
+    }
+}
 
 int main() {
-    FILE *fp = fopen("fichiernonexistant.txt", "r");
-    if (fp == NULL) {
-        perror("Erreur lors de l'ouverture du fichier");
-        return EXIT_FAILURE;
+    double result;
+    if (inverse(0, &result) < 0) {
+        printf("Erreur : Division par zéro.\n");
+    } else {
+        printf("L'inverse est : %f\n", result);
     }
-    // Faire quelque chose avec le fichier
-    fclose(fp);
-    return EXIT_SUCCESS;
+    
+    return 0;
 }
 ```
 
-Exemple de sortie lorsque le fichier n'existe pas :
+**Sortie :**
+```
+Erreur : Division par zéro.
+```
+
+**Vérifier `errno`**
+
+Pour les fonctions de bibliothèque, surtout celles qui interagissent avec le système ou l'OS (comme les E/S de fichiers), `errno` est défini lorsqu'une erreur se produit. Pour l'utiliser, incluez `errno.h` et vérifiez `errno` après un échec suspecté :
+
+```c
+#include <stdio.h>
+#include <errno.h>
+#include <string.h>
+
+int main() {
+    FILE *file = fopen("nonexistent.txt", "r");
+    if (file == NULL) {
+        printf("Erreur lors de l'ouverture du fichier : %s\n", strerror(errno));
+    }
+    
+    return 0;
+}
+```
+
+**Sortie :**
 ```
 Erreur lors de l'ouverture du fichier : Aucun fichier ou dossier de ce type
 ```
 
-## Exploration approfondie
+## Approfondissement
 
-Aux premiers jours du C, la gestion des erreurs était rudimentaire - principalement des codes de retour et des vérifications manuelles. Puis `errno`, une variable globale mise à jour lorsque des fonctions échouent, est arrivée. Elle n'est pas sécurisée pour les threads en elle-même, c'est pourquoi les fonctions plus récentes `strerror` et `perror` ont été introduites pour un meilleur rapport d'erreurs.
+Historiquement, la conception minimaliste du langage de programmation C a exclu un mécanisme de gestion des exceptions intégré, reflétant ses origines en programmation système de bas niveau où les performances maximales et le contrôle proche du matériel sont critiques. À la place, C adopte une approche de gestion des erreurs plus manuelle qui correspond à sa philosophie d'offrir aux programmeurs autant de contrôle que possible, même au prix de la commodité.
 
-Des alternatives ? Le C moderne n'est pas limité à `errno`. Il y a setjmp et longjmp pour des sauts non locaux lorsqu'un désastre se produit. Certains préfèrent définir leurs propres codes d'erreur, tandis que d'autres optent pour des structures similaires aux exceptions en C++.
+Bien que cette approche s'aligne bien avec les objectifs de conception de C, elle peut également conduire à un code de vérification d'erreur verbeux et à la possibilité d'oublis de vérifications d'erreurs, que les langages modernes abordent avec des mécanismes de gestion des exceptions structurées. Par exemple, les exceptions dans des langages comme Java ou C# permettent un traitement centralisé des erreurs, rendant le code plus propre et la gestion des erreurs plus directe. Cependant, les exceptions introduisent leur propre surcharge et complexité, ce qui pourrait ne pas être idéal pour la programmation de niveau système où C brille.
 
-Les détails d'implémentation peuvent être complexes. Par exemple, `errno` est sécurisé pour les threads dans des systèmes conformes à POSIX grâce à la magie du Stockage Local de Thread (TLS). Dans les systèmes embarqués, où les ressources sont précieuses, un code de gestion d'erreurs personnalisé peut être préféré aux approches standard qui pourraient alourdir le logiciel.
-
-## Voir aussi
-
-- Une plongée détaillée dans `errno` : https://en.cppreference.com/w/c/error/errno
-- Pour la sécurité des threads, voir les threads POSIX et errno : http://man7.org/linux/man-pages/man3/pthread_self.3.html
-- Une introduction à setjmp et longjmp : https://www.cplusplus.com/reference/csetjmp/
-- Pour la gestion des exceptions en C++, consultez : https://isocpp.org/wiki/faq/exceptions
+Malgré sa rudesse, cette gestion manuelle des erreurs en C a informé la conception de la gestion des erreurs dans de nombreux autres langages, offrant un modèle où l'explicité des conditions d'erreur peut conduire à un code plus prévisible et débogable. Pour les systèmes critiques, où les échecs doivent être gérés avec grâce, le paradigme de gestion des erreurs de C—combiné aux meilleures pratiques modernes comme les bibliothèques de gestion des erreurs et les conventions—assure robustesse et fiabilité.

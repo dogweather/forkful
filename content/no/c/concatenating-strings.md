@@ -1,44 +1,75 @@
 ---
 title:                "Sammenslåing av strenger"
-date:                  2024-01-20T17:34:20.118814-07:00
-model:                 gpt-4-1106-preview
+date:                  2024-02-03T17:53:51.893251-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Sammenslåing av strenger"
-
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/c/concatenating-strings.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Sammenslåing av strenger er det å lime sammen to eller flere tekststykker til ett. Vi gjør dette for å bygge setninger, lage dynamiske meldinger eller behandle variabelt tekstinnhold.
+## Hva & Hvorfor?
 
-## How to:
-```C
+Strengsammensetning i C innebærer å slå sammen to eller flere strenger ende-til-ende for å danne en ny streng. Programmerere utfører denne operasjonen for å dynamisk konstruere strenger i kjøretid, essensielt for å lage meningsfulle meldinger, filbaner, eller hvilken som helst data sammensatt fra ulike strengkilder.
+
+## Hvordan:
+
+I C er strenger er arrayer av tegn som avsluttes med et nulltegn (`\0`). I motsetning til i høyere programmeringsspråk, tilbyr ikke C en innebygd funksjon for strengsammensetning. I stedet bruker du `strcat()` eller `strncat()` funksjonene fra `<string.h>` biblioteket.
+
+Her er et enkelt eksempel som bruker `strcat()`:
+
+```c
 #include <stdio.h>
 #include <string.h>
 
 int main() {
-    char hello[] = "Hei, ";
-    char world[] = "verden!";
-    char combined[50]; // Stor nok til begge strenger pluss null-terminator
+    char destination[50] = "Hei, ";
+    char source[] = "Verden!";
 
-    strcpy(combined, hello);     // Kopierer 'hello' til 'combined'
-    strcat(combined, world);     // Legger til 'world' etter 'hello' i 'combined'
+    strcat(destination, source);
 
-    printf("%s\n", combined);    // Skriver ut: Hei, verden!
+    printf("%s\n", destination);  // Utdata: Hei, Verden!
     return 0;
 }
 ```
 
-## Deep Dive
-I gamle dager, før funksjoner som `strcpy` og `strcat` eksisterte, måtte programmerere ofte kopiere strenger manuelt. Historisk sett kunne dette lede til mange feil. 
+`strcat()` funksjonen tar to argumenter: målstrengen (som må ha nok plass til å holde det sammensatte resultatet) og kildestrengen. Den legger deretter til kildestrengen til målstrengen.
 
-I dag finnes det flere måter å sammenslå strenger på i C. Foruten standardbibliotekets `strcpy` og `strcat`, finnes det `strncat` som begrenser antall tegn og beskytter mot buffer overflyt. For C11 og nyere, `strcat_s` og `strcpy_s` er alternativer som legger ekstra vekt på sikkerhet.
+For mer kontroll over antallet tegn som er sammensatt, er `strncat()` tryggere å bruke:
 
-Når det gjelder implementasjon, er det viktig å huske på minnekapasiteten. Pass på at målstrengen har nok plass for den sammenslåtte strengen, inkludert null-terminatoren.
+```c
+#include <stdio.h>
+#include <string.h>
 
-## See Also
-- C Standard Library Documentation: https://en.cppreference.com/w/c/string/byte
-- Secure C Programming Guide: https://wiki.sei.cmu.edu/confluence/display/c/SEI+CERT+C+Coding+Standard
-- Understanding Pointers in C: https://www.learn-c.org/en/Pointers
+int main() {
+    char destination[50] = "Hei, ";
+    char source[] = "Verden!";
+    int num = 3; // Antall tegn som skal legges til
+
+    strncat(destination, source, num);
+
+    printf("%s\n", destination);  // Utdata: Hei, Ver
+    return 0;
+}
+```
+
+Dette begrenser sammensetningen til de første `num` tegnene av kildestrengen, noe som hjelper med å forhindre bufferoverflyt.
+
+## Dypdykk
+
+Funksjonene `strcat()` og `strncat()` har vært en del av C-standardbiblioteket siden dets begynnelse, noe som reflekterer språkets lavnivå-natur som krever manuell håndtering av strenger og minne. I motsetning til mange moderne programmeringsspråk som behandler strenger som førsteklasses objekter med innebygde sammensetningsoperatorer (som `+` eller `.concat()`), krever C's tilnærming en dypere forståelse av pekere, minnetildeling, og potensielle farer som bufferoverflyt.
+
+Selv om `strcat()` og `strncat()` er mye brukt, kritiseres de ofte for deres potensial til å skape sikkerhetsproblemer om de ikke brukes forsiktig. Bufferoverflyt, hvor data overskrider minnet som er tildelt, kan føre til krasj eller bli utnyttet for vilkårlig kodeeksekusjon. Som et resultat vender programmerere seg stadig mer til tryggere alternativer, slik som `snprintf()`, som gir mer forutsigbar oppførsel ved å begrense antallet tegn skrevet til målstrengen basert på størrelsen dens:
+
+```c
+char destination[50] = "Hei, ";
+char source[] = "Verden!";
+snprintf(destination + strlen(destination), sizeof(destination) - strlen(destination), "%s", source);
+```
+
+Denne metoden er mer langtekkelig, men betydelig tryggere og markerer en skift i C programmeringspraksis mot å prioritere sikkerhet og robusthet over korthet.
+
+Til tross for disse utfordringene er strengsammensetning i C en grunnleggende ferdighet, avgjørende for effektiv programmering i språket. Å forstå nyansene og de tilknyttede risikoene er nøkkelen til å mestre C programmering.

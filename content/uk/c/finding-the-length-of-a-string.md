@@ -1,20 +1,21 @@
 ---
-title:                "Визначення довжини рядка"
-date:                  2024-01-20T17:47:10.184031-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Визначення довжини рядка"
-
+title:                "Знаходження довжини рядка"
+date:                  2024-02-03T17:57:15.745888-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Знаходження довжини рядка"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/c/finding-the-length-of-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? / Що і Чому?
-Finding the length of a string means figuring out how many characters it contains. Programmers need this to manipulate text data efficiently, like when processing user input or displaying messages.
+## Що і чому?
+Знаходження довжини рядка в C полягає у визначенні кількості символів перед нуль-термінатором `\0`. Програмісти роблять це, щоб коректно маніпулювати рядками, не натрапляючи на помилки, як-от переповнення буфера, що можуть призвести до вразливостей безпеки або аварійних завершень програм.
 
-## How to: / Як це зробити:
-Let's dive right into the code. Below, you'll see a simple way to find a string's length using the `strlen` function from the C Standard Library.
+## Як:
+У C для знаходження довжини рядка зазвичай використовується функція стандартної бібліотеки `strlen()`. Ось швидкий приклад:
 
 ```c
 #include <stdio.h>
@@ -23,39 +24,23 @@ Let's dive right into the code. Below, you'll see a simple way to find a string'
 int main() {
     char myString[] = "Привіт, світ!";
     size_t length = strlen(myString);
-
-    printf("The length of the string is: %zu\n", length);
-
+    
+    printf("Довжина '%s' становить %zu.\n", myString, length);
+    
     return 0;
 }
 ```
-Sample output:
+
+**Приклад виведення:**
 ```
-The length of the string is: 13
-```
-Note: The length doesn't count the null terminator `\0`, which indicates the end of the string.
-
-## Deep Dive / Поглиблене Занурення:
-In C, strings are arrays of `char` types, ended with a null terminator. Historically, this was designed for simplicity and efficiency in a time when memory was scarce.
-
-While `strlen` is standard, there are caveats. It counts characters, not glyphs or grapheme clusters, which means for some languages (like where diacritics are used), the perceived length may differ from `strlen` output.
-
-Another classic method is a `for` loop:
-```c
-size_t myStrlen(char *string) {
-    size_t length = 0;
-    while(string[length] != '\0') {
-        length++;
-    }
-    return length;
-}
+Довжина 'Привіт, світ!' становить 13.
 ```
 
-What's more, C11 (ISO/IEC 9899:2011) introduced more secure string functions like `strnlen_s`, which requires a maximum length and can avoid buffer overruns.
+У цьому прикладі `strlen()` приймає рядок (`myString`) в якості вхідних даних і повертає його довжину, не включаючи нуль-термінатор. Використання `size_t` для змінної довжини рекомендується, оскільки це беззнаковий тип цілого числа, здатний представляти розмір найбільшого можливого об'єкта в системі.
 
-## See Also / Дивіться також:
-- C11 Standard (ISO/IEC 9899:2011): https://www.iso.org/standard/57853.html
-- C String handling: http://www.cplusplus.com/reference/cstring/
-- Unicode Strings and C: http://www.unicode.org/reports/tr20/tr20-5.html
+## Поглиблений аналіз:
+Функція `strlen()` є частиною стандартної бібліотеки C з моменту виникнення мови. Під капотом вона працює, інкрементуючи лічильник, коли просувається через рядок, доки не зустріне нуль-термінатор. Однак ця простота має міркування щодо продуктивності: оскільки `strlen()` рахує символи під час виконання, її повторний виклик на тому самому рядку в циклі, наприклад, є неефективним.
 
-Remember, these functions are your bread and butter when working with strings in C; understanding how to swiftly and accurately gauge their lengths is crucial. Keep experimenting and investigating better ways to manage and understand text. Your journey with C strings is just beginning. Happy coding!
+З точки зору безпеки, `strlen()` та інші функції обробки рядків в C не перевіряють переповнення буфера за замовчуванням, тому обережне програмування є важливим для уникнення вразливостей. Сучасні альтернативи в інших мовах, такі як типи рядків, які включають довжину або використовують за замовчуванням безпечне оброблення буферів, елімінують деякі з цих ризиків та неефективності.
+
+Незважаючи на свої обмеження, розуміння `strlen()` та ручної обробки рядків в C є життєво важливим для програмістів, особливо при роботі з низькорівневим кодом або коли продуктивність та контроль пам'яті мають вирішальне значення. Це також надає цінні інсайти до роботи абстракцій рядків більш високого рівня в інших мовах.

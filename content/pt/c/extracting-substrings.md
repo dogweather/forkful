@@ -1,47 +1,73 @@
 ---
 title:                "Extraindo substrings"
-date:                  2024-01-20T17:45:07.704512-07:00
-model:                 gpt-4-1106-preview
+date:                  2024-02-03T17:56:26.414946-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Extraindo substrings"
-
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/c/extracting-substrings.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## O Que & Porquê?
-Extrair substrings significa pegar partes específicas de uma string — como cortar um pedaço de uma fita ao tamanho que precisamos. Programadores fazem isso para manipular e analisar dados de texto de forma mais precisa e eficiente.
+## O quê & Por quê?
 
-## Como Fazer:
-Para extrair uma substring em C, geralmente usamos a função `strncpy`. Atenção para adicionar o caractere nulo no final.
+Extrair substrings em C envolve criar uma string menor (substring) a partir de uma string maior com base em critérios especificados, como posição e comprimento. Programadores frequentemente realizam essa tarefa para análise de texto, processamento de dados ou validação de entrada, tornando-a uma habilidade crucial na manipulação e análise eficiente de dados de texto.
 
-```C
+## Como fazer:
+
+Ao contrário de algumas linguagens de alto nível que fornecem métodos embutidos para a extração de substrings, o C requer uma abordagem mais manual usando suas funções de manipulação de strings. Aqui está como extrair efetivamente uma substring em C:
+
+### Exemplo 1: Usando `strncpy`
+
+```c
 #include <stdio.h>
 #include <string.h>
 
 int main() {
-    char texto[] = "Programar é arte!";
-    char sub[7]; // Substring + caractere nulo
+    char texto[] = "Hello, World!";
+    char buffer[20];
 
-    strncpy(sub, texto + 5, 6); // Copia 6 caracteres a partir da posição 5
-    sub[6] = '\0'; // Não esqueça do caractere nulo
+    // Extrair "World" de "Hello, World!"
+    strncpy(buffer, texto + 7, 5);
+    buffer[5] = '\0'; // Garantir terminação nula
 
-    printf("Substring: %s\n", sub);
-
+    printf("Substring extraída: %s\n", buffer);
+    // Saída: Substring extraída: World
     return 0;
 }
 ```
-Saída:
-```
-Substring: amar é
+
+### Exemplo 2: Criando uma Função
+
+Para uso repetido, uma função dedicada para extrair substrings pode ser mais eficiente:
+
+```c
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+void extractSubstring(char *origem, int de, int n, char *destino) {
+    strncpy(destino, origem + de, n);
+    destino[n] = '\0'; // Garantir terminação nula
+}
+
+int main() {
+    char texto[] = "Programming in C";
+    char buffer[50];
+
+    extractSubstring(texto, 0, 11, buffer);
+    printf("Substring extraída: %s\n", buffer);
+    // Saída: Substring extraída: Programming
+    return 0;
+}
 ```
 
-## Deep Dive
-Extrair substrings é uma operação básica, mas essencial. Originou-se na manipulação de strings nas primeiras linguagens de programação e persiste até hoje devido à sua utilidade. Existem várias alternativas para fazer isso em C. Além de `strncpy`, funções como `sscanf` e `strchr` podem ser utilizadas para casos específicos. Implementar sua própria lógica de extração pode ser necessário quando você busca eficiência e um controle fino sobre o gerenciamento de memória.
+## Aprofundamento
 
-## Ver Também
-Para aprofundar seu conhecimento sobre manipulação de strings em C, confira:
-- C Standard Library: https://en.cppreference.com/w/c/string/byte
-- Programação C Moderna com Técnicas Avançadas: https://pt.wikibooks.org/wiki/Programar_em_C
-- Manipulação de strings: https://www.cprogramming.com/tutorial/c/lesson9.html
+Extrair substrings em C é primariamente tratado através da manipulação de ponteiros e gerenciamento cuidadoso da memória, refletindo a abordagem de baixo nível do idioma para manipulação de dados. Este método remonta aos primeiros dias da programação em C, quando o gerenciamento de recursos de forma eficiente era primordial devido ao poder de computação limitado. Enquanto a ausência de uma função embutida para substrings pode parecer uma omissão, ela exemplifica a filosofia do C de dar aos programadores controle total sobre o gerenciamento de memória, muitas vezes levando a um código otimizado mas mais complexo.
+
+No mundo da programação moderna, linguagens como Python e JavaScript oferecem métodos embutidos para extração de substrings, como `slice()` ou fatiamento de string usando índices. Essas linguagens de alto nível lidam com o gerenciamento de memória por trás dos panos, trocando algum grau de controle por facilidade de uso e legibilidade.
+
+Para programadores em C, entender aritmética de ponteiros e alocação de memória é vital para tarefas como extração de substrings. Enquanto essa abordagem exige uma compreensão mais profunda de como as strings são representadas e manipuladas na memória, ela oferece controle e eficiência sem paralelo, características marcantes da programação em C que mantiveram sua relevância em aplicações críticas ao desempenho por décadas. No entanto, para aqueles trabalhando em aplicações de alto nível onde o gerenciamento direto da memória é menos uma preocupação, linguagens com funcionalidades de substring embutidas podem oferecer uma abordagem mais simples e menos propensa a erros.

@@ -1,55 +1,85 @@
 ---
 title:                "エラー処理"
-date:                  2024-01-26T00:49:35.400479-07:00
-model:                 gpt-4-1106-preview
+date:                  2024-02-03T17:58:27.350751-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "エラー処理"
-
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/c/handling-errors.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## 何となぜ？
-C言語におけるエラー処理は、予想外のことを想定することについてです。これにより、問題に遭遇したときにプログラムが暴走するのを防ぎます。プログラマーはエラーを洗練された方法で処理し、コードを信頼性の高いものに保つためにこの処理を行います。
+
+Cでのエラー処理は、プログラム実行中に発生する異常な状況を検出して対応することを含みます。プログラマーはこれを行うことで、バグ、クラッシュ、そして予測不可能な振る舞いを防ぎ、さまざまなシナリオの下でソフトウェアが信頼性と効率的に機能することを保証します。
 
 ## 方法：
 
-C言語でこれを行う方法を見てみましょう：
+Cは他の言語のように例外のための組み込みサポートを持っていません。代わりに、関数から特別な値を返す、`errno`のようなグローバル変数を設定するなど、いくつかの従来のエラー処理戦略に頼っています。
 
-```C
+**特別な値を返す**
+
+関数は、有効な結果としてありそうにない特定の値を返すことでエラーを示すことができます。以下は整数の例です：
+
+```c
 #include <stdio.h>
-#include <stdlib.h>
-#include <errno.h>
+
+int inverse(int number, double *result) {
+    if (number == 0) {
+        return -1; // エラーケース
+    } else {
+        *result = 1.0 / number;
+        return 0; // 成功
+    }
+}
 
 int main() {
-    FILE *fp = fopen("nonexistentfile.txt", "r");
-    if (fp == NULL) {
-        perror("ファイルを開ける際のエラー");
-        return EXIT_FAILURE;
+    double result;
+    if (inverse(0, &result) < 0) {
+        printf("Error: Division by zero.\n");
+    } else {
+        printf("The inverse is: %f\n", result);
     }
-    // ファイルを何かしら処理
-    fclose(fp);
-    return EXIT_SUCCESS;
+    
+    return 0;
 }
 ```
 
-ファイルが存在しないときのサンプル出力：
+**出力：**
 ```
-ファイルを開ける際のエラー: そのようなファイルやディレクトリはありません
+Error: Division by zero.
 ```
 
-## 深掘り
+**`errno`をチェックする**
 
-初期のC言語におけるエラー処理は基本的なものでした - 主に戻り値と手動チェックがほとんどでした。組み込み変数`errno`は、関数が失敗したときに更新されます。ただし、それ自体ではスレッドセーフではありませんので、より良いエラー報告のために後に`strerror`や`perror`関数が導入されました。
+システムやOS（ファイルI/Oなど）とやり取りする特にライブラリ関数では、エラーが発生すると`errno`が設定されます。これを使用するには、`errno.h`をインクルードして、予想される失敗の後で`errno`をチェックします：
 
-代替手段？現代のC言語は`errno`に限定されていません。大変な問題が発生したときに非局所ジャンプするためのsetjmpやlongjmpがあります。一部の人々は独自のエラーコードを定義することを好み、他の人々はC++の例外処理のような構造を選択します。
+```c
+#include <stdio.h>
+#include <errno.h>
+#include <string.h>
 
-実装の詳細は複雑になることがあります。たとえば、POSIX準拠のシステムではスレッドローカルストレージ（TLS）の魔法により`errno`はスレッドセーフです。組み込みシステムではリソースが貴重なため、ソフトウェアが肥大化する可能性がある標準的なアプローチよりもカスタムのエラー処理コードが好まれることがあります。
+int main() {
+    FILE *file = fopen("nonexistent.txt", "r");
+    if (file == NULL) {
+        printf("Error opening file: %s\n", strerror(errno));
+    }
+    
+    return 0;
+}
+```
 
-## 参照
+**出力：**
+```
+Error opening file: No such file or directory
+```
 
-- `errno`に関する詳細な解説：https://en.cppreference.com/w/c/error/errno
-- スレッド安全とPOSIXスレッドとerrnoについて：http://man7.org/linux/man-pages/man3/pthread_self.3.html
-- setjmpとlongjmpの紹介：https://www.cplusplus.com/reference/csetjmp/
-- C++における例外処理についてはこちら：https://isocpp.org/wiki/faq/exceptions
+## ディープダイブ
+
+歴史的に、Cプログラミング言語のミニマリスティックなデザインは、その低レベルでシステムプログラミングの起源を反映し、最大の性能とメタルに近い制御が重要な場合に、組み込みの例外処理メカニズムを除外してきました。代わりに、Cはプログラマーに可能な限り多くの制御を提供するというその哲学に適合する、より手動のエラー処理アプローチを採用しています。これは便利さのコストであってもです。
+
+このアプローチはCの設計目標とよく一致しているものの、冗長なエラーチェックコードや見逃されたエラーチェックの可能性を生じさせ、近代的な言語が構造化された例外処理メカニズムで対処しているものです。例えば、JavaやC#のような言語での例外は、エラー処理を中央化し、コードをクリーナーにし、エラー管理をより直接的にすることができます。しかし、例外はそれ自体のオーバーヘッドや複雑さを導入し、Cが輝くシステムレベルのプログラミングには理想的ではないかもしれません。
+
+その粗野さにもかかわらず、Cにおけるこの手動のエラー処理は、エラー条件の明確さがより予測可能でデバッグしやすいコードにつながるモデルを多くの他の言語のエラー管理の設計に情報を提供しています。致命的なシステムで、障害を優雅に管理する必要がある場合、Cのエラー処理パラダイムは、エラー処理ライブラリや規約などの現代のベストプラクティスと組み合わせることで、堅牢性と信頼性を保証します。

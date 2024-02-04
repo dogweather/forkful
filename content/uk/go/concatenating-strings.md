@@ -1,56 +1,70 @@
 ---
-title:                "Об'єднання рядків"
-date:                  2024-01-20T17:34:45.311858-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Об'єднання рядків"
-
+title:                "З'єднання рядків"
+date:                  2024-02-03T17:54:36.089329-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "З'єднання рядків"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/go/concatenating-strings.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-## Що і Чому?
+## Що та Чому?
 
-String concatenation? It's when you join strings end-to-end. Programmers do it to craft messages, combine data, and build paths. Essential, like salt in cooking.
+Конкатенація рядків передбачає об'єднання двох або більше рядків від початку до кінця для формування нового рядка. Програмісти роблять це для динамічного генерування тексту, наприклад, при створенні повідомлень, шляхів або складних запитів, роблячи програми більш інтерактивними та відгукуючимися.
 
-## How to:
-## Як робити:
+## Як це зробити:
 
-```Go
-package main
+У Go є кілька способів конкатенації рядків. Ось деякі з них з прикладами:
 
-import (
-	"fmt"
-	"strings"
-)
-
-func main() {
-    // Simple plus operator
-    greeting := "Привіт, " + "світ!"
-    fmt.Println(greeting) // Привіт, світ!
-
-    // Join() from strings package
-    words := []string{"Go", "loves", "simplicity."}
-    sentence := strings.Join(words, " ")
-    fmt.Println(sentence) // Go loves simplicity.
-
-    // sprintf
-    name := "Дмитро"
-    welcome := fmt.Sprintf("Вітаю, %s!", name)
-    fmt.Println(welcome) // Вітаю, Дмитро!
-}
+### Використання оператора `+`:
+Найпростіший спосіб конкатенації рядків - це використання оператора `+`. Це прямолінійно, але не найбільш ефективно для кількох рядків.
+```go
+firstName := "John"
+lastName := "Doe"
+fullName := firstName + " " + lastName
+fmt.Println(fullName) // John Doe
 ```
 
-## Deep Dive:
-## Поглиблений Занурення:
+### Використання `fmt.Sprintf`:
+Для форматування рядків зі змінними, `fmt.Sprintf` дуже зручно. Це дає більше контролю над форматом виводу.
+```go
+age := 30
+message := fmt.Sprintf("%s має %d років.", fullName, age)
+fmt.Println(message) // John Doe має 30 років.
+```
 
-Concatenating strings is easy, but doing it wisely is an art. Back in the day, programmers abused '+' cause it's handy, but it can hurt performance when overused due to memory reallocation. Go's `strings.Builder` is your friend for heavy-duty jobs because it minimizes memory copying. And remember, `Join()` beats pluses for a slice of strings; it's cleaner and quicker.
+### Використання `strings.Builder`:
+Для конкатенації кількох рядків, особливо в циклах, `strings.Builder` ефективний та рекомендований.
+```go
+var builder strings.Builder
+words := []string{"привіт", "світ", "від", "go"}
 
-## See Also:
-## Дивись Також:
+for _, word := range words {
+    builder.WriteString(word)
+    builder.WriteString(" ")
+}
 
-- Go Doc for strings package: [pkg.go.dev/strings](https://pkg.go.dev/strings)
-- Effective Go: [golang.org/doc/effective_go#strings](https://golang.org/doc/effective_go#strings)
-- Go Blog on string handling: [blog.golang.org/strings](https://blog.golang.org/strings)
+result := builder.String()
+fmt.Println(result) // привіт світ від go 
+```
+
+### Використання `strings.Join`:
+Коли у вас є масив рядків, які потрібно об'єднати зі специфічним розділювачем, `strings.Join` - кращий варіант.
+```go
+elements := []string{"шлях", "до", "файлу"}
+path := strings.Join(elements, "/")
+fmt.Println(path) // шлях/до/файлу
+```
+
+## Поглиблений Огляд
+
+Конкатенація рядків, хоча на перший погляд і є простою операцією, включає глибші аспекти того, як Go обробляє рядки. У Go рядки є незмінними; що означає, що кожна операція конкатенації створює новий рядок. Це може призвести до проблем з продуктивністю при конкатенації великої кількості рядків або при цьому в тісних циклах через часте виділення та копіювання пам'яті.
+
+Історично мови вирішували проблему незмінності рядків та ефективності конкатенації різними способами, і підхід Go з використанням `strings.Builder` та `strings.Join` надає програмістам інструменти, які збалансовують зручність користування з продуктивністю. Тип `strings.Builder`, введений у Go 1.10, особливо важливий, оскільки надає ефективний спосіб будування рядків без зайвих виділень пам'яті для рядків. Він робить це за рахунок виділення буфера, який розширюється за потреби, до якого додаються рядки.
+
+Незважаючи на ці варіанти, важливо вибрати правильний метод залежно від контексту. Для швидких або нечастих конкатенацій прості оператори або `fmt.Sprintf` можуть бути достатніми. Однак для завдань, критичних до продуктивності, особливо там, де задіяно багато конкатенацій, використання `strings.Builder` або `strings.Join` може бути більш доцільним.
+
+Хоч Go і пропонує потужні вбудовані можливості для маніпулювання рядками, важливо залишатися уважними до основних характеристик продуктивності. Альтернативи, такі як конкатенація за допомогою `+` або `fmt.Sprintf`, добре служать для простоти та операцій меншого масштабу, але розуміння та використання більш ефективних практик побудови рядків в Go гарантує, що ваші програми залишатимуться продуктивними та масштабованими.

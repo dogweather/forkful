@@ -1,48 +1,59 @@
 ---
-title:                "Konvertere en streng til små bokstaver"
-date:                  2024-01-20T17:38:11.437557-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Konvertere en streng til små bokstaver"
-
+title:                "Konvertering av en streng til små bokstaver"
+date:                  2024-02-03T17:54:53.218856-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Konvertering av en streng til små bokstaver"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/c/converting-a-string-to-lower-case.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Hva & Hvorfor?)
-Konvertering av en streng til små bokstaver betyr å gjøre alle tegnene i strengen til deres små bokstavsform. Programmerere gjør dette for konsistens i tekstbehandling, søkbarhet og for å unngå problemene som kan oppstå med casing-sensitivitet.
+## Hva & Hvorfor?
 
-## How to (Hvordan gjøre det)
-```C
+Å konvertere en streng til små bokstaver i C innebærer å transformere alle store bokstaver i en gitt streng til deres tilsvarende små bokstaver. Programmerere utfører ofte denne operasjonen for å standardisere tekstinnmating for sammenligning, søkeoperasjoner, eller rett og slett for estetisk konsistens i utdata.
+
+## Hvordan:
+
+C har ikke en innebygd funksjon for direkte konvertering av strenger til små bokstaver, i motsetning til noen høynivåspråk. Prosessen kan imidlertid enkelt implementeres ved hjelp av standardbibliotekfunksjonene i C. Nedenfor er en trinnvis veiledning og et eksempel som illustrerer hvordan du konverterer en streng til små bokstaver.
+
+```c
 #include <stdio.h>
 #include <ctype.h>
 
-void to_lowercase(char *str) {
+void toLowerCase(char *str) {
     while (*str) {
-        *str = tolower((unsigned char) *str);
+        *str = tolower(*str);
         str++;
     }
 }
 
 int main() {
-    char example[] = "Hei, Norge!";
-    to_lowercase(example);
-    printf("%s\n", example); // Output: hei, norge!
+    char text[] = "Hello, World!";
+    printf("Original: %s\n", text);
+
+    toLowerCase(text);
+    printf("Lowercase: %s\n", text);
+
     return 0;
 }
 ```
 
-## Deep Dive (Dypdykk)
-Historisk har teksthåndtering vært en viktig del av programmering. Fra de tidlige dagene med ASCII til moderne Unicode, har case-konvertering bidratt til å standardisere tekstinngang og -søk. 
+**Eksempel på utdata:**
 
-I C, `tolower` funksjonen er standard for små bokstavkonverteringer. Den er del av `ctype.h` biblioteket og håndterer ASCII tegnsettet. For Unicode, kan man trenger mer avanserte biblioteker som ICU.
+```
+Original: Hello, World!
+Lowercase: hello, world!
+```
 
-Det finnes alternative løsninger som bruk av egendefinerte funksjoner eller nyere språker med innebygd støtte for strømbehandling, men `tolower` gir en balanse mellom enkelhet og ytelse i mange C-programmer.
+I dette eksemplet itererer `toLowerCase`-funksjonen gjennom hver karakter i inngangsstrengen, og konverterer den til sin småbokstavsekvivalent ved hjelp av `tolower`-funksjonen fra `ctype.h`. Modifiseringen utføres på stedet, og endrer den opprinnelige strengen.
 
-Implementeringsdetaljer inkluderer vurdering når det kommer til lokale innstillinger (locales). `tolower` fungerer rett frem for ASCII-tegn, men kan føre til uforventet oppførsel med ikke-ASCII-tegn hvis lokalene ikke er satt korrekt.
+## Dypdykk
 
-## See Also (Se Også)
-- C Standard Library documentation: https://en.cppreference.com/w/c/string/byte/tolower
-- Unicode handling in C: https://unicode.org
-- ISO C standard: http://www.open-std.org/jtc1/sc22/wg14/
+`tolower`-funksjonen, som brukt i eksemplet ovenfor, er en del av C-standardsbiblioteket, spesifikt inne i `ctype.h`-headerfilen. Den opererer basert på den nåværende lokalinnstillingen, men for standard "C"-lokalinnstillingen behandler den ASCII-tegnsettet hvor 'A' til 'Z' blir konvertert til 'a' til 'z'.
+
+Historisk sett har håndtering av tegnkoding og bokstavomforming i C vært tett koblet med ASCII-tegnsettet, noe som begrenser bruksområdet i internasjonale eller lokaliserte applikasjoner hvor tegn utenfor ASCII-settet er vanlige. Moderne programmeringsspråk kan tilby innebygde strengmetoder for å utføre bokstavomforming med tanke på lokalinnstilling og Unicode-tegn, noe C mangler medfødt.
+
+I scenarioer som krever omfattende tekstmanipulering, spesielt med ikke-ASCII-tegn, kan programmerere vurdere å bruke biblioteker som tilbyr bedre støtte for internasjonalisering, slik som ICU (International Components for Unicode). Imidlertid, for de fleste applikasjoner som håndterer ASCII-tekst, er tilnærmingen som er demonstrert, effektiv og ukomplisert. Den fremhever Cs tilbøyelighet for å gi programmerere kontroll over datamanipulering, selv om det innebærer litt mer arbeid sammenlignet med høynivåspråk.

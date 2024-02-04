@@ -1,73 +1,99 @@
 ---
 title:                "Sử dụng mảng liên kết"
-date:                  2024-01-30T19:10:35.324014-07:00
+date:                  2024-02-03T18:11:06.177835-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Sử dụng mảng liên kết"
-
 tag:                  "Data Structures"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/c/using-associative-arrays.md"
 changelog:
-  - 2024-01-30, gpt-4-0125-preview, translated from English
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Cái gì & Tại sao?
+## Cái gì và Tại sao?
 
-Mảng kết hợp, hay bản đồ hash, là các cặp khóa-giá trị cho phép bạn lưu trữ và truy xuất dữ liệu với một khóa. Chúng vô cùng hữu ích trong C bởi vì chúng cho phép truy cập dữ liệu nhanh hơn so với danh sách, đặc biệt là khi bạn đang xử lý một lượng lớn dữ liệu.
+Mảng liên kết, được biết đến trong các ngôn ngữ khác như bản đồ hoặc từ điển, là các cặp khóa-giá trị được sử dụng để tra cứu và thao tác dữ liệu một cách hiệu quả. Khác với mảng truyền thống sử dụng chỉ số nguyên, mảng liên kết sử dụng khóa, làm cho việc truy cập dữ liệu trở nên trực quan và linh hoạt hơn cho lập trình viên.
 
 ## Làm thế nào:
 
-C không có hỗ trợ tích hợp cho mảng kết hợp như một số ngôn ngữ khác, nhưng chúng ta có thể sử dụng cấu trúc và một số hàm thư viện để có được chức năng tương tự. Dưới đây là một cài đặt đơn giản sử dụng thư viện `uthash`, mà bạn cần phải bao gồm trong dự án của mình.
+C không có hỗ trợ tích hợp sẵn cho mảng liên kết như một số ngôn ngữ cấp cao, nhưng bạn có thể mô phỏng chúng sử dụng cấu trúc và băm. Dưới đây là một ví dụ đơn giản sử dụng sự kết hợp của một struct và một hàm băm đơn giản để triển khai một mảng liên kết để lưu trữ và truy cập số nguyên bằng khóa chuỗi.
 
-Đầu tiên, định nghĩa một cấu trúc để giữ các cặp khóa-giá trị:
+Đầu tiên, định nghĩa một cấu trúc để đại diện cho một cặp khóa-giá trị và một cái khác để đại diện cho chính mảng liên kết:
 
-```C
+```c
 #include <stdio.h>
-#include "uthash.h"
+#include <stdlib.h>
+#include <string.h>
+
+#define TABLE_SIZE 128
 
 typedef struct {
-    int id; // Đây sẽ là khóa của chúng ta
-    char name[10]; // Đây là giá trị được kết hợp với khóa của chúng ta
-    UT_hash_handle hh; // Làm cho cấu trúc này có thể băm
-} nguoi;
-```
+    char* key;
+    int value;
+} KeyValuePair;
 
-Tiếp theo, hãy thêm một số mục và truy xuất chúng:
+typedef struct {
+    KeyValuePair* items[TABLE_SIZE];
+} AssocArray;
 
-```C
-int main() {
-    nguoi *con_nguoi_cua_toi = NULL, *s;
+unsigned int hash(char* key) {
+    unsigned long int value = 0;
+    unsigned int i = 0;
+    unsigned int key_len = strlen(key);
 
-    // Thêm một mục
-    s = (nguoi*)malloc(sizeof(nguoi));
-    s->id = 1;
-    strcpy(s->name, "Alice");
-    HASH_ADD_INT(con_nguoi_cua_toi, id, s);
-
-    // Truy xuất một mục
-    int user_id = 1;
-    HASH_FIND_INT(con_nguoi_cua_toi, &user_id, s);
-    if (s) {
-        printf("Tìm thấy: %s\n", s->name);
+    for (; i < key_len; ++i) {
+        value = value * 37 + key[i];
     }
-    
+
+    value = value % TABLE_SIZE;
+
+    return value;
+}
+
+void initArray(AssocArray* array) {
+    for (int i = 0; i < TABLE_SIZE; ++i) {
+        array->items[i] = NULL;
+    }
+}
+
+void insert(AssocArray* array, char* key, int value) {
+    unsigned int slot = hash(key);
+
+    KeyValuePair* item = (KeyValuePair*)malloc(sizeof(KeyValuePair));
+    item->key = strdup(key);
+    item->value = value;
+
+    array->items[slot] = item;
+}
+
+int find(AssocArray* array, char* key) {
+    unsigned int slot = hash(key);
+
+    if (array->items[slot]) {
+        return array->items[slot]->value;
+    }
+    return -1;
+}
+
+int main() {
+    AssocArray a;
+    initArray(&a);
+
+    insert(&a, "key1", 1);
+    insert(&a, "key2", 2);
+
+    printf("%d\n", find(&a, "key1")); // Đầu ra: 1
+    printf("%d\n", find(&a, "key2")); // Đầu ra: 2
+
     return 0;
 }
 ```
 
-Kết quả mẫu sẽ là:
+Ví dụ này biểu diễn các thao tác cơ bản: khởi tạo một mảng liên kết, chèn vào các cặp khóa-giá trị và tìm kiếm giá trị bằng khóa. Lưu ý rằng code này thiếu xử lý va chạm và chỉ nhằm mục đích giáo dục.
 
-```
-Tìm thấy: Alice
-```
+## Sâu hơn
 
-Đừng quên giải phóng bộ nhớ đã phân bổ và giải phóng bảng băm khi hoàn thành để tránh rò rỉ bộ nhớ.
+Khái niệm về mảng liên kết tồn tại trước C, nhưng bản chất cấp thấp của ngôn ngữ không trực tiếp hỗ trợ chúng như các kiểu tích hợp sẵn. Điều này khuyến khích một sự hiểu biết sâu sắc hơn về cấu trúc dữ liệu và thuật toán, bao gồm cơ chế băm để ánh xạ khóa-giá trị một cách hiệu quả. Nhiều thư viện và khung làm việc C cung cấp các cách tiếp cận tinh vi hơn cho việc triển khai mảng liên kết, như `GHashTable` của GLib, cung cấp một thực hiện mạnh mẽ hoàn chỉnh với xử lý va chạm, thay đổi kích thước động và hỗ trợ các loại khóa và giá trị tùy ý.
 
-## Tìm hiểu sâu
-
-Mặc dù mảng kết hợp không phải là bản địa của C, các thư viện như `uthash` lấp đầy khoảng trống khá tốt, cung cấp một cách khá thẳng thắn để sử dụng chức năng này. Trong lịch sử, các nhà phát triển C phải triển khai phiên bản riêng của họ về các cấu trúc dữ liệu này, dẫn đến các triển khai đa dạng và thường xuyên phức tạp, đặc biệt là cho những người mới bắt đầu với ngôn ngữ này.
-
-Hãy nhớ rằng, hiệu quả khi sử dụng mảng kết hợp trong C phụ thuộc rất nhiều vào việc hàm băm phân phối giá trị trên bảng một cách đều đặn nhằm giảm thiểu va chạm. Trong khi các thư viện như `uthash` cung cấp một sự cân bằng tốt về dễ sử dụng và hiệu suất, trong các ứng dụng quan trọng mà hiệu suất là yếu tố hàng đầu, bạn có thể muốn tùy chỉnh hoặc triển khai bảng băm của riêng mình.
-
-Đối với các ứng dụng yêu cầu hiệu suất tối đa, cấu trúc dữ liệu thay thế hoặc thậm chí là ngôn ngữ lập trình khác với sự hỗ trợ tích hợp cho mảng kết hợp có thể là lựa chọn tốt hơn. Tuy nhiên, trong nhiều tình huống, đặc biệt là khi bạn đã làm việc trong môi trường C, việc sử dụng một thư viện như `uthash` cung cấp một sự cân bằng thực tế giữa hiệu suất và tiện lợi.
+Mặc dù việc xây dựng mảng liên kết bằng tay trong C có thể được coi là cồng kềnh so với các ngôn ngữ có hỗ trợ tích hợp, nhưng nó cung cấp những hiểu biết quý giá về cách hoạt động bên trong của cấu trúc dữ liệu, tăng cường kỹ năng giải quyết vấn đề và tối ưu hóa của lập trình viên. Tuy nhiên, đối với mã nguồn sản phẩm hoặc các ứng dụng phức tạp hơn, việc sử dụng các thư viện hiện có như GLib thường là cách tiếp cận thực tế và tiết kiệm thời gian hơn.

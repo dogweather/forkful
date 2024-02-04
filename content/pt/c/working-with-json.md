@@ -1,86 +1,88 @@
 ---
 title:                "Trabalhando com JSON"
-date:                  2024-01-19
+date:                  2024-02-03T18:11:54.503022-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Trabalhando com JSON"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/c/working-with-json.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## O Que é e Por Que?
+## O que & Por quê?
 
-Trabalhar com JSON envolve manipular dados em um formato leve, de fácil leitura para humanos e análise por máquinas. Programadores usam JSON para transferir dados entre aplicações e serviços na web de forma padronizada.
+Trabalhar com JSON (JavaScript Object Notation) em C envolve analisar, gerar e manipular estruturas de dados JSON. Programadores fazem isso para possibilitar a comunicação com serviços web, armazenamento de dados ou arquivos de configuração de forma leve e legível por humanos.
 
-## Como Fazer:
+## Como fazer:
 
-### Lendo JSON:
+Para trabalhar com JSON em C, você normalmente usará uma biblioteca como `jansson` ou `json-c`, devido à falta de suporte nativo do C para JSON. Aqui, focaremos na `jansson` por sua facilidade de uso e manutenção ativa. Primeiro, instale a biblioteca (por exemplo, usando um gerenciador de pacotes como `apt` no Ubuntu: `sudo apt-get install libjansson-dev`).
 
-```C
+Vamos começar analisando uma string JSON e acessando seu conteúdo:
+
+```c
+#include <jansson.h>
 #include <stdio.h>
-#include <stdlib.h>
-#include <json-c/json.h>
 
 int main() {
-    const char * jsonString = "{\"nome\":\"João\",\"idade\":30}";
-    struct json_object *parsed_json;
-    struct json_object *nome;
-    struct json_object *idade;
-
-    parsed_json = json_tokener_parse(jsonString);
-
-    json_object_object_get_ex(parsed_json, "nome", &nome);
-    json_object_object_get_ex(parsed_json, "idade", &idade);
-
-    printf("Nome: %s\n", json_object_get_string(nome));
-    printf("Idade: %d\n", json_object_get_int(idade));
-
-    json_object_put(parsed_json);
+    const char *json_string = "{\"name\":\"John Doe\",\"age\":30}";
+    json_error_t error;
+    json_t *root = json_loads(json_string, 0, &error);
     
+    if(!root) {
+        fprintf(stderr, "erro: na linha %d: %s\n", error.line, error.text);
+        return 1;
+    }
+    
+    const char *name;
+    int age;
+    json_unpack(root, "{s:s, s:i}", "name", &name, "age", &age);
+    
+    printf("Nome: %s\nIdade: %d\n", name, age);
+    
+    json_decref(root);
     return 0;
 }
 ```
 
-Saída:
+Saída de exemplo:
 ```
-Nome: João
+Nome: John Doe
 Idade: 30
 ```
 
-### Escrevendo JSON:
+Em seguida, criando e exibindo um objeto JSON:
 
-```C
+```c
+#include <jansson.h>
 #include <stdio.h>
-#include <json-c/json.h>
 
 int main() {
-    struct json_object *pessoa = json_object_new_object();
-    struct json_object *nome = json_object_new_string("Maria");
-    struct json_object *idade = json_object_new_int(25);
-
-    json_object_object_add(pessoa, "nome", nome);
-    json_object_object_add(pessoa, "idade", idade);
-
-    printf("%s\n", json_object_to_json_string(pessoa));
-  
-    json_object_put(pessoa);
-  
+    json_t *root = json_object();
+    json_object_set_new(root, "name", json_string("Jane Doe"));
+    json_object_set_new(root, "age", json_integer(25));
+    
+    char *json_dump = json_dumps(root, JSON_ENCODE_ANY);
+    printf("%s\n", json_dump);
+    
+    free(json_dump);
+    json_decref(root);
     return 0;
 }
 ```
 
-Saída:
+Saída de exemplo:
 ```
-{"nome": "Maria", "idade": 25}
+{"name": "Jane Doe", "age": 25}
 ```
 
-## Aprofundando:
+Estes exemplos demonstram o básico de carregar uma string JSON, descompactar seus valores, criar um novo objeto JSON e, então, exibi-lo como uma string.
 
-JSON, sigla de JavaScript Object Notation, surgiu nos anos 2000 como alternativa ao XML para a troca de dados. Enquanto o JSON é mais leve e de leitura mais fácil, o XML é mais extenso com suporte a namespaces e atributos. Em C, lidar com JSON envolve bibliotecas como `json-c` ou `Jansson`. Seus parsers convertem strings para estruturas de dados acessíveis, enquanto os serializadores fazem o inverso.
- 
-## Veja Também:
+## Aprofundando
 
-- Documentação da `json-c`: https://json-c.github.io/json-c/
-- Tutorial sobre JSON com `Jansson`: http://www.digip.org/jansson/doc/2.7/tutorial.html
-- Comparação entre JSON e XML: https://www.json.org/xml.html
+A necessidade de trabalhar com JSON em C surge da adoção do JSON pela web como formato primário para intercâmbio de dados. A simplicidade e eficiência do JSON o fizeram superar rapidamente o XML, apesar da ausência inicial de suporte direto do C para manipulação de JSON. Soluções iniciais envolviam manipulação manual de strings - propensas a erros e ineficientes. Bibliotecas como `jansson` e `json-c` surgiram para preencher essa lacuna, fornecendo APIs robustas para análise, construção e serialização de JSON.
+
+Enquanto `jansson` oferece simplicidade e facilidade de uso, `json-c` pode atrair aqueles que procuram um conjunto de recursos mais amplo. No entanto, alternativas como bibliotecas de análise em C++ oferecem abstrações mais sofisticadas, graças às estruturas de dados mais complexas desse idioma e ao suporte da biblioteca padrão. No entanto, quando se trabalha em ambientes onde C é o idioma preferido ou necessário - como em sistemas embutidos ou ao interagir com bibliotecas C existentes - usar `jansson` ou `json-c` torna-se indispensável.
+
+Também vale ressaltar que trabalhar com JSON em C envolve um entendimento mais profundo do gerenciamento de memória, já que essas bibliotecas frequentemente retornam objetos alocados dinamicamente que requerem desalocação explícita. Isso desafia os programadores a equilibrar conveniência com a responsabilidade de prevenir vazamentos de memória, um aspecto crucial na elaboração de código C eficiente.

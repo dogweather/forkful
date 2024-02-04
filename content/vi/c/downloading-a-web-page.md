@@ -1,24 +1,26 @@
 ---
-title:                "Tải trang web"
-date:                  2024-01-28T21:59:04.920590-07:00
+title:                "Tải trang web về"
+date:                  2024-02-03T17:56:23.794694-07:00
 model:                 gpt-4-0125-preview
-simple_title:         "Tải trang web"
-
+simple_title:         "Tải trang web về"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/c/downloading-a-web-page.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Cái gì & Tại sao?
-Tải xuống một trang web có nghĩa là lấy nội dung HTML của nó từ máy chủ web nơi nó cư trú. Lập trình viên làm điều này để xử lý, phân tích hoặc tương tác với dữ liệu trang web ngoại tuyến.
+## Gì và Tại Sao?
 
-## Làm thế nào:
-```C
+Tải một trang web bằng C bao gồm việc truy cập trực tiếp vào nội dung của một trang web trên internet và lưu nó tại máy cục bộ để xử lý hoặc sử dụng ngoại tuyến. Các lập trình viên thường tham gia vào việc này để tiêu thụ dịch vụ web, kéo nội dung web, hoặc tương tác trực tiếp với các nguồn tài nguyên trực tuyến từ các ứng dụng của họ.
+
+## Cách thực hiện:
+
+Để tải một trang web trong C, một phương pháp phổ biến là sử dụng thư viện libcurl, một thư viện chuyển giao URL bên client hiệu quả và có thể chuyển đổi. Hãy đảm bảo rằng bạn đã cài đặt và liên kết libcurl trong dự án của mình. Dưới đây là một ví dụ minh hoạ cách sử dụng libcurl để tải nội dung của một trang web:
+
+```c
 #include <stdio.h>
-#include <stdlib.h>
 #include <curl/curl.h>
 
 size_t write_data(void *ptr, size_t size, size_t nmemb, FILE *stream) {
@@ -31,47 +33,32 @@ int main(void) {
     FILE *fp;
     CURLcode res;
     char *url = "http://example.com";
-    char outfilename[FILENAME_MAX] = "downloaded_page.html";
+    char outfilename[FILENAME_MAX] = "./downloaded_page.html";
 
-    curl = curl_easy_init();
+    curl = curl_easy_init(); // Khởi tạo một phiên libcurl dễ dàng
     if (curl) {
         fp = fopen(outfilename,"wb");
         curl_easy_setopt(curl, CURLOPT_URL, url);
-        curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, write_data);
-        curl_easy_setopt(curl, CURLOPT_WRITEDATA, fp);
-        
-        res = curl_easy_perform(curl);
-        /* Kiểm tra lỗi */
-        if(res != CURLE_OK)
-            fprintf(stderr, "curl_easy_perform() thất bại: %s\n",
-                curl_easy_strerror(res));
-        
-        /* Dọn dẹp */
-        curl_easy_cleanup(curl);
-        fclose(fp);
-    }
+        curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, write_data); // Hàm gọi lại để ghi dữ liệu nhận được
+        curl_easy_setopt(curl, CURLOPT_WRITEDATA, fp); // Thiết lập con trỏ tập tin để ghi dữ liệu vào
 
+        res = curl_easy_perform(curl); // Thực hiện tải tập tin
+        if(res != CURLE_OK) {
+            fprintf(stderr, "curl_easy_perform() failed: %s\n",
+                    curl_easy_strerror(res));
+        }
+
+        /* luôn luôn dọn dẹp */
+        curl_easy_cleanup(curl); // Dọn dẹp phiên dễ dàng
+        fclose(fp); // Đóng luồng tập tin
+    }
     return 0;
 }
 ```
-Đầu ra mẫu:
-```
-(Không có đầu ra, nhưng kiểm tra thư mục hiện tại cho tệp 'downloaded_page.html')
-```
+Kết quả mẫu (không có đầu ra hiển thị trong console): Mã này tải nội dung tại URL được chỉ định và lưu vào một tệp có tên là `downloaded_page.html`. Kiểm tra thư mục của chương trình của bạn để xem nội dung đã tải xuống.
 
-## Đi sâu vào vấn đề
-Trở lại những ngày đầu của internet, việc nắm bắt một trang web liên quan đến các yêu cầu HTTP thô thông qua các socket TCP - cồng kềnh, nói ít nhất. Ngày nay, chúng ta có các thư viện như libcurl, giúp giảm bớt công việc. Nó xử lý tất cả những vấn đề phức tạp của yêu cầu HTTP, kết nối SSL, và nhiều hơn nữa.
+## Tìm hiểu sâu:
 
-Có một số lựa chọn thay thế cho libcurl như wget và http-client trong C, nhưng libcurl được sử dụng rộng rãi vì độ bền vững và các tính năng của nó. Khi sử dụng libcurl, hãy nhớ:
+Trong quá khứ, việc tải nội dung web trong C là khó khăn hơn nhiều, yêu cầu lập trình socket thủ công và xử lý giao thức HTTP. Libcurl tóm tắt những phức tạp này, cung cấp một API cấp cao và mạnh mẽ cho việc chuyển dữ liệu qua web.
 
-- Khởi tạo với `curl_easy_init()` là bắt buộc.
-- Đặt các tùy chọn phù hợp với nhu cầu của bạn; để tải xuống, chúng ta cần chỉ định URL và hàm ghi.
-- `CURLOPT_WRITEFUNCTION` cho phép chúng ta truyền một con trỏ đến hàm gọi lại của mình để viết dữ liệu vào tệp.
-- Luôn kiểm tra kết quả của `curl_easy_perform()` để tìm lỗi.
-- Đừng quên dọn dẹp với `curl_easy_cleanup()` để ngăn chặn rò rỉ.
-
-Đối với mã sản phẩm, bạn sẽ muốn xử lý lỗi, kiểm tra mã trạng thái HTTP, và quản lý các vấn đề an ninh (như xác thực chứng chỉ SSL).
-
-## Xem thêm
-- [libcurl](https://curl.se/libcurl/)
-- [HTTP Made Really Easy](https://www.jmarshall.com/easy/http/)
+Mặc dù libcurl làm đơn giản việc gửi yêu cầu HTTP trong C, ngôn ngữ lập trình hiện đại như Python với thư viện `requests` của họ hoặc JavaScript (Node.js) với nhiều thư viện client HTTP có thể cung cấp cú pháp trực quan hơn và hỗ trợ tích hợp cho JSON và các định dạng dữ liệu khác thường được sử dụng trong giao tiếp web. Tuy nhiên, C và libcurl cung cấp một giải pháp ổn định và hiệu suất cao cho các hệ thống nơi hiệu quả, kiểm soát chi tiết, hoặc tích hợp vào cơ sở mã C hiện có là quan trọng. Đáng chú ý là C, kết hợp với libcurl, có thể được sử dụng không chỉ để tải trang web - nó còn hỗ trợ FTP, SMTP, và nhiều hơn nữa, làm cho nó trở thành một công cụ đa năng trong bộ công cụ của một lập trình viên.

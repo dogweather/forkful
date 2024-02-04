@@ -1,52 +1,60 @@
 ---
-title:                "Pobieranie aktualnej daty"
-date:                  2024-01-20T15:13:26.921523-07:00
-simple_title:         "Pobieranie aktualnej daty"
-
+title:                "Pobieranie bieżącej daty"
+date:                  2024-02-03T17:57:23.451971-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Pobieranie bieżącej daty"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/c/getting-the-current-date.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? / Co i Dlaczego?
-Pobieranie aktualnej daty polega na zapisaniu informacji o obecnym dniu, miesiącu i roku w programie. Programiści robią to, aby rejestrować zdarzenia, określać terminy, czy personalizować interakcje z użytkownikami.
+## Co i dlaczego?
 
-## How to: / Jak to zrobić:
-Poniżej znajdziesz przykładowy kod w C, który pokazuje, jak pobrać i wyświetlić aktualną datę:
+Pobieranie bieżącej daty w języku C wiąże się z wykorzystaniem standardowej biblioteki C do pobrania i sformatowania bieżącej daty i czasu systemu. Programiści często potrzebują tej funkcjonalności do logowania, znakowania czasowego lub planowania funkcji w swoich aplikacjach.
 
-```C
+## Jak to zrobić:
+
+W C, nagłówek `<time.h>` zapewnia niezbędne funkcje i typy do pracy z datami i czasem. Funkcja `time()` pobiera bieżący czas, podczas gdy `localtime()` konwertuje ten czas na strefę czasową lokalną. Aby wyświetlić datę, używamy `strftime()`, aby sformatować ją jako ciąg znaków.
+
+Oto podstawowy przykład:
+
+```c
 #include <stdio.h>
 #include <time.h>
 
 int main() {
-    time_t current_time;
-    struct tm * time_info;
-    char timeString[9]; // YYYY-MM-DD
+    char buffer[80];
+    time_t rawtime;
+    struct tm *timeinfo;
 
-    time(&current_time);
-    time_info = localtime(&current_time);
-
-    strftime(timeString, sizeof(timeString), "%Y-%m-%d", time_info);
-    printf("Current Date: %s\n", timeString);
+    // Pobranie bieżącego czasu
+    time(&rawtime);
+    // Konwersja na czas lokalny
+    timeinfo = localtime(&rawtime);
+    
+    // Formatowanie daty i wyświetlanie jej
+    strftime(buffer, 80, "Dzisiejsza data to %Y-%m-%d", timeinfo);
+    printf("%s\n", buffer);
 
     return 0;
 }
 ```
 
-Wyjście przykładowe:
+Przykładowe wyjście może wyglądać tak:
+
 ```
-Current Date: 2023-04-12
+Dzisiejsza data to 2023-04-12
 ```
 
-## Deep Dive / Dogłębna analiza:
-Funkcja `time()` zwraca aktualny czas jako typ `time_t`, który reprezentuje liczbę sekund od północy (UTC) 1 stycznia 1970 roku, znanej jako Unix Epoch. Używamy `localtime()` do konwersji `time_t` na bardziej czytelną strukturę `tm`. Do sformatowania daty służy funkcja `strftime()`.
+## Zagłębienie się
 
-Alternatywy? Możesz użyć `gettimeofday()` jeżeli potrzebujesz większej precyzji (mikrosekundy) albo `clock()` do mierzenia czasu CPU wykorzystanego przez program.
+Obsługa czasu w C, ułatwiona przez `<time.h>`, nawiązuje do najwcześniejszych dni języka i systemów UNIX. Opiera się na typie danych `time_t`, który reprezentuje bieżący czas jako liczbę sekund od ery Unix (1 stycznia 1970). Chociaż jest to efektywne i uniwersalnie kompatybilne, oznacza to również, że funkcje czasu standardowej biblioteki C są z natury ograniczone przez zakres i rozdzielczość `time_t`.
 
-Ważne jest, by pamiętać o standaryzowaniu obsługi czasu w aplikacjach wieloplatformowych. Różne systemy mogą inaczej interpretować i przechowywać wartości typu `time_t`.
+Współczesne aplikacje, szczególnie te wymagające precyzyjnych znaczników czasowych lub mające do czynienia z datami daleko w przyszłości lub przeszłości, mogą uznać te ograniczenia za wyzwanie. Na przykład, problem roku 2038 jest znaną ilustracją, gdzie systemy używające 32-bitowego `time_t` będą miały przepełnienie.
 
-## See Also / Zobacz również:
-- Dokumentacja online funkcji C do obsługi czasu: https://en.cppreference.com/w/c/chrono
-- Tutorial na temat `struct tm` i związanych funkcji: http://www.cplusplus.com/reference/ctime/tm/
-- Wyjaśnienie Unix Epoch: https://en.wikipedia.org/wiki/Unix_time
+Dla bardziej złożonej obsługi czasu i daty, wielu programistów zwraca się do zewnętrznych bibliotek lub funkcjonalności dostarczonych przez system operacyjny. Na przykład, w C++, biblioteka `<chrono>` oferuje bardziej precyzyjne i wszechstronne możliwości manipulacji czasem.
+
+Pomimo swoich ograniczeń, prostota i wszechobecność funkcji czasowych C sprawiają, że są one doskonale odpowiednie dla wielu aplikacji. Zrozumienie tych narzędzi jest fundamentalne dla programistów C, oferując mieszankę historycznego kontekstu programowania i praktycznej, codziennej użyteczności.

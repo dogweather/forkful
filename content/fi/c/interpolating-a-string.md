@@ -1,41 +1,55 @@
 ---
-title:                "Merkkijonon interpolointi"
-date:                  2024-01-20T17:50:32.553233-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Merkkijonon interpolointi"
-
+title:                "Merkkijonon interpolaatio"
+date:                  2024-02-03T17:58:30.474354-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Merkkijonon interpolaatio"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c/interpolating-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Mikä ja Miksi?)
-Stringin interpolointi tarkoittaa muuttujien, lausekkeiden tai tulosteiden sijoittamista osaksi merkkijonoja. Tämä auttaa luomaan dynaamisia viestejä ja parantamaan koodin luettavuutta.
+## Mikä ja miksi?
 
-## How to: (Kuinka tehdä:)
-```C
+Merkkijonon välimuuttaminen (string interpolation) ohjelmoinnissa tarkoittaa merkkijonojen rakentamista sisällyttämällä lausekkeita kirjaimellisiin merkkijonoihin. Ohjelmoijat tekevät tämän luodakseen informatiivisia viestejä, dynaamisia kyselyjä tai rakentaakseen mitä tahansa muuttuvalla sisällöllä varustettua merkkijonoa tehokkaasti ja puhtaasti, usein käyttäjän tulosteita tai lokitusta varten.
+
+## Kuinka:
+
+Toisin kuin jotkin korkean tason kielet, C ei suoraan tue merkkijonon välimuuttamista sen syntaksissa. Sen sijaan merkkijonon rakentaminen muuttuvalla sisällöllä saavutetaan tyypillisesti käyttämällä `printf`-funktiota tai sen variantteja tulostukseen, ja `sprintf`-funktiota merkkijonon luomiseen. Tässä on katsaus siihen, miten dynaamisesti rakennetaan merkkijonoja C:ssä:
+
+```c
 #include <stdio.h>
 
 int main() {
-    int age = 30;
-    const char *name = "Mikko";
-    printf("Hei! Nimeni on %s ja olen %d vuotta vanha.\n", name, age);
+    char name[] = "Jane Doe";
+    int age = 28;
+
+    // Käyttäen printf-funktiota tulostukseen
+    printf("Hei, nimeni on %s ja olen %d vuotta vanha.\n", name, age);
+
+    // Käyttäen sprintf-funktiota merkkijonon rakentamiseen
+    char info[50];
+    sprintf(info, "Nimi: %s, Ikä: %d", name, age);
+    printf("%s\n", info);
+
     return 0;
 }
 ```
-Tulostus: `Hei! Nimeni on Mikko ja olen 30 vuotta vanha.`
+Esimerkkituloste:
+```
+Hei, nimeni on Jane Doe ja olen 28 vuotta vanha.
+Nimi: Jane Doe, Ikä: 28
+```
+Nämä katkelmat havainnollistavat perinteistä tapaa sisällyttää muuttuvia tietoja merkkijonoihin C:ssä, tarjoten joustavuutta yksityiskohtaisten merkkijonojen rakentamisessa.
 
-## Deep Dive (Syväsukellus)
-Interpolointi C-kielessä on peräisin C:n alkuaikojen formaatti-merkkijonotekniikasta. `printf`-funktio on ollut työkalu merkkijonojen muodostamiseen muuttujista, ja se käyttää formaattimerkkejä, kuten `%s` merkkijonoille ja `%d` kokonaisluvuille. 
+## Syväluotaus
 
-Vaihtoehdot kuten `sprintf` tai `snprintf` sallivat stringien rakentamisen muistiin, eivätkä vain niiden tulostamisen. C99-standardi toi mukanaan `vsnprintf`, joka parantaa turvallisuutta rajoittamalla tulosteen pituuden ja estää ylivuoto-ongelmia.
+Ennen modernimpien ohjelmointikielten, joissa oli sisäänrakennettuja merkkijonon välimuuttamisominaisuuksia, ilmestymistä, C-kehittäjien piti luottaa funktioihin kuten `sprintf()`, `snprintf()` ja niiden variantteihin kompostoidakseen merkkijonoja muuttuvalla sisällöllä. Tämä lähestymistapa on tehokas, mutta se sisältää potentiaalisia riskejä, kuten puskurin ylivuodon, jos sitä ei hallita huolellisesti, erityisesti `sprintf()`-funktion kanssa.
 
-Implikaationa stringin interpoloiminen C:ssä vaatii ymmärtämään formaattispesifikaatiot ja muistinhallinnan. Tyypillisenä formaattisyntaksina `%[flags][width][.precision][length]specifier`, ohjelmoijan täytyy valita ja yhdistää niitä tarpeen mukaan.
+Vaihtoehtoisesti, kielet kuten Python ja JavaScript toivat intuitiivisempia merkkijonon välimuuttamisominaisuuksia, kuten f-merkkijonot (muotoillut merkkijonoliteraalit) ja mallipohjaliteraalit, vastaavasti. Nämä ominaisuudet mahdollistavat lausekkeiden suoran sisällyttämisen merkkijonoliteraaleihin, tehden koodista luettavampaa ja tiiviimpää.
 
-## See Also (Lisätietoa)
-- C Standard Library documentation: https://en.cppreference.com/w/c/io
-- GNU C Library manual on printf: https://www.gnu.org/software/libc/manual/html_node/Formatted-Output-Functions.html
-- Learn-C.org interactive tutorials: https://www.learn-c.org/
+C:n kontekstissa, huolimatta sisäänrakennettujen merkkijonon välimuuttamisominaisuuksien puutteesta, sen lähestymistapa tarjoaa hienojakoisen hallinnan muotoiluun, jota voidaan pitää sekä etuna niille, jotka vaativat tarkkaa muotoilun hallintaa, että monimutkaisuutena tulokkaille tai niille, jotka etsivät nopeampia, luettavampia ratkaisuja. `snprintf()`-funktion esittely C99:ssä lievensi joitakin turvallisuushuolia mahdollistamalla kehittäjien määritellä kirjoitettavien tavujen enimmäismäärän, tehden merkkijonon muotoilusta turvallisempaa.
 
-Tämä artikkelissa avattiin merkkijonon interpoloinnin konseptia C-ohjelmointikielessä, esiteltiin esimerkkikoodia ja syvennyttiin menetelmän historiaan ja toteutukseen. Lisätietolinkit tarjoavat väylän laajemman ymmärryksen saavuttamiseen.
+Vaikka C:n menetelmä voi vaikuttaa monisanaiselta tai hankalalta verrattuna moderneihin kieliin, sen merkkijonojen käsittelymekanismien ymmärtäminen tarjoaa vankan perustan abstraktimpien konseptien omaksumiselle ohjelmistokehityksessä, korostaen muistinhallinnan ja datan muotoilun tärkeyttä matalalla tasolla.

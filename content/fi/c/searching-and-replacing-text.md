@@ -1,77 +1,82 @@
 ---
 title:                "Tekstin etsiminen ja korvaaminen"
-date:                  2024-01-20T17:57:37.364703-07:00
-model:                 gpt-4-1106-preview
+date:                  2024-02-03T18:09:00.512782-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Tekstin etsiminen ja korvaaminen"
-
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c/searching-and-replacing-text.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Mitä & Miksi?)
-Hakeminen ja korvaaminen on tekstinpätkien löytämistä ja niiden muuttamista. Koodarit käyttävät tätä automatisoidakseen tylsiä tehtäviä ja välttääkseen inhimillisiä virheitä.
+## Mitä & Miksi?
 
-## How to: (Kuinka tehdä:)
-```C
+Tekstin etsiminen ja korvaaminen C-kielessä tarkoittaa tiettyjen alimerkkijonojen tunnistamista suuremmasta merkkijonosta ja niiden korvaamista eri alimerkkijonoilla. Ohjelmoijat suorittavat näitä toimenpiteitä tekstitiedon käsittelyyn - tehtävissä, jotka vaihtelevat datan sanitoinnista ja muotoilusta dynaamisen sisällön generointiin.
+
+## Kuinka:
+
+C ei tule sisäänrakennettujen funktioiden kanssa, jotka suorittaisivat etsimisen ja korvaamisen merkkijonoissa suoraan. Voit kuitenkin saavuttaa tämän yhdistelemällä erilaisia merkkijonokäsittelytoimintoja, jotka ovat saatavilla `<string.h>` kirjastossa yhdessä jonkin omatekoisen logiikan kanssa. Alla on perusesimerkki siitä, miten etsiä alimerkkijonoa merkkijonosta ja korvata se. Yksinkertaisuuden vuoksi tässä esimerkissä oletetaan riittävä puskurikoko eikä käsitellä muistiallokaatioon liittyviä ongelmia, jotka sinun tulisi ottaa huomioon tuotantokoodissa.
+
+```c
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 
-void searchAndReplace(char *source, const char *search, const char *replace) {
+void replaceSubstring(char *source, char *sub, char *new_sub) {
     char buffer[1024];
     char *insert_point = &buffer[0];
     const char *tmp = source;
-    size_t search_len = strlen(search);
-    size_t replace_len = strlen(replace);
+    size_t len_sub = strlen(sub), len_new_sub = strlen(new_sub);
+    size_t len_up_to_match;
 
-    while (1) {
-        const char *p = strstr(tmp, search);
-
-        if (p == NULL) {
-            strcpy(insert_point, tmp);
-            break;
-        }
-
-        memcpy(insert_point, tmp, p - tmp);
-        insert_point += p - tmp;
-
-        memcpy(insert_point, replace, replace_len);
-        insert_point += replace_len;
-
-        tmp = p + search_len;
+    while ((tmp = strstr(tmp, sub))) {
+        // Laske pituus otteluun asti
+        len_up_to_match = tmp - source;
+        
+        // Kopioi osa ennen ottelua
+        memcpy(insert_point, source, len_up_to_match);
+        insert_point += len_up_to_match;
+        
+        // Kopioi uusi alimerkkijono
+        memcpy(insert_point, new_sub, len_new_sub);
+        insert_point += len_new_sub;
+        
+        // Siirry ottelun jälkeiseen osaan lähtömerkkijonossa
+        tmp += len_sub;
+        source = tmp;
     }
-
-    strcpy(source, buffer);
+    
+    // Kopioi jäljelle jäänyt osa lähtömerkkijonosta
+    strcpy(insert_point, source);
+    
+    // Tulosta muokattu merkkijono
+    printf("Modified string: %s\n", buffer);
 }
 
 int main() {
-    char text[] = "Hyvää päivää, maailma!";
-    const char *oldWord = "maailma";
-    const char *newWord = "kaikki";
-
-    printf("Alkuperäinen: %s\n", text);
-    searchAndReplace(text, oldWord, newWord);
-    printf("Korvattu: %s\n", text);
-
+    char sourceStr[] = "Hello, this is a test. This test is simple.";
+    char sub[] = "test";
+    char newSub[] = "sample";
+    
+    replaceSubstring(sourceStr, sub, newSub);
+    
     return 0;
 }
 ```
 
-Sample Output:
+Esimerkkituloste:
 ```
-Alkuperäinen: Hyvää päivää, maailma!
-Korvattu: Hyvää päivää, kaikki!
+Muokattu merkkijono: Hello, this is a sample. This sample is simple.
 ```
 
-## Deep Dive (Syväsukellus)
-Historiallisesti, tekstinhakua ja -korvausta varten oli käytetty yksinkertaisia komentosarjoja tai editorien sisäänrakennettuja toimintoja. Modernissa ohjelmoinnissa on monia kirjastoja, jotka tarjoavat näitä toimintoja. `strstr` on C standardikirjaston funktio tekstinhakuun, ja `strcpy` sekä `memcpy` ovat tietojen kopiointiin. Tekstinkäsittely vaatii huolellisuutta puskurin ylivuotojen ja muiden muistiongelmien välttämiseksi.
+Tämä koodi havainnollistaa yksinkertaista lähestymistapaa etsiä kaikki alimerkkijonon (`sub`) esiintymät lähtömerkkijonosta ja korvata ne toisella alimerkkijonolla (`newSub`), käyttäen `strstr` funktiota kunkin ottelun aloituspisteen löytämiseen. Se on erittäin perustason esimerkki, joka ei käsittele monimutkaisia skenaarioita, kuten päällekkäisiä alimerkkijonoja.
 
-Vaihtoehtoisesti voidaan käyttää regular expressions -kirjastoa (regex) monimutkaisempiin hakuihin. C-standardikirjastossa ei ole valmista regex-tukea, joten usein käytetään ulkoisia kirjastoja, kuten PCRE.
+## Syväluotaus
 
-Hakemista ja korvaamista toteutettaessa on tärkeää huomioita suorituskyky, erityisesti suurilla tekstimäärillä. Muistinkäyttö, algoritmin tehokkuus ja monimutkaisuus vaikuttavat kaikki.
+Käytetty lähestymistapa "Kuinka" osiossa on perustavaa laatuaan, havainnollistaen kuinka saavuttaa tekstin etsiminen ja korvaaminen C-kielessä ilman kolmannen osapuolen kirjastoja. Historiallisesti, koska C:n painotus on alhaisen tason muistinhallinnassa ja suorituskyvyssä, sen standardikirjasto ei kapseloi korkean tason merkkijonomanipulaation toiminnallisuuksia, kuten mitä löytyy kielistä kuten Python tai JavaScript. Ohjelmoijien on manuaalisesti hallittava muistia ja yhdisteltävä erilaisia merkkijono-operaatioita tavoitellun lopputuloksen saavuttamiseksi, mikä lisää monimutkaisuutta mutta tarjoaa enemmän kontrollia ja tehokkuutta.
 
-## See Also (Katso Myös)
-- C Standard Library documentation: https://en.cppreference.com/w/c/string/byte
-- PCRE - Perl Compatible Regular Expressions: https://www.pcre.org/
-- Mastering Regular Expressions - Jeffrey E.F. Friedl: https://shop.oreilly.com/product/9780596528126.do
+On tärkeää huomata, että tämä manuaalinen lähestymistapa voi olla virhealtis, erityisesti kun hallitaan muistiallokaatioita ja puskurikokoja. Virheellinen käsittely voi johtaa puskurin ylivuotoihin ja muistin korruptoitumiseen, mikä tekee koodista alttiin turvallisuusriskeille.
+
+Monissa käytännön skenaarioissa, erityisesti niissä, jotka vaativat monimutkaista tekstinkäsittelyä, on usein harkitsemisen arvoista integroida kolmannen osapuolen kirjastoja, kuten PCRE (Perl Compatible Regular Expressions) regex-pohjaiseen etsimiseen ja korvaamiseen, mikä voi yksinkertaistaa koodia ja vähentää virheiden mahdollisuutta. Lisäksi, modernit C-standardit ja -kääntäjät tarjoavat yhä enemmän sisäänrakennettuja funktioita ja turvallisempia vaihtoehtoja merkkijonomanipulaatioon, pyrkien välttämään yleisiä sudenkuoppia, joita havaitaan vanhemmissa C-koodikannoissa. Mutta, perustavaa laatua oleva ymmärrys manuaalisesta tekstitietojen käsittelystä säilyttää arvokkaan taidon ohjelmoijan työkalupakissa, erityisesti optimoidessa suorituskyky-kriittisiä sovelluksia.

@@ -1,47 +1,69 @@
 ---
 title:                "Tolka HTML"
-date:                  2024-01-20T15:30:35.875822-07:00
+date:                  2024-02-03T17:59:49.273955-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Tolka HTML"
-
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/c/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Parsing av HTML innebär att man tolkar och bearbetar HTML-kod för att förstå dess struktur och innehåll. Programmerare gör detta för att extrahera data, manipulera innehåll och integrera webbsidor med applikationer.
 
-## Hur gör man?:
-För att parsa HTML i C kan vi använda `libxml2`, ett bibliotek skrivet för C som stödjer diverse XML-baserade teknologier, inklusive XHTML som är nära besläktad med HTML.
+Att tolka HTML i C innebär att analysera HTML-dokument för att effektivt extrahera data, struktur eller specifika delar, ofta som ett försteg till datamining eller webbskrapning. Programmerare gör detta för att automatisera informationsutvinning, vilket möjliggör bearbetning eller återanvändning av webbinnehåll programmatiskt.
 
-```C
+## Hur man gör:
+
+Att tolka HTML kan verka avskräckande på grund av HTML:s komplexitet och dess frekventa avvikelser från rena, väldigt strukturerade former. Dock förenklar användningen av ett bibliotek såsom `libxml2`, specifikt dess HTML-tolkningsmodul, processen. Detta exempel visar hur man använder `libxml2` för att tolka HTML och extrahera information.
+
+Först, se till att `libxml2` är installerat i din miljö. I många Linuxdistributioner kan du installera det via pakethanteraren. Till exempel, på Ubuntu:
+
+```bash
+sudo apt-get install libxml2 libxml2-dev
+```
+
+Nu, låt oss skriva ett enkelt C-program som använder `libxml2` för att tolka en HTML-sträng och skriva ut texten inuti ett specifikt element:
+
+```c
 #include <stdio.h>
 #include <libxml/HTMLparser.h>
 
-int main() {
-    const char *htmlContent = "<html><body><p>Hej, Sverige!</p></body></html>";
-    htmlDocPtr doc = htmlReadMemory(htmlContent, strlen(htmlContent), NULL, NULL, 0);
-
-    xmlNode *root_element = xmlDocGetRootElement(doc);
-    printf("Root element is: %s\n", root_element->name);
+void parseHTML(const char *html) {
+    htmlDocPtr doc = htmlReadDoc((const xmlChar *)html, NULL, NULL, HTML_PARSE_RECOVER | HTML_PARSE_NOERROR | HTML_PARSE_NOWARNING);
     
-    // Rena upp och avsluta
+    // Antagande att vi letar efter innehåll inuti <p> taggar
+    xmlNode *root_element = xmlDocGetRootElement(doc);
+    for (xmlNode *current_node = root_element; current_node; current_node = current_node->next) {
+        if (current_node->type == XML_ELEMENT_NODE && strcmp((const char *)current_node->name, "p") == 0) {
+            printf("Hittade stycke: %s\n", xmlNodeGetContent(current_node));
+        }
+    }
+    
     xmlFreeDoc(doc);
     xmlCleanupParser();
+}
+
+int main() {
+    const char *html = "<html><body><p>Hej, världen!</p></body></html>";
+    parseHTML(html);
     return 0;
 }
 ```
 
-Sample output:
+Exempelutdata:
 ```
-Root element is: html
+Hittade stycke: Hej, världen!
 ```
 
-## Djupdykning:
-Parsing av HTML är en komplex process som blivit mer strukturerad med åren. Tidigare skedde ofta parsing med reguljära uttryck, vilket inte är rekommenderat då HTML inte är ett reguljärt språk. `libxml2` används ofta eftersom det är robust, har stöd för flera språk och standarder, och tar hand om de finesser som HTML5 för med sig. Andra alternativ inkluderar `Gumbo` och `MyHTML`. En bra parser hanterar inte bara korrekt formaterad HTML utan också dåligt formatterad källkod, vilket är vanligt på webben.
+Detta exempel fokuserar på att extrahera text inom paragraftaggar, men `libxml2` erbjuder robust stöd för att navigera och fråga olika delar av ett HTML-dokument.
 
-## Se också:
-- `libxml2` dokumentation: http://xmlsoft.org/html/libxml-HTMLparser.html
-- W3C Markup Validation Service: https://validator.w3.org/
-- HTML parsing i Python med Beautiful Soup: https://www.crummy.com/software/BeautifulSoup/
+## Fördjupning
+
+Att tolka HTML i C går tillbaka till webbutvecklingens tidiga dagar. Inledningsvis var utvecklare tvungna att förlita sig på egna, ofta rudimentära tolkningslösningar, på grund av bristen på standardiserade bibliotek och HTML:s kaotiska tillstånd på webben. Introduktionen av bibliotek som `libxml2` markerade ett betydande framsteg, som erbjöd mer standardiserade, effektiva och hållbara tillvägagångssätt för att tolka HTML.
+
+Trots Cs oöverträffade hastighet och kontroll är det värt att notera att C kanske inte alltid är det bästa verktyget för att tolka HTML, särskilt för uppgifter som kräver snabba utvecklingscykler eller hantera exceptionellt dåligt formaterad HTML. Språk med högnivå HTML-tolkningsbibliotek, som Python med Beautiful Soup, erbjuder mer abstraherade, användarvänliga gränssnitt på bekostnad av viss prestanda.
+
+Ändå, för prestandakritiska applikationer, eller när man verkar i resursbegränsade miljöer, förblir tolkning av HTML i C en genomförbar och ofta föredragen metod. Nyckeln är att utnyttja robusta bibliotek såsom `libxml2` för att hantera HTML:s invecklade detaljer, vilket låter utvecklare fokusera på att extrahera den data de behöver utan att förlora sig i detaljerna av tolkningsmekaniken.

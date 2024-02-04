@@ -1,56 +1,90 @@
 ---
 title:                "创建临时文件"
-date:                  2024-01-20T17:39:32.080221-07:00
-model:                 gpt-4-1106-preview
+date:                  2024-02-03T17:55:18.791794-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "创建临时文件"
-
 tag:                  "Files and I/O"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/c/creating-a-temporary-file.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (是什么？为什么？)
-创建临时文件，就是新建一个文件供短期使用，通常用来存储在处理过程中产生的数据。程序员这么做通常是为了保护数据不被长期存储，或者为了减少对主存储的影响。
+## 什么和为什么？
+在C语言中创建临时文件是指生成一个设计用于短期使用的文件，通常作为数据处理或存储的临时空间。程序员这样做是为了管理临时数据，而不影响程序的永久存储，或确保敏感数据在使用后被删除。
 
-## How to (如何实现)
-```C
+## 如何做：
+在C编程语言中创建一个临时文件可以利用如 `tmpfile()` 和 `mkstemp()` 这样的函数。
+
+**使用 `tmpfile()`**：此函数创建一个唯一的临时文件，该文件会在程序终止或文件关闭时自动删除。
+
+```c
 #include <stdio.h>
-#include <stdlib.h>
 
 int main() {
-    char temp_filename[] = "tempfile-XXXXXX";
-    int fd = mkstemp(temp_filename);
-    
-    if (fd == -1) {
-        perror("Error creating temporary file");
-        return EXIT_FAILURE;
+    FILE *temp = tmpfile();
+    if (temp == NULL) {
+        perror("创建临时文件失败");
+        return 1;
     }
-    printf("Temporary file created: %s\n", temp_filename);
 
-    // Use the file descriptor `fd` with read/write operations...
+    // 向临时文件写入数据
+    fputs("这是一个测试。\n", temp);
 
-    // Close and remove the temporary file
-    close(fd);
-    unlink(temp_filename);
+    // 回放并读取我们写入的内容
+    rewind(temp);
+    char buffer[1024];
+    while (fgets(buffer, sizeof(buffer), temp) != NULL) {
+        printf("%s", buffer);
+    }
 
-    return EXIT_SUCCESS;
+    // 关闭或程序退出时自动删除
+    fclose(temp);
+
+    return 0;
 }
 ```
-临时文件创建成功，将打印：
+**示例输出：**
 ```
-Temporary file created: tempfile-123456
+这是一个测试。
 ```
 
-## Deep Dive (深入了解)
-在 C 语言程序中创建临时文件有历史渊源。早期 `tmpnam` 和 `tempnam` 函数用来生成临时文件名，但存在安全隐患。`mkstemp` 函数后来提供了一个更安全的方式，它生成一个唯一的文件并立即打开，最小化了文件名冲突和安全风险。还有 `mkdtemp` 函数创建临时目录。
+**使用 `mkstemp()`**：提供对临时文件位置及其权限更多的控制。要求使用以 `XXXXXX` 结尾的模板字符串，该函数随后会用一个独特的序列替换这些字符，以防名称冲突。
 
-还有标准库的 `tmpfile` 函数，它可以创建一个临时的二进制文件用于读写操作，文件关闭时自动删除。但相比 `mkstemp`，它提供的控制较少。
+```c
+#include <unistd.h>
+#include <stdio.h>
+#include <fcntl.h>
 
-深入来说，操作系统如何实现临时文件管理各不相同。通常，它们都会在特定目录（如 `/tmp`）下操作，有时需要考虑文件系统权限和磁盘空间限制。
+int main() {
+    char template[] = "/tmp/mytemp-XXXXXX";
+    int fd = mkstemp(template);
 
-## See Also (另请参阅)
-- C Standard Library documentation on temporary file creation: https://en.cppreference.com/w/c/io/tmpfile
-- Linux Man Pages for `mkstemp`: https://linux.die.net/man/3/mkstemp
-- Computer Security considerations for temp file creation: https://owasp.org/www-community/vulnerabilities/Insecure_Temporary_File
+    if (fd == -1) {
+        perror("创建临时文件失败");
+        return 1;
+    }
+    
+    printf("创建了临时文件：%s\n", template);
+
+    // 使用 mkstemp() 创建的临时文件应手动删除
+    unlink(template);
+
+    close(fd);
+    return 0;
+}
+```
+**示例输出：**
+```
+创建了临时文件：/tmp/mytemp-abc123
+```
+
+## 深入了解
+临时文件的概念并非C特有，而是许多编程环境中的常见功能，因为它在处理短暂数据时十分有用。ISO C标准化的 `tmpfile()` 函数在标准目录中创建一个具有唯一名称的文件，但它的存在是短暂的，这使其非常适合于安全性高或临时操作。
+
+`tmpfile()` 的一个显著限制是它依赖于默认的临时目录，这对所有应用程序来说可能并不合适，特别是在权限或安全性方面。相比之下，`mkstemp()` 允许指定目录，并通过修改提供的模板字符串来确保安全的文件创建，并保证文件名的唯一性，以手动文件管理为代价提供了更多样的解决方案。
+
+然而，创建临时文件可能引入安全漏洞，例如如果处理不当可能出现竞态条件。例如，`tmpfile()` 和 `mkstemp()` 解决了安全创建临时文件的不同方面（自动删除和安全名称生成，分别），但两者都不是万能的。开发者必须考虑他们应用的安全需求细节，包括临时文件引入的潜在漏洞，并可能需要实施额外的保护措施，超出这些函数所提供的。
+
+在更广泛的编程景观中，如内存存储（例如，使用动态数据结构或内存映射文件）可能为临时数据处理提供更好的性能或安全性。然而，物理临时文件在许多场景中仍是一个关键工具，特别是对于大型数据集或涉及进程间通信时。

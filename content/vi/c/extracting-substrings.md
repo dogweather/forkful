@@ -1,61 +1,73 @@
 ---
 title:                "Trích xuất chuỗi con"
-date:                  2024-01-28T21:59:43.991313-07:00
+date:                  2024-02-03T17:58:26.327898-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Trích xuất chuỗi con"
-
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/c/extracting-substrings.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
-Việc trích xuất các chuỗi con có nghĩa là lấy một phần cụ thể của chuỗi - như một lát bánh. Lập trình viên làm điều này để cô lập, xử lý, hoặc thao tác chỉ những bit dữ liệu liên quan trong một văn bản lớn hơn.
 
-## Cách thực hiện:
-Hãy thử trích xuất một số chuỗi con từ một chuỗi sử dụng C.
+Trong C, việc trích xuất các chuỗi con bao gồm việc tạo một chuỗi nhỏ hơn (chuỗi con) từ một chuỗi lớn hơn dựa trên các tiêu chí cụ thể, như vị trí và độ dài. Các lập trình viên thường thực hiện công việc này để phân tích văn bản, xử lý dữ liệu hoặc kiểm tra đầu vào, làm cho việc này trở thành kỹ năng quan trọng trong việc thao tác và phân tích dữ liệu văn bản một cách hiệu quả.
 
-```C
+## Làm thế nào:
+
+Khác với một số ngôn ngữ cấp cao cung cấp các phương thức có sẵn để trích xuất chuỗi con, C đòi hỏi một cách tiếp cận thủ công hơn bằng cách sử dụng các hàm thao tác chuỗi của nó. Dưới đây là cách để trích xuất một chuỗi con trong C một cách hiệu quả:
+
+### Ví dụ 1: Sử dụng `strncpy`
+
+```c
 #include <stdio.h>
 #include <string.h>
 
-void extract_substring(const char *source, int start, int length, char *dest) {
-    strncpy(dest, source + start, length);
-    dest[length] = '\0'; // Đừng quên kết thúc bằng ký tự null!
-}
-
 int main() {
-    const char *full_text = "Extracting substrings is neat.";
-    char snippet[20];
+    char text[] = "Hello, World!";
+    char buffer[20];
 
-    extract_substring(full_text, 0, 10, snippet);
-    printf("Đoạn: %s\n", snippet);
+    // Trích xuất "World" từ "Hello, World!"
+    strncpy(buffer, text + 7, 5);
+    buffer[5] = '\0'; // Đảm bảo kết thúc bằng null
 
-    extract_substring(full_text, 12, 10, snippet);
-    printf("Một đoạn khác: %s\n", snippet);
-
+    printf("Chuỗi con đã trích xuất: %s\n", buffer);
+    // Đầu ra: Chuỗi con đã trích xuất: World
     return 0;
 }
 ```
 
-Kết quả mẫu:
+### Ví dụ 2: Tạo một hàm
 
-```
-Đoạn: Extracting
-Một đoạn khác: substrings
+Đối với việc sử dụng lặp lại, việc tạo ra một hàm riêng để trích xuất chuỗi con có thể sẽ hiệu quả hơn:
+
+```c
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+void extractSubstring(char *source, int from, int n, char *target) {
+    strncpy(target, source + from, n);
+    target[n] = '\0'; // Đảm bảo kết thúc bằng null
+}
+
+int main() {
+    char text[] = "Programming in C";
+    char buffer[50];
+
+    extractSubstring(text, 0, 11, buffer);
+    printf("Chuỗi con đã trích xuất: %s\n", buffer);
+    // Đầu ra: Chuỗi con đã trích xuất: Programming
+    return 0;
+}
 ```
 
 ## Sâu hơn nữa
-Việc trích xuất các chuỗi con không phải là điều gì mới mẻ. Trong lĩnh vực lập trình C, đây đã là một công việc phổ biến kể từ khi ngôn ngữ này ra đời vào những năm 1970.
 
-Bạn có các cách khác nhau để lấy những chuỗi con đó. Một số người sử dụng `strncpy()`, như ví dụ trên của chúng tôi. Người khác có thể thích `sscanf()` hoặc thậm chí vòng lặp qua chuỗi một cách thủ công. Mỗi phương pháp có những điểm tinh tế của riêng nó. Với `strncpy()`, hãy cảnh giác - nếu độ dài bạn chỉ định vượt quá phần cuối của chuỗi, nó sẽ không tự động thêm ký tự null cho bạn.
+Việc trích xuất các chuỗi con trong C chủ yếu được xử lý thông qua việc thao tác con trỏ và quản lý bộ nhớ cẩn thận, phản ánh phương pháp tiếp cận ở cấp độ thấp hơn của ngôn ngữ này đối với việc xử lý dữ liệu. Phương pháp này có từ những ngày đầu của lập trình C, khi việc quản lý tài nguyên một cách hiệu quả là tối quan trọng do sức mạnh tính toán hạn chế. Dù việc thiếu một hàm trích xuất chuỗi con có sẵn có vẻ như là một sự thiếu sót, nhưng nó thể hiện triết lý của C trong việc cung cấp cho lập trình viên quyền kiểm soát hoàn toàn việc quản lý bộ nhớ, thường dẫn đến mã tối ưu nhưng phức tạp hơn.
 
-Ở bên dưới, một chuỗi chỉ đơn giản là một mảng các ký tự trong C. Khi cắt lát, bạn đang xử lý với các con trỏ đến các địa chỉ cụ thể trong bộ nhớ. Hãy chú ý đến giới hạn và luôn kết thúc các đoạn trích của bạn bằng ký tự null.
+Trong lĩnh vực lập trình hiện đại, các ngôn ngữ như Python và JavaScript cung cấp các phương thức có sẵn cho việc trích xuất chuỗi con, như `slice()` hay cắt chuỗi bằng chỉ số. Những ngôn ngữ cấp cao này xử lý quản lý bộ nhớ đằng sau hậu trường, đánh đổi một số mức độ kiểm soát để đổi lấy sự dễ sử dụng và tính dễ đọc.
 
-## Xem thêm
-- `strncpy()` manual: https://www.man7.org/linux/man-pages/man3/strncpy.3.html
-- Xử lý chuỗi C: https://en.cppreference.com/w/c/string
-- Con trỏ và mảng: https://www.tutorialspoint.com/cprogramming/c_pointers.htm
+Đối với các lập trình viên C, việc hiểu biết về phép toán con trỏ và cấp phát bộ nhớ là cần thiết cho các nhiệm vụ như trích xuất chuỗi con. Dù cách tiếp cận này đòi hỏi sự hiểu biết sâu sắc hơn về cách các chuỗi được biểu diễn và thao tác trong bộ nhớ, nó cung cấp quyền kiểm soát và hiệu quả không thể tìm thấy ở nơi nào khác, là những đặc trưng tiêu biểu của lập trình C đã giữ nó liên quan trong các ứng dụng yêu cầu hiệu năng cao trong nhiều thập kỷ. Tuy nhiên, đối với những người làm việc trên các ứng dụng cấp cao nơi quản lý bộ nhớ trực tiếp ít quan trọng hơn, các ngôn ngữ có chức năng trích xuất chuỗi con có sẵn có thể cung cấp một phương pháp tiếp cận đơn giản và ít dễ mắc lỗi hơn.

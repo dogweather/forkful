@@ -1,55 +1,55 @@
 ---
-title:                "Nội suy chuỗi ký tự"
-date:                  2024-01-28T22:02:06.358301-07:00
+title:                "Nội suy một chuỗi ký tự"
+date:                  2024-02-03T17:58:49.883478-07:00
 model:                 gpt-4-0125-preview
-simple_title:         "Nội suy chuỗi ký tự"
-
+simple_title:         "Nội suy một chuỗi ký tự"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/c/interpolating-a-string.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Cái gì và Tại sao?
+## Cái gì & Tại sao?
 
-Nội suy chuỗi cho phép chúng ta chèn trực tiếp các biến vào trong chuỗi. Điều này rất tiện lợi để tạo văn bản động, như tin nhắn cá nhân hoá hoặc dữ liệu được định dạng.
+Nội suy chuỗi, trong lập trình, bao gồm việc xây dựng chuỗi bằng cách nhúng biểu thức vào trong chuỗi ký tự literal. Các lập trình viên làm điều này để tạo ra các thông điệp thông tin, truy vấn động hay để xây dựng bất kỳ chuỗi nào có nội dung biến đổi một cách hiệu quả và sạch sẽ, thường dùng cho mục đích xuất ra người dùng hoặc ghi nhật ký.
 
 ## Làm thế nào:
 
-C không có tính năng nội suy chuỗi tích hợp sẵn, nhưng chúng ta có thể khéo léo sử dụng `sprintf` hoặc `snprintf`. Dưới đây là cách thực hiện:
+C, không giống như một số ngôn ngữ cấp cao, không hỗ trợ nội suy chuỗi một cách trực tiếp trong cú pháp của nó. Thay vào đó, việc xây dựng chuỗi với nội dung biến đổi thường được thực hiện sử dụng hàm `printf` hoặc các biến thể của nó cho việc xuất ra, và `sprintf` cho việc tạo chuỗi. Dưới đây là cách để xây dựng chuỗi động trong C:
 
 ```c
 #include <stdio.h>
 
 int main() {
-    char name[] = "Alex";
-    int age = 29;
-    char message[50];
+    char name[] = "Jane Doe";
+    int age = 28;
 
-    snprintf(message, sizeof(message), "Xin chào, tôi là %s, và tôi %d tuổi.", name, age);
-    printf("%s\n", message);  // Đầu ra mẫu: Xin chào, tôi là Alex, và tôi 29 tuổi.
+    // Sử dụng printf cho việc xuất ra
+    printf("Hello, my name is %s and I am %d years old.\n", name, age);
+
+    // Sử dụng sprintf cho việc xây dựng chuỗi
+    char info[50];
+    sprintf(info, "Tên: %s, Tuổi: %d", name, age);
+    printf("%s\n", info);
 
     return 0;
 }
 ```
+Kết quả mẫu:
+```
+Hello, my name is Jane Doe and I am 28 years old.
+Tên: Jane Doe, Tuổi: 28
+```
+Những đoạn mã này minh họa cách truyền thống để bao gồm dữ liệu biến đổi vào trong chuỗi trong C, cung cấp tính linh hoạt trong việc xây dựng chuỗi chi tiết.
 
-## Sâu hơn nữa:
+## Sâu hơn nữa
 
-C luôn đòi hỏi bạn phải tự mình xử lý chuỗi một cách cẩn thận. Nội suy không phải là tính năng trực tiếp – thay vào đó, chúng ta sử dụng các dấu định vị và định dạng như `%s` cho chuỗi hoặc `%d` cho số trong các hàm như `printf` hoặc `sprintf`.
+Trước khi xuất hiện các ngôn ngữ lập trình hiện đại hơn với các tính năng nội suy chuỗi tích hợp sẵn, các nhà phát triển C phải dựa vào các hàm như `sprintf()`, `snprintf()`, và các biến thể của chúng để soạn thảo chuỗi với nội dung biến đổi. Cách tiếp cận này, mặc dù hiệu quả, nhưng gây ra các rủi ro tiềm ẩn như tràn bộ đệm nếu không được quản lý cẩn thận, đặc biệt là với `sprintf()`.
 
-Trong lịch sử, các nhà phát triển ở các ngôn ngữ khác đã được cưng chiều với những tiện ích nội suy. Trong C#, bạn chỉ cần làm `var message = $"Hello, {name}!";`. Swift và Ruby cũng có những tiện ích riêng.
+Xét đến các lựa chọn thay thế, các ngôn ngữ như Python và JavaScript đã giới thiệu các tính năng nội suy chuỗi trực quan hơn, như f-strings (ký tự chuỗi định dạng) và ký tự mẫu, tương ứng. Các tính năng này cho phép các nhà phát triển nhúng trực tiếp các biểu thức vào trong các chuỗi ký tự literal, làm cho mã trở nên dễ đọc và ngắn gọn hơn.
 
-Quay lại với sân nhà C của chúng ta, các định dạng đóng vai trò quan trọng. Hãy nhớ rằng, `sprintf` có thể rủi ro nếu bạn xác định kích thước của bộ đệm không chính xác và bạn có thể làm tràn bộ đệm (`snprintf` an toàn hơn do giới hạn bộ đệm). Hơn nữa, việc quản lý này một cách thủ công có nghĩa là bạn có nhiều kiểm soát hơn - một nguyên tắc được yêu thích trong tinh thần của C.
+Trong bối cảnh của C, dù không có các tính năng nội suy chuỗi tích hợp sẵn, cách tiếp cận của nó cung cấp sự kiểm soát chặt chẽ về định dạng, điều này có thể được xem là một lợi ích cho những ai yêu cầu kiểm soát định dạng chính xác và cũng là một sự phức tạp đối với người mới hoặc những ai tìm kiếm giải pháp nhanh chóng, dễ đọc hơn. Việc giới thiệu `snprintf()` trong C99 đã giảm bớt một số mối lo ngại về an toàn bằng cách cho phép các nhà phát triển xác định số byte tối đa được viết, làm cho việc định dạng chuỗi an toàn hơn.
 
-Tuy nhiên, có nhiều cách để làm một việc: các thư viện bên thứ ba, như GLib, giới thiệu các tiện ích chuỗi tốt hơn. Các hàm như `g_strdup_printf` hoạt động tương tự như `sprintf` nhưng tự động quản lý việc cấp phát bộ nhớ cho bạn.
-
-Các macros và hàm biến thiên cũng có thể mô phỏng nội suy, nhưng đó là một kỹ thuật nâng cao đòi hỏi sự hiểu biết vững chắc về macros và kiểu `va_list` từ `<stdarg.h>`.
-
-## Xem thêm:
-
-- Ngôn ngữ lập trình ISO/IEC — C: https://www.iso.org/standard/74528.html
-- Chuẩn C11 (N1570): http://www.open-std.org/jtc1/sc22/wg14/www/docs/n1570.pdf
-- Tài liệu của thư viện C GNU (glibc) về `printf`: https://www.gnu.org/software/libc/manual/html_node/Formatted-Output-Functions.html
-- Các hàm tiện ích chuỗi của GLib: https://developer.gnome.org/glib/stable/glib-Strings.html
+Mặc dù phương pháp của C có thể có vẻ rườm rà hoặc cồng kềnh so với các ngôn ngữ hiện đại, nhưng việc hiểu biết cơ chế xử lý chuỗi của nó cung cấp một nền tảng vững chắc cho việc nắm bắt các khái niệm trừu tượng hơn trong phát triển phần mềm, nhấn mạnh tầm quan trọng của quản lý bộ nhớ và định dạng dữ liệu ở cấp độ thấp.

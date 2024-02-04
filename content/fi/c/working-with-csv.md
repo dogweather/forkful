@@ -1,56 +1,101 @@
 ---
-title:                "CSV-tiedostojen käsittely"
-date:                  2024-01-19
-simple_title:         "CSV-tiedostojen käsittely"
-
+title:                "Työskentely CSV:n kanssa"
+date:                  2024-02-03T18:11:53.273387-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Työskentely CSV:n kanssa"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c/working-with-csv.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Mitä & Miksi?)
-CSV on tekstitiedostomuoto datan tallentamiseen. Ohjelmoijat käyttävät sitä, koska se on yksinkertainen, yhteensopiva monien alustojen kanssa ja helppo muuttaa taulukkomuotoiseksi tiedoksi.
+## Mikä & Miksi?
 
-## How to: (Kuinka tehdään:)
-```C
+Ohjelmoinnissa CSV-tiedostojen (pilkuin erotetut arvot) käsittely tarkoittaa tietojen lukemista ja kirjoittamista tekstiedostoihin, jotka on järjestetty riveittäin, missä jokainen rivi edustaa tietuetta ja jokaisen tietueen kentät on erotettu pilkuilla. Ohjelmoijat manipuloivat CSV-tiedostoja helpottaakseen datan tuontia/vientiä eri järjestelmissä, niiden laajan tuen ja yksinkertaisuuden vuoksi taulukollisen datan tallennuksessa.
+
+## Miten:
+
+### CSV-tiedostojen lukeminen
+Luetaan CSV-tiedosto C-kielellä käyttämällä standardin tiedosto I/O -funktioita yhdessä merkkijonojen käsittelyfunktioiden kanssa jokaisen rivin jäsentämiseksi. Alla on perusesimerkki CSV-tiedoston lukemisesta ja jokaisen rivin kenttien tulostamisesta konsoliin.
+
+```c
 #include <stdio.h>
-#include <stdlib.h>
 #include <string.h>
 
-// CSV-tiedoston lukeminen ja tulostaminen
 int main() {
-    FILE *fp = fopen("esimerkki.csv", "r");
+    FILE *fp = fopen("data.csv", "r");
     if (!fp) {
-        printf("Tiedostoa ei voida avata.\n");
+        printf("Can't open file\n");
         return 1;
     }
 
-    // Oleta, että yhdellä rivillä on korkeintaan 1024 merkkiä
-    char rivi[1024];
-
-    while (fgets(rivi, 1024, fp)) {
-        // Leikkaa riviltä rivinvaihto
-        rivi[strcspn(rivi, "\n")] = 0;
-        // Tulosta rivi
-        printf("%s\n", rivi);
+    char buf[1024];
+    while (fgets(buf, 1024, fp)) {
+        char *field = strtok(buf, ",");
+        while(field) {
+            printf("%s\n", field);
+            field = strtok(NULL, ",");
+        }
     }
 
     fclose(fp);
     return 0;
 }
 ```
-Tuloste:
+Esimerkki `data.csv`:
 ```
-sarake1,sarake2,sarake3
-data1,data2,data3
-...
+Name,Age,Occupation
+John Doe,29,Software Engineer
 ```
 
-## Deep Dive (Syväsukellus):
-CSV-formaatti juontaa juurensa varhaisiin tietokoneaikoihin, 1970-luvulle. Formaatti on pitänyt pintansa, vaikka nykyään on muitakin vaihtoehtoja kuten JSON ja XML. CSV:n käytön etuna on sen yksinkertaisuus; tiedostot ovat luettavia myös ihmisten silmin ja ne aukeavat helposti esimerkiksi Excelissä. Implementaatioissa haastetta tuo kenttärajaajien, kuten lainausmerkkien ja pilkkujen, käsittely.
+Esimerkkitulo:
+```
+Name
+Age
+Occupation
+John Doe
+29
+Software Engineer
+```
 
-## See Also (Katso myös):
-- [RFC 4180, CSV standardi](https://tools.ietf.org/html/rfc4180)
-- [C Standard Library](https://en.cppreference.com/w/c/header)
-- [Stack Overflow CSV aiheiset kysymykset](https://stackoverflow.com/questions/tagged/csv?sort=frequent)
+### Kirjoittaminen CSV-tiedostoihin
+Vastaavasti CSV-tiedostoon kirjoittaminen sisältää `fprintf` käytön datan tallentamiseksi pilkuin erotetussa muodossa.
+
+```c
+#include <stdio.h>
+
+int main() {
+    FILE *fp = fopen("output.csv", "w");
+    if (!fp) {
+        printf("Can't open file\n");
+        return 1;
+    }
+
+    char *headers[] = {"Name", "Age", "Occupation", NULL};
+    for (int i = 0; headers[i] != NULL; i++) {
+        fprintf(fp, "%s%s", headers[i], (headers[i+1] != NULL) ? "," : "\n");
+    }
+    fprintf(fp, "%s,%d,%s\n", "Jane Doe", 27, "Data Scientist");
+
+    fclose(fp);
+    return 0;
+}
+```
+
+Esimerkki `output.csv` Sisältö:
+```
+Name,Age,Occupation
+Jane Doe,27,Data Scientist
+```
+
+## Syväsukellus
+
+CSV-muoto, vaikkakin näennäisen suoraviivainen, sisältää hienovaraisuuksia, kuten kentissä esiintyvien pilkkujen käsittely ja kenttien sulkeminen lainausmerkeillä. Esitetyt perusesimerkit eivät huomioi tällaisia monimutkaisuuksia, eivätkä käsittele potentiaalisia virheitä robustisti.
+
+Historiallisesti CSV-käsittely C-kielessä on suurelta osin ollut manuaalista johtuen kielen matalan tason luonteesta ja korkean tason abstraktioiden puutteesta tällaisiin tehtäviin. Tämä manuaalinen hallinta sisältää tiedostojen avaamisen, rivien lukemisen, merkkijonojen jakamisen ja tarpeen mukaan datatyyppien muuntamisen.
+
+Vaikka suoranainen CSV-tiedostojen käsittely C-kielessä tarjoaa arvokkaita oppimiskokemuksia tiedosto I/O:sta ja merkkijonojen käsittelystä, useat modernit vaihtoehdot lupaavat tehokkuutta ja vähemmän virhealttiita prosesseja. Kirjastot kuten `libcsv` ja `csv-parser` tarjoavat kattavia funktioita CSV-tiedostojen lukemiseen ja kirjoittamiseen, mukaan lukien tuki lainausmerkeillä erotetuille kentille ja mukautetuille erottimille.
+
+Vaihtoehtoisesti, kun työskennellään ekosysteemeissä, jotka sitä tukevat, yhdistäminen kielten tai alustojen kanssa, jotka tarjoavat korkean tason CSV-käsittelytoimintoja (kuten Python sen `pandas`-kirjaston kanssa), voi olla tuottavampi reitti sovelluksille, jotka vaativat runsasta CSV-käsittelyä. Tämä ristiinkielen lähestymistapa hyödyntää C:n suorituskykyä ja järjestelmäohjelmoinnin ominaisuuksia samalla kun käyttää hyödyksi muiden kielten käyttöhelppoutta erityistehtävissä, kuten CSV-käsittelyssä.

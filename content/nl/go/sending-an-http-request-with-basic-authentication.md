@@ -1,44 +1,46 @@
 ---
 title:                "Een HTTP-verzoek verzenden met basisauthenticatie"
-date:                  2024-01-28T22:07:44.578547-07:00
+date:                  2024-02-03T18:09:10.998048-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een HTTP-verzoek verzenden met basisauthenticatie"
-
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/go/sending-an-http-request-with-basic-authentication.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Wat & Waarom?
-HTTP-verzoeken met basisauthenticatie voegen een eenvoudige beveiligingslaag toe aan een API-aanroep. Programmeurs gebruiken het om toegang te krijgen tot bronnen die inloggegevens vereisen, zoals gebruikersspecifieke gegevens.
 
-## Hoe te:
-Het verzenden van een geauthenticeerd HTTP-verzoek is eenvoudig in Go:
+Het versturen van een HTTP-verzoek met basisauthenticatie in Go houdt in dat je een authorisatieheader aan je verzoek toevoegt die een gebruikersnaam en wachtwoord bevat in de vorm van een Base64-gecodeerde string. Programmeurs gebruiken deze methode om toegang te krijgen tot bronnen die gebruikersverificatie vereisen, zodat hun toepassingen veilig kunnen communiceren met diensten op het web.
 
-```Go
+## Hoe:
+
+Om een HTTP-verzoek met basisauthenticatie in Go te maken, moet je je verzoekheaders zo opstellen dat ze het `Authorization` veld bevatten, gevuld met je inloggegevens in het juiste formaat. Hieronder vind je een voorbeeld dat laat zien hoe je een GET-verzoek naar een API-eindpunt stuurt dat basisauthenticatie vereist:
+
+```go
 package main
 
 import (
-	"encoding/base64"
 	"fmt"
-	"io/ioutil"
 	"net/http"
+	"encoding/base64"
 )
 
 func main() {
 	client := &http.Client{}
-	req, err := http.NewRequest("GET", "https://api.example.com/data", nil)
+	req, err := http.NewRequest("GET", "http://example.com/api/data", nil)
 	if err != nil {
 		panic(err)
 	}
 
-	username := "user"
-	password := "pass"
-	credentials := base64.StdEncoding.EncodeToString([]byte(username + ":" + password))
-	req.Header.Add("Authorization", "Basic "+credentials)
+	username := "yourUsername"
+	password := "yourPassword"
+    // Codeer inloggegevens
+	auth := base64.StdEncoding.EncodeToString([]byte(username + ":" + password))
+    // Stel Authorization header in
+	req.Header.Add("Authorization", "Basic " + auth)
 
 	resp, err := client.Do(req)
 	if err != nil {
@@ -46,28 +48,20 @@ func main() {
 	}
 	defer resp.Body.Close()
 
-	body, err := ioutil.ReadAll(resp.Body)
-	if err != nil {
-		panic(err)
-	}
-	fmt.Printf("%s\n", body)
+	fmt.Println("Reactie status:", resp.Status)
 }
 ```
 
-Voorbeelduitvoer (met fictieve API-URL en inloggegevens):
-```plaintext
-{"status":"success","data":"some private data"}
+Als je deze code uitvoert, wordt er een GET-verzoek naar de opgegeven URL gestuurd met de noodzakelijke Authorization-header. De output ziet er ongeveer zo uit, afhankelijk van je eindpunt en service:
+
+```
+Reactie status: 200 OK
 ```
 
-## Diepere duik
-Basisauthenticatie is onderdeel van de HTTP/1.0-specificatie en bestaat al sinds de vroege dagen van het web. Het is niet de meest veilige methode (inloggegevens zijn slechts base64-gecodeerd, niet versleuteld), dus wordt het vaak vervangen door OAuth of JWT in meer gevoelige toepassingen.
+## Diepgaand
 
-Wat implementatie betreft, bevat Go ingebouwde ondersteuning voor HTTP-clients en -verzoeken, met het pakket `net/http` waarmee ontwikkelaars webverkeer kunnen afhandelen. Wanneer we basisauthenticatie gebruiken, moeten we ervoor zorgen dat de inloggegevens correct zijn gecodeerd en dat de `Authorization`-header wordt toegevoegd aan het HTTP-verzoek.
+Basisauthenticatie in HTTP-verzoeken is een breed ondersteunde methode voor het afdwingen van toegangscontroles tot webbronnen. Het stuurt simpelweg een gebruikersnaam en wachtwoord met elk verzoek mee, wat het eenvoudig te implementeren maakt maar niet de meest veilige methode die beschikbaar is. Een groot nadeel is dat de inloggegevens in duidelijke tekst worden verzonden (aangezien Base64 eenvoudig te decoderen is), tenzij het in combinatie met SSL/TLS wordt gebruikt. Dit kan gevoelige informatie blootstellen aan Man-in-the-Middle-aanvallen.
 
-Hoewel eenvoudig, moet je basisauthenticatie via gewoon HTTP vermijden omdat het gevoelig is voor man-in-the-middle-aanvallen. Gebruik altijd HTTPS wanneer je inloggegevens verstuurt.
+In Go houdt het versturen van deze verzoeken in dat je de `Authorization`-header rechtstreeks manipuleert. Hoewel de standaardbibliotheek van Go (`net/http`) krachtige primitieven biedt voor het omgaan met HTTP(s)-communicatie, is het relatief laag niveau, wat vereist dat ontwikkelaars handmatig verschillende aspecten van HTTP-verzoek-/responsafhandeling behandelen. Dit geeft programmeurs veel flexibiliteit maar betekent ook dat men nauwer moet letten op beveiligingsimplicaties, codering en correct beheer van headers.
 
-## Zie ook
-- Go `net/http`-pakketdocumentatie: https://pkg.go.dev/net/http
-- Go `encoding/base64`-pakketdocumentatie: https://pkg.go.dev/encoding/base64
-- Info over HTTP-basisauthenticatie: https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication
-- Voor veiligere authenticatiemethoden: https://oauth.net/ en https://jwt.io/
+Voor toepassingen die hogere beveiliging vereisen, moeten geavanceerdere authenticatiesystemen zoals OAuth2 of JWT (JSON-webtokens) worden overwogen. Deze benaderingen bieden robuustere beveiligingsfuncties en worden breed ondersteund in moderne API's en diensten. De groeiende ecosysteem van Go omvat tal van bibliotheken en hulpmiddelen (zoals `golang.org/x/oauth2`, onder andere) om deze veiligere authenticatiemethoden te vergemakkelijken, waardoor het gemakkelijker wordt voor ontwikkelaars om veilige, effectieve en moderne autorisatiemechanismen in hun toepassingen te implementeren.

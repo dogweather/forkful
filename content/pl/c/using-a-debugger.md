@@ -1,71 +1,82 @@
 ---
 title:                "Korzystanie z debugera"
-date:                  2024-01-26T03:48:25.668152-07:00
+date:                  2024-02-03T18:09:59.651462-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Korzystanie z debugera"
-
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/c/using-a-debugger.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Co i dlaczego?
-Debugger to narzędzie, które pozwala na inspekcję kodu C podczas jego wykonywania, krok po kroku, w celu odnalezienia błędów. Programiści używają debuggerów do zrozumienia zachowania swojego kodu, naprawy problemów i optymalizacji wydajności bez grania w zgadywanki.
+
+Debuggery w języku C to specjalistyczne narzędzia, które pozwalają programistom krok po kroku przeglądać swój kod, inspekcjonować zmienne i monitorować przepływ wykonania. Proces ten jest niezbędny do identyfikowania i naprawiania błędów, zapewniając, że kod zachowuje się zgodnie z oczekiwaniami.
 
 ## Jak to zrobić:
-Załóżmy, że pracujesz nad prostym programem w C, który oblicza silnię liczby, ale pojawił się problem. Aby użyć debuggera takiego jak `gdb` (GNU Debugger), najpierw skompiluj z flagą `-g`, aby dołączyć informacje dla debuggera:
+
+GDB (GNU Debugger) jest najczęściej używanym debugerem dla programowania w języku C. Oto krótki przewodnik, jak używać GDB do debugowania prostego programu w C.
+
+Najpierw skompiluj swój program w C z flagą `-g`, aby dołączyć informacje debugowania:
 
 ```c
-// kompilacja z: gcc factorial.c -o factorial -g
+gcc -g program.c -o program
+```
+
+Następnie uruchom GDB ze skompilowanym programem:
+
+```bash
+gdb ./program
+```
+
+Teraz możesz użyć różnych poleceń w GDB, aby kontrolować jego działanie. Oto kilka podstawowych poleceń:
+
+- `break`: Ustaw punkt przerwania w określonej linii lub funkcji, aby zatrzymać wykonanie.
+  - Przykład: `break 10` lub `break main`
+- `run`: Rozpocznij wykonanie programu w GDB.
+- `next`: Wykonaj następną linię kodu, nie wchodząc do funkcji.
+- `step`: Wykonaj następną linię kodu, wchodząc do funkcji.
+- `print`: Wyświetl wartość zmiennej.
+- `continue`: Wznów wykonanie do następnego punktu przerwania.
+- `quit`: Wyjdź z GDB.
+
+Oto przykład sesji debugowania prostego programu:
+
+```c
 #include <stdio.h>
 
-long factorial(int n) {
-    if (n < 0) return 0; // Prosta kontrola ujemnego wejścia
-    long result = 1;
-    while (n > 1)
-        result *= n--;
-    return result;
-}
-
 int main() {
-    int number = 5;
-    long result = factorial(number);
-    printf("Silnia liczby %d wynosi %ld\n", number, result);
+    int i;
+    for (i = 0; i < 5; i++) {
+        printf("%d\n", i);
+    }
     return 0;
 }
 ```
 
-Następnie uruchom go w gdb:
+Skompiluj i uruchom GDB, jak opisano. Ustaw punkt przerwania przy linii `printf` używając `break 5`, a następnie `run`. Użyj `next`, aby krok po kroku przejść przez pętlę i `print i`, aby zbadać zmienną pętli.
 
-```shell
-$ gdb ./factorial
+Przykładowy wynik po ustawieniu punktu przerwania i przed pierwszą iteracją:
+
+```
+Breakpoint 1, main () at program.c:5
+5         printf("%d\n", i);
 ```
 
-Ustaw punkt przerwania na funkcji `factorial` i uruchom program:
+Używanie `print i` po kilku iteracjach:
 
-```gdb
-(gdb) break factorial
-(gdb) run
+```
+$3 = 2
 ```
 
-Kiedy program zatrzyma się na punkcie przerwania, przejdź przez każdą linię używając `next` lub `n` i inspekcjonuj zmienne przy pomocy `print` lub `p`:
+To demonstruje badanie stanu i przepływu prostego programu.
 
-```gdb
-(gdb) next
-(gdb) print result
-$1 = 1
-```
+## Wgłębianie się
 
-Przykładowe wyjście dostarczy wartości w czasie rzeczywistym i przebieg wykonania programu.
+Koncepcja debugowania znacznie ewoluowała od wczesnych dni programowania, gdzie fizyczne błędy (dosłowne owady) mogły powodować problemy w mechanicznych komputerach. Dzisiaj debuggery takie jak GDB oferują zaawansowane funkcje wykraczające poza podstawowe kroki i inspekcje zmiennych, takie jak debugowanie wsteczne (wykonywanie programu do tyłu), warunkowe punkty przerwania i skrypty do automatycznych zadań debugowania.
 
-## Pogłębiona analiza
-Debuggery istnieją od lat 60., ewoluując od prostych monitorów do złożonych aplikacji z interfejsem graficznym. Stare, oparte na wydrukach debuggowanie było powszechne przed rozwojem dojrzałych debuggerów. Alternatywy dla `gdb` obejmują `lldb`, `dbx`, czy debuggery zintegrowane z IDE, takie jak te w Visual Studio czy CLion.
+Chociaż GDB jest potężny i szeroko używany, może być gęsty i trudny dla początkujących. Alternatywne narzędzia do debugowania i środowiska zintegrowane (IDE) takie jak Visual Studio Code, CLion lub Eclipse oferują bardziej przyjazne dla użytkownika interfejsy do debugowania kodu C, często integrując wizualne pomoce i bardziej intuicyjne kontrole. Te alternatywy mogą nie oferować pełnej głębi funkcjonalności GDB, ale mogą być bardziej dostępne dla nowicjuszy w programowaniu w języku C.
 
-Przy pracy z debuggerami implementacja się różni - niektóre mogą łapać błędy czasu wykonania, eksaminować pamięć, a nawet odwracać wykonanie programu. `gdb` może dołączać do działających procesów, co pozwala na debuggowanie już działającego oprogramowania, co jest zaletą przy naprawianiu błędów w systemach na żywo.
-
-## Zobacz także
-- Debugger GNU (GDB): https://www.gnu.org/software/gdb/documentation/
-- Debuggowanie z GDB: https://sourceware.org/gdb/current/onlinedocs/gdb
-- Debugger LLDB: https://lldb.llvm.org/use/tutorial.html
-- Techniki debuggowania w C: http://www.cprogramming.com/debugging/debugging.html
+Ponadto, pojawienie się protokołów serwera językowego i standardów debugowania ułatwiło rozwiązania do debugowania międzyplatformowego, czyniąc doświadczenie debugowania bardziej spójnym w różnych narzędziach i środowiskach. Pomimo tych postępów, nauka detali tradycyjnego debugera jak GDB dostarcza cennych wglądów w wykonanie programów w języku C i pozostaje kluczową umiejętnością w zestawie narzędzi programisty.

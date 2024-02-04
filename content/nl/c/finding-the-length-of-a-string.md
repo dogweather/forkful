@@ -1,56 +1,46 @@
 ---
 title:                "De lengte van een string vinden"
-date:                  2024-01-28T22:00:04.372016-07:00
+date:                  2024-02-03T17:56:43.211143-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "De lengte van een string vinden"
-
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/c/finding-the-length-of-a-string.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Wat & Waarom?
-
-De lengte van een string vinden betekent het tellen van het aantal karakters dat het bevat vóór de nullterminator `\0`. Het is cruciaal voor het manipuleren van strings, zoals wanneer we door een string moeten lussen of exacte geheugenruimtes moeten toewijzen.
+Het vinden van de lengte van een reeks in C houdt in dat wordt bepaald hoeveel tekens er zijn voor de null-terminator `\0`. Programmeurs doen dit om reeksen correct te manipuleren zonder tegen fouten aan te lopen zoals bufferoverlopen, die kunnen leiden tot beveiligingskwetsbaarheden of programma-crashes.
 
 ## Hoe te:
-
-Je hulpmiddel in C voor het meten van stringlengte is de `strlen` functie uit `<string.h>`. Zo werkt het:
+In C wordt de standaard bibliotheekfunctie `strlen()` vaak gebruikt om de lengte van een reeks te vinden. Hier is een snel voorbeeld:
 
 ```c
 #include <stdio.h>
 #include <string.h>
 
 int main() {
-    char mijnString[] = "Hello, World!";
-    size_t lengte = strlen(mijnString);  // Gebruik size_t voor stringlengte
-    printf("De lengte van '%s' is %zu.\n", mijnString, lengte);
+    char myString[] = "Hello, World!";
+    size_t length = strlen(myString);
+    
+    printf("Lengte van '%s' is %zu.\n", myString, length);
+    
     return 0;
 }
 ```
 
-Verwachte uitvoer:
+**Voorbeelduitvoer:**
 ```
-De lengte van 'Hello, World!' is 13.
+Lengte van 'Hello, World!' is 13.
 ```
 
-Onthoud, `strlen` telt de nullterminator niet mee.
+In dit voorbeeld neemt `strlen()` een reeks (`myString`) als invoer en retourneert de lengte exclusief de null-terminator. Het gebruik van `size_t` voor de lengte variabele wordt aanbevolen omdat het een ongetekend geheel getaltype is, waardoor het in staat is de grootte van het grootst mogelijke object op het systeem te vertegenwoordigen.
 
-## Diepere Duik
+## Diepgaand:
+De functie `strlen()` maakt deel uit van de C-standaardbibliotheek sinds de aanvang van de taal. Onder de motorkap werkt het door een teller te verhogen terwijl het de reeks doorloopt totdat het de null-terminator bereikt. Deze eenvoud komt echter met prestatieoverwegingen: omdat `strlen()` tekens in realtime telt, is het herhaaldelijk aanroepen ervan op dezelfde reeks in een lus bijvoorbeeld inefficiënt.
 
-Historisch gezien eindigen strings in C met een `\0` nullkarakter - dit is hoe functies weten waar een string eindigt. Leuk feitje: `strlen` zelf is een eenvoudige lus die loopt vanaf het begin van de string tot de nullterminator.
+Wat betreft beveiliging, `strlen()` en andere C-reeksbehandelfuncties controleren niet inherent op bufferoverlopen, waardoor zorgvuldig programmeren essentieel is om kwetsbaarheden te vermijden. Moderne alternatieven in andere talen, zoals reekstypes die de lengte omvatten of standaard veilige bufferafhandeling gebruiken, elimineren enkele van deze risico's en inefficiënties.
 
-Wat als `strlen` niet jouw ding is? Voor ingebedde systemen of prestatie-kritieke code, zou je een aangepaste lengtefunctie kunnen schrijven om bibliotheekoverhead te vermijden of om niet-standaard stringformaten te hanteren. Wees alleen voorzichtig; het is een bug feest als het verkeerd gedaan wordt.
-
-Onder de motorkap kan `strlen` variëren tussen simpel en gesofisticeerd. De naïeve implementatie zou slechts een paar regels code in een lus kunnen zijn, terwijl geoptimaliseerde versies technieken zoals loop unrolling of parallelle verwerking kunnen gebruiken om dingen op te voeren op grote strings.
-
-## Zie Ook
-
-Voor hen die hongerig zijn naar meer, smul van deze:
-
-- C Standard Library referentie voor `strlen`: [https://www.cplusplus.com/reference/cstring/strlen/](https://www.cplusplus.com/reference/cstring/strlen/)
-- Diepe duik in hoe strings werken in C: [https://www.cs.swarthmore.edu/~newhall/unixhelp/C_strings.html](https://www.cs.swarthmore.edu/~newhall/unixhelp/C_strings.html)
-- Voor een uitdaging, lees over het optimaliseren van stringfuncties: [https://opensource.com/article/19/5/how-write-good-c-main-function](https://opensource.com/article/19/5/how-write-good-c-main-function)
+Ondanks de beperkingen is het begrijpen van `strlen()` en het handmatig behandelen van reeksen in C cruciaal voor programmeurs, vooral wanneer er met low-level code gewerkt wordt of wanneer prestatie en geheugenbeheer van het grootste belang zijn. Het biedt ook waardevolle inzichten in de werking van hogere-niveau reeksabstracties in andere talen.

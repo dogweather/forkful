@@ -1,91 +1,115 @@
 ---
 title:                "Trabajando con YAML"
-date:                  2024-01-19
+date:                  2024-02-03T18:13:35.380496-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Trabajando con YAML"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/go/working-with-yaml.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Qué es y por qué?
+## ¿Qué y por qué?
 
-Trabajar con YAML significa manipular un formato de serialización de datos legible por humanos, común para configuraciones y transmisión de datos. Los programadores lo usan por su claridad y fácil compatibilidad entre diferentes lenguajes y aplicaciones.
+Trabajar con YAML en Go implica analizar archivos YAML (YAML Ain't Markup Language), un estándar de serialización de datos amigable para humanos, en estructuras de datos de Go y viceversa. Los programadores hacen esto para aprovechar la simplicidad y legibilidad de YAML para archivos de configuración, configuraciones de aplicaciones o intercambio de datos entre servicios y componentes escritos en diferentes lenguajes.
 
 ## Cómo hacerlo:
 
-En Go, usamos el paquete `gopkg.in/yaml.v3` para trabajar con YAML. Aquí hay un ejemplo sencillo de cómo leer y escribir datos YAML.
+Para trabajar con YAML en Go, primero necesitarás importar una biblioteca que admita el análisis y la serialización de YAML, ya que la biblioteca estándar de Go no incluye soporte directo para YAML. La biblioteca más popular para este propósito es "gopkg.in/yaml.v3". Aquí te mostramos cómo empezar:
 
-```Go
+1. **Instalando el paquete YAML:**
+
+```bash
+go get gopkg.in/yaml.v3
+```
+
+2. **Analizando YAML en una estructura de Go:**
+
+Primero, define una estructura en Go que coincida con la estructura de tus datos YAML.
+
+```go
 package main
 
 import (
-	"fmt"
-	"gopkg.in/yaml.v3"
-	"log"
-	"os"
+  "fmt"
+  "gopkg.in/yaml.v3"
+  "log"
 )
 
-// Config representa una configuración en formato YAML.
 type Config struct {
-	Host    string `yaml:"host"`
-	Port    int    `yaml:"port"`
-	Enabled bool   `yaml:"enabled"`
+  Database struct {
+    User     string `yaml:"user"`
+    Password string `yaml:"password"`
+  } `yaml:"database"`
 }
 
 func main() {
-	// Datos YAML de ejemplo.
-	data := `
-host: localhost
-port: 8080
-enabled: true
+  var config Config
+  data := `
+database:
+  user: admin
+  password: secret
 `
-	var config Config
-
-	// Deserializar los datos YAML a la estructura Config.
-	if err := yaml.Unmarshal([]byte(data), &config); err != nil {
-		log.Fatalf("error: %v", err)
-	}
-	fmt.Printf("--- config:\n%v\n\n", config)
-
-	// Modificar la configuración.
-	config.Port = 9090
-
-	// Serializar la estructura Config a YAML.
-	out, err := yaml.Marshal(&config)
-	if err != nil {
-		log.Fatalf("error: %v", err)
-	}
-	fmt.Printf("--- yaml:\n%s\n", string(out))
-  
-  // Escribir el YAML serializado en un archivo.
-	if err := os.WriteFile("config.yaml", out, 0644); err != nil {
-		log.Fatalf("error: %v", err)
-	}
-	fmt.Println("Archivo 'config.yaml' creado exitosamente.")
+  err := yaml.Unmarshal([]byte(data), &config)
+  if err != nil {
+    log.Fatalf("error: %v", err)
+  }
+  fmt.Printf("Usuario: %s\nContraseña: %s\n", config.Database.User, config.Database.Password)
 }
 ```
 
-Salida de muestra:
+**Salida de muestra:**
 
 ```
---- config:
-{localhost 8080 true}
-
---- yaml:
-host: localhost
-port: 9090
-enabled: true
-
-Archivo 'config.yaml' creado exitosamente.
+Usuario: admin
+Contraseña: secret
 ```
 
-## Inmersión Profunda:
+3. **Serializando una estructura de Go a YAML:**
 
-YAML, que significa "YAML Ain't Markup Language", surgió a principios de los años 2000 como alternativa al XML y al JSON por ser más legible. Aunque JSON es ampliamente utilizado por su compatibilidad con JavaScript, YAML se destaca en configuraciones debido a su fácil legibilidad y soporte de comentarios. Dentro de Go, el proceso de serialización se denomina 'marshal', y el de deserialización 'unmarshal'. Se puede manipular fácilmente estructuras complejas, trabajar con tipos personalizados y manejar diferentes esquemas de datos.
+Aquí te mostramos cómo convertir una estructura de Go de nuevo a YAML.
 
-## Ver También:
+```go
+package main
 
-- Documentación del paquete YAML para Go: [gopkg.in/yaml.v3](https://pkg.go.dev/gopkg.in/yaml.v3)
-- Especificación de YAML: [yaml.org/spec](https://yaml.org/spec/1.2/spec.html)
+import (
+  "fmt"
+  "gopkg.in/yaml.v3"
+  "log"
+)
+
+func main() {
+  config := Config{
+    Database: struct {
+      User     string `yaml:"user"`
+      Password string `yaml:"password"`
+    }{
+      User:     "admin",
+      Password: "supersecreto",
+    },
+  }
+
+  data, err := yaml.Marshal(&config)
+  if err != nil {
+    log.Fatalf("error: %v", err)
+  }
+  fmt.Printf("---\n%s\n", string(data))
+}
+```
+
+**Salida de muestra:**
+
+```yaml
+---
+database:
+  user: admin
+  password: supersecreto
+```
+
+## Análisis Profundo:
+
+El uso de YAML en el desarrollo de software ha crecido debido a su formato legible por humanos, convirtiéndolo en una opción ideal para archivos de configuración, documentación o formatos de intercambio de datos. Comparado con JSON, su contraparte, YAML ofrece comentarios, tipos escalares y características de relación, proporcionando un marco de serialización de datos más rico. Sin embargo, su flexibilidad y características vienen con un costo de complejidad en el análisis, lo que conlleva a potenciales riesgos de seguridad cuando no se maneja con cuidado (por ejemplo, ejecución de código arbitrario).
+
+La biblioteca "gopkg.in/yaml.v3" para Go es una solución robusta para el procesamiento de YAML, logrando un equilibrio entre facilidad de uso y soporte de características completas. A la fecha actual, aunque hay alternativas como "go-yaml/yaml" (la biblioteca detrás de "gopkg.in/yaml.v3"), la versión elegida generalmente depende de requisitos específicos del proyecto o preferencias personales. Al tratar con conjuntos de datos masivos o aplicaciones críticas para el rendimiento, los programadores podrían considerar formatos más simples como JSON por su menor tiempo de análisis y sobrecarga de memoria. No obstante, para archivos de configuración o ajustes donde la legibilidad humana y la facilidad de uso son primordiales, YAML sigue siendo un contendiente fuerte en el ecosistema de Go.

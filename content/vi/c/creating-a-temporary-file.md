@@ -1,93 +1,90 @@
 ---
-title:                "Tạo một tập tin tạm thời"
-date:                  2024-01-28T21:58:31.451412-07:00
+title:                "Tạo một tệp tạm thời"
+date:                  2024-02-03T17:56:15.625637-07:00
 model:                 gpt-4-0125-preview
-simple_title:         "Tạo một tập tin tạm thời"
-
+simple_title:         "Tạo một tệp tạm thời"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/c/creating-a-temporary-file.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Cái Gì & Tại Sao?
-Việc tạo một tập tin tạm thời trong C cung cấp một bảng nháp cho việc xử lý dữ liệu. Đây là cách để lưu trữ dữ liệu mà bạn cần trong quá trình thực thi chương trình nhưng không cần sau khi chương trình kết thúc.
+## Gì và Tại sao?
+Việc tạo một tập tin tạm thời trong C bao gồm việc tạo ra một tập tin được dùng để sử dụng trong một khoảng thời gian ngắn, thường được sử dụng như một không gian tạm thời cho việc xử lý hoặc lưu trữ dữ liệu. Các lập trình viên thực hiện điều này để quản lý dữ liệu tạm thời mà không ảnh hưởng đến bộ nhớ vĩnh viễn của chương trình hoặc để đảm bảo dữ liệu nhạy cảm được xóa sau khi sử dụng.
 
-## Cách Thực Hiện:
+## Làm thế nào:
+Việc tạo một tập tin tạm thời trong ngôn ngữ lập trình C có thể tận dụng các hàm như `tmpfile()` và `mkstemp()`.
 
-C có các hàm như `tmpfile()` và `mkstemp()` để tạo tập tin tạm. Dưới đây là ví dụ về `tmpfile()`:
+**Sử dụng `tmpfile()`**: Hàm này tạo ra một tập tin tạm thời duy nhất tự động được xóa khi chương trình kết thúc hoặc tập tin được đóng.
 
 ```c
 #include <stdio.h>
 
 int main() {
     FILE *temp = tmpfile();
-    if (temp) {
-        fputs("Write something temporary.", temp);
-        // Sử dụng tập tin...
-        rewind(temp); // Quay lại đầu tập tin để đọc những gì chúng ta đã viết.
-        
-        // Giả sử chúng ta muốn hiển thị nó:
-        char buffer[100];
-        while (fgets(buffer, sizeof(buffer), temp) != NULL) {
-            printf("%s", buffer);
-        }
-        // Đóng và tự động xóa khi chương trình kết thúc
-        fclose(temp);
-    } else {
-        perror("tmpfile() failed");
+    if (temp == NULL) {
+        perror("Không thể tạo tập tin tạm thời");
+        return 1;
     }
+
+    // Viết dữ liệu vào tập tin tạm thời
+    fputs("Đây là một bài kiểm tra.\n", temp);
+
+    // Quay lại và đọc những gì chúng ta đã viết
+    rewind(temp);
+    char buffer[1024];
+    while (fgets(buffer, sizeof(buffer), temp) != NULL) {
+        printf("%s", buffer);
+    }
+
+    // Tự động xóa khi đóng hoặc kết thúc chương trình
+    fclose(temp);
 
     return 0;
 }
 ```
-Kết quả mẫu: `Write something temporary.`
+**Kết quả mẫu:**
+```
+Đây là một bài kiểm tra.
+```
 
-## Sâu Hơn
-Tập tin tạm đã có từ khi hệ điều hành hiện đại xuất hiện. Chúng hữu ích cho việc xử lý dữ liệu lớn không vừa với bộ nhớ, cho giao tiếp giữa các quy trình, hoặc cho bảo mật (vì chúng thường bị xóa khi chương trình kết thúc).
-
-`tmpfile()` tạo một tập tin tạm thời duy nhất trong chế độ đọc/ghi nhị phân (`w+b`). Tập tin sẽ tự động bị xóa khi nó được đóng hoặc chương trình kết thúc. Chỉ nhớ, vì tập tin được mở trong chế độ nhị phân, nếu bạn đang xử lý văn bản, việc chuyển đổi các ký tự xuống dòng sẽ không được xử lý tự động.
-
-Nếu bạn cần kiểm soát nhiều hơn, hãy sử dụng `mkstemp()`. Nó thay thế các ký tự mẫu trong tên tập tin của bạn bằng một chuỗi duy nhất, và bạn phải tự xóa tập tin khi hoàn thành.
+**Sử dụng `mkstemp()`**: Cung cấp nhiều quyền kiểm soát hơn về vị trí và quyền của tập tin tạm thời. Nó yêu cầu một chuỗi mẫu kết thúc với `XXXXXX` mà sau đó nó sẽ thay thế bằng một chuỗi duy nhất để ngăn chặn sự trùng lặp tên.
 
 ```c
-#include <stdlib.h>
-#include <stdio.h>
 #include <unistd.h>
+#include <stdio.h>
+#include <fcntl.h>
 
 int main() {
-    char template[] = "/tmp/mytemp.XXXXXX";
+    char template[] = "/tmp/mytemp-XXXXXX";
     int fd = mkstemp(template);
+
     if (fd == -1) {
-        perror("mkstemp() failed");
-        exit(EXIT_FAILURE);
+        perror("Không thể tạo tập tin tạm thời");
+        return 1;
     }
-
-    // Chuyển đổi file descriptor thành đối tượng FILE
-    FILE *temp = fdopen(fd, "w+");
-    if (temp == NULL) {
-        perror("fdopen() failed");
-        close(fd);
-        exit(EXIT_FAILURE);
-    }
-
-    fputs("Here's to more control over temp files.", temp);
     
-    // Dọn dẹp: Đóng và xóa thủ công
-    fclose(temp); 
-    unlink(template); // Xóa tập tin
+    printf("Tập tin tạm thời được tạo: %s\n", template);
 
+    // Các tập tin tạm thời được tạo bằng mkstemp() cần được xóa thủ công
+    unlink(template);
+
+    close(fd);
     return 0;
 }
 ```
-Kết quả mẫu: (Không có kết quả rõ ràng, nhưng một tập tin tạm được tạo và xóa)
+**Kết quả mẫu:**
+```
+Tập tin tạm thời được tạo: /tmp/mytemp-abc123
+```
 
-Tại sao không tự tạo tập tin tạm của riêng bạn bằng cách dùng `fopen()`? Rủi ro về sự va chạm. Nhớ lại, `tmpfile()` và `mkstemp()` đảm bảo tên tập tin là duy nhất để tránh xung đột.
+## Đào sâu
+Khái niệm của tập tin tạm thời không phải là duy nhất trong C nhưng là một tính năng phổ biến trong nhiều môi trường lập trình do khả năng xử lý dữ liệu thoáng qua của nó. Hàm `tmpfile()`, được chuẩn hóa trong tiêu chuẩn ISO C, tạo một tập tin với một tên duy nhất trong một thư mục tiêu chuẩn, nhưng sự tồn tại của nó là phù duyện, khiến nó trở nên lý tưởng cho các thao tác an toàn hoặc tạm thời.
 
-## Xem Thêm
+Một hạn chế đáng chú ý của `tmpfile()` là sự phụ thuộc vào thư mục tạm thời mặc định, có thể không phù hợp với tất cả các ứng dụng, đặc biệt là về mặt quyền hoặc an ninh. Ngược lại, `mkstemp()` cho phép chỉ định thư mục và đảm bảo việc tạo tập tin an toàn với các tên tập tin duy nhất được đảm bảo bằng cách sửa đổi chuỗi mẫu cung cấp, mang lại một giải pháp đa dạng hóa hơn ở chi phí quản lý tập tin thủ công.
 
-- Tài liệu Thư viện Chuẩn C: https://en.cppreference.com/w/c/io
-- Hướng dẫn sử dụng Thư viện C của GNU cho Giao diện Hệ thống Tập tin: https://www.gnu.org/software/libc/manual/html_node/File-System-Interface.html
-- Viết mã an toàn trong C và C++ cho việc xử lý tập tin và dữ liệu một cách an toàn: https://www.securecoding.cert.org
+Tuy nhiên, việc tạo tập tin tạm thời có thể giới thiệu các lỗ hổng bảo mật, chẳng hạn như tình trạng đua, nếu không được xử lý đúng cách. Ví dụ, `tmpfile()` và `mkstemp()` giải quyết các khía cạnh khác nhau của việc tạo tập tin tạm thời an toàn (xóa tự động và tạo tên an toàn, tương ứng), nhưng không có hàm nào là panacea. Các nhà phát triển phải xem xét cụ thể nhu cầu an ninh của ứng dụng của họ, bao gồm cả các lỗ hổng tiềm ẩn được giới thiệu bởi các tập tin tạm thời, và có thể cần phải triển khai các biện pháp phòng ngừa bổ sung ngoài những gì các hàm này cung cấp.
+
+Trong bối cảnh rộng lớn hơn của lập trình, các phương án thay thế như lưu trữ trong bộ nhớ (ví dụ, sử dụng cấu trúc dữ liệu động hoặc tập tin ánh xạ bộ nhớ) có thể cung cấp hiệu suất hoặc bảo mật tốt hơn cho việc xử lý dữ liệu tạm thời. Tuy nhiên, các tập tin tạm thời vật lý vẫn là một công cụ quan trọng trong nhiều kịch bản, đặc biệt là đối với các bộ dữ liệu lớn hoặc khi liên lạc giữa các quá trình được liên quan.

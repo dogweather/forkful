@@ -1,66 +1,69 @@
 ---
 title:                "HTML:n jäsentäminen"
-date:                  2024-01-20T15:30:20.372485-07:00
+date:                  2024-02-03T17:59:51.773219-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "HTML:n jäsentäminen"
-
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Mikä ja Miksi?)
-HTML:n jäsentäminen eli parsing tarkoittaa HTML-dokumentin rakenteen lukemista ja sen sisällön muuttamista käsiteltävään muotoon. Ohjelmoijat jäsentävät HTML:ää, koska sen avulla voidaan automatisoida tietosisällön käsittelyä, validoida HTML-koodia tai vaikkapa kaapia dataa web-sivuilta.
+## Mikä & Miksi?
 
-## How to (Kuinka?):
-C-kielessä HTML:n jäsentäminen vaatii ulkoisen kirjaston, esimerkkinä voidaan käyttää `libxml2`, joka on laajalti käytössä oleva jäsentämiskirjasto.
+HTML:n jäsentäminen C-kielellä käsittää HTML-dokumenttien analysoimisen tehokkaasti datan, rakenteen tai tiettyjen osien poimimiseksi, usein datan louhimisen tai verkon kaapimisen esivaiheena. Ohjelmoijat tekevät tämän automatisoidakseen tiedon poiminnan, mahdollistaen web-sisällön käsittelyn tai uudelleenkäytön ohjelmallisesti.
 
-```C
+## Kuinka:
+
+HTML:n jäsentäminen voi vaikuttaa pelottavalta HTML:n monimutkaisuuden ja usein siististä, hyvin muodostetuista rakenteista poikkeavien kohtien vuoksi. Kuitenkin, kirjaston, kuten `libxml2`, erityisesti sen HTML-jäsentämismoduulin, käyttäminen yksinkertaistaa prosessia. Tämä esimerkki havainnollistaa, kuinka käyttää `libxml2`:ta HTML:n jäsentämiseen ja tiedon poimimiseen.
+
+Varmista ensin, että `libxml2` on asennettu ympäristöösi. Monissa Linux-jakeluissa sen voi asentaa paketinhallinnan kautta. Esimerkiksi Ubuntussa:
+
+```bash
+sudo apt-get install libxml2 libxml2-dev
+```
+
+Kirjoitetaan nyt yksinkertainen C-ohjelma, joka käyttää `libxml2`:ta HTML-merkkijonon jäsentämiseen ja tietyn elementin sisällä olevan tekstin tulostamiseen:
+
+```c
 #include <stdio.h>
 #include <libxml/HTMLparser.h>
 
-int main() {
-    htmlDocPtr doc; // HTML-dokumentin käsittelyyn tarkoitettu osoitin
-    htmlNodePtr cur; // Solmu rakenteessa, alkio jota käsitellään
-  
-    // Parse HTML document from a string (tätä voisi olla esim. HTTP-vastauksessa)
-    char *htmlContent = "<html><body><p>Hello, Finland!</p></body></html>";
-    doc = htmlReadDoc((xmlChar*)htmlContent, NULL, NULL, HTML_PARSE_RECOVER | HTML_PARSE_NOERROR | HTML_PARSE_NOWARNING);
-  
-    // Käydään läpi dokumentin solmut
-    cur = xmlDocGetRootElement(doc);
-    while (cur != NULL) {
-        if (cur->type == XML_ELEMENT_NODE) {
-            printf("Elementti '%s'\n", cur->name);
+void parseHTML(const char *html) {
+    htmlDocPtr doc = htmlReadDoc((const xmlChar *)html, NULL, NULL, HTML_PARSE_RECOVER | HTML_PARSE_NOERROR | HTML_PARSE_NOWARNING);
+    
+    // Oletetaan, että etsimme sisältöä <p>-tageista
+    xmlNode *root_element = xmlDocGetRootElement(doc);
+    for (xmlNode *current_node = root_element; current_node; current_node = current_node->next) {
+        if (current_node->type == XML_ELEMENT_NODE && strcmp((const char *)current_node->name, "p") == 0) {
+            printf("Löydetty kappale: %s\n", xmlNodeGetContent(current_node));
         }
-        cur = cur->next;
     }
-
-    // Vapautetaan dokumentin muisti
+    
     xmlFreeDoc(doc);
-  
+    xmlCleanupParser();
+}
+
+int main() {
+    const char *html = "<html><body><p>Hei, maailma!</p></body></html>";
+    parseHTML(html);
     return 0;
 }
 ```
 
-Sample output (Otostuloste):
+Esimerkkituloste:
 ```
-Elementti 'html'
-Elementti 'body'
-Elementti 'p'
+Löydetty kappale: Hei, maailma!
 ```
 
-## Deep Dive (Sukellus syvemmälle):
-HTML:n jäsentäminen C-kielellä ei ole ihan yhtä suoraviivaista kuin jotkut korkeamman tason kielet, kuten Python tai JavaScript tarjoavat. Historiallisesti C-kieltä ei ole suunniteltu verkko-ohjelmointiin, mutta monipuolisten kirjastojen myötä se on mahdollista.
+Tämä esimerkki keskittyy tekstiin kappale-tagien sisällä, mutta `libxml2` tarjoaa vankkaa tukea eri HTML-dokumentin osien selaamiseen ja kyselyyn.
 
-Alternatiiveina `libxml2`:lle voi mainita `Gumbo` -parserin, joka on Googlen kehittämä HTML5:n jäsentämiseen.
+## Syväsukellus
 
-Jäsentämisessä tärkeää on tunnistaa elementtien hierarkia ja attribuutit. `libxml2` perustuu DOM (Document Object Model) -pohjaiseen käsittelyyn, missä koko dokumentti ladataan muistiin ja jäsentämisen jälkeen dokumentti voidaan käsitellä olio-rakenteena.
+HTML:n jäsentäminen C-kielellä ulottuu verkkokehityksen alkuaikoihin. Aluksi kehittäjien oli luotettava räätälöityihin, usein alkeellisiin jäsentämisen ratkaisuihin, standardoitujen kirjastojen puutteen ja verkon HTML:n kaoottisen tilan vuoksi. Kirjastojen, kuten `libxml2`, esittely merkitsi merkittävää edistystä, tarjoten standardoidumpia, tehokkaampia ja vastustuskykyisempiä menetelmiä HTML:n jäsentämiseen.
 
-## See Also (Katso myös):
-- `libxml2` dokumentaatio: http://xmlsoft.org/
-- `Gumbo` parser: https://github.com/google/gumbo-parser
-- HTML standardi: https://html.spec.whatwg.org/
-- C standardikirjasto: http://www.iso-9899.info/wiki/The_Standard
+Vaikka C:n vertaansa vailla oleva nopeus ja hallinta ovatkin huomionarvoisia, on huomionarvoista, että C ei välttämättä aina ole paras työkalu HTML:n jäsentämiseen, erityisesti tehtävissä, jotka vaativat nopeita kehityssyklejä tai käsittelevät poikkeuksellisen virheellisesti muotoiltua HTML:ää. Korkean tason HTML-jäsentämiskirjastoja tarjoavat kielet, kuten Python kaunokirjoituksineen (Beautiful Soup), tarjoavat abstraktoidumpia, käyttäjäystävällisiä rajapintoja jonkin suorituskyvyn kustannuksella.
 
-Jos aihe jäi kiinnostamaan, näissä linkeissä on lisätietoa ja syventävää materiaalia.
+Kuitenkin, suorituskykykritiikissä sovelluksissa tai resurssirajoitteisissa ympäristöissä, HTML:n jäsentäminen C-kielellä pysyy elinkelpoisena ja usein suositeltuna menetelmänä. Avainkysymys on vankkojen kirjastojen, kuten `libxml2`, hyödyntäminen HTML:n monimutkaisuuksien käsittelyyn, mikä mahdollistaa kehittäjien keskittyä tarvitsemaansa datan poimimiseen ilman, että yksityiskohtien jäsentämisen mekaniikka hidastaa.

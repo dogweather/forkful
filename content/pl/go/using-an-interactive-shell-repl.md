@@ -1,38 +1,69 @@
 ---
-title:                "Korzystanie z interaktywnego shella (REPL)"
-date:                  2024-01-26T04:14:48.493235-07:00
+title:                "Korzystanie z interaktywnej powłoki (REPL)"
+date:                  2024-02-03T18:10:42.246940-07:00
 model:                 gpt-4-0125-preview
-simple_title:         "Korzystanie z interaktywnego shella (REPL)"
-
+simple_title:         "Korzystanie z interaktywnej powłoki (REPL)"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/go/using-an-interactive-shell-repl.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Co i dlaczego?
-REPL (Read-Eval-Print Loop), czyli pętla czytaj-wykonaj-wypisz, umożliwia interakcję z kodem na żywo; czyta dane wejściowe, ocenia je, wypisuje wynik i rozpoczyna od nowa. Programiści używają go do testowania fragmentów kodu, debugowania oraz nauki nowych języków w czasie rzeczywistym.
+
+Interaktywna powłoka, czyli pętla czytaj-wykonaj-wypisz (REPL), pozwala eksperymentować z kodem Go w czasie rzeczywistym, wykonując komendy i otrzymując natychmiastową informację zwrotną. To podejście jest szeroko stosowane do nauki, debugowania i tworzenia prototypów, ponieważ omija tradycyjny cykl edycja-kompilacja-uruchomienie, co czyni proces rozwoju szybszym i bardziej intuicyjnym.
 
 ## Jak to zrobić:
-Go nie zawiera wbudowanego REPL, ale można użyć narzędzi stron trzecich. Jednym z popularnych narzędzi jest `gore`:
 
-```go
-// Zainstaluj gore używając
-$ go install github.com/motemen/gore/cmd/gore@latest
+Mimo że Go nie zawiera wbudowanego REPL, społeczność stworzyła narzędzia takie jak `gore`, aby wypełnić tę lukę. Najpierw zainstaluj `gore`, uruchamiając:
 
-// Uruchom gore
-$ gore
-gore version 0.5.0  :help dla pomocy
-gore> :import fmt
-gore> fmt.Println("Hello, Go REPL!")
-Hello, Go REPL!
-nil
+```
+$ go get -u github.com/motemen/gore
 ```
 
-## Szczegółowe omówienie
-Początkowo rozwinięte dla Lispa, REPL-e są powszechne w dynamicznych językach takich jak Python czy Ruby. Go, będąc językiem statycznie typowanym, nie zawiera go na wstępie. Alternatywy dla `gore` obejmują `go-pry` i `yaegi`. Te narzędzia interpretują kod Go, pozwalając szybko eksplorować i weryfikować pomysły bez kompilowania pełnoprawnej aplikacji. Są one szczególnie przydatne dla początkujących oraz w kontekstach edukacyjnych, gdzie nacisk kładziony jest na naukę i eksperymentowanie.
+Po zainstalowaniu uruchom `gore`, wpisując `gore` w terminalu:
 
-## Zobacz także
-- `gore`: [https://github.com/motemen/gore](https://github.com/motemen/gore)
-- `go-pry`: [https://github.com/d4l3k/go-pry](https://github.com/d4l3k/go-pry) 
-- `yaegi`: [https://github.com/traefik/yaegi](https://github.com/traefik/yaegi)
+```
+$ gore
+```
+
+Powinieneś zobaczyć monit gotowy do przyjmowania poleceń Go. Spróbujmy prostego przykładu:
+
+```
+gore> :import fmt
+gore> fmt.Println("Witaj, Go REPL!")
+```
+
+Powinieneś zobaczyć wynik:
+
+```
+Witaj, Go REPL!
+```
+
+Zmienne i definicje funkcji działają jak oczekiwano. Możesz zadeklarować funkcję:
+
+```
+gore> :import math
+gore> areaCircle := func(radius float64) float64 {
+...> return math.Pi * radius * radius
+...> }
+gore> fmt.Println("Pole koła o promieniu 4:", areaCircle(4))
+```
+
+I od razu otrzymać wyjście:
+
+```
+Pole koła o promieniu 4: 50.26548245743669
+```
+
+## Dogłębna analiza:
+
+Koncepcja REPL jest starożytna, sięgająca maszyn Lisp z lat 60., zapewniających interaktywne doświadczenie programistyczne. W przeciwieństwie do języków takich jak Python czy JavaScript, Go zostało zaprojektowane bez REPL, skupiając się zamiast tego na skompilowanych plikach wykonywalnych dla wydajności i prostoty. Odzwierciedla to filozofię prostoty Go oraz jego projektowanie dla skalowalnego i łatwego w utrzymaniu oprogramowania.
+
+Jednakże, narzędzia takie jak `gore` czy `goplay` pokazują pomysłowość społeczności Go w zamykaniu tej luki. Te narzędzia dynamicznie analizują kod Go i używają pakietu `go/eval` lub podobnych mechanizmów do jego wykonania w czasie rzeczywistym, choć z pewnymi ograniczeniami w porównaniu do natywnego środowiska REPL. Te ograniczenia wynikają z systemu typów Go i modelu kompilacji, które mogą utrudniać ocenę w locie.
+
+Chociaż środowiska REPL są wyjątkowo użyteczne do edukacji i szybkich testów, ekosystem Go zwykle skłania się ku tradycyjnym procesom kompilacji i uruchamiania dla większości zadań programistycznych. Środowiska IDE i edytory wspierające Go, takie jak Visual Studio Code czy GoLand, oferują zintegrowane narzędzia do testowania i debugowania, które w dużym stopniu eliminują potrzebę REPL dla profesjonalnego rozwoju.
+
+Dla programowania eksploracyjnego, tworzenia prototypów lub nauki, REPL-e takie jak `gore` oferują jednak cenną alternatywę, umożliwiając programistom przyzwyczajonym do REPL-i w innych językach korzystanie z podobnego doświadczenia w Go.

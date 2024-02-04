@@ -1,67 +1,94 @@
 ---
-title:                "Arbeid med YAML"
-date:                  2024-01-19
-simple_title:         "Arbeid med YAML"
-
+title:                "Å Arbeide med YAML"
+date:                  2024-02-03T18:13:36.850625-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Å Arbeide med YAML"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/c/working-with-yaml.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 
-YAML er et dataformat brukt for konfigurasjonsfiler og datautveksling. Programmere bruker det fordi det er lett å lese og skrive, og det fungerer godt med mange programmeringsspråk.
+YAML, som står for "YAML Ain't Markup Language," er en menneskelesbar standard for data-serialisering som kan brukes til alle slags applikasjoner, fra konfigurasjonsfiler til datalagring. Programmerere jobber ofte med YAML når de trenger et format som er lett å lese og skrive for konfigurasjonsfiler eller datautveksling mellom språk og systemer.
 
 ## Hvordan:
-```C
-#include <stdio.h>
+
+Å jobbe med YAML i C krever et bibliotek, ettersom standard C-biblioteket ikke gir direkte støtte for YAML-parsing eller serialisering. Et av de mest populære YAML-bibliotekene for C er `libyaml`, som tilbyr både lavnivå- og høynivå-grensesnitt for parsing og generering av YAML. Nedenfor er et eksempel på hvordan man parser en enkel YAML-fil ved hjelp av `libyaml`:
+
+**Først**, du må installere `libyaml`-biblioteket. Hvis du bruker et Unix-lignende system, kan du vanligvis installere det via pakkebehandleren din. For eksempel, på Ubuntu:
+
+```bash
+sudo apt-get install libyaml-dev
+```
+
+**Deretter**, se på en enkel YAML-fil med navn `config.yaml`:
+
+```yaml
+name: John Doe
+age: 29
+married: false
+```
+
+**Her er** et grunnleggende eksempel på hvordan du parser denne YAML-filen i C:
+
+```c
 #include <yaml.h>
+#include <stdio.h>
+#include <stdlib.h>
 
-int main(void) {
+void process_yaml_file(const char *filename) {
+    FILE *fh = fopen(filename, "rb");
     yaml_parser_t parser;
-    yaml_token_t token;
+    yaml_event_t event;
 
-    FILE *file = fopen("config.yaml", "r");
-    yaml_parser_initialize(&parser);
-    yaml_parser_set_input_file(&parser, file);
+    if (!yaml_parser_initialize(&parser))
+        fputs("Klarte ikke å initialisere YAML-parser!\n", stderr);
 
-    do {
-        yaml_parser_scan(&parser, &token);
-        switch(token.type) {
-        case YAML_KEY_TOKEN: printf("Key: "); break;
-        case YAML_VALUE_TOKEN: printf("Value: "); break;
-        case YAML_SCALAR_TOKEN: printf("%s\n", token.data.scalar.value); break;
-        default: /* Ignorer andre tokens */
-            ;
+    if (fh == NULL)
+        fputs("Klarte ikke å åpne fil!\n", stderr);
+
+    yaml_parser_set_input_file(&parser, fh);
+
+    while (1) {
+        if (!yaml_parser_parse(&parser, &event))
+            break;
+
+        if (event.type == YAML_SCALAR_EVENT) {
+            printf("Verdi: %s\n", event.data.scalar.value);
         }
-        if(token.type != YAML_STREAM_END_TOKEN)
-            yaml_token_delete(&token);
-    } while(token.type != YAML_STREAM_END_TOKEN);
-    yaml_token_delete(&token);
+
+        if (event.type == YAML_STREAM_END_EVENT)
+            break;
+
+        yaml_event_delete(&event);
+    }
 
     yaml_parser_delete(&parser);
-    fclose(file);
+    fclose(fh);
+}
 
+int main() {
+    process_yaml_file("config.yaml");
     return 0;
 }
 ```
-_**Output:**_
-```
-Key: version
-Value: 1.0
-Key: services
-Key: web
-Key: image
-Value: nginx:latest
+
+Dette enkle programmet åpner en YAML-fil, initialiserer YAML-parseren, og leser filen, og skriver ut skalarverdiene (i dette eksempelet, feltene i vår enkle YAML). Merk at feilhåndtering er minimal i dette enkle eksempelet og bør være mer robust i produksjonskode.
+
+Å kjøre programmet med vår `config.yaml` vil gi følgende utdata:
+
+```plaintext
+Verdi: John Doe
+Verdi: 29
+Verdi: false
 ```
 
 ## Dypdykk
 
-YAML, som betyr "YAML Ain't Markup Language" (opprinnelig "Yet Another Markup Language"), ble introdusert i 2001. Alternativer som JSON og XML eksisterer, men YAML er ofte foretrukket for menneskelig lesbarhet. Det brukes typisk med biblioteker som `libyaml` (C/C++) for parsing/generering.
+YAML ble først utgitt i 2001 og var designet for å være mer lesbar og brukervennlig enn andre data-serialiseringsformater som XML eller JSON, låner fra flere språk som C, Perl, og Python for sin designfilosofi. Til tross for fordelene med lesbarhet og lette av menneskelig modifisering, kan YAML være komplekst å parse programmatisk på grunn av sin avhengighet av innrykk og et omfattende sett med funksjoner, inkludert referanser og egendefinerte typer.
 
-## Se Også
-
-- YAML offisiell side: https://yaml.org
-- LibYAML GitHub-repositorium: https://github.com/yaml/libyaml
-- YAML Wikipedia-side: https://no.wikipedia.org/wiki/YAML
+Selv om `libyaml` gir robust, lavnivåtilgang til parsing og generering av YAML i C, kan det være tungvint for enkle oppgaver på grunn av sitt verbose API. Av disse grunnene foretrekker noen programmerere å bruke biblioteker på høyere nivå eller til og med andre data-serialiseringsformater som JSON når de jobber i C, spesielt når effektiv parsing med minimal kodeoverhead er en prioritet. Imidlertid forblir YAML et populært valg for konfigurasjonsfiler og situasjoner hvor menneskelig lesbarhet er av største betydning. Alternativer som TinyYAML eller innebygging av en tolk på høyere nivå (f.eks. innebygging av Python eller Lua) kan gi mer bekvemmelighet for spesifikke applikasjoner, balansere mellom brukervennlighet og ytelsesbehov.

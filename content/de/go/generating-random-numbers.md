@@ -1,24 +1,29 @@
 ---
-title:                "Generierung von Zufallszahlen"
-date:                  2024-01-27T20:33:44.882028-07:00
+title:                "Zufallszahlen generieren"
+date:                  2024-02-03T17:57:32.605170-07:00
 model:                 gpt-4-0125-preview
-simple_title:         "Generierung von Zufallszahlen"
-
+simple_title:         "Zufallszahlen generieren"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/go/generating-random-numbers.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Was & Warum?
 
-Das Generieren von Zufallszahlen in Go erfolgt durch die Verwendung des `math/rand`-Pakets, um pseudozufällige Zahlen für verschiedene Anwendungen wie die Simulation von Experimenten, die Generierung von Testdaten oder das Hinzufügen von Unvorhersehbarkeit zu Spielen zu erzeugen. Programmierer nutzen diese Funktion, um dynamische und weniger vorhersehbare Softwareverhaltensweisen zu erschaffen.
+Die Generierung von Zufallszahlen in der Programmierung dreht sich darum, eine Zahlenfolge zu erstellen, die nicht besser als durch Zufall vorhergesagt werden kann. Programmierer tun dies aus einer Vielzahl von Gründen, einschließlich Simulationen, Spielen und Sicherheitsanwendungen, wo Unvorhersehbarkeit der Schlüssel zur Funktionalität oder Geheimhaltung ist.
 
 ## Wie geht das:
 
-Um mit Go Zufallszahlen zu erzeugen, müssen Sie das `math/rand`-Paket und das `time`-Paket importieren, um den Zufallszahlengenerator für mehr Unvorhersehbarkeit zu seeden. Hier ist ein einfaches Beispiel:
+In Go werden Zufallszahlen mit dem `math/rand` Paket für Pseudo-Zufallszahlen oder `crypto/rand` für kryptographisch sichere Pseudo-Zufallszahlen generiert. Lassen Sie uns beide erkunden.
 
-```Go
+### Verwendung von `math/rand` für Pseudo-Zufallszahlen
+
+Zuerst importieren Sie das `math/rand` Paket und das `time` Paket, um den Generator zu initialisieren. Das Initialisieren stellt sicher, dass Sie bei jedem Lauf eine andere Zahlenfolge erhalten.
+
+```go
 package main
 
 import (
@@ -28,32 +33,42 @@ import (
 )
 
 func main() {
-	// Den Generator seeden
 	rand.Seed(time.Now().UnixNano())
-	
-	// Eine zufällige Ganzzahl zwischen 0 und 99 generieren
-	randomInt := rand.Intn(100)
-	fmt.Println("Zufällige Ganzzahl:", randomInt)
-	
-	// Eine zufällige Gleitkommazahl zwischen 0.0 und 1.0 generieren
-	randomFloat := rand.Float64()
-	fmt.Println("Zufälliger Gleitkomma:", randomFloat)
+	fmt.Println("Eine zufällige Zahl:", rand.Intn(100)) // Generiert eine Zahl zwischen 0 und 99
 }
 ```
 
-Ein mögliches Ausgabebeispiel wäre:
+Beispielausgabe: `Eine zufällige Zahl: 42`
 
+### Verwendung von `crypto/rand` für kryptographisch sichere Pseudo-Zufallszahlen
+
+Für sicherheitssensitivere Anwendungen eignet sich das `crypto/rand` Paket, da es Zufallszahlen generiert, die schwer vorherzusagen sind, was sie für kryptographische Operationen geeignet macht.
+
+```go
+package main
+
+import (
+	"crypto/rand"
+	"fmt"
+	"math/big"
+)
+
+func main() {
+	n, _ := rand.Int(rand.Reader, big.NewInt(100))
+	fmt.Println("Eine sichere zufällige Zahl:", n)
+}
 ```
-Zufällige Ganzzahl: 42
-Zufälliger Gleitkomma: 0.7304601899194229
-```
 
-Denken Sie daran, dass jede Ausführung aufgrund des Seedings mit der aktuellen Zeit unterschiedliche Zahlen produziert.
+Beispielausgabe: `Eine sichere zufällige Zahl: 81`
 
-## Tiefergehend
+## Vertiefung
 
-Das `math/rand`-Paket in Go implementiert pseudozufällige Zahlengeneratoren (Pseudo-Random Number Generators, PRNGs) für verschiedene Verteilungen. Obwohl es für viele Anwendungen sehr effektiv ist, ist es wichtig zu beachten, dass die von `math/rand` generierten Zahlen aufgrund ihrer deterministischen Natur nicht für kryptografische Zwecke geeignet sind. Für kryptografische Bedürfnisse ist das `crypto/rand`-Paket die richtige Wahl, da es einen sicheren Zufallszahlengenerator bereitstellt.
+Der Kernunterschied zwischen den Paketen `math/rand` und `crypto/rand` in Go ergibt sich aus ihrer Quelle der Entropie und ihren vorgesehenen Anwendungsfällen. `math/rand` generiert Pseudo-Zufallszahlen basierend auf einem anfänglichen Seed; daher ist die Sequenz deterministisch und kann vorhergesagt werden, wenn der Seed bekannt ist. Das ist geeignet für Szenarien, bei denen hohe Leistung und nicht absolute Unvorhersehbarkeit das Hauptanliegen ist, wie bei Simulationen oder Spielen.
 
-Die Implementierung von `math/rand` basiert auf einem subtraktiven Zufallszahlengenerator-Algorithmus, der effizient ist und eine relativ lange Periode hat, bevor Sequenzen wiederholt werden. Für Anwendungen, die wirklich zufällige Sequenzen benötigen, wie kryptografische Operationen, werden jedoch Hardware-Zufallszahlengeneratoren (Random Number Generators, RNGs) oder das `crypto/rand`-Paket, das Schnittstellen zu systemspezifischen sicheren Zufälligkeitsquellen bietet, empfohlen.
+Auf der anderen Seite leitet `crypto/rand` Zufälligkeit vom zugrunde liegenden Betriebssystem ab, was es für kryptografische Anwendungen geeignet macht, bei denen Unvorhersehbarkeit entscheidend ist. Dies geht jedoch auf Kosten der Leistung und Komplexität bei der Handhabung der generierten Zahlen (wie das Umgehen mit dem Typ `*big.Int` für Ganzzahlen).
 
-`math/rand` ermöglicht das Seeden zur Einführung von Variabilität, aber derselbe Seed wird immer dieselbe Zahlenfolge erzeugen, was die deterministische Natur seiner Zufälligkeit hervorhebt. Dies macht es geeignet für Simulationen oder Spiele, bei denen Reproduzierbarkeit für das Debugging oder Testzwecke wünschenswert sein könnte.
+Historisch gesehen hat die Vorstellung der Erzeugung von Zufallszahlen in Computern immer am Rand der wahren "Zufälligkeit" getanzt, wobei frühe Systeme stark von deterministischen Algorithmen abhängig waren, die Zufälligkeit nachahmten. Mit der Evolution der Computer entwickelten sich auch diese Algorithmen weiter und integrierten ausgefeiltere Quellen der Entropie aus ihrer Umgebung.
+
+Trotz dieser Fortschritte ist die Suche nach perfekter Zufälligkeit in der Informatik an sich paradox, angesichts der deterministischen Natur von Computern selbst. Deshalb sind für die meisten Anwendungen, bei denen Vorhersehbarkeit schädlich wäre, kryptographisch sichere Pseudo-Zufallszahlen aus Quellen wie `crypto/rand` die bessere Alternative, trotz ihres Mehraufwands.
+
+Im Wesentlichen geht Go mit zwei verschiedenen Paketen für die Generierung von Zufallszahlen elegant auf den Kompromiss zwischen Leistung und Sicherheit ein und ermöglicht Entwicklern die Wahl basierend auf ihren spezifischen Bedürfnissen.

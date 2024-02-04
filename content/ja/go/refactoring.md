@@ -1,73 +1,127 @@
 ---
 title:                "リファクタリング"
-date:                  2024-01-26T01:36:57.595621-07:00
+date:                  2024-02-03T18:07:34.706757-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "リファクタリング"
-
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/go/refactoring.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## 何となぜ？
-リファクタリングとは、外部の振る舞いを変えずに既存のコンピュータコードの構造を再編成するプロセスです。プログラマーは、ソフトウェアの非機能属性（読みやすさや保守性など）を改善するためにこれを行います。これにより、コードを理解しやすくし、複雑さを減らし、バグをより簡単に見つける助けとなります。
+
+プログラミングにおけるリファクタリングは、既存のコンピュータコードの構造を変更すること—ファクタリングを変えること—を指しますが、その外部的な振る舞いは変えません。プログラマーはこのプロセスを、コードの可読性を向上させ、複雑さを減らし、保守性を高めるために行います。これにより最終的に、ソフトウェアを理解しやすく、変更しやすくします。
 
 ## 方法：
-簡単なGoコードのリファクタリング例を試してみましょう。数字のスライスの平均を計算するスニペットを取り、明確さと再利用性のためにリファクタリングします。
 
-オリジナルのコード:
-```Go
+Goにおいて、リファクタリングは単純なコードの調整からより複雑な変更に至るまでさまざまです。基本的な例から始めてみましょう：初期のGo関数をより読みやすく効率的に簡素化する。
+
+**リファクタリング前：**
+
+```go
 package main
 
 import "fmt"
 
-func main() {
-    numbers := []float64{8, 12, 15, 10, 7, 14}
-    var sum float64
-    for _, num := range numbers {
-        sum += num
+func CalculatePrice(quantity int, price float64) float64 {
+    var total float64
+    if quantity > 0 {
+        total = float64(quantity) * price
+    } else {
+        total = 0
     }
-    average := sum / float64(len(numbers))
-    fmt.Println("Average:", average)
+    return total
+}
+
+func main() {
+    fmt.Println(CalculatePrice(10, 5.99))  // 出力: 59.9
 }
 ```
 
-リファクタリングされたコード:
-```Go
+**リファクタリング後：**
+
+```go
 package main
 
 import "fmt"
 
-// CalculateAverageはfloat64のスライスを受け取り、平均を返します。
-func CalculateAverage(numbers []float64) float64 {
-    sum := 0.0
-    for _, num := range numbers {
-        sum += num
+func CalculatePrice(quantity int, price float64) float64 {
+    if quantity > 0 {
+        return float64(quantity) * price
     }
-    return sum / float64(len(numbers))
+    return 0
 }
 
 func main() {
-    numbers := []float64{8, 12, 15, 10, 7, 14}
-    average := CalculateAverage(numbers)
-    fmt.Println("Average:", average)
+    fmt.Println(CalculatePrice(10, 5.99))  // 出力: 59.9
 }
 ```
 
-リファクタリングされたコードでは、平均を計算するロジックを`CalculateAverage`という別の関数に抽出しました。これにより、`main`関数はより簡潔になり、平均計算のロジックが再利用可能でテスト可能になります。
+リファクタリングされたバージョンでは、`else`が削除され、これにより関数の流れが単純化されましたが、その出力には影響しません—これはGoにおける基本的だが影響力のあるリファクタリング技術の例です。
 
-## ディープダイブ
-コードのリファクタリングは現代の概念ではありません。広範なコンピュータの使用以前から存在します。その実践は、機械工学の領域や、それ以前の時代に始まった可能性があります。ソフトウェアでは、1990年代にオブジェクト指向プログラミングとエクストリームプログラミング（XP）の登場とともに、より体系化され、特にマーティン・ファウラーの画期的な本「リファクタリング：既存のコードの改善設計」の影響を受けました。
+より高度な例として、再利用性とテスト可能性を向上させるためにインターフェイスを使用する関数のリファクタリングを考えてみましょう：
 
-リファクタリング技術には数多くあり、変数の単純な名前変更から、メソッドやクラスの抽出のようなより複雑なパターンまであります。鍵となるのは、ソフトウェアの機能を変更せずに内部構造を改善する小さな、段階的な変更を加えることです。
+**リファクタリング前：**
 
-Goを使用する場合、その言語の単純さと強力な標準ライブラリのおかげで、リファクタリングは比較的簡単になります。しかし、リファクタリングがバグを導入しないことを確かめるために、良い単体テストセットを持っていることが依然として重要です。`gorename`や`gofmt`のようなツールはプロセスの一部を自動化するのに役立ち、IDEはしばしば組み込みのリファクタリングサポートを持っています。
+```go
+package main
 
-手動リファクタリングに加えて、Goのための自動コードリファクタリングツールがいくつか利用可能であり、例えばGoLandのリファクタリングツールやGo Refactorなどがあります。これらはプロセスを早めることができますが、コードを理解し、考え抜かれた変更を加える代わりにはなりません。
+import "fmt"
 
-## 参照
- - [Goでのリファクタリング：シンプルは美しい](https://go.dev/blog/slices)
- - [Effective Go：インターフェースを使ったリファクタリング](https://go.dev/doc/effective_go#interfaces)
- - [マーティン・ファウラーのリファクタリングページ](https://refactoring.com/)
- - [GoLandリファクタリングツール](https://www.jetbrains.com/go/features/refactorings/)
+type Logger struct{}
+
+func (l Logger) Log(message string) {
+    fmt.Println("Log:", message)
+}
+
+func ProcessData(data string, logger Logger) {
+    // ここでデータ処理を想像してください
+    logger.Log("Data processed")
+}
+
+func main() {
+    logger := Logger{}
+    ProcessData("example data", logger)
+}
+```
+
+**リファクタリング後：**
+
+```go
+package main
+
+import "fmt"
+
+type Logger interface {
+    Log(message string)
+}
+
+type ConsoleLogger struct{}
+
+func (c ConsoleLogger) Log(message string) {
+    fmt.Println("Log:", message)
+}
+
+func ProcessData(data string, logger Logger) {
+    // データ処理は変わりません
+    logger.Log("Data processed")
+}
+
+func main() {
+    logger := ConsoleLogger{}
+    ProcessData("example data", logger)
+}
+```
+
+具体的な型（`ConsoleLogger`）の代わりにインターフェイス（`Logger`）を使用するようにリファクタリングすることで、関数の柔軟性が向上し、データ処理と特定のロギング実装との結合が緩和されます。
+
+## 深掘り
+
+Goでのリファクタリングは、シンプルさ（Goのコア哲学の1つ）と大規模なソフトウェアプロジェクトで必要な柔軟性のバランスを取る必要があります。ジェネリクスなし（最近まで）や読みやすさに重点を置いた機能のミニマリスティックなアプローチを持つGoは、開発者をよりシンプルで、より保守しやすいコード構造に自然に導きます。しかしこれは、Goのコードがリファクタリングの恩恵を受けないという意味ではありません。これは、リファクタリングは常に明瞭さとシンプルさを優先しなければならないことを意味します。
+
+歴史的に、Goが特定の機能（例えば、Go 1.18より前のジェネリクス）を欠いていたため、コードの再利用と柔軟性のために創造的だが時には複雑な解決策に頼ることになり、抽象化のためのリファクタリングが一般的な実践となりました。Go 1.18でジェネリクスが導入されたことにより、Go開発者は現在、この機能を活用して型の安全性とコードの再利用を向上させるためにレガシーコードをリファクタリングしています。これは、Goにおけるリファクタリング実践の進化を示しています。
+
+それにもかかわらず、`gofmt`（コードフォーマット用）や`go vet`（怪しい構造を特定するため）など、Goのツールセットは、広範囲にわたるリファクタリングの必要性を減らすために、清潔なコードベースの維持をサポートしています。リファクタリングはGoプログラマーの武器庫において貴重なツールである一方で、最初からGoの言語機能とツールを賢明に使用することで、後に複雑なリファクタリングが必要となる可能性を最小限に抑えることができます。

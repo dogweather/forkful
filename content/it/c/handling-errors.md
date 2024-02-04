@@ -1,55 +1,85 @@
 ---
 title:                "Gestione degli errori"
-date:                  2024-01-26T00:37:16.459097-07:00
-model:                 gpt-4-1106-preview
+date:                  2024-02-03T17:58:02.536018-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Gestione degli errori"
-
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/c/handling-errors.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Cosa e perché?
-Gestire gli errori in C significa aspettarsi l'inaspettato. Impedisce ai programmi di andare in tilt quando incontrano problemi. I programmatori lo fanno per gestire gli errori con eleganza e mantenere il loro codice affidabile.
+## Cosa & Perché?
+
+Gestire gli errori in C comporta il rilevamento e la risposta a condizioni anomale che si verificano durante l'esecuzione del programma. I programmatori lo fanno per prevenire bug, crash e comportamenti imprevedibili, assicurando che il software funzioni in modo affidabile ed efficiente in vari scenari.
 
 ## Come fare:
 
-Vediamo come farlo in C:
+C non ha un supporto integrato per le eccezioni come alcuni altri linguaggi. Invece, si affida a poche strategie convenzionali di gestione degli errori, come il ritorno di valori speciali dalle funzioni e l'impostazione di variabili globali come `errno`.
 
-```C
+**Ritornare Valori Speciali**
+
+Le funzioni possono indicare errori restituendo un valore specifico che è improbabile sia un risultato valido. Ecco un esempio con gli interi:
+
+```c
 #include <stdio.h>
-#include <stdlib.h>
-#include <errno.h>
+
+int inverso(int numero, double *risultato) {
+    if (numero == 0) {
+        return -1; // Caso di errore
+    } else {
+        *risultato = 1.0 / numero;
+        return 0; // Successo
+    }
+}
 
 int main() {
-    FILE *fp = fopen("nonexistentfile.txt", "r");
-    if (fp == NULL) {
-        perror("Errore nell'apertura del file");
-        return EXIT_FAILURE;
+    double risultato;
+    if (inverso(0, &risultato) < 0) {
+        printf("Errore: Divisione per zero.\n");
+    } else {
+        printf("L'inverso è: %f\n", risultato);
     }
-    // Fai qualcosa con il file
-    fclose(fp);
-    return EXIT_SUCCESS;
+    
+    return 0;
 }
 ```
 
-Output di esempio quando il file non esiste:
+**Output:**
 ```
-Errore nell'apertura del file: Nessun file o directory
+Errore: Divisione per zero.
+```
+
+**Verificare `errno`**
+
+Per le funzioni di libreria, specialmente quelle che interagiscono con il sistema o con l'OS (come l'I/O su file), `errno` viene impostato quando si verifica un errore. Per utilizzarlo, includere `errno.h` e controllare `errno` dopo un sospetto fallimento:
+
+```c
+#include <stdio.h>
+#include <errno.h>
+#include <string.h>
+
+int main() {
+    FILE *file = fopen("inesistente.txt", "r");
+    if (file == NULL) {
+        printf("Errore nell'apertura del file: %s\n", strerror(errno));
+    }
+    
+    return 0;
+}
+```
+
+**Output:**
+```
+Errore nell'apertura del file: No such file or directory
 ```
 
 ## Approfondimento
 
-Nei primi tempi del C, la gestione degli errori era essenziale - per lo più codici di ritorno e controlli manuali. Da qui `errno`, una variabile globale aggiornata quando le funzioni falliscono. Non è thread-safe di per sé, perciò sono state introdotte le funzioni `strerror` e `perror` per una migliore segnalazione degli errori.
+Storicamente, il design minimalista del linguaggio di programmazione C ha escluso un meccanismo integrato di gestione delle eccezioni, riflettendo le sue origini di programmazione di sistema a basso livello, dove sono cruciali le massime prestazioni e il controllo diretto sul sistema. Invece, C adotta un approccio più manuale alla gestione degli errori che si adatta alla sua filosofia di dare ai programmatori il massimo controllo possibile, anche a costo della comodità.
 
-Alternative? Il C moderno non è limitato ad `errno`. Ci sono setjmp e longjmp per salti non-locali quando si verifica un disastro. Alcuni preferiscono definire i propri codici di errore, mentre altri optano per strutture simili alle eccezioni in C++.
+Sebbene questo approccio si allinei bene agli obiettivi di progettazione di C, può anche portare a codice di controllo degli errori verboso e alla potenziale mancata verifica degli errori, che i linguaggi moderni affrontano con meccanismi strutturati di gestione delle eccezioni. Ad esempio, le eccezioni in linguaggi come Java o C# consentono un elaborazione centralizzata degli errori, rendendo il codice più pulito e la gestione degli errori più semplice. Tuttavia, le eccezioni introducono il loro sovraccarico e complessità, che potrebbero non essere ideali per la programmazione a livello di sistema, dove C eccelle.
 
-I dettagli implementativi possono essere complessi. Ad esempio, `errno` è thread-safe nei sistemi conformi a POSIX grazie alla magia del Thread Local Storage (TLS). Nei sistemi embedded, dove le risorse sono preziose, il codice di gestione degli errori personalizzato potrebbe essere preferito rispetto agli approcci standard che potrebbero appesantire il software.
-
-## Vedi anche
-
-- Un'analisi dettagliata di `errno`: https://en.cppreference.com/w/c/error/errno
-- Per la sicurezza dei thread, vedi i thread POSIX e errno: http://man7.org/linux/man-pages/man3/pthread_self.3.html
-- Un'introduzione a setjmp e longjmp: https://www.cplusplus.com/reference/csetjmp/
-- Per la gestione delle eccezioni in C++, consulta: https://isocpp.org/wiki/faq/exceptions
+Nonostante la sua grezzezza, questa gestione manuale degli errori in C ha informato il design della gestione degli errori in molti altri linguaggi, offrendo un modello in cui l'esplicità delle condizioni di errore può portare a un codice più prevedibile e debuggabile. Per i sistemi critici, dove i fallimenti devono essere gestiti con grazia, il paradigma di gestione degli errori di C—combinato con le migliori pratiche moderne come le librerie di gestione degli errori e le convenzioni—assicura robustezza e affidabilità.

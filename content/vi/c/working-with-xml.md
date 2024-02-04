@@ -1,60 +1,87 @@
 ---
 title:                "Làm việc với XML"
-date:                  2024-01-28T22:11:16.873612-07:00
+date:                  2024-02-03T18:13:37.501179-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Làm việc với XML"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/c/working-with-xml.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Làm Thế Nào & Tại Sao?
-Làm việc với XML trong C bao gồm việc phân tích cú pháp, tạo và thao tác với các tệp XML - cơ bản là lưu trữ dữ liệu có cấu trúc. Các lập trình viên làm điều này để tương tác với dữ liệu trong một định dạng dễ di chuyển và dễ đọc cho con người, thường được sử dụng cho cấu hình, trao đổi dữ liệu, và nhiều hơn nữa.
+## Cái gì & Tại sao?
 
-## Cách Thực Hiện:
-Dưới đây là một đoạn mã sử dụng thư viện `libxml2` để phân tích cú pháp một tệp XML và lấy phần tử gốc.
+Làm việc với XML trong C bao gồm việc phân tích cú pháp, truy vấn và thao tác với các tài liệu XML sử dụng các thư viện khác nhau. Các lập trình viên tương tác với XML do sự sử dụng rộng rãi của nó trong các dịch vụ web, các tệp cấu hình, và trao đổi dữ liệu giữa các hệ thống khác nhau, yêu cầu kỹ năng xử lý XML một cách hiệu quả cho phát triển ứng dụng mạnh mẽ.
 
-```C
+## Làm thế nào:
+
+C không có hỗ trợ sẵn cho XML, vì vậy bạn sẽ cần sử dụng các thư viện bên ngoài. Một lựa chọn phổ biến là `libxml2`, một thư viện ổn định và giàu tính năng. Dưới đây là cách đọc và phân tích cú pháp một tệp XML sử dụng `libxml2`.
+
+Đầu tiên, đảm bảo bạn đã cài đặt `libxml2` trên hệ thống của mình. Bạn có thể cần phải cài đặt nó thông qua trình quản lý gói của mình (ví dụ: `apt-get install libxml2-dev` trên hệ thống Debian).
+
+Tiếp theo, bao gồm tiêu đề `libxml2` trong chương trình C của bạn:
+
+```c
+#include <libxml/parser.h>
+#include <libxml/tree.h>
+```
+
+Bây giờ, hãy viết một chương trình đơn giản để phân tích cú pháp một tệp XML và in ra tên của các phần tử cấp đầu tiên:
+
+```c
 #include <stdio.h>
 #include <libxml/parser.h>
 #include <libxml/tree.h>
 
-int main() {
-    xmlDoc *doc = NULL;
+int main(void) {
+    xmlDoc *document = NULL;
     xmlNode *root_element = NULL;
 
-    // Phân tích cú pháp tệp XML
-    doc = xmlReadFile("example.xml", NULL, 0);
+    // Khởi tạo thư viện và kiểm tra không khớp ABI tiềm năng
+    LIBXML_TEST_VERSION
 
-    // Lấy phần tử gốc
-    root_element = xmlDocGetRootElement(doc);
+    // Phân tích cú pháp tệp và lấy DOM
+    document = xmlReadFile("your_file.xml", NULL, 0);
 
-    printf("Phần Tử Gốc: %s\n", root_element->name);
+    if (document == NULL) {
+        printf("Không thành công trong việc phân tích cú pháp tệp XML\n");
+        return -1;
+    }
 
-    // Giải phóng tài liệu
-    xmlFreeDoc(doc);
+    // Lấy nút phần tử gốc
+    root_element = xmlDocGetRootElement(document);
 
-    // Dọn dẹp parser
+    for (xmlNode *currentNode = root_element; currentNode; currentNode = currentNode->next) {
+        if (currentNode->type == XML_ELEMENT_NODE) {
+            printf("Loại Nút: Phần tử, tên: %s\n", currentNode->name);
+        }
+    }
+
+    // Giải phóng bộ nhớ được cấp phát cho bộ phân tích cú pháp và DOM
+    xmlFreeDoc(document);
+
+    // Dọn dẹp và kiểm tra rò rỉ
     xmlCleanupParser();
+    xmlMemoryDump(); // Tùy chọn
 
     return 0;
 }
 ```
 
-Kết quả mẫu cho một XML với gốc `<data>` có thể sẽ là:
-```
-Phần Tử Gốc: data
+Để biên dịch chương trình này, hãy đảm bảo liên kết với `libxml2`:
+
+```sh
+gcc -o xml_example xml_example.c $(xml2-config --cflags --libs)
 ```
 
-## Đào Sâu
-XML, hay Ngôn ngữ Đánh dấu Mở rộng, có từ cuối những năm '90, cung cấp một cách để mô tả và cấu trúc dữ liệu. Trong C, `libxml2` là lựa chọn hàng đầu. Nó mạnh mẽ, mặc dù không dễ dàng nhất cho người mới. Các lựa chọn khác bao gồm `tinyxml2`, nhẹ hơn và thân thiện với người mới bắt đầu hơn. Về thực hiện, C không có hỗ trợ XML sẵn có, vì vậy các thư viện lấp đầy khoảng trống. Chúng thay đổi về kích thước, tốc độ, độ phức tạp, và khả năng di động. Hầu hết cung cấp các phương thức phân tích cú pháp DOM và SAX: DOM tải toàn bộ vào bộ nhớ, tốt cho các tài liệu nhỏ; SAX được điều khiển bởi sự kiện, xử lý các phần tử ngay lập tức, tốt hơn cho các tệp lớn. Cả hai đều có các trường hợp sử dụng và sự đánh đổi của chúng.
+Giả sử bạn có một tệp XML có tên là `your_file.xml`, chạy chương trình đã biên dịch nên in ra tên của các phần tử cấp đầu tiên của nó.
 
-## Xem Thêm
-- [libxml2](http://xmlsoft.org/)
-- [tinyxml2 trên GitHub](https://github.com/leethomason/tinyxml2)
-- [Hướng dẫn XML trên w3schools](https://www.w3schools.com/xml/)
-- [Thông số kỹ thuật XML của W3C](https://www.w3.org/XML/)
+## Hiểu sâu hơn
+
+Sự tương tác giữa C và XML là câu chuyện về việc đưa hai thế giới cực kỳ khác biệt lại với nhau: mô hình cấu trúc, byte-level, quy trình của C và mô hình phân cấp, dài dòng, và tập trung vào tài liệu của XML. Khi tích hợp khả năng xử lý XML vào các chương trình C, các nhà phát triển tận dụng những điểm mạnh của C - như tốc độ và truy cập bộ nhớ cấp thấp - để phân tích cú pháp và thao tác hiệu quả các tài liệu XML.
+
+`libxml2`, phát triển như một phần của dự án GNOME, đã trở nên chuẩn mực de facto cho việc xử lý XML trong C do sự hỗ trợ toàn diện cho các tiêu chuẩn XML và hiệu suất của nó. Nó thể hiện nhiều năm nỗ lực phát triển và đóng góp từ cộng đồng, làm cho nó vững chắc và hiệu quả cho hầu hết các tác vụ XML.
+
+Mặc dù `libxml2` cung cấp các khả năng mạnh mẽ, cần lưu ý rằng sự phức tạp của việc phân tích cú pháp và thao tác XML có thể giới thiệu một khoản chi phí đáng kể. Trong các kịch bản mà sự dài dòng và phức tạp của XML là không thể biện minh, các phương thức thay thế như JSON có thể được ưa chuộng hơn cho trao đổi dữ liệu. Tuy nhiên, đối với các ứng dụng hoặc môi trường tập trung vào XML hoặc nơi sử dụng XML được ăn sâu, việc thành thạo sử dụng `libxml2` trong C mở ra khả năng làm việc với nhiều loại tài liệu và API XML, tạo cầu nối giữa ngôn ngữ lập trình C và thế giới xử lý tài liệu có cấu trúc.

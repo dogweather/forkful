@@ -1,63 +1,94 @@
 ---
 title:                "YAML के साथ काम करना"
-date:                  2024-01-19
+date:                  2024-02-03T18:15:12.106078-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "YAML के साथ काम करना"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/c/working-with-yaml.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (क्या और क्यों?)
-YAML का इस्तेमाल डाटा का सीरियलाइजेशन के लिए होता है, ज्यादातर कॉन्फिग फाइलों में। प्रोग्रामर्स इसे इस्तेमाल करते हैं क्योंकि यह समझने में आसान होता है और ह्यूमन-रीडेबल होता है।
+## क्या और क्यों?
 
-## How to: (कैसे करें:)
-आप C प्रोग्रामिंग भाषा में YAML फाइलों को पढ़ने और लिखने के लिए `libyaml` जैसे लाइब्रेरीज का इस्तेमाल कर सकते हैं।
+YAML, जिसका मतलब है "YAML Ain't Markup Language," एक मनुष्य-पठनीय डेटा सीरियलाइजेशन मानक है जिसका उपयोग सभी प्रकार के एप्लिकेशनों में किया जा सकता है, जैसे कॉन्फ़िगरेशन फाइलों से लेकर डेटा स्टोरेज तक। प्रोग्रामर्स अक्सर YAML के साथ काम करते हैं जब उन्हें कॉन्फ़िगरेशन फाइलों या भाषाओं और सिस्टमों के बीच डेटा आदान-प्रदान के लिए एक आसानी से-पढ़ने और लिखने योग्य प्रारूप की आवश्यकता होती है।
 
-```C
-#include <stdio.h>
+## कैसे करें:
+
+C में YAML के साथ काम करना एक लाइब्रेरी की आवश्यकता होती है, क्योंकि स्टैंडर्ड C लाइब्रेरी YAML पार्सिंग या सीरियलाइजेशन के लिए सीधा समर्थन प्रदान नहीं करती है। C के लिए सबसे लोकप्रिय YAML लाइब्रेरीज में से एक `libyaml` है, जो YAML को पार्स करने और उत्सर्जित करने के लिए निम्न-स्तरीय और उच्च-स्तरीय इंटरफेस दोनों प्रदान करती है। नीचे `libyaml` का उपयोग करके एक सरल YAML फाइल को पार्स करने का एक उदाहरण है:
+
+**सबसे पहले**, आपको `libyaml` लाइब्रेरी को स्थापित करने की आवश्यकता है। यदि आप एक Unix-जैसे सिस्टम पर हैं, तो आमतौर पर आप इसे अपने पैकेज मैनेजर के माध्यम से स्थापित कर सकते हैं। उदाहरण के लिए, Ubuntu पर:
+
+```bash
+sudo apt-get install libyaml-dev
+```
+
+**अगला**, एक सरल YAML फाइल को `config.yaml` नाम से मानें:
+
+```yaml
+name: John Doe
+age: 29
+married: false
+```
+
+**यहाँ** C में इस YAML फाइल को पार्स करने का एक बुनियादी उदाहरण है:
+
+```c
 #include <yaml.h>
+#include <stdio.h>
+#include <stdlib.h>
 
-int main() {
-    FILE *file = fopen("example.yaml", "r");
+void process_yaml_file(const char *filename) {
+    FILE *fh = fopen(filename, "rb");
     yaml_parser_t parser;
     yaml_event_t event;
 
-    // YAML पार्सर शुरू करें
-    if(!yaml_parser_initialize(&parser))
-        fputs("Failed to initialize parser!\n", stderr);
-    if(file == NULL)
-        fputs("Failed to open file!\n", stderr);
+    if (!yaml_parser_initialize(&parser))
+        fputs("YAML पार्सर को आरंभ करने में विफल!\n", stderr);
 
-    yaml_parser_set_input_file(&parser, file);
+    if (fh == NULL)
+        fputs("फाइल खोलने में विफल!\n", stderr);
 
-    // YAML इवेंट्स को पढ़ें
-    while(1) {
+    yaml_parser_set_input_file(&parser, fh);
+
+    while (1) {
         if (!yaml_parser_parse(&parser, &event))
             break;
 
-        // यहाँ आप इवेंट के हिसाब से लॉजिक लिख सकते हैं
+        if (event.type == YAML_SCALAR_EVENT) {
+            printf("मान: %s\n", event.data.scalar.value);
+        }
 
-        if(event.type == YAML_STREAM_END_EVENT)
+        if (event.type == YAML_STREAM_END_EVENT)
             break;
 
         yaml_event_delete(&event);
     }
 
-    // पार्सर और फाइल क्लोज करें
     yaml_parser_delete(&parser);
-    fclose(file);
+    fclose(fh);
+}
+
+int main() {
+    process_yaml_file("config.yaml");
     return 0;
 }
 ```
 
-यह साधारण कोड YAML फाइल से इवेंट्स रीड करता है।
+यह सरल प्रोग्राम एक YAML फाइल को खोलता है, YAML पार्सर को आरंभ करता है, और फाइल पढ़ता है, स्केलर मानों को प्रिंट करता है (इस उदाहरण में, हमारे सरल YAML के क्षेत्र)। ध्यान दें कि इस सरल उदाहरण में त्रुटि जाँच न्यूनतम है और उत्पादन कोड में अधिक रोबस्ट होनी चाहिए।
 
-## Deep Dive (गहराई से जानकारी)
-YAML ("YAML Ain't Markup Language" या शुरुआती समय में "Yet Another Markup Language") डेटा सीरियलाइजेशन के लिए एक ह्यूमन-रीडेबल भाषा है। इसे 2001 में पेश किया गया था। JSON और XML इसके विकल्प हो सकते हैं, लेकिन YAML को ज्यादा पढ़ने में आसान माना जाता है। C में YAML को पार्स करने के लिए `libyaml` एक पोपुलर लाइब्रेरी है, जो इवेंट-आधारित पार्सिंग प्रदान करती है।
+हमारे `config.yaml` के साथ प्रोग्राम चलाने पर आउटपुट होगा:
 
-## See Also (इसे भी देखें)
-- The Official YAML Website: [YAML](https://yaml.org)
-- libyaml GitHub Repository: [libyaml](https://github.com/yaml/libyaml)
-- YAML Syntax Overview: [Learn YAML in Y Minutes](https://learnxinyminutes.com/docs/yaml/)
+```plaintext
+मान: John Doe
+मान: 29
+मान: false
+```
+
+## गहराई में जानकारी
+
+YAML को पहली बार 2001 में जारी किया गया था और इसे अन्य डेटा सीरियलाइजेशन प्रारूपों जैसे कि XML या JSON की तुलना में अधिक पठनीय और उपयोगकर्ता-अनुकूल होने के लिए डिजाइन किया गया था, अपने डिजाइन दर्शन के लिए C, Perl, और Python जैसी कई भाषाओं से उधार लेते हुए। पठनीयता और मानव संशोधन की सुविधा में इसके लाभों के बावजूद, YAML को कार्यक्रमात्मक रूप से पार्स करना इसकी इंडेंटेशन पर निर्भरता और संदर्भों और कस्टम प्रकारों सहित इसके विस्तृत फीचर सेट के कारण जटिल हो सकता है।
+
+जबकि `libyaml` C में YAML को पार्स करने और उत्सर्जित करने के लिए एक मजबूत, निम्न-स्तरीय एक्सेस प्रदान करती है, यह इसके शब्दाडंबरपूर्ण API के कारण सरल कार्यों के लिए दुष्कर हो सकती है। इन कारणों से, कुछ प्रोग्रामर जब C में काम कर रहे होते हैं तो JSON जैसे अन्य डेटा सीरियलाइजेशन प्रारूपों का उपयोग करना पसंद करते हैं, खासकर जब न्यूनतम कोड भार के साथ प्रदर्शनी पार्सिंग एक प्राथमिकता होती है। हालांकि, YAML कॉन्फ़िगरेशन फाइलों और मानव पठनीयता महत्वपूर्ण होने की स्थितियों में एक लोकप्रिय विकल्प बना हुआ है। TinyYAML जैसे विकल्प या एक उच्च-स्तरीय इंटरप्रेटर को एम्बेड करना (उदाहरण के लिए, Python या Lua को एम्बेड करना) विशिष्ट एप्लिकेशनों के लिए अधिक सुविधा प्रदान कर सकता है, उपयोग में आसानी और प्रदर्शन की आवश्यकताओं के बीच संतुलन बिठाते हुए।

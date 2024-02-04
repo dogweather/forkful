@@ -1,64 +1,100 @@
 ---
 title:                "Journalisation"
-date:                  2024-01-26T00:59:38.075288-07:00
-model:                 gpt-4-1106-preview
+date:                  2024-02-03T17:58:48.144656-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Journalisation"
-
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/c/logging.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
-La journalisation, ou logging en anglais, consiste essentiellement à consigner ce que fait votre programme, généralement en écrivant des messages dans un fichier ou un terminal. Les programmeurs le font pour suivre les événements, diagnostiquer des problèmes et pour avoir une trace d'audit qui raconte l'histoire du fonctionnement d'une application au fil du temps.
+
+La journalisation en C consiste à enregistrer le flux et les événements notables d'un programme pendant son exécution, fournissant un examen tangible de son comportement et de sa performance. Les programmeurs utilisent la journalisation à des fins de débogage, pour surveiller la santé du logiciel, et assurer la sécurité du système.
 
 ## Comment faire :
-Commençons par quelques bases. C ne dispose pas d'un cadre intégré de logging, mais vous pouvez créer quelque chose de simple avec `stdio.h`. Voici comment :
+
+En C, la journalisation peut être réalisée avec des opérations de fichiers basiques ou en utilisant des bibliothèques plus sophistiquées. Pour simplifier, nous commencerons avec la bibliothèque d’E/S standard. Les extraits suivants montrent des implémentations de journalisation basiques.
+
+Pour enregistrer des messages simples :
+
+```c
+#include <stdio.h>
+
+int main() {
+    FILE *logFile;
+    logFile = fopen("application.log", "a"); // Ouvre le fichier log en mode ajout
+    
+    if (logFile == NULL) {
+        perror("Erreur lors de l'ouverture du fichier log.");
+        return -1;
+    }
+    
+    fprintf(logFile, "Démarrage de l'application.\n");
+    
+    // Votre logique d'application ici
+    
+    fprintf(logFile, "Application terminée avec succès.\n");
+    fclose(logFile);
+    
+    return 0;
+}
+```
+
+Sortie dans `application.log` :
+
+```
+Démarrage de l'application.
+Application terminée avec succès.
+```
+
+Pour inclure des journaux plus détaillés avec des horodatages et des niveaux de log :
 
 ```c
 #include <stdio.h>
 #include <time.h>
 
-void logMessage(const char* message) {
-    time_t maintenant;
-    time(&maintenant);
-    char *date = ctime(&maintenant);
-    date[strlen(date) - 1] = '\0'; // Enlever le saut de ligne à la fin du résultat de ctime()
-    printf("[%s] %s\n", date, message);
+void logMessage(FILE *logFile, const char* level, const char* message) {
+    time_t now;
+    time(&now);
+    char* datetime = ctime(&now);
+    datetime[strlen(datetime)-1] = '\0'; // Supprime le caractère de retour à la ligne
+    fprintf(logFile, "[%s] %s - %s\n", datetime, level, message);
 }
 
 int main() {
-    logMessage("L'application a démarré.");
-    // ... votre code ici ...
-    logMessage("L'application fait quelque chose d'important.");
-    // ... la suite de votre code ...
-    logMessage("L'application est terminée.");
+    FILE *logFile;
+    logFile = fopen("detailed.log", "a");
+    
+    if (logFile == NULL) {
+        perror("Erreur lors de l'ouverture du fichier log.");
+        return -1;
+    }
+    
+    logMessage(logFile, "INFO", "Démarrage de l'application");
+    // Votre logique d'application ici
+    logMessage(logFile, "ERROR", "Un exemple d'erreur");
+    
+    fclose(logFile);
+    
     return 0;
 }
 ```
 
-Un exemple de sortie pourrait ressembler à ceci :
+Sortie dans `detailed.log` :
 
 ```
-[Tue Mar 9 12:00:01 2023] L'application a démarré.
-[Tue Mar 9 12:00:02 2023] L'application fait quelque chose d'important.
-[Tue Mar 9 12:00:03 2023] L'application est terminée.
+[Jeu Mar 10 14:32:01 2023] INFO - Démarrage de l'application
+[Jeu Mar 10 14:32:02 2023] ERROR - Un exemple d'erreur
 ```
 
-Bien sûr, dans le monde réel, vous voudriez probablement écrire dans un fichier au lieu du terminal, gérer différents niveaux de logs et peut-être utiliser une bibliothèque prédéfinie.
+## Approfondissement
 
-## Plongée en Profondeur
-Le logging en C a un charme désuet - il est aussi de bas niveau que la plupart du reste du langage. Historiquement, le logging était effectué en utilisant `fprintf` avec `stderr` ou un pointeur de fichier. À mesure que les programmes devenaient plus complexes, les besoins en matière de logging l'étaient également, ce qui a conduit au développement de bibliothèques telles que `syslog` sur les systèmes Unix, qui pouvaient gérer le logging provenant de multiples sources avec divers niveaux d'importance.
+La journalisation en C, comme démontré, repose sur des opérations de fichiers simples, ce qui est efficace mais pas aussi puissant ou flexible que les installations de journalisation dans d'autres langages, comme le module `logging` de Python ou `Log4j` de Java. Pour des capacités de journalisation plus avancées en C, les développeurs se tournent souvent vers des bibliothèques comme `syslog` sur les systèmes de type Unix, qui fournit une gestion de journalisation à l'échelle du système, ou vers des bibliothèques tierces comme `log4c`.
 
-Dans le paysage moderne, il existe de nombreuses bibliothèques de logging en C, telles que `zlog`, `log4c`, et `glog`, qui offrent un ensemble riche de fonctionnalités incluant la rotation des logs, le logging structuré et le logging multithread. Ces solutions permettent un contrôle précis sur la verbosité des logs, les destinations et les formats.
+Historiquement, la journalisation a été une partie intégrante de la programmation, remontant aux pratiques de programmation précoces où le suivi et la compréhension du flux et des erreurs du programme étaient principalement réalisés par des impressions physiques. Au fur et à mesure que les systèmes évoluaient, la journalisation est devenue plus sophistiquée, supportant maintenant différents niveaux de gravité, la rotation des logs, et la journalisation asynchrone.
 
-Lors de la mise en place d'un système de logging, des détails tels que le formatage des horodatages, la gestion des fichiers de logs et la performance nécessitent une considération. L'horodatage des logs est crucial pour la corrélation des événements, tandis que la rotation des logs assure que les fichiers de logs ne consomment pas trop d'espace disque. Le processus de logging doit également être rapide et non bloquant pour le flux principal de l'application afin d'éviter que le logging ne devienne un goulot d'étranglement.
-
-## Voir Aussi
-Pour approfondir les bibliothèques et les pratiques de logging en C, consultez ces ressources :
-
-- Manuel GNU `syslog` : https://www.gnu.org/software/libc/manual/html_node/Syslog.html
-- `zlog` : Une bibliothèque de logging très configurable pour C - https://github.com/HardySimpson/zlog
-- `log4c` : Un cadre de logging pour C inspiré de Log4j - http://log4c.sourceforge.net/
-- `glog` : La bibliothèque de logging de niveau application de Google - https://github.com/google/glog
+Alors que la bibliothèque standard C fournit les outils basiques pour implémenter la journalisation, ses limitations conduisent souvent à la création de cadres de journalisation personnalisés ou à l'adoption de bibliothèques externes pour des solutions de journalisation plus riches en fonctionnalités et flexibles. Malgré ces limitations, comprendre et mettre en œuvre la journalisation basique en C est crucial pour le débogage et la maintenance des logiciels, en particulier dans des environnements où il convient de minimiser les dépendances externes.

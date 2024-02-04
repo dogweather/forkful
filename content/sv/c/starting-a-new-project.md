@@ -1,51 +1,56 @@
 ---
-title:                "Att påbörja ett nytt projekt"
-date:                  2024-01-20T18:03:04.967804-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Att påbörja ett nytt projekt"
-
+title:                "Att starta ett nytt projekt"
+date:                  2024-02-03T18:09:11.823074-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Att starta ett nytt projekt"
 tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/c/starting-a-new-project.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att starta ett nytt projekt innebär att skapa en grund för din kod, ofta med hjälp av en mall eller från scratch. Programmerare gör det för att lösa specifika problem, för att testa nya idéer eller för att skapa något unikt.
 
-## Hur gör man:
-Koden nedan är ett exempel på hur man skapar en enkel "Hello World" i C. Kopiera koden till en fil med namnet `hello.c`, kompilera och kör.
+Att starta ett nytt projekt i C innebär att man sätter upp en grundläggande kodstruktur och miljö för att effektivt hantera utvecklingsuppgifter. Programmerare gör detta för att effektivisera byggprocessen, säkerställa konsekvens och underlätta enklare underhåll och skalbarhet för programvaran över tid.
 
-```c
-#include <stdio.h>
+## Hur man gör:
 
-int main() {
-    printf("Hej Världen!\n");
-    return 0;
-}
+Kärnan i ett C-projekt är källkoden. En typisk startpunkt innebär att skapa en huvudfil, ofta med namnet `main.c`, som innehåller programmets startpunkt. Dessutom är en `Makefile` avgörande för att hantera kompilering för att förenkla byggnadsprojekt.
 
-/* Output:
-Hej Världen!
-*/
+Här är ett minimalt exempel:
+
+1. **Att sätta upp "main.c"**: Denna fil innehåller funktionen `main`, programmets startpunkt.
+
+    ```c
+    // main.c
+    #include <stdio.h>
+
+    int main() {
+        printf("Hej, världen!\n");
+        return 0;
+    }
+    ```
+
+2. **Skapa en Makefile**: Automatiserar byggprocessen, gör det enkelt att kompilera ditt projekt med ett enda kommando.
+
+    ```makefile
+    # Makefile
+    all: main
+
+    main: main.c
+        gcc -o main main.c
+
+    clean:
+        rm -f main
+    ```
+
+I en terminal, kör `make` kompilerar `main.c` till ett exekverbart program med namnet `main`, och att köra `./main` ska ge utskriften:
 ```
-För att kompilera, öppna en terminal och skriv:
-```bash
-gcc hello.c -o hello
-```
-Kör sedan programmet med:
-```bash
-./hello
+Hej, världen!
 ```
 
 ## Djupdykning
-När du startar ett nytt projekt är det bra att känna till lite historia. C har använts sedan 1970-talet och utvecklades ursprungligen av Dennis Ritchie. 
 
-Det finns alternativ för att starta C-projekt, såsom att använda integrerade utvecklingsmiljöer (IDEs) eller byggverktyg som `make`. De kan snabba upp processen och hantera kompliceringar.
-
-När du implementerar ett nytt projekt, tänk på kodstruktur och filorganisation. Projekt blir mer hanterbara när de växer om du följer goda kodpraxis från början.
-
-## Se Även:
-- C Programming Language, 2nd Edition by Brian W. Kernighan and Dennis M. Ritchie: Den definitiva guiden för C.
-- [GCC, the GNU Compiler Collection](https://gcc.gnu.org/): Informationen om kompilatorn som används i exemplet.
-- [Make - GNU Project](https://www.gnu.org/software/make/): Dokumentation och guider för `make`, ett klassiskt byggverktyg för C.
-- [C Programming på Reddit](https://www.reddit.com/r/C_Programming/): En community där du kan diskutera C-relaterade ämnen.
+Att starta ett projekt i C handlar inte bara om att skriva kod; det handlar om att lägga en solid grund för projektledning. Denna praxis har utvecklats från programmeringens tidiga dagar, inspirerad av behovet att organisera och effektivisera processen att kompilera stora, komplexa system från UNIX-världen. GNU Make-systemet, introducerat på 80-talet, revolutionerade detta genom att automatisera byggprocessen, vilket gör det till ett kritiskt verktyg i moderna C-projekt. Dock har framväxten av integrerade utvecklingsmiljöer (IDEs) och andra högnivå-programmeringsspråk introducerat olika projektinitieringspraktiker som kan inkludera mer automatiserade byggsystem, beroendehantering och versionskontrollintegration från starten. Trots dessa framsteg förblir enkelheten och kontrollen som erbjuds av en Makefile och en välorganiserad källkodsmap nyckelelement, särskilt för systemnivåprogrammering där effektivitet och resurshantering är av största vikt. Dock för större projekt börjar verktyg som CMake eller Meson bli att föredra på grund av deras förmåga att hantera komplexa byggnader och plattformsöverskridande kompatibilitet, vilket antyder en trend mot mer sofistikerade projektinitieringsverktyg i C-ekosystemet.

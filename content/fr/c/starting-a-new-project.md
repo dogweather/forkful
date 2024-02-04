@@ -1,48 +1,56 @@
 ---
-title:                "Lancement d'un nouveau projet"
-date:                  2024-01-20T18:02:46.134596-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Lancement d'un nouveau projet"
-
+title:                "Démarrer un nouveau projet"
+date:                  2024-02-03T18:09:31.368574-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Démarrer un nouveau projet"
 tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/c/starting-a-new-project.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Quoi et Pourquoi ?)
+## Quoi & Pourquoi ?
 
-Commencer un nouveau projet, c'est initialiser une structure de base pour coder. On le fait pour partir du bon pied, avec un plan clair et éviter le désordre.
+Commencer un nouveau projet en C nécessite la mise en place d'une structure de code de base et d'un environnement pour gérer efficacement les tâches de développement. Les programmeurs font cela pour rationaliser le processus de construction, garantir la cohérence, et faciliter la maintenance et la scalabilité du logiciel au fil du temps.
 
-## How to (Comment faire) :
+## Comment faire :
 
-Pour débuter, rien de tel que de mettre en place un "Hello, World!" simple. En C, voilà comment ça se passe :
+Au cœur de tout projet C se trouve le code source. Un point de départ typique implique de créer un fichier principal, souvent nommé `main.c`, qui abrite le point d'entrée d'un programme. De plus, un `Makefile` est essentiel pour gérer la compilation afin de rationaliser les constructions de projet.
 
-```C
-#include <stdio.h>
+Voici un exemple minimal :
 
-int main() {
-    printf("Bonjour le monde!\n");
-    return 0;
-}
+1. **Configurer "main.c"** : Ce fichier contient la fonction `main`, le point d'entrée du programme.
+
+    ```c
+    // main.c
+    #include <stdio.h>
+
+    int main() {
+        printf("Bonjour, monde !\n");
+        return 0;
+    }
+    ```
+
+2. **Créer un Makefile** : Automatise le processus de construction, rendant facile de compiler votre projet avec une seule commande.
+
+    ```makefile
+    # Makefile
+    all: main
+
+    main: main.c
+        gcc -o main main.c
+
+    clean:
+        rm -f main
+    ```
+
+Dans un terminal, exécuter `make` compile `main.c` en un exécutable nommé `main`, et exécuter `./main` devrait afficher :
+```
+Bonjour, monde !
 ```
 
-L'exécution affiche :
+## Plongée Profonde
 
-```
-Bonjour le monde!
-```
-
-Ceci vous donne aussi l'occasion de tester votre environnement de développement et de vous assurer que tout fonctionne correctement.
-
-## Deep Dive (Plongée Profonde) :
-
-Historiquement, le programme "Hello, World!" sert de premier pas dans le monde de la programmation en C. C'est Brian Kernighan qui a popularisé cet usage dans le livre "The C Programming Language". Ce n'est pas juste un rite de passage, c'est un test essentiel du système. Pour les alternatives, vous avez des squelettes de projet ou des outils comme `make` ou `CMake` pour structurer le projet dès le début. Ces outils préparent le terrain pour la compilation et la gestion des dépendances plus complexes.
-
-## See Also (Voir Aussi) :
-
-- The C Programming Language by Brian Kernighan and Dennis Ritchie: http://www.dennisritchie.org/books.html
-- GNU Make documentation: https://www.gnu.org/software/make/manual/make.html
-- CMake official webpage: https://cmake.org/
-
-Le C a beaucoup évolué depuis son invention, mais les bases restent les mêmes. Ces ressources vous aideront à construire sur des fondations solides.
+Initier un projet en C ne concerne pas seulement l'écriture du code ; il s'agit de mettre en place une base solide pour la gestion de projet. Cette pratique a évolué dès les premiers jours de la programmation, découlant du besoin d'organiser et de rationaliser le processus de compilation de systèmes larges et complexes issus du monde UNIX. Le système GNU Make, introduit dans les années 80, a révolutionné cela en automatisant le processus de construction, le rendant un outil essentiel dans les projets C modernes. Cependant, l'essor des environnements de développement intégrés (IDE) et d'autres langages de programmation de haut niveau a introduit différentes pratiques d'initialisation de projets qui pourraient inclure des systèmes de construction automatisés, la gestion des dépendances et l'intégration du contrôle de version dès le départ. Malgré ces avancées, la simplicité et le contrôle offerts par un Makefile et un répertoire de code source bien organisé restent inestimables, en particulier pour la programmation au niveau système où l'efficacité et la gestion des ressources sont primordiales. Néanmoins, pour les projets plus importants, des outils comme CMake ou Meson deviennent préférables pour leur capacité à gérer des constructions complexes et la compatibilité multiplateforme, suggérant une tendance vers des outils d'initiation de projet plus sophistiqués dans l'écosystème C.

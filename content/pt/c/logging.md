@@ -1,64 +1,100 @@
 ---
 title:                "Registro de Logs"
-date:                  2024-01-26T01:00:01.363807-07:00
-model:                 gpt-4-1106-preview
+date:                  2024-02-03T17:58:51.984481-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Registro de Logs"
-
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/c/logging.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## O Quê e Porquê?
-Registrar em log é basicamente anotar o que o seu programa está fazendo, tipicamente escrevendo mensagens em um arquivo ou terminal. Programadores fazem isso para acompanhar eventos, diagnosticar problemas e ter um histórico auditável que conta a história da operação de uma aplicação ao longo do tempo.
+## O que & Por quê?
+
+Registrar logs em C envolve documentar o fluxo e eventos notáveis de um programa durante sua execução, fornecendo uma revisão tangível do seu comportamento e desempenho. Programadores utilizam o registro de logs para fins de depuração, monitoramento da saúde do software e garantia da segurança do sistema.
 
 ## Como fazer:
-Vamos começar com alguns conceitos básicos. C não possui um framework de registro em log integrado, mas você pode criar algo simples com `stdio.h`. Veja como:
+
+Em C, o registro de logs pode ser alcançado com operações básicas de arquivo ou usando bibliotecas mais sofisticadas. Para simplicidade, começaremos com a biblioteca padrão de E/S. Os trechos a seguir demonstram implementações básicas de registro de logs.
+
+Para registrar mensagens simples:
+
+```c
+#include <stdio.h>
+
+int main() {
+    FILE *logFile;
+    logFile = fopen("application.log", "a"); // Abrir o arquivo de log no modo de anexação
+    
+    if (logFile == NULL) {
+        perror("Erro ao abrir arquivo de log.");
+        return -1;
+    }
+    
+    fprintf(logFile, "Iniciando aplicação.\n");
+    
+    // Sua lógica de aplicação aqui
+    
+    fprintf(logFile, "Aplicação finalizada com sucesso.\n");
+    fclose(logFile);
+    
+    return 0;
+}
+```
+
+Saída em `application.log`:
+
+```
+Iniciando aplicação.
+Aplicação finalizada com sucesso.
+```
+
+Para incluir logs mais detalhados com carimbos de data/hora e níveis de log:
 
 ```c
 #include <stdio.h>
 #include <time.h>
 
-void logMessage(const char* message) {
-    time_t agora;
-    time(&agora);
-    char *data = ctime(&agora);
-    data[strlen(data) - 1] = '\0'; // Remove a nova linha no final do resultado de ctime()
-    printf("[%s] %s\n", data, message);
+void logMessage(FILE *logFile, const char* level, const char* message) {
+    time_t now;
+    time(&now);
+    char* datetime = ctime(&now);
+    datetime[strlen(datetime)-1] = '\0'; // Remover caractere de nova linha
+    fprintf(logFile, "[%s] %s - %s\n", datetime, level, message);
 }
 
 int main() {
-    logMessage("A aplicação iniciou.");
-    // ... seu código vai aqui ...
-    logMessage("A aplicação está fazendo algo importante.");
-    // ... seu código continua ...
-    logMessage("A aplicação terminou.");
+    FILE *logFile;
+    logFile = fopen("detailed.log", "a");
+    
+    if (logFile == NULL) {
+        perror("Erro ao abrir arquivo de log.");
+        return -1;
+    }
+    
+    logMessage(logFile, "INFO", "Iniciando aplicação");
+    // Sua lógica de aplicação aqui
+    logMessage(logFile, "ERROR", "Um exemplo de erro");
+    
+    fclose(logFile);
+    
     return 0;
 }
 ```
 
-Um exemplo de saída pode parecer com isso:
+Saída em `detailed.log`:
 
 ```
-[Tue Mar 9 12:00:01 2023] A aplicação iniciou.
-[Tue Mar 9 12:00:02 2023] A aplicação está fazendo algo importante.
-[Tue Mar 9 12:00:03 2023] A aplicação terminou.
+[Thu Mar 10 14:32:01 2023] INFO - Iniciando aplicação
+[Thu Mar 10 14:32:02 2023] ERROR - Um exemplo de erro
 ```
 
-Claro que, no mundo real, você provavelmente iria querer escrever em um arquivo em vez de um terminal, lidar com diferentes níveis de log e talvez usar uma biblioteca predefinida.
+## Aprofundamento
 
-## Aprofundando
-Registrar em log em C tem um charme peculiar – é tão baixo nível quanto a maior parte do resto da linguagem. Historicamente, o registro em log era realizado usando `fprintf` com `stderr` ou um ponteiro de arquivo. À medida que os programas se tornavam mais complexos, as necessidades de registro em log também aumentavam, levando ao desenvolvimento de bibliotecas como `syslog` em sistemas Unix, que podiam lidar com logs de múltiplas fontes com vários níveis de importância.
+O registro de logs em C, como demonstrado, depende de operações simples de arquivo, o que é eficaz, mas não tão poderoso ou flexível quanto as facilidades de registro em outras linguagens, como o módulo `logging` do Python ou o `Log4j` do Java. Para capacidades de registro de logs mais avançadas em C, desenvolvedores muitas vezes recorrem a bibliotecas como `syslog` em sistemas semelhantes ao Unix, que fornecem gerenciamento de logs em todo o sistema, ou bibliotecas de terceiros, como `log4c`.
 
-No cenário moderno, existem muitas bibliotecas de registro em log em C disponíveis, como `zlog`, `log4c` e `glog`, que oferecem um conjunto rico de funcionalidades incluindo rotação de logs, registro estruturado e registro multithread. Essas soluções permitem um controle minucioso sobre o verbosidade, destinos e formatos dos logs.
+Historicamente, o registro de logs tem sido uma parte integral da programação, remontando às práticas de programação iniciais onde o rastreamento e a compreensão do fluxo do programa e dos erros eram feitos principalmente através de impressões físicas. À medida que os sistemas evoluíram, o registro de logs tornou-se mais sofisticado, agora suportando vários níveis de severidade, rotação de logs e registro de logs assíncrono.
 
-Ao implementar um sistema de registro em log, detalhes como formatação de data e hora, gerenciamento de arquivos de log e desempenho precisam de consideração. Marcar o tempo nos logs é crucial para correlacionar eventos, enquanto a rotação de logs garante que arquivos de log não consumam muito espaço em disco. O ato de registrar em log também deve ser rápido e não bloquear o fluxo principal da aplicação para evitar que o registro em log se torne um gargalo.
-
-## Veja Também
-Para mergulhar mais fundo nas bibliotecas e práticas de registro em log em C, confira estes recursos:
-
-- Manual do `syslog` do GNU: https://www.gnu.org/software/libc/manual/html_node/Syslog.html
-- `zlog`: Uma biblioteca de registro em log altamente configurável para C - https://github.com/HardySimpson/zlog
-- `log4c`: Um framework de registro em log para C modelado após Log4j - http://log4c.sourceforge.net/
-- `glog`: A biblioteca de registro em log de nível de aplicação do Google - https://github.com/google/glog
+Embora a biblioteca padrão de C forneça as ferramentas básicas para a implementação de registros de logs, suas limitações muitas vezes levam à criação de frameworks de registro personalizados ou à adoção de bibliotecas externas para soluções de registro mais ricas em recursos e flexíveis. Apesar dessas limitações, entender e implementar o registro de logs básico em C é crucial para a depuração e manutenção de software, especialmente em ambientes onde se deseja minimizar dependências externas.

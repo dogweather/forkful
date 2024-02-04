@@ -1,72 +1,61 @@
 ---
-title:                "处理复数"
-date:                  2024-01-26T04:41:05.869538-07:00
+title:                "处理复数的工作"
+date:                  2024-02-03T18:14:06.878721-07:00
 model:                 gpt-4-0125-preview
-simple_title:         "处理复数"
-
+simple_title:         "处理复数的工作"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/go/working-with-complex-numbers.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## 什么和为什么？
-复数，由一个实部和一个虚部组成（比如 5 + 7i），在工程学、物理学和信号处理等领域至关重要。程序员在这些领域里使用复数解决问题，这些问题仅用实数很难解决。
+## 什么以及为什么？
+
+在编程中处理复数涉及操作具有实部和虚部的数字，通常表示为`a + bi`。程序员在各种领域（如工程、物理和数据分析）中处理复数，以解决涉及负数平方根、波形分析等问题。
 
 ## 如何操作：
-Go 对复数有内置的支持。这里有一个快速的操作指南：
+
+在Go语言中，复数是通过内置的`complex`、`real`和`imag`函数，以及`complex64`与`complex128`类型（分别代表64位和128位的复数）来处理的。这里是一个快速入门指南：
 
 ```go
 package main
 
 import (
 	"fmt"
-	"math/cmplx"
 )
 
 func main() {
 	// 创建复数
-	a := complex(2, 3)
-	b := 4 + 5i
+	a := complex(2, 3) // 2+3i
+	b := complex(1, -1) // 1-1i
 
-	// 基本操作
-	fmt.Println("加法:", a+b)
-	fmt.Println("减法:", a-b)
-	fmt.Println("乘法:", a*b)
-	fmt.Println("除法:", a/b)
+	// 算术运算
+	c := a + b
+	fmt.Println("加法:", c) // 输出：加法: (3+2i)
 
-	// 复数的属性
-	fmt.Println("实部:", real(b))
-	fmt.Println("虚部:", imag(b))
-	fmt.Println("共轭:", cmplx.Conj(b))
-	fmt.Println("绝对值:", cmplx.Abs(b))
-	fmt.Println("相位角（弧度）:", cmplx.Phase(b))
+	d := a * b
+	fmt.Println("乘法:", d) // 输出：乘法: (5+1i)
+
+	// 访问实部和虚部
+	realPart := real(a)
+	imagPart := imag(a)
+	fmt.Printf("实部: %.1f, 虚部: %.1f\n", realPart, imagPart) // 输出：实部: 2.0, 虚部: 3.0
+
+	// 可以计算复共轭和幅度
+	conjugate := complex(real(a), -imag(a)) // 手动
+	fmt.Println("a的共轭复数:", conjugate) // 输出：a的共轭复数: (2-3i)
 }
-```
-
-示例输出：
 
 ```
-加法: (6+8i)
-减法: (-2-2i)
-乘法: (-7+22i)
-除法: (0.5609756097560976+0.0487804878048781i)
-实部: 4
-虚部: 5
-共轭: (4-5i)
-绝对值: 6.4031242374328485
-相位角（弧度）: 0.8960553845713439
-```
 
-## 深入探究
-早期，复数曾被怀疑视为无用——一些人认为它们是没有用的！随着时间的推移，它们在描述物理现象中的能力变得明显。它们在量子物理、控制理论和电气工程等领域是基本的，仅仅列举几个领域。
+这个例子涵盖了基础部分，但你可以用复数做更多事情，包括利用`math/cmplx`包进行更高级的操作，如寻找幅度、相位等等。
 
-在 Go 中，使用 `complex128`（实部和虚部各64位）或 `complex64`（各32位）数据类型来表示复数。在底层，这些实际上只是两个 `float64` 或 `float32` 结合在一起。Go 的标准库 `math/cmplx` 提供了复数数学操作的函数。这免去了您的繁琐数学运算，让您专注于解决问题。
+## 深入了解
 
-Go 内置支持的替代方法包括使用外部库或自己处理复数。但这些很少需要，因为 Go 的本地支持既高效又与语言良好集成。
+复数的概念可以追溯到16世纪，但直到19世纪才获得广泛认可和严格的形式化。在计算机编程中，自早期开始，复数就已是科学工程计算中复杂算术的基础。Go对复数的处理方式在编程语言中脱颖而出，它通过内置支持和通过`math/cmplx`包提供的全面标准库支持，使复数成为一等公民。这一设计决策反映了Go对简单性和性能的强调。
 
-## 参见
-查看以下链接了解更多关于 Go 复数功能的信息：
-- Go 官方文档：https://golang.org/pkg/math/cmplx/
-- 关于复数的更深入的数学复习：https://www.mathsisfun.com/numbers/complex-numbers.html
-- 复数在工程学中的实际应用：https://ieeexplore.ieee.org/document/528dunno
+然而，值得注意的是，尽管在Go中处理复数功能强大，但并不总是所有应用的最佳选择，特别是那些需要符号数学或高精度算术的应用程序。专门从事科学计算的语言和环境，如带有NumPy和SciPy等库的Python，或者MATLAB软件，可能为特定应用提供更多的灵活性和更广泛的功能。
+
+话虽如此，对于系统编程和在更大的、对性能敏感的应用中整合复数计算至关重要的环境，Go对复数的原生支持提供了一个独特的、高效的选项。

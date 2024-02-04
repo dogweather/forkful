@@ -1,47 +1,61 @@
 ---
-title:                "Korzystanie z interaktywnego shella (REPL)"
-date:                  2024-01-26T04:11:51.795469-07:00
+title:                "Korzystanie z interaktywnej powłoki (REPL)"
+date:                  2024-02-03T18:10:21.939712-07:00
 model:                 gpt-4-0125-preview
-simple_title:         "Korzystanie z interaktywnego shella (REPL)"
-
+simple_title:         "Korzystanie z interaktywnej powłoki (REPL)"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/c/using-an-interactive-shell-repl.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Co i dlaczego?
-Interaktywna powłoka, czyli pętla czytaj-wykonaj-drukuj (REPL), to narzędzie zapewniające środowisko kodowania w czasie rzeczywistym, umożliwiające natychmiastowe testowanie fragmentów kodu. Programiści używają go, aby szybko uzyskać informacje zwrotne podczas rozwoju, nauki i debugowania.
+
+Interaktywna powłoka, znana również jako pętla czytaj-wykonaj-wypisz (REPL), pozwala programistom wpisywać wyrażenia lub kod i natychmiast widzieć wyniki, co ułatwia naukę i procesy debugowania. Pomimo że C tradycyjnie nie obsługuje natywnie środowisk REPL, nowoczesne narzędzia pozwalają przełamać tę barierę, oferując dynamiczne eksplorowanie programów w C.
 
 ## Jak to zrobić:
-C nie posiada wbudowanego REPL, ale można użyć narzędzi stron trzecich. Oto przykład użycia Cling, interpretera C++, który może również obsługiwać kod C:
 
-```C
-#include <stdio.h>
+Zaangażowanie w REPL dla C może nie być tak bezpośrednie jak w językach takich jak Python czy JavaScript. Jednak narzędzia takie jak `Cling`, interpreter C/C++ oparty na technologii Clang i LLVM, czynią to możliwym. Oto jak zacząć:
 
-int main() {
-    printf("Witaj, świecie REPL!\n");
-    return 0;
-}
+1. **Zainstaluj Cling**: W zależności od systemu operacyjnego, Cling może być dostępny w menadżerze pakietów lub może wymagać kompilacji ze źródeł. Na przykład w Ubuntu, może to być tak proste jak `sudo apt-get install cling`.
+
+2. **Uruchamianie Cling**: Otwórz terminal i wpisz `cling`, aby uruchomić interaktywną powłokę.
+
+```bash
+$ cling
 ```
 
-Wyjście w Cling REPL:
-```
-[cling]$ .x twój_skrypt.c
+3. **Pisanie Kodu**: Teraz możesz bezpośrednio wpisywać kod C do powłoki i zobaczyć natychmiastowe wyniki. Oto prosty przykład:
+
+```c
+[cling]$ #include <stdio.h>
+[cling]$ printf("Witaj, świecie REPL!\n");
 Witaj, świecie REPL!
 ```
 
-Cling wykonuje skrypt i natychmiastowo drukuje wynik.
+4. **Przykład z Zmiennymi i Operacjami**: Eksperymentuj ze zmiennymi i zobacz natychmiastowe wyniki.
 
-## Pogłębiona analiza
-REPL-y są standardem w językach dynamicznych jak Python czy Ruby, ale dla języków kompilowanych, takich jak C, są mniej powszechne. Historycznie, cykl kompilacji-wykonania-debugowania nie sprzyjał interaktywnej eksploracji. Narzędzia takie jak Cling i online kompilatory C oferują doświadczenia podobne do REPL-a, otaczając twój kod C środowiskiem C++.
+```c
+[cling]$ int a = 5;
+[cling]$ int b = 3;
+[cling]$ printf("%d + %d = %d\n", a, b, a+b);
+5 + 3 = 8
+```
 
-Alternatywy dla Cling obejmują interpretery C, takie jak CINT i Ch. Te narzędzia pozwalają na szybką iterację, ale mogą nie być odpowiednie dla wszystkich scenariuszy rozwoju ze względu na ograniczenia wydajności i wsparcie dla złożonych funkcji.
+5. **Dołączanie Bibliotek**: Cling pozwala na bieżąco dołączać biblioteki, umożliwiając wykorzystanie szerokiego zakresu funkcji C.
 
-Implementacja REPL-a w języku kompilowanym wiąże się z kompilowaniem i wykonywaniem fragmentów kodu "w locie", co nie jest trywialne i może mieć ograniczenia w porównaniu z pełnymi możliwościami języka.
+```c
+[cling]$ #include <math.h>
+[cling]$ printf("Pierwiastek kwadratowy z %f to %f\n", 4.0, sqrt(4.0));
+Pierwiastek kwadratowy z 4.000000 to 2.000000
+```
 
-## Zobacz również
-- Cling: https://github.com/root-project/cling
-- Online C Compiler and REPL: https://repl.it/languages/c
-- CINT: http://root.cern.ch/drupal/content/cint
-- Ch Interpreter: http://www.softintegration.com/products/chstandard/
+## Pogłębiona analiza:
+
+Początki środowisk REPL sięgają lat 60. XX wieku i języka Lisp, zaprojektowane do wspierania interaktywnej oceny kodu. Jednakże statyczna i kompilowana natura języka C stwarzała wyzwania dla realizacji podobnej natychmiastowości w dostosowaniach wykonania kodu. Rozwój Cling i innych interpreterów C/C++ stanowi znaczący postęp w kierunku integracji dynamicznej oceny z językami statycznie typowanymi.
+
+Warto zauważyć, że korzystanie z interpretera jak Cling może nie odzwierciedlać doskonale zachowania skompilowanego kodu C z powodu różnic w optymalizacji i wykonaniu. Ponadto, chociaż jest to bardzo wartościowe dla celów edukacyjnych, szybkiego prototypowania i debugowania, REPL dla C czasami może być wolniejszy i mniej praktyczny do rozwoju kodu na poziomie produkcyjnym w porównaniu do tradycyjnych cykli kompilacji-uruchamiania-debugowania.
+
+Alternatywy dla interaktywnego programowania w C obejmują pisanie małych, samodzielnych programów i korzystanie z rozbudowanych IDE z zintegrowanymi narzędziami debugowania, które mogą oferować większą kontrolę i wgląd w wykonanie, choć z mniejszą natychmiastowością. Pomimo tych alternatyw, nadejście środowisk REPL w C stanowi ekscytujące rozszerzenie wszechstronności języka, wpisując się w nowoczesne wymagania dotyczące elastyczności i szybkości w cyklach rozwoju.

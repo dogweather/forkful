@@ -1,42 +1,75 @@
 ---
-title:                "שרשור מחרוזות"
-date:                  2024-01-20T17:34:08.352217-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "שרשור מחרוזות"
-
+title:                "חיבור מחרוזות"
+date:                  2024-02-03T17:54:59.113468-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "חיבור מחרוזות"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/c/concatenating-strings.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (מה ולמה?)
-Concatenating strings in C involves combining two or more strings into one. We do this to construct messages, paths, or to process text dynamically.
+## מה ולמה?
 
-## How to: (איך לעשות את זה)
-```C
+איחוד מחרוזות בשפת C משמש לחיבור שתי מחרוזות או יותר זו לזו כדי ליצור מחרוזת חדשה. מתכנתים מבצעים פעולה זו כדי לבנות באופן דינמי מחרוזות בזמן ריצה, הכרחי ליצירת הודעות משמעותיות, נתיבי קבצים, או כל נתון המורכב ממקורות מחרוזת שונים.
+
+## איך לעשות:
+
+ב-C, מחרוזות הן מערכים של תווים הנגמרים בתו נול (`\0`). בניגוד לשפות ברמה גבוהה יותר, C לא מספקת פונקציה מובנית לאיחוד מחרוזות. במקום זאת, משתמשים בפונקציות `strcat()` או `strncat()` מהספרייה `<string.h>`.
+
+הנה דוגמה פשוטה באמצעות `strcat()`:
+
+```c
 #include <stdio.h>
 #include <string.h>
 
 int main() {
-    char str1[20] = "Hello, ";
-    char str2[] = "World!";
-    
-    strcat(str1, str2); // Concatenates str2 to str1
-    printf("%s\n", str1); // Outputs the concatenated string
-    
+    char destination[50] = "Hello, ";
+    char source[] = "World!";
+
+    strcat(destination, source);
+
+    printf("%s\n", destination);  // פלט: Hello, World!
     return 0;
 }
 ```
-Sample Output:
-```
-Hello, World!
+
+הפונקציה `strcat()` לוקחת שני ארגומנטים: מחרוזת יעד (שחייבת לכלול מספיק מקום לאחסן את התוצאה המאוחדת) ומחרוזת מקור. לאחר מכן היא מוסיפה את מחרוזת המקור למחרוזת היעד.
+
+לשליטה טובה יותר על מספר התווים המאוחדים, `strncat()` היא בטוחה יותר לשימוש:
+
+```c
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char destination[50] = "Hello, ";
+    char source[] = "World!";
+    int num = 3; // מספר התווים להוספה
+
+    strncat(destination, source, num);
+
+    printf("%s\n", destination);  // פלט: Hello, Wor
+    return 0;
+}
 ```
 
-## Deep Dive (צלילה עמוקה)
-In the early days, string concatenation in C was manual - tricky and error-prone. `strcat` saves us from that. Always allocate enough space for the combined strings plus the null terminator, to avoid buffer overflows. Alternatives to `strcat` include `strncat`, which limits the number of concatenated characters, and more robust functions like `snprintf` for complex string operations.
+הדבר מגביל את האיחוד ל-`num` התווים הראשונים של מחרוזת המקור, ועוזר למנוע גלישת חוצץ.
 
-## See Also (ראה גם)
-- The C Standard Library manual for `strcat` and `strncat`: https://en.cppreference.com/w/c/string/byte/strcat
-- A guide to safer string concatenation in C: https://www.owasp.org/index.php/C-Based_Toolchain_Hardening_Cheat_Sheet
-- Information on buffer overflows and how to prevent them: https://owasp.org/www-community/vulnerabilities/Buffer_Overflow
+## צלילה עמוקה
+
+הפונקציות `strcat()` ו-`strncat()` היו חלק מספריית התקן של C מאז היווסדה, משקפות את האופי הנמוך של השפה שדורשת ניהול ידני של מחרוזות וזיכרון. בניגוד לשפות תכנות מודרניות רבות שמתייחסות למחרוזות כאובייקטים מכובדים עם אופרטורים מובנים לאיחוד (כמו `+` או `.concat()`), גישת C דורשת הבנה עמוקה יותר של מצביעים, הקצאת זיכרון, וסכנות פוטנציאליות כמו גלישת חוצץ.
+
+למרות ש-`strcat()` ו-`strncat()` נמצאות בשימוש נרחב, הן לעיתים קרובות נמצאות תחת ביקורת בשל הפוטנציאל שלהן ליצירת אי-התאמות ביטחון אם לא ישתמשו בהן בזהירות. גלישות חוצץ, שבהן נתונים חורגים מהזיכרון המוקצה, יכולות להוביל להתרסקויות או לניצול לביצוע קוד שרירותי. כתוצאה מכך, מתכנתים הולכים ומעדיפים חלופות בטוחות יותר, כמו `snprintf()`, שמספקת התנהגות נבונה יותר על ידי הגבלת מספר התווים הנכתבים למחרוזת היעד בהתבסס על גודלה:
+
+```c
+char destination[50] = "Hello, ";
+char source[] = "World!";
+snprintf(destination + strlen(destination), sizeof(destination) - strlen(destination), "%s", source);
+```
+
+השיטה הזו היא ארוכה יותר אך הרבה יותר בטוחה, מדגישה הזזה במחשבה בתכנות C לעבר יעדים של ביטחון ועמידות על פני תמציתיות.
+
+למרות האתגרים האלה, איחוד מחרוזות ב-C הוא כישור יסודי, חיוני לתכנות יעיל בשפה. הבנת ההפשטות והסיכונים הקשורים היא מפתח לשליטה בתכנות C.

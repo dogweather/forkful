@@ -1,66 +1,73 @@
 ---
-title:                "Merkkijonosta lainausmerkkien poistaminen"
-date:                  2024-01-26T03:38:18.571939-07:00
+title:                "Lainausmerkkien poistaminen merkkijonosta"
+date:                  2024-02-03T18:07:22.781400-07:00
 model:                 gpt-4-0125-preview
-simple_title:         "Merkkijonosta lainausmerkkien poistaminen"
-
+simple_title:         "Lainausmerkkien poistaminen merkkijonosta"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c/removing-quotes-from-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Mikä & Miksi?
 
-Lainausmerkkien poistaminen merkkijonosta tarkoittaa yksittäisten ('') tai kaksois ("") lainausmerkkien poistamista merkkijonon sisällöstä. Ohjelmoijat tekevät tämän siivotaakseen syötettä, valmistellakseen dataa jatkokäsittelyä varten tai välttääkseen syntaksivirheitä käsitellessään tiedostopolkuja ja komentoja kielissä, jotka käyttävät lainausmerkkejä merkkijonojen rajaamiseen.
+Merkkijonosta lainausmerkit poistaminen C-kielessä tarkoittaa tekstisisällön erottamista ilman ympäröiviä yksittäisiä (' ') tai kaksois (" ") lainausmerkkejä. Tämä prosessi on olennainen syötetietojen puhdistamiseksi, tiedostojen sisältöjen jäsentämiseksi tai merkkijonojen valmistamiseksi edelleen käsiteltäväksi tilanteissa, joissa lainausmerkit eivät ole tarpeellisia tai voisivat johtaa virheisiin tietojen käsittelyssä.
 
 ## Miten:
 
-Tässä on C-funktio, joka siivoaa nuo kiusalliset lainausmerkit pois merkkijonoistasi:
+Lainausmerkkien poistaminen merkkijonosta C-kielessä tapahtuu käymällä merkkijono läpi ja kopioimalla hahmot, jotka eivät ole lainausmerkkejä, uuteen merkkijonoon. Tätä prosessia voidaan räätälöidä poistamaan joko vain johtavat ja päättyvät lainausmerkit tai kaikki merkkijonossa olevat lainausmerkit. Alla on havainnollistava esimerkki, joka osoittaa molemmat lähestymistavat:
 
 ```c
 #include <stdio.h>
 #include <string.h>
 
-void remove_quotes(char *str) {
-    char *p_read = str, *p_write = str;
-    while (*p_read) {
-        if (*p_read != '"' && *p_read != '\'') {
-            *p_write++ = *p_read;
+// Funktio kaikkien lainausmerkkien poistamiseksi merkkijonosta
+void removeAllQuotes(char *source, char *dest) {
+    while (*source) {
+        if (*source != '"' && *source != '\'') {
+            *dest++ = *source;
         }
-        p_read++;
+        source++;
     }
-    *p_write = '\0';
+    *dest = '\0'; // Lopeta kohdemerkkijono nolla-terminaattorilla
+}
+
+// Funktio vain johtavien ja päättyvien lainausmerkkien poistamiseksi merkkijonosta
+void removeEdgeQuotes(char *source, char *dest) {
+    size_t len = strlen(source);
+    if (source[0] == '"' || source[0] == '\'') source++, len--;
+    if (source[len-1] == '"' || source[len-1] == '\'') len--;
+    strncpy(dest, source, len);
+    dest[len] = '\0'; // Lopeta kohde merkkijono nolla-terminaattorilla
 }
 
 int main() {
-    char str[] = "He said, \"Hello, 'world'!\"";
-    printf("Alkuperäinen: %s\n", str);
-    remove_quotes(str);
-    printf("Siivottu: %s\n", str);
+    char str1[] = "'Hei, maailma!'";
+    char str2[] = "\"Ohjelmointi C-kielessä\"";
+    char eiLainausmerkkeja1[50];
+    char eiLainausmerkkeja2[50];
+    
+    removeAllQuotes(str1, eiLainausmerkkeja1);
+    printf("Kaikki lainausmerkit poistettu: %s\n", eiLainausmerkkeja1);
+    
+    removeEdgeQuotes(str2, eiLainausmerkkeja2);
+    printf("Reuna lainausmerkit poistettu: %s\n", eiLainausmerkkeja2);
+    
     return 0;
 }
 ```
-
-Esimerkkituloste:
-
+Esimerkkitulostus:
 ```
-Alkuperäinen: He said, "Hello, 'world'!"
-Siivottu: He said, Hello, world!
+Kaikki lainausmerkit poistettu: Hei, maailma!
+Reuna lainausmerkit poistettu: Ohjelmointi C-kielessä
 ```
 
-## Syväsukellus
+Nämä esimerkit näyttävät, miten käsitellä sekä kaikkien merkkijonossa olevien lainausmerkkien poistoa että vain johtavien ja päättyvien lainausmerkkien kohdennettua poistoa.
 
-Lainausmerkkien poistaminen merkkijonosta on ollut tehtävä ohjelmoinnin alkuaikoina, jolloin datan puhtaus oli ja on edelleen avain välttämään virheitä (kuten SQL-injektiohyökkäykset) tai varmistamaan, että merkkijonon voi turvallisesti siirtää järjestelmiin, jotka saattaisivat sekoittaa lainausmerkin ohjausmerkiksi.
+## Syvä sukellus
 
-Historiallisesti eri kielet käsittelevät tätä tehtävää eri tavoin - jotkut sisältävät valmiita funktioita (kuten `strip` Pythonissa), kun taas toiset, kuten C, vaativat manuaalisen toteutuksen, koska se keskittyy antamaan kehittäjille matalan tason hallinnan.
+Käsitys lainausmerkkien poistamisesta merkkijonoista ei omaa merkittävää historiallista syvyyttä C:ssä, paitsi sen yhteydet varhaiseen tekstinkäsittelyn tarpeeseen. Täällä esitelty suoraviivainen lähestymistapa on monikäyttöinen, mutta se ei ole tehokas erittäin suurille merkkijonoille tai korkean suorituskyvyn vaatimuksille, joissa paikan päällä tapahtuva muokkaus tai kehittyneemmät algoritmit saattaisivat olla suositeltavia.
 
-Vaihtoehtoja ovat kirjastofunktioiden, kuten `strpbrk`, käyttäminen lainausmerkkien etsimiseen tai säännöllisten lausekkeiden (kirjastoilla, kuten PCRE) käyttäminen monimutkaisempien mallien varalta, vaikkakin tämä saattaa olla liioittelua pelkkien lainausmerkkien poistamiseksi.
-
-Yllä oleva toteutus yksinkertaisesti skannaa läpi jokaisen merkin merkkijonossa, kopioiden vain lainausmerkitöntä tekstiä kirjoitusosoittimen sijaintiin. Tämä on tehokasta, koska se tapahtuu paikan päällä tarvitsematta lisämuistia tulokselle.
-
-## Katso Myös
-
-- [C Standardikirjaston Funktiot](http://www.cplusplus.com/reference/clibrary/)
-- [PCRE - Perl-yhteensopivat säännölliset lausekkeet](https://www.pcre.org/)
-- [Pointereiden ymmärtäminen C:ssä](https://www.learn-c.org/en/Pointers)
+Vaihtoehdot, kuten `strpbrk`-funktion käyttäminen lainausmerkkien löytämiseksi ja lainausmerkeittömän osan merkkijonon siirtämiseki, voivat olla tehokkaampia, mutta edellyttävät syvällisempää ymmärrystä osoittimista ja muistinhallinnasta C:ssä. Lisäksi säännöllisiä lausekkeita käsittelevien kirjastojen ilmestyminen on tarjonnut voimakkaan työkalupakin merkkijonojen käsittelyyn, mukaan lukien lainausmerkkien poisto. Kuitenkin nämä kirjastot, vaikka ovatkin tehokkaita, lisäävät monimutkaisuutta ja lisäkustannuksia, jotka eivät ehkä ole tarpeellisia yksinkertaisemmissa tehtävissä. Niinpä suoraan lähestymistapaan, kuten näytetty, pysyy arvokkaana taitona C-ohjelmoijille, yhdistellen yksinkertaisuutta tehokkuuden kanssa monissa yleisissä käyttötarkoituksissa.

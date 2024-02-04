@@ -1,55 +1,55 @@
 ---
 title:                "Een string interpoleren"
-date:                  2024-01-28T22:02:07.599209-07:00
+date:                  2024-02-03T17:58:19.343320-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een string interpoleren"
-
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/c/interpolating-a-string.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Wat & Waarom?
 
-Stringinterpolatie maakt het mogelijk om variabelen rechtstreeks in strings in te voegen. Het is handig om dynamisch tekst te creëren, zoals gepersonaliseerde berichten of geformatteerde gegevens.
+String interpolatie, in programmeren, houdt in dat strings worden opgebouwd door expressies in te sluiten binnen letterlijke strings. Programmeurs doen dit om informatieve berichten, dynamische queries te creëren, of om efficiënt en schoon elke string met variabele inhoud te construeren, vaak voor uitvoer naar de gebruiker of voor logdoeleinden.
 
-## Hoe doe je het:
+## Hoe:
 
-C heeft geen ingebouwde stringinterpolatie, maar we improviseren met `sprintf` of `snprintf`. Zo werkt het:
+C, in tegenstelling tot sommige hoog-niveau talen, ondersteunt geen directe string interpolatie in zijn syntaxis. In plaats daarvan wordt het construeren van strings met variabele inhoud typisch bereikt met behulp van de `printf` functie of zijn varianten voor uitvoer, en `sprintf` voor het creëren van strings. Hier is een blik op hoe dynamisch strings te construeren in C:
 
 ```c
 #include <stdio.h>
 
 int main() {
-    char name[] = "Alex";
-    int age = 29;
-    char message[50];
+    char name[] = "Jane Doe";
+    int age = 28;
 
-    snprintf(message, sizeof(message), "Hoi, ik ben %s, en ik ben %d jaar oud.", name, age);
-    printf("%s\n", message);  // Voorbeelduitvoer: Hoi, ik ben Alex, en ik ben 29 jaar oud.
+    // Gebruik makend van printf voor uitvoer
+    printf("Hallo, mijn naam is %s en ik ben %d jaar oud.\n", name, age);
+
+    // Gebruik makend van sprintf voor string constructie
+    char info[50];
+    sprintf(info, "Naam: %s, Leeftijd: %d", name, age);
+    printf("%s\n", info);
 
     return 0;
 }
 ```
+Voorbeelduitvoer:
+```
+Hallo, mijn naam is Jane Doe en ik ben 28 jaar oud.
+Naam: Jane Doe, Leeftijd: 28
+```
+Deze fragmenten demonstreren de traditionele manier om variabele gegevens in strings in C op te nemen, het biedt flexibiliteit in het construeren van gedetailleerde strings.
 
-## Diepere duik:
+## Diepere Duik
 
-C is altijd een beetje hands-on geweest met strings. Interpolatie is geen directe functie - in plaats daarvan gebruiken we plaatsaanduiders en opmaakspecificaties zoals `%s` voor strings of `%d` voor cijfers binnen functies als `printf` of `sprintf`.
+Voor de komst van meer moderne programmeertalen met ingebouwde string interpolatie functies, moesten C ontwikkelaars vertrouwen op functies zoals `sprintf()`, `snprintf()`, en hun varianten voor het samenstellen van strings met variabele inhoud. Deze aanpak, hoewel effectief, introduceert potentiële risico's zoals buffer overflow als het niet zorgvuldig wordt beheerd, vooral met `sprintf()`.
 
-Historisch gezien zijn ontwikkelaars in andere talen verwend geraakt met interpolatiefuncties. In C# zou je gewoon `var message = $"Hallo, {name}!";` doen. Swift en Ruby hebben ook hun eigen extraatjes.
+Alternatieven overwegend, hebben talen zoals Python en JavaScript meer intuïtieve string interpolatie kenmerken geïntroduceerd, zoals f-strings (geformateerde string literals) en templaat literals, respectievelijk. Deze functies stellen ontwikkelaars in staat om expressies rechtstreeks in de string literals in te sluiten, wat de code leesbaarder en beknopter maakt.
 
-Terug in onze C wereld, doen opmaakspecificaties het zware werk. Onthoud, `sprintf` kan riskant zijn als je de buffergrootte verkeerd krijgt en je kan eindigen met het overschrijden van je buffer (`snprintf` is veiliger vanwege de bufferlimiet). Daarbij betekent dit handmatig beheer meer controle - een geliefd principe in de C ethos.
+In de context van C, ondanks de afwezigheid van ingebouwde string interpolatie kenmerken, biedt de aanpak fijnmazige controle over de opmaak, wat zowel gezien kan worden als een voordeel voor degenen die precieze opmaakcontrole vereisen, als een complexiteit voor nieuwkomers of degenen die op zoek zijn naar snellere, leesbaardere oplossingen. De introductie van `snprintf()` in C99 heeft enkele van de veiligheidsbezwaren verminderd door ontwikkelaars in staat te stellen het maximale aantal te schrijven bytes te specificeren, waardoor stringformattering veiliger wordt.
 
-Er is meer dan één manier om een ​​kat te villen: bibliotheken van derden, zoals GLib, introduceren betere stringfunctionaliteiten. Functies zoals `g_strdup_printf` werken vergelijkbaar met `sprintf` maar beheren de geheugenallocatie voor je.
-
-Variadic macros en functies kunnen ook interpolatie simuleren, maar dat is een geavanceerde handeling die een goede beheersing van macros en het `va_list` type uit `<stdarg.h>` vereist.
-
-## Zie ook:
-
-- ISO/IEC Programmeringstalen — C: https://www.iso.org/standard/74528.html
-- C11 Standaard (N1570): http://www.open-std.org/jtc1/sc22/wg14/www/docs/n1570.pdf
-- Documentatie van de GNU C Bibliotheek (glibc) over `printf`: https://www.gnu.org/software/libc/manual/html_node/Formatted-Output-Functions.html
-- GLib's stringutiliteitsfuncties: https://developer.gnome.org/glib/stable/glib-Strings.html
+Hoewel de methode van C vergeleken met moderne talen omslachtig of lastig lijkt, geeft het begrijpen van de mechanismen voor het afhandelen van strings een solide basis voor het bevatten van meer abstracte concepten in softwareontwikkeling, waarbij het belang van geheugenbeheer en gegevensformattering op een laag niveau wordt benadrukt.

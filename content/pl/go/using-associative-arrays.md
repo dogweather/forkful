@@ -1,87 +1,81 @@
 ---
-title:                "Korzystanie z tablic asocjacyjnych"
-date:                  2024-01-30T19:11:22.861192-07:00
+title:                "Używanie tablic asocjacyjnych"
+date:                  2024-02-03T18:10:57.459625-07:00
 model:                 gpt-4-0125-preview
-simple_title:         "Korzystanie z tablic asocjacyjnych"
-
+simple_title:         "Używanie tablic asocjacyjnych"
 tag:                  "Data Structures"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/go/using-associative-arrays.md"
 changelog:
-  - 2024-01-30, gpt-4-0125-preview, translated from English
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Co i dlaczego?
 
-Tablice asocjacyjne, znane w Go jako mapy, pozwalają przechowywać i uzyskiwać dostęp do danych za pomocą par klucz-wartość. Są niezbędne do zarządzania kolekcjami, gdzie można szybko wyszukać wartości za pomocą unikalnego klucza, co upraszcza manipulację danymi i ich pobieranie w programach.
+Tablice asocjacyjne, znane w Go jako mapy, pozwalają przechowywać pary klucz-wartość, gdzie każdy unikalny klucz odpowiada wartości. Programiści używają map do efektywnego odnajdywania danych, modyfikacji oraz do utrzymania kolekcji elementów, które można szybko uzyskać używając unikalnych kluczy.
 
 ## Jak to zrobić:
 
-W Go, mapy są proste w użyciu. Oto prosty przewodnik, żeby zacząć:
+Tworzenie i inicjalizowanie mapy w Go można zrealizować na różne sposoby. Oto podstawowy przykład, aby zacząć:
 
-1. **Deklarowanie i inicjowanie map**
-
-```Go
+```go
 package main
 
 import "fmt"
 
 func main() {
-    // Inicjalizacja pustej mapy ze stringami jako kluczami i wartościami typu int
-    var scores map[string]int
-    fmt.Println(scores) // Wyświetla: map[]
-
-    // Deklaracja i inicjalizacja niepustej mapy
-    colors := map[string]string{
-        "red": "#ff0000",
-        "green": "#00ff00",
+    // Deklarowanie i inicjalizacja mapy
+    kolory := map[string]string{
+        "czerwony": "#FF0000",
+        "zielony":  "#00FF00",
+        "niebieski": "#0000FF",
     }
-    fmt.Println(colors) // Wyświetla: map[green:#00ff00 red:#ff0000]
+
+    fmt.Println(kolory)
+    // Wyjście: map[niebieski:#0000FF zielony:#00FF00 czerwony:#FF0000]
 }
 ```
 
-2. **Dodawanie i uzyskiwanie dostępu do elementów**
+Aby dodać lub zaktualizować elementy, przypisujesz wartość do klucza w następujący sposób:
 
-```Go
-func main() {
-    fruits := make(map[string]int)
-    fruits["apples"] = 5
-    fruits["bananas"] = 10
+```go
+kolory["biały"] = "#FFFFFF"
+fmt.Println(kolory)
+// Wyjście: map[niebieski:#0000FF zielony:#00FF00 czerwony:#FF0000 biały:#FFFFFF]
+```
 
-    fmt.Println(fruits["apples"]) // Wyświetla: 5
+Dostęp do wartości przez jej klucz jest prosty:
+
+```go
+fmt.Println("Kod heksadecymalny dla czerwonego to:", kolory["czerwony"])
+// Wyjście: Kod heksadecymalny dla czerwonego to: #FF0000
+```
+
+Aby usunąć element, użyj funkcji `delete`:
+
+```go
+delete(kolory, "czerwony")
+fmt.Println(kolory)
+// Wyjście: map[niebieski:#0000FF zielony:#00FF00 biały:#FFFFFF]
+```
+
+Iteracja po mapie odbywa się przy użyciu pętli for:
+
+```go
+for kolor, heks := range kolory {
+    fmt.Printf("Klucz: %s Wartość: %s\n", kolor, heks)
 }
 ```
 
-3. **Iteracja przez mapy**
+Pamiętaj, że mapy w Go są nieuporządkowane. Kolejność iteracji nie jest gwarantowana.
 
-```Go
-func main() {
-    pets := map[string]string{"dog": "bark", "cat": "meow"}
+## W głębi
 
-    for key, value := range pets {
-        fmt.Printf("%s goes %s\n", key, value)
-    }
-    // Kolejność wyjścia może się różnić, ponieważ mapy nie gwarantują kolejności.
-}
-```
+W Go, mapy są implementowane jako tablice haszujące. Każdy wpis w mapie składa się z dwóch elementów: klucza i wartości. Klucz jest haszowany, aby przechować wpis, co pozwala na operacje w stałym czasie dla małego zestawu danych i średnią złożoność czasową O(1) przy odpowiednim haszowaniu, która może się pogorszyć do O(n) w najgorszym przypadku przy wielu kolizjach hasz.
 
-4. **Usuwanie elementów**
+Istotna uwaga dla nowych programistów Go to, że typy map są typami referencyjnymi. Oznacza to, że kiedy przekazesz mapę do funkcji, wszelkie zmiany dokonane na mapie w tej funkcji są widoczne dla wywołującego. Jest to inne niż np. przekazanie struktury do funkcji, gdzie struktura jest kopiowana, chyba że jest przekazywana przez wskaźnik.
 
-```Go
-func main() {
-    meals := map[string]int{"breakfast": 300, "lunch": 600}
-    fmt.Println(meals) // Przed usunięciem
+Chociaż mapy są niezwykle wszechstronne i efektywne dla większości przypadków użycia związanych z tablicami asocjacyjnymi, w aplikacjach krytycznych pod względem wydajności może być korzystne użycie struktur danych o bardziej przewidywalnych charakterystykach wydajności, zwłaszcza jeśli dystrybucja kluczy może powodować częste kolizje.
 
-    delete(meals, "lunch")
-    fmt.Println(meals) // Po usunięciu
-}
-```
-
-## Głębsze zagłębienie
-
-Wprowadzone w Go 1, mapy zapewniają wbudowany sposób na efektywne radzenie sobie z tablicami asocjacyjnymi. W przeciwieństwie do tablic, które są uporządkowanymi kolekcjami, mapy są nieuporządkowane. Oznacza to, że kolejność iteracji po elementach mapy nie jest gwarantowana, aby być taka sama przy każdym wykonaniu, co jest kompromisem za ich zdolność do dynamicznego i znacząco elastycznego obsługiwania par klucz-wartość.
-
-Pod maską, Go implementuje mapy jako tablice haszujące, zapewniając, że średnia złożoność dostępu, wstawiania i usuwania operacji jest O(1), w większości przypadków. Warto jednak zauważyć, że ta efektywność może się różnić w zależności od takich czynników jak kolizje haszowe.
-
-W przypadkach użycia wymagających uporządkowanej kolejności kluczy, można rozważyć połączenie map z tablicami lub badanie pakietów stron trzecich, które oferują dodatkowe struktury danych, takie jak uporządkowane mapy lub drzewa. Pomimo ich ograniczeń, mapy Go są potężnym i niezbędnym narzędziem w wielu scenariuszach programowania.
+Inną alternatywą do rozważenia jest `sync.Map`, dostępny od Go 1.9, zaprojektowany do przypadków użycia, gdzie klucze są zapisywane tylko raz, ale odczytywane wiele razy, oferujący poprawę wydajności w tych scenariuszach. Jednak dla konwencjonalnych aplikacji Go, regularne użycie map jest idiomatyczne i często zalecane ze względu na jego prostotę i bezpośrednie wsparcie w języku.

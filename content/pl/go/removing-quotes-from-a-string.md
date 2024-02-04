@@ -1,22 +1,23 @@
 ---
 title:                "Usuwanie cudzysłowów z ciągu znaków"
-date:                  2024-01-26T03:39:40.556859-07:00
+date:                  2024-02-03T18:07:30.100266-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Usuwanie cudzysłowów z ciągu znaków"
-
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/go/removing-quotes-from-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
+## Co & Dlaczego?
 
-Usuwanie cudzysłowów ze stringa oznacza pozbycie się tych irytujących znaków pojedynczego lub podwójnego cudzysłowu owijających Twój właściwy tekst. Robimy to, aby oczyścić dane, zapobiec błędom parsowania lub przygotować tekst do dalszego przetwarzania bez dodatkowego balastu znaków cudzysłowu.
+Usuwanie cudzysłowów z ciągu znaków w Go polega na eliminacji początkowych i końcowych znaków cudzysłowu (`"` lub `'`) z danego ciągu znaków. Programiści często muszą wykonywać to zadanie, aby oczyścić dane wejściowe użytkownika, efektywniej analizować dane tekstowe lub przygotować ciągi znaków do dalszego przetwarzania, które wymaga treści bez cudzysłowów.
 
 ## Jak to zrobić:
 
-Oto prosty sposób, aby pozbyć się cudzysłowów w Go:
+Go oferuje kilka podejść do usunięcia cudzysłowów z ciągu znaków, ale jedną z najprostszych metod jest użycie funkcji `Trim` i `TrimFunc` dostarczanych przez pakiet `strings`. Oto jak to zrobić:
 
 ```go
 package main
@@ -24,52 +25,37 @@ package main
 import (
 	"fmt"
 	"strings"
+	"unicode"
 )
 
-func removeQuotes(s string) string {
-	return strings.Trim(s, "'\"")
-}
-
 func main() {
-	quotedString := "\"Hello, World!\""
-	fmt.Println("Original:", quotedString)
+	quotedString := `"To jest 'cytowany' ciąg znaków"`
 
-	unquotedString := removeQuotes(quotedString)
-	fmt.Println("Unquoted:", unquotedString)
+	// Użycie strings.Trim do usunięcia konkretnych cudzysłowów
+	unquoted := strings.Trim(quotedString, `"'`)
+	fmt.Println("Używając strings.Trim:", unquoted)
+
+	// Indywidualne podejście używając strings.TrimFunc dla większej kontroli
+	unquotedFunc := strings.TrimFunc(quotedString, func(r rune) bool {
+		return r == '"' || r == '\''
+	})
+	fmt.Println("Używając strings.TrimFunc:", unquotedFunc)
 }
 ```
 
-Efekt będzie wyglądał tak, cudzysłowy znikają:
+Ten przykład demonstruje dwa podejścia do usunięcia zarówno podwójnych (`"`) jak i pojedynczych (`'`) cudzysłowów. Funkcja `strings.Trim` jest prostsza i działa dobrze, gdy dokładnie wiemy, które znaki usunąć. Z drugiej strony, `strings.TrimFunc` zapewnia większą elastyczność, pozwalając określić niestandardową funkcję do decydowania, które znaki zostaną usunięte. Przykładowe wyjście powyższego kodu to:
 
 ```
-Original: "Hello, World!"
-Unquoted: Hello, World!
+Używając strings.Trim: To jest 'cytowany' ciąg znaków
+Używając strings.TrimFunc: To jest 'cytowany' ciąg znaków
 ```
 
-## Szczegółowa analiza
+Obie metody skutecznie usuwają początkowe i końcowe cudzysłowy z ciągu znaków.
 
-W przeszłości, gdy formaty danych i ich wymiana nie były ustandaryzowane, cudzysłowy w stringach mogły powodować chaos. Nadal mogą, szczególnie w JSON lub kiedy wciskamy stringi do baz danych. Pakiet `strings` w Go jest załadowany funkcją `Trim`, która eliminuje nie tylko białe znaki, ale jakiekolwiek znaki, których nie lubisz.
+## Głębsze spojrzenie
 
-Dlaczego nie Regex? Cóż, `Trim` jest szybszy do prostych zadań, ale jeśli twoje stringi grają w chowanego z cudzysłowami w dziwnych miejscach, regex może być Twoją ciężką artylerią:
+Funkcje `Trim` i `TrimFunc` z pakietu `strings` są częścią obszernej standardowej biblioteki Go, zaprojektowanej tak, aby oferować potężne, a jednocześnie proste w manipulacji możliwości ciągów znaków bez potrzeby używania pakietów firm trzecich. Konieczność skutecznego obsługiwania i manipulowania ciągami znaków wynika z głównego skupienia Go na serwerach sieciowych i parserach danych, gdzie przetwarzanie ciągów znaków jest powszechnym zadaniem.
 
-```go
-import "regexp"
+Jedną z charakterystycznych cech tych funkcji jest ich implementacja oparta na runach (reprezentacji Go punktu kodowego Unicode). Ta konstrukcja pozwala im łatwo radzić sobie z ciągami znaków zawierającymi znaki wielobajtowe, czyniąc podejście Go do manipulacji ciągami znaków zarówno solidne, jak i przyjazne dla Unicode.
 
-func removeQuotesWithRegex(s string) string {
-	re := regexp.MustCompile(`^["']|["']$`)
-	return re.ReplaceAllString(s, "")
-}
-```
-
-To jak wybór między nożycami a piłą łańcuchową; wybierz narzędzie odpowiednie do pracy.
-
-## Zobacz również
-
-Aby dowiedzieć się więcej o pakiecie `strings` i jego narzędziach:
-- [Pakiet strings](https://pkg.go.dev/strings)
-
-Aby posiąść moc wyrażeń regularnych w Go:
-- [Pakiet regexp](https://pkg.go.dev/regexp)
-
-Chcesz zgłębić filozofię przycinania stringów?
-- [Metoda Trim](https://blog.golang.org/strings)
+Chociaż bezpośrednie użycie `Trim` i `TrimFunc` do usuwania cudzysłowów jest wygodne i idiomatyczne w Go, warto wspomnieć, że dla bardziej skomplikowanych zadań przetwarzania ciągów znaków (np. zagnieżdżone cudzysłowy, ucieczki cudzysłowu) wyrażenia regularne (za pośrednictwem pakietu `regexp`) lub ręczne parsowanie mogą zapewnić lepsze rozwiązania. Jednak te alternatywy wiążą się ze zwiększoną złożonością i rozważaniami dotyczącymi wydajności. Dlatego dla prostego usuwania cudzysłowów, przedstawione metody dobrze łączą prostotę, wydajność i funkcjonalność.

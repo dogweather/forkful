@@ -1,75 +1,69 @@
 ---
-title:                "에러 처리하기"
-date:                  2024-01-26T00:53:35.424129-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "에러 처리하기"
-
+title:                "오류 처리하기"
+date:                  2024-02-03T17:58:14.747207-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "오류 처리하기"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/go/handling-errors.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜?
+## 무엇이며 왜?
 
-Go에서의 에러 처리는 런타임 문제를 우아하게 잡아내고 대응하는 것입니다. 프로그램이 충돌하는 것을 방지하고, 문제가 생겨도 예측 가능하게 동작하도록 하기 위해 이를 수행합니다.
+Go에서의 오류 처리는 프로그램의 오류 상태를 인식하고 대응하는 것을 포함합니다. 프로그래머들은 예기치 않은 상황에서 응용 프로그램이 우아하게 복구할 수 있도록 하기 위해 오류 처리에 참여함으로써, 더욱 견고하고 신뢰성 있는 소프트웨어로 이끕니다.
 
-## 어떻게:
+## 방법:
 
-Go는 명시적인 에러 처리를 사용합니다. 이 말은 함수를 호출할 때마다 에러를 반환하는지 확인해야 함을 의미합니다. 예외 없음. 다음은 그 모습입니다:
+Go에서는 오류 처리가 명시적으로 `error` 타입을 사용하여 관리됩니다. 실패할 수 있는 함수는 마지막 반환 값으로 오류를 반환합니다. 이 오류 값이 `nil`인지 확인하면 오류가 발생했는지 알 수 있습니다.
 
-```Go
+```go
 package main
 
 import (
-	"fmt"
-	"os"
+    "errors"
+    "fmt"
 )
 
+func Compute(value int) (int, error) {
+    if value > 100 {
+        return 0, errors.New("value must be 100 or less")
+    }
+    return value * 2, nil
+}
+
 func main() {
-	err := doSomething()
-	if err != nil {
-		fmt.Println("이런:", err)
-		os.Exit(1)
-	}
-}
-
-func doSomething() error {
-	// 일부러 문제를 발생시키는 척함
-	return fmt.Errorf("문제가 발생했습니다")
-}
-```
-
-이것을 실행하면 다음을 얻게 됩니다:
-
-```
-이런: 문제가 발생했습니다
-```
-
-그런데 성공하면 어떨까요?
-
-```Go
-func doSomething() error {
-	// 이번에는 모든 것이 잘 됨
-	return nil
+    result, err := Compute(150)
+    if err != nil {
+        fmt.Println("Error:", err)
+    } else {
+        fmt.Println("Result:", result)
+    }
+    
+    // 오류를 우아하게 처리하기
+    anotherResult, anotherErr := Compute(50)
+    if anotherErr != nil {
+        fmt.Println("Error:", anotherErr)
+    } else {
+        fmt.Println("Result:", anotherResult)
+    }
 }
 ```
 
-출력 없음. 좋습니다, 무소식이 희소식이라고 하죠.
+위 코드의 샘플 출력:
+```
+Error: value must be 100 or less
+Result: 100
+```
 
-## 심층 분석:
+이 예제에서, `Compute` 함수는 계산된 값을 반환하거나 오류를 반환합니다. 호출자는 `err`이 `nil`이 아닌지 확인함으로써 오류를 처리합니다.
 
-Go에서 에러 처리는 의견의 차이가 있는 주제입니다. 처음부터 Go는 예외를 사용하지 않고 보다 명시적인 접근 방식을 선택했는데, 일부 개발자들은 이의 단순함을 좋아하고 다른 일부는 장황하다고 생각합니다. 내장된 `error` 타입은 인터페이스입니다. `Error() string` 메소드가 있는 모든 타입은 그것을 만족시킵니다. 이는 Go의 단순성과 명시성에 대한 철학과 관련이 있습니다.
+## 심화
 
-대안은? `panic`과 `recover` 쌍이 있지만, 이는 프로그램이 계속될 수 없을 때 예외적인 경우(의도한 말장난)에 사용됩니다. `panic`을 오는 길이 없다는 것을 알 때 누르는 탈출 버튼으로 생각하십시오. 아낌없이 사용하지 마십시오.
+Go의 오류 처리 접근 방식은 명시적인 오류 검사를 요구하는 자명하고 타입 안전한 방식입니다. 이 개념은 자바와 파이썬과 같은 언어에서 볼 수 있는 예외 기반의 오류 처리와 대조됩니다. 여기서 오류는 예외 핸들러에 의해 잡히지 않는 한 호출 스택을 따라 전파됩니다. Go 팀은 명시적인 오류 처리가 오류가 발생한 바로 그 지점에서 프로그래머가 오류를 즉시 다루도록 함으로써 코드를 더 명확하고 신뢰할 수 있게 만든다고 주장합니다.
 
-주류 에러 처리에 관하여, Go 1.13은 에러 래핑 기능을 도입하여 `errors.Is()`와 `errors.As()`와 같은 함수를 사용해 "에러 체인"을 더 쉽게 파악할 수 있게 만들었습니다.
+그러나 일부 비판은 이 패턴이 오류가 발생하기 쉬운 작업이 많은 복잡한 함수에서 특히 장황한 코드로 이어질 수 있다고 언급합니다. 이에 대응하여, Go의 새로운 버전들은 오류 래핑 같은 더 정교한 오류 처리 기능을 도입하여 원래의 오류 정보를 잃지 않으면서 오류에 대한 맥락을 제공하기 쉽게 만들었습니다. 커뮤니티는 check/handle 같은 새로운 오류 처리 메커니즘에 대한 제안도 보았지만, 이들은 제 마지막 업데이트 시점까지 논의 중에 있습니다.
 
-## 또한 보기:
-
-Go에서의 모든 에러 처리에 대하여:
-
-- Go 블로그에서 에러 처리에 관하여: [https://blog.golang.org/error-handling-and-go](https://blog.golang.org/error-handling-and-go)
-- 효과적인 Go – 에러 처리 절: [https://golang.org/doc/effective_go#errors](https://golang.org/doc/effective_go#errors)
-- Go 1.13 에러 래핑 문서: [https://golang.org/doc/go1.13#error_wrapping](https://golang.org/doc/go1.13#error_wrapping)
-- Dave Cheney의 에러 처리 전략에 관한 글: [https://dave.cheney.net/2016/04/27/dont-just-check-errors-handle-them-gracefully](https://dave.cheney.net/2016/04/27/dont-just-check-errors-handle-them-gracefully)
+Go의 오류 처리 철학은 프로그램의 정상적인 흐름의 일부로 오류를 이해하고 계획하는 것을 강조합니다. 이 접근 방식은 보다 탄력적이고 예측 가능한 소프트웨어 개발을 장려하지만, 보일러플레이트 코드의 잠재적 증가를 가져올 수 있습니다. 특히 복잡한 경우를 위한 오류 처리를 간소화하는 대안적 패턴과 라이브러리가 존재하지만, Go의 내장된 `error` 타입은 언어에서 오류 처리의 기반을 유지합니다.

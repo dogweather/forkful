@@ -1,72 +1,86 @@
 ---
-title:                "使用TOML"
-date:                  2024-01-26T04:19:39.706396-07:00
+title:                "使用TOML进行工作"
+date:                  2024-02-03T18:12:32.717937-07:00
 model:                 gpt-4-0125-preview
-simple_title:         "使用TOML"
-
+simple_title:         "使用TOML进行工作"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/c/working-with-toml.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## 什么是 TOML 以及为何使用？
-TOML 是一个旨在易于读写的数据序列化语言。由于其清晰度和人性化的特性，程序员们使用它来处理配置文件、简单的数据存储以及跨语言的数据交换。
+## 什么和为什么？
+
+TOML（Tom's Obvious, Minimal Language，汤姆的明显、最小化语言）是一种配置文件格式，因为其清晰的语义而易于阅读。程序员在应用程序的配置文件中使用它，因为其简单性和易读性使其在某些情境中成为比XML或JSON等格式更优的选择。
 
 ## 如何操作：
-让我们使用 "tomlc99" 库在C语言中解析一个 TOML 配置文件。首先，安装该库。然后，创建一个 `config.toml` 文件：
 
+要在C语言中使用TOML，首先需要一个能够解析TOML文件的库，因为C标准库中不包含这项功能。一个流行的选择是`tomlc99`，它是一个针对C99的轻量级TOML解析器。以下是读取一个简单TOML配置文件的快速指南：
+
+首先，确保已在项目中安装并正确链接了`tomlc99`。
+
+**示例 TOML 文件（`config.toml`）：**
 ```toml
-title = "TOML Example"
-
-[owner]
-name = "Tom Preston-Werner"
-dob = 1979-05-27T07:32:00Z
+[database]
+server = "192.168.1.1"
+ports = [ 8001, 8001, 8002 ]
+connection_max = 5000
+enabled = true
 ```
 
-现在，在 C 语言中解析它：
+**解析此文件的C代码：**
 
 ```c
 #include <stdio.h>
+#include <stdlib.h>
 #include "toml.h"
 
 int main() {
-    FILE* fp;
-    char errbuf[200];
-
-    if (0 == (fp = fopen("config.toml", "r"))) {
-        printf("Error: cannot open config file\n");
-        return 1;
-    }
-    
-    toml_table_t* conf = toml_parse_file(fp, errbuf, sizeof(errbuf));
-    fclose(fp);
-    if (0 == conf) {
-        printf("Error: %s\n", errbuf);
-        return 1;
+    FILE *configFile;
+    configFile = fopen("config.toml", "r");
+    if (!configFile) {
+        perror("无法打开文件");
+        return EXIT_FAILURE;
     }
 
-    printf("Title: %s\n", toml_raw_in(conf, "title"));
+    toml_table_t *config = toml_parse_file(configFile, NULL, 0);
+    if (!config) {
+        fprintf(stderr, "文件解析错误\n");
+        fclose(configFile);
+        return EXIT_FAILURE;
+    }
 
-    toml_table_t* owner = toml_table_in(conf, "owner");
-    printf("Owner Name: %s\n", toml_raw_in(owner, "name"));
+    toml_table_t *database = toml_table_in(config, "database");
+    if (database) {
+        const char *server = toml_raw_in(database, "server");
+        printf("数据库服务器：%s\n", server);
 
-    toml_free(conf);
-    return 0;
+        toml_array_t *ports = toml_array_in(database, "ports");
+        for (int i = 0; i < toml_array_nelem(ports); i++) {
+            int64_t port;
+            toml_int_at(ports, i, &port);
+            printf("端口 %d：%ld\n", i, port);
+        }
+    }
+
+    toml_free(config);
+    fclose(configFile);
+    return EXIT_SUCCESS;
 }
 ```
-示例输出：
+
+**输出：**
 ```
-Title: "TOML Example"
-Owner Name: "Tom Preston-Werner"
+数据库服务器："192.168.1.1"
+端口 0：8001
+端口 1：8001
+端口 2：8002
 ```
 
 ## 深入了解
-TOML，即 Tom's Obvious, Minimal Language 的缩写，由 Tom Preston-Werner 在 2013 年创建。它旨在成为 XML 和 YAML 等格式的更简单替代品，专注于更易于人类阅读和书写。虽然 JSON 是另一种替代品，但 TOML 保留了一种更容易被人类视觉解析的结构，这是其在配置文件中被采纳的主要原因之一。
 
-在 C 语言中，处理 TOML 数据时需要选择一个解析库，因为该语言本身不支持它。像 "tomlc99" 这样的库符合 C99 标准，并提供了一个 API 来解码 TOML 文本。在考虑性能时，适当的错误处理和内存管理至关重要，因为 C 语言没有内置的垃圾收集功能。
+TOML由GitHub的联合创始人Tom Preston-Werner创建，作为对他在其他配置文件格式中感知到的限制的回应。其目标是直白无歧义，对人和电脑来说，读写都不需要复杂的解析规则。在C生态系统中，TOML并不像在高级语言中那样是一等公民，比如Rust中的`serde_toml`或Python中的`toml`，这些语言拥有原生支持的库。相反，C开发者需要依赖像`tomlc99`这样的外部库，但鉴于C语言强调的极简主义和性能，这是典型的。
 
-## 另请参见：
-1. TOML 规范：[https://toml.io/en/](https://toml.io/en/)
-2. tomlc99 GitHub 仓库：[https://github.com/cktan/tomlc99](https://github.com/cktan/tomlc99)
-3. 比较数据序列化格式：[https://labs.eleks.com/2015/07/comparison-of-data-serialization-formats.html](https://labs.eleks.com/2015/07/comparison-of-data-serialization-formats.html)
+尽管TOML因其清晰而受到赞扬，在选择配置文件格式时，考虑项目的需求至关重要。在需要更复杂结构或与Web API交互的场景中，尽管它们的复杂性增加了，JSON或甚至YAML可能提供更好的适配。TOML在需要可读性和简单性的配置中脱颖而出，并不一定是在需要最高级数据结构的情况下。

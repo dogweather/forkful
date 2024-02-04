@@ -1,8 +1,8 @@
 ---
 title:                "Parsing HTML"
-date:                  2024-01-20T15:30:05.167808-07:00
+date:                  2024-02-03T17:50:12.004223-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Parsing HTML"
-
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/c/parsing-html.md"
 ---
@@ -11,59 +11,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Parsing HTML means reading and understanding the structure of HTML documents by a program. Programmers do it to manipulate, extract, or check content, often while scraping websites or processing web data.
+Parsing HTML in C involves analyzing HTML documents to extract data, structure, or specific parts efficiently, often as a precursor to data mining or web scraping. Programmers do it to automate information extraction, enabling processing or repurposing web content programmatically.
 
 ## How to:
 
-Alright, let's get to the code. C doesn't have built-in support for HTML parsing, so we'll use a library called Gumbo, which is a pure C HTML5 parser. Here's a quick example:
+Parsing HTML can seem daunting due to HTML's complexity and its frequent deviations from clean, well-formed structures. However, using a library such as `libxml2`, specifically its HTML parsing module, simplifies the process. This example demonstrates how to use `libxml2` to parse HTML and extract information.
 
-```C
+First, ensure `libxml2` is installed in your environment. In many Linux distributions, you can install it via the package manager. For example, on Ubuntu:
+
+```bash
+sudo apt-get install libxml2 libxml2-dev
+```
+
+Now, let's write a simple C program that uses `libxml2` to parse an HTML string and print the text inside a specific element:
+
+```c
 #include <stdio.h>
-#include <gumbo.h>
+#include <libxml/HTMLparser.h>
 
-void search_for_links(GumboNode* node) {
-    if (node->type != GUMBO_NODE_ELEMENT) {
-        return;
+void parseHTML(const char *html) {
+    htmlDocPtr doc = htmlReadDoc((const xmlChar *)html, NULL, NULL, HTML_PARSE_RECOVER | HTML_PARSE_NOERROR | HTML_PARSE_NOWARNING);
+    
+    // Assuming we're looking for content inside <p> tags
+    xmlNode *root_element = xmlDocGetRootElement(doc);
+    for (xmlNode *current_node = root_element; current_node; current_node = current_node->next) {
+        if (current_node->type == XML_ELEMENT_NODE && strcmp((const char *)current_node->name, "p") == 0) {
+            printf("Found paragraph: %s\n", xmlNodeGetContent(current_node));
+        }
     }
-    GumboAttribute* href;
-    if (node->v.element.tag == GUMBO_TAG_A &&
-       (href = gumbo_get_attribute(&node->v.element.attributes, "href"))) {
-        printf("Link found: %s\n", href->value);
-    }
-    GumboVector* children = &node->v.element.children;
-    for (unsigned int i = 0; i < children->length; ++i) {
-        search_for_links(children->data[i]);
-    }
+    
+    xmlFreeDoc(doc);
+    xmlCleanupParser();
 }
 
 int main() {
-    const char* html = "<html><body><a href='https://example.com'>Example</a></body></html>";
-    GumboOutput* output = gumbo_parse(html);
-    search_for_links(output->root);
-    gumbo_destroy_output(&kGumboDefaultOptions, output);
+    const char *html = "<html><body><p>Hello, world!</p></body></html>";
+    parseHTML(html);
     return 0;
 }
 ```
 
-Sample output:
-
+Sample Output:
 ```
-Link found: https://example.com
+Found paragraph: Hello, world!
 ```
 
-This example finds 'a' tags and prints out the href attributes. Remember to link against gumbo (`gcc -o example example.c -lgumbo`) and install the library first.
+This example focuses on extracting text within paragraph tags, but `libxml2` offers robust support for navigating and querying various parts of an HTML document.
 
 ## Deep Dive
 
-The story of HTML parsing in C is a bit rugged. There's no one-size-fits-all solution because HTML is complex and usually not so consistent. Gumbo, which we used, was developed by Google as a part of their open-source projects. It's designed to tolerate real-world messiness of web pages.
+Parsing HTML in C dates back to the early days of web development. Initially, developers had to rely on custom, often rudimentary parsing solutions, due to the lack of standardized libraries and the chaotic state of HTML on the web. The introduction of libraries like `libxml2` marked a significant progression, offering more standardized, efficient, and resilient approaches to parsing HTML.
 
-Alternatives include libxml2 with an HTML parser mode, though it's historically been more aligned with XML parsing. Another one is htmlcxx which is actually C++, but let's not get sidetracked.
+Despite C's unmatched speed and control, it's worth noting that C may not always be the best tool for parsing HTML, especially for tasks requiring quick development cycles or dealing with exceptionally malformed HTML. Languages with high-level HTML parsing libraries, such as Python with Beautiful Soup, provide more abstracted, user-friendly interfaces at the cost of some performance. 
 
-Performance-wise, C parsers can be blazing fast but normally don't offer the ease of use that Python libraries do. When rolling out C for HTML parsing, you're likely after performance, or you're integrating it into an existing C codebase. It can be fiddly, as most C libraries are low-level and more hands-on than Python or JavaScript parsers.
-
-## See Also
-
-- Gumbo Parser: [https://github.com/google/gumbo-parser](https://github.com/google/gumbo-parser)
-- libxml2 HTML parser: [http://xmlsoft.org/html/libxml-HTMLparser.html](http://xmlsoft.org/html/libxml-HTMLparser.html)
-- htmlcxx: [http://htmlcxx.sourceforge.net/](http://htmlcxx.sourceforge.net/) 
-- For a gentle start, consider a tutorial on web scraping with Python using Beautiful Soup or Python's `html.parser` as an easier intro to the subject.
+Nevertheless, for performance-critical applications, or when operating in resource-constrained environments, parsing HTML in C remains a viable and often preferred method. The key is leveraging robust libraries such as `libxml2` to handle the intricacies of HTML, allowing developers to focus on extracting the data they need without getting bogged down in the details of parsing mechanics.

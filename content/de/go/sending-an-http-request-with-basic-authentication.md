@@ -1,20 +1,25 @@
 ---
-title:                "HTTP-Anfragen mit Basisauthentifizierung senden"
-date:                  2024-01-20T18:01:46.764176-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "HTTP-Anfragen mit Basisauthentifizierung senden"
-
+title:                "Eine HTTP-Anfrage mit Basisauthentifizierung senden"
+date:                  2024-02-03T18:08:57.833563-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Eine HTTP-Anfrage mit Basisauthentifizierung senden"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/go/sending-an-http-request-with-basic-authentication.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Was & Warum?
-HTTP Anfragen mit Basic Authentication senden Daten über einen geschützten Kanal, indem sie Benutzername und Passwort mit der Anfrage mitgeben. Programmierer nutzen dies, um über APIs sicheren Zugriff auf Webdienste zu gewährleisten.
+
+Das Senden einer HTTP-Anfrage mit Basisauthentifizierung in Go beinhaltet das Hinzufügen eines Autorisierungs-Headers zu Ihrer Anfrage, der einen Benutzernamen und ein Passwort in Form eines base64-codierten Strings enthält. Programmierer verwenden diese Methode, um auf Ressourcen zuzugreifen, die eine Benutzerverifizierung erfordern, und sicherzustellen, dass ihre Anwendungen sicher mit Diensten über das Web interagieren können.
 
 ## Wie geht das:
-```Go
+
+Um eine HTTP-Anfrage mit Basisauthentifizierung in Go zu stellen, müssen Sie Ihre Anfrage-Header so gestalten, dass sie das Feld `Authorization` enthalten, gefüllt mit Ihren Anmeldeinformationen im richtigen Format. Unten finden Sie ein Beispiel, das zeigt, wie Sie eine GET-Anfrage an einen API-Endpunkt senden, der eine Basisauthentifizierung erfordert:
+
+```go
 package main
 
 import (
@@ -24,50 +29,39 @@ import (
 )
 
 func main() {
-	// Deine Zugangsdaten festlegen
-	username := "DeinBenutzername"
-	password := "DeinPasswort"
-
-	// Base64 Kodierung der Zugangsdaten
-	basicAuth := "Basic " + base64.StdEncoding.EncodeToString([]byte(username + ":" + password))
-
-	// HTTP Request erstellen
-	req, err := http.NewRequest("GET", "https://deine-api.de/daten", nil)
+	client := &http.Client{}
+	req, err := http.NewRequest("GET", "http://example.com/api/data", nil)
 	if err != nil {
-		fmt.Println("Fehler beim Erstellen der Anfrage:", err)
-		return
+		panic(err)
 	}
 
-	// Basic Authentication Header setzen
-	req.Header.Add("Authorization", basicAuth)
+	username := "yourUsername"
+	password := "yourPassword"
+    // Anmeldeinformationen codieren
+	auth := base64.StdEncoding.EncodeToString([]byte(username + ":" + password))
+    // Authorization-Header festlegen
+	req.Header.Add("Authorization", "Basic " + auth)
 
-	// HTTP Client erzeugen und Anfrage senden
-	client := &http.Client{}
 	resp, err := client.Do(req)
 	if err != nil {
-		fmt.Println("Fehler beim Senden der Anfrage:", err)
-		return
+		panic(err)
 	}
 	defer resp.Body.Close()
 
-	// Status der Antwort ausgeben
-	fmt.Println("Antwort Status:", resp.Status)
+	fmt.Println("Antwortstatus:", resp.Status)
 }
 ```
-Ausgabe könnte sein:
+
+Wenn Sie diesen Code ausführen, wird eine GET-Anfrage an die angegebene URL mit dem erforderlichen Autorisierungs-Header gesendet. Die Ausgabe sieht je nach Ihrem Endpunkt und Dienst etwa so aus:
+
 ```
-Antwort Status: 200 OK
+Antwortstatus: 200 OK
 ```
 
-## Deep Dive:
-Sending HTTP requests with basic authentication is a straightforward process that stems from the early days of web authentication. The 'Authorization' header transports credentials encoded in Base64 - simple and not secure by modern standards. It's suitable for internal networks or with HTTPS, which encrypts the entire request.
+## Tiefergehende Betrachtung
 
-Alternatives like OAuth 2.0 and JWT (JSON Web Tokens) provide more secure and flexible options for authorization and are widely used in modern applications. Basic authentication, however, remains prevalent due to its simplicity and ease of implementation - just a header added to your HTTP request.
+Basisauthentifizierung bei HTTP-Anfragen ist eine weit unterstützte Methode zur Durchsetzung von Zugriffskontrollen auf Webressourcen. Sie sendet einfach einen Benutzernamen und ein Passwort mit jeder Anfrage, was sie einfach zu implementieren macht, aber nicht die sicherste verfügbare Methode ist. Ein großer Nachteil ist, dass die Anmeldeinformationen im Klartext gesendet werden (da Base64 leicht decodiert werden kann), es sei denn, sie wird in Verbindung mit SSL/TLS verwendet. Dies kann potenziell sensible Informationen Man-in-the-Middle-Angriffen aussetzen.
 
-When implementing, it is vital to consider encryption and the sensitivity of the data you're transmitting. Basic authentication without encryption (like HTTP without SSL/TLS) should be avoided due to the risk of credential interception.
+In Go involviert das Senden dieser Anfragen die direkte Manipulation des `Authorization`-Headers. Während Golangs Standardbibliothek (`net/http`) leistungsstarke Primitiven für den Umgang mit HTTP(s)-Kommunikation zur Verfügung stellt, ist sie vergleichsweise niedrigstufig, was bedeutet, dass Entwickler verschiedene Aspekte der HTTP-Anfrage-/Antwortbehandlung manuell handhaben müssen. Das gibt Programmierern viel Flexibilität, bedeutet aber auch, dass man die Sicherheitsimplikationen, Codierung und korrekte Headerverwaltung genauer beachten muss.
 
-## Siehe Auch:
-- Go's official HTTP package documentation: [net/http](https://pkg.go.dev/net/http)
-- Basic authentication scheme as per RFC7617: [RFC 7617](https://tools.ietf.org/html/rfc7617)
-- More secure alternatives: [OAuth 2.0](https://oauth.net/2/), [JWT](https://jwt.io/)
-- Understanding Base64 Encoding: [Base64 Encoding Explained](https://en.wikipedia.org/wiki/Base64)
+Für Anwendungen, die eine höhere Sicherheit erfordern, sollten fortgeschrittenere Authentifizierungssysteme wie OAuth2 oder JWT (JSON Web Tokens) in Betracht gezogen werden. Diese Ansätze bieten robustere Sicherheitsfunktionen und werden breit unterstützt in modernen APIs und Diensten. Golangs wachsendes Ökosystem beinhaltet zahlreiche Bibliotheken und Tools (wie `golang.org/x/oauth2` unter anderen), um diese sichereren Authentifizierungsmethoden zu erleichtern, was es für Entwickler einfacher macht, sichere, effektive und moderne Autorisierungsmechanismen in ihren Anwendungen zu implementieren.

@@ -1,84 +1,59 @@
 ---
 title:                "Generowanie liczb losowych"
-date:                  2024-01-27T20:33:09.426081-07:00
+date:                  2024-02-03T17:57:18.964016-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Generowanie liczb losowych"
-
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/c/generating-random-numbers.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Co i dlaczego?
 
-Generowanie liczb losowych w języku C polega na tworzeniu ciągów liczb, które nie wykazują żadnego rozpoznawalnego wzorca, naśladując koncepcję losowości. Programiści wykorzystują liczby losowe do wielu celów, w tym do symulowania danych, zastosowań kryptograficznych oraz rozwoju gier, co czyni to kluczowym aspektem programowania.
+Generowanie losowych liczb w języku C polega na tworzeniu wartości, które są nieprzewidywalne i podążają za określonym rozkładem, takim jak jednostajny lub normalny. Ta zdolność jest kluczowa dla zastosowań od symulacji i gier po operacje kryptograficzne, gdzie nieprzewidywalność lub symulacja rzeczywistościowej losowości jest niezbędna.
 
 ## Jak to zrobić:
 
-Aby generować liczby losowe w C, zwykle korzysta się z funkcji `rand()` znajdującej się w `stdlib.h`. Jednak kluczowe jest zainicjowanie generatora liczb losowych wartością początkową (nazywaną seed), aby zapewnić zróżnicowanie generowanych liczb między różnymi wykonaniami programu. Funkcja `srand()`, zainicjowana wartością, często obecnym czasem, ułatwia to.
+W języku C losowe liczby można generować za pomocą funkcji `rand()`, która jest częścią standardowej biblioteki C `<stdlib.h>`. Domyślnie `rand()` produkuje liczby pseudolosowe w zakresie od 0 do `RAND_MAX` (stała zdefiniowana w `<stdlib.h>`). Aby mieć więcej kontroli nad zakresem, programiści mogą manipulować wynikiem funkcji `rand()`.
 
-Oto prosty przykład generowania liczby losowej od 0 do 99:
+Oto prosty przykład generowania losowej liczby między 0 a 99:
 
 ```c
 #include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
+#include <stdlib.h> // Dla rand() i srand()
+#include <time.h>   // Dla time()
 
 int main() {
-    // Zainicjuj generator liczb losowych
+    // Zasiew generatora liczb losowych
     srand((unsigned) time(NULL));
 
-    // Wygeneruj liczbę losową między 0 a 99
+    // Generowanie losowej liczby między 0 a 99
     int randomNumber = rand() % 100;
 
-    // Wypisz wylosowaną liczbę
-    printf("Wylosowana liczba: %d\n", randomNumber);
+    printf("Random Number: %d\n", randomNumber);
 
     return 0;
 }
 ```
 
-Przykładowe wyjście:
+Przykładowy wynik może się różnić za każdym razem, gdy uruchamiasz ten program:
 
 ```
-Wylosowana liczba: 42
+Random Number: 42
 ```
+Aby generować losowe liczby w innym zakresie, możesz odpowiednio dostosować operator modulo (`%`). Na przykład, `rand() % 10` generuje liczby od 0 do 9.
 
-Ważne jest, aby zauważyć, że każde wykonanie tego programu wyprodukuje nową losową liczbę, dzięki inicjowaniu obecnym czasem.
+Ważne jest, aby zauważyć, że zasiewanie generatora pseudolosowego (`srand()`) bieżącym czasem (`time(NULL)`) zapewnia różne sekwencje liczb losowych przy różnych wykonaniach programu. Bez zasiewania (`srand()`), `rand()` wyprodukowałaby tę samą sekwencję liczb za każdym razem, gdy program jest uruchamiany.
 
-## Dogłębna analiza
+## Zagłębienie się
 
-Tradycyjny sposób generowania liczb losowych w C, za pomocą funkcji `rand()` i `srand()`, nie jest naprawdę losowy. Jest pseudolosowy. Jest to wystarczające dla wielu zastosowań, ale nie w sytuacjach wymagających wysokiego stopnia losowości, jak na przykład w poważnych zastosowaniach kryptograficznych. Sekwencja generowana przez `rand()` jest całkowicie określona przez ziarno dostarczone do `srand()`. Tak więc, jeśli ziarno jest znane, sekwencja może być przewidywana, co redukuje losowość.
+Funkcja `rand()` oraz jej odpowiednik do zasiewania `srand()` są częścią standardowej biblioteki C od dziesięcioleci. Oparte są na algorytmach, które generują sekwencje liczb, które tylko wydają się być losowe – stąd termin "pseudolosowe". Podstawowy algorytm w `rand()` to zazwyczaj generator liniowy kongruentny (LCG).
 
-Historycznie, funkcję `rand()` krytykowano za jej niską jakość losowości i ograniczony zasięg. Nowoczesne alternatywy obejmują korzystanie ze specyficznych dla urządzenia API lub zewnętrznych bibliotek, które lepiej przybliżają prawdziwą losowość lub, w systemach typu UNIX, czytanie z `/dev/random` lub `/dev/urandom` w celach kryptograficznych.
+Chociaż `rand()` i `srand()` są wystarczające dla wielu aplikacji, mają znane ograniczenia, szczególnie dotyczące jakości losowości i potencjalnej przewidywalności. W przypadku aplikacji wymagających wysokiej jakości losowości, takich jak operacje kryptograficzne, należy rozważyć alternatywy takie jak `/dev/random` lub `/dev/urandom` (w systemach podobnych do Unix), lub API dostarczane przez biblioteki kryptograficzne.
 
-Na przykład, korzystanie z `/dev/urandom` w C:
+Z wprowadzeniem C11, standard ISO C zawierał nowy nagłówek, `<stdatomic.h>`, oferujący bardziej wyrafinowaną kontrolę nad operacjami współbieżnymi, ale nie dotyczący bezpośrednio losowości. Dla prawdziwej losowości w C, deweloperzy często zwracają się ku specyficznym dla platformy lub zewnętrznym bibliotekom, które oferują lepsze algorytmy lub korzystają z źródeł entropii sprzętowej.
 
-```c
-#include <stdio.h>
-#include <stdlib.h>
-
-int main() {
-    FILE *fp;
-    unsigned int randomNumber;
-
-    // Otwórz /dev/urandom do odczytu
-    fp = fopen("/dev/urandom", "r");
-
-    // Przeczytaj liczbę losową
-    fread(&randomNumber, sizeof(randomNumber), 1, fp);
-
-    // Wypisz wylosowaną liczbę
-    printf("Wylosowana liczba: %u\n", randomNumber);
-
-    // Zamknij plik
-    fclose(fp);
-
-    return 0;
-}
-```
-
-Ta metoda czyta bezpośrednio z puli entropii systemu, oferując wyższą jakość losowości odpowiednią dla bardziej wrażliwych zastosowań. Jednak podejście to może stwarzać problemy z przenośnością na różne platformy, co czyni je mniej uniwersalnym niż korzystanie z `rand()`.
-
-Bez względu na metodę, zrozumienie natury losowości i jej implementacji w C jest kluczowe dla opracowywania skutecznych, bezpiecznych i angażujących aplikacji.
+Pamiętaj, że chociaż `rand()` służy jako proste i dostępne środki do generowania liczb pseudolosowych, jego zastosowania w nowoczesnych aplikacjach są ograniczone przez jakość i przewidywalność jego wyników. Kiedy wymagane są bardziej solidne rozwiązania, zwłaszcza w aplikacjach wymagających bezpieczeństwa, zdecydowanie zaleca się szukanie rozwiązań poza standardową biblioteką.

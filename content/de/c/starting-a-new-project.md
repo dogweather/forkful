@@ -1,40 +1,56 @@
 ---
-title:                "Einen neuen Projekt starten"
-date:                  2024-01-20T18:02:59.082510-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Einen neuen Projekt starten"
-
+title:                "Ein neues Projekt starten"
+date:                  2024-02-03T18:09:07.936628-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Ein neues Projekt starten"
 tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/c/starting-a-new-project.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Was & Warum?)
-Ein neues Projekt zu starten bedeutet, den Grundstein für eine völlig neue Anwendung oder ein neues Feature zu legen. Programmierer starten Projekte, um Probleme zu lösen, Ideen umzusetzen und manchmal auch, um neues Terrain in der weiten Welt des Codes zu erkunden.
+## Was & Warum?
 
-## How to: (Wie man's macht:)
-Ein einfaches "Hello, World!" in C sieht so aus:
+Ein neues Projekt in C zu starten, umfasst das Einrichten einer grundlegenden Code-Struktur und Umgebung, um Entwicklungsarbeiten effizient zu verwalten. Programmierer tun dies, um den Build-Prozess zu optimieren, Konsistenz zu gewährleisten und eine einfachere Wartung und Skalierbarkeit der Software über die Zeit hinweg zu erleichtern.
 
-```c
-#include <stdio.h>
+## Wie:
 
-int main() {
-    printf("Hallo Welt!\n");
-    return 0;
-}
+Im Kern jedes C-Projekts steht der Quellcode. Ein typischer Ausgangspunkt umfasst das Erstellen einer Hauptdatei, oft `main.c` genannt, die den Einstiegspunkt eines Programms beherbergt. Zusätzlich ist ein `Makefile` essenziell für die Verwaltung der Kompilierung, um Projektbuilds zu optimieren.
+
+Hier ein minimales Beispiel:
+
+1. **Einrichten von "main.c"**: Diese Datei enthält die `main` Funktion, den Einstiegspunkt des Programms.
+
+    ```c
+    // main.c
+    #include <stdio.h>
+
+    int main() {
+        printf("Hallo, Welt!\n");
+        return 0;
+    }
+    ```
+
+2. **Erstellen eines Makefile**: Automatisiert den Build-Prozess, macht es einfach, Ihr Projekt mit einem einzigen Befehl zu kompilieren.
+
+    ```makefile
+    # Makefile
+    all: main
+
+    main: main.c
+        gcc -o main main.c
+
+    clean:
+        rm -f main
+    ```
+
+In einem Terminal führt das Ausführen von `make` zur Kompilation von `main.c` zu einem ausführbaren Programm namens `main`, und das Ausführen von `./main` sollte ausgeben:
+```
+Hallo, Welt!
 ```
 
-Ausgabe:
+## Tiefergehend
 
-```
-Hallo Welt!
-```
-
-## Deep Dive (Tiefer eintauchen)
-Beim Start eines neuen Projekts entscheiden Sie über die Struktur und die Werkzeuge. In den 1970ern, als C von Dennis Ritchie entwickelt wurde, war es revolutionär wegen des direkten Hardware-Zugriffs und der gleichzeitigen Portabilität. Heute gibt es viele Alternativen zu C, wie Python für schnelle, hochlevelige Skripte oder Rust für sicherheitskritische Anwendungen. Doch C bleibt einzigartig in seiner Kombination aus Effizienz, Kontrolle und weitreichender Plattformunterstützung. Die Implementierung hängt stark von der Aufgabe ab – ein eingebettetes System benötigt einen anderen Ansatz als eine Desktop-Anwendung.
-
-## See Also (Siehe auch)
-- [GNU C Library](https://www.gnu.org/software/libc/)
-- [C Faq](http://c-faq.com/) - Häufig gestellte Fragen zu C
-- [C Standard Library Reference Tutorial](https://www.tutorialspoint.com/c_standard_library/index.htm) - Ein Tutorial zur C Standardbibliothek
+Ein Projekt in C zu initiieren, bedeutet nicht nur Code zu schreiben; es geht darum, eine solide Grundlage für das Projektmanagement zu schaffen. Diese Praxis hat sich seit den Anfängen der Programmierung entwickelt, inspiriert von der Notwendigkeit, den Prozess der Kompilierung großer, komplexer Systeme aus der UNIX-Welt zu organisieren und zu optimieren. Das GNU Make-System, das in den 80er Jahren eingeführt wurde, revolutionierte dies durch Automatisierung des Build-Prozesses und wurde zu einem kritischen Werkzeug in modernen C-Projekten. Allerdings führte der Aufstieg von integrierten Entwicklungsumgebungen (IDEs) und anderen höheren Programmiersprachen zu unterschiedlichen Praktiken der Projektinitialisierung, die von Beginn an automatisierte Build-Systeme, Abhängigkeitsmanagement und Versionskontrollintegration umfassen könnten. Trotz dieser Fortschritte bleiben die Einfachheit und Kontrolle, die ein Makefile und ein gut organisiertes Quellcode-Verzeichnis bieten, besonders für systemnahe Programmierung, wo Effizienz und Ressourcenmanagement von größter Bedeutung sind, unbezahlbar. Dennoch werden für größere Projekte Werkzeuge wie CMake oder Meson aufgrund ihrer Fähigkeit, komplexe Builds und plattformübergreifende Kompatibilität zu handhaben, vorgezogen und deuten auf einen Trend zu ausgefeilteren Projektinitiierungswerkzeugen im C-Ökosystem hin.

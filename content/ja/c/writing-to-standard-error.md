@@ -1,40 +1,54 @@
 ---
 title:                "標準エラーへの書き込み"
-date:                  2024-01-19
+date:                  2024-02-03T18:15:33.293854-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "標準エラーへの書き込み"
-
 tag:                  "Files and I/O"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/c/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
 ## 何となぜ？
-標準エラー (stderr) への書き込みは、プログラムのエラーメッセージをユーザーやログファイルに出力する方法です。これは、通常の出力 (stdout) と区別して、問題を明確に伝えるために利用されます。
 
-## How to:
-## 方法:
-```C
+C言語における標準エラーへの書き込みは、エラーメッセージや診断情報をメインプログラムの出力とは別のストリームに向けて出力することを意味します。プログラマーはエラーメッセージを標準出力から分離することで、特にデバッグやプログラム実行のログ取りを行う際に、どちらも読みやすく、別々に処理しやすくするためにこれを行います。
+
+## 方法：
+
+C言語では、`stderr` ストリームがエラーメッセージを書き込むために使用されます。`printf`による標準出力への書き込みとは異なり、`stderr`への書き込みは `fprintf` や `fputs` を使用することができます。以下がその方法です：
+
+```c
 #include <stdio.h>
 
 int main() {
-    fprintf(stderr, "エラー: ファイルを開けませんでした。\n");
-    return 1;
+    fprintf(stderr, "This is an error message.\n");
+
+    fputs("This is another error message.\n", stderr);
+    
+    return 0;
 }
 ```
-出力:
+
+サンプル出力 (stderrに対して)：
 ```
-エラー: ファイルを開けませんでした。
+This is an error message.
+This is another error message.
 ```
 
-## Deep Dive:
-## 詳細:
-`stderr`はUNIXの初期からあります。`stdout`とは別にエラーを扱うことで、出力をファイルにリダイレクトしてもエラーは画面に表示できます。`printf`も使えますが、`fprintf(stderr, ...)`が標準的。内部的には、`stderr`は`FILE`ポインタで、バッファリングされずに即時にフラッシュされます。
+コンソールでの出力は `stdout` に似ているように見えるものの、ターミナルでリダイレクションを使用した場合、その違いははっきりします：
 
-## See Also:
-## 関連情報:
-- C Standard Library documentation: [https://en.cppreference.com/w/c/io](https://en.cppreference.com/w/c/io)
-- GNU C Library documentation on Standard Streams: [https://www.gnu.org/software/libc/manual/html_node/Standard-Streams.html](https://www.gnu.org/software/libc/manual/html_node/Standard-Streams.html)
-- POSIX standard: [https://pubs.opengroup.org/onlinepubs/9699919799/](https://pubs.opengroup.org/onlinepubs/9699919799/)
+```sh
+$ ./your_program > output.txt
+```
+
+このコマンドは標準出力を `output.txt` にのみリダイレクトし、エラーメッセージは引き続き画面に表示されます。
+
+## 深掘り
+
+Unix系システムにおける `stdout` と `stderr` の区分は、C言語とUnixの初期の日々にさかのぼります。この区分により、プログラマーは標準プログラム出力とは独立してエラーメッセージをリダイレクトできるため、より堅牢なエラーハンドリングとログ取りが可能になります。`stderr` はデフォルトでバッファリングされずに即座にエラーメッセージの出力が可能であり、これはクラッシュやその他の重大な問題のデバッグに役立ちますが、`stdout` は典型的にはバッファリングされ、出力が遅れる可能性があります（例えば、プログラムの完了時や手動でのフラッシング時など）。
+
+現代のアプリケーションでは、特にコマンドラインツールやサーバーアプリケーションにおいて、通常のログメッセージとエラーを区別することが重要であるため、`stderr` への書き込みは依然として関連性があります。しかし、GUIアプリケーションやより洗練されたログ取りメカニズムが必要な場合には、プログラマーはメッセージのフォーマット、出力先（例：ファイル、ネットワーク）、および重大度レベル（情報、警告、エラーなど）をより制御できる専用のログライブラリを使用することがあります。
+
+`stderr` はC言語におけるエラーレポートのための基本的なメカニズムを提供しますが、プログラミングの実践の進化と高度なログフレームワークの利用可能性により、それはしばしば現代のエラーハンドリング戦略の出発点に過ぎません。

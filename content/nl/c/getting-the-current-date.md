@@ -1,58 +1,60 @@
 ---
-title:                "Het huidige datum ophalen"
-date:                  2024-01-28T22:01:10.300465-07:00
+title:                "De huidige datum krijgen"
+date:                  2024-02-03T17:57:24.626092-07:00
 model:                 gpt-4-0125-preview
-simple_title:         "Het huidige datum ophalen"
-
+simple_title:         "De huidige datum krijgen"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/c/getting-the-current-date.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Wat & Waarom?
 
-De huidige datum verkrijgen betekent uitzoeken wat de datum van vandaag is volgens de interne klok van het systeem. Programmeurs doen dit om logs te dateren, evenementen te valideren en gegevens van een tijd-stempel te voorzien.
+Het verkrijgen van de huidige datum in C houdt in dat je toegang krijgt tot de standaard C-bibliotheek om de huidige datum en tijd van het systeem op te halen en te formatteren. Programmeurs hebben deze functionaliteit vaak nodig voor logboekregistratie, tijdstempels of planningseigenschappen binnen hun applicaties.
 
-## Hoe:
+## Hoe te:
 
-Je zult `time.h` willen includeren om met tijd in C om te gaan.
+In C biedt de `<time.h>` header de nodige functies en typen om met datums en tijden te werken. De functie `time()` haalt de huidige tijd op, terwijl `localtime()` deze tijd converteert naar de lokale tijdzone. Om de datum te tonen, gebruiken we `strftime()` om deze als een string te formatteren.
 
-```C
+Hier is een basisvoorbeeld:
+
+```c
 #include <stdio.h>
 #include <time.h>
 
 int main() {
-    time_t t = time(NULL);
-    struct tm tm = *localtime(&t);
+    char buffer[80];
+    time_t rawtime;
+    struct tm *timeinfo;
+
+    // Haal de huidige tijd op
+    time(&rawtime);
+    // Zet het om naar lokale tijd
+    timeinfo = localtime(&rawtime);
     
-    printf("Huidige Datum: %02d-%02d-%d\n", tm.tm_mday, tm.tm_mon + 1, tm.tm_year + 1900);
-    
+    // Formateer de datum en print het
+    strftime(buffer, 80, "De datum van vandaag is %Y-%m-%d", timeinfo);
+    printf("%s\n", buffer);
+
     return 0;
 }
 ```
 
-Voorbeeld van uitvoer:
+Een voorbeelduitvoer kan er zo uitzien:
+
 ```
-Huidige Datum: 15-04-2023
+De datum van vandaag is 2023-04-12
 ```
 
-## Diepere Duik
+## Diepere duik
 
-Historisch gezien, gaat omgaan met tijd in C terug tot de vroege dagen van UNIX, dankzij C's sterke systeemniveau capaciteiten. Voor huidige data vertrouwen we op de `time.h` bibliotheek, die er is geweest sinds C gestandaardiseerd werd door ANSI.
+De tijdafhandeling in C, zoals gefaciliteerd door `<time.h>`, gaat terug naar de vroegste dagen van de taal en UNIX-systemen. Het is gebouwd rond het `time_t` gegevenstype, dat de huidige tijd vertegenwoordigt als het aantal seconden sinds het Unix Epoch (1 januari 1970). Hoewel dit efficiënt en universeel compatibel is, betekent het ook dat de tijdfuncies van de standaard C-bibliotheek van nature beperkt zijn door het bereik en de resolutie van `time_t`.
 
-Het `time_t` type slaat de huidige tijd sinds het Epoch (00:00:00 UTC op 1 januari 1970) op in seconden. De `localtime` functie vertaalt deze tijd naar een `struct tm` die de kalenderdatum en tijd houdt, opgesplitst in zijn componenten.
+Moderne applicaties, met name die welke timestamps met hoge resolutie vereisen of die te maken hebben met datums ver in de toekomst of het verleden, vinden deze beperkingen mogelijk lastig. Het probleem van het jaar 2038 is bijvoorbeeld een beroemde illustratie waarbij systemen die een 32-bit `time_t` gebruiken, zullen overlopen.
 
-Alternatieven? Er zijn andere manieren om tijd in C te manipuleren en te representeren. Bijvoorbeeld, `gmtime` zet `time_t` om naar gecoördineerde universele tijd (UTC) in plaats van lokale tijd, wat `localtime` doet. Met `strftime`, kun je je datum- en tijdformaat uitgebreid aanpassen.
+Voor complexere tijd- en datumbehandeling, wenden veel programmeurs zich tot externe bibliotheken of de functionaliteiten die door het besturingssysteem worden geboden. In C++, biedt de `<chrono>` bibliotheek bijvoorbeeld meer nauwkeurige en veelzijdige tijdmanipulatiemogelijkheden.
 
-Wat de details betreft, `time_t` is typisch een geheel getal of een floating-point type. Implementatie kan variëren over systemen, maar de standaard eist niet het precieze type, alleen dat het in staat is tijden te representeren.
-
-Wanneer je tijdgerelateerde functies gebruikt, onthoud dan om rekening te houden met zomertijd en lokale specifieke gegevens als je applicatie daar gevoelig voor is.
-
-## Zie Ook
-
-- The GNU C Library Reference Manual over Tijd: https://www.gnu.org/software/libc/manual/html_node/Time.html
-- C Standaard Bibliotheek - time.h: https://en.cppreference.com/w/c/chrono
-- Leer meer over tijdformaten met strftime: https://en.cppreference.com/w/c/chrono/strftime
+Ondanks zijn beperkingen, de eenvoud en alomtegenwoordigheid van C's tijdfuncies maken ze perfect geschikt voor veel toepassingen. Deze hulpmiddelen begrijpen is fundamenteel voor C-programmeurs en biedt een mix van historische programmeercontext en praktisch, alledaags nut.

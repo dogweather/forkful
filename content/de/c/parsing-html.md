@@ -1,69 +1,69 @@
 ---
 title:                "HTML parsen"
-date:                  2024-01-20T15:30:22.426444-07:00
+date:                  2024-02-03T17:59:32.651950-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "HTML parsen"
-
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/c/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-# HTML-Parsing: Was & Warum?
+## Was & Warum?
 
-HTML-Parsing ermöglicht es Programmen, die Struktur von Webseiten zu verstehen und Inhalte gezielt auszulesen. Entwickler machen das, um Daten zu sammeln, Web-Scraping zu betreiben oder Inhalte automatisiert zu verarbeiten.
+HTML in C zu parsen umfasst die Analyse von HTML-Dokumenten, um Daten, Strukturen oder spezifische Teile effizient zu extrahieren, oft als Vorläufer des Data Minings oder Web Scrapings. Programmierer tun dies, um die Extraktion von Informationen zu automatisieren, was die programmatische Verarbeitung oder Wiederverwendung von Webinhalten ermöglicht.
 
-# So geht's:
+## Wie geht das:
 
-Librarys wie `libxml2` bieten in C Tools fürs HTML-Parsing. Hier ein simples Beispiel:
+HTML zu parsen kann aufgrund der Komplexität von HTML und seiner häufigen Abweichungen von sauberen, wohlgeformten Strukturen entmutigend erscheinen. Die Verwendung einer Bibliothek wie `libxml2`, insbesondere ihres HTML-Parsing-Moduls, vereinfacht jedoch den Prozess. Dieses Beispiel zeigt, wie `libxml2` verwendet wird, um HTML zu parsen und Informationen zu extrahieren.
 
-```C
+Zunächst stellen Sie sicher, dass `libxml2` in Ihrer Umgebung installiert ist. In vielen Linux-Distributionen können Sie es über den Paketmanager installieren. Zum Beispiel auf Ubuntu:
+
+```bash
+sudo apt-get install libxml2 libxml2-dev
+```
+
+Schreiben wir nun ein einfaches C-Programm, das `libxml2` verwendet, um einen HTML-String zu parsen und den Text in einem bestimmten Element auszugeben:
+
+```c
 #include <stdio.h>
 #include <libxml/HTMLparser.h>
 
-int main() {
-    htmlDocPtr doc;
-    htmlNodePtr node;
-
-    // HTML-String, kann auch aus einer Datei oder dem Internet stammen
-    char *html = "<html><body><p>Hello, World!</p></body></html>";
-
-    // HTML-Parser initialisieren und Dokument parsen
-    doc = htmlReadDoc((xmlChar*)html, NULL, NULL, HTML_PARSE_RECOVER | HTML_PARSE_NOERROR | HTML_PARSE_NOWARNING);
-
-    // root element holen
-    node = xmlDocGetRootElement(doc);
-
-    // einfach über die Knoten iterieren und Namen ausgeben
-    for (node = node->children; node; node = node->next) {
-        printf("Element Name: %s\n", (char *) node->name);
+void parseHTML(const char *html) {
+    htmlDocPtr doc = htmlReadDoc((const xmlChar *)html, NULL, NULL, HTML_PARSE_RECOVER | HTML_PARSE_NOERROR | HTML_PARSE_NOWARNING);
+    
+    // Angenommen, wir suchen Inhalte innerhalb von <p>-Tags
+    xmlNode *root_element = xmlDocGetRootElement(doc);
+    for (xmlNode *current_node = root_element; current_node; current_node = current_node->next) {
+        if (current_node->type == XML_ELEMENT_NODE && strcmp((const char *)current_node->name, "p") == 0) {
+            printf("Gefundenen Absatz: %s\n", xmlNodeGetContent(current_node));
+        }
     }
-
-    // Speicher freigeben
+    
     xmlFreeDoc(doc);
+    xmlCleanupParser();
+}
 
+int main() {
+    const char *html = "<html><body><p>Hallo, Welt!</p></body></html>";
+    parseHTML(html);
     return 0;
 }
 ```
 
-Ausgabe könnte so aussehen:
-
+Beispielausgabe:
 ```
-Element Name: body
-Element Name: p
+Gefundenen Absatz: Hallo, Welt!
 ```
 
-# Hinter den Kulissen:
+Dieses Beispiel konzentriert sich auf das Extrahieren von Text innerhalb von Absatz-Tags, aber `libxml2` bietet robuste Unterstützung für das Navigieren und Abfragen verschiedener Teile eines HTML-Dokuments.
 
-In der Vergangenheit wurde HTML oft mit regulären Ausdrücken (regex) geparsed, was fehleranfällig ist. HTML ist keine reguläre Sprache und kann mit regex nicht korrekt geparst werden. Deshalb greifen Entwickler auf spezialisierte Parser wie `libxml2` zurück.
+## Vertiefung
 
-Alternativen zu `libxml2` sind `Gumbo` von Google oder `htmlcxx` für C++. Diese nutzen unterschiedliche Ansätze und APIs, doch das Ziel bleibt dasselbe: verlässliches Parsing von HTML.
+HTML in C zu parsen reicht zurück bis in die Anfangstage der Webentwicklung. Anfangs mussten sich Entwickler auf benutzerdefinierte, oft rudimentäre Parsing-Lösungen verlassen, aufgrund des Mangels an standardisierten Bibliotheken und dem chaotischen Zustand von HTML im Web. Die Einführung von Bibliotheken wie `libxml2` markierte einen signifikanten Fortschritt, der standardisierte, effiziente und widerstandsfähigere Ansätze zum Parsen von HTML bot.
 
-Beim Parsing intern wird der HTML-Text in einen DOM (Document Object Model) überführt. Das ermöglicht es, auf einzelne Teile der Struktur zuzugreifen, als wären sie Teile eines baumartig aufgebauten Graphen.
+Obwohl C für seine unübertroffene Geschwindigkeit und Kontrolle bekannt ist, ist es erwähnenswert, dass C nicht immer das beste Werkzeug für das Parsen von HTML ist, insbesondere für Aufgaben, die schnelle Entwicklungszyklen erfordern oder mit außergewöhnlich fehlerhaftem HTML umgehen müssen. Sprachen mit High-Level-HTML-Parsing-Bibliotheken, wie Python mit Beautiful Soup, bieten abstraktere, benutzerfreundlichere Schnittstellen auf Kosten einiger Leistung.
 
-# Siehe auch:
-
-- Die `libxml2`-Dokumentation: http://xmlsoft.org/html/libxml-HTMLparser.html
-- `Gumbo` Parser: https://github.com/google/gumbo-parser
-- `htmlcxx` HTML/CSS-Parser in C++: http://htmlcxx.sourceforge.net/
-- W3C zu HTML und DOM: https://www.w3.org/DOM/
+Dennoch bleibt das Parsen von HTML in C für leistungskritische Anwendungen oder in ressourcenbeschränkten Umgebungen eine praktikable und oft bevorzugte Methode. Der Schlüssel liegt darin, robuste Bibliotheken wie `libxml2` zu verwenden, um die Feinheiten von HTML zu bewältigen, sodass Entwickler sich auf das Extrahieren der Daten konzentrieren können, die sie benötigen, ohne sich in den Details der Parsing-Mechanik zu verlieren.

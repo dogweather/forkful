@@ -1,61 +1,63 @@
 ---
-title:                "Avrundning av tal"
-date:                  2024-01-26T03:43:08.220500-07:00
+title:                "Avrundning av nummer"
+date:                  2024-02-03T18:07:52.650120-07:00
 model:                 gpt-4-0125-preview
-simple_title:         "Avrundning av tal"
-
+simple_title:         "Avrundning av nummer"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/c/rounding-numbers.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Vad & varför?
-Att avrunda tal innebär att man klipper av siffrorna efter en viss punkt och eventuellt justerar den sista kvarvarande siffran. Programmerare avrundar för att minska precisionen när exakta värden inte är nödvändiga, hantera flyttalsfel, eller förbereda tal för användarvänlig visning.
+## Vad & Varför?
 
-## Hur man gör: 
-I C använder du vanligtvis funktionerna `floor()`, `ceil()` eller `round()`. Här är en snabb genomgång:
+Avrundning av tal är processen att justera siffrorna i ett tal för att minska dess precision enligt vissa regler, antingen mot det närmaste hela talet eller ett specificerat antal decimaler. Programmerare gör detta av skäl som sträcker sig från att begränsa mängden lagringsutrymme som behövs, till att förenkla utdata för användarkonsumtion, eller för att säkerställa korrekta matematiska operationer som är känsliga för mycket små variationer.
 
-```C
+## Hur man gör:
+
+Att avrunda tal i C kan åstadkommas med olika funktioner, men det vanligaste tillvägagångssättet involverar funktionerna `floor()`, `ceil()`, och `round()`. Dessa funktioner är en del av standardmatematikbiblioteket, så du måste inkludera `math.h` i ditt program.
+
+```c
 #include <stdio.h>
 #include <math.h>
 
 int main() {
-    double num = 3.14159;
-    double num_floor = floor(num);
-    double num_ceil = ceil(num);
-    double num_round = round(num);
+    double num = 9.527;
 
-    printf("Floor: %.2f\n", num_floor); // Floor: 3.00
-    printf("Ceil: %.2f\n", num_ceil);   // Ceil: 4.00
-    printf("Round: %.2f\n", num_round); // Round: 3.00
+    // Använder floor() för att avrunda nedåt
+    double floorResult = floor(num);
+    printf("floor(9.527) = %.0f\n", floorResult);
+
+    // Använder ceil() för att avrunda uppåt
+    double ceilResult = ceil(num);
+    printf("ceil(9.527) = %.0f\n", ceilResult);
+
+    // Använder round() för att avrunda till närmaste heltal
+    double roundResult = round(num);
+    printf("round(9.527) = %.0f\n", roundResult);
+
+    // Avrundning till ett specificerat antal decimaler innebär multiplikation och division
+    double twoDecimalPlaces = round(num * 100) / 100;
+    printf("Avrundning till två decimaler: %.2f\n", twoDecimalPlaces);
+
     return 0;
 }
 ```
 
-För mer kontroll, som att avrunda till en specifik plats, multiplicerar du, avrundar, och delar:
-
-```C
-double roundToPlace(double num, int place) {
-    double scale = pow(10.0, place);
-    return round(num * scale) / scale;
-}
-
-// ...
-
-double num = 3.14159;
-double num_rounded = roundToPlace(num, 2);
-printf("Avrundat till 2 decimaler: %.2f\n", num_rounded); // Avrundat till 2 decimaler: 3.14
+Utdata:
+```
+floor(9.527) = 9
+ceil(9.527) = 10
+round(9.527) = 10
+Avrundning till två decimaler: 9.53
 ```
 
-## Djupdykning
-Förr i tiden innebar avrundning ofta en manuell process—en tung lyft med bara penna och papper. Med datorer automatiserade vi detta, men flyttalsaritmetik förde med sig nyanser på grund av dess binära natur, där vissa tal inte kan representeras exakt.
+## Fördjupning
 
-Alternativ till standardavrundning inkluderar trunkering (att helt enkelt släppa extra siffror) eller bankers avrundning, som avrundar till det närmaste jämna talet när det är exakt mellan två värden, vilket minskar snedvridningen i upprepade beräkningar.
+Avrundning av tal har djupa historiska rötter i matematik och beräkning, oerhört viktigt för både teoretiska och tillämpade aspekter. I C ger `floor()`, `ceil()`, och `round()` grundläggande funktionalitet, men essensen av att avrunda flytpunkttal till heltal eller specifika decimalställen är mer nyanserad på grund av den binära representationen av flytpunkttal. Denna representation kan leda till oväntade resultat på grund av hur tal som inte kan representeras exakt i binärt (som 0.1) hanteras.
 
-Implementeringen blir knepig när du behöver avrunda tal med godtycklig precision eller hantera specialfall som oändlighet, signalerande NaNs eller subnormala värden. C-standardbiblioteksfunktionerna hanterar grunderna, men om du behöver avrunda decimaler på egna sätt, behöver du mer än `math.h`.
+Dessa funktioner är en del av C-standardbiblioteket, definierat i `<math.h>`. När du avrundar tal, särskilt för finansiella eller precisa ingenjörsberäkningar, måste man överväga implikationerna av att använda binära flytpunkttal. Alternativ till de inbyggda C-funktionerna för mycket exakt eller decimal-specifik avrundning kan inkludera att implementera anpassade avrundningsfunktioner eller att använda bibliotek designade för godtycklig precision i aritmetiken, som GMP eller MPFR, även om dessa introducerar ytterligare komplexitet och beroenden.
 
-## Se även
-- [Dokumentation för `<math.h>`](https://en.cppreference.com/w/c/numeric/math)
-- [Flyttalsaritmetik](https://en.wikipedia.org/wiki/Floating-point_arithmetic)
-- [Fallgroparna med att verifiera flyttalsberäkningar](https://dl.acm.org/doi/10.1145/1186736.1186737)
+I praktiken innebär valet av rätt tillvägagångssätt för avrundning i C att balansera behovet av precision, prestanda och praktiska överväganden, med en skarp förståelse för de domänspecifika kraven för applikationen som utvecklas.

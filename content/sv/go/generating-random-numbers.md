@@ -1,24 +1,29 @@
 ---
-title:                "Generera slumptal"
-date:                  2024-01-27T20:34:09.911243-07:00
+title:                "Generera slumpmässiga nummer"
+date:                  2024-02-03T17:57:33.075012-07:00
 model:                 gpt-4-0125-preview
-simple_title:         "Generera slumptal"
-
+simple_title:         "Generera slumpmässiga nummer"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/go/generating-random-numbers.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Vad & Varför?
 
-Att generera slumpmässiga nummer i Go involverar att använda paketet `math/rand` för att producera pseudo-slumpmässiga nummer för olika applikationer såsom att simulera experiment, generera testdata, eller lägga till oförutsägbarhet i spel. Programmerare använder denna funktion för att skapa dynamiskt och mindre förutsägbart mjukvarubeteende.
+Att generera slumpmässiga nummer i programmering handlar om att skapa en sekvens av nummer som inte rimligen kan förutsägas bättre än genom slumpen. Programmerare gör detta av en mängd olika anledningar, inklusive simuleringar, spel och säkerhetstillämpningar, där oförutsägbarhet är nyckeln till funktionalitet eller hemlighet.
 
 ## Hur man gör:
 
-För att börja generera slumpmässiga nummer i Go behöver du importera paketet `math/rand` och paketet `time` för att sålla (seed) slumpmålsgenereringen för mer oförutsägbarhet. Här är ett grundläggande exempel:
+I Go genereras slumpmässiga nummer med hjälp av paketet `math/rand` för pseudoslumpmässiga nummer eller `crypto/rand` för kryptografiskt säkra pseudoslumpmässiga nummer. Låt oss utforska båda.
 
-```Go
+### Använda `math/rand` för Pseudoslumpmässiga Nummer
+
+Först, importera paketet `math/rand` och paketet `time` för att seeda generatorn. Seeding säkerställer att du får en annan sekvens av nummer varje körning.
+
+```go
 package main
 
 import (
@@ -28,32 +33,42 @@ import (
 )
 
 func main() {
-	// Sållar generatorn
 	rand.Seed(time.Now().UnixNano())
-	
-	// Genererar ett slumpmässigt heltal mellan 0 och 99
-	randomInt := rand.Intn(100)
-	fmt.Println("Slumpmässigt heltal:", randomInt)
-	
-	// Genererar ett slumpmässigt flyttal mellan 0.0 och 1.0
-	randomFloat := rand.Float64()
-	fmt.Println("Slumpmässigt flyttal:", randomFloat)
+	fmt.Println("Ett slumpmässigt nummer:", rand.Intn(100)) // Genererar ett nummer mellan 0 och 99
 }
 ```
 
-Exempel på utdata kan vara:
+Exempelutdata: `Ett slumpmässigt nummer: 42`
 
-```
-Slumpmässigt heltal: 42
-Slumpmässigt flyttal: 0.7304601899194229
+### Använda `crypto/rand` för Kryptografiskt Säkra Pseudoslumpmässiga Nummer
+
+För mer säkerhetskänsliga applikationer är paketet `crypto/rand` lämpligt eftersom det genererar slumpmässiga nummer som är svåra att förutsäga, vilket gör dem lämpliga för kryptografiska operationer.
+
+```go
+package main
+
+import (
+	"crypto/rand"
+	"fmt"
+	"math/big"
+)
+
+func main() {
+	n, _ := rand.Int(rand.Reader, big.NewInt(100))
+	fmt.Println("Ett säkert slumpmässigt nummer:", n)
+}
 ```
 
-Kom ihåg, varje körning producerar olika nummer på grund av sållningen med den aktuella tiden.
+Exempelutdata: `Ett säkert slumpmässigt nummer: 81`
 
 ## Djupdykning
 
-Paketet `math/rand` i Go implementerar pseudo-slumpmässiga nummergeneratorer (PRNGs) för olika distributioner. Även om det är ganska effektivt för många applikationer, är det viktigt att notera att de nummer som genereras av `math/rand` inte är lämpliga för kryptografiska ändamål på grund av deras deterministiska natur. För kryptografiska behov, är paketet `crypto/rand` det lämpliga valet, vilket tillhandahåller en säker slumpmässig nummergenerator.
+Den grundläggande skillnaden mellan paketen `math/rand` och `crypto/rand` i Go kommer från deras källa till entropi och deras avsedda användningsområden. `math/rand` genererar pseudoslumpmässiga nummer baserat på en initial seed; således är sekvensen deterministisk och kan förutsägas om seeden är känd. Detta är lämpligt för scenarier där hög prestanda och inte absolut oförutsägbarhet är huvudbekymret, som simuleringar eller spel.
 
-Implementeringen av `math/rand` baseras på en subtraktiv slumpmässig nummergeneratoralgoritm, som är effektiv och har en relativt lång period innan sekvensupprepning. Dock, för applikationer som kräver verkligt slumpmässiga sekvenser, som kryptografiska operationer, rekommenderas hårdvaruslumpmässiga nummergeneratorer (RNGs) eller paketet `crypto/rand`, som gränssnittar med systemspecifika säkra slumpmässighetskällor.
+Å andra sidan hämtar `crypto/rand` slumpmässighet från det underliggande operativsystemet, vilket gör det lämpligt för kryptografiska användningar där oförutsägbarhet är avgörande. Detta kommer dock med kostnader för prestanda och komplexitet i hanteringen av de nummer det genererar (som att hantera `*big.Int`-typen för heltal).
 
-`math/rand` tillåter sållning för att introducera variabilitet, men samma såll kommer alltid att generera samma sekvens av nummer, vilket belyser den deterministiska naturen av dess slumpmässighet. Detta gör det lämpligt för simuleringar eller spel där reproducerbarhet kan vara önskvärt för felsökning eller teständamål.
+Historiskt sett har begreppet slumpmässig nummergenerering i datorer alltid dansat på gränsen till verklig "slumpmässighet", med tidiga system som i stor utsträckning förlitade sig på deterministiska algoritmer som efterliknade slumpmässighet. I takt med att datorer utvecklades, gjorde även dessa algoritmer det, genom att inkludera mer sofistikerade källor till entropi från deras omgivningar.
+
+Trots dessa framsteg är strävan efter perfekt slumpmässighet i databehandling i grunden paradoxal, med tanke på datorernas deterministiska natur själva. Det är därför, för de flesta tillämpningar där förutsägbarhet skulle vara skadlig, kryptografiskt säkra pseudoslumpmässiga nummer från källor som `crypto/rand` är det bättre alternativet, trots deras overhead.
+
+I grund och botten adresserar Gos tillvägagångssätt med två distinkta paket för generering av slumpmässiga nummer elegant avvägningarna mellan prestanda och säkerhet, vilket gör det möjligt för utvecklare att välja baserat på deras specifika behov.

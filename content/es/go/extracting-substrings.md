@@ -1,46 +1,91 @@
 ---
-title:                "Extracción de subcadenas"
-date:                  2024-01-20T17:45:43.271637-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Extracción de subcadenas"
-
+title:                "Extrayendo subcadenas"
+date:                  2024-02-03T17:56:41.637175-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Extrayendo subcadenas"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/go/extracting-substrings.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Extraer subcadenas es el acto de seleccionar partes específicas de un texto. Lo hacemos cuando queremos analizar, transformar o validar datos de manera eficiente.
+## Qué y Por Qué?
 
-## How to:
-En Go, usamos principalmente `slice` para extraer subcadenas, así:
+Extraer subcadenas implica recuperar porciones específicas de una cadena basándose en sus posiciones. Los programadores realizan frecuentemente esta operación para procesar o manipular datos de texto de manera eficiente, como analizar entradas, validar formatos o preparar salidas.
+
+## Cómo hacerlo:
+
+En Go, el tipo `string` es un segmento de bytes de solo lectura. Para extraer subcadenas, principalmente se utiliza la sintaxis de `slice` (segmento), junto con la función integrada `len()` para la comprobación de longitud y el paquete `strings` para operaciones más complejas. Aquí te mostramos cómo puedes lograrlo:
+
+### Cortes Básicos
 
 ```go
 package main
 
 import (
-	"fmt"
+    "fmt"
 )
 
 func main() {
-	texto := "Hola mundo!"
-	subcadena := texto[1:5]  // toma los caracteres del índice 1 al 4
-	fmt.Println(subcadena)   // Imprime "ola "
+    str := "Hello, World!"
+    // Extrae "World"
+    subStr := str[7:12]
+    
+    fmt.Println(subStr) // Salida: World
 }
 ```
-Output:
-´´´
-ola
-´´´
 
-Aquí, el índice `1` es el inicio (incluido) y el `5` es el final (excluido).
-Si quieres desde el comienzo hasta un punto usa `[:indice]`, y para ir desde un punto hasta el final usa `[indice:]`.
+### Usando el paquete `strings`
 
-## Deep Dive
-La historia de las subcadenas en Go es sencilla: desde sus comienzos, el lenguaje ofreció esta funcionalidad. En términos de alternativas, en Go, aparte de `slicing`, puedes usar el paquete `strings` para más funciones relacionadas con texto. Internamente, extraer subcadenas es ligero en Go, ya que la subcadena usa la misma memoria que la cadena original y solo cambia los índices de inicio y fin.
+Para una extracción de subcadena más avanzada, como extraer cadenas después o antes de una subcadena específica, puedes usar el paquete `strings`.
 
-## See Also
-- Documentación oficial de Go sobre `string`: https://golang.org/pkg/strings/
-- Una guía sobre el paquete `strings`: https://www.calhoun.io/6-tips-for-using-strings-in-go/
-- Tutorial sobre manejo de cadenas en Go: https://tour.golang.org/moretypes/15
+```go
+package main
+
+import (
+    "fmt"
+    "strings"
+)
+
+func main() {
+    str := "name=John Doe"
+    // Extrae subcadena después del "="
+    subStr := strings.SplitN(str, "=", 2)[1]
+    
+    fmt.Println(subStr) // Salida: John Doe
+}
+```
+
+Es esencial tener en cuenta que las cadenas de Go están codificadas en UTF-8 y un segmento de bytes directo no siempre resultará en cadenas válidas si incluyen caracteres de varios bytes. Para soporte Unicode, considera usar `range` o el paquete `utf8`.
+
+### Manejando Caracteres Unicode
+
+```go
+package main
+
+import (
+    "fmt"
+    "unicode/utf8"
+)
+
+func main() {
+    str := "Hello, 世界"
+    // Encuentra subcadena considerando caracteres Unicode
+    runeStr := []rune(str)
+    subStr := string(runeStr[7:])
+    
+    fmt.Println(subStr) // Salida: 世界
+}
+```
+
+## Estudio Profundo
+
+Extraer subcadenas en Go es sencillo, gracias a su sintaxis de segmentos y su amplia biblioteca estándar. Históricamente, los lenguajes de programación anteriores proporcionaban funciones o métodos más directos para manejar tal manipulación de texto. Sin embargo, el enfoque de Go enfatiza la seguridad y la eficiencia, particularmente con sus cadenas inmutables y el manejo explícito de caracteres Unicode a través de runas.
+
+Aunque el cortado directo se beneficia de la eficiencia en rendimiento, hereda las complejidades de manejar directamente los caracteres UTF-8. La introducción del tipo `rune` permite que los programas en Go manejen de manera segura el texto Unicode, lo que lo convierte en una alternativa poderosa para aplicaciones internacionales.
+
+Además, los programadores que vienen de otros lenguajes podrían echar de menos funciones integradas de manipulación de cadenas de alto nivel. Sin embargo, los paquetes `strings` y `bytes` en la biblioteca estándar de Go ofrecen un rico conjunto de funciones que, aunque requieren un poco más de estructura, proporcionan opciones poderosas para el procesamiento de cadenas, incluida la extracción de subcadenas.
+
+En esencia, las decisiones de diseño de Go en torno a la manipulación de cadenas reflejan sus objetivos de simplicidad, rendimiento y seguridad al tratar con datos de texto modernos e internacionalizados. Aunque podría requerir un ligero ajuste, Go ofrece herramientas efectivas y eficientes para manejar la extracción de subcadenas y más.

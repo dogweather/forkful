@@ -1,51 +1,62 @@
 ---
 title:                "Obliczanie daty w przyszłości lub przeszłości"
-date:                  2024-01-20T17:28:42.892523-07:00
-model:                 gpt-4-1106-preview
+date:                  2024-02-03T17:52:55.605303-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Obliczanie daty w przyszłości lub przeszłości"
-
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/c/calculating-a-date-in-the-future-or-past.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Po co obliczać daty przyszłe lub przeszłe? Otóż, by ustalić terminy wydarzeń, okresy ważności, harmonogramy. Programiści robią to, by aplikacje mogły inteligentnie zarządzać czasem.
+## Co i dlaczego?
+Obliczanie daty w przyszłości lub przeszłości polega na określeniu konkretnej daty poprzez dodanie lub odjęcie pewnej liczby dni, miesięcy lub lat od danej daty. Programiści robią to w takich zadaniach jak planowanie wydarzeń, generowanie przypomnień czy obsługa dat wygaśnięcia, co czyni to podstawową funkcjonalnością w różnych aplikacjach, od systemów kalendarza po oprogramowanie finansowe.
 
-## How to:
-```C
+## Jak to zrobić:
+Chociaż standardowa biblioteka języka C nie zapewnia bezpośrednich funkcji do arytmetyki dat, można manipulować datami za pomocą biblioteki `time.h`, konkretnie pracując z typem danych `time_t` i strukturą `struct tm`. Oto uproszczony przykład, jak dodać dni do bieżącej daty:
+
+```c
 #include <stdio.h>
 #include <time.h>
 
+void addDays(struct tm* date, int daysToAdd) {
+    const time_t ONE_DAY = 24 * 60 * 60; // sekundy w jednym dniu
+    // Konwersja struktury tm na time_t, dodanie dni i konwersja z powrotem
+    time_t date_seconds = mktime(date) + (daysToAdd * ONE_DAY);
+    *date = *localtime(&date_seconds);
+}
+
 int main() {
-    time_t rawtime;
-    struct tm * timeinfo;
+    time_t now;
+    time(&now);
+    struct tm futureDate = *localtime(&now);
 
-    time(&rawtime);
-    timeinfo = localtime(&rawtime);
-    printf("Aktualna data i czas: %s", asctime(timeinfo));
+    int daysToAdd = 10; // Dostosuj to do żądanej liczby dni do dodania
+    addDays(&futureDate, daysToAdd);
 
-    // Dodanie 7 dni do aktualnej daty
-    timeinfo->tm_mday += 7;
-    mktime(timeinfo);
-    printf("Data za tydzień: %s", asctime(timeinfo));
-
-    // Odejmowanie 30 dni od aktualnej daty
-    timeinfo->tm_mday -= 30;
-    mktime(timeinfo);
-    printf("Data 30 dni temu: %s", asctime(timeinfo));
+    printf("Data w przyszłości: %d-%d-%d\n", futureDate.tm_year + 1900, futureDate.tm_mon + 1, futureDate.tm_mday);
 
     return 0;
 }
 ```
-## Deep Dive:
-W C używamy `time.h` do operacji na datach. Funkcje takie jak `time`, `localtime`, czy `mktime` pojawiają się od lat 70. jako część standardu ANSI C.
 
-Alternatywy: możesz wykorzystać biblioteki zewnętrzne jak `date.h` od Howarda Hinnanta dla większej precyzji i funkcjonalności.
+Ten kod dodaje określoną liczbę dni do bieżącej daty i drukuje datę w przyszłości. Należy zauważyć, że podejście uwzględnia sekundy przestępne i korekty czasu letniego obsługiwane przez `mktime` i `localtime`.
 
-Detale implementacyjne: Pamiętaj, że funkcja `mktime` normalizuje strukturę `tm`. Oznacza to, że przeliczy godziny na dni, dni na miesiące itd., jeśli dodasz np. 25 godzin.
+Przykładowe wyjście:
 
-## See Also:
-- [cplusplus.com - `<ctime>` (time.h)](http://www.cplusplus.com/reference/ctime/)
-- [Howard Hinnant's Date Library](https://github.com/HowardHinnant/date)
+```
+Data w przyszłości: 2023-04-23
+```
+
+Należy pamiętać, że ten przykład dodaje dni, ale przy bardziej skomplikowanych obliczeniach (takich jak miesiące lub lata, biorąc pod uwagę lata przestępne), potrzebna byłaby bardziej zaawansowana logika lub biblioteki takie jak `date.h` w C++ lub biblioteki stron trzecich w C.
+
+## Głębsze spojrzenie
+Manipulacja datami w C za pomocą biblioteki time.h wiąże się z bezpośrednią manipulacją czasem w sekundach od epoki Uniksa (00:00, 1 stycznia 1970, UTC), a następnie przekształceniem tych sekund z powrotem na bardziej zrozumiały format daty (`struct tm`). To podejście jest prostym, ale skutecznym rozwiązaniem dla podstawowych operacji i korzyści z bycia międzyplatformowym oraz częścią standardowej biblioteki C.
+
+Jednak simplicyzm tej metody jest również ograniczeniem. Zagadnienia związane z bardziej skomplikowanymi obliczeniami dat (takie jak uwzględnianie różnych długości miesięcy, lat przestępnych i stref czasowych) szybko stają się nietrywialne. Języki takie jak Python z `datetime` lub Java z `java.time` oferują bardziej intuicyjne API dla arytmetyki dat, przyjmując zasady programowania obiektowego dla większej przejrzystości i łatwości użycia.
+
+W praktyce, pracując nad projektami wymagającymi obszernej manipulacji datami w C, programiści często zwracają się ku bibliotekom stron trzecich dla bardziej solidnych rozwiązań. Te biblioteki mogą oferować kompleksowe funkcje daty i czasu, w tym obsługę stref czasowych, opcje formatowania i bardziej subtelne możliwości arytmetyki dat, znacznie upraszczając zadanie programisty.
+
+Pomimo dostępności bardziej nowoczesnych alternatyw, zrozumienie sposobu manipulowania datami za pomocą standardowej biblioteki C pozostaje cenną umiejętnością. Dostarcza ona głębokich wglądów w to, jak komputery reprezentują i pracują z czasem, fundamentalną koncepcję, która wykracza poza konkretne języki programowania.

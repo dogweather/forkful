@@ -1,79 +1,64 @@
 ---
 title:                "Descargando una página web"
-date:                  2024-01-20T17:43:23.928011-07:00
-model:                 gpt-4-1106-preview
+date:                  2024-02-03T17:55:36.191596-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Descargando una página web"
-
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/c/downloading-a-web-page.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## ¿Qué es y por qué?
+## Qué y Por Qué?
 
-Descargar una página web significa obtener su contenido HTML a través de Internet. Los programadores hacen esto para analizar datos, probar servicios web o alimentar aplicaciones con información actualizada.
+Descargar una página web en C implica acceder programáticamente al contenido de una página web a través de internet y guardarla localmente para su procesamiento o uso sin conexión. Los programadores a menudo se involucran en esto para consumir servicios web, extraer contenido web o interactuar directamente con recursos en línea desde sus aplicaciones.
 
 ## Cómo hacerlo:
 
-Aquí vamos a usar la biblioteca libcurl para descargar una página web simple.
-
-Primero, instala libcurl si aún no lo tienes:
-```shell
-sudo apt-get install libcurl4-openssl-dev
-```
-
-Ahora, el código:
+Para descargar una página web en C, un enfoque popular es usar la biblioteca libcurl, una biblioteca de transferencia de URL del lado del cliente eficiente y portátil. Asegúrate de tener libcurl instalado y enlazado en tu proyecto. Aquí hay un ejemplo que demuestra cómo usar libcurl para descargar el contenido de una página web:
 
 ```c
 #include <stdio.h>
 #include <curl/curl.h>
 
-size_t write_callback(void *contents, size_t size, size_t nmemb, void *userp) {
-    size_t realsize = size * nmemb;
-    printf("%.*s", (int)realsize, (char *)contents);
-    return realsize;
+size_t write_data(void *ptr, size_t size, size_t nmemb, FILE *stream) {
+    size_t written = fwrite(ptr, size, nmemb, stream);
+    return written;
 }
 
 int main(void) {
     CURL *curl;
+    FILE *fp;
     CURLcode res;
+    char *url = "http://example.com";
+    char outfilename[FILENAME_MAX] = "./pagina_descargada.html";
 
-    curl_global_init(CURL_GLOBAL_ALL);
-    curl = curl_easy_init();
-    if(curl) {
-        curl_easy_setopt(curl, CURLOPT_URL, "http://example.com");
-        curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, write_callback);
+    curl = curl_easy_init(); // Inicializar una sesión fácil de libcurl
+    if (curl) {
+        fp = fopen(outfilename,"wb");
+        curl_easy_setopt(curl, CURLOPT_URL, url);
+        curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, write_data); // Callback para escribir los datos recibidos
+        curl_easy_setopt(curl, CURLOPT_WRITEDATA, fp); // Establecer el puntero del archivo para escribir los datos
 
-        res = curl_easy_perform(curl);
-        if(res != CURLE_OK)
-            fprintf(stderr, "curl_easy_perform() failed: %s\n", curl_easy_strerror(res));
+        res = curl_easy_perform(curl); // Realizar la descarga del archivo
+        if(res != CURLE_OK) {
+            fprintf(stderr, "curl_easy_perform() falló: %s\n",
+                    curl_easy_strerror(res));
+        }
 
-        curl_easy_cleanup(curl);
+        /* siempre limpiar */
+        curl_easy_cleanup(curl); // Limpiar la sesión fácil
+        fclose(fp); // Cerrar el flujo de archivo
     }
-    curl_global_cleanup();
-
     return 0;
 }
 ```
+Salida de muestra (sin salida visible en la consola): Este código descarga el contenido en la URL especificada y lo guarda en un archivo llamado `pagina_descargada.html`. Revisa el directorio de tu programa para ver este archivo y el contenido descargado.
 
-Compila con:
-```shell
-gcc -o download download.c -lcurl
-```
+## Inmersión Profunda:
 
-Ejecútalo y deberías ver el HTML de `http://example.com`.
+Históricamente, descargar contenido web en C era más engorroso, requiriendo programación manual de sockets y manejo del protocolo HTTP. Libcurl abstrae estas complejidades, ofreciendo una API robusta y de alto nivel para transferencia de datos a través de la web.
 
-## Análisis Profundo:
-
-Históricamente, descargar páginas web era más complicado. Se necesitaba manejar sockets y el protocolo HTTP manualmente. Librerías como libcurl han simplificado mucho este proceso.
-
-Alternativas a libcurl son la librería `socket` para C, si quieres más control y no te importa escribir más código, y otras librerías de alto nivel como `Qt Network` si estás desarrollando aplicaciones con Qt.
-
-La implementación con libcurl es directa. Configuras opciones para tu `CURL` handle, como la URL y la función de callback que maneja los datos recibidos (en este ejemplo, simplemente imprimimos los datos al standard output), y luego ejecutas la petición con `curl_easy_perform`.
-
-## Ver También:
-
-- Documentación de libcurl: https://curl.se/libcurl/c/
-- Guía de programación de socket en C: https://beej.us/guide/bgnet/
-- Qt Network: https://doc.qt.io/qt-5/qtnetwork-index.html
+Aunque libcurl simplifica las solicitudes HTTP en C, lenguajes de programación modernos como Python con su biblioteca `requests` o JavaScript (Node.js) con varias bibliotecas de clientes HTTP pueden ofrecer una sintaxis más intuitiva y soporte integrado para JSON y otros formatos de datos comúnmente usados en la comunicación web. Sin embargo, C y libcurl proporcionan una solución de alto rendimiento y estable para sistemas donde la eficiencia, el control detallado o la integración en bases de código C existentes son críticos. También vale la pena mencionar que C, combinado con libcurl, puede usarse para más que solo descargar páginas web; es capaz de manejar FTP, SMTP y mucho más, convirtiéndolo en una herramienta versátil en el kit de herramientas de un programador.

@@ -1,73 +1,127 @@
 ---
-title:                "Koodin uudelleenjärjestely"
-date:                  2024-01-26T01:35:05.416370-07:00
+title:                "Koodin uudelleenkirjoitus"
+date:                  2024-02-03T18:07:17.717668-07:00
 model:                 gpt-4-0125-preview
-simple_title:         "Koodin uudelleenjärjestely"
-
+simple_title:         "Koodin uudelleenkirjoitus"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/go/refactoring.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Mikä & Miksi?
-Refaktorointi on prosessi, jossa olemassa olevaa tietokonekoodia uudelleenjärjestetään muuttamatta sen ulkoista käyttäytymistä. Ohjelmoijat tekevät sen parantaakseen ohjelmiston ei-toiminnallisia attribuutteja, kuten luettavuutta ja ylläpidettävyyttä, mikä voi tehdä koodista helpommin ymmärrettävää, vähentää monimutkaisuutta ja auttaa löytämään bugeja helpommin.
 
-## Kuinka:
-Sukelletaan yksinkertaiseen Go-koodin refaktorointiesimerkkiin. Otamme katkelman, joka laskee lukujonon keskiarvon, ja refaktoroimme sen selkeyden ja uudelleenkäytettävyyden vuoksi.
+Ohjelmoinnissa refaktorointi tarkoittaa olemassa olevan tietokonekoodin uudelleenjärjestelyä—faktorisoinnin muuttamista—muuttamatta sen ulkoista käyttäytymistä. Ohjelmoijat toteuttavat tämän prosessin parantaakseen koodin luettavuutta, vähentääkseen monimutkaisuutta ja parantaakseen ylläpidettävyyttä, tehden ohjelmistosta lopulta helpomman ymmärtää ja muokata.
 
-Alkuperäinen koodi:
-```Go
+## Miten:
+
+Gossa refaktorointi voi vaihdella yksinkertaisista kooditweaksista monimutkaisempiin muutoksiin. Aloittakaamme perusesimerkillä: yksinkertaistetaan alustava Go-funktio paremman luettavuuden ja tehokkuuden saavuttamiseksi.
+
+**Ennen refaktorointia:**
+
+```go
 package main
 
 import "fmt"
 
-func main() {
-    numbers := []float64{8, 12, 15, 10, 7, 14}
-    var sum float64
-    for _, num := range numbers {
-        sum += num
+func CalculatePrice(quantity int, price float64) float64 {
+    var total float64
+    if quantity > 0 {
+        total = float64(quantity) * price
+    } else {
+        total = 0
     }
-    average := sum / float64(len(numbers))
-    fmt.Println("Average:", average)
+    return total
+}
+
+func main() {
+    fmt.Println(CalculatePrice(10, 5.99))  // Tuloste: 59.9
 }
 ```
 
-Refaktoroitu koodi:
-```Go
+**Refaktoroinnin jälkeen:**
+
+```go
 package main
 
 import "fmt"
 
-// CalculateAverage ottaa vastaan float64-taulukon ja palauttaa keskiarvon.
-func CalculateAverage(numbers []float64) float64 {
-    sum := 0.0
-    for _, num := range numbers {
-        sum += num
+func CalculatePrice(quantity int, price float64) float64 {
+    if quantity > 0 {
+        return float64(quantity) * price
     }
-    return sum / float64(len(numbers))
+    return 0
 }
 
 func main() {
-    numbers := []float64{8, 12, 15, 10, 7, 14}
-    average := CalculateAverage(numbers)
-    fmt.Println("Average:", average)
+    fmt.Println(CalculatePrice(10, 5.99))  // Tuloste: 59.9
 }
 ```
 
-Refaktoroidussa koodissa olemme erottaneet keskiarvon laskemisen logiikan erilliseen funktioon nimeltä `CalculateAverage`. Tämä tekee `main`-funktiosta ytimekkäämmän ja keskiarvon laskennan logiikan uudelleenkäytettävän ja testattavan.
+Refaktoroidussa versiossa `else` on poistettu, mikä yksinkertaistaa funktion kulkua vaikuttamatta sen tulokseen—esimerkki perustason, mutta merkittävästä refaktorointitekniikasta Gossa.
+
+Monimutkaisemman esimerkin osalta, harkitse funktioiden refaktorointia käyttämään rajapintoja paremman uudelleenkäytettävyyden ja testattavuuden saavuttamiseksi:
+
+**Ennen refaktorointia:**
+
+```go
+package main
+
+import "fmt"
+
+type Logger struct{}
+
+func (l Logger) Log(message string) {
+    fmt.Println("Log:", message)
+}
+
+func ProcessData(data string, logger Logger) {
+    // Kuvittele tässä olevan jonkin verran datan käsittelyä
+    logger.Log("Data käsitelty")
+}
+
+func main() {
+    logger := Logger{}
+    ProcessData("esimerkkidata", logger)
+}
+```
+
+**Refaktoroinnin jälkeen:**
+
+```go
+package main
+
+import "fmt"
+
+type Logger interface {
+    Log(message string)
+}
+
+type ConsoleLogger struct{}
+
+func (c ConsoleLogger) Log(message string) {
+    fmt.Println("Log:", message)
+}
+
+func ProcessData(data string, logger Logger) {
+    // Datan käsittely pysyy muuttumattomana
+    logger.Log("Data käsitelty")
+}
+
+func main() {
+    logger := ConsoleLogger{}
+    ProcessData("esimerkkidata", logger)
+}
+```
+
+Refaktorointi käyttämään rajapintaa (`Logger`) konkreettisen tyypin (`ConsoleLogger`) sijaan parantaa funktion joustavuutta ja irrottaa datan käsittelyn tietystä lokitoteutuksesta.
 
 ## Syväsukellus
-Koodin refaktorointi ei ole moderni konsepti; se on ollut olemassa ennen laajalle levinnyttä tietokoneiden käyttöä. Käytäntö on luultavasti alkanut mekaanisen insinöörityön alalla tai vielä aiemmin. Ohjelmistossa siitä tuli muodollisempi objekti-ohjelmoinnin ja extreme-ohjelmoinnin (XP) myötä 1990-luvulla, merkittävästi vaikutteita saaden Martin Fowlerin perustavanlaatuisesta kirjasta "Refactoring: Improving the Design of Existing Code."
 
-Refaktorointitekniikoita on lukuisia, yksinkertaisesta muuttujien uudelleennimeämisestä selkeyden vuoksi monimutkaisempiin kaavoihin kuten metodien tai luokkien erottamiseen. Avain on tehdä pieniä, inkrementaalisia muutoksia, jotka eivät muuta ohjelmiston toiminnallisuutta mutta parantavat sisäistä rakennetta.
+Gossa refaktoroinnin on tasapainotettava yksinkertaisuutta (yksi Gosin perusfilosofioista) suurten ohjelmistoprojektien tarvitseman joustavuuden kanssa. Goksen minimalistisen lähestymistavan vuoksi ominaisuuksiin—ilman yleistyyppejä (ainakin ennen viime aikoina) ja keskittyen vahvasti luettavuuteen—kieli luonnollisesti ohjaa kehittäjiä kohti yksinkertaisempia, helpommin ylläpidettäviä koodirakenteita. Tämä ei kuitenkaan tarkoita, etteikö Gos-koodi hyötyisi refaktoroinnista; se tarkoittaa, että refaktoroinnin täytyy aina priorisoida selkeyttä ja yksinkertaisuutta.
 
-Go:n käyttäessä refaktorointi voi olla suoraviivaista kielen yksinkertaisuuden ja tehokkaan standardikirjaston ansiosta. Kuitenkin hyvän yksikkötestien joukon omistaminen on edelleen tärkeää varmistamaan, etteivät refaktoroinnit tuo mukanaan bugeja. Työkalut kuten `gorename` ja `gofmt` auttavat automatisoimaan osan prosessista, ja IDE:illä on usein sisäänrakennettu refaktorointituki.
+Historiallisesti Gosin tiettyjen ominaisuuksien puute (esim. yleistyypit ennen Go 1.18) johti luoviin, mutta joskus monimutkaisiin ratkaisuihin koodin uudelleenkäytön ja joustavuuden osalta, mikä teki abstraktion refaktoroinnista yleisen käytännön. Goksen yleistyyppejä koskevan ominaisuuden käyttöönotolla Go 1.18:ssa Gos-kehittäjät refaktoroivat nyt perintäkoodia hyödyntääkseen tätä ominaisuutta paremman tyyppiturvallisuuden ja koodin uudelleenkäytön osalta, osoittaen refaktorointikäytäntöjen kehittyvän luonteen Gossa.
 
-Manuaalisen refaktoroinnin lisäksi Go:lle on saatavilla muutamia automatisoituja koodin refaktorointityökaluja, kuten GoLandin refaktorointityökalut ja Go Refactor. Vaikka nämä voivat nopeuttaa prosessia, ne eivät ole korvike koodin ymmärtämiselle ja harkittujen muutosten tekemiselle.
-
-## Katso myös
- - [Refaktorointi Go:lla: Yksinkertainen on kaunista](https://go.dev/blog/slices)
- - [Tehokas Go: Refaktorointi rajapintojen avulla](https://go.dev/doc/effective_go#interfaces)
- - [Martin Fowlerin Refaktorointi-sivu](https://refactoring.com/)
- - [GoLand Refaktorointityökalut](https://www.jetbrains.com/go/features/refactorings/)
+Silti Gosin työkaluvalikoima, mukaan lukien `gofmt` koodin muotoilua varten ja `go vet` epäilyttävien rakenteiden tunnistamiseen, tukee puhtaan koodikannan ylläpitämistä, vähentäen tarvetta laajalle refaktoroinnille. Vaikka refaktorointi onkin arvokas työkalu Gos-ohjelmoijan arsenaalissa, Gosin kieliominaisuuksien ja työkalujen viisas käyttö alusta alkaen voi auttaa minimoimaan monimutkaisen refaktoroinnin tarpeen myöhemmin.

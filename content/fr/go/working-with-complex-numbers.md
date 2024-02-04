@@ -1,73 +1,61 @@
 ---
-title:                "Manipulation des nombres complexes"
-date:                  2024-01-26T04:40:40.352261-07:00
+title:                "Travailler avec des nombres complexes"
+date:                  2024-02-03T18:13:59.724797-07:00
 model:                 gpt-4-0125-preview
-simple_title:         "Manipulation des nombres complexes"
-
+simple_title:         "Travailler avec des nombres complexes"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/go/working-with-complex-numbers.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
-Les nombres complexes, composés d'une partie réelle et d'une partie imaginaire (comme 5 + 7i), sont cruciaux dans des domaines tels que l'ingénierie, la physique et le traitement du signal. Les programmeurs travaillent avec eux pour résoudre des problèmes dans ces domaines qui seraient difficiles à résoudre avec seulement des nombres réels.
 
-## Comment faire :
-Go possède un support intégré pour les nombres complexes. Voici un rapide tutoriel :
+Travailler avec des nombres complexes en programmation implique de manipuler des nombres qui ont à la fois une partie réelle et une partie imaginaire, typiquement exprimés sous la forme `a + bi`. Les programmeurs s'attaquent aux nombres complexes dans divers domaines, comme l'ingénierie, la physique et l'analyse de données, pour résoudre des problèmes impliquant des racines carrées de nombres négatifs, des analyses de formes d'onde, et plus encore.
+
+## Comment :
+
+En Go, les nombres complexes sont gérés à l'aide des fonctions intégrées `complex`, `real`, et `imag`, ainsi que des types `complex64` et `complex128` (représentant respectivement des nombres complexes de 64 bits et de 128 bits). Voici un guide de démarrage rapide :
 
 ```go
 package main
 
 import (
 	"fmt"
-	"math/cmplx"
 )
 
 func main() {
 	// Création de nombres complexes
-	a := complex(2, 3)
-	b := 4 + 5i
+	a := complex(2, 3) // 2+3i
+	b := complex(1, -1) // 1-1i
 
-	// Opérations de base
-	fmt.Println("Addition :", a+b)
-	fmt.Println("Soustraction :", a-b)
-	fmt.Println("Multiplication :", a*b)
-	fmt.Println("Division :", a/b)
+	// Opérations arithmétiques
+	c := a + b
+	fmt.Println("Addition:", c) // Sortie: Addition: (3+2i)
 
-	// Propriétés des nombres complexes
-	fmt.Println("Partie réelle :", real(b))
-	fmt.Println("Partie imaginaire :", imag(b))
-	fmt.Println("Conjugué :", cmplx.Conj(b))
-	fmt.Println("Magnitude :", cmplx.Abs(b))
-	fmt.Println("Angle de phase (radians) :", cmplx.Phase(b))
+	d := a * b
+	fmt.Println("Multiplication:", d) // Sortie: Multiplication: (5+1i)
+
+	// Accès aux parties réelle et imaginaire
+	realPart := real(a)
+	imagPart := imag(a)
+	fmt.Printf("Partie réelle: %.1f, Partie imaginaire: %.1f\n", realPart, imagPart) // Sortie: Partie réelle: 2.0, Partie imaginaire: 3.0
+
+	// Le conjugué complexe et la magnitude peuvent être calculés
+	conjugate := complex(real(a), -imag(a)) // Manuellement
+	fmt.Println("Conjugué de a:", conjugate) // Sortie: Conjugué de a: (2-3i)
 }
 
 ```
 
-Exemple de sortie :
+Cet exemple couvre les bases, mais il y a encore beaucoup plus que vous pouvez faire avec les nombres complexes, y compris l'utilisation du paquet `math/cmplx` pour des opérations plus avancées comme la recherche de la magnitude, de la phase, et bien plus encore.
 
-```
-Addition : (6+8i)
-Soustraction : (-2-2i)
-Multiplication : (-7+22i)
-Division : (0.5609756097560976+0.0487804878048781i)
-Partie réelle : 4
-Partie imaginaire : 5
-Conjugué : (4-5i)
-Magnitude : 6.4031242374328485
-Angle de phase (radians) : 0.8960553845713439
-```
+## Plongée profonde
 
-## Approfondissement
-Il fut un temps, les nombres complexes étaient vus avec suspicion - certains pensaient qu'ils étaient inutiles ! Avec le temps, leur puissance dans la description des phénomènes physiques est devenue évidente. Ils sont fondamentaux dans la physique quantique, la théorie du contrôle et l'ingénierie électrique, pour n'en nommer que quelques-uns.
+Le concept de nombres complexes remonte au 16e siècle, mais n'a été largement reconnu et formellement rigorisé qu'au 19e siècle. En programmation informatique, les nombres complexes sont un pilier de l'arithmétique complexe dans les calculs scientifiques et d'ingénierie depuis les premiers jours. L'approche de Go envers les nombres complexes, en les rendant un citoyen de première classe avec un soutien intégré et un soutien complet de la bibliothèque standard à travers le paquet `math/cmplx`, se distingue parmi les langages de programmation. Cette décision de conception reflète l'accent mis par Go sur la simplicité et la performance.
 
-Dans Go, les nombres complexes sont représentés à l'aide d'un type de données appelé `complex128` (64 bits pour la partie réelle et imaginaire chacune) ou `complex64` (32 bits chacune). Sous le capot, ce sont vraiment juste deux `float64` ou `float32` collés ensemble. La bibliothèque standard de Go, `math/cmplx`, propose des fonctions pour les opérations mathématiques complexes. Cela vous évite les mathématiques compliquées et vous permet de vous concentrer sur la résolution de problèmes.
+Néanmoins, il convient de noter que travailler avec des nombres complexes en Go, bien que puissant, peut ne pas toujours être la meilleure approche pour toutes les applications, en particulier celles nécessitant des mathématiques symboliques ou une arithmétique de haute précision. Les langues et environnements spécialisés dans le calcul scientifique, tels que Python avec des bibliothèques comme NumPy et SciPy, ou des logiciels comme MATLAB, pourraient offrir plus de flexibilité et une gamme plus large de fonctionnalités pour des applications spécifiques.
 
-Les alternatives au support intégré de Go comprennent l'utilisation de bibliothèques externes ou le développement de votre propre gestion des nombres complexes. Mais celles-ci sont rarement nécessaires car le support natif de Go est efficace et bien intégré dans le langage.
-
-## Voir aussi
-Consultez ces liens pour en savoir plus sur les capacités des nombres complexes avec Go :
-- Documentation officielle de Go : https://golang.org/pkg/math/cmplx/
-- Une révision plus approfondie des mathématiques sur les nombres complexes : https://www.mathsisfun.com/numbers/complex-numbers.html
-- Applications pratiques des nombres complexes en ingénierie : https://ieeexplore.ieee.org/document/528dunno
+Cela dit, pour la programmation de systèmes et les contextes où intégrer des calculs de nombres complexes dans une application plus large et sensible à la performance est crucial, le support natif de Go pour les nombres complexes offre une option efficace unique.

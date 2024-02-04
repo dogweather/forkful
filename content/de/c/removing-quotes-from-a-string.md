@@ -1,66 +1,73 @@
 ---
 title:                "Anführungszeichen aus einem String entfernen"
-date:                  2024-01-26T03:37:48.739637-07:00
+date:                  2024-02-03T18:07:06.824802-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Anführungszeichen aus einem String entfernen"
-
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/c/removing-quotes-from-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Was & Warum?
 
-Das Entfernen von Anführungszeichen aus einem String bedeutet, jegliche Anführungszeichen—sei es einfache ('') oder doppelte ("")—, die Teil des Inhalts des Strings sind, herauszufiltern. Programmierer tun dies, um Eingaben zu bereinigen, Daten für die weitere Verarbeitung vorzubereiten oder Syntaxfehler zu vermeiden, wenn sie mit Dateipfaden und Befehlen in Sprachen arbeiten, die Anführungszeichen verwenden, um Strings abzugrenzen.
+Das Entfernen von Anführungszeichen aus einem String in C beinhaltet das Extrahieren des Textinhalts ohne die einschließenden einfachen (' ') oder doppelten (" ") Anführungszeichen. Dieser Prozess ist wesentlich für die Bereinigung der Eingabedaten, das Parsen von Dateiinhalten oder die Vorbereitung von Strings für die weitere Verarbeitung, bei der die Anführungszeichen nicht erforderlich sind oder zu Fehlern in der Datenbehandlung führen könnten.
 
-## Wie:
+## Wie geht das:
 
-Hier ist eine C-Funktion, die diese lästigen Anführungszeichen aus Ihren Strings entfernt:
+Um Anführungszeichen aus einem String in C zu entfernen, durchlaufen wir den String und kopieren Zeichen, die keine Anführungszeichen sind, in einen neuen String. Dieser Prozess kann so angepasst werden, dass entweder nur die führenden und abschließenden Anführungszeichen oder alle im String vorhandenen Anführungszeichen entfernt werden. Unten ist ein illustratives Beispiel, das beide Ansätze demonstriert:
 
 ```c
 #include <stdio.h>
 #include <string.h>
 
-void remove_quotes(char *str) {
-    char *p_read = str, *p_write = str;
-    while (*p_read) {
-        if (*p_read != '"' && *p_read != '\'') {
-            *p_write++ = *p_read;
+// Funktion, um alle Anführungszeichen aus einem String zu entfernen
+void removeAllQuotes(char *quelle, char *ziel) {
+    while (*quelle) {
+        if (*quelle != '"' && *quelle != '\'') {
+            *ziel++ = *quelle;
         }
-        p_read++;
+        quelle++;
     }
-    *p_write = '\0';
+    *ziel = '\0'; // Ziel-String Null-terminieren
+}
+
+// Funktion, um nur die führenden und abschließenden Anführungszeichen aus einem String zu entfernen
+void removeEdgeQuotes(char *quelle, char *ziel) {
+    size_t len = strlen(quelle);
+    if (quelle[0] == '"' || quelle[0] == '\'') quelle++, len--;
+    if (quelle[len-1] == '"' || quelle[len-1] == '\'') len--;
+    strncpy(ziel, quelle, len);
+    ziel[len] = '\0'; // Ziel-String Null-terminieren
 }
 
 int main() {
-    char str[] = "He said, \"Hello, 'world'!\"";
-    printf("Original: %s\n", str);
-    remove_quotes(str);
-    printf("Bereinigt: %s\n", str);
+    char str1[] = "'Hallo, Welt!'";
+    char str2[] = "\"Programmieren in C\"";
+    char keineAnfuehrungszeichen1[50];
+    char keineAnfuehrungszeichen2[50];
+    
+    removeAllQuotes(str1, keineAnfuehrungszeichen1);
+    printf("Alle Anführungszeichen entfernt: %s\n", keineAnfuehrungszeichen1);
+    
+    removeEdgeQuotes(str2, keineAnfuehrungszeichen2);
+    printf("Rand-Anführungszeichen entfernt: %s\n", keineAnfuehrungszeichen2);
+    
     return 0;
 }
 ```
-
 Beispielausgabe:
-
 ```
-Original: He said, "Hello, 'world'!"
-Bereinigt: He said, Hello, world!
+Alle Anführungszeichen entfernt: Hallo, Welt!
+Rand-Anführungszeichen entfernt: Programmieren in C
 ```
 
-## Tiefere Betrachtung
+Diese Beispiele zeigen, wie man sowohl die Entfernung aller im String vorhandenen Anführungszeichen als auch die gezielte Entfernung nur der führenden und abschließenden Anführungszeichen handhabt.
 
-Das Entfernen von Anführungszeichen aus einem String ist eine Aufgabe, die es seit den Anfängen der Programmierung gibt, bei der die Datenhygiene der Schlüssel zum Vermeiden von Fehlern (wie SQL-Injection-Angriffen) war und ist oder um sicherzustellen, dass ein String sicher an Systeme übergeben werden kann, die ein Anführungszeichen für ein Steuerzeichen halten könnten.
+## Tiefergehende Betrachtung
 
-Historisch gesehen, behandeln verschiedene Sprachen diese Aufgabe unterschiedlich—einige haben eingebaute Funktionen (wie `strip` in Python), während andere, wie C, manuelle Implementierung erfordern, aufgrund ihres Schwerpunkts auf der Gewährung von Entwicklern niedrigstufiger Kontrolle.
+Das Konzept des Entfernens von Anführungszeichen aus Strings hat in C keine signifikante historische Tiefe, abgesehen von seinen Verbindungen zu den frühen Bedürfnissen der Textverarbeitung. Der hier demonstrierte direkte Ansatz ist vielseitig, aber für sehr große Strings oder Anforderungen an hohe Leistung ineffizient, wo eine Änderung vor Ort oder fortgeschrittenere Algorithmen bevorzugt werden könnten.
 
-Alternativen beinhalten die Verwendung von Bibliotheksfunktionen wie `strpbrk`, um Anführungszeichen zu finden oder reguläre Ausdrücke (mit Bibliotheken wie PCRE) für komplexere Muster zu verwenden, obwohl dies für das bloße Entfernen von Anführungszeichen übertrieben sein könnte.
-
-Die obige Implementierung scannt einfach jeden Charakter im String und kopiert nur die Nicht-Anführungszeichen-Charaktere an die Schreibzeigerposition. Dies ist effizient, da es ohne zusätzlichen Speicherbedarf für den Ergebnisstring vor Ort erfolgt.
-
-## Siehe auch
-
-- [C-Standardbibliotheksfunktionen](http://www.cplusplus.com/reference/clibrary/)
-- [PCRE - Perl Compatible Regular Expressions](https://www.pcre.org/)
-- [Verstehen von Zeigern in C](https://www.learn-c.org/en/Pointers)
+Alternativen, wie die Verwendung von `strpbrk` zum Finden von Anführungszeichen und das Verschieben des Teils des Strings ohne Anführungszeichen, können effizienter sein, erfordern jedoch ein tieferes Verständnis von Zeigern und Speicherverwaltung in C. Darüber hinaus hat das Aufkommen von Bibliotheken für reguläre Ausdrücke ein leistungsfähiges Werkzeugset für die String-Manipulation, einschließlich der Entfernung von Anführungszeichen, bereitgestellt. Diese Bibliotheken, obwohl leistungsfähig, fügen jedoch Komplexität und Overhead hinzu, die für einfachere Aufgaben nicht notwendig sein könnten. Folglich bleibt der direkte Ansatz, wie gezeigt, eine wertvolle Fähigkeit für C-Programmierer, die Einfachheit mit der Wirksamkeit für viele gängige Anwendungsfälle verbindet.

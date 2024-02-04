@@ -1,75 +1,69 @@
 ---
 title:                "Gestione degli errori"
-date:                  2024-01-26T00:52:40.128174-07:00
-model:                 gpt-4-1106-preview
+date:                  2024-02-03T17:58:02.140640-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Gestione degli errori"
-
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/go/handling-errors.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Cosa e Perché?
 
-La gestione degli errori in Go consiste nel rilevare e rispondere con grazia a problemi di esecuzione. Lo facciamo per prevenire crash e assicurarci che i nostri programmi si comportino in modo prevedibile, anche quando le cose non vanno per il verso giusto.
+La gestione degli errori in Go implica il riconoscimento e la risposta alle condizioni di errore nel tuo programma. I programmatori si impegnano nella gestione degli errori per garantire che le loro applicazioni possano riprendersi con grazia da situazioni inaspettate, portando a software più robusti e affidabili.
 
 ## Come fare:
 
-Go utilizza una gestione degli errori esplicita. Ciò significa che controllerai se una funzione restituisce un errore ogni volta che la chiami. Niente eccezioni. Ecco come si presenta:
+In Go, la gestione degli errori è gestita esplicitamente utilizzando il tipo `error`. Le funzioni che possono fallire restituiscono un errore come ultimo valore di ritorno. Controllare se questo valore di errore è `nil` ti dirà se si è verificato un errore.
 
-```Go
+```go
 package main
 
 import (
-	"fmt"
-	"os"
+    "errors"
+    "fmt"
 )
 
+func Compute(value int) (int, error) {
+    if value > 100 {
+        return 0, errors.New("il valore deve essere 100 o meno")
+    }
+    return value * 2, nil
+}
+
 func main() {
-	err := doSomething()
-	if err != nil {
-		fmt.Println("Uh oh:", err)
-		os.Exit(1)
-	}
-}
-
-func doSomething() error {
-	// Facciamo finta che qualcosa sia andato storto
-	return fmt.Errorf("si è verificato un errore")
-}
-```
-
-Esegui questo e otterrai:
-
-```
-Uh oh: si è verificato un errore
-```
-
-Ma se va a buon fine?
-
-```Go
-func doSomething() error {
-	// Tutto bene questa volta
-	return nil
+    result, err := Compute(150)
+    if err != nil {
+        fmt.Println("Errore:", err)
+    } else {
+        fmt.Println("Risultato:", result)
+    }
+    
+    // Gestire un errore con grazia
+    anotherResult, anotherErr := Compute(50)
+    if anotherErr != nil {
+        fmt.Println("Errore:", anotherErr)
+    } else {
+        fmt.Println("Risultato:", anotherResult)
+    }
 }
 ```
 
-Nessun output. Bene, nessuna notizia è una buona notizia.
+Output di esempio per il codice sopra:
+```
+Errore: il valore deve essere 100 o meno
+Risultato: 100
+```
 
-## Approfondimento:
+In questo esempio, la funzione `Compute` restituisce o un valore calcolato o un errore. Il chiamante gestisce l'errore controllando se `err` non è `nil`.
 
-In Go, la gestione degli errori è stata un punto di contesa. Fin dall'inizio, Go ha deciso di non utilizzare eccezioni per un approccio più esplicito, che alcuni sviluppatori apprezzano per la sua semplicità e altri trovano verboso. Il tipo incorporato `error` è un'interfaccia. Qualsiasi tipo con un metodo `Error() string` lo soddisfa. Questo è in linea con l'etica di Go della semplicità ed esplicità.
+## Approfondimento
 
-Alternative? Ci sono il duo `panic` e `recover`, ma sono per casi eccezionali (gioco di parole inteso) quando il programma non può proseguire. Pensa a `panic` come al bottone di espulsione che premi quando sai che non c'è ritorno. Usalo con parsimonia.
+L'approccio di Go alla gestione degli errori è deliberatamente semplice e tipizzato in modo sicuro, richiedendo controlli espliciti degli errori. Questo concetto si contrappone alla gestione degli errori basata su eccezioni vista in linguaggi come Java e Python, dove gli errori vengono propagati lungo lo stack di chiamate a meno che non vengano catturati da un gestore di eccezioni. Il team di Go sostiene che la gestione esplicita degli errori porta a codice più chiaro e affidabile, poiché obbliga i programmatori ad affrontare gli errori immediatamente dove si verificano.
 
-Per quanto riguarda la gestione degli errori mainstream, Go 1.13 ha introdotto l'error wrapping, rendendo più facile capire la "catena di errori" con funzioni come `errors.Is()` e `errors.As()`.
+Tuttavia, alcune critiche menzionano che questo schema può portare a codice verboso, specialmente in funzioni complesse con molte operazioni soggette a errori. In risposta, le versioni più recenti di Go hanno introdotto funzionalità di gestione degli errori più sofisticate, come l'incapsulamento degli errori, rendendo più facile fornire contesto a un errore senza perdere le informazioni sull'errore originale. La comunità ha visto anche proposte per nuovi meccanismi di gestione degli errori, come check/handle, sebbene queste rimangano in discussione al momento del mio ultimo aggiornamento.
 
-## Vedi Anche:
-
-Per tutto ciò che riguarda la gestione degli errori in Go:
-
-- Il blog di Go sulla gestione degli errori: [https://blog.golang.org/error-handling-and-go](https://blog.golang.org/error-handling-and-go)
-- Go efficace – Sezione sulla gestione degli errori: [https://golang.org/doc/effective_go#errors](https://golang.org/doc/effective_go#errors)
-- Documentazione sull'Error Wrapping di Go 1.13: [https://golang.org/doc/go1.13#error_wrapping](https://golang.org/doc/go1.13#error_wrapping)
-- Il post di Dave Cheney sulle strategie di gestione degli errori: [https://dave.cheney.net/2016/04/27/dont-just-check-errors-handle-them-gracefully](https://dave.cheney.net/2016/04/27/dont-just-check-errors-handle-them-gracefully)
+La filosofia di gestione degli errori di Go sottolinea la comprensione e la pianificazione degli errori come parte del flusso normale del programma. Questo approccio incoraggia lo sviluppo di software più resiliente e prevedibile, sebbene con un potenziale aumento del codice boilerplate. Esistono modelli e librerie alternativi per semplificare la gestione degli errori per casi particolarmente complessi, ma il tipo `error` integrato in Go rimane il fondamento della gestione degli errori nel linguaggio.

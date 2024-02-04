@@ -1,81 +1,69 @@
 ---
 title:                "Refaktorisering"
-date:                  2024-01-26T01:16:40.252436-07:00
+date:                  2024-02-03T18:07:30.947845-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Refaktorisering"
-
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/c/refactoring.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Refaktorisering är processen att omstrukturera befintlig dator kod utan att ändra dess yttre beteende. Programmerare gör det för att förbättra läsbarheten, minska komplexiteten eller göra koden mer underhållsbar och skalbar, vilket kan spara en hel del tid och huvudvärk längre fram.
 
-## Hur gör man:
-Låt oss fräscha upp lite kod. Tänk dig att du har en funktion som beräknar medelvärdet av heltal i en array. Vid första anblicken är det lite av en röra.
+Refaktorering inom programmering innebär att man omstrukturerar befintlig kod utan att ändra dess externa beteende, med målet att förbättra icke-funktionella attribut som läsbarhet, minska komplexitet och öka underhållbarheten. Programmerare refaktorerar för att hålla kodbasen ren, minimera teknisk skuld och göra framtida ändringar enklare och säkrare att genomföra.
 
-**Före refaktorisering:**
-```C
+## Hur man gör:
+
+Refaktorering kan innefatta en rad taktiker från att byta namn på variabler för klarhet till att ändra kodens struktur för bättre modularisering. Här är ett enkelt exempel som demonstrerar hur man refaktorerar en bit C-kod för bättre klarhet och effektivitet.
+
+Före refaktorering:
+```c
 #include <stdio.h>
 
-double calculateStuff(int numbers[], int size) {
-    int sum = 0;
-    double average;
-    for(int i = 0; i < size; sum += numbers[i++]); // Summation i for-loops villkoret, aj då!
-    average = (double)sum / size;
-    return average;
-}
-
 int main() {
-    int array[] = {23, 42, 57, 16, 5, 102};
-    int längd = sizeof(array) / sizeof(array[0]);
-    printf("Medelvärde: %f\n", calculateStuff(array, längd));
-
+    int x = 10, y = 20;
+    printf("Före byte: x = %d, y = %d\n", x, y);
+    x = x + y; // x blir nu 30
+    y = x - y; // y blir 10
+    x = x - y; // x blir 20
+    printf("Efter byte: x = %d, y = %d\n", x, y);
     return 0;
 }
 ```
-
-**Efter refaktorisering:**
-```C
+Utmatning:
+```
+Före byte: x = 10, y = 20
+Efter byte: x = 20, y = 10
+```
+Efter refaktorering:
+```c
 #include <stdio.h>
 
-int calculateSum(const int numbers[], int size) {
-    int sum = 0;
-    for (int i = 0; i < size; ++i) {
-        sum += numbers[i];
-    }
-    return sum;
-}
-
-double calculateAverage(const int numbers[], int size) {
-    int sum = calculateSum(numbers, size);
-    return (double)sum / size;
+void swap(int *a, int *b) {
+    *a = *a + *b;
+    *b = *a - *b;
+    *a = *a - *b;
 }
 
 int main() {
-    int array[] = {23, 42, 57, 16, 5, 102};
-    int längd = sizeof(array) / sizeof(array[0]);
-    printf("Medelvärde: %f\n", calculateAverage(array, längd));
+    int x = 10, y = 20;
+    printf("Före byte: x = %d, y = %d\n", x, y);
+    swap(&x, &y);
+    printf("Efter byte: x = %d, y = %d\n", x, y);
     return 0;
 }
 ```
-Även med det här enkla exemplet kan du se hur uppdelningen av funktionen gör koden renare och mer underhållsbar. Varje funktion har nu ett enda ansvar – en nyckelprincip i ren kodning.
+Utmatningen är oförändrad, men funktionaliteten för att byta värden har flyttats till en separat funktion (`swap`), vilket förbättrar läsbarheten och återanvändbarheten.
 
 ## Djupdykning
-Termen "refaktorisering" populariserades i slutet av 90-talet, särskilt med publiceringen av Martin Fowlers bok "Refactoring: Improving the Design of Existing Code." Refaktorisering innebär inte att fixa buggar eller lägga till nya funktioner, utan det handlar om att förbättra kodens struktur.
 
-Det finns många toppmoderna refaktoriseringsverktyg och IDE:er (Integrerade Utvecklingsmiljöer) som hjälper till att automatisera processen, som CLion för C och C++, men att förstå vad som händer under huven är fortfarande avgörande.
+Praxisen att refaktorera kod har funnits så länge som mjukvaruutveckling själv, och utvecklas parallellt med programmeringsparadigm och språk. I C, ett språk som är både kraftfullt och fyllt med möjligheter för ineffektivitet och fel på grund av sin lågnivå karaktär, är refaktorering särskilt avgörande. Det kan göra skillnaden mellan en kodbas som är underhållbar och en som är ett virrvarr av ineffektivitet.
 
-Alternativ till refaktorisering kan inkludera att skriva om kod från grunden (riskabelt och ofta onödigt) eller leva med den tekniska skulden (vilket kan vara dyrare i längden). Implementeringsdetaljer varierar beroende på projektet, men vanliga refaktoriseringar inkluderar att byta namn på variabler för tydlighet, bryta ned stora funktioner i mindre delar, och ersätta magiska nummer med namngivna konstanter.
+En övervägning som är specifik för C är balansen mellan mikrooptimeringar och läsbarhet/underhållbarhet. Även om det är frestande att handjustera C-kod för varenda uns av prestanda, kan sådana optimeringar göra koden mer skör och svårare att läsa. Därför är det vanligtvis bättre att prioritera ren, läsbar kod och lita på kompilatorns optimerare för att hantera prestandaförbättringar där det är möjligt.
 
-Dessutom kan mönster som DRY (Don't Repeat Yourself) och SOLID-principer vägleda din refaktoriseringsresa, mot en kodbas som är lättare att testa, förstå och samarbeta med.
+Dessutom har verktyg och tekniker för refaktorering i C, såsom statiska kodanalysatorer (t.ex. Clang Static Analyzer, cppcheck) och principer för modulär programmering, avancerat avsevärt. Dock, på grund av C:s manuella minneshantering och pekararitmetik, kan refaktorering introducera buggar om den inte genomförs noggrant. Tekniker som enhetstester och kodgranskning är ovärderliga här.
 
-## Se även
-För att dyka djupare in i refaktoriseringshavet, ta en titt på:
-
-- Martin Fowlers hemsida: https://martinfowler.com/ med en skattkista av artiklar och resurser om refaktorisering och mjukvarudesign.
-- Refactoring.com: https://refactoring.com/ erbjuder exempel och kataloger över refaktoriseringsmetoder.
-- Boken "Refactoring": Ansedd som en bibel för refaktorisering, genom att läsa den får du en komplett vy av metoden.
-- "Clean Code: A Handbook of Agile Software Craftsmanship" av Robert C. Martin, som diskuterar att skriva kod som är lätt att förstå och underhålla.
+Medan nyare språk erbjuder mer inbyggt stöd för säker refaktorering med funktioner som automatisk minneshantering och rika typsystem, är C oöverträffat i scenarier som kräver prestanda nära maskinvaran och finjusterad kontroll. I sådana fall handlar refaktorering mindre om att utnyttja språkfunktioner och mer om disciplinerad, genomtänkt omstrukturering av kod.

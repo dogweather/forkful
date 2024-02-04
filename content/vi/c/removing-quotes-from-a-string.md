@@ -1,68 +1,73 @@
 ---
 title:                "Loại bỏ dấu ngoặc kép khỏi chuỗi"
-date:                  2024-01-28T22:06:04.409992-07:00
+date:                  2024-02-03T18:07:33.310842-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Loại bỏ dấu ngoặc kép khỏi chuỗi"
-
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/c/removing-quotes-from-a-string.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Gì và Tại sao?
+## Cái gì và Tại sao?
 
-Xóa bỏ dấu ngoặc khỏi một chuỗi nghĩa là loại bỏ bất kỳ dấu ngoặc kép ("") hoặc dấu ngoặc đơn ('') nào là một phần của nội dung chuỗi. Các lập trình viên thực hiện điều này để làm sạch dữ liệu đầu vào, chuẩn bị dữ liệu cho quá trình xử lý tiếp theo, hoặc tránh các lỗi cú pháp khi xử lý đường dẫn tệp và lệnh trong các ngôn ngữ sử dụng dấu ngoặc để phân biệt chuỗi.
+Việc loại bỏ dấu ngoặc khỏi một chuỗi trong C bao gồm việc trích xuất nội dung văn bản mà không cần dấu ngoặc đơn (' ') hoặc dấu ngoặc kép (" "). Quá trình này rất quan trọng để làm sạch dữ liệu đầu vào, phân tích nội dung tệp, hoặc chuẩn bị chuỗi cho quá trình xử lý tiếp theo nơi mà dấu ngoặc không cần thiết hoặc có thể dẫn đến lỗi trong xử lý dữ liệu.
 
-## Cách thực hiện:
+## Làm thế nào:
 
-Dưới đây là một hàm C sẽ loại bỏ những dấu ngoặc phiền toái khỏi chuỗi của bạn:
+Để loại bỏ dấu ngoặc khỏi một chuỗi trong C, chúng ta duyệt qua chuỗi, sao chép các ký tự không phải là dấu ngoặc vào một chuỗi mới. Quá trình này có thể được tùy chỉnh để loại bỏ chỉ dấu ngoặc ở đầu và cuối hoặc tất cả dấu ngoặc có trong chuỗi. Dưới đây là một ví dụ minh họa thể hiện cả hai cách tiếp cận:
 
 ```c
 #include <stdio.h>
 #include <string.h>
 
-void remove_quotes(char *str) {
-    char *p_read = str, *p_write = str;
-    while (*p_read) {
-        if (*p_read != '"' && *p_read != '\'') {
-            *p_write++ = *p_read;
+// Hàm để loại bỏ tất cả dấu ngoặc khỏi một chuỗi
+void removeAllQuotes(char *source, char *dest) {
+    while (*source) {
+        if (*source != '"' && *source != '\'') {
+            *dest++ = *source;
         }
-        p_read++;
+        source++;
     }
-    *p_write = '\0';
+    *dest = '\0'; // Kết thúc chuỗi đích bằng dấu NULL
+}
+
+// Hàm để chỉ loại bỏ dấu ngoặc ở đầu và cuối chuỗi
+void removeEdgeQuotes(char *source, char *dest) {
+    size_t len = strlen(source);
+    if (source[0] == '"' || source[0] == '\'') source++, len--;
+    if (source[len-1] == '"' || source[len-1] == '\'') len--;
+    strncpy(dest, source, len);
+    dest[len] = '\0'; // Kết thúc chuỗi đích bằng dấu NULL
 }
 
 int main() {
-    char str[] = "He said, \"Hello, 'world'!\"";
-    printf("Ban đầu: %s\n", str);
-    remove_quotes(str);
-    printf("Đã làm sạch: %s\n", str);
+    char str1[] = "'Hello, World!'";
+    char str2[] = "\"Programming in C\"";
+    char noQuotes1[50];
+    char noQuotes2[50];
+    
+    removeAllQuotes(str1, noQuotes1);
+    printf("All Quotes Removed: %s\n", noQuotes1);
+    
+    removeEdgeQuotes(str2, noQuotes2);
+    printf("Dấu Ngoặc ở Biên Đã Được Loại Bỏ: %s\n", noQuotes2);
+    
     return 0;
 }
 ```
-
-Kết quả mẫu:
-
+Kết quả Mẫu:
 ```
-Ban đầu: He said, "Hello, 'world'!"
-Đã làm sạch: He said, Hello, world!
+All Quotes Removed: Hello, World!
+Dấu Ngoặc ở Biên Đã Được Loại Bỏ: Programming in C
 ```
+
+Những ví dụ này cho thấy làm thế nào để xử lý việc loại bỏ tất cả dấu ngoặc có trong chuỗi và việc loại bỏ cụ thể chỉ dấu ngoặc ở đầu và cuối.
 
 ## Sâu hơn
 
-Việc xóa bỏ dấu ngoặc khỏi một chuỗi đã là một nhiệm vụ từ thuở sơ khai của lập trình, nơi vệ sinh dữ liệu là và vẫn là chìa khóa để tránh lỗi (như các cuộc tấn công SQL injection) hoặc đảm bảo một chuỗi có thể an toàn được truyền đến các hệ thống có thể nhầm lẫn dấu ngoặc là một ký tự điều khiển.
+Khái niệm về việc loại bỏ dấu ngoặc khỏi chuỗi không có chiều sâu lịch sử đáng kể trong C, ngoài mối liên kết của nó với nhu cầu xử lý văn bản từ sớm. Phương pháp tiếp cận trực tiếp được minh họa ở đây linh hoạt nhưng không hiệu quả với chuỗi rất lớn hoặc yêu cầu hiệu suất cao, nơi mà sự chỉnh sửa tại chỗ hoặc các thuật toán tiên tiến hơn có thể được ưa chuộng.
 
-Theo lịch sử, các ngôn ngữ khác nhau xử lý nhiệm vụ này theo cách khác nhau—một số có các hàm tích hợp sẵn (như `strip` trong Python), trong khi những ngôn ngữ khác, như C, đòi hỏi phải thực hiện thủ công do tập trung vào việc cung cấp quyền kiểm soát mức thấp hơn cho nhà phát triển.
-
-Các phương án thay thế bao gồm sử dụng các hàm thư viện như `strpbrk` để tìm dấu ngoặc hoặc sử dụng biểu thức chính quy (với các thư viện như PCRE) cho các mô hình phức tạp hơn, mặc dù điều này có thể là quá mức cho việc đơn giản là xóa bỏ dấu ngoặc.
-
-Cài đặt trên đơn giản là quét qua từng ký tự trong chuỗi, chỉ sao chép các ký tự không phải dấu ngoặc vào vị trí con trỏ ghi. Điều này hiệu quả vì nó được thực hiện ngay tại chỗ mà không cần bộ nhớ phụ trợ cho chuỗi kết quả.
-
-## Xem thêm
-
-- [Các Hàm Thư Viện Chuẩn C](http://www.cplusplus.com/reference/clibrary/)
-- [PCRE - Perl Compatible Regular Expressions](https://www.pcre.org/)
-- [Hiểu về Con trỏ trong C](https://www.learn-c.org/en/Pointers)
+Những phương án thay thế, như sử dụng `strpbrk` để tìm dấu ngoặc và di chuyển phần của chuỗi không có dấu ngoặc, có thể hiệu quả hơn nhưng đòi hỏi hiểu biết sâu hơn về con trỏ và quản lý bộ nhớ trong C. Hơn nữa, sự xuất hiện của các thư viện biểu thức chính quy đã cung cấp một bộ công cụ mạnh mẽ cho việc thao tác chuỗi, bao gồm cả việc loại bỏ dấu ngoặc. Tuy nhiên, những thư viện này, mặc dù mạnh mẽ, thêm vào độ phức tạp và tải quá mức có thể không cần thiết cho các tác vụ đơn giản hơn. Do đó, phương pháp tiếp cận trực tiếp như được trình bày, vẫn là một kỹ năng quý giá đối với các lập trình viên C, kết hợp sự đơn giản với hiệu quả cho nhiều trường hợp sử dụng phổ biến.

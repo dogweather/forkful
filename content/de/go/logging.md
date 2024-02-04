@@ -1,22 +1,44 @@
 ---
 title:                "Protokollierung"
-date:                  2024-01-26T01:07:41.332387-07:00
-model:                 gpt-4-1106-preview
+date:                  2024-02-03T17:59:02.880278-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Protokollierung"
-
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/go/logging.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Logging dreht sich um das Aufzeichnen von Ereignissen, Zuständen und Datenflüssen innerhalb einer App. Programmierer machen das, um Fehler zu diagnostizieren, die Leistung zu überwachen und den Betriebszustand der App zu verfolgen – es ist in etwa das Softwareäquivalent einer Black Box in Flugzeugen.
+
+Das Protokollieren in der Softwareentwicklung ist der Prozess der Aufzeichnung von Informationen über die Ausführung eines Programms, um sein Verhalten zu verfolgen und Probleme zu diagnostizieren. Programmierer implementieren die Protokollierung, um die Softwareleistung zu überwachen, Fehler zu debuggen und die Systemsicherheit und -konformität zu gewährleisten, was sie zu einem unverzichtbaren Werkzeug für die Anwendungswartung und -analyse macht.
 
 ## Wie geht das:
-In Go kann das Logging auf verschiedene Weisen gehandhabt werden, von dem `log`-Paket der Standardbibliothek bis hin zu Drittanbieter-Bibliotheken wie `logrus` und `zap`. Hier ist ein einfaches Beispiel unter Verwendung des eingebauten `log`-Pakets:
 
-```Go
+In Go kann das Protokollieren mithilfe des Standardbibliothekspakets `log` implementiert werden. Dieses Paket bietet einfache Protokollierungsfunktionen, wie das Schreiben in die Standardausgabe oder in Dateien. Beginnen wir mit einem grundlegenden Beispiel für die Protokollierung in die Standardausgabe:
+
+```go
+package main
+
+import (
+	"log"
+)
+
+func main() {
+	log.Println("Dies ist ein grundlegender Protokolleintrag.")
+}
+```
+
+Ausgabe:
+```
+2009/11/10 23:00:00 Dies ist ein grundlegender Protokolleintrag.
+```
+
+Der Zeitstempel am Anfang des Protokolleintrags wird automatisch vom `log`-Paket hinzugefügt. Als Nächstes erkunden wir, wie man in eine Datei statt in die Standardausgabe protokolliert:
+
+```go
 package main
 
 import (
@@ -25,46 +47,44 @@ import (
 )
 
 func main() {
-	// Eine Log-Datei erstellen
-	logFile, err := os.OpenFile("app.log", os.O_CREATE|os.O_APPEND|os.O_WRONLY, 0666)
+	file, err := os.OpenFile("app.log", os.O_CREATE|os.O_APPEND|os.O_WRONLY, 0666)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer logFile.Close()
+	defer file.Close()
 
-	// Setze die Ausgabe des Logs auf die Datei
-	log.SetOutput(logFile)
-
-	// Einige Ereignisse loggen
-	log.Println("Die Anwendung startet...")
-	// ... Anwendungslogik hier ...
-	log.Println("Die Anwendung wurde erfolgreich beendet.")
+	log.SetOutput(file)
+	log.Println("Dieser Protokolleintrag geht in eine Datei.")
 }
 ```
 
-Wenn Sie diesen Code ausführen, sehen Sie keine Ausgabe im Terminal, weil alles in `app.log` geht. Hier ist ein Einblick, was Sie in der Log-Datei finden würden:
+Nun implementieren wir einen fortgeschritteneren Anwendungsfall: die Anpassung des Protokollierungsformats. Go ermöglicht es Ihnen, einen benutzerdefinierten Logger mit `log.New()` zu erstellen:
 
+```go
+package main
+
+import (
+	"log"
+	"os"
+)
+
+func main() {
+	logger := log.New(os.Stdout, "CUSTOM LOG: ", log.Ldate|log.Ltime|log.Lshortfile)
+	logger.Println("Dies ist eine benutzerdefinierte Protokollnachricht.")
+}
 ```
-2023/01/02 15:04:05 Die Anwendung startet...
-2023/01/02 15:05:01 Die Anwendung wurde erfolgreich beendet.
+
+Ausgabe:
+```
+CUSTOM LOG: 2009/11/10 23:00:00 main.go:11: Dies ist eine benutzerdefinierte Protokollnachricht.
 ```
 
-## Vertiefung
-Das Logging in der Programmierung reicht zurück zu den frühesten Computern, wo Ingenieure buchstäblich Bugs (tatsächlich Motten) im Hardware gefangen und sie geloggt haben! Im Laufe der Zeit entwickelte sich das Logging zu einer raffinierten Methode, um zu verstehen, was in komplexen Systemen vor sich geht.
+Dieses Beispiel fügt jeder Protokollnachricht den Präfix "CUSTOM LOG: " hinzu und schließt das Datum, die Uhrzeit und den Quelldateiort ein.
 
-Obwohl das `log`-Paket in Go ziemlich simpel ist, kann es für grundlegende Anwendungen ausreichend sein. Jedoch, im Kontext moderner verteilter Systeme, oder wenn Sie eine nuanciertere Kontrolle über Ihre Log-Ausgabe benötigen (wie unterschiedliche Schweregrade), möchten Sie vielleicht robustere Lösungen erkunden.
+## Tiefgehend
 
-Drittanbieter-Logging-Bibliotheken wie `logrus` und `zap` bieten strukturiertes Logging, was bedeutet, dass Sie komplexe Datentypen wie JSON loggen können, was die Interpretation von Logs erleichtert, besonders in Verbindung mit Log-Management-Systemen wie dem ELK Stack oder Splunk.
+Das `log`-Paket der Go-Standardbibliothek ist unkompliziert und für viele Anwendungen ausreichend, aber es fehlen einige der ausgefeilteren Funktionen, die in Drittanbieter-Protokollierungsbibliotheken zu finden sind, wie strukturierte Protokollierung, Log-Rotation und protokollierung auf Basis von Ebenen. Pakete wie `zap` und `logrus` bieten diese fortgeschrittenen Funktionen und sind in der Go-Community für ihre Leistung und Flexibilität gut angesehen.
 
-Bei der Überlegung der Implementierung einer Logging-Strategie ist es auch wesentlich, über die Leistungsimplikationen nachzudenken. Hochleistungs-Logging-Bibliotheken sind optimiert, um den Einfluss auf den Durchsatz und die Latenz der Anwendung zu verringern. Zum Beispiel rühmt sich `zap` mit seinem blitzschnellen, speicherschonenden Design, was für Echtzeitsysteme entscheidend sein kann.
+Die strukturierte Protokollierung ermöglicht es beispielsweise, Daten in einem strukturierten Format (wie JSON) zu protokollieren, was besonders nützlich für moderne, cloudbasierte Anwendungen ist, bei denen Protokolle von verschiedenen Werkzeugen oder Diensten analysiert werden könnten. `zap` ist insbesondere für seine hohe Leistungsfähigkeit und geringe Zuweisungsbelastung bekannt, was es für Anwendungen geeignet macht, bei denen Geschwindigkeit und Effizienz entscheidend sind.
 
-Zusätzlich zu verschiedenen Bibliotheken sind auch Logging-Formate und Standards beachtenswert. Strukturierte Logging-Formate wie JSON können immens mächtig sein, wenn sie in Verbindung mit Log-Verarbeitungssystemen verwendet werden. Andererseits sind Klartext-Logs menschenlesbar, aber schwieriger programmatisch zu parsen.
-
-## Siehe auch
-Um tiefer in die Logging-Fähigkeiten von Go einzutauchen, könnten diese Ressourcen nützlich sein:
-
-- Der Go-Blog zum Thema Logging: https://blog.golang.org/logging
-- `logrus`, ein strukturierter Logger für Go: https://github.com/sirupsen/logrus
-- `zap`, ein schneller, strukturierter, abgestufter Logger: https://github.com/uber-go/zap
-- ELK Stack (Elasticsearch, Logstash, Kibana) für Log-Analyse: https://www.elastic.co/what-is/elk-stack
-- Ein Vergleich von Go-Logging-Bibliotheken: https://www.loggly.com/blog/benchmarking-5-popular-golang-logging-libraries/
+Historisch gesehen hat sich die Protokollierung in Go seit der Einführung der Sprache erheblich weiterentwickelt. Frühe Versionen von Go boten die grundlegenden Protokollierungsfähigkeiten, die wir im `log`-Paket sehen. Doch als die Sprache an Popularität gewann und die Komplexität der in Go geschriebenen Anwendungen zunahm, begann die Gemeinschaft, ausgefeiltere Protokollierungsbibliotheken zu entwickeln, um ihre Bedürfnisse zu erfüllen. Heute, während das Standard-`log`-Paket für einfache Anwendungen weiterhin eine praktikable Option bleibt, wenden sich viele Entwickler für komplexere Protokollierungsanforderungen diesen Drittanbieterlösungen zu.

@@ -1,20 +1,27 @@
 ---
 title:                "Redondeo de números"
-date:                  2024-01-26T03:44:37.092494-07:00
+date:                  2024-02-03T18:07:34.066458-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Redondeo de números"
-
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/go/rounding-numbers.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Qué y Por Qué?
-Redondear números significa ajustar un número a su entero más cercano o a un lugar decimal especificado. Se hace para simplificar valores, hacerlos más legibles, o ajustarlos a ciertas restricciones, como cuando se trabaja con monedas.
+## ¿Qué & Por qué?
+
+Redondear números consiste en ajustar el valor de un número al entero más cercano o a un número específico de decimales. Los programadores hacen esto por razones tales como mejorar la legibilidad, simplificar cálculos o cumplir con requisitos de precisión específicos del dominio.
 
 ## Cómo hacerlo:
-El paquete `math` de Go es tu amigo para redondear. Usa `math.Round`, `math.Floor` y `math.Ceil` por simplicidad:
+
+En Go, no hay una función integrada que redondee directamente los números a un número específico de decimales en el paquete de matemáticas. Sin embargo, puedes lograr el redondeo a través de una combinación de funciones para números enteros o implementar una función personalizada para decimales.
+
+### Redondeando al entero más cercano:
+
+Para redondear al entero más cercano, puedes utilizar la función `math.Floor()` con un 0.5 agregado para números positivos, y `math.Ceil()` menos 0.5 para números negativos, dependiendo de la dirección al que desees redondear.
 
 ```go
 package main
@@ -25,47 +32,40 @@ import (
 )
 
 func main() {
-	number := 3.14159
-	fmt.Println("Round:", math.Round(number))  // Redondear al entero más cercano
-	fmt.Println("Floor:", math.Floor(number)) // Redondear hacia abajo
-	fmt.Println("Ceil: ", math.Ceil(number))  // Redondear hacia arriba
+	fmt.Println(math.Floor(3.75 + 0.5))  // Devuelve: 4
+	fmt.Println(math.Ceil(-3.75 - 0.5)) // Devuelve: -4
 }
 ```
 
-Salida de muestra:
-```
-Round: 3
-Floor: 3
-Ceil: 4
-```
+### Redondeando a un número específico de decimales:
 
-Para lugares decimales específicos, multiplica, redondea, luego divide:
+Para redondear a un número específico de decimales, se puede utilizar una función personalizada donde multiplicas el número por 10^n (donde n es el número de decimales), lo redondeas al entero más cercano como antes, y luego lo divides por 10^n.
 
 ```go
-func roundToDecimalPlace(number float64, decimalPlaces int) float64 {
-	shift := math.Pow(10, float64(decimalPlaces))
+package main
+
+import (
+	"fmt"
+	"math"
+)
+
+func roundToDecimalPlace(number float64, places int) float64 {
+	shift := math.Pow(10, float64(places))
 	return math.Round(number*shift) / shift
 }
 
 func main() {
-	number := 3.14159
-	fmt.Println("Redondeado a 2 lugares decimales:", roundToDecimalPlace(number, 2))
+	fmt.Println(roundToDecimalPlace(3.14159, 2)) // Devuelve: 3.14
+	fmt.Println(roundToDecimalPlace(-3.14159, 3)) // Devuelve: -3.142
 }
 ```
 
-Salida de muestra:
-```
-Redondeado a 2 lugares decimales: 3.14
-```
+## Estudio en profundidad
 
-## Estudio Profundo
-El redondeo de números no es nuevo, se remonta a la matemática antigua, buscando siempre la simplicidad. `math.Round` en Go usa el [redondeo bancario](https://es.wikipedia.org/wiki/Redondeo#Redondeo_hacia_el_número_par_más_cercano), lo que significa que 0.5 se redondea al número par más cercano, reduciendo un sesgo que podría afectar las sumas.
+Redondear números es una operación fundamental en la programación de computadoras, vinculada al desafío histórico de representar números reales en un sistema binario. La necesidad de redondear surge del hecho de que muchos números reales no pueden ser representados precisamente en binario, lo que lleva a errores de aproximación.
 
-Los números de punto flotante pueden ser complicados debido a su representación binaria, que puede no representar exactamente todos los decimales. Sin embargo, el enfoque de Go mantiene el comportamiento esperado la mayoría del tiempo.
+En Go, el enfoque para el redondeo es algo manual en comparación con los lenguajes que ofrecen funciones de redondeo incorporadas a decimales específicos. Sin embargo, el paquete `math` de la biblioteca estándar de Go proporciona los bloques de construcción básicos (como `math.Floor` y `math.Ceil`) para construir cualquier mecanismo de redondeo requerido por la aplicación.
 
-Existen otros métodos de redondeo, como "redondear hacia arriba" o "redondear alejándose de cero", pero la biblioteca estándar de Go es lo que está disponible de manera inmediata. Para necesidades más complejas, es posible que necesites una biblioteca de terceros o desarrollar tu propia solución.
+Este enfoque manual, aunque aparentemente más engorroso, ofrece a los programadores un control más fino sobre cómo se redondean los números, satisfaciendo las necesidades de precisión y exactitud de diferentes aplicaciones. Alternativas como las bibliotecas de terceros o el diseño de funciones de redondeo personalizadas pueden proporcionar soluciones más sencillas al tratar con números complejos o requerir operaciones matemáticas más avanzadas no cubiertas por la biblioteca estándar.
 
-## Ver También
-- Paquete `math` de Go: [https://pkg.go.dev/math](https://pkg.go.dev/math)
-- Estándar IEEE 754 para aritmética de punto flotante (base de Go para manejar flotantes): [https://ieeexplore.ieee.org/document/4610935](https://ieeexplore.ieee.org/document/4610935)
-- Entendiendo el punto flotante: ["Lo que todo informático debería saber sobre aritmética de punto flotante"](https://docs.oracle.com/cd/E19957-01/806-3568/ncg_goldberg.html)
+En conclusión, aunque la biblioteca estándar de Go podría no ofrecer funcionalidad directa de redondeo a decimales específicos, su conjunto completo de funciones matemáticas permite a los desarrolladores implementar soluciones de redondeo robustas adaptadas a sus necesidades específicas.

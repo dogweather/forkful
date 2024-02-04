@@ -1,72 +1,64 @@
 ---
 title:                "检查目录是否存在"
-date:                  2024-01-19
+date:                  2024-02-03T17:52:33.404737-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "检查目录是否存在"
-
 tag:                  "Files and I/O"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/c/checking-if-a-directory-exists.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (什么与为什么?)
+## 什么和为什么?
 
-在C语言中确认文件夹是否存在是检测给定的文件夹路径能否在文件系统找到的过程。程序员做这个的原因是为了避免在不存在的文件夹上执行操作，从而造成错误。
+在C语言中检查目录是否存在涉及查询文件系统，以验证特定路径是否指向目录。程序员经常执行此操作，以确保文件操作（如读取或写入文件）针对有效路径，防止错误并提高软件可靠性。
 
-## How to (如何操作):
+## 如何操作:
 
-```C
+在C中，可以通过使用`stat`函数来检查目录是否存在，该函数可检索指定路径下的文件或目录的信息。然后使用`sys/stat.h`中的`S_ISDIR`宏来评估检索到的信息是否对应于目录。
+
+以下是如何使用`stat`和`S_ISDIR`来检查目录是否存在的方法:
+
+```c
 #include <stdio.h>
 #include <sys/stat.h>
-#include <stdbool.h>
-
-bool doesDirectoryExist(const char *path) {
-    struct stat statbuf;
-    
-    if (stat(path, &statbuf) != 0) {
-        return false;
-    }
-    
-    return S_ISDIR(statbuf.st_mode);
-}
 
 int main() {
-    const char *path = "/path/to/directory";
+    struct stat stats;
     
-    if (doesDirectoryExist(path)) {
-        printf("Directory exists.\n");
+    // 要检查的目录路径
+    char *dirPath = "/path/to/directory";
+
+    // 获取路径的状态
+    int result = stat(dirPath, &stats);
+
+    // 检查目录是否存在
+    if (result == 0 && S_ISDIR(stats.st_mode)) {
+        printf("目录存在。\n");
     } else {
-        printf("Directory does not exist.\n");
+        printf("目录不存在。\n");
     }
-    
+
     return 0;
 }
 ```
 
-Sample output (样例输出):
-
+示例输出:
 ```
-Directory exists.
-```
-or (或者)
-
-```
-Directory does not exist.
+目录存在。
 ```
 
-## Deep Dive (深入探索):
+或者，如果目录不存在:
+```
+目录不存在。
+```
 
-这个功能的实现利用了 `stat` 函数，这个函数尝试获取文件状态，并填充 `stat` 结构体。如果路径表示的是目录，`S_ISDIR` 宏检查 `st_mode` 字段确认它。
+## 深入了解:
 
-对于历史环境而言，此方法已经存在多年，是Unix和类Unix系统的标准部分。Windows系统有其他的API调用方式。实际上，有很多其他方法可以实现同样的目标，例如使用 `opendir()` 函数和C++17中的 `std::filesystem::exists()`。
+`stat`结构和函数已经是C编程语言几十年来的一部分，源自Unix。它们提供了一种标准化的方式来检索文件系统信息，尽管这种方式相对较低级，但由于其简单性和直接访问文件系统的元数据，因此被广泛使用。
 
-实施细节方面，考虑文件的权限和可能的错误处理是很重要的。例如，如果程序运行在没有读取特定文件夹权限的用户下，`stat()` 调用可能失败。
+从历史上看，使用`stat`及其衍生函数（如`fstat`和`lstat`）来检查文件和目录的存在性及属性一直是常见的做法。然而，这些函数直接与操作系统内核交互，如果没有正确处理，可能会引入开销和潜在错误。
 
-## See Also (另请参阅):
-
-- C标准库的 `stat` 文档：https://en.cppreference.com/w/c/io/stat
-- POSIX `stat` 参考：https://pubs.opengroup.org/onlinepubs/9699919799/functions/stat.html
-- C++ `std::filesystem` 参考：https://en.cppreference.com/w/cpp/filesystem
-
-请注意，网站链接可能是英文的。相关技术阅读时应考虑翻译或对应的中文资源。
+对于新项目或在高级场景中工作时，程序员可能会选择现代框架或库提供的更抽象的文件处理机制，这些机制可以更优雅地处理错误，并提供更简单的API。然而，理解并能够使用`stat`在需要直接操纵文件系统的场景中仍然是一项宝贵的技能，如系统编程或在无法依赖大型库的受限环境中工作时。

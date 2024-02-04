@@ -1,43 +1,60 @@
 ---
-title:                "문자열에서 날짜 파싱하기"
-date:                  2024-01-20T15:34:57.621979-07:00
-simple_title:         "문자열에서 날짜 파싱하기"
-
+title:                "문자열에서 날짜 분석하기"
+date:                  2024-02-03T18:05:36.218332-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "문자열에서 날짜 분석하기"
 tag:                  "Dates and Times"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/c/parsing-a-date-from-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (무엇과 왜?)
+## 무엇과 왜?
 
-문자열에서 날짜를 파싱하는 것은 문자열 형식의 날짜를 컴퓨터가 이해할 수 있는 형태로 변환하는 과정입니다. 이러한 변환이 필요한 이유는, 데이터 처리나 유효성 검사, 정렬과 같은 작업을 수행하기 위해서입니다.
+C에서 문자열에서 날짜를 파싱하는 것은 날짜의 텍스트 표현을 프로그램이 더 효과적으로 조작하고 분석할 수 있는 형식으로 변환하는 것을 포함합니다. 이는 날짜 산술, 비교 및 다양한 로케일에 대한 형식 지정과 같은 작업에 필수적이며, 프로그래머가 사용자 입력이나 데이터셋 항목을 표준화된 방식으로 처리할 수 있도록 합니다.
 
-## How to: (방법)
+## 방법:
 
-```C
-#include <stdio.h>
+C는 문자열에서 직접 날짜를 파싱하는 내장 방법을 제공하지 않으므로, 종종 POSIX 시스템용 `<time.h>` 라이브러리에서 사용 가능한 `strptime` 함수를 사용합니다. 이 함수는 입력 문자열의 예상 형식을 지정하고 그것을 구성 요소로 나눈 달력 날짜 및 시간을 나타내는 `struct tm`으로 파싱할 수 있게 합니다.
+
+다음은 문자열에서 날짜를 파싱하기 위해 `strptime`을 사용하는 간단한 예제입니다:
+
+```c
 #include <time.h>
+#include <stdio.h>
 
 int main() {
+    const char *dateStr = "2023-04-01";
     struct tm tm;
-    char *input_str = "2023-03-15";
-    strptime(input_str, "%Y-%m-%d", &tm);
+    char buf[255];
 
-    printf("Year: %d, Month: %d, Day: %d\n", tm.tm_year + 1900, tm.tm_mon + 1, tm.tm_mday);
-    // Sample Output: Year: 2023, Month: 3, Day: 15
+    // 문자열 날짜를 struct tm으로 파싱
+    if (strptime(dateStr, "%Y-%m-%d", &tm) == NULL) {
+        printf("날짜 파싱 실패.\n");
+    } else {
+        // strftime을 사용해 읽을 수 있는 형식으로 날짜를 출력
+        strftime(buf, sizeof(buf), "%A, %B %d, %Y", &tm);
+        printf("파싱된 날짜: %s\n", buf);
+    }
 
     return 0;
 }
 ```
 
-## Deep Dive (깊이 알아보기)
+이 프로그램의 예시 출력은 다음과 같습니다:
 
-날짜를 문자열에서 파싱하는 일은 프로그래밍 초기부터 있어왔습니다. 이전 방식 중 하나는 `sscanf`를 사용하는 것이었지만, 새로운 표준은 `strptime` 함수가 제공되며, 이것이 POSIX 표준에 부합합니다. `strptime` 함수는 문자열의 포맷을 지정하여 날짜와 시간을 파싱할 수 있게 해줍니다. C11이나 그 이후 버전을 사용하는 환경에서는 `get_time`이라는 더 새로운 대안이 있을 수 있습니다. 이 구현은 시스템과 로케일에 따라 다를 수 있으며, 다양한 날짜 포맷을 지원하기 위해 format specifiers를 사용합니다.
+```
+파싱된 날짜: 토요일, 4월 01일, 2023
+```
 
-## See Also (더 보기)
+패턴과 일치하지 않거나 예상치 못한 입력을 만났을 때와 같은 잠재적 오류를 처리하는 것이 중요합니다.
 
-- C 표준 라이브러리 문서: https://en.cppreference.com/w/c/chrono/strptime
-- POSIX 표준: https://pubs.opengroup.org/onlinepubs/9699919799/functions/strptime.html
-- `strftime`와 `strptime` 포맷 지정자 가이드: http://man7.org/linux/man-pages/man3/strftime.3.html
+## 심층 분석
+
+`strptime` 함수는 강력하지만, 표준 C 라이브러리에 포함되어 있지 않으며 주로 Linux와 UNIX와 같은 POSIX 호환 시스템에서 찾을 수 있습니다. 이 제한은 `strptime`을 사용하여 문자열에서 날짜를 파싱하는 프로그램이 추가 호환성 계층이나 라이브러리 없이는 Windows와 같은 비POSIX 시스템으로 이식할 수 없음을 의미합니다.
+
+역사적으로, C에서 날짜와 시간을 처리하는 것은 다양한 로케일과 시간대를 고려할 때 많은 수작업 및 주의가 필요했습니다. C++의 `<chrono>` 라이브러리 및 Howard Hinnant의 C++용 날짜 라이브러리와 같은 현대 대안 및 확장은 포함하여 파싱하는 것을 포함하여 날짜와 시간 조작을 위한 보다 강력한 솔루션을 제공합니다. 이러한 라이브러리는 일반적으로 다양한 날짜 형식, 시간대 및 오류 처리 메커니즘에 대한 더 나은 지원을 제공하여 광범위한 날짜 및 시간 조작 기능이 필요한 새 프로젝트에 선호됩니다.
+
+그럼에도 불구하고, C에서 문자열에서 날짜를 파싱하는 방법을 이해하는 것은 이러한 현대 도구를 사용할 수 없거나 엄격한 C 프로그래밍 환경의 제약 내에서 작업할 때 호환성을 유지해야 하는 프로젝트에서 작업하거나 유지 관리할 때 유용할 수 있습니다.

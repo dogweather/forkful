@@ -1,36 +1,60 @@
 ---
-title:                "Jobbe med TOML"
-date:                  2024-01-26T04:22:16.027383-07:00
+title:                "Å jobbe med TOML"
+date:                  2024-02-03T18:12:37.510676-07:00
 model:                 gpt-4-0125-preview
-simple_title:         "Jobbe med TOML"
-
+simple_title:         "Å jobbe med TOML"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/go/working-with-toml.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Å jobbe med TOML involverer parsing og koding av TOML (Tom's Obvious, Minimal Language) filer i Go. Programmerere velger TOML for dets lesbarhet og lette kartlegging til datastrukturer, en solid passform for konfigurasjoner.
+
+TOML (Tom's Obvious, Minimal Language) er et konfigurasjonsfilformat som er enkelt å lese på grunn av sin enkle syntaks. Programmerere bruker TOML for å konfigurere applikasjonsinnstillinger og avhengigheter på grunn av dets klarhet og rett frem kartlegging til datastrukturer, noe som gjør det til et populært valg i mange Go-prosjekter for å sette opp og håndtere konfigurasjoner.
 
 ## Hvordan:
-For å jobbe med TOML i Go, vil du typisk bruke et bibliotek som `BurntSushi/toml`. Her er en rask titt på parsing av en TOML konfigurasjonsfil:
 
-```Go
+For å begynne å jobbe med TOML i Go, må du først inkludere et bibliotek som kan parse TOML-filer, siden Go-standardbiblioteket ikke støtter TOML nativt. Pakken `BurntSushi/toml` er et populært valg for dette. Først, sørg for å installere det:
+
+```bash
+go get github.com/BurntSushi/toml
+```
+
+Her er et enkelt eksempel på hvordan du bruker det. Tenk deg at du har en konfigurasjonsfil med navnet `config.toml` med følgende innhold:
+
+```toml
+title = "TOML Example"
+
+[database]
+server = "192.168.1.1"
+ports = [ 8001, 8001, 8002 ]
+connection_max = 5000
+enabled = true
+```
+
+Nå trenger du å lage en Go-struktur som speiler TOML-strukturen:
+
+```go
 package main
 
 import (
     "fmt"
-    "os"
-
     "github.com/BurntSushi/toml"
 )
 
 type Config struct {
-    Title   string
-    Owner   struct {
-        Name string
-    }
+    Title    string
+    Database Database `toml:"database"`
+}
+
+type Database struct {
+    Server        string
+    Ports         []int
+    ConnectionMax int `toml:"connection_max"`
+    Enabled       bool
 }
 
 func main() {
@@ -39,32 +63,22 @@ func main() {
         fmt.Println(err)
         return
     }
-    fmt.Printf("Title: %s, Owner: %s\n", config.Title, config.Owner.Name)
+    fmt.Printf("Tittel: %s\n", config.Title)
+    fmt.Printf("Databaseserver: %s\n", config.Database.Server)
 }
 ```
 
-Eksempel `config.toml`:
-
-```Toml
-title = "Example TOML"
-[owner]
-name = "Tom Preston-Werner"
-```
-
-Eksempel på utdata:
+Eksempelutdata:
 
 ```
-Title: Example TOML, Owner: Tom Preston-Werner
+Tittel: TOML Example
+Databaseserver: 192.168.1.1
 ```
 
 ## Dypdykk
-TOML, introdusert av Tom Preston-Werner i 2013, ble designet for å være et minimalt konfigurasjonsfilformat som er lett å lese på grunn av dets klare semantikk. Go-utviklere bruker ofte TOML for konfigurasjon over alternativer som JSON eller YAML for dets direkthet og evne til å representere komplekse hierarkier med enkelhet.
 
-Sammenlignet med YAML, som har komplekse funksjoner og potensielle sikkerhetsproblemer, reduserer TOMLs flate design kompleksitet og feil forårsaket av skrivefeil. Og i motsetning til JSON, støtter TOML kommentarer, noe som gjør det enklere å forklare konfigurasjoner på linje.
+TOML ble opprettet av Tom Preston-Werner, en av medgrunnleggerne av GitHub, for å tilby et enkelt konfigurasjonsfilformat som enkelt kan kartlegges til en hashtabell og forstås ved første øyekast uten forkunnskaper om formatet. Det står i kontrast til JSON eller YAML, som, selv om de også er mye brukt, kan være mindre menneskevennlige for konfigurasjonsfiler på grunn av parenteser, anførselstegn og innrykksproblemer.
 
-Når du jobber med TOML i Go, er det nyanser å vurdere. Struktur-tags kan tilpasse hvordan dine strukturer kartlegges til TOML-strukturer, og du bør også være oppmerksom på hvordan TOML-arrays og innebygde tabeller parses til Go-slices og maps.
+Pakken `BurntSushi/toml` i Go er et robust bibliotek som ikke bare tillater dekoding, men også koding av TOML-filer, noe som gjør det til et allsidig valg for applikasjoner som trenger å både lese og skrive konfigurasjonsfiler i dette formatet. Imidlertid bør man merke seg at med fremskritt innen teknologier og innføringen av nyere Go-versjoner, har alternativer som `pelletier/go-toml` dukket opp, som tilbyr forbedret ytelse og ekstra funksjoner som tremanipulering og støtte for spørringer.
 
-## Se også
-- TOML-spesifikasjon: https://toml.io/en/
-- BurntSushi/toml Bibliotek: https://github.com/BurntSushi/toml
-- En sammenligning av konfigurasjonsfilformater: https://www.redhat.com/sysadmin/yaml-toml-json-differences
+Selv om TOML er et flott valg for mange applikasjoner, avhengig av applikasjonens konfigurasjonskompleksitet og personlige eller lagpreferanser, kan andre formater som YAML eller JSON være bedre egnet, spesielt hvis konfigurasjonen krever mer komplekse datastrukturer som TOMLs ordrike natur kanskje ikke elegant kan fange. Likevel, for enkle, lesbare og lett redigerbare konfigurasjoner, er TOML, sammen med Gos sterke typesystem og de nevnte bibliotekene, et utmerket valg.

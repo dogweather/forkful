@@ -1,43 +1,60 @@
 ---
-title:                "Skrive til standardfeil"
-date:                  2024-01-19
-simple_title:         "Skrive til standardfeil"
-
+title:                "Skrive til standard feil"
+date:                  2024-02-03T18:15:20.598906-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Skrive til standard feil"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/go/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Skrive til standard feil (`stderr`) flytter feilmeldinger og diagnostikk bort fra vanlig utdata (`stdout`). Vi gjør det for å skille normalt resultat fra feil, slik at det blir lettere å oppdage og håndtere feil.
 
-## Hvordan gjøre det:
-```Go
+Å skrive til standardfeil (stderr) i Go involverer omdirigering av feilmeldinger eller diagnostikk som ikke er ment for hovedutstrømmen. Programmerere bruker dette for å skille vanlig utdata fra feilinformasjon, noe som gjør feilsøking og loggtolkning mer rettfram.
+
+## Hvordan:
+
+I Go gir `os`-pakken verdien `Stderr`, som representerer filen for standardfeil. Du kan bruke den med `fmt.Fprint`, `fmt.Fprintf`, eller `fmt.Fprintln`-funksjonene for å skrive til stderr. Her er et enkelt eksempel:
+
+```go
 package main
 
 import (
-	"fmt"
-	"os"
+    "fmt"
+    "os"
 )
 
 func main() {
-	_, err := os.Open("ikke-eksisterende-fil.txt")
-	if err != nil {
-		fmt.Fprintln(os.Stderr, "Feil ved åpning av fil:", err)
-	}
+    // Skriver en enkel streng til stderr
+    _, err := fmt.Fprintln(os.Stderr, "Dette er en feilmelding!")
+    if err != nil {
+        panic(err)
+    }
+
+    // Formattert feilmelding med Fprintf
+    errCount := 4
+    _, err = fmt.Fprintf(os.Stderr, "Prosessen ble fullført med %d feil.\n", errCount)
+    if err != nil {
+        panic(err)
+    }
 }
 ```
 
-Eksempel utdata:
+Eksempelutdata (til stderr):
 ```
-Feil ved åpning av fil: open ikke-eksisterende-fil.txt: no such file or directory
+Dette er en feilmelding!
+Prosessen ble fullført med 4 feil.
 ```
+
+Husk, disse meldingene vil ikke vises i den vanlige utdataen (stdout), men i feilstrømmen, som kan omdirigeres separat i de fleste operativsystemer.
 
 ## Dypdykk
-Historisk sett, skiller man mellom `stdout` og `stderr` for å tillate omdirigering i kommandolinje-interfaces. Alternativer for skriving til `stderr` inkluderer logger-biblioteker, som kan gi mer funksjonalitet. `os.Stderr` er en global variabel i Go’s os-pakke, implementert som en `*os.File`, og kan brukes akkurat som vanlige filer til I/O-operasjoner.
 
-## Se også
-- Go dokumentasjon for `os` pakken: https://golang.org/pkg/os/
-- Go blogg om feilhåndtering: https://blog.golang.org/error-handling-and-go
-- Unix filsystem og strømninger: http://www.tldp.org/LDP/Linux-Filesystem-Hierarchy/html/stdout.html
+Konseptet med standardfeil er dypt forankret i Unix-filosofien, som tydelig skiller mellom normal utdata og feilmeldinger for mer effektiv databehandling og håndtering. I Go blir denne konvensjonen omfavnet gjennom `os`-pakken, som gir direkte tilgang til fildeskriptorene for stdin, stdout og stderr.
+
+Selv om det å skrive direkte til `os.Stderr` passer for mange applikasjoner, tilbyr Go også mer sofistikerte loggepakker som `log`, som tilbyr ytterligere funksjoner som tidsstempling og mer fleksible utdatakonfigurasjoner (for eksempel skriving til filer). Å bruke `log`-pakken, spesielt for større applikasjoner eller der mer omfattende loggefunksjoner trengs, kan være et bedre alternativ. Det er også verdt å merke seg at Gos tilnærming til feilhåndtering, som oppmuntrer til å returnere feil fra funksjoner, komplementerer praksisen med å skrive feilmeldinger til stderr, noe som tillater mer finstemt kontroll over feilhåndtering og rapportering.
+
+I bunn og grunn, selv om det å skrive til stderr er en grunnleggende oppgave i mange programmeringsspråk, tilbyr Gos standardbibliotek og designprinsipper både enkle og avanserte veier til håndtering av feilutdata, i tråd med bredere bransjepraksis samtidig som det imøtekommer Gos spesifikke designetos.

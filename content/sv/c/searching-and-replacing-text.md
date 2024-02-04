@@ -1,64 +1,82 @@
 ---
 title:                "Sökning och ersättning av text"
-date:                  2024-01-20T17:57:29.526472-07:00
-model:                 gpt-4-1106-preview
+date:                  2024-02-03T18:08:24.282963-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Sökning och ersättning av text"
-
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/c/searching-and-replacing-text.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att söka och ersätta text innebär att hitta specifika ord eller fraser i en textsträng och byta ut dem mot andra ord eller fraser. Programmerare använder detta för att effektivisera kodändringar, hantera data och automatisera textredigering.
 
-## How to:
-Följande C-program visar hur man söker och ersätter en delsträng.
+Att söka och ersätta text i C innebär att identifiera specifika delsträngar inom en större sträng och byta ut dem mot olika delsträngar. Programmerare utför dessa operationer för att manipulera textdata - för uppgifter som sträcker sig från datasanering och formatering till dynamisk innehållsgenerering.
 
-```C
+## Hur man gör:
+
+C kommer inte med inbyggda funktioner för att direkt utföra sökning och ersättning på strängar. Du kan dock uppnå detta genom att kombinera olika stränghanteringsfunktioner som finns tillgängliga i `<string.h>`-biblioteket tillsammans med egen logik. Nedan är ett grundläggande exempel på hur man söker efter en delsträng inom en sträng och ersätter den. För enkelhetens skull antar detta exempel tillräcklig buffertstorlek och hanterar inte minnesallokeringsproblem som du bör överväga i produktionskod.
+
+```c
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 
-void searchReplace(char *str, const char *search, const char *replace) {
+void replaceSubstring(char *source, char *sub, char *new_sub) {
     char buffer[1024];
     char *insert_point = &buffer[0];
-    const char *temp = str;
-    size_t search_len = strlen(search);
-    size_t replace_len = strlen(replace);
+    const char *tmp = source;
+    storlek len_sub = strlen(sub), len_new_sub = strlen(new_sub);
+    storlek len_up_to_match;
 
-    while (1) {
-        const char *p = strstr(temp, search);
-
-        if (p == NULL) {
-            strcpy(insert_point, temp);
-            break;
-        }
-
-        memcpy(insert_point, temp, p - temp);
-        insert_point += p - temp;
-
-        memcpy(insert_point, replace, replace_len);
-        insert_point += replace_len;
-
-        temp = p + search_len;
+    while ((tmp = strstr(tmp, sub))) {
+        // Beräkna längd upp till matchningen
+        len_up_to_match = tmp - source;
+        
+        // Kopiera delen före matchningen
+        memcpy(insert_point, source, len_up_to_match);
+        insert_point += len_up_to_match;
+        
+        // Kopiera ny delsträng
+        memcpy(insert_point, new_sub, len_new_sub);
+        insert_point += len_new_sub;
+        
+        // Flytta förbi matchningen i källsträngen
+        tmp += len_sub;
+        source = tmp;
     }
-
-    strcpy(str, buffer);
+    
+    // Kopiera eventuell återstående del av källsträngen
+    strcpy(insert_point, source);
+    
+    // Skriv ut den modifierade strängen
+    printf("Modifierad sträng: %s\n", buffer);
 }
 
 int main() {
-    char text[] = "Hej världen! Hej alla!";
-    searchReplace(text, "Hej", "Tjena");
-    printf("%s\n", text); // Skriver ut: "Tjena världen! Tjena alla!"
+    char sourceStr[] = "Hej, detta är ett test. Detta test är enkelt.";
+    char sub[] = "test";
+    char newSub[] = "exempel";
+    
+    replaceSubstring(sourceStr, sub, newSub);
+    
     return 0;
 }
 ```
 
-## Deep Dive
-Söka och ersätta text är en grundläggande operation som funnits sedan tidiga textredigerare, som ed och sed i UNIX. Implementeringar varierar från enkla strängmanipulationer till komplexa algoritmer med reguljära uttryck. C-programmet ovan använder `strstr` för att hitta förekomsten av strängar och `memcpy` för att bygga den nya strängen. Mer avancerade verktyg kan använda Boyer-Moore eller Knuth-Morris-Pratt-algoritmer för effektivare sökningar.
+Exempelutskrift:
+```
+Modifierad sträng: Hej, detta är ett exempel. Detta exempel är enkelt.
+```
 
-## See Also
-- C Standard Library documentation: https://en.cppreference.com/w/c/string
-- Regular expressions in C with regex.h library: https://linux.die.net/man/3/regex
-- 'sed' command for stream editing: https://www.gnu.org/software/sed/manual/sed.html
+Denna kod demonstrerar ett enkelt sätt att söka efter alla instanser av en delsträng (`sub`) i en källsträng och ersätta dem med en annan delsträng (`newSub`), med hjälp av `strstr`-funktionen för att hitta startpunkten för varje matchning. Det är ett mycket grundläggande exempel som inte hanterar komplexa scenarier som överlappande delsträngar.
+
+## Fördjupning
+
+Metoden som används i avsnittet "Hur man gör" är grundläggande och illustrerar hur man kan uppnå textsökning och ersättning i C utan tredjepartsbibliotek. Historiskt, på grund av Cs fokus på lågnivåminneshantering och prestanda, inkluderar inte dess standardbibliotek högnivåsträngmanipuleringsfunktioner som de som finns i språk som Python eller JavaScript. Programmerare måste manuellt hantera minne och kombinera olika strängoperationer för att uppnå önskade resultat, vilket ökar komplexiteten men erbjuder mer kontroll och effektivitet.
+
+Det är viktigt att notera att denna manuella ansats kan vara felbenägen, särskilt när det gäller hantering av minnesallokeringar och buffertstorlekar. Felaktig hantering kan leda till buffertöverskridningar och minneskorruption, vilket gör koden sårbar för säkerhetsrisker.
+
+I många praktiska scenarier, särskilt de som kräver komplex textbearbetning, är det ofta värt att överväga att integrera tredjepartsbibliotek som PCRE (Perl Compatible Regular Expressions) för regex-baserad sökning och ersättning, vilket kan förenkla koden och minska risken för fel. Dessutom erbjuder moderna C-standarder och kompilatorer alltmer inbyggda funktioner och säkrare alternativ för strängmanipulering, i syfte att mildra vanliga fallgropar observerade i äldre C-kodbaser. Ändå kvarstår en grundläggande förståelse för manuell textbearbetning som en värdefull färdighet i en programmerares verktygslåda, särskilt för optimering av prestandakritiska applikationer.

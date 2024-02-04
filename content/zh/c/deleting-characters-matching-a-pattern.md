@@ -1,63 +1,58 @@
 ---
-title:                "匹配模式删除字符"
-date:                  2024-01-20T17:41:49.135866-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "匹配模式删除字符"
-
+title:                "删除匹配模式的字符"
+date:                  2024-02-03T17:55:23.007683-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "删除匹配模式的字符"
 tag:                  "Strings"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/c/deleting-characters-matching-a-pattern.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-什么和为什么？
-在程序中删除匹配模式的字符是指找到字符串中符合特定条件的字符，并将其移除。程序员这么做通常是为了数据清洗，或为了满足格式要求。
+## 什么和为什么?
 
-## How to:
-操作方式：
+从 C 语言的字符串中删除与特定模式匹配的字符，主要是指去除所有符合预定义标准的特定字符。程序员执行此任务是为了清理输入数据，为处理准备数据，或简单地清理字符串以便输出或进一步操作，确保处理的数据完全符合给定上下文或算法的需求。
 
-假设我们要从字符串中删除所有数字字符。这里有个简单的代码示例：
+## 如何操作:
 
-```C
+C 语言没有提供直接基于模式从字符串中删除字符的内置函数，这与一些高级语言不同。然而，你可以通过手动遍历字符串并构建一个排除不需要字符的新字符串来轻松完成此任务。例如，假设你想从字符串中删除所有数字。你可以这样做：
+
+```c
 #include <stdio.h>
 #include <ctype.h>
 
-void delete_pattern(char *str) {
-    char *p = str;
-    while (*str != '\0') {
-        if (!isdigit((unsigned char)*str)) {
-            *p++ = *str;
+void remove_digits(char *str) {
+    char *src = str, *dst = str;
+    while (*src) {
+        if (!isdigit((unsigned char)*src)) {
+            *dst++ = *src;
         }
-        str++;
+        src++;
     }
-    *p = '\0';
+    *dst = '\0';
 }
 
 int main() {
-    char string[] = "C3om4pu7ter8 Pro9grammi2ng";
-    delete_pattern(string);
-    printf("Result: %s\n", string);
+    char str[] = "C Programming 101: The Basics!";
+    remove_digits(str);
+    printf("Result: %s\n", str);
     return 0;
 }
 ```
-输出样例:
+
+示例输出：
 ```
-Result: Computer Programming
+Result: C Programming : The Basics!
 ```
 
-## Deep Dive
-深入探究：
-删除字符的概念在早期编程中就已出现。标准函数库提供 `strtok` 和 `strspn` 等函数用于字符串处理，但这些函数并不直接用于模式删除。使用现代C语言，我们可以自定义一个函数来精确控制删除过程。
+这个例子利用了 `ctype.h` 中的 `isdigit` 来识别数字，将非数字字符移至字符串开头，并在评估了所有字符后终止字符串。
 
-除了手动遍历和修改，也有其他解决方案，比如使用正则表达式库，但这意味着引入额外的依赖和可能的性能开销。手写函数通常更快，且不依赖外部库。
+## 深入理解
 
-在实现上，我们需要注意字符类型的问题。使用 `isdigit` 时，我们将字符转换为 `unsigned char` 类型传入，避免可能的负值造成未定义行为。
+所呈现的解决方案使用了同一数组内的双指针方法来有效过滤掉不需要的字符，这是 C 语言亲自进行内存管理哲学的象征性技术。这种方法很有效，因为它在原地操作，避免了需求额外内存分配，从而最小化了开销。
 
-## See Also
-另请参阅：
+从历史上看，C 语言缺乏高级字符串操作函数，迫使程序员必须深入理解内存级别的字符串处理，导致诸如上述之类的创新方法。虽然这具有更大的控制权和效率优势，但它带来了错误的更高风险，如缓冲区溢出和错位错误。
 
-- C 标准库中的字符串处理函数：https://zh.cppreference.com/w/c/string/byte
-- POSIX 正则表达式库介绍：https://zh.wikipedia.org/wiki/正则表达式 
-- 更多C语言技巧的讨论：https://stackoverflow.com/questions/tagged/c
+在当代开发环境中，尤其是那些强调安全性和保密性的环境，可能会更偏好那些抽象掉此类低级操作的语言来执行字符串操作任务。然而，理解和利用这些 C 语言技巧在需要细粒度性能优化的情景中，或在 C 语言的极简主义和速度至关重要的环境中工作时，仍然是非常宝贵的。

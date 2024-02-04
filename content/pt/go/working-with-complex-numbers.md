@@ -1,73 +1,60 @@
 ---
-title:                "Trabalhando com números complexos"
-date:                  2024-01-26T04:40:58.957650-07:00
+title:                "Trabalhando com Números Complexos"
+date:                  2024-02-03T18:14:03.504025-07:00
 model:                 gpt-4-0125-preview
-simple_title:         "Trabalhando com números complexos"
-
+simple_title:         "Trabalhando com Números Complexos"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/go/working-with-complex-numbers.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## O Que & Por Que?
-Números complexos, compostos por uma parte real e uma imaginária (como 5 + 7i), são cruciais em campos como engenharia, física e processamento de sinais. Programadores trabalham com eles para resolver problemas nestes domínios que seriam difíceis de resolver apenas com números reais.
+## O que & Por quê?
 
-## Como Fazer:
-Go tem suporte embutido para números complexos. Aqui está um rápido tutorial:
+Trabalhar com números complexos na programação envolve manipular números que possuem tanto uma parte real quanto uma imaginária, tipicamente expressos como `a + bi`. Programadores lidam com números complexos em vários domínios, como engenharia, física e análise de dados, para resolver problemas envolvendo raízes quadradas de números negativos, análises de forma de onda e mais.
+
+## Como fazer:
+
+Em Go, números complexos são manipulados usando as funções embutidas `complex`, `real` e `imag`, juntamente com os tipos `complex64` e `complex128` (representando números complexos de 64 bits e 128 bits, respectivamente). Aqui está um guia rápido para começar:
 
 ```go
 package main
 
 import (
 	"fmt"
-	"math/cmplx"
 )
 
 func main() {
 	// Criando números complexos
-	a := complex(2, 3)
-	b := 4 + 5i
+	a := complex(2, 3) // 2+3i
+	b := complex(1, -1) // 1-1i
 
-	// Operações básicas
-	fmt.Println("Adição:", a+b)
-	fmt.Println("Subtração:", a-b)
-	fmt.Println("Multiplicação:", a*b)
-	fmt.Println("Divisão:", a/b)
+	// Operações aritméticas
+	c := a + b
+	fmt.Println("Adição:", c) // Saída: Adição: (3+2i)
 
-	// Propriedades do número complexo
-	fmt.Println("Parte real:", real(b))
-	fmt.Println("Parte imaginária:", imag(b))
-	fmt.Println("Conjugado:", cmplx.Conj(b))
-	fmt.Println("Magnitude:", cmplx.Abs(b))
-	fmt.Println("Ângulo de fase (radianos):", cmplx.Phase(b))
+	d := a * b
+	fmt.Println("Multiplicação:", d) // Saída: Multiplicação: (5+1i)
+
+	// Acessando partes real e imaginária
+	parteReal := real(a)
+	parteImaginaria := imag(a)
+	fmt.Printf("Parte real: %.1f, Parte imaginária: %.1f\n", parteReal, parteImaginaria) // Saída: Parte real: 2.0, Parte imaginária: 3.0
+
+	// Conjugado complexo e magnitude podem ser calculados
+	conjugado := complex(real(a), -imag(a)) // Manualmente
+	fmt.Println("Conjugado de a:", conjugado) // Saída: Conjugado de a: (2-3i)
 }
-
 ```
 
-Saída de exemplo:
+Este exemplo cobre o básico, mas há muito mais que você pode fazer com números complexos, incluindo o aproveitamento do pacote `math/cmplx` para operações mais avançadas como encontrar a magnitude, fase e muito mais.
 
-```
-Adição: (6+8i)
-Subtração: (-2-2i)
-Multiplicação: (-7+22i)
-Divisão: (0.5609756097560976+0.0487804878048781i)
-Parte real: 4
-Parte imaginária: 5
-Conjugado: (4-5i)
-Magnitude: 6.4031242374328485
-Ângulo de fase (radianos): 0.8960553845713439
-```
+## Mergulho Profundo
 
-## Aprofundamento
-Há tempos atrás, os números complexos eram vistos com suspeição — alguns pensavam que eram inúteis! Com o tempo, seu poder em descrever fenômenos físicos ficou claro. Eles são fundamentais em física quântica, teoria de controle e engenharia elétrica, só para citar algumas áreas.
+O conceito de números complexos remonta ao século 16, mas só ganhou reconhecimento amplo e formalização rigorosa no século 19. Em programação de computadores, números complexos têm sido fundamentais para aritmética complexa em cálculos científicos e de engenharia desde os primórdios. A abordagem de Go para números complexos, tornando-os cidadãos de primeira classe com suporte embutido e suporte abrangente da biblioteca padrão através do pacote `math/cmplx`, destaca-se entre linguagens de programação. Esta decisão de design reflete a ênfase de Go na simplicidade e performance.
 
-No Go, os números complexos são representados usando um tipo de dado chamado `complex128` (64 bits para a parte real e imaginária cada) ou `complex64` (32 bits cada). Por baixo dos panos, são realmente apenas dois `float64`s ou `float32`s juntos. A biblioteca padrão do Go, `math/cmplx`, oferece funções para operações matemáticas complexas. Isso te salva da matemática complicada e permite que você se concentre em resolver problemas.
+No entanto, vale ressaltar que trabalhar com números complexos em Go, embora poderoso, pode não ser sempre a melhor abordagem para todas as aplicações, particularmente aquelas que requerem matemática simbólica ou aritmética de alta precisão. Linguagens e ambientes especializados em computação científica, como Python com bibliotecas como NumPy e SciPy, ou softwares como MATLAB, podem oferecer mais flexibilidade e uma gama mais ampla de funcionalidades para aplicações específicas.
 
-Alternativas ao suporte embutido de Go incluem o uso de bibliotecas externas ou criar seu próprio tratamento de números complexos. Mas isso raramente é necessário porque o suporte nativo do Go é eficiente e bem integrado à linguagem.
-
-## Veja Também
-Confira estes links para mais sobre as capacidades de número complexo do Go:
-- Documentação oficial do Go: https://golang.org/pkg/math/cmplx/
-- Um aprofundamento matemático sobre números complexos: https://www.mathsisfun.com/numbers/complex-numbers.html
-- Aplicações práticas de números complexos em engenharia: https://ieeexplore.ieee.org/document/528dunno
+Dito isso, para programação de sistemas e contextos onde integrar cálculos de números complexos em uma aplicação maior e sensível à performance é crucial, o suporte nativo de Go para números complexos oferece uma opção eficientemente única.

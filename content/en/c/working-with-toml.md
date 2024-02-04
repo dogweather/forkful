@@ -1,9 +1,8 @@
 ---
 title:                "Working with TOML"
-date:                  2024-01-25T03:40:08.712397-07:00
-model:                 gpt-4-1106-preview
+date:                  2024-02-03T17:50:11.733208-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Working with TOML"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/c/working-with-toml.md"
 ---
@@ -11,62 +10,75 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-TOML is a data serialization language designed to be easy to read and write. Programmers use it for config files, simple data storage, and cross-language data exchange due to its clarity and human-friendliness.
+
+TOML (Tom's Obvious, Minimal Language) is a configuration file format that is easy to read due to its clear semantics. Programmers use it for configuration files in applications because its simplicity and human-readability make it an excellent choice over formats like XML or JSON in certain contexts.
 
 ## How to:
-Let's parse a TOML config file in C using the "tomlc99" library. First, install the library. Then, create a `config.toml`:
 
+To work with TOML in C, you first need a library capable of parsing TOML files, as the C standard library does not include this functionality. A popular choice is `tomlc99`, a lightweight TOML parser for C99. Here's a quick guide to read a simple TOML config file:
+
+First, ensure you've `tomlc99` installed and properly linked in your project.
+
+**Sample TOML file (`config.toml`):**
 ```toml
-title = "TOML Example"
-
-[owner]
-name = "Tom Preston-Werner"
-dob = 1979-05-27T07:32:00Z
+[database]
+server = "192.168.1.1"
+ports = [ 8001, 8001, 8002 ]
+connection_max = 5000
+enabled = true
 ```
 
-Now, parse it in C:
+**C code to parse this file:**
 
 ```c
 #include <stdio.h>
+#include <stdlib.h>
 #include "toml.h"
 
 int main() {
-    FILE* fp;
-    char errbuf[200];
-
-    if (0 == (fp = fopen("config.toml", "r"))) {
-        printf("Error: cannot open config file\n");
-        return 1;
-    }
-    
-    toml_table_t* conf = toml_parse_file(fp, errbuf, sizeof(errbuf));
-    fclose(fp);
-    if (0 == conf) {
-        printf("Error: %s\n", errbuf);
-        return 1;
+    FILE *configFile;
+    configFile = fopen("config.toml", "r");
+    if (!configFile) {
+        perror("Cannot open file");
+        return EXIT_FAILURE;
     }
 
-    printf("Title: %s\n", toml_raw_in(conf, "title"));
+    toml_table_t *config = toml_parse_file(configFile, NULL, 0);
+    if (!config) {
+        fprintf(stderr, "Error parsing file\n");
+        fclose(configFile);
+        return EXIT_FAILURE;
+    }
 
-    toml_table_t* owner = toml_table_in(conf, "owner");
-    printf("Owner Name: %s\n", toml_raw_in(owner, "name"));
+    toml_table_t *database = toml_table_in(config, "database");
+    if (database) {
+        const char *server = toml_raw_in(database, "server");
+        printf("Database Server: %s\n", server);
 
-    toml_free(conf);
-    return 0;
+        toml_array_t *ports = toml_array_in(database, "ports");
+        for (int i = 0; i < toml_array_nelem(ports); i++) {
+            int64_t port;
+            toml_int_at(ports, i, &port);
+            printf("Port %d: %ld\n", i, port);
+        }
+    }
+
+    toml_free(config);
+    fclose(configFile);
+    return EXIT_SUCCESS;
 }
 ```
-Sample output:
+
+**Output:**
 ```
-Title: "TOML Example"
-Owner Name: "Tom Preston-Werner"
+Database Server: "192.168.1.1"
+Port 0: 8001
+Port 1: 8001
+Port 2: 8002
 ```
 
 ## Deep Dive
-TOML, which stands for Tom's Obvious, Minimal Language, was created by Tom Preston-Werner in 2013. It serves as a simpler alternative to formats like XML and YAML, focusing on being more human-readable and writable. While JSON is another alternative, TOML retains a structure that's easier to parse visually by humans, which is one of the primary reasons for its adoption in configuration files.
 
-In C, working with TOML involves choosing a parser library since the language doesn't support it natively. Libraries like "tomlc99" are C99 compliant and provide an API to decode TOML text. When considering performance, proper error handling, and memory management are crucial as C doesn't have built-in garbage collection.
+TOML was created by Tom Preston-Werner, co-founder of GitHub, as a response to the limitations he perceived in other configuration file formats. Its goal is to be straightforward and unambiguous, both for humans and computers, to read and write without needing complex parsing rules. In the C ecosystem, TOML isn't a first-class citizen like it might be in higher-level languages such as Rust with its `serde_toml` or Python with `toml`, which have libraries with native support. Rather, C developers need to rely on external libraries like `tomlc99`, but this is typical given C's emphasis on minimalism and performance.
 
-## See Also:
-1. TOML Spec: [https://toml.io/en/](https://toml.io/en/)
-2. tomlc99 GitHub repo: [https://github.com/cktan/tomlc99](https://github.com/cktan/tomlc99)
-3. Comparing Data Serialization Formats: [https://labs.eleks.com/2015/07/comparison-of-data-serialization-formats.html](https://labs.eleks.com/2015/07/comparison-of-data-serialization-formats.html)
+While TOML is praised for its clarity, when choosing a configuration file format, it's vital to consider the project's needs. In scenarios requiring more complex structures or interactivity with web APIs, JSON or even YAML might offer a better fit despite their increased complexity. TOML shines in configurations where readability and simplicity are paramount, not necessarily where the most advanced data structures are needed.

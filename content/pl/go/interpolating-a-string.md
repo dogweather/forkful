@@ -1,58 +1,59 @@
 ---
-title:                "Interpolacja łańcuchów znaków"
-date:                  2024-01-20T17:51:09.288179-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Interpolacja łańcuchów znaków"
-
+title:                "Interpolacja ciągu znaków"
+date:                  2024-02-03T17:58:40.659650-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Interpolacja ciągu znaków"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/go/interpolating-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Co i dlaczego?
-Interpolacja ciągów znaków pozwala na wstawienie wartości zmiennych bezpośrednio wewnątrz stringów. Programiści używają tej techniki, by dynamicznie budować tekst i wzory, łącząc sztywny tekst z zmiennymi danymi.
+
+Interpolacja łańcuchów to metoda konstruowania łańcuchów, które włączają zmienne, umożliwiając dynamiczne tworzenie łańcuchów. Programiści robią to, aby dostosować komunikaty, konstruować adresy URL, tworzyć zapytania SQL i więcej, co pozwala na bardziej czytelny i łatwiejszy do utrzymania kod.
 
 ## Jak to zrobić:
+
+W Go, interpolacja łańcuchów jest powszechnie osiągana za pomocą pakietu `fmt`, w szczególności funkcji `Sprintf`, która pozwala wstrzyknąć zmienne do łańcucha poprzez określenie słów formatujących. Słowa te są symbolami zastępczymi w ciągu formatu i są zastępowane przez wartości danych zmiennych. Oto jak tego użyć:
+
 ```go
 package main
 
 import (
-	"fmt"
+    "fmt"
 )
 
 func main() {
-	// Podstawowa interpolacja przy użyciu Sprintf
-	name := "Anna"
-	age := 28
-	message := fmt.Sprintf("Cześć, mam na imię %s i mam %d lat.", name, age)
-	fmt.Println(message)
-	
-	// Interpolacja z użyciem złożonych struktur
-	type User struct {
-		Name string
-		Age  int
-	}
-	user := User{"Tomasz", 35}
-	userInfo := fmt.Sprintf("Użytkownik %s ma %d lat.", user.Name, user.Age)
-	fmt.Println(userInfo)
+    name := "Jane"
+    age := 28
+
+    // Używanie Sprintf do interpolacji łańcucha
+    message := fmt.Sprintf("Cześć, mam na imię %s i mam %d lat.", name, age)
+    fmt.Println(message) // Wyjście: Cześć, mam na imię Jane i mam 28 lat.
 }
 ```
 
-Sample output:
+Zauważ, że `%s` jest używane dla łańcuchów, a `%d` dla liczb całkowitych. Dokumentacja pakietu `fmt` zawiera kompleksową listę słów formatujących dla różnych typów danych.
+
+## Wgłębienie się
+
+Koncepcja interpolacji łańcuchów istnieje w wielu językach programowania, choć z różnymi składniami i możliwościami. W Go, chociaż funkcja `Sprintf` z pakietu `fmt` jest najczęściej używanym podejściem, może nie zawsze być najbardziej wydajna, szczególnie w przypadku prostych konkatenacji lub gdy pracuje się w kodzie o wysokiej wrażliwości na wydajność.
+
+Pakiet `fmt` używa refleksji do dynamicznej interpretacji typów zmiennych w czasie wykonania, co, chociaż elastyczne, wiąże się ze zwiększonym narzutem. W scenariuszach, gdzie wydajność jest krytyczna, bezpośrednia konkatenacja łańcuchów lub typ `strings.Builder` mogą oferować lepsze alternatywy. Bezpośrednia konkatenacja jest prosta, ale może stać się nieporęczna z wieloma zmiennymi. `strings.Builder`, z drugiej strony, zapewnia bardziej wydajny i czytelny sposób na budowanie złożonych łańcuchów w pętli lub przy obchodzeniu się z wieloma zmiennymi:
+
+```go
+var sb strings.Builder
+sb.WriteString("Cześć, mam na imię ")
+sb.WriteString(name)
+sb.WriteString(" i mam ")
+sb.WriteString(strconv.Itoa(age))
+sb.WriteString(" lat.")
+message := sb.String()
+
+fmt.Println(message) // Wyświetla to samo co wcześniej
 ```
-Cześć, mam na imię Anna i mam 28 lat.
-Użytkownik Tomasz ma 35 lat.
-```
 
-## Głębiej w temat
-Interpolacja ciągów znaków w języku Go jest przeważnie realizowana za pomocą funkcji `fmt.Sprintf`. Mechanizm ten ma swoje korzenie w językach takich jak C, które oferowały formatowanie tekstu z użyciem funkcji `sprintf`. W Go, dzięki formatowaniu z użyciem werb (takich jak `%s` dla stringów i `%d` dla liczb), możemy dokładnie określić jak dane powinny być wypisane.
-
-Alternatywne metody interpolacji to sklejanie ciągów poprzez operator `+` lub stosowanie buforów i builderów w ciężkich operacjach tekstowych. W wersjach Go przed 1.10, budowanie długich ciągów za pomocą `+` było mniej wydajne niż teraz, ponieważ każde połączenie tworzyło nowy ciąg znaków.
-
-Szczegół implementacyjny w Go to fakt, że `fmt.Sprintf` korzysta z odzwierciedlenia (reflection), co może wpłynąć na wydajność. Dlatego programiści czasem decydują się na inne metody w krytycznych dla wydajności przypadkach.
-
-## Zobacz również
-- Dokumentacja `fmt` pakietu: https://golang.org/pkg/fmt/
-- Go by Example - String Formatting: https://gobyexample.com/string-formatting
-- The Go Blog - Strings: https://blog.golang.org/strings
+Ostatecznie, wybór między `fmt.Sprintf`, bezpośrednią konkatenacją a `strings.Builder` zależy od specyficznych wymagań Twojej aplikacji, takich jak złożoność konstruowanego łańcucha i rozważania dotyczące wydajności.

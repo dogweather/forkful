@@ -1,20 +1,27 @@
 ---
-title:                "数値の丸め処理"
-date:                  2024-01-26T03:45:25.359702-07:00
+title:                "数値の丸め込み"
+date:                  2024-02-03T18:07:52.491480-07:00
 model:                 gpt-4-0125-preview
-simple_title:         "数値の丸め処理"
-
+simple_title:         "数値の丸め込み"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/go/rounding-numbers.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## 何となぜ？
-数字の丸めとは、数値を最も近い整数や指定された小数点以下の桁に調整することです。これは値を単純化し、読みやすくするため、または通貨のように特定の制約に合わせるために行われます。
+## はじめに：なぜ数字を丸めるのか？
+
+数字を丸めるとは、数値を最も近い整数に調整するか、特定の小数点以下の桁数に調整することを指します。プログラマーがこれを行う理由には、可読性を向上させる、計算を簡素化する、または特定のドメインでの精度要求を満たすなどがあります。
 
 ## 方法：
-Goの`math`パッケージを使えば、数字の丸めが簡単にできます。`math.Round`、`math.Floor`、`math.Ceil`を使ってみましょう:
+
+Goでは、mathパッケージ内に特定の小数点以下の桁数に数値を直接丸めるための組み込み関数はありません。しかし、整数に対しては関数の組み合わせで丸めることができますし、小数点以下の桁数に対してはカスタム関数を実装することで丸めを実現できます。
+
+### 最も近い整数に丸める：
+
+最も近い整数に丸めるには、正の数では`math.Floor()`関数に0.5を加え、負の数では`math.Ceil()`から0.5を引くことで、丸めたい方向に応じて行います。
 
 ```go
 package main
@@ -25,47 +32,40 @@ import (
 )
 
 func main() {
-	number := 3.14159
-	fmt.Println("Round:", math.Round(number))  // 最も近い整数に丸める
-	fmt.Println("Floor:", math.Floor(number)) // 切り捨て
-	fmt.Println("Ceil: ", math.Ceil(number))  // 切り上げ
+	fmt.Println(math.Floor(3.75 + 0.5))  // 出力：4
+	fmt.Println(math.Ceil(-3.75 - 0.5)) // 出力：-4
 }
 ```
 
-サンプル出力:
-```
-Round: 3
-Floor: 3
-Ceil: 4
-```
+### 特定の小数点以下の桁数に丸める：
 
-特定の小数点以下の桁に丸めるには、掛けて丸めて割ります:
+特定の小数点以下の桁数に丸める場合は、数値に10^nを乗算し（nは小数点以下の桁数）、先に述べたように最も近い整数に丸め、その後10^nで除算するカスタム関数を使用できます。
 
 ```go
-func roundToDecimalPlace(number float64, decimalPlaces int) float64 {
-	shift := math.Pow(10, float64(decimalPlaces))
+package main
+
+import (
+	"fmt"
+	"math"
+)
+
+func roundToDecimalPlace(number float64, places int) float64 {
+	shift := math.Pow(10, float64(places))
 	return math.Round(number*shift) / shift
 }
 
 func main() {
-	number := 3.14159
-	fmt.Println("2小数点以下に丸めた:", roundToDecimalPlace(number, 2))
+	fmt.Println(roundToDecimalPlace(3.14159, 2)) // 出力：3.14
+	fmt.Println(roundToDecimalPlace(-3.14159, 3)) // 出力：-3.142
 }
 ```
 
-サンプル出力:
-```
-2小数点以下に丸めた: 3.14
-```
+## 深堀り
 
-## 奥深く
-数字を丸めるのは新しいことではなく、古代の数学にまで遡り、常に単純化を目指していました。Goの`math.Round`は[銀行家の丸め](https://en.wikipedia.org/wiki/Rounding#Round_half_to_even)を使用しており、0.5は最も近い偶数に丸められ、合計に影響を与える可能性のあるバイアスを減らします。
+数字を丸めることは、コンピュータプログラミングにおいて基本的な操作であり、実数を2進数システムで表現するという歴史的な課題に関連しています。多くの実数は2進数で正確に表現できないため、丸めが必要になり、近似エラーが発生します。
 
-浮動小数点数はその2進表現のために扱いが難しいことがあり、全ての小数を正確に表現できないことがあります。しかし、Goのアプローチは、ほとんどの場合、期待される挙動を維持します。
+Goでは、特定の小数点以下への丸めをサポートする組み込み関数を提供する言語と比べると、丸めに関するアプローチはやや手作業的です。それでもGo標準ライブラリの`math`パッケージは、アプリケーションが必要とするあらゆる丸め機構を構築するための基本的な構成要素（`math.Floor`や`math.Ceil`など）を提供しています。
 
-他にも「半分を切り上げる」「ゼロから遠くに半分を切り上げる」などの丸め方法が存在しますが、すぐに利用可能なのはGoの標準ライブラリです。より複雑なニーズには、サードパーティのライブラリを利用するか、独自の解決策を見つける必要があるかもしれません。
+この手作業的なアプローチは、一見するとやや煩雑に見えるかもしれませんが、プログラマーが数値を丸める方法をより細かく制御できるようにしており、異なるアプリケーションの精度と正確さのニーズに対応します。サードパーティのライブラリや、標準ライブラリがカバーしていないより高度な数学的操作を必要とする場合や複雑な数値を扱う場合に、より直接的な解決策を提供するカスタム丸め関数の設計など、代替手段があります。
 
-## 参照
-- Goの`math`パッケージ：[https://pkg.go.dev/math](https://pkg.go.dev/math)
-- 浮動小数点数の算術に関するIEEE 754標準（Goが浮動小数点数を扱う基礎）：[https://ieeexplore.ieee.org/document/4610935](https://ieeexplore.ieee.org/document/4610935)
-- 浮動小数点数についての理解：["What Every Computer Scientist Should Know About Floating-Point Arithmetic"](https://docs.oracle.com/cd/E19957-01/806-3568/ncg_goldberg.html)
+結論として、Goの標準ライブラリが小数点以下の桁数への直接的な丸め機能を提供しないかもしれませんが、その包括的な数学関数セットにより、開発者は特定のニーズに合わせて頑丈な丸めソリューションを実装することができます。

@@ -1,63 +1,82 @@
 ---
 title:                "Buscando y reemplazando texto"
-date:                  2024-01-20T17:57:12.529314-07:00
-model:                 gpt-4-1106-preview
+date:                  2024-02-03T18:08:17.796189-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Buscando y reemplazando texto"
-
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/c/searching-and-replacing-text.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Buscar y reemplazar texto es el proceso de localizar cadenas específicas en un texto y cambiarlas por otras. Los programadores lo hacen para actualizar datos, corregir errores o mejorar el código de manera eficiente.
+## Qué y Por Qué?
 
-## How to:
-En C, usaríamos funciones como `strstr()` para buscar y `strcpy()` junto con `strcat()` para reemplazar. Aquí hay un pequeño ejemplo:
+Buscar y reemplazar texto en C implica identificar subcadenas específicas dentro de una cadena más grande y sustituirlas con diferentes subcadenas. Los programadores realizan estas operaciones para manipular datos de texto, para tareas que van desde la saneamiento de datos y formateo hasta la generación dinámica de contenido.
 
-```C
+## Cómo hacerlo:
+
+C no viene con funciones integradas para realizar búsqueda y reemplazo directamente en cadenas. Sin embargo, puedes lograr esto combinando varias funciones de manejo de cadenas disponibles en la biblioteca `<string.h>` junto con cierta lógica personalizada. A continuación, se muestra un ejemplo básico de cómo buscar una subcadena dentro de una cadena y reemplazarla. Por simplicidad, este ejemplo asume un tamaño de buffer suficiente y no maneja problemas de asignación de memoria que deberías considerar en el código de producción.
+
+```c
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 
-void searchAndReplace(char *source, const char *search, const char *replace) {
+void replaceSubstring(char *source, char *sub, char *new_sub) {
     char buffer[1024];
-    char *p;
+    char *insert_point = &buffer[0];
+    const char *tmp = source;
+    size_t len_sub = strlen(sub), len_new_sub = strlen(new_sub);
+    size_t len_up_to_match;
 
-    if ((p = strstr(source, search)) == NULL) {
-        printf("No se encontró la cadena.\n");
-        return;
+    while ((tmp = strstr(tmp, sub))) {
+        // Calcular longitud hasta el encuentro
+        len_up_to_match = tmp - source;
+        
+        // Copiar parte antes del encuentro
+        memcpy(insert_point, source, len_up_to_match);
+        insert_point += len_up_to_match;
+        
+        // Copiar nueva subcadena
+        memcpy(insert_point, new_sub, len_new_sub);
+        insert_point += len_new_sub;
+        
+        // Avanzar más allá del encuentro en la cadena fuente
+        tmp += len_sub;
+        source = tmp;
     }
-
-    strncpy(buffer, source, p - source);
-    buffer[p - source] = '\0';
-
-    sprintf(buffer+(p - source), "%s%s", replace, p + strlen(search));
-    strcpy(source, buffer);
-
-    printf("Resultado: %s\n", source);
+    
+    // Copiar cualquier parte restante de la cadena fuente
+    strcpy(insert_point, source);
+    
+    // Imprimir la cadena modificada
+    printf("Cadena modificada: %s\n", buffer);
 }
 
 int main() {
-    char texto[1024] = "Hola mundo, mundo cruel.";
-    searchAndReplace(texto, "mundo", "planeta");
+    char sourceStr[] = "Hello, this is a test. This test is simple.";
+    char sub[] = "test";
+    char newSub[] = "sample";
+    
+    replaceSubstring(sourceStr, sub, newSub);
+    
     return 0;
 }
 ```
 
-Salida:
+Salida de muestra:
 ```
-Resultado: Hola planeta, planeta cruel.
+Cadena modificada: Hello, this is a sample. This sample is simple.
 ```
 
-## Deep Dive
-Buscar y reemplazar ha sido una herramienta vital desde los primeros días de la informática, facilitando la edición de texto en procesadores de texto y, por supuesto, en la programación. Las alternativas modernas en otros lenguajes incluyen expresiones regulares y bibliotecas dedicadas que manejan casos complejos, como UTF-8 o patrones de búsqueda avanzados.
+Este código demuestra un enfoque simple para buscar todas las instancias de una subcadena (`sub`) en una cadena fuente y reemplazarlas con otra subcadena (`newSub`), utilizando la función `strstr` para encontrar el punto de inicio de cada coincidencia. Es un ejemplo muy básico que no maneja escenarios complejos como subcadenas superpuestas.
 
-En C, tal funcionalidad es básica y manual, lo que significa que tendrás que manejar los búferes y asegurarte de que haya suficiente espacio para los nuevos textos. Si bien las funciones como `strstr()` y `strcat()` son simples, el manejo de memoria puede complicarse, y los errores como desbordamientos de búfer son comunes si no se es cuidadoso.
+## Análisis Profundo
 
-Para la implementación, es crucial entender cómo funcionan las cadenas en C (arrays de caracteres terminados en nulo), el manejo de punteros, y la asignación de memoria para evitar fallos.
+El enfoque utilizado en la sección "Cómo hacerlo" es fundamental, ilustrando cómo lograr la búsqueda y reemplazo de texto en C sin ninguna biblioteca de terceros. Históricamente, debido al énfasis de C en la gestión de memoria de bajo nivel y rendimiento, su biblioteca estándar no encapsula funcionalidades de manipulación de cadenas de alto nivel como las que se encuentran en lenguajes como Python o JavaScript. Los programadores tienen que manejar manualmente la memoria y combinar varias operaciones de cadenas para lograr los resultados deseados, lo que aumenta la complejidad pero ofrece más control y eficiencia.
 
-## See Also
-- [C String Handling](http://www.cplusplus.com/reference/cstring/)
-- [GNU C Library](https://www.gnu.org/software/libc/manual/html_node/String-and-Array-Utilities.html)
-- [StackOverflow: Replacement in String](https://stackoverflow.com/questions/779875/what-is-the-function-to-replace-string-in-c)
+Es crucial notar que este enfoque manual puede ser propenso a errores, particularmente al manejar asignaciones de memoria y tamaños de buffer. La manipulación incorrecta puede llevar a desbordamientos de buffer y corrupción de memoria, haciendo el código vulnerable a riesgos de seguridad.
+
+En muchos escenarios prácticos, especialmente aquellos que requieren un procesamiento de texto complejo, a menudo vale la pena considerar la integración de bibliotecas de terceros como PCRE (Perl Compatible Regular Expressions) para búsqueda y reemplazo basados en regex, lo cual puede simplificar el código y reducir el potencial de errores. Además, los estándares y compiladores de C modernos ofrecen cada vez más funciones integradas y alternativas más seguras para la manipulación de cadenas, con el objetivo de mitigar las trampas comunes observadas en bases de código C más antiguas. Sin embargo, la comprensión fundamental del procesamiento manual de texto sigue siendo una habilidad valiosa en el arsenal de un programador, especialmente para optimizar aplicaciones críticas para el rendimiento.

@@ -1,74 +1,69 @@
 ---
-title:                "Enviando una solicitud http con autenticación básica"
-date:                  2024-01-20T18:01:09.997226-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Enviando una solicitud http con autenticación básica"
-
+title:                "Enviando una solicitud HTTP con autenticación básica"
+date:                  2024-02-03T18:08:50.946982-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Enviando una solicitud HTTP con autenticación básica"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/c/sending-an-http-request-with-basic-authentication.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## ¿Qué y Por Qué?
+## Qué y Por qué?
+Enviar una solicitud HTTP con autenticación básica en C implica crear una solicitud HTTP que incluya un encabezado de Autorización con credenciales de usuario codificadas en Base64. Este es un método común para añadir una capa de autenticación simple a las solicitudes HTTP, permitiendo acceder a recursos restringidos de manera programática.
 
-Enviar una solicitud HTTP con autenticación básica significa incluir credenciales de usuario (usuario y contraseña) codificadas en base64 en la cabecera HTTP para acceder a recursos restringidos. Los programadores lo hacen para asegurar que el acceso a ciertas partes de una aplicación web solo sea posible para usuarios autorizados.
+## Cómo hacerlo:
+Para enviar una solicitud HTTP con autenticación básica en C, necesitaremos usar la biblioteca libcurl, una biblioteca de transferencia de URL del lado del cliente popular, versátil y fácil de usar. Maneja diversos protocolos, incluidos HTTP y HTTPS, haciendo nuestra tarea más simple. Asegúrate de que libcurl esté instalado en tu sistema antes de proceder. Aquí tienes un ejemplo básico que demuestra cómo enviar una solicitud GET con autenticación básica:
 
-## Cómo Hacerlo:
-
-En C, la biblioteca libcurl nos facilita el proceso:
-
-```C
+```c
 #include <stdio.h>
 #include <curl/curl.h>
 
-int main() {
+int main(void) {
     CURL *curl;
     CURLcode res;
 
-    curl_global_init(CURL_GLOBAL_ALL);
+    curl_global_init(CURL_GLOBAL_DEFAULT);
 
     curl = curl_easy_init();
     if(curl) {
-        // Estableciendo la URL a la que enviar la solicitud.
-        curl_easy_setopt(curl, CURLOPT_URL, "http://ejemplo.com/recurso");
+        // La URL a la que se envía la solicitud
+        curl_easy_setopt(curl, CURLOPT_URL, "http://example.com/resource");
+        // Habilitando el uso de la autenticación básica
+        curl_easy_setopt(curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
+        // Proporcionando el nombre de usuario y contraseña para la autenticación básica
+        curl_easy_setopt(curl, CURLOPT_USERPWD, "nombredeusuario:contraseña");
 
-        // Configurando la autenticación básica.
-        curl_easy_setopt(curl, CURLOPT_HTTPAUTH, (long)CURLAUTH_BASIC);
-        curl_easy_setopt(curl, CURLOPT_USERPWD, "usuario:contraseña");
-
-        // Realizando la solicitud.
+        // Realizando la solicitud GET
         res = curl_easy_perform(curl);
-        
-        // Comprobando errores.
-        if(res != CURLE_OK)
-            fprintf(stderr, "curl_easy_perform() falló: %s\n", curl_easy_strerror(res));
 
-        // Limpieza.
+        // Comprobando errores
+        if(res != CURLE_OK)
+            fprintf(stderr, "curl_easy_perform() falló: %s\n",
+                    curl_easy_strerror(res));
+
+        // Siempre limpiando
         curl_easy_cleanup(curl);
     }
-
+    
     curl_global_cleanup();
 
     return 0;
 }
 ```
+En el ejemplo anterior, reemplaza `"http://example.com/resource"`, `"nombredeusuario"`, y `"contraseña"` con tu URL real, nombre de usuario y contraseña.
 
-Output típico (dependiendo del recurso solicitado, puede variar):
+Este código inicializa un objeto `CURL`, establece la URL, habilita la Autenticación Básica HTTP y especifica las credenciales. Luego envía la solicitud y se limpia después de sí mismo. Si tiene éxito, se obtiene el recurso solicitado; si hay un error, se imprime en stderr.
 
-```
-{"mensaje": "Acceso concedido a su recurso solicitado."}
-```
+La salida del ejemplo (asumiendo una autenticación exitosa y acceso al recurso) puede no mostrarse directamente por el programa, ya que el ejemplo demuestra principalmente el envío de la solicitud. Para imprimir la respuesta, extenderías el programa para manejar los datos de la respuesta HTTP.
 
-## Profundizando
+## Profundización:
+Enviar solicitudes HTTP con autenticación básica en C, como se muestra, aprovecha la biblioteca libcurl por su robustez y simplicidad. Históricamente, crear solicitudes HTTP puramente en C sin tales bibliotecas era engorroso y propenso a errores, involucrando programación de sockets de bajo nivel y construcción manual de encabezados HTTP.
 
-Históricamente, la autenticación básica ha sido un método simple pero no muy seguro para controlar el acceso, principalmente por enviar las credenciales en texto claro codificado, no encriptado. Alternativas modernas más seguras incluyen tokens JWT, OAuth, y autenticación de dos factores.
+La autenticación básica en sí es un método de los primeros días de la web. Envía credenciales en un formato fácilmente decodificable (Base64), que es inherentemente inseguro sobre canales en texto plano. Las aplicaciones modernas a menudo prefieren métodos de autenticación más seguros, como OAuth 2.0 o JWT (JSON Web Tokens), especialmente para datos sensibles.
 
-La implementación de la autenticación básica con libcurl es directa: configuramos la cabecera `Authorization` automáticamente al proporcionarle el usuario y contraseña a `CURLOPT_USERPWD`. La biblioteca se encarga de la codificación en base64 por nosotros. Aunque sea simple, usar HTTPS es esencial para proteger la información contra interceptaciones.
+Sin embargo, para sistemas internos menos críticos, o scripts rápidos y sucios donde la conveniencia supera a las preocupaciones de seguridad, la autenticación básica sigue en uso. Además, cuando se combina con conexiones cifradas (HTTPS), su simplicidad se convierte en una ventaja para el desarrollo rápido, las pruebas o el trabajo de automatización donde mecanismos de seguridad de nivel superior no son tan necesarios.
 
-## Ver También
-
-- Documentación oficial de libcurl: https://curl.se/libcurl/c/
-- RFC 7617, "The 'Basic' HTTP Authentication Scheme": https://tools.ietf.org/html/rfc7617
-- Tutorial de libcurl para C: https://curl.se/libcurl/c/libcurl-tutorial.html
-- Comparación de métodos de autenticación: https://www.owasp.org/index.php/Authentication_Cheat_Sheet
+En contextos donde la seguridad de vanguardia es innegociable, deberían priorizarse alternativas como la autenticación basada en tokens. No obstante, entender cómo implementar la autenticación básica en C a través de libcurl proporciona una habilidad fundamental que puede adaptarse a varios métodos de autenticación y protocolos, reflejando los matices entre seguridad, conveniencia y requisitos de aplicación en el desarrollo web.

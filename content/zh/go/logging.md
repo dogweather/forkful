@@ -1,22 +1,44 @@
 ---
 title:                "日志记录"
-date:                  2024-01-26T01:06:34.520445-07:00
-model:                 gpt-4-1106-preview
+date:                  2024-02-03T17:59:07.288697-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "日志记录"
-
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/go/logging.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## 是什么以及为什么？
-日志记录是指在应用程序内保留事件、状态和数据流动的记录。程序员进行日志记录是为了诊断错误、监控性能以及跟踪应用程序的运行健康状况——这在很大程度上使得它成为软件领域中类似于飞机黑匣子的存在。
+## 什么 & 为什么？
+
+软件开发中的日志记录是指记录程序执行信息的过程，旨在跟踪其行为并诊断问题。程序员实现日志记录以监控软件性能、调试错误，并确保系统安全和合规，使其成为应用维护和分析的不可或缺的工具。
 
 ## 如何操作：
-在Go语言中，日志记录可以通过多种方法处理，从标准库的`log`包到第三方库如`logrus`和`zap`等。这里有一个使用内置`log`包的简单示例：
 
-```Go
+在 Go 中，可以使用标准库包 `log` 来实现日志记录。这个包提供了简单的日志记录功能，比如写入标准输出或文件。我们先从一个基础的例子开始，记录到标准输出：
+
+```go
+package main
+
+import (
+	"log"
+)
+
+func main() {
+	log.Println("这是一个基础的日志条目。")
+}
+```
+
+输出：
+```
+2009/11/10 23:00:00 这是一个基础的日志条目。
+```
+
+日志条目开头的时间戳是由 `log` 包自动添加的。接下来，让我们探索如何将日志记录到文件，而不是标准输出：
+
+```go
 package main
 
 import (
@@ -25,46 +47,44 @@ import (
 )
 
 func main() {
-	// 创建一个日志文件
-	logFile, err := os.OpenFile("app.log", os.O_CREATE|os.O_APPEND|os.O_WRONLY, 0666)
+	file, err := os.OpenFile("app.log", os.O_CREATE|os.O_APPEND|os.O_WRONLY, 0666)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer logFile.Close()
+	defer file.Close()
 
-	// 设置日志输出到文件
-	log.SetOutput(logFile)
-
-	// 记录一些事件
-	log.Println("启动应用程序...")
-	// ... 应用程序逻辑在这里 ...
-	log.Println("应用程序成功结束。")
+	log.SetOutput(file)
+	log.Println("这条日志条目记录到文件中。")
 }
 ```
 
-如果你运行这段代码，你不会看到任何输出到终端，因为它们都输出到了`app.log`里。这里是你可能会在那个日志文件里找到的内容：
+现在，让我们实现一个更高级的用例：自定义日志格式。Go 允许您使用 `log.New()` 创建一个自定义的日志器：
 
+```go
+package main
+
+import (
+	"log"
+	"os"
+)
+
+func main() {
+	logger := log.New(os.Stdout, "自定义日志: ", log.Ldate|log.Ltime|log.Lshortfile)
+	logger.Println("这是一个自定义的日志消息。")
+}
 ```
-2023/01/02 15:04:05 启动应用程序...
-2023/01/02 15:05:01 应用程序成功结束。
+
+输出：
 ```
+自定义日志: 2009/11/10 23:00:00 main.go:11: 这是一个自定义的日志消息。
+```
+
+这个例子以 "自定义日志: " 作为每条日志消息的前缀，并包括日期、时间和源文件位置。
 
 ## 深入探讨
-程序中的日志记录可追溯到最早的计算机时代，那时工程师们确实会在硬件中找到错误（确切地说是飞蛾），然后将它们记录下来！时间快进到今天，日志记录已经成为了一种了解复杂系统内正在发生什么的高级手段。
 
-虽然Go语言中的`log`包相当简单，但它对基本应用来说可能已经足够了。然而，在现代分布式系统的背景下，或者当你需要对日志输出有更细致的控制（如不同的严重性级别）时，你可能想要探索更健壮的解决方案。
+Go 标准库的 `log` 包简单直接，适用于许多应用程序，但它缺少一些第三方日志库中找到的更复杂的功能，例如结构化日志、日志轮转和基于级别的日志。如 `zap` 和 `logrus` 这样的包提供了这些高级功能，并且因其性能和灵活性在 Go 社区中享有盛誉。
 
-`logrus`和`zap`之类的第三方日志库提供了结构化日志记录，这意味着你可以记录像JSON这样的复杂数据类型，使日志更容易解释，尤其是与ELK Stack或Splunk之类的日志管理系统结合使用时。
+例如，结构化日志允许您以结构化格式（如 JSON）记录数据，这对于可能通过各种工具或服务分析日志的现代云基础应用尤其有用。`zap` 特别以其高性能和低分配开销而闻名，适用于速度和效率至关重要的应用程序。
 
-在考虑实施日志策略时，还必须要考虑性能影响。高性能的日志库经过优化，以减少对应用程序吞吐量和延迟的影响。例如，`zap`以其高速、低分配的设计而自豪，这对于实时系统来说可能至关重要。
-
-除了各种库之外，还值得注意的是日志格式和标准。像JSON这样的结构化日志格式结合日志处理系统使用时，可以非常强大。另一方面，纯文本日志虽然人类可读，但通过程序解析则更具挑战性。
-
-## 另请参阅
-要更深入了解Go的日志功能，以下资源可能会有用：
-
-- Go博客关于日志记录：https://blog.golang.org/logging
-- `logrus`，Go的结构化日志记录器：https://github.com/sirupsen/logrus
-- `zap`，快速的、结构化的、分级的日志记录器：https://github.com/uber-go/zap
-- ELK Stack（Elasticsearch，Logstash，Kibana）用于日志分析：https://www.elastic.co/what-is/elk-stack
-- Go日志库的比较：https://www.loggly.com/blog/benchmarking-5-popular-golang-logging-libraries/
+从历史上看，自 Go 语言诞生以来，Go 中的日志记录已经发生了显著的演变。Go 的早期版本提供了我们在 `log` 包中看到的基本日志记录功能。然而，随着 Go 语言变得更加流行，用 Go 编写的应用程序的复杂性增加，社区开始开发更复杂的日志库以满足他们的需求。如今，尽管标准的 `log` 包仍然是简单应用程序的一个可行选项，但许多开发人员为了满足更复杂的日志记录需求而转向这些第三方解决方案。

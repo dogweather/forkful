@@ -1,56 +1,55 @@
 ---
-title:                "Zeichenketten interpolieren"
-date:                  2024-01-20T17:50:25.195116-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Zeichenketten interpolieren"
-
+title:                "Interpolation eines Strings"
+date:                  2024-02-03T17:58:06.426412-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Interpolation eines Strings"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/c/interpolating-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-String-Interpolation ermöglicht das Einsetzen von Variablenwerten innerhalb eines Strings. Programmierer nutzen diese, um dynamische Textausgaben zu erzeugen und Code lesbarer zu gestalten.
+## Was & Warum?
 
-## How to:
-C hat keine eingebaute String-Interpolation wie höhere Programmiersprachen. Stattdessen verwendet man `sprintf()` oder `printf()` Funktionen. Hier einige Beispiele:
+String-Interpolation, in der Programmierung, beinhaltet den Aufbau von Zeichenketten, indem Ausdrücke innerhalb von wörtlichen Zeichenketten eingebettet werden. Programmierer tun dies, um informative Nachrichten, dynamische Abfragen zu erstellen oder um effizient und sauber jede Zeichenkette mit variablem Inhalt zu konstruieren, oft für Benutzerausgaben oder Logging-Zwecke.
 
-```C
+## Wie man es macht:
+
+C unterstützt im Gegensatz zu einigen Hochsprachen die String-Interpolation nicht direkt in seiner Syntax. Stattdessen wird der Aufbau von Zeichenketten mit variablem Inhalt typischerweise mit der Funktion `printf` oder ihren Varianten für die Ausgabe und `sprintf` für die Zeichenkettenerstellung erreicht. Hier ein Blick darauf, wie man in C dynamisch Zeichenketten konstruiert:
+
+```c
 #include <stdio.h>
 
 int main() {
-    char name[] = "Welt";
-    int age = 42;
+    char name[] = "Jane Doe";
+    int age = 28;
 
-    // Mit printf direkt ausgeben
-    printf("Hallo, %s! Du bist %d Jahre alt.\n", name, age);
+    // Verwendung von printf für die Ausgabe
+    printf("Hallo, mein Name ist %s und ich bin %d Jahre alt.\n", name, age);
 
-    // Verwenden von sprintf um den String zu speichern
-    char greeting[50];
-    sprintf(greeting, "Hallo, %s!", name);
-    printf("%s\n", greeting);
+    // Verwendung von sprintf für die Zeichenkettenerstellung
+    char info[50];
+    sprintf(info, "Name: %s, Alter: %d", name, age);
+    printf("%s\n", info);
 
     return 0;
 }
 ```
-
-Sample Output:
+Beispiel-Ausgabe:
 ```
-Hallo, Welt! Du bist 42 Jahre alt.
-Hallo, Welt!
+Hallo, mein Name ist Jane Doe und ich bin 28 Jahre alt.
+Name: Jane Doe, Alter: 28
 ```
+Diese Snippets zeigen die traditionelle Methode, um variable Daten in Zeichenketten in C einzubauen, was Flexibilität beim Konstruieren detaillierter Zeichenketten bietet.
 
-## Deep Dive
-In den Anfangstagen von C, vor `sprintf` und `printf`, mussten alle Strings manuell zusammengefügt werden. Mit C99 kamen die variadic functions, die eine variierende Anzahl von Argumenten akzeptieren. Heute verwenden wir Format-Specifier wie `%s` für Strings und `%d` für Integer in Verbindung mit `printf()`-Familienfunktionen zur String-Interpolation.
+## Vertiefung
 
-Alternative Methoden sind:
-- `snprintf()`: sicherer, da Überläufe verhindert werden können
-- Bibliotheken wie `asprintf()` auf einigen Systemen verfügbar
+Vor dem Aufkommen modernerer Programmiersprachen mit eingebauten String-Interpolationsfunktionen mussten C-Entwickler sich auf Funktionen wie `sprintf()`, `snprintf()` und ihre Varianten verlassen, um Zeichenketten mit variablem Inhalt zu komponieren. Dieser Ansatz ist zwar effektiv, birgt jedoch potenzielle Risiken wie Pufferüberläufe, wenn er nicht sorgfältig verwaltet wird, insbesondere bei `sprintf()`.
 
-Intern verwendet `printf()` eine ziemlich komplexe Mechanik, um Typen zu überprüfen und die entsprechende Repräsentation zu erstellen. Es ist wichtig zu verstehen, dass Fehlentsprechungen zwischen Format-Specifiern und den gegebenen Typen zu undefiniertem Verhalten führen können.
+Mit Blick auf Alternativen haben Sprachen wie Python und JavaScript intuitivere String-Interpolationsfunktionen eingeführt, wie f-Strings (formatierte Zeichenkettenliterale) und Template-Literale bzw. Diese Funktionen ermöglichen es Entwicklern, Ausdrücke direkt in den Zeichenkettenliteralen einzubetten, was den Code lesbbarer und prägnanter macht.
 
-## See Also
-- C Standard Library reference on `printf`: https://en.cppreference.com/w/c/io/fprintf
-- GNU C Library documentation over `printf()`: https://www.gnu.org/software/libc/manual/html_node/Formatted-Output-Functions.html
-- Tutorial on variadic functions in C: https://www.cprogramming.com/tutorial/c/lesson17.html
+Im Kontext von C bietet dessen Ansatz trotz des Fehlens eingebauter String-Interpolationsfunktionen eine feinkörnige Kontrolle über das Format, was sowohl als Vorteil für diejenigen, die präzise Formatierungskontrolle benötigen, als auch als Komplexität für Neulinge oder diejenigen, die nach schnelleren, lesbareren Lösungen suchen, angesehen werden kann. Die Einführung von `snprintf()` in C99 hat einige der Sicherheitsbedenken gemildert, indem Entwicklern erlaubt wird, die maximale Anzahl an zu schreibenden Bytes anzugeben, was die Zeichenkettenformatierung sicherer macht.
+
+Während die Methode von C im Vergleich zu moderneren Sprachen umständlich oder mühsam erscheinen mag, bietet das Verständnis seiner Zeichenkettenbehandlungsmechanismen eine solide Grundlage für das Erfassen abstrakterer Konzepte in der Softwareentwicklung, wobei die Bedeutung der Speicherverwaltung und Datenformatierung auf niedriger Ebene betont wird.

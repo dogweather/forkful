@@ -1,58 +1,82 @@
 ---
-title:                "Sử dụng bộ gỡ lỗi"
-date:                  2024-01-28T22:09:34.727757-07:00
+title:                "Sử dụng trình gỡ lỗi"
+date:                  2024-02-03T18:10:47.833278-07:00
 model:                 gpt-4-0125-preview
-simple_title:         "Sử dụng bộ gỡ lỗi"
-
+simple_title:         "Sử dụng trình gỡ lỗi"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/go/using-a-debugger.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
-Sử dụng một trình gỡ lỗi giống như việc có một thiết bị GPS trong rừng mã; nó hướng dẫn bạn đến nguồn gốc của vấn đề. Lập trình viên sử dụng trình gỡ lỗi để bước qua từng dòng mã của họ, kiểm tra các biến và hiểu luồng, giúp việc bắt lỗi và tối ưu hoá hiệu suất trở nên dễ dàng hơn.
+
+Việc sử dụng debugger trong lập trình Go bao gồm việc ứng dụng các công cụ hoặc tính năng để kiểm tra và chỉnh sửa trạng thái của chương trình đang chạy nhằm hiểu rõ hơn về hành vi của nó hoặc xác định các vấn đề. Lập trình viên làm điều này nhằm tìm và sửa lỗi một cách hiệu quả, tối ưu hóa hiệu suất và đảm bảo tính chính xác của mã của họ.
 
 ## Làm thế nào:
-Go có một công cụ tích hợp sẵn để gỡ lỗi gọi là Delve (`dlv`). Để bắt đầu, hãy cài đặt Delve, viết một chương trình Go đơn giản, rồi chạy nó qua trình gỡ lỗi.
 
-```Go
-// Đầu tiên, cài đặt Delve
-// go get -u github.com/go-delve/delve/cmd/dlv
+Go cung cấp một tiện ích tích hợp cho việc gỡ lỗi gọi là `delve`. Đây là một công cụ gỡ lỗi đầy đủ tính năng cho phép bạn thực hiện chương trình Go từng bước một, kiểm tra các biến trong chương trình và đánh giá các biểu thức.
 
-// Chương trình Go ví dụ, lưu thành main.go
+Để bắt đầu, bạn cần phải cài đặt `delve` trước. Bạn có thể làm điều này bằng cách chạy:
+
+```shell
+go get -u github.com/go-delve/delve/cmd/dlv
+```
+
+Bây giờ, hãy debug một chương trình Go đơn giản. Xem xét một chương trình `main.go`:
+
+```go
 package main
 
 import "fmt"
 
 func main() {
-    message := "Gỡ lỗi với Delve!"
+    message := "Debugging in Go"
     fmt.Println(message)
 }
-
-// Chạy chương trình của bạn với Delve
-// dlv debug
-
-// Một số lệnh cơ bản của Delve:
-// (dlv) break main.main // đặt một điểm dừng tại hàm main
-// (dlv) continue // chạy đến điểm dừng hoặc khi chương trình kết thúc
-// (dlv) step // bước qua từng lệnh trong chương trình
-// (dlv) print message // in giá trị hiện tại của biến 'message'
-// (dlv) quit // thoát Delve
 ```
 
-Chạy `dlv debug` khởi đầu một phiên gỡ lỗi. Một khi bạn đạt đến một điểm dừng bạn đã đặt, bạn có thể bước qua chương trình của mình và xem điều gì đang diễn ra bên dưới.
+Để bắt đầu gỡ lỗi chương trình này, mở một terminal trong thư mục dự án và thực thi:
 
-## Sâu hơn
-Trong lịch sử, lập trình viên Go đã sử dụng nhiều công cụ để gỡ lỗi như GDB (GNU Debugger) nhưng đã đối mặt với thách thức bởi vì GDB không được thiết kế riêng cho thời gian chạy và goroutines của Go. Delve đã giải cứu với sự hỗ trợ tốt hơn cho các tính năng độc đáo của Go.
+```shell
+dlv debug
+```
 
-Có các phương án thay thế cho Delve như `go-dbg`, và thậm chí là hỗ trợ gỡ lỗi tích hợp sẵn trong các môi trường phát triển tích hợp (IDE) như Visual Studio Code và GoLand, đó bao quanh Delve để mang lại trải nghiệm thân thiện hơn với người dùng.
+Lệnh này biên dịch chương trình với tối ưu hóa bị vô hiệu hóa (để cải thiện trải nghiệm gỡ lỗi), khởi động nó và gắn một debugger vào nó.
 
-Về mặt thực thi, Delve hoạt động sử dụng các gói `runtime` và `debug/gosym`, trong số những người khác, để truy cập và giải thích các biểu tượng và thông tin thời gian chạy của chương trình Go. Nó liên tục được cập nhật để theo kịp với các tính năng và phiên bản ngôn ngữ mới.
+Một khi `delve` đang chạy, bạn đang ở trong shell debugger tương tác. Dưới đây là một số lệnh cơ bản:
 
-## Xem thêm
-- Kho chính thức của Delve: https://github.com/go-delve/delve
-- Hướng dẫn sử dụng Gỡ lỗi Go bởi Nhóm Go: https://golang.org/doc/gdb
-- Gỡ lỗi Go với Visual Studio Code: https://code.visualstudio.com/docs/languages/go#_debugging
+- `break main.main` thiết lập một điểm dừng tại hàm `main`.
+- `continue` tiếp tục thực thi chương trình cho đến khi gặp một điểm dừng.
+- `print message` sẽ in giá trị của biến `message`.
+- `next` tiến chương trình thực thi đến dòng tiếp theo.
+- `quit` thoát khỏi debugger.
+
+Kết quả khi gặp điểm dừng và in biến có thể trông như sau:
+
+```shell
+Breakpoint 1 at 0x49ecf3 for main.main() ./main.go:6
+> main.main() ./main.go:6 (hits goroutine(1):1 total:1) (PC: 0x49ecf3)
+     1: package main
+     2:
+     3: import "fmt"
+     4:
+     5: func main() {
+     6: =>    message := "Debugging in Go"
+     7:       fmt.Println(message)
+     8: }
+(dlv) print message
+"Debugging in Go"
+```
+
+Sử dụng những lệnh này, bạn có thể từng bước đi qua chương trình của mình, kiểm tra trạng thái của nó khi bạn thực hiện để hiểu cách nó hoạt động và xác định bất kỳ vấn đề nào.
+
+## Sâu hơn nữa
+
+Việc chọn `delve` là công cụ gỡ lỗi của sự lựa chọn cho Go thay vì các công cụ truyền thống như GDB (GNU Debugger) chủ yếu là do bản chất của mô hình thực thi và thời gian chạy của Go. GDB ban đầu không được thiết kế với thời gian chạy của Go trong tâm trí, khiến `delve` trở thành lựa chọn phù hợp hơn cho các nhà phát triển Go. `Delve` được thiết kế đặc biệt cho Go, cung cấp một trải nghiệm gỡ lỗi trực quan hơn cho các Go routine, kênh và các cấu trúc đặc thù của Go khác.
+
+Hơn nữa, `delve` hỗ trợ một loạt các tính năng vượt trội so với các tính năng cơ bản của GDB khi làm việc với các chương trình Go. Điều này bao gồm nhưng không giới hạn ở: gắn vào các quy trình đang chạy để gỡ lỗi; các điểm dừng có điều kiện; và đánh giá các biểu thức phức tạp có thể liên quan đến các nguyên tắc đồng thời của Go.
+
+Mặc dù `delve` là debugger mà nhiều nhà phát triển Go lựa chọn, đáng chú ý là bộ công cụ Go cũng bao gồm các hình thức hỗ trợ gỡ lỗi nhẹ hơn, chẳng hạn như công cụ `pprof` được tích hợp sẵn cho việc xuất dữ liệu và công cụ `trace` cho việc hiện thị đồng thời. Những công cụ này đôi khi có thể cung cấp một lộ trình nhanh hơn hoặc trên một cấp độ cao hơn cho việc chẩn đoán vấn đề hiệu suất chương trình hoặc lỗi đồng thời, có thể bổ sung hoặc thậm chí là ưu tiên tùy thuộc vào bối cảnh gỡ lỗi.

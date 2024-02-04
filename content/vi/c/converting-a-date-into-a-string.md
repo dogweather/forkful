@@ -1,52 +1,53 @@
 ---
-title:                "Chuyển đổi một ngày thành chuỗi"
-date:                  2024-01-28T21:57:28.325330-07:00
+title:                "Chuyển đổi ngày thành chuỗi"
+date:                  2024-02-03T17:55:05.217616-07:00
 model:                 gpt-4-0125-preview
-simple_title:         "Chuyển đổi một ngày thành chuỗi"
-
+simple_title:         "Chuyển đổi ngày thành chuỗi"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/c/converting-a-date-into-a-string.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
-Chúng ta chuyển đổi ngày thành chuỗi để làm cho chúng dễ đọc hơn cho con người hoặc để định dạng chúng cho việc lưu trữ và hiển thị. Điều này liên quan đến việc lấy dữ liệu ngày thô và trình bày nó một cách có ý nghĩa với chúng ta.
+
+Chuyển đổi một ngày thành chuỗi trong C bao gồm việc dịch một cấu trúc ngày tháng hoặc dấu thời gian thành định dạng dễ đọc cho con người. Các lập trình viên thường thực hiện tác vụ này để hiển thị các ngày trong nhật ký, giao diện người dùng, hoặc khi lưu trữ các ngày trong định dạng văn bản như JSON hoặc CSV.
 
 ## Cách thực hiện:
-C làm công việc này khá đơn giản với hàm `strftime`. Dưới đây là một ví dụ nhanh:
 
-```C
+Hàm `strftime` từ thư viện `<time.h>` thường được sử dụng cho mục đích này. Nó cho phép bạn định dạng ngày và giờ theo nhiều cách khác nhau bằng cách chỉ định các chỉ thị định dạng. Dưới đây là một ví dụ nhanh:
+
+```c
 #include <stdio.h>
 #include <time.h>
 
 int main() {
-    time_t rawtime;
-    struct tm * timeinfo;
-    char buffer[80];
+    char dateStr[100];
+    time_t now = time(NULL);
+    struct tm *ptm = localtime(&now);
 
-    time(&rawtime);
-    timeinfo = localtime(&rawtime);
-
-    strftime(buffer, sizeof(buffer), "%d-%m-%Y %I:%M:%S", timeinfo);
-    printf("Ngày & giờ được định dạng: %s\n", buffer);
-
+    // Chuyển đổi ngày & giờ thành chuỗi (ví dụ, "Wed Jun 30 21:49:08 2021")
+    strftime(dateStr, sizeof(dateStr), "%a %b %d %H:%M:%S %Y", ptm);
+    
+    printf("Ngày và Giờ Hiện Tại: %s\n", dateStr);
     return 0;
 }
 ```
 
-Kết quả mẫu có thể là: `Ngày & giờ được định dạng: 22-03-2023 09:45:12`
+Đầu ra mẫu có thể trông như thế này:
 
-## Tìm hiểu kỹ:
-Lịch sử, việc xử lý thời gian trong C có những kỳ quặc của nó: các tiêu chuẩn trước đây thiếu một cách chuẩn hóa để xử lý múi giờ, ví dụ. Bây giờ, chúng ta có `strftime` là một phần của Thư viện Chuẩn C từ C89 trở đi, cung cấp cho chúng ta một cách nhất quán để chuyển các cấu trúc thời gian `struct tm` thành chuỗi, với khả năng kiểm soát định dạng.
+```
+Ngày và Giờ Hiện Tại: Wed Jun 30 21:49:08 2021
+```
 
-Về các phương án thay thế, người ta có thể tự mình trích xuất giá trị từ `struct tm` và nối chúng lại, nhưng đó là việc tái sáng tạo bánh xe. Còn có hàm `strptime` của POSIX, hoạt động ngược lại, từ chuỗi sang `struct tm`.
+Bạn có thể tùy chỉnh định dạng bằng cách thay đổi các chỉ thị định dạng được truyền vào `strftime`. Ví dụ, để lấy ngày theo định dạng `YYYY-MM-DD`, bạn sẽ sử dụng `"%Y-%m-%d"`.
 
-Khi sử dụng `strftime`, nhớ rằng: kích thước bộ đệm quan trọng; quá nhỏ và chuỗi của bạn sẽ bị cắt ngắn. Ngoài ra, các thông số định dạng trong `strftime` cho phép bạn tùy chỉnh ngày và giờ theo nhiều cách thân thiện với con người, như thay đổi địa phương hoặc biểu diễn ngày-giờ.
+## Tìm hiểu sâu hơn
 
-## Xem thêm:
-- Tài liệu Thư viện Chuẩn C: https://en.cppreference.com/w/c/chrono/strftime
-- Hướng dẫn về Thời gian của Thư viện C GNU: https://www.gnu.org/software/libc/manual/html_node/Time.html
-- Các thông số định dạng của strftime: https://www.gnu.org/software/libc/manual/html_node/Low_002dLevel-Time-String-Parsing.html#Low_002dLevel-Time-String-Parsing
+Hàm `strftime` và thư viện `<time.h>` là một phần của Thư viện Tiêu Chuẩn C, có từ tiêu chuẩn ANSI C ban đầu (C89/C90). Mặc dù phương pháp này đơn giản và được hỗ trợ trên nhiều nền tảng, nhưng so với các ngôn ngữ lập trình hiện đại cung cấp các thư viện ngày và giờ trực quan hơn, phương pháp này có thể trông thấp cấp và gượng gạo hơn.
+
+Cần lưu ý, mặc dù các hàm về thời gian của thư viện tiêu chuẩn C được hỗ trợ rộng rãi và tương đối đơn giản để sử dụng, chúng thiếu một số tính năng phức tạp về thao tác múi giờ và quốc tế hóa có trong thư viện của các ngôn ngữ mới hơn hoặc trong các thư viện C của bên thứ ba như International Components for Unicode (ICU).
+
+Tuy nhiên, khả năng tùy chỉnh của hàm `strftime` và sự hỗ trợ rộng rãi trên nhiều nền tảng làm cho nó trở thành một công cụ đáng tin cậy và hữu ích cho việc chuyển đổi chuỗi ngày trong C. Các lập trình viên đến từ ngôn ngữ với thư viện datetime cấp cao hơn có thể cần thích nghi với tính chất thấp cấp của nó nhưng sẽ thấy nó cực kỳ mạnh mẽ và linh hoạt cho việc định dạng ngày và giờ cho nhiều ứng dụng khác nhau.

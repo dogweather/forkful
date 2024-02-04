@@ -1,56 +1,82 @@
 ---
 title:                "Att använda en debugger"
-date:                  2024-01-26T03:49:07.932916-07:00
+date:                  2024-02-03T18:10:09.034247-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Att använda en debugger"
-
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/go/using-a-debugger.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att använda en felsökare är som att ha en GPS i kodens djungel; den guidar dig till problemets källa. Programmerare använder felsökare för att stega igenom sin kod, inspektera variabler och förstå flödet, vilket gör det enklare att fånga upp buggar och optimera prestanda.
+
+Att använda en felsökare i Go-programmering innebär att man använder verktyg eller funktioner för att inspektera och modifiera tillståndet hos ett körande program för att förstå dess beteende eller diagnostisera problem. Programmerare gör detta för att effektivt hitta och åtgärda buggar, optimera prestanda och säkerställa korrighet i sin kod.
 
 ## Hur man gör:
-Go har ett inbyggt verktyg för felsökning som heter Delve (`dlv`). För att komma igång, installera Delve, skriv ett enkelt Go-program och kör det sedan genom felsökaren.
 
-```Go
-// Först, installera Delve
-// go get -u github.com/go-delve/delve/cmd/dlv
+Go erbjuder en inbyggd möjlighet för felsökning som kallas `delve`. Det är ett fullfjädrat felsökningsverktyg som tillåter dig att exekvera Go-program steg för steg, inspektera programvariabler och utvärdera uttryck.
 
-// Exempel på Go-program, spara som main.go
+För att börja måste du först installera `delve`. Detta kan du göra genom att köra:
+
+```shell
+go get -u github.com/go-delve/delve/cmd/dlv
+```
+
+Nu, låt oss felsöka ett enkelt Go-program. Betrakta ett program `main.go`:
+
+```go
 package main
 
 import "fmt"
 
 func main() {
-    message := "Felsökning med Delve!"
+    message := "Debugging in Go"
     fmt.Println(message)
 }
-
-// Kör ditt program med Delve
-// dlv debug
-
-// Några grundläggande Delve-kommandon:
-// (dlv) break main.main // sätt en brytpunkt vid funktionen main
-// (dlv) continue // kör tills brytpunkt eller programavslutning
-// (dlv) step // enstegsgenomgång genom programmet
-// (dlv) print message // skriv ut det aktuella värdet på variabeln 'message'
-// (dlv) quit // avsluta Delve
 ```
 
-Att köra `dlv debug` startar en felsökningssession. När du träffar en brytpunkt du har satt kan du stega igenom ditt program och se vad som pågår under huven.
+För att börja felsöka detta program, öppna en terminal i projektets katalog och exekvera:
+
+```shell
+dlv debug
+```
+
+Detta kommando kompilerar programmet med optimeringar inaktiverade (för att förbättra felsökningsupplevelsen), startar det, och kopplar en felsökare till det.
+
+När `delve` körs, är du i det interaktiva felsökningsskalet. Här är några grundläggande kommandon:
+
+- `break main.main` sätter en brytpunkt vid funktionen `main`.
+- `continue` återupptar programexekveringen till dess att en brytpunkt träffas.
+- `print message` skriver ut värdet på variabeln `message`.
+- `next` framskrider programexekveringen till nästa rad.
+- `quit` avslutar felsökaren.
+
+Utskriften när brytpunkten träffas och variabeln skrivs ut kan se ut så här:
+
+```shell
+Breakpoint 1 at 0x49ecf3 for main.main() ./main.go:6
+> main.main() ./main.go:6 (hits goroutine(1):1 total:1) (PC: 0x49ecf3)
+     1: package main
+     2:
+     3: import "fmt"
+     4:
+     5: func main() {
+     6: =>    message := "Debugging in Go"
+     7:       fmt.Println(message)
+     8: }
+(dlv) print message
+"Debugging in Go"
+```
+
+Med dessa kommandon kan du stega igenom ditt program, inspektera tillståndet efterhand för att förstå hur det beter sig och identifiera eventuella problem.
 
 ## Fördjupning
-Historiskt sett har Go-programmerare använt flera verktyg för felsökning såsom GDB (GNU Debugger) men stött på utmaningar eftersom GDB inte var skräddarsytt för Gos runtime och gorutiner. Delve kom till undsättning med bättre stöd för Gos unika funktioner.
 
-Det finns alternativ till Delve som `go-dbg`, och även integrerat felsökningsstöd inom IDE:er som Visual Studio Code och GoLand, som använder Delve för en mer användarvänlig upplevelse.
+Valet av `delve` som Go:s föredragna felsökningsverktyg framför traditionella verktyg som GDB (GNU Debugger) beror framför allt på Go:s exekveringsmodell och körningstid. GDB designades inte från början med Go:s körningstid i åtanke, vilket gör `delve` till ett mer lämpligt val för Go-utvecklare. `Delve` är specifikt utformat för Go och erbjuder en mer intuitiv felsökningsupplevelse för Go-rutiner, kanaler och andra Go-specifika konstruktioner.
 
-På implementationsidan arbetar Delve genom att använda paketen `runtime` och `debug/gosym` bland andra, för att komma åt och tolka Go-programsymboler och körningsinformation. Det uppdateras ständigt för att hålla jämna steg med nya språkfunktioner och versioner.
+Dessutom stöder `delve` ett brett utbud av funktioner utöver de som erbjuds av grundläggande GDB när man arbetar med Go-program. Dessa inkluderar men är inte begränsade till: att koppla till körande processer för felsökning; villkorliga brytpunkter; och att utvärdera komplexa uttryck som kan involvera Go:s samtidighetsprimitiver.
 
-## Se även
-- Delves officiella repo: https://github.com/go-delve/delve
-- Go Debugger-tutorial av Go-teamet: https://golang.org/doc/gdb
-- Visual Studio Code Go-felsökning: https://code.visualstudio.com/docs/languages/go#_debugging
+Även om `delve` är det go-to felsökningsverktyget för många Go-utvecklare, är det värt att notera att Go-verktygskedjan också inkluderar lättviktsformer av felsökningsstöd, såsom det inbyggda verktyget `pprof` för profilering och verktyget `trace` för visualisering av samtidighet. Dessa verktyg kan ibland erbjuda en snabbare eller mer övergripande lösning för att diagnostisera prestandaproblem i program eller samtidighetsbuggar, vilka kan vara kompletterande eller till och med att föredra beroende på felsökningssammanhanget.

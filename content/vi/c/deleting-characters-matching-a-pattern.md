@@ -1,50 +1,58 @@
 ---
-title:                "Xóa các ký tự phù hợp với một mẫu"
-date:                  2024-01-28T21:58:46.424090-07:00
+title:                "Xóa các ký tự khớp với một mô hình"
+date:                  2024-02-03T17:55:48.563411-07:00
 model:                 gpt-4-0125-preview
-simple_title:         "Xóa các ký tự phù hợp với một mẫu"
-
+simple_title:         "Xóa các ký tự khớp với một mô hình"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/c/deleting-characters-matching-a-pattern.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Cái gì & Tại sao?
-Xóa các ký tự khớp với một mẫu trong C là về việc tìm kiếm và loại bỏ các chuỗi ký tự cụ thể từ chuỗi. Các lập trình viên làm điều này để làm sạch đầu vào, thao tác văn bản hoặc chuẩn bị dữ liệu cho việc xử lý.
+## Gì và Tại sao?
+
+Việc xóa các ký tự phù hợp với một mẫu cụ thể khỏi chuỗi trong C là để loại bỏ tất cả các trường hợp của những ký tự nào đó phù hợp với các tiêu chuẩn được định trước. Các lập trình viên thực hiện công việc này để làm sạch đầu vào, chuẩn bị dữ liệu cho quá trình xử lý, hoặc đơn giản là dọn dẹp chuỗi cho đầu ra hoặc thao tác tiếp theo, đảm bảo rằng dữ liệu được xử lý chính xác như cần thiết cho một ngữ cảnh hoặc thuật toán nhất định.
 
 ## Làm thế nào:
-Để xóa các ký tự khớp với một mẫu khỏi một chuỗi, chúng ta có thể sử dụng hàm `strpbrk` để tìm các sự xuất hiện và `strcpy` hoặc `memmove` để chuyển văn bản xung quanh. Dưới đây là một ví dụ nhanh:
+
+C không đi kèm với một hàm được xây dựng sẵn để trực tiếp xóa các ký tự của chuỗi dựa trên một mẫu, không giống như một số ngôn ngữ cấp cao. Tuy nhiên, bạn có thể dễ dàng thực hiện công việc này bằng cách lặp qua chuỗi một cách thủ công và xây dựng một chuỗi mới không bao gồm các ký tự không mong muốn. Chẳng hạn, giả sử bạn muốn loại bỏ tất cả các chữ số khỏi một chuỗi. Bạn có thể thực hiện như sau:
 
 ```c
 #include <stdio.h>
-#include <string.h>
+#include <ctype.h>
 
-void delete_pattern(char *str, const char *pattern) {
-    char *match;
-    while ((match = strpbrk(str, pattern)) != NULL) {
-        memmove(match, match + 1, strlen(match));
+void remove_digits(char *str) {
+    char *src = str, *dst = str;
+    while (*src) {
+        if (!isdigit((unsigned char)*src)) {
+            *dst++ = *src;
+        }
+        src++;
     }
+    *dst = '\0';
 }
 
 int main() {
-    char text[] = "Hello, World! Today is 2023.";
-    delete_pattern(text, "o3!");
-    printf("%s\n", text); // Kết quả: Hell, Wrld Tday is 22.
+    char str[] = "C Programming 101: The Basics!";
+    remove_digits(str);
+    printf("Kết quả: %s\n", str);
     return 0;
 }
 ```
-Đoạn mã này tìm kiếm và xóa bỏ các ký tự 'o', '3', và '!' khỏi chuỗi.
 
-## Sâu hơn nữa
-Trước đây, trước khi các hàm như `strpbrk` trở thành tiêu chuẩn, các lập trình viên thường viết vòng lặp kiểm tra từng ký tự so với một mẫu—đây là công việc tẻ nhạt nhưng cần thiết. Thư viện tiêu chuẩn C hiện đại đã loại bỏ rất nhiều công việc gian khổ đó, nhưng luôn tốt khi hiểu điều gì diễn ra bên dưới.
+Kết quả mẫu:
+```
+Kết quả: C Programming : The Basics!
+```
 
-`strpbrk` quét một chuỗi để tìm sự khớp đầu tiên trong một nhóm ký tự, và `memmove` an toàn di chuyển byte xung quanh, ngay cả khi chúng gặp nhau. Điều này khác với `strcpy`, không thể xử lý bộ nhớ chồng chéo mà không gặp sự cố.
+Ví dụ này sử dụng `isdigit` từ `ctype.h` để xác định các chữ số, di chuyển các ký tự không phải là số đến đầu chuỗi và kết thúc chuỗi một khi tất cả các ký tự đã được đánh giá.
 
-Các lựa chọn thay thế bao gồm thư viện biểu thức chính quy cho các mẫu phức tạp hoặc vòng lặp thủ công để kiểm soát một cách chính xác. Nhưng luôn là một sự đánh đổi giữa việc bao gồm thư viện ngoài hay tự tạo giải pháp cho hiệu suất hoặc hạn chế bộ nhớ.
+## Sâu hơn
 
-## Xem thêm
-- [Hàm Chuỗi C](https://www.cplusplus.com/reference/cstring/)
-- [Biểu Thức Chính Quy trong C](https://www.regular-expressions.info/posix.html)
+Giải pháp được trình bày sử dụng một phương pháp với hai con trỏ trong cùng một mảng để lọc hiệu quả các ký tự không mong muốn, một kỹ thuật tượng trưng cho triết lý quản lý bộ nhớ chủ động của C. Phương pháp này hiệu quả bởi vì nó hoạt động tại chỗ, tránh được nhu cầu về việc cấp phát bộ nhớ bổ sung và do đó giảm thiểu chi phí.
+
+Truyền thống, sự thiếu hụt các hàm xử lý chuỗi cấp cao trong C đã buộc các lập trình viên phải phát triển một sự hiểu biết sâu sắc về cách xử lý chuỗi ở cấp độ bộ nhớ, dẫn đến những phương pháp sáng tạo như trên. Mặc dù điều này có ưu điểm của việc kiểm soát tốt hơn và hiệu suất cao hơn, nhưng nó cũng đi kèm với rủi ro cao hơn liên quan đến các lỗi như tràn bộ đệm và lỗi off-by-one.
+
+Trong những bối cảnh phát triển hiện đại, đặc biệt là những bối cảnh nhấn mạnh đến sự an toàn và bảo mật, các ngôn ngữ che giấu các thao tác cấp thấp như vậy có thể được ưa chuộng hơn cho các tác vụ xử lý chuỗi. Tuy nhiên, việc hiểu và sử dụng các kỹ thuật C này vẫn rất quý giá trong các tình huống đòi hỏi tối ưu hoá hiệu suất dưới số lượng nhỏ hoặc khi làm việc trong các môi trường mà sự tối giản và tốc độ của C là cực kỳ quan trọng.

@@ -1,57 +1,85 @@
 ---
 title:                "Fouten afhandelen"
-date:                  2024-01-28T22:01:46.229217-07:00
+date:                  2024-02-03T17:58:09.804056-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Fouten afhandelen"
-
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/c/handling-errors.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Wat & Waarom?
-Foutafhandeling in C gaat over het verwachten van het onverwachte. Het voorkomt dat programma's op hol slaan wanneer ze tegen problemen aanlopen. Programmeurs doen dit om fouten op een elegante manier te hanteren en hun code betrouwbaar te houden.
+
+Fouten afhandelen in C houdt in dat je afwijkende omstandigheden detecteert en daarop reageert tijdens de uitvoering van het programma. Programmeurs doen dit om bugs, crashes en onvoorspelbaar gedrag te voorkomen, zodat de software betrouwbaar en efficiënt functioneert onder diverse scenario's.
 
 ## Hoe te:
 
-Laten we eens kijken hoe we dit in C doen:
+C heeft geen ingebouwde ondersteuning voor uitzonderingen zoals sommige andere talen. In plaats daarvan vertrouwt het op enkele conventionele foutafhandelingsstrategieën, zoals het teruggeven van speciale waarden uit functies en het instellen van globale variabelen zoals `errno`.
 
-```C
+**Speciale Waarden Teruggeven**
+
+Functies kunnen fouten aangeven door een specifieke waarde terug te geven die waarschijnlijk geen geldig resultaat is. Hier is een voorbeeld met gehele getallen:
+
+```c
 #include <stdio.h>
-#include <stdlib.h>
-#include <errno.h>
+
+int inverse(int number, double *result) {
+    if (number == 0) {
+        return -1; // Foutgeval
+    } else {
+        *result = 1.0 / number;
+        return 0; // Succes
+    }
+}
 
 int main() {
-    FILE *fp = fopen("nonexistentfile.txt", "r");
-    if (fp == NULL) {
-        perror("Fout bij het openen van bestand");
-        return EXIT_FAILURE;
+    double result;
+    if (inverse(0, &result) < 0) {
+        printf("Fout: Delen door nul.\n");
+    } else {
+        printf("De inverse is: %f\n", result);
     }
-    // Doe iets met het bestand
-    fclose(fp);
-    return EXIT_SUCCESS;
+    
+    return 0;
 }
 ```
 
-Voorbeelduitvoer wanneer het bestand niet bestaat:
+**Uitvoer:**
+```
+Fout: Delen door nul.
+```
+
+**`errno` Controleren**
+
+Voor bibliotheekfuncties, vooral diegene die interageren met het systeem of OS (zoals bestands-I/O), wordt `errno` ingesteld wanneer een fout optreedt. Om het te gebruiken, moet je `errno.h` includen en `errno` controleren na een vermoedelijke mislukking:
+
+```c
+#include <stdio.h>
+#include <errno.h>
+#include <string.h>
+
+int main() {
+    FILE *file = fopen("nonexistent.txt", "r");
+    if (file == NULL) {
+        printf("Fout bij het openen van bestand: %s\n", strerror(errno));
+    }
+    
+    return 0;
+}
+```
+
+**Uitvoer:**
 ```
 Fout bij het openen van bestand: Bestand of map bestaat niet
 ```
 
-## Diepere Duik
+## Diepgaande Verkenning
 
-In de vroege dagen van C was foutafhandeling basic - meestal retourcodes en handmatige controles. Voer `errno` in, een globale variabele die wordt bijgewerkt wanneer functies falen. Het is op zichzelf niet thread-safe, dus de nieuwere `strerror` en `perror` functies werden geïntroduceerd voor betere foutmeldingen.
+Historisch gezien heeft het minimalistische ontwerp van de C-programmeertaal uitgesloten dat er een ingebouwd mechanisme voor uitzonderingsafhandeling is, wat een weerspiegeling is van zijn oorsprong in systeemprogrammering waar maximale prestatie en controle dichtbij de machine cruciaal zijn. In plaats daarvan adopteert C een meer handmatige benadering van foutafhandeling die past bij zijn filosofie van het geven van zoveel mogelijk controle aan programmeurs, zelfs ten koste van het gemak.
 
-Alternatieven? Modern C is niet beperkt tot `errno`. Er zijn setjmp en longjmp voor niet-lokale sprongen wanneer een ramp zich voordoet. Sommige mensen geven de voorkeur aan het definiëren van hun eigen foutcodes, terwijl anderen kiezen voor uitzonderingsachtige structuren in C++.
+Hoewel deze aanpak goed aansluit bij de ontwerpdoelen van C, kan het ook leiden tot uitgebreide foutcontrolecode en de mogelijkheid tot gemiste foutcontroles, die moderne talen aanpakken met gestructureerde uitzonderingsafhandelingsmechanismen. Uitzonderingen in talen zoals Java of C# maken centrale foutverwerking mogelijk, waardoor code schoner wordt en foutbeheer eenvoudiger. Echter, uitzonderingen brengen hun eigen overhead en complexiteit met zich mee, wat mogelijk niet ideaal is voor systeemniveau-programmering waar C uitblinkt.
 
-Implementatiedetails kunnen ingewikkeld zijn. Bijvoorbeeld, `errno` is thread-safe in POSIX conforme systemen door de magie van Thread Local Storage (TLS). In ingebedde systemen, waar middelen kostbaar zijn, kan een voorkeur uitgaan naar aangepaste foutafhandelingscode boven standaard aanpakken die de software zouden kunnen verzwaren.
-
-## Zie ook
-
-- Een gedetailleerde duik in `errno`: https://en.cppreference.com/w/c/error/errno
-- Voor thread veiligheid, zie POSIX threads en errno: http://man7.org/linux/man-pages/man3/pthread_self.3.html
-- Een introductie tot setjmp en longjmp: https://www.cplusplus.com/reference/csetjmp/
-- Voor uitzonderingsafhandeling in C++, bekijk: https://isocpp.org/wiki/faq/exceptions
+Ondanks zijn grofheid heeft deze handmatige foutafhandeling in C het ontwerp van foutbeheer in veel andere talen geïnformeerd, waardoor een model ontstaat waar de explicietheid van foutcondities kan leiden tot voorspelbaardere en beter te debuggen code. Voor kritieke systemen, waar storingen sierlijk moeten worden beheerd, zorgt C's foutafhandelingsparadigma - gecombineerd met moderne beste praktijken zoals foutafhandelingsbibliotheken en conventies - voor robuustheid en betrouwbaarheid.

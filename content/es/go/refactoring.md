@@ -1,73 +1,127 @@
 ---
 title:                "Refactorización"
-date:                  2024-01-26T01:18:19.328302-07:00
+date:                  2024-02-03T18:07:05.724680-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Refactorización"
-
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/go/refactoring.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## ¿Qué y Por qué?
-Refactorizar es el proceso de reestructurar código de computadora existente sin cambiar su comportamiento externo. Los programadores lo hacen para mejorar atributos no funcionales del software, como la legibilidad y mantenibilidad, lo que puede hacer que el código sea más fácil de entender, reducir la complejidad y ayudar a detectar errores más fácilmente.
+## ¿Qué y Por Qué?
+
+Refactorizar en la programación implica reestructurar el código informático existente—cambiando el factoreo—sin alterar su comportamiento externo. Los programadores llevan a cabo este proceso para mejorar la legibilidad del código, reducir la complejidad y aumentar la mantenibilidad, haciendo finalmente el software más fácil de entender y modificar.
 
 ## Cómo hacerlo:
-Vamos a sumergirnos en un simple ejemplo de refactorización de código en Go. Tomaremos un fragmento que calcula el promedio de un conjunto de números y lo refactorizamos para claridad y reusabilidad.
 
-Código original:
-```Go
+En Go, la refactorización puede variar desde ajustes simples en el código hasta cambios más complejos. Comencemos con un ejemplo básico: simplificar una función inicial de Go para mejorar la legibilidad y eficiencia.
+
+**Antes de la Refactorización:**
+
+```go
 package main
 
 import "fmt"
 
-func main() {
-    numbers := []float64{8, 12, 15, 10, 7, 14}
-    var sum float64
-    for _, num := range numbers {
-        sum += num
+func CalculatePrice(quantity int, price float64) float64 {
+    var total float64
+    if quantity > 0 {
+        total = float64(quantity) * price
+    } else {
+        total = 0
     }
-    average := sum / float64(len(numbers))
-    fmt.Println("Promedio:", average)
+    return total
+}
+
+func main() {
+    fmt.Println(CalculatePrice(10, 5.99))  // Salida: 59.9
 }
 ```
 
-Código refactorizado:
-```Go
+**Después de la Refactorización:**
+
+```go
 package main
 
 import "fmt"
 
-// CalculateAverage toma un conjunto de float64 y devuelve el promedio.
-func CalculateAverage(numbers []float64) float64 {
-    sum := 0.0
-    for _, num := range numbers {
-        sum += num
+func CalculatePrice(quantity int, price float64) float64 {
+    if quantity > 0 {
+        return float64(quantity) * price
     }
-    return sum / float64(len(numbers))
+    return 0
 }
 
 func main() {
-    numbers := []float64{8, 12, 15, 10, 7, 14}
-    average := CalculateAverage(numbers)
-    fmt.Println("Promedio:", average)
+    fmt.Println(CalculatePrice(10, 5.99))  // Salida: 59.9
 }
 ```
 
-En el código refactorizado, hemos extraído la lógica que calcula el promedio a una función separada llamada `CalculateAverage`. Esto hace que la función `main` sea más concisa y la lógica de cálculo del promedio sea reutilizable y testeable.
+En la versión refactorizada, se elimina `else`, lo que simplifica el flujo de la función sin afectar su salida—un ejemplo de una técnica de refactorización básica pero impactante en Go.
 
-## Profundización
-Refactorizar código no es un concepto moderno; precede al uso generalizado de computadoras. La práctica probablemente comenzó en el ámbito de la ingeniería mecánica o incluso antes. En el software, se formalizó más con la llegada de la programación orientada a objetos y la programación extrema (XP) en los años 90, notablemente influenciado por el libro seminal de Martin Fowler "Refactoring: Improving the Design of Existing Code."
+Para un ejemplo más avanzado, considera refactorizar funciones para usar interfaces para mejor reusabilidad y testabilidad:
 
-Existen numerosas técnicas de refactorización, desde simplemente renombrar variables para claridad hasta patrones más complejos como extraer métodos o clases. La clave es hacer pequeños cambios incrementales que no modifiquen la funcionalidad del software pero mejoren la estructura interna.
+**Antes de la Refactorización:**
 
-Al usar Go, la refactorización puede ser directa debido a la simplicidad del lenguaje y su poderosa biblioteca estándar. Sin embargo, sigue siendo importante tener un buen conjunto de pruebas unitarias para asegurar que la refactorización no introduzca errores. Herramientas como `gorename` y `gofmt` ayudan a automatizar algunos de los procesos, y los IDEs a menudo tienen soporte integrado para refactorización.
+```go
+package main
 
-Además de la refactorización manual, hay algunas herramientas de refactorización de código automatizadas disponibles para Go, como las herramientas de refactorización de GoLand y Go Refactor. Aunque estas pueden acelerar el proceso, no son un sustituto para entender el código y hacer cambios considerados.
+import "fmt"
 
-## Ver También
- - [Refactorización en Go: Lo Simple es Bello](https://go.dev/blog/slices) 
- - [Go Efectivo: Refactorización con Interfaces](https://go.dev/doc/effective_go#interfaces)
- - [Página de Refactorización de Martin Fowler](https://refactoring.com/)
- - [Herramientas de Refactorización de GoLand](https://www.jetbrains.com/go/features/refactorings/)
+type Logger struct{}
+
+func (l Logger) Log(message string) {
+    fmt.Println("Log:", message)
+}
+
+func ProcessData(data string, logger Logger) {
+    // Imagina algún procesamiento de datos aquí
+    logger.Log("Datos procesados")
+}
+
+func main() {
+    logger := Logger{}
+    ProcessData("datos de ejemplo", logger)
+}
+```
+
+**Después de la Refactorización:**
+
+```go
+package main
+
+import "fmt"
+
+type Logger interface {
+    Log(message string)
+}
+
+type ConsoleLogger struct{}
+
+func (c ConsoleLogger) Log(message string) {
+    fmt.Println("Log:", message)
+}
+
+func ProcessData(data string, logger Logger) {
+    // El procesamiento de datos permanece sin cambios
+    logger.Log("Datos procesados")
+}
+
+func main() {
+    logger := ConsoleLogger{}
+    ProcessData("datos de ejemplo", logger)
+}
+```
+
+Refactorizar para usar una interfaz (`Logger`) en lugar de un tipo concreto (`ConsoleLogger`) mejora la flexibilidad de la función y desacopla el procesamiento de datos de la implementación específica de registro.
+
+## Estudio en Profundidad
+
+Refactorizar en Go debe equilibrar la simplicidad (una de las filosofías centrales de Go) con la flexibilidad necesaria en proyectos de software grandes. Dado el enfoque minimalista de Go en características—sin genéricos (hasta hace poco) y con un fuerte énfasis en la legibilidad—, el lenguaje guía naturalmente a los desarrolladores hacia estructuras de código más simples y mantenibles. Sin embargo, esto no significa que el código de Go no se beneficie de la refactorización; significa que la refactorización siempre debe priorizar la claridad y la simplicidad.
+
+Históricamente, la falta de ciertas características en Go (por ejemplo, los genéricos antes de Go 1.18) llevó a soluciones creativas pero a veces enrevesadas para la reutilización del código y la flexibilidad, haciendo de la refactorización para la abstracción una práctica común. Con la introducción de los genéricos en Go 1.18, los desarrolladores de Go ahora están refactorizando el código legado para aprovechar esta característica para una mejor seguridad de tipo y reutilización del código, demostrando la naturaleza evolutiva de las prácticas de refactorización en Go.
+
+No obstante, el conjunto de herramientas de Go, incluyendo `gofmt` para el formato de código y `go vet` para identificar construcciones sospechosas, ayuda a mantener bases de código limpias, reduciendo la necesidad de una refactorización extensa. Mientras que la refactorización es una herramienta invaluable en el arsenal de un programador de Go, el uso prudente de las características del lenguaje de Go y las herramientas desde el principio puede ayudar a minimizar la necesidad de refactorizaciones complejas más adelante.

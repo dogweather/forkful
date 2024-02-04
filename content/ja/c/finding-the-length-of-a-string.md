@@ -1,70 +1,46 @@
 ---
 title:                "文字列の長さを求める"
-date:                  2024-01-20T17:47:12.050517-07:00
-model:                 gpt-4-1106-preview
+date:                  2024-02-03T17:56:39.420072-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "文字列の長さを求める"
-
 tag:                  "Strings"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/c/finding-the-length-of-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (何とその理由？)
-文字列の長さを知ることは、単純にその文字列にどれだけの文字が含まれているかを数えることです。プログラマは、データ処理やメモリ管理を適切に行うために、この情報を使用します。
+## 何となぜ？
+C言語で文字列の長さを調べるということは、ヌル終端文字`\0`の前にある文字の数を決定することを意味します。プログラマーはこれを行うことで、バッファオーバーフローのようなエラーに遭遇せずに正しく文字列を操作できるようになります。バッファオーバーフローはセキュリティの脆弱性やプログラムのクラッシュにつながる可能性があります。
 
-## How to: (方法)
-```C
+## 方法：
+C言語では、標準ライブラリ関数`strlen()`が一般的に文字列の長さを見つけるために使われます。こちらが簡単な例です：
+
+```c
 #include <stdio.h>
 #include <string.h>
 
 int main() {
-    char myString[] = "こんにちは";
+    char myString[] = "Hello, World!";
     size_t length = strlen(myString);
-
-    // Note: This length might not reflect the number of characters
-    // in languages such as Japanese due to multi-byte characters.
-    printf("Length: %zu\n", length);
+    
+    printf("Length of '%s' is %zu.\n", myString, length);
+    
     return 0;
 }
 ```
 
-実行結果:
+**サンプル出力：**
 ```
-Length: 15
-```
-
-## Deep Dive (深掘り)
-C言語における`strlen`関数は、C標準ライブラリである`string.h`に定義されています。この関数はヌル終端文字列（文字の末尾に`\0`がある）の長さを計算します。`strlen`は、C89標準で導入され、現代のCのほぼすべての実装に存在しています。
-
-マルチバイト文字を持つ言語、例えば日本語では、`strlen`は意図した結果を返さないこともあります。日本語などの多くの現代文字列はUTF-8でエンコードされ、それぞれの文字が複数のバイトを占める可能性があるからです。
-
-代替方法として`mbstowcs`や`wcslen`などの関数があります。これらはワイド文字列を使って長さを正確に計算します。
-
-```C
-#include <stdio.h>
-#include <wchar.h>
-#include <locale.h>
-
-int main() {
-    setlocale(LC_CTYPE, "");
-    wchar_t myWideString[] = L"こんにちは";
-    size_t wideLength = wcslen(myWideString);
-
-    printf("Wide Length: %zu\n", wideLength);
-    return 0;
-}
+Length of 'Hello, World!' is 13.
 ```
 
-実行結果:
-```
-Wide Length: 5
-```
+この例では、`strlen()`は文字列(`myString`)を入力として取り、ヌル終端を除いたその長さを返します。長さ変数に`size_t`を使用することが推奨されます。これは符号なし整数型であり、システム上で可能な最大オブジェクトのサイズを表現できる能力があるからです。
 
-この例では、先にロケールを設定することで、ワイド文字列の長さを適切に計算しています。また、コンパイラのサポートと正しいロケール設定が必要です。
+## 深掘り：
+`strlen()`関数は、C言語の発祥以来C標準ライブラリの一部であります。内部的には、ヌル終端に達するまで文字列を横断しながらカウンタを増加させることで機能します。しかし、この単純さはパフォーマンス上の考慮事項を伴います：`strlen()`は実行時に文字を数えるため、例えば同じ文字列に対してループ内で繰り返し呼び出すことは非効率的です。
 
-## See Also (関連情報)
-- C標準ライブラリドキュメント: [http://www.cplusplus.com/reference/cstring/strlen/](http://www.cplusplus.com/reference/cstring/strlen/)
-- UTF-8とワイド文字について: [https://www.utf8everywhere.org/](https://www.utf8everywhere.org/)
-- Multi-byte characters in C: [https://en.wikipedia.org/wiki/Multibyte_character_set](https://en.wikipedia.org/wiki/Multibyte_character_set)
+セキュリティの観点からは、`strlen()`や他のCの文字列処理関数はバッファオーバーランを本質的にチェックしません。したがって、脆弱性を避けるために注意深いプログラミングが必要です。長さを含む文字列型やデフォルトで安全なバッファ処理を使用する他言語の現代的な代替手段は、これらのリスクや非効率をいくつか解消します。
+
+その制限にもかかわらず、低レベルのコードを扱う場合やパフォーマンスとメモリ管理が最優先される場合など、`strlen()`とC言語での手動文字列処理を理解することはプログラマーにとって重要です。また、他の言語のより高レベルの文字列抽象化の動作についての貴重な洞察も提供します。

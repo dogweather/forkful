@@ -1,22 +1,44 @@
 ---
 title:                "Registro de Logs"
-date:                  2024-01-26T01:07:27.184379-07:00
-model:                 gpt-4-1106-preview
+date:                  2024-02-03T17:59:16.752202-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Registro de Logs"
-
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/go/logging.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## O quê e Por quê?
-"Logging" é simplesmente manter um registro de eventos, estados e fluxos de dados dentro de um aplicativo. Programadores fazem isso para diagnosticar bugs, monitorar desempenho e acompanhar a saúde operacional do aplicativo—tornando-o praticamente o equivalente de software de uma caixa-preta em aviões.
+## O Que & Por Que?
 
-## Como fazer:
-Em Go, o registro de logs pode ser tratado de várias maneiras, desde o pacote padrão `log` da biblioteca padrão até bibliotecas de terceiros como `logrus` e `zap`. Aqui está um exemplo simples usando o pacote `log` embutido:
+Logging no desenvolvimento de software é o processo de registrar informações sobre a execução de um programa, projetado para rastrear seu comportamento e diagnosticar problemas. Os programadores implementam o logging para monitorar o desempenho do software, depurar erros e garantir a segurança e a conformidade do sistema, tornando-o uma ferramenta indispensável para manutenção e análise de aplicações.
 
-```Go
+## Como Fazer:
+
+Em Go, o logging pode ser implementado usando o pacote da biblioteca padrão `log`. Este pacote fornece capacidades simples de logging, como escrever na saída padrão ou em arquivos. Vamos começar com um exemplo básico de logging para a saída padrão:
+
+```go
+package main
+
+import (
+	"log"
+)
+
+func main() {
+	log.Println("Esta é uma entrada de log básica.")
+}
+```
+
+Saída:
+```
+2009/11/10 23:00:00 Esta é uma entrada de log básica.
+```
+
+O carimbo de data/hora no início da entrada de log é adicionado automaticamente pelo pacote `log`. A seguir, vamos explorar como fazer log para um arquivo em vez da saída padrão:
+
+```go
 package main
 
 import (
@@ -25,46 +47,44 @@ import (
 )
 
 func main() {
-	// Criar um arquivo de log
-	logFile, err := os.OpenFile("app.log", os.O_CREATE|os.O_APPEND|os.O_WRONLY, 0666)
+	file, err := os.OpenFile("app.log", os.O_CREATE|os.O_APPEND|os.O_WRONLY, 0666)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer logFile.Close()
+	defer file.Close()
 
-	// Definir a saída do log para o arquivo
-	log.SetOutput(logFile)
-
-	// Registrar alguns eventos
-	log.Println("Iniciando a aplicação...")
-	// ... lógica da aplicação aqui ...
-	log.Println("Aplicação encerrada com sucesso.")
+	log.SetOutput(file)
+	log.Println("Esta entrada de log vai para um arquivo.")
 }
 ```
 
-Se você executar este código, não verá nenhuma saída no terminal, porque tudo está indo para `app.log`. Aqui está uma olhada no que você encontraria dentro desse arquivo de log:
+Agora, vamos implementar um caso de uso mais avançado: personalizando o formato de logging. Go permite que você crie um logger personalizado com `log.New()`:
 
+```go
+package main
+
+import (
+	"log"
+	"os"
+)
+
+func main() {
+	logger := log.New(os.Stdout, "LOG PERSONALIZADO: ", log.Ldate|log.Ltime|log.Lshortfile)
+	logger.Println("Esta é uma mensagem de log personalizada.")
+}
 ```
-2023/01/02 15:04:05 Iniciando a aplicação...
-2023/01/02 15:05:01 Aplicação encerrada com sucesso.
+
+Saída:
+```
+LOG PERSONALIZADO: 2009/11/10 23:00:00 main.go:11: Esta é uma mensagem de log personalizada.
 ```
 
-## Aprofundando
-O registro de logs em programação remonta aos primeiros computadores, onde os engenheiros literalmente encontravam bugs (mariposas, para ser exato) esmagadas no hardware, e eles registravam isso! Avançando para hoje, e o registro de logs tornou-se uma forma sofisticada de entender o que está acontecendo dentro de sistemas complexos.
+Este exemplo prefixa cada mensagem de log com "LOG PERSONALIZADO: " e inclui a data, a hora e a localização do arquivo fonte.
 
-Enquanto o pacote `log` em Go é bastante simplista, ele pode ser suficiente para aplicações básicas. No entanto, no contexto de sistemas distribuídos modernos, ou quando você precisa de um controle mais matizado sobre a sua saída de log (como diferentes níveis de severidade), você pode querer explorar soluções mais robustas.
+## Aprofundamento
 
-Bibliotecas de terceiros como `logrus` e `zap` oferecem registro de logs estruturado, o que significa que você pode registrar tipos de dados complexos como JSON, tornando mais fácil interpretar logs, especialmente em conjunto com sistemas de gerenciamento de logs como ELK Stack ou Splunk.
+O pacote `log` da biblioteca padrão do Go é direto e suficiente para muitas aplicações, mas carece de algumas características mais sofisticadas encontradas em bibliotecas de logging de terceiros, como logging estruturado, rotação de logs e logging baseado em níveis. Pacotes como `zap` e `logrus` oferecem essas características avançadas e são bem-regardados na comunidade Go por seu desempenho e flexibilidade.
 
-Ao considerar a implementação de uma estratégia de registro de logs, também é essencial pensar sobre as implicações de desempenho. Bibliotecas de registro de logs de alto desempenho são otimizadas para reduzir o impacto na taxa de transferência e latência da aplicação. Por exemplo, `zap` se gaba de seu design rápido e com baixa alocação, o que pode ser crucial para sistemas em tempo real.
+Por exemplo, o logging estruturado permite que você registre dados em um formato estruturado (como JSON), o que é especialmente útil para aplicações modernas baseadas na nuvem, onde os logs podem ser analisados por várias ferramentas ou serviços. `zap`, em particular, é conhecido por seu alto desempenho e baixa sobrecarga de alocação, tornando-o adequado para aplicações onde velocidade e eficiência são críticas.
 
-Além de várias bibliotecas, formatos e padrões de registro de logs também valem a pena ser notados. Formatos de registro de logs estruturados como JSON podem ser imensamente poderosos quando usados em conjunto com sistemas de processamento de logs. Por outro lado, logs em texto simples são legíveis por humanos, mas mais desafiadores para serem analisados programaticamente.
-
-## Veja Também
-Para se aprofundar nas capacidades de registro de logs em Go, esses recursos podem ser úteis:
-
-- O blog do Go sobre registro de logs: https://blog.golang.org/logging
-- `logrus`, um registrador estruturado para Go: https://github.com/sirupsen/logrus
-- `zap`, um registrador estruturado e rápido: https://github.com/uber-go/zap
-- ELK Stack (Elasticsearch, Logstash, Kibana) para análise de logs: https://www.elastic.co/what-is/elk-stack
-- Uma comparação de bibliotecas de registro de logs em Go: https://www.loggly.com/blog/benchmarking-5-popular-golang-logging-libraries/
+Historicamente, o logging em Go evoluiu significativamente desde a criação da linguagem. As primeiras versões do Go forneciam as capacidades básicas de logging que vemos no pacote `log`. No entanto, à medida que a linguagem cresceu em popularidade e a complexidade das aplicações escritas em Go aumentou, a comunidade começou a desenvolver bibliotecas de logging mais sofisticadas para atender às suas necessidades. Hoje, enquanto o pacote `log` padrão permanece uma opção viável para aplicações simples, muitos desenvolvedores recorrem a essas soluções de terceiros para requisitos de logging mais complexos.

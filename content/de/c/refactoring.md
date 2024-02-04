@@ -1,81 +1,69 @@
 ---
-title:                "Refactoring"
-date:                  2024-01-26T01:16:40.591328-07:00
+title:                "Refaktorisierung"
+date:                  2024-02-03T18:06:45.745526-07:00
 model:                 gpt-4-0125-preview
-simple_title:         "Refactoring"
-
+simple_title:         "Refaktorisierung"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/c/refactoring.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Refactoring ist der Prozess der Umstrukturierung vorhandenen Computer-Codes, ohne dessen externes Verhalten zu ändern. Programmierer betreiben Refactoring, um die Lesbarkeit zu verbessern, die Komplexität zu reduzieren oder den Code wartbarer und skalierbarer zu machen, was langfristig eine Menge Zeit und Kopfschmerzen sparen kann.
+
+Refactoring in der Programmierung beinhaltet die Umstrukturierung bestehenden Codes, ohne dessen externes Verhalten zu ändern, mit dem Ziel, nicht-funktionale Attribute wie Lesbarkeit zu verbessern, Komplexität zu reduzieren und die Wartbarkeit zu erhöhen. Programmierer führen ein Refactoring durch, um die Codebasis sauber zu halten, technische Schulden zu minimieren und zukünftige Änderungen einfacher und sicherer zu implementieren.
 
 ## Wie:
-Lassen Sie uns etwas Code aufpolieren. Nehmen wir an, Sie haben eine Funktion, die den Durchschnitt von Ganzzahlen in einem Array berechnet. Auf den ersten Blick ist es ein ziemliches Durcheinander.
 
-**Vor dem Refactoring:**
-```C
+Refactoring kann eine Reihe von Taktiken beinhalten, von der Umbenennung von Variablen zur Klarheit bis hin zur Änderung der Struktur des Codes für eine bessere Modularisierung. Hier ist ein einfaches Beispiel, das zeigt, wie man ein Stück C-Code für bessere Klarheit und Effizienz refaktorisieren kann.
+
+Vor dem Refactoring:
+```c
 #include <stdio.h>
 
-double calculateStuff(int numbers[], int size) {
-    int sum = 0;
-    double average;
-    for(int i = 0; i < size; sum += numbers[i++]); // Summierung in der For-Schleifenbedingung, autsch!
-    average = (double)sum / size;
-    return average;
-}
-
 int main() {
-    int array[] = {23, 42, 57, 16, 5, 102};
-    int length = sizeof(array) / sizeof(array[0]);
-    printf("Durchschnitt: %f\n", calculateStuff(array, length));
-
+    int x = 10, y = 20;
+    printf("Vor dem Tauschen: x = %d, y = %d\n", x, y);
+    x = x + y; // x ist jetzt 30
+    y = x - y; // y wird 10
+    x = x - y; // x wird 20
+    printf("Nach dem Tauschen: x = %d, y = %d\n", x, y);
     return 0;
 }
 ```
-
-**Nach dem Refactoring:**
-```C
+Ausgabe:
+```
+Vor dem Tauschen: x = 10, y = 20
+Nach dem Tauschen: x = 20, y = 10
+```
+Nach dem Refactoring:
+```c
 #include <stdio.h>
 
-int calculateSum(const int numbers[], int size) {
-    int sum = 0;
-    for (int i = 0; i < size; ++i) {
-        sum += numbers[i];
-    }
-    return sum;
-}
-
-double calculateAverage(const int numbers[], int size) {
-    int sum = calculateSum(numbers, size);
-    return (double)sum / size;
+void swap(int *a, int *b) {
+    *a = *a + *b;
+    *b = *a - *b;
+    *a = *a - *b;
 }
 
 int main() {
-    int array[] = {23, 42, 57, 16, 5, 102};
-    int length = sizeof(array) / sizeof(array[0]);
-    printf("Durchschnitt: %f\n", calculateAverage(array, length));
+    int x = 10, y = 20;
+    printf("Vor dem Tauschen: x = %d, y = %d\n", x, y);
+    swap(&x, &y);
+    printf("Nach dem Tauschen: x = %d, y = %d\n", x, y);
     return 0;
 }
 ```
-Selbst mit diesem einfachen Beispiel sehen Sie, wie die Aufteilung der Funktion den Code sauberer und wartbarer macht. Jede Funktion hat jetzt eine einzige Verantwortung – ein Schlüsselprinzip im sauberen Programmieren.
+Die Ausgabe bleibt unverändert, aber die Funktionalität zum Tauschen von Werten wurde in eine separate Funktion (`swap`) verschoben, was die Lesbarkeit und Wiederverwendbarkeit verbessert.
 
-## Vertiefung
-Der Begriff "Refactoring" wurde Ende der 90er Jahre, insbesondere mit der Veröffentlichung von Martin Fowlers Buch "Refactoring: Improving the Design of Existing Code", populär. Refactoring impliziert nicht die Behebung von Bugs oder die Hinzufügung neuer Funktionen, sondern es geht um die Verbesserung der Struktur des Codes.
+## Tiefergehend
 
-Es gibt viele ausgefeilte Refactoring-Tools und IDEs (Integrierte Entwicklungsumgebungen), die den Prozess automatisieren, wie CLion für C und C++, aber es bleibt entscheidend, zu verstehen, was unter der Haube vor sich geht.
+Die Praxis des Refactoring von Codes existiert so lange wie die Softwareentwicklung selbst und hat sich parallel zu Programmierparadigmen und -sprachen entwickelt. In C, einer Sprache, die sowohl mächtig als auch voller Möglichkeiten für Ineffizienz und Fehler aufgrund ihrer Low-Level-Natur ist, ist Refactoring besonders wichtig. Es kann den Unterschied ausmachen zwischen einer wartbaren Codebasis und einem verworrenen Netz von Ineffizienzen.
 
-Alternativen zum Refactoring können einschließen, Code von Grund auf neu zu schreiben (riskant und oft unnötig) oder mit der technischen Schuld zu leben (was langfristig kostspieliger sein kann). Umsetzungsdetails variieren je nach Projekt, aber gängige Refactorings umfassen das Umbenennen von Variablen zur Klarheit, das Aufbrechen großer Funktionen in kleinere und das Ersetzen von Magischen Zahlen durch benannte Konstanten.
+Eine Überlegung, die speziell für C gilt, ist das Gleichgewicht zwischen Mikro-Optimierungen und Lesbarkeit/Wartbarkeit. Obwohl es verlockend ist, C-Code für jedes bisschen Leistung manuell zu optimieren, können solche Optimierungen den Code brüchiger und schwerer lesbar machen. Daher ist es in der Regel besser, sauberen, lesbaren Code zu priorisieren und sich auf den Optimierer des Compilers zu verlassen, um Leistungsverbesserungen zu ermöglichen, wo es möglich ist.
 
-Auch Muster wie DRY (Don't Repeat Yourself) und SOLID-Prinzipien können Ihren Refactoring-Weg leiten und für eine Codebasis sorgen, die einfacher zu testen, zu verstehen und an der gemeinsam gearbeitet werden kann.
+Darüber hinaus haben Werkzeuge und Techniken für das Refactoring in C, wie statische Code-Analysatoren (z.B. Clang Static Analyzer, cppcheck) und Prinzipien der modularen Programmierung, erheblich Fortschritte gemacht. Aufgrund des manuellen Speichermanagements und der Zeigerarithmetik von C kann Refactoring jedoch Fehler einführen, wenn es nicht sorgfältig durchgeführt wird. Techniken wie Unit Testing und Code-Review sind hier von unschätzbarem Wert.
 
-## Siehe auch
-Um tiefer in das Meer des Refactorings einzutauchen, werfen Sie einen Blick auf:
-
-- Martin Fowlers Homepage: https://martinfowler.com/ mit einem Schatz an Artikeln und Ressourcen zum Thema Refactoring und Software-Design.
-- Refactoring.com: https://refactoring.com/ bietet Beispiele und Kataloge von Refactoring-Techniken.
-- Das Buch "Refactoring": Als Bibel des Refactorings betrachtet, bietet es eine komplette Sichtweise auf die Methodologie.
-- "Clean Code: A Handbook of Agile Software Craftsmanship" von Robert C. Martin, das das Schreiben von Code, der leicht zu verstehen und zu warten ist, diskutiert.
+Während neuere Sprachen mehr eingebaute Unterstützung für sicheres Refactoring mit Funktionen wie automatischer Speicherverwaltung und reichen Typsystemen bieten, bleibt C in Szenarien unübertroffen, die Leistung nahe der Maschine und feinkörnige Kontrolle erfordern. In solchen Fällen geht es beim Refactoring weniger darum, Sprachfunktionen zu nutzen, und mehr um disziplinierte, durchdachte Umstrukturierung von Code.

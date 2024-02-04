@@ -1,51 +1,91 @@
 ---
 title:                "Teilstrings extrahieren"
-date:                  2024-01-20T17:45:34.068188-07:00
-model:                 gpt-4-1106-preview
+date:                  2024-02-03T17:56:37.060729-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Teilstrings extrahieren"
-
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/go/extracting-substrings.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Substrings extrahieren bedeutet, spezifische Teile aus einem längeren String auszuwählen. Programmierer tun das, um Daten zu analysieren, zu manipulieren oder spezifische Informationen zu filtern.
 
-## How to:
-Hier sind ein paar Beispiele, um Substrings in Go zu extrahieren:
+Das Extrahieren von Teilzeichenketten beinhaltet das Abrufen spezifischer Teile einer Zeichenkette basierend auf ihren Positionen. Programmierer führen diese Operation häufig durch, um Textdaten effizient zu verarbeiten oder zu manipulieren, wie zum Beispiel das Parsen von Eingaben, das Validieren von Formaten oder das Vorbereiten von Ausgaben.
+
+## Wie:
+
+In Go ist der `string` Typ ein schreibgeschützter Slice von Bytes. Um Teilzeichenketten zu extrahieren, verwendet man hauptsächlich die `slice` Syntax, zusammen mit der integrierten `len()` Funktion für die Längenprüfung und dem `strings` Paket für komplexere Operationen. So können Sie dies erreichen:
+
+### Grundlegendes Slicing
 
 ```go
 package main
 
 import (
-	"fmt"
+    "fmt"
 )
 
 func main() {
-	text := "Das ist ein Beispieltext"
-	
-	// Extrahieren mit Slicing
-	substr1 := text[4:8]
-	fmt.Println(substr1) // Ausgabe: "ist "
-	
-	// Extrahieren vom Anfang bis zu einem Punkt
-	substr2 := text[:12]
-	fmt.Println(substr2) // Ausgabe: "Das ist ein "
-	
-	// Extrahieren vom Punkt bis zum Ende
-	substr3 := text[17:]
-	fmt.Println(substr3) // Ausgabe: "Beispieltext"
+    str := "Hello, World!"
+    // Extrahiert "World"
+    subStr := str[7:12]
+    
+    fmt.Println(subStr) // Ausgabe: World
 }
 ```
 
-## Deep Dive
-Das Konzept, Teile eines Strings zu verwenden, gibt es seit den frühen Tagen der Programmierung. In Go wird das Slicing-Konzept vor allem durch die Einfachheit und Effizienz beim Speicherzugriff praktisch umgesetzt. Im Vergleich zu anderen Sprachen, wo manchmal Funktionen oder Methoden verwendet werden, zeichnet sich Go durch die einfache Syntax des Slicing aus. Wichtig zu wissen ist, dass das Slicing in Go in der Laufzeit O(1) operiert, weil es nur die Referenzpunkte des Originalstrings anpasst und keine neue Kopie erstellt.
+### Verwendung des `strings` Pakets
 
-## See Also
-Weitere Details zur String-Verarbeitung in Go finden Sie hier:
+Für fortgeschrittenere Teilzeichenketten-Extraktionen, wie das Extrahieren von Zeichenketten nach oder vor einer spezifischen Teilzeichenkette, können Sie das `strings` Paket verwenden.
 
-- Offizielle Go-Dokumentation zu Strings: https://pkg.go.dev/strings
-- Go Blog über Strings, Bytes, Runes und Characters: https://blog.golang.org/strings
-- Tutorial zu Go Slices: https://blog.golang.org/slices-intro
+```go
+package main
+
+import (
+    "fmt"
+    "strings"
+)
+
+func main() {
+    str := "name=John Doe"
+    // Extrahiert Teilzeichenkette nach "="
+    subStr := strings.SplitN(str, "=", 2)[1]
+    
+    fmt.Println(subStr) // Ausgabe: John Doe
+}
+```
+
+Es ist wichtig zu beachten, dass Go-Zeichenketten UTF-8 kodiert sind und ein direkter Byte-Slice nicht immer in gültigen Zeichenketten resultiert, wenn sie Mehrbyte-Zeichen enthalten. Für die Unterstützung von Unicode ziehen Sie die Verwendung von `range` oder das `utf8` Paket in Betracht.
+
+### Umgang mit Unicode-Zeichen
+
+```go
+package main
+
+import (
+    "fmt"
+    "unicode/utf8"
+)
+
+func main() {
+    str := "Hello, 世界"
+    // Findet Teilzeichenkette unter Berücksichtigung von Unicode-Zeichen
+    runeStr := []rune(str)
+    subStr := string(runeStr[7:])
+    
+    fmt.Println(subStr) // Ausgabe: 世界
+}
+```
+
+## Tiefere Einblicke
+
+Das Extrahieren von Teilzeichenketten in Go ist dank seiner Slice-Syntax und umfangreichen Standardbibliothek unkompliziert. Historisch gesehen boten frühere Programmiersprachen direktere Funktionen oder Methoden für solche Textmanipulationen. Gleichwohl betont Golang Sicherheit und Effizienz, insbesondere mit seinen unveränderlichen Zeichenketten und der expliziten Handhabung von Unicode-Zeichen durch Runen.
+
+Während grundlegendes Slicing von der Leistungseffizienz profitiert, erbt es die Komplexitäten der direkten Handhabung von UTF-8 Zeichen. Die Einführung des `rune` Typs erlaubt es Go-Programmen, sicher mit Unicode-Text umzugehen, was es zu einer leistungsstarken Alternative für internationale Anwendungen macht.
+
+Darüber hinaus könnten Programmierer aus anderen Sprachen integrierte High-Level-String-Manipulationsfunktionen vermissen. Doch bieten die `strings` und `bytes` Pakete in Golangs Standardbibliothek einen reichen Satz an Funktionen, die, während sie etwas mehr Boilerplate benötigen, mächtige Optionen für die Stringverarbeitung bieten, einschließlich des Extrahierens von Teilzeichenketten.
+
+Im Wesentlichen spiegeln die Designentscheidungen von Go rund um die Zeichenkettenmanipulation seine Ziele für Einfachheit, Leistung und Sicherheit im Umgang mit modernen, internationalisierten Textdaten wider. Während es eine leichte Anpassung erfordern könnte, bietet Go wirksame und effiziente Werkzeuge für die Handhabung von Teilzeichenkettenextraktion und mehr.

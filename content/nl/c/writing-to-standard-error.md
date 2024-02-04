@@ -1,72 +1,54 @@
 ---
 title:                "Schrijven naar standaardfout"
-date:                  2024-01-28T22:13:21.788523-07:00
+date:                  2024-02-03T18:15:01.143013-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Schrijven naar standaardfout"
-
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/c/writing-to-standard-error.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Wat & Waarom?
 
-Schrijven naar standaardfout (stderr) is hoe je foutmeldingen en diagnostiek uitvoert in C. Het is gescheiden van standaarduitvoer (stdout) om je reguliere en foutuitvoeren anders te behandelen, zoals het loggen van fouten of het stroomlijnen van debugging.
+Schrijven naar de standaardfout in C houdt in dat foutmeldingen en diagnostische informatie naar een aparte stroom worden geleid dan de hoofdprogramma-uitvoer. Programmeurs doen dit om foutmeldingen te scheiden van de standaarduitvoer, waardoor beide makkelijker apart te lezen en te verwerken zijn, vooral bij het debuggen of loggen van de uitvoering van programma's.
 
 ## Hoe te:
 
-Hier is hoe je naar stderr kunt schrijven, met behulp van standaardbibliotheekfuncties.
+In C wordt de `stderr`-stroom gebruikt om foutberichten te schrijven. In tegenstelling tot schrijven naar de standaarduitvoer met `printf`, kan het schrijven naar `stderr` gedaan worden met behulp van `fprintf` of `fputs`. Hier is hoe je dat kunt doen:
 
-```C
+```c
 #include <stdio.h>
 
 int main() {
-    fprintf(stderr, "Er is een fout opgetreden!\n");
+    fprintf(stderr, "Dit is een foutmelding.\n");
+
+    fputs("Dit is nog een foutmelding.\n", stderr);
+    
     return 0;
 }
 ```
 
-Voorbeelduitvoer:
-
+Voorbeelduitvoer (naar stderr):
 ```
-Er is een fout opgetreden!
-```
-
-Gebruik `perror` wanneer je een bericht wilt toevoegen over de laatste systeemfout:
-
-```C
-#include <stdio.h>
-#include <errno.h>
-
-int main() {
-    fopen("nonexistentfile.txt", "r");
-
-    if (errno) {
-        perror("Bestand openen mislukt");
-    }
-
-    return 0;
-}
+Dit is een foutmelding.
+Dit is nog een foutmelding.
 ```
 
-Voorbeelduitvoer:
+Het is belangrijk om op te merken dat hoewel de uitvoer vergelijkbaar lijkt met `stdout` in de console, het onderscheid duidelijk wordt wanneer omleiding wordt gebruikt in de terminal:
 
+```sh
+$ ./uw_programma > output.txt
 ```
-Bestand openen mislukt: Bestand of map bestaat niet
-```
 
-## Diepgaand
+Dit commando leidt alleen de standaarduitvoer om naar `output.txt`, terwijl de foutmeldingen nog steeds op het scherm verschijnen.
 
-Historisch gezien helpt het scheiden van stderr van stdout bij het uitvoeren van programma's vanuit een shell. Standaarduitvoer kan worden omgeleid naar een bestand of een ander programma, terwijl standaardfout zichtbaar blijft in de terminal. Dit onderscheid is cruciaal in Unix-gebaseerde systemen.
+## Diepere Duik
 
-Alternatieven voor `fprintf` of `perror` zijn onder meer direct schrijven naar de bestandsdescriptor, zoals `write(2, "Fout\n", 6);`, hoewel dit minder gebruikelijk is omdat het op een lager niveau is.
+Het onderscheid tussen `stdout` en `stderr` in op Unix-gebaseerde systemen gaat terug tot de vroege dagen van C en Unix. Deze scheiding maakt robuustere foutafhandeling en loggen mogelijk, aangezien het programmeurs in staat stelt foutmeldingen onafhankelijk van de standaardprogrammauitvoer om te leiden. Terwijl `stderr` standaard ongebufferd is om onmiddellijke uitvoer van foutmeldingen te garanderen, wat helpt bij het debuggen van crashes en andere kritieke problemen, is `stdout` doorgaans gebufferd, wat betekent dat de uitvoer kan worden vertraagd totdat de buffer wordt geleegd (bijvoorbeeld bij voltooiing van het programma of handmatig legen).
 
-Wat implementatie betreft, is stderr een `FILE` pointer die gebufferd is. Maar, in tegenstelling tot stdout, is het meestal ingesteld op ongebufferde modus zodat foutmeldingen meer onmiddellijk zijn, wat cruciaal is voor het begrijpen van programmamissers terwijl ze gebeuren.
+Bij moderne toepassingen is het schrijven naar `stderr` nog steeds relevant, vooral voor opdrachtregelhulpmiddelen en servertoepassingen waarbij het onderscheid tussen reguliere logberichten en fouten cruciaal is. Echter, voor complexere foutafhandeling, vooral in GUI-toepassingen of waar geavanceerdere logmechanismen nodig zijn, kunnen programmeurs gebruik maken van gespecialiseerde logbibliotheken die meer controle bieden over berichtopmaak, bestemmingen (bijvoorbeeld bestanden, netwerk) en ernstniveaus (info, waarschuwing, fout, enz.).
 
-## Zie Ook
-
-- [GNU C Bibliotheek: Standaard Streams](https://www.gnu.org/software/libc/manual/html_node/Standard-Streams.html)
-- [Write Syscall Man Pagina](https://man7.org/linux/man-pages/man2/write.2.html)
+Hoewel `stderr` een fundamenteel mechanisme biedt voor foutrapportage in C, betekent de evolutie van programmeerpraktijken en de beschikbaarheid van geavanceerde logframeworks vaak dat het slechts het startpunt is voor moderne foutafhandelingsstrategieën.

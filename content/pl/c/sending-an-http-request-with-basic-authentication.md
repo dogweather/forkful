@@ -1,52 +1,69 @@
 ---
-title:                "Wysyłanie zapytania http z podstawową autoryzacją"
-date:                  2024-01-20T18:00:55.093083-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Wysyłanie zapytania http z podstawową autoryzacją"
-
+title:                "Wysyłanie żądania HTTP z podstawowym uwierzytelnianiem"
+date:                  2024-02-03T18:09:53.920973-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Wysyłanie żądania HTTP z podstawowym uwierzytelnianiem"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/c/sending-an-http-request-with-basic-authentication.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Co i dlaczego?
-Wysyłanie żądania HTTP z podstawową autoryzacją to proces, w którym klient przesyła swoje dane uwierzytelniające do serwera, aby uzyskać dostęp do zabezpieczonych zasobów. Programiści używają tego, gdy potrzebują bezpiecznego sposobu na potwierdzenie tożsamości użytkownika przez aplikację sieciową.
+Wysyłanie żądania HTTP z podstawowym uwierzytelnieniem w języku C polega na przygotowaniu żądania HTTP, które zawiera nagłówek Authorization z zakodowanymi w Base64 poświadczeniami użytkownika. Jest to powszechna metoda dodawania prostej warstwy uwierzytelniania do żądań HTTP, pozwalająca na programowe dostępowanie do zasobów ograniczonych.
 
 ## Jak to zrobić:
-```C
+Aby wysłać żądanie HTTP z podstawowym uwierzytelnieniem w języku C, będziemy potrzebować użyć biblioteki libcurl, popularnej, wszechstronnej i łatwej w użyciu biblioteki do transferu URL po stronie klienta. Obsługuje ona różne protokoły, w tym HTTP i HTTPS, co upraszcza nasze zadanie. Upewnij się, że libcurl jest zainstalowana w twoim systemie przed kontynuowaniem. Oto podstawowy przykład demonstrujący, jak wysłać żądanie GET z podstawowym uwierzytelnieniem:
+
+```c
 #include <stdio.h>
 #include <curl/curl.h>
 
-int main() {
-    CURL *curl = curl_easy_init();
+int main(void) {
+    CURL *curl;
+    CURLcode res;
+
+    curl_global_init(CURL_GLOBAL_DEFAULT);
+
+    curl = curl_easy_init();
     if(curl) {
-        curl_easy_setopt(curl, CURLOPT_URL, "http://example.com");
-        curl_easy_setopt(curl, CURLOPT_HTTPAUTH, (long)CURLAUTH_BASIC);
-        curl_easy_setopt(curl, CURLOPT_USERNAME, "user");
-        curl_easy_setopt(curl, CURLOPT_PASSWORD, "password");
+        // Adres URL, pod który wysyłane jest żądanie
+        curl_easy_setopt(curl, CURLOPT_URL, "http://example.com/resource");
+        // Włączenie użycia podstawowego uwierzytelniania
+        curl_easy_setopt(curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
+        // Podanie nazwy użytkownika i hasła dla podstawowego uwierzytelniania
+        curl_easy_setopt(curl, CURLOPT_USERPWD, "username:password");
 
-        CURLcode res = curl_easy_perform(curl);
+        // Wykonanie żądania GET
+        res = curl_easy_perform(curl);
+
+        // Sprawdzanie błędów
         if(res != CURLE_OK)
-            fprintf(stderr, "curl_easy_perform() failed: %s\n", curl_easy_strerror(res));
+            fprintf(stderr, "curl_easy_perform() failed: %s\n",
+                    curl_easy_strerror(res));
 
+        // Zawsze sprzątaj
         curl_easy_cleanup(curl);
     }
+    
+    curl_global_cleanup();
 
     return 0;
 }
 ```
-Powyższy przykład pokazuje, jak wysłać proste żądanie typu GET z użyciem autoryzacji podstawowej z pomocą biblioteki libcurl w C.
+W powyższym przykładzie zamień `"http://example.com/resource"`, `"username"` i `"password"` na swój rzeczywisty adres URL, nazwę użytkownika i hasło.
 
-## W głębi tematu
-Początkowo HTTP Basic Authentication było podstawowym sposobem uwierzytelniania w sieci. Mimo że obecnie istnieją bardziej zaawansowane metody, takie jak OAuth czy JWT, metoda podstawowa wciąż znajduje zastosowanie, np. w internalnych API czy prostych aplikacjach webowych.
+Kod ten inicjalizuje obiekt `CURL`, ustawia adres URL, włącza uwierzytelnianie podstawowe HTTP i określa poświadczenia. Następnie wysyła żądanie i sprząta po sobie. Jeśli zakończy się sukcesem, żądany zasób zostaje pobrany; w przypadku błędu, jest on wyświetlany na stderr.
 
-Alternatywy jak tokeny Bearer wymagają pewnej formy tokena, który jest zdobywany zewnętrznie, co czyni proces bardziej złożonym.
+Przykładowe wyjście (przy założeniu, że uwierzytelnianie i dostęp do zasobu są udane) może nie być bezpośrednio pokazane przez program, ponieważ przykład głównie demonstruje wysyłanie żądania. Aby wydrukować odpowiedź, należałoby rozszerzyć program o obsługę danych odpowiedzi HTTP.
 
-Podstawowa uwierzytalność http to base64 zakodowana wartość 'użytkownik:hasło', którą należy wysłać w nagłówku żądania. Pamiętaj, że base64 nie jest metodą szyfrowania i łatwo można odkodować te wartości. Dlatego zawsze używaj HTTPS, by chronić dane uwierzytelniające w transmisji.
+## Glebsze zanurzenie:
+Wysyłanie żądań HTTP z podstawowym uwierzytelnieniem w języku C, jak pokazano, wykorzystuje bibliotekę libcurl ze względu na jej niezawodność i prostotę. Historycznie, tworzenie żądań HTTP czysto w C bez takich bibliotek było uciążliwe i narażone na błędy, wymagało programowania na niższym poziomie z gniazdami i ręcznym konstruowaniem nagłówków HTTP.
 
-## Zobacz również:
-- Dokumentacja libcurl: https://curl.se/libcurl/
-- Specyfikacja HTTP Basic Authentication: https://tools.ietf.org/html/rfc7617
-- Przewodnik po uwierzytelnianiu w http: https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication
-- Wprowadzenie do bezpiecznych tokenów i JWT: https://jwt.io/introduction/
+Samo podstawowe uwierzytelnianie to metoda z wczesnych dni internetu. Wysyła poświadczenia w łatwo dekodowalnym formacie (Base64), co jest niebezpieczne na niezabezpieczonych kanałach. Nowoczesne aplikacje często preferują bezpieczniejsze metody uwierzytelniania, takie jak OAuth 2.0 lub JWT (JSON Web Tokens), szczególnie dla wrażliwych danych.
+
+Jednakże, dla wewnętrznych, mniej krytycznych systemów, lub szybkich i brudnych skryptów, gdzie wygoda przeważa nad obawami dotyczącymi bezpieczeństwa, podstawowe uwierzytelnienie nadal jest używane. Ponadto, połączone z szyfrowanymi połączeniami (HTTPS), jego prostota staje się zaletą dla szybkiego rozwoju, testowania lub prac automatyzacyjnych, gdzie wyższy poziom mechanizmów bezpieczeństwa nie jest tak konieczny.
+
+W kontekstach, gdzie nowoczesne bezpieczeństwo jest niezbędne, należy priorytetowo traktować alternatywy, takie jak uwierzytelnianie oparte na tokenach. Niemniej jednak, zrozumienie, jak zaimplementować podstawowe uwierzytelnianie w C za pomocą libcurl, dostarcza podstawową umiejętność, która może być dostosowana do różnych metod uwierzytelniania i protokołów, odzwierciedlając subtelne kompromisy pomiędzy bezpieczeństwem, wygodą i wymaganiami aplikacji w rozwoju webowym.

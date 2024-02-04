@@ -1,53 +1,58 @@
 ---
-title:                "Konvertera en sträng till gemener"
-date:                  2024-01-20T17:37:51.425174-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Konvertera en sträng till gemener"
-
+title:                "Omvandla en sträng till gemener"
+date:                  2024-02-03T17:54:37.956688-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Omvandla en sträng till gemener"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/c/converting-a-string-to-lower-case.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Vad & Varför?)
-Att konvertera en sträng till gemener innebär att omvandla alla stora bokstäver i strängen till små. Programmerare gör detta för datasäkerhet, för att standardisera data för lagring eller sökfunktioner, och för användargränssnitt som inte är känsliga för skiftläge.
+## Vad & Varför?
 
-## How to: (Hur gör man:)
-I C kan du använda standardbiblioteksfunktionen `tolower()` från `<ctype.h>` för att konvertera enskilda tecken till gemener. För att konvertera en hel sträng skapar du en loop som går igenom strängen tecken för tecken.
+Att konvertera en sträng till gemener i C innebär att omvandla alla versaler i en given sträng till motsvarande gemener. Programmerare utför ofta denna operation för att standardisera textinmatning för jämförelse, sökoperationer eller helt enkelt för estetisk konsekvens i utmatningen.
 
+## Hur gör man:
+
+C har inte en inbyggd funktion för direkt konvertering av strängar till gemener, till skillnad från vissa högnivåspråk. Processen kan dock enkelt implementeras med hjälp av C-standardbibliotekets funktioner. Nedan följer en steg-för-steg-guide och ett exempel som illustrerar hur man konverterar en sträng till gemener.
 ```c
 #include <stdio.h>
 #include <ctype.h>
 
 void toLowerCase(char *str) {
-    while(*str) {
-        *str = tolower((unsigned char) *str);
+    while (*str) {
+        *str = tolower(*str);
         str++;
     }
 }
 
 int main() {
-    char myString[] = "Hej Sverige!";
-    toLowerCase(myString);
-    printf("Gemener: %s\n", myString);
+    char text[] = "Hello, World!";
+    printf("Original: %s\n", text);
+
+    toLowerCase(text);
+    printf("Lowercase: %s\n", text);
+
     return 0;
 }
 ```
 
-Sample output:
+**Exempelutmatning:**
+
 ```
-Gemener: hej sverige!
+Original: Hello, World!
+Lowercase: hello, world!
 ```
 
-## Deep Dive (Djupdykning)
-För länge sedan var det ingen självklarhet att datorer skulle hantera stora och små bokstäver på samma sätt som idag. ASCII-standarden, som definierade en gemensam kodning för tecken, införde först konceptet med att varje bokstav har en stor och en liten form. Tidigt var varierande och inkonsekvent.
+I detta exempel itererar `toLowerCase`-funktionen igenom varje tecken i indatasträngen och konverterar det till motsvarande gemener med hjälp av `tolower`-funktionen från `ctype.h`. Modifieringen görs på plats, vilket ändrar den ursprungliga strängen.
 
-Det finns alternativ till `tolower()`, som att manuellt subtrahera värdet som skiljer stora och små bokstäver i ASCII (Vanligtvis 32 för engelska bokstäver). En annan är att använda funktioner som `strlwr()`, men den är inte standard och finns inte i alla C-implementeringar.
+## Fördjupning
 
-Konverteringsfunktionen `tolower()` hanterar oftast bara standard ASCII-tecken. För att hantera internationella tecken och teckensnitt som går utanför standard ASCII behövs utökad funktionalitet som tar hänsyn till lokala inställningar eller Unicode-tecken.
+Funktionen `tolower`, som används i exemplet ovan, är en del av C-standardbiblioteket, specifikt inom headerfilen `ctype.h`. Den fungerar baserat på den aktuella lokalanpassningen, men för den standard "C" lokalanpassningen, hanterar den ASCII-teckenuppsättningen där 'A' till 'Z' konverteras till 'a' till 'z'.
 
-## See Also (Se Även)
-- C Standard Library Reference: https://en.cppreference.com/w/c
-- ASCII Table and Description: https://www.asciitable.com/
-- Unicode Consortium: https://home.unicode.org/
+Historiskt sett var hanteringen av teckenkodning och gemener/kapitälerkonvertering i C tätt kopplad till ASCII-teckenuppsättningen, vilket begränsade dess användbarhet i internationella eller lokaliserade applikationer där tecken utanför ASCII-uppsättningen är vanliga. Moderna programmeringsspråk kan erbjuda inbyggda strängmetoder för att utföra gemener/kapitälerkonvertering med tanke på lokalanpassning och Unicode-tecken, vilket C saknar inbyggt.
+
+I scenarier som kräver omfattande textmanipulation, särskilt med icke-ASCII-tecken, kan programmerare överväga att använda bibliotek som erbjuder bättre stöd för internationalisering, som ICU (International Components for Unicode). Men för de flesta applikationer som hanterar ASCII-text, är den demonstrerade metoden effektiv och okomplicerad. Den belyser Cs benägenhet att ge programmerare kontroll över datamanipulation, även om det kräver lite mer arbete jämfört med högnivåspråk.

@@ -1,63 +1,69 @@
 ---
-title:                "Analisi dell'HTML"
-date:                  2024-01-20T15:30:04.186097-07:00
-simple_title:         "Analisi dell'HTML"
-
+title:                "Analisi del HTML"
+date:                  2024-02-03T17:59:48.550173-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Analisi del HTML"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/c/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Che cosa & Perché?
-Il parsing HTML significa analizzare il codice di una pagina web per estrarre dati specifici. I programmatori lo fanno per automatizzare l'interazione con siti web, sfruttare informazioni, o integrare contenuti web nelle loro applicazioni.
+## Cosa & Perché?
 
-## Come Fare:
-Utilizzeremo libcurl per il download dell'HTML e la libreria libxml2 per il parsing.
+L'analisi del HTML in C implica l'esaminare documenti HTML per estrarre dati, strutture o parti specifiche in modo efficiente, spesso come precursore dell'estrazione di dati o dello scraping web. I programmatori lo fanno per automatizzare l'estrazione delle informazioni, consentendo di elaborare o riutilizzare i contenuti web programmabilmente.
 
-```C
+## Come fare:
+
+L'analisi del HTML può sembrare scoraggiante a causa della complessità del HTML e delle sue frequenti deviazioni da strutture pulite e ben formate. Tuttavia, l'uso di una libreria come `libxml2`, in particolare il suo modulo di analisi HTML, semplifica il processo. Questo esempio dimostra come utilizzare `libxml2` per analizzare il HTML ed estrarre informazioni.
+
+Prima di tutto, assicurati che `libxml2` sia installato nel tuo ambiente. In molte distribuzioni Linux, puoi installarlo tramite il gestore di pacchetti. Ad esempio, su Ubuntu:
+
+```bash
+sudo apt-get install libxml2 libxml2-dev
+```
+
+Ora, scriviamo un semplice programma C che usa `libxml2` per analizzare una stringa HTML e stampare il testo all'interno di un elemento specifico:
+
+```c
 #include <stdio.h>
-#include <curl/curl.h>
 #include <libxml/HTMLparser.h>
 
-static size_t WriteCallback(void *contents, size_t size, size_t nmemb, void *userp) {
-    ((char *)userp)[size * nmemb] = '\0'; // Assicurarsi di terminare la stringa
-    return size * nmemb;
+void parseHTML(const char *html) {
+    htmlDocPtr doc = htmlReadDoc((const xmlChar *)html, NULL, NULL, HTML_PARSE_RECOVER | HTML_PARSE_NOERROR | HTML_PARSE_NOWARNING);
+    
+    // Supponendo che stiamo cercando contenuti all'interno dei tag <p>
+    xmlNode *elemento_radice = xmlDocGetRootElement(doc);
+    for (xmlNode *nodo_corrente = elemento_radice; nodo_corrente; nodo_corrente = nodo_corrente->next) {
+        if (nodo_corrente->type == XML_ELEMENT_NODE && strcmp((const char *)nodo_corrente->name, "p") == 0) {
+            printf("Paragrafo trovato: %s\n", xmlNodeGetContent(nodo_corrente));
+        }
+    }
+    
+    xmlFreeDoc(doc);
+    xmlCleanupParser();
 }
 
-int main(void) {
-    CURL *curl;
-    CURLcode res;
-    char buffer[100000]; // Un buffer abbastanza grande per contenere l'HTML
-
-    curl = curl_easy_init();
-    if(curl) {
-        curl_easy_setopt(curl, CURLOPT_URL, "http://example.com");
-        curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, WriteCallback);
-        curl_easy_setopt(curl, CURLOPT_WRITEDATA, buffer);
-        
-        res = curl_easy_perform(curl);
-        if(res == CURLE_OK) {
-            htmlParserCtxtPtr ctxt = htmlNewParserCtxt();
-            if(ctxt != NULL) {
-                htmlDocPtr doc = htmlCtxtReadMemory(ctxt, buffer, strlen(buffer), NULL, NULL, HTML_PARSE_NOERROR | HTML_PARSE_NOWARNING);
-                // Fai il parsing di doc qui ...
-            }
-        }
-        curl_easy_cleanup(curl);
-    }
+int main() {
+    const char *html = "<html><body><p>Ciao, mondo!</p></body></html>";
+    parseHTML(html);
     return 0;
 }
 ```
-*Ricordati di linkare contro `libcurl` e `libxml2` quando compili.*
 
-## Approfondimento:
-Il parsing HTML richiede attenzione perché HTML nel mondo reale è spesso non ben formato. Le librerie come libxml2 sono robuste e affrontano queste imperfezioni. Nel tempo, oltre a metodi standard come DOM e SAX per il parsing, sono fiorite librerie come Beautiful Soup per Python o jsoup per Java. Per il C, usiamo spesso libxml2 perché è esaustiva e conforme agli standard.
+Output del campione:
+```
+Paragrafo trovato: Ciao, mondo!
+```
 
-Libcurl è praticamente uno standard de facto per il trasferimento dati via URL, mentre libxml2 domina nel parsing di XML e HTML. Le alternative implicano spesso scrivere codice da zero per gestire casi limite, il che sarebbe oneroso e inaffidabile.
+Questo esempio si concentra sull'estrazione del testo all'interno dei tag dei paragrafi, ma `libxml2` offre un supporto robusto per navigare e interrogare varie parti di un documento HTML.
 
-## Vedi Anche:
-- Documentazione libxml2: http://xmlsoft.org/
-- Tutorial libcurl: https://curl.haxx.se/libcurl/c/
-- W3 HTML Parsing Rules: https://www.w3.org/TR/html5/syntax.html#parsing
-- Overflow di stack su argomenti di parsing HTML in C: https://stackoverflow.com/questions/tagged/html-parsing+c
+## Approfondimento
+
+L'analisi di HTML in C risale ai primi giorni dello sviluppo web. Inizialmente, gli sviluppatori dovevano affidarsi a soluzioni di analisi personalizzate, spesso rudimentali, a causa della mancanza di librerie standardizzate e dello stato caotico del HTML sul web. L'introduzione di librerie come `libxml2` ha segnato una significativa progressione, offrendo approcci più standardizzati, efficienti e resilienti all'analisi dell'HTML.
+
+Nonostante la velocità e il controllo impareggiabili del C, vale la pena notare che il C potrebbe non essere sempre il miglior strumento per l'analisi di HTML, soprattutto per compiti che richiedono cicli di sviluppo rapidi o si occupano di HTML eccezionalmente malformato. Lingue con librerie di analisi HTML di alto livello, come Python con Beautiful Soup, forniscono interfacce più astratte e amichevoli all’utente a costo di alcune prestazioni.
+
+Tuttavia, per applicazioni critiche in termini di prestazioni, o quando si opera in ambienti con risorse limitate, l'analisi dell'HTML in C rimane un metodo praticabile e spesso preferito. La chiave è sfruttare librerie robuste come `libxml2` per gestire le complessità dell'HTML, consentendo agli sviluppatori di concentrarsi sull'estrazione dei dati di cui hanno bisogno senza impantanarsi nei dettagli dei meccanismi di analisi.

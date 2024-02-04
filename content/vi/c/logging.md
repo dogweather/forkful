@@ -1,66 +1,100 @@
 ---
-title:                "Ghi log"
-date:                  2024-01-28T22:02:59.746777-07:00
+title:                "Ghi nhật ký"
+date:                  2024-02-03T17:59:33.515194-07:00
 model:                 gpt-4-0125-preview
-simple_title:         "Ghi log"
-
+simple_title:         "Ghi nhật ký"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/c/logging.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Gì và Tại sao?
-Log là việc ghi chép lại những gì chương trình của bạn đang làm, thường là viết ra các thông điệp vào một tệp hoặc terminal. Lập trình viên thực hiện việc này để theo dõi các sự kiện, chẩn đoán vấn đề, và để có một dấu vết kiểm toán kể lại câu chuyện về quá trình vận hành của một ứng dụng theo thời gian.
+## Gì & Tại sao?
+
+Ghi log trong C bao gồm việc ghi lại dòng chảy và các sự kiện đáng chú ý của một chương trình trong quá trình thực thi, cung cấp một cái nhìn cụ thể về hành vi và hiệu suất của nó. Lập trình viên sử dụng ghi log cho mục đích gỡ lỗi, giám sát sức khỏe phần mềm và đảm bảo an ninh hệ thống.
 
 ## Làm thế nào:
-Hãy bắt đầu với một số cơ bản. C không có một framework đăng nhập tích hợp, nhưng bạn có thể tạo một cái đơn giản với `stdio.h`. Dưới đây là cách làm:
+
+Trong C, ghi log có thể được thực hiện với các thao tác tệp cơ bản hoặc sử dụng các thư viện phức tạp hơn. Để đơn giản, chúng ta sẽ bắt đầu với thư viện I/O tiêu chuẩn. Các đoạn mã sau đây trình bày cách triển khai ghi log cơ bản.
+
+Để ghi các thông điệp đơn giản:
+
+```c
+#include <stdio.h>
+
+int main() {
+    FILE *logFile;
+    logFile = fopen("application.log", "a"); // Mở tệp log ở chế độ bổ sung
+    
+    if (logFile == NULL) {
+        perror("Lỗi khi mở tệp log.");
+        return -1;
+    }
+    
+    fprintf(logFile, "Khởi động ứng dụng.\n");
+    
+    // Logic ứng dụng của bạn ở đây
+    
+    fprintf(logFile, "Ứng dụng kết thúc thành công.\n");
+    fclose(logFile);
+    
+    return 0;
+}
+```
+
+Kết quả trong `application.log`:
+
+```
+Khởi động ứng dụng.
+Ứng dụng kết thúc thành công.
+```
+
+Để bao gồm các log chi tiết hơn với dấu thời gian và mức độ log:
 
 ```c
 #include <stdio.h>
 #include <time.h>
 
-void logMessage(const char* message) {
+void logMessage(FILE *logFile, const char* level, const char* message) {
     time_t now;
     time(&now);
-    char *date = ctime(&now);
-    date[strlen(date) - 1] = '\0'; // Loại bỏ dấu xuống dòng ở cuối kết quả của ctime()
-    printf("[%s] %s\n", date, message);
+    char* datetime = ctime(&now);
+    datetime[strlen(datetime)-1] = '\0'; // Loại bỏ ký tự xuống dòng
+    fprintf(logFile, "[%s] %s - %s\n", datetime, level, message);
 }
 
 int main() {
-    logMessage("Ứng dụng đã bắt đầu.");
-    // ... mã của bạn ở đây ...
-    logMessage("Ứng dụng đang làm một việc quan trọng.");
-    // ... mã của bạn tiếp tục ...
-    logMessage("Ứng dụng đã kết thúc.");
+    FILE *logFile;
+    logFile = fopen("detailed.log", "a");
+    
+    if (logFile == NULL) {
+        perror("Lỗi khi mở tệp log.");
+        return -1;
+    }
+    
+    logMessage(logFile, "INFO", "Ứng dụng bắt đầu");
+    // Logic ứng dụng của bạn ở đây
+    logMessage(logFile, "ERROR", "Một ví dụ lỗi");
+    
+    fclose(logFile);
+    
     return 0;
 }
 ```
 
-Đầu ra mẫu có thể trông như thế này:
+Kết quả trong `detailed.log`:
 
 ```
-[Tue Mar 9 12:00:01 2023] Ứng dụng đã bắt đầu.
-[Tue Mar 9 12:00:02 2023] Ứng dụng đang làm một việc quan trọng.
-[Tue Mar 9 12:00:03 2023] Ứng dụng đã kết thúc.
+[Thu Mar 10 14:32:01 2023] INFO - Ứng dụng bắt đầu
+[Thu Mar 10 14:32:02 2023] ERROR - Một ví dụ lỗi
 ```
 
-Tất nhiên, trong thế giới thực bạn có lẽ muốn viết vào một tệp thay vì terminal, xử lý các mức độ log khác nhau, và có thể sử dụng một thư viện đã được định nghĩa trước.
+## Tìm hiểu sâu hơn
 
-## Sâu hơn
-Log trong C có một sự quyến rũ cổ điển—nó cũng thấp cấp như phần lớn ngôn ngữ còn lại. Lịch sử, việc log được thực hiện bằng `fprintf` với `stderr` hoặc một con trỏ tệp. Khi các chương trình trở nên phức tạp hơn, nhu cầu về log cũng phát triển, dẫn đến sự phát triển của các thư viện như `syslog` trên hệ thống Unix, có thể xử lý việc log từ nhiều nguồn với các mức độ quan trọng khác nhau.
+Ghi log trong C, như đã trình bày, dựa vào các thao tác tệp đơn giản, đây là cách làm hiệu quả nhưng không mạnh mẽ hay linh hoạt như các tiện ích ghi log trong các ngôn ngữ khác, như module `logging` của Python hay `Log4j` của Java. Để có khả năng ghi log nâng cao hơn trong C, lập trình viên thường chuyển sang sử dụng các thư viện như `syslog` trên các hệ thống giống Unix, cung cấp quản lý log toàn hệ thống, hoặc các thư viện bên thứ ba như `log4c`.
 
-Trong bối cảnh hiện đại, có rất nhiều thư viện log C ngoài kia, như `zlog`, `log4c`, và `glog`, cung cấp một bộ tính năng phong phú bao gồm quay vòng log, log có cấu trúc, và log đa luồng. Những giải pháp này cho phép kiểm soát tinh vi đối với độ chi tiết log, điểm đến, và định dạng.
+Lịch sử, ghi log là một phần không thể tách rời của lập trình, xuất phát từ những thực hành lập trình đầu tiên khi việc theo dõi và hiểu dòng chảy và lỗi của chương trình chủ yếu được thực hiện thông qua in ấn vật lý. Khi hệ thống phát triển, ghi log trở nên tinh vi hơn, hiện hỗ trợ nhiều mức độ nghiêm trọng khác nhau, quay vòng log và ghi log không đồng bộ.
 
-Khi triển khai một hệ thống log, các chi tiết như định dạng dấu thời gian, quản lý tệp log, và hiệu suất cần được xem xét. Đặt dấu thời gian cho log là rất quan trọng để liên kết các sự kiện, trong khi quay vòng log đảm bảo rằng các tệp log không chiếm quá nhiều không gian đĩa. Hoạt động log cũng nên nhanh chóng và không chặn dòng ứng dụng chính để ngăn chặn log trở thành một điểm nghẽn.
-
-## Xem Thêm
-Để tìm hiểu sâu hơn về thư viện và phương pháp log trong C, hãy tham khảo những tài nguyên này:
-
-- Hướng dẫn sử dụng `syslog` của GNU: https://www.gnu.org/software/libc/manual/html_node/Syslog.html
-- `zlog`: Một thư viện log cho C có thể cấu hình cao - https://github.com/HardySimpson/zlog
-- `log4c`: Một khuôn khổ log cho C được mô phỏng theo Log4j - http://log4c.sourceforge.net/
-- `glog`: Thư viện log cấp ứng dụng của Google - https://github.com/google/glog
+Mặc dù thư viện tiêu chuẩn của C cung cấp các công cụ cơ bản để thực hiện ghi log, giới hạn của nó thường dẫn đến việc tạo ra các khung ghi log tùy chỉnh hoặc sử dụng các thư viện bên ngoài cho các giải pháp ghi log phong phú và linh hoạt hơn. Mặc dù có những hạn chế này, việc hiểu và thực hiện ghi log cơ bản trong C là rất quan trọng cho việc gỡ lỗi và bảo trì phần mềm, đặc biệt là trong môi trường nơi mà sự phụ thuộc bên ngoài cần được giảm thiểu.

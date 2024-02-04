@@ -1,63 +1,57 @@
 ---
 title:                "Tests Schrijven"
-date:                  2024-01-28T22:12:50.159656-07:00
+date:                  2024-02-03T18:14:52.170731-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Tests Schrijven"
-
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/c/writing-tests.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Wat & Waarom?
-
-Tests schrijven betekent code maken die controleert of je andere code werkt. Programmeurs doen dit om vroegtijdig bugs op te sporen, tijd te besparen en ervoor te zorgen dat code nu werkt en ook later blijft werken.
+Tests schrijven in C betreft het creëren van kleinere, hulpprogramma's of functies die automatisch de functionaliteit van je code verifiëren. Programmeurs doen dit om te zorgen dat hun software werkt zoals verwacht, om fouten vroegtijdig op te sporen, en om toekomstige code wijzigingen te vergemakkelijken zonder onbedoelde bijeffecten.
 
 ## Hoe:
+Hoewel C geen ingebouwd testframework heeft zoals sommige andere talen, kun je nog steeds effectieve tests schrijven met `assert.h` voor eenvoudige beweringen of door derde partij frameworks zoals CUnit of Unity te integreren voor meer gestructureerd testen. Hier is een basisvoorbeeld met `assert.h` om een functie te testen die twee integers optelt:
 
-In C kun je tests schrijven door gebruik te maken van een testframework zoals CUnit of door je eigen eenvoudige testsysteem op te zetten. Hieronder staat een basaal voorbeeld met gebruik van assert om een basis testfunctie voor een `add` functie te creëren.
-
-```C
+```c
 #include <assert.h>
+#include "my_math.h"
 
-// Functie om te testen
-int add(int a, int b) {
-    return a + b;
-}
-
-// Testfunctie
-void test_add() {
-    assert(add(2, 2) == 4);
-    assert(add(-1, 1) == 0);
+void test_addition() {
+    assert(add(1, 2) == 3);
+    assert(add(-1, -2) == -3);
+    assert(add(0, 0) == 0);
+    printf("Alle opteltests geslaagd.\n");
 }
 
 int main() {
-    test_add();
-    printf("Alle tests geslaagd!\n");
+    test_addition();
     return 0;
 }
 ```
 
-Voorbeelduitvoer, als alle tests zijn geslaagd:
+In `my_math.h`, zou je kunnen hebben:
+
+```c
+// Eenvoudige optelfunctie
+int add(int a, int b) {
+    return a + b;
+}
+```
+
+Het uitvoeren van de testfunctie in je `main` functie geeft uit:
 
 ```
-Alle tests geslaagd!
+Alle opteltests geslaagd.
 ```
 
-Als een test mislukt, wordt het programma afgebroken en wordt er een foutmelding geprint.
+Voor een uitgebreidere testopzet met een framework zoals Unity, zou je het framework in je project integreren, en vervolgens testgevallen op een vergelijkbare manier schrijven, maar met gebruikmaking van de API van het framework voor beweringen en het uitvoeren van tests.
 
-## Diepere Duik
+## Diepgaand
+Testen in C is historisch gezien een handmatig en enigszins ad hoc proces geweest vanwege de low-level aard van de taal en het ontbreken van een gestandaardiseerd testframework. Deze handmatige aanpak leidde vaak tot minder grondige testpraktijken in vergelijking met talen met ingebouwde testondersteuning. Aangezien de C-taal cruciaal is geweest in de ontwikkeling van fundamentele softwaresystemen, leidde dit gebrek aan formele testframeworks ertoe dat de C-gemeenschap derde partij oplossingen ontwikkelde, zoals CUnit en Unity.
 
-Historisch gezien kwam C niet met een ingebouwd testframework. Programmeurs schreven meestal aangepaste testfuncties of gebruikten frameworks van derden. Populaire frameworks zijn CUnit, Check en Unity. Elk biedt functies zoals automatische testdetectie, setup/afbraak processen en rapportage van testresultaten. Voor kleine projecten kunnen eenvoudige assert-gebaseerde tests volstaan, maar naarmate de complexiteit toeneemt, bespaart een geschikt framework tijd en moeite.
-
-## Zie Ook
-
-Hier zijn enkele nuttige links voor meer verdiepende duiken:
-
-- [CUnit](http://cunit.sourceforge.net/)
-- [Check](https://libcheck.github.io/check/)
-- [Unity](http://www.throwtheswitch.org/unity)
-- [Assert.h in C programmeren](https://www.tutorialspoint.com/assert-h-in-c-programming)
+Deze tools, hoewel extern aan de standaard C-bibliotheek, bieden functionaliteit vergelijkbaar met testframeworks in andere talen, en bieden een gestructureerde manier om tests te definiëren, uit te voeren en te evalueren. Ze helpen de kloof te overbruggen tussen C's krachtige systeemniveau-toegang en de moderne ontwikkelpraktijk van geautomatiseerd testen. Het is vermeldenswaardig dat, hoewel deze tools het testproces in C aanzienlijk verbeteren, ze een leercurve kunnen introduceren en de complexiteit van de projectopzet kunnen verhogen in vergelijking met talen met geïntegreerde testondersteuning. Daarom is, voor projecten waar betrouwbaarheid en onderhoudbaarheid van het grootste belang zijn, de investering in het opzetten van een geschikte testomgeving in C wel gerechtvaardigd, zelfs met het oog op mogelijke alternatieven.

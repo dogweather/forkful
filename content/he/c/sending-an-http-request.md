@@ -1,67 +1,67 @@
 ---
 title:                "שליחת בקשת HTTP"
-date:                  2024-01-20T17:59:47.498120-07:00
-model:                 gpt-4-1106-preview
+date:                  2024-02-03T18:09:32.339137-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "שליחת בקשת HTTP"
-
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/c/sending-an-http-request.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (מה ולמה?)
- שליחת בקשת HTTP זהו פעולה שבה המחשב שלך מבקש נתונים משרת באינטרנט. תוכניתנים עושים את זה כדי לקבל מידע כמו דפי ווב, נתוני API, או כדי לשלוח נתונים לשרת.
+## מה ולמה?
 
-## How to: (איך לעשות:)
-```C
+שליחת בקשת HTTP כוללת יצירה ושיגור של בקשה לשרת אינטרנט כדי לאחזר או לשלוח נתונים. תכנתים עושים זאת ב-C כדי לתקשר עם ממשקי API של אינטרנט, להוריד דפי אינטרנט, או לתקשר ישירות מתוך היישומים שלהם עם שירותים מרושתים אחרים.
+
+## איך לעשות:
+
+כדי לשלוח בקשת HTTP ב-C, בדרך כלל תתבססו על ספריות כמו libcurl, מאחר שב-C אין תמיכה מובנית לפרוטוקולי אינטרנט. הנה דוגמה פשוטה בשימוש ב-libcurl לביצוע בקשת GET:
+
+ראשית, ודאו ש-libcurl מותקן במערכת שלכם. לאחר מכן, כללו את הכותרות הנדרשות וקישרו כנגד ספריית libcurl בקובץ המקור שלכם:
+
+```c
 #include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 #include <curl/curl.h>
-
-static size_t write_callback(void *contents, size_t size, size_t nmemb, void *userp) {
-    size_t realsize = size * nmemb;
-    printf("%s", (char *)contents);
-    return realsize;
-}
 
 int main(void) {
     CURL *curl;
     CURLcode res;
 
-    curl_global_init(CURL_GLOBAL_ALL);
-    curl = curl_easy_init();
+    curl = curl_easy_init(); // אתחול ידית libcurl
     if(curl) {
-        curl_easy_setopt(curl, CURLOPT_URL, "https://example.com");
-        curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, write_callback);
-
+        // הגדרת ה-URL שמקבל הידית libcurl
+        curl_easy_setopt(curl, CURLOPT_URL, "http://example.com");
+        // הגדרת פונקצית קולבק לקבלת הנתונים
+        curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, NULL); 
+        
+        // ביצוע הבקשה, res יקבל את קוד החזרה
         res = curl_easy_perform(curl);
+        // בדיקת שגיאות
         if(res != CURLE_OK)
-            fprintf(stderr, "curl_easy_perform() failed: %s\n", curl_easy_strerror(res));
+            fprintf(stderr, "curl_easy_perform() failed: %s\n",
+                    curl_easy_strerror(res));
 
+        // ניקוי תמידי
         curl_easy_cleanup(curl);
     }
-    curl_global_cleanup();
-
     return 0;
 }
 ```
 
-### Sample Output:
-```
-<!doctype html>
-<html>
-<head>
-    <title>Example Domain</title>
-...
-</html>
-```
+הדוגמה זו יכולה להיתרגם באמצעות שורת הפקודה `gcc -o http_request http_request.c -lcurl`, הרצתה אמורה לבצע בקשת GET פשוטה ל-"http://example.com".
 
-## Deep Dive (עומק השקעה)
- בעבר, שליחת בקשה ב-C הייתה תהליך מורכב, שדרש חיבורי TCP/IP ידניים לשרת. היום, ספריות כמו libcurl מפשטות את התהליך. ישנם חלופות, כמו ביצוע שימוש ב-sockets בצורה ישירה, אבל libcurl היא פופולרית בשל הנוחות והתמיכה הרחבה בפרוטוקולים. כאשר שולחים בקשת HTTP, יש לנהל את המחזור המלא של החיבור: פתח, שלח, קבל תשובה, ונקה.
+### פלט דוגמה
 
-## See Also (ראה גם)
-- למד עוד על libcurl כאן: [libcurl](https://curl.se/libcurl/)
-- מדריך לפרוטוקול HTTP: [HTTP/1.1: The Definitive Guide](http://www.oreilly.com/catalog/9781565925090)
-- תיעוד למתכנתי C של Sockets API: [Beej's Guide to Network Programming](https://beej.us/guide/bgnet/)
+מכיוון שהדוגמה לא מעבדת את תגובת השרת, הרצתה לא תייצר פלט גלוי מעבר להודעות שגיאה פוטנציאליות. השלבה של פונקציית קולבק לעיבוד נתונים שהתקבלו היא חיונית לאינטרקציה משמעותית.
+
+## צלילה עמוקה
+
+הרעיון של שליחת בקשות HTTP מתוך תוכנית C מבוסס על יכולות הרשת החזקות של השפה, יחד עם שימוש בספריות חיצוניות, מכיוון ש-C עצמה היא שפה ברמה נמוכה ללא תמיכה מובנית בפרוטוקולי אינטרנט ברמה גבוהה. בעבר, תכנתים היו משתמשים בצורה ידנית בתכנות socket ב-C, תהליך מורכב ומעייף, כדי לתקשר עם שרתי אינטרנט לפני בואם של ספריות מוקדשות כמו libcurl.
+
+Libcurl, שנבנית על גבי C, מפשטת את התהליך, מוסיפה שכבת הפשטה מעל פרטי תכנות ה-socket והפרטים הספציפיים של הפרוטוקול HTTP. היא תומכת במגוון פרוטוקולים מעבר ל-HTTP/HTTPS, כולל FTP, SMTP, ועוד, והופכת אותה לכלי גמיש לתכנות רשת ב-C.
+
+בעוד שהשימוש ב-libcurl לבקשות HTTP ב-C הוא פרקטי, התכנות המודרני לעיתים קרובות מתמקד בשפות עם תמיכה מובנית למשימות כאלו, כמו Python (ספריית requests) או JavaScript (API של Fetch). האלטרנטיבות הללו מציעות תחביר פשוט וקריא יותר על חשבון השליטה המדויקת והאפשרויות לאופטימיזציה של הביצועים האפשריות ב-C דרך ניהול ישיר של סוקטים ושימוש מדויק בספריות.
+
+ליישומים קריטיים מבחינת ביצועים או כאשר נדרשת התקשרות ישירה ברמת המערכת, C נשארת אופציה נגישה, במיוחד עם libcurl שמפשטת את המורכבויות של תקשורת אינטרנט. עם זאת, לרוב האינטרקציות ברמה הגבוהה באינטרנט, בדיקת שפות תכנות מוקדשות לאינטרנט עשויה להוכיח אפקטיביות רבה יותר.

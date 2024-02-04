@@ -1,83 +1,69 @@
 ---
 title:                "Refactoring"
-date:                  2024-01-28T22:05:59.034464-07:00
+date:                  2024-02-03T18:06:46.631944-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Refactoring"
-
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/c/refactoring.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Wat & Waarom?
-Refactoring is het proces van het herstructureren van bestaande computercode zonder het externe gedrag ervan te veranderen. Programmeurs doen dit om de leesbaarheid te verbeteren, de complexiteit te verminderen, of de code onderhoudbaarder en schaalbaarder te maken, wat op de lange termijn een vrachtlading aan tijd en hoofdpijn kan besparen.
 
-## Hoe te:
-Laten we wat code opknappen. Stel je voor dat je een functie hebt die het gemiddelde van gehele getallen in een array berekent. Op het eerste gezicht is het een beetje een wirwar.
+Refactoring in programmering betreft het herstructureren van bestaande code zonder het externe gedrag ervan te wijzigen, met als doel het verbeteren van niet-functionele attributen zoals leesbaarheid, het verminderen van complexiteit, en het verbeteren van onderhoudbaarheid. Programmeurs refactoren om de codebasis schoon te houden, technische schuld te minimaliseren en toekomstige wijzigingen gemakkelijker en veiliger te implementeren.
 
-**Voor Refactoring:**
-```C
+## Hoe:
+
+Refactoring kan een reeks tactieken omvatten, van het hernoemen van variabelen voor meer duidelijkheid tot het wijzigen van de structuur van code voor betere modularisatie. Hier is een eenvoudig voorbeeld dat laat zien hoe je een stuk C-code refactort voor betere helderheid en efficiëntie.
+
+Voor Refactoring:
+```c
 #include <stdio.h>
 
-double calculateStuff(int numbers[], int size) {
-    int sum = 0;
-    double average;
-    for(int i = 0; i < size; sum += numbers[i++]); // Optellen in de for-lusconditie, au!
-    average = (double)sum / size;
-    return average;
-}
-
 int main() {
-    int array[] = {23, 42, 57, 16, 5, 102};
-    int length = sizeof(array) / sizeof(array[0]);
-    printf("Gemiddelde: %f\n", calculateStuff(array, length));
-
+    int x = 10, y = 20;
+    printf("Voor het wisselen: x = %d, y = %d\n", x, y);
+    x = x + y; // x wordt nu 30
+    y = x - y; // y wordt 10
+    x = x - y; // x wordt 20
+    printf("Na het wisselen: x = %d, y = %d\n", x, y);
     return 0;
 }
 ```
-
-**Na Refactoring:**
-```C
+Uitvoer:
+```
+Voor het wisselen: x = 10, y = 20
+Na het wisselen: x = 20, y = 10
+```
+Na Refactoring:
+```c
 #include <stdio.h>
 
-int calculateSum(const int numbers[], int size) {
-    int sum = 0;
-    for (int i = 0; i < size; ++i) {
-        sum += numbers[i];
-    }
-    return sum;
-}
-
-double calculateAverage(const int numbers[], int size) {
-    int sum = calculateSum(numbers, size);
-    return (double)sum / size;
+void swap(int *a, int *b) {
+    *a = *a + *b;
+    *b = *a - *b;
+    *a = *a - *b;
 }
 
 int main() {
-    int array[] = {23, 42, 57, 16, 5, 102};
-    int length = sizeof(array) / sizeof(array[0]);
-    printf("Gemiddelde: %f\n", calculateAverage(array, length));
+    int x = 10, y = 20;
+    printf("Voor het wisselen: x = %d, y = %d\n", x, y);
+    swap(&x, &y);
+    printf("Na het wisselen: x = %d, y = %d\n", x, y);
     return 0;
 }
 ```
-Zelfs met dit eenvoudige voorbeeld kun je zien hoe het opsplitsen van de functie de code schoner en onderhoudbaarder maakt. Elke functie heeft nu één verantwoordelijkheid - een sleutelprincipe in schone codering.
+De uitvoer blijft ongewijzigd, maar de functionaliteit voor het wisselen van waarden is verplaatst naar een aparte functie (`swap`), wat de leesbaarheid en herbruikbaarheid verbetert.
 
-## Diepgaande Duik
-De term "refactoring" werd in de late jaren 90 populair, vooral met de publicatie van Martin Fowlers boek "Refactoring: Improving the Design of Existing Code". Refactoring impliceert niet het repareren van bugs of het toevoegen van nieuwe functies, maar gaat over het verbeteren van de structuur van de code.
+## Diepe Duik
 
-Er zijn veel gave refactoringtools en IDE's (Integrated Development Environments) die het proces helpen automatiseren, zoals CLion voor C en C++, maar begrijpen wat er onder de motorkap gebeurt blijft cruciaal.
+De praktijk van het refactoren van code bestaat al zolang als de softwareontwikkeling zelf, evoluerend naast programmeerparadigmas en talen. In C, een taal die zowel krachtig als beladen is met kansen voor inefficiëntie en fouten vanwege zijn laagdrempelige natuur, is refactoring vooral cruciaal. Het kan het verschil maken tussen een onderhoudbare codebasis en een verwarde wirwar van inefficiënties.
 
-Alternatieven voor refactoring kunnen onder meer het vanaf nul herschrijven van code (risicovol en vaak onnodig) of leven met de technische schuld (wat op de lange termijn kostbaarder kan zijn). Implementatiedetails variëren afhankelijk van het project, maar veelvoorkomende refactorings omvatten het hernoemen van variabelen voor meer duidelijkheid, het opsplitsen van grote functies in kleinere, en het vervangen van magische getallen door benoemde constanten.
+Een overweging specifiek voor C is de balans tussen micro-optimalisaties en leesbaarheid/onderhoudbaarheid. Hoewel het verleidelijk is om C-code handmatig te tweaken voor elke laatste ons aan prestatie, kunnen dergelijke optimalisaties de code breekbaarder en moeilijker leesbaar maken. Daarom is het meestal beter om schone, leesbare code te prioriteren en te vertrouwen op de optimizer van de compiler om waar mogelijk verbeteringen in prestaties aan te brengen.
 
-Ook, patronen zoals DRY (Don't Repeat Yourself) en SOLID-principes kunnen je refactoring-reis leiden, en streven naar een codebase die gemakkelijker te testen, begrijpen en samen te werken is.
+Bovendien zijn de hulpmiddelen en technieken voor refactoring in C, zoals statische codeanalyzers (bijvoorbeeld Clang Static Analyzer, cppcheck) en principes van modulaire programmering, aanzienlijk gevorderd. Echter, vanwege C's handmatige geheugenbeheer en pointeraritmetiek, kan refactoring bugs introduceren als het niet zorgvuldig wordt uitgevoerd. Technieken zoals unit testing en code review zijn hierbij van onschatbare waarde.
 
-## Zie Ook
-Om dieper in de zee van refactoring te duiken, kijk op:
-
-- Martin Fowlers thuispagina: https://martinfowler.com/ met een schatkist aan artikelen en bronnen over refactoring en softwareontwerp.
-- Refactoring.com: https://refactoring.com/ biedt voorbeelden en catalogi van refactorings technieken.
-- Het boek "Refactoring": Beschouwd als een bijbel voor refactoring, geeft het lezen ervan je een compleet beeld van de methodologie.
-- "Clean Code: A Handbook of Agile Software Craftsmanship" door Robert C. Martin, dat bespreekt hoe je code schrijft die gemakkelijk te begrijpen en te onderhouden is.
+Hoewel nieuwere talen meer ingebouwde ondersteuning bieden voor veilige refactoring met functies zoals automatisch geheugenbeheer en rijke typesystemen, blijft C ongeëvenaard in scenario's die prestaties dicht bij het metaal en fijnmazige controle eisen. In dergelijke gevallen gaat refactoring minder over het benutten van taalfuncties en meer over gedisciplineerde, doordachte herstructurering van code.

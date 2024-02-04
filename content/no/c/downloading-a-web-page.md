@@ -1,20 +1,23 @@
 ---
-title:                "Nedlasting av en nettside"
-date:                  2024-01-20T17:43:52.920220-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Nedlasting av en nettside"
-
+title:                "Laste ned en nettside"
+date:                  2024-02-03T17:56:01.166716-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Laste ned en nettside"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/c/downloading-a-web-page.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Å laste ned en nettside betyr å hente HTML og andre ressurser over Internett for å lagre eller behandle lokalt. Programmerere gjør dette for å automatisere datainnhenting, teste nettsider eller skrape innhold.
+
+Å laste ned en nettside i C innebærer å programmert få tilgang til innholdet på en nettside over internett og lagre det lokalt for behandling eller offline bruk. Programmerere engasjerer seg ofte i dette for å konsumere webtjenester, skrape nettinnhold eller samhandle direkte med online ressurser fra sine applikasjoner.
 
 ## Hvordan:
-For å laste ned en nettside i C, kan du bruke `libcurl` som et bibliotek for å gjøre HTTP-forespørsler. Her er et enkelt eksempel:
+
+For å laste ned en nettside i C, er en populær tilnærming å bruke libcurl-biblioteket, et effektivt og bærbart klient-side URL-overføringsbibliotek. Sørg for at du har installert og linket libcurl i prosjektet ditt. Her er et eksempel som demonstrerer hvordan man bruker libcurl for å laste ned innholdet på en nettside:
 
 ```c
 #include <stdio.h>
@@ -30,45 +33,32 @@ int main(void) {
     FILE *fp;
     CURLcode res;
     char *url = "http://example.com";
-    char outfilename[FILENAME_MAX] = "downloaded_page.html";
-    
-    curl = curl_easy_init();
+    char outfilename[FILENAME_MAX] = "./downloaded_page.html";
+
+    curl = curl_easy_init(); // Initialiser en libcurl enkel økt
     if (curl) {
-        fp = fopen(outfilename, "wb");
-        if (fp == NULL) {
-            perror("Kan ikke åpne fil");
-            return 1;
-        }
-        
+        fp = fopen(outfilename,"wb");
         curl_easy_setopt(curl, CURLOPT_URL, url);
-        curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, write_data);
-        curl_easy_setopt(curl, CURLOPT_WRITEDATA, fp);
-        
-        res = curl_easy_perform(curl);
-        if (res != CURLE_OK) {
-            fprintf(stderr, "curl_easy_perform() feilet: %s\n", curl_easy_strerror(res));
+        curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, write_data); // Tilbakeringing for å skrive mottatte data
+        curl_easy_setopt(curl, CURLOPT_WRITEDATA, fp); // Sett filpekeren for å skrive dataene til
+
+        res = curl_easy_perform(curl); // Utfør filnedlastingen
+        if(res != CURLE_OK) {
+            fprintf(stderr, "curl_easy_perform() failed: %s\n",
+                    curl_easy_strerror(res));
         }
-        
-        fclose(fp);
-        curl_easy_cleanup(curl);
+
+        /* alltid rydde opp */
+        curl_easy_cleanup(curl); // Rengjør den enkle økten
+        fclose(fp); // Lukke filstrømmen
     }
     return 0;
 }
 ```
+Eksempelutdata (ingen synlig utdata i konsollen): Denne koden laster ned innholdet på den angitte URL-en og lagrer det i en fil med navnet `downloaded_page.html`. Sjekk programmets katalog for denne filen for å se det nedlastede innholdet.
 
-Eksempelutdata:
+## Dypdykk:
 
-```
-downloaded_page.html lagret.
-```
+Historisk sett var nedlasting av webinnhold i C mer omstendelig, og krevde manuell socket-programmering og håndtering av HTTP-protokollen. Libcurl abstraherer disse kompleksitetene, og tilbyr et robust og høynivå API for dataoverføring over nettet.
 
-## Dybdeanalyse:
-Tilbake på 90-tallet, var det enklere nettsider og få verktøy for å laste dem ned. Programmene `wget` og `curl` er eldre løsninger som fortsatt brukes. Alternativer til C inkluderer scripting i Python med `requests`, men med C får du ytelse og detaljkontroll.
-
-Når du bruker `libcurl` i C, håndterer du direkte nettverkskall og datastrømmer. Det gir deg kraften til å tilpasse nøyaktig hvordan nedlastingen håndteres, feilsøking på et lavt nivå og optimalisere ytelsen.
-
-## Se Også:
-* [libcurl Tutorial](https://curl.haxx.se/libcurl/c/)
-* [C Standard Library](https://en.cppreference.com/w/c/header)
-* [HTTP Made Really Easy](http://www.jmarshall.com/easy/http/) - En grunnleggende forståelse av HTTP.
-* [GNU Wget Manual](https://www.gnu.org/software/wget/manual/wget.html) - For sammenligning av kommandolinjealternativer.
+Selv om libcurl forenkler HTTP-forespørsler i C, kan moderne programmeringsspråk som Python med sitt `requests`-bibliotek eller JavaScript (Node.js) med ulike HTTP-klientbiblioteker tilby mer intuitiv syntaks og innebygd støtte for JSON og andre dataformater som ofte brukes i webkommunikasjon. Imidlertid gir C og libcurl en høytytende og stabil løsning for systemer der effektivitet, finjustert kontroll eller integrasjon i eksisterende C-kodebaser er kritisk. Det er også verdt å merke seg at C, kombinert med libcurl, kan brukes til mer enn bare å laste ned nettsider - det er i stand til FTP, SMTP og mye mer, noe som gjør det til et allsidig verktøy i en programmerers verktøykasse.

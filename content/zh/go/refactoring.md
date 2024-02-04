@@ -1,73 +1,127 @@
 ---
-title:                "重构代码"
-date:                  2024-01-26T01:37:02.387205-07:00
+title:                "重构"
+date:                  2024-02-03T18:07:08.531977-07:00
 model:                 gpt-4-0125-preview
-simple_title:         "重构代码"
-
+simple_title:         "重构"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/go/refactoring.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## 什么 & 为什么?
-重构是不改变现有计算机代码外部行为的情况下，对其进行结构重组的过程。程序员进行重构是为了提高软件的非功能属性，如可读性和可维护性，这可以使代码更易于理解，降低复杂性，并帮助更容易发现错误。
+## 什么 & 为什么？
 
-## 如何操作:
-让我们深入一个简单的Go代码重构示例。我们将取一个计算数字切片平均值的代码片段，并对其进行重构以提高清晰度和可重用性。
+编程中的重构涉及重组现有的计算机代码——改变代码的构造——而不改变其外部行为。程序员进行这一过程以提高代码的可读性、降低复杂性并增强可维护性，最终使软件更容易理解和修改。
 
-原始代码:
-```Go
+## 如何进行：
+
+在 Go 语言中，重构可以从简单的代码调整到更复杂的变更不等。让我们从一个基本示例开始：简化一个初始的 Go 函数，以获得更好的可读性和效率。
+
+**重构前：**
+
+```go
 package main
 
 import "fmt"
 
-func main() {
-    numbers := []float64{8, 12, 15, 10, 7, 14}
-    var sum float64
-    for _, num := range numbers {
-        sum += num
+func CalculatePrice(quantity int, price float64) float64 {
+    var total float64
+    if quantity > 0 {
+        total = float64(quantity) * price
+    } else {
+        total = 0
     }
-    average := sum / float64(len(numbers))
-    fmt.Println("Average:", average)
+    return total
+}
+
+func main() {
+    fmt.Println(CalculatePrice(10, 5.99))  // 输出：59.9
 }
 ```
 
-重构代码:
-```Go
+**重构后：**
+
+```go
 package main
 
 import "fmt"
 
-// CalculateAverage 接收一个float64的切片并返回平均值。
-func CalculateAverage(numbers []float64) float64 {
-    sum := 0.0
-    for _, num := range numbers {
-        sum += num
+func CalculatePrice(quantity int, price float64) float64 {
+    if quantity > 0 {
+        return float64(quantity) * price
     }
-    return sum / float64(len(numbers))
+    return 0
 }
 
 func main() {
-    numbers := []float64{8, 12, 15, 10, 7, 14}
-    average := CalculateAverage(numbers)
-    fmt.Println("Average:", average)
+    fmt.Println(CalculatePrice(10, 5.99))  // 输出：59.9
 }
 ```
 
-在重构的代码中，我们已经将计算平均值的逻辑提取到一个单独名为`CalculateAverage`的函数中。这使得`main`函数更加简洁，且平均值计算逻辑可重用且可测试。
+在重构的版本中，`else` 被移除，这简化了函数的流程而不影响其输出——这是 Go 中一个基本但有影响的重构技术示例。
+
+对于一个更高级的示例，考虑将函数重构为使用接口，以获得更好的可重用性和可测试性：
+
+**重构前：**
+
+```go
+package main
+
+import "fmt"
+
+type Logger struct{}
+
+func (l Logger) Log(message string) {
+    fmt.Println("Log:", message)
+}
+
+func ProcessData(data string, logger Logger) {
+    // 设想这里有一些数据处理
+    logger.Log("Data processed")
+}
+
+func main() {
+    logger := Logger{}
+    ProcessData("example data", logger)
+}
+```
+
+**重构后：**
+
+```go
+package main
+
+import "fmt"
+
+type Logger interface {
+    Log(message string)
+}
+
+type ConsoleLogger struct{}
+
+func (c ConsoleLogger) Log(message string) {
+    fmt.Println("Log:", message)
+}
+
+func ProcessData(data string, logger Logger) {
+    // 数据处理保持不变
+    logger.Log("Data processed")
+}
+
+func main() {
+    logger := ConsoleLogger{}
+    ProcessData("example data", logger)
+}
+```
+
+将函数重构为使用接口（`Logger`）而不是具体类型（`ConsoleLogger`）提高了函数的灵活性，并将数据处理与具体的日志实现解耦。
 
 ## 深入探讨
-重构代码并不是一个现代概念；它早在计算机广泛使用之前就已存在。这种做法很可能始于机械工程领域，或者更早。在软件中，随着面向对象编程和极限编程（XP）在1990年代的出现而变得更加正式，特别受到Martin Fowler的开创性著作《重构：改善既有代码的设计》的影响。
 
-重构技术有很多，从简单的变量重命名以提高清晰度到更复杂的模式，如提取方法或类。关键是进行小的、渐进式的更改，这些更改不会修改软件的功能，但会改善内部结构。
+Go 语言中的重构必须在简单性（Go 的核心哲学之一）与大型软件项目所需的灵活性之间取得平衡。鉴于 Go 对功能的极简主义方法——直到最近之前都没有泛型，并且强调可读性——该语言自然引导开发者朝向更简单、更可维护的代码结构。然而，这并不意味着 Go 代码不需要重构；这意味着重构必须始终优先考虑清晰性和简单性。
 
-在使用Go进行重构时，由于该语言的简单性和强大的标准库，重构可能会非常直接。然而，拥有一套好的单元测试仍然很重要，以确保重构不会引入错误。工具如`gorename`和`gofmt`帮助自动化部分过程，IDE通常也具有内置的重构支持。
+从历史上看，Go 缺乏某些功能（例如，在 Go 1.18 之前的泛型）导致为了代码复用和灵活性而创造性但有时复杂的解决方案，使得为了抽象而重构成为常见做法。随着在 Go 1.18 中引入泛型，Go 开发者现在正在重构遗留代码以利用这一特性获得更好的类型安全性和代码复用性，展示了 Go 中重构实践的不断发展。
 
-除了手动重构，还有一些自动化Go代码重构工具可用，例如GoLand的重构工具和Go Refactor。虽然这些可以加速过程，但它们不是理解代码和进行考虑周到的更改的替代品。
-
-## 参见
- - [在Go中重构：简洁即美](https://go.dev/blog/slices)
- - [有效的Go：使用接口重构](https://go.dev/doc/effective_go#interfaces)
- - [Martin Fowler的重构页面](https://refactoring.com/)
- - [GoLand重构工具](https://www.jetbrains.com/go/features/refactorings/)
+尽管如此，Go 的工具集，包括 `gofmt` 用于代码格式化和 `go vet` 用于识别可疑构造，支持维护清洁的代码库，减少了对广泛重构的需求。虽然重构是 Go 程序员工具箱中的一个宝贵工具，但从一开始就明智地使用 Go 的语言特性和工具可以帮助最小化后期复杂重构的需要。

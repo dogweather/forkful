@@ -1,61 +1,57 @@
 ---
-title:                "处理复数"
-date:                  2024-01-26T04:37:45.048903-07:00
+title:                "处理复数的工作"
+date:                  2024-02-03T18:13:57.538429-07:00
 model:                 gpt-4-0125-preview
-simple_title:         "处理复数"
-
+simple_title:         "处理复数的工作"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/c/working-with-complex-numbers.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## 什么 & 为什么？
-复数，即包含实部与虚部（如 3 + 4i）的数，是高级计算中的关键，例如信号处理或解决特定方程。程序员在传统数字无法满足需求的数学密集型应用程序中处理它们。
+## 什么和为什么？
 
-## 如何使用：
-自 C99 以来，C 语言就原生支持复数类型和库。以下是如何使用它的方法：
+复数由实部和虚部组成，表示为 `a + bi`，其中 `i` 是 `-1` 的平方根。程序员在各个领域（如电气工程、量子计算和流体动力学）使用复数，利用它们的独特属性进行模拟、信号处理和解决特定类型的数学方程。
 
-```C
+## 如何操作：
+
+在 C 语言中，复数由标准库支持，具体是 `<complex.h>`。要使用它们，声明变量时使用 `double complex` 类型（或单精度的 `float complex`）。以下是执行基本操作的方法：
+
+```c
 #include <stdio.h>
 #include <complex.h>
 
 int main() {
-    // 声明两个复数
-    double complex z1 = 1.0 + 3.0 * I;
-    double complex z2 = 2.0 - 2.0 * I;
-
-    // 复数的操作
+    double complex z1 = 1.0 + 2.0*I; // 声明一个复数 1+2i
+    double complex z2 = 1.0 - 2.0*I; // 声明另一个复数 1-2i
+    
+    // 加法
     double complex sum = z1 + z2;
-    double complex mult = z1 * z2;
+    printf("Sum: %.2f + %.2fi\n", creal(sum), cimag(sum)); // 输出：Sum: 2.00 + 0.00i
 
-    // 打印结果
-    printf("和: %.1f + %.1fi\n", creal(sum), cimag(sum));
-    printf("积: %.1f + %.1fi\n", creal(mult), cimag(mult));
+    // 乘法
+    double complex product = z1 * z2;
+    printf("Product: %.2f + %.2fi\n", creal(product), cimag(product)); // 输出：Product: 5.00 + 0.00i
 
-    // 绝对值和相位角
-    printf("Abs(z1): %f\n", cabs(z1));
-    printf("Arg(z1): %f\n", carg(z1));
+    // 复共轭
+    double complex conjugate = conj(z1);
+    printf("Conjugate of z1: %.2f + %.2fi\n", creal(conjugate), cimag(conjugate)); // 输出：Conjugate of z1: 1.00 - 2.00i
+    
+    // 幅度
+    double magnitude = cabs(z1);
+    printf("Magnitude of z1: %.2f\n", magnitude); // 输出：Magnitude of z1: 2.24
 
+    // 相位
+    double phase = carg(z1);
+    printf("Phase of z1: %.2f\n", phase); // 输出以弧度为单位
+    
     return 0;
 }
 ```
+注意，`I` 是 `<complex.h>` 中表示虚数单位的常量。函数如 `creal()` 和 `cimag()` 分别用于提取实部和虚部，而 `conj()` 计算复共轭。对于复数的幅度和相位（论证），使用 `cabs()` 和 `carg()`。
 
-示例输出：
-```
-和: 3.0 + 1.0i
-积: 8.0 + 2.0i
-Abs(z1): 3.162278
-Arg(z1): 1.249046
-```
-## 深入探讨
-复数的历史可以追溯到几百年前，起源于16世纪的代数。快进到现在，它们在许多编程语言中都是基础，不仅仅是在 C。
+## 深入了解
 
-C99 标准引入了 `<complex.h>`，这是一个头文件，定义了宏、函数以及 `complex` 数据类型。虽然存在替代方案 - 如创建自己的结构，但何必重新发明轮子？C 标准库已经经过优化，随时可用。
-
-尽管 C 的复数支持颇具实力，但它并非没有批评者。与 Python 等语言的类似功能相比，它可能不那么直观，处理特殊情况也可能变得棘手。但是，就原始性能而言，它仍然是一个坚实的选择。
-
-## 参见
-- C99 标准中关于 `<complex.h>` 的文档：https://en.cppreference.com/w/c/numeric/complex
-- 浮点运算的 IEEE 标准（IEEE 754）：https://ieeexplore.ieee.org/document/4610935
-- C 语言复数数学在线教程：https://www.tutorialspoint.com/complex-number-arithmetic-in-c-programming
+C 语言中对复数的支持相对较新，已经在 C99 中标准化。在此之前，C 语言中的复数算术操作是麻烦的，通常需要自定义数据结构和函数。引入 `<complex.h>` 和复数数据类型大大增强了语言在科学和工程应用方面的能力。然而，值得注意的是，一些语言，如 Python，通过内置数据类型和更丰富的库函数集提供了对复数更直观的支持。尽管如此，C 语言在高性能计算任务中提供的性能和控制使它成为首选，即使这意味着在进行复数算术时需要处理稍微更繁琐的语法。

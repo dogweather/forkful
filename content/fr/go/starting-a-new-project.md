@@ -1,55 +1,81 @@
 ---
-title:                "Lancement d'un nouveau projet"
-date:                  2024-01-20T18:03:23.763577-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Lancement d'un nouveau projet"
-
+title:                "Démarrer un nouveau projet"
+date:                  2024-02-03T18:09:25.888371-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Démarrer un nouveau projet"
 tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/go/starting-a-new-project.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Quoi & Pourquoi ?
+## Quoi et Pourquoi ?
 
-Commencer un nouveau projet en Go, c'est initialiser l'espace de travail avec les fichiers de base. Les programmeurs font ça pour organiser et préparer le terrain pour leur code futur.
+Commencer un nouveau projet en Go implique de configurer un espace de travail et de l'initialiser avec les modules Go nécessaires. Les programmeurs font cela pour organiser le code, gérer efficacement les dépendances et faciliter les processus de build. C'est fondamental pour créer un logiciel scalable et maintenable en Go.
 
-## Comment Ça Marche :
+## Comment faire :
 
-```Go
+D'abord, assurez-vous d'avoir Go installé en exécutant `go version` dans votre terminal. Vous devriez voir la version de Go que vous avez installée en sortie. Ensuite, commençons un nouveau projet. Navigatez jusqu'à votre espace de travail et exécutez :
+
+```shell
+mkdir hello-world
+cd hello-world
+```
+
+Cela crée et vous déplace dans un nouveau répertoire pour votre projet. Maintenant, initialisez le module :
+
+```shell
+go mod init example.com/hello-world
+```
+
+Remplacez `example.com/hello-world` par le chemin de votre module. Cette commande crée un fichier `go.mod` dans votre répertoire, signalant le début d'un nouveau module Go. Voici à quoi pourrait ressembler `go.mod` :
+
+```plaintext
+module example.com/hello-world
+
+go 1.18
+```
+
+`go.mod` suit les dépendances de votre projet. Maintenant, créez un fichier `main.go` :
+
+```shell
+touch main.go
+```
+
+Ouvrez `main.go` dans votre éditeur préféré et ajoutez le code suivant pour imprimer "Hello, World!" :
+
+```go
 package main
 
 import "fmt"
 
 func main() {
-    fmt.Println("Bonjour le nouveau projet Go!")
+    fmt.Println("Hello, World!")
 }
 ```
 
-Sortie attendue :
-```
-Bonjour le nouveau projet Go!
-```
+Pour exécuter votre programme, revenez au terminal et exécutez :
 
-Initialisation du projet :
 ```shell
-$ mkdir monprojetgo
-$ cd monprojetgo
-$ go mod init monprojetgo
+go run main.go
 ```
 
-Après l'initialisation, vous pouvez créer des fichiers `.go` et commencer à coder.
+Vous devriez voir :
 
-## Des Infos Plus Poussées
+```plaintext
+Hello, World!
+```
 
-Historiquement, Go (ou Golang) a été créé par Google pour simplifier la programmation système. En structurant un nouveau projet, on établit les dépendances avec `go mod` depuis Go 1.11. C'est plus propre que les anciens GOPATH. 
+Félicitations ! Vous venez de commencer un nouveau projet Go et de lancer votre premier programme Go.
 
-Alternatives ? Certains utilisent des outils comme GoLand ou Visual Studio Code avec des extensions pour démarrer un projet, mais la ligne de commande reste roi pour la simplicité et contrôle.
+## Approfondissement
 
-Côté implémentation, la création d'un `go.mod` définit les modules et leurs versions. On gère ainsi mieux les paquets utilisés, ce qui rend les builds répétables et les partages de projet plus fluides. Plus de "ça marche sur ma machine" !
+L'initiative d'introduire les modules comme standard pour la gestion des dépendances en Go a marqué un changement significatif dans l'écosystème de Go, officiellement adoptée dans Go 1.11. Avant les modules, les développeurs Go s'appuyaient sur la variable d'environnement GOPATH pour gérer les dépendances, ce qui était moins intuitif et menait souvent à l'infâme "enfer des dépendances".
 
-## Voir Aussi
+Les modules offrent une manière encapsulée de gérer les dépendances du projet, la versioning, et marquent un pas vers la rendre les projets Go plus autocontenus et portables. Chaque module spécifie ses dépendances que Go suit dans le fichier `go.mod`, simplifiant la gestion des dépendances à travers différents environnements et stades de développement.
 
-- La documentation officielle de Go: https://golang.org/doc/
-- Un tutoriel approfondi sur `go mod`: https://blog.golang.org/using-go-modules
-- Un guide pour bien structurer vos projets Go: https://github.com/golang-standards/project-layout
+Cependant, il est à noter que bien que les modules Go soient maintenant la norme, certains projets hérités pourraient encore utiliser GOPATH. Pour la plupart des nouveaux projets, les modules offrent un système de gestion plus simple et efficace, mais comprendre GOPATH peut être utile pour maintenir ou contribuer à des codebases Go plus anciennes.
+
+En termes d'alternatives, bien que les modules Go soient maintenant le standard de facto, la communauté Go a expérimenté avec d'autres outils de gestion des dépendances comme `dep` dans le passé. Cependant, ceux-ci ont été largement supplantés par le support officiel des modules intégré dans la chaîne d'outils Go.

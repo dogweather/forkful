@@ -1,46 +1,59 @@
 ---
-title:                "Merkkijonon interpolointi"
-date:                  2024-01-20T17:50:56.537045-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Merkkijonon interpolointi"
-
+title:                "Merkkijonon interpolaatio"
+date:                  2024-02-03T17:58:31.160543-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Merkkijonon interpolaatio"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/go/interpolating-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Mikä & Miksi?)
-Interpoloimalla merkkijonoa yhdistetään muuttujan arvot ja teksti. Koodarit tekevät sen tehdäkseen viesteistä dynaamisia ja ylläpitääkseen koodin selkeyttä.
+## Mikä & Miksi?
 
-## How to: (Kuinka tehdään:)
+Merkkijonojen interpolaatio on menetelmä, jolla rakennetaan merkkijonoja, joihin sisällytetään muuttujia, mahdollistaen dynaamisen merkkijonon luomisen. Ohjelmoijat tekevät tämän räätälöidäkseen viestejä, rakentaakseen URL-osoitteita, luodakseen SQL-kyselyitä ja muuta, mikä mahdollistaa luettavamman ja ylläpidettävämmän koodin.
+
+## Miten:
+
+Gossa merkkijonojen interpolaatio saavutetaan yleisesti käyttämällä `fmt`-pakettia, erityisesti `Sprintf`-funktiota, joka antaa sinun syöttää muuttujia merkkijonoon määrittelemällä muotoiluverbimerkkejä. Verbimerkit ovat paikkamerkkejä muotoilumerkkijonossa ja ne korvataan annettujen muuttujien arvoilla. Näin sitä käytetään:
+
 ```go
-// Esimerkki merkkijonon interpoloinnista Go:ssa
-
 package main
 
 import (
-	"fmt"
+    "fmt"
 )
 
 func main() {
-	name := "Maarit"
-	age := 28
-	greeting := fmt.Sprintf("Hei, nimeni on %s ja olen %d vuotta vanha.", name, age)
-	
-	fmt.Println(greeting)
-	// Tämä tulostaa: Hei, nimeni on Maarit ja olen 28 vuotta vanha.
+    nimi := "Jane"
+    ikä := 28
+
+    // Käyttämällä Sprintfiä merkkijonojen interpolaatioon
+    viesti := fmt.Sprintf("Hei, nimeni on %s ja olen %d vuotta vanha.", nimi, ikä)
+    fmt.Println(viesti) // Tulostus: Hei, nimeni on Jane ja olen 28 vuotta vanha.
 }
 ```
 
-## Deep Dive (Syväsukellus)
-Ennen kuin Go tuli kuvioihin, kielet kuten Perl ja PHP käyttivät merkkijonon interpolointia laajasti. Go:ssa merkkijonon interpolointi tehdään `fmt.Sprintf` funktiolla. 
+Huomaa, että `%s` käytetään merkkijonoille ja `%d` kokonaisluvuille. `fmt`-paketin dokumentaatio tarjoaa kattavan listan muotoiluverbimerkeistä eri tietotyypeille.
 
-Vaihtoehtona voit käyttää plusmerkkiä (`+`) yhdistääksesi merkkijonot, mutta se ei ole yhtä joustavaa tai tehokasta.
+## Syväsukellus
 
-`fmt.Sprintf` antaa interpoloida tyylikkäästi eri tietotyyppejä käyttämällä muotoilumerkkijonoja, kuten `%s` merkkijonoille ja `%d` kokonaisluvuille. Tämä toiminto muuttaa tiedon dynaamisesti osaksi merkkijonoa ja palauttaa uuden merkkijonon ilman alkuperäisen muuttujan muokkaamista.
+Merkkijonojen interpolaation konsepti esiintyy monissa ohjelmointikielissä, joskin eri syntakseilla ja kyvyillä. Gossa, vaikka `fmt`-paketin `Sprintf`-funktio on yleisimmin käytetty lähestymistapa, se ei välttämättä aina ole tehokkain, erityisesti yksinkertaisissa yhdistämisissä tai suorituskyvyltään erittäin herkässä koodissa.
 
-## See Also (Katso Myös)
-- Go:n fmt-paketti: https://pkg.go.dev/fmt
-- Verkkokurssi merkkijonon käsittelystä Go:ssa: https://www.coursera.org/learn/golang-getting-started
-- Go:n dokumentaatio: https://golang.org/doc/
+`fmt`-paketti käyttää heijastusta (reflection) tulkatakseen dynaamisesti muuttujien tyypit ajonaikaisesti, mikä, vaikka joustavaa, aiheuttaa lisäkustannuksia. Suorituskyvyltään kriittisissä skenaarioissa suora merkkijonojen yhdistäminen tai `strings.Builder`-tyyppi voivat tarjota parempia vaihtoehtoja. Suora yhdistäminen on suoraviivaista, mutta voi muuttua hankalaksi monien muuttujien kanssa. `strings.Builder` puolestaan tarjoaa tehokkaamman ja luettavamman tavan rakentaa monimutkaisia merkkijonoja silmukassa tai käsiteltäessä monia muuttujia:
+
+```go
+var sb strings.Builder
+sb.WriteString("Hei, nimeni on ")
+sb.WriteString(nimi)
+sb.WriteString(" ja olen ")
+sb.WriteString(strconv.Itoa(ikä))
+sb.WriteString(" vuotta vanha.")
+viesti := sb.String()
+
+fmt.Println(viesti) // Tulostaa saman kuin aiemmin
+```
+
+Lopulta valinta `fmt.Sprintf`, suoran yhdistämisen ja `strings.Builder` välillä riippuu sovelluksesi erityisvaatimuksista, kuten rakennettavan merkkijonon monimutkaisuudesta ja suorituskykyharkinnasta.

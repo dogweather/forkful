@@ -1,72 +1,86 @@
 ---
-title:                "עבודה עם TOML"
-date:                  2024-01-26T04:20:17.712660-07:00
+title:                "עובדים עם TOML"
+date:                  2024-02-03T18:13:13.079711-07:00
 model:                 gpt-4-0125-preview
-simple_title:         "עבודה עם TOML"
-
+simple_title:         "עובדים עם TOML"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/c/working-with-toml.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## מה ולמה?
-TOML היא שפת הסריאליזציה של נתונים שתוכננה להיות קלה לקריאה ולכתיבה. תכנתים משתמשים בה לקבצי תצורה, אחסון נתונים פשוט, וחילופי נתונים בין-שפות בעקבות הבהירות והאדיבות האנושית שלה.
 
-## איך ל:
-בואו ננתח קובץ תצורה ב-TOML ב-C באמצעות הספרייה "tomlc99". תחילה, התקנו את הספרייה. לאחר מכן, צרו קובץ `config.toml`:
+TOML (Tom's Obvious, Minimal Language - שפת התצורה המינימלית והברורה של טום) היא פורמט קובץ תצורה שקל לקרוא בעקבות הסמנטיקה הברורה שלו. מתכנתים משתמשים בו לקבצי תצורה ביישומים כי פשטותו והקריאות שלו מהווה בחירה מעולה בהשוואה לפורמטים כמו XML או JSON בהקשרים מסוימים.
 
+## איך לעשות:
+
+כדי לעבוד עם TOML ב-C, תצטרך תחילה ספרייה שיכולה לפענח קבצי TOML, מכיוון שהספרייה הסטנדרטית של C לא כוללת פונקציונליות זו. בחירה פופולרית היא `tomlc99`, פענח TOML קל משקל ל-C99. הנה מדריך מהיר לקרוא קובץ תצורה TOML פשוט:
+
+ראשית, ודא ש`tomlc99` מותקן ומקושר כראוי בפרויקט שלך.
+
+**דוגמת קובץ TOML (`config.toml`):**
 ```toml
-title = "דוגמה ל-TOML"
-
-[owner]
-name = "טום פרסטון-ורנר"
-dob = 1979-05-27T07:32:00Z
+[database]
+server = "192.168.1.1"
+ports = [ 8001, 8001, 8002 ]
+connection_max = 5000
+enabled = true
 ```
 
-כעת, ננתח אותו ב-C:
+**קוד C לפיענוח קובץ זה:**
 
 ```c
 #include <stdio.h>
+#include <stdlib.h>
 #include "toml.h"
 
 int main() {
-    FILE* fp;
-    char errbuf[200];
-
-    if (0 == (fp = fopen("config.toml", "r"))) {
-        printf("שגיאה: לא ניתן לפתוח את קובץ התצורה\n");
-        return 1;
-    }
-    
-    toml_table_t* conf = toml_parse_file(fp, errbuf, sizeof(errbuf));
-    fclose(fp);
-    if (0 == conf) {
-        printf("שגיאה: %s\n", errbuf);
-        return 1;
+    FILE *configFile;
+    configFile = fopen("config.toml", "r");
+    if (!configFile) {
+        perror("Cannot open file");
+        return EXIT_FAILURE;
     }
 
-    printf("כותרת: %s\n", toml_raw_in(conf, "title"));
+    toml_table_t *config = toml_parse_file(configFile, NULL, 0);
+    if (!config) {
+        fprintf(stderr, "Error parsing file\n");
+        fclose(configFile);
+        return EXIT_FAILURE;
+    }
 
-    toml_table_t* owner = toml_table_in(conf, "owner");
-    printf("שם הבעלים: %s\n", toml_raw_in(owner, "name"));
+    toml_table_t *database = toml_table_in(config, "database");
+    if (database) {
+        const char *server = toml_raw_in(database, "server");
+        printf("Database Server: %s\n", server);
 
-    toml_free(conf);
-    return 0;
+        toml_array_t *ports = toml_array_in(database, "ports");
+        for (int i = 0; i < toml_array_nelem(ports); i++) {
+            int64_t port;
+            toml_int_at(ports, i, &port);
+            printf("Port %d: %ld\n", i, port);
+        }
+    }
+
+    toml_free(config);
+    fclose(configFile);
+    return EXIT_SUCCESS;
 }
 ```
-פלט לדוגמה:
+
+**פלט:**
 ```
-כותרת: "דוגמה ל-TOML"
-שם הבעלים: "טום פרסטון-ורנר"
+Database Server: "192.168.1.1"
+Port 0: 8001
+Port 1: 8001
+Port 2: 8002
 ```
 
-## ניתוח עמוק
-TOML, שהוא ראשי תיבות של Tom's Obvious, Minimal Language, נוצר על ידי טום פרסטון-ורנר ב-2013. הוא משמש כחלופה פשוטה יותר לפורמטים כמו XML ו-YAML, ומתמקד בלהיות יותר קריא ונכתב עבור בני אדם. למרות ש-JSON הוא חלופה נוספת, TOML שומר על מבנה שקל לפרס אותו באופן חזותי על ידי בני אדם, מה שהוא אחד הסיבות העיקריות לאמצו בקבצי תצורה.
+## טבילה עמוקה
 
-ב-C, עבודה עם TOML כוללת בחירה של ספריית ניתוח מכיוון שהשפה אינה תומכת בה ילידית. ספריות כמו "tomlc99" הן תואמות C99 ומספקות API לפענוח טקסט TOML. כאשר מתחשבים בביצועים, טיפול נכון בשגיאות וניהול זיכרון הם קריטיים מאחר ש-C אינה מכילה איסוף זבל מובנה.
+TOML נוצר על ידי טום פרסטון-ורנר, שותף מייסד של GitHub, כתגובה למגבלות שהוא הבחין בהן בפורמטים אחרים של קבצי תצורה. מטרתו היא להיות פשוטה וחד-משמעית, הן לאנשים והן למחשבים, לקרוא ולכתוב בלי הצורך בכללי פענוח מורכבים. באקוסיסטם של C, TOML אינו אזרח דרג א' כמו שהוא עשוי להיות בשפות גבוהות יותר כמו Rust עם `serde_toml` או Python עם `toml`, שיש להן ספריות עם תמיכה ילידית. לעומת זאת, מפתחי C צריכים להסתמך על ספריות חיצוניות כמו `tomlc99`, אך זהו מצב טיפוסי בהתחשב בדגש של C על מינימליזם וביצועים.
 
-## ראו גם:
-1. מפרט TOML: [https://toml.io/en/](https://toml.io/en/)
-2. מאגר GitHub של tomlc99: [https://github.com/cktan/tomlc99](https://github.com/cktan/tomlc99)
-3. השוואת פורמטים של סריאליזציה של נתונים: [https://labs.eleks.com/2015/07/comparison-of-data-serialization-formats.html](https://labs.eleks.com/2015/07/comparison-of-data-serialization-formats.html)
+למרות ש-TOML מקבל שבחים על בהירותו, כאשר בוחרים פורמט קובץ תצורה, חיוני לשקול את צרכי הפרויקט. בתרחישים הדורשים מבנים מורכבים יותר או אינטראקטיביות עם web APIs, JSON או אפילו YAML עשויים להציע התאמה טובה יותר למרות המורכבות המוגברת שלהם. TOML מבריק בתצורות שבהן הקריאות והפשטות הם העולים על הכל, לא בהכרח שם שיש צורך במבני נתונים המתקדמים ביותר.

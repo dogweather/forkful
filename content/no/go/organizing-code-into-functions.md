@@ -1,73 +1,81 @@
 ---
 title:                "Organisering av kode i funksjoner"
-date:                  2024-01-26T01:10:16.241004-07:00
-model:                 gpt-4-1106-preview
+date:                  2024-02-03T17:59:35.863246-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Organisering av kode i funksjoner"
-
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/go/organizing-code-into-functions.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Hva og Hvorfor?
-Organisering av kode i funksjoner handler om å bryte ned koden din i gjenbrukbare deler. Det gjør koden din ryddigere, lettere å lese og enklere å feilsøke.
+## Hva & Hvorfor?
+
+Å organisere kode i funksjoner i Go innebærer å bryte ned kode i gjenbrukbare, modulære blokker som utfører spesifikke oppgaver. Denne tilnærmingen forbedrer kodens lesbarhet, vedlikeholdbarhet og legger til rette for samarbeid i team ved å muliggjøre for programmerere å jobbe på forskjellige funksjoner samtidig.
 
 ## Hvordan:
-Her er et Go-utdrag som viser en kodeblokk, etterfulgt av en refaktorert versjon som bruker funksjoner:
+
+I Go definerer du en funksjon ved å bruke nøkkelordet `func`, etterfulgt av funksjonens navn, parametere (hvis noen), og returtypen. La oss illustrere med et enkelt eksempel:
 
 ```go
 package main
 
 import "fmt"
 
-func main() {
-    // Før: Innbakt kode
-    fmt.Println("Beregner sum...")
-    total := 0
-    for i := 1; i <= 10; i++ {
-        total += i
-    }
-    fmt.Println("Total sum er:", total)
-
-    // Etter: Bruk av en funksjon
-    fmt.Println("Beregner sum ved hjelp av en funksjon...")
-    sum := getSum(1, 10)
-    fmt.Println("Total sum er:", sum)
+// definer en funksjon for å beregne summen av to tall
+func addNumbers(a int, b int) int {
+    return a + b
 }
 
-// Funksjon for å beregne sum innenfor et område
-func getSum(start, slutt int) int {
+func main() {
+    sum := addNumbers(5, 7)
+    fmt.Println("Summen er:", sum)
+    // Output: Summen er: 12
+}
+```
+
+Funksjoner kan også returnere flere verdier, noe som er en unik egenskap sammenlignet med mange andre språk. Slik kan du utnytte dette:
+
+```go
+// definer en funksjon for å bytte om to tall
+func swap(a, b int) (int, int) {
+    return b, a
+}
+
+func main() {
+    x, y := swap(10, 20)
+    fmt.Println("x, y etter bytte:", x, y)
+    // Output: x, y etter bytte: 20 10
+}
+```
+
+Du kan også definere funksjoner med variabelt antall argumenter ved å bruke ellipsen `...` før parameterens type. Dette er nyttig for å lage fleksible funksjoner:
+
+```go
+// definer en funksjon for å beregne summen av et ukjent antall heltall
+func sum(numbers ...int) int {
     total := 0
-    for i := start; i <= slutt; i++ {
-        total += i
+    for _, number := range numbers {
+        total += number
     }
     return total
 }
-```
 
-Eksempelutskriften for både innbakt kode og funksjonsbasert kode vil være den samme:
-
-```
-Beregner sum...
-Total sum er: 55
-Beregner sum ved hjelp av en funksjon...
-Total sum er: 55
+func main() {
+    total := sum(1, 2, 3, 4, 5)
+    fmt.Println("Totalen er:", total)
+    // Output: Totalen er: 15
+}
 ```
 
 ## Dypdykk
-Før konseptet med funksjoner kom, var programmering i stor grad prosedyremessig, med kode som kjørte fra topp til bunn. Ettersom programmene vokste, frembrakte denne tilnærmingen ineffektivitet og kodegjentakelse.
 
-Språk introduserte funksjoner som en mekanisme for abstraksjon. I Go innkapsler funksjoner kodeblokker med en spesifikk oppgave, noe som oppmuntrer til DRY-prinsippet (Don't Repeat Yourself). De aksepterer parametere og kan returnere resultater.
+Konseptet med å organisere kode i funksjoner er ikke spesielt for Go – det er et grunnleggende programmeringsprinsipp. Imidlertid introduserer Go visse konvensjoner og egenskaper som skiller dens funksjonshåndtering. For eksempel er evnen til å returnere flere verdier fra funksjoner relativt unikt og kan føre til renere, mer forståelig kode, spesielt når man håndterer operasjoner som tradisjonelt kan kreve bruk av pekere eller unntakshåndtering.
 
-Nyttige tips:
-- Gi funksjoner klare navn; et godt navn forklarer hva en funksjon gjør.
-- Hold dem korte; hvis en funksjon gjør for mye, bryt den ned.
-- Funksjoner kan returnere flere verdier, utnytt dette for feilhåndtering.
-- Funksjoner av høyere orden (funksjoner som tar imot eller returnerer andre funksjoner) er kraftige verktøy i Go.
+Dessuten forsterker Go's støtte for førsteklasses funksjoner—funksjoner som kan sendes som argumenter til andre funksjoner, returneres som verdier fra funksjoner, og tilordnes til variabler—språkets støtte for funksjonell programmeringsmønstre. Dette er spesielt nyttig i å skape høyere ordens funksjoner som manipulerer eller kombinerer andre funksjoner.
 
-Alternativer til funksjoner inkluderer innbakt kode (rotete for komplekse oppgaver) og objektmetoder (en del av det objektorienterte paradigmet som er tilgjengelig i Go gjennom strukturer).
+Det er likevel essensielt å være oppmerksom på "loven om avtagende avkastning" når du organiserer kode i funksjoner. Overmodularisering kan føre til overdreven abstraksjon, noe som gjør koden vanskeligere å forstå og vedlikeholde. Videre, mens Go's enkle tilnærming til feilhåndtering (å returnere feil som normale returverdier) oppfordrer til ren feilpropagering gjennom flere lag av funksjonskall, kan det føre til repetitiv feilhåndteringskode. Alternativer som feilhåndteringsrammeverk eller å adoptere "try-catch"-tilnærmingen fra andre språk (selv om det ikke er nativt støttet) via pakkeimplementasjoner kan noen ganger tilby mer elegante løsninger avhengig av bruksområdet.
 
-## Se Også
-- [Go by Example: Functions](https://gobyexample.com/functions)
-- [Effective Go: Function](https://golang.org/doc/effective_go#functions)
+Beslutningen om hvor omfattende man skal utnytte funksjoner og modularisering i Go bør balansere behovet for abstraksjon, vedlikeholdbarhet, ytelse, og lesbar feilhåndtering, og utnytte mest mulig av Go's rett frem, men kraftige funksjoner.

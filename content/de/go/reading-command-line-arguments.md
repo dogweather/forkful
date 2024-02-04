@@ -1,50 +1,59 @@
 ---
-title:                "Lesen von Kommandozeilenargumenten"
-date:                  2024-01-20T17:56:06.498529-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Lesen von Kommandozeilenargumenten"
-
+title:                "Kommandozeilenargumente lesen"
+date:                  2024-02-03T18:06:14.382896-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Kommandozeilenargumente lesen"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/go/reading-command-line-arguments.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Kommandozeilenargumente zu lesen bedeutet, Eingaben aus der Shell direkt in dein Programm zu holen. Das ist nützlich, weil es die Interaktion mit dem Benutzer erlaubt und Skripte flexibler macht.
 
-## How to:
-Hier ist ein einfaches Beispiel, wie man in Go Kommandozeilenargumente liest. Wir nutzen das `os`-Paket:
+Das Lesen von Befehlszeilenargumenten in Go beinhaltet das Extrahieren der Argumente, die einem Programm während seiner Aufrufung aus dem Terminal oder der Befehlsaufforderung bereitgestellt wurden. Programmierer tun dies, um die Programmausführung ohne Änderung des Codes anzupassen, was Anwendungen flexibler und benutzergesteuerter macht.
 
-```Go
+## Wie:
+
+Go bietet direkten Zugriff auf Befehlszeilenargumente über das `os`-Paket, speziell mit `os.Args`, einem Array aus Zeichenketten. Hier ist ein einfaches Beispiel, um loszulegen:
+
+```go
 package main
 
 import (
-	"fmt"
-	"os"
+    "fmt"
+    "os"
 )
 
 func main() {
-	argsWithProg := os.Args
-	argsWithoutProg := os.Args[1:]
+    // os.Args bietet Zugriff auf rohe Befehlszeilenargumente
+    fmt.Println("Befehlszeilenargumente:", os.Args)
 
-	fmt.Println("Alle Argumente inklusive Programmname:", argsWithProg)
-	fmt.Println("Argumente ohne Programmname:", argsWithoutProg)
+    if len(os.Args) > 1 {
+        // Schleifen durch die Argumente, wobei das erste argument (Programmname) übersprungen wird
+        for i, arg := range os.Args[1:] {
+            fmt.Printf("Argument %d: %s\n", i+1, arg)
+        }
+    } else {
+        fmt.Println("Keine Befehlszeilenargumente bereitgestellt.")
+    }
 }
 ```
-Wenn du das Programm mit `go run myprogram.go arg1 arg2` ausführst, sollte die Ausgabe so aussehen:
+
+Beispielausgabe bei Ausführung mit `go run yourprogram.go arg1 arg2` könnte wie folgt aussehen:
 
 ```
-Alle Argumente inklusive Programmname: [myprogram arg1 arg2]
-Argumente ohne Programmname: [arg1 arg2]
+Befehlszeilenargumente: [/tmp/go-build123456789/b001/exe/yourprogram arg1 arg2]
+Argument 1: arg1
+Argument 2: arg2
 ```
 
-## Deep Dive
-Kommandozeilenargumente sind so alt wie die Kommandozeile selbst. In Unix-Betriebssystemen und deren Shells werden sie schon immer genutzt. In Go greifen wir über das `os`-Paket darauf zu, welches systemunabhängig arbeitet, da es sich um ein Standardpaket handelt. Alternativen zu `os.Args` sind Flag-Parsing-Pakete wie `flag` oder Drittanbieter-Tools wie Cobra, die mehr Funktionalitäten und eine schärfere Parsing-Logik mitbringen. Mit `os.Args` erhältst du ein Slice von `string`. Dabei steht `os.Args[0]` für den Programmnamen und die weiteren Einträge für die eigentlichen Argumente. Die Indizierung beginnt bei 0, wie bei allem in Go.
+Dies druckt alle Argumente einschließlich des Programmnamens (oft bei Index 0) aus und iteriert dann über jedes bereitgestellte Argument und druckt es aus. Für eine kontrolliertere Argumentanalyse könnten Sie das `flag`-Paket in Betracht ziehen, um Befehlszeilenoptionen zu parsen.
 
-## See Also
-Weitere Infos und Tutorials findest du hier:
-- Go by Example: Command-Line Arguments: https://gobyexample.com/command-line-arguments
-- The Go Programming Language Specification: https://golang.org/ref/spec
-- Go flag package: https://golang.org/pkg/flag/ 
-- Cobra library: https://github.com/spf13/cobra
+## Tiefere Einblicke
+
+Historisch gesehen ist der Zugriff auf Befehlszeilenargumente eine Praxis, die so alt wie die C-Programmierung ist, wo `argc` und `argv[]` einen ähnlichen Zweck erfüllen. In Go macht `os.Args` es unkompliziert, aber absichtlich rudimentär. Für komplexere Szenarien, wie die Handhabung von Flags oder Optionen, bietet Go das `flag`-Paket, das robuste Parsing-Fähigkeiten bereitstellt. Dies könnte als eine "bessere" Alternative angesehen werden, wenn Ihre Anwendung mehr als nur positionelle Argumente benötigt.
+
+Im Gegensatz zu einigen Skriptsprachen, die eine integrierte Parsing von Befehlszeilenargumenten in assoziative Arrays oder Objekte anbieten, erfordert der Ansatz von Go, dass Programmierer entweder das Parsing manuell mit `os.Args` für grundlegende Bedürfnisse handhaben oder das `flag`-Paket für fortgeschrittenere Szenarien nutzen. Dieses Design spiegelt die Philosophie von Go wider, die Kernsprache einfach zu halten und gleichzeitig leistungsfähige Standardbibliotheken für gängige Aufgaben bereitzustellen. Auch wenn dies für diejenigen, die an integriertes Parsing gewöhnt sind, eine leichte Lernkurve darstellen mag, bietet es mehr Flexibilität und fördert ein tieferes Verständnis der Handhabung von Befehlszeilenargumenten.

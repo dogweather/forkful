@@ -1,64 +1,62 @@
 ---
-title:                "Een datum in de toekomst of het verleden berekenen"
-date:                  2024-01-28T21:55:33.502023-07:00
+title:                "Een datum in de toekomst of verleden berekenen"
+date:                  2024-02-03T17:52:57.583830-07:00
 model:                 gpt-4-0125-preview
-simple_title:         "Een datum in de toekomst of het verleden berekenen"
-
+simple_title:         "Een datum in de toekomst of verleden berekenen"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/c/calculating-a-date-in-the-future-or-past.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Wat & Waarom?
+Het berekenen van een datum in de toekomst of het verleden omvat het bepalen van een specifieke datum door een bepaald aantal dagen, maanden of jaren bij een gegeven datum op te tellen of af te trekken. Programmeurs doen dit voor taken zoals het plannen van evenementen, het genereren van herinneringen of het afhandelen van vervaldata, waardoor het een essentiële functionaliteit is in verschillende toepassingen, van kalendersystemen tot financiële software.
 
-Het berekenen van een toekomstige of verleden datum houdt in dat je de exacte dag moet uitvogelen die een specifiek interval verwijderd is van een bekende datum. Programmeurs doen dit voor het plannen van evenementen, het laten verlopen van tokens, herinneringen, enz.
-
-## Hoe te:
-
-Hier is direct bruikbare C-code om een datum in de toekomst te berekenen. We gebruiken `time.h` functies.
+## Hoe:
+Hoewel de standaardbibliotheek van C geen directe functies biedt voor datumrekenkunde, kunt u datums manipuleren met behulp van de `time.h` bibliotheek, specifiek werkend met het `time_t` gegevenstype en `struct tm`. Hier is een vereenvoudigd voorbeeld van hoe je dagen aan de huidige datum kunt toevoegen:
 
 ```c
 #include <stdio.h>
 #include <time.h>
 
+void addDays(struct tm* date, int daysToAdd) {
+    const time_t ONE_DAY = 24 * 60 * 60; // seconden in één dag
+    // Converteer tm-structuur naar time_t, voeg de dagen toe en converteer terug
+    time_t date_seconds = mktime(date) + (daysToAdd * ONE_DAY);
+    *date = *localtime(&date_seconds);
+}
+
 int main() {
-    time_t nu;
-    struct tm nieuwe_datum;
-    double dagenToeVoegen = 10; // 10 dagen in de toekomst
+    time_t now;
+    time(&now);
+    struct tm futureDate = *localtime(&now);
 
-    // Haal de huidige tijd op en zet om naar tm struct
-    time(&nu);
-    nieuwe_datum = *localtime(&nu);
+    int daysToAdd = 10; // Pas dit aan voor het gewenste aantal dagen om toe te voegen
+    addDays(&futureDate, daysToAdd);
 
-    // Voeg de dagen toe aan de huidige datum
-    nieuwe_datum.tm_mday += dagenToeVoegen;
-    mktime(&nieuwe_datum);
-
-    // Output de nieuwe datum:
-    printf("De datum over 10 dagen zal zijn: %02d-%02d-%04d\n",
-           nieuwe_datum.tm_mday,
-           nieuwe_datum.tm_mon + 1, // tm_mon is 0-11
-           nieuwe_datum.tm_year + 1900); // tm_year is jaren vanaf 1900
+    printf("Toekomstige Datum: %d-%d-%d\n", futureDate.tm_year + 1900, futureDate.tm_mon + 1, futureDate.tm_mday);
 
     return 0;
 }
 ```
 
-Voorbeelduitvoer: `De datum over 10 dagen zal zijn: 12-04-2023`
+Deze code voegt een gespecificeerd aantal dagen toe aan de huidige datum en drukt de toekomstige datum af. Let op dat de aanpak rekening houdt met schrikkelseconden en aanpassingen voor zomertijd, zoals afgehandeld door `mktime` en `localtime`.
 
-## Diepgaande Duik
+Voorbeelduitvoer:
 
-Terug in de tijd was het berekenen van toekomstige of vorige data een gedoe - geen ingebouwde functies, enkel puur algoritmisch plezier. Nu geeft C's `time.h` je `time_t`, `struct tm`, en functies zoals `mktime()` om het leven makkelijker te maken.
+```
+Toekomstige Datum: 2023-04-23
+```
 
-Alternatieven? Zeker. Voor complexe datum-tijd manipulatie gaan sommige ontwikkelaars voor bibliotheken zoals `date.h` voor C++ of de 'chrono' module.
+Houd in gedachten dat dit voorbeeld dagen toevoegt, maar met meer complexe berekeningen (zoals maanden of jaren, rekening houdend met schrikkeljaren), zou je meer geavanceerde logica of bibliotheken zoals `date.h` in C++ of externe bibliotheken in C nodig hebben.
 
-De details? `mktime()` normaliseert `struct tm`. Dat betekent dat als je 40 aan dagen toevoegt, het overgaat in maanden, zelfs jaren. Goed om te weten, voordat je je eigen tijdmachine uitvindt die in cirkels ronddraait.
+## Diepere Duik
+Het manipuleren van datums in C met behulp van de time.h bibliotheek omvat directe manipulatie van tijd in seconden sinds het Unix-tijdperk (00:00, 1 januari 1970, UTC), gevolgd door het terug converteren van die seconden in een meer mens-leesbaar datumformaat (`struct tm`). Deze aanpak is simplistisch maar effectief voor basisoperaties en profiteert ervan dat het cross-platform is en deel uitmaakt van de C-standaardbibliotheek.
 
-## Zie Ook
+De eenvoud van deze methode is echter ook een beperking. Het omgaan met meer complexe datum berekeningen (zoals rekening houden met variërende maandlengtes, schrikkeljaren en tijdzones) wordt snel niet-triviaal. Talen zoals Python met `datetime` of Java met `java.time` bieden intuïtievere API's voor datumrekenkunde, omarmen objectgeoriënteerde principes voor duidelijkheid en gebruiksgemak.
 
-- C Standaardbibliotheek - `time.h`: https://en.cppreference.com/w/c/chrono
-- Alternatieve datum- en tijd bibliotheken, zoals Howard Hinnant's `date.h` bibliotheek voor C++: https://github.com/HowardHinnant/date
-- `mktime()` functie uitleg: https://www.cplusplus.com/reference/ctime/mktime/
+In de praktijk, wanneer men werkt aan projecten die uitgebreide datummanipulatie in C vereisen, wenden ontwikkelaars zich vaak tot externe bibliotheken voor robuustere oplossingen. Deze bibliotheken kunnen uitgebreide datum- en tijdfuncties bieden, inclusief tijdzonebehandeling, formatteringsopties en meer genuanceerde datumrekenmogelijkheden, wat de taak van de ontwikkelaar aanzienlijk vereenvoudigt.
+
+Ondanks de beschikbaarheid van modernere alternatieven, blijft het begrijpen van hoe je datums kunt manipuleren met behulp van de C-standaardbibliotheek een waardevolle vaardigheid. Het biedt diepgaande inzichten in hoe computers tijd vertegenwoordigen en ermee werken, een fundamenteel concept dat specifieke programmeertalen overstijgt.

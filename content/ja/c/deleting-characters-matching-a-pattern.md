@@ -1,55 +1,58 @@
 ---
-title:                "パターンに一致する文字を削除する"
-date:                  2024-01-20T17:41:48.650618-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "パターンに一致する文字を削除する"
-
+title:                "パターンに一致する文字の削除"
+date:                  2024-02-03T17:55:33.677821-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "パターンに一致する文字の削除"
 tag:                  "Strings"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/c/deleting-characters-matching-a-pattern.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (何となぜ？)
-文字パターン一致する文字削除とは、特定のパターンにマッチする文字を文字列から取り除くことです。不要なデータのクリーンアップや、フォーマットの均一化などのためにプログラマーはこれを行います。
+## 何となぜ?
 
-## How to: (方法)
-```C
+C言語で特定のパターンに一致する文字を文字列から削除するとは、事前に定義された基準に適合する特定の文字のすべてのインスタンスを取り除くことです。プログラマーは、入力のサニタイズ、データの処理の準備、あるいは単に出力やさらなる操作のための文字列のクリーンアップを行うためにこのタスクを実行し、処理されるデータが与えられたコンテキストやアルゴリズムにとってまさに必要とされるものであることを確実にします。
+
+## 方法:
+
+C言語には、パターンに基づいて文字列から文字を直接削除するための組み込み関数はありません。これは、いくつかの高水準言語とは異なります。しかしながら、文字列を手動で繰り返し処理し、望まない文字を除外した新しい文字列を構築することで、このタスクを容易に実行できます。例えば、文字列からすべての数字を削除したいとします。次のように行うことができます:
+
+```c
 #include <stdio.h>
-#include <string.h>
+#include <ctype.h>
 
-void delete_chars_matching_pattern(char *str, const char *pattern) {
-    char *pr = str, *pw = str;
-    while (*pr) {
-        const char* pm = pattern;
-        int match_found = 0;
-        while (*pm) {
-            if (*pr == *pm++) {
-                match_found = 1;
-                break;
-            }
+void remove_digits(char *str) {
+    char *src = str, *dst = str;
+    while (*src) {
+        if (!isdigit((unsigned char)*src)) {
+            *dst++ = *src;
         }
-        if (!match_found) *(pw++) = *(pr);
-        pr++;
+        src++;
     }
-    *pw = '\0';
+    *dst = '\0';
 }
 
 int main() {
-    char str[] = "Hello, World! 123";
-    delete_chars_matching_pattern(str, "lo123");
-    printf("%s\n", str); // Should print "He, Wrld! "
+    char str[] = "C Programming 101: The Basics!";
+    remove_digits(str);
+    printf("Result: %s\n", str);
     return 0;
 }
 ```
 
-## Deep Dive (深掘り)
-C言語では、文字列操作は基本的な関数群で行われますが、パターンマッチ削除は標準では提供されていません。これを実現するには、自作の関数を用意する必要があります。過去のC言語のバージョンでは正規表現ライブラリが存在しなかったこともあり、単純な文字列処理で多くのタスクが行われていました。この例では、`delete_chars_matching_pattern` 関数を用いて、指定されたパターンの文字を持つ文字列から該当する文字を削除しています。代替手段として、POSIX準拠システムでは `<regex.h>` を用いた正規表現マッチングが可能ですが、それには学習コストが伴います。
+サンプル出力:
+```
+Result: C Programming : The Basics!
+```
 
-## See Also (関連情報)
-- C Standard Library Functions: http://www.Ｃ標準ライブラリ.com/
-- POSIX regex(3) - Linux man page: https://linux.die.net/man/3/regex
-- Stack Overflow - C-related questions: https://stackoverflow.com/questions/tagged/c
+この例では、`ctype.h`の`isdigit`を利用して数字を識別し、数字でない文字を文字列の先頭にシフトし、すべての文字が評価されると文字列を終了します。
 
-Please note that some URLs may be placeholders as providing accurate and updated URLs goes beyond the capabilities of this AI. C standard library resources can be found with a search using terms like "C standard library functions" and POSIX regex documentation can be located by searching "POSIX regex manual" or accessing the appropriate system manual pages. Stack Overflow is a valuable resource for all programming questions, not just C-related ones, and can be accessed directly by visiting the provided link.
+## 深く掘り下げる
+
+提示された解決策は、同じ配列内で二つのポインタを使用するアプローチを使用し、望まない文字を効果的にフィルターする手法を使用しています。これはCの手動メモリ管理哲学の象徴的なテクニックです。この方法はインプレースで操作を行うため効率的であり、追加のメモリ割り当てが不要であるため、オーバーヘッドを最小限に抑えます。
+
+歴史的に、C言語に高水準の文字列操作関数がないため、プログラマーはメモリレベルでの文字列操作の深い理解を発展させる必要がありました。これは上述のような革新的なアプローチにつながりました。これはより大きな制御と効率性の利点がありますが、バッファーオーバーフローやオフバイワンの間違いなど、よりリスクが高まるという短所もあります。
+
+現代の開発コンテキストでは、特に安全性とセキュリティを重視する場合、このような低レベルの操作を抽象化する言語が文字列操作タスクに好まれるかもしれません。それでも、細かいパフォーマンス最適化を要求するシナリオや、Cの最小主義とスピードが最優先とされる環境で作業する際には、これらのCのテクニックを理解し、活用することが非常に価値があるとされています。

@@ -1,54 +1,90 @@
 ---
-title:                "Tworzenie pliku tymczasowego"
-date:                  2024-01-20T17:39:35.443106-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Tworzenie pliku tymczasowego"
-
+title:                "Tworzenie tymczasowego pliku"
+date:                  2024-02-03T17:55:19.951180-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Tworzenie tymczasowego pliku"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/c/creating-a-temporary-file.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Co & Dlaczego?)
-Tworzenie pliku tymczasowego to proces kreowania miejsca na dane, które są potrzebne tylko przez chwilę. Robimy to, bo zapewnia to bezpieczeństwo (nikt inny nie ma do nich dostępu) i porządek w systemie plików, zwłaszcza kiedy dane nie są już potrzebne.
+## Co i dlaczego?
+Tworzenie tymczasowego pliku w języku C polega na generowaniu pliku, który ma być używany przez krótki czas, zazwyczaj jako przestrzeń robocza dla przetwarzania danych lub ich przechowywania. Programiści robią to, aby zarządzać tymczasowymi danymi bez wpływania na stałą pamięć programu lub aby zapewnić, że wrażliwe dane zostaną usunięte po użyciu.
 
-## How to (Jak to zrobić)
-C provides the `tmpfile()` function to create a unique temporary file that's automatically deleted when the program ends. Let's see how it works:
+## Jak to zrobić:
+Tworzenie tymczasowego pliku w języku programowania C może wykorzystywać funkcje takie jak `tmpfile()` i `mkstemp()`.
+
+**Korzystanie z `tmpfile()`**: Ta funkcja tworzy unikalny tymczasowy plik, który jest automatycznie usuwany, gdy program zostanie zakończony lub plik zostanie zamknięty.
 
 ```c
 #include <stdio.h>
 
 int main() {
-    FILE *tmp = tmpfile();
-    if (tmp == NULL) {
-        perror("Unable to create temporary file");
+    FILE *temp = tmpfile();
+    if (temp == NULL) {
+        perror("Nie udało się utworzyć pliku tymczasowego");
         return 1;
     }
-    
-    fputs("This is a temporary file content.", tmp);
 
-    // Do something with the file here...
-    // When done, the file is closed automatically when the program terminates
+    // Zapisywanie danych do pliku tymczasowego
+    fputs("To jest test.\n", temp);
+
+    // Powrót i odczyt tego, co zapisaliśmy
+    rewind(temp);
+    char buffer[1024];
+    while (fgets(buffer, sizeof(buffer), temp) != NULL) {
+        printf("%s", buffer);
+    }
+
+    // Automatycznie usuwany przy zamknięciu lub wyjściu z programu
+    fclose(temp);
 
     return 0;
 }
 ```
-No sample output is really needed here since the temporary file isn't going to hang around.
+**Przykładowe wyjście:**
+```
+To jest test.
+```
 
-## Deep Dive (Głębsza eksploracja)
-Historically, temporary files were managed manually, with designers explicitly choosing file names, which could lead to clashes. The `tmpfile()` function, provided by the ISO C standard, removes this hassle by guaranteeing a unique file that doesn't conflict with any other file and is deleted upon program completion.
+**Korzystanie z `mkstemp()`**: Zapewnia większą kontrolę nad lokalizacją tymczasowego pliku i jego uprawnieniami. Wymaga ciągu szablonu zakończonego `XXXXXX`, który następnie zastępuje unikalną sekwencją, aby zapobiec kolizjom nazw.
 
-Alternatives? Sure. You could use `mkstemp()` or `tmpnam()` to have more control over the file's properties and lifetime, or you can directly work with the file system, but that's complex territory. When dealing with highly sensitive data, though, be extra cautious as temp files may not be securely erased.
+```c
+#include <unistd.h>
+#include <stdio.h>
+#include <fcntl.h>
 
-As for implementation, `tmpfile()` creates the file in a system-specified temp directory. The function uses a combination of pid (process ID) and/or a unique sequence to generate the name, preventing naming conflicts and providing a degree of safety. On UNIX-like systems, this often links to `/tmp`.
+int main() {
+    char template[] = "/tmp/mytemp-XXXXXX";
+    int fd = mkstemp(template);
 
-## See Also (Zobacz również)
-To dig deeper into temporary file creation in C, here are some resources:
+    if (fd == -1) {
+        perror("Nie udało się utworzyć pliku tymczasowego");
+        return 1;
+    }
+    
+    printf("Utworzono plik tymczasowy: %s\n", template);
 
-- `man 3 tmpfile` - manual page for tmpfile() function in UNIX-like systems
-- ISO C Standard documentation - for the formal specification of `tmpfile()`
-- `man 3 mkstemp`, `man 3 tmpnam` - manual pages for other temporary file functions
-- [Stack Overflow](https://stackoverflow.com) - for community-driven solutions and discussions on file handling in C
+    // Tymczasowe pliki utworzone za pomocą mkstemp() należy usuwać ręcznie
+    unlink(template);
 
-Remember, always refer to your system's documentation and manuals to understand the nuances specific to your development environment.
+    close(fd);
+    return 0;
+}
+```
+**Przykładowe wyjście:**
+```
+Utworzono plik tymczasowy: /tmp/mytemp-abc123
+```
+
+## Pogłębiona analiza
+Koncepcja plików tymczasowych nie jest unikalna dla C, ale jest powszechną funkcjonalnością w wielu środowiskach programistycznych ze względu na jej użyteczność w obsłudze danych efemerycznych. Funkcja `tmpfile()`, ustandaryzowana w standardzie ISO C, tworzy plik o unikalnej nazwie w standardowym katalogu, ale jego istnienie jest przelotne, co sprawia, że jest idealny do bezpiecznych lub tymczasowych operacji.
+
+Jednym z istotnych ograniczeń `tmpfile()` jest jej zależność od domyślnego katalogu tymczasowego, który może nie być odpowiedni dla wszystkich aplikacji, szczególnie pod względem uprawnień lub bezpieczeństwa. W przeciwieństwie do tego, `mkstemp()` pozwala na określenie katalogu i zapewnia bezpieczne tworzenie plików z gwarantowaną unikalnością nazw poprzez modyfikację dostarczonego ciągu szablonu, oferując bardziej wszechstronne rozwiązanie kosztem ręcznego zarządzania plikami.
+
+Jednak tworzenie plików tymczasowych może wprowadzać podatności bezpieczeństwa, takie jak warunki rywalizacji, jeśli nie są one odpowiednio obsługiwane. Na przykład, `tmpfile()` i `mkstemp()` adresują różne aspekty bezpiecznego tworzenia tymczasowych plików (automatyczne usuwanie i bezpieczne generowanie nazw, odpowiednio), ale żadna z nich nie jest panaceum. Programiści muszą rozważyć specyfikę potrzeb bezpieczeństwa swojej aplikacji, włączając w to potencjalne podatności wprowadzane przez pliki tymczasowe, i mogą potrzebować wdrożyć dodatkowe zabezpieczenia poza tym, co oferują te funkcje.
+
+W szerszym kontekście programowania, alternatywy takie jak przechowywanie danych w pamięci (np. przy użyciu dynamicznych struktur danych lub plików zmapowanych w pamięci) mogą oferować lepszą wydajność lub bezpieczeństwo dla tymczasowego przetwarzania danych. Niemniej, fizyczne pliki tymczasowe pozostają kluczowym narzędziem w wielu scenariuszach, szczególnie przy dużych zestawach danych lub gdy zaangażowana jest komunikacja międzyprocesowa.

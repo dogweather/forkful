@@ -1,74 +1,88 @@
 ---
 title:                "Работа с JSON"
-date:                  2024-01-29T00:04:17.546007-07:00
+date:                  2024-02-03T18:12:04.718900-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Работа с JSON"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ru/c/working-with-json.md"
 changelog:
-  - 2024-01-29, gpt-4-0125-preview, translated from English
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Что и Почему?
 
-JSON, сокращение от JavaScript Object Notation, является легковесным форматом обмена данными. Программисты используют его, потому что его легко читать и писать людям, а также легко анализировать и генерировать машинам, что делает его предпочтительным выбором для API и файлов конфигурации.
+Работа с JSON (JavaScript Object Notation) на C включает в себя разбор, генерацию и манипуляцию структурами данных JSON. Программисты делают это для обеспечения связи с веб-сервисами, хранения данных или файлов конфигурации в легковесном и читаемом формате.
 
 ## Как это сделать:
 
-В C вы часто будете использовать библиотеку, такую как cJSON или Jansson, для работы с JSON. Вот как вы бы анализировали и генерировали JSON с помощью cJSON:
+Для работы с JSON на C обычно используются библиотеки, такие как `jansson` или `json-c`, из-за отсутствия встроенной поддержки JSON в C. Здесь мы сосредоточимся на `jansson` из-за её простоты использования и активного обслуживания. Сначала установите библиотеку (например, с помощью менеджера пакетов `apt` на Ubuntu: `sudo apt-get install libjansson-dev`).
 
-```C
+Начнем с разбора строки JSON и доступа к её содержимому:
+
+```c
+#include <jansson.h>
 #include <stdio.h>
-#include "cJSON.h"
 
 int main() {
-    // JSON, который мы анализируем
-    char text[] = "{\"name\": \"John\", \"age\": 30}";
-
-    // Анализ JSON
-    cJSON *json = cJSON_Parse(text);
-    if (json == NULL) {
-        const char *error_ptr = cJSON_GetErrorPtr();
-        if (error_ptr != NULL) {
-            fprintf(stderr, "Ошибка до: %s\n", error_ptr);
-        }
+    const char *json_string = "{\"name\":\"John Doe\",\"age\":30}";
+    json_error_t error;
+    json_t *root = json_loads(json_string, 0, &error);
+    
+    if(!root) {
+        fprintf(stderr, "ошибка: в строке %d: %s\n", error.line, error.text);
         return 1;
     }
-
-    // Получение значений
-    const cJSON *name = cJSON_GetObjectItemCaseSensitive(json, "name");
-    const cJSON *age = cJSON_GetObjectItemCaseSensitive(json, "age");
-
-    // Проверка, являются ли элементы допустимыми и правильного типа
-    if (cJSON_IsString(name) && (name->valuestring != NULL)) {
-        printf("Имя: %s\n", name->valuestring);
-    }
-    if (cJSON_IsNumber(age)) {
-        printf("Возраст: %d\n", age->valueint);
-    }
-
-    // Очистка
-    cJSON_Delete(json);
+    
+    const char *name;
+    int age;
+    json_unpack(root, "{s:s, s:i}", "name", &name, "age", &age);
+    
+    printf("Имя: %s\nВозраст: %d\n", name, age);
+    
+    json_decref(root);
     return 0;
 }
 ```
 
 Пример вывода:
 ```
-Имя: John
+Имя: John Doe
 Возраст: 30
 ```
 
-## Глубокое Погружение
+Далее, создание и вывод объекта JSON:
 
-JSON возник из JavaScript, но его простота сделала его стандартом среди многих языков. До JSON XML был основным инструментом для обмена данными, но ему не хватало минимализма, который принес JSON. Lua, YAML и TOML являются альтернативами, каждый из которых имеет свои собственные области применения и стили синтаксиса. Реализация JSON в C с нуля включает в себя понимание токенов, парсеров и сериализаторов. Это непростая задача, поэтому предпочтение отдается надежным библиотекам.
+```c
+#include <jansson.h>
+#include <stdio.h>
 
-## Смотрите также
+int main() {
+    json_t *root = json_object();
+    json_object_set_new(root, "name", json_string("Jane Doe"));
+    json_object_set_new(root, "age", json_integer(25));
+    
+    char *json_dump = json_dumps(root, JSON_ENCODE_ANY);
+    printf("%s\n", json_dump);
+    
+    free(json_dump);
+    json_decref(root);
+    return 0;
+}
+```
 
-- Библиотека cJSON: https://github.com/DaveGamble/cJSON
-- Библиотека Jansson: https://digip.org/jansson/
-- Спецификация JSON: https://www.json.org/json-en.html
-- Сравнение форматов сериализации данных: https://en.wikipedia.org/wiki/Comparison_of_data_serialization_formats
+Пример вывода:
+```
+{"name": "Jane Doe", "age": 25}
+```
+
+Эти примеры демонстрируют основы загрузки строки JSON, извлечения её значений, создания нового объекта JSON, а затем вывода его в виде строки.
+
+## Углубление
+
+Необходимость работы с JSON на C возникает из-за принятия вебом JSON в качестве основного формата для обмена данными. Простота и эффективность JSON быстро сделали его более предпочтительным, чем XML, несмотря на изначальное отсутствие прямой поддержки работы с JSON в C. Ранние решения включали в себя ручную манипуляцию строками - склонную к ошибкам и неэффективную. Библиотеки, такие как `jansson` и `json-c`, появились, чтобы заполнить этот пробел, предоставляя надежные API для разбора, создания и сериализации JSON.
+
+Хотя `jansson` предлагает простоту и удобство использования, `json-c` может привлечь тех, кто ищет более широкий набор функций. Тем не менее, альтернативы, такие как библиотеки разбора на C++, предлагают более сложные абстракции благодаря более комплексным структурам данных и поддержке стандартной библиотеки этого языка. Однако, когда работа ведется в средах, где C является предпочтительным или необходимым языком - например, во встроенных системах или при взаимодействии с существующими библиотеками на C - использование `jansson` или `json-c` становится незаменимым.
+
+Также стоит отметить, что работа с JSON на C требует более глубокого понимания управления памятью, поскольку эти библиотеки часто возвращают динамически выделенные объекты, требующие явного освобождения. Это ставит перед программистами задачу совместить удобство с ответственностью за предотвращение утечек памяти, ключевым аспектом создания эффективного кода на C.

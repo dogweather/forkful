@@ -1,70 +1,83 @@
 ---
 title:                "HTML:n jäsentäminen"
-date:                  2024-01-20T15:31:56.573125-07:00
+date:                  2024-02-03T18:05:31.506873-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "HTML:n jäsentäminen"
-
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/go/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Mitä ja Miksi?)
-HTML:n jäsentäminen on prosessi, jossa HTML-dokumentin sisältö muutetaan rakenteiseksi dataksi, jonka ohjelmat voivat ymmärtää ja käsitellä. Koodarit jäsentävät HTML:ää, jotta voivat suorittaa data-analyysiä, web-sisällön kaappauksia tai testata web-sovelluksia.
+## Mikä ja miksi?
 
-## How to: (Kuinka tehdään:)
-```Go
+HTML:n jäsentäminen Go-kielessä tarkoittaa HTML-tiedostojen sisällön analysointia datan poimimiseksi, rakenteen muokkaamiseksi tai HTML:n muuntamiseksi muihin formaatteihin. Ohjelmoijat tekevät tätä verkkosivujen kaapimiseen, mallipohjiin ja datan louhintaan, hyödyntäen Go:n vahvoja samanaikaisuusominaisuuksia suurten verkkosivumäärien tehokkaaseen käsittelyyn.
+
+## Kuinka:
+
+HTML:n jäsentämiseen Go:ssa käytetään yleensä `goquery`-pakettia tai standardikirjaston `net/html`-pakettia. Tässä on perusesimerkki käyttäen `net/html`-pakettia kaikkien linkkien poimimiseen verkkosivulta:
+
+```go
 package main
 
 import (
-	"fmt"
-	"golang.org/x/net/html"
-	"net/http"
-	"strings"
+    "fmt"
+    "golang.org/x/net/html"
+    "net/http"
 )
 
 func main() {
-	resp, err := http.Get("http://example.com")
-	if err != nil {
-		panic(err)
-	}
-	defer resp.Body.Close()
+    // Hae HTML-dokumentti
+    res, err := http.Get("http://esimerkki.com")
+    if err != nil {
+        panic(err)
+    }
+    defer res.Body.Close()
 
-	root, err := html.Parse(resp.Body)
-	if err != nil {
-		panic(err)
-	}
+    // Jäsennä HTML-dokumentti
+    doc, err := html.Parse(res.Body)
+    if err != nil {
+        panic(err)
+    }
 
-	var f func(*html.Node)
-	f = func(n *html.Node) {
-		if n.Type == html.ElementNode && n.Data == "a" {
-			for _, a := range n.Attr {
-				if a.Key == "href" {
-					fmt.Println(a.Val)
-					break
-				}
-			}
-		}
-		for c := n.FirstChild; c != nil; c = c.NextSibling {
-			f(c)
-		}
-	}
-	f(root)
+    // Funktio DOMin rekursiiviseen läpikäymiseen
+    var f func(*html.Node)
+    f = func(n *html.Node) {
+        if n.Type == html.ElementNode && n.Data == "a" {
+            for _, a := range n.Attr {
+                if a.Key == "href" {
+                    fmt.Println(a.Val)
+                    break
+                }
+            }
+        }
+        for c := n.FirstChild; c != nil; c = c.NextSibling {
+            f(c)
+        }
+    }
+
+    // Käy läpi DOM
+    f(doc)
 }
 ```
 
-Sample output:
+Esimerkkituloste (olettaen, että `http://esimerkki.com` sisältää kaksi linkkiä):
+
 ```
-http://www.iana.org/domains/example
+http://www.iana.org/domains/esimerkki
+http://www.iana.org/domains/varattu
 ```
 
-## Deep Dive: (Syväsukellus)
-HTML:n jäsentämistä on käytetty Webin alkuajoista lähtien kun ohjelmoijat halusivat ymmärtää ja hyödyntää verkkosivujen rakennetta. Golangissa x/net/html -kirjasto on nykyinen työkalu HTML:n jäsentämiseen. Se tarjoaa DOM-puuta muistuttavan rakenteen, mutta ei täyttä DOM APIa.
+Tämä koodi pyytää HTML-sivua, jäsentää sen ja käy rekursiivisesti läpi DOM-rakenteen löytääkseen ja tulostaakseen kaikkien `<a>`-tagien `href`-attribuutit.
 
-Vaihtoehtoja ovat muun muassa BeautifulSoup Pythonissa ja Nokogiri Rubyssa, jotka on suunniteltu helpottamaan HTML:n ja XML:n käsittelyä. Golangissa käytetään puuta käsitteleviä funktioita selkeyden vuoksi ja koska kieli suosii kompositiota perinnön sijasta.
+## Syväsukellus
 
-Jäsentämisen toteutuksessa huomioon otetaan HTML:n löyhät standardit: dokumentit voivat olla epätäydellisiä tai virheellisiä, mutta x/net/html pyrkii olemaan joustava ja käsittelemään näitä tilanteita armoillisesti.
+`net/html`-paketti tarjoaa perustyökalut HTML:n jäsentämiseen Go:ssa, toteuttaen suoraan HTML5-standardin määrittelemät tokenisointi- ja puurakennusalgoritmit. Tämä matalan tason lähestymistapa on tehokas, mutta voi olla monimutkainen monimutkaisemmissa tehtävissä.
 
-## See Also: (Katso Myös)
-- Go’s html package documentation: [https://pkg.go.dev/golang.org/x/net/html](https://pkg.go.dev/golang.org/x/net/html)
-- Go by Example: HTTP Clients: [https://gobyexample.com/http-clients](https://gobyexample.com/http-clients)
+Senaikaisesti kolmannen osapuolen `goquery`-paketti, jonka on inspiroinut jQuery, tarjoaa korkeamman tason rajapinnan, joka yksinkertaistaa DOM-manipulointia ja -traversointia. Se mahdollistaa kehittäjien kirjoittaa tiiviimpää ja ilmaisuvoimaisempaa koodia tehtäviin, kuten elementin valintaan, attribuuttien poimintaan ja sisällön manipulointiin.
+
+Kuitenkin, `goquery`n mukavuus tulee lisäriippuvuuden kustannuksella ja mahdollisesti hitaamman suorituskyvyn vuoksi sen abstraktiotason takia. Valinta `net/html` ja `goquery` (tai muiden jäsentämiskirjastojen) välillä riippuu projektin erityisvaatimuksista, kuten suorituskyvyn optimoinnin tarpeesta tai käytön helppoudesta.
+
+Historiallisesti Go:n HTML-jäsentäminen on kehittynyt perus merkkijono-operaatioista edistyneisiin DOM-puurakenteen manipulointitekniikoihin, heijastaen kielen kasvavaa ekosysteemiä ja yhteisön kysyntää vahvoille verkkosivujen kaapimisen ja datan poimintatyökaluille. Huolimatta natiiveista kyvyistä, kolmansien osapuolien kirjastojen, kuten `goquery`, suosio korostaa Go-yhteisön mieltymystä modulaariseen, uudelleen käytettävään koodiin. Kuitenkin suorituskykyä vaativissa sovelluksissa ohjelmoijat saattavat edelleen suosia `net/html`-pakettia tai jopa turvautua regexiin yksinkertaisissa jäsentämistehtävissä, pitäen mielessä regex-pohjaisen HTML-jäsentämisen synnynnäiset riskit ja rajoitukset.

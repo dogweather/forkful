@@ -1,64 +1,59 @@
 ---
 title:                "Interpolazione di una stringa"
-date:                  2024-01-20T17:51:02.689408-07:00
-model:                 gpt-4-1106-preview
+date:                  2024-02-03T17:59:20.081776-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Interpolazione di una stringa"
-
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/go/interpolating-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Cosa e Perché?)
-L'interpolazione di stringhe è il processo di inserimento di valori dinamici in una stringa fissa. I programmatori lo fanno per creare messaggi, dati e output che sono personalizzati ed esatti senza scrivere stringhe differenti per ogni situazione.
+## Cosa & Perché?
 
-## How to: (Come fare:)
-```Go
+L'interpolazione di stringhe è un metodo per costruire stringhe che incorporano variabili, consentendo la creazione di stringhe dinamiche. I programmatori fanno ciò per personalizzare messaggi, costruire URL, creare query SQL e altro, permettendo così di ottenere codice più leggibile e manutenibile.
+
+## Come fare:
+
+In Go, l'interpolazione di stringhe si ottiene comunemente utilizzando il pacchetto `fmt`, in particolare con la funzione `Sprintf`, che ti permette di iniettare variabili in una stringa specificando verbi di formattazione. I verbi sono segnaposto nella stringa di formato e vengono sostituiti dai valori delle variabili fornite. Ecco come si utilizza:
+
+```go
 package main
 
 import (
-	"fmt"
+    "fmt"
 )
 
 func main() {
-	name := "Francesco"
-	age := 35
+    name := "Jane"
+    age := 28
 
-	// Interpolazione con Sprintf
-	message := fmt.Sprintf("Ciao, mi chiamo %s e ho %d anni.", name, age)
-	fmt.Println(message)
-
-	// Interpolazione con template string (recentemente aggiunto in Go)
-	greeting := `Ciao, mi chiamo {{.Name}} e ho {{.Age}} anni.`
-	tmpl, err := template.New("test").Parse(greeting)
-	if err != nil {
-		panic(err)
-	}
-	data := struct {
-		Name string
-		Age  int
-	}{
-		Name: name,
-		Age:  age,
-	}
-	err = tmpl.Execute(os.Stdout, data)
-	if err != nil {
-		panic(err)
-	}
+    // Utilizzando Sprintf per l'interpolazione di stringhe
+    message := fmt.Sprintf("Ciao, mi chiamo %s e ho %d anni.", name, age)
+    fmt.Println(message) // Output: Ciao, mi chiamo Jane e ho 28 anni.
 }
 ```
 
-Output:
-```
-Ciao, mi chiamo Francesco e ho 35 anni.
-Ciao, mi chiamo Francesco e ho 35 anni.
+Si noti che `%s` viene usato per le stringhe, e `%d` per gli interi. La documentazione del pacchetto `fmt` fornisce un elenco completo dei verbi di formattazione per diversi tipi di dati.
+
+## Approfondimento
+
+Il concetto di interpolazione delle stringhe esiste in molti linguaggi di programmazione, sebbene con sintassi e capacità diverse. In Go, mentre la funzione `Sprintf` del pacchetto `fmt` è l'approccio più comunemente utilizzato, potrebbe non essere sempre il più efficiente, specialmente per concatenazioni semplici o quando si lavora con codice altamente sensibile alle prestazioni.
+
+Il pacchetto `fmt` utilizza la riflessione per interpretare dinamicamente i tipi delle variabili a runtime, il che, sebbene flessibile, comporta un sovraccarico. Per scenari in cui la prestazione è critica, la concatenazione diretta di stringhe o il tipo `strings.Builder` possono offrire alternative migliori. La concatenazione diretta è semplice ma può diventare ingombrante con molteplici variabili. `strings.Builder`, d'altra parte, fornisce un modo più performante e leggibile per costruire stringhe complesse in un ciclo o quando si ha a che fare con molte variabili:
+
+```go
+var sb strings.Builder
+sb.WriteString("Ciao, mi chiamo ")
+sb.WriteString(name)
+sb.WriteString(" e ho ")
+sb.WriteString(strconv.Itoa(age))
+sb.WriteString(" anni.")
+message := sb.String()
+
+fmt.Println(message) // Produce lo stesso output di prima
 ```
 
-## Deep Dive (Approfondimento)
-Il concetto di interpolazione di stringhe esiste da molto tempo nei linguaggi di programmazione. In Go, per anni la strada standard è stata quella di usare `fmt.Sprintf`, che permette di inserire variabili all'interno di una stringa con un certo formato. Con l'introduzione del pacchetto `text/template`, Go offrì un altro modo di interpolare stringhe, adatto soprattutto quando si hanno template di testo complessi. L'interpolazione avviene attraverso i "placeholders" (segnaposto) nei template che vengono poi sostituiti con dati concreti. Nel caso di `Sprintf`, usiamo dei verbi di formato, come `%s` per le stringhe e `%d` per i numeri interi. Con i template, invece, utilizziamo una notazione a doppia parentesi graffa `{{}}`.
-
-## See Also (Vedi Anche)
-- Per approfondire il pacchetto `fmt`, controlla la documentazione ufficiale: https://golang.org/pkg/fmt/
-- Per esplorare in dettaglio il pacchetto `text/template`, visita: https://golang.org/pkg/text/template/
-- Un buon tutorial su come lavorare con i template di testo in Go: https://blog.gopheracademy.com/advent-2017/using-go-templates/
+In definitiva, la scelta tra `fmt.Sprintf`, la concatenazione diretta e `strings.Builder` dipende dai requisiti specifici della tua applicazione, come la complessità della stringa che viene costruita e le considerazioni sulle prestazioni.

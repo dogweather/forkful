@@ -1,50 +1,67 @@
 ---
 title:                "Tekstitiedoston lukeminen"
-date:                  2024-01-20T17:53:50.334274-07:00
-model:                 gpt-4-1106-preview
+date:                  2024-02-03T18:05:36.100839-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Tekstitiedoston lukeminen"
-
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c/reading-a-text-file.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Mitä ja Miksi?)
-Tekstitiedoston lukeminen tarkoittaa tiedoston sisältämän tekstin tuomista ohjelmaasi. Ohjelmoijat tekevät tätä datan käsittelyyn, analysointiin tai ohjelmiston asetusten lataamiseen.
+## Mikä & Miksi?
 
-## How to: (Miten tehdään:)
-```C
+Tekstitiedoston lukeminen C-kielessä tarkoittaa tiedoston avaamista järjestelmässäsi tiedon poimimiseksi ja tarpeen mukaan manipuloimiseksi tai näyttämiseksi. Ohjelmoijat tekevät tätä usein käsitelläkseen konfiguraatiotiedostoja, lukeakseen syötettä käsittelyä varten tai analysoidakseen tiedostomuodossa tallennettua dataa, mikä mahdollistaa joustavuuden ja lisää sovellusten toiminnallisuutta.
+
+## Kuinka:
+
+Tekstitiedoston lukemiseen C-kielessä työskentelet pääasiassa `fopen()`, `fgets()` ja `fclose()` funktioiden kanssa standardi I/O-kirjastosta. Tässä on yksinkertainen esimerkki, joka lukee `example.txt` nimisen tiedoston ja tulostaa sen sisällön vakio-ulostuloon:
+
+```c
 #include <stdio.h>
+#include <stdlib.h>
 
 int main() {
-    FILE *file;
-    char line[100];
+    FILE *filePointer;
+    char buffer[255]; // Puskuri tekstirivien säilyttämiseen
 
-    file = fopen("esimerkki.txt", "r");
-    if (file == NULL) {
-        perror("Virhe tiedoston avaamisessa");
+    // Avaa tiedosto lukutilassa
+    filePointer = fopen("example.txt", "r");
+
+    // Tarkista, avattiinko tiedosto onnistuneesti
+    if (filePointer == NULL) {
+        printf("Tiedoston avaaminen epäonnistui. \n");
         return 1;
     }
 
-    while (fgets(line, sizeof(line), file)) {
-        printf("%s", line);
+    while (fgets(buffer, 255, filePointer) != NULL) {
+        printf("%s", buffer);
     }
 
-    fclose(file);
+    // Sulje tiedosto vapauttaaksesi resurssit
+    fclose(filePointer);
     return 0;
 }
 ```
-Output:
+
+Olettaen, että `example.txt` sisältää:
 ```
-Tässä on esimerkkitekstiä.
-Toinen rivi tekstiä.
+Hello, World!
+Tervetuloa C-ohjelmointiin.
 ```
 
-## Deep Dive (Syväsukellus)
-Tekstitiedoston lukemisen historia alkaa jo varhaisista käyttöjärjestelmistä, kun kaikki tieto tallennettiin ja käsiteltiin tekstimuodossa. C-kielen standardikirjasto tarjoaa funktiot `fopen`, `fgets`, `fread`, jne. tiedostojen käsittelyyn. Vaihtoehtoisia tapoja lukea tiedostoja ovat esimerkiksi `mmap`, kolmannen osapuolen kirjastot tai komentorivipohjaiset ratkaisut. `fgets` lukee tiedoston rivi riviltä, kun taas `fread` voi lukea suurempia datablokkeja. Tietoturvan kannalta on tärkeää muistaa tarkistaa tiedoston avaaminen ja käsitellä virheitä oikein, ettei luotaisi haavoittuvuuksia.
+Tuloste olisi:
+```
+Hello, World!
+Tervetuloa C-ohjelmointiin.
+```
 
-## See Also (Katso Myös)
-- C Standard Library documentation: https://en.cppreference.com/w/c/io
-- GNU C Library Manual: https://www.gnu.org/software/libc/manual/html_node/Opening-Streams.html
-- POSIX `mmap`: https://man7.org/linux/man-pages/man2/mmap.2.html
+## Syväsukellus
+
+Tiedostojen lukemisella C-kielessä on rikas historia, joka juontaa juurensa Unixin alkuaikoihin, kun tekstivirtojen yksinkertaisuus ja eleganssi olivat perustavanlaatuisia. Tämä johti tekstiedostojen käyttöönottoon lukuisiin tarkoituksiin, mukaan lukien konfiguraatio, lokitus ja prosessien välinen viestintä. C-kielen tiedosto I/O-kirjaston yksinkertaisuus, jota funktiot kuten `fopen()`, `fgets()` ja `fclose()` korostavat, alleviivaa sen suunnitteluajattelua tarjota perustyökaluja, joita ohjelmoijat voivat käyttää monimutkaisten järjestelmien rakentamiseen.
+
+Historiallisesti, vaikka nämä funktiot ovat palvelleet lukemattomia sovelluksia hyvin, nykyaikaiset ohjelmointikäytännöt ovat korostaneet joitakin rajoituksia, erityisesti virheenkäsittelyn, tiedostokoodauksen (esim. Unicode-tuki) ja samanaikaisen pääsyn suhteen monisäikeisissä sovelluksissa. Muissa kielissä tai jopa C:ssä käyttäen kirjastoja kuten `libuv` tai `Boost.Asio` C++:lle, tarjotut vaihtoehtoiset lähestymistavat tarjoavat kestävämpiä ratkaisuja käsittelemällä näitä huolenaiheita suoraan kehittyneemmillä I/O-hallintakyvyillä, mukaan lukien asynkroniset I/O-operaatiot, jotka voivat merkittävästi parantaa sovellusten suorituskykyä, jotka käsittelevät laajoja tiedostonlukutoimintoja tai I/O-sidonnaisia tehtäviä.
+
+Näistä edistysaskeleista huolimatta tiedostojen lukemisen opettelu käyttäen C-kielen standardi I/O-kirjastoa on elintärkeää. Se auttaa paitsi ymmärtämään tiedostonkäsittelyn perusteita, jotka ovat sovellettavissa monissa ohjelmointiyhteyksissä, myös tarjoaa perustan, jonka päälle voi arvostaa tiedosto I/O-operaatioiden kehitystä ja tutkia monimutkaisempia kirjastoja ja kehyksiä tiedostonkäsittelyyn nykyaikaisissa sovelluksissa.

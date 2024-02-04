@@ -1,75 +1,69 @@
 ---
-title:                "Feilhåndtering"
-date:                  2024-01-26T00:53:51.823040-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Feilhåndtering"
-
+title:                "Håndtering av feil"
+date:                  2024-02-03T17:58:01.950141-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Håndtering av feil"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/go/handling-errors.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 
-Feilhåndtering i Go handler om å finne og håndtere utførelsesproblemer på en smidig måte. Vi gjør dette for å forhindre krasjer og sikre at programmene våre fungerer forutsigbart, selv når ting går galt.
+Å håndtere feil i Go innebærer å gjenkjenne og reagere på feilsituasjoner i programmet ditt. Programmere engasjerer seg i feilhåndtering for å sikre at applikasjonene deres kan gjenopprette seg på en kontrollert måte fra uventede situasjoner, noe som fører til mer robust og pålitelig programvare.
 
-## Hvordan gjøre det:
+## Hvordan:
 
-Go bruker eksplisitt feilhåndtering. Det betyr at du må sjekke om en funksjon returnerer en feil hver gang du kaller den. Ingen unntak. Slik ser det ut:
+I Go håndteres feil eksplisitt ved bruk av `error`-typen. Funksjoner som kan feile returnerer en feil som sin siste returverdi. Å sjekke om denne feilverdien er `nil` vil fortelle deg om en feil har oppstått.
 
-```Go
+```go
 package main
 
 import (
-	"fmt"
-	"os"
+    "errors"
+    "fmt"
 )
 
+func Compute(value int) (int, error) {
+    if value > 100 {
+        return 0, errors.New("value must be 100 or less")
+    }
+    return value * 2, nil
+}
+
 func main() {
-	err := doSomething()
-	if err != nil {
-		fmt.Println("Å nei:", err)
-		os.Exit(1)
-	}
-}
-
-func doSomething() error {
-	// Later som om noe gikk galt
-	return fmt.Errorf("noe gikk galt")
-}
-```
-
-Kjør dette, og du får:
-
-```
-Å nei: noe gikk galt
-```
-
-Men hva om det lykkes?
-
-```Go
-func doSomething() error {
-	// Alt bra denne gangen
-	return nil
+    result, err := Compute(150)
+    if err != nil {
+        fmt.Println("Feil:", err)
+    } else {
+        fmt.Println("Resultat:", result)
+    }
+    
+    // Håndterer en feil på en smidig måte
+    anotherResult, anotherErr := Compute(50)
+    if anotherErr != nil {
+        fmt.Println("Feil:", anotherErr)
+    } else {
+        fmt.Println("Resultat:", anotherResult)
+    }
 }
 ```
 
-Ingen utskrift. Kult, ingen nyheter er gode nyheter.
+Eksempelutdata for koden ovenfor:
+```
+Feil: value must be 100 or less
+Resultat: 100
+```
 
-## Dypdykk:
+I dette eksempelet returnerer `Compute`-funksjonen enten en beregnet verdi eller en feil. Kalleren håndterer feilen ved å sjekke om `err` ikke er `nil`.
 
-I Go har feilhåndtering vært et omstridt punkt. Fra starten av valgte Go bort fra unntak til fordel for en mer eksplisitt tilnærming, som noen utviklere elsker for dens enkelhet og andre synes er ordrik. Den innebygde `error`-typen er et grensesnitt. Enhver type med en `Error() string`-metode tilfredsstiller det. Dette binder an med Goes etos om enkelhet og eksplisitthet.
+## Dypdykk
 
-Alternativer? Det er duoen `panic` og `recover`, men de er for spesielle tilfeller (ordspill ment) når programmet ikke kan fortsette. Tenk på `panic` som en utkasterknapp du trykker på når du vet at det ikke er noen vei tilbake. Bruk den med måte.
+Gos tilnærming til feilhåndtering er bevisst rettfram og typesikkert, noe som krever eksplisitte feilsjekker. Dette konseptet står i kontrast til feilhåndtering basert på unntak som man ser i språk som Java og Python, hvor feil blir propalert opp kallstakken med mindre de fanges av en unntakshåndterer. Go-teamet argumenterer med at den eksplisitte håndteringen av feil resulterer i klarere og mer pålitelig kode, da det tvinger programmerere til å adressere feil umiddelbart der de oppstår.
 
-Når det gjelder hovedstrøms feilhåndtering introduserte Go 1.13 feilinnpakning, noe som gjør det enklere å finne ut av "feilkjeden" med funksjoner som `errors.Is()` og `errors.As()`.
+Imidlertid nevner noen kritikere at dette mønsteret kan føre til langdryg kode, spesielt i komplekse funksjoner med mange feilutsatte operasjoner. Som respons har nyere versjoner av Go introdusert mer sofistikerte feilhåndteringsfunksjoner, som feilpakking, noe som gjør det lettere å gi kontekst til en feil uten å miste den opprinnelige feilinformasjonen. Fellesskapet har også sett forslag til nye feilhåndteringsmekanismer, som sjekk/håndter, selv om disse fortsatt er under diskusjon per min siste oppdatering.
 
-## Se også:
-
-For alt som handler om feilhåndtering i Go:
-
-- Go Blog om feilhåndtering: [https://blog.golang.org/error-handling-and-go](https://blog.golang.org/error-handling-and-go)
-- Effective Go – seksjon om feilhåndtering: [https://golang.org/doc/effective_go#errors](https://golang.org/doc/effective_go#errors)
-- Go 1.13 dokumentasjon for feilinnpakning: [https://golang.org/doc/go1.13#error_wrapping](https://golang.org/doc/go1.13#error_wrapping)
-- Dave Cheneys innlegg om strategier for feilhåndtering: [https://dave.cheney.net/2016/04/27/dont-just-check-errors-handle-them-gracefully](https://dave.cheney.net/2016/04/27/dont-just-check-errors-handle-them-gracefully)
+Gos filosofi for feilhåndtering legger vekt på forståelse og planlegging for feil som en del av programmets normale flyt. Denne tilnærmingen oppmuntrer til utvikling av mer resiliente og forutsigbare programvarer, selv om det potensielt kan øke i mengden av kode som må skrives. Alternative mønstre og biblioteker finnes for å strømlinjeforme feilhåndtering for spesielt komplekse tilfeller, men Gos innebygde `error`-type forblir fundamentet for feilhåndtering i språket.

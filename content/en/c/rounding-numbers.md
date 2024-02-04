@@ -1,9 +1,8 @@
 ---
 title:                "Rounding numbers"
-date:                  2024-01-25T03:00:21.613217-07:00
-model:                 gpt-4-1106-preview
+date:                  2024-02-03T17:50:04.693524-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Rounding numbers"
-
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/c/rounding-numbers.md"
 ---
@@ -11,51 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Rounding numbers is chopping off the digits beyond a certain point while optionally adjusting the last kept digit. Programmers round to reduce precision when exact values aren't necessary, manage floating-point errors, or prep numbers for user-friendly display.
+
+Rounding numbers is the process of adjusting the digits of a number to reduce its precision according to certain rules, either towards the nearest whole number or a specified number of decimal places. Programmers do this for reasons ranging from limiting the amount of storage needed, to simplifying output for user consumption, or ensuring accurate mathematical operations that are sensitive to very small variations.
 
 ## How to:
-In C, you'd typically use `floor()`, `ceil()`, or `round()` functions. Here's the quick show:
 
-```C
+Rounding numbers in C can be accomplished using various functions, but the most common approach involves the `floor()`, `ceil()`, and `round()` functions. These functions are part of the standard math library, so you will need to include `math.h` in your program.
+
+```c
 #include <stdio.h>
 #include <math.h>
 
 int main() {
-    double num = 3.14159;
-    double num_floor = floor(num);
-    double num_ceil = ceil(num);
-    double num_round = round(num);
+    double num = 9.527;
 
-    printf("Floor: %.2f\n", num_floor); // Floor: 3.00
-    printf("Ceil: %.2f\n", num_ceil);   // Ceil: 4.00
-    printf("Round: %.2f\n", num_round); // Round: 3.00
+    // Using floor() to round down
+    double floorResult = floor(num);
+    printf("floor(9.527) = %.0f\n", floorResult);
+
+    // Using ceil() to round up
+    double ceilResult = ceil(num);
+    printf("ceil(9.527) = %.0f\n", ceilResult);
+
+    // Using round() to round to the nearest integer
+    double roundResult = round(num);
+    printf("round(9.527) = %.0f\n", roundResult);
+
+    // Rounding to a specified number of decimal places involves multiplication and division
+    double twoDecimalPlaces = round(num * 100) / 100;
+    printf("Rounding to two decimal places: %.2f\n", twoDecimalPlaces);
+
     return 0;
 }
 ```
 
-For more control, like rounding to a specific place, you multiply, round, and divide:
-
-```C
-double roundToPlace(double num, int place) {
-    double scale = pow(10.0, place);
-    return round(num * scale) / scale;
-}
-
-// ...
-
-double num = 3.14159;
-double num_rounded = roundToPlace(num, 2);
-printf("Rounded to 2 decimal places: %.2f\n", num_rounded); // Rounded to 2 decimal places: 3.14
+Output:
+```
+floor(9.527) = 9
+ceil(9.527) = 10
+round(9.527) = 10
+Rounding to two decimal places: 9.53
 ```
 
 ## Deep Dive
-Back in the day, rounding often meant a manual process—a heavy lift with just pen and paper. With computing, we automated this, but floating-point arithmetic brought nuances due to its binary nature, where some numbers can't be represented exactly.
 
-Alternatives to standard rounding include truncation (simply dropping extra digits) or bankers' rounding, which rounds to the nearest even number when exactly between two values, reducing bias in repeated calculations.
+Rounding numbers has deep historical roots in mathematics and computation, integral to both theoretical and applied aspects. In C, while `floor()`, `ceil()`, and `round()` offer basic functionality, the essence of rounding floats to integers or specific decimal places is more nuanced due to the binary representation of floating-point numbers. This representation can lead to unexpected results due to how numbers that can't be precisely represented in binary (like 0.1) are handled.
 
-Implementation gets tricky when you need to round arbitrary precision numbers or handle special cases like infinity, signaling NaNs, or subnormal values. The C standard library functions handle the basics, but if you need to round decimals in custom ways, you'll need more than `math.h`.
+These functions are part of the C standard library, defined in `<math.h>`. When rounding numbers, especially for financial or precise engineering calculations, one must consider the implications of using binary floating-point numbers. Alternatives to the built-in C functions for highly accurate or decimal-specific rounding might include implementing custom rounding functions or using libraries designed for arbitrary-precision arithmetic, like GMP or MPFR, though these introduce additional complexity and dependencies.
 
-## See Also
-- [`<math.h>` documentation](https://en.cppreference.com/w/c/numeric/math)
-- [Floating-point arithmetic](https://en.wikipedia.org/wiki/Floating-point_arithmetic)
-- [The pitfalls of verifying floating-point computations](https://dl.acm.org/doi/10.1145/1186736.1186737)
+In practice, choosing the right approach to rounding in C involves balancing the need for precision, performance, and practicality, with a keen understanding of the domain-specific requirements of the application being developed.

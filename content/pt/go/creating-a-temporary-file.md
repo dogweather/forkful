@@ -1,67 +1,85 @@
 ---
 title:                "Criando um arquivo temporário"
-date:                  2024-01-20T17:40:35.630822-07:00
-model:                 gpt-4-1106-preview
+date:                  2024-02-03T17:55:26.288743-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Criando um arquivo temporário"
-
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/go/creating-a-temporary-file.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## O Que & Porquê?
+## O Que & Por Que?
 
-Criar um arquivo temporário é o processo de gerar um arquivo que é destinado a ter um uso de curta duração, geralmente para atividades temporárias ou testes. Programadores fazem isso para manipular dados sem afetar os arquivos permanentes, garantindo um ambiente seguro para experiências ou operações que não devem ter efeitos duradouros.
+Criar um arquivo temporário em Go permite a geração de um arquivo não persistente projetado para uso de curto prazo, principalmente para tarefas como armazenamento de dados intermediários ou auxílio em trabalhos de processamento em lote. Os programadores utilizam essa funcionalidade para manipular dados com segurança sem afetar o sistema de arquivos permanente ou necessitar de limpeza manual.
 
 ## Como Fazer:
 
-```Go
+No Go, o pacote `ioutil` originalmente fornecia utilidades para a criação de arquivos temporários. Contudo, o Go 1.16 promoveu o uso das funções dos pacotes `os` e `io/ioutil` para lugares mais organizados. Agora, os pacotes `os` e `io` são preferidos para manipulação de arquivos temporários.
+
+Aqui está um guia passo a passo para criar, escrever e excluir um arquivo temporário:
+
+1. **Criar um Arquivo Temporário:**
+
+Usando a função `os.CreateTemp`, você pode criar um arquivo temporário. Sem especificar um diretório, ele usa a pasta temp padrão do seu sistema operacional.
+
+```go
 package main
 
 import (
-	"fmt"
-	"io/ioutil"
-	"os"
+    "io/ioutil"
+    "log"
+    "os"
 )
 
 func main() {
-	tempFile, err := ioutil.TempFile("", "sample")
-	if err != nil {
-		panic(err)
-	}
-	defer os.Remove(tempFile.Name()) // Lembre-se de limpar depois!
+    tmpFile, err := ioutil.TempFile("", "example.*.txt")
+    if err != nil {
+        log.Fatal(err)
+    }
+    log.Printf("Arquivo temporário criado: %s\n", tmpFile.Name())
 
-	fmt.Println("Arquivo temporário criado:", tempFile.Name())
-
-	// Escrevendo dados no arquivo temporário
-	texto := []byte("Olá, arquivo temporário!")
-	if _, err = tempFile.Write(texto); err != nil {
-		panic(err)
-	}
-
-	// Fechando o arquivo
-	if err := tempFile.Close(); err != nil {
-		panic(err)
-	}
+    defer os.Remove(tmpFile.Name()) // Limpeza
 }
 ```
 
-**Saída do exemplo:**
+2. **Escrever no Arquivo Temporário:**
+
+Escrever no arquivo pode ser alcançado com o método `Write` ou outras funções de escrita dos pacotes `io` ou `bufio`.
+
+```go
+_, err = tmpFile.Write([]byte("Hello, World!"))
+if err != nil {
+    log.Fatal(err)
+}
 ```
-Arquivo temporário criado: /tmp/sample123456
+
+3. **Ler do Arquivo Temporário:**
+
+A leitura segue de maneira similar, utilizando o método `Read` do arquivo, ou usando utilidades dos pacotes `io` ou `bufio`.
+
+```go
+data, err := ioutil.ReadFile(tmpFile.Name())
+if err != nil {
+    log.Fatal(err)
+}
+log.Printf("Dados lidos: %s\n", string(data))
 ```
 
-## Mergulho Profundo:
+4. **Excluir o Arquivo Temporário:**
 
-Historicamente, arquivos temporários são usados para armazenar dados que não precisam persistir entre reinicializações do sistema ou sessões do programa. No Go, o pacote `io/ioutil` fornece a função `TempFile` para criar esses arquivos com segurança, evitando colisões de nome e garantindo que eles fiquem no sistema de arquivos temporário do sistema operacional.
+Enquanto a declaração `defer os.Remove(tmpFile.Name())` na fase de criação garante que o arquivo temporário seja excluído após o término do programa, a exclusão explícita pode ser gerenciada conforme necessário.
 
-Alternativas ao uso do `io/ioutil`, que é agora um pacote obsoleto em Go 1.16 e posteriores, incluem o pacote `os` e `io` diretamente, que oferecem mais controle sobre como os arquivos temporários são criados e gerenciados, como a função `os.CreateTemp`.
+Saída de Exemplo:
+```
+2023/04/01 15:00:00 Arquivo temporário criado: /tmp/example.123456.txt
+2023/04/01 15:00:00 Dados lidos: Hello, World!
+```
 
-Quanto à implementação, é crucial usar `defer` para a exclusão do arquivo ou sua verificação quando o programa terminar. Arquivos temporários devem deixar o mínimo de rastro possível, sendo a responsabilidade do desenvolvedor garantir sua remoção.
+## Aprofundamento
 
-## Veja Também:
+O mecanismo por trás do manejo de arquivos temporários pelo Go evoluiu. Inicialmente, a criação de arquivos temporários era predominantemente gerenciada pela agora obsoleta função `ioutil.TempFile`, refletindo tendências mais amplas no desenvolvimento de software em direção a práticas de manipulação de arquivos mais seguras e eficientes. A mudança para integrar essas funcionalidades nos pacotes `os` e `io` com o Go 1.16 sinaliza um impulso mais amplo em direção à racionalização da biblioteca padrão da linguagem e encorajando o uso de APIs mais unificadas e coesas.
 
-- Documentação oficial do Go para o pacote `io/ioutil`: https://pkg.go.dev/io/ioutil#TempFile
-- Documentação atualizada do pacote `os` para criação de arquivos temporários em Go 1.16 em diante: https://pkg.go.dev/os#CreateTemp
-- Um guia sobre como gerenciar arquivos e diretórios temporários: https://www.alexedwards.net/blog/working-with-temporary-files-and-directories
+Embora o uso de arquivos temporários seja uma prática comum e muitas vezes essencial na programação, é importante notar que depender muito deles para armazenar grandes quantidades de dados ou para tarefas de longo prazo pode levar a problemas de desempenho. Além disso, quando a criação de arquivos temporários não é rigorosamente controlada ou quando eles não são adequadamente limpos, isso pode levar a vazamentos de recursos que poderiam impactar negativamente o sistema de arquivos. Em cenários que exigem armazenamento persistente ou requerem o manejo de fluxos de dados substanciais, alternativas como bancos de dados ou armazenamentos de dados em memória geralmente oferecem melhor desempenho e confiabilidade em comparação a arquivos temporários.

@@ -1,60 +1,67 @@
 ---
 title:                "Читання текстового файлу"
-date:                  2024-01-20T17:53:49.252123-07:00
-model:                 gpt-4-1106-preview
+date:                  2024-02-03T18:05:46.654252-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Читання текстового файлу"
-
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/c/reading-a-text-file.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Що і Чому?)
+## Що і Чому?
 
-Читання текстового файла - це процес зчитування даних з файлу, який зберігає текст. Програмісти читають файли для обробки інформації, налаштувань, конфігурацій або даних, ввідних користувачем.
+Читання текстового файлу в мові програмування C передбачає відкриття файлу на вашій системі для отримання інформації та її маніпулювання або відображення за потребою. Програмісти часто роблять це для обробки конфігураційних файлів, читання вводу для обробки або аналізу даних, збережених у форматі файлу, що дозволяє збільшити гнучкість і функціональність додатків.
 
-## How to: (Як це зробити:)
+## Як це зробити:
 
-```C
+Щоб почати читати текстовий файл в C, ви переважно працюєте з функціями `fopen()`, `fgets()`, та `fclose()` зі стандартної бібліотеки вводу-виводу. Ось простий приклад, який читає файл під назвою `example.txt` та виводить його вміст на стандартний вивід:
+
+```c
 #include <stdio.h>
 #include <stdlib.h>
 
 int main() {
     FILE *filePointer;
-    char filename[] = "example.txt";
-    char ch;
+    char buffer[255]; // Буфер для зберігання рядків тексту
 
-    filePointer = fopen(filename, "r");
+    // Відкриття файлу в режимі читання
+    filePointer = fopen("example.txt", "r");
+
+    // Перевірка, чи файл було успішно відкрито
     if (filePointer == NULL) {
-        perror("Failed to open file");
-        return EXIT_FAILURE;
+        printf("Не вдалося відкрити файл. \n");
+        return 1;
     }
 
-    while ((ch = fgetc(filePointer)) != EOF) {
-        putchar(ch);
+    while (fgets(buffer, 255, filePointer) != NULL) {
+        printf("%s", buffer);
     }
 
+    // Закриття файлу для звільнення ресурсів
     fclose(filePointer);
     return 0;
 }
 ```
-Output sample (Приклад виводу):
+
+Припускаючи, що `example.txt` містить:
 ```
-This is a line of text.
-Here's another line.
+Привіт, світ!
+Ласкаво просимо до програмування на C.
 ```
 
-## Deep Dive (Детальний огляд)
+Результат буде:
+```
+Привіт, світ!
+Ласкаво просимо до програмування на C.
+```
 
-Reading text files in C has a long history - since the language's inception. `fopen`, `fread`, and `fgets` are standard functions to open files and read from them. `fgetc` reads a single character at a time. Alternatives include reading chunks with `fread` or line-by-line with `fgets`, depending on your needs.
+## Поглиблений розгляд
 
-Memory management is important. Always close files with `fclose` to avoid leaks. Large files require attention to buffer sizes and error handling to maintain performance and prevent crashes.
+Читання файлів в C має багату історію, що сягає початку епохи Unix, коли простота та елегантність текстових потоків були основоположними. Це призвело до використання текстових файлів для безлічі цілей, включаючи конфігурацію, журналювання та міжпроцесне спілкування. Простота бібліотеки файлового вводу/виводу мови C, на прикладі функцій, як `fopen()`, `fgets()` та `fclose()`, підкреслює її філософію дизайну - надання базових інструментів, які програмісти можуть використовувати для створення складних систем.
 
-C stdio's buffered I/O can be bypassed with system-level functions like `read` found in `unistd.h` for POSIX systems. However, such direct methods often mean more complex error handling and are less portable.
+Історично, хоча ці функції і послужили безлічі застосунків добре, сучасні практики програмування виявили деякі обмеження, особливо стосовно обробки помилок, кодування файлів (наприклад, підтримка Unicode) і одночасного доступу в багатопоточних додатках. Альтернативні підходи в інших мовах, або навіть у мові C з використанням бібліотек, як `libuv` або `Boost.Asio` для C++, пропонують більш надійні рішення, безпосередньо звертаючись до цих питань із більш вдосконаленими можливостями управління вводом-виводом, включаючи асинхронні операції вводу-виводу, які можуть значно покращити продуктивність додатків, що займаються розширеними операціями читання файлів або задачами, обмеженими вводом-виводом.
 
-## See Also (Дивіться також)
-
-- C Standard Library documentation: https://en.cppreference.com/w/c/io
-- C Programming by K&R (book).
-- POSIX System Calls documentation: https://man7.org/linux/man-pages/man2/read.2.html
+Незважаючи на ці досягнення, навчання читанню файлів за допомогою стандартної бібліотеки вводу-виводу в C є вкрай важливим. Це не тільки допомагає зрозуміти основи обробки файлів, які застосовуються в багатьох контекстах програмування, але й створює основу, на якій можна оцінити еволюцію операцій з файлами вводу-виводу та досліджувати більш складні бібліотеки та фреймворки для обробки файлів у сучасних додатках.

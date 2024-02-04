@@ -1,83 +1,85 @@
 ---
 title:                "Đọc một tệp văn bản"
-date:                  2024-01-28T22:05:17.448149-07:00
+date:                  2024-02-03T18:06:25.690416-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Đọc một tệp văn bản"
-
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/go/reading-a-text-file.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Cái gì và Tại sao?
-Đọc một tệp văn bản là việc lấy dữ liệu đã được lưu trữ bên trong tệp trên đĩa của bạn. Lập trình viên thực hiện điều này để xử lý các log, cấu hình, dữ liệu người dùng - mọi thứ bạn có thể nghĩ đến - bởi vì đó thường là nơi hoạt động diễn ra: dữ liệu.
+
+Đọc một tệp văn bản trong Go bao gồm việc truy cập và lấy nội dung từ một tệp được lưu trữ trên đĩa để xử lý hoặc phân tích. Các lập trình viên thường xuyên thực hiện thao tác này để thao tác dữ liệu, cấu hình ứng dụng, hoặc đọc dữ liệu đầu vào cho việc thực thi chương trình, làm cho đó trở thành một kỹ năng cơ bản trong phát triển phần mềm.
 
 ## Làm thế nào:
 
-Đọc một tệp trong Go khá đơn giản. Sử dụng gói `ioutil` cho một giải pháp nhanh chóng, hoặc chọn `os` và `bufio` để có nhiều quyền kiểm soát hơn. Dưới đây là cách dùng `ioutil`, dễ như chơi:
+Đọc một tệp văn bản trong Go có thể được thực hiện theo một số cách, nhưng một trong những phương pháp đơn giản nhất là sử dụng gói `ioutil`. Dưới đây là một ví dụ cơ bản:
 
-```Go
+```go
 package main
 
 import (
     "fmt"
     "io/ioutil"
+    "log"
 )
 
 func main() {
-    data, err := ioutil.ReadFile("example.txt")
+    content, err := ioutil.ReadFile("example.txt")
     if err != nil {
-        panic(err)
+        log.Fatal(err)
     }
-    fmt.Println(string(data))
+
+    fmt.Println(string(content))
 }
 ```
 
-Để có nhiều kỹ thuật tinh vi hơn, hãy bắt tay vào làm với `os` và `bufio`:
+Giả sử `example.txt` chứa "Hello, Go!", chương trình này sẽ xuất ra:
 
-```Go
+```
+Hello, Go!
+```
+
+Tuy nhiên, kể từ Go 1.16, gói `ioutil` đã bị khai tử, và được khuyến nghị sử dụng các gói `os` và `io` thay thế. Dưới đây là cách bạn có thể thực hiện cùng một công việc với các gói này:
+
+```go
 package main
 
 import (
     "bufio"
     "fmt"
+    "log"
     "os"
 )
 
 func main() {
     file, err := os.Open("example.txt")
     if err != nil {
-        panic(err)
+        log.Fatal(err)
     }
     defer file.Close()
 
     scanner := bufio.NewScanner(file)
-    for scanner.Scan() {
+    while scanner.Scan() {
         fmt.Println(scanner.Text())
     }
 
     if err := scanner.Err(); err != nil {
-        panic(err)
+        log.Fatal(err)
     }
 }
 ```
 
-Trong cả hai trường hợp, thay "example.txt" bằng tên tệp của bạn. Chạy code, và nó sẽ phát ra nội dung của tệp.
+Phương pháp này không chỉ hiện đại hơn mà còn hỗ trợ các tệp lớn hơn, vì nó đọc tệp từng dòng một thay vì nạp toàn bộ nội dung vào bộ nhớ cùng một lần.
 
-## Sâu hơn nữa
+## Đào sâu:
 
-Ban đầu, `ioutil.ReadFile` của Go là lựa chọn phổ biến cho việc đọc tệp nhanh chóng. Đó là một dòng lệnh, nhưng nó đọc toàn bộ tệp cùng một lúc. Điều này không lý tưởng cho các tệp văn bản lớn nơi bộ nhớ là mối quan tâm.
+Cách Go xử lý các thao tác với tệp, bao gồm cả đọc từ các tệp, phản ánh triết lý của ngôn ngữ về sự đơn giản và hiệu quả. Ban đầu, gói `ioutil` cung cấp các thao tác với tệp một cách trực tiếp. Tuy nhiên, với sự cải thiện trong thư viện chuẩn của Go và sự chuyển đổi hướng tới xử lý lỗi một cách rõ ràng hơn và quản lý tài nguyên, các gói `os` và `io` đã trở thành lựa chọn ưu tiên để làm việc với tệp.
 
-Nhập `os` và `bufio`. Chúng cho phép bạn truyền tệp, xử lý từng dòng một. Điều này có nghĩa là bạn có thể xử lý hàng gigabyte mà không hề gặp khó khăn (hoặc làm hỏng ứng dụng của bạn).
+Những thay đổi này nhấn mạnh cam kết của Go với hiệu suất và an toàn, đặc biệt là trong việc tránh các vấn đề về bộ nhớ có thể phát sinh từ việc nạp các tệp lớn hoàn toàn. Phương thức `bufio.Scanner` được giới thiệu để đọc các tệp từng dòng một làm nổi bật khả năng thích nghi và tập trung vào các thách thức tính toán hiện đại của ngôn ngữ, chẳng hạn như xử lý các bộ dữ liệu lớn hoặc dữ liệu đang phát.
 
-Có lựa chọn khác không? Chắc chắn rồi. Có các gói như `afero` cho một giao diện hệ thống tệp nhất quán, có thể hữu ích cho việc kiểm thử.
-
-Một chút chi tiết triển khai: `bufio.Scanner` có kích thước token tối đa mặc định (thường là một dòng), vì vậy những dòng siêu dài có thể cần xử lý đặc biệt. Điều chỉnh nó bằng `scanner.Buffer()` nếu bạn gặp trường hợp ngoại lệ này.
-
-## Xem thêm
-
-- Để đào sâu vào chi tiết, hãy kiểm tra tài liệu gói của Go [ioutil](https://pkg.go.dev/io/ioutil), [os](https://pkg.go.dev/os), và [bufio](https://pkg.go.dev/bufio).
-- Tò mò về `afero`? Dưới đây là [GitHub repo](https://github.com/spf13/afero).
+Mặc dù có các thư viện bên ngoài có sẵn để làm việc với các tệp trong Go, khả năng của thư viện chuẩn thường được ưu tiên và đủ dùng cho sự ổn định và hiệu suất của nó. Điều này đảm bảo rằng các nhà phát triển Go có thể quản lý các thao tác với tệp một cách hiệu quả mà không cần phụ thuộc vào các thành phần bổ sung, phù hợp với tinh thần tối giản tổng thể và thiết kế của ngôn ngữ để xây dựng phần mềm hiệu quả, đáng tin cậy.

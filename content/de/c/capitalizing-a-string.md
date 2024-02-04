@@ -1,53 +1,63 @@
 ---
-title:                "String in Großbuchstaben umwandeln"
-date:                  2024-01-19
-simple_title:         "String in Großbuchstaben umwandeln"
-
+title:                "Einen String großschreiben"
+date:                  2024-02-03T17:52:52.396867-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Einen String großschreiben"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/c/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-In C geht's um's Großschreiben von Strings: aus 'hello' wird 'HELLO'. Programmierer nutzen das, um Text konsistent darzustellen oder Codes zu standardisieren.
+## Was & Warum?
 
-## How to:
-Capitalizing strings in C ist unkompliziert. Hier ist ein simples Beispiel:
+Das Großschreiben eines Strings in C beinhaltet das Umwandeln des ersten Buchstabens jedes Wortes in einem gegebenen String in Großbuchstaben, falls es sich um einen Kleinbuchstaben handelt. Programmierer führen diese Operation oft durch, um Benutzereingaben für Suchvorgänge, Sortieroperationen oder Anzeigezwecke zu standardisieren und damit Konsistenz und Lesbarkeit über Textdaten hinweg sicherzustellen.
+
+## Wie geht das:
+
+Das Großschreiben eines Strings in C erfordert grundlegende Kenntnisse der Zeichenmanipulation und der String-Durchquerung. Da C keine eingebaute Funktion hierfür hat, überprüfen Sie typischerweise jedes Zeichen und passen dessen Groß-/Kleinschreibung nach Bedarf an. Unten ist eine einfache Implementierung:
 
 ```c
 #include <stdio.h>
-#include <ctype.h>
+#include <ctype.h> // Für die Funktionen islower und toupper
 
-void capitalize(char *str) {
-    while (*str) {
-        *str = toupper((unsigned char)*str);
-        str++;
+void capitalizeString(char *str) {
+    if (str == NULL) return; // Sicherheitsprüfung
+    
+    int capNext = 1; // Flag, um anzugeben, ob der nächste Buchstabe großgeschrieben werden soll
+    for (int i = 0; str[i] != '\0'; i++) {
+        if (capNext && islower(str[i])) {
+            str[i] = toupper(str[i]); // Zeichen großschreiben
+            capNext = 0; // Flag zurücksetzen
+        } else if (str[i] == ' ') {
+            capNext = 1; // Nächster Buchstabe soll großgeschrieben werden
+        }
     }
 }
 
 int main() {
-    char text[] = "Guten Tag, Welt!";
-    capitalize(text);
-    printf("%s\n", text);  // Output: GUTEN TAG, WELT!
+    char exampleString[] = "hello world. programming in c!";
+    capitalizeString(exampleString);
+    printf("Capitalized string: %s\n", exampleString);
     return 0;
 }
 ```
 
-Die `toupper`-Funktion aus ctype.h wandelt jeden Buchstaben in Großbuchstaben um. Durchlaufe den String, fertig.
+Beispielausgabe:
+```
+Capitalized string: Hello World. Programming In C!
+```
 
-## Deep Dive
-In den alten Zeiten (denken wir an C89), mussten Programmierer eigene Funktionen schreiben, um Buchstaben zu konvertieren. Heute machen Bibliotheken wie `ctype.h` die Arbeit leichter.
+Dieses Programm durchquert den String `exampleString` und prüft jedes Zeichen, ob es großgeschrieben werden sollte. Die Funktion `islower` überprüft, ob ein Zeichen ein Kleinbuchstabe ist, während `toupper` es in einen Großbuchstaben umwandelt. Das Flag `capNext` bestimmt, ob der nächste angetroffene Buchstabe umgewandelt werden soll, wird nach jedem gefundenen Leerzeichen (' ') gesetzt und anfänglich, um den ersten Buchstaben des Strings großzuschreiben.
 
-Alternativ könnten wir uns ganz modern auch `for`-Loops und die Funktion `toupper` zunutze machen.
- 
-C hat keine eingebaute String-Typ wie in höheren Sprachen. Strings sind hier einfach Arrays von chars. Deswegen ist eine Funktion wie `capitalize` nötig, die das Array char für char durchgeht.
+## Tiefere Betrachtung
 
-Noch was: Im Unicode-Zeitalter kann es komplizierter sein, wenn es um Zeichen außerhalb des ASCII-Bereichs geht. Da braucht man vielleicht umfangreichere Bibliotheken, die Mehrsprachen-Support bieten.
+Die gezeigte Technik ist unkompliziert, aber ineffizient für sehr große Strings oder wenn sie wiederholt in leistungskritischen Anwendungen ausgeführt wird. Im historischen und Implementierungskontext beinhaltet die Zeichenmanipulation in C, einschließlich der Großschreibung, oft die direkte Puffermanipulation, was C's niedrigstufigen Ansatz widerspiegelt und dem Programmierer vollständige Kontrolle über Speicher- und Leistungskompromisse gibt.
 
-## See Also
-Wer tiefer graben möchte:
+Es gibt alternative, ausgefeiltere Methoden zum Großschreiben von Strings, insbesondere unter Berücksichtigung von Gebietsschemata und Unicode-Zeichen, wo Großschreibungsregeln deutlich von dem einfachen ASCII-Szenario abweichen können. Bibliotheken wie ICU (International Components for Unicode) bieten robuste Lösungen für diese Fälle, führen aber Abhängigkeiten und Overhead ein, die für alle Anwendungen nicht notwendig sein könnten.
 
-- C Standard Library documentation: https://en.cppreference.com/w/c/header
-- ASCII Tabelle für die Übersicht der char Werte: http://www.asciitable.com/
-- Für Unicode und mehrsprachige Unterstützung: http://site.icu-project.org/
+Darüber hinaus, während das bereitgestellte Beispiel die C-Standardbibliotheksfunktionen `islower` und `toupper` verwendet, die Teil von `<ctype.h>` sind, ist es wichtig zu verstehen, dass diese innerhalb des ASCII-Bereichs arbeiten. Für Anwendungen, die die Verarbeitung von Zeichen über ASCII hinaus erfordern, wie das Handhaben von Akzentbuchstaben in europäischen Sprachen, sind zusätzliche Logik oder Drittanbieterbibliotheken notwendig, um die Großschreibung genau durchzuführen.
+
+Abschließend, obwohl die dargelegte Methode für viele Anwendungen geeignet ist, ist das Verständnis ihrer Beschränkungen und der verfügbaren Alternativen entscheidend für die Entwicklung robuster, internationalisierter Software in C.

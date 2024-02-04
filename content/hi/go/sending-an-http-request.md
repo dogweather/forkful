@@ -1,63 +1,106 @@
 ---
 title:                "HTTP अनुरोध भेजना"
-date:                  2024-01-20T18:00:05.595183-07:00
-model:                 gpt-4-1106-preview
+date:                  2024-02-03T18:09:43.216600-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "HTTP अनुरोध भेजना"
-
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/go/sending-an-http-request.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (क्या और क्यों?)
+## क्या और क्यों?
 
-HTTP अनुरोध भेजना यानी सर्वर से डेटा मंगाना या सर्वर को डेटा भेजना। प्रोग्रामर इसे वेब सेवाओं से जुड़ने, डेटा साझा करने, API कॉल करने के लिए करते हैं।
+HTTP अनुरोध भेजने का तात्पर्य आपके Go एप्लिकेशन से वेब सर्वर, API, या किसी अन्य HTTP-आधारित सेवा को कॉल आरंभ करना होता है। प्रोग्रामर इस कार्य को वेब संसाधनों से जुड़ने, डेटा प्राप्त करने, फॉर्म जमा करने, या इंटरनेट भर में अन्य सेवाओं के साथ संवाद करने के लिए करते हैं।
 
-## How to: (कैसे करें:)
+## कैसे करें:
 
-```Go
+Go में, HTTP अनुरोध भेजने और उत्तर प्राप्त करने का कार्य `net/http` पैकेज का उपयोग करके किया जाता है। यहाँ एक साधारण GET अनुरोध भेजने और उत्तर पढ़ने का क्रमबद्ध उदाहरण दिखाया गया है:
+
+```go
 package main
 
 import (
-	"fmt"
-	"io/ioutil"
-	"log"
-	"net/http"
+    "fmt"
+    "io/ioutil"
+    "log"
+    "net/http"
 )
 
 func main() {
-	// GET अनुरोध
-	resp, err := http.Get("https://jsonplaceholder.typicode.com/posts/1")
-	if err != nil {
-		log.Fatal(err)
-	}
-	defer resp.Body.Close()
+    // संसाधन के URL को परिभाषित करें
+    url := "http://example.com"
 
-	body, err := ioutil.ReadAll(resp.Body)
-	if err != nil {
-		log.Fatal(err)
-	}
-	fmt.Println(string(body))
+    // GET अनुरोध भेजने के लिए http.Get का उपयोग करें
+    resp, err := http.Get(url)
+    if err != nil {
+        log.Fatal(err)
+    }
+    // फ़ंक्शन के अंत में उत्तर बॉडी को बंद करें
+    defer resp.Body.Close()
+
+    // उत्तर बॉडी को पढ़ें
+    body, err := ioutil.ReadAll(resp.Body)
+    if err != nil {
+        log.Fatal(err)
+    }
+
+    // उत्तर बॉडी को स्ट्रिंग में बदलकर इसे प्रिंट करें
+    fmt.Println(string(body))
 }
 ```
 
-सैंपल आउटपुट:
+नमूना आउटपुट (संक्षेप में):
 ```
-{
-  "userId": 1,
-  "id": 1,
-  "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
-  "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita..."
+<!doctype html>
+<html>
+<head>
+    <title>Example Domain</title>
+...
+</html>
+```
+
+फ़ॉर्म डेटा के साथ POST अनुरोध भेजने के लिए, आप `http.PostForm` का उपयोग कर सकते हैं:
+
+```go
+package main
+
+import (
+    "fmt"
+    "io/ioutil"
+    "net/http"
+    "net/url"
+)
+
+func main() {
+    // URL और फ़ॉर्म डेटा को परिभाषित करें
+    url := "http://example.com/form"
+    data := url.Values{}
+    data.Set("key", "value")
+
+    // फ़ॉर्म डेटा के साथ POST अनुरोध भेजें
+    resp, err := http.PostForm(url, data)
+    if err != nil {
+        panic(err)
+    }
+    defer resp.Body.Close()
+
+    // उत्तर पढ़ें और प्रिंट करें
+    body, err := ioutil.ReadAll(resp.Body)
+    if err != nil {
+        panic(err)
+    }
+
+    fmt.Println(string(body))
 }
 ```
 
-## Deep Dive (गहन जानकारी)
+## गहराई में:
 
-HTTP अनुरोध भेजने की प्रक्रिया इंटरनेट के प्रारंभ से ही है। `net/http` पैकेज Go में इस काम के लिए आदर्श माना जाता है। इसमें GET, POST, PUT, DELETE जैसे विभिन्न प्रकार के अनुरोध भेजे जा सकते हैं। `net/http` के अलावा अन्य पुस्तकालय जैसे `gorilla/mux` या `gin-gonic/gin` भी मौजूद हैं जिनका विशेष परिस्थितियों में उपयोग होता है। Go में HTTP क्लाइंट का उपयोग करते समय `defer resp.Body.Close()` का प्रयोग करना महत्वपूर्ण है ताकि रिसोर्स लीक न हो।
+Go में `net/http` पैकेज HTTP सर्वरों के साथ इंटरैक्ट करने का एक शक्तिशाली और लचीला तरीका प्रदान करता है। इसका डिज़ाइन Go के सरलता, कार्यक्षमता, और मजबूती पर जोर देने को दर्शाता है। मूल रूप से, JSON या XML पेलोड को हैंडल करने जैसी कार्यक्षमताएं मैन्युअली अनुरोध बॉडी बनाने और उचित हैडर्स सेट करने की आवश्यकता थी। जैसे-जैसे Go विकसित हुआ, समुदाय ने इन कार्यों को और अधिक सरल बनाने के लिए उच्च-स्तरीय पैकेज विकसित किए, जैसे कि रूटिंग के लिए `gorilla/mux` और JSON मैनिपुलेशन के लिए `gjson`।
 
-## See Also (और देखें)
+Go के HTTP क्लाइंट की एक उल्लेखनीय विशेषता इसका इंटरफेस और स्ट्रक्ट्स, जैसे कि `http.Client` और `http.Request`, का उपयोग है, जो व्यापक अनुकूलन और परीक्षण की अनुमति देता है। उदाहरण के लिए, आप प्रदर्शन के लिए `http.Client` को अनुरोधों का समय समाप्त करने या कनेक्शन को जीवित रखने के लिए संशोधित कर सकते हैं।
 
-- Go के डॉक्युमेंटेशन पर `net/http` पैकेज: [Go net/http](https://pkg.go.dev/net/http)
-- Go में `http` क्लाइंट और सर्वर के उपयोग के लिए ट्यूटोरियल्स: [Go by Example](https://gobyexample.com/http-clients) और [Go by Example](https://gobyexample.com/http-servers)
-- गहराई से जानकारी के लिए ब्लॉग पोस्ट: [The Go Blog](https://blog.golang.org/http-tracing)
+सरल HTTP इंटरैक्शन के लिए एक विचारित विकल्प "Resty" या "Gentleman" जैसी तृतीय-पक्ष लाइब्रेरीज़ का उपयोग करना है। ये पैकेज एक उच्च-स्तरीय अमूर्तिकरण के लिए HTTP अनुरोध प्रदान करते हैं, सामान्य कार्यों को अधिक संक्षिप्त बनाते हैं। हालांकि, अधिक जटिल या अनोखे HTTP इंटरैक्शन परिदृश्यों से निपटने के लिए `net/http` पैकेज को समझना और उपयोग करना महत्वपूर्ण है, जो Go की साझादारी सुविधाओं और शक्तिशाली मानक पुस्तकालय का पूर्ण लाभ उठाने की आधारशिला प्रदान करता है।

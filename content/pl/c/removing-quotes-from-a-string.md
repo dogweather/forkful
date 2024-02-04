@@ -1,66 +1,73 @@
 ---
 title:                "Usuwanie cudzysłowów z ciągu znaków"
-date:                  2024-01-26T03:38:08.378841-07:00
+date:                  2024-02-03T18:07:19.319527-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Usuwanie cudzysłowów z ciągu znaków"
-
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/c/removing-quotes-from-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Co i dlaczego?
 
-Usuwanie cudzysłowów z ciągu znaków oznacza usunięcie wszelkich znaków cudzysłowu — czy to pojedynczych ('') czy podwójnych ("") — które są częścią zawartości ciągu. Programiści robią to w celu oczyszczenia danych wejściowych, przygotowania danych do dalszego przetwarzania, lub uniknięcia błędów składni podczas pracy z ścieżkami plików i poleceniami w językach, które używają cudzysłowów do zaznaczania ciągów znaków.
+Usuwanie cudzysłowów z ciągu znaków w języku C polega na wyodrębnieniu zawartości tekstowej bez otaczających pojedynczych (' ') lub podwójnych (" ") cudzysłowów. Proces ten jest niezbędny do sanitacji danych wejściowych, parsowania zawartości plików lub przygotowywania ciągów do dalszej obróbki, gdzie cudzysłowy nie są wymagane lub mogą prowadzić do błędów w obsłudze danych.
 
 ## Jak to zrobić:
 
-Oto funkcja w C, która usunie te irytujące cudzysłowy z twoich ciągów znaków:
+Aby usunąć cudzysłowy z ciągu znaków w C, przeszukujemy ciąg, kopiując znaki, które nie są cudzysłowami, do nowego ciągu. Proces ten można dostosować do usunięcia tylko początkowych i końcowych cudzysłowów lub wszystkich cudzysłowów obecnych w ciągu. Poniżej znajduje się przykład ilustrujący oba podejścia:
 
 ```c
 #include <stdio.h>
 #include <string.h>
 
-void remove_quotes(char *str) {
-    char *p_read = str, *p_write = str;
-    while (*p_read) {
-        if (*p_read != '"' && *p_read != '\'') {
-            *p_write++ = *p_read;
+// Funkcja do usuwania wszystkich cudzysłowów z ciągu
+void removeAllQuotes(char *source, char *dest) {
+    while (*source) {
+        if (*source != '"' && *source != '\'') {
+            *dest++ = *source;
         }
-        p_read++;
+        source++;
     }
-    *p_write = '\0';
+    *dest = '\0'; // Zakończ ciąg docelowy znakiem null
+}
+
+// Funkcja do usuwania tylko początkowych i końcowych cudzysłowów z ciągu
+void removeEdgeQuotes(char *source, char *dest) {
+    size_t len = strlen(source);
+    if (source[0] == '"' || source[0] == '\'') source++, len--;
+    if (source[len-1] == '"' || source[len-1] == '\'') len--;
+    strncpy(dest, source, len);
+    dest[len] = '\0'; // Zakończ ciąg docelowy znakiem null
 }
 
 int main() {
-    char str[] = "He said, \"Hello, 'world'!\"";
-    printf("Oryginał: %s\n", str);
-    remove_quotes(str);
-    printf("Oczyszczony: %s\n", str);
+    char str1[] = "'Hello, World!'";
+    char str2[] = "\"Programming in C\"";
+    char noQuotes1[50];
+    char noQuotes2[50];
+    
+    removeAllQuotes(str1, noQuotes1);
+    printf("Usunięto wszystkie cudzysłowy: %s\n", noQuotes1);
+    
+    removeEdgeQuotes(str2, noQuotes2);
+    printf("Usunięto cudzysłowy z obrzeży: %s\n", noQuotes2);
+    
     return 0;
 }
 ```
-
 Przykładowe wyjście:
-
 ```
-Oryginał: He said, "Hello, 'world'!"
-Oczyszczony: He said, Hello, world!
+Usunięto wszystkie cudzysłowy: Hello, World!
+Usunięto cudzysłowy z obrzeży: Programming in C
 ```
 
-## Dogłębna analiza
+Te przykłady pokazują, jak radzić sobie z usuwaniem wszystkich obecnych cudzysłowów z ciągu oraz z celowanym usuwaniem tylko początkowych i końcowych cudzysłowów.
 
-Usuwanie cudzysłowów z ciągu znaków to zadanie, które istnieje od zarania programowania, gdzie higiena danych była i nadal jest kluczowa do unikania błędów (takich jak ataki SQL injection) lub upewnienia się, że ciąg znaków może być bezpiecznie przekazany do systemów, które mogłyby pomylić cudzysłów za znak kontrolny.
+## Szczegółowe omówienie
 
-Historycznie, różne języki radzą sobie z tym zadaniem na różne sposoby - niektóre mają wbudowane funkcje (jak `strip` w Pythonie), podczas gdy inne, takie jak C, wymagają ręcznej implementacji ze względu na skupienie na zapewnieniu programistom kontroli na niższym poziomie.
+Koncepcja usuwania cudzysłowów z ciągów znaków nie ma znaczącej historii w C, poza jej związkami z wczesnymi potrzebami przetwarzania tekstu. Proste podejście prezentowane tutaj jest wszechstronne, ale brakuje mu efektywności dla bardzo dużych ciągów znaków lub wymagań wysokiej wydajności, gdzie preferowane mogą być modyfikacje dokonane w miejscu lub bardziej zaawansowane algorytmy.
 
-Alternatywy obejmują użycie funkcji bibliotecznych, takich jak `strpbrk`, do znajdowania cudzysłowów lub stosowanie wyrażeń regularnych (z bibliotekami takimi jak PCRE) do bardziej złożonych wzorców, chociaż może to być przesada dla samego usuwania cudzysłowów.
-
-Implementacja powyżej po prostu przeszukuje każdy znak w ciągu, kopiując tylko znaki bez cudzysłowu do lokalizacji wskaźnika zapisu. Jest to efektywne, ponieważ odbywa się to w miejscu, bez potrzeby dodatkowej pamięci na ciąg wynikowy.
-
-## Zobacz także
-
-- [Funkcje biblioteki standardowej C](http://www.cplusplus.com/reference/clibrary/)
-- [PCRE - Perl Compatible Regular Expressions](https://www.pcre.org/)
-- [Zrozumienie wskaźników w C](https://www.learn-c.org/en/Pointers)
+Alternatywy, takie jak użycie `strpbrk` do znajdowania cudzysłowów i przesuwanie części ciągu bez cudzysłowów, mogą być bardziej efektywne, ale wymagają głębszego zrozumienia wskaźników i zarządzania pamięcią w C. Ponadto, pojawienie się bibliotek wyrażeń regularnych zapewniło potężny zestaw narzędzi do manipulacji ciągami, w tym usuwanie cudzysłowów. Jednak te biblioteki, mimo że potężne, dodają złożoności i obciążenia, które mogą nie być konieczne dla prostszych zadań. W konsekwencji, bezpośrednie podejście, jak pokazano, pozostaje cenną umiejętnością dla programistów C, łącząc prostotę z efektywnością dla wielu wspólnych przypadków użycia.

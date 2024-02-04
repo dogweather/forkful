@@ -1,79 +1,83 @@
 ---
 title:                "HTML Parsen"
-date:                  2024-01-28T22:03:40.671443-07:00
+date:                  2024-02-03T17:59:57.433822-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "HTML Parsen"
-
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/go/parsing-html.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Wat & Waarom?
-HTML parsen betekent informatie extraheren uit een HTML-bestand – dat is de code achter webpagina's. Programmeurs doen dit om gegevensophaling te automatiseren, inhoud te extraheren en inhoud tussen systemen te migreren.
 
-## Hoe:
-Go heeft een `net/html` pakket perfect voor het duiken in HTML. Hier is de essentie:
+HTML parsen in Go houdt in dat je de inhoud van HTML-bestanden analyseert om gegevens te extraheren, de structuur te manipuleren of HTML naar andere formaten te converteren. Programmeurs doen dit voor web scraping, templating en datamining, waarbij ze de sterke gelijktijdigheidsmogelijkheden van Go gebruiken voor efficiënte verwerking van grote hoeveelheden webpagina's.
 
-```Go
+## Hoe te:
+
+Om HTML te parsen in Go, gebruik je typisch het `goquery`-pakket of het standaard `net/html`-pakket uit de bibliotheek. Hier is een basisvoorbeeld waarbij `net/html` wordt gebruikt om alle links van een webpagina te extraheren:
+
+```go
 package main
 
 import (
-	"fmt"
-	"golang.org/x/net/html"
-	"net/http"
-	"os"
+    "fmt"
+    "golang.org/x/net/html"
+    "net/http"
 )
 
 func main() {
-	// HTML ophalen
-	resp, err := http.Get("http://example.com")
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "ophalen: %v\n", err)
-		os.Exit(1)
-	}
-	defer resp.Body.Close()
-	
-	// HTML parsen
-	doc, err := html.Parse(resp.Body)
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "parsen: %v\n", err)
-		os.Exit(1)
-	}
+    // Haal HTML-document op
+    res, err := http.Get("http://example.com")
+    if err != nil {
+        panic(err)
+    }
+    defer res.Body.Close()
 
-	// De HTML nodenboom doorlopen
-	var f func(*html.Node)
-	f = func(n *html.Node) {
-		if n.Type == html.ElementNode && n.Data == "a" {
-			for _, a := range n.Attr {
-				if a.Key == "href" {
-					fmt.Printf("%v\n", a.Val)
-				}
-			}
-		}
-		for c := n.FirstChild; c != nil; c = c.NextSibling {
-			f(c)
-		}
-	}
-	f(doc)
+    // Parse het HTML-document
+    doc, err := html.Parse(res.Body)
+    if err != nil {
+        panic(err)
+    }
+
+    // Functie om recursief door de DOM te reizen
+    var f func(*html.Node)
+    f = func(n *html.Node) {
+        if n.Type == html.ElementNode && n.Data == "a" {
+            for _, a := range n.Attr {
+                if a.Key == "href" {
+                    fmt.Println(a.Val)
+                    break
+                }
+            }
+        }
+        for c := n.FirstChild; c != nil; c = c.NextSibling {
+            f(c)
+        }
+    }
+
+    // Doorloop de DOM
+    f(doc)
 }
 ```
 
-Draai het? Je krijgt links van `example.com`, afgedrukt op je console. Makkelijk!
+Voorbeeldoutput (ervan uitgaande dat `http://example.com` twee links bevat):
 
-## Diepgaande duik:
-Hier is het verhaal. Toen het web nieuw was, was HTML eenvoudig. Niet meer. Vandaag is het complex, vol met nuances.
+```
+http://www.iana.org/domains/example
+http://www.iana.org/domains/reserved
+```
 
-Waarom geen regex? HTML kan inconsistent zijn. Regex voor HTML is een onbetrouwbare, foutgevoelige benadering. Parsers zoals `net/html` zijn slimmer. Ze handelen eigenaardigheden en nestings in HTML af die een regex-patroon zou breken.
+Deze code vraagt een HTML-pagina op, parset deze en gaat recursief door de DOM om `href` attributen van alle `<a>`-tags te vinden en af te drukken.
 
-De `net/html` parser bouwt een boom van HTML-elementen. Het geeft structuur aan een warboel van takken - chaos omzetten in iets waar je doorheen kunt klimmen. Je doorloopt de boom met je eigen functies om tags en attributen te zeven.
+## Diepgaande duik
 
-Wat zou je nog meer kunnen gebruiken? Bibliotheken zoals `goquery` bieden een jQuery-achtige ervaring voor Go, en `colly` is een populaire keuze voor scraping.
+Het `net/html`-pakket biedt de basis voor het parsen van HTML in Go, door direct de tokenisatie- en boomconstructiealgoritmen te implementeren die zijn gespecificeerd door de HTML5-standaard. Deze low-level benadering is krachtig maar kan uitgebreid zijn voor complexe taken.
 
-## Zie ook:
-- Go's `net/html` pakket: https://pkg.go.dev/golang.org/x/net/html
-- GoQuery voor een jQuery-achtige syntax: https://github.com/PuerkitoBio/goquery
-- Colly voor scraping: http://go-colly.org/
+In tegenstelling, het third-party `goquery`-pakket, geïnspireerd door jQuery, biedt een hoger-niveau interface dat DOM-manipulatie en -traversering vereenvoudigt. Het stelt ontwikkelaars in staat om bondige en expressieve code te schrijven voor taken zoals elementselectie, attribuutextractie en inhoudsmanipulatie.
+
+Echter, het gemak van `goquery` komt met de kosten van een extra afhankelijkheid en potentieel langzamere prestaties vanwege de abstractielaag. De keuze tussen `net/html` en `goquery` (of andere parseerbibliotheken) hangt af van de specifieke vereisten van het project, zoals de behoefte aan prestatieoptimalisatie of gebruiksgemak.
+
+Historisch gezien is het parsen van HTML in Go geëvolueerd van basis string-operaties naar geavanceerde DOM-boommanipulatie, wat de groeiende ecosysteem van de taal en de vraag van de gemeenschap naar robuuste web scraping- en dataverkrijgingstools weerspiegelt. Ondanks de native mogelijkheden, benadrukt de prevalentie van third-party bibliotheken zoals `goquery` de voorkeur van de Go-gemeenschap voor modulaire, herbruikbare code. Echter, voor prestatiekritieke toepassingen kunnen programmeurs nog steeds de voorkeur geven aan het `net/html`-pakket of zelfs terugvallen op regex voor eenvoudige parseertaken, met in gedachten de inherente risico's en beperkingen van op regex gebaseerde HTML-parsing.

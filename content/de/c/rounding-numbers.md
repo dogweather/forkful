@@ -1,61 +1,63 @@
 ---
 title:                "Zahlen runden"
-date:                  2024-01-26T03:42:49.958859-07:00
+date:                  2024-02-03T18:07:21.364953-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Zahlen runden"
-
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/c/rounding-numbers.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Das Runden von Zahlen bedeutet, die Ziffern über einen bestimmten Punkt hinaus abzuschneiden, während optional die letzte behaltene Ziffer angepasst wird. Programmierer runden, um die Präzision zu reduzieren, wenn exakte Werte nicht notwendig sind, um Gleitkommazahlen-Fehler zu verwalten oder Zahlen für die benutzerfreundliche Anzeige vorzubereiten.
 
-## Wie?
-In C verwendet man typischerweise die Funktionen `floor()`, `ceil()` oder `round()`. Hier ist eine kurze Demonstration:
+Das Runden von Zahlen ist der Prozess der Anpassung der Ziffern einer Zahl, um deren Genauigkeit nach bestimmten Regeln zu verringern, entweder in Richtung der nächsten ganzen Zahl oder einer spezifizierten Anzahl von Dezimalstellen. Programmierer tun dies aus Gründen, die von der Begrenzung des benötigten Speicherplatzes bis hin zur Vereinfachung der Ausgabe für den Benutzer reichen, oder um genaue mathematische Operationen zu gewährleisten, die für sehr kleine Variationen empfindlich sind.
 
-```C
+## Wie:
+
+Das Runden von Zahlen in C kann mit verschiedenen Funktionen erreicht werden, der gebräuchlichste Ansatz beinhaltet jedoch die Funktionen `floor()`, `ceil()` und `round()`. Diese Funktionen sind Teil der Standard-Mathematikbibliothek, daher müssen Sie `math.h` in Ihrem Programm einbinden.
+
+```c
 #include <stdio.h>
 #include <math.h>
 
 int main() {
-    double num = 3.14159;
-    double num_floor = floor(num);
-    double num_ceil = ceil(num);
-    double num_round = round(num);
+    double num = 9.527;
 
-    printf("Floor: %.2f\n", num_floor); // Floor: 3.00
-    printf("Ceil: %.2f\n", num_ceil);   // Ceil: 4.00
-    printf("Round: %.2f\n", num_round); // Round: 3.00
+    // Verwenden von floor(), um abzurunden
+    double floorResult = floor(num);
+    printf("floor(9.527) = %.0f\n", floorResult);
+
+    // Verwenden von ceil(), um aufzurunden
+    double ceilResult = ceil(num);
+    printf("ceil(9.527) = %.0f\n", ceilResult);
+
+    // Verwenden von round(), um zur nächsten ganzen Zahl zu runden
+    double roundResult = round(num);
+    printf("round(9.527) = %.0f\n", roundResult);
+
+    // Runden auf eine spezifizierte Anzahl von Dezimalstellen beinhaltet Multiplikation und Division
+    double twoDecimalPlaces = round(num * 100) / 100;
+    printf("Runden auf zwei Dezimalstellen: %.2f\n", twoDecimalPlaces);
+
     return 0;
 }
 ```
 
-Für mehr Kontrolle, wie zum Beispiel das Runden auf einen bestimmten Platz, multiplizieren Sie, runden und teilen:
-
-```C
-double roundToPlace(double num, int place) {
-    double scale = pow(10.0, place);
-    return round(num * scale) / scale;
-}
-
-// ...
-
-double num = 3.14159;
-double num_rounded = roundToPlace(num, 2);
-printf("Gerundet auf 2 Dezimalstellen: %.2f\n", num_rounded); // Gerundet auf 2 Dezimalstellen: 3.14
+Ausgabe:
+```
+floor(9.527) = 9
+ceil(9.527) = 10
+round(9.527) = 10
+Runden auf zwei Dezimalstellen: 9.53
 ```
 
-## Tiefgreifender Einblick
-Früher bedeutete Runden oft einen manuellen Prozess – eine schwere Aufgabe nur mit Stift und Papier. Mit der Computertechnik haben wir dies automatisiert, aber die Gleitkommaarithmetik brachte Nuancen mit sich aufgrund ihrer binären Natur, wo einige Zahlen nicht exakt dargestellt werden können.
+## Vertiefung
 
-Alternativen zum Standardrunden beinhalten das Trunkieren (einfaches Fallenlassen zusätzlicher Ziffern) oder das Bankiersrunden, das zum nächsten geraden Zahlenwert rundet, wenn genau zwischen zwei Werten, um den Bias in wiederholten Berechnungen zu reduzieren.
+Das Runden von Zahlen hat tiefe historische Wurzeln in Mathematik und Berechnung, integral sowohl für theoretische als auch angewandte Aspekte. In C bieten zwar `floor()`, `ceil()` und `round()` grundlegende Funktionalität, aber das Wesen des Rundens von Fließkommazahlen zu Ganzzahlen oder spezifischen Dezimalstellen ist aufgrund der binären Darstellung von Fließkommazahlen nuancierter. Diese Darstellung kann zu unerwarteten Ergebnissen führen, da Zahlen, die nicht genau in Binär dargestellt werden können (wie 0.1), gehandhabt werden.
 
-Die Implementierung wird knifflig, wenn Sie beliebig präzise Zahlen runden müssen oder spezielle Fälle wie Unendlichkeit, signalisierende NaNs oder subnormale Werte behandeln müssen. Die Funktionen der C-Standardbibliothek bewältigen die Grundlagen, aber wenn Sie Dezimalzahlen auf individuelle Weise runden müssen, benötigen Sie mehr als `math.h`.
+Diese Funktionen sind Teil der C-Standardbibliothek, definiert in `<math.h>`. Beim Runden von Zahlen, insbesondere für finanzielle oder präzise Ingenieurberechnungen, muss man die Implikationen der Verwendung binärer Fließkommazahlen berücksichtigen. Alternativen zu den eingebauten C-Funktionen für hochgenaues oder dezimalspezifisches Runden könnten das Implementieren benutzerdefinierter Rundungsfunktionen oder die Verwendung von Bibliotheken für die Berechnung mit beliebiger Präzision, wie GMP oder MPFR, umfassen, obwohl diese zusätzliche Komplexität und Abhängigkeiten einführen.
 
-## Siehe auch
-- [`<math.h>` Dokumentation](https://en.cppreference.com/w/c/numeric/math)
-- [Gleitkommaarithmetik](https://de.wikipedia.org/wiki/Gleitkommazahl)
-- [Die Fallstricke der Überprüfung von Gleitkommaberechnungen](https://dl.acm.org/doi/10.1145/1186736.1186737)
+In der Praxis erfordert die Auswahl des richtigen Ansatzes zum Runden in C ein Gleichgewicht zwischen der Notwendigkeit von Präzision, Leistung und Praktikabilität, mit einem scharfen Verständnis für die domänenspezifischen Anforderungen der zu entwickelnden Anwendung.

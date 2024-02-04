@@ -1,55 +1,85 @@
 ---
-title:                "Tratamento de Erros"
-date:                  2024-01-26T00:37:08.056294-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Tratamento de Erros"
-
+title:                "Gerenciando erros"
+date:                  2024-02-03T17:57:54.046209-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Gerenciando erros"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/c/handling-errors.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## O Quê & Porquê?
-Tratar erros em C é esperar pelo inesperado. Impede que os programas saiam do controle quando encontram problemas. Os programadores fazem isso para lidar com falhas de maneira elegante e manter seu código confiável.
+
+O tratamento de erros em C envolve a detecção e resposta a condições anômalas que surgem durante a execução do programa. Os programadores fazem isso para evitar bugs, falhas e comportamentos imprevisíveis, garantindo que o software funcione de maneira confiável e eficiente em vários cenários.
 
 ## Como fazer:
 
-Vamos ver como fazer isso em C:
+C não possui suporte embutido para exceções como algumas outras linguagens. Em vez disso, ele depende de algumas estratégias convencionais de tratamento de erros, como retornar valores especiais de funções e configurar variáveis globais como `errno`.
 
-```C
+**Retornando Valores Especiais**
+
+As funções podem indicar erros retornando um valor específico que é improvável de ser um resultado válido. Aqui está um exemplo com inteiros:
+
+```c
 #include <stdio.h>
-#include <stdlib.h>
-#include <errno.h>
+
+int inverse(int number, double *result) {
+    if (number == 0) {
+        return -1; // Caso de erro
+    } else {
+        *result = 1.0 / number;
+        return 0; // Sucesso
+    }
+}
 
 int main() {
-    FILE *fp = fopen("arquivoinexistente.txt", "r");
-    if (fp == NULL) {
-        perror("Erro ao abrir arquivo");
-        return EXIT_FAILURE;
+    double result;
+    if (inverse(0, &result) < 0) {
+        printf("Error: Divisão por zero.\n");
+    } else {
+        printf("O inverso é: %f\n", result);
     }
-    // Faz algo com o arquivo
-    fclose(fp);
-    return EXIT_SUCCESS;
+    
+    return 0;
 }
 ```
 
-Saída de exemplo quando o arquivo não existe:
+**Saída:**
 ```
-Erro ao abrir arquivo: Arquivo ou diretório inexistente
+Error: Divisão por zero.
 ```
 
-## Mergulho Profundo
+**Verificando `errno`**
 
-Nos primórdios de C, o tratamento de erros era básico - principalmente códigos de retorno e checagens manuais. Surge então `errno`, uma variável global atualizada quando funções falham. Não é segura para threads por si só, por isso, as funções mais novas `strerror` e `perror` foram introduzidas para um relatório de erros melhor.
+Para funções de biblioteca, especialmente aquelas que interagem com o sistema ou SO (como E/S de arquivo), `errno` é definido quando ocorre um erro. Para usá-lo, inclua `errno.h` e verifique `errno` após uma falha suspeita:
 
-Alternativas? C moderno não está limitado a `errno`. Existe setjmp e longjmp para saltos não-locais quando o desastre acontece. Algumas pessoas preferem definir seus próprios códigos de erro, enquanto outras optam por estruturas semelhantes a exceções em C++.
+```c
+#include <stdio.h>
+#include <errno.h>
+#include <string.h>
 
-Os detalhes de implementação podem ser complexos. Por exemplo, `errno` é seguro para threads em sistemas compatíveis com POSIX devido à mágica do Armazenamento Local de Threads (TLS). Em sistemas embarcados, onde os recursos são preciosos, pode-se preferir código de tratamento de erros personalizado em vez de abordagens padrão que podem inflar o software.
+int main() {
+    FILE *file = fopen("nonexistent.txt", "r");
+    if (file == NULL) {
+        printf("Erro ao abrir arquivo: %s\n", strerror(errno));
+    }
+    
+    return 0;
+}
+```
 
-## Veja Também
+**Saída:**
+```
+Erro ao abrir arquivo: No such file or directory
+```
 
-- Um mergulho detalhado em `errno`: https://en.cppreference.com/w/c/error/errno
-- Para segurança em threads, veja POSIX threads e errno: http://man7.org/linux/man-pages/man3/pthread_self.3.html
-- Uma introdução a setjmp e longjmp: https://www.cplusplus.com/reference/csetjmp/
-- Para tratamento de exceção em C++, consulte: https://isocpp.org/wiki/faq/exceptions
+## Aprofundamento
+
+Historicamente, o design minimalista da linguagem de programação C excluiu um mecanismo de tratamento de exceções embutido, refletindo suas origens de programação de sistemas de baixo nível, onde o desempenho máximo e o controle próximo ao hardware são críticos. Em vez disso, o C adota uma abordagem de tratamento de erros mais manual que se encaixa em sua filosofia de dar aos programadores o máximo controle possível, mesmo à custa da conveniência.
+
+Embora esta abordagem esteja bem alinhada com os objetivos de design do C, também pode levar a um código de verificação de erro verboso e ao potencial para verificações de erro perdidas, questões que linguagens modernas abordam com mecanismos estruturados de tratamento de exceções. Por exemplo, exceções em linguagens como Java ou C# permitem o processamento centralizado de erros, tornando o código mais limpo e a gestão de erros mais direta. No entanto, exceções introduzem seu próprio custo e complexidade, que podem não ser ideais para programação em nível de sistema onde o C brilha.
+
+Apesar de sua crueza, esse tratamento manual de erros em C informou o design da gestão de erros em muitas outras linguagens, oferecendo um modelo onde a explicitação das condições de erro pode levar a um código mais previsível e depurável. Para sistemas críticos, onde falhas devem ser gerenciadas de forma graciosa, o paradigma de tratamento de erros do C - combinado com as melhores práticas modernas como bibliotecas e convenções de gerenciamento de erros - garante robustez e confiabilidade.

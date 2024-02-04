@@ -1,46 +1,73 @@
 ---
 title:                "提取子字符串"
-date:                  2024-01-20T17:45:24.557226-07:00
-model:                 gpt-4-1106-preview
+date:                  2024-02-03T17:56:21.367940-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "提取子字符串"
-
 tag:                  "Strings"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/c/extracting-substrings.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (什么 & 为什么？)
-提取子串就是从一个字符串中取出一部分内容。程序员这么做是为了分析、比较或修改特定数据片段。
+## 什么 & 为什么？
 
-## How to: (如何操作：)
-```C
+在C语言中提取子字符串涉及根据指定条件（如位置和长度）从较大的字符串中创建一个较小的字符串（子字符串）。程序员常常执行此任务进行文本解析、数据处理或输入验证，这使得它成为有效地操作和分析文本数据的关键技能。
+
+## 如何操作：
+
+与一些提供内置方法进行子字符串提取的高级语言不同，C语言需要使用其字符串操作函数进行更多手工操作。以下是如何在C中有效提取子字符串：
+
+### 示例 1：使用 `strncpy`
+
+```c
 #include <stdio.h>
 #include <string.h>
 
 int main() {
-    char str[] = "Hello, World!";
-    char substr[6];
+    char text[] = "Hello, World!";
+    char buffer[20];
 
-    // 提取子串 "Hello"
-    strncpy(substr, str, 5);
-    substr[5] = '\0'; // 添加空字符'\0'以结束子串表示
+    // 从 "Hello, World!" 中提取 "World"
+    strncpy(buffer, text + 7, 5);
+    buffer[5] = '\0'; // 确保空字符终止
 
-    printf("Substr: %s\n", substr); // 打印 "Hello"
-
+    printf("提取的子字符串：%s\n", buffer);
+    // 输出: 提取的子字符串: World
     return 0;
 }
 ```
-Output:
-```
-Substr: Hello
+
+### 示例 2：创建一个函数
+
+对于重复使用，创建一个专门提取子字符串的函数可能更有效：
+
+```c
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+void extractSubstring(char *source, int from, int n, char *target) {
+    strncpy(target, source + from, n);
+    target[n] = '\0'; // 确保空字符终止
+}
+
+int main() {
+    char text[] = "Programming in C";
+    char buffer[50];
+
+    extractSubstring(text, 0, 11, buffer);
+    printf("提取的子字符串：%s\n", buffer);
+    // 输出: 提取的子字符串: Programming
+    return 0;
+}
 ```
 
-## Deep Dive (深入了解)
-在C语言的历史中，处理字符串一直都是编程中的基础任务。标准库中的 `strncpy()` 函数常用于提取子串，但要注意它不会自动加上终止字符 '\0'。还可以用指针操作或 `strncat()` 实现提取，但要编写更多代码。在实现时，考虑效率和内存安全至关重要。
+## 深入探讨
 
-## See Also (另请参阅)
-- C标准库文档：https://en.cppreference.com/w/c/string/byte/strncpy
-- 指针与字符串：https://www.learn-c.org/en/Pointers_and_Strings
-- 字符串操作的内存安全：https://owasp.org/www-community/vulnerabilities/Buffer_Overflow
+在C语言中提取子字符串主要通过指针操作和谨慎的内存管理来处理，反映了该语言处理数据的底层方法。这种方法可以追溯到C编程的早期时代，当时由于计算能力有限，高效地管理资源至关重要。虽然缺少内置的子字符串函数可能看起来像是一个疏忽，但它体现了C语言让程序员完全控制内存管理的哲学思想，这通常会导致优化但更复杂的代码。
+
+在现代编程领域，像Python和JavaScript这样的高级语言为子字符串提取提供了内置方法，例如`slice()`或使用索引的字符串切片。这些高级语言在幕后处理内存管理，牺牲了一定程度的控制以换取使用便利性和可读性。
+
+对于C程序员来说，理解指针算术和内存分配对于执行像子字符串提取这样的任务至关重要。虽然这种方法需要对字符串在内存中的表示和操作有更深入的理解，但它提供了无与伦比的控制和效率，这是C编程长期以来在性能关键应用中保持相关性的标志特征。然而，对于在高级应用中工作、直接内存管理不是主要关注点的人来说，具有内置子字符串功能的语言可能提供了一种更直接、更少错误的方法。

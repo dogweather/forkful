@@ -1,38 +1,60 @@
 ---
 title:                "Làm việc với TOML"
-date:                  2024-01-28T22:11:12.061254-07:00
+date:                  2024-02-03T18:14:35.241328-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Làm việc với TOML"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/go/working-with-toml.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Cái gì và Tại sao?
-Làm việc với TOML bao gồm việc phân tích cú pháp và mã hóa các tệp TOML (Tom's Obvious, Minimal Language) trong Go. Lập trình viên lựa chọn TOML vì tính dễ đọc và dễ ánh xạ vào các cấu trúc dữ liệu, phù hợp với cấu hình.
+
+TOML (Tom's Obvious, Minimal Language - Ngôn ngữ Tối giản, Hiển nhiên của Tom) là một định dạng tệp cấu hình dễ đọc nhờ cú pháp đơn giản của nó. Lập trình viên sử dụng TOML để cấu hình các thiết lập và phụ thuộc của ứng dụng bởi vì sự rõ ràng và việc ánh xạ trực tiếp đến cấu trúc dữ liệu, khiến nó trở thành lựa chọn phổ biến trong nhiều dự án Go để thiết lập và quản lý cấu hình.
 
 ## Làm thế nào:
-Để làm việc với TOML trong Go, bạn thường sẽ sử dụng một thư viện như `BurntSushi/toml`. Dưới đây là cái nhìn nhanh về việc phân tích cú pháp một tệp cấu hình TOML:
 
-```Go
+Để bắt đầu làm việc với TOML trong Go, bạn cần phải bao gồm một thư viện có thể phân tích tệp TOML vì thư viện tiêu chuẩn của Go không hỗ trợ TOML một cách tự nhiên. Gói `BurntSushi/toml` là một lựa chọn phổ biến cho việc này. Đầu tiên, hãy chắc chắn cài đặt nó:
+
+```bash
+go get github.com/BurntSushi/toml
+```
+
+Dưới đây là một ví dụ đơn giản về cách sử dụng nó. Giả sử bạn có một tệp cấu hình tên là `config.toml` với nội dung sau:
+
+```toml
+title = "Ví dụ TOML"
+
+[database]
+server = "192.168.1.1"
+ports = [ 8001, 8001, 8002 ]
+connection_max = 5000
+enabled = true
+```
+
+Bây giờ, bạn cần tạo một cấu trúc Go phản ánh cấu trúc TOML:
+
+```go
 package main
 
 import (
     "fmt"
-    "os"
-
     "github.com/BurntSushi/toml"
 )
 
 type Config struct {
-    Title   string
-    Owner   struct {
-        Name string
-    }
+    Title    string
+    Database Database `toml:"database"`
+}
+
+type Database struct {
+    Server        string
+    Ports         []int
+    ConnectionMax int `toml:"connection_max"`
+    Enabled       bool
 }
 
 func main() {
@@ -41,32 +63,22 @@ func main() {
         fmt.Println(err)
         return
     }
-    fmt.Printf("Title: %s, Owner: %s\n", config.Title, config.Owner.Name)
+    fmt.Printf("Tiêu đề: %s\n", config.Title)
+    fmt.Printf("Máy chủ cơ sở dữ liệu: %s\n", config.Database.Server)
 }
 ```
 
-Mẫu `config.toml`:
-
-```Toml
-title = "Ví dụ TOML"
-[owner]
-name = "Tom Preston-Werner"
-```
-
-Mẫu đầu ra:
+Kết quả mẫu:
 
 ```
-Title: Ví dụ TOML, Owner: Tom Preston-Werner
+Tiêu đề: Ví dụ TOML
+Máy chủ cơ sở dữ liệu: 192.168.1.1
 ```
 
-## Sâu hơn
-TOML, được giới thiệu bởi Tom Preston-Werner vào năm 2013, được thiết kế để là một định dạng tệp cấu hình tối thiểu, dễ đọc do ngữ nghĩa rõ ràng của nó. Các nhà phát triển Go thường sử dụng TOML cho cấu hình thay cho các lựa chọn khác như JSON hoặc YAML vì tính trực tiếp và khả năng biểu đạt các hệ thống phân cấp phức tạp một cách đơn giản.
+## Đi sâu vào
 
-So với YAML, có các tính năng phức tạp và các vấn đề an ninh tiềm ẩn, thiết kế phẳng của TOML giảm thiểu độ phức tạp và lỗi do đánh máy. Và không giống như JSON, TOML hỗ trợ bình luận, làm cho việc giải thích cấu hình in-line dễ dàng hơn.
+TOML được tạo ra bởi Tom Preston-Werner, một trong những đồng sáng lập của GitHub, nhằm mục đích cung cấp một định dạng tệp cấu hình đơn giản, có thể dễ dàng ánh xạ sang bảng băm và có thể hiểu ngay lập tức mà không cần kiến thức trước về định dạng. Điều này trái ngược với JSON hoặc YAML, mặc dù cũng rộng rãi được sử dụng, nhưng có thể kém thân thiện với con người hơn trong các tệp cấu hình vì vấn đề ngoặc, dấu nháy và thụt lề.
 
-Khi làm việc với TOML trong Go, có những điểm tinh tế cần xem xét. Các thẻ cấu trúc có thể tùy chỉnh cách ánh xạ cấu trúc của bạn vào các cấu trúc TOML, và bạn cũng nên nhận thức về cách TOML mảng và bảng nội tuyến được phân tích cú pháp thành các lát và bản đồ Go.
+Gói `BurntSushi/toml` trong Go là một thư viện mạnh mẽ không chỉ cho phép giải mã mà còn cho phép mã hóa tệp TOML, khiến nó trở thành một lựa chọn đa dạng cho các ứng dụng cần đọc và viết các tệp cấu hình theo định dạng này. Tuy nhiên, nên lưu ý rằng với sự tiến bộ của công nghệ và sự giới thiệu của các phiên bản Go mới, các lựa chọn khác như `pelletier/go-toml` đã xuất hiện, cung cấp hiệu suất cải thiện và các tính năng bổ sung như thao tác cây và hỗ trợ truy vấn.
 
-## Xem thêm
-- Đặc tả TOML: https://toml.io/en/
-- Thư viện BurntSushi/toml: https://github.com/BurntSushi/toml
-- So sánh các định dạng tệp cấu hình: https://www.redhat.com/sysadmin/yaml-toml-json-differences
+Mặc dù TOML là một lựa chọn tuyệt vời cho nhiều ứng dụng, tùy thuộc vào sự phức tạp của cấu hình ứng dụng và sở thích cá nhân hay nhóm, các định dạng khác như YAML hay JSON có thể phù hợp hơn, đặc biệt nếu cấu hình yêu cầu cấu trúc dữ liệu phức tạp hơn mà bản chất dài dòng của TOML có thể không mô tả một cách thanh lịch. Tuy nhiên, đối với các cấu hình dễ đọc, dễ chỉnh sửa và dễ hiểu, TOML, kết hợp với hệ thống kiểu mạnh mẽ của Go và các thư viện đã nêu, là một lựa chọn xuất sắc.

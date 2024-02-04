@@ -1,61 +1,57 @@
 ---
 title:                "Praca z liczbami zespolonymi"
-date:                  2024-01-26T04:38:15.471913-07:00
+date:                  2024-02-03T18:14:08.294353-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Praca z liczbami zespolonymi"
-
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/c/working-with-complex-numbers.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Co i dlaczego?
-Liczby zespolone, zawierające część rzeczywistą i urojoną (takie jak 3 + 4i), są kluczowe w zaawansowanych obliczeniach, takich jak przetwarzanie sygnałów czy rozwiązywanie pewnych równań. Programiści obsługują je w aplikacjach wymagających intensywnych obliczeń matematycznych, gdzie tradycyjne liczby się nie sprawdzają.
+
+Liczby zespolone składają się z części rzeczywistej i urojonej, reprezentowane jako `a + bi`, gdzie `i` jest pierwiastkiem kwadratowym z `-1`. Programiści pracują z liczbami zespolonymi w różnych dziedzinach, takich jak inżynieria elektryczna, informatyka kwantowa i dynamika płynów, wykorzystując ich unikalne właściwości do symulacji, przetwarzania sygnałów i rozwiązywania określonych rodzajów równań matematycznych.
 
 ## Jak to zrobić:
-C, od standardu C99, posiada natywny typ złożony i bibliotekę. Oto jak z nich korzystać:
 
-```C
+W języku C liczby zespolone są obsługiwane przez bibliotekę standardową, a konkretnie przez `<complex.h>`. Aby z nich korzystać, należy deklarować zmienne typu `double complex` (lub `float complex` dla pojedynczej precyzji). Oto jak wykonać podstawowe operacje:
+
+```c
 #include <stdio.h>
 #include <complex.h>
 
 int main() {
-    // Deklaracja dwóch liczb zespolonych
-    double complex z1 = 1.0 + 3.0 * I;
-    double complex z2 = 2.0 - 2.0 * I;
+    double complex z1 = 1.0 + 2.0*I; // Deklaracja liczby zespolonej 1+2i
+    double complex z2 = 1.0 - 2.0*I; // Deklaracja innej liczby zespolonej 1-2i
 
-    // Operacje na liczbach zespolonych
-    double complex sum = z1 + z2;
-    double complex mult = z1 * z2;
+    // Dodawanie
+    double complex suma = z1 + z2;
+    printf("Suma: %.2f + %.2fi\n", creal(suma), cimag(suma)); // Wynik: Suma: 2.00 + 0.00i
 
-    // Drukowanie wyników
-    printf("Suma: %.1f + %.1fi\n", creal(sum), cimag(sum));
-    printf("Iloczyn: %.1f + %.1fi\n", creal(mult), cimag(mult));
+    // Mnożenie
+    double complex iloczyn = z1 * z2;
+    printf("Iloczyn: %.2f + %.2fi\n", creal(iloczyn), cimag(iloczyn)); // Wynik: Iloczyn: 5.00 + 0.00i
 
-    // Wartość bezwzględna i kąt fazowy
-    printf("Abs(z1): %f\n", cabs(z1));
-    printf("Arg(z1): %f\n", carg(z1));
+    // Sprzężenie zespolone
+    double complex sprzezenie = conj(z1);
+    printf("Sprzężenie z1: %.2f + %.2fi\n", creal(sprzezenie), cimag(sprzezenie)); // Wynik: Sprzężenie z1: 1.00 - 2.00i
+
+    // Moduł
+    double modul = cabs(z1);
+    printf("Moduł z1: %.2f\n", modul); // Wynik: Moduł z1: 2.24
+
+    // Argument (faza)
+    double faza = carg(z1);
+    printf("Faza z1: %.2f\n", faza); // Wynik podany w radianach
 
     return 0;
 }
 ```
+Zwróć uwagę, że `I` jest stałą reprezentującą jednostkę urojoną w `<complex.h>`. Funkcje takie jak `creal()` i `cimag()` pozwalają na ekstrakcję części rzeczywistej i urojonej odpowiednio, podczas gdy `conj()` oblicza sprzężenie zespolone. Do obliczania modułu i argumentu (fazy) liczb zespolonych używane są `cabs()` i `carg()`.
 
-Przykładowe wyjście:
-```
-Suma: 3.0 + 1.0i
-Iloczyn: 8.0 + 2.0i
-Abs(z1): 3.162278
-Arg(z1): 1.249046
-```
-## Wgłębienie
-Liczby zespolone sięgają wieków, z korzeniami w algebrze XVI wieku. Idąc naprzód, są teraz podstawą w wielu językach programowania, nie tylko w C.
+## Wnikliwe spojrzenie
 
-Standard C99 wprowadził `<complex.h>`, nagłówek definiujący makra, funkcje i typ danych `complex`. Istnieją alternatywy - takie jak tworzenie własnej struktury, ale po co na nowo wynajdować koło? Standardowa biblioteka języka C jest zoptymalizowana i gotowa do użycia.
-
-Pomimo swojej mocy, wsparcie dla liczb złożonych w C nie jest pozbawione krytyków. Może być mniej intuicyjne niż podobne funkcje w językach takich jak Python, a obsługa przypadków skrajnych może być kłopotliwa. Ale pod względem czystej wydajności jest to nadal solidny wybór.
-
-## Zobacz także
-- Dokumentacja standardu C99 dla `<complex.h>`: https://en.cppreference.com/w/c/numeric/complex
-- Standard IEEE dotyczący arytmetyki zmiennoprzecinkowej (IEEE 754): https://ieeexplore.ieee.org/document/4610935
-- Internetowy samouczek matematyki liczb zespolonych w C: https://www.tutorialspoint.com/complex-number-arithmetic-in-c-programming
+Obsługa liczb zespolonych w C jest stosunkowo nowa, została znormalizowana w C99. Przed tym, arytmetyka liczb zespolonych w C była uciążliwa, często wymagająca niestandardowych struktur danych i funkcji. Włączenie `<complex.h>` i typów danych zespolonych znacząco zwiększyło możliwości języka dla zastosowań naukowych i inżynierskich. Warto jednak zauważyć, że niektóre języki, takie jak Python, oferują bardziej intuicyjne wsparcie dla liczb zespolonych poprzez wbudowane typy danych i bogatszy zestaw funkcji bibliotecznych. Pomimo to, wydajność i kontrola oferowana przez C czynią go preferowanym wyborem dla zadań obliczeń wysokiej wydajności, nawet jeśli oznacza to radzenie sobie z nieco bardziej rozbudowaną składnią dla arytmetyki zespolonej.

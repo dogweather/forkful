@@ -1,75 +1,127 @@
 ---
-title:                "Tái cấu trúc mã"
-date:                  2024-01-28T22:06:29.877387-07:00
+title:                "Tái cấu trúc"
+date:                  2024-02-03T18:07:54.750937-07:00
 model:                 gpt-4-0125-preview
-simple_title:         "Tái cấu trúc mã"
-
+simple_title:         "Tái cấu trúc"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/go/refactoring.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Cái gì & Tại sao?
-Tái cấu trúc là quá trình cải tổ lại mã máy tính hiện có mà không thay đổi hành vi bên ngoài của nó. Lập trình viên thực hiện điều này để cải thiện các thuộc tính không chức năng của phần mềm, như khả năng đọc và bảo trì, có thể làm cho mã dễ hiểu hơn, giảm độ phức tạp và giúp dễ dàng phát hiện lỗi hơn.
+## Gì và Tại sao?
+
+Tái cấu trúc trong lập trình bao gồm việc cấu trúc lại mã máy tính hiện có—thay đổi cách phân chia—mà không thay đổi hành vi bên ngoài của nó. Các lập trình viên thực hiện quy trình này để cải thiện khả năng đọc mã, giảm độ phức tạp và tăng khả năng bảo trì, cuối cùng làm cho phần mềm dễ hiểu và chỉnh sửa hơn.
 
 ## Làm thế nào:
-Hãy cùng khám phá một ví dụ tái cấu trúc code Go đơn giản. Chúng ta sẽ lấy một đoạn mã tính trung bình của một dãy số và tái cấu trúc nó để tăng tính rõ ràng và khả năng tái sử dụng.
 
-Mã gốc:
-```Go
+Trong Go, tái cấu trúc có thể dao động từ những chỉnh sửa mã đơn giản đến những thay đổi phức tạp hơn. Hãy bắt đầu với một ví dụ cơ bản: đơn giản hóa một hàm Go ban đầu để cải thiện khả năng đọc và hiệu quả.
+
+**Trước khi Tái Cấu Trúc:**
+
+```go
 package main
 
 import "fmt"
 
-func main() {
-    numbers := []float64{8, 12, 15, 10, 7, 14}
-    var sum float64
-    for _, num := range numbers {
-        sum += num
+func CalculatePrice(quantity int, price float64) float64 {
+    var total float64
+    if quantity > 0 {
+        total = float64(quantity) * price
+    } else {
+        total = 0
     }
-    average := sum / float64(len(numbers))
-    fmt.Println("Average:", average)
+    return total
+}
+
+func main() {
+    fmt.Println(CalculatePrice(10, 5.99))  // Kết quả: 59.9
 }
 ```
 
-Mã đã tái cấu trúc:
-```Go
+**Sau khi Tái Cấu Trúc:**
+
+```go
 package main
 
 import "fmt"
 
-// CalculateAverage nhận vào một slice của float64 và trả về giá trị trung bình.
-func CalculateAverage(numbers []float64) float64 {
-    sum := 0.0
-    for _, num := range numbers {
-        sum += num
+func CalculatePrice(quantity int, price float64) float64 {
+    if quantity > 0 {
+        return float64(quantity) * price
     }
-    return sum / float64(len(numbers))
+    return 0
 }
 
 func main() {
-    numbers := []float64{8, 12, 15, 10, 7, 14}
-    average := CalculateAverage(numbers)
-    fmt.Println("Average:", average)
+    fmt.Println(CalculatePrice(10, 5.99))  // Kết quả: 59.9
 }
 ```
 
-Trong mã đã tái cấu trúc, chúng ta đã tách logic tính trung bình vào một hàm riêng biệt có tên là `CalculateAverage`. Điều này làm cho hàm `main` ngắn gọn hơn và logic tính toán giá trị trung bình có thể tái sử dụng và kiểm thử.
+Trong phiên bản đã tái cấu trúc, `else` được loại bỏ, làm đơn giản dòng chảy của hàm mà không ảnh hưởng đến kết quả đầu ra—một ví dụ về kỹ thuật tái cấu trúc cơ bản nhưng có ảnh hưởng trong Go.
 
-## Đi sâu hơn
-Tái cấu trúc mã không phải là một khái niệm hiện đại; nó xuất hiện trước khi máy tính được sử dụng rộng rãi. Quá trình này có thể bắt đầu từ lĩnh vực kỹ thuật cơ khí hoặc thậm chí sớm hơn. Trong lĩnh vực phần mềm, nó trở nên được hình thức hóa hơn với sự xuất hiện của lập trình hướng đối tượng và lập trình cực đoan (XP) vào những năm 1990, đặc biệt chịu ảnh hưởng từ cuốn sách điển hình của Martin Fowler "Refactoring: Improving the Design of Existing Code."
+Đối với một ví dụ nâng cao hơn, hãy xem xét tái cấu trúc các hàm để sử dụng giao diện cho khả năng tái sử dụng và kiểm thử tốt hơn:
 
-Có nhiều kỹ thuật tái cấu trúc, từ đổi tên biến cho dễ hiểu đến các mẫu phức tạp hơn như trích xuất phương thức hoặc lớp. Điều quan trọng là thực hiện những thay đổi nhỏ, dần dần không làm thay đổi chức năng của phần mềm nhưng cải thiện cấu trúc nội bộ.
+**Trước khi Tái Cấu Trúc:**
 
-Khi sử dụng Go, việc tái cấu trúc có thể khá đơn giản do sự đơn giản và thư viện chuẩn mạnh mẽ của ngôn ngữ. Tuy nhiên, vẫn quan trọng phải có một bộ kiểm thử đơn vị tốt để đảm bảo rằng tái cấu trúc không giới thiệu lỗi. Công cụ như `gorename` và `gofmt` giúp tự động hóa một số quá trình, và các môi trường phát triển tích hợp (IDE) thường có hỗ trợ tái cấu trúc tích hợp.
+```go
+package main
 
-Ngoài tái cấu trúc thủ công, còn có một số công cụ tái cấu trúc mã tự động available cho Go, như công cụ tái cấu trúc của GoLand và Go Refactor. Mặc dù những công cụ này có thể tăng tốc quá trình, chúng không phải là phương tiện thay thế cho việc hiểu biết mã và thực hiện các thay đổi được suy nghĩ.
+import "fmt"
 
-## Xem thêm
- - [Refactoring trong Go: Đơn giản là đẹp](https://go.dev/blog/slices)
- - [Go hiệu quả: Tái cấu trúc với Interfaces](https://go.dev/doc/effective_go#interfaces)
- - [Trang Refactoring của Martin Fowler](https://refactoring.com/)
- - [Công cụ tái cấu trúc của GoLand](https://www.jetbrains.com/go/features/refactorings/)
+type Logger struct{}
+
+func (l Logger) Log(message string) {
+    fmt.Println("Log:", message)
+}
+
+func ProcessData(data string, logger Logger) {
+    // Hãy tưởng tượng sự xử lý dữ liệu ở đây
+    logger.Log("Dữ liệu đã được xử lý")
+}
+
+func main() {
+    logger := Logger{}
+    ProcessData("dữ liệu ví dụ", logger)
+}
+```
+
+**Sau khi Tái Cấu Trúc:**
+
+```go
+package main
+
+import "fmt"
+
+type Logger interface {
+    Log(message string)
+}
+
+type ConsoleLogger struct{}
+
+func (c ConsoleLogger) Log(message string) {
+    fmt.Println("Log:", message)
+}
+
+func ProcessData(data string, logger Logger) {
+    // Xử lý dữ liệu vẫn không thay đổi
+    logger.Log("Dữ liệu đã được xử lý")
+}
+
+func main() {
+    logger := ConsoleLogger{}
+    ProcessData("dữ liệu ví dụ", logger)
+}
+```
+
+Việc tái cấu trúc sử dụng một giao diện (`Logger`) thay vì một kiểu cụ thể (`ConsoleLogger`) làm tăng tính linh hoạt của hàm và tách biệt quá trình xử lý dữ liệu khỏi cài đặt log cụ thể.
+
+## Sâu Hơn Nữa
+
+Tái cấu trúc trong Go phải cân bằng giữa sự đơn giản (một trong những triết lý cốt lõi của Go) với tính linh hoạt cần thiết trong các dự án phần mềm lớn. Với cách tiếp cận tối giản đối với các tính năng—không có generics (cho đến gần đây) và với sự nhấn mạnh mạnh mẽ vào khả năng đọc—ngôn ngữ tự nhiên hướng dẫn nhà phát triển về phía các cấu trúc mã dễ bảo trì hơn, đơn giản hơn. Tuy nhiên, điều này không có nghĩa là mã Go không hưởng lợi từ việc tái cấu trúc; nó chỉ có nghĩa là việc tái cấu trúc luôn cần ưu tiên sự rõ ràng và đơn giản.
+
+Trong lịch sử, sự thiếu một số tính năng của Go (ví dụ, generics trước Go 1.18) đã dẫn đến các giải pháp sáng tạo nhưng đôi khi phức tạp cho việc tái sử dụng mã và tính linh hoạt, làm cho việc tái cấu trúc cho tính trừu tượng trở thành một thực hành phổ biến. Với việc giới thiệu generics trong Go 1.18, các nhà phát triển Go giờ đây đang tái cấu trúc mã kế thừa để tận dụng tính năng này cho sự an toàn kiểu dữ liệu và tái sử dụng mã tốt hơn, minh họa cho bản chất phát triển của các thực hành tái cấu trúc trong Go.
+
+Tuy nhiên, bộ công cụ của Go, bao gồm `gofmt` cho việc định dạng mã và `go vet` cho việc xác định các cấu trúc đáng ngờ, hỗ trợ duy trì cơ sở mã sạch, giảm nhu cầu cho việc tái cấu trúc rộng rãi. Mặc dù tái cấu trúc là một công cụ vô giá trong kho vũ khí của một lập trình viên Go, việc sử dụng khôn ngoan các tính năng và công cụ của Go ngay từ đầu có thể giúp giảm thiểu nhu cầu cho việc tái cấu trúc phức tạp sau này.

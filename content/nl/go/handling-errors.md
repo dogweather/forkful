@@ -1,78 +1,69 @@
 ---
 title:                "Fouten afhandelen"
-date:                  2024-01-28T22:01:56.433929-07:00
+date:                  2024-02-03T17:58:27.696470-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Fouten afhandelen"
-
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/go/handling-errors.md"
 changelog:
-  - 2024-01-21, dogweather, Reviewed for accuracy
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Wat & Waarom?
 
-Foutafhandeling in Go gaat over het sierlijk opvangen en reageren op runtime storingen. We doen dit om crashes te voorkomen en ervoor te zorgen dat onze programma's voorspelbaar handelen, zelfs wanneer dingen misgaan.
+Foutafhandeling in Go houdt in het herkennen en reageren op foutcondities in je programma. Programmeurs doen aan foutafhandeling om ervoor te zorgen dat hun applicaties zich sierlijk kunnen herstellen van onverwachte situaties, wat leidt tot robuustere en betrouwbaardere software.
 
 ## Hoe:
 
-Go gebruikt expliciete foutafhandeling. Dat betekent dat je elke keer controleert of een functie een fout retourneert wanneer je deze aanroept. Geen uitzonderingen. Zo ziet dat eruit:
+In Go wordt foutafhandeling expliciet beheerd met behulp van het `error` type. Functies die kunnen falen, geven een fout terug als hun laatste retourwaarde. Controleren of deze foutwaarde `nil` is, zal je vertellen of er een fout is opgetreden.
 
-```Go
+```go
 package main
 
 import (
-	"fmt"
-	"os"
+    "errors"
+    "fmt"
 )
 
+func Compute(value int) (int, error) {
+    if value > 100 {
+        return 0, errors.New("waarde moet 100 of minder zijn")
+    }
+    return value * 2, nil
+}
+
 func main() {
-	err := doeIets()
-	if err != nil {
-		fmt.Println("Uh oh:", err)
-		os.Exit(1)
-	}
-}
-
-func doeIets() error {
-	// Doen alsof er iets misging
-	return fmt.Errorf("er ging iets mis")
-}
-```
-
-Voer dit uit, en je krijgt:
-
-```
-Uh oh: er ging iets mis
-```
-
-Maar wat als het slaagt?
-
-```Go
-func doeIets() error {
-	// Deze keer is alles goed
-	return nil
+    resultaat, err := Compute(150)
+    if err != nil {
+        fmt.Println("Fout:", err)
+    } else {
+        fmt.Println("Resultaat:", resultaat)
+    }
+    
+    // Een fout sierlijk afhandelen
+    eenAnderResultaat, eenAndereFout := Compute(50)
+    if eenAndereFout != nil {
+        fmt.Println("Fout:", eenAndereFout)
+    } else {
+        fmt.Println("Resultaat:", eenAnderResultaat)
+    }
 }
 ```
 
-Geen output. Cool, geen nieuws is goed nieuws.
+Voorbeelduitvoer voor de bovenstaande code:
+```
+Fout: waarde moet 100 of minder zijn
+Resultaat: 100
+```
 
-## Diepere duik:
+In dit voorbeeld geeft de `Compute` functie ofwel een berekende waarde ofwel een fout terug. De aanroeper handelt de fout af door te controleren of `err` niet `nil` is.
 
-In Go is foutafhandeling een punt van discussie geweest. Sinds het begin koos Go tegen uitzonderingen voor een meer expliciete aanpak, waar sommige ontwikkelaars van houden vanwege de eenvoud en anderen het omslachtig vinden. Het ingebouwde `error` type is een interface. Elk type met een `Error() string` methode voldoet eraan. Dit sluit aan bij de Go ethos van eenvoud en explicietheid.
+## Diepere Duik
 
-Alternatieven? Er is het duo `panic` en `recover`, maar die zijn voor uitzonderlijke gevallen (woordspeling bedoeld) wanneer het programma niet kan doorgaan. Denk aan `panic` als de eject knop die je indrukt wanneer je weet dat er geen terugkomst mogelijk is. Gebruik het met mate.
+De aanpak van Go voor foutafhandeling is bewust eenvoudig en type-veilig, en vereist expliciete controle op fouten. Dit concept staat in contrast met op uitzonderingen gebaseerde foutafhandeling, zoals gezien in talen zoals Java en Python, waar fouten worden doorgegeven langs de oproepstack tenzij gevangen door een uitzonderingshandler. Het Go-team betoogt dat het expliciet afhandelen van fouten leidt tot duidelijkere en betrouwbaardere code, omdat het programmeurs dwingt om fouten direct aan te pakken waar ze voorkomen.
 
-Wat betreft reguliere foutafhandeling, introduceerde Go 1.13 foutverpakking, waardoor het gemakkelijker is om de "foutenketen" uit te zoeken met functies zoals `errors.Is()` en `errors.As()`.
+Echter, sommige kritieken vermelden dat dit patroon kan leiden tot uitgebreide code, vooral in complexe functies met veel foutgevoelige bewerkingen. Als reactie hierop hebben nieuwere versies van Go geavanceerdere foutafhandelingsfuncties geïntroduceerd, zoals foutomwikkeling, waardoor het gemakkelijker wordt om context aan een fout te bieden zonder de oorspronkelijke foutinformatie te verliezen. De gemeenschap heeft ook voorstellen gezien voor nieuwe foutafhandelingsmechanismen, zoals check/handle, hoewel deze tot op mijn laatste update nog onder discussie zijn.
 
-## Zie ook:
-
-Voor alles over foutafhandeling in Go:
-
-- De Go Blog over foutafhandeling: [https://blog.golang.org/error-handling-and-go](https://blog.golang.org/error-handling-and-go)
-- Effective Go - Sectie over foutafhandeling: [https://golang.org/doc/effective_go#errors](https://golang.org/doc/effective_go#errors)
-- Go 1.13 Foutverpakking documentatie: [https://golang.org/doc/go1.13#error_wrapping](https://golang.org/doc/go1.13#error_wrapping)
-- Dave Cheney's post over strategieën voor foutafhandeling: [https://dave.cheney.net/2016/04/27/dont-just-check-errors-handle-them-gracefully](https://dave.cheney.net/2016/04/27/dont-just-check-errors-handle-them-gracefully)
+De filosofie van foutafhandeling in Go benadrukt het begrijpen en plannen van fouten als onderdeel van de normale stroom van het programma. Deze aanpak moedigt de ontwikkeling aan van veerkrachtigere en voorspelbaardere software, zij het met een potentiële toename in standaardcode. Alternatieve patronen en bibliotheken bestaan om foutafhandeling te stroomlijnen voor met name complexe gevallen, maar Go's ingebouwde `error` type blijft de basis van foutafhandeling in de taal.

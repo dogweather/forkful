@@ -1,73 +1,99 @@
 ---
 title:                "Bruke associative tabeller"
-date:                  2024-01-30T19:10:08.733614-07:00
+date:                  2024-02-03T18:10:42.892958-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Bruke associative tabeller"
-
 tag:                  "Data Structures"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/c/using-associative-arrays.md"
 changelog:
-  - 2024-01-30, gpt-4-0125-preview, translated from English
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 
-Assosiative tabeller, eller hash-kart, er nøkkel-verdipar som lar deg lagre og hente data med en nøkkel. De er utrolig nyttige i C fordi de muliggjør raskere dataaksess sammenlignet med lister, spesielt når du håndterer store mengder data.
+Assosiative tabeller, kjent i andre språk som kart eller ordbøker, er nøkkel-verdi-par som brukes til effektiv dataoppslag og -manipulasjon. I motsetning til tradisjonelle tabeller som bruker heltallsindekser, bruker assosiative tabeller nøkler, noe som gjør datainngang mer intuitivt og fleksibelt for programmerere.
 
 ## Hvordan:
 
-C støtter ikke assosiative tabeller innebygd som noen andre språk, men vi kan bruke strukturer og noen bibliotekfunksjoner for å få lignende funksjonalitet. Her er en enkel implementering som bruker `uthash`-biblioteket, som du må inkludere i prosjektet ditt.
+C har ikke innebygd støtte for assosiative tabeller som noen høyere nivå språk, men du kan simulere dem ved å bruke strukturer og hashing. Nedenfor er et forenklet eksempel som bruker en kombinasjon av en struktur og en enkel hashfunksjon for å implementere en assosiativ tabell for lagring og tilgang til heltall ved strengnøkler.
 
-Først, definer en struktur for å holde nøkkel-verdiparene dine:
+Først, definer en struktur for å representere et enkelt nøkkel-verdi-par og en annen for å representere den assosiative tabellen selv:
 
-```C
+```c
 #include <stdio.h>
-#include "uthash.h"
+#include <stdlib.h>
+#include <string.h>
+
+#define TABLE_SIZE 128
 
 typedef struct {
-    int id; // Dette vil være nøkkelen vår
-    char name[10]; // Dette er verdien assosiert med nøkkelen vår
-    UT_hash_handle hh; // Gjør denne strukturen hashbar
-} person;
-```
+    char* key;
+    int value;
+} KeyValuePar;
 
-Deretter, la oss legge til noen oppføringer og hente dem:
+typedef struct {
+    KeyValuePar* items[TABLE_SIZE];
+} AssosTabell;
 
-```C
-int main() {
-    person *mine_personer = NULL, *s;
+unsigned int hash(char* key) {
+    unsigned long int verdi = 0;
+    unsigned int i = 0;
+    unsigned int key_len = strlen(key);
 
-    // Legge til en oppføring
-    s = (person*)malloc(sizeof(person));
-    s->id = 1;
-    strcpy(s->name, "Alice");
-    HASH_ADD_INT(mine_personer, id, s);
-
-    // Hente en oppføring
-    int bruker_id = 1;
-    HASH_FIND_INT(mine_personer, &bruker_id, s);
-    if (s) {
-        printf("Fant: %s\n", s->name);
+    for (; i < key_len; ++i) {
+        verdi = verdi * 37 + key[i];
     }
-    
+
+    verdi = verdi % TABLE_SIZE;
+
+    return verdi;
+}
+
+void initArray(AssosTabell* array) {
+    for (int i = 0; i < TABLE_SIZE; ++i) {
+        array->items[i] = NULL;
+    }
+}
+
+void insert(AssosTabell* array, char* key, int value) {
+    unsigned int slot = hash(key);
+
+    KeyValuePar* item = (KeyValuePar*)malloc(sizeof(KeyValuePar));
+    item->key = strdup(key);
+    item->value = value;
+
+    array->items[slot] = item;
+}
+
+int find(AssosTabell* array, char* key) {
+    unsigned int slot = hash(key);
+
+    if (array->items[slot]) {
+        return array->items[slot]->value;
+    }
+    return -1;
+}
+
+int main() {
+    AssosTabell a;
+    initArray(&a);
+
+    insert(&a, "key1", 1);
+    insert(&a, "key2", 2);
+
+    printf("%d\n", find(&a, "key1")); // Utdata: 1
+    printf("%d\n", find(&a, "key2")); // Utdata: 2
+
     return 0;
 }
 ```
 
-Eksempel på utdata ville være:
-
-```
-Fant: Alice
-```
-
-Ikke glem å frigjøre allokert minne og avvikle hash-tabellen når du er ferdig for å unngå minnelekkasjer.
+Dette eksempelet demonstrerer grunnleggende operasjoner: initialisering av en assosiativ tabell, innsetting av nøkkel-verdi-par og finne verdier ved nøkler. Merk at denne koden mangler kollisjonshåndtering og er ment for pedagogiske formål.
 
 ## Dypdykk
 
-Selv om assosiative tabeller ikke er innebygd i C, fyller biblioteker som `uthash` gapet ganske bra, og gir en ganske rett frem måte å bruke denne funksjonaliteten på. Historisk sett måtte C-utviklere implementere sine versjoner av disse datastrukturene, noe som førte til varierte og ofte komplekse implementeringer, spesielt for dem som nettopp har begynt med språket.
+Konseptet med assosiative tabeller er eldre enn C, men språkets lavnivånatur støtter dem ikke direkte som innebygde typer. Dette oppfordrer til en dypere forståelse av datastrukturer og algoritmer, inkludert hashingsmekanismer for effektiv nøkkel-verdi-mapping. Mange C-biblioteker og rammeverk tilbyr mer sofistikerte tilnærminger for å implementere assosiative tabeller, som GLib's `GHashTable`, som gir en robust implementering komplett med kollisjonshåndtering, dynamisk størrelseendring og støtte for vilkårlige nøkkel- og verdi-typer.
 
-Husk, effektiviteten av å bruke assosiative tabeller i C avhenger sterkt av hvor godt hash-funksjonen distribuerer verdier over tabellen for å minimere kollisjoner. Mens biblioteker som `uthash` tilbyr en god balanse mellom brukervennlighet og ytelse, i kritiske applikasjoner hvor ytelsen er paramount, kan det hende du vil tilpasse eller implementere din egen hash-tabell.
-
-For applikasjoner som krever maksimal effektivitet, kan alternative datastrukturer eller til og med andre programmeringsspråk med innebygd støtte for assosiative tabeller være et bedre valg. Derimot, for mange situasjoner, spesielt hvor du allerede arbeider inne i et C-miljø, gir bruk av et bibliotek som `uthash` en praktisk balanse mellom ytelse og bekvemmelighet.
+Selv om manuell konstruksjon av assosiative tabeller i C kan sees på som omfattende sammenlignet med språk med innebygd støtte, tilbyr det uvurderlig innsikt i indre arbeid av datastrukturer, skjerping av en programmerers ferdigheter i problemløsning og optimalisering. Men for produksjonskode eller mer komplekse applikasjoner, er det ofte en mer praktisk og tidsbesparende tilnærming å utnytte eksisterende biblioteker som GLib.

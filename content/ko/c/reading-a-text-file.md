@@ -1,54 +1,67 @@
 ---
 title:                "텍스트 파일 읽기"
-date:                  2024-01-20T17:53:57.203471-07:00
-model:                 gpt-4-1106-preview
+date:                  2024-02-03T18:05:37.989435-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "텍스트 파일 읽기"
-
 tag:                  "Files and I/O"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/c/reading-a-text-file.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (무엇이며 왜?)
-텍스트 파일 읽기는 파일에서 데이터를 추출하는 과정입니다. 이 과정은 설정 로드, 사용자 데이터 처리 또는 파일의 내용 분석 등을 위해 프로그래머들이 자주 사용합니다.
+## 무엇이며 왜?
 
-## How to: (어떻게 하나요?)
-```C
+C에서 텍스트 파일을 읽는 것은 시스템에서 파일을 열어 정보를 추출하고 필요에 따라 조작하거나 표시하는 것을 포함합니다. 프로그래머들은 일반적으로 구성 파일을 처리하거나, 처리를 위한 입력을 읽거나, 파일 형식으로 저장된 데이터를 분석하기 위해 이를 수행합니다. 이는 어플리케이션의 유연성과 기능성을 증가시킵니다.
+
+## 방법:
+
+C에서 텍스트 파일을 읽기 시작하려면 표준 I/O 라이브러리에서 `fopen()`, `fgets()`, 및 `fclose()` 함수를 주로 사용합니다. 다음은 `example.txt`라는 파일을 읽고 그 내용을 표준 출력에 출력하는 간단한 예입니다:
+
+```c
 #include <stdio.h>
+#include <stdlib.h>
 
 int main() {
-    FILE *file;
-    char filename[] = "example.txt"; // 파일 이름을 여기에 포함하세요.
-    char buffer[255]; // 한 줄씩 읽을 수 있는 버퍼를 생성합니다.
+    FILE *filePointer;
+    char buffer[255]; // 텍스트 라인을 저장할 버퍼
 
-    file = fopen(filename, "r"); // 파일을 읽기 모드로 엽니다.
+    // 파일을 읽기 모드로 열기
+    filePointer = fopen("example.txt", "r");
 
-    if (file == NULL) {
-        perror("파일 열기 실패");
+    // 파일이 성공적으로 열렸는지 확인
+    if (filePointer == NULL) {
+        printf("파일을 열 수 없습니다. \n");
         return 1;
     }
 
-    while (fgets(buffer, 255, file)) { // 파일을 한 줄씩 읽습니다.
+    while (fgets(buffer, 255, filePointer) != NULL) {
         printf("%s", buffer);
     }
 
-    fclose(file); // 파일을 닫습니다.
-    
+    // 자원을 해제하기 위해 파일 닫기
+    fclose(filePointer);
     return 0;
 }
 ```
-Sample Output:
+
+`example.txt`가 다음을 포함한다고 가정합니다:
 ```
-안녕하세요, 이것은 예제 텍스트 파일입니다.
-텍스트 파일 읽기를 시연하기 위한 내용입니다.
+Hello, World!
+C 프로그래밍에 오신 것을 환영합니다.
 ```
 
-## Deep Dive (심층 분석)
-텍스트 파일 읽기는 C 언어가 태동한 1970년대부터 존재했습니다. 당시 파일 입출력은 필수적 기능이었고, `stdio.h` 헤더 안에서 이 기능을 제공했습니다. `fopen`, `fgets`, `fclose` 함수들은 파일 작업을 위한 표준 API입니다. 이 방법 말고도 `fread`, `fscanf` 같은 함수들도 있지만, 텍스트 기반 파일에는 `fgets`가 흔히 쓰입니다. `fgets`는 자동으로 문자열 끝에 NULL을 추가해 안전성을 높여줍니다. 따라서, 버퍼 오버러닝이나 파일 끝 판별 작업이 필요 없습니다.
+출력 결과는 다음과 같습니다:
+```
+Hello, World!
+C 프로그래밍에 오신 것을 환영합니다.
+```
 
-## See Also (더보기)
-- C Standard Library: https://en.cppreference.com/w/c/io
-- File I/O in C: https://www.tutorialspoint.com/cprogramming/c_file_io.htm
-- GNU C Library documentation for File I/O: https://www.gnu.org/software/libc/manual/html_node/I_002fO-Primitives.html
+## 심층적으로
+
+C에서 파일을 읽는 일은 단순성과 우아함의 텍스트 스트림이 근본이 되었던 초기 Unix 시대로 거슬러 올라갑니다. 이는 구성, 로깅 및 프로세스 간 통신을 포함한 다양한 목적으로 텍스트 파일의 채택으로 이어졌습니다. `fopen()`, `fgets()`, 및 `fclose()` 같은 함수로 구현된 C 언어의 파일 I/O 라이브러리의 단순성은 프로그래머가 복잡한 시스템을 구축할 수 있는 기본 도구를 제공한다는 설계 철학을 강조합니다.
+
+역사적으로, 이러한 함수들이 수많은 어플리케이션에 잘 봉사해 왔지만, 현대 프로그래밍 관행은 특히 오류 처리, 파일 인코딩(예: 유니코드 지원), 멀티 스레드 어플리케이션에서의 동시 접근과 관련하여 일부 한계를 드러내었습니다. C++용 `libuv` 또는 `Boost.Asio`와 같은 C 내에서 혹은 다른 언어에서의 대체 접근 방식은 이러한 문제를 직접적으로 해결하는 더 정교한 I/O 관리 기능을 제공함으로써, 광범위한 파일 읽기 작업이나 I/O 바운드 작업을 다루는 어플리케이션의 성능을 크게 향상시킬 수 있는 비동기 I/O 작업을 포함하여 더 견고한 솔루션을 제공합니다.
+
+이러한 발전에도 불구하고, C의 표준 I/O 라이브러리를 사용해 파일을 읽는 법을 배우는 것은 중요합니다. 이는 많은 프로그래밍 상황에서 적용 가능한 파일 처리의 기초를 이해하는 데 도움이 될 뿐만 아니라, 파일 I/O 작업의 진화를 감상하고 현대 어플리케이션의 파일 처리를 위한 더 복잡한 라이브러리와 프레임워크를 탐색하는 기반을 제공합니다.

@@ -1,44 +1,73 @@
 ---
 title:                "Teilstrings extrahieren"
-date:                  2024-01-20T17:44:59.324622-07:00
-model:                 gpt-4-1106-preview
+date:                  2024-02-03T17:56:19.449615-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Teilstrings extrahieren"
-
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/c/extracting-substrings.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Das Extrahieren von Teilstrings bedeutet, dass wir ein Stück aus einem längeren String herausschneiden. Programmierer nutzen das, um spezifische Daten zu verarbeiten, Informationen zu validieren oder Formatierungen anzupassen.
 
-## Wie geht das?
-```C
+Das Extrahieren von Teilzeichenketten in C umfasst das Erstellen einer kleineren Zeichenkette (Teilzeichenkette) aus einer größeren Zeichenkette basierend auf spezifizierten Kriterien, wie Position und Länge. Programmierer führen diese Aufgabe oft für das Parsen von Text, Datenverarbeitung oder die Eingabevalidierung durch, was es zu einer entscheidenden Fähigkeit beim effizienten Manipulieren und Analysieren von Textdaten macht.
+
+## Wie geht das:
+
+Im Gegensatz zu einigen höheren Sprachen, die eingebaute Methoden zur Extraktion von Teilzeichenketten bieten, erfordert C einen manuelleren Ansatz unter Verwendung seiner String-Manipulationsfunktionen. So extrahiert man effektiv eine Teilzeichenkette in C:
+
+### Beispiel 1: Verwendung von `strncpy`
+
+```c
 #include <stdio.h>
 #include <string.h>
 
 int main() {
-    char text[] = "Wir lernen C-Programmierung!";
-    char substr[20];
+    char text[] = "Hallo, Welt!";
+    char buffer[20];
 
-    // Extrahieren eines Teilstrings ab Position 4, Länge 7
-    strncpy(substr, text + 4, 7);
-    substr[7] = '\0'; // Null-Terminator nicht vergessen!
-    
-    printf("Teilstring: %s\n", substr);
+    // Extrahiere "Welt" aus "Hallo, Welt!"
+    strncpy(buffer, text + 7, 5);
+    buffer[5] = '\0'; // Sicherstelle die Null-Terminierung
+
+    printf("Extrahierte Teilzeichenkette: %s\n", buffer);
+    // Ausgabe: Extrahierte Teilzeichenkette: Welt
     return 0;
 }
 ```
-Ausgabe:
-```
-Teilstring: lernen
+
+### Beispiel 2: Erstellen einer Funktion
+
+Für die wiederholte Verwendung kann eine dedizierte Funktion zur Extraktion von Teilzeichenketten effizienter sein:
+
+```c
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+void extractSubstring(char *source, int from, int n, char *target) {
+    strncpy(target, source + from, n);
+    target[n] = '\0'; // Sicherstelle die Null-Terminierung
+}
+
+int main() {
+    char text[] = "Programmierung in C";
+    char buffer[50];
+
+    extractSubstring(text, 0, 11, buffer);
+    printf("Extrahierte Teilzeichenkette: %s\n", buffer);
+    // Ausgabe: Extrahierte Teilzeichenkette: Programmierung
+    return 0;
+}
 ```
 
-## Tiefere Einblicke
-Teilstrings zu extrahieren, ist so alt wie das Programmieren mit Strings selbst. C bietet keine eingebaute Substring-Funktion, anders als höhere Sprachen wie Python oder Java. `strncpy()` ist jedoch ein Standardwerkzeug, und mit Kenntnis von Pointern lässt sich viel erreichen. Man sollte vorsichtig sein, um Pufferüberläufe und fehlende Null-Terminatoren zu vermeiden. Alternativen sind Bibliotheken wie `strstr` zum Finden von Substrings oder das manuelle Iterieren durch den String.
+## Tiefer Eintauchen
 
-## Siehe auch
-- C Standard Library documentation on `strncpy()`: https://en.cppreference.com/w/c/string/byte/strncpy
-- Tutorial über Pointer in C: https://www.tutorialspoint.com/cprogramming/c_pointers.htm
-- "The C Programming Language" von K&R - klassische Lektüre zum Umgang mit Strings und Pointern.
+Das Extrahieren von Teilzeichenketten in C wird hauptsächlich durch Zeiger-Manipulation und sorgfältiges Speichermanagement gehandhabt, was den niedrigeren Ansatz der Sprache zur Datenverarbeitung widerspiegelt. Diese Methode geht zurück auf die Anfangstage der C-Programmierung, als eine effiziente Ressourcenverwaltung aufgrund der begrenzten Rechenleistung von größter Bedeutung war. Während das Fehlen einer integrierten Teilzeichenkettenfunktion als ein Versehen erscheinen mag, veranschaulicht es die Philosophie von C, den Programmierern vollständige Kontrolle über das Speichermanagement zu geben, was oft zu optimiertem, aber komplexerem Code führt.
+
+Im Bereich der modernen Programmierung bieten Sprachen wie Python und JavaScript eingebaute Methoden zur Teilzeichenkettenextraktion, wie `slice()` oder Zeichenkettenslicing anhand von Indizes. Diese höheren Sprachen verwalten das Speichermanagement hinter den Kulissen und tauschen damit einen gewissen Grad an Kontrolle gegen Benutzerfreundlichkeit und Lesbarkeit aus.
+
+Für C-Programmierer ist das Verständnis der Zeigerarithmetik und der Speicherzuweisung entscheidend für Aufgaben wie die Teilzeichenkettenextraktion. Während dieser Ansatz ein tieferes Verständnis dafür erfordert, wie Zeichenketten im Speicher dargestellt und manipuliert werden, bietet er eine unvergleichliche Kontrolle und Effizienz - Merkmale der C-Programmierung, die sie seit Jahrzehnten in leistungskritischen Anwendungen relevant halten. Doch für diejenigen, die an High-Level-Anwendungen arbeiten, bei denen die direkte Speicherverwaltung weniger ein Anliegen ist, könnten Sprachen mit integrierter Teilzeichenkettenfunktionalität einen einfacheren und weniger fehleranfälligen Ansatz bieten.

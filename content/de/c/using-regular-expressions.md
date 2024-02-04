@@ -1,57 +1,71 @@
 ---
-title:                "Einsatz von regulären Ausdrücken"
-date:                  2024-01-19
-simple_title:         "Einsatz von regulären Ausdrücken"
-
+title:                "Reguläre Ausdrücke verwenden"
+date:                  2024-02-03T18:10:48.252436-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Reguläre Ausdrücke verwenden"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/c/using-regular-expressions.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Reguläre Ausdrücke sind Muster zur Textsuche und -manipulation. Programmierer nutzen sie, um Text effizient zu durchsuchen, zu überprüfen oder zu ändern.
 
-## How to:
-C bietet keine eingebaute Unterstützung für reguläre Ausdrücke, also verwenden wir die `regex.h`-Bibliothek. Hier ein einfaches Beispiel zum Abgleich eines Musters:
+Reguläre Ausdrücke (regex) bieten eine Möglichkeit, Zeichenfolgen anhand definierter Muster zu suchen, zu vergleichen und zu manipulieren. Programmierer verwenden sie intensiv für Aufgaben wie die Validierung von Eingaben, das Parsen von Textdaten und das Finden von Mustern innerhalb großer Textdateien, was sie zu einem mächtigen Werkzeug in jeder Sprache macht, einschließlich C.
 
-```C
+## Wie:
+
+Um reguläre Ausdrücke in C zu verwenden, arbeiten Sie hauptsächlich mit der POSIX-Regex-Bibliothek (`<regex.h>`). Dieses Beispiel demonstriert einfaches Musterabgleichen:
+
+```c
 #include <stdio.h>
+#include <stdlib.h>
 #include <regex.h>
 
-int main() {
+int main(){
     regex_t regex;
     int return_value;
-    char * pattern = "^[a-zA-Z]+[0-9]*";
-    char * test_string = "Hallo123";
+    char *pattern = "^a[[:alnum:]]"; // Muster um Zeichenketten zu finden, die mit 'a' beginnen gefolgt von alphanumerischen Zeichen
+    char *test_string = "apple123";
 
-    // Kompiliere regulären Ausdruck
-    return_value = regcomp(&regex, pattern, 0);
-
-    // Prüfe, ob das Muster passt
-    return_value = regexec(&regex, test_string, 0, NULL, 0);
-
-    if (return_value == 0) {
-        printf("Das Muster passt!\n");
-    } else {
-        printf("Keine Übereinstimmung.\n");
+    // Den regulären Ausdruck kompilieren
+    return_value = regcomp(&regex, pattern, REG_EXTENDED);
+    if (return_value) {
+        printf("Konnte regex nicht kompilieren\n");
+        exit(1);
     }
 
-    // Gib Speicher frei
+    // Den regulären Ausdruck ausführen
+    return_value = regexec(&regex, test_string, 0, NULL, 0);
+    if (!return_value) {
+        printf("Übereinstimmung gefunden\n");
+    } else if (return_value == REG_NOMATCH) {
+        printf("Keine Übereinstimmung gefunden\n");
+    } else {
+        printf("Regex-Abgleich fehlgeschlagen\n");
+        exit(1);
+    }
+
+    // Speicher freigeben, der von dem regex verwendet wird
     regfree(&regex);
+
     return 0;
 }
 ```
 
-Ausgabe:
+Beispielausgabe für eine übereinstimmende Zeichenfolge ("apple123"):
 ```
-Das Muster passt!
+Übereinstimmung gefunden
+```
+Und für eine nicht übereinstimmende Zeichenfolge ("banana"):
+```
+Keine Übereinstimmung gefunden
 ```
 
-## Deep Dive
-Reguläre Ausdrücke kamen in den 1950ern auf; sie wurden in der Informatik durch Perl und Unix-Tools wie `sed` und `grep` populär. Heute fast in allen Sprachen vorhanden, bieten sie mächtige Werkzeuge für Textverarbeitung. Alternativen zu regulären Ausdrücken sind Stringvergleiche, Parser und Textverarbeitungsbibliotheken, aber die bieten meist weniger Flexibilität. `regex.h` ist Teil der POSIX C-API; sie muss explizit inkludiert und mittels der Funktion `regcomp` kompiliert werden.
+## Tiefer eintauchen:
 
-## See Also
-- [RegExr](https://regexr.com/): Reguläre Ausdrücke online testen.
-- [GNU Regex Dokumentation](https://www.gnu.org/software/libc/manual/html_node/Regular-Expressions.html): Detaillierte Info zu `regex.h`.
-- [Online C Compiler](https://www.onlinegdb.com/online_c_compiler): Zum Ausprobieren von C-Code im Browser.
+Reguläre Ausdrücke in C, als Teil des POSIX-Standards, bieten eine robuste Möglichkeit, Zeichenkettenabgleich und -manipulation durchzuführen. Allerdings wird die API der POSIX-Regex-Bibliothek in C im Vergleich zu den in Sprachen mit erstklassigen Zeichenkettenmanipulationsfunktionen wie Python oder Perl gefundenen APIs als umständlicher betrachtet. Die Syntax für Muster ist zwar sprachübergreifend ähnlich, jedoch erfordert C manuelle Speicherverwaltung und mehr Boilerplate-Code, um reguläre Ausdrücke vorzubereiten, auszuführen und danach aufzuräumen.
+
+Trotz dieser Herausforderungen ist das Erlernen der Verwendung von regex in C lohnend, da es das Verständnis für Konzepte der Programmierung auf niedriger Ebene vertieft. Zusätzlich eröffnet es Möglichkeiten für die C-Programmierung in Bereichen wie Textverarbeitung und Datenextraktion, wo regex unverzichtbar ist. Für komplexere Muster oder Regex-Operationen könnte die PCRE-Bibliothek (Perl Compatible Regular Expressions) eine funktionsreichere und etwas einfachere Schnittstelle bieten, obwohl dies die Integration einer externen Bibliothek in Ihr C-Projekt erfordert.

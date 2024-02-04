@@ -1,22 +1,29 @@
 ---
 title:                "Reguliere expressies gebruiken"
-date:                  2024-01-28T22:09:54.747361-07:00
+date:                  2024-02-03T18:11:13.924511-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Reguliere expressies gebruiken"
-
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/go/using-regular-expressions.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Wat & Waarom?
-Reguliere expressies (regex) zijn patronen die gebruikt worden om combinaties van karakters in strings te vinden. Programmeurs gebruiken ze voor het zoeken, valideren en manipuleren van tekst, waardoor ze een Zwitsers zakmes voor stringbewerkingen zijn.
 
-## Hoe te:
-```Go
+Reguliere expressies (regex) in programmeren worden gebruikt om te zoeken, overeenkomsten te vinden, en strings te manipuleren op basis van specifieke patronen. Programmeurs gebruiken ze voor taken variërend van eenvoudige validatiecontroles tot complexe tekstverwerking, waardoor ze onmisbaar zijn voor het flexibel en efficiënt omgaan met tekst.
+
+## Hoe:
+
+In Go biedt het `regexp` package regex-functionaliteit. Hier is een stap-voor-stap gids over hoe het te gebruiken:
+
+1. **Een Reguliere Expressie Compileren**
+
+Begin met het compileren van je regex-patroon met `regexp.Compile`. Het is een goede praktijk om fouten die kunnen ontstaan tijdens de compilatie te behandelen.
+
+```go
 package main
 
 import (
@@ -25,30 +32,55 @@ import (
 )
 
 func main() {
-    // Voorbeeld: E-mails vinden in een string
-    text := "Neem contact op via contact@example.com of support@random.org"
-    emailRegex := regexp.MustCompile(`[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}`)
-
-    // FindString geeft de eerste match terug
-    fmt.Printf("Eerste e-mail: %s\n", emailRegex.FindString(text)) 
-    // Uitvoer: Eerste e-mail: contact@example.com
-
-    // FindAllString geeft alle matches terug
-    emails := emailRegex.FindAllString(text, -1)
-    fmt.Printf("Alle e-mails: %v\n", emails) 
-    // Uitvoer: Alle e-mails: [contact@example.com support@random.org]
-
-    // Tekst vervangen
-    sanitizedText := emailRegex.ReplaceAllString(text, "[geredigeerd]")
-    fmt.Println(sanitizedText) 
-    // Uitvoer: Neem contact op via [geredigeerd] of [geredigeerd]
+    pattern := "go+"
+    r, err := regexp.Compile(pattern)
+    if err != nil {
+        fmt.Println("Fout bij het compileren van regex:", err)
+        return
+    }
+    
+    fmt.Println("Regex succesvol gecompileerd")
 }
 ```
 
-## Diepgaande duik
-Regex heeft zijn oorsprong in Unix in de jaren '50 en kreeg tractie door tools zoals `grep`. Perl maakte ze later populair. Alternatieven omvatten het gebruik van stringfuncties of parsers voor eenvoudige en gestructureerde gegevens, respectievelijk. Wat de implementatie betreft, is het `regexp` pakket van Go NFA-gebaseerd (niet-deterministische eindige automaat), wat regex efficiënt afhandelt zonder de terugloopvalkuilen die in sommige andere motoren worden gevonden.
+2. **Strings Matchen**
 
-## Zie ook
-- Documentatie van het Go `regexp` pakket: [pkg.go.dev/regexp](https://pkg.go.dev/regexp)
-- Online regex tester en debugger: [regex101.com](https://regex101.com/)
-- Mozilla Developer Network regex handleiding: [developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
+Controleer of een string overeenkomt met het patroon met de `MatchString` methode.
+
+```go
+matched := r.MatchString("goooooogle")
+fmt.Println("Overeenkomst:", matched) // Output: Overeenkomst: true
+```
+
+3. **Overeenkomsten Vinden**
+
+Gebruik de `FindString` methode om de eerste overeenkomst in een string te vinden.
+
+```go
+match := r.FindString("golang gooooo")
+fmt.Println("Gevonden:", match) // Output: Gevonden: gooooo
+```
+
+4. **Alle Overeenkomsten Vinden**
+
+Voor alle overeenkomsten neemt `FindAllString` een input string en een geheel getal n. Als n >= 0, retourneert het hoogstens n overeenkomsten; als n < 0, retourneert het alle overeenkomsten.
+
+```go
+matches := r.FindAllString("go gooo gooooo", -1)
+fmt.Println("Alle overeenkomsten:", matches) // Output: Alle overeenkomsten: [go gooo gooooo]
+```
+
+5. **Overeenkomsten Vervangen**
+
+Om overeenkomsten te vervangen met een andere string, is `ReplaceAllString` handig.
+
+```go
+result := r.ReplaceAllString("go gooo gooooo", "Java")
+fmt.Println("Vervangen:", result) // Output: Vervangen: Java Java Java
+```
+
+## Diepgaand Onderzoek
+
+Geïntroduceerd in Go's standaardbibliotheek, implementeert het `regexp` package reguliere expressiezoekopdrachten en patroonmatching geïnspireerd door de syntaxis van Perl. Onder de motorkap compileert Go's regex-engine de patronen naar een vorm van bytecodes, die vervolgens worden uitgevoerd door een matchingsengine geschreven in Go zelf. Deze implementatie wisselt een deel van de snelheid die gevonden wordt in directe hardware-uitvoering in voor veiligheid en gebruiksgemak, en vermijdt de valkuilen van bufferoverlopen die veelvoorkomend zijn in op C gebaseerde bibliotheken.
+
+Ondanks zijn kracht, is regex in Go niet altijd de optimale oplossing voor patroonmatching, vooral wanneer je te maken hebt met sterk gestructureerde gegevens zoals JSON of XML. In deze gevallen bieden gespecialiseerde parsers of bibliotheken ontworpen voor deze gegevensformaten betere prestaties en betrouwbaarheid. Toch, voor taken met ingewikkelde tekstverwerking zonder een vooraf gedefinieerde structuur, blijft regex een essentieel hulpmiddel in de toolkit van een programmeur, en biedt een evenwicht van kracht en flexibiliteit die weinig alternatieven kunnen evenaren.

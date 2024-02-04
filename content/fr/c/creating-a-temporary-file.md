@@ -1,64 +1,90 @@
 ---
 title:                "Création d'un fichier temporaire"
-date:                  2024-01-20T17:39:49.774158-07:00
-model:                 gpt-4-1106-preview
+date:                  2024-02-03T17:55:06.845096-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Création d'un fichier temporaire"
-
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/c/creating-a-temporary-file.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Créer un fichier temporaire, c'est comme prendre des notes sur un post-it. C’est temporaire, utile pour ne pas perdre des données pendant que le programme tourne. Les programmeurs utilisent des fichiers temporaires pour stocker des données sans toucher au système de fichiers permanent.
+## Quoi & Pourquoi ?
+Créer un fichier temporaire en C consiste à générer un fichier destiné à être utilisé pendant une courte durée, généralement comme espace de travail temporaire pour le traitement ou le stockage de données. Les programmeurs le font pour gérer des données temporaires sans affecter le stockage permanent du programme ou pour garantir que les données sensibles soient effacées après utilisation.
 
-## How to:
-En C, la bibliothèque standard offre des fonctions pour créer des fichiers temporaires. Voilà comment on fait:
+## Comment :
+La création d’un fichier temporaire dans le langage de programmation C peut tirer parti de fonctions telles que `tmpfile()` et `mkstemp()`.
 
-```C
+**Utilisation de `tmpfile()`** : Cette fonction crée un fichier temporaire unique qui est automatiquement supprimé lorsque le programme se termine ou que le fichier est fermé.
+
+```c
 #include <stdio.h>
 
 int main() {
-    // Crée un fichier temporaire qui se ferme et se supprime automatiquement
     FILE *temp = tmpfile();
     if (temp == NULL) {
-        perror("Erreur de création du fichier temporaire");
+        perror("Échec de la création du fichier temporaire");
         return 1;
     }
 
-    // Utiliser fprintf ou fputs pour écrire dans le fichier
-    fputs("Bonjour, fichier temporaire!", temp);
+    // Écriture de données dans le fichier temporaire
+    fputs("Ceci est un test.\n", temp);
 
-    // Déplace le pointeur de fichier au début pour la lecture
+    // Retour au début et lecture de ce que nous avons écrit
     rewind(temp);
-
-    // Lire et afficher le contenu
-    char buffer[100];
-    if (fgets(buffer, sizeof(buffer), temp) == NULL) {
-        perror("Erreur de lecture du fichier temporaire");
-        return 1;
+    char buffer[1024];
+    while (fgets(buffer, sizeof(buffer), temp) != NULL) {
+        printf("%s", buffer);
     }
-    printf("Contenu: %s", buffer);
 
-    // Le fichier se ferme et se supprime à la fermeture du programme, ou via fclose
+    // Suppression automatique à la fermeture ou à la sortie du programme
     fclose(temp);
 
     return 0;
 }
 ```
-
-Sortie (output):
+**Sortie d'exemple :**
 ```
-Contenu: Bonjour, fichier temporaire!
+Ceci est un test.
 ```
 
-## Deep Dive
-Créer des fichiers temporaires est courant depuis les premiers jours de la programmation en C. La fonction `tmpfile()` est standardisée par le C89. Des alternatives, comme `mkstemp()`, existent mais `tmpfile()` est simple et sûr car elle évite les conflits de nom et les problèmes de sécurité. Implementation détail: `tmpfile()` crée le fichier temporaire dans un dossier approprié et gère son cycle de vie.
+**Utilisation de `mkstemp()`** : Offre plus de contrôle sur l'emplacement du fichier temporaire et ses autorisations. Il nécessite une chaîne de format qui se termine par `XXXXXX` qu'il remplace ensuite par une séquence unique pour éviter les collisions de noms.
 
-La fonction `mkstemp()` crée un fichier temporaire avec un nom unique via un template de nom de fichier, qui doit inclure le pattern "XXXXXX" que `mkstemp()` remplacera par une chaîne de caractères aléatoire pour créer un nom de fichier unique.
+```c
+#include <unistd.h>
+#include <stdio.h>
+#include <fcntl.h>
 
-## See Also
-- La documentation de `tmpfile(3)` et `mkstemp(3)` sur le manuel Linux en ligne ([man7.org](https://man7.org/linux/man-pages/man3/tmpfile.3.html)).
-- Tutoriel sur la gestion des fichiers en C ([tutorialspoint.com](https://www.tutorialspoint.com/cprogramming/c_file_io.htm)).
-- Plus d'informations sur les fichiers temporaires en sécurité informatique ([owasp.org](https://owasp.org/www-community/vulnerabilities/Insecure_Temporary_File)).
+int main() {
+    char template[] = "/tmp/mon_temp-XXXXXX";
+    int fd = mkstemp(template);
+
+    if (fd == -1) {
+        perror("Échec de la création du fichier temporaire");
+        return 1;
+    }
+    
+    printf("Fichier temporaire créé : %s\n", template);
+
+    // Les fichiers temporaires créés avec mkstemp() doivent être supprimés manuellement
+    unlink(template);
+
+    close(fd);
+    return 0;
+}
+```
+**Sortie d'exemple :**
+```
+Fichier temporaire créé : /tmp/mon_temp-abc123
+```
+
+## Exploration Approfondie
+Le concept de fichiers temporaires n'est pas propre au C mais est une fonctionnalité commune dans de nombreux environnements de programmation en raison de son utilité dans la gestion des données éphémères. La fonction `tmpfile()`, normalisée dans la norme ISO C, crée un fichier avec un nom unique dans un répertoire standard, mais son existence est éphémère, ce qui le rend idéal pour des opérations sécurisées ou temporaires.
+
+Une limitation notable de `tmpfile()` est sa dépendance au répertoire temporaire par défaut, qui peut ne pas convenir à toutes les applications, notamment en termes de permissions ou de sécurité. En revanche, `mkstemp()` permet de spécifier le répertoire et garantit la création sécurisée de fichiers avec des noms de fichiers uniques garantis en modifiant la chaîne de modèle fournie, offrant une solution plus polyvalente au prix de la gestion manuelle des fichiers.
+
+Cependant, la création de fichiers temporaires peut introduire des vulnérabilités de sécurité, telles que des conditions de concurrence, si elle n'est pas gérée correctement. Par exemple, `tmpfile()` et `mkstemp()` abordent différents aspects de la création sécurisée de fichiers temporaires (suppression automatique et génération de nom sécurisée, respectivement), mais aucune n'est une solution miracle. Les développeurs doivent prendre en compte les spécificités des besoins de sécurité de leur application, y compris les vulnérabilités potentielles introduites par les fichiers temporaires, et peuvent avoir besoin de mettre en œuvre des mesures de protection supplémentaires au-delà de ce que ces fonctions fournissent.
+
+Dans le paysage plus large de la programmation, des alternatives telles que le stockage en mémoire (par exemple, l'utilisation de structures de données dynamiques ou de fichiers mappés en mémoire) pourraient offrir de meilleures performances ou une meilleure sécurité pour la gestion des données temporaires. Néanmoins, les fichiers temporaires physiques restent un outil crucial dans de nombreux scénarios, en particulier pour les grands ensembles de données ou lorsque la communication inter-processus est impliquée.

@@ -1,65 +1,58 @@
 ---
-title:                "Merkkien poistaminen hakemalla osumia kaavaan"
-date:                  2024-01-20T17:41:39.505249-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Merkkien poistaminen hakemalla osumia kaavaan"
-
+title:                "Merkkien poistaminen vastaavan mallin mukaan"
+date:                  2024-02-03T17:55:31.327071-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Merkkien poistaminen vastaavan mallin mukaan"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c/deleting-characters-matching-a-pattern.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Mitä ja Miksi?)
-Poistamme merkkejä, jotka täsmäävät määrättyyn kuviomalliin. Siksi, että voimme puhdistaa suorituksen kannalta turhat tai haitalliset datan osat.
+## Mitä & Miksi?
 
-## How to: (Kuinka Tehdä:)
-```C
+Merkkijonoista tiettyä mallia vastaavien merkkien poistaminen C-kielessä tarkoittaa kaikkien tiettyihin ennalta määriteltyihin kriteereihin sopivien merkkien poistamista. Ohjelmoijat suorittavat tätä tehtävää syötteiden puhdistamiseksi, datan valmistamiseksi käsittelyä varten tai yksinkertaisesti merkkijonojen siistimiseksi tulostusta tai edelleen käsittelyä varten, varmistaen, että käsiteltävä data on täsmälleen tarvittavaa tiettyä kontekstia tai algoritmia varten.
+
+## Miten:
+
+C ei sisällä valmista funktiota merkkien suoraan poistamiseksi merkkijonosta mallin perusteella, toisin kuin jotkut korkeamman tason kielet. Voit kuitenkin helposti saavuttaa tämän tehtävän iteroimalla manuaalisesti merkkijonon yli ja rakentamalla uuden merkkijonon, joka ei sisällä ei-toivottuja merkkejä. Oletetaan esimerkiksi, että haluat poistaa kaikki numerot merkkijonosta. Voit tehdä sen seuraavasti:
+
+```c
 #include <stdio.h>
-#include <string.h>
+#include <ctype.h>
 
-void delete_pattern(char *str, const char *pattern) {
-    char *src = str, *dst = str;
-    while(*src) {
-        const char *p = pattern;
-        bool match = true;
-        while(*p && *src && *p == *src) {
-            ++p;
-            ++src;
+void remove_digits(char * str) {
+    char * src = str, * dst = str;
+    while (* src) {
+        if (! isdigit((unsigned char)* src)) {
+            * dst++ = * src;
         }
-        match = (*p == '\0');
-        if(!match) {
-            src -= (p - pattern); // Palaa takaisin, mikäli ei täsmää
-        }
-        while(match && *src) {
-            ++src; // Hyppää poistettavan kuviomallin yli
-        }
-        *dst++ = *src ? *src++ : '\0'; // Kopioi tai päätä merkkijono
+        src++;
     }
+    * dst = '\0';
 }
 
 int main() {
-    char str[] = "abc123abc456abc789";
-    printf("Original string: %s\n", str);
-    delete_pattern(str, "abc");
-    printf("After deleting 'abc': %s\n", str);
+    char str[] = "C-ohjelmointi 101: Perusteet!";
+    remove_digits(str);
+    printf("Tulos: %s\n", str);
     return 0;
 }
 ```
-Sample output:
+
+Esimerkkitulostus:
 ```
-Original string: abc123abc456abc789
-After deleting 'abc': 123456789
+Tulos: C-ohjelmointi : Perusteet!
 ```
 
-## Deep Dive (Syväsukellus):
-Deleting characters that match a pattern has been a common task in computing since the early days of programming. In Unix, tools like `sed` and `awk` were created for stream editing, which often involves pattern matching and deletion.
+Tässä esimerkissä hyödynnetään `isdigit`-funktiota `ctype.h`-kirjastosta numeroiden tunnistamiseksi, siirtäen numerottomat merkit merkkijonon alkuun ja päättäen merkkijonon, kun kaikki merkit on arvioitu.
 
-C doesn't offer built-in functions for pattern-based deletion. You need to do it manually, as shown above, or use a library like regex.h for complex patterns. The shown `delete_pattern` function compares substrings to a static pattern. If a match is found, it skips over the pattern; if not, it copies characters normally.
+## Syväluotaus
 
-When working with patterns in C, there are trade-offs. Implementations like the one above are simple but not optimized for performance. In high-performance applications, algorithms like Knuth-Morris-Pratt or Boyer-Moore can be used for efficient pattern matching.
+Esitelty ratkaisu käyttää kahden osoittimen lähestymistapaa samassa taulukossa ei-toivottujen merkkien tehokkaaseen suodattamiseen, mikä on ominaista C:n käytännönläheiselle muistinhallintafilosofialle. Tämä menetelmä on tehokas, koska se toimii paikan päällä, välttäen tarpeen lisämuistin varaukselle ja siten minimoimalla ylimääräisen kuorman.
 
-## See Also (Katso Myös):
-- POSIX regex.h library: https://pubs.opengroup.org/onlinepubs/009695399/basedefs/regex.h.html
-- Knuth-Morris-Pratt Algorithm: https://en.wikipedia.org/wiki/Knuth–Morris–Pratt_algorithm
-- Boyer-Moore String Search Algorithm: https://en.wikipedia.org/wiki/Boyer–Moore_string-search_algorithm
+Historiallisesti korkeamman tason merkkijonokäsittelyfunktioiden puuttuminen C:ssä on pakottanut ohjelmoijat kehittämään syvällistä ymmärrystä merkkijonokäsittelystä muistitasolla, johtaen innovatiivisiin lähestymistapoihin kuten yllä mainittuun. Vaikka tällä on etuna suurempi kontrolli ja tehokkuus, siihen liittyy suurempi virheiden riski, kuten puskurin ylivuodot ja yksi vähemmän virheet.
+
+Nykyisessä kehityskontekstissa, etenkin turvallisuutta ja varmuutta korostavissa, kielet, jotka abstrahoivat pois tällaiset matalan tason toiminnot, saattavat olla suositeltavia merkkijonokäsittelytehtäviin. Siitä huolimatta näiden C-tekniikoiden ymmärtäminen ja hyödyntäminen on korvaamatonta skenaarioissa, jotka vaativat hienosäätöistä suorituskyvyn optimointia tai työskentelyä ympäristöissä, joissa C:n minimalistisuus ja nopeus ovat ensiarvoisen tärkeitä.

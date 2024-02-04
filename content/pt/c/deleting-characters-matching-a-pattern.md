@@ -1,67 +1,58 @@
 ---
-title:                "Excluindo caracteres que correspondem a um padrão"
-date:                  2024-01-20T17:41:45.701311-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Excluindo caracteres que correspondem a um padrão"
-
+title:                "Deletando caracteres que correspondem a um padrão"
+date:                  2024-02-03T17:55:22.258942-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Deletando caracteres que correspondem a um padrão"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/c/deleting-characters-matching-a-pattern.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
+## O Que & Por Quê?
 
-Deletar caracteres que correspondem a um padrão em C significa procurar certos caracteres numa string e removê-los. Programadores fazem isso para limpar entradas de dados, validar informações ou preparar strings para serem processadas mais adiante.
+Remover caracteres que correspondem a um padrão específico de strings em C trata-se de eliminar todas as instâncias de certos caracteres que se encaixam em critérios pré-definidos. Programadores realizam essa tarefa para higienizar entradas, preparar dados para processamento, ou simplesmente limpar strings para saída ou manipulação adicional, garantindo que os dados manipulados estejam exatamente como necessários para um dado contexto ou algoritmo.
 
-## How to:
+## Como fazer:
 
-Vamos usar a função `strpbrk` da biblioteca padrão de C para procurar os caracteres indesejados e a função `strcpy` para removê-los.
+C não possui uma função embutida para deletar diretamente caracteres de uma string baseado em um padrão, ao contrário de algumas linguagens de nível mais alto. No entanto, você pode facilmente realizar essa tarefa manualmente iterando sobre a string e construindo uma nova que exclua os caracteres indesejados. Por exemplo, vamos supor que você queira remover todos os dígitos de uma string. Você pode fazer isso da seguinte forma:
 
 ```c
 #include <stdio.h>
-#include <string.h>
+#include <ctype.h>
 
-void delete_pattern(char *str, const char *pattern) {
-    char *found = str;
-    while (*found) {
-        found = strpbrk(found, pattern);
-        if (!found) {
-            break;
+void remove_digits(char *str) {
+    char *src = str, *dst = str;
+    while (*src) {
+        if (!isdigit((unsigned char)*src)) {
+            *dst++ = *src;
         }
-        strcpy(found, found + 1);
+        src++;
     }
+    *dst = '\0';
 }
 
 int main() {
-    char texto[] = "Exemplo: Eliminar 123 os dígitos.";
-    const char *padrao = "1234567890";
-
-    printf("Original: %s\n", texto);
-    delete_pattern(texto, padrao);
-    printf("Modificado: %s\n", texto);
-
+    char str[] = "C Programming 101: The Basics!";
+    remove_digits(str);
+    printf("Resultado: %s\n", str);
     return 0;
 }
 ```
 
-Saída esperada:
-
+Saída de exemplo:
 ```
-Original: Exemplo: Eliminar 123 os dígitos.
-Modificado: Exemplo: Eliminar  os dígitos.
+Resultado: C Programming : The Basics!
 ```
 
-## Deep Dive
+Este exemplo utiliza `isdigit` de `ctype.h` para identificar dígitos, deslocando caracteres não-dígitos para o início da string e terminando a string uma vez que todos os caracteres foram avaliados.
 
-A função `strpbrk` existe desde a linguagem C padrão ANSI C, adotada em 1989. Ela é uma das várias funções de manipulação de strings disponíveis no `<string.h>`. Uma alternativa seria usar expressões regulares com a biblioteca `regex.h`, mas isso pode ser exagero para casos simples.
+## Aprofundamento
 
-Quanto aos detalhes de implementação, `strpbrk` busca a primeira ocorrência de qualquer um dos caracteres fornecidos no padrão, enquanto `strcpy` copia strings, possibilitando sobrepor o caractere indesejado.
+A solução apresentada utiliza uma abordagem de dois ponteiros dentro do mesmo array para efetivamente filtrar caracteres indesejados, uma técnica emblemática da filosofia de gerenciamento de memória prático do C. Este método é eficiente porque opera in-place, evitando a necessidade de alocação de memória adicional e assim minimizando sobrecarga.
 
-Em nossa abordagem direta, simplesmente sobrescrevemos os caracteres que queremos remover ao copiar o resto da string um caractere para trás, usando o `strcpy`. É uma técnica eficiente para strings menores, mas pode não ser ideal para strings muito grandes devido à operação de cópia envolvida a cada remoção.
+Historicamente, a ausência de funções de manipulação de string de alto nível em C forçou programadores a desenvolver um entendimento profundo do manuseio de strings no nível da memória, levando a abordagens inovadoras como a acima. Embora isso tenha a vantagem de maior controle e eficiência, vem com um risco maior de erros, como estouros de buffer e erros off-by-one.
 
-## See Also
-
-- Documentação da função `strpbrk`: https://www.cplusplus.com/reference/cstring/strpbrk/
-- Tutorial sobre manipulação de strings em C: https://www.tutorialspoint.com/cprogramming/c_strings.htm
-- Introdução a expressões regulares em C: https://www.gnu.org/software/libc/manual/html_node/Regular-Expressions.html
+Em contextos de desenvolvimento modernos, especialmente aqueles que enfatizam segurança e proteção, linguagens que abstraem tais operações de baixo nível podem ser preferidas para tarefas de manipulação de strings. No entanto, entender e utilizar essas técnicas de C continua sendo inestimável para cenários que demandam otimização de desempenho detalhada ou para trabalhar dentro de ambientes onde o minimalismo e a velocidade do C são primordiais.

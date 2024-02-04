@@ -1,72 +1,90 @@
 ---
-title:                "Logboekregistratie"
-date:                  2024-01-28T22:03:02.469333-07:00
+title:                "Loggen"
+date:                  2024-02-03T17:59:06.674311-07:00
 model:                 gpt-4-0125-preview
-simple_title:         "Logboekregistratie"
-
+simple_title:         "Loggen"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/go/logging.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Wat & Waarom?
-Loggen draait allemaal om het bijhouden van een registratie van gebeurtenissen, toestanden en datastromen binnen een app. Programmeurs doen dit om bugs te diagnosticeren, de prestaties te monitoren en de operationele gezondheid van de app te volgen—het maakt het in feite de software-equivalent van een zwarte doos in vliegtuigen.
 
-## Hoe:
-In Go kan loggen op meerdere manieren worden afgehandeld, variërend van het standaardbibliotheek 'log'-pakket tot third-party bibliotheken zoals `logrus` en `zap`. Hier is een eenvoudig voorbeeld met het ingebouwde `log`-pakket:
+Loggen in softwareontwikkeling is het proces van het vastleggen van informatie over de uitvoering van een programma, ontworpen om zijn gedrag te volgen en problemen te diagnosticeren. Programmeurs implementeren loggen om softwareprestaties te monitoren, fouten te debuggen en de systeemveiligheid en -compliance te waarborgen, waardoor het een onmisbaar hulpmiddel wordt voor applicatieonderhoud en -analyse.
 
-```Go
+## Hoe te:
+
+In Go kan loggen worden geïmplementeerd met behulp van het standaardbibliotheekpakket `log`. Dit pakket biedt eenvoudige logmogelijkheden, zoals schrijven naar standaarduitvoer of naar bestanden. Laten we beginnen met een basisvoorbeeld van loggen naar de standaarduitvoer:
+
+```go
 package main
 
 import (
-    "log"
-    "os"
+	"log"
 )
 
 func main() {
-    // Maak een logbestand
-    logFile, err := os.OpenFile("app.log", os.O_CREATE|os.O_APPEND|os.O_WRONLY, 0666)
-    if err != nil {
-        log.Fatal(err)
-    }
-    defer logFile.Close()
-
-    // Stel de loguitvoer in op het bestand
-    log.SetOutput(logFile)
-
-    // Log wat gebeurtenissen
-    log.Println("Starten van de applicatie...")
-    // ... applicatielogica hier ...
-    log.Println("Applicatie succesvol beëindigd.")
+	log.Println("Dit is een basis logboekvermelding.")
 }
 ```
 
-Als je deze code draait, zie je geen uitvoer naar de terminal omdat alles naar `app.log` gaat. Hier is een kijkje in wat je in dat logbestand zou vinden:
-
+Uitvoer:
 ```
-2023/01/02 15:04:05 Starten van de applicatie...
-2023/01/02 15:05:01 Applicatie succesvol beëindigd.
+2009/11/10 23:00:00 Dit is een basis logboekvermelding.
 ```
 
-## Diepgaand
-Loggen in programmeren gaat terug tot de eerste computers, waar ingenieurs letterlijk bugs (motten, om precies te zijn) geplet in de hardware zouden vinden, en ze zouden loggen! Fast forward naar vandaag, en loggen is een geavanceerde manier geworden om te begrijpen wat er binnen complexe systemen gebeurt.
+De tijdstempel aan het begin van de logvermelding wordt automatisch toegevoegd door het `log`-pakket. Vervolgens laten we zien hoe we in plaats van naar de standaarduitvoer naar een bestand kunnen loggen:
 
-Hoewel het 'log'-pakket in Go vrij simplistisch is, kan het voldoende zijn voor basisapplicaties. Echter, in de context van moderne gedistribueerde systemen, of wanneer je meer genuanceerde controle over je loguitvoer nodig hebt (zoals verschillende niveaus van ernst), wil je misschien robuustere oplossingen verkennen.
+```go
+package main
 
-Third-party logbibliotheken zoals `logrus` en `zap` bieden gestructureerd loggen, wat betekent dat je complexe gegevenstypen zoals JSON kunt loggen, wat het makkelijker maakt om logs te interpreteren, vooral in combinatie met logbeheersystemen zoals ELK Stack of Splunk.
+import (
+	"log"
+	"os"
+)
 
-Bij het overwegen van de implementatie van een logstrategie, is het ook essentieel om na te denken over prestatie-implicaties. High-performance logbibliotheken zijn geoptimaliseerd om de impact op de applicatiedoorvoer en -latentie te verminderen. Bijvoorbeeld, `zap` pronkt met zijn razendsnelle, lage allocatie ontwerp, wat cruciaal kan zijn voor real-time systemen.
+func main() {
+	file, err := os.OpenFile("app.log", os.O_CREATE|os.O_APPEND|os.O_WRONLY, 0666)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer file.Close()
 
-Naast verschillende bibliotheken zijn ook logformaten en -standaarden het vermelden waard. Gestructureerde logformaten zoals JSON kunnen enorm krachtig zijn wanneer ze gebruikt worden in combinatie met logsverwerkingssystemen. Aan de andere kant zijn platte tekstlogs menselijk leesbaar maar moeilijker programmatisch te ontleden.
+	log.SetOutput(file)
+	log.Println("Deze logvermelding gaat naar een bestand.")
+}
+```
 
-## Zie Ook
-Voor een diepere duik in de logcapaciteiten van Go, kunnen deze bronnen nuttig zijn:
+Nu, laten we een meer geavanceerd gebruik implementeren: het aanpassen van het logformaat. Go staat je toe om een aangepaste logger te creëren met `log.New()`:
 
-- De Go Blog over loggen: https://blog.golang.org/logging
-- `logrus`, een gestructureerde logger voor Go: https://github.com/sirupsen/logrus
-- `zap`, een snelle, gestructureerde, geniveleerde logger: https://github.com/uber-go/zap
-- ELK Stack (Elasticsearch, Logstash, Kibana) voor loganalyse: https://www.elastic.co/what-is/elk-stack
-- Een vergelijking van Go logbibliotheken: https://www.loggly.com/blog/benchmarking-5-popular-golang-logging-libraries/
+```go
+package main
+
+import (
+	"log"
+	"os"
+)
+
+func main() {
+	logger := log.New(os.Stdout, "AANGEPASTE LOG: ", log.Ldate|log.Ltime|log.Lshortfile)
+	logger.Println("Dit is een aangepast logbericht.")
+}
+```
+
+Uitvoer:
+```
+AANGEPASTE LOG: 2009/11/10 23:00:00 main.go:11: Dit is een aangepast logbericht.
+```
+
+Dit voorbeeld voorziet elk logbericht van de prefix "AANGEPASTE LOG: " en bevat de datum, tijd en locatie van het bronbestand.
+
+## Dieper ingaan
+
+Het `log`-pakket van de Go-standaardbibliotheek is eenvoudig en voldoende voor veel toepassingen, maar mist enkele van de meer geavanceerde functies die in externe logbibliotheken worden gevonden, zoals gestructureerd loggen, logrotatie en loggen op basis van niveaus. Pakketten zoals `zap` en `logrus` bieden deze geavanceerde functies en worden in de Go-gemeenschap gewaardeerd om hun prestaties en flexibiliteit.
+
+Gestructureerd loggen maakt het bijvoorbeeld mogelijk om gegevens in een gestructureerd formaat (zoals JSON) te loggen, wat vooral nuttig is voor moderne cloud-gebaseerde applicaties waar logs mogelijk worden geanalyseerd door verschillende hulpmiddelen of diensten. `zap` staat in het bijzonder bekend om zijn hoge prestaties en lage allocatieoverhead, waardoor het geschikt is voor applicaties waar snelheid en efficiëntie cruciaal zijn.
+
+Historisch gezien is loggen in Go aanzienlijk geëvolueerd sinds de oprichting van de taal. Eerdere versies van Go boden de basis logmogelijkheden die we zien in het `log`-pakket. Echter, naarmate de taal in populariteit groeide en de complexiteit van in Go geschreven applicaties toenam, begon de gemeenschap geavanceerdere logbibliotheken te ontwikkelen om aan hun behoeften te voldoen. Vandaag de dag, terwijl het standaard `log`-pakket nog steeds een haalbare optie blijft voor eenvoudige applicaties, wenden veel ontwikkelaars zich tot deze externe oplossingen voor complexere logvereisten.

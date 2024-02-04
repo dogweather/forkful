@@ -1,73 +1,99 @@
 ---
 title:                "使用关联数组"
-date:                  2024-01-30T19:10:08.503157-07:00
+date:                  2024-02-03T18:10:45.792168-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "使用关联数组"
-
 tag:                  "Data Structures"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/c/using-associative-arrays.md"
 changelog:
-  - 2024-01-30, gpt-4-0125-preview, translated from English
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## 什么 & 为什么？
 
-关联数组或哈希映射是允许你使用键存储和检索数据的键-值对。它们在C语言中非常有用，因为与列表相比，它们使数据访问速度更快，特别是当你处理大量数据时。
+关联数组在其他语言中被称为映射或字典，它们是用于高效数据查找和操纵的键值对。与使用整数索引的传统数组不同，关联数组使用键，这使得数据访问对程序员来说更直观、更灵活。
 
 ## 如何操作：
 
-C语言没有像某些其他语言那样对关联数组的内置支持，但我们可以使用结构体和一些库函数来获得类似的功能。这里有一个使用`uthash`库的简单实现，你需要将其包含在你的项目中。
+C语言没有像一些高级语言那样内置对关联数组的支持，但你可以通过使用结构体和散列来模拟它们。以下是一个使用结构体和简单散列函数的简化示例，用于实现通过字符串键存储和访问整数的关联数组。
 
-首先，定义一个结构体来保存你的键-值对：
+首先，定义一个结构体来表示单个键值对，以及另一个结构体来表示关联数组本身：
 
-```C
+```c
 #include <stdio.h>
-#include "uthash.h"
+#include <stdlib.h>
+#include <string.h>
+
+#define TABLE_SIZE 128
 
 typedef struct {
-    int id; // 这将是我们的键
-    char name[10]; // 这是与我们的键关联的值
-    UT_hash_handle hh; // 使这个结构体可哈希化
-} person;
-```
+    char* key;
+    int value;
+} 键值对;
 
-接下来，让我们添加一些条目并检索它们：
+typedef struct {
+    键值对* items[TABLE_SIZE];
+} 关联数组;
 
-```C
-int main() {
-    person *my_people = NULL, *s;
+unsigned int 散列(char* key) {
+    unsigned long int value = 0;
+    unsigned int i = 0;
+    unsigned int key_len = strlen(key);
 
-    // 添加一个条目
-    s = (person*)malloc(sizeof(person));
-    s->id = 1;
-    strcpy(s->name, "Alice");
-    HASH_ADD_INT(my_people, id, s);
-
-    // 检索一个条目
-    int user_id = 1;
-    HASH_FIND_INT(my_people, &user_id, s);
-    if (s) {
-        printf("已找到: %s\n", s->name);
+    for (; i < key_len; ++i) {
+        value = value * 37 + key[i];
     }
-    
+
+    value = value % TABLE_SIZE;
+
+    return value;
+}
+
+void initArray(关联数组* array) {
+    for (int i = 0; i < TABLE_SIZE; ++i) {
+        array->items[i] = NULL;
+    }
+}
+
+void 插入(关联数组* array, char* key, int value) {
+    unsigned int 槽 = 散列(key);
+
+    键值对* item = (键值对*)malloc(sizeof(键值对));
+    item->key = strdup(key);
+    item->value = value;
+
+    array->items[槽] = item;
+}
+
+int 查找(关联数组* array, char* key) {
+    unsigned int 槽 = 散列(key);
+
+    if (array->items[槽]) {
+        return array->items[槽]->value;
+    }
+    return -1;
+}
+
+int main() {
+    关联数组 a;
+    initArray(&a);
+
+    插入(&a, "key1", 1);
+    插入(&a, "key2", 2);
+
+    printf("%d\n", 查找(&a, "key1")); // 输出：1
+    printf("%d\n", 查找(&a, "key2")); // 输出：2
+
     return 0;
 }
 ```
 
-样本输出将是：
-
-```
-已找到: Alice
-```
-
-完成后不要忘记释放分配的内存和释放哈希表以避免内存泄露。
+此示例演示了基本操作：初始化关联数组、插入键值对、通过键查找值。请注意，此代码缺少冲突处理，仅用于教育目的。
 
 ## 深入探讨
 
-虽然关联数组不是C语言的原生功能，但像`uthash`这样的库很好地填补了这一空白，提供了一种相当直接的方式来使用这一功能。从历史上看，C语言开发人员不得不实现他们版本的这些数据结构，导致各种复杂的实现，特别是对于那些刚开始使用该语言的人来说。
+关联数组的概念早于C语言，但由于该语言的低级性质，并不直接支持它们作为内置类型。这鼓励对数据结构和算法有更深入的理解，包括用于高效键值映射的散列机制。许多C库和框架提供了实现关联数组的更复杂方法，例如GLib的`GHashTable`，它提供了一个健壮的实现，包括冲突处理、动态调整大小以及对任意键和值类型的支持。
 
-记住，使用C语言中的关联数组的效率很大程度上取决于哈希函数如何将值分布在表中以最小化冲突。虽然像`uthash`这样的库提供了使用上的便利与性能之间的良好平衡，在性能至关重要的关键应用程序中，你可能想要定制或实现自己的哈希表。
-
-对于需要最高效率的应用程序，使用替代数据结构或甚至其他具有内置关联数组支持的编程语言可能是更好的选择。然而，在许多情况下，特别是当你已经在C环境中工作时，使用像`uthash`这样的库在性能和便利性之间提供了一个实用的平衡。
+虽然在C中手动构建关联数组与拥有内置支持的语言相比可能看起来比较繁琐，但它为理解数据结构的内部工作提供了宝贵的见解，提高了程序员在问题解决和优化方面的技能。然而，对于生产代码或更复杂的应用程序，利用像GLib这样的现有库通常是一种更实际和节省时间的方法。

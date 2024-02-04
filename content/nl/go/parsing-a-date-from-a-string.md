@@ -1,22 +1,25 @@
 ---
-title:                "Een datum uit een string parsen"
-date:                  2024-01-28T22:04:04.908909-07:00
+title:                "Een datum ontleden uit een string"
+date:                  2024-02-03T18:00:17.743137-07:00
 model:                 gpt-4-0125-preview
-simple_title:         "Een datum uit een string parsen"
-
+simple_title:         "Een datum ontleden uit een string"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/go/parsing-a-date-from-a-string.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Wat & Waarom?
-Het parsen van een datum houdt in dat je een string omzet in een datumobject. Programmeurs doen dit om datums in een gestandaardiseerde vorm te kunnen hanteren voor opslag, sortering of manipulatie.
 
-## Hoe:
-```Go
+Het parsen van een datum uit een string in Go houdt in dat de als tekst weergegeven datum wordt omgezet naar een bruikbaarder formaat (bijv. `time.Time`). Programmeurs voeren deze taak uit om datum- en tijdgegevens nauwkeuriger te hanteren in applicaties, vooral wanneer ze te maken hebben met gebruikersinvoer, API's of opslagsystemen waar datums vaak als strings worden weergegeven.
+
+## Hoe te:
+
+Go biedt robuuste ondersteuning voor het parsen van datums en tijden door middel van het `time`-pakket. De sleutel is het begrijpen van Go's referentiedatumformaat: `Mon Jan 2 15:04:05 MST 2006`, dat je gebruikt om Go te vertellen hoe de binnenkomende string te interpreteren. Hier is een snel voorbeeld om je op weg te helpen:
+
+```go
 package main
 
 import (
@@ -26,34 +29,35 @@ import (
 
 func main() {
 	// Voorbeeld datum string
-	dateStr := "2023-04-01T15:04:05Z"
-
-	// Definieer layout overeenkomend met het bovenstaande formaat
-	layout := time.RFC3339
-
-	// Parse string naar time.Time object
+	dateStr := "2023-04-12 14:45:00"
+	
+	// Definieer de lay-out/het formaat van de invoerdatumstring
+	// Deze lay-out vertelt Go om een jaar te verwachten, gevolgd door een maand, 
+	// dan een dag, uur, minuut en ten slotte seconde
+	layout := "2006-01-02 15:04:05"
+	
+	// Parse de datumstring volgens de lay-out
 	parsedDate, err := time.Parse(layout, dateStr)
 	if err != nil {
-		panic(err)
+		fmt.Println("Fout bij het parsen van de datum:", err)
+		return
 	}
 	
-	// Uitvoer
-	fmt.Printf("Geparste Datum: %v\n", parsedDate)
+	// Toon de geparseerde datum
+	fmt.Println("Geparste Datum:", parsedDate)
 }
 ```
-Uitvoer:
+
+Wanneer je deze code uitvoert, krijg je:
+
 ```
-Geparste Datum: 2023-04-01 15:04:05 +0000 UTC
+Geparste Datum: 2023-04-12 14:45:00 +0000 UTC
 ```
 
-## Diepgaand
-Het parsen van datums is altijd cruciaal geweest voor softwaresystemen om tijdelijke informatie te organiseren en te verwerken, sinds, nou ja, vrijwel het begin van de computerwetenschap. In Go vertegenwoordigt `time.Time` de structuur die tijd voorstelt. Het is ontworpen voor eenvoud en efficiëntie. Waarom beginnen met strings? Voornamelijk omdat datums als tekst uit verschillende bronnen komen, zoals API's of gebruikersinvoer.
+Let op hoe de `layout`-string de waarden van de referentiedatum gebruikt om het formaat van de invoerstring te specificeren. Pas de `layout` aan om overeen te komen met het formaat van je invoerdatums.
 
-Alternatieven? Wel, je zou theoretisch handmatig kunnen parsen, maar dat is gevoelig voor fouten. De functie `time.Parse` van Go laat je een layout definiëren – een referentiedatum – die je vergelijkt met je invoer. Het is een robuuste methode omdat, sinds Go 1 (circa 2012), deze psychologische meetwaarde voor menselijk leesbare tijd je parsing op het juiste spoor houdt. Python's `datetime` en Java's `SimpleDateFormat` bieden soortgelijke functionaliteit, maar ze zijn niet zo strikt als Go's parse-implementatie, die niet probeert te raden wat je bedoelde.
+## Diepgaande Duik
 
-Hier komt het interessante: de parse-functie van Go heeft een specifieke referentietijd nodig: `Mon Jan 2 15:04:05 MST 2006` (01/02 03:04:05PM '06 -0700). Onthoud deze exacte volgorde; veel mensen doen dat aan de hand van de ezelsbrug, "1 2 3 4 5 6 7".
+Het ontwerp van Go's datum- en tijdsparsing is uniek, gebruik makend van een specifieke referentiedatum (`Mon Jan 2 15:04:05 MST 2006`). Deze benadering, in plaats van meer conventionele formaatspecifiers te gebruiken (zoals `YYYY` voor jaar), is gekozen voor leesbaarheid en gebruiksgemak, waarbij een meer op voorbeelden gebaseerd formaat wordt benut.
 
-## Zie Ook
-- Go by Example: Tijd Formattering/Parsing: https://gobyexample.com/time-formatting-parsing
-- Go tijd pakket doc: https://pkg.go.dev/time#Parse
-- The Go Blog over Tijd: https://blog.golang.org/time
+Hoewel dit aanvankelijk ongebruikelijk kan lijken voor programmeurs die gewend zijn aan andere talen, vinden velen het na een korte aanpassingsperiode intuïtiever. Voor applicaties die complexere datummanipulatie vereisen of formaten die niet direct door Go's `time`-pakket worden ondersteund, kunnen externe bibliotheken zoals `github.com/jinzhu/now` extra functionaliteit bieden. Echter, voor de meerderheid van de standaardtoepassingen zijn de ingebouwde mogelijkheden van Go robuust, performant en idiomatic, belichamend de Go-filosofie van eenvoud en duidelijkheid.

@@ -1,52 +1,58 @@
 ---
-title:                "Eliminazione di caratteri che corrispondono a un pattern"
-date:                  2024-01-20T17:41:36.627736-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Eliminazione di caratteri che corrispondono a un pattern"
-
+title:                "Eliminazione dei caratteri corrispondenti a un pattern"
+date:                  2024-02-03T17:55:16.354024-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Eliminazione dei caratteri corrispondenti a un pattern"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/c/deleting-characters-matching-a-pattern.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Cancellare caratteri che corrispondono ad un pattern significa rimuovere specifici caratteri da una stringa - una prassi comune per pulire i dati o per formati di input. Programmatori lo fanno per validare input, semplificare elaborazioni successive, o per sicurezza.
+## Cosa & Perché?
 
-## How to:
-```C
+Eliminare i caratteri che corrispondono a uno specifico pattern dalle stringhe in C consiste nel rimuovere tutte le istanze di certi caratteri che soddisfano criteri predefiniti. I programmatori eseguono questo compito per sanificare gli input, preparare i dati per l'elaborazione o semplicemente pulire le stringhe per l'output o ulteriori manipolazioni, assicurando che i dati gestiti siano esattamente come necessario per un dato contesto o algoritmo.
+
+## Come fare:
+
+C non dispone di una funzione integrata per eliminare direttamente i caratteri da una stringa in base a un pattern, a differenza di alcuni linguaggi di livello superiore. Tuttavia, è possibile eseguire facilmente questo compito iterando manualmente sulla stringa e costruendone una nuova che esclude i caratteri non desiderati. Per esempio, supponiamo che tu voglia rimuovere tutti i numeri da una stringa. Puoi farlo nel modo seguente:
+
+```c
 #include <stdio.h>
-#include <string.h>
+#include <ctype.h>
 
-void elimina_pattern(char *sorgente, const char *pattern) {
-    char *i = sorgente, *j = sorgente;
-    while (*j != '\0') {
-        // Copia solo i caratteri che non sono nel pattern
-        if (strchr(pattern, *j) == NULL) {
-            *i++ = *j;
+void remove_digits(char *str) {
+    char *src = str, *dst = str;
+    while (*src) {
+        if (!isdigit((unsigned char)*src)) {
+            *dst++ = *src;
         }
-        j++;
+        src++;
     }
-    *i = '\0'; // Terminate stringa pulita
+    *dst = '\0';
 }
 
 int main() {
-    char testo[] = "Ciao mondo! Questo e' un test.";
-    elimina_pattern(testo, "!'");
-    printf("Testo pulito: %s\n", testo);
+    char str[] = "C Programming 101: The Basics!";
+    remove_digits(str);
+    printf("Result: %s\n", str);
     return 0;
 }
 ```
-Output:
-```
-Testo pulito: Ciao mondo Questo e un test.
-```
-Questo codice fa scomparire ogni punto esclamativo e apostrofo dal testo.
 
-## Deep Dive:
-Nel 1972, Dennis Ritchie crea il linguaggio C, e da allora gestire stringhe è fondamentale. Un'alternativa alla funzione `elimina_pattern` potrebbe essere l'uso delle regex (espressioni regolari), ma in C standard devi integrare librerie aggiuntive per farlo. L'implementazione illustrata è semplice e diretta: scorre ogni carattere e controlla se fa parte del pattern da eliminare, conservando il resto.
+Output di esempio:
+```
+Result: C Programming : The Basics!
+```
 
-## See Also:
-- [C String Library](http://www.cplusplus.com/reference/cstring/)
-- [C Standard Library Functions](https://en.cppreference.com/w/c/string/byte)
-- [Regular Expressions with POSIX](https://pubs.opengroup.org/onlinepubs/009695399/basedefs/xbd_chap09.html)
+Questo esempio sfrutta `isdigit` da `ctype.h` per identificare i numeri, spostando i caratteri non numerici all'inizio della stringa e terminando la stringa una volta valutati tutti i caratteri.
+
+## Approfondimento
+
+La soluzione presentata utilizza un approccio a due puntatori all'interno dello stesso array per filtrare efficacemente i caratteri indesiderati, una tecnica emblematica della filosofia di gestione della memoria di C. Questo metodo è efficiente perché opera sul posto, evitando la necessità di allocazione di memoria aggiuntiva e quindi minimizzando il sovraccarico.
+
+Storicamente, l'assenza di funzioni di manipolazione delle stringhe di alto livello in C ha costretto i programmatori a sviluppare una profonda comprensione della gestione delle stringhe a livello di memoria, portando a approcci innovativi come quello sopra. Sebbene ciò abbia il vantaggio di un maggiore controllo e efficienza, comporta un rischio più elevato di errori, come sovrascritture di buffer e errori di off-by-one.
+
+In contesti di sviluppo moderni, specialmente quelli che enfatizzano la sicurezza, potrebbero essere preferiti linguaggi che astraggono tali operazioni di basso livello per compiti di manipolazione delle stringhe. Tuttavia, comprendere e utilizzare queste tecniche di C rimane inestimabile per scenari che richiedono un'ottimizzazione delle prestazioni su misura o per lavorare in ambienti in cui il minimalismo e la velocità di C sono di primaria importanza.

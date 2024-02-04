@@ -1,73 +1,127 @@
 ---
 title:                "Refaktoryzacja"
-date:                  2024-01-26T01:36:58.118807-07:00
+date:                  2024-02-03T18:07:29.251877-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Refaktoryzacja"
-
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/go/refactoring.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Co & Dlaczego?
-Refaktoryzacja to proces restrukturyzacji istniejącego kodu komputerowego bez zmiany jego zewnętrznego zachowania. Programiści robią to, aby poprawić atrybuty niefunkcjonalne oprogramowania, takie jak czytelność i łatwość utrzymania, co może sprawić, że kod będzie łatwiejszy do zrozumienia, zmniejszy złożoność oraz ułatwi znajdowanie błędów.
+## Co i dlaczego?
+
+Refaktoryzacja w programowaniu polega na restrukturyzacji istniejącego kodu komputerowego — zmianie faktoringu — bez zmiany jego zewnętrznego zachowania. Programiści podejmują ten proces, aby poprawić czytelność kodu, zmniejszyć złożoność i poprawić utrzymywalność, co ostatecznie sprawia, że oprogramowanie jest łatwiejsze do zrozumienia i modyfikacji.
 
 ## Jak to zrobić:
-Zanurzmy się w prostym przykładzie refaktoryzacji kodu w Go. Weźmiemy fragment kodu, który oblicza średnią z ciągu liczbowego i zrefaktoryzujemy go dla większej klarowności i ponownego użycia.
 
-Oryginalny kod:
-```Go
+W Go refaktoryzacja może obejmować od prostych poprawek kodu po bardziej złożone zmiany. Zaczynając od podstawowego przykładu: uproszczenie początkowej funkcji Go dla lepszej czytelności i wydajności.
+
+**Przed refaktoryzacją:**
+
+```go
 package main
 
 import "fmt"
 
-func main() {
-    numbers := []float64{8, 12, 15, 10, 7, 14}
-    var sum float64
-    for _, num := range numbers {
-        sum += num
+func CalculatePrice(quantity int, price float64) float64 {
+    var total float64
+    if quantity > 0 {
+        total = float64(quantity) * price
+    } else {
+        total = 0
     }
-    average := sum / float64(len(numbers))
-    fmt.Println("Average:", average)
+    return total
+}
+
+func main() {
+    fmt.Println(CalculatePrice(10, 5.99))  // Wyjście: 59.9
 }
 ```
 
-Zrefaktoryzowany kod:
-```Go
+**Po refaktoryzacji:**
+
+```go
 package main
 
 import "fmt"
 
-// CalculateAverage pobiera ciąg float64 i zwraca średnią.
-func CalculateAverage(numbers []float64) float64 {
-    sum := 0.0
-    for _, num := range numbers {
-        sum += num
+func CalculatePrice(quantity int, price float64) float64 {
+    if quantity > 0 {
+        return float64(quantity) * price
     }
-    return sum / float64(len(numbers))
+    return 0
 }
 
 func main() {
-    numbers := []float64{8, 12, 15, 10, 7, 14}
-    average := CalculateAverage(numbers)
-    fmt.Println("Average:", average)
+    fmt.Println(CalculatePrice(10, 5.99))  // Wyjście: 59.9
 }
 ```
 
-W zrefaktoryzowanym kodzie, logika obliczania średniej została wyodrębniona do osobnej funkcji o nazwie `CalculateAverage`. Sprawia to, że funkcja `main` jest bardziej zwięzła, a logika obliczania średniej jest ponownie używalna i testowalna.
+W wersji po refaktoryzacji usunięto `else`, co upraszcza przepływ funkcji, nie wpływając na jej wyjście — przykład podstawowej, lecz wpływowej techniki refaktoryzacji w Go.
 
-## Pogłębiona analiza
-Refaktoryzacja kodu nie jest nowoczesnym konceptem; precedensy jej użycia datują się na czas przed powszechnym wykorzystaniem komputerów. Prawdopodobnie praktyka ta zaczęła się w dziedzinie inżynierii mechanicznej lub nawet wcześniej. W oprogramowaniu stała się bardziej sformalizowana wraz z nadejściem programowania zorientowanego obiektowo i ekstremalnego programowania (XP) w latach 90-tych, szczególnie pod wpływem przełomowej książki Martina Fowlera "Refaktoryzacja: Ulepszanie projektu istniejącego kodu".
+Dla bardziej zaawansowanego przykładu, rozważ refaktoryzację funkcji w celu użycia interfejsów dla lepszej wielokrotności użycia i testowalności:
 
-Istnieje wiele technik refaktoryzacji, od prostych, takich jak przemianowanie zmiennych dla lepszej klarowności, po bardziej skomplikowane wzorce, takie jak wyodrębnianie metod lub klas. Kluczem jest dokonywanie małych, inkrementalnych zmian, które nie modyfikują funkcjonalności oprogramowania, ale poprawiają wewnętrzną strukturę.
+**Przed refaktoryzacją:**
 
-Przy użyciu Go, refaktoryzacja może być stosunkowo prosta dzięki prostocie języka i potężnej bibliotece standardowej. Jednakże nadal ważne jest posiadanie dobrego zestawu testów jednostkowych, aby upewnić się, że refaktoryzacja nie wprowadzi błędów. Narzędzia takie jak `gorename` i `gofmt` pomagają zautomatyzować niektóre z procesów, a środowiska IDE często mają wbudowane wsparcie dla refaktoryzacji.
+```go
+package main
 
-Oprócz manualnej refaktoryzacji dostępne są również narzędzia do automatycznej refaktoryzacji kodu dla Go, takie jak narzędzia refaktoryzacyjne GoLand i Go Refactor. Chociaż mogą przyspieszyć proces, nie zastępują one zrozumienia kodu i dokonywania przemyślanych zmian.
+import "fmt"
 
-## Zobacz także
- - [Refaktoryzacja w Go: Proste jest piękne](https://go.dev/blog/slices)
- - [Efektywne Go: Refaktoryzacja z interfejsami](https://go.dev/doc/effective_go#interfaces)
- - [Strona o refaktoryzacji Martina Fowlera](https://refactoring.com/)
- - [Narzędzia refaktoryzacyjne GoLand](https://www.jetbrains.com/go/features/refactorings/)
+type Logger struct{}
+
+func (l Logger) Log(message string) {
+    fmt.Println("Log:", message)
+}
+
+func ProcessData(data string, logger Logger) {
+    // Wyobraź sobie jakąś obróbkę danych tutaj
+    logger.Log("Dane przetworzone")
+}
+
+func main() {
+    logger := Logger{}
+    ProcessData("przykładowe dane", logger)
+}
+```
+
+**Po refaktoryzacji:**
+
+```go
+package main
+
+import "fmt"
+
+type Logger interface {
+    Log(message string)
+}
+
+type ConsoleLogger struct{}
+
+func (c ConsoleLogger) Log(message string) {
+    fmt.Println("Log:", message)
+}
+
+func ProcessData(data string, logger Logger) {
+    // Obróbka danych pozostaje niezmieniona
+    logger.Log("Dane przetworzone")
+}
+
+func main() {
+    logger := ConsoleLogger{}
+    ProcessData("przykładowe dane", logger)
+}
+```
+
+Refaktoryzacja do użycia interfejsu (`Logger`) zamiast konkretnego typu (`ConsoleLogger`) poprawia elastyczność funkcji i oddziela przetwarzanie danych od specyficznej implementacji logowania.
+
+## Głębsze spojrzenie
+
+Refaktoryzacja w Go musi balansować między prostotą (jedną z podstawowych filozofii Go) a elastycznością potrzebną w dużych projektach oprogramowania. Biorąc pod uwagę minimalistyczne podejście Go do funkcji — bez uogólnień (do niedawna) i z silnym naciskiem na czytelność — język ten naturalnie kieruje programistów ku prostszym, bardziej utrzymywalnym strukturom kodu. Jednakże to nie oznacza, że kod Go nie korzysta z refaktoryzacji; oznacza to, że refaktoryzacja musi zawsze priorytetowo traktować jasność i prostotę.
+
+Historycznie, brak pewnych funkcji w Go (np. uogólnień przed Go 1.18) prowadził do kreatywnych, ale czasami zawiłych rozwiązań dla ponownego wykorzystania kodu i elastyczności, czyniąc refaktoryzację dla abstrakcji powszechną praktyką. Z wprowadzeniem uogólnień w Go 1.18, programiści Go przeprowadzają teraz refaktoryzację dziedzicznych kodów, aby wykorzystać tę funkcję dla lepszego bezpieczeństwa typów i ponownego wykorzystania kodu, co demonstruje ewoluujący charakter praktyk refaktoryzacyjnych w Go.
+
+Jednakże narzędzia Go, w tym `gofmt` do formatowania kodu i `go vet` do identyfikacji podejrzanych konstrukcji, wspomagają utrzymanie czystych baz kodów, redukując potrzebę obszernej refaktoryzacji. Choć refaktoryzacja jest nieocenionym narzędziem w arsenale programisty Go, mądre korzystanie z funkcji języka Go i narzędzi od samego początku może pomóc zminimalizować potrzebę złożonej refaktoryzacji później.

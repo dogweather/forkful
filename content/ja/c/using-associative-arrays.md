@@ -1,73 +1,99 @@
 ---
 title:                "連想配列の使用"
-date:                  2024-01-30T19:10:15.660830-07:00
+date:                  2024-02-03T18:10:49.497799-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "連想配列の使用"
-
 tag:                  "Data Structures"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/c/using-associative-arrays.md"
 changelog:
-  - 2024-01-30, gpt-4-0125-preview, translated from English
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## 何となぜ？
 
-連想配列またはハッシュマップは、キーを使ってデータを格納・取得できるキーと値のペアです。大量のデータを扱うとき、特にリストと比較してデータへのアクセスが早くなるため、C言語で非常に便利です。
+連想配列は、他の言語ではマップや辞書として知られており、効率的なデータの検索と操作に使用されるキーと値のペアです。従来の配列が整数インデックスを使用するのに対し、連想配列ではキーを使用するため、データへのアクセスがより直感的で柔軟になり、プログラマーにとって便利です。
 
 ## どのようにして：
 
-C言語には他の言語のような連想配列の組み込みサポートはありませんが、構造体といくつかのライブラリ関数を使用して類似の機能を実現できます。ここでは`uthash`ライブラリを使用した簡単な実装を紹介します。このライブラリはプロジェクトに含める必要があります。
+C言語には、いくつかの高レベル言語のような連想配列の組み込みサポートはありませんが、構造体とハッシュを使用してそれをシミュレートすることができます。以下は、文字列キーによって整数を格納およびアクセスするための連想配列を実装するために、構造体と単純なハッシュ関数を組み合わせた簡素な例です。
 
-まず、キーと値のペアを保存するための構造体を定義します：
+まず、単一のキーと値のペアを表す構造体と、連想配列自体を表す別の構造体を定義します:
 
-```C
+```c
 #include <stdio.h>
-#include "uthash.h"
+#include <stdlib.h>
+#include <string.h>
+
+#define TABLE_SIZE 128
 
 typedef struct {
-    int id; // これが私たちのキーになります
-    char name[10]; // これがキーに関連付けられた値です
-    UT_hash_handle hh; // この構造体をハッシュ可能にします
-} person;
-```
+    char* key;
+    int value;
+} KeyValuePair;
 
-次に、いくつかのエントリを追加して取得してみましょう：
+typedef struct {
+    KeyValuePair* items[TABLE_SIZE];
+} AssocArray;
 
-```C
-int main() {
-    person *my_people = NULL, *s;
+unsigned int hash(char* key) {
+    unsigned long int value = 0;
+    unsigned int i = 0;
+    unsigned int key_len = strlen(key);
 
-    // エントリの追加
-    s = (person*)malloc(sizeof(person));
-    s->id = 1;
-    strcpy(s->name, "Alice");
-    HASH_ADD_INT(my_people, id, s);
-
-    // エントリの取得
-    int user_id = 1;
-    HASH_FIND_INT(my_people, &user_id, s);
-    if (s) {
-        printf("Found: %s\n", s->name);
+    for (; i < key_len; ++i) {
+        value = value * 37 + key[i];
     }
-    
+
+    value = value % TABLE_SIZE;
+
+    return value;
+}
+
+void initArray(AssocArray* array) {
+    for (int i = 0; i < TABLE_SIZE; ++i) {
+        array->items[i] = NULL;
+    }
+}
+
+void insert(AssocArray* array, char* key, int value) {
+    unsigned int slot = hash(key);
+
+    KeyValuePair* item = (KeyValuePair*)malloc(sizeof(KeyValuePair));
+    item->key = strdup(key);
+    item->value = value;
+
+    array->items[slot] = item;
+}
+
+int find(AssocArray* array, char* key) {
+    unsigned int slot = hash(key);
+
+    if (array->items[slot]) {
+        return array->items[slot]->value;
+    }
+    return -1;
+}
+
+int main() {
+    AssocArray a;
+    initArray(&a);
+
+    insert(&a, "key1", 1);
+    insert(&a, "key2", 2);
+
+    printf("%d\n", find(&a, "key1")); // 出力: 1
+    printf("%d\n", find(&a, "key2")); // 出力: 2
+
     return 0;
 }
 ```
 
-サンプル出力は以下の通りです：
+この例は、連想配列の初期化、キーと値のペアの挿入、そしてキーによる値の検索といった基本的な操作を示しています。このコードには衝突処理が含まれておらず、教育目的での使用を意図しています。
 
-```
-Found: Alice
-```
+## 深掘り
 
-作業が終わったら、メモリリークを避けるために割り当てられたメモリを解放し、ハッシュテーブルを解除しないことを忘れないでください。
+連想配列の概念はC言語よりも前に存在していましたが、C言語の低水準な性質はそれらを組み込み型として直接サポートしていません。これは、効率的なキーと値のマッピングのためのハッシュメカニズムなど、データ構造やアルゴリズムについての深い理解を促進します。多くのC言語のライブラリやフレームワークは、衝突処理、動的なリサイズ、任意のキーと値の型のサポートを備えた堅牢な実装を提供するGLibの`GHashTable`のように、連想配列を実装するためのより洗練されたアプローチを提供しています。
 
-## 深く掘り下げて
-
-連想配列はC言語にはネイティブではありませんが、`uthash`のようなライブラリはこの機能を使用する比較的簡単な方法をかなりうまく提供しています。歴史的に、C言語の開発者たちはこれらのデータ構造のバージョンを自分たちで実装する必要があり、特に言語を始めたばかりの人にとっては、さまざまでしばしば複雑な実装につながりました。
-
-連想配列をC言語で使用する効率は、ハッシュ関数がテーブル全体に値をどの程度うまく分散させて衝突を最小限に抑えるかに大きく依存します。`uthash`のようなライブラリは使いやすさと性能のバランスが良いものの、パフォーマンスが最優先の重要なアプリケーションでは、独自のハッシュテーブルを調整または実装することを検討するかもしれません。
-
-最大限の効率を求めるアプリケーションでは、代替のデータ構造や連想配列を組み込みサポートしている他のプログラミング言語がより適している場合もあります。しかし、多くの状況、特に既にC環境内で作業している場合には、`uthash`のようなライブラリを使用することで性能と便利さの実用的なバランスを提供します。
+C言語で連想配列を手動で構築することは、組み込みサポートのある言語と比較して手間がかかると見なされる場合がありますが、データ構造の内部動作について貴重な洞察を提供し、問題解決や最適化においてプログラマーのスキルを磨くために非常に価値があります。しかし、本番コードやより複雑なアプリケーションの場合、GLibのような既存のライブラリを活用することが、より実用的で時間効率の良いアプローチであることが多いです。

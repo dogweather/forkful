@@ -1,64 +1,100 @@
 ---
-title:                "Rejestrowanie zdarzeń"
-date:                  2024-01-26T01:00:20.449567-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Rejestrowanie zdarzeń"
-
+title:                "Logowanie"
+date:                  2024-02-03T17:59:03.742225-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Logowanie"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/c/logging.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Co i dlaczego?
-Logowanie jest zasadniczo rejestrowaniem tego, co robi Twój program, zwykle poprzez zapisywanie komunikatów do pliku lub terminala. Programiści robią to, aby śledzić wydarzenia, diagnozować problemy oraz mieć ślad audytowy, który opowiada historię działania aplikacji na przestrzeni czasu.
+
+Logowanie w C polega na rejestrowaniu przepływu i znaczących zdarzeń programu podczas jego wykonania, zapewniając namacalny przegląd jego zachowania i wydajności. Programiści wykorzystują logowanie do celów debugowania, monitorowania zdrowia oprogramowania i zapewniania bezpieczeństwa systemu.
 
 ## Jak to zrobić:
-Zacznijmy od podstaw. C nie ma wbudowanego frameworka do logowania, ale możesz stworzyć coś prostego z użyciem `stdio.h`. Oto jak:
+
+W C logowanie można osiągnąć za pomocą podstawowych operacji na plikach lub korzystając z bardziej zaawansowanych bibliotek. Dla uproszczenia zaczniemy od standardowej biblioteki wejścia/wyjścia. Poniższe fragmenty kodu prezentują podstawowe implementacje logowania.
+
+Aby zalogować proste wiadomości:
+
+```c
+#include <stdio.h>
+
+int main() {
+    FILE *logFile;
+    logFile = fopen("application.log", "a"); // Otwórz plik logu w trybie dopisywania
+    
+    if (logFile == NULL) {
+        perror("Błąd otwarcia pliku logu.");
+        return -1;
+    }
+    
+    fprintf(logFile, "Uruchamianie aplikacji.\n");
+    
+    // Twoja logika aplikacji
+    
+    fprintf(logFile, "Aplikacja zakończyła się powodzeniem.\n");
+    fclose(logFile);
+    
+    return 0;
+}
+```
+
+Wynik w `application.log`:
+
+```
+Uruchamianie aplikacji.
+Aplikacja zakończyła się powodzeniem.
+```
+
+Aby uwzględnić bardziej szczegółowe logi z datami i poziomami logowania:
 
 ```c
 #include <stdio.h>
 #include <time.h>
 
-void logMessage(const char* message) {
+void logMessage(FILE *logFile, const char* level, const char* message) {
     time_t now;
     time(&now);
-    char *data = ctime(&now);
-    data[strlen(data) - 1] = '\0'; // Usuń znak nowej linii na końcu wyniku ctime()
-    printf("[%s] %s\n", data, message);
+    char* datetime = ctime(&now);
+    datetime[strlen(datetime)-1] = '\0'; // Usuń znak nowej linii
+    fprintf(logFile, "[%s] %s - %s\n", datetime, level, message);
 }
 
 int main() {
-    logMessage("Aplikacja została uruchomiona.");
-    // ... tutaj wpisz swój kod ...
-    logMessage("Aplikacja wykonuje coś ważnego.");
-    // ... kontynuacja kodu ...
-    logMessage("Aplikacja zakończyła działanie.");
+    FILE *logFile;
+    logFile = fopen("detailed.log", "a");
+    
+    if (logFile == NULL) {
+        perror("Błąd otwarcia pliku logu.");
+        return -1;
+    }
+    
+    logMessage(logFile, "INFO", "Uruchamianie aplikacji");
+    // Twoja logika aplikacji
+    logMessage(logFile, "ERROR", "Przykładowy błąd");
+    
+    fclose(logFile);
+    
     return 0;
 }
 ```
 
-Przykładowe wyjście może wyglądać tak:
+Wynik w `detailed.log`:
 
 ```
-[Wto Mar 9 12:00:01 2023] Aplikacja została uruchomiona.
-[Wto Mar 9 12:00:02 2023] Aplikacja wykonuje coś ważnego.
-[Wto Mar 9 12:00:03 2023] Aplikacja zakończyła działanie.
+[Czw Mar 10 14:32:01 2023] INFO - Uruchamianie aplikacji
+[Czw Mar 10 14:32:02 2023] ERROR - Przykładowy błąd
 ```
 
-Oczywiście, w rzeczywistości prawdopodobnie chciałbyś zapisać komunikaty do pliku zamiast do terminala, obsługiwać różne poziomy logów i może użyć gotowej biblioteki.
+## Dokładniejsze spojrzenie
 
-## Dalsze kroki
-Logowanie w C ma swój swoisty urok – jest równie niskopoziomowe, jak większość reszty języka. Historycznie logowanie było wykonywane przy użyciu `fprintf` z `stderr` lub wskaźnika pliku. W miarę komplikowania się programów rosły również potrzeby logowania, co doprowadziło do rozwoju bibliotek takich jak `syslog` w systemach Unix, które mogły obsługiwać logowanie z wielu źródeł o różnym stopniu ważności.
+Jak pokazano, logowanie w C opiera się na prostych operacjach na plikach, co jest skuteczne, ale nie tak potężne ani elastyczne jak mechanizmy logowania w innych językach, takich jak moduł `logging` w Pythonie czy `Log4j` w Javie. Dla bardziej zaawansowanych możliwości logowania w C, deweloperzy często zwracają się ku bibliotekom takim jak `syslog` w systemach podobnych do Unix, które zapewniają zarządzanie logami na poziomie systemu, lub do bibliotek firm trzecich, takich jak `log4c`.
 
-We współczesnym krajobrazie jest wiele bibliotek logowania C, takich jak `zlog`, `log4c` i `glog`, które oferują bogaty zestaw funkcji, w tym rotację logów, strukturalne logowanie i wielowątkowe logowanie. Te rozwiązania pozwalają na dokładną kontrolę nad werbalnością logów, miejscami docelowymi i formatami.
+Historycznie rzecz biorąc, logowanie było integralną częścią programowania, sięgającą początków praktyk programistycznych, gdzie śledzenie i rozumienie przepływu programów i błędów było przede wszystkim wykonywane poprzez fizyczne wydruki. Wraz z ewolucją systemów logowanie stało się bardziej zaawansowane, wspierając obecnie różne poziomy powagi, rotację logów oraz asynchroniczne logowanie.
 
-Podczas implementacji systemu logowania szczegóły takie jak formatowanie znaczników czasu, zarządzanie plikami logów i wydajność wymagają przemyślenia. Znaczniki czasu w logach są kluczowe dla korelacji zdarzeń, podczas gdy rotacja logów zapewnia, że pliki dziennika nie zajmują zbyt wiele miejsca na dysku. Działanie logowania powinno być również szybkie i nieblokujące dla głównego przepływu aplikacji, aby logowanie nie stało się wąskim gardłem.
-
-## Zobacz również
-Żeby zagłębić się w biblioteki i praktyki logowania w C, sprawdź te zasoby:
-
-- Podręcznik GNU `syslog`: https://www.gnu.org/software/libc/manual/html_node/Syslog.html
-- `zlog`: Wysoko konfigurowalna biblioteka do logowania dla C - https://github.com/HardySimpson/zlog
-- `log4c`: Framework logowania dla C wzorowany na Log4j - http://log4c.sourceforge.net/
-- `glog`: Biblioteka logowania na poziomie aplikacji od Google - https://github.com/google/glog
+Chociaż standardowa biblioteka C dostarcza podstawowych narzędzi do implementacji logowania, jej ograniczenia często prowadzą do tworzenia własnych ram logowania lub adopcji zewnętrznych bibliotek dla bardziej bogatych w funkcje i elastycznych rozwiązań logowania. Pomimo tych ograniczeń, zrozumienie i implementacja podstawowego logowania w C jest kluczowe dla debugowania i utrzymania oprogramowania, szczególnie w środowiskach, gdzie zewnętrzne zależności mają być zminimalizowane.

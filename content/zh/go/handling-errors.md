@@ -1,75 +1,69 @@
 ---
 title:                "处理错误"
-date:                  2024-01-26T00:52:50.343640-07:00
-model:                 gpt-4-1106-preview
+date:                  2024-02-03T17:58:05.857459-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "处理错误"
-
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/go/handling-errors.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## 是什么 & 为什么？
+## 什么 & 为什么？
 
-Go 语言中的错误处理是关于优雅地捕获和响应运行时的小问题。我们这么做是为了防止程序崩溃，并确保我们的程序即使在出现意外情况时也能预测地执行。
+Go 语言中处理错误涉及识别和响应程序中的错误情况。程序员进行错误处理，以确保他们的应用程序能够从意外情况中优雅地恢复，从而使软件更加稳健可靠。
 
 ## 如何操作：
 
-Go 使用显式错误处理。这意味着你每次调用一个函数时，都要检查是否返回了错误。没有异常。以下是它的样子：
+在 Go 中，错误处理通过显式管理 `error` 类型来实现。可能失败的函数会将错误作为它们的最后一个返回值返回。检查这个错误值是否为 `nil` 将告诉你是否发生了错误。
 
-```Go
+```go
 package main
 
 import (
-	"fmt"
-	"os"
+    "errors"
+    "fmt"
 )
 
+func Compute(value int) (int, error) {
+    if value > 100 {
+        return 0, errors.New("value must be 100 or less")
+    }
+    return value * 2, nil
+}
+
 func main() {
-	err := doSomething()
-	if err != nil {
-		fmt.Println("哎哟:", err)
-		os.Exit(1)
-	}
-}
-
-func doSomething() error {
-	// 假装出了点问题
-	return fmt.Errorf("出了点问题")
-}
-```
-
-运行这段代码，你会得到：
-
-```
-哎哟: 出了点问题
-```
-
-但如果它成功了呢？
-
-```Go
-func doSomething() error {
-	// 这次一切正常
-	return nil
+    result, err := Compute(150)
+    if err != nil {
+        fmt.Println("Error:", err)
+    } else {
+        fmt.Println("Result:", result)
+    }
+    
+    // 优雅地处理错误
+    anotherResult, anotherErr := Compute(50)
+    if anotherErr != nil {
+        fmt.Println("Error:", anotherErr)
+    } else {
+        fmt.Println("Result:", anotherResult)
+    }
 }
 ```
 
-没有输出。酷，没有消息就是好消息。
+上述代码的示例输出：
+```
+Error: value must be 100 or less
+Result: 100
+```
 
-## 深入探究：
+在这个例子中，`Compute` 函数或者返回一个计算值或者返回一个错误。调用者通过检查 `err` 是否不为 `nil` 来处理错误。
 
-在 Go 中，错误处理一直是争议的焦点。Go 从一开始就决定不使用异常，而是采取更明确的方法，这种方法有些开发者因其简洁而喜欢，但其他人则觉得它过于冗长。内置的 `error` 类型是一个接口。任何带有 `Error() string` 方法的类型都能满足它。这与 Go 简洁明了的精神相契合。
+## 深入了解
 
-其他选择？有 `panic` 和 `recover` 这一对，但它们用于特殊情况（不是开玩笑的）当程序无法继续时。可以将 `panic` 视为你知道没有回头路时按下的弹射按钮。尽量少用它。
+Go 的错误处理方法是故意保持简单直接且类型安全的，需要显式检查错误。这种概念与在 Java 和 Python 等语言中看到的基于异常的错误处理形成对比，其中错误会沿着调用栈向上传播，除非被异常处理器捕获。Go 团队认为，显式地处理错误会导致更清晰、更可靠的代码，因为它迫使程序员立即处理发生的错误所在处。
 
-至于主流的错误处理，Go 1.13 引入了错误包装，通过诸如 `errors.Is()` 和 `errors.As()` 这样的函数更容易地理解“错误链”。
+然而，一些批评指出，这种模式可能导致冗长的代码，特别是在具有许多容易出错操作的复杂函数中。作为回应，Go 的新版本引入了更复杂的错误处理功能，例如错误包装，使在不丢失原始错误信息的情况下为错误提供上下文变得更容易。社区还看到了关于新的错误处理机制（如 check/handle）的提议，尽管这些到我最后更新时仍在讨论中。
 
-## 另请参见：
-
-关于 Go 中所有错误处理的内容：
-
-- Go 博客关于错误处理：[https://blog.golang.org/error-handling-and-go](https://blog.golang.org/error-handling-and-go)
-- 《高效 Go 编程》— 错误处理部分：[https://golang.org/doc/effective_go#errors](https://golang.org/doc/effective_go#errors)
-- Go 1.13 错误包装文档：[https://golang.org/doc/go1.13#error_wrapping](https://golang.org/doc/go1.13#error_wrapping)
-- Dave Cheney 关于错误处理策略的文章：[https://dave.cheney.net/2016/04/27/dont-just-check-errors-handle-them-gracefully](https://dave.cheney.net/2016/04/27/dont-just-check-errors-handle-them-gracefully)
+Go 的错误处理哲学强调理解和计划错误作为程序正常流程的一部分。这种方法促进了更加弹性和可预测的软件开发，尽管可能会增加样板代码量。对于特别复杂的情况，存在替代模式和库来简化错误处理，但 Go 内置的 `error` 类型仍然是该语言中错误处理的基础。

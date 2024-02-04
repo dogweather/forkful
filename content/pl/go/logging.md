@@ -1,22 +1,44 @@
 ---
-title:                "Rejestrowanie zdarzeń"
-date:                  2024-01-26T01:07:19.362073-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Rejestrowanie zdarzeń"
-
+title:                "Logowanie"
+date:                  2024-02-03T17:59:15.984431-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Logowanie"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/go/logging.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Co i dlaczego?
-Logowanie polega na rejestrowaniu wydarzeń, stanów i przepływu danych w aplikacji. Programiści robią to w celu diagnozowania błędów, monitorowania wydajności i śledzenia stanu operacyjnego aplikacji - co praktycznie czyni je oprogramowaniowym odpowiednikiem czarnej skrzynki w samolotach.
+
+Logowanie w rozwoju oprogramowania to proces rejestrowania informacji o wykonaniu programu, zaprojektowany w celu śledzenia jego zachowania i diagnozowania problemów. Programiści implementują logowanie, aby monitorować wydajność oprogramowania, debugować błędy i zapewnić bezpieczeństwo systemu oraz zgodność, co czyni je niezbędnym narzędziem do konserwacji i analizy aplikacji.
 
 ## Jak to zrobić:
-W Go, logowanie może być obsługiwane na wiele sposobów, począwszy od standardowej biblioteki `log`, po biblioteki firm trzecich, takie jak `logrus` i `zap`. Oto prosty przykład użycia wbudowanego pakietu `log`:
 
-```Go
+W Go, logowanie może być zaimplementowane za pomocą standardowego pakietu biblioteki `log`. Ten pakiet oferuje proste możliwości logowania, takie jak zapisywanie do standardowego wyjścia lub do plików. Zacznijmy od podstawowego przykładu logowania do standardowego wyjścia:
+
+```go
+package main
+
+import (
+	"log"
+)
+
+func main() {
+	log.Println("To jest podstawowy wpis w logu.")
+}
+```
+
+Wyjście:
+```
+2009/11/10 23:00:00 To jest podstawowy wpis w logu.
+```
+
+Znacznik czasu na początku wpisu w logu jest automatycznie dodawany przez pakiet `log`. Następnie, zbadajmy jak zalogować do pliku zamiast do standardowego wyjścia:
+
+```go
 package main
 
 import (
@@ -25,46 +47,44 @@ import (
 )
 
 func main() {
-	// Tworzenie pliku logów
-	logFile, err := os.OpenFile("app.log", os.O_CREATE|os.O_APPEND|os.O_WRONLY, 0666)
+	file, err := os.OpenFile("app.log", os.O_CREATE|os.O_APPEND|os.O_WRONLY, 0666)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer logFile.Close()
+	defer file.Close()
 
-	// Ustawienie wyjścia logu do pliku
-	log.SetOutput(logFile)
-
-	// Logowanie pewnych zdarzeń
-	log.Println("Uruchamianie aplikacji...")
-	// ... tutaj logika aplikacji ...
-	log.Println("Aplikacja zakończyła działanie pomyślnie.")
+	log.SetOutput(file)
+	log.Println("Ten wpis logu trafia do pliku.")
 }
 ```
 
-Jeśli uruchomisz ten kod, nie zobaczysz żadnego wyjścia w terminalu, ponieważ wszystko trafia do pliku `app.log`. Oto jak wyglądają wpisy, które znajdziesz w tym pliku logów:
+Teraz zaimplementujmy bardziej zaawansowany przypadek użycia: dostosowanie formatu logowania. Go pozwala na stworzenie własnego logera za pomocą `log.New()`:
 
+```go
+package main
+
+import (
+	"log"
+	"os"
+)
+
+func main() {
+	logger := log.New(os.Stdout, "CUSTOM LOG: ", log.Ldate|log.Ltime|log.Lshortfile)
+	logger.Println("To jest niestandardowa wiadomość logu.")
+}
 ```
-2023/01/02 15:04:05 Uruchamianie aplikacji...
-2023/01/02 15:05:01 Aplikacja zakończyła działanie pomyślnie.
+
+Wyjście:
+```
+CUSTOM LOG: 2009/11/10 23:00:00 main.go:11: To jest niestandardowa wiadomość logu.
 ```
 
-## Szczegółowa analiza
-Logowanie w programowaniu sięga czasów pierwszych komputerów, kiedy to inżynierowie dosłownie znajdowali owady (ćmy, żeby być dokładnym) rozgniecione w sprzęcie, które następnie rejestrowali! Przeskakując do dzisiaj, logowanie stało się wyrafinowanym sposobem na zrozumienie, co dzieje się wewnątrz złożonych systemów.
+Ten przykład dodaje do każdego komunikatu logu przedrostek "CUSTOM LOG: " i zawiera datę, czas oraz lokalizację pliku źródłowego.
 
-Chociaż pakiet `log` w Go jest dość prosty, może być wystarczający dla podstawowych aplikacji. Jednak w kontekście nowoczesnych rozproszonych systemów, lub gdy potrzebujesz bardziej wyrafinowanej kontroli nad swoim wyjściem logów (jak różne poziomy powagi), możesz chcieć rozważyć bardziej rozbudowane rozwiązania.
+## Wnikliwe spojrzenie
 
-Biblioteki logowania firm trzecich, takie jak `logrus` i `zap`, oferują strukturalne logowanie, co oznacza, że możesz logować skomplikowane typy danych, takie jak JSON, co ułatwia interpretację logów, szczególnie w połączeniu z systemami zarządzania logami takimi jak ELK Stack czy Splunk.
+Pakiet `log` standardowej biblioteki Go jest prosty i wystarczający dla wielu aplikacji, ale brakuje mu niektórych bardziej zaawansowanych funkcji, które można znaleźć w bibliotekach logowania stron trzecich, takich jak logowanie strukturalne, rotacja logów i logowanie oparte na poziomach. Pakiety takie jak `zap` i `logrus` oferują te zaawansowane funkcje i są cenione w społeczności Go za ich wydajność i elastyczność.
 
-Przy rozważaniu implementacji strategii logowania, istotne jest również myślenie o implikacjach wydajnościowych. Biblioteki logowania o wysokiej wydajności są zoptymalizowane pod kątem zmniejszania wpływu na przepustowość i opóźnienie aplikacji. Na przykład, `zap` chwali się swoim ekspresowym, niskim alokowaniem projektu, co może być kluczowe dla systemów czasu rzeczywistego.
+Na przykład, logowanie strukturalne pozwala na rejestrowanie danych w strukturyzowanym formacie (takim jak JSON), co jest szczególnie przydatne dla nowoczesnych aplikacji opartych na chmurze, gdzie logi mogą być analizowane przez różne narzędzia lub usługi. `Zap`, w szczególności, jest znany ze swojej wysokiej wydajności i niskiego narzutu alokacji, co czyni go odpowiednim dla aplikacji, gdzie prędkość i efektywność są kluczowe.
 
-Oprócz różnych bibliotek, również logowanie formatów i standardów są warte uwagi. Strukturalne formaty logowania, takie jak JSON, mogą być niezwykle potężne, gdy są używane w połączeniu z systemami przetwarzania logów. Z drugiej strony, logi w postaci zwykłego tekstu są czytelne dla człowieka, ale trudniejsze do programowego przetworzenia.
-
-## Zobacz również
-Aby zagłębić się w możliwości logowania w Go, te zasoby mogą być przydatne:
-
-- Blog Go na temat logowania: https://blog.golang.org/logging
-- `logrus`, strukturalny logger dla Go: https://github.com/sirupsen/logrus
-- `zap`, szybki, strukturalny, uwarstwiony logger: https://github.com/uber-go/zap
-- ELK Stack (Elasticsearch, Logstash, Kibana) do analizy logów: https://www.elastic.co/what-is/elk-stack
-- Porównanie bibliotek logowania Go: https://www.loggly.com/blog/benchmarking-5-popular-golang-logging-libraries/
+Historycznie, logowanie w Go ewoluowało znacząco od początku języka. Wczesne wersje Go dostarczały podstawowych możliwości logowania, które widzimy w pakiecie `log`. Jednak, jak język zyskał na popularności i wzrosła złożoność aplikacji pisanych w Go, społeczność zaczęła rozwijać bardziej zaawansowane biblioteki logowania, aby sprostać ich potrzebom. Dziś, podczas gdy standardowy pakiet `log` pozostaje odpowiednią opcją dla prostych aplikacji, wielu deweloperów zwraca się do tych rozwiązań stron trzecich dla bardziej złożonych wymagań logowania.

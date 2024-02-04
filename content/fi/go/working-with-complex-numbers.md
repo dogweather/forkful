@@ -1,73 +1,61 @@
 ---
-title:                "Kompleksilukujen käsittely"
-date:                  2024-01-26T04:40:47.948912-07:00
+title:                "Työskenteleminen kompleksilukujen kanssa"
+date:                  2024-02-03T18:14:14.145333-07:00
 model:                 gpt-4-0125-preview
-simple_title:         "Kompleksilukujen käsittely"
-
+simple_title:         "Työskenteleminen kompleksilukujen kanssa"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/go/working-with-complex-numbers.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Mikä & Miksi?
-Kompleksiluvut, jotka koostuvat reaali- ja imaginaariosasta (kuten 5 + 7i), ovat keskeisiä aloilla kuten insinöörityö, fysiikka ja signaalinkäsittely. Ohjelmoijat käyttävät niitä ongelmien ratkaisemiseen näillä aloilla, mitä olisi vaikea tehdä pelkillä reaaliluvuilla.
+
+Ohjelmoinnissa kompleksilukujen käsitteleminen sisältää lukujen manipulointia, joilla on sekä reaaliosa että imaginaariosa, tyypillisesti ilmaistuna muodossa `a + bi`. Ohjelmoijat käsittelevät kompleksilukuja eri aloilla, kuten insinööritieteissä, fysiikassa ja datan analysoinnissa, ratkaistakseen ongelmia, jotka liittyvät negatiivisten lukujen neliöjuuriin, aaltomuotojen analysointeihin ja muuhun.
 
 ## Kuinka:
-Golla on sisäänrakennettu tuki kompleksiluvuille. Tässä pikakatsaus:
+
+Go-kielessä käsitellään kompleksilukuja käyttämällä sisäänrakennettuja `complex`, `real` ja `imag` funktioita, sekä `complex64` ja `complex128` tyyppejä (edustavat 64-bittisiä ja 128-bittisiä kompleksilukuja vastaavasti). Tässä on pikaopas:
 
 ```go
 package main
 
 import (
 	"fmt"
-	"math/cmplx"
 )
 
 func main() {
 	// Kompleksilukujen luominen
-	a := complex(2, 3)
-	b := 4 + 5i
+	a := complex(2, 3) // 2+3i
+	b := complex(1, -1) // 1-1i
 
-	// Perustoiminnot
-	fmt.Println("Lisäys:", a+b)
-	fmt.Println("Vähennys:", a-b)
-	fmt.Println("Kertolasku:", a*b)
-	fmt.Println("Jakolasku:", a/b)
+	// Aritmeettiset operaatiot
+	c := a + b
+	fmt.Println("Lisäys:", c) // Tuloste: Lisäys: (3+2i)
 
-	// Kompleksiluvun ominaisuudet
-	fmt.Println("Reaaliosa:", real(b))
-	fmt.Println("Imaginaariosa:", imag(b))
-	fmt.Println("Konjugaatti:", cmplx.Conj(b))
-	fmt.Println("Suuruus:", cmplx.Abs(b))
-	fmt.Println("Vaihekulma (radiaanit):", cmplx.Phase(b))
+	d := a * b
+	fmt.Println("Kertolasku:", d) // Tuloste: Kertolasku: (5+1i)
+
+	// Reaaliosan ja imaginaariosan haku
+	reaaliosa := real(a)
+	imaginaariosa := imag(a)
+	fmt.Printf("Reaaliosa: %.1f, Imaginaariosa: %.1f\n", reaaliosa, imaginaariosa) // Tuloste: Reaaliosa: 2.0, Imaginaariosa: 3.0
+
+	// Kompleksikonjugaatin ja suuruuden laskeminen
+	konjugaatti := complex(real(a), -imag(a)) // Käsin
+	fmt.Println("Konjugaatti a:lle:", konjugaatti) // Tuloste: Konjugaatti a:lle: (2-3i)
 }
 
 ```
 
-Esimerkkituloste:
-
-```
-Lisäys: (6+8i)
-Vähennys: (-2-2i)
-Kertolasku: (-7+22i)
-Jakolasku: (0.5609756097560976+0.0487804878048781i)
-Reaaliosa: 4
-Imaginaariosa: 5
-Konjugaatti: (4-5i)
-Suuruus: 6.4031242374328485
-Vaihekulma (radiaanit): 0.8960553845713439
-```
+Tämä esimerkki kattaa perusteet, mutta kompleksilukujen kanssa voi tehdä paljon enemmän, mukaan lukien `math/cmplx` paketin hyödyntäminen kehittyneemmille operaatioille kuten suuruuden, vaiheen ja paljon muun laskemiseen.
 
 ## Syväsukellus
-Aikoinaan kompleksilukuja katsottiin epäluulolla — jotkut ajattelivat niiden olevan hyödyttömiä! Ajan mittaan niiden voima fyysisten ilmiöiden kuvaamisessa kävi selväksi. Ne ovat perustavanlaatuisia kvanttifysiikassa, säätöteoriassa ja sähkötekniikassa, vain muutamia aloja mainitaksemme.
 
-Gossa kompleksilukuja kuvataan käyttämällä tietotyyppiä `complex128` (64 bittiä sekä reaali- että imaginaariosalle) tai `complex64` (32 bittiä kummallekin). Pohjimmiltaan nämä ovat vain kaksi `float64`:ää tai `float32`:ta yhdessä. Gon standardikirjasto, `math/cmplx`, tarjoaa funktioita kompleksilaskutoimituksille. Tämä säästää sinut monimutkaiselta matematiikalta ja antaa keskittyä ongelmien ratkaisuun.
+Kompleksilukujen konsepti juontaa juurensa 16. vuosisadalle, mutta sai laajan tunnustuksen ja perusteellisen formalisoinnin vasta 19. vuosisadalla. Tietokoneohjelmoinnissa kompleksiluvut ovat olleet vakiintuneita monimutkaisen aritmetiikan alueella tieteellisissä ja insinööritieteellisissä laskelmissa alusta alkaen. Go:n lähestymistapa kompleksilukuihin, tekemällä niistä ensiluokkaisia kansalaisia sisäänrakennetulla tuella ja kattavalla standardikirjaston tuella `math/cmplx` paketin kautta, erottuu ohjelmointikielten joukosta. Tämä suunnittelupäätös heijastaa Go:n painotusta yksinkertaisuuteen ja suorituskykyyn.
 
-Vaihtoehtoja Gon sisäänrakennetulle tuelle sisältävät ulkoisten kirjastojen käytön tai oman kompleksilukujen käsittelyn luomisen. Mutta näitä harvoin tarvitaan, koska Gon natiivi tuki on tehokas ja hyvin integroitu kieleen.
+Siitä huolimatta on syytä huomauttaa, että kompleksilukujen käyttö Go:ssa, vaikka voimakasta, ei aina välttämättä ole paras lähestymistapa kaikille sovelluksille, erityisesti niille, jotka vaativat symbolista matematiikkaa tai korkean tarkkuuden aritmetiikkaa. Tieteelliseen laskentaan erikoistuneet kielet ja ympäristöt, kuten Python kirjastoineen kuten NumPy ja SciPy, tai ohjelmisto kuten MATLAB, saattavat tarjota enemmän joustavuutta ja laajemman valikoiman toiminnallisuuksia tietyille sovelluksille.
 
-## Katso myös
-Tutustu näihin linkkeihin saadaksesi lisätietoja Gon kompleksilukutoiminnoista:
-- Gon virallinen dokumentaatio: https://golang.org/pkg/math/cmplx/
-- Syvempi matematiikan kertaus kompleksiluvuista: https://www.mathsisfun.com/numbers/complex-numbers.html
-- Kompleksilukujen käytännön sovellukset insinöörityössä: https://ieeexplore.ieee.org/document/528dunno
+Sanottuani, järjestelmäohjelmoinnille ja konteksteille, joissa kompleksilukujen laskenta on olennainen osa suurempaa, suorituskykyherkkää sovellusta, Go:n natiivi tuki kompleksiluvuille tarjoaa ainutlaatuisen tehokkaan vaihtoehdon.

@@ -1,84 +1,59 @@
 ---
-title:                "Generering av tilfeldige tall"
-date:                  2024-01-27T20:33:15.643041-07:00
+title:                "Genererer tilfeldige tall"
+date:                  2024-02-03T17:57:29.467098-07:00
 model:                 gpt-4-0125-preview
-simple_title:         "Generering av tilfeldige tall"
-
+simple_title:         "Genererer tilfeldige tall"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/c/generating-random-numbers.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 
-Å generere tilfeldige tall i C innebærer å skape sekvenser av tall som mangler et gjenkjennelig mønster, for å etterligne konseptet med tilfeldighet. Programmerere utnytter tilfeldige tall til en rekke formål, inkludert simulering av data, kryptografiske applikasjoner og spillutvikling, noe som gjør det til et viktig aspekt ved programmering.
+Å generere tilfeldige tall i C innebærer å skape verdier som er uforutsigbare og følger en spesifikk fordeling, som uniform eller normal. Denne evnen er avgjørende for applikasjoner som strekker seg fra simuleringer og spill til kryptografiske operasjoner, der uforutsigbarhet eller simulering av virkelighetens tilfeldighet er essensiell.
 
 ## Hvordan:
 
-For å generere tilfeldige tall i C, bruker du vanligvis `rand()`-funksjonen som finnes i `stdlib.h`. Det er imidlertid avgjørende å initiere generatoren for tilfeldige tall for å sikre variabilitet i de genererte tallene over forskjellige programkjøringer. `srand()`-funksjonen, initiert med en verdi, ofte gjeldende tid, legger til rette for dette.
+I C kan tilfeldige tall genereres ved å bruke `rand()`-funksjonen, som er en del av C-standardbiblioteket `<stdlib.h>`. Som standard produserer `rand()` pseudo-tilfeldige tall i området fra 0 til `RAND_MAX` (en konstant definert i `<stdlib.h>`). For mer kontroll over området, kan programmerere manipulere utdata fra `rand()`.
 
 Her er et enkelt eksempel på å generere et tilfeldig tall mellom 0 og 99:
 
 ```c
 #include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
+#include <stdlib.h> // For rand() og srand()
+#include <time.h>   // For time()
 
 int main() {
-    // Initialiser generatoren for tilfeldige tall
+    // Så frø for tilfeldighetstallsgeneratoren
     srand((unsigned) time(NULL));
 
     // Generer et tilfeldig tall mellom 0 og 99
     int randomNumber = rand() % 100;
 
-    // Skriv ut det tilfeldige tallet
-    printf("Tilfeldig tall: %d\n", randomNumber);
+    printf("Tilfeldig Tall: %d\n", randomNumber);
 
     return 0;
 }
 ```
 
-Eksempel på utskrift:
+Eksempel på utdata kan variere hver gang du kjører dette programmet:
 
 ```
-Tilfeldig tall: 42
+Tilfeldig Tall: 42
 ```
+For å generere tilfeldige tall innenfor et annet område, kan du justere modulusoperatoren (`%`) deretter. For eksempel vil `rand() % 10` generere tall fra 0 til 9.
 
-Det er viktig å merke seg at hver utførelse av dette programmet vil produsere et nytt tilfeldig tall, takket være seeding med nåværende tid.
+Det er viktig å merke seg at det å så frø for pseudo-tilfeldighetsgeneratoren (`srand()`-kallet) med nåværende tid (`time(NULL)`) sikrer forskjellige sekvenser av tilfeldige tall på tvers av programutførelser. Uten såing (`srand()`), ville `rand()` produsere den samme sekvensen av tall hver gang programmet blir kjørt.
 
 ## Dypdykk
 
-Den tradisjonelle måten å generere tilfeldige tall på i C, ved bruk av `rand()` og `srand()`, er ikke virkelig tilfeldig. Den er pseudotilfeldig. Dette er greit for mange applikasjoner, men det kommer til kort i situasjoner som krever høy grad av tilfeldighet, slik som i seriøse kryptografiske bruksområder. Sekvensen generert av `rand()` er helt bestemt av frøet gitt til `srand()`. Dermed, hvis frøet er kjent, kan sekvensen forutsies, noe som reduserer tilfeldigheten.
+`rand()`-funksjonen og dens partner for såing `srand()` har vært en del av C-standardbiblioteket i flere tiår. De er basert på algoritmer som genererer sekvenser av tall som bare ser ut til å være tilfeldige – derav betegnelsen "pseudo-tilfeldig". Den underliggende algoritmen i `rand()` er vanligvis en lineær kongruent generator (LCG).
 
-Historisk sett har `rand()`-funksjonen blitt kritisert for sin lave kvalitet på tilfeldighet og begrensede rekkevidde. Moderne alternativer inkluderer bruk av enhetsspesifikke API-er eller eksterne biblioteker som bedre nærmer seg ekte tilfeldighet, eller, i UNIX-lignende systemer, lese fra `/dev/random` eller `/dev/urandom` for kryptografiske formål.
+Selv om `rand()` og `srand()` er tilstrekkelige for mange applikasjoner, har de kjente begrensninger, spesielt angående kvaliteten på tilfeldigheten og potensiell forutsigbarhet. For applikasjoner som krever høykvalitativ tilfeldighet, som kryptografiske operasjoner, bør alternativer som `/dev/random` eller `/dev/urandom` (på Unix-lignende systemer), eller API-er levert av kryptografiske biblioteker, vurderes.
 
-For eksempel, ved bruk av `/dev/urandom` i C:
+Med introduksjonen av C11 inkluderte ISO C-standarden en ny header, `<stdatomic.h>`, som tilbyr mer raffinert kontroll for samtidige operasjoner, men ikke direkte angående tilfeldighet. For ekte tilfeldighet i C, vender utviklere seg ofte til plattformspesifikke eller eksterne biblioteker som tilbyr bedre algoritmer eller benytter seg av maskinvareentropikilder.
 
-```c
-#include <stdio.h>
-#include <stdlib.h>
-
-int main() {
-    FILE *fp;
-    unsigned int randomNumber;
-
-    // Åpne /dev/urandom for lesing
-    fp = fopen("/dev/urandom", "r");
-
-    // Les et tilfeldig tall
-    fread(&randomNumber, sizeof(randomNumber), 1, fp);
-
-    // Skriv ut det tilfeldige tallet
-    printf("Tilfeldig tall: %u\n", randomNumber);
-
-    // Lukk filen
-    fclose(fp);
-
-    return 0;
-}
-```
-
-Denne metoden leser direkte fra systemets entropipool og tilbyr en høyere kvalitet på tilfeldighet som passer til mer følsomme applikasjoner. Imidlertid kan denne fremgangsmåten ha bærbarhetsproblemer på tvers av forskjellige plattformer, noe som gjør den mindre universell enn å bruke `rand()`.
-
-Uavhengig av metoden, er det avgjørende å forstå naturen til tilfeldighet og dens implementering i C for å utvikle effektive, sikre og engasjerende applikasjoner.
+Husk, mens `rand()` fungerer som et enkelt og tilgjengelig middel for å generere pseudo-tilfeldige tall, er dets bruksområder i moderne applikasjoner begrenset av kvaliteten og forutsigbarheten av dens utdata. Når mer robuste løsninger er nødvendige, spesielt for sikkerhetsbevisste applikasjoner, er det sterkt anbefalt å utforske utover standardbiblioteket.

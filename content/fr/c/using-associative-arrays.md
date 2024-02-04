@@ -1,73 +1,99 @@
 ---
 title:                "Utilisation des tableaux associatifs"
-date:                  2024-01-30T19:10:04.506211-07:00
+date:                  2024-02-03T18:10:43.132448-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Utilisation des tableaux associatifs"
-
 tag:                  "Data Structures"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/c/using-associative-arrays.md"
 changelog:
-  - 2024-01-30, gpt-4-0125-preview, translated from English
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Quoi & Pourquoi ?
+## Quoi et pourquoi ?
 
-Les tableaux associatifs, ou tables de hachage, sont des paires clé-valeur qui vous permettent de stocker et de récupérer des données avec une clé. Ils sont incroyablement utiles en C parce qu'ils permettent un accès aux données plus rapide comparé aux listes, surtout lorsque vous traitez une grande quantité de données.
+Les tableaux associatifs, connus dans d'autres langues sous le nom de cartes ou dictionnaires, sont des paires clé-valeur utilisées pour la recherche et la manipulation efficaces des données. Contrairement aux tableaux traditionnels qui utilisent des index entiers, les tableaux associatifs utilisent des clés, rendant l'accès aux données plus intuitif et flexible pour les programmeurs.
 
 ## Comment faire :
 
-C n’a pas de support intégré pour les tableaux associatifs comme certains autres langages, mais nous pouvons utiliser des structures et certaines fonctions de bibliothèque pour obtenir une fonctionnalité similaire. Voici une implémentation simple en utilisant la bibliothèque `uthash`, que vous devrez inclure dans votre projet.
+Le langage C ne dispose pas d'un support intégré pour les tableaux associatifs comme certains langages de plus haut niveau, mais vous pouvez les simuler à l'aide de structures et de hachage. Ci-dessous, un exemple simpliste utilisant une combinaison d'une structure et d'une fonction de hachage simple pour implémenter un tableau associatif permettant de stocker et d'accéder à des entiers par des clés de chaîne de caractères.
 
-Tout d'abord, définissez une structure pour contenir vos paires clé-valeur :
+D'abord, définissez une structure pour représenter une unique paire clé-valeur et une autre pour représenter le tableau associatif lui-même :
 
-```C
+```c
 #include <stdio.h>
-#include "uthash.h"
+#include <stdlib.h>
+#include <string.h>
+
+#define TABLE_SIZE 128
 
 typedef struct {
-    int id; // Ceci sera notre clé
-    char name[10]; // Ceci est la valeur associée à notre clé
-    UT_hash_handle hh; // Rend cette structure hachable
-} personne;
-```
+    char* key;
+    int value;
+} KeyValuePair;
 
-Ensuite, ajoutons quelques entrées et récupérons-les :
+typedef struct {
+    KeyValuePair* items[TABLE_SIZE];
+} AssocArray;
 
-```C
-int main() {
-    personne *mes_personnes = NULL, *s;
+unsigned int hash(char* key) {
+    unsigned long int value = 0;
+    unsigned int i = 0;
+    unsigned int key_len = strlen(key);
 
-    // Ajout d'une entrée
-    s = (personne*)malloc(sizeof(personne));
-    s->id = 1;
-    strcpy(s->name, "Alice");
-    HASH_ADD_INT(mes_personnes, id, s);
-
-    // Récupération d'une entrée
-    int user_id = 1;
-    HASH_FIND_INT(mes_personnes, &user_id, s);
-    if (s) {
-        printf("Trouvé : %s\n", s->name);
+    for (; i < key_len; ++i) {
+        value = value * 37 + key[i];
     }
-    
+
+    value = value % TABLE_SIZE;
+
+    return value;
+}
+
+void initArray(AssocArray* array) {
+    for (int i = 0; i < TABLE_SIZE; ++i) {
+        array->items[i] = NULL;
+    }
+}
+
+void insert(AssocArray* array, char* key, int value) {
+    unsigned int slot = hash(key);
+
+    KeyValuePair* item = (KeyValuePair*)malloc(sizeof(KeyValuePair));
+    item->key = strdup(key);
+    item->value = value;
+
+    array->items[slot] = item;
+}
+
+int find(AssocArray* array, char* key) {
+    unsigned int slot = hash(key);
+
+    if (array->items[slot]) {
+        return array->items[slot]->value;
+    }
+    return -1;
+}
+
+int main() {
+    AssocArray a;
+    initArray(&a);
+
+    insert(&a, "key1", 1);
+    insert(&a, "key2", 2);
+
+    printf("%d\n", find(&a, "key1")); // Sortie : 1
+    printf("%d\n", find(&a, "key2")); // Sortie : 2
+
     return 0;
 }
 ```
 
-Le résultat d'exécution serait :
+Cet exemple démontre les opérations de base : l'initialisation d'un tableau associatif, l'insertion de paires clé-valeur, et la recherche de valeurs par les clés. Notez que ce code manque de gestion de collisions et est destiné à des fins éducatives.
 
-```
-Trouvé : Alice
-```
+## Examen approfondi
 
-N'oubliez pas de libérer la mémoire allouée et de désallouer la table de hachage une fois terminé pour éviter les fuites de mémoire.
+Le concept des tableaux associatifs préexiste au C, mais la nature de bas niveau du langage ne les supporte pas directement comme types intégrés. Cela encourage une compréhension plus profonde des structures de données et des algorithmes, y compris les mécanismes de hachage pour une cartographie clé-valeur efficace. De nombreuses bibliothèques et cadres de travail en C offrent des approches plus sophistiquées pour implémenter des tableaux associatifs, comme `GHashTable` de GLib, qui fournit une implémentation robuste complète avec gestion des collisions, redimensionnement dynamique, et prise en charge de types de clés et de valeurs arbitraires.
 
-## Plongée profonde
-
-Bien que les tableaux associatifs ne soient pas natifs en C, des bibliothèques comme `uthash` comblent assez bien cette lacune, offrant une manière assez simple d'utiliser cette fonctionnalité. Historiquement, les développeurs C devaient implémenter leur version de ces structures de données, ce qui a mené à des implémentations variées et souvent complexes, surtout pour ceux qui commencent avec le langage.
-
-Rappelez-vous, l'efficacité de l'utilisation des tableaux associatifs en C dépend grandement de la manière dont la fonction de hachage distribue les valeurs à travers la table pour minimiser les collisions. Bien que des bibliothèques comme `uthash` offrent un bon équilibre entre la facilité d'utilisation et les performances, dans des applications critiques où la performance est primordiale, vous pourriez vouloir personnaliser ou implémenter votre propre table de hachage.
-
-Pour des applications nécessitant une efficacité maximale, des structures de données alternatives ou même d’autres langages de programmation avec un support intégré pour les tableaux associatifs pourraient être un meilleur choix. Cependant, pour de nombreuses situations, surtout lorsque vous travaillez déjà dans un environnement C, l'utilisation d'une bibliothèque comme `uthash` offre un équilibre pratique entre performance et commodité.
+Alors que la construction manuelle de tableaux associatifs en C peut être vue comme fastidieuse par rapport aux langues avec un support intégré, elle offre des aperçus inestimables sur le fonctionnement interne des structures de données, aiguisant les compétences d’un programmeur en résolution de problèmes et en optimisation. Cependant, pour le code de production ou des applications plus complexes, l'utilisation de bibliothèques existantes comme GLib est souvent une approche plus pratique et efficace en termes de temps.

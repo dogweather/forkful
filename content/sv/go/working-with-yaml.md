@@ -1,64 +1,115 @@
 ---
-title:                "Arbete med YAML"
-date:                  2024-01-19
-simple_title:         "Arbete med YAML"
-
+title:                "Att arbeta med YAML"
+date:                  2024-02-03T18:13:56.431863-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Att arbeta med YAML"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/go/working-with-yaml.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-YAML är ett format för data-serialisering, lättläst för människor. Programmerare använder det för konfigurationer och datalagring eftersom det är enkelt och tydligt.
 
-## Hur man gör:
-För att hantera YAML i Go, använd paketet `gopkg.in/yaml.v2` eller `gopkg.in/yaml.v3`. Exempelkod:
+Att arbeta med YAML i Go handlar om att tolka YAML-filer (YAML Ain't Markup Language), en människovänlig standard för data-serialisering, till Go-datastrukturer och vice versa. Programmerare gör detta för att utnyttja YAML:s enkelhet och läsbarhet för konfigurationsfiler, applikationsinställningar eller datautbyte mellan tjänster och komponenter skrivna på olika språk.
 
-```Go
+## Hur:
+
+För att arbeta med YAML i Go behöver du först importera ett bibliotek som stöder tolkning och serialisering av YAML, eftersom Gos standardbibliotek inte inkluderar direkt stöd för YAML. Det mest populära biblioteket för detta ändamål är "gopkg.in/yaml.v3". Så här kommer du igång:
+
+1. **Installera YAML-paketet:**
+
+```bash
+go get gopkg.in/yaml.v3
+```
+
+2. **Tolka YAML till en Go struct:**
+
+Definiera först en struct i Go som matchar strukturen på dina YAML-data.
+
+```go
 package main
 
 import (
-    "fmt"
-    "log"
-    "gopkg.in/yaml.v2"
+  "fmt"
+  "gopkg.in/yaml.v3"
+  "log"
 )
 
 type Config struct {
-    Title  string
-    Owner  struct {
-        Name string
-    }
+  Database struct {
+    User     string `yaml:"user"`
+    Password string `yaml:"password"`
+  } `yaml:"database"`
 }
 
 func main() {
-    data := `
-title: Example YAML
-owner:
-  name: Jan Andersson
+  var config Config
+  data := `
+database:
+  user: admin
+  password: secret
 `
-    var config Config
-    
-    err := yaml.Unmarshal([]byte(data), &config)
-    if err != nil {
-        log.Fatalf("error: %v", err)
-    }
-    fmt.Printf("--- config:\n%v\n", config)
+  err := yaml.Unmarshal([]byte(data), &config)
+  if err != nil {
+    log.Fatalf("error: %v", err)
+  }
+  fmt.Printf("Användare: %s\nLösenord: %s\n", config.Database.User, config.Database.Password)
 }
 ```
 
-När du kör programmet får du:
+**Exempel på utdata:**
 
 ```
---- config:
-{Example YAML {Jan Andersson}}
+Användare: admin
+Lösenord: secret
 ```
 
-## Fördjupning
-YAML, som står för "YAML Ain't Markup Language", började användas i början av 2000-talet som ett enklare alternativ till XML. Alternativ inkluderar JSON och TOML, men YAML är ofta föredraget för dess läsbarhet. Implementationen i Go kräver noggrann användning av indentering och förståelse för hur man mappar data till Go-strukturer.
+3. **Serialisera en Go struct till YAML:**
 
-## Se även
-- YAML-specifikation: https://yaml.org/spec/1.2/spec.html
-- Go yaml.v2-dokumentation: https://pkg.go.dev/gopkg.in/yaml.v2
-- Go yaml.v3-dokumentation: https://pkg.go.dev/gopkg.in/yaml.v3
-- En jämförelse mellan konfigureringsformat: https://atc.wiki/job-aid/compare-config-formats
+Så här konverterar du en Go struct tillbaka till YAML.
+
+```go
+package main
+
+import (
+  "fmt"
+  "gopkg.in/yaml.v3"
+  "log"
+)
+
+func main() {
+  config := Config{
+    Database: struct {
+      User     string `yaml:"user"`
+      Password string `yaml:"password"`
+    }{
+      User:     "admin",
+      Password: "supersecret",
+    },
+  }
+
+  data, err := yaml.Marshal(&config)
+  if err != nil {
+    log.Fatalf("error: %v", err)
+  }
+  fmt.Printf("---\n%s\n", string(data))
+}
+```
+
+**Exempel på utdata:**
+
+```yaml
+---
+database:
+  user: admin
+  password: supersecret
+```
+
+## Fördjupning:
+
+Användningen av YAML i mjukvaruutveckling har ökat på grund av dess läsbara format, vilket gör det till ett idealiskt val för konfigurationsfiler, dokumentation eller datautbytesformat. Jämfört med JSON, dess motpart, erbjuder YAML kommentarer, skalära typer och relationsfunktioner, vilket ger ett rikare ramverk för dataseriering. Dess flexibilitet och funktioner kommer dock med en kostnad av komplexitet i tolkningen, vilket leder till potentiella säkerhetsrisker om det inte hanteras med omsorg (t.ex. godtyckligt kodexekvering).
+
+Biblioteket "gopkg.in/yaml.v3" för Go är en robust lösning för YAML-behandling, som balanserar användarvänlighet med omfattande funktionsstöd. I nuläget, även om det finns alternativ som "go-yaml/yaml" (biblioteket bakom "gopkg.in/yaml.v3"), beror valet av version oftast på specifika projektbehov eller personlig preferens. När man hanterar stora datamängder eller prestandakritiska applikationer, kan programmerare överväga enklare format som JSON för deras minskade tolkningstid och minnesbehov. Dock, för konfigurationsfiler eller inställningar där människans läsbarhet och användarvänlighet är av största vikt, förblir YAML en stark utmanare i Go-ekosystemet.

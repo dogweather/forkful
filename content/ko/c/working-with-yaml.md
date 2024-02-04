@@ -1,67 +1,94 @@
 ---
-title:                "YAML 다루기"
-date:                  2024-01-19
-simple_title:         "YAML 다루기"
-
+title:                "YAML로 작업하기"
+date:                  2024-02-03T18:13:34.822859-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "YAML로 작업하기"
 tag:                  "Data Formats and Serialization"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/c/working-with-yaml.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (무엇과 왜?)
-YAML은 데이터 직렬화 형식입니다. YAML은 구성, 설정, 메시지 전송에 널리 사용되며 JSON이나 XML보다 읽기 쉽다는 장점이 있습니다. 프로그래머들은 사용자 친화적인 데이터 저장 및 전송을 위해 YAML을 다룹니다.
+## 무엇이며 왜?
 
-## How to: (어떻게 하나요?)
-C에서 YAML을 다루려면 외부 라이브러리를 사용해야 합니다. 예를 들어, `libyaml`이 있습니다. 아래 예제는 YAML 파일을 읽고 파싱한다.
+"YAML Ain't Markup Language"의 약자인 YAML은 모든 종류의 애플리케이션에 사용할 수 있는 인간이 읽을 수 있는 데이터 직렬화 표준이며, 설정 파일부터 데이터 저장까지 다양한 용도로 사용됩니다. 프로그래머들은 설정 파일이나 언어 및 시스템 간의 데이터 교환을 위한 쉽게 읽고 쓸 수 있는 포맷이 필요할 때 종종 YAML을 사용합니다.
 
-```C
+## 방법:
+
+C에서 YAML을 다루려면 표준 C 라이브러리는 YAML 파싱이나 직렬화를 직접 지원하지 않기 때문에 라이브러리가 필요합니다. C용 가장 인기 있는 YAML 라이브러리 중 하나는 `libyaml`이며, YAML을 파싱하고 생성하기 위한 저수준 및 고수준 인터페이스를 제공합니다. 아래는 `libyaml`을 사용하여 단순한 YAML 파일을 파싱하는 방법의 예입니다:
+
+**첫째**, `libyaml` 라이브러리를 설치해야 합니다. Unix와 유사한 시스템에서는 보통 패키지 관리자를 통해 설치할 수 있습니다. 예를 들어, 우분투에서는:
+
+```bash
+sudo apt-get install libyaml-dev
+```
+
+**다음으로**, `config.yaml`이라는 이름의 간단한 YAML 파일을 고려해봅시다:
+
+```yaml
+name: John Doe
+age: 29
+married: false
+```
+
+**여기** C에서 이 YAML 파일을 파싱하는 기본 예제가 있습니다:
+
+```c
 #include <yaml.h>
+#include <stdio.h>
+#include <stdlib.h>
 
-int main(int argc, char** argv) {
-    FILE *fh = fopen("example.yaml", "r");
+void process_yaml_file(const char *filename) {
+    FILE *fh = fopen(filename, "rb");
     yaml_parser_t parser;
     yaml_event_t event;
 
-    /* Initialize parser */
-    if(!yaml_parser_initialize(&parser))
-        fputs("Failed to initialize parser!\n", stderr);
-    if(fh == NULL)
+    if (!yaml_parser_initialize(&parser))
+        fputs("Failed to initialize YAML parser!\n", stderr);
+
+    if (fh == NULL)
         fputs("Failed to open file!\n", stderr);
-    
-    /* Set input file */
+
     yaml_parser_set_input_file(&parser, fh);
 
-    /* Read the YAML events */
-    do {
-        if (!yaml_parser_parse(&parser, &event)) {
-            printf("Parser error %d\n", parser.error);
+    while (1) {
+        if (!yaml_parser_parse(&parser, &event))
             break;
+
+        if (event.type == YAML_SCALAR_EVENT) {
+            printf("Value: %s\n", event.data.scalar.value);
         }
-        
-        // 처리 로직은 여기에...
-        
-        if(event.type != YAML_STREAM_END_EVENT)
-            yaml_event_delete(&event);
-    } while(event.type != YAML_STREAM_END_EVENT);
-    
-    /* Cleanup */
-    yaml_event_delete(&event);
+
+        if (event.type == YAML_STREAM_END_EVENT)
+            break;
+
+        yaml_event_delete(&event);
+    }
+
     yaml_parser_delete(&parser);
     fclose(fh);
+}
 
+int main() {
+    process_yaml_file("config.yaml");
     return 0;
 }
 ```
 
-이 코드는 `example.yaml` 파일을 열고, YAML 이벤트를 읽어 들입니다.
+이 간단한 프로그램은 YAML 파일을 열고, YAML 파서를 초기화하며, 파일을 읽어 스칼라 값(이 예제에서는 우리의 간단한 YAML의 필드)을 출력합니다. 이 간단한 예제에서는 오류 검사가 최소한으로 이루어지며, 생산 코드에서는 더 견고해야 합니다.
 
-## Deep Dive (심층 분석)
-YAML은 "YAML Ain't Markup Language"(원래는 "Yet Another Markup Language")의 재귀 약어입니다. 2001년에 개발되었으며, 데이터를 계층 구조로 표현할 수 있게 해줍니다. YAML은 JSON과 호환되는데, JSON 문법은 YAML의 부분 집합입니다. `libyaml`는 C 언어로 작성된 YAML 1.1 파서 및 방출기입니다. 대안으로는 `yaml-cpp`, `PyYAML` 등이 있습니다. 성능은 라이브러리마다 차이가 있으므로 사용 사례에 따라 적절한 것을 선택해야 합니다.
+`config.yaml`을 가지고 프로그램을 실행하면 아래와 같은 출력을 얻습니다:
 
-## See Also (참고 자료)
-- YAML 공식 웹사이트: https://yaml.org
-- libyaml 깃허브: https://github.com/yaml/libyaml
-- yaml-cpp 깃허브: https://github.com/jbeder/yaml-cpp
-- PyYAML: https://pyyaml.org
+```plaintext
+Value: John Doe
+Value: 29
+Value: false
+```
+
+## 깊이 있게 들여다보기
+
+YAML은 2001년에 처음 출시되었으며 XML이나 JSON 같은 다른 데이터 직렬화 형식보다 더 읽기 쉽고 사용자 친화적이도록 설계되었으며, 설계 철학을 위해 C, Perl, Python 같은 여러 언어에서 빌려왔습니다. 가독성과 인간이 수정하기 쉬움에도 불구하고 들여쓰기에 의존하고 참조와 사용자 정의 유형을 포함한 광범위한 기능 세트로 인해 프로그래밍적으로 파싱하기 복잡할 수 있습니다.
+
+`libyaml`은 C에서 YAML을 파싱하고 생성하기 위한 강력한 저수준 접근을 제공하지만, 장황한 API로 인해 간단한 작업에는 번거로울 수 있습니다. 이러한 이유로, 일부 프로그래머들은 코드 오버헤드가 최소화된 효율적인 파싱이 우선시될 때 C에서 작업할 때 JSON과 같은 다른 데이터 직렬화 형식이나 더 높은 수준의 라이브러리를 사용하는 것을 선호합니다. 그러나 YAML은 설정 파일과 사람이 읽기에 최적인 상황에서 인기 있는 선택이 계속됩니다. TinyYAML과 같은 대안이나 고수준 인터프리터(예: Python이나 Lua의 내장)를 사용하는 것은 특정 애플리케이션을 위한 편의성과 성능 요구 사이의 균형을 제공할 수 있습니다.

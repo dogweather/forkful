@@ -1,60 +1,75 @@
 ---
-title:                "Samenvoegen van strings"
-date:                  2024-01-28T21:56:37.247819-07:00
+title:                "Strings samenvoegen"
+date:                  2024-02-03T17:53:58.695258-07:00
 model:                 gpt-4-0125-preview
-simple_title:         "Samenvoegen van strings"
-
+simple_title:         "Strings samenvoegen"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/c/concatenating-strings.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Wat & Waarom?
 
-Strings aan elkaar koppelen betekent dat je ze aan elkaar plakt om een nieuwe string te vormen. Programmeurs doen dit om tekst op dynamische wijzen te combineren, zoals het samenstellen van berichten of het genereren van bestandspaden.
+Stringconcatenatie in C omvat het samenvoegen van twee of meer strings achter elkaar om een nieuwe string te vormen. Programmeurs voeren deze bewerking uit om dynamisch strings te construeren tijdens runtime, essentieel voor het creëren van betekenisvolle berichten, bestandspaden, of enige data samengesteld uit verschillende stringbronnen.
 
-## Hoe:
+## Hoe doe je dat:
 
-In C gebruik je de `strcat` functie uit `string.h` om strings aan elkaar te koppelen. Maar let op, je hebt een bestemmingsarray nodig die groot genoeg is om het gecombineerde resultaat te bevatten.
+In C zijn strings arrays van karakters die eindigen met een null-karakter (`\0`). In tegenstelling tot in hogere programmeertalen, biedt C geen ingebouwde functie voor stringconcatenatie. In plaats daarvan gebruik je de `strcat()` of `strncat()` functies uit de `<string.h>` bibliotheek.
 
-```C
+Hier is een eenvoudig voorbeeld met `strcat()`:
+
+```c
 #include <stdio.h>
 #include <string.h>
 
 int main() {
     char bestemming[50] = "Hallo, ";
-    char bron[] = "wereld!";
+    char bron[] = "Wereld!";
 
-    // Koppel `bron` aan `bestemming`
     strcat(bestemming, bron);
 
-    // Geef de gekoppelde string weer
-    printf("%s\n", bestemming); // "Hallo, wereld!"
-
+    printf("%s\n", bestemming);  // Uitvoer: Hallo, Wereld!
     return 0;
 }
 ```
 
-Zorg ervoor dat je bestemmingsarray niet overloopt. Dat is jouw taak, want C doet dat niet voor je.
+De `strcat()` functie neemt twee argumenten: de bestemmingsstring (die genoeg ruimte moet hebben om het samengevoegde resultaat te bevatten) en de bronstring. Vervolgens voegt het de bronstring toe aan de bestemmingsstring.
 
-## Dieper Duiken
+Voor meer controle over het aantal karakters dat wordt samengevoegd, is `strncat()` veiliger in gebruik:
 
-Aaneenschakeling is een basis tekstbewerking sinds de vroege computertechniek. In C doen functies zoals `strcat` en `strncat` (die het aantal aaneengeschakelde karakters beperkt) het zware werk. C beheert het geheugen niet voor je, dus onthoud om genoeg ruimte toe te wijzen voordat je gaat koppelen.
+```c
+#include <stdio.h>
+#include <string.h>
 
-Alternatieven? Oh, zeker. Als je je zorgen maakt over bufferoverflows, kun je `snprintf` gebruiken. Het is veiliger omdat het je toestaat om de maximale grootte van de outputbuffer te specificeren:
+int main() {
+    char bestemming[50] = "Hallo, ";
+    char bron[] = "Wereld!";
+    int num = 3; // Aantal karakters om toe te voegen
 
-```C
-char buffer[50];
-snprintf(buffer, 50, "%s%s", "Hallo, ", "wereld!");
+    strncat(bestemming, bron, num);
+
+    printf("%s\n", bestemming);  // Uitvoer: Hallo, Wer
+    return 0;
+}
 ```
 
-Wat betreft de details, `strcat` werkt door het einde van de eerste string te vinden en daar karakter voor karakter de tweede string te kopiëren. Eenvoudig, maar het handmatige geheugenbeheer maakt het gevoelig voor fouten zoals bufferoverlopen.
+Dit beperkt de concatenatie tot de eerste `num` karakters van de bronstring, wat helpt bufferoverlopen te voorkomen.
 
-## Zie Ook
+## Diepgaande Duik
 
-- C Standard Library documentatie voor `strcat`: https://en.cppreference.com/w/c/string/byte/strcat
-- Veilig coderen in C: https://wiki.sei.cmu.edu/confluence/display/c/SEI+CERT+C+Coding+Standard
-- Leer meer over bufferoverlopen: https://owasp.org/www-community/attacks/Buffer_overflow
+De functies `strcat()` en `strncat()` maken deel uit van de standaard C bibliotheek sinds haar oprichting, wat de laag-niveau aard van de taal weerspiegelt die handmatig beheer van strings en geheugen vereist. In tegenstelling tot veel moderne programmeertalen die strings behandelen als eersterangsobjecten met ingebouwde concatenatieoperators (zoals `+` of `.concat()`), vereist de aanpak van C een diepgaander begrip van pointers, geheugentoewijzing en potentiële valkuilen zoals bufferoverlopen.
+
+Hoewel `strcat()` en `strncat()` veel gebruikt worden, worden ze vaak bekritiseerd vanwege hun potentieel om beveiligingskwetsbaarheden te creëren als ze niet zorgvuldig worden gebruikt. Bufferoverlopen, waarbij gegevens het toegewezen geheugen overschrijden, kunnen leiden tot crashes of worden uitgebuit voor willekeurige code-uitvoering. Als gevolg hiervan richten programmeurs zich steeds meer op veiligere alternatieven, zoals `snprintf()`, dat door het beperken van het aantal karakters geschreven naar de bestemmingsstring op basis van de grootte, voorspelbaarder gedrag biedt:
+
+```c
+char bestemming[50] = "Hallo, ";
+char bron[] = "Wereld!";
+snprintf(bestemming + strlen(bestemming), sizeof(bestemming) - strlen(bestemming), "%s", bron);
+```
+
+Deze methode is meer omslachtig maar aanzienlijk veiliger en benadrukt een verschuiving in C-programmeerpraktijken richting het prioriteren van beveiliging en robuustheid boven bondigheid.
+
+Ondanks deze uitdagingen is stringconcatenatie in C een fundamentele vaardigheid, cruciaal voor effectief programmeren in de taal. Het begrijpen van de nuances en bijbehorende risico's is de sleutel tot het beheersen van C-programmering.

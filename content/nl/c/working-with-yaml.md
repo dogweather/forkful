@@ -1,86 +1,94 @@
 ---
 title:                "Werken met YAML"
-date:                  2024-01-28T22:11:48.681183-07:00
+date:                  2024-02-03T18:13:38.715801-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Werken met YAML"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/c/working-with-yaml.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Wat & Waarom?
 
-YAML is een voor mensen leesbaar gegevensserialisatieformaat dat wordt gebruikt voor configuratiebestanden, gegevensuitwisseling tussen talen en gegevensopslag. Programmeurs kiezen voor YAML vanwege de eenvoud en leesbaarheid, waardoor het een fluitje van een cent is om te gebruiken voor snelle configuratie- en ontwikkelingstaken.
+YAML, wat staat voor "YAML Ain't Markup Language", is een voor mensen leesbare standaard voor gegevensserialisatie die voor allerlei toepassingen kan worden gebruikt, van configuratiebestanden tot gegevensopslag. Programmeurs werken vaak met YAML wanneer ze een makkelijk te lezen en te schrijven formaat nodig hebben voor configuratiebestanden of gegevensuitwisseling tussen talen en systemen.
 
-## Hoe:
+## Hoe te:
 
-C heeft geen ingebouwde YAML-parser, dus we gebruiken een bibliotheek zoals `libyaml` om YAML-bestanden te verwerken. Hier is een eenvoudig voorbeeld van het parseren van een YAML-bestand in C.
+Werken met YAML in C vereist een bibliotheek, aangezien de standaard C-bibliotheek geen directe ondersteuning biedt voor YAML-parsing of -serialisatie. Een van de meest populaire YAML-bibliotheken voor C is `libyaml`, die zowel low-level als high-level interfaces biedt voor het parsen en uitzenden van YAML. Hieronder staat een voorbeeld van hoe je een eenvoudig YAML-bestand kunt parsen met `libyaml`:
 
-Eerst de bibliotheek includen:
-```C
-#include <yaml.h>
+**Ten eerste**, moet je de `libyaml`-bibliotheek installeren. Als je op een op Unix lijkend systeem zit, kun je het meestal via je pakketbeheerder installeren. Bijvoorbeeld, op Ubuntu:
+
+```bash
+sudo apt-get install libyaml-dev
 ```
 
-Vervolgens een parser initialiseren, een bestand openen en beginnen met parseren:
-```C
-FILE *fh = fopen("config.yaml", "r");
-yaml_parser_t parser;
-yaml_parser_initialize(&parser);
-yaml_parser_set_input_file(&parser, fh);
+**Vervolgens**, beschouw een eenvoudig YAML-bestand genaamd `config.yaml`:
 
-yaml_event_t event;
-/* De eventreeks lezen */
-while (true) {
-    if (!yaml_parser_parse(&parser, &event)) {
-        printf("Parserfout %d\n", parser.error);
-        exit(EXIT_FAILURE);
-    }
-
-    if (event.type == YAML_SCALAR_EVENT) {
-        printf("Kreeg scalar (waarde): %s\n", event.data.scalar.value);
-    }
-
-    if (event.type == YAML_STREAM_END_EVENT) {
-        break;
-    }
-
-    yaml_event_delete(&event);
-}
-
-/* Opruimen */
-yaml_parser_delete(&parser);
-fclose(fh);
-```
-
-Voorbeeldinhoud `config.yaml`:
 ```yaml
 name: John Doe
-age: 30
+age: 29
+married: false
 ```
 
-Voorbeelduitvoer:
+**Hier is** een basisvoorbeeld van hoe dit YAML-bestand in C te parsen:
+
+```c
+#include <yaml.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+void process_yaml_file(const char *filename) {
+    FILE *fh = fopen(filename, "rb");
+    yaml_parser_t parser;
+    yaml_event_t event;
+
+    if (!yaml_parser_initialize(&parser))
+        fputs("YAML-parser initialiseren mislukt!\n", stderr);
+
+    if (fh == NULL)
+        fputs("Kan bestand niet openen!\n", stderr);
+
+    yaml_parser_set_input_file(&parser, fh);
+
+    while (1) {
+        if (!yaml_parser_parse(&parser, &event))
+            break;
+
+        if (event.type == YAML_SCALAR_EVENT) {
+            printf("Waarde: %s\n", event.data.scalar.value);
+        }
+
+        if (event.type == YAML_STREAM_END_EVENT)
+            break;
+
+        yaml_event_delete(&event);
+    }
+
+    yaml_parser_delete(&parser);
+    fclose(fh);
+}
+
+int main() {
+    process_yaml_file("config.yaml");
+    return 0;
+}
 ```
-Kreeg scalar (waarde): name
-Kreeg scalar (waarde): John Doe
-Kreeg scalar (waarde): age
-Kreeg scalar (waarde): 30
+
+Dit eenvoudige programma opent een YAML-bestand, initialiseert de YAML-parser en leest het bestand, waarbij de scalairwaarden worden afgedrukt (in dit voorbeeld, de velden van onze eenvoudige YAML). Merk op dat de foutcontrole minimaal is in dit eenvoudige voorbeeld en robuuster zou moeten zijn in productiecode.
+
+Het uitvoeren van het programma met onze `config.yaml` zal uitvoeren:
+
+```plaintext
+Waarde: John Doe
+Waarde: 29
+Waarde: false
 ```
 
 ## Diepere Duik
 
-YAML staat voor "YAML Ain't Markup Language." Het is begin jaren 2000 ontstaan als alternatief voor XML voor configuratiebestanden, met als doel menselijke leesbaarheid. YAML wordt gebruikt in veel tools (zoals Docker, Kubernetes, enz.) en wordt vaak verkozen boven JSON voor configuraties vanwege de ondersteuning voor commentaren en schonere syntaxis.
+YAML werd voor het eerst uitgebracht in 2001 en is ontworpen om leesbaarder en gebruiksvriendelijker te zijn dan andere gegevensserialisatieformaten zoals XML of JSON, waarbij het leent van verschillende talen zoals C, Perl en Python voor zijn ontwerpfilosofie. Ondanks de voordelen in leesbaarheid en gemak van menselijke aanpassing, kan YAML complex zijn om programmatisch te parsen vanwege het beroep op inspringing en de uitgebreide functionaliteit, inclusief verwijzingen en aangepaste typen.
 
-Veelgebruikte C-alternatieven voor het werken met YAML zijn `libyaml` en `yaml-cpp` (hoewel de laatste voor C++ is). Deze bibliotheken stellen C/C++-programma's in staat om YAML-gegevens te serialiseren en te deserialiseren.
-
-Bij het parsen van YAML bouwt uw programma een boom in het geheugen op. Knopen in deze boom kunnen mappings (zoals woordenboeken of hash-tabellen), sequenties (zoals arrays) of scalairs (strings, getallen, enz.) zijn. De parser van libyaml is event-gedreven, wat betekent dat het de YAML-stream leest en events uitgeeft voor elke aangetroffen YAML-structuur. Het afhandelen van deze events stelt u in staat om de overeenkomstige gegevensstructuur te bouwen of ermee te werken.
-
-## Zie Ook
-
-- `libyaml` GitHub: https://github.com/yaml/libyaml
-- YAML officiële specificaties: https://yaml.org/spec/1.2/spec.html
-- "Programmeren met libyaml" tutorial: https://libyaml.docsforge.com/master/programming-with-libyaml/
-- Vergelijking van gegevensserialisatieformaten: https://nl.wikipedia.org/wiki/Comparison_of_data-serialization_formats
+Hoewel `libyaml` robuuste, low-level toegang biedt tot het parsen en uitzenden van YAML in C, kan het omslachtig zijn voor eenvoudige taken vanwege de uitgebreide API. Om deze redenen geven sommige programmeurs de voorkeur aan het gebruik van hogere-niveau bibliotheken of zelfs andere gegevensserialisatieformaten zoals JSON, wanneer ze in C werken, vooral wanneer performante parsing met minimale code overhead een prioriteit is. Echter, YAML blijft een populaire keuze voor configuratiebestanden en situaties waar menselijke leesbaarheid van het grootste belang is. Alternatieven zoals TinyYAML of het inbedden van een high-level interpreter (bijv. het embedden van Python of Lua) kunnen meer gemak bieden voor specifieke toepassingen, een evenwicht zoekend tussen gebruiksgemak en prestatiebehoeften.

@@ -1,61 +1,72 @@
 ---
-title:                "Virheenjäljitystulosteiden tulostaminen"
-date:                  2024-01-20T17:51:56.000464-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Virheenjäljitystulosteiden tulostaminen"
-
+title:                "Tulostetaan virheenjäljitystietoja"
+date:                  2024-02-03T18:05:24.992621-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Tulostetaan virheenjäljitystietoja"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c/printing-debug-output.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? / Mitä & Miksi?
+## Mikä & Miksi?
 
-Koodia kirjoittaessa debug-tulostus auttaa virheiden jäljittämisessä ilmoittamalla ohjelman tilasta. Se on kehittäjän työkalu ymmärtää, missä ja miksi koodi epäonnistuu tai käyttäytyy odottamattomasti.
+Debug-tulosteen tulostaminen tarkoittaa väliaikaisten, informatiivisten lokiviestien tuottamista, jotka voivat auttaa ohjelmoijia ymmärtämään ohjelman kulkua ja tilaa sen suorituksen aikana. Ohjelmoijat tekevät tätä tunnistaakseen ja diagnosoidakseen ohjelmistobugeja tai odottamattomia käyttäytymisiä ohjelman logiikassa.
 
-## How to: / Kuinka:
+## Kuinka:
+
+C:ssä yleisin tapa tulostaa debug-tuloste on käyttämällä `printf`-funktiota standardin I/O-kirjastosta. `printf`-funktio mahdollistaa muotoillun tulosteen standardilähtölaitteelle, tyypillisesti näytölle. Tässä on yksinkertainen esimerkki:
 
 ```c
 #include <stdio.h>
 
 int main() {
-    int testVariable = 5;
-    printf("Debug: testVariable arvo on %d\n", testVariable);
-    // Do something with testVariable
+    int x = 5;
+    printf("Debug: x:n arvo on %d\n", x);
+    
+    // Ohjelmasi logiikka täällä
+    
     return 0;
 }
 ```
 
-Tulostaisi: `Debug: testVariable arvo on 5`
+Esimerkkituloste:
+
+```
+Debug: x:n arvo on 5
+```
+
+Monimutkaisempaa debug-tulostusta varten saatat haluta sisällyttää tiedostonimen ja rivinumeron tiedot. Tämä voidaan tehdä käyttämällä `__FILE__` ja `__LINE__` esimääriteltyjä makroja näin:
 
 ```c
-// Monimutkaisemmassa skenaariossa voit käyttää makroa helpottamaan:
-#include <stdio.h>
-
-#define DEBUG_PRINT(fmt, ...) fprintf(stderr, "DEBUG: %s:%d:%s(): " fmt, \
-    __FILE__, __LINE__, __func__, __VA_ARGS__)
+#define DEBUG_PRINT(fmt, args...) fprintf(stderr, "DEBUG: %s:%d: " fmt, __FILE__, __LINE__, ##args)
 
 int main() {
-    int testVariable = 5;
-    DEBUG_PRINT("testVariable arvo on %d\n", testVariable);
-    // Do something with testVariable
+    int testiarvo = 10;
+    DEBUG_PRINT("Testiarvo on %d\n", testiarvo);
+    
+    // Ohjelmasi logiikka täällä
+    
     return 0;
 }
 ```
 
-Tulostaisi esim.: `DEBUG: example.c:10:main(): testVariable arvo on 5`
+Esimerkkituloste:
 
-## Deep Dive / Syväsukellus:
+```
+DEBUG: esimerkki.c:6: Testiarvo on 10
+```
 
-Debug-tulostuksen konsepti on vanha kuin itse ohjelmointi. Virheenjäljitys on aina ollut osa ohjelmistokehitystä. Alkuaikoina ohjelmoijat saattoivat lukea reikänauhoja tai tarkkailla valoja ja katkaisijoita. Nykyisin voimme valita monista välineistä ja tekniikoista. Esimerkiksi `printf`-tyyppiset funktiot C-kielessä tai rikkaammat työkalut kuten GDB.
+Huomaa, että tässä esimerkissä käytämme `fprintf`:ää tulostamaan standardivirhevirtaan (`stderr`), mikä on usein sopivampi debug-viesteille.
 
-`printf`-debugging on yksinkertaista ja toimii melkein missä tahansa ympäristössä. Alternatiiveina ovat viralliset debuggerit tai kirjastot, jotka tarjoavat loggausominaisuuksia, kuten syslog Linux-ympäristössä.
+## Syväluotaus
 
-Toteutuksen yksityiskohdissa merkittävää on muistaa puhtaus ja selkeys koodissa. Liian monta debug-tulostusta voi sotkea koodin ymmärtämisen ja virheenjäljityksen. Kun virheet on löydetty ja korjattu, on hyvä poistaa tai kommentoida tarpeettomat debug-tulosteet.
+Historiallisesti C:n debuggaustekniikat ovat olleet manuaalisia ja alkeellisia johtuen kielenclose-to-the-metal-filosofiasta ja iästä. Kun taas modernit kielet saattavat sisältää monimutkaisia, sisäänrakennettuja debuggauskirjastoja tai luottaa vahvasti Integroituun Kehitysympäristöön (IDE) -ominaisuuksiin, C-ohjelmoijat turvautuvat usein manuaalisesti lisäämään tulostuslauseita, kuten yllä on esitetty, jäljittääkseen ohjelmansa suorituksen.
 
-## See Also / Lue Lisää:
+Yksi asia, josta debug-tulosteiden kanssa tulee varoa, on niiden potentiaali sotkea tulostetta ja johtaa suorituskykyongelmiin, erityisesti jos ne jätetään tahattomasti tuotantokoodiin. Näistä syistä ehdollinen käännös (esim., `#ifdef DEBUG ... #endif`) saattaa olla parempi lähestymistapa, mahdollistaen debug-lauseiden sisällyttämisen tai poissulkemisen käännösaikaisilla lipuilla.
 
-- C Standard Library documentation: https://en.cppreference.com/w/c
-- GNU Debugger (GDB): https://www.gnu.org/software/gdb/
-- Effective debugging strategies: https://www.cs.swarthmore.edu/~newhall/unixhelp/howto_gdb.php
+Lisäksi nyt on saatavilla kehittyneempiä työkaluja ja kirjastoja C:n debuggaamiseen, kuten GDB (GNU Debugger) ja Valgrind muistivuotojen havaitsemiseen. Nämä työkalut tarjoavat integroidumman lähestymistavan debuggaamiseen ilman tarvetta muokata koodia lisäämällä tulostuslauseita.
+
+Kuitenkin `printf`:n debuggauksen yksinkertaisuus ja välitön palaute eivät ole vähäpätöisiä, tehden siitä hyödyllisen työkalun ohjelmoijan työkalupakkiin, erityisesti niille, jotka vasta opettelevat C:n monimutkaisuuksia.

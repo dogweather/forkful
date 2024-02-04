@@ -1,56 +1,91 @@
 ---
 title:                "Extraindo substrings"
-date:                  2024-01-20T17:45:42.560776-07:00
-model:                 gpt-4-1106-preview
+date:                  2024-02-03T17:56:27.899929-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Extraindo substrings"
-
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/go/extracting-substrings.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## O Que é & Porquê?
-Extrair substrings é o processo de pegar pedaços de uma string. Programadores fazem isso para manipular e usar apenas as partes relevantes dos dados de texto.
+## O que & Por quê?
 
-## Como Fazer:
-Go tem várias maneiras de lidar com substrings. Aqui estão exemplos práticos:
+Extrair substrings envolve recuperar porções específicas de uma string com base em suas posições. Programadores frequentemente realizam essa operação para processar ou manipular dados de texto de forma eficiente, como analisar entradas, validar formatos ou preparar saídas.
+
+## Como fazer:
+
+Em Go, o tipo `string` é um slice somente leitura de bytes. Para extrair substrings, utiliza-se primariamente a sintaxe de `slice`, juntamente com a função integrada `len()` para verificação de comprimento e o pacote `strings` para operações mais complexas. Aqui está como você pode fazer isso:
+
+### Fatiamento Básico
 
 ```go
 package main
 
 import (
-	"fmt"
+    "fmt"
 )
 
 func main() {
-	// Dada uma string
-	str := "Olá, programadores!"
-
-	// Extrair uma substring usando slicing
-	substr := str[7:20]
-	fmt.Println(substr) // Saída: programadores!
-
-	// Extrair uma substring desde o início até 'n' caracteres
-	inicio := str[:5]
-	fmt.Println(inicio) // Saída: Olá, 
-
-	// Extrair uma substring do 'n' caractere até o final
-	fim := str[5:]
-	fmt.Println(fim) // Saída: programadores!
+    str := "Hello, World!"
+    // Extrai "World"
+    subStr := str[7:12]
+    
+    fmt.Println(subStr) // Saída: World
 }
 ```
-Lembre-se, Go trata strings como um slice de bytes e não de caracteres. Se você lidar com caracteres UTF-8, precisará de um pouco mais de atenção.
 
-## Aprofundando
-No começo, extrair substrings pode parecer trivial, mas em Go, é uma arte que respeita a codificação de caracteres e a imutabilidade de strings. Antes do Go, linguagens como Python e Java já permitiam manipulações de strings, mas Go traz uma abordagem baseada em slices que é eficiente, mas requer atenção com caracteres multibyte, como os acentuados ou os ideogramas asiáticos.
+### Usando o Pacote `strings`
 
-Outras formas de trabalhar com substrings envolvem pacotes como "strings" ou "bytes", especialmente quando as operações se tornam mais complexas que o slicing básico. A função `strings.Split()` é um exemplo clássico. No entanto, ao invés de lidar com índices, você lida com divisores de strings.
+Para extração avançada de substrings, como extrair strings após ou antes de uma substring específica, você pode usar o pacote `strings`.
 
-Detalhes de implementação são essenciais. Go usa UTF-8 como padrão, então cada "char"(rune) pode ter um tamanho variável de bytes. Isso significa que você não pode simplesmente pegar uma faixa de índices sem potencialmente cortar um caractere pela metade.
+```go
+package main
 
-## Veja Também
-- A documentação oficial sobre strings em Go: https://golang.org/pkg/strings/
-- O pacote de unicode para lidar com runes: https://golang.org/pkg/unicode/
-- Artigo sobre strings em Go e como elas são diferentes: https://blog.golang.org/strings
-- Para uma exploração mais profunda no processamento de strings e caracteres em Go: https://golang.org/pkg/unicode/utf8/
+import (
+    "fmt"
+    "strings"
+)
+
+func main() {
+    str := "name=John Doe"
+    // Extrai substring após "="
+    subStr := strings.SplitN(str, "=", 2)[1]
+    
+    fmt.Println(subStr) // Saída: John Doe
+}
+```
+
+É essencial notar que strings em Go são codificadas em UTF-8 e um slice direto de bytes nem sempre resultará em strings válidas se incluírem caracteres de múltiplos bytes. Para suporte a Unicode, considere usar `range` ou o pacote `utf8`.
+
+### Lidando com Caracteres Unicode
+
+```go
+package main
+
+import (
+    "fmt"
+    "unicode/utf8"
+)
+
+func main() {
+    str := "Hello, 世界"
+    // Encontrando substring considerando caracteres Unicode
+    runeStr := []rune(str)
+    subStr := string(runeStr[7:])
+    
+    fmt.Println(subStr) // Saída: 世界
+}
+```
+
+## Aprofundamento
+
+Extrair substrings em Go é direto, graças à sua sintaxe de slice e biblioteca padrão abrangente. Historicamente, linguagens de programação anteriores forneciam funções ou métodos mais diretos para lidar com tal manipulação de texto. No entanto, a abordagem do Go enfatiza segurança e eficiência, particularmente com suas strings imutáveis e manuseio explícito de caracteres Unicode através de runes.
+
+Embora o fatiamento direto beneficie da eficiência de desempenho, herda a complexidade de lidar diretamente com caracteres UTF-8. A introdução do tipo `rune` permite que programas em Go manuseiem texto Unicode de forma segura, tornando-o uma alternativa poderosa para aplicações internacionais.
+
+Além disso, programadores vindos de outras linguagens podem sentir falta de funções integradas de manipulação de strings de alto nível. Ainda assim, os pacotes `strings` e `bytes` na biblioteca padrão do Go oferecem um conjunto rico de funções que, embora requeiram um pouco mais de código padrão, fornecem opções poderosas para o processamento de strings, incluindo a extração de substrings.
+
+Em essência, as escolhas de design do Go em torno da manipulação de strings refletem seus objetivos de simplicidade, desempenho e segurança ao lidar com dados de texto modernos e internacionalizados. Embora possa requerer um pequeno ajuste, o Go oferece ferramentas eficazes e eficientes para lidar com a extração de substrings e muito mais.

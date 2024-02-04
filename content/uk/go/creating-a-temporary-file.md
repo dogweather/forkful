@@ -1,70 +1,85 @@
 ---
 title:                "Створення тимчасового файлу"
-date:                  2024-01-20T17:40:29.885973-07:00
-model:                 gpt-4-1106-preview
+date:                  2024-02-03T17:55:59.726332-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Створення тимчасового файлу"
-
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/go/creating-a-temporary-file.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Що таке & Навіщо?
+## Що та Чому?
 
-Creating a temporary file is setting up a short-lived storage in the computer's file system. Programmers do it to save data that's only needed during a particular operation or session — like a scratchpad for the computer's thoughts.
+Створення тимчасового файлу в Go дозволяє генерувати непостійний файл, призначений для короткочасного використання, головним чином для завдань, таких як зберігання проміжних даних або допомога в пакетних операціях. Програмісти використовують цю функцію для безпечного оброблення даних, не впливаючи на постійну файлову систему і не потребуючи ручного очищення.
 
-## How to:
-Як це зробити:
+## Як це зробити:
 
-```Go
+У Go пакет `ioutil` спочатку надавав утиліти для створення тимчасових файлів. Однак, починаючи з Go 1.16, рекомендовано використовувати функції пакетів `os` і `io/ioutil` у більш організованій формі. Тепер за впорядкування тимчасових файлів віддається перевага пакетам `os` та `io`.
+
+Ось покрокове керівництво до створення, запису та видалення тимчасового файлу:
+
+1. **Створення тимчасового файлу:**
+
+Використовуючи функцію `os.CreateTemp`, ви можете створити тимчасовий файл. Без вказання директорії використовується стандартна тимчасова папка вашої ОС.
+
+```go
 package main
 
 import (
-	"fmt"
-	"io/ioutil"
-	"os"
+    "io/ioutil"
+    "log"
+    "os"
 )
 
 func main() {
-	// Create a temporary file
-	tmpfile, err := ioutil.TempFile("", "sample")
-	if err != nil {
-		log.Fatal(err)
-	}
+    tmpFile, err := ioutil.TempFile("", "example.*.txt")
+    if err != nil {
+        log.Fatal(err)
+    }
+    log.Printf("Створений тимчасовий файл: %s\n", tmpFile.Name())
 
-	// Remember to clean up!
-	defer os.Remove(tmpfile.Name())
-
-	// Write something to the file
-	content := []byte("Temporary file's content.\n")
-	if _, err := tmpfile.Write(content); err != nil {
-		log.Fatal(err)
-	}
-
-	// Close the file
-	if err := tmpfile.Close(); err != nil {
-		log.Fatal(err)
-	}
-
-	fmt.Printf("Temporary file created: %s\n", tmpfile.Name())
+    defer os.Remove(tmpFile.Name()) // Очищення
 }
 ```
 
-**Sample Output:**
+2. **Запис до тимчасового файлу:**
+
+Запис у файл можна досягнути за допомогою методу `Write` або інших функцій запису з пакетів `io` або `bufio`.
+
+```go
+_, err = tmpFile.Write([]byte("Hello, World!"))
+if err != nil {
+    log.Fatal(err)
+}
 ```
-Temporary file created: /tmp/sample123456
+
+3. **Читання з тимчасового файлу:**
+
+Читання відбувається аналогічно, використовуючи метод `Read` файлу або утиліти з пакетів `io` або `bufio`.
+
+```go
+data, err := ioutil.ReadFile(tmpFile.Name())
+if err != nil {
+    log.Fatal(err)
+}
+log.Printf("Дані прочитані: %s\n", string(data))
 ```
 
-## Deep Dive
-Глибоке занурення:
+4. **Видалення тимчасового файлу:**
 
-Historically, temporary files provided a way to handle large data without hogging memory — important in the days of limited RAM. Alternatives to creating temporary files include using in-memory data structures, which are faster but use more RAM. For implementation, Go's `ioutil.TempFile` function is simple and secure. It generates a unique filename to avoid conflicts and places the file in the system's temp directory.
+Хоча інструкція `defer os.Remove(tmpFile.Name())` на етапі створення гарантує видалення тимчасового файлу після завершення роботи програми, якщо потрібно, видалення можна керувати явно.
 
-## See Also
-Дивись також:
+Приклад виводу:
+```
+2023/04/01 15:00:00 Створений тимчасовий файл: /tmp/example.123456.txt
+2023/04/01 15:00:00 Дані прочитані: Hello, World!
+```
 
-- [Go by Example: Temporary Files and Directories](https://gobyexample.com/temporary-files-and-directories)
-- [Package ioutil documentation](https://pkg.go.dev/io/ioutil)
-- [The Go Blog: Defer, Panic, and Recover](https://blog.golang.org/defer-panic-and-recover)
+## Поглиблений огляд
+
+Механізм роботи Go із тимчасовими файлами еволюціонував. Спочатку створення тимчасових файлів переважно керувалося застарілою функцією `ioutil.TempFile`, що відображає ширші тенденції в розробці програмного забезпечення до більш безпечного та ефективного управління файлами. Перехід до інтеграції цих функціональностей у пакети `os` та `io` з Go 1.16 вказує на ширший поштовх до створення стандартної бібліотеки мови та спонукання до використання більш об’єднаних та єдиних API.
+
+Хоча використання тимчасових файлів є загальноприйнятою і часто необхідною практикою в програмуванні, важливо зазначити, що надмірна залежність від них для зберігання великої кількості даних або для виконання завдань довгострокового характеру може призвести до проблем з продуктивністю. Більш того, коли створення тимчасових файлів не контролюється строго або коли вони недостатньо очищуються, це може призвести до витоку ресурсів, який негативно вплине на файлову систему. У сценаріях, що вимагають постійного зберігання або потребують обробки великих потоків даних, альтернативи, такі як бази даних або зберігання даних в пам'яті, часто пропонують кращу продуктивність і надійність порівняно з тимчасовими файлами.

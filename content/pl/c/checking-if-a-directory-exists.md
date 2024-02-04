@@ -1,66 +1,64 @@
 ---
 title:                "Sprawdzanie, czy katalog istnieje"
-date:                  2024-01-19
+date:                  2024-02-03T17:52:48.671090-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Sprawdzanie, czy katalog istnieje"
-
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/c/checking-if-a-directory-exists.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-**Co i dlaczego?**
-Sprawdzanie, czy katalog istnieje w C, to po prostu test przed wykonaniem operacji, które wymagają jego obecności. Robimy to, aby uniknąć błędów i zapewnić płynność działania programu.
+## Co i dlaczego?
 
-## How to:
-**Jak to zrobić:**
-```C
-#include <sys/stat.h>
+Sprawdzanie, czy katalog istnieje w języku C, polega na zapytaniu systemu plików, aby zweryfikować, czy określona ścieżka prowadzi do katalogu. Programiści często wykonują tę operację, aby upewnić się, że operacje na plikach (takie jak czytanie z plików lub zapisywanie do nich) są kierowane do prawidłowych ścieżek, zapobiegając błędom i zwiększając niezawodność oprogramowania.
+
+## Jak to zrobić:
+
+W C, istnienie katalogu można sprawdzić za pomocą funkcji `stat`, która pobiera informacje o pliku lub katalogu znajdującym się pod określoną ścieżką. Następnie używa się makra `S_ISDIR` z `sys/stat.h` do oceny, czy uzyskane informacje odpowiadają katalogowi.
+
+Oto jak można użyć `stat` i `S_ISDIR`, aby sprawdzić, czy katalog istnieje:
+
+```c
 #include <stdio.h>
-#include <stdbool.h>
-
-bool does_directory_exist(const char *path) {
-    struct stat info;
-    
-    if(stat(path, &info) != 0)
-        return false; // nie można uzyskać dostępu do katalogu
-    else if(info.st_mode & S_IFDIR) 
-        return true; // jest katalogiem
-    return false; // jest czymś innym niż katalog
-}
+#include <sys/stat.h>
 
 int main() {
-    const char *dirPath = "/tmp/example_dir";
+    struct stat stats;
     
-    if(does_directory_exist(dirPath)) {
+    // Ścieżka katalogu do sprawdzenia
+    char *dirPath = "/sciezka/do/katalogu";
+
+    // Pobierz status ścieżki
+    int result = stat(dirPath, &stats);
+
+    // Sprawdź, czy katalog istnieje
+    if (result == 0 && S_ISDIR(stats.st_mode)) {
         printf("Katalog istnieje.\n");
     } else {
         printf("Katalog nie istnieje.\n");
     }
-    
+
     return 0;
 }
 ```
-Sample output:
+
+Przykładowe wyjście:
 ```
 Katalog istnieje.
 ```
-or
+
+Lub, jeśli katalog nie istnieje:
 ```
 Katalog nie istnieje.
 ```
 
-## Deep Dive
-**Głębsze spojrzenie:**
-Historia sięga funkcji `stat` z Unix'a. `stat` zbiera informacje o pliku używając jego ścieżki. Jeśli funkcja zwraca `0`, plik istnieje; `-1` oznacza problem. Bit `S_IFDIR` z `info.st_mode` pokazuje, czy plik jest katalogiem.
+## Wgłębienie się:
 
-Są alternatywy, np. `opendir` i `readdir` z `dirent.h`, ale `stat` jest prostsze i często w zupełności wystarczające.
+Struktura i funkcja `stat` są częścią języka programowania C od dziesięcioleci, pochodząc z Unix. Zapewniają one ustandaryzowany sposób na pobieranie informacji o systemie plików, który, mimo że jest stosunkowo niskopoziomowy, jest szeroko używany ze względu na swoją prostotę i bezpośredni dostęp do metadanych systemu plików.
 
-Jeśli chcesz tworzyć katalogi, gdy ich nie ma, funkcja `mkdir` z `sys/stat.h` jest przydatna. Wtedy możesz najpierw sprawdzić i stworzyć katalog, jeśli to konieczne.
+Historycznie rzecz biorąc, sprawdzanie istnienia i właściwości plików oraz katalogów za pomocą `stat` i jego pochodnych (takich jak `fstat` i `lstat`) było powszechnym podejściem. Jednak te funkcje bezpośrednio wchodzą w interakcje z jądrem OS, co może wprowadzać dodatkowe obciążenie i potencjalne błędy, jeśli nie są prawidłowo obsługiwane.
 
-## See Also
-**Zobacz również:**
-- [Functions: stat, fstat, lstat (GNU Libc)](https://www.gnu.org/software/libc/manual/html_node/Attribute-Meanings.html)
-- [POSIX standard for mkdir()](https://pubs.opengroup.org/onlinepubs/9699919799/functions/mkdir.html)
-- [opendir() and readdir() documentation](https://pubs.opengroup.org/onlinepubs/007908799/xsh/readdir.html)
+W przypadku nowych projektów lub przy pracy w scenariuszach wysokopoziomowych programiści mogą optować za bardziej abstrakcyjnymi mechanizmami obsługi plików dostarczanymi przez nowoczesne frameworki lub biblioteki, które obsługują błędy w bardziej zrównoważony sposób i zapewniają prostsze API. Jednak zrozumienie i umiejętność używania `stat` pozostają cenną umiejętnością w scenariuszach wymagających bezpośredniej manipulacji systemem plików, takich jak programowanie systemowe, lub gdy praca w ograniczonych środowiskach, gdzie zależność od dużych bibliotek jest niewykonalna.

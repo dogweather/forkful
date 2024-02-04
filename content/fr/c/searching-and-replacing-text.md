@@ -1,60 +1,82 @@
 ---
-title:                "Recherche et remplacement de texte"
-date:                  2024-01-20T17:57:10.375705-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Recherche et remplacement de texte"
-
+title:                "Rechercher et remplacer du texte"
+date:                  2024-02-03T18:08:11.461639-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Rechercher et remplacer du texte"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/c/searching-and-replacing-text.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? | Quoi & Pourquoi ?
-La recherche et le remplacement de texte consistent à localiser des chaînes spécifiques dans un texte et à les remplacer par d'autres. Les programmeurs l'utilisent pour corriger des erreurs, mettre à jour des données ou automatiser des modifications dans des masses de code ou des documents.
+## Quoi et Pourquoi ?
 
-## How to: | Comment faire :
-```C
+La recherche et le remplacement de texte en C consiste à identifier des sous-chaînes spécifiques au sein d'une chaîne plus grande et à les substituer par différentes sous-chaînes. Les programmeurs effectuent ces opérations pour manipuler des données textuelles - pour des tâches allant de la sanitisation et du formatage de données à la génération dynamique de contenu.
+
+## Comment faire :
+
+C ne dispose pas de fonctions intégrées pour effectuer directement la recherche et le remplacement sur des chaînes. Cependant, vous pouvez y parvenir en combinant diverses fonctions de manipulation de chaînes disponibles dans la bibliothèque `<string.h>` ainsi que de la logique personnalisée. Ci-dessous se trouve un exemple basique de comment rechercher une sous-chaîne dans une chaîne et la remplacer. Pour simplifier, cet exemple suppose une taille de tampon suffisante et ne gère pas les problèmes d'allocation de mémoire, que vous devriez considérer dans le code de production.
+
+```c
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 
-void searchAndReplace(char *text, const char *search, const char *replace) {
-    char buffer[1024];
-    char *p;
+void replaceSubstring(char *source, char *sub, char *new_sub) {
+    char tampon[1024];
+    char *point_d_insertion = &tampon[0];
+    const char *tmp = source;
+    size_t len_sub = strlen(sub), len_new_sub = strlen(new_sub);
+    size_t len_jusqu_au_correspondance;
 
-    if(!(p = strstr(text, search))) {
-        // No match found
-        printf("%s", text);
-        return;
+    while ((tmp = strstr(tmp, sub))) {
+        // Calculer la longueur jusqu'à la correspondance
+        len_jusqu_au_correspondance = tmp - source;
+        
+        // Copier la partie avant la correspondance
+        memcpy(point_d_insertion, source, len_jusqu_au_correspondance);
+        point_d_insertion += len_jusqu_au_correspondance;
+        
+        // Copier la nouvelle sous-chaîne
+        memcpy(point_d_insertion, new_sub, len_new_sub);
+        point_d_insertion += len_new_sub;
+        
+        // Passer au-delà de la correspondance dans la chaîne source
+        tmp += len_sub;
+        source = tmp;
     }
-
-    *p = '\0'; // terminate string at the start of the match
-    snprintf(buffer, sizeof(buffer), "%s%s%s", text, replace, p + strlen(search));
-    printf("%s", buffer);
+    
+    // Copier toute partie restante de la chaîne source
+    strcpy(point_d_insertion, source);
+    
+    // Imprimer la chaîne modifiée
+    printf("Chaîne modifiée : %s\n", tampon);
 }
 
 int main() {
-    char text[] = "Les chaussettes de l'archiduchesse, sont-elles sèches? Archi-sèches!";
-    const char search[] = "archi";
-    const char replace[] = "super";
-
-    searchAndReplace(text, search, replace);
+    char sourceStr[] = "Bonjour, ceci est un test. Ce test est simple.";
+    char sub[] = "test";
+    char newSub[] = "exemple";
+    
+    replaceSubstring(sourceStr, sub, newSub);
+    
     return 0;
 }
 ```
-Sortie prévue:
+
+Sortie exemple :
 ```
-Les chaussettes de l'superduchesse, sont-elles sèches? Super-sèches!
+Chaîne modifiée : Bonjour, ceci est un exemple. Cet exemple est simple.
 ```
 
-## Deep Dive | Plongée en profondeur
-Historiquement, la recherche et le remplacement sont des fonctionnalités clés des éditeurs de texte depuis les années 1970. Des outils comme `sed` en Unix ou `Find and Replace` dans les éditeurs modernes montrent leur importance.
+Ce code démontre une approche simple pour rechercher toutes les instances d'une sous-chaîne (`sub`) dans une chaîne source et les remplacer par une autre sous-chaîne (`newSub`), en utilisant la fonction `strstr` pour trouver le point de départ de chaque correspondance. C'est un exemple très basique qui ne gère pas des scénarios complexes tels que les sous-chaînes chevauchantes.
 
-Il existe plusieurs alternatives en C: fonctions intégrées dans des bibliothèques, écriture de fonctions personnalisées, ou utilisation d’expressions régulières avec la bibliothèque `regex.h`, mais cela peut être plus complexe pour des besoins simples.
+## Plongée Profonde
 
-En matière d’implémentation, les détails cruciaux incluent la gestion de la taille des buffers pour éviter les débordements, ainsi que l’utilisation efficace des pointeurs pour traiter les chaînes de caractères en place sans copie excessive des données.
+L'approche utilisée dans la section "Comment faire" est fondamentale, illustrant comment réaliser la recherche et le remplacement de texte en C sans aucune bibliothèque tierce. Historiquement, du fait de l'accent mis par C sur la gestion de la mémoire de bas niveau et la performance, sa bibliothèque standard n'encapsule pas les fonctionnalités de manipulation de chaînes de haut niveau comme celles que l'on trouve dans des langues telles que Python ou JavaScript. Les programmeurs doivent gérer manuellement la mémoire et combiner diverses opérations de chaînes pour atteindre les résultats souhaités, ce qui augmente la complexité mais offre plus de contrôle et d'efficacité.
 
-## See Also | À voir aussi
-- [C Standard Library reference - string.h](https://en.cppreference.com/w/c/string/byte)
-- [GNU sed](https://www.gnu.org/software/sed/manual/sed.html)
-- [Regular Expressions in C - regex.h](https://pubs.opengroup.org/onlinepubs/7908799/xsh/regex.h.html)
+Il est crucial de noter que cette approche manuelle peut être sujette à erreurs, particulièrement lors de la gestion des allocations de mémoire et des tailles de tampon. Une manipulation incorrecte peut conduire à des dépassements de tampon et à la corruption de la mémoire, rendant le code vulnérable à des risques de sécurité.
+
+Dans de nombreux scénarios pratiques, en particulier ceux nécessitant un traitement de texte complexe, il vaut souvent la peine de considérer l'intégration de bibliothèques tierces comme PCRE (Perl Compatible Regular Expressions) pour une recherche et remplacement basés sur les expressions régulières, ce qui peut simplifier le code et réduire le potentiel d'erreurs. De plus, les normes et les compilateurs C modernes offrent de plus en plus de fonctions intégrées et des alternatives plus sûres pour la manipulation de chaînes, visant à atténuer les écueils communs observés dans les anciens codes C. Pourtant, la compréhension fondamentale du traitement manuel du texte reste une compétence précieuse dans la boîte à outils d'un programmeur, surtout pour l'optimisation des applications critiques en termes de performance.

@@ -1,51 +1,80 @@
 ---
-title:                "Excluindo caracteres que correspondem a um padrão"
-date:                  2024-01-20T17:42:29.623666-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Excluindo caracteres que correspondem a um padrão"
-
+title:                "Deletando caracteres que correspondem a um padrão"
+date:                  2024-02-03T17:55:36.220955-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Deletando caracteres que correspondem a um padrão"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/go/deleting-characters-matching-a-pattern.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## O Quê & Porquê?
-Deletar caracteres que combinam com um padrão é remover partes específicas de uma string que atendem a uma regra definida, como todos os dígitos ou espaços. Programadores fazem isso para limpar dados, manipular texto, ou preparar informações para processamento.
+## O Que & Por Que?
 
-## Como Fazer:
-```Go
+Deletar caracteres que correspondem a um padrão específico é sobre remover certos caracteres ou sequências de caracteres de strings, com base em regras definidas por um padrão (geralmente via expressões regulares). Programadores frequentemente precisam realizar essa tarefa para limpeza de dados, pré-processamento para análise, formatação de saída ou simplesmente manipulando strings para atender aos requisitos da aplicação.
+
+## Como fazer:
+
+Em Go, deletar caracteres que correspondem a um padrão pode ser eficientemente realizado usando o pacote `regexp`. Aqui, vamos mostrar como remover todos os dígitos, depois todos os caracteres não alfanuméricos de uma string como exemplos.
+
+1. **Removendo Todos os Dígitos:**
+
+```go
 package main
 
 import (
-	"fmt"
-	"regexp"
+    "fmt"
+    "regexp"
 )
 
 func main() {
-	// Exemplo 1: Removendo dígitos de uma string
-	str := "A versão é 3.5.1"
-	re := regexp.MustCompile(`\d`)
-	strSemDigitos := re.ReplaceAllString(str, "")
-	fmt.Println(strSemDigitos) // Saída: A versão é ...
-
-	// Exemplo 2: Removendo espaços
-	str2 := "Muito espaço aqui!"
-	re2 := regexp.MustCompile(`\s`)
-	strSemEspacos := re2.ReplaceAllString(str2, "")
-	fmt.Println(strSemEspacos) // Saída: Muitoespaçoaqui!
+    text := "Go1 é legal, mas Go2 será mais legal! Agora: 2023."
+	
+    // Compila a expressão regular para dígitos
+    re, err := regexp.Compile("[0-9]+")
+    if err != nil {
+        fmt.Println("Erro ao compilar regex:", err)
+        return
+    }
+	
+    // Substitui dígitos por uma string vazia
+    result := re.ReplaceAllString(text, "")
+	
+    fmt.Println(result) // Saída: Go é legal, mas Go será mais legal! Agora: .
 }
 ```
 
-## Aprofundando
-Remover caracteres que correspondem a um padrão vem da necessidade de tratar strings de forma eficiente. Essa prática existe desde os primórdios da programação. 
+2. **Removendo Todos os Caracteres Não Alfanuméricos:**
 
-Em Go, geralmente utilizamos o pacote `regexp` que implementa expressões regulares. Existem alternativas como iterar sobre caracteres e construir uma nova string, mas expressões regulares são poderosas e concisas.
+```go
+package main
 
-Importante: o uso de `regexp` pode ser pesado em termos de desempenho. Em contextos onde a performance é crítica e o padrão é simples, métodos próprios de strings, como `strings.Replace`, podem ser mais rápidos.
+import (
+    "fmt"
+    "regexp"
+)
 
-## Veja Também
+func main() {
+    text := "Go é #1 @ linguagens de programação!"
+	
+    // Compila a expressão regular para caracteres não alfanuméricos
+    re, err := regexp.Compile("[^a-zA-Z0-9]+")
+    if err != nil {
+        fmt.Println("Erro ao compilar regex:", err)
+        return
+    }
+	
+    // Substitui caracteres não alfanuméricos por uma string vazia
+    result := re.ReplaceAllString(text, "")
+	
+    fmt.Println(result) // Saída: Goé1linguagensdeprogramação
+}
+```
 
-- Documentação oficial do pacote `regexp`: https://pkg.go.dev/regexp
-- Tutorial Go by Example em strings: https://gobyexample.com/strings
-- Artigo sobre performance de expressões regulares em Go: https://medium.com/@DylanMeeus/regex-performance-in-go-a-benchmark-648fca5983f2
+## Aprofundamento
+
+O pacote `regexp` em Go fornece uma interface poderosa para correspondência de padrões e manipulação com expressões regulares. Sua implementação é derivada do RE2, uma biblioteca de expressão regular projetada para garantir uma execução em tempo linear, evitando a possibilidade de problemas de "retrocessos catastróficos" presentes em alguns outros motores de regex. Isso torna as regex de Go relativamente seguras e eficientes para uma ampla gama de aplicações.
+
+Embora o pacote `regexp` seja uma solução abrangente para lidar com padrões, vale ressaltar que para manipulações de strings mais simples ou altamente específicas, outras funções de string como `strings.Replace()`, `strings.Trim()`, ou fatiamento podem oferecer alternativas mais performáticas. Expressões regulares são uma ferramenta poderosa, mas seu relativo custo computacional significa que para operações que podem ser especificadas sem elas, explorar alternativas da biblioteca padrão às vezes pode levar a um código mais simples e eficiente.

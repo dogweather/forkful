@@ -1,53 +1,71 @@
 ---
-title:                "שימוש בביטויים רגולריים"
-date:                  2024-01-19
-simple_title:         "שימוש בביטויים רגולריים"
-
+title:                "שימוש בביטויים רגילים"
+date:                  2024-02-03T18:11:25.495096-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "שימוש בביטויים רגילים"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/c/using-regular-expressions.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## מה ולמה?
-Regular expressions, רגקס בקיצור, הן כלים לחיפוש ועיבוד טקסט באמצעות פטרנים. תוכניתנים משתמשים בהם כי הם מאפשרים חיפוש מהיר וחכם של מחרוזות, תיקונים מורכבים, ואימות קלט.
+
+ביטויים רגולריים (regex) מספקים דרך לחפש, להתאים ולתפעל מחרוזות באמצעות תבניות מוגדרות. מתכנתים משתמשים בהם באופן נרחב למשימות כמו אימות קלטים, ניתוח נתוני טקסט ומציאת דפוסים בתוך קבצי טקסט גדולים, דבר ההופך אותם לכלי חזק בכל שפה, כולל C.
 
 ## איך לעשות:
-```C
+
+כדי להשתמש בביטויים רגולריים ב-C, תעבוד בעיקר עם ספריית ה-regex של POSIX (`<regex.h>`). הדוגמה הזו מדגימה התאמת תבנית בסיסית:
+
+```c
 #include <stdio.h>
+#include <stdlib.h>
 #include <regex.h>
 
-int main() {
+int main(){
     regex_t regex;
-    int result;
-    result = regcomp(&regex, "^a[[:alnum:]]", 0); // קומפילציה של רגקס לחיפוש מילים המתחילות ב-'a'
-    if (result) { 
-        printf("הרגקס לא חוקי.\n");
-        return 1;
-    }
-  
-    result = regexec(&regex, "apple", 0, NULL, 0);
-    if (!result) {
-        printf("המילה מתאימה!\n");
-    } else if (result == REG_NOMATCH) {
-        printf("אין התאמה.\n");
-    } else {
-        printf("שגיאת חיפוש.\n");
+    int return_value;
+    char *pattern = "^a[[:alnum:]]"; // תבנית להתאמת מחרוזות המתחילות ב-'a' אחריו תווים אלפאנומריים
+    char *test_string = "apple123";
+
+    // קמפול הביטוי הרגולרי
+    return_value = regcomp(&regex, pattern, REG_EXTENDED);
+    if (return_value) {
+        printf("Could not compile regex\n");
+        exit(1);
     }
 
-    regfree(&regex); // ניקוי הרגקס
+    // ביצוע הביטוי הרגולרי
+    return_value = regexec(&regex, test_string, 0, NULL, 0);
+    if (!return_value) {
+        printf("Match found\n");
+    } else if (return_value == REG_NOMATCH) {
+        printf("No match found\n");
+    } else {
+        printf("Regex match failed\n");
+        exit(1);
+    }
+
+    // שחרור הזיכרון שהוקצה עבור ה-regex
+    regfree(&regex);
+
     return 0;
 }
 ```
-פלט דוגמה:
+
+פלט לדוגמה עבור מחרוזת התואמת ("apple123"):
 ```
-המילה מתאימה!
+Match found
+```
+ולמחרוזת שלא מתאימה ("banana"):
+```
+No match found
 ```
 
-## צלילה לעומק
-השימוש ברגקסים סביב מאז השנות ה-50 והתפתח במרוצת השנים. יש אלטרנטיבות כמו חיפוש טקסט קלאסי, אך הם פחות גמישים. ב-C, רגקסים ממומשים דרך הספרייה regex.h, לעיתים קרובות עובדים ביחד עם מחרוזות סטנדרטיות בממשק POSIX.
+## צלילה עמוקה:
 
-## ראה גם
-- [GNU C Library Manual – Regular Expressions](https://www.gnu.org/software/libc/manual/html_node/Regular-Expressions.html)
-- [regex(7) - Linux man page](https://man7.org/linux/man-pages/man7/regex.7.html)
-- [POSIX Regular Expressions](https://en.wikipedia.org/wiki/Regular_expression#POSIX_basic_and_extended)
+ביטויים רגולריים ב-C, כחלק מתקן POSIX, מציעים דרך חזקה לבצע התאמות ותפעול של מחרוזות. עם זאת, ממשק ה-API של ספריית ה-regex של POSIX ב-C נחשב למסורבל יותר מאלו שנמצאו בשפות המעוצבות עם יכולות עיבוד מחרוזות מובנות ברמה גבוהה כמו Python או Perl. התחביר עבור התבניות דומה ברחבי השפות, אך ב-C נדרשת ניהול זיכרון ידני ויותר קוד טקסטואלי להכנה, ביצוע וניקוי לאחר שימוש בתבניות regex.
+
+למרות האתגרים הללו, למידת השימוש ב-regex ב-C מתגמלת מכיוון שהיא מעמיקה את ההבנה במושגים תכנותיים ברמה נמוכה יותר. בנוסף, היא פותחת אפשרויות עבור תכנות ב-C בתחומים כמו עיבוד טקסט וחילוץ נתונים שבהם ה-regex הוא בלתי נפרד. לתבניות מורכבות יותר או לפעולות regex, חלופות כמו ספריית PCRE (Perl Compatible Regular Expressions) עשויות להציע ממשק מועשר יותר בתכונות ומעט יותר פשוט לשימוש, למרות שהן דורשות אינטגרציה של ספרייה חיצונית לפרויקט ה-C שלך.

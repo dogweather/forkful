@@ -1,64 +1,67 @@
 ---
-title:                "Envoi d'une requête HTTP"
-date:                  2024-01-20T17:59:01.586351-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Envoi d'une requête HTTP"
-
+title:                "Envoyer une requête HTTP"
+date:                  2024-02-03T18:08:30.694945-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Envoyer une requête HTTP"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/c/sending-an-http-request.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Quoi et Pourquoi ?)
+## Quoi & Pourquoi ?
 
-Envoyer une requête HTTP, c'est comme passer un coup de fil au serveur web pour demander des données ou soumettre des informations. Les programmeurs le font pour communiquer avec des services web et échanger des données.
+Envoyer une requête HTTP consiste à créer et envoyer une requête à un serveur web pour récupérer ou soumettre des données. Les programmeurs font cela en C pour interagir avec les API web, télécharger des pages web ou communiquer directement avec d'autres services en réseau depuis leurs applications.
 
-## How to: (Comment faire :)
+## Comment :
 
-Pour envoyer une requête HTTP en C, on va utiliser la bibliothèque libcurl, simple et puissante.
+Pour envoyer une requête HTTP en C, vous vous appuierez généralement sur des bibliothèques comme libcurl, car le C n'intègre pas de support natif pour les protocoles web. Voici un exemple simple utilisant libcurl pour effectuer une requête GET :
+
+D'abord, assurez-vous d'avoir libcurl installé sur votre système. Ensuite, incluez les en-têtes nécessaires et liez-les contre la bibliothèque libcurl dans votre fichier source :
 
 ```c
 #include <stdio.h>
 #include <curl/curl.h>
 
-int main() {
+int main(void) {
     CURL *curl;
     CURLcode res;
 
-    curl = curl_easy_init();
+    curl = curl_easy_init(); // Initialise une poignée libcurl
     if(curl) {
+        // Définit l'URL qui reçoit la poignée libcurl
         curl_easy_setopt(curl, CURLOPT_URL, "http://example.com");
-        // Exécution de la requête
+        // Définit une fonction de rappel pour obtenir les données
+        curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, NULL); 
+        
+        // Exécute la requête, res recevra le code de retour
         res = curl_easy_perform(curl);
-
-        // Vérification de l'erreur
-        if(res != CURLE_OK) {
-            fprintf(stderr, "curl_easy_perform() failed: %s\n",
+        // Vérifier les erreurs
+        if(res != CURLE_OK)
+            fprintf(stderr, "curl_easy_perform() a échoué : %s\n",
                     curl_easy_strerror(res));
-        }
 
-        // Nettoyage
+        // Nettoyage systématique 
         curl_easy_cleanup(curl);
     }
     return 0;
 }
 ```
 
-Le programme ci-dessus envoie une requête GET à example.com. Pas de chichi ; ça marche. 
+Compilez ceci avec une commande semblable à `gcc -o http_request http_request.c -lcurl`, l'exécution devrait réaliser une simple requête GET vers "http://example.com".
 
-## Deep Dive (Plongée en Profondeur)
+### Exemple de sortie
 
-Libcurl est là depuis 1997, offrant une interface multiplateforme pour les coms réseau. Pourquoi pas libhttp ou autre chose ? Libcurl est robuste, supporte plein de protocoles et s'intègre facilement avec le C.
+Comme l'exemple ne traite pas la réponse du serveur, son exécution ne produira pas de sortie visible au-delà des éventuels messages d'erreur. Intégrer la fonction de rappel pour le traitement des données reçues est essentiel pour une interaction significative.
 
-Alternatives ? Il y a des tonnes. PycURL pour Python, OkHttp pour Java... Mais en C, hormis écrire tout à la main (pas vraiment le fun), libcurl est le choix de facto.
+## Approfondissement
 
-Sous le capot, libcurl peut utiliser une variété de transports et s'interface avec les couches sous-jacentes (comme OpenSSL pour HTTPS) pour les détails cryptographiques et de sécurité.
+Le concept d'envoi de requêtes HTTP depuis un programme C repose sur les puissantes capacités de mise en réseau du langage, associées à des bibliothèques externes puisque le C lui-même est un langage de bas niveau sans support intégré pour les protocoles internet de haut niveau. Historiquement, les programmeurs utilisaient manuellement la programmation de sockets en C, un processus complexe et fastidieux, pour interagir avec les serveurs web avant l'avènement de bibliothèques dédiées comme libcurl.
 
-## See Also (Voir Aussi)
+Libcurl, construit sur le C, simplifie le processus, en masquant les détails ardus de la programmation de sockets et les spécificités du protocole HTTP. Il prend en charge une multitude de protocoles au-delà du HTTP/HTTPS, y compris FTP, SMTP, et plus, le rendant un outil polyvalent pour la programmation réseau en C.
 
-Pour creuser plus:
+Bien que l'utilisation de libcurl pour les requêtes HTTP en C soit pratique, la programmation moderne tend souvent vers des langages intégrant nativement ce type de tâches, comme Python (bibliothèque requests) ou JavaScript (API Fetch). Ces alternatives offrent une syntaxe plus simple, plus lisible au détriment du contrôle granulaire et des optimisations de performance possibles en C par manipulation directe des sockets et utilisation minutieuse des bibliothèques.
 
-- [libcurl tutorial](https://curl.haxx.se/libcurl/c/libcurl-tutorial.html) - Le tuto officiel pour bien démarrer.
-- [HTTP Made Really Easy](http://www.jmarshall.com/easy/http/) - Un guide sur le protocole HTTP, utile pour comprendre ce qui est envoyé et reçu.
-- [Stack Overflow](https://stackoverflow.com/) - Des questions ? Le tag 'libcurl' et son cousin 'cURL' sont tes amis.
+Pour les applications critiques en termes de performance ou lorsque une interaction directe au niveau du système est nécessaire, le C reste une option viable, particulièrement avec libcurl qui facilite la complexité de la communication web. Cependant, pour la plupart des interactions web de haut niveau, explorer des langages de programmation web plus dédiés pourrait s'avérer plus efficace.

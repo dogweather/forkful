@@ -1,96 +1,95 @@
 ---
 title:                "Làm việc với JSON"
-date:                  2024-01-28T22:10:44.546562-07:00
+date:                  2024-02-03T18:12:27.240046-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Làm việc với JSON"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/go/working-with-json.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Gì & Tại sao?
+## Gì và Tại sao?
 
-Làm việc với JSON có nghĩa là mã hóa và giải mã dữ liệu trong định dạng JavaScript Object Notation, cách biểu diễn dữ liệu có cấu trúc dựa trên văn bản. Lập trình viên sử dụng nó vì sự đơn giản và phổ biến trong các API web và tệp cấu hình.
+Làm việc với JSON (JavaScript Object Notation) trong Go đề cập đến việc mã hóa và giải mã dữ liệu giữa các cấu trúc dữ liệu của Go và định dạng JSON. Công việc này phổ biến trong các dịch vụ web và API, khi mà JSON phục vụ như một định dạng trao đổi dữ liệu nhẹ, dựa trên văn bản và độc lập với ngôn ngữ, cho phép chia sẻ dữ liệu đơn giản giữa các môi trường lập trình khác nhau.
 
-## Cách thức:
+## Làm thế nào:
 
-### Việc biến đổi JSON thành dữ liệu trong Go
+Trong Go, gói `encoding/json` là cánh cổng của bạn đến với việc điều khiển JSON, cung cấp cơ chế để chuyển đổi cấu trúc dữ liệu của Go sang JSON (mã hóa) và ngược lại (giải mã). Dưới đây là các ví dụ cơ bản để bạn bắt đầu:
 
-```Go
+### Mã hóa (Marshalling)
+
+Để chuyển đổi một struct của Go sang JSON, bạn có thể sử dụng `json.Marshal`. Xem xét struct Go sau:
+
+```go
 package main
 
 import (
-	"encoding/json"
-	"fmt"
+    "encoding/json"
+    "fmt"
+    "log"
 )
 
 type User struct {
-	Name   string `json:"name"`
-	Age    int    `json:"age"`
-	Active bool   `json:"active"`
+    ID        int      `json:"id"`
+    Username  string   `json:"username"`
+    Languages []string `json:"languages"`
 }
 
 func main() {
-	user := User{Name: "Alice", Age: 25, Active: true}
-	jsonData, err := json.Marshal(user)
-	if err != nil {
-		panic(err)
-	}
-	fmt.Println(string(jsonData))
+    user := User{1, "JohnDoe", []string{"Go", "JavaScript", "Python"}}
+    userJSON, err := json.Marshal(user)
+    if err != nil {
+        log.Fatal(err)
+    }
+    fmt.Println(string(userJSON))
 }
 ```
 
-Đầu ra mẫu:
+Đầu ra:
+
 ```json
-{"name":"Alice","age":25,"active":true}
+{"id":1,"username":"JohnDoe","languages":["Go","JavaScript","Python"]}
 ```
 
-### Việc biến dữ liệu JSON thành dữ liệu trong Go
+### Giải mã (Unmarshalling)
 
-```Go
+Để phân tích JSON thành một cấu trúc dữ liệu của Go, sử dụng `json.Unmarshal`:
+
+```go
 package main
 
 import (
-	"encoding/json"
-	"fmt"
+    "encoding/json"
+    "fmt"
+    "log"
 )
 
 func main() {
-	var jsonData = []byte(`{"name":"Alice","age":25,"active":true}`)
-	user := User{}
-	err := json.Unmarshal(jsonData, &user)
-	if err != nil {
-		panic(err)
-	}
-	fmt.Printf("%+v\n", user)
-}
-
-type User struct {
-	Name   string `json:"name"`
-	Age    int    `json:"age"`
-	Active bool   `json:"active"`
+    jsonStr := `{"id":1,"username":"JohnDoe","languages":["Go","JavaScript","Python"]}`
+    var user User
+    err := json.Unmarshal([]byte(jsonStr), &user)
+    if err != nil {
+        log.Fatal(err)
+    }
+    fmt.Printf("%+v\n", user)
 }
 ```
 
-Đầu ra mẫu:
+Với struct `User` như trước, đoạn mã này phân tích chuỗi JSON thành một thể hiện của User.
+
+Đầu ra:
+
+```go
+{ID:1 Username:JohnDoe Languages:[Go JavaScript Python]}
 ```
-{Name:Alice Age:25 Active:true}
-```
 
-## Sâu hơn nữa
+## Sâu hơn
 
-JSON, bắt nguồn từ JavaScript, đã trở thành tiêu chuẩn cho việc trao đổi dữ liệu vào giữa những năm 2000. So với XML, nó nhẹ hơn và dễ đọc hơn, đó là lý do tại sao nó là lựa chọn hàng đầu cho các API RESTful. Trong Go, gói `encoding/json` xử lý dữ liệu JSON, sử dụng các thẻ trường của cấu trúc để khớp các khóa JSON với các trường cấu trúc.
+Gói `encoding/json` trong Go cung cấp một API trực quan, che giấu nhiều sự phức tạp liên quan đến việc điều khiển JSON. Được giới thiệu sớm trong quá trình phát triển của Go, gói này phản ánh triết lý đơn giản và hiệu quả của Go. Tuy nhiên, việc sử dụng phản xạ của `encoding/json` để kiểm tra và chỉnh sửa các struct tại thời gian chạy có thể dẫn đến hiệu suất kém hơn trong các kịch bản sử dụng nhiều CPU.
 
-Các phương thức thay thế cho JSON bao gồm XML, YAML và các định dạng nhị phân như Protocol Buffers (protobuf). Mỗi định dạng có những trường hợp sử dụng riêng; ví dụ, YAML được ưu tiên cho các tệp cấu hình được viết bởi con người, trong khi protobuf được sử dụng cho việc chuyển dữ liệu được tuần tự hóa hiệu quả, không phụ thuộc vào nền tảng.
+Những phương án thay thế như `json-iterator/go` và `ffjson` đã xuất hiện, cung cấp việc xử lý JSON nhanh hơn bằng cách tạo ra mã mã hóa và giải mã tĩnh. Tuy nhiên, `encoding/json` vẫn là gói được sử dụng phổ biến nhất do sự đơn giản, bền vững của nó và thực tế là nó là một phần của thư viện chuẩn, đảm bảo tính tương thích và ổn định qua các phiên bản Go.
 
-Go thực hiện xử lý JSON một cách hiệu quả, tuy nhiên việc sử dụng phản chiếu có thể khiến nó chậm đi so với một số cơ chế tuần tự hóa có thể hoạt động tại thời điểm biên dịch.
-
-## Xem thêm
-
-- Blog của Go về JSON: https://blog.golang.org/json
-- Tài liệu gói `encoding/json` của Go: https://pkg.go.dev/encoding/json
-- Trang chính thức của JSON về tiêu chuẩn: http://json.org/
+Mặc dù hiệu suất tương đối chậm hơn, sự dễ sử dụng và sự tích hợp với hệ thống loại của Go làm cho `encoding/json` phù hợp với hầu hết các ứng dụng. Đối với những người làm việc trong các bối cảnh mà hiệu suất là tối quan trọng, việc khám phá các thư viện bên ngoài có thể đáng giá, nhưng đối với nhiều người, thư viện chuẩn cung cấp sự cân bằng đúng đắn giữa tốc độ, đơn giản và độ tin cậy.

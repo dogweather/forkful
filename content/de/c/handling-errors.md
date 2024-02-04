@@ -1,55 +1,85 @@
 ---
 title:                "Fehlerbehandlung"
-date:                  2024-01-26T00:37:08.737011-07:00
-model:                 gpt-4-1106-preview
+date:                  2024-02-03T17:58:04.012275-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Fehlerbehandlung"
-
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/c/handling-errors.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Fehlerbehandlung in C bedeutet, mit dem Unerwarteten zu rechnen. Sie verhindert, dass Programme verrückt spielen, wenn sie auf Probleme stoßen. Entwickler tun dies, um Fehler elegant zu behandeln und ihren Code zuverlässig zu gestalten.
 
-## Wie geht das:
+Die Fehlerbehandlung in C umfasst das Erkennen und Reagieren auf anomale Bedingungen, die während der Programmausführung auftreten. Programmierer tun dies, um Fehler, Abstürze und unvorhersehbares Verhalten zu verhindern und sicherzustellen, dass die Software zuverlässig und effizient unter verschiedenen Szenarien funktioniert.
 
-Sehen wir uns an, wie das in C geht:
+## Wie zu:
 
-```C
+C bietet keine integrierte Unterstützung für Ausnahmen wie einige andere Sprachen. Stattdessen stützt es sich auf einige konventionelle Fehlerbehandlungsstrategien, wie das Zurückgeben spezieller Werte aus Funktionen und das Setzen globaler Variablen wie `errno`.
+
+**Spezielle Werte zurückgeben**
+
+Funktionen können Fehler anzeigen, indem sie einen spezifischen Wert zurückgeben, der unwahrscheinlich ein gültiges Ergebnis ist. Hier ist ein Beispiel mit Ganzzahlen:
+
+```c
 #include <stdio.h>
-#include <stdlib.h>
-#include <errno.h>
+
+int inverse(int zahl, double *ergebnis) {
+    if (zahl == 0) {
+        return -1; // Fehlerfall
+    } else {
+        *ergebnis = 1.0 / zahl;
+        return 0; // Erfolg
+    }
+}
 
 int main() {
-    FILE *fp = fopen("nichtvorhandenedatei.txt", "r");
-    if (fp == NULL) {
-        perror("Fehler beim Öffnen der Datei");
-        return EXIT_FAILURE;
+    double ergebnis;
+    if (inverse(0, &ergebnis) < 0) {
+        printf("Fehler: Division durch null.\n");
+    } else {
+        printf("Das Inverse ist: %f\n", ergebnis);
     }
-    // Etwas mit der Datei machen
-    fclose(fp);
-    return EXIT_SUCCESS;
+    
+    return 0;
 }
 ```
 
-Beispiel-Ausgabe, wenn die Datei nicht existiert:
+**Ausgabe:**
+```
+Fehler: Division durch null.
+```
+
+**`errno` prüfen**
+
+Für Bibliotheksfunktionen, insbesondere solche, die mit dem System oder dem Betriebssystem interagieren (wie Datei-I/O), wird `errno` gesetzt, wenn ein Fehler auftritt. Um es zu verwenden, inkludiere `errno.h` und prüfe `errno` nach einem vermuteten Fehler:
+
+```c
+#include <stdio.h>
+#include <errno.h>
+#include <string.h>
+
+int main() {
+    FILE *datei = fopen("nichtexistent.txt", "r");
+    if (datei == NULL) {
+        printf("Fehler beim Öffnen der Datei: %s\n", strerror(errno));
+    }
+    
+    return 0;
+}
+```
+
+**Ausgabe:**
 ```
 Fehler beim Öffnen der Datei: Datei oder Verzeichnis nicht gefunden
 ```
 
-## Vertiefung
+## Tiefere Betrachtung
 
-In den Anfangstagen von C war die Fehlerbehandlung rudimentär - meist Rückgabecodes und manuelle Überprüfungen. Dann kam `errno`, eine globale Variable, die aktualisiert wird, wenn Funktionen scheitern. Sie ist an sich nicht thread-sicher, daher wurden die neueren Funktionen `strerror` und `perror` für eine bessere Fehlerberichterstattung eingeführt.
+Historisch gesehen hat das minimalistische Design der C-Programmiersprache einen integrierten Ausnahmebehandlungsmechanismus ausgeschlossen, was seine Ursprünge in der Systemprogrammierung widerspiegelt, wo maximale Leistung und Kontrolle nahe an der Maschine kritisch sind. Stattdessen bevorzugt C einen manuelleren Ansatz zur Fehlerbehandlung, der zu seiner Philosophie passt, Programmierern so viel Kontrolle wie möglich zu geben, selbst auf Kosten der Bequemlichkeit.
 
-Alternativen? Modernes C ist nicht auf `errno` beschränkt. Es gibt setjmp und longjmp für nicht-lokale Sprünge, wenn eine Katastrophe eintritt. Einige bevorzugen die Definition eigener Fehlercodes, während andere sich für Ausnahme-ähnliche Strukturen in C++ entscheiden.
+Obwohl dieser Ansatz gut zu den Gestaltungszielen von C passt, kann er auch zu umfangreichem Fehlerprüfcode und der potenziellen Möglichkeit, Fehlerprüfungen zu verpassen, führen, was moderne Sprachen mit strukturierten Ausnahmehandlungsmechanismen ansprechen. Beispielsweise ermöglichen Ausnahmen in Sprachen wie Java oder C# eine zentralisierte Fehlerverarbeitung, die den Code sauberer und das Fehlermanagement einfacher macht. Allerdings führen Ausnahmen ihre eigenen Überkopfkosten und Komplexität ein, die für die Systemebenenprogrammierung, in der C glänzt, nicht ideal sein könnten.
 
-Die Implementierungsdetails können komplex sein. Zum Beispiel ist `errno` in POSIX-konformen Systemen threadsicher, dank der Magie des Thread-Local Storage (TLS). In eingebetteten Systemen, wo Ressourcen kostbar sind, könnte benutzerspezifischer Fehlerbehandlungscode gegenüber Standardansätzen bevorzugt werden, die die Software aufblähen könnten.
-
-## Siehe auch
-
-- Eine detaillierte Einführung in `errno`: https://de.cppreference.com/w/c/error/errno
-- Für Thread-Sicherheit siehe POSIX-Threads und errno: http://man7.org/linux/man-pages/man3/pthread_self.3.html
-- Eine Einführung in setjmp und longjmp: https://de.cplusplus.com/reference/csetjmp/
-- Für Ausnahmebehandlung in C++ siehe: https://isocpp.org/wiki/faq/exceptions
+Trotz seiner Grobheit hat diese manuelle Fehlerbehandlung in C das Design des Fehlermanagements in vielen anderen Sprachen geprägt und bietet ein Modell, bei dem die Explizitheit von Fehlerbedingungen zu vorhersehbarerem und leichter debuggbarem Code führen kann. Für kritische Systeme, bei denen Ausfälle elegant verwaltet werden müssen, stellt C's Fehlerbehandlungsparadigma - kombiniert mit modernen bewährten Methoden wie Fehlerbehandlungsbibliotheken und -konventionen - Robustheit und Zuverlässigkeit sicher.

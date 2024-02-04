@@ -1,73 +1,99 @@
 ---
-title:                "Att använda associativa arrayer"
-date:                  2024-01-30T19:10:17.268752-07:00
+title:                "Använda associativa arrayer"
+date:                  2024-02-03T18:10:54.854464-07:00
 model:                 gpt-4-0125-preview
-simple_title:         "Att använda associativa arrayer"
-
+simple_title:         "Använda associativa arrayer"
 tag:                  "Data Structures"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/c/using-associative-arrays.md"
 changelog:
-  - 2024-01-30, gpt-4-0125-preview, translated from English
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Vad & Varför?
 
-Associativa fält, eller hashkartor, är nyckel-värde-par som låter dig lagra och hämta data med en nyckel. De är otroligt användbara i C eftersom de möjliggör snabbare dataåtkomst jämfört med listor, speciellt när du hanterar en stor mängd data.
+Associativa arrayer, kända i andra språk som kartor eller ordböcker, är nyckel-värde-par som används för effektiv datauppslagning och manipulation. Till skillnad från traditionella arrayer som använder heltalsindex, använder associativa arrayer nycklar, vilket gör dataåtkomst mer intuitiv och flexibel för programmerare.
 
 ## Hur man gör:
 
-C har inte inbyggt stöd för associativa fält som vissa andra språk, men vi kan använda strukturer och några biblioteksfunktioner för att få liknande funktionalitet. Här är en enkel implementering som använder `uthash`-biblioteket, vilket du behöver inkludera i ditt projekt.
+C har inte inbyggt stöd för associativa arrayer som vissa högnivåspråk, men du kan simulera dem med hjälp av strukturer och hashtabeller. Nedan följer ett förenklat exempel som använder en kombination av en struktur och en enkel hashfunktion för att implementera en associativ array för att lagra och komma åt heltal med strängnycklar.
 
-Först, definiera en struktur för att hålla dina nyckel-värde-par:
+Först, definiera en struktur för att representera ett enskilt nyckel-värde-par och en annan för att representera den associativa arrayen i sig:
 
-```C
+```c
 #include <stdio.h>
-#include "uthash.h"
+#include <stdlib.h>
+#include <string.h>
+
+#define TABLE_SIZE 128
 
 typedef struct {
-    int id; // Det här blir vår nyckel
-    char name[10]; // Det här är värdet som är associerat med vår nyckel
-    UT_hash_handle hh; // Gör denna struktur hashbar
-} person;
-```
+    char* key;
+    int value;
+} NyckelVardePar;
 
-Nästa, låt oss lägga till några poster och hämta dem:
+typedef struct {
+    NyckelVardePar* items[TABLE_SIZE];
+} AssocArray;
 
-```C
-int main() {
-    person *my_people = NULL, *s;
+unsigned int hash(char* key) {
+    unsigned long int value = 0;
+    unsigned int i = 0;
+    unsigned int key_len = strlen(key);
 
-    // Lägger till en post
-    s = (person*)malloc(sizeof(person));
-    s->id = 1;
-    strcpy(s->name, "Alice");
-    HASH_ADD_INT(my_people, id, s);
-
-    // Hämtar en post
-    int user_id = 1;
-    HASH_FIND_INT(my_people, &user_id, s);
-    if (s) {
-        printf("Hittad: %s\n", s->name);
+    for (; i < key_len; ++i) {
+        value = value * 37 + key[i];
     }
-    
+
+    value = value % TABLE_SIZE;
+
+    return value;
+}
+
+void initArray(AssocArray* array) {
+    for (int i = 0; i < TABLE_SIZE; ++i) {
+        array->items[i] = NULL;
+    }
+}
+
+void insert(AssocArray* array, char* key, int value) {
+    unsigned int slot = hash(key);
+
+    NyckelVardePar* item = (NyckelVardePar*)malloc(sizeof(NyckelVardePar));
+    item->key = strdup(key);
+    item->value = value;
+
+    array->items[slot] = item;
+}
+
+int find(AssocArray* array, char* key) {
+    unsigned int slot = hash(key);
+
+    if (array->items[slot]) {
+        return array->items[slot]->value;
+    }
+    return -1;
+}
+
+int main() {
+    AssocArray a;
+    initArray(&a);
+
+    insert(&a, "key1", 1);
+    insert(&a, "key2", 2);
+
+    printf("%d\n", find(&a, "key1")); // Utdata: 1
+    printf("%d\n", find(&a, "key2")); // Utdata: 2
+
     return 0;
 }
 ```
 
-Exempel på utdata skulle vara:
+Detta exempel demonstrerar grundläggande operationer: initialisera en associativ array, infoga nyckel-värde-par och hitta värden med nycklar. Observera att den här koden saknar hantering av kollisioner och är menad för utbildningsändamål.
 
-```
-Hittad: Alice
-```
+## Djupdykning
 
-Glöm inte att frigöra allokerat minne och deallokera hashtabellen när du är klar för att undvika minnesläckor.
+Konceptet med associativa arrayer föregår C, men språkets lågnivånatur stöder inte dem direkt som inbyggda typer. Detta uppmuntrar till en djupare förståelse för datastrukturer och algoritmer, inklusive hashningsmekanismer för effektiv nyckel-värde-mappning. Många C-bibliotek och ramverk erbjuder mer sofistikerade tillvägagångssätt för att implementera associativa arrayer, som GLib:s `GHashTable`, som ger en robust implementering komplett med hantering av kollisioner, dynamisk omstorlekning och stöd för godtyckliga nyckel- och värde typer.
 
-## Fördjupning
-
-Även om associativa fält inte är inbyggda i C, fyller bibliotek som `uthash` gapet ganska bra, och tillhandahåller ett relativt okomplicerat sätt att använda denna funktionalitet. Historiskt sett har C-utvecklare behövt implementera sina versioner av dessa datastrukturer, vilket har lett till varierade och ofta komplexa implementeringar, speciellt för de som precis börjat med språket.
-
-Kom ihåg, effektiviteten av att använda associativa fält i C beror mycket på hur väl hashfunktionen distribuerar värden över tabellen för att minimera kollisioner. Även om bibliotek som `uthash` erbjuder en bra balans mellan användarvänlighet och prestanda, kan det i kritiska applikationer där prestanda är av yttersta vikt, vara bättre att anpassa eller implementera din egen hashtabell.
-
-För applikationer som kräver maximal effektivitet kan alternativa datastrukturer eller till och med andra programmeringsspråk med inbyggt stöd för associativa fält vara ett bättre val. Dock, i många situationer, speciellt där du redan arbetar inom en C-miljö, erbjuder användning av ett bibliotek som `uthash` en praktisk balans mellan prestanda och bekvämlighet.
+Även om manuell konstruktion av associativa arrayer i C kan ses som besvärlig jämfört med språk med inbyggt stöd, erbjuder det ovärderliga insikter i datastrukturens inre arbete, vilket skärper en programmerares färdigheter i problemlösning och optimering. Dock, för produktionskod eller mer komplexa applikationer, är det ofta ett mer praktiskt och tidsbesparande tillvägagångssätt att utnyttja befintliga bibliotek som GLib.

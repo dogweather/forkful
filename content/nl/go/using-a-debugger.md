@@ -1,58 +1,82 @@
 ---
 title:                "Een debugger gebruiken"
-date:                  2024-01-28T22:08:49.505710-07:00
+date:                  2024-02-03T18:10:12.372901-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een debugger gebruiken"
-
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/go/using-a-debugger.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Wat & Waarom?
-Een debugger gebruiken is als het hebben van een GPS in de jungle van code; het leidt je naar de bron van het probleem. Programmeurs gebruiken debuggers om door hun code te stappen, variabelen te inspecteren en de flow te begrijpen, waardoor het makkelijker wordt om bugs te vinden en de prestaties te optimaliseren.
+
+Bij het programmeren in Go gebruikmaken van een debugger houdt in dat je tools of functies gebruikt om de staat van een draaiend programma te inspecteren en te wijzigen, om zo het gedrag ervan te begrijpen of problemen op te sporen. Programmeurs doen dit om efficiënt bugs te vinden en op te lossen, de prestaties te optimaliseren en de correctheid van hun code te waarborgen.
 
 ## Hoe te:
-Go heeft een ingebouwde tool voor debugging genaamd Delve (`dlv`). Om te beginnen, installeer Delve, schrijf een eenvoudig Go-programma en voer het vervolgens uit via de debugger.
 
-```Go
-// Eerst, installeer Delve
-// go get -u github.com/go-delve/delve/cmd/dlv
+Go biedt een ingebouwde faciliteit voor debugging genaamd `delve`. Het is een volledig uitgerust debugginggereedschap waarmee je Go-programma's stap voor stap kunt uitvoeren, programmavariabelen kunt inspecteren en uitdrukkingen kunt evalueren.
 
-// Voorbeeld Go programma, opslaan als main.go
+Om te beginnen, moet je eerst `delve` installeren. Dit kun je doen door uit te voeren:
+
+```shell
+go get -u github.com/go-delve/delve/cmd/dlv
+```
+
+Laten we nu een eenvoudig Go-programma debuggen. Beschouw een programma `main.go`:
+
+```go
 package main
 
 import "fmt"
 
 func main() {
-    message := "Debugging met Delve!"
+    message := "Debuggen in Go"
     fmt.Println(message)
 }
-
-// Voer je programma uit met Delve
-// dlv debug
-
-// Enkele basis Delve commando's:
-// (dlv) break main.main // zet een breakpoint bij functie main
-// (dlv) continue // voer uit tot breakpoint of programma-terminatie
-// (dlv) step // enkele stap door het programma
-// (dlv) print message // print de huidige waarde van variabele 'message'
-// (dlv) quit // verlaat Delve
 ```
 
-Het uitvoeren van `dlv debug` start een debugging-sessie. Zodra je een breakpoint hebt bereikt dat je hebt ingesteld, kun je door je programma stappen en zien wat er onder de motorkap gebeurt.
+Om dit programma te debuggen, open je een terminal in de map van het project en voer je uit:
 
-## Diepere Duik
-Historisch gezien hebben Go-programmeurs verschillende tools gebruikt voor debugging, zoals GDB (GNU Debugger), maar ondervonden uitdagingen omdat GDB niet was aangepast voor Go's runtime en goroutines. Delve kwam te hulp met betere ondersteuning voor Go's unieke kenmerken.
+```shell
+dlv debug
+```
 
-Er zijn alternatieven voor Delve zoals `go-dbg`, en zelfs geïntegreerde debuggerondersteuning binnen IDEs zoals Visual Studio Code en GoLand, die rondom Delve wikkelen voor een gebruiksvriendelijkere ervaring.
+Dit commando compileert het programma met optimalisaties uitgeschakeld (om de debugervaring te verbeteren), start het en koppelt een debugger eraan.
 
-Aan de implementatiekant werkt Delve met de `runtime` en `debug/gosym` pakketten, onder andere, om toegang te krijgen tot en Go programma-symbolen en runtime-informatie te interpreteren. Het wordt constant bijgewerkt om bij te blijven met nieuwe taalfeatures en versies.
+Eenmaal `delve` draait, bevind je je in de interactieve debuggershell. Hier zijn een paar basale commando's:
 
-## Zie Ook
-- Delve's Officiële Repo: https://github.com/go-delve/delve
-- Go Debugger Tutorial door het Go Team: https://golang.org/doc/gdb
-- Visual Studio Code Go Debugging: https://code.visualstudio.com/docs/languages/go#_debugging
+- `break main.main` zet een breekpunt bij de `main`-functie.
+- `continue` hervat de uitvoering van het programma totdat een breekpunt wordt geraakt.
+- `print message` drukt de waarde van de `message`-variabele af.
+- `next` gaat verder met de uitvoering van het programma naar de volgende regel.
+- `quit` verlaat de debugger.
+
+De uitvoer bij het raken van het breekpunt en het afdrukken van de variabele ziet er misschien als volgt uit:
+
+```shell
+Breakpoint 1 at 0x49ecf3 for main.main() ./main.go:6
+> main.main() ./main.go:6 (hits goroutine(1):1 total:1) (PC: 0x49ecf3)
+     1: package main
+     2:
+     3: import "fmt"
+     4:
+     5: func main() {
+     6: =>    message := "Debuggen in Go"
+     7:       fmt.Println(message)
+     8: }
+(dlv) print message
+"Debuggen in Go"
+```
+
+Met behulp van deze commando's kun je stapsgewijs door je programma gaan, de staat inspecteren terwijl je verder gaat om te begrijpen hoe het zich gedraagt, en eventuele problemen identificeren.
+
+## Diepgaand
+
+De keuze voor `delve` als het debuggereedschap bij uitstek voor Go, boven traditionele gereedschappen zoals GDB (GNU Debugger), komt voornamelijk vanwege de aard van Go's uitvoeringsmodel en runtime. GDB was oorspronkelijk niet ontworpen met de Go-runtime in gedachten, wat `delve` een geschiktere keuze maakt voor Go-ontwikkelaars. `Delve` is specifiek ontworpen voor Go en biedt een intuïtievere debug-ervaring voor Go-routines, kanalen en andere Go-specifieke constructies.
+
+Verder ondersteunt `delve` een breed scala aan functies die verder gaan dan wat de basis GDB biedt bij het werken met Go-programma's. Deze omvatten, maar zijn niet beperkt tot: het hechten aan lopende processen voor debugging; conditionele breekpunten; en het evalueren van complexe uitdrukkingen die mogelijk Go's concurrency-primitieven omvatten.
+
+Hoewel `delve` de goto-debugger is voor veel Go-ontwikkelaars, is het de moeite waard om te vermelden dat de Go-gereedschapsketen ook lichtgewichtere vormen van debug-ondersteuning bevat, zoals het ingebouwde `pprof`-gereedschap voor profilering en het `trace`-gereedschap voor visualisatie van concurrency. Deze gereedschappen kunnen soms een snellere of meer hoogwaardige avenue bieden voor het diagnosticeren van prestatieproblemen of concurrency-bugs, die complementair kunnen zijn of zelfs de voorkeur kunnen hebben, afhankelijk van de debug-context.

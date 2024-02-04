@@ -1,36 +1,60 @@
 ---
-title:                "使用TOML"
-date:                  2024-01-26T04:22:25.319640-07:00
+title:                "使用TOML进行工作"
+date:                  2024-02-03T18:12:43.538351-07:00
 model:                 gpt-4-0125-preview
-simple_title:         "使用TOML"
-
+simple_title:         "使用TOML进行工作"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/go/working-with-toml.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## 是什么 & 为什么?
-使用TOML涉及在Go中解析和编码TOML（Tom's Obvious, Minimal Language）文件。程序员选择TOML是因为其可读性强且易于映射到数据结构，非常适合用作配置文件。
+## 什么和为什么？
 
-## 如何操作:
-在Go中使用TOML，你通常会使用像`BurntSushi/toml`这样的库。下面是快速解析TOML配置文件的方法:
+TOML（Tom's Obvious, Minimal Language，汤姆的明了、简洁语言）是一种配置文件格式，因其简单的语法而易于阅读。程序员使用TOML来配置应用程序设置和依赖项，因为其清晰性和直接映射到数据结构的特性，使其在许多Go项目中成为设置和管理配置的热门选择。
 
-```Go
+## 如何操作：
+
+要在Go中开始使用TOML，首先需要包含一个能够解析TOML文件的库，因为Go标准库并不原生支持TOML。`BurntSushi/toml`包是此类用途的流行选择。首先，确保安装它：
+
+```bash
+go get github.com/BurntSushi/toml
+```
+
+以下是如何使用它的简单示例。假设您有一个名为`config.toml`的配置文件，内容如下：
+
+```toml
+title = "TOML示例"
+
+[database]
+server = "192.168.1.1"
+ports = [ 8001, 8001, 8002 ]
+connection_max = 5000
+enabled = true
+```
+
+现在，您需要创建一个反映TOML结构的Go结构体：
+
+```go
 package main
 
 import (
     "fmt"
-    "os"
-
     "github.com/BurntSushi/toml"
 )
 
 type Config struct {
-    Title   string
-    Owner   struct {
-        Name string
-    }
+    Title    string
+    Database Database `toml:"database"`
+}
+
+type Database struct {
+    Server        string
+    Ports         []int
+    ConnectionMax int `toml:"connection_max"`
+    Enabled       bool
 }
 
 func main() {
@@ -39,32 +63,22 @@ func main() {
         fmt.Println(err)
         return
     }
-    fmt.Printf("标题: %s, 拥有者: %s\n", config.Title, config.Owner.Name)
+    fmt.Printf("标题: %s\n", config.Title)
+    fmt.Printf("数据库服务器: %s\n", config.Database.Server)
 }
 ```
 
-`config.toml`样例:
-
-```Toml
-title = "示例TOML"
-[owner]
-name = "Tom Preston-Werner"
-```
-
-样例输出:
+示例输出：
 
 ```
-标题: 示例TOML, 拥有者: Tom Preston-Werner
+标题: TOML示例
+数据库服务器: 192.168.1.1
 ```
 
-## 深入了解
-TOML，由Tom Preston-Werner于2013年推出，旨在成为一种最小化的配置文件格式，由于其明确的语义而易于阅读。Go开发者经常选择使用TOML来进行配置，而不是选择像JSON或YAML这样的替代品，因为其直接性以及能够简单地表示复杂的层级结构。
+## 深入探讨
 
-与YAML相比，YAML具有复杂的特性和潜在的安全问题，TOML的扁平设计减少了复杂性和由于打字错误引起的错误。与JSON不同的是，TOML支持评论，使得配置的行内解释变得更加容易。
+TOML是由GitHub的联合创始人之一汤姆·普雷斯顿-沃纳创建的，旨在提供一种直接的配置文件格式，可以轻松映射到哈希表，并且一看就能理解，无需事先了解格式。它与JSON或YAML形成对比，尽管它们也被广泛使用，但由于大括号、引号和缩进问题，对于配置文件来说可能不那么对人类友好。
 
-在Go中使用TOML时，有一些细微之处需要考虑。结构体标签可以自定义结构体如何映射到TOML结构，你还应该了解TOML数组和内联表是如何解析到Go切片和映射中的。
+Go中的`BurntSushi/toml`包是一个强大的库，不仅允许解码还允许编码TOML文件，使其成为需要同时读写此格式配置文件的应用程序的多功能选择。然而，应该注意的是，随着技术的进步和新版Go的推出，像`pelletier/go-toml`这样的替代品出现了，提供了改进的性能和额外的功能，如树操作和查询支持。
 
-## 另请参阅
-- TOML规范: https://toml.io/en/
-- BurntSushi/toml库: https://github.com/BurntSushi/toml
-- 配置文件格式的比较: https://www.redhat.com/sysadmin/yaml-toml-json-differences
+虽然TOML对许多应用程序来说是一个很好的选择，但根据应用程序配置的复杂性以及个人或团队偏好，其他格式如YAML或JSON可能更合适，特别是如果配置要求更复杂的数据结构，TOML的冗长特性可能无法优雅地捕获。然而，对于直接、可读和易于编辑的配置，TOML配合Go的强类型系统和上述库，是一个优秀的选择。

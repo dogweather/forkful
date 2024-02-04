@@ -1,73 +1,81 @@
 ---
 title:                "Koodin järjestäminen funktioihin"
-date:                  2024-01-26T01:11:15.288473-07:00
-model:                 gpt-4-1106-preview
+date:                  2024-02-03T17:59:52.642342-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Koodin järjestäminen funktioihin"
-
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/go/organizing-code-into-functions.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-# Mikä & Miksi?
-Koodin järjestäminen funktioihin on koodin pilkkomista uudelleenkäytettäviksi osiksi. Se tekee koodistasi selkeämmän, helpommin luettavan ja yksinkertaisemman virheenjäljityksen kannalta.
+## Mikä ja miksi?
 
-# Miten:
-Tässä Go-koodinpätkä, joka näyttää koodilohkon, minkä jälkeen uudelleenjärjestetty versio funktioita käyttäen:
+Koodin järjestäminen funktioihin Go:ssa tarkoittaa koodin jakamista uudelleenkäytettäviksi, modulaarisiksi lohkoiksi, jotka suorittavat tiettyjä tehtäviä. Tämä lähestymistapa parantaa koodin luettavuutta, ylläpidettävyyttä ja helpottaa tiimityöskentelyä mahdollistamalla ohjelmoijille työskentelyn eri funktioiden parissa samanaikaisesti.
+
+## Kuinka:
+
+Go:ssa funktio määritellään käyttämällä `func`-avainsanaa, jonka jälkeen tulee funktion nimi, parametrit (jos niitä on) ja palautustyyppi. Esitellään asia yksinkertaisella esimerkillä:
 
 ```go
 package main
 
 import "fmt"
 
+// määrittele funktio kahden luvun summan laskemiseksi
+func addNumbers(a int, b int) int {
+    return a + b
+}
+
 func main() {
-    // Ennen: Inline-koodi
-    fmt.Println("Lasketaan summaa...")
-    yhteensa := 0
-    for i := 1; i <= 10; i++ {
-        yhteensa += i
-    }
-    fmt.Println("Kokonaissumma on:", yhteensa)
-
-    // Jälkeen: Funktion käyttäminen
-    fmt.Println("Lasketaan summaa funktion avulla...")
-    summa := getSum(1, 10)
-    fmt.Println("Kokonaissumma on:", summa)
-}
-
-// Funktio summan laskemiseksi tietyllä välimatkalla
-func getSum(alku, loppu int) int {
-    yhteensa := 0
-    for i := alku; i <= loppu; i++ {
-        yhteensa += i
-    }
-    return yhteensa
+    sum := addNumbers(5, 7)
+    fmt.Println("Summa on:", sum)
+    // Tuloste: Summa on: 12
 }
 ```
 
-Molempien, inline-koodin sekä funktion perusteella toteutetun koodin tuloste on sama:
+Funktiot voivat myös palauttaa useita arvoja, mikä on ainutlaatuinen ominaisuus verrattuna moniin muihin kieliin. Tässä on esimerkki siitä, miten voit hyödyntää tätä:
 
+```go
+// määrittele funktio kahden luvun vaihtamiseksi
+func swap(a, b int) (int, int) {
+    return b, a
+}
+
+func main() {
+    x, y := swap(10, 20)
+    fmt.Println("x, y vaihdon jälkeen:", x, y)
+    // Tuloste: x, y vaihdon jälkeen: 20 10
+}
 ```
-Lasketaan summaa...
-Kokonaissumma on: 55
-Lasketaan summaa funktion avulla...
-Kokonaissumma on: 55
+
+Voit myös määritellä funktioita, joilla on vaihteleva määrä argumentteja käyttämällä ellipsiä `...` ennen parametrityyppiä. Tämä on hyödyllistä joustavien funktioiden luomisessa:
+
+```go
+// määrittele funktio tuntemattoman määrän kokonaislukujen summan laskemiseksi
+func sum(numbers ...int) int {
+    total := 0
+    for _, number := range numbers {
+        total += number
+    }
+    return total
+}
+
+func main() {
+    total := sum(1, 2, 3, 4, 5)
+    fmt.Println("Kokonaissumma on:", total)
+    // Tuloste: Kokonaissumma on: 15
+}
 ```
 
-# Syväsukellus
-Ennen funktioiden käsitteen esiintuloa ohjelmointi oli pääasiassa proseduraalista, ja koodi suoritettiin ylhäältä alas. Ohjelmien kasvaessa tämä lähestymistapa aiheutti tehotonta toimintaa ja koodin toistoa.
+## Syvä sukellus
 
-Kielet esittelivät funktiot abstraktiomekanismina. Go-kielessä funktiot kapseloivat koodilohkoja, joilla on tietty tehtävä, ja kannustavat DRY (Don't Repeat Yourself) -periaatteen noudattamiseen. Ne hyväksyvät parametrejä ja voivat palauttaa tuloksia.
+Koodin järjestäminen funktioihin ei ole omituista vain Go:lle—se on perusohjelmointiperiaate. Go kuitenkin tuo tiettyjä käytäntöjä ja kykyjä, jotka erottavat sen funktionhallinnassa. Esimerkiksi kyky palauttaa useita arvoja funktioista on suhteellisen ainutlaatuinen ja voi johtaa puhtaampaan, ymmärrettävämpään koodiin, erityisesti kun käsitellään operaatioita, jotka perinteisesti saattaisivat vaatia osoittimien käyttöä tai poikkeusten käsittelyä.
 
-Hyödyllisiä vinkkejä:
-- Nimeä funktiot selkeästi; hyvä nimi kertoo mitä funktio tekee.
-- Pidä ne lyhyinä; jos funktio tekee liian paljon, pilko se osiin.
-- Funktiot voivat palauttaa useita arvoja, hyödynnä tätä virheenkäsittelyssä.
-- Korkeamman asteen funktiot (funktiot, jotka ottavat vastaan tai palauttavat muita funktioita) ovat voimakkaita työkaluja Go-kielessä.
+Lisäksi Go:n tuki ensiluokan funktioille—funktioille, joita voidaan välittää argumentteina muihin funktioihin, palauttaa arvoina funktioista ja sijoittaa muuttujiin—parantaa kielen tukea funktionaalisille ohjelmointimalleille. Tämä ominaisuus on erityisen hyödyllinen korkeamman tason funktioiden luomisessa, jotka manipuloivat tai yhdistävät muita funktioita.
 
-Vaihtoehtoja funktioille ovat inline-koodi (sekavaa monimutkaisissa tehtävissä) ja oliomenetelmät (oliotyyppisen paradigman osa, joka on Go:ssa saatavilla rakenteiden kautta).
+On kuitenkin tärkeää olla tietoinen "vähenevän tuoton laista", kun järjestetään koodia funktioihin. Liiallinen modulaarisuus voi johtaa liialliseen abstraktioon, mikä tekee koodista vaikeamman ymmärtää ja ylläpitää. Lisäksi, vaikka Go:n yksinkertainen lähestymistapa virheenkäsittelyyn (virheiden palauttaminen normaaleina paluuarvoina) rohkaisee selkeään virheiden leviämiseen useiden funktion kutsutasojen läpi, se voi johtaa toistuvaan virheidenkäsittelykoodiin. Vaihtoehdot, kuten virheenkäsittelykehykset tai muiden kielten "try-catch" -lähestymistavan omaksuminen (vaikka se ei olekaan natiivisti tuettuna) pakettitoteutusten kautta, voivat joskus tarjota elegantimpia ratkaisuja riippuen käyttötapauksesta.
 
-# Katso Myös
-- [Go by Example: Funktionaalinen ohjelmointi](https://gobyexample.com/functions)
-- [Tehokas Go: Funktionaalinen ohjelmointi](https://golang.org/doc/effective_go#functions)
+Päätös funktioiden ja modulaarisuuden laajasta hyödyntämisestä Go:ssa tulisi tasapainottaa abstraktion, ylläpidettävyyden, suorituskyvyn ja luettavien virheenkäsittelyjen tarpeen välillä, hyödyntäen parhaiten Go:n suoraviivaisten, mutta tehokkaiden ominaisuuksien tarjoamia etuja.

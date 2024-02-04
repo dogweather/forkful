@@ -1,20 +1,27 @@
 ---
 title:                "Avrunding av tall"
-date:                  2024-01-26T03:45:03.094600-07:00
+date:                  2024-02-03T18:07:56.438089-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Avrunding av tall"
-
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/go/rounding-numbers.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Å avrunde tall betyr å justere et tall til nærmeste hele tall eller spesifiserte desimalplass. Det gjøres for å forenkle verdier, gjøre dem mer lesbare, eller få dem til å passe innenfor visse begrensninger, som for eksempel når man jobber med valutaer.
+
+Avrunding av tall handler om å justere verdien av et tall til det nærmeste hele tallet eller til et spesifikt antall desimaler. Programmerere gjør dette av grunner som å forbedre lesbarheten, forenkle beregninger eller møte domenespesifikke presisjonskrav.
 
 ## Hvordan:
-Go sin `math` pakke er din venn for avrunding. Bruk `math.Round`, `math.Floor`, og `math.Ceil` for enkelthet:
+
+I Go finnes det ikke en innebygd funksjon som direkte avrunder tall til et spesifikt antall desimaler i matematikkbiblioteket. Du kan imidlertid oppnå avrunding gjennom en kombinasjon av funksjoner for hele tall eller implementere en egendefinert funksjon for desimalplasser.
+
+### Avrunding til det nærmeste hele tallet:
+
+For å avrunde til det nærmeste hele tallet kan du bruke `math.Floor()`-funksjonen med et tillegg på 0,5 for positive tall og `math.Ceil()` minus 0,5 for negative tall, avhengig av hvilken retning du ønsker å avrunde til.
 
 ```go
 package main
@@ -25,47 +32,40 @@ import (
 )
 
 func main() {
-	number := 3.14159
-	fmt.Println("Round:", math.Round(number))  // Avrund til nærmeste hele tall
-	fmt.Println("Floor:", math.Floor(number)) // Avrund ned
-	fmt.Println("Ceil: ", math.Ceil(number))  // Avrund opp
+	fmt.Println(math.Floor(3.75 + 0.5))  // Gir ut: 4
+	fmt.Println(math.Ceil(-3.75 - 0.5)) // Gir ut: -4
 }
 ```
 
-Eksempel på utdata:
-```
-Round: 3
-Floor: 3
-Ceil: 4
-```
+### Avrunding til et spesifikt antall desimaler:
 
-For spesifikke desimalplasser, multipliser, avrund, deretter del:
+For avrunding til et spesifikt antall desimaler kan en egendefinert funksjon brukes der du multipliserer tallet med 10^n (hvor n er antallet desimaler), avrunder det til det nærmeste hele tallet som før, og deretter deler på 10^n.
 
 ```go
-func roundToDecimalPlace(number float64, decimalPlaces int) float64 {
-	shift := math.Pow(10, float64(decimalPlaces))
+package main
+
+import (
+	"fmt"
+	"math"
+)
+
+func roundToDecimalPlace(number float64, places int) float64 {
+	shift := math.Pow(10, float64(places))
 	return math.Round(number*shift) / shift
 }
 
 func main() {
-	number := 3.14159
-	fmt.Println("Avrundet til 2 desimalplasser:", roundToDecimalPlace(number, 2))
+	fmt.Println(roundToDecimalPlace(3.14159, 2)) // Gir ut: 3.14
+	fmt.Println(roundToDecimalPlace(-3.14159, 3)) // Gir ut: -3.142
 }
 ```
 
-Eksempel på utdata:
-```
-Avrundet til 2 desimalplasser: 3.14
-```
-
 ## Dypdykk
-Avrunding av tall er ikke nytt—det går tilbake til antikkens matematikk, alltid med mål om enkelhet. `math.Round` i Go bruker [bankers avrunding](https://en.wikipedia.org/wiki/Rounding#Round_half_to_even), noe som betyr at 0,5 avrundes til nærmeste partall, dette reduserer en skjevhet som kunne påvirke summer.
 
-Flyttall kan være knepige på grunn av deres binære representasjon, som kanskje ikke nøyaktig representerer alle desimaler. Go sin tilnærming opprettholder imidlertid forventet oppførsel det meste av tiden.
+Avrunding av tall er en grunnleggende operasjon i dataprogrammering, knyttet til den historiske utfordringen med å representere reelle tall i et binærsystem. Behovet for avrunding oppstår fra det faktum at mange reelle tall ikke kan representeres nøyaktig i binær, noe som fører til tilnærmingsfeil.
 
-Andre avrundingsmetoder eksisterer, som "avrund halv opp" eller "avrund halv bort fra null", men Go sin standardbibliotek er det som er lett tilgjengelig. For mer komplekse behov, kan du trenge et tredjepartsbibliotek eller lage din egen løsning.
+I Go er tilnærmingen til avrunding noe manuell sammenlignet med språk som tilbyr innebygde avrundingsfunksjoner til spesifikke desimaler. Likevel gir Go-standarbibliotekets `math`-pakke de grunnleggende byggesteinene (som `math.Floor` og `math.Ceil`) for å konstruere hvilken som helst avrundingsmekanisme som kreves av applikasjonen.
 
-## Se Også
-- Go sin `math` pakke: [https://pkg.go.dev/math](https://pkg.go.dev/math)
-- IEEE 754-standard for flyttallsaritmetikk (Gos grunnlag for håndtering av flyttall): [https://ieeexplore.ieee.org/document/4610935](https://ieeexplore.ieee.org/document/4610935)
-- Forstå flyttall: ["What Every Computer Scientist Should Know About Floating-Point Arithmetic"](https://docs.oracle.com/cd/E19957-01/806-3568/ncg_goldberg.html)
+Denne manuelle tilnærmingen, selv om den tilsynelatende er mer omstendelig, gir programmerere finere kontroll over hvordan tall avrundes, og imøtekommer presisjons- og nøyaktighetsbehovene til ulike applikasjoner. Alternativer som tredjepartsbiblioteker eller utforming av egendefinerte avrundingsfunksjoner kan gi mer ukompliserte løsninger når det håndteres komplekse tall eller kreves mer avanserte matematiske operasjoner som ikke er dekket av standardbiblioteket.
+
+For å konkludere, selv om Gos standardbibliotek kanskje ikke tilbyr direkte funksjonalitet for avrunding til desimaler, muliggjør dets omfattende sett med matematiske funksjoner at utviklere kan implementere robuste avrundingsløsninger tilpasset deres spesifikke behov.

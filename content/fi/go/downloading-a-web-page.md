@@ -1,55 +1,73 @@
 ---
-title:                "Verkkosivun lataaminen"
-date:                  2024-01-20T17:44:10.868244-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Verkkosivun lataaminen"
-
+title:                "Web-sivun lataaminen"
+date:                  2024-02-03T17:56:13.737190-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Web-sivun lataaminen"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/go/downloading-a-web-page.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Mitä & Miksi?)
-Lataat web-sivun saadaksesi sen sisällön ohjelmallisesti. Se on hyödyllistä tietojen kaapimiseen, automaatioon tai varmuuskopiointiin.
+## Mikä ja Miksi?
 
-## How to: (Kuinka tehdä:)
-```Go
+Verkkosivun lataaminen tarkoittaa web-sivun HTML-sisällön noutamista HTTP/HTTPS-protokollaa käyttäen. Ohjelmoijat tekevät tätä usein web-scrapingin, datan analysoinnin tai yksinkertaisesti tehdäkseen ohjelmallisesti yhteistyötä verkkosivustojen kanssa automatisoidakseen tehtäviä.
+
+## Kuinka:
+
+Go-kielessä, standardikirjasto tarjoaa tehokkaita työkaluja web-pyyntöihin, erityisesti `net/http` -paketin. Verkkosivun lataamiseksi käytämme pääasiassa `http.Get` -metodia. Tässä on perusesimerkki:
+
+```go
 package main
 
 import (
-	"fmt"
-	"io/ioutil"
-	"net/http"
+    "fmt"
+    "io/ioutil"
+    "net/http"
 )
 
 func main() {
-	url := "https://example.com"
-	resp, err := http.Get(url)
-	if err != nil {
-		panic(err)
-	}
-	defer resp.Body.Close()
+    url := "http://example.com"
+    response, err := http.Get(url)
+    if err != nil {
+        fmt.Println("Virhe:", err)
+        return
+    }
+    defer response.Body.Close()
 
-	body, err := ioutil.ReadAll(resp.Body)
-	if err != nil {
-		panic(err)
-	}
+    body, err := ioutil.ReadAll(response.Body)
+    if err != nil {
+        fmt.Println("Virhe luettaessa sisältöä:", err)
+        return
+    }
 
-	fmt.Println(string(body))
+    fmt.Println(string(body))
 }
 ```
-Sample Output:
+
+Esimerkki tuloste voisi olla HTML-sisältöä `http://example.com` -sivustolta, joka on perusesimerkki verkkosivusta:
+
 ```
 <!doctype html>
 <html>
+<head>
+    <title>Esimerkki Domain</title>
 ...
 </html>
 ```
 
-## Deep Dive (Syväsukellus)
-Web-sivujen lataaminen on oleellinen osa modernia ohjelmistokehitystä ja on ollut siitä lähtien, kun verkko-ohjelmointi yleistyi 1990-luvulla. Vaihtoehtoisia keinoja sivujen lataamiseen ovat esimerkiksi cURL tai erilaiset HTTP-kirjastot kielissä, kuten Pythonin Requests tai JavaScriptin Axios. Go:n standardikirjastossa http-paketti tarjoaa helpon tavan toteuttaa web-pyynnöt ilman ulkopuolisia kirjastoja. Huomaa, että yllä käytetty `ioutil.ReadAll` on yksinkertainen, mutta suurten vastausten käsittelyssä kannattaa käyttää suoratoistoa tai osittaista lukemista, etenkin jos muistinkäyttö on huolenaihe.
+Tämä yksinkertainen ohjelma tekee HTTP GET -pyynnön määriteltyyn URL-osoitteeseen, sitten lukee ja tulostaa vastauksen rungon.
 
-## See Also (Katso myös)
-- Go:n virallinen dokumentaatio: [http](https://pkg.go.dev/net/http)
-- Go by Example: HTTP Clients - [https://gobyexample.com/http-clients](https://gobyexample.com/http-clients)
+Huomautus: Nykyaikaisessa Go-ohjelmoinnissa, `ioutil.ReadAll` katsotaan vanhentuneeksi Go 1.16 versiosta lähtien `io.ReadAll` -metodin hyväksi.
+
+## Syväsukellus
+
+Go-kielen suunnittelu filosofia korostaa yksinkertaisuutta, tehokkuutta ja luotettavaa virheenkäsittelyä. Kun kyse on verkkohjelmoinnista, ja erityisesti web-sivujen lataamisesta, Gon standardikirjasto, erityisesti `net/http`, on tehokkaasti suunniteltu käsittelemään HTTP-pyynnön ja -vastauksen toimintoja.
+
+Lähestymistapa verkkopyyntöihin Go:ssa juontaa juurensa kielen alkuperästä, lainaten konsepteja edeltäjiltään, mutta parantaen merkittävästi tehokkuutta ja yksinkertaisuutta. Sisällön lataamiseksi, Gon rinnakkaisuusmalli käyttäen goroutineja, tekee siitä poikkeuksellisen tehokkaan työkalun tekemään asynkronisia HTTP-pyyntöjä, käsitellen tuhansia pyyntöjä rinnakkain vaivatta.
+
+Historiallisesti, ohjelmoijat ovat nojautuneet raskaasti kolmannen osapuolen kirjastoihin muissa kielissä yksinkertaisia HTTP-pyyntöjä varten, mutta Gon standardikirjasto tehokkaasti poistaa tämän tarpeen useimmissa yleisissä käyttötapauksissa. Vaikka vaihtoehtoja ja kattavampia paketteja on saatavilla monimutkaisiin skenaarioihin, kuten `Colly` web-scrapingiin, natiivi `net/http` -paketti on usein riittävä lataamaan verkkosivuja, tehden Gosta houkuttelevan valinnan kehittäjille, jotka etsivät sisäänrakennettua, yksinkertaistettua ratkaisua.
+
+Verrattuna muihin kieliin, Go tarjoaa huomattavasti suoraviivaisemman ja suorituskykyisemmän tavan suorittaa verkkotoiminnot, korostaen kielen filosofiaa tehdä enemmän vähemmällä. Vaikka parempia vaihtoehtoja saattaa olla saatavilla erikoistuneisiin tehtäviin, Gon sisäiset ominaisuudet löytävät tasapainon käytettävyyden ja suorituskyvyn välillä, tehden siitä vakuuttavan vaihtoehdon verkkosisällön lataamiseen.

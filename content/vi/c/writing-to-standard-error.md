@@ -1,72 +1,54 @@
 ---
 title:                "Ghi vào lỗi chuẩn"
-date:                  2024-01-28T22:13:19.796125-07:00
+date:                  2024-02-03T18:15:34.659571-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Ghi vào lỗi chuẩn"
-
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/c/writing-to-standard-error.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Cái gì & Tại sao?
+## Cái gì và Tại sao?
 
-Việc viết vào lỗi chuẩn (stderr) là cách bạn xuất thông điệp lỗi và chẩn đoán trong C. Nó tách biệt với xuất chuẩn (stdout) để bạn có thể xử lý đầu ra thông thường và lỗi một cách khác biệt, như ghi nhận lỗi hoặc tối ưu hóa việc gỡ lỗi.
+Việc ghi vào lỗi chuẩn trong C liên quan đến việc điều hướng các thông báo lỗi và thông tin chẩn đoán sang một luồng riêng biệt khỏi đầu ra chính của chương trình. Các lập trình viên làm điều này để phân chia thông báo lỗi khỏi đầu ra chuẩn, giúp cả hai dễ đọc và xử lý riêng biệt hơn, đặc biệt là khi gỡ lỗi hoặc ghi lại quá trình thực thi của các chương trình.
 
 ## Cách thực hiện:
 
-Dưới đây là cách viết vào stderr, sử dụng các hàm của thư viện tiêu chuẩn.
+Trong C, luồng `stderr` được sử dụng để viết thông báo lỗi. Không giống như viết vào đầu ra chuẩn với `printf`, viết vào `stderr` có thể được thực hiện bằng cách sử dụng `fprintf` hoặc `fputs`. Đây là cách bạn có thể làm:
 
-```C
+```c
 #include <stdio.h>
 
 int main() {
-    fprintf(stderr, "Một lỗi đã xảy ra!\n");
+    fprintf(stderr, "Đây là một thông báo lỗi.\n");
+
+    fputs("Đây là một thông báo lỗi khác.\n", stderr);
+    
     return 0;
 }
 ```
 
-Đầu ra mẫu:
-
+Đầu ra mẫu (tới stderr):
 ```
-Một lỗi đã xảy ra!
-```
-
-Sử dụng `perror` khi bạn muốn thêm thông điệp về lỗi hệ thống cuối cùng:
-
-```C
-#include <stdio.h>
-#include <errno.h>
-
-int main() {
-    fopen("nonexistentfile.txt", "r");
-
-    if (errno) {
-        perror("Mở file thất bại");
-    }
-
-    return 0;
-}
+Đây là một thông báo lỗi.
+Đây là một thông báo lỗi khác.
 ```
 
-Đầu ra mẫu:
+Quan trọng là nên lưu ý rằng mặc dù đầu ra trông tương tự như `stdout` trên bảng điều khiển, khi sử dụng chuyển hướng trong terminal, sự khác biệt trở nên rõ ràng:
 
+```sh
+$ ./chương_trình_của_bạn > output.txt
 ```
-Mở file thất bại: Không có file hoặc thư mục
-```
 
-## Đi sâu hơn
+Lệnh này chỉ chuyển hướng đầu ra chuẩn tới `output.txt`, trong khi các thông báo lỗi vẫn sẽ xuất hiện trên màn hình.
 
-Xét về mặt lịch sử, việc tách stderr ra khỏi stdout giúp khi chạy các chương trình từ shell. Xuất chuẩn có thể được điều hướng vào một tập tin hoặc một chương trình khác trong khi lỗi chuẩn vẫn hiển thị trong terminal. Sự phân biệt này rất quan trọng trong các hệ thống dựa trên Unix.
+## Tìm hiểu sâu
 
-Các phương án thay thế cho `fprintf` hoặc `perror` bao gồm việc viết trực tiếp vào mô tả tập tin, như `write(2, "Lỗi\n", 6);`, tuy nhiên nó ít phổ biến vì đây là hành động cấp thấp hơn.
+Sự khác biệt giữa `stdout` và `stderr` trong các hệ thống dựa trên Unix có từ những ngày đầu tiên của C và Unix. Sự phân chia này cho phép xử lý lỗi mạnh mẽ hơn và ghi nhật ký, vì nó cho phép lập trình viên chuyển hướng các thông báo lỗi một cách độc lập với đầu ra chương trình chuẩn. Mặc dù `stderr` không được bộ đệm theo mặc định để đảm bảo đầu ra tức thì của các thông báo lỗi, điều này giúp trong việc gỡ lỗi sự cố và các vấn đề quan trọng khác, trong khi đó `stdout` thường được bộ đệm, có nghĩa là đầu ra của nó có thể bị trì hoãn cho đến khi bộ đệm được làm rỗng (ví dụ: khi chương trình kết thúc hoặc làm rỗng bằng tay).
 
-Về mặt triển khai, stderr là một con trỏ `FILE` được đệm. Nhưng, không giống stdout, nó thường được đặt trong chế độ không đệm để các thông điệp lỗi được hiển thị ngay lập tức, điều này rất quan trọng để hiểu các vấn đề của chương trình khi chúng xuất hiện.
+Trong các ứng dụng hiện đại, việc viết vào `stderr` vẫn còn liên quan, đặc biệt là đối với các công cụ dòng lệnh và ứng dụng máy chủ nơi việc phân biệt giữa các thông điệp nhật ký thông thường và lỗi là rất quan trọng. Tuy nhiên, đối với việc xử lý lỗi phức tạp hơn, đặc biệt là trong các ứng dụng giao diện người dùng đồ họa hoặc nơi cần có cơ chế ghi nhật ký tinh vi hơn, lập trình viên có thể sử dụng các thư viện ghi nhật ký chuyên dụng cung cấp nhiều kiểm soát hơn về định dạng thông điệp, điểm đến (ví dụ: tệp tin, mạng), và cấp độ nghiêm trọng (thông tin, cảnh báo, lỗi, v.v.).
 
-## Xem thêm
-
-- [Thư viện C của GNU: Luồng Chuẩn](https://www.gnu.org/software/libc/manual/html_node/Standard-Streams.html)
-- [Trang Hướng dẫn Write Syscall](https://man7.org/linux/man-pages/man2/write.2.html)
+Dù `stderr` cung cấp một cơ chế cơ bản cho báo cáo lỗi trong C, sự phát triển của các thực hành lập trình và sự có sẵn của các khuôn khổ ghi nhật ký tiên tiến có nghĩa là nó thường chỉ là điểm xuất phát cho các chiến lược xử lý lỗi hiện đại.

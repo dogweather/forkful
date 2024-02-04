@@ -1,70 +1,81 @@
 ---
-title:                "Einen neuen Projekt starten"
-date:                  2024-01-20T18:03:29.435905-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Einen neuen Projekt starten"
-
+title:                "Ein neues Projekt starten"
+date:                  2024-02-03T18:09:22.568066-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Ein neues Projekt starten"
 tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/go/starting-a-new-project.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Was & Warum?
 
-Ein neues Projekt zu starten bedeutet, eine leere Leinwand in eine funktionierende Software zu verwandeln. Programmierer machen das, um Ideen zum Leben zu erwecken, Probleme zu lösen oder einfach um neue Fertigkeiten zu lernen.
+Ein neues Projekt in Go zu starten, umfasst das Einrichten eines Arbeitsbereichs und dessen Initialisierung mit den notwendigen Go-Modulen. Programmierer tun dies, um Code zu organisieren, Abhängigkeiten effektiv zu verwalten und Build-Prozesse zu erleichtern. Dies ist grundlegend für die Erstellung skalierbarer und wartbarer Software in Go.
 
-## Anleitung:
+## Wie:
 
-Um mit Go ein neues Projekt anzufangen, installiere erst Go von [golang.org](https://golang.org/dl/). Dann:
+Stellen Sie zuerst sicher, dass Go installiert ist, indem Sie `go version` in Ihrem Terminal ausführen. Sie sollten die installierte Version von Go als Ausgabe sehen. Als Nächstes starten wir ein neues Projekt. Navigieren Sie zu Ihrem Arbeitsbereich und führen Sie aus:
 
-```Go
+```shell
+mkdir hello-world
+cd hello-world
+```
+
+Dies erstellt einen neuen Verzeichnis für Ihr Projekt und versetzt Sie dorthin. Jetzt initialisieren Sie das Modul:
+
+```shell
+go mod init example.com/hello-world
+```
+
+Ersetzen Sie `example.com/hello-world` durch Ihren Modulpfad. Dieser Befehl erstellt eine `go.mod`-Datei in Ihrem Verzeichnis, die den Start eines neuen Go-Moduls signalisiert. So könnte `go.mod` aussehen:
+
+```plaintext
+module example.com/hello-world
+
+go 1.18
+```
+
+`go.mod` verfolgt die Abhängigkeiten Ihres Projekts. Jetzt erstellen Sie eine `main.go`-Datei:
+
+```shell
+touch main.go
+```
+
+Öffnen Sie `main.go` in Ihrem bevorzugten Editor und fügen Sie den folgenden Code hinzu, um "Hallo, Welt!" auszugeben:
+
+```go
 package main
 
 import "fmt"
 
 func main() {
-    fmt.Println("Hallo, neues Projekt!")
+    fmt.Println("Hallo, Welt!")
 }
 ```
 
-Speichere dies in einer Datei namens `main.go` und führe es aus mit:
+Um Ihr Programm auszuführen, navigieren Sie zurück zum Terminal und führen Sie aus:
 
-```bash
+```shell
 go run main.go
 ```
 
-Erwartete Ausgabe:
+Sie sollten sehen:
 
-```
-Hallo, neues Projekt!
-```
-
-Um das Projekt zu bauen (kompilieren):
-
-```bash
-go build main.go
+```plaintext
+Hallo, Welt!
 ```
 
-Dies erzeugt eine ausführbare Datei in deinem aktuellen Verzeichnis.
+Herzlichen Glückwunsch! Sie haben gerade ein neues Go-Projekt gestartet und Ihr erstes Go-Programm ausgeführt.
 
-## Vertiefung:
+## Vertiefung
 
-Go ist dafür bekannt, die Entwicklung von zuverlässigen und einfach zu wartenden Programmen zu erleichtern. Seit seiner Einführung von Google im Jahr 2009 wurde Go oft als Werkzeug für Systemprogrammierung und Web-Backends verwendet. Alternativen wie Python, Java, oder Rust haben auch ihre Stärken, aber Go besticht durch seine einfache Handhabung von Concurrent Programming und seine starke und standardisierte Toolchain.
+Die Initiative, Module als Standard für die Abhängigkeitsverwaltung in Go einzuführen, war eine bedeutende Veränderung im Go-Ökosystem, die offiziell in Go 1.11 übernommen wurde. Vor Modulen verließen sich Go-Entwickler auf die Umgebungsvariable GOPATH, um Abhängigkeiten zu verwalten, was weniger intuitiv war und oft zur berüchtigten "Abhängigkeitshölle" führte.
 
-Wenn du ein neues Go-Projekt anfängst, denke über die Struktur nach. Verwende `go mod init` um ein modulares Projekt zu initialisieren, das wird deine Abhängigkeiten verwalten. Dies ist seit der Version 1.11 Bestandteil von Go und löste ältere Systeme wie `GOPATH` ab.
+Module bieten eine gekapselte Möglichkeit, Projekt-Abhängigkeiten, Versionierung zu verwalten und sind ein Schritt in Richtung der Realisierung von selbstständigeren und portableren Go-Projekten. Jedes Modul gibt seine Abhängigkeiten an, die Go in der Datei `go.mod` nachverfolgt, wodurch die Abhängigkeitsverwaltung in unterschiedlichen Umgebungen und Entwicklungsphasen vereinfacht wird.
 
-Ein simples Beispiel, um ein Modul zu initialisieren:
+Es ist jedoch zu beachten, dass, obwohl Go-Module jetzt der Standard sind, einige ältere Projekte möglicherweise immer noch GOPATH verwenden. Für die meisten neuen Projekte bieten Module ein einfacheres und effektiveres Verwaltungssystem, aber das Verständnis von GOPATH kann nützlich sein, um ältere Go-Codebasen zu warten oder dazu beizutragen.
 
-```bash
-go mod init meinprojekt
-```
-
-Daraufhin wird eine `go.mod` Datei in deinem Projektverzeichnis erstellt. Diese Datei hält deine Abhängigkeiten fest.
-
-## Siehe Auch:
-
-- Die offizielle Go Webseite [golang.org](https://golang.org/)
-- Go's "Getting Started" Guide: [golang.org/doc/install](https://golang.org/doc/install)
-- Das Go Blog für aktuelle Nachrichten und Updates: [blog.golang.org](https://blog.golang.org/)
-- [Go by Example](https://gobyexample.com/), eine hervorragende Ressource für praktische Beispiele
+In Bezug auf Alternativen sind Go-Module nun der de facto Standard, aber die Go-Gemeinschaft hat in der Vergangenheit mit anderen Werkzeugen für die Abhängigkeitsverwaltung wie `dep` experimentiert. Diese wurden jedoch größtenteils durch die offizielle Modulunterstützung ersetzt, die in die Go-Toolchain integriert ist.

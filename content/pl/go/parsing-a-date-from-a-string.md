@@ -1,21 +1,25 @@
 ---
-title:                "Przetwarzanie daty ze łańcucha znaków"
-date:                  2024-01-20T15:36:31.028729-07:00
-simple_title:         "Przetwarzanie daty ze łańcucha znaków"
-
+title:                "Analiza składniowa daty z ciągu znaków"
+date:                  2024-02-03T18:05:20.223489-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Analiza składniowa daty z ciągu znaków"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/go/parsing-a-date-from-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Co i Dlaczego?)
-Parsing dates converts string representations of dates and times into a structured format we can manipulate. Programmers do this to handle user input, store or display dates in different formats, and perform operations like date arithmetic.
+## Co i dlaczego?
 
-## How to: (Jak to zrobić:)
-Start by importing the `time` package. Use `time.Parse` to convert your string into a `time.Time` object. Here's a basic example:
+Parsowanie daty ze stringa w Go polega na konwersji daty przedstawionej w formie tekstu na bardziej użyteczny format (np. `time.Time`). Programiści wykonują to zadanie, aby dokładniej obsługiwać dane dotyczące daty i czasu w aplikacjach, szczególnie przy pracy z danymi wprowadzanymi przez użytkownika, API lub systemami przechowywania, gdzie daty często są reprezentowane jako stringi.
 
-```Go
+## Jak to zrobić:
+
+Go zapewnia solidne wsparcie dla parsowania dat i czasów poprzez pakiet `time`. Kluczem jest zrozumienie formatu referencyjnego daty w Go: `Mon Jan 2 15:04:05 MST 2006`, który używasz, aby powiedzieć Go, jak interpretować przychodzący string. Oto szybki przykład, który pomoże Ci zacząć:
+
+```go
 package main
 
 import (
@@ -24,30 +28,36 @@ import (
 )
 
 func main() {
-	strDate := "2023-03-15 14:45:00"
-	layout := "2006-01-02 15:04:05" // Go’s reference date
-	parsedDate, err := time.Parse(layout, strDate)
+	// Przykładowy string z datą
+	dateStr := "2023-04-12 14:45:00"
+	
+	// Definicja układu/formatu przychodzącego stringa z datą
+	// Ten układ informuje Go, aby oczekiwać roku, następnie miesiąca, 
+	// dnia, godziny, minuty, a na końcu sekundy
+	layout := "2006-01-02 15:04:05"
+	
+	// Parsowanie stringa z datą zgodnie z układem
+	parsedDate, err := time.Parse(layout, dateStr)
 	if err != nil {
-		fmt.Println("Error parsing date:", err)
+		fmt.Println("Błąd przy parsowaniu daty:", err)
 		return
 	}
-	fmt.Println("Parsed date:", parsedDate)
+	
+	// Wypisanie sparsowanej daty
+	fmt.Println("Sparsowana Data:", parsedDate)
 }
 ```
 
-Sample Output:
+Kiedy uruchomisz ten kod, otrzymasz:
+
 ```
-Parsed date: 2023-03-15 14:45:00 +0000 UTC
+Sparsowana Data: 2023-04-12 14:45:00 +0000 UTC
 ```
 
-## Deep Dive (Dogłębna analiza):
-Date parsing in Go is unique. It uses a reference date, `Mon Jan 2 15:04:05 MST 2006`, to dictate the format. Why 2006? It's arbitrary, but the numbers (1 2 3 4 5 6 7) give each date and time component a distinct value, making it mnemonic.
+Zauważ, jak string `layout` używa wartości daty referencyjnej do określenia formatu przychodzącego stringa. Dostosuj `layout`, aby pasował do formatu Twoich wejściowych dat.
 
-Alternatives to `time.Parse` include third-party libraries that offer additional functionality or different interfaces. `time.ParseInLocation` is used to parse a date with a specific timezone.
+## Zejście w głąb
 
-Implementation-wise, Go parses strings based on patterns, not specific formats like other languages do. Once parsed, `time.Time` methods allow manipulation of dates, such as adding or subtracting time, comparison, and formatting to strings.
+Projektowanie parsowania dat i czasu w Go jest unikalne, wykorzystuje specyficzną datę referencyjną (`Mon Jan 2 15:04:05 MST 2006`). To podejście, zamiast używania bardziej konwencjonalnych specyfikatorów formatu (jak `YYYY` dla roku), zostało wybrane ze względu na czytelność i łatwość użycia, opierając się na formacie bardziej opartym na przykładach.
 
-## See Also (Zobacz również):
-- Go's time package documentation: https://golang.org/pkg/time/
-- Go by Example – Time formatting and parsing: https://gobyexample.com/time-formatting-parsing
-- The Go Blog on time and dates: https://blog.golang.org/time
+Chociaż początkowo może to wydawać się niezwykłe dla programistów przyzwyczajonych do innych języków, wielu znajduje to bardziej intuicyjne po krótkim okresie dostosowania. Dla aplikacji wymagających bardziej złożonej manipulacji datami lub formatów nieobsługiwanych bezpośrednio przez pakiet `time` Go, biblioteki stron trzecich, takie jak `github.com/jinzhu/now`, mogą oferować dodatkową funkcjonalność. Jednak dla większości standardowych aplikacji, wbudowane możliwości Go są solidne, wydajne i idiomatyczne, odzwierciedlając filozofię Go, która opiera się na prostocie i klarowności.

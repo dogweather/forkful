@@ -1,64 +1,100 @@
 ---
-title:                "Lokitus"
-date:                  2024-01-26T01:00:33.411526-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Lokitus"
-
+title:                "Lokitiedostot"
+date:                  2024-02-03T17:59:02.768262-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Lokitiedostot"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c/logging.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Mikä & Miksi?
-Lokitus on käytännössä ohjelman toiminnan kirjaamista ylös, tyypillisesti viestien kirjoittamista tiedostoon tai terminaaliin. Ohjelmoijat tekevät sen tapahtumien seurannan, ongelmien diagnosoinnin ja auditointipolkujen, jotka kertovat sovelluksen toiminnasta ajan yli, ylläpitämiseksi.
 
-## Miten toimitaan:
-Aloitetaan joistakin perusasioista. C:ssä ei ole sisäänrakennettua lokituskehystä, mutta voit tehdä yksinkertaisen ratkaisun käyttämällä `stdio.h`-kirjastoa. Tässä miten:
+Lokitus C:ssä tarkoittaa ohjelman kulun ja merkittävien tapahtumien tallentamista sen suorituksen aikana, tarjoten konkreettisen katsauksen sen käyttäytymiseen ja suorituskykyyn. Ohjelmoijat käyttävät lokitusta vianetsintätarkoituksissa, ohjelmiston terveyden seuraamisessa ja järjestelmän turvallisuuden varmistamisessa.
+
+## Kuinka:
+
+C:ssä lokituksen voi saavuttaa perustiedostotoimintojen avulla tai käyttämällä monimutkaisempia kirjastoja. Aloittaaksemme yksinkertaisesti, aloitamme standardi I/O-kirjastosta. Seuraavat katkelmat esittelevät peruslokitusimplementaatioita.
+
+Yksinkertaisten viestien lokitukseen:
+
+```c
+#include <stdio.h>
+
+int main() {
+    FILE *logFile;
+    logFile = fopen("application.log", "a"); // Avaa lokitiedosto lisäystilassa
+    
+    if (logFile == NULL) {
+        perror("Virhe avattaessa lokitiedostoa.");
+        return -1;
+    }
+    
+    fprintf(logFile, "Sovelluksen käynnistys.\n");
+    
+    // Sovelluslogiikkasi tässä
+    
+    fprintf(logFile, "Sovellus päättyi onnistuneesti.\n");
+    fclose(logFile);
+    
+    return 0;
+}
+```
+
+Tuloste `application.log`-tiedostossa:
+
+```
+Sovelluksen käynnistys.
+Sovellus päättyi onnistuneesti.
+```
+
+Tarkempien lokien sisällyttäminen aikaleimoilla ja lokitasoilla:
 
 ```c
 #include <stdio.h>
 #include <time.h>
 
-void logMessage(const char* message) {
-    time_t now;
-    time(&now);
-    char *date = ctime(&now);
-    date[strlen(date) - 1] = '\0'; // Poista rivinvaihto ctime()-funktion tuloksen lopusta
-    printf("[%s] %s\n", date, message);
+void logMessage(FILE *logFile, const char* taso, const char* viesti) {
+    time_t nyt;
+    time(&nyt);
+    char* datetime = ctime(&nyt);
+    datetime[strlen(datetime)-1] = '\0'; // Poista uudenviivan merkki
+    fprintf(logFile, "[%s] %s - %s\n", datetime, taso, viesti);
 }
 
 int main() {
-    logMessage("Sovellus on käynnistynyt.");
-    // ... koodisi tulee tähän ...
-    logMessage("Sovellus tekee jotain tärkeää.");
-    // ... koodisi jatkuu ...
-    logMessage("Sovellus on päättynyt.");
+    FILE *logFile;
+    logFile = fopen("detailed.log", "a");
+    
+    if (logFile == NULL) {
+        perror("Virhe avattaessa lokitiedostoa.");
+        return -1;
+    }
+    
+    logMessage(logFile, "INFO", "Sovellus käynnistyy");
+    // Sovelluslogiikkasi tässä
+    logMessage(logFile, "ERROR", "Esimerkkivirhe");
+    
+    fclose(logFile);
+    
     return 0;
 }
 ```
 
-Esimerkkituloste voisi näyttää tältä:
+Tuloste `detailed.log`-tiedostossa:
 
 ```
-[Ti Mar 9 12:00:01 2023] Sovellus on käynnistynyt.
-[Ti Mar 9 12:00:02 2023] Sovellus tekee jotain tärkeää.
-[Ti Mar 9 12:00:03 2023] Sovellus on päättynyt.
+[To Mar 10 14:32:01 2023] INFO - Sovellus käynnistyy
+[To Mar 10 14:32:02 2023] ERROR - Esimerkkivirhe
 ```
 
-Tietenkin todellisessa maailmassa haluaisit luultavasti kirjoittaa tiedostoon terminaalin sijaan, käsitellä erilaisia lokitasoja ja ehkä käyttää valmiiksi määriteltyä kirjastoa.
+## Syväluotaus
 
-## Syväsukellus
-Lokitus C:ssä on viehättävää vanhanaikaisuutta—se on yhtä matalan tason kuin suurin osa kielestä muutenkin. Historiallisesti lokitusta tehtiin käyttäen `fprintf` toimintoa `stderr` kanssa tai tiedostoon kirjoittamiseksi. Ohjelmien monimutkaistuessa myös lokitustarpeet kasvoivat, mikä johti `syslog`-kaltaisten kirjastojen kehittämiseen Unix-järjestelmissä, jotka pystyivät käsittelemään lokitusta monista lähteistä erilaisten tärkeysasteiden kanssa.
+Kuten osoitettu, lokitus C:ssä nojaa yksinkertaisiin tiedostotoimintoihin, mikä on tehokasta muttei yhtä voimakasta tai joustavaa kuin muiden kielten lokitusvälineet, kuten Pythonin `logging`-moduuli tai Javan `Log4j`. Lisäominaisuuksia vaativien lokituskykyjen saavuttamiseksi C:ssä kehittäjät kääntyvät usein kirjastojen, kuten Unix-tyylisten järjestelmien `syslog`, joka tarjoaa järjestelmänlaajuisen lokinhallinnan, tai kolmannen osapuolen kirjastojen kuten `log4c` puoleen.
 
-Nykyisessä maisemassa on runsaasti C-lokituskirjastoja, kuten `zlog`, `log4c` ja `glog`, jotka tarjoavat rikkaan toiminnallisuuden joukon, kuten lokirotatiot, rakenteellisen lokituksen ja monisäikeisen lokituksen. Nämä ratkaisut mahdollistavat yksityiskohtaisen hallinnan lokien verbositeetin, määränpäiden ja muotojen suhteen.
+Historiallisesti lokitus on ollut olennainen osa ohjelmointia, jäljittäen juurensa aikaisiin ohjelmointikäytäntöihin, jolloin ohjelman kulun ja virheiden seuranta ja ymmärtäminen tehtiin pääasiassa fyysisillä tulosteilla. Kuten järjestelmät kehittyivät, lokitus tuli monimutkaisemmaksi, tukien nykyään eri vakavuustasoja, lokin kiertoa ja asynkronista lokitusta.
 
-Lokitusjärjestelmän toteuttamisessa yksityiskohtia, kuten aikaleiman muotoilu, lokitiedostojen hallinta ja suorituskyky, on harkittava. Lokien aikaleimaaminen on kriittistä tapahtumien yhdistämiseksi, kun taas lokirotaatio varmistaa, etteivät lokitiedostot kuluta liikaa levytilaa. Lokien kirjoittamisen tulisi myös olla nopeaa ja mainflowta estämätöntä, jotta lokitus ei muodostu pullonkaulaksi.
-
-## Katso Lisäksi
-Sukeltaaksesi syvemmälle C:n lokituskirjastoihin ja -käytäntöihin, tarkista nämä resurssit:
-
-- GNU `syslog` manuaali: https://www.gnu.org/software/libc/manual/html_node/Syslog.html
-- `zlog`: Erittäin mukautettava lokituskirjasto C:lle - https://github.com/HardySimpson/zlog
-- `log4c`: Lokitusaarkehikko C:lle, mallinnettuna Log4j:n jälkeen - http://log4c.sourceforge.net/
-- `glog`: Googlen sovellustason lokituskirjasto - https://github.com/google/glog
+Vaikka C:n standardikirjasto tarjoaa perustyökalut lokituksen toteuttamiseen, sen rajoitukset johtavat usein omien lokituskehikoiden luomiseen tai ulkoisten kirjastojen käyttöönottamiseen monipuolisempia ja joustavampia lokitusratkaisuja varten. Näistä rajoituksista huolimatta peruslokituksen ymmärtäminen ja toteuttaminen C:ssä on elintärkeää ohjelmiston vianetsinnän ja ylläpidon kannalta, erityisesti ympäristöissä, joissa ulkoiset riippuvuudet halutaan minimoida.

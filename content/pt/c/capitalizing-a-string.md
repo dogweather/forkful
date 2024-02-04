@@ -1,51 +1,63 @@
 ---
 title:                "Capitalizando uma string"
-date:                  2024-01-19
+date:                  2024-02-03T17:52:38.244720-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Capitalizando uma string"
-
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/c/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## O que é & Porquê?
-Capitalizar uma string significa converter todas as letras minúsculas em maiúsculas. Programadores fazem isso para padronizar dados, enfatizar palavras-chave ou atender requisitos estéticos e técnicos.
+## O Que & Por Quê?
 
+Capitalizar uma string em C envolve converter o primeiro caractere de cada palavra em uma dada string para maiúsculo, caso seja uma letra minúscula. Os programadores frequentemente realizam essa operação para padronizar a entrada do usuário para buscas, operações de ordenação ou propósitos de exibição, assegurando consistência e legibilidade através dos dados de texto.
 
 ## Como Fazer:
-```C
+
+A capitalização de uma string em C requer um entendimento básico sobre manipulação de caracteres e percurso de string. Como C não possui uma função integrada para isso, tipicamente se verifica cada caractere, ajustando sua caixa conforme necessário. Abaixo está uma implementação simples:
+
+```c
 #include <stdio.h>
-#include <ctype.h>  // Necessário para a função toupper
+#include <ctype.h> // Para as funções islower e toupper
 
 void capitalizeString(char *str) {
-    while(*str) {
-        *str = toupper((unsigned char) *str);
-        str++;
+    if (str == NULL) return; // Verificação de segurança
+    
+    int capNext = 1; // Flag para indicar se o próximo caractere deve ser capitalizado
+    for (int i = 0; str[i] != '\0'; i++) {
+        if (capNext && islower(str[i])) {
+            str[i] = toupper(str[i]); // Capitaliza o caractere
+            capNext = 0; // Reseta a flag
+        } else if (str[i] == ' ') {
+            capNext = 1; // O próximo caractere deve ser capitalizado
+        }
     }
 }
 
 int main() {
-    char text[] = "C é bacana!";
-    printf("Original: %s\n", text);
-    capitalizeString(text);
-    printf("Capitalizada: %s\n", text);
+    char exemploString[] = "hello world. programming in c!";
+    capitalizeString(exemploString);
+    printf("String capitalizada: %s\n", exemploString);
     return 0;
 }
 ```
-Saída:
+
+Saída de Amostra:
 ```
-Original: C é bacana!
-Capitalizada: C É BACANA!
+String capitalizada: Hello World. Programming In C!
 ```
 
-## Aprofundando
-Originalmente, a necessidade de capitalizar strings vem dos primórdios da computação, quando os terminais e impressoras trabalhavam somente com letras maiúsculas. Hoje em dia, além de questões de estilo, capitalizar strings pode ser útil para garantir a consistência durante comparações de texto, por exemplo, nomes de usuário em um sistema.
+Este programa percorre a string `exemploString`, verificando cada caractere se deve ser capitalizado. A função `islower` verifica se um caractere é uma letra minúscula, enquanto `toupper` converte para maiúsculo. A flag `capNext` determina se a próxima letra encontrada deve ser convertida, sendo configurada após cada espaço (' ') encontrado, e inicialmente para capitalizar o primeiro caractere da string.
 
-Alternativas ao `toupper` incluem a criação de funções personalizadas que percorrem uma string manualmente, convertendo cada caractere usando aritmética de ASCII, mas isso não é recomendado devido a problemas com codificação e localização.
+## Aprofundamento
 
-Na implementação, é crucial considerar a codificação de caracteres. O `toupper` é parte do padrão C e lida bem com o conjunto de caracteres ASCII. Cuidados especiais devem ser tomados ao lidar com codificações além do ASCII, como UTF-8 ou quando caracteres acentuados estão envolvidos, para os quais bibliotecas e funções específicas são necessárias.
+A técnica demonstrada é direta mas carece de eficiência para strings muito grandes ou quando executada repetidamente em aplicações críticas de desempenho. Em contextos históricos e de implementação, a manipulação de strings em C, incluindo capitalização, frequentemente envolve manipulação direta do buffer, refletindo a abordagem de baixo nível de C e dando ao programador controle total sobre compromissos de memória e desempenho.
 
-## Veja Também:
-- [Documentação do toupper](https://www.cplusplus.com/reference/cctype/toupper/)
-- [String Handling in C (cpluscplus.com)](https://www.cplusplus.com/reference/cstring/)
+Existem métodos alternativos, mais sofisticados para capitalizar strings, especialmente ao considerar localidades e caracteres unicode, onde as regras de capitalização podem diferir significativamente do cenário ASCII simples. Bibliotecas como ICU (International Components for Unicode) fornecem soluções robustas para estes casos, mas introduzem dependências e sobrecarga que podem não ser necessárias para todas as aplicações.
+
+Além disso, enquanto o exemplo fornecido usa as funções da Biblioteca Padrão C `islower` e `toupper`, que fazem parte de `<ctype.h>`, é essencial entender que estas funcionam dentro do intervalo ASCII. Para aplicações que demandam processamento de caracteres além do ASCII, como o manuseio de caracteres acentuados em idiomas europeus, lógica adicional ou bibliotecas de terceiros serão necessárias para realizar a capitalização de forma precisa.
+
+Em conclusão, enquanto o método delineado é adequado para muitas aplicações, entender suas limitações e as alternativas disponíveis é crucial para desenvolver software robusto e internacionalizado em C.

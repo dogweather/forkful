@@ -1,61 +1,69 @@
 ---
 title:                "Een tekstbestand schrijven"
-date:                  2024-01-28T22:12:27.267878-07:00
+date:                  2024-02-03T18:14:49.741520-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een tekstbestand schrijven"
-
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/go/writing-a-text-file.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Wat & Waarom?
 
-Het schrijven van een tekstbestand betekent het opslaan van gegevens in een bestand dat tekst bevat, meestal in een door mensen leesbaar formaat zoals `.txt` of `.csv`. Programmeurs schrijven bestanden om gegevens te bewaren en persistent te maken, die later door mensen gelezen of door andere programma's gebruikt kunnen worden.
+Een tekstbestand schrijven in Go omvat het creëren en schrijven van datareeksen in een nieuw of bestaand tekstbestand. Programmeurs doen dit om gegevens te bewaren, zoals applicatielogs, configuratie-instellingen of output van dataverwerkingstaken, wat het een fundamentele vaardigheid maakt voor gegevensbeheer en rapportage in softwareontwikkeling.
 
 ## Hoe:
 
-Hier is hoe je een string naar een tekstbestand schrijft in Go:
+In Go wordt het schrijven naar een tekstbestand afgehandeld door het `os` en `io/ioutil` (voor Go-versies <1.16) of `os` en `io` plus `os`-pakketten voor Go 1.16 en hoger, wat de filosofie van eenvoud en efficiëntie van Go aantoont. De nieuwere API bevordert betere praktijken met eenvoudigere foutafhandeling. Laten we duiken in hoe je een tekstbestand maakt en schrijft met Go's `os`-pakket.
 
-```Go
+Zorg eerst dat je Go-omgeving klaar en ingesteld is. Maak dan een `.go` bestand, bijvoorbeeld `writeText.go`, en open het in je teksteditor of IDE.
+
+Hier is een eenvoudig voorbeeld dat een tekst naar een bestand genaamd `example.txt` schrijft:
+
+```go
 package main
 
 import (
-	"log"
-	"os"
+    "os"
+    "log"
 )
 
 func main() {
-	message := "Hallo, Go!"
+    content := []byte("Hallo, Wired lezers!\n")
 
-	file, err := os.Create("voorbeeld.txt")
-	if err != nil {
-		log.Fatal(err)
-	}
-	defer file.Close()
-
-	_, err = file.WriteString(message)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println("Bestand succesvol geschreven!")
+    // Maak of overschrijf het bestand example.txt
+    err := os.WriteFile("example.txt", content, 0644)
+    if err != nil {
+        log.Fatal(err)
+    }
 }
 ```
 
-Voer het uit. Als het succesvol is, zal je geen fouten zien, maar wordt `voorbeeld.txt` gecreëerd.
+Wanneer je deze code uitvoert met `go run writeText.go`, zal het een bestand genaamd `example.txt` maken (of overschrijven als het al bestaat) met de inhoud "Hallo, Wired lezers!".
+
+### Toevoegen aan een Bestand
+
+Wat als je inhoud wilt toevoegen? Go biedt ook hier een flexibele manier om dit te doen:
+
+```go
+file, err := os.OpenFile("example.txt", os.O_APPEND|os.O_WRONLY|os.O_CREATE, 0644)
+if err != nil {
+    log.Fatal(err)
+}
+defer file.Close()
+
+if _, err := file.WriteString("Meer tekst toevoegen.\n"); err != nil {
+    log.Fatal(err)
+}
+```
+
+Dit fragment opent `example.txt` in de append-modus, schrijft een extra regel en zorgt ervoor dat het bestand correct wordt gesloten, zelfs als er een fout optreedt.
 
 ## Diepe Duik
 
-Het schrijven naar tekstbestanden in Go gebruikt het `os`-pakket, dat een platformonafhankelijke interface biedt voor functionaliteit van het besturingssysteem. De functie `os.Create` maakt of truncates een bestand. De methode `File.WriteString` is rechttoe rechtaan voor het schrijven van strings.
+De evolutie van Go's aanpak van bestandsbehandeling weerspiegelt zijn bredere toewijding aan code-eenvoud en efficiëntie. Eerdere versies leunden zwaarder op het `ioutil`-pakket, vereisten iets meer woordgebruik en een iets hogere potentie voor fouten. De draai naar het verbeteren van functionaliteiten in de `os` en `io`-pakketten, met name vanaf versie 1.16, illustreert Go's proactieve stappen naar het stroomlijnen van bestandsbewerkingen, het aanmoedigen van consistenter foutafhandeling, en het maken van de taal meer benaderbaar.
 
-Historisch gezien is de afhandeling van tekstbestanden geëvolueerd uit de `stdio.h` bibliotheek van C. In Go is eenvoud de sleutel; je doet minder voor meer actie, en vermijdt boilerplate. Alternatieven zoals `ioutil.WriteFile` bestaan maar worden niet geadviseerd voor grote bestanden vanwege geheugeninefficiëntie. `bufio` biedt gebufferde I/O, wat systeemaanroepen vermindert en de prestaties verbetert.
-
-## Zie Ook
-
-- Go by Example: Bestanden Schrijven: https://gobyexample.com/writing-files
-- Go Documentatie voor het os-pakket: https://pkg.go.dev/os
-- Go `bufio`-pakket: https://pkg.go.dev/bufio
+Hoewel Go's ingebouwde bibliotheek voldoende is voor veel gebruikssituaties, zijn er scenario's waar alternatieve pakketten of externe bibliotheken de voorkeur kunnen hebben, vooral voor complexere bestandsbewerkingen of wanneer gewerkt wordt binnen grotere frameworks die hun specifieke abstracties bieden voor bestandsbehandeling. Echter, voor directe, eenvoudige bestandsschrijftaken biedt de standaardbibliotheek vaak het meest efficiënte en idiomatische pad vooruit in Go-programmering. De overgang naar eenvoudigere, meer geconsolideerde API's voor bestandsbewerkingen maakt niet alleen Go-code gemakkelijker te schrijven en te onderhouden, maar versterkt ook de filosofie van de taal van eenvoud, leesbaarheid en praktischheid.

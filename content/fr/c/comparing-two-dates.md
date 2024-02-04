@@ -1,57 +1,74 @@
 ---
 title:                "Comparer deux dates"
-date:                  2024-01-20T17:32:37.622055-07:00
-model:                 gpt-4-1106-preview
+date:                  2024-02-03T17:53:35.687116-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Comparer deux dates"
-
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/c/comparing-two-dates.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
-Comparer deux dates, c'est déterminer leur relation chronologique. Les programmeurs le font pour vérifier des échéances, trier des événements ou gérer des durées.
+
+Comparer deux dates en C implique de déterminer la relation chronologique entre elles - si une date précède l'autre ou si elles sont identiques. Cette capacité est cruciale dans les applications qui traitent de la planification, des échéances ou de la tenue de dossiers, car elle permet l'organisation et la manipulation de données sensibles au temps.
 
 ## Comment faire :
-```C
+
+C n'a pas de type intégré pour les dates, nécessitant l'utilisation de la bibliothèque `time.h` pour travailler avec les structures de date et de temps. La structure `tm` et la fonction `difftime()` sont couramment utilisées pour comparer les dates. Voici un exemple montrant comment comparer deux dates :
+
+```c
 #include <stdio.h>
 #include <time.h>
 
-int compare_dates(struct tm date1, struct tm date2) {
-    double diff = difftime(mktime(&date1), mktime(&date2));
-    if (diff > 0) {
-        return 1; // date1 est après date2
-    } else if (diff < 0) {
-        return -1; // date1 est avant date2
-    } else {
-        return 0; // les dates sont identiques
-    }
-}
-
 int main() {
-    struct tm date1 = {.tm_year = 122, .tm_mon = 6, .tm_mday=15}; // 15 Juillet 2022
-    struct tm date2 = {.tm_year = 122, .tm_mon = 8, .tm_mday=10}; // 10 Septembre 2022
-    int result = compare_dates(date1, date2);
-    if (result == 1) {
-        printf("La première date est postérieure.\n");
-    } else if (result == -1) {
-        printf("La première date est antérieure.\n");
+    struct tm date1 = {0};
+    struct tm date2 = {0};
+    double secondes;
+
+    // Première date (AAAA, MM, JJ)
+    date1.tm_year = 2023 - 1900; // Année depuis 1900
+    date1.tm_mon = 3 - 1;        // Mois [0-11]
+    date1.tm_mday = 15;          // Jour du mois [1-31]
+
+    // Deuxième date (AAAA, MM, JJ)
+    date2.tm_year = 2023 - 1900;
+    date2.tm_mon = 4 - 1;
+    date2.tm_mday = 14;
+
+    // Convertir en format time_t
+    time_t time1 = mktime(&date1);
+    time_t time2 = mktime(&date2);
+
+    // Comparer
+    secondes = difftime(time1, time2);
+
+    if (secondes == 0) {
+        printf("Les dates sont identiques.\n");
+    } else if (secondes > 0) {
+        printf("La première date vient après la seconde.\n");
     } else {
-        printf("Les deux dates sont identiques.\n");
+        printf("La première date vient avant la seconde.\n");
     }
+
     return 0;
 }
 ```
-Sample output:
-```
-La première date est antérieure.
+
+La sortie pourrait être :
+
+```text
+La première date vient avant la seconde.
 ```
 
-## Examen approfondi
-Comparer des dates nous plonge dans la gestion du temps en programmation, avec ses zones de complexité comme les fuseaux horaires et les seconds intercalaires. Historiquement, des structures comme `struct tm` en C simplifient ce processus, mais elles ne sont pas sans pièges—n'oubliez pas que les années sont comptées à partir de 1900 et les mois à partir de 0. Alternatives ? La librairie `date.h` dans C++ ou des libs externes en C comme `libdaterange`. Pour l'implémentation, `difftime()` est standard et assez basique mais attentif aux détails comme l'heure d'été.
+Ce programme initialise deux structures `tm` avec des dates spécifiques, les convertit au format `time_t` à l'aide de `mktime()`, et les compare enfin à l'aide de `difftime()`, qui retourne la différence en secondes (sous forme de `double`) entre les deux temps.
 
-## Voir aussi
-- [Manuel de référence C pour difftime](https://en.cppreference.com/w/c/chrono/difftime)
-- [Tutoriel sur struct tm](https://www.tutorialspoint.com/c_standard_library/c_function_strftime.htm)
-- [C time.h Library Functions](https://www.tutorialspoint.com/c_standard_library/time_h.htm)
+## Plongée Profonde
+
+Dans les premiers jours du C, les opérations de date et de temps nécessitaient des calculs manuels, tenant souvent compte des années bissextiles, du nombre variable de jours dans les mois, et même des secondes intercalaires. L'introduction de `time.h` dans la norme ANSI C a apporté une standardisation à la gestion du temps en C, simplifiant les opérations de date et de temps.
+
+Utiliser `time.h` pour la comparaison de dates est simple mais comporte des limitations. La structure `tm` ne tient pas compte des fuseaux horaires ou de l'heure d'été, et `difftime()` ne fournit que la différence en secondes, manquant de granularité plus fine pour certaines applications.
+
+Pour les applications nécessitant des opérations de date-heure plus robustes, y compris le support pour les fuseaux horaires, les transitions de l'heure d'été, et des intervalles de temps plus précis, des bibliothèques telles que `date.h` (une bibliothèque de date Howard Hinnant, non incluse dans la bibliothèque standard) offrent une alternative moderne à `time.h`. Ces bibliothèques fournissent des outils plus complets pour la manipulation de date-heure en C++, bénéficiant de décennies d'évolution dans la conception des langages de programmation. Pour les programmeurs en C, l'utilisation de ces bibliothèques externes ou la gestion méticuleuse des subtilités des calculs de date-heure directement reste nécessaire pour atteindre une manipulation précise et culturellement consciente de la date-heure.

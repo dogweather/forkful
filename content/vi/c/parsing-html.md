@@ -1,72 +1,69 @@
 ---
 title:                "Phân Tích Cú Pháp HTML"
-date:                  2024-01-28T22:03:49.264511-07:00
+date:                  2024-02-03T18:05:44.703115-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Phân Tích Cú Pháp HTML"
-
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/c/parsing-html.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Cái gì & Tại sao?
+## Gì và Tại sao?
 
-Phân tích cú pháp HTML có nghĩa là đọc và hiểu cấu trúc của các tài liệu HTML bằng chương trình. Lập trình viên thực hiện điều này để thao tác, trích xuất hoặc kiểm tra nội dung, thường xuyên khi vét các trang web hoặc xử lý dữ liệu web.
+Phân tích cú pháp HTML bằng C liên quan đến việc phân tích các tài liệu HTML để trích xuất dữ liệu, cấu trúc, hoặc các phần cụ thể một cách hiệu quả, thường là bước đầu tiên cho việc khai thác dữ liệu hoặc lấy dữ liệu trực tuyến. Các lập trình viên thực hiện việc này để tự động hoá việc trích xuất thông tin, cho phép xử lý hoặc tái sử dụng nội dung web một cách lập trình.
 
 ## Làm thế nào:
 
-Được rồi, chúng ta hãy tới phần mã. C không có hỗ trợ tích hợp sẵn cho việc phân tích cú pháp HTML, vì vậy chúng ta sẽ sử dụng một thư viện gọi là Gumbo, đây là bộ phân tích cú pháp HTML5 thuần C. Dưới đây là một ví dụ nhanh:
+Việc phân tích cú pháp HTML có thể trở nên khó khăn do sự phức tạp và việc thường xuyên lệch khỏi cấu trúc sạch, đúng đắn của HTML. Tuy nhiên, việc sử dụng một thư viện như `libxml2`, cụ thể là mô-đun phân tích cú pháp HTML của nó, làm đơn giản hóa quy trình. Ví dụ này trình bày cách sử dụng `libxml2` để phân tích cú pháp HTML và trích xuất thông tin.
 
-```C
+Đầu tiên, đảm bảo `libxml2` đã được cài đặt trong môi trường của bạn. Trên nhiều phân phối Linux, bạn có thể cài đặt nó qua trình quản lý gói. Ví dụ, trên Ubuntu:
+
+```bash
+sudo apt-get install libxml2 libxml2-dev
+```
+
+Bây giờ, hãy viết một chương trình C đơn giản sử dụng `libxml2` để phân tích cú pháp một chuỗi HTML và in ra văn bản bên trong một phần tử cụ thể:
+
+```c
 #include <stdio.h>
-#include <gumbo.h>
+#include <libxml/HTMLparser.h>
 
-void search_for_links(GumboNode* node) {
-    if (node->type != GUMBO_NODE_ELEMENT) {
-        return;
+void parseHTML(const char *html) {
+    htmlDocPtr doc = htmlReadDoc((const xmlChar *)html, NULL, NULL, HTML_PARSE_RECOVER | HTML_PARSE_NOERROR | HTML_PARSE_NOWARNING);
+    
+    // Giả sử chúng ta đang tìm kiếm nội dung bên trong thẻ <p>
+    xmlNode *root_element = xmlDocGetRootElement(doc);
+    for (xmlNode *current_node = root_element; current_node; current_node = current_node->next) {
+        if (current_node->type == XML_ELEMENT_NODE && strcmp((const char *)current_node->name, "p") == 0) {
+            printf("Tìm thấy đoạn văn: %s\n", xmlNodeGetContent(current_node));
+        }
     }
-    GumboAttribute* href;
-    if (node->v.element.tag == GUMBO_TAG_A &&
-       (href = gumbo_get_attribute(&node->v.element.attributes, "href"))) {
-        printf("Link found: %s\n", href->value);
-    }
-    GumboVector* children = &node->v.element.children;
-    for (unsigned int i = 0; i < children->length; ++i) {
-        search_for_links(children->data[i]);
-    }
+    
+    xmlFreeDoc(doc);
+    xmlCleanupParser();
 }
 
 int main() {
-    const char* html = "<html><body><a href='https://example.com'>Example</a></body></html>";
-    GumboOutput* output = gumbo_parse(html);
-    search_for_links(output->root);
-    gumbo_destroy_output(&kGumboDefaultOptions, output);
+    const char *html = "<html><body><p>Xin chào, thế giới!</p></body></html>";
+    parseHTML(html);
     return 0;
 }
 ```
 
-Kết quả mẫu:
-
+Kết quả Mẫu:
 ```
-Link found: https://example.com
+Tìm thấy đoạn văn: Xin chào, thế giới!
 ```
 
-Ví dụ này tìm các thẻ 'a' và in ra các thuộc tính href. Hãy nhớ liên kết với gumbo (`gcc -o example example.c -lgumbo`) và cài đặt thư viện trước.
+Ví dụ này tập trung vào việc trích xuất văn bản trong các thẻ đoạn văn, nhưng `libxml2` cung cấp hỗ trợ mạnh mẽ để điều hướng và truy vấn các phần khác nhau của một tài liệu HTML.
 
 ## Sâu hơn nữa
 
-Câu chuyện về việc phân tích cú pháp HTML trong C khá gồ ghề. Không có giải pháp nào phù hợp với mọi trường hợp bởi vì HTML phức tạp và thường không nhất quán. Gumbo, mà chúng tôi đã sử dụng, được phát triển bởi Google như một phần của các dự án mã nguồn mở của họ. Nó được thiết kế để chịu đựng sự lộn xộn thực tế của các trang web.
+Việc phân tích cú pháp HTML trong C bắt đầu từ những ngày đầu phát triển web. Ban đầu, các nhà phát triển phải dựa vào các giải pháp phân tích cú pháp tùy chỉnh, thường là sơ khai, do thiếu thư viện tiêu chuẩn và tình trạng hỗn loạn của HTML trên web. Sự giới thiệu của các thư viện như `libxml2` đánh dấu một bước tiến đáng kể, cung cấp các phương pháp tiếp cận tiêu chuẩn hóa, hiệu quả và kiên cường hơn trong việc phân tích cú pháp HTML.
 
-Các lựa chọn thay thế bao gồm libxml2 với một chế độ phân tích cú pháp HTML, mặc dù nó lịch sử đã được liên kết nhiều hơn với việc phân tích cú pháp XML. Một lựa chọn khác là htmlcxx, thực sự là C++, nhưng chúng ta không lạc đề ở đây.
+Mặc dù tốc độ và khả năng kiểm soát của C không thể so sánh, đáng chú ý là C có thể không phải lúc nào cũng là công cụ tốt nhất cho việc phân tích cú pháp HTML, đặc biệt là cho các nhiệm vụ yêu cầu chu kỳ phát triển nhanh chóng hoặc đối phó với HTML bị hỏng cực kỳ nặng. Các ngôn ngữ với thư viện phân tích cú pháp HTML cấp cao, như Python với Beautiful Soup, cung cấp giao diện trừu tượng, thân thiện với người dùng hơn tại chi phí của một số hiệu suất.
 
-Về mặt hiệu suất, các bộ phân tích cú pháp C có thể nhanh chóng đáng kinh ngạc nhưng thường không cung cấp sự dễ sử dụng như các thư viện Python. Khi triển khai C cho việc phân tích cú pháp HTML, bạn có thể sau hiệu suất, hoặc bạn đang tích hợp nó vào một cơ sở mã C hiện có. Nó có thể khá tinh vi, vì hầu hết các thư viện C đều ở cấp độ thấp và cần thao tác nhiều hơn so với các bộ phân tích cú pháp Python hoặc JavaScript.
-
-## Xem thêm
-
-- Gumbo Parser: [https://github.com/google/gumbo-parser](https://github.com/google/gumbo-parser)
-- libxml2 HTML parser: [http://xmlsoft.org/html/libxml-HTMLparser.html](http://xmlsoft.org/html/libxml-HTMLparser.html)
-- htmlcxx: [http://htmlcxx.sourceforge.net/](http://htmlcxx.sourceforge.net/)
-- Để bắt đầu nhẹ nhàng, hãy xem xét một hướng dẫn về việc vét trang web với Python sử dụng Beautiful Soup hoặc `html.parser` của Python như một giới thiệu dễ dàng hơn về chủ đề này.
+Dù sao đi nữa, đối với các ứng dụng quan trọng về hiệu suất, hoặc khi hoạt động trong môi trường có nguồn lực hạn chế, việc phân tích cú pháp HTML trong C vẫn là một phương pháp khả thi và thường được ưa chuộng. Chìa khóa là tận dụng các thư viện mạnh mẽ như `libxml2` để xử lý những tinh tế của HTML, cho phép các nhà phát triển tập trung vào việc trích xuất dữ liệu họ cần mà không bị sa lầy vào chi tiết của cơ chế phân tích cú pháp.

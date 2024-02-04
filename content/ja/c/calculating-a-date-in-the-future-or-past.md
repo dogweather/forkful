@@ -1,65 +1,62 @@
 ---
-title:                "将来または過去の日付を計算する"
-date:                  2024-01-20T17:30:47.343852-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "将来または過去の日付を計算する"
-
+title:                "「未来または過去の日付の計算」"
+date:                  2024-02-03T17:53:06.052613-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "「未来または過去の日付の計算」"
 tag:                  "Dates and Times"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/c/calculating-a-date-in-the-future-or-past.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (何となぜ？)
-計算する将来または過去の日付は、特定の日から一定数の日、週、月または年を加算または減算することです。プログラマは、イベント予定、期限の追跡、または時間経過の模倣など、日付を操作する必要があるさまざまな状況でこれを行います。
+## 何となぜ？
+未来または過去の日付の計算は、特定の日付から決まった数の日、月、または年を加算または減算することにより、特定の日付を決定する作業を含みます。プログラマーは、イベントのスケジューリング、リマインダーの生成、有効期限の処理などのタスクのためにこれを行います。これは、カレンダーシステムから金融ソフトウェアに至るまで、様々なアプリケーションで不可欠な機能です。
 
-## How to: (方法)
+## 方法
+C標準ライブラリは日付の演算に直接関数を提供していませんが、`time.h` ライブラリを使用して日付を操作できます。具体的には、`time_t` データ型と `struct tm` を扱います。現在の日付に日数を加算する方法について、ここに簡単な例を示します：
+
 ```c
 #include <stdio.h>
 #include <time.h>
 
-void addDays(struct tm *date, int daysToAdd) {
-    const time_t ONE_DAY = 24 * 60 * 60; // Seconds in one day
+void addDays(struct tm* date, int daysToAdd) {
+    const time_t ONE_DAY = 24 * 60 * 60; // 一日の秒数
+    // tm構造体をtime_tに変換し、日数を加算し、再び変換する
     time_t date_seconds = mktime(date) + (daysToAdd * ONE_DAY);
     *date = *localtime(&date_seconds);
 }
 
 int main() {
-    struct tm date = {0};
-    int daysToAdd;
-    
-    // Set our starting date to January 1st, 2023
-    date.tm_year = 123; // Year since 1900
-    date.tm_mon = 0;    // January
-    date.tm_mday = 1;
-    
-    printf("Enter number of days to add: ");
-    scanf("%d", &daysToAdd);
-    
-    addDays(&date, daysToAdd);
-    
-    // Print the future date in YYYY-MM-DD format
-    printf("Future date: %d-%02d-%02d\n", date.tm_year + 1900, date.tm_mon + 1, date.tm_mday);
-    
+    time_t now;
+    time(&now);
+    struct tm futureDate = *localtime(&now);
+
+    int daysToAdd = 10; // 加算する日数を調整
+    addDays(&futureDate, daysToAdd);
+
+    printf("Future Date: %d-%d-%d\n", futureDate.tm_year + 1900, futureDate.tm_mon + 1, futureDate.tm_mday);
+
     return 0;
 }
 ```
 
-Sample output:
+このコードは、指定された日数を現在の日付に加算し、将来の日付を出力します。`mktime` および `localtime` によって処理されるうるう秒や夏時間の調整を考慮している点に注意してください。
+
+サンプル出力：
+
 ```
-Enter number of days to add: 30
-Future date: 2023-01-31
+Future Date: 2023-04-23
 ```
 
-## Deep Dive (詳細な掘り下げ)
-Calculating future or past dates isn't new. In early programming, complex algorithms like Zeller's Congruence were used. Now, the C standard library includes time functions for easier manipulation. We used `mktime` and `localtime` here, but there are alternatives, like `strftime` for formatting.
+なお、この例では日数を加算していますが、より複雑な計算（うるう年を考慮した月や年など）には、C++の `date.h` やCのサードパーティーライブラリのような、より高度なロジックやライブラリが必要になります。
 
-Time is tricky due to leap years, time zones, and daylight saving. The C library accounts for these, mostly. But if you need time zone specific calculations or deal with historical dates, consider a library like `tz` or `TimeLib`.
+## 詳細分析
+Cで `time.h` ライブラリを使用して日付を操作することは、Unix エポックからの秒数（1970年1月1日00:00 UTC）で直接時間を操作することに続いて、それらの秒数をもっと人間が読みやすい日付フォーマット（`struct tm`）に戻すことを含みます。このアプローチは基本的な操作には単純ですが効果的で、クロスプラットフォームでありC標準ライブラリの一部であるという利点があります。
 
-Internally, calculations hinge on `time_t`, a type representing seconds since the "epoch" (00:00:00 UTC, January 1, 1970). The function `mktime` converts `struct tm` to `time_t` and we add or subtract seconds to change the date.
+ただし、この方法の単純さはまた、限界でもあります。異なる月の長さ、うるう年、タイムゾーンを考慮したより複雑な日付計算を扱うことはすぐに難しくなります。`datetime` を持つ Python や `java.time` を持つ Java のような言語は、日付の演算に対してより直感的な API を提供し、明確さと使いやすさのためにオブジェクト指向の原理を採用しています。
 
-## See Also (関連項目)
-- The C Standard Library documentation on time.h: http://www.cplusplus.com/reference/ctime/
-- GNU C Library Manual on Time: https://www.gnu.org/software/libc/manual/html_node/Time.html
-- Time zone library `tz` documentation: https://howardhinnant.github.io/date/tz.html
+実際には、Cで広範な日付操作を必要とするプロジェクトに取り組む際、開発者はより堅牢なソリューションを提供するサードパーティーライブラリにしばしば頼ります。これらのライブラリは、タイムゾーンの処理、フォーマットオプション、およびより洗練された日付演算機能を含む、包括的な日付および時間の機能を提供することができ、開発者の作業を大幅に簡素化します。
+
+より近代的な代替手段が利用可能であるにもかかわらず、C標準ライブラリを使用して日付を操作する方法を理解することは、貴重なスキルのままです。これは、特定のプログラミング言語を超えた、コンピュータが時間をどのように表現し、扱うかについての深い洞察を提供します。

@@ -1,20 +1,29 @@
 ---
 title:                "עבודה עם JSON"
-date:                  2024-01-19
+date:                  2024-02-03T18:12:42.033599-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "עבודה עם JSON"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/go/working-with-json.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## מה ולמה?
-JSON הוא פורמט נתונים פופולרי לשיתוף בין שרתים ולקוחות. תכניתנים משתמשים בו כי הוא פשוט, קל לקריאה ונתמך ברוב השפות.
+
+עבודה עם JSON (JavaScript Object Notation) ב-Go כוללת קידוד ופענוח נתונים בין מבני נתונים של Go ופורמט JSON. משימה זו נפוצה מאוד בשירותי אינטרנט ו-APIs, מכיוון ש-JSON משמש כפורמט החלפת נתונים קל משקל, מבוסס טקסט ועצמאי לשפה, שמאפשר שיתוף נתונים פשוט בין סביבות תכנות שונות.
 
 ## איך לעשות:
-קריאה ל-JSON:
-```Go
+
+ב-Go, החבילה `encoding/json` היא השער שלך למניפולציה של JSON, והיא מספקת אמצעים להמרת מבני נתונים של Go ל-JSON (הטמעה) וחזרה (ביטול הטמעה). להלן דוגמאות בסיסיות להתחלה:
+
+### קידוד (הטמעה)
+
+להמיר מבנה של Go ל-JSON, ניתן להשתמש ב-`json.Marshal`. בחן את המבנה של Go הבא:
+
+```go
 package main
 
 import (
@@ -24,29 +33,32 @@ import (
 )
 
 type User struct {
-    ID   int    `json:"id"`
-    Name string `json:"name"`
+    ID        int      `json:"id"`
+    Username  string   `json:"username"`
+    Languages []string `json:"languages"`
 }
 
 func main() {
-    jsonStr := `{"id": 1, "name": "משתמש A"}`
-    var user User
-
-    err := json.Unmarshal([]byte(jsonStr), &user)
+    user := User{1, "JohnDoe", []string{"Go", "JavaScript", "Python"}}
+    userJSON, err := json.Marshal(user)
     if err != nil {
-        log.Fatalf("Error occurred: %s", err)
+        log.Fatal(err)
     }
-
-    fmt.Printf("%+v\n", user)
+    fmt.Println(string(userJSON))
 }
 ```
+
 פלט:
-```
-{ID:1 Name:משתמש A}
+
+```json
+{"id":1,"username":"JohnDoe","languages":["Go","JavaScript","Python"]}
 ```
 
-כתיבה ל-JSON:
-```Go
+### פענוח (ביטול הטמעה)
+
+לפרסר JSON למבנה נתונים של Go, השתמש ב-`json.Unmarshal`:
+
+```go
 package main
 
 import (
@@ -56,28 +68,28 @@ import (
 )
 
 func main() {
-    user := &User{
-        ID:   2,
-        Name: "משתמש B",
-    }
-
-    userJSON, err := json.Marshal(user)
+    jsonStr := `{"id":1,"username":"JohnDoe","languages":["Go","JavaScript","Python"]}`
+    var user User
+    err := json.Unmarshal([]byte(jsonStr), &user)
     if err != nil {
-        log.Fatalf("Error occurred: %s", err)
+        log.Fatal(err)
     }
-
-    fmt.Printf("%s\n", userJSON)
+    fmt.Printf("%+v\n", user)
 }
 ```
+
+בהינתן מבנה `User` כפי שהיה קודם, קוד זה מפרש את המחרוזת JSON למופע של משתמש.
+
 פלט:
-```
-{"id":2,"name":"משתמש B"}
+
+```go
+{ID:1 Username:JohnDoe Languages:[Go JavaScript Python]}
 ```
 
-## ניתוח עמוק:
-JSON, או JavaScript Object Notation, נוצר על ידי דאג קרוקפורד בתחילת שנות ה-2000. אלטרנטיבות כוללות XML וYAML, אך JSON הפך להרווח בזכות פשטותו וקלות השילוב עם JavaScript. בגולנג, החבילה `encoding/json` מאפשרת קריאה וכתיבה נוחה של JSON, עם המרה אוטומטית בין JSON למבני נתונים של גולאנג דרך תגיות במבנים (struct tags).
+## צלילה עמוקה
 
-## ראו גם:
-- מדריך JSON רשמי: https://www.json.org/json-en.html
-- מסמכי החבילה `encoding/json` של גולאנג: https://pkg.go.dev/encoding/json
-- מאמר על דאג קרוקפורד ויצירת JSON: https://www.crockford.com/json.html
+חבילת ה-`encoding/json` ב-Go מציעה API ישיר שמפשטת הרבה מהמורכבות הכרוכה במניפולציה של JSON. הוצגה מוקדם בפיתוח Go, חבילה זו משקפת את פילוסופיית Go של פשטות ויעילות. עם זאת, השימוש ברפלקסיה על ידי `encoding/json` לבדיקה ושינוי מבנים בזמן ריצה יכול להוביל לביצועים לא אופטימליים בסצנריות שדורשות מעבד רב.
+
+חלופות כמו `json-iterator/go` ו-`ffjson` הופיעו, ומספקות עיבוד JSON מהיר יותר על ידי יצירת קוד הטמעה וביטול הטמעה סטטי. עם זאת, `encoding/json` נשארת החבילה הנפוצה ביותר בשימוש בזכות הפשטות שלה, קושיות והעובדה שהיא חלק מהספרייה הסטנדרטית, מה שמבטיח תאימות ויציבות לאורך גרסאות של Go.
+
+למרות הביצועים היחסית איטיים יותר, קלות השימוש והאינטגרציה עם מערכת הסוגים של Go מקנים ל-`encoding/json` התאמה לרוב היישומים. עבור אלו העובדים בהקשרים שבהם הביצועים מהווים שיקול עליון, חקירת ספריות חיצוניות עשויה להיות מועילה, אך לרבים, הספרייה הסטנדרטית מציעה את האיזון הנכון בין מהירות, פשטות, ואמינות.

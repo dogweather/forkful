@@ -1,81 +1,69 @@
 ---
 title:                "Refatoração"
-date:                  2024-01-26T01:16:36.285986-07:00
+date:                  2024-02-03T18:06:43.239130-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Refatoração"
-
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/c/refactoring.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## O Que & Por Quê?
-Refatoração é o processo de reestruturar o código de computador existente sem alterar seu comportamento externo. Programadores fazem isso para melhorar a legibilidade, reduzir a complexidade ou tornar o código mais mantível e escalável, o que pode economizar uma tonelada de tempo e dores de cabeça no futuro.
+## O Que & Por Que?
 
-## Como fazer:
-Vamos embelezar um código. Imagine que você tem uma função que calcula a média de inteiros em um array. À primeira vista, é um pouco confuso.
+Refatoração em programação envolve reestruturar o código existente sem alterar seu comportamento externo, visando melhorar atributos não funcionais, como legibilidade, redução de complexidade e aumento da manutenibilidade. Programadores refatoram para manter a base de código limpa, minimizar a dívida técnica e tornar mudanças futuras mais fáceis e seguras de implementar.
 
-**Antes da Refatoração:**
-```C
+## Como:
+
+A refatoração pode envolver uma série de táticas, desde renomear variáveis para mais clareza até alterar a estrutura do código para melhor modularização. Aqui está um exemplo simples demonstrando como refatorar um pedaço de código C para melhor clareza e eficiência.
+
+Antes da Refatoração:
+```c
 #include <stdio.h>
 
-double calculateStuff(int numbers[], int size) {
-    int sum = 0;
-    double average;
-    for(int i = 0; i < size; sum += numbers[i++]); // Somando na condição do loop for, ai!
-    average = (double)sum / size;
-    return average;
-}
-
 int main() {
-    int array[] = {23, 42, 57, 16, 5, 102};
-    int length = sizeof(array) / sizeof(array[0]);
-    printf("Média: %f\n", calculateStuff(array, length));
-
+    int x = 10, y = 20;
+    printf("Antes da troca: x = %d, y = %d\n", x, y);
+    x = x + y; // x agora se torna 30
+    y = x - y; // y se torna 10
+    x = x - y; // x se torna 20
+    printf("Depois da troca: x = %d, y = %d\n", x, y);
     return 0;
 }
 ```
-
-**Após a Refatoração:**
-```C
+Saída:
+```
+Antes da troca: x = 10, y = 20
+Depois da troca: x = 20, y = 10
+```
+Após a Refatoração:
+```c
 #include <stdio.h>
 
-int calculateSum(const int numbers[], int size) {
-    int sum = 0;
-    for (int i = 0; i < size; ++i) {
-        sum += numbers[i];
-    }
-    return sum;
-}
-
-double calculateAverage(const int numbers[], int size) {
-    int sum = calculateSum(numbers, size);
-    return (double)sum / size;
+void trocar(int *a, int *b) {
+    *a = *a + *b;
+    *b = *a - *b;
+    *a = *a - *b;
 }
 
 int main() {
-    int array[] = {23, 42, 57, 16, 5, 102};
-    int length = sizeof(array) / sizeof(array[0]);
-    printf("Média: %f\n", calculateAverage(array, length));
+    int x = 10, y = 20;
+    printf("Antes da troca: x = %d, y = %d\n", x, y);
+    trocar(&x, &y);
+    printf("Depois da troca: x = %d, y = %d\n", x, y);
     return 0;
 }
 ```
-Mesmo com esse exemplo simples, você pode ver como dividir a função torna o código mais limpo e mantível. Cada função agora tem uma única responsabilidade – um princípio chave na programação limpa.
+A saída permanece inalterada, mas a funcionalidade para trocar valores foi movida para uma função separada (`trocar`), melhorando a legibilidade e reutilização.
 
-## Mergulho Profundo
-O termo "refatoração" foi popularizado no final dos anos 90, particularmente com a publicação do livro de Martin Fowler "Refatoração: Aperfeiçoando o Projeto de Código Existente". Refatorar não implica em consertar bugs ou adicionar novas funcionalidades, mas sim em melhorar a estrutura do código.
+## Aprofundamento
 
-Existem muitas ferramentas de refatoração e IDEs (Ambientes de Desenvolvimento Integrados) bacanas que ajudam a automatizar o processo, como o CLion para C e C++, mas entender o que está acontecendo por baixo dos panos permanece crucial.
+A prática de refatorar código existe há tanto tempo quanto o desenvolvimento de software em si, evoluindo ao lado de paradigmas e linguagens de programação. Em C, uma linguagem poderosa, mas repleta de oportunidades para ineficiência e erros devido à sua natureza de baixo nível, a refatoração é especialmente crucial. Pode fazer a diferença entre uma base de código que é mantida e uma que é uma teia emaranhada de ineficiências.
 
-Alternativas à refatoração podem incluir reescrever o código do zero (arriscado e muitas vezes desnecessário) ou conviver com a dívida técnica (que pode ser mais custosa a longo prazo). Detalhes de implementação variam com base no projeto, mas refatorações comuns incluem renomear variáveis para maior clareza, quebrar funções grandes em menores e substituir números mágicos por constantes nomeadas.
+Uma consideração específica para C é o equilíbrio entre micro-otimizações e legibilidade/manutenibilidade. Enquanto é tentador ajustar manualmente o código C para obter cada último grama de performance, tais otimizações podem tornar o código mais frágil e difícil de ler. Portanto, geralmente é melhor priorizar um código limpo e legível e confiar no otimizador do compilador para lidar com melhorias de desempenho quando possível.
 
-Além disso, padrões como DRY (Don't Repeat Yourself - Não Se Repita) e princípios SOLID podem guiar sua jornada de refatoração, promovendo uma base de código que é mais fácil de testar, entender e colaborar.
+Ademais, as ferramentas e técnicas para refatoração em C, como analisadores de código estático (por exemplo, Clang Static Analyzer, cppcheck) e princípios de programação modular, avançaram significativamente. No entanto, devido ao gerenciamento manual de memória e aritmética de ponteiros em C, a refatoração pode introduzir bugs se não for feita com cuidado. Técnicas como teste unitário e revisão de código são inestimáveis aqui.
 
-## Veja Também
-Para mergulhar mais fundo no mar da refatoração, dê uma olhada em:
-
-- A página inicial de Martin Fowler: https://martinfowler.com/ com um tesouro de artigos e recursos sobre refatoração e design de software.
-- Refactoring.com: https://refactoring.com/ fornece exemplos e catálogos de técnicas de refatoração.
-- O livro "Refatoração": Considerado uma bíblia para refatoração, lê-lo proporciona uma visão completa da metodologia.
-- "Código Limpo: Um Manual de Artesanato de Software Ágil" por Robert C. Martin, que discute escrever código que é fácil de entender e manter.
+Embora linguagens mais novas ofereçam mais suporte integrado para refatoração segura com recursos como gerenciamento automático de memória e sistemas de tipos ricos, C permanece inigualável em cenários que exigem desempenho próximo ao metal e controle detalhado. Nestes casos, a refatoração é menos sobre alavancar recursos da linguagem e mais sobre reestruturar o código de maneira disciplinada e cuidadosa.

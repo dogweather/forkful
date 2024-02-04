@@ -1,46 +1,60 @@
 ---
 title:                "Отримання поточної дати"
-date:                  2024-01-20T15:13:14.746830-07:00
+date:                  2024-02-03T17:59:30.362736-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Отримання поточної дати"
-
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/c/getting-the-current-date.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Що та Навіщо?
-Getting the current date means accessing the system's date and time. Programmers track time to log events, schedule tasks, or display timestamps.
+## Що і чому?
 
-## How to:
-Як це зробити:
-Here's how to get the current date in C using the `time.h` library:
+Отримання поточної дати в мові C вимагає використання стандартної бібліотеки мови C для отримання та форматування поточної дати та часу системи. Програмісти часто потребують цю функціональність для ведення журналів, додавання часових міток або планування функцій у своїх додатках.
 
-```C
+## Як це зробити:
+
+У мові C заголовочний файл `<time.h>` надає необхідні функції та типи для роботи з датами та часом. Функція `time()` отримує поточний час, тоді як `localtime()` перетворює цей час на локальний часовий пояс. Для відображення дати ми використовуємо `strftime()`, щоб відформатувати її як рядок.
+
+Ось базовий приклад:
+
+```c
 #include <stdio.h>
 #include <time.h>
 
 int main() {
-    time_t t = time(NULL);
-    struct tm tm = *localtime(&t);
+    char buffer[80];
+    time_t rawtime;
+    struct tm *timeinfo;
 
-    printf("Current date: %02d-%02d-%04d\n", tm.tm_mday, tm.tm_mon + 1, tm.tm_year + 1900);
+    // Отримання поточного часу
+    time(&rawtime);
+    // Конвертація його в локальний час
+    timeinfo = localtime(&rawtime);
+    
+    // Форматування дати та її виведення
+    strftime(buffer, 80, "Сьогоднішня дата %Y-%m-%d", timeinfo);
+    printf("%s\n", buffer);
+
     return 0;
 }
 ```
 
-Sample output might look like:
+Приклад виводу може виглядати так:
+
 ```
-Current date: 24-04-2023
+Сьогоднішня дата 2023-04-12
 ```
 
-## Deep Dive
-Занурення в Деталі
-In 1972, `time.h` was standardized in C. Now, `time()` gives seconds since the epoch (00:00:00 UTC, January 1, 1970), and `localtime()` converts it to local time. Alternatives like `gettimeofday()` exist, but it's Unix-specific. `time.h` is widely supported and simple, with `strftime()` to format dates.
+## Поглиблений огляд
 
-## See Also
-Додаткова Інформація:
-- C Standard Library documentation on `time.h`: https://en.cppreference.com/w/c/chrono
-- GNU C Library manual for date and time: https://www.gnu.org/software/libc/manual/html_node/Date-and-Time.html
-- Stack Overflow discussions on handling dates and times in C: https://stackoverflow.com/questions/tagged/c+datetime
+Обробка часу в мові C, яка здійснюється за допомогою `<time.h>`, веде своє походження з найраніших днів мови і систем UNIX. Вона побудована навколо типу даних `time_t`, який представляє поточний час як кількість секунд з часу Unix Epoch (1 січня 1970 року). Хоча це ефективно і універсально сумісно, це також означає, що функції часу стандартної бібліотеки C обмежені діапазоном і роздільною здатністю `time_t`.
+
+Сучасні програми, особливо ті, що вимагають високої роздільної здатності часових міток або мають справу з датами далеко в майбутньому чи минулому, можуть виявити ці обмеження викликом. Наприклад, проблема року 2038 є відомою ілюстрацією, де системи, що використовують 32-бітний `time_t`, зазнають переповнення.
+
+Для більш складної обробки часу та дати багато програмістів звертаються до зовнішніх бібліотек або функціональностям, наданим операційною системою. Наприклад, у мові C++ бібліотека `<chrono>` пропонує більш точні та універсальні можливості маніпулювання часом.
+
+Незважаючи на свої обмеження, простота та повсюдність функцій часу C робить їх цілком придатними для багатьох програм. Розуміння цих інструментів є фундаментальним для програмістів на C, пропонуючи суміш історичного програмного контексту та практичної, повсякденної користі.

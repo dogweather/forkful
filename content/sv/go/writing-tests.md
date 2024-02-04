@@ -1,50 +1,88 @@
 ---
 title:                "Skriva tester"
-date:                  2024-01-19
+date:                  2024-02-03T18:15:06.881604-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Skriva tester"
-
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/go/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att skriva tester innebär att koda små program som kontrollerar att din andra kod gör vad den ska. Programmerare använder tester för att undvika fel, förenkla uppdateringar och säkra kodkvaliteten.
 
-## Hur gör man:
+Att skriva tester i Go innebär att skapa små, hanterbara bitar av kod som validerar funktionaliteten och beteendet hos din applikation. Programmerare skriver tester för att säkerställa att deras kod fungerar som förväntat under olika förhållanden, för att underlätta omstrukturering och för att hjälpa till att förhindra regressioner.
+
+## Hur man gör:
+
+I Go skrivs tester vanligtvis i samma paket som koden de testar. Filer som innehåller tester namnges med suffixet `_test.go`. Tester är funktioner som tar en pekare till testing.T-objektet (från paketet `testing`) som argument, och de signalerar misslyckande genom att anropa metoder som `t.Fail()`, `t.Errorf()`, osv.
+
+Exempel på ett enkelt test för en funktion `Add` definierad i `math.go`:
 ```go
-package main
+// math.go
+paket math
 
-import (
-    "testing"
-)
-
-// Simpel funktion att testa
-func Add(a, b int) int {
-    return a + b
+func Add(x, y int) int {
+    return x + y
 }
+```
 
-// Testfunktion
+Testfil `math_test.go`:
+```go
+paket math
+
+import "testing"
+
 func TestAdd(t *testing.T) {
-    result := Add(1, 2)
-    expected := 3
-    if result != expected {
-        t.Errorf("Add(1, 2) = %d; want %d", result, expected)
+    resultat := Add(1, 2)
+    förväntat := 3
+    if resultat != förväntat {
+        t.Errorf("Add(1, 2) = %d; want %d", resultat, förväntat)
     }
 }
 ```
 
-Kör testet med `go test` i terminalen. Bra utfall:
+Kör dina tester med kommandot `go test` i samma katalog som dina testfiler. Exempel på utdata som indikerar ett passerat test skulle kunna se ut som:
+
 ```
 PASS
-ok  	example.com/yourpackage	0.001s
+ok      example.com/my/math 0.002s
+```
+
+För tabell-drivna tester, som låter dig effektivt testa olika kombinationer av indata och utdata, definiera en skiva av strukturer som representerar testfall:
+
+```go
+func TestAddTableDriven(t *testing.T) {
+    var tester = []struct {
+        x        int
+        y        int
+        förväntat int
+    }{
+        {1, 2, 3},
+        {2, 3, 5},
+        {-1, -2, -3},
+    }
+
+    for _, tt := range tester {
+        testnamn := fmt.Sprintf("%d+%d", tt.x, tt.y)
+        t.Run(testnamn, func(t *testing.T) {
+            svar := Add(tt.x, tt.y)
+            if svar != tt.förväntat {
+                t.Errorf("fick %d, vill ha %d", svar, tt.förväntat)
+            }
+        })
+    }
+}
 ```
 
 ## Fördjupning
-Tester i Go har sina rötter i TDD (Test-Driven Development), en metodik där man skriver testerna först. Alternativ till Go:s inbyggda testpaket inkluderar ramverk som "Testify" eller "Ginkgo". Testerna kan köra i en verklig miljö eller med hjälp av mocking för att simulera beroenden.
 
-## Se även:
-- Go testing documentation: https://pkg.go.dev/testing
-- En artikel om TDD: https://medium.com/@peterjmag/test-driven-development-what-it-is-and-what-it-is-not-41a6f4f8e3f0
-- Go mock-ramverk: https://github.com/golang/mock
+Go:s testramverk, som introducerades i Go 1 tillsammans med själva språket, designades för att integreras sömlöst med Go:s verktygskedja, vilket speglar Go:s betoning på enkelhet och effektivitet i programutveckling. Till skillnad från vissa testramverk i andra språk som förlitar sig på externa bibliotek eller komplexa uppsättningar, erbjuder Go:s inbyggda `testing` paket ett okomplicerat sätt att skriva och köra tester.
+
+Ett intressant drag hos Go:s tillvägagångssätt för testning är principen konvention över konfiguration som den antar, liksom filnamnsmönstret (`_test.go`) och användningen av standardbibliotekets funktionaliteter över externa beroenden. Detta minimalistiska tillvägagångssätt uppmuntrar utvecklare att skriva tester, eftersom inträdesbarriären är låg.
+
+Även om Go:s inbyggda testmöjligheter täcker mycket, finns det scenarier där tredjepartsverktyg eller ramverk kan erbjuda mer funktionalitet, som generering av mockobjekt, fuzz-testning eller beteendedriven utveckling (BDD)-stiltester. Populära bibliotek som Testify eller GoMock kompletterar Go:s standardtestkapaciteter och erbjuder mer uttrycksfulla påståenden eller möjligheter för generering av mockobjekt, vilket kan vara särskilt användbart i komplexa applikationer med många beroenden.
+
+Trots existensen av dessa alternativ förblir det standardiserade Go-testpaketet hörnstenen för testning i Go på grund av sin enkelhet, prestanda och nära integration med språket och verktygskedjan. Oavsett om utvecklare väljer att komplettera det med tredjepartsverktyg eller inte, ger Go:s testramverk en solid grund för att säkerställa kodkvalitet och tillförlitlighet.

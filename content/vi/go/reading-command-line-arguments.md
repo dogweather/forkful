@@ -1,68 +1,59 @@
 ---
-title:                "Đọc các đối số dòng lệnh"
-date:                  2024-01-28T22:05:42.810861-07:00
+title:                "Đọc các tham số dòng lệnh"
+date:                  2024-02-03T18:06:41.846770-07:00
 model:                 gpt-4-0125-preview
-simple_title:         "Đọc các đối số dòng lệnh"
-
+simple_title:         "Đọc các tham số dòng lệnh"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/go/reading-command-line-arguments.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Cái gì & Tại sao?
+## Gì và Tại sao?
 
-Việc đọc các đối số dòng lệnh cho phép chương trình của bạn nhận đầu vào khi nó được chạy từ terminal, điều này có thể hướng dẫn hành vi của nó mà không cần phải cố định giá trị. Các lập trình viên sử dụng nó để tùy chỉnh việc thực thi phần mềm, xử lý sở thích của người dùng, và phản hồi với các chế độ hoạt động khác nhau.
+Việc đọc các đối số dòng lệnh trong Go bao gồm việc trích xuất các đối số được cung cấp cho một chương trình trong quá trình được gọi từ terminal hoặc dấu nhắc lệnh. Lập trình viên thực hiện điều này để tùy chỉnh việc thực thi chương trình mà không cần thay đổi mã, làm cho ứng dụng linh hoạt hơn và do người dùng điều khiển.
 
 ## Làm thế nào:
 
-Go làm cho việc lấy những đối số dòng lệnh trở nên khá dễ dàng bằng cách sử dụng gói `os`. Đây là cách bạn thực hiện:
+Go cung cấp quyền truy cập trực tiếp vào các đối số dòng lệnh thông qua gói `os`, cụ thể sử dụng `os.Args`, một mảng các chuỗi. Dưới đây là một ví dụ đơn giản để bắt đầu:
 
-```Go
+```go
 package main
 
 import (
-	"fmt"
-	"os"
+    "fmt"
+    "os"
 )
 
 func main() {
-	args := os.Args[1:] // os.Args[0] là đường dẫn đến chính chương trình
-	for i, arg := range args {
-		fmt.Printf("Đối số %d: %s\n", i+1, arg)
-	}
+    // os.Args cung cấp quyền truy cập vào các đối số dòng lệnh thô
+    fmt.Println("Các đối số dòng lệnh:", os.Args)
+
+    if len(os.Args) > 1 {
+        // Duyệt qua các đối số, bỏ qua đối số đầu tiên (tên chương trình)
+        for i, arg := range os.Args[1:] {
+            fmt.Printf("Đối số %d: %s\n", i+1, arg)
+        }
+    } else {
+        fmt.Println("Không có đối số dòng lệnh nào được cung cấp.")
+    }
 }
 ```
 
-Chạy chương trình của bạn như thế này:
+Kết quả mẫu khi chạy với `go run yourprogram.go arg1 arg2` có thể trông như sau:
 
 ```
-$ go run yourprogram.go these are command line args
+Các đối số dòng lệnh: [/tmp/go-build123456789/b001/exe/yourprogram arg1 arg2]
+Đối số 1: arg1
+Đối số 2: arg2
 ```
 
-Và bạn sẽ nhận được:
-
-```
-Đối số 1: these
-Đối số 2: are
-Đối số 3: command line
-Đối số 4: args
-```
-
-Đó là tất cả. Bạn giờ đây có quyền lực để ảnh hưởng đến hành vi của chương trình từ terminal.
+Điều này in ra tất cả các đối số bao gồm tên chương trình (thường ở chỉ số 0), sau đó lặp qua từng đối số được cung cấp, in chúng ra. Để giải quyết việc phân tích đối số một cách có kiểm soát hơn, bạn có thể cân nhắc sử dụng gói `flag` để phân tích các tùy chọn dòng lệnh.
 
 ## Sâu hơn
 
-Trước khi GUI ra đời, các đối số dòng lệnh là tiêu chuẩn cho việc báo cho các chương trình biết phải làm gì. Chúng bắt nguồn từ các quy ước của UNIX, mà Go kế thừa một phần do mối quan hệ tương thích với môi trường POSIX.
+Trong lịch sử, việc truy cập vào các đối số dòng lệnh là một thực hành cũ như lập trình C, nơi `argc` và `argv[]` phục vụ một mục đích tương tự. Trong Go, `os.Args` làm cho việc này trở nên đơn giản nhưng cố ý sơ khai. Đối với các tình huống phức tạp hơn, như xử lý cờ hoặc tùy chọn, Go cung cấp gói `flag` mang lại khả năng phân tích mạnh mẽ. Điều này có thể được coi là một phương án "tốt hơn" khi ứng dụng của bạn yêu cầu nhiều hơn là chỉ các đối số vị trí.
 
-Các phương pháp thay thế cho phân tích đối số trong Go bao gồm việc sử dụng các gói phức tạp hơn như `flag` cho các cờ (ví dụ, `--name=value`) hoặc các thư viện bên thứ ba như `cobra` hoặc `urfave/cli` để xây dựng các ứng dụng CLI phức tạp.
-
-Mảng `os.Args` chứa tất cả các đối số, với `os.Args[0]` là chính chương trình. Sự đơn giản của nó hoàn hảo cho các nhiệm vụ đơn giản, nhưng hãy cảnh giác với các trường hợp cần các lệnh có cấu trúc hoặc cờ.
-
-## Xem Thêm
-
-- Gói `flag` cho một lựa chọn phân tích mạnh mẽ hơn: [https://pkg.go.dev/flag](https://pkg.go.dev/flag)
-- Cobra để xây dựng các ứng dụng dòng lệnh mạnh mẽ: [https://github.com/spf13/cobra](https://github.com/spf13/cobra)
-- `urfave/cli` cho một gói đơn giản, nhanh chóng và vui vẻ để xây dựng CLIs trong Go: [https://github.com/urfave/cli](https://github.com/urfave/cli)
+Không giống như một số ngôn ngữ kịch bản cung cấp việc phân tích đối số dòng lệnh thành mảng kết hợp hoặc đối tượng tích hợp, cách tiếp cận của Go yêu cầu lập trình viên hoặc tự xử lý phân tích bằng `os.Args` cho nhu cầu cơ bản hoặc sử dụng gói `flag` cho các tình huống tiên tiến hơn. Thiết kế này phản ánh triết lý của Go về việc giữ cho ngôn ngữ cốt lõi đơn giản trong khi cung cấp các thư viện chuẩn mạnh mẽ cho các tác vụ phổ biến. Mặc dù nó có thể giới thiệu một đường cong học tập nhẹ cho những người quen với việc phân tích tích hợp, nhưng nó mang lại tính linh hoạt lớn hơn và khuyến khích sự hiểu biết sâu sắc hơn về việc xử lý đối số dòng lệnh.

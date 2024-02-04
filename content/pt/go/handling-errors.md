@@ -1,75 +1,69 @@
 ---
-title:                "Tratamento de erros"
-date:                  2024-01-26T00:52:51.253841-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Tratamento de erros"
-
+title:                "Gerenciando erros"
+date:                  2024-02-03T17:58:21.906718-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Gerenciando erros"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/go/handling-errors.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## O Quê & Por Quê?
+## O Que & Por Que?
 
-O tratamento de erros em Go é sobre capturar e responder a contratempos de execução de maneira elegante. Fazemos isso para evitar falhas e garantir que nossos programas atuem de maneira previsível, mesmo quando as coisas não vão bem.
+Tratar erros em Go envolve reconhecer e responder às condições de erro no seu programa. Os programadores se envolvem no tratamento de erros para garantir que suas aplicações possam se recuperar de forma elegante de situações inesperadas, levando a softwares mais robustos e confiáveis.
 
 ## Como fazer:
 
-Go utiliza um tratamento de erros explícito. Isso significa que você verificará se uma função retorna um erro toda vez que chamá-la. Sem Exceções. Veja como isso se parece:
+No Go, o tratamento de erros é gerenciado explicitamente usando o tipo `error`. Funções que podem falhar retornam um erro como seu último valor de retorno. Verificar se esse valor de erro é `nil` informará se ocorreu um erro.
 
-```Go
+```go
 package main
 
 import (
-	"fmt"
-	"os"
+    "errors"
+    "fmt"
 )
 
+func Compute(value int) (int, error) {
+    if value > 100 {
+        return 0, errors.New("o valor deve ser 100 ou menos")
+    }
+    return value * 2, nil
+}
+
 func main() {
-	err := fazerAlgo()
-	if err != nil {
-		fmt.Println("Ops:", err)
-		os.Exit(1)
-	}
-}
-
-func fazerAlgo() error {
-	// Fingindo que algo deu errado
-	return fmt.Errorf("algo deu errado")
-}
-```
-
-Execute isso, e você obterá:
-
-```
-Ops: algo deu errado
-```
-
-Mas e se tudo der certo?
-
-```Go
-func fazerAlgo() error {
-	// Tudo certo desta vez
-	return nil
+    result, err := Compute(150)
+    if err != nil {
+        fmt.Println("Erro:", err)
+    } else {
+        fmt.Println("Resultado:", result)
+    }
+    
+    // Lidando com um erro de forma elegante
+    anotherResult, anotherErr := Compute(50)
+    if anotherErr != nil {
+        fmt.Println("Erro:", anotherErr)
+    } else {
+        fmt.Println("Resultado:", anotherResult)
+    }
 }
 ```
 
-Nenhuma saída. Legal, sem notícias são boas notícias.
+Saída de amostra para o código acima:
+```
+Erro: o valor deve ser 100 ou menos
+Resultado: 100
+```
 
-## Mergulho Profundo:
+Neste exemplo, a função `Compute` retorna um valor calculado ou um erro. O chamador trata o erro verificando se `err` não é `nil`.
 
-Em Go, o tratamento de erros tem sido um ponto de controvérsia. Desde o início, Go decidiu contra exceções em favor de uma abordagem mais explícita, que alguns desenvolvedores adoram por sua simplicidade e outros acham verbosa. O tipo integrado `error` é uma interface. Qualquer tipo com um método `Error() string` a satisfaz. Isso está alinhado com o ethos de Go de simplicidade e explícito.
+## Aprofundamento
 
-Alternativas? Há o duo `panic` e `recover`, mas eles são para casos excepcionais (com trocadilho intencional) quando o programa não pode continuar. Pense em `panic` como o botão de ejeção que você aperta quando sabe que não há volta. Use-o com parcimônia.
+A abordagem de tratamento de erros do Go é deliberadamente direta e segura em termos de tipo, exigindo verificações explícitas de erros. Esse conceito contrasta com o tratamento de erros baseado em exceções visto em linguagens como Java e Python, onde os erros são propagados pela pilha de chamadas a menos que sejam capturados por um manipulador de exceções. A equipe do Go argumenta que o tratamento explícito de erros resulta em código mais claro e confiável, pois força os programadores a abordarem os erros imediatamente onde ocorrem.
 
-Quanto ao tratamento de erros convencional, Go 1.13 introduziu o encapsulamento de erros, facilitando a compreensão da "cadeia de erros" com funções como `errors.Is()` e `errors.As()`.
+No entanto, algumas críticas mencionam que esse padrão pode levar a um código verboso, especialmente em funções complexas com muitas operações propensas a erros. Em resposta, versões mais recentes do Go introduziram recursos de tratamento de erros mais sofisticados, como o encapsulamento de erros, tornando mais fácil fornecer contexto a um erro sem perder a informação do erro original. A comunidade também viu propostas para novos mecanismos de tratamento de erros, como check/handle, embora estes permaneçam em discussão até a minha última atualização.
 
-## Veja Também:
-
-Para tudo sobre tratamento de erros em Go:
-
-- O Blog Go sobre Tratamento de Erros: [https://blog.golang.org/error-handling-and-go](https://blog.golang.org/error-handling-and-go)
-- Go Eficaz – Seção sobre tratamento de erros: [https://golang.org/doc/effective_go#errors](https://golang.org/doc/effective_go#errors)
-- Documentação sobre Encapsulamento de Erros do Go 1.13: [https://golang.org/doc/go1.13#error_wrapping](https://golang.org/doc/go1.13#error_wrapping)
-- Post de Dave Cheney sobre estratégias de tratamento de erros: [https://dave.cheney.net/2016/04/27/dont-just-check-errors-handle-them-gracefully](https://dave.cheney.net/2016/04/27/dont-just-check-errors-handle-them-gracefully)
+A filosofia de tratamento de erros do Go enfatiza o entendimento e o planejamento para os erros como parte do fluxo normal do programa. Esta abordagem incentiva o desenvolvimento de software mais resiliente e previsível, ainda que com um possível aumento no código padrão. Padrões alternativos e bibliotecas existem para simplificar o tratamento de erros para casos particularmente complexos, mas o tipo `error` integrado do Go permanece a fundação do tratamento de erros no idioma.

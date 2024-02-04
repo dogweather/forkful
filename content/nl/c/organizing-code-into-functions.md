@@ -1,77 +1,80 @@
 ---
 title:                "Code organiseren in functies"
-date:                  2024-01-28T22:02:54.500123-07:00
+date:                  2024-02-03T17:59:17.112664-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Code organiseren in functies"
-
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/c/organizing-code-into-functions.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Wat & Waarom?
-Het organiseren van code in functies gaat over het opsplitsen van de code in herbruikbare blokken die specifieke taken uitvoeren. Het maakt code makkelijker te lezen, te debuggen en te onderhouden.
+
+Code in C organiseren in functies omvat het opsplitsen van complexe taken in kleinere, herbruikbare blokken code. Deze praktijk verbetert de leesbaarheid, vergemakkelijkt het debuggen, en bevordert hergebruik van code, waardoor applicaties modulairder en onderhoudbaarder worden.
 
 ## Hoe:
-Laten we een eenvoudig voorbeeld nemen: stel, je wilt meerdere keren twee getallen optellen.
 
-Zonder functies:
-```C
+In C wordt een functie gedeclareerd met een retourtype, een naam, en parameters (indien van toepassing), gevolgd door een blok code. Laten we beginnen met een eenvoudig voorbeeld: een functie die twee gehele getallen optelt.
+
+```c
 #include <stdio.h>
 
+// Functiedeclaratie
+int add(int a, int b);
+
 int main() {
-    int som1 = 5 + 3;
-    printf("Som1: %d\n", som1);
-    
-    int som2 = 2 + 8;
-    printf("Som2: %d\n", som2);
-    
-    // Meer optellingen hier...
-    
-    return 0;
+  int sum = add(5, 3);
+  printf("De som is: %d\n", sum);
+  return 0;
+}
+
+// Functiedefinitie
+int add(int a, int b) {
+  return a + b;
 }
 ```
 
-Met functies:
-```C
+Uitvoer:
+```
+De som is: 8
+```
+
+Laten we nu eens kijken naar een complexer voorbeeld met een aangepast gegevenstype. Deze functie berekent de oppervlakte van een rechthoek.
+
+```c
 #include <stdio.h>
 
-int optellen(int a, int b) {
-    return a + b;
+// Definieer een structuur voor een rechthoek
+typedef struct {
+  int breedte;
+  int hoogte;
+} Rechthoek;
+
+// Functie om de oppervlakte van een rechthoek te berekenen
+int calculateArea(Rechthoek rect) {
+  return rect.breedte * rect.hoogte;
 }
 
 int main() {
-    int som1 = optellen(5, 3);
-    printf("Som1: %d\n", som1);
-    
-    int som2 = optellen(2, 8);
-    printf("Som2: %d\n", som2);
-    
-    // Gebruik optellen() functie voor meer optellingen...
-    
-    return 0;
+  Rechthoek mijnRechthoek = {5, 10};
+  int oppervlakte = calculateArea(mijnRechthoek);
+  printf("De oppervlakte van de rechthoek is: %d\n", oppervlakte);
+  return 0;
 }
 ```
 
-Output:
+Uitvoer:
 ```
-Som1: 8
-Som2: 10
+De oppervlakte van de rechthoek is: 50
 ```
 
-## Diepgaande Verdieping
-Voordat C functies had, werd programmeren vaak uitgevoerd op een lineaire manier, vergelijkbaar met een recept. Maar naarmate programma's groeiden, werd code duplicatie een probleem. Functies waren de oplossing - ze stelden ons in staat om hetzelfde codeblok vanuit verschillende delen van een programma uit te voeren zonder het elke keer opnieuw te schrijven. Dit bespaart niet alleen ruimte, maar ook tijd bij het maken van updates: verander de functie op één plek, en elk deel van je code dat het gebruikt krijgt de update.
+## Diepgaand
 
-Alternatieven voor functies kunnen inline code, macro's of copy-and-paste programmeren omvatten, maar deze kunnen leiden tot opgeblazen, foutgevoelige en moeilijk te onderhouden code. Functies, daarentegen, kapselen functionaliteit in, definiëren duidelijke interfaces en kunnen bijwerkingen verminderen met een correct gebruik van bereik.
+Het concept van functies in C, geërfd van eerdere programmeerpraktijken, is fundamenteel voor gestructureerd programmeren. Functies stellen ontwikkelaars in staat om details te abstraheren, complexiteit te beheren, en hun code logisch te organiseren. Sinds de introductie is de functie een kernconstructie in C, waardoor tal van andere talen beïnvloed zijn.
 
-Wanneer je functies implementeert, overweeg dan een paar details: ten eerste, probeer ze slechts één ding te laten doen – dit staat bekend als het Single Responsibility Principle. Ten tweede, namen zijn belangrijk – kies beschrijvende namen voor functies en hun parameters om je code zelfdocumenterend te maken.
+Echter, naarmate de programmeerparadigma's zijn geëvolueerd, hebben alternatieve benaderingen zoals objectgeoriënteerd programmeren (OOP) in talen zoals C++ en Java, het concept van functies uitgebreid met methoden die geassocieerd zijn met objecten. Hoewel C standaard geen OOP ondersteunt, is het mogelijk om objectgeoriënteerde ontwerpen na te bootsen door functies en gegevens zorgvuldig te structureren.
 
-## Zie Ook
-Voor meer over functies in C, neem een kijkje bij deze:
-
-- C Standard Library referentie: https://en.cppreference.com/w/c/header
-- C Programmeren: Een Moderne Aanpak door K.N. King: Een boek met een diepe duik in functies.
-- Learn-C.org: Functies sectie: https://www.learn-c.org/en/Functions
+In de moderne programmering blijven functies cruciaal, maar met vooruitgangen in compileroptimalisaties en taalfeatures, kan de nadruk verschuiven naar inline functies en templates in C++ of lambdas in talen zoals Python en JavaScript. Deze bieden meer flexibiliteit en vaak een beknoptere syntaxis voor het bereiken van vergelijkbare modulariteit en herbruikbaarheid. De fundamentele principes die geleerd zijn door code in functies in C te organiseren, zijn echter universeel toepasbaar en vormen de basis van efficiënte en effectieve softwareontwikkeling.

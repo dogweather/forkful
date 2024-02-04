@@ -1,31 +1,42 @@
 ---
-title:                "Kontrollera om en katalog finns"
-date:                  2024-01-19
-simple_title:         "Kontrollera om en katalog finns"
-
+title:                "Kontrollera om en katalog existerar"
+date:                  2024-02-03T17:53:05.368505-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Kontrollera om en katalog existerar"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/c/checking-if-a-directory-exists.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Vad & Varför?)
-Att kontrollera om en katalog finns är processen att säkerställa att en specifik mapp finns på filsystemet. Programmerare gör detta för att undvika fel när de till exempel ska läsa från eller skriva till filer i katalogen.
+## Vad och Varför?
 
-## How to (Hur man gör)
-Använd `stat()` från `sys/stat.h` för att kontrollera kataloger.
+Att kontrollera om en katalog existerar i C innebär att man frågar filsystemet för att verifiera om en specifik sökväg leder till en katalog. Programmerare utför ofta denna operation för att säkerställa att filoperationer (såsom att läsa från eller skriva till filer) riktas mot giltiga sökvägar, vilket förebygger fel och förbättrar programvarans tillförlitlighet.
 
-```C
-#include <sys/stat.h>
+## Hur man gör:
+
+I C kan existensen av en katalog kontrolleras med hjälp av `stat`-funktionen, som hämtar information om filen eller katalogen på en angiven sökväg. Makrot `S_ISDIR` från `sys/stat.h` används sedan för att utvärdera om den hämtade informationen motsvarar en katalog.
+
+Så här kan du använda `stat` och `S_ISDIR` för att kontrollera om en katalog existerar:
+
+```c
 #include <stdio.h>
+#include <sys/stat.h>
 
 int main() {
-    struct stat statbuf;
+    struct stat stats;
+    
+    // Sökvägen till katalogen som ska kontrolleras
     char *dirPath = "/path/to/directory";
 
-    // Kontrollera om katalogen finns
-    if (stat(dirPath, &statbuf) == 0 && S_ISDIR(statbuf.st_mode)) {
-        printf("Katalogen finns.\n");
+    // Få statusen för sökvägen
+    int result = stat(dirPath, &stats);
+
+    // Kontrollera om katalogen existerar
+    if (result == 0 && S_ISDIR(stats.st_mode)) {
+        printf("Katalogen existerar.\n");
     } else {
         printf("Katalogen finns inte.\n");
     }
@@ -34,31 +45,20 @@ int main() {
 }
 ```
 
-Sample output för en existerande katalog:
+Exempelutskrift:
 ```
-Katalogen finns.
+Katalogen existerar.
 ```
 
-Sample output för en icke-existerande katalog:
+Eller, om katalogen inte finns:
 ```
 Katalogen finns inte.
 ```
 
-## Deep Dive (Djupdykning)
-Funktionen `stat()` har en lång historia i Unix-baserade system, där den infördes för att hämta filstatus. I C gör `stat()` samma sak: den hämtar filattribut för den angivna sökvägen. 
+## Fördjupning:
 
-Alternativa metoder:
-- `opendir()` från `dirent.h` kan också användas men öppnar katalogen istället för att endast kontrollera dess existens.
-- `access()` med `F_OK` kan kontrollera tillgängligheten av filen/katalogen, men den ger inte detaljerad information om det är en fil eller katalog.
-  
-Implementation:
-- `stat()` fyller `stat`-strukturen med information om filen/katalogen. `st_mode` innehåller filtypen och rättigheterna.
-- Makrot `S_ISDIR()` används för att kontrollera om `st_mode` indikerar en katalog.
-- En nolla returneras vid framgång och `-1` vid fel. Använd `errno` för att få mer specifik felinformation.
+Strukturen och funktionen `stat` har varit en del av programmeringsspråket C i årtionden, härstammande från Unix. De tillhandahåller ett standardiserat sätt att hämta information från filsystemet, som, trots att det är relativt lågnivå, är brett använt på grund av dess enkelhet och direkta tillgång till filsystemets metadata.
 
-## See Also (Se även)
-- POSIX `stat` manpage: http://man7.org/linux/man-pages/man2/stat.2.html
-- GNU C Library: https://www.gnu.org/software/libc/manual/
-- Stack Overflow – Common C file operations: https://stackoverflow.com/questions/tagged/c+file
-- `opendir()` dokumentation: https://linux.die.net/man/3/opendir
-- `access()` system call: https://www.man7.org/linux/man-pages/man2/access.2.html
+Historiskt sett har kontroll av existens och egenskaper hos filer och kataloger med `stat` och dess derivat (som `fstat` och `lstat`) varit en vanlig tillvägagångssätt. Dock interagerar dessa funktioner direkt med operativsystemets kärna, vilket kan introducera överhuvudtagande och potentiella fel om det inte hanteras korrekt.
+
+För nya projekt eller när man arbetar i högnivåscenarier kanske programmerare väljer mer abstraherade fälthanteringsmekanismer som tillhandahålls av moderna ramverk eller bibliotek som hanterar fel mer nådigt och tillhandahåller ett enklare API. Ändå, att förstå och kunna använda `stat` förblir en värdefull kompetens för scenarier som kräver direkt manipulation av filsystemet, såsom systemprogrammering eller när man arbetar i begränsade miljöer där beroenden på stora bibliotek är opraktiskt.

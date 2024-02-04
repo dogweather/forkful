@@ -1,27 +1,27 @@
 ---
 title:                "Tests Schrijven"
-date:                  2024-01-28T22:13:01.628676-07:00
+date:                  2024-02-03T18:14:55.822608-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Tests Schrijven"
-
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/go/writing-tests.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Wat & Waarom?
 
-Tests schrijven betekent code ontwerpen om te controleren of andere code werkt. Programmeurs doen dit om bugs vroeg te ontdekken, functionaliteit te waarborgen en toekomstige problemen te voorkomen.
+Tests schrijven in Go betekent kleine, beheersbare stukken code creëren die de functionaliteit en het gedrag van je applicatie valideren. Programmeurs schrijven tests om ervoor te zorgen dat hun code zoals verwacht werkt onder verschillende omstandigheden, om refactoring te faciliteren en om regressies te helpen voorkomen.
 
-## Hoe:
+## Hoe te:
 
-Go heeft een ingebouwd testpakket genaamd `testing`. Stel je voor, je hebt een functie `Add` die twee ints optelt:
+In Go worden tests doorgaans geschreven in hetzelfde pakket als de code die ze testen. Bestanden met tests krijgen de `_test.go` suffix. Tests zijn functies die een pointer naar het testing.T object (uit het `testing` pakket) als argument nemen, en ze signaleren falen door methoden aan te roepen zoals `t.Fail()`, `t.Errorf()`, enz.
 
-```Go
-// add.go
+Voorbeeld van een eenvoudige test voor een functie `Add` gedefinieerd in `math.go`:
+```go
+// math.go
 package math
 
 func Add(x, y int) int {
@@ -29,15 +29,11 @@ func Add(x, y int) int {
 }
 ```
 
-Schrijf een test als volgt:
-
-```Go
-// add_test.go
+Testbestand `math_test.go`:
+```go
 package math
 
-import (
-    "testing"
-)
+import "testing"
 
 func TestAdd(t *testing.T) {
     resultaat := Add(1, 2)
@@ -48,24 +44,45 @@ func TestAdd(t *testing.T) {
 }
 ```
 
-Voer tests uit met `go test`. Je zult output zien zoals:
+Voer je tests uit met het commando `go test` in dezelfde directory als je testbestanden. Voorbeelduitvoer die aangeeft dat een test slaagt, zou er als volgt uitzien:
 
 ```
 PASS
-ok      example.com/your-module/math   0.002s
+ok      example.com/my/math 0.002s
 ```
 
-## Diepe Duik
+Voor tabelgestuurde tests, die je in staat stellen om efficiënt verschillende invoer- en uitvoercombinaties te testen, definieer je een slice van structs die testgevallen vertegenwoordigen:
 
-Go introduceerde ingebouwde tests in 2011. Het is eenvoudiger dan het gebruiken van een aparte bibliotheek. Je schrijft tests in `_test.go` bestanden, met gebruik van `testing.T` om fouten te rapporteren.
+```go
+func TestAddTableDriven(t *testing.T) {
+    var tests = []struct {
+        x        int
+        y        int
+        verwacht int
+    }{
+        {1, 2, 3},
+        {2, 3, 5},
+        {-1, -2, -3},
+    }
 
-Alternatieven? Zeker, je kunt Testify gebruiken voor beweringen, Ginkgo voor BDD, of GoCheck voor meer geavanceerde functies. Maar het `testing` pakket is zonder afhankelijkheden, eenvoudig en vaak genoeg.
+    for _, tt := range tests {
+        testnaam := fmt.Sprintf("%d+%d", tt.x, tt.y)
+        t.Run(testnaam, functie(t *testing.T) {
+            antw := Add(tt.x, tt.y)
+            if antw != tt.verwacht {
+                t.Errorf("kreeg %d, wil %d", antw, tt.verwacht)
+            }
+        })
+    }
+}
+```
 
-Achter de schermen compileert `go test` je code en tests samen, voert ze uit en rapporteert resultaten. Het is idiomatisch Go: algemene gevallen eenvoudig, speciale gevallen mogelijk.
+## Diepgaand
 
-## Zie Ook
+Het Go-testframework, geïntroduceerd in Go 1 samen met de taal zelf, was ontworpen om naadloos te integreren met de Go toolchain, wat Go's nadruk op eenvoud en efficiëntie in de softwareontwikkeling weerspiegelt. In tegenstelling tot sommige testframeworks in andere talen die afhankelijk zijn van externe bibliotheken of complexe opstellingen, biedt Go's ingebouwde `testing` pakket een eenvoudige manier om tests te schrijven en uit te voeren.
 
-Voor extra's, bekijk de documentatie:
+Een interessant aspect van Go's benadering van testen is het principe van conventie boven configuratie dat het aanneemt, zoals het bestandsbenamingspatroon (`_test.go`) en het gebruik van standaardbibliotheekfunctionaliteiten boven externe afhankelijkheden. Deze minimalistische aanpak moedigt ontwikkelaars aan om tests te schrijven, aangezien de instapdrempel laag is.
 
-- Testpakket: [https://pkg.go.dev/testing](https://pkg.go.dev/testing)
-- Tabelgestuurde tests: [https://github.com/golang/go/wiki/TableDrivenTests](https://github.com/golang/go/wiki/TableDrivenTests)
+Hoewel Go's ingebouwde testfaciliteiten veel dekken, zijn er scenario's waarin externe tools of frameworks meer functionaliteiten kunnen bieden, zoals mock-generatie, fuzz testing, of behavior-driven development (BDD) stijltests. Populaire bibliotheken zoals Testify of GoMock vullen de standaardtestmogelijkheden van Go aan, en bieden meer expressieve beweringen of mogelijkheden voor mock-generatie, die met name nuttig kunnen zijn in complexe applicaties met veel afhankelijkheden.
+
+Ondanks het bestaan van deze alternatieven blijft het standaard Go-testpakket de hoeksteen voor testen in Go vanwege de eenvoud, prestaties, en strakke integratie met de taal en toolchain. Of ontwikkelaars het nu aanvullen met externe tools of niet, het Go-testframework biedt een solide basis voor het waarborgen van codekwaliteit en betrouwbaarheid.

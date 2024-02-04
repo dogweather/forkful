@@ -1,58 +1,69 @@
 ---
-title:                "Analyse syntaxique de HTML"
-date:                  2024-01-20T15:30:17.740449-07:00
-simple_title:         "Analyse syntaxique de HTML"
-
+title:                "Analyse Syntaxique de HTML"
+date:                  2024-02-03T17:59:30.939798-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Analyse Syntaxique de HTML"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/c/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-"Quoi et pourquoi ?"
-L'analyse (parsing) du HTML consiste à décomposer le contenu d'une page web en éléments compréhensibles pour les programmes. Les développeurs le font pour extraire des données, manipuler le contenu ou intégrer des fonctionnalités web dans leurs applications.
+## Quoi & Pourquoi ?
 
-## How to:
-"Comment faire :"
-```C
+Analyser le HTML en C implique d'examiner les documents HTML pour en extraire efficacement des données, une structure ou des parties spécifiques, souvent en préparation au datamining ou au web scraping. Les programmeurs le font pour automatiser l'extraction d'informations, permettant ainsi le traitement ou la réutilisation programmatique du contenu web.
+
+## Comment faire :
+
+Analyser le HTML peut sembler intimidant en raison de la complexité du HTML et de ses fréquentes déviations de structures propres et bien formées. Cependant, l'utilisation d'une bibliothèque telle que `libxml2`, spécifiquement son module d'analyse HTML, simplifie le processus. Cet exemple montre comment utiliser `libxml2` pour analyser le HTML et extraire des informations.
+
+D'abord, assurez-vous que `libxml2` est installé dans votre environnement. Dans de nombreuses distributions Linux, vous pouvez l'installer via le gestionnaire de paquets. Par exemple, sur Ubuntu :
+
+```bash
+sudo apt-get install libxml2 libxml2-dev
+```
+
+Maintenant, écrivons un simple programme C qui utilise `libxml2` pour analyser une chaîne HTML et imprimer le texte à l'intérieur d'un élément spécifique :
+
+```c
 #include <stdio.h>
-#include <stdlib.h>
-#include "my_html_parser.h" // Considérez ceci comme une bannière pour votre bibliothèque de parsing HTML.
+#include <libxml/HTMLparser.h>
 
-int main() {
-    // Initialisation : charger du HTML dans un char* (string)
-    char *html_content = "<html><head><title>Test</title></head><body><p>Hello, World!</p></body></html>";
+void parseHTML(const char *html) {
+    htmlDocPtr doc = htmlReadDoc((const xmlChar *)html, NULL, NULL, HTML_PARSE_RECOVER | HTML_PARSE_NOERROR | HTML_PARSE_NOWARNING);
     
-    // Utilisation du parseur hypothétique
-    HTMLNode *root = parse_html(html_content);
-    
-    // Chercher des éléments, par exemple : <p>
-    HTMLNode *paragraph = find_node_by_tag(root, "p");
-    if (paragraph != NULL) {
-        printf("Found paragraph: %s\n", paragraph->inner_text);
+    // En supposant que nous cherchons le contenu à l'intérieur des balises <p>
+    xmlNode *root_element = xmlDocGetRootElement(doc);
+    for (xmlNode *current_node = root_element; current_node; current_node = current_node->next) {
+        if (current_node->type == XML_ELEMENT_NODE && strcmp((const char *)current_node->name, "p") == 0) {
+            printf("Paragraphe trouvé : %s\n", xmlNodeGetContent(current_node));
+        }
     }
     
-    // Nettoyage
-    free_html_tree(root);
-    return 0;
+    xmlFreeDoc(doc);
+    xmlCleanupParser();
 }
 
-// Sortie supposée
-// Found paragraph: Hello, World!
+int main() {
+    const char *html = "<html><body><p>Bonjour, monde !</p></body></html>";
+    parseHTML(html);
+    return 0;
+}
 ```
-Notez qu'on ne trouve pas de parseurs HTML standard en C. Utilisez des librairies tierces comme `libxml2`.
 
-## Deep Dive:
-"Plongée profonde :"
-Le parsing HTML n'est pas né hier. Comme le web, il évolue depuis les années 90. Historiquement, la complexité du HTML a entraîné des problèmes d'analyse; c'est pourquoi le W3C crée des standards pour simplifier l'interprétation.
+Résultat de l'exemple :
+```
+Paragraphe trouvé : Bonjour, monde !
+```
 
-Parmi les alternatives, on trouve `libxml2` pour du parsing robuste et `Gumbo` pour un parsing HTML5. Ces libraires gèrent la complexité des documents réels sur le web - souvent mal formés ou non conformes.
+Cet exemple se concentre sur l'extraction de texte au sein des balises de paragraphe, mais `libxml2` offre un support robuste pour naviguer et interroger diverses parties d'un document HTML.
 
-Une implémentation soignée doit gérer les spécificités des balises et les cas limites, comme les scripts ou les styles inline, tout en restant performante. Parseurs performants souvent utilisent des machines d'état ou des analyses syntaxiques (parsing arborescent) pour réduire la complexité algorithmique.
+## Plongée profonde
 
-## See Also:
-"Voir aussi :"
-- La documentation de `libxml2`: http://xmlsoft.org/
-- Gumbo parser, un parseur HTML5: https://github.com/google/gumbo-parser
-- W3C pour comprendre les standards HTML: https://www.w3.org/standards/techs/html
+Analyser le HTML en C remonte aux premiers jours du développement web. Initialement, les développeurs devaient compter sur des solutions d'analyse personnalisées, souvent rudimentaires, en raison du manque de bibliothèques standardisées et de l'état chaotique du HTML sur le web. L'introduction de bibliothèques comme `libxml2` a marqué une progression significative, offrant des approches plus standardisées, efficaces et résilientes pour l'analyse du HTML.
+
+Malgré la vitesse et le contrôle inégalés du C, il convient de noter que le C n'est pas toujours le meilleur outil pour analyser le HTML, surtout pour des tâches nécessitant des cycles de développement rapides ou traitant du HTML exceptionnellement mal formé. Les langages disposant de bibliothèques d'analyse HTML de haut niveau, tels que Python avec Beautiful Soup, fournissent des interfaces plus abstraites et conviviales au prix de certaines performances.
+
+Néanmoins, pour les applications critiques en termes de performance, ou lorsque l'on travaille dans des environnements à ressources limitées, analyser le HTML en C reste une méthode viable et souvent préférée. La clé est de tirer parti de bibliothèques robustes telles que `libxml2` pour gérer les subtilités du HTML, permettant ainsi aux développeurs de se concentrer sur l'extraction des données dont ils ont besoin sans se perdre dans les détails de la mécanique d'analyse.

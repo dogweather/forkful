@@ -1,40 +1,54 @@
 ---
-title:                "Scrivere sull'errore standard"
-date:                  2024-01-19
-simple_title:         "Scrivere sull'errore standard"
-
+title:                "Scrittura su errore standard"
+date:                  2024-02-03T18:14:56.223281-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Scrittura su errore standard"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/c/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Scrivere su standard error, o stderr, permette di segnalare errori e log senza intasare l'output standard dei programmi. I programmatori lo fanno per separare l'output normale dagli avvisi e dalle segnalazioni di errore, rendendo più semplice il debug e il monitoraggio dei processi.
+## Cosa & Perché?
 
-## How to:
-Usa `fprintf` o `fputs` per scrivere su stderr. Esempio:
+La scrittura su standard error in C comporta l'indirizzamento dei messaggi di errore e delle informazioni diagnostiche su un flusso separato rispetto all'output principale del programma. I programmatori fanno ciò per segregare i messaggi di errore dall'output standard, rendendo entrambi più facili da leggere ed elaborare separatamente, specialmente durante il debug o il logging dell'esecuzione dei programmi.
 
-```C
+## Come fare:
+
+In C, il flusso `stderr` è utilizzato per scrivere messaggi di errore. A differenza della scrittura sull'output standard con `printf`, la scrittura su `stderr` può essere eseguita utilizzando `fprintf` o `fputs`. Ecco come si può fare:
+
+```c
 #include <stdio.h>
 
 int main() {
-    fprintf(stderr, "Questo è un errore!\n");
-    fputs("Errore con fputs!\n", stderr);
+    fprintf(stderr, "Questo è un messaggio di errore.\n");
+
+    fputs("Questo è un altro messaggio di errore.\n", stderr);
+    
     return 0;
 }
 ```
 
-Output:
+Output di esempio (su stderr):
 ```
-Questo è un errore!
-Errore con fputs!
+Questo è un messaggio di errore.
+Questo è un altro messaggio di errore.
 ```
 
-## Deep Dive:
-`stderr` è arrivato con lo standard C ANSI nel 1989, essendo uno dei tre stream di I/O predefiniti. Alternativamente, per output non critici si può usare `stdout`, mentre `stderr` è non-buffered e assicura che l'errore sia stampato immediatamente. Implementandolo, ricorda che scrivere su `stderr` può essere rediretto o filtrato separatamente dall'output principale del programma.
+È importante notare che, sebbene l'output appaia simile a `stdout` nella console, quando si utilizza il reindirizzamento nel terminale, la distinzione diventa chiara:
 
-## See Also:
-Per maggiori informazioni e approfondimenti:
-- La documentazione ufficiale di C su `stderr`: https://en.cppreference.com/w/c/io/std_streams
-- Best practice per la gestione degli errori in C: https://www.gnu.org/prep/standards/html_node/Errors.html
+```sh
+$ ./il_tuo_programma > output.txt
+```
+
+Questo comando reindirizza solo l'output standard su `output.txt`, mentre i messaggi di errore appariranno ancora sullo schermo.
+
+## Approfondimento
+
+La distinzione tra `stdout` e `stderr` nei sistemi basati su Unix risale ai primi giorni di C e Unix. Questa separazione consente una gestione degli errori e un logging più robusti, poiché consente ai programmatori di reindirizzare i messaggi di errore indipendentemente dall'output standard del programma. Mentre `stderr` è non bufferizzato per impostazione predefinita per garantire l'output immediato dei messaggi di errore, il che aiuta nel debugging di crash e altre questioni critiche, `stdout` è tipicamente bufferizzato, il che significa che il suo output potrebbe essere ritardato fino a quando il buffer non viene svuotato (ad esempio, al termine del programma o allo svuotamento manuale).
+
+Nelle applicazioni moderne, la scrittura su `stderr` è ancora rilevante, soprattutto per gli strumenti da riga di comando e le applicazioni server dove è cruciale distinguere tra messaggi di log regolari ed errori. Tuttavia, per una gestione degli errori più complessa, specialmente in applicazioni GUI o dove sono necessari meccanismi di logging più sofisticati, i programmatori potrebbero utilizzare librerie di logging dedicate che forniscono un maggiore controllo sulla formattazione dei messaggi, le destinazioni (ad esempio, file, rete) e i livelli di gravità (info, avviso, errore, ecc.).
+
+Sebbene `stderr` fornisca un meccanismo fondamentale per la segnalazione degli errori in C, l'evoluzione delle pratiche di programmazione e la disponibilità di framework di logging avanzati significano che spesso è solo il punto di partenza per le strategie moderne di gestione degli errori.

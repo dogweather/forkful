@@ -1,73 +1,99 @@
 ---
 title:                "Gebruik van associatieve arrays"
-date:                  2024-01-30T19:10:41.470755-07:00
+date:                  2024-02-03T18:10:44.093572-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Gebruik van associatieve arrays"
-
 tag:                  "Data Structures"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/c/using-associative-arrays.md"
 changelog:
-  - 2024-01-30, gpt-4-0125-preview, translated from English
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Wat & Waarom?
 
-Associatieve arrays, of hash maps, zijn sleutel-waardeparen waarmee je gegevens kunt opslaan en ophalen met een sleutel. Ze zijn ongelooflijk nuttig in C omdat ze snellere gegevenstoegang mogelijk maken in vergelijking met lijsten, vooral wanneer je te maken hebt met een grote hoeveelheid gegevens.
+Associatieve arrays, bekend in andere talen als mappen of woordenboeken, zijn sleutel-waarde paren die worden gebruikt voor efficiënte gegevensopzoeking en manipulatie. In tegenstelling tot traditionele arrays die integerindices gebruiken, gebruiken associatieve arrays sleutels, wat de gegevenstoegang intuïtiever en flexibeler maakt voor programmeurs.
 
-## Hoe dan:
+## Hoe te:
 
-C heeft geen ingebouwde ondersteuning voor associatieve arrays zoals sommige andere talen, maar we kunnen structuren en een aantal bibliotheekfuncties gebruiken om vergelijkbare functionaliteit te krijgen. Hier is een eenvoudige implementatie met de `uthash` bibliotheek, die je in je project moet opnemen.
+C biedt geen ingebouwde ondersteuning voor associatieve arrays zoals sommige hogere programmeertalen, maar je kunt ze simuleren met behulp van structuren en hashing. Hieronder staat een vereenvoudigd voorbeeld met behulp van een combinatie van een struct en een eenvoudige hashfunctie om een associatieve array te implementeren voor het opslaan en toegang krijgen tot gehele getallen via tekenreeksleutels.
 
-Definieer eerst een structuur om je sleutel-waardeparen in op te slaan:
+Definieer eerst een structuur om een enkel sleutel-waarde paar te vertegenwoordigen en een andere om de associatieve array zelf te vertegenwoordigen:
 
-```C
+```c
 #include <stdio.h>
-#include "uthash.h"
+#include <stdlib.h>
+#include <string.h>
+
+#define TABLE_SIZE 128
 
 typedef struct {
-    int id; // Dit wordt onze sleutel
-    char name[10]; // Dit is de waarde geassocieerd met onze sleutel
-    UT_hash_handle hh; // Maakt deze structuur hashbaar
-} persoon;
-```
+    char* key;
+    int value;
+} KeyValuePair;
 
-Laten we vervolgens enkele items toevoegen en ophalen:
+typedef struct {
+    KeyValuePair* items[TABLE_SIZE];
+} AssocArray;
 
-```C
-int main() {
-    persoon *mijn_mensen = NULL, *s;
+unsigned int hash(char* key) {
+    unsigned long int waarde = 0;
+    unsigned int i = 0;
+    unsigned int key_len = strlen(key);
 
-    // Een item toevoegen
-    s = (persoon*)malloc(sizeof(persoon));
-    s->id = 1;
-    strcpy(s->name, "Alice");
-    HASH_ADD_INT(mijn_mensen, id, s);
-
-    // Een item ophalen
-    int gebruiker_id = 1;
-    HASH_FIND_INT(mijn_mensen, &gebruiker_id, s);
-    if (s) {
-        printf("Gevonden: %s\n", s->name);
+    for (; i < key_len; ++i) {
+        waarde = waarde * 37 + key[i];
     }
-    
+
+    waarde = waarde % TABLE_SIZE;
+
+    return waarde;
+}
+
+void initArray(AssocArray* array) {
+    for (int i = 0; i < TABLE_SIZE; ++i) {
+        array->items[i] = NULL;
+    }
+}
+
+void insert(AssocArray* array, char* key, int waarde) {
+    unsigned int slot = hash(key);
+
+    KeyValuePair* item = (KeyValuePair*)malloc(sizeof(KeyValuePair));
+    item->key = strdup(key);
+    item->value = waarde;
+
+    array->items[slot] = item;
+}
+
+int find(AssocArray* array, char* key) {
+    unsigned int slot = hash(key);
+
+    if (array->items[slot]) {
+        return array->items[slot]->value;
+    }
+    return -1;
+}
+
+int main() {
+    AssocArray a;
+    initArray(&a);
+
+    insert(&a, "key1", 1);
+    insert(&a, "key2", 2);
+
+    printf("%d\n", find(&a, "key1")); // Output: 1
+    printf("%d\n", find(&a, "key2")); // Output: 2
+
     return 0;
 }
 ```
 
-Voorbeelduitvoer zou zijn:
+Dit voorbeeld illustreert basisbewerkingen: het initialiseren van een associatieve array, het invoegen van sleutel-waarde paren en het vinden van waarden via sleutels. Merk op dat deze code geen afhandeling van botsingen heeft en bedoeld is voor educatieve doeleinden.
 
-```
-Gevonden: Alice
-```
+## Diepgaande verkenning
 
-Vergeet niet om toegewezen geheugen vrij te maken en de hash-tafel te deallokeren wanneer je klaar bent om geheugenlekken te voorkomen.
+Het concept van associatieve arrays bestaat al langer dan C, maar de laag-niveau aard van de taal ondersteunt ze niet direct als ingebouwde typen. Dit moedigt een dieper begrip aan van gegevensstructuren en algoritmes, inclusief hashing-mechanismen voor efficiënte sleutel-waarde toewijzing. Veel C-bibliotheken en frameworks bieden geavanceerdere benaderingen om associatieve arrays te implementeren, zoals GLib's `GHashTable`, dat een robuuste implementatie biedt met afhandeling van botsingen, dynamisch aanpassen van de grootte en ondersteuning voor willekeurige sleutel- en waardetypes.
 
-## Diepere Duik
-
-Hoewel associatieve arrays niet native zijn in C, vullen bibliotheken zoals `uthash` de kloof vrij goed op en bieden ze een vrij eenvoudige manier om deze functionaliteit te gebruiken. Historisch gezien moesten C-ontwikkelaars hun versie van deze gegevensstructuren implementeren, wat leidde tot gevarieerde en vaak complexe implementaties, vooral voor diegenen die net beginnen met de taal.
-
-Onthoud, de efficiëntie van het gebruik van associatieve arrays in C hangt grotendeels af van hoe goed de hash-functie waarden over de tafel verdeelt om botsingen te minimaliseren. Hoewel bibliotheken zoals `uthash` een goede balans bieden tussen gebruiksgemak en prestaties, wil je in kritieke toepassingen waar prestaties van het grootste belang zijn, misschien je eigen hash-tafel op maat maken of implementeren.
-
-Voor toepassingen die maximale efficiëntie vereisen, kunnen alternatieve gegevensstructuren of zelfs andere programmeertalen met ingebouwde ondersteuning voor associatieve arrays een betere keuze zijn. Echter, voor veel situaties, vooral waar je al binnen een C-omgeving werkt, biedt het gebruik van een bibliotheek zoals `uthash` een praktische balans tussen prestaties en gemak.
+Hoewel het handmatig bouwen van associatieve arrays in C vergeleken kan worden met talen met ingebouwde ondersteuning als omslachtig, biedt het waardevolle inzichten in de werking van gegevensstructuren, waardoor de vaardigheden van een programmeur in probleemoplossing en optimalisatie worden gescherpt. Echter, voor productiecode of complexere toepassingen is het vaak een praktischere en tijdsefficiëntere aanpak om bestaande bibliotheken zoals GLib te gebruiken.

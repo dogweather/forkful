@@ -1,74 +1,75 @@
 ---
-title:                "Об'єднання рядків"
-date:                  2024-01-20T17:34:26.660318-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Об'єднання рядків"
-
+title:                "З'єднання рядків"
+date:                  2024-02-03T17:54:37.071487-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "З'єднання рядків"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/c/concatenating-strings.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Що і Чому?)
-Concatenation blends strings together. It's handy for constructing messages, paths, or any data that's text-driven.
+## Що і чому?
 
-## How to: (Як це зробити:)
-### Using strcat():
-```C
+Конкатенація рядків у мові C полягає в з'єднанні двох або більше рядків кінець до кінця для формування нового рядка. Програмісти виконують цю операцію для динамічної побудови рядків під час виконання програми, що є важливим для створення значущих повідомлень, шляхів до файлів або будь-яких даних, зібраних з різних джерел рядків.
+
+## Як це робиться:
+
+У C, рядки — це масиви символів, які закінчуються нульовим символом (`\0`). На відміну від вищих мов програмування, C не надає вбудованої функції для конкатенації рядків. Натомість використовуються функції `strcat()` або `strncat()` з бібліотеки `<string.h>`.
+
+Ось простий приклад використання `strcat()`:
+
+```c
 #include <stdio.h>
 #include <string.h>
 
 int main() {
-    char destination[50] = "Вітаємо, ";
-    char source[] = "Україна!";
-    
+    char destination[50] = "Привіт, ";
+    char source[] = "Світе!";
+
     strcat(destination, source);
-    printf("%s\n", destination); // Вітаємо, Україна!
-    
+
+    printf("%s\n", destination);  // Вивід: Привіт, Світе!
     return 0;
 }
 ```
 
-### Manual concatenation:
-```C
+Функція `strcat()` приймає два аргументи: рядок призначення (у якого має бути достатньо місця для зберігання результату конкатенації) і джерельний рядок. Вона потім додає джерельний рядок до рядка призначення.
+
+Для більшого контролю над кількістю конкатенованих символів, `strncat()` безпечніше використовувати:
+
+```c
 #include <stdio.h>
+#include <string.h>
 
 int main() {
-    char str1[] = "Слава ";
-    char str2[] = "Україні!";
-    char combined[50];
-    
-    int i = 0, j = 0;
-    // Copy str1 to combined
-    while (str1[i] != '\0') {
-        combined[i] = str1[i];
-        i++;
-    }
-    
-    // Append str2 to combined
-    while (str2[j] != '\0') {
-        combined[i + j] = str2[j];
-        j++;
-    }
-    
-    combined[i + j] = '\0'; // Null-terminate the combined string
-    printf("%s\n", combined); // Слава Україні!
-    
+    char destination[50] = "Привіт, ";
+    char source[] = "Світе!";
+    int num = 3; // Кількість символів для додавання
+
+    strncat(destination, source, num);
+
+    printf("%s\n", destination);  // Вивід: Привіт, Сві
     return 0;
 }
 ```
 
-## Deep Dive (Поглиблений аналіз):
-The current C standard (ISO/IEC 9899:2018) doesn't change much about string manipulation. Programmers have been concatenating strings since C's inception. Options vary:
+Це обмежує конкатенацію першими `num` символами джерельного рядка, допомагаючи запобігти переповненням буфера.
 
-- `strcat()` and `strncat()` come from the standard library, `string.h`. They are simple but risky due to buffer overflow.
-- Manual concatenation is buffer overflow safe if done correctly, but it's verbose. It entails copying characters one by one, then appending a null terminator.
-- Modern alternatives? Consider using safer functions like `strncat()` or BSD's `strlcat()` if available.
-- Some languages abstract away the complexities, but in C, handling strings manually teaches important principles of memory management.
+## Поглиблено:
 
-## See Also (Дивіться також):
-- C11 Standard Documentation (ISO/IEC 9899:2018): https://www.iso.org/standard/74528.html 
-- GNU C Library Reference Manual: https://www.gnu.org/software/libc/manual/
-- Learn C Programming - TutorialsPoint: https://www.tutorialspoint.com/cprogramming/index.htm 
-- Secure Coding in C and C++: https://www.cert.org/secure-coding/
+Функції `strcat()` та `strncat()` є частиною стандартної бібліотеки мови C з моменту її створення, відображаючи низькорівневу природу мови, яка вимагає ручного управління рядками та пам'яттю. На відміну від багатьох сучасних мов програмування, які обробляють рядки як об'єкти першого класу із вбудованими операторами конкатенації (такими як `+` або `.concat()`), підхід C вимагає глибшого розуміння покажчиків, розподілу пам'яті та потенційних проблем, таких як переповнення буфера.
+
+Попри широке використання `strcat()` та `strncat()`, часто їх критикують за потенційну можливість створювати уразливості безпеки, якщо їх використовувати необережно. Переповнення буфера, коли дані перевищують виділену пам'ять, можуть призвести до збоїв або бути використані для виконання довільного коду. В результаті, програмісти все частіше звертаються до безпечніших альтернатив, таких як `snprintf()`, який забезпечує передбачуванішу поведінку, обмежуючи кількість символів, записаних у призначений рядок, засновано на його розмірі:
+
+```c
+char destination[50] = "Привіт, ";
+char source[] = "Світе!";
+snprintf(destination + strlen(destination), sizeof(destination) - strlen(destination), "%s", source);
+```
+
+Цей метод є більш мовазначним, але значно безпечнішим, що підкреслює зсув у практиках програмування на C до пріоритету безпеки та надійності над лаконічністю.
+
+Незважаючи на ці виклики, конкатенація рядків у C є фундаментальною навичкою, важливою для ефективного програмування на цій мові. Розуміння її нюансів і пов'язаних з нею ризиків є ключем до освоєння програмування на C.

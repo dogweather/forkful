@@ -1,56 +1,80 @@
 ---
-title:                "पैटर्न से मेल खाते अक्षरों को हटाना"
-date:                  2024-01-20T17:42:50.983582-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "पैटर्न से मेल खाते अक्षरों को हटाना"
-
+title:                "एक पैटर्न से मेल खाते वर्णों को हटाना"
+date:                  2024-02-03T17:56:45.293801-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "एक पैटर्न से मेल खाते वर्णों को हटाना"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/go/deleting-characters-matching-a-pattern.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (क्या और क्यों?)
-Pattern से मिलने वाले characters को हटाना एक common programming task है जिसके द्वारा हम strings से unnecessary या unwanted characters को remove करते हैं। यह data sanitization, user input validation, और फाइल प्रोसेसिंग जैसे कामों के लिए बहुत ज़रुरी है।
+## क्या और क्यों?
 
-## How to: (कैसे करें:)
-Go में characters को pattern के अनुसार हटाने के लिए `strings` package में `Replace` और `ReplaceAll` functions का प्रयोग किया जा सकता है।
+विशिष्ट पैटर्न से मेल खाने वाले वर्णों को हटाने का मतलब है, नियमों के आधार पर तारों से कुछ विशेष वर्णों या वर्णों की शृंखला को हटाना, जो आमतौर पर एक पैटर्न (प्रायः नियमित अभिव्यक्तियों के माध्यम से) द्वारा परिभाषित होते हैं। प्रोग्रामरों को अक्सर डाटा सफाई, विश्लेषण के लिए पूर्व-प्रक्रिया, आउटपुट स्वरूपण, या सिर्फ अनुप्रयोग आवश्यकताओं को पूरा करने के लिए इस कार्य को करने की आवश्यकता होती है।
 
-```Go
+## कैसे:
+
+Go में, विशेष पैटर्न से मेल खाते वर्णों को हटाना `regexp` पैकेज का उपयोग करके दक्षतापूर्वक किया जा सकता है। यहाँ, हम एक उदाहरण के रूप में, सभी अंकों को हटाने के बाद, फिर एक तार से सभी गैर-अल्फान्यूमेरिक वर्णों को हटाने का वर्णन करेंगे।
+
+1. **सभी अंक हटाना:**
+
+```go
 package main
 
 import (
-	"fmt"
-	"strings"
+    "fmt"
+    "regexp"
 )
 
 func main() {
-	originalString := "Hello, 123 World! This is a test 456."
-
-	// Pattern से मिलने वाले numbers को हटायें
-	cleanedString := strings.Map(func(r rune) rune {
-		if '0' <= r && r <= '9' {
-			return -1 // इस character को हटाएं
-		}
-		return r
-	}, originalString)
-
-	fmt.Println(cleanedString)
+    text := "Go1 अच्छा है, पर Go2 और भी अच्छा होगा! अब: 2023."
+	
+    // अंकों के लिए नियमित अभिव्यक्ति कम्पाइल करें
+    re, err := regexp.Compile("[0-9]+")
+    if err != nil {
+        fmt.Println("रेगेक्स कंपाइल करने में त्रुटि:", err)
+        return
+    }
+	
+    // अंकों को खाली स्ट्रिंग से बदलें
+    result := re.ReplaceAllString(text, "")
+	
+    fmt.Println(result) // आउटपुट: Go अच्छा है, पर Go और भी अच्छा होगा! अब: .
 }
 ```
 
-Sample Output:
+2. **सभी गैर-अल्फान्यूमेरिक वर्ण हटाना:**
 
+```go
+package main
+
+import (
+    "fmt"
+    "regexp"
+)
+
+func main() {
+    text := "Go प्रोग्रामिंग भाषाओं में #1 @ है!"
+	
+    // गैर-अल्फान्यूमेरिक वर्णों के लिए नियमित अभिव्यक्ति कम्पाइल करें
+    re, err := regexp.Compile("[^a-zA-Z0-9]+")
+    if err != nil {
+        fmt.Println("रेगेक्स कंपाइल करने में त्रुटि:", err)
+        return
+    }
+	
+    // गैर-अल्फान्यूमेरिक वर्णों को खाली स्ट्रिंग से बदलें
+    result := re.ReplaceAllString(text, "")
+	
+    fmt.Println(result) // आउटपुट: Goप्रोग्रामिंगभाषाओंमें1है
+}
 ```
-Hello, World! This is a test .
-```
 
-## Deep Dive (गहराई में जानकारी):
-किसी समय में, ऐसे कामों के लिए regular expressions (RegEx) का प्रचार था, लेकिन उनका performance cost अधिक हो सकता है। `strings.Map` function Go में इस्तेमाल किया जाता है क्योंकि यह efficient है; इससे हम एक ही pass में पूरे string के प्रत्येक character पर फंक्शन अप्लाई कर सकते हैं। इस approach को चुनते वक़्त, प्रोग्रामर को उस pattern की पहचान खुद करनी होती है जिसे हटाना है। यदि जटिल patterns को हटाना है, तब RegEx का उपयोग अधिक उपयोगी हो सकता है।
+## गहराई से विचार:
 
-## See Also (और भी जानकारी):
-- Go by Example: Strings: https://gobyexample.com/strings
-- Go Doc: strings package: https://pkg.go.dev/strings
-- Regular Expressions in Go: https://pkg.go.dev/regexp
+Go में `regexp` पैकेज नियमित अभिव्यक्तियों के साथ पैटर्न मिलान और हेरफेर के लिए एक शक्तिशाली इंटरफेस प्रदान करता है। इसकी कार्यान्वयन RE2 से लिया गया है, एक नियमित अभिव्यक्ति लाइब्रेरी जो लीनियर समय निष्पादन की गारंटी देती है, कुछ अन्य रेगेक्स इंजनों में मौजूद "आपदाजनक पीछे हटना" समस्याओं से बचती है। यह Go के रेगेक्स को विभिन्न अनुप्रयोगों के लिए सुरक्षित और कुशल बनाती है।
 
-इन resources के माध्यम से आप Go में strings के साथ काम करना और ज्यादा अच्छे से समझ सकते हैं और अपने कोड को और भी optimized बना सकते हैं। Regular expressions के उपयोग और उनकी complexities के बारे में भी जानकारी मिलेगी।
+जबकि `regexp` पैकेज पैटर्नों से निपटने का एक व्यापक समाधान है, यह ध्यान देने योग्य है कि सरल या अत्यंत विशिष्ट स्ट्रिंग हेरफेरों के लिए, अन्य स्ट्रिंग फ़ंक्शंस जैसे कि `strings.Replace()`, `strings.Trim()`, या स्लाइसिंग अधिक प्रदर्शनकारी विकल्प प्रदान कर सकते हैं। नियमित अभिव्यक्तियाँ एक शक्तिशाली उपकरण हैं, लेकिन उनका सापेक्षिक गणितीय खर्च यह सुझाव देता है कि जिन ऑपरेशनों को उनके बिना निर्दिष्ट किया जा सकता है, उनके लिए मानक पुस्तकालय विकल्पों की खोज कभी-कभी सरल और अधिक कुशल कोड का नेतृत्व कर सकती है।

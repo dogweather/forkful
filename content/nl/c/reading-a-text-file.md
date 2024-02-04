@@ -1,72 +1,67 @@
 ---
 title:                "Een tekstbestand lezen"
-date:                  2024-01-28T22:05:01.529804-07:00
+date:                  2024-02-03T18:05:17.974462-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een tekstbestand lezen"
-
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/c/reading-a-text-file.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Wat & Waarom?
 
-Een tekstbestand lezen gaat over het toegang krijgen tot de gegevens van het bestand als tekenreeksen, teken voor teken of regel voor regel. Programmeurs doen dit om opgeslagen informatie te verwerken, te analyseren of te manipuleren zonder elke keer handmatige invoer.
+Een tekstbestand lezen in C houdt in dat je een bestand op je systeem opent om informatie te extraheren en deze naar behoefte te manipuleren of weer te geven. Programmeurs doen dit vaak om configuratiebestanden te verwerken, invoer voor verwerking te lezen, of om gegevens die in bestandsformaat zijn opgeslagen te analyseren, wat zorgt voor flexibiliteit en verhoogde functionaliteit in applicaties.
 
 ## Hoe:
 
-Laten we een tekstbestand lezen. We openen het, lezen eruit en sluiten het. Basiszaken.
+Om te beginnen met het lezen van een tekstbestand in C, werk je voornamelijk met de `fopen()`, `fgets()`, en `fclose()` functies uit de standaard I/O-bibliotheek. Hier is een eenvoudig voorbeeld dat een bestand genaamd `example.txt` leest en de inhoud ervan naar de standaarduitvoer afdrukt:
 
-```C
+```c
 #include <stdio.h>
 #include <stdlib.h>
 
 int main() {
-    FILE *file;
-    char bestandsnaam[] = "voorbeeld.txt";
-    char ch;
+    FILE *bestandspointer;
+    char buffer[255]; // Buffer om de tekstregels op te slaan
 
-    file = fopen(bestandsnaam, "r"); // Open het bestand in leesmodus
+    // Het bestand in leesmodus openen
+    bestandspointer = fopen("example.txt", "r");
 
-    if (file == NULL) {
-        perror("Fout bij het openen van het bestand.\n");
-        exit(EXIT_FAILURE);
+    // Controleren of het bestand succesvol is geopend
+    if (bestandspointer == NULL) {
+        printf("Kon het bestand niet openen. \n");
+        return 1;
     }
 
-    printf("Inhoud van %s:\n", bestandsnaam);
-
-    while ((ch = fgetc(file)) != EOF) { // Lees en print teken voor teken
-        putchar(ch);
+    while (fgets(buffer, 255, bestandspointer) != NULL) {
+        printf("%s", buffer);
     }
 
-    fclose(file); // Sluit het bestand
-
+    // Het bestand sluiten om bronnen vrij te maken
+    fclose(bestandspointer);
     return 0;
 }
 ```
 
-Als we ervan uitgaan dat `voorbeeld.txt` "Hallo, C!" bevat, zal de uitvoer zijn:
+Stel dat `example.txt` bevat:
 ```
-Inhoud van voorbeeld.txt:
-Hallo, C!
+Hallo, wereld!
+Welkom bij C programmeren.
 ```
 
-## Diepgaande Duik
+De uitvoer zou zijn:
+```
+Hallo, wereld!
+Welkom bij C programmeren.
+```
 
-Terug in de jaren 70 werd C geboren, en daarmee de manier waarop we vandaag de dag bestanden lezen. Het is geen raketwetenschap, maar er zijn nuances. Je gebruikt `fopen` om bestanden te openen en `fgetc` om één teken tegelijk te lezen. Maar waarom teken voor teken? Je zou regels kunnen lezen met `fgets` of het hele bestand met `fread` als dat beter past bij jouw situatie. Het gaat allemaal om controle en wat jouw programma nodig heeft om te verwerken.
+## Diepgaand
 
-Achter de schermen zegt `fopen` tegen je besturingssysteem: "Hé, ik heb dit bestand nodig, geef me toegang!" En het systeem zegt oké door een `FILE` pointer terug te geven. De functie `fgetc` fluistert tegen de bestandspointer: "Geef me het volgende byte, wil je?" En dat doet het, totdat het EOF raakt, de marker voor het einde van het bestand.
+Het lezen van bestanden in C kent een rijke geschiedenis, die teruggaat tot de vroege dagen van Unix toen de eenvoud en elegantie van tekststromen fundamenteel waren. Dit leidde tot de adoptie van tekstbestanden voor een scala aan doeleinden, inclusief configuratie, logboeking en interprocescommunicatie. De eenvoud van de bestand-I/O-bibliotheek van de C-taal, geïllustreerd door functies als `fopen()`, `fgets()`, en `fclose()`, onderstreept de ontwerpfilosofie van het bieden van basisgereedschappen waarmee programmeurs complexe systemen kunnen bouwen.
 
-Alternatieven? Zeker. Je hebt `fscanf` voor geformatteerd lezen, `getline` voor de moderne jongens, of low-level `read` systeemaanroepen als je dicht bij de hardware wilt zijn. En vergeet niet, nadat het laatste byte is gelezen, wees beleefd en `fclose` het bestand.
+Hoewel deze functies historisch gezien talloze toepassingen goed hebben gediend, hebben moderne programmeerpraktijken enkele beperkingen aan het licht gebracht, vooral met betrekking tot foutafhandeling, bestandscodering (bijv. Unicode-ondersteuning) en gelijktijdige toegang in multi-threaded applicaties. Alternatieve benaderingen in andere talen, of zelfs binnen C met behulp van bibliotheken zoals `libuv` of `Boost.Asio` voor C++, bieden robuustere oplossingen door deze zorgen rechtstreeks aan te pakken met meer geavanceerde I/O-beheercapaciteiten, inclusief asynchrone I/O-operaties die de prestaties van applicaties die te maken hebben met uitgebreide bestandsleesactiviteiten of I/O-gebonden taken aanzienlijk kunnen verbeteren.
 
-## Zie Ook
-
-Om dieper te duiken, bekijk deze:
-
-- Documentatie van de C-standaardbibliotheek: [https://en.cppreference.com/w/c/io](https://en.cppreference.com/w/c/io)
-- GNU C-bibliotheekreferentiehandleiding: [https://www.gnu.org/software/libc/manual/html_node/I_002fO-Overview.html](https://www.gnu.org/software/libc/manual/html_node/I_002fO-Overview.html)
-- Meer leren over verschillende leesfuncties: [https://www.tutorialspoint.com/c_standard_library/c_function_fread.htm](https://www.tutorialspoint.com/c_standard_library/c_function_fread.htm)
-- Voor de echt nieuwsgierigen, een diepe duik in de Linux systeemaanroepen: [https://man7.org/linux/man-pages/man2/read.2.html](https://man7.org/linux/man-pages/man2/read.2.html)
+Ondanks deze ontwikkelingen is het leren lezen van bestanden met behulp van de standaard I/O-bibliotheek in C cruciaal. Het helpt niet alleen bij het begrijpen van de basis van bestandsverwerking, die van toepassing zijn in veel programmeercontexten, maar biedt ook een fundament waarop men de evolutie van bestand-I/O-operaties kan waarderen en complexere bibliotheken en frameworks voor bestandsverwerking in moderne applicaties kan verkennen.

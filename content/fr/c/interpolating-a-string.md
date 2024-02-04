@@ -1,40 +1,55 @@
 ---
-title:                "Interpolation de chaînes de caractères"
-date:                  2024-01-20T17:50:18.213608-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Interpolation de chaînes de caractères"
-
+title:                "Interpolation d'une chaîne de caractères"
+date:                  2024-02-03T17:58:19.558373-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Interpolation d'une chaîne de caractères"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/c/interpolating-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? / Quoi et Pourquoi ?
-L'interpolation de chaînes permet d'insérer des variables dans du texte. Les programmeurs l'utilisent pour créer des messages dynamiques et personnaliser l'affichage sans concaténer manuellement les chaînes.
+## Quoi & Pourquoi ?
 
-## How to / Comment faire :
+L'interpolation de chaînes, en programmation, implique la construction de chaînes de caractères en intégrant des expressions à l'intérieur de chaînes littérales. Les programmeurs font cela pour créer des messages informatifs, des requêtes dynamiques, ou pour construire n'importe quelle chaîne avec un contenu variable de manière efficace et propre, souvent à des fins de sortie utilisateur ou de journalisation.
+
+## Comment faire :
+
+C, contrairement à certains langages de haut niveau, ne prend pas en charge directement l'interpolation de chaînes dans sa syntaxe. À la place, la construction de chaînes avec contenu variable est typiquement réalisée en utilisant la fonction `printf` ou ses variantes pour la sortie, et `sprintf` pour la création de chaînes. Voici comment construire dynamiquement des chaînes en C :
+
 ```c
 #include <stdio.h>
 
 int main() {
-    int userAge = 25;
-    char userName[] = "Jean";
+    char name[] = "Jane Doe";
+    int age = 28;
 
-    printf("Salut, %s! Tu as %d ans.\n", userName, userAge);
+    // Utilisation de printf pour la sortie
+    printf("Bonjour, je m'appelle %s et j'ai %d ans.\n", name, age);
+
+    // Utilisation de sprintf pour la construction de chaînes
+    char info[50];
+    sprintf(info, "Nom : %s, Âge : %d", name, age);
+    printf("%s\n", info);
 
     return 0;
 }
 ```
-Sortie:
+Exemple de sortie :
 ```
-Salut, Jean! Tu as 25 ans.
+Bonjour, je m'appelle Jane Doe et j'ai 28 ans.
+Nom : Jane Doe, Âge : 28
 ```
+Ces extraits montrent la manière traditionnelle d'incorporer des données variables dans des chaînes en C, offrant une flexibilité dans la construction de chaînes détaillées.
 
-## Deep Dive / Plongée Profonde
-Historiquement, C a toujours utilisé `printf` et ses variantes pour l'interpolation de chaînes, bien qu'elles ne soient pas appelées ainsi. Des alternatives incluent les fonctions comme `sprintf` ou `snprintf` qui écrivent dans des chaînes plutôt que dans `stdout`. Pour éviter les débordements de tampon, `snprintf` est préférable. L'interpolation est implémentée en C par une analyse de format spécificateur lequel est indiqué par le symbole `%`.
+## Exploration Approfondie
 
-## See Also / Voir aussi :
-- La documentation du C Standard Library sur `printf`: https://en.cppreference.com/w/c/io/fprintf
-- Un tutoriel sur les chaînes en C: https://www.tutorialspoint.com/cprogramming/c_strings.htm
-- Conseils sur la sécurité avec `snprintf`: https://owasp.org/www-community/attacks/Buffer_overflow_attack
+Avant l'avènement de langages de programmation plus modernes dotés de fonctionnalités d'interpolation de chaînes intégrées, les développeurs C devaient se reposer sur des fonctions telles que `sprintf()`, `snprintf()`, et leurs variantes pour composer des chaînes avec un contenu variable. Cette approche, bien qu'efficace, introduit des risques potentiels tels que le débordement de tampon si elle n'est pas gérée avec soin, en particulier avec `sprintf()`.
+
+Considérant les alternatives, des langages comme Python et JavaScript ont introduit des fonctionnalités d'interpolation de chaînes plus intuitives, telles que les f-strings (littéraux de chaînes formatées) et les littéraux de gabarit, respectivement. Ces fonctionnalités permettent aux développeurs d'incorporer des expressions directement à l'intérieur des littéraux de chaînes, rendant le code plus lisible et concis.
+
+Dans le contexte de C, malgré l'absence de fonctionnalités d'interpolation de chaînes intégrées, son approche offre un contrôle précis sur le formatage, ce qui peut être vu à la fois comme un avantage pour ceux qui nécessitent un contrôle précis du formatage et comme une complexité pour les nouveaux venus ou ceux qui recherchent des solutions plus rapides et lisibles. L'introduction de `snprintf()` dans C99 a atténué certaines des préoccupations de sécurité en permettant aux développeurs de spécifier le nombre maximal d'octets à écrire, rendant le formatage de chaînes plus sûr.
+
+Bien que la méthode de C puisse sembler verbeuse ou encombrante par rapport aux langages modernes, comprendre ses mécanismes de gestion des chaînes fournit une base solide pour saisir des concepts plus abstraits dans le développement logiciel, soulignant l'importance de la gestion de la mémoire et du formatage des données à un niveau bas.

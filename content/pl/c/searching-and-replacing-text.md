@@ -1,82 +1,82 @@
 ---
-title:                "Wyszukiwanie i zamiana tekstu"
-date:                  2024-01-20T17:57:33.635017-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Wyszukiwanie i zamiana tekstu"
-
+title:                "Wyszukiwanie i zamienianie tekstu"
+date:                  2024-02-03T18:08:37.751488-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Wyszukiwanie i zamienianie tekstu"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/c/searching-and-replacing-text.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Co i dlaczego?)
-Wyszukiwanie i zamiana tekstu to operacje, które umożliwiają szybką edycję ciągów znaków - od prostego zastępowania słów po zaawansowane przetwarzanie danych. Programiści używają tych operacji, by naprawiać błędy, aktualizować informacje i ogólnie ulepszać interakcję z tekstem w aplikacjach.
+## Co i dlaczego?
 
-## How to: (Jak to zrobić?)
-Przykład w C, który pokazuje, jak szukać i zastępować tekst:
+Wyszukiwanie i zamienianie tekstu w C polega na identyfikacji określonych podciągów w obrębie większego ciągu i zastąpieniu ich innymi podciągami. Programiści wykonują te operacje w celu manipulacji danymi tekstowymi - od zadań związanych z sanitacją danych i formatowaniem po dynamiczne generowanie treści.
 
-```C
+## Jak to zrobić:
+
+C nie posiada wbudowanych funkcji do bezpośredniego wyszukiwania oraz zamiany w ciągach znaków. Można jednak tego dokonać, łącząc różne dostępne funkcje obsługi ciągów z biblioteki `<string.h>` wraz z pewną logiką własną. Poniżej znajduje się podstawowy przykład, jak wyszukać podciąg w ciągu i go zastąpić. Dla uproszczenia, przykład zakłada wystarczającą wielkość bufora i nie zajmuje się kwestiami alokacji pamięci, które powinny być rozważone w kodzie produkcyjnym.
+
+```c
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 
-void searchReplace(char *str, const char *search, const char *replace) {
-    char buffer[1024];
-    char *insert_point = &buffer[0];
-    const char *tmp = str;
-    size_t search_len = strlen(search);
-    size_t replace_len = strlen(replace);
+void replaceSubstring(char *source, char *sub, char *new_sub) {
+    char bufor[1024];
+    char *punkt_wstawienia = &bufor[0];
+    const char *tmp = source;
+    size_t dl_sub = strlen(sub), dl_nowy_sub = strlen(new_sub);
+    size_t dl_do_znalezienia;
 
-    while (1) {
-        const char *p = strstr(tmp, search);
-
-        // jeśli nie znaleziono szukanego tekstu zakończ pętlę
-        if (p == NULL) {
-            strcpy(insert_point, tmp);
-            break;
-        }
-
-        // kopiowanie części przed wystąpieniem szukanego tekstu
-        memcpy(insert_point, tmp, p - tmp);
-        insert_point += p - tmp;
-
-        // wstawiamy nowy tekst
-        memcpy(insert_point, replace, replace_len);
-        insert_point += replace_len;
-
-        // aktualizujemy tmp, przesuwając się za zastąpiony tekst
-        tmp = p + search_len;
+    while ((tmp = strstr(tmp, sub))) {
+        // Oblicz długość do miejsca znalezienia
+        dl_do_znalezienia = tmp - source;
+        
+        // Kopiuj część przed znalezieniem
+        memcpy(punkt_wstawienia, source, dl_do_znalezienia);
+        punkt_wstawienia += dl_do_znalezienia;
+        
+        // Kopiuj nowy podciąg
+        memcpy(punkt_wstawienia, new_sub, dl_nowy_sub);
+        punkt_wstawienia += dl_nowy_sub;
+        
+        // Przesuń za znalezione miejsce w ciągu źródłowym
+        tmp += dl_sub;
+        source = tmp;
     }
-
-    // kopiujemy z bufora do oryginalnego miejsca
-    strcpy(str, buffer);
+    
+    // Kopiuj pozostałą część ciągu źródłowego
+    strcpy(punkt_wstawienia, source);
+    
+    // Drukuj zmodyfikowany ciąg
+    printf("Zmodyfikowany ciąg: %s\n", bufor);
 }
 
 int main() {
-    char text[] = "Ala ma kota, kot ma Ale.";
-
-    searchReplace(text, "kot", "pies");
-    printf("Zmieniony tekst: %s\n", text);
-
+    char sourceStr[] = "Hello, this is a test. This test is simple.";
+    char sub[] = "test";
+    char nowySub[] = "próba";
+    
+    replaceSubstring(sourceStr, sub, nowySub);
+    
     return 0;
 }
 ```
-Output:
+
+Przykładowe wyjście:
 ```
-Zmieniony tekst: Ala ma piesa, pies ma Ale.
+Zmodyfikowany ciąg: Hello, this is a próba. This próba is simple.
 ```
 
-## Deep Dive (Dogłębna analiza)
-Wczesne komputery operowały na prostych tekstach - wyszukiwanie i zamiana były jednymi z podstawowych operacji. Dziś, mimo rozwiniętych edytorów i IDE, te operacje wciąż są kluczowe dla automatyzacji i pracy z kodem źródłowym.
+Ten kod demonstruje prostą metodę wyszukiwania wszystkich wystąpień podciągu (`sub`) w ciągu źródłowym i zastępowania ich innym podciągiem (`nowySub`), używając funkcji `strstr` do znalezienia punktu początkowego każdego dopasowania. Jest to bardzo podstawowy przykład, który nie zajmuje się złożonymi scenariuszami, takimi jak nakładające się na siebie podciągi.
 
-Alternatywy:
-- Regex (wyrażenia regularne) - dla bardziej skomplikowanych wzorców tekstowych.
-- Funkcje wbudowane - języki wyższego poziomu oferują bardziej złożone i elastyczne metody.
+## Dogłębna analiza
 
-Szczegóły implementacji:
-Szukanie tekstu odbywa się przez `strstr()`, a realokacja tekstu przez bufory tymczasowe, aby uniknąć nadpisania danych w trakcie operacji.
+Podejście użyte w sekcji "Jak to zrobić" jest podstawowe, ilustrujące, jak osiągnąć wyszukiwanie tekstu i zamianę w C bez żadnych zewnętrznych bibliotek. Historycznie, ze względu na nacisk C na zarządzanie pamięcią na niskim poziomie i wydajność, jego standardowa biblioteka nie obejmuje funkcji wysokiego poziomu manipulacji ciągami, jakie można znaleźć w językach takich jak Python czy JavaScript. Programiści muszą ręcznie zarządzać pamięcią i łączyć różne operacje na ciągach, aby osiągnąć pożądane rezultaty, co zwiększa złożoność, ale oferuje większą kontrolę i efektywność.
 
-## See Also (Zobacz też)
-- [GNU C Library: Searching and Sorting](https://www.gnu.org/software/libc/manual/html_node/Searching-and-Sorting.html)
-- [Stack Overflow: Implementing str_replace](https://stackoverflow.com/questions/779875/what-is-the-function-to-replace-string-in-c)
-- [Regex Tutorial](https://www.regular-expressions.info/tutorial.html)
+Ważne jest, aby zauważyć, że to ręczne podejście może być podatne na błędy, szczególnie przy zarządzaniu alokacjami pamięci i rozmiarami buforów. Nieprawidłowe obsługiwanie może prowadzić do przepełnienia bufora i uszkodzenia pamięci, czyniąc kod podatnym na ryzyka bezpieczeństwa.
+
+W wielu praktycznych scenariuszach, zwłaszcza tych wymagających złożonego przetwarzania tekstów, często warto rozważyć integrację zewnętrznych bibliotek, takich jak PCRE (Perl Compatible Regular Expressions) dla wyszukiwania opartego na wyrażeniach regularnych i zamiany, co może uprościć kod i zmniejszyć potencjał błędów. Ponadto, nowoczesne standardy i kompilatory C coraz częściej oferują wbudowane funkcje i bezpieczniejsze alternatywy do manipulacji ciągami, mając na celu łagodzenie powszechnie obserwowanych problemów w starszych kodach C. Jednakże, fundamentalne zrozumienie ręcznego przetwarzania tekstu pozostaje cenną umiejętnością w arsenale programisty, szczególnie dla optymalizacji aplikacji krytycznych pod względem wydajności.

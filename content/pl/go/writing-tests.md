@@ -1,60 +1,88 @@
 ---
 title:                "Pisanie testów"
-date:                  2024-01-19
+date:                  2024-02-03T18:15:25.919598-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Pisanie testów"
-
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/go/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Co i Dlaczego?)
+## Co i dlaczego?
 
-Pisanie testów to proces tworzenia skryptów, które automatycznie sprawdzają, czy kod działa prawidłowo. Programiści robią to, aby zapewnić jakość kodu i unikać błędów.
+Pisanie testów w Go polega na tworzeniu małych, zarządzalnych fragmentów kodu, które weryfikują funkcjonalność i zachowanie aplikacji. Programiści piszą testy, aby upewnić się, że ich kod działa zgodnie z oczekiwaniami w różnych warunkach, ułatwić refaktoryzację oraz pomóc zapobiegać regresji.
 
-## How to: (Jak to zrobić?)
+## Jak to zrobić:
 
-Testy w Go piszemy przy pomocy pakietu `testing`. Oto przykład prostej funkcji i testów do niej:
+W Go testy są zazwyczaj pisane w tym samym pakiecie co kod, który testują. Pliki zawierające testy nazwane są z sufiksem `_test.go`. Testy to funkcje, które przyjmują wskaźnik do obiektu testing.T (z pakietu `testing`) jako argument i sygnalizują niepowodzenie, wywołując metody takie jak `t.Fail()`, `t.Errorf()` itp.
 
-```Go
-package main
+Przykład prostego testu dla funkcji `Add` zdefiniowanej w `math.go`:
+```go
+// math.go
+package matematyka
 
-import (
-    "testing"
-    "fmt"
-)
-
-func Add(a, b int) int {
-    return a + b
-}
-
-func TestAdd(t *testing.T) {
-    result := Add(2, 3)
-    if result != 5 {
-        t.Errorf("Add(2, 3) = %d; want 5", result)
-    }
-}
-
-func main() {
-    fmt.Println("Suma: ", Add(2, 3))
+func Add(x, y int) int {
+    return x + y
 }
 ```
 
-Wynik uruchomienia `go test`:
+Plik testowy `math_test.go`:
+```go
+package matematyka
+
+import "testing"
+
+func TestAdd(t *testing.T) {
+    result := Add(1, 2)
+    expected := 3
+    if result != expected {
+        t.Errorf("Add(1, 2) = %d; chciano %d", result, expected)
+    }
+}
+```
+
+Uruchom swoje testy poleceniem `go test` w tym samym katalogu co Twoje pliki testowe. Przykładowe wyjście wskazujące na zdany test wyglądałoby podobnie do:
 
 ```
 PASS
-ok  	path/to/your/package	0.002s
+ok      example.com/my/math 0.002s
 ```
 
-## Deep Dive (Dogłębna analiza)
+Dla testów sterowanych tabelą, które pozwalają na efektywne testowanie różnych kombinacji danych wejściowych i wyjściowych, zdefiniuj tablicę struktur reprezentujących przypadki testowe:
 
-Testy w Go sięgają korzeniami początków języka. Alternatywnymi metodami są Behavior-Driven Development (BDD) z narzędziami jak GoConvey czy testing frameworks jak Testify. Implementacja testów w Go jest prosta, testy są kompilowane do pliku wykonywalnego i uruchamiane jako osobny proces, zapewniając izolację i bezpieczeństwo.
+```go
+func TestAddTableDriven(t *testing.T) {
+    var tests = []struct {
+        x        int
+        y        int
+        expected int
+    }{
+        {1, 2, 3},
+        {2, 3, 5},
+        {-1, -2, -3},
+    }
 
-## See Also (Zobacz również)
+    for _, tt := range tests {
+        testname := fmt.Sprintf("%d+%d", tt.x, tt.y)
+        t.Run(testname, function(t *testing.T) {
+            ans := Add(tt.x, tt.y)
+            if ans != tt.expected {
+                t.Errorf("otrzymano %d, oczekiwano %d", ans, tt.expected)
+            }
+        })
+    }
+}
+```
 
-- Oficjalna dokumentacja Go: [Testy](https://golang.org/pkg/testing/)
-- Artykuł o testach w Go: [Just for func: Writing testable Go code](https://youtu.be/hVFEV-ieeew)
-- GoConvey, BDD framework dla Go: [GoConvey on GitHub](https://github.com/smartystreets/goconvey)
-- Testify, narzędzie do asercji i mockowania: [Testify on GitHub](https://github.com/stretchr/testify)
+## Dogłębna analiza
+
+Framework testowy Go, wprowadzony w Go 1 razem z samym językiem, został zaprojektowany w celu bezproblemowej integracji z narzędziowiem Go, odzwierciedlając nacisk Go na prostotę i efektywność w rozwoju oprogramowania. W przeciwieństwie do niektórych frameworków testowych w innych językach, które polegają na zewnętrznych bibliotekach lub skomplikowanych konfiguracjach, wbudowany pakiet `testing` Go zapewnia prosty sposób na pisanie i uruchamianie testów.
+
+Interesującym aspektem podejścia Go do testowania jest zasada konwencji ponad konfiguracją, którą przyjmuje, tak jak wzorzec nazewnictwa plików (`_test.go`) i używanie funkcjonalności biblioteki standardowej zamiast zewnętrznych zależności. To minimalizujące podejście zachęca programistów do pisania testów, ponieważ bariery wejścia są niskie.
+
+Chociaż wbudowane narzędzia testowe Go pokrywają szeroki zakres, są scenariusze, w których narzędzia lub frameworki stron trzecich mogą oferować więcej funkcjonalności, takie jak generowanie atrap, testowanie fuzzowe czy testy w stylu Behavior-Driven Development (BDD). Popularne biblioteki takie jak Testify czy GoMock uzupełniają standardowe możliwości testowania w Go, oferując bardziej wyraziste asercje czy możliwości generowania atrap, które mogą być szczególnie przydatne w skomplikowanych aplikacjach z wieloma zależnościami.
+
+Pomimo istnienia tych alternatyw, standardowy pakiet testowy Go pozostaje kamieniem węgielnym testowania w Go ze względu na jego prostotę, wydajność i ścisłą integrację z językiem oraz narzędziowiem. Niezależnie od tego, czy programiści zdecydują się na uzupełnienie go narzędziami stron trzecich, czy nie, framework testowy Go zapewnia solidną podstawę do zapewniania jakości i niezawodności kodu.

@@ -1,73 +1,99 @@
 ---
 title:                "Assosiatiivisten taulukoiden käyttö"
-date:                  2024-01-30T19:10:33.602512-07:00
+date:                  2024-02-03T18:10:46.620358-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Assosiatiivisten taulukoiden käyttö"
-
 tag:                  "Data Structures"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c/using-associative-arrays.md"
 changelog:
-  - 2024-01-30, gpt-4-0125-preview, translated from English
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Mikä & Miksi?
 
-Assosiatiiviset taulukot tai hajautustaulut ovat avain-arvo-pareja, joiden avulla voit tallentaa ja hakea tietoja avaimen perusteella. Ne ovat erittäin hyödyllisiä C:ssä, koska ne mahdollistavat nopeamman tietojen pääsyn verrattuna listoihin, erityisesti kun käsitellään suurta määrää tietoja.
+Assosiatiiviset taulukot, tunnetaan muissa kieliä karttoina tai sanakirjoina, ovat avain-arvo-pareja, joita käytetään tehokkaaseen datan etsintään ja käsittelyyn. Toisin kuin perinteiset taulukot, jotka käyttävät kokonaislukujen indeksejä, assosiatiiviset taulukot käyttävät avaimia, mikä tekee datan käytöstä intuitiivisempaa ja joustavampaa ohjelmoijille.
 
 ## Kuinka:
 
-C ei tarjoa sisäänrakennettua tukea assosiatiivisille taulukoille toisin kuin jotkut muut kielet, mutta voimme käyttää rakenteita ja joitakin kirjastofunktioita saadaksemme samanlaisen toiminnallisuuden. Tässä on yksinkertainen toteutus käyttäen `uthash`-kirjastoa, jonka sinun tarvitsee sisällyttää projektiisi.
+C ei tarjoa sisäänrakennettua tukea assosiatiivisille taulukoille kuten jotkut korkeamman tason kielet, mutta voit simuloida niitä käyttämällä rakenteita ja hajautusta. Alla on yksinkertaistettu esimerkki käyttäen yhdistelmää rakenteesta ja yksinkertaisesta hajautusfunktiosta toteuttamaan assosiatiivisen taulukon, joka varastoi ja käyttää kokonaislukuja merkkijonoavaimilla.
 
-Ensimmäisenä, määrittele rakenne avain-arvo-parejasi varten:
+Määrittele ensin rakenne, joka edustaa yhtä avain-arvo-paria ja toinen, joka edustaa itse assosiatiivista taulukkoa:
 
-```C
+```c
 #include <stdio.h>
-#include "uthash.h"
+#include <stdlib.h>
+#include <string.h>
+
+#define TABLE_SIZE 128
 
 typedef struct {
-    int id; // Tämä tulee olemaan meidän avaimemme
-    char name[10]; // Tämä on arvo, joka liitetään avaimemme
-    UT_hash_handle hh; // Mahdollistaa tämän rakenteen hajauttamisen
-} henkilo;
-```
+    char* key;
+    int value;
+} AvainArvoPari;
 
-Seuraavaksi, lisätään joitakin merkintöjä ja haetaan ne:
+typedef struct {
+    AvainArvoPari* items[TABLE_SIZE];
+} AssosTaulukko;
 
-```C
-int main() {
-    henkilo *oma_henkilot = NULL, *s;
+unsigned int hajautus(char* key) {
+    unsigned long int value = 0;
+    unsigned int i = 0;
+    unsigned int key_len = strlen(key);
 
-    // Lisätään merkintä
-    s = (henkilo*)malloc(sizeof(henkilo));
-    s->id = 1;
-    strcpy(s->name, "Alice");
-    HASH_ADD_INT(oma_henkilot, id, s);
-
-    // Haetaan merkintä
-    int kayttaja_id = 1;
-    HASH_FIND_INT(oma_henkilot, &kayttaja_id, s);
-    if (s) {
-        printf("Löytyi: %s\n", s->name);
+    for (; i < key_len; ++i) {
+        value = value * 37 + key[i];
     }
-    
+
+    value = value % TABLE_SIZE;
+
+    return value;
+}
+
+void alustaTaulukko(AssosTaulukko* array) {
+    for (int i = 0; i < TABLE_SIZE; ++i) {
+        array->items[i] = NULL;
+    }
+}
+
+void lisaa(AssosTaulukko* array, char* key, int value) {
+    unsigned int paikka = hajautus(key);
+
+    AvainArvoPari* item = (AvainArvoPari*)malloc(sizeof(AvainArvoPari));
+    item->key = strdup(key);
+    item->value = value;
+
+    array->items[paikka] = item;
+}
+
+int etsi(AssosTaulukko* array, char* key) {
+    unsigned int paikka = hajautus(key);
+
+    if (array->items[paikka]) {
+        return array->items[paikka]->value;
+    }
+    return -1;
+}
+
+int main() {
+    AssosTaulukko a;
+    alustaTaulukko(&a);
+
+    lisaa(&a, "key1", 1);
+    lisaa(&a, "key2", 2);
+
+    printf("%d\n", etsi(&a, "key1")); // Tuloste: 1
+    printf("%d\n", etsi(&a, "key2")); // Tuloste: 2
+
     return 0;
 }
 ```
 
-Esimerkkituloste olisi:
+Tämä esimerkki osoittaa perusoperaatiot: assosiatiivisen taulukon alustamisen, avain-arvo-parien lisäämisen ja arvojen etsimisen avaimilla. Huomaa, että tämä koodi puuttuu törmäysten käsittelyn ja on tarkoitettu opetustarkoituksiin.
 
-```
-Löytyi: Alice
-```
+## Syvä sukellus
 
-Älä unohda vapauttaa varattua muistia ja vapauttaa hajautustaulua, kun olet valmis, jotta vältät muistivuodot.
+Assosiatiivisten taulukoiden konsepti on vanhempi kuin C, mutta kielen matalan tason luonne ei suoraan tue niitä sisäänrakennettuina tyyppinä. Tämä rohkaisee syvälliseen ymmärrykseen tietorakenteista ja algoritmeista, mukaan lukien hajautusmekanismien ymmärtäminen tehokkaaseen avain-arvo-kartoitukseen. Monet C-kirjastot ja kehykset tarjoavat kehittyneempiä lähestymistapoja assosiatiivisten taulukoiden toteuttamiseen, kuten GLibin `GHashTable`, joka tarjoaa kestävän toteutuksen täydellä törmäysten käsittelyllä, dynaamisella uudelleenkooltaamisella ja tuella mielivaltaisille avain- ja arvotyypeille.
 
-## Syventävä tarkastelu
-
-Vaikka assosiatiiviset taulukot eivät ole alkuperäisiä C:lle, kirjastot kuten `uthash` täyttävät aukon melko hyvin ja tarjoavat melko suoraviivaisen tavan käyttää tätä toiminnallisuutta. Historiallisesti C-kehittäjien on täytynyt toteuttaa omat versiot näistä tietorakenteista, mikä on johtanut vaihteleviin ja usein monimutkaisiin toteutuksiin, erityisesti niille, jotka vasta aloittavat kielen kanssa. 
-
-Muista, että assosiatiivisten taulukoiden tehokkuus C:ssä riippuu suuresti siitä, kuinka hyvin hajautusfunktio jakaa arvot taulukkoon törmäysten minimoimiseksi. Vaikka kirjastot, kuten `uthash`, tarjoavat hyvän tasapainon helppokäyttöisyyden ja suorituskyvyn välillä, kriittisissä sovelluksissa, joissa suorituskyky on ensisijaisen tärkeää, saatat haluta räätälöidä tai toteuttaa oman hajautustaulusi.
-
-Sovelluksiin, jotka vaativat maksimaalista tehokkuutta, vaihtoehtoiset tietorakenteet tai jopa muut ohjelmointikielet sisäänrakennetulla tuella assosiatiivisille taulukoille, saattavat olla parempi vaihtoehto. Kuitenkin monissa tilanteissa, erityisesti kun työskentelet jo C-ympäristössä, kirjaston kuten `uthash` käyttäminen tarjoaa käytännöllisen tasapainon suorituskyvyn ja mukavuuden välillä.
+Vaikka assosiatiivisten taulukoiden manuaalinen rakentaminen C:ssä voi tuntua työläältä verrattuna kieliin, joissa on sisäänrakennettu tuki, se tarjoaa arvokkaita näkemyksiä tietorakenteiden toiminnasta, teroittaen ohjelmoijan taitoja ongelmanratkaisussa ja optimoinnissa. Kuitenkin, tuotantokoodille tai monimutkaisemmille sovelluksille, olemassa olevien kirjastojen kuten GLibin käyttäminen on usein käytännöllisempi ja aikatehokkaampi lähestymistapa.

@@ -1,52 +1,64 @@
 ---
-title:                "处理 YAML 文件"
-date:                  2024-01-19
-simple_title:         "处理 YAML 文件"
-
+title:                "使用YAML进行编程"
+date:                  2024-02-03T18:13:36.826884-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "使用YAML进行编程"
 tag:                  "Data Formats and Serialization"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/c/working-with-yaml.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (是什么？为什么？)
-YAML是一种常用于配置文件的数据序列化格式。程序员使用它因为它易于阅读和理解，同时也可以轻松地被计算机解析。
+## 什么和为什么？
 
-## How to: (怎么做？)
-C语言处理YAML需要借助第三方库，比如`libyaml`。下面是简单的示例，展示如何使用它来读取YAML文件。
+YAML，代表“YAML 不是标记语言”（YAML Ain't Markup Language），是一种人类可读的数据序列化标准，可用于从配置文件到数据存储的各种应用。当程序员需要一种易于阅读和编写的格式来处理配置文件或在语言和系统之间交换数据时，他们通常会使用YAML。
 
-```C
+## 如何操作：
+
+在C语言中处理YAML需要一个库，因为标准C库不直接支持YAML解析或序列化。对于C语言，最受欢迎的YAML库之一是`libyaml`，它为解析和生成YAML提供了低级和高级接口。以下是使用`libyaml`解析一个简单YAML文件的示例：
+
+**首先**，你需要安装`libyaml`库。如果你使用的是类Unix系统，通常可以通过包管理器安装。例如，在Ubuntu上：
+
+```bash
+sudo apt-get install libyaml-dev
+```
+
+**接下来**，考虑一个名为`config.yaml`的简单YAML文件：
+
+```yaml
+name: John Doe
+age: 29
+married: false
+```
+
+**这里**是如何在C语言中解析这个YAML文件的基础示例：
+
+```c
 #include <yaml.h>
 #include <stdio.h>
 #include <stdlib.h>
 
 void process_yaml_file(const char *filename) {
-    FILE *fh = fopen(filename, "r");
+    FILE *fh = fopen(filename, "rb");
     yaml_parser_t parser;
     yaml_event_t event;
 
     if (!yaml_parser_initialize(&parser))
-        fputs("Failed to initialize YAML parser!", stderr);
+        fputs("Failed to initialize YAML parser!\n", stderr);
+
     if (fh == NULL)
-        fputs("Failed to open file!", stderr);
-    
+        fputs("Failed to open file!\n", stderr);
+
     yaml_parser_set_input_file(&parser, fh);
 
-    // 读取事件直到文件末尾
     while (1) {
         if (!yaml_parser_parse(&parser, &event))
             break;
 
-        // 处理事件类型
-        switch (event.type) {
-        case YAML_STREAM_START_EVENT:
-            puts("Start of YAML Stream");
-            break;
-        case YAML_STREAM_END_EVENT:
-            puts("End of YAML Stream");
-            break;
-        // 实现更多事件处理...
+        if (event.type == YAML_SCALAR_EVENT) {
+            printf("Value: %s\n", event.data.scalar.value);
         }
 
         if (event.type == YAML_STREAM_END_EVENT)
@@ -54,28 +66,29 @@ void process_yaml_file(const char *filename) {
 
         yaml_event_delete(&event);
     }
-    
+
     yaml_parser_delete(&parser);
     fclose(fh);
 }
 
 int main() {
-    const char *filename = "example.yaml";
-    process_yaml_file(filename);
-    return EXIT_SUCCESS;
+    process_yaml_file("config.yaml");
+    return 0;
 }
 ```
 
-运行这段代码，假设`example.yaml`格式正确，你会看到输出：
-```
-Start of YAML Stream
-End of YAML Stream
+这个简单的程序打开一个YAML文件，初始化YAML解析器，并读取文件，打印标量值（在此示例中，为我们简单YAML的字段）。注意，在这个简单示例中，错误检查很少，并且在生产代码中应该更加健壮。
+
+使用我们的`config.yaml`运行程序将输出：
+
+```plaintext
+Value: John Doe
+Value: 29
+Value: false
 ```
 
-## Deep Dive (深入探究)
-YAML诞生于2001年，目标是比XML更简洁。除了`libyaml`，还有其他库如`yaml-cpp`。处理YAML时，需要考虑内存管理和误差处理。此外，YAML十分灵活，能表示复杂的数据结构。
+## 深入探讨
 
-## See Also (另见)
-- YAML官方网站: [https://yaml.org](https://yaml.org)
-- libyaml库: [https://github.com/yaml/libyaml](https://github.com/yaml/libyaml)
-- yaml-cpp库: [https://github.com/jbeder/yaml-cpp](https://github.com/jbeder/yaml-cpp)
+YAML于2001年首次发布，旨在比其他数据序列化格式如XML或JSON更易于阅读和使用友好，借鉴了C、Perl和Python等多种语言的设计哲学。尽管在可读性和易于人工修改的方面具有优势，但由于YAML依赖缩进并且功能集广泛（包括引用和自定义类型），因此从程序角度解析YAML可能相对复杂。
+
+虽然`libyaml`为在C语言中解析和生成YAML提供了健壮的低级访问能力，但由于其API冗长，对于简单任务来说可能会显得笨重。因此，出于这些原因，一些程序员更喜欢使用高级库，或者即使在C语言中工作时也使用其他数据序列化格式如JSON，特别是当需要性能高效解析且代码开销最小是优先级时。然而，YAML在配置文件和需要人类可读性的情况下仍然是受欢迎的选择。选择像TinyYAML或嵌入高级解释器（例如，嵌入Python或Lua）可能为特定应用提供更多便利性，平衡使用便利性和性能需求之间的关系。

@@ -1,63 +1,57 @@
 ---
-title:                "Viết các bài kiểm tra"
-date:                  2024-01-28T22:13:17.295273-07:00
+title:                "Viết kiểm thử"
+date:                  2024-02-03T18:15:15.901214-07:00
 model:                 gpt-4-0125-preview
-simple_title:         "Viết các bài kiểm tra"
-
+simple_title:         "Viết kiểm thử"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/c/writing-tests.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Cái gì & Tại sao?
-
-Viết các bài kiểm tra có nghĩa là tạo ra những đoạn code kiểm tra xem đoạn code khác của bạn có hoạt động không. Lập trình viên làm điều này để phát hiện lỗi sớm, tiết kiệm thời gian và đảm bảo rằng code hoạt động ngay bây giờ và sẽ tiếp tục hoạt động sau này.
+## Cái gì và Tại sao?
+Viết test trong C bao gồm việc tạo ra các chương trình phụ hoặc chức năng nhỏ hơn giúp tự động kiểm tra tính năng của mã lệnh. Lập trình viên làm điều này để đảm bảo phần mềm của họ hoạt động như mong đợi, bắt lỗi sớm và để thuận tiện cho việc chỉnh sửa mã sau này mà không gây ra hiệu ứng phụ không mong muốn.
 
 ## Làm thế nào:
+Mặc dù C không có bộ khung test tích hợp sẵn như một số ngôn ngữ khác, bạn vẫn có thể viết các bài test hiệu quả sử dụng assert.h cho các phát biểu đơn giản hoặc tích hợp các bộ khung bên thứ ba như CUnit hoặc Unity cho việc test có cấu trúc hơn. Dưới đây là một ví dụ cơ bản sử dụng assert.h để test một hàm cộng hai số nguyên:
 
-Trong C, bạn có thể viết các bài kiểm tra bằng cách sử dụng một framework kiểm tra như CUnit hoặc tự cuốn một thiết lập kiểm tra đơn giản của riêng bạn. Dưới đây là một ví dụ cơ bản sử dụng assert để tạo một hàm kiểm tra cơ bản cho hàm `add`.
-
-```C
+```c
 #include <assert.h>
+#include "my_math.h"
 
-// Hàm để kiểm tra
-int add(int a, int b) {
-    return a + b;
-}
-
-// Hàm kiểm tra
-void test_add() {
-    assert(add(2, 2) == 4);
-    assert(add(-1, 1) == 0);
+void test_addition() {
+    assert(add(1, 2) == 3);
+    assert(add(-1, -2) == -3);
+    assert(add(0, 0) == 0);
+    printf("Tất cả các bài test cộng đều đã vượt qua.\n");
 }
 
 int main() {
-    test_add();
-    printf("Tất cả các bài kiểm tra đã qua!\n");
+    test_addition();
     return 0;
 }
 ```
 
-Đầu ra mẫu, nếu tất cả các bài kiểm tra đều qua:
+Trong `my_math.h`, bạn có thể có:
+
+```c
+// Hàm cộng đơn giản
+int add(int a, int b) {
+    return a + b;
+}
+```
+
+Chạy hàm test trong hàm `main` của bạn sẽ xuất ra:
 
 ```
-Tất cả các bài kiểm tra đã qua!
+Tất cả các bài test cộng đều đã vượt qua.
 ```
 
-Nếu một bài kiểm tra thất bại, chương trình sẽ bị hủy và in ra thông báo lỗi.
+Đối với một bộ thiết lập test toàn diện hơn sử dụng một bộ khung như Unity, bạn sẽ tích hợp bộ khung vào dự án của mình, sau đó viết các trường hợp test tương tự, nhưng sử dụng API của bộ khung cho việc đưa ra khẳng định và chạy test.
 
 ## Sâu hơn
+Việc test trong C từng là một quy trình thủ công và tương đối tự phát do bản chất cấp thấp của ngôn ngữ và thiếu một bộ khung test chuẩn hóa. Phương pháp thủ công này thường dẫn đến việc thực hành test không kỹ lưỡng so với các ngôn ngữ có hỗ trợ test tích hợp. Vì ngôn ngữ C đã có vai trò quan trọng trong việc phát triển các hệ thống phần mềm cơ bản, việc thiếu các bộ khung test chính thức đã thúc đẩy cộng đồng C phát triển các giải pháp bên thứ ba, như CUnit và Unity.
 
-Lịch sử, C không đi kèm với một framework kiểm tra tích hợp. Lập trình viên thường viết các hàm kiểm tra tùy chỉnh hoặc sử dụng các framework của bên thứ ba. Các framework phổ biến bao gồm CUnit, Check và Unity. Mỗi framework đều cung cấp các tính năng như khám phá bài kiểm tra tự động, quy trình thiết lập/dỡ bỏ và báo cáo kết quả kiểm tra. Đối với các dự án nhỏ, các bài kiểm tra đơn giản dựa trên assert có thể đủ, nhưng khi độ phức tạp tăng lên, một framework phù hợp giúp tiết kiệm thời gian và giảm phiền toái.
-
-## Xem thêm
-
-Dưới đây là một số liên kết hữu ích để khám phá sâu hơn:
-
-- [CUnit](http://cunit.sourceforge.net/)
-- [Check](https://libcheck.github.io/check/)
-- [Unity](http://www.throwtheswitch.org/unity)
-- [Assert.h trong lập trình C](https://www.tutorialspoint.com/assert-h-in-c-programming)
+Những công cụ này, mặc dù nằm ngoài thư viện chuẩn của C, cung cấp chức năng tương tự như bộ khung test trong các ngôn ngữ khác, đề xuất một cách có cấu trúc để định nghĩa, chạy và đánh giá các bài test. Chúng giúp cầu nối giữa quyền truy cập cấp hệ thống mạnh mẽ của C và thực hành phát triển hiện đại của testing tự động. Đáng chú ý là trong khi những công cụ này nâng cao quy trình test trong C, chúng có thể giới thiệu một đường cong học tập và tăng độ phức tạp của việc thiết lập dự án so với các ngôn ngữ có hỗ trợ testing tích hợp. Do đó, đối với các dự án nơi độ tin cậy và khả năng bảo trì là quan trọng, việc đầu tư vào việc thiết lập môi trường test thích hợp trong C được biện minh chính đáng, ngay cả khi có sự xuất hiện của các lựa chọn thay thế.

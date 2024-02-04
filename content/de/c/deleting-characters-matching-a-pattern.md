@@ -1,55 +1,58 @@
 ---
-title:                "Löschen von Zeichen, die einem Muster entsprechen"
-date:                  2024-01-20T17:41:44.562919-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Löschen von Zeichen, die einem Muster entsprechen"
-
+title:                "Zeichen löschen, die einem Muster entsprechen"
+date:                  2024-02-03T17:55:10.651349-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Zeichen löschen, die einem Muster entsprechen"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/c/deleting-characters-matching-a-pattern.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Was & Warum?)
-Das Löschen von Zeichen, die einem Muster entsprechen, bedeutet, bestimmte Zeichen aus einem Text zu entfernen. Programmierer nutzen diese Technik, um Eingaben zu säubern, Daten zu formatieren oder unerwünschte Information zu entfernen.
+## Was & Warum?
 
-## How to: (Wie geht das:)
-```C
+Das Löschen von Zeichen, die einem spezifischen Muster in Strings in C entsprechen, bedeutet, alle Instanzen bestimmter Zeichen zu entfernen, die vordefinierte Kriterien erfüllen. Programmierer führen diese Aufgabe durch, um Eingaben zu säubern, Daten zur Verarbeitung vorzubereiten oder einfach Strings für die Ausgabe oder weitere Manipulationen zu bereinigen, um sicherzustellen, dass die behandelten Daten genau wie für einen bestimmten Kontext oder Algorithmus benötigt sind.
+
+## Wie:
+
+C verfügt im Gegensatz zu einigen höheren Sprachen nicht über eine integrierte Funktion zum direkten Löschen von Zeichen aus einem String basierend auf einem Muster. Jedoch können Sie diese Aufgabe leicht bewältigen, indem Sie manuell über den String iterieren und einen neuen erstellen, der die unerwünschten Zeichen ausschließt. Nehmen wir an, Sie möchten alle Ziffern aus einem String entfernen. Sie können dies wie folgt tun:
+
+```c
 #include <stdio.h>
-#include <string.h>
+#include <ctype.h>
 
-void delete_pattern(char *str, const char *pattern) {
+void remove_digits(char *str) {
     char *src = str, *dst = str;
     while (*src) {
-        const char *p = pattern;
-        // Prüfen, ob aktuelles Zeichen ein Muster entspricht.
-        while (*p && *src != *p) p++;
-        
-        // Wenn Zeichen nicht im Muster ist, kopieren.
-        if (*p == '\0')
+        if (!isdigit((unsigned char)*src)) {
             *dst++ = *src;
+        }
         src++;
     }
     *dst = '\0';
 }
 
 int main() {
-    char text[] = "Hallo Welt! 123";
-    // Zeichen die gelöscht werden sollen: Leerzeichen und Ziffern
-    delete_pattern(text, " 1234567890");
-    printf("%s\n", text); // Ausgabe: "HalloWelt!"
+    char str[] = "C Programmierung 101: Die Grundlagen!";
+    remove_digits(str);
+    printf("Ergebnis: %s\n", str);
     return 0;
 }
 ```
 
-## Deep Dive (Tieferer Einblick)
-Früher, vor modernen hohen Programmiersprachen, war es üblich, Zeichenmanipulationen direkt auf niedriger Speicherebene durchzuführen. Dies beinhaltete direkte Pointeroperationen und oft manuelle Schleifen durch Strings.
+Beispielausgabe:
+```
+Ergebnis: C Programmierung : Die Grundlagen!
+```
 
-Heutzutage gibt es viele Alternativen: Reguläre Ausdrücke und höherwertige String-Verarbeitungsfunktionen in Bibliotheken wie `regex.h` oder in Sprachen wie Python und JavaScript. 
+Dieses Beispiel nutzt `isdigit` aus `ctype.h`, um Ziffern zu identifizieren, nicht-digitale Zeichen an den Anfang des Strings zu verschieben und den String zu beenden, sobald alle Zeichen bewertet wurden.
 
-Bei der obigen Implementierung gehen wir Zeichen für Zeichen durch und behalten nur jene, die nicht im Muster sind. Das ist sicher und vermeidet Schaffung neuer Strings, spart also Speicher.
+## Tiefergehend
 
-## See Also (Siehe auch)
-- C Standard Library: https://en.cppreference.com/w/c/string/byte
-- Reguläre Ausdrücke in C: https://en.cppreference.com/w/c/regex
-- Möglichkeiten der String-Manipulation: https://www.gnu.org/software/libc/manual/html_node/String-and-Array-Utilities.html
+Die vorgestellte Lösung verwendet einen Zwei-Zeiger-Ansatz innerhalb desselben Arrays, um unerwünschte Zeichen effektiv herauszufiltern, eine Technik, die emblematisch für C's pragmatische Speicherverwaltungsphilosophie ist. Diese Methode ist effizient, da sie in-place arbeitet, was die Notwendigkeit einer zusätzlichen Speicherzuweisung vermeidet und somit den Overhead minimiert.
+
+Historisch gesehen hat das Fehlen von hochwertigen String-Manipulationsfunktionen in C Programmierer gezwungen, ein tiefes Verständnis für die String-Behandlung auf Speicherebene zu entwickeln, was zu innovativen Ansätzen wie dem oben genannten führte. Obwohl dies den Vorteil größerer Kontrolle und Effizienz hat, birgt es ein höheres Risiko für Fehler, wie Pufferüberläufe und Fehler durch eine um eins verschobene Zählung.
+
+In modernen Entwicklungscontexten, besonders solchen, die Sicherheit und Schutz betonen, könnten Sprachen, die solche Low-Level-Operationen abstrahieren, für String-Manipulationen bevorzugt werden. Dennoch bleibt das Verständnis und die Nutzung dieser C-Techniken unbezahlbar für Szenarien, die feinkörnige Leistungsoptimierung erfordern oder für die Arbeit in Umgebungen, in denen C's Minimalismus und Geschwindigkeit von größter Bedeutung sind.

@@ -1,76 +1,74 @@
 ---
 title:                "Twee datums vergelijken"
-date:                  2024-01-28T21:57:07.540422-07:00
+date:                  2024-02-03T17:53:49.577855-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Twee datums vergelijken"
-
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/c/comparing-two-dates.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Wat & Waarom?
 
-Het vergelijken van twee data draait allemaal om het uitzoeken van hun chronologie—zijn ze hetzelfde, is de ene eerder, of is de ene later? Programmeurs doen dit voor zaken als het sorteren van gebeurtenissen, het valideren van tijdvakken en het afhandelen van reserveringen. Het is alledaagse tijdwaarneming in code.
+Datums vergelijken in C houdt in dat wordt bepaald hoe de chronologische relatie tussen twee datums is - of de ene datum voor de andere komt of dat ze hetzelfde zijn. Deze mogelijkheid is cruciaal in applicaties die te maken hebben met planning, deadlines of het bijhouden van gegevens, omdat het de organisatie en manipulatie van tijdgevoelige gegevens mogelijk maakt.
 
-## Hoe:
+## Hoe te:
 
-In C gebruiken we vaak de `time.h` bibliotheek om met data om te gaan. Hier is een snel voorbeeld:
+C heeft geen ingebouwd type voor datums, wat het noodzakelijk maakt om de `time.h` bibliotheek te gebruiken om met datum- en tijdsstructuren te werken. De `tm` structuur en de `difftime()` functie worden vaak gebruikt om datums te vergelijken. Hieronder staat een voorbeeld dat laat zien hoe je twee datums kunt vergelijken:
 
-```C
+```c
 #include <stdio.h>
 #include <time.h>
 
-int compare_dates(struct tm date1, struct tm date2) {
-    // Omzetten naar time_t voor eenvoudige vergelijking
-    time_t t1 = mktime(&date1);
-    time_t t2 = mktime(&date2);
+int main() {
+    struct tm date1 = {0};
+    struct tm date2 = {0};
+    double seconden;
+
+    // Eerste datum (YYYY, MM, DD)
+    date1.tm_year = 2023 - 1900; // Jaar sinds 1900
+    date1.tm_mon = 3 - 1;        // Maand [0-11]
+    date1.tm_mday = 15;          // Dag van de maand [1-31]
+
+    // Tweede datum (YYYY, MM, DD)
+    date2.tm_year = 2023 - 1900;
+    date2.tm_mon = 4 - 1;
+    date2.tm_mday = 14;
+
+    // Omzetten naar time_t formaat
+    time_t time1 = mktime(&date1);
+    time_t time2 = mktime(&date2);
 
     // Vergelijken
-    if (t1 < t2) return -1; // date1 is eerder
-    if (t1 > t2) return 1;  // date1 is later
-    return 0;               // data zijn hetzelfde
-}
+    seconden = difftime(time1, time2);
 
-int main() {
-    // Twee data om te vergelijken
-    struct tm date1 = { .tm_year = 120, .tm_mon = 5, .tm_mday = 14 }; // 2020-06-14
-    struct tm date2 = { .tm_year = 122, .tm_mon = 11, .tm_mday = 3 };  // 2022-12-03
-
-    int resultaat = compare_dates(date1, date2);
-
-    if (resultaat < 0) {
-        printf("Date1 is eerder dan Date2.\n");
-    } else if (resultaat > 0) {
-        printf("Date1 is later dan Date2.\n");
+    if (seconden == 0) {
+        printf("Datums zijn hetzelfde.\n");
+    } else if (seconden > 0) {
+        printf("Eerste datum komt na de tweede datum.\n");
     } else {
-        printf("Date1 is hetzelfde als Date2.\n");
+        printf("Eerste datum komt voor de tweede datum.\n");
     }
 
     return 0;
 }
 ```
 
-Voorbeelduitvoer:
+Uitvoer zou kunnen zijn:
+
+```text
+Eerste datum komt voor de tweede datum.
 ```
-Date1 is eerder dan Date2.
-```
 
-## Diepgaande Duik
+Dit programma initialiseert twee `tm` structuren met specifieke datums, zet ze om naar `time_t` formaat met behulp van `mktime()` en vergelijkt ze tenslotte met `difftime()`, dat het verschil in seconden (als een `double`) tussen de twee tijden retourneert.
 
-Voordat `time.h` C zegende met gestandaardiseerde tijd functies, zou je jouw eigen datums vergelijkingen maken—riskant bedrijf met schrikkeljaren en al. Nu zijn `mktime()` en `time_t` de gangbare methoden. Ze handelen de grillen van kalenders af, zodat jij dat niet hoeft te doen.
+## Diepgaande duik
 
-`mktime()` neemt jouw `struct tm` datum, met al zijn gebruiksvriendelijke velden, en perst het in een `time_t` waarde. Deze waarde vertegenwoordigt seconden sinds het epoch (00:00, 1 januari 1970, UTC). Zodra jouw data in `time_t` zitten, is het gewoon een kwestie van nummervergelijking.
+In de vroege dagen van C vereisten datum- en tijdsoperaties handmatige berekeningen, waarbij vaak rekening werd gehouden met schrikkeljaren, het wisselende aantal dagen in maanden, en zelfs schrikkelseconden. De introductie van `time.h` in de ANSI C-standaard bracht standaardisatie in de tijdbehandeling in C, waardoor datum- en tijdoperaties werden vereenvoudigd.
 
-Er zijn chiquere alternatieven, zoals `difftime()` voor het vinden van het tijdverschil of het gebruik van bibliotheken van derden. Ze kunnen meer functies bieden, maar voor een eenvoudige vraag "Welke datum is eerder?" heeft de standaardbibliotheek meestal alles wat je nodig hebt.
+Het gebruik van `time.h` voor datumvergelijking is eenvoudig maar heeft beperkingen. De `tm` structuur houdt geen rekening met tijdzones of zomertijd, en `difftime()` geeft alleen het verschil in seconden aan, en mist fijnere granulariteit voor bepaalde applicaties.
 
-Implementatie is afhankelijk van systeemtijdinstellingen—tijdzones en zomertijd kunnen je in de war brengen. `mktime()` interpreteert de `struct tm` als lokale tijd, dus wees bedachtzaam bij het vergelijken van data uit verschillende tijdzones.
-
-## Zie Ook
-
-- C `time.h` referentie: https://en.cppreference.com/w/c/chrono
-- `time(7)` - overzicht van tijd en datum in Unix-systemen: http://man7.org/linux/man-pages/man7/time.7.html
-- GNU C Library (glibc) handleiding over Tijd: https://www.gnu.org/software/libc/manual/html_node/Time.html
+Voor applicaties die robuustere datum-tijdoperaties vereisen, inclusief ondersteuning voor tijdzones, overschakelingen naar zomertijd en nauwkeuriger tijdintervallen, bieden bibliotheken zoals `date.h` (een Howard Hinnant datum bibliotheek, geen onderdeel van de standaardbibliotheek) een modern alternatief voor `time.h`. Deze bibliotheken bieden meer uitgebreide hulpmiddelen voor datum-tijdmanipulatie in C++, profiterend van decennia van evolutie in programmeertaaldesign. Voor C-programmeurs blijft het gebruik van deze externe bibliotheken of het nauwkeurig omgaan met de complexiteiten van datum-tijdberekeningen direct noodzakelijk om nauwkeurige en cultureel bewuste datum-tijdmanipulatie te bereiken.

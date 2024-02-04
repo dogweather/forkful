@@ -1,61 +1,63 @@
 ---
 title:                "Zaokrąglanie liczb"
-date:                  2024-01-26T03:43:23.940610-07:00
+date:                  2024-02-03T18:07:45.330322-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Zaokrąglanie liczb"
-
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/c/rounding-numbers.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Co i dlaczego?
-Zaokrąglanie liczb polega na obcinaniu cyfr po pewnym miejscu, opcjonalnie dostosowując ostatnią zachowaną cyfrę. Programiści zaokrąglają, aby zredukować precyzję, kiedy dokładne wartości nie są konieczne, zarządzać błędami liczby zmiennoprzecinkowej lub przygotować numery do przyjaznego użytkownikowi wyświetlania.
+
+Zaokrąglanie liczb to proces dostosowywania cyfr liczby w celu zmniejszenia jej precyzji zgodnie z pewnymi zasadami, albo w kierunku najbliższej liczby całkowitej, albo określonej liczby miejsc dziesiętnych. Programiści robią to z różnych powodów, począwszy od ograniczenia potrzebnej ilości pamięci, poprzez upraszczanie wyników dla użytkownika, aż po zapewnienie dokładności operacji matematycznych, które są wrażliwe na bardzo małe zmiany.
 
 ## Jak to zrobić:
-W C zazwyczaj używa się funkcji `floor()`, `ceil()` lub `round()`. Oto szybka prezentacja:
 
-```C
+Zaokrąglanie liczb w C można osiągnąć za pomocą różnych funkcji, ale najczęściej stosowane są funkcje `floor()`, `ceil()`, i `round()`. Te funkcje są częścią standardowej biblioteki matematycznej, więc musisz dołączyć `math.h` do swojego programu.
+
+```c
 #include <stdio.h>
 #include <math.h>
 
 int main() {
-    double num = 3.14159;
-    double num_floor = floor(num);
-    double num_ceil = ceil(num);
-    double num_round = round(num);
+    double num = 9.527;
 
-    printf("Floor: %.2f\n", num_floor); // Podłoga: 3.00
-    printf("Ceil: %.2f\n", num_ceil);   // Sufit: 4.00
-    printf("Round: %.2f\n", num_round); // Zaokrąglenie: 3.00
+    // Używanie floor() do zaokrąglenia w dół
+    double floorResult = floor(num);
+    printf("floor(9.527) = %.0f\n", floorResult);
+
+    // Używanie ceil() do zaokrąglenia w górę
+    double ceilResult = ceil(num);
+    printf("ceil(9.527) = %.0f\n", ceilResult);
+
+    // Używanie round() do zaokrąglenia do najbliższej liczby całkowitej
+    double roundResult = round(num);
+    printf("round(9.527) = %.0f\n", roundResult);
+
+    // Zaokrąglanie do określonej liczby miejsc dziesiętnych wymaga mnożenia i dzielenia
+    double twoDecimalPlaces = round(num * 100) / 100;
+    printf("Zaokrąglanie do dwóch miejsc po przecinku: %.2f\n", twoDecimalPlaces);
+
     return 0;
 }
 ```
 
-Dla większej kontroli, jak zaokrąglanie do konkretnego miejsca, mnoży się, zaokrągla i dzieli:
-
-```C
-double roundToPlace(double num, int place) {
-    double scale = pow(10.0, place);
-    return round(num * scale) / scale;
-}
-
-// ...
-
-double num = 3.14159;
-double num_rounded = roundToPlace(num, 2);
-printf("Zaokrąglony do 2 miejsc po przecinku: %.2f\n", num_rounded); // Zaokrąglony do 2 miejsc po przecinku: 3.14
+Wynik:
+```
+floor(9.527) = 9
+ceil(9.527) = 10
+round(9.527) = 10
+Zaokrąglanie do dwóch miejsc po przecinku: 9.53
 ```
 
-## Dogłębna analiza
-Dawniej zaokrąglanie często oznaczało proces ręczny - ciężką pracę tylko z długopisem i papierem. Dzięki informatyzacji zautomatyzowaliśmy to, ale arytmetyka liczby zmiennoprzecinkowej wprowadziła niuanse ze względu na jej binarną naturę, gdzie niektóre liczby nie mogą być dokładnie reprezentowane.
+## Pogłębiona analiza
 
-Alternatywy dla standardowego zaokrąglania obejmują obcinanie (po prostu odrzucanie dodatkowych cyfr) lub zaokrąglanie bankerskie, które zaokrągla do najbliższej parzystej liczby, gdy wartość jest dokładnie pomiędzy dwiema wartościami, redukując stronniczość w powtarzających się obliczeniach.
+Zaokrąglanie liczb ma głębokie korzenie historyczne w matematyce i obliczeniach, będąc integralną częścią zarówno teoretycznych, jak i stosowanych aspektów. W C, chociaż `floor()`, `ceil()`, i `round()` oferują podstawową funkcjonalność, istota zaokrąglania liczb zmiennoprzecinkowych do liczb całkowitych lub określonych miejsc dziesiętnych jest bardziej złożona z powodu binarnej reprezentacji liczb zmiennoprzecinkowych. Ta reprezentacja może prowadzić do nieoczekiwanych wyników, ze względu na sposób, w jaki obsługiwane są liczby, które nie mogą być dokładnie przedstawione w systemie binarnym (takie jak 0.1).
 
-Implementacja staje się trudna, gdy trzeba zaokrąglić liczby o dowolnej precyzji lub obsługiwać specjalne przypadki, takie jak nieskończoność, sygnalizujące NaNy lub wartości subnormalne. Funkcje biblioteki standardowej C obsługują podstawy, ale jeśli potrzebujesz zaokrąglać dziesiętnie na niestandardowe sposoby, potrzebujesz więcej niż `math.h`.
+Te funkcje są częścią biblioteki standardowej C, zdefiniowanej w `<math.h>`. Przy zaokrąglaniu liczb, szczególnie dla obliczeń finansowych lub precyzyjnych obliczeń inżynierskich, należy wziąć pod uwagę implikacje stosowania binarnych liczb zmiennoprzecinkowych. Alternatywy dla wbudowanych funkcji C dla dokładnego lub specyficznego zaokrąglania dziesiętnego mogą obejmować implementację własnych funkcji zaokrąglających lub użycie bibliotek zaprojektowanych do arytmetyki o dowolnej precyzji, takich jak GMP lub MPFR, chociaż wprowadzają one dodatkową złożoność i zależności.
 
-## Zobacz także
-- [Dokumentacja `<math.h>`](https://en.cppreference.com/w/c/numeric/math)
-- [Arytmetyka liczby zmiennoprzecinkowej](https://en.wikipedia.org/wiki/Floating-point_arithmetic)
-- [Pułapki weryfikacji obliczeń zmiennoprzecinkowych](https://dl.acm.org/doi/10.1145/1186736.1186737)
+W praktyce wybór odpowiedniego podejścia do zaokrąglania w C wiąże się z równoważeniem potrzeb precyzji, wydajności i praktyczności, z głębokim zrozumieniem specyficznych wymagań domenowych aplikacji, którą się rozwija.

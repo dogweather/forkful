@@ -1,36 +1,60 @@
 ---
-title:                "עבודה עם TOML"
-date:                  2024-01-26T04:23:00.241079-07:00
+title:                "עובדים עם TOML"
+date:                  2024-02-03T18:13:37.934215-07:00
 model:                 gpt-4-0125-preview
-simple_title:         "עבודה עם TOML"
-
+simple_title:         "עובדים עם TOML"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/go/working-with-toml.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## מה ולמה?
-עבודה עם TOML כוללת ניתוח וקידוד של קבצי TOML (Tom's Obvious, Minimal Language) בשפת Go. תכנתים בוחרים ב-TOML בגלל הקריאות והמיפוי הקל למבני נתונים, התואם בצורה מוצקה לקובצי תצורה.
 
-## איך לעשות זאת:
-על מנת לעבוד עם TOML ב-Go, בדרך כלל יש להשתמש בספריה כמו `BurntSushi/toml`. הנה מבט מהיר על ניתוח קובץ תצורה של TOML:
+TOML (Tom's Obvious, Minimal Language - שפת הגדרות מינימלית וברורה של טום) היא פורמט קובץ הגדרות שקל לקרוא בזכות תחביר פשוט. מתכנתים משתמשים ב-TOML להגדרת הגדרות ותלות של יישומים בשל בהירותו והתאמה ישירה למבני נתונים, דבר שהופך אותו לבחירה פופולרית בפרויקטים רבים של Go להגדרה וניהול תצורות.
 
-```Go
+## איך לעשות:
+
+כדי להתחיל לעבוד עם TOML ב-Go, קודם כל צריך לכלול ספרייה שיכולה לנתח קבצי TOML, מאחר והספרייה הסטנדרטית של Go אינה תומכת ב-TOML כברירת מחדל. החבילה `BurntSushi/toml` היא בחירה פופולרית לצורך זה. קודם כל, וודאו להתקין אותה:
+
+```bash
+go get github.com/BurntSushi/toml
+```
+
+הנה דוגמה פשוטה לשימוש בה. נניח שיש לכם קובץ הגדרות בשם `config.toml` עם התוכן הבא:
+
+```toml
+title = "TOML Example"
+
+[database]
+server = "192.168.1.1"
+ports = [ 8001, 8001, 8002 ]
+connection_max = 5000
+enabled = true
+```
+
+עכשיו, תצטרכו ליצור מבנה Go שמשקף את מבנה ה-TOML:
+
+```go
 package main
 
 import (
     "fmt"
-    "os"
-
     "github.com/BurntSushi/toml"
 )
 
 type Config struct {
-    Title   string
-    Owner   struct {
-        Name string
-    }
+    Title    string
+    Database Database `toml:"database"`
+}
+
+type Database struct {
+    Server        string
+    Ports         []int
+    ConnectionMax int `toml:"connection_max"`
+    Enabled       bool
 }
 
 func main() {
@@ -39,32 +63,22 @@ func main() {
         fmt.Println(err)
         return
     }
-    fmt.Printf("Title: %s, Owner: %s\n", config.Title, config.Owner.Name)
+    fmt.Printf("Title: %s\n", config.Title)
+    fmt.Printf("Database Server: %s\n", config.Database.Server)
 }
 ```
 
-דוגמה ל-`config.toml`:
-
-```Toml
-title = "Example TOML"
-[owner]
-name = "Tom Preston-Werner"
-```
-
-דוגמה לפלט:
+דוגמא לפלט:
 
 ```
-Title: Example TOML, Owner: Tom Preston-Werner
+Title: TOML Example
+Database Server: 192.168.1.1
 ```
 
-## צלילה עמוקה
-TOML, שהוצג על ידי טום פרסטון-ורנר בשנת 2013, נוצר במטרה להיות פורמט קובץ תצורה מינימלי שקל לקרוא בזכות הסמנטיקה הברורה שלו. פיתוחי Go לעיתים קרובות משתמשים ב-TOML לתצורה על פני אלטרנטיבות כמו JSON או YAML בגלל הישירות והיכולת שלו לייצג היררכיות מורכבות בפשטות.
+## טבילה עמוקה
 
-בהשוואה ל-YAML, שיש לו תכונות מורכבות ודאגות אבטחה אפשריות, עיצוב הדירה של TOML מפחית סיבוך וטעויות הנגרמות מהקלדה שגויה. ובניגוד ל-JSON, TOML תומך בהערות, מה שהופך אותו לקל יותר להסביר תצורות בתוך הקוד.
+TOML נוצר על ידי טום פרסטון-ורנר, אחד ממייסדי GitHub, במטרה להציע פורמט קובץ הגדרות ישיר שניתן למפות בקלות לטבלת גיבוב ולהבינו במבט ראשון ללא ידע קודם של הפורמט. זה בניגוד ל-JSON או YAML, שבעוד שהם גם נמצאים בשימוש נרחב, יכולים להיות פחות ידידותיים לאדם עבור קבצי הגדרות בגלל בעיות של סוגריים, מרכאות והזחות.
 
-כשעובדים עם TOML ב-Go, יש מגבלות שכדאי להתחשב בהן. תגיות מבנה יכולות להתאים אישית איך המבנים שלך מתמפים למבני TOML, וכן כדאי להיות מודעים לאופן בו מערכי TOML וטבלאות inline נפרשים לחתיכות ומפות של Go.
+החבילה `BurntSushi/toml` ב-Go היא ספרייה אמינה שלא רק מאפשרת ניתוח אלא גם קידוד של קבצי TOML, מה שהופך אותה לבחירה מגוונת עבור יישומים שצריכים לקרוא וגם לכתוב קבצי הגדרות בפורמט זה. עם זאת, יש לציין שעם התקדמות הטכנולוגיות והוצאת גרסאות חדשות של Go, עלו חלופות כמו `pelletier/go-toml`, המציעות ביצועים משופרים ותכונות נוספות כמו מניפולציה ותמיכה בשאילתות של עץ.
 
-## ראה גם
-- מפרט TOML: https://toml.io/en/
-- ספריית BurntSushi/toml: https://github.com/BurntSushi/toml
-- השוואה של פורמטים לקובץ תצורה: https://www.redhat.com/sysadmin/yaml-toml-json-differences
+למרות ש-TOML הוא בחירה מעולה ליישומים רבים, בהתאם למורכבות של ההגדרות והעדפות אישיות או של הצוות, פורמטים אחרים כמו YAML או JSON יכולים להתאים יותר, במיוחד אם ההגדרה דורשת מבני נתונים יותר מורכבים שהטבע המפורט של TOML עשוי שלא לתפוס בחן. עם זאת, עבור הגדרות ישירות, קריאות וניתנות לעריכה בקלות, TOML, בשילוב עם מערכת הטיפוסים החזקה של Go והספריות הנ"ל, הוא בחירה מעולה.

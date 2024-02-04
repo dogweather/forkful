@@ -1,35 +1,55 @@
 ---
-title:                "YAMLを扱う"
-date:                  2024-01-19
-simple_title:         "YAMLを扱う"
-
+title:                "YAMLとの作業"
+date:                  2024-02-03T18:13:38.019170-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "YAMLとの作業"
 tag:                  "Data Formats and Serialization"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/c/working-with-yaml.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (何となぜ？)
-YAMLはデータを表すためのフォーマットです。設定ファイルやデータ交換に使用され、JSONよりも読みやすく、シンプルな構造が特徴です。
+## 何となく？
 
-## How to: (やり方)
-C言語には標準のYAMLパーサーはありませんが、libyamlというライブラリを使うことができます。以下に基本的なYAMLファイルの読み込み例を示します。
+YAMLは、「YAML Ain't Markup Language」の略で、人間が読み書きしやすいデータ直列化標準です。設定ファイルからデータストレージまで、あらゆるアプリケーションに使用できます。プログラマーは、設定ファイルや言語やシステム間のデータ交換のために、読みやすく書きやすいフォーマットが必要な場合に、しばしばYAMLを使用します。
 
-```C
+## 方法：
+
+C言語でYAMLを扱うにはライブラリが必要です。なぜなら、標準CライブラリはYAMLの解析や直列化のための直接的なサポートを提供していないからです。C言語で最も人気のあるYAMLライブラリの一つが`libyaml`であり、解析と出力のための低レベルと高レベルのインターフェイス両方を提供しています。以下は、`libyaml`を使用して簡単なYAMLファイルを解析する方法の例です：
+
+**まず**、`libyaml`ライブラリをインストールする必要があります。Unix系のシステムにいる場合、通常はパッケージマネージャー経由でインストールできます。例えばUbuntuでは：
+
+```bash
+sudo apt-get install libyaml-dev
+```
+
+**次に**、`config.yaml`という名前の簡単なYAMLファイルを考えます：
+
+```yaml
+name: John Doe
+age: 29
+married: false
+```
+
+**以下**は、このYAMLファイルをC言語で解析する基本的な例です：
+
+```c
 #include <yaml.h>
 #include <stdio.h>
 #include <stdlib.h>
 
-int main(void) {
-    FILE *fh = fopen("example.yaml", "r");
+void process_yaml_file(const char *filename) {
+    FILE *fh = fopen(filename, "rb");
     yaml_parser_t parser;
     yaml_event_t event;
 
     if (!yaml_parser_initialize(&parser))
-        fputs("Failed to initialize parser!\n", stderr);
+        fputs("YAML parserの初期化に失敗しました！\n", stderr);
+
     if (fh == NULL)
-        fputs("Failed to open file!\n", stderr);
+        fputs("ファイルを開けませんでした！\n", stderr);
 
     yaml_parser_set_input_file(&parser, fh);
 
@@ -37,30 +57,38 @@ int main(void) {
         if (!yaml_parser_parse(&parser, &event))
             break;
 
-        if (event.type == YAML_SCALAR_EVENT)
-            printf("Value: %s\n", event.data.scalar.value);
+        if (event.type == YAML_SCALAR_EVENT) {
+            printf("値: %s\n", event.data.scalar.value);
+        }
 
-        if (event.type != YAML_STREAM_END_EVENT)
-            yaml_event_delete(&event);
-        else
+        if (event.type == YAML_STREAM_END_EVENT)
             break;
+
+        yaml_event_delete(&event);
     }
 
-    yaml_event_delete(&event);
     yaml_parser_delete(&parser);
     fclose(fh);
+}
+
+int main() {
+    process_yaml_file("config.yaml");
     return 0;
 }
 ```
 
-このコードは`example.yaml`ファイルを読み込み、中の値を印刷します。実際の出力はYAMLの内容に依存します。
+この簡単なプログラムは、YAMLファイルを開き、YAMLパーサーを初期化し、ファイルを読み込み、スカラー値（この例では、私たちの簡単なYAMLのフィールド）を出力します。エラーチェックはこの簡単な例では最小限ですが、本番コードではより堅牢であるべきです。
 
-## Deep Dive (深堀り)
-YAMLは2001年に登場し、INI、JSON、XMLなどのフォーマットが存在する中、その可読性と簡潔さで注目を集めました。C言語のlibyamlライブラリは、速度と安定性に重点を置いて設計されていますが、他にもYAMLパーサのライブラリが存在します。YAMLは階層的なデータ構造をうまく扱い、複雑なデータ構造をシンプルなテキスト形式で表現できるため、設定ファイルやアプリケーションのデータ保存に適しています。
+`config.yaml`を使ってプログラムを実行すると、以下の出力が得られます：
 
-## See Also (関連情報)
-- YAML公式サイト: https://yaml.org
-- LibYAML GitHubリポジトリ: https://github.com/yaml/libyaml
-- YAML 1.2 仕様 (和訳): https://yaml.org/spec/1.2/spec.html
+```plaintext
+値: John Doe
+値: 29
+値: false
+```
 
-この記事で取り上げた内容をさらに学びたい場合は、上記のリンクを参照してください。
+## 深い潜入
+
+YAMLは2001年に初めてリリースされ、XMLやJSONといった他のデータ直列化フォーマットよりも読みやすく、ユーザーフレンドリーであるように設計されました。C、Perl、Pythonなどいくつかの言語からデザイン哲学を借用しています。可読性と人間による修正のしやすさで利点がある一方で、インデントに依存することや参照やカスタムタイプなどの広範な特徴セットを含むため、プログラム的に解析することは複雑になり得ます。
+
+`libyaml`はC言語でYAMLを解析し、出力するための堅牢な低レベルアクセスを提供しますが、冗長なAPIのために単純なタスクには煩雑になることがあります。これらの理由から、特にパフォーマンスの高い解析と最小限のコードオーバーヘッドが優先事項である場合、C言語で作業する際にはJSONなどの他のデータ直列化フォーマットや高レベルのライブラリを好むプログラマーもいます。しかし、YAMLは設定ファイルと人間が読みやすいことが最優先の状況において人気の選択肢のままです。TinyYAMLや高レベルインタープリター（例：PythonやLuaの埋め込み）を使用すると、特定のアプリケーションにおいて使いやすさとパフォーマンスニーズのバランスを提供することができます。

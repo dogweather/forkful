@@ -1,41 +1,57 @@
 ---
-title:                "Skriving av tester"
-date:                  2024-01-19
-simple_title:         "Skriving av tester"
-
+title:                "Skrive tester"
+date:                  2024-02-03T18:14:19.432774-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Skrive tester"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/c/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Skriving av tester er prosessen der du lager kode for å sjekke at programkoden din fungerer som den skal. Programmerere gjør dette for å sikre at koden er feilfri, forenkle feilsøking og vedlikehold, og forbedre kodekvaliteten over tid.
+Å skrive tester i C innebærer å lage mindre, hjelpeprogrammer eller funksjoner som automatisk verifiserer funksjonaliteten til koden din. Programmerere gjør dette for å sikre at programvaren deres fungerer som forventet, for å oppdage feil tidlig, og for å lette fremtidige kodeendringer uten uønskede bivirkninger.
 
-## How to:
-Enkel test med `assert`:
-```C
+## Hvordan:
+Selv om C ikke har et innebygget testrammeverk som noen andre språk, kan du fortsatt skrive effektive tester ved hjelp av assert.h for enkle påstander eller integrere tredjepartsrammeverk som CUnit eller Unity for mer strukturert testing. Her er et grunnleggende eksempel som bruker assert.h for å teste en funksjon som legger sammen to heltall:
+
+```c
 #include <assert.h>
+#include "my_math.h"
 
-void testAddition() {
-    int sum = 2 + 2;
-    assert(sum == 4);
+void test_addition() {
+    assert(add(1, 2) == 3);
+    assert(add(-1, -2) == -3);
+    assert(add(0, 0) == 0);
+    printf("Alle addisjonstester bestått.\n");
 }
 
 int main() {
-    testAddition();
+    test_addition();
     return 0;
 }
 ```
-Output:
-```
-(Ingen output betyr suksess, et assert-krasj vil vise en feilmelding)
+
+I `my_math.h`, kan du ha:
+
+```c
+// Enkel addisjonsfunksjon
+int add(int a, int b) {
+    return a + b;
+}
 ```
 
-## Deep Dive
-Tester i C startet med enkle `assert`-sjekker, før mer robuste rammeverk som Unity og CMock for TDD (Test-Driven Development) ble tilgjengelige. Disse rammeverkene tilbyr makroer og funksjoner for å lett sette opp, kjøre og rapportere testresultatene. Valg av testrammeverk avhenger ofte av prosjektets behov og kompleksitet.
+Å kjøre testfunksjonen i din `main` funksjon gir utskriften:
 
-## See Also
-- [Unity Test Framework](http://www.throwtheswitch.org/unity)
-- [CMock - Mocking Framework](http://www.throwtheswitch.org/cmock)
-- [Test-Driven Development](https://en.wikipedia.org/wiki/Test-driven_development)
+```
+Alle addisjonstester bestått.
+```
+
+For en mer omfattende testoppsett ved bruk av et rammeverk som Unity, ville du inkorporert rammeverket i prosjektet ditt, og deretter skrevet testtilfeller på lignende måte, men ved å bruke rammeverkets API for påstander og testkjøring.
+
+## Dypdykk
+Testing i C har historisk sett vært en manuell og noe ad hoc prosess på grunn av språkets lavnivå natur og mangel på et standardisert testrammeverk. Denne manuelle tilnærmingen førte ofte til mindre grundige testpraksiser sammenlignet med språk med innebygd teststøtte. Siden C-språket har vært avgjørende i utviklingen av grunnleggende programvaresystemer, har denne mangelen på formelle testrammeverk oppmuntret C-samfunnet til å utvikle tredjepartsløsninger, som CUnit og Unity.
+
+Disse verktøyene, selv om de er eksterne til det standard C-biblioteket, tilbyr funksjonalitet lik testrammeverk i andre språk, og tilbyr en strukturert måte å definere, kjøre og evaluere tester på. De hjelper med å bro over gapet mellom Cs kraftfulle systemnivå tilgang og den moderne utviklingspraksisen med automatisert testing. Det er verdt å merke seg at selv om disse verktøyene i stor grad forbedrer testprosessen i C, kan de introdusere en læringskurve og øke kompleksiteten til prosjektoppsett sammenlignet med språk med integrert teststøtte. Derfor er det godt begrunnet å investere i oppsettet av et ordentlig testmiljø i C for prosjekter der pålitelighet og vedlikeholdbarhet er av største viktighet, selv i lys av mulige alternativer.

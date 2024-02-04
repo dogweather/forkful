@@ -1,69 +1,81 @@
 ---
 title:                "Een nieuw project starten"
-date:                  2024-01-28T22:08:25.659645-07:00
+date:                  2024-02-03T18:09:31.934296-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een nieuw project starten"
-
 tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/go/starting-a-new-project.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Wat & Waarom?
-Een nieuw project starten betekent het opzetten van de basis voor je Go applicatie. Programmeurs doen dit om code te organiseren, afhankelijkheden te beheren en het podium klaar te zetten voor verdere ontwikkeling.
+
+Een nieuw project opstarten in Go houdt in dat je een werkruimte opzet en deze initialiseert met de benodigde Go modules. Programmeurs doen dit om code te organiseren, afhankelijkheden effectief te beheren en bouwprocessen te vergemakkelijken. Het is fundamenteel voor het creëren van schaalbare en onderhoudbare software in Go.
 
 ## Hoe:
-Installeer eerst Go, als je dat nog niet hebt gedaan, vanaf [golang.org](https://golang.org/dl/). Zet vervolgens een nieuw project op:
 
-1. Open een terminal.
-2. Maak een nieuwe map.
+Zorg er eerst voor dat je Go geïnstalleerd hebt door `go version` in je terminal te draaien. Je zou de geïnstalleerde versie van Go als output moeten zien. Ga nu naar je werkruimte om een nieuw project te starten en voer uit:
 
-   ```bash
-   mkdir mijnproject
-   cd mijnproject
-   ```
-
-3. Initialiseer de module:
-
-   ```bash
-   go mod init github.com/uwgebruikersnaam/mijnproject
-   ```
-
-4. Schrijf een eenvoudig `main.go` bestand:
-
-   ```Go
-   package main
-
-   import "fmt"
-
-   func main() {
-       fmt.Println("Hallo, nieuwe wereld van Go!")
-   }
-   ```
-
-5. Voer het programma uit:
-
-   ```bash
-   go run main.go
-   ```
-
-De voorbeelduitvoer zou moeten zijn:
-
+```shell
+mkdir hallo-wereld
+cd hallo-wereld
 ```
-Hallo, nieuwe wereld van Go!
+
+Dit creëert een nieuwe map voor je project en verplaatst je ernaartoe. Initialiseer nu de module:
+
+```shell
+go mod init example.com/hallo-wereld
 ```
+
+Vervang `example.com/hallo-wereld` met jouw modulepad. Dit commando maakt een `go.mod` bestand in je map, wat het begin van een nieuwe Go module aangeeft. Zo zou `go.mod` eruit kunnen zien:
+
+```plaintext
+module example.com/hallo-wereld
+
+go 1.18
+```
+
+`go.mod` houdt de afhankelijkheden van je project bij. Maak nu een `main.go` bestand:
+
+```shell
+touch main.go
+```
+
+Open `main.go` in je favoriete editor en voeg de volgende code toe om "Hallo, Wereld!" af te drukken:
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+    fmt.Println("Hallo, Wereld!")
+}
+```
+
+Om je programma uit te voeren, ga terug naar de terminal en voer uit:
+
+```shell
+go run main.go
+```
+
+Je zou moeten zien:
+
+```plaintext
+Hallo, Wereld!
+```
+
+Gefeliciteerd! Je hebt zojuist een nieuw Go project opgestart en je eerste Go programma uitgevoerd.
 
 ## Diepere Duik
-Een nieuw project starten in Go is geëvolueerd. Vroege Go-projecten hadden geen officieel pakketbeheersysteem. Dit leidde tot het "GOPATH" werkruimtemodel, wat rommelig kon worden met grotere projecten. Tegenwoordig, met de introductie van `go mod` in Go 1.11, zijn zaken meer gestroomlijnd en beheersbaar: afhankelijkheden worden per project gehanteerd, niet globaal.
 
-Alternatieven voor `go mod` vervagen, maar omvatten gemeenschapstools zoals `dep` en `glide`. Tegenwoordig is `go mod` de aanbevolen tool vanwege de eersteklas ondersteuning en integratie met de Go-toolchain.
+Het initiatief om modules als de standaard voor afhankelijkhedenbeheer in Go te introduceren was een significante verschuiving in het Go ecosysteem, officieel aangenomen in Go 1.11. Voor modules vertrouwden Go ontwikkelaars op de GOPATH-omgevingsvariabele om afhankelijkheden te beheren, wat minder intuïtief was en vaak leidde tot de beruchte "afhankelijkheidshel."
 
-Wanneer je `go mod init` uitvoert, maakt Go een nieuw `go.mod` bestand. Dit bestand houdt de afhankelijkheden van je project bij. Het vermeldt automatisch de versie van Go en eventuele externe pakketten die je later toevoegt. Met deze opzet zijn de afhankelijkheden van je code expliciet en reproduceerbaar, wat helpt om het "werkt op mijn machine" syndroom te vermijden.
+Modules bieden een ingekapselde manier om projectafhankelijkheden te beheren, versiebeheer uit te voeren, en zijn een stap richting het maken van meer zelfstandige en draagbare Go projecten. Elke module specificeert zijn afhankelijkheden die Go bijhoudt in het `go.mod` bestand, waardoor het beheer van afhankelijkheden in verschillende omgevingen en ontwikkelingsstadia wordt vereenvoudigd.
 
-## Zie Ook
-- [Aan de slag met Go](https://golang.org/doc/install)
-- [Hoe schrijf je Go code](https://golang.org/doc/code.html)
-- [`go mod` Documentatie](https://golang.org/ref/mod)
+Het is echter vermeldenswaard dat, hoewel Go modules nu de standaard zijn, sommige oudere projecten nog steeds GOPATH kunnen gebruiken. Voor de meeste nieuwe projecten bieden modules een eenvoudiger en effectiever beheersysteem, maar het begrijpen van GOPATH kan handig zijn voor het onderhouden of bijdragen aan oudere Go codebases.
+
+Wat betreft alternatieven, hoewel Go modules nu de facto standaard zijn, heeft de Go-gemeenschap in het verleden geëxperimenteerd met andere tools voor afhankelijkhedenbeheer zoals `dep`. Deze zijn echter grotendeels vervangen door de officiële moduleondersteuning geïntegreerd in de Go-toolchain.

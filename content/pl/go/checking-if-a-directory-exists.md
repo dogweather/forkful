@@ -1,23 +1,25 @@
 ---
 title:                "Sprawdzanie, czy katalog istnieje"
-date:                  2024-01-20T14:56:57.726025-07:00
+date:                  2024-02-03T17:53:10.983749-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Sprawdzanie, czy katalog istnieje"
-
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/go/checking-if-a-directory-exists.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Co i dlaczego?)
+## Co i dlaczego?
 
-Sprawdzanie, czy katalog istnieje, to proces weryfikowania obecności folderu w systemie plików. Programiści to robią, żeby uniknąć błędów przy próbie dostępu lub zapisu, i żeby wiedzieć, kiedy trzeba utworzyć nowy katalog.
+Sprawdzenie, czy katalog istnieje w Go, jest kluczowe dla aplikacji interaktywnie współpracujących z systemem plików, aby uniknąć błędów przy próbie dostępu lub modyfikacji katalogów. Operacja ta jest niezbędna do zadań takich jak zapewnienie warunków wstępnych dla operacji na plikach, zarządzanie konfiguracją i wdrażanie oprogramowania, które polega na określonych strukturach katalogów.
 
-## How to: (Jak to zrobić:)
+## Jak to zrobić:
 
-W Go można użyć `os.Stat()` i sprawdzić error zwrócony przez funkcję:
+W Go pakiet `os` oferuje funkcjonalności do interakcji z systemem operacyjnym, w tym sprawdzanie, czy katalog istnieje. Oto jak można to zrobić:
 
-```Go
+```go
 package main
 
 import (
@@ -25,42 +27,42 @@ import (
     "os"
 )
 
-func main() {
-    dir := "/path/to/directory"
+// isDirExists sprawdza, czy katalog istnieje
+func isDirExists(path string) bool {
+    info, err := os.Stat(path)
+    if os.IsNotExist(err) {
+        return false
+    }
+    return info.IsDir()
+}
 
-    if _, err := os.Stat(dir); os.IsNotExist(err) {
-        fmt.Printf("Directory %s does not exist.\n", dir)
+func main() {
+    dirPath := "/tmp/exampleDir"
+
+    if isDirExists(dirPath) {
+        fmt.Printf("Katalog %s istnieje.\n", dirPath)
     } else {
-        fmt.Printf("Directory %s exists.\n", dir)
+        fmt.Printf("Katalog %s nie istnieje.\n", dirPath)
     }
 }
 ```
+Przykładowe wyjście:
 
-Uruchomienie kodu z istniejącym katalogiem:
+```
+Katalog /tmp/exampleDir istnieje.
+```
+lub 
 
-```Go
-Directory /path/to/directory exists.
+```
+Katalog /tmp/exampleDir nie istnieje.
 ```
 
-Uruchomienie kodu z nieistniejącym katalogiem:
+W zależności od tego, czy `/tmp/exampleDir` istnieje.
 
-```Go
-Directory /path/to/directory does not exist.
-```
+## Dogłębna analiza
 
-## Deep Dive: (Dogłębna analiza)
+Funkcja `os.Stat` zwraca interfejs `FileInfo` oraz błąd. Jeśli błąd jest typu `os.ErrNotExist`, oznacza to, że katalog nie istnieje. Jeśli nie ma błędu, dalej sprawdzamy, czy ścieżka rzeczywiście odnosi się do katalogu, za pomocą metody `IsDir()` z interfejsu `FileInfo`.
 
-Metoda `os.Stat()` zwraca informacje o pliku/katalogu. Jeśli plik/katalog nie istnieje, error jest typu `*PathError`. `os.IsNotExist(err)` rozpoznaje takie błędy.
+Ta metoda wyróżnia się swoją prostotą i skutecznością, ale ważne jest, aby zauważyć, że sprawdzanie istnienia katalogu przed wykonaniem operacji takich jak tworzenie czy zapisywanie może prowadzić do warunków wyścigu w środowisku współbieżnym. W wielu scenariuszach, szczególnie w aplikacjach współbieżnych, bezpieczniej może być próbować wykonać operację (np. tworzenie pliku) i radzić sobie z błędami po fakcie, zamiast sprawdzać to na wstępie.
 
-Historycznie, sprawdzanie istnienia katalogu było różne w zależności od systemu operacyjnego i języka. W Go stawia się na prostotę i spójność międzyplatformową.
-
-Alternatywnie, `os.IsNotExist()` może być użyty z `os.Open()` – jeśli nie możesz otworzyć pliku/katalogu, prawdopodobnie nie istnieje.
-
-Ważny szczegół: `os.Stat()` może zwrócić inne błędy, nie tylko fakt, że ścieżka nie istnieje. Zawsze warto sprawdzić dokładny rodzaj błędu.
-
-## See Also: (Zobacz także)
-
-- Dokumentacja Go na temat pakietu `os`: https://pkg.go.dev/os
-- Więcej o obsłudze błędów w Go: https://blog.golang.org/error-handling-and-go
-- Artykuł na temat systemu plików i operacji na plikach w Go: https://golangbot.com/read-files/
-- Wzorce projektowe dla systemów plików w Go: https://www.oreilly.com/library/view/go-design-patterns/9781788390552/ch04s04.html
+Historycznie, to podejście było powszechne w programowaniu z powodu jego prostej logiki. Jednak ewolucja obliczeń wielowątkowych i współbieżnych wymaga przesunięcia w kierunku bardziej solidnego radzenia sobie z błędami i unikania sprawdzania warunków wstępnych tam, gdzie to możliwe. Nie umniejsza to jednak jego użyteczności dla prostszych, jednowątkowych aplikacji lub skryptów, gdzie takie warunki są mniej problematyczne.

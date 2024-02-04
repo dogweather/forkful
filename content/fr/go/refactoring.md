@@ -1,73 +1,127 @@
 ---
-title:                "Refactoring"
-date:                  2024-01-26T01:18:23.149834-07:00
+title:                "Refonte de Code"
+date:                  2024-02-03T18:06:57.774564-07:00
 model:                 gpt-4-0125-preview
-simple_title:         "Refactoring"
-
+simple_title:         "Refonte de Code"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/go/refactoring.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
-Le refactoring est le processus de restructuration du code informatique existant sans en changer le comportement externe. Les programmeurs le font pour améliorer les attributs non fonctionnels du logiciel, comme la lisibilité et la maintenabilité, ce qui peut rendre le code plus facile à comprendre, réduire la complexité et aider à repérer plus facilement les bogues.
+
+Le refactoring en programmation implique de restructurer le code informatique existant — changer le façonnage — sans modifier son comportement externe. Les programmeurs entreprennent ce processus pour améliorer la lisibilité du code, réduire sa complexité et améliorer sa maintenabilité, rendant finalement le logiciel plus facile à comprendre et à modifier.
 
 ## Comment faire :
-Plongeons dans un exemple simple de refactoring de code en Go. Nous prendrons un extrait qui calcule la moyenne d'un tableau de nombres et le refactoriserons pour plus de clarté et de réutilisabilité.
 
-Code original :
-```Go
+En Go, le refactoring peut aller de simples ajustements de code à des changements plus complexes. Commençons par un exemple de base : simplifier une fonction Go initiale pour une meilleure lisibilité et efficacité.
+
+**Avant le Refactoring :**
+
+```go
 package main
 
 import "fmt"
 
-func main() {
-    numbers := []float64{8, 12, 15, 10, 7, 14}
-    var sum float64
-    for _, num := range numbers {
-        sum += num
+func CalculatePrice(quantity int, price float64) float64 {
+    var total float64
+    if quantity > 0 {
+        total = float64(quantity) * price
+    } else {
+        total = 0
     }
-    average := sum / float64(len(numbers))
-    fmt.Println("Moyenne :", average)
+    return total
+}
+
+func main() {
+    fmt.Println(CalculatePrice(10, 5.99))  // Sortie : 59.9
 }
 ```
 
-Code refactorisé :
-```Go
+**Après le Refactoring :**
+
+```go
 package main
 
 import "fmt"
 
-// CalculateAverage prend un tableau de float64 et retourne la moyenne.
-func CalculateAverage(numbers []float64) float64 {
-    sum := 0.0
-    for _, num := range numbers {
-        sum += num
+func CalculatePrice(quantity int, price float64) float64 {
+    if quantity > 0 {
+        return float64(quantity) * price
     }
-    return sum / float64(len(numbers))
+    return 0
 }
 
 func main() {
-    numbers := []float64{8, 12, 15, 10, 7, 14}
-    average := CalculateAverage(numbers)
-    fmt.Println("Moyenne :", average)
+    fmt.Println(CalculatePrice(10, 5.99))  // Sortie : 59.9
 }
 ```
 
-Dans le code refactorisé, nous avons extrait la logique de calcul de la moyenne dans une fonction séparée nommée `CalculateAverage`. Cela rend la fonction `main` plus concise et la logique de calcul de la moyenne réutilisable et testable.
+Dans la version refactorisée, `else` est supprimé, ce qui simplifie le flux de la fonction sans affecter sa sortie — un exemple d'une technique de refactoring de base mais impactante en Go.
 
-## Exploration Approfondie
-Le refactoring de code n'est pas un concept moderne ; il précède l'utilisation généralisée de l'informatique. La pratique a probablement commencé dans le domaine du génie mécanique ou même avant. En logiciel, il est devenu plus formalisé avec l'avènement de la programmation orientée objet et de la programmation extrême (XP) dans les années 1990, notamment influencé par le livre séminal de Martin Fowler "Refactoring: Improving the Design of Existing Code."
+Pour un exemple plus avancé, considérez le refactoring des fonctions pour utiliser des interfaces pour une meilleure réutilisabilité et testabilité :
 
-Il existe de nombreuses techniques de refactoring, allant du simple renommage de variables pour plus de clarté à des modèles plus complexes comme l'extraction de méthodes ou de classes. L'essentiel est de faire de petits changements progressifs qui ne modifient pas la fonctionnalité du logiciel mais améliorent la structure interne.
+**Avant le Refactoring :**
 
-Lors de l'utilisation de Go, le refactoring peut être simple en raison de la simplicité du langage et de sa puissante bibliothèque standard. Cependant, il est toujours important d'avoir un bon ensemble de tests unitaires pour s'assurer que le refactoring n'introduise pas de bogues. Des outils comme `gorename` et `gofmt` aident à automatiser une partie du processus, et les IDE ont souvent un support de refactoring intégré.
+```go
+package main
 
-Outre le refactoring manuel, il existe quelques outils de refactoring de code automatisés disponibles pour Go, tels que les outils de refactoring de GoLand et Go Refactor. Bien qu'ils puissent accélérer le processus, ils ne remplacent pas la compréhension du code et la réalisation de changements considérés.
+import "fmt"
 
-## Voir Aussi
- - [Refactoring en Go : Simple est Beau](https://go.dev/blog/slices) (lien en anglais)
- - [Go Efficace : Refactoring avec Interfaces](https://go.dev/doc/effective_go#interfaces) (lien en anglais)
- - [Page de Refactoring de Martin Fowler](https://refactoring.com/) (lien en anglais)
- - [Outils de Refactoring GoLand](https://www.jetbrains.com/go/features/refactorings/) (lien en anglais)
+type Logger struct{}
+
+func (l Logger) Log(message string) {
+    fmt.Println("Log:", message)
+}
+
+func ProcessData(data string, logger Logger) {
+    // Imaginez un traitement de données ici
+    logger.Log("Données traitées")
+}
+
+func main() {
+    logger := Logger{}
+    ProcessData("données exemple", logger)
+}
+```
+
+**Après le Refactoring :**
+
+```go
+package main
+
+import "fmt"
+
+type Logger interface {
+    Log(message string)
+}
+
+type ConsoleLogger struct{}
+
+func (c ConsoleLogger) Log(message string) {
+    fmt.Println("Log:", message)
+}
+
+func ProcessData(data string, logger Logger) {
+    // Le traitement des données reste inchangé
+    logger.Log("Données traitées")
+}
+
+func main() {
+    logger := ConsoleLogger{}
+    ProcessData("données exemple", logger)
+}
+```
+
+Refactoriser pour utiliser une interface (`Logger`) au lieu d'un type concret (`ConsoleLogger`) améliore la flexibilité de la fonction et découple le traitement des données de l'implémentation spécifique du logging.
+
+## Plongée Profonde
+
+Le refactoring en Go doit équilibrer la simplicité (l'une des philosophies centrales de Go) avec la flexibilité nécessaire dans les grands projets logiciels. Étant donné l'approche minimaliste de Go en termes de fonctionnalités — sans génériques (jusqu'à récemment) et avec un fort accent sur la lisibilité — le langage guide naturellement les développeurs vers des structures de code plus simples et plus maintenables. Cependant, cela ne signifie pas que le code Go ne bénéficie pas du refactoring ; cela signifie que le refactoring doit toujours privilégier la clarté et la simplicité.
+
+Historiquement, l'absence de certaines fonctionnalités dans Go (par ex., les génériques avant Go 1.18) a conduit à des solutions créatives mais parfois alambiquées pour la réutilisation du code et la flexibilité, faisant du refactoring pour l'abstraction une pratique courante. Avec l'introduction des génériques dans Go 1.18, les développeurs de Go refactorisent maintenant le code hérité pour tirer parti de cette fonctionnalité pour une meilleure sécurité de type et réutilisation du code, démontrant la nature évolutive des pratiques de refactoring en Go.
+
+Néanmoins, l'ensemble d'outils de Go, incluant `gofmt` pour le formatage du code et `go vet` pour l'identification des constructions suspectes, supporte le maintien de bases de code propres, réduisant le besoin d'un refactoring extensif. Bien que le refactoring soit un outil inestimable dans l'arsenal d'un programmeur Go, une utilisation judicieuse des fonctionnalités du langage Go et des outils dès le départ peut aider à minimiser le besoin d'un refactoring complexe plus tard.

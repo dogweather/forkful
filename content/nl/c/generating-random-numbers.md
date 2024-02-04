@@ -1,86 +1,59 @@
 ---
 title:                "Willekeurige getallen genereren"
-date:                  2024-01-28T22:01:04.124285-07:00
+date:                  2024-02-03T17:57:15.915325-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Willekeurige getallen genereren"
-
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/c/generating-random-numbers.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Wat & Waarom?
 
-Het genereren van willekeurige getallen in C houdt in dat je reeksen getallen creëert die geen enkel herkenbaar patroon hebben, waarmee het concept van willekeurigheid wordt nagebootst. Programmeurs gebruiken willekeurige getallen voor een veelvoud aan doeleinden, inclusief het simuleren van data, cryptografische toepassingen en spelontwikkeling, wat het een essentieel aspect van programmeren maakt.
+Het genereren van willekeurige getallen in C houdt in dat waarden worden gecreëerd die onvoorspelbaar zijn en een specifieke verdeling volgen, zoals uniform of normaal. Deze mogelijkheid is cruciaal voor toepassingen variërend van simulaties en spellen tot cryptografische operaties, waar onvoorspelbaarheid of de simulatie van echte wereld-aleatoriek essentieel is.
 
 ## Hoe:
 
-Om willekeurige getallen te genereren in C, gebruik je doorgaans de `rand()` functie die je in `stdlib.h` vindt. Het is echter cruciaal om de generator voor willekeurige getallen te zaaien om variabiliteit in de gegenereerde getallen over verschillende programma-uitvoeringen heen te garanderen. De `srand()` functie, gezaaid met een waarde, vaak de huidige tijd, faciliteert dit.
+In C kunnen willekeurige getallen gegenereerd worden met behulp van de `rand()` functie, die deel uitmaakt van de C-standaardbibliotheek `<stdlib.h>`. Standaard produceert `rand()` pseudo-willekeurige getallen in het bereik van 0 tot `RAND_MAX` (een constante gedefinieerd in `<stdlib.h>`). Voor meer controle over het bereik, kunnen programmeurs de uitvoer van `rand()` manipuleren.
 
-Hier is een simpel voorbeeld van het genereren van een willekeurig getal tussen 0 en 99:
+Hier is een eenvoudig voorbeeld van het genereren van een willekeurig getal tussen 0 en 99:
 
 ```c
 #include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
+#include <stdlib.h> // Voor rand() en srand()
+#include <time.h>   // Voor time()
 
 int main() {
-    // Zaai de generator voor willekeurige getallen
+    // Zaai de pseudo-willekeurige getallengenerator
     srand((unsigned) time(NULL));
 
     // Genereer een willekeurig getal tussen 0 en 99
     int randomNumber = rand() % 100;
 
-    // Print het willekeurige getal
-    printf("Willekeurig getal: %d\n", randomNumber);
+    printf("Willekeurig Getal: %d\n", randomNumber);
 
     return 0;
 }
 ```
 
-Voorbeeld van uitvoer:
+Voorbeelduitvoer kan elke keer dat je dit programma draait variëren:
 
 ```
-Willekeurig getal: 42
+Willekeurig Getal: 42
 ```
+Om willekeurige getallen binnen een ander bereik te genereren, kun je de modulo-operator (`%`) dienovereenkomstig aanpassen. Bijvoorbeeld, `rand() % 10` genereert getallen van 0 tot 9.
 
-Het is belangrijk om op te merken dat elke uitvoering van dit programma een nieuw willekeurig getal zal produceren, dankzij het zaaien met de huidige tijd.
+Het is belangrijk op te merken dat het zaaien van de pseudo-willekeurige getallengenerator (`srand()` oproep) met de huidige tijd (`time(NULL)`) zorgt voor verschillende reeksen van willekeurige getallen bij verschillende uitvoeringen van het programma. Zonder te zaaien (`srand()`), zou `rand()` elke keer dat het programma wordt uitgevoerd dezelfde reeks getallen produceren.
 
-## Diepgaande Duik
+## Diepere Duik
 
-De traditionele manier van het genereren van willekeurige getallen in C, met `rand()` en `srand()`, is niet echt willekeurig. Het is pseudowillekeurig. Dit is prima voor veel toepassingen, maar schiet tekort in situaties die een hoge mate van willekeurigheid vereisen, zoals bij serieuze cryptografische gebruiken. De door `rand()` gegenereerde reeks wordt volledig bepaald door het zaad dat aan `srand()` is gegeven. Dus, als het zaad bekend is, kan de reeks worden voorspeld, waardoor de willekeurigheid vermindert.
+De `rand()` functie en de bijbehorende zaai-functie `srand()` maken al decennia deel uit van de C-standaardbibliotheek. Ze zijn gebaseerd op algoritmen die reeksen van getallen genereren die alleen schijnbaar willekeurig zijn - vandaar de term "pseudo-willekeurig". Het onderliggende algoritme in `rand()` is meestal een lineaire congruentiegenerator (LCG).
 
-Historisch gezien is de `rand()` functie bekritiseerd vanwege zijn lage kwaliteit van willekeurigheid en beperkt bereik. Moderne alternatieven omvatten het gebruik van apparaatspecifieke API's of externe bibliotheken die beter echte willekeur benaderen of, op UNIX-achtige systemen, het lezen van `/dev/random` of `/dev/urandom` voor cryptografische doeleinden.
+Hoewel `rand()` en `srand()` voldoende zijn voor veel toepassingen, hebben ze bekende beperkingen, met name wat betreft de kwaliteit van de willekeurigheid en mogelijke voorspelbaarheid. Voor toepassingen die hoogwaardige willekeurigheid vereisen, zoals cryptografische operaties, moeten alternatieven zoals `/dev/random` of `/dev/urandom` (op Unix-achtige systemen), of API's aangeboden door cryptografische bibliotheken, worden overwogen.
 
-Bijvoorbeeld, het gebruik van `/dev/urandom` in C:
+Met de introductie van C11, heeft de ISO C-standaard een nieuwe header opgenomen, `<stdatomic.h>`, die een verfijndere controle biedt voor gelijktijdige operaties, maar niet direct betrekking heeft op willekeurigheid. Voor echte willekeurigheid in C, wenden ontwikkelaars zich vaak tot platformspecifieke of externe bibliotheken die betere algoritmen bieden of gebruikmaken van hardware-entropiebronnen.
 
-```c
-#include <stdio.h>
-#include <stdlib.h>
-
-int main() {
-    FILE *fp;
-    unsigned int randomNumber;
-
-    // Open /dev/urandom om te lezen
-    fp = fopen("/dev/urandom", "r");
-
-    // Lees een willekeurig getal
-    fread(&randomNumber, sizeof(randomNumber), 1, fp);
-
-    // Print het willekeurige getal
-    printf("Willekeurig getal: %u\n", randomNumber);
-
-    // Sluit het bestand
-    fclose(fp);
-
-    return 0;
-}
-```
-
-Deze methode leest rechtstreeks uit de entropiepool van het systeem, en biedt een hogere kwaliteit van willekeurigheid die geschikt is voor gevoeliger toepassingen. Deze aanpak kan echter draagbaarheidsproblemen hebben op verschillende platforms, waardoor het minder universeel is dan het gebruik van `rand()`.
-
-Ongeacht de methode, is het begrijpen van de aard van willekeurigheid en de implementatie ervan in C cruciaal voor het ontwikkelen van effectieve, veilige en boeiende toepassingen.
+Onthoud, hoewel `rand()` dient als een eenvoudig en toegankelijk middel om pseudo-willekeurige getallen te genereren, zijn de gebruiksmogelijkheden in moderne toepassingen beperkt door de kwaliteit en voorspelbaarheid van de uitvoer. Wanneer robuustere oplossingen nodig zijn, vooral voor veiligheidsbewuste toepassingen, wordt sterk aanbevolen om verder te kijken dan de standaardbibliotheek.

@@ -1,62 +1,71 @@
 ---
 title:                "Utilisation des expressions régulières"
-date:                  2024-01-19
+date:                  2024-02-03T18:10:54.453417-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Utilisation des expressions régulières"
-
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/c/using-regular-expressions.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Quoi et Pourquoi ?)
-Les expressions régulières sont des séquences de caractères formant un motif de recherche. Les programmeurs les utilisent pour trouver ou remplacer du texte selon des règles définies, ou pour valider des formats de données (ex. emails).
+## Quoi & Pourquoi ?
 
-## How to: (Comment faire : )
-En C, l’utilisation des expressions régulières passe par la bibliothèque `<regex.h>`. Voici un exemple de comment vérifier un format d'email :
+Les expressions régulières (regex) offrent un moyen de rechercher, de correspondre et de manipuler des chaînes de caractères à l'aide de motifs définis. Les programmeurs les utilisent abondamment pour des tâches telles que la validation des entrées, l'analyse de données textuelles et la recherche de motifs dans de grands fichiers texte, ce qui en fait un outil puissant dans n'importe quel langage, y compris le C.
 
-```C
+## Comment faire :
+
+Pour utiliser les expressions régulières en C, vous travaillerez principalement avec la bibliothèque regex POSIX (`<regex.h>`). Cet exemple montre une correspondance de motifs basique :
+
+```c
 #include <stdio.h>
+#include <stdlib.h>
 #include <regex.h>
 
-int main() {
+int main(){
     regex_t regex;
-    int ret;
-    char *email = "contact@example.com";
+    int return_value;
+    char *pattern = "^a[[:alnum:]]"; // Motif pour correspondre aux chaînes commençant par 'a' suivi de caractères alphanumériques
+    char *test_string = "apple123";
 
-    // Compile l'expression régulière
-    ret = regcomp(&regex, "^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,}$", REG_ICASE);
-    if (ret) {
-        fprintf(stderr, "Compilation de l'expression régulière échouée\n");
-        return 1;
+    // Compiler l'expression régulière
+    return_value = regcomp(&regex, pattern, REG_EXTENDED);
+    if (return_value) {
+        printf("Impossible de compiler la regex\n");
+        exit(1);
     }
 
-    // Exécute l'expression régulière
-    ret = regexec(&regex, email, 0, NULL, 0);
-    if (!ret) {
-        puts("L'email est valide.");
-    } else if (ret == REG_NOMATCH) {
-        puts("L'email n'est pas valide.");
+    // Exécuter l'expression régulière
+    return_value = regexec(&regex, test_string, 0, NULL, 0);
+    if (!return_value) {
+        printf("Correspondance trouvée\n");
+    } else if (return_value == REG_NOMATCH) {
+        printf("Aucune correspondance trouvée\n");
     } else {
-        char message[100];
-        regerror(ret, &regex, message, sizeof(message));
-        fprintf(stderr, "Erreur d'expression régulière : %s\n", message);
-        return 1;
+        printf("La correspondance regex a échoué\n");
+        exit(1);
     }
 
-    // Libère la mémoire allouée à l'expression régulière compilée
+    // Libérer la mémoire allouée utilisée par la regex
     regfree(&regex);
 
     return 0;
 }
 ```
 
-Sortie attendue : `L'email est valide.`
+Exemple de sortie pour une chaîne correspondante ("apple123") :
+```
+Correspondance trouvée
+```
+Et pour une chaîne non correspondante ("banana") :
+```
+Aucune correspondance trouvée
+```
 
-## Deep Dive (Plongée en profondeur)
-Historiquement, les expressions régulières viennent de la théorie formelle des langages. Bien avant C, elles étaient utilisées dans des éditeurs de texte comme `sed` et `awk`. En C, `<regex.h>` n'est pas la seule option ; il y a aussi des bibliothèques comme PCRE (Perl Compatible Regular Expressions). Elles peuvent offrir plus de fonctionnalités mais ne sont pas standard. Les implémentations standardisées comme POSIX peuvent varier en performance et en compatibilité selon les systèmes.
+## Plongée profonde :
 
-## See Also (Voir aussi)
-- Documentation sur POSIX regex (expressions régulières) : https://man7.org/linux/man-pages/man7/regex.7.html
-- PCRE - Perl Compatible Regular Expressions : https://www.pcre.org/
-- Article Wiki sur les expressions régulières : https://fr.wikipedia.org/wiki/Expression_r%C3%A9guli%C3%A8re
+Les expressions régulières en C, en tant que partie de la norme POSIX, offrent une manière robuste d'effectuer des correspondances et des manipulations de chaînes. Cependant, l'API de la bibliothèque regex POSIX en C est considérée comme plus encombrante que celles trouvées dans des langues conçues avec des fonctionnalités de manipulation de chaînes de première classe comme Python ou Perl. La syntaxe pour les motifs est similaire à travers les langages, mais le C nécessite une gestion manuelle de la mémoire et plus de code passe-partout pour préparer, exécuter et nettoyer après l'utilisation des motifs regex.
+
+Malgré ces défis, apprendre à utiliser les regex en C est gratifiant car cela approfondit la compréhension des concepts de programmation de bas niveau. De plus, cela ouvre des possibilités pour la programmation en C dans des domaines tels que le traitement de texte et l'extraction de données où les regex sont indispensables. Pour des motifs plus complexes ou des opérations regex, des alternatives telles que la bibliothèque PCRE (Perl Compatible Regular Expressions) pourraient offrir une interface plus riche en fonctionnalités et quelque peu plus facile, bien qu'elle nécessite l'intégration d'une bibliothèque externe dans votre projet C.

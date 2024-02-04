@@ -1,48 +1,86 @@
 ---
-title:                "Virheenjäljitystulosteiden tulostaminen"
-date:                  2024-01-20T17:52:39.867277-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Virheenjäljitystulosteiden tulostaminen"
-
+title:                "Tulostetaan virheenjäljitystietoja"
+date:                  2024-02-03T18:05:24.391432-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Tulostetaan virheenjäljitystietoja"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/go/printing-debug-output.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? / Mitä & Miksi?
-Tulostaminen on tapa nähdä ohjelman työstämää dataa livenä. Ohjelmoijat käyttävät tulostusta virheiden etsimiseen ja koodin toiminnan varmistamiseen.
+## Mikä & Miksi?
 
-## How to / Kuinka tehdä:
-```Go
+Ohjelmoinnissa "virhetulostuksen tulostaminen" käsittää yksityiskohtaisten informatiivisten viestien tuottamisen, jotka auttavat kehittäjiä ymmärtämään ohjeman suoritusvirran tai paikallistamaan ongelmia. Ohjelmoijat tekevät tämän diagnosoidakseen ja ratkaistakseen ongelmia tehokkaammin, mikä tekee siitä olennaisen taidon minkä tahansa ohjelmointityökalupakin osana, mukaan lukien Go.
+
+## Kuinka toimia:
+
+Go:ssa voit käyttää standardia `fmt`-pakettia virhetulostuksen tulostamiseen konsoliin. `fmt`-paketti tarjoaa useita funktioita, kuten `Println`, `Printf` ja `Print`, jotka vastaavat erilaisiin muotoilutarpeisiin.
+
+```go
 package main
 
 import (
 	"fmt"
-	"log"
 )
 
 func main() {
-	fmt.Println("Hello, Finland!") // Perustulostus
+	// Yksinkertainen viesti
+	fmt.Println("Debug: Entering main function")
 
-	debugMsg := "Debug-viesti näkyy tässä."
-	fmt.Println(debugMsg) // Muuttujan tulostus
+	var name = "Gopher"
+	// Muotoiltu viesti
+	fmt.Printf("Hello, %s! This is a debug message.\n", name)
 
-	log.Println("Tämä on logitulostus.") // Logitulostus, sisältää ajan
+	// Käyttäen fmt.Print
+	debugMsg := "Tämä on toinen debug-viesti."
+	fmt.Print("Debug: ", debugMsg, "\n")
 }
 ```
-Käynnistäessäsi ohjelman, tulostus näyttää seuraavalta:
+
+Esimerkkitulo:
 ```
-Hello, Finland!
-Debug-viesti näkyy tässä.
-2009/11/10 23:00:00 Tämä on logitulostus.
+Debug: Entering main function
+Hello, Gopher! This is a debug message.
+Debug: Tämä on toinen debug-viesti.
 ```
 
-## Deep Dive / Syvä sukellus
-Vianjäljitys on vanha konsti; sen juuret ovat aikojen alussa. Debug-tulosteet ovat helppoja, nopeita ja toimivia, mutta raskas virheenjäljitys voi vaatia lisätyökaluja, kuten `gdb` Go:lle. Go:ssa `fmt` ja `log` pakkaukset tarjoavat helpon tavan tulostaa. `fmt` tulostaa suoraan, kun taas `log` lisää aikaleiman ja mahdollisesti tiedostotiedot, mikä on hyödyllistä suuremmissa projekteissa.
+Monimutkaisempaa virheenjäljitystä varten Go:n `log`-pakettia voidaan käyttää sisällyttämään aikaleimoja ja kohdistamaan tuloste eri kohteisiin, ei pelkästään konsoliin.
 
-## See Also / Katso Myös:
-- Go:n dokumentaatio fmt-paketista: https://pkg.go.dev/fmt
-- Go:n dokumentaatio log-paketista: https://pkg.go.dev/log
-- Blogikirjoitus Go:n vianjäljityksestä: https://blog.golang.org/debugging
-- Go:n virallinen vianjäljitystyökalu: https://golang.org/doc/gdb
+```go
+package main
+
+import (
+	"log"
+	"os"
+)
+
+func main() {
+	// Luodaan lokitiedosto
+	file, err := os.OpenFile("debug.log", os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0666)
+	if err != nil {
+		log.Fatal("Error creating log file:", err)
+	}
+	defer file.Close()
+
+	// Asetetaan lokin tuloste tiedostoon
+	log.SetOutput(file)
+
+	log.Println("Tämä on debug-viesti aikaleimalla.")
+}
+```
+
+Viesti `debug.log`-tiedostossa näyttäisi tältä:
+```
+2023/04/01 15:00:00 Tämä on debug-viesti aikaleimalla.
+```
+
+## Syvä sukellus
+
+Virhetulostuksen tulostaminen on ollut pitkään käytössä tietokoneohjelmoinnissa, ja sen toteutus vaihtelee eri kielissä. Go:ssa standardikirjaston `fmt` ja `log` -paketit tarjoavat suoraviivaisia ja monipuolisia vaihtoehtoja. Vaikka `fmt`-paketti on riittävä perusvirheenkorjauksen tarpeisiin, `log`-paketti tarjoaa lisätoiminnallisuuksia kuten lokitustasot ja määriteltävät tulostekohteet.
+
+Lisäksi, kun sovellukset muuttuvat monimutkaisemmiksi, lokituskehykset kuten `zap` ja `logrus` voivat tarjota kehittyneempiä ominaisuuksia kuten rakenteellinen lokitus ja parempi suorituskyky. Nämä kolmannen osapuolen paketit antavat kehittäjille joustavuutta räätälöidä lokitusstrategiansa heidän erityistarpeidensa mukaisesti.
+
+On kuitenkin olennaista löytää oikea tasapaino lokituksessa. Liiallinen virhetulostus voi sotkea lokit ja vaikeuttaa hyödyllisen tiedon löytämistä. Kehittäjien tulisi harkita eri lokitustasojen käyttöä (esim. debug, info, warn, error) viestien tärkeyden kategorisoimiseksi, mikä tekee lokeista helpommin navigoitavia ja merkityksellisempiä.

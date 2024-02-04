@@ -1,72 +1,69 @@
 ---
 title:                "HTML Parsen"
-date:                  2024-01-28T22:04:08.495825-07:00
+date:                  2024-02-03T17:59:41.083160-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "HTML Parsen"
-
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/c/parsing-html.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Wat & Waarom?
 
-HTML parsen betekent het lezen en begrijpen van de structuur van HTML-documenten door een programma. Programmeurs doen dit om content te manipuleren, extraheren of controleren, vaak tijdens het scrapen van websites of het verwerken van webgegevens.
+Het parsen van HTML in C omvat het analyseren van HTML-documenten om gegevens, structuur of specifieke onderdelen efficiënt te extraheren, vaak als voorloper van datamining of webscraping. Programmeurs doen dit om de automatische extractie van informatie mogelijk te maken, waardoor webinhoud programmatisch verwerkt of hergebruikt kan worden.
 
 ## Hoe:
 
-Oké, laten we naar de code gaan. C heeft geen ingebouwde ondersteuning voor het parsen van HTML, dus we gebruiken een bibliotheek genaamd Gumbo, dit is een zuivere C HTML5-parser. Hier is een snel voorbeeld:
+HTML parsen kan ontmoedigend lijken door de complexiteit van HTML en de frequente afwijkingen van schone, goed gevormde structuren. Echter, het gebruik van een bibliotheek zoals `libxml2`, specifiek zijn HTML-parsingmodule, vereenvoudigt het proces. Dit voorbeeld demonstreert hoe je `libxml2` kunt gebruiken om HTML te parsen en informatie te extraheren.
 
-```C
+Zorg eerst dat `libxml2` is geïnstalleerd in je omgeving. In veel Linux-distributies kun je het via de pakketbeheerder installeren. Bijvoorbeeld, op Ubuntu:
+
+```bash
+sudo apt-get install libxml2 libxml2-dev
+```
+
+Nu gaan we een eenvoudig C-programma schrijven dat `libxml2` gebruikt om een HTML-string te parsen en de tekst binnen een specifiek element af te drukken:
+
+```c
 #include <stdio.h>
-#include <gumbo.h>
+#include <libxml/HTMLparser.h>
 
-void zoek_naar_links(GumboNode* node) {
-    if (node->type != GUMBO_NODE_ELEMENT) {
-        return;
+void parseHTML(const char *html) {
+    htmlDocPtr doc = htmlReadDoc((const xmlChar *)html, NULL, NULL, HTML_PARSE_RECOVER | HTML_PARSE_NOERROR | HTML_PARSE_NOWARNING);
+    
+    // Uitgaand van het zoeken naar inhoud binnen <p> tags
+    xmlNode *root_element = xmlDocGetRootElement(doc);
+    for (xmlNode *current_node = root_element; current_node; current_node = current_node->next) {
+        if (current_node->type == XML_ELEMENT_NODE && strcmp((const char *)current_node->name, "p") == 0) {
+            printf("Gevonden paragraaf: %s\n", xmlNodeGetContent(current_node));
+        }
     }
-    GumboAttribute* href;
-    if (node->v.element.tag == GUMBO_TAG_A &&
-       (href = gumbo_get_attribute(&node->v.element.attributes, "href"))) {
-        printf("Link gevonden: %s\n", href->value);
-    }
-    GumboVector* kinderen = &node->v.element.children;
-    for (unsigned int i = 0; i < kinderen->length; ++i) {
-        zoek_naar_links(kinderen->data[i]);
-    }
+    
+    xmlFreeDoc(doc);
+    xmlCleanupParser();
 }
 
 int main() {
-    const char* html = "<html><body><a href='https://example.com'>Voorbeeld</a></body></html>";
-    GumboOutput* output = gumbo_parse(html);
-    zoek_naar_links(output->root);
-    gumbo_destroy_output(&kGumboDefaultOptions, output);
+    const char *html = "<html><body><p>Hallo, wereld!</p></body></html>";
+    parseHTML(html);
     return 0;
 }
 ```
 
 Voorbeelduitvoer:
-
 ```
-Link gevonden: https://example.com
+Gevonden paragraaf: Hallo, wereld!
 ```
 
-Dit voorbeeld zoekt naar 'a' tags en print de href-attributen uit. Vergeet niet te linken tegen gumbo (`gcc -o voorbeeld voorbeeld.c -lgumbo`) en eerst de bibliotheek te installeren.
+Dit voorbeeld richt zich op het extraheren van tekst binnen paragraaftags, maar `libxml2` biedt robuuste ondersteuning voor het navigeren door en opvragen van verschillende delen van een HTML-document.
 
-## Diepgaande Duik
+## Diepere Duik
 
-Het verhaal van HTML-parsing in C is een beetje ruw. Er is geen one-size-fits-all oplossing omdat HTML complex en meestal niet zo consistent is. Gumbo, die we hebben gebruikt, werd ontwikkeld door Google als onderdeel van hun open-sourceprojecten. Het is ontworpen om de rommeligheid van webpagina's in de echte wereld te tolereren.
+Het parsen van HTML in C gaat terug tot de vroege dagen van webontwikkeling. Aanvankelijk moesten ontwikkelaars vertrouwen op aangepaste, vaak rudimentaire parsoplossingen, vanwege het gebrek aan gestandaardiseerde bibliotheken en de chaotische staat van HTML op het web. De introductie van bibliotheken zoals `libxml2` markeerde een significante vooruitgang, en bood meer gestandaardiseerde, efficiënte en veerkrachtige benaderingen voor het parsen van HTML.
 
-Alternatieven zijn onder meer libxml2 met een HTML-parsermodus, hoewel het historisch meer op XML-parsing is gericht. Een ander is htmlcxx, wat eigenlijk C++ is, maar laten we niet afdwalen.
+Ondanks de ongeëvenaarde snelheid en controle van C, is het vermeldenswaard dat C niet altijd het beste gereedschap is voor het parsen van HTML, vooral voor taken die snelle ontwikkelingscycli vereisen of te maken hebben met uitzonderlijk slecht gevormde HTML. Talen met high-level HTML-parsingbibliotheken, zoals Python met Beautiful Soup, bieden meer abstracte, gebruiksvriendelijke interfaces ten koste van een beetje prestatie.
 
-Wat betreft prestaties, kunnen C-parsers razendsnel zijn maar bieden normaal gesproken niet het gebruiksgemak dat Python-bibliotheken doen. Als je C gebruikt voor HTML-parsing, ben je waarschijnlijk op zoek naar prestaties, of je integreert het in een bestaande C-codebasis. Het kan lastig zijn, aangezien de meeste C-bibliotheken low-level en meer hands-on zijn dan Python of JavaScript-parsers.
-
-## Zie Ook
-
-- Gumbo Parser: [https://github.com/google/gumbo-parser](https://github.com/google/gumbo-parser)
-- libxml2 HTML parser: [http://xmlsoft.org/html/libxml-HTMLparser.html](http://xmlsoft.org/html/libxml-HTMLparser.html)
-- htmlcxx: [http://htmlcxx.sourceforge.net/](http://htmlcxx.sourceforge.net/) 
-- Voor een zachte start, overweeg een tutorial over webscrapen met Python met behulp van Beautiful Soup of Python's `html.parser` als een eenvoudigere introductie tot het onderwerp.
+Desalniettemin, voor prestatie-kritieke applicaties, of wanneer men werkt in een omgeving met beperkte middelen, blijft het parsen van HTML in C een haalbare en vaak voorkeursmethode. De sleutel is het benutten van robuuste bibliotheken zoals `libxml2` om de complexiteiten van HTML aan te pakken, waardoor ontwikkelaars zich kunnen concentreren op het extraheren van de gegevens die ze nodig hebben zonder te verzanden in de details van de parsemechanica.

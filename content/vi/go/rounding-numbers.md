@@ -1,22 +1,27 @@
 ---
 title:                "Làm tròn số"
-date:                  2024-01-28T22:07:23.230027-07:00
+date:                  2024-02-03T18:08:18.118935-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Làm tròn số"
-
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/go/rounding-numbers.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Cái gì & Tại sao?
-Làm tròn số có nghĩa là điều chỉnh một số về gần giá trị nguyên hoặc vị trí thập phân được chỉ định nhất. Việc này được thực hiện để đơn giản hóa giá trị, làm cho chúng dễ đọc hơn, hoặc phù hợp với một số ràng buộc nhất định, như khi làm việc với tiền tệ.
+## Gì và Tại sao?
+
+Làm tròn số là việc điều chỉnh giá trị của một số đến số nguyên gần nhất hoặc đến một số lượng chữ số thập phân cụ thể. Lập trình viên thực hiện điều này vì nhiều lý do như cải thiện khả năng đọc, đơn giản hóa các phép tính, hoặc đáp ứng các yêu cầu về độ chính xác cụ thể của lĩnh vực.
 
 ## Làm thế nào:
-Gói `math` của Go là bạn đồng hành của bạn cho việc làm tròn. Sử dụng `math.Round`, `math.Floor`, và `math.Ceil` để đơn giản hóa:
+
+Trong Go, không có hàm đã xây dựng sẵn nào để làm tròn số đến một số lượng chữ số thập phân cụ thể trong gói math. Tuy nhiên, bạn có thể đạt được việc làm tròn thông qua sự kết hợp của các hàm cho số nguyên hoặc triển khai một hàm tùy chỉnh cho số thập phân.
+
+### Làm tròn đến số nguyên gần nhất:
+
+Để làm tròn đến số nguyên gần nhất, bạn có thể sử dụng hàm `math.Floor()` với việc cộng thêm 0.5 cho số dương, và `math.Ceil()` trừ đi 0.5 cho số âm, tùy thuộc vào hướng bạn muốn làm tròn.
 
 ```go
 package main
@@ -27,47 +32,40 @@ import (
 )
 
 func main() {
-	number := 3.14159
-	fmt.Println("Round:", math.Round(number))  // Làm tròn về số nguyên gần nhất
-	fmt.Println("Floor:", math.Floor(number)) // Làm tròn xuống
-	fmt.Println("Ceil: ", math.Ceil(number))  // Làm tròn lên
+	fmt.Println(math.Floor(3.75 + 0.5))  // Kết quả: 4
+	fmt.Println(math.Ceil(-3.75 - 0.5)) // Kết quả: -4
 }
 ```
 
-Kết quả mẫu:
-```
-Round: 3
-Floor: 3
-Ceil: 4
-```
+### Làm tròn đến một số chữ số thập phân cụ thể:
 
-Đối với vị trí thập phân cụ thể, nhân, làm tròn, sau đó chia:
+Để làm tròn đến số chữ số thập phân cụ thể, một hàm tùy chỉnh có thể được sử dụng, nơi bạn nhân số đó với 10^n (nơi n là số chữ số thập phân), làm tròn đến số nguyên gần nhất như trước, và sau đó chia cho 10^n.
 
 ```go
-func roundToDecimalPlace(number float64, decimalPlaces int) float64 {
-	shift := math.Pow(10, float64(decimalPlaces))
+package main
+
+import (
+	"fmt"
+	"math"
+)
+
+func roundToDecimalPlace(number float64, places int) float64 {
+	shift := math.Pow(10, float64(places))
 	return math.Round(number*shift) / shift
 }
 
 func main() {
-	number := 3.14159
-	fmt.Println("Làm tròn tới 2 vị trí thập phân:", roundToDecimalPlace(number, 2))
+	fmt.Println(roundToDecimalPlace(3.14159, 2)) // Kết quả: 3.14
+	fmt.Println(roundToDecimalPlace(-3.14159, 3)) // Kết quả: -3.142
 }
 ```
 
-Kết quả mẫu:
-```
-Làm tròn tới 2 vị trí thập phân: 3.14
-```
+## Sâu xa hơn
 
-## Tìm hiểu sâu
-Việc làm tròn số không phải là mới—nó đã có từ thời cổ đại, luôn hướng tới sự đơn giản. Phương thức `math.Round` trong Go sử dụng [làm tròn của ngân hàng](https://en.wikipedia.org/wiki/Rounding#Round_half_to_even), có nghĩa là 0,5 được làm tròn về số chẵn gần nhất, giảm thiểu sự thiên vị có thể ảnh hưởng đến tổng.
+Làm tròn số là một thao tác cơ bản trong lập trình máy tính, liên quan đến thách thức lịch sử về việc biểu diễn số thực trong hệ nhị phân. Nhu cầu làm tròn phát sinh do nhiều số thực không thể được biểu diễn một cách chính xác trong nhị phân, dẫn đến lỗi xấp xỉ.
 
-Số dấu phẩy động có thể gây khó khăn do biểu diễn nhị phân của chúng, có thể không chính xác biểu diễn tất cả các số thập phân. Tuy nhiên, cách tiếp cận của Go, phần lớn thời gian, vẫn duy trì hành vi mong đợi.
+Trong Go, cách tiếp cận để làm tròn phần nào là thủ công so với những ngôn ngữ cung cấp hàm làm tròn được xây dựng sẵn đến chữ số thập phân cụ thể. Tuy nhiên, gói `math` của thư viện chuẩn Go cung cấp các khối xây dựng cơ bản (như `math.Floor` và `math.Ceil`) để xây dựng bất kỳ cơ chế làm tròn nào cần thiết cho ứng dụng.
 
-Các phương thức làm tròn khác tồn tại, như "làm tròn đến một nửa lên" hoặc "làm tròn một nửa ra xa từ số không", nhưng thư viện chuẩn của Go là những gì sẵn có ngay. Đối với nhu cầu phức tạp hơn, bạn có thể cần đến một thư viện bên thứ ba hoặc tự mình tạo ra giải pháp.
+Cách tiếp cận thủ công này, mặc dù có vẻ phức tạp hơn, mang lại cho lập trình viên quyền kiểm soát tốt hơn về cách làm tròn số, đáp ứng nhu cầu về độ chính xác và độ chính xác cho các ứng dụng khác nhau. Các lựa chọn khác như thư viện bên thứ ba hoặc thiết kế hàm làm tròn tùy chỉnh có thể cung cấp các giải pháp đơn giản hơn khi đối mặt với số phức hoặc cần thực hiện các hoạt động toán học tiên tiến hơn không được bao phủ bởi thư viện chuẩn.
 
-## Xem thêm
-- Gói `math` của Go: [https://pkg.go.dev/math](https://pkg.go.dev/math)
-- Tiêu chuẩn IEEE 754 cho số học dấu phẩy động (cơ sở của Go trong xử lý số dấu phẩy động): [https://ieeexplore.ieee.org/document/4610935](https://ieeexplore.ieee.org/document/4610935)
-- Hiểu về số dấu phẩy động: ["Những điều mọi Khoa học Máy tính cần biết về Số học Dấu phẩy Động"](https://docs.oracle.com/cd/E19957-01/806-3568/ncg_goldberg.html)
+Kết luận, mặc dù thư viện chuẩn của Go có thể không cung cấp chức năng làm tròn số đến chữ số thập phân trực tiếp, bộ sưu tập hàm toán học toàn diện của nó cho phép các nhà phát triển triển khai giải pháp làm tròn mạnh mẽ phù hợp với nhu cầu cụ thể của họ.

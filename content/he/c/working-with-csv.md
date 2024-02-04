@@ -1,75 +1,103 @@
 ---
-title:                "עבודה עם קבצי CSV"
-date:                  2024-01-19
-simple_title:         "עבודה עם קבצי CSV"
-
+title:                "עבודה עם קובצי CSV"
+date:                  2024-02-03T18:12:28.043608-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "עבודה עם קובצי CSV"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/c/working-with-csv.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-מה זה עבודה עם CSV, ולמה זה חשוב? CSV (ערכים מופרדים פסיקים) הוא פורמט פשוט לאחסון נתונים טבלאיים. מתכנתים משתמשים בו כי הוא נפוץ, קל לקריאה וניתן לייבוא/ייצוא ממערכות רבות.
+## מה ולמה?
 
-## How to:
-נתחיל עם דוגמה של קריאה וכתיבה לקובץ CSV בשפת C:
+בעולם התכנות, העבודה עם קבצי CSV (ערכים מופרדים בפסיק) כוללת קריאה מתוך הקבצים וכתיבה אליהם של נתונים בקובצי טקסט המאורגנים לפי שורות, כאשר כל שורה מייצגת רשומה ושדות הרשומה מופרדים בפסיקים. מתכנתים מתעסקים בקבצי CSV בשל נוחות הייבוא/ייצוא של נתונים בין מערכות שונות, בזכות התמיכה הרחבה שלהם והפשטות שלהם לאחסון נתונים טבלאיים.
 
-```C
+## איך לעשות:
+
+### קריאה מקבצי CSV
+
+לקרוא קובץ CSV ב-C, אנו משתמשים בפונקציות קלט/פלט קובצים סטנדרטיות יחד עם פונקציות עיבוד מחרוזות כדי לנתח כל שורה. למטה דוגמה בסיסית של קריאת קובץ CSV והדפסת שדותיו של כל שורה לקונסול.
+
+```c
 #include <stdio.h>
-#include <stdlib.h>
-
-// פונקציה לקריאת CSV
-void readCSV(const char* filename) {
-    FILE *file = fopen(filename, "r");
-    char buffer[1024];
-
-    if (file == NULL) {
-        printf("לא ניתן לפתוח את הקובץ\n");
-        return;
-    }
-
-    while (fgets(buffer, 1024, file)) {
-        printf("%s", buffer);
-    }
-
-    fclose(file);
-}
-
-// פונקציה לכתיבה לCSV
-void writeCSV(const char* filename) {
-    FILE *file = fopen(filename, "w");
-
-    if (file == NULL) {
-        printf("לא ניתן לפתוח את הקובץ\n");
-        return;
-    }
-
-    const char* data = "שם,גיל,עיר\nישראל ישראלי,30,תל אביב\nדנה כהן,25,ירושלים\n";
-    fputs(data, file);
-
-    fclose(file);
-}
+#include <string.h>
 
 int main() {
-    const char* filename = "דוגמה.csv";
-    writeCSV(filename);
-    readCSV(filename);
+    FILE *fp = fopen("data.csv", "r");
+    if (!fp) {
+        printf("Can't open file\n");
+        return 1;
+    }
+
+    char buf[1024];
+    while (fgets(buf, 1024, fp)) {
+        char *field = strtok(buf, ",");
+        while(field) {
+            printf("%s\n", field);
+            field = strtok(NULL, ",");
+        }
+    }
+
+    fclose(fp);
+    return 0;
+}
+```
+דוגמת `data.csv`:
+```
+Name,Age,Occupation
+John Doe,29,Software Engineer
+```
+
+דוגמת פלט:
+```
+Name
+Age
+Occupation
+John Doe
+29
+Software Engineer
+```
+
+### כתיבה לקבצי CSV
+
+באופן דומה, כתיבה לקובץ CSV כוללת שימוש ב-`fprintf` כדי לשמור נתונים בפורמט מופרד בפסיקים.
+
+```c
+#include <stdio.h>
+
+int main() {
+    FILE *fp = fopen("output.csv", "w");
+    if (!fp) {
+        printf("Can't open file\n");
+        return 1;
+    }
+
+    char *headers[] = {"Name", "Age", "Occupation", NULL};
+    for (int i = 0; headers[i] != NULL; i++) {
+        fprintf(fp, "%s%s", headers[i], (headers[i+1] != NULL) ? "," : "\n");
+    }
+    fprintf(fp, "%s,%d,%s\n", "Jane Doe", 27, "Data Scientist");
+
+    fclose(fp);
     return 0;
 }
 ```
 
-פלט:
+תוכן דוגמת `output.csv`:
 ```
-שם,גיל,עיר
-ישראל ישראלי,30,תל אביב
-דנה כהן,25,ירושלים
+Name,Age,Occupation
+Jane Doe,27,Data Scientist
 ```
 
-## Deep Dive
-CSV פעמים רבות הוא האמצעי הכי ישיר לחילופי נתונים בין תוכנות שונות, מאז המצאתו בשנות ה-70. קיימות חלופות כמו XML ו-Jason, אבל CSV ממשיך להיות נפוץ בזכות פשטותו. בקוד שלמעלה, בכוונה לא טיפלנו בצורה מורכבת בדאטה – יש לזכור שבמציאות יש צורך להתמודד גם עם בעיות כמו מידע חסר או נתונים לא תקינים.
+## צלילה עמוקה
 
-## See Also
-- [RFC 4180](https://tools.ietf.org/html/rfc4180), המגדיר את המבנה הסטנדרטי לקבצי CSV.
-- [libcsv](http://sourceforge.net/projects/libcsv/), ספרייה עבור עיבוד קבצי CSV בשפת C.
-- [GNU Datamash](https://www.gnu.org/software/datamash/), כלי שורת פקודה למניפולציה על נתונים טבלאיים, תומך גם בCSV.
+הפורמט CSV, למרות להיותו כנראה פשוט, מגיע עם העדפות משלו, כמו לטפל בפסיקים בתוך שדות ולסגור שדות במרכאות. הדוגמאות הראשוניות המוצגות לא לוקחות בחשבון סיבוכיות כאלו, וגם לא מטפלות בטעויות באופן קפדני.
+
+בהיסטוריה, היידוע של קבצי CSV ב-C היה בעיקר ידני בזכות הטבע הרמה-נמוכה של השפה והחוסר באבסטרקציות גבוהות מובנות למשימות כאלו. הניהול הידני כולל פתיחת קבצים, קריאת שורות, פיצול מחרוזות, והמרת סוגי נתונים לפי הצורך.
+
+כאשר נגיע לעבודה ישירה עם קבצי CSV ב-C היא מספקת ניסיון לימודי ערך על קלט/פלט של קבצים ועיבוד מחרוזות, מספר אלטרנטיבות מודרניות מבטיחות יעילות ותהליכים פחות שגויים. ספריות כמו `libcsv` ו-`csv-parser` מציעות פונקציות מקיפות לקריאה וכתיבה של קבצי CSV, כולל תמיכה בשדות במרכאות ומפרידים מותאמים אישית.
+
+כחלופה, בעת עבודה בתוך אקוסיסטמים שתומכים בכך, אינטגרציה עם שפות או פלטפורמות שמספקות פונקציות גבוהות לעיבוד CSV (כמו Python עם ספריית ה-`pandas` שלה) יכולה להיות מסלול יותר פרודוקטיבי ליישומים הדורשים עיבוד CSV כבד. גישה זו בין-שפה מנצלת את יכולות הביצועים והתכנות של מערכות של C, תוך שימוש בנוחות משפות אחרות למשימות ספציפיות כמו עיבוד CSV.

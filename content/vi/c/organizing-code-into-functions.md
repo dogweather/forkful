@@ -1,77 +1,80 @@
 ---
-title:                "Sắp xếp mã thành các hàm"
-date:                  2024-01-28T22:03:18.360320-07:00
+title:                "Sắp xếp mã lập trình vào trong hàm"
+date:                  2024-02-03T17:59:32.610147-07:00
 model:                 gpt-4-0125-preview
-simple_title:         "Sắp xếp mã thành các hàm"
-
+simple_title:         "Sắp xếp mã lập trình vào trong hàm"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/c/organizing-code-into-functions.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Cái gì và Tại sao?
-Việc tổ chức mã thành các hàm là về việc phân chia mã thành các khối có thể tái sử dụng thực hiện các nhiệm vụ cụ thể. Điều này làm cho mã dễ đọc, dễ gỡ lỗi và dễ bảo trì hơn.
+## Gì và Tại Sao?
 
-## Làm thế nào:
-Hãy lấy một ví dụ đơn giản: giả sử, bạn muốn cộng hai số nhiều lần.
+Việc tổ chức mã lệnh thành các hàm trong ngôn ngữ C đề cập đến việc chia nhỏ các tác vụ phức tạp thành các khối mã lệnh nhỏ hơn, có thể tái sử dụng. Thực hành này giúp tăng cường tính dễ đọc, đơn giản hóa việc gỡ lỗi, và thúc đẩy việc tái sử dụng mã, khiến cho các ứng dụng trở nên linh hoạt và dễ bảo trì hơn.
 
-Không sử dụng hàm:
-```C
+## Làm Thế Nào:
+
+Trong C, một hàm được khai báo với kiểu trả về, tên, và các tham số (nếu có), theo sau là một khối mã lệnh. Hãy bắt đầu với một ví dụ đơn giản: một hàm cộng hai số nguyên.
+
+```c
 #include <stdio.h>
+
+// Khai báo hàm
+int add(int a, int b);
 
 int main() {
-    int sum1 = 5 + 3;
-    printf("Tổng1: %d\n", sum1);
-    
-    int sum2 = 2 + 8;
-    printf("Tổng2: %d\n", sum2);
-    
-    // Thêm các phép cộng ở đây...
-    
-    return 0;
+  int sum = add(5, 3);
+  printf("Tổng là: %d\n", sum);
+  return 0;
 }
-```
 
-Sử dụng hàm:
-```C
-#include <stdio.h>
-
+// Định nghĩa hàm
 int add(int a, int b) {
-    return a + b;
+  return a + b;
+}
+```
+
+Kết quả:
+```
+Tổng là: 8
+```
+
+Bây giờ, hãy xem xét một ví dụ phức tạp hơn liên quan đến một kiểu dữ liệu do người dùng định nghĩa. Hàm này tính diện tích của một hình chữ nhật.
+
+```c
+#include <stdio.h>
+
+// Định nghĩa cấu trúc cho một hình chữ nhật
+typedef struct {
+  int width;
+  int height;
+} Rectangle;
+
+// Hàm tính diện tích hình chữ nhật
+int calculateArea(Rectangle rect) {
+  return rect.width * rect.height;
 }
 
 int main() {
-    int sum1 = add(5, 3);
-    printf("Tổng1: %d\n", sum1);
-    
-    int sum2 = add(2, 8);
-    printf("Tổng2: %d\n", sum2);
-    
-    // Sử dụng hàm add() cho những phép cộng thêm...
-    
-    return 0;
+  Rectangle myRect = {5, 10};
+  int area = calculateArea(myRect);
+  printf("Diện tích hình chữ nhật là: %d\n", area);
+  return 0;
 }
 ```
 
-Kết quả đầu ra:
+Kết quả:
 ```
-Tổng1: 8
-Tổng2: 10
+Diện tích hình chữ nhật là: 50
 ```
 
-## Sâu hơn
-Trước khi C có hàm, việc lập trình thường được thực hiện một cách tuyến tính, giống như một công thức. Nhưng khi các chương trình phát triển, sự trùng lặp mã trở thành một vấn đề. Hàm là giải pháp - chúng cho phép chúng ta thực thi cùng một khối mã từ các phần khác nhau của chương trình mà không cần viết lại mỗi lần. Điều này không chỉ tiết kiệm không gian mà còn tiết kiệm thời gian khi thực hiện cập nhật: thay đổi hàm ở một nơi và mỗi phần của mã của bạn sử dụng nó đều được cập nhật.
+## Sâu Hơn
 
-Các lựa chọn thay thế cho hàm có thể bao gồm mã nội dòng, macro, hoặc việc sao chép và dán mã, nhưng những cái này có thể dẫn đến mã phình to, dễ phạm lỗi và khó bảo trì. Ngược lại, hàm đóng gói chức năng, định rõ giao diện và có thể giảm tác dụng phụ với việc sử dụng phạm vi thích hợp.
+Khái niệm về hàm trong C, thừa hưởng từ những thực hành lập trình trước đó, là cơ bản cho lập trình có cấu trúc. Hàm cho phép các lập trình viên tách rời chi tiết, quản lý độ phức tạp, và tổ chức mã lệnh của họ một cách logic. Kể từ khi ra đời, hàm đã trở thành một cấu trúc cốt lõi trong C, ảnh hưởng đến nhiều ngôn ngữ khác.
 
-Khi bạn triển khai hàm, cần xem xét một vài chi tiết: một là, hãy cố gắng làm cho chúng chỉ thực hiện một nhiệm vụ - đây được biết đến là Nguyên tắc Trách nhiệm Đơn lẻ. Hai, tên có ý nghĩa - chọn tên mô tả cho hàm và các tham số của chúng để làm cho mã của bạn tự tài liệu hóa.
+Tuy nhiên, khi các mô hình lập trình tiến hóa, các cách tiếp cận khác như lập trình hướng đối tượng (OOP) trong các ngôn ngữ như C++ và Java, đã mở rộng khái niệm của hàm với các phương thức liên quan đến đối tượng. Mặc dù C không hỗ trợ OOP ngay từ đầu, nhưng có khả năng mô phỏng thiết kế hướng đối tượng bằng cách cấu trúc hàm và dữ liệu một cách cẩn thận.
 
-## Xem thêm
-Để biết thêm về hàm trong C, hãy tham khảo những tài liệu sau:
-
-- Tham khảo Thư viện Tiêu chuẩn C: https://en.cppreference.com/w/c/header
-- Lập trình C: Một cách tiếp cận hiện đại bởi K.N. King: Một cuốn sách với cái nhìn sâu sắc về hàm.
-- Learn-C.org: Mục hàm: https://www.learn-c.org/en/Functions
+Trong lập trình hiện đại, hàm vẫn rất quan trọng, nhưng với sự tiến bộ trong tối ưu hóa bộ biên dịch và các tính năng ngôn ngữ, sự chú trọng có thể chuyển sang các hàm nội tuyến và mẫu trong C++ hoặc lambdas trong các ngôn ngữ như Python và JavaScript. Những điều này cung cấp sự linh hoạt hơn và thường là cú pháp ngắn gọn hơn để đạt được sự linh hoạt và khả năng tái sử dụng tương tự. Tuy nhiên, các nguyên tắc cơ bản học được thông qua việc tổ chức mã trong các hàm trong C là phổ quát áp dụng và tạo nên nền tảng của sự phát triển phần mềm hiệu quả và hiệu suất cao.

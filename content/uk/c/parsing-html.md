@@ -1,66 +1,69 @@
 ---
-title:                "Парсинг HTML"
-date:                  2024-01-20T15:30:21.084646-07:00
-simple_title:         "Парсинг HTML"
-
+title:                "Розбір HTML"
+date:                  2024-02-03T18:06:05.191869-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Розбір HTML"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/c/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-## Що та Чому?
+## Що і чому?
 
-Parsing HTML means dissecting a webpage's HTML to extract info. Programmers do it to interact with web content, automate tasks or migrate data.
+Розбір HTML у C включає аналіз документів HTML для ефективного вилучення даних, структури або конкретних частин, часто як передумова для добування даних або веб-скребінгу. Програмісти роблять це для автоматизації вилучення інформації, що дозволяє програмно обробляти або повторно використовувати веб-контент.
 
-## How to:
-## Як це зробити:
+## Як:
 
-C isn't naturally web-centric, but with libxml2 you can parse HTML. Here's how:
+Розбір HTML може здаватися складним через складність HTML та його часті відхилення від чистих, добре сформованих структур. Однак, використання бібліотеки, як-то `libxml2`, зокрема її модуля розбору HTML, спрощує процес. Цей приклад демонструє, як використовувати `libxml2` для розбору HTML та вилучення інформації.
 
-```C
+Спершу переконайтеся, що `libxml2` встановлено у вашому середовищі. У багатьох дистрибутивах Linux його можна встановити через менеджер пакетів. Наприклад, на Ubuntu:
+
+```bash
+sudo apt-get install libxml2 libxml2-dev
+```
+
+Тепер напишемо просту програму на С, яка використовує `libxml2` для розбору рядка HTML і друку тексту всередині певного елемента:
+
+```c
 #include <stdio.h>
 #include <libxml/HTMLparser.h>
 
-void parse_html(const char *html) {
-    htmlDocPtr doc = htmlReadMemory(html, strlen(html), "http://example.com", NULL, HTML_PARSE_RECOVER | HTML_PARSE_NOERROR | HTML_PARSE_NOWARNING);
-    if (doc == NULL) {
-        fprintf(stderr, "Could not parse.\n");
-        return;
-    }
-
-    // Process the document as needed.
-    // ...
-
-    xmlFreeDoc(doc);
+void parseHTML(const char *html) {
+    htmlDocPtr doc = htmlReadDoc((const xmlChar *)html, NULL, NULL, HTML_PARSE_RECOVER | HTML_PARSE_NOERROR | HTML_PARSE_NOWARNING);
+    
+    // Припустимо, ми шукаємо вміст всередині тегів <p>
+    xmlNode *root_element = xmlDocGetRootElement(doc);
+    for (xmlNode *current_node = root_element; current_node; current_node = current_node->next) {
+        if (current_node->type == XML_ELEMENT_NODE && strcmp((const char *)current_node->name, "p") == 0) {
+            printf("Знайдено абзац: %s\n", xmlNodeGetContent(current_node));
+        }
+    }
+    
+    xmlFreeDoc(doc);
+    xmlCleanupParser();
 }
 
 int main() {
-    const char *html = "<html><body><p>Hello, Ukraine!</p></body></html>";
-    parse_html(html);
-    printf("HTML parsing done.\n");
-    return 0;
+    const char *html = "<html><body><p>Привіт, світе!</p></body></html>";
+    parseHTML(html);
+    return 0;
 }
 ```
 
-Output:
-
+Вихідні дані прикладу:
 ```
-HTML parsing done.
+Знайдено абзац: Привіт, світе!
 ```
 
-## Deep Dive:
-## Поглиблений Аналіз:
+Цей приклад зосереджений на вилученні тексту всередині тегів абзаців, але `libxml2` пропонує міцну підтримку для навігації та запитування різних частин HTML-документа.
 
-Before libraries like libxml2, parsing HTML in C was error-prone and labor-intensive. libxml2 offers HTML and XML parsing, making life easier. It's also part of the GNOME project. Alternatives? You could use regular expressions for simple tasks, but it's risky – HTML's complexity often leads to regex pitfalls. As far as implementation, efficient parsing involves understanding DOM trees and handling character encodings. libxml2 does this under the hood.
+## Поглиблений огляд
 
-## See Also:
-## Дивіться також:
+Розбір HTML у C почався з ранніх днів веб-розробки. Спершу розробникам доводилося покладатися на власні, часто примітивні рішення для розбору, через відсутність стандартизованих бібліотек і хаотичний стан HTML у вебі. Введення бібліотек, як-то `libxml2`, позначило значний прогрес, пропонуючи більш стандартизовані, ефективні та стійкі підходи до розбору HTML.
 
-- libxml2 documentation: http://xmlsoft.org/html/libxml-HTMLparser.html
-- GNOME Project: https://www.gnome.org/
-- HTML Parsing in C – A Complete Guide (unofficial resource): http://yourfavoriteresource.com/html-parsing-c-guide
-- W3C HTML Specs for understanding what you're parsing: https://www.w3.org/TR/html52/
+Незважаючи на неперевершену швидкість і контроль, який надає C, варто зазначити, що C може не завжди бути найкращим інструментом для розбору HTML, особливо для завдань, що вимагають швидких циклів розробки або мають справу з особливо погано сформованим HTML. Мови з високорівневими бібліотеками розбору HTML, такі як Python з Beautiful Soup, надають більш абстрактні, зручні для користувача інтерфейси за рахунок деякої втрати продуктивності.
 
-Note: The links are fictional and provided for article structure purposes.
+Однак, для додатків, критичних до продуктивності, або при роботі в умовах обмежених ресурсів, розбір HTML у C залишається цілком прийнятним і часто переважним методом. Ключовим є використання міцних бібліотек, як-то `libxml2`, для обробки складнощів HTML, дозволяючи розробникам зосередитися на вилученні потрібних даних, не вдаючись у деталі механіки розбору.

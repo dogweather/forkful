@@ -1,59 +1,59 @@
 ---
-title:                "Lectura de argumentos de línea de comandos"
-date:                  2024-01-20T17:56:14.055637-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Lectura de argumentos de línea de comandos"
-
+title:                "Leyendo argumentos de línea de comandos"
+date:                  2024-02-03T18:06:00.779959-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Leyendo argumentos de línea de comandos"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/go/reading-command-line-arguments.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Qué y Por Qué?
-Leer argumentos de la línea de comandos permite que tu programa en Go interactúe con el usuario a través de la terminal. Los programadores usan esta técnica para personalizar la ejecución del programa sin cambiar el código.
 
-## Cómo:
+Leer argumentos de línea de comando en Go implica extraer los argumentos proporcionados a un programa durante su invocación desde el terminal o la línea de comandos. Los programadores hacen esto para personalizar la ejecución del programa sin alterar el código, haciendo que las aplicaciones sean más flexibles y dirigidas por el usuario.
 
-Aquí está lo básico. Importa el paquete `os` y usa `os.Args` para acceder a los argumentos de la línea de comandos:
+## Cómo hacerlo:
 
-```Go
+Go ofrece acceso directo a los argumentos de línea de comando a través del paquete `os`, específicamente usando `os.Args`, un arreglo de cadenas. Aquí hay un ejemplo simple para comenzar:
+
+```go
 package main
 
 import (
-	"fmt"
-	"os"
+    "fmt"
+    "os"
 )
 
 func main() {
-	// os.Args[0] es el nombre del programa
-	// Los argumentos empiezan en os.Args[1]
-	arguments := os.Args[1:]
-	for _, arg := range arguments {
-		fmt.Println(arg)
-	}
+    // os.Args proporciona acceso a los argumentos de línea de comando en crudo
+    fmt.Println("Argumentos de línea de comando:", os.Args)
+
+    if len(os.Args) > 1 {
+        // Bucle a través de los argumentos, saltando el primero (nombre del programa)
+        for i, arg := range os.Args[1:] {
+            fmt.Printf("Argumento %d: %s\n", i+1, arg)
+        }
+    } else {
+        fmt.Println("No se proporcionaron argumentos de línea de comando.")
+    }
 }
 ```
 
-Si corres tu programa (`go run your_program.go arg1 arg2`) con argumentos, recibirás:
+La salida de muestra cuando se ejecuta con `go run yourprogram.go arg1 arg2` podría parecer:
 
 ```
-arg1
-arg2
+Argumentos de línea de comando: [/tmp/go-build123456789/b001/exe/yourprogram arg1 arg2]
+Argumento 1: arg1
+Argumento 2: arg2
 ```
 
-## Inmersión Profunda:
+Esto imprime todos los argumentos incluyendo el nombre del programa (a menudo en el índice 0), y luego itera sobre cada argumento proporcionado, imprimiéndolos. Para un análisis de argumentos más controlado, podrías considerar el paquete `flag` para analizar las opciones de línea de comando.
 
-En Go, `os.Args` es un slice que contiene todas las entradas pasadas al programa. El primer elemento siempre es el nombre del ejecutable. Fue diseñado inspirándose en C, donde `argv` y `argc` hacen un trabajo similar.
+## Análisis en Detalle
 
-Para casos más avanzados o cuando necesitas más control, usa el paquete `flag`. Este te permite definir y parsear argumentos de línea de comandos con mayor facilidad. Permite especificar tipos, valores predeterminados y mensajes de ayuda automáticamente.
+Históricamente, el acceso a los argumentos de línea de comando es una práctica tan antigua como la programación en C, donde `argc` y `argv[]` sirven un propósito similar. En Go, `os.Args` lo hace sencillo pero deliberadamente rudimentario. Para escenarios más complejos, como el manejo de banderas u opciones, Go ofrece el paquete `flag` que proporciona capacidades de análisis robustas. Esto podría verse como una alternativa "mejor" cuando tu aplicación requiere más que solo argumentos posicionales.
 
-Dato curioso: antes de `flag`, las opciones de línea de comandos en Go fueron manejadas de manera ad hoc. Con `flag`, Go ofreció una estrategia consistente y potente.
-
-Detalles de implementación: cuando se trabaja con `os.Args`, recuerda que todos los argumentos son strings. Si necesitas convertirlos a otros tipos, tendrás que hacerlo manualmente.
-
-## Ver También:
-
-- Documentación oficial del paquete `os`: https://golang.org/pkg/os/
-- Tutorial del paquete `flag`: https://golang.org/pkg/flag/
-- Blog post sobre cómo usar los argumentos de la línea de comandos en Go: https://blog.golang.org/command-line-arguments
+A diferencia de algunos lenguajes de scripting que ofrecen análisis incorporado de argumentos de línea de comando en arreglos asociativos u objetos, el enfoque de Go requiere que los programadores manejen el análisis manualmente usando `os.Args` para necesidades básicas o aprovechar el paquete `flag` para escenarios más avanzados. Este diseño refleja la filosofía de Go de mantener el lenguaje central simple mientras proporciona poderosas bibliotecas estándar para tareas comunes. Aunque puede introducir una ligera curva de aprendizaje para aquellos acostumbrados al análisis incorporado, ofrece una mayor flexibilidad y fomenta una comprensión más profunda del manejo de argumentos de línea de comando.

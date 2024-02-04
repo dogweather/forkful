@@ -1,22 +1,27 @@
 ---
 title:                "Wysyłanie żądania HTTP"
-date:                  2024-01-20T17:59:04.223672-07:00
-model:                 gpt-4-1106-preview
+date:                  2024-02-03T18:08:36.313872-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Wysyłanie żądania HTTP"
-
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/c/sending-an-http-request.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Co i Dlaczego?)
-Wysyłanie żądania HTTP pozwala naszemu programowi komunikować się z serwerem webowym - wymieniać dane, pobierać strony internetowe czy korzystać z API. Programiści robią to, aby integrować aplikacje C z internetem, zbierać informacje lub interagować z usługami webowymi.
+## Co i dlaczego?
 
-## How to: (Jak to zrobić?)
-Użycie biblioteki cURL w C do wysłania żądania HTTP jest proste. Oto przykład:
+Wysyłanie żądania HTTP polega na tworzeniu i wysyłaniu żądania do serwera WWW w celu pobrania lub przesłania danych. Programiści robią to w języku C, aby współdziałać z interfejsami API stron internetowych, pobierać strony internetowe lub komunikować się z innymi usługami sieciowymi bezpośrednio z ich aplikacji.
 
-```C
+## Jak to zrobić:
+
+Aby wysłać żądanie HTTP w języku C, zazwyczaj opierasz się na bibliotekach takich jak libcurl, ponieważ C nie ma wbudowanego wsparcia dla protokołów internetowych. Oto prosty przykład użycia libcurl do wykonania żądania typu GET:
+
+Najpierw upewnij się, że na twoim systemie zainstalowany jest libcurl. Następnie dołącz niezbędne nagłówki i zlinkuj z biblioteką libcurl w twoim pliku źródłowym:
+
+```c
 #include <stdio.h>
 #include <curl/curl.h>
 
@@ -24,40 +29,39 @@ int main(void) {
     CURL *curl;
     CURLcode res;
 
-    curl_global_init(CURL_GLOBAL_ALL);
-
-    curl = curl_easy_init();
+    curl = curl_easy_init(); // Inicjalizacja uchwytu libcurl
     if(curl) {
+        // Ustawienie adresu URL, który otrzyma uchwyt libcurl
         curl_easy_setopt(curl, CURLOPT_URL, "http://example.com");
-        // Pełni rolę użytkownika przeglądarki
-        curl_easy_setopt(curl, CURLOPT_USERAGENT, "libcurl-agent/1.0");
-
-        // Wykonanie żądania, res przechwytuje wynik
+        // Zdefiniowanie funkcji zwrotnej do odbierania danych
+        curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, NULL); 
+        
+        // Wykonanie żądania, res otrzyma kod powrotu
         res = curl_easy_perform(curl);
-
         // Sprawdzenie błędów
         if(res != CURLE_OK)
             fprintf(stderr, "curl_easy_perform() failed: %s\n",
                     curl_easy_strerror(res));
 
-        // Zawsze czyść po sobie
+        // Zawsze wykonuj czyszczenie
         curl_easy_cleanup(curl);
     }
-
-    curl_global_cleanup();
-
     return 0;
 }
 ```
 
-Po uruchomieniu, program wysyła żądanie GET do `http://example.com` i wypisuje odpowiedź.
+Kompiluj to za pomocą czegoś w stylu `gcc -o http_request http_request.c -lcurl`, uruchomienie powinno wykonać proste żądanie GET do "http://example.com".
 
-## Deep Dive (Dogłębna analiza)
-Wysyłanie żądań HTTP z C nie zawsze było tak łatwe. W przeszłości trzeba było ręcznie tworzyć gniazda i obsługiwać protokół HTTP. Biblioteka cURL, wydana w 1997 roku, uprościła proces poprzez dostarczenie prostego API.
+### Przykładowe wyjście
 
-Alternatywami dla cURL są libwww, Qt network module, czy Boost.Asio dla C++. Współczesne implementacje opierają się na wygodzie użytkowania i bezpieczeństwie; wiele z nich dba o zarządzanie pamięcią i automatyczne obsługiwanie certyfikatów SSL/TLS.
+Ponieważ przykład nie przetwarza odpowiedzi serwera, jego uruchomienie nie wygeneruje widocznych wyników poza potencjalnymi komunikatami o błędach. Integracja funkcji zwrotnej do przetwarzania otrzymanych danych jest kluczowa dla znaczącej interakcji.
 
-## See Also (Zobacz również)
-- Dokumentacja cURL: https://curl.haxx.se/libcurl/c/
-- Wstęp do gniazd w C: https://beej.us/guide/bgnet/
-- Informacje o protokole HTTP: https://developer.mozilla.org/en-US/docs/Web/HTTP
+## Dogłębna analiza
+
+Koncepcja wysyłania żądań HTTP z programu w języku C opiera się na potężnych możliwościach sieciowych tego języka, w połączeniu z zewnętrznymi bibliotekami, ponieważ sam C jest językiem niskopoziomowym bez wbudowanego wsparcia dla protokołów internetowych. Historycznie, programiści ręcznie używali programowania gniazd w języku C, złożonego i żmudnego procesu, do interakcji z serwerami internetowymi przed pojawieniem się dedykowanych bibliotek takich jak libcurl.
+
+Libcurl, zbudowany na bazie C, usprawnia ten proces, abstrahując od trudnych szczegółów programowania gniazd i specyfiki protokołów HTTP. Wspiera ona wiele protokołów poza HTTP/HTTPS, w tym FTP, SMTP i inne, czyniąc ją wszechstronnym narzędziem do programowania sieciowego w C.
+
+Chociaż używanie libcurl do żądań HTTP w języku C jest praktyczne, współczesne programowanie często skłania się ku językom z wbudowanym wsparciem dla takich zadań, jak Python (biblioteka requests) czy JavaScript (API Fetch). Te alternatywy oferują prostszą, bardziej czytelną składnię kosztem granularnej kontroli i optymalizacji wydajności możliwych w C poprzez bezpośrednią manipulację gniazdami i precyzyjne użycie biblioteki.
+
+Dla krytycznych aplikacji pod względem wydajności lub tam, gdzie konieczna jest bezpośrednia interakcja na poziomie systemu, C pozostaje praktyczną opcją, szczególnie z libcurl ułatwiającym przezwyciężanie złożoności komunikacji internetowej. Jednak dla większości interakcji internetowych na wysokim poziomie, zbadanie bardziej dedykowanych języków programowania internetowego może okazać się bardziej efektywne.

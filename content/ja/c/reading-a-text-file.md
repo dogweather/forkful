@@ -1,58 +1,67 @@
 ---
 title:                "テキストファイルの読み込み"
-date:                  2024-01-20T17:53:44.846076-07:00
-model:                 gpt-4-1106-preview
+date:                  2024-02-03T18:05:48.255880-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "テキストファイルの読み込み"
-
 tag:                  "Files and I/O"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/c/reading-a-text-file.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (何となぜ？)
-ファイル読み込みは、文字通り、テキストファイルから情報を取得する操作です。プログラマーはデータの読み込み、解析、変換、そしてアプリに必要な操作を行うためにこれを行います。
+## 何となく、なぜ？
 
-## How to: (方法)
-以下に、C言語でテキストファイルを読み込むサンプルコードを示します。
+Cでテキストファイルを読むことは、システム上のファイルを開いて情報を抽出し、必要に応じてそれを操作または表示することを含みます。プログラマーはこれを、設定ファイルを処理したり、処理用の入力を読んだり、ファイル形式で保存されているデータを分析したりするためによく行います。これにより、アプリケーションの柔軟性と機能性が向上します。
 
-```C
+## どうやって:
+
+Cでテキストファイルを読み始めるには、主に標準I/Oライブラリの`fopen()`、`fgets()`、`fclose()`関数を使用します。以下は、`example.txt`というファイルを読み、その内容を標準出力に印刷する簡単な例です：
+
+```c
 #include <stdio.h>
 #include <stdlib.h>
 
 int main() {
-    FILE *file;
-    char line[100];
+    FILE *filePointer;
+    char buffer[255]; // テキスト行を格納するバッファ
 
-    file = fopen("example.txt", "r");
-    if (file == NULL) {
-        perror("ファイルオープンに失敗");
-        return EXIT_FAILURE;
+    // ファイルを読み取りモードで開く
+    filePointer = fopen("example.txt", "r");
+
+    // ファイルが正常に開かれたかを確認
+    if (filePointer == NULL) {
+        printf("ファイルを開けませんでした。\n");
+        return 1;
     }
 
-    while (fgets(line, sizeof(line), file)) {
-        printf("%s", line);
+    while (fgets(buffer, 255, filePointer) != NULL) {
+        printf("%s", buffer);
     }
 
-    fclose(file);
-    return EXIT_SUCCESS;
+    // リソースを解放するためにファイルを閉じる
+    fclose(filePointer);
+    return 0;
 }
 ```
 
-サンプルの出力は、`example.txt` に含まれる内容に依存します。
+`example.txt`が以下を含むと仮定します：
+```
+Hello, World!
+Cプログラミングへようこそ。
+```
 
-## Deep Dive (深掘り)
-テキストファイルの読み込みは初期のプログラミングから存在します。`fopen()`、`fgets()`、`fclose()` は C 標準ライブラリに備わっており、非常に長い間使われています。代替としてストリームやバッファを用いたり、C++のファイルストリームライブラリを利用することもできますが、C言語の標準はシンプルさが特徴です。
+出力は以下になります：
+```
+Hello, World!
+Cプログラミングへようこそ。
+```
 
-ファイルを開く時は、`fopen()`関数にファイル名とモードを指定します。モードは読み込み("r")、書き込み("w")、追加("a")などがあります。「`fgets()`」はファイルから1行読み込み、終了判断はNULLポインタです。「`fclose()`」はファイルを閉じ、リソースの解放を行います。
+## 深掘り
 
-エラーハンドリングも大事で、ファイルオープン時にNULLが返された場合はエラーということです。`perror()` はエラーメッセージを出力し、デバッグに役立ちます。
+Cでのファイル読み取りは豊かな歴史を持ち、テキストストリームの単純さと優雅さが基本的であったUnixの初期の日々にさかのぼります。これにより、設定、ログ記録、プロセス間通信を含むさまざまな目的でテキストファイルの採用が促進されました。`fopen()`、`fgets()`、`fclose()`などの関数によって象徴されるC言語のファイルI/Oライブラリの単純さは、プログラマーが複雑なシステムを構築するために使用できる基礎的なツールを提供するというその設計哲学を強調しています。
 
-## See Also (関連情報)
-- [C Standard Library Reference - fopen](https://en.cppreference.com/w/c/io/fopen)
-- [C Standard Library Reference - fgets](https://en.cppreference.com/w/c/io/fgets)
-- [C Standard Library Reference - fclose](https://en.cppreference.com/w/c/io/fclose)
-- [C File Input/Output](https://www.tutorialspoint.com/cprogramming/c_file_io.htm)
+歴史的に、これらの関数が無数のアプリケーションにうまく役立ってきた一方で、現代のプログラミングの慣行は、特にエラー処理、ファイルエンコーディング（例：ユニコードサポート）、マルチスレッドアプリケーションにおける同時アクセスなどにおけるいくつかの限界を浮き彫りにしています。`libuv`やC++用の`Boost.Asio`などの他の言語や、C内でさえも、これらの懸念に直接対処し、非同期I/O操作を含むより洗練されたI/O管理機能を提供することで、より堅牢なソリューションを提供する代替アプローチがあります。これは、大量のファイル読み取り操作やI/Oバウンドタスクを扱うアプリケーションのパフォーマンスを大幅に向上させることができます。
 
-この記事を読んで理解が深まったら、それぞれの関数の公式ドキュメントもチェックしてみて下さい。プログラミングは練習が命です。コードをいじって、色々試してみましょう！
+これらの進歩にもかかわらず、Cの標準I/Oライブラリを使用してファイルを読む方法を学ぶことは重要です。これは、多くのプログラミングコンテキストで適用可能なファイル処理の基礎を理解するのに役立つだけでなく、ファイルI/O操作の進化を理解し、現代のアプリケーションでのファイル処理のためのより複雑なライブラリやフレームワークを探求するための基礎を提供します。

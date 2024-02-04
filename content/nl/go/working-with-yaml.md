@@ -1,116 +1,115 @@
 ---
 title:                "Werken met YAML"
-date:                  2024-01-28T22:11:43.169953-07:00
+date:                  2024-02-03T18:13:50.244135-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Werken met YAML"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/go/working-with-yaml.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Wat & Waarom?
-Werken met YAML betekent het parseren en genereren van gegevens in het YAML-formaat, een voor mensen leesbare standaard voor gegevensserialisatie. Programmeurs doen dit om configuratiebestanden te beheren, gegevensuitwisseling tussen talen mogelijk te maken en complexe datastructuren te structureren.
 
-## Hoe te:
-Om met YAML in Go te werken, heb je een bibliotheek zoals `gopkg.in/yaml.v3` nodig. Installeer het met:
+Werken met YAML in Go houdt in dat je YAML-bestanden (YAML Ain't Markup Language), een gebruikersvriendelijke gegevensserialisatiestandaard, analyseert naar Go-datastructuren en vice versa. Programmeurs doen dit om de eenvoud en leesbaarheid van YAML te benutten voor configuratiebestanden, applicatie-instellingen of gegevensuitwisseling tussen diensten en componenten geschreven in verschillende talen.
+
+## Hoe:
+
+Om met YAML in Go te werken, moet je eerst een bibliotheek importeren die ondersteuning biedt voor het parseren en serialiseren van YAML, aangezien de standaardbibliotheek van Go geen directe ondersteuning voor YAML omvat. De populairste bibliotheek hiervoor is "gopkg.in/yaml.v3". Hier is hoe je kunt beginnen:
+
+1. **Het YAML-pakket installeren:**
 
 ```bash
 go get gopkg.in/yaml.v3
 ```
 
-Zo parseer je YAML:
+2. **YAML parseren naar een Go struct:**
 
-```Go
+Definieer eerst een struct in Go die overeenkomt met de structuur van je YAML-gegevens.
+
+```go
 package main
 
 import (
-	"fmt"
-	"log"
-	"gopkg.in/yaml.v3"
+  "fmt"
+  "gopkg.in/yaml.v3"
+  "log"
 )
 
-var data = `
-a: Makkelijk!
-b:
-  c: 2
-  d: [3, 4]
+type Config struct {
+  Database struct {
+    User     string `yaml:"user"`
+    Password string `yaml:"password"`
+  } `yaml:"database"`
+}
+
+func main() {
+  var config Config
+  data := `
+database:
+  user: admin
+  password: secret
 `
-
-type StructA struct {
-	A string
-	B StructB
-}
-
-type StructB struct {
-	C int
-	D []int
-}
-
-func main() {
-	var s StructA
-
-	err := yaml.Unmarshal([]byte(data), &s)
-	if err != nil {
-		log.Fatalf("fout: %v", err)
-	}
-	fmt.Println(s)
+  err := yaml.Unmarshal([]byte(data), &config)
+  if err != nil {
+    log.Fatalf("error: %v", err)
+  }
+  fmt.Printf("Gebruiker: %s\nWachtwoord: %s\n", config.Database.User, config.Database.Password)
 }
 ```
 
-Uitvoer:
+**Voorbeelduitvoer:**
 
 ```
-{Makkelijk! {2 [3 4]}}
+Gebruiker: admin
+Wachtwoord: secret
 ```
 
-YAML genereren:
+3. **Een Go struct naar YAML serialiseren:**
 
-```Go
+Zo converteer je een Go struct terug naar YAML.
+
+```go
 package main
 
 import (
-	"fmt"
-	"gopkg.in/yaml.v3"
+  "fmt"
+  "gopkg.in/yaml.v3"
+  "log"
 )
 
 func main() {
-	data := StructA{
-		A: "Makkelijk!",
-		B: StructB{
-			C: 2,
-			D: []int{3, 4},
-		},
-	}
+  config := Config{
+    Database: struct {
+      User     string `yaml:"user"`
+      Password string `yaml:"password"`
+    }{
+      Gebruiker: "admin",
+      Wachtwoord: "supergeheim",
+    },
+  }
 
-	d, err := yaml.Marshal(&data)
-	if err != nil {
-		log.Fatalf("fout: %v", err)
-	}
-	fmt.Printf("---\n%s\n", string(d))
+  data, err := yaml.Marshal(&config)
+  if err != nil {
+    log.Fatalf("error: %v", err)
+  }
+  fmt.Printf("---\n%s\n", string(data))
 }
 ```
 
-Uitvoer:
+**Voorbeelduitvoer:**
 
-```
+```yaml
 ---
-a: Makkelijk!
-b:
-  c: 2
-  d:
-  - 3
-  - 4
+database:
+  user: admin
+  password: supergeheim
 ```
 
-## Diepere duik
-YAML is gestart in 2001, met het doel een mensvriendelijk gegevensuitwisselingsformaat te zijn. Het wordt gebruikt als een alternatief voor JSON en XML omdat het leesbaarder is en complexe datastructuren kan vertegenwoordigen. Go heeft geen ingebouwde ondersteuning voor YAML, daarom zijn bibliotheken van derden zoals `gopkg.in/yaml.v3` populair. De bibliotheek verpakt libyaml, een C YAML-parser en -emitter, voor efficiëntie en naleving van YAML-standaarden.
+## Diepgaand:
 
-## Zie ook
-- De YAML v3 pakketdocumentatie: https://pkg.go.dev/gopkg.in/yaml.v3
-- Officiële YAML-website: https://yaml.org
-- YAML-specificatie: https://yaml.org/spec/1.2/spec.html
-- JSON naar YAML online converter: https://www.json2yaml.com/
+Het gebruik van YAML in softwareontwikkeling is gegroeid vanwege zijn leesbare formaat, waardoor het een ideale keuze is voor configuratiebestanden, documentatie of gegevensuitwisselingsformaten. In vergelijking met JSON, zijn tegenhanger, biedt YAML commentaren, scalaire typen en relatiefuncties, waardoor een rijker raamwerk voor gegevensserialisatie wordt geboden. Echter, zijn flexibiliteit en functies komen met de kosten van complexiteit in het parseren, wat kan leiden tot mogelijke veiligheidsrisico's als het niet zorgvuldig wordt behandeld (bijv., willekeurige code-uitvoering).
+
+De bibliotheek "gopkg.in/yaml.v3" voor Go is een robuuste oplossing voor YAML-verwerking, die een balans vindt tussen gebruiksgemak en uitgebreide functieondersteuning. Vanaf de huidige staat, hoewel er alternatieven zijn zoals "go-yaml/yaml" (de bibliotheek achter "gopkg.in/yaml.v3"), hangt de gekozen versie meestal af van specifieke projectvereisten of persoonlijke voorkeur. Bij het omgaan met enorme datasets of prestatiekritieke applicaties, kunnen programmeurs simpelere formaten zoals JSON overwegen vanwege hun verminderde parseertijd en geheugenoverhead. Desondanks blijft YAML voor configuratiebestanden of instellingen waar menselijke leesbaarheid en gebruiksgemak van groot belang zijn, een sterke mededinger in het Go-ecosysteem.

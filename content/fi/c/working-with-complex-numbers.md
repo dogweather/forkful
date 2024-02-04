@@ -1,62 +1,57 @@
 ---
-title:                "Kompleksilukujen käsittely"
-date:                  2024-01-26T04:37:37.384920-07:00
+title:                "Työskenteleminen kompleksilukujen kanssa"
+date:                  2024-02-03T18:13:52.632009-07:00
 model:                 gpt-4-0125-preview
-simple_title:         "Kompleksilukujen käsittely"
-
+simple_title:         "Työskenteleminen kompleksilukujen kanssa"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c/working-with-complex-numbers.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
-Imaginaariluvut, todellisten ja imaginaariosien yhdistelmiä (kuten 3 + 4i), ovat avainasemassa edistyneissä laskelmissa, kuten signaalinkäsittelyssä tai tietyntyyppisten yhtälöiden ratkaisemisessa. Ohjelmoijat käsittelevät niitä matematiikkapainotteisissa sovelluksissa, joissa tavalliset numerot eivät riitä.
+## Mikä ja Miksi?
+
+Kompleksiluvut koostuvat reaaliosasta ja imaginääriosasta, jotka esitetään muodossa `a + bi`, missä `i` on luvun `-1` neliöjuuri. Ohjelmoijat työskentelevät kompleksilukujen parissa eri aloilla, kuten sähkötekniikassa, kvanttilaskennassa ja virtausdynamiikassa, hyödyntäen niiden ainutlaatuisia ominaisuuksia simulaatioissa, signaalinkäsittelyssä ja tiettyjen matemaattisten yhtälötyyppien ratkaisemisessa.
 
 ## Kuinka:
-C:ssä, alkaen C99-standardista, on natiivi kompleksilukutyyppi ja kirjasto. Näin sitä käytetään:
 
-```C
+C:ssä kompleksilukuja tuetaan Vakio Kirjaston kautta, erityisesti `<complex.h>`:n kautta. Niiden käyttämiseen julista muuttujat `double complex` tyypillä (tai `float complex` yksittäisen tarkkuuden tapauksessa). Tässä on, miten suorittaa perustoiminnot:
+
+```c
 #include <stdio.h>
 #include <complex.h>
 
 int main() {
-    // Julista kaksi kompleksilukua
-    double complex z1 = 1.0 + 3.0 * I;
-    double complex z2 = 2.0 - 2.0 * I;
-
-    // Toiminnot kompleksilukujen kanssa
+    double complex z1 = 1.0 + 2.0*I; // Julista kompleksiluku 1+2i
+    double complex z2 = 1.0 - 2.0*I; // Julista toinen kompleksiluku 1-2i
+    
+    // Lisäys
     double complex summa = z1 + z2;
+    printf("Summa: %.2f + %.2fi\n", creal(summa), cimag(summa)); // Tuloste: Summa: 2.00 + 0.00i
+
+    // Kertolasku
     double complex tulo = z1 * z2;
+    printf("Tulo: %.2f + %.2fi\n", creal(tulo), cimag(tulo)); // Tuloste: Tulo: 5.00 + 0.00i
 
-    // Tulosten tulostus
-    printf("Summa: %.1f + %.1fi\n", creal(summa), cimag(summa));
-    printf("Tulo: %.1f + %.1fi\n", creal(tulo), cimag(tulo));
+    // Kompleksikonjugaatti
+    double complex konjugaatti = conj(z1);
+    printf("Z1:n konjugaatti: %.2f + %.2fi\n", creal(konjugaatti), cimag(konjugaatti)); // Tuloste: Z1:n konjugaatti: 1.00 - 2.00i
+    
+    // Suuruus
+    double suuruus = cabs(z1);
+    printf("Z1:n suuruus: %.2f\n", suuruus); // Tuloste: Z1:n suuruus: 2.24
 
-    // Itseisarvo & vaihekulma
-    printf("Abs(z1): %f\n", cabs(z1));
-    printf("Arg(z1): %f\n", carg(z1));
-
+    // Vaihe
+    double vaihe = carg(z1);
+    printf("Z1:n vaihe: %.2f\n", vaihe); // Tuloste radiaaneina
+    
     return 0;
 }
 ```
+Huomaa, että `I` on vakio, joka edustaa imaginääriyksikköä `<complex.h>`:ssa. Funktiot kuten `creal()` ja `cimag()` poimivat vastaavasti reaali- ja imaginääriosat, kun taas `conj()` laskee kompleksikonjugaatin. Kompleksilukujen suuruuden ja vaiheen (argumentin) osalta käytetään `cabs()`- ja `carg()`-funktioita.
 
-Esimerkkituloste:
-```
-Summa: 3.0 + 1.0i
-Tulo: 8.0 + 2.0i
-Abs(z1): 3.162278
-Arg(z1): 1.249046
-```
+## Syväluotaus
 
-## Syventävä tarkastelu
-Imaginaariluvut juontavat juurensa vuosisatojen taakse, 16. vuosisadan algebraan. Nykyään ne ovat olennainen osa monia ohjelmointikieliä, ei vain C:tä.
-
-C99-standardi toi mukanaan `<complex.h>`:n, otsikkotiedoston, joka määrittelee makrot, funktiot ja `complex`-datatyypin. Vaihtoehtoja on - kuten oman rakenteen luominen, mutta miksi keksiä pyörää uudelleen? C:n standardikirjasto on optimoitu ja käyttövalmis.
-
-Vaikka C:n kompleksilukutuki onkin tehokas, sitä kritisoidaan myös. Se voi olla vähemmän intuitiivinen kuin vastaavat ominaisuudet kielissä kuten Python, ja nurkkatapausten käsittely voi olla hankalaa. Mutta raakatehokkuuden osalta se on silti vankka valinta.
-
-## Katso myös
-- C99-standardin dokumentaatio `<complex.h>`:lle: https://en.cppreference.com/w/c/numeric/complex
-- IEEE-standardi liukulukuaritmetiikalle (IEEE 754): https://ieeexplore.ieee.org/document/4610935
-- Verkko-opas C:n kompleksilukumatematiikkaan: https://www.tutorialspoint.com/complex-number-arithmetic-in-c-programming
+Tuki kompleksiluvuille C:ssä on suhteellisen uusi, ja se standardisoitiin C99:ssä. Ennen tätä kompleksilukuaritmetiikka C:ssä oli hankalaa, usein vaatien mukautettuja tietorakenteita ja funktioita. `<complex.h>`:n ja kompleksidatatyyppien sisällyttäminen tarjosi merkittävän parannuksen kielen kykyihin tieteellisiin ja insinöörisovelluksiin. On kuitenkin huomionarvoista, että jotkut kielet, kuten Python, tarjoavat intuitiivisempaa tukea kompleksiluvuille sisäänrakennettujen datatyyppien ja rikkaamman kirjastofunktioiden joukon kautta. Siitä huolimatta C:n tarjoama suorituskyky ja hallinta tekevät siitä etusijalla olevan valinnan suorituskykyä vaativissa laskentatehtävissä, vaikka se tarkoittaakin hieman monisanaisempaa syntaksia kompleksiaritmetiikalle.

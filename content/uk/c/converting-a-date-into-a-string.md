@@ -1,20 +1,25 @@
 ---
 title:                "Перетворення дати в рядок"
-date:                  2024-01-20T17:36:31.000646-07:00
-model:                 gpt-4-1106-preview
+date:                  2024-02-03T17:54:35.674859-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Перетворення дати в рядок"
-
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/c/converting-a-date-into-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Що і чому?)
-Перетворення дати в рядок дозволяє нам зручно зберігати або виводити інформацію про час і дату. Це важливо для логування, інтерфейсів користувача та обміну даними.
+## Що та чому?
 
-## How to: (Як це зробити:)
-```C
+Перетворення дати у рядок в мові програмування C включає переклад структури дати або часової мітки в формат, зручний для сприйняття людиною. Програмісти часто виконують це завдання, щоб відображати дати в журналах, інтерфейсах користувачів або при зберіганні дат в текстових форматах, наприклад, JSON або CSV.
+
+## Як це робити:
+
+Для цієї мети зазвичай використовується функція `strftime` з бібліотеки `<time.h>`. Вона дозволяє форматувати дату та час різними способами, вказуючи специфікатори формату. Ось швидкий приклад:
+
+```c
 #include <stdio.h>
 #include <time.h>
 
@@ -23,37 +28,26 @@ int main() {
     time_t now = time(NULL);
     struct tm *ptm = localtime(&now);
 
-    if (ptm == NULL) {
-        puts("Error: Could not retrieve the local time.");
-        return 1;
-    }
-
-    // YYYY-MM-DD format
-    strftime(dateStr, sizeof(dateStr), "%Y-%m-%d", ptm);
-    printf("The date is: %s\n", dateStr);
-
-    // DD-MM-YYYY format
-    strftime(dateStr, sizeof(dateStr), "%d-%m-%Y", ptm);
-    printf("Or in another format: %s\n", dateStr);
-
+    // Перетворення дати та часу на рядок (наприклад, "Wed Jun 30 21:49:08 2021")
+    strftime(dateStr, sizeof(dateStr), "%a %b %d %H:%M:%S %Y", ptm);
+    
+    printf("Поточна дата та час: %s\n", dateStr);
     return 0;
 }
 ```
-Output:
+
+Приклад виводу може виглядати так:
+
 ```
-The date is: 2023-04-01
-Or in another format: 01-04-2023
+Поточна дата та час: Wed Jun 30 21:49:08 2021
 ```
 
-## Deep Dive (Детальний огляд):
-Converting a date to a string wasn't always straightforward in C. Before standardized libraries, coders often rolled custom functions. The C Standard Library included `strftime`, allowing predictable date-to-string conversions. With this, developers choose format, respecting locale.
+Ви можете налаштувати формат, змінивши специфікатори формату, передані в `strftime`. Наприклад, щоб отримати дату в форматі `YYYY-MM-DD`, ви б використали `"%Y-%m-%d"`.
 
-Alternatives? Sure. You could use `sprintf` for simple output but lose `strftime`'s locale awareness and flexibility. For detailed control, dig into `strftime` or time handling libraries; some cater to complex scenarios.
+## Поглиблений огляд
 
-Under the hood, `strftime` takes a `tm` struct, which holds date/time components. It reads this struct and the format string you provide, then outputs a human-readable date/time string. Formats themselves range from complete ISO 8601 strings (`"%FT%TZ"`) to custom arrangements of day, month, year, and even time.
+Функція `strftime` та бібліотека `<time.h>` є частиною стандартної бібліотеки мови C, яка датується оригінальним стандартом ANSI C (C89/C90). Хоча цей підхід простий і підтримується на багатьох платформах, в порівнянні з сучасними мовами програмування, які пропонують більш інтуїтивно зрозумілі бібліотеки для роботи з датами та часом, він може здатися низькорівневим і громіздким.
 
-## See Also (Додатково):
-- C11 Standard: ISO/IEC 9899:2011 (http://www.open-std.org/jtc1/sc22/wg14/www/docs/n1570.pdf)
-- GNU C Library Reference for `strftime`: https://www.gnu.org/software/libc/manual/html_node/Formatting-Calendar-Time.html#index-strftime
-- `time.h` Header: https://en.cppreference.com/w/c/chrono
-- Date and Time Utilities in Standard C: https://en.cppreference.com/w/c/chrono
+Важливо зазначити, що, хоча функції часу стандартної бібліотеки C широко підтримуються і відносно прості у використанні, вони не мають деяких більш складних можливостей маніпулювання часовими поясами та інтернаціоналізації, які знаходяться в бібліотеках новіших мов або у сторонніх бібліотеках С, таких як Міжнародні компоненти для Unicode (ICU).
+
+Проте, здатність функції `strftime` до налаштування та широка підтримка платформ роблять її надійним та корисним інструментом для перетворення дати в рядок в мові С. Програмісти, які прийшли з мов з більш високорівневими бібліотеками для роботи з датою та часом, можуть потребувати адаптації до її низькорівневої природи, але виявлять її надзвичайно потужною та гнучкою для форматування дат та часу для різноманітних застосувань.

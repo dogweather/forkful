@@ -1,75 +1,61 @@
 ---
 title:                "Werken met complexe getallen"
-date:                  2024-01-28T22:12:34.559150-07:00
+date:                  2024-02-03T18:14:04.966750-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Werken met complexe getallen"
-
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/go/working-with-complex-numbers.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Wat & Waarom?
-Complexe getallen, samengesteld uit een reëel en een imaginair deel (zoals 5 + 7i), zijn cruciaal in vakgebieden zoals techniek, fysica en signaalverwerking. Programmeurs werken ermee om problemen in deze domeinen op te lossen die lastig te kraken zouden zijn met enkel reële getallen.
+
+Werken met complexe getallen in programmeren betreft het manipuleren van getallen die zowel een reëel als een imaginair deel hebben, doorgaans uitgedrukt als `a + bi`. Programmeurs pakken complexe getallen aan in verschillende domeinen, zoals techniek, natuurkunde en data-analyse, om problemen op te lossen die betrekking hebben op vierkantswortels van negatieve getallen, golfvormanalyses en meer.
 
 ## Hoe:
-Go heeft ingebouwde ondersteuning voor complexe getallen. Hier is een snelle doorloop:
+
+In Go worden complexe getallen behandeld met behulp van de ingebouwde functies `complex`, `real`, en `imag`, samen met de types `complex64` en `complex128` (die respectievelijk 64-bits en 128-bits complexe getallen vertegenwoordigen). Hier is een korte startgids:
 
 ```go
 package main
 
 import (
 	"fmt"
-	"math/cmplx"
 )
 
 func main() {
 	// Creëren van complexe getallen
-	a := complex(2, 3)
-	b := 4 + 5i
+	a := complex(2, 3) // 2+3i
+	b := complex(1, -1) // 1-1i
 
-	// Basishandelingen
-	fmt.Println("Optellen:", a+b)
-	fmt.Println("Aftrekken:", a-b)
-	fmt.Println("Vermenigvuldigen:", a*b)
-	fmt.Println("Delen:", a/b)
+	// Rekenkundige operaties
+	c := a + b
+	fmt.Println("Optelling:", c) // Uitvoer: Optelling: (3+2i)
 
-	// Eigenschappen van complexe getallen
-	fmt.Println("Reëel deel:", real(b))
-	fmt.Println("Imaginair deel:", imag(b))
-	fmt.Println("Toegevoegde:", cmplx.Conj(b))
-	fmt.Println("Grootte:", cmplx.Abs(b))
-	fmt.Println("Fasehoek (radians):", cmplx.Phase(b))
+	d := a * b
+	fmt.Println("Vermenigvuldiging:", d) // Uitvoer: Vermenigvuldiging: (5+1i)
+
+	// Toegang tot reële en imaginaire delen
+	reëelDeel := real(a)
+	imagDeel := imag(a)
+	fmt.Printf("Reëel deel: %.1f, Imaginair deel: %.1f\n", reëelDeel, imagDeel) // Uitvoer: Reëel deel: 2.0, Imaginair deel: 3.0
+
+	// Complex toegevoegde en magnitude kunnen worden berekend
+	toegevoegde := complex(real(a), -imag(a)) // Handmatig
+	fmt.Println("Toegevoegde van a:", toegevoegde) // Uitvoer: Toegevoegde van a: (2-3i)
 }
 
 ```
 
-Voorbeelduitvoer:
+Dit voorbeeld dekt de basis, maar er is nog veel meer dat je kunt doen met complexe getallen, inclusief het gebruik van het `math/cmplx` pakket voor meer geavanceerde operaties zoals het vinden van de magnitude, fase, en veel meer.
 
-```
-Optellen: (6+8i)
-Aftrekken: (-2-2i)
-Vermenigvuldigen: (-7+22i)
-Delen: (0.5609756097560976+0.0487804878048781i)
-Reëel deel: 4
-Imaginair deel: 5
-Toegevoegde: (4-5i)
-Grootte: 6.4031242374328485
-Fasehoek (radians): 0.8960553845713439
-```
+## Diepgaande duik
 
-## Diepere Duik
-Een hele tijd terug werden complexe getallen met argwaan bekeken - sommigen dachten dat ze nutteloos waren! Na verloop van tijd werd hun kracht in het beschrijven van fysische fenomenen duidelijk. Ze zijn fundamenteel in de kwantumfysica, regeltechniek, en elektrotechniek, om maar een paar gebieden te noemen.
+Het concept van complexe getallen gaat terug tot de 16e eeuw, maar kreeg pas in de 19e eeuw brede erkenning en rigoureuze formalisering. In computertechniek zijn complexe getallen sinds de vroege dagen een hoofdbestanddeel geweest voor complexe rekenkunde in wetenschappelijke en technische berekeningen. De benadering van Go tot complexe getallen, door ze een eersterangsburger te maken met ingebouwde ondersteuning en uitgebreide standaardbibliotheekondersteuning via het `math/cmplx` pakket, onderscheidt zich onder programmeertalen. Deze ontwerpbeslissing weerspiegelt de nadruk van Go op eenvoud en prestaties.
 
-In Go worden complexe getallen gerepresenteerd met behulp van een gegevenstype genaamd `complex128` (64 bits voor zowel het reële als het imaginaire deel) of `complex64` (32 bits elk). Onder de motorkap zijn dit echt gewoon twee `float64`s of `float32`s aan elkaar vast. Go's standaardbibliotheek, `math/cmplx`, biedt functies voor complexe wiskundige operaties. Dit bespaart je de ingewikkelde wiskunde en stelt je in staat je te richten op het oplossen van problemen.
+Desondanks is het de moeite waard om op te merken dat hoewel werken met complexe getallen in Go krachtig is, het niet altijd de beste benadering is voor alle toepassingen, in het bijzonder die welke symbolische wiskunde of hoogprecisie rekenkunde vereisen. Talen en omgevingen gespecialiseerd in wetenschappelijke computing, zoals Python met bibliotheken zoals NumPy en SciPy, of software zoals MATLAB, kunnen meer flexibiliteit en een breder scala aan functionaliteiten bieden voor specifieke toepassingen.
 
-Alternatieven voor de ingebouwde ondersteuning van Go omvatten het gebruik van externe bibliotheken of het zelf afhandelen van complexe getallen. Maar deze zijn zelden nodig omdat de native ondersteuning van Go efficiënt en goed geïntegreerd is in de taal.
-
-## Zie Ook
-Bekijk deze links voor meer over Go’s mogelijkheden met complexe getallen:
-- Go's officiële documentatie: https://golang.org/pkg/math/cmplx/
-- Een diepgaande opfriscursus over complexe getallen: https://www.mathsisfun.com/numbers/complex-numbers.html
-- Praktische toepassingen van complexe getallen in de techniek: https://ieeexplore.ieee.org/document/528dunno
+Dat gezegd hebbende, voor systeemprogrammering en contexten waar het integreren van berekeningen met complexe getallen in een grotere, prestatiegevoelige applicatie cruciaal is, biedt de native ondersteuning van Go voor complexe getallen een uniek efficiënte optie.

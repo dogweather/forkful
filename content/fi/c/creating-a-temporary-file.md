@@ -1,64 +1,90 @@
 ---
-title:                "Väliaikaistiedoston luominen"
-date:                  2024-01-20T17:39:56.983997-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Väliaikaistiedoston luominen"
-
+title:                "Tilapäisen tiedoston luominen"
+date:                  2024-02-03T17:55:19.548604-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Tilapäisen tiedoston luominen"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c/creating-a-temporary-file.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? - Mikä & Miksi?
-Luodaan väliaikainen tiedosto - tilapäistä dataa varten, joka ei tarvitse pysyvää tallennusta. Ohjelmoijat käyttävät näitä tiedostoja esimerkiksi datan väliaikaistallennukseen, kun halutaan välttää konflikteja tai kun tehdään turvallista tiedostojen käsittelyä.
+## Mikä & Miksi?
+Väliaikaistiedoston luominen C:ssä tarkoittaa tiedoston generointia, joka on tarkoitettu lyhytaikaiseen käyttöön, yleensä datankäsittelyn tai säilytyksen väliaikaiseen tilaan. Ohjelmoijat tekevät sen hallitakseen väliaikaista dataa vaikuttamatta ohjelman pysyvään säilytykseen tai varmistaakseen, että arkaluonteinen data poistetaan käytön jälkeen.
 
-## How to: - Miten:
-```C
+## Kuinka:
+Väliaikaistiedoston luominen C-ohjelmointikielessä voi hyödyntää funktioita, kuten `tmpfile()` ja `mkstemp()`.
+
+**Käyttäen `tmpfile()`**: Tämä funktio luo yksilöllisen väliaikaistiedoston, joka poistetaan automaattisesti, kun ohjelma päättyy tai tiedosto suljetaan.
+
+```c
 #include <stdio.h>
-#include <stdlib.h>
 
 int main() {
-    char temp_filename[] = "tmpfileXXXXXX"; // Luo "template" tiedostonimelle
-    int result;
-
-    // mkstemp luo uniikin väliaikaisen tiedoston ja avaa sen
-    int fd = mkstemp(temp_filename);
-    
-    if (fd == -1) {
-        perror("mkstemp");
-        return EXIT_FAILURE;
+    FILE *temp = tmpfile();
+    if (temp == NULL) {
+        perror("Väliaikaistiedoston luonti epäonnistui");
+        return 1;
     }
 
-    // Käytä tiedostokahvaa (file descriptor) haluamallasi tavalla
-    // ...
+    // Kirjoitetaan dataa väliaikaistiedostoon
+    fputs("Tämä on testi.\n", temp);
 
-    // Kun olet valmis, sulje tiedosto ja poista se
-    close(fd);
-    result = remove(temp_filename);
-    
-    if (result == 0) {
-        printf("Temporary file deleted successfully.\n");
-    } else {
-        perror("remove");
-        return EXIT_FAILURE;
+    // Kelataan takaisin ja luetaan mitä kirjoitettiin
+    rewind(temp);
+    char buffer[1024];
+    while (fgets(buffer, sizeof(buffer), temp) != NULL) {
+        printf("%s", buffer);
     }
 
-    return EXIT_SUCCESS;
+    // Poistetaan automaattisesti suljettaessa tai ohjelman päättyessä
+    fclose(temp);
+
+    return 0;
 }
 ```
+**Esimerkkituloste:**
+```
+Tämä on testi.
+```
 
-## Deep Dive - Syväsukellus:
-Väliaikaisia tiedostoja on käytetty jo varhaisissa Unix-järjestelmissä tiedon väliaikaiseen tallennukseen. Väliaikaistiedoston luominen C-ohjelmoinnissa voi tapahtua funktioiden `tmpfile()` tai `mkstemp()` kautta. `tmpfile()` luo anonyymin väliaikaisen tiedoston, joka tuhoutuu ohjelman suorituksen päättyessä, kun taas `mkstemp()` luo väliaikaisen tiedoston käyttäjän määrittelemällä nimellä, joka täytyy manuaalisesti poistaa.
+**Käyttäen `mkstemp()`**: Tarjoaa enemmän kontrollia väliaikaistiedoston sijainnin ja sen oikeuksien yli. Vaatii mallimerkkijonon, joka päättyy `XXXXXX`-merkkijonoon, jonka se sitten korvaa yksilöllisellä järjestysnumerolla välttäen nimen päällekkäisyyksiä.
 
-`mkstemp()` on turvallisempi vaihtoehto verrattuna `tmpnam()` tai `mktemp()` funktioihin, jotka ovat herkkiä erilaisille turvallisuuksiin liittyville ongelmille, kuten kilpailutilanteille (race conditions). Turvallisuus on eräs syy, miksi `mkstemp()` on nykyaikainen vaihtoehto.
+```c
+#include <unistd.h>
+#include <stdio.h>
+#include <fcntl.h>
 
-Implementation details: Väliaikaisten tiedostojen käytön yhteydessä on tärkeää ottaa huomioon järjestelmän resurssirajat ja varmistaa, että tiedosto poistetaan viimeistään ohjelman suorituksen päättyessä, jotta ei synny "orpoja" tiedostoja, jotka voivat kuluttaa levytilaa tarpeettomasti. 
+int main() {
+    char template[] = "/tmp/mytemp-XXXXXX";
+    int fd = mkstemp(template);
 
-## See Also - Katso Myös:
-- C standard library documentation on `tmpfile()`: https://en.cppreference.com/w/c/io/tmpfile
-- C standard library documentation on `mkstemp()`: https://en.cppreference.com/w/c/io/mkstemp
-- Linux manual page for `mkstemp()`: http://man7.org/linux/man-pages/man3/mkstemp.3.html
-- GNU C Library manual: https://www.gnu.org/software/libc/manual/html_node/Temporary-Files.html
+    if (fd == -1) {
+        perror("Väliaikaistiedoston luonti epäonnistui");
+        return 1;
+    }
+    
+    printf("Väliaikaistiedosto luotu: %s\n", template);
 
-Nämä lähteet tarjoavat laajempaa tietoa väliaikaistiedostojen käsittelystä, ja sisältävät syvällisemmät tekniset yksityiskohdat niitä tarvitseville.
+    // mkstemp():llä luodut väliaikaistiedostot tulisi poistaa manuaalisesti
+    unlink(template);
+
+    close(fd);
+    return 0;
+}
+```
+**Esimerkkituloste:**
+```
+Väliaikaistiedosto luotu: /tmp/mytemp-abc123
+```
+
+## Syväsukellus
+Väliaikaistiedostojen konsepti ei ole ainutlaatuinen C:lle, vaan se on yleinen toiminnallisuus monissa ohjelmointiympäristöissä sen hyödyllisyyden vuoksi käsiteltäessä ohimenevää dataa. `tmpfile()`-funktio, joka on standardoitu ISO C -standardissa, luo tiedoston yksilöllisellä nimellä standardikansioon, mutta sen olemassaolo on ohimenevää, mikä tekee siitä ihanteellisen turvalliseen tai väliaikaiseen toimintaan.
+
+Yksi huomattava `tmpfile()`-funktion rajoitus on sen riippuvuus oletusarvoisesta väliaikaiskansiosta, joka ei välttämättä sovellu kaikkiin sovelluksiin etenkin oikeuksien tai turvallisuuden näkökulmasta. Toisin sanoen `mkstemp()` mahdollistaa kansion määrittämisen ja turvallisen tiedoston luomisen taaten yksilölliset tiedostonimet muokkaamalla annettua mallimerkkijonoa tarjoten monipuolisemman ratkaisun manuaalisen tiedostonhallinnan kustannuksella.
+
+Kuitenkin väliaikaistiedostojen luominen voi tuoda mukanaan turvallisuusriskejä, kuten kilpajuoksutilanteita, jos niitä ei käsitellä oikein. Esimerkiksi `tmpfile()` ja `mkstemp()` osoittavat eri näkökulmia turvallisen väliaikaistiedoston luomiseen (automaattinen poisto ja turvallinen nimen generointi vastaavasti), mutta kumpikaan ei ole täydellinen ratkaisu. Kehittäjien on otettava huomioon sovelluksensa turvallisuustarpeiden yksityiskohdat, mukaan lukien väliaikaistiedostojen mahdollisesti tuomat haavoittuvuudet, ja saatetaan tarvita lisäsuojauksia näiden funktioiden tarjoamien ylittämiseksi.
+
+Laajemmassa ohjelmointimaisemassa vaihtoehdot, kuten muistissa tapahtuva säilytys (esim. käyttäen dynaamisia tietorakenteita tai muistin kartoittamia tiedostoja), voivat tarjota parempaa suorituskykyä tai turvallisuutta väliaikaisen datan käsittelyssä. Siitä huolimatta fyysiset väliaikaistiedostot pysyvät tärkeänä työkaluna monissa skenaarioissa, erityisesti suurten datamäärien käsittelyssä tai prosessien välisessä viestinnässä.

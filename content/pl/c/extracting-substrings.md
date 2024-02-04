@@ -1,67 +1,73 @@
 ---
-title:                "Wycinanie podłańcuchów"
-date:                  2024-01-20T17:45:06.864031-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Wycinanie podłańcuchów"
-
+title:                "Wydobywanie podciągów"
+date:                  2024-02-03T17:56:36.015924-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Wydobywanie podciągów"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/c/extracting-substrings.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Co i Dlaczego?)
-Wyciąganie podciągów to sprowadzenie części łańcucha znaków do nowego ciągu. Programiści robią to, aby manipulować danymi, weryfikować formaty lub po prostu pokazać interesującą zawartość.
+## Co i dlaczego?
 
-## How to: (Jak to zrobić:)
-Extrahowanie podciągu można zrobić na wiele sposobów. Tutaj są przykłady:
+Wyodrębnianie podciągów w C polega na tworzeniu mniejszego łańcucha znaków (podciągu) z większego łańcucha na podstawie określonych kryteriów, takich jak pozycja i długość. Programiści często wykonują to zadanie do analizy tekstu, przetwarzania danych lub walidacji wprowadzanych danych, co czyni je kluczową umiejętnością w efektywnej manipulacji i analizie danych tekstowych.
+
+## Jak to zrobić:
+
+W przeciwieństwie do niektórych języków wyższego poziomu, które oferują wbudowane metody do wyodrębniania podciągów, C wymaga bardziej ręcznego podejścia przy użyciu jego funkcji manipulacji łańcuchami. Oto jak skutecznie wyodrębnić podciąg w C:
+
+### Przykład 1: Użycie `strncpy`
 
 ```c
 #include <stdio.h>
 #include <string.h>
 
 int main() {
-    char str[] = "Witaj, świecie!";
-    char sub[8];
-    
-    // Przykład używający strncpy
-    strncpy(sub, str + 7, 7);
-    sub[7] = '\0'; // Dodanie znaku końca ciągu
-    printf("Podciąg: %s\n", sub);
+    char text[] = "Hello, World!";
+    char buffer[20];
 
+    // Wyodrębnij "World" z "Hello, World!"
+    strncpy(buffer, text + 7, 5);
+    buffer[5] = '\0'; // Zapewnij zakończenie null-em
+
+    printf("Wyodrębniony podciąg: %s\n", buffer);
+    // Wynik: Wyodrębniony podciąg: World
     return 0;
 }
-
-// Wyjście: Podciąg: świecie
 ```
 
-Możesz też użyć wskaźników:
+### Przykład 2: Tworzenie funkcji
+
+Do wielokrotnego użytku bardziej efektywne może być dedykowana funkcja do wyodrębniania podciągów:
 
 ```c
 #include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
 
-int main() {
-    const char *str = "Witaj, świecie!";
-    const char *sub_start = str + 7;
-    int len = 7;
-
-    for(int i = 0; i < len; i++) {
-        putchar(*(sub_start + i));
-    }
-    putchar('\n');
-
-    return 0;
+void extractSubstring(char *source, int from, int n, char *target) {
+    strncpy(target, source + from, n);
+    target[n] = '\0'; // Zapewnij zakończenie null-em
 }
 
-// Wyjście: świecie
+int main() {
+    char text[] = "Programming in C";
+    char buffer[50];
+
+    extractSubstring(text, 0, 11, buffer);
+    printf("Wyodrębniony podciąg: %s\n", buffer);
+    // Wynik: Wyodrębniony podciąg: Programming
+    return 0;
+}
 ```
 
-## Deep Dive (Głębsza analiza)
-Historia C jest stara jak świat komputerów — język powstał w latach 70-tych. W tamtych czasach, efektywność była kluczowa i operowanie na podciągach było niezbędne do optymalizacji. Alternatywami dla funkcji `strncpy` mogą być funkcje takie jak `snprintf` lub manualne kopiowanie za pomocą wskaźników. Ważne jest, aby zawsze pamiętać o zabezpieczeniu końca ciągu znakiem NULL, co zapobiega błędom odczytu.
+## Pogłębiona analiza
 
-Wersja standardowa C, którą obecnie używamy to C18. Choć podstawy pozostają te same, nowe standardy wprowadzają różne ulepszenia i funkcje. Ważne jest, aby być na bieżąco z dokumentacją i najlepszymi praktykami.
+Wyodrębnianie podciągów w C jest przede wszystkim obsługiwane poprzez manipulację wskaźnikami i staranne zarządzanie pamięcią, co odzwierciedla niższopoziomowe podejście języka do obsługi danych. Metoda ta sięga wczesnych dni programowania w C, kiedy efektywne zarządzanie zasobami było kluczowe ze względu na ograniczoną moc obliczeniową. Chociaż brak wbudowanej funkcji podciągu może wydawać się niedociągnięciem, jest to przykład filozofii C, która daje programistom pełną kontrolę nad zarządzaniem pamięcią, często prowadząc do optymalizacji, ale bardziej złożonego kodu.
 
-## See Also (Zobacz także)
-- Strona dokumentacji `strncpy`: https://www.cplusplus.com/reference/cstring/strncpy/
-- Tutorial dotyczący wskaźników w C: https://www.tutorialspoint.com/cprogramming/c_pointers.htm
-- Podręcznik C18: https://www.iso-9899.info/wiki/The_Standard
+W obszarze współczesnego programowania języki takie jak Python i JavaScript oferują wbudowane metody do wyodrębniania podciągów, takie jak `slice()` lub wycinanie łańcuchów znaków przy użyciu indeksów. Te języki wyższego poziomu obsługują zarządzanie pamięcią za kulisami, oddając pewien stopień kontroli w zamian za łatwość użycia i czytelność.
+
+Dla programistów C zrozumienie arytmetyki wskaźników i alokacji pamięci jest kluczowe do zadań takich jak wyodrębnianie podciągów. Chociaż podejście to wymaga głębszego zrozumienia, jak łańcuchy znaków są reprezentowane i manipulowane w pamięci, oferuje niezrównaną kontrolę i wydajność, cechy charakterystyczne programowania w C, które utrzymały jego znaczenie w aplikacjach krytycznych dla wydajności przez dekady. Jednak dla tych, którzy pracują nad aplikacjami wysokiego poziomu, gdzie bezpośrednie zarządzanie pamięcią jest mniej istotne, języki z wbudowanymi funkcjonalnościami podciągu mogą oferować prostsze i mniej podatne na błędy podejście.

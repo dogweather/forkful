@@ -1,42 +1,56 @@
 ---
 title:                "Een nieuw project starten"
-date:                  2024-01-28T22:08:33.725943-07:00
+date:                  2024-02-03T18:09:10.956522-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een nieuw project starten"
-
 tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/c/starting-a-new-project.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Wat & Waarom?
-Een nieuw project starten in C betekent het opzetten van een basisstructuur voor je app. Programmeurs doen dit om een fundament te leggen, zodat alles wat volgt een nette plek heeft om te leven.
 
-## Hoe te:
-```C
-#include <stdio.h>
+Een nieuw project in C starten, betekent het opzetten van een fundamentele code-structuur en omgeving om ontwikkelingstaken efficiënt te beheren. Programmeurs doen dit om het bouwproces te stroomlijnen, consistentie af te dwingen en het onderhoud en de schaalbaarheid van de software in de loop van de tijd te vergemakkelijken.
 
-int main() {
-    printf("Hallo, nieuw project!\n");
-    return 0;
-}
+## Hoe:
+
+In het hart van elk C-project staat de broncode. Een typisch startpunt omvat het creëren van een hoofdbestand, vaak `main.c` genoemd, dat de ingangspunt van een programma bevat. Daarnaast is een `Makefile` essentieel voor het beheren van de compilatie om projectbuilds te stroomlijnen.
+
+Hier is een minimaal voorbeeld:
+
+1. **"main.c" instellen**: Dit bestand bevat de `main` functie, het ingangspunt van het programma.
+
+    ```c
+    // main.c
+    #include <stdio.h>
+
+    int main() {
+        printf("Hallo, wereld!\n");
+        return 0;
+    }
+    ```
+
+2. **Een Makefile creëren**: Automatiseert het bouwproces, waardoor het eenvoudig is om met één commando je project te compileren.
+
+    ```makefile
+    # Makefile
+    all: main
+
+    main: main.c
+        gcc -o main main.c
+
+    clean:
+        rm -f main
+    ```
+
+In een terminal, door `make` uit te voeren, wordt `main.c` gecompileerd tot een uitvoerbaar bestand met de naam `main`, en het uitvoeren van `./main` zou moeten resulteren in:
+```
+Hallo, wereld!
 ```
 
-Voer het uit, en je zou moeten zien:
-```
-Hallo, nieuw project!
-```
+## Diepgaande verkenning
 
-## Diepgaand
-Terug in de jaren '70 werd C geboren. Dennis Ritchie begon iets groots bij Bell Labs. De eenvoud van C maakt het zelfs nu nog een eerste keus voor systeemsoftware, ingebedde systemen en applicaties met hoge prestaties.
-
-Als je begint, kies tussen procedurele of modulaire stijlen. Procedureel is eenvoudig, vergelijkbaar met het volgen van een recept. Modulair laat je code in stukken organiseren – denk aan ingrediënten gesorteerd in kommetjes. Beide werken, maar modulair schaalt beter voor complexe projecten.
-
-Onder de motorkap, wanneer je compileert, wordt je opzet omgezet in een uitvoerbaar bestand. De compiler (zoals GCC) leest je `main()` functie als het startpunt. Maar er is meer: bibliotheken koppelen, makefiles opzetten voor grotere projecten, en misschien wat preprocessor richtlijnen toevoegen voor de smaak.
-
-## Zie Ook
-- [GNU GCC Compiler](https://gcc.gnu.org/)
-- [Makefile Tutorial](https://makefiletutorial.com/)
+Een project in C initiëren gaat niet alleen over code schrijven; het gaat over een solide basis leggen voor projectmanagement. Deze praktijk is geëvolueerd vanaf de vroege dagen van programmeren, voortkomend uit de behoefte om het proces van het compileren van grote, complexe systemen uit de UNIX-wereld te organiseren en te stroomlijnen. Het GNU Make-systeem, geïntroduceerd in de jaren '80, heeft dit door automatisering van het bouwproces revolutionair veranderd, waardoor het een kritisch hulpmiddel in moderne C-projecten werd. Echter, de opkomst van geïntegreerde ontwikkelomgevingen (IDE's) en andere hogere programmeertalen introduceerde verschillende projectinitialisatiepraktijken die wellicht meer geautomatiseerde bouwsystemen, afhankelijkheidsbeheer en versiecontrointegratie vanaf het begin omvatten. Ondanks deze vooruitgang blijven de eenvoud en controle die geboden worden door een Makefile en een goed georganiseerde broncode-directory van onschatbare waarde, vooral voor systeemniveau-programmering waar efficiëntie en beheer van bronnen van het grootste belang zijn. Niettemin, voor grotere projecten worden tools zoals CMake of Meson steeds meer de voorkeur gegeven vanwege hun vermogen om complexe builds en cross-platform compatibiliteit te hanteren, wat wijst op een trend naar meer geavanceerde projectinitiatietools in het C-ecosysteem.

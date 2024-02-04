@@ -1,19 +1,29 @@
 ---
 title:                "Praca z JSON"
-date:                  2024-01-19
+date:                  2024-02-03T18:12:09.750006-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Praca z JSON"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/go/working-with-json.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Pracujemy z JSON, bo to prosta i powszechna forma wymiany danych. Używamy go w API, konfiguracjach i wszędzie tam, gdzie potrzebne jest przechowywanie czy przesyłanie informacji w czytelnym formacie.
+## Co i dlaczego?
 
-## How to:
-```Go
+Praca z JSON (JavaScript Object Notation) w Go polega na kodowaniu i dekodowaniu danych między strukturami danych Go a formatem JSON. To zadanie jest wszechobecne w usługach internetowych i API, ponieważ JSON służy jako lekki, tekstowy i niezależny od języka format wymiany danych, umożliwiając prostą wymianę danych w różnych środowiskach programistycznych.
+
+## Jak to zrobić:
+
+W Go, pakiet `encoding/json` jest Twoją bramą do manipulacji JSONem, zapewniając mechanizmy konwersji struktur danych Go do JSON (marshalling) i z powrotem (unmarshalling). Poniżej znajdują się podstawowe przykłady, które pomogą Ci zacząć:
+
+### Kodowanie (Marshalling)
+
+Aby przekonwertować strukturę Go na JSON, możesz użyć `json.Marshal`. Rozważ następującą strukturę Go:
+
+```go
 package main
 
 import (
@@ -22,43 +32,64 @@ import (
     "log"
 )
 
-type Samochod struct {
-    Marka string `json:"marka"`
-    Model string `json:"model"`
-    Rok   int    `json:"rok"`
+type User struct {
+    ID        int      `json:"id"`
+    Username  string   `json:"username"`
+    Languages []string `json:"languages"`
 }
 
 func main() {
-    // JSON do struktury
-    jsonDane := `{"marka": "Fiat", "model": "500", "rok": 2012}`
-    var samochod Samochod
-    err := json.Unmarshal([]byte(jsonDane), &samochod)
+    user := User{1, "JohnDoe", []string{"Go", "JavaScript", "Python"}}
+    userJSON, err := json.Marshal(user)
     if err != nil {
         log.Fatal(err)
     }
-    fmt.Printf("JSON do struktury: %+v\n", samochod)
-
-    // Struktura do JSON
-    nowySamochod := Samochod{"Skoda", "Octavia", 2020}
-    toJson, err := json.Marshal(nowySamochod)
-    if err != nil {
-        log.Fatal(err)
-    }
-    fmt.Printf("Struktura do JSON: %s\n", toJson)
+    fmt.Println(string(userJSON))
 }
 ```
+
 Wynik:
-```
-JSON do struktury: {Marka:Fiat Model:500 Rok:2012}
-Struktura do JSON: {"marka":"Skoda","model":"Octavia","rok":2020}
-```
-## Deep Dive:
-JSON, JavaScript Object Notation, wywodzi się z JavaScript, ale jest niezależny od języka. Chociaż XML był wcześniej popularny, JSON stał się dominujący ze względu na prostotę i szybkość.
 
-Inne formaty jak YAML mogą być alternatywą dla JSON, ale nie są tak wszechstronne. W Go używamy pakietu `encoding/json` do pracy z JSON, który wewnętrznie bazuje na refleksji, by przypisać dane do struktur.
+```json
+{"id":1,"username":"JohnDoe","languages":["Go","JavaScript","Python"]}
+```
 
-## See Also:
-- [Oficjalna dokumentacja JSON w Go](https://golang.org/pkg/encoding/json/)
-- [Tutorial: Jak używać JSON w Go](https://blog.golang.org/json)
-- [JSON na Wikipedii](https://pl.wikipedia.org/wiki/JSON)
-- [Porównanie JSON i XML](https://www.json.org/json-pl.html)
+### Dekodowanie (Unmarshalling)
+
+Aby przeanalizować JSON do struktury danych Go, użyj `json.Unmarshal`:
+
+```go
+package main
+
+import (
+    "encoding/json"
+    "fmt"
+    "log"
+)
+
+func main() {
+    jsonStr := `{"id":1,"username":"JohnDoe","languages":["Go","JavaScript","Python"]}`
+    var user User
+    err := json.Unmarshal([]byte(jsonStr), &user)
+    if err != nil {
+        log.Fatal(err)
+    }
+    fmt.Printf("%+v\n", user)
+}
+```
+
+Przy wyżej wymienionej strukturze `User`, ten kod analizuje ciąg JSON do instancji User.
+
+Wynik:
+
+```go
+{ID:1 Username:JohnDoe Languages:[Go JavaScript Python]}
+```
+
+## Pogłębiona analiza
+
+Pakiet `encoding/json` w Go oferuje prosty API, który abstrahuje wiele złożoności związanych z manipulacją JSON. Wprowadzony we wczesnej fazie rozwoju Go, ten pakiet odzwierciedla filozofię Go dotyczącą prostoty i efektywności. Jednak użycie refleksji przez `encoding/json` do inspekcji i modyfikacji struktur w czasie rzeczywistym może prowadzić do mniejszej niż optymalna wydajność w scenariuszach intensywnie korzystających z CPU.
+
+Alternatywy takie jak `json-iterator/go` i `ffjson` pojawiły się, oferując szybsze przetwarzanie JSON poprzez generowanie statycznego kodu marshallingu i unmarshallingu. Jednakże, `encoding/json` pozostaje najczęściej używanym pakietem ze względu na swoją prostotę, solidność i fakt, że jest częścią standardowej biblioteki, zapewniając zgodność i stabilność przez różne wersje Go.
+
+Pomimo jego względnie wolniejszej wydajności, łatwość użycia i integracja z systemem typów Go sprawiają, że `encoding/json` nadaje się do większości aplikacji. Dla tych, którzy pracują w kontekstach, gdzie wydajność jest kluczowa, zbadanie zewnętrznych bibliotek może być warte rozważenia, ale dla wielu standardowa biblioteka osiąga właściwą równowagę między szybkością, prostotą i niezawodnością.

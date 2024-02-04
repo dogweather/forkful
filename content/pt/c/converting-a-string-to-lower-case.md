@@ -1,56 +1,59 @@
 ---
-title:                "Convertendo uma string para minúsculas"
-date:                  2024-01-20T17:37:49.371209-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Convertendo uma string para minúsculas"
-
+title:                "Convertendo uma string para letras minúsculas"
+date:                  2024-02-03T17:54:33.361642-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Convertendo uma string para letras minúsculas"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/c/converting-a-string-to-lower-case.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## O Que & Porquê?
-Converter uma string para minúsculas significa transformar todos os caracteres alfabéticos de uma string em letras minúsculas. Programadores fazem isso para padronizar inputs, facilitar comparações e buscas de strings, independentemente da capitalização original.
+## O Que & Por Que?
 
-## Como Fazer:
-Aqui está um exemplo de como converter uma string para minúsculas em C usando a função `tolower()` da biblioteca padrão:
+Converter uma string para minúsculas em C envolve transformar todas as letras maiúsculas de uma string dada em suas correspondentes minúsculas. Programadores frequentemente realizam essa operação para padronizar a entrada de texto para comparação, operações de busca, ou simplesmente para consistência estética na saída.
+
+## Como fazer:
+
+C não possui uma função embutida para conversão de string para minúsculas diretamente, ao contrário de algumas linguagens de alto nível. No entanto, o processo pode ser facilmente implementado usando as funções da biblioteca padrão do C. Abaixo está um guia passo a passo e um exemplo ilustrando como converter uma string para minúsculas.
 
 ```c
 #include <stdio.h>
 #include <ctype.h>
 
-void strToLower(char *str) {
-    while(*str) {
-        *str = tolower((unsigned char) *str);
+void toLowerCase(char *str) {
+    while (*str) {
+        *str = tolower(*str);
         str++;
     }
 }
 
 int main() {
-    char myString[] = "Olá, Mundo!";
-    printf("Original: %s\n", myString);
-    strToLower(myString);
-    printf("Minúsculas: %s\n", myString);
+    char texto[] = "Hello, World!";
+    printf("Original: %s\n", texto);
+
+    toLowerCase(texto);
+    printf("Minúsculas: %s\n", texto);
+
     return 0;
 }
 ```
 
-Saída esperada:
+**Saída de Amostra:**
+
 ```
-Original: Olá, Mundo!
-Minúsculas: olá, mundo!
+Original: Hello, World!
+Minúsculas: hello, world!
 ```
 
-## Mergulho Profundo:
-Historicamente, a necessidade de converter strings para minúsculas surgiu com a evolução dos sistemas de computador e a necessidade de processar texto de forma eficiente. Hoje, funções como `tolower()` fazem parte da biblioteca padrão C (stdlib.h), simplificando essa operação.
+Neste exemplo, a função `toLowerCase` itera através de cada caractere da string de entrada, convertendo-o para sua equivalente em minúscula usando a função `tolower` de `ctype.h`. A modificação é feita no local, alterando a string original.
 
-Existem alternativas para a função `tolower()`, como o uso de operações de máscara de bits em sistemas onde a tabela de caracteres segue a codificação ASCII. Porém, tais métodos são menos portáveis e ignoram localizações e caracteres especiais.
+## Aprofundando
 
-A implementação de funções como `tolower()` leva em conta a tabela de caracteres do sistema. Por isso, aplicativos C modernos devem preferir essas funções padrão, pois elas lidam com questões de localização e podem ser atualizadas para suportar novos padrões e idiomas.
+A função `tolower` usada no exemplo acima faz parte da biblioteca padrão do C, especificamente dentro do arquivo cabeçalho `ctype.h`. Ela opera baseada no local atual, mas para o local "C" padrão, ela lida com o conjunto de caracteres ASCII, onde 'A' até 'Z' são convertidos em 'a' até 'z'.
 
-## Veja Também:
-Para mais informações e uma compreensão mais profunda de como manipular texto em C, visite os seguintes links:
-- Documentação da função `tolower()`: https://en.cppreference.com/w/c/string/byte/tolower
-- Tutorial GNU C Library sobre caracteres: https://www.gnu.org/software/libc/manual/html_node/Character-Handling.html
-- Tutorial sobre manipulação de strings em C: https://www.tutorialspoint.com/cprogramming/c_strings.htm
+Historicamente, o tratamento de codificação de caracteres e conversão de caixa em C estava fortemente ligado ao conjunto de caracteres ASCII, limitando sua utilidade em aplicações internacionais ou localizadas onde caracteres fora do conjunto ASCII são comuns. Linguagens de programação modernas podem oferecer métodos de string embutidos para realizar a conversão de caixa considerando localidade e caracteres Unicode, o que o C não possui nativamente.
+
+Em cenários que requerem manipulação extensiva de texto, especialmente com caracteres não-ASCII, programadores podem considerar o uso de bibliotecas que oferecem melhor suporte à internacionalização, como o ICU (International Components for Unicode). No entanto, para a maioria das aplicações que lidam com texto ASCII, a abordagem demonstrada é eficiente e direta. Isso destaca a propensão do C em dar aos programadores controle sobre a manipulação de dados, embora com um pouco mais de esforço envolvido em comparação com linguagens de nível mais alto.

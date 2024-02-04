@@ -1,58 +1,81 @@
 ---
 title:                "Uuden projektin aloittaminen"
-date:                  2024-01-20T18:03:29.678110-07:00
-model:                 gpt-4-1106-preview
+date:                  2024-02-03T18:09:46.286154-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Uuden projektin aloittaminen"
-
 tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/go/starting-a-new-project.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? - Mitä & Miksi?
-Uuden projektin aloittaminen tarkoittaa uuden sovelluksen tai ohjelman kehityksen käynnistämistä tyhjältä pohjalta. Ohjelmoijat tekevät tämän tuodakseen uusia ideoita eloon ja ratkaistakseen olemassa olevia ongelmia.
+## Mikä & Miksi?
 
-## How to: - Näin aloitat:
-Perustan luominen uudelle Go-projektille on suoraviivaista. Käytä `go mod` -komennon luomaan uusi moduuli, joka hallinnoi riippuvuuksiasi.
+Uuden projektin aloittaminen Go:ssa sisältää työtilan pystyttämisen ja sen alustamisen tarvittavilla Go-moduuleilla. Ohjelmoijat tekevät tämän koodin organisoinnin, riippuvuuksien hallinnan tehostamisen ja rakennusprosessien helpottamisen vuoksi. Se on perustavanlaatuista skaalautuvan ja ylläpidettävän ohjelmiston luomiseen Go:ssa.
 
-```Go
-// Luo uusi hakemisto projektillesi
-mkdir myproject
-cd myproject
+## Kuinka:
 
-// Alusta uusi moduuli
-go mod init myproject
+Aloita varmistamalla, että Go on asennettu suorittamalla `go version` komentorivillä. Sinun pitäisi nähdä asentamasi Go-version tulosteena. Seuraavaksi, aloitetaan uusi projekti. Siirry työtilaasi ja suorita:
 
-// Luo ensimmäinen tiedosto, esimerkiksi main.go
+```shell
+mkdir hello-world
+cd hello-world
+```
+
+Tämä luo uuden hakemiston projektillesi ja siirtää sinut siihen. Nyt, alusta moduuli:
+
+```shell
+go mod init example.com/hello-world
+```
+
+Korvaa `example.com/hello-world` omalla moduulipolullasi. Tämä komento luo `go.mod` tiedoston hakemistoosi, ilmoittaen uuden Go-moduulin aloituksesta. Tältä `go.mod` voi näyttää:
+
+```plaintext
+module example.com/hello-world
+
+go 1.18
+```
+
+`go.mod` seuraa projektisi riippuvuuksia. Nyt, luo `main.go` tiedosto:
+
+```shell
 touch main.go
 ```
 
-`main.go` tiedostossa:
+Avaa `main.go` suosikkieditorissasi ja lisää seuraava koodi tulostamaan "Hello, World!":
 
-```Go
+```go
 package main
 
 import "fmt"
 
 func main() {
-    fmt.Println("Tervetuloa uuteen projektiini!")
+    fmt.Println("Hello, World!")
 }
-
 ```
 
-Kun ajat `go run main.go`, näet:
+Suorittaaksesi ohjelmasi, palaa takaisin komentoriville ja suorita:
 
+```shell
+go run main.go
 ```
-Tervetuloa uuteen projektiini!
+
+Sinun pitäisi nähdä:
+
+```plaintext
+Hello, World!
 ```
 
-## Deep Dive - Syväsukellus:
-Go, tai "Golang", on Googlella vuonna 2007 kehitetty kieli. Sen tavoitteena oli yhdistää yksinkertainen syntaksi tehokkaaseen suorituskykyyn, ja se on erityisen suosittu rinnakkaisuuden ja verkko-ohjelmoinnin parissa. Vaihtoehtona Go:n `go mod init` komennolle on vanhempi GOPATH-hakemistopolku, mutta moduulien hallintajärjestelmä on oletuskäytössä Go 1.11:stä lähtien ja on suositeltavampi tämän päivän hankkeissa.
+Onnittelut! Olet juuri aloittanut uuden Go-projektin ja suorittanut ensimmäisen Go-ohjelmasi.
 
-Kun olet luonut moduulin `go mod init` komennolla, Go luo `go.mod` tiedoston, joka määrittelee projektisi riippuvuudet. Saat riippuvuuden lisättyä yksinkertaisesti importtaamalla sen ja ajamalla ohjelmasi. Go lataa puuttuvat riippuvuudet ja päivittää `go.mod` tiedoston automaattisesti.
+## Syväsukellus
 
-## See Also - Katso Myös:
-- Go:n virallinen dokumentaatio: https://golang.org/doc/
-- Moduulien käyttö Go:ssa: https://blog.golang.org/using-go-modules
-- Aloittelijan opas Go-kielen maailmaan: https://www.learngoprogramming.com/
+Aloitteen tuoda moduulit Go:n riippuvuuksien hallinnan standardiksi oli merkittävä muutos Go-ekosysteemissä, virallisesti omaksuttu Go 1.11:ssä. Ennen moduuleja Go-kehittäjät turvautuivat GOPATH-ympäristömuuttujaan riippuvuuksien hallintaan, mikä oli vähemmän intuitiivista ja usein johti kuuluisaan "riippuvuushelvettiin".
+
+Moduulit tarjoavat kapseloidun tavan hallita projektiriippuvuuksia, versionhallintaa ja ovat siirtymä kohti Go-projekteja, jotka ovat enemmän itsenäisiä ja siirrettäviä. Jokainen moduuli määrittelee riippuvuutensa, jotka Go seuraa `go.mod` tiedostossa, yksinkertaistaen riippuvuuksien hallintaa eri ympäristöissä ja kehitysvaiheissa.
+
+On kuitenkin huomionarvoista, että vaikka Go-moduulit ovat nyt standardi, jotkut perintöprojektit saattavat silti käyttää GOPATHia. Useimmille uusille projekteille moduulit tarjoavat yksinkertaisemman ja tehokkaamman hallintajärjestelmän, mutta GOPATHin ymmärtäminen voi olla kätevää vanhempien Go-koodikantojen ylläpitämiseen tai niihin panostamiseen.
+
+Vaihtoehtojen osalta, vaikka Go-moduulit ovat nyt de facto standardi, Go-yhteisö on kokeillut aiemmin muita riippuvuuksien hallintatyökaluja, kuten `dep`. Kuitenkin, nämä on suurelta osin syrjäytetty virallisen moduulituen myötä, joka on integroitu Go-työkaluketjuun.

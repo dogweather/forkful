@@ -1,54 +1,58 @@
 ---
-title:                "Suppression de caractères correspondant à un motif"
-date:                  2024-01-20T17:41:38.623870-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Suppression de caractères correspondant à un motif"
-
+title:                "Supprimer des caractères correspondant à un motif"
+date:                  2024-02-03T17:55:15.960274-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Supprimer des caractères correspondant à un motif"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/c/deleting-characters-matching-a-pattern.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Quoi et pourquoi ?)
-Supprimer des caractères selon un motif, c'est filtrer du texte. Les programmeurs le font pour nettoyer des données, valider des entrées ou manipuler des chaînes pour des besoins spécifiques.
+## Quoi & Pourquoi ?
 
-## How to: (Comment faire :)
-```C
+La suppression de caractères correspondant à un motif spécifique dans les chaînes en C consiste à retirer toutes les instances de certains caractères répondant à des critères prédéfinis. Les programmeurs réalisent cette tâche pour assainir les entrées, préparer les données pour le traitement, ou simplement nettoyer les chaînes pour la sortie ou une manipulation ultérieure, s'assurant ainsi que les données manipulées sont exactement comme nécessaires pour un contexte ou algorithme donné.
+
+## Comment :
+
+C ne dispose pas d'une fonction intégrée permettant de supprimer directement des caractères d'une chaîne basée sur un motif, contrairement à certains langages de plus haut niveau. Cependant, vous pouvez facilement accomplir cette tâche en itérant manuellement sur la chaîne et en construisant une nouvelle qui exclut les caractères indésirables. Par exemple, supposons que vous voulez supprimer tous les chiffres d'une chaîne. Vous pouvez le faire de la manière suivante :
+
+```c
 #include <stdio.h>
-#include <string.h>
+#include <ctype.h>
 
-void delete_matching_chars(char *str, const char *pattern) {
-    char *pr = str, *pw = str; // pointeurs de lecture et d'écriture
-    while (*pr) {
-        const char *temp = pattern;
-        int match = 0;
-        while (*temp) {
-            if (*pr == *temp++) {
-                match = 1;
-                break;
-            }
+void remove_digits(char *str) {
+    char *src = str, *dst = str;
+    while (*src) {
+        if (!isdigit((unsigned char)*src)) {
+            *dst++ = *src;
         }
-        if (!match) {
-            *pw++ = *pr;
-        }
-        pr++;
+        src++;
     }
-    *pw = '\0';
+    *dst = '\0';
 }
 
 int main() {
-    char str[] = "Bonjour, c'est un exemple!";
-    delete_matching_chars(str, "aeiou");
-    printf("Après suppression: %s\n", str); // Affiche: Bnjr, c'st n xmpl!
+    char str[] = "C Programming 101 : Les Bases !";
+    remove_digits(str);
+    printf("Résultat : %s\n", str);
     return 0;
 }
 ```
 
-## Deep Dive (Plongée profonde)
-Historiquement, supprimer des caractères selon un motif est fondamental en programmation car cela aide à traiter le texte de manière précise. Des alternatives incluent des fonctions standard comme `strtok`, `strspn`, `strcspn`, et des expressions régulières (regex), disponibles dans des bibliothèques comme `regex.h`. Pour performance et personnalisation, une implémentation manuelle, comme celle ci-dessus, est souvent préférable, surtout si les fonctions standard ne répondent pas aux besoins spécifiques.
+Exemple de sortie :
+```
+Résultat : C Programming : Les Bases !
+```
 
-## See Also (À voir aussi)
-- Documentation de la bibliothèque standard C : https://en.cppreference.com/w/c/string/byte
-- Guide des expressions régulières C : https://www.gnu.org/software/libc/manual/html_node/Regular-Expressions.html
-- Tutoriels sur la manipulation de chaînes en C : https://www.tutorialspoint.com/cprogramming/c_strings.htm
+Cet exemple utilise `isdigit` de `ctype.h` pour identifier les chiffres, en déplaçant les caractères non-chiffres au début de la chaîne et en terminant la chaîne une fois tous les caractères évalués.
+
+## Approfondissement
+
+La solution présentée utilise une approche à deux pointeurs au sein du même tableau pour filtrer efficacement les caractères indésirables, une technique emblématique de la philosophie de gestion de la mémoire manuelle de C. Cette méthode est efficace car elle opère sur place, évitant le besoin d'allocation de mémoire supplémentaire et minimisant ainsi la surcharge.
+
+Historiquement, l'absence de fonctions de manipulation de chaînes de haut niveau en C a obligé les programmeurs à développer une compréhension approfondie de la gestion des chaînes au niveau de la mémoire, conduisant à des approches innovantes comme celle ci-dessus. Bien que cela ait l'avantage d'offrir un contrôle plus grand et une meilleure efficacité, cela s'accompagne d'un risque plus élevé d'erreurs, telles que les débordements de tampon et les erreurs hors-limites.
+
+Dans les contextes de développement modernes, en particulier ceux qui mettent l'accent sur la sécurité et la sûreté, les langages qui abstraient de telles opérations de bas niveau pourraient être préférés pour les tâches de manipulation de chaînes. Néanmoins, comprendre et utiliser ces techniques en C reste inestimable pour les scénarios exigeant une optimisation des performances très fine ou pour travailler dans des environnements où le minimalisme et la rapidité de C sont primordiaux.

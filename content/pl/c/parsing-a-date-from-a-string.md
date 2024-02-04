@@ -1,54 +1,60 @@
 ---
-title:                "Przetwarzanie daty ze łańcucha znaków"
-date:                  2024-01-20T15:35:03.894134-07:00
-simple_title:         "Przetwarzanie daty ze łańcucha znaków"
-
+title:                "Analiza składniowa daty z ciągu znaków"
+date:                  2024-02-03T18:00:12.766394-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Analiza składniowa daty z ciągu znaków"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/c/parsing-a-date-from-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? / Co i Dlaczego?
-Parsing dates from strings is about converting text to a date/time format that a program can understand. Programmers do it to process user input, to interact with databases, and to handle date logic in applications.
+## Co i dlaczego?
 
-## How to / Jak to zrobić:
-Here's a simple example of how to do it in C using the `strptime` function:
+Parsowanie daty ze stringa w języku C polega na konwersji tekstowych reprezentacji dat na format, który programy mogą bardziej efektywnie manipulować i analizować. Jest to kluczowe dla zadań takich jak arytmetyka dat, porównania i formatowanie dla różnych lokalizacji, ponieważ pozwala programistom obsługiwać dane wejściowe użytkownika lub wpisy zbiorów danych w ustandaryzowany sposób.
 
-```C
-#include <stdio.h>
+## Jak to zrobić:
+
+C nie oferuje wbudowanego sposobu na bezpośrednie parsowanie dat z ciągów znaków, więc często korzystamy z funkcji `strptime`, dostępnej w bibliotece `<time.h>` dla systemów POSIX. Ta funkcja umożliwia nam określenie oczekiwanego formatu ciągu wejściowego i przetworzenie go na `struct tm`, która reprezentuje datę i czas kalendarzowy, rozbity na swoje komponenty.
+
+Oto prosty przykład użycia `strptime` do przetworzenia daty ze stringa:
+
+```c
 #include <time.h>
+#include <stdio.h>
 
 int main() {
+    const char *dateStr = "2023-04-01";
     struct tm tm;
-    char *str_date = "2023-03-14";
-    
-    if (strptime(str_date, "%Y-%m-%d", &tm) == NULL) {
-        printf("Date format error\n");
+    char buf[255];
+
+    // Parsowanie ciągu daty do struct tm
+    if (strptime(dateStr, "%Y-%m-%d", &tm) == NULL) {
+        printf("Nie udało się przetworzyć daty.\n");
     } else {
-        printf("Successfully parsed: Year: %d, Month: %d, Day: %d\n", 
-               tm.tm_year + 1900, tm.tm_mon + 1, tm.tm_mday);
+        // Użycie strftime do wydrukowania daty w czytelnym formacie
+        strftime(buf, sizeof(buf), "%A, %B %d, %Y", &tm);
+        printf("Przetworzona data: %s\n", buf);
     }
-    
+
     return 0;
 }
 ```
 
-Output:
+Przykładowe wyjście dla tego programu to:
+
 ```
-Successfully parsed: Year: 2023, Month: 3, Day: 14
+Przetworzona data: sobota, kwiecień 01, 2023
 ```
 
-Note: `tm.tm_year` is the number of years since 1900, and `tm.tm_mon` is zero-indexed (0 = January).
+Istotne jest, aby obsłużyć potencjalne błędy, takie jak niepowodzenie `strptime` w dopasowaniu wzorca lub napotkanie nieoczekiwanego wejścia.
 
-## Deep Dive / W Głąb Tematu:
-Parsing a date from a string isn't new. In C, `strptime()` has been the go-to since POSIX standards came into play. There are alternatives, like `sscanf` or third-party libraries, but they have trade-offs in complexity and safety.
+## Szczegółowa analiza
 
-The `strptime` function's job is to translate a string form based on provided format directives (like `%Y` for year). It populates a `tm` struct with this data. However, remember it doesn't set `tm.tm_wday` or `tm.tm_yday` unless you explicitly use day of the week or day of the year in your format string.
+Funkcja `strptime`, mimo że potężna, nie jest częścią standardowej biblioteki C i głównie znajduje się w systemach zgodnych z POSIX, takich jak Linux i UNIX. Ograniczenie to oznacza, że programy korzystające z `strptime` do przetwarzania dat z ciągów znaków mogą nie być przenośne na systemy niezgodne z POSIX, takie jak Windows, bez dodatkowych warstw kompatybilności lub bibliotek.
 
-Also, mind the locale. `strptime` behavior may differ with locale settings regarding day/month names.
+Historycznie, obsługa dat i czasów w C wymagała wielu ręcznych manipulacji i uwagi, zwłaszcza biorąc pod uwagę różne lokalizacje i strefy czasowe. Nowoczesne alternatywy i rozszerzenia do C, takie jak biblioteka `<chrono>` w C++ oraz biblioteki stron trzecich, takie jak biblioteka dat Howarda Hinnanta dla C++, oferują bardziej solidne rozwiązania dla manipulacji datami i czasem, w tym parsowania. Te biblioteki zazwyczaj zapewniają lepsze wsparcie dla szerszego zakresu formatów dat, stref czasowych i mechanizmów obsługi błędów, co czyni je preferowanymi dla nowych projektów wymagających szerokich możliwości manipulacji danymi i czasem.
 
-## See Also / Zobacz Również:
-- C Standard Library Documentation on `strptime`: https://en.cppreference.com/w/c/chrono/strptime
-- GNU C Library Reference Manual: https://www.gnu.org/software/libc/manual/html_node/Low_002dLevel-Time-String-Parsing.html
-- POSIX Standard for Time Functions: https://pubs.opengroup.org/onlinepubs/9699919799/functions/strptime.html
+Mimo to, zrozumienie, jak przetwarzać daty ze stringów w C, może być korzystne, szczególnie przy pracy nad lub utrzymaniem projektów, które muszą być kompatybilne z systemami, w których te nowoczesne narzędzia nie są dostępne, lub przy pracy w ramach ścisłych środowisk programowania w C.

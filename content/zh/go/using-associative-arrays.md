@@ -1,87 +1,81 @@
 ---
 title:                "使用关联数组"
-date:                  2024-01-30T19:11:21.298329-07:00
+date:                  2024-02-03T18:10:59.078163-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "使用关联数组"
-
 tag:                  "Data Structures"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/go/using-associative-arrays.md"
 changelog:
-  - 2024-01-30, gpt-4-0125-preview, translated from English
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## 什么和为什么？
+## 什么 & 为什么?
 
-关联数组，在 Go 中称为映射（maps），让您能够使用键值对来存储和访问数据。它们对于管理可以通过唯一键快速查找值的集合至关重要，简化了程序中的数据操作和检索。
+在Go中，关联数组被称为映射（maps），它允许你存储键值对，其中每个唯一的键映射到一个值。程序员使用映射来高效地检索、修改数据，以及维护一个可以通过唯一键快速访问的元素集合。
 
-## 如何使用：
+## 如何操作:
 
-在 Go 中，映射非常容易使用。这里是一个简单的指南来开始：
+在Go中创建和初始化映射可以通过多种方式完成。这里有一个基本示例来帮助你开始：
 
-1. **声明和初始化映射**
-
-```Go
+```go
 package main
 
 import "fmt"
 
 func main() {
-    // 初始化一个为空的映射，键为字符串类型，值为int类型
-    var scores map[string]int
-    fmt.Println(scores) // 打印：map[]
-
-    // 声明和初始化一个非空映射
+    // 声明并初始化一个映射
     colors := map[string]string{
-        "red": "#ff0000",
-        "green": "#00ff00",
+        "red":   "#FF0000",
+        "green": "#00FF00",
+        "blue":  "#0000FF",
     }
-    fmt.Println(colors) // 打印：map[green:#00ff00 red:#ff0000]
+
+    fmt.Println(colors)
+    // 输出: map[blue:#0000FF green:#00FF00 red:#FF0000]
 }
 ```
 
-2. **添加和访问元素**
+要添加或更新元素，你可以这样给一个键赋值：
 
-```Go
-func main() {
-    fruits := make(map[string]int)
-    fruits["apples"] = 5
-    fruits["bananas"] = 10
+```go
+colors["white"] = "#FFFFFF"
+fmt.Println(colors)
+// 输出: map[blue:#0000FF green:#00FF00 red:#FF0000 white:#FFFFFF]
+```
 
-    fmt.Println(fruits["apples"]) // 打印：5
+通过键访问一个值很直接：
+
+```go
+fmt.Println("红色的十六进制代码是:", colors["red"])
+// 输出: 红色的十六进制代码是: #FF0000
+```
+
+要删除一个元素，使用`delete`函数：
+
+```go
+delete(colors, "red")
+fmt.Println(colors)
+// 输出: map[blue:#0000FF green:#00FF00 white:#FFFFFF]
+```
+
+遍历映射使用for循环：
+
+```go
+for color, hex := range colors {
+    fmt.Printf("键: %s 值: %s\n", color, hex)
 }
 ```
 
-3. **遍历映射**
+记住，在Go中映射是无序的。迭代的顺序不是固定的。
 
-```Go
-func main() {
-    pets := map[string]string{"dog": "bark", "cat": "meow"}
+## 深入探究
 
-    for key, value := range pets {
-        fmt.Printf("%s goes %s\n", key, value)
-    }
-    // 输出顺序可能会有所不同，因为映射不保证顺序。
-}
-```
+在Go中，映射是通过哈希表实现的。映射中的每个条目都包括两项：一个键和一个值。键被哈希化以存储条目，这允许对小数据集执行常数时间操作，平均时间复杂性为O(1)，适当的哈希可以降低到O(n)的最坏情况，这是由于许多哈希冲突导致的。
 
-4. **删除元素**
+对新手Go程序员来说，一个重要的提示是映射类型是引用类型。这意味着当你把一个映射传递给一个函数时，该函数内对映射的任何更改都对调用者可见。这与比如说，将一个结构体传递给函数不同，除非通过指针传递，否则结构体是被复制的。
 
-```Go
-func main() {
-    meals := map[string]int{"breakfast": 300, "lunch": 600}
-    fmt.Println(meals) // 删除前
+虽然映射对于涉及关联数组的大多数用例来说都是非常灵活和高效的，在性能关键型应用程序中，使用具有更可预测性能特性的数据结构可能会更有利，尤其是如果键分布可能导致频繁的冲突。
 
-    delete(meals, "lunch")
-    fmt.Println(meals) // 删除后
-}
-```
-
-## 深入探讨
-
-自 Go 1 引入以来，映射提供了一种内置的方式来高效处理关联数组。与有序集合的切片不同，映射是无序的。这意味着映射元素的迭代顺序在不同执行中不保证相同，这是它能够动态处理键值对并具有显著灵活性的权衡。
-
-Go 在底层将映射实现为哈希表，确保在大多数情况下，访问、插入和删除操作的平均复杂度为 O(1)。然而，值得注意的是，这种效率可能会因诸如哈希冲突等因素而有所不同。
-
-对于需要有序键遍历的用例，您可能会考虑结合映射和切片使用，或探索提供额外数据结构（如有序映射或树）的第三方包。尽管有其限制，Go 的映射对于许多编程场景而言仍是一个强大且必不可少的工具。
+另一个值得考虑的替代方案是自Go 1.9以来可用的`sync.Map`，它设计用于键只写入一次但多次读取的用例，为这些场景提供了效率改进。然而，对于常规的Go应用程序，常规映射的使用是惯用的，并且经常是推荐的做法，因为它的简单性和在语言中的直接支持。

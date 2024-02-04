@@ -1,56 +1,80 @@
 ---
-title:                "Löschen von Zeichen, die einem Muster entsprechen"
-date:                  2024-01-20T17:42:06.369753-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Löschen von Zeichen, die einem Muster entsprechen"
-
+title:                "Zeichen löschen, die einem Muster entsprechen"
+date:                  2024-02-03T17:55:31.213254-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Zeichen löschen, die einem Muster entsprechen"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/go/deleting-characters-matching-a-pattern.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Beim Löschen von Zeichen, die einem Muster entsprechen, geht's darum, spezifische Teile aus einem String herauszufiltern, die wir nicht brauchen oder wollen. Programmierer machen das oft, um Eingaben zu bereinigen oder Daten zu formatieren, bevor sie weiterverarbeitet werden.
 
-## How to:
-Ein Stückchen Go-Code sagt mehr als tausend Worte. Hier ein einfaches Beispiel wie das Ganze aussieht:
+Das Löschen von Zeichen, die einem spezifischen Muster entsprechen, bezieht sich auf das Entfernen bestimmter Zeichen oder Zeichenfolgen aus Zeichenketten, basierend auf Regeln, die durch ein Muster definiert sind (normalerweise über reguläre Ausdrücke). Programmierer müssen diese Aufgabe häufig für die Datenbereinigung, die Vorverarbeitung zur Analyse, das Formatieren von Ausgaben oder einfach das Manipulieren von Zeichenketten, um Anforderungen von Anwendungen zu erfüllen, durchführen.
 
-```Go
+## Wie:
+
+In Go kann das Löschen von Zeichen, die einem Muster entsprechen, effizient mit dem `regexp`-Paket erreicht werden. Hier zeigen wir, wie man zunächst alle Ziffern und dann alle nicht alphanumerischen Zeichen aus einer Zeichenkette entfernt.
+
+1. **Entfernen aller Ziffern:**
+
+```go
 package main
 
 import (
-	"fmt"
-	"regexp"
+    "fmt"
+    "regexp"
 )
 
 func main() {
-	pattern := "[0-9]+"
-	input := "Go Version 1.16 - Gophers unite!"
-
-	// Kompiliere das Regexp-Muster
-	re := regexp.MustCompile(pattern)
-
-	// Ersetze alle Treffer mit einem leeren String
-	cleaned := re.ReplaceAllString(input, "")
-
-	// Ausgabe des bereinigten Strings
-	fmt.Println(cleaned)
+    text := "Go1 ist cool, aber Go2 wird cooler sein! Jetzt: 2023."
+	
+    // Kompilieren des regulären Ausdrucks für Ziffern
+    re, err := regexp.Compile("[0-9]+")
+    if err != nil {
+        fmt.Println("Fehler beim Kompilieren des Regex:", err)
+        return
+    }
+	
+    // Ersetzen der Ziffern durch einen leeren String
+    result := re.ReplaceAllString(text, "")
+	
+    fmt.Println(result) // Ausgabe: Go ist cool, aber Go wird cooler sein! Jetzt: .
 }
 ```
 
-Ausgabe:
+2. **Entfernen aller nicht alphanumerischen Zeichen:**
 
+```go
+package main
+
+import (
+    "fmt"
+    "regexp"
+)
+
+func main() {
+    text := "Go ist #1 bei Programmiersprachen!"
+	
+    // Kompilieren des regulären Ausdrucks für nicht alphanumerische Zeichen
+    re, err := regexp.Compile("[^a-zA-Z0-9]+")
+    if err != nil {
+        fmt.Println("Fehler beim Kompilieren des Regex:", err)
+        return
+    }
+	
+    // Ersetzen der nicht alphanumerischen Zeichen durch einen leeren String
+    result := re.ReplaceAllString(text, "")
+	
+    fmt.Println(result) // Ausgabe: Goist1beiProgrammiersprachen
+}
 ```
-Go Version . - Gophers unite!
-```
 
-## Deep Dive
-Reguläre Ausdrücke sind ein mächtiges Werkzeug, das es schon seit den 1950er Jahren gibt. In Go benutzen wir das `regexp` Paket, um damit umzugehen. Andere Möglichkeiten, Zeichen zu entfernen, wären Schleifen und Zeichen-Checks, aber wenn’s um Muster geht, sind reguläre Ausdrücke dein Freund. Implementierungsdetails, auf die du achten solltest, sind die Compilerung des Ausdrucks vor der Nutzung – das spart Zeit bei Mehrfachnutzung. Auch solltest du immer auf die Performance achten; Reguläre Ausdrücke können langsam sein bei großen Textmassen.
+## Tiefere Einblicke
 
-## See Also
-Mehr Infos? Hier sind ein paar gute Anlaufstellen:
+Das `regexp`-Paket in Go bietet eine leistungsstarke Schnittstelle für Musterabgleich und Manipulation mit regulären Ausdrücken. Seine Implementierung ist von RE2 abgeleitet, einer regulären Ausdrucksbibliothek, die entwickelt wurde, um eine lineare Ausführungszeit zu garantieren und die Möglichkeit von "katastrophalem Zurückverfolgen" zu vermeiden, ein Problem, das in einigen anderen Regex-Engines vorhanden ist. Dies macht Go's Regex relativ sicher und effizient für eine breite Palette von Anwendungen.
 
-- Go’s `regexp` Paket Dokumentation: https://golang.org/pkg/regexp/
-- Einführung in Reguläre Ausdrücke: https://www.regular-expressions.info/
-- Go by Example: Regular Expressions: https://gobyexample.com/regular-expressions
+Obwohl das `regexp`-Paket eine umfassende Lösung für den Umgang mit Mustern ist, ist es erwähnenswert, dass für einfachere oder hochspezifische Zeichenkettenmanipulationen andere Zeichenkettenfunktionen wie `strings.Replace()`, `strings.Trim()`, oder das Schneiden leistungsfähigere Alternativen bieten können. Reguläre Ausdrücke sind ein mächtiges Werkzeug, aber ihre relative rechnerische Kosten bedeuten, dass für Operationen, die ohne sie spezifiziert werden können, die Erkundung von Standardbibliotheksalternativen manchmal zu einfacherem und effizienterem Code führen kann.

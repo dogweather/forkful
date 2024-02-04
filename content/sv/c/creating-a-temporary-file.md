@@ -1,50 +1,90 @@
 ---
-title:                "Skapa en temporär fil"
-date:                  2024-01-20T17:39:42.386488-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Skapa en temporär fil"
-
+title:                "Skapa en tillfällig fil"
+date:                  2024-02-03T17:55:51.091691-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Skapa en tillfällig fil"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/c/creating-a-temporary-file.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att skapa en temporär fil innebär att du skapar en fil som är tillfällig och används under programmets körning. Programmerare gör detta för att hantera data som inte behöver sparas långsiktigt eller för att undvika skräp i filsystemet.
+Att skapa en temporär fil i C innebär att generera en fil som är avsedd att användas under en kort tid, vanligtvis som skräputrymme för databehandling eller lagring. Programmerare gör det för att hantera tillfälliga data utan att påverka programmets permanenta lagring eller för att säkerställa att känsliga data raderas efter användning.
 
-## Hur gör man:
+## Hur:
+Att skapa en temporär fil i programmeringsspråket C kan utnyttja funktioner såsom `tmpfile()` och `mkstemp()`.
+
+**Använda `tmpfile()`**: Denna funktion skapar en unik temporär fil som automatiskt tas bort när programmet avslutas eller filen stängs.
+
 ```c
 #include <stdio.h>
-#include <stdlib.h>
 
 int main() {
-    char tempFileName[] = "my_temp_XXXXXX";
-    int fileDescriptor = mkstemp(tempFileName);
-    
-    if (fileDescriptor == -1) {
-        perror("Kan inte skapa tempfil");
-        exit(EXIT_FAILURE);
+    FILE *temp = tmpfile();
+    if (temp == NULL) {
+        perror("Misslyckades med att skapa temporär fil");
+        return 1;
     }
-    
-    printf("Temporär fil skapad: %s\n", tempFileName);
-    
-    // Använd filen här...
-    
-    // Stäng och radera filen
-    close(fileDescriptor);
-    remove(tempFileName);
-    
+
+    // Skriv data till den temporära filen
+    fputs("Detta är ett test.\n", temp);
+
+    // Spola tillbaka och läs vad vi skrev
+    rewind(temp);
+    char buffer[1024];
+    while (fgets(buffer, sizeof(buffer), temp) != NULL) {
+        printf("%s", buffer);
+    }
+
+    // Tas automatiskt bort vid stängning eller programavslut
+    fclose(temp);
+
     return 0;
 }
 ```
-**Exempel på output:**
-Temporär fil skapad: my_temp_abcdef
+**Exempelutdata:**
+```
+Detta är ett test.
+```
 
-## Fördjupning
-Skapandet av temporära filer har varit en del av programmering sedan tidiga datasystem. `tmpfile()` och `mkstemp()` är två funktioner som används i C. `tmpfile()` skapar en anonym temporär fil som automatiskt raderas när programmet avslutas. `mkstemp()` kräver dock att du hanterar raderingen själv men ger mer kontroll med en unik filnamn. `mkstemp()` ger också ökad säkerhet jämfört med `tmpnam()`, som kan skapa säkerhetsrisker genom förutsägbara filnamn.
+**Använda `mkstemp()`**: Ger mer kontroll över den temporära filens plats och dess behörigheter. Det kräver en mallsträng som slutar med `XXXXXX` som den sedan ersätter med en unik sekvens för att förhindra namnkollisioner.
 
-## Se även
-- C Standard Library documentation: https://en.cppreference.com/w/c/io/tmpfile
-- Man-page for mkstemp(3): https://linux.die.net/man/3/mkstemp
-- POSIX Files and Directories: https://pubs.opengroup.org/onlinepubs/9699919799/functions/mkstemp.html
+```c
+#include <unistd.h>
+#include <stdio.h>
+#include <fcntl.h>
+
+int main() {
+    char mall[] = "/tmp/mytemp-XXXXXX";
+    int fd = mkstemp(mall);
+
+    if (fd == -1) {
+        perror("Misslyckades med att skapa temporär fil");
+        return 1;
+    }
+    
+    printf("Temporär fil skapad: %s\n", mall);
+
+    // Temporära filer skapade med mkstemp() bör tas bort manuellt
+    unlink(mall);
+
+    close(fd);
+    return 0;
+}
+```
+**Exempelutdata:**
+```
+Temporär fil skapad: /tmp/mytemp-abc123
+```
+
+## Djupdykning
+Konceptet med temporära filer är inte unikt för C utan är en vanlig funktionalitet i många programmeringsmiljöer på grund av dess nytta i hanteringen av flyktiga data. `tmpfile()`-funktionen, standardiserad i ISO C-standarden, skapar en fil med ett unikt namn i en standardkatalog, men dess existens är flyktig, vilket gör den idealisk för säkra eller tillfälliga operationer.
+
+En anmärkningsvärd begränsning av `tmpfile()` är dess beroende av den förvalda tillfälliga katalogen, vilket kanske inte passar alla applikationer, särskilt när det gäller behörigheter eller säkerhet. I kontrast till detta låter `mkstemp()` specificera katalogen och säkerställer säker filskapande med garanterat unika filnamn genom att modifiera den angivna mallsträngen, vilket erbjuder en mer mångsidig lösning på bekostnad av manuell filhantering.
+
+Dock kan skapandet av temporära filer introducera säkerhetsrisker, såsom loppvillkor, om de inte hanteras korrekt. Till exempel, `tmpfile()` och `mkstemp()` adresserar olika aspekter av säker temporär filskapande (automatisk borttagning och säker namngenerering, respektive), men ingen är en universallösning. Utvecklare måste överväga specifika säkerhetsbehov för sin applikation, inklusive potentiella sårbarheter introducerade av temporära filer, och kan behöva implementera ytterligare säkerhetsåtgärder utöver vad dessa funktioner tillhandahåller.
+
+I det bredare programmeringslandskapet kan alternativ såsom lagring i minnet (t.ex. genom att använda dynamiska datastrukturer eller minnesavbildade filer) erbjuda bättre prestanda eller säkerhet för hantering av tillfälliga data. Trots detta förblir fysiska temporära filer ett avgörande verktyg i många scenarier, särskilt för stora datamängder eller när interprocesskommunikation är inblandad.

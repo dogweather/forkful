@@ -1,23 +1,25 @@
 ---
-title:                "Аналіз дати з рядка"
-date:                  2024-01-20T15:36:29.764085-07:00
-simple_title:         "Аналіз дати з рядка"
-
+title:                "Розбір дати з рядка"
+date:                  2024-02-03T18:05:46.337649-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Розбір дати з рядка"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/go/parsing-a-date-from-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
 ## Що і чому?
 
-Parsing a date means converting a string into a `time.Time` object. Programmers do it to interpret and manipulate dates programmatically, which is key for scheduling, data records, and time-based logic.
+Розбір дати з рядка в Go включає перетворення дати, представленої у вигляді тексту, на більш зручний формат (наприклад, `time.Time`). Програмісти виконують це завдання, щоб точніше обробляти дані про дату і час в додатках, особливо коли стикаються з введенням користувача, API або системами зберігання, де дати часто представлені у вигляді рядків.
 
-## How to:
 ## Як це зробити:
 
-```Go
+Go надає надійну підтримку для розбору дат та часу через пакет `time`. Ключем є розуміння формату дати-зразка Go: `Mon Jan 2 15:04:05 MST 2006`, який ви використовуєте, щоб повідомити Go, як інтерпретувати вхідний рядок. Ось швидкий приклад для початку:
+
+```go
 package main
 
 import (
@@ -26,36 +28,36 @@ import (
 )
 
 func main() {
-	const layoutISO = "2006-01-02"
-	dateStr := "2023-03-15"
-
-	parsedDate, err := time.Parse(layoutISO, dateStr)
+	// Приклад рядка з датою
+	dateStr := "2023-04-12 14:45:00"
+	
+	// Визначення шаблону/формату вхідного рядка з датою
+	// Цей шаблон повідомляє Go очікувати рік, за ним місяць, 
+	// потім день, годину, хвилину та, нарешті, секунду
+	layout := "2006-01-02 15:04:05"
+	
+	// Розбір рядка з датою відповідно до шаблону
+	parsedDate, err := time.Parse(layout, dateStr)
 	if err != nil {
-		fmt.Println("Error parsing date:", err)
+		fmt.Println("Помилка при розборі дати:", err)
 		return
 	}
-
-	fmt.Printf("Parsed Date: %s\n", parsedDate.Format(time.RFC1123))
+	
+	// Виведення розібраної дати
+	fmt.Println("Розібрана дата:", parsedDate)
 }
 ```
 
-Output:
+Коли ви запустите цей код, ви отримаєте:
+
 ```
-Parsed Date: Wed, 15 Mar 2023 00:00:00 UTC
+Розібрана дата: 2023-04-12 14:45:00 +0000 UTC
 ```
 
-## Deep Dive
+Зверніть увагу, як рядок `layout` використовує значення дати-зразка для вказівки формату вхідного рядка. Налаштуйте `layout` так, щоб він відповідав формату ваших вхідних дат.
+
 ## Поглиблений огляд
 
-Go's standard time package uses layout strings as a reference. The layout must show by example how to interpret any date string: use "2006" for the year, "01" for January, and "02" for the second day of the month, based on the specific time -- January 2, 15:04:05 MST 2006.
+Дизайн розбору дати та часу в Go є унікальним, використовуючи конкретну дату-зразок (`Mon Jan 2 15:04:05 MST 2006`). Цей підхід, замість використання більш традиційних позначень форматів (як `YYYY` для року), був обраний заради читабельності та простоти використання, виходячи з більш прикладного формату.
 
-Alternatives? Sure. You could use third-party libraries like `timeparse` or `dateparse`. But why bother? Go's standard library is powerful and usually sufficient.
-
-Internally, parsing a date consists of tokenizing the string and mapping it to the layout. It's crucial to match the layout to your string's format; otherwise, you'll run into errors.
-
-## See Also
-## Дивіться також
-
-- Go by Example: Time Formatting/Parsing: https://gobyexample.com/time-formatting-parsing
-- Go's time package documentation: https://pkg.go.dev/time
-- Go's layout string explained: https://yourbasic.org/golang/format-parse-string-time-date-example
+Хоча це може спочатку видатись незвичним для програмістів, звиклих до інших мов, багато хто вважає це більш інтуітивно зрозумілим після короткого періоду адаптації. Для додатків, які вимагають більш складної маніпуляції з датами або форматів, які не підтримуються безпосередньо пакетом `time` в Go, сторонні бібліотеки, такі як `github.com/jinzhu/now`, можуть пропонувати додаткові функції. Однак для більшості стандартних додатків вбудовані можливості Go є надійними, продуктивними і ідіоматичними, втілюючи філософію Go простоти та ясності.

@@ -1,55 +1,60 @@
 ---
 title:                "Ghi vào lỗi chuẩn"
-date:                  2024-01-28T22:13:21.392593-07:00
+date:                  2024-02-03T18:15:33.281762-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Ghi vào lỗi chuẩn"
-
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/go/writing-to-standard-error.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Gì và Tại sao?
+## Cái gì & Tại sao?
 
-Việc viết vào lỗi chuẩn (stderr) là cách chương trình của bạn báo cáo lỗi và cảnh báo. Các lập trình viên làm điều này để tách đầu ra thông thường (stdout) khỏi các thông điệp lỗi, làm cho việc xử lý và theo dõi sự cố dễ dàng hơn.
+Việc viết vào lỗi chuẩn (stderr) trong Go bao gồm việc chỉ đạo các thông báo lỗi hoặc chẩn đoán không dành cho dòng xuất chính. Các lập trình viên sử dụng điều này để phân tách đầu ra thông thường khỏi thông tin lỗi, làm cho việc gỡ lỗi và phân tích nhật ký trở nên đơn giản hơn.
 
 ## Làm thế nào:
 
-Trong Go, bạn viết vào lỗi chuẩn sử dụng mô tả tệp `os.Stderr` từ gói `os`. Dưới đây là cách làm:
+Trong Go, gói `os` cung cấp giá trị `Stderr`, đại diện cho tệp lỗi chuẩn. Bạn có thể sử dụng nó với các hàm `fmt.Fprint`, `fmt.Fprintf`, hoặc `fmt.Fprintln` để viết vào stderr. Dưới đây là một ví dụ đơn giản:
 
-```Go
+```go
 package main
 
 import (
-	"fmt"
-	"os"
+    "fmt"
+    "os"
 )
 
 func main() {
-	message := "Lỗi: có gì đó không đúng!"
-	_, err := fmt.Fprintln(os.Stderr, message)
+    // Viết một chuỗi đơn giản vào stderr
+    _, err := fmt.Fprintln(os.Stderr, "Đây là một thông báo lỗi!")
+    if err != nil {
+        panic(err)
+    }
 
-	if err != nil {
-		panic(err)
-	}
+    // Thông báo lỗi được định dạng với Fprintf
+    errCount := 4
+    _, err = fmt.Fprintf(os.Stderr, "Quá trình hoàn thành với %d lỗi.\n", errCount)
+    if err != nil {
+        panic(err)
+    }
 }
 ```
 
-Ví dụ đầu ra tới stderr có thể trông như thế này:
+Đầu ra mẫu (vào stderr):
+```
+Đây là một thông báo lỗi!
+Quá trình hoàn thành với 4 lỗi.
+```
 
-```
-Lỗi: có gì đó không đúng!
-```
+Nhớ rằng, các thông báo này sẽ không xuất hiện trong đầu ra thông thường (stdout) mà trong dòng lỗi, có thể được chuyển hướng riêng biệt trong hầu hết các hệ điều hành.
 
 ## Sâu hơn
 
-Theo lịch sử, các hệ điều hành giống Unix cung cấp ba luồng chuẩn: stdin, stdout, và stderr. Go kế thừa khái niệm này. Các lựa chọn khác bao gồm các gói đăng nhập như `log` hoặc `zap`, cung cấp nhiều kiểm soát hơn về định dạng và điểm đến của đầu ra. Khi viết trực tiếp vào stderr, Go sử dụng `os.Stderr`, thực thi `io.Writer`, làm cho nó phù hợp với cách tiếp cận chung của Go đối với I/O bằng cách cung cấp một giao diện được định nghĩa rõ ràng.
+Khái niệm về lỗi chuẩn có nguồn gốc sâu sắc trong triết lý Unix, phân biệt rõ ràng giữa đầu ra bình thường và thông báo lỗi để xử lý và quản lý dữ liệu một cách hiệu quả hơn. Trong Go, quy ước này được chấp nhận thông qua gói `os`, cung cấp trực tiếp quyền truy cập vào các bộ điều khiển tệp stdin, stdout và stderr.
 
-## Xem thêm
+Trong khi viết trực tiếp vào `os.Stderr` phù hợp với nhiều ứng dụng, Go cũng cung cấp các gói đăng nhập chi tiết hơn như `log`, cung cấp các tính năng bổ sung như dấu thời gian và cấu hình đầu ra linh hoạt hơn (ví dụ: viết vào tệp). Sử dụng gói `log`, đặc biệt cho các ứng dụng lớn hơn hoặc nơi cần có các tính năng đăng nhập toàn diện hơn, có thể là một lựa chọn tốt hơn. Cũng đáng chú ý là cách tiếp cận của Go đối với việc xử lý lỗi, khuyến khích trả về lỗi từ các hàm, bổ sung cho thực hành viết thông báo lỗi vào stderr, cho phép kiểm soát lỗi và báo cáo lỗi một cách chi tiết hơn.
 
-- Blog Go về xử lý lỗi: https://blog.golang.org/error-handling-and-go
-- Tài liệu gói `log`: https://golang.org/pkg/log/
-- Bộ ghi `zap`: https://godoc.org/go.uber.org/zap
+Về bản chất, trong khi viết vào stderr là một nhiệm vụ cơ bản trong nhiều ngôn ngữ lập trình, thư viện tiêu chuẩn của Go và các nguyên tắc thiết kế cung cấp cả con đường trực tiếp và tiên tiến để quản lý đầu ra lỗi, phù hợp với các thực hành rộng lớn trong ngành trong khi cũng phục vụ cho tinh thần thiết kế đặc biệt của Go.

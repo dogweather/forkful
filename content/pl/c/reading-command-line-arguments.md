@@ -1,26 +1,30 @@
 ---
-title:                "Odczytywanie argumentów linii poleceń"
-date:                  2024-01-20T17:55:36.949979-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Odczytywanie argumentów linii poleceń"
-
+title:                "Czytanie argumentów z linii poleceń"
+date:                  2024-02-03T18:06:18.699318-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Czytanie argumentów z linii poleceń"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/c/reading-command-line-arguments.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Co i dlaczego?)
-Czytanie argumentów linii poleceń to sposób, aby Twoja aplikacja w C przyjmowała dane od użytkownika już przy starcie. Programiści korzystają z tej techniki, by elastycznie dostosowywać działanie programu bez potrzeby tworzenia nowego interfejsu użytkownika.
+## Co i dlaczego?
 
-## How to: (Jak to zrobić:)
-Często używamy `argc` i `argv` w funkcji `main()` do obsługi argumentów. `argc` to liczba argumentów, `argv` to tablica ciągów znaków (stringów) zawierających rzeczywiste argumenty.
+W programowaniu w języku C, odczytywanie argumentów linii poleceń pozwala programom na przyjmowanie danych wejściowych bezpośrednio z terminala, zwiększając elastyczność i użyteczność. Programiści wykorzystują to do konfigurowania zachowania skryptów bez modyfikowania kodu, czyniąc aplikacje dostosowalnymi i wydajnymi.
 
-```C
+## Jak to zrobić:
+
+W C, funkcja `main` może być zaprojektowana do akceptowania argumentów linii poleceń przy użyciu parametrów `int argc` i `char *argv[]`. Tutaj `argc` reprezentuje liczbę przekazanych argumentów, a `argv` to tablica wskaźników do znaków, która zawiera wszystkie argumenty. Oto krótki przykład ilustrujący to:
+
+```c
 #include <stdio.h>
 
 int main(int argc, char *argv[]) {
     printf("Nazwa programu: %s\n", argv[0]);
+    printf("Liczba argumentów: %d\n", argc - 1);
     for (int i = 1; i < argc; i++) {
         printf("Argument %d: %s\n", i, argv[i]);
     }
@@ -28,18 +32,21 @@ int main(int argc, char *argv[]) {
 }
 ```
 
-Uruchamiając program `./prog -o plik.txt -v`, otrzymamy:
+Korzystając z powyższego kodu, jeśli program zostanie wykonany jako `./nazwaProgramu -a przyklad`, wynik będzie wyglądał następująco:
 
 ```
-Nazwa programu: ./prog
-Argument 1: -o
-Argument 2: plik.txt
-Argument 3: -v
+Nazwa programu: ./nazwaProgramu
+Liczba argumentów: 2
+Argument 1: -a
+Argument 2: przyklad
 ```
 
-## Deep Dive (Dogłębna analiza):
-Historia: Początki C sięgają lat 70., już wtedy obsługa argumentów była standardem. Alternatywy? Możesz użyć `getopt()` lub `getopt_long()` do bardziej zaawansowanej obsługi argumentów. Implementacja: Funkcja `main()` w C może być zdefiniowana z `argc` i `argv`, gdzie `argc` zawiera liczbę argumentów przekazanych do programu, a `argv` to wskaźnik na tablicę ciągów znaków reprezentujących te argumenty. Pierwszy argument (`argv[0]`) to zazwyczaj nazwa uruchomionego programu.
+To pokazuje, jak argumenty linii poleceń mogą być analizowane i wykorzystywane w programie C.
 
-## See Also (Zobacz także):
-- [GNU C Library: Program Arguments](https://www.gnu.org/software/libc/manual/html_node/Program-Arguments.html)
-- [Using the getopt() function](https://www.ibm.com/docs/en/zos/2.2.0?topic=functions-getopt-parse-command-line-options)
+## Wgłębiając się
+
+Konwencja przekazywania argumentów do programów sięga najwcześniejszych dni systemu Unix. W tym tradycyjnym podejściu, `argc` i `argv` zapewniają prosty, a jednocześnie potężny interfejs dla interakcji z linią poleceń, ucieleśniając filozofię Unix'a małych, modułowych narzędzi, które współpracują ze sobą. Podczas gdy nowoczesne języki często wprowadzają bardziej zaawansowane biblioteki lub frameworki do analizowania argumentów linii poleceń, bezpośredniość metody C oferuje niezrównaną przejrzystość i kontrolę.
+
+W ostatnich rozwojach, biblioteki takie jak `getopt` w systemach POSIX ewoluowały, aby wspierać bardziej złożone potrzeby parsowania, takie jak obsługa długich nazw opcji czy wartości domyślnych dla brakujących argumentów. Jednakże, podstawowy mechanizm `argc` i `argv` pozostaje kluczowy dla zrozumienia, jak programy w języku C wchodzą w interakcję ze swoim środowiskiem uruchomieniowym.
+
+Krytycy mogą argumentować, że bezpośrednie obchodzenie się z `argc` i `argv` może być podatne na błędy, promując użycie abstrakcji wyższego poziomu. Niemniej jednak, dla tych, którzy dążą do opanowania subtelności języka C i doceniają niuanse jego niskopoziomowej operacji, opanowanie parsowania argumentów linii poleceń jest swoistym rytuałem przejścia. To połączenie historycznej metodologii i praktycznej użyteczności uosabia wiele z trwałego uroku języka C w programowaniu systemowym i rozwoju oprogramowania.

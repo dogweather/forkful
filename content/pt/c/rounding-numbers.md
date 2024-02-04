@@ -1,60 +1,63 @@
 ---
 title:                "Arredondamento de números"
-date:                  2024-01-26T03:43:07.082173-07:00
+date:                  2024-02-03T18:07:39.600736-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Arredondamento de números"
-
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/c/rounding-numbers.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## O Que & Porquê?
-Arredondar números consiste em eliminar os dígitos além de um certo ponto, enquanto, opcionalmente, ajusta-se o último dígito mantido. Programadores arredondam para reduzir a precisão quando valores exatos não são necessários, gerenciar erros de ponto flutuante ou preparar números para uma exibição amigável ao usuário.
+## O Que e Por Quê?
 
-## Como fazer:
-Em C, você tipicamente usaria as funções `floor()`, `ceil()` ou `round()`. Aqui está um exemplo rápido:
+Arredondar números é o processo de ajustar os dígitos de um número para reduzir sua precisão de acordo com certas regras, seja em direção ao número inteiro mais próximo ou a um número especificado de casas decimais. Programadores fazem isso por vários motivos, desde limitar a quantidade de armazenamento necessária, simplificar a saída para consumo do usuário ou garantir operações matemáticas precisas que são sensíveis a variações muito pequenas.
 
-```C
+## Como Fazer:
+
+Arredondar números em C pode ser realizado usando várias funções, mas a abordagem mais comum envolve as funções `floor()`, `ceil()` e `round()`. Estas funções fazem parte da biblioteca padrão de matemática, então você precisará incluir `math.h` em seu programa.
+
+```c
 #include <stdio.h>
 #include <math.h>
 
 int main() {
-    double num = 3.14159;
-    double num_floor = floor(num);
-    double num_ceil = ceil(num);
-    double num_round = round(num);
+    double num = 9.527;
 
-    printf("Chão: %.2f\n", num_floor); // Chão: 3.00
-    printf("Teto: %.2f\n", num_ceil);   // Teto: 4.00
-    printf("Arredondamento: %.2f\n", num_round); // Arredondamento: 3.00
+    // Usando floor() para arredondar para baixo
+    double floorResult = floor(num);
+    printf("floor(9.527) = %.0f\n", floorResult);
+
+    // Usando ceil() para arredondar para cima
+    double ceilResult = ceil(num);
+    printf("ceil(9.527) = %.0f\n", ceilResult);
+
+    // Usando round() para arredondar para o inteiro mais próximo
+    double roundResult = round(num);
+    printf("round(9.527) = %.0f\n", roundResult);
+
+    // Arredondando para um número especificado de casas decimais envolve multiplicação e divisão
+    double twoDecimalPlaces = round(num * 100) / 100;
+    printf("Arredondando para duas casas decimais: %.2f\n", twoDecimalPlaces);
+
     return 0;
 }
 ```
 
-Para mais controle, como arredondar para um ponto específico, você multiplica, arredonda e divide:
-
-```C
-double arredondarParaPosicao(double num, int posicao) {
-    double escala = pow(10.0, posicao);
-    return round(num * escala) / escala;
-}
-
-// ...
-
-double num = 3.14159;
-double num_arredondado = arredondarParaPosicao(num, 2);
-printf("Arredondado para 2 casas decimais: %.2f\n", num_arredondado); // Arredondado para 2 casas decimais: 3.14
+Saída:
+```
+floor(9.527) = 9
+ceil(9.527) = 10
+round(9.527) = 10
+Arredondando para duas casas decimais: 9.53
 ```
 
-## Mergulho Profundo
-Antigamente, arredondar frequentemente significava um processo manual—uma tarefa pesada com apenas caneta e papel. Com a computação, automatizamos isso, mas a aritmética de ponto flutuante trouxe nuances devido à sua natureza binária, onde alguns números não podem ser representados exatamente.
+## Aprofundamento
 
-Alternativas ao arredondamento padrão incluem a truncagem (simplesmente descartando dígitos extras) ou o arredondamento do banqueiro, que arredonda para o número par mais próximo quando exatamente entre dois valores, reduzindo o viés em cálculos repetidos.
+Arredondar números tem raízes históricas profundas na matemática e computação, integral tanto aos aspectos teóricos quanto aplicados. Em C, embora `floor()`, `ceil()` e `round()` ofereçam funcionalidade básica, a essência de arredondar floats para inteiros ou casas decimais específicas é mais matizada devido à representação binária dos números de ponto flutuante. Esta representação pode levar a resultados inesperados devido à forma como números que não podem ser precisamente representados em binário (como 0.1) são tratados.
 
-A implementação se torna complicada quando você precisa arredondar números de precisão arbitrária ou lidar com casos especiais como infinito, NaNs sinalizadores ou valores subnormais. As funções da biblioteca padrão em C lidam com o básico, mas se você precisa arredondar decimais de formas personalizadas, precisará de mais do que `math.h`.
+Essas funções fazem parte da biblioteca padrão C, definidas em `<math.h>`. Ao arredondar números, especialmente para cálculos financeiros ou de engenharia precisos, deve-se considerar as implicações do uso de números de ponto flutuante binário. Alternativas às funções incorporadas em C para arredondamentos altamente precisos ou específicos para decimais podem incluir a implementação de funções de arredondamento personalizadas ou o uso de bibliotecas projetadas para aritmética de precisão arbitrária, como GMP ou MPFR, embora essas introduzam complexidade e dependências adicionais.
 
-## Veja Também
-- Documentação de [`<math.h>`](https://en.cppreference.com/w/c/numeric/math)
-- [As armadilhas da verificação de cálculos de ponto flutuante](https://dl.acm.org/doi/10.1145/1186736.1186737)
+Na prática, escolher a abordagem correta para o arredondamento em C envolve equilibrar a necessidade de precisão, desempenho e praticidade, com uma compreensão aguçada dos requisitos específicos do domínio da aplicação que está sendo desenvolvida.

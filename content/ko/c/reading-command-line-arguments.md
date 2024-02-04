@@ -1,27 +1,30 @@
 ---
-title:                "명령줄 인수 읽기"
-date:                  2024-01-20T17:55:32.127016-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "명령줄 인수 읽기"
-
+title:                "명령 줄 인수 읽기"
+date:                  2024-02-03T18:06:21.261852-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "명령 줄 인수 읽기"
 tag:                  "Files and I/O"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/c/reading-command-line-arguments.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (무엇과 왜?)
-명령줄 인자를 읽는 것은 사용자가 프로그램을 실행할 때 주는 입력 값들을 처리하는 것입니다. 이를 통해 프로그램은 더 다양하고 동적으로 작업을 할 수 있습니다.
+## 무엇 & 왜?
 
-## How to: (어떻게 하나요?)
-```C
+C 프로그래밍에서 커맨드 라인 인자를 읽는 것은 프로그램이 터미널에서 바로 입력을 받을 수 있게 해주어, 유연성과 사용성을 향상시킵니다. 프로그래머들은 이를 활용하여 코드 수정 없이 스크립트 동작을 구성할 수 있게 하여, 응용 프로그램을 적응성 있고 효율적으로 만듭니다.
+
+## 방법:
+
+C에서는 `main` 함수를 `int argc`와 `char *argv[]` 파라미터를 사용하여 커맨드 라인 인자를 받도록 설계할 수 있습니다. 여기서, `argc`는 전달된 인자의 수를 나타내고, `argv`는 모든 인자를 나열하는 문자 포인터의 배열입니다. 다음은 이를 설명하는 간단한 예시입니다:
+
+```c
 #include <stdio.h>
 
 int main(int argc, char *argv[]) {
     printf("프로그램 이름: %s\n", argv[0]);
-    printf("인자 개수: %d\n", argc - 1);
-
+    printf("인자의 수: %d\n", argc - 1);
     for (int i = 1; i < argc; i++) {
         printf("인자 %d: %s\n", i, argv[i]);
     }
@@ -29,22 +32,21 @@ int main(int argc, char *argv[]) {
 }
 ```
 
-```bash
-$ gcc program.c -o program
-$ ./program 사과 바나나 체리
-프로그램 이름: ./program
-인자 개수: 3
-인자 1: 사과
-인자 2: 바나나
-인자 3: 체리
+위 코드를 사용해서 프로그램이 `./programName -a example`로 실행된다면, 출력은 다음과 같을 것입니다:
+
+```
+프로그램 이름: ./programName
+인자의 수: 2
+인자 1: -a
+인자 2: example
 ```
 
-## Deep Dive (심층적 이해)
-명령줄 인자는 UNIX의 초기부터 사용되어 온 기능입니다. `argc`는 Argument Count의 약자로, 인자의 수를 나타냅니다. `argv`는 Argument Vector의 약자로, 실제 인자들의 목록을 가리킵니다. 각 인자는 문자열 배열에 저장되며, `argv[0]`은 보통 프로그램 자신의 이름입니다.
+이는 커맨드 라인 인자가 C 프로그램에서 어떻게 구문 분석되고 사용될 수 있는지 보여줍니다.
 
-기본 구문 외에도, 라이브러리 (예를 들어, GNU의 `getopt`)를 사용하여 복잡한 명령줄 인자를 더 쉽게 처리할 수 있습니다. 환경 변수와 파일 입출력을 활용하는 방법도 있지만, 대화형 인터페이스가 아닌 스크립트나 배치 작업에 주로 명령줄 인자가 활용됩니다.
+## 심층 분석
 
-## See Also (참고 자료)
-- GNU C 라이브러리 매뉴얼의 명령줄 인자 부분: https://www.gnu.org/software/libc/manual/html_node/Program-Arguments.html
-- `getopt` 함수 사용 방법: http://man7.org/linux/man-pages/man3/getopt.3.html
-- `getopt` 함수를 사용하는 C 프로그래밍 예제: https://www.gnu.org/software/libc/manual/html_node/Example-of-Getopt.html
+프로그램에 인자를 전달하는 관습은 Unix의 초기 시절로 거슬러 올라갑니다. 이 전통적인 접근법에서, `argc`와 `argv`는 커맨드 라인 상호작용을 위한 단순하지만 강력한 인터페이스를 제공하며, 함께 작동하는 작고 모듈화된 유틸리티의 Unix 철학을 구현합니다. 현대 언어는 종종 커맨드 라인 인자를 구문 분석하기 위한 더 정교한 라이브러리나 프레임워크를 도입하지만, C의 방법론은 비교할 수 없는 투명성과 제어력을 제공합니다.
+
+최근의 개발에서는, POSIX 시스템의 `getopt`와 같은 라이브러리가 장기적인 옵션 이름을 처리하거나 누락된 인자에 대한 기본값을 지원하는 것과 같은 더 복잡한 구문 분석 요구를 지원하기 위해 발전해 왔습니다. 그러나, `argc`와 `argv`의 기본 메커니즘은 C에서 프로그램이 실행 환경과 어떻게 상호작용하는지 이해하는 데 필수적입니다.
+
+비판자들은 `argc`와 `argv`를 직접 다루는 것이 오류를 발생시킬 수 있다고 주장하며, 더 높은 수준의 추상화 사용을 촉진할 수 있습니다. 그럼에도 불구하고, C의 복잡성을 마스터하고 그것의 저수준 작동의 미묘함을 평가하려는 이들에게 커맨드 라인 인자 파싱을 마스터하는 것은 통과 의례입니다. 이 역사적인 방법론과 실용적인 유틸리티의 혼합은 시스템 프로그래밍과 소프트웨어 개발에서 C가 지속적으로 매력을 발산하는 많은 부분을 포함합니다.

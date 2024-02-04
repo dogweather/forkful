@@ -1,73 +1,85 @@
 ---
-title:                "Tworzenie pliku tymczasowego"
-date:                  2024-01-20T17:40:43.224191-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Tworzenie pliku tymczasowego"
-
+title:                "Tworzenie tymczasowego pliku"
+date:                  2024-02-03T17:55:33.820467-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Tworzenie tymczasowego pliku"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/go/creating-a-temporary-file.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Co i dlaczego?
+## Co i dlaczego?
 
-Tworzenie plików tymczasowych to sposób na przechowywanie danych tymczasowo. Programiści robią to, gdy potrzebują miejsca do przechowywania danych ulotnych, które nie wymagają długotrwałego magazynowania.
+Tworzenie tymczasowego pliku w Go pozwala na generowanie pliku nietrwałego przeznaczonego do użytku krótkoterminowego, głównie do zadań takich jak przechowywanie danych tymczasowych lub pomoc w zadaniach przetwarzania wsadowego. Programiści wykorzystują tę funkcję do bezpiecznego obsługiwania danych bez wpływu na trwały system plików lub potrzeby ręcznego czyszczenia.
 
-## How to:
-Jak to zrobić:
+## Jak to zrobić:
 
-```Go
+W Go pakiet `ioutil` pierwotnie dostarczał narzędzi do tworzenia plików tymczasowych. Jednak Go 1.16 promowało użycie funkcji pakietów `os` i `io/ioutil` w bardziej uporządkowanych miejscach. Teraz preferowane są pakiety `os` i `io` do obsługi plików tymczasowych.
+
+Oto przewodnik krok po kroku, jak tworzyć, zapisywać i usuwać plik tymczasowy:
+
+1. **Tworzenie pliku tymczasowego:**
+
+Używając funkcji `os.CreateTemp`, możesz utworzyć plik tymczasowy. Bez określania katalogu, używa domyślnego folderu tymczasowego twojego systemu operacyjnego.
+
+```go
 package main
 
 import (
-	"fmt"
-	"io/ioutil"
-	"os"
+    "io/ioutil"
+    "log"
+    "os"
 )
 
 func main() {
-	// Tworzenie tymczasowego pliku
-	tmpfile, err := ioutil.TempFile("", "example")
-	if err != nil {
-		// Obsługa błędu
-		fmt.Println(err)
-		return
-	}
-	defer os.Remove(tmpfile.Name()) // Nie zapomnij później usunąć pliku!
+    tmpFile, err := ioutil.TempFile("", "example.*.txt")
+    if err != nil {
+        log.Fatal(err)
+    }
+    log.Printf("Utworzono tymczasowy plik: %s\n", tmpFile.Name())
 
-	// Zapisanie danych do pliku tymczasowego
-	content := []byte("To jest próbka tekstu w pliku tymczasowym.\n")
-	if _, err := tmpfile.Write(content); err != nil {
-		// Obsługa błędu
-		fmt.Println(err)
-		return
-	}
-	
-	// Zamknięcie pliku po zakończeniu operacji
-	if err := tmpfile.Close(); err != nil {
-		// Obsługa błędu
-		fmt.Println(err)
-		return
-	}
-
-	fmt.Println("Plik tymczasowy zapisany:", tmpfile.Name())
+    defer os.Remove(tmpFile.Name()) // Czyszczenie
 }
 ```
-Output:
+
+2. **Zapisywanie do pliku tymczasowego:**
+
+Zapisywanie do pliku można osiągnąć za pomocą metody `Write` lub innych funkcji zapisujących z pakietów `io` lub `bufio`.
+
+```go
+_, err = tmpFile.Write([]byte("Witaj, świecie!"))
+if err != nil {
+    log.Fatal(err)
+}
 ```
-Plik tymczasowy zapisany: /tmp/example123456
+
+3. **Czytanie z pliku tymczasowego:**
+
+Czytanie przebiega podobnie, korzystając z metody `Read` pliku lub przy użyciu narzędzi z pakietów `io` lub `bufio`.
+
+```go
+data, err := ioutil.ReadFile(tmpFile.Name())
+if err != nil {
+    log.Fatal(err)
+}
+log.Printf("Dane odczytane: %s\n", string(data))
 ```
 
-## Deep Dive:
-Głębsze Informacje:
+4. **Usuwanie pliku tymczasowego:**
 
-Tworzenie plików tymczasowych ma długą historię w informatyce. W systemach Unixowych, tymczasowe pliki zazwyczaj lądują w `/tmp`. Alternatywnie, możesz użyć `TempDir` do stworzenia tymczasowego katalogu. Implementacja w Go ułatwia zarządzanie tymi plikami za pomocą automatycznego generowania unikatowych nazw, co minimalizuje ryzyko konfliktów i problemów z jednoczesnym dostępem.
+Pomimo że instrukcja `defer os.Remove(tmpFile.Name())` na etapie tworzenia zapewnia usunięcie pliku tymczasowego po zakończeniu programu, wyraźne usunięcie może być zarządzane w razie potrzeby.
 
-## See Also:
-Zobacz również:
+Przykładowe wyjście:
+```
+2023/04/01 15:00:00 Utworzono tymczasowy plik: /tmp/example.123456.txt
+2023/04/01 15:00:00 Dane odczytane: Witaj, świecie!
+```
 
-- [Pakiet ioutil w dokumentacji Go](https://pkg.go.dev/io/ioutil)
-- [Pisanie bezpiecznych plików tymczasowych](https://www.owasp.org/index.php/Insecure_Temporary_File)
-- [Obsługa plików i katalogów w Go](https://golang.org/pkg/os/)
+## Dogłębna analiza
+
+Mechanizm obsługi plików tymczasowych w Go ewoluował. Początkowo tworzenie plików tymczasowych było zarządzane głównie przez teraz wycofaną funkcję `ioutil.TempFile`, co odzwierciedla ogólniejsze trendy w rozwoju oprogramowania w kierunku bardziej bezpiecznych i wydajnych praktyk obsługi plików. Przejście do integracji tych funkcji w pakiety `os` i `io` z Go 1.16 sygnalizuje szersze dążenie do uproszczenia biblioteki standardowej języka i zachęcania do korzystania z bardziej ujednoliconych i spójnych API.
+
+Chociaż korzystanie z plików tymczasowych jest powszechną i często niezbędną praktyką w programowaniu, ważne jest, aby zauważyć, że zbyt duże poleganie na nich do przechowywania dużych ilości danych lub do długoterminowych zadań może prowadzić do problemów z wydajnością. Ponadto, gdy tworzenie plików tymczasowych nie jest ściśle kontrolowane lub gdy nie są one odpowiednio oczyszczane, może to prowadzić do wycieków zasobów, które mogą negatywnie wpłynąć na system plików. W scenariuszach wymagających trwałego przechowywania lub obsługi znacznych strumieni danych, alternatywy takie jak bazy danych czy magazyny danych w pamięci często oferują lepszą wydajność i niezawodność w porównaniu do plików tymczasowych.

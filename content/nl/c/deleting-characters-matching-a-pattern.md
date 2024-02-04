@@ -1,48 +1,58 @@
 ---
 title:                "Karakters verwijderen die overeenkomen met een patroon"
-date:                  2024-01-28T21:58:22.738462-07:00
+date:                  2024-02-03T17:55:33.107025-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Karakters verwijderen die overeenkomen met een patroon"
-
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/c/deleting-characters-matching-a-pattern.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Wat & Waarom?
-Karakters verwijderen die overeenkomen met een patroon in C gaat over het vinden en verwijderen van specifieke reeksen karakters uit strings. Programmeurs doen dit om input te desinfecteren, tekst te manipuleren of gegevens voor te bereiden voor verwerking.
 
-## Hoe te:
-Om karakters die overeenkomen met een patroon uit een string te verwijderen, kunnen we de `strpbrk` functie gebruiken om voorkomens te vinden en `strcpy` of `memmove` om tekst rond te schuiven. Hier is een snel voorbeeld:
+Het verwijderen van tekens die overeenkomen met een specifiek patroon uit strings in C gaat over het verwijderen van alle instanties van bepaalde tekens die voldoen aan vooraf gedefinieerde criteria. Programmeurs voeren deze taak uit om invoer te zuiveren, gegevens voor te bereiden voor verwerking of simpelweg strings op te schonen voor uitvoer of verdere manipulatie, waarbij wordt verzekerd dat de verwerkte gegevens precies zijn zoals nodig voor een gegeven context of algoritme.
+
+## Hoe:
+
+C komt niet met een ingebouwde functie voor het direct verwijderen van tekens uit een string op basis van een patroon, in tegenstelling tot sommige hogere programmeertalen. Je kunt deze taak echter gemakkelijk uitvoeren door handmatig door de string te itereren en een nieuwe te bouwen die de ongewenste tekens uitsluit. Laten we bijvoorbeeld aannemen dat je alle cijfers uit een string wilt verwijderen. Je kunt dit als volgt doen:
+
 ```c
 #include <stdio.h>
-#include <string.h>
+#include <ctype.h>
 
-void delete_pattern(char *str, const char *pattern) {
-    char *match;
-    while ((match = strpbrk(str, pattern)) != NULL) {
-        memmove(match, match + 1, strlen(match));
+void remove_digits(char *str) {
+    char *src = str, *dst = str;
+    while (*src) {
+        if (!isdigit((unsigned char)*src)) {
+            *dst++ = *src;
+        }
+        src++;
     }
+    *dst = '\0';
 }
 
 int main() {
-    char text[] = "Hello, World! Today is 2023.";
-    delete_pattern(text, "o3!");
-    printf("%s\n", text); // Uitvoer: Hell, Wrld Tday is 22.
+    char str[] = "C Programmeren 101: De Basis!";
+    remove_digits(str);
+    printf("Resultaat: %s\n", str);
     return 0;
 }
 ```
-Deze code speurt naar 'o', '3' en '!' karakters, en veegt ze uit de string.
 
-## Diepgaand
-Vroeger, voordat functies zoals `strpbrk` standaard waren, schreven coders vaak lussen die elk karakter tegen een patroon controleerden—vermoeiend maar noodzakelijk. De C-standaardbibliotheek van vandaag neemt veel van dat routinewerk weg, maar het is altijd goed om te begrijpen wat er onder de motorkap gebeurt.
+Voorbeelduitvoer:
+```
+Resultaat: C Programmeren : De Basis!
+```
 
-`strpbrk` scant een string op de eerste overeenkomst in een set karakters, en `memmove` verplaatst bytes veilig rond, zelfs als ze overlappen. Dit is anders dan `strcpy`, dat niet goed kan omgaan met overlappend geheugen zonder haperingen.
+Dit voorbeeld maakt gebruik van `isdigit` uit `ctype.h` om cijfers te identificeren, niet-cijfertekens naar het begin van de string te schuiven en de string te beëindigen nadat alle tekens zijn geëvalueerd.
 
-Alternatieven omvatten regex-bibliotheken voor complexe patronen of handmatig lussen voor fijne controle. Maar het is altijd een afweging tussen het opnemen van externe bibliotheken of handgemaakte oplossingen voor prestatie- of geheugenbeperkingen.
+## Diepere Duik
 
-## Zie Ook
-- [C Stringbibliotheekfuncties](https://www.cplusplus.com/reference/cstring/)
+De gepresenteerde oplossing maakt gebruik van een aanpak met twee pointers binnen dezelfde array om ongewenste tekens effectief te filteren, een techniek die kenmerkend is voor C's hands-on geheugenbeheerfilosofie. Deze methode is efficiënt omdat deze ter plaatse werkt, waardoor de noodzaak voor extra geheugentoewijzing wordt vermeden en dus de overhead wordt geminimaliseerd.
+
+Historisch gezien heeft de afwezigheid van hoogwaardige stringmanipulatiefuncties in C programmeurs gedwongen om een diepgaand begrip van stringbehandeling op het geheugenniveau te ontwikkelen, wat leidt tot innovatieve benaderingen zoals hierboven. Hoewel dit het voordeel heeft van meer controle en efficiëntie, brengt het een hoger risico op fouten met zich mee, zoals bufferoverlopen en off-by-one fouten.
+
+In moderne ontwikkelingscontexten, met name die waarin veiligheid en beveiliging benadrukt worden, worden talen die dergelijke laagniveau-operaties abstract maken misschien de voorkeur gegeven voor stringmanipulatietaken. Desondanks blijft het begrijpen en gebruiken van deze C-technieken van onschatbare waarde voor scenario's die fijnmazige prestatieoptimalisatie vereisen of voor werken binnen omgevingen waar de minimalisme en snelheid van C van het grootste belang zijn.

@@ -1,81 +1,69 @@
 ---
-title:                "代码重构"
-date:                  2024-01-26T01:17:06.982434-07:00
+title:                "重构"
+date:                  2024-02-03T18:06:55.461141-07:00
 model:                 gpt-4-0125-preview
-simple_title:         "代码重构"
-
+simple_title:         "重构"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/c/refactoring.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## 什么 & 为什么？
-重构是在不改变外部行为的前提下重新组织现有计算机代码的过程。程序员进行重构是为了提高可读性、降低复杂性或使代码更易于维护和扩展，这可以在今后节省大量的时间和头痛问题。
+## 什么是重构 & 为什么要重构?
+
+编程中的重构涉及在不改变代码外在行为的前提下，对现有代码进行结构上的重新组织，旨在改善非功能属性，如可读性，降低复杂性，并提高可维护性。程序员进行重构以保持代码库的清洁，最小化技术债务，并使未来的更改更容易和更安全地实施。
 
 ## 如何进行：
-让我们来优化一些代码。想象你有一个函数，它计算数组中整数的平均值。乍一看，它有点混乱。
 
-**重构前：**
-```C
+重构可以涉及从为变量重命名以提高清晰度到更改代码结构以获得更好模块化的一系列策略。以下是一个简单的例子，展示了如何重构一段C语言代码以获得更好的清晰度和效率。
+
+重构前：
+```c
 #include <stdio.h>
 
-double calculateStuff(int numbers[], int size) {
-    int sum = 0;
-    double average;
-    for(int i = 0; i < size; sum += numbers[i++]); // 在for循环条件中进行求和，哎哟！
-    average = (double)sum / size;
-    return average;
-}
-
 int main() {
-    int array[] = {23, 42, 57, 16, 5, 102};
-    int length = sizeof(array) / sizeof(array[0]);
-    printf("Average: %f\n", calculateStuff(array, length));
-
+    int x = 10, y = 20;
+    printf("交换前: x = %d, y = %d\n", x, y);
+    x = x + y; // x 现在变成了 30
+    y = x - y; // y 变成了 10
+    x = x - y; // x 变成了 20
+    printf("交换后: x = %d, y = %d\n", x, y);
     return 0;
 }
 ```
-
-**重构后：**
-```C
+输出：
+```
+交换前: x = 10, y = 20
+交换后: x = 20, y = 10
+```
+重构后：
+```c
 #include <stdio.h>
 
-int calculateSum(const int numbers[], int size) {
-    int sum = 0;
-    for (int i = 0; i < size; ++i) {
-        sum += numbers[i];
-    }
-    return sum;
-}
-
-double calculateAverage(const int numbers[], int size) {
-    int sum = calculateSum(numbers, size);
-    return (double)sum / size;
+void swap(int *a, int *b) {
+    *a = *a + *b;
+    *b = *a - *b;
+    *a = *a - *b;
 }
 
 int main() {
-    int array[] = {23, 42, 57, 16, 5, 102};
-    int length = sizeof(array) / sizeof(array[0]);
-    printf("Average: %f\n", calculateAverage(array, length));
+    int x = 10, y = 20;
+    printf("交换前: x = %d, y = %d\n", x, y);
+    swap(&x, &y);
+    printf("交换后: x = %d, y = %d\n", x, y);
     return 0;
 }
 ```
-即使是通过这个简单的例子，你也可以看到，拆分函数使得代码更加清晰和易于维护。现在，每个函数都有一个单一的职责——这是干净编码的一个关键原则。
+输出保持不变，但是交换值的功能已经被移动到了一个单独的函数（`swap`）中，提高了可读性和可重用性。
 
-## 深入了解
-术语“重构”在90年代末开始流行，特别是随着Martin Fowler的书《重构：改善既有代码的设计》的出版。重构并不意味着修复bug或添加新功能，而是关于改善代码的结构。
+## 深入探讨
 
-有许多优秀的重构工具和集成开发环境(IDEs)，可以帮助自动化这一过程，如用于C和C++的CLion，但理解底层发生的事情仍然至关重要。
+重构代码的实践自软件开发存在以来就一直在进行，随着编程范式和语言的演化而演化。在C这种既强大又充满了因其低级性质而导致的效率不高和错误机会的语言中，重构尤为关键。它可以使代码库保持可维护性，而不是变成一团错综复杂的低效之网。
 
-重构的替代方案可能包括从头开始重写代码（风险高且通常不必要）或忍受技术债务（从长远来看可能成本更高）。实施细节基于项目而有所不同，但常见的重构包括为了清晰而重命名变量、将大函数拆分成小函数、以及用命名常量替换魔术数字。
+对C语言特有的考虑是微观优化与可读性/可维护性之间的平衡。虽然为了挤出最后一丝性能而手动调整C代码很有诱惑力，但这样的优化可能使代码变得更脆弱，更难以阅读。因此，通常最好是优先考虑清晰、可读的代码，并依赖编译器的优化器在可能的情况下处理性能改进。
 
-此外，DRY（不要重复自己）和SOLID原则等模式可以指导你的重构之旅，推动代码库更易于测试、理解和协作。
+此外，C中重构的工具和技术，比如静态代码分析器（例如，Clang Static Analyzer, cppcheck）和模块化编程原则，已经有了显著的进步。然而，由于C的手动内存管理和指针算术，重构如果不小心进行，可能会引入错误。这里，单元测试和代码审查是非常宝贵的技术。
 
-## 另见
-要深入了解重构的海洋，请查看：
-
-- Martin Fowler的主页：https://martinfowler.com/，提供有关重构和软件设计的大量文章和资源。
-- Refactoring.com：https://refactoring.com/，提供重构技术的示例和目录。
-- 《重构》这本书：被认为是重构的圣经，阅读它可以让你全面了解该方法论。
-- 《代码整洁之道：敏捷软件工艺指南》作者Robert C. Martin，讨论了如何编写易于理解和维护的代码。
+虽然较新的语言提供了更多内置支持安全重构的特性，如自动内存管理和丰富的类型系统，但在需要接近硬件的性能和细粒度控制的场景中，C仍然无与伦比。在这些情况下，重构不那么依赖于语言特性，更多地依赖于有纪律的、深思熟虑的代码重构。

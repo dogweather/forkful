@@ -1,75 +1,80 @@
 ---
 title:                "Koodin järjestäminen funktioihin"
-date:                  2024-01-26T01:10:17.795257-07:00
-model:                 gpt-4-1106-preview
+date:                  2024-02-03T17:59:19.269579-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Koodin järjestäminen funktioihin"
-
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c/organizing-code-into-functions.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Mikä & Miksi?
-Koodin järjestäminen funktioihin tarkoittaa koodin pilkkomista uudelleenkäytettäviin lohkoihin, jotka suorittavat tiettyjä tehtäviä. Se tekee koodista helpommin luettavaa, vianetsintää ja ylläpitoa.
 
-## Kuinka:
-Otetaan yksinkertainen esimerkki: sanotaan, että haluat laskea kahden luvun summan useita kertoja.
+Koodin järjestäminen funktioihin C-kielessä tarkoittaa monimutkaisten tehtävien pilkkomista pienempiin, uudelleenkäytettäviin koodilohkoihin. Tämä käytäntö parantaa luettavuutta, helpottaa virheenkorjausta ja edistää koodin uudelleenkäyttöä, tehden sovelluksista modulaarisempia ja ylläpidettävämpiä.
 
-Ilman funktioita:
-```C
+## Miten:
+
+C-kielessä funktio ilmaistaan paluutyypillä, nimellä ja parametreilla (jos niitä on), jonka jälkeen seuraa koodilohko. Aloittakaamme yksinkertaisella esimerkillä: funktiolla, joka lisää kaksi kokonaislukua.
+
+```c
 #include <stdio.h>
 
+// Funktiodeklaraatio
+int add(int a, int b);
+
 int main() {
-    int summa1 = 5 + 3;
-    printf("Summa1: %d\n", summa1);
-    
-    int summa2 = 2 + 8;
-    printf("Summa2: %d\n", summa2);
-    
-    // Lisää yhteenlaskuja täällä...
-    
-    return 0;
+  int summa = add(5, 3);
+  printf("Summa on: %d\n", summa);
+  return 0;
+}
+
+// Funktion määrittely
+int add(int a, int b) {
+  return a + b;
 }
 ```
 
-Funktioiden kanssa:
-```C
+Tuloste:
+```
+Summa on: 8
+```
+
+Katsotaan nyt monimutkaisempaa esimerkkiä, joka sisältää mukautetun tietotyypin. Tämä funktio laskee suorakulmion pinta-alan.
+
+```c
 #include <stdio.h>
 
-int lisaa(int a, int b) {
-    return a + b;
+// Määritellään rakenne suorakulmiolle
+typedef struct {
+  int leveys;
+  int korkeus;
+} Suorakulmio;
+
+// Funktio suorakulmion pinta-alan laskemiseksi
+int laskeAla(Suorakulmio rect) {
+  return rect.leveys * rect.korkeus;
 }
 
 int main() {
-    int summa1 = lisaa(5, 3);
-    printf("Summa1: %d\n", summa1);
-    
-    int summa2 = lisaa(2, 8);
-    printf("Summa2: %d\n", summa2);
-    
-    // Käytä lisaa()-funktiota lisää yhteenlaskuja varten...
-    
-    return 0;
+  Suorakulmio omaRect = {5, 10};
+  int ala = laskeAla(omaRect);
+  printf("Suorakulmion pinta-ala on: %d\n", ala);
+  return 0;
 }
 ```
 
-Tulostus:
+Tuloste:
 ```
-Summa1: 8
-Summa2: 10
+Suorakulmion pinta-ala on: 50
 ```
 
-## Syväluotaus
-Ennen kuin C:ssä oli funktioita, ohjelmointi tehtiin usein lineaarisesti, paljon kuin reseptiä seuraten. Mutta kun ohjelmat kasvoivat, koodin toistaminen muodostui ongelmaksi. Funktiot olivat ratkaisu – ne mahdollistivat saman koodilohkon suorittamisen ohjelman eri osista uudelleenkirjoittamatta sitä joka kerta. Tämä ei ainoastaan säästä tilaa vaan myös aikaa päivitysten tekemisessä: muuta funktiota yhdessä paikassa, ja jokainen koodinosa, joka sitä käyttää, saa päivityksen.
+## Syväsukellus
 
-Vaihtoehtoja funktioille voisivat olla sisäinen koodi, makrot tai kopioi-ja-liitä -ohjelmointi, mutta nämä voivat johtaa turpeeseen, virhealttiiseen ja huoltovaikeaan koodiin. Funktionaalit päinvastoin kapseloivat toiminnallisuutta, määrittelevät selkeät rajapinnat ja voivat vähentää sivuvaikutuksia asianmukaisen käyttöalueen avulla.
+Funktioiden käsite C-kielessä, peritty aikaisemmista ohjelmointikäytänteistä, on olennainen rakenteellisessa ohjelmoinnissa. Funktiot mahdollistavat yksityiskohtien abstrahoinnin, monimutkaisuuden hallinnan ja koodin loogisen järjestämisen. Sen alusta lähtien, funktio on ollut keskeinen rakennuspalikka C-kielessä, vaikuttaen lukuisiin muihin kieliin.
 
-Kun toteutat funktioita, harkitse muutamaa yksityiskohtaa: ensinnäkin, yritä saada ne tekemään vain yksi asia – tätä kutsutaan Yksittäisen Vastuun Periaatteeksi. Toiseksi, nimet ovat tärkeitä – valitse kuvaavat nimet funktioille ja niiden parametreille, jotta koodisi on itsestään dokumentoiva.
+Ohjelmointiparadigmojen kehittymisen myötä, vaihtoehtoiset lähestymistavat kuten olio-ohjelmointi (OOP) kielissä kuten C++ ja Java, ovat laajentaneet funktioiden käsitettä objekteihin liittyvillä metodeilla. Vaikka C ei suoraan tue OOP:tä, on mahdollista matkia olio-ohjelmointimalleja huolellisesti rakennettujen funktioiden ja datan avulla.
 
-## Katso myös
-Lisätietoa C:n funktioista löytyy näistä:
-
-- C Standard Library viite: https://en.cppreference.com/w/c/header
-- C-ohjelmointi: Nykyaikainen lähestymistapa, kirjoittanut K.N. King: Kirja, josta löytyy syväluotaus funktioista.
-- Learn-C.org: Funktioiden osio: https://www.learn-c.org/en/Functions
+Nykyohjelmoinnissa funktiot ovat edelleen keskeisiä, mutta kääntäjän optimointien ja kielen ominaisuuksien kehittyessä painopiste saattaa siirtyä inline-funktioihin ja malleihin C++:ssa tai lambdoihin kielissä kuten Python ja JavaScript. Nämä tarjoavat enemmän joustavuutta ja usein tiiviimmän syntaksin saman modulaarisuuden ja uudelleenkäytettävyyden saavuttamiseksi. Kuitenkin, koodin järjestämisen perusperiaatteet funktioihin C-kielessä ovat yleisesti sovellettavissa ja muodostavat tehokkaan ja vaikuttavan ohjelmistokehityksen perustan.

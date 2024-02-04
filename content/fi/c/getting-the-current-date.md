@@ -1,49 +1,60 @@
 ---
 title:                "Nykyisen päivämäärän hankkiminen"
-date:                  2024-01-20T15:12:54.342783-07:00
+date:                  2024-02-03T17:57:38.810480-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Nykyisen päivämäärän hankkiminen"
-
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c/getting-the-current-date.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Mitä & Miksi?)
-Kellonajan ja päivämäärän haku tarkoittaa nykyhetken ajastamptimperkin selvittämistä. Ohjelmoijat tarvitsevat tätä muun muassa logien aikaansaamiseen, aikaleimojen antamiseen tiedostoille ja käyttäjien toimien aikajanan seuraamiseen.
+## Mikä & Miksi?
 
-## How to: (Miten tehdään:)
-```C
+Nykyisen päivämäärän saaminen C-kielessä tarkoittaa standardin C-kirjaston hyödyntämistä järjestelmän nykyisen ajan ja päivämäärän noutamiseen ja muotoilemiseen. Ohjelmoijat tarvitsevat tätä toiminnallisuutta usein lokitiedostojen, aikaleimojen tai suunniteltujen toimintojen toteuttamiseen sovelluksissaan.
+
+## Kuinka:
+
+C-kielessä otsikkotiedosto `<time.h>` tarjoaa tarvittavat funktiot ja tyypit päivämäärien ja aikojen käsittelyyn. `time()`-funktio hakee nykyisen ajan, kun taas `localtime()` muuntaa tämän ajan paikalliseen aikavyöhykkeeseen. Päivämäärän näyttämiseksi käytämme `strftime()`-funktiota sen muotoilemiseen merkkijonoksi.
+
+Tässä on perusesimerkki:
+
+```c
 #include <stdio.h>
 #include <time.h>
 
 int main() {
-    time_t nykyhetki;
-    struct tm *aikaRakenne;
+    char buffer[80];
+    time_t rawtime;
+    struct tm *timeinfo;
 
-    time(&nykyhetki);  // Nykyinen aika epoch-lukuna
-    aikaRakenne = localtime(&nykyhetki);  // Muunna ihmismuotoon
-
-    // Tulosta päivämäärä ja aika
-    printf("Tänään on: %02d.%02d.%d klo %02d:%02d\n",
-           aikaRakenne->tm_mday, aikaRakenne->tm_mon + 1, aikaRakenne->tm_year + 1900,
-           aikaRakenne->tm_hour, aikaRakenne->tm_min);
+    // Hae nykyinen aika
+    time(&rawtime);
+    // Muunna se paikalliseksi ajaksi
+    timeinfo = localtime(&rawtime);
+    
+    // Muotoile päivämäärä ja tulosta se
+    strftime(buffer, 80, "Tämän päivän päivämäärä on %Y-%m-%d", timeinfo);
+    printf("%s\n", buffer);
 
     return 0;
 }
-
 ```
 
-Esimerkki tulostus:
+Esimerkkitulostus voisi näyttää tältä:
+
 ```
-Tänään on: 02.04.2023 klo 15:30
+Tämän päivän päivämäärä on 2023-04-12
 ```
 
-## Deep Dive (Sukellus syvemmälle):
-Nykyhetken päivämäärän ja ajan saanti C-kielessä juontaa juurensa `time.h` kirjastoon, joka ilmestyi C:n standardikirjastoon 70-luvulla. Vaihtoehtojakin toki on: voit käyttää POSIX `gettimeofday` funktiota tai C11:n `timespec_get`. Implementaation ymmärtäminen auttaa välttämään aikavyöhyke- ja kesäaikavirheitä – `localtime` huomioi ne puolestasi.
+## Syväsukellus
 
-## See Also (Katso myös):
-- C Standard Library: https://en.cppreference.com/w/c/chrono
-- Linux Manual page for `time(2)`: https://man7.org/linux/man-pages/man2/time.2.html
-- Linux Manual page for `localtime(3)`: https://man7.org/linux/man-pages/man3/localtime.3.html
-- Stack Overflow discussion about retrieving the current date and time in C: https://stackoverflow.com/questions/5141960/get-the-current-time-in-c
+C-kielessä ajan käsittely `<time.h>`:n kautta juontaa juurensa kielen ja UNIX-järjestelmien alkuaikoihin. Se on rakennettu `time_t`-tietotyypin ympärille, joka edustaa nykyistä aikaa sekuntien määränä Unix Epochista lähtien (1. tammikuuta 1970). Vaikka tämä on tehokasta ja universaalisti yhteensopivaa, se myös tarkoittaa, että standardin C-kirjaston aikafunktiot ovat perustavanlaatuisesti rajoittuneita `time_t`:n tarkkuuden ja vaihteluvälin suhteen.
+
+Nykysovellukset, erityisesti ne, jotka vaativat korkean tarkkuuden aikaleimoja tai käsittelevät kaukaisia tai menneitä päivämääriä, saattavat kokea nämä rajoitukset haastaviksi. Esimerkiksi Vuosi 2038 -ongelma on kuuluisa esimerkki, jossa 32-bittistä `time_t`:a käyttävät järjestelmät ylivuotavat.
+
+Monimutkaisemman ajan ja päivämäärien käsittelyn tarpeisiin monet ohjelmoijat kääntyvät ulkoisten kirjastojen tai käyttöjärjestelmän tarjoamien toimintojen puoleen. Esimerkiksi C++:ssa `<chrono>`-kirjasto tarjoaa tarkempia ja monipuolisempia ajan käsittelyn mahdollisuuksia.
+
+Huolimatta rajoituksistaan, C-kielen aikafunktioiden yksinkertaisuus ja yleisyys tekevät niistä täysin sopivia moniin sovelluksiin. Näiden työkalujen ymmärtäminen on olennaista C-ohjelmoijille, tarjoten sekoituksen historiallista ohjelmointikontekstia ja käytännöllistä, jokapäiväistä hyötyä.

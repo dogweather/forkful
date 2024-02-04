@@ -1,72 +1,67 @@
 ---
 title:                "Đọc một tệp văn bản"
-date:                  2024-01-28T22:05:15.539292-07:00
+date:                  2024-02-03T18:06:30.715730-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Đọc một tệp văn bản"
-
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/c/reading-a-text-file.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 
-Đọc một tệp văn bản là về truy cập dữ liệu của tệp dưới dạng nội dung chuỗi, từng ký tự một hoặc từng dòng một. Lập trình viên làm điều này để xử lý, phân tích, hoặc thao tác thông tin đã lưu trữ mà không cần nhập liệu thủ công mỗi lần chạy.
+Đọc một tệp văn bản trong C liên quan đến việc mở một tệp trên hệ thống của bạn để trích xuất thông tin và thao tác hoặc hiển thị nó theo nhu cầu. Các lập trình viên thường làm điều này để xử lý các tệp cấu hình, đọc đầu vào để xử lý, hoặc phân tích dữ liệu được lưu trữ dưới dạng tệp, cho phép linh hoạt và tăng chức năng trong các ứng dụng.
 
 ## Làm thế nào:
 
-Hãy đọc một tệp văn bản. Chúng ta sẽ mở nó, đọc từ nó và đóng nó. Cơ bản thôi.
+Để bắt đầu đọc một tệp văn bản trong C, bạn chủ yếu làm việc với các hàm `fopen()`, `fgets()`, và `fclose()` từ thư viện I/O tiêu chuẩn. Đây là một ví dụ đơn giản mà đọc một tệp gọi là `example.txt` và in nội dung của nó ra đầu ra chuẩn:
 
-```C
+```c
 #include <stdio.h>
 #include <stdlib.h>
 
 int main() {
-    FILE *file;
-    char filename[] = "example.txt";
-    char ch;
+    FILE *filePointer;
+    char buffer[255]; // Bộ đệm để lưu trữ các dòng văn bản
 
-    file = fopen(filename, "r"); // Mở tệp ở chế độ đọc
+    // Mở tệp ở chế độ đọc
+    filePointer = fopen("example.txt", "r");
 
-    if (file == NULL) {
-        perror("Lỗi khi mở tệp.\n");
-        exit(EXIT_FAILURE);
+    // Kiểm tra xem tệp đã được mở thành công không
+    if (filePointer == NULL) {
+        printf("Could not open file. \n");
+        return 1;
     }
 
-    printf("Nội dung của %s:\n", filename);
-
-    while ((ch = fgetc(file)) != EOF) { // Đọc và in từng ký tự
-        putchar(ch);
+    while (fgets(buffer, 255, filePointer) != NULL) {
+        printf("%s", buffer);
     }
 
-    fclose(file); // Đóng tệp
-
+    // Đóng tệp để giải phóng tài nguyên
+    fclose(filePointer);
     return 0;
 }
 ```
 
-Giả sử `example.txt` chứa "Hello, C!", đầu ra sẽ là:
+Giả sử `example.txt` chứa:
 ```
-Nội dung của example.txt:
-Hello, C!
+Hello, World!
+Welcome to C programming.
+```
+
+Kết quả sẽ là:
+```
+Hello, World!
+Welcome to C programming.
 ```
 
 ## Sâu hơn nữa
 
-Trở lại những năm 70, C được ra đời, và cùng với nó, cách chúng ta đọc tệp ngày nay. Đó không phải là khoa học phức tạp, nhưng có những sắc thái. Bạn sử dụng `fopen` để mở tệp và `fgetc` để đọc từng ký tự một lúc. Nhưng tại sao là từng ký tự một? Bạn có thể đọc từng dòng với `fgets` hoặc toàn bộ tệp với `fread` nếu nó phù hợp với trường hợp của bạn. Đó tất cả là về sự kiểm soát và những gì chương trình của bạn cần.
+Đọc tệp trong C có một lịch sử phong phú, bắt nguồn từ những ngày đầu của Unix khi sự đơn giản và tinh tế của các luồng văn bản là cơ bản. Điều này đã dẫn đến việc áp dụng tệp văn bản cho nhiều mục đích, bao gồm cấu hình, ghi nhật ký, và giao tiếp giữa các tiến trình. Sự đơn giản của thư viện I/O tệp của ngôn ngữ C, được ví dụ qua các hàm như `fopen()`, `fgets()`, và `fclose()`, nhấn mạnh triết lý thiết kế của nó về việc cung cấp những công cụ cơ bản mà lập trình viên có thể sử dụng để xây dựng các hệ thống phức tạp.
 
-Đằng sau cánh gà, `fopen` nói với hệ điều hành của bạn, "Này, tôi sẽ cần tệp này, cho tôi quyền truy cập nhé!" Và hệ thống trả lời okay bằng cách trả lại một con trỏ `FILE`. Hàm `fgetc` thì thầm với con trỏ tệp, "Cho tôi byte tiếp theo, nhé?" Và nó làm vậy, cho đến khi nó đạt đến EOF, dấu hiệu Kết thúc Tệp.
+Từ góc độ lịch sử, mặc dù những hàm này đã phục vụ tốt cho hàng không số ứng dụng, thực hành lập trình hiện đại đã nêu bật một số hạn chế, đặc biệt là liên quan đến xử lý lỗi, mã hóa tệp (ví dụ, hỗ trợ Unicode), và truy cập song song trong các ứng dụng đa luồng. Các cách tiếp cận khác trong các ngôn ngữ khác, hoặc ngay cả trong C sử dụng các thư viện như `libuv` hoặc `Boost.Asio` cho C++, cung cấp các giải pháp mạnh mẽ hơn bằng cách giải quyết trực tiếp những lo lắng này với các khả năng quản lý I/O tinh vi hơn, bao gồm các hoạt động I/O bất đồng bộ có thể cải thiện đáng kể hiệu suất của các ứng dụng xử lý nhiều hoạt động đọc tệp hoặc nhiệm vụ bị ràng buộc bởi I/O.
 
-Có lựa chọn khác? Chắc chắn rồi. Bạn có ` fscanf` cho đọc định dạng, `getline` cho các chàng trai hiện đại, hoặc lệnh gọi hệ thống `read` cấp thấp nếu bạn muốn gần gũi với phần cứng. Và đừng quên, sau khi byte cuối cùng được đọc, hãy lịch sự và `fclose` tệp.
-
-## Xem thêm
-
-Để tìm hiểu sâu hơn, hãy kiểm tra những cái này:
-
-- Tài liệu Thư viện Chuẩn C: [https://en.cppreference.com/w/c/io](https://en.cppreference.com/w/c/io)
-- Hướng dẫn Tham khảo Thư viện GNU C: [https://www.gnu.org/software/libc/manual/html_node/I_002fO-Overview.html](https://www.gnu.org/software/libc/manual/html_node/I_002fO-Overview.html)
-- Tìm hiểu thêm về các hàm đọc khác nhau: [https://www.tutorialspoint.com/c_standard_library/c_function_fread.htm](https://www.tutorialspoint.com/c_standard_library/c_function_fread.htm)
-- Dành cho những người thực sự tò mò, sâu hơn vào các lệnh gọi hệ thống Linux: [https://man7.org/linux/man-pages/man2/read.2.html](https://man7.org/linux/man-pages/man2/read.2.html)
+Bất chấp những tiến bộ này, việc học cách đọc tệp sử dụng thư viện I/O tiêu chuẩn trong C là rất quan trọng. Nó không chỉ giúp hiểu cơ bản về xử lý tệp, có thể áp dụng trong nhiều bối cảnh lập trình, mà còn cung cấp một nền tảng mà trên đó một người có thể đánh giá cao sự tiến hóa của các hoạt động I/O tệp và khám phá các thư viện và khung công tác phức tạp hơn cho xử lý tệp trong các ứng dụng hiện đại.

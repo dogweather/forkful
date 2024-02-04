@@ -1,47 +1,54 @@
 ---
-title:                "Запис в стандартний потік помилок"
-date:                  2024-01-19
-simple_title:         "Запис в стандартний потік помилок"
-
+title:                "Запис у стандартну помилку"
+date:                  2024-02-03T18:15:41.797070-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Запис у стандартну помилку"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/c/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-(## Що таке & Чому?)
+## Що і чому?
 
-Writing to standard error (stderr) means sending error messages and diagnostics there. Programmers do it to separate regular output from errors, making it easier to handle them differently.
+Запис в стандартний потік помилок у мові C передбачає направлення повідомлень про помилки та діагностичної інформації до окремого потоку від основного виводу програми. Програмісти роблять це для відокремлення повідомлень про помилки від стандартного виводу, що робить обидва легшими для читання та обробки окремо, особливо під час відлагодження або логування виконання програм.
 
-## How to:
-(## Як це зробити:)
+## Як це зробити:
 
-Here's how to write to stderr in C:
+У C потік `stderr` використовується для запису повідомлень про помилки. На відміну від запису в стандартний вивід за допомогою `printf`, запис у `stderr` можна здійснювати використовуючи `fprintf` або `fputs`. Ось як ви можете це зробити:
 
-```C
+```c
 #include <stdio.h>
 
 int main() {
-    fprintf(stderr, "An error occurred!\n");
+    fprintf(stderr, "Це повідомлення про помилку.\n");
+
+    fputs("Це інше повідомлення про помилку.\n", stderr);
+    
     return 0;
 }
 ```
 
-Sample output when an error occurs:
-
+Приклад виводу (у stderr):
 ```
-An error occurred!
+Це повідомлення про помилку.
+Це інше повідомлення про помилку.
 ```
 
-## Deep Dive
-(## Поглиблений аналіз)
+Важливо зауважити, що хоча вивід здається схожим на `stdout` у консолі, коли використовується перенаправлення у терміналі, різниця стає очевидною:
 
-Writing to stderr dates back to early Unix systems, keeping a clear distinction between standard output (stdout) and standard error. Alternatives include writing to log files or using syslog on Unix-like systems. Internally, stderr is a FILE* stream, buffered differently from stdout, and is typically unbuffered to speed up error reporting.
+```sh
+$ ./your_program > output.txt
+```
 
-## See Also
-(## Дивіться також)
+Ця команда перенаправляє лише стандартний вивід до `output.txt`, тоді як повідомлення про помилки все ще з'являються на екрані.
 
-- GNU C Library Manual on Standard Streams: https://www.gnu.org/software/libc/manual/html_node/Standard-Streams.html
-- POSIX standard definition for stderr: https://pubs.opengroup.org/onlinepubs/9699919799/functions/stderr.html
-- Advanced error handling with errno: http://man7.org/linux/man-pages/man3/errno.3.html
+## Поглиблений огляд
+
+Розрізнення між `stdout` та `stderr` у системах на базі Unix сягає корінням ранніх днів C та Unix. Це відокремлення дозволяє більш надійно обробляти помилки та логування, оскільки це дає програмістам можливість перенаправлення повідомлень про помилки незалежно від стандартного виводу програми. В той час як `stderr` за замовчуванням не буферизований, щоб забезпечити негайний вивід повідомлень про помилки, що допомагає при відлагодженні збоїв та інших критичних проблем, `stdout` зазвичай буферизований, що означає, що його вивід може бути затриманий до моменту, коли буфер буде очищено (наприклад, при завершенні програми або ручному очищенні).
+
+У сучасних застосунках запис у `stderr` залишається актуальним, особливо для інструментів командного рядка та серверних застосунків, де критично важливо розрізняти звичайні повідомлення журналу та помилки. Однак, для більш складної обробки помилок, особливо в програмах з графічним інтерфейсом користувача або там, де потрібні більш складні механізми логування, програмісти можуть використовувати спеціалізовані бібліотеки логування, які забезпечують більший контроль над форматуванням повідомлень, місцями призначення (наприклад, файли, мережа) та рівнями серйозності (інформація, попередження, помилка тощо).
+
+Хоча `stderr` забезпечує фундаментальний механізм для звітування про помилки в C, еволюція практик програмування та наявність передових фреймворків логування означають, що вона часто є лише вихідним пунктом для сучасних стратегій обробки помилок.

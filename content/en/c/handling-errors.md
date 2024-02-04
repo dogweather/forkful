@@ -1,9 +1,8 @@
 ---
 title:                "Handling errors"
-date:                  2024-01-21T21:19:20.700297-07:00
-model:                 gpt-4-1106-preview
+date:                  2024-02-03T17:50:05.622207-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Handling errors"
-
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/c/handling-errors.md"
 ---
@@ -11,45 +10,74 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Handling errors in C is about expecting the unexpected. It keeps programs from going haywire when they bump into problems. Programmers do it to handle mistakes gracefully and keep their code reliable.
+
+Handling errors in C involves detecting and responding to anomalous conditions that arise during program execution. Programmers do this to prevent bugs, crashes, and unpredictable behavior, ensuring the software functions reliably and efficiently under various scenarios.
 
 ## How to:
 
-Let's see how to do this in C:
+C does not have built-in support for exceptions like some other languages. Instead, it relies on a few conventional error-handing strategies, such as returning special values from functions and setting global variables like `errno`.
 
-```C
+**Returning Special Values**
+
+Functions can indicate errors by returning a specific value that is unlikely to be a valid result. Here's an example with integers:
+
+```c
 #include <stdio.h>
-#include <stdlib.h>
-#include <errno.h>
+
+int inverse(int number, double *result) {
+    if (number == 0) {
+        return -1; // Error case
+    } else {
+        *result = 1.0 / number;
+        return 0; // Success
+    }
+}
 
 int main() {
-    FILE *fp = fopen("nonexistentfile.txt", "r");
-    if (fp == NULL) {
-        perror("Error opening file");
-        return EXIT_FAILURE;
+    double result;
+    if (inverse(0, &result) < 0) {
+        printf("Error: Division by zero.\n");
+    } else {
+        printf("The inverse is: %f\n", result);
     }
-    // Do something with the file
-    fclose(fp);
-    return EXIT_SUCCESS;
+    
+    return 0;
 }
 ```
 
-Sample output when the file doesn't exist:
+**Output:**
+```
+Error: Division by zero.
+```
+
+**Checking `errno`**
+
+For library functions, especially those interacting with the system or OS (like file I/O), `errno` is set when an error occurs. To use it, include `errno.h` and check `errno` after a suspected failure:
+
+```c
+#include <stdio.h>
+#include <errno.h>
+#include <string.h>
+
+int main() {
+    FILE *file = fopen("nonexistent.txt", "r");
+    if (file == NULL) {
+        printf("Error opening file: %s\n", strerror(errno));
+    }
+    
+    return 0;
+}
+```
+
+**Output:**
 ```
 Error opening file: No such file or directory
 ```
 
 ## Deep Dive
 
-In the early C days, error handling was barebones - mostly return codes and manual checks. Enter `errno`, a global variable updated when functions fail. It's not thread-safe by itself, though, so the newer `strerror` and `perror` functions were introduced for better error reporting.
+Historically, the C programming language's minimalistic design has excluded a built-in exception handling mechanism, reflective of its low-level, systems programming origins where maximum performance and close-to-the-metal control are critical. Instead, C adopts a more manual error handling approach that fits its philosophy of giving programmers as much control as possible, even at the cost of convenience.
 
-Alternatives? Modern C isn't limited to `errno`. There's setjmp and longjmp for non-local jumps when disaster strikes. Some folks prefer defining their error codes, while others opt for exception-like structures in C++.
+While this approach aligns well with C's design goals, it can also lead to verbose error-checking code and the potential for missed error checks, which modern languages address with structured exception handling mechanisms. For instance, exceptions in languages like Java or C# allow for centralized error processing, making code cleaner and error management more straightforward. However, exceptions introduce their overhead and complexity, which might not be ideal for system-level programming where C shines.
 
-Implementation details can be thick. For example, `errno` is thread-safe in POSIX compliant systems due to the magic of Thread Local Storage (TLS). In embedded systems, where resources are precious, custom error handling code might be preferred over standard approaches that could bloat the software.
-
-## See Also
-
-- A detailed dive into `errno`: https://en.cppreference.com/w/c/error/errno
-- For thread safety, see POSIX threads and errno: http://man7.org/linux/man-pages/man3/pthread_self.3.html
-- An intro to setjmp and longjmp: https://www.cplusplus.com/reference/csetjmp/
-- For exception handling in C++, check out: https://isocpp.org/wiki/faq/exceptions
+Despite its rudeness, this manual error handling in C has informed the design of error management in many other languages, offering a model where the explicitness of error conditions can lead to more predictable and debuggable code. For critical systems, where failures must be managed gracefully, C's error handling paradigm—combined with modern best practices like error handling libraries and conventions—ensures robustness and reliability.

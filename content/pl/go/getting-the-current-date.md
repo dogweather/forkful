@@ -1,21 +1,25 @@
 ---
-title:                "Pobieranie aktualnej daty"
-date:                  2024-01-20T15:14:40.517621-07:00
-simple_title:         "Pobieranie aktualnej daty"
-
+title:                "Pobieranie bieżącej daty"
+date:                  2024-02-03T17:58:03.629527-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Pobieranie bieżącej daty"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/go/getting-the-current-date.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Co i dlaczego?)
+## Co i dlaczego?
 
-Pobieranie bieżącej daty to uzyskanie informacji o obecnej dacie i czasie z systemu komputerowego. Programiści robią to, by logować zdarzenia, obliczać różnice czasowe lub wyświetlać daty użytkownikom.
+Pobieranie bieżącej daty w języku Go to podstawowe zadanie dla programistów, porównywalne z powszechnością „Hello, World!”. Jest niezbędne do zadań takich jak logowanie i znakowanie czasem wydarzeń, obliczanie czasu trwania i planowanie przyszłych wydarzeń.
 
-## How to (Jak to zrobić):
+## Jak to zrobić:
 
-```Go
+W Go pakiet `time` jest Twoją bramą do pracy z datami i czasem. Funkcja `time.Now()` daje ci aktualną datę i czas, podczas gdy inne funkcje i metody pozwalają formatować lub manipulować tymi danymi. Oto jak uzyskać bieżącą datę i jej różne reprezentacje:
+
+```go
 package main
 
 import (
@@ -24,22 +28,38 @@ import (
 )
 
 func main() {
-	currentTime := time.Now()
-	fmt.Println("Aktualna data i czas:", currentTime)
-}
+	currentTime := time.Now() // Pobiera bieżącą datę i czas
+	fmt.Println("Aktualny czas:", currentTime)
 
-// Przykładowe wyjście:
-// Aktualna data i czas: 2023-03-15 11:06:39.123456 +0100 CET
+	// Aby uzyskać datę w formacie RRRR-MM-DD
+	fmt.Println("Aktualna data:", currentTime.Format("2006-01-02"))
+
+	// Aby uzyskać poszczególne składniki daty
+	year, month, day := currentTime.Date()
+	fmt.Printf("Rok: %d, Miesiąc: %s, Dzień: %d\n", year, month, day)
+
+	// Aby uzyskać dzień tygodnia
+	fmt.Println("Dzień tygodnia:", currentTime.Weekday())
+}
 ```
 
-## Deep Dive (Dogłębna analiza):
+Przykładowy wynik może wyglądać tak:
 
-Go (jako młody język stworzony w Google w 2009 r.) oferuje natywne wsparcie dla operacji na datach i czasie za pośrednictwem pakietu `time`. Ta biblioteka dostarcza wiele funkcji, np. `Now()` do pobierania aktualnego czasu. Alternatywą jest użycie zewnętrznych bibliotek, jak `dateparse` dla bardziej złożonych zadań. 
+```
+Aktualny czas: 2023-04-18 15:04:05.123456 +0000 UTC
+Aktualna data: 2023-04-18
+Rok: 2023, Miesiąc: April, Dzień: 18
+Dzień tygodnia: Tuesday
+```
 
-Niemniej, standardowy pakiet `time` zwykle wystarcza. Pozwala na formatowanie czy porównywanie dat, a także operowanie strefami czasowymi. Użycie funkcji `Now()` jest proste, ale pozostaje potężne narzędzie, dzięki możliwości rozszerzenia poprzez metody pakietu `time`, takie jak `Add()` czy `Sub()`.
+Zwróć uwagę, jak `Format` używa konkretnej daty (2006-01-02) jako ciągu formatującego. Jest to wybrana przez Go data odniesienia, służąca jako wzorzec mnemotechniczny do formatowania dat.
 
-## See Also (Zobacz również):
+## Dokładniejsze spojrzenie
 
-- Oficjalna dokumentacja pakietu `time` w Go: https://pkg.go.dev/time
-- Artykuł "Understanding Time and Date in Go": https://www.digitalocean.com/community/tutorials/understanding-time-and-date-in-go
-- Wprowadzenie do formatowania i parsowania dat w Go: https://gobyexample.com/time-formatting-parsing
+Decyzja o użyciu pakietu `time` do manipulacji datą i czasem w Go odzwierciedla zaangażowanie języka w solidne i intuicyjne biblioteki standardowe. W przeciwieństwie do niektórych języków, które mogą mieć wiele konkurujących bibliotek lub metodologii do manipulacji datami, Go stawia na posiadanie jednej, dobrze udokumentowanej normy.
+
+Niecodzienny wybór daty odniesienia (`Mon Jan 2 15:04:05 MST 2006`) w formatowaniu czasu w Go, choć początkowo może być mylący, jest tak naprawdę mistrzowskim posunięciem pod względem użyteczności. Pozwala to programistom przedstawiać formaty daty i czasu, korzystając z podejścia opartego na przykładach, w przeciwieństwie do zapamiętywania tokenów lub symboli, których mogą używać inne języki.
+
+Mimo że pakiet `time` oferuje wszechstronną funkcjonalność dla większości potrzeb, obsługa stref czasowych i zmian DST (czasu letniego) czasami może sprawić trudność nowym programistom Go. Zrozumienie, jak Go obsługuje czas związany z lokalizacją, jest kluczowe, aby uniknąć typowych pułapek w manipulowaniu czasem.
+
+Dla bardziej złożonych potrzeb planowania czy manipulacji czasem, biblioteki stron trzecich, takie jak `github.com/robfig/cron` dla Go, mogą oferować bardziej specjalistyczną funkcjonalność niż standardowy pakiet `time`. Jednak dla większości zastosowań wymagających uzyskania i obsługi bieżącej daty i czasu, pakiet `time` oferuje solidny i idiomatyczny punkt wyjścia w Go.

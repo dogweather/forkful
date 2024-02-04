@@ -1,20 +1,27 @@
 ---
 title:                "Zaokrąglanie liczb"
-date:                  2024-01-26T03:46:12.026582-07:00
+date:                  2024-02-03T18:08:15.745047-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Zaokrąglanie liczb"
-
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/go/rounding-numbers.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Co i dlaczego?
-Zaokrąglanie liczb oznacza dostosowanie liczby do najbliższej liczby całkowitej lub określonego miejsca po przecinku. Robi się to, aby upraszczać wartości, uczynić je bardziej czytelnymi lub dopasować do pewnych ograniczeń, jak przy pracy z walutami.
+
+Zaokrąglanie liczb polega na dostosowaniu wartości liczby do jej najbliższej liczby całkowitej lub do określonej liczby miejsc po przecinku. Programiści robią to z różnych powodów, takich jak poprawa czytelności, uproszczenie obliczeń, czy spełnienie specyficznych dla danej dziedziny wymagań dotyczących precyzji.
 
 ## Jak to zrobić:
-Pakiet `math` w języku Go to Twój przyjaciel do zaokrąglania. Użyj `math.Round`, `math.Floor` i `math.Ceil` dla uproszczenia:
+
+W języku Go nie ma wbudowanej funkcji, która bezpośrednio zaokrąglałaby liczby do określonej liczby miejsc po przecinku w pakiecie matematycznym. Jednak można osiągnąć zaokrąglenie za pomocą kombinacji funkcji dla liczb całkowitych lub zaimplementować własną funkcję dla miejsc dziesiętnych.
+
+### Zaokrąglanie do najbliższej liczby całkowitej:
+
+Aby zaokrąglić do najbliższej liczby całkowitej, możesz użyć funkcji `math.Floor()` z dodanym 0,5 dla liczb dodatnich, i `math.Ceil()` minus 0,5 dla liczb ujemnych, w zależności od kierunku, w którym chcesz zaokrąglić.
 
 ```go
 package main
@@ -25,47 +32,40 @@ import (
 )
 
 func main() {
-	number := 3.14159
-	fmt.Println("Round:", math.Round(number))  // Zaokrąglij do najbliższej liczby całkowitej
-	fmt.Println("Floor:", math.Floor(number)) // Zaokrąglij w dół
-	fmt.Println("Ceil: ", math.Ceil(number))  // Zaokrąglij w górę
+	fmt.Println(math.Floor(3.75 + 0.5))  // Wyświetla: 4
+	fmt.Println(math.Ceil(-3.75 - 0.5)) // Wyświetla: -4
 }
 ```
 
-Przykładowe wyjście:
-```
-Round: 3
-Floor: 3
-Ceil: 4
-```
+### Zaokrąglanie do określonej liczby miejsc po przecinku:
 
-Dla konkretnych miejsc po przecinku pomnóż, zaokrąglij, a następnie podziel:
+Aby zaokrąglić do określonej liczby miejsc po przecinku, można użyć własnej funkcji, w której mnożysz liczbę przez 10^n (gdzie n to liczba miejsc po przecinku), zaokrąglasz do najbliższej liczby całkowitej jak wcześniej, a następnie dzielisz przez 10^n.
 
 ```go
-func roundToDecimalPlace(number float64, decimalPlaces int) float64 {
-	shift := math.Pow(10, float64(decimalPlaces))
+package main
+
+import (
+	"fmt"
+	"math"
+)
+
+func roundToDecimalPlace(number float64, places int) float64 {
+	shift := math.Pow(10, float64(places))
 	return math.Round(number*shift) / shift
 }
 
 func main() {
-	number := 3.14159
-	fmt.Println("Zaokrąglone do 2 miejsc po przecinku:", roundToDecimalPlace(number, 2))
+	fmt.Println(roundToDecimalPlace(3.14159, 2)) // Wyświetla: 3.14
+	fmt.Println(roundToDecimalPlace(-3.14159, 3)) // Wyświetla: -3.142
 }
 ```
 
-Przykładowe wyjście:
-```
-Zaokrąglone do 2 miejsc po przecinku: 3.14
-```
+## Szczegółowa analiza
 
-## Podsumowanie
-Zaokrąglanie liczb nie jest niczym nowym – sięga starożytnej matematyki, zawsze zmierzając do prostoty. `math.Round` w Go używa [zaokrąglania bankowego](https://pl.wikipedia.org/wiki/Zaokrąglanie), co oznacza, że 0,5 jest zaokrąglane do najbliższej parzystej liczby, redukując stronniczość, która mogłaby wpłynąć na sumy.
+Zaokrąglanie liczb jest podstawową operacją w programowaniu komputerowym, związaną z historycznym wyzwaniem reprezentowania liczb rzeczywistych w systemie binarnym. Potrzeba zaokrąglania wynika z faktu, że wiele liczb rzeczywistych nie może być dokładnie reprezentowanych w binarnie, prowadząc do błędów przybliżenia.
 
-Liczby zmiennoprzecinkowe mogą być problematyczne z powodu ich binarnej reprezentacji, która może nie przedstawiać dokładnie wszystkich licz dziesiętnych. Podejście Go, jednak, w większości przypadków utrzymuje oczekiwane zachowanie.
+W Go podejście do zaokrąglania jest nieco manualne w porównaniu z językami, które oferują wbudowane funkcje zaokrąglania do określonych miejsc po przecinku. Mimo to, standardowa biblioteka `math` w Go dostarcza podstawowe narzędzia (takie jak `math.Floor` i `math.Ceil`), aby skonstruować dowolny mechanizm zaokrąglania wymagany przez aplikację.
 
-Istnieją inne metody zaokrąglania, takie jak "zaokrąglij połowę w górę" lub "zaokrąglij połowę z dala od zera", ale to, co jest dostępne w standardowej bibliotece Go, jest od razu do użytku. Dla bardziej złożonych potrzeb, możesz potrzebować biblioteki stron trzecich lub opracować własne rozwiązanie.
+To manualne podejście, choć wydaje się bardziej uciążliwe, oferuje programistom większą kontrolę nad sposobem zaokrąglania liczb, dostosowując się do potrzeb precyzji i dokładności różnych aplikacji. Alternatywy, takie jak biblioteki stron trzecich lub projektowanie własnych funkcji zaokrąglających, mogą zapewnić prostsze rozwiązania podczas pracy z liczbami złożonymi lub wymagającymi bardziej zaawansowanych operacji matematycznych nieobsługiwanych przez bibliotekę standardową.
 
-## Zobacz także
-- Pakiet `math` w Go: [https://pkg.go.dev/math](https://pkg.go.dev/math)
-- Standard IEEE 754 dla arytmetyki zmiennoprzecinkowej (podstawa Go dla obsługi floatów): [https://ieeexplore.ieee.org/document/4610935](https://ieeexplore.ieee.org/document/4610935)
-- Zrozumienie arytmetyki zmiennoprzecinkowej: ["Co każdy informatyk powinien wiedzieć o arytmetyce zmiennoprzecinkowej"](https://docs.oracle.com/cd/E19957-01/806-3568/ncg_goldberg.html)
+Podsumowując, chociaż standardowa biblioteka Go nie oferuje bezpośredniej funkcjonalności zaokrąglania do miejsc po przecinku, jej kompleksowy zestaw funkcji matematycznych umożliwia programistom implementację solidnych rozwiązań zaokrąglających dostosowanych do ich konkretnych potrzeb.

@@ -1,28 +1,27 @@
 ---
 title:                "Gửi một yêu cầu HTTP"
-date:                  2024-01-28T22:07:54.014059-07:00
+date:                  2024-02-03T18:09:11.169590-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Gửi một yêu cầu HTTP"
-
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/c/sending-an-http-request.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Gì và Tại sao?
+## Cái gì & Tại sao?
 
-Gửi một yêu cầu HTTP là cách chương trình của bạn yêu cầu dữ liệu hoặc gửi dữ liệu đến một máy chủ web. Lập trình viên sử dụng nó để tương tác với các API, thu thập nội dung web hoặc giao tiếp với các dịch vụ khác.
+Gửi một yêu cầu HTTP bao gồm việc tạo và điều phát yêu cầu đến một máy chủ web để lấy hoặc gửi dữ liệu. Các lập trình viên thực hiện điều này bằng ngôn ngữ C để tương tác với các API web, tải trang web, hoặc giao tiếp với các dịch vụ mạng khác trực tiếp từ các ứng dụng của họ.
 
 ## Làm thế nào:
 
-Trong C, chúng ta sẽ sử dụng `libcurl` cho nhiệm vụ này. Đây là một thư viện mạnh mẽ để chuyển dữ liệu với các URL. Đầu tiên, cài đặt `libcurl`. Trên các hệ thống dựa trên Debian, bạn có thể sử dụng `sudo apt-get install libcurl4-openssl-dev`.
+Để gửi một yêu cầu HTTP trong C, bạn sẽ chủ yếu dựa vào các thư viện như libcurl, vì C không có hỗ trợ sẵn cho các giao thức web. Dưới đây là một ví dụ đơn giản sử dụng libcurl để thực hiện một yêu cầu GET:
 
-Dưới đây là một đoạn mã để thực hiện một yêu cầu GET đơn giản:
+Đầu tiên, hãy chắc chắn bạn đã cài đặt libcurl trên hệ thống của mình. Sau đó, bao gồm các tiêu đề cần thiết và liên kết với thư viện libcurl trong file mã nguồn của bạn:
 
-```C
+```c
 #include <stdio.h>
 #include <curl/curl.h>
 
@@ -30,37 +29,39 @@ int main(void) {
     CURL *curl;
     CURLcode res;
 
-    curl = curl_easy_init();
+    curl = curl_easy_init(); // Khởi tạo một tay cầm libcurl
     if(curl) {
+        // Thiết lập URL mà nhận tay cầm libcurl
         curl_easy_setopt(curl, CURLOPT_URL, "http://example.com");
+        // Định nghĩa một hàm gọi lại để lấy dữ liệu
+        curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, NULL); 
         
-        /* Thực hiện yêu cầu, res sẽ nhận mã trả về */ 
+        // Thực hiện yêu cầu, res sẽ nhận mã trả về
         res = curl_easy_perform(curl);
-        
-        /* Kiểm tra lỗi */ 
+        // Kiểm tra lỗi
         if(res != CURLE_OK)
-            fprintf(stderr, "curl_easy_perform() đã thất bại: %s\n",
+            fprintf(stderr, "curl_easy_perform() failed: %s\n",
                     curl_easy_strerror(res));
-        
-        /* luôn luôn dọn dẹp */ 
+
+        // Luôn luôn dọn dẹp
         curl_easy_cleanup(curl);
     }
     return 0;
 }
 ```
 
-Khi chạy điều này, bạn sẽ không nhìn thấy đầu ra hiển thị vì chúng ta chưa xử lý phản hồi, nhưng nó sẽ tải nội dung từ `http://example.com`.
+Biên dịch với lệnh tương tự `gcc -o http_request http_request.c -lcurl`, chạy nó sẽ thực hiện một yêu cầu GET đơn giản đến "http://example.com".
 
-## Sâu hơn
+### Đầu ra mẫu
 
-`libcurl` được bắt đầu vào năm 1997 và đã trở thành thư viện ưa thích của các lập trình viên C. Nó hỗ trợ một số lượng lớn các giao thức, không chỉ HTTP. Các phương án thay thế cho HTTP trong C có thể bao gồm việc tự viết thực hiện của riêng bạn, nhưng đó là một hành trình gập ghềnh qua lập trình socket và các RFC phức tạp.
+Vì ví dụ không xử lý phản hồi từ máy chủ, việc chạy nó sẽ không tạo ra đầu ra hiển thị nào ngoài các thông báo lỗi tiềm năng. Việc tích hợp hàm gọi lại để xử lý dữ liệu nhận được là cần thiết cho sự tương tác ý nghĩa.
 
-`libcurl` tiện lợi vì nó xử lý tất cả các chi tiết phức tạp cho bạn, như thương lượng giao thức, xử lý lỗi và chuyển dữ liệu. Hơn nữa, nó là nền tảng chéo - sử dụng cùng một mã trên Linux, Windows, Mac, bạn tên nó.
+## Đào sâu
 
-Hãy nhớ, `libcurl` sử dụng một API đồng bộ theo mặc định, có thể sẽ chặn luồng chính của bạn. Nếu bạn đang xây dựng thứ gì đó mà điều này quan trọng, bạn có thể phải đào sâu vào đa luồng hoặc bộ chức năng `curl_multi_*` đồng bộ.
+Ý tưởng gửi yêu cầu HTTP từ một chương trình C dựa trên khả năng mạng mạnh mẽ của ngôn ngữ, kết hợp với các thư viện bên ngoài vì chính C là một ngôn ngữ cấp thấp không hỗ trợ sẵn các giao thức internet cấp cao. Lịch sử, các lập trình viên sẽ tự mình sử dụng lập trình socket trong C, một quy trình phức tạp và mệt mỏi, để tương tác với các máy chủ web trước khi có sự ra đời của các thư viện chuyên dụng như libcurl.
 
-## Xem thêm
+Libcurl, được xây dựng dựa trên C, đơn giản hóa quy trình, che khuất những chi tiết sâu cay của lập trình socket và đặc điểm giao thức HTTP. Nó hỗ trợ nhiều giao thức ngoài HTTP/HTTPS, bao gồm FTP, SMTP, và hơn nữa, làm cho nó trở thành một công cụ đa năng cho lập trình mạng trong C.
 
-- Trang web chính thức của libcurl để xem tài liệu và ví dụ: [https://curl.se/libcurl/](https://curl.se/libcurl/)
-- Chi tiết giao thức HTTP để có kiến thức nền: [https://www.ietf.org/rfc/rfc2616.txt](https://www.ietf.org/rfc/rfc2616.txt)
-- Để hiểu rộng hơn về lập trình mạng C: [Hướng dẫn về Lập trình Mạng của Beej](https://beej.us/guide/bgnet/)
+Mặc dù việc sử dụng libcurl cho các yêu cầu HTTP trong C là thực tiễn, lập trình hiện đại thường hướng đến các ngôn ngữ hỗ trợ sẵn công việc này, như Python (thư viện requests) hay JavaScript (API Fetch). Những lựa chọn thay thế này cung cấp cú pháp đơn giản hơn, dễ đọc hơn nhưng phải đánh đổi điều khiển tỉ mỉ và các tối ưu hoá hiệu suất có thể có trong C thông qua việc điều khiển trực tiếp socket và việc sử dụng thư viện một cách tinh tế.
+
+Đối với các ứng dụng hiệu suất quan trọng hoặc khi cần tương tác trực tiếp với hệ thống cấp thấp, C vẫn là một lựa chọn khả thi, đặc biệt với libcurl làm giảm bớt phức tạp của giao tiếp web. Tuy nhiên, cho hầu hết các tương tác web cấp cao, việc khám phá các ngôn ngữ lập trình web chuyên biệt có thể chứng minh hiệu quả hơn.

@@ -1,42 +1,56 @@
 ---
-title:                "Bắt đầu một dự án mới"
-date:                  2024-01-28T22:08:22.910869-07:00
+title:                "Khởi đầu một dự án mới"
+date:                  2024-02-03T18:09:43.817358-07:00
 model:                 gpt-4-0125-preview
-simple_title:         "Bắt đầu một dự án mới"
-
+simple_title:         "Khởi đầu một dự án mới"
 tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/c/starting-a-new-project.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
-Bắt đầu một dự án mới bằng C đồng nghĩa với việc thiết lập một cấu trúc cơ bản cho ứng dụng của bạn. Lập trình viên làm điều này để xây dựng nền móng, đảm bảo mọi thứ sau này đều có một chỗ ngăn nắp để tồn tại.
 
-## Cách thực hiện:
-```C
-#include <stdio.h>
+Bắt đầu một dự án mới bằng C bao gồm việc thiết lập cấu trúc và môi trường mã nguồn cơ bản để quản lý các tác vụ phát triển một cách hiệu quả. Lập trình viên làm điều này để tối ưu hóa quá trình xây dựng, thúc đẩy sự nhất quán và tạo điều kiện bảo trì cũng như mở rộng phần mềm theo thời gian một cách dễ dàng hơn.
 
-int main() {
-    printf("Xin chào, dự án mới!\n");
-    return 0;
-}
+## Cách làm:
+
+Trái tim của bất kỳ dự án C nào là mã nguồn. Một điểm bắt đầu điển hình bao gồm việc tạo một tệp chính, thường được đặt tên là `main.c`, chứa điểm nhập của chương trình. Ngoài ra, một `Makefile` là thiết yếu để quản lý quá trình biên dịch nhằm tối ưu hóa việc xây dựng dự án.
+
+Dưới đây là một ví dụ tối thiểu:
+
+1. **Thiết lập "main.c"**: Tệp này chứa hàm `main`, điểm nhập của chương trình.
+
+    ```c
+    // main.c
+    #include <stdio.h>
+
+    int main() {
+        printf("Xin chào, thế giới!\n");
+        return 0;
+    }
+    ```
+
+2. **Tạo Makefile**: Tự động hóa quá trình xây dựng, giúp dễ dàng biên dịch dự án của bạn với một lệnh duy nhất.
+
+    ```makefile
+    # Makefile
+    all: main
+
+    main: main.c
+        gcc -o main main.c
+
+    clean:
+        rm -f main
+    ```
+
+Trên terminal, chạy `make` sẽ biên dịch `main.c` thành một tệp thực thi tên là `main`, và chạy `./main` sẽ xuất ra:
+```
+Xin chào, thế giới!
 ```
 
-Chạy nó, và bạn sẽ thấy:
-```
-Xin chào, dự án mới!
-```
+## Sâu hơn
 
-## Đào sâu
-Trở lại những năm 1970, C đã được sinh ra. Dennis Ritchie đã bắt đầu một cái gì đó lớn tại Bell Labs. Sự đơn giản của C làm cho nó trở thành lựa chọn hàng đầu ngay cả bây giờ cho phần mềm hệ thống, hệ thống nhúng, và các ứng dụng hiệu suất cao.
-
-Khi mới bắt đầu, chọn giữa phong cách lập trình theo thủ tục hoặc mô-đun. Lập trình theo thủ tục là đơn giản, giống như tuân theo một công thức nấu ăn. Mô-đun cho phép bạn tổ chức mã trong các khối – hãy nghĩ đến việc sắp xếp các nguyên liệu vào các bát. Cả hai cách thực hiện đều được, nhưng mô-đun mở rộng tốt hơn cho các dự án phức tạp.
-
-Ở dưới bề mặt, khi bạn biên dịch, cấu hình của bạn được chuyển thành một tệp thực thi. Trình biên dịch (như GCC) đọc hàm `main()` của bạn như một điểm nhập. Nhưng còn nhiều hơn: liên kết thư viện, thiết lập makefiles cho các dự án lớn hơn, và có thể rắc thêm một số chỉ thị tiền xử lý cho hương vị.
-
-## Xem thêm
-- [Trình biên dịch GNU GCC](https://gcc.gnu.org/)
-- [Hướng dẫn Makefile](https://makefiletutorial.com/)
+Bắt đầu một dự án bằng C không chỉ là viết mã; nó là về việc thiết lập một nền tảng vững chắc cho quản lý dự án. Thực hành này phát triển từ những ngày đầu của lập trình, rút ra từ nhu cầu tổ chức và tối ưu hóa quá trình biên dịch các hệ thống lớn, phức tạp từ thế giới UNIX. Hệ thống GNU Make, được giới thiệu trong những năm '80, đã cách mạng hóa điều này bằng cách tự động hóa quá trình xây dựng, khiến nó trở thành công cụ quan trọng trong các dự án C hiện đại. Tuy nhiên, sự xuất hiện của môi trường phát triển tích hợp (IDEs) và các ngôn ngữ lập trình cấp cao khác đã giới thiệu các thủ tục khởi tạo dự án khác nhau có thể bao gồm hệ thống xây dựng tự động hóa, quản lý phụ thuộc và tích hợp quản lý phiên bản ngay từ đầu. Dù có những tiến bộ này, sự đơn giản và kiểm soát do một Makefile và một thư mục mã nguồn được tổ chức tốt mang lại vẫn rất quý giá, đặc biệt cho lập trình cấp hệ thống nơi mà hiệu quả và quản lý tài nguyên là tối quan trọng. Tuy nhiên, đối với các dự án lớn hơn, các công cụ như CMake hoặc Meson đang trở nên ưa chuộng hơn vì khả năng xử lý các bản biên dịch phức tạp và tương thích đa nền tảng, cho thấy xu hướng về các công cụ khởi tạo dự án tiên tiến hơn trong hệ sinh thái C.

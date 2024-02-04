@@ -1,56 +1,60 @@
 ---
-title:                "Kirjoittaminen vakiovirheeseen"
-date:                  2024-01-19
-simple_title:         "Kirjoittaminen vakiovirheeseen"
-
+title:                "Kirjoittaminen standardivirheeseen"
+date:                  2024-02-03T18:15:31.206573-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Kirjoittaminen standardivirheeseen"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/go/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-"## Mitä & Miksi?"
+## Mikä ja miksi?
 
-Kirjoittaminen vakiovirheeseen (stderr) tarkoittaa virheiden ja lokiviestien tulostamista erilliseen virtaan. Sitä käytetään, koska se auttaa erottamaan ohjelman pääasiallisen ulostulon ja virhetiedot toisistaan, mikä tekee virheenjäljityksestä ja lokien analysoinnista helpompaa.
+Virhetulostuksen (stderr) kirjoittaminen Go:ssa tarkoittaa virheviestien tai diagnostiikkojen ohjaamista pois pääulostulovirrasta. Ohjelmoijat käyttävät tätä erotellakseen tavallisen tulosteen virhetiedoista, mikä tekee virheenjäljityksestä ja lokien tulkitsemisesta suoraviivaisempaa.
 
-## How to:
-"## Kuinka tehdä:"
+## Miten:
 
-```Go
+Go:ssa `os`-paketti tarjoaa `Stderr`-arvon, joka edustaa standardivirhetiedostoa. Voit käyttää sitä `fmt.Fprint`, `fmt.Fprintf` tai `fmt.Fprintln` -funktioiden kanssa kirjoittaaksesi stderr:iin. Tässä on yksinkertainen esimerkki:
+
+```go
 package main
 
 import (
-	"fmt"
-	"os"
+    "fmt"
+    "os"
 )
 
 func main() {
-	// Tavanomainen ulostulo
-	fmt.Println("Hei, stdout!")
+    // Kirjoitetaan yksinkertainen merkkijono stderr:iin
+    _, err := fmt.Fprintln(os.Stderr, "Tämä on virheviesti!")
+    if err != nil {
+        panic(err)
+    }
 
-	// Virheviesti stderr:ään
-	_, err := fmt.Fprintln(os.Stderr, "Virhe: jotakin meni pieleen.")
-	if err != nil {
-		panic(err)
-	}
+    // Muotoiltu virheviesti Fprintf:llä
+    errCount := 4
+    _, err = fmt.Fprintf(os.Stderr, "Prosessi suoritettu %d virheellä.\n", errCount)
+    if err != nil {
+        panic(err)
+    }
 }
 ```
 
-Sample output:
+Esimerkkituloste (stderr:iin):
 ```
-Hei, stdout!
-Virhe: jotakin meni pieleen.
+Tämä on virheviesti!
+Prosessi suoritettu 4 virheellä.
 ```
 
-## Deep Dive
-"## Syväsukellus"
+Muista, että nämä viestit eivät näy tavallisessa tulostuksessa (stdout), vaan virrassa, jonka voi ohjata erikseen useimmissa käyttöjärjestelmissä.
 
-Alun perin UNIX-järjestelmissä kehitetty virturointi (streaming) mahdollisti tiedon eriyttämisen kolmeen virtaan: stdin, stdout ja stderr. Stderr:ää käytetään virheiden raportointiin, mikä sallii erillisen käsittelyn, kuten ohjaamisen tiedostoon tai putkituksen toiseen prosessiin. Go:ssa `os`-paketin kautta kirjoittaminen stderr-virtaan on suoraviivaista. Vaihtoehtoisesti `log`-pakettia voidaan käyttää lokiviestien käsittelyssä, jolloin stderr käytetään oletuksena lokien kirjoitusvirtana.
+## Syväsukellus
 
-## See Also
-"## Katso myös"
+Standardivirheen konsepti juontaa juurensa Unix-filosofiaan, joka erottaa selvästi tavallisen tulosteen ja virheviestit tehokkaamman datan käsittelyn ja käsittelyn kannalta. Go:ssa tämä perinne on omaksuttu `os`-paketin kautta, joka tarjoaa suoran pääsyn stdin-, stdout- ja stderr-tiedostojen tunnisteisiin.
 
-- Go:n dokumentaatio virheidenkäsittelyyn: https://golang.org/pkg/errors/
-- `log`-paketin dokumentaatio: https://golang.org/pkg/log/
-- UNIX-standardivirroista: https://en.wikipedia.org/wiki/Standard_streams
+Vaikka kirjoittaminen suoraan `os.Stderr`:iin sopii moniin sovelluksiin, Go tarjoaa myös kehittyneempiä lokituspaketteja, kuten `log`, joka tarjoaa lisäominaisuuksia kuten aikaleimat ja joustavammat tulostusasetukset (esim. kirjoittaminen tiedostoihin). `Log`-paketin käyttäminen, erityisesti suuremmissa sovelluksissa tai kun tarvitaan kattavampia lokitusominaisuuksia, voi olla parempi vaihtoehto. On myös huomionarvoista, että Gon tapa käsitellä virheitä, joka kannustaa palauttamaan virheet funktioista, täydentää virheviestien kirjoittamista stderr:iin mahdollistaen tarkemman virheenhallinnan ja raportoinnin.
+
+Yhteenvetona, vaikka stderr:iin kirjoittaminen on olennainen tehtävä monissa ohjelmointikielissä, Gon vakio- ja suunnitteluperiaatteet tarjoavat sekä yksinkertaisia että edistyneitä tapoja hallita virhetulostusta, linjassa laajempien alan käytäntöjen kanssa samalla kun palvellaan Gon erityistä design-etiikkaa.

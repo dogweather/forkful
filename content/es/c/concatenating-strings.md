@@ -1,74 +1,75 @@
 ---
-title:                "Concatenación de cadenas de texto"
-date:                  2024-01-20T17:34:24.129245-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Concatenación de cadenas de texto"
-
+title:                "Concatenando cadenas de texto"
+date:                  2024-02-03T17:53:44.813933-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Concatenando cadenas de texto"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/c/concatenating-strings.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## ¿Qué y Por Qué?
-La concatenación de cadenas implica unir dos o más strings para formar uno solo. Los programadores lo hacen para manejar y presentar textos dinámicamente en sus aplicaciones, por ejemplos para crear mensajes personalizados o rutas de archivos.
+## Qué y Por Qué?
 
-## Cómo Hacerlo:
-En C, puedes concatenar strings usando la función `strcat` de la biblioteca estándar `<string.h>`. Ten en cuenta que el destino tiene que tener suficiente espacio para el resultado:
+La concatenación de cadenas en C involucra unir dos o más cadenas de extremo a extremo para formar una nueva cadena. Los programadores realizan esta operación para construir dinámicamente cadenas en tiempo de ejecución, esencial para crear mensajes significativos, rutas de archivos o cualquier dato ensamblado de varias fuentes de cadenas.
 
-```C
+## Cómo hacerlo:
+
+En C, las cadenas son arreglos de caracteres que terminan con un carácter nulo (`\0`). A diferencia de en los lenguajes de alto nivel, C no proporciona una función incorporada para la concatenación de cadenas. En su lugar, se utilizan las funciones `strcat()` o `strncat()` de la biblioteca `<string.h>`.
+
+Aquí hay un ejemplo simple utilizando `strcat()`:
+
+```c
 #include <stdio.h>
 #include <string.h>
 
 int main() {
-    char saludo[20] = "Hola, ";
-    char nombre[10] = "Mundo";
-    
-    strcat(saludo, nombre); // Concatenamos 'nombre' al final de 'saludo'
-    
-    printf("%s\n", saludo); // Mostrar resultado
+    char destino[50] = "Hola, ";
+    char fuente[] = "Mundo!";
+
+    strcat(destino, fuente);
+
+    printf("%s\n", destino);  // Salida: Hola, Mundo!
     return 0;
 }
 ```
 
-Salida esperada:
+La función `strcat()` toma dos argumentos: la cadena de destino (que debe tener suficiente espacio para contener el resultado concatenado) y la cadena fuente. Luego agrega la cadena fuente a la cadena de destino.
 
-```
-Hola, Mundo
-```
+Para tener más control sobre el número de caracteres concatenados, `strncat()` es más seguro de usar:
 
-Para evitar desbordamientos, `strncat` limita la cantidad de caracteres a añadir:
-
-```C
+```c
 #include <stdio.h>
 #include <string.h>
 
 int main() {
-    char frase[20] = "Felices";
-    char dia[15] = " Fiestas!";
-    
-    strncat(frase, dia, 9); // Añadir máximo 9 caracteres de 'dia' a 'frase'
-    
-    printf("%s\n", frase); // Mostrar resultado
+    char destino[50] = "Hola, ";
+    char fuente[] = "Mundo!";
+    int num = 3; // Número de caracteres a agregar
+
+    strncat(destino, fuente, num);
+
+    printf("%s\n", destino);  // Salida: Hola, Mun
     return 0;
 }
 ```
 
-Salida esperada:
-
-```
-Felices Fiestas!
-```
+Esto limita la concatenación a los primeros `num` caracteres de la cadena fuente, ayudando a prevenir desbordamientos de búfer.
 
 ## Análisis Profundo
-Antes de la función `strcat`, los programadores solían concatenar cadenas manualmente, copiando caracteres uno por uno. 
 
-Existen alternativas a `strcat` como `strncat` mencionada anteriormente, que añade seguridad controlando el número de caracteres concatenados. Otra forma es usar `sprintf`, que ofrece más flexibilidad al construir strings.
+Las funciones `strcat()` y `strncat()` han sido parte de la biblioteca estándar de C desde su inicio, reflejando la naturaleza de bajo nivel del lenguaje que requiere la gestión manual de cadenas y memoria. A diferencia de muchos lenguajes de programación modernos que tratan las cadenas como objetos de primera clase con operadores de concatenación incorporados (como `+` o `.concat()`), el enfoque de C requiere una comprensión más profunda de punteros, asignación de memoria y posibles trampas como desbordamientos de búfer.
 
-Detalles de implementación: `strcat` funciona apuntando al fin de la cadena original y copiando los caracteres de la segunda cadena hasta encontrar su terminador nulo. Es crucial asegurarse de que hay espacio suficiente en el buffer de destino, o se producirán errores de corrupción de memoria.
+Aunque `strcat()` y `strncat()` son ampliamente utilizados, a menudo son criticados por su potencial para crear vulnerabilidades de seguridad si no se usan con cuidado. Los desbordamientos de búfer, donde los datos exceden la memoria asignada, pueden llevar a fallos o ser explotados para la ejecución de código arbitrario. Como resultado, los programadores están recurriendo cada vez más a alternativas más seguras, como `snprintf()`, que proporciona un comportamiento más predecible limitando el número de caracteres escritos en la cadena de destino basado en su tamaño:
 
-## Ver También
-Aquí tienes algunos enlaces útiles para la concatenación en C y manejo de strings en general:
+```c
+char destino[50] = "Hola, ";
+char fuente[] = "Mundo!";
+snprintf(destino + strlen(destino), sizeof(destino) - strlen(destino), "%s", fuente);
+```
 
-- [C String Library Functions - tutorialspoint](https://www.tutorialspoint.com/c_standard_library/string_h.htm)
-- [C String Handling - cplusplus.com](http://www.cplusplus.com/reference/cstring/)
+Este método es más verboso pero significativamente más seguro, destacando un cambio en las prácticas de programación en C hacia la priorización de la seguridad y la robustez sobre la brevedad.
+
+A pesar de estos desafíos, la concatenación de cadenas en C es una habilidad fundamental, crucial para la programación efectiva en el lenguaje. Entender sus matices y riesgos asociados es clave para dominar la programación en C.

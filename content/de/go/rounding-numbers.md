@@ -1,20 +1,27 @@
 ---
 title:                "Zahlen runden"
-date:                  2024-01-26T03:44:46.837319-07:00
+date:                  2024-02-03T18:07:43.280775-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Zahlen runden"
-
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/go/rounding-numbers.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Zahlen zu runden bedeutet, eine Zahl auf die nächstliegende ganze Zahl oder spezifizierte Dezimalstelle anzupassen. Das wird gemacht, um Werte zu vereinfachen, sie lesbarer zu machen oder sie in bestimmte Beschränkungen einzufügen, wie etwa beim Arbeiten mit Währungen.
+
+Das Runden von Zahlen geht darum, den Wert einer Zahl auf die nächste ganze Zahl oder auf eine bestimmte Anzahl von Dezimalstellen anzupassen. Programmierer tun dies aus Gründen wie der Verbesserung der Lesbarkeit, der Vereinfachung von Berechnungen oder der Erfüllung domänenspezifischer Präzisionsanforderungen.
 
 ## Wie geht das:
-Das `math`-Paket von Go ist dein Freund fürs Runden. Benutze `math.Round`, `math.Floor` und `math.Ceil` für Einfachheit:
+
+In Go gibt es keine eingebaute Funktion, die Zahlen direkt auf eine bestimmte Anzahl von Dezimalstellen im Mathematikpaket rundet. Sie können jedoch das Runden durch eine Kombination von Funktionen für ganze Zahlen erreichen oder eine benutzerdefinierte Funktion für Dezimalstellen implementieren.
+
+### Runden auf die nächste ganze Zahl:
+
+Um auf die nächste ganze Zahl zu runden, können Sie die Funktion `math.Floor()` mit einem zusätzlichen 0,5 für positive Zahlen und `math.Ceil()` minus 0,5 für negative Zahlen verwenden, abhängig von der Richtung, in die Sie abrunden möchten.
 
 ```go
 package main
@@ -25,47 +32,40 @@ import (
 )
 
 func main() {
-	number := 3.14159
-	fmt.Println("Runden:", math.Round(number))  // Auf nächste ganze Zahl runden
-	fmt.Println("Boden:", math.Floor(number)) // Abrunden
-	fmt.Println("Decke: ", math.Ceil(number))  // Aufrunden
+	fmt.Println(math.Floor(3.75 + 0.5))  // Gibt aus: 4
+	fmt.Println(math.Ceil(-3.75 - 0.5)) // Gibt aus: -4
 }
 ```
 
-Beispielausgabe:
-```
-Runden: 3
-Boden: 3
-Decke: 4
-```
+### Runden auf eine bestimmte Anzahl von Dezimalstellen:
 
-Für spezifische Dezimalstellen, multipliziere, runde, dann teile:
+Für das Runden auf eine bestimmte Anzahl von Dezimalstellen kann eine benutzerdefinierte Funktion verwendet werden, bei der Sie die Zahl mit 10^n multiplizieren (wobei n die Anzahl der Dezimalstellen ist), sie wie zuvor auf die nächste ganze Zahl runden und dann durch 10^n teilen.
 
 ```go
-func roundToDecimalPlace(number float64, decimalPlaces int) float64 {
-	shift := math.Pow(10, float64(decimalPlaces))
+package main
+
+import (
+	"fmt"
+	"math"
+)
+
+func roundToDecimalPlace(number float64, places int) float64 {
+	shift := math.Pow(10, float64(places))
 	return math.Round(number*shift) / shift
 }
 
 func main() {
-	number := 3.14159
-	fmt.Println("Auf 2 Dezimalstellen gerundet:", roundToDecimalPlace(number, 2))
+	fmt.Println(roundToDecimalPlace(3.14159, 2)) // Gibt aus: 3.14
+	fmt.Println(roundToDecimalPlace(-3.14159, 3)) // Gibt aus: -3.142
 }
 ```
 
-Beispielausgabe:
-```
-Auf 2 Dezimalstellen gerundet: 3.14
-```
+## Tiefere Einblicke
 
-## Vertiefung
-Zahlen zu runden, ist nichts Neues – es reicht zurück bis in die antike Mathematik und zielt immer auf Einfachheit ab. Das `math.Round` in Go verwendet das [Bankers' Rounding](https://en.wikipedia.org/wiki/Rounding#Round_half_to_even), was bedeutet, dass 0,5 auf die nächste gerade Zahl gerundet wird, wodurch eine Verzerrung verringert wird, die Summen beeinflussen könnte.
+Das Runden von Zahlen ist eine grundlegende Operation in der Computerprogrammierung, die mit der historischen Herausforderung verbunden ist, reelle Zahlen in einem Binärsystem darzustellen. Die Notwendigkeit des Rundens ergibt sich aus der Tatsache, dass viele reelle Zahlen nicht präzise in Binärform dargestellt werden können, was zu Approximationsfehlern führt.
 
-Gleitkommazahlen können aufgrund ihrer binären Darstellung knifflig sein, welche möglicherweise nicht genau alle Dezimalstellen darstellen kann. Der Ansatz von Go hält jedoch die meiste Zeit das erwartete Verhalten aufrecht.
+In Go ist der Ansatz zum Runden im Vergleich zu Sprachen, die eingebaute Rundungsfunktionen für bestimmte Dezimalstellen bieten, etwas manuell. Nichtsdestotrotz bietet das `math` Paket der Go-Standardbibliothek die grundlegenden Bausteine (wie `math.Floor` und `math.Ceil`), um jede vom Anwendungsfall erforderliche Rundungsmechanik zu konstruieren.
 
-Andere Rundungsmethoden existieren, wie "round half up" oder "round half away from zero", aber die Standardbibliothek von Go ist das, was unmittelbar verfügbar ist. Für komplexere Bedürfnisse könnte eine Dritt-Bibliothek benötigt werden oder man entwickelt eine eigene Lösung.
+Dieser manuelle Ansatz, der scheinbar umständlicher ist, bietet Programmierern eine feinere Kontrolle darüber, wie Zahlen gerundet werden, und dient den Präzisions- und Genauigkeitsbedürfnissen verschiedener Anwendungen. Alternativen wie Drittanbieterbibliotheken oder das Entwerfen benutzerdefinierter Rundungsfunktionen können einfachere Lösungen bieten, wenn es um komplizierte Zahlen geht oder fortgeschrittenere mathematische Operationen erforderlich sind, die nicht von der Standardbibliothek abgedeckt werden.
 
-## Siehe auch
-- Go's `math`-Paket: [https://pkg.go.dev/math](https://pkg.go.dev/math)
-- IEEE 754-Standard für Gleitkomma-Arithmetik (Grundlage von Go für den Umgang mit Floats): [https://ieeexplore.ieee.org/document/4610935](https://ieeexplore.ieee.org/document/4610935)
-- Verständnis von Gleitkommazahlen: ["What Every Computer Scientist Should Know About Floating-Point Arithmetic"](https://docs.oracle.com/cd/E19957-01/806-3568/ncg_goldberg.html)
+Zusammenfassend lässt sich sagen, dass die Go-Standardbibliothek möglicherweise keine direkte Funktionalität zum Runden auf Dezimalstellen bietet, jedoch ermöglicht ihr umfassender Satz mathematischer Funktionen Entwicklern, robuste Rundungslösungen zu implementieren, die auf ihre spezifischen Bedürfnisse zugeschnitten sind.

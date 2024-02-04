@@ -1,61 +1,48 @@
 ---
-title:                "Tìm chiều dài của một chuỗi ký tự"
-date:                  2024-01-28T22:00:45.543708-07:00
+title:                "Tìm kiếm độ dài của một chuỗi"
+date:                  2024-02-03T17:57:17.307244-07:00
 model:                 gpt-4-0125-preview
-simple_title:         "Tìm chiều dài của một chuỗi ký tự"
-
+simple_title:         "Tìm kiếm độ dài của một chuỗi"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/go/finding-the-length-of-a-string.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Cái gì & Tại sao?
-Tìm độ dài của một chuỗi có nghĩa là xác định xem nó chứa bao nhiêu ký tự. Lập trình viên thực hiện điều này để xác nhận đầu vào, lặp qua các ký tự, giới hạn đầu ra, và nhiều hơn nữa.
+## Gì và Tại sao?
+Việc tìm chiều dài của một chuỗi trong Go là việc xác định số lượng ký tự mà nó chứa. Các lập trình viên thường xuyên thực hiện thao tác này để có thể xử lý chuỗi một cách hiệu quả, cho dù đó là để kiểm tra tính hợp lệ, trích xuất chuỗi con, hay chỉ đơn giản là để áp đặt các ràng buộc trong đầu vào của người dùng.
 
-## Cách thực hiện:
+## Cách thức:
+Trong Go, chuỗi được xem như các chuỗi byte không thể thay đổi. Bạn có thể tìm chiều dài của một chuỗi bằng cách sử dụng hàm được tích hợp sẵn `len()` mà trả về số lượng byte, không nhất thiết là số lượng ký tự. Dưới đây là cách sử dụng nó:
 
-Để lấy độ dài của một chuỗi, sử dụng `len()`:
-
-```Go
-package main
-
-import "fmt"
-
-func main() {
-    exampleStr := "Hello, Gophers!"
-    length := len(exampleStr)
-    fmt.Println(length)  // Đầu ra: 14
-}
-```
-
-Đối với các ký tự Unicode hoặc emoji, `utf8.RuneCountInString()` là người bạn của bạn:
-
-```Go
+```go
 package main
 
 import (
-    "fmt"
-    "unicode/utf8"
+	"fmt"
+	"unicode/utf8"
 )
 
 func main() {
-    exampleStr := "Hello, 世界!"
-    length := utf8.RuneCountInString(exampleStr)
-    fmt.Println(length)  // Đầu ra: 9
+	// Sử dụng len() để tìm chiều dài byte
+	str := "Hello, 世界"
+	byteLength := len(str)
+	fmt.Println("Chiều Dài Byte:", byteLength) // Kết quả: Chiều Dài Byte: 13
+
+	// Để lấy chính xác số lượng ký tự hoặc runes trong một chuỗi
+	runeLength := utf8.RuneCountInString(str)
+	fmt.Println("Chiều Dài Rune:", runeLength) // Kết quả: Chiều Dài Rune: 9
 }
 ```
+Phương pháp đầu tiên sử dụng `len()` có thể sẽ không luôn cho kết quả mong đợi vì nó đếm byte. Đối với các chuỗi chứa ký tự không phải ASCII (như "世界"), `RuneCountInString` từ gói `unicode/utf8` nên được sử dụng thay thế để đếm chính xác điểm mã Unicode.
 
-## Nhìn sâu hơn
-Nói một cách đơn giản, Go sử dụng chuỗi được mã hóa UTF-8. Hàm `len()` đã tích hợp sẵn trả về số byte, không phải số lượng ký tự. Điều này nhanh chóng nhưng có thể gây ra bất ngờ với các ký tự đa byte. Để đếm số lượng ký tự chính xác, đặc biệt là trong các ứng dụng toàn cầu, hãy sử dụng `utf8.RuneCountInString()` để xử lý Unicode một cách chính xác. Trong lịch sử, các ngôn ngữ và thư viện khác nhau đã đếm ký tự theo những cách khác nhau, nhưng Unicode đã trở thành tiêu chuẩn, và việc Go hỗ trợ nó là bắt buộc trong hệ sinh thái mã hóa đa dạng ngày nay.
+## Sâu hơn
+Trước Go 1, không có sự phân biệt rõ ràng trong việc xử lý chuỗi như là chuỗi byte so với chuỗi ký tự. Sau Go 1, việc áp dụng UTF-8 làm chuẩn mã hóa cho chuỗi yêu cầu phải có cách tiếp cận rõ ràng hơn. Hàm `len()` hoạt động hoàn hảo cho các chuỗi ASCII, nơi mà các ký tự được biểu diễn trong một byte duy nhất. Tuy nhiên, khi các ứng dụng Go trở nên toàn cầu hơn và nhu cầu hỗ trợ đa dạng ngôn ngữ và bộ ký tự tăng lên, cách tiếp cận đơn giản của `len()` đã hiển thị những hạn chế.
 
-Về các phương án thay thế, các thư viện như `unicode/utf8` cung cấp cách xử lý vững chắc cho runes, đại diện cho các điểm mã Unicode. Trước khi Go chuẩn hóa việc xử lý Unicode, lập trình viên phải thực hiện các giải pháp tùy chỉnh, điều này dễ gặp lỗi và phức tạp.
+Việc giới thiệu và sử dụng `utf8.RuneCountInString()` giải quyết các hạn chế này bằng cách cung cấp một cách để đếm ký tự Unicode thực sự (rune trong thuật ngữ của Go). Phương pháp này đảm bảo rằng việc tính toán chiều dài không phụ thuộc vào đặc điểm mã hóa cụ thể của UTF-8, nơi mà ký tự có thể kéo dài qua nhiều byte.
 
-Trong chi tiết triển khai, chuỗi trong Go là các chuỗi byte bất biến. Khi xử lý chuỗi, lập trình viên nên nhận thức về khả năng giảm hiệu năng khi xử lý các chuỗi rất lớn hoặc khi sử dụng `utf8.RuneCountInString()` một cách quá mức trong mã hiệu năng quan trọng, vì nó phải giải mã từng rune để đếm một cách chính xác.
+Một cách tiếp cận khác cho việc duyệt và xử lý chuỗi, phù hợp hơn với tinh thần đồng thời và hiệu quả của Go, có thể liên quan đến việc xử lý chuỗi như là các lát cắt của rune. Tuy nhiên, phương pháp này yêu cầu một bước chuyển đổi và không ngay lập tức giải quyết tất cả các phức tạp của Unicode (ví dụ, các ký tự kết hợp).
 
-## Xem thêm
-- Blog của Go về Chuỗi: https://blog.golang.org/strings
-- Tài liệu gói `unicode/utf8` của Go: https://golang.org/pkg/unicode/utf8/
-- Quy định về hàm `len` của Go: https://golang.org/ref/spec#Length_and_capacity
+Tóm lại, trong khi `len()` phù hợp cho chiều dài byte và hiệu quả cho văn bản ASCII, `utf8.RuneCountInString()` là lựa chọn đáng tin cậy hơn cho một ứng dụng tương thích toàn cầu. Dẫu vậy, các nhà phát triển được khuyến khích hiểu các sự đánh đổi về hiệu suất và việc sử dụng bộ nhớ mà những lựa chọn này đòi hỏi.

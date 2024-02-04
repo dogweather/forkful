@@ -1,9 +1,8 @@
 ---
 title:                "Working with complex numbers"
-date:                  2024-01-25T02:59:56.447233-07:00
-model:                 gpt-4-1106-preview
+date:                  2024-02-03T17:50:22.789970-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Working with complex numbers"
-
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/c/working-with-complex-numbers.md"
 ---
@@ -11,51 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Complex numbers, a mix of real and imaginary parts (like 3 + 4i), are key in advanced calculations, like signal processing or solving certain equations. Programmers handle them for math-heavy applications where traditional numbers don't cut it.
+
+Complex numbers consist of a real part and an imaginary part, represented as `a + bi` where `i` is the square root of `-1`. Programmers work with complex numbers in various fields such as electrical engineering, quantum computing, and fluid dynamics, harnessing their unique properties for simulations, signal processing, and solving specific types of mathematical equations.
 
 ## How to:
-C, since C99, has a native complex type and library. Here's how to use it:
 
-```C
+In C, complex numbers are supported by the Standard Library, specifically `<complex.h>`. To utilize them, declare variables with the `double complex` type (or `float complex` for single precision). Here's how to perform basic operations:
+
+```c
 #include <stdio.h>
 #include <complex.h>
 
 int main() {
-    // Declare two complex numbers
-    double complex z1 = 1.0 + 3.0 * I;
-    double complex z2 = 2.0 - 2.0 * I;
-
-    // Operations with complex numbers
+    double complex z1 = 1.0 + 2.0*I; // Declare a complex number 1+2i
+    double complex z2 = 1.0 - 2.0*I; // Declare another complex number 1-2i
+    
+    // Addition
     double complex sum = z1 + z2;
-    double complex mult = z1 * z2;
+    printf("Sum: %.2f + %.2fi\n", creal(sum), cimag(sum)); // Output: Sum: 2.00 + 0.00i
 
-    // Printing the results
-    printf("Sum: %.1f + %.1fi\n", creal(sum), cimag(sum));
-    printf("Product: %.1f + %.1fi\n", creal(mult), cimag(mult));
+    // Multiplication
+    double complex product = z1 * z2;
+    printf("Product: %.2f + %.2fi\n", creal(product), cimag(product)); // Output: Product: 5.00 + 0.00i
 
-    // Absolute value & phase angle
-    printf("Abs(z1): %f\n", cabs(z1));
-    printf("Arg(z1): %f\n", carg(z1));
+    // Complex Conjugate
+    double complex conjugate = conj(z1);
+    printf("Conjugate of z1: %.2f + %.2fi\n", creal(conjugate), cimag(conjugate)); // Output: Conjugate of z1: 1.00 - 2.00i
+    
+    // Magnitude
+    double magnitude = cabs(z1);
+    printf("Magnitude of z1: %.2f\n", magnitude); // Output: Magnitude of z1: 2.24
 
+    // Phase
+    double phase = carg(z1);
+    printf("Phase of z1: %.2f\n", phase); // Output in radians
+    
     return 0;
 }
 ```
+Note that `I` is a constant representing the imaginary unit in `<complex.h>`. Functions like `creal()` and `cimag()` extract real and imaginary parts, respectively, while `conj()` computes the complex conjugate. For the magnitude and phase (argument) of complex numbers, `cabs()` and `carg()` are used.
 
-Sample Output:
-```
-Sum: 3.0 + 1.0i
-Product: 8.0 + 2.0i
-Abs(z1): 3.162278
-Arg(z1): 1.249046
-```
 ## Deep Dive
-Complex numbers go back centuries, with roots in 16th-century algebra. Fast forward, they're now a staple in many programming languages, not just C. 
 
-C99 standard introduced `<complex.h>`, a header defining macros, functions, and the `complex` data type. Alternatives exist - like creating your own structure, but why reinvent the wheel? The C standard library is optimized and ready-to-go.
-
-Despite its power, C's complex support isn't without critics. It can be less intuitive than similar features in languages like Python, and handling corner cases can get tricky. But for raw performance, it's still a solid choice.
-
-## See Also
-- C99 Standard Documentation for `<complex.h>`: https://en.cppreference.com/w/c/numeric/complex
-- IEEE Standard for Floating-Point Arithmetic (IEEE 754): https://ieeexplore.ieee.org/document/4610935
-- Online tutorial for C complex number math: https://www.tutorialspoint.com/complex-number-arithmetic-in-c-programming
+The support for complex numbers in C is relatively recent, having been standardized in C99. Prior to this, complex number arithmetic in C was cumbersome, often requiring custom data structures and functions. The inclusion of `<complex.h>` and the complex data types provided a significant boost to the language's capabilities for scientific and engineering applications. However, it's worth noting that some languages, like Python, offer more intuitive support for complex numbers through built-in data types and a richer set of library functions. Despite this, the performance and control offered by C make it a preferred choice for high-performance computing tasks, even if it means dealing with a slightly more verbose syntax for complex arithmetic.

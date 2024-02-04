@@ -1,54 +1,67 @@
 ---
 title:                "Надсилання HTTP-запиту"
-date:                  2024-01-20T17:59:12.893048-07:00
-model:                 gpt-4-1106-preview
+date:                  2024-02-03T18:09:15.429821-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Надсилання HTTP-запиту"
-
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/c/sending-an-http-request.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Що та Чому?)
+## Що та Чому?
 
-Sending an HTTP request means asking a server for data or action. Programmers do it to interact with web services, grab information, or send data over the internet.
+Надсилання HTTP-запиту полягає у створенні та відправці запиту веб-серверу для отримання або надсилання даних. Програмісти роблять це на мові C для взаємодії з веб-API, завантаження веб-сторінок або спілкування з іншими мережевими службами безпосередньо з їхніх додатків.
 
-## How to: (Як це зробити:)
+## Як це зробити:
 
-Here's a quick example using libcurl in C to send a simple HTTP GET request.
+Для надсилання HTTP-запиту на C, ви, як правило, покладатиметеся на бібліотеки, такі як libcurl, оскільки C не має вбудованої підтримки веб-протоколів. Ось простий приклад використання libcurl для виконання GET-запиту:
 
-```C
+Спочатку переконайтесь, що libcurl встановлено на вашій системі. Потім включіть необхідні заголовки та зв’яжіться з бібліотекою libcurl у вашому файлі з кодом:
+
+```c
 #include <stdio.h>
 #include <curl/curl.h>
 
 int main(void) {
-    CURL *curl = curl_easy_init();
+    CURL *curl;
+    CURLcode res;
+
+    curl = curl_easy_init(); // Ініціалізація дескриптора libcurl
     if(curl) {
-        CURLcode res;
+        // Задання URL, який отримує дескриптор libcurl
         curl_easy_setopt(curl, CURLOPT_URL, "http://example.com");
+        // Визначення функції зворотного виклику для отримання даних
+        curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, NULL); 
+        
+        // Виконання запиту, res отримає код повернення
         res = curl_easy_perform(curl);
-        if (res != CURLE_OK)
-            fprintf(stderr, "curl_easy_perform() failed: %s\n", curl_easy_strerror(res));
+        // Перевірка на помилки
+        if(res != CURLE_OK)
+            fprintf(stderr, "curl_easy_perform() failed: %s\n",
+                    curl_easy_strerror(res));
+
+        // Завжди прибирання
         curl_easy_cleanup(curl);
     }
     return 0;
 }
 ```
-Expected output: The content of `http://example.com` is printed to stdout, or an error message if the request failed.
 
-## Deep Dive (Поглиблений Розбір)
+Компілюйте це командою на кшталт `gcc -o http_request http_request.c -lcurl`, її виконання має здійснити простий GET-запит на "http://example.com".
 
-Initially, HTTP requests were manual telnet sessions. Automation came with libraries like libcurl and languages building in functionality.
+### Приклад результату
 
-Alternatives include sockets programming in C for a more manual approach, or high-level protocols in other languages like Python's `requests`.
+Оскільки у прикладі не обробляється відповідь сервера, його виконання не виведе видимого результату, крім потенційних повідомлень про помилки. Інтеграція функції зворотного виклику для обробки отриманих даних є важливою для значущої взаємодії.
 
-Details: Libcurl is versatile - supports GET, POST, and more. Under the hood, it handles connection persistence, redirects, and SSL. Be aware of version compatibility and OS differences.
+## Поглиблений огляд
 
-## See Also (Дивіться також)
+Концепція надсилання HTTP-запитів з програми на C базується на потужних мережевих можливістях мови, поєднаних з зовнішніми бібліотеками, оскільки сама мова C є низькорівневою мовою без вбудованої підтримки високорівневих інтернет-протоколів. Історично програмісти вручну використовували сокетне програмування на C, складний і виснажливий процес, для взаємодії з веб-серверами до появи спеціалізованих бібліотек, таких як libcurl.
 
-- Libcurl Documentation: https://curl.se/libcurl/c/
-- HTTP Protocol Overview: https://developer.mozilla.org/en-US/docs/Web/HTTP
-- C Network Programming with Sockets: https://beej.us/guide/bgnet/
+Libcurl, розроблена на основі C, спрощує процес, абстрагуючи складні деталі сокетного програмування і специфіку HTTP-протоколу. Вона підтримує багато протоколів, окрім HTTP/HTTPS, включаючи FTP, SMTP та інші, що робить її універсальним інструментом для мережевого програмування на C.
 
-Check these out for a broader understanding or different perspectives on HTTP requests in C.
+Хоча використання libcurl для HTTP-запитів на C є практичним, сучасне програмування часто віддає перевагу мовам з вбудованою підтримкою таких завдань, як Python (бібліотека requests) або JavaScript (Fetch API). Ці альтернативи пропонують простіший, зрозуміліший синтаксис за рахунок гранулярного контролю і оптимізацій продуктивності, які можливі в C через пряму маніпуляцію сокетами та вибіркове використання бібліотек.
+
+Для критичних за продуктивністю додатків або там, де необхідна пряма взаємодія на рівні системи, C залишається варіантом, особливо з libcurl, яка спрощує складнощі веб-комунікацій. Однак для більшості високорівневих веб-взаємодій дослідження більш спеціалізованих мов веб-програмування може виявитися ефективнішим.

@@ -1,20 +1,52 @@
 ---
-title:                "Lecture d'un fichier texte"
-date:                  2024-01-20T17:54:23.258963-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Lecture d'un fichier texte"
-
+title:                "Lire un fichier texte"
+date:                  2024-02-03T18:05:37.703598-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Lire un fichier texte"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/go/reading-a-text-file.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Lire un fichier texte, c'est récupérer son contenu pour l'utiliser dans votre programme. Les développeurs font ça parce qu'ils ont besoin de données à traiter, stocker ou transmettre.
+## Quoi & Pourquoi ?
 
-## How to:
-```Go
+Lire un fichier texte en Go implique d'accéder et de récupérer le contenu d'un fichier stocké sur disque pour le traiter ou l'analyser. Les programmeurs effectuent fréquemment cette opération pour manipuler des données, configurer des applications ou lire des entrées pour l'exécution du programme, ce qui en fait une compétence fondamentale en développement logiciel.
+
+## Comment faire :
+
+Lire un fichier texte en Go peut être accompli de plusieurs manières, mais l'une des méthodes les plus simples est d'utiliser le paquet `ioutil`. Voici un exemple basique :
+
+```go
+package main
+
+import (
+    "fmt"
+    "io/ioutil"
+    "log"
+)
+
+func main() {
+    content, err := ioutil.ReadFile("exemple.txt")
+    if err != nil {
+        log.Fatal(err)
+    }
+
+    fmt.Println(string(content))
+}
+```
+
+En supposant que `exemple.txt` contient "Bonjour, Go !", ce programme afficherait :
+
+```
+Bonjour, Go !
+```
+
+Cependant, depuis Go 1.16, le paquet `ioutil` a été déprécié, et il est recommandé d'utiliser les paquets `os` et `io` à la place. Voici comment vous pouvez accomplir la même chose avec ces paquets :
+
+```go
 package main
 
 import (
@@ -41,19 +73,13 @@ func main() {
     }
 }
 ```
-Sortie:
-```
-Première ligne du fichier.
-Deuxième ligne du fichier.
-Troisième ligne du fichier.
-```
 
-## Deep Dive
-Historiquement, la lecture de fichiers suit un processus semblable dans de nombreux langages : ouverture, lecture ligne par ligne, puis fermeture du fichier. En Go, `bufio` et `ioutil` sont des packages souvent utilisés. Depuis Go 1.16, `ioutil` est déprécié et on recommande `os` et `io` à la place.
+Cette approche est non seulement plus moderne mais supporte également des fichiers plus volumineux, car elle lit le fichier ligne par ligne au lieu de charger l'intégralité du contenu en mémoire d'un seul coup.
 
-Il existe différentes méthodes pour lire un fichier en Go. `ioutil.ReadFile`, simplissime, lit tout le fichier d'un coup. `os.Open` avec `bufio.Scanner`, comme dans l'exemple, est plus adapté pour les gros fichiers, car il consomme moins de mémoire.
+## Plongée profonde :
 
-Les détails : `defer file.Close()` assure que le fichier sera fermé, évitant ainsi des fuites de ressources. `bufio.Scanner` lit le fichier ligne par ligne, ce qui est efficace pour parcourir de grands fichiers textes sans surcharger la mémoire.
+La gestion des opérations sur les fichiers par Go, y compris la lecture de fichiers, reflète la philosophie du langage axée sur la simplicité et l'efficacité. Initialement, le paquet `ioutil` offrait des opérations sur les fichiers simples. Cependant, avec les améliorations de la bibliothèque standard de Go et un virage vers une gestion des erreurs et une gestion des ressources plus explicites, les paquets `os` et `io` sont devenus les alternatives préférées pour travailler avec les fichiers.
 
-## See Also
-- Documentation Go sur les packages `bufio` et `os` : [https://pkg.go.dev/bufio](https://pkg.go.dev/bufio), [https://pkg.go.dev/os](https://pkg.go.dev/os)
+Ces changements soulignent l'engagement de Go envers la performance et la sécurité, notamment en évitant les problèmes de mémoire qui peuvent survenir lors du chargement complet de fichiers volumineux. La méthode `bufio.Scanner` introduite pour lire les fichiers ligne par ligne souligne l'adaptabilité du langage et son attention aux défis de l'informatique moderne, tels que le traitement de grands ensembles de données ou les données en flux continu.
+
+Bien qu'il existe des bibliothèques externes disponibles pour travailler avec les fichiers en Go, les capacités de la bibliothèque standard sont souvent suffisantes et préférées pour leur stabilité et performance. Cela assure que les développeurs Go peuvent gérer efficacement les opérations sur les fichiers sans dépendre de dépendances supplémentaires, s'alignant sur l'ethos minimaliste global du langage et son design pour construire des logiciels efficaces et fiables.

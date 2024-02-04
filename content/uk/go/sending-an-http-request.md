@@ -1,52 +1,106 @@
 ---
 title:                "Надсилання HTTP-запиту"
-date:                  2024-01-20T17:59:41.955712-07:00
-model:                 gpt-4-1106-preview
+date:                  2024-02-03T18:09:07.597695-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Надсилання HTTP-запиту"
-
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/go/sending-an-http-request.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Що і Чому?)
-Sending an HTTP request means reaching out to a web server for data or action. Programmers do it to interact with APIs, fetch web content, or communicate between services.
+## Що та чому?
 
-## How to: (Як це зробити:)
-Here's a basic GET request:
+Відправлення HTTP-запиту передбачає ініціювання виклику з вашого застосунку Go до веб-сервера, API або будь-якого іншого HTTP-базованого сервісу. Програмісти роблять це для взаємодії з веб-ресурсами, отримання даних, надсилання форм або спілкування з іншими сервісами через інтернет.
 
-```Go
+## Як це зробити:
+
+У Go відправлення HTTP-запиту та обробка відповіді передбачає використання пакету `net/http`. Ось поетапний приклад того, як відправити простий GET-запит та прочитати відповідь:
+
+```go
+package main
+
+import (
+    "fmt"
+    "io/ioutil"
+    "log"
+    "net/http"
+)
+
+func main() {
+    // Визначення URL ресурсу
+    url := "http://example.com"
+
+    // Використання http.Get для відправлення GET-запиту
+    resp, err := http.Get(url)
+    if err != nil {
+        log.Fatal(err)
+    }
+    // Закриття тіла відповіді при завершенні функції
+    defer resp.Body.Close()
+
+    // Читання тіла відповіді
+    body, err := ioutil.ReadAll(resp.Body)
+    if err != nil {
+        log.Fatal(err)
+    }
+
+    // Перетворення тіла відповіді на рядок і його вивід
+    fmt.Println(string(body))
+}
+```
+
+Приклад виводу (скорочено для лаконічності):
+```
+<!doctype html>
+<html>
+<head>
+    <title>Example Domain</title>
+...
+</html>
+```
+
+Для надсилання POST-запиту з формою даних ви можете використовувати `http.PostForm`:
+
+```go
 package main
 
 import (
     "fmt"
     "io/ioutil"
     "net/http"
+    "net/url"
 )
 
 func main() {
-    resp, err := http.Get("http://example.com")
+    // Визначення URL та даних форми
+    url := "http://example.com/form"
+    data := url.Values{}
+    data.Set("key", "value")
+
+    // Надсилання POST-запиту з даними форми
+    resp, err := http.PostForm(url, data)
     if err != nil {
         panic(err)
     }
     defer resp.Body.Close()
 
+    // Читання та вивід відповіді
     body, err := ioutil.ReadAll(resp.Body)
     if err != nil {
         panic(err)
     }
+
     fmt.Println(string(body))
 }
 ```
 
-And just like that, you should see `example.com`'s HTML in your console.
+## Поглиблений Аналіз
 
-## Deep Dive (Поглиблений Занурення)
-HTTP requests in Go were popularized by the `net/http` package, efficient and robust for web interactions. Alternatives include using `curl` in Unix systems or libraries like `Resty` for simpler syntax. Under the hood, Go manages details like TCP/IP protocols and thread safety, simplifying the process for developers.
+Пакет `net/http` у Go надає потужний і гнучкий спосіб взаємодії з HTTP-серверами. Його дизайн відображає акцент Go на простоту, ефективність, та надійність. Спочатку, функціональні можливості, що мають справу з JSON або XML даними, потребували ручного створення тіла запиту та встановлення відповідних заголовків. Як Go розвивався, спільнота розробила більш високорівневі пакети, які подальше спрощують ці завдання, такі як `gorilla/mux` для маршрутизації та `gjson` для маніпуляції з JSON.
 
-## See Also (Дивіться також):
-- Go `net/http` package documentation: https://pkg.go.dev/net/http
-- `ioutil` package, for reading the response: https://pkg.go.dev/io/ioutil
-- Go by Example, HTTP clients: https://gobyexample.com/http-clients
-- Official Go blog, "Go's HTTP client and server": https://blog.golang.org/http
+Однією з помітних особливостей HTTP-клієнта Go є його використання інтерфейсів і структур, як-от `http.Client` та `http.Request`, що дозволяють здійснювати глибоку кастомізацію та тестування. Наприклад, ви можете налаштувати `http.Client` для таймауту запитів або збереження з'єднань живими для покращення продуктивності.
+
+Для більш простих HTTP взаємодій можливий варіант використання сторонніх бібліотек, таких як "Resty" або "Gentleman". Ці пакети пропонують більш високорівневу абстракцію для HTTP-запитів, роблячи звичайні завдання більш лаконічними. Проте, розуміння та використання основного пакету `net/http` є критично важливим для роботи з більш складними або унікальними сценаріями HTTP-взаємодії, забезпечуючи фундамент, на якому можна повністю розкрити можливості Go з паралелізмом та потужній стандартною бібліотекою.

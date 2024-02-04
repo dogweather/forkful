@@ -1,22 +1,44 @@
 ---
 title:                "Loggning"
-date:                  2024-01-26T01:04:25.074085-07:00
-model:                 gpt-4-1106-preview
+date:                  2024-02-03T17:59:54.991907-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Loggning"
-
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/go/logging.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Loggning handlar om att hålla en register över händelser, tillstånd och dataflöden inom en app. Programmerare gör det för att diagnostisera buggar, övervaka prestanda och spåra appens operativa hälsa—vilket i stort sett gör det till en mjukvaruekvivalent till en svart låda i flygplan.
+
+Loggning inom programutveckling är processen att registrera information om ett programs utförande, avsedd att spåra dess beteende och diagnostisera problem. Programmerare implementerar loggning för att övervaka programvarans prestanda, felsöka fel, samt säkerställa systemets säkerhet och efterlevnad, vilket gör det till ett ovärderligt verktyg för underhåll och analys av applikationer.
 
 ## Hur man gör:
-I Go kan loggning hanteras på flera sätt, från standardbibliotekets `log`-paket till tredjepartsbibliotek såsom `logrus` och `zap`. Här är ett enkelt exempel som använder det inbyggda `log`-paketet:
 
-```Go
+I Go kan loggning implementeras med hjälp av standardbibliotekets paket `log`. Detta paket tillhandahåller enkla loggningsfunktioner, såsom att skriva till standardutmatningen eller till filer. Låt oss börja med ett grundläggande exempel på loggning till standardutmatningen:
+
+```go
+package main
+
+import (
+	"log"
+)
+
+func main() {
+	log.Println("Detta är en grundläggande loggpost.")
+}
+```
+
+Utmatning:
+```
+2009/11/10 23:00:00 Detta är en grundläggande loggpost.
+```
+
+Tidsstämpeln i början av loggposten läggs automatiskt till av paketet `log`. Nästa, låt oss utforska hur man loggar till en fil istället för standardutmatning:
+
+```go
 package main
 
 import (
@@ -25,46 +47,44 @@ import (
 )
 
 func main() {
-	// Skapa en loggfil
-	logFile, err := os.OpenFile("app.log", os.O_CREATE|os.O_APPEND|os.O_WRONLY, 0666)
+	file, err := os.OpenFile("app.log", os.O_CREATE|os.O_APPEND|os.O_WRONLY, 0666)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer logFile.Close()
+	defer file.Close()
 
-	// Ställ in loggutmatningen till filen
-	log.SetOutput(logFile)
-
-	// Logga några händelser
-	log.Println("Startar applikationen...")
-	// ... applikationslogik här ...
-	log.Println("Applikationen avslutades framgångsrikt.")
+	log.SetOutput(file)
+	log.Println("Denna loggpost går till en fil.")
 }
 ```
 
-Om du kör denna kod kommer du inte att se något i terminalen eftersom allt går till `app.log`. Här är en titt på vad du skulle hitta inuti den loggfilen:
+Nu, låt oss implementera ett mer avancerat användningsfall: att anpassa loggformatet. Go tillåter dig att skapa en anpassad loggare med `log.New()`:
 
+```go
+package main
+
+import (
+	"log"
+	"os"
+)
+
+func main() {
+	logger := log.New(os.Stdout, "CUSTOM LOG: ", log.Ldate|log.Ltime|log.Lshortfile)
+	logger.Println("Detta är ett anpassat loggmeddelande.")
+}
 ```
-2023/01/02 15:04:05 Startar applikationen...
-2023/01/02 15:05:01 Applikationen avslutades framgångsrikt.
+
+Utmatning:
+```
+CUSTOM LOG: 2009/11/10 23:00:00 main.go:11: Detta är ett anpassat loggmeddelande.
 ```
 
-## Fördjupning
-Loggning inom programmering går tillbaka till de tidigaste datorerna, där ingenjörer bokstavligen skulle hitta buggar (nattflyn, för att vara exakt) mosade i hårdvaran, och de loggade detta! Tiden fram till idag, och loggning har blivit ett sofistikerat sätt att förstå vad som händer inuti komplexa system.
+Detta exempel prefixar varje loggmeddelande med "CUSTOM LOG: " och inkluderar datum, tid och källfilsplats.
 
-Även om `log`-paketet i Go är ganska enkelt, kan det räcka för grundläggande applikationer. Men i kontexten av moderna distribuerade system, eller när du behöver mer nyanserad kontroll över din loggutmatning (som olika nivåer av allvarlighet), kan det vara värt att utforska mer robusta lösningar.
+## Djupdykning
 
-Tredjepartsloggningsbibliotek som `logrus` och `zap` erbjuder strukturerad loggning, vilket innebär att du kan logga komplexa datatyper som JSON, vilket gör det enklare att tolka loggar, särskilt i samband med logghanteringssystem som ELK Stack eller Splunk.
+Standardbibliotekets `log`-paket i Go är enkelt och tillräckligt för många applikationer, men det saknar några av de mer sofistikerade funktionerna som finns i tredjeparts loggningsbibliotek, såsom strukturerad loggning, loggrotation och loggning baserad på nivåer. Paket som `zap` och `logrus` erbjuder dessa avancerade funktioner och är väl ansedda inom Go-gemenskapen för deras prestanda och flexibilitet.
 
-När man överväger implementeringen av en loggningsstrategi är det också viktigt att tänka på prestandapåverkan. Loggbibliotek med hög prestanda är optimerade för att minska effekten på applikationens genomströmning och latens. Till exempel skryter `zap` med sin blixtsnabba, låga allokering design, vilket kan vara avgörande för realtidssystem.
+Strukturerad loggning, till exempel, gör det möjligt att logga data i ett strukturerat format (som JSON), vilket är särskilt användbart för moderna molnbaserade applikationer där loggar kan analyseras av olika verktyg eller tjänster. `zap`, i synnerhet, är känt för sin höga prestanda och låga allokeringsoverhead, vilket gör det lämpligt för applikationer där hastighet och effektivitet är avgörande.
 
-Utöver olika bibliotek är även loggningsformat och standarder värda att notera. Strukturerade loggningsformat som JSON kan vara enormt kraftfulla när de används tillsammans med loggbehandlingssystem. Å andra sidan är vanliga textloggar läsbara för människor men mer utmanande att tolka programmatiskt.
-
-## Se också
-För att fördjupa dig i Gos loggningsfunktioner kan dessa resurser vara användbara:
-
-- Go-bloggen om loggning: https://blog.golang.org/logging
-- `logrus`, en strukturerad loggare för Go: https://github.com/sirupsen/logrus
-- `zap`, en snabb, strukturerad, nivåindelad loggare: https://github.com/uber-go/zap
-- ELK Stack (Elasticsearch, Logstash, Kibana) för logganalys: https://www.elastic.co/what-is/elk-stack
-- En jämförelse av Gos loggningsbibliotek: https://www.loggly.com/blog/benchmarking-5-popular-golang-logging-libraries/
+Historiskt sett har loggning i Go utvecklats avsevärt sedan språkets början. Tidiga versioner av Go tillhandahöll de grundläggande loggningsfunktioner som vi ser i `log`-paketet. Dock, när språket växte i popularitet och komplexiteten i applikationer skrivna i Go ökade, började gemenskapen utveckla mer sofistikerade loggningsbibliotek för att möta sina behov. Idag, medan standard `log`-paketet fortfarande är ett genomförbart alternativ för enkla applikationer, vänder sig många utvecklare till dessa tredjepartslösningar för mer komplexa loggningskrav.

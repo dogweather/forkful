@@ -1,55 +1,88 @@
 ---
-title:                "编写测试代码"
-date:                  2024-01-19
-simple_title:         "编写测试代码"
-
+title:                "编写测试"
+date:                  2024-02-03T18:15:23.199668-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "编写测试"
 tag:                  "Testing and Debugging"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/go/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (什么和为什么?)
-编写测试是检查代码能否如期运行的过程。程序员之所以要编写测试，是因为测试可以提前发现错误，保证代码质量。
+## 什么 & 为什么？
 
-## How to: (如何做：)
-在Go中，测试是通过*_test.go文件来进行的。我们使用`testing`包来编写测试用例。
+在 Go 中编写测试涉及创建小型、可管理的代码片段，用于验证应用程序的功能和行为。程序员编写测试以确保在各种条件下他们的代码如预期那样工作，以便于重构，并帮助防止回归。
 
-```Go
-package main
+## 如何：
 
-import (
-    "testing"
-    "reflect"
-)
+在 Go 中，测试通常写在与它们测试的代码相同的包中。包含测试的文件名以 `_test.go` 为后缀。测试是采用指向 testing.T 对象（来自 `testing` 包）的指针作为参数的函数，并通过调用如 `t.Fail()`、`t.Errorf()` 等方法来标示失败。
 
-// 要测试的函数
-func Add(a, b int) int {
-    return a + b
+一个简单的针对在 `math.go` 中定义的函数 `Add` 的测试示例：
+```go
+// math.go
+package math
+
+func Add(x, y int) int {
+    return x + y
 }
+```
 
-// 测试函数以Test开头，参数为*testing.T
+测试文件 `math_test.go`：
+```go
+package math
+
+import "testing"
+
 func TestAdd(t *testing.T) {
-    got := Add(2, 3)
-    want := 5
-
-    if got != want {
-        t.Errorf("Add(2, 3) = %d; want %d", got, want)
+    result := Add(1, 2)
+    expected := 3
+    if result != expected {
+        t.Errorf("Add(1, 2) = %d; want %d", result, expected)
     }
 }
 ```
 
-运行`go test`命令，得到以下输出：
+在与测试文件相同的目录下使用 `go test` 命令运行测试。表示测试通过的示例输出可能类似于：
 
 ```
 PASS
-ok  	example.com/yourpackage	0.165s
+ok      example.com/my/math 0.002s
 ```
 
-## Deep Dive (深入探究)
-Go语言自1.0版本起便内置了测试框架。与其他语言如Python中的pytest或JavaScript中的Jest不同，Go的`testing`包简洁直接，无需安装额外库。实现细节上，Go的测试利用反射(reflect)和接口(interface)提供灵活的测试方法。
+对于表格驱动的测试，这使您能够有效测试各种输入和输出组合，定义代表测试案例的结构体切片：
 
-## See Also (另请参阅)
-- Go官方测试文档: [https://golang.org/pkg/testing/](https://golang.org/pkg/testing/)
-- Go测试代码示例: [https://github.com/golang/go/wiki/TableDrivenTests](https://github.com/golang/go/wiki/TableDrivenTests)
+```go
+func TestAddTableDriven(t *testing.T) {
+    var tests = []struct {
+        x        int
+        y        int
+        expected int
+    }{
+        {1, 2, 3},
+        {2, 3, 5},
+        {-1, -2, -3},
+    }
+
+    for _, tt := range tests {
+        testname := fmt.Sprintf("%d+%d", tt.x, tt.y)
+        t.Run(testname, func(t *testing.T) {
+            ans := Add(tt.x, tt.y)
+            if ans != tt.expected {
+                t.Errorf("got %d, want %d", ans, tt.expected)
+            }
+        })
+    }
+}
+```
+
+## 深入探索
+
+Go 测试框架在 Go 1 与语言本身一起引入，旨在与 Go 工具链无缝集成，反映了 Go 在软件开发中对简约和效率的强调。与依赖外部库或复杂设置的其他语言中的一些测试框架不同，Go 的内置 `testing` 包为编写和运行测试提供了一种直接的方式。
+
+Go 测试方法的一个有趣方面是它采用的约定优于配置原则，比如文件命名模式 (`_test.go`) 和对标准库功能而非外部依赖的使用。这种简约性方法鼓励开发者编写测试，因为入门的门槛很低。
+
+虽然 Go 的内置测试功能覆盖了很多范围，但在某些情况下，第三方工具或框架可能提供更多功能，如模拟生成、模糊测试或行为驱动开发（BDD）样式的测试。Testify 或 GoMock 等流行库补充了 Go 的标准测试能力，提供了更表达性的断言或模拟生成能力，这在具有许多依赖关系的复杂应用程序中特别有用。
+
+尽管有这些替代品的存在，标准 Go 测试包仍然是 Go 测试的基石，因为它简单、性能良好并与语言和工具链紧密集成。无论开发人员是否选择使用第三方工具增强它，Go 测试框架都为确保代码质量和可靠性提供了坚实的基础。

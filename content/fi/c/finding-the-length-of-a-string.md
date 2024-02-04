@@ -1,45 +1,46 @@
 ---
-title:                "Merkkijonon pituuden selvittäminen"
-date:                  2024-01-20T17:46:48.078724-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Merkkijonon pituuden selvittäminen"
-
+title:                "Merkkijonon pituuden määrittäminen"
+date:                  2024-02-03T17:56:33.582878-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Merkkijonon pituuden määrittäminen"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c/finding-the-length-of-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why (Mitä & Miksi)?
-Merkkijonon pituuden löytäminen kertoo meille merkkien määrän. Käytämme tätä tietoa muun muassa muistin varaukseen, merkkijonojen vertailuun ja käsittelyyn.
+## Mitä & Miksi?
+Merkkijonon pituuden määrittäminen C-kielessä tarkoittaa merkkien lukumäärän selvittämistä ennen nolla-terminaattoria `\0`. Ohjelmoijat tekevät tämän, jotta he voivat käsitellä merkkijonoja oikein ilman, että esiintyy virheitä, kuten puskurin ylivuotoja, jotka voivat johtaa turvallisuusaukkoihin tai ohjelman kaatumisiin.
 
-## How to (Kuinka):
-C:ssä `strlen` funktio laskee merkkijonon pituuden. Tässä esimerkki:
+## Kuinka:
+C:ssä standardikirjaston funktiota `strlen()` käytetään yleisesti merkkijonon pituuden löytämiseen. Tässä on nopea esimerkki:
 
 ```c
 #include <stdio.h>
 #include <string.h>
 
 int main() {
-    char text[] = "Hei Suomi!";
-    size_t len = strlen(text);
-    printf("Merkkijonon pituus on: %zu\n", len);
+    char myString[] = "Hello, World!";
+    size_t length = strlen(myString);
+    
+    printf("Merkkijonon '%s' pituus on %zu.\n", myString, length);
+    
     return 0;
 }
 ```
 
-Tulosteena näytölle tulisi:
-
+**Esimerkkituloste:**
 ```
-Merkkijonon pituus on: 10
+Merkkijonon 'Hello, World!' pituus on 13.
 ```
 
-## Deep Dive (Syväsukellus):
-Historiallisesti `strlen` on ollut osa C-kirjastoa alusta alkaen, liittyen aikoihin ennen ANSI C-standardia. Funktion toteutus kulkee merkkijonon läpi, etsien lopettavaa 'null' terminaattoria (0). Vaihtoehtoisia keinoja pituuden laskemiseen voisivat olla itse kehitetty silmukka tai muut kirjastofunktiot, kuten `strnlen`, joka ottaa maksimipituuden argumenttina.
+Tässä esimerkissä `strlen()` ottaa syötteenä merkkijonon (`myString`) ja palauttaa sen pituuden poislukien nolla-terminaattorin. Pituusmuuttujan käyttö `size_t` tyyppinä on suositeltavaa, koska se on etumerkkitön kokonaislukutyyppi, joka kykenee edustamaan järjestelmän suurimman mahdollisen objektin kokoa.
 
-Tarkempi ymmärrys `strlen`-funktion toiminnasta voi olla hyödyllinen suorituskyvyn optimointitilanteissa. Jotkut itse tehdyt toteutukset saattavat käyttää SIMD-ohjeita (Single Instruction, Multiple Data) tai muita optimointitekniikoita nopeuttaakseen laskemista.
+## Syväsukellus:
+`strlen()`-funktio on ollut osa C-standardikirjastoa kielen syntymästä lähtien. Sisäisesti se toimii kasvattamalla laskuria edetessään merkkijonon läpi, kunnes se kohtaa nolla-terminaattorin. Tämän yksinkertaisuuden mukana tulee kuitenkin suorituskykyhuomioita: koska `strlen()` laskee merkkejä suoritusaikana, sen toistuva kutsuminen samalle merkkijonolle esimerkiksi silmukassa on tehottomuutta.
 
-## See Also (Katso Myös):
-- C Standard Library Reference: https://en.cppreference.com/w/c/string/byte/strlen
-- C Optimointitekniikat: https://www.agner.org/optimize/
-- GNU C Kirjaston Dokumentaatio: https://www.gnu.org/software/libc/manual/html_node/String-Length.html
+Turvallisuuden kannalta `strlen()` ja muut C-kielen merkkijonokäsittelyfunktiot eivät itsessään tarkista puskurin ylityksiä, mikä tekee huolellisesta ohjelmoinnista välttämätöntä haavoittuvuuksien välttämiseksi. Modernit vaihtoehdot muissa kielissä, kuten merkkijonotyypit, jotka sisältävät pituuden tai käyttävät oletuksena turvallista puskurin käsittelyä, poistavat joitakin näistä riskeistä ja tehottomuuksista.
+
+Huolimatta sen rajoituksista, `strlen()`-funktion ja käsityöläismäisen merkkijonokäsittelyn ymmärtäminen C:ssä on tärkeää ohjelmoijille, erityisesti kun työskennellään matalan tason koodin kanssa tai kun suorituskyky ja muistinhallinta ovat ensiarvoisen tärkeitä. Se tarjoaa myös arvokkaita näkemyksiä muiden kielten korkeamman tason merkkijonoabstraktioihin.

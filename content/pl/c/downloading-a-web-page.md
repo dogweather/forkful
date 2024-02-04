@@ -1,65 +1,64 @@
 ---
 title:                "Pobieranie strony internetowej"
-date:                  2024-01-20T17:43:40.236726-07:00
-model:                 gpt-4-1106-preview
+date:                  2024-02-03T17:56:03.879370-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Pobieranie strony internetowej"
-
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/c/downloading-a-web-page.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-("## Co i dlaczego?")
-Pobieranie strony internetowej to proces ściągania jej danych na lokalny komputer. Programiści robią to, aby przetwarzać informacje, automatyzować zadania, czy testować aplikacje sieciowe.
+## Co i dlaczego?
 
-## How to:
-("## Jak to zrobić:")
-Użyjemy biblioteki libcurl, która umożliwia łatwe pobieranie stron. Poniższy kod demonstruje, jak to zrobić:
+Pobieranie strony internetowej w C polega na programowym uzyskiwaniu dostępu do zawartości strony internetowej przez internet i zapisywaniu jej lokalnie do przetworzenia lub użytku offline. Programiści często angażują się w to, aby konsumować usługi sieciowe, skrobać zawartość sieci, lub bezpośrednio interakcjonować z zasobami online ze swoich aplikacji.
+
+## Jak to zrobić:
+
+Aby pobrać stronę internetową w C, jednym z popularnych podejść jest użycie biblioteki libcurl, czyli efektywnej i przenośnej biblioteki do transferu URL po stronie klienta. Upewnij się, że masz zainstalowaną i dołączoną do swojego projektu bibliotekę libcurl. Oto przykład demonstrujący, jak użyć libcurl do pobrania zawartości strony internetowej:
 
 ```c
 #include <stdio.h>
 #include <curl/curl.h>
 
-size_t write_callback(void *contents, size_t size, size_t nmemb, void *userp) {
-    size_t real_size = size * nmemb;
-    printf("%.*s", (int)real_size, (char *)contents);
-    return real_size;
+size_t write_data(void *ptr, size_t size, size_t nmemb, FILE *stream) {
+    size_t written = fwrite(ptr, size, nmemb, stream);
+    return written;
 }
 
 int main(void) {
     CURL *curl;
+    FILE *fp;
     CURLcode res;
+    char *url = "http://example.com";
+    char outfilename[FILENAME_MAX] = "./downloaded_page.html";
 
-    curl_global_init(CURL_GLOBAL_ALL);
-    curl = curl_easy_init();
+    curl = curl_easy_init(); // Inicjalizacja sesji libcurl easy
+    if (curl) {
+        fp = fopen(outfilename,"wb");
+        curl_easy_setopt(curl, CURLOPT_URL, url);
+        curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, write_data); // Ustawienie funkcji zwrotnej do zapisywania otrzymanych danych
+        curl_easy_setopt(curl, CURLOPT_WRITEDATA, fp); // Ustawienie wskaźnika pliku do zapisu danych
 
-    if(curl) {
-        curl_easy_setopt(curl, CURLOPT_URL, "http://example.com");
-        curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, write_callback);
-        res = curl_easy_perform(curl);
+        res = curl_easy_perform(curl); // Wykonanie pobierania pliku
+        if(res != CURLE_OK) {
+            fprintf(stderr, "curl_easy_perform() failed: %s\n",
+                    curl_easy_strerror(res));
+        }
 
-        if(res != CURLE_OK) fprintf(stderr, "curl_easy_perform() failed: %s\n", curl_easy_strerror(res));
-
-        curl_easy_cleanup(curl);
+        /* zawsze czyść po sobie */
+        curl_easy_cleanup(curl); // Oczyszczenie sesji easy
+        fclose(fp); // Zamknięcie strumienia pliku
     }
-
-    curl_global_cleanup();
-
     return 0;
 }
 ```
+Przykładowe wyjście (brak widocznego wyjścia w konsoli): Ten kod pobiera zawartość z określonego URL i zapisuje ją do pliku o nazwie `downloaded_page.html`. Sprawdź katalog swojego programu, aby zobaczyć pobraną zawartość.
 
-Po kompilacji i uruchomieniu program wypisze na ekranie zawartość strony http://example.com.
+## Głębsze zanurzenie:
 
-## Deep Dive:
-("## W głąb tematu:")
-Libcurl jest biblioteką klienta URL działającą od 2001 roku. Jest przeznaczona do transferu plików przy użyciu różnych protokołów i jest często wybierana przez programistów ze względu na jej wszechstronność i wsparcie dla różnych języków programowania. Alternatywnie, istnieje wiele innych narzędzi jak wget lub biblioteki języka C do obsługi HTTP, ale libcurl jest jedną z najbardziej wszechstronnych. Pamiętaj: zarządzanie pamięcią i bezpieczne obsługiwanie błędów są kluczowe przy pobieraniu danych z sieci.
+Historycznie, pobieranie zawartości sieciowej w C było bardziej kłopotliwe, wymagało ręcznego programowania gniazd i obsługi protokołu HTTP. Libcurl abstrahuje te złożoności, oferując solidne i wysokopoziomowe API do transferu danych przez sieć.
 
-## See Also:
-("## Zobacz również:")
-- Dokumentacja libcurl: https://curl.se/libcurl/
-- Tutorial libcurl dla C: https://curl.se/libcurl/c/libcurl-tutorial.html
-- Wprowadzenie do protokołów sieciowych: https://beej.us/guide/bgnet/
-- Porównanie narzędzi do transferu danych: https://www.slant.co/topics/2676/~best-command-line-http-clients
+Chociaż libcurl upraszcza żądania HTTP w C, nowoczesne języki programowania, takie jak Python z jego biblioteką `requests` lub JavaScript (Node.js) z różnymi bibliotekami klienta HTTP, mogą oferować bardziej intuicyjną składnię i wbudowane wsparcie dla JSON i innych formatów danych powszechnie używanych w komunikacji sieciowej. Jednakże, C i libcurl zapewniają wysokowydajne i stabilne rozwiązanie dla systemów, w których istotne są efektywność, kontrola na poziomie detali lub integracja z istniejącymi bazami kodu C. Warto również zauważyć, że C w połączeniu z libcurl może być używane nie tylko do pobierania stron internetowych – jest zdolne do obsługi FTP, SMTP i wielu innych, co czyni je wszechstronnym narzędziem w zestawie programisty.

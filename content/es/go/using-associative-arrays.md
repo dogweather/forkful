@@ -1,87 +1,81 @@
 ---
-title:                "Uso de matrices asociativas"
-date:                  2024-01-30T19:11:22.432002-07:00
+title:                "Usando arrays asociativos"
+date:                  2024-02-03T18:10:39.361456-07:00
 model:                 gpt-4-0125-preview
-simple_title:         "Uso de matrices asociativas"
-
+simple_title:         "Usando arrays asociativos"
 tag:                  "Data Structures"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/go/using-associative-arrays.md"
 changelog:
-  - 2024-01-30, gpt-4-0125-preview, translated from English
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Qué y Por Qué?
 
-Los arreglos asociativos, conocidos como mapas en Go, te permiten almacenar y acceder a datos con pares clave-valor. Son esenciales para manejar colecciones donde puedes buscar valores rápidamente por una clave única, simplificando la manipulación y recuperación de datos en tus programas.
+Los arreglos asociativos, conocidos como mapas en Go, te permiten almacenar pares clave-valor donde cada clave única se asocia a un valor. Los programadores utilizan mapas para la recuperación eficiente de datos, la modificación y para mantener una colección de elementos que pueden ser accedidos rápidamente usando claves únicas.
 
 ## Cómo hacerlo:
 
-En Go, los mapas son sencillos de usar. Aquí tienes una guía simple para empezar:
+Crear e inicializar un mapa en Go se puede hacer de varias maneras. Aquí tienes un ejemplo básico para empezar:
 
-1. **Declarando e Inicializando Mapas**
-
-```Go
+```go
 package main
 
 import "fmt"
 
 func main() {
-    // Inicializa un mapa vacío con claves de tipo string y valores de tipo int
-    var scores map[string]int
-    fmt.Println(scores) // Imprime: map[]
-
-    // Declarando e inicializando un mapa no vacío
+    // Declarando e inicializando un mapa
     colors := map[string]string{
-        "red": "#ff0000",
-        "green": "#00ff00",
+        "rojo":    "#FF0000",
+        "verde":   "#00FF00",
+        "azul":    "#0000FF",
     }
-    fmt.Println(colors) // Imprime: map[green:#00ff00 red:#ff0000]
+
+    fmt.Println(colors)
+    // Salida: map[azul:#0000FF verde:#00FF00 rojo:#FF0000]
 }
 ```
 
-2. **Agregando y Accediendo a Elementos**
+Para agregar o actualizar elementos, asignas un valor a una clave así:
 
-```Go
-func main() {
-    fruits := make(map[string]int)
-    fruits["apples"] = 5
-    fruits["bananas"] = 10
+```go
+colors["blanco"] = "#FFFFFF"
+fmt.Println(colors)
+// Salida: map[azul:#0000FF verde:#00FF00 rojo:#FF0000 blanco:#FFFFFF]
+```
 
-    fmt.Println(fruits["apples"]) // Imprime: 5
+Acceder a un valor por su clave es sencillo:
+
+```go
+fmt.Println("El código hex para el rojo es:", colors["rojo"])
+// Salida: El código hex para el rojo es: #FF0000
+```
+
+Para eliminar un elemento, usa la función `delete`:
+
+```go
+delete(colors, "rojo")
+fmt.Println(colors)
+// Salida: map[azul:#0000FF verde:#00FF00 blanco:#FFFFFF]
+```
+
+Iterar sobre un mapa se hace usando un bucle for:
+
+```go
+for color, hex := range colors {
+    fmt.Printf("Clave: %s Valor: %s\n", color, hex)
 }
 ```
 
-3. **Iterando Sobre Mapas**
+Recuerda, los mapas en Go no están ordenados. El orden de iteración no está garantizado.
 
-```Go
-func main() {
-    pets := map[string]string{"dog": "bark", "cat": "meow"}
+## Estudio Detallado
 
-    for key, value := range pets {
-        fmt.Printf("%s hace %s\n", key, value)
-    }
-    // El orden de salida puede variar, ya que los mapas no garantizan un orden.
-}
-```
+En Go, los mapas se implementan como tablas hash. Cada entrada en el mapa consiste en dos elementos: una clave y un valor. La clave se hashea para almacenar la entrada, lo que permite operaciones de tiempo constante para un pequeño conjunto de datos y una complejidad de tiempo promedio de O(1) con un hashing adecuado, que puede degradarse a O(n) en el peor caso con muchas colisiones de hash.
 
-4. **Eliminando Elementos**
+Una nota importante para los nuevos programadores de Go es que los tipos de mapa son tipos de referencia. Esto significa que cuando pasas un mapa a una función, cualquier cambio realizado en el mapa dentro de esa función es visible para el llamador. Esto es diferente de, digamos, pasar una estructura a una función, donde la estructura se copia a menos que se pase por un puntero.
 
-```Go
-func main() {
-    meals := map[string]int{"desayuno": 300, "almuerzo": 600}
-    fmt.Println(meals) // Antes de la eliminación
+Mientras que los mapas son increíblemente versátiles y eficientes para la mayoría de los casos de uso que involucran arreglos asociativos, en aplicaciones críticas para el rendimiento, puede ser beneficioso usar estructuras de datos con características de rendimiento más predecibles, especialmente si las distribuciones de claves pueden causar colisiones frecuentes.
 
-    delete(meals, "almuerzo")
-    fmt.Println(meals) // Después de la eliminación
-}
-```
-
-## Análisis Detallado
-
-Introducidos en Go 1, los mapas ofrecen una manera incorporada de manejar arreglos asociativos de manera eficiente. A diferencia de las listas, que son colecciones ordenadas, los mapas son desordenados. Esto significa que el orden de iteración sobre los elementos del mapa no está garantizado que sea el mismo en ejecuciones distintas, un compromiso por su capacidad para manejar pares clave-valor de manera dinámica y con significativa flexibilidad.
-
-Por debajo, Go implementa mapas como tablas hash, asegurando que la complejidad promedio de las operaciones de acceso, inserción y eliminación sea O(1), bajo la mayoría de las circunstancias. Sin embargo, vale la pena mencionar que esta eficiencia puede variar basado en factores como colisiones de hash.
-
-Para casos de uso que requieran un recorrido de claves ordenado, podrías considerar combinar mapas con listas o explorar paquetes de terceros que ofrezcan estructuras de datos adicionales como mapas ordenados o árboles. A pesar de sus limitaciones, los mapas de Go son una herramienta poderosa y esencial para muchos escenarios de programación.
+Otra alternativa a considerar es el `sync.Map`, disponible desde Go 1.9, diseñado para casos de uso donde las claves se escriben una sola vez pero se leen muchas veces, ofreciendo mejoras de eficiencia en estos escenarios. Sin embargo, para aplicaciones de Go convencionales, el uso regular de mapas es idiomático y a menudo el enfoque recomendado por su simplicidad y soporte directo en el lenguaje.

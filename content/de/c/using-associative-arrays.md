@@ -1,73 +1,99 @@
 ---
 title:                "Verwendung von assoziativen Arrays"
-date:                  2024-01-30T19:10:17.238508-07:00
+date:                  2024-02-03T18:10:35.977817-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Verwendung von assoziativen Arrays"
-
 tag:                  "Data Structures"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/c/using-associative-arrays.md"
 changelog:
-  - 2024-01-30, gpt-4-0125-preview, translated from English
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Was & Warum?
 
-Assoziative Arrays, oder Hash-Maps, sind Schlüssel-Wert-Paare, die es Ihnen ermöglichen, Daten mit einem Schlüssel zu speichern und abzurufen. Sie sind unglaublich nützlich in C, da sie einen schnelleren Datenzugriff im Vergleich zu Listen ermöglichen, besonders wenn Sie mit einer großen Menge von Daten arbeiten.
+Assoziative Arrays, in anderen Sprachen auch als Maps oder Wörterbücher bekannt, sind Schlüssel-Wert-Paare, die für effiziente Datenabfrage und -manipulation genutzt werden. Anders als traditionelle Arrays, die Integer-Indizes verwenden, nutzen assoziative Arrays Schlüssel, was den Datenzugriff für Programmierer intuitiver und flexibler macht.
 
 ## Wie:
 
-C hat keine eingebaute Unterstützung für assoziative Arrays wie einige andere Sprachen, aber wir können Strukturen und einige Bibliotheksfunktionen verwenden, um eine ähnliche Funktionalität zu erhalten. Hier ist eine einfache Implementierung mit der `uthash`-Bibliothek, die Sie in Ihr Projekt einbinden müssen.
+C bietet keine eingebaute Unterstützung für assoziative Arrays wie einige höherstufige Sprachen, aber man kann sie mit Hilfe von Strukturen und Hashing simulieren. Unten ist ein vereinfachtes Beispiel, das eine Kombination aus einer Struktur und einer einfachen Hashfunktion verwendet, um ein assoziatives Array für das Speichern und Zugreifen von Ganzzahlen über String-Schlüssel zu implementieren.
 
-Definieren Sie zuerst eine Struktur, um Ihre Schlüssel-Wert-Paare zu halten:
+Definieren Sie zunächst eine Struktur, um ein einzelnes Schlüssel-Wert-Paar darzustellen, und eine weitere, um das assoziative Array selbst darzustellen:
 
-```C
+```c
 #include <stdio.h>
-#include "uthash.h"
+#include <stdlib.h>
+#include <string.h>
+
+#define TABLE_SIZE 128
 
 typedef struct {
-    int id; // Das wird unser Schlüssel sein
-    char name[10]; // Das ist der Wert, der mit unserem Schlüssel verknüpft ist
-    UT_hash_handle hh; // Macht diese Struktur hashbar
-} person;
-```
+    char* key;
+    int value;
+} KeyValuePair;
 
-Als Nächstes fügen wir einige Einträge hinzu und rufen sie ab:
+typedef struct {
+    KeyValuePair* items[TABLE_SIZE];
+} AssocArray;
 
-```C
-int main() {
-    person *my_people = NULL, *s;
+unsigned int hash(char* key) {
+    unsigned long int value = 0;
+    unsigned int i = 0;
+    unsigned int key_len = strlen(key);
 
-    // Einen Eintrag hinzufügen
-    s = (person*)malloc(sizeof(person));
-    s->id = 1;
-    strcpy(s->name, "Alice");
-    HASH_ADD_INT(my_people, id, s);
-
-    // Einen Eintrag abrufen
-    int user_id = 1;
-    HASH_FIND_INT(my_people, &user_id, s);
-    Wenn (s) {
-        printf("Gefunden: %s\n", s->name);
+    for (; i < key_len; ++i) {
+        value = value * 37 + key[i];
     }
-    
+
+    value = value % TABLE_SIZE;
+
+    return value;
+}
+
+void initArray(AssocArray* array) {
+    for (int i = 0; i < TABLE_SIZE; ++i) {
+        array->items[i] = NULL;
+    }
+}
+
+void insert(AssocArray* array, char* key, int value) {
+    unsigned int slot = hash(key);
+
+    KeyValuePair* item = (KeyValuePair*)malloc(sizeof(KeyValuePair));
+    item->key = strdup(key);
+    item->value = value;
+
+    array->items[slot] = item;
+}
+
+int find(AssocArray* array, char* key) {
+    unsigned int slot = hash(key);
+
+    if (array->items[slot]) {
+        return array->items[slot]->value;
+    }
+    return -1;
+}
+
+int main() {
+    AssocArray a;
+    initArray(&a);
+
+    insert(&a, "key1", 1);
+    insert(&a, "key2", 2);
+
+    printf("%d\n", find(&a, "key1")); // Ausgabe: 1
+    printf("%d\n", find(&a, "key2")); // Ausgabe: 2
+
     return 0;
 }
 ```
 
-Beispielausgabe wäre:
+Dieses Beispiel demonstriert grundlegende Operationen: Initialisierung eines assoziativen Arrays, Einfügen von Schlüssel-Wert-Paaren und das Finden von Werten über Schlüssel. Beachten Sie, dass dieser Code keine Kollisionserkennung beinhaltet und zu Bildungszwecken gedacht ist.
 
-```
-Gefunden: Alice
-```
+## Tiefergehend
 
-Vergessen Sie nicht, den zugewiesenen Speicher freizugeben und die Hash-Tabelle am Ende zu deallocieren, um Speicherlecks zu vermeiden.
+Das Konzept der assoziativen Arrays geht C vor, aber die Low-Level-Natur der Sprache bietet keine direkte Unterstützung dafür als eingebaute Typen. Dies fördert ein tieferes Verständnis von Datenstrukturen und Algorithmen, einschließlich Hashing-Mechanismen für effiziente Schlüssel-Wert-Zuordnungen. Viele C-Bibliotheken und Frameworks bieten ausgefeiltere Ansätze für die Implementierung assoziativer Arrays, wie GLib’s `GHashTable`, das eine robuste Implementierung mit Kollisionserkennung, dynamischer Größenänderung und Unterstützung für beliebige Schlüssel- und Werttypen bietet.
 
-## Tiefere Einblicke
-
-Obwohl assoziative Arrays nicht nativ in C vorhanden sind, füllen Bibliotheken wie `uthash` die Lücke recht gut und bieten eine ziemlich unkomplizierte Möglichkeit, diese Funktionalität zu nutzen. Historisch gesehen mussten C-Entwickler ihre Version dieser Datenstrukturen implementieren, was zu verschiedenen und oft komplexen Implementierungen führte, besonders für diejenigen, die gerade erst mit der Sprache anfingen.
-
-Denken Sie daran, die Effizienz der Verwendung von assoziativen Arrays in C hängt stark davon ab, wie gut die Hash-Funktion Werte über die Tabelle verteilt, um Kollisionen zu minimieren. Während Bibliotheken wie `uthash` eine gute Balance zwischen Benutzerfreundlichkeit und Leistung bieten, möchten Sie in kritischen Anwendungen, in denen die Leistung von größter Bedeutung ist, vielleicht Ihre eigene Hash-Tabelle maßschneidern oder implementieren.
-
-Für Anwendungen, die maximale Effizienz erfordern, könnten alternative Datenstrukturen oder sogar andere Programmiersprachen mit eingebauter Unterstützung für assoziative Arrays eine bessere Wahl sein. Jedoch, in vielen Situationen, besonders wenn Sie bereits in einer C-Umgebung arbeiten, bietet die Verwendung einer Bibliothek wie `uthash` eine praktische Balance zwischen Leistung und Bequemlichkeit.
+Obwohl die manuelle Konstruktion von assoziativen Arrays in C im Vergleich zu Sprachen mit eingebauter Unterstützung als umständlich angesehen werden kann, bietet sie unschätzbare Einblicke in die Funktionsweise von Datenstrukturen und schärft die Fähigkeiten eines Programmierers im Problemlösen und Optimieren. Für Produktionscode oder komplexere Anwendungen ist jedoch die Nutzung vorhandener Bibliotheken wie GLib oft ein praktischerer und zeiteffizienterer Ansatz.

@@ -1,9 +1,8 @@
 ---
 title:                "Logging"
-date:                  2024-01-25T02:03:15.229184-07:00
-model:                 gpt-4-1106-preview
+date:                  2024-02-03T17:50:09.837736-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Logging"
-
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/c/logging.md"
 ---
@@ -11,54 +10,89 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Logging is essentially jotting down what your program is doing, typically by writing out messages to a file or terminal. Programmers do it to keep track of events, diagnose problems, and to have an audit trail that tells the story of an application’s operation over time.
+
+Logging in C involves recording the flow and notable events of a program during its runtime, providing a tangible review of its behavior and performance. Programmers utilize logging for debugging purposes, monitoring software health, and ensuring system security.
 
 ## How to:
-Let's start with some basics. C doesn't have a built-in logging framework, but you can roll something simple with `stdio.h`. Here's how:
+
+In C, logging can be achieved with basic file operations or using more sophisticated libraries. For simplicity, we'll start with the standard I/O library. The following snippets showcase basic logging implementations.
+
+To log simple messages:
+
+```c
+#include <stdio.h>
+
+int main() {
+    FILE *logFile;
+    logFile = fopen("application.log", "a"); // Open the log file in append mode
+    
+    if (logFile == NULL) {
+        perror("Error opening log file.");
+        return -1;
+    }
+    
+    fprintf(logFile, "Starting application.\n");
+    
+    // Your application logic here
+    
+    fprintf(logFile, "Application finished successfully.\n");
+    fclose(logFile);
+    
+    return 0;
+}
+```
+
+Output in `application.log`:
+
+```
+Starting application.
+Application finished successfully.
+```
+
+To include more detailed logs with timestamps and log levels:
 
 ```c
 #include <stdio.h>
 #include <time.h>
 
-void logMessage(const char* message) {
+void logMessage(FILE *logFile, const char* level, const char* message) {
     time_t now;
     time(&now);
-    char *date = ctime(&now);
-    date[strlen(date) - 1] = '\0'; // Remove the newline at the end of ctime()'s result
-    printf("[%s] %s\n", date, message);
+    char* datetime = ctime(&now);
+    datetime[strlen(datetime)-1] = '\0'; // Remove newline character
+    fprintf(logFile, "[%s] %s - %s\n", datetime, level, message);
 }
 
 int main() {
-    logMessage("Application has started.");
-    // ... your code goes here ...
-    logMessage("Application is doing something important.");
-    // ... your code continues ...
-    logMessage("Application has ended.");
+    FILE *logFile;
+    logFile = fopen("detailed.log", "a");
+    
+    if (logFile == NULL) {
+        perror("Error opening log file.");
+        return -1;
+    }
+    
+    logMessage(logFile, "INFO", "Application starting");
+    // Your application logic here
+    logMessage(logFile, "ERROR", "An example error");
+    
+    fclose(logFile);
+    
     return 0;
 }
 ```
 
-Sample output might look like this:
+Output in `detailed.log`:
 
 ```
-[Tue Mar 9 12:00:01 2023] Application has started.
-[Tue Mar 9 12:00:02 2023] Application is doing something important.
-[Tue Mar 9 12:00:03 2023] Application has ended.
+[Thu Mar 10 14:32:01 2023] INFO - Application starting
+[Thu Mar 10 14:32:02 2023] ERROR - An example error
 ```
-
-Of course, in the real world you'd probably want to write to a file instead of the terminal, handle different log levels, and maybe use a predefined library.
 
 ## Deep Dive
-Logging in C has a quaint charm—it's as low-level as most of the rest of the language. Historically, logging was performed using `fprintf` with `stderr` or a file pointer. As programs grew more complex, so did logging needs, leading to the development of libraries such as `syslog` on Unix systems, which could handle logging from multiple sources with various levels of importance.
 
-In the modern landscape, there are plenty of C logging libraries out there, such as `zlog`, `log4c`, and `glog`, that offer a rich feature set including log rotation, structured logging, and multithreaded logging. These solutions allow for fine-grained control over log verbosity, destinations, and formats.
+Logging in C, as demonstrated, relies on simple file operations, which is effective but not as powerful or flexible as logging facilities in other languages, such as Python's `logging` module or Java's `Log4j`. For more advanced logging capabilities in C, developers often turn to libraries like `syslog` on Unix-like systems, which provides system-wide log management, or third-party libraries such as `log4c`.
 
-When implementing a logging system, details such as timestamp formatting, log file management, and performance need consideration. Timestamping logs is crucial for correlating events, while log rotation ensures that log files don't consume too much disk space. The act of logging should also be fast and non-blocking to the main application flow to prevent logging from becoming a bottleneck.
+Historically, logging has been an integral part of programming, tracing back to early programming practices where tracking and understanding program flow and errors were primarily done through physical printouts. As systems evolved, logging became more sophisticated, now supporting various levels of severity, log rotation, and asynchronous logging.
 
-## See Also
-To dive deeper into logging libraries and practices in C, check out these resources:
-
-- GNU `syslog` manual: https://www.gnu.org/software/libc/manual/html_node/Syslog.html
-- `zlog`: A highly configurable logging library for C - https://github.com/HardySimpson/zlog
-- `log4c`: A logging framework for C modeled after Log4j - http://log4c.sourceforge.net/
-- `glog`: Google's application-level logging library - https://github.com/google/glog
+While C's standard library provides the basic tools for implementing logging, its limitations often lead to the creation of custom logging frameworks or the adoption of external libraries for more feature-rich and flexible logging solutions. Despite these limitations, understanding and implementing basic logging in C is crucial for debugging and maintaining software, especially in environments where external dependencies are to be minimized.

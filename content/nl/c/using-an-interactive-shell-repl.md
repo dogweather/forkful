@@ -1,49 +1,61 @@
 ---
-title:                "Het gebruik van een interactieve shell (REPL)"
-date:                  2024-01-28T22:08:53.207264-07:00
+title:                "Gebruik van een interactieve shell (REPL)"
+date:                  2024-02-03T18:10:11.639650-07:00
 model:                 gpt-4-0125-preview
-simple_title:         "Het gebruik van een interactieve shell (REPL)"
-
+simple_title:         "Gebruik van een interactieve shell (REPL)"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/c/using-an-interactive-shell-repl.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Wat & Waarom?
-Een interactieve shell, of Read-Eval-Print Loop (REPL), is een hulpmiddel dat een realtime programmeeromgeving biedt om stukjes code direct te testen. Programmeurs gebruiken het voor snelle feedback tijdens ontwikkeling, leren en debuggen.
 
-## Hoe te:
-C heeft geen ingebouwde REPL, maar je kunt wel gebruik maken van tools van derden. Hier is een voorbeeld met Cling, een C++ interpreter die ook C code kan afhandelen:
+Een interactieve shell, ook bekend als een Lees-Evalueer-Print-Lus (REPL), stelt programmeurs in staat om expressies of code in te typen en direct resultaten te zien, wat het leerproces en het debuggen verbetert. Hoewel C van nature geen REPL-omgevingen ondersteunt, overbruggen moderne hulpmiddelen deze kloof en bieden dynamische verkenning van C-programma's.
 
-```C
-#include <stdio.h>
+## Hoe:
 
-int main() {
-    printf("Hallo, REPL wereld!\n");
-    return 0;
-}
+Om met een C REPL aan de slag te gaan, vind je misschien niet zo'n rechttoe rechtaan pad als bij talen zoals Python of JavaScript. Echter, hulpmiddelen zoals `Cling`, een C/C++ interpreter gebaseerd op Clang en LLVM-technologie, maken het mogelijk. Hier is hoe je kunt beginnen:
+
+1. **Installeer Cling**: Afhankelijk van je besturingssysteem, vind je Cling misschien in je pakketbeheerder of moet je het vanuit de broncode opbouwen. Bijvoorbeeld, op Ubuntu, kan het zo simpel zijn als `sudo apt-get install cling`.
+
+2. **Cling Starten**: Open je terminal en typ `cling` om de interactieve shell te starten.
+
+```bash
+$ cling
 ```
 
-Uitvoer in Cling REPL:
-```
-[cling]$ .x jouwscript.c
+3. **Code Schrijven**: Nu kun je C code direct in de shell typen en direct resultaten zien. Hier is een simpel voorbeeld:
+
+```c
+[cling]$ #include <stdio.h>
+[cling]$ printf("Hallo, REPL wereld!\n");
 Hallo, REPL wereld!
 ```
 
-Cling voert het script uit en drukt de uitvoer onmiddellijk af.
+4. **Voorbeeld met Variabelen en Operaties**: Experimenteer met variabelen en zie directe feedback.
 
-## Diepgaand
-REPLs zijn standaard in dynamische talen zoals Python of Ruby, maar voor gecompileerde talen zoals C zijn ze minder gangbaar. Historisch gezien leende de compileren-uitvoeren-debuggen cyclus zich niet voor interactieve verkenning. Tools zoals Cling en online C compilers bieden REPL-achtige ervaringen door je C code in een C++ omgeving te verpakken.
+```c
+[cling]$ int a = 5;
+[cling]$ int b = 3;
+[cling]$ printf("%d + %d = %d\n", a, b, a+b);
+5 + 3 = 8
+```
 
-Alternatieven voor Cling omvatten C interpreters zoals CINT en Ch. Deze hulpmiddelen staan snelle iteraties toe, maar zijn misschien niet geschikt voor alle ontwikkelingsscenario's vanwege prestatiebeperkingen en ondersteuning voor complexe functies.
+5. **Bibliotheken Insluiten**: Cling staat je toe om ter plekke bibliotheken in te sluiten, waardoor een breed scala aan C-functionaliteiten beschikbaar wordt.
 
-De implementatie van een REPL in een gecompileerde taal betreft het compileren en uitvoeren van codefragmenten ter plekke, wat niet triviaal is en beperkingen kan hebben in vergelijking met de volledige taalmogelijkheden.
+```c
+[cling]$ #include <math.h>
+[cling]$ printf("De wortel van %f is %f\n", 4.0, sqrt(4.0));
+De wortel van 4.000000 is 2.000000
+```
 
-## Zie Ook
-- Cling: https://github.com/root-project/cling
-- Online C Compiler en REPL: https://repl.it/languages/c
-- CINT: http://root.cern.ch/drupal/content/cint
-- Ch Interpreter: http://www.softintegration.com/products/chstandard/
+## Diepe Duik:
+
+Het ontstaan van REPL-omgevingen gaat terug tot Lisp in de jaren 60, ontworpen om interactieve code-evaluatie te ondersteunen. Echter, de statische en gecompileerde aard van C vormde uitdagingen voor het realiseren van vergelijkbare onmiddellijkheid in code-uitvoering aanpassingen. De ontwikkeling van Cling en andere C/C++ interpreters markeren significante vooruitgangen richting het integreren van dynamische evaluatie in statisch getypeerde talen.
+
+Opmerkelijk is dat het gebruik van een interpreter zoals Cling mogelijk niet perfect het gedrag van gecompileerde C-code weerspiegelt vanwege verschillen in optimalisatie en uitvoering. Ook, hoewel zeer waardevol voor educatieve doeleinden, snelle prototyping en het debuggen, kunnen REPLs voor C soms trager en minder praktisch zijn voor de ontwikkeling van productieniveau code in vergelijking met traditionele compileer-run-debug cycli.
+
+Alternatieven voor interactieve C-programmering omvatten het schrijven van kleine, zelfstandige programma's en het gebruik van robuuste IDE's met geïntegreerde debugging tools, die meer controle en inzicht in uitvoering kunnen bieden, zij het met minder onmiddellijkheid. Ondanks deze alternatieven vertegenwoordigt de komst van REPL-omgevingen in C een spannende uitbreiding van de veelzijdigheid van de taal, die de vraag van het moderne tijdperk naar flexibiliteit en snelheid in ontwikkelingscycli omarmt.

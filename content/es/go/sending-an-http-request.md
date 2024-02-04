@@ -1,66 +1,106 @@
 ---
-title:                "Enviando una solicitud http"
-date:                  2024-01-20T17:59:51.360954-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Enviando una solicitud http"
-
+title:                "Enviando una solicitud HTTP"
+date:                  2024-02-03T18:08:29.597722-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Enviando una solicitud HTTP"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/go/sending-an-http-request.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Qué y Por Qué?
-Enviar una solicitud HTTP es cómo tu programa en Go pide información o manda datos a otro sistema en la web. Hacemos esto para interactuar con APIs, servicios web o cualquier recurso en internet desde nuestro código.
+## ¿Qué y por qué?
+
+Enviar una solicitud HTTP involucra iniciar una llamada desde tu aplicación Go a un servidor web, API o cualquier otro servicio basado en HTTP. Los programadores hacen esto para interactuar con recursos web, obtener datos, enviar formularios o comunicarse con otros servicios a través de Internet.
 
 ## Cómo hacerlo:
-```Go
+
+En Go, enviar una solicitud HTTP y manejar la respuesta implica usar el paquete `net/http`. Aquí tienes un ejemplo paso a paso sobre cómo enviar una simple solicitud GET y leer la respuesta:
+
+```go
+package main
+
+import (
+    "fmt"
+    "io/ioutil"
+    "log"
+    "net/http"
+)
+
+func main() {
+    // Define la URL del recurso
+    url := "http://example.com"
+
+    // Usa http.Get para enviar la solicitud GET
+    resp, err := http.Get(url)
+    if err != nil {
+        log.Fatal(err)
+    }
+    // Cierra el cuerpo de respuesta cuando la función termina
+    defer resp.Body.Close()
+
+    // Lee el cuerpo de respuesta
+    body, err := ioutil.ReadAll(resp.Body)
+    if err != nil {
+        log.Fatal(err)
+    }
+
+    // Convierte el cuerpo de respuesta a un string e imprímelo
+    fmt.Println(string(body))
+}
+```
+
+Salida de muestra (acortada por brevedad):
+```
+<!doctype html>
+<html>
+<head>
+    <title>Dominio de ejemplo</title>
+...
+</html>
+```
+
+Para enviar una solicitud POST con datos de formulario, puedes usar `http.PostForm`:
+
+```go
 package main
 
 import (
     "fmt"
     "io/ioutil"
     "net/http"
+    "net/url"
 )
 
 func main() {
-    // Realizar una solicitud GET
-    respuesta, err := http.Get("https://jsonplaceholder.typicode.com/posts/1")
-    if err != nil {
-        fmt.Println(err)
-        return
-    }
-    defer respuesta.Body.Close()
+    // Define la URL y los datos del formulario
+    url := "http://example.com/form"
+    data := url.Values{}
+    data.Set("clave", "valor")
 
-    // Leer y mostrar el cuerpo de la respuesta
-    cuerpo, err := ioutil.ReadAll(respuesta.Body)
+    // Envía la solicitud POST con datos de formulario
+    resp, err := http.PostForm(url, data)
     if err != nil {
-        fmt.Println(err)
-        return
+        panic(err)
     }
-    fmt.Println(string(cuerpo))
-}
-```
-Ejecutando esto deberías ver algo así:
-```
-{
-  "userId": 1,
-  "id": 1,
-  "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
-  "body": "quia et suscipit..."
+    defer resp.Body.Close()
+
+    // Lee e imprime la respuesta
+    body, err := ioutil.ReadAll(resp.Body)
+    if err != nil {
+        panic(err)
+    }
+
+    fmt.Println(string(body))
 }
 ```
 
-## Profundizando
-En el pasado, las solicitudes se hacían con herramientas como `curl` en la línea de comandos o bibliotecas diseñadas específicamente para lenguajes de programación. Go incluye un potente paquete `net/http` para manejar solicitudes HTTP que facilita todo este proceso.
+## Análisis Profundo
 
-Hay diferentes métodos HTTP: GET, POST, PUT, DELETE, etc. `http.Get` es cómodo para una solicitud GET simple, pero para algo más elaborado, puedes usar `http.NewRequest` y personalizar a tu gusto.
+El paquete `net/http` en Go ofrece una forma poderosa y flexible de interactuar con servidores HTTP. Su diseño refleja el énfasis de Go en la simplicidad, eficiencia y robustez. Originalmente, funcionalidades como manejar cargas útiles JSON o XML requerían la creación manual del cuerpo de la solicitud y la configuración de encabezados apropiados. A medida que Go evolucionó, la comunidad ha desarrollado paquetes de nivel superior que simplifican aún más estas tareas, como `gorilla/mux` para enrutamiento y `gjson` para manipulación de JSON.
 
-Cuando envías una solicitud, es importante manejar errores y cerrar el cuerpo de respuesta con `defer`. Esto evita fugas de recursos y problemas de rendimiento en programas más largos.
+Un aspecto notable del cliente HTTP de Go es su uso de interfaces y estructuras, como `http.Client` y `http.Request`, que permiten una amplia personalización y prueba. Por ejemplo, puedes modificar el `http.Client` para que las solicitudes tengan un tiempo de espera o mantener las conexiones activas para mejorar el rendimiento.
 
-Alternativas incluyen goroutines y canales para manejar respuestas asíncronas, o usar librerías de terceros que ofrecen más funcionalidades o simplifican algunas tareas.
-
-## Ver También
-- [Documentación oficial del paquete `net/http`](https://pkg.go.dev/net/http)
-- [Tutorial de ‘Making HTTP Requests’ en Go by Go By Example](https://gobyexample.com/http-clients)
-- [Artículo sobre el manejo de errores en Go por Dave Cheney](https://dave.cheney.net/2012/01/18/why-go-gets-exceptions-right)
+Una alternativa considerada para interacciones HTTP más simples es el uso de bibliotecas de terceros como "Resty" o "Gentleman". Estos paquetes ofrecen una abstracción de nivel más alto para las solicitudes HTTP, haciendo que las tareas comunes sean más concisas. Sin embargo, entender y utilizar el paquete subyacente `net/http` es crucial para lidiar con escenarios de interacción HTTP más complejos o únicos, proporcionando una base sobre la cual se pueden aprovechar completamente las características de concurrencia de Go y su poderosa biblioteca estándar.

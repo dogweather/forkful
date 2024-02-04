@@ -1,63 +1,83 @@
 ---
 title:                "HTML 파싱"
-date:                  2024-01-20T15:32:11.778839-07:00
+date:                  2024-02-03T18:00:13.643883-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "HTML 파싱"
-
 tag:                  "HTML and the Web"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/go/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (무엇과 왜?)
-HTML 파싱은 웹페이지의 구조를 분석해 데이터를 추출하는 과정입니다. 프로그래머들은 웹 콘텐츠를 자동으로 처리하거나 웹 스크래핑을 통해 정보를 수집하기 위해 이를 수행합니다.
+## 무엇 & 왜?
 
-## How to: (방법)
-Go 언어에서 `net/html` 패키지를 사용하여 HTML을 파싱하는 방법을 살펴봅시다. 아래는 간단한 예제 코드입니다.
+Go에서 HTML 파싱은 HTML 파일의 내용을 분석하여 데이터를 추출하거나, 구조를 조작하거나, HTML을 다른 형식으로 변환하는 것을 말합니다. 프로그래머들은 웹 스크래핑, 템플릿화 및 데이터 마이닝을 위해 이 작업을 수행하며, Go의 강력한 동시성 기능을 활용하여 대량의 웹 페이지를 효율적으로 처리합니다.
 
-```Go
+## 방법:
+
+Go에서 HTML을 파싱하기 위해 일반적으로 `goquery` 패키지나 표준 라이브러리의 `net/html` 패키지를 사용합니다. 여기 웹페이지에서 모든 링크를 추출하기 위해 `net/html`을 사용한 기본 예제가 있습니다:
+
+```go
 package main
 
 import (
-	"fmt"
-	"golang.org/x/net/html"
-	"strings"
+    "fmt"
+    "golang.org/x/net/html"
+    "net/http"
 )
 
 func main() {
-	doc, err := html.Parse(strings.NewReader("<html><body><h1>Hello, World!</h1></body></html>"))
-	if err != nil {
-		panic("파싱에 실패했습니다.")
-	}
+    // HTML 문서 가져오기
+    res, err := http.Get("http://example.com")
+    if err != nil {
+        panic(err)
+    }
+    defer res.Body.Close()
 
-	var f func(*html.Node)
-	f = func(n *html.Node) {
-		if n.Type == html.ElementNode && n.Data == "h1" {
-			fmt.Println(n.FirstChild.Data)
-		}
-		for c := n.FirstChild; c != nil; c = c.NextSibling {
-			f(c)
-		}
-	}
-	f(doc)
+    // HTML 문서 파싱
+    doc, err := html.Parse(res.Body)
+    if err != nil {
+        panic(err)
+    }
+
+    // DOM을 재귀적으로 순회하는 함수
+    var f func(*html.Node)
+    f = func(n *html.Node) {
+        if n.Type == html.ElementNode && n.Data == "a" {
+            for _, a := range n.Attr {
+                if a.Key == "href" {
+                    fmt.Println(a.Val)
+                    break
+                }
+            }
+        }
+        for c := n.FirstChild; c != nil; c = c.NextSibling {
+            f(c)
+        }
+    }
+
+    // DOM 순회
+    f(doc)
 }
 ```
 
-실행 결과는 아래와 같습니다.
+샘플 출력 (가정: `http://example.com`에 두 개의 링크가 포함되어 있음):
 
 ```
-Hello, World!
+http://www.iana.org/domains/example
+http://www.iana.org/domains/reserved
 ```
 
-이 코드는 간단한 HTML 문자열에서 `<h1>` 태그의 텍스트를 찾아 출력합니다.
+이 코드는 HTML 페이지를 요청하고, 파싱하고, DOM을 재귀적으로 순회하여 모든 `<a>` 태그의 `href` 속성을 찾아서 출력합니다.
 
-## Deep Dive (심도 있는 분석)
-- **역사적 맥락**: 초기 웹 개발 시 HTML 파싱은 주로 정규 표현식을 사용했지만, 이 방법은 복잡하고 오류가 많았습니다. 브라우저가 DOM(Document Object Model)을 지원하면서 파서가 등장했습니다.
-- **대안**: `net/html` 외에도, `htmlquery`, `goquery` 같은 라이브러리도 있습니다. 각각의 장단점이 있으니 상황에 맞춰 선택하면 됩니다.
-- **구현 세부사항**: Go의 `net/html` 패키지는 HTML5 파싱 알고리즘을 구현합니다. 트리 구조의 DOM을 생성하고, 노드를 탐색하거나 수정하는 기능을 제공합니다. 매우 효율적이고 오류에 강합니다.
+## 심층 분석
 
-## See Also (관련 자료)
-- Go 문서 [net/html package](https://pkg.go.dev/golang.org/x/net/html)
-- [`htmlquery`](https://github.com/antchfx/htmlquery) 파서
-- [`goquery`](https://github.com/PuerkitoBio/goquery) - jQuery 스타일의 문서 탐색 가능
+`net/html` 패키지는 HTML5 표준에 명시된 토큰화 및 트리 구축 알고리즘을 직접 구현하여 Go에서 HTML 파싱의 기본을 제공합니다. 이 저수준 접근 방식은 강력하지만 복잡한 작업에 대해 장황할 수 있습니다.
+
+반면에, jQuery에서 영감을 받은 서드파티 `goquery` 패키지는 DOM 조작 및 순회를 간소화하는 고수준 인터페이스를 제공합니다. 개발자가 요소 선택, 속성 추출 및 콘텐츠 조작과 같은 작업에 대해 간결하고 표현력 있는 코드를 작성할 수 있도록 합니다.
+
+하지만, `goquery`의 편리함은 추가적인 의존성과 그 추상화 레이어로 인해 발생하는 잠재적으로 느린 성능의 대가로 이루어집니다. `net/html`과 `goquery`(또는 다른 파싱 라이브러리) 사이의 선택은 프로젝트의 특정 요구 사항, 예를 들면 성능 최적화나 사용 용이성의 필요성에 따라 달라집니다.
+
+역사적으로, Go에서의 HTML 파싱은 기본적인 문자열 연산에서 복잡한 DOM 트리 조작까지 발전하였으며, 이는 언어의 성장하는 생태계와 커뮤니티의 강력한 웹 스크래핑 및 데이터 추출 도구에 대한 요구를 반영합니다. 기본 기능에도 불구하고, `goquery`와 같은 서드파티 라이브러리의 유병함은 Go 커뮤니티가 모듈화되고 재사용 가능한 코드를 선호한다는 것을 강조합니다. 하지만, 성능에 민감한 애플리케이션의 경우, 프로그래머들은 여전히 `net/html` 패키지나 심지어는 간단한 파싱 작업을 위해 정규 표현식(regex)을 선호할 수 있으며, 정규 표현식 기반 HTML 파싱의 내재된 위험성과 한계를 염두에 두어야 합니다.

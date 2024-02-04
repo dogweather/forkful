@@ -1,59 +1,60 @@
 ---
-title:                "Escribiendo en el error estándar"
-date:                  2024-01-19
-simple_title:         "Escribiendo en el error estándar"
-
+title:                "Escribiendo al error estándar"
+date:                  2024-02-03T18:15:17.932476-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Escribiendo al error estándar"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/go/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Qué y Por Qué?
 
-Escribir en el error estándar es enviar mensajes de error a un flujo específico, separado de la salida estándar. Los programadores lo hacen para diferenciar la salida normal de la información de diagnóstico y errores, ayudando en la depuración y el registro de eventos.
+Escribir en el error estándar (stderr) en Go implica dirigir mensajes de error o diagnósticos que no están destinados para el flujo principal de salida. Los programadores utilizan esto para separar la salida regular de la información de error, haciendo que la depuración y el análisis de registros sean más sencillos.
 
-## Cómo se Hace:
+## Cómo hacerlo:
 
-Escribir en el error estándar en Go se hace usando el paquete `os` y su variable `Stderr`.
+En Go, el paquete `os` proporciona el valor `Stderr`, representando el archivo de error estándar. Puedes usarlo con las funciones `fmt.Fprint`, `fmt.Fprintf`, o `fmt.Fprintln` para escribir en stderr. Aquí hay un ejemplo sencillo:
 
-```Go
+```go
 package main
 
 import (
-	"fmt"
-	"os"
+    "fmt"
+    "os"
 )
 
 func main() {
-	errMsg := "Hubo un error crítico en el proceso."
+    // Escribiendo una cadena simple en stderr
+    _, err := fmt.Fprintln(os.Stderr, "¡Este es un mensaje de error!")
+    if err != nil {
+        panic(err)
+    }
 
-	// Escribir en el error estándar
-	_, err := fmt.Fprintln(os.Stderr, errMsg)
-	if err != nil {
-		panic("No se pudo escribir el mensaje en el error estándar.")
-	}
+    // Mensaje de error formateado con Fprintf
+    errCount := 4
+    _, err = fmt.Fprintf(os.Stderr, "Proceso completado con %d errores.\n", errCount)
+    if err != nil {
+        panic(err)
+    }
 }
 ```
 
-Salida esperada en el error estándar:
-
+Salida de muestra (a stderr):
 ```
-Hubo un error crítico en el proceso.
+¡Este es un mensaje de error!
+Proceso completado con 4 errores.
 ```
 
-## Profundizando:
+Recuerda, estos mensajes no aparecerán en la salida regular (stdout) sino en el flujo de error, que puede ser redirigido por separado en la mayoría de los sistemas operativos.
 
-Históricamente, la separación de la salida estándar y el error estándar proviene de Unix, donde las herramientas de línea de comando utilizan tres flujos principales: entrada estándar (stdin), salida estándar (stdout) y error estándar (stderr).
+## Análisis Profundo
 
-Alternativas a `fmt.Fprintln(os.Stderr, errMsg)` incluyen el uso de `log` o `os.Stderr.WriteString(errMsg+"\n")`. La implementación básica de estas funciones eventualmente hace llamadas al sistema para escribir en el file descriptor asociado con stderr, que generalmente es el número 2.
+El concepto de error estándar está profundamente arraigado en la filosofía Unix, que distingue claramente entre la salida normal y los mensajes de error para un procesamiento y manejo de datos más eficientes. En Go, esta convención es adoptada a través del paquete `os`, que proporciona acceso directo a los descriptores de archivo de stdin, stdout y stderr.
 
-## Ver También:
+Aunque escribir directamente en `os.Stderr` es adecuado para muchas aplicaciones, Go también ofrece paquetes de registro más sofisticados como `log`, que ofrece características adicionales como la fecha y hora y configuraciones de salida más flexibles (por ejemplo, escribir en archivos). Usar el paquete `log`, especialmente para aplicaciones más grandes o donde se necesitan características de registro más completas, puede ser una alternativa mejor. También vale la pena mencionar que el enfoque de Go para el manejo de errores, que fomenta la devolución de errores desde funciones, complementa la práctica de escribir mensajes de error en stderr, permitiendo un control más granular del manejo y reporte de errores.
 
-Para aprender más sobre los flujos de salida en Go y la gestión de errores, visita los siguientes enlaces:
-
-- Documentación de Go para el paquete os: https://pkg.go.dev/os
-- Blog de Go sobre manejo de errores: https://blog.golang.org/error-handling-and-go
-- Ejemplos de como utilizar el paquete `log` para errores: https://pkg.go.dev/log
-
-Recuerda también explorar las funciones como `log.Fatalf` o `log.Panicf` que también escriben en el error estándar y manejan los errores de forma ligeramente diferente, dependiendo de tus necesidades específicas.
+En esencia, mientras que escribir en stderr es una tarea fundamental en muchos lenguajes de programación, la biblioteca estándar de Go y los principios de diseño ofrecen caminos tanto sencillos como avanzados para gestionar la salida de errores, alineándose con las prácticas de la industria más amplias mientras también atienden al ethos de diseño específico de Go.

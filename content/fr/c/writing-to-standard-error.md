@@ -1,52 +1,54 @@
 ---
-title:                "Écrire dans l'erreur standard"
-date:                  2024-01-19
-simple_title:         "Écrire dans l'erreur standard"
-
+title:                "Écriture sur l'erreur standard"
+date:                  2024-02-03T18:14:53.679898-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Écriture sur l'erreur standard"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/c/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Quoi et Pourquoi ?)
-Écrire dans l'erreur standard permet de séparer les messages d’erreur du flux principal de données. C'est crucial pour le débogage et le diagnostic.
+## Quoi & Pourquoi ?
 
-## How to (Comment faire) :
-Utilisez `fprintf` ou `fputs` avec `stderr`. Voici un exemple:
+Écrire sur l'erreur standard en C implique de diriger les messages d'erreur et les informations de diagnostic vers un flux distinct de la sortie principale du programme. Les programmeurs font cela pour séparer les messages d'erreur de la sortie standard, rendant les deux plus faciles à lire et à traiter séparément, surtout lors du débogage ou de la journalisation de l'exécution des programmes.
 
-```C
+## Comment faire :
+
+En C, le flux `stderr` est utilisé pour écrire des messages d'erreur. Contrairement à l'écriture sur la sortie standard avec `printf`, l'écriture sur `stderr` peut se faire en utilisant `fprintf` ou `fputs`. Voici comment vous pouvez le faire :
+
+```c
 #include <stdio.h>
 
 int main() {
-    fprintf(stderr, "Ceci est une erreur!\n");
+    fprintf(stderr, "Ceci est un message d'erreur.\n");
+
+    fputs("Ceci est un autre message d'erreur.\n", stderr);
+    
     return 0;
 }
-
-// Sortie attendue : Ceci est une erreur!
 ```
 
-Autre méthode simple :
-
-```C
-#include <stdio.h>
-
-int main() {
-    fputs("Encore une erreur!\n", stderr);
-    return 0;
-}
-
-// Sortie attendue : Encore une erreur!
+Exemple de sortie (sur stderr) :
+```
+Ceci est un message d'erreur.
+Ceci est un autre message d'erreur.
 ```
 
-## Deep Dive (Plongée en profondeur) :
-Historiquement, `stderr` est séparé de `stdout` pour que les erreurs puissent être traitées différemment. Par exemple, en les redirigeant vers un fichier ou un outil de journalisation sans mélanger avec la sortie standard.
+Il est important de noter que bien que la sortie semble similaire à `stdout` dans la console, lorsque la redirection est utilisée dans le terminal, la distinction devient claire :
 
-Il existe des alternatives comme écrire dans un fichier de log ou utiliser `syslog` sur les systèmes UNIX pour gérer les erreurs.
+```sh
+$ ./votre_programme > sortie.txt
+```
 
-Techniquement, `stderr` est un flux tamponné, mais en pratique, souvent configuré pour être à vidage automatique (flush) après chaque sortie pour que les messages d'erreur apparaissent immédiatement.
+Cette commande redirige uniquement la sortie standard vers `sortie.txt`, tandis que les messages d'erreur apparaîtront toujours à l'écran.
 
-## See Also (Voir aussi) :
-- Documentation man de `fprintf`: http://man7.org/linux/man-pages/man3/fprintf.3.html
-- GNU C Library - Standard Streams: https://www.gnu.org/software/libc/manual/html_node/Standard-Streams.html
-- Open Group Base Specifications - `stderr`: https://pubs.opengroup.org/onlinepubs/009695399/functions/stderr.html
+## Approfondissement
+
+La distinction entre `stdout` et `stderr` dans les systèmes basés sur Unix remonte aux premiers jours de C et Unix. Cette séparation permet une gestion des erreurs et une journalisation plus robustes, car elle permet aux programmeurs de rediriger les messages d'erreur indépendamment de la sortie standard du programme. Alors que `stderr` n'est pas tamponné par défaut pour garantir une sortie immédiate des messages d'erreur, ce qui aide au débogage des plantages et d'autres problèmes critiques, `stdout` est généralement tamponné, ce qui signifie que sa sortie pourrait être retardée jusqu'à ce que le tampon soit vidé (par exemple, à l'achèvement du programme ou à la vidange manuelle).
+
+Dans les applications modernes, écrire sur `stderr` reste pertinent, en particulier pour les outils en ligne de commande et les applications serveur où la distinction entre les messages de journalisation réguliers et les erreurs est cruciale. Cependant, pour une gestion des erreurs plus complexe, en particulier dans les applications GUI ou là où des mécanismes de journalisation plus sophistiqués sont nécessaires, les programmeurs pourraient utiliser des bibliothèques de journalisation dédiées qui offrent plus de contrôle sur le formatage des messages, les destinations (par exemple, fichiers, réseau) et les niveaux de gravité (info, avertissement, erreur, etc.).
+
+Bien que `stderr` fournisse un mécanisme fondamental pour le signalement d'erreurs en C, l'évolution des pratiques de programmation et la disponibilité de cadres de journalisation avancés signifient qu'il est souvent juste le point de départ pour les stratégies modernes de gestion des erreurs.

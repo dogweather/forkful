@@ -1,75 +1,80 @@
 ---
 title:                "将代码组织成函数"
-date:                  2024-01-26T01:09:30.448861-07:00
-model:                 gpt-4-1106-preview
+date:                  2024-02-03T17:59:13.926767-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "将代码组织成函数"
-
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/c/organizing-code-into-functions.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## 什么 & 为什么?
-将代码组织成函数，是指将代码拆分成可以重复使用的执行特定任务的代码块。这使得代码更加易读、易于调试和维护。
+## 何为函数与为何使用函数
 
-## 如何操作:
-我们来看一个简单的例子：比如，你想要多次计算两个数字之和。
+在 C 语言中，将代码组织成函数包含了将复杂任务分解成更小、可重用的代码块的过程。这种做法提高了代码的可读性，简化了调试过程，并促进了代码重用，使得应用程序更加模块化且易于维护。
 
-不使用函数：
-```C
+## 如何做：
+
+在 C 中，一个函数通过其返回类型、名称和参数（如果有的话）来声明，之后跟着一块代码块。让我们从一个简单的例子开始：一个加法函数，用来计算两个整数的和。
+
+```c
 #include <stdio.h>
+
+// 函数声明
+int add(int a, int b);
 
 int main() {
-    int sum1 = 5 + 3;
-    printf("Sum1: %d\n", sum1);
-
-    int sum2 = 2 + 8;
-    printf("Sum2: %d\n", sum2);
-
-    // 这里有更多的加法运算...
-
-    return 0;
+  int sum = add(5, 3);
+  printf("总和是: %d\n", sum);
+  return 0;
 }
-```
 
-使用函数：
-```C
-#include <stdio.h>
-
+// 函数定义
 int add(int a, int b) {
-    return a + b;
-}
-
-int main() {
-    int sum1 = add(5, 3);
-    printf("Sum1: %d\n", sum1);
-
-    int sum2 = add(2, 8);
-    printf("Sum2: %d\n", sum2);
-
-    // 使用add()函数进行更多的加法运算...
-
-    return 0;
+  return a + b;
 }
 ```
 
 输出：
 ```
-Sum1: 8
-Sum2: 10
+总和是: 8
 ```
 
-## 深入了解
-在C语言拥有函数之前，编程通常是以线性方式进行的，就像食谱一样。但随着程序的增长，代码复制成为了问题。函数成为了解决方案 - 它们允许我们在程序的不同部分执行相同的代码块，而不需要每次都重写。这不仅节省了空间，而且在进行更新时也节省了时间：在一个地方修改函数，使用它的代码的每个部分都会得到更新。
+现在，让我们来看一个更复杂的例子，这个例子涉及到一个自定义的数据类型。这个函数计算一个矩形的面积。
 
-函数的替代品可能包括内联代码、宏，或者复制粘贴式编码，但这些可能导致代码臃肿、容易出错，且难以维护。相比之下，函数封装了功能，定义了清晰的接口，并且可以通过恰当使用作用域来减少副作用。
+```c
+#include <stdio.h>
 
-在实现函数时，考虑一些细节：一是尝试让它们只做一件事 - 这被称为单一职责原则。二是名称很重要 - 为函数及其参数选择描述性的名称，使您的代码自解释。
+// 为矩形定义一个结构
+typedef struct {
+  int width;
+  int height;
+} Rectangle;
 
-## 参见
-想了解更多C语言中的函数，可以看看这些：
+// 一个计算矩形面积的函数
+int calculateArea(Rectangle rect) {
+  return rect.width * rect.height;
+}
 
-- C标准库参考：https://en.cppreference.com/w/c/header
-- 《C程序设计：现代方法》作者：K.N. King：一本深入讨论函数的书。
-- Learn-C.org：函数部分：https://www.learn-c.org/en/Functions
+int main() {
+  Rectangle myRect = {5, 10};
+  int area = calculateArea(myRect);
+  printf("矩形的面积是: %d\n", area);
+  return 0;
+}
+```
+
+输出：
+```
+矩形的面积是: 50
+```
+
+## 深入探讨
+
+C 语言中的函数概念，是从早期编程实践中继承过来的，对于结构化编程至关重要。函数允许开发者抽象细节，管理复杂性，并逻辑地组织他们的代码。自从其诞生之日起，函数就已经是 C 语言中的核心构造，影响了众多其他语言。
+
+然而，随着编程范式的演变，像 C++ 和 Java 这样的面向对象编程（OOP）语言，通过与对象相关联的方法扩展了函数的概念。尽管 C 语言不直接支持面向对象编程，但通过仔细地构建函数和数据，可以模拟面向对象的设计。
+
+在现代编程中，函数仍然至关重要，但随着编译器优化和语言特性的进步，重点可能会转向 C++ 中的内联函数和模板或像 Python 和 JavaScript 这样的语言中的 lambda 表达式。这些提供了更多的灵活性，并且经常更简洁的语法来实现类似的模块化和可重用性。然而，通过在 C 语言中组织代码入函数学到的基本原则是普遍适用的，且构成了高效和有效软件开发的基础。

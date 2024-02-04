@@ -1,67 +1,67 @@
 ---
-title:                "Einen HTTP-Request senden"
-date:                  2024-01-20T17:59:17.662591-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Einen HTTP-Request senden"
-
+title:                "Eine HTTP-Anforderung senden"
+date:                  2024-02-03T18:08:37.581063-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Eine HTTP-Anforderung senden"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/c/sending-an-http-request.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Was & Warum?
 
-HTTP-Anfragen ermöglichen die Kommunikation mit Webservern – es ist, als würdest du mit dem Server plaudern. Programmiere verwenden sie, um Daten zu senden und zu empfangen; das ist essenziell für Web-Interaktionen.
+Das Senden einer HTTP-Anfrage umfasst das Erstellen und Versenden einer Anfrage an einen Webserver, um Daten abzurufen oder zu übermitteln. Programmierer tun dies in C, um mit Web-APIs zu interagieren, Webseiten herunterzuladen oder direkt aus ihren Anwendungen heraus mit anderen vernetzten Diensten zu kommunizieren.
 
-## Wie geht das:
+## Wie:
 
-Hier ein simples Beispiel in C, um eine GET-Anfrage zu senden. Vorher `libcurl` installieren:
+Um eine HTTP-Anfrage in C zu senden, stützt man sich in der Regel auf Bibliotheken wie libcurl, da C keine integrierte Unterstützung für Webprotokolle bietet. Hier ist ein einfaches Beispiel, das libcurl verwendet, um eine GET-Anfrage durchzuführen:
 
-```C
+Zuerst stellen Sie sicher, dass libcurl auf Ihrem System installiert ist. Danach binden Sie die notwendigen Header ein und verlinken in Ihrer Quelldatei gegen die libcurl-Bibliothek:
+
+```c
 #include <stdio.h>
 #include <curl/curl.h>
 
 int main(void) {
-    CURL *curl = curl_easy_init();
-    if(curl) {
-        curl_easy_setopt(curl, CURLOPT_URL, "http://example.com");
-        // Füge hier noch andere Optionen hinzu, falls nötig
-        CURLcode res = curl_easy_perform(curl);
+    CURL *curl;
+    CURLcode res;
 
-        if(res != CURLE_OK) {
-            fprintf(stderr, "curl_easy_perform() failed: %s\n", curl_easy_strerror(res));
-        }
+    curl = curl_easy_init(); // Initialisieren eines libcurl-Handles
+    if(curl) {
+        // Festlegen der URL, die das libcurl-Handle erhält
+        curl_easy_setopt(curl, CURLOPT_URL, "http://example.com");
+        // Definieren eines Callbacks, um die Daten zu erhalten
+        curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, NULL); 
+        
+        // Die Anfrage ausführen, res erhält den Rückgabecode
+        res = curl_easy_perform(curl);
+        // Auf Fehler überprüfen
+        if(res != CURLE_OK)
+            fprintf(stderr, "curl_easy_perform() fehlgeschlagen: %s\n",
+                    curl_easy_strerror(res));
+
+        // Immer aufräumen
         curl_easy_cleanup(curl);
     }
     return 0;
 }
 ```
 
-Beispiele der Ausgabe findest du nicht hier – es hängt davon ab, was `http://example.com` zurückgibt.
+Kompilieren Sie dies mit etwas Ähnlichem wie `gcc -o http_request http_request.c -lcurl`, die Ausführung sollte eine einfache GET-Anfrage an "http://example.com" durchführen.
 
-## Tiefere Einblicke
+### Ausgabebeispiel
 
-Früher war HTTP-Kommunikation nur über das korrekte Schreiben von Sockets möglich – ein mühsamer Prozess. Aber dann kam `libcurl`, eine standfeste Bibliothek für solche Aufgaben. 
+Da das Beispiel die Antwort des Servers nicht verarbeitet, wird die Ausführung keine sichtbare Ausgabe über potenzielle Fehlermeldungen hinaus produzieren. Die Integration der Callback-Funktion zur Verarbeitung empfangener Daten ist für eine sinnvolle Interaktion unerlässlich.
 
-Alternativen? Klar: `libhttp`, `Poco C++ Libraries` und für die Mutigen, rein manuelle Sockets.
+## Vertiefung
 
-Die Implementierung über `libcurl` ist beliebt, weil es die Komplexität nimmt. Es kümmert sich um URLs, Header, Keep-Alive und mehr. Ohne solche Hilfsmittel musst du dich mit TCP/IP-Stacks und HTTP-Protokollen herumschlagen.
+Das Konzept, HTTP-Anfragen aus einem C-Programm zu senden, basiert auf den leistungsfähigen Netzwerkfähigkeiten der Sprache, gekoppelt mit externen Bibliotheken, da C selbst eine Low-Level-Sprache ohne integrierten High-Level-Internetprotokollsupport ist. Historisch gesehen würden Programmierer manuell die Socket-Programmierung in C nutzen, ein komplexer und mühsamer Prozess, um mit Webservern zu interagieren, bevor dedizierte Bibliotheken wie libcurl aufkamen.
 
-Die Ausführung einer HTTP-Anfrage in C geht eigentlich um drei Schritte:
+Libcurl, aufbauend auf C, vereinfacht den Prozess, indem es die mühsamen Details der Socket-Programmierung und die Spezifika des HTTP-Protokolls abstrahiert. Es unterstützt eine Vielzahl von Protokollen über HTTP/HTTPS hinaus, einschließlich FTP, SMTP und mehr, was es zu einem vielseitigen Werkzeug für die Netzwerkprogrammierung in C macht.
 
-1. Initialisiere die Bibliothek (hier `libcurl`).
-2. Setze die nötigen Optionen (URL, HTTP-Methode, Header, etc.).
-3. Führe die Anfrage aus und handle die Antwort.
+Während die Verwendung von libcurl für HTTP-Anfragen in C praktisch ist, tendiert die moderne Programmierung oft zu Sprachen mit integrierter Unterstützung für solche Aufgaben, wie Python (Requests-Bibliothek) oder JavaScript (Fetch API). Diese Alternativen bieten eine einfachere, lesbarere Syntax auf Kosten der granularen Kontrolle und Leistungsoptimierungen, die in C durch direkte Socket-Manipulation und fein abgestimmte Bibliotheksnutzung möglich sind.
 
-Jeder Schritt hat potenzielle Fallstricke – Fehlerbehandlung ist ein Muss.
-
-## Weiterführende Quellen
-
-Sieh dir die Dokumente an, die fürs Herz der HTTP-Anfragen in C sind:
-
-- [libcurl Documentation](https://curl.haxx.se/libcurl/c/)
-- [HTTP Made Really Easy](https://www.jmarshall.com/easy/http/)
-- [Curl Introduction Tutorial](https://curl.se/docs/httpscripting.html)
-
-Diese Links erklären, wie du mit `libcurl` loslegst, zeigen dir die Grundlagen von HTTP und lehren dich fortgeschrittene Skripttechniken mit `curl`.
+Für kritische Leistungsanwendungen oder dort, wo direkte systemnahe Interaktion erforderlich ist, bleibt C eine praktikable Option, insbesondere mit libcurl, das die Komplexitäten der Webkommunikation glättet. Jedoch, für die meisten High-Level-Webinteraktionen könnte die Erkundung spezialisierterer Webprogrammiersprachen effizienter sein.

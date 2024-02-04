@@ -1,73 +1,99 @@
 ---
-title:                "Korzystanie z tablic asocjacyjnych"
-date:                  2024-01-30T19:10:33.958024-07:00
+title:                "Używanie tablic asocjacyjnych"
+date:                  2024-02-03T18:10:55.008600-07:00
 model:                 gpt-4-0125-preview
-simple_title:         "Korzystanie z tablic asocjacyjnych"
-
+simple_title:         "Używanie tablic asocjacyjnych"
 tag:                  "Data Structures"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/c/using-associative-arrays.md"
 changelog:
-  - 2024-01-30, gpt-4-0125-preview, translated from English
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
+## Co & Dlaczego?
 
-Tablice asocjacyjne, czyli mapy hash, to pary klucz-wartość, które pozwalają na przechowywanie i odzyskiwanie danych za pomocą klucza. Są niezwykle użyteczne w języku C, ponieważ umożliwiają szybszy dostęp do danych w porównaniu do list, szczególnie gdy mamy do czynienia z dużą ilością danych.
+Tablice asocjacyjne, znane w innych językach jako mapy lub słowniki, są parami klucz-wartość używanymi do efektywnego wyszukiwania i manipulowania danymi. W przeciwieństwie do tradycyjnych tablic, które używają indeksów całkowitoliczbowych, tablice asocjacyjne używają kluczy, co czyni dostęp do danych bardziej intuicyjnym i elastycznym dla programistów.
 
 ## Jak to zrobić:
 
-C nie ma wbudowanego wsparcia dla tablic asocjacyjnych tak jak niektóre inne języki, ale możemy użyć struktur i niektórych funkcji bibliotecznych, aby uzyskać podobną funkcjonalność. Oto prosta implementacja z użyciem biblioteki `uthash`, którą musisz dołączyć do swojego projektu.
+C nie posiada wbudowanego wsparcia dla tablic asocjacyjnych, jak niektóre języki wyższego poziomu, ale można je symulować za pomocą struktur i haszowania. Poniżej znajduje się uproszczony przykład użycia kombinacji struktury i prostej funkcji haszującej do implementacji tablicy asocjacyjnej do przechowywania i dostępu do liczb całkowitych za pomocą kluczy typu string.
 
-Najpierw zdefiniuj strukturę do przechowywania par klucz-wartość:
+Najpierw zdefiniuj strukturę do reprezentowania pojedynczej pary klucz-wartość oraz inną do reprezentowania samej tablicy asocjacyjnej:
 
-```C
+```c
 #include <stdio.h>
-#include "uthash.h"
+#include <stdlib.h>
+#include <string.h>
+
+#define TABLE_SIZE 128
 
 typedef struct {
-    int id; // To będzie nasz klucz
-    char name[10]; // To jest wartość skojarzona z naszym kluczem
-    UT_hash_handle hh; // Sprawia, że ta struktura jest haszowalna
-} osoba;
-```
+    char* key;
+    int value;
+} ParaKluczWartosc;
 
-Następnie dodajmy kilka wpisów i odzyskajmy je:
+typedef struct {
+    ParaKluczWartosc* items[TABLE_SIZE];
+} TablicaAsoc;
 
-```C
-int main() {
-    osoba *moje_osoby = NULL, *s;
+unsigned int hash(char* key) {
+    unsigned long int value = 0;
+    unsigned int i = 0;
+    unsigned int key_len = strlen(key);
 
-    // Dodawanie wpisu
-    s = (osoba*)malloc(sizeof(osoba));
-    s->id = 1;
-    strcpy(s->name, "Alicja");
-    HASH_ADD_INT(moje_osoby, id, s);
-
-    // Odzyskiwanie wpisu
-    int user_id = 1;
-    HASH_FIND_INT(moje_osoby, &user_id, s);
-    if (s) {
-        printf("Znaleziono: %s\n", s->name);
+    for (; i < key_len; ++i) {
+        value = value * 37 + key[i];
     }
-    
+
+    value = value % TABLE_SIZE;
+
+    return value;
+}
+
+void initArray(TablicaAsoc* array) {
+    for (int i = 0; i < TABLE_SIZE; ++i) {
+        array->items[i] = NULL;
+    }
+}
+
+void insert(TablicaAsoc* array, char* key, int value) {
+    unsigned int slot = hash(key);
+
+    ParaKluczWartosc* item = (ParaKluczWartosc*)malloc(sizeof(ParaKluczWartosc));
+    item->key = strdup(key);
+    item->value = value;
+
+    array->items[slot] = item;
+}
+
+int find(TablicaAsoc* array, char* key) {
+    unsigned int slot = hash(key);
+
+    if (array->items[slot]) {
+        return array->items[slot]->value;
+    }
+    return -1;
+}
+
+int main() {
+    TablicaAsoc a;
+    initArray(&a);
+
+    insert(&a, "key1", 1);
+    insert(&a, "key2", 2);
+
+    printf("%d\n", find(&a, "key1")); // Wyjście: 1
+    printf("%d\n", find(&a, "key2")); // Wyjście: 2
+
     return 0;
 }
 ```
 
-Przykładowe wyjście:
+Przykład demonstruje podstawowe operacje: inicjalizację tablicy asocjacyjnej, wstawianie par klucz-wartość i wyszukiwanie wartości po kluczach. Zauważ, że ten kod nie obsługuje kolizji i jest przeznaczony do celów edukacyjnych.
 
-```
-Znaleziono: Alicja
-```
+## Pogłębienie
 
-Nie zapomnij zwolnić przydzielonej pamięci i dealokować tabelę hash po zakończeniu, aby uniknąć wycieków pamięci.
+Koncepcja tablic asocjacyjnych jest starsza niż język C, ale niskopoziomowy charakter tego języka nie wspiera ich bezpośrednio jako wbudowanych typów. Zachęca to do głębszego zrozumienia struktur danych i algorytmów, w tym mechanizmów haszowania dla efektywnej mapowania klucz-wartość. Wiele bibliotek i frameworków C oferuje bardziej wyrafinowane podejścia do implementacji tablic asocjacyjnych, takie jak `GHashTable` z GLib, która zapewnia solidną implementację kompletną z obsługą kolizji, dynamicznym skalowaniem i wsparciem dla dowolnych typów kluczy i wartości.
 
-## Pogłębiona analiza
-
-Chociaż tablice asocjacyjne nie są rodzime dla języka C, biblioteki takie jak `uthash` dobrze wypełniają tę lukę, oferując dość prosty sposób na korzystanie z tej funkcjonalności. Historycznie, programiści C musieli implementować własne wersje tych struktur danych, co prowadziło do różnych i często skomplikowanych implementacji, szczególnie dla tych, którzy dopiero zaczynają z językiem.
-
-Pamiętaj, że efektywność używania tablic asocjacyjnych w C w dużej mierze zależy od tego, jak dobrze funkcja hash rozkłada wartości w tabeli, aby zminimalizować kolizje. Chociaż biblioteki takie jak `uthash` oferują dobrą równowagę między łatwością użycia a wydajnością, w krytycznych aplikacjach, gdzie wydajność jest najważniejsza, możesz chcieć dostosować lub zaimplementować własną tabelę hash.
-
-Dla aplikacji wymagających maksymalnej wydajności, alternatywne struktury danych, a nawet inne języki programowania z wbudowanym wsparciem dla tablic asocjacyjnych, mogą być lepszym wyborem. Jednak w wielu sytuacjach, szczególnie gdy już pracujesz w środowisku C, korzystanie z biblioteki takiej jak `uthash` zapewnia praktyczną równowagę między wydajnością a wygodą.
+Chociaż ręczna konstrukcja tablic asocjacyjnych w C może wydawać się uciążliwa w porównaniu z językami mającymi wbudowane wsparcie, oferuje ona bezcenne wglądy w działanie struktur danych, zaostrzając umiejętności programisty w rozwiązywaniu problemów i optymalizacji. Jednakże, dla kodu produkcyjnego lub bardziej złożonych aplikacji, korzystanie z istniejących bibliotek jak GLib często jest bardziej praktycznym i efektywnym czasowo podejściem.

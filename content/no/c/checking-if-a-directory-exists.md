@@ -1,58 +1,64 @@
 ---
-title:                "Sjekke om en mappe finnes"
-date:                  2024-01-19
-simple_title:         "Sjekke om en mappe finnes"
-
+title:                "Sjekke om en mappe eksisterer"
+date:                  2024-02-03T17:52:44.094051-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Sjekke om en mappe eksisterer"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/c/checking-if-a-directory-exists.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Sjekke om en mappe eksisterer er å verifisere at en spesifikk mappe faktisk finnes i filsystemet. Programmerere gjør dette for å unngå feil ved filoperasjoner, som å lese fra eller skrive til en ikke-eksisterende mappe.
 
-## Slik gjør du:
-Bruk `stat`-strukturen og `opendir` fra `<sys/stat.h>` og `<dirent.h>` bibliotekene for å sjekke mappen. Her er et eksempel:
+Å sjekke om en mappe eksisterer i C innebærer å forespørre filsystemet for å verifisere om en spesifikk bane leder til en mappe. Programmerere utfører ofte denne operasjonen for å sikre at filoperasjoner (som å lese fra eller skrive til filer) er rettet mot gyldige baner, for å forhindre feil og forbedre programvarens pålitelighet.
+
+## Hvordan:
+
+I C kan eksistensen av en mappe sjekkes ved å bruke `stat`-funksjonen, som henter informasjon om filen eller mappen på en spesifisert bane. Makroen `S_ISDIR` fra `sys/stat.h` brukes deretter for å vurdere om den hentede informasjonen tilsvarer en mappe.
+
+Slik kan du bruke `stat` og `S_ISDIR` for å sjekke om en mappe eksisterer:
 
 ```c
 #include <stdio.h>
 #include <sys/stat.h>
-#include <dirent.h>
-
-int directory_exists(const char *path) {
-    struct stat statbuf;
-    if (stat(path, &statbuf) != 0) return 0; // Kunne ikke få status, anta at den ikke eksisterer
-    return S_ISDIR(statbuf.st_mode); // Sjekk om det er en mappe
-}
 
 int main() {
-    const char *path = "/min/mappe";
-    if (directory_exists(path)) {
-        printf("Mappen '%s' eksisterer.\n", path);
+    struct stat stats;
+    
+    // Banen til mappen som skal sjekkes
+    char *dirPath = "/path/to/directory";
+
+    // Få statusen til banen
+    int resultat = stat(dirPath, &stats);
+
+    // Sjekk om mappen eksisterer
+    if (resultat == 0 && S_ISDIR(stats.st_mode)) {
+        printf("Mappen eksisterer.\n");
     } else {
-        printf("Mappen '%s' finnes ikke.\n", path);
+        printf("Mappen eksisterer ikke.\n");
     }
+
     return 0;
 }
 ```
-Mulig utskrift kan være:
+
+Eksempel på utskrift:
 ```
-Mappen '/min/mappe' eksisterer.
-```
-Eller:
-```
-Mappen '/min/mappe' finnes ikke.
+Mappen eksisterer.
 ```
 
-## Dypdykk
-Å sjekke for eksistensen av en mappe har vært en del av programmeringsrutinene siden tidlige dager av Unix. Den tradisjonelle `stat`-funksjonen gir detaljert informasjon om filattributter, som kan brukes til å sjekke om en filsti korresponderer til en mappe. Selv om `stat` er effektiv, kan den møte race conditions, hvor mappens status kan endre seg mellom sjekken og den etterfølgende operasjonen.
+Eller, hvis mappen ikke eksisterer:
+```
+Mappen eksisterer ikke.
+```
 
-Alternativt, `opendir()` fra `<dirent.h>` sjekker også eksistensen av en mappe og er mer rettet mot katalogoperasjoner. En annen vanlig tilnærming på noen systemer er å bruke `access()` eller `faccessat()` med `R_OK` for å sjekke lesbarhet.
+## Dypdykk:
 
-I programmeringssammenheng må vi alltid vurdere både portabilitet og ytelse. Noen metoder kan være mer bærekraftige på tvers av forskjellige plattformer, mens andre kan være raskere, men mindre kompatible.
+`stat`-strukturen og -funksjonen har vært en del av C programmeringsspråket i flere tiår, og stammer fra Unix. De tilbyr en standardisert måte å hente filsysteminformasjon på, som, til tross for å være relativt lavnivå, er mye brukt på grunn av sin enkelhet og direkte tilgang til filsystemets metadata.
 
-## Se også
-- POSIX standarden for filsystemfunksjoner: http://pubs.opengroup.org/onlinepubs/9699919799/
-- C Standard Library dokumentasjon for `<sys/stat.h>`: https://en.cppreference.com/w/c/io
-- GNU C Library Manual for Directory Access: https://www.gnu.org/software/libc/manual/html_node/Directory-Access.html
+Historisk sett har sjekking av eksistensen og egenskapene til filer og mapper med `stat` og dets derivater (som `fstat` og `lstat`) vært en vanlig tilnærming. Men disse funksjonene kommuniserer direkte med OS-kjernen, noe som kan introdusere overhead og potensielle feil hvis de ikke håndteres riktig.
+
+For nye prosjekter eller ved arbeid i høynivå-scenarioer, kan programmerere velge mer abstraherte filhåndteringsmekanismer levert av moderne rammer eller biblioteker som håndterer feil mer nådig og gir et enklere API. Likevel, å forstå og kunne bruke `stat` forblir en verdifull ferdighet for scenarioer som krever direkte manipulasjon av filsystemet, som systemprogrammering eller når man arbeider i begrensede miljøer hvor avhengighet av store biblioteker er upraktisk.

@@ -1,45 +1,46 @@
 ---
 title:                "문자열의 길이 찾기"
-date:                  2024-01-20T17:46:55.293462-07:00
-model:                 gpt-4-1106-preview
+date:                  2024-02-03T17:56:42.641716-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "문자열의 길이 찾기"
-
 tag:                  "Strings"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/c/finding-the-length-of-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (무엇과 왜?)
-문자열 길이 찾기란, 문자열에 포함된 문자의 수를 찾는 것입니다. 프로그래머는 데이터 처리나 검증 시 이 정보를 활용합니다.
+## 무엇 & 왜?
+C에서 문자열의 길이를 찾는 것은 널 종료 문자 `\0` 전의 문자 수를 결정하는 것을 포함합니다. 프로그래머는 버퍼 오버플로와 같은 오류에 직면하지 않고 문자열을 올바르게 조작하기 위해 이 작업을 수행합니다. 버퍼 오버플로는 보안 취약점이나 프로그램 충돌로 이어질 수 있습니다.
 
-## How to: (어떻게 하나요?)
+## 방법:
+C에서는 `strlen()` 표준 라이브러리 함수를 흔히 사용하여 문자열의 길이를 찾습니다. 다음은 간단한 예입니다:
+
 ```c
 #include <stdio.h>
 #include <string.h>
 
 int main() {
-    char myString[] = "안녕하세요";
-    int length = strlen(myString);
+    char myString[] = "Hello, World!";
+    size_t length = strlen(myString);
     
-    printf("The length of the string is: %d\n", length);
+    printf("Length of '%s' is %zu.\n", myString, length);
+    
     return 0;
 }
 ```
-출력은 바이트 단위의 길이를 보여줍니다. "안녕하세요"는 10바이트입니다 (ASCII 기준).
-```c
-The length of the string is: 10
+
+**샘플 출력:**
+```
+'Hello, World!'의 길이는 13입니다.
 ```
 
-## Deep Dive (심층 분석)
-문자열 길이를 찾는 방법은 C 언어에서 오래전부터 사용되어 왔습니다. `strlen` 함수는 `<string.h>` 라이브러리에 정의되어 있으며, 널 종료 문자 ('\0')를 만날 때까지 문자를 세어 길이를 찾습니다. 널 종료 문자는 문자열의 끝을 나타내는 표시입니다.
+이 예제에서 `strlen()`은 문자열(`myString`)을 입력으로 받아 널 종료자를 제외한 길이를 반환합니다. 길이 변수에 `size_t`를 사용하는 것이 권장됩니다. 왜냐하면 이는 부호 없는 정수 타입이기 때문에 시스템에서 가능한 가장 큰 객체의 크기를 나타낼 수 있기 때문입니다.
 
-대안으로, 문자열을 순회하며 직접 길이를 세는 방법도 있으나, 성능이 `strlen`보다 떨어질 수 있습니다. C++이나 다른 언어들은 문자열에 길이를 저장하는 메커니즘을 갖고 있지만, C 언어는 그렇지 않습니다.
+## 심화 탐구:
+`strlen()` 함수는 C 언어가 처음 생겼을 때부터 C 표준 라이브러리의 일부였습니다. 내부적으로는 널 종료자를 만날 때까지 문자열을 따라가며 카운터를 증가시킴으로써 작동합니다. 하지만, 이러한 단순성에는 성능 고려 사항이 따릅니다: `strlen()`은 런타임에 문자 수를 계산하기 때문에, 예를 들어 반복문에서 같은 문자열에 대해 반복해서 호출하는 것은 비효율적입니다.
 
-`strlen`은 바이트 단위로 길이를 측정합니다. 이는 멀티바이트 문자(예: 한글)를 처리할 때 길이가 의도하지 않게 길게 측정될 수 있음을 의미합니다. C11 표준에서는 멀티바이트 문자열을 처리할 수 있는 함수들을 추가하였지만, 여전히 많은 프로그램들이 기본적인 `strlen`을 사용합니다.
+보안 측면에서 `strlen()`과 다른 C 문자열 처리 함수들은 기본적으로 버퍼 오버런을 확인하지 않습니다. 따라서 취약점을 피하려면 주의 깊은 프로그래밍이 필수적입니다. 다른 언어의 현대적인 대안, 예를 들어 길이를 포함하는 문자열 타입이나 기본적으로 안전한 버퍼 처리를 사용하는 것은 이러한 위험과 비효율성을 일부 제거합니다.
 
-## See Also (더 보기)
-- C 표준 라이브러리 설명서: [https://en.cppreference.com/w/c/string/byte/strlen](https://en.cppreference.com/w/c/string/byte/strlen)
-- 문자열 처리에 대한 더 깊은 이해를 위한 페이지: [https://www.tutorialspoint.com/cprogramming/c_strings.htm](https://www.tutorialspoint.com/cprogramming/c_strings.htm)
-- 멀티바이트 문자열 처리에 대한 정보: [https://en.cppreference.com/w/c/string/multibyte](https://en.cppreference.com/w/c/string/multibyte)
+한계에도 불구하고, C에서의 `strlen()` 및 수동 문자열 처리에 대한 이해는 특히 저수준 코드를 작업할 때나 성능 및 메모리 제어가 매우 중요할 때 프로그래머에게 중요합니다. 또한 다른 언어에서의 상위 수준 문자열 추상화의 작동 방식에 대한 귀중한 통찰을 제공합니다.

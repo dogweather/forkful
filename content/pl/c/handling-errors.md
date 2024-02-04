@@ -1,55 +1,85 @@
 ---
 title:                "Obsługa błędów"
-date:                  2024-01-26T00:49:55.625916-07:00
-model:                 gpt-4-1106-preview
+date:                  2024-02-03T17:58:17.723308-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Obsługa błędów"
-
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/c/handling-errors.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Co i dlaczego?
-Obsługa błędów w języku C polega na oczekiwaniu na niespodziewane. Chroni to programy przed wpadnięciem w chaos, gdy napotkają problemy. Programiści robią to, aby elegancko radzić sobie z błędami i utrzymać niezawodność swojego kodu.
+
+Obsługa błędów w C polega na wykrywaniu i reagowaniu na nietypowe warunki, które pojawiają się podczas wykonania programu. Programiści robią to, aby zapobiegać błędom, awariom i nieprzewidywalnym zachowaniom, zapewniając niezawodne i wydajne funkcjonowanie oprogramowania w różnych scenariuszach.
 
 ## Jak to zrobić:
 
-Zobaczmy, jak to zrobić w C:
+C nie posiada wbudowanego wsparcia dla wyjątków, jak niektóre inne języki. Zamiast tego, opiera się na kilku konwencjonalnych strategiach obsługi błędów, takich jak zwracanie specjalnych wartości przez funkcje oraz ustawianie globalnych zmiennych, takich jak `errno`.
 
-```C
+**Zwracanie specjalnych wartości**
+
+Funkcje mogą sygnalizować błędy, zwracając określoną wartość, która mało prawdopodobne jest aby była prawidłowym wynikiem. Oto przykład z liczbami całkowitymi:
+
+```c
 #include <stdio.h>
-#include <stdlib.h>
-#include <errno.h>
+
+int inverse(int number, double *result) {
+    if (number == 0) {
+        return -1; // Przypadek błędu
+    } else {
+        *result = 1.0 / number;
+        return 0; // Sukces
+    }
+}
 
 int main() {
-    FILE *fp = fopen("nieistniejacyplik.txt", "r");
-    if (fp == NULL) {
-        perror("Błąd otwarcia pliku");
-        return EXIT_FAILURE;
+    double result;
+    if (inverse(0, &result) < 0) {
+        printf("Błąd: Dzielenie przez zero.\n");
+    } else {
+        printf("Odwrotność wynosi: %f\n", result);
     }
-    // Coś zrób z plikiem
-    fclose(fp);
-    return EXIT_SUCCESS;
+    
+    return 0;
 }
 ```
 
-Przykładowy wynik, gdy plik nie istnieje:
+**Wyjście:**
 ```
-Błąd otwarcia pliku: Nie ma takiego pliku ani katalogu
+Błąd: Dzielenie przez zero.
+```
+
+**Sprawdzanie `errno`**
+
+W przypadku funkcji bibliotecznych, zwłaszcza tych, które wchodzą w interakcje z systemem lub OS (jak operacje na plikach), `errno` jest ustawiane gdy wystąpi błąd. Aby go użyć, należy dołączyć `errno.h` oraz sprawdzać `errno` po podejrzanym niepowodzeniu:
+
+```c
+#include <stdio.h>
+#include <errno.h>
+#include <string.h>
+
+int main() {
+    FILE *file = fopen("nonexistent.txt", "r");
+    if (file == NULL) {
+        printf("Błąd otwarcia pliku: %s\n", strerror(errno));
+    }
+    
+    return 0;
+}
+```
+
+**Wyjście:**
+```
+Błąd otwarcia pliku: Nie ma takiego pliku lub katalogu
 ```
 
 ## Dogłębna analiza
 
-W początkowych dniach języka C, obsługa błędów była bardzo podstawowa – głównie kody zwrotne i ręczne sprawdzanie. Wprowadzono `errno`, globalną zmienną aktualizowaną, gdy funkcje zawiodą. Sama w sobie nie jest bezpieczna przy użyciu wątków, dlatego wprowadzono nowsze funkcje `strerror` i `perror` dla lepszego raportowania błędów.
+Historycznie, minimalistyczna konstrukcja języka programowania C wykluczała wbudowany mechanizm obsługi wyjątków, co odzwierciedla jego pochodzenie z programowania systemowego na niskim poziomie, gdzie kluczowe są maksymalna wydajność i kontrola na poziomie sprzętowym. Zamiast tego, C przyjmuje bardziej manualne podejście do obsługi błędów, które pasuje do jego filozofii dawania programistom jak największej kontroli, nawet kosztem wygody.
 
-Alternatywy? Nowoczesny C nie jest ograniczony do `errno`. Istnieją setjmp i longjmp do skoków nielokalnych, gdy nastąpi katastrofa. Niektórzy preferują definiowanie własnych kodów błędów, podczas gdy inni optują za strukturami podobnymi do wyjątków w C++.
+Chociaż to podejście jest zgodne z celami projektowymi C, może również prowadzić do zwięzłego kodu sprawdzającego błędy i potencjalnego pominięcia kontroli błędów, co nowoczesne języki adresują za pomocą strukturalnych mechanizmów obsługi wyjątków. Na przykład, wyjątki w językach takich jak Java czy C# pozwalają na scentralizowane przetwarzanie błędów, czyniąc kod czyściejszym i zarządzanie błędami bardziej bezpośrednie. Jednakże, wyjątki wprowadzają własne obciążenie i złożoność, które mogą nie być idealne dla programowania na poziomie systemowym, gdzie C błyszczy.
 
-Szczegóły implementacji mogą być skomplikowane. Na przykład `errno` jest bezpieczna w systemach zgodnych z POSIX dzięki magii lokalnego magazynu dla wątków (TLS). W systemach wbudowanych, gdzie zasoby są cenne, własna obsługa błędów może być preferowana nad standardowymi podejściami, które mogą zawyżyć rozmiar oprogramowania.
-
-## Zobacz także
-
-- Szczegółowa analiza `errno`: https://en.cppreference.com/w/c/error/errno
-- Dla bezpieczeństwa wątków, zobacz wątki POSIX i errno: http://man7.org/linux/man-pages/man3/pthread_self.3.html
-- Wprowadzenie do setjmp i longjmp: https://www.cplusplus.com/reference/csetjmp/
-- Dla obsługi wyjątków w C++, sprawdź: https://isocpp.org/wiki/faq/exceptions
+Pomimo swojej surowości, ta manualna obsługa błędów w C poinformowała projekt zarządzania błędami w wielu innych językach, oferując model, gdzie wyraźność warunków błędów może prowadzić do bardziej przewidywalnego i łatwiejszego do debugowania kodu. Dla krytycznych systemów, gdzie awarie muszą być zarządzane z gracją, paradygmat obsługi błędów w C—w połączeniu z nowoczesnymi najlepszymi praktykami, takimi jak biblioteki obsługi błędów i konwencje—zapewnia solidność i niezawodność.

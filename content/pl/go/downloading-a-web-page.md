@@ -1,65 +1,73 @@
 ---
 title:                "Pobieranie strony internetowej"
-date:                  2024-01-20T17:44:03.243086-07:00
-model:                 gpt-4-1106-preview
+date:                  2024-02-03T17:56:11.579804-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Pobieranie strony internetowej"
-
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/go/downloading-a-web-page.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Co i Dlaczego?)
-Pobieranie strony internetowej to proces ściągania danych z internetu na swój komputer. Programiści robią to, by przetworzyć informacje, testować aplikacje czy analizować treści.
+## Co i dlaczego?
 
-## How to: (Jak to zrobić:)
-```Go
+Pobieranie strony internetowej polega na pobraniu treści HTML strony internetowej za pośrednictwem protokołu HTTP/HTTPS. Programiści często robią to w celu scrapowania danych, analizy danych lub po prostu programowego interakcji ze stronami internetowymi, aby automatyzować zadania.
+
+## Jak to zrobić:
+
+W języku Go standardowa biblioteka zapewnia potężne narzędzia do wykonywania zapytań internetowych, zwłaszcza pakiet `net/http`. Do pobierania strony internetowej głównie używamy metody `http.Get`. Oto podstawowy przykład:
+
+```go
 package main
 
 import (
-	"fmt"
-	"io"
-	"net/http"
-	"os"
+    "fmt"
+    "io/ioutil"
+    "net/http"
 )
 
 func main() {
-	// Adres URL strony do pobrania
-	url := "http://example.com"
+    url := "http://example.com"
+    response, err := http.Get(url)
+    if err != nil {
+        fmt.Println("Error:", err)
+        return
+    }
+    defer response.Body.Close()
 
-	// Wykonanie żądania HTTP GET
-	response, err := http.Get(url)
-	if err != nil {
-		fmt.Println("Błąd podczas pobierania strony:", err)
-		return
-	}
-	defer response.Body.Close()
+    body, err := ioutil.ReadAll(response.Body)
+    if err != nil {
+        fmt.Println("Error reading body:", err)
+        return
+    }
 
-	// Otworzenie pliku do zapisu
-	file, err := os.Create("example.html")
-	if err != nil {
-		fmt.Println("Błąd podczas tworzenia pliku:", err)
-		return
-	}
-	defer file.Close()
-
-	// Kopiowanie treści do pliku
-	_, err = io.Copy(file, response.Body)
-	if err != nil {
-		fmt.Println("Błąd podczas kopiowania treści:", err)
-		return
-	}
-
-	fmt.Println("Strona została pobrana pomyślnie.")
+    fmt.Println(string(body))
 }
 ```
-Po uruchomieniu, program zapisze zawartość strony z example.com do pliku "example.html".
 
-## Deep Dive (Dogłębna analiza)
-Pobieranie stron internetowych sięga początków Internetu, kiedy to korzystano z protokołów takich jak FTP. Dziś używa się głównie HTTP/HTTPS. Alternatywą dla standardowej biblioteki `net/http` w Go jest użycie zewnętrznych pakietów jak `gorilla/websocket` dla operacji czasu rzeczywistego czy `colly` dla scrapingu. Podczas implementacji ważne jest, aby zwrócić uwagę na obsługę przekierowań, limit czasu połączenia oraz poprawne zarządzanie sesją, zwłaszcza przy stronach dynamicznych.
+Przykładowe wyjście może być treścią HTML `http://example.com`, która jest podstawowym przykładem strony internetowej:
 
-## See Also (Zobacz również)
-- Dokumentacja Go: https://golang.org/pkg/net/http/
-- Wprowadzenie do pakietu `colly`: http://go-colly.org/
-- Przewodnik po `gorilla/websocket`: https://github.com/gorilla/websocket
+```
+<!doctype html>
+<html>
+<head>
+    <title>Example Domain</title>
+...
+</html>
+```
+
+Ten prosty program wykonuje żądanie HTTP GET do określonego adresu URL, a następnie czyta i wyświetla treść odpowiedzi.
+
+Uwaga: We współczesnym programowaniu w Go, `ioutil.ReadAll` jest uznawane za przestarzałe od wersji Go 1.16 na rzecz `io.ReadAll`.
+
+## Pogłębiona analiza
+
+Język Go ma filozofię projektowania, która podkreśla prostotę, efektywność i niezawodne obsługiwanie błędów. Jeśli chodzi o programowanie sieciowe, a konkretnie pobieranie stron internetowych, standardowa biblioteka Go, zwłaszcza `net/http`, jest efektywnie zaprojektowana do obsługi operacji żądań i odpowiedzi HTTP.
+
+Podejście do żądań sieciowych w Go sięga początków języka, czerpiąc koncepcje od poprzedników, ale znacznie poprawiając efektywność i prostotę. Dla pobierania treści, model współbieżności Go z użyciem gorutyn sprawia, że jest to wyjątkowo potężne narzędzie do wykonywania asynchronicznych żądań HTTP, obsługując tysiące żądań równolegle z łatwością.
+
+Historycznie, programiści w dużym stopniu polegali na bibliotekach stron trzecich w innych językach do prostych żądań HTTP, ale standardowa biblioteka Go skutecznie eliminuje tę potrzebę w przypadku większości typowych przypadków użycia. Chociaż dostępne są alternatywy i bardziej kompleksowe pakiety dla skomplikowanych scenariuszy, takie jak `Colly` do scrapowania stron internetowych, natywny pakiet `net/http` często wystarcza do pobierania stron internetowych, czyniąc Go atrakcyjnym wyborem dla programistów poszukujących wbudowanego rozwiązania bez zbędnych dodatków.
+
+W porównaniu z innymi językami, Go oferuje wyjątkowo prosty i wydajny sposób na wykonywanie operacji sieciowych, podkreślając filozofię języka, polegającą na robieniu więcej z mniej. Nawet jeśli dostępne mogą być lepsze alternatywy dla specjalistycznych zadań, wbudowane funkcje Go znajdują równowagę między łatwością użycia a wydajnością, czyniąc go atrakcyjną opcją do pobierania treści internetowych.

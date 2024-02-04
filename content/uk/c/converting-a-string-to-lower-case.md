@@ -1,55 +1,59 @@
 ---
-title:                "Перетворення рядка у нижній регістр"
-date:                  2024-01-20T17:37:50.513942-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Перетворення рядка у нижній регістр"
-
+title:                "Перетворення рядка в нижній регістр"
+date:                  2024-02-03T17:55:07.329187-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Перетворення рядка в нижній регістр"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/c/converting-a-string-to-lower-case.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-## Що та Навіщо?
+## Що та чому?
 
-String to lower case conversion means transforming all letters in a string to their lowercase equivalent. Programmers use it for consistency, case-insensitive comparisons, and data normalization.
+Перетворення рядка в нижній регістр в C включає в себе трансформацію усіх великих літер даного рядка у відповідні малі літери. Програмісти часто виконують цю операцію для стандартизації введення тексту для порівняння, пошукових операцій або просто для естетичної єдності виводу.
 
-## How to:
-## Як це зробити:
+## Як зробити:
 
-Here's a simple C function to convert a string to lower case:
+C не має вбудованої функції для прямого перетворення рядка в нижній регістр, на відміну від деяких мов вищого рівня. Однак, процес може бути легко реалізований за допомогою функцій стандартної бібліотеки C. Нижче наведено поетапний керівництво та приклад, що ілюструє, як перетворити рядок в нижній регістр.
 
-```C
+```c
 #include <stdio.h>
 #include <ctype.h>
 
 void toLowerCase(char *str) {
-    for (int i = 0; str[i]; i++) {
-        str[i] = tolower(str[i]);
+    while (*str) {
+        *str = tolower(*str);
+        str++;
     }
 }
 
 int main() {
-    char myString[] = "Hello, World!";
-    toLowerCase(myString);
-    printf("%s\n", myString); // Output will be: hello, world!
+    char text[] = "Hello, World!";
+    printf("Original: %s\n", text);
+
+    toLowerCase(text);
+    printf("Lowercase: %s\n", text);
+
     return 0;
 }
 ```
 
-## Deep Dive
-## Поглиблений Розгляд
+**Приклад виводу:**
 
-In the early days, computers did not have a standard for character encoding. ASCII became a de facto way to represent English characters. `tolower()` in C is a legacy of this, helping navigate case differences effortlessly.
+```
+Original: Hello, World!
+Lowercase: hello, world!
+```
 
-Alternatives include manually checking each character and converting using character arithmetic, for example `str[i] += 'a' - 'A';`, assuming the character is uppercase. However, this is error-prone and does not cover languages beyond English.
+У цьому прикладі функція `toLowerCase` ітерує через кожен символ у вхідному рядку, перетворюючи його на відповідний нижній регістр за допомогою функції `tolower` з `ctype.h`. Модифікація виконується на місці, змінюючи оригінальний рядок.
 
-Implementation details: `tolower()` comes from `<ctype.h>` and handles conversion according to the current locale setting. This allows it to work with different character sets. It's reliable, well-tested, and portable.
+## Глибше занурення
 
-## See Also
-## Дивись Також
+Функція `tolower`, яка використовується у вищевказаному прикладі, є частиною стандартної бібліотеки C, зокрема у заголовочному файлі `ctype.h`. Вона працює на основі поточної локалі, але для стандартної локалі "C", вона обробляє набір символів ASCII, де 'A' до 'Z' перетворюються на 'a' до 'z'.
 
-- C Standard Library reference: https://en.cppreference.com/w/c/string/byte/tolower
-- Unicode and character sets: https://unicode.org
-- ASCII table and description: http://www.asciitable.com/
+Історично, обробка кодування символів та перетворення регістра в C була тісно пов'язана з набором символів ASCII, це обмежувало її корисність в міжнародних або локалізованих додатках, де поширені символи поза набором ASCII. Сучасні мови програмування можуть пропонувати вбудовані методи рядків для виконання перетворення регістра, враховуючи локаль та символи Юнікоду, яких немає в C за замовчуванням.
+
+У сценаріях, що вимагають широкомасштабної маніпуляції текстом, особливо з не ASCII символами, програмісти можуть розглядати використання бібліотек, які пропонують кращу підтримку інтернаціоналізації, таких як ICU (International Components for Unicode). Однак, для більшості додатків, що працюють з текстом ASCII, представлений підхід є ефективним і простим. Це підкреслює схильність C надавати програмістам контроль над маніпуляцією даними, хоча для цього та потрібно трохи більше зусилля порівняно з мовами вищого рівня.

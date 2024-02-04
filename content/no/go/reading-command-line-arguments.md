@@ -1,48 +1,59 @@
 ---
 title:                "Lese kommandolinjeargumenter"
-date:                  2024-01-20T17:56:03.067401-07:00
-model:                 gpt-4-1106-preview
+date:                  2024-02-03T18:06:17.433775-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Lese kommandolinjeargumenter"
-
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/go/reading-command-line-arguments.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Hva & Hvorfor?
-Å lese kommandolinjeargumenter i Go betyr å hente inn input direkte fra kommandolinjen når du kjører et program. Vi gjør dette for å lage mer fleksible og interaktive programmer hvor brukeren kan påvirke kjøringen uten å endre koden.
+## Hva og hvorfor?
 
-## How to:
-Her er det grunnleggende. Dette Go-scriptet leser argumentene du sender inn.
+Å lese kommandolinjeargumenter i Go involverer å trekke ut argumentene som er gitt til et program under dets kall fra terminalen eller kommandoprompten. Programmerere gjør dette for å tilpasse programutførelsen uten å endre koden, noe som gjør applikasjoner mer fleksible og brukerdrevne.
 
-```Go
+## Hvordan:
+
+Go gir direkte tilgang til kommandolinjeargumenter gjennom `os`-pakken, spesifikt ved bruk av `os.Args`, et array av strenger. Her er et enkelt eksempel for å komme i gang:
+
+```go
 package main
 
 import (
-	"fmt"
-	"os"
+    "fmt"
+    "os"
 )
 
 func main() {
-	args := os.Args[1:] // Hopp over programnavnet
-	for _, arg := range args {
-		fmt.Println(arg)
-	}
+    // os.Args gir tilgang til rå kommandolinjeargumenter
+    fmt.Println("Kommandolinjeargumenter:", os.Args)
+
+    if len(os.Args) > 1 {
+        // Looper gjennom argumenter, hopper over det første (programnavn)
+        for i, arg := range os.Args[1:] {
+            fmt.Printf("Argument %d: %s\n", i+1, arg)
+        }
+    } else {
+        fmt.Println("Ingen kommandolinjeargumenter oppgitt.")
+    }
 }
 ```
 
-Kjør med: `go run . arg1 arg2`, og se dette som utskrift: 
+Eksempel på output når den kjøres med `go run yourprogram.go arg1 arg2` kan se slik ut:
 
 ```
-arg1
-arg2
+Kommandolinjeargumenter: [/tmp/go-build123456789/b001/exe/yourprogram arg1 arg2]
+Argument 1: arg1
+Argument 2: arg2
 ```
 
-## Deep Dive
-Kommandolinjeargumenter har vært i spill siden de gamle dagene av Unix. Go holder det enkelt med `os`-pakken, som har vært del av standardbiblioteket siden starten. Alternativer? Du har `flag`, for mer komplekse behov. Under panseret jobber `os.Args` som en slice, så operasjoner som slicing og iterating er lette å gjøre.
+Dette skriver ut alle argumentene, inkludert programnavnet (ofte på indeks 0), og deretter itererer over hvert oppgitt argument, og skriver dem ut. For mer kontrollert argumenttolkning, kan du vurdere `flag`-pakken for parsing av kommandolinjealternativer.
 
-## See Also
-- Go by Example: https://gobyexample.com/command-line-arguments
-- Go Docs for `flag` package: https://pkg.go.dev/flag 
-- Go Blog on `os` package: https://blog.golang.org/using-go-modules
+## Dypdykk
+
+Historisk sett er tilgang til kommandolinjeargumenter en praksis like gammel som C-programmering, der `argc` og `argv[]` tjener et lignende formål. I Go gjør `os.Args` det enkelt, men med vilje grunnleggende. For mer komplekse scenarioer, som håndtering av flagg eller alternativer, tilbyr Go `flag`-pakken som gir robuste tolkningsmuligheter. Dette kan ses på som et "bedre" alternativ når applikasjonen krever mer enn bare posisjonelle argumenter.
+
+I motsetning til noen skriptspråk som tilbyr innebygd parsing av kommandolinjeargumenter til assosiative arrays eller objekter, krever Gos tilnærming at programmerere enten håndterer parsingen manuelt ved hjelp av `os.Args` for grunnleggende behov, eller å dra nytte av `flag`-pakken for mer avanserte scenarioer. Dette designet reflekterer Gos filosofi om å holde kjernespråket enkelt, samtidig som det tilbyr kraftige standardbiblioteker for vanlige oppgaver. Selv om det kan introdusere en liten læringskurve for de som er vant til innebygd parsing, tilbyr det større fleksibilitet og oppmuntrer til en dypere forståelse av håndtering av kommandolinjeargumenter.

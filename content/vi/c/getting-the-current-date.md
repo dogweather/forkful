@@ -1,58 +1,60 @@
 ---
 title:                "Lấy ngày hiện tại"
-date:                  2024-01-28T22:00:58.987115-07:00
+date:                  2024-02-03T17:57:50.649739-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Lấy ngày hiện tại"
-
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/c/getting-the-current-date.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Gì & Tại sao?
+## Cái gì & Tại sao?
 
-Lấy ngày hiện tại có nghĩa là tìm ra ngày hôm nay dựa vào đồng hồ nội bộ của hệ thống. Các lập trình viên thực hiện việc này để đánh dấu nhật ký, xác minh sự kiện, và ghi dấu thời gian cho dữ liệu.
+Lấy ngày hiện tại trong C đòi hỏi phải truy cập vào thư viện chuẩn C để lấy và định dạng ngày và giờ hiện tại của hệ thống. Các lập trình viên thường cần chức năng này cho việc ghi log, đánh dấu thời gian, hoặc các tính năng lập lịch trong ứng dụng của họ.
 
-## Làm thế nào:
+## Cách làm:
 
-Bạn sẽ muốn bao gồm `time.h` để xử lý thời gian trong C.
+Trong C, tiêu đề `<time.h>` cung cấp các hàm và kiểu cần thiết để làm việc với ngày và giờ. Hàm `time()` lấy thời gian hiện tại, trong khi `localtime()` chuyển thời gian này sang múi giờ địa phương. Để hiển thị ngày, chúng ta sử dụng `strftime()` để định dạng nó thành chuỗi.
 
-```C
+Dưới đây là một ví dụ cơ bản:
+
+```c
 #include <stdio.h>
 #include <time.h>
 
 int main() {
-    time_t t = time(NULL);
-    struct tm tm = *localtime(&t);
+    char buffer[80];
+    time_t rawtime;
+    struct tm *timeinfo;
+
+    // Lấy thời gian hiện tại
+    time(&rawtime);
+    // Chuyển đổi nó sang thời gian địa phương
+    timeinfo = localtime(&rawtime);
     
-    printf("Ngày hiện tại: %02d-%02d-%d\n", tm.tm_mday, tm.tm_mon + 1, tm.tm_year + 1900);
-    
+    // Định dạng ngày và in nó ra
+    strftime(buffer, 80, "Ngày hôm nay là %Y-%m-%d", timeinfo);
+    printf("%s\n", buffer);
+
     return 0;
 }
 ```
 
-Kết quả mẫu:
+Kết quả mẫu có thể nhìn như thế này:
+
 ```
-Ngày hiện tại: 15-04-2023
+Ngày hôm nay là 2023-04-12
 ```
 
-## Sâu hơn
+## Tìm hiểu sâu
 
-Về mặt lịch sử, xử lý thời gian trong C quay trở lại từ những ngày đầu của UNIX, nhờ vào khả năng mạnh mẽ ở cấp độ hệ thống của C. Đối với ngày hiện tại, chúng tôi dựa vào thư viện `time.h`, đã tồn tại kể từ khi C được chuẩn hóa bởi ANSI.
+Việc xử lý thời gian trong C, như được hỗ trợ bởi `<time.h>`, gợi nhớ về những ngày đầu tiên của ngôn ngữ này và hệ thống UNIX. Nó được xây dựng xung quanh kiểu dữ liệu `time_t`, đại diện cho thời gian hiện tại là số giây kể từ Unix Epoch (1 tháng 1 năm 1970). Mặc dù điều này hiệu quả và tương thích trên toàn cầu, nhưng nó cũng có nghĩa là các hàm thời gian của thư viện chuẩn C bị hạn chế bởi phạm vi và độ phân giải của `time_t`.
 
-Loại `time_t` lưu trữ thời gian hiện tại kể từ Epoch (00:00:00 UTC ngày 1 tháng 1 năm 1970) theo giây. Hàm `localtime` chuyển đổi thời gian này thành một `struct tm` chứa ngày và giờ lịch phân tách thành các thành phần của nó.
+Các ứng dụng hiện đại, đặc biệt là những ứng dụng cần dấu thời gian độ phân giải cao hoặc xử lý các ngày xa vào tương lai hoặc quá khứ, có thể thấy những hạn chế này khó khăn. Ví dụ, vấn đề năm 2038 là một minh họa nổi tiếng, nơi hệ thống sử dụng `time_t` 32 bit sẽ tràn.
 
-Có phương pháp khác? Có những cách khác để thao tác và biểu diễn thời gian trong C. Chẳng hạn, `gmtime` chuyển đổi `time_t` thành thời gian phối hợp quốc tế (UTC) thay vì thời gian địa phương, như `localtime` làm. Sử dụng `strftime`, bạn có thể tùy chỉnh định dạng ngày và giờ của mình một cách rộng rãi.
+Đối với việc xử lý thời gian và ngày phức tạp hơn, nhiều lập trình viên chuyển sang sử dụng các thư viện bên ngoài hoặc các chức năng do hệ điều hành cung cấp. Trong C++, ví dụ, thư viện `<chrono>` cung cấp khả năng thao tác thời gian chính xác và linh hoạt hơn.
 
-Về chi tiết, `time_t` thường là kiểu số nguyên hoặc kiểu dấu phẩy động. Triển khai có thể thay đổi trên các hệ thống nhưng tiêu chuẩn không yêu cầu kiểu chính xác, chỉ là nó có khả năng biểu diễn thời gian.
-
-Khi sử dụng các hàm liên quan đến thời gian, hãy nhớ xem xét giờ tiết kiệm ánh sáng ban ngày và dữ liệu cụ thể của địa phương nếu ứng dụng của bạn nhạy cảm với những điều đó.
-
-## Tham khảo
-
-- Mục hướng dẫn về Thời gian của Thư viện GNU C: https://www.gnu.org/software/libc/manual/html_node/Time.html
-- Thư viện Chuẩn C - time.h: https://en.cppreference.com/w/c/chrono
-- Tìm hiểu thêm về định dạng thời gian với strftime: https://en.cppreference.com/w/c/chrono/strftime
+Mặc dù có những hạn chế, sự đơn giản và phổ biến của các hàm thời gian C khiến chúng hoàn toàn phù hợp cho nhiều ứng dụng. Việc hiểu rõ những công cụ này là cơ bản đối với các lập trình viên C, mang lại sự kết hợp giữa ngữ cảnh lập trình lịch sử và tiện ích thực tế hàng ngày.

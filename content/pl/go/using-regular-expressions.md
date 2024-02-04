@@ -1,48 +1,86 @@
 ---
-title:                "Wykorzystanie wyrażeń regularnych"
-date:                  2024-01-19
-simple_title:         "Wykorzystanie wyrażeń regularnych"
-
+title:                "Korzystanie z wyrażeń regularnych"
+date:                  2024-02-03T18:11:35.218322-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Korzystanie z wyrażeń regularnych"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/go/using-regular-expressions.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Co i dlaczego?
-Reguły wyrażeń regularnych (regex) pozwalają szukać wzorców w tekście. Programiści używają regex do weryfikacji, wyszukiwania i manipulacji danymi tekstowymi.
+
+Wyrażenia regularne (regex) w programowaniu są używane do wyszukiwania, dopasowywania i manipulowania ciągami znaków na podstawie określonych wzorców. Programiści używają ich do zadań sięgających od prostych sprawdzeń walidacji po skomplikowane przetwarzanie tekstu, co czyni je niezastąpionymi w elastycznym i efektywnym obsługiwaniu tekstu.
 
 ## Jak to zrobić:
-```Go
+
+W Go pakiet `regexp` zapewnia funkcjonalność wyrażeń regularnych. Oto krok po kroku, jak go używać:
+
+1. **Kompilowanie wyrażenia regularnego**
+
+Najpierw skompiluj swój wzór regex używając `regexp.Compile`. Dobra praktyka polega na obsłudze błędów, które mogą pojawić się podczas kompilacji.
+
+```go
 package main
 
 import (
-	"fmt"
-	"regexp"
+    "fmt"
+    "regexp"
 )
 
 func main() {
-	emailRegex := regexp.MustCompile(`^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$`)
-	email := "przyklad@domena.pl"
-	match := emailRegex.MatchString(email)
-	fmt.Printf("Czy '%s' to poprawny email? %v\n", email, match)
-	
-	searchPattern := regexp.MustCompile(`\bGo\b`)
-	text := "Uczę się Go i używam Go w codziennej pracy."
-	matches := searchPattern.FindAllString(text, -1)
-	fmt.Printf("Znalezione dopasowania: %v\n", matches)
+    pattern := "go+"
+    r, err := regexp.Compile(pattern)
+    if err != nil {
+        fmt.Println("Błąd kompilacji regex:", err)
+        return
+    }
+    
+    fmt.Println("Regex skompilowany pomyślnie")
 }
 ```
-Wyjście:
-```
-Czy 'przyklad@domena.pl' to poprawny email? true
-Znalezione dopasowania: [Go Go]
+
+2. **Dopasowywanie ciągów**
+
+Sprawdź, czy ciąg pasuje do wzorca za pomocą metody `MatchString`.
+
+```go
+matched := r.MatchString("goooooogle")
+fmt.Println("Dopasowane:", matched) // Wynik: Dopasowane: true
 ```
 
-## Deep Dive
-Wyrażenia regularne powstały w latach 50. Alternatywami dla regex są parser textu lub wyszukiwanie za pomocą metod znakowych. W Go, regex implementowany jest przez pakiet `regexp`, który korzysta z silnika RE2, zapewniającego bezpieczeństwo przed słynnym problemem "catastrophic backtracking".
+3. **Znajdowanie pasujących**
 
-## Zobacz również:
-- Dokumentacja Go `regexp` package: https://golang.org/pkg/regexp/
-- Tutorial o wyrażeniach regularnych: https://www.regular-expressions.info/tutorial.html
-- Testowanie wyrażeń regularnych online: https://regex101.com/
+Aby znaleźć pierwsze pasujące w ciągu, użyj metody `FindString`.
+
+```go
+match := r.FindString("golang gooooo")
+fmt.Println("Znaleziono:", match) // Wynik: Znaleziono: gooooo
+```
+
+4. **Znajdowanie wszystkich pasujących**
+
+Do wszystkich pasujących, `FindAllString` bierze ciąg wejściowy i liczbę całkowitą n. Jeśli n >= 0, zwraca co najwyżej n pasujących; jeśli n < 0, zwraca wszystkie pasujące.
+
+```go
+matches := r.FindAllString("go gooo gooooo", -1)
+fmt.Println("Wszystkie pasujące:", matches) // Wynik: Wszystkie pasujące: [go gooo gooooo]
+```
+
+5. **Zastępowanie pasujących**
+
+Do zastępowania pasujących innym ciągiem, przydaje się `ReplaceAllString`.
+
+```go
+result := r.ReplaceAllString("go gooo gooooo", "Java")
+fmt.Println("Zastąpione:", result) // Wynik: Zastąpione: Java Java Java
+```
+
+## Dogłębna analiza
+
+Wprowadzony do standardowej biblioteki Go, pakiet `regexp` implementuje wyszukiwanie wyrażeń regularnych i dopasowywanie wzorców inspirowane składnią Perla. Pod spodem, silnik regex Go kompiluje wzorce do formy bajtkodów, które są następnie wykonane przez silnik dopasowujący napisany w Go. Ta implementacja wymienia część szybkości znalezioną w bezpośrednim wykonaniu sprzętowym na bezpieczeństwo i łatwość użycia, unikając pułapek przepełnień bufora, które są powszechne w bibliotekach opartych na C.
+
+Pomimo swojej mocy, regex w Go nie zawsze jest optymalnym rozwiązaniem dla dopasowywania wzorców, szczególnie przy pracy z silnie ustrukturyzowanymi danymi, takimi jak JSON lub XML. W tych przypadkach, specjalizowane parsery lub biblioteki zaprojektowane dla tych formatów danych oferują lepszą wydajność i niezawodność. Jednakże, do zadań wymagających skomplikowanego przetwarzania tekstu bez z góry określonej struktury, regex pozostaje niezbędnym narzędziem w zestawie programisty, oferując równowagę mocy i elastyczności, której mało które alternatywne rozwiązanie może dorównać.

@@ -1,61 +1,57 @@
 ---
-title:                "複素数の扱い方"
-date:                  2024-01-26T04:37:44.823388-07:00
+title:                "複素数を操作する"
+date:                  2024-02-03T18:13:58.215094-07:00
 model:                 gpt-4-0125-preview
-simple_title:         "複素数の扱い方"
-
+simple_title:         "複素数を操作する"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/c/working-with-complex-numbers.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## 何となぜ？
-複素数は、実数部と虚数部（例えば3 + 4iのように）の混合であり、信号処理や特定の方程式を解くなど、高度な計算で重要です。従来の数値では不十分な、数学的に重いアプリケーションで、プログラマーがそれらを扱います。
 
-## 方法：
-Cは、C99から、ネイティブの複素数型とライブラリを持っています。以下がその使用方法です：
+複素数は実部と虚部から構成され、「a + bi」と表されます。ここで、`i`は`-1`の平方根です。プログラマーは、電気工学、量子コンピューティング、流体力学など様々な分野で複素数を扱い、シミュレーション、信号処理、特定の種類の数学方程式の解決に彼らのユニークな特性を活用します。
 
-```C
+## どのようにして：
+
+C言語では、標準ライブラリ `<complex.h>` によって複素数がサポートされています。これを利用するには、`double complex`型（または単精度用の`float complex`）で変数を宣言します。基本的な操作の方法は以下のとおりです：
+
+```c
 #include <stdio.h>
 #include <complex.h>
 
 int main() {
-    // 複素数を二つ宣言
-    double complex z1 = 1.0 + 3.0 * I;
-    double complex z2 = 2.0 - 2.0 * I;
+    double complex z1 = 1.0 + 2.0*I; // 複素数 1+2i を宣言
+    double complex z2 = 1.0 - 2.0*I; // 別の複素数 1-2i を宣言
 
-    // 複素数の演算
+    // 加算
     double complex sum = z1 + z2;
-    double complex mult = z1 * z2;
+    printf("Sum: %.2f + %.2fi\n", creal(sum), cimag(sum)); // 出力: Sum: 2.00 + 0.00i
 
-    // 結果の出力
-    printf("和: %.1f + %.1fi\n", creal(sum), cimag(sum));
-    printf("積: %.1f + %.1fi\n", creal(mult), cimag(mult));
+    // 乗算
+    double complex product = z1 * z2;
+    printf("Product: %.2f + %.2fi\n", creal(product), cimag(product)); // 出力: Product: 5.00 + 0.00i
 
-    // 絶対値と偏角
-    printf("Abs(z1): %f\n", cabs(z1));
-    printf("Arg(z1): %f\n", carg(z1));
+    // 複素共役
+    double complex conjugate = conj(z1);
+    printf("Conjugate of z1: %.2f + %.2fi\n", creal(conjugate), cimag(conjugate)); // 出力: Conjugate of z1: 1.00 - 2.00i
+
+    // 絶対値
+    double magnitude = cabs(z1);
+    printf("Magnitude of z1: %.2f\n", magnitude); // 出力: Magnitude of z1: 2.24
+
+    // 位相
+    double phase = carg(z1);
+    printf("Phase of z1: %.2f\n", phase); // ラジアン単位での出力
 
     return 0;
 }
 ```
+`I`は `<complex.h>` において虚数単位を表す定数です。`creal()`や`cimag()`のような関数はそれぞれ実部と虚部を抽出し、`conj()`は複素共役を計算します。複素数の絶対値と位相（引数）には、`cabs()`と`carg()`が使用されます。
 
-サンプル出力：
-```
-和: 3.0 + 1.0i
-積: 8.0 + 2.0i
-Abs(z1): 3.162278
-Arg(z1): 1.249046
-```
-## 詳細解説
-複素数は何世紀も前にさかのぼり、16世紀の代数学にそのルーツがあります。時を経て、今ではCだけでなく、多くのプログラミング言語で不可欠な要素です。
+## ディープダイブ
 
-C99標準では、マクロ、関数、および`complex`データ型を定義する`<complex.h>`ヘッダが導入されました。代替手段も存在します - 例えば独自の構造体を作成するなどですが、なぜ車輪の再発明をするのでしょうか？C標準ライブラリは最適化されており、使用準備ができています。
-
-その力にもかかわらず、Cの複素数サポートには批判もあります。Pythonのような言語の類似機能より直感的ではないかもしれず、コーナーケースの扱いが厄介になることもあります。しかし、生のパフォーマンスにおいて、それはまだ堅実な選択です。
-
-## 参照
-- C99標準文書`<complex.h>`：https://en.cppreference.com/w/c/numeric/complex
-- 浮動小数点演算のIEEE標準（IEEE 754）：https://ieeexplore.ieee.org/document/4610935
-- Cの複素数数学のためのオンラインチュートリアル：https://www.tutorialspoint.com/complex-number-arithmetic-in-c-programming
+Cにおける複素数のサポートは比較的最近のもので、C99で標準化されました。それ以前は、C言語における複素数算術は煩雑で、しばしばカスタムデータ構造や関数が必要でした。`<complex.h>`や複素データ型の導入は、科学的および工学的応用における言語の能力を大きく向上させました。しかし、Pythonのような言語は、組み込みデータ型とより豊富なライブラリ機能を通じて、複素数に対するより直感的なサポートを提供していることに注意すべきです。これにもかかわらず、Cが提供する性能と制御は、複素数算術の若干煩雑な構文を扱いつつも、高性能コンピューティングタスクにおける選択肢として好まれています。

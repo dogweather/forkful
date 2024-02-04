@@ -1,61 +1,63 @@
 ---
-title:                "数値の丸め処理"
-date:                  2024-01-26T03:44:42.372970-07:00
+title:                "数値の丸め込み"
+date:                  2024-02-03T18:07:38.534383-07:00
 model:                 gpt-4-0125-preview
-simple_title:         "数値の丸め処理"
-
+simple_title:         "数値の丸め込み"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/c/rounding-numbers.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## 何となぜ？
-数値を丸めるというのは、ある特定の点を越えた桁を切り捨て、任意で最後に保持された桁を調整することです。プログラマーが丸めを行うのは、正確な値が必要でない場合に精度を減少させるため、浮動小数点のエラーを管理するため、またはユーザーフレンドリーな表示のために数値を準備するためです。
 
-## 方法
-Cでは、通常 `floor()`、`ceil()`、または `round()` 関数を使用します。早速見てみましょう：
+数値の丸めは、特定のルールに従って数の桁を調整して精度を下げるプロセスであり、最も近い整数または指定された小数点以下の桁数に向けて行います。プログラマーがこれを行う理由は、必要な記憶容量を制限することから、ユーザーが消費するための出力を簡素化すること、非常に小さい変動に敏感な数学的操作の精度を保証することまで様々です。
 
-```C
+## 方法:
+
+C言語で数値を丸める方法はいくつかありますが、最も一般的なアプローチには`floor()`、`ceil()`、`round()`関数の使用が含まれます。これらの関数は標準数学ライブラリの一部なので、プログラムに`math.h`を含める必要があります。
+
+```c
 #include <stdio.h>
 #include <math.h>
 
 int main() {
-    double num = 3.14159;
-    double num_floor = floor(num);
-    double num_ceil = ceil(num);
-    double num_round = round(num);
+    double num = 9.527;
 
-    printf("Floor: %.2f\n", num_floor); // Floor: 3.00
-    printf("Ceil: %.2f\n", num_ceil);   // Ceil: 4.00
-    printf("Round: %.2f\n", num_round); // Round: 3.00
+    // floor()を使用して切り捨て
+    double floorResult = floor(num);
+    printf("floor(9.527) = %.0f\n", floorResult);
+
+    // ceil()を使用して切り上げ
+    double ceilResult = ceil(num);
+    printf("ceil(9.527) = %.0f\n", ceilResult);
+
+    // round()を使用して最も近い整数に丸める
+    double roundResult = round(num);
+    printf("round(9.527) = %.0f\n", roundResult);
+
+    // 指定された小数点以下の桁数に丸めるには、乗算と除算が必要
+    double twoDecimalPlaces = round(num * 100) / 100;
+    printf("二十小数点以下の桁への丸め: %.2f\n", twoDecimalPlaces);
+
     return 0;
 }
 ```
 
-特定の位で丸めるようなより細かい制御が必要な場合は、乗算して丸めてから除算します：
-
-```C
-double roundToPlace(double num, int place) {
-    double scale = pow(10.0, place);
-    return round(num * scale) / scale;
-}
-
-// ...
-
-double num = 3.14159;
-double num_rounded = roundToPlace(num, 2);
-printf("Rounded to 2 decimal places: %.2f\n", num_rounded); // 小数点以下2位に丸めた: 3.14
+出力:
+```
+floor(9.527) = 9
+ceil(9.527) = 10
+round(9.527) = 10
+二十小数点以下の桁への丸め: 9.53
 ```
 
-## 深掘り
-昔、数値の丸めは手作業でのプロセスを意味しました—ペンと紙だけでは重労働でした。コンピューティングによって、これを自動化しましたが、浮動小数点算術は、その二進性の特性のために、正確に表現できない数値があることで微妙な問題をもたらしました。
+## 深堀り
 
-標準の丸めに代わる方法には、余分な桁を単純に落とす切り捨てや、ちょうど2つの値の間にある場合に最も近い偶数に丸めるバンカーズラウンディングが含まれます。これは、繰り返し計算におけるバイアスを減少させます。
+数値の丸めは、数学および計算の歴史に深く根ざしており、理論的および応用的な側面の両方に不可欠です。C言語において、`floor()`、`ceil()`、`round()`は基本機能を提供するものの、浮動小数点数を整数または特定の小数点以下の桁に丸める本質は、浮動小数点数の二進表現によりより微妙なものになります。この表現は、二進数で正確に表現できない数値（例えば0.1など）が扱われる方法により、予期しない結果につながることがあります。
 
-任意の精度の数値を丸めたり、無限大、シグナリングNaN、または非正規値などの特殊なケースを扱う必要がある場合、実装は難しくなります。C標準ライブラリ関数は基本的なことを処理しますが、カスタムの方法で小数を丸める必要がある場合は、`math.h`よりもさらに多くのものが必要になります。
+これらの関数はC標準ライブラリに含まれ、`<math.h>`で定義されています。数値を丸める場合、特に財務または正確なエンジニアリング計算のためには、二進浮動小数点数を使用することの意味を考慮する必要があります。高精度または特定の小数点数に対する丸めには、GMPやMPFRのような任意精度算術のために設計されたライブラリやカスタム丸め関数の実装を含むC言語の組み込み関数への代替が考えられますが、これらは追加の複雑さや依存関係を導入します。
 
-## 参照
-- [`<math.h>`ドキュメント](https://en.cppreference.com/w/c/numeric/math)
-- [浮動小数点算術](https://en.wikipedia.org/wiki/Floating-point_arithmetic)
-- [浮動小数点計算を検証する罠](https://dl.acm.org/doi/10.1145/1186736.1186737)
+実際には、C言語で丸めの正しいアプローチを選択することは、精度、パフォーマンス、実用性の必要性をバランスさせ、開発されているアプリケーションのドメイン固有の要件を深く理解することを含みます。

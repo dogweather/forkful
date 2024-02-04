@@ -1,84 +1,59 @@
 ---
-title:                "Geração de números aleatórios"
-date:                  2024-01-27T20:32:54.404277-07:00
+title:                "Gerando números aleatórios"
+date:                  2024-02-03T17:57:13.823779-07:00
 model:                 gpt-4-0125-preview
-simple_title:         "Geração de números aleatórios"
-
+simple_title:         "Gerando números aleatórios"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/c/generating-random-numbers.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## O Quê e Por Quê?
+## O Que & Porquê?
 
-Gerar números aleatórios em C envolve criar sequências de números que não possuem nenhum padrão discernível, imitando o conceito de aleatoriedade. Os programadores usam números aleatórios para uma infinidade de finalidades, incluindo simulação de dados, aplicações criptográficas e desenvolvimento de jogos, tornando isso um aspecto vital da programação.
+Gerar números aleatórios em C envolve a criação de valores que são imprevisíveis e seguem uma distribuição específica, como uniforme ou normal. Essa capacidade é crucial para aplicações que vão desde simulações e jogos até operações criptográficas, onde a imprevisibilidade ou a simulação de aleatoriedade do mundo real é essencial.
 
-## Como Fazer:
+## Como fazer:
 
-Para gerar números aleatórios em C, você normalmente usa a função `rand()` encontrada em `stdlib.h`. No entanto, é crucial semear o gerador de números aleatórios para assegurar a variabilidade nos números gerados entre diferentes execuções do programa. A função `srand()`, semeada com um valor, muitas vezes o tempo atual, facilita isso.
+Em C, números aleatórios podem ser gerados usando a função `rand()`, que faz parte da biblioteca padrão do C `<stdlib.h>`. Por padrão, `rand()` produz números pseudoaleatórios no intervalo de 0 a `RAND_MAX` (uma constante definida em `<stdlib.h>`). Para ter mais controle sobre o intervalo, os programadores podem manipular a saída de `rand()`.
 
-Aqui está um exemplo simples de como gerar um número aleatório entre 0 e 99:
+Aqui está um exemplo simples de geração de um número aleatório entre 0 e 99:
 
 ```c
 #include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
+#include <stdlib.h> // Para rand() e srand()
+#include <time.h>   // Para time()
 
 int main() {
-    // Semeia o gerador de números aleatórios
+    // Sementeia o gerador de números aleatórios
     srand((unsigned) time(NULL));
 
     // Gera um número aleatório entre 0 e 99
     int randomNumber = rand() % 100;
 
-    // Imprime o número aleatório
     printf("Número Aleatório: %d\n", randomNumber);
 
     return 0;
 }
 ```
 
-Saída de exemplo:
+A saída do exemplo pode variar a cada vez que você executa este programa:
 
 ```
 Número Aleatório: 42
 ```
+Para gerar números aleatórios em um intervalo diferente, você pode ajustar o operador de módulo (`%`) de acordo. Por exemplo, `rand() % 10` gera números de 0 a 9.
 
-É importante notar que cada execução deste programa produzirá um novo número aleatório, graças à semeadura com o tempo atual.
+É importante notar que semear o gerador de números pseudoaleatórios (`srand()`) com o tempo atual (`time(NULL)`) garante sequências diferentes de números aleatórios a cada execução do programa. Sem a semeadura (`srand()`), `rand()` produziria a mesma sequência de números todas as vezes que o programa fosse executado.
 
 ## Aprofundamento
 
-A maneira tradicional de gerar números aleatórios em C, usando `rand()` e `srand()`, não é verdadeiramente aleatória. É pseudorrandômica. Isso é suficiente para muitas aplicações, mas fica aquém em situações que exigem altos graus de aleatoriedade, como em usos criptográficos sérios. A sequência gerada por `rand()` é totalmente determinada pela semente fornecida a `srand()`. Assim, se a semente for conhecida, a sequência pode ser prevista, reduzindo a aleatoriedade.
+A função `rand()` e seu par para semeadura `srand()` fazem parte da biblioteca padrão do C há décadas. Eles são baseados em algoritmos que geram sequências de números que apenas parecem ser aleatórios—daí o termo "pseudoaleatórios". O algoritmo subjacente em `rand()` é tipicamente um gerador linear congruencial (LCG).
 
-Historicamente, a função `rand()` foi criticada por sua baixa qualidade de aleatoriedade e alcance limitado. Alternativas modernas incluem usar APIs específicas do dispositivo ou bibliotecas externas que aproximam melhor a verdadeira aleatoriedade ou, em sistemas semelhantes ao UNIX, ler de `/dev/random` ou `/dev/urandom` para fins criptográficos.
+Embora `rand()` e `srand()` sejam suficientes para muitas aplicações, eles têm limitações conhecidas, especialmente no que diz respeito à qualidade da aleatoriedade e à potencial previsibilidade. Para aplicações que exigem aleatoriedade de alta qualidade, como operações criptográficas, alternativas como `/dev/random` ou `/dev/urandom` (em sistemas semelhantes ao Unix), ou APIs fornecidas por bibliotecas criptográficas, devem ser consideradas.
 
-Por exemplo, usando `/dev/urandom` em C:
+Com a introdução do C11, o padrão ISO C incluiu um novo cabeçalho, `<stdatomic.h>`, oferecendo um controle mais refinado para operações concorrentes, mas não diretamente relacionado à aleatoriedade. Para verdadeira aleatoriedade em C, desenvolvedores muitas vezes recorrem a bibliotecas específicas da plataforma ou externas que oferecem algoritmos melhores ou fazem uso de fontes de entropia de hardware.
 
-```c
-#include <stdio.h>
-#include <stdlib.h>
-
-int main() {
-    FILE *fp;
-    unsigned int randomNumber;
-
-    // Abre /dev/urandom para leitura
-    fp = fopen("/dev/urandom", "r");
-
-    // Lê um número aleatório
-    fread(&randomNumber, sizeof(randomNumber), 1, fp);
-
-    // Imprime o número aleatório
-    printf("Número Aleatório: %u\n", randomNumber);
-
-    // Fecha o arquivo
-    fclose(fp);
-
-    return 0;
-}
-```
-
-Este método lê diretamente do pool de entropia do sistema, oferecendo uma qualidade de aleatoriedade mais elevada, adequada para aplicações mais sensíveis. No entanto, essa abordagem pode ter problemas de portabilidade em diferentes plataformas, tornando-a menos universal que o uso de `rand()`.
-
-Independente do método, entender a natureza da aleatoriedade e sua implementação em C é crucial para desenvolver aplicações eficazes, seguras e envolventes.
+Lembre-se, enquanto `rand()` serve como um meio simples e acessível para gerar números pseudoaleatórios, seus usos em aplicações modernas são limitados pela qualidade e previsibilidade de sua saída. Quando soluções mais robustas são necessárias, especialmente para aplicações conscientes da segurança, explorar além da biblioteca padrão é altamente recomendado.

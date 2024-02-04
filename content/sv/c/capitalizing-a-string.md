@@ -1,54 +1,63 @@
 ---
-title:                "Att göra en sträng versal"
-date:                  2024-01-19
-simple_title:         "Att göra en sträng versal"
-
+title:                "Gör om en sträng till versaler"
+date:                  2024-02-03T17:52:58.190284-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Gör om en sträng till versaler"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/c/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att skriva med versaler innebär att omvandla alla bokstäver i en sträng till stora bokstäver. Programmerare gör detta för tydlighet, för att framhäva text eller följa dataformatkrav.
+
+Att göra en sträng versal i C innebär att konvertera det första tecknet i varje ord i en given sträng till versal om det är en gemen bokstav. Programmerare utför ofta denna operation för att standardisera användarinput för sökningar, sorteringsoperationer eller visningssyften, vilket säkerställer konsekvens och läsbarhet i textdata.
 
 ## Hur man gör:
-För att omvandla en sträng till versaler i C kan du använda standardbiblioteksfunktionerna. Här är ett enkelt exempel:
+
+Att göra en sträng versal i C kräver en grundläggande förståelse för teckenmanipulation och strängtraversering. Eftersom C inte har en inbyggd funktion för detta, kommer du vanligtvis att kontrollera varje tecken, och justera dess fall vid behov. Nedan är en enkel implementation:
 
 ```c
 #include <stdio.h>
-#include <ctype.h>
+#include <ctype.h> // För islower och toupper funktioner
 
 void capitalizeString(char *str) {
-    while(*str) {
-        *str = toupper((unsigned char) *str);
-        str++;
+    if (str == NULL) return; // Säkerhetskontroll
+    
+    int capNext = 1; // Flagga för att ange om nästa bokstav ska göras versal
+    for (int i = 0; str[i] != '\0'; i++) {
+        if (capNext && islower(str[i])) {
+            str[i] = toupper(str[i]); // Gör tecken versalt
+            capNext = 0; // Återställ flagga
+        } else if (str[i] == ' ') {
+            capNext = 1; // Nästa tecken bör göras versalt
+        }
     }
 }
 
 int main() {
-    char myString[] = "hej världen!";
-    capitalizeString(myString);
-    printf("Capitalized: %s\n", myString);
-    // Output: Capitalized: HEJ VÄRLDEN!
+    char exampleString[] = "hello world. programming in c!";
+    capitalizeString(exampleString);
+    printf("Capitalized string: %s\n", exampleString);
     return 0;
 }
 ```
 
-## Djupdykning
-Att skriva med versaler är inget nytt inom programmering. Historiskt sett har det använts i många sammanhang, från att hantera assemblerinstruktioner till att formatera utskrifter. Det finns alternativ till `toupper` som `transform` i C++ STL om du behöver mer flexibilitet.
+Exempelutdata:
+```
+Capitalized string: Hello World. Programming In C!
+```
 
-Implementeringsdetaljer som är viktiga att notera:
+Detta program traverserar strängen `exampleString`, kontrollerar varje tecken om det ska göras versalt. Funktionen `islower` kontrollerar om ett tecken är en gemen bokstav, medan `toupper` konverterar det till versalt. Flaggen `capNext` bestämmer om nästa bokstav som stöts på bör konverteras, den ställs in efter varje mellanslag (' ') som hittas, och inledningsvis för att göra strängens första tecken versalt.
 
+## Fördjupning
 
-1. `toupper` fungerar per tecken.
-2. Du måste casta tecknet till `unsigned char` för att undvika undefined behavior på tecken med negativa värden.
-3. Glöm inte att inkludera `ctype.h` för `toupper`.
-4. Var försiktig med teckenkodningar som UTF-8; standard `toupper` kanske inte fungerar som förväntat med icke-ASCII-tecken.
+Tekniken som demonstreras är enkel men brister i effektivitet för mycket stora strängar eller när den utförs upprepade gånger i prestandakritiska applikationer. I historiskt och genomförandekontext involverar strängmanipulation i C, inklusive kapitalisering, ofta direkt buffertmanipulation, vilket återspeglar Cs lågnivåansats och ger programmeraren full kontroll över minne och prestandaavvägningar.
 
-Det finns bibliotek som stödjer bokstavsomvandlingar för olika språk och teckenkodningar om du behöver stöd för internationella teckenuppsättningar.
+Det finns alternativa, mer sofistikerade metoder för att göra strängar versala, särskilt när man tar hänsyn till lokaler och Unicode-tecken, där kapitaliseringsregler kan skilja sig avsevärt från det enkla ASCII-scenariot. Bibliotek som ICU (International Components for Unicode) erbjuder robusta lösningar för dessa fall men introducerar beroenden och overhead som kanske inte är nödvändiga för alla applikationer.
 
-## Se även
-- C Standard Library documentation: https://en.cppreference.com/w/c/header/ctype.h
-- Utförlig diskussion om teckenkodningar: https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/
-- Alternativ till `toupper` med C++ `transform`: https://en.cppreference.com/w/cpp/algorithm/transform
+Vidare, medan exemplet som tillhandahålls använder C-standardbiblioteksfunktionerna `islower` och `toupper`, som är del av `<ctype.h>`, är det viktigt att förstå att dessa fungerar inom ASCII-omfånget. För applikationer som kräver bearbetning av tecken bortom ASCII, såsom hantering av accenterade tecken i europeiska språk, kommer ytterligare logik eller tredjepartsbibliotek att vara nödvändigt för att exakt utföra kapitalisering.
+
+Sammanfattningsvis, även om metoden som beskrivs är lämplig för många applikationer, är det avgörande att förstå dess begränsningar och de alternativ som finns tillgängliga för att utveckla robust, internationaliserad programvara i C.

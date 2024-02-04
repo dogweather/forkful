@@ -1,58 +1,74 @@
 ---
 title:                "Kahden päivämäärän vertailu"
-date:                  2024-01-20T17:32:39.599702-07:00
-model:                 gpt-4-1106-preview
+date:                  2024-02-03T17:53:38.482040-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Kahden päivämäärän vertailu"
-
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c/comparing-two-dates.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Mitä ja Miksi?)
-Vertaamme kahta päivämäärää tunnistaaksemme ajanjaksoja ja järjestyksiä. Ohjelmoijat tekevät tätä aikataulujen hallintaan, ajan kulumisen seuraamiseen tai pätevyyksien voimassaolon tarkistukseen.
+## Mikä & Miksi?
 
-## How to: (Kuinka tehdään:)
-```C
+Päivämäärien vertailu C-kielessä tarkoittaa niiden kronologisen suhteen määrittämistä - onko toinen päivämäärä ennen toista tai ovatko ne samat. Tämä kyky on olennainen sovelluksissa, jotka käsittelevät aikataulutusta, määräaikoja tai kirjanpitoa, koska se mahdollistaa aikaan sidotun tiedon järjestämisen ja manipuloinnin.
+
+## Miten:
+
+C ei sisällä valmista tyyppiä päivämäärille, mikä tekee `time.h` kirjaston käytön tarpeelliseksi työskentelyssä päivämäärä- ja aikarakenteiden kanssa. `tm` rakenne ja `difftime()` funktio ovat yleisesti käytössä päivämäärien vertailussa. Alla on esimerkki, joka näyttää, miten vertailla kahta päivämäärää:
+
+```c
 #include <stdio.h>
 #include <time.h>
 
-int compare_dates(struct tm date1, struct tm date2) {
-    // tm_year - vuodet ajanlaskun alusta, tm_mon 0-11, tm_mday 1-31
-    if (date1.tm_year < date2.tm_year) return -1;
-    if (date1.tm_year > date2.tm_year) return 1;
-    if (date1.tm_mon < date2.tm_mon) return -1;
-    if (date1.tm_mon > date2.tm_mon) return 1;
-    if (date1.tm_mday < date2.tm_mday) return -1;
-    if (date1.tm_mday > date2.tm_mday) return 1;
-    return 0; // Päivämäärät ovat samat
-}
-
 int main() {
-    struct tm date1 = { .tm_year=122, .tm_mon=3, .tm_mday=5 }; // 2022-04-05
-    struct tm date2 = { .tm_year=122, .tm_mon=6, .tm_mday=9 }; // 2022-07-09
-    
-    int result = compare_dates(date1, date2);
-    
-    if (result < 0) {
-        printf("Ensimmäinen päivämäärä on aiempi.\n");
-    } else if (result > 0) {
-        printf("Toinen päivämäärä on aiempi.\n");
-    } else {
+    struct tm date1 = {0};
+    struct tm date2 = {0};
+    double seconds;
+
+    // Ensimmäinen päivämäärä (VVVV, KK, PP)
+    date1.tm_year = 2023 - 1900; // Vuosi vuodesta 1900
+    date1.tm_mon = 3 - 1;        // Kuukausi [0-11]
+    date1.tm_mday = 15;          // Kuukauden päivä [1-31]
+
+    // Toinen päivämäärä (VVVV, KK, PP)
+    date2.tm_year = 2023 - 1900;
+    date2.tm_mon = 4 - 1;
+    date2.tm_mday = 14;
+
+    // Muunna time_t formaattiin
+    time_t time1 = mktime(&date1);
+    time_t time2 = mktime(&date2);
+
+    // Vertaa
+    seconds = difftime(time1, time2);
+
+    if (seconds == 0) {
         printf("Päivämäärät ovat samat.\n");
+    } else if (seconds > 0) {
+        printf("Ensimmäinen päivämäärä on toisen jälkeen.\n");
+    } else {
+        printf("Ensimmäinen päivämäärä on ennen toista.\n");
     }
+
     return 0;
 }
 ```
-Output:
-```
-Ensimmäinen päivämäärä on aiempi.
+
+Tuloste voi olla:
+
+```text
+Ensimmäinen päivämäärä on ennen toista.
 ```
 
-## Deep Dive (Syväsukellus):
-C-kielessä päivämäärien vertailu vaatii `struct tm` käyttöä, joka on osa `time.h`-kirjastoa. Historiallisesti, C on käsittellyt päivämäärät ja ajat yksinkertaisten rakenteiden kautta, mikä tekee vertailusta suoraviivaista, mutta rajallista. Vaihtoehtoja kuten `difftime`-funktio on käytetty sekuntien erojen laskemiseen, mutta tarkka vuosi-, kuukausi- ja päivävertailu vaatii yllä olevanlaista lähestymistä. Vertailun täsmällisyys on tärkeää, kun esimerkiksi lasketaan eräpäiviä tai tarkastetaan aikaleimoja.
+Tämä ohjelma alustaa kaksi `tm` rakennetta tietyillä päivämäärillä, muuntaa ne `time_t` formaattiin käyttämällä `mktime()`, ja lopuksi vertaa niitä käyttämällä `difftime()`, joka palauttaa aikaeron sekunteina (kaksinkertaisena) kahden ajankohdan välillä.
 
-## See Also (Katso myös):
-- [C Library - time.h](https://www.cplusplus.com/reference/ctime/)
-- [Comparing dates in ISO8601 format](https://en.wikipedia.org/wiki/ISO_8601)
+## Syväsukellus
+
+C:n alkuaikoina päivämäärä- ja aikaoperaatiot vaativat manuaalisia laskelmia, ottaen usein huomioon karkausvuodet, kuukausien vaihtelevat päivämäärät ja jopa karkaussekunnit. `Time.h` esittely ANSI C -standardissa toi standardisoinnin C:n ajan käsittelyyn, yksinkertaistaen päivämäärä- ja aikaoperaatioita.
+
+`Time.h` käyttö päivämäärien vertailussa on suoraviivaista, mutta sillä on rajoituksensa. `Tm` rakenne ei ota huomioon aikavyöhykkeitä tai kesäaikaa, ja `difftime()` tarjoaa vain eron sekunteina, puuttuen hienojakoisempaa tarkkuutta tietyissä sovelluksissa.
+
+Sovelluksille, jotka vaativat kestävämpiä päivämäärä-aika operaatioita, mukaan lukien tuki aikavyöhykkeille, kesäaikasiirtymille ja tarkemmille aikaväleille, kirjastot kuten `date.h` (Howard Hinnantin päivämääräkirjasto, ei osa standardikirjastoa) tarjoavat modernin vaihtoehdon `time.h`:lle. Nämä kirjastot tarjoavat kattavampia työkaluja päivämäärä-ajan manipulointiin C++:ssa, hyötyen vuosikymmenten kehityksestä ohjelmointikielisuunnittelussa. C-ohjelmoijille jää edelleen tarve käyttää näitä ulkopuolisia kirjastoja tai huolellisesti käsitellä päivämäärä-ajan laskentanäkökohtia suoraan saavuttaakseen tarkan ja kulttuurisesti tietoisen päivämäärä-ajan manipuloinnin.

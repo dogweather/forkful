@@ -1,66 +1,63 @@
 ---
 title:                "Zamiana liter na wielkie w ciągu znaków"
-date:                  2024-01-19
+date:                  2024-02-03T17:53:49.159489-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Zamiana liter na wielkie w ciągu znaków"
-
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/c/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
 ## Co i dlaczego?
 
-Capitalizing a string means converting the first letter of each word to uppercase. Programmers do it to format text for consistency, readability, or to meet specific data standards.
+Zamiana ciągu na wielkie litery w języku C obejmuje przekształcenie pierwszej litery każdego słowa w danym ciągu na wielką literę, jeśli jest to mała litera. Programiści często wykonują tę operację, aby ustandaryzować dane wejściowe użytkownika pod kątem wyszukiwań, operacji sortowania lub celów wyświetlania, zapewniając spójność i czytelność między danymi tekstowymi.
 
-## How to:
 ## Jak to zrobić:
 
-```C
-#include <stdio.h>
-#include <ctype.h>
+Zamiana ciągu na wielkie litery w C wymaga podstawowej znajomości manipulacji znakami i przeglądania ciągu. Ponieważ C nie ma wbudowanej funkcji do tego, zwykle sprawdzasz każdy znak, dostosowując jego przypadek w razie konieczności. Poniżej znajduje się prosta implementacja:
 
-// Function to capitalize each word in a string
+```c
+#include <stdio.h>
+#include <ctype.h> // Dla funkcji islower i toupper
+
 void capitalizeString(char *str) {
-    int inWord = 0;
+    if (str == NULL) return; // Sprawdzenie bezpieczeństwa
     
-    while (*str) {
-        if (isalpha(*str) && !inWord) {
-            *str = toupper((unsigned char) *str);
-            inWord = 1;
-        } else if (!isalpha(*str)) {
-            inWord = 0;
+    int capNext = 1; // Flaga wskazująca, czy następna litera powinna być duża
+    for (int i = 0; str[i] != '\0'; i++) {
+        if (capNext && islower(str[i])) {
+            str[i] = toupper(str[i]); // Zamiana na dużą literę
+            capNext = 0; // Zresetowanie flagi
+        } else if (str[i] == ' ') {
+            capNext = 1; // Następna litera powinna być duża
         }
-        str++;
     }
 }
 
 int main() {
-    char text[] = "witaj, świecie! jak się masz?";
-    capitalizeString(text);
-    printf("Capitalized: %s\n", text);
+    char exampleString[] = "hello world. programming in c!";
+    capitalizeString(exampleString);
+    printf("Capitalized string: %s\n", exampleString);
     return 0;
 }
-
-```
-Sample Output:
-```
-Capitalized: Witaj, Świecie! Jak Się Masz?
 ```
 
-## Deep Dive
-## Uwagi dodatkowe
+Przykładowe wyjście:
+```
+Capitalized string: Hello World. Programming In C!
+```
 
-Back in the day, data was often stored in uppercase only, partially because early computers lacked the capability to display lowercase letters. Now, capitalizing strings is commonplace, especially in user interfaces.
+Ten program przegląda ciąg `exampleString`, sprawdzając każdy znak, czy powinien zostać zamieniony na wielką literę. Funkcja `islower` sprawdza, czy znak jest małą literą, podczas gdy `toupper` konwertuje go na wielką literę. Flaga `capNext` decyduje, czy następny napotkany litera powinna zostać przekształcona, jest ustawiana po znalezieniu każdej spacji (' ') i początkowo, aby zamienić pierwszą literę ciągu na wielką literę.
 
-Alternatives to consider: Instead of rolling out your own function, third-party libraries like `Boost` in C++ offer string manipulation utilities with more features and error handling.
+## Dogłębna analiza
 
-Implementation details: When capitalizing a string that contains multibyte encoding like UTF-8, you'd need a more sophisticated approach than `toupper`, which is designed for single-byte characters. Libraries like `ICU` provide this functionality.
+Pokazana technika jest prosta, ale niewydajna dla bardzo dużych ciągów lub gdy jest wykonywana wielokrotnie w aplikacjach krytycznych pod względem wydajności. W kontekście historycznym i implementacyjnym, manipulacja ciągami w C, w tym kapitalizacja, często obejmuje bezpośrednią manipulację buforem, odzwierciedlając niskopoziomowe podejście C i dając programiście pełną kontrolę nad pamięcią i kompromisami dotyczącymi wydajności.
 
-## See Also
-## Zobacz także
+Istnieją alternatywne, bardziej zaawansowane metody kapitalizacji ciągów, zwłaszcza biorąc pod uwagę lokalizacje i znaki unicode, gdzie zasady kapitalizacji mogą znacząco różnić się od prostego scenariusza ASCII. Biblioteki takie jak ICU (International Components for Unicode) oferują solidne rozwiązania dla tych przypadków, ale wprowadzają zależności i dodatkowe obciążenie, które mogą nie być konieczne we wszystkich aplikacjach.
 
-- C Standard Library documentation: https://en.cppreference.com/w/c/string/byte
-- The ICU Project for Unicode support: http://site.icu-project.org/
-- Boost Libraries: https://www.boost.org/
+Co więcej, choć podany przykład korzysta z funkcji biblioteki standardowej C `islower` i `toupper`, które są częścią `<ctype.h>`, istotne jest zrozumienie, że działają one w zakresie ASCII. Dla aplikacji wymagających przetwarzania znaków poza ASCII, takich jak obsługa znaków z akcentami w językach europejskich, konieczna będzie dodatkowa logika lub biblioteki stron trzecich, aby dokładnie przeprowadzić kapitalizację.
+
+Podsumowując, choć opisana metoda jest odpowiednia dla wielu aplikacji, zrozumienie jej ograniczeń i dostępnych alternatyw jest kluczowe dla rozwoju solidnego, zinternacjonalizowanego oprogramowania w C.

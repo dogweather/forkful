@@ -1,52 +1,53 @@
 ---
-title:                "Een datum omzetten naar een string"
-date:                  2024-01-28T21:57:11.487693-07:00
+title:                "Een datum converteren naar een string"
+date:                  2024-02-03T17:54:03.270702-07:00
 model:                 gpt-4-0125-preview
-simple_title:         "Een datum omzetten naar een string"
-
+simple_title:         "Een datum converteren naar een string"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/c/converting-a-date-into-a-string.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Wat & Waarom?
-We zetten datums om in strings om ze leesbaar te maken voor mensen of om ze op te slaan en weer te geven. Het gaat erom ruwe datumgegevens te presenteren op een manier die voor ons logisch is.
+
+Het omzetten van een datum naar een tekenreeks in C betreft het vertalen van een datumstructuur of tijdstempel naar een voor mensen leesbaar formaat. Programmeurs voeren deze taak vaak uit om datums weer te geven in logs, gebruikersinterfaces, of wanneer datums in een tekstgebaseerd formaat zoals JSON of CSV worden opgeslagen.
 
 ## Hoe te:
-C maakt deze klus vrij eenvoudig met de `strftime` functie. Hier is een snel voorbeeld:
 
-```C
+De `strftime` functie uit de `<time.h>` bibliotheek wordt hier vaak voor gebruikt. Het stelt je in staat om datum en tijd op verschillende manieren te formatteren door opmaakspecifiers op te geven. Hier is een snel voorbeeld:
+
+```c
 #include <stdio.h>
 #include <time.h>
 
 int main() {
-    time_t ruwetijd;
-    struct tm * tijdinfo;
-    char buffer[80];
+    char dateStr[100];
+    time_t now = time(NULL);
+    struct tm *ptm = localtime(&now);
 
-    time(&ruwetijd);
-    tijdinfo = localtime(&ruwetijd);
-
-    strftime(buffer, sizeof(buffer), "%d-%m-%Y %I:%M:%S", tijdinfo);
-    printf("Geformatteerde datum & tijd: %s\n", buffer);
-
+    // Converteer de datum & tijd naar tekenreeks (bijv. "Wed Jun 30 21:49:08 2021")
+    strftime(dateStr, sizeof(dateStr), "%a %b %d %H:%M:%S %Y", ptm);
+    
+    printf("Huidige Datum en Tijd: %s\n", dateStr);
     return 0;
 }
 ```
 
-Voorbeelduitvoer zou kunnen zijn: `Geformatteerde datum & tijd: 22-03-2023 09:45:12`
+Voorbeelduitvoer zou er zo uit kunnen zien:
 
-## Diepgaand:
-Historisch gezien heeft de tijdafhandeling in C zijn eigenaardigheden: eerdere normen hadden bijvoorbeeld geen gestandaardiseerde manier om met tijdzones om te gaan. Nu hebben we `strftime` als onderdeel van de Standaard C Bibliotheek vanaf C89, wat ons een consistente manier biedt om `struct tm` tijdstructuren om te zetten in strings, met controle over de opmaak.
+```
+Huidige Datum en Tijd: Wed Jun 30 21:49:08 2021
+```
 
-Wat betreft alternatieven, men zou handmatig waarden uit `struct tm` kunnen halen en ze aan elkaar koppelen, maar dat is het wiel opnieuw uitvinden. Er is ook de POSIX `strptime` functie, die omgekeerd werkt, van string naar `struct tm`.
+Je kunt het formaat aanpassen door de opmaakspecifiers die aan `strftime` worden doorgegeven te veranderen. Om bijvoorbeeld de datum in het formaat `YYYY-MM-DD` te krijgen, zou je `"%Y-%m-%d"` gebruiken.
 
-Wanneer je `strftime` gebruikt, onthoud: de grootte van de buffer doet ertoe; te klein en je string wordt afgekapt. Ook laten de opmaakspecificaties in `strftime` je toe om de datum en tijd op verschillende mensvriendelijke manieren aan te passen, zoals het wijzigen van locales of de datum-tijdrepresentatie.
+## Diepgaande duik
 
-## Zie Ook:
-- C Standaard Bibliotheek documentatie: https://en.cppreference.com/w/c/chrono/strftime
-- GNU C Bibliotheekhandleiding over Tijd: https://www.gnu.org/software/libc/manual/html_node/Time.html
-- strftime opmaakspecificaties: https://www.gnu.org/software/libc/manual/html_node/Low_002dLevel-Time-String-Parsing.html#Low_002dLevel-Time-String-Parsing
+De `strftime` functie en de `<time.h>` bibliotheek zijn onderdeel van de C Standard Library, die teruggaat tot de originele ANSI C standaard (C89/C90). Hoewel eenvoudig en ondersteund op vele platforms, kan deze benadering laagdrempelig en omslachtig lijken in vergelijking met moderne programmeertalen die intuïtievere datum- en tijdbibliotheken bieden.
+
+Men moet opmerken, hoewel de tijd functies van de C standaardbibliotheek algemeen ondersteund worden en relatief eenvoudig te gebruiken zijn, missen ze enkele van de meer complexe tijdzone manipulatie- en internationaliseringsfuncties die te vinden zijn in bibliotheken van nieuwere talen of in third-party C bibliotheken zoals International Components for Unicode (ICU).
+
+Echter, de aanpassingsmogelijkheden van de `strftime` functie en de brede platformondersteuning maken het een betrouwbaar en nuttig hulpmiddel voor datumreeksconversie in C. Programmeurs afkomstig van talen met hogere datumbibliotheken moeten misschien wennen aan de lage instapniveau, maar zullen het opmerkelijk krachtig en veelzijdig vinden voor het formatteren van datums en tijden voor een verscheidenheid aan toepassingen.

@@ -1,47 +1,61 @@
 ---
-title:                "인터랙티브 셸 (REPL) 사용하기"
-date:                  2024-01-26T04:12:07.131663-07:00
+title:                "대화형 셸(REPL) 사용하기"
+date:                  2024-02-03T18:10:27.718385-07:00
 model:                 gpt-4-0125-preview
-simple_title:         "인터랙티브 셸 (REPL) 사용하기"
-
+simple_title:         "대화형 셸(REPL) 사용하기"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/c/using-an-interactive-shell-repl.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## 무엇인가 & 왜인가?
-인터랙티브 셸 또는 Read-Eval-Print Loop (REPL)은 코드 조각을 즉시 테스트할 수 있는 실시간 코딩 환경을 제공하는 도구입니다. 프로그래머는 개발, 학습 및 디버깅 중에 빠른 피드백을 위해 이를 사용합니다.
+## 무엇이며 왜?
 
-## 방법:
-C는 내장 REPL을 제공하지 않지만, 타사 도구를 사용할 수 있습니다. C++ 인터프리터이며 C 코드도 처리할 수 있는 Cling을 사용한 예시입니다:
+인터랙티브 셸, 또는 읽기-평가-출력 루프(REPL)로 알려진 이 기술은 프로그래머가 표현식이나 코드를 입력하고 즉시 결과를 볼 수 있게 함으로써 학습과 디버깅 과정을 향상시킵니다. C가 전통적으로 REPL 환경을 기본적으로 지원하지 않음에도 불구하고, 현대의 도구들은 이러한 격차를 메우며, C 프로그램의 동적 탐색을 제공합니다.
 
-```C
-#include <stdio.h>
+## 어떻게:
 
-int main() {
-    printf("Hello, REPL world!\n");
-    return 0;
-}
+C REPL과 상호작용하는 것은 Python이나 JavaScript와 같은 언어만큼 직관적이지 않을 수 있습니다. 그러나 Clang과 LLVM 기술을 기반으로 한 C/C++ 인터프리터인 `Cling`과 같은 도구로 가능해집니다. 시작하는 방법은 다음과 같습니다:
+
+1. **Cling 설치**: 운영 체제에 따라 패키지 관리자에서 Cling을 찾거나 소스에서 빌드해야할 수 있습니다. 예를 들어, Ubuntu에서는 `sudo apt-get install cling`으로 간단히 설치할 수 있습니다.
+
+2. **Cling 시작**: 터미널을 열고 `cling`을 입력하여 인터랙티브 셸을 시작합니다.
+
+```bash
+$ cling
 ```
 
-Cling REPL에서의 출력:
-```
-[cling]$ .x yourscript.c
+3. **코드 작성**: 이제 셸에 C 코드를 직접 입력하고 즉시 결과를 볼 수 있습니다. 다음은 간단한 예제입니다:
+
+```c
+[cling]$ #include <stdio.h>
+[cling]$ printf("Hello, REPL world!\n");
 Hello, REPL world!
 ```
 
-Cling은 스크립트를 실행하고 출력을 즉시 출력합니다.
+4. **변수와 연산 예제**: 변수를 실험하고 즉각적인 피드백을 봅니다.
 
-## 심층 탐구
-Python이나 Ruby와 같은 동적 언어에서는 REPL이 표준이지만, C와 같은 컴파일 언어에서는 덜 흔합니다. 역사적으로, 컴파일-실행-디버그 사이클은 인터랙티브 탐구에 적합하지 않았습니다. Cling과 온라인 C 컴파일러와 같은 도구는 C++ 환경으로 C 코드를 래핑함으로써 REPL 같은 경험을 제공합니다.
+```c
+[cling]$ int a = 5;
+[cling]$ int b = 3;
+[cling]$ printf("%d + %d = %d\n", a, b, a+b);
+5 + 3 = 8
+```
 
-Cling에 대한 대안으로는 CINT와 Ch와 같은 C 인터프리터가 있습니다. 이 도구들은 빠른 반복을 허용하지만 성능 제약과 복잡한 기능에 대한 지원 때문에 모든 개발 시나리오에 적합하지 않을 수 있습니다.
+5. **라이브러리 포함**: Cling을 사용하면 즉석에서 라이브러리를 포함할 수 있으므로, 다양한 C 기능을 활성화할 수 있습니다.
 
-컴파일 언어에서 REPL의 구현은 즉석에서 코드 조각을 컴파일하고 실행하는 것을 포함하며, 이는 사소하지 않으며 전체 언어 기능에 비해 제한이 있을 수 있습니다.
+```c
+[cling]$ #include <math.h>
+[cling]$ printf("Square root of %f is %f\n", 4.0, sqrt(4.0));
+Square root of 4.000000 is 2.000000
+```
 
-## 참고하기
-- Cling: https://github.com/root-project/cling
-- 온라인 C 컴파일러 및 REPL: https://repl.it/languages/c
-- CINT: http://root.cern.ch/drupal/content/cint
-- Ch 인터프리터: http://www.softintegration.com/products/chstandard/
+## 심층 탐구:
+
+REPL 환경의 시작은 1960년대 Lisp로 거슬러 올라가며, 대화형 코드 평가를 지원하도록 설계되었습니다. 그러나 C의 정적이고 컴파일된 특성은 코드 실행 조정의 즉각성을 실현하는 데 어려움을 초래했습니다. Cling과 다른 C/C++ 인터프리터의 개발은 정적으로 타입된 언어에 동적 평가를 통합하는 쪽으로의 중요한 진보를 표시합니다.
+
+특히, Cling과 같은 인터프리터를 사용하는 것은 최적화와 실행에서의 차이로 인해 컴파일된 C 코드의 행동을 완벽하게 반영하지는 않을 수 있습니다. 또한, 교육 목적, 신속한 프로토타이핑 및 디버깅에 매우 유용하지만, REPL은 전통적인 컴파일-실행-디버그 주기에 비해 때때로 생산 수준의 코드 개발에 비해 느리고 실용적이지 않을 수 있습니다.
+
+대화형 C 프로그래밍을 위한 대안으로는 작은 자체 포함 프로그램을 작성하고 통합 디버깅 도구가 있는 견고한 IDE를 사용하는 것이 있으며, 이는 실행에 대한 더 많은 제어와 통찰력을 제공할 수 있지만, 즉각성이 덜합니다. 이러한 대안에도 불구하고, C에서 REPL 환경의 등장은 언어의 다재다능성을 확장하는 흥미로운 발전을 나타내며, 개발 주기에서 유연성과 속도에 대한 현대적인 요구를 포용합니다.

@@ -1,60 +1,80 @@
 ---
-title:                "パターンに一致する文字を削除する"
-date:                  2024-01-20T17:42:33.353052-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "パターンに一致する文字を削除する"
-
+title:                "パターンに一致する文字の削除"
+date:                  2024-02-03T17:56:03.432282-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "パターンに一致する文字の削除"
 tag:                  "Strings"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/go/deleting-characters-matching-a-pattern.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (何となぜ？)
-文字パターンにマッチする文字を削除するとは、特定の形式や条件を満たす文字をテキストから取り除くことです。プログラマーは、データのフォーマットを整えたり、無関係な情報を消したりするためにこれを行います。
+## 何となく？ なぜ？
 
-## How to: (方法)
-```Go
+特定のパターンにマッチする文字を削除することは、定義されたパターン（通常は正規表現を介して）に基づいて、文字列から特定の文字や文字の連続を削除することについてです。プログラマーは頻繁に、データのクリーニング、分析の前処理、出力のフォーマット、または単にアプリケーションの要件を満たすために文字列を操作するために、このタスクを実行する必要があります。
+
+## どうやって：
+
+Goでは、`regexp`パッケージを使用して、パターンにマッチする文字を効率的に削除することができます。ここでは、例として、すべての数字を削除し、次にすべての非英数字の文字を文字列から削除する方法を示します。
+
+1. **すべての数字を削除:**
+
+```go
 package main
 
 import (
-	"fmt"
-	"regexp"
+    "fmt"
+    "regexp"
 )
 
 func main() {
-	// 元の文字列
-	original := "Hello, 世界! 1234 Cool_事."
-
-	// パターンにマッチする全てのアルファベットを削除する正規表現
-	reg, err := regexp.Compile("[a-zA-Z]+")
-	if err != nil {
-		fmt.Println("Error compiling regex:", err)
-		return
-	}
-	// マッチした文字を削除
-	cleaned := reg.ReplaceAllString(original, "")
-
-	fmt.Println("Cleaned string:", cleaned)
+    text := "Go1 はクールですが、Go2はもっとクールになるでしょう！ 現在：2023年。"
+	
+    // 数字のための正規表現をコンパイル
+    re, err := regexp.Compile("[0-9]+")
+    if err != nil {
+        fmt.Println("正規表現のコンパイル中にエラー:", err)
+        return
+    }
+	
+    // 数字を空の文字列で置き換える
+    result := re.ReplaceAllString(text, "")
+	
+    fmt.Println(result) // 出力: Go はクールですが、Go はもっとクールになるでしょう！ 現在： 。
 }
-
 ```
 
-出力:
+2. **すべての非英数字の文字を削除:**
+
+```go
+package main
+
+import (
+    "fmt"
+    "regexp"
+)
+
+func main() {
+    text := "Goはプログラミング言語で＃1です！"
+	
+    // 非英数字の文字のための正規表現をコンパイル
+    re, err := regexp.Compile("[^a-zA-Z0-9]+")
+    if err != nil {
+        fmt.Println("正規表現のコンパイルエラー:", err)
+        return
+    }
+	
+    // 非英数字の文字を空の文字列で置き換える
+    result := re.ReplaceAllString(text, "")
+	
+    fmt.Println(result) // 出力: Goはプログラミング言語で1です
+}
 ```
-Cleaned string: , 世界! 1234 _事.
-```
 
-`[a-zA-Z]+`パターンは、一つ以上のアルファベットにマッチします。`regexp`パッケージを使い、このパターンに該当する文字を削除しました。
+## 詳細
 
-## Deep Dive (詳細情報)
-Go言語における文字削除は、`strings`や`bytes`パッケージでも行うことができます。ただし、パターンマッチには`regexp`パッケージが用いられることが多いです。このパッケージは標準ライブラリの一部であり、Perl互換の正規表現を実装しています。他の方法としては、文字列をループ処理し、条件に一致するものだけを新しい文字列に組み立てる方法もありますが、正規表現を使った方が簡潔かつ効果的です。
+Goの`regexp`パッケージは、正規表現を使用したパターンマッチングと操作に対する強力なインターフェースを提供します。その実装はRE2から派生しており、RE2は線形時間実行を保証する正規表現ライブラリであり、他の一部の正規表現エンジンに存在する「壊滅的なバックトラッキング」の問題の可能性を回避します。これは、Goの正規表現を幅広いアプリケーションに対して比較的安全で効率的なものにします。
 
-Go言語が登場したのは2009年で、システムプログラミングでの利便性と並行処理を意識した設計が特徴です。`regexp`ライブラリの内部構造に関して言えば、NFA(非決定性有限オートマトン)を取り入れています。この実装は、RE2ライブラリに触発されており、正規表現の実行時間が入力サイズに比例することを保証しています（これにより悪意のある正規表現によるサービス停止攻撃を防いでいます）。
-
-## See Also (関連情報)
-- Go言語公式ドキュメント `regexp` パッケージ: [https://golang.org/pkg/regexp/](https://golang.org/pkg/regexp/)
-- Go言語公式ドキュメント `strings` パッケージ: [https://golang.org/pkg/strings/](https://golang.org/pkg/strings/)
-- GoogleのRE2正規表現ライブラリ: [https://github.com/google/re2](https://github.com/google/re2)
-- 正規表現に関する詳細な解説: [https://www.regular-expressions.info/](https://www.regular-expressions.info/)
+`regexp`パッケージはパターンを扱うための包括的なソリューションであることに留意する価値がありますが、単純または非常に特定の文字列操作のために、`strings.Replace()`、`strings.Trim()`、スライスなどの他の文字列関数がより高いパフォーマンスの代替を提供する可能性があります。正規表現は強力なツールですが、比較的に計算コストがかかるため、それらを使用せずに指定できる操作のために、標準ライブラリの代替を探求することは、時にはよりシンプルで効率的なコードへとつながることがあります。

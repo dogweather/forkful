@@ -1,57 +1,59 @@
 ---
-title:                "Interpolación de cadenas de texto"
-date:                  2024-01-20T17:51:06.293922-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Interpolación de cadenas de texto"
-
+title:                "Interpolando una cadena de texto"
+date:                  2024-02-03T17:58:22.687173-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Interpolando una cadena de texto"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/go/interpolating-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## ¿Qué y Por Qué?
+## Qué y por qué?
 
-Interpolar una cadena significa insertar valores de variables dentro de ella. Los programadores lo hacen para construir strings dinámicamente, facilitando la creación de mensajes personalizados y la salida de datos de forma legible.
+La interpolación de cadenas es un método para construir cadenas que incorporan variables, permitiendo la creación dinámica de cadenas. Los programadores hacen esto para personalizar mensajes, construir URLs, crear consultas SQL y más, permitiendo un código más legible y mantenible.
 
 ## Cómo hacerlo:
 
-En Go, la forma más común de interpolar cadenas es usando `fmt.Sprintf` o el paquete `strings.Builder`. Aquí te muestro cómo:
+En Go, la interpolación de cadenas se logra comúnmente usando el paquete `fmt`, particularmente con la función `Sprintf`, que te permite inyectar variables en una cadena especificando verbos de formato. Los verbos son marcadores de posición en la cadena de formato y son reemplazados por los valores de las variables dadas. Así es como lo usas:
 
-```Go
+```go
 package main
 
 import (
-	"fmt"
-	"strings"
+    "fmt"
 )
 
 func main() {
-	// Usando fmt.Sprintf
-	nombre := "Mundo"
-	mensaje := fmt.Sprintf("¡Hola, %s!", nombre)
-	fmt.Println(mensaje) // Salida: ¡Hola, Mundo!
+    name := "Jane"
+    age := 28
 
-	// Usando strings.Builder
-	var sb strings.Builder
-	sb.WriteString("¡Hola, ")
-	sb.WriteString(nombre)
-	sb.WriteString("!")
-	fmt.Println(sb.String()) // Salida: ¡Hola, Mundo!
+    // Usando Sprintf para la interpolación de cadenas
+    message := fmt.Sprintf("Hola, mi nombre es %s y tengo %d años.", name, age)
+    fmt.Println(message) // Salida: Hola, mi nombre es Jane y tengo 28 años.
 }
 ```
 
-## Profundizando
+Nota que `%s` se usa para cadenas, y `%d` para enteros. La documentación del paquete `fmt` proporciona una lista comprensiva de verbos de formato para diferentes tipos de datos.
 
-Históricamente, Go ha favorecido un enfoque de bajo cerimonial para tareas comunes como la interpolación de cadenas, evitando añadir sintaxis específica como en otros lenguajes (por ejemplo, el uso de `${}` en JavaScript). Antes del `fmt` o `strings.Builder`, la concatenación manual era el camino a seguir, pero era menos eficiente.
+## Profundización
 
-Hablando de eficiencia, `strings.Builder` es generalmente más rápido y usa menos memoria cuando estás concatenando o interpolando muchas cadenas. Esto se debe a que minimiza las asignaciones de memoria al trabajar con búferes internamente.
+El concepto de interpolación de cadenas existe en muchos lenguajes de programación, aunque con diferentes sintaxis y capacidades. En Go, mientras que la función `Sprintf` del paquete `fmt` es el enfoque más comúnmente usado, podría no ser siempre el más eficiente, especialmente para concatenaciones simples o cuando se trabaja dentro de código altamente sensible al rendimiento.
 
-En cuanto a alternativas, paquetes de terceros como `template` ofrecen soluciones más robustas y flexibles para casos de uso más complejos, permitiendo crear plantillas que pueden evaluarse con distintos datos.
+El paquete `fmt` utiliza reflexión para interpretar dinámicamente los tipos de las variables en tiempo de ejecución, lo que, aunque flexible, incurre en sobrecarga. Para escenarios donde el rendimiento es crítico, la concatenación directa de cadenas o el tipo `strings.Builder` pueden ofrecer alternativas mejores. La concatenación directa es sencilla pero puede volverse engorrosa con múltiples variables. `strings.Builder`, por otro lado, proporciona una forma más eficiente y legible de construir cadenas complejas en un bucle o al tratar con muchas variables:
 
-## Ver También
+```go
+var sb strings.Builder
+sb.WriteString("Hola, mi nombre es ")
+sb.WriteString(name)
+sb.WriteString(" y tengo ")
+sb.WriteString(strconv.Itoa(age))
+sb.WriteString(" años.")
+message := sb.String()
 
-- Documentación oficial de `fmt`: https://pkg.go.dev/fmt
-- Documentación oficial de `strings`: https://pkg.go.dev/strings
-- Blog de Go sobre eficiencia de strings: https://blog.golang.org/strings
-- Paquete `text/template`: https://pkg.go.dev/text/template
+fmt.Println(message) // Produce la misma salida que antes
+```
+
+Finalmente, la elección entre `fmt.Sprintf`, concatenación directa y `strings.Builder` depende de los requisitos específicos de tu aplicación, como la complejidad de la cadena que se está construyendo y las consideraciones de rendimiento.

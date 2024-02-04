@@ -1,47 +1,73 @@
 ---
-title:                "Виділення підрядків"
-date:                  2024-01-20T17:45:14.103242-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Виділення підрядків"
-
+title:                "Видобування підрядків"
+date:                  2024-02-03T17:56:58.571605-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Видобування підрядків"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/c/extracting-substrings.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Що та Навіщо?)
-Витягування підрядків у C – це процес отримання частини рядка. Це важливо для аналізу даних, валідації вводу та обробки тексту.
+## Що і чому?
 
-## How to: (Як це зробити:)
+Виділення підрядків у C передбачає створення меншого рядка (підрядка) з більшого рядка на основі вказаних критеріїв, таких як позиція та довжина. Програмісти часто виконують це завдання для аналізу тексту, обробки даних або перевірки введення, що робить цей навик критично важливим для ефективної маніпуляції та аналізу текстових даних.
+
+## Як це зробити:
+
+На відміну від деяких мов вищого рівня, які надають вбудовані методи для виділення підрядків, C вимагає більш ручного підходу з використанням його функцій маніпуляції з рядками. Ось як ефективно виділити підрядок у C:
+
+### Приклад 1: Використання `strncpy`
+
 ```c
 #include <stdio.h>
 #include <string.h>
 
-void extract_substring(char* string, int start, int length) {
-    char substr[length + 1]; // +1 for the terminating null byte
-    strncpy(substr, string + start, length);
-    substr[length] = '\0'; // Ensure the substring is null-terminated
-    printf("Extracted substring: '%s'\n", substr);
-}
-
 int main() {
-    char my_string[] = "Привіт, світе!";
-    extract_substring(my_string, 0, 6); // Виведе "Привіт"
-    extract_substring(my_string, 8, 5); // Виведе "світе"
+    char text[] = "Привіт, Світ!";
+    char buffer[20];
+
+    // Виділити "Світ" з "Привіт, Світ!"
+    strncpy(buffer, text + 7, 5);
+    buffer[5] = '\0'; // Забезпечити завершення нулем
+
+    printf("Виділений підрядок: %s\n", buffer);
+    // Вивід: Виділений підрядок: Світ
     return 0;
 }
 ```
-Sample Output:
-```
-Extracted substring: 'Привіт'
-Extracted substring: 'світе'
+
+### Приклад 2: Створення Функції
+
+Для повторного використання присвячена функція для виділення підрядків може бути ефективнішою:
+
+```c
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+void extractSubstring(char *source, int from, int n, char *target) {
+    strncpy(target, source + from, n);
+    target[n] = '\0'; // Забезпечити завершення нулем
+}
+
+int main() {
+    char text[] = "Програмування на C";
+    char buffer[50];
+
+    extractSubstring(text, 0, 11, buffer);
+    printf("Виділений підрядок: %s\n", buffer);
+    // Вивід: Виділений підрядок: Програмування
+    return 0;
+}
 ```
 
-## Deep Dive (Поглиблений Розбір)
-The concept of strings didn't exist in early C; they were emulated using character arrays and pointers. The standard library added functions like `strncpy()` later. Alternatives to `strncpy()` include `sprintf()` for complex manipulations or manually copying characters with loops. Always watch out for buffer overflows and ensure every string is null-terminated. In modern C, bounds-check functions like `strncpy_s()` are preferred for safety.
+## Поглиблений Розгляд
 
-## See Also (Дивіться також)
-- C Standard Library reference for `strncpy`: https://en.cppreference.com/w/c/string/byte/strncpy
-- Secure coding practices in C: https://www.securecoding.cert.org
-- UTF-8 and Unicode in C programming: https://www.utf8everywhere.org/
+Виділення підрядків у C в основному виконується через маніпуляцію з вказівниками та обережне управління пам'яттю, що відображає низькорівневий підхід мови до обробки даних. Цей метод сягає корінням ранніх днів програмування на C, коли ефективне управління ресурсами було вкрай важливим через обмежену обчислювальну потужність. Хоча відсутність вбудованої функції підрядка може здатися пропуском, це проявляє філософію C щодо надання програмістам повного контролю над управлінням пам'яттю, що часто призводить до оптимізованого, але більш складного коду.
+
+У сфері сучасного програмування мови, такі як Python та JavaScript, пропонують вбудовані методи для виділення підрядків, такі як `slice()` або розбиття рядків за індексами. Ці мови вищого рівня керують управлінням пам'яттю за лаштунками, відмовляючись від певного ступеню контролю на користь простоти використання та читабельності.
+
+Для програмістів на C розуміння арифметики вказівників та розподілу пам'яті є важливим для завдань подібних до виділення підрядків. Хоча цей підхід вимагає глибшого розуміння того, як рядки представлені та маніпулюються в пам'яті, він пропонує безпрецедентний контроль та ефективність, характерні риси програмування на C, які зберігали його актуальність у додатках, критичних з точки зору продуктивності, протягом десятиліть. Однак для тих, хто працює над додатками вищого рівня, де пряме управління пам'яттю є менш занепокоєнням, мови з вбудованою функціональністю підрядка можуть пропонувати більш простий та менш схильний до помилок підхід.

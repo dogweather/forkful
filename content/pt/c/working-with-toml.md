@@ -1,73 +1,86 @@
 ---
 title:                "Trabalhando com TOML"
-date:                  2024-01-26T04:19:34.313794-07:00
+date:                  2024-02-03T18:12:25.272408-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Trabalhando com TOML"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/c/working-with-toml.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## O Que & Por Quê?
-TOML é uma linguagem de serialização de dados projetada para ser fácil de ler e escrever. Programadores a utilizam para arquivos de configuração, armazenamento de dados simples e troca de dados entre linguagens devido à sua clareza e facilidade de uso para humanos.
+## O Que & Por Que?
 
-## Como fazer:
-Vamos analisar um arquivo de configuração TOML em C usando a biblioteca "tomlc99". Primeiro, instale a biblioteca. Depois, crie um `config.toml`:
+TOML (Tom's Obvious, Minimal Language) é um formato de arquivo de configuração fácil de ler devido à sua clareza semântica. Programadores o utilizam em arquivos de configuração de aplicações porque sua simplicidade e legibilidade humana o tornam uma escolha excelente sobre formatos como XML ou JSON em certos contextos.
 
+## Como Fazer:
+
+Para trabalhar com TOML em C, você primeiro precisa de uma biblioteca capaz de analisar arquivos TOML, já que a biblioteca padrão do C não inclui essa funcionalidade. Uma escolha popular é `tomlc99`, um analisador TOML leve para C99. Aqui está um guia rápido para ler um simples arquivo de configuração TOML:
+
+Primeiro, certifique-se de ter instalado e devidamente vinculado o `tomlc99` no seu projeto.
+
+**Arquivo TOML de exemplo (`config.toml`):**
 ```toml
-title = "Exemplo TOML"
-
-[owner]
-name = "Tom Preston-Werner"
-dob = 1979-05-27T07:32:00Z
+[database]
+server = "192.168.1.1"
+ports = [ 8001, 8001, 8002 ]
+connection_max = 5000
+enabled = true
 ```
 
-Agora, analise-o em C:
+**Código C para analisar este arquivo:**
 
 ```c
 #include <stdio.h>
+#include <stdlib.h>
 #include "toml.h"
 
 int main() {
-    FILE* fp;
-    char errbuf[200];
-
-    if (0 == (fp = fopen("config.toml", "r"))) {
-        printf("Erro: não é possível abrir o arquivo de configuração\n");
-        return 1;
-    }
-    
-    toml_table_t* conf = toml_parse_file(fp, errbuf, sizeof(errbuf));
-    fclose(fp);
-    if (0 == conf) {
-        printf("Erro: %s\n", errbuf);
-        return 1;
+    FILE *configFile;
+    configFile = fopen("config.toml", "r");
+    if (!configFile) {
+        perror("Não é possível abrir o arquivo");
+        return EXIT_FAILURE;
     }
 
-    printf("Título: %s\n", toml_raw_in(conf, "title"));
+    toml_table_t *config = toml_parse_file(configFile, NULL, 0);
+    if (!config) {
+        fprintf(stderr, "Erro ao analisar arquivo\n");
+        fclose(configFile);
+        return EXIT_FAILURE;
+    }
 
-    toml_table_t* owner = toml_table_in(conf, "owner");
-    printf("Nome do Proprietário: %s\n", toml_raw_in(owner, "name"));
+    toml_table_t *database = toml_table_in(config, "database");
+    if (database) {
+        const char *server = toml_raw_in(database, "server");
+        printf("Servidor de Banco de Dados: %s\n", server);
 
-    toml_free(conf);
-    return 0;
+        toml_array_t *ports = toml_array_in(database, "ports");
+        for (int i = 0; i < toml_array_nelem(ports); i++) {
+            int64_t port;
+            toml_int_at(ports, i, &port);
+            printf("Porta %d: %ld\n", i, port);
+        }
+    }
+
+    toml_free(config);
+    fclose(configFile);
+    return EXIT_SUCCESS;
 }
 ```
 
-Saída de exemplo:
+**Saída:**
 ```
-Título: "Exemplo TOML"
-Nome do Proprietário: "Tom Preston-Werner"
+Servidor de Banco de Dados: "192.168.1.1"
+Porta 0: 8001
+Porta 1: 8001
+Porta 2: 8002
 ```
 
-## Mergulho Profundo
-TOML, que significa Tom's Obvious, Minimal Language (Linguagem Óbvia e Mínima de Tom), foi criada por Tom Preston-Werner em 2013. Serve como uma alternativa mais simples a formatos como XML e YAML, focando em ser mais legível e escrevível por humanos. Embora o JSON seja outra alternativa, o TOML mantém uma estrutura que é mais fácil de ser analisada visualmente por humanos, o que é uma das principais razões para sua adoção em arquivos de configuração.
+## Aprofundamento
 
-Em C, trabalhar com TOML envolve escolher uma biblioteca de análise, uma vez que a linguagem não a suporta nativamente. Bibliotecas como "tomlc99" são compatíveis com C99 e fornecem uma API para decodificar textos TOML. Ao considerar o desempenho, o tratamento adequado de erros e a gestão de memória são cruciais, pois C não possui coleta de lixo embutida.
+O TOML foi criado por Tom Preston-Werner, co-fundador do GitHub, como resposta às limitações que percebeu em outros formatos de arquivo de configuração. Seu objetivo é ser direto e inequívoco, tanto para humanos quanto para computadores, ao ler e escrever sem precisar de regras de análise complexas. No ecossistema C, TOML não é um cidadão de primeira classe como pode ser em linguagens de alto nível, como Rust com seu `serde_toml` ou Python com `toml`, que possuem bibliotecas com suporte nativo. Em vez disso, desenvolvedores C precisam contar com bibliotecas externas como `tomlc99`, mas isso é típico dada a ênfase do C em minimalismo e desempenho.
 
-## Veja Também:
-1. Especificação TOML: [https://toml.io/pt/](https://toml.io/pt/)
-2. Repositório GitHub tomlc99: [https://github.com/cktan/tomlc99](https://github.com/cktan/tomlc99)
-3. Comparação de Formatos de Serialização de Dados: [https://labs.eleks.com/2015/07/comparison-of-data-serialization-formats.html](https://labs.eleks.com/2015/07/comparison-of-data-serialization-formats.html)
+Embora o TOML seja elogiado por sua clareza, ao escolher um formato de arquivo de configuração, é vital considerar as necessidades do projeto. Em cenários que exigem estruturas mais complexas ou interatividade com APIs da web, JSON ou mesmo YAML podem oferecer um melhor ajuste apesar de sua complexidade aumentada. TOML brilha em configurações onde a legibilidade e simplicidade são primordiais, não necessariamente onde as estruturas de dados mais avançadas são necessárias.

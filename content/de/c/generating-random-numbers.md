@@ -1,29 +1,30 @@
 ---
-title:                "Generierung von Zufallszahlen"
-date:                  2024-01-27T20:33:11.402696-07:00
+title:                "Zufallszahlen generieren"
+date:                  2024-02-03T17:57:01.406776-07:00
 model:                 gpt-4-0125-preview
-simple_title:         "Generierung von Zufallszahlen"
-
+simple_title:         "Zufallszahlen generieren"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/c/generating-random-numbers.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Was & Warum?
 
-Das Erzeugen von Zufallszahlen in C beinhaltet das Erstellen von Zahlenfolgen, die kein erkennbares Muster aufweisen und das Konzept der Zufälligkeit nachahmen. Programmierer nutzen Zufallszahlen für eine Vielzahl von Zwecken, einschließlich der Simulation von Daten, kryptografischen Anwendungen und der Spielentwicklung, was es zu einem wichtigen Aspekt der Programmierung macht.
+Die Generierung von Zufallszahlen in C umfasst das Erstellen von Werten, die unvorhersehbar sind und einer spezifischen Verteilung folgen, wie zum Beispiel gleichmäßig oder normal. Diese Fähigkeit ist entscheidend für Anwendungen, die von Simulationen und Spielen bis hin zu kryptografischen Operationen reichen, wo Unvorhersehbarkeit oder die Simulation von realweltlicher Zufälligkeit wesentlich ist.
 
-## Wie geht das:
+## Wie:
 
-Um Zufallszahlen in C zu generieren, verwendet man üblicherweise die Funktion `rand()`, die in `stdlib.h` zu finden ist. Es ist jedoch entscheidend, den Zufallszahlengenerator zu initialisieren, um Variabilität in den generierten Zahlen über verschiedene Programmausführungen hinweg zu gewährleisten. Die Funktion `srand()`, die mit einem Wert initialisiert wird, oft die aktuelle Zeit, erleichtert dies.
+In C können Zufallszahlen mit der Funktion `rand()` generiert werden, die Teil der C-Standardbibliothek `<stdlib.h>` ist. Standardmäßig erzeugt `rand()` Pseudozufallszahlen im Bereich von 0 bis `RAND_MAX` (eine in `<stdlib.h>` definierte Konstante). Für mehr Kontrolle über den Bereich können Programmierer die Ausgabe von `rand()` manipulieren.
 
-Hier ist ein einfaches Beispiel für die Erzeugung einer Zufallszahl zwischen 0 und 99:
+Hier ist ein einfaches Beispiel für die Generierung einer Zufallszahl zwischen 0 und 99:
 
 ```c
 #include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
+#include <stdlib.h> // Für rand() und srand()
+#include <time.h>   // Für time()
 
 int main() {
     // Den Zufallszahlengenerator initialisieren
@@ -32,53 +33,27 @@ int main() {
     // Eine Zufallszahl zwischen 0 und 99 generieren
     int randomNumber = rand() % 100;
 
-    // Die Zufallszahl ausgeben
     printf("Zufallszahl: %d\n", randomNumber);
 
     return 0;
 }
 ```
 
-Beispielausgabe:
+Die Ausgabe könnte bei jedem Ausführen dieses Programms variieren:
 
 ```
 Zufallszahl: 42
 ```
+Um Zufallszahlen in einem anderen Bereich zu generieren, können Sie den Modulo-Operator (`%`) entsprechend anpassen. Beispielsweise erzeugt `rand() % 10` Zahlen von 0 bis 9.
 
-Es ist wichtig zu beachten, dass jede Ausführung dieses Programms eine neue Zufallszahl erzeugt, dank der Initialisierung mit der aktuellen Zeit.
+Es ist wichtig zu beachten, dass das Initialisieren des Pseudozufallszahlengenerators (`srand()`-Aufruf) mit der aktuellen Zeit (`time(NULL)`) unterschiedliche Folgen von Zufallszahlen bei Programmausführungen sicherstellt. Ohne Initialisierung (`srand()`) würde `rand()` bei jedem Ausführen des Programms dieselbe Zahlenfolge erzeugen.
 
 ## Vertiefung
 
-Die traditionelle Methode zur Erzeugung von Zufallszahlen in C, unter Verwendung von `rand()` und `srand()`, ist nicht wirklich zufällig. Es ist pseudorandom. Das reicht für viele Anwendungen aus, fällt aber in Situationen, in denen ein hoher Grad an Zufälligkeit erforderlich ist, wie bei ernsthaften kryptografischen Anwendungen, zu kurz. Die von `rand()` generierte Sequenz wird vollständig durch den `srand()` bereitgestellten Seed bestimmt. Wenn also der Seed bekannt ist, kann die Sequenz vorhergesagt werden, was die Zufälligkeit verringert.
+Die Funktion `rand()` und ihr Initialisierungspendant `srand()` sind seit Jahrzehnten Teil der C-Standardbibliothek. Sie basieren auf Algorithmen, die Sequenzen von Zahlen generieren, die nur scheinbar zufällig sind – daher der Begriff "Pseudozufall". Der zugrunde liegende Algorithmus in `rand()` ist typischerweise ein linearer Kongruenzgenerator (LCG).
 
-Historisch gesehen wurde die Funktion `rand()` aufgrund ihrer geringen Qualität der Zufälligkeit und des begrenzten Bereichs kritisiert. Moderne Alternativen umfassen die Verwendung von gerätespezifischen APIs oder externen Bibliotheken, die wahre Zufälligkeit besser annähern oder, in UNIX-ähnlichen Systemen, das Lesen von `/dev/random` oder `/dev/urandom` für kryptografische Zwecke.
+Obwohl `rand()` und `srand()` für viele Anwendungen ausreichen, sind ihre Einschränkungen, insbesondere bezüglich der Qualität der Zufälligkeit und potenziellen Vorhersagbarkeit, bekannt. Für Anwendungen, die hochwertige Zufälligkeit erfordern, wie kryptografische Operationen, sollten Alternativen wie `/dev/random` oder `/dev/urandom` (auf Unix-ähnlichen Systemen) oder APIs, die von kryptografischen Bibliotheken bereitgestellt werden, in Betracht gezogen werden.
 
-Zum Beispiel die Verwendung von `/dev/urandom` in C:
+Mit der Einführung von C11 umfasste die ISO-C-Norm eine neue Kopfzeile, `<stdatomic.h>`, die eine verfeinerte Kontrolle für gleichzeitige Operationen bietet, die jedoch nicht direkt die Zufälligkeit betrifft. Für echte Zufälligkeit in C wenden sich Entwickler oft an plattformspezifische oder externe Bibliotheken, die bessere Algorithmen anbieten oder Hardware-Entropiequellen nutzen.
 
-```c
-#include <stdio.h>
-#include <stdlib.h>
-
-int main() {
-    FILE *fp;
-    unsigned int randomNumber;
-
-    // /dev/urandom zum Lesen öffnen
-    fp = fopen("/dev/urandom", "r");
-
-    // Eine Zufallszahl lesen
-    fread(&randomNumber, sizeof(randomNumber), 1, fp);
-
-    // Die Zufallszahl ausgeben
-    printf("Zufallszahl: %u\n", randomNumber);
-
-    // Die Datei schließen
-    fclose(fp);
-
-    return 0;
-}
-```
-
-Diese Methode liest direkt aus dem Entropiepool des Systems und bietet eine höhere Qualität an Zufälligkeit, die für empfindlichere Anwendungen geeignet ist. Dieser Ansatz kann jedoch Portabilitätsprobleme auf verschiedenen Plattformen haben, was ihn weniger universell als die Verwendung von `rand()` macht.
-
-Unabhängig von der Methode ist das Verständnis der Natur der Zufälligkeit und deren Implementierung in C entscheidend für die Entwicklung von effektiven, sicheren und fesselnden Anwendungen.
+Denken Sie daran, dass `rand()` zwar ein einfaches und zugängliches Mittel zur Erzeugung von Pseudozufallszahlen darstellt, seine Verwendung in modernen Anwendungen jedoch durch die Qualität und Vorhersagbarkeit seiner Ausgabe begrenzt ist. Wenn robustere Lösungen erforderlich sind, insbesondere für sicherheitsbewusste Anwendungen, wird das Erkunden über die Standardbibliothek hinaus dringend empfohlen.

@@ -1,61 +1,57 @@
 ---
-title:                "Å jobbe med komplekse tall"
-date:                  2024-01-26T04:37:49.028524-07:00
+title:                "Å Arbeide med Komplekse Tall"
+date:                  2024-02-03T18:13:53.473297-07:00
 model:                 gpt-4-0125-preview
-simple_title:         "Å jobbe med komplekse tall"
-
+simple_title:         "Å Arbeide med Komplekse Tall"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/c/working-with-complex-numbers.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Komplekse tall, en blanding av reelle og imaginære deler (som 3 + 4i), er nøkkelen i avanserte beregninger, som signalbehandling eller løsning av visse ligninger. Programmerere håndterer dem for matematikktunge applikasjoner der tradisjonelle tall ikke strekker til.
+
+Komplekse tall består av en reell del og en imaginær del, representert som `a + bi` hvor `i` er kvadratroten av `-1`. Programmerere arbeider med komplekse tall i ulike felt som elektroteknikk, kvanteberegning og fluiddynamikk, og utnytter deres unike egenskaper for simuleringer, signalbehandling og løsning av spesifikke typer matematiske ligninger.
 
 ## Hvordan:
-C, siden C99, har en innebygd kompleks type og bibliotek. Her er hvordan du bruker det:
 
-```C
+I C støttes komplekse tall av Standardbiblioteket, spesifikt `<complex.h>`. For å bruke dem, erklær variabler med typen `double complex` (eller `float complex` for enkel presisjon). Her er hvordan man utfører grunnleggende operasjoner:
+
+```c
 #include <stdio.h>
 #include <complex.h>
 
 int main() {
-    // Erklærer to komplekse tall
-    double complex z1 = 1.0 + 3.0 * I;
-    double complex z2 = 2.0 - 2.0 * I;
-
-    // Operasjoner med komplekse tall
+    double complex z1 = 1.0 + 2.0*I; // Erklærer et komplekst tall 1+2i
+    double complex z2 = 1.0 - 2.0*I; // Erklærer et annet komplekst tall 1-2i
+    
+    // Addisjon
     double complex sum = z1 + z2;
-    double complex mult = z1 * z2;
+    printf("Sum: %.2f + %.2fi\n", creal(sum), cimag(sum)); // Utdata: Sum: 2.00 + 0.00i
 
-    // Skriver ut resultatene
-    printf("Sum: %.1f + %.1fi\n", creal(sum), cimag(sum));
-    printf("Produkt: %.1f + %.1fi\n", creal(mult), cimag(mult));
+    // Multiplikasjon
+    double complex produkt = z1 * z2;
+    printf("Produkt: %.2f + %.2fi\n", creal(produkt), cimag(produkt)); // Utdata: Produkt: 5.00 + 0.00i
 
-    // Absoluttverdi & fasevinkel
-    printf("Abs(z1): %f\n", cabs(z1));
-    printf("Arg(z1): %f\n", carg(z1));
+    // Kompleks konjugert
+    double complex konjugert = conj(z1);
+    printf("Konjugert av z1: %.2f + %.2fi\n", creal(konjugert), cimag(konjugert)); // Utdata: Konjugert av z1: 1.00 - 2.00i
+    
+    // Størrelse
+    double størrelse = cabs(z1);
+    printf("Størrelsen av z1: %.2f\n", størrelse); // Utdata: Størrelsen av z1: 2.24
 
+    // Fase
+    double fase = carg(z1);
+    printf("Fase av z1: %.2f\n", fase); // Utdata i radianer
+    
     return 0;
 }
 ```
+Merk at `I` er en konstant som representerer den imaginære enheten i `<complex.h>`. Funksjoner som `creal()` og `cimag()` trekker ut henholdsvis reelle og imaginære deler, mens `conj()` beregner det komplekse konjugatet. For størrelsen og fasen (argumentet) til komplekse tall, brukes `cabs()` og `carg()`.
 
-Eksempel på utdata:
-```
-Sum: 3.0 + 1.0i
-Produkt: 8.0 + 2.0i
-Abs(z1): 3.162278
-Arg(z1): 1.249046
-```
 ## Dypdykk
-Komplekse tall går flere århundrer tilbake, med røtter i algebra fra det 16. århundre. Frem til nå, de er nå en fast del i mange programmeringsspråk, ikke bare C.
 
-C99-standarden introduserte `<complex.h>`, en header som definerer makroer, funksjoner og `complex` datatypen. Det finnes alternativer - som å lage din egen struktur, men hvorfor finne opp hjulet på nytt? C-standardbiblioteket er optimalisert og klart til bruk.
-
-Til tross for sin kraft, er Cs støtte for komplekse tall ikke uten kritikere. Det kan være mindre intuitivt enn lignende funksjoner i språk som Python, og å håndtere hjørnetilfeller kan bli vanskelig. Men for ren ytelse, er det fortsatt et solid valg.
-
-## Se også
-- C99 Standarddokumentasjon for `<complex.h>`: https://en.cppreference.com/w/c/numeric/complex
-- IEEE Standard for Flyttallaritmetikk (IEEE 754): https://ieeexplore.ieee.org/document/4610935
-- Nettbasert opplæring for matematikk med komplekse tall i C: https://www.tutorialspoint.com/complex-number-arithmetic-in-c-programming
+Støtten for komplekse tall i C er relativt nylig, med standardisering i C99. Før dette var aritmetikk med komplekse tall i C tungvint, ofte kreves det egendefinerte datastrukturer og funksjoner. Inkluderingen av `<complex.h>` og de komplekse datatypene ga et betydelig løft til språkets evner for vitenskapelige og ingeniørrelaterte applikasjoner. Det er imidlertid verdt å merke seg at noen språk, som Python, tilbyr mer intuitiv støtte for komplekse tall gjennom innebygde datatyper og et rikere sett med biblioteksfunksjoner. Til tross for dette gjør ytelsen og kontrollen som C tilbyr, det til et foretrukket valg for oppgaver med høy ytelse, selv om det betyr å håndtere en noe mer omstendelig syntaks for kompleks aritmetikk.

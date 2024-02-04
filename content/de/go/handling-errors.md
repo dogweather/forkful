@@ -1,75 +1,69 @@
 ---
 title:                "Fehlerbehandlung"
-date:                  2024-01-26T00:53:19.970564-07:00
-model:                 gpt-4-1106-preview
+date:                  2024-02-03T17:58:04.181688-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Fehlerbehandlung"
-
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/go/handling-errors.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Was & Warum?
 
-Fehlerbehandlung in Go dreht sich darum, Laufzeitprobleme anmutig aufzufangen und darauf zu reagieren. Wir tun dies, um Abstürze zu verhindern und sicherzustellen, dass unsere Programme vorhersehbar handeln, auch wenn Probleme auftreten.
+Die Fehlerbehandlung in Go umfasst das Erkennen und Reagieren auf Fehlerbedingungen in Ihrem Programm. Programmierer betreiben Fehlerbehandlung, um sicherzustellen, dass ihre Anwendungen sich elegant von unerwarteten Situationen erholen können, was zu robusterer und zuverlässigerer Software führt.
 
-## Wie geht das:
+## Wie:
 
-Go verwendet explizite Fehlerbehandlung. Das bedeutet, dass du überprüfst, ob eine Funktion bei jedem Aufruf einen Fehler zurückgibt. Keine Ausnahmen. So sieht das aus:
+In Go wird die Fehlerbehandlung explizit mit dem `error`-Typ verwaltet. Funktionen, die fehlschlagen können, geben einen Fehler als ihren letzten Rückgabewert zurück. Die Überprüfung, ob dieser Fehlerwert `nil` ist, sagt Ihnen, ob ein Fehler aufgetreten ist.
 
-```Go
+```go
 package main
 
 import (
-	"fmt"
-	"os"
+    "errors"
+    "fmt"
 )
 
+func Compute(value int) (int, error) {
+    if value > 100 {
+        return 0, errors.New("Der Wert muss 100 oder weniger sein")
+    }
+    return value * 2, nil
+}
+
 func main() {
-	err := doSomething()
-	if err != nil {
-		fmt.Println("Uh oh:", err)
-		os.Exit(1)
-	}
-}
-
-func doSomething() error {
-	// So tun, als ob etwas schief gelaufen wäre
-	return fmt.Errorf("etwas ist schief gelaufen")
-}
-```
-
-Führe dies aus, und du bekommst:
-
-```
-Uh oh: etwas ist schief gelaufen
-```
-
-Aber was, wenn es erfolgreich ist?
-
-```Go
-func doSomething() error {
-	// Dieses Mal ist alles gut
-	return nil
+    result, err := Compute(150)
+    if err != nil {
+        fmt.Println("Fehler:", err)
+    } else {
+        fmt.Println("Ergebnis:", result)
+    }
+    
+    // Einen Fehler elegant behandeln
+    anotherResult, anotherErr := Compute(50)
+    if anotherErr != nil {
+        fmt.Println("Fehler:", anotherErr)
+    } else {
+        fmt.Println("Ergebnis:", anotherResult)
+    }
 }
 ```
 
-Keine Ausgabe. Cool, keine Nachrichten sind gute Nachrichten.
+Beispielausgabe für den obigen Code:
+```
+Fehler: Der Wert muss 100 oder weniger sein
+Ergebnis: 100
+```
 
-## Tiefere Betrachtung:
+In diesem Beispiel gibt die Funktion `Compute` entweder einen berechneten Wert oder einen Fehler zurück. Der Aufrufer behandelt den Fehler, indem überprüft wird, ob `err` nicht `nil` ist.
 
-In Go war die Fehlerbehandlung schon immer ein Streitpunkt. Seit dem Anfang hat sich Go gegen Ausnahmen entschieden zugunsten eines expliziteren Ansatzes, den einige Entwickler für seine Einfachheit lieben und andere als weitschweifig empfinden. Der eingebaute `error`-Typ ist ein Interface. Jeder Typ mit einer `Error() string`-Methode erfüllt es. Dies passt zum Ethos von Go mit Einfachheit und Explizitheit.
+## Tiefergehende Betrachtung
 
-Alternativen? Es gibt das Duo `panic` und `recover`, aber diese sind für außergewöhnliche Fälle gedacht (Wortspiel beabsichtigt), wenn das Programm nicht fortgesetzt werden kann. Denke an `panic` als den Schleudersitz, den du betätigst, wenn du weißt, dass es kein Zurück gibt. Benutze es sparsam.
+Gos Ansatz zur Fehlerbehandlung ist absichtlich unkompliziert und typsicher, was explizite Fehlerüberprüfungen erfordert. Dieses Konzept steht im Gegensatz zur ausnahmebasierten Fehlerbehandlung, die in Sprachen wie Java und Python zu sehen ist, wo Fehler die Aufrufkette hochpropagiert werden, es sei denn, sie werden von einem Exception-Handler abgefangen. Das Go-Team argumentiert, dass die explizite Behandlung von Fehlern zu klarerem und zuverlässigerem Code führt, da es Programmierer zwingt, Fehler sofort dort zu adressieren, wo sie auftreten.
 
-Was die gängige Fehlerbehandlung angeht, führte Go 1.13 das Fehlerverpacken ein, wodurch es einfacher wird, die "Fehlerkette" mit Funktionen wie `errors.Is()` und `errors.As()` herauszufinden.
+Jedoch erwähnen einige Kritiken, dass dieses Muster zu ausführlichem Code führen kann, insbesondere in komplexen Funktionen mit vielen fehleranfälligen Operationen. Als Reaktion darauf haben neuere Versionen von Go raffiniertere Fehlerbehandlungsfunktionen eingeführt, wie das Umhüllen von Fehlern, wodurch es einfacher wird, einem Fehler Kontext zu verleihen, ohne die ursprüngliche Fehlerinformation zu verlieren. Die Community hat auch Vorschläge für neue Fehlerbehandlungsmechanismen gesehen, wie check/handle, obwohl diese zum Zeitpunkt meines letzten Updates noch in Diskussion sind.
 
-## Siehe auch:
-
-Alles über Fehlerbehandlung in Go:
-
-- Der Go Blog über Fehlerbehandlung: [https://blog.golang.org/error-handling-and-go](https://blog.golang.org/error-handling-and-go)
-- Effective Go – Abschnitt zur Fehlerbehandlung: [https://golang.org/doc/effective_go#errors](https://golang.org/doc/effective_go#errors)
-- Go 1.13 Dokumentation zum Fehlerverpacken: [https://golang.org/doc/go1.13#error_wrapping](https://golang.org/doc/go1.13#error_wrapping)
-- Dave Cheneys Beitrag zu Strategien für Fehlerbehandlung: [https://dave.cheney.net/2016/04/27/dont-just-check-errors-handle-them-gracefully](https://dave.cheney.net/2016/04/27/dont-just-check-errors-handle-them-gracefully)
+Gos Fehlerbehandlungsphilosophie betont das Verstehen und Planen von Fehlern als Teil des normalen Programmablaufs. Dieser Ansatz fördert die Entwicklung von widerstandsfähigerer und vorhersehbarer Software, wenn auch mit einer potenziellen Zunahme an Boilerplate-Code. Alternative Muster und Bibliotheken existieren, um die Fehlerbehandlung für besonders komplexe Fälle zu vereinfachen, aber der in Go eingebaute `error`-Typ bleibt das Fundament der Fehlerbehandlung in der Sprache.

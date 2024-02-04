@@ -1,47 +1,61 @@
 ---
-title:                "Utilisation d'une console interactive (REPL)"
-date:                  2024-01-26T04:11:26.111212-07:00
+title:                "Utilisation d'un interpréteur de commandes interactif (REPL)"
+date:                  2024-02-03T18:10:03.556129-07:00
 model:                 gpt-4-0125-preview
-simple_title:         "Utilisation d'une console interactive (REPL)"
-
+simple_title:         "Utilisation d'un interpréteur de commandes interactif (REPL)"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/c/using-an-interactive-shell-repl.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Quoi et Pourquoi ?
-Un shell interactif, ou boucle lire-évaluer-afficher (Read-Eval-Print Loop, REPL), est un outil fournissant un environnement de codage en temps réel pour tester instantanément des extraits de code. Les programmeurs l'utilisent pour obtenir un retour rapide pendant le développement, l'apprentissage et le débogage.
+## Quoi & Pourquoi ?
+
+Une coquille interactive, également connue sous le nom de boucle de lecture-évaluation-affichage (REPL, pour Read-Eval-Print Loop), permet aux programmeurs de taper des expressions ou du code et de voir immédiatement les résultats, améliorant ainsi les processus d'apprentissage et de débogage. Bien que C ne prenne pas traditionnellement en charge les environnements REPL de manière native, les outils modernes comblent cette lacune, offrant une exploration dynamique des programmes C.
 
 ## Comment faire :
-C ne dispose pas d’un REPL intégré, mais vous pouvez utiliser des outils tiers. Voici un aperçu en utilisant Cling, un interpréteur C++ qui peut également gérer le code C :
 
-```C
-#include <stdio.h>
+Pour interagir avec un REPL C, vous pourriez ne pas trouver un chemin aussi direct que dans des langues comme Python ou JavaScript. Cependant, des outils comme `Cling`, un interpréteur C/C++ basé sur la technologie Clang et LLVM, le rendent possible. Voici comment commencer :
 
-int main() {
-    printf("Bonjour, monde REPL !\n");
-    return 0;
-}
+1. **Installer Cling** : Selon votre système d'exploitation, vous pourriez trouver Cling dans votre gestionnaire de paquets ou avoir besoin de le compiler à partir du code source. Par exemple, sur Ubuntu, cela pourrait être aussi simple que `sudo apt-get install cling`.
+
+2. **Lancer Cling** : Ouvrez votre terminal et tapez `cling` pour démarrer la coquille interactive.
+
+```bash
+$ cling
 ```
 
-Sortie dans le REPL de Cling :
-```
-[cling]$ .x votrescript.c
+3. **Écrire du Code** : Maintenant, vous pouvez taper directement du code C dans la coquille et voir immédiatement les résultats. Voici un exemple simple :
+
+```c
+[cling]$ #include <stdio.h>
+[cling]$ printf("Bonjour, monde REPL !\n");
 Bonjour, monde REPL !
 ```
 
-Cling exécute le script et affiche la sortie instantanément.
+4. **Exemple avec des Variables et des Opérations** : Expérimentez avec des variables et voyez un retour instantané.
 
-## Exploration approfondie
-Les REPL sont standards dans les langues dynamiques comme Python ou Ruby, mais pour des langues compilées comme C, ils sont moins courants. Historiquement, le cycle compiler-exécuter-déboguer ne se prêtait pas à l'exploration interactive. Des outils comme Cling et les compilateurs C en ligne offrent des expériences similaires à un REPL en enveloppant votre code C dans un environnement C++.
+```c
+[cling]$ int a = 5;
+[cling]$ int b = 3;
+[cling]$ printf("%d + %d = %d\n", a, b, a+b);
+5 + 3 = 8
+```
 
-Des alternatives à Cling incluent des interpréteurs C comme CINT et Ch. Ces outils permettent une itération rapide mais ne peuvent pas convenir à tous les scénarios de développement en raison de contraintes de performance et du support pour des fonctionnalités complexes.
+5. **Inclure des Bibliothèques** : Cling vous permet d'inclure des bibliothèques à la volée, permettant ainsi une large gamme de fonctionnalités C.
 
-L’implémentation d'un REPL dans un langage compilé implique de compiler et exécuter des extraits de code à la volée, ce qui n'est pas trivial et peut avoir des limitations par rapport aux capacités complètes du langage.
+```c
+[cling]$ #include <math.h>
+[cling]$ printf("La racine carrée de %f est %f\n", 4.0, sqrt(4.0));
+La racine carrée de 4.000000 est 2.000000
+```
 
-## Voir aussi
-- Cling : https://github.com/root-project/cling
-- Compilateur et REPL C en ligne : https://repl.it/languages/c
-- CINT : http://root.cern.ch/drupal/content/cint
-- Interpréteur Ch : http://www.softintegration.com/products/chstandard/
+## Plongée Profonde :
+
+La naissance des environnements REPL remonte à Lisp dans les années 1960, conçus pour soutenir l'évaluation interactive du code. Cependant, la nature statique et compilée de C a posé des défis à la réalisation d'une telle immédiateté dans les ajustements de l'exécution du code. Le développement de Cling et d'autres interpréteurs C/C++ marque des avancées significatives vers l'intégration de l'évaluation dynamique dans les langues à typage statique.
+
+Notamment, l'utilisation d'un interpréteur comme Cling peut ne pas refléter parfaitement le comportement du code C compilé en raison de différences dans l'optimisation et l'exécution. De plus, bien qu'ils soient très précieux à des fins éducatives, pour le prototypage rapide et le débogage, les REPL pour C peuvent parfois être plus lents et moins pratiques pour le développement de code à niveau de production par rapport aux cycles traditionnels de compilation-exécution-débogage.
+
+Les alternatives pour la programmation C interactive incluent l'écriture de programmes petits et autonomes et l'utilisation d'environnements de développement intégrés avec des outils de débogage intégrés, qui peuvent offrir plus de contrôle et d'aperçu sur l'exécution, bien qu'avec moins d'immédiateté. Malgré ces alternatives, l'avènement des environnements REPL en C représente une expansion passionnante de la polyvalence du langage, embrassant les exigences de l'ère moderne pour la flexibilité et la rapidité dans les cycles de développement.

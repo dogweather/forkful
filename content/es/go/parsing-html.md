@@ -1,74 +1,83 @@
 ---
-title:                "Análisis de HTML"
-date:                  2024-01-20T15:31:49.833744-07:00
-simple_title:         "Análisis de HTML"
-
+title:                "Analizando HTML"
+date:                  2024-02-03T17:59:48.624947-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Analizando HTML"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/go/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Qué es y Por qué?
-Parsear HTML significa analizar el contenido de un documento HTML para poder manipularlo o acceder a su información. Programadores lo hacen para interactuar con la web, extraer datos, manipular páginas y automatizar tareas en línea.
+## Qué y Por Qué?
+
+Analizar HTML en Go implica analizar el contenido de archivos HTML para extraer datos, manipular la estructura o convertir HTML en otros formatos. Los programadores hacen esto para el raspado web, la creación de plantillas y la minería de datos, aprovechando las fuertes características de concurrencia de Go para el procesamiento eficiente de grandes volúmenes de páginas web.
 
 ## Cómo hacerlo:
-Vamos a utilizar el paquete `goquery`, que es una biblioteca inspirada en jQuery para parsear HTML. Primero, necesitas instalarlo:
-```bash
-go get github.com/PuerkitoBio/goquery
-```
 
-Ahora, mira cómo cargar un documento HTML y buscar un elemento:
+Para analizar HTML en Go, típicamente se usa el paquete `goquery` o el paquete `net/html` de la biblioteca estándar. Aquí hay un ejemplo básico usando `net/html` para extraer todos los enlaces de una página web:
 
-```Go
+```go
 package main
 
 import (
-	"fmt"
-	"log"
-	"net/http"
-
-	"github.com/PuerkitoBio/goquery"
+    "fmt"
+    "golang.org/x/net/html"
+    "net/http"
 )
 
 func main() {
-	// Obtener HTML de un sitio web
-	res, err := http.Get("https://es.wikipedia.org/wiki/Go_(lenguaje_de_programaci%C3%B3n)")
-	if err != nil {
-		log.Fatal(err)
-	}
-	defer res.Body.Close()
+    // Obtener documento HTML
+    res, err := http.Get("http://example.com")
+    if err != nil {
+        panic(err)
+    }
+    defer res.Body.Close()
 
-	if res.StatusCode != 200 {
-		log.Fatalf("status code error: %d %s", res.StatusCode, res.Status)
-	}
+    // Analizar el documento HTML
+    doc, err := html.Parse(res.Body)
+    if err != nil {
+        panic(err)
+    }
 
-	// Crear un documento goquery a partir del HTML
-	doc, err := goquery.NewDocumentFromReader(res.Body)
-	if err != nil {
-		log.Fatal(err)
-	}
+    // Función para recorrer recursivamente el DOM
+    var f func(*html.Node)
+    f = func(n *html.Node) {
+        if n.Type == html.ElementNode && n.Data == "a" {
+            for _, a := range n.Attr {
+                if a.Key == "href" {
+                    fmt.Println(a.Val)
+                    break
+                }
+            }
+        }
+        for c := n.FirstChild; c != nil; c = c.NextSibling {
+            f(c)
+        }
+    }
 
-	// Buscar elementos en el documento
-	doc.Find(".mw-parser-output p").Each(func(i int, s *goquery.Selection) {
-		// Imprimir el texto de cada párrafo
-		fmt.Println("- ", s.Text())
-	})
+    // Recorrer el DOM
+    f(doc)
 }
 ```
 
-Ejecuta el programa y verás como salida un listado de párrafos del artículo de Wikipedia sobre Go.
+Salida de muestra (asumiendo que `http://example.com` contiene dos enlaces):
 
-## Profundizando
+```
+http://www.iana.org/domains/example
+http://www.iana.org/domains/reserved
+```
 
-**Contexto histórico**: La necesidad de parsear HTML surgió poco después de la creación de la web. Las aplicaciones se volvieron más dinámicas, y el análisis del HTML pasó de ser una curiosidad a un requisito para aplicaciones web complejas.
+Este código solicita una página HTML, la analiza y recorre recursivamente el DOM para encontrar e imprimir los atributos `href` de todas las etiquetas `<a>`.
 
-**Alternativas**: además de `goquery`, puedes usar otras bibliotecas como `colly` para scraping, o el paquete estándar que ofrece Go, `html/template`, para parsear HTML con un enfoque más centrado en plantillas. Sin embargo, `goquery` es muy popular por su facilidad de uso y su poderosa sintaxis similar a jQuery.
+## Análisis Detallado
 
-**Detalles de implementación**: `goquery` permite navegar y manipular estructuras de nodos HTML. Usa el paquete `net/html` de Go para parsear documentos y ofrece una forma idiomática de trabajar con el DOM en Go.
+El paquete `net/html` proporciona lo básico para analizar HTML en Go, implementando directamente los algoritmos de tokenización y construcción de árboles especificados por el estándar HTML5. Este enfoque de bajo nivel es potente pero puede ser verboso para tareas complejas.
 
-## Ver También
+En contraste, el paquete de terceros `goquery`, inspirado en jQuery, ofrece una interfaz de más alto nivel que simplifica la manipulación y el recorrido del DOM. Permite a los desarrolladores escribir código conciso y expresivo para tareas como la selección de elementos, la extracción de atributos y la manipulación de contenido.
 
-- Documentación de GoQuery: [https://pkg.go.dev/github.com/PuerkitoBio/goquery](https://pkg.go.dev/github.com/PuerkitoBio/goquery)
-- Proyecto Colly para scraping en Go: [http://go-colly.org/](http://go-colly.org/)
-- Go html/template package: [https://golang.org/pkg/html/template/](https://golang.org/pkg/html/template/)
+Sin embargo, la conveniencia de `goquery` tiene el costo de una dependencia adicional y un rendimiento potencialmente más lento debido a su capa de abstracción. La elección entre `net/html` y `goquery` (u otras bibliotecas de análisis) depende de los requisitos específicos del proyecto, como la necesidad de optimización del rendimiento o facilidad de uso.
+
+Históricamente, el análisis de HTML en Go ha evolucionado desde operaciones básicas de cadenas hasta la sofisticada manipulación de árboles DOM, reflejando el creciente ecosistema del lenguaje y la demanda de la comunidad por herramientas robustas de raspado web y extracción de datos. A pesar de las capacidades nativas, la prevalencia de bibliotecas de terceros como `goquery` resalta la preferencia de la comunidad de Go por código modular y reutilizable. Sin embargo, para aplicaciones críticas en términos de rendimiento, los programadores aún podrían favorecer el paquete `net/html` o incluso recurrir a expresiones regulares para tareas simples de análisis, teniendo en cuenta los riesgos y limitaciones inherentes del análisis de HTML basado en regex.

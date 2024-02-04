@@ -1,49 +1,68 @@
 ---
-title:                "Onko hakemisto olemassa? Tarkistaminen"
-date:                  2024-01-20T14:56:40.202417-07:00
-simple_title:         "Onko hakemisto olemassa? Tarkistaminen"
-
+title:                "Tarkistetaan, onko hakemisto olemassa"
+date:                  2024-02-03T17:52:44.875273-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Tarkistetaan, onko hakemisto olemassa"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/go/checking-if-a-directory-exists.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Mitä ja Miksi?)
-Tarkistamme, onko kansio olemassa, koska tiedämme, ettei mielenkiintoisia asioita voi tehdä olemattomilla kansioilla. Se on peruskysely, jonka avulla vältetään virheitä, kun käsittelemme tiedostoja ja kansioita.
+## Mikä ja miksi?
 
-## How to: (Kuinka tehdä:)
-```Go
+Tarkistaminen, löytyykö kansio Go:ssa, on kriittistä sovelluksille, jotka ovat vuorovaikutuksessa tiedostojärjestelmän kanssa, jotta vältetään virheet yrittäessä käyttää tai muokata kansioita. Tämä toimenpide on elintärkeä tehtävissä kuten tiedosto-operaatioiden esivaatimusten varmistamisessa, konfiguraation hallinnassa ja ohjelmiston käyttöönotossa, joka perustuu tiettyihin hakemistorakenteisiin.
+
+## Kuinka:
+
+Go:ssa `os`-paketti tarjoaa toiminnallisuuksia vuorovaikutukseen käyttöjärjestelmän kanssa, mukaan lukien tarkistuksen, löytyykö kansio. Näin voit tehdä sen:
+
+```go
 package main
 
 import (
-	"fmt"
-	"os"
+    "fmt"
+    "os"
 )
 
-func main() {
-	directory := "/path/to/directory"
+// isDirExists tarkistaa, löytyykö kansio
+func isDirExists(path string) bool {
+    info, err := os.Stat(path)
+    jos os.IsNotExist(err) {
+        return false
+    }
+    return info.IsDir()
+}
 
-	if _, err := os.Stat(directory); os.IsNotExist(err) {
-		fmt.Printf("Kansiota ei löydy: %s\n", directory)
-	} else {
-		fmt.Printf("Kansio löytyy: %s\n", directory)
-	}
+func main() {
+    dirPath := "/tmp/exampleDir"
+
+    if isDirExists(dirPath) {
+        fmt.Printf("Kansio %s löytyy.\n", dirPath)
+    } else {
+        fmt.Printf("Kansiota %s ei löydy.\n", dirPath)
+    }
 }
 ```
-**Esimerkkitulostus:**
+Esimerkkituloste:
+
 ```
-Kansiota ei löydy: /path/to/directory
+Kansio /tmp/exampleDir löytyy.
 ```
-Tai jos kansio on olemassa:
+tai
+
 ```
-Kansio löytyy: /path/to/directory
+Kansiota /tmp/exampleDir ei löydy.
 ```
 
-## Deep Dive (Syväsukellus)
-Ennen `os.Stat` funktiota, ohjelmoijien piti selvitä kansion olemassaolo käsin avaten kansioita ja tarkistamalla virheitä. `os.Stat` ja `os.IsNotExist` ovat nyt standarditavat Go:ssa tehdä tämä tarkistus. Ne ovat olleet osa Go:ta sen varhaisten versioiden lähtien, ja ne hoitavat eri alustoilla toimimisen. Vaihtoehtoina `os.Stat` funktiolle voidaan käyttää kolmansien osapuolien kirjastoja, kuten `github.com/pkg/errors`, jotka tarjoavat lisäominaisuuksia virheenkäsittelyyn, mutta useimmissa tapauksissa Go:n vakio-kirjastot riittävät ja ovat tehokkaita.
+Riippuen siitä, löytyykö `/tmp/exampleDir`.
 
-## See Also (Katso Myös)
-- Go:n virallinen dokumentaatio `os.Stat`: https://golang.org/pkg/os/#Stat
-- Go:n virallinen dokumentaatio virheiden käsittelyyn: https://golang.org/doc/effective_go.html#errors
-- Go by Example, kansiotiedot: https://gobyexample.com/directories
+## Syväsukellus
+
+Funktio `os.Stat` palauttaa `FileInfo`-rajapinnan ja virheen. Jos virhe on tyyppiä `os.ErrNotExist`, se tarkoittaa, että kansiota ei ole olemassa. Jos virhettä ei ole, tarkistamme vielä, viittaako polku todella kansioon `IsDir()`-metodin avulla `FileInfo`-rajapinnasta.
+
+Tämä menetelmä erottuu yksinkertaisuutensa ja tehokkuutensa ansiosta, mutta on tärkeää huomata, että kansion olemassaolon tarkistaminen ennen operaatioita, kuten luominen tai kirjoittaminen, voi aiheuttaa kilpailutilanteita rinnakkaisissa ympäristöissä. Monissa skenaarioissa, erityisesti rinnakkaissovelluksissa, saattaa olla turvallisempaa yrittää suorittaa operaatio (esim. tiedoston luominen) ja käsitellä virheet jälkikäteen, sen sijaan että tarkistaisi ensin.
+
+Historiallisesti tämä lähestymistapa on ollut yleinen ohjelmoinnissa sen suoraviivaisen logiikan vuoksi. Kuitenkin monisäikeisen ja rinnakkaisen laskennan kehitys edellyttää siirtymistä kohti kestävämpää virheiden käsittelyä ja välttämään ennakkoehdotarkistuksia kuten tämä missä mahdollista. Tämä ei vähennä sen hyödyllisyyttä yksinkertaisemmissa, yksisäikeisissä sovelluksissa tai skripteissä, joissa tällaiset olosuhteet ovat vähemmän huolenaihe.

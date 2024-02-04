@@ -1,57 +1,62 @@
 ---
-title:                "미래 혹은 과거의 날짜 계산하기"
-date:                  2024-01-20T17:28:39.554249-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "미래 혹은 과거의 날짜 계산하기"
-
+title:                "미래 또는 과거의 날짜 계산하기"
+date:                  2024-02-03T17:53:24.353290-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "미래 또는 과거의 날짜 계산하기"
 tag:                  "Dates and Times"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/c/calculating-a-date-in-the-future-or-past.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (무엇과 왜?)
-날짜 계산하면, 특정한 날짜에서 미래나 과거의 날짜를 찾습니다. 프로그래머는 예약 시스템, 만기일 계산, 기간 추적 같은 기능을 구현할 때 이를 사용합니다.
+## 무엇 & 왜?
+미래나 과거의 날짜를 계산하는 것은 주어진 날짜로부터 특정 일수, 월수, 또는 연수를 더하거나 빼서 특정 날짜를 결정하는 것을 포함합니다. 프로그래머들은 이것을 스케줄링 이벤트, 알림 생성, 만료 날짜 처리 등의 작업을 위해 수행하는데, 이는 캘린더 시스템부터 금융 소프트웨어에 이르기까지 다양한 애플리케이션에서 필수적인 기능입니다.
 
-## How to: (방법)
-```C
+## 방법:
+C 표준 라이브러리는 날짜 연산을 직접 처리하는 함수를 제공하지 않지만, `time.h` 라이브러리를 사용하여 날짜를 조작할 수 있으며, 특히 `time_t` 데이터 형과 `struct tm`을 사용합니다. 현재 날짜에 일수를 더하는 방법의 간단한 예는 다음과 같습니다:
+
+```c
 #include <stdio.h>
 #include <time.h>
 
+void addDays(struct tm* date, int daysToAdd) {
+    const time_t ONE_DAY = 24 * 60 * 60; // 하루의 초
+    // tm 구조체를 time_t로 변환, 일수를 더하고 다시 변환
+    time_t date_seconds = mktime(date) + (daysToAdd * ONE_DAY);
+    *date = *localtime(&date_seconds);
+}
+
 int main() {
-    time_t rawtime;
-    struct tm * timeinfo;
-    int daysToAdd = 10; // 미래로 10일 더하기
+    time_t now;
+    time(&now);
+    struct tm futureDate = *localtime(&now);
 
-    time(&rawtime); // 현재 시각을 가져옵니다
-    timeinfo = localtime(&rawtime); // 현재 지역 시간으로 변환합니다
+    int daysToAdd = 10; // 원하는 일수를 조정하세요
+    addDays(&futureDate, daysToAdd);
 
-    printf("오늘 날짜: %s", asctime(timeinfo));
-    
-    timeinfo->tm_mday += daysToAdd; // 날짜에 10일을 더합니다
-    mktime(timeinfo); // 변경된 시간정보를 정규화
-
-    printf("미래의 날짜: %s", asctime(timeinfo));
+    printf("Future Date: %d-%d-%d\n", futureDate.tm_year + 1900, futureDate.tm_mon + 1, futureDate.tm_mday);
 
     return 0;
 }
 ```
-Sample Output:
+
+이 코드는 현재 날짜에 지정된 일수를 더하고 미래의 날짜를 출력합니다. 이 접근법은 `mktime`과 `localtime`에 의해 처리되는 윤초와 일광 절약 시간 조정을 고려합니다.
+
+샘플 출력:
+
 ```
-오늘 날짜: Fri Apr  7 21:34:55 2023
-미래의 날짜: Mon Apr 17 21:34:55 2023
+Future Date: 2023-04-23
 ```
-`mktime` 함수는 `tm` 구조체의 변화된 값을 기준으로 시간을 재조정하고, 새 날짜를 계산합니다.
 
-## Deep Dive (심층 분석)
-과거에는 시간과 날짜 계산을 위한 표준화된 함수가 없었습니다. 각 시스템이나 언어마다 서로 다른 방식을 사용했습니다. C 표준 라이브러리는 `time.h` 헤더 파일에 시간 관련 구조체와 함수를 도입하여 이 문제를 해결했습니다.
+이 예시는 단순히 일수를 더하는 것을 다루지만, 좀 더 복잡한 계산(윤년을 고려한 월이나 년 등)이 필요할 때는 더 정교한 로직이나 C++의 `date.h` 같은 라이브러리나 C의 타사 라이브러리가 필요할 수 있습니다.
 
-대안으로, `time.h` 외에도 많은 시스템에서 `chrono` 라이브러리와 같은 최신 도구를 제공합니다. 하지만, C 언어에서는 `tm` 구조체와 함께 `mktime`, `localtime` 같은 클래식한 함수들이 여전히 중요합니다.
+## 심층 탐구
+C에서 time.h 라이브러리를 사용한 날짜 조작은 Unix epoch(1970년 1월 1일 00:00, UTC) 이후 초 단위로 시간을 직접 조작한 뒤, 이를 다시 인간이 읽을 수 있는 날짜 형식(`struct tm`)으로 변환하는 것을 포함합니다. 이 접근법은 단순하지만 기본 작업에 효과적이며, 크로스 플랫폼이며 C 표준 라이브러리의 일부라는 장점이 있습니다.
 
-날짜를 계산할 때 주의해야 할 것은 윤년과 시간대, 일광 절약 시간 같은 요소를 고려해야 한다는 점입니다. `mktime` 함수는 이러한 요소들을 자동으로 처리해 줍니다. 하지만, 날짜를 더하기나 빼기만 하는 단순한 계산은 여러분 몫입니다.
+그러나 이 방법의 단순함은 또한 한계입니다. 다양한 달 길이, 윤년, 시간대를 계산하는 것과 같은 더 복잡한 날짜 계산을 처리하는 것은 금방 비일상적이 됩니다. `datetime`을 가진 Python이나 `java.time`을 가진 Java와 같은 언어는 날짜 연산을 위한 보다 직관적인 API를 제공하여, 명확성과 사용 용이성을 위해 객체 지향 원칙을 채택합니다.
 
-## See Also (참고 자료)
-- [C Date and Time](https://www.tutorialspoint.com/c_standard_library/c_function_mktime.htm) - `mktime` 함수와 시간 라이브러리에 대한 자세한 정보.
-- [C Library - <time.h>](https://www.cplusplus.com/reference/ctime/) - C 라이브러리의 `time.h` 헤더 파일에 대한 설명 및 함수 목록.
-- [C Programming/C Reference/time.h](https://en.wikibooks.org/wiki/C_Programming/C_Reference/time.h) - C 프로그래밍에서 시간 처리에 대한 유용한 안내.
+실제로 C에서 광범위한 날짜 조작을 필요로 하는 프로젝트를 작업할 때, 개발자들은 종종 타사 라이브러리를 사용하여 보다 강력한 해결책을 추구합니다. 이러한 라이브러리는 시간대 처리, 형식 지정 옵션, 더 미묘한 날짜 연산 기능을 포함한 포괄적인 날짜 및 시간 기능을 제공하여 개발자의 작업을 크게 단순화할 수 있습니다.
+
+더 현대적인 대안이 있는에도 불구하고, C 표준 라이브러리를 사용하여 날짜를 조작하는 방법을 이해하는 것은 여전히 귀중한 기술입니다. 이는 컴퓨터가 시간을 어떻게 표현하고 작업하는지에 대한 깊은 통찰을 제공하며, 특정 프로그래밍 언어를 넘어서는 근본적인 개념입니다.

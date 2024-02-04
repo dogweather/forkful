@@ -1,73 +1,99 @@
 ---
 title:                "Utilizzo di array associativi"
-date:                  2024-01-30T19:10:03.795226-07:00
+date:                  2024-02-03T18:10:35.087343-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Utilizzo di array associativi"
-
 tag:                  "Data Structures"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/c/using-associative-arrays.md"
 changelog:
-  - 2024-01-30, gpt-4-0125-preview, translated from English
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Cos'è & Perché?
+## Cosa & Perché?
 
-Gli array associativi, o mappe hash, sono coppie chiave-valore che consentono di memorizzare e recuperare dati con una chiave. Sono incredibilmente utili in C poiché consentono un accesso ai dati più rapido rispetto alle liste, specialmente quando si gestiscono grandi quantità di dati.
+Gli array associativi, noti in altri linguaggi come mappe o dizionari, sono coppie chiave-valore utilizzate per una ricerca e manipolazione efficienti dei dati. A differenza degli array tradizionali che utilizzano indici interi, gli array associativi utilizzano chiavi, rendendo l'accesso ai dati più intuitivo e flessibile per i programmatori.
 
 ## Come fare:
 
-C non ha un supporto integrato per gli array associativi come alcuni altri linguaggi, ma possiamo usare strutture e alcune funzioni di libreria per ottenere funzionalità simili. Ecco un'implementazione semplice usando la libreria `uthash`, che dovrai includere nel tuo progetto.
+C non ha un supporto incorporato per gli array associativi come alcuni linguaggi di livello superiore, ma è possibile simularli utilizzando strutture e hashing. Di seguito è riportato un esempio semplicistico che utilizza una combinazione di una struct e una semplice funzione di hashing per implementare un array associativo per memorizzare e accedere a interi tramite chiavi stringa.
 
-Prima, definisci una struttura per contenere le tue coppie chiave-valore:
+In primo luogo, definire una struttura per rappresentare una singola coppia chiave-valore e un'altra per rappresentare l'array associativo stesso:
 
-```C
+```c
 #include <stdio.h>
-#include "uthash.h"
+#include <stdlib.h>
+#include <string.h>
+
+#define TABLE_SIZE 128
 
 typedef struct {
-    int id; // Questo sarà la nostra chiave
-    char name[10]; // Questo è il valore associato alla nostra chiave
-    UT_hash_handle hh; // Rende questa struttura hashabile
-} persona;
-```
+    char* key;
+    int value;
+} CoppiaChiaveValore;
 
-Successivamente, aggiungiamo alcune voci e le recuperiamo:
+typedef struct {
+    CoppiaChiaveValore* items[TABLE_SIZE];
+} ArrayAssoc;
 
-```C
-int main() {
-    persona *le_mie_persone = NULL, *s;
+unsigned int hash(char* key) {
+    unsigned long int value = 0;
+    unsigned int i = 0;
+    unsigned int key_len = strlen(key);
 
-    // Aggiungendo una voce
-    s = (persona*)malloc(sizeof(persona));
-    s->id = 1;
-    strcpy(s->name, "Alice");
-    HASH_ADD_INT(le_mie_persone, id, s);
-
-    // Recuperando una voce
-    int user_id = 1;
-    HASH_FIND_INT(le_mie_persone, &user_id, s);
-    if (s) {
-        printf("Trovato: %s\n", s->name);
+    for (; i < key_len; ++i) {
+        value = value * 37 + key[i];
     }
-    
+
+    value = value % TABLE_SIZE;
+
+    return value;
+}
+
+void initArray(ArrayAssoc* array) {
+    for (int i = 0; i < TABLE_SIZE; ++i) {
+        array->items[i] = NULL;
+    }
+}
+
+void insert(ArrayAssoc* array, char* key, int value) {
+    unsigned int slot = hash(key);
+
+    CoppiaChiaveValore* item = (CoppiaChiaveValore*)malloc(sizeof(CoppiaChiaveValore));
+    item->key = strdup(key);
+    item->value = value;
+
+    array->items[slot] = item;
+}
+
+int find(ArrayAssoc* array, char* key) {
+    unsigned int slot = hash(key);
+
+    if (array->items[slot]) {
+        return array->items[slot]->value;
+    }
+    return -1;
+}
+
+int main() {
+    ArrayAssoc a;
+    initArray(&a);
+
+    insert(&a, "key1", 1);
+    insert(&a, "key2", 2);
+
+    printf("%d\n", find(&a, "key1")); // Output: 1
+    printf("%d\n", find(&a, "key2")); // Output: 2
+
     return 0;
 }
 ```
 
-L'output di esempio sarebbe:
-
-```
-Trovato: Alice
-```
-
-Non dimenticare di liberare la memoria allocata e deallocare la tabella hash al termine per evitare perdite di memoria.
+Questo esempio dimostra le operazioni di base: inizializzazione di un array associativo, inserimento di coppie chiave-valore e ricerca di valori per chiave. Si noti che questo codice manca della gestione delle collisioni ed è destinato a scopi educativi.
 
 ## Approfondimento
 
-Sebbene gli array associativi non siano nativi di C, librerie come `uthash` colmano abbastanza bene la lacuna, fornendo un modo piuttosto diretto per utilizzare questa funzionalità. Storicamente, i sviluppatori C dovevano implementare la loro versione di queste strutture dati, portando a implementazioni varie e spesso complesse, specialmente per coloro che sono solo all'inizio con il linguaggio.
+Il concetto di array associativi predata C, ma la natura di basso livello del linguaggio non li supporta direttamente come tipi incorporati. Questo incoraggia una comprensione più profonda delle strutture dati e degli algoritmi, inclusi i meccanismi di hashing per un mappaggio chiave-valore efficiente. Molte librerie e framework C offrono approcci più sofisticati per implementare gli array associativi, come il `GHashTable` di GLib, che fornisce un'implementazione robusta completa di gestione delle collisioni, ridimensionamento dinamico e supporto per tipi di chiavi e valori arbitrari.
 
-Ricorda, l'efficienza dell'uso degli array associativi in C dipende molto da quanto bene la funzione hash distribuisce i valori nella tabella per minimizzare le collisioni. Mentre librerie come `uthash` offrono un buon equilibrio tra facilità d'uso e prestazioni, nelle applicazioni critiche dove le prestazioni sono fondamentali, potresti voler personalizzare o implementare la tua tabella hash.
-
-Per applicazioni che richiedono massima efficienza, strutture dati alternative o addirittura altri linguaggi di programmazione con supporto integrato per gli array associativi potrebbero essere una scelta migliore. Tuttavia, per molte situazioni, specialmente quando si lavora già in un ambiente C, l'utilizzo di una libreria come `uthash` offre un equilibrio pratico tra prestazioni e comodità.
+Sebbene la costruzione manuale degli array associativi in C possa essere vista come ingombrante rispetto ai linguaggi con supporto incorporato, offre preziose intuizioni sul funzionamento interno delle strutture dati, affinando le competenze di un programmatore nella risoluzione di problemi e nell'ottimizzazione. Tuttavia, per un codice di produzione o applicazioni più complesse, sfruttare le librerie esistenti come GLib è spesso un approccio più pratico ed efficiente in termini di tempo.

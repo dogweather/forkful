@@ -1,47 +1,61 @@
 ---
-title:                "Använda en interaktiv skal (REPL)"
-date:                  2024-01-26T04:11:40.788142-07:00
+title:                "Att använda ett interaktivt skal (REPL)"
+date:                  2024-02-03T18:10:24.413032-07:00
 model:                 gpt-4-0125-preview
-simple_title:         "Använda en interaktiv skal (REPL)"
-
+simple_title:         "Att använda ett interaktivt skal (REPL)"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/c/using-an-interactive-shell-repl.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-En interaktiv skal, eller Läsa-Evalueras-Skriva Ut-Loop (REPL), är ett verktyg som erbjuder en kodningsmiljö i realtid för att omedelbart testa kodsnuttar. Programmerare använder den för snabb återkoppling under utveckling, inlärning och felsökning.
 
-## Hur:
-C kommer inte med en inbyggd REPL, men du kan använda tredjepartsverktyg. Här är en inblick med Cling, en C++ tolk som också kan hantera C-kod:
+En interaktiv skal, även känd som en Read-Eval-Print Loop (REPL), möjliggör för programmerare att skriva in uttryck eller kod och omedelbart se resultat, vilket förbättrar inlärning och felsökningsprocesser. Trots att C traditionellt inte stödjer REPL-miljöer inbyggt, överbryggar moderna verktyg detta gap och erbjuder dynamisk utforskning av C-program.
 
-```C
-#include <stdio.h>
+## Hur man gör:
 
-int main() {
-    printf("Hej, REPL-världen!\n");
-    return 0;
-}
+Att engagera sig med en C REPL kanske inte är lika rakt fram som i språk som Python eller JavaScript. Verktyg som `Cling`, en C/C++-tolk baserad på Clang och LLVM-teknologi, gör det dock möjligt. Så här kommer du igång:
+
+1. **Installera Cling**: Beroende på ditt operativsystem, kan du hitta Cling i din pakethanterare eller behöva bygga från källa. Till exempel, på Ubuntu, kan det vara så enkelt som `sudo apt-get install cling`.
+
+2. **Starta Cling**: Öppna din terminal och skriv `cling` för att starta den interaktiva skalet.
+
+```bash
+$ cling
 ```
 
-Utskrift i Cling REPL:
-```
-[cling]$ .x yourscript.c
+3. **Skriva Kod**: Nu kan du skriva C-kod direkt in i skalet och se omedelbara resultat. Här är ett enkelt exempel:
+
+```c
+[cling]$ #include <stdio.h>
+[cling]$ printf("Hej, REPL-världen!\n");
 Hej, REPL-världen!
 ```
 
-Cling kör skriptet och skriver ut resultatet omedelbart.
+4. **Exempel med Variabler och Operationer**: Experimentera med variabler och se omedelbar feedback.
 
-## Fördjupning
-REPLs är standard i dynamiska språk som Python eller Ruby, men för kompilerade språk som C är de mindre vanliga. Historiskt sett lånade sig inte kompilera-köra-felsöka-cykeln till interaktiv utforskning. Verktyg som Cling och online C-kompilatorer erbjuder REPL-liknande upplevelser genom att kapsla in din C-kod i en C++ miljö.
+```c
+[cling]$ int a = 5;
+[cling]$ int b = 3;
+[cling]$ printf("%d + %d = %d\n", a, b, a+b);
+5 + 3 = 8
+```
 
-Alternativ till Cling inkluderar C-tolkar som CINT och Ch. Dessa verktyg möjliggör snabba iterationer men kanske inte är lämpliga för alla utvecklingsscenarion på grund av prestationsbegränsningar och stöd för komplexa funktioner.
+5. **Inkludera Bibliotek**: Cling låter dig inkludera bibliotek på flyget, vilket möjliggör en stor mängd C-funktionaliteter.
 
-Implementering av en REPL i ett kompilerat språk innebär att kompilera och köra kodsnuttar på flygande fot, vilket inte är trivialt och kan ha begränsningar jämfört med hela språkets kapaciteter.
+```c
+[cling]$ #include <math.h>
+[cling]$ printf("Kvadratroten av %f är %f\n", 4.0, sqrt(4.0));
+Kvadratroten av 4.000000 är 2.000000
+```
 
-## Se även
-- Cling: https://github.com/root-project/cling
-- Online C Compiler och REPL: https://repl.it/languages/c
-- CINT: http://root.cern.ch/drupal/content/cint
-- Ch Tolken: http://www.softintegration.com/products/chstandard/
+## Djupdykning:
+
+Uppkomsten av REPL-miljöer går tillbaka till Lisp på 1960-talet, designat för att stödja interaktiv kodutvärdering. Dock ställde C:s statiska och kompilerade natur utmaningar för att förverkliga liknande omedelbarhet i kodexekveringsjusteringar. Utvecklingen av Cling och andra C/C++-tolkar markerar betydande framsteg mot integrering av dynamisk utvärdering i statiskt typade språk.
+
+Noterbart är att användning av en tolk som Cling kanske inte perfekt speglar beteendet hos kompilerad C-kod på grund av skillnader i optimering och exekvering. Dessutom, även om det är mycket värdefullt för utbildningsändamål, snabb prototypning och felsökning, kan REPLs för C ibland vara långsammare och mindre praktiska för utveckling av produktionsnivåkod jämfört med traditionella kompilera-köra-felsöka-cykler.
+
+Alternativ för interaktiv C-programmering inkluderar att skriva små, självständiga program och använda robusta IDE:er med integrerade felsökningsverktyg, vilka kan erbjuda mer kontroll och insikt i exekvering, även om det är med mindre omedelbarhet. Trots dessa alternativ representerar uppkomsten av REPL-miljöer i C en spännande utvidgning av språkets mångsidighet, i linje med den moderna erans krav på flexibilitet och fart i utvecklingscykler.

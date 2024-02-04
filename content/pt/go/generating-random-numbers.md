@@ -1,24 +1,29 @@
 ---
-title:                "Geração de números aleatórios"
-date:                  2024-01-27T20:33:46.914815-07:00
+title:                "Gerando números aleatórios"
+date:                  2024-02-03T17:57:21.362678-07:00
 model:                 gpt-4-0125-preview
-simple_title:         "Geração de números aleatórios"
-
+simple_title:         "Gerando números aleatórios"
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/go/generating-random-numbers.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## O Que & Porquê?
+## O Que & Por Quê?
 
-Gerar números aleatórios em Go envolve o uso do pacote `math/rand` para produzir números pseudoaleatórios para diversas aplicações, como simular experimentos, gerar dados de teste ou adicionar imprevisibilidade a jogos. Programadores utilizam esse recurso para criar comportamentos de software dinâmicos e menos previsíveis.
+Gerar números aleatórios na programação trata de criar uma sequência de números que não possa ser prevista de maneira razoável melhor do que por acaso. Programadores fazem isso por uma miríade de razões, incluindo simulações, jogos e aplicações de segurança, onde a imprevisibilidade é chave para a funcionalidade ou secretismo.
 
-## Como Fazer:
+## Como fazer:
 
-Para começar a gerar números aleatórios em Go, você precisa importar o pacote `math/rand` e o pacote `time` para semear o gerador de números aleatórios para mais imprevisibilidade. Aqui está um exemplo básico:
+Em Go, números aleatórios são gerados usando o pacote `math/rand` para números pseudo-aleatórios ou `crypto/rand` para números pseudo-aleatórios criptograficamente seguros. Vamos explorar ambos.
 
-```Go
+### Usando `math/rand` para Números Pseudo-Aleatórios
+
+Primeiro, importe o pacote `math/rand` e o pacote `time` para semear o gerador. Semear garante que você obtenha uma sequência diferente de números a cada execução.
+
+```go
 package main
 
 import (
@@ -28,32 +33,42 @@ import (
 )
 
 func main() {
-	// Semear o gerador
 	rand.Seed(time.Now().UnixNano())
-	
-	// Gerar um inteiro aleatório entre 0 e 99
-	randomInt := rand.Intn(100)
-	fmt.Println("Inteiro Aleatório:", randomInt)
-	
-	// Gerar um float aleatório entre 0.0 e 1.0
-	randomFloat := rand.Float64()
-	fmt.Println("Float Aleatório:", randomFloat)
+	fmt.Println("Um número aleatório:", rand.Intn(100)) // Gera um número entre 0 e 99
 }
 ```
 
-A saída do exemplo poderia ser:
+Saída de exemplo: `Um número aleatório: 42`
 
-```
-Inteiro Aleatório: 42
-Float Aleatório: 0.7304601899194229
+### Usando `crypto/rand` para Números Pseudo-Aleatórios Criptograficamente Seguros
+
+Para aplicações mais sensíveis à segurança, o pacote `crypto/rand` é adequado, pois gera números aleatórios que são difíceis de prever, tornando-os adequados para operações criptográficas.
+
+```go
+package main
+
+import (
+	"crypto/rand"
+	"fmt"
+	"math/big"
+)
+
+func main() {
+	n, _ := rand.Int(rand.Reader, big.NewInt(100))
+	fmt.Println("Um número aleatório seguro:", n)
+}
 ```
 
-Lembre-se, cada execução produz números diferentes devido à semeadura com a hora atual.
+Saída de exemplo: `Um número aleatório seguro: 81`
 
 ## Aprofundando
 
-O pacote `math/rand` em Go implementa geradores de números pseudoaleatórios (PRNGs) para várias distribuições. Embora bastante eficaz para muitas aplicações, é crucial notar que os números gerados pelo `math/rand` não são adequados para fins criptográficos devido à sua natureza determinística. Para necessidades criptográficas, o pacote `crypto/rand` é a escolha apropriada, fornecendo um gerador de números aleatórios seguro.
+A diferença principal entre os pacotes `math/rand` e `crypto/rand` em Go vem da sua fonte de entropia e dos casos de uso pretendidos. `math/rand` gera números pseudo-aleatórios baseados numa semente inicial; assim, a sequência é determinística e pode ser prevista se a semente for conhecida. Isso é adequado para cenários onde o desempenho alto e não a imprevisibilidade absoluta é a principal preocupação, como em simulações ou jogos.
 
-A implementação do `math/rand` é baseada em um algoritmo gerador de números aleatórios subtrativos, que é eficiente e tem um período relativamente longo antes de repetir sequências. No entanto, para aplicações que requerem sequências verdadeiramente aleatórias, como operações criptográficas, geradores de números aleatórios de hardware (RNGs) ou o pacote `crypto/rand`, que se comunica com fontes de aleatoriedade seguras específicas do sistema, são recomendados.
+Por outro lado, `crypto/rand` deriva aleatoriedade do sistema operacional subjacente, tornando-o adequado para usos criptográficos onde a imprevisibilidade é crucial. No entanto, isso vem com o custo de desempenho e complexidade no manuseio dos números que ele gera (como lidar com o tipo `*big.Int` para inteiros).
 
-O `math/rand` permite a semeadura para introduzir variabilidade, mas a mesma semente sempre gerará a mesma sequência de números, destacando a natureza determinística de sua aleatoriedade. Isso o torna adequado para simulações ou jogos onde a reprodutibilidade pode ser desejável para fins de depuração ou testes.
+Historicamente, a noção de geração de números aleatórios em computadores sempre dançou na borda da verdadeira "aleatoriedade", com sistemas antigos dependendo fortemente de algoritmos determinísticos que imitavam a aleatoriedade. Conforme os computadores evoluíram, esses algoritmos também evoluíram, incorporando fontes de entropia mais sofisticadas de seus ambientes.
+
+Apesar desses avanços, a busca por uma aleatoriedade perfeita na computação é inerentemente paradoxal, dada a natureza determinística dos próprios computadores. É por isso que, para a maioria das aplicações onde a previsibilidade seria prejudicial, números pseudo-aleatórios criptograficamente seguros de fontes como `crypto/rand` são a alternativa melhor, apesar do seu overhead.
+
+Em essência, a abordagem de Go com dois pacotes distintos para a geração de números aleatórios aborda elegantemente os compromissos entre desempenho e segurança, permitindo que os desenvolvedores escolham com base em suas necessidades específicas.

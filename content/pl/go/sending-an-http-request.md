@@ -1,65 +1,106 @@
 ---
 title:                "Wysyłanie żądania HTTP"
-date:                  2024-01-20T17:59:50.609871-07:00
-model:                 gpt-4-1106-preview
+date:                  2024-02-03T18:08:47.897900-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Wysyłanie żądania HTTP"
-
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/go/sending-an-http-request.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Co i Dlaczego?)
-Wysyłamy żądanie HTTP, by porozmawiać z serwerem – zapytać o dane lub coś tam wysłać. Programiści robią to, bo to podstawa komunikacji w sieci, od stron internetowych po aplikacje.
+## Co i dlaczego?
 
-## How to (Jak to zrobić):
-```Go
+Wysyłanie żądania HTTP polega na inicjowaniu połączenia z aplikacji Go do serwera sieciowego, API lub innej usługi opartej na protokole HTTP. Programiści robią to, aby wchodzić w interakcję z zasobami sieciowymi, pobierać dane, wysyłać formularze lub komunikować się z innymi usługami w internecie.
+
+## Jak to zrobić:
+
+W Go, wysłanie żądania HTTP i obsługa odpowiedzi wymaga użycia pakietu `net/http`. Oto przykładowy, krok po kroku sposób pokazujący, jak wysłać proste żądanie GET i odczytać odpowiedź:
+
+```go
 package main
 
 import (
-	"fmt"
-	"io/ioutil"
-	"net/http"
+    "fmt"
+    "io/ioutil"
+    "log"
+    "net/http"
 )
 
 func main() {
-	response, err := http.Get("http://example.com")
-	if err != nil {
-		fmt.Printf("Błąd podczas żądania: %s\n", err)
-		return
-	}
-	defer response.Body.Close()
+    // Zdefiniuj URL zasobu
+    url := "http://example.com"
 
-	body, err := ioutil.ReadAll(response.Body)
-	if err != nil {
-		fmt.Printf("Nie mogę czytać danych: %s\n", err)
-		return
-	}
+    // Użyj http.Get do wysłania żądania GET
+    resp, err := http.Get(url)
+    if err != nil {
+        log.Fatal(err)
+    }
+    // Zamknij ciało odpowiedzi po zakończeniu funkcji
+    defer resp.Body.Close()
 
-	fmt.Println(string(body))
+    // Przeczytaj ciało odpowiedzi
+    body, err := ioutil.ReadAll(resp.Body)
+    if err != nil {
+        log.Fatal(err)
+    }
+
+    // Konwertuj ciało odpowiedzi na string i wydrukuj
+    fmt.Println(string(body))
 }
 ```
-Wynik działania:
+
+Przykładowe dane wyjściowe (skrócone dla zwięzłości):
 ```
 <!doctype html>
 <html>
 <head>
-    <title>Example Domain</title>
-    ...
+    <title>Przykładowa domena</title>
+...
 </html>
 ```
 
-## Deep Dive (Głębsze zagłębienie):
-HTTP pozostaje głównym protokołem do komunikacji w sieci od jego wprowadzenia w 1991 roku. Obecnie mamy HTTP/2 i nadchodzi HTTP/3, ale idea pozostaje ta sama – klient wysyła żądanie, serwer odpowiada. 
+Aby wysłać żądanie POST z danymi formularza, możesz użyć `http.PostForm`:
 
-Alternatywą dla standardowej biblioteki Go do żądań HTTP jest np. `gorilla/websocket` dla WebSocketów czy pakiet `gRPC-go` dla gRPC. Ważne, aby pamiętać o bezpieczeństwie – sprawdzanie certyfikatów SSL, użycie HTTPS.
+```go
+package main
 
-Kiedy piszemy klienta HTTP w Go, najczęściej używamy pakietu `net/http`. "Get", "Post", "PostForm" i "Do" to funkcje, które tam znajdziemy. "Do" daje najwięcej kontroli nad żądaniem HTTP – metoda, headers, body. Ważne, by pamiętać o zamykaniu `response.Body`, by uniknąć wycieków zasobów.
+import (
+    "fmt"
+    "io/ioutil"
+    "net/http"
+    "net/url"
+)
 
-## See Also (Zobacz również):
-- Dokumentacja Go `net/http`: https://golang.org/pkg/net/http/
-- Tutorial 'Making HTTP Requests in Go': https://golangcode.com/making-http-requests/
-- Artykuł o bezpieczeństwie w żądaniach HTTP w Go: https://blog.golang.org/http-tracing
+func main() {
+    // Zdefiniuj URL i dane formularza
+    url := "http://example.com/form"
+    dane := url.Values{}
+    dane.Set("klucz", "wartość")
 
-Remember, to keep your coding journey enjoyable! Udanego kodzenia!
+    // Wyślij żądanie POST z danymi formularza
+    resp, err := http.PostForm(url, dane)
+    if err != nil {
+        panic(err)
+    }
+    defer resp.Body.Close()
+
+    // Odczytaj i wydrukuj odpowiedź
+    body, err := ioutil.ReadAll(resp.Body)
+    if err != nil {
+        panic(err)
+    }
+
+    fmt.Println(string(body))
+}
+```
+
+## Szczegółowa analiza
+
+Pakiet `net/http` w Go oferuje potężny i elastyczny sposób na interakcję z serwerami HTTP. Jego projekt odzwierciedla nacisk Go na prostotę, efektywność i solidność. Początkowo, funkcje takie jak obsługa ładunków JSON czy XML wymagały ręcznego tworzenia ciała żądania i ustawiania odpowiednich nagłówków. W miarę rozwoju Go, społeczność rozwinęła bardziej zaawansowane pakiety, które jeszcze bardziej upraszczają te zadania, takie jak `gorilla/mux` do routingu i `gjson` do manipulacji JSON-em.
+
+Godny uwagi aspekt klienta HTTP w Go to jego użycie interfejsów i struktur, takich jak `http.Client` i `http.Request`, które pozwalają na szeroką personalizację i testowanie. Na przykład, możesz zmodyfikować `http.Client`, aby ustawić limit czasu na żądania lub utrzymywać połączenia przy życiu dla wydajności.
+
+Rozważaną alternatywą dla prostszych interakcji HTTP jest używanie bibliotek stron trzecich, takich jak "Resty" czy "Gentleman". Te pakiety oferują bardziej wysokopoziomową abstrakcję dla żądań HTTP, sprawiając, że powszechne zadania stają się bardziej zwięzłe. Jednak zrozumienie i wykorzystanie podstawowego pakietu `net/http` jest kluczowe do radzenia sobie ze skomplikowanymi lub unikalnymi scenariuszami interakcji HTTP, zapewniając fundament, na którym można w pełni wykorzystać funkcje współbieżności Go i potężną bibliotekę standardową.

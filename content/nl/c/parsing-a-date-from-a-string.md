@@ -1,72 +1,60 @@
 ---
-title:                "Een datum uit een string parsen"
-date:                  2024-01-28T22:04:08.355048-07:00
+title:                "Een datum ontleden uit een string"
+date:                  2024-02-03T18:00:13.097833-07:00
 model:                 gpt-4-0125-preview
-simple_title:         "Een datum uit een string parsen"
-
+simple_title:         "Een datum ontleden uit een string"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/c/parsing-a-date-from-a-string.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Wat & Waarom?
 
-Het parsen van een datum uit een string betekent het extraheren en omzetten van de datum uitgedrukt als tekst naar een gestructureerd formaat dat een programma kan begrijpen en mee kan werken. Programmeurs doen dit omdat datums in tekstvorm niet handig zijn voor berekeningen, vergelijkingen, of om op te slaan in een gestandaardiseerd formaat.
+Het ontleden van een datum uit een string in C betreft het omzetten van tekstuele voorstellingen van data naar een formaat dat programma's effectiever kunnen manipuleren en analyseren. Dit is cruciaal voor taken zoals datumrekenwerk, vergelijkingen en het formatteren voor verschillende locales, aangezien het programmeurs in staat stelt om gebruikersinvoer of datasetvermeldingen op een gestandaardiseerde manier te behandelen.
 
 ## Hoe:
 
-Hier is een kleine gids over het parsen van een datumstring in C met behulp van `strptime()` uit `time.h`. Het leest de datum in het formaat `"YYYY-MM-DD"` en zet deze om naar een `struct tm`.
+C biedt geen ingebouwde manier om direct data uit strings te ontleden, dus maken we vaak gebruik van de `strptime` functie die beschikbaar is in de `<time.h>` bibliotheek voor POSIX-systemen. Deze functie stelt ons in staat om het verwachte formaat van de invoerstring te specificeren en deze te ontleden naar een `struct tm`, die een kalenderdatum en -tijd in zijn componenten opsplitst.
 
-```C
-#include <stdio.h>
+Hier is een simpel voorbeeld van hoe je `strptime` kunt gebruiken om een datum uit een string te ontleden:
+
+```c
 #include <time.h>
+#include <stdio.h>
 
 int main() {
-    const char *datum_str = "2023-03-14";
+    const char *dateStr = "2023-04-01";
     struct tm tm;
-    
-    // Maak struct schoon om rommelwaarden te vermijden
-    memset(&tm, 0, sizeof(struct tm));
-    
-    // Parse de datumstring
-    if (strptime(datum_str, "%Y-%m-%d", &tm) == NULL) {
-        printf("Parsen van datum mislukt.\n");
-        return 1;
-    }
+    char buf[255];
 
-    // Print de geparseerde datum
-    printf("Jaar: %d, Maand: %d, Dag: %d\n", tm.tm_year + 1900, tm.tm_mon + 1, tm.tm_mday);
+    // Het ontleden van de datumstring naar struct tm
+    if (strptime(dateStr, "%Y-%m-%d", &tm) == NULL) {
+        printf("Het ontleden van de datum is mislukt.\n");
+    } else {
+        // Gebruik van strftime om de datum in een leesbaar formaat te printen
+        strftime(buf, sizeof(buf), "%A, %B %d, %Y", &tm);
+        printf("Ontlede datum: %s\n", buf);
+    }
 
     return 0;
 }
 ```
 
-Voorbeelduitvoer:
+Voorbeelduitvoer voor dit programma zou zijn:
+
 ```
-Jaar: 2023, Maand: 3, Dag: 14
+Ontlede datum: Zaterdag, April 01, 2023
 ```
 
-## Diepere Duik
+Het is essentieel om potentiële fouten af te handelen, zoals `strptime` dat het patroon niet kan matchen of onverwachte invoer tegenkomt.
 
-Ooit waren datums een rommeltje om in C te hanteren, met programmeurs die handmatig strings parseerden door te rommelen met `strtok()`, `sscanf()` of zelfs rauwe lussen en karaktercontroles. Maar toen kwam `strptime()` binnen als onderdeel van POSIX, waardoor we strings die tijd voorstellen konden omzetten naar `struct tm` met vooraf gedefinieerde formaten.
+## Diepgaande duik
 
-Alternatieven zoals `getdate()` bestaan maar worden niet zo veel gebruikt. En dan is er nog de handmatige manier - het direct manipuleren van strings, maar laten we niet teruggaan naar die donkere tijden, oké?
+De `strptime` functie, hoewel krachtig, maakt geen deel uit van de standaard C-bibliotheek en wordt voornamelijk gevonden op POSIX-conforme systemen zoals Linux en UNIX. Deze beperking betekent dat programma's die afhankelijk zijn van `strptime` voor het ontleden van data uit strings mogelijk niet draagbaar zijn naar niet-POSIX-systemen zoals Windows zonder aanvullende compatibiliteitslagen of bibliotheken.
 
-Wat implementatie betreft, `strptime()` vereist wel dat je je `struct tm` opruimt omdat het dat niet voor je doet. Als je die nulstelling met `memset()` overslaat, kun je willekeurige rommel in de ongebruikte velden krijgen, wat leidt tot onverwachte resultaten.
+Historisch gezien vereiste het hanteren van datums en tijden in C veel handmatige manipulatie en zorg, vooral gezien verschillende locales en tijdzones. Moderne alternatieven en uitbreidingen voor C, zoals de C++ `<chrono>` bibliotheek en externe bibliotheken zoals Howard Hinnant's date-bibliotheek voor C++, bieden robuustere oplossingen voor datum- en tijdsmanipulatie, inclusief ontleding. Deze bibliotheken bieden doorgaans betere ondersteuning voor een bredere reeks datumformaten, tijdzones en foutafhandelingsmechanismen, wat ze de voorkeur geeft voor nieuwe projecten die uitgebreide datum- en tijdmanipulatiecapaciteiten vereisen.
 
-Onthoud dat `strptime()` deel uitmaakt van POSIX, dus als je op een niet-POSIX systeem zoals Windows zit, moet je zoeken naar een andere oplossing of een compatibiliteitslaag, zoals `win32` implementaties of externe bibliotheken.
-
-## Zie Ook
-
-- [C++ `<chrono>` Bibliotheek](https://en.cppreference.com/w/cpp/header/chrono)
-Voor degenen die ook in C++ duiken en op zoek zijn naar een modernere kijk op datum- en tijdsmanipulatie.
-
-Hoewel de focus hier op C ligt, is een dieper begrip van POSIX-tijdfuncties altijd een pluspunt.
-
-- [strftime en strptime Gedrag](https://man7.org/linux/man-pages/man3/strptime.3.html)
-De manpagina voor `strptime()` en `strftime()` voor het begrijpen van hoe tijd te formatteren in C.
-
-Als je speelt met tijd en datums, let op tijdzones en de veranderingen van zomertijd — deze kunnen roet in het eten gooien als ze niet goed worden afgehandeld. Veel programmeerplezier!
+Niettemin kan het begrijpen hoe je datums uit strings in C kunt ontleden voordelig zijn, vooral bij het werken aan of onderhouden van projecten die compatibel moeten zijn met systemen waar deze moderne hulpmiddelen niet beschikbaar zijn of wanneer gewerkt wordt binnen de beperkingen van strikte C-programmeeromgevingen.

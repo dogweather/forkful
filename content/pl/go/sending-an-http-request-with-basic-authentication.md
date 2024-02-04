@@ -1,65 +1,67 @@
 ---
-title:                "Wysyłanie zapytania http z podstawową autoryzacją"
-date:                  2024-01-20T18:01:49.501823-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Wysyłanie zapytania http z podstawową autoryzacją"
-
+title:                "Wysyłanie żądania HTTP z podstawowym uwierzytelnianiem"
+date:                  2024-02-03T18:09:21.231843-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Wysyłanie żądania HTTP z podstawowym uwierzytelnianiem"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/go/sending-an-http-request-with-basic-authentication.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
-Wysyłanie żądania HTTP z podstawową autentykacją to proces przesyłu nazwy użytkownika i hasła w celu uzyskania dostępu do zabezpieczonych zasobów. Programiści używają tego do komunikacji z API, które wymagają uwierzytelnienia, pozwalając na bezpieczną interakcję z danymi.
+## Co i dlaczego?
+
+Wysyłanie żądania HTTP z podstawową autoryzacją w Go polega na dodaniu do żądania nagłówka autoryzacji, który zawiera nazwę użytkownika i hasło w formie zakodowanego ciągu Base64. Programiści używają tej metody do uzyskiwania dostępu do zasobów wymagających weryfikacji użytkownika, zapewniając, że ich aplikacje mogą bezpiecznie współdziałać z usługami w sieci.
 
 ## Jak to zrobić:
-```Go
+
+Aby wysłać żądanie HTTP z podstawową autoryzacją w Go, musisz przygotować nagłówki żądania, aby zawierały pole `Authorization`, wypełnione twoimi poświadczeniami we właściwym formacie. Poniżej znajduje się przykład, który demonstruje, jak wykonać żądanie GET do punktu końcowego API wymagającego podstawowej autoryzacji:
+
+```go
 package main
 
 import (
-	"bytes"
-	"encoding/base64"
 	"fmt"
-	"io/ioutil"
 	"net/http"
+	"encoding/base64"
 )
 
 func main() {
 	client := &http.Client{}
-
-	req, err := http.NewRequest("GET", "http://twojserwer.com/dane", nil)
+	req, err := http.NewRequest("GET", "http://example.com/api/data", nil)
 	if err != nil {
-		// obsługa błędu
 		panic(err)
 	}
 
-	username := "twoj_uzytkownik"
-	password := "twoje_haslo"
-	encodedCredentials := base64.StdEncoding.EncodeToString([]byte(username + ":" + password))
-	req.Header.Add("Authorization", "Basic "+encodedCredentials)
+	username := "yourUsername"
+	password := "yourPassword"
+    // Kodowanie poświadczeń
+	auth := base64.StdEncoding.EncodeToString([]byte(username + ":" + password))
+    // Ustawianie nagłówka Authorization
+	req.Header.Add("Authorization", "Basic " + auth)
 
 	resp, err := client.Do(req)
 	if err != nil {
-		// obsługa błędu
 		panic(err)
 	}
 	defer resp.Body.Close()
 
-	body, err := ioutil.ReadAll(resp.Body)
-	if err != nil {
-		// obsługa błędu
-		panic(err)
-	}
-	fmt.Println(string(body))
+	fmt.Println("Status odpowiedzi:", resp.Status)
 }
 ```
-Po uruchomieniu kodu zobaczysz w konsoli wynik żądania HTTP.
 
-## Deep Dive
-Autentykacja podstawowa to jedna z najstarszych metod uwierzytelniania w HTTP. Nie jest najbezpieczniejsza, ponieważ dane są tylko enkodowane, a nie szyfrowane - mogą być łatwo przechwycone. Alternatywami są między innymi OAuth, tokeny API, czy połączenia HTTPS. W Go, do żądania HTTP z autentykacją możemy użyć gotowych pakietów, takich jak `http.Client`, który pozwala na konfigurację nagłówków. 
+Uruchomienie tego kodu wyśle żądanie GET pod podany adres URL z niezbędnym nagłówkiem autoryzacji. Wynik będzie wyglądał mniej więcej tak, w zależności od twojego punktu końcowego i usługi:
 
-## See Also
-- Dokumentacja Go `http` pakietu: https://pkg.go.dev/net/http
-- Specyfikacja HTTP Basic Access Authentication: https://tools.ietf.org/html/rfc7617
-- Tutorial dla autentykacji OAuth w Go: https://oauth.net/2/grant-types/password/
+```
+Status odpowiedzi: 200 OK
+```
+
+## Szczegółowe omówienie
+
+Podstawowa autoryzacja w żądaniach HTTP jest powszechnie wspieraną metodą egzekwowania kontroli dostępu do zasobów sieciowych. Polega po prostu na wysyłaniu nazwy użytkownika i hasła przy każdym żądaniu, co ułatwia implementację, ale nie jest najbezpieczniejszą dostępną metodą. Główną wadą jest to, że jeśli nie jest używana w połączeniu z SSL/TLS, poświadczenia są wysyłane w postaci jawnej (ponieważ Base64 łatwo odkodować). Może to potencjalnie narazić wrażliwe informacje na ataki typu man-in-the-middle.
+
+W Go, wysyłanie tych żądań polega na bezpośredniej manipulacji nagłówkiem `Authorization`. Chociaż standardowa biblioteka Go (`net/http`) dostarcza potężne prymitywy do obsługi komunikacji HTTP(s), jest ona stosunkowo niskopoziomowa, wymagając od programistów ręcznego obsługiwania różnych aspektów żądania/odpowiedzi HTTP. Daje to programistom dużą elastyczność, ale oznacza również, że należy zwrócić większą uwagę na implikacje dotyczące bezpieczeństwa, kodowania i poprawnego zarządzania nagłówkami.
+
+Dla aplikacji wymagających wyższego poziomu bezpieczeństwa, należy rozważyć bardziej zaawansowane systemy autentykacji, takie jak OAuth2 czy JWT (JSON Web Tokens). Te podejścia zapewniają bardziej solidne funkcje bezpieczeństwa i są szeroko wspierane w nowoczesnych API i usługach. Rozszerzający się ekosystem Go obejmuje liczne biblioteki i narzędzia (takie jak `golang.org/x/oauth2`, wśród innych) ułatwiające implementację tych bardziej bezpiecznych metod autoryzacji, co ułatwia programistom wdrażanie bezpiecznych, skutecznych i nowoczesnych mechanizmów autoryzacji w swoich aplikacjach.

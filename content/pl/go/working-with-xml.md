@@ -1,84 +1,121 @@
 ---
 title:                "Praca z XML"
-date:                  2024-01-26T04:31:53.265159-07:00
+date:                  2024-02-03T18:13:15.375664-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Praca z XML"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/go/working-with-xml.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Co i dlaczego?
-Praca z XML obejmuje analizowanie składni, tworzenie i manipulowanie dokumentami XML za pomocą kodu. Programiści robią to w celu wymiany danych, plików konfiguracyjnych oraz usług sieciowych, ponieważ czytelność XML i szerokie wsparcie czynią go solidnym wyborem dla strukturyzowanych danych.
+
+Praca z XML w Go polega na parsowaniu (czytaniu) i generowaniu (pisaniu) dokumentów XML – standardowym formacie do wymiany strukturyzowanych danych. Programiści robią to do przechowywania danych, ustawień konfiguracyjnych lub wymiany danych między systemami, szczególnie w środowiskach, gdzie XML jest preferowanym lub dziedzicznym formatem danych.
 
 ## Jak to zrobić:
-W Go, użyj pakietu `encoding/xml`. Przeanalizujmy i wygenerujmy XML.
+
+### Parsowanie XML w Go
+Aby parsować XML w Go, używa się pakietu `encoding/xml`. Pakiet ten dostarcza niezbędne narzędzia do deserializacji (parsowania) XML do struktur Go. Na przykład, rozważ poniższe dane XML reprezentujące książkę:
+
+```xml
+<book id="123">
+    <title>Learning Go</title>
+    <author>John Doe</author>
+    <pages>359</pages>
+</book>
+```
+
+Aby to sparsować, zdefiniuj strukturę, która odzwierciedla strukturę XML:
+
 ```go
 package main
 
 import (
-	"encoding/xml"
-	"fmt"
-	"os"
+    "encoding/xml"
+    "fmt"
+    "os"
 )
 
-// Struktury mapowane do elementów XML
-type Plant struct {
-	XMLName xml.Name `xml:"plant"`
-	Id      int      `xml:"id,attr"`
-	Name    string   `xml:"name"`
-	Origin  []string `xml:"origin"`
+type Book struct {
+    XMLName xml.Name `xml:"book"`
+    ID      string   `xml:"id,attr"`
+    Title   string   `xml:"title"`
+    Author  string   `xml:"author"`
+    Pages   int      `xml:"pages"`
 }
 
 func main() {
-	coffee := &Plant{Id: 27, Name: "Coffee"}
-	coffee.Origin = []string{"Etiopia", "Brazylia"}
+    data := []byte(`
+<book id="123">
+    <title>Learning Go</title>
+    <author>John Doe</author>
+    <pages>359</pages>
+</book>
+`)
 
-	// Marshalowanie struktury do XML
-	output, err := xml.MarshalIndent(coffee, " ", "  ")
-	if err != nil {
-		fmt.Printf("Błąd: %v\n", err)
-	}
+    var book Book
+    err := xml.Unmarshal(data, &book)
+    if err != nil {
+        panic(err)
+    }
 
-	os.Stdout.Write([]byte(xml.Header))
-	os.Stdout.Write(output)
-
-	// Unmarshalowanie XML do struktury
-	data := `
-<plant id="27">
-  <name>Coffee</name>
-  <origin>Etiopia</origin>
-  <origin>Brazylia</origin>
-</plant>
-`
-	var p Plant
-	if err := xml.Unmarshal([]byte(data), &p); err != nil {
-		fmt.Printf("Błąd: %v", err)
-		return
-	}
-
-	fmt.Printf("\n\nPrzekształcone: %+v", p)
+    fmt.Printf("Książka: %+v\n", book)
 }
 ```
-Przykładowe wyjście:
-```xml
-<?xml version="1.0" encoding="UTF-8"?>
- <plant id="27">
-   <name>Coffee</name>
-   <origin>Etiopia</origin>
-   <origin>Brazylia</origin>
- </plant>
 
-Przekształcone: {XMLName:{Space: Local:plant} Id:27 Name:Coffee Origin:[Etiopia Brazylia]}
+Wyjście:
+
+```
+Książka: {XMLName:{Space: Local:book} ID:123 Title:Learning Go Author:John Doe Pages:359}
 ```
 
-## Pogłębiona analiza
-XML istnieje od końca lat 90., zaprojektowany dla dużych elektronicznych publikacji, ale szybko został przyjęty dla sieci. Alternatywy, takie jak JSON, zyskały na popularności z uwagi na prostotę, jednak walidacja dokumentów XML za pomocą schematów i przestrzeni nazw pozostaje potężnym narzędziem dla skomplikowanych dokumentów. W Go, `encoding/xml` radzi sobie z większością zadań, ale dla ogromnych dokumentów lub przetwarzania strumieniowego, rozważ użycie `xml.NewDecoder` i `xml.NewEncoder` do kontroli na niższym poziomie i lepszej wydajności.
+### Generowanie XML w Go
+Aby wygenerować dokument XML ze struktur danych Go, ponownie używa się pakietu `encoding/xml`. Tym razem serializuje się struktury Go do XML. Mając poprzednią strukturę `Book`:
 
-## Zobacz także
-- Pakiet `encoding/xml` w Go: https://pkg.go.dev/encoding/xml
-- Samouczek XML: https://www.w3schools.com/xml/
-- Blog Go na temat XML: https://blog.golang.org/xml
-- Porównanie między JSON a XML: https://www.json.org/xml.html
+```go
+package main
+
+import (
+    "encoding/xml"
+    "fmt"
+    "os"
+)
+
+func main() {
+    book := &Book{
+        ID:     "123",
+        Title:  "Learning Go",
+        Author: "John Doe",
+        Pages:  359,
+    }
+
+    output, err := xml.MarshalIndent(book, "", "    ")
+    if err != nil {
+        panic(err)
+    }
+
+    fmt.Println(xml.Header + string(output))
+}
+```
+
+Wyjście:
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<book id="123">
+    <title>Learning Go</title>
+    <author>John Doe</author>
+    <pages>359</pages>
+</book>
+```
+
+## Dogłębna analiza
+
+Rozwlekłość i złożoność XML spowodowały, że JSON i inne formaty stały się bardziej popularne dla wielu zastosowań. Jednak zdolność XML do reprezentowania złożonych hierarchicznych danych i jego powszechne używanie w systemach dziedzicznych i określonych domenach (np. usługi SOAP) zapewniają jego istotność.
+
+Pakiet `encoding/xml` w Go dostarcza potężne mechanizmy do pracy z XML, ale warto zauważyć jego ograniczenia. Na przykład, obsługa przestrzeni nazw XML może być uciążliwa i może wymagać dokładniejszego zrozumienia specyfikacji XML niż w prostszych przypadkach użycia. Dodatkowo, chociaż statyczne typowanie Go i zdolności serializacji oraz deserializacji pakietu `encoding/xml` są generalnie wydajne, programiści mogą napotkać wyzwania przy bardzo zagnieżdżonych strukturach lub przy pracy z dokumentami XML, które nie mapują się czysto na system typów Go.
+
+Dla większości nowoczesnych aplikacji alternatywy takie jak JSON są prostsze i bardziej wydajne. Jednak, pracując w kontekstach, które wymagają XML - ze względu na systemy dziedziczne, konkretne standardy branżowe lub złożone potrzeby reprezentacji danych - biblioteka standardowa Go dostarcza solidnych narzędzi do wykonania zadania. Jak zawsze, najlepszy wybór formatu danych zależy od konkretnych wymagań aplikacji i środowiska.

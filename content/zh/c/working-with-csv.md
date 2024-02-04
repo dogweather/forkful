@@ -1,56 +1,101 @@
 ---
-title:                "处理 CSV 文件"
-date:                  2024-01-19
-simple_title:         "处理 CSV 文件"
-
+title:                "处理CSV的工作"
+date:                  2024-02-03T18:11:30.914571-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "处理CSV的工作"
 tag:                  "Data Formats and Serialization"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/c/working-with-csv.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (是什么 & 为什么?)
-处理CSV就是读写以逗号分隔的值文件。程序员常用它来交换数据，因为简单易懂，软件支持广泛。
+## 是什么 & 为什么？
 
-## How to: (如何操作)
-```C
+在编程领域，处理CSV（逗号分隔值）文件涉及从按行组织的文本文件中读取数据和向其写入数据，每行代表一个记录，每个记录的字段由逗号分隔。程序员操纵CSV文件是因为它们支持广泛，且对于存储表格数据来说简单易用，从而方便了不同系统之间的数据导入/导出。
+
+## 如何操作：
+
+### 读取CSV文件
+要在C语言中读取CSV文件，我们使用标准文件I/O函数以及字符串处理函数来解析每一行。下面是一个基本示例，展示了如何读取CSV文件并将每行的字段打印到控制台。
+
+```c
 #include <stdio.h>
-#include <stdlib.h>
+#include <string.h>
 
 int main() {
-    FILE *fp = fopen("example.csv", "w");
+    FILE *fp = fopen("data.csv", "r");
+    if (!fp) {
+        printf("Can't open file\n");
+        return 1;
+    }
 
-    // Assuming file opens successfully.
-    fprintf(fp, "%s,%s,%s\n", "Name", "Age", "City");
-    fprintf(fp, "%s,%d,%s\n", "Alice", 30, "Wonderland");
-    fprintf(fp, "%s,%d,%s\n", "Bob", 25, "Bikini Bottom");
-    
-    fclose(fp);
-
-    // Now reading the file.
-    fp = fopen("example.csv", "r");
-    char buffer[255];
-    while (fgets(buffer, sizeof(buffer), fp)) {
-        printf("%s", buffer);
+    char buf[1024];
+    while (fgets(buf, 1024, fp)) {
+        char *field = strtok(buf, ",");
+        while(field) {
+            printf("%s\n", field);
+            field = strtok(NULL, ",");
+        }
     }
 
     fclose(fp);
     return 0;
 }
 ```
-
-Sample output:
+示例 `data.csv`内容：
 ```
-Name,Age,City
-Alice,30,Wonderland
-Bob,25,Bikini Bottom
+Name,Age,Occupation
+John Doe,29,Software Engineer
 ```
 
-## Deep Dive (深入了解)
-早期，CSV格式就被用于简单文本数据交换。现存其他格式如XML和JSON，但因其易用性，CSV仍受欢迎。在C中处理CSV需要手动解析文本数据，可能会涉及字符编码，转义，跳过标题或处理引号等复杂性。
+示例输出：
+```
+Name
+Age
+Occupation
+John Doe
+29
+Software Engineer
+```
 
-## See Also (另见)
-- RFC 4180, CSV标准: https://tools.ietf.org/html/rfc4180
-- C标准库函数文档: https://en.cppreference.com/w/c/io
-- CSV处理库Libcsv: http://sourceforge.net/projects/libcsv/
+### 写入CSV文件
+同样地，写入一个CSV文件涉及使用`fprintf`以逗号分隔的格式保存数据。
+
+```c
+#include <stdio.h>
+
+int main() {
+    FILE *fp = fopen("output.csv", "w");
+    if (!fp) {
+        printf("Can't open file\n");
+        return 1;
+    }
+
+    char *headers[] = {"Name", "Age", "Occupation", NULL};
+    for (int i = 0; headers[i] != NULL; i++) {
+        fprintf(fp, "%s%s", headers[i], (headers[i+1] != NULL) ? "," : "\n");
+    }
+    fprintf(fp, "%s,%d,%s\n", "Jane Doe", 27, "Data Scientist");
+
+    fclose(fp);
+    return 0;
+}
+```
+
+示例 `output.csv`内容：
+```
+Name,Age,Occupation
+Jane Doe,27,Data Scientist
+```
+
+## 深入探讨
+
+尽管CSV格式看似简单直接，但它有其细微的差别，比如处理字段内的逗号以及用引号封装字段。上面展示的基本示例没有考虑到这些复杂性，也没有做到错误处理。
+
+历史上，由于C语言的低级特性和缺乏内置的高级抽象来处理此类任务，对CSV的处理大多数是手工进行的。这包括打开文件、读取行、分割字符串以及根据需要转换数据类型等手动管理。
+
+虽然在C语言中直接操纵CSV文件为文件I/O和字符串处理提供了宝贵的学习经验，但一些现代的替代方法承诺高效和较少的错误发生。如`libcsv`和`csv-parser`这样的库提供了全面的读写CSV文件的函数，包括对引号字段和自定义分隔符的支持。
+
+另外，当在支持它的生态系统中工作时，与提供高级CSV操作函数的语言或平台集成（比如使用其`pandas`库的Python）可能是针对需要大量CSV处理的应用程序更为生产的途径。这种跨语言的方法利用了C的性能和系统编程能力，同时利用其他语言在处理特定任务例如CSV处理方面的易用性。

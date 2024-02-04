@@ -1,83 +1,69 @@
 ---
-title:                "Tái cấu trúc mã"
-date:                  2024-01-28T22:06:53.942970-07:00
+title:                "Tái cấu trúc"
+date:                  2024-02-03T18:07:14.418416-07:00
 model:                 gpt-4-0125-preview
-simple_title:         "Tái cấu trúc mã"
-
+simple_title:         "Tái cấu trúc"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/c/refactoring.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Cái Gì & Tại Sao?
-Tái cấu trúc là quá trình cấu trúc lại mã máy tính hiện có mà không thay đổi hành vi bên ngoài của nó. Lập trình viên thực hiện điều này để cải thiện khả năng đọc, giảm độ phức tạp, hoặc làm cho mã dễ bảo trì và mở rộng hơn, có thể tiết kiệm được một khoản thời gian và giảm đau đầu về sau.
+## Cái gì & Tại sao?
 
-## Làm Thế Nào:
-Hãy làm mới một số mã. Hãy tưởng tượng bạn có một hàm tính trung bình của các số nguyên trong một mảng. Ngay từ cái nhìn đầu tiên, nó khá là rối rắm.
+Tái cấu trúc trong lập trình bao gồm việc cấu trúc lại mã lệnh hiện có mà không thay đổi hành vi bên ngoài của nó, nhằm mục đích cải thiện các thuộc tính phi chức năng như khả năng đọc, giảm độ phức tạp và tăng khả năng bảo trì. Các lập trình viên thực hiện tái cấu trúc để giữ cho cơ sở mã sạch sẽ, giảm thiểu nợ kỹ thuật và làm cho các thay đổi trong tương lai dễ dàng và an toàn hơn khi triển khai.
 
-**Trước Khi Tái Cấu Trúc:**
-```C
+## Làm thế nào:
+
+Tái cấu trúc có thể bao gồm một loạt các chiến thuật từ việc đổi tên biến để rõ ràng hơn cho đến thay đổi cấu trúc của mã lệnh để có sự modular hóa tốt hơn. Dưới đây là một ví dụ đơn giản minh họa cách tái cấu trúc một đoạn mã C để tăng tính rõ ràng và hiệu quả.
+
+Trước khi Tái cấu trúc:
+```c
 #include <stdio.h>
 
-double calculateStuff(int numbers[], int size) {
-    int sum = 0;
-    double average;
-    for(int i = 0; i < size; sum += numbers[i++]); // Tính tổng trong điều kiện vòng lặp for, ouch!
-    average = (double)sum / size;
-    return average;
-}
-
 int main() {
-    int array[] = {23, 42, 57, 16, 5, 102};
-    int length = sizeof(array) / sizeof(array[0]);
-    printf("Trung bình: %f\n", calculateStuff(array, length));
-
+    int x = 10, y = 20;
+    printf("Trước khi hoán đổi: x = %d, y = %d\n", x, y);
+    x = x + y; // x bây giờ trở thành 30
+    y = x - y; // y trở thành 10
+    x = x - y; // x trở thành 20
+    printf("Sau khi hoán đổi: x = %d, y = %d\n", x, y);
     return 0;
 }
 ```
-
-**Sau Khi Tái Cấu Trúc:**
-```C
+Kết quả:
+```
+Trước khi hoán đổi: x = 10, y = 20
+Sau khi hoán đổi: x = 20, y = 10
+```
+Sau khi Tái cấu trúc:
+```c
 #include <stdio.h>
 
-int calculateSum(const int numbers[], int size) {
-    int sum = 0;
-    for (int i = 0; i < size; ++i) {
-        sum += numbers[i];
-    }
-    return sum;
-}
-
-double calculateAverage(const int numbers[], int size) {
-    int sum = calculateSum(numbers, size);
-    return (double)sum / size;
+void swap(int *a, int *b) {
+    *a = *a + *b;
+    *b = *a - *b;
+    *a = *a - *b;
 }
 
 int main() {
-    int array[] = {23, 42, 57, 16, 5, 102};
-    int length = sizeof(array) / sizeof(array[0]);
-    printf("Trung bình: %f\n", calculateAverage(array, length));
+    int x = 10, y = 20;
+    printf("Trước khi hoán đổi: x = %d, y = %d\n", x, y);
+    swap(&x, &y);
+    printf("Sau khi hoán đổi: x = %d, y = %d\n", x, y);
     return 0;
 }
 ```
-Ngay cả với ví dụ đơn giản này, bạn có thể thấy cách tách hàm khiến mã sạch sẽ và dễ bảo trì hơn. Mỗi hàm bây giờ đều có một trách nhiệm riêng – một nguyên tắc chính trong lập trình sạch.
+Kết quả vẫn không thay đổi, nhưng chức năng đổi giá trị đã được di chuyển ra một hàm riêng (`swap`), tăng tính rõ ràng và khả năng sử dụng lại.
 
-## Sâu Hơn
-Thuật ngữ "tái cấu trúc" được phổ biến vào cuối những năm 90, đặc biệt với sự xuất bản của cuốn sách "Refactoring: Improving the Design of Existing Code" của Martin Fowler. Tái cấu trúc không ngụ ý sửa chữa lỗi hay thêm tính năng mới, mà là về việc cải thiện cấu trúc của mã.
+## Sâu hơn
 
-Có nhiều công cụ tái cấu trúc tinh tế và IDE (Môi trường Phát triển Tích hợp) giúp tự động hóa quá trình này, như CLion cho C và C++, nhưng việc hiểu những gì đang diễn ra ở phía dưới là rất quan trọng.
+Việc tái cấu trúc mã đã tồn tại cùng với sự phát triển phần mềm ngay từ đầu, phát triển cùng với các nguyên lý lập trình và ngôn ngữ. Đối với C, một ngôn ngữ vừa mạnh mẽ vừa đầy rẫy cơ hội cho sự không hiệu quả và lỗi do tính chất thấp cấp của nó, việc tái cấu trúc là cực kỳ quan trọng. Nó có thể tạo nên sự khác biệt giữa một cơ sở mã có thể bảo trì và một mạng lưới rối rắm của các hiệu quả không mong muốn.
 
-Các phương án thay thế cho việc tái cấu trúc có thể bao gồm viết lại mã từ đầu (rủi ro và thường không cần thiết) hoặc chấp nhận nợ kỹ thuật (có thể tốn kém hơn về lâu dài). Chi tiết thực hiện có thể thay đổi tùy theo dự án, nhưng các tái cấu trúc phổ biến bao gồm đổi tên biến cho rõ ràng, chia nhỏ hàm lớn thành nhiều hàm nhỏ hơn, và thay thế số ma thuật bằng hằng số có tên.
+Một điều cần xem xét đặc biệt cho C là sự cân bằng giữa việc tối ưu hóa micro và khả năng đọc/maintainability. Mặc dù rất hấp dẫn để điều chỉnh tay mã C cho từng bit hiệu suất cuối cùng, nhưng những tối ưu hóa đó có thể làm cho mã trở nên dễ vỡ và khó đọc hơn. Do đó, thường tốt hơn khi ưu tiên mã sạch, dễ đọc và dựa vào bộ tối ưu của trình biên dịch để xử lý cải thiện hiệu suất khi có thể.
 
-Ngoài ra, các mô hình như DRY (Don't Repeat Yourself - Đừng Lặp Lại Chính Mình) và nguyên tắc SOLID có thể hướng dẫn hành trình tái cấu trúc của bạn, hướng tới một cơ sở mã dễ kiểm tra, hiểu và hợp tác hơn.
+Hơn nữa, công cụ và kỹ thuật tái cấu trúc trong C, như bộ phân tích mã tĩnh (ví dụ: Clang Static Analyzer, cppcheck) và nguyên lý lập trình modular, đã tiến bộ đáng kể. Tuy nhiên, do quản lý bộ nhớ thủ công và số học con trỏ của C, tái cấu trúc có thể giới thiệu các lỗi nếu không thực hiện cẩn thận. Kỹ thuật như kiểm tra đơn vị và xem xét mã lệnh là vô giá ở đây.
 
-## Xem Thêm
-Để đi sâu hơn vào biển của tái cấu trúc, hãy xem qua:
-
-- Trang chủ của Martin Fowler: https://martinfowler.com/ với kho báu các bài viết và tài nguyên về tái cấu trúc và thiết kế phần mềm.
-- Refactoring.com: https://refactoring.com/ cung cấp các ví dụ và danh mục kỹ thuật tái cấu trúc.
-- Cuốn sách "Refactoring": Được coi là kinh thánh của tái cấu trúc, đọc nó cho bạn cái nhìn toàn diện về phương pháp.
-- "Clean Code: A Handbook of Agile Software Craftsmanship" của Robert C. Martin, nói về việc viết mã dễ hiểu và dễ bảo trì.
+Mặc dù các ngôn ngữ mới hơn cung cấp nhiều hỗ trợ tính năng tự động hóa cho việc tái cấu trúc an toàn hơn như quản lý bộ nhớ tự động và hệ thống phân loại phong phú, C vẫn không có đối thủ trong các tình huống đòi hỏi hiệu suất gần với phần cứng và kiểm soát tinh tế. Trong những trường hợp như vậy, việc tái cấu trúc không chỉ là tận dụng các tính năng ngôn ngữ mà còn là việc cấu trúc lại mã lệnh một cách có kỷ luật và suy nghĩ.

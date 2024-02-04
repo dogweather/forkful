@@ -1,48 +1,86 @@
 ---
 title:                "Säännöllisten lausekkeiden käyttö"
-date:                  2024-01-19
+date:                  2024-02-03T18:11:17.191541-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Säännöllisten lausekkeiden käyttö"
-
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/go/using-regular-expressions.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Regular expressions (regex) ovat kuvioiden haku- ja manipulointimenetelmiä, joita käytetään tekstin käsittelyssä. Ohjelmoijat käyttävät regexejä, koska ne tekevät monimutkaisten merkkijonojen etsinnästä ja valvonnasta tehokasta ja joustavaa.
+## Mikä ja miksi?
 
-## How to:
-```
+Ohjelmoinnissa säännöllisiä lausekkeita (regex) käytetään etsimään, vastaamaan ja manipuloimaan merkkijonoja tiettyjen mallien perusteella. Ohjelmoijat käyttävät niitä tehtäviin, jotka vaihtelevat yksinkertaisista validointitarkistuksista monimutkaiseen tekstinkäsittelyyn, mikä tekee niistä korvaamattomia tekstinkäsittelyssä joustavalla ja tehokkaalla tavalla.
+
+## Kuinka:
+
+Go:ssa `regexp`-paketti tarjoaa regex-toiminnallisuuden. Tässä on vaiheittainen opas sen käyttämiseen:
+
+1. **Säännöllisen lausekkeen kokoaminen**
+
+Ensin, käännä regex-mallisi käyttäen `regexp.Compile`. On hyvä käytäntö käsitellä virheitä, jotka saattavat ilmetä käännöksen aikana.
+
+```go
 package main
 
 import (
-	"fmt"
-	"regexp"
+    "fmt"
+    "regexp"
 )
 
 func main() {
-	// Esimerkki: Sähköpostiosoitteen validoiminen regexillä
-	emailRegex := regexp.MustCompile(`^[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,4}$`)
-	email := "esimerkki@domain.fi"
-
-	match := emailRegex.MatchString(email)
-	fmt.Println("Onko sähköpostiosoite kelvollinen:", match)
-	// Tulostus: Onko sähköpostiosoite kelvollinen: true
-
-	// Esimerkki: Merkkijonojen etsiminen ja korvaaminen
-	text := "Go on mahtava kieli. Go-kehittäjät rakastavat Go:n selkeyttä."
-	regex := regexp.MustCompile(`Go`)
-	newText := regex.ReplaceAllString(text, "Golang")
-	fmt.Println(newText)
-	// Tulostus: Golang on mahtava kieli. Golang-kehittäjät rakastavat Golang:n selkeyttä.
+    pattern := "go+"
+    r, err := regexp.Compile(pattern)
+    if err != nil {
+        fmt.Println("Virhe kootessa regexiä:", err)
+        return
+    }
+    
+    fmt.Println("Regex koottu onnistuneesti")
 }
 ```
 
-## Deep Dive
-Regex syntaksi on kehittynyt useiden vuosikymmenten aikana, Unix-järjestelmästä alkaen. Vaikka Go:n regex-kirjasto ei ole yhtä tehokas kuin joissakin muissa kielissä, kuten Perlissä, se sopii useimpiin perustarpeisiin. Vaihtoehtoisia kirjastoja, kuten RE2, löytyy suorituskykyä vaativiin tehtäviin. Go:n regex-kirjasto tekee kompromisseja nopeuden ja muistinkäytön suhteen, mutta on turvallinen reentrancy- ja backtracking-ongelmien kannalta.
+2. **Merkkijonojen vastaavuuden tarkistaminen**
 
-## See Also
-- Go:n regex-paketin dokumentaatio: https://pkg.go.dev/regexp
-- Google's RE2 regex-moottori GitHubissa: https://github.com/google/re2
-- Regexperin visuaalinen regex-testeri: https://regexper.com/
+Tarkista, vastaako merkkijono mallia käyttämällä `MatchString`-metodia.
+
+```go
+matched := r.MatchString("goooooogle")
+fmt.Println("Vastasi:", matched) // Tuloste: Vastasi: true
+```
+
+3. **Osumien löytäminen**
+
+Löytääksesi ensimmäisen osuman merkkijonosta, käytä `FindString`-metodia.
+
+```go
+match := r.FindString("golang gooooo")
+fmt.Println("Löydetty:", match) // Tuloste: Löydetty: gooooo
+```
+
+4. **Kaikkien osumien löytäminen**
+
+Kaikkien osumien löytämiseksi, `FindAllString` ottaa syötteenä merkkijonon ja kokonaisluvun n. Jos n >= 0, se palauttaa korkeintaan n osumaa; jos n < 0, se palauttaa kaikki osumat.
+
+```go
+matches := r.FindAllString("go gooo gooooo", -1)
+fmt.Println("Kaikki osumat:", matches) // Tuloste: Kaikki osumat: [go gooo gooooo]
+```
+
+5. **Osumien korvaaminen**
+
+Korvataksesi osumat toisella merkkijonolla, `ReplaceAllString` on kätevä.
+
+```go
+result := r.ReplaceAllString("go gooo gooooo", "Java")
+fmt.Println("Korvattu:", result) // Tuloste: Korvattu: Java Java Java
+```
+
+## Syväsukellus
+
+Go:n vakio kirjastoon sisällytetty `regexp`-paketti toteuttaa säännöllisten lausekkeiden haun ja mallin vastaavuuden, joka on inspiroitunut Perlin syntaksista. Go:n regex-moottorin sisällä, mallit käännetään bytekoodeiksi, jotka sitten suoritetaan Go:lla kirjoitetun vastaavuusmoottorin toimesta. Tämä toteutus vaihtaa osan suoritusnopeudesta turvallisuuteen ja helppokäyttöisyyteen, välttäen C-pohjaisten kirjastojen yleisiä puskurin ylivuotovaaroja.
+
+Vaikka Go:n regex on voimakas, se ei aina ole optimaalinen ratkaisu mallin vastaavuuteen, erityisesti käsiteltäessä tiukasti rakenteistettua tietoa, kuten JSONia tai XML:ää. Näissä tapauksissa erikoistuneet jäsennyskirjastot tai -kirjastot, jotka on suunniteltu näille datamuodoille, tarjoavat parempaa suorituskykyä ja luotettavuutta. Silti, tehtävissä, jotka sisältävät monimutkaista tekstinkäsittelyä ilman ennalta määriteltyä rakennetta, regex pysyy olennaisena työkaluna ohjelmoijan työkalupakissa, tarjoten voiman ja joustavuuden tasapainon, jota harvat vaihtoehdot voivat vastata.

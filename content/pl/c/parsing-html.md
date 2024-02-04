@@ -1,69 +1,69 @@
 ---
-title:                "Przetwarzanie HTML"
-date:                  2024-01-20T15:30:12.326301-07:00
-simple_title:         "Przetwarzanie HTML"
-
+title:                "Analiza składniowa HTML"
+date:                  2024-02-03T17:59:56.537442-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Analiza składniowa HTML"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/c/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Parsing HTML, czyli analiza kodu HTML, jest procesem ekstrakcji danych z dokumentów HTML. Programiści to robią, aby móc korzystać z zawartości stron internetowych w aplikacjach, przetwarzać informacje czy generować struktury danych.
+## Co i dlaczego?
 
-## How to:
-Uwaga: C nie jest najbardziej naturalnym językiem do parsowania HTML, ale można tego dokonać używając biblioteki `libxml2`. Oto przykład:
+Parsowanie HTML w C polega na analizowaniu dokumentów HTML w celu efektywnego wydobycia danych, struktury lub konkretnych części, często jako preludium do wydobywania danych (data mining) lub web scrapingu. Programiści robią to, aby automatyzować ekstrakcję informacji, co pozwala na programowe przetwarzanie lub przekształcanie treści internetowych.
 
-```C
+## Jak to zrobić:
+
+Parsowanie HTML może wydawać się zniechęcające ze względu na złożoność HTML i jego częste odstępstwa od czystej, dobrze uformowanej struktury. Jednak użycie biblioteki takiej jak `libxml2`, a konkretnie jej modułu do parsowania HTML, upraszcza ten proces. Ten przykład pokazuje, jak używać `libxml2` do parsowania HTML i wydobywania informacji.
+
+Najpierw upewnij się, że `libxml2` jest zainstalowany w twoim środowisku. W wielu dystrybucjach Linuxa możesz zainstalować go za pomocą menedżera pakietów. Na przykład w Ubuntu:
+
+```bash
+sudo apt-get install libxml2 libxml2-dev
+```
+
+Teraz napiszmy prosty program w C, który używa `libxml2` do parsowania ciągu HTML i wydruku tekstu znajdującego się w konkretnym elemencie:
+
+```c
 #include <stdio.h>
 #include <libxml/HTMLparser.h>
 
-int main() {
-    htmlDocPtr doc;
-    htmlNodePtr node;
-	
-    // Załadowanie dokumentu HTML
-    doc = htmlReadFile("example.html", NULL, 0);
-    if (doc == NULL) {
-        printf("Could not parse the HTML file\n");
-        return 1;
-    }
-	
-    // Dostęp do głównego węzła
-    node = xmlDocGetRootElement(doc);
-	
-    // Iterowanie po węzłach dokumentu
-    for (node = node->children; node; node = node->next) {
-        if (node->type == XML_ELEMENT_NODE) {
-            printf("node type: Element, name: %s\n", node->name);
+void parseHTML(const char *html) {
+    htmlDocPtr doc = htmlReadDoc((const xmlChar *)html, NULL, NULL, HTML_PARSE_RECOVER | HTML_PARSE_NOERROR | HTML_PARSE_NOWARNING);
+    
+    // Zakładając, że szukamy treści wewnątrz znaczników <p>
+    xmlNode *root_element = xmlDocGetRootElement(doc);
+    for (xmlNode *current_node = root_element; current_node; current_node = current_node->next) {
+        if (current_node->type == XML_ELEMENT_NODE && strcmp((const char *)current_node->name, "p") == 0) {
+            printf("Znaleziono akapit: %s\n", xmlNodeGetContent(current_node));
         }
     }
-	
-    // Sprzątanie
+    
     xmlFreeDoc(doc);
     xmlCleanupParser();
+}
+
+int main() {
+    const char *html = "<html><body><p>Witaj, świecie!</p></body></html>";
+    parseHTML(html);
     return 0;
 }
 ```
 
-Sample output:
+Przykładowe wyjście:
 ```
-node type: Element, name: body
-node type: Element, name: div
-node type: Element, name: p
-...
+Znaleziono akapit: Witaj, świecie!
 ```
 
-## Deep Dive
-Parsowanie HTML w C ma swoje korzenie w czasach, gdy dostęp do narzędzi było ograniczony. Libxml2 jest najbardziej zaawansowaną biblioteką w C do tej pracy. Alternatywnie, do innych języków jak Python czy JavaScript istnieją gotowe, wyspecjalizowane biblioteki.
+Ten przykład skupia się na wydobywaniu tekstu zawartego w tagach akapitu, ale `libxml2` oferuje solidne wsparcie dla nawigacji i zapytań dotyczących różnych części dokumentu HTML.
 
-Jako że HTML jest często nieregularny i może zawierać błędy, każdy parser musi być odporny na niepoprawne dane. Libxml2 radzi sobie z takimi przypadkami, normalizując HTML przed analizą.
+## Szczegółowe rozważania
 
-Zaangażowanie C w procesie parsowania jest sensowne przy potrzebie szybkości lub integracji z istniejącym kodem w C. Znaczące są także ograniczenia – w C jest więcej kodu "boilerplate" i konieczna jest obsługa pamięci, której inne języki zarządzają automatycznie.
+Parsowanie HTML w C sięga wczesnych dni rozwoju sieci Web. Początkowo, deweloperzy musieli opierać się na własnych, często prymitywnych rozwiązaniach do parsowania, ze względu na brak ustandaryzowanych bibliotek i chaotyczny stan HTML w internecie. Wprowadzenie bibliotek takich jak `libxml2` oznaczało znaczący postęp, oferując bardziej ustandaryzowane, efektywne i odporne podejścia do parsowania HTML.
 
-## See Also
-- Dokumentacja libxml2: http://xmlsoft.org/html/libxml-HTMLparser.html
-- Tutorial do libxml2: http://xmlsoft.org/tutorial/index.html
-- Alternatywy dla C - BeautifulSoup dla Python: https://www.crummy.com/software/BeautifulSoup/
-- jsoup: Biblioteka do parsowania HTML w Java: https://jsoup.org/
+Pomimo niezrównanej szybkości i kontroli, które oferuje C, warto zauważyć, że C nie zawsze może być najlepszym narzędziem do parsowania HTML, zwłaszcza do zadań wymagających szybkich cykli rozwoju lub radzenia sobie z wyjątkowo źle sformułowanym HTML. Języki z bibliotekami do parsowania HTML na wysokim poziomie, takie jak Python z Beautiful Soup, zapewniają bardziej abstrakcyjne, przyjazne dla użytkownika interfejsy kosztem pewnej wydajności.
+
+Niemniej jednak, dla aplikacji krytycznych pod względem wydajności, lub działających w środowiskach o ograniczonych zasobach, parsowanie HTML w C pozostaje żywotną i często preferowaną metodą. Kluczem jest wykorzystanie solidnych bibliotek takich jak `libxml2`, aby radzić sobie ze złożonościami HTML, pozwalając programistom skupić się na wydobywaniu potrzebnych danych, bez zagłębiania się w szczegóły mechaniki parsowania.

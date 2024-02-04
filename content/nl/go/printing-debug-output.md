@@ -1,68 +1,86 @@
 ---
-title:                "Debug-output afdrukken"
-date:                  2024-01-28T22:04:41.274008-07:00
+title:                "Afdrukken van debug-uitvoer"
+date:                  2024-02-03T18:05:13.766586-07:00
 model:                 gpt-4-0125-preview
-simple_title:         "Debug-output afdrukken"
-
+simple_title:         "Afdrukken van debug-uitvoer"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/go/printing-debug-output.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Wat & Waarom?
-Debug-uitvoer afdrukken is het uitspuwen van gegevens om te controleren wat je code doet. Programmeurs doen dit om bugs op te sporen of om de stroom en de datastatus in één oogopslag te begrijpen.
 
-## Hoe:
-Hier is hoe je enkele printregels in je Go-code kunt invoegen.
+In computerprogrammering betekent "Debug-output afdrukken" het produceren van gedetailleerde informatieve berichten die ontwikkelaars helpen de uitvoeringsstroom van hun programma te begrijpen of problemen op te sporen. Programmeurs doen dit om problemen efficiënter te diagnosticeren en op te lossen, waardoor het een essentiële vaardigheid is in elke programmeertoolkit, inclusief Go.
 
-```Go
+## Hoe te:
+
+In Go kun je de standaard `fmt`-package gebruiken om debug-output naar de console te printen. Het `fmt`-package biedt een verscheidenheid aan functies, zoals `Println`, `Printf` en `Print`, die tegemoetkomen aan verschillende formatteringsbehoeften.
+
+```go
 package main
 
 import (
-    "fmt"
-    "log"
+	"fmt"
 )
 
 func main() {
-    // Basis print naar stdout
-    fmt.Println("Hallo, ik ben een printopdracht!")
+	// Eenvoudige boodschap
+	fmt.Println("Debug: Betreden hoofdfunctie")
 
-    // Geformatteerde print
-    name, age := "Jane", 28
-    fmt.Printf("%s is %d jaar oud.\n", name, age)
+	var name = "Gopher"
+	// Geformatteerde boodschap
+	fmt.Printf("Hallo, %s! Dit is een debug-bericht.\n", name)
 
-    // Printen met log (bevat tijdstempel)
-    log.Println("Dit is een gelogde informatie met een tijdstempel.")
-
-    // Voor debuggen, gebruik Printf, maar vergeet niet om het later te verwijderen
-    debug := true
-    if debug {
-        fmt.Printf("Debuginfo: %s is %d jaar oud.\n", name, age)
-    }
+	// Gebruik makend van fmt.Print
+	debugMsg := "Dit is nog een debug-bericht."
+	fmt.Print("Debug: ", debugMsg, "\n")
 }
 ```
 
 Voorbeelduitvoer:
 ```
-Hallo, ik ben een printopdracht!
-Jane is 28 jaar oud.
-2009/11/10 23:00:00 Dit is een gelogde informatie met een tijdstempel.
-Debuginfo: Jane is 28 jaar oud.
+Debug: Betreden hoofdfunctie
+Hallo, Gopher! Dit is een debug-bericht.
+Debug: Dit is nog een debug-bericht.
 ```
 
-## Diepgaand:
-Historisch gezien is `fmt` Go's go-to voor I/O-operaties sinds de oprichting. Het staat voor 'format' en biedt een reeks functies om tekstuitvoer te vormen. `Println` en `Printf` zijn hier belangrijke functies. Het `log`-pakket voegt tijd toe, samenhangend voor het volgen van gebeurtenissen in de tijd.
+Voor geavanceerdere debugging kan het `log`-package van Go worden gebruikt om tijdnotaties toe te voegen en naar verschillende bestemmingen uit te voeren, niet alleen naar de console.
 
-Alternatieven? Zeker, naast basis printopdrachten, kun je log-frameworks zoals `logrus` of `zap` gebruiken voor gestructureerd en geniveleerd loggen, perfect voor serieuze toepassingen.
+```go
+package main
 
-Implementatiedetails? `fmt` is thread-safe, waardoor je debugprints vanuit gelijktijdige goroutines begrijpelijk zijn. Maar let op, debugprints zijn goed voor een snelle blik, maar kunnen je vertragen of een rommel maken in productiecode.
+import (
+	"log"
+	"os"
+)
 
-## Zie Ook:
-- Go by Example over `fmt`: https://gobyexample.com/fmt
-- De Go Blog over "Het Gebruiken van Go Modules": https://blog.golang.org/using-go-modules (bekijk het deel over geleverde afhankelijkheden)
-- Go Documentatie voor `log`: https://pkg.go.dev/log
-- Gestructureerd loggen in Go met `logrus`: https://github.com/sirupsen/logrus
-- Razendsnel, gestructureerd, geniveleerd loggen in Go met `zap`: https://github.com/uber-go/zap
+func main() {
+	// Een logbestand aanmaken
+	file, err := os.OpenFile("debug.log", os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0666)
+	if err != nil {
+		log.Fatal("Fout bij het aanmaken van logbestand:", err)
+	}
+	defer file.Close()
+
+	// Uitvoer van logs instellen naar bestand
+	log.SetOutput(file)
+
+	log.Println("Dit is een debug-bericht met tijdsstempel.")
+}
+```
+
+Het bericht in `debug.log` zou er zo uitzien:
+```
+2023/04/01 15:00:00 Dit is een debug-bericht met tijdsstempel.
+```
+
+## Diepgaande Duik
+
+Het afdrukken van debug-output is een langdurige praktijk in computerprogrammering, waarbij de implementatie varieert tussen verschillende talen. In Go bieden de standaardbibliotheekpackages `fmt` en `log` eenvoudige en veelzijdige opties. Hoewel het `fmt`-package voldoende is voor basis debugbehoeften, biedt het `log`-package verbeterde functionaliteit zoals logniveaus en configureerbare uitvoerbestemmingen.
+
+Bovendien, naarmate applicaties complexer worden, kunnen logframeworks zoals `zap` en `logrus` meer geavanceerde functies bieden zoals gestructureerd loggen en betere prestaties. Deze externe packages geven ontwikkelaars de flexibiliteit om hun logstrategie aan te passen aan hun specifieke behoeften.
+
+Het is echter essentieel om de juiste balans in loggen te vinden. Overmatige debug-output kan logboeken vervuilen en het moeilijker maken om nuttige informatie te vinden. Ontwikkelaars zouden verschillende logniveaus (bijv. debug, info, waarschuwing, fout) moeten overwegen om de belangrijkheid van berichten te categoriseren, waardoor logboeken gemakkelijker te navigeren en zinvoller worden.

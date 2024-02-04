@@ -1,84 +1,59 @@
 ---
 title:                "Generazione di numeri casuali"
-date:                  2024-01-27T20:32:59.689853-07:00
+date:                  2024-02-03T17:57:15.156817-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Generazione di numeri casuali"
-
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/c/generating-random-numbers.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Cosa & Perché?
+## Cosa e perché?
 
-Generare numeri casuali in C comporta la creazione di sequenze di numeri che non presentano alcun schema discernibile, imitando il concetto di casualità. I programmatori sfruttano i numeri casuali per una miriade di scopi, inclusa la simulazione di dati, le applicazioni crittografiche e lo sviluppo di giochi, rendendolo un aspetto vitale della programmazione.
+Generare numeri casuali in C comporta la creazione di valori che sono imprevedibili e seguono una specifica distribuzione, come uniforme o normale. Questa capacità è cruciale per applicazioni che vanno dalle simulazioni e giochi alle operazioni crittografiche, dove l'imprevedibilità o la simulazione del caso reale è essenziale.
 
 ## Come fare:
 
-Per generare numeri casuali in C, si utilizza tipicamente la funzione `rand()` trovata in `stdlib.h`. Tuttavia, è cruciale inizializzare il generatore di numeri casuali per garantire variabilità nei numeri generati attraverso diverse esecuzioni del programma. La funzione `srand()`, inizializzata con un valore, spesso il tempo corrente, facilita questo processo.
+In C, i numeri casuali possono essere generati utilizzando la funzione `rand()`, che fa parte della libreria standard C `<stdlib.h>`. Per impostazione predefinita, `rand()` produce numeri pseudo-casuali nell'intervallo da 0 a `RAND_MAX` (una costante definita in `<stdlib.h>`). Per avere più controllo sull'intervallo, i programmatori possono manipolare l'output di `rand()`.
 
 Ecco un semplice esempio di generazione di un numero casuale tra 0 e 99:
 
 ```c
 #include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
+#include <stdlib.h> // Per rand() e srand()
+#include <time.h>   // Per time()
 
 int main() {
-	// Inizializza il generatore di numeri casuali
-	srand((unsigned) time(NULL));
+    // Inizializza il generatore di numeri casuali
+    srand((unsigned) time(NULL));
 
-	// Genera un numero casuale tra 0 e 99
-	int randomNumber = rand() % 100;
+    // Genera un numero casuale tra 0 e 99
+    int numeroCasuale = rand() % 100;
 
-	// Stampa il numero casuale
-	printf("Numero Casuale: %d\n", randomNumber);
+    printf("Numero Casuale: %d\n", numeroCasuale);
 
-	return 0;
+    return 0;
 }
 ```
 
-Esempio di output:
+L'output di esempio potrebbe variare ogni volta che esegui questo programma:
 
 ```
 Numero Casuale: 42
 ```
+Per generare numeri casuali in un intervallo diverso, puoi regolare il modulo operatore (`%`) di conseguenza. Per esempio, `rand() % 10` genera numeri da 0 a 9.
 
-È importante notare che ogni esecuzione di questo programma produrrà un nuovo numero casuale, grazie all'inizializzazione con il tempo corrente.
+È importante notare che inizializzare il generatore di numeri pseudo-casuali (`srand()`) con l'ora corrente (`time(NULL)`) assicura sequenze diverse di numeri casuali ad ogni esecuzione del programma. Senza l'inizializzazione (`srand()`), `rand()` produrrebbe la stessa sequenza di numeri ogni volta che il programma viene eseguito.
 
 ## Approfondimento
 
-Il metodo tradizionale di generazione di numeri casuali in C, utilizzando `rand()` e `srand()`, non è veramente casuale. È pseudocasuale. Questo va bene per molte applicazioni, ma non è sufficiente in situazioni che richiedono un alto grado di casualità, come nell'uso crittografico serio. La sequenza generata da `rand()` è interamente determinata dal seme fornito a `srand()`. Pertanto, se il seme è noto, la sequenza può essere prevista, riducendo la casualità.
+La funzione `rand()` e la sua controparte per l'inizializzazione `srand()` fanno parte della libreria standard C da decenni. Sono basate su algoritmi che generano sequenze di numeri che sembrano essere casuali—da qui il termine "pseudo-casuali". L'algoritmo sottostante in `rand()` è tipicamente un generatore congruenziale lineare (LCG).
 
-Storicamente, la funzione `rand()` è stata criticata per la sua bassa qualità di casualità e l'intervallo limitato. Alternative moderne includono l'uso di API specifiche del dispositivo o librerie esterne che approssimano meglio la vera casualità o, nei sistemi simili a UNIX, la lettura da `/dev/random` o `/dev/urandom` per scopi crittografici.
+Sebbene `rand()` e `srand()` siano sufficienti per molte applicazioni, presentano limitazioni note, specialmente riguardo alla qualità della casualità e alla potenziale prevedibilità. Per applicazioni che richiedono casualità di alta qualità, come le operazioni crittografiche, si dovrebbero considerare alternative come `/dev/random` o `/dev/urandom` (su sistemi simili a Unix), o API fornite da librerie crittografiche.
 
-Ad esempio, utilizzando `/dev/urandom` in C:
+Con l'introduzione di C11, lo standard ISO C ha incluso un nuovo header, `<stdatomic.h>`, offrendo un controllo più raffinato per le operazioni concorrenti, ma non riguardanti direttamente la casualità. Per una vera casualità in C, gli sviluppatori spesso si rivolgono a librerie specifiche della piattaforma o esterne che offrono algoritmi migliori o fanno uso di fonti di entropia hardware.
 
-```c
-#include <stdio.h>
-#include <stdlib.h>
-
-int main() {
-	FILE *fp;
-	unsigned int randomNumber;
-
-	// Apri /dev/urandom per la lettura
-	fp = fopen("/dev/urandom", "r");
-
-	// Legge un numero casuale
-	fread(&randomNumber, sizeof(randomNumber), 1, fp);
-
-	// Stampa il numero casuale
-	printf("Numero Casuale: %u\n", randomNumber);
-
-	// Chiudi il file
-	fclose(fp);
-
-	return 0;
-}
-```
-
-Questo metodo legge direttamente dal pool di entropia del sistema, offrendo una qualità di casualità superiore adatta per applicazioni più sensibili. Tuttavia, questo approccio può avere problemi di portabilità tra diverse piattaforme, rendendolo meno universale dell'uso di `rand()`.
-
-Indipendentemente dal metodo, comprendere la natura della casualità e la sua implementazione in C è fondamentale per sviluppare applicazioni efficaci, sicure e coinvolgenti.
+Ricorda, mentre `rand()` serve come un mezzo semplice e accessibile per generare numeri pseudo-casuali, i suoi usi nelle applicazioni moderne sono limitati dalla qualità e dalla prevedibilità del suo output. Quando sono richieste soluzioni più robuste, specialmente per applicazioni attente alla sicurezza, esplorare oltre la libreria standard è vivamente consigliato.

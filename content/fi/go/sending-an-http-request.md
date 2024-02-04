@@ -1,60 +1,106 @@
 ---
 title:                "HTTP-pyynnön lähettäminen"
-date:                  2024-01-20T17:59:45.343184-07:00
-model:                 gpt-4-1106-preview
+date:                  2024-02-03T18:08:40.363062-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "HTTP-pyynnön lähettäminen"
-
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/go/sending-an-http-request.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? - Mikä ja miksi?
-HTTP-pyynnön lähettäminen on verkkoresurssin haku tai dataan vaikuttaminen verkon yli. Ohjelmoijat lähettävät niitä kommunikoidakseen web-palvelimien kanssa, päivittääkseen tai noutaakseen tietoa.
+## Mikä ja miksi?
 
-## How to: - Miten tehdä:
-```Go
+HTTP-pyynnön lähettäminen merkitsee puhelun aloittamista Go-sovelluksestasi web-palvelimeen, API:in tai mihin tahansa muuhun HTTP-pohjaiseen palveluun. Ohjelmoijat tekevät tämän vuorovaikuttaakseen web-resurssien kanssa, noutaakseen tietoja, lähettääkseen lomakkeita tai kommunikoidakseen muiden palveluiden kanssa internetissä.
+
+## Kuinka:
+
+Go:ssa HTTP-pyynnön lähettäminen ja vastauksen käsittely vaatii `net/http` -paketin käyttöä. Tässä on askel askeleelta esimerkki, joka näyttää, kuinka lähetetään yksinkertainen GET-pyyntö ja luetaan vastaus:
+
+```go
 package main
 
 import (
-	"fmt"
-	"io/ioutil"
-	"log"
-	"net/http"
+    "fmt"
+    "io/ioutil"
+    "log"
+    "net/http"
 )
 
 func main() {
-	// HTTP GET -pyyntö
-	resp, err := http.Get("http://example.com")
-	if err != nil {
-		log.Fatal(err)
-	}
-	defer resp.Body.Close()
+    // Määritä resurssin URL
+    url := "http://example.com"
 
-	// Lue vastaus
-	body, err := ioutil.ReadAll(resp.Body)
-	if err != nil {
-		log.Fatal(err)
-	}
+    // Käytä http.Get-metodia GET-pyynnön lähettämiseen
+    resp, err := http.Get(url)
+    if err != nil {
+        log.Fatal(err)
+    }
+    // Sulje vastauksen runko funktion loputtua
+    defer resp.Body.Close()
 
-	fmt.Println("Response Status Code:", resp.StatusCode)
-	fmt.Println("Response Body:", string(body))
+    // Lue vastauksen runko
+    body, err := ioutil.ReadAll(resp.Body)
+    if err != nil {
+        log.Fatal(err)
+    }
+
+    // Muunna vastauksen runko merkkijonoksi ja tulosta se
+    fmt.Println(string(body))
 }
 ```
 
-Esimerkkivastaus:
+Esimerkkivastaus (lyhennetty lyhyyden vuoksi):
 ```
-Response Status Code: 200
-Response Body: <!doctype html>...
+<!doctype html>
+<html>
+<head>
+    <title>Example Domain</title>
+...
+</html>
 ```
 
-## Deep Dive - Syväsukellus
-HTTP-pyyntöjen lähettäminen Go:ssa on ollut mahdollista net/http-paketilla Go:n ensijulkaisusta asti. Paketti on suunniteltu tarjoamaan yksinkertainen käyttöliittymä HTTP-protokollan kanssa työskentelyyn. Vaihtoehtoiset kirjastot, kuten "Gin" tai "Echo", tarjoavat lisäominaisuuksia ja nopeusparannuksia mutta perusteet pysyvät samoina. Tärkeää on ymmärtää verkkopyyntöjen perustiedot: metodi (GET, POST, jne.), URI, palvelimen vastauskoodit ja HTTP-otsikot.
+Lähettääksesi POST-pyynnön lomaketiedoilla, voit käyttää `http.PostForm`:
 
-## See Also - Katso myös
-- Go:n dokumentaatio net/http-paketista: https://pkg.go.dev/net/http
-- Go:n viralliset koodeja käsittelevät blogipostaukset: https://blog.golang.org
-- Learn Go with Tests -HTTP-pyyntöjen opetukseen keskittyvä kappale: https://quii.gitbook.io/learn-go-with-tests/questions-and-answers/http
+```go
+package main
 
-Hyödynnä näitä resursseja ymmärtääksesi paremmin Go:n HTTP-pyynnöt ja niiden parhaat käytännöt.
+import (
+    "fmt"
+    "io/ioutil"
+    "net/http"
+    "net/url"
+)
+
+func main() {
+    // Määritä URL ja lomaketiedot
+    url := "http://example.com/form"
+    data := url.Values{}
+    data.Set("key", "value")
+
+    // Lähetä POST-pyyntö lomaketiedoilla
+    resp, err := http.PostForm(url, data)
+    if err != nil {
+        panic(err)
+    }
+    defer resp.Body.Close()
+
+    // Lue ja tulosta vastaus
+    body, err := ioutil.ReadAll(resp.Body)
+    if err != nil {
+        panic(err)
+    }
+
+    fmt.Println(string(body))
+}
+```
+
+## Syväsukellus
+
+`net/http` -paketti Go:ssa tarjoaa tehokkaan ja joustavan tavan vuorovaikuttaa HTTP-palvelimien kanssa. Sen suunnittelu heijastaa Go:n painotusta yksinkertaisuuteen, tehokkuuteen ja luotettavuuteen. Alun perin toiminnot, kuten JSON- tai XML-kuormien käsittely, vaativat käsin tehtyjen pyyntöjen rungon luomisen ja asianmukaisten otsikoiden asettamisen. Go:n kehittyessä yhteisö on kehittänyt korkeamman tason paketteja, jotka yksinkertaistavat näitä tehtäviä entisestään, kuten `gorilla/mux` reititykseen ja `gjson` JSON-käsittelyyn.
+
+Yksi Go:n HTTP-asiakkaan huomattava piirre on rajapintojen ja rakenteiden, kuten `http.Client` ja `http.Request`, käyttö, jotka mahdollistavat laajan mukauttamisen ja testaamisen. Esimerkiksi voit muuttaa `http.Client` -asiakasta asettamaan aikakatkaisut pyynnöille tai pitämään yhteydet elossa suorituskyvyn parantamiseksi.
+
+Harkittu vaihtoehto yksinkertaisempaan HTTP-vuorovaikutukseen on kolmansien osapuolten kirjastojen, kuten "Resty" tai "Gentleman", käyttö. Nämä paketit tarjoavat korkeamman tason abstraktion HTTP-pyyntöihin, tehden yleisistä tehtävistä tiiviimpiä. Kuitenkin `net/http` -paketin ymmärtäminen ja hyödyntäminen on ratkaisevaa monimutkaisempien tai ainutlaatuisten HTTP-vuorovaikutusskenaarioiden käsittelyssä, tarjoten perustan, jolle Go:n rinnakkaisuusominaisuudet ja tehokas standardikirjasto voidaan täysin hyödyntää.

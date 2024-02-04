@@ -1,22 +1,27 @@
 ---
-title:                "Å sende en HTTP-forespørsel"
-date:                  2024-01-20T17:59:04.057114-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Å sende en HTTP-forespørsel"
-
+title:                "Sende en HTTP-forespørsel"
+date:                  2024-02-03T18:08:41.655399-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Sende en HTTP-forespørsel"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/c/sending-an-http-request.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Hva & Hvorfor?)
-Å sende en HTTP-forespørsel innebærer å be en webserver om data eller utføre en handling. Programmerere gjør dette for å integrere nettjenester, hente informasjon, eller interagere med APIer.
+## Hva & Hvorfor?
 
-## How to: (Slik gjør du:)
-For å sende en HTTP-forespørsel i C, kan du bruke `libcurl`, et kraftig bibliotek for overføringer av URLer. Følgende er et enkelt eksempel på hvordan du bruker `libcurl` til å gjøre en GET-forespørsel:
+Å sende en HTTP-forespørsel innebærer å opprette og sende en forespørsel til en webserver for å hente eller sende inn data. Programmerere gjør dette i C for å samhandle med web-APIer, laste ned nettsider eller kommunisere med andre nettverkstjenester direkte fra sine applikasjoner.
 
-```C
+## Hvordan:
+
+For å sende en HTTP-forespørsel i C, vil du vanligvis stole på biblioteker som libcurl, siden C ikke har innebygd støtte for webprotokoller. Her er et enkelt eksempel ved bruk av libcurl for å utføre en GET-forespørsel:
+
+Først, sørg for at du har libcurl installert på systemet ditt. Deretter, inkluder de nødvendige headerne og lenk mot libcurl-biblioteket i kildefilen din:
+
+```c
 #include <stdio.h>
 #include <curl/curl.h>
 
@@ -24,29 +29,39 @@ int main(void) {
     CURL *curl;
     CURLcode res;
 
-    curl = curl_easy_init();
+    curl = curl_easy_init(); // Initialiser et libcurl-håndtak
     if(curl) {
+        // Sett URL-en som mottar libcurl-håndtaket
         curl_easy_setopt(curl, CURLOPT_URL, "http://example.com");
-        curl_easy_setopt(curl, CURLOPT_FOLLOWLOCATION, 1L);
-
+        // Definer en tilbakeringingsfunksjon for å få data
+        curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, NULL); 
+        
+        // Utfør forespørselen, res vil få returkoden
         res = curl_easy_perform(curl);
+        // Sjekk for feil
         if(res != CURLE_OK)
-            fprintf(stderr, "curl_easy_perform() failed: %s\n",
+            fprintf(stderr, "curl_easy_perform() mislyktes: %s\n",
                     curl_easy_strerror(res));
 
+        // Alltid rydd opp
         curl_easy_cleanup(curl);
     }
     return 0;
 }
 ```
-Når du kjører koden, vil du se innholdet av `http://example.com` i konsollen din.
 
-## Deep Dive (Dypdykk)
-HTTP-forespørsler har vært en sentral del av webprogrammering siden 90-tallet. `libcurl` tilbyr ikke bare GET-forespørsler, men også POST, PUT og mange andre HTTP-metoder. Alternativer til `libcurl` inkluderer `libhttp` eller lavnivå sockets, men `libcurl` er bredt akseptert for sin enkelhet og robusthet.
+Kompiler dette med noe i retning av `gcc -o http_request http_request.c -lcurl`, å kjøre det bør utføre en enkel GET-forespørsel til "http://example.com".
 
-Å bygge en HTTP-forespørsel krever en viss struktur: en startlinje, hoder (headers), og noen ganger en meldingskropp. `libcurl` håndterer disse detaljene for deg, men det er nyttig å forstå HTTP-protokollen for å skreddersy forespørsler effektivt.
+### Eksempel på utdata
 
-## See Also (Se også)
-- curl website: [https://curl.se/](https://curl.se/)
-- Wikipedia on HTTP: [https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol)
-- 'libcurl' dokumentasjon: [https://curl.se/libcurl/](https://curl.se/libcurl/)
+Siden eksemplet ikke behandler serverens respons, vil kjøring av det ikke produsere en synlig utdata utover potensielle feilmeldinger. Å integrere tilbakeringingsfunksjonen for behandling av mottatte data er essensielt for meningsfull interaksjon.
+
+## Dypdykk
+
+Konseptet med å sende HTTP-forespørsler fra et C-program er basert på språkets kraftige nettverksegenskaper, sammen med eksterne biblioteker siden C i seg selv er et lavnivåspråk uten innebygd støtte for høynivå internettprotokoller. Historisk sett ville programmerere manuelt bruke socket-programmering i C, en kompleks og kjedelig prosess, for å samhandle med webservre før dedikerte biblioteker som libcurl dukket opp.
+
+Libcurl, bygget på toppen av C, forenkler prosessen ved å abstrahere bort de vanskelige detaljene ved socket-programmering og spesifikasjonene til HTTP-protokollen. Det støtter en mengde protokoller utover HTTP/HTTPS, inkludert FTP, SMTP og mer, noe som gjør det til et allsidig verktøy for nettverksprogrammering i C.
+
+Selv om bruk av libcurl for HTTP-forespørsler i C er praktisk, tenderer moderne programmering ofte mot språk med innebygd støtte for slike oppgaver, som Python (requests-biblioteket) eller JavaScript (Fetch API). Disse alternativene tilbyr enklere, mer lesbare syntakser på bekostning av den granulære kontrollen og ytelsesoptimaliseringene som er mulige i C gjennom direkte socket-manipulering og finjustert biblioteksbruk.
+
+For kritiske ytelsesapplikasjoner eller der direkte systemnivåinteraksjon er nødvendig, forblir C et levedyktig alternativ, spesielt med libcurl som glatter ut kompleksitetene ved webkommunikasjon. Imidlertid, for de fleste høynivå webinteraksjoner, kan utforsking av mer dedikerte webprogrammeringsspråk vise seg å være mer effektivt.

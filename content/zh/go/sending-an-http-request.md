@@ -1,40 +1,58 @@
 ---
-title:                "发出 HTTP 请求"
-date:                  2024-01-20T17:59:38.345815-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "发出 HTTP 请求"
-
+title:                "发送HTTP请求"
+date:                  2024-02-03T18:08:51.431521-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "发送HTTP请求"
 tag:                  "HTML and the Web"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/go/sending-an-http-request.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (是什么？为什么？)
-发送HTTP请求就是让你的程序能向服务器问问题或者发送信息。程序员这么做通常是为了获取数据，更新数据，或者和其他服务交互。
+## 什么 & 为什么？
 
-## How to: (怎么做：)
-```Go
+发送 HTTP 请求涉及从你的 Go 应用程序向网站服务器、API 或任何其他基于 HTTP 的服务发起调用。程序员这样做是为了与网络资源进行交互、获取数据、提交表单或通过互联网与其他服务进行通信。
+
+## 怎么做：
+
+在 Go 中，发送 HTTP 请求并处理响应涉及使用 `net/http` 包。以下是一个分步示例，展示如何发送一个简单的 GET 请求并读取响应：
+
+```go
 package main
 
 import (
     "fmt"
     "io/ioutil"
+    "log"
     "net/http"
 )
 
 func main() {
-    response, err := http.Get("http://example.com")
+    // 定义资源的 URL
+    url := "http://example.com"
+
+    // 使用 http.Get 发送 GET 请求
+    resp, err := http.Get(url)
     if err != nil {
-        fmt.Printf("The HTTP request failed with error %s\n", err)
-    } else {
-        data, _ := ioutil.ReadAll(response.Body)
-        fmt.Println(string(data))
+        log.Fatal(err)
     }
+    // 当函数结束时关闭响应体
+    defer resp.Body.Close()
+
+    // 读取响应体
+    body, err := ioutil.ReadAll(resp.Body)
+    if err != nil {
+        log.Fatal(err)
+    }
+
+    // 将响应体转换为字符串并打印
+    fmt.Println(string(body))
 }
 ```
-样本输出：
+
+示例输出（为简洁起见已缩短）：
 ```
 <!doctype html>
 <html>
@@ -44,13 +62,45 @@ func main() {
 </html>
 ```
 
-## Deep Dive (深入探究)
-HTTP请求是万维网的基础。1990年代早期，HTTP/0.9被发明出来。现在用的是HTTP/2，HTTP/3也在路上了。发送HTTP请求有多种方式，`net/http` 是Go提供的官方库。它简洁，强大，适合多数情况。也可以用第三方库，比如 `gorequest` 和 `resty`，提供更多特性，更简便的API。但他们不是官方支持的。
+要发送带有表单数据的 POST 请求，你可以使用 `http.PostForm`：
 
-掌握发送请求的细节很重要。头信息、请求方法(GET, POST等)、处理响应和错误都得考虑。比如，处理JSON，可能需要 `encoding/json` 库来解析。
+```go
+package main
 
-## See Also (参见)
-- Go net/http包文档: [https://pkg.go.dev/net/http](https://pkg.go.dev/net/http)
-- 用Go发送HTTP请求: [https://golang.org/doc/articles/wiki/](https://golang.org/doc/articles/wiki/)
-- 第三方库gorequest: [https://github.com/parnurzeal/gorequest](https://github.com/parnurzeal/gorequest)
-- 第三方库resty: [https://github.com/go-resty/resty](https://github.com/go-resty/resty)
+import (
+    "fmt"
+    "io/ioutil"
+    "net/http"
+    "net/url"
+)
+
+func main() {
+    // 定义 URL 和表单数据
+    url := "http://example.com/form"
+    data := url.Values{}
+    data.Set("key", "value")
+
+    // 发送带有表单数据的 POST 请求
+    resp, err := http.PostForm(url, data)
+    if err != nil {
+        panic(err)
+    }
+    defer resp.Body.Close()
+
+    // 读取并打印响应
+    body, err := ioutil.ReadAll(resp.Body)
+    if err != nil {
+        panic(err)
+    }
+
+    fmt.Println(string(body))
+}
+```
+
+## 深入了解
+
+Go 的 `net/http` 包提供了一种强大且灵活的方式与 HTTP 服务器进行交互。其设计反映了 Go 对简单性、效率和稳健性的强调。最初，处理 JSON 或 XML 负载等功能需要手动构造请求体并设置适当的头部。随着 Go 的发展，社区开发了更高级的包，进一步简化了这些任务，例如 `gorilla/mux` 用于路由和 `gjson` 用于 JSON 操作。
+
+Go 的 HTTP 客户端一个值得注意的方面是其接口和结构的使用，如 `http.Client` 和 `http.Request`，它们允许进行广泛的定制和测试。例如，你可以修改 `http.Client` 来超时请求或保持连接活跃以提高性能。
+
+对于简化 HTTP 交互的另一种考虑是使用第三方库，如 "Resty" 或 "Gentleman"。这些包为 HTTP 请求提供了更高级的抽象，使常见任务更加简洁。然而，理解和利用底层的 `net/http` 包对于处理更复杂或独特的 HTTP 交互场景至关重要，为充分利用 Go 的并发特性和强大的标准库提供了基础。

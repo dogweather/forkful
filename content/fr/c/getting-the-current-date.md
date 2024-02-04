@@ -1,45 +1,60 @@
 ---
 title:                "Obtenir la date actuelle"
-date:                  2024-01-20T15:12:54.672793-07:00
+date:                  2024-02-03T17:57:11.260956-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Obtenir la date actuelle"
-
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/c/getting-the-current-date.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-# Récupérer la date actuelle en C : Simple et pratique
+## Quoi & Pourquoi ?
 
-## Quoi et Pourquoi ?
-La récupération de la date actuelle c'est juste demander à votre ordi 'Quel jour on est?'. Les développeurs font ça pour des logs, des timestamps, des fonctionnalités basées sur la date... bref, plein de raisons.
+Obtenir la date actuelle en C nécessite de se connecter à la bibliothèque standard C pour récupérer et formater la date et l'heure actuelles du système. Les programmeurs ont souvent besoin de cette fonctionnalité pour la journalisation, le horodatage ou les fonctionnalités de planification au sein de leurs applications.
 
 ## Comment faire :
-Voilà le code. Simple, direct.
+
+En C, l'en-tête `<time.h>` fournit les fonctions et types nécessaires pour travailler avec les dates et les heures. La fonction `time()` récupère l'heure actuelle, tandis que `localtime()` convertit cette heure en heure locale. Pour afficher la date, nous utilisons `strftime()` pour la formater en tant que chaîne de caractères.
+
+Voici un exemple de base :
 
 ```c
 #include <stdio.h>
 #include <time.h>
 
 int main() {
-    time_t now = time(NULL);
-    struct tm *local = localtime(&now);
+    char buffer[80];
+    time_t rawtime;
+    struct tm *timeinfo;
 
-    printf("Date: %02d/%02d/%04d\n", local->tm_mday, local->tm_mon + 1, local->tm_year + 1900);
+    // Obtenir l'heure actuelle
+    time(&rawtime);
+    // La convertir en heure locale
+    timeinfo = localtime(&rawtime);
+    
+    // Formatter la date et l'afficher
+    strftime(buffer, 80, "La date d'aujourd'hui est %Y-%m-%d", timeinfo);
+    printf("%s\n", buffer);
+
     return 0;
 }
 ```
 
-Si on exécute, ça donne :
+Un exemple de sortie pourrait ressembler à ceci :
 
 ```
-Date: 22/03/2023
+La date d'aujourd'hui est 2023-04-12
 ```
 
-## Plongée profonde
-Historiquement, `time.h` est là depuis les premiers jours du C. On a aussi `gettimeofday` et `clock_gettime` pour plus de précision. La struct `tm` stocke des infos détaillées, et faire `local->tm_year + 1900` c'est parce que `tm_year` compte depuis 1900. Oui, c'est un peu vintage.
+## Exploration approfondie
 
-## Voir également :
-- [Documentation de la librairie C - time.h](https://en.cppreference.com/w/c/chrono)
-- [Man page de localtime(3)](https://linux.die.net/man/3/localtime)
-- [Tutoriel sur les Dates et Heures en C](https://www.tutorialspoint.com/c_standard_library/c_function_localtime.htm)
+La gestion du temps en C, telle que facilitée par `<time.h>`, remonte aux premiers jours du langage et des systèmes UNIX. Elle est construite autour du type de données `time_t`, qui représente le temps actuel en nombre de secondes depuis l'Epoch Unix (1er janvier 1970). Bien que cela soit efficace et universellement compatible, cela signifie également que les fonctions de temps de la bibliothèque standard C sont intrinsèquement limitées par la plage et la résolution de `time_t`.
+
+Les applications modernes, en particulier celles nécessitant des horodatages de haute résolution ou traitant des dates loin dans le futur ou dans le passé, peuvent trouver ces limitations difficiles. Par exemple, le problème de l'année 2038 est une illustration célèbre où les systèmes utilisant un `time_t` de 32 bits vont déborder.
+
+Pour une gestion plus complexe du temps et de la date, de nombreux programmeurs se tournent vers des bibliothèques externes ou les fonctionnalités fournies par le système d'exploitation. En C++, par exemple, la bibliothèque `<chrono>` offre des capacités de manipulation du temps plus précises et polyvalentes.
+
+Malgré ses limitations, la simplicité et l'ubiquité des fonctions de temps en C les rendent parfaitement adaptées à de nombreuses applications. Comprendre ces outils est fondamental pour les programmeurs en C, offrant un mélange de contexte historique de la programmation et d'utilité pratique quotidienne.

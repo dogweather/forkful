@@ -1,44 +1,52 @@
 ---
-title:                "Komennoriviparametrien lukeminen"
-date:                  2024-01-20T17:55:24.291492-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Komennoriviparametrien lukeminen"
-
+title:                "Komentorivin argumenttien lukeminen"
+date:                  2024-02-03T18:06:13.735712-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Komentorivin argumenttien lukeminen"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c/reading-command-line-arguments.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Mitä & Miksi?)
-Komennorivin argumenttien lukeminen tarkoittaa parametrien vastaanottamista ohjelmaan komentokehotteesta. Se on hyödyllistä, koska voimme muokata ohjelman toimintaa lennosta käyttäjän syötteillä.
+## Mikä & Miksi?
 
-## How to: (Kuinka tehdä:)
-```C
+C-ohjelmoinnissa komentoriviparametrien lukeminen mahdollistaa syötteiden vastaanottamisen suoraan terminaalista, mikä lisää ohjelmien joustavuutta ja käytettävyyttä. Ohjelmoijat hyödyntävät tätä skriptien käyttäytymisen määrittämiseen koodia muokkaamatta, mikä tekee sovelluksista mukautuvia ja tehokkaita.
+
+## Kuinka:
+
+C:ssä `main`-funktio voidaan suunnitella vastaanottamaan komentoriviparametrit parametreilla `int argc` ja `char *argv[]`. Tässä `argc` edustaa välitettyjen argumenttien määrää, ja `argv` on merkkiosoittimien taulukko, joka listaa kaikki argumentit. Tässä on nopea esimerkki havainnollistamaan:
+
+```c
 #include <stdio.h>
 
 int main(int argc, char *argv[]) {
-    printf("Ohjelmaan annettujen argumenttien lukumäärä: %d\n", argc);
-    for (int i = 0; i < argc; i++) {
+    printf("Ohjelman nimi: %s\n", argv[0]);
+    printf("Argumenttien määrä: %d\n", argc - 1);
+    for (int i = 1; i < argc; i++) {
         printf("Argumentti %d: %s\n", i, argv[i]);
     }
     return 0;
 }
 ```
-Käynnistä ohjelma komentokehotteesta:
-```bash
-$ gcc ohjelma.c -o ohjelma
-$ ./ohjelma testi1 testi2
-Ohjelmaan annettujen argumenttien lukumäärä: 3
-Argumentti 0: ./ohjelma
-Argumentti 1: testi1
-Argumentti 2: testi2
+
+Yllä olevaa koodia käyttäen, jos ohjelma suoritetaan komennolla `./programName -a example`, tuloste olisi:
+
+```
+Ohjelman nimi: ./programName
+Argumenttien määrä: 2
+Argumentti 1: -a
+Argumentti 2: example
 ```
 
-## Deep Dive (Sukellus syvälle):
-C:n standardikirjasto on tarjonnut tapoja lukea komentorivin argumentteja kauan sitten. `argc` edustaa "argument count" ja `argv[]` on "argument vector", joka sisältää itse argumentit. Jokainen moderni käyttöjärjestelmä tukee tätä mekanismia. Vaihtoehtoisia tapoja on, kuten käyttää `getopt`-funktion perhettä monimutkaisemmissa skenaarioissa. Lisäyksissä ja poistoissa komentorivisyntaksin yhteydessä kannattaa olla huolellinen, sillä väärät argumentit voivat aiheuttaa virheitä tai odottamattomia toimintoja ohjelmassa.
+Tämä osoittaa, kuinka komentoriviparametreja voidaan jäsentää ja hyödyntää C-ohjelmassa.
 
-## See Also (Katso myös):
-- GNU 'getopt': https://www.gnu.org/software/libc/manual/html_node/Getopt.html
-- C Standard Library documentation: https://en.cppreference.com/w/c/header
-- Online C Compiler for testing code snippets: https://www.onlinegdb.com/online_c_compiler
+## Syväsukellus
+
+Argumenttien välittämisen perinne ohjelmille juontaa juurensa Unixin alkuaikoihin. Tässä perinteisessä lähestymistavassa `argc` ja `argv` tarjoavat yksinkertaisen, mutta voimakkaan käyttöliittymän komentorivivuorovaikutukseen, ilmentäen Unixin filosofiaa pienistä, modulaarisista apuvälineistä, jotka toimivat yhdessä. Vaikka modernit kielet usein esittelevät monimutkaisempia kirjastoja tai kehyksiä komentoriviparametrien jäsentämiseen, C:n metodin välittömyys tarjoaa vertaansa vailla olevan läpinäkyvyyden ja kontrollin.
+
+Viimeaikaisissa kehityksissä, kuten `getopt`-kirjastossa POSIX-järjestelmissä, on kehittynyt tukemaan monimutkaisempia jäsentämistarpeita, kuten pitkien valitsinnimien käsittelyä tai oletusarvoja puuttuville argumenteille. Silti perusmekanismi `argc` ja `argv` pysyy olennaisena ymmärtämään, kuinka ohjelmat vuorovaikuttavat suoritusaikaisessa ympäristössään C:ssä.
+
+Kriitikot saattavat väittää, että `argc` ja `argv` suoraan käsittely voi olla virhealtista, ja työntävät käyttämään korkeamman tason abstraktioita. Siitä huolimatta niille, jotka haluavat hallita C:n monimutkaisuuksia ja arvostaa sen matalan tason toiminnan vivahteita, komentoriviparametrien jäsentämisen hallinta on kunniatehtävä. Tämä historiallisen metodologian ja käytännöllisen hyödyn sekoitus tiivistää suuren osan C:n kestävästä viehätyksestä järjestelmäohjelmoinnissa ja ohjelmistokehityksessä.

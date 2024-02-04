@@ -1,63 +1,57 @@
 ---
 title:                "Werken met complexe getallen"
-date:                  2024-01-28T22:12:23.741241-07:00
+date:                  2024-02-03T18:13:58.428380-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Werken met complexe getallen"
-
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/c/working-with-complex-numbers.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Wat & Waarom?
-Complexe getallen, een mix van reële en imaginaire delen (zoals 3 + 4i), zijn essentieel in geavanceerde berekeningen, zoals signaalverwerking of het oplossen van bepaalde vergelijkingen. Programmeurs gebruiken ze voor toepassingen zwaar leunend op wiskunde waar traditionele getallen niet voldoen.
+
+Complexe getallen bestaan uit een reëel deel en een imaginair deel, voorgesteld als `a + bi` waarbij `i` de vierkantswortel van `-1` is. Programmeurs werken met complexe getallen in verschillende velden zoals elektrotechniek, kwantumcomputing, en vloeistofdynamica, waarbij ze hun unieke eigenschappen benutten voor simulaties, signaalverwerking, en het oplossen van specifieke soorten wiskundige vergelijkingen.
 
 ## Hoe:
-C, sinds C99, heeft een native complex type en bibliotheek. Hier is hoe je het gebruikt:
 
-```C
+In C worden complexe getallen ondersteund door de Standaard Bibliotheek, specifiek `<complex.h>`. Om ze te gebruiken, verklaar je variabelen met het type `double complex` (of `float complex` voor enkele precisie). Hier is hoe je basisoperaties uitvoert:
+
+```c
 #include <stdio.h>
 #include <complex.h>
 
 int main() {
-    // Declareer twee complexe getallen
-    double complex z1 = 1.0 + 3.0 * I;
-    double complex z2 = 2.0 - 2.0 * I;
+    double complex z1 = 1.0 + 2.0*I; // Verklaar een complex getal 1+2i
+    double complex z2 = 1.0 - 2.0*I; // Verklaar een ander complex getal 1-2i
+    
+    // Optelling
+    double complex som = z1 + z2;
+    printf("Som: %.2f + %.2fi\n", creal(som), cimag(som)); // Output: Som: 2.00 + 0.00i
 
-    // Operaties met complexe getallen
-    double complex sum = z1 + z2;
-    double complex mult = z1 * z2;
+    // Vermenigvuldiging
+    double complex product = z1 * z2;
+    printf("Product: %.2f + %.2fi\n", creal(product), cimag(product)); // Output: Product: 5.00 + 0.00i
 
-    // Het afdrukken van de resultaten
-    printf("Som: %.1f + %.1fi\n", creal(sum), cimag(sum));
-    printf("Product: %.1f + %.1fi\n", creal(mult), cimag(mult));
+    // Complex Toegevoegd
+    double complex toegevoegd = conj(z1);
+    printf("Toegevoegd van z1: %.2f + %.2fi\n", creal(toegevoegd), cimag(toegevoegd)); // Output: Toegevoegd van z1: 1.00 - 2.00i
+    
+    // Magnitude
+    double magnitude = cabs(z1);
+    printf("Magnitude van z1: %.2f\n", magnitude); // Output: Magnitude van z1: 2.24
 
-    // Absolute waarde & fasehoek
-    printf("Abs(z1): %f\n", cabs(z1));
-    printf("Arg(z1): %f\n", carg(z1));
-
+    // Fase
+    double fase = carg(z1);
+    printf("Fase van z1: %.2f\n", fase); // Output in radialen
+    
     return 0;
 }
 ```
+Merk op dat `I` een constante is die de imaginaire eenheid in `<complex.h>` vertegenwoordigt. Functies zoals `creal()` en `cimag()` extraheren respectievelijk de reële en imaginaire delen, terwijl `conj()` het complex toegevoegde berekent. Voor de magnitude en fase (argument) van complexe getallen worden `cabs()` en `carg()` gebruikt.
 
-Voorbeelduitvoer:
-```
-Som: 3.0 + 1.0i
-Product: 8.0 + 2.0i
-Abs(z1): 3.162278
-Arg(z1): 1.249046
-```
-## Diepere Duik
-Complexe getallen gaan eeuwen terug, met wortels in de algebra van de 16e eeuw. In de loop der tijd zijn ze nu een vast onderdeel in vele programmeertalen, niet alleen in C.
+## Diepgaand
 
-De C99-standaard introduceerde `<complex.h>`, een header die macro's, functies, en het `complex` datatype definieert. Alternatieven bestaan - zoals het creëren van je eigen structuur, maar waarom het wiel opnieuw uitvinden? De C-standaardbibliotheek is geoptimaliseerd en klaar voor gebruik.
-
-Ondanks zijn potentie, is de ondersteuning van complexe getallen in C niet zonder kritiek. Het kan minder intuïtief zijn dan vergelijkbare functies in talen zoals Python, en het omgaan met randgevallen kan lastig zijn. Maar voor rauwe prestaties blijft het een solide keuze.
-
-## Zie Ook
-- C99 Standaarddocumentatie voor `<complex.h>`: https://en.cppreference.com/w/c/numeric/complex
-- IEEE Standaard voor drijvende-kommagetallen (IEEE 754): https://ieeexplore.ieee.org/document/4610935
-- Online tutorial voor complexe getallen rekenkunde in C: https://www.tutorialspoint.com/complex-number-arithmetic-in-c-programming
+De ondersteuning voor complexe getallen in C is relatief recent, omdat het gestandaardiseerd werd in C99. Voor deze tijd was rekenen met complexe getallen in C omslachtig, waarbij vaak aangepaste gegevensstructuren en functies nodig waren. De opname van `<complex.h>` en de complexe datatypes leverde een aanzienlijke verbetering op voor de mogelijkheden van de taal voor wetenschappelijke en technische toepassingen. Het is echter vermeldenswaard dat sommige talen, zoals Python, intuitievere ondersteuning bieden voor complexe getallen door ingebouwde datatypes en een rijkere set bibliotheekfuncties. Ondanks dit blijft de prestatie en controle die C biedt een voorkeurskeuze voor taken op het gebied van high-performance computing, zelfs als dat betekent omgaan met een iets uitgebreidere syntax voor complexe rekenkunde.

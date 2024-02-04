@@ -1,53 +1,58 @@
 ---
 title:                "Slette tegn som matcher et mønster"
-date:                  2024-01-20T17:41:52.999628-07:00
-model:                 gpt-4-1106-preview
+date:                  2024-02-03T17:55:32.246542-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Slette tegn som matcher et mønster"
-
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/c/deleting-characters-matching-a-pattern.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Sletting av tegn etter mønster er å fjerne spesifikke tegn fra en streng som matcher et gitt kriterium. Programmerere gjør dette for å rense data, forberede tekst for behandling eller for å formatere utdata.
 
-## Slik gjør du:
-```C
+Å slette tegn som samsvarer med et bestemt mønster fra strenger i C handler om å fjerne alle forekomster av visse tegn som passer forhåndsdefinerte kriterier. Programmerere utfører denne oppgaven for å sanere inndata, forberede data for behandling, eller ganske enkelt rydde opp i strenger for utdata eller videre manipulering, og sørger for at dataene som behandles er nøyaktig som nødvendig for en gitt kontekst eller algoritme.
+
+## Hvordan:
+
+C kommer ikke med en innebygd funksjon for direkte å slette tegn fra en streng basert på et mønster, ulikt noen høyere nivå språk. Imidlertid kan du enkelt oppnå denne oppgaven ved manuelt å iterere over strengen og bygge en ny som ekskluderer de uønskede tegnene. For eksempel, la oss anta at du vil fjerne alle sifre fra en streng. Du kan gjøre dette som følger:
+
+```c
 #include <stdio.h>
-#include <string.h>
+#include <ctype.h>
 
-void delete_pattern(char *str, const char *pattern) {
+void remove_digits(char *str) {
     char *src = str, *dst = str;
     while (*src) {
-        const char *temp_pat = pattern;
-        while (*temp_pat && *src != *temp_pat) 
-            ++temp_pat;
-        if (!(*temp_pat))
+        if (!isdigit((unsigned char)*src)) {
             *dst++ = *src;
+        }
         src++;
     }
     *dst = '\0';
 }
 
 int main() {
-    char str[] = "Hei, Norge! 123";
-    delete_pattern(str, "123");
-    printf("Resultat: %s\n", str); // Skriver ut: Hei, Norge! 
+    char str[] = "C Programmering 101: Grunnleggende!";
+    remove_digits(str);
+    printf("Resultat: %s\n", str);
+    return 0;
 }
 ```
 
-## Deep Dive
-Tidligere ble karakterbehandling ofte gjort med funksjoner som `strtok()` og `strspn()`. Fordelen med vår funksjon `delete_pattern()` er at den er direkte og lett å tilpasse. 
+Eksempel på utdata:
+```
+Resultat: C Programmering : Grunnleggende!
+```
 
-Under panseret jobber vi direkte med pekere. Vi beveger ikke faktisk tegnene fysisk; vi flytter bare hva pekerne 'src' og 'dst' peker på. Dette holder ting raskt og effektivt.
+Dette eksempelet utnytter `isdigit` fra `ctype.h` for å identifisere sifre, ved å flytte tegn som ikke er sifre til begynnelsen av strengen og avslutte strengen når alle tegn er evaluert.
 
-Som alternativ til egenimplementasjon kan regulære uttrykk via biblioteket `regex.h` brukes. Men for mange oppgaver er en enkel funksjon som `delete_pattern` alt du trenger.
+## Dypdykk
 
-Historisk sett har håndtering av strenger i C vært en kilde til mange bugs. Det å skrive sikker og effektiv kode krever forståelse av både minnebehandling og pekeraritmetikk.
+Løsningen presentert bruker en tilnærming med to pekere innenfor samme array for effektivt å filtrere ut uønskede tegn, en teknikk som er emblematiske for C's praktiske håndtering av minnefilosofi. Denne metoden er effektiv fordi den opererer på stedet, og unngår behovet for ekstra minneallokering og dermed minimerer overflødig.
 
-## Se Også
-- `strtok()` og `strspn()` i C-biblioteket for inndeling og søk i strenger.
-- POSIX biblioteket 'regex.h' for regulære uttrykk.
-- Online C-standard dokumentasjon for dypere innsikt i funksjonen til biblioteksfunksjonene: http://www.open-std.org/jtc1/sc22/wg14/
+Historisk sett har fraværet av høynivå strengmanipuleringsfunksjoner i C tvunget programmerere til å utvikle en dyp forståelse av strengbehandling på minnenivå, noe som har ført til nyskapende tilnærminger som den ovenfor. Selv om dette har fordelen av større kontroll og effektivitet, kommer det med en høyere risiko for feil, som bufferoverflyt og feil ved én-offs.
+
+I moderne utviklingskontekster, spesielt de som vektlegger sikkerhet og trygghet, kan språk som abstraherer bort slike lavnivåoperasjoner foretrekkes for oppgaver med strengmanipulering. Likevel forblir forståelsen og bruken av disse C-teknikkene uvurderlig for scenarioer som krever finjustert ytelsesoptimalisering eller for å arbeide innenfor miljøer der C's minimalisme og hastighet er av største viktighet.

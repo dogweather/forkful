@@ -1,75 +1,80 @@
 ---
-title:                "Organizacja kodu w funkcje"
-date:                  2024-01-26T01:09:41.967109-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "Organizacja kodu w funkcje"
-
+title:                "Organizowanie kodu w funkcje"
+date:                  2024-02-03T17:59:17.710850-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Organizowanie kodu w funkcje"
 tag:                  "Good Coding Practices"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/c/organizing-code-into-functions.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Co i dlaczego?
-Organizowanie kodu w funkcje polega na rozkładaniu kodu na wielokrotnie używane bloki, które wykonują określone zadania. Sprawia to, że kod jest łatwiejszy do odczytania, debugowania i utrzymania.
+
+Organizowanie kodu w funkcje w języku C polega na dzieleniu złożonych zadań na mniejsze, wielokrotnie wykorzystywane bloki kodu. Praktyka ta poprawia czytelność, ułatwia debugowanie oraz promuje ponowne wykorzystanie kodu, czyniąc aplikacje bardziej modularnymi i łatwiejszymi w utrzymaniu.
 
 ## Jak to zrobić:
-Weźmy prosty przykład: powiedzmy, że chcesz dodać do siebie dwie liczby wiele razy.
 
-Bez funkcji:
-```C
+W C funkcja jest deklarowana z typem zwracanym, nazwą i parametrami (jeśli są), po których następuje blok kodu. Zacznijmy od prostego przykładu: funkcji, która dodaje dwie liczby całkowite.
+
+```c
 #include <stdio.h>
 
+// Deklaracja funkcji
+int add(int a, int b);
+
 int main() {
-    int suma1 = 5 + 3;
-    printf("Suma1: %d\n", suma1);
-    
-    int suma2 = 2 + 8;
-    printf("Suma2: %d\n", suma2);
-    
-    // Więcej dodawań tutaj...
-    
-    return 0;
+  int sum = add(5, 3);
+  printf("Suma wynosi: %d\n", sum);
+  return 0;
+}
+
+// Definicja funkcji
+int add(int a, int b) {
+  return a + b;
 }
 ```
 
-Z funkcjami:
-```C
+Wyjście:
+```
+Suma wynosi: 8
+```
+
+Teraz spójrzmy na bardziej złożony przykład z udziałem niestandardowego typu danych. Ta funkcja oblicza powierzchnię prostokąta.
+
+```c
 #include <stdio.h>
 
-int dodaj(int a, int b) {
-    return a + b;
+// Definiowanie struktury dla prostokąta
+typedef struct {
+  int szerokosc;
+  int wysokosc;
+} Prostokat;
+
+// Funkcja do obliczania powierzchni prostokąta
+int calculateArea(Prostokat rect) {
+  return rect.szerokosc * rect.wysokosc;
 }
 
 int main() {
-    int suma1 = dodaj(5, 3);
-    printf("Suma1: %d\n", suma1);
-    
-    int suma2 = dodaj(2, 8);
-    printf("Suma2: %d\n", suma2);
-    
-    // Użyj funkcji dodaj() do więcej dodawań...
-    
-    return 0;
+  Prostokat myRect = {5, 10};
+  int area = calculateArea(myRect);
+  printf("Powierzchnia prostokąta wynosi: %d\n", area);
+  return 0;
 }
 ```
 
-Wynik:
+Wyjście:
 ```
-Suma1: 8
-Suma2: 10
+Powierzchnia prostokąta wynosi: 50
 ```
 
-## W Głąb Tematu
-Zanim C posiadało funkcje, programowanie często odbywało się w sposób liniowy, bardzo podobnie do przepisu kulinarnego. Ale wraz ze wzrostem rozmiarów programów, duplikacja kodu stała się problemem. Funkcje były rozwiązaniem - pozwalały na wielokrotne wykonanie tego samego bloku kodu z różnych części programu, bez konieczności jego za każdym razem przepisywania. To nie tylko oszczędza miejsce, ale także czas przy aktualizacjach: zmień funkcję w jednym miejscu, a każda część kodu, która jej używa, zostanie zaktualizowana.
+## Pogłębiona analiza
 
-Alternatywy dla funkcji mogą obejmować kod inline, makra lub kodowanie przez kopiowanie i wklejanie, ale mogą one prowadzić do nadmiernie rozbudowanego, podatnego na błędy i trudnego do utrzymania kodu. Funkcje natomiast kapsułkują funkcjonalność, definiują czytelne interfejsy i mogą zmniejszać efekty uboczne przy właściwym użyciu zakresu zmiennych.
+Koncepcja funkcji w C, odziedziczona po wcześniejszych praktykach programistycznych, jest fundamentalna dla programowania strukturalnego. Funkcje pozwalają programistom abstrahować szczegóły, zarządzać złożonością i logicznie organizować kod. Od momentu powstania, funkcja była kluczowym konstruktem w C, wpływającym na liczne inne języki.
 
-Kiedy implementujesz funkcje, zastanów się nad kilkoma szczegółami: po pierwsze, staraj się, aby robiły tylko jedną rzecz – jest to znane jako Zasada Pojedynczej Odpowiedzialności. Po drugie, nazwy są ważne – wybierz opisowe nazwy dla funkcji i ich parametrów, aby twój kod był samodokumentujący się.
+Jednak, jako że paradygmaty programowania ewoluowały, alternatywne podejścia takie jak programowanie zorientowane obiektowo (OOP) w językach takich jak C++ i Java, rozszerzyły koncepcję funkcji o metody związane z obiektami. Chociaż C nie obsługuje OOP w gotowej formie, można naśladować projekty zorientowane obiektowo, starannie strukturując funkcje i dane.
 
-## Zobacz też
-Więcej o funkcjach w C znajdziesz tutaj:
-
-- Referencja Standardowej Biblioteki C: https://en.cppreference.com/w/c/header
-- Programowanie w języku C: Nowoczesne podejście autorstwa K.N. Kinga: Książka z dogłębną analizą funkcji.
-- Learn-C.org: Sekcja o funkcjach: https://www.learn-c.org/en/Functions
+W nowoczesnym programowaniu funkcje pozostają kluczowe, ale z postępami w optymalizacji kompilatorów i funkcjach językowych nacisk może przesunąć się w kierunku funkcji wbudowanych i szablonów w C++ lub lambd w językach takich jak Python i JavaScript. Zapewniają one większą elastyczność i często bardziej zwięzłą składnię do osiągania podobnej modularności i wielokrotnego wykorzystania. Jednakże, fundamentalne zasady nauczone przez organizowanie kodu w funkcjach w C są uniwersalnie aplikowalne i stanowią fundament efektywnego i skutecznego rozwoju oprogramowania.

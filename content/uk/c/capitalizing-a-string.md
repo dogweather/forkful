@@ -1,51 +1,63 @@
 ---
-title:                "Перетворення рядка на великі літери"
-date:                  2024-01-19
-simple_title:         "Перетворення рядка на великі літери"
-
+title:                "Великі літери в рядку"
+date:                  2024-02-03T17:53:29.837079-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Великі літери в рядку"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/c/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Що та чому?)
-Capitalizing a string means converting all its letters to uppercase. Programmers do this to normalize input, emphasize text, or meet coding standards.
+## Що та Чому?
 
-## How to: (Як це зробити)
-Here's a simple C function to capitalize a string:
+Зробити рядок з великої літери в C означає перетворення першого символу кожного слова в даному рядку на велику літеру, якщо це - маленька буква. Програмісти часто виконують цю операцію, щоб стандартизувати вхідні дані користувача для пошуків, операцій сортування або для відображення, забезпечуючи послідовність та читабельність текстових даних.
+
+## Як:
+
+Для того, щоб зробити рядок з великої літери в C, потрібно мати базове розуміння маніпуляції з символами та перебігу по рядку. Оскільки в C немає вбудованої функції для цього, ви зазвичай перевіряєте кожен символ, відповідно коригуючи його регістр. Нижче наведено просте втілення:
 
 ```c
 #include <stdio.h>
-#include <ctype.h>
+#include <ctype.h> // Для функцій islower та toupper
 
 void capitalizeString(char *str) {
-    while (*str) {
-        *str = toupper((unsigned char) *str);
-        str++;
+    if (str == NULL) return; // Перевірка на безпеку
+    
+    int capNext = 1; // Прапорець, що вказує, чи потрібно робити наступну літеру великою
+    for (int i = 0; str[i] != '\0'; i++) {
+        if (capNext && islower(str[i])) {
+            str[i] = toupper(str[i]); // Робимо символ великим
+            capNext = 0; // Скидання прапорця
+        } else if (str[i] == ' ') {
+            capNext = 1; // Наступний символ повинен бути великим
+        }
     }
 }
 
 int main() {
-    char text[] = "привіт світ!";
-    capitalizeString(text);
-    printf("Capitalized: %s\n", text);
+    char exampleString[] = "hello world. programming in c!";
+    capitalizeString(exampleString);
+    printf("Рядок з великої літери: %s\n", exampleString);
     return 0;
 }
 ```
-Sample output:
+
+Приклад виводу:
 ```
-Capitalized: ПРИВІТ СВІТ!
+Рядок з великої літери: Hello World. Programming In C!
 ```
 
-## Deep Dive (Поглиблене вивчення)
-Capitalizing strings isn't new—people have been doing it in writing for emphasis for centuries. In C, it became common with the standardization of functions like `toupper` in the `<ctype.h>` library.
+Ця програма перебігає по рядку `exampleString`, перевіряючи кожен символ, чи треба його робити з великої літери. Функція `islower` перевіряє, чи є символ маленькою літерою, тоді як `toupper` перетворює його на велику літеру. Прапорець `capNext` визначає, чи слід перетворити наступну зустрінуту літеру, будучи встановленим після кожного пробілу (' ') що знаходиться, і спочатку, щоб зробити перший символ рядка великою літерою.
 
-Alternatives to the `toupper` function include writing your custom function or using libraries like `glib` for more complex linguistic rules.
+## Поглиблений Розгляд
 
-It's crucial to handle multi-byte encodings correctly, like UTF-8 in international applications. Simple `toupper` might not work as expected with such encodings, requiring additional libraries like `wchar.h` for wide characters.
+Техніка, що демонструється, проста, але не ефективна для дуже великих рядків або коли виконується повторно в додатках, критично важливих для продуктивності. В історичних та реалізаційних контекстах маніпуляція з рядками в C, включаючи великі літери, часто включає пряму маніпуляцію з буфером, відображаючи низькорівневий підхід C та надаючи програмісту повний контроль над компромісами пам’яті та продуктивності.
 
-## See Also (Дивіться також)
-- C Standard Library reference: https://en.cppreference.com/w/c/header
-- GNU C Library (glibc) documentation: https://www.gnu.org/software/libc/manual/
-- UTF-8 handling in C: https://www.gnu.org/software/libunistring/
+Існують альтернативні, більш витончені методи для зроблення рядків з великої літери, особливо коли мова йде про локалі та юнікод-символи, де правила великої літери можуть значно відрізнятись від простого сценарію ASCII. Бібліотеки, такі як ICU (International Components for Unicode), надають надійні рішення для цих випадків, але вводять залежності та навантаження, які можуть бути непотрібними для всіх додатків.
+
+Більше того, хоча у наведеному прикладі використовуються функції C Standard Library `islower` та `toupper`, які є частиною `<ctype.h>`, важливо розуміти, що ці функції працюють в діапазоні ASCII. Для додатків, що вимагають обробки символів поза ASCII, наприклад, обробки акцентованих символів в європейських мовах, буде необхідною додаткова логіка або сторонні бібліотеки для точного виконання капіталізації.
+
+На закінчення, хоча метод, окреслений у статті, підходить для багатьох додатків, розуміння його обмежень та доступних альтернатив є життєво важливим для розробки міцного, інтернаціоналізованого програмного забезпечення на C.

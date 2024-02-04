@@ -1,56 +1,75 @@
 ---
 title:                "Concatenando strings"
-date:                  2024-01-20T17:34:21.700954-07:00
-model:                 gpt-4-1106-preview
+date:                  2024-02-03T17:53:46.405581-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Concatenando strings"
-
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/c/concatenating-strings.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## O Que & Porquê?
+## O que & Por quê?
 
-Concatenar strings é o processo de juntar duas ou mais sequências de caracteres para formar um novo texto. Programadores fazem isso para construir mensagens dinâmicas, processar entradas de dados ou simplesmente para montar informações em formatos específicos durante a escrita de um software.
+A concatenação de strings em C envolve a junção de duas ou mais strings de ponta a ponta para formar uma nova string. Os programadores realizam essa operação para construir dinamicamente strings em tempo de execução, essencial para criar mensagens significativas, caminhos de arquivo ou quaisquer dados montados a partir de diversas fontes de strings.
 
-## Como Fazer:
+## Como fazer:
 
-A seguir, exemplos de código que demonstram como concatenar strings em C:
+Em C, strings são arrays de caracteres terminando com um caractere nulo (`\0`). Ao contrário das linguagens de alto nível, C não oferece uma função integrada de concatenação de strings. Em vez disso, você usa as funções `strcat()` ou `strncat()` da biblioteca `<string.h>`.
 
-```C
+Aqui está um exemplo simples usando `strcat()`:
+
+```c
 #include <stdio.h>
 #include <string.h>
 
 int main() {
-    char primeiraString[] = "Olá, ";
-    char segundaString[] = "mundo!";
-    char stringConcatenada[50];
+    char destino[50] = "Olá, ";
+    char origem[] = "Mundo!";
 
-    strcpy(stringConcatenada, primeiraString); // Inicia com a primeira string.
-    strcat(stringConcatenada, segundaString); // Adiciona a segunda string.
+    strcat(destino, origem);
 
-    printf("%s\n", stringConcatenada); // Mostra o resultado.
-
+    printf("%s\n", destino);  // Saída: Olá, Mundo!
     return 0;
 }
 ```
 
-Saída:
+A função `strcat()` recebe dois argumentos: a string de destino (que deve ter espaço suficiente para conter o resultado da concatenação) e a string de origem. Ela então anexa a string de origem à string de destino.
+
+Para mais controle sobre o número de caracteres concatenados, `strncat()` é mais seguro de usar:
+
+```c
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char destino[50] = "Olá, ";
+    char origem[] = "Mundo!";
+    int num = 3; // Número de caracteres para anexar
+
+    strncat(destino, origem, num);
+
+    printf("%s\n", destino);  // Saída: Olá, Mun
+    return 0;
+}
 ```
-Olá, mundo!
-```
+
+Isso limita a concatenação aos primeiros `num` caracteres da string de origem, ajudando a prevenir estouros de buffer.
 
 ## Mergulho Profundo
 
-Concatenar strings em C não é tão direto quanto em linguagens de alto nível, que possuem operadores de concatenação. Em C, precisa-se utilizar funções da biblioteca `string.h`, tais como `strcpy` e `strcat`. Historicamente, manipulação de strings em C sempre foi um pouco mais 'manual'.
+As funções `strcat()` e `strncat()` fazem parte da biblioteca padrão do C desde o seu início, refletindo a natureza de baixo nível da linguagem que exige o gerenciamento manual de strings e memória. Ao contrário de muitas linguagens de programação modernas que tratam as strings como objetos de primeira classe com operadores de concatenação integrados (como `+` ou `.concat()`), a abordagem do C exige um entendimento mais profundo sobre ponteiros, alocação de memória e potenciais armadilhas como estouros de buffer.
 
-Alternativas incluem a utilização de funções mais seguras, como `strncat` ou `snprintf`, para evitar casos de estouro de buffer, que podem levar a vulnerabilidades de segurança. Outro detalhe é que o array que receberá a string concatenada precisa ser grande o suficiente para acomodar a nova string — um aspecto fundamental de programação em C.
+Embora `strcat()` e `strncat()` sejam amplamente usados, eles são frequentemente criticados por seu potencial em criar vulnerabilidades de segurança se não forem usados cuidadosamente. Estouros de buffer, onde os dados excedem a memória alocada, podem levar a falhas ou serem explorados para execução de código arbitrário. Como resultado, os programadores estão cada vez mais se voltando para alternativas mais seguras, como `snprintf()`, que fornece um comportamento mais previsível ao limitar o número de caracteres escritos na string de destino com base em seu tamanho:
 
-Quando uma performance superior é necessária, outras técnicas como a construção de strings com funções de baixo nível (ex., `memcpy`) podem ser adotadas para otimizar o processo.
+```c
+char destino[50] = "Olá, ";
+char origem[] = "Mundo!";
+snprintf(destino + strlen(destino), sizeof(destino) - strlen(destino), "%s", origem);
+```
 
-## Veja Também
+Este método é mais verboso, mas significativamente mais seguro, destacando uma mudança nas práticas de programação em C para priorizar a segurança e robustez em detrimento da brevidade.
 
-- Documentação do GCC (GNU Compiler Collection), para verificar quaisquer atualizações na manipulação de strings em C: https://gcc.gnu.org/onlinedocs/
-- Manual do POSIX `string.h`, para uma melhor compreensão das funções de strings disponíveis em sistemas compatíveis com POSIX: https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/string.h.html
-- Tutorial de C da cplusplus.com, um bom recurso para aprender mais sobre manipulação de strings: http://www.cplusplus.com/reference/cstring/
+Apesar desses desafios, a concatenação de strings em C é uma habilidade fundamental, crucial para programação eficaz na linguagem. Entender suas nuances e riscos associados é chave para dominar a programação em C.

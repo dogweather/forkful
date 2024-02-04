@@ -1,22 +1,29 @@
 ---
 title:                "Sử dụng biểu thức chính quy"
-date:                  2024-01-28T22:10:08.160082-07:00
+date:                  2024-02-03T18:11:38.037501-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Sử dụng biểu thức chính quy"
-
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/go/using-regular-expressions.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Cái gì & Tại sao?
-Biểu thức chính quy (regex) là các mẫu được sử dụng để khớp các kết hợp ký tự trong chuỗi. Lập trình viên sử dụng chúng cho việc tìm kiếm, xác thực, và thao tác văn bản, biến chúng thành công cụ đa năng cho các thao tác chuỗi.
+## Cái gì và Tại sao?
 
-## Cách thực hiện:
-```Go
+Biểu thức chính quy (regex) trong lập trình được sử dụng để tìm kiếm, khớp và thao tác chuỗi dựa trên các mẫu cụ thể. Các lập trình viên sử dụng chúng cho những nhiệm vụ từ kiểm tra hợp lệ đơn giản đến xử lý văn bản phức tạp, làm cho chúng trở nên không thể thiếu để xử lý văn bản một cách linh hoạt và hiệu quả.
+
+## Cách thức:
+
+Trong Go, gói `regexp` cung cấp chức năng regex. Dưới đây là hướng dẫn từng bước về cách sử dụng nó:
+
+1. **Biên dịch một Biểu thức Chính quy**
+
+Đầu tiên, biên dịch mẫu regex của bạn sử dụng `regexp.Compile`. Là một thực hành tốt để xử lý các lỗi có thể phát sinh trong quá trình biên dịch.
+
+```go
 package main
 
 import (
@@ -25,30 +32,55 @@ import (
 )
 
 func main() {
-    // Ví dụ: Tìm email trong một chuỗi
-    text := "Reach out at contact@example.com or support@random.org"
-    emailRegex := regexp.MustCompile(`[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}`)
-
-    // FindString trả về kết quả đầu tiên tìm thấy
-    fmt.Printf("Email đầu tiên: %s\n", emailRegex.FindString(text)) 
-    // Kết quả: Email đầu tiên: contact@example.com
-
-    // FindAllString trả về tất cả kết quả tìm thấy
-    emails := emailRegex.FindAllString(text, -1)
-    fmt.Printf("Tất cả email: %v\n", emails) 
-    // Kết quả: Tất cả email: [contact@example.com support@random.org]
-
-    // Thay thế văn bản
-    sanitizedText := emailRegex.ReplaceAllString(text, "[redacted]")
-    fmt.Println(sanitizedText) 
-    // Kết quả: Reach out at [redacted] or [redacted]
+    pattern := "go+"
+    r, err := regexp.Compile(pattern)
+    if err != nil {
+        fmt.Println("Lỗi biên dịch regex:", err)
+        return
+    }
+    
+    fmt.Println("Biên dịch Regex thành công")
 }
 ```
 
-## Kỹ thuật sâu
-Regex có nguồn gốc từ Unix vào những năm 1950, được phổ biến thông qua các công cụ như `grep`. Sau đó, Perl đã làm cho chúng trở nên phổ biến. Các phương án thay thế bao gồm sử dụng các hàm chuỗi hoặc bộ phân tích cú pháp cho dữ liệu đơn giản và có cấu trúc, tương ứng. Về mặt triển khai, gói `regexp` của Go dựa trên NFA (non-deterministic finite automaton), xử lý regex một cách hiệu quả mà không gặp các vấn đề về lùi bước tìm thấy trong một số engine khác.
+2. **Khớp Chuỗi**
 
-## Xem thêm
-- Tài liệu gói `regexp` của Go: [pkg.go.dev/regexp](https://pkg.go.dev/regexp)
-- Trình kiểm tra và gỡ lỗi regex trực tuyến: [regex101.com](https://regex101.com/)
-- Hướng dẫn regex của Mạng Lưới Nhà Phát Triển Mozilla: [developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
+Kiểm tra xem một chuỗi có khớp với mẫu sử dụng phương thức `MatchString`.
+
+```go
+matched := r.MatchString("goooooogle")
+fmt.Println("Khớp:", matched) // Output: Khớp: true
+```
+
+3. **Tìm Kiếm Khớp**
+
+Để tìm kiếm khớp đầu tiên trong một chuỗi, sử dụng phương thức `FindString`.
+
+```go
+match := r.FindString("golang gooooo")
+fmt.Println("Tìm thấy:", match) // Output: Tìm thấy: gooooo
+```
+
+4. **Tìm Tất cả Các Khớp**
+
+Đối với tất cả các khớp, `FindAllString` lấy một chuỗi đầu vào và một số nguyên n. Nếu n >= 0, nó trả về nhiều nhất n khớp; nếu n < 0, nó trả về tất cả các khớp.
+
+```go
+matches := r.FindAllString("go gooo gooooo", -1)
+fmt.Println("Tất cả các khớp:", matches) // Output: Tất cả các khớp: [go gooo gooooo]
+```
+
+5. **Thay Thế các Khớp**
+
+Để thay thế các khớp bằng một chuỗi khác, `ReplaceAllString` rất tiện lợi.
+
+```go
+result := r.ReplaceAllString("go gooo gooooo", "Java")
+fmt.Println("Đã thay thế:", result) // Output: Đã thay thế: Java Java Java
+```
+
+## Sâu lắng hơn
+
+Được giới thiệu trong thư viện tiêu chuẩn của Go, gói `regexp` thực hiện việc tìm kiếm biểu thức chính quy và khớp mẫu dựa trên cú pháp của Perl. Phía dưới cùng, động cơ regex của Go biên dịch các mẫu thành một dạng mã byte, sau đó được thực thi bởi một động cơ khớp viết bằng chính Go. Cài đặt này đánh đổi một vài tốc độ tìm thấy trong việc thực thi trực tiếp trên phần cứng vì sự an toàn và dễ sử dụng, tránh được các lỗ hổng về tràn bộ đệm thường gặp trong các thư viện dựa trên C.
+
+Mặc dù có sức mạnh, regex trong Go không phải luôn là giải pháp tối ưu cho khớp mẫu, đặc biệt khi đối phó với dữ liệu có cấu trúc cao như JSON hoặc XML. Trong những trường hợp này, các trình phân tích hoặc thư viện chuyên biệt được thiết kế cho các định dạng dữ liệu này cung cấp hiệu suất và độ tin cậy tốt hơn. Tuy nhiên, đối với các nhiệm vụ liên quan đến xử lý văn bản phức tạp không có cấu trúc được xác định trước, regex vẫn là một công cụ thiết yếu trong bộ công cụ của lập trình viên, cung cấp sự cân bằng giữa sức mạnh và linh hoạt mà ít lựa chọn thay thế nào có thể đối sánh.

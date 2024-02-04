@@ -1,24 +1,29 @@
 ---
 title:                "Generowanie liczb losowych"
-date:                  2024-01-27T20:33:37.172993-07:00
+date:                  2024-02-03T17:57:39.703723-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Generowanie liczb losowych"
-
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/go/generating-random-numbers.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Co i dlaczego?
 
-Generowanie liczb losowych w Go polega na wykorzystaniu pakietu `math/rand` do produkcji liczb pseudolosowych dla różnych zastosowań, takich jak symulowanie eksperymentów, generowanie danych testowych lub dodawanie nieprzewidywalności do gier. Programiści korzystają z tej funkcji, aby tworzyć dynamiczne i mniej przewidywalne zachowania oprogramowania.
+Generowanie losowych liczb w programowaniu polega na tworzeniu sekwencji liczb, których nie można racjonalnie przewidzieć lepiej niż przez przypadek. Programiści robią to z wielu powodów, w tym w symulacjach, grach i zastosowaniach bezpieczeństwa, gdzie nieprzewidywalność jest kluczowa dla funkcjonalności lub tajemnicy.
 
 ## Jak to zrobić:
 
-Aby rozpocząć generowanie liczb losowych w Go, musisz zaimportować pakiet `math/rand` oraz pakiet `time`, aby zasilić generator liczb losowych w celu zwiększenia nieprzewidywalności. Oto podstawowy przykład:
+W Go, losowe liczby są generowane za pomocą pakietu `math/rand` dla pseudo-losowych liczb lub `crypto/rand` dla kryptograficznie bezpiecznych pseudo-losowych liczb. Zbadajmy oba.
 
-```Go
+### Używanie `math/rand` dla Pseudo-losowych Liczb
+
+Najpierw zaimportuj pakiet `math/rand` i pakiet `time`, aby zasiać generator. Zasiew zapewnia, że za każdym razem dostajesz inną sekwencję liczb.
+
+```go
 package main
 
 import (
@@ -28,32 +33,42 @@ import (
 )
 
 func main() {
-	// Zasilenie generatora
 	rand.Seed(time.Now().UnixNano())
-	
-	// Generowanie losowej liczby całkowitej z zakresu 0 do 99
-	randomInt := rand.Intn(100)
-	fmt.Println("Losowa liczba całkowita:", randomInt)
-	
-	// Generowanie losowej liczby zmiennoprzecinkowej z zakresu 0.0 do 1.0
-	randomFloat := rand.Float64()
-	fmt.Println("Losowa liczba zmiennoprzecinkowa:", randomFloat)
+	fmt.Println("Losowa liczba:", rand.Intn(100)) // Generuje liczbę między 0 a 99
 }
 ```
 
-Przykładowy wynik może wyglądać tak:
+Przykładowy wynik: `Losowa liczba: 42`
 
+### Używanie `crypto/rand` dla Kryptograficznie Bezpiecznych Pseudo-losowych Liczb
+
+Dla aplikacji bardziej wrażliwych na bezpieczeństwo pakiet `crypto/rand` jest odpowiedni, ponieważ generuje losowe liczby trudne do przewidzenia, co czyni je odpowiednimi dla operacji kryptograficznych.
+
+```go
+package main
+
+import (
+	"crypto/rand"
+	"fmt"
+	"math/big"
+)
+
+func main() {
+	n, _ := rand.Int(rand.Reader, big.NewInt(100))
+	fmt.Println("Bezpieczna losowa liczba:", n)
+}
 ```
-Losowa liczba całkowita: 42
-Losowa liczba zmiennoprzecinkowa: 0.7304601899194229
-```
 
-Pamiętaj, że każde wykonanie daje różne liczby ze względu na zasianie aktualnym czasem.
+Przykładowy wynik: `Bezpieczna losowa liczba: 81`
 
-## W głąb materii
+## Dogłębna analiza
 
-Pakiet `math/rand` w Go implementuje generatory liczb pseudolosowych (PRNGs) dla różnych rozkładów. Pomimo dużiej skuteczności w wielu aplikacjach, ważne jest, aby zauważyć, że liczby generowane przez `math/rand` nie nadają się do celów kryptograficznych ze względu na ich deterministyczną naturę. Dla potrzeb kryptograficznych odpowiednim wyborem jest pakiet `crypto/rand`, zapewniający bezpieczny generator liczb losowych.
+Podstawowa różnica między pakietami `math/rand` a `crypto/rand` w Go wynika z ich źródła entropii i przeznaczenia. `math/rand` generuje pseudo-losowe liczby na podstawie początkowego ziarna; zatem sekwencja jest deterministyczna i może być przewidziana, jeśli ziarno jest znane. Jest to odpowiednie dla scenariuszy, gdzie kluczowe jest wysoka wydajność, a nie absolutna nieprzewidywalność, jak symulacje czy gry.
 
-Implementacja `math/rand` opiera się na algorytmie subtraktywnego generatora liczb losowych, który jest wydajny i ma stosunkowo długi okres przed powtarzaniem sekwencji. Jednak dla aplikacji wymagających prawdziwie losowych sekwencji, takich jak operacje kryptograficzne, zalecane są generatory liczb losowych sprzętowe (RNGs) lub pakiet `crypto/rand`, który wchodzi w interakcję z systemowo-szczegółowymi bezpiecznymi źródłami losowości.
+Z drugiej strony, `crypto/rand` czerpie losowość z podstawowego systemu operacyjnego, czyniąc go odpowiednim dla zastosowań kryptograficznych, gdzie nieprzewidywalność jest kluczowa. Jednak wiąże się to z kosztem wydajności i złożoności w obsłudze generowanych licz (jak radzenie sobie z typem `*big.Int` dla liczb całkowitych).
 
-`math/rand` pozwala na zasianie, aby wprowadzić zmienność, ale ten sam nasion będzie zawsze generował tę samą sekwencję liczb, co podkreśla deterministyczną naturę jego losowości. Sprawia to, że jest odpowiedni dla symulacji lub gier, gdzie reprodukowalność może być pożądana do celów debugowania lub testowania.
+Historycznie, pojęcie generowania losowych liczb w komputerach zawsze balansowało na krawędzi prawdziwej "losowości", z wczesnymi systemami silnie zależnymi od deterministycznych algorytmów, które naśladowały losowość. Wraz z ewolucją komputerów, tak samo ewoluowały te algorytmy, włączając bardziej złożone źródła entropii ze swojego otoczenia.
+
+Pomimo tych postępów, dążenie do doskonałej losowości w informatyce jest z natury paradoksalne, biorąc pod uwagę deterministyczny charakter samych komputerów. Dlatego, dla większości aplikacji, gdzie przewidywalność byłaby szkodliwa, kryptograficznie bezpieczne pseudo-losowe liczby z źródeł takich jak `crypto/rand` są lepszą alternatywą, pomimo ich obciążenia.
+
+W istocie, podejście Go z dwoma odrębnymi pakietami do generowania losowych liczb elegancko rozwiązuje kompromis między wydajnością a bezpieczeństwem, pozwalając programistom wybierać w zależności od ich konkretnych potrzeb.

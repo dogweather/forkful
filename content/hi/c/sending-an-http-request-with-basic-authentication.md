@@ -1,67 +1,69 @@
 ---
-title:                "बेसिक प्रमाणीकरण के साथ HTTP अनुरोध भेजना"
-date:                  2024-01-20T18:01:01.941259-07:00
-model:                 gpt-4-1106-preview
-simple_title:         "बेसिक प्रमाणीकरण के साथ HTTP अनुरोध भेजना"
-
+title:                "मूल प्रमाणीकरण के साथ HTTP अनुरोध भेजना"
+date:                  2024-02-03T18:10:48.115981-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "मूल प्रमाणीकरण के साथ HTTP अनुरोध भेजना"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/c/sending-an-http-request-with-basic-authentication.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## क्या और क्यों?
-
-HTTP request भेजना वेब सर्वर पर data मांगना या भेजना है। Basic authentication वह process है जिसमें username और password से हम अपनी पहचान साबित करते हैं। यह जानकारी को सुरक्षित रखते हुए सर्वर से संवाद करने के लिए की जाती है।
+C में बेसिक ऑथेंटिकेशन के साथ एक HTTP अनुरोध भेजना, बेस64 में कोडित उपयोगकर्ता क्रेडेंशियल्स के साथ एक अधिकृत हेडर को शामिल करके एक HTTP अनुरोध बनाने में शामिल है। यह HTTP अनुरोधों को एक साधारण ऑथेंटिकेशन परत जोड़ने के लिए एक सामान्य विधि है, जो कार्यक्रमी तरीके से प्रतिबंधित संसाधनों तक पहुँचने की अनुमति देता है।
 
 ## कैसे करें:
+C में बेसिक ऑथेंटिकेशन के साथ एक HTTP अनुरोध भेजने के लिए, हमें libcurl लाइब्रेरी का उपयोग करना होगा, जो एक लोकप्रिय, बहुमुखी, और उपयोग में सरल क्लाइंट-साइड URL ट्रांसफर लाइब्रेरी है। यह विभिन्न प्रोटोकॉल्स, जैसे HTTP और HTTPS, को संभालता है, जो हमारे काम को सरल बनाता है। आगे बढ़ने से पहले सुनिश्चित करें कि आपके सिस्टम में libcurl स्थापित है। यहाँ एक मूल उदाहरण है जो दिखाता है कि कैसे बेसिक ऑथ के साथ एक GET अनुरोध भेजें:
 
-```C
+```c
 #include <stdio.h>
-#include <stdlib.h>
 #include <curl/curl.h>
 
-int main() {
-    CURL *curl = curl_easy_init();
+int main(void) {
+    CURL *curl;
+    CURLcode res;
+
+    curl_global_init(CURL_GLOBAL_DEFAULT);
+
+    curl = curl_easy_init();
     if(curl) {
-        struct curl_slist *headers = NULL;
-        headers = curl_slist_append(headers, "Content-Type: application/json");
-
-        // Username and password for basic authentication
+        // वह URL जिस पर अनुरोध भेजा जा रहा है
+        curl_easy_setopt(curl, CURLOPT_URL, "http://example.com/resource");
+        // बेसिक ऑथेंटिकेशन के उपयोग को सक्षम करना
         curl_easy_setopt(curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
-        curl_easy_setopt(curl, CURLOPT_USERNAME, "your-username");
-        curl_easy_setopt(curl, CURLOPT_PASSWORD, "your-password");
+        // बेसिक ऑथेंटिकेशन के लिए उपयोगकर्ता-नाम और पासवर्ड प्रदान करना
+        curl_easy_setopt(curl, CURLOPT_USERPWD, "username:password");
 
-        // Setting the URL for the request
-        curl_easy_setopt(curl, CURLOPT_URL, "https://api.example.com/data");
-        
-        // Execute the HTTP request
-        CURLcode res = curl_easy_perform(curl);
+        // GET अनुरोध करना
+        res = curl_easy_perform(curl);
 
-        if(res != CURLE_OK) {
-            fprintf(stderr, "Curl request failed: %s\n", curl_easy_strerror(res));
-        }
+        // त्रुटियों की जाँच करना
+        if(res != CURLE_OK)
+            fprintf(stderr, "curl_easy_perform() failed: %s\n",
+                    curl_easy_strerror(res));
 
-        // Cleanup
-        curl_slist_free_all(headers);
+        // हमेशा सफाई
         curl_easy_cleanup(curl);
     }
+    
+    curl_global_cleanup();
+
     return 0;
 }
 ```
+ऊपर दिए गए उदाहरण में, `"http://example.com/resource"`, `"username"`, और `"password"` को अपने वास्तविक URL, उपयोगकर्ता नाम, और पासवर्ड के साथ प्रतिस्थापित करें।
 
-Sample output के लिए यहाँ नहीं कुछ दिखाया जा सकता है क्योंकि यह program काम करने पर कोई विशिष्ट output terminal पर नहीं दिखाता। CURL library का use करके हम HTTP request भेजते हैं और यदि कोई error हो तो उसे terminal पर print करते हैं। 
+यह कोड एक `CURL` ऑब्जेक्ट आरंभ करता है, URL सेट करता है, HTTP बेसिक ऑथेंटिकेशन सक्षम करता है, और क्रेडेंशियल्स निर्दिष्ट करता है। फिर यह अनुरोध भेजता है और अपने बाद स्वच्छता करता है। यदि सफल होता है, तो अनुरोधित संसाधन प्राप्त होता है; यदि कोई त्रुटि है, तो इसे stderr पर मुद्रित किया जाता है।
 
-## गहराई से जानकारी:
+नमूना आउटपुट (मानते हुए कि सफल प्रमाणीकरण और संसाधन पहुंच) कार्यक्रम द्वारा सीधे नहीं दिखाया जा सकता है, क्योंकि उदाहरण मुख्य रूप से अनुरोध भेजने का प्रदर्शन करता है। उत्तर को मुद्रित करने के लिए, आपको HTTP प्रतिसाद डेटा को संभालने के लिए कार्यक्रम का विस्तार करना होगा।
 
-HTTP Basic Authentication इंटरनेट के शुरुआती दिनों से है। यह Base64 encoding का उपयोग करता है लेकिन एन्क्रिप्टेड नहीं होता, इसलिए HTTPS के साथ use करना ज्यादा सुरक्षित है।
+## गहराई में:
+C में बेसिक ऑथेंटिकेशन के साथ HTTP अनुरोध भेजना, जैसा कि दिखाया गया है, इसके दृढ़ता और सादगी के लिए libcurl लाइब्रेरी का उपयोग करता है। ऐसी लाइब्रेरीज के बिना पूरी तरह से C में HTTP अनुरोधों का निर्माण करना ऐतिहासिक रूप से कठिन और त्रुटि-प्रवण था, जिसमें निचले स्तर की सॉकेट प्रोग्रामिंग और मैनुअल HTTP हेडर का निर्माण शामिल था।
 
-Alternatives में OAuth, Digest Authentication और API keys शामिल हैं, जो ज्यादा सुरक्षा और features देते हैं।
+बेसिक ऑथेंटिकेशन स्वयं वेब के प्रारंभिक दिनों से एक विधि है। यह क्रेडेंशियल्स को एक आसानी से डिकोडेबल प्रारूप (Base64) में भेजता है, जो प्लेनटेक्स�्ट चैनलों पर अपनी स्वाभाविक असुरक्षा के कारण होता है। आधुनिक अनुप्रयोग अक्सर संवेदनशील डेटा के लिए, जैसे OAuth 2.0 या JWT (JSON वेब टोकन) जैसी अधिक सुरक्षित ऑथेंटिकेशन विधियों को प्राथमिकता देते हैं।
 
-इम्प्लीमेंटेशन के लिए, C language में अकसर libcurl library का इस्तेमाल होता है, जो एक मजबूत और versatile tool है। यह multiple protocols support करता है और platform-independent है। इसका मतलब है कि एक बार सीखने पर आप इसे विभिन्न प्रकार की projects में use कर सकते हैं।
+हालांकि, आंतरिक, कम महत्वपूर्ण सिस्टमों के लिए, या जहां सुविधा सुरक्षा चिंताओं को पार करती है, त्वरित-और-गंदे स्क्रिप्ट्स के लिए बेसिक ऑथ उपयोग में रहता है। इसके अतिरिक्त, जब एनक्रिप्टेड कनेक्शन (HTTPS) के साथ संयुक्त, इसकी सादगी तेज़ विकास, परीक्षण, या ऑटोमेशन कार्य के लिए एक लाभ बन जाती है जहाँ उच्चतर-स्तरीय सुरक्षा तंत्र उतने आवश्यक नहीं होते।
 
-## और देखें:
-
-- libcurl का official documentation: [curl.haxx.se/libcurl](https://curl.haxx.se/libcurl/)
-- HTTP Basic Authentication के बारे में MDN Web Docs: [developer.mozilla.org/en-US/docs/Web/HTTP/Authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
-- Basic Authentication के alternatives के लिए OAuth 2.0: [oauth.net/2/](https://oauth.net/2/)
+उन संदर्भों में जहाँ कटिंग-एज सुरक्षा अत्यावश्यक है, टोकन-आधारित प्रमाणीकरण जैसे विकल्पों को प्राथमिकता देनी चाहिए। फिर भी, libcurl के माध्यम से C में बेसिक ऑथ को लागू करने के तरीके को समझना एक मौलिक कौशल प्रदान करता है जो विभिन्न प्रमाणीकरण विधियों और प्रोटोकॉल्स के लिए अनुकूलित किया जा सकता है, जो वेब विकास में सुरक्षा, सुविधा, और अनुप्रयोग आवश्यकताओं के बीच संतुलन को दर्शाता है।

@@ -1,70 +1,82 @@
 ---
 title:                "Пошук та заміна тексту"
-date:                  2024-01-20T17:57:10.937745-07:00
-model:                 gpt-4-1106-preview
+date:                  2024-02-03T18:09:13.431258-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Пошук та заміна тексту"
-
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/c/searching-and-replacing-text.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Що таке пошук та заміна тексту та чому це роблять програмісти?
+## Що і чому?
 
-Searching and replacing text involves finding specific strings within data and substituting them with new text. Programmers do this for tasks like updating code, fixing errors, or processing user inputs.
+Пошук і заміна тексту в C полягає у виявленні конкретних підстрок в межах більшої строки й їх заміні різними підстроками. Програмісти виконують ці операції для маніпулювання текстовими даними - завдання варіюються від санітації даних і форматування до динамічного генерування вмісту.
 
-## How to:
-Як це зробити:
+## Як це зробити:
 
-```C
+C не включає вбудованих функцій для безпосереднього пошуку та заміни в строках. Однак, це можна реалізувати, поєднавши різноманітні функції обробки строк, доступні у бібліотеці `<string.h>`, разом з деякою користувацькою логікою. Нижче наведено базовий приклад того, як знайти підстроку всередині строки та замінити її. Для спрощення цей приклад припускає достатній розмір буфера і не обробляє питання розподілу пам'яті, які ви повинні враховувати в продакшн-коді.
+
+```c
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 
-void searchAndReplace(char *text, const char *search, const char *replace) {
+void replaceSubstring(char *source, char *sub, char *new_sub) {
     char buffer[1024];
-    char *pos;
-    int index = 0;
-    int searchLen = strlen(search);
+    char *insert_point = &buffer[0];
+    const char *tmp = source;
+    size_t len_sub = strlen(sub), len_new_sub = strlen(new_sub);
+    size_t len_up_to_match;
 
-    while ((pos = strstr(text + index, search)) != NULL) {
-        strncpy(buffer + index, text + index, pos - (text + index));
-        strcpy(buffer + (pos - text), replace);
-        index = pos - text + searchLen;
-        strcpy(buffer + index, text + index);
-        strcpy(text, buffer);
+    while ((tmp = strstr(tmp, sub))) {
+        // Розрахунок довжини до збігу
+        len_up_to_match = tmp - source;
+        
+        // Копіювання частини перед збігом
+        memcpy(insert_point, source, len_up_to_match);
+        insert_point += len_up_to_match;
+        
+        // Копіювання нової підстроки
+        memcpy(insert_point, new_sub, len_new_sub);
+        insert_point += len_new_sub;
+        
+        // Переміщення за збіг у вихідній строці
+        tmp += len_sub;
+        source = tmp;
     }
+    
+    // Копіювання будь-якої залишкової частини вихідної строки
+    strcpy(insert_point, source);
+    
+    // Вивід зміненої строки
+    printf("Змінений рядок: %s\n", buffer);
 }
 
 int main() {
-    char text[] = "Hello world! The world is beautiful.";
-    const char *search = "world";
-    const char *replace = "Ukraine";
-
-    searchAndReplace(text, search, replace);
-
-    printf("Modified text: %s\n", text);
+    char sourceStr[] = "Hello, this is a test. This test is simple.";
+    char sub[] = "test";
+    char newSub[] = "sample";
+    
+    replaceSubstring(sourceStr, sub, newSub);
+    
     return 0;
 }
 ```
-Sample Output:
+
+Приклад виводу:
 ```
-Modified text: Hello Ukraine! The Ukraine is beautiful.
+Змінений рядок: Hello, this is a sample. This sample is simple.
 ```
 
-## Deep Dive
-Поглиблений аналіз:
+Цей код демонструє простий підхід до пошуку всіх випадків підстроки (`sub`) у вихідній строці та їх заміну на іншу підстроку (`newSub`), використовуючи функцію `strstr` для знаходження початкової точки кожного збігу. Це дуже базовий приклад, який не обробляє складні сценарії, такі як перекривання підстрок.
 
-Historical context: Text manipulation dates back to early computing, starting simple and evolving to support complex patterns with tools like regular expressions. 
+## Поглиблений аналіз
 
-Alternatives: Many languages offer built-in methods or libraries for this task—regex in Perl or JavaScript, str.replace() in Python, and std::regex in C++.
+Підхід, використаний у розділі "Як це зробити", є фундаментальним, ілюструючи спосіб досягнення пошуку тексту та його заміни в C без сторонніх бібліотек. Історично, через наголос C на низькорівневе управління пам'яттю та продуктивність, його стандартна бібліотека не включає високорівневі функціональності маніпуляцій з рядками, які можна знайти в таких мовах, як Python або JavaScript. Програмісти мають вручну управляти пам'яттю та поєднувати різні операції з рядками для досягнення бажаних результатів, що збільшує складність, але пропонує більше контролю і ефективності.
 
-Implementation details: The code uses pointers for efficiency. It lacks buffer overflow checks for simplicity—always consider safety in real-world applications.
+Важливо відзначити, що цей ручний підхід може бути схильним до помилок, особливо при управлінні розподілами пам'яті та розмірами буферів. Неправильне оброблення може призвести до переповнення буферів і пошкодження пам'яті, роблячи код вразливим до безпекових ризиків.
 
-## See Also
-Див. також:
-
-- [C String Library Functions](https://www.tutorialspoint.com/c_standard_library/string_h.htm)
-- [RegexOne – Learn Regular Expressions](https://regexone.com/)
-- [GNU C Library – String and Array Utilities](https://www.gnu.org/software/libc/manual/html_node/String-and-Array-Utilities.html)
+У багатьох практичних сценаріях, особливо тих, що вимагають складної обробки тексту, часто варто розглянути інтеграцію сторонніх бібліотек, таких як PCRE (Perl Compatible Regular Expressions) для пошуку та заміни на основі регулярних виразів, що може спростити код і зменшити потенціал помилок. Крім того, сучасні стандарти та компілятори C все частіше пропонують вбудовані функції та безпечніші альтернативи для маніпуляції рядками, маючи на меті уникнення загальних пасток, спостережуваних у старих кодових базах C. Однак фундаментальне розуміння ручної обробки тексту залишається цінним навиком у наборі інструментів програміста, особливо для оптимізації додатків, критичних до продуктивності.

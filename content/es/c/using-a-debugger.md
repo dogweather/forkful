@@ -1,71 +1,82 @@
 ---
-title:                "Usando un depurador"
-date:                  2024-01-26T03:48:02.443519-07:00
+title:                "Utilizando un depurador"
+date:                  2024-02-03T18:09:48.209956-07:00
 model:                 gpt-4-0125-preview
-simple_title:         "Usando un depurador"
-
+simple_title:         "Utilizando un depurador"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/c/using-a-debugger.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
-Un depurador es una herramienta que te permite inspeccionar tu código C mientras se ejecuta, paso a paso, para rastrear errores. Los programadores utilizan depuradores para entender cómo se comporta su código, corregir problemas y optimizar el rendimiento sin jugar a adivinar.
+## Qué y Por Qué?
+
+Los depuradores en C son herramientas especializadas que permiten a los desarrolladores avanzar paso a paso a través de su código, inspeccionar variables y monitorear el flujo de ejecución. Este proceso es fundamental para identificar y corregir errores, asegurando que el código se comporte como se espera.
 
 ## Cómo hacerlo:
-Supongamos que estás trabajando con un programa simple en C que calcula el factorial de un número, pero hay un fallo. Para usar un depurador como `gdb` (GNU Debugger), primero compila con la bandera `-g` para incluir información de depuración:
+
+El depurador de GNU (GDB) es el depurador más utilizado para la programación en C. Aquí hay una breve guía sobre cómo usar GDB para depurar un simple programa en C.
+
+Primero, compila tu programa en C con la bandera `-g` para incluir información de depuración:
 
 ```c
-// compilar con: gcc factorial.c -o factorial -g
+gcc -g program.c -o program
+```
+
+A continuación, inicia GDB con tu programa compilado:
+
+```bash
+gdb ./program
+```
+
+Ahora puedes usar varios comandos dentro de GDB para controlar su operación. Aquí hay algunos comandos fundamentales:
+
+- `break`: Establece un punto de interrupción en una línea especificada o función para pausar la ejecución.
+  - Ejemplo: `break 10` o `break main`
+- `run`: Inicia la ejecución de tu programa dentro de GDB.
+- `next`: Ejecuta la próxima línea de código sin entrar en funciones.
+- `step`: Ejecuta la próxima línea de código, entrando en funciones.
+- `print`: Muestra el valor de una variable.
+- `continue`: Reanuda la ejecución hasta el próximo punto de interrupción.
+- `quit`: Salir de GDB.
+
+Aquí hay una sesión de ejemplo depurando un programa simple:
+
+```c
 #include <stdio.h>
 
-long factorial(int n) {
-    if (n < 0) return 0; // Una simple verificación para entrada negativa
-    long resultado = 1;
-    while (n > 1)
-        resultado *= n--;
-    return resultado;
-}
-
 int main() {
-    int numero = 5;
-    long resultado = factorial(numero);
-    printf("El factorial de %d es %ld\n", numero, resultado);
+    int i;
+    for (i = 0; i < 5; i++) {
+        printf("%d\n", i);
+    }
     return 0;
 }
 ```
 
-Luego ejecútalo en gdb:
+Compila e inicia GDB como se describió. Establece un punto de interrupción en la línea de `printf` con `break 5` y luego `run`. Usa `next` para avanzar a través del bucle y `print i` para inspeccionar la variable del bucle.
 
-```shell
-$ gdb ./factorial
+Salida de muestra después de establecer un punto de interrupción y antes de la primera iteración:
+
+```
+Breakpoint 1, main () at program.c:5
+5         printf("%d\n", i);
 ```
 
-Establece un punto de interrupción en la función `factorial` y ejecuta el programa:
+Usando `print i` después de algunas iteraciones:
 
-```gdb
-(gdb) break factorial
-(gdb) run
+```
+$3 = 2
 ```
 
-Cuando llegue al punto de interrupción, avanza a través de cada línea usando `next` o `n` e inspecciona las variables con `print` o `p`:
-
-```gdb
-(gdb) next
-(gdb) print resultado
-$1 = 1
-```
-
-La salida de muestra proporcionará valores en tiempo real y flujo de ejecución del programa.
+Esto demuestra el examen del estado y flujo de un programa simple.
 
 ## Inmersión Profunda
-Los depuradores existen desde la década de 1960, evolucionando desde monitores simples hasta aplicaciones complejas basadas en GUI. La depuración basada en impresiones era común antes de que se desarrollaran depuradores maduros. Alternativas a `gdb` incluyen `lldb`, `dbx`, o depuradores integrados en IDE como los de Visual Studio o CLion.
 
-Al tratar con depuradores, la implementación varía: algunos pueden detectar errores en tiempo de ejecución, examinar la memoria, o incluso revertir la ejecución de un programa. `gdb` puede adjuntarse a procesos en ejecución, lo que permite depurar software ya en funcionamiento, una ventaja para corregir errores en sistemas en vivo.
+El concepto de depuración ha evolucionado significativamente desde los primeros días de la programación, donde errores físicos (insectos literales) podrían causar problemas en computadoras mecánicas. Hoy en día, depuradores como GDB ofrecen características sofisticadas más allá de los básicos de avanzar paso a paso y la inspección de variables, tales como la depuración inversa (ejecutar el programa hacia atrás), puntos de interrupción condicionales y scripting para tareas de depuración automatizadas.
 
-## Véase También
-- GNU Debugger (GDB): https://www.gnu.org/software/gdb/documentation/
-- Depuración con GDB: https://sourceware.org/gdb/current/onlinedocs/gdb
-- Depurador LLDB: https://lldb.llvm.org/use/tutorial.html
-- Técnicas de Depuración en C: http://www.cprogramming.com/debugging/debugging.html
+Aunque GDB es poderoso y ampliamente utilizado, puede ser denso y desafiante para los principiantes. Herramientas alternativas de depuración y IDEs (Entornos de Desarrollo Integrados) como Visual Studio Code, CLion o Eclipse ofrecen interfaces más amigables para depurar código C, a menudo integrando ayudas visuales y controles más intuitivos. Estas alternativas pueden no ofrecer toda la profundidad funcional de GDB, pero pueden ser más accesibles para los recién llegados a la programación en C.
+
+Además, la aparición de protocolos de servidores de lenguajes y estándares de depuración ha facilitado soluciones de depuración multiplataforma, haciendo la experiencia de depuración más consistente en diferentes herramientas y entornos. A pesar de estos avances, aprender los detalles de un depurador tradicional como GDB proporciona una visión invaluable sobre la ejecución de programas en C y sigue siendo una habilidad crucial en el kit de herramientas de un desarrollador.

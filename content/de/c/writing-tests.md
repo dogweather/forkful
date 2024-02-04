@@ -1,49 +1,57 @@
 ---
 title:                "Tests schreiben"
-date:                  2024-01-19
+date:                  2024-02-03T18:14:31.931127-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Tests schreiben"
-
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/c/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Tests schreiben bedeutet automatisierte Programme zu erstellen, die deinen Code prüfen. Sie helfen Fehler zu vermeiden, geben Sicherheit bei Änderungen und erhöhen die Qualität deiner Software.
+Tests in C zu schreiben, bedeutet, kleinere Hilfsprogramme oder Funktionen zu erstellen, die automatisch die Funktionalität Ihres Codes überprüfen. Programmierer tun dies, um sicherzustellen, dass ihre Software wie erwartet funktioniert, um Fehler frühzeitig zu erkennen und um zukünftige Code-Modifikationen ohne unerwünschte Nebenwirkungen zu erleichtern.
 
-## How to:
-Hier ist ein einfaches Beispiel mit `assert` in C. Es prüft die Funktion `addieren`, die zwei Zahlen summiert.
+## Wie:
+Obwohl C nicht über ein integriertes Test-Framework wie einige andere Sprachen verfügt, können Sie dennoch effektive Tests schreiben, indem Sie assert.h für einfache Behauptungen verwenden oder Drittanbieter-Frameworks wie CUnit oder Unity für strukturiertere Tests integrieren. Hier ist ein grundlegendes Beispiel mit assert.h, um eine Funktion zu testen, die zwei Ganzzahlen addiert:
 
-```C
+```c
 #include <assert.h>
+#include "meine_mathematik.h"
 
-int addieren(int a, int b) {
-    return a + b;
+void test_addition() {
+    assert(add(1, 2) == 3);
+    assert(add(-1, -2) == -3);
+    assert(add(0, 0) == 0);
+    printf("Alle Additionstests bestanden.\n");
 }
 
 int main() {
-    assert(addieren(2, 2) == 4);
-    assert(addieren(-1, -1) == -2);
-    // assert(addieren(2, 2) == 5); // Dies würde zu einem Fehler führen, weil 2 + 2 != 5
-
+    test_addition();
     return 0;
 }
 ```
-Wenn alles passt, gibt es keine Ausgabe. Fehler würden im Terminal so aussehen:
+
+In `meine_mathematik.h` könnten Sie haben:
+
+```c
+// Einfache Additionsfunktion
+int add(int a, int b) {
+    return a + b;
+}
+```
+
+Das Ausführen der Testfunktion in Ihrer `main`-Funktion gibt aus:
 
 ```
-a.out: main.c:9: main: Assertion `addieren(2, 2) == 5' failed.
-Aborted (core dumped)
+Alle Additionstests bestanden.
 ```
 
-## Deep Dive
-Tests begannen in den 60er Jahren. Früher manuell, heute automatisiert. Alternativen zu `assert` in C sind Test-Frameworks wie Check, CMocka oder Unity. Sie bieten Features wie Test-Suiten, Mock-Objekte und detailliertere Ergebnisberichte.
+Für eine umfassendere Testeinrichtung mit einem Framework wie Unity würden Sie das Framework in Ihr Projekt integrieren und dann ähnlich Testfälle schreiben, jedoch unter Nutzung der Framework-API für Behauptungen und Testdurchführungen.
 
-Implementierungsdetails: `assert` ist nützlich für einfache Checks. Wichtig ist, dass Testfälle isoliert und unabhängig sind, um Wechselwirkungen und falsche Ergebnisse zu vermeiden.
+## Tiefergehende Betrachtung
+Das Testen in C war historisch gesehen ein manueller und etwas ad hoc Prozess aufgrund der Low-Level-Natur der Sprache und des Fehlens eines standardisierten Test-Frameworks. Dieser manuelle Ansatz führte oft zu weniger gründlichen Testpraktiken im Vergleich zu Sprachen mit integrierter Testunterstützung. Da die C-Sprache entscheidend für die Entwicklung grundlegender Softwaresysteme war, führte dieser Mangel an formellen Testframeworks dazu, dass die C-Gemeinschaft Drittanbieter-Lösungen wie CUnit und Unity entwickelte.
 
-## See Also
-- "Test Driven Development" von Kent Beck (Erweiterter Leitfaden zur Testentwicklung)
-- [Check](https://libcheck.github.io/check/): Ein Unit-Test-Framework für C
-- [CMocka](https://cmocka.org): Einfaches Mocking und Unit-Testing für C
-- [Unity Test API](http://www.throwtheswitch.org/unity): Für Test Driven Development in C
+Diese Werkzeuge, obwohl extern zur standardmäßigen C-Bibliothek, bieten Funktionalitäten ähnlich den Test-Frameworks in anderen Sprachen, und bieten eine strukturierte Möglichkeit, Tests zu definieren, durchzuführen und zu bewerten. Sie helfen, die Lücke zwischen dem leistungsstarken Systemzugang von C und der modernen Entwicklungspraxis des automatisierten Tests zu schließen. Es ist erwähnenswert, dass, obwohl diese Werkzeuge den Testprozess in C erheblich verbessern, sie eine Lernkurve mit sich bringen und die Komplexität der Projekteinrichtung im Vergleich zu Sprachen mit integrierter Testunterstützung erhöhen können. Daher ist für Projekte, bei denen Zuverlässigkeit und Wartbarkeit von größter Bedeutung sind, die Investition in die Einrichtung einer angemessenen Testumgebung in C gut gerechtfertigt, selbst angesichts möglicher Alternativen.

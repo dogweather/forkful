@@ -1,67 +1,90 @@
 ---
 title:                "Criando um arquivo temporário"
-date:                  2024-01-20T17:39:32.870833-07:00
-model:                 gpt-4-1106-preview
+date:                  2024-02-03T17:55:08.330832-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Criando um arquivo temporário"
-
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/c/creating-a-temporary-file.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## O Que & Porquê?
-Criar um arquivo temporário permite manipular dados sem afetar o sistema de arquivos permanente. Programadores fazem isso para testes, armazenamento temporário de informações e para garantir que dados não fiquem em disco após o uso.
+## O Quê & Porquê?
+Criar um arquivo temporário em C envolve gerar um arquivo destinado a ser usado por curta duração, geralmente como espaço de rascunho para processamento ou armazenamento de dados. Programadores fazem isso para gerenciar dados temporários sem afetar o armazenamento permanente do programa ou para garantir que dados sensíveis sejam apagados após o uso.
 
-## Como Fazer:
-Vejamos um código em C que cria um arquivo temporário:
+## Como fazer:
+Criar um arquivo temporário na linguagem de programação C pode aproveitar funções como `tmpfile()` e `mkstemp()`.
 
-```C
+**Usando `tmpfile()`**: Esta função cria um arquivo temporário único que é automaticamente deletado quando o programa termina ou o arquivo é fechado.
+
+```c
 #include <stdio.h>
-#include <stdlib.h>
 
 int main() {
     FILE *temp = tmpfile();
-    
-    if(temp) {
-        fputs("Exemplo de texto temporário.\n", temp);
-        
-        // Volte para o início do arquivo para ler.
-        rewind(temp);
-        
-        char buffer[255];
-        while(fgets(buffer, 255, temp) != NULL) {
-            printf("%s", buffer);
-        }
-        
-        // O arquivo temporário é removido automaticamente ao fechar.
-        fclose(temp);
-    } else {
-        printf("Não foi possível criar o arquivo temporário.\n");
+    if (temp == NULL) {
+        perror("Falha ao criar arquivo temporário");
+        return 1;
     }
 
-    return EXIT_SUCCESS;
+    // Escrevendo dados no arquivo temporário
+    fputs("Isto é um teste.\n", temp);
+
+    // Voltar e ler o que escrevemos
+    rewind(temp);
+    char buffer[1024];
+    while (fgets(buffer, sizeof(buffer), temp) != NULL) {
+        printf("%s", buffer);
+    }
+
+    // Deletado automaticamente ao fechar ou sair do programa
+    fclose(temp);
+
+    return 0;
 }
 ```
-
-Resultado esperado (Se tudo der certo, claro):
+**Saída de exemplo:**
 ```
-Exemplo de texto temporário.
+Isto é um teste.
+```
+
+**Usando `mkstemp()`**: Fornece mais controle sobre a localização do arquivo temporário e suas permissões. Requer uma string de template que termina com `XXXXXX` a qual é então substituída por uma sequência única para evitar colisões de nome.
+
+```c
+#include <unistd.h>
+#include <stdio.h>
+#include <fcntl.h>
+
+int main() {
+    char template[] = "/tmp/meutemp-XXXXXX";
+    int fd = mkstemp(template);
+
+    if (fd == -1) {
+        perror("Falha ao criar arquivo temporário");
+        return 1;
+    }
+    
+    printf("Arquivo temporário criado: %s\n", template);
+
+    // Arquivos temporários criados com mkstemp() devem ser deletados manualmente
+    unlink(template);
+
+    close(fd);
+    return 0;
+}
+```
+**Saída de exemplo:**
+```
+Arquivo temporário criado: /tmp/meutemp-abc123
 ```
 
 ## Aprofundando
+O conceito de arquivos temporários não é exclusivo para C, mas é uma funcionalidade comum em muitos ambientes de programação devido à sua utilidade no manuseio de dados efêmeros. A função `tmpfile()`, padronizada na norma ISO C, cria um arquivo com um nome único em um diretório padrão, mas sua existência é breve, tornando-o ideal para operações seguras ou temporárias.
 
-Arquivos temporários não são uma ideia nova. Surgiram como uma forma de gerenciar dados que só precisam existir durante a execução de um programa. Existem várias maneiras de criar um:
+Uma limitação notável de `tmpfile()` é sua dependência do diretório temporário padrão, o que pode não ser adequado para todas as aplicações, especialmente em termos de permissões ou segurança. Em contraste, `mkstemp()` permite especificar o diretório e garante a criação segura de arquivos com nomes únicos modificando a string de template fornecida, oferecendo uma solução mais versátil à custa de gerenciamento manual de arquivos.
 
-1. `tmpfile()`: abre um arquivo temporário binário que é removido automaticamente ao fechar ou ao terminar o programa.
-2. `mkstemp()`: cria e abre um arquivo temporário com um nome exclusivo. Deve ser removido manualmente pelo programador.
-3. Arquivos em `/tmp` (em sistemas Unix-like): ao criar arquivos aqui, eles geralmente são apagados ao reiniciar o sistema.
+No entanto, a criação de arquivos temporários pode introduzir vulnerabilidades de segurança, como condições de corrida, se não for manuseada corretamente. Por exemplo, `tmpfile()` e `mkstemp()` abordam diferentes aspectos da criação segura de arquivos temporários (deleção automática e geração de nome seguro, respectivamente), mas nenhum deles é uma solução completa. Os desenvolvedores devem considerar as especificidades das necessidades de segurança de sua aplicação, incluindo potenciais vulnerabilidades introduzidas por arquivos temporários, e podem precisar implementar salvaguardas adicionais além do que essas funções fornecem.
 
-`tmpfile()` é fácil de usar, mas tem limitações de segurança em ambientes multiusuário. `mkstemp()`, por outro lado, é mais seguro contra ataques de link simbólico, pois garante um nome de arquivo exclusivo quando criado corretamente.
-
-## Veja Também
-- Documentação do GNU sobre arquivos temporários: https://www.gnu.org/software/libc/manual/html_node/Temporary-Files.html
-- `mkstemp()` man page: https://linux.die.net/man/3/mkstemp
-- C Standard Library Reference: https://en.cppreference.com/w/c/io/tmpfile
-
-Lembre-se que detalhes extras e questões específicas sobre seu ambiente de desenvolvimento ou necessidades do projeto podem requerer um pouquinho mais de pesquisa. Só não complica mais do que precisa, combinado?
+No panorama mais amplo da programação, alternativas como armazenamento em memória (por exemplo, usando estruturas de dados dinâmicas ou arquivos mapeados em memória) podem oferecer melhor desempenho ou segurança para o manuseio de dados temporários. No entanto, arquivos temporários físicos continuam sendo uma ferramenta crucial em muitos cenários, especialmente para conjuntos de dados grandes ou quando a comunicação entre processos está envolvida.

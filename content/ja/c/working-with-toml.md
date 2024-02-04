@@ -1,72 +1,86 @@
 ---
-title:                "TOMLを扱う方法"
-date:                  2024-01-26T04:19:47.436594-07:00
+title:                "TOMLを操作する"
+date:                  2024-02-03T18:12:45.945263-07:00
 model:                 gpt-4-0125-preview
-simple_title:         "TOMLを扱う方法"
-
+simple_title:         "TOMLを操作する"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/c/working-with-toml.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## 何となぜ？
-TOMLは、読み書きが簡単なデータシリアライゼーション言語です。その明快さと人間味のおかげで、プログラマーは設定ファイル、シンプルなデータストレージ、言語間のデータ交換に使用します。
 
-## 使い方：
-C言語で「tomlc99」ライブラリを使ってTOML設定ファイルを解析しましょう。まず、ライブラリをインストールします。次に、`config.toml`を作成します：
+TOML（Tom's Obvious, Minimal Language）は、その明確なセマンティクスにより読みやすい設定ファイル形式です。プログラマーは、そのシンプルさと人間が読める特性のため、特定の文脈でXMLやJSONのような形式よりも優れた選択肢として、アプリケーションの設定ファイルにこれを使用します。
 
+## どのように：
+
+CでTOMLを扱うには、C標準ライブラリにはこの機能が含まれていないため、TOMLファイルを解析できるライブラリが最初に必要になります。「tomlc99」という、C99のための軽量TOMLパーサーが人気の選択肢です。以下は、シンプルなTOML設定ファイルを読み込むための簡単なガイドです：
+
+まず、`tomlc99`が正しくインストールされ、プロジェクトに適切にリンクされていることを確認してください。
+
+**サンプルTOMLファイル（`config.toml`）：**
 ```toml
-title = "TOML Example"
-
-[owner]
-name = "Tom Preston-Werner"
-dob = 1979-05-27T07:32:00Z
+[database]
+server = "192.168.1.1"
+ports = [ 8001, 8001, 8002 ]
+connection_max = 5000
+enabled = true
 ```
 
-次に、C言語で解析します：
+**このファイルを解析するCコード：**
 
 ```c
 #include <stdio.h>
+#include <stdlib.h>
 #include "toml.h"
 
 int main() {
-    FILE* fp;
-    char errbuf[200];
-
-    if (0 == (fp = fopen("config.toml", "r"))) {
-        printf("Error: cannot open config file\n");
-        return 1;
-    }
-    
-    toml_table_t* conf = toml_parse_file(fp, errbuf, sizeof(errbuf));
-    fclose(fp);
-    if (0 == conf) {
-        printf("Error: %s\n", errbuf);
-        return 1;
+    FILE *configFile;
+    configFile = fopen("config.toml", "r");
+    if (!configFile) {
+        perror("ファイルを開けません");
+        return EXIT_FAILURE;
     }
 
-    printf("Title: %s\n", toml_raw_in(conf, "title"));
+    toml_table_t *config = toml_parse_file(configFile, NULL, 0);
+    if (!config) {
+        fprintf(stderr, "ファイルの解析エラー\n");
+        fclose(configFile);
+        return EXIT_FAILURE;
+    }
 
-    toml_table_t* owner = toml_table_in(conf, "owner");
-    printf("Owner Name: %s\n", toml_raw_in(owner, "name"));
+    toml_table_t *database = toml_table_in(config, "database");
+    if (database) {
+        const char *server = toml_raw_in(database, "server");
+        printf("データベースサーバー: %s\n", server);
 
-    toml_free(conf);
-    return 0;
+        toml_array_t *ports = toml_array_in(database, "ports");
+        for (int i = 0; i < toml_array_nelem(ports); i++) {
+            int64_t port;
+            toml_int_at(ports, i, &port);
+            printf("ポート %d: %ld\n", i, port);
+        }
+    }
+
+    toml_free(config);
+    fclose(configFile);
+    return EXIT_SUCCESS;
 }
 ```
-サンプル出力：
+
+**出力：**
 ```
-Title: "TOML Example"
-Owner Name: "Tom Preston-Werner"
+データベースサーバー: "192.168.1.1"
+ポート 0: 8001
+ポート 1: 8001
+ポート 2: 8002
 ```
 
-## より深く：
-TOMLは、Tom Preston-Wernerによって2013年に作られた、Tom's Obvious, Minimal Languageの略です。XMLやYAMLのような形式に対してよりシンプルな代替案として機能し、人間が読み書きしやすいことに重点を置いています。JSONも別の代替案ですが、TOMLは人間が視覚的に解析しやすい構造を保持しており、これが設定ファイルでの採用の主な理由の一つです。
+## 深く掘り下げる
 
-C言語でTOMLを扱うには、言語がネイティブにサポートしていないため、パーサーライブラリを選択することが関わります。「tomlc99」のようなライブラリはC99に準拠しており、TOMLテキストをデコードするAPIを提供します。パフォーマンスを考慮する場合、適切なエラー処理とメモリ管理が重要です。なぜならC言語は組み込みのガベージコレクションを持っていないからです。
+TOMLは、GitHubの共同創設者であるTom Preston-Wernerによって、他の設定ファイル形式の制限に対する反応として作成されました。その目的は、複雑な解析ルールを必要とせずに、人間とコンピュータの両方が読み書きできるように、直接的で曖昧さのないものであることです。Cのエコシステム内では、Rustの`serde_toml`やPythonの`toml`のような高水準言語であるところのネイティブサポートを持つライブラリがあるように、TOMLは第一級の市民ではありません。しかし、C開発者は`tomlc99`のような外部ライブラリに依存する必要がありますが、これはCのミニマリズムとパフォーマンスへの重点を考えると典型的です。
 
-## 参照：
-1. TOML仕様: [https://toml.io/en/](https://toml.io/en/)
-2. tomlc99 GitHubリポジトリ: [https://github.com/cktan/tomlc99](https://github.com/cktan/tomlc99)
-3. データシリアライゼーションフォーマットの比較: [https://labs.eleks.com/2015/07/comparison-of-data-serialization-formats.html](https://labs.eleks.com/2015/07/comparison-of-data-serialization-formats.html)
+TOMLはその明快さで賞賛されていますが、設定ファイル形式を選択する際には、プロジェクトのニーズを考慮することが重要です。より複雑な構造が必要な場合やウェブAPIとの相互運用が求められるシナリオでは、その増加した複雑さにもかかわらず、JSONやYAMLがより良い適合を提供するかもしれません。TOMLは、必ずしも最も高度なデータ構造が必要なわけではなく、可読性とシンプルさが最優先される設定において輝きます。

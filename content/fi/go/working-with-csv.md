@@ -1,73 +1,100 @@
 ---
-title:                "CSV-tiedostojen käsittely"
-date:                  2024-01-19
-simple_title:         "CSV-tiedostojen käsittely"
-
+title:                "Työskentely CSV:n kanssa"
+date:                  2024-02-03T18:11:52.730906-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Työskentely CSV:n kanssa"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/go/working-with-csv.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-CSV (Comma Separated Values) on tiedostoformaatti, jota käytetään taulukollisen datan tallennukseen. Ohjelmoijat käyttävät CSV:tä sen yksinkertaisuuden ja yhteensopivuuden takia eri ohjelmistojen välillä.
+## Mikä ja miksi?
 
-## How to:
-```Go
+Pilkuin erotetut arvot (CSV, Comma-Separated Values) ovat kaikkialla käytetty tietojen vaihdon muoto yksinkertaisuutensa ja helpon ohjelmointikielten, kuten Go:n, integraation ansiosta. Ohjelmoijat työskentelevät usein CSV-tiedostojen kanssa tiedonsiirrossa, raporttien luonnissa tai tietoananalyysissä, mikä tekee CSV-käsittelyn ymmärtämisestä kriittisen osan ohjelmistokehitystyökalupakissa.
+
+## Kuinka:
+
+CSV-tiedostojen käsittely Go:ssa on suoraviivaista sen standardikirjaston, `encoding/csv`, ansiosta. Alla on perusteet CSV-tiedostojen lukemisesta ja kirjoittamisesta.
+
+### CSV-tiedoston lukeminen
+
+CSV-tiedostosta lukeminen aloitetaan avaamalla tiedosto käyttäen `os.Open`, jonka jälkeen luodaan uusi CSV-lukija komennolla `csv.NewReader`.
+
+```go
 package main
 
 import (
-	"encoding/csv"
-	"fmt"
-	"os"
-	"strings"
+    "encoding/csv"
+    "fmt"
+    "os"
 )
 
 func main() {
-	// Luodaan CSV-tiedosto ja kirjoitetaan sinne rivejä
-	data := [][]string{
-		{"nimi", "ikä", "kaupunki"},
-		{"Mikko", "30", "Helsinki"},
-		{"Liisa", "25", "Espoo"},
-	}
+    file, err := os.Open("data.csv")
+    if err != nil {
+        panic(err)
+    }
+    defer file.Close()
 
-	file, err := os.Create("esimerkki.csv")
-	if err != nil {
-		panic(err)
-	}
-	defer file.Close()
+    reader := csv.NewReader(file)
+    records, err := reader.ReadAll()
+    if err != nil {
+        panic(err)
+    }
 
-	writer := csv.NewWriter(file)
-	defer writer.Flush()
-
-	for _, record := range data {
-		if err := writer.Write(record); err != nil {
-			panic(err)
-		}
-	}
-
-	// Ladataan CSV-tiedosto ja tulostetaan sen sisältö
-	content, err := os.ReadFile("esimerkki.csv")
-	if err != nil {
-		panic(err)
-	}
-
-	reader := csv.NewReader(strings.NewReader(string(content)))
-	records, err := reader.ReadAll()
-	if err != nil {
-		panic(err)
-	}
-
-	for _, record := range records {
-		fmt.Println(record)
-	}
+    for _, record := range records {
+        fmt.Println(record)
+    }
 }
 ```
 
-## Deep Dive
-CSV on ollut käytössä jo vuosikymmeniä, ja se toimii yksinkertaisena mekanismina tietojen siirtämiseen eri järjestelmien välillä. JSON ja XML ovat nykyaikaisia vaihtoehtoja tiedon tallennukseen, mutta ne ovat monimutkaisempia. Go:n `encoding/csv`-kirjastossa hyödynnetään Reader- ja Writer-tyyppejä tiedon lukemiseen ja kirjoittamiseen CSV-muodossa, ja se käsittää myös lainausmerkkien ja välimerkkien käsittelyn.
+Tämä koodinpätkä lukee kaikki `data.csv` tiedoston tietueet ja tulostaa ne. Jokainen tietue on kenttien viipale.
 
-## See Also
-- Go:n virallinen dokumentaatio `encoding/csv`-paketille: https://pkg.go.dev/encoding/csv
-- Go by Example - CSV tiedostojen käsittelystä: https://gobyexample.com/csv
-- TutorialEdge - CSV-tiedostojen lukeminen ja kirjoittaminen Golla: https://tutorialedge.net/golang/reading-writing-csv-files-in-go/
+### Kirjoittaminen CSV-tiedostoon
+
+Kirjoittaessa käytetään `csv.NewWriter` ja `writer.WriteAll` tai `writer.Write` komentoja usean tai yksittäisen CSV-tietueen kirjoittamiseen.
+
+```go
+package main
+
+import (
+    "encoding/csv"
+    "os"
+)
+
+func main() {
+    file, err := os.Create("output.csv")
+    if err != nil {
+        panic(err)
+    }
+    defer file.Close()
+
+    writer := csv.NewWriter(file)
+    defer writer.Flush()
+
+    records := [][]string{
+        {"Name", "Age", "City"},
+        {"John Doe", "30", "New York"},
+        {"Jane Doe", "27", "Los Angeles"},
+    }
+
+    if err := writer.WriteAll(records); err != nil {
+        panic(err)
+    }
+}
+```
+
+Tämä luo tiedoston nimeltä `output.csv` annetuilla tietueilla. Muista aina huuhdella kirjoitin varmistaaksesi, että kaikki puskuroitu tieto on kirjoitettu tiedostoon.
+
+## Syväsukellus
+
+Go:n `encoding/csv` paketti tarjoaa vankan tuen CSV-tiedostojen lukemiseen ja kirjoittamiseen, mutta se on suunniteltu yksinkertaisuutta silmällä pitäen, mikä tarkoittaa ettei se käsittele monimutkaisempia tilanteita, kuten erottimien automaattista tunnistamista, lainausmerkkejä tai kenttiin sisällytettyjä rivinvaihtoja ilman manuaalista käsittelyä.
+
+Historiallisesti CSV-käsittely ohjelmointikielissä on usein ollut hankalaa näiden monimutkaisuuksien vuoksi, mutta Gon standardikirjasto abstrahoi monia näistä ongelmista, mahdollistaen kehittäjien työskennellä CSV-tiedon kanssa suhteellisen helposti. Monimutkaisempaan CSV-käsittelyyn saattaa kuitenkin tarvita kolmansien osapuolien kirjastoja kuten `gocsv` tai käsittelyn tekeminen manuaalisesti.
+
+Eräs merkittävä Gon `csv` paketin piirre on tuen tarjoaminen mukautetulle pilkulle (erotin), mikä mahdollistaa sen sujuvan toiminnan CSV-tiedostojen varianttien, kuten tabilla erotettujen arvojen (TSV) kanssa. Kuitenkin, käsitellessä erittäin epäsäännöllisiä tai standardin ulkopuolisia CSV-tiedostoja, Go-ohjelmoijat saattavat huomata tarpeen laajentaa olemassa olevia csv-lukija- tai kirjoitinimplementaatioita.
+
+Vaikka Gon CSV-käsittelykyvyt ovat vankat yleiskäyttöä varten, sovelluksissa, jotka vaativat intensiivistä datan manipulointia, kuten datatiede tai monimutkaiset datan muuntamistehtävät, ohjelmoijat saattavat tutkia omistautuneita datan käsittelypaketteja tai jopa muita tehtävään paremmin sopivia kieliä, kuten Pythonia sen `pandas` kirjaston kanssa. Siitä huolimatta suoraviivaisiin CSV luku-kirjoitusoperaatioihin Gon standardikirjasto erottuu tehokkuudellaan ja yksinkertaisuudellaan.

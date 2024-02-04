@@ -1,87 +1,81 @@
 ---
 title:                "Verwendung von assoziativen Arrays"
-date:                  2024-01-30T19:11:11.888569-07:00
+date:                  2024-02-03T18:10:39.883120-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Verwendung von assoziativen Arrays"
-
 tag:                  "Data Structures"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/go/using-associative-arrays.md"
 changelog:
-  - 2024-01-30, gpt-4-0125-preview, translated from English
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Was & Warum?
 
-Assoziative Arrays, die in Go als Maps bekannt sind, ermöglichen es Ihnen, Daten in Schlüssel-Wert-Paaren zu speichern und darauf zuzugreifen. Sie sind unerlässlich für die Verwaltung von Sammlungen, bei denen Sie Werte schnell über einen einzigartigen Schlüssel suchen können, was die Datenmanipulation und -abfrage in Ihren Programmen vereinfacht.
+Assoziative Arrays, in Go als Maps bekannt, ermöglichen es dir, Schlüssel-Wert-Paare zu speichern, bei denen jeder einzigartige Schlüssel auf einen Wert verweist. Programmierer verwenden Maps für effizientes Datenabrufen, Modifizieren und zur Pflege einer Sammlung von Elementen, auf die schnell mit einzigartigen Schlüsseln zugegriffen werden kann.
 
-## Wie geht das:
+## Wie man:
 
-In Go sind Maps unkompliziert zu verwenden. Hier ist eine einfache Anleitung, um zu beginnen:
+Das Erstellen und Initialisieren einer Map in Go kann auf verschiedene Arten erfolgen. Hier ist ein einfaches Beispiel, um zu beginnen:
 
-1. **Deklarieren und Initialisieren von Maps**
-
-```Go
+```go
 package main
 
 import "fmt"
 
 func main() {
-    // Initialisiert eine leere Map mit String-Schlüsseln und Int-Werten
-    var scores map[string]int
-    fmt.Println(scores) // Gibt aus: map[]
-
-    // Deklarieren und Initialisieren einer nicht-leeren Map
+    // Deklarieren und Initialisieren einer Map
     colors := map[string]string{
-        "red": "#ff0000",
-        "green": "#00ff00",
+        "red":   "#FF0000",
+        "green": "#00FF00",
+        "blue":  "#0000FF",
     }
-    fmt.Println(colors) // Gibt aus: map[green:#00ff00 red:#ff0000]
+
+    fmt.Println(colors)
+    // Ausgabe: map[blue:#0000FF green:#00FF00 red:#FF0000]
 }
 ```
 
-2. **Elemente hinzufügen und darauf zugreifen**
+Um Elemente hinzuzufügen oder zu aktualisieren, weist du einem Schlüssel einen Wert zu, so:
 
-```Go
-func main() {
-    fruits := make(map[string]int)
-    fruits["apples"] = 5
-    fruits["bananas"] = 10
+```go
+colors["white"] = "#FFFFFF"
+fmt.Println(colors)
+// Ausgabe: map[blue:#0000FF green:#00FF00 red:#FF0000 white:#FFFFFF]
+```
 
-    fmt.Println(fruits["apples"]) // Gibt aus: 5
+Auf einen Wert über seinen Schlüssel zuzugreifen ist unkompliziert:
+
+```go
+fmt.Println("Der Hex-Code für Rot ist:", colors["red"])
+// Ausgabe: Der Hex-Code für Rot ist: #FF0000
+```
+
+Um ein Element zu löschen, verwende die `delete` Funktion:
+
+```go
+delete(colors, "red")
+fmt.Println(colors)
+// Ausgabe: map[blue:#0000FF green:#00FF00 white:#FFFFFF]
+```
+
+Das Iterieren über eine Map erfolgt mit einer For-Schleife:
+
+```go
+for color, hex := range colors {
+    fmt.Printf("Schlüssel: %s Wert: %s\n", color, hex)
 }
 ```
 
-3. **Über Maps iterieren**
+Denke daran, dass Maps in Go ungeordnet sind. Die Reihenfolge der Iteration ist nicht garantiert.
 
-```Go
-func main() {
-    pets := map[string]string{"dog": "bark", "cat": "meow"}
+## Tiefer eintauchen
 
-    for key, value := range pets {
-        fmt.Printf("%s macht %s\n", key, value)
-    }
-    // Ausgabereihenfolge kann variieren, da Maps keine Reihenfolge garantieren.
-}
-```
+In Go sind Maps als Hashtabellen implementiert. Jeder Eintrag in der Map besteht aus zwei Elementen: einem Schlüssel und einem Wert. Der Schlüssel wird gehasht, um den Eintrag zu speichern, was Operationen in konstanter Zeit für eine kleine Menge an Daten und eine durchschnittliche Zeitkomplexität von O(1) mit ordentlichem Hashing ermöglicht, die sich im schlimmsten Fall mit vielen Hash-Kollisionen auf O(n) verschlechtern kann.
 
-4. **Elemente löschen**
+Ein wichtiger Hinweis für neue Go-Programmierer ist, dass Map-Typen Referenztypen sind. Das bedeutet, wenn du eine Map an eine Funktion übergibst, sind alle Änderungen, die innerhalb dieser Funktion an der Map vorgenommen werden, für den Aufrufer sichtbar. Das unterscheidet sich beispielsweise von der Übergabe eines Structs an eine Funktion, bei der der Struct kopiert wird, es sei denn, er wird per Pointer übergeben.
 
-```Go
-func main() {
-    meals := map[string]int{"breakfast": 300, "lunch": 600}
-    fmt.Println(meals) // Vor dem Löschen
+Während Maps für die meisten Anwendungsfälle mit assoziativen Arrays unglaublich vielseitig und effizient sind, kann es in leistungskritischen Anwendungen vorteilhaft sein, Datenstrukturen mit vorhersehbareren Leistungscharakteristiken zu verwenden, insbesondere wenn Schlüsselverteilungen häufige Kollisionen verursachen können.
 
-    delete(meals, "lunch")
-    fmt.Println(meals) // Nach dem Löschen
-}
-```
-
-## Vertiefung
-
-Eingeführt in Go 1, bieten Maps eine integrierte Möglichkeit, assoziative Arrays effizient zu handhaben. Im Gegensatz zu Slices, die geordnete Sammlungen sind, sind Maps ungeordnet. Das bedeutet, dass die Iterationsreihenfolge über Map-Elemente nicht garantiert ist, dass sie bei verschiedenen Ausführungen gleich bleibt, ein Kompromiss für ihre Fähigkeit, Schlüssel-Wert-Paare dynamisch und mit erheblicher Flexibilität zu handhaben.
-
-Unter der Haube implementiert Go Maps als Hashtabellen und gewährleistet, dass die durchschnittliche Komplexität von Zugriffs-, Einfüge- und Löschoperationen unter den meisten Umständen O(1) ist. Es ist jedoch zu beachten, dass diese Effizienz aufgrund von Faktoren wie Hash-Kollisionen variieren kann.
-
-Für Anwendungsfälle, die eine geordnete Schlüsseldurchquerung erfordern, könnten Sie in Erwägung ziehen, Maps mit Slices zu kombinieren oder Drittanbieter-Pakete zu erkunden, die zusätzliche Datenstrukturen wie geordnete Maps oder Bäume anbieten. Trotz ihrer Einschränkungen sind Maps von Go ein mächtiges und unerlässliches Werkzeug für viele Programmierszenarien.
+Eine weitere Alternative ist der `sync.Map`, der seit Go 1.9 verfügbar ist, konzipiert für Anwendungsfälle, in denen Schlüssel nur einmal geschrieben, aber viele Male gelesen werden, was in diesen Szenarien Effizienzverbesserungen bietet. Für herkömmliche Go-Anwendungen ist jedoch die reguläre Map-Nutzung idiomatisch und oft der empfohlene Ansatz wegen ihrer Einfachheit und dem direkten Support in der Sprache.

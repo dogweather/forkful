@@ -1,63 +1,57 @@
 ---
 title:                "Làm việc với số phức"
-date:                  2024-01-28T22:12:41.890810-07:00
+date:                  2024-02-03T18:14:09.033437-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Làm việc với số phức"
-
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/c/working-with-complex-numbers.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Cái gì và Tại sao?
-Số phức, là sự kết hợp của phần thực và phần ảo (như 3 + 4i), là chìa khóa trong các phép tính nâng cao, như xử lý tín hiệu hay giải các phương trình nhất định. Các lập trình viên xử lý chúng cho các ứng dụng nặng về toán học, nơi mà số truyền thống không đáp ứng được.
+## Cái gì & Tại sao?
+
+Số phức bao gồm một phần thực và một phần ảo, được biểu diễn dưới dạng `a + bi` trong đó `i` là căn bậc hai của `-1`. Các lập trình viên làm việc với số phức trong nhiều lĩnh vực như kỹ thuật điện, tính toán lượng tử và động lực học chất lỏng, tận dụng các đặc tính độc đáo của chúng cho mô phỏng, xử lý tín hiệu, và giải các loại phương trình toán học cụ thể.
 
 ## Làm thế nào:
-C, từ C99, có kiểu phức và thư viện tự nhiên. Dưới đây là cách sử dụng:
 
-```C
+Trong C, số phức được hỗ trợ bởi Thư viện Tiêu chuẩn, cụ thể là `<complex.h>`. Để sử dụng chúng, khai báo các biến với kiểu `double complex` (hoặc `float complex` cho độ chính xác đơn). Dưới đây là cách thực hiện các phép toán cơ bản:
+
+```c
 #include <stdio.h>
 #include <complex.h>
 
 int main() {
-    // Khai báo hai số phức
-    double complex z1 = 1.0 + 3.0 * I;
-    double complex z2 = 2.0 - 2.0 * I;
-
-    // Các phép toán với số phức
+    double complex z1 = 1.0 + 2.0*I; // Khai báo một số phức 1+2i
+    double complex z2 = 1.0 - 2.0*I; // Khai báo một số phức khác 1-2i
+    
+    // Cộng
     double complex sum = z1 + z2;
-    double complex mult = z1 * z2;
+    printf("Tổng: %.2f + %.2fi\n", creal(sum), cimag(sum)); // Đầu ra: Tổng: 2.00 + 0.00i
 
-    // In kết quả
-    printf("Tổng: %.1f + %.1fi\n", creal(sum), cimag(sum));
-    printf("Tích: %.1f + %.1fi\n", creal(mult), cimag(mult));
+    // Nhân
+    double complex product = z1 * z2;
+    printf("Tích: %.2f + %.2fi\n", creal(product), cimag(product)); // Đầu ra: Tích: 5.00 + 0.00i
 
-    // Giá trị tuyệt đối & góc pha
-    printf("Abs(z1): %f\n", cabs(z1));
-    printf("Arg(z1): %f\n", carg(z1));
+    // Liên hợp
+    double complex conjugate = conj(z1);
+    printf("Liên hợp của z1: %.2f + %.2fi\n", creal(conjugate), cimag(conjugate)); // Đầu ra: Liên hợp của z1: 1.00 - 2.00i
+    
+    // Độ lớn
+    double magnitude = cabs(z1);
+    printf("Độ lớn của z1: %.2f\n", magnitude); // Đầu ra: Độ lớn của z1: 2.24
 
+    // Pha
+    double phase = carg(z1);
+    printf("Pha của z1: %.2f\n", phase); // Đầu ra bằng radian
+    
     return 0;
 }
 ```
+Lưu ý rằng `I` là một hằng số biểu thị đơn vị ảo trong `<complex.h>`. Các hàm như `creal()` và `cimag()` được sử dụng để trích xuất phần thực và phần ảo tương ứng, trong khi `conj()` tính toán liên hợp phức. Đối với độ lớn và pha (arg) của số phức, `cabs()` và `carg()` được sử dụng.
 
-Kết quả mẫu:
-```
-Tổng: 3.0 + 1.0i
-Tích: 8.0 + 2.0i
-Abs(z1): 3.162278
-Arg(z1): 1.249046
-```
-## Tìm hiểu sâu
-Số phức có từ hàng thế kỷ, với nguồn gốc từ đại số thế kỷ 16. Nhanh chóng tiến lên, giờ đây chúng là một phần không thể thiếu trong nhiều ngôn ngữ lập trình, không chỉ C.
+## Sâu hơn
 
-Tiêu chuẩn C99 giới thiệu `<complex.h>`, một tiêu đề định nghĩa các macro, hàm, và kiểu dữ liệu `complex`. Có những lựa chọn khác - như tạo cấu trúc của riêng bạn, nhưng tại sao lại phải tái sáng tạo bánh xe? Thư viện tiêu chuẩn C được tối ưu hoá và sẵn sàng sử dụng.
-
-Mặc dù có sức mạnh, sự hỗ trợ số phức của C không thoát khỏi những chỉ trích. Nó có thể kém trực quan hơn so với các tính năng tương tự trong ngôn ngữ như Python, và việc xử lý các trường hợp ngoại lệ có thể trở nên phức tạp. Nhưng về hiệu suất thô, nó vẫn là một lựa chọn vững chắc.
-
-## Xem thêm
-- Tài liệu Tiêu chuẩn C99 cho `<complex.h>`: https://en.cppreference.com/w/c/numeric/complex
-- Tiêu chuẩn IEEE cho Số học dấu phẩy động (IEEE 754): https://ieeexplore.ieee.org/document/4610935
-- Hướng dẫn trực tuyến cho toán học số phức trong lập trình C: https://www.tutorialspoint.com/complex-number-arithmetic-in-c-programming
+Việc hỗ trợ số phức trong C tương đối mới, được chuẩn hóa trong C99. Trước đó, việc tính toán số phức trong C khá cồng kềnh, thường yêu cầu cấu trúc dữ liệu và hàm tùy chỉnh. Sự bao gồm của `<complex.h>` và các loại dữ liệu phức đã tăng cường đáng kể khả năng của ngôn ngữ cho các ứng dụng khoa học và kỹ thuật. Tuy nhiên, đáng chú ý là một số ngôn ngữ, như Python, cung cấp hỗ trợ trực quan hơn cho số phức thông qua các kiểu dữ liệu tích hợp và bộ thư viện phong phú hơn. Mặc dù vậy, hiệu suất và kiểm soát mà C cung cấp khiến nó trở thành lựa chọn ưa thích cho các nhiệm vụ tính toán hiệu suất cao, ngay cả khi điều này có nghĩa là phải đối mặt với cú pháp tương đối dài dòng hơn cho số học phức.

@@ -1,86 +1,121 @@
 ---
 title:                "Làm việc với XML"
-date:                  2024-01-28T22:11:21.238450-07:00
+date:                  2024-02-03T18:13:42.738341-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Làm việc với XML"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/vi/go/working-with-xml.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Làm gì & Tại sao?
-Làm việc với XML bao gồm việc phân tích cú pháp, tạo và thao tác với các tài liệu XML bằng cách sử dụng mã lệnh. Các lập trình viên thực hiện điều này để trao đổi dữ liệu, tệp cấu hình và dịch vụ web vì tính dễ đọc và sự hỗ trợ rộng rãi của XML khiến nó trở thành một lựa chọn vững chắc cho dữ liệu có cấu trúc.
+## Làm thế nào & Tại sao?
 
-## Cách làm:
-Trong Go, sử dụng gói `encoding/xml`. Chúng ta hãy phân tích cú pháp và tạo XML.
+Làm việc với XML trong Go bao gồm việc phân tích cú pháp (đọc) và tạo (viết) các tài liệu XML - một định dạng chuẩn cho giao tiếp dữ liệu có cấu trúc. Lập trình viên làm điều này để lưu trữ dữ liệu, cài đặt cấu hình, hoặc trao đổi dữ liệu giữa các hệ thống, đặc biệt là trong các môi trường nơi XML là định dạng dữ liệu ưa thích hoặc kế thừa.
+
+## Cách thực hiện:
+
+### Phân tích cú pháp XML trong Go
+Để phân tích cú pháp XML trong Go, bạn sử dụng gói `encoding/xml`. Gói này cung cấp các công cụ cần thiết để giải mã (phân tích cú pháp) XML thành cấu trúc Go. Ví dụ, xem xét dữ liệu XML sau đây đại diện cho một quyển sách:
+
+```xml
+<book id="123">
+    <title>Learning Go</title>
+    <author>John Doe</author>
+    <pages>359</pages>
+</book>
+```
+
+Để phân tích cú pháp này, hãy định nghĩa một cấu trúc phản ánh cấu trúc XML:
+
 ```go
 package main
 
 import (
-	"encoding/xml"
-	"fmt"
-	"os"
+    "encoding/xml"
+    "fmt"
+    "os"
 )
 
-// Cấu trúc ánh xạ tới các phần tử XML
-type Plant struct {
-	XMLName xml.Name `xml:"plant"`
-	Id      int      `xml:"id,attr"`
-	Name    string   `xml:"name"`
-	Origin  []string `xml:"origin"`
+type Book struct {
+    XMLName xml.Name `xml:"book"`
+    ID      string   `xml:"id,attr"`
+    Title   string   `xml:"title"`
+    Author  string   `xml:"author"`
+    Pages   int      `xml:"pages"`
 }
 
 func main() {
-	coffee := &Plant{Id: 27, Name: "Coffee"}
-	coffee.Origin = []string{"Ethiopia", "Brazil"}
+    data := []byte(`
+<book id="123">
+    <title>Learning Go</title>
+    <author>John Doe</author>
+    <pages>359</pages>
+</book>
+`)
 
-	// Marshal cấu trúc thành XML
-	output, err := xml.MarshalIndent(coffee, " ", "  ")
-	if err != nil {
-		fmt.Printf("Lỗi: %v\n", err)
-	}
+    var book Book
+    err := xml.Unmarshal(data, &book)
+    if err != nil {
+        panic(err)
+    }
 
-	os.Stdout.Write([]byte(xml.Header))
-	os.Stdout.Write(output)
-
-	// Unmarshal XML thành cấu trúc
-	data := `
-<plant id="27">
-  <name>Coffee</name>
-  <origin>Ethiopia</origin>
-  <origin>Brazil</origin>
-</plant>
-`
-	var p Plant
-	if err := xml.Unmarshal([]byte(data), &p); err != nil {
-		fmt.Printf("Lỗi: %v", err)
-		return
-	}
-
-	fmt.Printf("\n\nGiải mã: %+v", p)
+    fmt.Printf("Book: %+v\n", book)
 }
 ```
-Kết quả mẫu:
-```xml
-<?xml version="1.0" encoding="UTF-8"?>
- <plant id="27">
-   <name>Coffee</name>
-   <origin>Ethiopia</origin>
-   <origin>Brazil</origin>
- </plant>
 
-Giải mã: {XMLName:{Space: Local:plant} Id:27 Name:Coffee Origin:[Ethiopia Brazil]}
+Kết quả đầu ra:
+
+```
+Book: {XMLName:{Space: Local:book} ID:123 Title:Learning Go Author:John Doe Pages:359}
 ```
 
-## Sâu hơn
-XML đã xuất hiện từ cuối những năm '90, được thiết kế cho việc xuất bản điện tử ào lớn nhưng nhanh chóng được áp dụng cho web. Các lựa chọn thay thế như JSON đã xuất hiện, được ca ngợi vì sự đơn giản, nhưng việc xác thực tài liệu thông qua các kịch bản và không gian tên vẫn mạnh mẽ cho các tài liệu phức tạp. Trong Go, `encoding/xml` xử lý hầu hết các nhiệm vụ, nhưng đối với các tài liệu lớn hoặc xử lý luồng, cân nhắc sử dụng `xml.NewDecoder` và `xml.NewEncoder` để kiểm soát cấp thấp hơn và hiệu suất tốt hơn.
+### Tạo XML trong Go
+Để tạo một tài liệu XML từ các cấu trúc dữ liệu Go, bạn lại sử dụng gói `encoding/xml`. Lần này, bạn chuyển cấu trúc Go thành XML. Xem xét cấu trúc `Book` trước đó:
 
-## Xem thêm
-- Gói `encoding/xml` của Go: https://pkg.go.dev/encoding/xml
-- Hướng dẫn XML: https://www.w3schools.com/xml/
-- Blog Go về XML: https://blog.golang.org/xml
-- So sánh giữa JSON và XML: https://www.json.org/xml.html
+```go
+package main
+
+import (
+    "encoding/xml"
+    "fmt"
+    "os"
+)
+
+func main() {
+    book := &Book{
+        ID:     "123",
+        Title:  "Learning Go",
+        Author: "John Doe",
+        Pages:  359,
+    }
+
+    output, err := xml.MarshalIndent(book, "", "    ")
+    if err != nil {
+        panic(err)
+    }
+
+    fmt.Println(xml.Header + string(output))
+}
+```
+
+Kết quả đầu ra:
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<book id="123">
+    <title>Learning Go</title>
+    <author>John Doe</author>
+    <pages>359</pages>
+</book>
+```
+
+## Tìm hiểu sâu
+
+Độ phức tạp và dài dòng của XML đã khiến JSON và các định dạng khác trở nên phổ biến hơn cho nhiều ứng dụng. Tuy nhiên, khả năng biểu diễn dữ liệu phân cấp phức tạp của XML và sự sử dụng rộng rãi của nó trong các hệ thống kế thừa và các lĩnh vực cụ thể (ví dụ, dịch vụ SOAP) đảm bảo tính liên quan của nó.
+
+Gói `encoding/xml` trong Go cung cấp các cơ chế mạnh mẽ để làm việc với XML, nhưng cần lưu ý các hạn chế của nó. Ví dụ, việc xử lý không gian tên XML có thể gặp khó khăn và có thể yêu cầu hiểu biết chi tiết hơn về thông số kỹ thuật XML so với các trường hợp sử dụng đơn giản hơn. Ngoài ra, trong khi kiểu định kiểu tĩnh của Go và khả năng chuyển đổi và giải mã của gói `encoding/xml` nói chung là hiệu quả, các lập trình viên có thể gặp phải thách thức với các cấu trúc lồng nhau sâu hoặc khi xử lý các tài liệu XML không ánh xạ gọn gàng vào hệ thống kiểu của Go.
+
+Đối với hầu hết các ứng dụng hiện đại, các lựa chọn thay thế như JSON đơn giản và hiệu quả hơn. Tuy nhiên, khi làm việc trong các ngữ cảnh cần XML - do hệ thống kế thừa, tiêu chuẩn ngành cụ thể, hoặc nhu cầu biểu diễn dữ liệu phức tạp - thư viện chuẩn của Go cung cấp các công cụ mạnh mẽ để hoàn thành công việc. Như mọi khi, sự lựa chọn định dạng dữ liệu tốt nhất phụ thuộc vào yêu cầu cụ thể của ứng dụng và môi trường.

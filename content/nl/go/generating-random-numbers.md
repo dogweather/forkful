@@ -1,61 +1,74 @@
 ---
 title:                "Willekeurige getallen genereren"
-date:                  2024-01-28T22:01:12.994105-07:00
+date:                  2024-02-03T17:57:20.293324-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Willekeurige getallen genereren"
-
 tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/nl/go/generating-random-numbers.md"
 changelog:
-  - 2024-01-28, gpt-4-0125-preview, translated from English
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Wat & Waarom?
 
-Het genereren van willekeurige getallen in Go omvat het gebruik van het `math/rand`-pakket om pseudo-willekeurige getallen te produceren voor verschillende toepassingen, zoals het simuleren van experimenten, het genereren van testgegevens, of het toevoegen van onvoorspelbaarheid aan spellen. Programmeurs gebruiken deze functie om dynamischere en minder voorspelbare softwaregedragingen te creëren.
+Het genereren van willekeurige getallen in programmeren gaat over het creëren van een reeks getallen die niet redelijkerwijs beter voorspeld kunnen worden dan door toeval. Programmeurs doen dit om tal van redenen, waaronder simulaties, spelletjes en beveiligingstoepassingen, waar onvoorspelbaarheid essentieel is voor functionaliteit of geheimhouding.
 
-## Hoe te:
+## Hoe:
 
-Om te beginnen met het genereren van willekeurige getallen in Go, moet je het `math/rand`-pakket en het `time`-pakket importeren om de generator van willekeurige getallen te zaaien voor meer onvoorspelbaarheid. Hier is een basisvoorbeeld:
+In Go worden willekeurige getallen gegenereerd met het `math/rand` pakket voor pseudo-willekeurige getallen of `crypto/rand` voor cryptografisch veilige pseudo-willekeurige getallen. Laten we beide verkennen.
 
-```Go
+### Gebruik van `math/rand` voor Pseudo-willekeurige Getallen
+
+Importeer eerst het `math/rand` pakket en het `time` pakket om de generator te zaaien. Zaaien zorgt ervoor dat je elke keer een andere reeks getallen krijgt.
+
+```go
 package main
 
 import (
-	"fmt"
-	"math/rand"
-	"time"
+    "fmt"
+    "math/rand"
+    "time"
 )
 
 func main() {
-	// De generator zaaien
-	rand.Seed(time.Now().UnixNano())
-	
-	// Genereer een willekeurig geheel getal tussen 0 en 99
-	randomInt := rand.Intn(100)
-	fmt.Println("Willekeurig Geheel Getal:", randomInt)
-	
-	// Genereer een willekeurige float tussen 0.0 en 1.0
-	randomFloat := rand.Float64()
-	fmt.Println("Willekeurige Float:", randomFloat)
+    rand.Seed(time.Now().UnixNano())
+    fmt.Println("Een willekeurig getal:", rand.Intn(100)) // Genereert een getal tussen 0 en 99
 }
 ```
 
-Een voorbeelduitvoer zou kunnen zijn:
+Voorbeelduitvoer: `Een willekeurig getal: 42`
 
+### Gebruik van `crypto/rand` voor Cryptografisch Veilige Pseudo-willekeurige Getallen
+
+Voor meer beveiligingsgevoelige toepassingen is het `crypto/rand` pakket geschikt omdat het willekeurige getallen genereert die moeilijk te voorspellen zijn, waardoor ze geschikt zijn voor cryptografische bewerkingen.
+
+```go
+package main
+
+import (
+    "crypto/rand"
+    "fmt"
+    "math/big"
+)
+
+func main() {
+    n, _ := rand.Int(rand.Reader, big.NewInt(100))
+    fmt.Println("Een veilig willekeurig getal:", n)
+}
 ```
-Willekeurig Geheel Getal: 42
-Willekeurige Float: 0.7304601899194229
-```
 
-Onthoud dat elke uitvoering verschillende getallen produceert vanwege het zaaien met de huidige tijd.
+Voorbeelduitvoer: `Een veilig willekeurig getal: 81`
 
-## Diepgaande Duik
+## Diepgaand
 
-Het `math/rand`-pakket in Go implementeert pseudo-willekeurige getalgeneratoren (PRNG's) voor verschillende distributies. Hoewel vrij effectief voor veel toepassingen, is het cruciaal om op te merken dat de door `math/rand` gegenereerde getallen niet geschikt zijn voor cryptografische doeleinden vanwege hun deterministische aard. Voor cryptografische behoeften is het `crypto/rand`-pakket de juiste keuze; het biedt een veilige willekeurige getalgenerator.
+Het fundamentele verschil tussen de `math/rand` en `crypto/rand` pakketten in Go komt voort uit hun bron van entropie en hun beoogde gebruiksscenario's. `math/rand` genereert pseudo-willekeurige getallen op basis van een initiële zaad; dus, de reeks is deterministisch en kan voorspeld worden als het zaad bekend is. Dit is geschikt voor scenario's waar hoge prestaties en niet absolute onvoorspelbaarheid de belangrijkste zorg zijn, zoals simulaties of spelletjes.
 
-De implementatie van `math/rand` is gebaseerd op een subtractieve willekeurige getalgeneratoralgoritme, dat efficiënt is en een relatief lange periode heeft voordat sequenties zich herhalen. Echter, voor toepassingen die echt willekeurige sequenties vereisen, zoals cryptografische operaties, worden hardware willekeurige getalgeneratoren (RNG's) of het `crypto/rand`-pakket, dat interfaces biedt met systeemspecifieke veilige willekeurbronnen, aanbevolen.
+Aan de andere kant, `crypto/rand` haalt willekeurigheid uit het onderliggende besturingssysteem, waardoor het geschikt is voor cryptografisch gebruik waar onvoorspelbaarheid cruciaal is. Dit gaat echter ten koste van prestaties en complexiteit in de omgang met de getallen die het genereert (zoals omgaan met het `*big.Int` type voor gehele getallen).
 
-`math/rand` maakt het mogelijk om te zaaien om variabiliteit te introduceren, maar hetzelfde zaad zal altijd dezelfde reeks getallen genereren, wat de deterministische aard van zijn willekeurigheid benadrukt. Dit maakt het geschikt voor simulaties of spellen waar reproduceerbaarheid wenselijk kan zijn voor debuggen of testdoeleinden.
+Historisch gezien heeft het concept van willekeurige getallengeneratie in computers altijd op de rand van ware "willekeurigheid" gedanst, met vroege systemen die sterk afhankelijk waren van deterministische algoritmes die willekeurigheid nabootsten. Naarmate computers evolueerden, deden deze algoritmes dat ook, waarbij ze geavanceerdere bronnen van entropie uit hun omgevingen opnamen.
+
+Ondanks deze vooruitgang is de zoektocht naar perfecte willekeur in de informatica inherent paradoxaal, gezien de deterministische aard van computers zelf. Dit is waarom, voor de meeste toepassingen waar voorspelbaarheid schadelijk zou zijn, cryptografisch veilige pseudo-willekeurige getallen uit bronnen zoals `crypto/rand` de betere alternatief zijn, ondanks hun overhead.
+
+In essentie adresseert Go's benadering met twee verschillende pakketten voor willekeurige getallengeneratie elegant de afwegingen tussen prestaties en veiligheid, waardoor ontwikkelaars kunnen kiezen op basis van hun specifieke behoeften.
