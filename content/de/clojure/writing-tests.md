@@ -1,50 +1,64 @@
 ---
-title:                "Tests schreiben"
-date:                  2024-01-19
-simple_title:         "Tests schreiben"
-
+title:                "Tests Schreiben"
+date:                  2024-02-03T19:29:58.077866-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Tests Schreiben"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/clojure/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Was & Warum?
+Tests in Clojure zu schreiben, ähnlich wie in anderen Programmiersprachen, umfasst das Erstellen von dediziertem Code, um zu verifizieren, dass Ihre Hauptcodebasis wie erwartet funktioniert. Es hilft dabei, die Korrektheit zu gewährleisten, das Refactoring zu erleichtern und die Code-Stabilität zu verbessern.
 
-Tests schreiben bedeutet, Code-Ausschnitte zu erstellen, die überprüfen, ob einzelne Funktionen oder Module deiner Anwendung korrekt arbeiten. Programmierer*innen machen das, um Fehler schnell zu finden, die Qualität des Codes zu sichern und das Vertrauen in die Software zu stärken.
-
-## Anleitung:
-
-In Clojure nutzt man häufig die `clojure.test`-Bibliothek für Tests. Hier ist ein einfaches Beispiel:
+## Wie:
+Clojure nutzt die JVM und unterstützt verschiedene Test-Frameworks. Ein häufig verwendetes eingebautes Bibliothek ist jedoch `clojure.test`. Hier ist ein einfaches Beispiel:
 
 ```clojure
-(ns mein-projekt.core-test
+(ns example.test
   (:require [clojure.test :refer :all]
-            [mein-projekt.core :refer :all]))
+            [example.core :refer :all]))
 
-(deftest addition-test
-  (testing "Addition funktioniert"
-    (is (= 4 (addiere 2 2)))))
+(deftest test-addition
+  (testing "Additionsfunktionalität"
+    (is (= 4 (add 2 2)))
+    (is (= 7 (add 3 4)))))
 
-; Test ausführen
 (run-tests)
 ```
-
-Wenn du dieses Skript in deiner REPL ausführst, solltest du so etwas wie das folgende sehen:
+Nach dem Ausführen dieses Tests würden Sie eine Ausgabe ähnlich wie folgt sehen:
 
 ```
-lein test mein-projekt.core-test
+Testing example.test
 
-Ran 1 tests containing 1 assertions.
+Ran 2 tests containing 2 assertions.
 0 failures, 0 errors.
 ```
 
-## Tiefergehende Infos:
+Für diejenigen, die reichhaltigere Funktionen suchen, kann man Drittanbieter-Bibliotheken wie `Midje` oder `test.check` nutzen. So könnten Sie Midje für einen ähnlichen Test verwenden:
 
-Tests in Clojure haben ihre Wurzeln in der LISP-Tradition, die Interaktivität und schnelles Feedback betont. Alternativen zu `clojure.test` sind etwa Midje oder Expectations, die andere Herangehensweisen und Syntax bieten. Beim Schreiben von Tests geht es oft um die Balance zwischen Unit-Tests, die einzelne Komponenten prüfen, und Integrationstests, die das Zusammenspiel zwischen Komponenten testen.
+Fügen Sie zunächst Midje zu Ihren project.clj Abhängigkeiten hinzu:
+```clojure
+[midje "1.9.9"]
+```
 
-## Siehe auch:
+Dann könnte Ihr Test mit Midje so aussehen:
 
-- [Clojure Testing Framework](https://clojure.github.io/clojure/clojure.test-api.html)
-- [Midje on GitHub](https://github.com/marick/Midje)
-- [Expectations on GitHub](https://github.com/clojure-expectations/expectations)
+```clojure
+(ns example.test
+  (:require [midje.sweet :refer :all]
+            [example.core :refer :all]))
+
+(fact "Teste Addition"
+  (add 2 2) => 4
+  (add 3 4) => 7)
+```
+
+Beim Ausführen des Tests über Midje mit `lein midje` würde die Ausgabe etwa folgendes anzeigen:
+
+```
+All checks (2) succeeded.
+```

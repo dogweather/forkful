@@ -1,59 +1,67 @@
 ---
-title:                "Zapisywanie pliku tekstowego"
-date:                  2024-01-19
-simple_title:         "Zapisywanie pliku tekstowego"
-
+title:                "Pisanie pliku tekstowego"
+date:                  2024-02-03T19:27:04.902029-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Pisanie pliku tekstowego"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/arduino/writing-a-text-file.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Co i dlaczego?
-Zapis do pliku tekstowego oznacza umieszczanie danych w standardowym formacie tekstowym na nośnikach pamięci, takich jak karty SD. Programiści robią to, aby zachować informacje między sesjami, udostępnić dane lub zalogować zdarzenia.
+Zapisywanie pliku tekstowego w Arduino polega na zapisywaniu danych na karcie SD lub podobnym module pamięci, często w celach rejestracji danych. Programiści robią to, aby rejestrować odczyty z sensorów, zapisywać konfiguracje lub logować zdarzenia aplikacji w czasie, co jest kluczowe dla projektów wymagających analizy danych lub śledzenia.
 
 ## Jak to zrobić:
-```Arduino
+Aby zapisać plik tekstowy na karcie SD za pomocą Arduino, należy najpierw dołączyć bibliotekę `SD.h`, która zapewnia niezbędne funkcje do interakcji z kartami SD. Upewnij się, że Twoja płyta Arduino jest podłączona do modułu karty SD.
+
+```cpp
 #include <SPI.h>
 #include <SD.h>
 
-File mojPlik;
+File myFile;
 
 void setup() {
+  // Inicjalizacja komunikacji szeregowej z prędkością 9600 bitów na sekundę:
   Serial.begin(9600);
   
+  // Sprawdzenie inicjalizacji karty SD
   if (!SD.begin(4)) {
-    Serial.println("Błąd inicjalizacji karty SD.");
+    Serial.println("Inicjalizacja nie powiodła się!");
     return;
   }
-  Serial.println("Karta SD gotowa.");
-
-  mojPlik = SD.open("test.txt", FILE_WRITE);
+  Serial.println("Inicjalizacja zakończona.");
   
-  if (mojPlik) {
-    mojPlik.println("Witaj, świecie!");
-    mojPlik.close();
-    Serial.println("Zapisano do pliku: test.txt");
+  // Otwórz plik. Zauważ, że na raz można otworzyć tylko jeden plik,
+  // więc musisz zamknąć ten zanim otworzysz inny.
+  myFile = SD.open("test.txt", FILE_WRITE);
+  
+  // Jeśli plik został pomyślnie otwarty, zapisz do niego:
+  if (myFile) {
+    Serial.print("Zapisywanie do test.txt...");
+    myFile.println("Testowanie zapisu pliku tekstowego.");
+    // Zamknij plik:
+    myFile.close();
+    Serial.println("zakończono.");
   } else {
-    Serial.println("Błąd otwarcia pliku.");
+    // Jeśli plik się nie otworzył, wyświetl błąd:
+    Serial.println("Błąd przy otwieraniu test.txt");
   }
 }
 
 void loop() {
-  // Nic więcej tutaj nie potrzebujemy.
+  // Nic się nie dzieje po ustawieniu
 }
 ```
 
-Oczekiwany wynik:
+### Przykładowy wynik:
+Gdy uruchomisz ten kod, monitor szeregowy środowiska Arduino IDE wyświetli:
 ```
-Karta SD gotowa.
-Zapisano do pliku: test.txt
+Inicjalizacja zakończona.
+Zapisywanie do test.txt...zakończono.
 ```
+Aby sprawdzić, czy dane zostały poprawnie zapisane, możesz usunąć kartę SD z Arduino, włożyć ją do komputera i otworzyć plik `test.txt`, aby zobaczyć wiadomość "Testowanie zapisu pliku tekstowego."
 
-## Głębsze spojrzenie
-Pisanie do plików tekstowych jest popularne od wczesnych lat informatyki. Ewolucja nośników danych, od taśm magnetycznych po karty SD, wpłynęła na łatwość i szybkość tej operacji. Alternatywą jest zapis do EEPROM-u Arduino lub wykorzystanie innych rodzajów pamięci, np. pamięci Flash z modułów SPI. Implemetacja polega na użyciu odpowiednich bibliotek, jak SPI.h czy SD.h, które obsługują komunikację i funkcje plikowe.
-
-## Zobacz również
-- [Dokumentacja Arduino – biblioteka SD](https://www.arduino.cc/en/Reference/SD)
-- [Podręcznik Arduino – zapis na karty SD](https://www.arduino.cc/en/Guide/Libraries#toc4)
-- [Tutorial Sparkfun – Użycie kart SD w Arduino](https://learn.sparkfun.com/tutorials/using-the-serial-7-segment-display/all)
+Dla projektów wymagających bardziej zaawansowanych operacji na plikach lub przetwarzania, rozważ eksplorację dodatkowych bibliotek lub pisanie własnych funkcji dostosowanych do swoich specyficznych potrzeb.

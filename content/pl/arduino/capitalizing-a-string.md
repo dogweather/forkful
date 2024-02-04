@@ -1,46 +1,53 @@
 ---
-title:                "Zamiana liter na wielkie w ciągu znaków"
-date:                  2024-01-19
-simple_title:         "Zamiana liter na wielkie w ciągu znaków"
-
+title:                "Zamiana liter na wielkie w łańcuchu znaków"
+date:                  2024-02-03T19:05:11.081898-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Zamiana liter na wielkie w łańcuchu znaków"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/arduino/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Co i Dlaczego?)
-Zamiana łańcucha znaków na wielkie litery oznacza, że wszystkie litery w tekście stają się dużymi literami. Programiści używają tej techniki, by ujednolicić dane, na przykład żeby nazwy użytkowników były spójne niezależnie od sposobu wprowadzenia.
+## Co i dlaczego?
+Kapitalizacja ciągu polega na przekształceniu pierwszego znaku każdego słowa w ciągu na wielką literę, zapewniając jednocześnie, że pozostałe litery pozostaną małe. Operacja ta jest powszechna w formacie danych i normalizacji wprowadzania użytkownika, aby zachować spójność i poprawić czytelność.
 
-## How to: (Jak to zrobić:)
-```Arduino
-void setup() {
-  Serial.begin(9600); 
-  String myString = "Witaj, Arduino!";
-  Serial.println(capitalize(myString)); 
-}
+## Jak to zrobić:
+Arduino, znane przede wszystkim z interakcji z sprzętem, zawiera także podstawowe możliwości manipulacji ciągami za pomocą obiektu `String`. Jednakże, brakuje mu bezpośredniej funkcji `capitalize`, jaką widzimy w językach wyższego poziomu. Dlatego implementujemy kapitalizację, iterując po ciągu znaków i stosując transformacje wielkości liter.
 
-void loop() {
-  // Tę funkcję zostawiamy pustą, w naszym przykładzie nie będzie używana.
-}
+Oto podstawowy przykład bez używania bibliotek stron trzecich:
 
-String capitalize(String input) {
-  for (int i = 0; i < input.length(); i++) {
-    input[i] = toupper(input[i]);
+```cpp
+String capitalizeString(String input) {
+  if (input.length() == 0) {
+    return ""; // Zwróć pusty ciąg, jeśli wejście jest puste
+  }
+  input.toLowerCase(); // Najpierw zamień cały ciąg na małe litery
+  input.setCharAt(0, input.charAt(0) - 32); // Zamień pierwszą literę na wielką
+  
+  // Zamień na wielkie litery te, które następują po spacji
+  for (int i = 1; i < input.length(); i++) {
+    if (input.charAt(i - 1) == ' ') {
+      input.setCharAt(i, input.charAt(i) - 32);
+    }
   }
   return input;
 }
+
+void setup() {
+  Serial.begin(9600);
+  String testStr = "hello arduino world";
+  String capitalizedStr = capitalizeString(testStr);
+  Serial.println(capitalizedStr); // Wyjście: "Hello Arduino World"
+}
+
+void loop() {
+  // Pusta pętla
+}
 ```
 
-Output:
-```
-WITAJ, ARDUINO!
-```
+Ten fragment kodu definiuje funkcję `capitalizeString`, która najpierw przekształca cały ciąg na małe litery, aby ujednolicić jego wielkość liter. Następnie zamienia pierwszy znak i każdy znak, który następuje po spacji, na wielką literę, efektywnie kapitalizując każde słowo w przekazanym ciągu. Zauważ, że ta podstawowa implementacja zakłada kodowanie znaków ASCII i może wymagać dostosowań dla pełnego wsparcia Unicode.
 
-## Deep Dive (Dogłębna analiza)
-Zamiana tekstu na same wielkie litery nie jest nowym pomysłem – używa się jej od czasów maszyn do pisania, aby podkreślić ważne fragmenty tekstu. Na Arduino i innych platformach mikrokontrolerów często brakuje wbudowanych funkcji do manipulowania tekstami, co wymusza na programistach pisanie własnych funkcji, takich jak `capitalize`. Alternatywne podejścia mogłyby polegać na użyciu funkcji zewnętrznych bibliotek, lecz to zwiększa rozmiar i złożoność kodu. Przy implementacji pamiętaj, że `String` w Arduino jest obiektem, który zarządza dynamiczną pamięcią, a nieprawidłowe jej używanie może prowadzić do fragmentacji pamięci.
-
-## See Also (Zobacz również)
-- Dokumentacja Arduino `String` Class: https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/
-- Funkcje manipulujące ciągami znaków w C++: http://www.cplusplus.com/reference/cstring/
-- Wprowadzenie do zarządzania pamięcią w Arduino: https://learn.adafruit.com/memories-of-an-arduino/more-memories
+Obecnie nie ma szeroko przyjętych bibliotek stron trzecich specjalnie do manipulacji ciągami w ekosystemie Arduino, głównie z powodu jego skupienia na interakcji z sprzętem i efektywności. Jednakże, dostarczony przykład jest prostym sposobem na osiągnięcie kapitalizacji ciągów w środowisku programowania Arduino.

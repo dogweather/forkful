@@ -1,41 +1,52 @@
 ---
 title:                "Pobieranie aktualnej daty"
-date:                  2024-01-20T15:14:40.315157-07:00
+date:                  2024-02-03T19:09:37.423534-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Pobieranie aktualnej daty"
-
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/haskell/getting-the-current-date.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Co & Dlaczego?
-Pobieranie aktualnej daty to procedura uzupełniająca aplikacje o informację czasową. Programiści wykorzystują datę do logowania zdarzeń, okresowych funkcji i danych czasozależnych. 
+## Co i dlaczego?
+Pobranie aktualnej daty w Haskellu polega na uzyskaniu bieżącego czasu systemu i przekształceniu go na czytelny format daty. Programiści robią to, aby wykonywać operacje oparte na dacie, takie jak logowanie, planowanie zadań czy znakowanie czasem zdarzeń w aplikacjach.
 
 ## Jak to zrobić:
-W Haskellu możemy użyć pakietu `time` do pracy z datą i czasem:
+Standardowa biblioteka Haskella, `base`, dostarcza moduł `Data.Time`, który oferuje funkcjonalność do pracy z datami i czasem. Oto jak użyć go do uzyskania aktualnej daty:
+
+```haskell
+import Data.Time (getCurrentTime, utctDay)
+
+main :: IO ()
+main = do
+    now <- getCurrentTime
+    let today = utctDay now
+    print today
+```
+
+Przykładowe wyjście:
+```
+2023-04-12
+```
+
+Dla większej elastyczności, takiej jak formatowanie daty czy praca z różnymi strefami czasowymi, biblioteka `time` jest nieoceniona. Oto jak można sformatować aktualną datę:
 
 ```haskell
 import Data.Time
 
 main :: IO ()
 main = do
-    currentDate <- getCurrentTime
-    print currentDate
-```
-Wykonanie powyższego kodu wyświetli aktualną datę i czas w formacie UTC, np.:
-
-```
-2023-04-05 12:34:56.789876 UTC
+    now <- getCurrentTime
+    timezone <- getCurrentTimeZone
+    let zoneNow = utcToLocalTime timezone now
+    putStrLn $ formatTime defaultTimeLocale "%Y-%m-%d" zoneNow
 ```
 
-## Deep Dive
-Pobieranie daty w Haskellu wydaje się trywialne, ale warto poznać kilka faktów:
-1. Historia: Moduł `Data.Time` pojawił się w Haskellu jako część Package time, który ewoluował na przestrzeni lat, aby zapewnić bardziej obszerne i wszechstronne wsparcie dla obliczeń daty i czasu.
-2. Alternatywy: Poza `Data.Time`, istnieją inne biblioteki, np. `old-time`, ale są mniej preferowane z uwagi na ograniczenia i starszą konstrukcję.
-3. Szczegóły implementacji: `getCurrentTime` pochodzi z systemu operacyjnego, który odpowiada za śledzenie czasu UTC. Haskell jedynie udostępnia przyjazny interfejs do tych informacji.
+To drukuje aktualną datę w formacie `RRRR-MM-DD`, dostosowaną do lokalnej strefy czasowej.
 
-## Zobacz również
-- [Dokumentacja pakietu `time`](https://hackage.haskell.org/package/time)
-- [Haskell.org – Artykuły o Data.Time](https://wiki.haskell.org/Time)
-- [SO - Haskell: Jak uzyskać aktualną datę i czas](https://stackoverflow.com/questions/4702325/how-to-get-the-current-date-and-time-in-haskell)
+Dodatkowo, dla wsparcia biblioteki firm trzecich, `time` jest wysoce polecana i często używana w społeczności Haskella ze względu na jej rozległe możliwości manipulacji datą i czasem. Przykłady powyżej wykorzystują tę bibliotekę.
+
+Jeśli potrzebujesz bardziej wszechstronnej manipulacji datą, w tym parsowania ze stringów czy operacji arytmetycznych z datami i czasem, eksploracja dodatkowych funkcji w ramach `Data.Time` będzie korzystna.

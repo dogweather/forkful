@@ -1,21 +1,54 @@
 ---
 title:                "Arbeta med JSON"
-date:                  2024-01-19
+date:                  2024-02-03T19:22:14.487609-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Arbeta med JSON"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/c-sharp/working-with-json.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-JSON står för JavaScript Object Notation. Det är ett format för att lagra och utbyta data. Programmerare använder JSON eftersom det är lättläst för både människor och maskiner, och det är språköverskridande.
+## Vad & Varför?
 
-## How to:
-I C# hanterar vi JSON med `System.Text.Json`. Här är hur du deserialiserar och serialiserar enkelt.
+Att arbeta med JSON (JavaScript Object Notation) innebär att parse:a, generera och fråga JSON-data, vilket gör det till en kritisk färdighet för modern programmering. Detta datautbytesformat används i hög grad i webbtjänster och API:er på grund av dess lättlästhet och språkoberoende, vilket gör det väsentligt för C# programmerare som arbetar med nätverksapplikationer eller interagerar med webbaserade data.
 
-```C#
+## Hur man gör:
+
+### Parse:a JSON-sträng till ett objekt
+
+C# tillhandahåller namnutrymmet `System.Text.Json` för effektiv JSON-bearbetning. För att parse:a en JSON-sträng till ett C#-objekt, definiera en klass som matchar JSON-strukturen och använd metoden `JsonSerializer.Deserialize`.
+
+```csharp
+using System;
+using System.Text.Json;
+
+public class Person
+{
+    public string Name { get; set; }
+    public int Age { get; set; }
+}
+
+public class Program
+{
+    public static void Main()
+    {
+        string jsonString = "{\"Name\":\"John\", \"Age\":30}";
+        Person person = JsonSerializer.Deserialize<Person>(jsonString);
+
+        Console.WriteLine($"Name: {person.Name}, Age: {person.Age}");
+        // Output: Namn: John, Ålder: 30
+    }
+}
+```
+
+### Generera JSON från ett objekt
+
+För att konvertera ett C#-objekt tillbaka till en JSON-sträng, använd metoden `JsonSerializer.Serialize`.
+
+```csharp
 using System;
 using System.Text.Json;
 
@@ -23,35 +56,63 @@ public class Program
 {
     public static void Main()
     {
-        // JSON string
-        string jsonString = "{\"name\":\"Anna\",\"age\":28}";
+        Person person = new Person
+        {
+            Name = "Jane",
+            Age = 25
+        };
 
-        // Deserialisera JSON till ett objekt
-        Person person = JsonSerializer.Deserialize<Person>(jsonString);
-        Console.WriteLine($"Namn: {person.Name}, Ålder: {person.Age}");
-
-        // Serialisera objekt till JSON
-        string serializedJson = JsonSerializer.Serialize(person);
-        Console.WriteLine(serializedJson);
+        string jsonString = JsonSerializer.Serialize(person);
+        Console.WriteLine(jsonString);
+        // Output: {"Name":"Jane","Age":25}
     }
 }
+```
 
-public class Person
+### Använda Newtonsoft.Json
+
+`Newtonsoft.Json` (eller Json.NET) är ett populärt tredjepartsbibliotek som erbjuder mer flexibilitet och alternativ för JSON-serialisering och deserialisering.
+
+För att använda Json.NET, måste du först installera `Newtonsoft.Json`-paketet via NuGet. Sedan kan du deserialisera en JSON-sträng så här:
+
+```csharp
+using System;
+using Newtonsoft.Json;
+
+public class Program
 {
-    public string Name { get; set; }
-    public int Age { get; set; }
+    public static void Main()
+    {
+        string jsonString = "{\"Name\":\"Mike\", \"Age\":22}";
+        Person person = JsonConvert.DeserializeObject<Person>(jsonString);
+
+        Console.WriteLine($"Name: {person.Name}, Age: {person.Age}");
+        // Output: Namn: Mike, Ålder: 22
+    }
 }
 ```
 
-Output:
-```
-Namn: Anna, Ålder: 28
-{"name":"Anna","age":28}
+För att generera JSON från ett objekt med Json.NET:
+
+```csharp
+using System;
+using Newtonsoft.Json;
+
+public class Program
+{
+    public static void Main()
+    {
+        Person person = new Person
+        {
+            Name = "Ella",
+            Age = 28
+        };
+
+        string jsonString = JsonConvert.SerializeObject(person);
+        Console.WriteLine(jsonString);
+        // Output: {"Name":"Ella","Age":28}
+    }
+}
 ```
 
-## Deep Dive
-JSON har sitt ursprung i JavaScript, men dess enkelhet har gjort det till en webbstandard bortom JavaScripts gränser. Alternativ till JSON inkluderar XML och YAML. Medan `System.Text.Json` är standard i .NET Core och framåt, användes `Newtonsoft.Json` mycket förr. `System.Text.Json` fokuserar på prestanda och kompatibilitet med standarden.
-
-## See Also
-- [Microsoft's JSON documentation](https://docs.microsoft.com/en-us/dotnet/standard/serialization/system-text-json-overview)
-- [JSON.org](https://www.json.org/json-en.html)
+Dessa snuttar ger en snabbstart för att hantera JSON i C#, och visar både de inbyggda funktionerna i `System.Text.Json` och de omfattande funktionerna i `Newtonsoft.Json`.

@@ -1,51 +1,85 @@
 ---
-title:                "रेगुलर एक्सप्रेशन का उपयोग"
-date:                  2024-01-19
-simple_title:         "रेगुलर एक्सप्रेशन का उपयोग"
-
+title:                "रेगुलर एक्सप्रेशन्स का उपयोग करना"
+date:                  2024-02-03T19:16:58.240463-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "रेगुलर एक्सप्रेशन्स का उपयोग करना"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/cpp/using-regular-expressions.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## क्या और क्यों?
-रेगुलर एक्सप्रेशंस (Regular Expressions) पैटर्न मैचिंग की एक तकनीक है, जिसे टेक्सट सर्च और मैनिपुलेशन के लिए इस्तेमाल किया जाता है। प्रोग्रामर इस उपयोगी उपकरण का इस्तेमाल जटिल पैटर्न खोजने और डेटा वैलिडेशन में करते हैं।
+C++ में नियमित अभिव्यक्तियाँ वे वर्णों के अनुक्रम होते हैं जो एक खोज पैटर्न को परिभाषित करते हैं, जिनका उपयोग स्ट्रिंग मिलान या हेरफेर के लिए किया जाता है। प्रोग्रामर इनका उपयोग इनपुट की वैधता सत्यापित करने, स्ट्रिंग्स के भीतर घटनाओं की खोज, या स्ट्रिंग्स को टोकन में विभाजित करने जैसे कार्यों के लिए करते हैं, जिससे ये पाठ संसाधन के लिए एक अनिवार्य उपकरण बनते हैं।
 
 ## कैसे करें:
-C++ में रेगुलर एक्सप्रेशंस का इस्तेमाल करने के लिए कोड का उदाहरण और सैंपल आउटपुट:
+C++11 में मानक पुस्तकालय, `<regex>`, में नियमित अभिव्यक्तियों के लिए समर्थन पेश किया गया, जो स्ट्रिंग खोज और हेरफेर के लिए एक मजबूत ढांचा प्रदान करता है। यहाँ एक बुनियादी उदाहरण है जो एक स्ट्रिंग में एक पैटर्न की खोज के लिए नियमित अभिव्यक्तियों का उपयोग करता है:
 
-```C++
+```cpp
 #include <iostream>
 #include <regex>
-#include <string>
-using namespace std;
 
 int main() {
-    // एक रेगुलर एक्सप्रेशन पैटर्न क्रिएट करें
-    regex email_pattern("[\\w\\.-]+@\\w+\\.\\w+");
+    std::string target = "Hello, my email is example@example.com";
+    std::regex email_pattern(R"(\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b)");
 
-    // जांच करें कि दी गई स्ट्रिंग पैटर्न से मैच करती है या नहीं
-    string email = "koi_email@example.com";
-    if (regex_match(email, email_pattern)) {
-        cout << "वैध ईमेल पता!" << endl;
+    if (std::regex_search(target, email_pattern)) {
+        std::cout << "Email found!" << std::endl;
     } else {
-        cout << "अवैध ईमेल पता!" << endl;
+        std::cout << "No email found." << std::endl;
     }
+
     return 0;
 }
 ```
-
-सैंपल आउटपुट:
+**नमूना आउटपुट**
 ```
-वैध ईमेल पता!
+Email found!
 ```
 
-## गहराई में जानकारी:
-रेगुलर एक्सप्रेशंस का इतिहास 1950 के दशक में हुई थ्योरेटिकल वर्क से शुरू होता है। Perl भाषा रेगुलर एक्सप्रेशंस के मुख्य प्रसारकों में से एक थी। C++ में, `<regex>` हेडर फ़ाइल इसे इंप्लीमेंट करती है। रेगुलर एक्सप्रेशंस के विकल्प में टेक्स्ट पार्सिंग लाइब्रेरीज और स्ट्रिंग सर्च एल्गोरिदम हो सकते हैं, किन्तु इनकी लचीलापन और शक्ति उतनी नहीं होती जितनी रेगुलर एक्सप्रेशंस की होती है।
+अधिक जटिल हेरफेर के लिए, जैसे कि स्ट्रिंग्स के भीतर पैटर्न को बदलना, C++ की नियमित अभिव्यक्तियाँ बहुत सहायक हो सकती हैं:
 
-## इसे भी देखें:
-- [Cplusplus.com - Regular Expressions Library](https://www.cplusplus.com/reference/regex/)
-- [cppreference.com - std::regex](https://en.cppreference.com/w/cpp/regex)
+```cpp
+#include <iostream>
+#include <regex>
 
-इन लिंक्स पर जाकर आप और जानकारी पा सकते हैं और अपनी समझ बढ़ा सकते हैं।
+int main() {
+    std::string text = "The rain in Spain falls mainly in the plain.";
+    std::regex vowel_regex("([aeiou])");
+
+    std::string replaced_text = std::regex_replace(text, vowel_regex, "*");
+    std::cout << replaced_text << std::endl;
+
+    return 0;
+}
+```
+**नमूना आउटपुट**
+```
+Th* r**n *n Sp**n f*lls m**nly *n th* pl**n.
+```
+
+मानक पुस्तकालय से आगे तलाशने वाले प्रोग्रामरों के लिए, बूस्ट रेगेक्स पुस्तकालय (`boost/regex.hpp`) एक लोकप्रिय तृतीय-पक्ष विकल्प है जो जटिल पैटर्न या व्यापक डेटा प्रसंस्करण के लिए उन्नत रेगेक्स क्षमताओं और प्रदर्शन अनुकूलन प्रदान करता है:
+
+```cpp
+#include <iostream>
+#include <boost/regex.hpp>
+
+int main() {
+    std::string s = "Boost libraries are fun!";
+    boost::regex expr("(\\w+)\\s(libraries)"); // "Boost libraries" से मिलान
+    std::string fmt("GNU \\1"); // "GNU Boost" से बदलें
+
+    std::string result = boost::regex_replace(s, expr, fmt);
+    std::cout << result << std::endl;
+
+    return 0;
+}
+```
+**नमूना आउटपुट**
+```
+GNU Boost are fun!
+```
+
+ये उदाहरण C++ की नियमित अभिव्यक्तियों के साथ क्षमताओं की सतह को खुरचते हैं, जो मानक पुस्तकालय का उपयोग करके या बूस्ट की शक्तिशाली रेगेक्स कार्यान्वयन द्वारा प्रबलित, बुनियादी खोजों, पैटर्न मिलान, और प्रतिस्थापनों का प्रदर्शन करते हैं।

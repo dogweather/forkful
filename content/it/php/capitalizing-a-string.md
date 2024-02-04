@@ -1,44 +1,56 @@
 ---
-title:                "Maiuscolizzare una stringa"
-date:                  2024-01-19
-simple_title:         "Maiuscolizzare una stringa"
-
+title:                "Capitalizzare una stringa"
+date:                  2024-02-03T19:05:56.243136-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Capitalizzare una stringa"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/php/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? - Cosa e Perché?
-Capitalizzare una stringa significa convertire la prima lettera di ogni parola in maiuscolo. I programmatori lo fanno per standardizzare l'output dei testi, come titoli o nomi propri, rendendoli più leggibili e formalmente corretti.
+## Cosa e Perché?
+Capitalizzare una stringa implica modificare il primo carattere di un testo dato in maiuscolo, assicurando che frasi, titoli o nomi propri inizino correttamente in un insieme di dati. I programmatori spesso eseguono la capitalizzazione delle stringhe per la normalizzazione dei dati, migliorando la leggibilità o garantendo la coerenza nell'input dell'utente o nel trattamento dei dati testuali.
 
-## How to: - Come fare:
-```PHP
-<?php
-$frase = "benvenuti al corso di PHP!";
-$frase_capitalizzata = ucwords($frase);
+## Come fare:
+PHP supporta nativamente diverse funzioni per capitalizzare le stringhe, ognuna con uno scopo differente. Ecco come puoi utilizzarle:
 
-echo $frase_capitalizzata; // Output: Benvenuti Al Corso Di PHP!
-?>
-```
-In alternativa, per capitalizzare solo la prima lettera della stringa:
-```PHP
-<?php
-$titolo = "ciao mondo!";
-$titolo_capitalizzato = ucfirst($titolo);
+### Capitalizzare la prima lettera di una stringa:
 
-echo $titolo_capitalizzato; // Output: Ciao mondo!
-?>
+```php
+$string = "hello, world!";
+$capitalizedString = ucfirst($string);
+echo $capitalizedString; // Restituisce: Hello, world!
 ```
 
-## Deep Dive - Approfondimento
-Una volta in PHP, per capitalizzare stringhe, eravamo limitati a `ucfirst()` e `strtoupper()`. La prima capitalizza solo la prima lettera della stringa, la seconda converte tutto in maiuscolo. Poi è arrivata `ucwords()` che capitalizza la prima lettera di ogni parola, perfetta per titoli e nomi.
+### Capitalizzare la prima lettera di ogni parola:
 
-Ma occhio ai caratteri speciali! PHP non capisce sempre i limiti delle parole se ci sono caratteri come trattini o apostrofi. Per casi complessi, potremmo dover usare espressioni regolari.
+```php
+$string = "hello, world!";
+$capitalizedWords = ucwords($string);
+echo $capitalizedWords; // Restituisce: Hello, World!
+```
 
-Come alternativa possiamo usare `mb_convert_case()` quando lavoriamo con Unicode, utile per lingue con caratteri speciali.
+### Convertire l'intera stringa in maiuscolo:
 
-## See Also - Vedi Anche
-- La documentazione ufficiale di PHP su `ucwords()`: https://www.php.net/manual/en/function.ucwords.php
-- La documentazione ufficiale di PHP su `mb_convert_case()`: https://www.php.net/manual/en/function.mb-convert-case.php
-- Tutorial su espressioni regolari in PHP: https://www.php.net/manual/en/reference.pcre.pattern.syntax.php
+```php
+$string = "hello, world!";
+$upperCaseString = strtoupper($string);
+echo $upperCaseString; // Restituisce: HELLO, WORLD!
+```
+
+Per scenari che richiedono maggiore personalizzazione o soluzioni di terze parti, possono essere utilizzate librerie come `mbstring` (per stringhe multibyte), specialmente quando si tratta di internazionalizzazione dove i caratteri potrebbero estendersi oltre il set ASCII base.
+
+### Utilizzare mbstring per capitalizzare stringhe UTF-8:
+
+Assicurati di avere l'estensione `mbstring` abilitata nella tua configurazione PHP, poi:
+
+```php
+$string = "élégant";
+$capitalizedString = mb_convert_case($string, MB_CASE_TITLE, "UTF-8");
+echo $capitalizedString; // Restituisce: Élégant
+```
+
+Questo approccio aiuta a capitalizzare accuratamente le stringhe che includono caratteri non ASCII, aderendo alle sfumature di varie lingue.

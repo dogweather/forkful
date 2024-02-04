@@ -1,78 +1,130 @@
 ---
-title:                "CSV 파일 다루기"
-date:                  2024-01-19
-simple_title:         "CSV 파일 다루기"
-
+title:                "CSV와 함께 작업하기"
+date:                  2024-02-03T19:19:39.346424-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "CSV와 함께 작업하기"
 tag:                  "Data Formats and Serialization"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/arduino/working-with-csv.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (무엇 및 왜?)
+## 무엇을, 왜?
+아두이노에서 CSV(Comma-Separated Values, 쉼표로 구분된 값) 파일을 다루는 것은 주로 SD 카드에 저장된 CSV 파일을 읽고 쓰는 것을 포함하여 데이터 로깅, 구성 설정 등을 가능하게 합니다. 프로그래머들은 센서 데이터 수집, 구성 매개변수 저장 또는 다른 시스템과의 인터페이싱을 위해 그것의 단순성과 플랫폼 간 널리 채택되어 있기 때문에 종종 CSV를 다룹니다.
 
-CSV(Comma-Separated Values)는 데이터를 쉼표로 구분하는 파일 형식이다. 프로그래머들은 CSV를 사용해 간단하게 데이터를 저장하고 교환하기 위해 사용한다.
+## 방법:
+아두이노에는 CSV 파일을 처리하기 위한 내장 라이브러리가 없지만, SD 카드에 있는 파일에 접근하기 위해 `SD`와 `SPI` 라이브러리를 사용하고, 기본 문자열 조작 기술을 사용하여 CSV 데이터를 파싱하거나 생성할 수 있습니다. 보다 복잡한 CSV 조작을 다룰 때는 제3자 라이브러리인 `ArduinoCSV`를 사용하면 파싱과 쓰기가 더 쉬워집니다.
 
-## How to: (어떻게:)
-
-아래 예제는 CSV 파일을 읽고 쓰는 방법을 보여준다. 아두이노 SD 라이브러리와 함께 사용한다.
-
-```Arduino
+**SD 카드에서 CSV 데이터 읽기:**
+```cpp
 #include <SPI.h>
 #include <SD.h>
 
-File myFile;
-
 void setup() {
   Serial.begin(9600);
-
-  if (!SD.begin(10)) {
-    Serial.println("SD card failed or not present");
+  if (!SD.begin(4)) {
+    Serial.println("초기화 실패!");
     return;
   }
-  
-  myFile = SD.open("test.csv", FILE_WRITE);
-
-  if (myFile) {
-    myFile.println("id,name,age");
-    myFile.println("1,James,45");
-    myFile.println("2,Lisa,30");
-    myFile.close();
-  } else {
-    Serial.println("Error opening the file");
-  }
-
-  myFile = SD.open("test.csv");
-  if (myFile) {
-    while (myFile.available()) {
-      String data = myFile.readStringUntil('\n');
-      Serial.println(data);
+  File dataFile = SD.open("data.csv");
+  if (dataFile) {
+    while (dataFile.available()) {
+      String dataLine = dataFile.readStringUntil('\n');
+      Serial.println(dataLine); // CSV 줄 출력
     }
-    myFile.close();
+    dataFile.close();
   } else {
-    Serial.println("Error opening the file");
+    Serial.println("data.csv 파일을 여는 데 실패했습니다.");
   }
 }
 
 void loop() {
-  // nothing here
+  // 이 예제에서는 사용되지 않음
 }
 ```
-
-샘플 출력:
+*출력 예시:*
 ```
-id,name,age
-1,James,45
-2,Lisa,30
+SensorID, Timestamp, Value
+1, 1597840923, 23.5
+2, 1597840987, 22.4
 ```
 
-## Deep Dive (심층 분석)
+**SD 카드에 CSV 데이터 쓰기:**
+```cpp
+#include <SPI.h>
+#include <SD.h>
 
-CSV 형식은 1972년 IBM Fortran (level G) 컴파일러에서 사용된 이래로 데이터를 효율적으로 교환하기 위한 일반적인 방법으로 자리 잡았다. 대안으로는 JSON, XML 등이 있지만, CSV는 가독성과 간단함에서 독보적이다. 아두이노에서 CSV를 다룰 때는 RAM이 제한되어 있으므로 큰 파일을 처리할 때 주의가 필요하다.
+void setup() {
+  Serial.begin(9600);
+  if (!SD.begin(4)) {
+    Serial.println("초기화 실패!");
+    return;
+  }
+  File dataFile = SD.open("output.csv", FILE_WRITE);
+  if (dataFile) {
+    dataFile.println("SensorID, Timestamp, Value"); // CSV 헤더
+    dataFile.println("1, 1597840923, 23.5"); // 예제 데이터 행
+    dataFile.close();
+    Serial.println("데이터 쓰기 완료");
+  } else {
+    Serial.println("output.csv 파일을 여는 데 실패했습니다.");
+  }
+}
 
-## See Also (참조)
+void loop() {
+  // 이 예제에서는 사용되지 않음
+}
+```
+*출력 예시:*
+```
+데이터 쓰기 완료
+```
 
-- 아두이노 SD 라이브러리 문서: https://www.arduino.cc/en/Reference/SD
-- CSV에 관한 더 깊은 이해를 위한 RFC 4180: https://tools.ietf.org/html/rfc4180
-- 데이터 포맷 비교 (JSON, XML, CSV): https://en.wikipedia.org/wiki/Comparison_of_data-serialization_formats
+**파싱을 위해 ArduinoCSV 사용하기:**
+복잡한 CSV 파일을 다루려면 `ArduinoCSV` 라이브러리를 사용하면 파싱 작업이 크게 단순화될 수 있습니다. 이 예제는 이미 `ArduinoCSV` 라이브러리를 설치했다고 가정합니다.
+
+```cpp
+#include <SPI.h>
+#include <SD.h>
+#include <ArduinoCSV.h>
+
+void setup() {
+  Serial.begin(9600);
+  if (!SD.begin(4)) {
+    Serial.println("초기화 실패!");
+    return;
+  }
+  File dataFile = SD.open("data.csv");
+  if (dataFile) {
+    CSVParser parser;
+    while (dataFile.available()) {
+      String dataLine = dataFile.readStringUntil('\n');
+      if (parser.parseLine(dataLine)) {
+        for (int i = 0; i < parser.count(); i++) {
+          Serial.print(parser.getField(i)); // 각 필드 출력
+          if (i < parser.count() - 1) {
+            Serial.print(", ");
+          }
+        }
+        Serial.println();
+      }
+    }
+    dataFile.close();
+  } else {
+    Serial.println("data.csv 파일을 여는 데 실패했습니다.");
+  }
+}
+
+void loop() {
+  // 이 예제에서는 사용되지 않음
+}
+```
+*출력 예시:*
+```
+SensorID,  Timestamp,  Value
+1,  1597840923,  23.5
+2,  1597840987,  22.4
+```
+이 예제에서 보듯이, SD 카드에 있는 CSV 파일을 읽고 쓰는 것으로 아두이노 프로젝트는 데이터 수집, 구성 설정 저장, 또는 전 세계적으로 접근 가능한 형식으로 다른 애플리케이션과 데이터를 교환할 수 있습니다.

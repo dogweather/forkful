@@ -1,71 +1,112 @@
 ---
-title:                "Arbeta med csv"
-date:                  2024-01-19
-simple_title:         "Arbeta med csv"
-
+title:                "Arbeta med CSV"
+date:                  2024-02-03T19:19:12.731212-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Arbeta med CSV"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/cpp/working-with-csv.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-CSV-filer håller data skild av kommatecken, perfekt för enkelhet och gränssnitt mellan system. Programmerare använder CSV för att enkelt utbyta och bearbeta data som tabeller och listor.
 
-## Hur gör man:
-```C++
+Att arbeta med CSV-filer (värden separerade med kommatecken) handlar om att bearbeta och manipulera data lagrad i ett enkelt textformat, där varje rad i texten representerar en rad i en tabell, och kommatecken separerar individuella kolumner. Programmerare använder detta för att importera, exportera och hantera data över olika system på grund av CSV:s breda acceptans som ett lättviktigt, människo-läsabart datautbytesformat.
+
+## Hur man gör:
+
+### Läsa en CSV-fil med hjälp av C++-standardsbiblioteket:
+
+```cpp
 #include <fstream>
 #include <iostream>
 #include <sstream>
 #include <vector>
-#include <string>
-
-// Läs från CSV-fil och lagra i en vector av vectors
-std::vector<std::vector<std::string>> lasCSV(const std::string& filnamn) {
-    std::vector<std::vector<std::string>> resultat;
-    std::ifstream fil(filnamn);
-    std::string rad;
-    
-    while (std::getline(fil, rad)) {
-        std::vector<std::string> kolumn;
-        std::stringstream ss(rad);
-        std::string falt;
-
-        while (std::getline(ss, falt, ',')) {
-            kolumn.push_back(falt);
-        }
-        resultat.push_back(kolumn);
-    }
-    return resultat;
-}
-
-// Skriv ut innehållet i din CSV-data
-void skrivUtCSV(const std::vector<std::vector<std::string>>& data) {
-    for (const auto& rad : data) {
-        for (const auto& falt : rad) {
-            std::cout << falt << " ";
-        }
-        std::cout << '\n';
-    }
-}
 
 int main() {
-    auto data = lasCSV("exempel.csv");
-    skrivUtCSV(data);
+    std::ifstream file("data.csv");
+    std::string line;
+    
+    while (std::getline(file, line)) {
+        std::stringstream lineStream(line);
+        std::string cell;
+        std::vector<std::string> parsedRow;
+        
+        while (std::getline(lineStream, cell, ',')) {
+            parsedRow.push_back(cell);
+        }
+        
+        // Processa parsedRow här
+        for (const auto& val : parsedRow) {
+            std::cout << val << "\t";
+        }
+        std::cout << std::endl;
+    }
+    
+    return 0;
 }
 ```
 
-Sample Output:
-```
-Namn Ålder Stad
-Alice 29 Stockholm
-Bob 34 Göteborg
+### Skriva till en CSV-fil:
+
+```cpp
+#include <fstream>
+#include <vector>
+
+int main() {
+    std::ofstream file("output.csv");
+    std::vector<std::vector<std::string>> data = {
+        {"Namn", "Ålder", "Stad"},
+        {"John Doe", "29", "New York"},
+        {"Jane Smith", "34", "Los Angeles"}
+    };
+    
+    for (const auto& rad : data) {
+        for (size_t i = 0; i < rad.size(); i++) {
+            file << rad[i];
+            if (i < rad.size() - 1) file << ",";
+        }
+        file << "\n";
+    }
+    
+    return 0;
+}
 ```
 
-## Fördjupning
-CSV, Comma-Separated Values, existerar sedan 1970-talet och är ett mycket spritt textformat. Alternativ som JSON och XML ger mer struktur, men CSV vinner på sin enkelhet. I C++ kan man hantera CSV med standardbiblioteket, men bibliotek som `Boost` ger ännu fler verktyg.
+### Använda ett tredjepartsbibliotek: `csv2`:
 
-## Se även
-- [RFC 4180](https://tools.ietf.org/html/rfc4180), den formella standarden för CSV.
-- [CSV parserbibliotek på GitHub](https://github.com/ben-strasser/fast-cpp-csv-parser), för mer avancerade användningsfall.
-- [C++ Boost Library](https://www.boost.org/), om du vill utforska CSV hantering med Boost.
+Medan C++-standardsbiblioteket tillhandahåller grundläggande verktyg för att arbeta med filer och strängar, kan användning av tredjepartsbibliotek förenkla bearbetningen av CSV. Ett sådant bibliotek är `csv2`, känt för sin användarvänlighet och effektivitet.
+
+- Installation: Installeras vanligtvis via pakethanterare som Conan eller direkt från dess GitHub-repositorium.
+
+Exempel som använder `csv2` för att läsa en CSV-fil:
+
+```cpp
+#include <csv2/reader.hpp>
+#include <iostream>
+
+int main() {
+    csv2::Reader<csv2::delimiter<','>, csv2::quote_character<'"'>, csv2::first_row_is_header<true>> csv;
+    if (csv.mmap("data.csv")) {
+        const auto header = csv.header();
+        for (const auto rad : csv) {
+            for (const auto cell : rad) {
+                std::cout << cell.second << "\t"; // Skriv ut varje cellvärde
+            }
+            std::cout << std::endl;
+        }
+    }
+    return 0;
+}
+```
+
+Exempel på utmatning för läsoperationer kan se ut så här (med antagandet av en enkel CSV-fil med tre kolumner):
+
+```
+John    29    New York    
+Jane    34    Los Angeles
+```
+
+Dessa exempel syftar till att täcka grundläggande CSV-operationer i C++. För mer komplexa scenarier, som att hantera stora filer eller komplexa datatransformationer, kan vidare utforskning av specialiserade bibliotek eller verktyg vara motiverat.

@@ -1,46 +1,72 @@
 ---
-title:                "כתיבה לקובץ טקסט"
-date:                  2024-01-19
-simple_title:         "כתיבה לקובץ טקסט"
-
+title:                "כתיבת קובץ טקסט"
+date:                  2024-02-03T19:28:39.133430-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "כתיבת קובץ טקסט"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/elm/writing-a-text-file.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## מה ולמה?
-כתיבת קובץ טקסט היא יצירת קובץ שמכיל טקסט ברמת המערכת או האפליקציה. תוכניתנים עושים זאת כדי לשמור מידע בצורה קבועה, ללוגים, או לאחסון נתונים לשימוש חוזר.
+
+כתיבת קובץ טקסט ב-Elm כוללת יצירת ושמירת נתוני טקסט בקובץ מתוך יישום Elm. תכניתנים לעיתים קרובות צריכים לייצר דוחות, לוגים, או לייצא נתונים בפורמט טקסט מובנה (למשל, JSON, CSV) לשימוש ביישומים אחרים או למטרות שמירת רשומות. עם זאת, מכיוון שארכיטקטורת Elm מתמקדת בנקיון ובטיחות, כתיבה ישירה לקובץ—כמו רבים מהאפקטים הצדדיים האחרים—מתבצעת דרך פקודות לסביבת ה-JavaScript המקיפה.
 
 ## איך לעשות:
-Elm לא מאפשר כתיבה ישירה לקובץ מהדפדפן בגלל מגבלות האבטחה. עליך לשלוח את הנתונים לשרת, או ליצור הורדת קובץ מהדפדפן. להלן דוגמא ליצירת קישור להורדת קובץ:
 
-```Elm
-module Main exposing (main)
+מכיוון ש-Elm פועל בדפדפן ומתוכנן להיות שפת תכנות נקייה ללא אפקטים צדדיים, אין לו גישה ישירה למערכת הקבצים. לכן, כתיבה לקובץ בדרך כלל כוללת שליחת הנתונים אל JavaScript דרך פורטים. הנה איך אפשר להגדיר זאת:
+
+1. **הגדרת מודול פורט לשליחת טקסט ל-JavaScript:**
+
+```elm
+port module Main exposing (main)
+
 import Browser
-import Html exposing (Html, a, text, attribute)
-import Html.Attributes exposing (href)
+import Html exposing (Html, button, div, text)
+import Html.Events exposing (onClick)
 
-main : Html msg
+-- הגדרת פורט לשליחת נתוני טקסט ל-JavaScript
+port saveText : String -> Cmd msg
+
+-- תצוגה ראשית
+view : Html msg
+view =
+    div []
+        [ button [ onClick (saveText "שלום, Elm כותב לקובץ!") ] [ text "שמור לקובץ" ]
+        ]
+
+-- הגדרת מינויים (לא בשימוש בדוגמה זו אך נדרש למודול פורט)
+subscriptions : model -> Sub msg
+subscriptions _ =
+    Sub.none
+
+-- הגדרת היישום
+main : Program () model msg
 main =
-    let
-        fileContent = "תוכן לדוגמא בעברית"
-        encodedContent = "data:text/plain;charset=utf-8," ++ (encodeURIComponent fileContent)
-    in
-    a [ href encodedContent, attribute "download" "example.txt" ] [ text "הורד את הקובץ" ]
-
--- כדי לעשות encode לתוכן בעברית:
-encodeURIComponent : String -> String
-encodeURIComponent =
-    -- פה תהיה המימוש של הפונקציה לביצוע Encode לתוכן.
+    Browser.element
+        { init = \_ -> ((), Cmd.none)
+        , view = \_ -> view
+        , update = \_ _ -> ((), Cmd.none)
+        , subscriptions = subscriptions
+        }
 ```
 
-בחר בקישור יתחיל הורדה של קובץ עם התוכן שהגדרת.
+2. **יישום הקוד המתאים ב-JavaScript:**
 
-## צלילה עמוקה
-בעבר, כתיבה לקבצים הייתה אפשרית בשפות תכנות המופעלות מחוץ לדפדפן עם גישה ישירה למערכת הפעלה. ב-Elm, המופעל בדפדפן, האבטחה מחייבת שימוש ב-API של הדפדפן או בקשת HTTPS לשרת. אפשרות נוספת לכתיבת קבצים היא על ידי השתמשות ב-LocalStorage או IndexedDB, אך זה לא כולל יצירת קבצי טקסט פיזיים ותלוי בדפדפן.
+בקובץ ה-HTML שלך או במודול JavaScript, טפל בפורט של יישום ה-Elm לשמירת הטקסט. תוכל להשתמש בספריית `FileSaver.js` לשמירת הקובץ בצד הלקוח או לשלוח את הנתונים לשרת לעיבוד.
 
-## ראו גם
-- [Elm File](https://package.elm-lang.org/packages/elm/file/latest/) - משפחת חבילות לעבודה עם קבצים ב-Elm.
-- [MDN Web Docs - Using files from web applications](https://developer.mozilla.org/en-US/docs/Web/API/File/Using_files_from_web_applications) - מדריך על כיצד לשלוט ולגשת לקבצים באפליקציות ווב.
-- [Elm Guide - HTTP](https://guide.elm-lang.org/effects/http.html) - מדריך על פעולות HTTP ב-Elm, כולל שליחה וקבלה של נתונים מ/אל שרת.
+```javascript
+// בהנחה ש-Elm.Main.init() כבר נקרא והאפליקציה רצה
+app.ports.saveText.subscribe(function(text) {
+    // שימוש ב-FileSaver.js לשמירת קבצים בצד הלקוח
+    var blob = new Blob([text], {type: "text/plain;charset=utf-8"});
+    saveAs(blob, "example.txt");
+});
+```
+
+תוצאה דוגמתית אינה ישימה באופן ישיר מכיוון שהתוצאה היא יצירת קובץ, אך לאחר לחיצה על הכפתור ביישום ה-Elm שלך, אמור להתבצע הורדה למחשב שלך של קובץ בשם "example.txt" המכיל את המחרוזת "שלום, Elm כותב לקובץ!".
+
+בגישה זו, התקשורת בין Elm ל-JavaScript היא קריטית. אף על פי ש-Elm שואף להכיל כמה שיותר מהלוגיקה של היישום שלך, האינטרופ מאפשר לך לבצע משימות כמו כתיבת קבצים ש-Elm לא תומך בהן ישירות. זכור, נקיון ובטיחות של Elm מחוזקים על ידי דפוס זה, מה שמבטיח שהיישומים שלך ב-Elm יישארו קלים לתחזוקה ולהבנה, אפילו כאשר הם מתקשרים עם העולם המורכב בחוץ.

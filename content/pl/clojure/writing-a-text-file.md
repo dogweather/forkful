@@ -1,55 +1,64 @@
 ---
-title:                "Zapisywanie pliku tekstowego"
-date:                  2024-01-19
-simple_title:         "Zapisywanie pliku tekstowego"
-
+title:                "Pisanie pliku tekstowego"
+date:                  2024-02-03T19:27:55.389469-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Pisanie pliku tekstowego"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/clojure/writing-a-text-file.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-"## Co i dlaczego?"
+## Co i dlaczego?
 
-Zapisywanie pliku tekstowego to proces zapisania danych w formie czytelnej dla człowieka do pliku na dysku. Programiści robią to, aby trwale zapisywać informacje, takie jak konfiguracje, logi czy wyniki pracy programu.
+Pisanie pliku tekstowego w Clojure polega na tworzeniu lub modyfikowaniu plików w celu zapisania danych poza aplikacją, umożliwiając trwałość, konfigurację, logowanie lub komunikację międzyprocesową. Programiści wykonują to zadanie, aby zewnętrznie przechowywać stan aplikacji, konfiguracje lub dzielić informacje między różnymi częściami programu lub różnymi programami.
 
-## How to:
-"## Jak to zrobić:"
+## Jak to zrobić:
 
-Do zapisu pliku tekstowego w Clojure używamy funkcji `spit`. Oto przykład:
+### Pisanie tekstu do pliku przy użyciu wbudowanych funkcji Clojure
 
-```clojure
-(spit "przyklad.txt" "Witaj, Clojure!")
-```
-
-Jeśli otworzysz `przyklad.txt`, zobaczysz:
-
-```
-Witaj, Clojure!
-```
-
-Do dopisywania treści użyj opcji `:append true`:
+Funkcja `spit` jest najprostszym sposobem na zapis tekst do pliku w Clojure. Przyjmuje dwa argumenty: ścieżkę pliku i łańcuch do zapisania. Jeśli plik nie istnieje, `spit` go utworzy. Jeśli istnieje, `spit` go nadpisze.
 
 ```clojure
-(spit "przyklad.txt" "\nDopiszmy coś więcej." :append true)
+(spit "example.txt" "Witaj, świecie!")
 ```
 
-Teraz `przyklad.txt` wygląda tak:
+Aby dodać tekst do istniejącego pliku, możesz użyć funkcji `spit` z opcją `:append`.
+
+```clojure
+(spit "example.txt" "\nDodajmy tę nową linię." :append true)
+```
+
+Po uruchomieniu tych fragmentów, "example.txt" będzie zawierać:
 
 ```
-Witaj, Clojure!
-Dopiszmy coś więcej.
+Witaj, świecie!
+Dodajmy tę nową linię.
 ```
 
-## Deep Dive
-"## Szczegółowe informacje"
+### Korzystanie z bibliotek stron trzecich
 
-`spit` to nowoczesny sposób na zapis plików w Clojure, ale korzeni szukaj w starszej funkcji `with-open` i Java `FileWriter`. Alternatywą jest bezpośrednie użycie Javy przez interop. W implementacji `spit` obiekty są konwertowane na łańcuchy znaków i zapisywane, co pokazuje elastyczność Clojure w integracji z Javą i łatwość obsługi danych w różnych formatach.
+Chociaż wbudowane możliwości Clojure często są wystarczające, społeczność opracowała solidne biblioteki do bardziej skomplikowanych lub specyficznych zadań. Dla operacji na plikach popularną biblioteką jest `clojure.java.io`, która zapewnia bardziej java'owe podejście do obsługi plików.
 
-## See Also
-"## Zobacz także"
+Aby użyć `clojure.java.io` do zapisywania do pliku, najpierw musisz ją zaimportować:
 
-- Oficjalna dokumentacja Clojure: https://clojure.org/
-- Przewodnik po `spit` i `slurp`: https://clojuredocs.org/clojure.core/spit
-- Clojure for the Brave and True - Rozdział o obsłudze plików: https://www.braveclojure.com/IO/
+```clojure
+(require '[clojure.java.io :as io])
+```
+
+Następnie można użyć funkcji `writer`, aby uzyskać obiekt piszący, i funkcji `spit` (lub innych takich jak `print`, `println`), aby pisać do pliku:
+
+```clojure
+(with-open [w (io/writer "example_with_io.txt")]
+  (.write w "To zostało napisane przy użyciu clojure.java.io"))
+```
+
+To utworzy (lub nadpisze, jeśli już istnieje) "example_with_io.txt" z tekstem:
+
+```
+To zostało napisane przy użyciu clojure.java.io
+```
+
+Pamiętaj: `with-open` zapewnia, że plik jest odpowiednio zamknięty po zapisie, unikając potencjalnych wycieków zasobów.

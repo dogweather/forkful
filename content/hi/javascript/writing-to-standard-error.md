@@ -1,43 +1,58 @@
 ---
-title:                "मानक त्रुटि में लिखना"
-date:                  2024-01-19
-simple_title:         "मानक त्रुटि में लिखना"
-
+title:                "मानक त्रुटि के लिए लिखना"
+date:                  2024-02-03T19:34:36.069168-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "मानक त्रुटि के लिए लिखना"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/javascript/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## क्या और क्यों? (What & Why?)
-"स्टैण्डर्ड एरर" एक स्ट्रीम है जिसमें प्रोग्राम अपनी गलतियाँ लिखता है। प्रोग्रामर्स इसका इस्तेमाल ऐसे मेसेज दिखाने के लिए करते हैं जो यूजर्स को एरर के बारे में जानकारी देते हैं या जो लॉगिंग सिस्टम में एरर्स रिकॉर्ड करते हैं।
+## क्या और क्यों?
+जावास्क्रिप्ट में स्टैंडर्ड एरर (stderr) पर लिखना यह है कि त्रुटि संदेशों या किसी आलोचनात्मक सूचना को एक विशिष्ट, अलग स्ट्रीम में निर्देशित करना, जो विशेष रूप से Unix जैसे वातावरणों में लॉगिंग और डीबगिंग उद्देश्यों के लिए उपयोगी होता है। प्रोग्रामर इसे त्रुटि संदेशों से सामान्य प्रोग्राम आउटपुट को अलग करने के लिए करते हैं, जिससे आउटपुट प्रबंधन स्पष्ट और त्रुटि की निगरानी आसान होती है।
 
-## कैसे करें? (How to:)
+## कैसे:
+Node.js में, stderr पर लिखना `console.error()` मेथड का उपयोग करके या सीधे `process.stderr` पर लिखकर पूरा किया जा सकता है। यहाँ दोनों दृष्टिकोणों का उदाहरण दिखाया गया है:
+
 ```javascript
-// सिंपल मेसेज स्टैण्डर्ड एरर पर प्रिंट करना
-process.stderr.write('यह एक एरर मेसेज है.\n');
+// console.error() का उपयोग करते हुए
+console.error('यह एक त्रुटि संदेश है।');
 
-// कंसोल.एरर का इस्तेमाल करना
-console.error('और यह भी एक एरर मेसेज है.');
-
-// एरर ऑब्जेक्ट को स्टैण्डर्ड एरर पर प्रिंट करना
-const errorObj = new Error('कुछ गलत हो गया है!');
-console.error(errorObj);
-```
-सैम्पल आउटपुट:
-```
-यह एक एरर मेसेज है.
-और यह भी एक एरर मेसेज है.
-Error: कुछ गलत हो गया है!
-    at Object.<anonymous> (C:\path\to\script.js:6:15)
-    at Module._compile (node:internal/modules/cjs/loader:1218:14)
-    ...
+// सीधे process.stderr पर लिखना
+process.stderr.write('यह एक और त्रुटि संदेश है।\n');
 ```
 
-## गहराई से जानकारी (Deep Dive)
-पारंपरिक UNIX फिलॉसफी में, स्टैण्डर्ड आउटपुट (stdout) और स्टैण्डर्ड एरर (stderr) अलग क्यों रखे गए हैं, इसका एक तार्किक आधार है: यह एरर मेसेजेज को नॉर्मल आउटपुट से अलग करता है। JavaScript में `console.error()` और `process.stderr.write()` दो विकल्प हैं जो डेवलपर्स को स्टैण्डर्ड एरर स्ट्रीम पर डाटा लिखने देते हैं। इन दोनों मेथड्स का कार्य लगभग एक समान होता है, लेकिन `console.error()` मेथड अधिक उपयोगी होता है क्योंकि यह स्टैक ट्रेस समेत ऑब्जेक्ट्स को भी प्रिंट करने में सक्षम है।
+दोनों विधियों के लिए नमूना आउटपुट stderr स्ट्रीम में प्रकट होगा, stdout के साथ मिलान नहीं करेगा:
+```
+यह एक त्रुटि संदेश है।
+यह एक और त्रुटि संदेश है।
+```
 
-## सम्बंधित स्रोत (See Also)
-- [नोड.जेएस डॉक्स पर process.stderr](https://nodejs.org/api/process.html#processstderr)
-- [MDN Web Docs पर console.error()](https://developer.mozilla.org/en-US/docs/Web/API/Console/error)
-- [यूनिक्स प्रोग्राम्मिंग फिलॉसफी](https://en.wikipedia.org/wiki/Unix_philosophy#Do_One_Thing_and_Do_It_Well)
+अधिक सुव्यवस्थित या एप्लिकेशन-विशिष्ट लॉगिंग के लिए, बहुत से JavaScript प्रोग्रामर `winston` या `bunyan` जैसी थर्ड-पार्टी लाइब्रेरियों का उपयोग करते हैं। यहाँ `winston` का उपयोग करते हुए एक त्वरित उदाहरण है:
+
+पहले, npm के माध्यम से `winston` को इंस्टाल करें:
+```shell
+npm install winston
+```
+
+फिर, stderr पर त्रुटियों को लॉग करने के लिए `winston` को कॉन्फ़िगर करें:
+```javascript
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  levels: winston.config.syslog.levels,
+  transports: [
+    new winston.transports.Console({
+      stderrLevels: ['error']
+    })
+  ]
+});
+
+// एक त्रुटि संदेश लॉग करना
+logger.error('winston के माध्यम से लॉग की गई त्रुटि।');
+```
+
+यह सेटअप सुनिश्चित करता है कि जब आप `winston` का उपयोग करके एक त्रुटि को लॉग करते हैं, तो यह stderr में निर्देशित होती है, जिससे सामान्य और त्रुटि आउटपुट्स के बीच स्पष्ट विभाजन बना रहता है।

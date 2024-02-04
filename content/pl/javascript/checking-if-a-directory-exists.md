@@ -1,39 +1,40 @@
 ---
 title:                "Sprawdzanie, czy katalog istnieje"
-date:                  2024-01-20T14:57:14.789912-07:00
+date:                  2024-02-03T19:07:48.880318-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Sprawdzanie, czy katalog istnieje"
-
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/javascript/checking-if-a-directory-exists.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-"Co i dlaczego?"
+## Co i dlaczego?
+Sprawdzanie, czy katalog istnieje w JavaScript, jest kluczowe dla zadań manipulacji plikami. Pozwala skryptom zweryfikować obecność katalogu przed odczytem z niego lub zapisem do niego. Operacja ta zapobiega błędom i zapewnia płynniejsze wykonanie programu, szczególnie w aplikacjach, które dynamicznie obsługują pliki lub katalogi na podstawie wprowadzonych danych użytkownika lub zewnętrznych źródeł danych.
 
-Sprawdzanie, czy katalog istnieje, to proces weryfikacji ścieżki w systemie plików. Programiści robią to, aby uniknąć błędów podczas prób dostępu do nieistniejących katalogów czy zapisywania plików.
-
-## How to:
-"Jak to zrobić:"
-
-Do sprawdzenia istnienia katalogu w Node.js używamy modułu `fs`. Przykłady:
-
-Synchronicznie:
+## Jak to zrobić:
+W Node.js, ponieważ JavaScript sam w sobie nie ma bezpośredniego dostępu do systemu plików, zazwyczaj używany jest moduł `fs` do tego typu operacji. Oto prosty sposób, aby sprawdzić, czy katalog istnieje, używając `fs.existsSync()`:
 
 ```javascript
 const fs = require('fs');
 
-const directoryPath = './path/to/directory';
+const directoryPath = './sample-directory';
 
+// Sprawdź, czy katalog istnieje
 if (fs.existsSync(directoryPath)) {
-  console.log('Katalog istnieje!');
+  console.log('Katalog istnieje.');
 } else {
-  console.log('Katalog nie istnieje!');
+  console.log('Katalog nie istnieje.');
 }
-```
 
-Asynchronicznie z `fs.promises`:
+```
+**Przykładowy wynik:**
+```
+Katalog istnieje.
+```
+Lub, dla podejścia nieblokującego i asynchronicznego, użyj `fs.promises` z `async/await`:
 
 ```javascript
 const fs = require('fs').promises;
@@ -41,23 +42,34 @@ const fs = require('fs').promises;
 async function checkDirectory(directoryPath) {
   try {
     await fs.access(directoryPath);
-    console.log('Katalog istnieje!');
-  } catch {
-    console.log('Katalog nie istnieje!');
+    console.log('Katalog istnieje.');
+  } catch (error) {
+    console.log('Katalog nie istnieje.');
   }
 }
 
-checkDirectory('./path/to/directory');
+checkDirectory('./sample-directory');
+```
+**Przykładowy wynik:**
+```
+Katalog istnieje.
 ```
 
-## Deep Dive
-"Dogłębna analiza"
+Dla projektów, które intensywnie korzystają z operacji na plikach i katalogach, pakiet `fs-extra`, rozszerzenie natywnego modułu `fs`, oferuje wygodne dodatkowe metody. Oto jak możesz osiągnąć to samo z `fs-extra`:
 
-W starszych wersjach Node.js, `fs.exists` był często używany do tego zadania, ale został wycofany z powodu wprowadzania w błąd. Asynchroniczne API, takie jak `fs.access` i `fs.stat`, są teraz zalecane. `fs.access` sprawdza uprawnienia, a `fs.stat` daje dodatkowe informacje o plikach/katalogach. Te funkcje są przydatne, ponieważ zapobiegają potencjalnym wyścigom, które mogą wystąpić, gdy stan systemu plików zmienia się między sprawdzeniami a operacjami.
+```javascript
+const fs = require('fs-extra');
 
-## See Also
-"Zobacz również"
+const directoryPath = './sample-directory';
 
-- [Node.js File System Docs](https://nodejs.org/api/fs.html) - oficjalna dokumentacja modułu `fs`.
-- [Working with file descriptors in Node.js](https://nodejs.org/dist/latest-v15.x/docs/api/fs.html#fs_working_with_file_descriptors) - jak pracować z deskryptorami plików.
-- [Path Module in Node.js](https://nodejs.org/api/path.html) - moduł `path` do zarządzania ścieżkami plików.
+// Sprawdź, czy katalog istnieje
+fs.pathExists(directoryPath)
+  .then(exists => console.log(exists ? 'Katalog istnieje.' : 'Katalog nie istnieje.'))
+  .catch(err => console.error(err));
+```
+**Przykładowy wynik:**
+```
+Katalog istnieje.
+```
+
+To podejście umożliwia czysty i czytelny kod, który bezproblemowo integruje się z nowoczesnymi praktykami JavaScript.

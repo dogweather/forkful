@@ -1,31 +1,52 @@
 ---
 title:                "標準エラーへの書き込み"
-date:                  2024-01-19
+date:                  2024-02-03T19:33:56.494157-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "標準エラーへの書き込み"
-
 tag:                  "Files and I/O"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/lua/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (何となぜ？)
-標準エラー出力に書き込むって何？それはプログラムからのエラーメッセージをユーザーや他のプログラムに通知する方法だ。何のためにするの？エラーと通常の出力内容を分け、エラーログを拾いやすくするためだ。
+## 何となぜ？
+標準エラー（stderr）への書き込みとは、エラーメッセージや診断出力を標準出力（stdout）とは別のチャンネルに向けることです。プログラマーはこれを行うことで、通常のプログラム結果とエラー情報を区別し、デバッグとログ記録のプロセスを合理化します。
 
-## How to: (方法)
-```Lua
--- Luaで標準エラーに書き出すサンプル
-io.stderr:write("エラーメッセージ\n")
+## 方法：
+Luaでstderrに書き込むには、`io.stderr:write()`関数を使用します。こちらが標準エラーに単純なエラーメッセージを書き込む方法です：
+
+```lua
+io.stderr:write("Error: Invalid input.\n")
 ```
 
-サンプル出力:
-```
-エラーメッセージ
-```
-## Deep Dive (深掘り)
-標準エラー出力はUNIX時代からある。`io.stderr`はLuaの標準ライブラリの一部で、その実装は環境によって異なりうる。例えば`print`は常に標準出力に向かうけど、`io.stderr:write`を使うと明示的にエラーストリームに出力できる。これはエラー情報のリダイレクトやログ収集に使える。
+変数を出力する必要がある場合や、複数のデータを組み合わせる場合は、write関数内でそれらを連結します：
 
-## See Also (参照)
-- Luaの入出力ライブラリ: [https://www.lua.org/manual/5.4/manual.html#6.8](https://www.lua.org/manual/5.4/manual.html#6.8)
-- UNIXの標準ストリームについて: [https://ja.wikipedia.org/wiki/標準ストリーム](https://ja.wikipedia.org/wiki/標準ストリーム)
+```lua
+local errorMessage = "Invalid input."
+io.stderr:write("Error: " .. errorMessage .. "\n")
+```
+
+**stderr上のサンプル出力：**
+```
+Error: Invalid input.
+```
+
+さらに複雑なシナリオや、より大規模なアプリケーションで作業している場合は、LuaLoggingのようなサードパーティのログ記録ライブラリを検討するかもしれません。LuaLoggingを使用すると、stderrを含む異なる先にログを向けることができます。こちらが簡単な例です：
+
+まず、LuaRocksを使用してLuaLoggingがインストールされていることを確認します：
+
+```
+luarocks install lualogging
+```
+
+次に、LuaLoggingを使用してstderrにエラーメッセージを書き込むには：
+
+```lua
+local logging = require("logging")
+local logger = logging.stderr()
+logger:error("Error: Invalid input.")
+```
+
+このアプローチは、アプリケーション全体で標準化されたログ記録の利点を提供し、簡単なAPIを介してログレベル（例：ERROR、WARN、INFO）を設定する柔軟性を追加します。

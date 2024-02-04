@@ -1,55 +1,148 @@
 ---
-title:                "Arbeid med CSV"
-date:                  2024-01-19
-simple_title:         "Arbeid med CSV"
-
+title:                "Arbeide med CSV"
+date:                  2024-02-03T19:20:30.137566-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Arbeide med CSV"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/java/working-with-csv.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
+## Hva & Hvorfor?
 
-Arbeid med CSV handler om å lese og skrive data i kommaseparerte filer. Programmerere gjør dette fordi CSV er enkel å forstå, lett å lese, og universelt støttet over mange programmer og plattformer.
+Å jobbe med CSV-filer involverer lesing fra og skriving av data til komma-separerte verdier (CSV)-filer, et populært format for datautveksling fordi det er enkelt og bredt støttet. Programmerere manipulerer CSV-filer for oppgaver som dataimport/eksport, dataanalyse, og informasjonsdeling mellom ulike systemer.
 
-## How to:
+## Hvordan:
 
-For å jobbe med CSV i Java, kan vi bruke `java.util.Scanner` for enkel innlesing eller biblioteker som Apache Commons CSV for mer avanserte behov. Her er et grunnleggende eksempel:
+### Lese en CSV-fil ved bruk av standard Java-bibliotek
+
+Java har ikke innebygd støtte for CSV i sitt standardbibliotek, men du kan enkelt lese en CSV-fil ved å bruke `java.io`-klasser.
 
 ```java
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 
-public class SimpleCsvReader {
-    public static void main(String[] args) throws FileNotFoundException {
-        File csvFile = new File("data.csv");
-        Scanner scanner = new Scanner(csvFile);
-        
-        while (scanner.hasNext()) {
-            String[] data = scanner.nextLine().split(",");
-            // Prosesser data her
-            System.out.println("Første kolonne verdi: " + data[0]);
+public class ReadCSVExample {
+    public static void main(String[] args) {
+        String line;
+        String csvFile = "data.csv"; // Angi stien til CSV-filen
+        try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
+            while ((line = br.readLine()) != null) {
+                String[] values = line.split(","); // Anta at et komma er skilletegnet
+                // Behandle dataene
+                for (String value : values) {
+                    System.out.print(value + " ");
+                }
+                System.out.println();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-        
-        scanner.close();
     }
 }
 ```
 
-Forventet output:
+### Skrive til en CSV-fil ved bruk av standard Java-bibliotek
+
+For å skrive data til en CSV-fil, kan du bruke `java.io`-klasser som `FileWriter` og `BufferedWriter`.
+
+```java
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class WriteCSVExample {
+    public static void main(String[] args) {
+        String[] data = {"John", "Doe", "30", "New York"};
+        String csvFile = "output.csv"; // Angi stien til utdata-CSV-filen
+
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(csvFile))) {
+            StringBuilder sb = new StringBuilder();
+            for (String value : data) {
+                sb.append(value).append(","); // Anta at et komma er skilletegnet
+            }
+            sb.deleteCharAt(sb.length() - 1); // Fjern det siste kommaet
+            bw.write(sb.toString());
+            bw.newLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
 ```
-Første kolonne verdi: Verdi1
-Første kolonne verdi: Verdi2
+
+### Bruke et tredjepartsbibliotek: Apache Commons CSV
+
+Apache Commons CSV er et populært bibliotek for håndtering av CSV-filer i Java. Det forenkler betydelig lesing og skriving av CSV-filer.
+
+Legg til avhengigheten i prosjektet ditt:
+
+For Maven:
+
+```xml
+<dependency>
+    <groupId>org.apache.commons</groupId>
+    <artifactId>commons-csv</artifactId>
+    <version>1.9.0</version> <!-- Sjekk for den nyeste versjonen -->
+</dependency>
 ```
 
-## Deep Dive
+#### Lese en CSV-fil:
 
-CSV har vært et populært datautvekslingsformat siden 1970-tallet grunnet sin enkelhet. Alternativer som JSON eller XML tilbyr mer struktur og funksjoner, men CSV opprettholdes for kompatibilitet og brukervennlighet. Når det kommer til implementering, er det avgjørende å håndtere ulike skilletegn og tekstinnpakning, spesielt i internasjonale kontekster.
+```java
+import org.apache.commons.csv.CSVFormat;
+import org.apache.commons.csv.CSVParser;
+import org.apache.commons.csv.CSVRecord;
 
-## See Also
+import java.io.Reader;
+import java.io.FileReader;
+import java.io.IOException;
 
-- Apache Commons CSV: https://commons.apache.org/proper/commons-csv/
-- OpenCSV: http://opencsv.sourceforge.net/
-- Java API for JSON Processing: https://javaee.github.io/jsonp/
+public class ApacheReadCSVExample {
+    public static void main(String[] args) {
+        String csvFile = "data.csv";
+        try (Reader reader = new FileReader(csvFile);
+             CSVParser csvParser = new CSVParser(reader, CSVFormat.DEFAULT)) {
+            for (CSVRecord csvRecord : csvParser) {
+                // Tilgang til verdier ved indeksene til kolonnene
+                String columnOne = csvRecord.get(0);
+                String columnTwo = csvRecord.get(1);
+                System.out.println(columnOne + " " + columnTwo);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+#### Skrive til en CSV-fil:
+
+```java
+import org.apache.commons.csv.CSVFormat;
+import org.apache.commons.csv.CSVPrinter;
+
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class ApacheWriteCSVExample {
+    public static void main(String[] args) {
+        String[] headers = {"Fornavn", "Etternavn", "Alder", "By"};
+        String[] data = {"John", "Doe", "30", "New York"};
+
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("output.csv"));
+             CSVPrinter csvPrinter = new CSVPrinter(writer, CSVFormat.DEFAULT.withHeader(headers))) {
+            csvPrinter.printRecord((Object[]) data); // Støping til Object[] er nødvendig her
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+Apache Commons CSV håndterer kompleksiteter som anførselstegn og kommaer innen felt automatisk, og gjør det til et robust valg for CSV-manipulering i Java.

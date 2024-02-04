@@ -1,42 +1,80 @@
 ---
 title:                "Trabalhando com JSON"
-date:                  2024-01-19
+date:                  2024-02-03T19:23:03.945968-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Trabalhando com JSON"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/kotlin/working-with-json.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## O Que & Por Que?
-JSON (JavaScript Object Notation) é um formato leve para troca de dados. Programadores usam JSON porque ele é fácil de ler e escrever para humanos e é analisado (parsed) e gerado facilmente por máquinas.
+## O Que & Por Quê?
+Trabalhar com JSON (JavaScript Object Notation) em Kotlin envolve a análise e geração de dados JSON. Programadores fazem isso para trocar dados facilmente entre diferentes camadas de uma aplicação ou se comunicar com serviços web, devido ao formato leve e legível por humanos do JSON.
 
-## Como Fazer:
-```Kotlin
-import kotlinx.serialization.*
-import kotlinx.serialization.json.*
+## Como fazer:
+Kotlin não inclui suporte embutido para JSON, mas aproveita os recursos poderosos de bibliotecas de terceiros como `Gson`, do Google, e `Kotlinx.serialization`, da JetBrains. Aqui está como você pode usar ambos para trabalhar com JSON.
 
-// Definindo uma data class
-@Serializable
-data class Usuario(val nome: String, val idade: Int)
+### Usando Gson
+Adicione a dependência do Gson ao seu arquivo `build.gradle`:
+```kotlin
+implementation 'com.google.code.gson:gson:2.8.9'
+```
+
+Analisando uma string JSON para um objeto e vice-versa:
+```kotlin
+import com.google.gson.Gson
+
+// Defina uma classe de dados
+data class User(val name: String, val age: Int)
 
 fun main() {
-    // Serializando para JSON
-    val usuario = Usuario("Carlos", 29)
-    val json = Json.encodeToString(usuario)
-    println(json) // Saída: {"nome":"Carlos","idade":29}
+    val gson = Gson()
 
-    // Deserializando do JSON
-    val jsonString = """{"nome":"Ana","idade":34}"""
-    val usuarioObj = Json.decodeFromString<Usuario>(jsonString)
-    println(usuarioObj) // Saída: Usuario(nome=Ana, idade=34)
+    // Serializar
+    val json = gson.toJson(User("John Doe", 30))
+    println(json)  // Saída: {"name":"John Doe","age":30}
+
+    // Desserializar
+    val user: User = gson.fromJson(json, User::class.java)
+    println(user)  // Saída: User(name=John Doe, age=30)
 }
 ```
 
-## Mergulho Profundo
-O uso de JSON cresceu com a popularidade de APIs RESTful desde meados dos anos 2000, desbancando XML. Alternativas incluem YAML e Protocol Buffers, mas JSON mantém a liderança em uso por ser nativo em JavaScript e de fácil interação. Na implementação, Kotlin usa a biblioteca kotlinx.serialization para facilitar a conversão entre objetos Kotlin e JSON.
+### Usando Kotlinx.serialization
+Primeiro, inclua a dependência no seu `build.gradle`:
+```kotlin
+implementation "org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.3"
+```
 
-## Veja Também
-- Documentação oficial de Kotlin Serialization: [kotlinx.serialization](https://github.com/Kotlin/kotlinx.serialization)
-- Especificação JSON: [json.org](https://www.json.org/json-pt.html)
+Depois, aplique o plugin `kotlinx-serialization` no topo do seu script de construção:
+```kotlin
+plugins {
+    kotlin("jvm") version "1.6.10"
+    kotlin("plugin.serialization") version "1.6.10"
+}
+```
+
+Serializando e desserializando com Kotlinx.serialization:
+```kotlin
+import kotlinx.serialization.*
+import kotlinx.serialization.json.*
+
+// Defina uma classe de dados serializável
+@Serializable
+data class User(val name: String, val age: Int)
+
+fun main() {
+    // Serializar
+    val json = Json.encodeToString(User("Jane Doe", 28))
+    println(json)  // Saída: {"name":"Jane Doe","age":28}
+
+    // Desserializar
+    val user = Json.decodeFromString<User>(json)
+    println(user)  // Saída: User(name=Jane Doe, age=28)
+}
+```
+
+Tanto Gson quanto Kotlinx.serialization simplificam o trabalho com JSON em aplicações Kotlin, escolher um ou outro depende dos requisitos específicos do seu projeto e preferências pessoais.

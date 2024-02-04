@@ -1,42 +1,80 @@
 ---
-title:                "Maiuscolizzare una stringa"
-date:                  2024-01-19
-simple_title:         "Maiuscolizzare una stringa"
-
+title:                "Capitalizzare una stringa"
+date:                  2024-02-03T19:05:09.752457-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Capitalizzare una stringa"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/cpp/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Capitalizzare una stringa significa trasformare tutti i suoi caratteri in lettere maiuscole. I programmatori lo fanno per uniformità, enfasizzare qualcosa, o preparare i dati per confronti che non tengono conto della differenza tra maiuscole e minuscole.
+## Cos'è & Perché?
+Capitalizzare una stringa significa convertire il carattere iniziale di ogni parola nella stringa in maiuscolo, se esse sono in minuscolo, mantenendo inalterati i restanti caratteri. I programmatori spesso eseguono questo compito per formattare gli output, gli input degli utenti o per l'elaborazione dei dati al fine di garantire coerenza nel modo in cui il testo è presentato o elaborato, specialmente nelle interfacce utente o nei compiti di normalizzazione dei dati.
 
-## How to:
-```C++
+## Come fare:
+In C++, è possibile capitalizzare una stringa usando la libreria standard senza la necessità di librerie di terze parti. Tuttavia, per comportamenti di capitalizzazione più complessi o specifici, librerie come Boost possono essere molto utili. Di seguito sono illustrati esempi che mostrano entrambi gli approcci.
+
+### Usando la Libreria Standard C++:
+
+```cpp
 #include <iostream>
-#include <algorithm>
-#include <cctype>
+#include <cctype> // per std::tolower e std::toupper
 #include <string>
 
-int main() {
-    std::string testo = "Ciao, come va?";
-    std::transform(testo.begin(), testo.end(),testo.begin(), 
-        [](unsigned char c){ return std::toupper(c); });
+std::string capitalizzaStringa(const std::string& input) {
+    std::string risultato;
+    bool capitalizzaIlProssimo = true;
 
-    std::cout << testo << std::endl; // Output: CIAO, COME VA?
-    return 0;
+    for (char ch : input) {
+        if (std::isspace(ch)) {
+            capitalizzaIlProssimo = true;
+        } else if (capitalizzaIlProssimo) {
+            ch = std::toupper(ch);
+            capitalizzaIlProssimo = false;
+        }
+        risultato += ch;
+    }
+
+    return risultato;
+}
+
+int main() {
+    std::string testo = "hello world from c++";
+    std::string testoCapitalizzato = capitalizzaStringa(testo);
+    std::cout << testoCapitalizzato << std::endl; // Output: "Hello World From C++"
 }
 ```
 
-## Deep Dive
-Capitalizzare stringhe è una pratica comune da decenni. In C++, funzioni come `std::toupper` sono parte della libreria standard e fanno esattamente questo. Alternativamente, puoi scrivere il tuo ciclo per passare attraverso la stringa e usare `std::toupper` su ogni carattere. Prima di C++11, i programmatori usavano spesso cicli manuali, ma l’introduzione delle lambda functions e l'ampliamento delle funzionalità di `<algorithm>` hanno reso il codice più espressivo e compatto.
+### Usando la Libreria Boost:
 
-La funzione `std::toupper` funziona con `unsigned char` per evitare problemi di overflow con i caratteri firmati, quindi, quando usi questa funzione, è consigliabile effettuare un cast esplicito.
+Per manipolazioni di stringhe più avanzate, inclusa la capitalizzazione consapevole delle impostazioni locali, potresti voler usare la libreria Boost String Algo.
 
-Inoltre, in contesti non C++, come i database o le interfacce utente, capitalizzare potrebbe aiutare a garantire coerenza indipendentemente dall'input degli utenti.
+Prima di tutto, assicurati di avere la libreria Boost installata e configurata nel tuo progetto. Poi puoi includere gli header necessari e usare le sue funzionalità come mostrato di seguito.
 
-## See Also
-- Documentazione di `std::transform`: https://en.cppreference.com/w/cpp/algorithm/transform
-- Documentazione di `std::toupper`: https://en.cppreference.com/w/cpp/string/byte/toupper
-- Articolo di CPP Reference su lambda functions: https://en.cppreference.com/w/cpp/language/lambda
+```cpp
+#include <boost/algorithm/string.hpp>
+#include <iostream>
+#include <string>
+
+int main() {
+    std::string testo = "hello world from c++";
+    std::string testoCapitalizzato = testo;
+
+    // capitalizza la prima lettera di ogni parola
+    boost::algorithm::to_lower(testoCapitalizzato); // assicurandosi che la stringa sia in minuscolo
+    testoCapitalizzato[0] = std::toupper(testoCapitalizzato[0]); // capitalizza il primo carattere
+
+    for (std::size_t i = 1; i < testoCapitalizzato.length(); ++i) {
+        if (isspace(testoCapitalizzato[i - 1])) { // capitalizza dopo uno spazio
+            testoCapitalizzato[i] = std::toupper(testoCapitalizzato[i]);
+        }
+    }
+
+    std::cout << testoCapitalizzato << std::endl; // Output: "Hello World From C++"
+}
+```
+
+In questo caso, Boost semplifica alcune delle attività di manipolazione delle stringhe ma richiede comunque un approccio personalizzato per una vera capitalizzazione, poiché offre principalmente utilità di trasformazione e conversione di maiuscolo/minuscolo.

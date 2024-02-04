@@ -1,35 +1,62 @@
 ---
-title:                "Utilizando expressões regulares"
-date:                  2024-01-19
-simple_title:         "Utilizando expressões regulares"
-
+title:                "Usando expressões regulares"
+date:                  2024-02-03T19:16:33.965900-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Usando expressões regulares"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/elixir/using-regular-expressions.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## O Que é & Por Que Usar?
-Expressões regulares são padrões que definem conjuntos de strings. Programadores as utilizam para buscar, substituir e validar textos de maneira rápida e flexível.
+## O que & Por quê?
 
-## Como Fazer:
+Expressões regulares (regex) em Elixir são usadas para buscar, combinar e manipular strings baseadas em padrões específicos. Programadores utilizam regex para tarefas como validar formatos (email, URLs), analisar logs, ou extrair dados, graças à sua eficiência e versatilidade no manuseio de strings.
+
+## Como fazer:
+
+Elixir utiliza o módulo `Regex`, aproveitando a biblioteca regex do Erlang, para operações com regex. Aqui estão usos básicos:
+
 ```elixir
-# Encontrando padrões
-regex = ~r/hello/
-"Hola! Hello! Hallo!" |> String.split() |> Enum.filter(&Regex.match?(regex, &1))
-# Saída: ["Hello!"]
+# Combinando um padrão - Retorna a primeira combinação
+match_result = Regex.run(~r/hello/, "hello world")
+IO.inspect(match_result) # Saída: ["hello"]
 
-# Substituindo texto
-String.replace("2023 Ano do Café", ~r/\d+/, "2022")
-# Saída: "2022 Ano do Café"
+# Encontrando todas as combinações
+all_matches = Regex.scan(~r/\d/, "Há 2 maçãs e 5 laranjas.")
+IO.inspect(all_matches) # Saída: [["2"], ["5"]]
 
-# Validando um email
-Regex.match?(~r/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/, "exemplo@email.com")
-# Saída: true
+# Substituindo partes de uma string
+replaced_string = Regex.replace(~r/\s+/, "Elixir é divertido", "_")
+IO.inspect(replaced_string) # Saída: "Elixir_é_divertido"
 ```
 
-## Aprofundamento
-Expressões regulares, ou regex, surgiram na década de 1950, derivadas de teorias formais da computação e linguística. Alternativas a regex incluem o parseamento de strings com algoritmos específicos ou o uso de bibliotecas de análise sintática. Em Elixir, regex é implementado por meio da biblioteca Erlang `:re`, que por sua vez é baseada na biblioteca PCRE - Perl Compatible Regular Expressions.
+Para padrões e funcionalidades mais complexas, você pode considerar usar bibliotecas de terceiros, embora para a maioria das tarefas centrais de combinação e manuseio de strings e padrões, o módulo `Regex` incorporado ao Elixir é bastante poderoso.
 
-## Veja Também
-- [Documentação oficial de Regex em Elixir](https://hexdocs.pm/elixir/Regex.html)
+Para realizar uma combinação que não diferencia maiúsculas de minúsculas, use a opção `i`:
+
+```elixir
+case_insensitive_match = Regex.run(~r/hello/i, "Hello World")
+IO.inspect(case_insensitive_match) # Saída: ["Hello"]
+```
+
+Expressões regex podem ser pré-compiladas para eficiência quando usadas múltiplas vezes:
+
+```elixir
+precompiled_regex = Regex.compile!("hello")
+match_result_precompiled = Regex.run(precompiled_regex, "hello world")
+IO.inspect(match_result_precompiled) # Saída: ["hello"]
+```
+
+Elixir também suporta capturas nomeadas, que podem ser muito úteis para extrair partes específicas de uma string, tornando seu código mais legível:
+
+```elixir
+date_string = "2023-04-15"
+pattern = ~r/(?<year>\d{4})-(?<month>\d{2})-(?<day>\d{2})/
+{:ok, captures} = Regex.run(pattern, date_string, capture: :all_names)
+IO.inspect(captures) # Saída: %{"year" => "2023", "month" => "04", "day" => "15"}
+```
+
+Esta breve visão geral destaca a facilidade com que Elixir lida com expressões regulares, possibilitando técnicas poderosas de manipulação de strings e extração de dados.

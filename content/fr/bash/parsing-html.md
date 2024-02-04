@@ -1,55 +1,67 @@
 ---
-title:                "Analyse syntaxique de HTML"
-date:                  2024-01-20T15:30:05.820770-07:00
-simple_title:         "Analyse syntaxique de HTML"
-
+title:                "Analyse Syntaxique du HTML"
+date:                  2024-02-03T19:11:35.591596-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Analyse Syntaxique du HTML"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/bash/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Quoi et Pourquoi ?)
-Parser du HTML, c'est l'art de décortiquer et comprendre le contenu des pages web. On le fait pour extraire des infos, automatiser des tâches, ou alimenter des applis.
+## Quoi & Pourquoi ?
 
-## How to (Comment faire ?)
-```Bash
-# Utiliser curl pour récupérer le HTML
-html=$(curl -s https://exemple.com)
+L'analyse du HTML implique de passer au crible la structure et le contenu d'un fichier HTML pour en extraire des informations. Les programmeurs le font pour accéder à des données, manipuler du contenu ou gratter des sites web.
 
-# Utiliser grep pour extraire des données simples
-echo "$html" | grep -o '<title>[^<]*' | cut -d'>' -f2
+## Comment faire :
+
+Bash n'est pas l'outil de prédilection pour l'analyse du HTML, mais cela peut être réalisé avec des outils comme `grep`, `awk`, `sed`, ou des utilitaires externes comme `lynx`. Pour plus de robustesse, nous utiliserons `xmllint` du paquet `libxml2`.
+
+```bash
+# Installer xmllint si nécessaire
+sudo apt-get install libxml2-utils
+
+# Exemple de HTML
+cat > sample.html <<EOF
+<html>
+<head>
+  <title>Page Exemple</title>
+</head>
+<body>
+  <h1>Bonjour, Bash !</h1>
+  <p id="myPara">Bash peut me lire.</p>
+</body>
+</html>
+EOF
+
+# Analyser le Titre
+title=$(xmllint --html --xpath '//title/text()' sample.html 2>/dev/null)
+echo "Le titre est : $title"
+
+# Extraire le Paragraphe par ID
+para=$(xmllint --html --xpath '//*[@id="myPara"]/text()' sample.html 2>/dev/null)
+echo "Le contenu du paragraphe est : $para"
 ```
 
-Sortie échantillon:
+Sortie :
 ```
-Le titre de la page
-```
-
-```Bash
-# Pour des tâches plus complexes, utiliser xmllint
-echo "$html" | xmllint --html --xpath '//h1/text()' 2>/dev/null
+Le titre est : Page Exemple
+Le contenu du paragraphe est : Bash peut me lire.
 ```
 
-Sortie échantillon:
-```
-Le titre principal de la page
-```
+## Plongée en Profondeur
 
-## Deep Dive (Plongée en profondeur)
-Historiquement, analyser du HTML avec des outils de ligne de commande comme awk, sed ou grep était courant, mais ces outils ne sont pas conçus pour le HTML. Leurs résultats manquent de fiabilité avec des structures HTML complexes.
+Autrefois, les programmeurs utilisaient des outils basés sur des expressions régulières comme `grep` pour scanner le HTML, mais c'était peu pratique. Le HTML n'est pas régulier, il est contextuel. Les outils traditionnels ne saisissent pas cela et peuvent être sujets à erreurs.
 
-Alternatives:
-- **BeautifulSoup** pour Python, très populaire pour des raisons de flexibilité et de facilité d'utilisation.
-- **Nokogiri** pour Ruby, puissant et bien intégré.
-- **Goquery** pour Go, inspiré de jQuery pour les mordus de Go.
+Des alternatives ? Beaucoup. Python avec Beautiful Soup, PHP avec DOMDocument, JavaScript avec des parseurs DOM—des langues avec des bibliothèques conçues pour comprendre la structure du HTML.
 
-Détails d'implémentation: Quand on analyse du HTML, c'est essentiel de respecter la structure du document (DOM). Les alternatives comme xmllint utilisent des parseurs HTML, qui saisissent la structure du DOM, contrairement aux regex ou grep.
+Utiliser `xmllint` dans les scripts bash est solide pour des tâches simples. Il comprend le XML, et par extension, le XHTML. Le HTML régulier peut être imprévisible, toutefois. Il ne suit pas toujours les règles strictes du XML. `xmllint` force le HTML dans un modèle XML, ce qui fonctionne bien pour du HTML bien formé, mais peut trébucher sur des choses désordonnées.
 
-## See Also (Voir aussi)
-- Documentations `curl`: https://curl.haxx.se/docs/manpage.html
-- Tutoriel `grep`: https://www.gnu.org/software/grep/manual/grep.html
-- `xmllint`: http://xmlsoft.org/xmllint.html
-- BeautifulSoup: https://www.crummy.com/software/BeautifulSoup/
-- Nokogiri: https://nokogiri.org/
-- Goquery: https://github.com/PuerkitoBio/goquery
+## Voir également
+
+- [W3Schools - Analyseur DOM HTML](https://www.w3schools.com/xml/dom_intro.asp) : Démystifie le DOM HTML.
+- [MDN Web Docs - Analyse et sérialisation du XML](https://developer.mozilla.org/fr/docs/Web/Guide/Parsing_and_serializing_XML) : Pour les principes d'analyse XML applicables au XHTML.
+- [Documentation de Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/) : Une bibliothèque Python pour l'analyse du HTML.
+- [Documentation de libxml2](http://xmlsoft.org/) : Détails sur `xmllint` et les outils XML associés.

@@ -1,57 +1,67 @@
 ---
-title:                "Wykorzystanie wyrażeń regularnych"
-date:                  2024-01-19
-simple_title:         "Wykorzystanie wyrażeń regularnych"
-
+title:                "Korzystanie z wyrażeń regularnych"
+date:                  2024-02-03T19:18:30.430938-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Korzystanie z wyrażeń regularnych"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/swift/using-regular-expressions.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Co i dlaczego?
-RegEx, czyli wyrażenia regularne, to wzorce szukania i manipulowania tekstami. Programiści używają ich do weryfikacji, podziału lub modyfikacji ciągów znaków, szybko i elastycznie.
+Wyrażenia regularne, czyli regex, to sekwencje znaków, które tworzą wzorzec wyszukiwania, często używane do zadań dopasowywania lub manipulacji ciągami znaków. Programiści wykorzystują je do wszystkiego, począwszy od walidacji danych, analizy, po transformacje, czyniąc je niezbędnym narzędziem w przetwarzaniu i manipulacji tekstem w różnych językach programowania, w tym w Swift.
 
 ## Jak to zrobić:
-Wyrażenia regularne w Swift używasz poprzez `NSRegularExpression`. Przykład:
+Natywne wsparcie Swifta dla regex wykorzystuje klasę `NSRegularExpression`, razem z metodami zakresu i zastąpienia klasy String. Poniżej znajduje się przykład użycia regex, aby znaleźć i wyróżnić adresy e-mail w bloku tekstu:
 
-```Swift
+```swift
 import Foundation
 
-let sampleText = "Jabłka są zielone i czerwone."
+let text = "Contact us at support@example.com or feedback@example.org for more information."
+let regexPattern = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
 
-if let regex = try? NSRegularExpression(pattern: "\\bzielone\\b", options: .caseInsensitive) {
-    let range = NSRange(location: 0, length: sampleText.utf16.count)
-    if regex.firstMatch(in: sampleText, options: [], range: range) != nil {
-        print("Znaleziono dopasowanie!")
+do {
+    let regex = try NSRegularExpression(pattern: regexPattern)
+    let matches = regex.matches(in: text, range: NSRange(text.startIndex..., in: text))
+
+    if !matches.isEmpty {
+        for match in matches {
+            let range = Range(match.range, in: text)!
+            print("Znaleziono: \(text[range])")
+        }
     } else {
-        print("Brak dopasowania.")
+        print("Nie znaleziono dopasowań.")
+    }
+} catch {
+    print("Błąd regex: \(error.localizedDescription)")
+}
+
+// Przykładowe wyjście:
+// Znaleziono: support@example.com
+// Znaleziono: feedback@example.org
+```
+
+Dla bardziej złożonych lub bardziej wygodnych scenariuszy możesz użyć bibliotek stron trzecich, takich jak SwiftRegex, które upraszczają składnię i rozszerzają możliwości. Chociaż biblioteka standardowa Swifta jest potężna, niektórzy programiści preferują te biblioteki ze względu na ich zwięzłą składnię i dodatkowe funkcje. Oto jak można by wykonać podobne zadanie, używając hipotetycznej biblioteki stron trzecich:
+
+```swift
+// Zakładając, że istnieje biblioteka o nazwie SwiftRegex i jest zaimportowana
+let text = "Reach out at hello@world.com or visit our website."
+let emailPattern = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
+
+let emails = text.matches(for: emailPattern) // Hipotetyczna metoda dostarczona przez SwiftRegex
+if emails.isEmpty {
+    print("Nie znaleziono adresów email.")
+} else {
+    emails.forEach { email in
+        print("Znaleziono: \(email)")
     }
 }
+
+// Hipotetyczne wyjście zakładając, że metoda `matches(for:)` istnieje w SwiftRegex:
+// Znaleziono: hello@world.com
 ```
 
-Output:
-```
-Znaleziono dopasowanie!
-```
-
-Zamiana tekstu:
-
-```Swift
-let replacedText = regex.stringByReplacingMatches(in: sampleText, options: [], range: range, withTemplate: "pomarańczowe")
-print(replacedText)
-```
-
-Output:
-```
-Jabłka są pomarańczowe i czerwone.
-```
-
-## Deep Dive
-Wyrażenia regularne mają swoje korzenie w teorii języków formalnych i automatach – matematycy jak Stephen Kleene zdefiniowali je w latach 50. Alternatywnie, do manipulacji tekstami można wykorzystać metody `String`, ale są one mniej wydajne dla skomplikowanych wzorców. Implementacja RegEx w Swift używa bibliotek Foundation i jest kompatybilna z wyrażeniami regularnymi POSIX.
-
-## See Also
-Świetne źródła do nauki i eksperymentowania z wyrażeniami regularnymi:
-- [NSRegularExpression Apple Documentation](https://developer.apple.com/documentation/foundation/nsregularexpression)
-- [RegExr](https://regexr.com/) – narzędzie online do testowania wyrażeń regularnych.
-- [Swift Algorithms Club - Regular Expressions Tutorial](https://www.raywenderlich.com/86205/nsregularexpression-swift-tutorial)
+Przykład ten ilustruje, jak używać zewnętrznego pakietu wyrażeń regularnych do uproszczenia znajdowania dopasowań w ciągu znaków, zakładając, że istnieją takie wygodne metody jak `matches(for:)`. Ważne jest, aby odwołać się do odpowiedniej dokumentacji biblioteki stron trzecich, aby uzyskać dokładną składnię i dostępność metod.

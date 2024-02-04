@@ -1,47 +1,70 @@
 ---
 title:                "Obteniendo la fecha actual"
-date:                  2024-01-20T15:13:53.793567-07:00
+date:                  2024-02-03T19:09:25.678498-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Obteniendo la fecha actual"
-
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/elixir/getting-the-current-date.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Qué y Por Qué?
-Obtener la fecha actual en Elixir significa acceder al calendario y al reloj del sistema para saber el momento presente. Los programadores necesitan esta información para tareas como registrar eventos, calcular plazos o mostrar fechas a los usuarios.
+Obtener la fecha actual en Elixir implica acceder a la información de fecha y hora del sistema, una tarea común para registrar, marcar datos o cualquier funcionalidad que requiera conocimiento de la fecha actual. Esta operación es esencial para crear aplicaciones conscientes del tiempo y para tareas como generar informes o timestamps en una aplicación web.
 
 ## Cómo hacerlo:
-Aquí tienes un ejemplo sencillo de cómo obtener la fecha actual en Elixir:
+La biblioteca estándar de Elixir, a través del módulo `DateTime`, permite obtener la fecha y hora actuales. Dado que Elixir se ejecuta en la VM de Erlang (BEAM), aprovecha las funcionalidades subyacentes de Erlang para las operaciones de tiempo.
+
+### Usando la Biblioteca Estándar de Elixir
+Elixir proporciona la función `DateTime.utc_now/0` para obtener la fecha y hora actuales en UTC.
 
 ```elixir
-# Importamos el módulo DateTime
-alias DateTime
-
-# Obtenemos la fecha y hora actual en UTC
-ahora = DateTime.utc_now()
-
-# Imprimimos la fecha y hora actual
-IO.puts DateTime.to_string(ahora)
+current_datetime_utc = DateTime.utc_now()
+IO.inspect(current_datetime_utc)
 ```
 
-Cuando ejecutes este código, verás algo así como la siguiente salida (la fecha y hora variarán según el momento en que se ejecute):
-
+**Salida de Ejemplo:**
 ```
-"2023-04-01T12:34:56Z"
+#DateTime<2023-05-04 15:00:00Z>
 ```
 
-## Profundización:
-Históricamente, manejar fechas y horas ha sido un lío por las distintas zonas horarias y formatos. Elixir, lanzado en 2011, utiliza los módulos `DateTime`, `Date`, y `Time` del paquete `Calendar` para abordar estos temas de manera sencilla y eficaz.
+Para obtener solo la fecha actual, se pueden extraer los componentes de año, mes y día:
 
-Respecto a alternativas, se puede utilizar la librería `Timex`, que es una extensión de las capacidades de manipulación de fecha y hora en Elixir.
+```elixir
+{:ok, current_date} = Date.new(current_datetime_utc.year, current_datetime_utc.month, current_datetime_utc.day)
+IO.inspect(current_date)
+```
 
-En cuanto a la implementación, `DateTime.utc_now()` obtiene la fecha y hora actual en UTC. Si necesitas la hora en una zona específica, puedes convertir la hora UTC a otra zona con `DateTime.shift_zone/3`.
+**Salida de Ejemplo:**
+```
+~D[2023-05-04]
+```
 
-## Ver También:
-Aquí tienes algunos enlaces que te podrían ser útiles para profundizar:
+### Utilizando la Biblioteca Timex
+Para requisitos de fecha y hora más complejos, se puede utilizar una biblioteca de terceros popular llamada Timex. Primero, añade `Timex` a tus dependencias en mix.exs:
 
-- Documentación oficial de Elixir sobre la fecha y hora: https://hexdocs.pm/elixir/DateTime.html
-- Timex, una librería Elixir rica en funciones para trabajar con fechas y horas: https://hexdocs.pm/timex/readme.html
-- Zonas horarias en Elixir con el módulo `TZData`: https://hexdocs.pm/tzdata/readme.html
+```elixir
+defp deps do
+  [
+    {:timex, "~> 3.7"}
+  ]
+end
+```
+
+Después de instalar la dependencia (`mix deps.get`), puedes usar Timex para obtener la fecha actual:
+
+```elixir
+current_date = Timex.today()
+IO.inspect(current_date)
+```
+
+**Salida de Ejemplo:**
+```
+~D[2023-05-04]
+```
+
+Timex ofrece funcionalidades extensas para la manipulación de fecha-hora, convirtiéndolo en una poderosa adición a tus aplicaciones Elixir, especialmente cuando se trata de zonas horarias, formateo y análisis de fechas y horas.
+
+Al entender y utilizar las capacidades integradas de Elixir y la biblioteca Timex, puedes trabajar fácilmente con fechas y horas en tus aplicaciones Elixir, adaptando la experiencia a las necesidades de tu aplicación con precisión y facilidad.

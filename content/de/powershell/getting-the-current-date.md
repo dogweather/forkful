@@ -1,55 +1,85 @@
 ---
-title:                "Aktuelles Datum abrufen"
-date:                  2024-01-20T15:15:47.984087-07:00
-simple_title:         "Aktuelles Datum abrufen"
-
+title:                "Den aktuellen Datum abrufen"
+date:                  2024-02-03T19:10:23.285344-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Den aktuellen Datum abrufen"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/powershell/getting-the-current-date.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Das Abrufen des aktuellen Datums ist einfach das Erfragen des jetzigen Tages nach Jahr, Monat und Tag. Programmierer nutzen diesen Befehl, um Zeitstempel zu setzen, tägliche Tasks zu planen oder um zeitabhängige Funktionen auszuführen.
 
-## How to:
-Der einfachste Weg, das aktuelle Datum in PowerShell zu erhalten, ist der `Get-Date` Befehl. Hier ein paar Beispiele:
+Das Abrufen des aktuellen Datums in PowerShell handelt davon, das aktuelle Datum und die Zeit des Systems zu ermitteln. Diese Operation ist grundlegend für Aufgaben wie Protokollierung, Zeitmessung oder Entscheidungsfindung auf Basis von Daten. Programmierer nutzen diese Fähigkeit, um Ereignisse zu verfolgen, Aufgaben zu planen und datumsbezogene Logik in Skripten und Anwendungen zu handhaben.
 
-```PowerShell
-# Hol dir das komplette aktuelle Datum und die Uhrzeit
+## Wie geht das:
+
+PowerShell bietet unkomplizierte Cmdlets zum Abrufen von Datum und Uhrzeit. Das Cmdlet `Get-Date` ist das primäre Werkzeug zu diesem Zweck. Es kann das vollständige Datum und die Uhrzeit zurückgeben, welche Sie nach Ihren Bedürfnissen formatieren oder manipulieren können.
+
+```powershell
+# Das aktuelle Datum und Uhrzeit abrufen
 Get-Date
+```
 
-# Formatierung auf das Datum beschränken
+**Beispielausgabe:**
+
+```
+Dienstag, 5. September 2023 9:46:02 AM
+```
+
+Sie können auch das Ausgabeformat anpassen, um nur die Informationen anzuzeigen, die Sie benötigen, wie nur das Datum oder nur die Uhrzeit.
+
+```powershell
+# Nur das aktuelle Datum in einem spezifischen Format erhalten
 Get-Date -Format "yyyy-MM-dd"
+```
 
-# Nur die Uhrzeit erhalten
+**Beispielausgabe:**
+
+```
+2023-09-05
+```
+
+```powershell
+# Nur die aktuelle Uhrzeit erhalten
 Get-Date -Format "HH:mm:ss"
 ```
 
-Sample Output:
+**Beispielausgabe:**
 
-```PowerShell
-# Beispiel für komplettes Datum und Uhrzeit
-Freitag, 21. April 2023 15:41:34
-
-# Beispiel für reines Datum
-2023-04-21
-
-# Beispiel für reine Uhrzeit
-15:41:34
+```
+09:46:02
 ```
 
-## Deep Dive:
-PowerShell verwendet `Get-Date` seit seiner Entstehung. Es ist eine Anpassung früherer Kommandozeilenfunktionen, die sich über die Jahre weiterentwickelt hat. 
+### Nutzung der .NET Klasse
 
-Alternativen:
-- `System.DateTime` Klasse aus .NET in PowerShell verwenden.
-- Windows Command Line nutzen (`time` oder `date` Befehle), allerdings weniger flexibel.
+PowerShell ermöglicht den direkten Zugriff auf .NET-Klassen und bietet eine alternative Möglichkeit, mit Daten und Zeiten zu arbeiten.
 
-Implementierungsdetails:
-`Get-Date` ruft Informationen vom System über .NET-Funktionen ab. Du kannst es mit weiteren Parametern wie `-UFormat` für UNIX-Formatierung oder `-DisplayHint` verwenden, um gezielt Datum, Uhrzeit oder beides anzuzeigen.
+```powershell
+# Die aktuelle Datum und Uhrzeit mit der .NET DateTime-Klasse abrufen
+[System.DateTime]::Now
+```
 
-## See Also:
-- PowerShell-Dokumentation zu `Get-Date`: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-date
-- .NET DateTime-Klasse: https://docs.microsoft.com/dotnet/api/system.datetime
-- Formatierung von Datum und Uhrzeit in PowerShell: https://docs.microsoft.com/powershell/scripting/learn/deep-dives/everything-about-datetime
+**Beispielausgabe:**
+
+```
+Dienstag, 5. September 2023 9:46:02 AM
+```
+
+Für UTC-Zeit:
+
+```powershell
+# Die aktuelle UTC Datum und Uhrzeit mit der .NET DateTime-Klasse abrufen
+[System.DateTime]::UtcNow
+```
+
+**Beispielausgabe:**
+
+```
+Dienstag, 5. September 2023 1:46:02 PM
+```
+
+Diese Befehle und Klassen bieten leistungsstarke und flexible Optionen für die Arbeit mit Daten und Zeiten in PowerShell, die für viele Skript- und Automatisierungsaufgaben unerlässlich sind.

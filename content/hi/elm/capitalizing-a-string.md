@@ -1,43 +1,53 @@
 ---
-title:                "स्ट्रिंग को कैपिटलाइज़ करना"
-date:                  2024-01-19
-simple_title:         "स्ट्रिंग को कैपिटलाइज़ करना"
-
+title:                "स्ट्रिंग को कैपिटलाइज करना"
+date:                  2024-02-03T19:05:55.328571-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "स्ट्रिंग को कैपिटलाइज करना"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/elm/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (क्या और क्यों?)
-स्ट्रिंग को कैपिटलाइज़ करना मतलब होता है कि एक टेक्स्ट में प्रत्येक शब्द का पहला अक्षर बड़ा (या अपरकेस) होना। प्रोग्रामर अक्सर विशिष्ट शब्दों को हाइलाइट करने, हेडिंग्स या टाइटल्स को फॉर्मेट करने के लिए स्ट्रिंग्स को कैपिटलाइज़ करते हैं।
+## क्या और क्यों?
 
-## How to: (कैसे करें:)
-Elm में String module एक built-in function `toUpper` प्रदान करता है जिसे कैपिटलाइज़ करने के लिए इस्तेमाल किया जा सकता है।
+एक स्ट्रिंग को बड़े अक्षर में बदलना मतलब एक दी गई स्ट्रिंग के प्रारंभिक अक्षर को ऊपरी मामले (uppercase) में परिवर्तित करना जबकि बाकी को छोटे मामले (lowercase) में रखना, अक्सर मानकीकृत फॉर्मेटिंग या पढ़ने योग्यता के उद्देश्यों के लिए। प्रोग्रामर अक्सर यह कार्य करते हैं ताकि सुनिश्चित किया जा सके कि डेटा सुसंगत रूप से प्रस्तुत किया जाता है, विशेषकर उपयोगकर्ता इंटरफेस में या जब उपयोगकर्ता इनपुट की प्रक्रिया करते हुए और प्रदर्शित करते हुए।
 
-```Elm
-import String
+## कैसे:
 
-capitalizeString : String -> String
-capitalizeString str =
-    String.toUpper str
+Elm में, स्ट्रिंग्स को बड़े अक्षर में बदलने के लिए विशेष रूप से कोई निर्मित फंक्शन नहीं है। हालांकि, आप `toUpper`, `toLower`, `left`, और `dropLeft` जैसे निर्मित `String` मॉड्यूल फंक्शनों का उपयोग करके आसानी से यह प्राप्त कर सकते हैं।
 
+```elm
+capitalize : String -> String
+capitalize str =
+    if String.isEmpty str then
+        ""
+    else
+        String.toUpper (String.left 1 str) ++ String.toLower (String.dropLeft 1 str)
+
+-- उदाहरण उपयोग
 main =
-    String.words "नमस्ते दुनिया!" |> List.map capitalizeString |> String.join " "
+    String.toList "hello world" |> List.map capitalize |> String.join " "
+    -- आउटपुट: "Hello World"
 ```
 
-उपरोक्त एक्ज़ाम्पल में, `capitalizeString` फंक्शन सभी इनपुट स्ट्रिंग्स को अपरकेस में बदल देता है। सैंपल आउटपुट होगा:
+अधिक जटिल परिदृश्यों के लिए या यदि आप सीधे तरीके से स्ट्रिंग्स को बड़े अक्षर में बदलने के लिए एक पुस्तकालय का उपयोग करना पसंद करते हैं, तो आप एक तृतीय-पक्ष पैकेज जैसे `elm-community/string-extra` पर विचार कर सकते हैं। हालांकि, मेरे आखिरी अपडेट के अनुसार, Elm का पारिस्थितिकी तंत्र भाषा और परियोजनाओं को लीन रखने के लिए ऐसे कार्यों को निर्मित फंक्शनों का उपयोग करके निपटाने का प्रोत्साहन देता है।
 
+```elm
+import String.Extra as StringExtra
+
+-- यदि तृतीय-पक्ष पुस्तकालय में `capitalize` फंक्शन मौजूद हो
+capitalizeWithLibrary : String -> String
+capitalizeWithLibrary str =
+    StringExtra.capitalize str
+
+-- काल्पनिक पुस्तकालय फंक्शन के साथ उदाहरण उपयोग
+main =
+    "this is elm" |> capitalizeWithLibrary
+    -- काल्पनिक आउटपुट: "This is elm"
 ```
-"नमस्ते दुनिया!"
-```
 
-## Deep Dive (गहराई से जानकारी)
-स्ट्रिंग कैपिटलाइजेशन पहले महत्वपूर्ण था जब कम्प्यूटर्स के इंटरफेस पत्रिकाओं और टाइपराइटर्स से प्रेरित थे। आज भी यह उपयोगी है जैसे कि प्रोटोकॉल और एपीआई में के-वैल्यू पेयर्स की कुंजियों में। Elm में, `String.toUpper` को पूरे स्ट्रिंग कैपिटलाइजेशन के लिए इस्तेमाल किया जाता है, और अब तक इबिल्ट `capitalize` फंक्शन मौजूद नहीं है।
-
-जैसा कि Elm एक purely functional language है, आपको अपने `capitalize` फंक्शन को लिखने के लिए इम्यूटेबल डेटा स्ट्रक्चर्स और फंक्शन्स का इस्तेमाल करना चाहिए। यह कीपॉइंट ईकोसिस्टम में स्थिरता और प्रिडिक्टेबिलिटी लाते हैं।
-
-## See Also (देखें भी)
-- Elm `String` module documentation: [https://package.elm-lang.org/packages/elm/core/latest/String](https://package.elm-lang.org/packages/elm/core/latest/String)
-- Elm style guide for string manipulation: [https://elm-lang.org/docs/style-guide](https://elm-lang.org/docs/style-guide)
-- Elm-community/string-extra package for additional string functions: [https://package.elm-lang.org/packages/elm-community/string-extra/latest/](https://package.elm-lang.org/packages/elm-community/string-extra/latest/)
+यदि आप मानक पुस्तकालय से परे अतिरिक्त कार्यक्षमता की तलाश में हैं, तो हमेशा ताजा और सबसे पसंदीदा स्ट्रिंग मैन
+िपुलेशन पुस्तकालयों के लिए Elm पैकेज रिपोजिटरी की जांच करें।

@@ -1,48 +1,63 @@
 ---
 title:                "テストの作成"
-date:                  2024-01-19
+date:                  2024-02-03T19:31:33.784791-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "テストの作成"
-
 tag:                  "Testing and Debugging"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/python/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (何となぜ？)
-テストコードを書くことで、プログラムが期待通りに動くことを確認します。バグを早期に発見し、品質を保つためにプログラマーはテストをします。
+## 何を、なぜ？
+Pythonでテストを記述するとは、コードの正しさを検証する自動スクリプトを作成することを意味します。プログラマーはこれを行うことで、様々な条件下でその関数やクラスが期待通りに動作することを保証し、エラーを早期に発見し、保守やリファクタリングを容易にします。
 
-## How to: (方法)
-```Python
-# sample.py
+## 方法：
+Pythonには`unittest`というテストを記述するための組み込みモジュールが付属しています。これを使用してシンプルな関数をテストする方法は次のとおりです：
+
+```python
+import unittest
+
 def add(a, b):
     return a + b
 
-# test_sample.py
-import unittest
-from sample import add
-
 class TestAddFunction(unittest.TestCase):
     def test_add(self):
-        self.assertEqual(add(2, 3), 5)
+        self.assertEqual(add(1, 2), 3)
+        self.assertEqual(add(-1, 1), 0)
+        self.assertNotEqual(add(10, 2), 12, "12であるべき")
 
 if __name__ == '__main__':
     unittest.main()
 ```
-サンプル出力:
+
+このテストスクリプトを実行すると、テストが通過したか（または失敗したか）を示す出力を見ることができます。
+
+よりモダンで表現力豊かなテストを行うには、`pytest`のようなサードパーティのライブラリを使用できます。まず、pipを使用してインストールする必要があります：
+
+```shell
+pip install pytest
 ```
-.
-----------------------------------------------------------------------
-Ran 1 test in 0.000s
 
-OK
+その後、何もサブクラス化する必要なく、よりシンプルにテストを記述できます：
+
+```python
+# test_with_pytest.pyという名前のファイルにこれを保存
+def add(a, b):
+    return a + b
+
+def test_add():
+    assert add(1, 2) == 3
+    assert add(-1, 1) == 0
+    assert add(10, 2) != 12, "12であるべき"
 ```
 
-## Deep Dive (深掘り)
-テストは1970年代に始まり、Extreme Programmingへと進化しました。代替手法にはTDD（テスト駆動開発）があります。Pythonでは`unittest`が標準のテストフレームワークですが、`pytest`や`nose`などのサードパーティ製のツールもあります。また、モックオブジェクトを使用して外部システムとの連携をテスト擬似的に行うこともできます。
+`pytest`を使用してテストを実行するには、単に実行してください：
 
-## See Also (関連情報)
-- Pythonの公式ドキュメント: [unittest — Unit testing framework](https://docs.python.org/3/library/unittest.html)
-- pytest: [https://docs.pytest.org/en/stable/](https://docs.pytest.org/en/stable/)
-- TDDについて: [テスト駆動開発](https://ja.wikipedia.org/wiki/テスト駆動開発)
+```shell
+pytest test_with_pytest.py
+```
+
+pytestからテスト結果を示す出力を見ることができるでしょう。

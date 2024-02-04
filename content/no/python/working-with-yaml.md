@@ -1,68 +1,100 @@
 ---
-title:                "Arbeid med YAML"
-date:                  2024-01-19
-simple_title:         "Arbeid med YAML"
-
+title:                "Arbeider med YAML"
+date:                  2024-02-03T19:26:43.779613-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Arbeider med YAML"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/python/working-with-yaml.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Hva & Hvorfor?
-YAML er et dataformat som leser og skriver data på en måte som er lett for folk å lese og skrive. Programmerere bruker YAML for konfigurasjonsfiler og datalagring på grunn av dens klare syntaks.
+## Hva og hvorfor?
+YAML, som står for YAML Ain't Markup Language, er et menneskelesbart data serialiseringsformat. Programmerere bruker YAML for konfigurasjonsfiler, inter-prosessmeldinger og datalagring på grunn av dens enkle syntaks og lettlesthed sammenlignet med andre formater som XML eller JSON.
 
-## How to:
-For å jobbe med YAML i Python, trenger du `PyYAML`, et bibliotek som kan installeres med pip:
+## Hvordan:
+Å lese og skrive YAML i Python innebærer vanligvis bruk av et tredjeparts bibliotek, med `PyYAML` som det mest populære. For å komme i gang, må du installere PyYAML ved å kjøre `pip install PyYAML`.
 
-```Python
-pip install PyYAML
-```
+**Eksempel: Skrive til en YAML-fil**
 
-Last inn YAML i Python:
-
-```Python
+```python
 import yaml
 
-# Lese YAML-string
-yaml_data = """
-en: Hello
-no: Hei
-"""
+data = {'en liste': [1, 42, 3.141, 1337, 'hjelp', u'€'],
+        'en streng': 'boo!',
+        'en annen ordbok': {'foo': 'bar', 'nøkkel': 'verdi', 'svaret': 42}}
 
-data = yaml.safe_load(yaml_data)
-print(data['no'])
+with open('eksempel.yaml', 'w') as f:
+    yaml.dump(data, f, default_flow_style=False)
+
+# Dette skaper `eksempel.yaml` med data strukturert i YAML-format.
 ```
 
-Output:
+**Eksempel: Lese fra en YAML-fil**
 
-```
-Hei
-```
-
-Skrive til YAML:
-
-```Python
+```python
 import yaml
 
-data_to_write = {'en': 'Goodbye', 'no': 'Ha det'}
+with open('eksempel.yaml', 'r') as f:
+    data_loaded = yaml.safe_load(f)
 
-# Skrive data til YAML-string
-yaml_data = yaml.dump(data_to_write, allow_unicode=True)
-print(yaml_data)
+print(data_loaded)
+
+# Utdata: 
+# {'en liste': [1, 42, 3.141, 1337, 'hjelp', '€'],
+#  'en streng': 'boo!',
+#  'en annen ordbok': {'foo': 'bar', 'nøkkel': 'verdi', 'svaret': 42}}
 ```
 
-Output:
+**Bruk av YAML for konfigurasjon**
 
+Mange programmerere bruker YAML for å håndtere applikasjonskonfigurasjoner. Her er et eksempel på hvordan man kan strukturere en konfigfil og lese den:
+
+config.yaml:
 ```yaml
-en: Goodbye
-no: Ha det
+database:
+  vert: localhost
+  port: 5432
+  brukernavn: admin
+  passord: hemmelig
 ```
 
-## Deep Dive
-YAML, som står for "YAML Ain't Markup Language", startet rundt 2001. Det er ment som et brukervennlig alternativ til XML for data serialisering. JSON er et annet alternativ, men YAML er ofte foretrukket for konfigurasjonsfiler der lesbarhet er viktig. Ved implementering i Python, `PyYAML` tilbyr både low-level og high-level APIer for å håndtere YAML data, med `safe_load` og `safe_dump` å anbefale for å unngå å kjøre skadelig kode gjennom YAML.
+Lese konfigurasjonsfilen i Python:
+```python
+import yaml
 
-## See Also
-- Offisiell YAML-nettside: [https://yaml.org/](https://yaml.org/)
-- PyYAML-dokumentasjon: [https://pyyaml.org/wiki/PyYAMLDocumentation](https://pyyaml.org/wiki/PyYAMLDocumentation)
-- YAML-spesifikasjon: [https://yaml.org/spec/1.2/spec.html](https://yaml.org/spec/1.2/spec.html)
+with open('config.yaml', 'r') as f:
+    config = yaml.safe_load(f)
+
+print(config['database']['vert'])  # Utdata: localhost
+```
+
+**Håndtering av komplekse strukturer**
+
+For komplekse strukturer tillater PyYAML at du definerer tilpassede Python-objekter. Pass imidlertid på å bruke sikre metoder ved å benytte `safe_load` for å unngå utførelse av vilkårlige funksjoner eller objekter.
+
+```python
+import yaml
+
+# Definer et Python-objekt
+class Eksempel:
+    def __init__(self, verdi):
+        self.verdi = verdi
+
+# Tilpasset konstruktør
+def konstruktør_eksempel(laster, node):
+    verdi = laster.construct_scalar(node)
+    return Eksempel(verdi)
+
+# Legg til konstruktør for merket "!eksempel"
+yaml.add_constructor('!eksempel', konstruktør_eksempel)
+
+yaml_str = "!eksempel 'data'"
+lastet = yaml.load(yaml_str, Loader=yaml.FullLoader)
+
+print(lastet.verdi)  # Utdata: data
+```
+
+I dette utdraget er `!eksempel` et tilpasset merke brukt til å instansiere et `Eksempel` objekt med verdien 'data' fra en YAML-streng. Tilpassede lastere som dette utvider fleksibiliteten til PyYAML, som gjør det mulig å behandle mer komplekse datastrukturer og typer.

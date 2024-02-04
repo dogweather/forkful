@@ -1,53 +1,93 @@
 ---
 title:                "Travailler avec YAML"
-date:                  2024-01-19
+date:                  2024-02-03T19:26:08.129720-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Travailler avec YAML"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/lua/working-with-yaml.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-YAML, c'est quoi? Du texte lisible qui structure des données, comme le JSON mais plus simple. Pourquoi? Faciliter la configuration, l'échange de données et le debug. YAML, c'est cool, c'est clair.
+## Quoi & Pourquoi ?
 
-## How to:
-Pas de bibliothèque YAML intégrée en Lua, mais on peut utiliser `lyaml` pour faire le job. Installation avec `luarocks install lyaml`. Voici un petit exemple:
+YAML, acronyme de "YAML Ain't Markup Language" (YAML n'est pas un langage de balisage), est un standard de sérialisation de données lisible par l'homme, souvent utilisé pour les fichiers de configuration et l'échange de données entre langages. Les programmeurs exploitent YAML en raison de sa simplicité et de sa lisibilité, ce qui en fait un choix privilégié pour les paramètres, les configurations d'applications diverses, ou le contenu devant être modifiable par des non-programmeurs.
 
-```Lua
-local lyaml = require('lyaml')
+## Comment faire :
 
--- Charger du YAML
-local yaml_text = [[
-- Poutine
-- Baguette
-- Fromage
-]]
+Lua n'intègre pas de support pour YAML, mais vous pouvez travailler avec des fichiers YAML en utilisant des bibliothèques tierces telles que `lyaml`. Cette bibliothèque permet de coder et décoder des données YAML avec Lua. Tout d'abord, vous devrez installer `lyaml` via LuaRocks, le gestionnaire de paquets de Lua :
 
-local data = lyaml.load(yaml_text)
-print(data[1])  -- Affiche "Poutine"
-
--- Convertir en YAML
-local lua_table = { "Pomme", "Orange", "Banane" }
-local yaml_converted = lyaml.dump(lua_table)
-print(yaml_converted)
+```bash
+luarocks install lyaml
 ```
 
-Sortie:
-```
-Poutine
-- Pomme
-- Orange
-- Banane
+### Décodage de YAML :
+
+Supposons que vous ayez le contenu YAML suivant dans un fichier nommé `config.yaml` :
+
+```yaml
+database:
+  host: localhost
+  port: 3306
+  username: utilisateur
+  password: motdepasse
 ```
 
-## Deep Dive
-YAML est né en 2001, pour fusionner les points forts de plusieurs langages (XML, etc.). Alternatives? JSON pour la data, TOML pour les configs. Détaillé : YAML fait la map avec les tables Lua. Attention : complexité des types, respectez les bonnes pratiques.
+Vous pouvez décoder ce fichier YAML en une table Lua avec le code suivant :
 
-## See Also
-- YAML officiel : https://yaml.org
-- lyaml sur GitHub : https://github.com/gvvaughan/lyaml
-- LuaRocks lyaml : https://luarocks.org/modules/gvvaughan/lyaml
-- JSON en Lua : https://www.json.org/json-fr.html
-- TOML : https://toml.io/fr/
+```lua
+local yaml = require('lyaml')
+local file = io.open("config.yaml", "r")
+local content = file:read("*all")
+file:close()
+
+local data = yaml.load(content)
+for k,v in pairs(data.database) do
+  print(k .. ": " .. v)
+end
+```
+
+Lorsque vous exécutez ce script, il devrait afficher :
+
+```output
+host: localhost
+port: 3306
+username: utilisateur
+password: motdepasse
+```
+
+### Encodage en YAML :
+
+Pour encoder des tables Lua au format YAML, vous utilisez la fonction `dump` fournie par `lyaml`. Considérant que vous souhaitez créer une représentation YAML de la table Lua suivante :
+
+```lua
+local data = {
+  website = {
+    name = "Exemple",
+    owner = "Jane Doe",
+    metadata = {
+      creation_date = "2023-01-01",
+      tags = {"blog", "personnel", "lua"}
+    }
+  }
+}
+
+local yaml = require('lyaml')
+local yaml_data = yaml.dump({data})
+print(yaml_data)
+```
+
+Le YAML de sortie sera :
+
+```yaml
+- website:
+    metadata:
+      creation_date: '2023-01-01'
+      tags: [blog, personnel, lua]
+    name: Exemple
+    owner: Jane Doe
+```
+
+En suivant ces modèles, les programmeurs Lua peuvent gérer efficacement les données YAML pour une variété d'applications. Ces opérations avec YAML sont cruciales pour développer des applications Lua polyvalentes qui interagissent en douceur avec d'autres parties d'un système ou directement avec d'autres systèmes.

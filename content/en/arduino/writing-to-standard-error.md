@@ -1,8 +1,8 @@
 ---
 title:                "Writing to standard error"
-date:                  2024-01-19
+date:                  2024-02-03T19:03:44.248510-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Writing to standard error"
-
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/arduino/writing-to-standard-error.md"
 ---
@@ -10,46 +10,70 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Writing to standard error (stderr) reports errors and diagnostics separate from standard output (stdout). It's crucial for debugging and logging, helping developers isolate issues without mixing error messages with regular program output.
+
+Writing to standard error (stderr) in Arduino programming involves directing error messages and diagnostics to a separate channel, ensuring they don't mix with standard output (stdout). Programmers do this to differentiate normal program outputs from error messages, making debugging and log analysis more straightforward.
 
 ## How to:
-Arduino doesn’t natively support stderr, but we can mimic it by writing to Serial. Imagine an LED blink program with error-checking:
 
-```Arduino
+Arduino doesn't natively differentiate between standard output and standard error as conventional computing systems do. Both `Serial.print()` and `Serial.println()` methods write to the same serial output, typically viewed in the Arduino IDE Serial Monitor. However, we can emulate writing to stderr by specifically formatting error messages or directing them to an alternative output, such as a file on an SD card or over a network connection.
+
+To emulate stderr, you can prefix error messages with a tag like "ERROR:" to differentiate them in the Serial Monitor:
+
+```cpp
 void setup() {
-  Serial.begin(9600);
-  pinMode(LED_BUILTIN, OUTPUT);
+  Serial.begin(9600); // Initialize serial communication at 9600 baud rate
 }
 
 void loop() {
-  if(!digitalWriteCheck(LED_BUILTIN, HIGH)) {
-    Serial.println("Error: Can't set LED high"); // This is our "stderr"
+  int result = someFunction();
+  if (result == -1) {
+    // Emulating stderr by prefixing the error message
+    Serial.println("ERROR: The function failed to execute.");
+  } else {
+    Serial.println("The function executed successfully.");
   }
-  delay(1000); // Wait for a second
-  if(!digitalWriteCheck(LED_BUILTIN, LOW)) {
-    Serial.println("Error: Can't set LED low"); // This is our "stderr"
-  }
-  delay(1000); // Wait for a second
+  delay(1000); // Wait for a second before restarting the loop
 }
 
-bool digitalWriteCheck(int pin, int value) {
-  // Pretend this function checks if digitalWrite was successful
-  digitalWrite(pin, value);
-  // If success return true, let's just always fail for this example
-  return false;
+int someFunction() {
+  // A dummy function that returns -1 on error
+  return -1;
 }
 ```
 
-Sample Output:
+Sample output in the Arduino IDE Serial Monitor might look like this:
+
 ```
-Error: Can't set LED high
-Error: Can't set LED low
+ERROR: The function failed to execute.
 ```
 
-## Deep Dive
-Historically, stderr is a standard stream in many operating systems, introduced by Unix. In Arduino, which lacks an operating system, we manually output errors using Serial.print or similar. If you’re logging to a computer, logs can be redirected from Serial to a file, effectively separating them from stdout. Advanced users might use SoftwareSerial to emulate stderr on different hardware serial ports.
+For projects requiring a more sophisticated approach, including writing to different physical outputs, the use of third-party libraries or additional hardware may be necessary. For example, logging error messages to an SD card requires the `SD` library:
 
-## See Also
-- Arduino’s official documentation on Serial: https://www.arduino.cc/reference/en/language/functions/communication/serial/
-- Unix Standard Streams: https://en.wikipedia.org/wiki/Standard_streams
-- SoftwareSerial Library: https://www.arduino.cc/en/Reference/SoftwareSerial
+```cpp
+#include <SPI.h>
+#include <SD.h>
+
+File myFile;
+
+void setup() {
+  Serial.begin(9600);
+  if (!SD.begin()) {
+    Serial.println("ERROR: SD card initialization failed!");
+    return;
+  }
+  
+  myFile = SD.open("error.log", FILE_WRITE);
+  if (myFile) {
+    myFile.println("ERROR: The function failed to execute.");
+    myFile.close(); // Make sure to close the file to save the contents
+  } else {
+    Serial.println("ERROR: Opening error.log failed!");
+  }
+}
+
+void loop() {
+  // Your main code would go here
+}
+```
+
+With this approach, you physically separate normal program output and error messages by directing the latter to an `error.log` file on an SD card, enabling post-mortem analyses without cluttering the primary output channel.

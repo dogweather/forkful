@@ -1,68 +1,72 @@
 ---
-title:                "Zapisywanie pliku tekstowego"
-date:                  2024-01-19
-simple_title:         "Zapisywanie pliku tekstowego"
-
+title:                "Pisanie pliku tekstowego"
+date:                  2024-02-03T19:28:01.014806-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Pisanie pliku tekstowego"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/elm/writing-a-text-file.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-(Po co i dlaczego?)
+## Co i dlaczego?
 
-Zapisywanie pliku tekstowego to proces tworzenia albo modyfikowania danych tekstowych w pliku na dysku. Programiści robią to, aby zachować dane, które mogą być później odczytane przez ludzi lub inne programy.
+Tworzenie pliku tekstowego w Elm polega na tworzeniu i zapisywaniu danych tekstowych do pliku z aplikacji Elm. Programiści często muszą generować raporty, logi lub eksportować dane w strukturalnym formacie tekstowym (np. JSON, CSV) do wykorzystania w innych aplikacjach lub dla celów ewidencyjnych. Jednak ze względu na architekturę Elma, która skupia się na czystości i bezpieczeństwie, bezpośrednie zapisywanie do pliku - podobnie jak wiele innych efektów ubocznych - jest obsługiwane poprzez komendy do otaczającego środowiska JavaScript.
 
-## How to:
-(Jak to zrobić?)
+## Jak to zrobić:
 
-Elm nie zapewnia bezpośredniego API do zapisywania plików ze względu na jego ograniczenia w interakcji z systemem plików. Jednakże, możesz użyć JavaScript interop, znane jako porty, aby zapisywać pliki tekstowe w aplikacji webowej. Poniżej znajdziesz przykładowy kod.
+Ponieważ Elm działa w przeglądarce i jest zaprojektowany jako język programowania bez efektów ubocznych, nie ma bezpośredniego dostępu do systemu plików. Dlatego zapisywanie do pliku zwykle wiąże się z wysłaniem danych do JavaScript przez porty. Oto jak możesz to skonfigurować:
 
-```Elm
-port module Main exposing (..)
+1. **Zdefiniuj moduł portu do wysyłania tekstu do JavaScriptu:**
+
+```elm
+port module Main exposing (main)
 
 import Browser
 import Html exposing (Html, button, div, text)
 import Html.Events exposing (onClick)
 
--- Definicja portu do zapisywania tekstowego pliku
-port saveFile : String -> Cmd msg
+-- Zdefiniuj port do wysyłania danych tekstowych do JavaScriptu
+port saveText : String -> Cmd msg
 
--- Widok, przycisk zapisujący określony tekst do pliku
+-- Główny widok
 view : Html msg
 view =
     div []
-        [ button [ onClick (saveFile "Tekst do zapisu") ] [ text "Zapisz plik" ] ]
+        [ button [ onClick (saveText "Cześć, Elm zapisuje do pliku!") ] [ text "Zapisz do pliku" ]
+        ]
 
--- Podstawowa inicjalizacja aplikacji Elm
+-- Ustawienie subskrypcji (nieużywane w tym przykładzie, ale wymagane dla modułu portu)
+subscriptions : model -> Sub msg
+subscriptions _ =
+    Sub.none
+
+-- Ustawienie aplikacji
+main : Program () model msg
 main =
-    Browser.sandbox { init = (), view = view, update = \_ _ -> () }
+    Browser.element
+        { init = \_ -> ((), Cmd.none)
+        , view = \_ -> view
+        , update = \_ _ -> ((), Cmd.none)
+        , subscriptions = subscriptions
+        }
 ```
 
-JavaScript po drugiej stronie portu może wyglądać następująco:
+2. **Zaimplementuj odpowiadający kod JavaScript:**
 
-```JavaScript
-// Subskrybcja portu Elm w JavaScript
-app.ports.saveFile.subscribe(function(text) {
-    // Implementacja zapisywania pliku tekstowego
+W pliku HTML lub module JavaScript obsłuż port aplikacji Elm do zapisywania tekstu. Możesz użyć biblioteki `FileSaver.js` do zapisywania pliku po stronie klienta lub wysłać dane na serwer do przetworzenia.
+
+```javascript
+// Zakładając, że Elm.Main.init() został już wywołany i aplikacja działa
+app.ports.saveText.subscribe(function(text) {
+    // Użycie FileSaver.js do zapisywania plików po stronie klienta
     var blob = new Blob([text], {type: "text/plain;charset=utf-8"});
-    saveAs(blob, "example.txt"); // Używając biblioteki FileSaver.js
+    saveAs(blob, "przyklad.txt");
 });
 ```
 
-## Deep Dive:
-(Więcej informacji)
+Przykładowe wyjście nie jest bezpośrednio stosowalne, ponieważ wynikiem jest utworzenie pliku, ale po kliknięciu przycisku w twojej aplikacji Elm, na twoim komputerze powinien zostać pobrany plik o nazwie "przyklad.txt" zawierający ciąg "Cześć, Elm zapisuje do pliku!".
 
-Historia: Elm został stworzony dla bezpieczeństwa i niezawodności aplikacji front-endowych, więc dostęp do systemu plików jest ograniczony.
-
-Alternatywy: Oprócz portów Elm i JavaScript, można użyć Web API, takich jak FileSaver.js lub natywne HTML5 `<a>` z atrybutem `download`, aby zainicjować pobieranie pliku.
-
-Szczegóły implementacji: Port w Elm to bezpieczny sposób na komunikację z JavaScript. Porty wysyłają komunikaty między Elm a JS, umożliwiając wykonanie operacji związanych z systemem plików.
-
-## See Also:
-(Zobacz też)
-
-- Oficjalna dokumentacja Elm o portach: [Elm Ports](https://guide.elm-lang.org/interop/ports.html)
-- Repozytorium FileSaver.js na GitHub: [FileSaver.js](https://github.com/eligrey/FileSaver.js)
-- Dokumentacja o atrybucie `download`: [HTML <a> download Attribute](https://www.w3schools.com/tags/att_a_download.asp)
+W tym podejściu komunikacja między Elm a JavaScriptem jest kluczowa. Chociaż Elm ma na celu zawarcie jak największej części logiki twojej aplikacji, współpraca z JavaScriptem przez porty umożliwia wykonywanie zadań, takich jak zapisywanie do pliku, których Elm bezpośrednio nie obsługuje. Pamiętaj, że czystość i bezpieczeństwo Elma są wzmacniane przez ten wzorzec, co zapewnia, że twoje aplikacje Elm pozostają łatwe do utrzymania i zrozumienia, nawet kiedy wchodzą w interakcję ze skomplikowanym światem zewnętrznym.

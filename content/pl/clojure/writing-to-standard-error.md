@@ -1,45 +1,59 @@
 ---
 title:                "Pisanie do standardowego błędu"
-date:                  2024-01-19
+date:                  2024-02-03T19:33:03.998061-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Pisanie do standardowego błędu"
-
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/clojure/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Co i dlaczego?)
-Pisanie do standardowego błędu (stderr) to sposób na wyprowadzanie komunikatów o błędach i innych ważnych informacji diagnostycznych z programu. Programiści używają `stderr` do oddzielania normalnych danych wyjściowych od błędów, co ułatwia debugowanie i przetwarzanie logów.
+## Co i dlaczego?
+Zapisywanie do standardowego błędu (stderr) polega na kierowaniu komunikatów o błędach i diagnostyki do strumienia stderr, oddzielnie od standardowego wyjścia (stdout). Programiści robią to, aby odróżnić regularne wyjście programu od komunikatów o błędach, co pozwala na efektywniejsze debugowanie i logowanie.
 
-## How to: (Jak to zrobić?)
-W Clojure do pisania do `stderr` używa się funkcji `binding` z `*err*`. Oto krótki przykład wypisujący komunikat błędu:
-
-```clojure
-(binding [*out* *err*]
-  (println "To jest błąd!"))
-```
-
-Wyjście będzie widoczne w stderr, nie będzie jednak zwracane jako wartość funkcji.
-
-Inny sposób to użycie funkcji `java.io.PrintWriter`:
+## Jak to zrobić:
+W Clojure można pisać do stderr używając strumienia `*err*`. Oto podstawowy przykład:
 
 ```clojure
-(import 'java.io.PrintWriter)
-
-(let [stderr-writer (PrintWriter. *err* true)]
-  (.println stderr-writer "To jest błąd!"))
+(.write *err* "To jest komunikat o błędzie.\n")
 ```
 
-Tym razem, wykorzystaliśmy klasę PrintWriter do stworzenia buforowanego obiektu piszącego do `stderr`.
+Należy zauważyć, że po napisaniu wiadomości, powinieneś opróżnić strumień, aby upewnić się, że wiadomość jest natychmiast wyświetlona:
 
-## Deep Dive (Dogłębna analiza)
-W historii programowania, idea dwóch różnych strumieni wyjście standardowe (stdout) i błąd standardowy (stderr) powstała by rozróżniać dane wyjściowe aplikacji od komunikatów o błędach. W Clojure, standardowe wiązania *out* i *err* reprezentują te dwa strumienie.
+```clojure
+(flush)
+```
 
-Alternatywą dla bezpośredniego pisania do stderr jest użycie bibliotek logujących, które zapewniają większą elastyczność i konfigurowalność. 
+Przykładowe wyjście do stderr:
+```
+To jest komunikat o błędzie.
+```
 
-Bezpośrednie pisanie do `stderr` w Clojure jest realizowane przez sprawdzanie i przekierowanie *out*, które jest dynamicznym symbolem. Oznacza to, że moze być ono przypisane lokalnie w danym wątku.
+Jeśli zajmujesz się obsługą wyjątków, możesz chcieć wyświetlić ślady stosu do stderr. Użyj `printStackTrace` do tego celu:
 
-## See Also (Zobacz także)
-- Official Clojure Documentation on I/O: [https://clojure.org/reference/java_interop#_java_io](https://clojure.org/reference/java_interop#_java_io)
-- Clojure `core` API reference for `*err*`: [https://clojuredocs.org/clojure.core/*err*](https://clojuredocs.org/clojure.core/*err*)
+```clojure
+(try
+  ;; Kod, który może zgłosić wyjątek
+  (/ 1 0)
+  (catch Exception e
+    (.printStackTrace e *err*)))
+```
+
+Dla bardziej strukturalnego logowania błędów, biblioteki stron trzecich takie jak `timbre` mogą być konfigurowane do logowania do stderr. Oto podstawowa konfiguracja i użycie:
+
+Najpierw dodaj `timbre` do swoich zależności. Następnie skonfiguruj go do używania stderr:
+
+```clojure
+(require '[taoensso.timbre :as timbre])
+
+(timbre/set-config! [:appenders :standard-out :enabled?] false) ;; Wyłącz logowanie stdout
+(timbre/set-config! [:appenders :spit :enabled?] false) ;; Wyłącz logowanie do pliku
+(timbre/set-config! [:appenders :stderr :min-level] :error) ;; Włącz stderr dla błędów
+
+(timbre/error "Wystąpił błąd podczas przetwarzania Twojego żądania.")
+```
+
+To skieruje komunikaty na poziomie błędu do stderr, czyniąc je odrębnymi od standardowego wyjścia aplikacji.

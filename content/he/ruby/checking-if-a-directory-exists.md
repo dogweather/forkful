@@ -1,58 +1,48 @@
 ---
-title:                "בדיקה האם תיקייה קיימת"
-date:                  2024-01-20T14:58:27.709785-07:00
-simple_title:         "בדיקה האם תיקייה קיימת"
-
+title:                "בדיקה אם ספרייה קיימת"
+date:                  2024-02-03T19:08:31.511629-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "בדיקה אם ספרייה קיימת"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/ruby/checking-if-a-directory-exists.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-מה זה בדיקה אם דירקטוריה קיימת ולמה זה נדרש? בפשטות, זוהי הליך שבו התכנית שלנו מוודאת אם דירקטוריה (תיקייה) קיימת במערכת הקבצים. תכניתנים צריכים לעשות זאת לפני שהם יוצרים, מוחקים, או משנים קבצים בתוך דירקטוריה, כדי למנוע שגיאות ולהבטיח את תקינות התהליך.
+## מה ולמה?
+בדיקה אם ספריה קיימת ב-Ruby מאפשרת למתכנתים לאמת את קיומה של ספריה לפני ביצוע פעולות כמו קריאת קבצים או יצירת ספריות חדשות. זה קריטי למניעת שגיאות בטיפול בקבצים ולהבטחת האמינות של מניפולציות במערכת קבצים.
 
-## How to:
-קוד Ruby פשוט שמראה איך לבדוק אם דירקטוריה קיימת:
+## איך לעשות:
+ספריית הסטנדרט של Ruby מספקת שיטות ישירות לבדיקת קיום ספריה. הנה איך עושים זאת ב-Ruby טהור, בלי צורך בספריות צד שלישי:
 
 ```ruby
 require 'fileutils'
 
-# שיטה לבדוק אם דירקטוריה קיימת
-def directory_exists?(directory_path)
-  File.directory?(directory_path)
-end
-
-# דוגמה לשימוש
-if directory_exists?('/path/to/my/directory')
-  puts 'הדירקטוריה קיימת!'
+# בדוק אם ספריה קיימת
+if Dir.exist?('/path/to/directory')
+  puts 'הספריה קיימת.'
 else
-  puts 'הדירקטוריה לא נמצאה.'
+  puts 'הספריה אינה קיימת.'
 end
 ```
+דוגמא לפלט:
+```
+הספריה קיימת.
+```
+או:
+```
+הספריה אינה קיימת.
+```
 
-תוצאה אפשרית:
-```
-הדירקטוריה קיימת!
-```
-או אם היא לא קיימת, תראה:
-```
-הדירקטוריה לא נמצאה.
-```
-
-## Deep Dive:
-בעבר, כדי לבדוק אם דירקטוריה קיימת ב-Ruby, מתכנתים לעיתים ישתמשו בשיטות ישנות יותר כמו `Dir.exist?` או הספרייה `FileUtils`. כיום, `File.directory?` היא השיטה הנפוצה והמומלצת. היא מחזירה `true` או `false` בהתאם לקיום הדירקטוריה.
-
-אם נרצה לדעת לא רק אם הדירקטוריה קיימת אלא גם לוודא שיש לנו הרשאות כתיבה או קריאה, נוכל להשתמש ב:
+בנוסף לשימוש ב-`Dir.exist?`, ניתן גם להשתמש בשיטה `File.directory?` אשר מחזירה `true` אם הנתיב הנתון הוא ספריה:
 
 ```ruby
-File.writable?(directory_path) # בדיקת הרשאת כתיבה
-File.readable?(directory_path) # בדיקת הרשאת קריאה
+if File.directory?('/path/to/directory')
+  puts 'הספריה קיימת.'
+else
+  puts 'הספריה אינה קיימת.'
+end
 ```
-
-לפעולות אלו השפעות על תכנונית האבטחה של התוכנה, ויש להבין אותן היטב לפני יישום.
-
-## See Also:
-* [Ruby's File.directory? documentation](https://ruby-doc.org/core-2.7.0/File.html#method-c-directory-3F)
-* [Ruby's FileUtils module documentation](https://ruby-doc.org/stdlib-2.7.0/libdoc/fileutils/rdoc/FileUtils.html)
-* [Stack Overflow discussions on file and directory operations in Ruby](https://stackoverflow.com/questions/tagged/ruby+file+directory)
+גם `Dir.exist?` וגם `File.directory?` הם חלק מספריית הסטנדרט של Ruby ואינם דורשים שימוש ב-gems חיצוניים, הופכים אותם לאפשרויות נוחות ויעילות לבדיקות ספריות.

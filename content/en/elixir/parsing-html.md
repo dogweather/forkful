@@ -1,8 +1,8 @@
 ---
 title:                "Parsing HTML"
-date:                  2024-01-20T15:30:48.429632-07:00
+date:                  2024-02-03T19:02:42.400756-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Parsing HTML"
-
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/elixir/parsing-html.md"
 ---
@@ -11,43 +11,72 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Parsing HTML means sifting through HTML code to extract data or details programmatically. Programmers do it for tasks like web scraping, data mining, or automating interactions with websites.
+Parsing HTML in Elixir involves extracting information from HTML documents. Programmers do this to programmatically interact with web pages, scrape data, or automate web interactions, enabling applications to understand and utilize web content dynamically.
 
 ## How to:
 
-In Elixir, you can parse HTML with the Floki library. Here's a snippet:
+Elixir, with its robust concurrency model and functional programming paradigm, doesn't include built-in HTML parsing capabilities. However, you can use popular third-party libraries like `Floki` for this purpose. Floki makes HTML parsing intuitive and efficient, leveraging Elixir's pattern matching and piping features.
+
+First, add Floki to your mix.exs dependencies:
 
 ```elixir
-# First, add Floki to your mix.exs dependencies
-{:floki, "~> 0.30.0"}
-
-# Then, in your code
-
-defmodule HTMLParser do
-  alias Floki
-
-  def parse_html(html) do
-    {:ok, document} = Floki.parse(html)
-    titles = Floki.find(document, "h1")
-    IO.inspect(titles, label: "Titles")
-  end
+defp deps do
+  [
+    {:floki, "~> 0.31.0"}
+  ]
 end
-
-# Usage
-html_content = "<html><body><h1>Hello, Elixir!</h1></body></html>"
-HTMLParser.parse_html(html_content)
-
-# Sample output
-Titles: [{"h1", [], ["Hello, Elixir!"]}]
 ```
 
-## Deep Dive
+Then, run `mix deps.get` to install the new dependency.
 
-Historically, HTML parsing in languages like Python or JavaScript has been more common, but Elixir's concurrent features and scalability make it a strong alternative for modern web tasks. The Floki library uses the fast_html C parser underneath for speed, giving you best of both worlds: Elixir's concurrency and the performance of a compiled language.
+Now, let's parse a simple HTML string to extract data. We'll look for the titles inside `<h1>` tags:
 
-Compared to other tools like BeautifulSoup in Python, Floki is less verbose and more functional in style - fitting well with Elixir's ethos. Plus, you have the entire might of the Erlang ecosystem for fault-tolerance and distribution, if you're thinking big.
+```elixir
+html_content = """
+<html>
+  <body>
+    <h1>Hello, Elixir!</h1>
+    <h1>Another Title</h1>
+  </body>
+</html>
+"""
 
-## See Also
+titles = html_content
+         |> Floki.find("h1")
+         |> Floki.text()
 
-- [Floki on Hex](https://hex.pm/packages/floki) - Official Floki documentation.
-- [HTML5ever](https://github.com/servo/html5ever) - Rust HTML parser that powers fast_html.
+IO.inspect(titles)
+```
+
+**Sample Output:**
+
+```elixir
+["Hello, Elixir!", "Another Title"]
+```
+
+To dive deeper, say you want to extract links (`<a>` tags) alongside their href attributes. Here’s how you can achieve that:
+
+```elixir
+html_content = """
+<html>
+  <body>
+    <a href="https://elixir-lang.org/">Elixir's Official Website</a>
+    <a href="https://hexdocs.pm/">HexDocs</a>
+  </body>
+</html>
+"""
+
+links = html_content
+        |> Floki.find("a")
+        |> Enum.map(fn({_, attrs, [text]}) -> {text, List.keyfind(attrs, "href", 0)} end)
+        
+IO.inspect(links)
+```
+
+**Sample Output:**
+
+```elixir
+[{"Elixir's Official Website", {"href", "https://elixir-lang.org/"}}, {"HexDocs", {"href", "https://hexdocs.pm/"}}]
+```
+
+This approach allows you to navigate and parse HTML documents efficiently, making web data extraction and manipulation tasks straightforward in Elixir applications.

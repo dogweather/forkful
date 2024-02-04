@@ -1,33 +1,44 @@
 ---
-title:                "文字列の先頭を大文字にする"
-date:                  2024-01-19
-simple_title:         "文字列の先頭を大文字にする"
-
+title:                "文字列を大文字にする"
+date:                  2024-02-03T19:06:26.266823-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "文字列を大文字にする"
 tag:                  "Strings"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/ruby/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (何となぜ？)
-大文字化とは、文字列の先頭を大文字にすることです。一貫性を持たせたり、タイトルや固有名詞を適切に表示するためにプログラマーはこれを行います。
+## 何となぜ？
+プログラミングにおいて、文字列のキャピタライズとは、文字列の最初の文字を大文字に変換し、残りを小文字にすることを指します。プログラマーがこれを行う理由には、命名規則に従う、出力を読みやすくする、または比較や格納のためのデータの一貫性を確保するなどがあります。
 
-## How to (やり方)
+## どのようにして：
+Rubyは文字列操作のための直感的なメソッドを提供しており、その中にはキャピタライズも含まれます。以下は、Rubyで文字列をキャピタライズする方法です：
+
 ```ruby
-# capitalizeメソッドを使う
-phrase = "ruby programming"
-puts phrase.capitalize
-# 出力: "Ruby programming"
-
-# 文字列の各単語を大文字化するには
-puts phrase.split.map(&:capitalize).join(' ')
-# 出力: "Ruby Programming"
+# Rubyの組み込みメソッド
+string = "hello world"
+capitalized_string = string.capitalize
+puts capitalized_string # => "Hello world"
 ```
 
-## Deep Dive (詳細な解説)
-文字列を大文字化する方法は、Rubyが登場した1995年から存在します。`.capitalize` は単純で便利ですが、他にも方法があります。例えば、「Active Support」の `titleize` はRailsで使用でき、より複雑なケースに対応します。実装の内部では、`capitalize` は最初の文字のASCIIコードを使って変換を行います。
+Rubyの`.capitalize`メソッドは便利ですが、最初の文字にのみ影響します。文字列内の各単語をキャピタライズする（タイトルケースとして知られる）ためのより多くの制御が必要な場合、または自分で実装したい場合は、RailsのActiveSupport拡張機能から`titleize`メソッドを使用するかもしれません：
 
-## See Also (関連情報)
-- Railsガイド：[Active Support Core Extensions](https://guides.rubyonrails.org/active_support_core_extensions.html)
-- ASCIIコード表：[ASCII codes](https://www.asciitable.com/)
+```ruby
+# RailsのActiveSupportの'titleize'を使用
+require 'active_support/core_ext/string/inflections'
+string = "hello world"
+puts string.titleize # => "Hello World"
+```
+
+Railsを使用していない場合や、純粋なRubyソリューションを好む場合、以下のように文字列内の各単語をキャピタライズすることができます：
+
+```ruby
+string = "hello world"
+capitalized_each_word = string.split.map(&:capitalize).join(' ')
+puts capitalized_each_word # => "Hello World"
+```
+
+この方法では、文字列を単語の配列に分割し、それぞれをキャピタライズした後、スペースを挟んで再び結合します。

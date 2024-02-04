@@ -1,48 +1,90 @@
 ---
 title:                "Scrivere test"
-date:                  2024-01-19
+date:                  2024-02-03T19:32:18.405889-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Scrivere test"
-
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/typescript/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Cosa & Perché?
-Scrivere test significa creare codice specifico per verificare altri pezzi di codice. I programmatori lo fanno per assicurarsi che funzioni tutto come previsto e per prevenire bug.
+Scrivere test in TypeScript comporta la creazione di script automatizzati per verificare la funzionalità e la correttezza del proprio codice. I programmatori lo fanno per garantire affidabilità, individuare rapidamente i bug e facilitare la crescita del codice mantenibile, poiché la digitazione statica di TypeScript aggiunge un livello di prevedibilità ai test JavaScript.
 
-## Come si fa:
-```TypeScript
-import { expect } from 'chai';
-import { somma } from './somma';
+## Come fare:
+TypeScript funziona in armonia con la maggior parte dei framework di test JavaScript. A scopo dimostrativo, useremo Jest, un framework di test popolare, grazie alla sua configurazione zero per i progetti TypeScript.
 
-describe('Test della funzione somma', () => {
-  it('dovrebbe ritornare 4 quando somma 2 + 2', () => {
-    expect(somma(2, 2)).to.equal(4);
-  });
+Prima di tutto, assicurati di avere Jest e i tipi TypeScript necessari installati:
 
-  it('dovrebbe ritornare 0 quando somma -2 + 2', () => {
-    expect(somma(-2, 2)).to.equal(0);
-  });
-});
+```bash
+npm install --save-dev jest typescript ts-jest @types/jest
+```
 
-// somma.ts
-export function somma(a: number, b: number): number {
+Successivamente, configura Jest per lavorare con TypeScript modificando il file `jest.config.js` o creandone uno nuovo:
+
+```javascript
+module.exports = {
+  preset: 'ts-jest',
+  testEnvironment: 'node',
+};
+```
+
+Ora, scriviamo una semplice funzione e un test per essa. Considera un file `sum.ts` con la seguente funzione:
+
+```typescript
+// sum.ts
+export function sum(a: number, b: number): number {
   return a + b;
 }
 ```
-Risultati dei test:
-```
-  Test della funzione somma
-    ✓ dovrebbe ritornare 4 quando somma 2 + 2
-    ✓ dovrebbe ritornare 0 quando somma -2 + 2
+
+Crea un file di test chiamato `sum.test.ts`:
+
+```typescript
+// sum.test.ts
+import { sum } from './sum';
+
+test('somma 1 + 2 uguale a 3', () => {
+  expect(sum(1, 2)).toBe(3);
+});
 ```
 
-## Approfondimento
-La scrittura di test ha radici nella pratica dello sviluppo guidato da test (TDD) degli anni '90. Alternative includono test manuali o "Expo facto testing", ma i test automatici come unit test, integration test e E2E test sono lo standard. Per TypeScript, librerie come Jest, Mocha/Chai, e Jasmine semplificano la scrittura di test, gestendo l'isolamento, la simulazione e l'affermazione dei risultati.
+Esegui i tuoi test con:
 
-## Vedi Anche
-- [Jest](https://jestjs.io/) - Una libreria di test JavaScript con un focus sulla semplicità.
-- [Mocha](https://mochajs.org/) - Un framework per test JavaScript che funziona sia su Node.js sia nei browser.
-- [Chai](https://www.chaijs.com/) - Una libreria di asserzione BDD/TDD che può essere accoppiata con qualsiasi framework di test JavaScript.
+```bash
+npx jest
+```
+
+Un esempio di output per un test superato dovrebbe apparire così:
+
+```plaintext
+ PASS  ./sum.test.ts
+  ✓ somma 1 + 2 uguale a 3 (2 ms)
+```
+
+Per il codice asincrono, Jest si accomoda con `async/await`. Supponiamo di avere una funzione asincrona `fetchData`:
+
+```typescript
+// asyncFunctions.ts
+export async function fetchData(): Promise<string> {
+  return "data";
+}
+```
+
+Il tuo test usando funzioni asincrone:
+
+```typescript
+// asyncFunctions.test.ts
+import { fetchData } from './asyncFunctions';
+
+test('recupera dati con successo', async () => {
+  expect(await fetchData()).toBe('data');
+});
+```
+
+Quando esegui i tuoi test, Jest attende che la promise sia risolta, testando correttamente le operazioni asincrone.
+
+Ricorda, un test effettivo include la scrittura di più test per diversi scenari, inclusi i casi limite, per garantire che il tuo codice TypeScript si comporti come previsto.

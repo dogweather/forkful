@@ -1,52 +1,55 @@
 ---
 title:                "Schreiben auf Standardfehler"
-date:                  2024-01-19
+date:                  2024-02-03T19:33:04.079973-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Schreiben auf Standardfehler"
-
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/elm/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Das Schreiben auf Standard Error (stderr) ist der Prozess, Fehlermeldungen und Diagnoseinformationen in einem separaten Stream auszugeben. Programmierer nutzen dies, um Fehlernachrichten vom regulären Output zu trennen, wodurch die Anwendungslogik klar von der Fehlerbehandlung getrennt bleibt.
 
-## How to:
-Elm ist eine rein funktionale Sprache, die für Web-Frontend-Entwicklung ausgelegt ist. Da Elm-Code im Browser läuft, gibt es keine native Möglichkeit, direkt auf stderr zu schreiben wie in serverseitigen Sprachen. Für Debugging-Zwecke kann man jedoch die `Debug`-Module verwenden oder JavaScript-Interoperabilität durch Ports, um Nachrichten an `console.error` zu senden.
+Das Schreiben auf den Standardfehler (stderr) bezieht sich auf das Umleiten von Fehlermeldungen und Diagnostiken, getrennt von der Hauptprogrammausgabe, die an den Standardausgang (stdout) geht. Programmierer machen dies, um die Fehlerbehandlung und das Logging handhabbarer zu machen, insbesondere in Umgebungen, in denen eine Unterscheidung der Ausgabe für das Debugging und die Überwachung entscheidend ist.
 
-```Elm
-port module Main exposing (..)
+## Wie geht das:
 
--- Definiere einen Port, um Nachrichten an JavaScript zu senden
-port error : String -> Cmd msg
+Elm zielt in erster Linie auf die Webentwicklung ab, wo das Konzept des direkten Schreibens auf stderr nicht auf die gleiche Weise wie in traditionellen Befehlszeilenumgebungen anwendbar ist. Allerdings, für Elm-Programme, die in Node.js oder ähnlichen Umgebungen laufen, ist der Interop mit JavaScript unter Verwendung von Ports der Schlüsselansatz, um eine ähnliche Funktionalität zu erreichen. Hier ist, wie Sie es einrichten könnten:
 
--- Funktion, die einen Fehler sendet
-reportError : String -> Cmd msg
-reportError errorMessage =
-    error errorMessage
+Elm-Code (`Main.elm`):
+```elm
+port module Main exposing (main)
 
--- Beispiel einer Main-Funktion, die einen Fehler meldet
+import Browser
+
+port errorOut : String -> Cmd msg
+
+-- Dummy-Beispielfunktion, die eine Fehlermeldung an JS sendet
+generateError : String -> Cmd msg
+generateError message =
+    errorOut message
+
 main =
-    reportError "Etwas ist schiefgelaufen!"
+    generateError "Das ist eine Fehlermeldung für stderr"
 ```
 
-JavaScript-Teil zum Empfangen der Nachricht:
-
+JavaScript-Interop (`index.js`):
 ```javascript
-app.ports.error.subscribe(function(errorMessage) {
-    console.error(errorMessage);
+const { Elm } = require('./Main.elm');
+
+var app = Elm.Main.init();
+
+app.ports.errorOut.subscribe((message) => {
+  console.error(message);
 });
 ```
 
-Absichtlich hat Elm keine direkte stderr-Unterstützung, um die Funktionen einfach und auf Frontend-Use-Cases fokussiert zu halten.
+Dieser Elm-Code definiert einen Port `errorOut`, der es ermöglicht, Nachrichten aus Elm an JavaScript zu senden. Dann hören wir im JavaScript-Code auf Nachrichten, die über diesen Port gesendet werden, und leiten sie mit `console.error()` an stderr weiter. Auf diese Weise können Sie effektiv in einer Umgebung, die dies unterstützt, auf stderr schreiben, indem Sie die Interop-Funktionen von Elm mit JavaScript nutzen.
 
-## Deep Dive
-In traditionellen Programmiersprachen wie C oder Python wird stderr verwendet, um Fehlermeldungen unabhängig von stdout zu halten. Da man oft stdout umleitet oder in Dateien schreibt, hilft stderr dabei, Fehlermeldungen sichtbar und konsistent zu halten. In Elm gibt es aufgrund des Browser-Kontexts keine konzeptionelle Unterscheidung zwischen stdout und stderr. Dennoch kann man über JavaScript-Ports und die Browserkonsole ähnliche Funktionalitäten bereitstellen, wenn nötig.
-
-Alternativen zur Fehlerbehandlung in Elm könnten das Wrapper-Type-Pattern sein, wo man Ergebnistypen (`Result`) verwendet, um Erfolge und Fehler in der Anwendungslogik darzustellen. Dies hält die Fehlerbehandlung funktional und eng integriert in den Elm-Code.
-
-## See Also
-- Elm's offizielle `Debug` Dokumentation: [https://package.elm-lang.org/packages/elm/core/latest/Debug](https://package.elm-lang.org/packages/elm/core/latest/Debug)
-- Elm's offizielle Guide zu Ports für JavaScript-Interoperabilität: [https://guide.elm-lang.org/interop/ports.html](https://guide.elm-lang.org/interop/ports.html)
-- Elm's `Result` Typ, ein alternativer Fehlerbehandlungsansatz: [https://package.elm-lang.org/packages/elm/core/latest/Result](https://package.elm-lang.org/packages/elm/core/latest/Result)
+Beispielausgabe im Node.js-Terminal (wenn `index.js` ausgeführt wird):
+```
+Das ist eine Fehlermeldung für stderr
+```

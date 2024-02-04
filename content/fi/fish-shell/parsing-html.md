@@ -1,40 +1,81 @@
 ---
-title:                "HTML:n jäsentäminen"
-date:                  2024-01-20T15:31:27.791692-07:00
-simple_title:         "HTML:n jäsentäminen"
-
+title:                "HTML:n jäsennys"
+date:                  2024-02-03T19:12:22.048273-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "HTML:n jäsennys"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/fish-shell/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? 
-Mikä & Miksi?
+## Mikä & Miksi?
 
-Parsing HTML tarkoittaa HTML-koodin lukemista ja siitä tiedon irti saamista. Ohjelmoijat parsivat HTML:ää, kun haluavat hyödyntää tai muokata web-sivujen dataa.
+HTML:n jäsentäminen on tietojen tai datan poimimista HTML-sisällöstä, yleinen tehtävä työskenneltäessä web-datan kanssa. Ohjelmoijat tekevät tämän automatisoidakseen tiedon poiminnan verkkosivustoilta, tehtäviin kuten web-kaavinta, datakaivos tai automatisoidut testaukset.
 
-## How to:
-Kuinka toimia:
+## Kuinka:
 
-Fish shell ei ole ihanteellinen työkalu HTML:n parsimiseen, mutta pystyt tekemään yksinkertaista data-ekstraktiota käyttäen komentorivin työkaluja. Oletetaan, että haluat löytää kaikki linkit tietyistä HTML-tiedostoista. Tässä helppo esimerkki käyttäen `grep`- ja `sed`-työkaluja:
+Fish shell ei pääasiassa ole suunniteltu suoraan HTML:n jäsentämiseen. Kuitenkin, se loistaa yhdistämällä yhteen Unix-työkaluja kuten `curl`, `grep`, `sed`, `awk`, tai käyttämällä erikoistuneita työkaluja kuten `pup` tai `beautifulsoup` Python-skriptissä. Alla on esimerkkejä, jotka esittelevät, kuinka näitä työkaluja voi hyödyntää Fish shellin sisällä HTML:n jäsentämiseen.
 
-```Fish Shell
-cat your_file.html | grep -oP '(?<=href=")[^"]*' | sed 's/&amp;/\&/g'
+### Käyttäen `curl` ja `grep`:
+HTML-sisällön noutaminen ja linkkejä sisältävien rivien poiminta:
+
+```fish
+curl -s https://example.com | grep -oP '(?<=href=")[^"]*'
 ```
 
-Tämä tulostaa näytölle kaikki `href`-attribuutit, korvaten HTML-koodatun `&`-merkin tavallisella `&`-merkillä.
+Tuloste:
+```
+/page1.html
+/page2.html
+...
+```
 
-## Deep Dive
-Syvä sukellus:
+### Käyttäen `pup` (komentorivityökalu HTML:n jäsentämiseen):
 
-Historiallisesti, komentorivin työkalut eivät ole olleet suunniteltuja HTML:n käsittelyyn, koska HTML:n rakenteet voivat olla monimutkaisia ja muuttuvia. Ohjelmissa kuten Python tai JavaScript, on erityisiä kirjastoja, kuten Beautiful Soup tai jsdom, jotka on tehty juuri HTML:n käsittelyyn ja tarjoavat paljon vahvemmat ja joustavammat tavat käsitellä webin dataa.
+Varmista ensin, että `pup` on asennettu. Sen jälkeen voit käyttää sitä elementtien poimintaan niiden tagien, id:den, luokkien jne. perusteella.
 
-Käytettäessä Fish Shelliä, saatat turvautua ulkopuolisiin työkaluihin kuten `pup`, joka on komentorivipohjainen HTML-parseri. Siinä missä `grep` ja `sed` ovat tehokkaita yksinkertaisiin tekstioperaatioihin, `pup` tarjoaa spesifejä komentoja DOM-mallin mukaiseen käsittelyyn.
+```fish
+curl -s https://example.com | pup 'a attr{href}'
+```
 
-## See Also
-Katso myös:
+Tuloste, samankaltainen kuin `grep` esimerkkissä, listaisi `<a>` tagien href attribuutit.
 
-- [Beautiful Soup documentation](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
-- [`pup` GitHub repository](https://github.com/ericchiang/pup)
-- [W3Schools HTML Parser Tutorial](https://www.w3schools.com/xml/xml_parser.asp)
+### Python-skriptillä ja `beautifulsoup`:
+
+Vaikka Fish itsessään ei voi jäsentää HTML:ää natiivisti, se integroituu saumattomasti Python-skripteihin. Alla on tiivis esimerkki, joka käyttää Pythonia ja `BeautifulSoup`ia HTML:n jäsentämiseen ja otsikoiden poimintaan. Varmista, että sinulla on `beautifulsoup4` ja `requests` asennettuna Python-ympäristöösi.
+
+**parse_html.fish**
+
+```fish
+function parse_html -a url
+    python -c "
+import sys
+import requests
+from bs4 import BeautifulSoup
+
+response = requests.get(sys.argv[1])
+soup = BeautifulSoup(response.text, 'html.parser')
+
+titles = soup.find_all('title')
+
+for title in titles:
+    print(title.get_text())
+" $url
+end
+```
+
+Käyttö:
+
+```fish
+parse_html 'https://example.com'
+```
+
+Tuloste:
+```
+Esimerkkialue
+```
+
+Jokainen näistä menetelmistä palvelee erilaisia käyttötapauksia ja monimutkaisuuden asteita, yksinkertaisesta komentorivin tekstimanipulaatiosta koko `beautifulsoup`in jäsentämisen voimaan Python-skripteissä. Tarpeidesi ja HTML-rakenteen monimutkaisuuden mukaan voit valita suoraviivaisen Unix-putkilinjan tai voimakkaamman skriptauslähestymistavan.

@@ -1,77 +1,115 @@
 ---
-title:                "Manipulation de JSON"
-date:                  2024-01-19
-simple_title:         "Manipulation de JSON"
-
+title:                "Travailler avec JSON"
+date:                  2024-02-03T19:22:33.104491-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Travailler avec JSON"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/elm/working-with-json.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-"Quoi et Pourquoi ?"
+## Quoi & Pourquoi ?
+Travailler avec JSON en Elm consiste à décoder des données JSON en types Elm et à encoder des valeurs Elm en retour en JSON. Ce processus est crucial pour les applications web afin d'interagir avec des API et des sources de données externes, permettant un échange de données fluide entre le client (Elm) et les serveurs ou d'autres services.
 
-Le JSON est un format de données; on l'utilise pour échanger des infos entre le client et le serveur. C'est léger et facile à comprendre, donc on l'adore dans les applis web.
+## Comment faire :
 
-## How to:
-"Comment faire :"
+Elm traite la gestion de JSON avec explicité et sécurité, en utilisant principalement les modules `Json.Decode` et `Json.Encode`. Pour commencer à travailler avec JSON, vous devez d'abord définir un décodeur pour votre type de données. Supposons que nous traitons avec un simple objet de profil utilisateur.
 
-Commence par ajouter `elm/json` à ton projet :
-```
-elm install elm/json
-```
+Tout d'abord, définissez votre type Elm :
 
-Decode du JSON :
-```Elm
-import Json.Decode exposing (string, int, decodeValue)
-
-jsonString = """
-{ "name": "Bob", "age": 30 }
-"""
-
-type alias User =
-    { name : String
-    , age : Int
+```elm
+type alias ProfilUtilisateur = 
+    { id : Int
+    , nom : String
+    , email : String
     }
-
-userDecoder =
-    Json.Decode.map2 User
-        (Json.Decode.field "name" string)
-        (Json.Decode.field "age" int)
-
-case decodeValue userDecoder (Json.Decode.string jsonString) of
-    Ok user -> 
-        -- utilises `user` ici
-    Err error ->
-        -- gère les erreurs ici
 ```
 
-Encode en JSON :
-```Elm
-import Json.Encode exposing (object, string, int)
+### Décoder JSON en Elm
 
-userEncoder : User -> Json.Encode.Value
-userEncoder user =
+Pour décoder une chaîne JSON en type `ProfilUtilisateur`, créez un décodeur :
+
+```elm
+import Json.Decode exposing (Decoder, int, string, field, map3)
+
+decodeurProfilUtilisateur : Decoder ProfilUtilisateur
+decodeurProfilUtilisateur =
+    map3 ProfilUtilisateur
+        (field "id" int)
+        (field "name" string)
+        (field "email" string)
+```
+
+Pour décoder un objet JSON :
+
+```elm
+import Json.Decode exposing (decodeString)
+
+jsonString : String
+jsonString = 
+    """{"id": 1, "name": "John Doe", "email": "john@example.com"}"""
+
+decode : Result String ProfilUtilisateur
+decode =
+    decodeString decodeurProfilUtilisateur jsonString
+
+{- Exemple de sortie :
+Result.Ok { id = 1, nom = "John Doe", email = "john@example.com" }
+-}
+```
+
+### Encoder Elm en JSON
+
+Pour encoder une valeur Elm en retour en JSON, utilisez le module `Json.Encode`.
+
+```elm
+import Json.Encode exposing (object, int, string)
+
+encoderProfilUtilisateur : ProfilUtilisateur -> String
+encoderProfilUtilisateur profilUtilisateur =
     object
-        [ ( "name", string user.name )
-        , ( "age", int user.age )
+        [ ("id", int profilUtilisateur.id)
+        , ("name", string profilUtilisateur.nom)
+        , ("email", string profilUtilisateur.email)
         ]
+        |> Json.Encode.encode 0
 
-encodedUser = userEncoder { name = "Bob", age = 30 }
--- `encodedUser` est maintenant un JSON prêt à être envoyé
+{- 
+Usage:
+encoderProfilUtilisateur { id = 1, nom = "John Doe", email = "john@example.com" }
+
+Exemple de sortie :
+"{"id":1,"name":"John Doe","email":"john@example.com"}"
+-}
 ```
 
-## Deep Dive
-"Plongée en Profondeur"
+### Bibliothèques tierces
 
-JSON, c'est JavaScript Object Notation, né dans les années 2000 pour les JavaScript apps. Maintenant, c'est standard partout. En Elm, on manipule du JSON avec des 'decoders' et 'encoders' parce que Elm est type-safe; ça évite des surprises. Elm n'a pas de null ou undefined, donc le JSON doit être converti proprement. Les alternatives comme XML sont là, mais JSON est roi pour sa simplicité.
+Des packages Elm comme `elm-json-decode-pipeline` peuvent simplifier la création de décodeurs en utilisant un style de pipeline, ce qui est particulièrement pratique pour décoder des objets complexes.
 
-## See Also
-"Voir Aussi"
+Tout d'abord, ajoutez la bibliothèque à votre projet :
 
-- Officiel Elm Guide sur JSON: [https://guide.elm-lang.org/effects/json.html](https://guide.elm-lang.org/effects/json.html)
-- `elm/json` package: [https://package.elm-lang.org/packages/elm/json/latest/](https://package.elm-lang.org/packages/elm/json/latest/)
-- JSON: [http://json.org/](http://json.org/)
+```shell
+elm install NoRedInk/elm-json-decode-pipeline
+```
 
-C'est tout. A toi de coder !
+Ensuite, vous pouvez simplifier la définition du décodeur comme suit :
+
+```elm
+import Json.Decode exposing (int, string, succeed)
+import Json.Decode.Pipeline exposing (required, decode)
+
+decodeurProfilUtilisateur : Decoder ProfilUtilisateur
+decodeurProfilUtilisateur =
+    decode ProfilUtilisateur
+        |> required "id" int
+        |> required "name" string
+        |> required "email" string
+
+{- Utilisez ce décodeur comme avant avec decodeString pour décoder les chaînes JSON. -}
+```
+
+Cette approche simplifie le décodeur, rendant le code plus propre et plus facile à maintenir, surtout à mesure que les structures de données deviennent plus complexes.

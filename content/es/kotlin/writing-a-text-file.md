@@ -1,52 +1,55 @@
 ---
-title:                "Escritura de un archivo de texto"
-date:                  2024-01-19
-simple_title:         "Escritura de un archivo de texto"
-
+title:                "Escribiendo un archivo de texto"
+date:                  2024-02-03T19:28:11.536762-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Escribiendo un archivo de texto"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/kotlin/writing-a-text-file.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Qué y Por Qué?
-Escribir un archivo de texto implica guardar datos en un documento legible. Los programadores hacen esto para almacenar configuraciones, resultados de programas, o para intercambiar información entre diferentes partes de un programa o con otros programas.
+Escribir un archivo de texto en Kotlin implica crear un archivo e ingresar contenido de texto en él, una tarea común para almacenar datos, registrar o configurar ajustes. Los programadores lo hacen para guardar y manipular datos fuera del espacio de memoria volátil, asegurando la persistencia entre sesiones.
 
 ## Cómo hacerlo:
-Para escribir un archivo de texto en Kotlin, puedes usar la función `writeText` que ofrece la librería estándar. Aquí hay un ejemplo:
+Kotlin proporciona un enfoque sencillo para escribir en archivos, aprovechando la biblioteca estándar sin necesidad de bibliotecas de terceros adicionales. Aquí hay un ejemplo simple:
 
-```Kotlin
+```kotlin
 import java.io.File
 
 fun main() {
-    val mensaje = "¡Hola, Kotlin!"
-    File("saludo.txt").writeText(mensaje)
+    val textoAEscribir = "¡Hola, escritura de archivo Kotlin!"
+    File("ejemplo.txt").writeText(textoAEscribir)
 }
 ```
+Este fragmento de código crea un archivo llamado "ejemplo.txt" en el directorio raíz del proyecto y escribe la cadena `¡Hola, escritura de archivo Kotlin!` en él. Si el archivo ya existe, será sobrescrito.
 
-Tras ejecutar el código, encontrarás un archivo `saludo.txt` con el contenido "¡Hola, Kotlin!".
+Para un agregado más controlado a un archivo o escribir mayores cantidades de datos, puedes usar `appendText` o `bufferedWriter()`:
 
-Otro método es usar `printWriter` para escribir línea por línea:
-
-```Kotlin
+```kotlin
 import java.io.File
 
-fun main() {
-    File("saludo_lineas.txt").printWriter().use { out ->
-        out.println("Primera línea")
-        out.println("Segunda línea")
-        out.println("Tercera línea")
+fun agregarAlArchivo() {
+    val masTexto = "Agregando más texto."
+    File("ejemplo.txt").appendText(masTexto)
+}
+
+fun escribirConBufferedWriter() {
+    val textoGrande = "Grandes cantidades de texto...\nEn múltiples líneas."
+    File("salida.txt").bufferedWriter().use { out ->
+        out.write(textoGrande)
     }
 }
+
+fun main() {
+    agregarAlArchivo() // Agrega texto al archivo existente
+    escribirConBufferedWriter() // Escribe datos de texto grandes de manera eficiente
+}
 ```
 
-Este código crea un archivo `saludo_lineas.txt` con tres líneas de texto.
+En la función `agregarAlArchivo`, estamos añadiendo más texto a "ejemplo.txt" sin sobrescribir su contenido actual. La función `escribirConBufferedWriter` muestra una manera eficiente de escribir grandes cantidades de texto o datos, especialmente útil para minimizar las operaciones de E/S cuando se trata de múltiples líneas o archivos grandes.
 
-## A Fondo
-La escritura de archivos en discos se remonta a los inicios de la informática y ha evolucionado con los sistemas operativos. En Kotlin, `writeText` y `printWriter` son dos formas sencillas de manejar archivos, pero hay otras como `FileOutputStream` para mayor control o `Files` con la API NIO para operaciones más avanzadas.
-
-Además, puedes agregar un modo de apertura en `FileWriter` (por ejemplo, para agregar texto sin sobrescribir el archivo) y control de excepciones con `try...catch` para manejar errores al escribir en archivos.
-
-## Ver También
-- [Oracle Java Documentation - java.io.PrintWriter](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/PrintWriter.html)
-- [Oracle Java Documentation - Working with Files](https://docs.oracle.com/javase/tutorial/essential/io/file.html)
+Estos ejemplos cubren operaciones básicas para escribir archivos de texto en Kotlin, mostrando la simplicidad y el poder de la biblioteca estándar de Kotlin para operaciones de E/S de archivos.

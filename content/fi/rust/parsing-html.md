@@ -1,59 +1,63 @@
 ---
-title:                "HTML:n jäsentäminen"
-date:                  2024-01-20T15:34:04.466148-07:00
-simple_title:         "HTML:n jäsentäminen"
-
+title:                "HTML:n jäsennys"
+date:                  2024-02-03T19:13:00.379539-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "HTML:n jäsennys"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/rust/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Mitä & Miksi?)
-HTML:n jäsentäminen tarkoittaa HTML-koodin rakenteen muuttamista sellaiseen muotoon, johon ohjelmat voivat helposti kajota. Ohjelmoijat jäsentävät HTML:ää datan kaivamiseksi verkkosivuilta, automaatioon tai sisällön validointiin.
+## Mikä ja miksi?
 
-## How to: (Kuinka tehdä:)
-```Rust
-extern crate select;
-use select::document::Document;
-use select::predicate::Name;
+HTML:n jäsentäminen Rustilla koskee tietojen poimimista HTML-dokumenteista, mikä on olennaista web-skaapaukselle, datan poiminnalle tai web-kiipijöiden rakentamiselle. Ohjelmoijat tekevät tämän automatisoidakseen tiedonkeruun verkosta, analysoidakseen web-sisältöä tai siirtääkseen sisältöä alustalta toiselle.
+
+## Kuinka:
+
+Jäsennettäessä HTML:ää Rustilla käytetään usein `scraper`-pakettia, joka tarjoaa korkean tason rajapinnan HTML-dokumenttien läpikäymiseen ja manipulointiin.
+
+Lisää ensin `scraper` `Cargo.toml`-tiedostoosi:
+
+```toml
+[dependencies]
+scraper = "0.12.0"
+```
+
+Seuraavaksi on yksinkertainen esimerkki, joka poimii kaikki linkkien URL-osoitteet annetusta HTML-merkkijonosta:
+
+```rust
+extern crate scraper;
+
+use scraper::{Html, Selector};
 
 fn main() {
     let html = r#"
-        <html>
-            <head>
-                <title>Rust Esimerkki</title>
-            </head>
-            <body>
-                <h1>Tervetuloa!</h1>
-                <p>Rust ja HTML jäsentäminen.</p>
-            </body>
-        </html>
+    <html>
+    <body>
+        <a href="http://example.com/1">Linkki 1</a>
+        <a href="http://example.com/2">Linkki 2</a>
+    </body>
+    </html>
     "#;
 
-    let document = Document::from(html);
+    let dokumentti = Html::parse_document(html);
+    let valitsin = Selector::parse("a").unwrap();
 
-    let title = document.find(Name("title")).next().unwrap().text();
-    println!("Otsikko: {}", title);
-
-    let header = document.find(Name("h1")).next().unwrap().text();
-    println!("Otsake: {}", header);
+    for elementti in dokumentti.select(&valitsin) {
+        let linkki = elementti.value().attr("href").unwrap();
+        println!("Löydetty linkki: {}", linkki);
+    }
 }
 ```
-Sample output:
+
+Tuloste:
+
 ```
-Otsikko: Rust Esimerkki
-Otsake: Tervetuloa!
+Löydetty linkki: http://example.com/1
+Löydetty linkki: http://example.com/2
 ```
 
-## Deep Dive (Sukellus syvyyksiin):
-HTML:n jäsentäminen ei ole uusi konsepti; se on ollut web-kehityksen perusta jo vuosikymmenien ajan. Rust-ekosysteemissä käytettävät kirjastot, kuten `select`, tarjoavat tehokkaat työkalut HTML:n jäsentämiseen. Vaihtoehtoina on muita kirjastoja kuten `html5ever`, joka perustuu modernin HTML:n syntaksianalyysiin ja `scraper`, joka puolestaan tukeutuu `select`-kirjastoon.
-
-Nämä kirjastot helpottavat HTML-elementtien valikointia ja niiden tietojen manipulointia, esimerkiksi CSS-selektorien avulla. Jäsentämisen suorituskyky ja tarkkuus ovat Rustissa keskeisiä etuja, erityisesti concurrent ja memory-safe suunnitteluperiaatteiden ansiosta.
-
-## See Also (Katso myös):
-- `select`-kirjaston dokumentaatio: https://docs.rs/select/latest/select/
-- `html5ever` GitHub-sivu: https://github.com/servo/html5ever
-- `scraper`-kirjaston dokumentaatio: https://docs.rs/scraper/latest/scraper/
-- Rust-ohjelmointikielen viralliset oppaat: https://doc.rust-lang.org/book/
-- Rust-käyttäjäkokouksen esitelmät HTML:n jäsentämisestä: https://www.rust-lang.org/community#conferences
+Tässä esimerkissä jäsennämme yksinkertaisen HTML-dokumentin löytääksemme kaikki `<a>`-elementit ja poimiaksemme niiden `href`-attribuutit, tehokkaasti tulostaen kaikkien dokumentin linkkien URL-osoitteet. `scraper`-kirjasto yksinkertaistaa HTML:n jäsentämistä ja tiettyjen elementtien valitsemista CSS-valitsimien avulla, tehden siitä suosikin web-skaapauksen tehtävissä Rustissa.

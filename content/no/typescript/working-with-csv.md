@@ -1,55 +1,100 @@
 ---
-title:                "Arbeid med CSV"
-date:                  2024-01-19
-simple_title:         "Arbeid med CSV"
-
+title:                "Arbeide med CSV"
+date:                  2024-02-03T19:21:24.238177-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Arbeide med CSV"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/typescript/working-with-csv.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Hva & Hvorfor?
-CSV, eller "kommadelte verdier", er et format brukt for å lagre tabelldata enkelt og greit. Programmerere bruker CSV fordi det er lettleselig for både mennesker og maskiner, og støttes av de fleste databehandlingsverktøy.
+## Hva og hvorfor?
 
-## Slik gjør du:
-Her er hvordan du kan jobbe med CSV-filer i TypeScript:
+Å jobbe med CSV (Comma-Separated Values) innebærer å lese fra og skrive til CSV-filer, et vanlig datautvekslingsformat som brukes på grunn av sin enkelhet og brede støtte på tvers av ulike plattformer og språk. Programmerere engasjerer seg med CSV-filer for å importere eller eksportere data fra applikasjoner, databaser og tjenester, noe som muliggjør enkel databehandling og deling.
 
-```TypeScript
-import fs from 'fs';
-import parse from 'csv-parse/lib/sync';
+## Hvordan:
 
-const csvFileContent = fs.readFileSync('data.csv', 'utf8');
+I TypeScript kan du jobbe med CSV-filer gjennom nativ kode eller ved å benytte tredjepartsbiblioteker som `csv-parser` for lesing og `csv-writer` for skriving av CSV-filer.
 
-// Synkron parsing av CSV-innhold til et 2D array
-const records = parse(csvFileContent, {
-    columns: true,
-    skip_empty_lines: true,
-});
+### Lese CSV med `csv-parser`
 
-// Logge resultatet
-console.log(records);
+Først, installer `csv-parser` via npm:
+
+```
+npm install csv-parser
 ```
 
-Om `data.csv` inneholder:
+Deretter, les en CSV-fil slik:
+
+```typescript
+import fs from 'fs';
+import csv from 'csv-parser';
+
+const results = [];
+
+fs.createReadStream('data.csv')
+  .pipe(csv())
+  .on('data', (data) => results.push(data))
+  .on('end', () => {
+    console.log(results);
+    // Utdata: Et array av objekter, hver representerer en rad i CSV-filen
+  });
+```
+
+Forutsetter at `data.csv` inneholder:
+
 ```
 name,age
-Alice,25
-Bob,30
+Alice,30
+Bob,25
 ```
 
-Vil output bli:
-```TypeScript
-[
-  { name: 'Alice', age: '25' },
-  { name: 'Bob', age: '30' }
-]
+Vil utdata være:
+
+```
+[ { name: 'Alice', age: '30' }, { name: 'Bob', age: '25' } ]
 ```
 
-## Dypdykk
-CSV-formatet har vært i bruk siden 1970-tallet og er et enkelt, tekstbasert format. Alternativer som JSON eller XML tilbyr mer kompleksitet og struktur for datarepresentasjon. Når du jobber med CSV i TypeScript, bør det tas hensyn til riktig tekstkoding (vanligvis UTF-8), escaping av spesialtegn og konvertering av datatyper fra strenger til passende format.
+### Skrive CSV med `csv-writer`
 
-## Se også
-- [RFC 4180](https://tools.ietf.org/html/rfc4180), standarden for CSV.
-- [Papaparse](https://www.papaparse.com/), en kraftig CSV-parser for nettleseren.
-- [D3-dsv](https://github.com/d3/d3-dsv), et JavaScript-bibliotek for å parse og formatere dsv (inkludert csv) data.
+For å skrive til en CSV-fil, installer først `csv-writer`:
+
+```
+npm install csv-writer
+```
+
+Deretter bruk den slik:
+
+```typescript
+import { createObjectCsvWriter as createCsvWriter } from 'csv-writer';
+
+const csvWriter = createCsvWriter({
+  path: 'out.csv',
+  header: [
+    {id: 'name', title: 'NAVN'},
+    {id: 'age', title: 'ALDER'}
+  ]
+});
+
+const data = [
+  { name: 'Alice', age: 30 },
+  { name: 'Bob', age: 25 }
+];
+
+csvWriter
+  .writeRecords(data)
+  .then(() => console.log('CSV-filen ble skrevet vellykket'));
+```
+
+Denne koden skriver følgende til `out.csv`:
+
+```
+NAVN,ALDER
+Alice,30
+Bob,25
+```
+
+Disse eksemplene viser hvordan du effektivt kan integrere CSV-behandling i dine TypeScript-prosjekter, enten det er å lese data for analyse eller å bevare applikasjonsdata eksternt.

@@ -1,58 +1,100 @@
 ---
 title:                "Scrivere test"
-date:                  2024-01-19
+date:                  2024-02-03T19:31:53.873335-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Scrivere test"
-
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/rust/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Cosa & Perché?
-Scrivere test significa creare codice per controllare se altri codici funzionano correttamente. I programmatori scrivono test per verificare automaticamente che il software si comporti come previsto, riducendo così errori e problemi futuri.
+## Cos'è & Perché?
 
-## Come fare:
-Rust ha un sistema di testing integrato che permette di scrivere test unitari e d'integrazione semplicemente e velocemente.
+Scrivere test in Rust prevede la creazione di controlli automatizzati per garantire che il codice funzioni come previsto. I programmatori fanno ciò per individuare i bug in anticipo, facilitare il rifacimento (refactoring) e mantenere nel tempo la qualità del codice.
 
-```Rust
+## Come farlo:
+
+Il framework di test integrato in Rust supporta test di unità, integrazione e documentazione senza la necessità di librerie esterne. I test sono annotati con `#[test]`, e ogni funzione così annotata viene compilata come un test.
+
+### Scrivere un Test di Unità:
+
+Posiziona i test di unità nel modulo che stai testando utilizzando un sotto-modulo `tests` marcato con `#[cfg(test)]` per garantire che siano compilati solo durante il testing.
+
+```rust
+// lib.rs o main.rs
+pub fn add(a: i32, b: i32) -> i32 {
+    a + b
+}
+
 #[cfg(test)]
 mod tests {
-    #[test]
-    fn it_works() {
-        assert_eq!(2 + 2, 4);
-    }
+    use super::*;
 
     #[test]
-    fn it_fails() {
-        assert_eq!(1 + 1, 3); // Questo test fallirà!
+    fn it_adds_two() {
+        assert_eq!(add(2, 2), 4);
     }
 }
 ```
 
-Eseguendo `cargo test` otterrai qualcosa del genere:
-
-```
-running 2 tests
-test tests::it_works ... ok
-test tests::it_fails ... FAILED
-
-failures:
-
----- tests::it_fails stdout ----
-thread 'tests::it_fails' panicked at 'assertion failed: `(left == right)`
-  left: `2`,
- right: `3`', src/lib.rs:10:9
-note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
-
-
-test result: FAILED. 1 passed; 1 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s
+Esecuzione dei test:
+```shell
+$ cargo test
 ```
 
-## Approfondimenti
-Il sistema di test di Rust si ispira a framework esistenti in altri linguaggi, ma è progettato per integrarsi senza soluzione di continuità con il linguaggio stesso e il suo strumento di gestione dei pacchetti `cargo`. Altre alternative come `proptest` permettono di scrivere test basati su proprietà. I dettagli implementativi si trovano direttamente nel codice sorgente del compilatore di Rust e sono documentati ufficialmente in modo che i programmatori possano imparare ed estendere la funzionalità dei test.
+Output:
+```shell
+   Compiling your_package_name v0.1.0 (/path/to/your_package)
+    Finished test [unoptimized + debuginfo] target(s) in 0.00 secs
+     Running unittests src/lib.rs (o src/main.rs)
 
-## Vedi Anche
-- [Rust Book - Testing](https://doc.rust-lang.org/book/ch11-00-testing.html) per una guida dettagliata sui test in Rust.
-- [API Documentation for `std::assert!`](https://doc.rust-lang.org/std/macro.assert.html) per capire come utilizzare assert.
-- [rust-lang/rust GitHub repository](https://github.com/rust-lang/rust) per esempi e discussioni sulla implementazione dei test.
+running 1 test
+test tests::it_adds_two ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out
+```
+
+### Scrivere Test di Integrazione:
+
+I test di integrazione vanno in una directory `tests` al livello più alto del tuo progetto, accanto a `src`. Ogni file `.rs` in `tests` viene compilato come crate separato.
+
+```rust
+// tests/integration_test.rs
+use your_package_name;
+
+#[test]
+fn it_adds_two() {
+    assert_eq!(your_package_name::add(2, 2), 4);
+}
+```
+
+### Testing con Librerie di Terze Parti Popolari:
+
+Per capacità di testing più estese, la libreria `proptest` può generare un'ampia gamma di input per testare le funzioni.
+
+Aggiungi `proptest` come dipendenza di sviluppo in `Cargo.toml`:
+
+```toml
+[dev-dependencies]
+proptest = "1.0"
+```
+
+Usa `proptest` per eseguire lo stesso test con molti input generati automaticamente:
+
+```rust
+// dentro tests/integration_test.rs o un modulo #[cfg(test)]
+
+use proptest::prelude::*;
+
+proptest! {
+    #[test]
+    fn doesnt_crash(a: i32, b:i32) {
+        your_package_name::add(a, b);
+    }
+}
+```
+
+Questo verifica che `add` non vada in panic per una vasta gamma di input `i32`.

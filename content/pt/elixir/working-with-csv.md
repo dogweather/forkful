@@ -1,51 +1,95 @@
 ---
 title:                "Trabalhando com CSV"
-date:                  2024-01-19
+date:                  2024-02-03T19:19:30.821288-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Trabalhando com CSV"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/elixir/working-with-csv.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## O que é & Porquê?
+## O Que & Por Que?
 
-Trabalhar com CSV (Valores Separados por Vírgula) é manipular arquivos de texto que guardam dados tabelados. Programadores fazem isso para importar, exportar e manipular dados de forma simples e compatível com diferentes sistemas.
+Trabalhar com arquivos CSV (Valores Separados por Vírgula) envolve ler e escrever dados nesses arquivos, uma necessidade comum para tarefas que requerem importação/exportação de dados ou soluções simples de armazenamento. Programadores aproveitam essa funcionalidade para intercâmbio de dados entre sistemas, edição rápida de dados ou para situações onde um formato de dados leve e facilmente manipulável é vantajoso.
 
 ## Como Fazer:
 
-```elixir
-defmodule CSVExample do
-  # Usando a biblioteca CSV
-  def parse_and_save(file_path) do
-    file_path
-    |> File.stream!()
-    |> CSV.decode(separator: ?;)
-    |> Enum.each(&process_row/1)
-  end
+Elixir, com sua poderosa correspondência de padrões e suporte para encadeamento (pipelining), pode manejar arquivos CSV de forma eficiente, mesmo sem bibliotecas de terceiros. Contudo, para necessidades mais avançadas, a biblioteca `nimble_csv` é uma opção rápida e direta.
 
-  defp process_row(row) do
-    # Manipula cada linha aqui
-    IO.inspect(row)
+### Lendo um Arquivo CSV Sem Bibliotecas Externas
+
+Você pode ler e analisar um arquivo CSV usando as funções internas do Elixir:
+
+```elixir
+defmodule CSVReader do
+  def read_file(file_path) do
+    File.stream!(file_path)
+    |> Stream.map(&String.trim_trailing/1)
+    |> Stream.map(&String.split(&1, ","))
+    |> Enum.to_list()
   end
 end
 
-# Exemplo de uso:
-# CSVExample.parse_and_save("dados.csv")
-```
-Saída de exemplo:
-```
-["cabeçalho1", "cabeçalho2", "cabeçalho3"]
-["valor1", "valor2", "valor3"]
-["valor4", "valor5", "valor6"]
+# Exemplo de uso
+CSVReader.read_file("data.csv")
+# Saída: [["Cabeçalho1", "Cabeçalho2"], ["ValorLinha1", "ValorLinha2"], ["ValorLinha2", "ValorLinha2"]]
 ```
 
-## Mergulho Profundo
+### Escrevendo em um Arquivo CSV
 
-CSV não é um formato padronizado, o que pode levar a diferenças como delimitadores e codificações de caracteres. Existem alternativas como JSON e XML, mas CSV permanece popular pela sua simplicidade e legibilidade. Em Elixir, manipular CSV geralmente exige uma biblioteca, como o pacote `CSV`, que cuida do parsing e escrita dos dados.
+Similarmente, para escrever dados em um arquivo CSV:
 
-## Veja Também:
+```elixir
+defmodule CSVWriter do
+  def write_to_file(file_path, data) do
+    File.open(file_path, [:write], fn file ->
+      Enum.each(data, fn row ->
+        IO.write(file, Enum.join(row, ",") <> "\n")
+      end)
+    end)
+  end
+end
 
-- [CSV package documentation](https://hexdocs.pm/csv/readme.html) para uma referência completa de como trabalhar com CSV em Elixir.
-- [RFC 4180](https://tools.ietf.org/html/rfc4180), Common Format and MIME Type for Comma-Separated Values (CSV) Files, para entender as convenções formalizadas de CSV.
+# Exemplo de uso
+dados = [["Cabeçalho1", "Cabeçalho2"], ["Valor1", "Valor2"], ["Valor3", "Valor4"]]
+CSVWriter.write_to_file("saida.csv", dados)
+# Cria saida.csv com os dados formatados como CSV
+```
+
+### Usando `nimble_csv`
+
+Para manipulações de CSV mais complexas, `nimble_csv` proporciona uma maneira poderosa e flexível de trabalhar com dados CSV. Primeiro, adicione `nimble_csv` às suas dependências em `mix.exs` e execute `mix deps.get`:
+
+```elixir
+defp deps do
+  [
+    {:nimble_csv, "~> 1.2"}
+  ]
+end
+```
+
+Analisando dados CSV com `nimble_csv`:
+
+```elixir
+defmodule MyCSVParser do
+  NimbleCSV.define(MyParser, separator: ",", escape: "\\")
+
+  def parse(file_path) do
+    file_path
+    |> File.stream!()
+    |> MyParser.parse_stream()
+    |> Enum.to_list()
+  end
+end
+
+# Exemplo de uso
+MyCSVParser.parse("data.csv")
+# A saída com nimble_csv pode ser personalizada com base na definição, mas geralmente se parece com uma lista de listas ou tuplas, dependendo de como você configurou seu analisador.
+```
+
+Escrever dados CSV usando `nimble_csv` requer transformar manualmente seus dados em um formato apropriado e então escrevê-los em um arquivo, muito como o exemplo em Elixir puro, mas aproveitando o `nimble_csv` para gerar linhas CSV formatadas corretamente.
+
+Escolhendo a abordagem apropriada para a complexidade da sua tarefa, você pode manipular arquivos CSV em Elixir com grande flexibilidade e poder.

@@ -1,53 +1,73 @@
 ---
-title:                "Einsatz von regulären Ausdrücken"
-date:                  2024-01-19
-simple_title:         "Einsatz von regulären Ausdrücken"
-
+title:                "Reguläre Ausdrücke verwenden"
+date:                  2024-02-03T19:17:24.883529-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Reguläre Ausdrücke verwenden"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/lua/using-regular-expressions.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Reguläre Ausdrücke, auch Regex genannt, sind Muster, mit denen man Text nach bestimmten Regeln durchsucht, ersetzt oder aufteilt. Programmierer nutzen sie, weil sie mächtige Werkzeuge sind, um komplexe Textbearbeitungen effizient durchzuführen.
 
-## How to:
-Lua verwendet Patterns, die ähnlich, aber nicht so umfangreich wie reguläre Ausdrücke sind. Hier ein paar Beispiele:
+Reguläre Ausdrücke in der Programmierung ermöglichen das Mustervergleichen und die Manipulation von Zeichenketten basierend auf spezifischen Mustern. Programmierer verwenden sie für Aufgaben wie Validierung, Suche und Textmanipulation aufgrund ihrer Vielseitigkeit und Effizienz im Umgang mit komplexen Zeichenkettenoperationen.
 
-Suchen:
-```Lua
-local text = "Hallo Welt!"
-if string.match(text, "Welt") then
-  print("Gefunden!")
+## Wie:
+
+Lua unterstützt reguläre Ausdrücke nicht nativ auf die gleiche Weise wie Sprachen wie Perl oder Python. Stattdessen bietet es Musterabgleich-Funktionen, die viele gängige Anwendungsfälle von regulären Ausdrücken abdecken. Für eine vollwertige Unterstützung regulärer Ausdrücke kann jedoch eine externe Bibliothek, wie `lrexlib`, verwendet werden.
+
+### Grundlegende Musterabgleiche in Lua:
+
+Lua bietet ein leistungsstarkes System für Musterabgleiche, das Sie für einfache Substitutionen und Suchvorgänge nutzen können:
+
+```lua
+-- Einfache Suche
+local str = "Hello, World!"
+if string.find(str, "World") then
+  print("Treffer gefunden!")
 end
--- Ausgabe: Gefunden!
+-- Ausgabe: Treffer gefunden!
+
+-- Einfache Substitution
+local s = string.gsub("Lua ist großartig!", "großartig", "fantastisch")
+print(s)
+-- Ausgabe: Lua ist fantastisch!
 ```
 
-Ersetzen:
-```Lua
-local text = "Hallo Welt!"
-local neuer_text = string.gsub(text, "Welt", "Lua")
-print(neuer_text)
--- Ausgabe: Hallo Lua!
+### Erfassen von Teilzeichenketten:
+
+Sie können Teile der Zeichenkette erfassen, die den Mustern entsprechen:
+
+```lua
+local date = "Heute ist der 17.05.2023."
+local d, m, y = string.match(date, "(%d+)/(%d+)/(%d+)")
+print("Tag:", d, "Monat:", m, "Jahr:", y)
+-- Ausgabe: Tag: 17 Monat: 05 Jahr: 2023
 ```
 
-Zerlegen:
-```Lua
-local text = "Anna:Berta:Charlie"
-local namen = {}
-for name in string.gmatch(text, "[^:]+") do
-  table.insert(namen, name)
+### Verwenden von `lrexlib` für reguläre Ausdrücke:
+
+Um echte reguläre Ausdrücke zu verwenden, können Sie `lrexlib` installieren und nutzen. Angenommen, Sie haben es installiert (`luarocks install lrexlib-pcre`), können Sie komplexere Musterabgleiche durchführen:
+
+```lua
+local rex = require 'rex_pcre'
+
+local text = "Der Regen in Spanien bleibt hauptsächlich in der Ebene."
+local regex = "\\bS\\w+"
+local count, err = rex.gsub(text, regex, function(w)
+  return w:upper()
+end)
+if err then
+  print("Fehler:", err)
+else
+  print("Modifizierter Text:", text)
+  print("Vorgenommene Substitutionen:", count)
 end
-print(table.concat(namen, ", "))
--- Ausgabe: Anna, Berta, Charlie
+-- Beispiel-Ausgabe: Modifizierter Text: Der REGEN in SPANIEN bleibt HAUPTSÄCHLICH in der Ebene.
+-- Vorgenommene Substitutionen: 3
 ```
 
-## Deep Dive
-Reguläre Ausdrücke, wie in vielen anderen Sprachen bekannt, wären in Lua eine Überfrachtung gewesen, also entschieden sich die Entwickler für einfachere Muster (patterns). Alternativen zu Luas eingebauten Patterns sind externe Bibliotheken wie `LuaPCRE` oder `rex`. Diese bieten vollständige Regex-Unterstützung, erfordern aber zusätzliche Installationen. Bei der Performance hängt es vom Anwendungsfall ab – eingebaute Patterns sind in Lua oft schneller, während komplexere Regex-Operationen mithilfe externer Bibliotheken oftmals besser gehandhabt werden können.
-
-## See Also
-- Lua 5.4 Referenzhandbuch: https://www.lua.org/manual/5.4/
-- Lua Users Wiki zu Patterns: http://lua-users.org/wiki/PatternsTutorial
-- LuaPCRE auf GitHub: https://github.com/rrthomas/luapcre
-- rexlib: http://rrthomas.github.io/lrexlib/
+Die obigen Beispiele veranschaulichen die grundlegende Verwendung innerhalb des eigenen Musterabgleichsystems von Lua und wie man die Kraft regulärer Ausdrücke über `lrexlib` nutzen kann. Ob Sie einfache Zeichenkettenmanipulationen durchführen oder die vollständige Vielseitigkeit regulärer Ausdrücke benötigen, Lua, gemeinsam mit leistungsstarken Bibliotheken, kann Ihren Anforderungen gerecht werden.

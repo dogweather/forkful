@@ -1,45 +1,63 @@
 ---
-title:                "HTML:n jäsentäminen"
-date:                  2024-01-20T15:34:31.691443-07:00
-simple_title:         "HTML:n jäsentäminen"
-
+title:                "HTML:n jäsennys"
+date:                  2024-02-03T19:13:15.123430-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "HTML:n jäsennys"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/typescript/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What and Why? - Mikä ja Miksi?
-HTML:n jäsentäminen tarkoittaa HTML-merkkijonon muuttamista rakenteelliseen muotoon, kuten DOM-puuksi. Ohjelmoijat tekevät tämän datan kaivamiseksi, dokumenttien muokkaukseksi tai web-sisällön skräppäämiseksi.
+## Mikä & Miksi?
 
-## How to: - Miten:
-```TypeScript
-import * as parser from 'node-html-parser';
+HTML:n jäsentäminen tarkoittaa HTML-koodin läpikäymistä löytääkseen, poimiakseen tai manipuloidakseen tietoa. Ohjelmoijat tekevät sitä vuorovaikuttaakseen verkkosisällön kanssa—ehkä kaapiakseen dataa tai automatisoidakseen selaimia.
 
-const html = '<!DOCTYPE html><html><body><h1>Otsikko 1</h1><p>Ensimmäinen kappale.</p></body></html>';
-const root = parser.parse(html);
+## Kuinka:
 
-// Etsi elementtejä
-const h1Text = root.querySelector('h1').textContent;
-console.log(h1Text); // Output: Otsikko 1
+Aloittaaksesi, asenna kirjasto kuten `node-html-parser`. Tässä on terminaalikomento:
 
-const pText = root.querySelector('p').textContent;
-console.log(pText); // Output: Ensimmäinen kappale.
-
-// Muokkaa HTML:ää
-root.querySelector('h1').set_content('Muutettu Otsikko');
-console.log(root.toString()); // Output: muuttaa <h1>:n sisällön
+```bash
+npm install node-html-parser
 ```
 
-## Deep Dive - Syvä Sukellus:
-Historiallisesti HTML:n jäsentäminen JavaScriptillä tapahtui pääasiassa selaimessa, jossa DOM API teki työn. Noden myötä tarve palvelinpuolen HTML-jäsennykselle kasvoi. Tämä johti kirjastoihin kuten `node-html-parser`.
+Nyt jäsentäkäämme jotakin perus HTML:ää TypeScriptissä:
 
-Vaihtoehtoisia työkaluja on lukuisia, kuten Cheerio ja JSDOM. Cheerio on nopea ja kevyt, kun taas JSDOM pyrkii jäljittelemään selaimen ympäristöä tarkemmin.
+```typescript
+import { parse } from 'node-html-parser';
 
-Implementoinnissa on tärkeää pitää mielessä, että HTML-dokumentit voivat olla epäjohdonmukaisia. Jäsentäjän täytyy olla joustava ja toleroida virheitä.
+const html = `<ul class="fruits">
+                <li>Omena</li>
+                <li>Banaani</li>
+              </ul>`;
 
-## See Also - Katso Myös:
-- [DOMstandardi](https://dom.spec.whatwg.org/): Yksityiskohtainen selostus siitä, miten DOM toimii.
-- [node-html-parser](https://www.npmjs.com/package/node-html-parser): Jäsennyskirjasto, jota käytimme esimerkeissä.
-- [Cheerio](https://www.npmjs.com/package/cheerio): jQuery-tyylinen kirjasto HTML:n käsittelyyn Node.js:ssä.
-- [JSDOM](https://www.npmjs.com/package/jsdom): Node.js-ympäristölle tehty selainmalli.
+const root = parse(html);
+console.log(root.querySelector('.fruits').textContent);  // "Omena Banaani"
+```
+
+Ja jos haluat napata vain banaanit:
+
+```typescript
+const bananas = root.querySelectorAll('li')[1].textContent;
+console.log(bananas);  // "Banaani"
+```
+
+## Syväsukellus
+
+HTML:n jäsentäminen ei ole uutta—se on ollut olemassa verkon alkupäivistä lähtien. Aluksi kehittäjät ovat ehkä käyttäneet säännöllisiä lausekkeita, mutta se muuttui nopeasti sekavaksi. Sitten tuli DOM Parser: vakaa, mutta selainrajattu.
+
+Kirjastot kuten `node-html-parser` poistavat tuskan. Ne antavat sinun kyselyä HTML:ää kuten tekisit jQueryllä, mutta palvelinpuolella Node.js:n kanssa. Se on nopea, sietää likaista HTML:ää, ja on DOM-ystävällinen.
+
+On myös `jsdom`, joka simuloii koko selainympäristöä. Se on raskaampi mutta perusteellisempi, luoden täysin puhalletun Document Object Model (DOM) manipulointia ja vuorovaikutusta varten.
+
+Älkäämme unohtako Cheeriotakaan. Se yhdistää nopeuden jQueryn kaltaiseen syntaksiin ja pienempään jalanjälkeen, sijoittuen iloisesti näiden kahden väliin.
+
+## Katso Myös
+
+Jos janotat lisää, kasta varpaasi näihin:
+- [DOM-jäsentämisen ja serialisoinnin W3C-spesifikaatio](https://www.w3.org/TR/DOM-Parsing/)
+- [node-html-parser GitHubissa](https://github.com/taoqf/node-html-parser)
+- [jsdom GitHub-repositorio](https://github.com/jsdom/jsdom)
+- [Cheerion verkkosivusto](https://cheerio.js.org/)

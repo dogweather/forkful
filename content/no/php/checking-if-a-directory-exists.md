@@ -1,46 +1,73 @@
 ---
-title:                "Sjekke om en mappe eksisterer"
-date:                  2024-01-20T14:58:00.022112-07:00
-simple_title:         "Sjekke om en mappe eksisterer"
-
+title:                "Sjekker om en mappe eksisterer"
+date:                  2024-02-03T19:08:10.962410-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Sjekker om en mappe eksisterer"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/php/checking-if-a-directory-exists.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Å sjekke om en katalog eksisterer dreier seg om å bekrefte at en filsti leder til en faktisk mappe. Programmerere gjør dette for å unngå feil ved filoperasjoner og for å sikre at deres skript oppfører seg som forventet.
+
+Å sjekke om en mappe finnes er en grunnleggende oppgave i PHP-programmering, da det lar deg verifisere tilstedeværelsen av en mappe før du utfører operasjoner som å lese fra eller skrive til filer i den. Denne operasjonen bidrar til å forhindre feil som kan oppstå ved forsøk på å få tilgang til ikke-eksisterende mapper og er essensiell for dynamisk filhåndtering i applikasjonene dine.
 
 ## Hvordan:
+
+Den innfødte måten å sjekke om en mappe finnes i PHP er ved å bruke `is_dir()`-funksjonen. Denne funksjonen tar en filbane som argument og returnerer `true` hvis mappen finnes og er en mappe, eller `false` ellers.
+
 ```php
-<?php
-$directory = "/min/katalog/sti";
+$directoryPath = "/sti/til/din/mappe";
 
-if (is_dir($directory)) {
-    echo "Katalogen eksisterer!";
+if(is_dir($directoryPath)) {
+    echo "Mappen finnes.";
 } else {
-    echo "Katalogen finnes ikke.";
+    echo "Mappen finnes ikke.";
 }
-?>
-```
-Resultat hvis katalogen eksisterer:
-```
-Katalogen eksisterer!
-```
-Resultat hvis katalogen ikke eksisterer:
-```
-Katalogen finnes ikke.
 ```
 
-## Dypdykk:
-Historisk sett har `is_dir` fungksjonen vært metoden å bruke i PHP for å sjekke om en mappe eksisterer. Et alternativ er å bruke `file_exists`, som også kontrollerer om filer eksisterer, men ikke selvstendig om det er en mappe. I praksis, hvis du bare trenger å vite om en mappe eksisterer, er `is_dir` veien å gå fordi den sikrer at stien faktisk er en katalog.
+Eksempel på utskrift:
+```
+Mappen finnes.
+```
+Eller, hvis mappen ikke finnes:
+```
+Mappen finnes ikke.
+```
 
-Når du jobber med filsystemer, er det også viktig å vurdere rettighetene. En PHP-script kan feile på `is_dir` om den ikke har tilstrekkelige rettigheter til å lese katalogen, selv om katalogen faktisk eksisterer. Dette må man ta høyde for og håndtere i scriptet.
+Selv om PHPs standardbibliotek er robust nok for de fleste oppgaver for manipulering av mapper og filer, kan du noen ganger finne deg selv i behov av en mer omfattende løsning. For slike tilfeller er et populært tredjepartsbibliotek Symfony Filesystem-komponenten. Den tilbyr et bredt utvalg av filsystemverktøy, inkludert en enkel måte å sjekke om en mappe finnes på.
 
-Det er verdt å nevne at `is_dir` opererer på serverens filsystem når PHP-kode kjøres på en webserver. Ved lokal utvikling, sørg for at filstiene som brukes er korrekte for systemet PHP-koden kjøres på.
+Først må du installere Symfony Filesystem-komponenten. Hvis du bruker Composer (en avhengighetsbehandler for PHP), kan du kjøre følgende kommando i prosjektmappen din:
 
-## Se Også:
-- PHP Manual on `is_dir`: [php.net/manual/en/function.is-dir.php](https://www.php.net/manual/en/function.is-dir.php)
-- PHP Manual on `file_exists`: [php.net/manual/en/function.file-exists.php](https://www.php.net/manual/en/function.file-exists.php)
-- Stack Overflow for diskusjoner om filoperasjoner i PHP: [stackoverflow.com/questions/tagged/php+filesystem](https://stackoverflow.com/questions/tagged/php+filesystem)
+```
+composer require symfony/filesystem
+```
+
+Etter å ha installert Symfony Filesystem-komponenten, kan du bruke den for å sjekke om en mappe finnes slik:
+
+```php
+use Symfony\Component\Filesystem\Filesystem;
+
+$filesystem = new Filesystem();
+$directoryPath = '/sti/til/din/mappe';
+
+if($filesystem->exists($directoryPath)) {
+    echo "Mappen finnes.";
+} else {
+    echo "Mappen finnes ikke.";
+}
+```
+
+Eksempel på utskrift:
+```
+Mappen finnes.
+```
+Eller, hvis mappen ikke finnes:
+```
+Mappen finnes ikke.
+```
+
+Begge metodene gir pålitelige måter å sjekke for eksistensen av en mappe i PHP på. Valget mellom å bruke PHPs innebygde funksjoner eller et tredjepartsbibliotek som Symfony Filesystem-komponenten avhenger av ditt prosjekts spesifikke behov og om du krever ytterligere filsystemmanipulasjoner som kan bli mer effektivt håndtert av biblioteket.

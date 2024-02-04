@@ -1,46 +1,63 @@
 ---
 title:                "HTML parsen"
-date:                  2024-01-20T15:30:58.368924-07:00
+date:                  2024-02-03T19:11:49.324074-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "HTML parsen"
-
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/elm/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Was & Warum?
+HTML in Elm zu parsen, bedeutet, Informationen aus HTML-Dokumenten zu extrahieren. Programmierer tun dies, um mit Webinhalten oder APIs zu interagieren, die HTML zurückgeben, was die Erstellung interaktiverer und dynamischerer Webanwendungen ermöglicht.
 
-HTML-Parser verwandeln HTML-Code in eine Struktur, die Programmiersprachen verstehen. Wir nutzen sie, um die Inhalte und das Design von Webseiten auszulesen oder zu manipulieren.
+## Wie geht das:
+Elm verfügt nicht über eine integrierte Bibliothek zum direkten Parsen von HTML, ähnlich wie Bibliotheken in JavaScript oder Python, aufgrund seiner Betonung auf Typsicherheit und der Vermeidung von Laufzeitfehlern. Sie können jedoch `Http`-Anfragen verwenden, um Inhalte abzurufen und dann reguläre Ausdrücke oder serverseitige Verarbeitung zu nutzen, um die benötigten Informationen zu extrahieren. Für komplexeres HTML-Parsen besteht ein üblicher Ansatz darin, einen dedizierten Backend-Service zu verwenden, der das HTML parst und die Daten in einem Format zurückgibt, mit dem Elm direkt arbeiten kann, wie z.B. JSON.
 
-## How to:
+Hier ist ein Beispiel für das Abrufen von HTML-Inhalten (unter der Annahme, dass die Serverantwort in einem sauberen Format oder einem spezifischen Tag-Inhalt vorliegt):
 
-Elm bietet mit `Html.Parser` ein Modul fürs Parsen von HTML. Hier ein einfaches Beispiel:
+```elm
+import Browser
+import Html exposing (Html, text)
+import Http
 
-```Elm
-import Html.Parser exposing (..)
-import Html.Parser.Attributes exposing (..)
+type alias Model =
+    { content : String }
 
-parseHtml : String -> List (Html msg)
-parseHtml htmlString =
-    parse htmlString
-        |> Result.withDefault []
+initialModel : Model
+initialModel =
+    { content = "" }
 
-main =
-    let
-        htmlString = "<p class='text'>Hallo Welt!</p>"
-        parsedHtml = parseHtml htmlString
-    in
-    -- Hier könntest du was mit parsedHtml machen
+type Msg
+    = Fetch
+    | ReceiveContent String
+
+update : Msg -> Model -> (Model, Cmd Msg)
+update msg model =
+    case msg of
+        Fetch ->
+            ( model
+            , Http.get
+                { url = "https://example.com"
+                , expect = Http.expectString ReceiveContent
+                }
+            )
+
+        ReceiveContent content ->
+            ( { model | content = content }
+            , Cmd.none
+            )
+
+view : Model -> Html Msg
+view model =
+    text model.content
+
+-- Nehmen wir an, die Hauptfunktion und Abonnementdefinitionen folgen der standardmäßigen Anwendungsstruktur von Elm.
 ```
 
-Jetzt hast du eine Elm-Struktur von deinem HTML-String.
+Um die Antwort zu verarbeiten und spezifische Elemente oder Daten tatsächlich zu parsen, sollten Sie in Erwägung ziehen, den HTML-Inhalt an einen Serverendpunkt zu senden, den Sie kontrollieren, wo Sie Bibliotheken nutzen können, die in Sprachen wie JavaScript (Cheerio, Jsdom) oder Python (BeautifulSoup, lxml) für das Parsen verfügbar sind, und dann strukturierte Daten (wie JSON) zurück an Ihre Elm-Anwendung senden.
 
-## Deep Dive
-
-Elm hat sich bewusst für eine stark typisierte HTML-Parser-Bibliothek entschieden. Das unterscheidet sich von Sprachen wie JavaScript, wo Bibliotheken wie `cheerio` oder die browserintegrierte `DOMParser` API genutzt werden können. Die Typisierung in Elm sorgt für Sicherheit und Zuverlässigkeit, kann aber zu Beginn gewöhnungsbedürftig sein. Die Implementierung basiert auf Funktionen, die HTML als String nehmen und `Result`-Typen zurückgeben, um Fehler zu handhaben.
-
-## See Also
-
-- Elm Html.Parser Dokumentation: [https://package.elm-lang.org/packages/elm/html/latest/Html-Parser](https://package.elm-lang.org/packages/elm/html/latest/Html-Parser)
-- Elm Guide zum Umgang mit HTML: [https://guide.elm-lang.org/interop/](https://guide.elm-lang.org/interop/)
+Denken Sie daran, dass das direkte Parsen von HTML in clientseitigem Elm-Code nicht das typische Muster aufgrund von Sprachbeschränkungen und der Philosophie einer klaren Trennung zwischen Inhaltsholung und -verarbeitung ist. Die Elm-Architektur neigt dazu, Daten in einem sichereren, vorhersehbareren Format wie JSON zu verarbeiten.

@@ -1,38 +1,78 @@
 ---
 title:                "写入标准错误"
-date:                  2024-01-19
+date:                  2024-02-03T19:33:32.558323-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "写入标准错误"
-
 tag:                  "Files and I/O"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/java/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (是什么与为什么？)
-写到标准错误 (stderr) 让你区分常规输出和错误消息。程序员这么做以确保错误处理不影响程序的正常输出。
+## 什么和为什么？
+将错误信息和诊断信息写入标准错误（stderr）涉及到将这些信息输出到控制台或终端。程序员这样做是为了将错误信息与标准输出（stdout）分开，便于调试和日志分析。
 
-## How to: (怎么做：)
+## 如何操作：
+
+### Java中的基本stderr输出
+Java提供了一个直接的方式来通过`System.err.print()`或`System.err.println()`写入stderr。以下是如何做到的：
+
 ```java
 public class StdErrExample {
     public static void main(String[] args) {
-        System.out.println("正常输出到stdout");
-        System.err.println("错误信息到stderr");
+        try {
+            int division = 10 / 0;
+        } catch (ArithmeticException e) {
+            System.err.println("错误：不能除以零。");
+        }
     }
 }
 ```
-输出样本:
-```
-正常输出到stdout
-错误信息到stderr
-```
-两行输出可能会按不同顺序出现，因为stdout和stderr是独立的。
 
-## Deep Dive (深入探讨)
-最初，UNIX提供了stdout和stderr来区别输出类型。写到stderr的好处是可以将错误重定向到日志或其他地方，而不打扰正常输出。替代方案如日志框架（如log4j）提供更复杂的错误管理。在Java中，`System.err`是`PrintStream`的一个实例，它默认链接到主机系统的标准错误输出渠道。
+示例输出：
 
-## See Also (另请参阅)
-- [Java System Class Documentation](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/System.html)
-- [Oracle Java Tutorials – I/O Streams](https://docs.oracle.com/javase/tutorial/essential/io/streams.html)
-- [UNIX Standard Streams Wikipedia](https://en.wikipedia.org/wiki/Standard_streams)
+```
+错误：不能除以零。
+```
+
+这将直接将错误信息打印到标准错误流。
+
+### 使用日志记录器进行高级错误处理
+对于需要更复杂的错误处理和日志记录的应用程序，通常使用像SLF4J与Logback或Log4J2这样的日志库。这允许在管理错误输出方面提供更多的灵活性，包括文件重定向、过滤和格式化。
+
+#### 使用Logback的示例
+
+首先，将Logback的依赖项添加到`pom.xml`（Maven）或`build.gradle`（Gradle）文件。对于Maven：
+
+```xml
+<dependency>
+    <groupId>ch.qos.logback</groupId>
+    <artifactId>logback-classic</artifactId>
+    <version>1.2.3</version>
+</dependency>
+```
+
+然后，你可以使用以下代码来记录错误：
+
+```java
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+public class LoggerExample {
+    private static final Logger logger = LoggerFactory.getLogger(LoggerExample.class);
+    
+    public static void main(String[] args) {
+        try {
+            int result = 10 / 0;
+        } catch (ArithmeticException e) {
+            logger.error("错误：不能除以零。", e);
+        }
+    }
+}
+```
+
+这将根据Logback配置将错误消息连同堆栈跟踪输出到控制台或文件。
+
+使用像Logback这样的日志框架提供了对错误处理的更多控制，使管理大型应用程序和系统变得更加容易。

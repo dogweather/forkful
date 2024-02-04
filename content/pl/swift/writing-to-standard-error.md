@@ -1,39 +1,104 @@
 ---
 title:                "Pisanie do standardowego błędu"
-date:                  2024-01-19
+date:                  2024-02-03T19:34:57.285874-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Pisanie do standardowego błędu"
-
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/swift/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Co i dlaczego?
-Pisanie do standardowego błędu (stderr) pozwala separować normalne wyjście programu od komunikatów o błędach. Programiści robią to, aby ułatwić obsługę błędów i logowanie, szczególnie przy przetwarzaniu potokowym i przekierowaniach.
+
+Pisanie do standardowego błędu (stderr) polega na kierowaniu komunikatów o błędach lub wyjścia diagnostycznego programu do osobnego strumienia, odrębnego od standardowego wyjścia (stdout). Jest to kluczowe dla debugowania i logowania błędów bez zaśmiecania standardowego wyjścia, co ułatwia zarówno programistom, jak i użytkownikom zrozumienie stanu i problemów programu.
 
 ## Jak to zrobić:
-```Swift
+
+W Swift pisanie do standardowego błędu można wykonać za pomocą klasy `FileHandle` do bezpośredniego dostępu do stderr. Oto prosty przykład:
+
+```swift
 import Foundation
 
-// Przykład zapisu do standardowego błędu (stderr)
-func logError(message: String) {
-    if let data = "\(message)\n".data(using: .utf8) {
-        FileHandle.standardError.write(data)
+// Zdefiniuj komunikat
+let errorMessage = "Wystąpił błąd.\n"
+
+// Konwertuj komunikat na dane
+if let data = errorMessage.data(using: .utf8) {
+    // Zapisz komunikat o błędzie do stderr
+    FileHandle.standardError.write(data)
+}
+```
+
+Wyjście do stderr (zwykle wyświetlane w konsoli lub terminalu):
+```
+Wystąpił błąd.
+```
+
+Dla bardziej złożonego logowania lub przy pracy z zewnętrznymi bibliotekami, można rozważyć użycie biblioteki firm trzecich jak **SwiftLog**. Chociaż **SwiftLog** nie zapisuje bezpośrednio do stderr "od razu po wyjęciu z pudełka", możesz zaimplementować własne zaplecze logujące, aby to osiągnąć. Oto uproszczony przykład definiowania własnego programu obsługi logowania, który zapisuje do stderr:
+
+Najpierw dodaj **SwiftLog** do zależności projektu w `Package.swift`:
+```swift
+// swift-tools-version:5.3
+
+import PackageDescription
+
+let package = Package(
+    name: "YourPackageName",
+    dependencies: [
+        .package(url: "https://github.com/apple/swift-log.git", from: "1.0.0"),
+    ],
+    targets: [
+        .target(
+            name: "YourTargetName",
+            dependencies: [
+                .product(name: "Logging", package: "swift-log"),
+            ]),
+    ]
+)
+```
+
+Następnie zaimplementuj własny program obsługi logowania, który zapisuje do stderr:
+
+```swift
+import Logging
+import Foundation
+
+struct StderrLogHandler: LogHandler {
+    let label: String
+    
+    var logLevel: Logger.Level = .info
+    
+    func log(level: Logger.Level, message: Logger.Message, metadata: Logger.Metadata?, source: String, file: String, function: String, line: UInt) {
+        let output = "\(message)\n"
+        if let data = output.data(using: .utf8) {
+            FileHandle.standardError.write(data)
+        }
+    }
+    
+    subscript(metadataKey metadataKey: String) -> Logger.Metadata.Value? {
+        get { return nil }
+        set(newValue) { }
+    }
+    
+    var metadata: Logger.Metadata {
+        get { return [:] }
+        set(newMetadata) { }
     }
 }
 
-// Użycie funkcji
-logError(message: "Wystąpił błąd!")
-```
-Przykładowe wyjście w konsoli (wyświetlenie błędu):
-```
-Wystąpił błąd!
+// Sposób użycia
+LoggingSystem.bootstrap(StderrLogHandler.init)
+let logger = Logger(label: "com.example.yourapp")
+
+logger.error("To jest komunikat błędu")
 ```
 
-## Zanurkujmy głębiej
-Pisząc do `stderr`, oddzielamy normalne dane wyjściowe programu od komunikatów o błędach, co ma swoje korzenie w systemach uniksowych, gdzie podzielono te strumienie, aby umożliwić ich niezależne przetwarzanie. Alternatywą dla `stderr` jest `stdout`, ale używamy go do przekazywania wyników działania programu, nie błędów. Szczegół realizacji opiera się na zarządzaniu deskryptorami plików – `stderr` ma zazwyczaj deskryptor 2.
+Wyjście do stderr:
+```
+To jest komunikat błędu
+```
 
-## Zobacz również
-- [Dokumentacja Swift na temat FileHandle](https://developer.apple.com/documentation/foundation/filehandle)
-- [POSIX Standard: Standard Error - opis standardu](https://pubs.opengroup.org/onlinepubs/9699919799/functions/stdin.html)
+Ten własny program obsługi pozwala kierować twoje komunikaty o błędach SwiftLog bezpośrednio do standardowego błędu, integrując się bezproblemowo z innymi komunikatami logów, które twoja aplikacja może generować.

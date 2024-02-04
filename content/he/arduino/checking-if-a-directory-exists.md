@@ -1,55 +1,67 @@
 ---
-title:                "בדיקה האם ספרייה קיימת"
-date:                  2024-01-19
-simple_title:         "בדיקה האם ספרייה קיימת"
-
+title:                "בדיקה אם ספרייה קיימת"
+date:                  2024-02-03T19:07:10.378167-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "בדיקה אם ספרייה קיימת"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/arduino/checking-if-a-directory-exists.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## מה ולמה?
-בדיקה אם תיקייה קיימת במערכות המבוססות על Arduino היא פרוצדורה שבודקת אם תיקייה מסוימת נמצאת בכרטיס ה-SD או בזיכרון. תכניתנים עושים זאת כדי לוודא שהקבצים והתיקיות שהם רוצים לעבוד איתם ממש קיימים לפני ניסיון לגשת או לשנות אותם, מניעת שגיאות וקריסות.
+בהקשר של תכנות ל-Arduino, בדיקה אם ספרייה קיימת על כרטיס SD או מודול אחסון דומה מאפשרת לך לקרוא או לכתוב קבצים ללא שגיאות. פעולה זו היא חיונית לתיעוד נתונים, ניהול הגדרות, או כל משימה שדורשת אחסון קבצים מובנה, ומבטיחה עמידות וביצועים זורמים ביישומים שלך.
 
-## איך עושים את זה:
-```Arduino
+## איך ל:
+Arduino אינו תומך באופן טבעי בפעולות מערכת קבצים מורכבות מיד לאחר החלטתו. עם זאת, בעזרת שימוש בספריית SD, שהיא חלק מ-IDE הסטנדרטי של Arduino, תוכל לעבוד בקלות עם קבצים וספריות. כדי לבדוק אם ספרייה קיימת, אתה צריך להתחיל את הכרטיס SD ואז להשתמש בשיטת `exists()` מספריית SD.
+
+ראשית, כלול את ספריית SD והגדר את חוט הבחירה של השבב:
+
+```cpp
 #include <SPI.h>
 #include <SD.h>
 
+const int chipSelect = 4; // חוט בחירת השבב עבור מודול כרטיס ה-SD
+```
+
+בפונקציית ה-`setup()` שלך, התחל את כרטיס ה-SD ובדוק אם הספרייה קיימת:
+
+```cpp
 void setup() {
   Serial.begin(9600);
-  if (!SD.begin()) {
-    Serial.println("Failed to initialize SD card.");
+  
+  if (!SD.begin(chipSelect)) {
+    Serial.println("Initialization failed!");
     return;
   }
 
-  File directory = SD.open("/exampleDir");
-  if (directory && directory.isDirectory()) {
-    Serial.println("Directory exists!");
+  // בדוק אם הספרייה קיימת
+  if (SD.exists("/myDir")) {
+    Serial.println("Directory exists.");
   } else {
-    Serial.println("Directory not found.");
+    Serial.println("Directory doesn't exist.");
   }
-  directory.close();
 }
+```
+בפונקציית `loop()`, אתה יכול להשאיר אותה ריקה או להוסיף קוד פעולה כפי שנדרש:
 
+```cpp
 void loop() {
-  // קוד כאן יכול להמשיך לבצע פעילויות אחרות...
+  // קוד פעולה או להשאיר ריק
 }
 ```
-פלט לדוגמה:
+
+הפלט לדוגמה לאחר ריצת הקוד יהיה אחד מהשניים:
+
 ```
-Directory exists!
+Directory exists.
 ```
 או
+
 ```
-Directory not found.
+Directory doesn't exist.
 ```
 
-## עיון נוסף:
-פונקציונליות זו שימושית כבר מאז הוצגו כרטיסי SD בשימוש עם לוחות Arduino. אלטרנטיבות כוללות שימוש בספריות שונות או בפקודות סיסטמה אבל, הספריה SD.h היא שיטת ה-Standard. כאשר אתם בודקים אם תיקייה קיימת, חשוב לסגור אותה עם `directory.close()` כדי לשחרר משאבים. הבדלים באופן שבו מערכות קבצים שונות מנהלות את התיקיות יכולים להשפיע על אופן השימוש בפונקציה בקוד שלכם.
-
-## ראה גם:
-- תיעוד SD Library לקבלת מידע נוסף: https://www.arduino.cc/en/Reference/SD
-- פורום Arduino לשאלות ותמיכה: https://forum.arduino.cc
-- מדריך למערכת הקבצים ב-Arduino: https://www.arduino.cc/en/Guide/Environment#toc9
+חשוב לוודא שכרטיס ה-SD מעוצב כראוי ושנתיב הספרייה `/myDir` מתאים לצרכים הספציפיים שלך. בדיקה זו היא אבן פינה לביצוע פעולות מורכבות יותר עם קבצים וספריות על כרטיסי SD עם Arduino.

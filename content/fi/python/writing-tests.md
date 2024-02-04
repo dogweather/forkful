@@ -1,54 +1,63 @@
 ---
 title:                "Testien kirjoittaminen"
-date:                  2024-01-19
+date:                  2024-02-03T19:31:35.869506-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Testien kirjoittaminen"
-
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/python/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? - Mikä & Miksi?
-Testikoodaus varmistaa ohjelmistosi laadun. Sen avulla havaitset virheet ajoissa ja varmistat, että koodisi tekee sen, mitä sen on tarkoitus.
+## Mitä ja miksi?
+Testien kirjoittaminen Pythonilla tarkoittaa automatisoitujen skriptien luomista koodisi oikeellisuuden varmistamiseksi. Ohjelmoijat tekevät tämän varmistaakseen, että heidän funktionsa tai luokkansa toimivat odotetusti erilaisissa olosuhteissa, mikä auttaa löytämään virheitä aikaisin ja helpottaa ylläpitoa ja uudelleenmuotoilua.
 
-## How to: - Miten:
-```Python
+## Kuinka:
+Python sisältää sisäänrakennetun moduulin testeille nimeltä `unittest`. Näin voit käyttää sitä yksinkertaisen funktion testaamiseen:
+
+```python
 import unittest
 
-# Testattava funktio
-def summa(a, b):
+def add(a, b):
     return a + b
 
-# Testiluokka, joka perii unittest.TestCase
-class SummaTestit(unittest.TestCase):
-    def test_summa_positiiviset(self):
-        self.assertEqual(summa(2, 3), 5)
+class TestAddFunction(unittest.TestCase):
+    def test_add(self):
+        self.assertEqual(add(1, 2), 3)
+        self.assertEqual(add(-1, 1), 0)
+        self.assertNotEqual(add(10, 2), 12, "Pitäisi olla 12")
 
-    def test_summa_negatiiviset(self):
-        self.assertEqual(summa(-2, -3), -5)
-        
-    def test_summa_nollan_kanssa(self):
-        self.assertEqual(summa(0, 0), 0)
-
-# Testien suoritus
 if __name__ == '__main__':
     unittest.main()
 ```
 
-Näin testataan funktiota `summa`. Saatavilla olevan terminaalin tuloste voi näyttää tältä:
+Kun ajat tämän testiskriptin, sinun tulisi nähdä tuloste, jossa ilmoitetaan, että testisi menivät läpi (tai epäonnistuivat).
+
+Nykyajan moderneja ja ilmaisuvoimaisempia testejä varten voit käyttää kolmannen osapuolen kirjastoa, kuten `pytest`. Ensin sinun on asennettava se käyttäen pip:
+
+```shell
+pip install pytest
 ```
-...
-----------------------------------------------------------------------
-Ran 3 tests in 0.001s
 
-OK
+Sen jälkeen voit kirjoittaa testisi yksinkertaisemmin ilman, että sinun tarvitsee periä mitään:
+
+```python
+# Tallenna tämä tiedostoon nimeltä test_with_pytest.py
+def add(a, b):
+    return a + b
+
+def test_add():
+    assert add(1, 2) == 3
+    assert add(-1, 1) == 0
+    assert add(10, 2) != 12, "Pitäisi olla 12"
 ```
 
-## Deep Dive - Syväsukellus
-Testit kehittyivät osaksi ohjelmointia jo 1960-luvulla. Nörtit ovat sittemmin luoneet useita testauskehyksiä, kuten PyUnit Pythonille. PyUnit tukee useita testaustyylejä, mukaan lukien yksikkötestaus ja integraatiotestaus; se on osa Pythonin standardikirjastoa `unittest`-nimellä. Vaihtoehtoja kuten pytest ja nose2 ovat myös suosittuja, tarjoten erilaisia ominaisuuksia ja yksinkertaistaen testien kirjoittamista.
+Ajaa testisi `pytest`in kanssa, suorita yksinkertaisesti:
 
-## See Also - Katso Myös
-- Pythonin virallinen `unittest`-ohje: https://docs.python.org/3/library/unittest.html
-- pytest-dokumentaatio: https://docs.pytest.org/en/stable/
-- Testauskäytännöt Pythonin virallisella oppimissivustolla: https://realpython.com/python-testing/
+```shell
+pytest test_with_pytest.py
+```
+
+Sinun pitäisi nähdä pytestin tuloste testituloksistasi.

@@ -1,47 +1,72 @@
 ---
-title:                "HTML:n jäsentäminen"
-date:                  2024-01-20T15:33:12.341706-07:00
-simple_title:         "HTML:n jäsentäminen"
-
+title:                "HTML:n jäsennys"
+date:                  2024-02-03T19:12:41.403086-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "HTML:n jäsennys"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/powershell/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Mitä & Miksi?)
-HTML:n jäsentäminen on prosessi, jossa HTML-sisällöstä poimitaan tietoja. Koodaajat tekevät tämän datan hyödyntämiseen, esimerkiksi verkkosivujen sisällön kaapaukseen tai automatisoituun testaukseen.
+## Mikä & Miksi?
+HTML:n jäsentäminen PowerShellissä tarkoittaa HTML-sisällön purkamista erityisten tietojen poimimiseksi tai webiin liittyvien tehtävien automatisoimiseksi. Ohjelmoijat tekevät näin vuorovaikuttaakseen verkkosivujen kanssa, kaapiakseen web-sisältöä tai automatisoidakseen lomakkeiden lähetyksiä ja muita web-vuorovaikutuksia tarvitsematta web-selainta.
 
-## How to: (Miten tehdä:)
-```PowerShell
-# Asenna ensin tarvittava HtmlAgilityPack-moduuli
-Install-Package HtmlAgilityPack
+## Kuinka:
 
-# Lataa HTML-sivun sisältö
-$html = Invoke-WebRequest -Uri 'http://example.com'
+PowerShell ei natiivisti sisällä erityistä HTML-jäsentäjää, mutta voit käyttää `Invoke-WebRequest` cmdletia HTML-sisällön saavuttamiseksi ja jäsentämiseksi. Monimutkaisempaan jäsentämiseen ja manipulointiin voidaan käyttää HtmlAgilityPackia, suosittua .NET-kirjastoa.
 
-# Lataa HtmlAgilityPack
-Add-Type -Path 'path\to\HtmlAgilityPack.dll'
+### Käyttäen `Invoke-WebRequest`-komentoa:
 
-# Luo HTML-dokumentin ja jäsentää sen
+```powershell
+# Yksinkertainen esimerkki otsikoiden noutamiseksi verkkosivulta
+$response = Invoke-WebRequest -Uri 'http://example.com'
+# Käytä ParsedHtml-ominaisuutta DOM-elementtien käyttämiseksi
+$title = $response.ParsedHtml.title
+Write-Output $title
+```
+
+Esimerkkituloste:
+
+```
+Esimerkkialue
+```
+
+### Käyttäen HtmlAgilityPackia:
+
+Ensiksi, sinun täytyy asentaa HtmlAgilityPack. Voit tehdä tämän via NuGet Package Manager:
+
+```powershell
+Install-Package HtmlAgilityPack -ProviderName NuGet
+```
+
+Sen jälkeen, voit käyttää sitä PowerShellissä HTML:n jäsentämiseen:
+
+```powershell
+# Lataa HtmlAgilityPack-kirjasto
+Add-Type -Path "polku\kohteeseen\HtmlAgilityPack.dll"
+
+# Luo HtmlDocument-objekti
 $doc = New-Object HtmlAgilityPack.HtmlDocument
-$doc.LoadHtml($html.Content)
 
-# Hae tiettyjä elementtejä XPathilla
-$nodes = $doc.DocumentNode.SelectNodes('//h1')
-foreach($node in $nodes){
+# Lataa HTML tiedostosta tai web-pyynnöstä
+$htmlContent = (Invoke-WebRequest -Uri "http://example.com").Content
+$doc.LoadHtml($htmlContent)
+
+# Käytä XPathia tai muita kyselymetodeja elementtien poimimiseksi
+$node = $doc.DocumentNode.SelectSingleNode("//h1")
+
+if ($node -ne $null) {
     Write-Output $node.InnerText
 }
 ```
-Esimerkkitulostus:
+
+Esimerkkituloste:
+
 ```
-Tervetuloa esimerkkisivulle
+Tervetuloa sivustolle Example.com!
 ```
 
-## Deep Dive (Syväsukellus):
-HTML:n jäsentäminen on ollut tarpeen siitä asti, kun verkkosivuja alettiin laajemmin hyödyntää dataa varten. Vaihtoehtoiset työkalut kuten JavaScriptin `DOMParser` tai Pythonin `BeautifulSoup` tarjoavat samankaltaista toiminnallisuutta. PowerShellin etu on sen vahva integroituvuus Windows-ympäristössä. HtmlAgilityPack on suosittu .NET-kirjasto HTML-dokumenttien käsittelyyn, ja sen avulla voidaan käyttää XPath-kyselyä sopivien elementtien löytämiseen ja niiden sisällön käsittelyyn. Tämä tekee jäsentämisprosessista joustavan ja voimakkaan.
-
-## See Also (Katso Myös):
-- [HtmlAgilityPack-kotisivu](https://html-agility-pack.net/)
-- [PowerShell Gallery](https://www.powershellgallery.com/)
-- [XPath-tutorial](https://www.w3schools.com/xml/xpath_intro.asp)
+Näissä esimerkeissä `Invoke-WebRequest` on paras yksinkertaisiin tehtäviin, kun taas HtmlAgilityPack tarjoaa paljon rikkaamman joukon ominaisuuksia monimutkaiseen HTML:n jäsentämiseen ja manipulointiin.

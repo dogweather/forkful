@@ -1,40 +1,104 @@
 ---
 title:                "Tekstitiedoston kirjoittaminen"
-date:                  2024-01-19
+date:                  2024-02-03T19:30:36.460168-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Tekstitiedoston kirjoittaminen"
-
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/swift/writing-a-text-file.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
-Tiedoston kirjoittaminen koostuu datan tallentamisesta tekstin muodossa levylle. Koodarit käyttävät tätä toimintoa datan pysyvään tallennukseen ja myöhempään käsittelyyn.
+## Mikä ja miksi?
 
-## How to:
-Swiftissä tekstitiedostoon kirjoittaminen on suoraviivaista.
+Tekstitiedoston kirjoittaminen Swift-ohjelmointikielellä mahdollistaa merkkijonotietojen pysyvän tallentamisen tiedostojärjestelmään, mikä on olennaista tehtävissä, kuten asetusten tallennuksessa, käyttäjätietojen tallentamisessa tai lokien tallennuksessa. Ohjelmoijat tekevät näin usein säilyttääkseen tietoja sovelluksen käynnistysten välillä, jakamaan tietoja sovelluksen eri osien kesken tai viemään tietoja muiden ohjelmien käytettäväksi.
 
-```Swift
+## Miten:
+
+### Käyttäen Swiftin vakiokirjastoa
+
+Swiftin vakiokirjasto sisältää kaikki tarvittavat työkalut tekstitiedostojen kirjoittamiseen. Tässä on peruslähestymistapa:
+
+```swift
 import Foundation
 
-let fileManager = FileManager.default
-let path = fileManager.currentDirectoryPath.appending("/example.txt")
-let content = "Moi Swift-maailma!"
+let sisalto = "Hei, Wiredin lukijat! Swiftin opiskelu on hauskaa."
+let tiedostoPolku = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String
+let tiedostoNimi = "\(tiedostoPolku)/esimerkki.txt"
 
 do {
-    try content.write(toFile: path, atomically: true, encoding: .utf8)
-    print("Tiedosto kirjoitettu.")
-} catch {
-    print("Virhe tiedoston kirjoittamisessa: \(error)")
+    try sisalto.write(toFile: tiedostoNimi, atomically: false, encoding: String.Encoding.utf8)
+    print("Tiedosto kirjoitettu onnistuneesti")
+} catch let error as NSError {
+    print("Kirjoittaminen URLiin epäonnistui: \(tiedostoNimi), Virhe: " + error.localizedDescription)
 }
 ```
 
-Kun tämä koodi ajetaan, se luo `example.txt` tiedoston ja kirjoittaa siihen "Moi Swift-maailma!".
+Tämä koodipätkä kirjoittaa merkkijonon nimellä `esimerkki.txt` sijaintiin dokumenttien kansio. Se käsittelee mahdolliset virheet käyttäen Swiftin do-try-catch-virheenkäsittelyä.
 
-## Deep Dive
-Tiedostoja on kirjoitettu ohjelmoinnissa aikojen alusta. Swift tarjoaa `Foundation` -kirjaston kautta helppokäyttöiset työkalut tiedostonhallintaan. Vaihtoehtoisesti voit käyttää alhaisemman tason C-kirjastoja, kuten `fwrite` POSIX API:sta, mutta Swiftin omat kirjoitusmetodit ovat yleensä riittäviä ja turvallisia. Atomisesti kirjoittaminen varmistaa, että tiedosto tallennetaan kunnolla virhetilanteissakin.
+### Käyttäen FileManageria lisäkontrolliin
 
-## See Also
-- Swiftin virallinen dokumentaatio tiedostojenkäsittelystä: [Apple Developer Documentation](https://developer.apple.com/documentation/foundation/filemanager)
-- Swiftin virallisen foorumin keskusteluja tiedostojen käsittelystä: [Swift Forums](https://forums.swift.org/c/related-projects/foundation)
+Lisäkontrolliin tiedoston attribuuteista tai tarkistaaksesi, olemassaoleeko tiedosto jo, voi käyttää `FileManageria`:
+
+```swift
+import Foundation
+
+let tiedostonhallinta = FileManager.default
+let hakemistot = tiedostonhallinta.urls(for: .documentDirectory, in: .userDomainMask)
+if let dokumenttihakemisto = hakemistot.first {
+    let tiedostoURL = dokumenttihakemisto.appendingPathComponent("esimerkki.txt")
+    let sisalto = "Swiftin tutkiminen tiedostonhallintaa varten on valaisevaa."
+
+    if tiedostonhallinta.fileExists(atPath: tiedostoURL.path) {
+        print("Tiedosto on jo olemassa")
+    } else {
+        do {
+            try sisalto.write(to: tiedostoURL, atomically: true, encoding: .utf8)
+            print("Tiedosto luotu ja kirjoitettu onnistuneesti")
+        } catch {
+            print("Tiedoston kirjoitusvirhe: \(error)")
+        }
+    }
+}
+```
+
+### Käyttäen kolmannen osapuolen kirjastoja
+
+Yksi suosittu kolmannen osapuolen kirjasto tiedostojärjestelmätoimintojen käsittelyyn Swiftissä on `Files` John Sundelliltä:
+
+Lisää ensin Files projektiisi, yleensä Swift Package Managerin kautta.
+
+```swift
+// swift-tools-version:5.3
+import PackageDescription
+
+let paketti = Package(
+    name: "PaketinNimesi",
+    dependencies: [
+        .package(url: "https://github.com/JohnSundell/Files", from: "4.0.0"),
+    ],
+    targets: [
+        .target(
+            name: "KohdeNimesi",
+            dependencies: ["Files"]),
+    ]
+)
+```
+
+Käytä sitten sitä kirjoittaaksesi tiedostoon:
+
+```swift
+import Files
+
+do {
+    let tiedosto = try File(path: "/polku/sinun/hakemistoosi/esimerkki.txt")
+    try tiedosto.write(string: "Swift ja Files-kirjasto muodostavat tehokkaan yhdistelmän.")
+    print("Tiedosto kirjoitettu onnistuneesti käyttäen Files-kirjastoa.")
+} catch {
+    print("Tapahtui virhe: \(error)")
+}
+```
+
+`Files`-kirjaston avulla tiedostojen käsittely muuttuu suoraviivaisemmaksi, mikä mahdollistaa keskittymisen sovelluksesi liiketoimintalogiikkaan sen sijaan, että huolehtisit tiedostonhallinnan yksityiskohdista.

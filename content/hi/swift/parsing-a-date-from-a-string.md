@@ -1,42 +1,71 @@
 ---
-title:                "स्ट्रिंग से दिनांक पार्स करना"
-date:                  2024-01-20T15:39:26.212596-07:00
-simple_title:         "स्ट्रिंग से दिनांक पार्स करना"
-
+title:                "स्ट्रिंग से तारीख पार्स करना"
+date:                  2024-02-03T19:16:43.436276-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "स्ट्रिंग से तारीख पार्स करना"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/swift/parsing-a-date-from-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (क्या और क्यों?)
-डेट को स्ट्रिंग से पार्स करना मतलब टेक्स्ट फॉर्म में दी गई तारीख को प्रोग्राम के समझने योग्य फॉर्मेट में बदलना है। प्रोग्रामर्स इसे इसलिए करते हैं ताकि तारीख से संबंधित क्रियावलियां (जैसे कि तुलना करना, समय क्षेत्र में बदलाव करना) को आसान बनाया जा सके।
+## क्या और क्यों?
+एक स्ट्रिंग से दिनांक पार्स करना टेक्स्टुअल दिनांक और समय प्रतिनिधित्वों को `Date` ऑब्जेक्ट में बदलने की प्रक्रिया है। यह प्रक्रिया उन अनुप्रयोगों में आवश्यक है जहां दिनांकों को स्ट्रिंग्स के रूप में संवादित किया जाता है, जैसे कि API प्रतिक्रियाओं या उपयोगकर्ता इनपुट्स में, जिससे दिनांक मैनिपुलेशन और फॉर्मेटिंग आसान हो जाती है।
 
-## How to (कैसे करें):
-Swift में `DateFormatter` क्लास का उपयोग करके हम आसानी से एक स्ट्रिंग को डेट में पार्स कर सकते हैं।
+## कैसे:
+
+### फाउंडेशन का `DateFormatter` का उपयोग करना
+स्विफ्ट की स्टैंडर्ड लाइब्रेरी, फाउंडेशन, `DateFormatter` प्रदान करती है जो स्ट्रिंग्स को `Date` ऑब्जेक्ट में और विपरीत बदलने के लिए है। एक स्ट्रिंग से दिनांक पार्स करने के लिए, आप स्ट्रिंग से मेल खाने वाले दिनांक फॉर्मेट को निर्दिष्ट करते हैं, फिर इसे पार्स करने के लिए फॉर्मेटर का उपयोग करते हैं।
 
 ```swift
 import Foundation
 
-let dateString = "2023-04-02"
-let dateFormatter = DateFormatter()
-dateFormatter.dateFormat = "yyyy-MM-dd"
-
-if let date = dateFormatter.date(from: dateString) {
-    print("डेट पार्स हो गई: \(date)")
+let dateString = "2023-04-30"
+let formatter = DateFormatter()
+formatter.dateFormat = "yyyy-MM-dd"
+if let date = formatter.date(from: dateString) {
+    print("पार्स की गई दिनांक: \(date)")
 } else {
-    print("गलत फॉर्मेट है।")
+    print("दिनांक पार्स करने में विफल")
 }
+// नमूना आउटपुट: पार्स की गई दिनांक: 2023-04-29 22:00:00 +0000
 ```
 
-इस कोड से आपको आउटपुट मिलेगा जो `Date` ऑब्जेक्ट को प्रिंट करेगा अगर पार्सिंग सही से हुई हो। 
+नोट करें कि आउटपुट आपके टाईमज़ोन के आधार पर भिन्न हो सकता है।
 
-## Deep Dive (गहराई से जानकारी):
-डेट पार्सिंग की महत्ता तब से है जब से प्रोग्रामिंग शुरू हुई, क्योंकि तारीख की मानकीकरण और विभिन्न फॉर्मेटों की अदला-बदली जरूरत बहुत आम है। `DateFormatter` के अलावा, Swift में `ISO8601DateFormatter` जैसे स्पेशलाइज्ड फॉर्मेटर्स भी हैं जो ISO 8601 स्टैंडर्ड फॉर्मेट में डेट को पार्स करने के लिए उपयोग होते हैं।
+### ISO8601DateFormatter का उपयोग करना
+ISO 8601 दिनांक प्रारूपों के लिए, स्विफ्ट एक विशेषज्ञ फॉर्मेटर, `ISO8601DateFormatter` प्रदान करता है, जो पार्सिंग प
 
-Implementation details में `dateFromString` फंक्शन लोकल टाइमज़ोन में डेट ऑब्जेक्ट को इंटरप्रेट करता है, जब तक कि एक विशेष `timeZone` सेट न किया गया हो। दुनियाभर में समय क्षेत्रों की विविधता के कारण, यह सुनिश्चित करना जरूरी है कि स्ट्रिंग से पार्स की गई डेट सही टाइमज़ोन में हो।
+्रक्रिया को सरल बनाता है।
 
-## See Also (इसे भी देखें):
-- Swift के `Date` और `DateFormatter` के लिए अधिकारी दस्तावेज़ (Documentation): [Date](https://developer.apple.com/documentation/foundation/date) और [DateFormatter](https://developer.apple.com/documentation/foundation/dateformatter)
-- Apple का Date Formatting Guide: [Date Formatters](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/DataFormatting/Articles/dfDateFormatting10_4.html)
-- `ISO8601DateFormatter` के बारे में Apple का दस्तावेज़: [ISO8601DateFormatter](https://developer.apple.com/documentation/foundation/iso8601dateformatter)
+```swift
+import Foundation
+
+let dateString = "2023-04-30T15:00:00+00:00"
+let isoFormatter = ISO8601DateFormatter()
+if let date = isoFormatter.date(from: dateString) {
+    print("पार्स की गई ISO8601 दिनांक: \(date)")
+} else {
+    print("ISO8601 दिनांक पार्स करने में विफल")
+}
+// नमूना आउटपुट: पार्स की गई ISO8601 दिनांक: 2023-04-30 15:00:00 +0000
+```
+
+### थर्ड-पार्टी लाइब्रेरी का उपयोग: SwiftDate
+जबकि स्विफ्ट दिनांक पार्स करने के लिए शक्तिशाली उपकरण प्रदान करता है, थर्ड-पार्टी लाइब्रेरीज़ जैसे कि SwiftDate और भी अधिक लचीलापन और सुविधा प्रदान करती हैं। अपने प्रोजेक्ट में SwiftDate जोड़ने के बाद, पार्सिंग उतनी ही साधारण हो जाती है:
+
+```swift
+import SwiftDate
+
+let dateString = "April 30, 2023"
+if let date = dateString.toDate("MMMM dd, yyyy") {
+    print("SwiftDate के साथ पार्स की गई दिनांक: \(date)")
+} else {
+    print("SwiftDate के साथ दिनांक पार्स करने में विफल")
+}
+// नमूना आउटपुट: SwiftDate के साथ पार्स की गई दिनांक: 2023-04-30 00:00:00 +0000
+```
+
+SwiftDate प्राकृतिक भाषा और व्यापक रेंज के दिनांक प्रारूपों के साथ पार्सिंग को सरल बनाता है, जिससे यह आपके स्विफ्ट प्रोग्रामिंग टूलकिट को शक्तिशाली अतिरिक्त बनाता है।

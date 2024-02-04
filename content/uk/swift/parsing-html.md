@@ -1,55 +1,72 @@
 ---
-title:                "Парсинг HTML"
-date:                  2024-01-20T15:34:17.519705-07:00
-simple_title:         "Парсинг HTML"
-
+title:                "Аналіз HTML"
+date:                  2024-02-03T19:13:56.180248-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Аналіз HTML"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/swift/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Що це таке & чому?
-Розбір HTML – це процес аналізу HTML-коду для отримання даних. Програмісти роблять це, щоб зчитувати інформацію з веб-сторінок або модифікувати її.
+## Що і Чому?
+Розбір HTML означає процес розбиття та інтерпретації структури HTML-вмісту, зазвичай для вилучення певних даних або програмної маніпуляції з цим вмістом. Програмісти займаються розбором HTML для веб-скрапінгу, збору даних, автоматизованого тестування та міграції вмісту, дозволяючи додаткам ефективно взаємодіяти з веб-документами та обробляти їх.
 
-## Як це зробити:
-Використовуємо Swift і фреймворк SwiftSoup, щоб парсити HTML. Ось як:
+## Як:
+Swift за замовчуванням не включає вбудовану бібліотеку для розбору HTML, що потребує використання сторонніх бібліотек для ефективного виконання цього завдання. Одним з найпопулярніших варіантів є SwiftSoup, чиста бібліотека Swift, яка пропонує синтаксис подібний до jQuery для розбору і маніпуляції HTML.
 
-```Swift
+### Встановлення
+Спочатку вам потрібно додати SwiftSoup до вашого проєкту. Якщо ви використовуєте Swift Package Manager, можете додати її до залежностей у вашому `Package.swift`:
+
+```swift
+dependencies: [
+    .package(url: "https://github.com/scinfu/SwiftSoup.git", from: "2.3.2")
+]
+```
+
+### Приклад: Витягування посилань з HTML
+Припустимо, у вас є HTML-документ, і ви хочете витягнути всі посилання (`<a href="...">`). З SwiftSoup ви можете зробити це легко:
+
+```swift
 import SwiftSoup
 
-func parseHTML(html: String) {
-    do {
-        let doc = try SwiftSoup.parse(html)
-        let links = try doc.select("a")
-        
-        for link in links {
-            let linkHref = try link.attr("href")
-            let linkText = try link.text()
-            print("\(linkText): \(linkHref)")
-        }
-    } catch {
-        print("Error parsing HTML: \(error)")
+let html = """
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Зразкова сторінка</title>
+</head>
+<body>
+    <p>Ласкаво просимо на наш сайт</p>
+    <a href="https://example.com/page1">Сторінка 1</a>
+    <a href="https://example.com/page2">Сторінка 2</a>
+</body>
+</html>
+"""
+
+do {
+    let doc: Document = try SwiftSoup.parse(html)
+    let links: Elements = try doc.select("a")
+    for link in links.array() {
+        let linkHref: String = try link.attr("href")
+        let linkText: String = try link.text()
+        print("\(linkText) - \(linkHref)")
     }
+} catch Exception.Error(let type, let message) {
+    print("Тип помилки: \(type) Повідомлення: \(message)")
+} catch {
+    print("помилка")
 }
-
-let html = "<html><head><title>Test</title></head><body><a href='http://example.com'>Example</a></body></html>"
-parseHTML(html: html)
 ```
 
-Вивід:
+### Приклад виводу
+Попередній код витягує URL-адреси та їх текст з HTML, виводячи:
+
 ```
-Example: http://example.com
+Сторінка 1 - https://example.com/page1
+Сторінка 2 - https://example.com/page2
 ```
 
-## Глибоке занурення:
-Розбір HTML не новий. З появою інтернету програмісти шукали способи читати веб-сторінки автоматично. Раніше використовувалися прості методи, такі як регулярні вирази, але це малоефективно для складного HTML.
-
-Альтернативи? XPath, різні API для роботи з DOM. Кожен з цих інструментів має своє призначення, але SwiftSoup надає простий інтерфейс, який добре вписується у Swift екосистему.
-
-Деталі? SwiftSoup імітує jQuery для спрощення синтаксису. Працюючи з ним, ви обираєте теги, класи чи ID, щоб знайти елементи сторінки. Розбір відбувається за допомогою внутрішньої структури документу, тож це безпечніше, ніж регулярні вирази, які можуть "зламатися" через складний HTML.
-
-## Дивись також:
-- Офіційна документація SwiftSoup: https://swifthsoup.lexfor.net/
-- XPath: https://www.w3schools.com/xml/xpath_intro.asp
-- Робота з DOM в Swift: https://developer.apple.com/documentation/webkit/dom_webkit_dom_classes
+Цей базовий приклад демонструє, як використовувати SwiftSoup для розбору HTML-документів. Досліджуючи документацію SwiftSoup далі, ви можете знайти численні методи для навігації, пошуку та модифікації HTML-вмісту, надаючи вашим додаткам Swift змогу легко обробляти складний веб-вміст.

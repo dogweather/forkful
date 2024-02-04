@@ -1,54 +1,80 @@
 ---
 title:                "Praca z JSON"
-date:                  2024-01-19
+date:                  2024-02-03T19:23:10.890579-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Praca z JSON"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/kotlin/working-with-json.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Co i dlaczego?
-W pracy z JSON chodzi o manipulowanie i przechowywanie danych w formacie, który jest prosty dla człowieka do odczytania, a dla maszyny do parsowania. Programiści używają JSON, bo jest elastyczny, współgra z większością technologii i jest łatwy w użyciu.
+Praca z JSON-em (JavaScript Object Notation) w Kotlinie obejmuje analizowanie i generowanie danych JSON. Programiści robią to, aby łatwo wymieniać dane między różnymi warstwami aplikacji lub komunikować się z usługami sieciowymi, ze względu na lekki i czytelny format JSON.
 
 ## Jak to zrobić:
-Kotlin ułatwia pracę z JSON poprzez zintegrowane biblioteki. Oto przykład użycia biblioteki kotlinx.serialization do serializacji i deserializacji JSON:
+Kotlin nie zawiera wbudowanego wsparcia dla JSON, ale wykorzystuje potężne funkcje bibliotek stron trzecich, takich jak `Gson` od Google i `Kotlinx.serialization` od JetBrains. Oto jak możesz używać obu do pracy z JSON.
 
-```Kotlin
+### Korzystanie z Gson
+Dodaj zależność Gson do swojego pliku `build.gradle`:
+```kotlin
+implementation 'com.google.code.gson:gson:2.8.9'
+```
+
+Parsowanie łańcucha JSON na obiekt i odwrotnie:
+```kotlin
+import com.google.gson.Gson
+
+// Zdefiniuj klasę danych
+data class User(val name: String, val age: Int)
+
+fun main() {
+    val gson = Gson()
+
+    // Serializacja
+    val json = gson.toJson(User("John Doe", 30))
+    println(json)  // Wynik: {"name":"John Doe","age":30}
+
+    // Deserializacja
+    val user: User = gson.fromJson(json, User::class.java)
+    println(user)  // Wynik: User(name=John Doe, age=30)
+}
+```
+
+### Korzystanie z Kotlinx.serialization
+Najpierw dołącz zależność w swoim `build.gradle`:
+```kotlin
+implementation "org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.3"
+```
+
+Następnie zastosuj wtyczkę `kotlinx-serialization` na początku skryptu budującego:
+```kotlin
+plugins {
+    kotlin("jvm") version "1.6.10"
+    kotlin("plugin.serialization") version "1.6.10"
+}
+```
+
+Serializacja i deserializacja z Kotlinx.serialization:
+```kotlin
 import kotlinx.serialization.*
 import kotlinx.serialization.json.*
 
+// Zdefiniuj serializowalną klasę danych
 @Serializable
 data class User(val name: String, val age: Int)
 
 fun main() {
-    val json = Json { prettyPrint = true }
-    val data = User("Jan", 25)
+    // Serializacja
+    val json = Json.encodeToString(User("Jane Doe", 28))
+    println(json)  // Wynik: {"name":"Jane Doe","age":28}
 
-    // Serializacja: Obiekt -> JSON
-    val jsonString = json.encodeToString(User.serializer(), data)
-    println(jsonString)
-
-    // Deserializacja: JSON -> Obiekt
-    val userData = json.decodeFromString(User.serializer(), jsonString)
-    println(userData)
+    // Deserializacja
+    val user = Json.decodeFromString<User>(json)
+    println(user)  // Wynik: User(name=Jane Doe, age=28)
 }
 ```
 
-Output będzie wyglądał następująco:
-```
-{
-    "name": "Jan",
-    "age": 25
-}
-User(name=Jan, age=25)
-```
-
-## Wgłębiamy się
-JSON (JavaScript Object Notation) był pierwotnie wiązany z JavaScriptem, ale stał się niezależnym standardem. Alternatywy to XML czy YAML, ale JSON jest popularniejszy z powodu swojej prostoty. Implementując obsługę JSON w Kotlinie, warto używać bibliotek takich jak kotlinx.serialization lub Moshi, które automatyzują większość procesu.
-
-## Zobacz także
-- Dokumentacja Kotlinx.serialization: [kotlinx.serialization](https://github.com/Kotlin/kotlinx.serialization)
-- Oficjalna dokumentacja JSON: [JSON.org](https://www.json.org/json-en.html)
-- Porównanie formatów danych (JSON vs XML vs YAML): [BitDegree Tutorials](https://www.bitdegree.org/learn/json-vs-xml-vs-yaml)
+Zarówno Gson, jak i Kotlinx.serialization upraszczają pracę z JSON w aplikacjach Kotlin. Wybór jednej z tych opcji zależy od konkretnych wymagań projektu i osobistych preferencji.

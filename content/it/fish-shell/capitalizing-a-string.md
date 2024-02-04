@@ -1,49 +1,57 @@
 ---
-title:                "Maiuscolizzare una stringa"
-date:                  2024-01-19
-simple_title:         "Maiuscolizzare una stringa"
-
+title:                "Capitalizzare una stringa"
+date:                  2024-02-03T19:05:21.818799-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Capitalizzare una stringa"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/fish-shell/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Capitalizzare una stringa vuol dire trasformare tutte le lettere in maiuscole. I programmatori lo fanno per uniformità, confronti di testi o per estetica.
+## Cosa & Perché?
 
-## How to:
-Fish non ha un comando integrato per capitalizzare tutto, ma possiamo usare 'string' e 'awk' così:
+Capitalizzare una stringa significa modificarla in modo che la prima lettera sia maiuscola e il resto della stringa sia minuscolo. Questo è un compito comune nell'elaborazione del testo, nella normalizzazione degli input degli utenti e nella formattazione dei dati per garantire coerenza o per soddisfare criteri di formattazione specifici.
 
-```Fish Shell
-echo "cia mondo" | string upper # usa 'string upper' per capitalizzare
+## Come fare:
+
+In Fish Shell, le stringhe possono essere manipolate direttamente con funzioni incorporate, senza la necessità di strumenti esterni o librerie. Per capitalizzare una stringa, puoi combinare il comando `string` con sottocomandi.
+
+```fish
+# Stringa di esempio
+set sample_string "hello world"
+
+# Capitalizza la prima lettera
+set capitalized_string (string sub -l 1 -- $sample_string | string upper)(string sub -s 2 -- $sample_string)
+
+echo $capitalized_string
 ```
 
 Output:
 ```
-CIA MONDO
+Hello world
 ```
 
-Oppure con awk:
+Per scenari che richiedono la capitalizzazione di più parole in una stringa (ad es., convertendo "hello world" in "Hello World"), si dovrebbe iterare su ogni parola, applicando la logica di capitalizzazione a ciascuna:
 
-```Fish Shell
-echo "cia mondo" | awk '{ print toupper($0) }' # awk per capitalizzare
+```fish
+# Frase di esempio
+set sentence "hello fish shell programming"
+
+# Capitalizza ogni parola
+set capitalized_words (string split " " -- $sentence | while read -l word; string sub -l 1 -- $word | string upper; and string sub -s 2 -- $word; end)
+
+# Unisci le parole capitalizzate
+set capitalized_sentence (string join " " -- $capitalized_words)
+
+echo $capitalized_sentence
 ```
 
 Output:
 ```
-CIA MONDO
+Hello Fish Shell Programming
 ```
 
-## Deep Dive
-Prima dell'introduzione di `string`, capitava di dover installare strumenti esterni o scrivere script complicati. Con `string`, da Fish 2.3.0, la manipolazione delle stringhe è diventata semplice. Tuttavia, alcuni preferiscono usare `awk`, `tr` o `sed` per abitudine o per compatibilità con altri shell.
-
-`awk` è potente per il processamento di testi e file. `tr` è un comando UNIX più vecchio che trasforma o elimina caratteri. `sed` è per l'editing di flussi di testi.
-
-Ognuno ha i suoi casi d'uso, ma in Fish, `string` è spesso il modo più diretto e pulito.
-
-## See Also
-- Documentazione di Fish su `string`: https://fishshell.com/docs/current/cmds/string.html
-- AWK User’s Guide: https://www.gnu.org/software/gawk/manual/gawk.html
-- Unix `tr` command: https://man7.org/linux/man-pages/man1/tr.1.html
-- GNU `sed`: https://www.gnu.org/software/sed/manual/sed.html
+Nota che Fish Shell non offre direttamente un approccio con un unico comando per la capitalizzazione di intere frasi nello stesso modo in cui alcuni linguaggi di programmazione fanno con i loro metodi di stringa. Quindi, combinare `string split`, `string sub`, `string upper`, e poi riunire rappresenta un approccio idiomatico in Fish Shell per raggiungere questo scopo.

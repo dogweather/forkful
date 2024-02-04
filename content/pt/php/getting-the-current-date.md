@@ -1,35 +1,51 @@
 ---
 title:                "Obtendo a data atual"
-date:                  2024-01-20T15:16:12.125192-07:00
+date:                  2024-02-03T19:10:12.932403-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Obtendo a data atual"
-
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/php/getting-the-current-date.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## O Quê & Porquê?
-Obter a data atual em PHP é pegar o dia, mês e ano em que o código está sendo executado. Programadores fazem isso para registrar eventos, validar sessões, criar timestamps e personalizar conteúdo para o usuário.
+## O que & Por quê?
+Obter a data atual em PHP é uma tarefa fundamental que permite recuperar e manipular a data e a hora do sistema. Isso é crucial para funções como registrar logs, marcar posts com data e hora, agendar eventos ou executar operações sensíveis ao tempo em suas aplicações.
 
 ## Como fazer:
-```PHP
-<?php
-echo "Hoje é: " . date("d/m/Y") . "<br>";
-echo "Agora são: " . date("H:i:s");
-?>
-```
-Saída de exemplo:
-```
-Hoje é: 10/04/2023
-Agora são: 15:42:01
+### PHP Nativo
+A função embutida `date()` do PHP é a maneira mais direta de obter a data atual. Você pode formatar a data de várias maneiras especificando o parâmetro de formato.
+
+```php
+echo date("Y-m-d"); // Exibe: 2023-04-01 (por exemplo)
+echo date("l, F j, Y"); // Exibe: Saturday, April 1, 2023 (Sábado, 1 de abril de 2023)
 ```
 
-## Mergulho Profundo
-Antes de PHP 5.2.0, a função `date_default_timezone_get()` requer a diretiva `date.timezone` no arquivo php.ini para obter o fusohorário correto. Atualmente, com `date_default_timezone_set('America/Sao_Paulo')`, você pode definir o fusohorário no próprio script. Alternativamente, `DateTime` e `DateTimeZone` objetos oferecem uma abordagem orientada a objetos. É importante usar essas funções por questões de internacionalização e para evitar problemas com horário de verão e fusos horários.
+Para obter a data e a hora com suporte a fuso horário, você pode usar a classe `DateTime` juntamente com `DateTimeZone`.
 
-## Veja Também
-- [Documentação oficial da função date](https://www.php.net/manual/pt_BR/function.date.php)
-- [Como configurar o fuso horário no PHP](https://www.php.net/manual/pt_BR/function.date-default-timezone-set.php)
-- [Classe DateTime](https://www.php.net/manual/pt_BR/class.datetime.php)
-- [Classe DateTimeZone](https://www.php.net/manual/pt_BR/class.datetimezone.php)
+```php
+$dateTime = new DateTime('now', new DateTimeZone('America/New_York'));
+echo $dateTime->format('Y-m-d H:i:s'); // Exibe: 2023-04-01 12:00:00 (por exemplo)
+```
+
+### Usando Carbon (Uma Biblioteca Terceirizada Popular)
+[Carbon](https://carbon.nesbot.com/) é uma extensão simples da API para `DateTime` que fornece uma maneira mais limpa e fluente de trabalhar com datas e horas.
+
+Primeiro, certifique-se de que o Carbon esteja instalado via Composer:
+```bash
+composer require nesbot/carbon
+```
+
+Então, você pode usá-lo para obter a data atual:
+
+```php
+use Carbon\Carbon;
+
+echo Carbon::now(); // Exibe: 2023-04-01 12:00:00 (por exemplo, no formato padrão)
+echo Carbon::now()->toDateString(); // Exibe: 2023-04-01
+echo Carbon::now()->format('l, F j, Y'); // Exibe: Saturday, April 1, 2023 (Sábado, 1 de abril de 2023)
+```
+
+O Carbon enriquece o manejo de data e hora em PHP adicionando legibilidade e uma infinidade de funcionalidades para manipulação, comparação e formatação do tempo.

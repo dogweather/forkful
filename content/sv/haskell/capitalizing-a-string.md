@@ -1,41 +1,58 @@
 ---
-title:                "Att göra en sträng versal"
-date:                  2024-01-19
-simple_title:         "Att göra en sträng versal"
-
+title:                "Gör om en sträng till versaler"
+date:                  2024-02-03T19:05:21.459938-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Gör om en sträng till versaler"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/haskell/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att kapitalisera en sträng innebär att göra den första bokstaven i varje ord stor. Programmerare gör detta för att formatera text på ett enhetligt sätt, ofta för gränssnitt eller dokumentation.
+Att förstora en sträng innebär att omvandla den första bokstaven i en given sträng till versal medan resten av bokstäverna förblir gemener. Programmerare gör detta för att formatera utdata, följa grammatisk korrekthet i texter, eller förbättra läsbarheten av genererade data.
 
 ## Hur man gör:
-```Haskell
+I Haskell kan du förstora en sträng med hjälp av standardbiblioteket utan att behöva några tredjepartsbibliotek.
+
+```haskell
+import Data.Char (toUpper, toLower)
+
+capitalize :: String -> String
+capitalize "" = ""
+capitalize (head:tail) = toUpper head : map toLower tail
+
+-- Exempel på användning:
+main = putStrLn $ capitalize "hello world"
+```
+
+Utdata:
+```
+Hello world
+```
+
+För mer komplexa scenarier eller för enkelhetens skull kanske du vill använda ett tredjepartsbibliotek som `text`, som är populärt för effektiv strängmanipulering i Haskell.
+
+Först måste du lägga till `text` i ditt projekts beroenden. Sedan kan du använda dess funktioner för att förstora en sträng som följer:
+
+```haskell
+import qualified Data.Text as T
 import Data.Char (toUpper)
 
--- Kapitaliserar första bokstaven i ett ord
-capitalize :: String -> String
-capitalize []     = []
-capitalize (x:xs) = toUpper x : xs
+capitalizeText :: T.Text -> T.Text
+capitalizeText text = case T.uncons text of
+    Nothing -> T.empty
+    Just (first, rest) -> T.cons (toUpper first) (T.toLower rest)
 
--- Använd exempel
-main :: IO ()
-main = do
-    let text = "haskell är kul"
-    putStrLn $ unwords $ map capitalize $ words text
-```
-Kör koden. Du får:
-```
-Haskell Är Kul
+-- Exempel på användning med textbiblioteket:
+main = putStrLn $ T.unpack $ capitalizeText (T.pack "hello world")
 ```
 
-## Djupdykning
-I tidiga datorsystem, var text ofta begränsad till stora bokstäver på grund av begränsad teckenstöd och enkelhet. Idag används textkapitalisering för att uppfylla språkliga konventioner och förbättra läsbarheten. Alternativ till `Data.Char` inkluderar att använda bibliotek som `text` eller `bytestring` för prestanda med större textmängder. Vid kapitalisering är det även viktigt att tänka på lokala konventioner, exempelvis olika regler i olika språk när det gäller vilka ord som skall börja med stor bokstav.
+Utdata:
+```
+Hello world
+```
 
-## Se också
-- Haskell's `Data.Char` modul: https://hackage.haskell.org/package/base-4.16.1.0/docs/Data-Char.html
-- `text` library: https://hackage.haskell.org/package/text
-- `bytestring` library: https://hackage.haskell.org/package/bytestring
+Båda dessa exempel demonstrerar enkla men effektiva sätt att förstora en sträng i Haskell, med eller utan tredjepartsbibliotek.

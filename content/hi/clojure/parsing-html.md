@@ -1,40 +1,75 @@
 ---
-title:                "HTML पार्स करना"
-date:                  2024-01-20T15:30:54.402634-07:00
-simple_title:         "HTML पार्स करना"
-
+title:                "HTML विश्लेषण"
+date:                  2024-02-03T19:13:23.275738-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "HTML विश्लेषण"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/clojure/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (क्या और क्यों?)
-HTML पार्सिंग यानी हाइपरटेक्स्ट मार्कअप लैंग्वेज डेटा को प्रोसेस करके स्ट्रक्चर्ड डेटा में बदलना। प्रोग्रामर्स ऐसा वेबसाइट्स से डेटा निकालने, और उसे विश्लेषण या दूसरे प्रोजेक्ट्स में इस्तेमाल करने के लिए करते हैं।
+## क्या और क्यों?
 
-## How to: (कैसे करें?)
-Clojure में HTML पार्सिंग के लिए `enlive` लाइब्रेरी एक लोकप्रिय विकल्प है। नीचे देखिए `enlive` का उपयोग करके कैसे HTML को पार्स किया जाता है:
+Clojure में HTML पार्सिंग का अर्थ है HTML दस्तावेज़ों से कार्यक्रमात्मक रूप से जानकारी निकालना। प्रोग्रामर यह वेब सामग्री तक पहुँचने, संशोधित करने, या गतिशील रूप से मॉनिटर करने के लिए करते हैं, कार्यों को स्वचालित करने या एप्लिकेशंस में डेटा खिलाने के लिए।
 
-```Clojure
+## कैसे करें:
+
+Clojure में HTML पार्सिंग की कोई निर्मित क्षमता नहीं है, लेकिन आप Java लाइब्रेरीज़ या Clojure रैपर जैसे कि `enlive` या `hickory` का उपयोग कर सकते हैं। यहाँ दोनों का उपयोग कैसे करें:
+
+### Enlive का उपयोग करके:
+
+Enlive HTML पार्सिंग और वेब स्क्रैपिंग के लिए लोकप्रिय विकल्प है। पहले, इसे अपनी परियोजना निर्भरताओं में शामिल करें:
+
+```clojure
+[net.cgrand/enlive "1.1.6"]
+```
+
+फिर, आप HTML को इस तरह पार्स और नेविगेट कर सकते हैं:
+
+```clojure
 (require '[net.cgrand.enlive-html :as html])
 
-(defn parse-html
-  [html-content]
-  (html/html-resource (java.io.ByteArrayInputStream. (.getBytes html-content))))
-
-(let [parsed-html (parse-html "<html><body><h1>Hello, World!</h1></body></html>")]
-  (html/select parsed-html [:h1]))
+(let [doc (html/html-resource (java.net.URL. "http://example.com"))]
+  (html/select doc [:div.some-class]))
 ```
 
-उदाहरण का आउटपुट ऐसा होगा:
+यह स्निपेट एक HTML पेज को लाता है और क्लास `some-class` के साथ सभी `<div>` तत्वों को चुनता है।
 
-```Clojure
-({:tag :h1, :attrs nil, :content ["Hello, World!"]})
+आउटपुट इस तरह दिखाई दे सकता है:
+
+```clojure
+({:tag :div, :attrs {:class "some-class"}, :content ["Here's some content."]})
 ```
 
-## Deep Dive (गहराई से जानकारी)
-HTML पार्सिंग का इतिहास वेब स्क्रैपिंग के उदय के साथ शुरू होता है, जो 1990 के दशक में लोकप्रिय हुआ। `enlive` के अलावा, Clojure में `jsoup` और `hickory` जैसे लाइब्रेरियां भी हैं, जो HTML पार्सिंग का काम करती हैं। पर इनके इंप्लीमेंटेशन अलग-अलग होते हैं। `enlive` एक डेक्लैरेटिव ऐप्रोच लेता है, `jsoup` जावा पर आधारित है, और `hickory` डीएसएल (डोमेन स्पेसिफिक लैंग्वेज) का उपयोग करता है। चुनाव आपके प्रोजेक्ट की जरूरतों पर निर्भर करता है।
+### Hickory का उपयोग करके:
 
-## See Also (देखें भी)
-- [Jsoup - a Java HTML parser](https://jsoup.org/)
-- [Hickory - Clojure HTML Parser](https://github.com/davidsantiago/hickory)
+Hickory Clojure में काम करने के लिए आसान एक प्रारूप में HTML को पार्स करने का तरीका प्रदान करती है। अपनी परियोजना निर्भरताओं में Hickory जोड़ें:
+
+```clojure
+[hickory "0.7.1"]
+```
+
+यहाँ एक सरल उदाहरण है:
+
+```clojure
+(require '[hickory.core :as hickory]
+         '[hickory.select :as select])
+
+;; HTML को Hickory प्रारूप में पार्स करें
+(let [doc (hickory/parse "<html><body><div id='main'>Hello, world!</div></body></html>")]
+  ;; id 'main' वाले डिव का चयन करें
+  (select/select (select/id "main") doc))
+```
+
+यह कोड एक सरल HTML स्ट्रिंग को पार्स करता है और ID `main` वाले एक `div` को ढूँढने के लिए एक CSS सेलेक्टर का उपयोग करता है।
+
+उदाहरण आउटपुट:
+
+```clojure
+[{:type :element, :tag :div, :attrs {:id "main"}, :content ["Hello, world!"]}]
+```
+
+`enlive` और `hickory` दोनों Clojure में HTML पार्सिंग के लिए शक्तिशाली समाधान प्रदान करते हैं, `enlive` अधिक टेम्पलेटिंग पर ध्यान केंद्रित करता है और `hickory` डेटा परिवर्तन पर जोर देता है।

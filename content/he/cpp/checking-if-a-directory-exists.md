@@ -1,46 +1,68 @@
 ---
-title:                "בדיקה האם ספרייה קיימת"
-date:                  2024-01-19
-simple_title:         "בדיקה האם ספרייה קיימת"
-
+title:                "בדיקה אם ספרייה קיימת"
+date:                  2024-02-03T19:07:16.215596-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "בדיקה אם ספרייה קיימת"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/cpp/checking-if-a-directory-exists.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## מה ולמה?
-בדיקה אם ספרייה קיימת ב-C++ מאפשרת לקוד לזהות אם ספרייה נתונה נמצאת במערכת הקבצים. תכניתנים עושים זאת כדי להימנע משגיאות בעת יצירת ספרייה שכבר קיימת, או לטפל בקבצים בתוך ספריות שקיימות.
+בדיקה אם ספרייה קיימת היא על קביעת נוכחות של ספרייה בנתיב מסוים לפני ביצוע פעולות כמו קריאה מאו כתיבה לתוך קבצים שבה. מתכנתים עושים זאת כדי להימנע משגיאות הקשורות לפעולות קבצים, מה שמבטיח ביצוע חלק ואמין יותר של משימות טיפול בקבצים ביישומים שלהם.
 
 ## איך לעשות:
-```C++
+ב-C++ מודרני (C++17 ואילך), אפשר להשתמש בספריית המערכת הקובצית לבדיקה אם ספרייה קיימת. היא מספקת דרך ישירה ומתוקנת לביצוע פעולות במערכת הקבצים, כולל בדיקה לקיומה של ספרייה.
+
+```cpp
 #include <iostream>
 #include <filesystem>
 
 namespace fs = std::filesystem;
 
 int main() {
-    std::string path_to_check = "/path/to/directory";
+    const fs::path dirPath = "/path/to/directory";
 
-    if(fs::exists(path_to_check)) {
-        std::cout << "הספרייה קיימת!" << std::endl;
+    if (fs::exists(dirPath) && fs::is_directory(dirPath)) {
+        std::cout << "The directory exists." << std::endl;
     } else {
-        std::cout << "הספרייה אינה קיימת." << std::endl;
+        std::cout << "The directory does not exist." << std::endl;
     }
 
     return 0;
 }
 ```
-פלט לדוגמא:
+פלט לדוגמא אם הספרייה קיימת:
 ```
-הספרייה קיימת!
-או
-הספרייה אינה קיימת.
+The directory exists.
 ```
 
-## עיון מעמיק
-בידיקת קיום ספרייה הוא פעולה נפוצה בתכנות. לפני הסטנדרט C++17, תכניתנים נאלצו להשתמש ב-API של מערכת ההפעלה או ספריות צד שלישי כמו Boost.Filesystem. הסטנדרט C++17 הציג את ספריית `<filesystem>`, שמפשטת את ביצוע משימות נפוצות כאלו. אלטרנטיבות ל `<filesystem>` עדיין קיימות ויכולות לכלול שימוש ב-funcitons כמו `stat()` ב-Unix או `GetFileAttributes()` ב-Windows.
+פלט לדוגמא אם הספרייה לא קיימת:
+```
+The directory does not exist.
+```
 
-## ראו גם:
-- [std::filesystem documentation](https://en.cppreference.com/w/cpp/filesystem)
-- [Boost.Filesystem Library](https://www.boost.org/doc/libs/1_75_0/libs/filesystem/doc/index.htm)
+לפרויקטים שעדיין לא משתמשים ב-C++17 או לתכונות נוספות, ספריית המערכת הקובצית של Boost היא בחירה פופולרית של צד שלישי המציעה פונקציונליות דומה.
+
+```cpp
+#include <iostream>
+#include <boost/filesystem.hpp>
+
+namespace fs = boost::filesystem;
+
+int main() {
+    const fs::path dirPath = "/path/to/directory";
+
+    if (fs::exists(dirPath) && fs::is_directory(dirPath)) {
+        std::cout << "The directory exists." << std::endl;
+    } else {
+        std::cout << "The directory does not exist." << std::endl;
+    }
+
+    return 0;
+}
+```
+בשימוש בספריית המערכת הקובצית של Boost, הפלט יהיה זהה לדוגמא ב-C++17 תלוי בקיומה של הספרייה בנתיב המצוין.

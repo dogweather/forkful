@@ -1,46 +1,56 @@
 ---
 title:                "Pobieranie aktualnej daty"
-date:                  2024-01-20T15:14:15.974179-07:00
+date:                  2024-02-03T19:09:19.415342-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Pobieranie aktualnej daty"
-
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/elm/getting-the-current-date.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-(Co i Dlaczego?)
-Pobieranie aktualnej daty to jedno z zadań, które pozwala aplikacji rozumieć „teraz". Programiści robią to, aby śledzić czas, rejestrować zdarzenia lub wyświetlać odświeżone informacje użytkownikom.
+## Co i dlaczego?
+Uzyskanie bieżącej daty w Elm oznacza pobranie bieżącej daty kalendarzowej z systemu. Robimy to, aby oznaczać czas wydarzeń, planować zadania lub śledzić okresy czasu.
 
-## How to:
-(Jak to zrobić:)
-W Elm do pobierania aktualnej daty używamy pakietu `elm/time`. Oto jak to zrobić:
+## Jak to zrobić:
+Elm obsługuje daty za pomocą modułu `Time`. Otrzymasz bieżący czas jako znacznik czasu POSIX, a następnie przekonwertujesz go na datę.
 
 ```Elm
-import Time exposing (Posix)
+import Browser
 import Task
+import Time
 
--- Pozyskanie aktualnej daty i czsu jako Posix (milisekundy od epoki)
-getCurrentDate : Task.Task Time.Error Posix
-getCurrentDate = Time.now
+type Msg = GetCurrentTime Time.Posix
 
--- Przykład użycia w aplikacji
-type Msg = SaveTheDate Posix
+update : Msg -> Model -> (Model, Cmd Msg)
+update msg model =
+    case msg of
+        GetCurrentTime posixTime ->
+            let
+                -- Konwersja czasu POSIX na rekord daty
+                date = Time.toDate posixTime
+            in
+            -- Tutaj odpowiednio aktualizuj swój model
+            ({ model | date = date }, Cmd.none)
 
-saveCurrentDate : Cmd Msg
-saveCurrentDate =
-  Task.perform SaveTheDate getCurrentDate
+-- Aby zainicjować uzyskanie bieżącego czasu
+getCurrentTime : Cmd Msg
+getCurrentTime =
+    Task.perform GetCurrentTime Time.now
+
+-- Przykładowe wyjście:
+-- date { year = 2023, month = Mar, day = 26 }
 ```
 
-Jeśli uruchomisz `saveCurrentDate`, otrzymasz komendę, która zapisze aktualny czas i datę i wyśle jako wiadomość `SaveTheDate`.
+## Dogłębna analiza
+W starszych językach webowych, pobranie daty to kod jednolinijkowy. Elm jest inny. Czyni skutki uboczne takie jak uzyskiwanie bieżącego czasu wyraźnymi dzięki Architekturze Elma. To zachęca do czystości i utrzymywalności kodu.
 
-## Deep Dive
-(Zanurzenie się głębiej)
-Elm korzysta z typu Posix by reprezentować czas; to liczba milisekund od północy UTC, 1 stycznia 1970 r. Alternatywy? W językach frontendowych często używamy `Date` w JavaScript, ale Elm preferuje czysto funkcyjne podejście, stąd `Posix`. Szczegóły implementacyjne? `Time.now` wykonuje zadanie, a `Task.perform` przetwarza wynik do wiadomości w Twojej aplikacji.
+Alternatywy obejmują korzystanie z pakietów stron trzecich lub obsługę dat w kodzie serwera i przekazywanie ich do Elma przez flagi lub porty.
 
-## See Also
-(Zobacz również)
-- Oficjalna dokumentacja pakietu `elm/time`: [https://package.elm-lang.org/packages/elm/time/latest/](https://package.elm-lang.org/packages/elm/time/latest/)
-- Elm Guide na temat obsługi czasu: [https://guide.elm-lang.org/effects/time.html](https://guide.elm-lang.org/effects/time.html)
-- Elm Discourse, jeśli masz pytania: [https://discourse.elm-lang.org/](https://discourse.elm-lang.org/)
+Pod względem implementacji, `Time.now` w Elmie pobiera czas jako znacznik czasu POSIX (milisekundy od epoki Unix). Jest to niezależne od strefy czasowej, a formatować możesz go według potrzeb przy użyciu funkcji z modułu `Time`.
+
+## Zobacz również
+- [Dokumentacja Elm Time](https://package.elm-lang.org/packages/elm/time/latest/)
+- [Przewodnik Elma po komendach i subskrypcjach](https://guide.elm-lang.org/effects/)

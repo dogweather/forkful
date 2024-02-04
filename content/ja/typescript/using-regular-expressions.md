@@ -1,45 +1,52 @@
 ---
 title:                "正規表現の使用"
-date:                  2024-01-19
+date:                  2024-02-03T19:19:33.610742-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "正規表現の使用"
-
 tag:                  "Strings"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/typescript/using-regular-expressions.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (何となぜ？)
+## 何となぜ？
+正規表現、またはregexは、プログラミングにおける強力なパターンマッチング及び検索ツールです。プログラマーは、ユーザー入力の検証、テキストの検索、または文字列の操作などのタスクにregexを使用します。なぜなら、それは効率的で多様性に富んでいるからです。
 
-正規表現は文字列をパターンで扱うための方法です。これにより、検索、置換、データの検証などが簡単かつ効率的に行えます。
+## どのようにして：
 
-## How to: (方法)
+TypeScriptに入ってみて、一般的なタスクに対してregexがどのように使用されているか見てみましょう。
 
-正規表現の基本的な使用法とTypeScriptでの具体例を示します。
+```TypeScript
+// メールアドレスのregexパターンを定義する
+const emailPattern = /\S+@\S+\.\S+/;
 
-```typescript
-const text: string = "TypeScriptを学ぼう！2023年はプログラミングスキルの向上を目指そう。";
+// 文字列がメールパターンにマッチするかテストする
+const email = "user@example.com";
+console.log(emailPattern.test(email)); // 出力: true
 
-// 単語を検索
-const pattern: RegExp = /\bTypeScript\b/;
-console.log(pattern.test(text)); // true
+// 文字列の数字を見つけて置換する
+const replaceDigits = "Item 25 costs $30".replace(/\d+/g, '#');
+console.log(replaceDigits); // 出力: "Item # costs $#"
 
-// 数字を全て抽出
-const numbers: RegExp = /\d+/g; 
-console.log(text.match(numbers)); // ['2023']
-
-// '年'で続く数字を置換
-const newText: string = text.replace(/(\d+)年/, '$1/');
-console.log(newText); // TypeScriptを学ぼう！2023/はプログラミングスキルの向上を目指そう。
+// 文字列から特定の部分を抽出するためにキャプチャグループを使用する
+const data = "April 10, 2021";
+const datePattern = /(\w+) (\d+), (\d+)/;
+const [, month, day, year] = datePattern.exec(data) || [];
+console.log(month, day, year); // 出力: "April" "10" "2021"
 ```
 
-## Deep Dive (深堀り)
+## 深掘り
 
-正規表現は1960年代に発明され、UNIXのツールで幅広く使われました。同様の機能をもつ代替手段には、文字列関数やパーサーがありますが、複雑な文字列操作には正規表現が便利です。TypeScriptでは内部的にJavaScriptのRegExpオブジェクトを使用し、パターンマッチングを行っています。
+1950年代に、数学者のスティーブン・クリーネは正規言語を表すモデルとして正規表現を記述しました。それは後にコンピュータサイエンスにおいて必須のものとなりました。時は流れ、現在ではテキストを扱うプログラミングにおいてregexは無くてはならないものです。
 
-## See Also (関連項目)
+regexは文字列操作のためのスイスアーミーナイフですが、それに代わるものもあります。タスクの複雑さに応じて、`includes()`、`startsWith()`、`endsWith()`といった文字列メソッドや、ライブラリによる解析がより良いこともあります。例えば、複雑なJSON文字列をregexで解析するのは悪夢です。代わりにJSONパーサーを使いましょう。
 
-- MDN Web Docs: [正規表現](https://developer.mozilla.org/ja/docs/Web/JavaScript/Guide/Regular_Expressions)
-- 正規表現のチュートリアル: [RegExr](https://regexr.com/)
-- TypeScript Handbook: [Basic Types](https://www.typescriptlang.org/docs/handbook/basic-types.html)
+実装に関しては、JavaScriptとTypeScriptのregexはECMAScript言語仕様に基づいています。内部では、エンジンはパターンを効率的にマッチさせるために状態機械を使用しています。regex操作は特に貧弱なパターンでの使用はパフォーマンスにおいてコストがかかることがあり、"災害的バックトラッキング"に注意することが重要です。
+
+## 参照
+
+- 正規表現についてのMDN Web Docs: [MDN Regular Expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
+- 正規表現のパターンのテストとデバッグのためのツールRegex101: [Regex101](https://regex101.com/)
+- 深い理解のための"Mastering Regular Expressions"という本: [O'Reilly](https://www.oreilly.com/library/view/mastering-regular-expressions/0596528124/)

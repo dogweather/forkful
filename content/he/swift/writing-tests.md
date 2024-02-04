@@ -1,52 +1,64 @@
 ---
 title:                "כתיבת בדיקות"
-date:                  2024-01-19
+date:                  2024-02-03T19:32:42.850753-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "כתיבת בדיקות"
-
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/swift/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## מה ולמה?
-כתיבת בדיקות היא תהליך של יצירת מבחנים אוטומטיים לקוד שתוכנן לבדוק את התנהגותו כנדרש. תוכניתנים עושים זאת כדי לוודא שהתוכנה עובדת נכון, למזער באגים ולקל על תהליכי שינוי ושדרוג בעתיד.
+כתיבת בדיקות בשפת Swift כוללת יצירת והרצת קוד שמבצע אימות של נכונות יחידות קוד אחרות באפליקציה שלך. מתכנתים עושים זאת כדי להבטיח אמינות, לזהות באגים מוקדם במחזור הפיתוח, ולהקל על שינויי קוד בעתיד ללא השלכות בלתי רצויות.
 
 ## איך לעשות:
-```Swift
+Swift תומך בבדיקות דרך המסגרת XCTest, אשר משולבת ב-Xcode. תוכל לכתוב בדיקות יחידה כדי לאמת חלקים יחידניים של הקוד שלך, למשל, פונקציה שמחשבת את סכום שני מספרים.
+
+```swift
 import XCTest
+@testable import YourApp
 
-class MyTests: XCTestCase {
+class YourAppTests: XCTestCase {
 
-    func testExample() {
-        // זהו הקוד שאת/ה בודק/ת
-        let result = "Hello, World!"
-        // זו הטענה של הבדיקה -> מה צריך להיות התוצאה
-        XCTAssertEqual(result, "Hello, World!", "התוצאה צריכה להיות Hello, World!")
-    }
-
-    func testAnotherThing() {
-        // בדיקה נוספת
-        let value = 5
-        XCTAssertTrue(value > 0, "הערך צריך להיות גדול מ-0")
+    func testSum() {
+        let result = Calculator().sum(a: 1, b: 2)
+        XCTAssertEqual(result, 3, "הפונקציה לחישוב הסכום לא החזירה את הערך הצפוי.")
     }
 }
-
-MyTests.defaultTestSuite.run()
 ```
 
-פלט לדוגמה:
+כדי להריץ בדיקה זו, אתה בדרך כלל תלחץ Command-U ב-Xcode. הפלט בנווט הבדיקות של Xcode יגיד לך אם הבדיקה עברה או נכשלה.
+
+לדוגמה, פלט של בדיקה מוצלחת:
 ```
-Test Suite 'MyTests' started at 2023-01-01 00:00:00.000
-Test Case '-[MyTests testExample]' passed (0.001 seconds).
-Test Case '-[MyTests testAnotherThing]' passed (0.001 seconds).
-Test Suite 'MyTests' finished at 2023-01-01 00:00:00.002.
+נפלא '-[YourAppTests testSum]' עברה (0.005 שניות).
 ```
 
-## צלילה לעומק
-כתיבת בדיקות אוטומטיות החלה בשנים הראשונות של תוכנה, אבל רק בשנים האחרונות הפכה לחלק מרכזי בפיתוח תוכנה מודרני, באמצעות שיטות כמו TDD (Test-Driven Development). אלטרנטיבות ל-XCTest כוללות מסגרות כמו Quick/Nimble. פרטים טכניים כוללים הבנה עמוקה יותר של Assertions וmocking לסימולציה של פעולות ואינטראקציות.
+לתרחישי בדיקה מתקדמים יותר, ייתכן ותבחר להתקין ספריות צד שלישי כמו Quick/Nimble, אשר מציעות תחביר יותר ביטויי לכתיבת בדיקות.
 
-## ראה גם
-- [מדריך ל-XCTest של Apple](https://developer.apple.com/documentation/xctest)
-- [TDD למתחילים](https://www.raywenderlich.com/5522-test-driven-development-tutorial-for-ios-getting-started)
-- [Quick – מסגרת בדיקות BDD](https://github.com/Quick/Quick)
+עם Quick/Nimble, ייתכן שתכתוב את אותה הבדיקה כך:
+
+```swift
+// הוסף את Quick ו-Nimble למנהל החבילות הזריז שלך או השתמש ב-CocoaPods/Carthage להתקנתם
+import Quick
+import Nimble
+@testable import YourApp
+
+class CalculatorSpec: QuickSpec {
+    override func spec() {
+        describe("מחשבון") {
+            context("כאשר מחברים מספרים") {
+                it("אמור להחזיר את הסכום הנכון") {
+                    let calculator = Calculator()
+                    expect(calculator.sum(a: 1, b: 2)).to(equal(3))
+                }
+            }
+        }
+    }
+}
+```
+
+הרצת בדיקה זו תיתן לך פלט דומה בחלון הבדיקות או בלוג של כלי ה-CI/CD שלך, המציין אם הבדיקה הצליחה או נכשלה, עם פורמט יותר קריא לתיאור הבדיקות והציפיות.

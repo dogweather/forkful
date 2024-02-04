@@ -1,22 +1,54 @@
 ---
-title:                "JSON 다루기"
-date:                  2024-01-19
-simple_title:         "JSON 다루기"
-
+title:                "JSON과 함께 일하기"
+date:                  2024-02-03T19:22:19.765966-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "JSON과 함께 일하기"
 tag:                  "Data Formats and Serialization"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/c-sharp/working-with-json.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (무엇인가요? 왜 쓰나요?)
-JSON은 데이터 교환 포맷입니다. 간결하고, 읽기 쉬우며, 대부분의 프로그래밍 언어에 구현이 있습니다. 개발자는 구조화된 데이터를 서버와 클라이언트 간에 주고받기 위해 JSON을 사용합니다.
+## 무엇 & 왜?
 
-## How to: (어떻게 하죠?)
-C#에서 JSON 다루는 방법을 간단히 보여드리겠습니다.
+JSON(JavaScript Object Notation)을 다루는 것은 JSON 데이터를 파싱, 생성 및 쿼리하는 것을 포함하여 현대 프로그래밍에 있어 필수적인 기술입니다. 이 데이터 교환 형식은 읽기 쉽고 언어 독립성이 있어 웹 서비스 및 API에서 광범위하게 사용되고 있어, 네트워크 응용 프로그램을 작업하거나 웹 기반 데이터와 상호 작용하는 C# 프로그래머에게 필수적입니다.
 
-```C#
+## 방법:
+
+### JSON 문자열을 객체로 파싱하기
+
+C#은 효율적인 JSON 처리를 위해 `System.Text.Json` 네임스페이스를 제공합니다. JSON 문자열을 C# 객체로 파싱하려면 JSON 구조와 일치하는 클래스를 정의하고 `JsonSerializer.Deserialize` 메서드를 사용하십시오.
+
+```csharp
+using System;
+using System.Text.Json;
+
+public class Person
+{
+    public string Name { get; set; }
+    public int Age { get; set; }
+}
+
+public class Program
+{
+    public static void Main()
+    {
+        string jsonString = "{\"Name\":\"John\", \"Age\":30}";
+        Person person = JsonSerializer.Deserialize<Person>(jsonString);
+
+        Console.WriteLine($"Name: {person.Name}, Age: {person.Age}");
+        // 출력: Name: John, Age: 30
+    }
+}
+```
+
+### 객체에서 JSON 생성하기
+
+C# 객체를 다시 JSON 문자열로 변환하려면 `JsonSerializer.Serialize` 메서드를 사용하십시오.
+
+```csharp
 using System;
 using System.Text.Json;
 
@@ -24,36 +56,63 @@ public class Program
 {
     public static void Main()
     {
-        // JSON 문자열을 C# 객체로 변환
-        string jsonString = "{\"firstName\":\"Jihun\",\"lastName\":\"Kim\"}";
-        Person person = JsonSerializer.Deserialize<Person>(jsonString);
-        Console.WriteLine($"이름: {person.FirstName}, 성: {person.LastName}");
+        Person person = new Person
+        {
+            Name = "Jane",
+            Age = 25
+        };
 
-        // C# 객체를 JSON 문자열로 변환
-        Person newPerson = new Person { FirstName = "Soyeon", LastName = "Lee" };
-        string newJsonString = JsonSerializer.Serialize(newPerson);
-        Console.WriteLine(newJsonString);
+        string jsonString = JsonSerializer.Serialize(person);
+        Console.WriteLine(jsonString);
+        // 출력: {"Name":"Jane","Age":25}
     }
 }
+```
 
-public class Person
+### Newtonsoft.Json 사용하기
+
+`Newtonsoft.Json`(또는 Json.NET)은 JSON 직렬화 및 역직렬화를 위한 더 많은 유연성과 옵션을 제공하는 인기 있는 타사 라이브러리입니다.
+
+Json.NET을 사용하려면 먼저 NuGet을 통해 `Newtonsoft.Json` 패키지를 설치해야 합니다. 그런 다음 다음과 같이 JSON 문자열을 역직렬화할 수 있습니다:
+
+```csharp
+using System;
+using Newtonsoft.Json;
+
+public class Program
 {
-    public string FirstName { get; set; }
-    public string LastName { get; set; }
+    public static void Main()
+    {
+        string jsonString = "{\"Name\":\"Mike\", \"Age\":22}";
+        Person person = JsonConvert.DeserializeObject<Person>(jsonString);
+
+        Console.WriteLine($"Name: {person.Name}, Age: {person.Age}");
+        // 출력: Name: Mike, Age: 22
+    }
 }
 ```
 
-출력값:
+Json.NET으로 객체에서 JSON 생성하기:
 
+```csharp
+using System;
+using Newtonsoft.Json;
+
+public class Program
+{
+    public static void Main()
+    {
+        Person person = new Person
+        {
+            Name = "Ella",
+            Age = 28
+        };
+
+        string jsonString = JsonConvert.SerializeObject(person);
+        Console.WriteLine(jsonString);
+        // 출력: {"Name":"Ella","Age":28}
+    }
+}
 ```
-이름: Jihun, 성: Kim
-{"firstName":"Soyeon","lastName":"Lee"}
-```
 
-## Deep Dive (더 알아보기)
-JSON은 JavaScript Object Notation의 약자로 2001년에 Douglas Crockford에 의해 고안되었습니다. XML이나 YAML 같은 다른 데이터 포맷들도 있지만, JSON은 가벼움과 간결함 때문에 선호됩니다. C#에서 System.Text.Json 라이브러리는 높은 성능과 저 메모리 사용량으로 유명합니다. .NET Core 3.0 이상부터 기본 제공되며, Newtonsoft.Json 같은 타 라이브러리와 비교할 때 확장성과 속도면에서 강점을 보입니다.
-
-## See Also (참고할 링크)
-- [JSON 공식 웹사이트](https://www.json.org/json-en.html)
-- [.NET의 System.Text.Json 도움말](https://docs.microsoft.com/en-us/dotnet/api/system.text.json)
-- [Newtownsoft.Json 라이브러리](https://www.newtonsoft.com/json)
+이 코드 조각들은 C#에서 JSON을 처리하는 방법에 대한 빠른 시작을 제공하며, 내장된 `System.Text.Json` 기능과 `Newtonsoft.Json`의 광범위한 기능을 모두 보여줍니다.

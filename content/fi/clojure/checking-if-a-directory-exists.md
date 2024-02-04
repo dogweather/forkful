@@ -1,40 +1,45 @@
 ---
 title:                "Tarkistetaan, onko hakemisto olemassa"
-date:                  2024-01-19
+date:                  2024-02-03T19:07:10.989993-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Tarkistetaan, onko hakemisto olemassa"
-
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/clojure/checking-if-a-directory-exists.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? - Mitä ja Miksi?
-Tarkistamme onko hakemisto olemassa, koska väärässä paikassa suoritettu toiminto voi aiheuttaa virheitä. Haluamme varmistaa, että data menee oikeaan paikkaan ja että sovelluksemme käyttäytyy odotetusti.
+## Mikä ja miksi?
+Hakemiston olemassaolon tarkistaminen Clojuressa käsittää tiedostojärjestelmän hakemiston läsnäolon varmistamisen Clojure-sovelluksessasi. Tämä tehtävä on kriittinen tiedosto-operaatioille, jotta voidaan estää virheet lukiessasi tai kirjoittaessasi hakemistoihin, jotka eivät ehkä ole olemassa, varmistaen vankan ja virheettömän koodin suorituksen.
 
-## How to: - Kuinka:
-```Clojure
-(ns example.dir-check
-  (:require [clojure.java.io :as io]))
+## Kuinka:
+Clojurena, ollessaan JVM-kieli, voi hyödyntää Javan `java.io.File` -luokkaa tähän tarkoitukseen. Et tarvitse mitään kolmannen osapuolen kirjastoa tällaiseen perustoimintoon. Tässä on, miten voit tehdä sen:
+
+```clojure
+(import 'java.io.File)
 
 (defn directory-exists? [dir-path]
-  (.exists (io/as-file dir-path)))
+  (let [dir (File. dir-path)]
+    (.exists dir)))
 
-;; Esimerkin käyttö:
-(println "Does the directory exist? " (directory-exists? "path/to/your/dir"))
+;; Käyttöesimerkki
+(println (directory-exists? "/polku/tiedostohakemistoosi")) ;; true tai false
 ```
-Jos hakemiston polku on olemassa, tulostus on `true`, muuten `false`.
 
-## Deep Dive - Syväsukellus:
-Historiallisesti Clojuren tapa tarkistaa hakemistojen olemassaolo perustuu Javan tiedostojen käsittelyyn. Vaihtoehtoisesti voisi käyttää Javan NIO-pakettia, mutta clojure.java.io tarjoaa yksinkertaisemman ja clojuremaisen tavan tehdä saman.
+Tämä funktio, `directory-exists?`, ottaa hakemistopolun merkkijonona ja palauttaa `true`, jos hakemisto on olemassa, ja `false` muuten. Tämä saavutetaan luomalla `File` -objekti hakemistopolulla ja sitten kutsumalla `.exists` -metodia tähän objektiin.
 
-Clojuren filosofiassa funktiot ovat pääosasassa, ja niinpä 'directory-exists?' kapseloi yleisen tehtävän ytimekkäästi. Javaa käytettäessä vastaavasta toiminnallisuudesta vastaisi 'java.io.File' luokan 'exists()' metodi.
+Lisäksi raakaan Java-yhteistyöhön voit käyttää Clojure-kirjastoja, jotka abstrahoivat joitakin Javan boilerplate-koodia. Yksi tällainen kirjasto on `clojure.java.io`. Kuitenkin, hakemiston olemassaolon tarkistamiseksi käyttäisit silti `File` -luokkaa, mutta saatat pitää kirjastoa hyödyllisenä muissa tiedosto-operaatioissa. Esimerkki:
 
-On tärkeää ymmärtää, että hakemiston olemassaolon tarkistus on hetkellinen: hakemistosta voidaan tarkistaa sen olemassaoloa välittömästi ennen toimintoa, mutta tosimaailmassa tilanteet muuttuvat nopeasti. Konkreettinen hakemisto voi kadota tai syntyä uudestaan millä hetkellä tahansa (käyttöjärjestelmän tai toisen sovelluksen toimesta), joten sovelluksen tulisi olla valmis käsittelemään näitä tilanteita dynaamisesti.
+```clojure
+(require '[clojure.java.io :as io])
 
-Uudemmissa Clojure-versioissa ei ole odotettavissa merkittäviä muutoksia tiedostojen olemassaolon tarkistamismekanismeihin, koska tämä toiminnallisuus on jo vakiintunut ja yksinkertainen.
+(defn directory-exists?-clojure [dir-path]
+  (.exists (io/file dir-path)))
 
-## See Also - Katso Myös:
-- Clojuren virallinen opas tiedostoille: [https://clojure.org/guides/deps_and_cli](https://clojure.org/guides/deps_and_cli)
-- Java NIO Files -luokka (vaihtoehtoinen tapa): [https://docs.oracle.com/javase/8/docs/api/java/nio/file/Files.html](https://docs.oracle.com/javase/8/docs/api/java/nio/file/Files.html)
-- ClojureDocs, käytännön esimerkkejä: [https://clojuredocs.org/](https://clojuredocs.org/)
+;; Esimerkkikäyttö
+(println (directory-exists?-clojure "/toinen/polku/tarkistettavaksi")) ;; true tai false
+```
+
+Tämä versio on melko samanlainen, mutta käyttää Clojuren `io/file`-funktiota `File`-objektin luomiseen. Tämä menetelmä sulautuu luontevammin Clojure-koodikantoihin hyödyntämällä Clojuren IO-operaatioiden kirjastoa, sen sijaan, että se suoraan käyttäisi Javan luokkia.

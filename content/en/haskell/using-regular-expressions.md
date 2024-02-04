@@ -1,8 +1,8 @@
 ---
 title:                "Using regular expressions"
-date:                  2024-01-19
+date:                  2024-02-03T19:02:43.421953-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Using regular expressions"
-
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/haskell/using-regular-expressions.md"
 ---
@@ -10,51 +10,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Regular expressions (regex) search and manipulate strings based on patterns. Programmers use them for tasks like form validation, parsing, and text processing because they're powerful and concise.
+Regular expressions in programming are sequences of characters that define a search pattern, typically employed for string searching and manipulation. Haskell programmers utilize regular expressions for tasks ranging from simple string matching to complex text processing, capitalizing on their efficiency and versatility in dealing with text data.
 
 ## How to:
-In Haskell, you can use regex with the `regex-tdfa` package. Here, we grab numbers from a string.
+In Haskell, regex functionalities are not part of the standard library, necessitating the use of third-party packages like `regex-base` along with a compatible backend like `regex-posix` (for POSIX regex support), `regex-pcre` (for Perl-compatible regex), etc. Here's how you can use these packages to work with regular expressions.
 
-```Haskell
-import Text.Regex.TDFA ((=~))
+First, ensure you have the packages installed by adding `regex-posix` or `regex-pcre` to your project's `.cabal` file or installing via cabal directly:
+
+```bash
+cabal install regex-posix
+```
+or
+```bash
+cabal install regex-pcre
+```
+
+### Using `regex-posix`:
+
+```haskell
+import Text.Regex.Posix ((=~))
+
+-- Check if a string matches a pattern
+isMatch :: String -> String -> Bool
+isMatch text pattern = text =~ pattern :: Bool
+
+-- Find the first match
+findFirst :: String -> String -> String
+findFirst text pattern = text =~ pattern :: String
 
 main :: IO ()
 main = do
-  let text = "Order 531 has 2 items"
-  let numbers = text =~ "[0-9]+" :: [String]
-  print numbers
+    print $ isMatch "hello world" "wo"
+    -- Output: True
+    print $ findFirst "good morning, good night" "good"
+    -- Output: "good"
 ```
 
-Output:
-```
-["531","2"]
-```
+### Using `regex-pcre`:
 
-To replace text, you can use `subRegex` from `regex-compat`.
+```haskell
+import Text.Regex.PCRE ((=~))
 
-```Haskell
-import Text.Regex (subRegex, mkRegex)
+-- Find all matches
+findAll :: String -> String -> [String]
+findAll text pattern = text =~ pattern :: [String]
 
 main :: IO ()
 main = do
-  let text = "Hello, 2023!"
-  let regex = mkRegex "[0-9]+"
-  let newText = subRegex regex text "YEAR"
-  putStrLn newText
+    print $ findAll "test1 test2 test3" "\\btest[0-9]\\b"
+    -- Output: ["test1","test2","test3"]
 ```
 
-Output:
-```
-Hello, YEAR!
-```
-
-## Deep Dive
-Regular expressions date back to the 1950s, conceptualized by mathematician Stephen Kleene. While Haskell was later to the game, it now has a rich set of regex libraries like `regex-tdfa` for POSIX regex, and `regex-pcre` for Perl compatibility. Alternatives to regex include parser combinator libraries like `parsec`, which can offer more readability and maintainability. Regex's in Haskell are not built into the language syntax but are provided through these libraries.
-
-## See Also
-- Hackage libraries:
-  - regex-tdfa: http://hackage.haskell.org/package/regex-tdfa
-  - regex-compat: http://hackage.haskell.org/package/regex-compat
-  - regex-pcre: http://hackage.haskell.org/package/regex-pcre
-- The Haskell Wiki on regular expressions: https://wiki.haskell.org/Regular_expressions
-- "Real World Haskell" by Bryan O'Sullivan, Don Stewart, and John Goerzen for in-depth treatment: http://book.realworldhaskell.org/
+Each library has its particularities, but the general methodology of using `=~` to apply the regex remains consistent, whether checking for a match or extracting substrings. Choosing between `regex-posix` or `regex-pcre` largely depends on your project's needs and the specific regex capabilities required.

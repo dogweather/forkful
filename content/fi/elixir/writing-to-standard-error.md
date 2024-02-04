@@ -1,38 +1,53 @@
 ---
-title:                "Kirjoittaminen vakiovirheeseen"
-date:                  2024-01-19
-simple_title:         "Kirjoittaminen vakiovirheeseen"
-
+title:                "Kirjoittaminen standardivirheeseen"
+date:                  2024-02-03T19:33:05.563852-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Kirjoittaminen standardivirheeseen"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/elixir/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Standard error (stderr) on kirjoituskanava virheille ja logiviesteille. Tiedot stderr:iin jos ne eivät kuulu normaaliin ohjelman tulosteeseen.
+## Mikä & Miksi?
 
-## How to:
-Elixirissä stderr:iin kirjoittaminen onnistuu `IO` moduulin kautta.
+Virheiden kirjoittaminen standardivirheeseen (stderr) Elixirissä on menetelmä virheilmoitusten ja diagnostiikkatietojen ohjaamiseksi erilleen pääulostulosta (stdout). Ohjelmoijat käyttävät stderr:iä virheiden selvittämiseen ja käsittelyyn sekoittamatta ohjelman pääulostuloa, mikä tekee ongelmien tunnistamisesta ja korjaamisesta helpompaa.
+
+## Miten:
+
+Elixirissä voit käyttää `IO`-moduulin funktioita, kuten `IO.puts/2` ja `IO.warn/2`, kirjoittaaksesi viestejä standardivirheeseen:
 
 ```elixir
-# Lähetä viesti stderr:iin
-IO.puts(:stderr, "Tämä on virheilmoitus")
+# Kirjoittaa yksinkertaisen viestin stderr:iin
+IO.puts(:stderr, "Virhe: Jotain meni pieleen!")
 
-# Tai käytä Erlangin :io moduulia suoraan
-:io.format(:standard_error, "Erlangin kautta virhe: ~s~n", ["Varoitus!"])
+# Käyttää IO.warn, joka on semanttisesti sopivampi varoituksille/virheille
+IO.warn("Varoitus: Olet ylittämässä rajan!")
 ```
 
-Sample output virheilmoitukselle näyttäisi tältä komentorivillä:
+Esimerkkituloste terminaalissa `IO.puts/2`-käytöllä:
 ```
-Tämä on virheilmoitus
-Erlangin kautta virhe: Varoitus!
+Virhe: Jotain meni pieleen!
 ```
 
-## Deep Dive
-Stderr on osa UNIX-perinnettä, ja se on suunniteltu erottelemaan normaalit ohjelman tulosteet virhetulosteista. Elixiriä käytettäessä `IO.puts/2` ja `:io.format/3` ovat suosituimmat tavat stdout:n ja stderr:n hallintaan. Stderr soveltuu erinomaisesti, kun et halua, että virheviestit ja logit sekoittuvat ohjelman varsinaiseen outputtiin.
+`IO.warn/2`-käytöllä tuloste olisi samankaltainen, mutta `IO.warn/2` on erityisesti suunniteltu varoituksille ja saattaa sisältää lisämuotoilua tai -toimintaa tulevissa Elixir-versioissa.
 
-## See Also
-- Elixirin virallisesta dokumentaatiosta löydät tarkempaa tietoa `IO`:sta [täältä](https://hexdocs.pm/elixir/IO.html).
-- UNIX-standardin ja filosofian historia löytyy [GNU:n sivuilta](https://www.gnu.org/gnu/gnu-history.html).
-- Lisää tietoa virheenkäsittelystä ja stderr:stä löydät [tästä artikkelista](https://en.wikipedia.org/wiki/Standard_streams#Standard_error_(stderr)).
+**Kolmannen osapuolen kirjastojen käyttö**
+
+Vaikka Elixiriin sisältyvä vakio kirjasto on yleensä riittävä käsittelemään standardivirheulostuloa, saatat löytää kirjastoja, kuten `Logger`, hyödyllisiksi monimutkaisemmissa sovelluksissa tai erilaisten lokitasojen ja tulosteiden määrittämiseen.
+
+Esimerkki käyttäen `Logger`ia virheviestin tulostukseen:
+
+```elixir
+require Logger
+
+# Konfiguroi Logger ulostamaan stderr:iin
+Logger.configure_backend(:console, device: :stderr)
+
+# Kirjoittaa virheviestin
+Logger.error("Virhe: Yhteys tietokantaan epäonnistui.")
+```
+
+Tämä asetus ohjaa `Logger`in tulosteen erityisesti stderr:iin, mikä on hyödyllistä erottaessasi virhelokit tavallisista lokiviesteistä.

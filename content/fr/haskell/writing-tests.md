@@ -1,53 +1,79 @@
 ---
 title:                "Rédaction de tests"
-date:                  2024-01-19
+date:                  2024-02-03T19:30:45.537260-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Rédaction de tests"
-
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/haskell/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Écrire des tests consiste à préparer des scénarios pour vérifier que notre code fonctionne bien. Les programmeurs écrivent des tests pour prévenir des erreurs, garantir la qualité et faciliter les mises à jour de code sans casser des fonctionnalités existantes.
+## Quoi & Pourquoi ?
 
-## How to:
-Haskell utilise Hspec pour des tests. C'est simple et intuitif :
+Écrire des tests en Haskell, c'est s'assurer que vos fonctions fonctionnent comme prévu grâce à des vérifications automatisées. Les programmeurs le font pour détecter les bugs dès le début, faciliter le refactoring et documenter le comportement, rendant la base de code plus maintenable et évolutive.
+
+## Comment faire :
+
+Haskell prend en charge divers cadres de test, mais deux populaires sont `Hspec` et `QuickCheck`. Hspec vous permet de définir des spécifications lisibles par l'humain pour votre code, tandis que QuickCheck vous permet de générer automatiquement des tests en décrivant des propriétés que votre code devrait satisfaire.
+
+### Utiliser Hspec
+
+D'abord, ajoutez `hspec` à la configuration de votre outil de build (par exemple, `stack.yaml` ou fichier `cabal`). Ensuite, importez `Test.Hspec` et écrivez des tests comme spécifications :
 
 ```haskell
+-- fichier : spec/MyLibSpec.hs
 import Test.Hspec
+import MyLib (add)
 
--- Une fonction simple pour l'exemple
-add :: Int -> Int -> Int
-add x y = x + y
-
--- Les tests
 main :: IO ()
-main = hspec $ do
-  describe "add" $ do
-    it "additionne deux nombres positifs" $
-      add 2 3 `shouldBe` 5
+main = hspec $ describe "MyLib.add" $ do
+  it "ajoute deux nombres" $
+    add 1 2 `shouldBe` 3
 
-    it "additionne un positif et un négatif" $
-      add (-1) 1 `shouldBe` 0
+  it "retourne le premier nombre lors de l'ajout de zéro" $
+    add 5 0 `shouldBe` 5
 ```
 
-Résultat après exécution :
+Ensuite, exécutez vos tests en utilisant votre outil de build, ce qui donnera un résultat qui pourrait ressembler à :
+
 ```
-add
-  additionne deux nombres positifs
-  additionne un positif et un négatif
+MyLib.add
+  - ajoute deux nombres
+  - retourne le premier nombre lors de l'ajout de zéro
 
-Finished in 0.0003 seconds
-2 examples, 0 failures
+Terminé en 0.0001 secondes
+2 exemples, 0 échecs
 ```
 
-## Deep Dive
-Historiquement, QuickCheck était l'outil dominant pour les tests en Haskell, introduisant l'approche de tests basée sur les propriétés. Hspec est une alternative qui propose une syntaxe plus lisible basée sur des exemples. La spécificité de ces tests en Haskell, c'est qu'on peut combiner les tests basés sur des exemples (Hspec) avec des tests basés sur les propriétés (QuickCheck).
+### Utiliser QuickCheck
 
-## See Also
-Pour aller plus loin :
+Avec QuickCheck, vous exprimez des propriétés que vos fonctions devraient satisfaire. Ajoutez `QuickCheck` à la configuration de votre projet, puis importez-le :
 
-- [Hspec documentation](http://hspec.github.io/)
-- [QuickCheck sur Hackage](https://hackage.haskell.org/package/QuickCheck)
+```haskell
+-- fichier : test/MyLibProperties.hs
+import Test.QuickCheck
+import MyLib (add)
+
+prop_addAssociative :: Int -> Int -> Int -> Bool
+prop_addAssociative x y z = x + (y + z) == (x + y) + z
+
+prop_addCommutatif :: Int -> Int -> Bool
+prop_addCommutatif x y = x + y == y + x
+
+main :: IO ()
+main = do
+  quickCheck prop_addAssociative
+  quickCheck prop_addCommutatif
+```
+
+Exécuter ces tests générera automatiquement des entrées pour vérifier les propriétés spécifiées :
+
+```
++++ OK, passé 100 tests.
++++ OK, passé 100 tests.
+```
+
+Dans les exemples Hspec et QuickCheck, les suites de tests servent de documentation exécutable qui peut vérifier automatiquement la correction de votre code.

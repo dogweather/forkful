@@ -1,61 +1,80 @@
 ---
-title:                "Zamiana liter na wielkie w ciągu znaków"
-date:                  2024-01-19
-simple_title:         "Zamiana liter na wielkie w ciągu znaków"
-
+title:                "Zamiana liter na wielkie w łańcuchu znaków"
+date:                  2024-02-03T19:05:12.375608-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Zamiana liter na wielkie w łańcuchu znaków"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/cpp/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Co i dlaczego?)
-Kapitalizacja stringa to proces zamieniania pierwszych liter słów na wielkie litery. Programiści używają tej techniki dla lepszego czytania tekstu przez ludzi lub ustalonych standardów formatowania danych.
+## Co i dlaczego?
+Kapitalizacja łańcucha polega na zamianie pierwszego znaku każdego słowa w ciągu na wielką literę, jeśli jest ona pisana małą literą, zachowując przy tym niezmienione pozostałe znaki. Programiści często wykonują to zadanie w celu formatowania wyjść, wprowadzeń użytkownika lub przetwarzania danych, aby zapewnić spójność w sposobie prezentacji lub przetwarzania tekstu, szczególnie w interfejsach użytkownika czy zadaniach normalizacji danych.
 
-## How to: (Jak to zrobić:)
-```C++
+## Jak to zrobić:
+W C++ można kapitalizować łańcuch za pomocą biblioteki standardowej, bez potrzeby korzystania z bibliotek stron trzecich. Jednak dla bardziej skomplikowanych lub specyficznych zachowań kapitalizacji, biblioteki takie jak Boost mogą być bardzo pomocne. Poniżej znajdują się przykłady ilustrujące oba podejścia.
+
+### Korzystając z biblioteki standardowej C++:
+
+```cpp
 #include <iostream>
+#include <cctype> // dla std::tolower i std::toupper
 #include <string>
-#include <cctype>
 
-// Funkcja kapitalizująca string
-std::string capitalizeString(const std::string &str) {
-    std::string capitalized = str;
+std::string capitalizeString(const std::string& input) {
+    std::string result;
     bool capitalizeNext = true;
 
-    for (char &ch : capitalized) {
-        if (capitalizeNext && std::isalpha(ch)) {
+    for (char ch : input) {
+        if (std::isspace(ch)) {
+            capitalizeNext = true;
+        } else if (capitalizeNext) {
             ch = std::toupper(ch);
             capitalizeNext = false;
-        } else if (!std::isalnum(ch)) {
-            capitalizeNext = true;
         }
+        result += ch;
     }
-    return capitalized;
+
+    return result;
 }
 
 int main() {
-    std::string text = "to jest przykład tekstu.";
+    std::string text = "hello world from c++";
     std::string capitalizedText = capitalizeString(text);
-    std::cout << capitalizedText << std::endl; // Wydrukuj kapitalizowany tekst
-    return 0;
+    std::cout << capitalizedText << std::endl; // Wyjście: "Hello World From C++"
 }
 ```
-Sample output:
+
+### Korzystając z biblioteki Boost:
+
+Dla bardziej zaawansowanej manipulacji łańcuchami, w tym kapitalizacji z uwzględnieniem ustawień regionalnych, warto skorzystać z biblioteki Boost String Algo.
+
+Najpierw upewnij się, że masz zainstalowaną i skonfigurowaną bibliotekę Boost w swoim projekcie. Następnie możesz dołączyć niezbędne nagłówki i używać jej funkcji, jak pokazano poniżej.
+
+```cpp
+#include <boost/algorithm/string.hpp>
+#include <iostream>
+#include <string>
+
+int main() {
+    std::string text = "hello world from c++";
+    std::string capitalizedText = text;
+
+    // kapitalizuj pierwszą literę każdego słowa
+    boost::algorithm::to_lower(capitalizedText); // zapewnienie, że łańcuch jest w małych literach
+    capitalizedText[0] = std::toupper(capitalizedText[0]); // kapitalizuj pierwszy znak
+
+    for (std::size_t i = 1; i < capitalizedText.length(); ++i) {
+        if (isspace(capitalizedText[i - 1])) { // kapitalizuj po spacji
+            capitalizedText[i] = std::toupper(capitalizedText[i]);
+        }
+    }
+
+    std::cout << capitalizedText << std::endl; // Wyjście: "Hello World From C++"
+}
 ```
-To Jest Przykład Tekstu.
-```
 
-## Deep Dive (Dogłębna analiza)
-Capitalizing a string isn't a new problem; it's been around since computers started processing text. Historically, systems like UNIX had tools (`awk`, `sed`, etc.) that could transform text. In C++, capitalization can be done manually (as shown) or with libraries like Boost.
-
-There's more than one way to capitalize a string. One alternative is the `transform` method with a proper function from algorithms header. You could also use a regex (though it's overkill for simple cases).
-
-The implementation detail to notice is `std::isalpha` and `std::toupper` usage, which checks for alphabetical characters and converts to uppercase, respectively. These functions handle ASCII text. For Unicode, other solutions (like ICU library) are needed.
-
-## See Also (Zobacz także)
-- [C++ reference for std::toupper](https://en.cppreference.com/w/cpp/string/byte/toupper)
-- [C++ reference for std::isalpha](https://en.cppreference.com/w/cpp/string/byte/isalpha)
-- [Boost String Algorithms Library](https://www.boost.org/doc/libs/release/libs/algorithm/string/)
-- [C++ reference for std::transform](https://en.cppreference.com/w/cpp/algorithm/transform)
-- [International Components for Unicode (ICU)](http://site.icu-project.org/home)
+W tym przypadku Boost upraszcza niektóre zadania manipulacji łańcuchami, ale nadal wymaga indywidualnego podejścia do prawdziwej kapitalizacji, ponieważ głównie oferuje narzędzia do transformacji i konwersji wielkości liter.

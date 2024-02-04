@@ -1,8 +1,8 @@
 ---
 title:                "Using regular expressions"
-date:                  2024-01-19
+date:                  2024-02-03T19:03:08.406169-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Using regular expressions"
-
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/kotlin/using-regular-expressions.md"
 ---
@@ -10,42 +10,67 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Regular expressions (regex) are tools for matching patterns in text. Programmers use them to search, validate, or manipulate data efficiently.
+
+Regular expressions (regex) are a powerful tool for text processing, allowing programmers to search, match, and manipulate strings with advanced pattern-matching techniques. In Kotlin, leveraging regex helps efficiently perform complex text processing tasks like validation, parsing, or transformation, making it indispensable for tasks ranging from simple string manipulation to complex text analysis.
 
 ## How to:
-Kotlin makes regex easy. Let’s see some practical code examples:
 
-```Kotlin
-fun regexFind() {
-    val pattern = "Kotlin".toRegex()
-    val text = "Learning Kotlin is fun!"
-    val matchResult = pattern.find(text)
-    println(matchResult?.value) // Output: Kotlin
-}
+### Basic Matching
+To check if a string matches a specific pattern in Kotlin, you can use the `matches` method of the `Regex` class.
 
-fun regexReplace() {
-    val regex = "\\d+".toRegex()
-    val address = "123 Main Street"
-    val sanitizedAddress = regex.replace(address, "###")
-    println(sanitizedAddress) // Output: ### Main Street
-}
+```kotlin
+val pattern = "kotlin".toRegex()
+val input = "I love kotlin"
+val result = pattern.containsMatchIn(input)
 
-fun regexValidate() {
-    val passwordPattern = "^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,}$".toRegex()
-    val password = "Password123"
-    val isPasswordValid = passwordPattern.matches(password)
-    println(isPasswordValid) // Output: true
-}
-
-regexFind()
-regexReplace()
-regexValidate()
+println(result)  // Output: true
 ```
 
-## Deep Dive
-Regex has been a staple in programming since the 1950s, invented by mathematician Stephen Kleene. Alternatives to regex include string methods like `contains`, `startsWith`, or `split`, but they're less powerful. Kotlin regex is built atop Java's `Pattern` and `Matcher` classes, giving it robust performance and utility.
+### Finding and Extracting Parts of String
+If you want to find parts of a string that match a pattern, Kotlin allows you to iterate over all matches:
 
-## See Also
-- Kotlin Docs on Regex: [kotlinlang.org](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-regex/)
-- Regex Testing Tool: [regex101.com](https://regex101.com/)
-- Regex Tutorial: [regular-expressions.info](https://www.regular-expressions.info/tutorial.html)
+```kotlin
+val datePattern = "\\d{2}/\\d{2}/\\d{4}".toRegex()
+val input = "Today's date is 07/09/2023."
+val dates = datePattern.findAll(input)
+
+for (date in dates) {
+    println(date.value)
+}
+// Output: 07/09/2023
+```
+
+### Replacing Text
+Replacing parts of a string that match a pattern is straightforward with the `replace` function:
+
+```kotlin
+val input = "Username: user123"
+val sanitizedInput = input.replace("\\d+".toRegex(), "XXX")
+
+println(sanitizedInput)  // Output: Username: userXXX
+```
+
+### Splitting Strings
+Split a string into a list, using a regex pattern as the delimiter:
+
+```kotlin
+val input = "1,2,3,4,5"
+val numbers = input.split(",".toRegex())
+
+println(numbers)  // Output: [1, 2, 3, 4, 5]
+```
+
+### Third-Party Libraries: Kotest
+[Kotest](https://github.com/kotest/kotest) is a popular Kotlin testing library that extends Kotlin's built-in regex support, particularly useful for validation in test cases.
+
+```kotlin
+// Assuming Kotest is added to your project
+import io.kotest.matchers.string.shouldMatch
+
+val input = "kotlin@test.com"
+input shouldMatch "\\S+@\\S+\\.com".toRegex()
+
+// This will pass the test if the input matches the email pattern.
+```
+
+By incorporating regular expressions into your Kotlin applications, you can perform sophisticated text processing efficiently. Whether you're validating user input, extracting data, or transforming strings, regex patterns offer a robust solution.

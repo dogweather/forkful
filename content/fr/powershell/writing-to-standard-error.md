@@ -1,37 +1,65 @@
 ---
-title:                "Écrire dans l'erreur standard"
-date:                  2024-01-19
-simple_title:         "Écrire dans l'erreur standard"
-
+title:                "Écrire sur l'erreur standard"
+date:                  2024-02-03T19:34:08.625383-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Écrire sur l'erreur standard"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/powershell/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Écrire dans la sortie d'erreur standard permet de séparer les messages d'erreur du flux de sortie principal. Les programmeurs font ça pour mieux gérer et diagnostiquer les problèmes.
+## Quoi & Pourquoi ?
 
-## How to:
-Pour écrire dans la sortie d'erreur standard en PowerShell, utilisez `Write-Error`, `Write-Host -ForegroundColor Red`, ou redirigez le flux avec `2>`.
+Écrire sur l'erreur standard (stderr) dans PowerShell implique d'envoyer des messages d'erreur ou des diagnostics directement sur le flux stderr, distinct du flux de sortie standard (stdout). Cette séparation permet un contrôle plus précis sur la sortie d'un script, permettant aux développeurs de diriger les messages normaux et les messages d'erreur vers des destinations différentes, ce qui est fondamental pour la gestion des erreurs et la journalisation.
 
-```PowerShell
-# Utilisation de Write-Error
-Write-Error "Ceci est un message d'erreur"
+## Comment faire :
 
-# Redirection du flux d'erreur
-echo "Ceci est une erreur" 2>&1
+PowerShell simplifie le processus d'écriture sur stderr grâce à l'utilisation du cmdlet `Write-Error` ou en dirigeant la sortie vers la méthode `$host.ui.WriteErrorLine()`. Cependant, pour une redirection directe de stderr, vous pourriez préférer utiliser les méthodes .NET ou la redirection des descripteurs de fichiers proposée par PowerShell lui-même.
 
-# Affichage avec Write-Host
-Write-Host "Attention, une erreur s'est produite !" -ForegroundColor Red
+**Exemple 1 :** Utilisation de `Write-Error` pour écrire un message d'erreur sur stderr.
+
+```powershell
+Write-Error "Ceci est un message d'erreur."
 ```
 
-Les messages s'afficheront en rouge dans la console pour indiquer une erreur.
+Sortie sur stderr :
+```
+Write-Error: Ceci est un message d'erreur.
+```
 
-## Deep Dive
-Historiquement, les shells Unix permettaient la redirection des flux standard et d'erreur dès le départ. PowerShell, héritant de cette philosophie, offre des cmdlets pour un contrôle précis. `Write-Error` génère une exception non-terminale, alors que l'opérateur `2>` dirige simplement le flux sans générer d'exception. Pour de l'interception ou du traitement avancé, on peut utiliser `$Error` ou `-ErrorVariable`.
+**Exemple 2 :** Utilisation de `$host.ui.WriteErrorLine()` pour une écriture directe sur stderr.
 
-## See Also
-- [about_Redirection](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_Redirection)
-- [Write-Error](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/write-error)
-- [about_Automatic_Variables](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_Automatic_Variables)
+```powershell
+$host.ui.WriteErrorLine("Écriture directe sur stderr.")
+```
+
+Sortie sur stderr :
+```
+Écriture directe sur stderr.
+```
+
+**Exemple 3 :** Utilisation des méthodes .NET pour écrire sur stderr.
+
+```powershell
+[Console]::Error.WriteLine("Utilisation de méthode .NET pour stderr")
+```
+
+Sortie de cette méthode :
+```
+Utilisation de méthode .NET pour stderr
+```
+
+**Exemple 4 :** Redirection de la sortie d'erreur en utilisant le descripteur de fichier `2>`.
+
+Les descripteurs de fichier dans PowerShell peuvent rediriger différents flux. Pour stderr, le descripteur de fichier est `2`. Voici un exemple de redirection de stderr vers un fichier nommé `error.log` lors de l'exécution d'une commande qui génère une erreur.
+
+```powershell
+Get-Item NonExistentFile.txt 2> error.log
+```
+
+Cet exemple ne produit pas de sortie console, mais génère un fichier `error.log` dans le répertoire courant contenant le message d'erreur résultant de la tentative d'accès à un fichier qui n'existe pas.
+
+En conclusion, PowerShell offre plusieurs méthodes pour écrire et gérer efficacement la sortie d'erreur, permettant des stratégies sophistiquées de gestion des erreurs et de journalisation dans des scripts et applications.

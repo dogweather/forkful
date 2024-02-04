@@ -1,58 +1,118 @@
 ---
-title:                "JSON-tiedostojen käsittely"
-date:                  2024-01-19
-simple_title:         "JSON-tiedostojen käsittely"
-
+title:                "Työskentely JSON:n kanssa"
+date:                  2024-02-03T19:22:24.120150-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Työskentely JSON:n kanssa"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c-sharp/working-with-json.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-JSON eli JavaScript Object Notation on tiedonvaihtoformaatti. Helpolla luettavuudella ja keveydellä se on ideaali webb-palvelinten ja -sovellusten väliseen dataan, siksi koodarit käyttävät sitä paljon.
+## Mikä & Miksi?
 
-## How to:
-```C#
+JSON (JavaScript Object Notation) -tiedon käsittelyyn kuuluu JSON-tiedon jäsennys, tuottaminen ja kysely, mikä tekee siitä kriittisen taidon nykyohjelmoinnissa. Tämä datanvaihtoformaatti on erittäin käytetty web-palveluissa ja API:issa sen helpon luettavuuden ja kieliriippumattomuuden vuoksi, mikä tekee siitä olennaisen taidon C#-ohjelmoijille, jotka työskentelevät verkottuneissa sovelluksissa tai vuorovaikuttavat web-pohjaisen datan kanssa.
+
+## Kuinka:
+
+### JSON-merkkijonon jäsennys olioksi
+
+C# tarjoaa `System.Text.Json` nimiavaruuden tehokkaaseen JSON-käsittelyyn. JSON-merkkijonon jäsentämiseksi C#-olioksi määritä luokka, joka vastaa JSON-rakennetta ja käytä `JsonSerializer.Deserialize`-metodia.
+
+```csharp
 using System;
 using System.Text.Json;
 
-class Program
-{
-    static void Main()
-    {
-        // JSON-olion luominen
-        string json = "{\"nimi\": \"Matti\", \"ika\": 30}";
-        
-        // Deserialisointi
-        Henkilo henkilo = JsonSerializer.Deserialize<Henkilo>(json);
-        Console.WriteLine($"{henkilo.Nimi} on {henkilo.Ika} vuotta vanha.");
-        
-        // Muuttujan muokkaus
-        henkilo.Ika = 31;
-        
-        // Serialisointi
-        string uusiJson = JsonSerializer.Serialize(henkilo);
-        Console.WriteLine(uusiJson);
-    }
-}
-
-public class Henkilo
+public class Henkilö
 {
     public string Nimi { get; set; }
-    public int Ika { get; set; }
+    public int Ikä { get; set; }
+}
+
+public class Ohjelma
+{
+    public static void Main()
+    {
+        string jsonString = "{\"Nimi\":\"John\", \"Ikä\":30}";
+        Henkilö henkilö = JsonSerializer.Deserialize<Henkilö>(jsonString);
+
+        Console.WriteLine($"Nimi: {henkilö.Nimi}, Ikä: {henkilö.Ikä}");
+        // Tuloste: Nimi: John, Ikä: 30
+    }
 }
 ```
-Output:
-```
-Matti on 30 vuotta vanha.
-{"nimi":"Matti","ika":31}
+
+### JSON:n tuottaminen oliosta
+
+Jotta C#-olion voisi muuttaa takaisin JSON-merkkijonoksi, käytä `JsonSerializer.Serialize`-metodia.
+
+```csharp
+using System;
+using System.Text.Json;
+
+public class Ohjelma
+{
+    public static void Main()
+    {
+        Henkilö henkilö = new Henkilö
+        {
+            Nimi = "Jane",
+            Ikä = 25
+        };
+
+        string jsonString = JsonSerializer.Serialize(henkilö);
+        Console.WriteLine(jsonString);
+        // Tuloste: {"Nimi":"Jane","Ikä":25}
+    }
+}
 ```
 
-## Deep Dive
-JSON lanseerattiin 2000-luvun alussa ja se on XML:n kevyempi vaihtoehto. C#:ssa `System.Text.Json` ja `Newtonsoft.Json` ovat suosittuja kirjastoja JSONin käsittelyyn. `System.Text.Json` on .NET Core 3.0:sta lähtien vakio, sen suorituskyky on hyvä ja se tukee uusinta C#-standardia, kun taas `Newtonsoft.Json` tarjoaa lisäominaisuuksia ja laajempaa yhteensopivuutta.
+### Newtonsoft.Json käyttäminen
 
-## See Also
-- Microsoftin JSON-dokumentaatio: [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/standard/serialization/system-text-json-overview)
-- Newtonsoft.Json-dokumentaatio: [www.newtonsoft.com](https://www.newtonsoft.com/json)
-- JSON-standardin kotisivu: [www.json.org](http://json.org/)
+`Newtonsoft.Json` (tai Json.NET) on suosittu kolmannen osapuolen kirjasto, joka tarjoaa enemmän joustavuutta ja vaihtoehtoja JSON:n serialisointiin ja deserialisointiin.
+
+Json.NET:n käyttämiseen ensin täytyy asentaa `Newtonsoft.Json` paketti NuGetin kautta. Sen jälkeen voit deserialisoida JSON-merkkijonon näin:
+
+```csharp
+using System;
+using Newtonsoft.Json;
+
+public class Ohjelma
+{
+    public static void Main()
+    {
+        string jsonString = "{\"Nimi\":\"Mike\", \"Ikä\":22}";
+        Henkilö henkilö = JsonConvert.DeserializeObject<Henkilö>(jsonString);
+
+        Console.WriteLine($"Nimi: {henkilö.Nimi}, Ikä: {henkilö.Ikä}");
+        // Tuloste: Nimi: Mike, Ikä: 22
+    }
+}
+```
+
+JSON:n tuottaminen oliosta Json.NET:n avulla:
+
+```csharp
+using System;
+using Newtonsoft.Json;
+
+public class Ohjelma
+{
+    public static void Main()
+    {
+        Henkilö henkilö = new Henkilö
+        {
+            Nimi = "Ella",
+            Ikä = 28
+        };
+
+        string jsonString = JsonConvert.SerializeObject(henkilö);
+        Console.WriteLine(jsonString);
+        // Tuloste: {"Nimi":"Ella","Ikä":28}
+    }
+}
+```
+
+Nämä katkelmat tarjoavat nopean aloituksen JSON:in käsittelyyn C#:ssa, esitellen sekä sisäänrakennetut `System.Text.Json`-ominaisuudet että `Newtonsoft.Json`in laajat ominaisuudet.

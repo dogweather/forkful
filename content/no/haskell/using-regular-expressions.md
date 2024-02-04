@@ -1,55 +1,66 @@
 ---
-title:                "Bruk av regulære uttrykk"
-date:                  2024-01-19
-simple_title:         "Bruk av regulære uttrykk"
-
+title:                "Bruke regulære uttrykk"
+date:                  2024-02-03T19:16:52.920660-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Bruke regulære uttrykk"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/haskell/using-regular-expressions.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Regular expressions, eller regex, lar oss søke og manipulere tekst med et "wildcard"-språk. Programmere bruker det for å filtrere, finne, eller erstatte spesifikke mønstre i tekst.
+Regulære uttrykk i programmering er sekvenser av tegn som definerer et søkemønster, typisk brukt for søk i strenger og manipulering av disse. Haskell-programmerere bruker regulære uttrykk til oppgaver som spenner fra enkel strengmatching til kompleks tekstbehandling, ved å utnytte deres effektivitet og allsidighet når det gjelder behandling av tekstdata.
 
 ## Hvordan:
-Haskell bruker `regex`-pakker for mønstergjenkjenning. Her er en enkel brukerveiledning:
+I Haskell er ikke regex-funksjonaliteter en del av det standard biblioteket, noe som nødvendiggjør bruk av tredjepartspakker som `regex-base` sammen med en kompatibel bakpart som `regex-posix` (for POSIX regex-støtte), `regex-pcre` (for Perl-kompatible regex), osv. Slik kan du bruke disse pakkene for å arbeide med regulære uttrykk.
 
-```Haskell
-import Text.Regex.TDFA ((=~))
+Først, sørg for at du har installert pakkene ved å legge til `regex-posix` eller `regex-pcre` i prosjektets `.cabal`-fil eller installere via cabal direkte:
 
--- Finn om 'Hello, world!' inneholder ordet 'world'
-main :: IO ()
-main = print $ "Hello, world!" =~ "world" :: Bool
-
--- Resultat
-True
+```bash
+cabal install regex-posix
+```
+eller
+```bash
+cabal install regex-pcre
 ```
 
-Mer avanserte bruksmål:
+### Bruke `regex-posix`:
 
-```Haskell
-import Text.Regex.TDFA
+```haskell
+import Text.Regex.Posix ((=~))
 
--- Finn alle ord som starter på 'h'
-finnOrd :: String -> [String]
-finnOrd tekst = tekst =~ "\\bh\\w*"
+-- Sjekk om en streng matcher et mønster
+isMatch :: String -> String -> Bool
+isMatch tekst mønster = tekst =~ mønster :: Bool
 
--- Eksempel
+-- Finn det første treffet
+findFirst :: String -> String -> String
+findFirst tekst mønster = tekst =~ mønster :: String
+
 main :: IO ()
-main = print $ finnOrd "heisann sveisann, Hva skjer?"
-
--- Resultat
-["heisann", "Hva"]
+main = do
+    print $ isMatch "hello world" "wo"
+    -- Utdata: True
+    print $ findFirst "god morgen, god natt" "god"
+    -- Utdata: "god"
 ```
 
-## Dypdykk
-Regex i Haskell er hovedsakelig håndtert av biblioteker som `regex-tdfa` og `regex-posix`. Disse bygger på eldre regex-biblioteker, men er tilpasset for Haskell og støtter avanserte regex-funksjoner som "lazy" matching og back-references.
+### Bruke `regex-pcre`:
 
-Alternativer inkluderer å bruke innebygde strengoperasjoner eller parserbiblioteker som Parsec for mer strukturert tekstanalyse.
+```haskell
+import Text.Regex.PCRE ((=~))
 
-Implementasjonsdetaljer for regex-biblioteker i Haskell kan variere, men de fleste benytter seg av Thompson's construction algoritme for å konvertere regexer til nondeterministic finite automata (NFA), hvilket er kjent for sin effektivitet.
+-- Finn alle treff
+findAll :: String -> String -> [String]
+findAll tekst mønster = tekst =~ mønster :: [String]
 
-## Se Også
-- Hackage for regex-tdfa: [https://hackage.haskell.org/package/regex-tdfa](https://hackage.haskell.org/package/regex-tdfa)
-- Haskell Wiki om regex: [https://wiki.haskell.org/Regular_expressions](https://wiki.haskell.org/Regular_expressions)
+main :: IO ()
+main = do
+    print $ findAll "test1 test2 test3" "\\btest[0-9]\\b"
+    -- Utdata: ["test1","test2","test3"]
+```
+
+Hver bibliotek har sine spesifikke egenskaper, men den generelle metoden å bruke `=~` for å anvende regex forblir konsistent, enten det er for å sjekke for et treff eller ekstrahere delstrenger. Valget mellom `regex-posix` eller `regex-pcre` avhenger i stor grad av ditt prosjekts behov og de spesifikke regex-egenskapene som kreves.

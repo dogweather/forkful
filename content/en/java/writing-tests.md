@@ -1,8 +1,8 @@
 ---
 title:                "Writing tests"
-date:                  2024-01-19
+date:                  2024-02-03T19:03:32.538932-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Writing tests"
-
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/java/writing-tests.md"
 ---
@@ -10,45 +10,79 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-
-Writing tests is crafting code that checks if other code functions correctly. Programmers do it to catch bugs early, ensure software works as expected, and maintain code quality over time.
+Writing tests in Java is about verifying that your code behaves as expected under various conditions. Programmers write tests to prevent bugs, ensure functionality remains correct after changes, and foster good software design principles. 
 
 ## How to:
+Java developers primarily use two testing frameworks: JUnit and TestNG. Here, we'll focus on JUnit, the more popular choice for writing tests due to its simplicity and widespread adoption.
 
-Let's write a simple test using JUnit, a popular testing framework in Java. We’ll test a method that adds two integers.
+### JUnit Basics
+
+To use JUnit in your Maven project, add the following dependency to your `pom.xml`:
+
+```xml
+<dependency>
+    <groupId>org.junit.jupiter</groupId>
+    <artifactId>junit-jupiter</artifactId>
+    <version>5.9.0</version>
+    <scope>test</scope>
+</dependency>
+```
+
+A basic test in JUnit looks like this:
 
 ```java
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class CalculatorTest {
-
+    
     @Test
-    public void testAddition() {
+    public void testAdd() {
         Calculator calculator = new Calculator();
         assertEquals(5, calculator.add(2, 3), "2 + 3 should equal 5");
     }
 }
+```
 
-class Calculator {
-    public int add(int a, int b) {
-        return a + b;
+Executing this test will either pass, indicating the `add` method works as expected, or fail, showing an error message.
+
+### Mocking with Mockito
+
+In real-world scenarios, objects often depend on other objects. Mockito is a popular mocking framework that helps in creating mock objects for the purpose of testing.
+
+Add Mockito to your Maven project:
+
+```xml
+<dependency>
+    <groupId>org.mockito</groupId>
+    <artifactId>mockito-core</artifactId>
+    <version>4.5.1</version>
+    <scope>test</scope>
+</dependency>
+```
+
+A simple use case with Mockito:
+
+```java
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.*;
+
+public class UserServiceTest {
+
+    @Test
+    public void testGetUsername() {
+        // Create a mock UserRepository
+        UserRepository mockRepository = mock(UserRepository.class);
+
+        // Define behavior for mock object
+        when(mockRepository.getUsername(1)).thenReturn("john_doe");
+
+        UserService userService = new UserService(mockRepository);
+        
+        assertEquals("john_doe", userService.getUsername(1), "User ID 1 should be john_doe");
     }
 }
 ```
 
-If the method works, the test passes silently. If it fails, JUnit prints an error:
-
-```
-org.opentest4j.AssertionFailedError: 2 + 3 should equal 5 ==> expected: <5> but was: <4>
-```
-
-## Deep Dive
-
-Testing wasn’t always a programmer’s priority—it gained traction with Agile development and practices like Test-Driven Development (TDD). Alternatives to JUnit include TestNG and Spock, each with its own perks. Implementing good tests is an art; it usually involves mocking dependencies, adhering to testing patterns, and continuously integrating tests into the build process.
-
-## See Also
-
-- JUnit 5 User Guide: [https://junit.org/junit5/docs/current/user-guide/](https://junit.org/junit5/docs/current/user-guide/)
-- Article on Test-Driven Development: [https://www.agilealliance.org/glossary/tdd/](https://www.agilealliance.org/glossary/tdd/)
-- Mocking frameworks: Mockito [https://site.mockito.org/](https://site.mockito.org/)
+This mock allows us to test `UserService` without needing an actual `UserRepository`, focusing the test on the logic within `UserService` itself.

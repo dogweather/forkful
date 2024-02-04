@@ -1,41 +1,70 @@
 ---
 title:                "获取当前日期"
-date:                  2024-01-20T15:13:46.283242-07:00
+date:                  2024-02-03T19:09:39.059709-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "获取当前日期"
-
 tag:                  "Dates and Times"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/elixir/getting-the-current-date.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (什么以及为什么？)
-获取当前日期是指让程序显示系统当前的日期。程序员这么做通常是要记录事件、处理日志或者日期相关的逻辑。
+## 什么 & 为什么？
+在 Elixir 中获取当前日期涉及访问系统的日期和时间信息，这是记录、数据标记或任何需要了解当前日期的功能的常见任务。这一操作对于创建时间感知的应用程序以及生成报告或在 Web 应用程序中生成时间戳等任务至关重要。
 
-## How to: (如何操作：)
-在Elixir中，获取当前日期可以使用`Date`模块。看下面例子：
+## 如何操作：
+通过 `DateTime` 模块，Elixir 的标准库允许获取当前日期和时间。由于 Elixir 运行在 Erlang VM (BEAM) 上，它利用了底层 Erlang 对时间操作的功能。
+
+### 使用 Elixir 的标准库
+Elixir 提供 `DateTime.utc_now/0` 函数来获取当前的日期和时间（UTC）。
 
 ```elixir
-# 引入Date模块
-import Date
-
-# 获取当前日期
-today = utc_today()
-
-# 打印当前日期
-IO.inspect(today)
+current_datetime_utc = DateTime.utc_now()
+IO.inspect(current_datetime_utc)
 ```
 
-这个代码会输出类似：
-
+**示例输出：**
 ```
-~D[2023-04-05]
+#DateTime<2023-05-04 15:00:00Z>
 ```
 
-## Deep Dive (深入探讨)
-历史上，Elixir是由José Valim发起的，他是个Ruby社区的成员，目的是创建一个更高效、可伸缩的语言。在Elixir中获取当前日期与许多其他语言获取日期的方式类似。`utc_today/0`是获取世界标准时间(UTC)当前日期的一个方法，如果你需要时区支持，可以使用`Timex`这样的第三方库。实现的细节方面，Elixir的`Date`模块是构建在Erlang的`:calendar`模块上的，提供了简单易用的函数。
+要获取当前的日期，您可以提取年、月、日组件：
 
-## See Also (另请参阅)
-- Elixir官方文档：[Date](https://hexdocs.pm/elixir/Date.html)
-- Timex库：[GitHub - bitwalker/timex](https://github.com/bitwalker/timex)
+```elixir
+{:ok, current_date} = Date.new(current_datetime_utc.year, current_datetime_utc.month, current_datetime_utc.day)
+IO.inspect(current_date)
+```
+
+**示例输出：**
+```
+~D[2023-05-04]
+```
+
+### 使用 Timex 库
+对于更复杂的日期时间需求，可以使用一个受欢迎的第三方库 Timex。首先，将 `Timex` 添加到您的 mix.exs 依赖中：
+
+```elixir
+defp deps do
+  [
+    {:timex, "~> 3.7"}
+  ]
+end
+```
+
+安装依赖项（`mix deps.get`）后，您可以使用 Timex 获取当前日期：
+
+```elixir
+current_date = Timex.today()
+IO.inspect(current_date)
+```
+
+**示例输出：**
+```
+~D[2023-05-04]
+```
+
+Timex 提供了丰富的日期时间操纵功能，使其成为您的 Elixir 应用程序的强大补充，特别是在处理时区、格式化和解析日期和时间时。
+
+通过了解和利用 Elixir 的内置功能和 Timex 库，您可以轻松地在您的 Elixir 应用程序中处理日期和时间，根据您应用程序的需求精确而轻松地定制体验。

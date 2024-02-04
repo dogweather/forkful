@@ -1,46 +1,56 @@
 ---
-title:                "Перетворення рядка на великі літери"
-date:                  2024-01-19
-simple_title:         "Перетворення рядка на великі літери"
-
+title:                "Зробити першу літеру рядка великою"
+date:                  2024-02-03T19:06:17.443064-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Зробити першу літеру рядка великою"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/php/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Що та Чому?
-Capitalizing a string means shifting all letters to uppercase. Programmers capitalize for emphasis, titles, or consistency in data presentation.
+## Що і чому?
+Перетворення рядка на великі літери полягає у зміні першого символу даного тексту на велику літеру, забезпечуючи правильний початок речень, заголовків або власних імен у наборі даних. Програмісти часто виконують перетворення рядків на великі літери для нормалізації даних, поліпшення читабельності або забезпечення узгодженості у вводі користувача або обробці текстових даних.
 
 ## Як це зробити:
-```php
-<?php
-$lowercaseStr = 'це приклад рядка';
-$uppercaseStr = mb_strtoupper($lowercaseStr, 'UTF-8');
+PHP нативно підтримує різні функції для перетворення рядків на великі літери, кожна з яких служить різній меті. Ось як ви можете їх використовувати:
 
-echo $uppercaseStr; // Виведе: 'ЦЕ ПРИКЛАД РЯДКА'
-?>
-```
-Simple and works for most cases. Here's another method for just the first letter:
-```php
-<?php
-$lowercaseStr = 'київ';
-$capitalizedStr = mb_convert_case($lowercaseStr, MB_CASE_TITLE, "UTF-8");
+### Перетворення першої літери рядка у велику:
 
-echo $capitalizedStr; // Виведе: 'Київ'
-?>
+```php
+$string = "hello, world!";
+$capitalizedString = ucfirst($string);
+echo $capitalizedString; // Виведе: Hello, world!
 ```
 
-## Поглиблений Розбір
-Back in the PHP 4 days, `strtoupper()` was your go-to. But with PHP 5+, `mb_strtoupper()` became crucial for multibyte strings, like those with Ukrainian characters.
+### Перетворення першої літери кожного слова:
 
-Why multiple functions? `strtoupper()` struggles with non-English alphabets. `mb_strtoupper()` steps up, handling the nuances of different encodings, like UTF-8.
+```php
+$string = "hello, world!";
+$capitalizedWords = ucwords($string);
+echo $capitalizedWords; // Виведе: Hello, World!
+```
 
-Under the hood, `mb_strtoupper()` respects the character encoding parameter, ensuring that capitalization works universally. This isn't just about going big on all characters. It's also about preserving the integrity of the data.
+### Перетворення всього рядка на великі літери:
 
-Alternatives like `mb_convert_case()` allow for more nuanced changes, like capitalizing just the first letter of each word (title case), which is particularly handy for names or titles.
+```php
+$string = "hello, world!";
+$upperCaseString = strtoupper($string);
+echo $upperCaseString; // Виведе: HELLO, WORLD!
+```
 
-## Дивіться також
-- PHP Manual on String Functions: [php.net/manual/en/ref.strings.php](https://www.php.net/manual/en/ref.strings.php)
-- PHP Multibyte String Functions: [php.net/manual/en/ref.mbstring.php](https://www.php.net/manual/en/ref.mbstring.php)
-- UTF-8 Encoding and PHP: [php.net/manual/en/mbstring.supported-encodings.php](https://www.php.net/manual/en/mbstring.supported-encodings.php)
+У сценаріях, що вимагають більшого налаштування або використання сторонніх рішень, можна використовувати бібліотеки, такі як `mbstring` (для багатобайтних рядків), особливо коли йдеться про інтернаціоналізацію, де символи можуть виходити за межі основного набору ASCII.
+
+### Використання mbstring для перетворення UTF-8 рядків:
+
+Переконайтеся, що у вашій конфігурації PHP ввімкнено розширення `mbstring`, потім:
+
+```php
+$string = "élégant";
+$capitalizedString = mb_convert_case($string, MB_CASE_TITLE, "UTF-8");
+echo $capitalizedString; // Виведе: Élégant
+```
+
+Цей підхід допомагає точно перетворювати рядки, що включають не-ASCII символи, дотримуючись нюансів різних мов.

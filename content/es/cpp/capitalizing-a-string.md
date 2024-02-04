@@ -1,49 +1,80 @@
 ---
 title:                "Capitalizando una cadena de texto"
-date:                  2024-01-19
+date:                  2024-02-03T19:05:04.323999-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Capitalizando una cadena de texto"
-
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/cpp/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Qué y Por Qué?
-Capitalizar una cadena significa convertir todas sus letras a mayúsculas. Los programadores lo hacen para estandarizar datos de entrada, mejorar la legibilidad o cumplir con requisitos técnicos.
+## ¿Qué y por qué?
+Capitalizar un string implica convertir el carácter inicial de cada palabra en el string a mayúscula si está en minúscula, manteniendo sin cambio los caracteres restantes. Los programadores a menudo realizan esta tarea para el formateo de salidas, entradas de usuario o procesamiento de datos para asegurar consistencia en cómo se presenta o procesa el texto, especialmente en interfaces de usuario o tareas de normalización de datos.
 
 ## Cómo hacerlo:
-Aquí tienes un ejemplo simple. Este código convierte una cadena a mayúsculas en C++ usando la biblioteca estándar:
+En C++, puedes capitalizar un string utilizando la biblioteca estándar sin necesidad de bibliotecas de terceros. Sin embargo, para comportamientos de capitalización más complejos o específicos, bibliotecas como Boost pueden ser bastante útiles. A continuación, se muestran ejemplos que ilustran ambos enfoques.
 
-```C++
+### Usando la Biblioteca Estándar de C++:
+
+```cpp
 #include <iostream>
+#include <cctype> // para std::tolower y std::toupper
 #include <string>
-#include <algorithm>
+
+std::string capitalizeString(const std::string& entrada) {
+    std::string resultado;
+    bool capitalizarSiguiente = true;
+
+    for (char ch : entrada) {
+        if (std::isspace(ch)) {
+            capitalizarSiguiente = true;
+        } else if (capitalizarSiguiente) {
+            ch = std::toupper(ch);
+            capitalizarSiguiente = false;
+        }
+        resultado += ch;
+    }
+
+    return resultado;
+}
 
 int main() {
-    std::string texto = "hola mundo";
-    std::transform(texto.begin(), texto.end(), texto.begin(), ::toupper);
-    
-    std::cout << texto << std::endl; // Salida: HOLA MUNDO
-    return 0;
+    std::string texto = "hello world from c++";
+    std::string textoCapitalizado = capitalizeString(texto);
+    std::cout << textoCapitalizado << std::endl; // Salida: "Hello World From C++"
 }
 ```
-Es corto y dulce, ¿no crees? Ejecuta y mira cómo "hola mundo" se transforma en "HOLA MUNDO".
 
-## Análisis Profundo
-Históricamente, la manipulación de cadenas siempre ha sido un elemento crucial en la programación. En los primeros días de la informática, era aún más importante debido a los limitados métodos de interacción con los sistemas informáticos y la necesidad de optimizar cada byte.
+### Usando la Biblioteca Boost:
 
-En C++, antes de la biblioteca estándar (pre-C++98), los programadores tenían que escribir bucles manuales o funciones propias para cambiar el caso de las cadenas. Afortunadamente, eso cambió con `std::transform` y `::toupper`, que simplificaron mucho las cosas.
+Para manipulaciones de strings más avanzadas, incluyendo la capitalización consciente de la configuración regional, podrías querer usar la biblioteca Boost String Algo.
 
-Aunque hemos mostrado la forma estándar de capitalizar una cadena, hay alternativas. Por ejemplo, puedes usar `std::for_each` o incluso Range-based for loops en C++11 o versiones más recientes para el mismo efecto, pero `std::transform` es generalmente más eficiente y expresivo para esta tarea.
+Primero, asegúrate de tener la biblioteca Boost instalada y configurada en tu proyecto. Luego puedes incluir las cabeceras necesarias y usar sus características como se muestra a continuación.
 
-A nivel de implementación, `::toupper` trabaja sobre caracteres individuales y puede variar su comportamiento según la localización del sistema, lo que es vital cuando se trata de internacionalización.
+```cpp
+#include <boost/algorithm/string.hpp>
+#include <iostream>
+#include <string>
 
-## Ver También
-Si quieres entender más sobre manipulación de cadenas y su importancia en la programación en C++, aquí hay algunos recursos adicionales:
+int main() {
+    std::string texto = "hello world from c++";
+    std::string textoCapitalizado = texto;
 
-- [cppreference.com - Transform](https://en.cppreference.com/w/cpp/algorithm/transform)
-- [cplusplus.com - String manipulation](http://www.cplusplus.com/reference/string/string/)
-- [Unicode Case Conversion](https://unicode.org/faq/casemap_charprop.html) - Para entender cómo opera la conversión de mayúsculas y minúsculas en un contexto Unicode avanzado.
+    // capitalizar la primera letra de cada palabra
+    boost::algorithm::to_lower(textoCapitalizado); // asegurando que el string esté en minúscula
+    textoCapitalizado[0] = std::toupper(textoCapitalizado[0]); // capitalizar el primer carácter
 
-No olvides que la práctica hace al maestro. ¡Experimenta con este código y happy coding!
+    for (std::size_t i = 1; i < textoCapitalizado.length(); ++i) {
+        if (isspace(textoCapitalizado[i - 1])) { // capitalizar después de un espacio
+            textoCapitalizado[i] = std::toupper(textoCapitalizado[i]);
+        }
+    }
+
+    std::cout << textoCapitalizado << std::endl; // Salida: "Hello World From C++"
+}
+```
+
+En este caso, Boost simplifica algunas de las tareas de manipulación de strings pero aún requiere un enfoque personalizado para una verdadera capitalización, ya que principalmente ofrece utilidades de transformación y conversión de casos.

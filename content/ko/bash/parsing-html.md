@@ -1,55 +1,67 @@
 ---
 title:                "HTML 파싱"
-date:                  2024-01-20T15:30:21.615255-07:00
+date:                  2024-02-03T19:11:43.072217-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "HTML 파싱"
-
 tag:                  "HTML and the Web"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/bash/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (무엇이며 왜?)
-HTML 파싱이란, HTML 문서에서 구조적인 데이터를 추출하는 과정입니다. 프로그래머들은 웹 스크래핑, 데이터 마이닝, 내용 검증 등의 작업을 위해 HTML을 파싱합니다.
+## 무엇인가 & 왜?
 
-## How to:
-Bash에서 HTML을 파싱하는 일반적인 방법은 `grep`, `awk`, `sed`와 같은 텍스트 처리 도구를 사용하는 것이 아니라, `xmllint`나 `pup` 같은 XML/HTML 전용 파서를 사용하는 것입니다. 예제를 통해 설명하겠습니다.
+HTML 파싱은 HTML 파일의 구조와 내용을 뒤져서 정보를 추출하는 것을 의미합니다. 프로그래머들은 데이터에 접근하거나, 내용을 조작하거나, 웹사이트를 스크래핑하기 위해 이 작업을 수행합니다.
 
-```Bash
-# xmllint 설치
+## 어떻게:
+
+Bash는 HTML 파싱을 위한 첫 번째 선택은 아니지만, `grep`, `awk`, `sed` 또는 `lynx` 같은 외부 유틸리티와 같은 도구들로 할 수는 있습니다. 견고함을 위해, 우리는 `libxml2` 패키지에서 `xmllint`를 사용할 것입니다.
+
+```bash
+# 필요한 경우 xmllint 설치
 sudo apt-get install libxml2-utils
 
-# xmllint를 사용하여 예제 HTML 파일의 제목 추출
-xmllint --html --xpath '//title/text()' example.html 2>/dev/null
+# 샘플 HTML
+cat > sample.html <<EOF
+<html>
+<head>
+  <title>Sample Page</title>
+</head>
+<body>
+  <h1>Hello, Bash!</h1>
+  <p id="myPara">Bash can read me.</p>
+</body>
+</html>
+EOF
 
-# Sample Output: "Your Page Title"
+# 제목 파싱
+title=$(xmllint --html --xpath '//title/text()' sample.html 2>/dev/null)
+echo "제목은: $title"
+
+# ID로 단락 추출
+para=$(xmllint --html --xpath '//*[@id="myPara"]/text()' sample.html 2>/dev/null)
+echo "단락 내용은: $para"
 ```
 
-```Bash
-# pup 설치
-go get github.com/ericchiang/pup
-
-# pup을 사용하여 예제 HTML 파일에서 모든 링크 텍스트 추출
-cat example.html | pup 'a text{}'
-
-# Sample Output:
-# Link 1 text
-# Link 2 text
-# Link 3 text
+출력:
+```
+제목은: Sample Page
+단락 내용은: Bash can read me.
 ```
 
-## Deep Dive (심층 분석)
-명령줄에서 HTML 파싱이 자주 필요한 작업은 아니지만, 자동화된 스크립트의 일부로 사용될 때 유용합니다. `xmllint`, `pup`와 같은 도구들은 HTML 구조를 이해하고 올바르게 파싱할 수 있도록 XML/HTML 파싱 라이브러리를 기반으로 합니다.
+## 깊이 있는 탐구
 
-과거에 Bash 사용자들은 주로 텍스트 처리 도구를 사용해 HTML을 처리했지만, 이 방법은 비효율적이고 오류를 일으키기 쉽습니다. HTML은 계층적이고 복잡한 구조를 가진 마크업 언어이기 때문에, 전용 파서를 사용하는 것이 훨씬 더 신뢰할 수 있는 결과를 가져옵니다.
+예전에, 프로그래머들은 HTML을 스캔하기 위해 `grep` 같은 regex 기반 도구를 사용했지만, 그것은 다소 불편했습니다. HTML은 정규적이지 않고, 상황에 따라 다릅니다. 전통적인 도구들은 이를 놓치고 오류가 발생하기 쉽습니다.
 
-`xmllint`는 `libxml2` 라이브러리의 유틸리티로, XML과 HTML 파일을 위한 검증 및 파싱 도구입니다. `pup`은 Go 언어로 작성된 도구로, `jq`처럼 HTML 문서를 처리합니다. 더 복잡한 HTML 처리가 필요하면, Python의 `BeautifulSoup`나 JavaScript의 `cheerio` 같은 고급 파싱 라이브러리를 고려해야 할 수도 있습니다.
+대안? 많습니다. Beautiful Soup를 사용하는 Python, DOMDocument를 사용하는 PHP, DOM 파서를 사용하는 JavaScript—HTML의 구조를 이해하도록 설계된 라이브러리를 가진 언어들.
 
-## See Also (참고 자료)
-- [xmllint documentation](http://xmlsoft.org/xmllint.html)
-- [pup Github repository](https://github.com/ericchiang/pup)
-- [BeautifulSoup documentation](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
-- [cheerio Github repository](https://github.com/cheeriojs/cheerio)
+간단한 작업에 대해 bash 스크립트에서 `xmllint`를 사용하는 것은 안정적입니다. 그것은 XML을 이해하며, 그 확장으로 XHTML을 이해합니다. 하지만 일반 HTML은 예측할 수 없을 수 있습니다. 그것은 항상 XML의 엄격한 규칙을 따르지 않습니다. `xmllint`는 HTML을 XML 모델로 강제 적용하는데, 이는 잘 형성된 HTML에는 잘 작동하지만, 지저분한 것들에는 문제가 발생할 수 있습니다.
 
-이러한 도구들은 Bash 환경에서 HTML을 다루는 실용적인 방법을 제공합니다. 각 도구에 대해 더 알아보려면 위의 링크들을 참고하세요.
+## 참고
+
+- [W3Schools - HTML DOM 파서](https://www.w3schools.com/xml/dom_intro.asp): HTML DOM을 명확하게 설명합니다.
+- [MDN 웹 문서 - XML 파싱 및 직렬화](https://developer.mozilla.org/en-US/docs/Web/Guide/Parsing_and_serializing_XML): XHTML에 적용되는 XML 파싱 원칙에 대해 설명합니다.
+- [Beautiful Soup 문서](https://www.crummy.com/software/BeautifulSoup/bs4/doc/): HTML 파싱을 위한 Python 라이브러리.
+- [libxml2 문서](http://xmlsoft.org/): `xmllint` 및 관련 XML 도구에 대한 세부 정보.

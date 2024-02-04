@@ -1,8 +1,8 @@
 ---
 title:                "Parsing HTML"
-date:                  2024-01-20T15:32:44.333515-07:00
+date:                  2024-02-03T19:02:44.853028-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Parsing HTML"
-
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/lua/parsing-html.md"
 ---
@@ -10,46 +10,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-
-Parsing HTML means sifting through the maze of HTML tags to find the data you need. Programmers do it to extract info, automate web interactions, or migrate content.
+Parsing HTML involves extracting data and information from HTML documents, which is crucial for web scraping, data analysis, and automation tasks. Programmers perform this to gather, analyze, or manipulate web content programmatically, enabling the automation of what would otherwise be manual extraction of data from websites.
 
 ## How to:
+Lua does not have a built-in library for parsing HTML, but you can utilize third-party libraries like `LuaHTML` or leverage bindings for `libxml2` through `LuaXML`. A popular approach is to use the `lua-gumbo` library for parsing HTML, which provides a straightforward, HTML5-compliant parsing capability.
 
-Lua isn't naturally web-savvy like Python or JavaScript, but with the `luasocket` and `luahtml` libraries, it can stride into HTML parsing territory. Let's dive in with a basic example:
+### Installing lua-gumbo:
+First, ensure `lua-gumbo` is installed. You can typically install it using luarocks:
 
-```Lua
-local socket = require("socket.http")
-local html = require("luahtml")
-
--- Fetching HTML from a URL
-local body, code = socket.request("http://example.com")
-
-if code ~= 200 then
-    print("Failed to load page")
-    return
-end
-
--- Parsing the HTML
-local parsed_html = html.parse(body)
-
--- Extracting data from a specific element, say a paragraph
-for _, p in ipairs(parsed_html:select("p")) do
-    print(p:getcontent())
-end
+```sh
+luarocks install lua-gumbo
 ```
 
-This will print the content of all paragraph tags (`<p>`) from the fetched webpage. 
+### Basic Parsing with lua-gumbo:
+Here's how you can parse a simple HTML snippet and extract data from it using `lua-gumbo`:
 
-## Deep Dive
+```lua
+local gumbo = require "gumbo"
+local document = gumbo.parse[[<html><body><p>Hello, world!</p></body></html>]]
 
-HTML parsing in Lua isn't a one-stop-shop scenario. You’ve to stitch together various libraries, unlike in languages designed with web parsing in mind. Historically, Lua's been a sidekick for quick, embedded scripting in apps, not web scraping.
+local p = document:getElementsByTagName("p")[1]
+print(p.textContent)  -- Output: Hello, world!
+```
 
-Alternatives? Besides `luahtml`, there's also `luascrape` and `luaxpath` for different parsing needs. There's no objectively 'best' choice—each comes with quirks you'll need to navigate.
+### Advanced Example - Extracting Links:
+To extract `href` attributes from all anchor tags (`<a>` elements) in an HTML document:
 
-Diving into implementation, Lua libraries generally leverage the C API for performance gains. When sifting through HTML, you'll juggle nodes and elements, each an opportunity to chase down the pesky details of web structures.
+```lua
+local gumbo = require "gumbo"
+local document = gumbo.parse([[
+<html>
+<head><title>Sample Page</title></head>
+<body>
+  <a href="http://example.com/1">Link 1</a>
+  <a href="http://example.com/2">Link 2</a>
+  <a href="http://example.com/3">Link 3</a>
+</body>
+</html>
+]])
 
-## See Also
+for _, element in ipairs(document.links) do
+    if element.getAttribute then  -- Ensure it's an Element and has attributes
+        local href = element:getAttribute("href")
+        if href then print(href) end
+    end
+end
 
-- LuaSocket documentation: http://w3.impa.br/~diego/software/luasocket/http.html
-- luahtml on GitHub for a deep dive into parsing methods: https://github.com/o-lim/luahtml
-- Lua Users Wiki for community gems and troubleshooting: http://lua-users.org/wiki/
+-- Sample Output:
+-- http://example.com/1
+-- http://example.com/2
+-- http://example.com/3
+```
+
+This code snippet iterates through all the links in the document and prints their `href` attributes. The `lua-gumbo` library's ability to parse and understand the structure of an HTML document simplifies the process of extracting specific elements based on their tags or attributes.

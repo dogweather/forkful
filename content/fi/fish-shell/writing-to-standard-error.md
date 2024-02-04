@@ -1,47 +1,53 @@
 ---
-title:                "Kirjoittaminen vakiovirheeseen"
-date:                  2024-01-19
-simple_title:         "Kirjoittaminen vakiovirheeseen"
-
+title:                "Kirjoittaminen standardivirheeseen"
+date:                  2024-02-03T19:33:25.109127-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Kirjoittaminen standardivirheeseen"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/fish-shell/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Standard error on ihmisen ja ohjelman välinen kommunikaatioreitti virheviesteille. Ohjelmoijat käyttävät sitä raportoimaan ongelmia, jolloin normaali toiminta ja virheviestit ovat helposti eroteltavissa.
+## Mikä & Miksi?
 
-## How to:
-Kirjoita virhe stderr:iin näin:
+Virheiden kirjoittaminen (stderr) Fish Shellissä tarkoittaa virheilmoitusten tai diagnostiikkatietojen ohjaamista erillään tavallisesta tulosteesta (stdout). Ohjelmoijat tekevät näin varmistaakseen, että virhetietoja voidaan helposti tunnistaa, hallita tai ohjata uudelleen, mikä helpottaa sujuvampaa vianetsintää ja lokien käsittelyä.
 
-```Fish Shell
+## Miten:
+
+Fish Shellissä voit kirjoittaa stderr-näkymään ohjaamalla tulosteesi käyttäen `>&2`. Tässä on perusesimerkki:
+
+```fish
 echo "Tämä on virheilmoitus" >&2
 ```
 
-Jos haluat ohjata virheet tiedostoon:
+Tämä komento yksinkertaisesti kaikuttaa viestin stderr-näkymään stdoutin sijaan. Jos kirjoittaisit skriptin, joka tuottaa sekä tavallisia että virheviestejä, saattaisit tehdä jotakin tällaista:
 
-```Fish Shell
-echo "Tallennetaan virhe" >&2 2> error_log.txt
+```fish
+echo "Prosessin aloitus"
+echo "Tapahtui virhe" >&2
+echo "Prosessi valmis"
 ```
 
-Kokeile ja näet:
+Esimerkkitulostus, jos ajat skriptin ja ohjaat stderrin tiedostoon:
 
-```Fish Shell
-function oletus
-    echo "Normaali tulostus"
-    echo "Todellinen virhe" >&2
+```
+Prosessin aloitus
+Prosessi valmis
+```
+
+Virheviesti ei näkyisi tavallisessa tulosteessa, vaan löytyisi tiedostosta, johon ohjasit stderrin.
+
+Tilanteissa, jotka vaativat monimutkaisempaa virheenkäsittelyä tai lokitusta, Fish ei sisällä nimenomaisesti tähän suunniteltuja sisäänrakennettuja kirjastoja. Voit kuitenkin hyödyntää ulkoisia työkaluja tai kirjoittaa funktioita avuksi. Esimerkiksi yksinkertaisen lokitusfunktion luominen voisi näyttää tältä:
+
+```fish
+function log_error
+    echo $argv >&2
 end
 
-oletus 2> virheet.txt
+log_error "Tämä on edistyksellinen virheviesti"
 ```
 
-`virheet.txt` sisältää nyt "Todellinen virhe".
-
-## Deep Dive
-Stderr juontaa juurensa Unix-järjestelmistä ja on peruskomponentti ohjelman ja käyttöjärjestelmän välisessä kommunikaatiossa. Alternatiivit kuten logitiedostot ovat hyviä pitkäaikaista tallennusta varten. Fish käsittää stderrin omana tiedostovirtanaan, jonka numero on 2.
-
-## See Also
-- Fish Shell dokumentaatio: https://fishshell.com/docs/current/index.html
-- Unix standardivirran historia: https://en.wikipedia.org/wiki/Standard_streams
-- Opas virheenkäsittelyyn shell-skripteissä: https://mywiki.wooledge.org/BashFAQ/105
+Tämä funktio `log_error` ottaa vastaan minkä tahansa merkkijonon, jonka annat sille, ja kirjoittaa sen stderr-näkymään. Tällaisten funktioiden käyttäminen voi auttaa pitämään virheenkäsittelysi selkeänä ja johdonmukaisena läpi skriptiesi.

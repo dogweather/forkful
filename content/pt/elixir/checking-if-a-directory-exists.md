@@ -1,56 +1,33 @@
 ---
 title:                "Verificando se um diretório existe"
-date:                  2024-01-19
+date:                  2024-02-03T19:07:03.601750-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Verificando se um diretório existe"
-
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/elixir/checking-if-a-directory-exists.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## O Que & Porquê?
-Verificar se um diretório existe é essencialmente checar se um certo caminho no sistema de arquivos é um diretório. Programadores fazem isso para evitar erros ao tentar acessar, ler ou escrever em um diretório que não existe.
+## O Que & Por Que?
+Verificar se um diretório existe em Elixir trata de confirmar a presença de um diretório em um caminho especificado no sistema de arquivos. Programadores fazem isso para garantir que eles possam ler, escrever ou realizar operações no diretório com segurança, sem encontrar erros devido à sua ausência.
 
-## Como Fazer:
-Vamos direto ao código. Verificando a existência de um diretório em Elixir:
-
-```elixir
-File.dir?("path/to/directory")
-```
-
-Isso retorna `true` se o diretório existir e `false` caso contrário. Exemplo de uso:
+## Como fazer:
+A biblioteca padrão do Elixir oferece uma maneira direta de verificar a existência de um diretório por meio do módulo `File`. Veja como você pode usá-lo:
 
 ```elixir
-if File.dir?("/path/to/dir") do
-  IO.puts("Diretório existe!")
+if File.dir?("caminho/para/diretorio") do
+  IO.puts "Diretório existe!"
 else
-  IO.puts("Diretório não existe!")
+  IO.puts "Diretório não existe."
 end
 ```
 
-Se `/path/to/dir` existir, você verá:
-
+Saída de exemplo, assumindo que o diretório não exista:
 ```
-Diretório existe!
-```
-
-Caso contrário:
-
-```
-Diretório não existe!
+Diretório não existe.
 ```
 
-## Mergulho Profundo
-Verificar a existência de diretórios é uma prática comum desde os primórdios da computação, pois é crucial para a integridade e o bom funcionamento dos programas. No Elixir, a função `File.dir?/1` faz parte do módulo `File`, que lida com operações do sistema de arquivos.
-
-Há alternativas para isso em Elixir, como o `File.stat/2` que fornece mais detalhes sobre o caminho especificado, incluindo se é um diretório, e as permissões do mesmo. Contudo, `File.dir?/1` é mais direto para essa verificação específica.
-
-Ao implementar a verificação de um diretório, Elixir interage com o sistema de arquivos subjacente do sistema operacional, portanto a eficácia e o desempenho podem variar entre diferentes sistemas e configurações.
-
-## Veja Também
-Para mais informações e contextos além da verificação da existência de diretórios, pode explorar:
-
-- Elixir's `File` module documentation: https://hexdocs.pm/elixir/File.html
-- Erlang's file operations (as Elixir is built on the Erlang VM): http://erlang.org/doc/man/file.html
-- Guide to file operations in Elixir: https://elixirschool.com/en/lessons/basics/file/
+Para interações mais avançadas com o sistema de arquivos, incluindo a verificação da existência de diretórios, você pode considerar o uso de bibliotecas de terceiros como `FileSystem`. Embora as capacidades padrão do Elixir sejam suficientes para muitos casos, `FileSystem` pode oferecer um controle mais matizado e feedback para aplicações complexas. No entanto, para a necessidade básica de verificar se um diretório existe, recomenda-se geralmente aderir ao módulo `File` nativo, já que está prontamente disponível e não requer quaisquer dependências externas.

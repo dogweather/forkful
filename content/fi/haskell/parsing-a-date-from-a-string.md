@@ -1,50 +1,65 @@
 ---
-title:                "Merkkijonosta päivämäärän jäsentäminen"
-date:                  2024-01-20T15:36:31.561482-07:00
-simple_title:         "Merkkijonosta päivämäärän jäsentäminen"
-
+title:                "Päivämäärän jäsennys merkkijonosta"
+date:                  2024-02-03T19:14:18.831743-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Päivämäärän jäsennys merkkijonosta"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/haskell/parsing-a-date-from-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Mitä & Miksi?)
-Datapäivämäärän jäsentäminen merkkijonosta muuttaa tekstimuotoiset päivämäärät ohjelmoijille sopivaan formaattiin. Tämä on tärkeää, koska se mahdollistaa päivämäärien käsittelyn, vertailun ja tallennuksen.
+## Mikä & Miksi?
 
-## How to: (Kuinka tehdä:)
-Haskellissa päivämäärän jäsentäminen voidaan tehdä `time`-kirjaston `parseTimeM` funktion avulla. Tässä on perusesimerkki:
+Merkkijonosta päivämäärän jäsennys Haskellissa tarkoittaa tekstiesitysten muuntamista ohjelman käsiteltävissä olevaan rakenteelliseen muotoon. Tämä prosessi on perustavanlaatuinen sovelluksille, jotka käsittelevät kalenteritietoja, mahdollistaen toiminnot kuten kestojen laskennan, aikataulutuksen ja datan validoinnin.
 
-```Haskell
-import Data.Time
-import Data.Time.Format (defaultTimeLocale, parseTimeM)
+## Kuinka:
 
--- Asetetaan suomalainen aikaformaatti
-let finnishLocale = defaultTimeLocale { dateFormat = "%-d.%-m.%Y", timeFormat = "%H:%M" }
+Oletuksena Haskell tarjoaa perustyökalut päivämäärien jäsentämiseen, mutta kirjastojen kuten `time` käyttäminen ydintoiminnallisuuteen ja `date-parse` tai `time-parse` joustavampaan jäsentämiseen voi merkittävästi yksinkertaistaa tehtävää.
 
--- Jäsentämisen esimerkki
-maybeDate :: Maybe UTCTime
-maybeDate = parseTimeM True finnishLocale "%-d.%-m.%Y %H:%M" "24.12.2023 18:00"
+Ensimmäiseksi, varmista että sinulla on saatavilla `time`-kirjasto; se sisältyy usein GHC:hon, mutta jos sinun tarvitsee määritellä se riippuvuudeksi, lisää `time` projektiisi cabal-tiedostoon tai käytä `cabal install time` komentoa sen manuaaliseen asentamiseen.
 
+```haskell
+import Data.Time.Format
+import Data.Time.Clock
+import System.Locale (defaultTimeLocale)
+
+-- Käyttämällä time-kirjastoa päivämäärän jäsennykseen standardimuodossa
+parseBasicDate :: String -> Maybe UTCTime
+parseBasicDate = parseTimeM True defaultTimeLocale "%Y-%m-%d"
+```
+
+Esimerkin käyttö ja tuloste:
+
+```haskell
 main :: IO ()
-main = print maybeDate
+main = print $ parseBasicDate "2023-04-01"
+
+-- Tuloste: Just 2023-03-31 22:00:00 UTC
 ```
 
-Suoritettaessa antaa:
+Monimutkaisemmissa skenaarioissa, joissa sinun on käsiteltävä monia muotoja tai kieliäyttöalueita, kolmannen osapuolen kirjastot kuten `date-parse` voivat olla kätevämpiä:
 
+Olettaen, että olet lisännyt `date-parse` riippuvuudet ja asentanut sen, tässä on miten saatat käyttää sitä:
+
+```haskell
+import Data.Time.Calendar
+import Text.Date.Parse (parseDate)
+
+-- Jäsennetään päivämäärämerkkijono date-parse-kirjaston avulla, joka tukee useita muotoja
+parseFlexibleDate :: String -> Maybe Day
+parseFlexibleDate = parseDate
 ```
-Just 2023-12-24 16:00:00 UTC
+
+Esimerkin käyttö `date-parse` kanssa:
+
+```haskell
+main :: IO ()
+main = print $ parseFlexibleDate "huhtikuu 1, 2023"
+
+-- Tuloste: Just 2023-04-01
 ```
 
-## Deep Dive (Perusteellinen Sukellus):
-Haskellin `time`-kirjasto on ollut osa kieltä jo pitkään, mutta sen käyttöliittymä on parantunut ajan saatossa. `parseTimeM` on monadinen funktio, joka palauttaa `MonadFail`-instanssin omaavan monadin, yleensä `Maybe`. Tämä merkitsee, että jäsentäminen on epäonnistumissalliva toimenpide; se voi palauttaa `Nothing` jos annettu syöte ei vastaa odotettua formaattia.
-
-Vaihtoehtoja standardikirjaston `time`-kirjastolle ovat mm. `chronos` ja `thyme`, jotka tarjoavat hieman erilaisia API:ja. Nämä kirjastot saattavat tarjota parempaa suorituskykyä tai lisäominaisuuksia tietyissä tilanteissa.
-
-Kun puhutaan implementaatiosta, Haskellin tyypitysjärjestelmä mahdollistaa virheiden käsittelyn kompilaatioajassa. Jos päivämäärä jäsentyy väärin, tyyppivirheet varoittavat ohjelmoijaa ennen ohjelman ajamista.
-
-## See Also (Katso Myös):
-- Haskell `time`-kirjaston dokumentaatio: [https://hackage.haskell.org/package/time](https://hackage.haskell.org/package/time)
-- `chronos`-kirjasto: [https://hackage.haskell.org/package/chronos](https://hackage.haskell.org/package/chronos)
-- `thyme`-kirjasto: [https://hackage.haskell.org/package/thyme](https://hackage.haskell.org/package/thyme)
-- Haskell:n viralliset oppaat: [https://www.haskell.org/documentation/](https://www.haskell.org/documentation/)
+Kukin esimerkki osoittaa peruslähestymistavan ottaa merkkijono ja muuntaa se käytettäväksi päivämääräobjektiksi Haskellissa. Valinta `time`-kirjaston sisäänrakennettujen funktioiden käytön ja kolmannen osapuolen ratkaisun kuten `date-parse` välillä riippuu sovelluksesi erityistarpeista, kuten tarvittavien syötemuotojen laajuudesta.

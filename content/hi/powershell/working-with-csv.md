@@ -1,41 +1,81 @@
 ---
 title:                "CSV के साथ काम करना"
-date:                  2024-01-19
+date:                  2024-02-03T19:22:00.251481-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "CSV के साथ काम करना"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/powershell/working-with-csv.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (क्या और क्यों?)
-CSV, यानी Comma-Separated Values, एक सिम्पल फ़ाइल फ़ॉर्मेट है जो टेबुलर डेटा को स्टोर करता है। प्रोग्रामर्स इसका इस्तेमाल करते हैं क्योंकि यह स्प्रेडशीट्स और डेटाबेस के बीच डेटा का आसान आदान-प्रदान करने का एक सहज तरीका है।
+## क्या और क्यों?
 
-## How to: (कैसे करें:)
-### CSV फ़ाइल इम्पोर्ट करना
-```PowerShell
-$csvData = Import-Csv -Path "path/to/your/file.csv"
-$csvData
+CSV (Comma-Separated Values) फ़ाइलों के साथ काम करना एक आम कार्य है जो डेटा को संरचित, तालिका रूप में प्रबंधित और संशोधित करने के लिए किया जाता है। प्रोग्रामर अक्सर इस ऑपरेशन को विभिन्न एप्लीकेशनों, जैसे कि डेटा विश्लेषण, रिपोर्टिंग या यहां तक कि वेब एप्लिकेशनों को चालू करने के लिए डेटा को आयात, निर्यात, या संशोधित करने के लिए करते हैं।
+
+## कैसे:
+
+### एक CSV फ़ाइल को पढ़ना
+
+एक CSV फाइल से पढ़ने के लिए, `Import-Csv` कमांडलेट का उपयोग करें। यह कमांडलेट फाइल को पढ़ता है और प्रत्येक पंक्ति के लिए कस्टम PowerShell ऑब्जेक्ट्स में परिवर्तित करता है।
+
+```powershell
+# एक CSV फ़ाइल को आयात करना
+$data = Import-Csv -Path "C:\Data\users.csv"
+# सामग्री प्रदर्शित करना
+$data
 ```
-### CSV फ़ाइल एक्सपोर्ट करना
-```PowerShell
-$object | Export-Csv -Path "path/to/your/newfile.csv" -NoTypeInformation
+
+**नमूना आउटपुट:**
+
 ```
-### CSV डेटा को कस्टम ऑब्जेक्ट्स में बदलना
-```PowerShell
-$csvData | ForEach-Object {
-    [PSCustomObject]@{
-        Name = $_.Name
-        Email = $_.Email
-        Age = $_.Age
-    }
+नाम    आयु    शहर
+----    ---    ----
+जॉन    23     न्यू यॉर्क
+डो     29     लॉस एंजेलिस
+```
+
+### एक CSV फाइल में लिखना
+
+इसके विपरीत, एक CSV फाइल में डेटा लिखने के लिए, `Export-Csv` कमांडलेट का उपयोग किया जाता है। यह कमांडलेट इनपुट ऑब्जेक्ट्स को लेता है और उन्हें CSV स्वरूप में बदल देता है।
+
+```powershell
+# निर्यात के लिए एक ऑब्जेक्ट बनाना
+$users = @(
+    [PSCustomObject]@{Name='जॉन'; Age='23'; City='न्यू यॉर्क'},
+    [PSCustomObject]@{Name='डो'; Age='29'; City='लॉस एंजेलिस'}
+)
+
+# एक CSV फ़ाइल में निर्यात करना
+$users | Export-Csv -Path "C:\Data\new_users.csv" -NoTypeInformation
+```
+
+निष्पादित होने के बाद, `new_users.csv` नाम की एक फ़ाइल बनाई गई है जिसमें प्रदान किया गया डेटा है।
+
+### CSV सामग्री को फ़िल्टर करना और संशोधित करना
+
+CSV फ़ाइल से डेटा फ़िल्टर करने या संशोधित करने के लिए, PowerShell की ऑब्जेक्ट मैनिपुलेशन क्षमताओं का उपयोग करें। उदाहरण के लिए, केवल उन उपयोगकर्ताओं को चुनने के लिए जिनकी आयु एक निश्चित सीमा से ऊपर है और जो एक विशेष शहर से हैं:
+
+```powershell
+# डेटा आयात करना और फ़िल्टर करना
+$filteredData = Import-Csv -Path "C:\Data\users.csv" | Where-Object {
+    $_.Age -gt 25 -and $_.City -eq 'लॉस एंजेलिस'
 }
+
+# फ़िल्टर किया गया डेटा प्रदर्शित करना
+$filteredData
 ```
 
-## Deep Dive (गहराई से समझिए)
-CSV फॉर्मेट 1970s से इस्तेमाल हो रहा है। Alternative फॉर्मेट्स में JSON और XML हैं, लेकिन CSV का सादगी में मज़े की बात होती है। PowerShell में CSV के साथ काम करने के लिए `Import-Csv` और `Export-Csv` जैसे cmdlets होते हैं, जो डेटा को आसानी से पर्स और आउटपुट कर सकते हैं।
+**नमूना आउटपुट:**
 
-## See Also (और जानकारी)
-- [PowerShell Documentation on Microsoft Docs](https://docs.microsoft.com/powershell/)
-- [About Csv on PowerShell | Microsoft Docs](https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/import-csv?view=powershell-7.1)
+```
+नाम    आयु    शहर
+----    ---    ----
+डो     29     लॉस एंजेलिस
+```
+
+### तृतीय-पक्ष पुस्तकालयों का उपयोग
+
+जबकि PowerShell के मूल कमांडलेट अक्सर आम कार्यों के लिए पर्याप्त होते हैं, अधिक जटिल ऑपरेशंस तृतीय-पक्ष पुस्तकालयों या उपकरणों से लाभान्वित हो सकते हैं। हालांकि, मानक CSV संशोधन के लिए, जैसे कि पढ़ना, लिखना, फ़िल्टर करना, या सॉर्टिंग, PowerShell के बिल्ट-इन कमांडलेट जैसे `Import-Csv` और `Export-Csv` आम तौर पर अतिरिक्त पुस्तकालयों की आवश्यकता के बिना दृढ़ कार्यक्षमता प्रदान करते हैं।

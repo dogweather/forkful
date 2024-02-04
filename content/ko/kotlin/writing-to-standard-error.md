@@ -1,35 +1,77 @@
 ---
-title:                "표준 오류로 쓰기"
-date:                  2024-01-19
-simple_title:         "표준 오류로 쓰기"
-
+title:                "표준 에러에 쓰기"
+date:                  2024-02-03T19:33:54.031461-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "표준 에러에 쓰기"
 tag:                  "Files and I/O"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/kotlin/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (무엇인가 & 왜 사용하는가?)
-표준 에러로 쓰기는 프로그램의 에러 메시지를 출력하는 것이다. 프로그래머들은 디버깅을 용이하게 하고, 출력과 에러를 분리하기 위해 이를 사용한다.
+## 무엇 & 왜?
 
-## How to: (어떻게 사용하는가?)
+표준 오류(stderr)에 작성한다는 것은 에러 메시지와 진단을 표준 출력(stdout)과 별도의 별도 스트림으로 출력하여 더 나은 에러 처리와 로그 파싱을 가능하게 하는 것입니다. 프로그래머들은 디버깅을 용이하게 하고, 오류 메시지를 쉽게 식별 및 필요한 경우 리디렉션 할 수 있도록 하여, 깨끗한 출력 로그나 사용자 메시지를 유지하기 위해 이렇게 합니다.
+
+## 어떻게:
+
+Kotlin에서는 `System.err.println()`을 사용하여 stderr에 작성할 수 있습니다. 이 메서드는 `System.out.println()`과 유사하지만 출력을 표준 출력 스트림이 아닌 표준 오류 스트림으로 보냅니다.
+
 ```kotlin
 fun main() {
-    println("정상적인 출력 메시지")
-    System.err.println("에러 메시지")
+    System.err.println("This is an error message!")
 }
 ```
-출력 예시:
+
+샘플 출력:
 ```
-정상적인 출력 메시지
-에러 메시지
+This is an error message!
 ```
 
-## Deep Dive (심층 분석)
-표준 에러(stdout)와 대조적으로 표준 에러(stderr)는 오류와 로그 작업을 위해 예약되어 있다. 옛날에는 이 두 스트림이 다른 장치(예를 들어, 프린터와 모니터)로 출력될 수 있었다. `System.err`는 `PrintStream` 객체이며, 자바의 `System` 클래스에서 상속된 것이다. 대안으로는 로깅 프레임워크를 사용할 수 있으나, 간단한 스크립트나 테스트 시에는 `System.err` 사용이 편리하다.
+Logback이나 SLF4J 같은 로깅 프레임워크를 포함하는 더 구조화되거나 복잡한 애플리케이션의 경우, 일정 로그 레벨(예: ERROR)에 대해 오류를 stderr에 작성하도록 로거를 구성할 수 있습니다.
 
-## See Also (참고자료)
-- [Kotlin 공식 문서](https://kotlinlang.org/docs/home.html)
-- [표준 출력과 표준 에러에 대한 자세한 정보](https://en.wikipedia.org/wiki/Standard_streams)
-- [자바 PrintStream 클래스](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/PrintStream.html)
+SLF4J와 Logback 사용하기:
+
+1. 먼저, SLF4J API와 Logback 구현을 `build.gradle`에 추가합니다:
+
+```groovy
+dependencies {
+    implementation 'org.slf4j:slf4j-api:1.7.30'
+    implementation 'ch.qos.logback:logback-classic:1.2.3'
+}
+```
+
+2. 다음으로, 오류 레벨 메시지를 stderr로 보내도록 Logback을(`src/main/resources/logback.xml`에 있음) 구성합니다:
+
+```xml
+<configuration>
+    <appender name="STDERR" class="ch.qos.logback.core.ConsoleAppender">
+        <target>System.err</target>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+    
+    <root level="error">
+        <appender-ref ref="STDERR" />
+    </root>
+</configuration>
+```
+
+3. 그런 다음, Kotlin 코드에서 SLF4J를 사용하여 오류 메시지를 로깅합니다:
+
+```kotlin
+import org.slf4j.LoggerFactory
+
+fun main() {
+    val logger = LoggerFactory.getLogger("ExampleLogger")
+    logger.error("This is an error log message!")
+}
+```
+
+stderr로의 샘플 출력:
+```
+2023-04-01 12:34:56 [main] ERROR ExampleLogger - This is an error log message!
+```

@@ -1,43 +1,54 @@
 ---
-title:                "Kirjoittaminen vakiovirheeseen"
-date:                  2024-01-19
-simple_title:         "Kirjoittaminen vakiovirheeseen"
-
+title:                "Kirjoittaminen standardivirheeseen"
+date:                  2024-02-03T19:34:30.317956-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Kirjoittaminen standardivirheeseen"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/ruby/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Standard error (stderr) on Rubyssa tapa raportoida virheet ja varoitukset. Ohjelmoijat kirjoittavat stderr:ään, koska se auttaa erottamaan normaalit logiviestit todellisista ongelmista.
+## Mikä ja miksi?
+Kirjoittaminen standardivirheeseen (stderr) Rubylla tarkoittaa virheilmoitusten tai diagnostiikkatietojen ohjaamista erilliseen ulostulovirtaan, erillään standardiulostulosta (stdout). Ohjelmoijat tekevät näin erottaakseen tavallisen ohjelman ulostulon virheistä ja virheenjäljitystiedoista, mikä helpottaa ongelmien diagnosointia ja lokien jäsentämistä.
 
-## How to:
-Kirjoittaminen stderr:ään on yksinkertaista. Käytä `$stderr.puts` tai `warn`-metodia.
+## Miten:
+Rubyn vakio kirjasto tarjoaa suoraviivaisen tavan kirjoittaa stderr:iin käyttäen `$stderr` tai `STDERR`. Tätä perustoimintoa varten ei tarvita kolmannen osapuolen kirjastoja.
 
-```Ruby
-# Esimerkki stderr-kirjoittamisesta
-$stderr.puts "Tämä on virheilmoitus"
-warn "Tämä on toinen tapa kirjoittaa virheilmoituksiin"
+### Yksinkertaisen viestin kirjoittaminen stderr:iin:
+```ruby
+$stderr.puts "Virhe: Tiedostoa ei löydy."
+# Tai vastaavasti
+STDERR.puts "Virhe: Tiedostoa ei löydy."
+```
+Näyte ulostulo (stderr:iin):
+```
+Virhe: Tiedostoa ei löydy.
 ```
 
-Tulostuu:
-```
-Tämä on virheilmoitus
-Tämä on toinen tapa kirjoittaa virheilmoituksiin
-```
-
-## Deep Dive
-`stderr` on UNIX-järjestelmistä peräisin oleva perinne, erottaa standarditulosteen (stdout) virheilmoituksista. Rubyssa voit myös ohjata `stderr`-virtaa tiedostoon tai toiseen kohteeseen. `warn` on metodi, joka oletusarvoisesti kirjoittaa stderr:iin ja on käytännöllinen, koska se voidaan konfiguroida ohittavaksi viestit asettamalla `$VERBOSE = nil`.
-
-```Ruby
-# Ohjaa stderr tiedostoon
-File.open('virheet.log', 'w') do |file|
-  $stderr.reopen(file)
-  $stderr.puts "Tämä virhe menee tiedostoon."
+### Uudelleenohjataan stderr tiedostoon:
+```ruby
+File.open('error.log', 'w') do |file|
+  STDERR.reopen(file)
+  STDERR.puts "Konfiguraation avaaminen epäonnistui."
 end
 ```
+Tämä koodinpätkä uudelleenohjaa stderr:n tiedostoon nimeltä `error.log`, ja kaikki myöhemmin kirjoitetut virheet tulostetaan sinne, kunnes ohjelma nollaa stderr:n uudelleenohjauksen tai lopettaa.
 
-## See Also
-- Ruby-dokumentaatio virheiden käsittelystä: [https://ruby-doc.org/core-2.7.0/IO.html#method-c-new-label-IO+Open+Mode](https://ruby-doc.org/core-2.7.0/IO.html#method-c-new-label-IO+Open+Mode)
-- UNIX-ohjeet ohjaukseen: [https://en.wikipedia.org/wiki/Standard_streams#Standard_error_(stderr)](https://en.wikipedia.org/wiki/Standard_streams#Standard_error_(stderr))
+### Stderr:n käyttö poikkeusten käsittelyssä:
+```ruby
+begin
+  # Simuloidaan operaatio, joka voi epäonnistua, esim., tiedoston avaaminen
+  File.open('olematon_tiedosto.txt')
+rescue Exception => e
+  STDERR.puts "Poikkeus tapahtui: #{e.message}"
+end
+```
+Näyte ulostulo (stderr:iin):
+```
+Poikkeus tapahtui: No such file or directory @ rb_sysopen - olematon_tiedosto.txt
+```
+
+Vaikka Rubyn sisäänrakennetut metodit stderr:iin kirjoittamiseen riittävät moniin sovelluksiin, monimutkaisempien lokitus tarpeiden osalta saattaa olla harkittava `logger` standardi kirjastoa tai ulkopuolisia jalokiviä, kuten `Log4r`. Nämä tarjoavat mukautettavia lokitusmekanismeja, mukaan lukien vakavuustasot, muotoilut ja kyvyn kirjoittaa useisiin ulostuloihin, mukaan lukien tiedostot, sähköpostit ja muuta.

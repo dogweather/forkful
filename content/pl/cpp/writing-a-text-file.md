@@ -1,46 +1,77 @@
 ---
-title:                "Zapisywanie pliku tekstowego"
-date:                  2024-01-19
-simple_title:         "Zapisywanie pliku tekstowego"
-
+title:                "Pisanie pliku tekstowego"
+date:                  2024-02-03T19:27:23.974570-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Pisanie pliku tekstowego"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/cpp/writing-a-text-file.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-("## Co i dlaczego?")
-Pisanie do pliku tekstowego to zapisywanie danych w czytelnej formie. Programiści robią to, żeby przechowywać wyniki, konfigurować programy lub logować działania systemu.
+## Co i dlaczego?
+Zapis do pliku tekstowego w C++ polega na tworzeniu lub otwieraniu pliku, a następnie zapisywaniu w nim danych, co stanowi podstawowe zadanie dla aplikacji potrzebujących zachować dane, takie jak logi, treści generowane przez użytkowników lub ustawienia konfiguracyjne. Programiści robią to, aby zapisać dane wygenerowane podczas wykonania programu lub aby eksportować dane do użytku przez inne programy lub użytkowników.
 
-## How to:
-("## Jak to zrobić:")
-```C++
+## Jak to zrobić:
+C++ oferuje kilka sposobów na zapis do pliku tekstowego, ale jedną z najprostszych metod jest użycie biblioteki `<fstream>`, która zapewnia klasę `ofstream` (strumień wyjściowy do pliku) przeznaczoną do operacji zapisu do pliku.
+
+### Przykład użycia `<fstream>`:
+
+```cpp
 #include <fstream>
 #include <iostream>
 
 int main() {
-    std::ofstream plik("przyklad.txt");
-    if (plik.is_open()) {
-        plik << "Cześć, to jest tekst w pliku!\n";
-        plik.close();
+    std::ofstream file("example.txt");
+    if (file.is_open()) {
+        file << "Witaj, świecie!\n";
+        file << "Zapisywanie do pliku w C++ jest proste.";
+        file.close();
     } else {
-        std::cout << "Nie udało się otworzyć pliku!" << std::endl;
+        std::cerr << "Nie udało się otworzyć pliku\n";
     }
     return 0;
 }
 ```
-Wyjście (zawartość `przyklad.txt`):
+
+**Przykładowa zawartość 'example.txt':**
 ```
-Cześć, to jest tekst w pliku!
+Witaj, świecie!
+Zapisywanie do pliku w C++ jest proste.
 ```
 
-## Deep Dive
-("## W głąb tematu")
-Sposoby zapisywania danych do plików tekstowych areną się z czasem. O ile kiedyś używano funkcji z języka C, jak `fprintf`, o tyle C++ wprowadził strumienie, które są bezpieczniejsze i łatwiejsze w użyciu. Poza `ofstream` (output file stream) istnieją inne typy, jak `fstream` (do odczytu i zapisu) czy `stringstream` (do operowania na stringach jako strumieniach). Nie zapominajmy o trybach – `ios::app` (do dopisywania), `ios::trunc` (do czyszczenia pliku przy otwieraniu). Trzeba pamiętać, że operacje na plikach mogą zakończyć się niepowodzeniem, dlatego `is_open()` jest kluczowe.
+W przypadku bardziej złożonych danych lub gdy potrzebna jest większa kontrola nad procesem zapisu, programiści mogą zwrócić się ku bibliotekom stron trzecich, takim jak Boost Filesystem.
 
-## See Also
-("## Zobacz również")
-- Dokumentacja C++ `fstream`: https://en.cppreference.com/w/cpp/io/basic_fstream
-- Przewodnik po strumieniach C++: https://www.cplusplus.com/reference/iostream/
-- Artykuł o różnicach między C a C++ w kontekście obsługi plików: https://www.geeksforgeeks.org/file-handling-c-classes-vs-c-functions/
+### Przykład użycia Boost Filesystem:
+
+Aby używać Boost do operacji na plikach, najpierw musisz zainstalować biblioteki Boost. Poniższy przykład demonstruje tworzenie i zapisywanie do pliku przy użyciu `boost::filesystem` i `boost::iostreams`.
+
+```cpp
+#include <boost/filesystem.hpp>
+#include <boost/iostreams/device/file.hpp>
+#include <boost/iostreams/stream.hpp>
+#include <iostream>
+
+namespace io = boost::iostreams;
+namespace fs = boost::filesystem;
+
+int main() {
+    fs::path filePath("boost_example.txt");
+    io::stream_buffer<io::file_sink> buf(filePath.string());
+    std::ostream out(&buf);
+    out << "Boost ułatwia operacje na plikach.\n";
+    out << "To jest linia napisana z Boost.";
+    
+    return 0;
+}
+```
+
+**Przykładowa zawartość 'boost_example.txt':**
+```
+Boost ułatwia operacje na plikach.
+To jest linia napisana z Boost.
+```
+
+Wybór pomiędzy surowym C++ a biblioteką stron trzecich taką jak Boost może zależeć od konkretnych wymagań twojego projektu oraz od tego, ile kontroli lub elastyczności potrzebujesz nad operacjami we/wy na plikach.

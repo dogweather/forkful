@@ -1,39 +1,62 @@
 ---
-title:                "Kirjoittaminen vakiovirheeseen"
-date:                  2024-01-19
-simple_title:         "Kirjoittaminen vakiovirheeseen"
-
+title:                "Kirjoittaminen standardivirheeseen"
+date:                  2024-02-03T19:32:40.336820-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Kirjoittaminen standardivirheeseen"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/cpp/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? – Mikä & Miksi?
-Standardivirhe on toinen tekstivirta ohjelmalle. Kirjoitamme siihen virheviestit, koska erottaa ne tavallisesta tulosteesta, jolloin ongelmat on helpompi bongata.
+## Mikä & Miksi?
 
-## How to: – Miten:
-```C++
+Virheilmoitusten kirjoittaminen standardivirheeseen (`stderr`) C++:ssa tarkoittaa virheviestien tai diagnostiikkatietojen tulostamista, jotka ovat erillään pääohjelman tulosteesta. Ohjelmoijat tekevät näin ohjatakseen virheet eri virtaan, mikä mahdollistaa helpomman vianjäljityksen ja virheenkäsittelyn erottamalla normaalin tulosteen virheviesteistä.
+
+## Kuinka:
+
+C++:ssa standardivirheeseen kirjoittaminen voidaan saavuttaa käyttämällä `cerr`-virtaa, joka on osa standardikirjastoa. Tässä on perusesimerkki:
+
+```cpp
 #include <iostream>
 
 int main() {
-    std::cerr << "Error: File not found" << std::endl;
-    // Normaali tulostus pysyy erillään.
-    std::cout << "Ohjelma jatkuu..." << std::endl;
+    // Kirjoittaminen standarditulosteeseen
+    std::cout << "Tämä on normaali viesti." << std::endl;
+    
+    // Kirjoittaminen standardivirheeseen
+    std::cerr << "Tämä on virheviesti." << std::endl;
+    
     return 0;
 }
 ```
 
-### Esimerkkituloste:
+Esimerkkituloste:
 ```
-Error: File not found
-Ohjelma jatkuu...
+Tämä on normaali viesti.
+Tämä on virheviesti.
 ```
 
-## Deep Dive – Syväsukellus:
-Historiallisesti standardivirhe erotettiin, jotta virheviestit voidaan käsitellä eri tavalla. Vaihtoehtoja kuten tiedostoon kirjoitus löytyy, mutta `std::cerr` on yleinen tapa virheiden käsittelyyn C++:ssa. `std::cerr` käyttää puskuroimatonta tulostusta, joka tarkoittaa, että viestit ilmestyvät heti eikä odota puskurin täyttymistä.
+Tässä tapauksessa molemmat viestit ilmestyvät tyypillisesti terminaaliisi, mutta voit ohjata ne erikseen komentorivillä. Esimerkiksi, voit lähettää standarditulosteen tiedostoon samalla kun annat virheiden näkyä näytöllä.
 
-## See Also – Katso Myös:
-- C++ Standard Library reference: https://en.cppreference.com/w/cpp/io/cerr
-- C++ error handling techniques: https://www.cplusplus.com/doc/tutorial/exceptions/
-- Understanding C++ streams: https://www.learncpp.com/cpp-tutorial/input-and-output-io-streams/
+Monimutkaisempaan lokitukseen ja virheenkäsittelyyn voidaan käyttää kolmannen osapuolen kirjastoja, kuten `spdlog` tai `boost.log`. Nämä kirjastot tarjoavat parannettuja ominaisuuksia lokitukseen, mukaan lukien muotoilu, lokitasot ja tiedostotulostus.
+
+Tässä on esimerkki siitä, miten saatat käyttää `spdlog`ia kirjoittaaksesi virheviestin:
+
+```cpp
+#include "spdlog/spdlog.h"
+
+int main() {
+    // Alusta spdlog
+    spdlog::info("Tämä on normaali viesti.");
+    spdlog::error("Tämä on virheviesti.");
+    
+    return 0;
+}
+```
+
+Huom: `spdlog`in käyttämiseksi sinun täytyy lisätä se projektiisi. Voit tehdä tämän kloonaamalla varaston GitHubista tai käyttämällä paketinhallintajärjestelmää kuten `vcpkg` tai `conan`. 
+
+Muista, että valinta suorien standardivirtojen tai kirjaston kuten `spdlog` käytön välillä riippuu sovelluksesi monimutkaisuudesta ja erityistarpeistasi virheenkäsittelyn ja lokituksen suhteen.

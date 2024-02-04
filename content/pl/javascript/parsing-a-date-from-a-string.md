@@ -1,39 +1,50 @@
 ---
-title:                "Przetwarzanie daty ze łańcucha znaków"
-date:                  2024-01-20T15:37:11.144578-07:00
-simple_title:         "Przetwarzanie daty ze łańcucha znaków"
-
+title:                "Analiza składniowa daty z łańcucha znaków"
+date:                  2024-02-03T19:14:30.881461-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Analiza składniowa daty z łańcucha znaków"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/javascript/parsing-a-date-from-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Co i dlaczego?)
-Parsing daty ze stringa to proces zamiany tekstu w obiekt daty. Programiści to robią, by móc operować datami: dodawać dni, porównywać, wyświetlać w róznych formatach.
+## Co i dlaczego?
+Parsowanie daty z ciągu znaków pozwala programistom konwertować tekstowe reprezentacje dat na obiekty `Date` w JavaScript, ułatwiając operacje manipulowania datą, porównywania i formatowania. Proces ten jest niezbędny do obsługi danych wprowadzanych przez użytkownika, przetwarzania danych z baz danych lub pracy z API, które komunikują daty w formatach tekstowych.
 
-## How to: (Jak to zrobić:)
-```Javascript
-const dateString = '2023-04-01'; // przykładowy string z datą
-const parsedDate = new Date(dateString);
+## Jak to zrobić:
+JavaScript natywnie oferuje metodę `Date.parse()` oraz konstruktor `Date` do parsowania ciągów dat. Jednak te podejścia mają ograniczenia i niespójności w różnych przeglądarkach, szczególnie przy niestandardowych formatach dat. Aby rozwiązać te problemy, popularne ze względu na swoją niezawodność i łatwość użycia są biblioteki stron trzecich, takie jak `Moment.js` i `date-fns`.
 
-console.log(parsedDate); // Pokaże datę w formacie obiektu Date
+### Używając natywnego JavaScript:
+```javascript
+const dateString = "2023-04-30T14:55:00";
+const dateObj = new Date(dateString);
 
-// A teraz formatowanie daty na przykładzie
-const options = { year: 'numeric', month: 'long', day: 'numeric' };
-const formattedDate = parsedDate.toLocaleDateString('pl-PL', options);
-
-console.log(formattedDate); // Pokaże "1 kwietnia 2023"
+console.log(dateObj);  // Wynik: Sun Apr 30 2023 14:55:00 GMT+0000 (Czas Uniwersalny Koordynowany)
 ```
 
-## Deep Dive (Dogłębna analiza)
-Wcześniej JavaScript nie miał wbudowanego wsparcia dla parsingu dat, przez co programiści często sięgali po biblioteki jak Moment.js. Od ES5 można użyć `Date.parse()` albo konstruktora `new Date()`, które radzą sobie z ISO 8601. Pamiętajmy, że interpretacja stringów bez standardu może być różna w zależności od przeglądarki.
+### Używając Moment.js:
+Najpierw zainstaluj Moment.js za pomocą npm lub dołącz go do swojego projektu. Następnie:
+```javascript
+const moment = require('moment');
 
-Alternatywy jak Luxon, date-fns czy Day.js oferują więcej opcji i lepszą strefę czasową. Implementacje w różnych środowiskach mogą różnić się obsługą brzegowych przypadków. Gdy robimy parsing dat, warto być ostrożnym z formatami i zawsze testować.
+const dateString = "2023-04-30T14:55:00";
+const dateObj = moment(dateString);
 
-## See Also (Zobacz również)
-- [MDN Web Docs Date.parse()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/parse)
-- [MDN Web Docs Date() constructor](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/Date)
-- [date-fns library](https://date-fns.org/)
-- [Day.js library](https://day.js.org/)
-- [Luxon documentation](https://moment.github.io/luxon/#/)
+console.log(dateObj.toString());  // Wynik: Sun Apr 30 2023 14:55:00 GMT+0000
+```
+
+### Używając date-fns:
+Po dodaniu `date-fns` do swojego projektu, zparsuj ciąg daty w następujący sposób:
+```javascript
+const { parseISO } = require('date-fns');
+
+const dateString = "2023-04-30T14:55:00";
+const dateObj = parseISO(dateString);
+
+console.log(dateObj);  // Wynik: 2023-04-30T14:55:00.000Z
+```
+
+Zarówno `Moment.js`, jak i `date-fns` oferują bardziej wszechstronne możliwości parsowania, w tym obsługę różnorodnych formatów i ustawień regionalnych, co sprawia, że są one preferowane w skomplikowanych aplikacjach.

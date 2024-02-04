@@ -1,53 +1,54 @@
 ---
 title:                "Schreiben auf Standardfehler"
-date:                  2024-01-19
+date:                  2024-02-03T19:34:45.851299-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Schreiben auf Standardfehler"
-
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/ruby/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Was & Warum?
+Das Schreiben auf Standardfehler (stderr) in Ruby bezieht sich darauf, Fehlermeldungen oder Diagnosen auf einen separaten Ausgabestrom zu lenken, der sich vom Standardausgang (stdout) unterscheidet. Programmierer tun dies, um reguläre Programmausgaben von Fehlern und Debugging-Informationen zu unterscheiden, was die Diagnose von Problemen und das Parsen von Protokollen erleichtert.
 
-Schreiben auf Standard Error (stderr) bedeutet, Fehlermeldungen und Diagnostik separat zur Standardausgabe zu senden. Dies hilft dabei, normale Programmausgaben von Fehlermeldungen zu unterscheiden, was vor allem bei der Weiterverarbeitung von Programmausgaben nützlich ist.
+## Wie geht das:
+Die Standardbibliothek von Ruby bietet eine unkomplizierte Möglichkeit, auf stderr zu schreiben, und zwar mit `$stderr` oder `STDERR`. Für diesen grundlegenden Vorgang sind keine Drittanbieterbibliotheken erforderlich.
 
-## How to:
-
-```Ruby
-# Schreiben auf Standard Output (stdout)
-puts "Das ist eine normale Ausgabe."
-
-# Schreiben auf Standard Error (stderr)
-$stderr.puts "Das ist eine Fehlermeldung."
-
-# Kurzform für Schreiben auf stderr
-STDERR.puts "Das ist auch eine Fehlermeldung."
+### Eine einfache Nachricht auf stderr schreiben:
+```ruby
+$stderr.puts "Fehler: Datei nicht gefunden."
+# Oder gleichwertig
+STDERR.puts "Fehler: Datei nicht gefunden."
+```
+Beispielausgabe (auf stderr):
+```
+Fehler: Datei nicht gefunden.
 ```
 
-Beispiel-Ausgabe (im Terminal):
-
+### Umleitung von stderr in eine Datei:
+```ruby
+File.open('error.log', 'w') do |file|
+  STDERR.reopen(file)
+  STDERR.puts "Fehler beim Öffnen der Konfiguration."
+end
 ```
-Das ist eine normale Ausgabe.
-Das ist eine Fehlermeldung.
-Das ist auch eine Fehlermeldung.
+Dieser Codeausschnitt leitet stderr in eine Datei namens `error.log` um, und alle nachfolgend geschriebenen Fehler werden dort ausgegeben, bis das Programm die Umleitung von stderr zurücksetzt oder beendet.
+
+### Verwendung von stderr bei der Ausnahmebehandlung:
+```ruby
+begin
+  # Simulation eines Vorgangs, der fehlschlagen könnte, z. B. das Öffnen einer Datei
+  File.open('nonexistent_file.txt')
+rescue Exception => e
+  STDERR.puts "Ausnahme aufgetreten: #{e.message}"
+end
+```
+Beispielausgabe (auf stderr):
+```
+Ausnahme aufgetreten: No such file or directory @ rb_sysopen - nonexistent_file.txt
 ```
 
-Nutze Umleitung im Terminal, um die Ausgaben zu trennen:
-
-```
-ruby script.rb > ausgabe.txt 2> errorlog.txt
-```
-
-Dies schreibt normale Ausgaben in `ausgabe.txt` und Fehlermeldungen in `errorlog.txt`.
-
-## Deep Dive
-
-Schreiben auf stderr ist eine Konvention, die von Unix übernommen wurde, wo `stdout` und `stderr` verschiedene Streams sind. Alternativen zu `$stderr.puts` könnten die Verwendung von `warn` oder das Logging mit einem Bibliotheks-Logger sein. Die Implementierungsdetails sind wichtig: `STDOUT` und `STDERR` sind globale Konstanten in Ruby, die Objekte der Klasse `IO` darstellen und für gewöhnliche bzw. Fehlerausgaben dienen.
-
-## See Also
-
-- Ruby-Dokumentation zu IO: [https://ruby-doc.org/core-3.1.0/IO.html](https://ruby-doc.org/core-3.1.0/IO.html)
-- POSIX-Standard für stderr: [https://pubs.opengroup.org/onlinepubs/9699919799/functions/stdin.html](https://pubs.opengroup.org/onlinepubs/9699919799/functions/stdin.html)
-- Erläuterung von stdout und stderr in Unix: [https://en.wikipedia.org/wiki/Standard_streams](https://en.wikipedia.org/wiki/Standard_streams)
+Obwohl die eingebauten Methoden von Ruby für das Schreiben auf stderr für viele Anwendungen ausreichen, könnte man für komplexere Protokollierungsbedürfnisse die Standardbibliothek `logger` oder externe Gems wie `Log4r` in Betracht ziehen. Diese bieten konfigurierbare Protokollierungsmechanismen, einschließlich Schweregradstufen, Formatierung und der Fähigkeit, auf verschiedene Ausgaben zu schreiben, einschließlich Dateien, E-Mail und mehr.

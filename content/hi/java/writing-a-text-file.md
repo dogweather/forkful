@@ -1,49 +1,114 @@
 ---
-title:                "टेक्स्ट फाइल लिखना"
-date:                  2024-01-19
-simple_title:         "टेक्स्ट फाइल लिखना"
-
+title:                "एक टेक्स्ट फ़ाइल लिखना"
+date:                  2024-02-03T19:29:19.513901-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "एक टेक्स्ट फ़ाइल लिखना"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/java/writing-a-text-file.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (क्या और क्यों?)
+## क्या और क्यों?
 
-टेक्स्ट फाइल लिखना मतलब जानकारी को फाइल में सेव करना। प्रोग्रामर्स ये करते हैं डेटा बैकअप, लॉगिंग, और कॉन्फ़िगरेशन सेटिंग्स के लिए।
+Java में एक टेक्स्ट फाइल लिखना, फाइल सिस्टम पर फाइलों में सामग्री बनाने और लिखने के लिए भाषा की क्षमताओं का उपयोग करने के बारे में है। प्रोग्रामर इसे विभिन्न कारणों से करते हैं, जैसे कि लॉगिंग, डेटा निर्यात करना, या बाद की पुनर्प्राप्ति के लिए एप्लिकेशन स्थिति को सहेजना।
 
-## How to: (कैसे करें:)
+## कैसे:
 
-```Java
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
+### `java.nio.file` का उपयोग (मानक पुस्तकालय)
 
-public class TextFileWriter {
+Java का न्यू I/O (NIO) पैकेज (`java.nio.file`) फाइलों से निपटने के लिए अधिक बहुमुखी दृष्टिकोण प्रदान करता है। यहाँ `Files.write()` का उपयोग करके एक फाइल में लिखने का एक सरल तरीका है:
+
+```java
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.Arrays;
+import java.util.List;
+
+public class TextFileWriterNIO {
     public static void main(String[] args) {
-        String path = "example.txt";
-        String content = "हेलो, यह एक परिचय है!";
-        
-        try (BufferedWriter bw = new BufferedWriter(new FileWriter(path))) {
-            bw.write(content);
-            System.out.println("फ़ाइल सफलतापूर्वक लिखी गई।");
-        } catch (IOException e) {
-            System.err.println("एक त्रुटि हुई: " + e.getMessage());
+        List<String> lines = Arrays.asList("Line 1", "Line 2", "Line 3");
+        try {
+            Files.write(Paths.get("example.txt"), lines);
+            System.out.println("फाइल सफलतापूर्वक लिखी गई!");
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 }
 ```
-सैंपल आउटपुट:
+
+आउटपुट:
+
 ```
-फ़ाइल सफलतापूर्वक लिखी गई।
+फाइल सफलतापूर्वक लिखी गई!
 ```
 
-## Deep Dive (गहराई में जानकारी):
+### `java.io` का उपयोग (मानक पुस्तकालय)
 
-पहले, `java.io` पैकेज इस्तेमाल होता था फाइल ऑपरेशन्स के लिए। अब, `java.nio` पैकेज बेहतर विकल्प है क्योंकि यह ज्यादा फ्लेक्सिबल और इफ़िशिएंट है। डेटा एन्कोडिंग, बफ़र साइज़, और एरर हैंडलिंग जैसी चीज़ों पर विचार करना जरूरी है टेक्स्ट फाइल लिखते समय।
+एक अधिक पारंपरिक दृष्टिकोण के लिए, `java.io.FileWriter` सरलता से टेक्स्ट फाइलें लिखने के लिए एक अच्छा विकल्प है:
 
-## See Also (और भी देखें):
+```java
+import java.io.FileWriter;
+import java.io.IOException;
 
-- [Oracle Java Docs for java.io.BufferedWriter](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/BufferedWriter.html)
-- [Oracle Java Docs for java.nio.file.Files](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/nio/file/Files.html)
+public class TextFileWriterIO {
+    public static void main(String[] args) {
+        try (FileWriter writer = new FileWriter("example.txt")) {
+            writer.write("Hello, World!\n");
+            writer.append("This is another line.");
+            System.out.println("फाइल सफलतापूर्वक लिखी गई!");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+आउटपुट:
+
+```
+फाइल सफलतापूर्वक लिखी गई!
+```
+
+### Apache Commons IO का उपयोग
+
+Apache Commons IO लाइब्रेरी कई ऑपरेशनों, जिसमे फाइल लेखन शामिल है, को सरल बनाती है। यहाँ `FileUtils.writeStringToFile()` का उपयोग करके एक फाइल में लिखने का तरीका है:
+
+पहले, अपनी परियोजना में निर्भरता शामिल करें। यदि Maven का उपयोग कर रहे हैं, तो शामिल करें:
+
+```xml
+<dependency>
+  <groupId>org.apache.commons</groupId>
+  <artifactId>commons-io</artifactId>
+  <version>2.11.0</version> <!-- नवीनतम संस्करण के लिए जांचें -->
+</dependency>
+```
+
+फिर, एक फाइल में टेक्स्ट लिखने के लिए निम्नलिखित कोड का उपयोग करें:
+
+```java
+import org.apache.commons.io.FileUtils;
+import java.io.File;
+import java.io.IOException;
+
+public class TextFileWriterCommonsIO {
+    public static void main(String[] args) {
+        try {
+            FileUtils.writeStringToFile(new File("example.txt"), "This is text written using Commons IO.", "UTF-8");
+            System.out.println("फाइल सफलतापूर्वक लिखी गई!");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+
+```
+
+आउटपुट:
+
+```
+फाइल सफलतापूर्वक लिखी गई!
+```

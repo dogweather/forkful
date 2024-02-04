@@ -1,48 +1,56 @@
 ---
-title:                "Przetwarzanie daty ze łańcucha znaków"
-date:                  2024-01-20T15:37:46.911160-07:00
-simple_title:         "Przetwarzanie daty ze łańcucha znaków"
-
+title:                "Analiza składniowa daty z łańcucha znaków"
+date:                  2024-02-03T19:14:54.155607-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Analiza składniowa daty z łańcucha znaków"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/lua/parsing-a-date-from-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
-Parsowanie daty polega na konwersji tekstowej reprezentacji daty do formatu, który można łatwo przetworzyć w programie. Programiści parsują daty, aby umożliwić manipulację i porównywanie dat, a także do weryfikacji i formatowania danych wejściowych użytkownika.
+## Co i dlaczego?
+Przetwarzanie daty z ciągu znaków polega na konwertowaniu tekstowych reprezentacji dat i czasu na format, który można łatwo manipulować, przechowywać lub porównywać w programie Lua. Programiści wykonują to zadanie, aby ułatwić operacje takie jak planowanie, logowanie lub jakiekolwiek obliczenia czasowe oraz aby zniwelować różnicę między czytelnymi dla człowieka formatami dat a strukturalnymi typami danych, które komputer może efektywnie przetwarzać.
 
 ## Jak to zrobić:
-Poniżej znajdziesz kod w Lua do parsowania daty ze stringa:
+Lua nie ma wbudowanego wsparcia dla manipulacji datą i czasem poza ograniczoną funkcjonalnością, jaką zapewniają funkcje `os.date` i `os.time`. Jednakże mogą one być wykorzystane do podstawowego parsowania, a dla bardziej złożonych wymagań można użyć biblioteki zewnętrznej `luadate`.
 
-```Lua
--- Przykładowy string z datą
-local dateString = "2023-03-15"
+**Korzystanie z `os.date` i `os.time`:**
+```lua
+-- Konwersja czytelnej dla człowieka daty na znacznik czasu i z powrotem
+local dateString = "2023-09-21 15:00:00"
+local pattern = "(%d+)-(%d+)-(%d+) (%d+):(%d+):(%d+)"
+local year, month, day, hour, minute, second = dateString:match(pattern)
 
--- Funkcja do parsowania
-function parseDate(str)
-  local year, month, day = str:match("(%d+)-(%d+)-(%d+)")
-  return { year = tonumber(year), month = tonumber(month), day = tonumber(day) }
-end
+local timestamp = os.time({
+  year = year,
+  month = month,
+  day = day,
+  hour = hour,
+  min = minute,
+  sec = second
+})
 
--- Użycie funkcji
-local dateTable = parseDate(dateString)
-
--- Wydrukowanie wyniku
-print(string.format("Rok: %d, Miesiąc: %d, Dzień: %d", dateTable.year, dateTable.month, dateTable.day))
+-- Konwersja znacznika czasu z powrotem na format czytelny dla człowieka
+local formattedDate = os.date("%Y-%m-%d %H:%M:%S", timestamp)
+print(formattedDate)  -- Wynik: 2023-09-21 15:00:00
 ```
 
-Wyjście:
+**Korzystanie z `luadate` (biblioteka stronna):**
+Aby użyć `luadate`, upewnij się, że jest zainstalowana za pomocą LuaRocks lub menedżera pakietów według wyboru. `luadate` dodaje obszerne możliwości parsowania i manipulowania datą i czasem.
+
+```lua
+local date = require('date')
+
+-- Bezpośrednie parsowanie ciągu daty
+local parsedDate = date.parse("2023-09-21 15:00:00")
+print(parsedDate:fmt("%Y-%m-%d %H:%M:%S"))  -- Wynik: 2023-09-21 15:00:00
+
+-- Dodawanie okresu czasu
+local oneWeekLater = parsedDate:adddays(7)
+print(oneWeekLater:fmt("%Y-%m-%d %H:%M:%S"))  -- Wynik: 2023-09-28 15:00:00
 ```
-Rok: 2023, Miesiąc: 3, Dzień: 15
-```
 
-## Glebokie Zanurzenie
-Parsowanie daty z stringa ma swoje korzenie w pierwszych dniach programowania, a potrzeba ta wzrosła z rozwojem aplikacji webowych i systemów zarządzania bazami danych. Lua, nie posiadając wbudowanego wsparcia dla dat i czasu w sposobie jaki mają inne języki, jak Python czy JavaScript, wymaga od programistów pisania własnych funkcji lub korzystania z zewnętrznych bibliotek jak `lua-date` dla bardziej złożonych zadań. Powyższy przykład wykorzystuje podstawowe wyrażenia regularne do ekstrakcji elementów daty, co jest proste i skuteczne, ale nie uwzględnia walidacji danych — coś, co biblioteki zewnętrzne robią lepiej.
-
-## Zobacz Również
-Aby poszerzyć swoją wiedzę o parsowaniu dat w Lua:
-
-- [Lua 5.4 Reference Manual](https://www.lua.org/manual/5.4/) – Dokumentacja Lua z przykładami.
-- [lua-date](https://github.com/Tieske/date) – Potężna biblioteka do zarządzania datami w Lua.
-- [Wikipedia: ISO 8601](https://pl.wikipedia.org/wiki/ISO_8601) – Standard formatowania daty i czasu, którego użyto w przykładzie.
+Biblioteka `luadate` oferuje bardziej intuicyjny i potężny sposób pracy z datami, w tym parsowanie z ciągów znaków, formatowanie i operacje arytmetyczne na datach, co znacząco upraszcza pracę z danymi czasowymi w Lua.

@@ -1,57 +1,95 @@
 ---
-title:                "CSV-tiedostojen käsittely"
-date:                  2024-01-19
-simple_title:         "CSV-tiedostojen käsittely"
-
+title:                "Työskentely CSV:n kanssa"
+date:                  2024-02-03T19:21:00.119000-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Työskentely CSV:n kanssa"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/python/working-with-csv.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-CSV (Comma-Separated Values) on yksinkertainen tiedostoformaatti, joka sisältää taulukkomuotoista dataa. Ohjelmoijat käyttävät CSV:tä, koska se on yleisesti tuettu, helppolukuinen ja -kirjoitettavissa oleva datanvaihdon formaatti.
+## Mitä & Miksi?
+Työskentely CSV:n (pilkuin erotetut arvot) parissa sisältää lukemista ja kirjoittamista CSV-tiedostoihin, yleinen muoto tabulaarisen datan tallentamiseen. Ohjelmoijat tekevät näin voidakseen helposti vaihtaa ja tallentaa dataa yksinkertaisessa, tekstipohjaisessa muodossa, jota laajasti tuetaan eri alustoilla ja kielillä.
 
-## How to:
-### CSV-tiedoston lukeminen
-```Python
+## Kuinka:
+Python tarjoaa sisäänrakennetun `csv` moduulin CSV-tiedostojen käsittelyyn, tehden lukemisesta ja kirjoittamisesta niihin suoraviivaista. Vankempaan ja monimutkaisempaan datan käsittelyyn suosittu kolmannen osapuolen kirjasto on `pandas`.
+
+### Käyttäen `csv` moduulia
+
+#### CSV-tiedoston lukeminen
+```python
 import csv
 
-# Avaan CSV-tiedoston lukemista varten
-with open('esimerkki.csv', mode='r', encoding='utf-8') as tiedosto:
-    csv_lukija = csv.reader(tiedosto)
-    
-    for rivi in csv_lukija:
-        print(rivi)
-
-# Output esimerkki:
-# ['sarake1', 'sarake2', 'sarake3']
-# ['data1', 'data2', 'data3']
+with open('sample.csv', mode='r') as file:
+    csv_reader = csv.reader(file)
+    for row in csv_reader:
+        print(row)
+```
+*Olettaen, että `sample.csv` sisältää:*
+```
+name,age,city
+John,22,New York
+Jane,28,Los Angeles
+```
+*Tuloste:*
+```
+['name', 'age', 'city']
+['John', '22', 'New York']
+['Jane', '28', 'Los Angeles']
 ```
 
-### CSV-tiedoston kirjoittaminen
-```Python
+#### Kirjoittaminen CSV-tiedostoon
+```python
 import csv
 
-# Määritän datan
-data = [['sarake1', 'sarake2', 'sarake3'], ['data1', 'data2', 'data3']]
+rows = [['name', 'age', 'city'], ['Jack', '33', 'Chicago'], ['Emily', '41', 'Denver']]
 
-# Kirjoitan dataa CSV-tiedostoon
-with open('esimerkki_uusi.csv', mode='w', newline='', encoding='utf-8') as tiedosto:
-    csv_kirjoittaja = csv.writer(tiedosto)
-    
-    for rivi in data:
-        csv_kirjoittaja.writerow(rivi)
-
-# Output tiedostossa:
-# sarake1,sarake2,sarake3
-# data1,data2,data3
+with open('output.csv', mode='w', newline='') as file:
+    writer = csv.writer(file)
+    writer.writerows(rows)
+```
+*Luo tai ylikirjoittaa `output.csv`:n kanssa:*
+```
+name,age,city
+Jack,33,Chicago
+Emily,41,Denver
 ```
 
-## Deep Dive
-CSV:n historialliset juuret ovat 1970-luvulla, jolloin se soveltui yksinkertaisiin datan esitysmuotoihin. Nykyään on olemassa monipuolisempia vaihtoehtoja, kuten JSON tai XML, mutta CSV pysyy suosiossa sen yksinkertaisuuden ja laajan tukensa ansiosta. Kun työstetään CSV-tiedostoja Pythonissa, tärkeää on huomioida oikeanlainen merkistökoodaus (usein utf-8), rivinvaihtojen käsittely ja datan muoto (esimerkiksi desimaalierottimen käsittely).
+### Käyttäen `pandas`ia CSV:lle
+`pandas` on tehokas kirjasto datan käsittelyyn, joka yksinkertaistaa työskentelyä CSV-tiedostojen sekä muiden datamuotojen kanssa.
 
-## See Also
-- Python `csv`-moduuli: [https://docs.python.org/3/library/csv.html](https://docs.python.org/3/library/csv.html)
-- CSV:n Wikipedia-artikkeli: [https://fi.wikipedia.org/wiki/CSV](https://fi.wikipedia.org/wiki/CSV)
-- CSV:n ja muiden formaattien vertailu: [https://realpython.com/python-csv/](https://realpython.com/python-csv/)
+#### Asenna pandas
+```shell
+pip install pandas
+```
+
+#### CSV-tiedoston lukeminen pandasilla
+```python
+import pandas as pd
+
+df = pd.read_csv('sample.csv')
+print(df)
+```
+*Tuloste:*
+```
+    name  age         city
+0   John   22    New York
+1   Jane   28  Los Angeles
+```
+
+#### Kirjoittaminen CSV-tiedostoon pandasilla
+```python
+import pandas as pd
+
+df = pd.DataFrame({'name': ['Jack', 'Emily'], 'age': [33, 41], 'city': ['Chicago', 'Denver']})
+df.to_csv('output_pandas.csv', index=False)
+```
+*Luo tai ylikirjoittaa `output_pandas.csv`:n kanssa:*
+```
+name,age,city
+Jack,33,Chicago
+Emily,41,Denver
+```

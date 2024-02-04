@@ -1,62 +1,76 @@
 ---
-title:                "Datum aus einem String parsen"
-date:                  2024-01-20T15:35:08.019179-07:00
-simple_title:         "Datum aus einem String parsen"
-
+title:                "Einen Datum aus einem String analysieren"
+date:                  2024-02-03T19:13:33.202127-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Einen Datum aus einem String analysieren"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/cpp/parsing-a-date-from-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Was & Warum?
+Das Parsen eines Datums aus einem String beinhaltet die Interpretation des Stringformats, um Komponenten wie Tag, Monat und Jahr zu extrahieren. Programmierer tun dies, um Benutzereingaben zu verarbeiten, Datendateien zu lesen oder mit APIs zu interagieren, die Daten in Stringformaten kommunizieren. Es ist wesentlich für die Datenverarbeitung, Validierung und das Durchführen von Datumsarithmetik in Anwendungen.
 
-Das Parsen eines Datums aus einem String wandelt Text in ein Datum um, das der Computer verarbeiten kann. Programmierer brauchen das, um Daten zu vergleichen, zu sortieren oder Zeitabhängigkeiten zu managen.
+## Wie:
+In modernem C++ kann man die `<chrono>`-Bibliothek verwenden, um mit Daten und Zeiten nativ umzugehen, aber sie unterstützt nicht direkt das Parsen aus Strings ohne manuelles Parsen für komplexere Formate. Für ISO 8601-Datenformate und einfache benutzerdefinierte Formate ist hier, wie Sie das Parsen bewerkstelligen können.
 
-## So geht's:
-
-Hier ist ein einfaches Beispiel, wie du mit C++ ein Datum aus einem String parst:
-
-```C++
+**Verwendung von `<chrono>` und `<sstream>`:**
+```cpp
 #include <iostream>
 #include <sstream>
+#include <chrono>
 #include <iomanip>
-#include <ctime>
 
 int main() {
-    std::string dateString = "2023-03-22";
-    std::tm tm = {};
-    std::istringstream ss(dateString);
-
-    ss >> std::get_time(&tm, "%Y-%m-%d"); // Strenge Formatierung
-    if (ss.fail()) {
-        std::cerr << "Parse-Fehler!" << std::endl;
-        return 1;
+    std::string date_str = "2023-04-15"; // ISO 8601-Format
+    std::istringstream iss(date_str);
+    
+    std::chrono::year_month_day parsed_date;
+    iss >> std::chrono::parse("%F", parsed_date);
+    
+    if (!iss.fail()) {
+        std::cout << "Geparstes Datum: " << parsed_date << std::endl;
+    } else {
+        std::cout << "Datum konnte nicht geparst werden." << std::endl;
     }
+    
+    return 0;
+}
+```
+Beispiel für Ausgabe:
+```
+Geparstes Datum: 2023-04-15
+```
 
-    // Hier könntest du mit tm weiterarbeiten
-    std::cout << "Erfolg! Datum: "
-              << std::put_time(&tm, "%d.%m.%Y") << std::endl;
+Für komplexere Formate oder wenn Sie mit älteren C++-Versionen arbeiten, sind Dritt-Bibliotheken wie `date.h` (Howard Hinnants Date-Bibliothek) beliebt. Hier ist, wie Sie verschiedene Formate damit parsen können:
+
+**Verwendung der `date.h`-Bibliothek:**
+Stellen Sie sicher, dass Sie die Bibliothek installiert haben. Sie finden sie [hier](https://github.com/HowardHinnant/date).
+
+```cpp
+#include "date/date.h"
+#include <iostream>
+
+int main() {
+    std::string date_str = "April 15, 2023";
+    
+    std::istringstream iss(date_str);
+    date::sys_days parsed_date;
+    iss >> date::parse("%B %d, %Y", parsed_date);
+    
+    if (!iss.fail()) {
+        std::cout << "Geparstes Datum: " << parsed_date << std::endl;
+    } else {
+        std::cout << "Datum konnte nicht aus dem String geparst werden." << std::endl;
+    }
 
     return 0;
 }
 ```
-
-Ausgabe:
+Beispiel für Ausgabe (kann je nach Systemlokalisierung und Datumeinstellungen variieren):
 ```
-Erfolg! Datum: 22.03.2023
+Geparstes Datum: 2023-04-15
 ```
-
-## Deep Dive:
-
-Das Parsen von Daten wurde wichtig mit dem Aufkommen von digitaler Kommunikation. Früher wurde es manuell erledigt – ein mühsamer Prozess. Heutzutage gibt es in vielen Programmiersprachen eingebaute Möglichkeiten das zu tun, in C++ etwa mit `get_time` und `put_time`.
-
-Es gibt Alternativen wie die `strptime()`-Funktion aus der C Standardbibliothek oder Bibliotheken von Drittanbietern wie `date.h` von Howard Hinnant, welche mehr Funktionalitäten bieten.
-
-Hinsichtlich der Implementierung sollte man achten, dass verschiedene Länder unterschiedliche Datumsformate nutzen und Zeitzonen sowie Sommerzeit berücksichtigt werden sollten. Fehlerbehandlung, also das Erkennen und richtige Reagieren auf ungültige Daten, ist ebenso von Bedeutung.
-
-## Siehe auch:
-
-- C++ Date and Time [Tutorial](http://www.cplusplus.com/reference/ctime/)
-- Howard Hinnant's Date library [GitHub Repository](https://github.com/HowardHinnant/date)
-- ISO 8601 Date and Time Formats [Information](https://en.wikipedia.org/wiki/ISO_8601)

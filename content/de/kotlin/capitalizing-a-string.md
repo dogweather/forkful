@@ -1,39 +1,44 @@
 ---
-title:                "String in Großbuchstaben umwandeln"
-date:                  2024-01-19
-simple_title:         "String in Großbuchstaben umwandeln"
-
+title:                "Einen String großschreiben"
+date:                  2024-02-03T19:05:36.179992-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Einen String großschreiben"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/kotlin/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Das Großschreiben eines Strings bedeutet, alle Buchstaben in Großbuchstaben umzuwandeln. Programmierer nutzen dies, um Text konsistent zu gestalten oder um Schlüsselwörter hervorzuheben.
 
-## Wie geht das?
-```Kotlin
-fun main() {
-    val kleinerText = "kotlin ist spaß"
-    val großerText = kleinerText.uppercase()
+Das Großschreiben eines Strings in der Programmierung beinhaltet das Umwandeln des ersten Zeichens des Strings in Großbuchstaben, sofern dies noch nicht der Fall ist. Dies ist nützlich, um Benutzereingaben zu formatieren oder Text in einer Benutzeroberfläche auf eine standardisierte oder benutzerfreundliche Weise anzuzeigen. Programmierer führen diesen Vorgang durch, um die Datenkonsistenz zu gewährleisten oder um spezifische Formatierungsanforderungen innerhalb ihrer Softwareanwendungen zu erfüllen.
 
-    println(großerText)  // KOTLIN IST SPAß
-}
+## Wie:
+
+In Kotlin können Strings mit den Standardbibliotheksfunktionen ohne die Notwendigkeit von Drittanbieterbibliotheken großgeschrieben werden. Koltins Herangehensweise an die Behandlung von Strings macht diese Operationen unkompliziert und prägnant.
+
+### Den gesamten String großschreiben:
+
+```kotlin
+val message = "hallo, welt!"
+val capitalizedMessage = message.uppercase()
+
+println(capitalizedMessage) // Ausgabe: HALLO, WELT!
 ```
 
-## Deep Dive
-Großschreibung war schon in frühen Computersystemen wichtig, um Befehle oder Konstanten hervorzuheben. In Kotlin verwendet `uppercase()`, um einen String zu kapitalisieren. Früher gab es `toUpperCase()`, aber seit Kotlin 1.5 ist `uppercase()` die bevorzugte Option. Es befolgt Unicode-Standards und ist damit international einsetzbar. Zusätzlich gibt es auch `capitalize()`, welches nur den ersten Buchstaben eines Strings in einen Großbuchstaben umwandelt. Dies wurde jedoch seit Kotlin 1.5 als veraltet markiert und durch `replaceFirstChar` ersetzt, sollte man dies individuell anwenden wollen.
+### Nur das erste Zeichen großschreiben:
 
-Alternativen:
-- Man kann `map` und `joinToString` nutzen, um eigene Konvertierungsfunktionen zu schreiben. Nicht benötigt für einfache Kapitalisierung, aber nützlich für spezifische Anpassungen.
-- Bibliotheken wie Apache Commons bieten `StringUtils.capitalize` an, falls man in einem umfangreichen Projekt arbeitet, wo diese Bibliotheken bereits im Einsatz sind.
+Ab Kotlin 1.5 ist die Funktion `capitalize()` veraltet und wird durch eine Kombination aus `replaceFirstChar` und einem Lambda ersetzt, das überprüft, ob es sich um einen Kleinbuchstaben handelt, um ihn in Großbuchstaben umzuwandeln.
 
-Implementierungsdetails:
-- `uppercase()` nutzt intern die Funktion `toUpperCase` des Java `String` Objekts, kümmert sich jedoch um spezielle Fälle, wie es Unicode-Standard erfordert.
-- In Performance-kritischen Anwendungen sollte man sich bewusst sein, dass Großschreibung eine neue String-Instanz erzeugt und die Original-Instanz unverändert lässt. 
+```kotlin
+val greeting = "hallo, welt!"
+val capitalizedGreeting = greeting.replaceFirstChar {
+    if (it.isLowerCase()) it.titlecase() else it.toString()
+}
 
-## Siehe auch
-- [Kotlin Dokumentation zu upperCase()](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/uppercase.html)
-- [Unicode Standard für Groß- und Kleinschreibung](https://unicode.org/reports/tr21/tr21-5.html)
-- [Apache Commons StringUtils](https://commons.apache.org/proper/commons-lang/apidocs/org/apache/commons/lang3/StringUtils.html)
+println(capitalizedGreeting) // Ausgabe: Hallo, welt!
+```
+
+Dieser Ansatz behält den Rest des Satzes in seiner ursprünglichen Form bei und ändert nur den ersten Buchstaben in einen Großbuchstaben.

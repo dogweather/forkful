@@ -1,35 +1,65 @@
 ---
-title:                "Att hämta aktuellt datum"
-date:                  2024-01-20T15:16:29.106107-07:00
-simple_title:         "Att hämta aktuellt datum"
-
+title:                "Få det aktuella datumet"
+date:                  2024-02-03T19:10:39.283869-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Få det aktuella datumet"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/ruby/getting-the-current-date.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Hämta dagens datum innebär att du får det nuvarande datumet från ditt system. Programmerare gör detta för att hantera tidsberoende funktioner eller för att logga och spåra händelser.
+Att hämta det aktuella datumet är en väsentlig uppgift i nästan alla programmeringsprojekt, från att logga aktiviteter i en applikation till att generera rapporter med datumstämplar. I Ruby kan detta enkelt åstadkommas genom att använda standardbiblioteket, vilket förenklar operationer som involverar datum.
 
-## Så här gör du:
-Att få dagens datum i Ruby är smidigt. Använd `Date.today` för enkelt datum eller `DateTime.now` för datum och tid.
+## Hur man gör:
+Rubys standardbibliotek inkluderar klasserna `Date` och `Time` för att hantera datum och tid. Så här får du det aktuella datumet:
 
-```Ruby
+```ruby
 require 'date'
 
-# Enbart datum
-puts Date.today
-# => 2023-04-12
-
-# Datum och tid
-puts DateTime.now
-# => 2023-04-12T15:24:35+02:00
+current_date = Date.today
+puts current_date
 ```
 
-## Djupdykning
-I tidiga Ruby-versioner använde man ofta `Time.now` för både datum och tid, men `DateTime` och `Date` introducerades för att hantera en större variation av datum- och tidsoperationer. Alternativ såsom Time zones och format kan hanteras med tilläggsbibliotek som 'active_support'. Att förstå skillnaden mellan `Date`, `Time`, och `DateTime` är nyckeln till att välja rätt verktyg för uppgiften.
+Exempelutskrift: 
+```
+2023-04-12
+```
 
-## Se även
-- Ruby-dokumentation för `Date`: [https://ruby-doc.org/stdlib-2.7.1/libdoc/date/rdoc/Date.html](https://ruby-doc.org/stdlib-2.7.1/libdoc/date/rdoc/Date.html)
-- Ruby-dokumentation för `DateTime`: [https://ruby-doc.org/stdlib-2.7.1/libdoc/date/rdoc/DateTime.html](https://ruby-doc.org/stdlib-2.7.1/libdoc/date/rdoc/DateTime.html)
+För att inkludera tid med datumet är Rubys `Time`-klass mer lämplig:
+
+```ruby
+current_time = Time.now
+puts current_time
+```
+
+Exempelutskrift: 
+```
+2023-04-12 14:33:07 +0200
+```
+
+Om du behöver mer funktionalitet, såsom hantering av tidszoner, kanske du vill använda ett tredjepartsgem som `ActiveSupport` (del av Rails men kan användas fristående).
+
+Först, lägg till `activesupport` i din Gemfile och kör `bundle install`:
+
+```ruby
+gem 'activesupport'
+```
+
+Därefter, använd det för att hantera tidszoner:
+
+```ruby
+require 'active_support/time'
+
+Time.zone = 'Eastern Time (US & Canada)'  # Ange din önskade tidszon
+current_time_with_zone = Time.zone.now
+puts current_time_with_zone
+```
+
+Exempelutskrift:
+```
+Wed, 12 Apr 2023 08:33:07 EDT -04:00
+```

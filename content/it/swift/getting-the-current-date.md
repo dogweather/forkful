@@ -1,72 +1,69 @@
 ---
 title:                "Ottenere la data corrente"
-date:                  2024-01-20T15:16:50.396601-07:00
+date:                  2024-02-03T19:11:00.270305-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Ottenere la data corrente"
-
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/swift/getting-the-current-date.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-("## Cosa & Perché?")
+## Cosa e perché?
+Ottenere la data corrente in Swift comporta l'uso della classe `Date` per accedere alla data e all'ora in cui l'app viene eseguita. I programmatori hanno bisogno di recuperare la data corrente per una miriade di motivi che vanno dalla timbratura degli eventi, all'esecuzione di calcoli sulla data, fino alla visualizzazione di date e orari in un'interfaccia utente.
 
-Ottenere la data corrente in programmazione significa catturare l'istante esatto in cui il codice viene eseguito. Programmatori lo fanno per timestamp, storico, o funzionalità basate sul tempo come reminder o orologi.
+## Come fare:
+Il framework `Foundation` di Swift fornisce la classe `Date`, rendendo semplice ottenere la data e l'ora correnti. Ecco un esempio basilare di come ottenere la data corrente:
 
-## How to:
-("## Come fare:")
-
-Swift rende semplice ottenere la data corrente con `Date()`:
-
-```Swift
+```swift
 import Foundation
 
 let currentDate = Date()
 print(currentDate)
 ```
 
-Output di esempio:
+Questo produrrà un output simile a:
 
 ```
-2023-03-18 15:15:47 +0000
+2023-04-12 07:46:23 +0000
 ```
 
-Formatiamo la data (italiano, in Italia):
+Il formato dell'output segue lo standard ISO 8601, utilizzando il fuso orario UTC. Tuttavia, potresti voler formattare questa data a scopo di visualizzazione. La classe `DateFormatter` di Swift viene in soccorso:
 
-```Swift
+```swift
 let formatter = DateFormatter()
-formatter.dateStyle = .short
-formatter.timeStyle = .short
-formatter.locale = Locale(identifier: "it_IT")
+formatter.dateStyle = .long
+formatter.timeStyle = .medium
 let formattedDate = formatter.string(from: currentDate)
 print(formattedDate)
 ```
 
-Output di esempio:
+Un esempio di output potrebbe essere:
 
 ```
-18/03/23, 16:15
+12 aprile 2023 alle 10:46:23
 ```
 
-## Deep Dive:
-("## Approfondimento:")
+Nota che il formato dell'output varierà a seconda della localizzazione del dispositivo che esegue il codice.
 
-Historicamente, Swift ha introdotto modi sempre più intuitivi per lavorare con date e tempo. Pre-Swift, Objective-C utilizzava `NSDate`, che è ancora disponibile come classe sottostante per compatibilità.
+Per progetti che richiedono manipolazioni della data più complesse, molti sviluppatori Swift si rivolgono a librerie di terze parti come `SwiftDate`. Ecco come potresti usare `SwiftDate` per ottenere la data corrente in un fuso orario e formato specifici:
 
-Alternative includono l'uso di calendari per gestire fusi orari e localizzazioni:
+Prima, aggiungi `SwiftDate` al tuo progetto usando SPM, CocoaPods o Carthage. Poi:
 
-```Swift
-var calendar = Calendar.current
-calendar.locale = Locale(identifier: "it_IT")
-let components = calendar.dateComponents([.year, .month, .day, .hour, .minute], from: currentDate)
+```swift
+import SwiftDate
+
+let rome = Region(calendar: .gregorian, zone: .europeRome, locale: .current)
+let currentDateInRome = DateInRegion(Date(), region: rome)
+print(currentDateInRome.toFormat("yyyy-MM-dd HH:mm:ss"))
 ```
 
-Per quanto riguarda l'implementazione, `Date()` in Swift usa il tempo in secondi trascorso dall'era UNIX (1 gennaio 1970). È importante considerare i fusi orari quando si lavora con le date.
+Questo potrebbe produrre:
 
-## See Also:
-("## Vedi Anche:")
+```
+2023-04-12 09:46:23
+```
 
-- Documentazione ufficiale di Swift su `Date`: [Swift Date](https://developer.apple.com/documentation/foundation/date)
-- Guida alla localizzazione e formattazione delle date: [Date Formatting](https://nsdateformatter.com)
-- Apple Developer, informazioni su `DateComponents`: [DateComponents](https://developer.apple.com/documentation/foundation/datecomponents)
+Utilizzando `SwiftDate`, puoi facilmente manipolare date e orari per diversi fusi orari e localizzazioni, semplificando compiti di gestione della data complessi nelle tue applicazioni Swift.

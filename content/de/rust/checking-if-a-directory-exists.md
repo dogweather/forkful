@@ -1,26 +1,27 @@
 ---
 title:                "Überprüfung, ob ein Verzeichnis existiert"
-date:                  2024-01-20T14:58:45.579307-07:00
+date:                  2024-02-03T19:08:35.680358-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Überprüfung, ob ein Verzeichnis existiert"
-
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/rust/checking-if-a-directory-exists.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Prüfen, ob ein Verzeichnis existiert, bedeutet, zu kontrollieren, ob ein bestimmter Pfad auf dem Dateisystem zu einem Verzeichnis führt. Programmierer machen das, um Fehler zu vermeiden und entscheiden zu können, ob weitere Operationen, wie das Lesen aus oder Schreiben in das Verzeichnis, möglich sind.
+## Was & Warum?
+In der Softwareentwicklung ist es oft notwendig zu überprüfen, ob ein Verzeichnis existiert, um Fehler zu vermeiden, wenn versucht wird, Dateien zu öffnen, zu lesen oder zu schreiben. Rust, als eine Systemprogrammiersprache, bietet robuste Methoden, um diese Aufgabe auszuführen und sicherzustellen, dass Ihr Programm Dateien und Verzeichnisse sicher und effizient handhaben kann.
 
-## How to:
-In Rust nutzt man das `std::fs` Modul, um mit dem Dateisystem zu arbeiten. Hier zwei Wege, um die Existenz eines Verzeichnisses zu prüfen:
+## Wie:
+Die Standardbibliothek von Rust (`std`) enthält Funktionen, um die Existenz eines Verzeichnisses über die Module `std::path::Path` und `std::fs` zu überprüfen. Hier ist ein einfaches Beispiel, das Rusts Standardansatz verwendet:
 
-```Rust
+```rust
 use std::path::Path;
 
 fn main() {
-    let path = Path::new("/ein/beispiel/pfad");
-
+    let path = Path::new("/path/to/directory");
     if path.exists() && path.is_dir() {
         println!("Das Verzeichnis existiert.");
     } else {
@@ -29,24 +30,34 @@ fn main() {
 }
 ```
 
-Die Ausgabe wäre entweder `Das Verzeichnis existiert.` oder `Das Verzeichnis existiert nicht.`, je nach Zustand des Pfads.
+Beispielausgabe, unter der Annahme, dass das Verzeichnis existiert:
+```
+Das Verzeichnis existiert.
+```
 
-## Deep Dive
-Die Verwendung der `Path`- und `PathBuf`-Strukturen für Pfadoperationen ist seit Rust 1.0 so designet. Alternativ könnten wir die `metadata()`-Funktion verwenden, müssen dann aber Fehlerbehandlung selbst machen. Im Gegensatz dazu kombiniert `path.exists()` die Fehlerprüfung direkt.
+Für komplexere Szenarien oder erweiterte Funktionen (wie asynchrone Dateisystemoperationen) könnten Sie in Erwägung ziehen, eine Drittanbieterbibliothek wie `tokio` mit ihrem asynchronen `fs` Modul zu verwenden, besonders wenn Sie in einer asynchronen Laufzeitumgebung arbeiten. So könnten Sie das Gleiche mit `tokio` erreichen:
 
-Alternativer Weg mit `metadata()`:
-```Rust
-use std::fs;
+Fügen Sie zunächst `tokio` zu Ihrem `Cargo.toml` hinzu:
 
-fn main() {
-    let path = "/ein/beispiel/pfad";
+```toml
+[dependencies]
+tokio = { version = "1.0", features = ["full"] }
+```
 
-    match fs::metadata(path) {
+Verwenden Sie dann `tokio::fs`, um asynchron zu überprüfen, ob ein Verzeichnis existiert:
+
+```rust
+use tokio::fs;
+
+#[tokio::main]
+async fn main() {
+    let path = "/path/to/directory";
+    match fs::metadata(path).await {
         Ok(metadata) => {
             if metadata.is_dir() {
                 println!("Das Verzeichnis existiert.");
             } else {
-                println!("Existiert, ist aber keine Verzeichnis.");
+                println!("Der Pfad existiert, ist aber kein Verzeichnis.");
             }
         },
         Err(_) => println!("Das Verzeichnis existiert nicht."),
@@ -54,8 +65,9 @@ fn main() {
 }
 ```
 
-Die Entscheidung zwischen `path.exists()` und `metadata()` hängt oft von der benötigten Fehlergranularität ab.
+Beispielausgabe, unter der Annahme, dass das Verzeichnis nicht existiert:
+```
+Das Verzeichnis existiert nicht.
+```
 
-## See Also
-- Rust Documentation: [Path](https://doc.rust-lang.org/std/path/struct.Path.html) und [fs::metadata](https://doc.rust-lang.org/std/fs/fn.metadata.html)
-- Rust by Example: [Filesystem Operations](https://doc.rust-lang.org/rust-by-example/std_misc/fs.html)
+Diese Beispiele heben hervor, wie Rust und sein Ökosystem sowohl synchrone als auch asynchrone Ansätze zur Überprüfung der Existenz von Verzeichnissen bieten und damit eine breite Palette von Softwareentwicklungsbedürfnissen abdecken.

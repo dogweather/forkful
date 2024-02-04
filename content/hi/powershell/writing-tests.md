@@ -1,54 +1,76 @@
 ---
-title:                "परीक्षण लिखना"
-date:                  2024-01-19
-simple_title:         "परीक्षण लिखना"
-
+title:                "टेस्ट लिखना"
+date:                  2024-02-03T19:32:31.081860-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "टेस्ट लिखना"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/powershell/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (क्या और क्यों?)
-टेस्ट लिखना सॉफ्टवेयर के विशेष भागों की जांच और पुष्टि करने की प्रक्रिया है। प्रोग्रामर्स इसलिए टेस्ट लिखते हैं ताकि वे आत्मविश्वास से कोड में बदलाव कर सकें और सुनिश्चित कर सकें कि कोड सही तरीके से काम करता रहे।
+## क्या और क्यों?
 
-## How to: (कैसे करें:)
-```PowerShell
-# मान लेते हैं कि आपके पास एक सिंपल फ़ंक्शन हैं जो संख्याओं का योग करता है
-function Add-Numbers($num1, $num2) {
-    return $num1 + $num2
+PowerShell में परीक्षण लिखने का मतलब ऐसी स्क्रिप्ट्स बनाना है जो आपके PowerShell कोड की कार्यक्षमता को स्वतः सत्यापित करती हैं, यह सुनिश्चित करती हैं कि यह उम्मीद के मुताबिक व्यवहार करे। प्रोग्रामर इसे जल्दी बग्स को पकड़ने, कोड रख-रखाव को सरल बनाने, और यह सुनिश्चित करने के लिए करते हैं कि कोड मॉडिफिकेशन मौजूदा कार्यक्षमता को अनजाने में न तोड़े।
+
+## कैसे:
+
+PowerShell में कोई निर्मित परीक्षण ढांचा नहीं है, लेकिन Pester, एक लोकप्रिय तृतीय-पक्ष मॉड्यूल, परीक्षण लिखने और चलाने के लिए व्यापक रूप से इस्तेमाल किया जाता है। यहाँ आपके PowerShell फंक्शन्स का परीक्षण करने के लिए Pester के साथ शुरू करने का तरीका है।
+
+सबसे पहले, यदि आपने पहले से Pester इंस्टॉल नहीं किया है तो इसे इंस्टॉल करें:
+
+```powershell
+Install-Module -Name Pester -Scope CurrentUser -Force
+```
+
+अगला, माना आपके पास एक सरल PowerShell फंक्शन है जिसे आप परीक्षण करना चाहते हैं, `MyFunction.ps1` के रूप में सेव किया गया:
+
+```powershell
+function Get-MultipliedNumber {
+    param (
+        [int]$Number,
+        [int]$Multiplier = 2
+    )
+
+    return $Number * $Multiplier
 }
+```
 
-# अब हम इस फंक्शन के लिए एक टेस्ट लिखेंगे
-Describe "Add-Numbers Tests" {
-    It "adds two numbers correctly" {
-        Add-Numbers 5 10 | Should -Be 15
+इस फंक्शन को Pester के साथ परीक्षण करने के लिए, `MyFunction.Tests.ps1` नाम की एक परीक्षण स्क्रिप्ट बनाइए। इस स्क्रिप्ट में, Pester के `Describe` और `It` ब्लॉकों का उपयोग करके परीक्षण मामलों को परिभाषित करिए:
+
+```powershell
+# Import the function to test
+. .\MyFunction.ps1
+
+Describe "Get-MultipliedNumber tests" {
+    It "Multiplies number by 2 when no multiplier is provided" {
+        $result = Get-MultipliedNumber -Number 3
+        $result | Should -Be 6
+    }
+
+    It "Correctly multiplies number by given multiplier" {
+        $result = Get-MultipliedNumber -Number 3 -Multiplier 3
+        $result | Should -Be 9
     }
 }
-
-# टेस्ट चलाने के लिए Pester module की ज़रूरत होती है, इसे इस प्रकार इनस्टॉल करें
-Install-Module -Name Pester -Force -SkipPublisherCheck
-
-# अब टेस्ट को चलाएं
-Invoke-Pester
 ```
 
-परिणाम (Sample Output):
+परीक्षणों को चलाने के लिए, PowerShell खोलें, अपनी परीक्षण स्क्रिप्ट से युक्त निर्देशिका में नेविगेट करें, और `Invoke-Pester` कमांड का उपयोग करें:
+
+```powershell
+Invoke-Pester .\MyFunction.Tests.ps1
+```
+
+नमूना आउटपुट इस प्रकार दिखेगा, जो दर्शाएगा कि आपके परीक्षण पास हुए हैं या विफल हुए हैं:
+
 ```
 Starting discovery in 1 files.
-Discovery finished in 58ms.
-[+] /path/to/your/tests/Add-Numbers.Tests.ps1 101ms (96ms|5ms)
-Tests completed in 101ms
-Tests Passed: 1, Failed: 0, Skipped: 0 NotRun: 0
+Discovery finished in 152ms.
+[+] C:\path\to\MyFunction.Tests.ps1 204ms (182ms|16ms)
+Tests completed in 204ms
+Tests Passed: 2, Failed: 0, Skipped: 0 NotRun: 0
 ```
 
-## Deep Dive (गहराई से समझिए)
-टेस्टिंग का इतिहास 1950 के दशक से है जब पहली बार बग्स और गलतियां ढूँढने के लिए सिस्टमेटिक तरीकों का उपयोग हुआ।
-
-PowerShell में `Pester` एक पॉपुलर टेस्टिंग फ्रेमवर्क है। विकल्प के रूप में `NUnit` और `xUnit` जैसे अन्य फ्रेमवर्क भी हैं, हालांकि वे ज्यादातर C# जैसी अन्य भाषाओं के लिए हैं।
-
-Pester में `Describe` ब्लॉक कोड की एक "सुट" के रूप में काम करता है, और `It` ब्लॉक का इस्तेमाल तब होता है जब कोई विशेष टेस्ट केस बताना हो।
-
-## See Also (इसे भी देखें:)
-- [Pester](https://pester.dev/docs/quick-start) - Pester का ऑफिसियल डॉक्यूमेंटेशन।
-- [PowerShell Testing](https://github.com/pester/Pester/wiki/PowerShell-Testing) - GitHub पर Pester से जुड़ी संसाधन सूची।
+यह आउटपुट दिखाता है कि दोनों परीक्षण पास हो गए हैं, आपको विश्वास दिलाते हैं कि आपका `Get-MultipliedNumber` फंक्शन आपके द्वारा परीक्षण किए गए परिदृश्यों के तहत उम्मीद के मुताबिक व्यवहार करता है।

@@ -1,40 +1,95 @@
 ---
 title:                "CSV के साथ काम करना"
-date:                  2024-01-19
+date:                  2024-02-03T19:21:32.196382-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "CSV के साथ काम करना"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/python/working-with-csv.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## क्या & क्यों?
-Python में CSV (Comma-Separated Values) से काम करने का मतलब है टेक्स्ट फाइल्स में डेटा को पढ़ना और लिखना, जिन्हें आसानी से टेबल्स की तरह समझा जा सकता है। प्रोग्रामर्स इसका उपयोग डेटा एक्सचेंज और स्टोरेज के लिए करते हैं क्योंकि यह सार्वभौमिक तरीका है और आसानी से कई अलग-अलग प्लेटफार्म्स पर पढ़ा जा सकता है।
+## क्या और क्यों?
+CSV (Comma-Separated Values) के साथ काम करना इसमें से पढ़ना और CSV फाइलों में डेटा लिखना शामिल है, जो टैबुलर डेटा स्टोर करने के लिए एक सामान्य प्रारूप है। प्रोग्रामर इसे आसानी से डेटा आदान-प्रदान और संग्रहित करने के लिए करते हैं, एक सरल, पाठ-आधारित प्रारूप में जो विभिन्न प्लेटफॉर्मों और भाषाओं में व्यापक रूप से समर्थित है।
 
-## कैसे करें:
-```Python
-# CSV फाइल पढ़ना
+## कैसे:
+पायथन में बिल्ट-इन `csv` मॉड्यूल CSV फाइलों को संभालने के लिए प्रदान किया गया है, जिससे इनमें पढ़ना और लिखना सीधा हो जाता है। अधिक मजबूत और जटिल डेटा मेनिपुलेशन के लिए, थर्ड-पार्टी लाइब्रेरी `pandas` बहुत लोकप्रिय है।
+
+### `csv` मॉड्यूल का उपयोग करना
+
+#### एक CSV फ़ाइल पढ़ना
+```python
 import csv
 
-filename = "sample.csv"
-with open(filename, mode='r') as file:
+with open('sample.csv', mode='r') as file:
     csv_reader = csv.reader(file)
     for row in csv_reader:
         print(row)
-
-# CSV फाइल लिखना
-data = [["नाम", "उम्र"], ["राहुल", 30], ["सीमा", 28]]
-
-with open("output.csv", mode='w', newline='') as file:
-    csv_writer = csv.writer(file)
-    csv_writer.writerows(data)
+```
+*मान लें `sample.csv` में निम्नलिखित है:*
+```
+name,age,city
+John,22,New York
+Jane,28,Los Angeles
+```
+*आउटपुट:*
+```
+['name', 'age', 'city']
+['John', '22', 'New York']
+['Jane', '28', 'Los Angeles']
 ```
 
-## गहराई से समझ:
-CSV का फॉर्मेट सबसे पहले 1970 के दशक में उपयोग में आया था और तब से यह डेटा को स्टोर और एक्सचेंज करने का एक मानक रूप बना हुआ है। वैकल्पिक रूप में, XML और JSON जैसे फॉर्मेट्स भी मौजूद हैं, पर CSV की सरलता और व्यापक स्वीकार्यता इसे लोकप्रिय बनाए रखती है। CSV में सबसे बड़ी कमी यह है कि इसमें डेटा टाइप्स पर स्पष्टता की कमी होती है, और कई संगठित डेटा को इसमें संग्रहित करना मुश्किल होता है।
+#### एक CSV फ़ाइल में लिखना
+```python
+import csv
 
-## और भी देखें:
-- Python की आधिकारिक CSV मॉड्यूल डॉक्यूमेंटेशन: https://docs.python.org/3/library/csv.html
-- CSV के लिए pandas लाइब्रेरी: https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#csv-text-files
-- CSV फाइल्स के साथ काम करते समय अच्छी प्रैक्टिस: https://realpython.com/python-csv/
+rows = [['name', 'age', 'city'], ['Jack', '33', 'Chicago'], ['Emily', '41', 'Denver']]
+
+with open('output.csv', mode='w', newline='') as file:
+    writer = csv.writer(file)
+    writer.writerows(rows)
+```
+*यह `output.csv` को बनाता है या इसे निम्नानुसार ओवरराइट करता है:*
+```
+name,age,city
+Jack,33,Chicago
+Emily,41,Denver
+```
+
+### CSV के लिए `pandas` का उपयोग करना
+`pandas` एक शक्तिशाली लाइब्रेरी है जो डेटा मेनिपुलेशन को सरल बनाती है और CSV फाइलों सहित अन्य डेटा प्रारूपों के साथ काम करना आसान बनाती है।
+
+#### पंडास इंस्टॉल करें
+```shell
+pip install pandas
+```
+
+#### पंडास के साथ एक CSV फ़ाइल पढ़ना
+```python
+import pandas as pd
+
+df = pd.read_csv('sample.csv')
+print(df)
+```
+*आउटपुट:*
+```
+    name  age         city
+0   John   22    New York
+1   Jane   28  Los Angeles
+```
+
+#### पंडास के साथ एक CSV फ़ाइल में लिखना
+```python
+import pandas as pd
+
+df = pd.DataFrame({'name': ['Jack', 'Emily'], 'age': [33, 41], 'city': ['Chicago', 'Denver']})
+df.to_csv('output_pandas.csv', index=False)
+```
+*यह `output_pandas.csv` को बनाता है या इसे निम्नानुसार ओवरराइट करता है:*
+```
+name,age,city
+Jack,33,Chicago
+Emily,41,Denver
+```

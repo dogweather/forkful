@@ -1,65 +1,52 @@
 ---
-title:                "Aktuelles Datum abrufen"
-date:                  2024-01-20T15:14:50.122659-07:00
-simple_title:         "Aktuelles Datum abrufen"
-
+title:                "Den aktuellen Datum abrufen"
+date:                  2024-02-03T19:09:27.093385-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Den aktuellen Datum abrufen"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/haskell/getting-the-current-date.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Das Abrufen des aktuellen Datums in Haskell bedeutet, das aktuelle Datum aus dem laufenden System zu ermitteln. Programmierer nutzen diese Funktion für alles Mögliche, von der Dateiverwaltung und Logbuchführung bis hin zur zeitgesteuerten Ausführung von Aktionen.
+Das Abrufen des aktuellen Datums in Haskell umfasst das Erlangen der aktuellen Systemzeit und deren Umwandlung in ein lesbares Datumsformat. Programmierer tun dies, um Operationen basierend auf dem Datum durchzuführen, wie zum Beispiel das Protokollieren, das Planen von Aufgaben oder das Zeitstempeln von Ereignissen in Anwendungen.
 
-## How to:
-Hier ein kleines Beispiel, wie du das aktuelle Datum in Haskell bekommst:
+## Wie geht das:
+Die Standardbibliothek von Haskell, `base`, bietet das Modul `Data.Time`, das Funktionalitäten zur Arbeit mit Daten und Zeiten bietet. So verwenden Sie es, um das aktuelle Datum zu erhalten:
+
+```haskell
+import Data.Time (getCurrentTime, utctDay)
+
+main :: IO ()
+main = do
+    now <- getCurrentTime
+    let today = utctDay now
+    print today
+```
+
+Beispielausgabe:
+```
+2023-04-12
+```
+
+Für mehr Flexibilität, wie zum Beispiel das Formatieren des Datums oder die Arbeit mit verschiedenen Zeitzonen, ist die `time` Bibliothek unschätzbar. Hier sehen Sie, wie Sie das aktuelle Datum formatieren könnten:
 
 ```haskell
 import Data.Time
 
 main :: IO ()
 main = do
-    currentDay <- getCurrentTime
-    print $ utctDay currentDay
+    now <- getCurrentTime
+    timezone <- getCurrentTimeZone
+    let zoneNow = utcToLocalTime timezone now
+    putStrLn $ formatTime defaultTimeLocale "%Y-%m-%d" zoneNow
 ```
 
-Ausgabe könnte so aussehen:
+Dies gibt das aktuelle Datum im `YYYY-MM-DD` Format aus, angepasst an die lokale Zeitzone.
 
-```
-2023-04-05
-```
+Zusätzlich, für Unterstützung durch Drittanbieterbibliotheken, wird `time` aufgrund seiner umfassenden Fähigkeiten zur Manipulation von Datum und Zeit in der Haskell-Community sehr empfohlen und oft verwendet. Die oben genannten Beispiele nutzen diese Bibliothek.
 
-Wenn du nur das Datum ohne die Uhrzeit willst:
-
-```haskell
-import Data.Time
-
-main :: IO ()
-main = do
-    currentDate <- fmap utctDay getCurrentTime
-    print currentDate
-```
-
-Ausgabe:
-
-```
-2023-04-05
-```
-
-## Deep Dive
-Historisch gesehen, war das Verarbeiten von Datums- und Zeitangaben in den meisten Programmiersprachen nicht immer direkt möglich, weshalb externe Bibliotheken oder eigene Implementierungen benötigt wurden. In Haskell ist das Paket `Data.Time` Teil des `time`-Pakets, für das viele Gemeinschaftsmitglieder beigetragen haben.
-
-Alternativen zu `Data.Time` gibt es nicht viele, aber man könnte auch Systembefehle aufrufen oder andere externe Pakete suchen. Dennoch ist `Data.Time` die gängigste und empfohlene Methode in Haskell.
-
-Die Implementierung nutzt UTC (Coordinated Universal Time), was eine Vereinheitlichung bedeutet, aber denk dran: wenn du lokale Zeiten oder Zeitstempel brauchst, solltest du Funktionen wie `getCurrentTimeZone` und `utcToLocalTime` beachten.
-
-## See Also
-Weitere Infos zum `time`-Paket findest du direkt auf Hackage, dem Haskell-Paketarchiv:
-
-- Hackage `time` package: https://hackage.haskell.org/package/time
-- Einen Guide zur Nutzung von Datums- und Zeitfunktionen in Haskell bietet der Chapter "Dates and Times" aus dem Buch "Real World Haskell": http://book.realworldhaskell.org/read/dates-and-times.html
-
-Für Tutorials und eine interaktive Lernumgebung kann 'Learn You a Haskell for Great Good!' hilfreich sein:
-
-- Learn You a Haskell (deutsche Version): http://learnyouahaskell.com/chapters
+Wenn Sie umfassendere Datummanipulationen benötigen, einschließlich des Parsens von Strings oder arithmetischen Operationen mit Daten und Zeiten, wird das Erkunden zusätzlicher Funktionen innerhalb von `Data.Time` von Vorteil sein.

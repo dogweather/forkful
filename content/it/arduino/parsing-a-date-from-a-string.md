@@ -1,62 +1,91 @@
 ---
-title:                "Estrarre una data da una stringa"
-date:                  2024-01-20T15:34:36.064988-07:00
-simple_title:         "Estrarre una data da una stringa"
-
+title:                "Analisi di una data da una stringa"
+date:                  2024-02-03T19:13:19.468012-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Analisi di una data da una stringa"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/arduino/parsing-a-date-from-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Tradurre una data da stringa significa estrarre informazioni (giorno, mese, anno) da un testo. Si fa per manipolare date in formati diversi o per interfacciarsi con sensori e servizi esterni.
+## Cosa e Perché?
 
-## How to:
-```Arduino
+Effettuare il parsing di una data da una stringa in Arduino comporta l'estrazione e la conversione delle componenti della data (anno, mese, giorno) da una rappresentazione testuale a un formato che può essere utilizzato per la gestione del tempo, confronti o manipolazioni all'interno degli sketch. I programmatori eseguono frequentemente questo compito per interfacciarsi con componenti come orologi in tempo reale, registratori, o per elaborare input da API web e interfacce utente dove le date potrebbero essere presentate in un formato leggibile.
+
+## Come fare:
+
+Approccio diretto senza una libreria di terze parti:
+
+```cpp
 #include <Wire.h>
 #include <RTClib.h>
 
-RTC_DS1307 rtc;
+void setup() {
+  Serial.begin(9600);
+  // Esempio di stringa data in formato AAAA-MM-GG
+  String dateString = "2023-04-01"; 
+
+  int year = dateString.substring(0, 4).toInt();
+  int month = dateString.substring(5, 7).toInt();
+  int day = dateString.substring(8, 10).toInt();
+
+  // Inizializza un oggetto DateTime con le componenti analizzate
+  DateTime parsedDate(year, month, day);
+  
+  Serial.print("Data Analizzata: ");
+  Serial.print(parsedDate.year(), DEC);
+  Serial.print("/");
+  Serial.print(parsedDate.month(), DEC);
+  Serial.print("/");
+  Serial.println(parsedDate.day(), DEC);
+}
+
+void loop() {}
+```
+
+Output Esempio:
+```
+Data Analizzata: 2023/4/1
+```
+
+Utilizzando una libreria di terze parti (*ArduinoJson* per scenari di parsing più complessi, come l'ottenimento di una data da una risposta JSON):
+
+Prima di tutto, installare la libreria ArduinoJson tramite il Gestore Librerie di Arduino.
+
+```cpp
+#include <ArduinoJson.h>
 
 void setup() {
   Serial.begin(9600);
-  if (!rtc.begin()) {
-    Serial.println("Modulo RTC non trovato!");
-    while (1);
-  }
 
-  if (!rtc.isrunning()) {
-    Serial.println("RTC non attivo!");
-  }
+  // Simulazione di una risposta JSON
+  String jsonResponse = "{\"date\":\"2023-07-19\"}";
+  StaticJsonDocument<200> doc;
+  deserializeJson(doc, jsonResponse);
 
-  // Imposta data e ora manualmente come esempio
-  // rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
+  // Estrazione della stringa data
+  const char* date = doc["date"];
 
-  // Esempio di parsing: converti stringa "DD/MM/YYYY hh:mm:ss" in DateTime
-  String dataStr = "31/12/2023 15:30:45";
-  DateTime data = convertiStringaInData(dataStr);
-  Serial.println(data.timestamp()); 
+  // Esegui il parsing della data dalla stringa come prima
+  int year = String(date).substring(0, 4).toInt();
+  int month = String(date).substring(5, 7).toInt();
+  int day = String(date).substring(8, 10).toInt();
+  
+  Serial.print("Data Analizzata da JSON: ");
+  Serial.print(year);
+  Serial.print("/");
+  Serial.print(month);
+  Serial.print("/");
+  Serial.println(day);
 }
 
-void loop() {
-}
-
-DateTime convertiStringaInData(String str) {
-  int Giorno = str.substring(0, 2).toInt();
-  int Mese = str.substring(3, 5).toInt();
-  int Anno = str.substring(6, 10).toInt();
-  int Ora = str.substring(11, 13).toInt();
-  int Minuti = str.substring(14, 16).toInt();
-  int Secondi = str.substring(17, 19).toInt();
-
-  return DateTime(Anno, Mese, Giorno, Ora, Minuti, Secondi);
-}
+void loop() {}
 ```
 
-## Deep Dive
-Il parsing della data è sempre stato un punto dolente per via dei diversi formati usati nel mondo. Alcune librerie come `RTClib` facilitano la gestione delle date su Arduino. Se non si usa un modulo RTC, si può fare il parsing manualmente come mostrato sopra. Tuttavia, attenzione ai formati di data diversi: negli Stati Uniti si usa MM/GG/AAAA, in Italia GG/MM/AAAA.
-
-## See Also
-- `RTClib` library on GitHub: [https://github.com/adafruit/RTClib](https://github.com/adafruit/RTClib)
-- Reference for the `DateTime` class: [https://github.com/adafruit/RTClib#datetime](https://github.com/adafruit/RTClib#datetime)
+Output Esempio:
+```
+Data Analizzata da JSON: 2023/7/19
+```

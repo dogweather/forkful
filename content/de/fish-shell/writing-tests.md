@@ -1,62 +1,87 @@
 ---
-title:                "Tests schreiben"
-date:                  2024-01-19
-simple_title:         "Tests schreiben"
-
+title:                "Tests Schreiben"
+date:                  2024-02-03T19:30:28.195044-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Tests Schreiben"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/fish-shell/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Was & Warum?
 
-Tests schreiben bedeutet, Code zu erstellen, der prüft, ob andere Codeabschnitte wie erwartet funktionieren. Programmierer machen das, um Fehler früh zu erkennen, Codequalität zu sichern und spätere Wartung zu vereinfachen.
+Das Schreiben von Tests in Fish Shell beinhaltet das Erstellen von Skripten, die automatisch Ihren Code ausführen, um sein Verhalten gegenüber erwarteten Ergebnissen zu validieren. Diese Praxis ist entscheidend, da sie sicherstellt, dass Ihre Shell-Skripte wie beabsichtigt funktionieren, wodurch Fehler früh erkannt und die Wartung vereinfacht wird.
 
-## How to:
+## Wie:
 
-### Einfacher Test
+Fish hat kein eingebautes Test-Framework wie einige andere Programmierumgebungen. Sie können jedoch einfache Testskripte schreiben, die Behauptungen (Assertions) nutzen, um das Verhalten Ihrer Funktionen zu überprüfen. Zusätzlich können Sie Drittanbieter-Tools wie `fishtape` für eine umfassendere Testumgebung nutzen.
 
-```Fish Shell
-function test_greeting
-    echo "Hallo Welt" | grep -q "Hallo"
-    and echo "Test bestanden"
-    or echo "Test fehlgeschlagen"
+### Beispiel 1: Einfaches Testskript
+
+Beginnen wir mit einer einfachen Funktion in Fish, die die Summe zweier Zahlen berechnet:
+
+```fish
+function add --description 'Zwei Zahlen addieren'
+    set -l sum (math $argv[1] + $argv[2])
+    echo $sum
+end
+```
+
+Sie können ein einfaches Testskript für diese Funktion wie folgt schreiben:
+
+```fish
+function test_add
+    set -l result (add 3 4)
+    if test $result -eq 7
+        echo "test_add bestanden"
+    else
+        echo "test_add fehlgeschlagen"
+    end
 end
 
-test_greeting
+test_add
 ```
 
-#### Ausgabe:
+Die Ausführung dieses Skripts würde ausgeben:
 
-```Shell
-Test bestanden
+```
+test_add bestanden
 ```
 
-### Test mit erwartetem Fehler
+### Beispiel 2: Verwendung von Fishtape
 
-```Fish Shell
-function test_fail_example
-    false # Dieser Befehl wird immer mit einem Fehler beenden
-    and echo "Sollte nicht passieren"
-    or echo "Erwartetes Versagen"
+Für eine robustere Testlösung können Sie `fishtape`, einen TAP-produzierenden Testrunner für Fish, verwenden.
+
+Installieren Sie zunächst `fishtape`, falls Sie dies noch nicht getan haben:
+
+```fish
+fisher install jorgebucaran/fishtape
+```
+
+Erstellen Sie als Nächstes eine Testdatei für Ihre `add`-Funktion, z.B. `add_test.fish`:
+
+```fish
+test "Addieren von 3 und 4 ergibt 7"
+    set result (add 3 4)
+    echo "$result" | fishtape
 end
-
-test_fail_example
 ```
 
-#### Ausgabe:
+Um den Test auszuführen, verwenden Sie den folgenden Befehl:
 
-```Shell
-Erwartetes Versagen
+```fish
+fishtape add_test.fish
 ```
 
-## Deep Dive
+Eine beispielhafte Ausgabe könnte wie folgt aussehen:
 
-Fish Shell umfasst nicht direkt eingebaute Testing-Frameworks wie andere Programmiersprachen. Historisch gesehen nutzen Entwickler externe Tools wie `fishtape` oder bash-basierte Frameworks. Das bietet weniger Integration aber erlaubt Anpassung und Nutzung bewährter Methoden. Tests in Fish sind normalerweise einfacher Natur und setzen auf die Shell's Fähigkeit, Kommandos und Scripts zu bewerten.
+```
+TAP version 13
+# Addieren von 3 und 4 ergibt 7
+ok 1 - test_add bestanden
+```
 
-## See Also
-
-- [Fish Shell Documentation](https://fishshell.com/docs/current/index.html)
-- [Fishtape, ein Test-Framework für Fish Scripts](https://github.com/jorgebucaran/fishtape)
-- [Fish Shell Tutorial für Anfänger](https://fishshell.com/docs/current/tutorial.html)
+Das teilt Ihnen mit, dass der Test erfolgreich war. `fishtape` ermöglicht es Ihnen, detailliertere Tests zu strukturieren und bietet informative Ausgaben, was das Debuggen erleichtert und eine umfassende Testabdeckung für Ihre Fish-Skripte fördert.

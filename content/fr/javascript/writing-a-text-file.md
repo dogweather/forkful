@@ -1,47 +1,69 @@
 ---
-title:                "Écriture d'un fichier texte"
-date:                  2024-01-19
-simple_title:         "Écriture d'un fichier texte"
-
+title:                "Rédiger un fichier texte"
+date:                  2024-02-03T19:28:16.987396-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Rédiger un fichier texte"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/javascript/writing-a-text-file.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
-
-Écrire un fichier texte en JavaScript, c'est sauvegarder des données en format lisible par l'homme. C'est utile pour créer des logs, exporter des données, et pour configurer des apps avec des fichiers comme `.env`.
+Écrire un fichier texte en JavaScript concerne souvent la création et la sauvegarde de données dans un format simple et lisible pour la journalisation, l'exportation des saisies utilisateur, ou des fins de configuration. Cette fonctionnalité est cruciale pour les applications qui ont besoin de persister les données au-delà de la durée de vie du processus de l'application, offrant un moyen de stocker et de récupérer ou partager l'information plus tard.
 
 ## Comment faire :
+Dans un environnement Node.js, vous pouvez utiliser le module intégré `fs` (File System) pour écrire des fichiers textes. Cet exemple montre comment écrire du texte dans un fichier de manière asynchrone :
 
 ```javascript
 const fs = require('fs');
 
-// Écrire du texte dans un nouveau fichier 
-fs.writeFile('message.txt', 'Bonjour le monde!', (err) => {
-  if (err) throw err;
-  console.log('Le fichier a été sauvegardé!');
-});
+const data = 'Bonjour le monde ! Ceci est du texte à écrire dans un fichier.';
 
-// Ajouter du texte à un fichier existant
-fs.appendFile('message.txt', '\nAu revoir!', (err) => {
-  if (err) throw err;
-  console.log('Le texte a été ajouté!');
+fs.writeFile('exemple.txt', data, (err) => {
+  if (err) {
+    throw err;
+  }
+  console.log('Le fichier a été écrit.');
 });
 ```
-Sortie :
+
+Sortie d’exemple :
 ```
-Le fichier a été sauvegardé!
-Le texte a été ajouté!
+Le fichier a été écrit.
 ```
 
-## Plongée Profonde
+Pour écrire un fichier de manière synchrone, utilisez `writeFileSync` :
+```javascript
+try {
+  fs.writeFileSync('exemple.txt', data);
+  console.log('Le fichier a été écrit.');
+} catch (error) {
+  console.error('Erreur lors de l’écriture du fichier :', error);
+}
+```
 
-Historiquement, l'interaction avec le système de fichiers était effectuée côté serveur. Avec Node.js, on manipule ces fichiers avec le module `fs`. Il y a des alternatives comme les file systems promisified (`fs.promises`) pour écrire avec des Promises/async-await. Concernant les navigateurs, l'API File et FileReader interagissent avec les fichiers locaux mais avec des restrictions de sécurité.
+Dans les navigateurs web modernes, l'API d'accès au système de fichiers permet de lire et d'écrire des fichiers. Cependant, son utilisation est soumise aux permissions de l'utilisateur. Voici comment créer et écrire dans un fichier :
 
-## Voir Également
+```javascript
+if ('showSaveFilePicker' in window) {
+  const handle = await window.showSaveFilePicker();
+  const writable = await handle.createWritable();
+  await writable.write('Bonjour le monde ! Voici l’écriture de fichier dans le navigateur.');
+  await writable.close();
+}
+```
 
-- Documentation Node.js sur `fs`: [https://nodejs.org/api/fs.html](https://nodejs.org/api/fs.html)
-- MDN Web Docs sur l'API File: [https://developer.mozilla.org/en-US/docs/Web/API/File](https://developer.mozilla.org/en-US/docs/Web/API/File)
-- MDN Web Docs sur FileReader: [https://developer.mozilla.org/en-US/docs/Web/API/FileReader](https://developer.mozilla.org/en-US/docs/Web/API/FileReader)
+Pour des scénarios plus complexes ou lors du travail avec de gros fichiers, vous pourriez opter pour des bibliothèques tierces comme `FileSaver.js` pour les navigateurs :
+
+```html
+<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.2/FileSaver.min.js"></script>
+<script>
+  const blob = new Blob(["Bonjour, Monde ! Ceci est du texte de FileSaver.js."], {type: "text/plain;charset=utf-8"});
+  saveAs(blob, "exemple.txt");
+</script>
+```
+
+Rappelez-vous, l'écriture de fichiers côté client (dans les navigateurs) est restreinte en raison de préoccupations de sécurité, et toute opération nécessitant de sauvegarder sur le disque local de l'utilisateur requerra généralement leur permission explicite.

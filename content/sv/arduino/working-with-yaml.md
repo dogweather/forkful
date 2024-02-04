@@ -1,45 +1,83 @@
 ---
-title:                "Arbete med YAML"
-date:                  2024-01-19
-simple_title:         "Arbete med YAML"
-
+title:                "Att Arbeta med YAML"
+date:                  2024-02-03T19:25:01.159986-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Att Arbeta med YAML"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/arduino/working-with-yaml.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Vad & Varför?
-YAML står för "YAML Ain't Markup Language" (rekursiv akronym) och är ett format för dataseriering som är enkelt för människor att läsa och skriva. Programmerare använder YAML för konfigurationsfiler och datautbyte eftersom det är lättläst och ofta enklare än XML eller JSON.
+## Vad och varför?
 
-## How to:
-Arduino har inte inbyggt stöd för YAML, men här är ett exempel på hur du kan läsa en enkel YAML-konfigurationsfil med pseudokod (tänk på att du kan behöva en extern parser):
+YAML (YAML Ain't Markup Language) är en standard för serialisering av data som är läsbar för människor och kan användas för konfigurationsfiler, kommunikation mellan program och datalagring. Programmerare vänder sig till YAML för Arduino-projekt för att förenkla konfigurationsprocessen i sina applikationer, vilket gör det enklare att ändra parametrar utan att behöva dyka djupt in i koden, förbättra läsbarheten och göra delning av konfigurationen enklare.
 
-```Arduino
-// Pseudokod för att hantera YAML-data
-YAMLParser parser = new YAMLParser();
-YAMLData data = parser.parse(yamlConfig);
-int threshold = data.getInt("threshold");
-String mode = data.getString("mode");
+## Hur man gör:
 
-Serial.print("Tröskelvärde: ");
-Serial.println(threshold);
-Serial.print("Läge: ");
-Serial.println(mode);
+Att arbeta med YAML direkt på Arduino är inte lika rakt på sak som i miljöer med högre programmeringsnivå på grund av begränsningar i minne och frånvaro av inbyggda YAML-behandlingsbibliotek. Men, för projekt som kräver YAML-tolkning eller generering är en typisk metod att använda en kompanjonsdator (som en Raspberry Pi) eller konvertera YAML-filer till ett format som är mer vänligt för Arduino (som JSON) med hjälp av externa skript. För demonstrationsändamål, låt oss fokusera på det senare tillvägagångssättet genom att använda ett populärt bibliotek: ArduinoJson.
+
+**Steg 1:** Konvertera din YAML-konfiguration till JSON. Du kan använda verktyg online eller kommandoradsverktyg som `yq`.
+
+YAML-fil (`config.yaml`):
+```yaml
+wifi:
+  ssid: "YourSSID"
+  password: "YourPassword"
 ```
 
-Förväntad utskrift:
+Omvandlad till JSON (`config.json`):
+```json
+{
+  "wifi": {
+    "ssid": "YourSSID",
+    "password": "YourPassword"
+  }
+}
 ```
-Tröskelvärde: 10
-Läge: Auto
+
+**Steg 2:** Använd ArduinoJson-biblioteket för att tolka JSON-filen i din Arduino-sketch. Först måste du installera ArduinoJson-biblioteket via bibliotekshanteraren i Arduino IDE.
+
+**Steg 3:** Ladda och tolka JSON i din kod. På grund av Arduinos lagringsbegränsningar, föreställ dig att JSON-strängen är lagrad i en variabel eller läses från ett SD-kort.
+
+Exempel på Arduino-sketch:
+```cpp
+#include <ArduinoJson.h>
+
+const char* jsonConfig = "{\"wifi\":{\"ssid\":\"YourSSID\",\"password\":\"YourPassword\"}}";
+
+void setup() {
+  Serial.begin(9600);
+
+  StaticJsonDocument<200> doc;
+  DeserializationError error = deserializeJson(doc, jsonConfig);
+
+  if (error) {
+    Serial.print(F("deserializeJson() failed: "));
+    Serial.println(error.f_str());
+    return;
+  }
+
+  const char* ssid = doc["wifi"]["ssid"]; // "YourSSID"
+  const char* password = doc["wifi"]["password"]; // "YourPassword"
+
+  Serial.print("SSID: ");
+  Serial.println(ssid);
+  Serial.print("Password: ");
+  Serial.println(password);
+}
+
+void loop() {
+  // Inget här för detta exempel
+}
 ```
 
-Notera: Arduino-kodexempel ovan antar att det finns en fiktiv biblioteksklass `YAMLParser` som kan hantera YAML-strängar.
+Utskrift vid körning av sketchen:
+```
+SSID: YourSSID
+Password: YourPassword
+```
 
-## Deep Dive
-YAML designades i början av 2000-talet för att vara mer läsbar och enkel jämfört med andra dataformat. Alternativ till YAML inkluderar JSON, som är mer kompakt och generellt snabbare att analysera, och XML, som är ambitiösare och har stöd för scheman och namnrymder. I Arduino-sammanhang används YAML sällan eftersom det saknar inbyggt stöd och enheterna oftast har begränsade resurser, så JSON eller helt enkla egna format är vanligare.
-
-## See Also
-- YAML officiell webbplats: https://yaml.org
-- JSON: https://www.json.org/json-sv.html
-- XML: https://www.w3.org/XML/
+Detta tillvägagångssätt, som innebär konvertering till JSON och användning av ArduinoJson-biblioteket, möjliggör hantering av YAML-konfiguration inom Arduino-projekt på ett hanterbart sätt, genom att kringgå direkt YAML-tolkning på mikrokontrollern.

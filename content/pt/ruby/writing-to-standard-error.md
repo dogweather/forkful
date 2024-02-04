@@ -1,44 +1,54 @@
 ---
-title:                "Escrevendo no erro padrão"
-date:                  2024-01-19
-simple_title:         "Escrevendo no erro padrão"
-
+title:                "Escrevendo para o erro padrão"
+date:                  2024-02-03T19:34:19.631260-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Escrevendo para o erro padrão"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/ruby/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## O Que É & Porquê?
+## O Que & Por Que?
+Escrever para o erro padrão (stderr) em Ruby é sobre direcionar mensagens de erro ou diagnósticos para um fluxo de saída separado, distinto da saída padrão (stdout). Os programadores fazem isso para diferenciar a saída regular do programa de erros e informações de depuração, facilitando o diagnóstico de problemas e a análise de logs.
 
-Escrever para o erro padrão (standard error - stderr) é o ato de enviar mensagens de erro para um stream específico, separando-as da saída normal (stdout). Programadores fazem isso para diagnosticar problemas e manter as saídas de erro e sucesso organizadas e fáceis de analisar.
+## Como fazer:
+A biblioteca padrão do Ruby oferece uma maneira simples de escrever para o stderr usando `$stderr` ou `STDERR`. Você não precisa de bibliotecas de terceiros para esta operação básica.
 
-## Como Fazer:
-
-Em Ruby, você pode usar `$stderr` ou `STDERR` para escrever no erro padrão.
-
+### Escrevendo uma mensagem simples para stderr:
 ```ruby
-puts "Isso vai para a saída padrão"
-$stderr.puts "Isso vai para o erro padrão"
-
-# Saída esperada:
-# Isso vai para a saída padrão
-# Isso vai para o erro padrão (será mostrado em stderr)
+$stderr.puts "Erro: Arquivo não encontrado."
+# Ou equivalentemente
+STDERR.puts "Erro: Arquivo não encontrado."
+```
+Saída de exemplo (para stderr):
+```
+Erro: Arquivo não encontrado.
 ```
 
-Você também pode redirecionar `STDERR` para um arquivo:
-
+### Redirecionando stderr para um arquivo:
 ```ruby
-STDERR.reopen("erros.log", "w")
-STDERR.puts "Isso será escrito no arquivo erros.log"
-# Nenhuma saída esperada na tela, verifique o arquivo erros.log
+File.open('error.log', 'w') do |file|
+  STDERR.reopen(file)
+  STDERR.puts "Falha ao abrir configuração."
+end
+```
+Este trecho de código redireciona o stderr para um arquivo chamado `error.log`, e todos os erros escritos subsequentemente serão direcionados para lá até que o programa redefina o redirecionamento do stderr ou termine.
+
+### Usando stderr com tratamento de exceção:
+```ruby
+begin
+  # Simulando uma operação que poderia falhar, por ex., abrir um arquivo
+  File.open('arquivo_inexistente.txt')
+rescue Exception => e
+  STDERR.puts "Ocorreu uma exceção: #{e.message}"
+end
+```
+Saída de exemplo (para stderr):
+```
+Ocorreu uma exceção: No such file or directory @ rb_sysopen - arquivo_inexistente.txt
 ```
 
-## Aprofundando:
-
-Historicamente, separar stdout e stderr permitiu que usuários e outras aplicações diferenciassem saídas regulares de mensagens de erro. Em Unix, isso se tornou uma prática padrão. Alternativas ao uso direto de `STDERR` em Ruby incluem o uso de bibliotecas de logging, como a `Logger`, que oferecem mais flexibilidade. Internamente, `STDERR` é uma constante global que é uma instância da classe `IO`, pré-configurada para escrever para o erro padrão do sistema operacional.
-
-## Veja Também:
-
-- Documentação oficial do Ruby sobre I/O: [https://ruby-doc.org/core-3.0.0/IO.html](https://ruby-doc.org/core-3.0.0/IO.html)
-- Guia sobre a classe Logger: [https://ruby-doc.org/stdlib-3.0.0/libdoc/logger/rdoc/Logger.html](https://ruby-doc.org/stdlib-3.0.0/libdoc/logger/rdoc/Logger.html)
+Embora os métodos integrados do Ruby para escrever para stderr sejam suficientes para muitas aplicações, para necessidades de registro de atividades mais complexas, você pode considerar a biblioteca padrão `logger` ou gems externas como `Log4r`. Estes fornecem mecanismos de registro configuráveis, incluindo níveis de severidade, formatação e a capacidade de escrever em várias saídas, incluindo arquivos, e-mail e mais.

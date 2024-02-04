@@ -1,46 +1,99 @@
 ---
 title:                "Використання регулярних виразів"
-date:                  2024-01-19
+date:                  2024-02-03T19:17:26.874980-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Використання регулярних виразів"
-
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/java/using-regular-expressions.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Регулярні вирази - це шаблони для пошуку та маніпуляції текстом. Програмісти використовують їх для валідації вводу, пошуку чи заміни підрядків.
+## Що і чому?
 
-## How to:
+Регулярні вирази (regex) в Java дозволяють вам визначати специфічні шаблони для пошуку, маніпулювання або валідації рядків у вашому коді. Програмісти використовують їх для завдань, як-от аналіз лог-файлів, валідація вводу користувача або пошук специфічних патернів у тексті, що дозволяє здійснювати складну обробку рядків з мінімальними зусиллями.
+
+## Як:
+
+Вбудована підтримка regex в Java здійснюється головним чином через класи `Pattern` та `Matcher` у пакеті `java.util.regex`. Ось простий приклад, щоб знайти та вивести всі входження слова у рядку, не звертаючи уваги на регістр:
+
 ```java
-import java.util.regex.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class RegexExample {
     public static void main(String[] args) {
+        String text = "Regex is great for parsing. Parsing with regex is powerful.";
+        String wordToFind = "parsing";
         
-        // Example: Validate email address
-        String emailRegex = "^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$";
-        String emailToCheck = "vash_email@example.com";
-        Pattern emailPattern = Pattern.compile(emailRegex);
-        Matcher emailMatcher = emailPattern.matcher(emailToCheck);
-        boolean isEmailValid = emailMatcher.matches();
-        System.out.println("Email is valid: " + isEmailValid);  // Output: Email is valid: true
-
-        // Example: Find and replace all occurrences
-        String text = "Котики милі, котики класні, усі люблять котиків.";
-        String searchText = "котиків";
-        String replaceText = "песиків";
-        String replacedText = text.replaceAll(searchText, replaceText);
-        System.out.println(replacedText); // Output: Котики милі, котики класні, усі люблять песиків.
+        Pattern pattern = Pattern.compile(wordToFind, Pattern.CASE_INSENSITIVE);
+        Matcher matcher = pattern.matcher(text);
+        
+        while (matcher.find()) {
+            System.out.println("Found '" + matcher.group() + "' at position " + matcher.start());
+        }
     }
 }
 ```
 
-## Deep Dive
-Регулярні вирази з'явилися в 1950-х. Головною альтернативою їм є парсери та текстові функції, але вони не такі гнучкі. У Java Pattern і Matcher класи з пакету `java.util.regex` відповідають за роботу з регулярними виразами.
+Вивід:
+```
+Знайдено 'parsing' на позиції 16
+Знайдено 'Parsing' на позиції 31
+```
 
-## See Also
-- [Java Pattern Class](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/regex/Pattern.html)
-- [Java Matcher Class](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/regex/Matcher.html)
-- [Oracle's regex tutorial](https://docs.oracle.com/javase/tutorial/essential/regex/)
+Для завдань, таких як розбиття рядків, ви можете використовувати метод `split()` класу `String` з regex:
+
+```java
+public class SplitExample {
+    public static void main(String[] args) {
+        String text = "Java,Python,Ruby,JavaScript";
+        String[] languages = text.split(",");
+        
+        for (String language : languages) {
+            System.out.println(language);
+        }
+    }
+}
+```
+
+Вивід:
+```
+Java
+Python
+Ruby
+JavaScript
+```
+
+Працюючи з regex в Java, можуть бути випадки, коли зовнішня бібліотека може спростити складні завдання. Одна з популярних сторонніх бібліотек для роботи з regex в Java - це `Apache Commons Lang`. Вона пропонує утиліти, такі як `StringUtils`, які роблять деякі завдання regex більш простими. Ось як використовувати її для підрахунку збігів підрядка:
+
+```java
+import org.apache.commons.lang3.StringUtils;
+
+public class CommonsLangExample {
+    public static void main(String[] args) {
+        String text = "Regex makes text processing easier. Processing text with regex is efficient.";
+        String substring = "processing";
+        
+        int count = StringUtils.countMatches(text, substring);
+        System.out.println("'" + substring + "' зустрічається " + count + " разів.");
+    }
+}
+```
+
+Щоб використовувати Apache Commons Lang, вам потрібно включити її в ваш проект. Якщо ви використовуєте Maven, додайте цю залежність до вашого `pom.xml`:
+
+```xml
+<dependency>
+    <groupId>org.apache.commons</groupId>
+    <artifactId>commons-lang3</artifactId>
+    <version>3.12.0</version> <!-- Перевірте на наявність останньої версії -->
+</dependency>
+```
+
+Вивід:
+```
+'processing' зустрічається 2 рази.
+```

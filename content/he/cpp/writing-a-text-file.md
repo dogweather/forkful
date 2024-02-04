@@ -1,45 +1,77 @@
 ---
-title:                "כתיבה לקובץ טקסט"
-date:                  2024-01-19
-simple_title:         "כתיבה לקובץ טקסט"
-
+title:                "כתיבת קובץ טקסט"
+date:                  2024-02-03T19:28:10.127831-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "כתיבת קובץ טקסט"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/cpp/writing-a-text-file.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## מה ולמה?
-כתיבה בקובץ טקסט ב-C++ זה פשוט לכתוב נתונים בקובץ שאפשר לקרוא בכל עורך טקסט. תכניתנים עושים את זה כדי לשמור נתונים, לוגים או כדי לאפשר שיתוף נתונים בין תוכנות.
+כתיבה לקובץ טקסט ב-C++ כוללת יצירת קובץ או פתיחתו ואז כתיבת נתונים לתוכו, משימה יסודית עבור יישומים הדורשים שמירת נתונים, כמו לוגים, תוכן שנוצר על ידי המשתמש או הגדרות תצורה. מתכנתים עושים זאת כדי לשמור נתונים שנוצרו במהלך ביצוע התוכנית או לייצא נתונים לשימוש על ידי תוכניות אחרות או משתמשים.
 
-## איך לעשות:
-קוד פשוט לכתיבה בקובץ:
+## איך ל:
+C++ מציעה מספר דרכים לכתוב לקובץ טקסט, אך אחת השיטות הפשוטות ביותר היא שימוש בספרייה `<fstream>` שמספקת את המחלקה `ofstream` (זרם קובץ פלט) המיועדת לפעולות כתיבה לקובץ.
 
-```C++
-#include <iostream>
+### דוגמה בשימוש ב-`<fstream>`:
+
+```cpp
 #include <fstream>
-using namespace std;
+#include <iostream>
 
 int main() {
-    ofstream myfile("example.txt"); // יוצר קובץ 
-    if (myfile.is_open()) {
-        myfile << "שלום, עולם!" << endl; // כותב לקובץ
-        myfile.close(); // סוגר את הקובץ
+    std::ofstream file("example.txt");
+    if (file.is_open()) {
+        file << "שלום, עולם!\n";
+        file << "כתיבה לקובץ ב-C++ זה פשוט.";
+        file.close();
     } else {
-        cout << "לא ניתן לפתוח את הקובץ";
+        std::cerr << "נכשל בפתיחת הקובץ\n";
     }
     return 0;
 }
 ```
 
-פלט:
+**פלט לדוגמה ב-'example.txt':**
 ```
-קובץ example.txt נוצר עם הטקסט "שלום, עולם!" בתוכו.
+שלום, עולם!
+כתיבה לקובץ ב-C++ זה פשוט.
 ```
 
-## צלילה לעומק:
-היסטורית, תוכניות C++ משתמשות ב-iostreams לכתיבת קבצים. אפשרויות חלופיות כוללות שימוש ב-C APIs כמו `fopen` ו-`fprintf`. השימוש ב-`<fstream>` ב-C++ עכשווי מספק אינטרפייס גבוה יותר והוא שקוף יותר לשימוש.
+כשמתמודדים עם נתונים מורכבים יותר או זקוקים לשליטה רבה יותר בתהליך הכתיבה, מתכנתים עשויים להסתמך על ספריות צד שלישי כמו Boost Filesystem.
 
-## ראה גם:
-- [cplusplus.com - Input/output with files](http://www.cplusplus.com/doc/tutorial/files/)
-- [cppreference.com - File input/output](https://en.cppreference.com/w/cpp/io)
+### דוגמה בשימוש ב-Boost Filesystem:
+
+לשימוש ב-Boost לפעולות קובץ, תצטרכו להתקין תחילה את ספריות Boost. הדוגמה הבאה מדגימה יצירה וכתיבה לקובץ בעזרת `boost::filesystem` ו-`boost::iostreams`.
+
+```cpp
+#include <boost/filesystem.hpp>
+#include <boost/iostreams/device/file.hpp>
+#include <boost/iostreams/stream.hpp>
+#include <iostream>
+
+namespace io = boost::iostreams;
+namespace fs = boost::filesystem;
+
+int main() {
+    fs::path filePath("boost_example.txt");
+    io::stream_buffer<io::file_sink> buf(filePath.string());
+    std::ostream out(&buf);
+    out << "Boost הופך את פעולות הקובץ לקלות.\n";
+    out << "זו שורה שנכתבה עם Boost.";
+    
+    return 0;
+}
+```
+
+**פלט לדוגמה ב-'boost_example.txt':**
+```
+Boost הופך את פעולות הקובץ לקלות.
+זו שורה שנכתבה עם Boost.
+```
+
+הבחירה בין C++ גולמי לבין ספרית צד שלישי כמו Boost עשויה להיות תלויה בדרישות הספציפיות של הפרויקט שלך ובכמה שליטה או גמישות אתה זקוק למבצעי I/O של הקובץ.

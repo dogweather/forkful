@@ -1,52 +1,46 @@
 ---
-title:                "עבודה עם קבצי CSV"
-date:                  2024-01-19
-simple_title:         "עבודה עם קבצי CSV"
-
+title:                "עובדים עם CSV"
+date:                  2024-02-03T19:19:43.980140-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "עובדים עם CSV"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/cpp/working-with-csv.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (מה ולמה?)
-עבודה עם קבצי CSV כוללת קריאה וכתיבה של נתונים בפורמט טקסט שבו הערכים מופרדים בפסיקים. תכניתנים עובדים עם CSV כיוון שמדובר בפורמט פשוט, אוניברסלי וקל לתחזוקה לשיתוף נתונים בין יישומים.
+## מה ולמה?
 
-## How to (איך לעשות זאת)
-קוד לקריאת CSV:
-```C++
-#include <iostream>
+עבודה עם קבצי CSV (Comma Separated Values - ערכים מופרדים בפסיק) עוסקת בעיבוד ובניהול של נתונים המאוחסנים בפורמט טקסט פשוט, שבו כל שורה בטקסט מייצגת שורה בטבלה, ופסיקים מפרידים בין העמודות השונות. מתכנתים משתמשים בכך כדי לייבא, לייצא, ולנהל נתונים בין מערכות שונות, עקב הקבלתה הרחבה של CSV כפורמט החלפת נתונים קל משקל וקריא לאדם.
+
+## איך ל:
+
+### קריאת קובץ CSV באמצעות ספריית התקן של C++:
+
+```cpp
 #include <fstream>
-#include <string>
-#include <vector>
+#include <iostream>
 #include <sstream>
-
-std::vector<std::vector<std::string>> readCSV(const std::string& filename) {
-    std::vector<std::vector<std::string>> data;
-    std::ifstream file(filename);
-    
-    std::string line;
-    while(std::getline(file, line)) {
-        std::stringstream lineStream(line);
-        std::string cell;
-        std::vector<std::string> row;
-        
-        while(std::getline(lineStream, cell, ',')) {
-            row.push_back(cell);
-        }
-        
-        data.push_back(row);
-    }
-    
-    return data;
-}
+#include <vector>
 
 int main() {
-    auto data = readCSV("example.csv");
+    std::ifstream file("data.csv");
+    std::string line;
     
-    for (const auto& row : data) {
-        for (const auto& cell : row) {
-            std::cout << cell << " ";
+    while (std::getline(file, line)) {
+        std::stringstream lineStream(line);
+        std::string cell;
+        std::vector<std::string> parsedRow;
+        
+        while (std::getline(lineStream, cell, ',')) {
+            parsedRow.push_back(cell);
+        }
+        
+        // ניתן לעבד את parsedRow כאן
+        for (const auto& val : parsedRow) {
+            std::cout << val << "\t";
         }
         std::cout << std::endl;
     }
@@ -55,57 +49,64 @@ int main() {
 }
 ```
 
-פלט דוגמה:
-```
-name age
-Alice 30
-Bob 25
-```
+### כתיבה לקובץ CSV:
 
-קוד לכתיבת CSV:
-```C++
-#include <iostream>
+```cpp
 #include <fstream>
 #include <vector>
 
-void writeCSV(const std::string& filename, const std::vector<std::vector<std::string>>& data) {
-    std::ofstream file(filename);
+int main() {
+    std::ofstream file("output.csv");
+    std::vector<std::vector<std::string>> data = {
+        {"Name", "Age", "City"},
+        {"John Doe", "29", "New York"},
+        {"Jane Smith", "34", "Los Angeles"}
+    };
     
     for (const auto& row : data) {
-        for (size_t i = 0; i < row.size(); ++i) {
+        for (size_t i = 0; i < row.size(); i++) {
             file << row[i];
             if (i < row.size() - 1) file << ",";
         }
-        file << std::endl;
+        file << "\n";
     }
-}
-
-int main() {
-    std::vector<std::vector<std::string>> data = {
-        {"name", "age"},
-        {"Alice", "30"},
-        {"Bob", "25"}
-    };
-    
-    writeCSV("example.csv", data);
-    
-    std::cout << "CSV file written successfully." << std::endl;
     
     return 0;
 }
 ```
 
-פלט דוגמה:
+### שימוש בספרייה צד שלישי: `csv2`:
+
+למרות שספריית התקן של C++ מספקת את הכלים הבסיסיים לעבודה עם קבצים ומחרוזות, השימוש בספריות של צד שלישי יכול לפשט את עיבוד ה-CSV. ספרייה אחת כזו היא `csv2`, המתוארת בזכות נוחות השימוש והיעילות שלה.
+
+- התקנה: לרוב מותקנת דרך מנהלי חבילות כמו Conan או ישירות מהמחסן שלה ב-GitHub.
+
+דוגמא לשימוש ב-`csv2` לקריאת קובץ CSV:
+
+```cpp
+#include <csv2/reader.hpp>
+#include <iostream>
+
+int main() {
+    csv2::Reader<csv2::delimiter<','>, csv2::quote_character<'"'>, csv2::first_row_is_header<true>> csv;
+    if (csv.mmap("data.csv")) {
+        const auto header = csv.header();
+        for (const auto row : csv) {
+            for (const auto cell : row) {
+                std::cout << cell.second << "\t"; // הדפסת ערך כל תא
+            }
+            std::cout << std::endl;
+        }
+    }
+    return 0;
+}
 ```
-CSV file written successfully.
+
+תוצאה דוגמא לפעולות קריאה עשויה להיראות כך (בהנחה שמדובר בקובץ CSV פשוט בעל שלוש עמודות):
+
+```
+John    29    New York    
+Jane    34    Los Angeles
 ```
 
-## Deep Dive (לעומק)
-פורמט CSV נעשה בשימוש רחב כבר משנות ה-70. חלופות נפוצות כוללות JSON ו-XML. בעת עבודה עם CSV חשוב לטפל באתגרים כמו שדות עם פסיקים, ציטוטים או שורות חדשות כחלק מהנתונים.
-
-## See Also (ראו גם)
-- מדריך לסיסמא C++ CSV Parser: https://github.com/ben-strasser/fast-cpp-csv-parser
-- הגדרה ותקנים של CSV מ-MIME: https://tools.ietf.org/html/rfc4180
-- תיעוד לספרייה הסטנדרטית של C++: http://www.cplusplus.com/reference/
-
-זכרו, הקוד הנ"ל הוא מודל בסיסי. למיזמים רציניים, שקלו שימוש בספריות מתקדמות שטופלו בהם גם מקרי קצה.
+הדוגמאות האלו נועדו לכסות את הפעולות הבסיסיות בעבודה עם CSV ב-C++. לסיטואציות מורכבות יותר, כמו עיבוד קבצים גדולים או שינויים מורכבים בנתונים, עשויה להיות צורך בחקירה נוספת לתוך ספריות או כלים מתמחים.

@@ -1,38 +1,65 @@
 ---
-title:                "ניתוח תאריך ממחרוזת"
-date:                  2024-01-20T15:38:41.574445-07:00
-simple_title:         "ניתוח תאריך ממחרוזת"
-
+title:                "פרסום תאריך ממחרוזת"
+date:                  2024-02-03T19:15:43.936504-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "פרסום תאריך ממחרוזת"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/ruby/parsing-a-date-from-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## מה ולמה?
-פריסת תאריך ממחרוזת היא תהליך שבו הופכים טקסט לאובייקט תאריך. פיתוחים לעושים את זה כדי לנהל בצורה יעילה תאריכים בתוכנות.
+פיענוח תאריך ממחרוזת הוא על המרת טקסט שמייצג תאריך לאובייקט מסוג `Date` או `DateTime` שרובי מבינה. תכנתים עושים זאת על מנת לבצע פעולות כמו השוואות, חישובים, או עיצוב של תאריכים, אשר הם משימות נפוצות ביישומים העוסקים בתכנון, אנליטיקה, או עיבוד נתונים.
 
 ## איך לעשות:
+ברובי, הספרייה הסטנדרטית מספקת דרכים ישירות לפענח תאריכים ממחרוזות באמצעות הכיתות `Date` ו`DateTime`. הנה איך עושים את זה באמצעות שיטות המובנות של רובי:
+
 ```ruby
 require 'date'
 
-# פריסת מחרוזת לאובייקט תאריך
-date_string = "2023-03-14"
+# פיענוח תאריך ממחרוזת
+date_string = "2023-04-01"
 parsed_date = Date.parse(date_string)
 puts parsed_date
-# => 2023-03-14
+# => 2023-04-01
 
-# השתמש ב-strptime כאשר יש פורמט מותאם אישית
-custom_format_date_string = "14/03/2023"
-custom_format_parsed_date = Date.strptime(custom_format_date_string, '%d/%m/%Y')
-puts custom_format_parsed_date
-# => 2023-03-14
+# DateTime לייצוג זמן מדויק יותר
+datetime_string = "2023-04-01T15:30:45+00:00"
+parsed_datetime = DateTime.parse(datetime_string)
+puts parsed_datetime
+# => 2023-04-01T15:30:45+00:00
 ```
 
-## עומק הצלילה
-ב-Ruby, פריסת תאריך ממחרוזת היא משהו די ישיר עם הגמ"ח 'date'. קודם לגרסת 1.9, מרבית הפיתוחים השתמשו בספריה 'time' או ספריות צד שלישי, כמו 'chronic'. ישנם גם חלופות מודרניות כמו 'active_support' ב-Rails, שמספק עוד יכולות פריסה וניהול תאריכים. עמידה בפני שגיאות ניתוח היא חשובה; לכן זה עשוי להיות חכם להשתמש ב-'begin-rescue' כדי להתמודד עם תאריכים בלתי תקניים.
+לשליטה רבה יותר או לטיפול בפורמטים שה`parse` אולי לא תבין באופן ישיר, ניתן להשתמש ב`strptime` (פיענוח זמן ממחרוזת), תוך ציון הפורמט במפורש:
 
-## ראו גם
-- [דוקומנטציה רשמית של Date](https://ruby-doc.org/stdlib-2.7.0/libdoc/date/rdoc/Date.html)
-- [מדריך לניהול זמן ותאריכים ב-Ruby](https://www.rubyguides.com/2015/12/ruby-time/)
-- [קהילת StackOverflow על ניתוח תאריכים](https://stackoverflow.com/questions/tagged/ruby+date-parsing)
+```ruby
+# שימוש בstrptime לפורמטים מותאמים אישית
+custom_date_string = "01-04-2023"
+parsed_date_custom = Date.strptime(custom_date_string, '%d-%m-%Y')
+puts parsed_date_custom
+# => 2023-04-01
+```
+
+### שימוש בספריות צד שלישי:
+
+אף על פי שהיכולות המובנות של רובי חזקות, לעיתים יתכן שתעדיפו ספריות צד שלישי לקבלת תכונות נוספות או תחביר פשוט יותר. בחירה פופולרית היא הגביש `Chronic` עבור פיענוח שפת טבע:
+
+1. תחילה, הוסיפו את Chronic לקובץ Gemfile שלכם והריצו `bundle install`:
+```ruby
+gem 'chronic'
+```
+
+2. לאחר מכן, השתמשו בו כך:
+```ruby
+require 'chronic'
+
+parsed_chronic = Chronic.parse('next Tuesday')
+puts parsed_chronic
+# הפלט ישתנה בהתאם לתאריך הנוכחי; נחשב על סמך פיענוח ב-2023-04-01
+# => 2023-04-04 12:00:00 +0000
+```
+
+`Chronic` מאוד שימושי לקלט משתמש מכיוון שהוא מסוגל להבין מגוון רחב של פורמטי תאריך בשפת טבע, מה שהופך אותו לכלי חזק ליישומים הדורשים כניסת תאריך גמישה.

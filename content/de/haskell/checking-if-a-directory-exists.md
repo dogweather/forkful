@@ -1,36 +1,42 @@
 ---
 title:                "Überprüfung, ob ein Verzeichnis existiert"
-date:                  2024-01-20T14:56:44.812703-07:00
+date:                  2024-02-03T19:07:30.368099-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Überprüfung, ob ein Verzeichnis existiert"
-
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/haskell/checking-if-a-directory-exists.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Überprüfen, ob ein Ordner existiert, bedeutet, sicherzustellen, dass ein Pfad auf ein tatsächlich vorhandenes Verzeichnis zeigt. Programmierer machen das, um Fehler zu vermeiden, die entstehen, wenn ihr Code mit nicht vorhandenen Dateisystempfaden arbeiten soll.
+Das Überprüfen, ob ein Verzeichnis existiert, ist eine grundlegende Operation bei vielen Programmieraufgaben. Es ermöglicht bedingte Aktionen basierend auf der An- oder Abwesenheit von Verzeichnisstrukturen. Dies ist entscheidend für die Dateimanipulation, automatisierte Skripte und während der Erstinstallation von Software, um sicherzustellen, dass die notwendigen Verzeichnisse vorhanden sind oder um die Duplizierung von Verzeichnissen zu vermeiden.
 
-## How to:
-Hier ist ein einfaches Beispiel, wie du in Haskell mit der Bibliothek `directory` überprüfen kannst, ob ein Verzeichnis existiert:
+## Wie:
+Haskell bietet durch seine Basisbibliothek einfache Möglichkeiten, die Existenz eines Verzeichnisses zu überprüfen, hauptsächlich mit dem Modul `System.Directory`. Schauen wir uns ein einfaches Beispiel an:
 
 ```haskell
 import System.Directory (doesDirectoryExist)
 
 main :: IO ()
 main = do
-  let path = "/path/to/directory"
-  directoryExists <- doesDirectoryExist path
-  putStrLn $ "Existiert das Verzeichnis? " ++ show directoryExists
+  let dirPath = "/path/to/your/directory"
+  exists <- doesDirectoryExist dirPath
+  putStrLn $ "Does the directory exist? " ++ show exists
 ```
 
-Wenn das Verzeichnis existiert, wird die Ausgabe `True` sein, andernfalls `False`.
+Beispielausgabe, abhängig davon, ob das Verzeichnis existiert:
 
-## Deep Dive
-Haskell bietet über seine Paketbibliothek mehrere Wege, die Existenz von Verzeichnissen zu prüfen. Das `directory`-Paket ist der Standardweg, weil es direkt die plattformabhängigen Systemaufrufe kapselt. Historisch gesehen entstammen solche Funktionen dem UNIX-Konzept der Dateisystemverwaltung. Alternativen wie `System.FilePath` oder `unix`-Paket bieten ähnliche Funktionalitäten, manchmal mit zusätzlichen Features. Bei der Umsetzung wird tatsächlich oft die POSIX-Funktion `stat` verwendet, um Informationen über Dateipfade zu erhalten.
+```
+Exists the directory exist? True
+```
+Oder:
+```
+Exists the directory exist? False
+```
 
-## See Also
-- Haskell `directory` paket: [https://hackage.haskell.org/package/directory](https://hackage.haskell.org/package/directory)
-- Haskell IO Tutorial mit weiteren Dateisystemoperationen: [https://www.haskell.org/tutorial/io.html](https://www.haskell.org/tutorial/io.html)
-- POSIX `stat` Funktion: [https://linux.die.net/man/2/stat](https://linux.die.net/man/2/stat)
+Für komplexere Szenarien oder zusätzliche Funktionalitäten könnten Sie eine beliebte Drittanbieterbibliothek wie `filepath` in Betracht ziehen, um Dateipfade auf eine abstraktere Weise zu handhaben und zu manipulieren. Allerdings ist für den Zweck, einfach zu überprüfen, ob ein Verzeichnis existiert, das Modul `System.Directory` der Basisbibliothek ausreichend und effizient.
+
+Denken Sie daran, dass die Arbeit mit Dateisystemen plattformübergreifend variieren kann und dass Haskells Ansatz versucht, einige dieser Unterschiede zu abstrahieren. Testen Sie immer Ihre Dateioperationen auf dem Zielsystem, um das erwartete Verhalten sicherzustellen.

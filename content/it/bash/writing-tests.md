@@ -1,47 +1,71 @@
 ---
 title:                "Scrivere test"
-date:                  2024-01-19
+date:                  2024-02-03T19:29:32.489874-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Scrivere test"
-
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/bash/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Che cosa & Perché?
-Scrivere test in programmazione significa creare script che verificano se pezzi di codice funzionano come previsto. Si fa per garantire la qualità del software, per trovare errori, e per prevenire future regressioni.
+## Cosa e perché?
+Scrivere test in Bash comporta la creazione di script per casi di test al fine di convalidare la funzionalità dei vostri script Bash. I programmatori conducono test per assicurarsi che i loro script funzionino come previsto in varie condizioni, intercettando errori e bug prima del rilascio.
 
 ## Come fare:
-Ecco un esempio semplice di come scrivere e eseguire un test in Bash:
+Bash non ha un framework di test integrato, ma è possibile scrivere semplici funzioni di test. Per test più sofisticati, strumenti di terze parti come `bats-core` sono popolari.
 
-```Bash
-#!/bin/bash
-
-function somma {
-  echo $(($1 + $2))
+### Esempio di test di base in Bash puro:
+```bash
+function test_example_function {
+  result=$(your_function 'test_input')
+  expected_output="expected_output"
+  
+  if [[ "$result" == "$expected_output" ]]; then
+    echo "Test superato."
+    return 0
+  else
+    echo "Test fallito. Aspettato '$expected_output', ottenuto '$result'"
+    return 1
+  fi
 }
 
-# Test
-risultato=$(somma 2 3)
-atteso=5
-
-if [ "$risultato" -eq "$atteso" ]; then
-  echo "Test passato: 2 + 3 = $atteso"
-else
-  echo "Test fallito: 2 + 3 NON è $atteso, invece è $risultato"
-fi
+# Invocazione della funzione di test
+test_example_function
+```
+Output dell'esempio:
+```
+Test superato.
 ```
 
-Output:
+### Usare `bats-core` per i test:
+Prima, installare `bats-core`. Questo può di solito essere fatto tramite il gestore di pacchetti o clonando il suo repository.
+
+Poi, scrivere i vostri test in file `.bats` separati.
+
+```bash
+# File: example_function.bats
+
+#!/usr/bin/env bats
+
+@test "testare la funzione di esempio" {
+  result="$(your_function 'test_input')"
+  expected_output="expected_output"
+  
+  [ "$result" == "$expected_output" ]
+}
 ```
-Test passato: 2 + 3 = 5
+Per eseguire i test, basta eseguire il file `.bats`:
+```bash
+bats example_function.bats
+```
+Output dell'esempio:
+```
+ ✓ testare la funzione di esempio
+
+1 test, 0 fallimenti
 ```
 
-## Approfondimento:
-Nel mondo della programmazione, scrivere test è ormai uno standard dagli anni '70. Esistono framework di testing specifici, come shUnit2 per Bash, mentre alternative moderne includono strumenti come Bats o frameworks per altri linguaggi di scripting. Per essere efficace, il testing deve coprire varie situazioni di errore e di successo (test cases), ed essere integrato nello sviluppo continuo.
-
-## Vedi Anche:
-- shUnit2: https://github.com/kward/shunit2
-- Bats: https://github.com/bats-core/bats-core
-- Bash Automated Testing System: https://en.wikipedia.org/wiki/Bash_Automated_Testing_System
+Questo approccio consente di integrare facilmente i test nel vostro flusso di lavoro di sviluppo, garantendo l'affidabilità e la stabilità degli script Bash.

@@ -1,57 +1,52 @@
 ---
-title:                "Sette streng til store bokstaver"
-date:                  2024-01-19
-simple_title:         "Sette streng til store bokstaver"
-
+title:                "Sette stor bokstav i en streng"
+date:                  2024-02-03T19:04:55.309989-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Sette stor bokstav i en streng"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/elm/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Hva & Hvorfor?
-Kapitalisering av en streng betyr å gjøre første bokstav i hvert ord stort, ofte for å fremheve titler eller navn. Programmerere gjør dette for å forbedre lesbarheten eller tilpasse tekst til bestemte stilkrav.
+## Hva og hvorfor?
+
+Å kapitalisere en streng innebærer å omforme det første tegnet i en gitt streng til stor bokstav mens resten holdes i små bokstaver, ofte for standardisert formatering eller lesbarhetsformål. Programmerere utfører ofte denne oppgaven for å sikre at data presenteres konsistent, spesielt i brukergrensesnitt eller ved bearbeiding og visning av brukerinndata.
 
 ## Hvordan:
-Elm har ikke en innebygd funksjon for å kapitalisere hele strenger, men vi kan lage en selv. Her er et lite eksempel:
 
-```Elm
-import String exposing (toUpper, toLower, words, unwords)
-import List exposing (map, head, tail)
+I Elm finnes det ikke en innebygd funksjon spesifikt for å kapitalisere strenger. Du kan imidlertid enkelt oppnå dette ved å bruke innebygde `String` modulfunksjoner som `toUpper`, `toLower`, `left` og `dropLeft`.
 
-capitalizeWord : String -> String
-capitalizeWord word =
-    case head word of
-        Nothing ->
-            ""
-        
-        Just firstChar ->
-            String.cons (toUpper firstChar) (toLower (String.dropLeft 1 word))
-
+```elm
 capitalize : String -> String
-capitalize =
-    words >> map capitalizeWord >> unwords
+capitalize str =
+    if String.isEmpty str then
+        ""
+    else
+        String.toUpper (String.left 1 str) ++ String.toLower (String.dropLeft 1 str)
 
--- Bruk slik:
+-- Eksempel på bruk
 main =
-    String.toText (capitalize "elm er fantastisk!")
+    String.toList "hello world" |> List.map capitalize |> String.join " "
+    -- Utdata: "Hello World"
 ```
 
-Forventet output:
+For mer komplekse scenarioer, eller hvis du foretrekker å bruke et bibliotek som gir en direkte måte å kapitalisere strenger på, kan du vurdere en tredjeparts pakke som `elm-community/string-extra`. Men, som per min siste oppdatering, oppmuntrer Elms økosystem til å håndtere slike oppgaver ved hjelp av innebygde funksjoner for å holde språket og prosjektene strømlinjeformet.
 
+```elm
+import String.Extra as StringExtra
+
+-- I tilfelle det finnes en `capitalize` funksjon i et tredjeparts bibliotek
+capitalizeWithLibrary : String -> String
+capitalizeWithLibrary str =
+    StringExtra.capitalize str
+
+-- Eksempel på bruk med hypotetisk biblioteksfunksjon
+main =
+    "this is elm" |> capitalizeWithLibrary
+    -- Hypotetisk utdata: "This is elm"
 ```
-"Elm Er Fantastisk!"
-```
 
-## Dypdykk
-Etter å ha dukket litt rundt, finner vi ingen innebygd `capitalize` funksjon i Elm, i motsetning til noen andre språk. I eldre språk som C, håndteres dette ofte ved lavnivå-manipulasjon av ASCII-verdier. I moderne språk som JavaScript, finnes innebygde metoder som `.toUpperCase()`.
-
-Alternativer i Elm inkluderer å lage egne funksjoner, som vist ovenfor, eller å bruke pakker som `elm-string-extra` som inkluderer flere nyttige strengoperasjoner.
-
-Implementasjonsdetaljer bør vurdere locale. Visse språk har forskjellig regler for stor bokstav. Elm håndterer ikke locale-spesifikk logikk innbygd, så dette må gjøres manuelt om nødvendig.
-
-## Se Også
-For å utvide din Elm-strengbehandling, sjekk ut:
-- Elm docs for `String`-modulen: https://package.elm-lang.org/packages/elm/core/latest/String
-- `elm-string-extra` for flere strengfunksjoner: https://package.elm-lang.org/packages/elm-community/string-extra/latest/
-- W3C sin anbefaling om språk-spesifikk typografi: https://www.w3.org/TR/i18n-html-tech-lang/
+Sjekk alltid Elm-pakkebiblioteket for de siste og mest foretrukne bibliotekene for strengmanipulering hvis du ser etter ekstra funksjonalitet utover standardbiblioteket.

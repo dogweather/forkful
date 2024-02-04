@@ -1,61 +1,91 @@
 ---
-title:                "文字列から日付を解析する"
-date:                  2024-01-20T15:34:22.181067-07:00
-simple_title:         "文字列から日付を解析する"
-
+title:                "文字列から日付をパースする"
+date:                  2024-02-03T19:13:25.800626-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "文字列から日付をパースする"
 tag:                  "Dates and Times"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/arduino/parsing-a-date-from-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (何となぜ？)
-文字列から日付を解析する: 文字列の中にある日付情報を読み取る作業です。データ記録やイベント管理など、プログラムが日付を理解し扱う必要があるために行います。
+## 何となぜ？
 
-## How to: (やり方)
-```Arduino
+Arduinoで文字列から日付を解析することは、テキスト表現から日付成分（年、月、日）を抽出して変換し、スケッチ内での時間管理、比較、または操作に利用できる形式にすることを含みます。プログラマーは、リアルタイムクロック、ロガー、またはウェブAPIやユーザーインターフェースからの入力を処理する際に、日付が読みやすい形式で提示される場合に、このタスクを頻繁に実行します。
+
+## 方法：
+
+サードパーティのライブラリを使用せずに直接行う方法：
+
+```cpp
 #include <Wire.h>
 #include <RTClib.h>
 
-RTC_DS1307 rtc;
+void setup() {
+  Serial.begin(9600);
+  // YYYY-MM-DD形式の例示日付文字列
+  String dateString = "2023-04-01"; 
+
+  int year = dateString.substring(0, 4).toInt();
+  int month = dateString.substring(5, 7).toInt();
+  int day = dateString.substring(8, 10).toInt();
+
+  // 解析した成分でDateTimeオブジェクトを初期化
+  DateTime parsedDate(year, month, day);
+  
+  Serial.print("解析した日付: ");
+  Serial.print(parsedDate.year(), DEC);
+  Serial.print("/");
+  Serial.print(parsedDate.month(), DEC);
+  Serial.print("/");
+  Serial.println(parsedDate.day(), DEC);
+}
+
+void loop() {}
+```
+
+出力例：
+```
+解析した日付: 2023/4/1
+```
+
+サードパーティのライブラリを使用する方法（*ArduinoJson* を使用し、JSON応答から日付を取得するなど、より複雑な解析シナリオのために）：
+
+まず、Arduino Library Managerを通じてArduinoJsonライブラリをインストールします。
+
+```cpp
+#include <ArduinoJson.h>
 
 void setup() {
   Serial.begin(9600);
-  if (!rtc.begin()) {
-    Serial.println("Couldn't find RTC");
-    while (1);
-  }
 
-  if (!rtc.isrunning()) {
-    Serial.println("RTC is NOT running!");
-  }
+  // JSON応答をシミュレート
+  String jsonResponse = "{\"date\":\"2023-07-19\"}";
+  StaticJsonDocument<200> doc;
+  deserializeJson(doc, jsonResponse);
+
+  // 日付文字列を抽出
+  const char* date = doc["date"];
+
+  // 以前と同じように文字列から日付を解析
+  int year = String(date).substring(0, 4).toInt();
+  int month = String(date).substring(5, 7).toInt();
+  int day = String(date).substring(8, 10).toInt();
   
-  // 以下の行で日付をセット。年、月、日、時、分、秒の順
-  rtc.adjust(DateTime(2023, 1, 21, 3, 0, 0));
+  Serial.print("JSONから解析した日付: ");
+  Serial.print(year);
+  Serial.print("/");
+  Serial.print(month);
+  Serial.print("/");
+  Serial.println(day);
 }
 
-void loop() {
-  DateTime now = rtc.now();
-  
-  // 日付を YYYY/MM/DD 形式で出力
-  Serial.print(now.year(), DEC);
-  Serial.print('/');
-  Serial.print(now.month(), DEC);
-  Serial.print('/');
-  Serial.println(now.day(), DEC);
-  
-  delay(1000);
-}
+void loop() {}
 ```
-出力例: `2023/1/21`
 
-## Deep Dive (深掘り)
-日付の解析が必要になるのは、古くはコンピュータが人間の読める形式の日付を理解しなければならない場面で始まりました。Arduino で日付文字列を扱うには、RTCライブラリ（実時間クロック）を使用し、`DateTime`クラスを活用します。`DateTime`オブジェクトは年、月、日、時、分、秒を保持し、これらを個別に読み出したり、特定のフォーマットで出力することができます。
-
-代わりに、文字列パーサを自作することも可能ですが、RTCライブラリを使う方が信頼性が高く再利用しやすいです。パースの際の注意点としては、月と日は1から始まること、年は4桁であることを確認しましょう。
-
-## See Also (関連情報)
-- Arduino RTC Library: https://www.arduino.cc/reference/en/libraries/rtclib/
-- Arduino `DateTime` class: https://www.arduino.cc/en/Reference/DateTime
-- Date and Time functions: https://www.arduino.cc/reference/en/language/functions/time/
+出力例：
+```
+JSONから解析した日付: 2023/7/19
+```

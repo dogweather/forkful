@@ -1,65 +1,82 @@
 ---
 title:                "HTMLの解析"
-date:                  2024-01-20T15:29:55.672190-07:00
+date:                  2024-02-03T19:11:54.371913-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "HTMLの解析"
-
 tag:                  "HTML and the Web"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/arduino/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (何となぜ？)
+## 何となぜ？
 
-HTMLパース（解析）とはHTML文書からデータを抽出することです。ウェブページから特定の情報を自動的に取得したいときに行います。
+ArduinoプロジェクトでのHTMLの解析とは、ウェブページから情報を抽出することです。プログラマーは、Arduinoデバイスがインターネットと対話できるようにするため、ホームオートメーションから環境モニタリングまでの目的でウェブサイトからデータを収集するためにこれを行います。
 
-## How to: (やり方：)
+## 方法:
 
-Arduinoでは直接HTMLをパースするライブラリは少ないですが、簡単なHTMLデータをパースするサンプルコードは以下の通りです。アウトプット例も見てみましょう。
+ArduinoでのHTMLの解析には、通常、限られたデバイスリソースのために最小限のフットプリントライブラリが必要です。ウェブスクレイピングと解析に人気な選択肢は、Wi-Fi機能とHTTPプロトコルのネイティブサポートを考慮して、ESP8266用の`ESP8266HTTPClient`と`ESP8266WiFi`ライブラリ、あるいはそれらのESP32バージョンを使用することです。ここでは、ESP8266やESP32を使用していると仮定して、HTMLを取得し解析する基本例を示します：
 
-```arduino
-#include <Ethernet.h>
-#include <EthernetClient.h>
+まず、必要なライブラリを含む：
+```cpp
+#include <ESP8266WiFi.h> // ESP8266用
+#include <ESP8266HTTPClient.h>
+#include <WiFiClient.h>
+// ESP32を使用している場合は、同等のESP32ライブラリを使用してください
 
-EthernetClient client;
+const char* ssid = "yourSSID";
+const char* password = "yourPASSWORD";
+```
 
+Wi-Fiネットワークに接続する：
+```cpp
 void setup() {
-  Ethernet.begin(/* your MAC address */, /* your IP address */);
-  Serial.begin(9600);
-  if (client.connect(/* server's IP address */, 80)) {
-    client.println("GET /path/to/page.html HTTP/1.1");
-    client.println("Host: www.example.com");
-    client.println("Connection: close");
-    client.println();
-  }
-}
+    Serial.begin(115200);
+    WiFi.begin(ssid, password);
 
-void loop() {
-  while (client.available()) {
-    String line = client.readStringUntil('\n');
-    if (line.indexOf("<title>") > 0) {
-      int start = line.indexOf("<title>") + 7;
-      int end = line.indexOf("</title>");
-      String title = line.substring(start, end);
-      Serial.println(title);
+    while (WiFi.status() != WL_CONNECTED) {
+        delay(1000);
+        Serial.println("接続中...");
     }
-  }
 }
 ```
 
-サンプルのアウトプット:
+HTTPリクエストを行い、簡単なHTMLピースを解析する：
+```cpp
+void loop() {
+    if (WiFi.status() == WL_CONNECTED) { //WiFi接続状況をチェック
+        HTTPClient http;  //HTTPClientクラスのオブジェクトを宣言
+
+        http.begin("http://example.com");  //リクエストの宛先を指定
+        int httpCode = http.GET();  //リクエストを送信
+
+        if (httpCode > 0) { //戻ってきたコードのチェック
+            String payload = http.getString();   //リクエストレスポンスペイロードを取得
+            Serial.println(payload);             //レスポンスペイロードを表示
+
+            // 特定のパートを解析する、例えば、ペイロードからタイトルを抽出
+            int titleStart = payload.indexOf("<title>") + 7; // "<title>"タグを超えて進むために+7
+            int titleEnd = payload.indexOf("</title>", titleStart);
+            String pageTitle = payload.substring(titleStart, titleEnd);
+
+            Serial.print("ページタイトル: ");
+            Serial.println(pageTitle);
+        }
+
+        http.end();   //接続を閉じる
+    }
+
+    delay(10000); //10秒ごとにリクエストを行う
+}
 ```
-Your Page Title
+
+サンプル出力（http://example.com がシンプルなHTML構造を持っていると仮定）：
+```
+接続中...
+...
+ページタイトル: Example Domain
 ```
 
-## Deep Dive (詳細解説）
-
-ArduinoにおけるHTMLパースは通常のウェブ開発とは違います。メモリが限られているため、大きなHTMLドキュメントのパースは実用的ではありません。Arduinoの初期バージョンから、インターネット接続はEthernetやWiFiシールドを使ったり、ESP8266のような派生ボードの利用が一般的ですが、パーサはシンプルな文字列の検索に限られています。htmlparser.hなどのライブラリを探すときに利用可能性がありますが、これはArduinoの公式サポート外です。できるだけシンプルなタグを照会し、リソース消費を控えることが重要です。
-
-## See Also (関連情報）
-
-- Arduino Ethernet Library: https://www.arduino.cc/en/Reference/Ethernet
-- Arduino String functions (for parsing strings): https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/
-- Ethernet Shield: https://store.arduino.cc/usa/arduino-ethernet-shield-2
-- ESP8266 Introduction: https://www.espressif.com/en/products/socs/esp8266
+この例は、HTMLページを取得して`<title>`タグの内容を抽出する方法を示しています。より複雑なHTMLの解析には、メモリの制約に注意しながら正規表現を使うか、HTML構造を通過するための文字列操作機能を使うことを検討してください。高度な解析では、標準のArduino環境には組み込みのHTML解析ライブラリが含まれていないため、対処しているHTMLの特定の構造に合わせてカスタマイズされた解析アルゴリズムを含むより洗練されたアプローチが必要となる場合があります。

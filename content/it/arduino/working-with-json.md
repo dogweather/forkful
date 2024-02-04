@@ -1,52 +1,96 @@
 ---
 title:                "Lavorare con JSON"
-date:                  2024-01-19
+date:                  2024-02-03T19:21:34.408401-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Lavorare con JSON"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/arduino/working-with-json.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Che cosa e perché?
+## Cosa & Perché?
 
-JSON, acronimo di JavaScript Object Notation, è un formato leggero per lo scambio di dati. Programmatori lo usano perché è semplice da leggere e scrivere per gli umani, e facile da analizzare e generare per le macchine.
+JSON, o JavaScript Object Notation, è un formato leggero di interscambio di dati, rendendolo perfetto per l'archiviazione di dati o file di configurazione nei progetti Arduino. I programmatori lo utilizzano per la sua semplicità e leggibilità in vari ambienti di programmazione, inclusa Arduino, permettendo un interscambio di dati senza interruzioni con le API web o altri sistemi.
 
 ## Come fare:
 
-Per lavorare con JSON in Arduino, avrai bisogno della libreria `ArduinoJson`. Installala tramite il Library Manager in Arduino IDE. Ecco un esempio semplice:
+Per lavorare con JSON in Arduino, la libreria `ArduinoJson` è una scelta popolare grazie alla sua facilità d'uso e efficienza. Permette di analizzare le stringhe JSON, modificarle e serializzare gli oggetti di nuovo in stringhe JSON. Ecco come usarla:
 
-```c++
+1. **Installa la libreria ArduinoJson**: Usa il Gestore delle Librerie nell'IDE di Arduino e installa "ArduinoJson".
+
+2. **Deserializza una stringa JSON**: Ecco come analizzare una stringa JSON ed estrarre i valori.
+
+```cpp
+#include <ArduinoJson.h>
+
+const char* json = "{\"sensor\":\"gps\",\"time\":1351824120,\"data\":[48.756080,2.302038]}";
+
+void setup() {
+  Serial.begin(9600);
+  StaticJsonDocument<200> doc; // Regola la dimensione secondo il documento JSON
+  DeserializationError error = deserializeJson(doc, json);
+
+  if (error) {
+    Serial.print(F("deserializeJson() non riuscito: "));
+    Serial.println(error.f_str());
+    return;
+  }
+
+  const char* sensore = doc["sensor"]; // "gps"
+  long tempo = doc["time"]; // 1351824120
+  float latitudine = doc["data"][0]; // 48.756080
+  float longitudine = doc["data"][1]; // 2.302038
+  
+  Serial.println(sensore);
+  Serial.println(tempo);
+  Serial.println(latitudine, 6);
+  Serial.println(longitudine, 6);
+}
+
+void loop() {
+  // Ciclo vuoto
+}
+```
+
+Output di esempio:
+
+```
+gps
+1351824120
+48.756080
+2.302038
+```
+
+3. **Serializza in una stringa JSON**: Ecco come creare una stringa JSON dai dati.
+
+```cpp
 #include <ArduinoJson.h>
 
 void setup() {
   Serial.begin(9600);
 
-  // Crea un oggetto JSON
-  StaticJsonDocument<200> doc;
-  doc["temperatura"] = 23.5;
-  doc["umidità"] = 48.2;
+  StaticJsonDocument<200> doc; // Regola la dimensione secondo i dati
+  doc["sensor"] = "gps";
+  doc["time"] = 1351824120;
+  JsonArray data = doc.createNestedArray("data");
+  data.add(48.756080);
+  data.add(2.302038);
 
-  // Serializza JSON e invialo alla seriale
   serializeJson(doc, Serial);
 }
 
 void loop() {
-  // Funzioni non necessarie per questo esempio
+  // Ciclo vuoto
 }
 ```
-Output della seriale:
+
+Output di esempio (formattato per leggibilità):
+
 ```
-{"temperatura":23.5,"umidità":48.2}
+{"sensor":"gps","time":1351824120,"data":[48.756080,2.302038]}
 ```
 
-## Approfondimento:
-
-La libreria `ArduinoJson` è stata creata da Benoit Blanchon e rilasciata intorno al 2013. Rispetto ad altre soluzioni come la manipolazione manuale delle stringhe, `ArduinoJson` offre un modo robusto e ottimizzato per il parsing e la serializzazione di JSON, essenziale per IoT e progetti web con Arduino. La libreria utilizza la deserializzazione "zero-copy" per elevata efficienza in ambienti con risorse limitate.
-
-## Vedi anche:
-
-- Documentazione ufficiale ArduinoJson: [https://arduinojson.org/](https://arduinojson.org/)
-- GitHub di ArduinoJson: [https://github.com/bblanchon/ArduinoJson](https://github.com/bblanchon/ArduinoJson)
-- Introduzione a JSON: [https://www.json.org/json-it.html](https://www.json.org/json-it.html)
+Utilizzare efficacemente la libreria `ArduinoJson` consente ai progetti Arduino di comunicare strutture dati complesse in un formato facilmente leggibile, facilitando lo sviluppo e l'integrazione con i servizi web.

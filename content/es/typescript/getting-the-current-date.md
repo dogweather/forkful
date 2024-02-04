@@ -1,63 +1,63 @@
 ---
 title:                "Obteniendo la fecha actual"
-date:                  2024-01-20T15:16:50.729847-07:00
+date:                  2024-02-03T19:10:54.323474-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Obteniendo la fecha actual"
-
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/typescript/getting-the-current-date.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Qué y Por Qué?
-Obtener la fecha actual en TypeScript significa capturar el momento presente en que se ejecuta el código. Lo hacemos para marcar eventos, comparar fechas o simplemente mostrar cuándo sucede algo.
+## ¿Qué y Por Qué?
+Obtener la fecha actual en TypeScript, un lenguaje construido sobre JavaScript, te permite acceder y manipular la información de la fecha y hora actuales. Los programadores a menudo necesitan esta funcionalidad para crear marcas de tiempo, programar y otras características sensibles al tiempo en sus aplicaciones.
 
-## Cómo Se Hace:
-Para obtener la fecha actual en TypeScript, puedes utilizar el objeto `Date` así:
-
-```typescript
-const ahora = new Date();
-console.log(ahora);
-```
-
-Resultado de ejemplo:
-```
-2023-04-02T14:20:30.045Z
-```
-
-Si solo te interesa la fecha sin la hora:
+## Cómo hacerlo:
+En TypeScript, puedes usar el objeto `Date` para obtener la fecha y hora actuales. Así es cómo puedes hacerlo:
 
 ```typescript
-const hoy = new Date();
-console.log(hoy.toDateString());
+const currentDate = new Date();
+console.log(currentDate);
 ```
 
-Resultado de ejemplo:
+Salida de muestra:
 ```
-Sun Apr 02 2023
+2023-04-12T07:20:50.52Z
 ```
 
-Y si quieres la hora en un formato legible:
+Este fragmento de código crea un nuevo objeto `Date` que contiene la fecha y hora actuales, que luego se imprime en la consola. También puedes formatear la fecha usando toLocaleDateString() para formatos más legibles:
 
 ```typescript
-const horaActual = new Date();
-console.log(horaActual.toLocaleTimeString());
+const currentDate = new Date();
+console.log(currentDate.toLocaleDateString());
 ```
 
-Resultado de ejemplo:
+Salida de muestra:
 ```
-2:20:30 PM
+12/4/2023
 ```
 
-## Análisis Detallado:
-El objeto `Date` de JavaScript, que también usamos en TypeScript, existe desde que se creó JavaScript en los años 90. Es parte del estándar ECMAScript, y maneja fechas basándose en el tiempo universal coordinado (UTC).
+### Usando date-fns
+Para una manipulación y formato de fechas más extensos, la biblioteca `date-fns` es una opción popular. Primero, instálala a través de npm:
 
-Hay alternativas para lidiar con fechas como bibliotecas `Moment.js` o `date-fns`. Estas ofrecen funciones más potentes y flexibles para formatear fechas y realizar cálculos complejos.
+```bash
+npm install date-fns
+```
 
-A nivel de implementación, cuando creas una nueva instancia de `Date`, internamente capturas el número de milisegundos desde la medianoche del 1 de enero de 1970 UTC. Esto se conoce como "Unix Epoch". Las manipulaciones de fecha y hora se hacen a partir de esta referencia.
+Luego, puedes usarla para formatear la fecha actual:
 
-## Ver También:
-- Documentación de Mozilla Developer Network sobre `Date`: https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Date
-- Moment.js para manejo avanzado de fechas: https://momentjs.com/
-- `date-fns` para operaciones con fechas: https://date-fns.org/
-- UTC y Unix Epoch Time: https://www.w3.org/TR/NOTE-datetime
+```typescript
+import { format } from 'date-fns';
+
+const currentDate = new Date();
+console.log(format(currentDate, 'yyyy-MM-dd'));
+```
+
+Salida de muestra:
+```
+2023-04-12
+```
+
+Este ejemplo de `date-fns` formatea la fecha actual como una cadena en el formato "AAAA-MM-DD". La biblioteca ofrece una plétora de funciones para la manipulación de fechas, convirtiéndola en una herramienta versátil para cualquier programador de TypeScript que trabaje con fechas.

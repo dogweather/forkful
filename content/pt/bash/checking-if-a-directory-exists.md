@@ -1,57 +1,59 @@
 ---
 title:                "Verificando se um diretório existe"
-date:                  2024-01-19
+date:                  2024-02-03T19:06:42.507057-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Verificando se um diretório existe"
-
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/bash/checking-if-a-directory-exists.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## O Que & Porquê?
+## O que & Por quê?
 
-Verificar se uma diretoria existe é identificar se um caminho especificado é uma pasta no sistema de arquivos. Programadores fazem isso para evitar erros como tentar ler ou escrever em uma pasta que não existe.
+Na programação Bash, verificar se um diretório existe é um mecanismo de controle essencial usado para verificar a presença de um diretório antes de realizar operações de arquivo. Essa verificação é crucial para evitar erros, como tentar acessar ou modificar diretórios que não existem, garantindo a execução de scripts mais suave e previsível.
 
-## Como Fazer:
+## Como fazer:
 
-Para verificar se uma diretoria existe, você pode usar o comando `[ -d ]`:
+No seu núcleo, Bash permite verificar a existência de um diretório usando declarações condicionais e o operador `-d`. Abaixo está um exemplo simples que demonstra como realizar essa verificação.
 
-```Bash
-if [ -d "/caminho/para/a/diretoria" ]; then
-  echo "A diretoria existe."
+```bash
+if [ -d "/caminho/para/diretorio" ]; then
+    echo "O diretório existe."
 else
-  echo "A diretoria não existe."
+    echo "O diretório não existe."
 fi
 ```
 
-Exemplo de saída se a diretoria existir:
-
+Saída de exemplo (se o diretório existir):
 ```
-A diretoria existe.
-```
-
-Exemplo de saída se a diretoria não existir:
-
-```
-A diretoria não existe.
+O diretório existe.
 ```
 
-Você também pode usar `[[ -d ]]` para a mesma verificação, o qual é mais moderno e suporta características adicionais como operadores lógicos:
-
-```Bash
-[[ -d "/caminho/para/a/diretoria" ]] && echo "Existe" || echo "Não existe"
+Saída de exemplo (se o diretório não existir):
+```
+O diretório não existe.
 ```
 
-## Aprofundamento:
+Para scripts mais complexos, é comum combinar a verificação com outras operações, como criar o diretório se ele não existir:
 
-Historicamente, verificação de existência de diretórios é uma necessidade básica nos scripts Bash para prevenir a execução de comandos em diretórios errados, o que poderia levar a resultados inesperados ou danos ao sistema. Alternativamente, além do teste `-d`, existe o comando `test` que pode ser usado para o mesmo propósito, embora em forma menos legível. Os detalhes de implementação no Bash envolvem a verificação das informações do inode do sistema de arquivos para determinar o tipo do caminho especificado.
+```bash
+DIR="/caminho/para/diretorio"
+if [ -d "$DIR" ]; then
+    echo "$DIR existe."
+else
+    echo "$DIR não existe. Criando agora..."
+    mkdir -p "$DIR"
+    echo "$DIR criado."
+fi
+```
 
-Antes do Bash, em shells mais antigos, os programadores muitas vezes tinham que criar diretórios sem a verificação prévia, resultando em mensagens de erro ou diretórios duplicados. O Bash trouxe comandos de teste integrados, como `[` e `[[`, melhorando a escrita de scripts seguros e eficientes.
+Saída de exemplo (se o diretório não existir e depois for criado):
+```
+/caminho/para/diretorio não existe. Criando agora...
+/caminho/para/diretorio criado.
+```
 
-Quando se trata de alternativas, o uso de `-e` ou `-f` pode verificar a existência de arquivos e diretórios ou apenas arquivos, respectivamente.
-
-## Ver Também:
-
-- [Advanced Bash-Scripting Guide](http://tldp.org/LDP/abs/html/)
-- [Stack Overflow: How to check if a directory exists in a Bash shell script?](https://stackoverflow.com/questions/59838/check-if-a-directory-exists-in-a-shell-script)
+Embora o próprio Bash forneça ferramentas robustas para essas verificações, não existem bibliotecas de terceiros populares especificamente para esta tarefa, já que comandos Bash nativos são totalmente capazes e eficientes para a validação da presença de diretórios.

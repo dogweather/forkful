@@ -1,67 +1,151 @@
 ---
-title:                "Робота з CSV файлами"
-date:                  2024-01-19
-simple_title:         "Робота з CSV файлами"
-
+title:                "Робота з CSV"
+date:                  2024-02-03T19:19:40.797241-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Робота з CSV"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/c-sharp/working-with-csv.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-"Що таке та Навіщо?"
-Робота з CSV (Comma-Separated Values) полягає у читанні та записі даних у текстовому форматі, де значення розділені комами. Програмісти використовують CSV через його простоту та широку підтримку у різних додатках.
+## Що та чому?
+CSV файли (значення, розділені комами) є поширеним форматом обміну даними, який представляє табличні дані в простому тексті, використовуючи коми для розділення окремих значень. Програмісти працюють з CSV файлами для імпорту, експорту та маніпулювання даними з легкістю між різними програмами та сервісами, оскільки це простий, широко підтримуваний формат, сумісний з програмами для роботи з електронними таблицями, базами даних та мовами програмування.
 
-## How to:
-"Як це зробити:"
-```C#
+## Як це зробити:
+Робота з CSV файлами в C# може бути здійснена через простір імен `System.IO` для базових операцій, а для більш складних маніпуляцій або для обробки великих файлів без перешкод, можна використовувати сторонні бібліотеки, такі як `CsvHelper`. Нижче наведено приклади, як читати з файлів CSV та записувати в них, використовуючи обидва підходи.
+
+### Читання файлу CSV за допомогою System.IO
+```csharp
+using System;
+using System.IO;
+
+class ReadCSV
+{
+    static void Main()
+    {
+        string filePath = @"шлях\до\вашого\файлу.csv";
+        // Читання всіх рядків файлу CSV
+        string[] csvLines = File.ReadAllLines(filePath);
+        
+        foreach (string line in csvLines)
+        {
+            string[] rowData = line.Split(',');
+            Console.WriteLine($"Перша колонка: {rowData[0]}, Друга колонка: {rowData[1]}");
+        }
+    }
+}
+```
+
+**Приклад виводу:**
+```
+Перша колонка: Ім'я, Друга колонка: Вік
+Перша колонка: Джон Доу, Друга колонка: 30
+```
+
+### Запис в файл CSV за допомогою System.IO
+```csharp
 using System;
 using System.Collections.Generic;
 using System.IO;
 
-class Program
+class WriteCSV
 {
     static void Main()
     {
-        // Читання CSV файлу
-        var csvLines = File.ReadAllLines("data.csv");
-        foreach (var line in csvLines)
+        string filePath = @"шлях\до\вашого\вихідного.csv";
+        var lines = new List<string>
         {
-            var values = line.Split(',');
-            Console.WriteLine($"Name: {values[0]}, Age: {values[1]}");
-        }
-
-        // Запис у CSV файл
-        var people = new List<(string Name, int Age)>
-        {
-            ("Olena", 28),
-            ("Andriy", 35)
+            "Ім'я,Вік",
+            "Джон Доу,30",
+            "Джейн Сміт,25"
         };
+        
+        File.WriteAllLines(filePath, lines);
+        Console.WriteLine("Файл CSV записано.");
+    }
+}
+```
 
-        using (var writer = new StreamWriter("output.csv"))
+**Приклад виводу:**
+```
+Файл CSV записано.
+```
+
+### Використання CsvHelper для читання CSV
+Щоб використовувати CsvHelper, спочатку додайте пакет `CsvHelper` до вашого проекту за допомогою менеджера пакетів NuGet.
+
+```csharp
+using CsvHelper;
+using System.Globalization;
+using System.IO;
+using System.Linq;
+using CsvHelper.Configuration;
+
+class ReadCSVWithCsvHelper
+{
+    static void Main()
+    {
+        string filePath = @"шлях\до\вашого\файлу.csv";
+
+        using (var reader = new StreamReader(filePath))
+        using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
         {
-            foreach (var person in people)
+            var records = csv.GetRecords<dynamic>().ToList();
+            foreach (var record in records)
             {
-                var newLine = $"{person.Name},{person.Age}";
-                writer.WriteLine(newLine);
+                Console.WriteLine($"Перша колонка: {record.Name}, Друга колонка: {record.Age}");
             }
         }
     }
 }
 ```
-Sample output:
+
+**Приклад виводу:**
 ```
-Name: Olena, Age: 28
-Name: Andriy, Age: 35
+Перша колонка: Джон Доу, Друга колонка: 30
+Перша колонка: Джейн Сміт, Друга колонка: 25
 ```
 
-## Deep Dive
-"Занурення у Деталі:"
-CSV стандарту не існує, але формат став популярним у 1970-х. Альтернативи — JSON і XML, які легше парсятись програмами, але CSV часто використовують через простоту. Програмісти повинні обережно обробляти дані у CSV, особливо якщо вони містять коми або переводи рядків у значеннях.
+### Використання CsvHelper для запису CSV
+```csharp
+using CsvHelper;
+using System.Globalization;
+using System.IO;
+using System.Collections.Generic;
+using CsvHelper.Configuration;
 
-## See Also
-"Дивіться також:"
-- [RFC 4180](https://tools.ietf.org/html/rfc4180), опис стандарту CSV.
-- [CsvHelper](https://joshclose.github.io/CsvHelper/), популярна бібліотека для роботи з CSV у C#.
-- [FileHelpers](http://www.filehelpers.net/), ще одна бібліотека сильно спрощує читання та запис у CSV файли.
+class WriteCSVWithCsvHelper
+{
+    public class Person
+    {
+        public string Name { get; set; }
+        public int Age { get; set; }
+    }
+
+    static void Main()
+    {
+        string filePath = @"шлях\до\вашого\вихідного.csv";
+        var records = new List<Person>
+        {
+            new Person { Name = "Джон Доу", Age = 30 },
+            new Person { Name = "Джейн Сміт", Age = 25 }
+        };
+
+        using (var writer = new StreamWriter(filePath))
+        using (var csv = new CsvWriter(writer, CultureInfo.InvariantCulture))
+        {
+            csv.WriteRecords(records);
+        }
+        
+        Console.WriteLine("Файл CSV записано за допомогою CsvHelper.");
+    }
+}
+```
+
+**Приклад виводу:**
+```
+Файл CSV записано за допомогою CsvHelper.
+```

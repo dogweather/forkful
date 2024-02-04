@@ -1,63 +1,100 @@
 ---
-title:                "Skriving av tester"
-date:                  2024-01-19
-simple_title:         "Skriving av tester"
-
+title:                "Skrive tester"
+date:                  2024-02-03T19:32:04.838521-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Skrive tester"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/rust/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Testing er å sjekke at koden din virker som den skal. Tester oppdager bugs og sørger for at tingen du bygger faktisk fungerer.
+
+Å skrive tester i Rust innebærer å lage automatiserte sjekker for å sikre at koden din fungerer som forventet. Programmerere gjør dette for å fange opp feil tidlig, lette omstrukturering, og opprettholde kodens kvalitet over tid.
 
 ## Hvordan:
-```Rust
+
+Rusts innebygde testrammeverk støtter enhets-, integrasjons- og dokumentasjonstester uten behov for eksterne biblioteker. Tester er annotert med `#[test]`, og enhver funksjon annotert slik blir kompilert som en test.
+
+### Skrive en EnhetsTest:
+
+Plasser enhetstester i modulen de tester ved å bruke en `tests` undermodul merket med `#[cfg(test)]` for å sikre at de bare kompileres når det testes.
+
+```rust
+// lib.rs eller main.rs
+pub fn add(a: i32, b: i32) -> i32 {
+    a + b
+}
+
 #[cfg(test)]
 mod tests {
-    #[test]
-    fn det_virker() {
-        assert_eq!(2 + 2, 4);
-    }
+    use super::*;
 
     #[test]
-    #[should_panic]
-    fn det_feiler() {
-        assert!(false);
+    fn it_adds_two() {
+        assert_eq!(add(2, 2), 4);
     }
-}
-
-fn main() {
-    println!("Hei på testing!");
 }
 ```
+
 Kjøre tester:
-```bash
+```shell
 $ cargo test
 ```
-Forventet resultat:
-```
-running 2 tests
-test tests::det_feiler ... FAILED
-test tests::det_virker ... ok
 
-failures:
+Utdata:
+```shell
+   Compiling your_package_name v0.1.0 (/path/to/your_package)
+    Finished test [unoptimized + debuginfo] target(s) in 0.00 secs
+     Running unittests src/lib.rs (or src/main.rs)
 
----- tests::det_feiler stdout ----
-thread 'main' panicked at 'assertion failed', src/main.rs:10:9
-note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+running 1 test
+test tests::it_adds_two ... ok
 
-failures:
-    tests::det_feiler
-
-test result: FAILED. 1 passed; 1 failed; 0 ignored; 0 measured; 0 filtered out
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out
 ```
 
-## Dybdeinformasjon:
-Testing i Rust har utviklet seg fra enkle `assert` makroer til et fullverdig testrammeverk integrert i Cargo. Alternativer inkluderer integrasjonstester, doc-tester og eksterne rammeverk som `quickcheck`. Tester kjøres parallelt for effektivitet, men det kan endres med `--test-threads`.
+### Skrive Integrasjonstester:
 
-## Se Også:
-- Rust Book Testing: https://doc.rust-lang.org/book/ch11-00-testing.html
-- Cargo Test Documentation: https://doc.rust-lang.org/cargo/commands/cargo-test.html
-- Rust by Example - Testing: https://doc.rust-lang.org/rust-by-example/testing.html
+Integrasjonstester plasseres i en tests mappe på toppnivået av prosjektet ditt, ved siden av `src`. Hver `.rs`-fil i `tests` kompileres som sin egen separate crate.
+
+```rust
+// tests/integration_test.rs
+use your_package_name;
+
+#[test]
+fn it_adds_two() {
+    assert_eq!(your_package_name::add(2, 2), 4);
+}
+```
+
+### Testing med Populære Tredjepartsbiblioteker:
+
+For mer omfattende testingsegenskaper, kan biblioteket `proptest` generere et bredt spekter av inndata for å teste funksjoner.
+
+Legg til `proptest` som en dev avhengighet i `Cargo.toml`:
+
+```toml
+[dev-dependencies]
+proptest = "1.0"
+```
+
+Bruk `proptest` for å kjøre samme test med mange automatisk genererte inndata:
+
+```rust
+// inne i tests/integration_test.rs eller en moduls #[cfg(test)]
+
+use proptest::prelude::*;
+
+proptest! {
+    #[test]
+    fn doesnt_crash(a: i32, b:i32) {
+        your_package_name::add(a, b);
+    }
+}
+```
+
+Dette sjekker at `add` ikke panikker for et bredt spekter av `i32` inndata.

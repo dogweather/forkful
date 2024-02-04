@@ -1,42 +1,65 @@
 ---
 title:                "Obtendo a data atual"
-date:                  2024-01-20T15:16:14.130904-07:00
+date:                  2024-02-03T19:10:39.345310-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Obtendo a data atual"
-
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/ruby/getting-the-current-date.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## O Que é & Por Que?
-Obter a data atual em Ruby significa acessar informações de tempo reais do sistema. Programadores fazem isso para registros, funções de tempo e para funcionalidades que dependem de data e hora.
+## O Que & Por Quê?
+Obter a data atual é uma tarefa essencial em quase qualquer empreitada de programação, desde registrar atividades em uma aplicação até gerar relatórios com carimbos de data. Em Ruby, isso pode ser facilmente alcançado usando a biblioteca padrão, simplificando operações que envolvem datas.
 
-## Como Fazer:
-Obter a data e hora atual no Ruby é simples. Vamos usar a biblioteca `Date` e `Time`:
+## Como fazer:
+A biblioteca padrão do Ruby inclui as classes `Date` e `Time` para manipular datas e horas. Aqui está como obter a data atual:
 
-```Ruby
+```ruby
 require 'date'
-require 'time'
 
-# Obtendo a data atual
-data_atual = Date.today
-puts data_atual   # Exemplo de saída: 2023-04-12
-
-# Obtendo a hora atual
-hora_atual = Time.now
-puts hora_atual   # Exemplo de saída: 2023-04-12 10:23:45 +0300
+current_date = Date.today
+puts current_date
 ```
 
-## Mergulho Profundo:
-Ruby tem várias formas de trabalhar com datas e horas. Historicamente, a classe `Time` fazia o trabalho básico. No entanto, Ruby introduziu a biblioteca `Date` e 'DateTime' para lidar especificamente com datas.
+Saída de exemplo: 
+```
+2023-04-12
+```
 
-Outras alternativas incluem o uso de bibliotecas de terceiros como `ActiveSupport` do Rails, que adicionam métodos ainda mais úteis. Mas para muitos propósitos, `Date` e `Time` nativos do Ruby são suficientes.
+Para incluir a hora com a data, a classe `Time` do Ruby é mais adequada:
 
-Quando usamos `Date.today` ou `Time.now`, estamos criando objetos baseados no relógio interno do sistema onde o Ruby está rodando. Ali, `Date` lida apenas com datas, enquanto `Time` pode lidar com data e hora, incluindo segundos e frações de segundos.
+```ruby
+current_time = Time.now
+puts current_time
+```
 
-## Veja Também:
-Para mais informações sobre datas e horas em Ruby, confira os seguintes recursos:
-- [Documentação do Ruby para a classe Time](https://ruby-doc.org/core-2.7.0/Time.html)
-- [Documentação do Ruby para a classe Date](https://ruby-doc.org/stdlib-2.7.0/libdoc/date/rdoc/Date.html)
-- [Active Support Core Extensions](https://edgeguides.rubyonrails.org/active_support_core_extensions.html#extensions-to-time) para ver como o Rails estende as funcionalidades de datas e horas.
+Saída de exemplo: 
+```
+2023-04-12 14:33:07 +0200
+```
+
+Se você precisar de mais funcionalidades, como gerenciamento de fuso horário, talvez queira usar uma gem de terceiros como a `ActiveSupport` (parte do Rails, mas pode ser usada de forma independente).
+
+Primeiro, adicione `activesupport` ao seu Gemfile e execute `bundle install`:
+
+```ruby
+gem 'activesupport'
+```
+
+Depois, use-a para manipular fusos horários:
+
+```ruby
+require 'active_support/time'
+
+Time.zone = 'Eastern Time (US & Canada)'  # Defina seu fuso horário desejado
+current_time_with_zone = Time.zone.now
+puts current_time_with_zone
+```
+
+Saída de exemplo:
+```
+Qua, 12 Abr 2023 08:33:07 EDT -04:00
+```

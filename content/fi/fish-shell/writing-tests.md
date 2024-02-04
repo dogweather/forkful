@@ -1,44 +1,87 @@
 ---
 title:                "Testien kirjoittaminen"
-date:                  2024-01-19
+date:                  2024-02-03T19:30:45.803491-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Testien kirjoittaminen"
-
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/fish-shell/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? - Mikä ja Miksi?
-Testaus auttaa varmistamaan koodin toimivuuden. Ohjelmoijat tekevät sitä vikoja estääkseen ja luotettavuutta parantaakseen.
+## Mikä ja miksi?
 
-## How to: - Kuinka tehdään:
-Fish Shellissä voit kirjoittaa testitiedostoja `.fish` -päätteellä. Ohjelmoi testit tavallisena skriptinä, oleta toiminta ja tarkista tulokset.
+Testien kirjoittaminen Fish Shellissä tarkoittaa skriptien luomista, jotka automaattisesti suorittavat koodisi varmistaakseen sen toimivan odotetulla tavalla. Tämä käytäntö on tärkeä, koska se varmistaa, että komentoskriptisi toimivat tarkoitetulla tavalla, havaitsee virheet aikaisin ja helpottaa ylläpitoa.
 
-```Fish Shell
-function test_greeting
-  set actual (echo "Moi $argv")
-  set expected "Moi Fish"
-  if test "$actual" = "$expected"
-    echo "Test passed: greeting is correct"
-  else
-    echo "Test failed: expected $expected, got $actual"
-  end
+## Kuinka:
+
+Fish ei sisällä sisäänrakennettua testauskehystä kuten jotkut muut ohjelmointiympäristöt. Voit kuitenkin kirjoittaa yksinkertaisia testiskriptejä, jotka käyttävät väittämiä funktioidesi käyttäytymisen tarkistamiseen. Lisäksi voit hyödyntää kolmannen osapuolen työkaluja, kuten `fishtape`, kattavampaan testauspakettiin.
+
+### Esimerkki 1: Perustestiskripti
+
+Aloitetaan perustoiminnolla Fishissä, joka laskee kahden luvun summan:
+
+```fish
+function add --description 'Lisää kaksi lukua'
+    set -l sum (math $argv[1] + $argv[2])
+    echo $sum
+end
+```
+
+Voit kirjoittaa tästä toiminnosta perustestiskriptin seuraavasti:
+
+```fish
+function test_add
+    set -l result (add 3 4)
+    if test $result -eq 7
+        echo "test_add passed"
+    else
+        echo "test_add failed"
+    end
 end
 
-test_greeting Fish
+test_add
 ```
 
-Tulostaisi:
+Tämän skriptin suorittaminen tuottaisi tuloksen:
 
 ```
-Test passed: greeting is correct
+test_add passed
 ```
 
-## Deep Dive - Syväsukellus:
-Testauksen juuret ovat ohjelmistotuotannossa. Fishin omat työkalut ovat rajalliset, mutta ulkoisia työkaluja kuten `fishtape` voi käyttää. Testien toteutus voi olla käsin kirjoitettuja vertailuja tai kehittyneempiä testirunkoja.
+### Esimerkki 2: Fishtape:n käyttö
 
-## See Also - Katso myös:
-- Fish Shell dokumentaatio: [https://fishshell.com/docs/current/index.html](https://fishshell.com/docs/current/index.html)
-- `fishtape`, Fishin testityökalu: [https://github.com/jorgebucaran/fishtape](https://github.com/jorgebucaran/fishtape)
-- Ohjelmistotestauksen perusteet: [https://martinfowler.com/testing/](https://martinfowler.com/testing/)
+Kattavampaan testiratkaisuun voit käyttää `fishtape`:a, joka on TAP-tuottava testiajuri Fishille.
+
+Asenna ensin `fishtape`, jos et ole vielä tehnyt sitä:
+
+```fish
+fisher install jorgebucaran/fishtape
+```
+
+Luo seuraavaksi testitiedosto `add`-toiminnollesi, esim. `add_test.fish`:
+
+```fish
+test "Lisäämällä 3 ja 4 saadaan 7"
+    set result (add 3 4)
+    echo "$result" | fishtape
+end
+```
+
+Suorittaaksesi testin, käytä seuraavaa komentoa:
+
+```fish
+fishtape add_test.fish
+```
+
+Näytekulostus saattaisi näyttää tältä:
+
+```
+TAP version 13
+# Lisäämällä 3 ja 4 saadaan 7
+ok 1 - test_add passed
+```
+
+Tämä kertoo, että testi läpäistiin onnistuneesti. `fishtape` mahdollistaa tarkemmin rakenteellisten testien luomisen ja tarjoaa informatiivisen tulosteen, mikä helpottaa virheenkorjausta ja kattavaa testikattavuutta Fish-skripteillesi.

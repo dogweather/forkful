@@ -1,19 +1,21 @@
 ---
 title:                "Skriva tester"
-date:                  2024-01-19
+date:                  2024-02-03T19:31:45.815007-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Skriva tester"
-
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/python/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Att skriva tester innebär att koda små program som kör din kod för att kontrollera att allt funkar. Programmerare gör detta för att säkerställa att koden är robust, förhindrar fel och underlättar framtida underhåll.
+## Vad & Varför?
+Att skriva tester i Python innebär att skapa automatiserade skript för att validera korrektheten i din kod. Programmerare gör detta för att säkerställa att deras funktioner eller klasser fungerar som förväntat under olika förhållanden, vilket hjälper till att fånga upp fel tidigt och underlättar enklare underhåll och refaktorisering.
 
-## How to:
-Python använder ofta `unittest` för att skriva tester. Så här ser ett grundläggande testexempel ut:
+## Hur man gör:
+Python kommer med en inbyggd modul för att skriva tester som kallas `unittest`. Så här kan du använda den för att testa en enkel funktion:
 
 ```python
 import unittest
@@ -21,29 +23,41 @@ import unittest
 def add(a, b):
     return a + b
 
-class TestAddition(unittest.TestCase):
+class TestAddFunction(unittest.TestCase):
     def test_add(self):
-        self.assertEqual(add(3, 4), 7)
+        self.assertEqual(add(1, 2), 3)
+        self.assertEqual(add(-1, 1), 0)
+        self.assertNotEqual(add(10, 2), 12, "Borde vara 12")
 
 if __name__ == '__main__':
     unittest.main()
 ```
-Kör detta script i terminalen så ska du se följande output:
 
+När du kör detta testskript bör du se utdata som indikerar att dina tester passerade (eller misslyckades).
+
+För mer moderna och uttrycksfulla tester kan du använda ett tredjepartsbibliotek som `pytest`. Först måste du installera det med pip:
+
+```shell
+pip install pytest
 ```
-.
-----------------------------------------------------------------------
-Ran 1 test in 0.000s
 
-OK
+Sedan kan du skriva dina tester på ett enklare sätt utan att behöva ärva från någon klass:
+
+```python
+# Spara detta i en fil med namnet test_with_pytest.py
+def add(a, b):
+    return a + b
+
+def test_add():
+    assert add(1, 2) == 3
+    assert add(-1, 1) == 0
+    assert add(10, 2) != 12, "Borde vara 12"
 ```
 
-## Deep Dive
-Att skriva tester är en del av utvecklingsprocessen som har funnits sedan programmeringens barndom. Alternativ till `unittest` i Python inkluderar `pytest` och `nose`, som kan erbjuda mer avancerade funktioner och enklare syntax. Viktiga detaljer att notera när man skriver tester inkluderar isolering av tester (så de inte påverkar varandra), täckning (så mycket kod som möjligt testas) och mockning (att efterapa delar av systemet).
+För att köra dina tester med `pytest`, exekvera helt enkelt:
 
-## See Also
-För att lära dig mer om testning i Python, besök:
-- Python's officiella dokumentation om `unittest`: https://docs.python.org/3/library/unittest.html
-- `pytest` dokumentationen: https://docs.pytest.org/en/latest/
-- En guide till mockning i tester: https://docs.python.org/3/library/unittest.mock.html
-- Om koddäckning och verktyget `coverage.py`: https://coverage.readthedocs.io/
+```shell
+pytest test_with_pytest.py
+```
+
+Du bör se utdata från pytest som visar dina testresultat.

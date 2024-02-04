@@ -1,38 +1,52 @@
 ---
 title:                "Pisanie do standardowego błędu"
-date:                  2024-01-19
+date:                  2024-02-03T19:33:48.261756-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Pisanie do standardowego błędu"
-
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/lua/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
-Pisanie do standardowego błędu, czyli `stderr`, pozwala oddzielić normalne wyjście programu od komunikatów o błędach. Programiści używają tego, żeby ułatwić sobie debugowanie i logowanie, pozostawiając wyjście programu (`stdout`) czystym do dalszego przetwarzania.
+## Co i Dlaczego?
+Pisanie do standardowego błędu (stderr) polega na kierowaniu komunikatów o błędach oraz wyjść diagnostycznych do osobnego kanału, różnego od standardowego wyjścia (stdout). Programiści robią to, aby odróżnić regularne wyniki programów od informacji o błędach, usprawniając debugowanie i procesy logowania.
 
 ## Jak to zrobić:
-```Lua
--- Przykładowy kod w Lua
-io.stderr:write("To jest komunikat błędu\n")
+W Lua, pisanie do stderr można osiągnąć za pomocą funkcji `io.stderr:write()`. Oto jak można napisać prosty komunikat o błędzie do standardowego błędu:
 
--- Alternatywnie, używając funkcji print
-local oldstd = io.output()
-io.output(io.stderr)
-print("To jest inny komunikat błędu")
-io.output(oldstd)
+```lua
+io.stderr:write("Błąd: Nieprawidłowe wejście.\n")
 ```
 
-Przykładowe wyjście:
-```
-To jest komunikat błędu
-To jest inny komunikat błędu
+Jeśli potrzebujesz wyświetlić zmienną lub połączyć kilka fragmentów danych, skonkatenuj je w funkcji write:
+
+```lua
+local errorMessage = "Nieprawidłowe wejście."
+io.stderr:write("Błąd: " .. errorMessage .. "\n")
 ```
 
-## Głębsze spojrzenie
-W przeszłości `stderr` był używany głównie do raportowania błędów w terminalach. Alternatywą jest przekierowanie komunikatów błędów do pliku lub użycie biblioteki logującej. Lua traktuje `stderr` jako oddzielny strumień i oferuje prostą funkcję `io.stderr:write()`, by do niego pisać bezpośrednio, co jest odpowiednikiem pisania do `STDOUT` za pomocą `print()`. 
+**Przykładowe wyjście na stderr:**
+```
+Błąd: Nieprawidłowe wejście.
+```
 
-## Zobacz również
-- Lua `io` library documentation: [http://www.lua.org/manual/5.4/manual.html#6.8](http://www.lua.org/manual/5.4/manual.html#6.8)
-- Unix philosophy on stdout and stderr: [https://en.wikipedia.org/wiki/Unix_philosophy](https://en.wikipedia.org/wiki/Unix_philosophy)
+W bardziej skomplikowanych scenariuszach, lub przy pracy z większymi aplikacjami, warto rozważyć biblioteki logowania stron trzecich, takie jak LuaLogging. Z LuaLogging możesz kierować logi do różnych miejsc docelowych, w tym stderr. Oto krótki przykład:
+
+Najpierw upewnij się, że LuaLogging jest zainstalowane za pomocą LuaRocks:
+
+```
+luarocks install lualogging
+```
+
+Następnie, aby napisać komunikat o błędzie do stderr przy użyciu LuaLogging:
+
+```lua
+local logging = require("logging")
+local logger = logging.stderr()
+logger:error("Błąd: Nieprawidłowe wejście.")
+```
+
+To podejście oferuje zaletę standaryzowanego logowania w całej aplikacji, z dodatkową elastycznością ustawiania poziomów logowania (np. ERROR, WARN, INFO) za pomocą prostego API.

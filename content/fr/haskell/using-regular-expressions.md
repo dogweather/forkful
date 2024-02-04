@@ -1,60 +1,66 @@
 ---
 title:                "Utilisation des expressions régulières"
-date:                  2024-01-19
+date:                  2024-02-03T19:16:48.940000-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Utilisation des expressions régulières"
-
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/haskell/using-regular-expressions.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Utiliser des expressions régulières (regex) permet de chercher et manipuler du texte selon un pattern défini. Les programmeurs s'en servent pour faciliter le traitement de chaînes de caractères, de la validation de données au parsing complexe.
+## Quoi & Pourquoi ?
+Les expressions régulières en programmation sont des séquences de caractères qui définissent un motif de recherche, généralement employé pour la recherche et la manipulation de chaînes de caractères. Les programmeurs Haskell utilisent les expressions régulières pour des tâches allant de la simple correspondance de chaînes à des traitements de texte complexes, profitant de leur efficacité et de leur polyvalence dans le traitement des données textuelles.
 
-## How to:
-Haskell utilise le paquet `regex-tdfa` pour les regex. Voici un exemple simple :
+## Comment :
+En Haskell, les fonctionnalités regex ne font pas partie de la bibliothèque standard, nécessitant l'utilisation de paquets tiers comme `regex-base` accompagné d'un backend compatible tel que `regex-posix` (pour le support des regex POSIX), `regex-pcre` (pour les regex compatibles Perl), etc. Voici comment vous pouvez utiliser ces paquets pour travailler avec les expressions régulières.
 
-```Haskell
-import Text.Regex.TDFA
+D'abord, assurez-vous d'avoir les paquets installés en ajoutant `regex-posix` ou `regex-pcre` au fichier `.cabal` de votre projet ou en installant via cabal directement :
+
+```bash
+cabal install regex-posix
+```
+ou
+```bash
+cabal install regex-pcre
+```
+
+### Utilisation de `regex-posix` :
+
+```haskell
+import Text.Regex.Posix ((=~))
+
+-- Vérifier si une chaîne correspond à un motif
+isMatch :: String -> String -> Bool
+isMatch text pattern = text =~ pattern :: Bool
+
+-- Trouver la première correspondance
+findFirst :: String -> String -> String
+findFirst text pattern = text =~ pattern :: String
 
 main :: IO ()
 main = do
-    let text = "Je programme en Haskell depuis 2022"
-    let pattern = "[0-9]+"
-    print (text =~ pattern :: String)
+    print $ isMatch "hello world" "wo"
+    -- Sortie: True
+    print $ findFirst "bonjour, bonne nuit" "bon"
+    -- Sortie: "bon"
 ```
 
-Sortie:
+### Utilisation de `regex-pcre` :
 
-```
-"2022"
-```
+```haskell
+import Text.Regex.PCRE ((=~))
 
-Pour remplacer du texte:
-
-```Haskell
-import Text.Regex.TDFA
+-- Trouver toutes les correspondances
+findAll :: String -> String -> [String]
+findAll text pattern = text =~ pattern :: [String]
 
 main :: IO ()
 main = do
-    let text = "Je programme en Haskell depuis 2022"
-    let pattern = "2022"
-    let replacement = "2023"
-    print (text =~ pattern :: String)
-    print (subRegex (mkRegex pattern) text replacement)
+    print $ findAll "test1 test2 test3" "\\btest[0-9]\\b"
+    -- Sortie: ["test1","test2","test3"]
 ```
 
-Sortie:
-
-```
-"2022"
-"Je programme en Haskell depuis 2023"
-```
-
-## Deep Dive
-Les regex en Haskell reposent sur les paquets tels que `regex-tdfa`, inspirés par les travaux de Stephen Kleene dans les années 1950. Contrairement à Perl ou Python, leur utilisation en Haskell n'est pas intégrée directement dans le langage, nécessitant ces bibliothèques externes. Des alternatives incluent les matchings de motifs intégrés dans le langage ou des parsers comme Parsec. Les regex sont gourmands en performance ; Haskell permet l'optimisation via la compilation de regex.
-
-## See Also
-- [Hackage - regex-tdfa package](https://hackage.haskell.org/package/regex-tdfa)
-- [Learn You a Haskell for Great Good! - Understanding monads](http://learnyouahaskell.com/a-fistful-of-monads)
+Chaque bibliothèque a ses particularités, mais la méthodologie générale d'utilisation de `=~` pour appliquer la regex reste constante, que ce soit pour vérifier une correspondance ou extraire des sous-chaînes. Le choix entre `regex-posix` ou `regex-pcre` dépend largement des besoins de votre projet et des capacités regex spécifiques requises.

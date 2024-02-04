@@ -1,29 +1,46 @@
 ---
-title:                "הפיכת מחרוזת לאותיות רישיות"
-date:                  2024-01-19
-simple_title:         "הפיכת מחרוזת לאותיות רישיות"
-
+title:                "הגדלת אותיות במחרוזת"
+date:                  2024-02-03T19:07:21.960514-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "הגדלת אותיות במחרוזת"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/swift/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## מה ולמה?
-הקפלה לראשי תיבות של מחרוזת משנה את כל האותיות קטנות לגדולות. תכנתים עושים זאת לנוחות, כדי להקל על קריאת טקסט וכדי להבטיח התאמה למוסכמות קוד (כגון קבועים).
+
+הקפיטליזציה של מחרוזת ב-Swift מעדכנת את המחרוזת כך שהתו הראשון שלה הופך לאות גדולה, ושאר התווים הופכים לאותיות קטנות. מתכנתים עושים זאת למטרות כמו עיצוב שמות או משפטים על פי כללי דקדוק או סטנדרטים של ממשק משתמש.
 
 ## איך לעשות:
-```Swift
-let lowerCaseString = "shalom, swift!"
-let capitalizedString = lowerCaseString.uppercased()
-print(capitalizedString) // Outputs: "SHALOM, SWIFT!"
+
+מבני `String` ב-Swift מגיעים עם מספר שיטות מובנות לשינוי הגודל של מחרוזות. הנה כמה דרכים להקפיץ מחרוזות ב-Swift, כולל השימוש בשיטות סטנדרטיות ובספריות מצד שלישי אם נחוץ.
+
+### שימוש בשיטות מובנות
+
+להקפיץ את האות הראשונה של מחרוזת ולהקטין את שאר האותיות:
+
+```swift
+let myString = "hello, world"
+let capitalizedString = myString.prefix(1).uppercased() + myString.dropFirst().lowercased()
+print(capitalizedString) // פלט: "Hello, world"
 ```
-השימוש בפונקציה `uppercased()` של Swift הופך את כל האותיות במחרוזת לראשי תיבות.
 
-## עיון נוסף:
-בעבר, קפליזציה אולי יכלה להשתנות בין מערכות שונות בגלל קידודי תווים ייחודיים. היום, Swift משתמשת ב-Unicode, מה שמאפשר התנהגות עקבית בכל פלטפורמה. ראו חלופות כמו `.lowercased()` להקטנת אותיות, או `.capitalized` שרק האות הראשונה של כל מילה הופכת לראשית.
+להקפיץ את האות הראשונה של כל מילה במשפט, אפשר להשתמש בתכונה `capitalized`:
 
-## ראו גם:
-- תיעוד Swift של Apple על מחרוזות ותווים: https://developer.apple.com/documentation/swift/string
-- Unicode Standard: https://unicode.org/standard/standard.html
-- קהילת מפתחי Swift: https://swift.org/community/
+```swift
+let sentence = "hello, world"
+let capitalizedSentence = sentence.capitalized
+print(capitalizedSentence) // פלט: "Hello, World"
+```
+
+### שימוש בספרייה מצד שלישי
+
+למרות שספריית הסטנדרט של Swift היא די מקיפה, ייתכן שפורמטים מסוימים של הקפיטליזציה דורשים מבצעים מורכבים יותר או שניתן לפשטם באמצעות ספריות מצד שלישי. אחת מהספריות הפופולריות לניפוי מחרוזות היא SwiftRichString. (הערה: תמיד וודאו לכלול ספריות מצד שלישי דרך Swift Package Manager, CocoaPods, או Carthage, ולייבא אותם בקובץ שלכם.)
+
+ראשית, יהיה צורך להוסיף את `SwiftRichString` לפרויקט שלכם. לאחר התקנתה, תוכלו להשתמש בה לבצע מגוון פעולות עם מחרוזות, כולל צרכים ספציפיים של הקפיטליזציה. עם זאת, כרגע, שיטות המובנות של Swift מכסות באופן נאות את רוב צרכי ההקפיטליזציה ללא הצורך בספריות חיצוניות רק לצורך הקפצת מחרוזות.
+
+תמיד התייחסו לתיעוד העדכני ביותר של הספרייה לכל עדכון או שינוי בשיטות.

@@ -1,49 +1,56 @@
 ---
-title:                "Att göra en sträng versal"
-date:                  2024-01-19
-simple_title:         "Att göra en sträng versal"
-
+title:                "Gör om en sträng till versaler"
+date:                  2024-02-03T19:06:01.968609-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Gör om en sträng till versaler"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/php/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att kapitalisera en sträng innebär att omvandla dess första bokstav till versal. Programmerare gör detta för att följa konventioner eller förbättra läsbarheten; till exempel, att börja meningar med en stor bokstav eller formatera rubriker.
+Att versalisera en sträng innebär att ändra det första tecknet i given text till versal, och säkerställer att meningar, titlar eller egennamn börjar korrekt i en datamängd. Programmerare utför ofta versalisering av strängar för datanormalisering, för att förbättra läsbarheten eller för att säkerställa konsekvens i användarinput eller textuell databehandling.
 
 ## Hur man gör:
-```PHP
-<?php
-// Sträng med små bokstäver
-$exampleString = "här är en sträng";
+PHP stöder medfött olika funktioner för att versalisera strängar, var och en tjänar ett olika syfte. Här är hur du kan använda dem:
 
-// Kapitalisera första bokstaven i strängen
-$capitalizedString = ucfirst($exampleString);
+### Versalisera första bokstaven i en sträng:
 
-// Skriv ut den kapitaliserade strängen
-echo $capitalizedString; // Output: Här är en sträng
-
-// Kapitalisera varje ords första bokstav
-$titleString = "detta är en titel";
-
-// Använd ucwords för att kapitalisera varje ord
-$capitalizedTitle = ucwords($titleString);
-
-// Skriv ut den kapitaliserade titeln
-echo $capitalizedTitle; // Output: Detta Är En Titel
-?>
+```php
+$string = "hello, world!";
+$capitalizedString = ucfirst($string);
+echo $capitalizedString; // Skriver ut: Hello, world!
 ```
 
-## Djupdykning:
-Tidigare, när typsnitt var begränsade och datautrymme dyrbart, sparades ofta varje byte. Strängar lagrades i små bokstäver för att vara konsekventa. Idag är kapitalisering ett enkelt sätt att göra text mer användarvänlig utan större kostnad.
+### Versalisera första bokstaven i varje ord:
 
-`ucfirst` och `ucwords` är de vanligaste funktionerna i PHP för att manipulera strängkapitalisering. Båda behandlar UTF-8-strängar korrekt från PHP 5.4.0 och framåt. Det finns alternativ såsom `mb_convert_case()` som kan hantera multibyte-strängar för språk med accenttecken och andra icke-latinska teckensnitt.
+```php
+$string = "hello, world!";
+$capitalizedWords = ucwords($string);
+echo $capitalizedWords; // Skriver ut: Hello, World!
+```
 
-Tekniskt sett skapar `ucfirst` en ny sträng med den första bokstaven omvandlad till versal, medan resten av strängen förblir oförändrad. `ucwords` kapitaliserar första bokstaven i varje ord i strängen. Var försiktig med `ucwords` eftersom den betraktar alla tecken efter ett icke-alfabetiskt tecken som början på ett nytt ord.
+### Konvertera hela strängen till versaler:
 
-## Se även:
-- PHPs officiella dokumentation om [ucfirst](https://www.php.net/manual/en/function.ucfirst.php)
-- PHPs officiella dokumentation om [ucwords](https://www.php.net/manual/en/function.ucwords.php)
-- Stack Overflow diskussioner kring praktiska användningsfall och problem med strängkapitalisering i PHP.
-- W3Schools tutorial om [PHP String Functions](https://www.w3schools.com/php/php_ref_string.asp), där dessa och andra liknande funktioner beskrivs.
+```php
+$string = "hello, world!";
+$upperCaseString = strtoupper($string);
+echo $upperCaseString; // Skriver ut: HELLO, WORLD!
+```
+
+För scenarion som kräver mer anpassning eller lösningar från tredje part, kan bibliotek som `mbstring` (för flerbyte strängar) användas, speciellt vid hantering av internationalisering där tecken kan sträcka sig utöver det grundläggande ASCII-setet.
+
+### Använda mbstring för att versalisera UTF-8 strängar:
+
+Se till att du har `mbstring`-tillägget aktiverat i din PHP-konfiguration, sedan:
+
+```php
+$string = "élégant";
+$capitalizedString = mb_convert_case($string, MB_CASE_TITLE, "UTF-8");
+echo $capitalizedString; // Skriver ut: Élégant
+```
+
+Detta tillvägagångssätt hjälper till att korrekt versalisera strängar som inkluderar icke-ASCII tecken, i enlighet med nyanserna i olika språk.

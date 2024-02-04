@@ -1,42 +1,56 @@
 ---
-title:                "הפיכת מחרוזת לאותיות רישיות"
-date:                  2024-01-19
-simple_title:         "הפיכת מחרוזת לאותיות רישיות"
-
+title:                "הגדלת אותיות במחרוזת"
+date:                  2024-02-03T19:06:26.170118-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "הגדלת אותיות במחרוזת"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/php/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## מה ולמה?
+הפיכת מחרוזת לאותיות ראשיות כוללת שינוי של התו הראשון של טקסט נתון לאות רישית, ודאי שמשפטים, כותרות או שמות עצמיים מתחילים כהלכה במערך נתונים. מתכנתים לעיתים קרובות מבצעים הפיכת מחרוזת לאותיות ראשיות על מנת לנרמל נתונים, לשפר קריאות או להבטיח עקביות בקלט משתמש או בעיבוד נתוני טקסט.
 
-בעברית: עיצוב מחרוזת לאותיות גדולות הוא שינוי של טקסט כך שכל האותיות בו יהיו גדולות. תוכניתנים עושים זאת לצורך אחידות, קריאות או עמידה בדרישות פורמט.
+## איך לבצע:
+PHP תומכת באופן טבעי במגוון פונקציות להפוך מחרוזות לאותיות ראשיות, כל אחת משרתת מטרה שונה. זהו הדרך שבה ניתן להשתמש בהן:
 
-## איך לעשות:
-
-כדי להפוך מחרוזת לאותיות רישיות בקלות, השתמש בפונקציה `strtoupper`. פה יש דוגמה:
+### הפיכת האות הראשונה של מחרוזת לאות רישית:
 
 ```php
-<?php
-$text = "שלום עולם";
-$capitalizedText = strtoupper($text);
-
-echo $capitalizedText; // תוצאה: שלום עולם באותיות רישיות
-?>
+$string = "hello, world!";
+$capitalizedString = ucfirst($string);
+echo $capitalizedString; // מוצג: Hello, world!
 ```
 
-שים לב: בעברית אין הבדל בין אותיות קטנות לגדולות, אבל זה יעבוד על אנגלית ושפות אחרות.
+### הפיכת האות הראשונה של כל מילה לאות רישית:
 
-## עיון מעמיק:
+```php
+$string = "hello, world!";
+$capitalizedWords = ucwords($string);
+echo $capitalizedWords; // מוצג: Hello, World!
+```
 
-השימוש באותיות גדולות במחשבים מתחיל בשנות ה-60 וה-70 עם תקני ASCII ו-EBCDIC שהיו מבוססים רק על אותיות רישיות. כיום, הצורך באותיות גדולות משמש גם לעיצוב ויזואלי וגם לתכנות קייס-סנסיטיב. ב-PHP, למשל, יש פונקציות נוספות כגון `strtolower` להפוך לאותיות קטנות, ו`ucfirst` לראשית גדולה. כל הפונקציות האלו משחקות עם היצוג הבינארי של האותיות במחשב.
+### המרת כל המחרוזת לאותיות גדולות:
 
-בפיתוח ווב ואפליקציות, חשוב לזכור שמעבר ל-PHP, פעמים רבות מבוצעת עיבוד ועיצוב של מחרוזות בצד הלקוח (עם JavaScript, למשל), או בשכבת הנתונים (עם SQL או נוסחאות של מסד נתונים).
+```php
+$string = "hello, world!";
+$upperCaseString = strtoupper($string);
+echo $upperCaseString; // מוצג: HELLO, WORLD!
+```
 
-## ראה גם:
+לתרחישים הדורשים התאמה ספציפית יותר או פתרונות של צד שלישי, ניתן להשתמש בספריות כמו `mbstring` (למחרוזות מולטיבייט) במיוחד כאשר עוסקים בבינלאום שבו התווים עשויים להתפרש מעבר לסט ה-ASCII הבסיסי.
 
-- [PHP strtolower](https://www.php.net/manual/en/function.strtolower.php)
-- [PHP ucfirst](https://www.php.net/manual/en/function.ucfirst.php)
-- [PHP ucwords](https://www.php.net/manual/en/function.ucwords.php)
-- [ASCII Table and Description](https://www.asciitable.com/)
+### שימוש ב-mbstring להפיכת מחרוזות UTF-8 לאותיות ראשיות:
+
+ודאו שהרחבת `mbstring` מופעלת בהגדרות ה-PHP שלכם, לאחר מכן:
+
+```php
+$string = "élégant";
+$capitalizedString = mb_convert_case($string, MB_CASE_TITLE, "UTF-8");
+echo $capitalizedString; // מוצג: Élégant
+```
+
+הגישה זו עוזרת להפוך מחרוזות שכוללות תווים שאינם ASCII באופן מדויק, תוך הקפדה על גווני השפה השונים.

@@ -1,44 +1,61 @@
 ---
-title:                "הפיכת מחרוזת לאותיות רישיות"
-date:                  2024-01-19
-simple_title:         "הפיכת מחרוזת לאותיות רישיות"
-
+title:                "הגדלת אותיות במחרוזת"
+date:                  2024-02-03T19:05:17.090911-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "הגדלת אותיות במחרוזת"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/bash/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? / מה ולמה?
-בשינוי אותיות לרישיות, אנחנו משנים את ראשי התיבות של מחרוזת לאותיות גדולות. פרוגרמרים עושים זאת לשם קביעת תצורה, כמו בכותרות, או לשימוש עקבי במשתנים ופונקציות.
+## מה ולמה?
+הגדלת האות הראשונה במחרוזת ב-Bash כוללת המרה של התו הראשון של המחרוזת לאות גדולה תוך השארת שאר המחרוזת ללא שינוי. שיטה זו משמשת לעיתים קרובות לצורך עיצוב פלט או כדי לעמוד בקונבנציות קידוד הדורשות שמחרוזות מסוימות יתחילו באות ראשית, לצורך קריאות או העדפות סגנוניות.
 
-## How to: / איך לעשות:
-עם Bash, אתה יכול לקפיטליזציה מחרוזת בקלות. כאן כמה דוגמאות:
+## איך לעשות:
 
-```Bash
-#!/bin/bash
-# Capitalizing a single word
-word="bash"
-echo "${word^}"
-# Output: Bash
+Bash אינו מכיל פונקציה מובנית במיוחד להגדלת אותיות במחרוזת, אך ניתן לבצע משימה זו באמצעות הרחבת פרמטרים או כלים חיצוניים כמו `awk`. הנה כמה דרכים להגדלת האות הראשונה במחרוזת ב-Bash:
 
-# Capitalizing the entire string
-entire_string="hello, world!"
-echo "${entire_string^^}"
-# Output: HELLO, WORLD!
+**באמצעות הרחבת פרמטרים:**
 
-# Capitalize first letter of each word
-for word in $entire_string; do 
-    echo -n "${word^} "
-done
-# Output: Hello, World! 
+שיטה זו מתעסקת במניפולציה של המחרוזת ישירות בשל.
+
+```bash
+str="hello world"
+capitalized="${str^}"
+echo "$capitalized"
+```
+פלט:
+```
+Hello world
 ```
 
-## Deep Dive / עומק הדברים:
-מאז שינויים חדשים ב-Bash בגרסא 4.0 (2009), התווספה האפשרות לשינוי רישיות מחרוזות וכך לא נדרש להשתמש בעזרים חיצוניים כמו `tr` או `awk`. הוספת הפונקציונליות נעשתה בשימוש בקודי מעטפת מרובים (brace expansions). האות `^` משמשת להפיכת האות הראשונה לרישית, והסימן `^^` לכל האותיות במחרוזת. קיימות גם הפכים `,` ו-`,,` להפיכה לאותיות קטנות. יש גם אלטרנטיבות כמו הפעלת `sed` או כתיבת סקריפט ב-Python.
+**באמצעות `awk`:**
 
-## See Also / ראה גם:
-- תיעוד של Bash: https://www.gnu.org/software/bash/manual/
-- קורס בחינם ללמידת Bash: https://www.codecademy.com/learn/learn-the-command-line
-- מדריך מפורט על brace expansions ב-Bash: https://www.gnu.org/software/bash/manual/html_node/Brace-Expansion.html
-- מאמרים על שימושים מתקדמים של `sed` ו`awk`: `http://www.grymoire.com/Unix/Sed.html` ו`http://www.grymoire.com/Unix/Awk.html`
+`awk` הוא כלי עיבוד טקסט חזק הזמין ברוב מערכות ההפעלה הדומות ל-Unix, אשר ניתן לנצל לצורך הגדלת מחרוזות.
+
+```bash
+str="hello world"
+echo "$str" | awk '{print toupper(substr($0, 1, 1)) tolower(substr($0, 2))}'
+```
+פלט:
+```
+Hello world
+```
+
+**באמצעות `sed`:**
+
+לגישה יותר מסורתית, ניתן להשתמש ב-`sed` כדי להגדיל את האות הראשונה של מחרוזת. עם זאת, היא מורכבת יותר בהשוואה לשיטות הקודמות.
+
+```bash
+str="hello world"
+echo "$str" | sed 's/./\u&/'
+```
+פלט:
+```
+Hello world
+```
+
+קטעי הקוד הללו מדגימים איך להגדיל את האות הראשונה של מחרוזת ב-Bash, ומדגישים את הגמישות של כתיבת קוד בשל כאשר מתעסקים בעיבוד טקסט.

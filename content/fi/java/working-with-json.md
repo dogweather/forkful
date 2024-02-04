@@ -1,46 +1,103 @@
 ---
-title:                "JSON-tiedostojen käsittely"
-date:                  2024-01-19
-simple_title:         "JSON-tiedostojen käsittely"
-
+title:                "Työskentely JSON:n kanssa"
+date:                  2024-02-03T19:23:25.288240-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Työskentely JSON:n kanssa"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/java/working-with-json.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Mitä & Miksi?)
-JSON on dataformaatti tiedon vaihtoon. Käyttävät JSONia koska se on helppo lukea ja kirjoittaa; yhteensopiva useimpien ohjelmointikielten kanssa.
+## Mikä & Miksi?
+Työskentely JSON:n (JavaScript Object Notation) parissa tarkoittaa tämän kevyen datanvaihtoformaatista hyödyntämistä Java-sovelluksissasi. Ohjelmoijat suosivat JSONia rakenneellisen datan sarjoittamiseen ja siirtämiseen verkon yli sekä datan helppoon konfigurointiin ja tallentamiseen, koska se on ihmisen luettavissa ja kielestä riippumaton.
 
-## How to: (Kuinka tehdä:)
-Java käsittelee JSONia `org.json` kirjaston tai `Jackson` ja `Gson` kautta. Tässä esimerkki `org.json`:lla.
+## Kuinka:
+Kääritään hihat ja ryhdytään koodaamaan JSONin kanssa Javassa.
+
+Ensimmäiseksi, tarvitset JSON-käsittelykirjaston kuten `Jackson` tai `Google Gson`. Tässä käytämme `Jacksonia`, joten lisää tämä riippuvuus `pom.xml`-tiedostoosi:
+
+```xml
+<dependency>
+    <groupId>com.fasterxml.jackson.core</groupId>
+    <artifactId>jackson-databind</artifactId>
+    <version>2.13.1</version>
+</dependency>
+```
+
+Nyt, sarjoitetaan (kirjoitetaan) yksinkertainen Java-olio JSONiksi:
 
 ```java
-import org.json.JSONObject;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
-public class JsonExample {
+public class JsonEsimerkki {
     public static void main(String[] args) {
-        // Luodaan JSON-objekti
-        JSONObject obj = new JSONObject();
-        obj.put("nimi", "Matti Meikäläinen");
-        obj.put("ikä", 30);
-        obj.put("onkoOhjelmoija", true);
+        try {
+            ObjectMapper mapper = new ObjectMapper();
+            Henkilo henkilo = new Henkilo("Alex", 30);
+            String json = mapper.writeValueAsString(henkilo);
+            System.out.println(json);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
 
-        // Tulostetaan JSON-merkkijono
-        System.out.println(obj.toString());
+class Henkilo {
+    public String nimi;
+    public int ika;
+
+    public Henkilo(String nimi, int ika) {
+        this.nimi = nimi;
+        this.ika = ika;
     }
 }
 ```
 
-Esimerkin tulostus:
-```
-{"nimi":"Matti Meikäläinen","ikä":30,"onkoOhjelmoija":true}
+Tulosteen pitäisi olla:
+
+```json
+{"nimi":"Alex","ika":30}
 ```
 
-## Deep Dive (Syväsukellus):
-JSON (JavaScript Object Notation) kehitettiin 2000-luvun alussa ja yleistyi nopeasti AJAX-sovellusten kanssa. XML oli ennen JSONia, mutta JSON voitti suosiotaan keveytensä ja selkeytensä ansiosta. `org.json` on vanhin Java-kirjasto JSONille. `Jackson` ja `Gson` ovat nopeampia ja tarjoavat lisää toiminnallisuutta, kuten datan sidonta Java-olioiden ja JSONin välillä.
+Nyt, deserialisoidaan (luetaan) JSON takaisin Java-olioksi:
 
-## See Also (Katso Myös):
-- [Gson-kirjaston GitHub-sivu](https://github.com/google/gson)
-- [Jackson-kirjaston GitHub-sivu](https://github.com/FasterXML/jackson)
-- [Java JSON API (JSON-P)](https://javaee.github.io/jsonp/)
+```java
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+public class JsonEsimerkki {
+    public static void main(String[] args) {
+        String json = "{\"nimi\":\"Alex\",\"ika\":30}";
+        try {
+            ObjectMapper mapper = new ObjectMapper();
+            Henkilo henkilo = mapper.readValue(json, Henkilo.class);
+            System.out.println(henkilo.nimi + " on " + henkilo.ika + " vuotta vanha.");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+Tulosteena on:
+
+```
+Alex on 30 vuotta vanha.
+```
+
+## Syväluotaus
+JSONin yksinkertaisuus ja tehokkuus ovat tehneet siitä de facto -standardin datan vaihtoon webissä, syrjäyttäen XML:n valtaistuimeltaan. Esitelty 2000-luvun alussa, JSON on johdettu JavaScriptistä, mutta nyt se on tuettu useimmissa kielissä.
+
+Vaihtoehtoja JSONille ovat mm. XML, joka on verbosimpi, ja binaarimuodot kuten Protocol Buffers tai MessagePack, jotka eivät ole ihmisen luettavia mutta ovat tehokkaampia koossa ja nopeudessa. Kullakin on käyttötapauksensa; valinta riippuu erityisistä datatarpeistasi ja kontekstistasi.
+
+Javassa, `Jackson`in ja `Gson`in lisäksi, meillä on `JsonB` ja `org.json` muita kirjastoja JSONin käsittelyyn. Jackson tarjoaa stream-pohjaisen prosessoinnin ja on tunnettu nopeudestaan, kun taas Gsonia juhlitaan sen helppokäyttöisyydestä. JsonB on osa Jakarta EE:tä, tarjoten standardoidumman lähestymistavan.
+
+Kun toteutat JSONia, muista käsitellä poikkeuksesi asianmukaisesti - koodisi tulisi olla vankka huonoja syötteitä vastaan. Harkitse myös automaattisen datan sitomisen turvallisuusimpikaatioita – varmista aina syötteesi!
+
+## Katso Myös
+- [Jackson-projekti](https://github.com/FasterXML/jackson)
+- [Gson-projekti](https://github.com/google/gson)
+- [JSON-spesifikaatio](https://www.json.org/json-en.html)
+- [JsonB-spesifikaatio](https://jakarta.ee/specifications/jsonb/)

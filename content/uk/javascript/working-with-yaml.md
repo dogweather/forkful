@@ -1,61 +1,94 @@
 ---
 title:                "Робота з YAML"
-date:                  2024-01-19
+date:                  2024-02-03T19:25:59.457791-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Робота з YAML"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/javascript/working-with-yaml.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Що це таке & Навіщо?
+## Що та чому?
 
-YAML — це формат представлення даних, яким люблять користуватися для конфігурації через його чистоту та зручність. Програмісти використовують YAML, бо він легко читається людиною і гарно вписується в автоматизаційні сценарії.
+YAML, що розшифровується як YAML Ain't Markup Language (YAML — це не мова розмітки), — це формат серіалізації даних, придатний для читання людиною. Програмісти часто використовують його для файлів конфігурації та обміну даними між мовами завдяки його простоті та зручності порівняно із JSON або XML.
 
-## Як це зробити:
+## Як користуватися:
 
-Для роботи з YAML у JavaScript, потрібно встановити пакет, наприклад `js-yaml`. Використовуйте команду `npm`:
+У JavaScript робота з YAML, як правило, передбачає використання сторонньої бібліотеки, оскільки мова не має вбудованого парсера для YAML. Однією з найпопулярніших бібліотек для цих цілей є `js-yaml`. Ви можете використовувати `js-yaml` для аналізу YAML у JavaScript об'єкти та навпаки.
+
+Спершу вам потрібно встановити `js-yaml`:
 
 ```bash
 npm install js-yaml
 ```
 
-Код для парсингу YAML у JS виглядає так:
+Потім ви можете використовувати його у своїх проєктах. Ось як ви можете завантажити файл YAML і аналізувати його до JavaScript об'єкта:
 
 ```javascript
+// Підключення модуля js-yaml
 const yaml = require('js-yaml');
-const fs = require('fs');
+const fs   = require('fs');
 
+// Завантаження YAML з файлу
 try {
-  const config = yaml.load(fs.readFileSync('config.yaml', 'utf8'));
-  console.log(config);
+  const doc = yaml.load(fs.readFileSync('./config.yaml', 'utf8'));
+  console.log(doc);
 } catch (e) {
   console.error(e);
 }
 ```
 
-Якщо у `config.yaml` є:
+Якщо ваш файл `config.yaml` виглядає так:
 
 ```yaml
 version: 1
 services:
-  website:
-    image: "nginx:alpine"
+  web:
+    image: "myapp/web:latest"
+    ports:
+      - "5000:5000"
 ```
 
-Виведе наступне:
+Вивід буде:
 
 ```javascript
-{ version: 1, services: { website: { image: 'nginx:alpine' } } }
+{ version: 1,
+  services: 
+   { web: 
+      { image: 'myapp/web:latest',
+        ports: [ '5000:5000' ] } } }
 ```
 
-## Поглиблений огляд:
+Для виконання зворотного перетворення, конвертування JavaScript об'єкта в рядок YAML:
 
-YAML (YAML Ain't Markup Language) з'явився у 2001 році як альтернатива XML та іншим форматам. Головні переваги YAML - його простота і зрозумілість. У JavaScript, основна альтернатива YAML - це JSON, який також легко читається і підтримується без додаткових бібліотек. При роботі з YAML важливо стежити за вирівнюванням, оскільки відступи визначають структуру даних.
+```javascript
+const yaml = require('js-yaml');
+const obj = {
+  version: 1,
+  services: {
+    web: {
+      image: "myapp/web:latest",
+      ports: ["5000:5000"]
+    }
+  }
+};
 
-## Дивіться також:
+const yamlStr = yaml.dump(obj);
+console.log(yamlStr);
+```
 
-- Документація `js-yaml`: [https://github.com/nodeca/js-yaml](https://github.com/nodeca/js-yaml)
-- YAML офіційний сайт: [https://yaml.org/](https://yaml.org/)
-- JSON vs YAML аналіз: [https://www.json2yaml.com/](https://www.json2yaml.com/)
+Цей код створить:
+
+```yaml
+version: 1
+services:
+  web:
+    image: myapp/web:latest
+    ports:
+      - '5000:5000'
+```
+
+Використовуючи `js-yaml`, ви можете легко інтегрувати аналіз та серіалізацію YAML у свої JavaScript проєкти, підвищуючи можливості обміну даними та управління конфігурацією.

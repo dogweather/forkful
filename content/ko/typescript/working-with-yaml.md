@@ -1,44 +1,93 @@
 ---
-title:                "YAML 다루기"
-date:                  2024-01-19
-simple_title:         "YAML 다루기"
-
+title:                "YAML로 작업하기"
+date:                  2024-02-03T19:27:12.661125-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "YAML로 작업하기"
 tag:                  "Data Formats and Serialization"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/typescript/working-with-yaml.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-프로그래머들이 YAML을 다루는 것은 설정, 인프라 코드, 데이터 교환 등을 위해 사용되는 데이터 직렬화 형식입니다. YAML은 읽기 쉽고 간단해서 널리 채택되고 있어요.
+## 무엇 & 왜?
+YAML은 사람 친화적으로 설계된 데이터 직렬화 언어로, 설정 파일, 프로세스 간 메시징 및 데이터 저장에 자주 사용됩니다. 프로그래머들은 복잡한 구조화된 데이터를 다룰 때 YAML의 가독성과 사용의 용이성 때문에 YAML에 의존하는 경향이 있으며, 이는 TypeScript로 개발된 애플리케이션에 탁월한 선택이 됩니다.
 
-## How to:
-YAML 파일을 읽고 쓰는 예제를 확인해보세요.
+## 방법:
+TypeScript에서 YAML을 다루는 것은 일반적으로 YAML 내용을 JavaScript 객체로 구문 분석하고, 가능하다면 JavaScript 객체를 다시 YAML로 변환하는 것을 포함합니다. 이를 위해서는 구문 분석기가 필요한데, 인기 있는 선택 중 하나는 `js-yaml`로, TypeScript 프로젝트에 쉽게 통합될 수 있는 라이브러리입니다.
 
-```TypeScript
+### js-yaml 설치하기
+먼저, 프로젝트에 `js-yaml`을 추가하세요:
+
+```bash
+npm install js-yaml
+```
+
+### YAML을 JavaScript 객체로 구문 분석하기
+다음과 같은 내용의 YAML 파일 `config.yaml`이 있다고 가정해 보세요:
+
+```yaml
+database:
+  host: localhost
+  port: 5432
+  username: user
+  password: pass
+```
+
+다음과 같이 이 파일을 읽고 JavaScript 객체로 구문 분석할 수 있습니다:
+
+```typescript
 import * as fs from 'fs';
 import * as yaml from 'js-yaml';
 
-// YAML 파일 읽기
+// YAML 파일을 읽고 구문 분석하기
 const fileContents = fs.readFileSync('./config.yaml', 'utf8');
-const data = yaml.safeLoad(fileContents);
-console.log(data);
+const data = yaml.load(fileContents) as Record<string, any>;
 
-// YAML 파일 쓰기
-const newData = { title: 'YAML Example', value: 42 };
-const yamlStr = yaml.safeDump(newData);
-fs.writeFileSync('./new-config.yaml', yamlStr, 'utf8');
+console.log(data);
 ```
 
-실행 결과는 `config.yaml`의 내용과 새로 작성된 `new-config.yaml` 파일 내용을 보여주게 되겠죠.
+**출력 예시:**
 
-## Deep Dive
-YAML은 "YAML Ain't Markup Language" (원래는 "Yet Another Markup Language")의 재귀 약어이며, XML이나 JSON처럼 데이터를 표현하기 위한 언어예요. JSON에 비해 가독성이 뛰어나지만, 파싱하기는 조금 더 복잡해요. `js-yaml` 라이브러리는 TypeScript나 JavaScript에서 YAML을 쉽게 다룰 수 있게 해줍니다. 대안으로는 `yamljs`, `yaml` 등이 있어요.
+```json
+{
+  "database": {
+    "host": "localhost",
+    "port": 5432,
+    "username": "user",
+    "password": "pass"
+  }
+}
+```
 
-## See Also
-- YAML 공식 사이트: https://yaml.org
-- `js-yaml` GitHub 페이지: https://github.com/nodeca/js-yaml
-- TypeScript 공식 페이지: https://www.typescriptlang.org 
+### JavaScript 객체를 YAML로 변환하기
+반대로 JavaScript 객체를 YAML 문자열로 변환해야 하는 경우, 다음과 같이 `js-yaml`을 사용할 수 있습니다:
 
-온라인 YAML 검증 도구를 사용하면 데이터 구조가 올바른 YAML인지 확인할 수 있어요.
+```typescript
+import * as yaml from 'js-yaml';
+
+const obj = {
+  title: "Example",
+  is_published: true,
+  author: {
+    name: "Jane Doe",
+    age: 34
+  }
+};
+
+const yamlStr = yaml.dump(obj);
+console.log(yamlStr);
+```
+
+**출력 예시:**
+
+```yaml
+title: Example
+is_published: true
+author:
+  name: Jane Doe
+  age: 34
+```
+
+이 스니펫은 JavaScript 객체를 YAML 문자열로 변환하여 출력합니다. 실제로는 이를 파일에 다시 쓰거나 애플리케이션의 다른 부분에서 사용할 수 있습니다.

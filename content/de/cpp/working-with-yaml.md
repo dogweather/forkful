@@ -1,61 +1,77 @@
 ---
 title:                "Arbeiten mit YAML"
-date:                  2024-01-19
+date:                  2024-02-03T19:24:32.112091-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Arbeiten mit YAML"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/cpp/working-with-yaml.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Was & Warum?)
-YAML ist ein menschenlesbares Datenformat. Entwickler nutzen es für Konfigurationsdateien und Datenübertragungen, weil es einfach und klar ist.
+## Was & Warum?
 
-## How to: (Wie geht das?)
-C++ hat keine eingebaute YAML-Unterstützung, daher verwenden wir die `yaml-cpp`-Bibliothek. Hier installierst du sie und liest eine YAML-Datei:
+YAML, das für "YAML Ain't Markup Language" steht, ist ein für Menschen lesbaren Daten-Serialisierungsformat. Programmierer nutzen es für Konfigurationsdateien, Datendumping und zum Speichern von hierarchischen Daten wegen seiner Lesbarkeit und einfach zu verstehenden Syntax im Vergleich zu XML oder JSON.
+
+## Wie:
+
+Um mit YAML in C++ zu arbeiten, ist eine beliebte Wahl die Bibliothek `yaml-cpp`. Stellen Sie zunächst sicher, dass Sie `yaml-cpp` installiert und richtig mit Ihrem C++-Projekt verlinkt haben.
+
+**Ein YAML-Datei lesen:**
 
 ```cpp
-// yaml-cpp installieren: 
-// Folge den Anweisungen auf https://github.com/jbeder/yaml-cpp
-
-#include <yaml-cpp/yaml.h>
 #include <iostream>
 #include <fstream>
-#include <string>
+#include <yaml-cpp/yaml.h>
 
 int main() {
-    // YAML-Datei laden
     YAML::Node config = YAML::LoadFile("config.yaml");
-
-    // Zugriff auf Werte
-    std::string host = config["host"].as<std::string>();
-    int port = config["port"].as<int>();
-
-    // Ausgabe
-    std::cout << "Host: " << host << "\n";
-    std::cout << "Port: " << port << "\n";
-
+    
+    if(config["title"]) {
+        std::cout << "Titel: " << config["title"].as<std::string>() << std::endl;
+    }
+    
     return 0;
 }
 ```
 
-Beispiel `config.yaml`:
+Angenommen, eine `config.yaml` sieht so aus:
+
 ```yaml
-host: localhost
-port: 8080
+title: "Beispiel YAML"
 ```
 
-Sample Output:
+Die Ausführung des obenstehenden C++-Codes würde produzieren:
+
 ```
-Host: localhost
-Port: 8080
+Titel: Beispiel YAML
 ```
 
-## Deep Dive (Tiefergehendes)
-YAML entstand Anfang der 2000er als Alternative zu XML und ähnelt JSON. Im Gegensatz zu JSON betont YAML Lesbarkeit und unterstützt Kommentare. `yaml-cpp` bietet eine C++-spezifische Implementierung, aber es gibt auch Bibliotheken für andere Sprachen wie PyYAML für Python.
+**In eine YAML-Datei schreiben:**
 
-## See Also (Siehe auch)
-- YAML-Spezifikation: https://yaml.org/spec/1.2/spec.html
-- `yaml-cpp` GitHub-Repo: https://github.com/jbeder/yaml-cpp
-- YAML-Tutorial: https://learnxinyminutes.com/docs/yaml/
+```cpp
+#include <fstream>
+#include <yaml-cpp/yaml.h>
+
+int main() {
+    YAML::Emitter out;
+    out << YAML::BeginMap;
+    out << YAML::Key << "title" << YAML::Value << "Beispiel YAML";
+    out << YAML::EndMap;
+    
+    std::ofstream fout("output.yaml");
+    fout << out.c_str();
+    
+    return 0;
+}
+```
+
+Dieser Code wird eine `output.yaml` mit dem Inhalt erstellen:
+
+```yaml
+title: Beispiel YAML
+```
+
+Diese Beispiele dienen als eine grundlegende Einführung zum Lesen von und Schreiben in YAML-Dateien in C++ unter Verwendung der `yaml-cpp` Bibliothek. Für komplexere Strukturen und Anwendungsfälle erkunden Sie die `yaml-cpp` Dokumentation für Funktionen wie Sequenzen, Tags und fortgeschrittenere Serialisierungs- und Deserialisierungstechniken.

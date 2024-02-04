@@ -1,52 +1,50 @@
 ---
-title:                "Przetwarzanie HTML"
-date:                  2024-01-20T15:32:32.480293-07:00
-simple_title:         "Przetwarzanie HTML"
-
+title:                "Analiza składniowa HTML"
+date:                  2024-02-03T19:12:37.346264-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Analiza składniowa HTML"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/kotlin/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Parsing HTML pozwala nam na wydobywanie i manipulację danymi ze stron internetowych. Programiści robią to, aby pobierać potrzebne informacje lub interaktywnie integrować się z innymi serwisami webowymi.
+## Co i dlaczego?
+Parsowanie HTML oznacza rozbieranie znaczników strony internetowej na coś, co program może zrozumieć i manipulować. Programiści parsują HTML w celu ekstrakcji danych, automatyzacji interakcji webowych lub migracji treści między systemami.
 
-## How to:
-Parsowanie HTML w Kotlinie jest proste z biblioteką jsoup. Oto jak:
+## Jak to zrobić:
+Kotlin ułatwia parsowanie HTML dzięki bibliotekom takim jak Jsoup. Oto jak to zrobić:
 
-```kotlin
+```Kotlin
 import org.jsoup.Jsoup
 
 fun main() {
-    val html = "<html><head><title>Przykładowy Tytuł</title></head>" +
-               "<body><p>Witaj, Kotlin!</p></body></html>"
+    val html = "<html><head><title>Przykładowa strona</title></head><body><p>To jest test.</p></body></html>"
     val doc = Jsoup.parse(html)
-    
-    // Wydobądź treść tytułu
-    val title = doc.title()
-    println("Tytuł: $title")
 
-    // Znajdź paragraf i wydrukuj jego zawartość
-    val pText = doc.select("p").first().text()
-    println("Paragraf: $pText")
+    val title = doc.title()
+    println("Tytuł: $title")  // Wyjście: Tytuł: Przykładowa strona
+
+    val pText = doc.select("p").first()?.text()
+    println("Paragraf: $pText")  // Wyjście: Paragraf: To jest test.
 }
 ```
-Wyjście próbkowe:
-```
-Tytuł: Przykładowy Tytuł
-Paragraf: Witaj, Kotlin!
-```
 
-## Deep Dive:
-Parsowanie HTML zyskało na znaczeniu wraz z boomem na WWW w latach 90'. Do dziś, to podstawowa umiejętność w web scrapingu i data miningu.
+Chwytamy tytuł i tekst paragrafu, ledwo drapiąc powierzchnię tego, co Jsoup może zrobić. Ale to dobry początek.
 
-Alternatywami dla jsoup mogą być biblioteki jak HtmlUnit czy AngleSharp (dla C#) oraz mechanizmy wbudowane w język (np. lxml w Pythonie).
+## Głębsze zanurzenie:
+Przed Kotlinem, do tego często używano Javy, nieraz niezgrabnie. Jsoup zmienił zasady gry, dostarczając podejście podobne do jQuery. Parsowanie HTML nie jest wyłączne dla Jsoup; istnieją również inne biblioteki, takie jak HtmlUnit czy nawet wyrażenia regularne (chociaż nie zaleca się ich używania). Dzięki Jsoup zapewniasz, że parsowanie respektuje strukturę dokumentu. Używa modelu DOM, umożliwiając selekcję i manipulację elementami. Jest też odporny - potrafi parsować nawet najbardziej zagmatwane HTML.
 
-Implementacja w Kotlinie z jsoup jest wygodna, ponieważ biblioteka ta jest wystarczająco elastyczna, by obsłużyć różnorodne struktury HTML, a także zapewnia potężne API do selekcji i manipulacji elementami.
+## Zobacz także:
+Pogłęb swoją wiedzę na temat Jsoup:
 
-## See Also:
-- Jsoup Documentation: https://jsoup.org/
-- Wprowadzenie do Web Scrapingu z Kotlinem: https://medium.com/@ssaurel/learn-how-to-make-web-scraping-in-kotlin-542043c43b96
-- HTMLUnit: http://htmlunit.sourceforge.net/
-- AngleSharp (biblioteka .NET, ale dobra dla inspiracji): https://anglesharp.github.io/
+- Oficjalna dokumentacja Jsoup: https://jsoup.org/
+- Książka "Kotlin dla programistów Androida": https://antonioleiva.com/kotlin-android-developers-book/
+- Oficjalna strona języka programowania Kotlin: https://kotlinlang.org/
+
+Dla szerszych dyskusji i poradników na temat web scrapingu i parsowania:
+
+- Web Scraping z Kotlinem i Jsoup: https://medium.com/@hadiyarajesh/web-scraping-with-kotlin-and-jsoup-8b5b6c31c5a5
+- Parsowanie HTML na Androidzie z Kotlinem i Jsoup: https://proandroiddev.com/parsing-html-on-android-1b766658be6a

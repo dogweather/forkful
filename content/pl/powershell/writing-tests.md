@@ -1,51 +1,76 @@
 ---
 title:                "Pisanie testów"
-date:                  2024-01-19
+date:                  2024-02-03T19:31:44.241871-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Pisanie testów"
-
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/powershell/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Co i dlaczego?
-Pisanie testów to sprawdzanie kodu pod kątem błędów i niezamierzonych zachowań. Programiści robią to, by upewnić się, że ich kod jest solidny i niezawodny przed wdrożeniem.
+
+Pisanie testów w PowerShellu polega na tworzeniu skryptów, które automatycznie weryfikują funkcjonalność Twojego kodu PowerShell, zapewniając, że zachowuje się on zgodnie z oczekiwaniami. Programiści robią to, aby wyłapywać błędy na wczesnym etapie, upraszczać konserwację kodu i zapewniać, że modyfikacje kodu nie zakłócają niezamierzenie istniejącej funkcjonalności.
 
 ## Jak to zrobić:
-```PowerShell
-# Instalacja modułu Pester - frameworka testowego PowerShell
-Install-Module -Name Pester -Force -SkipPublisherCheck
 
-# Przykładowy test sprawdzający działanie funkcji 'Add-Numbers'
-function Add-Numbers ($a, $b) {
-  return $a + $b
+PowerShell nie ma wbudowanego frameworka do testowania, ale szeroko stosowanym, popularnym modułem zewnętrznym do pisania i uruchamiania testów jest Pester. Oto, jak zacząć używać Pestera do testowania twoich funkcji PowerShell.
+
+Najpierw zainstaluj Pester, jeśli jeszcze tego nie zrobiłeś:
+
+```powershell
+Install-Module -Name Pester -Scope CurrentUser -Force
+```
+
+Następnie, zakładając, że masz prostą funkcję PowerShell, którą chcesz przetestować, zapisaną jako `MyFunction.ps1`:
+
+```powershell
+function Get-MultipliedNumber {
+    param (
+        [int]$Number,
+        [int]$Multiplier = 2
+    )
+
+    return $Number * $Multiplier
 }
+```
 
-Describe "Add-Numbers Tests" {
-  It "adds two numbers" {
-    Add-Numbers 2 3 | Should -Be 5
-  }
-  
-  It "fails for non-numeric input" {
-    { Add-Numbers 2 'x' } | Should -Throw
-  }
+Aby przetestować tę funkcję za pomocą Pestera, utwórz skrypt testowy o nazwie `MyFunction.Tests.ps1`. W tym skrypcie użyj bloków `Describe` i `It` Pestera, aby zdefiniować przypadki testowe:
+
+```powershell
+# Importuj funkcję do testowania
+. .\MyFunction.ps1
+
+Describe "Testy Get-MultipliedNumber" {
+    It "Mnoży liczbę przez 2, gdy nie podano mnożnika" {
+        $result = Get-MultipliedNumber -Number 3
+        $result | Should -Be 6
+    }
+
+    It "Poprawnie mnoży liczbę przez podany mnożnik" {
+        $result = Get-MultipliedNumber -Number 3 -Multiplier 3
+        $result | Should -Be 9
+    }
 }
-
-# Wykonanie testów
-Invoke-Pester
 ```
 
-Wyjście:
-```
-Describing Add-Numbers Tests
-  [+] adds two numbers 1ms
-  [+] fails for non-numeric input 76ms
+Aby uruchomić testy, otwórz PowerShell, przejdź do katalogu zawierającego skrypt testowy i użyj polecenia `Invoke-Pester`:
+
+```powershell
+Invoke-Pester .\MyFunction.Tests.ps1
 ```
 
-## Zanurzamy się głębiej:
-Pester, najpopularniejszy framework testowy w PowerShell, pojawił się w wersji 3.0 w 2015 roku, oferując bogatą składnię i wsparcie dla testowania infrastruktury. Alternatywy dla Pester to np. .NET-owe NUnit z dodatkowym modułem PSate. Ważne, że Pester pozwala na testowanie kodu jednostkowo (unit testing) i behawioralnie (behaviour-driven development - BDD).
+Przykładowy wynik będzie wyglądał tak, wskazując, czy twoje testy zakończyły się sukcesem, czy porażką:
 
-## Zobacz również:
-- [Pester, the PowerShell testing framework](https://pester.dev)
-- [PowerShell Gallery | Pester](https://www.powershellgallery.com/packages/Pester)
+```
+Starting discovery in 1 files.
+Discovery finished in 152ms.
+[+] C:\ścieżka\do\MyFunction.Tests.ps1 204ms (182ms|16ms)
+Tests completed in 204ms
+Tests Passed: 2, Failed: 0, Skipped: 0 NotRun: 0
+```
+
+Ten wynik pokazuje, że oba testy zakończyły się sukcesem, dając ci pewność, że twoja funkcja `Get-MultipliedNumber` zachowuje się zgodnie z oczekiwaniami w scenariuszach, które przetestowałeś.

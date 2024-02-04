@@ -1,42 +1,53 @@
 ---
 title:                "Pisanie do standardowego błędu"
-date:                  2024-01-19
+date:                  2024-02-03T19:33:10.807558-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Pisanie do standardowego błędu"
-
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/elixir/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
-Pisanie do standardowego błędu (stderr) pozwala oddzielić komunikaty o błędach od normalnego wyjścia programu. Ułatwia to debugowanie i logowanie, ponieważ błędy można przekierować i przetworzyć osobno.
+## Co i dlaczego?
+
+Pisanie do standardowego błędu (stderr) w Elixirze to sposób na kierowanie komunikatów o błędach i diagnostyki, oddzielnie od głównego wyniku (stdout). Programiści używają stderr do debugowania i obsługi błędów bez zaśmiecania głównego wyniku programu, co ułatwia identyfikację i rozwiązywanie problemów.
 
 ## Jak to zrobić:
-W Elixirze możesz pisać do stderr używając modułu `IO` i funkcji `puts/2` z argumentem `:stderr`.
+
+W Elixirze możesz użyć funkcji modułu `IO` takich jak `IO.puts/2` i `IO.warn/2`, aby pisać wiadomości do standardowego błędu:
 
 ```elixir
-# Wysyłanie komunikatu do stderr
-IO.puts(:stderr, "Wystąpił błąd!")
+# Pisanie prostej wiadomości do stderr
+IO.puts(:stderr, "Błąd: Coś poszło nie tak!")
 
-# Przykładowe wyjście: Wystąpił błąd!
+# Używanie IO.warn, które jest bardziej semantyczne dla ostrzeżeń/błędów
+IO.warn("Ostrzeżenie: Zaraz przekroczysz limit!")
 ```
 
-Jeżeli chcesz użyć bardziej zaawansowanych funkcji, jak formatowanie, użyj `IO.warn/2`.
+Przykładowe wyjście w terminalu dla `IO.puts/2`:
+```
+Błąd: Coś poszło nie tak!
+```
+
+Dla `IO.warn/2`, wyjście byłoby podobne, ale `IO.warn/2` jest specjalnie zaprojektowane dla ostrzeżeń i może zawierać dodatkowe formatowanie lub zachowanie w przyszłych wersjach Elixira.
+
+**Używanie bibliotek innych firm**
+
+Chociaż standardowa biblioteka Elixira jest zazwyczaj wystarczająca do obsługi wyjścia błędu standardowego, możesz uznać biblioteki takie jak `Logger` za przydatne do bardziej złożonych aplikacji lub do konfigurowania różnych poziomów i wyjść logów.
+
+Przykład użycia `Loggera` do wypisania komunikatu o błędzie:
 
 ```elixir
-# Wysyłanie sformatowanego komunikatu do stderr
-IO.warn("To jest ostrzeżenie z parametrem: %{param}", param: "wartość")
+require Logger
 
-# Przykładowe wyjście: To jest ostrzeżenie z parametrem: wartość
+# Konfiguracja Loggera do wypisywania na stderr
+Logger.configure_backend(:console, device: :stderr)
+
+# Pisanie wiadomości o błędzie
+Logger.error("Błąd: Nie udało się połączyć z bazą danych.")
 ```
 
-## Głębsze spojrzenie:
-W systemach Uniksowych, stdout i stderr to dwa osobne kanały wyjściowe; stdout jest dla normalnego wyjścia programu, a stderr dla błędów i ostrzeżeń. To rozdzielenie pozwala na łatwe przekierowanie tych strumieni do innych programów lub plików. W Elixirze, wszystko jest obsługiwane przez Moduł `IO`, który zapewnia interakcję z terminalami używając różnych funkcji jak `puts/2` czy `warn/2`. Historia stderr sięga pierwszych dni Uniksa i koncepcji strumieni danych.
-
-Alternatywnie, można użyć niskopoziomowych funkcji z Erlanga, na przykład `:erlang.display/1`, ale to nie jest zalecane do standardowego wykorzystania i służy głównie do debugowania VM.
-
-## Zobacz także:
-- Dokumentacja `IO` w Elixirze: https://hexdocs.pm/elixir/IO.html
-- Artykuł o strumieniach wejścia/wyjścia w Uniksie: https://en.wikipedia.org/wiki/Standard_streams
-- Przydatny przewodnik o przekierowaniu strumieni w systemie Uniks: https://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO-3.html
+Ta konfiguracja kieruje wyjście `Loggera` specjalnie do stderr, co jest przydatne do oddzielania logowania błędów od standardowych wiadomości logów.

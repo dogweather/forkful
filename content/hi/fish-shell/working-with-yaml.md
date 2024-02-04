@@ -1,44 +1,82 @@
 ---
-title:                "यामल के साथ काम करना"
-date:                  2024-01-19
-simple_title:         "यामल के साथ काम करना"
-
+title:                "YAML के साथ काम करना"
+date:                  2024-02-03T19:26:00.437521-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "YAML के साथ काम करना"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/fish-shell/working-with-yaml.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (क्या और क्यों?)
+## क्या और क्यों?
+YAML के साथ काम करना यानी YAML (YAML Ain't Markup Language) फ़ाइलों का पार्सिंग और हेरफेर करना, एक डेटा सीरियलाइजेशन फॉर्मेट जिसका उपयोग कॉन्फ़िगरेशन फ़ाइलों में किया जाता है, Fish Shell में। प्रोग्रामर यह नौकरियों को स्वचालित और कुशलतापूर्वक कॉन्फ़िगर करने के लिए करते हैं, जो शेल वातावरणों के संदर्भ में कॉन्फ़िगरेशन प्रबंधन और संसाधनों की प्रावधान की जैसी कार्यो को सुगम बनाता है।
 
-YAML एक डेटा सीरियलाइज़ेशन फॉर्मेट है, जिसे कॉन्फ़िगरेशन फ़ाइलों और डेटा संचार के लिए आसानी से पढ़ा जा सकता है। प्रोग्रामर्स YAML का उपयोग कॉन्फ़िगरेशन और डेटा संरचनाओं को समझने और उन्हें मैनेज करने के लिए करते हैं।
+## कैसे:
+Fish Shell में YAML को पार्स करने के लिए अंतर्निहित समर्थन नहीं है, लेकिन आप `yq` (एक हल्का और पोर्टेबल कमांड-लाइन YAML प्रोसेसर) जैसे तृतीय-पक्ष उपकरण का उपयोग करके YAML डेटा को संभाल सकते हैं।
 
-## How to: (कैसे करें:)
-
-```Fish Shell
-# Install a YAML parser, for example 'yq'
-fisher install jorgebucaran/fisher
-fisher install gazorby/fish-yq
-
-# Read a YAML file
-set config (cat config.yaml | yq .)
-
-# Extract a specific value
-set user_name (echo $config | yq .user.name)
-
-# Print the extracted value
-echo $user_name
+**yq की स्थापना (अगर पहले से स्थापित नहीं है):**
+```fish
+sudo apt-get install yq
 ```
 
-इस उदाहरण में, पहले `yq` को इनस्टॉल किया जा रहा है, फिर `config.yaml` से `user.name` का मान निकाला जा रहा है और अंत में प्रिंट किया जा रहा है।
+**एक YAML फाइल से मान पढ़ना:**
+मान लें आपके पास `config.yaml` नामक एक YAML फ़ाइल है जिसमें निम्नलिखित सामग्री है:
+```yaml
+database:
+  host: localhost
+  port: 3306
+```
 
-## Deep Dive (गहराई में जानकारी)
+डेटाबेस होस्ट पढ़ने के लिए, आप उपयोग करेंगे:
+```fish
+set host (yq e '.database.host' config.yaml)
+echo $host
+```
+**नमूना आउटपुट:**
+```
+localhost
+```
 
-YAML, "YAML Ain't Markup Language" के लिए है और इसका डेवेलपमेंट 2001 में शुरू हुआ था। इसका मुख्य उद्देश्य ह्यूमन-रीडेबल डेटा सीरियलाइज़ेशन फॉर्मेट प्रदान करना था। JSON और XML इसके विकल्प हैं, पर YAML ज्यादा सीधा और पठनीय होता है। `yq` एक लोकप्रिय कमांड-लाइन टूल है जिसे `jq` से प्रेरित होकर बनाया गया था जो JSON के साथ काम करता है।
+**YAML फ़ाइल में एक मान अपडेट करना:**
+`port` को `5432` में अपडेट करने के लिए, उपयोग करें:
+```fish
+yq e '.database.port = 5432' -i config.yaml
+```
+**अपडेट की पुष्टि करें:**
+```fish
+yq e '.database.port' config.yaml
+```
+**नमूना आउटपुट:**
+```
+5432
+```
 
-## See Also (यह भी देखें)
+**एक नई YAML फ़ाइल लिखना:**
+पूर्वनिर्धारित सामग्री के साथ एक नई `new_config.yaml` बनाने के लिए:
+```fish
+echo "webserver:
+  host: '127.0.0.1'
+  port: 8080" | yq e -P - > new_config.yaml
+```
+यह `yq` का उपयोग करके और सुंदर प्रिंट (-P फ्लैग) एक नई YAML फ़ाइल में एक स्ट्रिंग को प्रक्रिया करता है।
 
-- [Official YAML website](https://yaml.org)
-- [The `yq` GitHub repository](https://github.com/mikefarah/yq)
-- [Fish Shell scripting documentation](https://fishshell.com/docs/current/index.html)
-- [Fisher plugin manager for Fish Shell](https://github.com/jorgebucaran/fisher)
+**जटिल संरचनाओं का पार्सिंग:**
+अगर आपके पास एक अधिक जटिल YAML फ़ाइल है और आपको नेस्टेड अर्रेज़ या ऑब्जेक्ट्स निकालने की आवश्यकता है, तो आप:
+```fish
+echo "servers:
+  - name: server1
+    ip: 192.168.1.101
+  - name: server2
+    ip: 192.168.1.102" > servers.yaml
+
+yq e '.servers[].name' servers.yaml
+```
+**नमूना आउटपुट:**
+```
+server1
+server2
+```
+`yq` का उपयोग करके, Fish Shell विभिन्न स्वचालन और कॉन्फ़िगरेशन कार्यों के लिए YAML दस्तावेज़ों के माध्यम से नेविगेट करना और उनको हेरफेर करना सरल बनाता है।

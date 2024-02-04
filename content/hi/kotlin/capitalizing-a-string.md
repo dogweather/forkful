@@ -1,38 +1,44 @@
 ---
-title:                "स्ट्रिंग को कैपिटलाइज़ करना"
-date:                  2024-01-19
-simple_title:         "स्ट्रिंग को कैपिटलाइज़ करना"
-
+title:                "स्ट्रिंग को कैपिटलाइज करना"
+date:                  2024-02-03T19:06:21.157732-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "स्ट्रिंग को कैपिटलाइज करना"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/kotlin/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## क्या और क्यों?
-एक स्ट्रिंग को capitalize करना मतलब उसके पहले अक्षर को बड़े (uppercase) में बदलना। इसे प्रोग्रामर अक्सर यूजर इंटरफेस में सही ढंग से नाम और खिताब दिखाने के लिए करते हैं।
 
-## कैसे करें:
+प्रोग्रामिंग में एक स्ट्रिंग को कैपिटलाइज करना यदि वह पहले से नहीं है, तो स्ट्रिंग के पहले अक्षर को अपरकेस में बदलना शामिल है, जो उपयोगकर्ता इनपुट्स को फॉर्मैट करने या उपयोगकर्ता इंटरफ़ेस में टेक्स्ट को एक अधिक मानकीकृत या मानव-मित्रतापूर्ण तरीके से प्रदर्शित करने में उपयोगी है। प्रोग्रामर अपने सॉफ्टवेयर एप्लिकेशन्स के भीतर डाटा संगतता सुनिश्चित करने या विशिष्ट फॉर्मैटिंग आवश्यकताओं को पूरा करने के लिए यह कार्य करते हैं।
+
+## कैसे:
+
+कोटलिन में, स्ट्रिंग्स को मानक पुस्तकालय कार्यों का उपयोग करके कैपिटलाइज किया जा सकता है, इसके लिए तृतीय-पक्ष लाइब्रेरीज की आवश्यकता नहीं होती। कोटलिन का स्ट्रिंग्स को संभालने का दृष्टिकोण इन कार्यों को सरल और संक्षिप्त बनाता है।
+
+### पूरी स्ट्रिंग को कैपिटलाइज करना:
+
 ```kotlin
-fun capitalizeFirstChar(string: String): String {
-    if (string.isEmpty()) return ""
-    return string.first().uppercase() + string.substring(1)
-}
+val message = "hello, world!"
+val capitalizedMessage = message.uppercase()
 
-fun main() {
-    val result = capitalizeFirstChar("कोटलिन शानदार है!")
-    println(result) // Output: "कोटलिन शानदार है!"
-}
+println(capitalizedMessage) // प्रिंट होगा: HELLO, WORLD!
 ```
 
-## गहराई से समझाईये:
-पहले, Kotlin में `.capitalize()` फंक्शन होता था जो स्ट्रिंग के पहले अक्षर को एक शॉर्टकट के जरिए बड़ा बना देता था। पर, यह धीरे-धीरे हटा दिया गया क्योंकि यह लोकलाइजेशन के मुद्दों को उठा सकता था, जैसे कि गैर-Latin लिपियों में।
+### केवल पहले अक्षर को कैपिटलाइज करना:
 
-जब हम इस कार्य के लिए कस्टम फंक्शन बनाते हैं, तो हम खुद को यह सुनिश्चित करने की आजादी देते हैं कि यह बैकग्राउंड में कैसे व्यवहार करेगा।
+कोटलिन 1.5 के रूप में, `capitalize()` कार्य को हटा दिया गया है और इसे `replaceFirstChar` और एक लैम्बडा के संयोजन से बदल दिया गया है जो जांचता है कि क्या यह एक निम्नकेस अक्षर है जिसे अपरकेस में बदलना है।
 
-`.uppercase()` Kotlin 1.5 में जोड़ा गया था और यह किसी भी अक्षर को उसके uppercase वर्शन में बदल देता है, इसे सही तरीके से हैंडल करते हुए कि परिणाम लोकलाइज हो।
+```kotlin
+val greeting = "hello, world!"
+val capitalizedGreeting = greeting.replaceFirstChar {
+    if (it.isLowerCase()) it.titlecase() else it.toString()
+}
 
-## देखें भी:
-- Kotlin String Documentation: [Kotlin String Functions](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/)
-- Kotlin Standard Library Reference: [Kotlin Standard Library](https://kotlinlang.org/api/latest/jvm/stdlib/)
-- Unicode Standard for Case Operations: [Unicode Standard](http://www.unicode.org/versions/Unicode13.0.0/)
+println(capitalizedGreeting) // प्रिंट होगा: Hello, world!
+```
+
+यह दृष्टिकोण पूरे वाक्य को इसके मूल रूप में ही रखता है जबकि केवल पहले अक्षर को अपरकेस में बदलता है।

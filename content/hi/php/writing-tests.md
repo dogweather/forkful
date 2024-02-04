@@ -1,58 +1,86 @@
 ---
-title:                "परीक्षण लिखना"
-date:                  2024-01-19
-simple_title:         "परीक्षण लिखना"
-
+title:                "टेस्ट लिखना"
+date:                  2024-02-03T19:31:56.377925-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "टेस्ट लिखना"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/php/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (क्या & क्यों?)
-टेस्ट लेखन यानी कोड की जांच करने के लिए खास टेस्ट केस तैयार करना। यह प्रोग्रामर्स को बग्स खोजने, सॉफ्टवेयर की क्वालिटी सुधारने और नई फीचर्स को बिना डरे जोड़ने में मदद करता है।
+## क्या और क्यों?
+प्रोग्रामिंग में परीक्षण लिखना ऐसी स्क्रिप्ट बनाने और चलाने की प्रक्रिया है जो यह सत्यापित करती हैं कि विभिन्न परिस्थितियों के अन्तर्गत कोड अपेक्षित ढंग से व्यवहार करता है या नहीं। प्रोग्रामर इसे गुणवत्ता सुनिश्चित करने, रिग्रेशंस को रोकने, और सुरक्षित रिफैक्टरिंग की सुविधा देने के लिए करते हैं, जो कि एक स्वस्थ, स्केलेबल, और बग-मुक्त कोडबेस बनाए रखने के लिए महत्वपूर्ण है।
 
-## How to: (कैसे करें:)
-आइए PHPUnit का उपयोग करके बेसिक टेस्ट केस लिखना सीखें। सबसे पहले, `composer` के जरिए PHPUnit install करें।
-
-```PHP
-composer require --dev phpunit/phpunit
+## कैसे:
+### नेटिव PHP – PHPUnit
+PHP में परीक्षण के लिए एक व्यापक रूप से प्रयुक्त उपकरण PHPUnit है। इसे Composer के माध्यम से इंस्टॉल करें:
+```bash
+composer require --dev phpunit/phpunit ^9
 ```
 
-अब एक सिंपल PHP क्लास बनाएं जो किसी संख्या को दोगुना कर देगी:
-
-```PHP
-class Doubler {
-    public function double($number) {
-        return $number * 2;
-    }
-}
-```
-
-फिर इसके लिए एक टेस्ट केस लिखें:
-
-```PHP
+#### एक साधारण परीक्षण लिखना:
+`tests` निर्देशिका में एक `CalculatorTest.php` फाइल बनाएं:
+```php
 use PHPUnit\Framework\TestCase;
 
-class DoublerTest extends TestCase {
-    public function testDouble() {
-        $doubler = new Doubler();
-        $this->assertEquals(4, $doubler->double(2));
+// मान लीजिए कि आपके पास संख्याओं को जोड़ने वाला एक Calculator क्लास है
+class CalculatorTest extends TestCase
+{
+    public function testAdd()
+    {
+        $calculator = new Calculator();
+        $this->assertEquals(4, $calculator->add(2, 2));
     }
 }
 ```
-
-जब आप `phpunit` चलाएंगे, आपको कुछ ऐसा आउटपुट दिखाई देगा:
-
+परीक्षणों को इस के साथ चलाएँ:
+```bash
+./vendor/bin/phpunit tests
 ```
+
+#### नमूना आउटपुट:
+```
+PHPUnit 9.5.10 by Sebastian Bergmann and contributors.
+
+.                                                                   1 / 1 (100%)
+
+Time: 00:00.005, Memory: 6.00 MB
+
 OK (1 test, 1 assertion)
 ```
 
-## Deep Dive (गहराई में जानकारी)
-PHPUnit की शुरुआत 2004 में Sebastian Bergmann ने की थी, और आज यह PHP का मानक यूनिट टेस्टिंग फ्रेमवर्क है। टेस्ट ड्रिवन डेवलपमेंट (TDD) और बिहेवियर ड्रिवन डेवलपमेंट (BDD) जैसी अल्टरनेटिव टेस्टिंग प्रैक्टिसेज भी हैं। PHPUnit के साथ मॉक ऑब्जेक्ट्स, डेटा प्रोवाइडर्स और डिपेंडेंसी इंजेक्शन जैसी उन्नत तकनीकों का इस्तेमाल भी होता है।
+### तृतीय-पक्ष पुस्तकालय – Mockery
+जटिल परीक्षण, जिसमें मॉक ऑब्जेक्ट्स शामिल हैं, के लिए Mockery एक लोकप्रिय विकल्प है।
 
-## See Also (इसे भी देखें)
-- [PHPUnit Manual](https://phpunit.de/manual/current/en/index.html)
-- [Composer](https://getcomposer.org/)
-- [PHP: The Right Way](https://phptherightway.com/#testing)
-- [Martin Fowler's guide to Continuous Integration](https://martinfowler.com/articles/continuousIntegration.html)
+```bash
+composer require --dev mockery/mockery
+```
+
+#### PHPUnit के साथ Mockery को एकीकृत करना:
+```php
+use PHPUnit\Framework\TestCase;
+use Mockery as m;
+
+class ServiceTest extends TestCase
+{
+    public function tearDown(): void
+    {
+        m::close();
+    }
+
+    public function testServiceCallsExternalService()
+    {
+        $externalServiceMock = m::mock(ExternalService::class);
+        $externalServiceMock->shouldReceive('process')->once()->andReturn('mocked result');
+
+        $service = new Service($externalServiceMock);
+        $result = $service->execute();
+
+        $this->assertEquals('mocked result', $result);
+    }
+}
+```
+चलाने के लिए, ऊपर दिए गए समान PHPUnit कमांड का उपयोग करें। Mockery अभिव्यक्ति और लचीले मॉक ऑब्जेक्ट्स की अनुमति देता है, जिससे आपके अनुप्रयोग के भीतर जटिल आपसी संवादों का परीक्षण करना सुविधाजनक हो जाता है।

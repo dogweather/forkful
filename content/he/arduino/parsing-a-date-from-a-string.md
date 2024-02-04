@@ -1,47 +1,91 @@
 ---
-title:                "ניתוח תאריך ממחרוזת"
-date:                  2024-01-20T15:34:35.493227-07:00
-simple_title:         "ניתוח תאריך ממחרוזת"
-
+title:                "פרסום תאריך ממחרוזת"
+date:                  2024-02-03T19:13:52.227412-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "פרסום תאריך ממחרוזת"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/arduino/parsing-a-date-from-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## מה ולמה?
-Parsing a date from a string הוא תהליך שבו ממירים טקסט לאובייקט תאריך. תכנתים זאת כדי לאפשר עיבוד נתונים והשוואות זמן בצורה אוטומטית.
+
+פיענוח תאריך ממחרוזת ב-Arduino כולל חילוץ והמרת רכיבי התאריך (שנה, חודש, יום) מייצוג טקסטואלי לתבנית שניתן להשתמש בה לשמירת זמן, השוואות או מניפולציות בתוך סקיצות. מתכנתים מבצעים לעיתים קרובות משימה זו כדי להתממשק עם רכיבים כמו שעונים בזמן אמת, מקליטים, או לעבד קלט מ-APIs של אינטרנט ומממשקי משתמש שבהם תאריכים עשויים להופיע בתבנית קריאה.
 
 ## איך לעשות:
-```Arduino
+
+גישה ישירה ללא ספריה צד שלישי:
+
+```cpp
 #include <Wire.h>
 #include <RTClib.h>
 
-RTC_DS3231 rtc;
+void setup() {
+  Serial.begin(9600);
+  // דוגמא למחרוזת תאריך בתבנית YYYY-MM-DD
+  String dateString = "2023-04-01"; 
+
+  int year = dateString.substring(0, 4).toInt();
+  int month = dateString.substring(5, 7).toInt();
+  int day = dateString.substring(8, 10).toInt();
+
+  // אתחול אובייקט DateTime עם הרכיבים שפוענחו
+  DateTime parsedDate(year, month, day);
+  
+  Serial.print("Parsed Date: ");
+  Serial.print(parsedDate.year(), DEC);
+  Serial.print("/");
+  Serial.print(parsedDate.month(), DEC);
+  Serial.print("/");
+  Serial.println(parsedDate.day(), DEC);
+}
+
+void loop() {}
+```
+
+פלט דוגמא:
+```
+Parsed Date: 2023/4/1
+```
+
+שימוש בספריה צד שלישי (‏*ArduinoJson* לסצנריות פיענוח מורכבות יותר, כמו קבלת תאריך מתגובת JSON):
+
+ראשית, התקנת ספריית ArduinoJson דרך מנהל ספריות ה-Arduino.
+
+```cpp
+#include <ArduinoJson.h>
 
 void setup() {
   Serial.begin(9600);
-  if (!rtc.begin()) {
-    Serial.println("Couldn't find RTC");
-    while (1);
-  }
+
+  // סימולציה של תגובת JSON
+  String jsonResponse = "{\"date\":\"2023-07-19\"}";
+  StaticJsonDocument<200> doc;
+  deserializeJson(doc, jsonResponse);
+
+  // חילוץ מחרוזת התאריך
+  const char* date = doc["date"];
+
+  // לפרס את התאריך מהמחרוזת כמו בעבר
+  int year = String(date).substring(0, 4).toInt();
+  int month = String(date).substring(5, 7).toInt();
+  int day = String(date).substring(8, 10).toInt();
+  
+  Serial.print("Parsed Date from JSON: ");
+  Serial.print(year);
+  Serial.print("/");
+  Serial.print(month);
+  Serial.print("/");
+  Serial.println(day);
 }
 
-void loop() {
-  DateTime now = rtc.now();
-
-  char dateStr[11];
-  sprintf(dateStr, "%d/%02d/%02d", now.year(), now.month(), now.day());
-  Serial.println(dateStr);
-
-  delay(1000);
-}
+void loop() {}
 ```
-תוצאת דוגמה: `2023/04/01`
 
-## נבחנת העמקה
-במקור, עיבוד תאריכים התבצע ידנית ודרש ידע בפורמטים. כיום, ספריות כמו `RTClib` מקלות על התהליך. גישות אלטרנטיביות כוללות שימוש ב-firmware כמו `Time.h` או מערכות זמן מובנות של מיקרו-מעבד. פרטי היישום כרוכים בלימוד ה-API של הספרייה והתאמת הפורמט לצרכים הספציפיים של המיזם.
-
-## ראה גם
-- [RTClib GitHub Repository](https://github.com/adafruit/RTClib)
-- [Arduino Official Documentation on Date and Time](https://www.arduino.cc/reference/en/libraries/rtclib/#dateTime)
+פלט דוגמא:
+```
+Parsed Date from JSON: 2023/7/19
+```

@@ -1,43 +1,56 @@
 ---
 title:                "Tekstitiedoston kirjoittaminen"
-date:                  2024-01-19
+date:                  2024-02-03T19:27:08.128092-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Tekstitiedoston kirjoittaminen"
-
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/bash/writing-a-text-file.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Tekstitiedostojen kirjoittaminen tarkoittaa tietojen tallentamista helposti luettavassa muodossa. Ohjelmoijat tekevät tämän datan säilömiseksi, lokien kirjaamiseksi ja konfiguraatioiden hallitsemiseksi.
+## Mitä & Miksi?
 
-## How to:
-Teksitiedoston kirjoittaminen ja lisäys peruskomennolla:
-```Bash
-echo "Tämä on tekstirivi" > tiedosto.txt # Luo uuden tiedoston tai korvaa olemassaolevan sisällön
-echo "Lisää tekstiä" >> tiedosto.txt    # Lisää tekstiä tiedostoon
+Tekstitiedoston kirjoittaminen Bashissa mahdollistaa datan tallennuksen, lokitiedostojen kirjoittamisen, asetusten määrittelyn ja paljon muuta automatisoidusti. Se on perustaito kuoriskriptauksessa, jonka avulla ohjelmoijat voivat tallentaa komentojen tulosteita, skriptien suorituksia tai käyttäjän syötettä raportointia, käsittelyä tai tulevia suorituksia varten.
 
-cat tiedosto.txt # Tulostaa tiedoston sisällön näytölle
-```
-Output:
-```
-Tämä on tekstirivi
-Lisää tekstiä
-```
+## Kuinka:
 
-Luodaan skripti tiedoston kirjoittamiseen:
-```Bash
-#!/bin/bash
-tiedoston_nimi="raportti.txt"
-teksti="Tarkistus suoritettu: $(date)"
-echo $teksti > $tiedoston_nimi
+Bash tarjoaa suoraviivaisia menetelmiä tiedostoon kirjoittamiseen. Yleisimpiä ovat uudelleenohjausoperaattorit (`>`, `>>`) ja `tee`-komento. Tässä on nopea katsaus molempiin tekniikoihin.
+
+Uudelleenohjauksen avulla voit kirjoittaa tulosteen suoraan tiedostoon. `>`-operaattori kirjoittaa sisällön tiedostoon korvaten sen, jos se jo olemassa, kun taas `>>` lisää olemassa olevaan tiedostoon poistamatta sen sisältöä.
+
+```bash
+# Tiedostoon kirjoittaminen käyttämällä >
+echo "Hei, maailma!" > myfile.txt
+
+# Tiedostoon liittäminen käyttämällä >>
+echo "Tässä on uusi rivi." >> myfile.txt
 ```
 
-## Deep Dive
-Ennen graafisten käyttöliittymien aikaa kaikki tiedostojen käsittely tapahtui komentoriviltä. `echo` ja `cat` ovat yksinkertaisia ja nopeita työkaluja tiedoston käsittelyyn; `echo` lähettää annetun tekstin standardiulostuloon tai tiedostoon, ja `cat` (concatenate) yhdistää ja tulostaa tiedostoja. `>` on ylikirjoitusmodaattori ja `>>` lisäysmodaattori. Modernit skriptauskielet kuten Python ja Ruby tarjoavat monipuolisempia tiedostokäsittelytoimintoja, mutta Bash-skriptaus on edelleen yleistä nopeiden ja yksinkertaisten toimintojen automatisointiin Unix-pohjaisissa järjestelmissä.
+Jos tarkistat `myfile.txt`:n sisällön suoritettuasi yllä olevat komennot, löytäisit:
 
-## See Also
-- GNU Core Utilities: https://www.gnu.org/software/coreutils/
-- Bash-skriptausopas: https://www.gnu.org/software/bash/manual/bash.html
-- Linux-komentorivin perusteet (kirja): https://www.linuxcommand.org/tlcl.php
+```
+Hei, maailma!
+Tässä on uusi rivi.
+```
+
+`Tee`-komento on kätevä, kun haluat kirjoittaa tiedostoon ja nähdä tulosteen samanaikaisesti näytöllä (stdout). Oletusarvoisesti `tee` kirjoittaa tiedoston yli, mutta `-a`-lipun avulla se lisää tiedostoon.
+
+```bash
+# Kirjoittaminen ja näyttäminen käyttäen tee
+echo "Hei, taas!" | tee myfile.txt
+
+# Lisääminen ja näyttäminen käyttäen tee -a
+echo "Lisätään toinen rivi." | tee -a myfile.txt
+```
+
+Suoritettuasi nämä, `myfile.txt` näyttäisi:
+
+```
+Hei, taas!
+Lisätään toinen rivi.
+```
+
+Vaikka Bash itsessään tarjoaa vahvat tiedostonkäsittelykyvyt uudelleenohjauksen ja komentojen, kuten `tee`, kautta, tarkempi käsittely tai monimutkaisemmat skenaariot saattavat vaatia ulkoisten työkalujen tai skriptauskielten (esim. Awk, Sed, Python) käyttöä, jotka tarjoavat monimutkaisempia tekstinkäsittelytoimintoja. Kuitenkin suurimpaan osaan yksinkertaisista tiedostonkirjoitustehtävistä edellä mainitut menetelmät ovat täysin riittäviä ja laajalti käytettyjä.

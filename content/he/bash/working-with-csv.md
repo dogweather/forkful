@@ -1,39 +1,75 @@
 ---
-title:                "עבודה עם קבצי CSV"
-date:                  2024-01-19
-simple_title:         "עבודה עם קבצי CSV"
-
+title:                "עובדים עם CSV"
+date:                  2024-02-03T19:19:03.348366-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "עובדים עם CSV"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/bash/working-with-csv.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## מה ולמה?
-עבודה עם קובצי CSV היא קריאה וכתיבה של נתונים בפורמט המופרד בפסיקים. תכנתים עובדים עם CSV כדי לייבא ולייצא נתונים בצורה פשוטה ונגישה.
+עבודה עם קבצי CSV (ערכים מופרדים בפסיקים) ב-Bash היא על אודות עיבוד והתעסקות עם נתונים טבלאיים המאוחסנים בפורמט טקסט פשוט. זה חיוני למתכנתים כיוון שזה מאפשר את האוטומציה של משימות המרה, אנליזה, ואינטגרציה של נתונים ישירות מהשורת הפקודה, ללא הצורך בכלים כבדים יותר או סביבות תכנות.
 
-## איך לעשות:
-הנה מספר דוגמאות לקריאת וכתיבת נתוני CSV בשורת הפקודה:
-קריאת קובץ CSV:
-```Bash
-while IFS=, read -r column1 column2 column3; do
-  echo "תוכן העמודה הראשונה: $column1"
-done < input.csv
+## איך ל:
+
+**קריאת קובץ CSV שורה אחר שורה**
+
+```bash
+while IFS=, read -r column1 column2 column3
+do
+  echo "עמודה 1: $column1, עמודה 2: $column2, עמודה 3: $column3"
+done < sample.csv
 ```
 
-כתיבה לקובץ CSV:
-```Bash
-echo "עמודה1,עמודה2,עמודה3" > output.csv
+*דוגמא לפלט:*
+
+```
+עמודה 1: id, עמודה 2: name, עמודה 3: email
+...
 ```
 
-הדפסת התוצאות בלבד מהעמודה השנייה:
-```Bash
-cut -d, -f2 input.csv
+**סינון שורות CSV בהתבסס על תנאי**
+
+שימוש ב-`awk`, אתה יכול בקלות לסנן שורות. לדוגמה, למצוא שורות שבהן העמודה השנייה שווה ל-"Alice":
+
+```bash
+awk -F, '$2 == "Alice" { print $0 }' sample.csv
 ```
 
-## עיון מעמיק:
-CSV הוא פורמט ותיק, נוצר בשנות ה-70 כדרך פשוטה לייצג נתונים טבלאיים. קיימות אלטרנטיבות כמו JSON וXML אך CSV עדיין נפוץ בשל פשטותו. בעת עבודה עם CSV חשוב לטפל במקרים כמו ערכים המכילים פסיקים, שורות חדשות או ציטוטים. 
+**שינוי ערך עמודה**
 
-## ראו גם:
-- [RFC 4180](https://tools.ietf.org/html/rfc4180) - המפרט הפורמלי לפורמט CSV.
-- [Pandas](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html) - ספריה ב-Python המאפשרת עבודה נוחה ומתקדמת עם נתוני CSV.
+לשנות את העמודה השנייה לאותיות גדולות:
+
+```bash
+awk -F, 'BEGIN {OFS=",";} { $2 = toupper($2); print $0; }' sample.csv
+```
+
+**מיון קובץ CSV בהתבסס על עמודה**
+
+אתה יכול למיין קובץ CSV בהתבסס על, בוא נאמר, העמודה השלישית (באופן מספרי):
+
+```bash
+sort -t, -k3,3n sample.csv
+```
+
+**שימוש ב-`csvkit` למשימות מורכבות יותר**
+
+`csvkit` הוא אוסף של כלים לשורת הפקודה להמרה ל-CSV ועבודה עם קבצי CSV. ניתן להתקין אותו דרך pip.
+
+להמיר קובץ JSON ל-CSV:
+
+```bash
+in2csv data.json > data.csv
+```
+
+לשאול קובץ CSV באמצעות SQL:
+
+```bash
+csvsql --query "SELECT name FROM sample WHERE id = 10" sample.csv
+```
+
+*שימו לב: התקנת `csvkit` דורשת Python וניתן לבצע זאת באמצעות `pip install csvkit`.*

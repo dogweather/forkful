@@ -1,47 +1,81 @@
 ---
 title:                "Pisanie do standardowego błędu"
-date:                  2024-01-19
+date:                  2024-02-03T19:32:49.675510-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Pisanie do standardowego błędu"
-
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/arduino/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Co i dlaczego?
-Wypisywanie do standardowego błędu (stderr) pozwala programom oddzielać normalne wyjście (stdout) od komunikatów o błędach. Programiści robią to, by łatwiej było im śledzić i przetwarzać błędy.
+
+Pisanie na standardowe wyjście błędów (stderr) w programowaniu Arduino polega na kierowaniu komunikatów o błędach i diagnostyki do osobnego kanału, zapewniając, że nie mieszają się one ze standardowym wyjściem (stdout). Programiści robią to, aby odróżnić normalne wyjścia programu od komunikatów o błędach, co ułatwia debugowanie i analizę logów.
 
 ## Jak to zrobić:
-Arduino nie ma dedykowanego stderr jak większość systemów operacyjnych, więc użyjemy Serial do symulacji.
 
-```Arduino
+Arduino domyślnie nie rozróżnia między standardowym wyjściem a wyjściem błędu, jak to robią konwencjonalne systemy komputerowe. Zarówno metody `Serial.print()` jak i `Serial.println()` zapisują do tego samego wyjścia szeregowego, które zwykle jest wyświetlane w Monitorze Szeregowym Arduino IDE. Jednak możemy emulować zapis na stderr, specjalnie formatując komunikaty o błędach lub kierując je do alternatywnego wyjścia, takiego jak plik na karcie SD lub przez połączenie sieciowe.
+
+Aby emulować stderr, możesz dodać do komunikatów o błędach etykietę typu "ERROR:", aby odróżnić je w Monitorze Szeregowym:
+
+```cpp
 void setup() {
-  // Zacznij komunikację szeregową
-  Serial.begin(9600);
+  Serial.begin(9600); // Inicjalizacja komunikacji szeregowej z prędkością 9600 bodów
 }
 
 void loop() {
-  // Wysyłanie normalnych danych na standardowe wyjście
-  Serial.println("Witaj, świecie!");
+  int result = someFunction();
+  if (result == -1) {
+    // Emulowanie stderr przez dodanie przed komunikatem o błędzie
+    Serial.println("ERROR: Funkcja nie została wykonana.");
+  } else {
+    Serial.println("Funkcja została wykonana pomyślnie.");
+  }
+  delay(1000); // Oczekuj sekundę przed ponownym rozpoczęciem pętli
+}
 
-  // Symulacja stderr przez prefix błędu
-  Serial.println("ERROR: Coś poszło nie tak!");
-  
-  // Czekaj 5 sekund
-  delay(5000);
+int someFunction() {
+  // Fikcyjna funkcja, która zwraca -1 w przypadku błędu
+  return -1;
 }
 ```
 
-Wynik symulowanego stderr:
+Przykładowe wyjście w Monitorze Szeregowym Arduino IDE może wyglądać tak:
+
 ```
-Witaj, świecie!
-ERROR: Coś poszło nie tak!
+ERROR: Funkcja nie została wykonana.
 ```
 
-## Deep Dive
-Historia stderr sięga systemów Unix, gdzie oddzielono wyjście programu od informacji o błędach. W Arduino brakuje prawdziwego stderr, ale można wykorzystać Serial do tego celu. Alternatywą może być użycie dedykowanego pinu do sygnalizowania stanów błędu.
+Dla projektów wymagających bardziej zaawansowanego podejścia, w tym zapisu na różne fizyczne wyjścia, konieczne może być korzystanie z bibliotek stron trzecich lub dodatkowego sprzętu. Na przykład, zapisywanie komunikatów o błędach na karcie SD wymaga biblioteki `SD`:
 
-## Zobacz także
-- [Arduino Reference: Serial](https://www.arduino.cc/reference/en/language/functions/communication/serial/)
-- [Wikipedia: Standard streams](https://en.wikipedia.org/wiki/Standard_streams)
+```cpp
+#include <SPI.h>
+#include <SD.h>
+
+File myFile;
+
+void setup() {
+  Serial.begin(9600);
+  if (!SD.begin()) {
+    Serial.println("ERROR: Inicjalizacja karty SD nie powiodła się!");
+    return;
+  }
+  
+  myFile = SD.open("error.log", FILE_WRITE);
+  if (myFile) {
+    myFile.println("ERROR: Funkcja nie została wykonana.");
+    myFile.close(); // Pamiętaj, aby zamknąć plik, aby zapisać zawartość
+  } else {
+    Serial.println("ERROR: Otwarcie error.log nie powiodło się!");
+  }
+}
+
+void loop() {
+  // Tu znajdowałby się Twój główny kod
+}
+```
+
+Z takim podejściem fizycznie oddzielasz normalne wyjście programu i komunikaty o błędach, kierując te ostatnie do pliku `error.log` na karcie SD, co umożliwia analizę post mortem bez zaciemniania głównego kanału wyjściowego.

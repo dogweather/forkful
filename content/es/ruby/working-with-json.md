@@ -1,36 +1,80 @@
 ---
 title:                "Trabajando con JSON"
-date:                  2024-01-19
+date:                  2024-02-03T19:23:53.694868-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Trabajando con JSON"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/ruby/working-with-json.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## ¿Qué & Por qué?
-JSON (JavaScript Object Notation) es un formato estándar para intercambiar datos. Programadores lo usan por su simplicidad y facilidad de integración con distintos lenguajes, incluido Ruby.
+## Qué y Por Qué?
 
-## Cómo hacerlo:
-Para trabajar con JSON en Ruby, primero necesitas tener la gema 'json' instalada. Puedes agregarla a tu `Gemfile` o instalarla ejecutando `gem install json`. Una vez instalada, parsear un JSON o convertir un objeto Ruby a JSON es sencillo:
-```Ruby
+JSON (Notación de Objetos de JavaScript) es un formato ligero de intercambio de datos, prevalente en aplicaciones web para el intercambio de datos entre clientes y servidores. Los programadores trabajan con JSON en Ruby para analizar datos recibidos de fuentes externas o para formatear datos para respuestas de API, aprovechando su estructura legible por humanos para la manipulación y almacenamiento de datos fácilmente.
+
+## Cómo:
+
+Ruby, con su biblioteca estándar, proporciona formas sin fisuras para analizar y generar JSON. El módulo principal para estas operaciones es `json`, que se puede integrar fácilmente en cualquier aplicación Ruby.
+
+### Analizando JSON:
+
+Para convertir una cadena JSON en un hash de Ruby, puedes usar el método `JSON.parse`.
+
+```ruby
 require 'json'
 
-# Convertir un string JSON a un hash de Ruby
-json_string = '{"nombre": "Juan", "edad": 30, "programador": true}'
+json_string = '{"name": "John Doe", "age": 30, "city": "New York"}'
 ruby_hash = JSON.parse(json_string)
-p ruby_hash # => {"nombre"=>"Juan", "edad"=>30, "programador"=>true}
 
-# Convertir un hash de Ruby a un string JSON
-ruby_hash = { nombre: "Juan", edad: 30, programador: true }
-json_string = ruby_hash.to_json
-puts json_string # => {"nombre":"Juan","edad":30,"programador":true}
+puts ruby_hash
+# Salida: {"name"=>"John Doe", "age"=>30, "city"=>"New York"}
 ```
 
-## Análisis Profundo:
-JSON se originó en el 2001, diseñado por Douglas Crockford. Aunque vinculado inicialmente a JavaScript, su sencillez lo convirtió en un formato de intercambio de datos universal. Alternativas a JSON incluyen XML y YAML, pero JSON predomina por su ligereza y rápida interpretación. En Ruby, la gema 'json' viene incluida desde la versión 1.9, permitiendo su implementación sin dependencias externas. Para manejo avanzado de JSON, como métodos de parseo personalizados, se pueden usar gemas como `oj` (Optimized JSON).
+### Generando JSON:
 
-## Ver También:
-- Gem `oj` (Optimized JSON): [github.com/ohler55/oj](https://github.com/ohler55/oj)
-- Tutorial completo de JSON en W3Schools: [w3schools.com/js/js_json_intro.asp](https://www.w3schools.com/js/js_json_intro.asp) (aunque enfocado en JavaScript, los conceptos básicos son aplicables a Ruby)
+De manera inversa, para convertir un hash de Ruby en una cadena JSON, usas el método `JSON.generate` o el método `to_json` disponible en objetos Ruby una vez que se requiere la biblioteca `json`.
+
+```ruby
+require 'json'
+
+ruby_hash = { name: "Jane Doe", age: 25, city: "Los Angeles" }
+json_string = ruby_hash.to_json
+
+puts json_string
+# Salida: {"name":"Jane Doe","age":25,"city":"Los Angeles"}
+```
+
+### Bibliotecas de Terceros:
+
+Si bien la biblioteca estándar de Ruby cubre el manejo básico de JSON, muchos proyectos dependen de bibliotecas de terceros para una funcionalidad y rendimiento mejorados. Una opción popular es `Oj` (Optimized JSON).
+
+#### Analizando con Oj:
+
+```ruby
+require 'oj'
+
+json_string = '{"name": "Alex", "age": 40, "city": "Chicago"}'
+ruby_hash = Oj.load(json_string)
+
+puts ruby_hash
+# Salida: {"name"=>"Alex", "age"=>40, "city"=>"Chicago"}
+```
+
+#### Generando con Oj:
+
+Oj también ofrece una forma rápida de generar JSON a partir de objetos Ruby:
+
+```ruby
+require 'oj'
+
+ruby_hash = { name: "Samantha", age: 35, city: "Miami" }
+json_string = Oj.dump(ruby_hash)
+
+puts json_string
+# Salida: {"name":"Samantha","age":35,"city":"Miami"}
+```
+
+Estos ejemplos ilustran la naturaleza sencilla de trabajar con JSON en Ruby, haciéndolo accesible para tareas que van desde manipulaciones de datos simples hasta comunicaciones complejas de API.

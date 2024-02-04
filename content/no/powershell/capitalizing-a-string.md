@@ -1,42 +1,45 @@
 ---
-title:                "Sette streng til store bokstaver"
-date:                  2024-01-19
-simple_title:         "Sette streng til store bokstaver"
-
+title:                "Sette stor bokstav i en streng"
+date:                  2024-02-03T19:06:04.268461-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Sette stor bokstav i en streng"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/powershell/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Hva & Hvorfor?
-Kapitalisering av en streng betyr å gjøre første bokstav stor i ordet eller hele strengen. Programmerere bruker det for å standardisere tekst, for eksempel for å sikre at navn eller titler vises konsistent.
+## Hva og hvorfor?
+Å sette stor forbokstav i en streng i PowerShell innebærer å transformere det første tegnet i en gitt streng til stor bokstav mens resten av strengen forblir uendret. Programmerere utfører ofte denne oppgaven for formateringsformål, slik som å forberede tekst for visning i brukergrensesnitt eller å følge grammatikalske regler i genererte dokumenter.
 
-## Hvordan gjøre det:
-Du kan kapitalisere strenger i PowerShell med `.ToUpper()`, `.ToLower()` og `[CultureInfo]::CurrentCulture.TextInfo.ToTitleCase()`. Her er noen raske eksempler:
+## Hvordan:
+PowerShell, som er et allsidig verktøy, lar deg sette stor forbokstav i en streng ved hjelp av enkle metoder uten behov for tredjepartsbiblioteker. Slik kan du gjøre det:
 
-```PowerShell
-# Gjøre hele strengen stor:
-$streng = "heisann, dette er en test."
-$storStreng = $streng.ToUpper()
-$storStreng # output: HEISANN, DETTE ER EN TEST.
-
-# Gjøre hele strengen liten:
-$litenStreng = $streng.ToLower()
-$litenStreng # output: heisann, dette er en test.
-
-# Kapitaliser hvert ord:
-$tekstInfo = [CultureInfo]::CurrentCulture.TextInfo
-$titulertStreng = $tekstInfo.ToTitleCase($streng)
-$titulertStreng # output: Heisann, Dette Er En Test.
+```powershell
+# Ved å bruke den innebygde .Net-metoden 'ToTitleCase' fra CultureInfo
+$text = "hello world"
+$culture = [System.Globalization.CultureInfo]::InvariantCulture
+$capitalizedText = $culture.TextInfo.ToTitleCase($text.ToLower())
+Write-Output $capitalizedText
+```
+Utdata:
+```
+Hello world
 ```
 
-## Dypdykk:
-Historisk sett var strengmanipulering essensielt i tidlige datasystemer for å behandle tekstdata. I PowerShell gir `.ToUpper()` og `.ToLower()` enkel tilgang til å endre store og små bokstaver. `[CultureInfo]::CurrentCulture.TextInfo.ToTitleCase()` tar hensyn til kulturelle konvensjoner og er bedre for å gjøre bokstavene i starten av hvert ord store, selv om den ikke fungerer på allerede kapitaliserte strenger perfekt.
+Merk: Denne metoden gjør den første bokstaven i hvert ord til en stor bokstav. Hvis du strengt tatt kun ønsker å sette stor forbokstav på det første tegnet i strengen og la resten være som det er, kan du gjøre noe som dette:
 
-Alternativer for kapitalisering inkluderer manuell iterasjon over tegnene i strengen, men dette er ikke praktisk i PowerShell der innebygde metoder er tilgjengelige.
+```powershell
+# Setter kun stor forbokstav på det første tegnet i en streng
+$text = "hello world"
+$capitalizedText = $text.Substring(0,1).ToUpper() + $text.Substring(1)
+Write-Output $capitalizedText
+```
+Utdata:
+```
+Hello world
+```
 
-Når det gjelder implementasjon, fungerer `.ToUpper()` og `.ToLower()` på tegnnivå og endrer ikke strengens lengde, mens `ToTitleCase()` bruker ordmønstregjenkjenning og kan bli mer komplisert, avhengig av språkets regler.
-
-## Se Også:
-- [.NET Globalization and Localization](https://docs.microsoft.com/en-us/dotnet/standard/globalization-localization/)
+PowerShell inkluderer ikke direkte en enkel funksjon for kun å sette stor forbokstav på det første bokstaven i en streng, men ved å kombinere grunnleggende strengmanipuleringsmetoder som `Substring(0,1).ToUpper()` og sammenkjeding, kan vi enkelt oppnå ønsket resultat.

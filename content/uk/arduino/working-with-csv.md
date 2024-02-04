@@ -1,59 +1,130 @@
 ---
-title:                "Робота з CSV файлами"
-date:                  2024-01-19
-simple_title:         "Робота з CSV файлами"
-
+title:                "Робота з CSV"
+date:                  2024-02-03T19:19:33.204642-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Робота з CSV"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/arduino/working-with-csv.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Що таке і чому?)
-CSV – це формат для зберігання табличних даних. Програмісти використовують його для зручності обміну даними між різними програмами та пристроями.
+## Що та Чому?
+Робота з файлами CSV (Значення, відокремлені комою) в Arduino включає читання з файлів CSV та запис у них, зазвичай зберігаючи на SD-картці, що дозволяє вести журнал даних, налаштування конфігурацій та більше. Програмісти часто обробляють CSV для збору даних сенсорів, зберігання параметрів конфігурації або взаємодії з іншими системами через його простоту і широке використання між платформами.
 
-## How to: (Як робити:)
-```Arduino
+## Як:
+Arduino не має вбудованої бібліотеки спеціально для роботи з файлами CSV, але ви можете використовувати бібліотеки `SD` та `SPI` для доступу до файлів на SD-карті, а потім парсити або генерувати дані CSV за допомогою основних технік маніпуляції з рядками. При роботі з більш складною маніпуляцією CSV може бути використана стороння бібліотека `ArduinoCSV` для легшого парсингу і запису.
+
+**Читання даних CSV з SD-карти:**
+```cpp
+#include <SPI.h>
 #include <SD.h>
-File myFile;
 
 void setup() {
   Serial.begin(9600);
-  SD.begin(10);
-  myFile = SD.open("data.csv", FILE_WRITE);
-  
-  if (myFile) {
-    myFile.println("sensor1,sensor2,sensor3"); // Writing header
-    myFile.println("23,45,67"); // Writing data
-    myFile.close(); // Always close the file
+  if (!SD.begin(4)) {
+    Serial.println("Initialization failed!");
+    return;
+  }
+  File dataFile = SD.open("data.csv");
+  if (dataFile) {
+    while (dataFile.available()) {
+      String dataLine = dataFile.readStringUntil('\n');
+      Serial.println(dataLine); // Виводить рядок CSV
+    }
+    dataFile.close();
   } else {
-    Serial.println("Error opening file");
+    Serial.println("Error opening data.csv");
   }
 }
 
 void loop() {
-  // Reading the CSV file
-  myFile = SD.open("data.csv");
-  if (myFile) {
-    while (myFile.available()) {
-      Serial.write(myFile.read());
-    }
-    myFile.close();
-  } else {
-   Serial.println("Error opening file");
-  }
+  // У цьому прикладі не використовується
 }
 ```
-Sample Output:
+*Приклад виводу:*
 ```
-sensor1,sensor2,sensor3
-23,45,67
+SensorID, Timestamp, Value
+1, 1597840923, 23.5
+2, 1597840987, 22.4
 ```
 
-## Deep Dive (Поглиблений аналіз):
-CSV створений у 1970-х і простий у використанні. Альтернативи: JSON, XML. Істотно для CSV – правильна обробка тексту та розмежування значень комами.
+**Запис даних CSV на SD-карту:**
+```cpp
+#include <SPI.h>
+#include <SD.h>
 
-## See Also (Дивіться також):
-- Arduino’s SD library reference: [SD Library](https://www.arduino.cc/en/Reference/SD)
-- Tutorial on processing CSV files in C++: [Working with CSV](https://www.geeksforgeeks.org/csv-file-management-using-c/)
-- CSV specification by RFC 4180: [RFC 4180](https://tools.ietf.org/html/rfc4180)
+void setup() {
+  Serial.begin(9600);
+  if (!SD.begin(4)) {
+    Serial.println("Initialization failed!");
+    return;
+  }
+  File dataFile = SD.open("output.csv", FILE_WRITE);
+  if (dataFile) {
+    dataFile.println("SensorID, Timestamp, Value"); // Заголовок CSV
+    dataFile.println("1, 1597840923, 23.5"); // Приклад рядка даних
+    dataFile.close();
+    Serial.println("Data written");
+  } else {
+    Serial.println("Error opening output.csv");
+  }
+}
+
+void loop() {
+  // У цьому прикладі не використовується
+}
+```
+*Приклад виводу:*
+```
+Data written
+```
+
+**Використання ArduinoCSV для парсингу:**
+Якщо ви працюєте зі складними файлами CSV, бібліотека `ArduinoCSV` може значно спростити зусилля щодо парсингу. Цей приклад передбачає, що ви вже встановили бібліотеку `ArduinoCSV`.
+
+```cpp
+#include <SPI.h>
+#include <SD.h>
+#include <ArduinoCSV.h>
+
+void setup() {
+  Serial.begin(9600);
+  if (!SD.begin(4)) {
+    Serial.println("Initialization failed!");
+    return;
+  }
+  File dataFile = SD.open("data.csv");
+  if (dataFile) {
+    CSVParser parser;
+    while (dataFile.available()) {
+      String dataLine = dataFile.readStringUntil('\n');
+      if (parser.parseLine(dataLine)) {
+        for (int i = 0; i < parser.count(); i++) {
+          Serial.print(parser.getField(i)); // Друкує кожне поле
+          if (i < parser.count() - 1) {
+            Serial.print(", ");
+          }
+        }
+        Serial.println();
+      }
+    }
+    dataFile.close();
+  } else {
+    Serial.println("Error opening data.csv");
+  }
+}
+
+void loop() {
+  // У цьому прикладі не використовується
+}
+```
+*Приклад виводу:*
+```
+SensorID,  Timestamp,  Value
+1,  1597840923,  23.5
+2,  1597840987,  22.4
+```
+У цих прикладах, завдяки читанню з файлів CSV та запису в них на SD-картці, проекти Arduino можуть легко збирати дані, зберігати налаштування конфігурації або обмінюватися даними з іншими програмами у універсально доступному форматі.

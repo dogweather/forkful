@@ -1,39 +1,50 @@
 ---
-title:                "स्ट्रिंग से दिनांक पार्स करना"
-date:                  2024-01-20T15:37:24.729108-07:00
-simple_title:         "स्ट्रिंग से दिनांक पार्स करना"
-
+title:                "स्ट्रिंग से तारीख पार्स करना"
+date:                  2024-02-03T19:15:09.478985-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "स्ट्रिंग से तारीख पार्स करना"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/javascript/parsing-a-date-from-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## क्या और क्यों?
-तारीख को स्ट्रिंग से पार्स करना यानी टेक्स्ट फॉर्म में दिये गए डेट को जावास्क्रिप्ट डेट ऑब्जेक्ट में बदलना है। प्रोग्रामर्स इसे इसलिए करते हैं ताकि वे डेटा को क्रमबद्ध, मान्यता और कैल्कुलेशन के लिए उपयोग कर सकें।
+एक स्ट्रिंग से डेट को पार्स करना प्रोग्रामर्स को टेक्स्टुअल डेट प्रतिनिधित्व को JavaScript `Date` ऑब्जेक्ट में बदलने की अनुमति देता है, जो डेट मैनिपुलेशनस, तुलना, और फॉर्मेटिंग ऑपरेशन्स को सुविधाजनक बनाता है। यह प्रक्रिया उपयोगकर्ता इनपुट, डाटाबेस से डेटा प्रोसेसिंग या स्ट्रिंग फॉर्मेट्स में डेट्स को संवाद करनेवाले APIs के साथ काम करने के लिए अत्यावश्यक है।
 
 ## कैसे करें:
-```Javascript
-// स्ट्रिंग से तारीख पार्स करने का उदाहरण
-const dateString = "2023-03-15";
-const parsedDate = new Date(dateString);
-console.log(parsedDate); // Wed Mar 15 2023 05:30:00 GMT+0530 (India Standard Time)
+JavaScript स्वाभाविक रूप से `Date.parse()` मेथड और `Date` कंस्ट्रक्टर प्रदान करता है ताकि डेट स्ट्रिंग को पार्स किया जा सके। हालांकि, इन दृष्टिकोणों में सीमाएँ और विभिन्न ब्राउज़र्स के बीच असंगतियाँ होती हैं, विशेष रूप से गैर-मानक डेट फॉर्मेटों के साथ। इन समस्याओं को संबोधित करने के लिए, `Moment.js` और `date-fns` जैसी तृतीय-पक्ष लाइब्रेरी उनकी रोबस्टता और उपयोगिता की सुविधा के लिए लोकप्रिय हैं।
 
-// ISO स्ट्रिंग के साथ पार्सिंग
-const isoString = "2023-03-15T12:00:00Z";
-const parsedISODate = new Date(isoString);
-console.log(parsedISODate); // Wed Mar 15 2023 17:30:00 GMT+0530 (India Standard Time)
+### देशी JavaScript का उपयोग करते हुए:
+```javascript
+const dateString = "2023-04-30T14:55:00";
+const dateObj = new Date(dateString);
+
+console.log(dateObj);  // आउटपुट: सन अप्रैल 30 2023 14:55:00 GMT+0000 (Coordinated Universal Time)
 ```
 
-## गहराई से जानकारी:
-जावास्क्रिप्ट में तारीख को पार्स करना एक आम काम है, जो ECMAScript 5 से आसान हो गया है, क्योंकि वहां `Date.parse()` और नए `Date` ऑब्जेक्ट के साथ आईएसओ स्टैंडर्ड फॉर्मेट का समर्थन आया था। 
+### Moment.js का उपयोग करते हुए:
+सबसे पहले, npm के माध्यम से Moment.js को इंस्टॉल करें या इसे अपने प्रोजेक्ट में शामिल करें। फिर:
+```javascript
+const moment = require('moment');
 
-वैकल्पिक तरीकों में `Date` ऑब्जेक्ट के साथ सीधे स्ट्रिंग को पार्स करना, या तारीख पुस्तकालयों जैसे कि Moment.js या Date-fns जैसे टूल्स का उपयोग करना शामिल है। इन लाइब्रेरीज में अधिक सुविधाएं और फॉर्मेट सपोर्ट होते हैं। हमेशा ध्यान रखें कि ब्राउज़रों में तारीख पार्सिंग संगतता के मुद्दे हो सकते हैं। 
+const dateString = "2023-04-30T14:55:00";
+const dateObj = moment(dateString);
 
-जब आप `new Date()` का उपयोग करते हैं, तो जावास्क्रिप्ट इंजन स्ट्रिंग को ISO 8601 फॉर्मेट में पार्स करने का प्रयास करता है। अगर फॉर्मेट मिलान नहीं होता, तो परिणाम `Invalid Date` हो सकता है। 
+console.log(dateObj.toString());  // आउटपुट: सन अप्रैल 30 2023 14:55:00 GMT+0000
+```
 
-## इसे भी देखें:
-- MDN Web Docs Date reference: [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- Moment.js Documentation: [https://momentjs.com/docs/](https://momentjs.com/docs/)
-- Date-fns Library: [https://date-fns.org/](https://date-fns.org/)
-- ISO 8601 Date and Time Format: [https://www.iso.org/iso-8601-date-and-time-format.html](https://www.iso.org/iso-8601-date-and-time-format.html)
+### date-fns का उपयोग करते हुए:
+`date-fns` को अपने प्रोजेक्ट में जोड़ने के बाद, एक डेट स्ट्रिंग को इस प्रकार पार्स करें:
+```javascript
+const { parseISO } = require('date-fns');
+
+const dateString = "2023-04-30T14:55:00";
+const dateObj = parseISO(dateString);
+
+console.log(dateObj);  // आउटपुट: 2023-04-30T14:55:00.000Z
+```
+
+`Moment.js` और `date-fns` दोनों ही विभिन्न फॉर्मैट और लोकेल्स को संभालने सहित अधिक व्यापक पार्सिंग क्षमताएँ प्रदान करते हैं, जो उन्हें जटिल अनुप्रयोगों के लिए पसंदीदा बनाता है।

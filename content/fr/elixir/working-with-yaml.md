@@ -1,42 +1,91 @@
 ---
 title:                "Travailler avec YAML"
-date:                  2024-01-19
+date:                  2024-02-03T19:25:04.778001-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Travailler avec YAML"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/elixir/working-with-yaml.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-YAML, c’est quoi ? Une langue de sérialisation de données facile à lire par les humains. Pourquoi les programmeurs l’utilisent ? Pour configurer des projets et stocker des structures de données sans tracas.
+## Quoi et pourquoi ?
 
-## How to:
+YAML, acronyme de YAML Ain't Markup Language, est un standard de sérialisation de données lisible par l'humain, couramment utilisé pour les fichiers de configuration et l'échange de données entre langages avec différentes structures de données. Les programmeurs l'utilisent en raison de sa simplicité et de sa capacité à représenter facilement des données hiérarchiques complexes.
+
+## Comment faire :
+
+Elixir n'inclut pas de support intégré pour YAML. Cependant, vous pouvez utiliser des bibliothèques tierces telles que `yamerl` ou `yaml_elixir` pour travailler avec YAML. Ici, nous nous concentrerons sur `yaml_elixir` pour sa facilité d'utilisation et ses fonctionnalités complètes.
+
+Tout d'abord, ajoutez `yaml_elixir` à vos dépendances mix.exs :
+
 ```elixir
-# Ajout de la dépendance dans mix.exs
 defp deps do
   [
-    {:yamerl, "~> 0.8.0"}
+    {:yaml_elixir, "~> 2.9"}
   ]
 end
-
-# Utilisation dans le code
-
-# Pour lire YAML
-{:ok, yaml} = File.read("config.yaml")
-{:ok, result} = :yamerl_constr.string(yaml)
-IO.inspect(result)
-
-# Pour écrire YAML, on peut utiliser une autre librairie, comme `yex`
-# Assurer qu'yex est ajouté dans deps
-my_data = %{"hello" => "world"}
-File.write!("output.yaml", Yex.encode!(my_data))
 ```
 
-## Deep Dive
-YAML a été créé en 2001, principalement par Clark Evans, aussi connu pour remplacer les fichiers de configuration XML moins lisibles. Contrairement au JSON, YAML supporte les commentaires et se prête mieux aux configurations manuelles. Elixir, n'a pas de support YAML intégré, mais grâce à la communauté, on utilise `yamerl` ou `yex`. `yamerl` est écrit en Erlang, ça joue bien avec Elixir pour la lecture de YAML, tandis que `yex` prend le relais pour l'écriture.
+Ensuite, exécutez `mix deps.get` pour récupérer la nouvelle dépendance.
 
-## See Also
-- [YAML officiel](https://yaml.org)
-- [HexDocs pour yamerl](https://hexdocs.pm/yamerl)
+### Lire YAML
+
+Étant donné un fichier YAML simple, `config.yaml`, qui ressemble à ceci :
+
+```yaml
+database:
+  adapter: postgres
+  username: user
+  password: pass
+```
+
+Vous pouvez lire ce fichier YAML et le convertir en une map Elixir comme suit :
+
+```elixir
+defmodule Config do
+  def read do
+    {:ok, contenu} = YamlElixir.read_from_file("config.yaml")
+    contenu
+  end
+end
+
+# Exemple d'utilisation
+Config.read()
+# Sortie : 
+# %{
+#   "database" => %{
+#     "adapter" => "postgres",
+#     "username" => "user",
+#     "password" => "pass"
+#   }
+# }
+```
+
+### Écrire en YAML
+
+Pour écrire une map dans un fichier YAML :
+
+```elixir
+defmodule ConfigWriter do
+  def write do
+    contenu = %{
+      database: %{
+        adapter: "mysql",
+        username: "root",
+        password: "s3cret"
+      }
+    }
+    
+    YamlElixir.write_to_file("new_config.yaml", contenu)
+  end
+end
+
+# Exemple d'utilisation
+ConfigWriter.write()
+# Cela créera ou écrasera `new_config.yaml` avec le contenu spécifié
+```
+
+Remarquez comment `yaml_elixir` permet une traduction directe entre les fichiers YAML et les structures de données Elixir, en faisant un excellent choix pour les programmeurs Elixir ayant besoin de travailler avec des données YAML.

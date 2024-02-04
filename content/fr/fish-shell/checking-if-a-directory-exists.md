@@ -1,34 +1,43 @@
 ---
-title:                "Vérification de l'existence d'un répertoire"
-date:                  2024-01-19
-simple_title:         "Vérification de l'existence d'un répertoire"
-
+title:                "Vérifier si un répertoire existe"
+date:                  2024-02-03T19:07:14.085304-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Vérifier si un répertoire existe"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/fish-shell/checking-if-a-directory-exists.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Quoi & Pourquoi ?)
-Déterminer si un répertoire existe permet d'éviter les erreurs lors de l'accès à des fichiers. Les programmeurs le font pour s'assurer que leurs scripts se comportent correctement.
+## Quoi et Pourquoi ?
+Vérifier si un répertoire existe dans le Fish Shell permet aux scripts de prendre des décisions basées sur la présence ou l'absence de structures de répertoires, facilitant des tâches comme les opérations conditionnelles sur les fichiers, les journaux d'activité ou la configuration de l'environnement. Cette technique est cruciale pour écrire des scripts robustes qui interagissent avec le système de fichiers de manière prévisible.
 
-## How to (Comment faire) :
-Voici comment vérifier l'existence d'un répertoire dans Fish Shell :
+## Comment faire :
+Le Fish Shell utilise la commande `test` pour vérifier les types de fichiers et leurs caractéristiques, y compris si une cible est un répertoire. Voici un modèle de base pour vérifier si un répertoire existe :
 
-```Fish Shell
-if test -d /chemin/vers/repertoire
-    echo "Le répertoire existe."
+```fish
+if test -d /chemin/vers/rep
+    echo "Le répertoire existe"
 else
-    echo "Le répertoire n'existe pas."
+    echo "Le répertoire n'existe pas"
+end
+```
+Exemple de sortie :
+```
+Le répertoire existe
+```
+
+Pour des opérations de fichiers et de répertoires plus rationalisées, on pourrait se tourner vers des outils externes comme `fd`, bien qu'il soit plus couramment utilisé pour trouver des fichiers et des répertoires plutôt que de juste vérifier leur existence. Cependant, le combiner avec des scripts Fish peut donner des résultats pratiques :
+
+```fish
+set dir "/chemin/vers/la/recherche"
+if fd . $dir --type directory --max-depth 1 | grep -q $dir
+    echo "Le répertoire existe"
+else
+    echo "Le répertoire n'existe pas"
 end
 ```
 
-Assurez-vous de remplacer `/chemin/vers/repertoire` par le chemin réel vers votre répertoire.
-
-## Deep Dive (Plongée en profondeur) :
-Historiquement, la commande `test` (aussi représentée par `[` ou `[[` en bash) est utilisée pour évaluer des expressions conditionnelles. Dans Fish Shell, la syntaxe est principalement la même, ce qui facilite la transition pour les nouveaux utilisateurs. En alternative, vous pouvez utiliser `if not test -d /chemin/vers/repertoire`, qui inverse la logique, ou des commandes comme `stat -c %d` pour obtenir des informations plus détaillées sur le dossier. La spécificité de Fish réside dans sa syntaxe simplifiée et sa lisibilité pour l'exécution de telles vérifications.
-
-## See Also (Voir aussi) :
-- [Documentation officielle](https://fishshell.com/docs/current/index.html)
-- [Tutoriels Fish Shell](https://fishshell.com/docs/current/tutorial.html)
-- [Guide des meilleures pratiques](https://github.com/jorgebucaran/fisher/blob/master/README.md)
+Cet exemple `fd` recherche le répertoire à une profondeur spécifiée, et `grep` vérifie la correspondance, le rendant versatile pour des vérifications nuancées. Cependant, pour le but direct de vérifier l'existence, se tenir à la commande `test` intégrée de Fish est à la fois efficace et simple.

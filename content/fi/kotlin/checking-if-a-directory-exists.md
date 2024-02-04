@@ -1,36 +1,43 @@
 ---
-title:                "Onko hakemisto olemassa? Tarkistaminen"
-date:                  2024-01-20T14:57:30.415272-07:00
-simple_title:         "Onko hakemisto olemassa? Tarkistaminen"
-
+title:                "Tarkistetaan, onko hakemisto olemassa"
+date:                  2024-02-03T19:07:47.755635-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Tarkistetaan, onko hakemisto olemassa"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/kotlin/checking-if-a-directory-exists.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Mitä & Miksi?)
-Tarkistetaan, onko kansio olemassa tiedostojärjestelmässä. Koodarit tekevät tämän välttääkseen virheitä, kuten yrittää kirjoittaa olemattomaan kansioon.
+## Mikä ja miksi?
+Hakemiston olemassaolon tarkistaminen Kotlinissa tarkoittaa hakemiston läsnäolon varmistamista määritetyssä polussa. Ohjelmoijat suorittavat tämän tehtävän estääkseen virheitä, kuten yrityksiä lukea tai kirjoittaa olemattomaan hakemistoon, varmistaen sujuvamman tiedostonkäsittelyn ja datanhallinnan sovelluksissa.
 
-## How to: (Kuinka tehdään:)
+## Miten:
+Kotlin, joka toimii JVM:n päällä, hyödyntää Java File API:a tiedosto-operaatioihin, tehden hakemiston olemassaolon tarkistuksista suoraviivaisia. Tässä on perusesimerkki:
+
 ```kotlin
-import java.nio.file.Files
-import java.nio.file.Paths
+import java.io.File
 
 fun main() {
-    val path = Paths.get("/polku/kansioon")
-    val exists = Files.exists(path)
+    val path = "/path/to/directory"
+    val directory = File(path)
 
-    println("Onko kansio olemassa? $exists")
+    if (directory.exists() && directory.isDirectory) {
+        println("Hakemisto on olemassa: $path")
+    } else {
+        println("Hakemistoa ei ole olemassa: $path")
+    }
 }
-
-// Esimerkkituloste:
-// Onko kansio olemassa? true
+```
+Esimerkkitulostus, olettaen että hakemisto on olemassa:
+```
+Hakemisto on olemassa: /path/to/directory
+```
+Ja jos sitä ei ole:
+```
+Hakemistoa ei ole olemassa: /path/to/directory
 ```
 
-## Deep Dive (Sukellus syvyyksiin)
-Kansioita on tarkistettu olemassaolonsa puolesta kauan, koska se on olennainen osa tiedostonhallintaa. Ennen Java NIO:t (New I/O), File-luokkaa käytettiin, mutta se ei ollut yhtä tehokas eikä yhtä monipuolinen. `Files.exists()` tuli käyttöön Java 7:ssä osana NIO.2:ta, tarjoten tehokkaamman tavan tehdä tämä tarkistus. Vaihtoehtoisesti `Files.isDirectory(path)` voidaan käyttää suoraan, jos odotetaan, että polku on aina kansio. Implementation yksityiskohdissa on hyvä pitää mielessä, että `Files.exists()` voi hitaasti reagoida verkkolevyillä ja voi palauttaa `false`, jos käyttöoikeudet puuttuvat, vaikka kansio olisikin olemassa.
-
-## See Also (Katso Myös)
-- Kotlinin virallinen dokumentaatio: [https://kotlinlang.org/docs/home.html](https://kotlinlang.org/docs/home.html)
-- StackOverflow keskustelut ja esimerkit tiedon käsittelystä Kotlinissa: [https://stackoverflow.com/questions/tagged/kotlin+file-io](https://stackoverflow.com/questions/tagged/kotlin+file-io)
+Kotlin-projektissa saatat myös usein työskennellä Kotlin-spesifisten kirjastojen tai viitekehysten kanssa, kuten Ktor web-sovelluksille tai kotlinx.coroutines asynkroniseen ohjelmointiin. Kuitenkin, hakemiston olemassaolon tarkistamiseen, standardi Java `File` API kuten esitetty on tyypillisesti riittävä ja laajalti käytetty Kotlinin yhteentoimivuuden vuoksi Javan kanssa. Tähän spesifiin tehtävään ei tarvita kolmannen osapuolen kirjastoja, mikä tekee siitä saavutettavan ja suoraviivaisen aloittelijoille, jotka siirtyvät muista ohjelmointikielistä Kotliniin.

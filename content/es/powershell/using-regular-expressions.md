@@ -1,50 +1,70 @@
 ---
-title:                "Uso de expresiones regulares"
-date:                  2024-01-19
-simple_title:         "Uso de expresiones regulares"
-
+title:                "Usando expresiones regulares"
+date:                  2024-02-03T19:17:35.803196-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Usando expresiones regulares"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/powershell/using-regular-expressions.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## ¿Qué es y por qué?
-Las expresiones regulares son patrones usados para encontrar coincidencias de texto según reglas definidas. Los programadores las usan porque permiten buscar y manipular texto de manera eficiente y sofisticada.
+## Qué y Por Qué?
+
+Las expresiones regulares (regex) son secuencias de caracteres que forman un patrón de búsqueda, utilizadas principalmente para la búsqueda y manipulación de cadenas de texto. Los programadores aprovechan regex en PowerShell para tareas como validación de datos, análisis y transformación debido a su eficiencia y flexibilidad para manejar patrones complejos.
 
 ## Cómo hacerlo:
-Aquí te muestro cómo hacer coincidir y reemplazar texto usando expresiones regulares en PowerShell con los cmdlets `-match`, `-replace`, y `Select-String`.
 
-### Encontrar coincidencias
-```PowerShell
-$texto = "Hola, mi número de teléfono es 123-456-7890."
-$patron = '\d{3}-\d{3}-\d{4}'
-if ($texto -match $patron) {
-    "Coincidencia encontrada: " + $Matches[0]
-} else {
-    "No se encontró la coincidencia."
+En PowerShell, puedes usar los operadores `-match`, `-replace` y `-split`, entre otros, para realizar acciones con expresiones regulares. Exploremos algunos ejemplos:
+
+### Usar `-match` para verificar si una cadena coincide con un patrón
+Este operador devuelve `$true` si el patrón se encuentra dentro de la cadena, y `$false` en caso contrario.
+
+```powershell
+"hello world" -match "\w+orld"
+# Salida: True
+```
+
+### Extrayendo coincidencias
+Puedes extraer el valor coincidente accediendo a la variable automática `$matches`.
+
+```powershell
+if ("I have 100 apples" -match "\d+") {
+    "Número encontrado: " + $matches[0]
 }
+# Salida: Número encontrado: 100
 ```
-Salida: `Coincidencia encontrada: 123-456-7890`
 
-### Reemplazar texto
-```PowerShell
-$textoReemplazado = $texto -replace $patron, 'XXX-XXX-XXXX'
-$textoReemplazado
+### Usar `-replace` para sustituciones
+El operador `-replace` reemplaza todas las ocurrencias de un patrón con una cadena de reemplazo especificada.
+
+```powershell
+"foo bar baz" -replace "ba[rz]", "qux"
+# Salida: foo qux qux
 ```
-Salida: `Hola, mi número de teléfono es XXX-XXX-XXXX.`
 
-### Extraer coincidencias con `Select-String`
-```PowerShell
-$lineas = Get-Content .\archivo.txt
-$lineas | Select-String $patron
+### Dividir cadenas con `-split`
+Divide una cadena en un arreglo de subcadenas basado en un patrón regex.
+
+```powershell
+"The quick-brown_fox jumps" -split "[-_ ]"
+# Salida: The quick brown fox jumps
 ```
-Este comando extraerá y mostrará las líneas del archivo `archivo.txt` que contengan el patrón definido.
 
-## Profundizando
-Las expresiones regulares tienen sus raíces en la teoría de autómatas y lenguajes formales. Alternativas al uso de regex incluyen el uso de funciones de texto simples o parsers específicos para la estructura de datos. En PowerShell, las expresiones regulares están implementadas a través del .NET Framework, lo que las hace muy potentes pero también pueden ser complejas para los principiantes.
+### Coincidencia de Patrones Avanzada
+PowerShell también admite operaciones regex más complejas a través de la clase `[regex]`, dándote acceso a métodos como `Matches()`, `Replace()` y `Split()`.
 
-## Ver También
-- [about_Regular_Expressions](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_regular_expressions?view=powershell-7.1) - Documentación oficial de PowerShell sobre expresiones regulares.
-- [Regex class](https://docs.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.regex) - Documentación de la clase Regex de .NET.
-- [Learn Regular Expressions](https://regexone.com/) - Recurso interactivo para aprender expresiones regulares desde cero.
+```powershell
+[regex]::Matches("June 24, August 9, Dec 12", "\b[A-Za-z]+\b").Value
+# Salida: June August Dec
+
+[regex]::Replace("100,000", "\B(?=(?:\d{3})+(?!\d))", ",")
+# Salida: 100,000
+
+[regex]::Split("one,two;three four", ",|;| ")
+# Salida: one two three four
+```
+
+Estos ejemplos muestran el poder y la versatilidad de las expresiones regulares en PowerShell para la manipulación de datos y la coincidencia de patrones. Al utilizar regex, los programadores pueden realizar un procesamiento de texto complejo de manera eficiente.

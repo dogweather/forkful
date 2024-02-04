@@ -1,8 +1,8 @@
 ---
 title:                "Getting the current date"
-date:                  2024-01-20T15:16:25.819098-07:00
+date:                  2024-02-03T19:02:38.356621-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Getting the current date"
-
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/rust/getting-the-current-date.md"
 ---
@@ -11,38 +11,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-In programming, grabbing the current date helps track events or log data. It's practical for stuff like timestamping, schedules, or just knowing when something happens.
+Retrieving the current date in Rust is a common task for tasks such as logging, time-based operations, or simply displaying the date. Unlike some languages that include date and time functionality in their standard library, Rust encourages the use of a robust third-party library, chrono, for comprehensive date and time manipulation due to its superior functionality and ease of use.
 
 ## How to:
 
-```Rust
-use chrono::{DateTime, Local};
+### Using Rust's Standard Library
+Rust's standard library provides a limited but quick way to get the current time, though not directly the current date in a calendar format. Here's how you do it:
+
+```rust
+use std::time::{SystemTime, UNIX_EPOCH};
 
 fn main() {
-    let now: DateTime<Local> = Local::now();
-    println!("{}", now.format("%Y-%m-%d %H:%M:%S"));
+    match SystemTime::now().duration_since(UNIX_EPOCH) {
+        Ok(n) => println!("Current time: {} seconds since the Unix Epoch.", n.as_secs()),
+        Err(_) => panic!("SystemTime before Unix Epoch!"),
+    }
 }
 ```
 
 Output:
 ```
-2023-04-05 14:20:35
+Current time: 1615390665 seconds since the Unix Epoch.
 ```
 
-## Deep Dive
+### Using the Chrono Library
+For more comprehensive date and time functionality, including getting the current date, you should use the `chrono` library. First, add `chrono` to your `Cargo.toml`:
 
-Rust, a systems language focusing on safety and performance, isn't furnished with date and time functionalities in its standard library. Instead, the community builds crates—Rust's term for libraries or packages. One standout is `chrono`.
+```toml
+[dependencies]
+chrono = "0.4"
+```
 
-`chrono` offers rich datetime features. Moreover, it handles time zones, which isn't trivial. The crate uses the time zone data from `IANA` (Internet Assigned Numbers Authority) to represent local dates and times correctly.
+Then, you can use `chrono` to get the current date:
 
-Alternative crates like `time` exist but might have different interfaces or features. For leaner needs, `time` can be faster and have fewer dependencies.
+```rust
+extern crate chrono;
+use chrono::{Local, Datelike};
 
-Getting local time involves system calls interfacing with the OS. The accuracy and precision might vary and are impacted by the system and its configuration.
+fn main() {
+    let now = Local::now();
+    println!("Current date: {}-{}-{}", now.year(), now.month(), now.day());
+}
+```
 
-The implementation details deserve a nod to the design philosophy too. Rust favors explicitness. So, when you grab the current time, you explicitly choose local time vs. UTC, awareness of time zones, and so forth—minimizing surprise and promoting intentionality in the code.
+Output:
+```
+Current date: 2023-4-20
+```
 
-## See Also:
-
-- Rust's `chrono` crate documentation: https://docs.rs/chrono/
-- Rust's `time` crate documentation: https://docs.rs/time/
-- `IANA` time zone database: https://www.iana.org/time-zones
+The `chrono` library makes it straightforward to work with dates and times, offering a wide range of functionalities beyond just retrieving the current date, including parsing, formatting, and arithmetic operations on dates and times.

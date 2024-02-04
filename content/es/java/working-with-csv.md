@@ -1,36 +1,43 @@
 ---
-title:                "Trabajando con archivos CSV"
-date:                  2024-01-19
-simple_title:         "Trabajando con archivos CSV"
-
+title:                "Trabajando con CSV"
+date:                  2024-02-03T19:20:15.701735-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Trabajando con CSV"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/java/working-with-csv.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## ¿Qué y Por Qué?
+## Qué y Por qué?
 
-Trabajar con archivos CSV implica leer y escribir datos en formato de texto con valores separados por comas. Los programadores lo hacen porque es un estándar simple y ampliamente adoptado para intercambiar datos, fácil de entender y usar tanto para humanos como para máquinas.
+Trabajar con archivos CSV implica leer y escribir datos en archivos de Valores Separados por Comas (CSV), un formato popular para el intercambio de datos porque es simple y ampliamente soportado. Los programadores manipulan archivos CSV para tareas tales como importación/exportación de datos, análisis de datos e intercambio de información entre diferentes sistemas.
 
 ## Cómo hacerlo:
 
-Leer un CSV en Java:
+### Leyendo un archivo CSV utilizando la biblioteca estándar de Java
+
+Java no tiene soporte incorporado para CSV en su biblioteca estándar, pero puedes leer fácilmente un archivo CSV utilizando clases de `java.io`.
+
 ```java
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class CsvReader {
+public class ReadCSVExample {
     public static void main(String[] args) {
-        String path = "datos.csv";
-        String line = "";
-        
-        try (BufferedReader br = new BufferedReader(new FileReader(path))) {
+        String line;
+        String csvFile = "data.csv"; // Especificar la ruta al archivo CSV
+        try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
             while ((line = br.readLine()) != null) {
-                String[] values = line.split(",");
-                // Haz algo con los valores aquí
-                System.out.println("Columna 1: " + values[0]);
+                String[] values = line.split(","); // Asumiendo que una coma es el delimitador
+                // Procesar los datos
+                for (String value : values) {
+                    System.out.print(value + " ");
+                }
+                System.out.println();
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -38,27 +45,73 @@ public class CsvReader {
     }
 }
 ```
-Salida:
-```
-Columna 1: Valor1
-Columna 1: Valor2
-...
-```
 
-Escribir un CSV en Java:
+### Escribiendo en un archivo CSV utilizando la biblioteca estándar de Java
+
+Para escribir datos en un archivo CSV, puedes usar clases de `java.io` tales como `FileWriter` y `BufferedWriter`.
+
 ```java
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class CsvWriter {
+public class WriteCSVExample {
     public static void main(String[] args) {
-        String[] data = {"Primera línea", "Segunda línea", "Tercera línea"};
+        String[] data = {"John", "Doe", "30", "New York"};
+        String csvFile = "output.csv"; // Especificar la ruta al archivo CSV de salida
 
-        try (BufferedWriter bw = new BufferedWriter(new FileWriter("salida.csv"))) {
-            for(String line : data) {
-                bw.write(line);
-                bw.newLine();
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(csvFile))) {
+            StringBuilder sb = new StringBuilder();
+            for (String value : data) {
+                sb.append(value).append(","); // Asumiendo que una coma es el delimitador
+            }
+            sb.deleteCharAt(sb.length() - 1); // Remover la última coma
+            bw.write(sb.toString());
+            bw.newLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Usando una biblioteca de terceros: Apache Commons CSV
+
+Apache Commons CSV es una biblioteca popular para manejar archivos CSV en Java. Simplifica significativamente la lectura y escritura de archivos CSV.
+
+Agrega la dependencia a tu proyecto:
+
+Para Maven:
+
+```xml
+<dependency>
+    <groupId>org.apache.commons</groupId>
+    <artifactId>commons-csv</artifactId>
+    <version>1.9.0</version> <!-- Verificar la última versión -->
+</dependency>
+```
+
+#### Leyendo un archivo CSV:
+
+```java
+import org.apache.commons.csv.CSVFormat;
+import org.apache.commons.csv.CSVParser;
+import org.apache.commons.csv.CSVRecord;
+
+import java.io.Reader;
+import java.io.FileReader;
+import java.io.IOException;
+
+public class ApacheReadCSVExample {
+    public static void main(String[] args) {
+        String csvFile = "data.csv";
+        try (Reader reader = new FileReader(csvFile);
+             CSVParser csvParser = new CSVParser(reader, CSVFormat.DEFAULT)) {
+            for (CSVRecord csvRecord : csvParser) {
+                // Accediendo a los valores por los índices de columnas
+                String columnOne = csvRecord.get(0);
+                String columnTwo = csvRecord.get(1);
+                System.out.println(columnOne + " " + columnTwo);
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -67,12 +120,29 @@ public class CsvWriter {
 }
 ```
 
-## Profundización
+#### Escribiendo en un archivo CSV:
 
-El formato CSV se originó en la década de 1970, pero todavía se usa debido a su simplicidad. Aunque hay alternativas como JSON y XML, CSV sigue siendo relevante por su facilidad de lectura y escritura. En la implementación hay que tener en cuenta posibles complicaciones como campos que contienen comas, saltos de línea o la necesidad de manejar el juego de caracteres adecuado (encoding).
+```java
+import org.apache.commons.csv.CSVFormat;
+import org.apache.commons.csv.CSVPrinter;
 
-## Ver También
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 
-- Especificación RFC 4180 para CSV: https://tools.ietf.org/html/rfc4180
-- Librería Apache Commons CSV para manejo avanzado de CSV en Java: https://commons.apache.org/proper/commons-csv/
-- Tutorial para manejo de archivos CSV en Java con OpenCSV: http://opencsv.sourceforge.net/
+public class ApacheWriteCSVExample {
+    public static void main(String[] args) {
+        String[] headers = {"Nombre", "Apellido", "Edad", "Ciudad"};
+        String[] data = {"John", "Doe", "30", "New York"};
+
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("output.csv"));
+             CSVPrinter csvPrinter = new CSVPrinter(writer, CSVFormat.DEFAULT.withHeader(headers))) {
+            csvPrinter.printRecord((Object[]) data); // Es necesario el casting a Object[] aquí
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+Apache Commons CSV maneja complejidades como las comillas y comas dentro de los campos automáticamente, haciéndolo una elección robusta para la manipulación de archivos CSV en Java.

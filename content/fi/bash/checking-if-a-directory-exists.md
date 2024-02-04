@@ -1,47 +1,59 @@
 ---
-title:                "Onko hakemisto olemassa? Tarkistaminen"
-date:                  2024-01-19
-simple_title:         "Onko hakemisto olemassa? Tarkistaminen"
-
+title:                "Tarkistetaan, onko hakemisto olemassa"
+date:                  2024-02-03T19:06:55.293122-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Tarkistetaan, onko hakemisto olemassa"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/bash/checking-if-a-directory-exists.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Mitä & Miksi?)
-Tarkistamme, onko hakemisto olemassa, koska se vaikuttaa seuraaviin toimiin – et halua yrittää lukea kirjoittamatonta hakemistoa. Se on virheiden hallintaa: eteenpäin vain, jos polku on validi.
+## Mikä ja Miksi?
 
-## How to: (Kuinka tehdä:)
-```Bash
-# Tarkistetaan, onko hakemisto olemassa
-if [ -d "$DIRECTORY" ]; then
-  echo "Hakemisto $DIRECTORY löytyy."
+Bash-ohjelmoinnissa tarkistus, onko hakemisto olemassa, on olennainen valvontamekanismi, jota käytetään varmistamaan hakemiston olemassaolo ennen tiedosto-operaatioiden suorittamista. Tämä tarkistus on ratkaiseva välttääkseen virheet, kuten yrittämisen päästä käsiksi tai muokata olemattomia hakemistoja, mikä varmistaa sujuvamman ja ennakoitavamman skriptin suorituksen.
+
+## Kuinka:
+
+Perustasolla Bash mahdollistaa hakemiston olemassaolon tarkistamisen käyttämällä ehtolauseita ja `-d` operaattoria. Alla on suoraviivainen esimerkki, joka osoittaa, miten tämä tarkistus suoritetaan.
+
+```bash
+if [ -d "/polku/hakemistoon" ]; then
+    echo "Hakemisto on olemassa."
 else
-  echo "Hakemisto $DIRECTORY ei ole olemassa."
+    echo "Hakemistoa ei ole olemassa."
 fi
 ```
 
-Esimerkkitulostus, kun hakemisto on olemassa:
+Esimerkkituloste (jos hakemisto on olemassa):
 ```
-Hakemisto /home/kayttaja/dokumentit löytyy.
-```
-
-Esimerkkitulostus, kun hakemistoa ei ole:
-```
-Hakemisto /home/kayttaja/vaarahakemisto ei ole olemassa.
+Hakemisto on olemassa.
 ```
 
-## Deep Dive (Sukellus syvemmälle)
-Ennen kuin Bash oli suosittu, ihmiset käyttivät muita komentotulkkeja, kuten sh tai csh. Bash, lyhenne "Bourne Again Shell", tuli suosituksi sen joustavuuden ja paranneltujen ominaisuukset ansiosta.
+Esimerkkituloste (jos hakemistoa ei ole olemassa):
+```
+Hakemistoa ei ole olemassa.
+```
 
-Vaihtoehtona `if`-testille voisi käyttää `test`-komentoa tai sen synonyymiä `[ ]`. Saatavilla on myös modernimpia työkaluja, kuten `[[ ]]` rakenteet ja `test -e` mutta `-d` on oikea valinta kun selvästi tarkistetaan hakemistoja.
+Monimutkaisemmissa skripteissä on yleistä yhdistää tarkistus muihin toimiin, kuten luoda hakemisto, jos sitä ei ole olemassa:
 
-Hakemiston olemassaolon tarkistaminen Bash-skriptissä on tärkeää mm. silloin, kun:
-- Luodaan tiedostoja tai hakemistoja vain, jos kohdehakemisto on olemassa.
-- Tehdään puhdistustoimia, kuten vanhojen lokejen poisto.
+```bash
+DIR="/polku/hakemistoon"
+if [ -d "$DIR" ]; then
+    echo "$DIR on olemassa."
+else
+    echo "$DIR ei ole olemassa. Luodaan nyt..."
+    mkdir -p "$DIR"
+    echo "$DIR luotu."
+fi
+```
 
-## See Also (Katso myös)
-- [Bash manuaali](https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html)
-- [Advanced Bash-Scripting Guide](https://www.tldp.org/LDP/abs/html/)
-- [ShellCheck](https://www.shellcheck.net/), staattinen analyysityökalu skriptien virheiden löytämiseen.
+Esimerkkituloste (jos hakemistoa ei ole olemassa ja sitten se luodaan):
+```
+/polku/hakemistoon ei ole olemassa. Luodaan nyt...
+/polku/hakemistoon luotu.
+```
+
+Vaikka Bash itsessään tarjoaa vankkoja työkaluja tällaisiin tarkistuksiin, ei suosittuja kolmannen osapuolen kirjastoja erityisesti tähän tehtävään ole, sillä natiivit Bash-komennot ovat täysin kykeneviä ja tehokkaita hakemiston olemassaolon varmentamisessa.

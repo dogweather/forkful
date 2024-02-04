@@ -1,42 +1,68 @@
 ---
-title:                "स्ट्रिंग को कैपिटलाइज़ करना"
-date:                  2024-01-19
-simple_title:         "स्ट्रिंग को कैपिटलाइज़ करना"
-
+title:                "स्ट्रिंग को कैपिटलाइज करना"
+date:                  2024-02-03T19:08:03.317583-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "स्ट्रिंग को कैपिटलाइज करना"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/typescript/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (क्या और क्यों?)
+## क्या और क्यों?
+एक स्ट्रिंग को कैपिटलाइज़ करने का अर्थ है दिए गए स्ट्रिंग के पहले अक्षर को यदि वह लोअरकेस में है तो उसे अपरकेस में बदलना, अक्सर बाकी स्ट्रिंग को अपरिवर्तित छोड़ देना। यह क्रिया आमतौर पर सुनिश्चित करने के लिए इस्तेमाल की जाती है कि उचित संज्ञाएँ या वाक्यों की शुरुआत टेक्स्ट प्रोसैसिंग में व्याकरणिक नियमों का पालन करें, आउटपुट्स को प्रोफेशनल और पठनीय बनाते हैं।
 
-String capitalization मतलब string के पहले अक्षर को बड़े आकार (uppercase) में बदलना है। Programmers इसे पढ़ने में आसानी के लिए और खास formatting नियमों को पालन करने के लिए करते हैं।
+## कैसे करें:
 
-## How to: (कैसे करें:)
+TypeScript, JavaScript का एक सुपरसेट होने के नाते, स्ट्रिंग्स को कैपिटलाइज़ करने के विभिन्न तरीकों की अनुमति देता है, जो शुद्ध JavaScript दृष्टिकोण से लेकर अधिक जटिल या विशिष्ट उपयोग के मामलों के लिए तीसरे पक्ष के पुस्तकालयों का उपयोग करने तक होते हैं।
+
+**शुद्ध JavaScript दृष्टिकोण:**
 
 ```typescript
-function capitalizeFirstLetter(str: string): string {
+function capitalize(str: string): string {
   return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
-let greeting = 'namaste world';
-console.log(capitalizeFirstLetter(greeting)); // Namaste world
+// नमूना आउटपुट:
+console.log(capitalize('hello TypeScript!')); // 'Hello TypeScript!'
 ```
 
-Sample Output:
+यह विधि सीधी है और `charAt()` विधि पर निर्भर करती है जो स्ट्रिंग के पहले अक्षर तक पहुँचने और `toUpperCase()` का उपयोग करके उसे अपरकेस में बदलने के लिए है। `slice(1)` विधि फिर बाकी स्ट्रिंग को वापस प्राप्त करती है, उसे अपरिवर्तित छोड़ देती है।
 
+**Lodash पुस्तकालय का उपयोग करना:**
+
+[Lodash](https://lodash.com/) पुस्तकालय का पहले से उपयोग कर रहे प्रोजेक्टों के लिए, आप इसके `_.capitalize` फंक्शन का उपयोग करके कम बॉयलरप्लेट कोड के साथ समान परिणाम प्राप्त कर सकते हैं।
+
+सबसे पहले, Lodash इंस्टाल करें:
+
+```bash
+npm install lodash
 ```
-Namaste world
+
+फिर, अपनी TypeScript फाइल में उसका उपयोग करें:
+
+```typescript
+import * as _ from 'lodash';
+
+// नमूना आउटपुट:
+console.log(_.capitalize('hello TypeScript!')); // 'Hello typescript!'
 ```
 
-## Deep Dive (गहरा डाइव)
+ध्यान दें: Lodash का `_.capitalize` विधि बाकी स्ट्रिंग को लोअरकेस में बदल देती है जो हमेशा वह नहीं हो सकता जो आप चाहते हैं।
 
-String capitalization का इस्तेमाल बहुत पहले से होता आ रहा है। Headings, book titles, और sentences की शुरुआत में पहले अक्षर को बड़ा किया जाता है। JavaScript या TypeScript में इसे manually करना पड़ता है, क्योंकि built-in function नहीं है इसके लिए।
+**नियमित व्यंजक का उपयोग करना:**
 
-दो alternatives हैं `charAt()` के अलावा: string index `[0]` का उपयोग करना, और `substring()` function का इस्तेमाल करना `slice()` के जगह। दोनों ही तरीके सही हैं, पर `charAt()` खाली string पर काम करने में safe है, क्योंकि यह खाली string लौटाएगा जबकि `[0]` undefined लौटाएगा।
+एक स्ट्रिंग के पहले अक्षर को कैपिटलाइज़ करने के लिए, विशेषकर जब आपको स्ट्रिंग के प्रत्येक शब्द के पहले अक्षर को कैपिटलाइज़ करना हो, एक नियमित व्यंजक एक संक्षिप्त तरीका प्रदान कर सकता है।
 
-## See Also (इसे भी देखें)
+```typescript
+function capitalizeWords(str: string): string {
+  return str.replace(/\b\w/g, char => char.toUpperCase());
+}
 
-- MDN Web Docs [String.prototype.toUpperCase()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase)
-- TypeScript Handbook [Basic Types](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html)
+// नमूना आउटपुट:
+console.log(capitalizeWords('hello typescript world!')); // 'Hello Typescript World!'
+```
+
+यह विधि `replace()` फंक्शन का उपयोग करती है जो किसी भी शब्द सीमा के बाद आने वाले अल्फ़ान्यूमेरिक अक्षर (`\b\w`) की तलाश करती है, प्रत्येक मैच को बड़ा कर देती है। यह विशेष रूप से शीर्षकों या शीर्षलेखों के लिए उपयोगी है।

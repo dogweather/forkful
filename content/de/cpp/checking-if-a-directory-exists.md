@@ -1,31 +1,33 @@
 ---
-title:                "Überprüfen, ob ein Verzeichnis existiert"
-date:                  2024-01-19
-simple_title:         "Überprüfen, ob ein Verzeichnis existiert"
-
+title:                "Überprüfung, ob ein Verzeichnis existiert"
+date:                  2024-02-03T19:06:56.732375-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Überprüfung, ob ein Verzeichnis existiert"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/cpp/checking-if-a-directory-exists.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Was & Warum?
+Das Überprüfen, ob ein Verzeichnis existiert, bedeutet zu bestimmen, ob ein Verzeichnis unter einem angegebenen Pfad vorhanden ist, bevor Operationen wie das Lesen von oder das Schreiben in Dateien innerhalb dieses Verzeichnisses ausgeführt werden. Programmierer tun dies, um Fehler im Zusammenhang mit Dateioperationen zu vermeiden, und sorgen so für eine reibungslosere und zuverlässigere Ausführung von Dateiverarbeitungsaufgaben in ihren Anwendungen.
 
-In C++ prüfen wir, ob ein Verzeichnis existiert, um sicherzustellen, dass Dateioperationen nicht fehlschlagen. Das ist ein alltäglicher Check, der Datenverlust verhindert und die Benutzerfreundlichkeit sicherstellt.
+## Wie geht das:
+In modernem C++ (C++17 und darüber hinaus) können Sie die Dateisystembibliothek verwenden, um zu überprüfen, ob ein Verzeichnis existiert. Sie bietet eine unkomplizierte und standardisierte Möglichkeit, Dateisystemoperationen durchzuführen, einschließlich der Überprüfung der Existenz eines Verzeichnisses.
 
-## Wie geht das?
-
-```C++
+```cpp
 #include <iostream>
 #include <filesystem>
 
 namespace fs = std::filesystem;
 
 int main() {
-    fs::path dir = "/path/to/directory";
+    const fs::path dirPath = "/pfad/zum/verzeichnis";
 
-    if (fs::exists(dir)) {
-        std::cout << "Das Verzeichnis existiert!" << std::endl;
+    if (fs::exists(dirPath) && fs::is_directory(dirPath)) {
+        std::cout << "Das Verzeichnis existiert." << std::endl;
     } else {
         std::cout << "Das Verzeichnis existiert nicht." << std::endl;
     }
@@ -33,26 +35,34 @@ int main() {
     return 0;
 }
 ```
+Beispielausgabe, wenn das Verzeichnis existiert:
+```
+Das Verzeichnis existiert.
+```
 
-Ausgabe je nach Verzeichnisstatus:
-```
-Das Verzeichnis existiert!
-```
-oder
+Beispielausgabe, wenn das Verzeichnis nicht existiert:
 ```
 Das Verzeichnis existiert nicht.
 ```
 
-## Tiefgang
+Für Projekte, die noch nicht C++17 verwenden oder zusätzliche Funktionen benötigen, ist die Boost-Dateisystembibliothek eine beliebte Drittanbieteroption, die ähnliche Funktionalitäten bietet.
 
-Früher mussten wir auf Betriebssystem-spezifische APIs zurückgreifen, um die Existenz eines Verzeichnisses zu prüfen. In C++ gab es keine standardisierte Weg dafür bis zur Einführung des Filesystem Libraries in C++17. Jetzt benutzen wir std::filesystem, das plattformunabhängig ist.
+```cpp
+#include <iostream>
+#include <boost/filesystem.hpp>
 
-Alternativen wie Boost.Filesystem existierten vor std::filesystem und werden immer noch verwendet, falls Kompatibilität mit älteren C++-Standards benötigt wird oder erweiterte Funktionen gebraucht sind. 
+namespace fs = boost::filesystem;
 
-Das std::filesystem::exists liefert uns einfach `true` oder `false` zurück. Für zusätzliche Information, wie etwa Zugriffsrechte, müssen wir weiterführende Funktionen wie `fs::status` verwenden.
+int main() {
+    const fs::path dirPath = "/pfad/zum/verzeichnis";
 
-## Siehe auch
+    if (fs::exists(dirPath) && fs::is_directory(dirPath)) {
+        std::cout << "Das Verzeichnis existiert." << std::endl;
+    } else {
+        std::cout << "Das Verzeichnis existiert nicht." << std::endl;
+    }
 
-- C++ Filesystem Library Dokumentation: https://en.cppreference.com/w/cpp/filesystem
-- Artikel über Portabilität von Filesystem Operationen in C++: http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2014/n4100.pdf
-- Boost.Filesystem Dokumentation: https://www.boost.org/doc/libs/release/libs/filesystem/
+    return 0;
+}
+```
+Bei Verwendung von Boost Filesystem wäre die Ausgabe identisch mit dem Beispiel des C++17-Dateisystems, abhängig von der Existenz des Verzeichnisses unter dem angegebenen Pfad.

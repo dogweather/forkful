@@ -1,49 +1,64 @@
 ---
 title:                "Pobieranie aktualnej daty"
-date:                  2024-01-20T15:16:29.357469-07:00
+date:                  2024-02-03T19:10:50.754375-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Pobieranie aktualnej daty"
-
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/rust/getting-the-current-date.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
-Pobieranie aktualnej daty to proces, w którym Twój program ustala, jaka jest obecnie data według systemowego zegara komputera. Programiści robią to zwykle, aby zapisywać logi, ustalać timery, czy też w celach biznesowych, jak np. obliczanie daty zapadalności płatności.
+## Co i dlaczego?
+
+Pobieranie bieżącej daty w Rust jest powszechnym zadaniem w przypadkach takich jak logowanie, operacje czasowe, czy po prostu wyświetlanie daty. W przeciwieństwie do niektórych języków, które w swojej bibliotece standardowej zawierają funkcjonalności daty i czasu, Rust zachęca do używania solidnej biblioteki stron trzecich, chrono, do kompleksowej manipulacji datą i czasem ze względu na jej lepszą funkcjonalność i łatwość użycia.
 
 ## Jak to zrobić:
-Używamy crate `chrono` do łatwego uzyskania daty. Najpierw dodaj go do swojego `Cargo.toml`:
+
+### Korzystając z biblioteki standardowej Rust
+Biblioteka standardowa Rusta oferuje ograniczoną, ale szybką metodę uzyskania bieżącego czasu, choć nie bezpośrednio bieżącej daty w formacie kalendarzowym. Oto jak to zrobić:
+
+```rust
+use std::time::{SystemTime, UNIX_EPOCH};
+
+fn main() {
+    match SystemTime::now().duration_since(UNIX_EPOCH) {
+        Ok(n) => println!("Aktualny czas: {} sekund od epoki Unix.", n.as_secs()),
+        Err(_) => panic!("SystemTime przed epoką Unix!"),
+    }
+}
+```
+
+Wyjście:
+```
+Aktualny czas: 1615390665 sekund od epoki Unix.
+```
+
+### Korzystając z biblioteki Chrono
+Dla bardziej kompleksowej funkcjonalności daty i czasu, włącznie z pobieraniem bieżącej daty, powinieneś użyć biblioteki `chrono`. Najpierw dodaj `chrono` do swojego `Cargo.toml`:
 
 ```toml
 [dependencies]
 chrono = "0.4"
 ```
 
-Potem pobierz datę jak tutaj:
+Następnie możesz użyć `chrono`, aby uzyskać bieżącą datę:
 
 ```rust
 extern crate chrono;
 use chrono::{Local, Datelike};
 
 fn main() {
-    let current_date = Local::now();
-    println!("Dzisiejsza data: {}", current_date.format("%Y-%m-%d").to_string());
+    let now = Local::now();
+    println!("Aktualna data: {}-{}-{}", now.year(), now.month(), now.day());
 }
 ```
 
-Przykładowe wyjście może wyglądać tak:
-
+Wyjście:
 ```
-Dzisiejsza data: 2023-04-05
+Aktualna data: 2023-4-20
 ```
 
-## Deep Dive
-W Rust, operacje na datach nie są wbudowane w język. Crate `chrono` jest de facto standardem do obsługi czasu i daty. Jest oparty na popularnej bibliotece C++ `boost::date_time`. Alternatywnie, od wersji Rust 1.39.0 można by użyć typów z modułu `std::time`, ale `chrono` oferuje więcej funkcji i jest łatwiejszy w użyciu.
-
-`chrono` obsługuje zarówno czas systemowy, jak i czas UTC. Aby uzyskać bieżącą datę, używa się funkcji jak `Local::now()`, która daje `DateTime` z lokalną strefą czasową, albo `Utc::now()` dla czasu uniwersalnego.
-
-## Zobacz także
-- Oficjalna dokumentacja crate `chrono`: https://docs.rs/chrono/
-- Rust by Example, rozdział o czasie: https://doc.rust-lang.org/rust-by-example/std_misc/time.html
-- The Rust Programming Language, rozdział o obsłudze błędów (czas i data mogą też generować błędy!): https://doc.rust-lang.org/book/ch09-00-error-handling.html
+Biblioteka `chrono` ułatwia pracę z datami i czasami, oferując szeroki zakres funkcjonalności wykraczających poza samo pobieranie bieżącej daty, w tym parsowanie, formatowanie i operacje arytmetyczne na datach i czasach.

@@ -1,41 +1,78 @@
 ---
 title:                "Pisanie do standardowego błędu"
-date:                  2024-01-19
+date:                  2024-02-03T19:33:52.084964-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Pisanie do standardowego błędu"
-
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/java/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Co i dlaczego?
-
-Pisanie do standardowego błędu (stderr) to sposób na wysyłanie komunikatów o błędach i innych ważnych informacji, które nie są częścią głównego wyniku programu. Programiści robią to, aby oddzielić normalne dane wyjściowe od informacji o błędach, co ułatwia debugowanie i logowanie.
+Zapis do standardowego błędu (stderr) polega na wyprowadzaniu komunikatów o błędach i diagnostyki na konsolę lub terminal. Programiści robią to, aby oddzielić informacje o błędach od standardowego wyjścia (stdout), ułatwiając debugowanie i analizę logów.
 
 ## Jak to zrobić:
 
-```Java
+### Podstawowy zapis do stderr w Javie
+Java oferuje prosty sposób na zapis do stderr za pomocą `System.err.print()` lub `System.err.println()`. Oto jak to zrobisz:
+
+```java
 public class StdErrExample {
     public static void main(String[] args) {
-        System.out.println("To jest normalne wyjście.");
-        System.err.println("To jest wyjście błędu.");
+        try {
+            int division = 10 / 0;
+        } catch (ArithmeticException e) {
+            System.err.println("Błąd: Nie można dzielić przez zero.");
+        }
     }
 }
 ```
 
 Przykładowe wyjście:
+
 ```
-To jest normalne wyjście.
-To jest wyjście błędu.
+Błąd: Nie można dzielić przez zero.
 ```
 
-## Dogłębna analiza:
+To bezpośrednio wydrukuje komunikat o błędzie do strumienia standardowego błędu.
 
-Pisanie do stderr sięga czasów Unixowych terminali, gdzie standardowo wyjście i błąd były przekierowywane do tych samych lub różnych miejsc. Alternatywą może być użycie własnych mechanizmów logowania, takich jak log4j. Podczas implementacji, `System.err` wiąże się z natywnym strumieniem wyjściowym języka operacyjnego, który jest specjalnie przeznaczony do obsługi błędów i ważnych ostrzeżeń.
+### Użycie Loggera dla Zaawansowanego Obsługiwania Błędów
+W aplikacjach wymagających bardziej zaawansowanego obsługiwania błędów i logowania, powszechne jest używanie biblioteki logowania jak SLF4J z Logbackiem lub Log4J2. Pozwala to na większą elastyczność w zarządzaniu wyjściem błędu, w tym przekierowanie do pliku, filtrowanie i formatowanie.
 
-## Zobacz również:
+#### Przykład z Logbackiem
 
-- Oficjalna dokumentacja Oracle na temat klas `System` i `PrintStream`: https://docs.oracle.com/javase/8/docs/api/java/lang/System.html
-- Tutorial na temat logowania w Java z wykorzystaniem log4j: https://logging.apache.org/log4j/2.x/manual/index.html
-- Artykuł na Stack Overflow na temat różnic pomiędzy `System.out` a `System.err`: https://stackoverflow.com/questions/31394569/what-is-the-difference-between-system-out-and-system-err
+Najpierw, dodaj zależność do Logbacka do pliku `pom.xml` (Maven) lub `build.gradle` (Gradle). Dla Mavena:
+
+```xml
+<dependency>
+    <groupId>ch.qos.logback</groupId>
+    <artifactId>logback-classic</artifactId>
+    <version>1.2.3</version>
+</dependency>
+```
+
+Następnie możesz użyć poniższego kodu do logowania błędów:
+
+```java
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+public class LoggerExample {
+    private static final Logger logger = LoggerFactory.getLogger(LoggerExample.class);
+    
+    public static void main(String[] args) {
+        try {
+            int result = 10 / 0;
+        } catch (ArithmeticException e) {
+            logger.error("Błąd: Nie można dzielić przez zero.", e);
+        }
+    }
+}
+```
+
+To wydrukuje komunikat o błędzie wraz ze śladem stosu na konsolę lub do pliku, w zależności od konfiguracji Logbacka.
+
+Używanie frameworków logowania jak Logback daje większą kontrolę nad obsługą błędów, ułatwiając zarządzanie dużymi aplikacjami i systemami.

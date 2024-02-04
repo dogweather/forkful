@@ -1,37 +1,75 @@
 ---
 title:                "Arbeiten mit JSON"
-date:                  2024-01-19
+date:                  2024-02-03T19:22:59.624858-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Arbeiten mit JSON"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/javascript/working-with-json.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Was & Warum?
-JSON (JavaScript Object Notation) ist ein leichtgewichtiges Datenformat zum Austausch von Daten. Entwickler nutzen es wegen seiner Einfachheit und Weil's von so ziemlich jeder Programmiersprache gelesen werden kann.
 
-## How to:
-```Javascript
-// JSON-String erstellen
-let jsonString = '{"name": "Max", "alter": 25, "hobbys": ["Fahrradfahren", "Schwimmen"]}';
+JSON (JavaScript Object Notation) ist ein leichtgewichtiges Daten-Austauschformat, einfach für Menschen zu lesen und zu schreiben sowie für Maschinen zu parsen und zu erzeugen. Programmierer nutzen es, um Daten in Web-Applikationen zu speichern und zu transportieren, wodurch es das Rückgrat der modernen API- und Web-Services-Kommunikation bildet.
 
-// JSON zu einem JavaScript-Objekt umwandeln
-let objekt = JSON.parse(jsonString);
+## Wie geht das:
 
-console.log(objekt.name); // Ausgabe: Max
+### Parsen von JSON
+Um einen JSON-String in ein JavaScript-Objekt umzuwandeln, verwenden Sie `JSON.parse()`.
 
-// Ein JavaScript-Objekt zu einem JSON-String umwandeln
-let neuerJsonString = JSON.stringify(objekt);
-
-console.log(neuerJsonString); // Ausgabe: '{"name":"Max","alter":25,"hobbys":["Fahrradfahren","Schwimmen"]}'
+```javascript
+const jsonString = '{"name":"John", "age":30, "city":"New York"}';
+const obj = JSON.parse(jsonString);
+console.log(obj.name); // Ausgabe: John
 ```
 
-## Deep Dive
-JSON gibt's seit den frühen 2000ern, inspiriert von JavaScript, ist aber komplett unabhängig. XML war die Alternative, ist aber weniger effizient und schwerer zu lesen. Beim Umgang mit JSON geht's oft um `parse()` und `stringify()` in JavaScript. Auf Server-Seite ist's egal, ob du Node.js oder was anderes benutzt, JSON geht immer glatt durch.
+### JavaScript-Objekte in Strings umwandeln
+Um ein JavaScript-Objekt zurück in einen JSON-String umzuwandeln, verwenden Sie `JSON.stringify()`.
 
-## See Also
-- [MDN Web Docs zum Thema JSON](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/JSON)
-- [JSON.org](https://www.json.org/json-de.html)
-- [ECMAScript Spezifikation (gibt's auch auf Deutsch)](https://www.ecma-international.org/publications-and-standards/standards/ecma-262/)
+```javascript
+const user = { name: "Jane", age: 25, city: "London" };
+const jsonString = JSON.stringify(user);
+console.log(jsonString); // Ausgabe: {"name":"Jane","age":25,"city":"London"}
+```
+
+### Umgang mit Dateien in Node.js
+Um eine JSON-Datei zu lesen und sie in ein Objekt in einer Node.js-Umgebung umzuwandeln, können Sie das `fs`-Modul verwenden. Dieses Beispiel setzt voraus, dass Sie eine Datei namens `data.json` haben.
+
+```javascript
+const fs = require('fs');
+
+fs.readFile('data.json', 'utf-8', (err, data) => {
+    if (err) werfen Sie err;
+    const obj = JSON.parse(data);
+    console.log(obj);
+});
+```
+
+Um ein Objekt in eine JSON-Datei zu schreiben:
+
+```javascript
+const fs = require('fs');
+const user = { name: "Mike", age: 22, city: "Berlin" };
+
+fs.writeFile('user.json', JSON.stringify(user, null, 2), (err) => {
+    if (err) werfen Sie err;
+    console.log('Daten in Datei geschrieben');
+});
+```
+
+### Drittanbieter-Bibliotheken
+Für komplexe JSON-Operationen können Frameworks und Bibliotheken wie `lodash` die Aufgaben vereinfachen, doch für grundlegende Operationen sind oft die einheimischen JavaScript-Funktionen ausreichend. Für groß angelegte oder leistungskritische Anwendungen können Sie Bibliotheken wie `fast-json-stringify` für eine schnellere JSON-Stringifizierung oder `json5` für das Parsen und Stringifizieren unter Verwendung eines flexibleren JSON-Formats in Betracht ziehen.
+
+Parsen mit `json5`:
+```javascript
+const JSON5 = require('json5');
+
+const jsonString = '{name:"John", age:30, city:"New York"}';
+const obj = JSON5.parse(jsonString);
+console.log(obj.name); // Ausgabe: John
+```
+
+Diese Beispiele decken grundlegende Operationen mit JSON in JavaScript ab, perfekt geeignet für Anfänger, die von anderen Sprachen wechseln und effizient Daten in Webanwendungen handhaben möchten.

@@ -1,53 +1,113 @@
 ---
 title:                "Praca z plikami CSV"
-date:                  2024-01-19
+date:                  2024-02-03T19:20:45.548710-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Praca z plikami CSV"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/php/working-with-csv.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Co i dlaczego?
-Praca z CSV (Comma Separated Values) umożliwia obsługę prostych tabel danych – zarówno ich odczyt, jak i zapis. Programiści korzystają z formatu CSV ze względu na jego uniwersalność i prostotę, która gwarantuje łatwą wymianę danych między różnymi systemami i aplikacjami.
+
+Praca z CSV (Comma-Separated Values - wartościami rozdzielonymi przecinkami) polega na odczycie z i zapisie danych do plików CSV, popularnego formatu reprezentacji danych tabelarycznych w postaci zwykłego tekstu. Programiści robią to, aby łatwo wymieniać dane między różnymi programami, systemami lub bazami danych, dzięki jego prostocie i szerokiemu wsparciu na różnych platformach i w językach programowania.
 
 ## Jak to zrobić:
-Oto kilka przykładów kodu PHP, które pokazują, jak obsłużyć pliki CSV:
 
-Odczyt z pliku CSV:
-```PHP
+PHP oferuje wbudowane funkcje do obsługi plików CSV, co sprawia, że odczyt z nich i zapis do nich jest prosty bez potrzeby używania bibliotek stron trzecich. Oto przykłady, które pomogą Ci zacząć:
+
+### Odczytywanie pliku CSV
+
+Możesz otworzyć plik CSV i odczytać jego zawartość za pomocą `fopen()` w połączeniu z `fgetcsv()`:
+
+```php
 <?php
-$plik = fopen('dane.csv', 'r');
-while (($dane = fgetcsv($plik, 1000, ",")) !== FALSE) {
-    $num = count($dane);
-    for ($c=0; $c < $num; $c++) {
-        echo $dane[$c] . "\n";
+$filename = 'data.csv';
+$handle = fopen($filename, "r");
+if ($handle !== FALSE) {
+    while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
+        $num = count($data);
+        echo "Liczba pól w linii: $num\n";
+        for ($c = 0; $c < $num; $c++) {
+            echo $data[$c] . "\n";
+        }
     }
+    fclose($handle);
 }
-fclose($plik);
 ?>
 ```
-Zapis do pliku CSV:
-```PHP
+
+Ten skrypt wypisuje liczbę pól każdej linii, a następnie zawartość każdego pola.
+
+### Zapisywanie do pliku CSV
+
+Aby zapisać do pliku CSV, użyj `fopen()` w trybie zapisu (`w`) i `fputcsv()`:
+
+```php
 <?php
-$list = array(
-    array('Jan', 'Kowalski', 'jan@example.com'),
-    array('Anna', 'Nowak', 'anna@example.com'),
-);
+$list = [
+    ['ID', 'Nazwa', 'Email'],
+    [1, 'John Doe', 'john@example.com'],
+    [2, 'Jane Doe', 'jane@example.com']
+];
 
-$plik = fopen('dane.csv', 'w');
-foreach ($list as $linia) {
-    fputcsv($plik, $linia);
+$handle = fopen('users.csv', 'w');
+
+foreach ($list as $row) {
+    fputcsv($handle, $row);
 }
-fclose($plik);
+
+fclose($handle);
 ?>
 ```
 
-## W głębi tematu:
-Format CSV powstał w pierwszych latach komputerów. Jego prostota sprawiła, że szybko stał się popularny w wymianie danych. Alternatywami dla CSV są m.in. JSON, XML, czy bazy danych, ale CSV nadal jest używany ze względu na prostotę i czytelność. Przy pracy z CSV ważne jest rozważenie zakodowania znaków (na przykład UTF-8) oraz obsługi różnych separatorów i cudzysłowów, co może być kluczowe dla poprawnego przetwarzania danych.
+Ten skrypt tworzy plik o nazwie `users.csv` i zapisuje do niego nagłówek i dwie linie danych.
 
-## Zobacz też:
-- Dokumentacja PHP na temat funkcji obsługi CSV: [php.net/manual/en/function.fgetcsv.php](https://www.php.net/manual/en/function.fgetcsv.php)
-- W3Schools tutorial na temat pracy z plikami w PHP: [w3schools.com/php/php_file.asp](https://www.w3schools.com/php/php_file.asp)
-- Stack Overflow - wspólnota programistów z dyskusjami na temat specyficznych problemów przy pracy z CSV: [stackoverflow.com/questions/tagged/csv?tab=Votes](https://stackoverflow.com/questions/tagged/csv?tab=Votes)
+### Użycie biblioteki: League\Csv
+
+Dla bardziej zaawansowanej obsługi CSV, biblioteka `League\Csv` oferuje solidny zestaw funkcji. Po jej instalacji poprzez Composer (`composer require league/csv`), możesz jej użyć do bardziej elastycznego czytania i zapisywania danych CSV.
+
+#### Odczytywanie za pomocą League\Csv
+
+```php
+<?php
+require 'vendor/autoload.php';
+
+use League\Csv\Reader;
+
+$csv = Reader::createFromPath('data.csv', 'r');
+$csv->setHeaderOffset(0); // Ustaw, jeśli chcesz używać pierwszego wiersza jako nagłówek
+
+$results = $csv->getRecords();
+foreach ($results as $row) {
+    print_r($row);
+}
+?>
+```
+
+Ten skrypt czyta `data.csv`, traktując pierwszy wiersz jako nagłówki kolumn i wypisuje każdy wiersz jako asocjacyjną tablicę.
+
+#### Zapisywanie za pomocą League\Csv
+
+```php
+<?php
+require 'vendor/autoload.php';
+
+use League\Csv\Writer;
+
+$csv = Writer::createFromPath('users_new.csv', 'w+');
+
+$csv->insertOne(['ID', 'Nazwa', 'Email']);
+$csv->insertAll([
+    [3, 'Alex Doe', 'alex@example.com'],
+    [4, 'Anna Smith', 'anna@example.com']
+]);
+
+echo "Zapisano do users_new.csv pomyślnie.";
+?>
+```
+
+To tworzy `users_new.csv` i zapisuje wiersz nagłówkowy, a następnie dwa wiersze danych.

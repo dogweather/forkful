@@ -1,38 +1,78 @@
 ---
 title:                "Schreiben auf Standardfehler"
-date:                  2024-01-19
+date:                  2024-02-03T19:33:28.224483-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Schreiben auf Standardfehler"
-
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/java/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Standardfehler (stderr) ist ein Ausgabestrom, der Fehler und Diagnosemeldungen anzeigt. Programmierer nutzen stderr, um Fehlermeldungen von normalen Programmausgaben zu trennen, was hilft, Probleme während der Entwicklung und Fehlerbehandlung schneller zu identifizieren.
+## Was & Warum?
+Das Schreiben auf den Standardfehler (stderr) umfasst das Ausgeben von Fehlermeldungen und Diagnosen auf die Konsole oder das Terminal. Programmierer machen dies, um Fehlerinformationen von der Standardausgabe (stdout) zu trennen, was das Debuggen und die Log-Analyse erleichtert.
 
-## How to:
-Java verwendet `System.err` für stderr. Hier ist ein einfaches Beispiel, das eine Fehlermeldung ausgibt.
+## Wie:
 
-```Java
-public class StderrExample {
+### Grundlegende stderr-Ausgabe in Java
+Java bietet eine unkomplizierte Möglichkeit, mit `System.err.print()` oder `System.err.println()` auf stderr zu schreiben. So geht's:
+
+```java
+public class StdErrExample {
     public static void main(String[] args) {
-        System.err.println("Fehler gefunden: Ungültige Eingabe.");
+        try {
+            int division = 10 / 0;
+        } catch (ArithmeticException e) {
+            System.err.println("Fehler: Kann nicht durch null teilen.");
+        }
     }
 }
 ```
 
-Sample Output könnte so aussehen:
+Beispielausgabe:
 
 ```
-Fehler gefunden: Ungültige Eingabe.
+Fehler: Kann nicht durch null teilen.
 ```
 
-## Deep Dive:
-In den Anfängen der Computer gab es oft nur wenige Wege, mit dem Benutzer zu interagieren – meist über die Konsole. Standardfehler ist ein Überbleibsel dieser Zeit, das sich bis heute als nützliches Konzept behauptet hat. Alternativen zu `System.err` könnten die Verwendung von Logging-Frameworks wie Log4j oder das Schreiben in Dateien sein – abhängig von der Anforderung der Anwendung. `System.err` schreibt standardmäßig in die Konsole, kann aber umgeleitet werden, um Fehler in Dateien zu loggen oder anderswohin zu senden.
+Dies wird die Fehlermeldung direkt an den Standardfehlerstrom ausgeben.
 
-## See Also:
-- [Java Dokumentation für System.err](https://docs.oracle.com/javase/8/docs/api/java/lang/System.html#err)
-- [Oracle Tutorial zu Ausnahmen](https://docs.oracle.com/javase/tutorial/essential/exceptions/)
-- [Log4j – Ein populäres Logging-Framework](https://logging.apache.org/log4j/2.x/)
+### Verwendung eines Loggers für fortgeschrittene Fehlerbehandlung
+Für Anwendungen, die eine ausgefeiltere Fehlerbehandlung und Protokollierung benötigen, ist die Verwendung einer Protokollierungsbibliothek wie SLF4J mit Logback oder Log4J2 üblich. Dies ermöglicht mehr Flexibilität bei der Verwaltung der Fehlerausgabe, einschließlich Dateiumleitung, Filterung und Formatierung.
+
+#### Beispiel mit Logback
+
+Fügen Sie zunächst die Abhängigkeit für Logback zu Ihrer `pom.xml` (Maven) oder `build.gradle` (Gradle) Datei hinzu. Für Maven:
+
+```xml
+<dependency>
+    <groupId>ch.qos.logback</groupId>
+    <artifactId>logback-classic</artifactId>
+    <version>1.2.3</version>
+</dependency>
+```
+
+Dann können Sie den folgenden Code verwenden, um Fehler zu protokollieren:
+
+```java
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+public class LoggerExample {
+    private static final Logger logger = LoggerFactory.getLogger(LoggerExample.class);
+    
+    public static void main(String[] args) {
+        try {
+            int result = 10 / 0;
+        } catch (ArithmeticException e) {
+            logger.error("Fehler: Kann nicht durch null teilen.", e);
+        }
+    }
+}
+```
+
+Dies gibt die Fehlermeldung zusammen mit einem Stacktrace auf die Konsole oder in eine Datei aus, abhängig von der Logback-Konfiguration.
+
+Die Verwendung von Protokollierungsframeworks wie Logback bietet mehr Kontrolle über die Fehlerbehandlung und erleichtert das Verwalten von großen Anwendungen und Systemen.

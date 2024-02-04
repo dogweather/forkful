@@ -1,91 +1,129 @@
 ---
 title:                "Trabalhando com YAML"
-date:                  2024-01-19
+date:                  2024-02-03T19:26:21.080577-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Trabalhando com YAML"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/php/working-with-yaml.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## O Que é & Porquê?
+## O Que & Porquê?
 
-YAML, que significa "YAML Ain't Markup Language", é um formato de serialização de dados humano-legível usado para configurações, armazenamento de dados e comunicação entre serviços. Programadores utilizam YAML pela sua facilidade de leitura e escrita quando comparado com outros formatos, como XML ou JSON.
+YAML, que significa "YAML Ain't Markup Language" (YAML Não é Uma Linguagem de Marcação), é um formato de serialização de dados legível por humanos que é comumente usado para arquivos de configuração. Programadores optam por utilizar YAML devido à sua simplicidade e legibilidade, tornando-o uma excelente escolha para armazenar configurações, parâmetros e até estruturas de dados complexas de forma facilmente gerenciável.
 
 ## Como Fazer:
 
-Vamos começar lendo e escrevendo YAML em PHP. Primeiro, instale a biblioteca yaml com `composer require symfony/yaml`.
+PHP, em suas iterações atuais, não suporta a análise de YAML como parte de sua biblioteca padrão. A maneira mais direta de trabalhar com YAML em PHP é usando o componente YAML do Symfony ou a extensão PECL `yaml`.
 
-### Ler YAML:
+### Usando o Componente YAML do Symfony
+
+Primeiro, instale o componente YAML do Symfony via Composer:
+
+```bash
+composer require symfony/yaml
+```
+
+Então, você pode analisar e despejar conteúdo YAML da seguinte maneira:
+
 ```php
 <?php
-require 'vendor/autoload.php';
+require_once __DIR__.'/vendor/autoload.php';
+
 use Symfony\Component\Yaml\Yaml;
 
-$yamlContent = <<<YAML
-nome: João
-idade: 30
-linguagens:
-  - PHP
-  - JavaScript
-  - Python
+// Analisando YAML
+$yamlString = <<<YAML
+greet: Hello, World!
+framework:
+  name: Symfony
+  language: PHP
 YAML;
 
-$array = Yaml::parse($yamlContent);
+$array = Yaml::parse($yamlString);
 print_r($array);
-```
 
-**Saída:**
-```
-Array
-(
-    [nome] => João
-    [idade] => 30
-    [linguagens] => Array
-        (
-            [0] => PHP
-            [1] => JavaScript
-            [2] => Python
-        )
-
-)
-```
-
-### Escrever YAML:
-```php
-<?php
-require 'vendor/autoload.php';
-use Symfony\Component\Yaml\Yaml;
-
+// Criando YAML a partir de um array
 $array = [
-  'nome' => 'Maria',
-  'idade' => 25,
-  'linguagens' => ['PHP', 'Ruby']
+    'greet' => 'Hello, YAML!',
+    'framework' => [
+        'name' => 'Symfony',
+        'language' => 'PHP',
+    ],
 ];
 
 $yaml = Yaml::dump($array);
 echo $yaml;
 ```
 
-**Saída:**
+Saída de amostra ao analisar:
+
 ```
-nome: Maria
-idade: 25
-linguagens:
-  - PHP
-  - Ruby
+Array
+(
+    [greet] => Hello, World!
+    [framework] => Array
+        (
+            [name] => Symfony
+            [language] => PHP
+        )
+
+)
 ```
 
-## Aprofundamento
+Saída de amostra ao despejar:
 
-YAML foi introduzido em 2001 e rapidamente adotado por causa da sua acessibilidade. Apesar de JSON ser comumente utilizado para APIs e configurações por ser mais conciso, YAML ainda é a escolha preferencial para arquivos de configuração devido à sua legibilidade. Cuidado com a tabulação: YAML exige espaços, não tabs.
+```
+greet: Hello, YAML!
+framework:
+    name: Symfony
+    language: PHP
+```
 
-Alternativas populares ao YAML incluem JSON e XML, porém muitas ferramentas de DevOps, como Docker e Kubernetes, utilizam YAML para arquivos de configuração. A implementação em PHP se faz através da extensão `ext-yaml` ou da biblioteca `symfony/yaml`, que oferece mais flexibilidade e compatibilidade.
+### Usando a Extensão `yaml` PECL
 
-## Veja Também
+Se preferir, ou se os requisitos do seu projeto permitirem, a extensão PECL pode ser outra maneira eficiente de trabalhar com YAML. Primeiro, certifique-se de que a extensão esteja instalada:
 
-- Documentação oficial Symfony Yaml Component: https://symfony.com/doc/current/components/yaml.html
-- YAML: https://yaml.org/
-- Tutorial YAML: https://www.tutorialspoint.com/yaml/index.htm
-- A comparação entre YAML, JSON e XML: https://phoenixnap.com/kb/yaml-vs-json-vs-xml
+```bash
+pecl install yaml
+```
+
+Então, habilite-a na sua configuração `php.ini`:
+
+```ini
+extension=yaml.so
+```
+
+Veja como analisar e emitir YAML:
+
+```php
+<?php
+
+// Analisando YAML
+$yamlString = <<<YAML
+greet: Hello, World!
+framework:
+  name: Symfony
+  language: PHP
+YAML;
+
+$array = yaml_parse($yamlString);
+print_r($array);
+
+// Criando YAML a partir de um array
+$array = [
+    'greet' => 'Hello, YAML!',
+    'framework' => [
+        'name' => 'Symfony',
+        'language' => 'PHP',
+    ],
+];
+
+$yaml = yaml_emit($array);
+echo $yaml;
+```
+
+A saída será similar à do componente do Symfony, ilustrando o papel do YAML como uma ponte entre o formato legível por humanos e as estruturas de array do PHP, facilitando a configuração e o manuseio de dados mais fácil.

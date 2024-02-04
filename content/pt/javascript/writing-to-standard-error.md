@@ -1,48 +1,58 @@
 ---
-title:                "Escrevendo no erro padrão"
-date:                  2024-01-19
-simple_title:         "Escrevendo no erro padrão"
-
+title:                "Escrevendo para o erro padrão"
+date:                  2024-02-03T19:33:34.944144-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Escrevendo para o erro padrão"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/javascript/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## O Que & Por Quê?
-
-Escrever no erro padrão (`stderr`) é uma forma de enviar mensagens de erro ou diagnóstico em vez de dados de saída regulares (`stdout`). Programadores fazem isso para separar informações de erro do conteúdo principal, facilitando o debug e a análise de logs.
+## O Que & Por Que?
+Escrever para o erro padrão (stderr) em JavaScript trata de direcionar mensagens de erro ou qualquer informação crítica para um fluxo específico e separado, o que é especialmente útil em ambientes semelhantes ao Unix para fins de registro e depuração. Programadores fazem isso para diferenciar a saída normal do programa das mensagens de erro, permitindo uma gestão mais limpa da saída e monitoramento de erros mais fácil.
 
 ## Como fazer:
+No Node.js, escrever para stderr pode ser realizado usando o método `console.error()` ou escrevendo diretamente em `process.stderr`. Aqui estão exemplos demonstrando ambas as abordagens:
 
-```Javascript
-// Escrevendo uma mensagem simples para stderr
-console.error('Erro: alguma coisa deu errado!');
+```javascript
+// Usando console.error()
+console.error('Esta é uma mensagem de erro.');
 
-// Exemplo com uma função que lança um erro
-function falhaAoProcessar() {
-    // Código que pode falhar
-    if (true) { // Substitua por uma condição real de erro
-        console.error('Falha no processamento da função.');
-    }
-}
-
-falhaAoProcessar(); // Chama a função para exemplificar
+// Escrevendo diretamente em process.stderr
+process.stderr.write('Esta é outra mensagem de erro.\n');
 ```
 
-Saída esperada no terminal:
-
+A saída de amostra para ambos os métodos apareceria no fluxo stderr, não se misturando com stdout:
 ```
-Erro: alguma coisa deu errado!
-Falha no processamento da função.
+Esta é uma mensagem de erro.
+Esta é outra mensagem de erro.
 ```
 
-## Aprofundando:
+Para registros mais sofisticados ou específicos da aplicação, muitos programadores JavaScript usam bibliotecas de terceiros como `winston` ou `bunyan`. Aqui está um rápido exemplo usando `winston`:
 
-Historicamente, `stderr` e `stdout` são conceitos que vêm do Unix, distinguindo duas principais correntes de saída de um programa. Alternativas a `console.error` podem incluir o uso de bibliotecas de log que permitem mais configurações, como níveis de severidade e formatos de saída. No Node.js, `process.stderr.write('mensagem\n')` é uma forma de escrever diretamente para o `stderr`, o que pode ser útil para baixo nível de manipulação de saída. Em navegadores, o `console.error` também pode disparar a ferramenta de desenvolvedor para chamar atenção ao erro ocorrido.
+Primeiro, instale o `winston` via npm:
+```shell
+npm install winston
+```
 
-## Veja Também:
+Em seguida, configure o `winston` para registrar erros em stderr:
+```javascript
+const winston = require('winston');
 
-- Documentação da MDN sobre Console: https://developer.mozilla.org/pt-BR/docs/Web/API/Console/error
-- Node.js `process.stderr`: https://nodejs.org/api/process.html#process_process_stderr
-- Artigo sobre stdout e stderr: https://www.jstorimer.com/blogs/workingwithcode/7766119-when-to-use-stderr-instead-of-stdout
+const logger = winston.createLogger({
+  levels: winston.config.syslog.levels,
+  transports: [
+    new winston.transports.Console({
+      stderrLevels: ['error']
+    })
+  ]
+});
+
+// Registrando uma mensagem de erro
+logger.error('Erro registrado através do winston.');
+```
+
+Essa configuração garante que, ao registrar um erro usando o `winston`, ele seja direcionado para stderr, ajudando a manter uma clara separação entre as saídas padrão e de erro.

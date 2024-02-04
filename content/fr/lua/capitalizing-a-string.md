@@ -1,35 +1,53 @@
 ---
-title:                "Mettre une chaîne de caractères en majuscules"
-date:                  2024-01-19
-simple_title:         "Mettre une chaîne de caractères en majuscules"
-
+title:                "Mettre en majuscule une chaîne"
+date:                  2024-02-03T19:05:46.817853-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Mettre en majuscule une chaîne"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/lua/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Capitaliser une chaîne signifie transformer toutes les lettres en majuscules. Les programmeurs utilisent la capitalisation pour normaliser les entrées texte ou mettre en évidence des éléments importants.
+## Quoi et pourquoi ?
+Mettre en majuscule une chaîne de caractères consiste à modifier le premier caractère de chaque mot d'une phrase pour le mettre en majuscule, tout en s'assurant que les autres restent en minuscule. Cette technique est couramment utilisée pour formater le texte afin d'obtenir un rendu plus professionnel ou lisible, comme pour préparer des titres ou des saisies d'utilisateur pour l'affichage.
 
-## How to:
-```Lua
--- Capitalisation d'une chaîne de caractères en Lua
-local texte = "bonjour, le monde!"
-local texte_capitalise = texte:upper()
+## Comment faire :
+Lua n'a pas de fonction intégrée pour mettre les chaînes en majuscule, mais vous pouvez facilement accomplir cette tâche en utilisant des fonctions de manipulation de chaînes de base. Voici une fonction simple pour mettre la première lettre d'un seul mot en majuscule :
 
-print(texte_capitalise)  -- Affiche: "BONJOUR, LE MONDE!"
+```lua
+function capitalize(word)
+    return word:sub(1,1):upper() .. word:sub(2):lower()
+end
+
+print(capitalize("hello"))  -- Sortie : Hello
 ```
-Résultat : `BONJOUR, LE MONDE!`
 
-## Deep Dive
-Historiquement, capitaliser une chaîne en Lua est facilité par la méthode `upper`. Cette fonctionnalité existe depuis les premières versions, montrant que la manipulation des chaînes de caractères est un besoin de base en programmation.
+Pour mettre chaque mot d'une phrase en majuscule, vous pouvez diviser la phrase en mots, mettre chacun d'eux en majuscule, puis les réunir :
 
-Des alternatives? Oui. Utiliser des boucles et travailler caractère par caractère, mais c'est plus complexe. Côté performance, `upper` est optimisée; donc, c'est le choix judicieux.
+```lua
+function capitalizeSentence(sentence)
+    local words = {}
+    for word in sentence:gmatch("%S+") do
+        table.insert(words, capitalize(word))
+    end
+    return table.concat(words, " ")
+end
 
-Détails d'implémentation? La standardisation des encodages texte, comme UTF-8, influe sur la gestion des majuscules/minuscules dans un contexte international. Lua traite correctement les lettres accentuées dans la majorité des cas, mais pour des alphabets non-latins, des libraries supplémentaires peuvent être requises.
+print(capitalizeSentence("hello world from lua"))  -- Sortie : Hello World From Lua
+```
 
-## See Also
-- Documentation Lua sur les chaînes de caractères : https://www.lua.org/manual/5.4/manual.html#6.4
-- Forum Lua : https://www.lua.org/forums.html
-- Pour les questions d'encodage en Lua, le module `luautf8` peut aider : https://github.com/starwing/luautf8
+Si vous travaillez sur un projet où la performance est clé et que vous avez besoin de capacités de manipulation de chaîne plus avancées, pensez à utiliser une bibliothèque tierce comme `Penlight`. Penlight améliore Lua avec des fonctions de manipulation de chaînes plus polyvalentes, parmi d'autres utilitaires :
+
+```lua
+-- En supposant que Penlight est installé :
+local pl = require("pl.stringx")
+local text = "hello lua users"
+text = pl.capitalized(text)
+print(text)  -- Sortie : Hello lua users
+
+-- Note : La fonction capitalized de Penlight met seulement en majuscule le premier mot.
+-- Pour mettre en majuscule chaque mot, vous devriez toujours implémenter une solution personnalisée ou explorer d'autres bibliothèques.
+```

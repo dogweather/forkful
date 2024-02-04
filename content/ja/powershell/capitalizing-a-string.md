@@ -1,45 +1,45 @@
 ---
-title:                "文字列の先頭を大文字にする"
-date:                  2024-01-19
-simple_title:         "文字列の先頭を大文字にする"
-
+title:                "文字列を大文字にする"
+date:                  2024-02-03T19:06:13.144344-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "文字列を大文字にする"
 tag:                  "Strings"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/powershell/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (なぜか？そして、何のために？)
-文字列の大文字化とは、文字列内の全ての文字を大文字に変換することです。これは視認性を高めたり、定形化されたテキスト形式（例えば、ログファイルやデータエントリー）を確保するためにプログラマが行います。
+## 何となぜ？
+PowerShellで文字列を大文字化するとは、与えられた文字列の最初の文字を大文字に変換し、残りの文字列を変更しないままにすることを指します。プログラマーは、ユーザーインターフェースでのテキスト表示の準備や、生成されたドキュメントの文法規則に従うためなど、フォーマット目的でこのタスクをよく実行します。
 
-## How to: (方法)
-```PowerShell
-# 文字列を大文字にする
-$text = "こんにちは、PowerShell！"
-$capitalizedText = $text.ToUpper()
+## 方法：
+PowerShellは多機能なツールであり、サードパーティのライブラリを必要とせずに、直接的な方法で文字列を大文字化することができます。以下の方法で実現できます：
 
-# 出力
-$capitalizedText
+```powershell
+# .Netの組み込みメソッド「ToTitleCase」をCultureInfoから使用
+$text = "hello world"
+$culture = [System.Globalization.CultureInfo]::InvariantCulture
+$capitalizedText = $culture.TextInfo.ToTitleCase($text.ToLower())
+Write-Output $capitalizedText
+```
+出力：
+```
+Hello world
 ```
 
-サンプル出力：
+注：この方法は各単語の最初の文字を大文字にします。文字列の最初の文字のみを大文字にして、残りをそのままにしたい場合は、以下のようにすることができます：
 
+```powershell
+# 文字列の最初の文字のみを大文字化
+$text = "hello world"
+$capitalizedText = $text.Substring(0,1).ToUpper() + $text.Substring(1)
+Write-Output $capitalizedText
 ```
-こんにちは、POWERSHELL！
+出力：
+```
+Hello world
 ```
 
-## Deep Dive (深く探る)
-
-PowerShellでの文字列の大文字化はシンプルだが、歴史は長いです。文字列を大文字にすることは、初期のコンピューティング時代からある操作です。大文字のみを扱う環境や、大文字が標準だった時代もあります。
-
-`.ToUpper()` メソッドは .NET Frameworkに依存しています。これはPowerShellが.NETオブジェクトを扱えるようにしているためです。
-
-他の方法としては、ASCIIコードを操作する古いスタイルのアプローチがありますが、モダンなコーディングでは推奨されていません。また、カルチャ固有の大文字変換を行う場合は、`.ToUpperInvariant()` を使うなどの選択肢もあります。
-
-具体的な実装ですが、`.ToUpper()` は内部でUnicode文字の変換表を使用しており、国際化されたアプリケーションにはこれが適しています。
-
-## See Also (関連情報)
-
-- [Microsoft Docs: .ToUpper Method](https://docs.microsoft.com/en-us/dotnet/api/system.string.toupper)
-- [Wikipedia: ASCII code](https://en.wikipedia.org/wiki/ASCII#Printable_characters)
+PowerShellは、文字列の最初の文字のみを大文字にするためのシンプルな関数を直接には含んでいませんが、`Substring(0,1).ToUpper()`のような基本的な文字列操作メソッドと結合を組み合わせることで、希望する結果を簡単に実現できます。

@@ -1,56 +1,52 @@
 ---
 title:                "Tekstitiedoston kirjoittaminen"
-date:                  2024-01-19
+date:                  2024-02-03T19:28:13.309995-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Tekstitiedoston kirjoittaminen"
-
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/haskell/writing-a-text-file.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-"Mitä & Miksi?"
+## Mikä & Miksi?
 
-Tekstitiedoston kirjoittaminen tarkoittaa merkkijonojen tallentamista tiedostoon. Ohjelmoijat tekevät tätä tiedon pysyvää säilytystä, lokitietojen kirjaamista tai käyttöliittymän ulostulojen tallentamista varten.
+Tekstitiedoston kirjoittaminen Haskellissa tarkoittaa tekstimuotoisten tiedostojen ohjelmallista luomista tai päivittämistä. Ohjelmoijat tekevät tätä tallentaakseen tietoja, kuten lokiviestejä, sovelluksen tulostetta tai tallentaakseen käyttäjän luomaa sisältöä, mikä tekee siitä perustavanlaatuisen tehtävän sovelluksille, jotka vaativat tietojen pysyvyyttä tai lokitusta.
 
-## How to:
-"Näin teet:"
+## Kuinka:
 
-Käytä `writeFile`-funktiota tiedoston kirjoittamiseen. Se korvaa tiedoston sisällön.
+Haskellin standard Prelude tarjoaa perustason tuen tiedostoihin kirjoittamiselle `writeFile` ja `appendFile` funktioiden avulla `System.IO` moduulista. Tässä on perusesimerkki uuden tiedoston luomisesta (tai olemassa olevan ylikirjoittamisesta) ja sitten tekstin lisäämisestä tiedostoon.
 
-```Haskell
+```haskell
 import System.IO
 
+-- Kirjoittaminen tiedostoon, ylikirjoittaen jos se on olemassa
 main :: IO ()
 main = do
-  let tiedosto = "tervehdys.txt"
-  let sisalto = "Hei, Haskell!"
-  writeFile tiedosto sisalto
+  writeFile "example.txt" "Tämä on ensimmäinen rivi.\n"
+  appendFile "example.txt" "Tämä on toinen rivi.\n"
 ```
 
-Kun haluat liittää tekstiä tiedoston loppuun, käytä `appendFile`-funktiota.
+Kun ajat tämän ohjelman, se luo (tai tyhjentää) `example.txt` tiedoston ja kirjoittaa "Tämä on ensimmäinen rivi." ja sen jälkeen "Tämä on toinen rivi." seuraavalle riville.
 
-```Haskell
+Kehittyneempään tiedostonkäsittelyyn Haskell-ohjelmoijat kääntyvät usein `text` paketin puoleen tehokkaan merkkijonojen käsittelyn vuoksi ja `bytestring` paketin puoleen binääridatan käsittelyssä. Näin käytät `text` pakettia tiedostojen IO:ssa:
+
+Ensiksi, sinun täytyy lisätä `text` projektiisi riippuvuuksien joukkoon. Sen jälkeen, voit käyttää sitä seuraavasti:
+
+```haskell
+import qualified Data.Text as T
+import qualified Data.Text.IO as TIO
+
+-- Kirjoittaminen tiedostoon käyttäen text-pakettia
 main :: IO ()
 main = do
-  let tiedosto = "tervehdys.txt"
-  let lisays = "\nLisää tekstiä."
-  appendFile tiedosto lisays
+  let content = T.pack "Käyttäen text-pakettia paremman suorituskyvyn saavuttamiseksi.\n"
+  TIO.writeFile "textExample.txt" content
+  TIO.appendFile "textExample.txt" $ T.pack "Lisäten toista riviä.\n"
 ```
 
-## Deep Dive
-"Sukellus syvemmälle"
+Tässä pätkässä, `T.pack` muuntaa tavallisen `String`:n `Text` tyyppiseksi, mikä on tehokkaampaa. `TIO.writeFile` ja `TIO.appendFile` ovat `text` vastineet tiedostoihin kirjoittamiselle ja tiedostoon liittämiselle vastaavasti.
 
-Historia: Tekstitiedostojen käsittely on ollut ohjelmointikielten perustoiminnallisuuksia alusta asti. Haskellissa `System.IO`-moduuli tarjoaa funktioita tiedostojen käsittelyyn.
-
-Vaihtoehdot: `writeFile` ja `appendFile` ovat suoraviivaisia, mutta monimutkaisempiin tarpeisiin `openFile`, `hPutStr`, ja `hClose` antavat enemmän kontrollia.
-
-Toteutus: `writeFile` käyttää laiska evaluointia, eli tiedostoon kirjoitus tapahtuu vain, kun tiedostovirtaan kirjoitetaan tarpeeksi dataa tai virta suljetaan.
-
-## See Also
-"Lisää aiheesta"
-
-- Learn You a Haskell for Great Good!: http://learnyouahaskell.com/
-- Real World Haskell: http://book.realworldhaskell.org/
-- Haskell dokumentaatio, `System.IO`: https://hackage.haskell.org/package/base/docs/System-IO.html
+Tämän koodin ajaminen tuottaa tiedoston nimeltä `textExample.txt` kahdella tekstirivillä, osoittaen sekä luomis- että liittämiskyvykkyydet käyttäen kehittynyttä `text` kirjastoa paremman suorituskyvyn ja kyvyn käsitellä Unicode-tekstiä varten.

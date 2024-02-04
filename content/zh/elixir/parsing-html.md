@@ -1,44 +1,84 @@
 ---
 title:                "解析HTML"
-date:                  2024-01-20T15:31:03.750548-07:00
+date:                  2024-02-03T19:11:59.384677-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "解析HTML"
-
 tag:                  "HTML and the Web"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/elixir/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (什么以及为什么？)
-解析HTML意味着从网页代码中提取数据。程序员这么做通常是为了获取信息，整合内容或者自动化网页交互。
+## 什么 & 为什么？
 
-## How to: (怎么做：)
-```Elixir
-# 第一步: 添加Floki库
+在 Elixir 中解析 HTML 涉及到从 HTML 文档中提取信息。程序员这样做是为了以编程方式与网页互动、抓取数据或自动化网络交互，使应用程序能够动态理解和利用网页内容。
+
+## 如何操作：
+
+Elixir 凭借其健壮的并发模型和函数式编程范例，并不包含内置的 HTML 解析功能。然而，您可以使用像 `Floki` 这样的流行第三方库来实现此目的。Floki 使得 HTML 解析直观且高效，利用 Elixir 的模式匹配和管道特性。
+
+首先，将 Floki 添加到您的 mix.exs 依赖中：
+
+```elixir
 defp deps do
   [
-    {:floki, "~> 0.34.0"}
+    {:floki, "~> 0.31.0"}
   ]
 end
-
-# 第二步: 获取HTML并解析
-html = "<html><body><p>Hello, Elixir!</p></body></html>"
-{:ok, document} = Floki.parse_document(html)
-
-# 第三步: 使用选择器获取数据
-paragraphs = Floki.find(document, "p")
-# 输出: [{"p", [], ["Hello, Elixir!"]}]
-
-# 第四步: 提取文本
-text_list = Floki.text(paragraphs)
-# 输出: ["Hello, Elixir!"]
 ```
 
-## Deep Dive (深入探讨)
-解析HTML有着悠久的历史，最初为了在服务器端处理网页内容。在Elixir中，Floki是基于HTML5解析器Myhtm的一个库，专为高效处理HTML而设计。与正则表达式等替代方法相比，Floki可以确保操作符合HTML文档标准，并提供了更加直观和简洁的API接口。实现细节上，它使用了一种叫做“选择器”的方式来查找和操作HTML元素，类似于在CSS中的用法。
+然后，运行 `mix deps.get` 以安装新的依赖项。
 
-## See Also (另请参阅)
-- [Floki GitHub repository](https://github.com/philss/floki)
-- [Myhtm GitHub repository](https://github.com/lexborisov/myhtml)
-- [HTML5规范](https://html.spec.whatwg.org/)
+现在，让我们解析一个简单的 HTML 字符串以提取数据。我们将寻找 `<h1>` 标签内的标题：
+
+```elixir
+html_content = """
+<html>
+  <body>
+    <h1>Hello, Elixir!</h1>
+    <h1>Another Title</h1>
+  </body>
+</html>
+"""
+
+titles = html_content
+         |> Floki.find("h1")
+         |> Floki.text()
+
+IO.inspect(titles)
+```
+
+**示例输出：**
+
+```elixir
+["Hello, Elixir!", "Another Title"]
+```
+
+要深入一步，假设您想提取链接（`<a>` 标签）及其 href 属性。以下是您可以实现的方式：
+
+```elixir
+html_content = """
+<html>
+  <body>
+    <a href="https://elixir-lang.org/">Elixir 官方网站</a>
+    <a href="https://hexdocs.pm/">HexDocs</a>
+  </body>
+</html>
+"""
+
+links = html_content
+        |> Floki.find("a")
+        |> Enum.map(fn({_, attrs, [text]}) -> {text, List.keyfind(attrs, "href", 0)} end)
+        
+IO.inspect(links)
+```
+
+**示例输出：**
+
+```elixir
+[{"Elixir 官方网站", {"href", "https://elixir-lang.org/"}}, {"HexDocs", {"href", "https://hexdocs.pm/"}}]
+```
+
+这种方法允许您高效地导航和解析 HTML 文档，使得在 Elixir 应用程序中进行网页数据提取和操作任务变得直接且简单。

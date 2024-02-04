@@ -1,37 +1,71 @@
 ---
 title:                "כתיבת בדיקות"
-date:                  2024-01-19
+date:                  2024-02-03T19:30:10.412941-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "כתיבת בדיקות"
-
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/bash/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## מה ולמה?
-כתיבת בדיקות היא יצירת סקריפטים הבודקים אם קוד מסוים עובד כראוי. תוכניתנים עושים זאת כדי לוודא אמינות ולהקל על תחזוקת הקוד בעתיד.
+כתיבת בדיקות ב-Bash כוללת כתיבת סצנריות בדיקה לאימות פונקציונליות של סקריפטים שלכם ב-Bash. מתכנתים מבצעים בדיקות כדי לוודא שהסקריפטים שלהם פועלים כצפוי בתנאים שונים, תוך תיפוס שגיאות ובאגים לפני פריסה.
 
-## איך לעשות:
-```Bash
-# שימוש בתוכנית test לבדיקת תנאים
-[[ 10 -gt 5 ]] && echo "Yes, 10 is greater than 5"
+## איך לעשות זאת:
+ב-Bash אין מסגרת בדיקות מובנית, אך אפשר לכתוב פונקציות בדיקה פשוטות. לבדיקות מתקדמות יותר, כלים צד שלישי כמו `bats-core` הם פופולריים.
 
-# פלט דוגמה
-Yes, 10 is greater than 5
+### דוגמה לבדיקת בסיס ב-Bash טהור:
+```bash
+function test_example_function {
+  result=$(your_function 'test_input')
+  expected_output="expected_output"
+  
+  if [[ "$result" == "$expected_output" ]]; then
+    echo "הבדיקה עברה."
+    return 0
+  else
+    echo "הבדיקה נכשלה. מצופה: '$expected_output', קיבל: '$result'"
+    return 1
+  fi
+}
 
-# בדיקת קיום קובץ
-FILE="/etc/passwd"
-[[ -f "$FILE" ]] && echo "$FILE exists" || echo "$FILE does not exist"
-
-# פלט דוגמה
-/etc/passwd exists
+# קריאה לפונקציית הבדיקה
+test_example_function
+```
+פלט לדוגמה:
+```
+הבדיקה עברה.
 ```
 
-## עיון עמוק
-החל מהגירסאות הראשונות של UNIX, ניתוח בדיקות נעשה באמצעות סקריפטים של. מאז התפתחו כלים רבים כמו Pytest ב-Python או JUnit ב-Java. ההבדל בין `test` (או `[`) ל-`[[` הוא ש-`[[` הוא מודרני יותר ותומך בתחביר מתקדם יותר כמו && ו-|| לתנאים מרובים.
+### שימוש ב-`bats-core` לבדיקות:
+ראשית, התקן את `bats-core`. זה לרוב נעשה דרך מנהל החבילות שלך או על ידי שיבוט של המאגר שלהם.
 
-## ראה גם:
-- Bash Guide for Beginners: http://tldp.org/LDP/Bash-Beginners-Guide/html/Bash-Beginners-Guide.html
-- Advanced Bash-Scripting Guide: http://tldp.org/LDP/abs/html/
-- Google’s Shell Style Guide: https://google.github.io/styleguide/shellguide.html
+לאחר מכן, כתוב את בדיקותיך בקבצי `.bats` נפרדים.
+
+```bash
+# קובץ: example_function.bats
+
+#!/usr/bin/env bats
+
+@test "בדיקת פונקציה לדוגמה" {
+  result="$(your_function 'test_input')"
+  expected_output="expected_output"
+  
+  [ "$result" == "$expected_output" ]
+}
+```
+כדי להריץ את הבדיקות שלך, פשוט הפעל את קובץ ה-`.bats`:
+```bash
+bats example_function.bats
+```
+פלט לדוגמה:
+```
+ ✓ בדיקת פונקציה לדוגמה
+
+1 בדיקה, 0 כשלונות
+```
+
+הגישה הזו מאפשרת לך להשתלב בקלות עם בדיקות בתהליכי הפיתוח שלך, מבטיחה את אמינותם ויציבותם של הסקריפטים שלך ב-Bash.

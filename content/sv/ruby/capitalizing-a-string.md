@@ -1,39 +1,44 @@
 ---
-title:                "Att göra en sträng versal"
-date:                  2024-01-19
-simple_title:         "Att göra en sträng versal"
-
+title:                "Gör om en sträng till versaler"
+date:                  2024-02-03T19:06:15.605992-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Gör om en sträng till versaler"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/ruby/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att "capitalizing a string” innebär att göra den första bokstaven i en textsträng stor (eller versal). Programmerare gör detta för att följa språkliga normer, förbättra läsbarheten och hantera användarinmatningar.
+Att skriva med stor bokstav i programmering hänvisar ofta till att konvertera det första tecknet i en sträng till versal och resten till gemener. Programmerare gör detta av skäl som att följa namnkonventioner, göra utdata mer läsliga eller säkerställa datakonsistens för jämförelser och lagring.
 
-## Så här gör du:
-```Ruby
-# Exempel 1: Använda `capitalize`
-greeting = "hej värld"
-puts greeting.capitalize  # Output: "Hej värld"
+## Hur:
+Ruby erbjuder enkla metoder för strängmanipulering, inklusive att sätta stor bokstav. Så här kan du skriva med stor bokstav i en sträng i Ruby:
 
-# Exempel 2: Capitalize alla ord
-phrase = "välkommen till ruby"
-puts phrase.split.map(&:capitalize).join(' ')  # Output: "Välkommen Till Ruby"
-
-# Exempel 3: Capitalize med 'unicode-utils'
-require 'unicode_utils/upcase'
-puts UnicodeUtils.upcase("köttbullar är gott", :sv)  # Output: "Köttbullar Är Gott"
+```ruby
+# Rubys inbyggda metod
+string = "hello world"
+capitalized_string = string.capitalize
+puts capitalized_string # => "Hello world"
 ```
 
-## Fördjupning
-Att göra bokstäver stora är inte något nytt. Historiskt har vi använt detta i skriftspråket för att markera namn och början på meningar. I Ruby kan `.capitalize` göra första bokstaven stor, men bara den. För varierande behov och andra språk än engelska kan metoden vara begränsad, eftersom den inte hanterar speciella tecken eller fler ord. 
+Rubys metod `.capitalize` är bekväm, men påverkar bara den första bokstaven. För mer kontroll eller för att skriva varje ord i en sträng med stor bokstav (känt som titelstorlek), kanske du vill använda metoden `titleize` från Rails ActiveSupport-tillägg, eller implementera den själv:
 
-Alternativ inkluderar `.titleize` från Rails som stora bokstäver på alla ord i en sträng, eller externa bibliotek som 'unicode-utils' som hanterar internationella tecken på ett mer fullständigt sätt. I utförandet påpekar vi att `capitalize` endast gör det första tecknet stort och omvandlar resten av strängen till små bokstäver, medan `upcase` från 'unicode-utils' kan stora bokstäver på alla tecken i enlighet med Unicode-standarder.
+```ruby
+# Använder ActiveSupports 'titleize' i Rails
+require 'active_support/core_ext/string/inflections'
+string = "hello world"
+puts string.titleize # => "Hello World"
+```
 
-## Se även
-- Ruby-dokumentationen: https://ruby-doc.org/core-3.1.2/String.html#method-i-capitalize
-- Rails-guide för `titleize`: https://api.rubyonrails.org/classes/String.html#method-i-titleize
-- Unicode Utils gem: https://github.com/lang/unicode_utils
-- Ruby Style Guide: https://rubystyle.guide/#strings
+Om du inte använder Rails eller föredrar en ren Ruby-lösning, här är hur du kan skriva varje ord i en sträng med stor bokstav:
+
+```ruby
+string = "hello world"
+capitalized_each_word = string.split.map(&:capitalize).join(' ')
+puts capitalized_each_word # => "Hello World"
+```
+
+Denna metod delar upp strängen i en ordlista, skriver varje ord med stor bokstav och sätter sedan ihop dem igen med ett mellanslag.

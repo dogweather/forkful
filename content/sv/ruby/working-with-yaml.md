@@ -1,53 +1,81 @@
 ---
-title:                "Arbete med YAML"
-date:                  2024-01-19
-simple_title:         "Arbete med YAML"
-
+title:                "Att Arbeta med YAML"
+date:                  2024-02-03T19:26:30.853232-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Att Arbeta med YAML"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/ruby/working-with-yaml.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-YAML, "YAML Ain't Markup Language", hanterar konfigurationer och datautbyte. För Ruby-utvecklare är det en no-brainer för läslig datastrukturering och smidig integration med Rails.
+YAML, som står för YAML Ain't Markup Language, används flitigt i Ruby för konfigurationsfiler och data-serialisering på grund av sitt lättlästa format. Programmerare vänder sig till YAML när de behöver lagra eller överföra dataobjekt på ett läsligt men strukturerat sätt, vilket förenklar uppgifter som konfigurationshantering, datalagring och datadelning mellan språk.
 
-## Hur gör man:
-Installera YAML-biblioteket:
-```ruby
-gem install 'yaml'
-```
+## Hur man gör:
+Ruby kommer med ett inbyggt bibliotek som heter Psych för att tolka och generera YAML. För att använda det måste du först kräva YAML standardbiblioteket. Här är ett enkelt exempel för att komma igång:
 
-Läs en YAML-fil:
 ```ruby
 require 'yaml'
 
-config = YAML.load_file('exempel.yaml')
-puts config.inspect
+# Hash som ska serialiseras
+person = { name: "John Doe", age: 30, skills: ["Ruby", "JavaScript"] }
+
+# Omgör hashen till YAML
+yaml_data = person.to_yaml
+
+puts yaml_data
 ```
 
-Skapa och skriv till en YAML-fil:
-```ruby
-require 'yaml'
+**Exempelutdata:**
 
-data = { namn: 'Erik', yrke: 'Utvecklare', språk: ['Ruby', 'JavaScript'] }
-File.write('ny_exempel.yaml', data.to_yaml)
-```
-
-Resultat:
-```
+```yaml
 ---
-:namn: Erik
-:yrke: Utvecklare
-:språk:
+:name: John Doe
+:age: 30
+:skills:
 - Ruby
 - JavaScript
 ```
 
-## Deep Dive
-YAML debuterade 2001, erbjuder bättre läsbarhet än XML. Alternativ inkluderar JSON och TOML. Ruby's YAML-bibliotek, Psych, binder till libyaml och är standard sedan Ruby 1.9.3.
+För att ladda YAML-data tillbaka till ett Ruby-objekt:
 
-## Se också
-- YAML officiell specifikation: https://yaml.org/spec/1.2/spec.html
-- Ruby's Psych dokumentation: https://ruby-doc.org/stdlib-2.5.1/libdoc/psych/rdoc/Psych.html
-- Ruby on Rails konfigurationsguide: https://guides.rubyonrails.org/configuring.html
+```ruby
+loaded_person = YAML.load(yaml_data)
+
+puts loaded_person
+```
+
+**Exempelutdata:**
+
+```ruby
+{name: "John Doe", age: 30, skills: ["Ruby", "JavaScript"]}
+```
+
+### Användning av tredjepartsbibliotek:
+
+Även om standardbiblioteket är tillräckligt för grundläggande uppgifter kan du för mer komplexa behov undersöka tredjeparts gems som 'safe_yaml'. För att använda sådana bibliotek måste du först installera gemet:
+
+```bash
+gem install safe_yaml
+```
+
+Sedan kan du använda det för att säkert ladda YAML-data, vilket minskar risker som objektinstansiering från användarkontrollerade källor:
+
+```ruby
+require 'safe_yaml'
+
+safe_loaded_person = SafeYAML.load(yaml_data)
+
+puts safe_loaded_person
+```
+
+**Exempelutdata:**
+
+```ruby
+{name: "John Doe", age: 30, skills: ["Ruby", "JavaScript"]}
+```
+
+Detta tillvägagångssätt ökar säkerheten i din YAML-hantering, vilket gör det till ett bra val för applikationer som laddar YAML från opålitliga källor.

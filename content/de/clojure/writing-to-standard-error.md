@@ -1,40 +1,59 @@
 ---
 title:                "Schreiben auf Standardfehler"
-date:                  2024-01-19
+date:                  2024-02-03T19:32:48.040040-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Schreiben auf Standardfehler"
-
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/clojure/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Was & Warum?
+Das Schreiben auf den Standardfehler (stderr) bezieht sich darauf, Fehlermeldungen und Diagnosen an den stderr-Stream zu leiten, getrennt von der Standardausgabe (stdout). Programmierer tun dies, um die reguläre Programmausgabe von Fehlermeldungen zu unterscheiden, was ein effektiveres Debugging und Protokollieren ermöglicht.
 
-Schreiben auf Standardfehler (stderr) leitet kritische Nachrichten aus deinem Programm, abgetrennt von der Hauptausgabe (stdout). Es hilft bei der Diagnose von Problemen, indem Fehlermeldungen getrennt bleiben und leichter zu erkennen sind.
+## Wie geht das:
+In Clojure können Sie mit dem `*err*` Stream auf stderr schreiben. Hier ist ein einfaches Beispiel:
 
-## How to:
-
-Clojure verwendet Java's System-Klassen, um auf `stderr` zu schreiben. Hier ist ein einfaches Beispiel:
-
-```Clojure
-(defn schreibe-auf-stderr [nachricht]
-  (.println System/err nachricht))
-
-(schreibe-auf-stderr "Fehler gefunden!")
+```clojure
+(.write *err* "Dies ist eine Fehlermeldung.\n")
 ```
 
-Die Ausgabe ist nicht sichtbar im normalen Programmauslauf, aber sie erscheint auf stderr:
+Beachten Sie, dass Sie nach dem Verfassen einer Nachricht den Stream flushen sollten, um sicherzustellen, dass die Nachricht sofort ausgegeben wird:
 
+```clojure
+(flush)
 ```
-Fehler gefunden!
+
+Beispiel für eine Ausgabe auf stderr:
+```
+Dies ist eine Fehlermeldung.
 ```
 
-## Deep Dive
+Wenn Sie mit Ausnahmen umgehen, möchten Sie vielleicht Stacktraces auf stderr ausgeben. Verwenden Sie dafür `printStackTrace`:
 
-Clojure, als eine JVM-Sprache, übernimmt Java's Standard-Datenströme `System.out` und `System.err` für die Ausgabe. Historisch gesehen stammt diese Trennung aus der Unix-Welt. Alternativ könntest du Logging-Frameworks verwenden, um Fehler zu protokollieren. Die `System/err`-Implementation ist synchron, was bedeutet, dass die Nachricht sofort geschrieben wird, aber es kann bei hohem Durchsatz zu Leistungsengpässen führen.
+```clojure
+(try
+  ;; Code, der eine Ausnahme auslösen könnte
+  (/ 1 0)
+  (catch Exception e
+    (.printStackTrace e *err*)))
+```
 
-## See Also
+Für ein strukturierteres Fehlerprotokollieren können Drittanbieter-Bibliotheken wie `timbre` konfiguriert werden, um auf stderr zu protokollieren. Hier ist eine grundlegende Einrichtung und Verwendung:
 
-1. Clojure's offizielle Dokumentation: [Clojure.org](https://clojure.org/)
-2. Java API für `PrintStream`: [PrintStream JavaDocs](https://docs.oracle.com/javase/8/docs/api/java/io/PrintStream.html)
+Zuerst fügen Sie `timbre` Ihren Abhängigkeiten hinzu. Dann konfigurieren Sie es für die Nutzung von stderr:
+
+```clojure
+(require '[taoensso.timbre :as timbre])
+
+(timbre/set-config! [:appenders :standard-out :enabled?] false) ;; Deaktivieren des stdout-Protokollierens
+(timbre/set-config! [:appenders :spit :enabled?] false) ;; Deaktivieren des Dateiprotokollierens
+(timbre/set-config! [:appenders :stderr :min-level] :error) ;; Aktivieren von stderr für Fehler
+
+(timbre/error "Ein Fehler ist bei der Bearbeitung Ihrer Anfrage aufgetreten.")
+```
+
+Dies wird Fehlermeldungen auf stderr leiten und sie von der Standardanwendungsausgabe unterscheiden.

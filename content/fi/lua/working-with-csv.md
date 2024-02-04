@@ -1,64 +1,120 @@
 ---
-title:                "CSV-tiedostojen käsittely"
-date:                  2024-01-19
-simple_title:         "CSV-tiedostojen käsittely"
-
+title:                "Työskentely CSV:n kanssa"
+date:                  2024-02-03T19:20:41.407172-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Työskentely CSV:n kanssa"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/lua/working-with-csv.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-CSV (Comma-separated Values) on yksinkertainen tiedostoformaatti datan tallentamiseen. Ohjelmoijat käyttävät sitä, koska se on helppolukuinen ja yhteensopiva useiden työkalujen kanssa.
+## Mikä & Miksi?
 
-## How to:
-CSV-tiedoston lukeminen ja kirjoittaminen on suoraviivaista. Käytetään io-kirjastoa tiedoston käsittelyyn.
+CSV-tiedostojen (pilkuilla erotetut arvot) käsittelyyn kuuluu tekstidatan jäsentäminen ja tuottaminen riveihin ja sarakkeisiin järjestettynä, käyttäen pilkkuja erillisten arvojen erottamiseen. Ohjelmoijat usein harjoittavat tätä prosessia helpottaakseen datan vaihtoa eri sovellusten, tietokantojen välillä tai datan käsittely- ja analysointitehtäviin, johtuen CSV:n laajasta tuesta ja yksinkertaisuudesta.
 
-```Lua
--- CSV-tiedoston lukeminen
-function lueCSV(tiedosto)
-  local taulukko = {}
-  for rivi in io.lines(tiedosto) do
-    local arvot = {}
-    for arvo in rivi:gmatch("[^,]+") do
-      table.insert(arvot, arvo)
+## Miten:
+
+Luassa CSV-tiedostojen käsittelyä voidaan lähestyä käyttämällä kielen tarjoamia perustiedoston IO-operaatioita, ilman tarvetta ulkoisille kirjastoille yksinkertaisissa tehtävissä. Monimutkaisemmissa operaatioissa, kuten erityistapausten (esim. pilkut arvojen sisällä) käsittelyssä, voi olla hyödyllistä käyttää kolmannen osapuolen kirjastoja, kuten `lua-csv`.
+
+### CSV-tiedoston lukeminen
+Tässä on yksinkertainen esimerkki CSV-tiedoston lukemisesta rivi riviltä, jakamalla jokainen rivi arvoiksi perustuen pilkkuerottimeen.
+
+```lua
+function parseCSVLine(line)
+    local result = {}
+    local from = 1
+    local sep = ","
+    local field
+    while true do
+        local start, finish = string.find(line, sep, from)
+        if not start then
+            table.insert(result, string.sub(line, from))
+            break
+        end
+        field = string.sub(line, from, start - 1)
+        table.insert(result, field)
+        from = finish + 1
     end
-    table.insert(taulukko, arvot)
-  end
-  return taulukko
+    return result
 end
 
--- CSV-tiedoston kirjoittaminen
-function kirjoitaCSV(tiedosto, data)
-  local tiedosto = io.open(tiedosto, 'w')
-  for _, rivi in ipairs(data) do
-    tiedosto:write(table.concat(rivi, ','), '\n')
-  end
-  tiedosto:close()
+local file = io.open("example.csv", "r")
+for line in file:lines() do
+    local values = parseCSVLine(line)
+    for i, v in ipairs(values) do
+        print(i, v)
+    end
 end
+file:close()
+```
 
--- Käyttöesimerkki
+**Esimerkkituloste** (`example.csv` sisällöllä "name,age\\newlineJohn Doe,30\\newlineJane Doe,32"):
+```
+1	name
+2	age
+1	John Doe
+2	30
+1	Jane Doe
+2	32
+```
+
+### CSV-tiedoston kirjoittaminen
+CSV-tiedoston luomiseen sinun tarvitsee vain rakentaa merkkijonot pilkuilla erotetuista arvoista ja kirjoittaa ne tiedostoon rivi riviltä.
+
+```lua
 local data = {
-  {"nimi", "ikä", "ammatti"},
-  {"Matti", "30", "Insinööri"},
-  {"Liisa", "25", "Suunnittelija"}
+    {"name", "age"},
+    {"John Doe", "30"},
+    {"Jane Doe", "32"}
 }
 
--- Kirjoitetaan CSV
-kirjoitaCSV('henkilosto.csv', data)
+local file = io.open("output.csv", "w")
+for _, v in ipairs(data) do
+    file:write(table.concat(v, ","), "\n")
+end
+file:close()
+```
 
--- Luetaan CSV
-local luettuData = lueCSV('henkilosto.csv')
-for _, rivi in ipairs(luettuData) do
-  print(table.concat(rivi, ', '))
+Tämä luo (tai korvaa) `output.csv`-tiedoston määritetyillä tiedoilla.
+
+### lua-csv:n käyttäminen
+Edistyneemmässä CSV-käsittelyssä, mukaan lukien lainausmerkkien ja pakomerkkien tuki, `lua-csv`-kirjasto on jykevä valinta.
+
+Asenna se ensin käyttäen LuaRocks:
+```shell
+luarocks install lua-csv
+```
+
+Tämän jälkeen CSV-tiedoston lukeminen on yksinkertaista:
+
+```lua
+local csv = require("csv")
+
+-- Lukeminen tiedostosta
+for fields in csv.open("example.csv") do
+    for i, v in ipairs(fields) do
+        print(i, v)
+    end
 end
 ```
 
-## Deep Dive
-CSV-formaatti ilmestyi 1970-luvulla. Json ja XML ovat vaihtoehtoisia tiedostoformaattien, joilla on enemmän ominaisuuksia mutta ovat monimutkaisempia. Käyttämällä Lua-kirjastoja kuten Penlight tai CSV, saat lisäominaisuuksia kuten automaattisen tietotyypin tunnistuksen.
+Ja kirjoittaminen CSV:hen asianmukaisilla lainausmerkeillä ja escape-merkeillä:
 
-## See Also
-- Lua Users Wiki CSV-moduulit: http://lua-users.org/wiki/CsvUtils
-- Penlight-kirjasto: https://github.com/lunarmodules/Penlight
-- RFC 4180, CSV-standardi: https://tools.ietf.org/html/rfc4180
+```lua
+local file = csv.open("output.csv", {write=true})
+
+local data = {
+    {"name", "profession", "location"},
+    {"John Doe", "Software Engineer", "New York, NY"},
+    {"Jane Doe", "Data Scientist", "\"San Francisco, CA\""}
+}
+
+for _, v in ipairs(data) do
+    file:write(v)
+end
+```
+
+Tämä lähestymistapa käsittelee automaattisesti monimutkaisuudet, kuten pilkut ja lainausmerkit arvojen sisällä.

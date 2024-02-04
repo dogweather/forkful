@@ -1,33 +1,51 @@
 ---
-title:                "Écrire dans l'erreur standard"
-date:                  2024-01-19
-simple_title:         "Écrire dans l'erreur standard"
-
+title:                "Écrire sur l'erreur standard"
+date:                  2024-02-03T19:33:17.804092-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Écrire sur l'erreur standard"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/haskell/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
-Écrire sur la sortie d'erreur standard (stderr) permet d'envoyer des messages d'erreur sans les mélanger avec la sortie normale (stdout). Les programmeurs utilisent stderr pour diagnostiquer les problèmes sans perturber le flux de données principal.
+Écrire dans l'erreur standard (stderr) en Haskell permet aux programmes de différencier leur sortie entre les résultats normaux et les messages d'erreur. Cela est crucial pour signaler des problèmes et pour le débogage, sans encombrer la sortie standard (stdout) qui porte souvent les données principales ou le résultat du programme.
 
 ## Comment faire :
-```Haskell
+En Haskell, écrire dans stderr est simple avec le module `System.IO` de la bibliothèque de base. Voici un exemple basique pour démontrer :
+
+```haskell
 import System.IO
 
+main :: IO ()
 main = do
   hPutStrLn stderr "Ceci est un message d'erreur."
 ```
-Sortie attendue (à afficher dans la console d'erreur) :
+
+La sortie de ce programme vers stderr serait :
+
 ```
 Ceci est un message d'erreur.
 ```
 
-## Plongée profonde
-Historiquement, les flux stdout et stderr sont des concepts hérités des systèmes Unix, permettant la séparation des données de sortie normales et des messages d'erreur. D'autres alternatives incluent l'écriture dans des fichiers de log, mais stderr reste le canal direct et standardisé pour rapporter les erreurs. En Haskell, `System.IO` gère ces flux, offrant des fonctions telles que `hPutStrLn` pour interagir spécifiquement avec stderr.
+Si vous travaillez dans une application plus complexe, ou si vous avez besoin d'un meilleur contrôle sur la journalisation (y compris des erreurs), vous pourriez opter pour une bibliothèque tierce. Un choix populaire est `monad-logger` qui s'intègre au style de programmation `mtl` de Haskell. Voici un petit extrait utilisant `monad-logger` :
 
-## Voir également
-- Documentation Haskell pour `System.IO`: https://hackage.haskell.org/package/base-4.16.1.0/docs/System-IO.html
-- Guide sur l'utilisation des flux de données Unix: https://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO-3.html
-- Explication détaillée des flux stdout et stderr: https://www.jstor.org/stable/2582047
+```haskell
+{-# LANGUAGE OverloadedStrings #-}
+import Control.Monad.Logger
+
+main :: IO ()
+main = runStderrLoggingT $ do
+  logErrorN "Ceci est un message d'erreur en utilisant monad-logger."
+```
+
+Lors de l'exécution, la version `monad-logger` produit également un message d'erreur, mais il est équipé de plus de contexte comme des horodatages ou des niveaux de journalisation, selon la configuration :
+
+```
+[Erreur] Ceci est un message d'erreur en utilisant monad-logger.
+```
+
+Les deux méthodes servent à écrire dans stderr, le choix dépendant largement de la complexité et des besoins de votre application.

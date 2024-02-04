@@ -1,50 +1,76 @@
 ---
 title:                "Trabalhando com CSV"
-date:                  2024-01-19
+date:                  2024-02-03T19:19:52.150084-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Trabalhando com CSV"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/haskell/working-with-csv.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## O Quê & Por Quê?
+## O que & Por quê?
 
-Trabalhar com CSV significa manipular arquivos "Valores Separados por Vírgula", úteis para armazenamento e transferência de dados tabelados. Programadores utilizam CSV pela simplicidade e interoperabilidade com diversas ferramentas e linguagens de programação.
+Trabalhar com CSVs (Valores Separados por Vírgula) envolve analisar e gerar arquivos que armazenam dados tabulares em um formato de texto simples. Programadores frequentemente se envolvem nessa tarefa para importar ou exportar dados de forma eficiente de planilhas, bancos de dados ou para facilitar a troca de dados entre diferentes programas.
 
-## Como Fazer:
+## Como fazer:
 
-```Haskell
+Em Haskell, o manuseio de arquivos CSV pode ser realizado usando a biblioteca `cassava`, uma das bibliotecas de terceiros mais populares para esse propósito. Abaixo estão exemplos mostrando como ler de e escrever para arquivos CSV usando `cassava`.
+
+**1. Lendo um arquivo CSV:**
+
+Primeiro, certifique-se de ter a `cassava` instalada adicionando-a ao arquivo cabal do seu projeto ou usando Stack.
+
+Aqui está um exemplo simples para ler um arquivo CSV e imprimir cada registro. Supomos que o arquivo CSV tenha duas colunas: nome e idade.
+
+```haskell
+{-# LANGUAGE OverloadedStrings #-}
+import Data.Csv
 import qualified Data.ByteString.Lazy as BL
 import qualified Data.Vector as V
-import Data.Csv
-
-type Pessoa = (String, Int, String)
 
 main :: IO ()
 main = do
-    conteudoCsv <- BL.readFile "pessoas.csv"
-    case decode NoHeader conteudoCsv of
-      Left err -> putStrLn err
-      Right v -> V.forM_ v $ \(nome, idade, profissao) ->
-        putStrLn $ nome ++ " tem " ++ show idade ++ " anos e é " ++ profissao
-
--- Exemplo de saída para um CSV com conteúdo:
--- João,30,Engenheiro
--- Maria,25,Médica
---
--- Saida:
--- João tem 30 anos e é Engenheiro
--- Maria tem 25 anos e é Médica
+    csvData <- BL.readFile "people.csv"
+    case decode NoHeader csvData of
+        Left err -> putStrLn err
+        Right v -> V.forM_ v $ \(name, age) ->
+            putStrLn $ name ++ " tem " ++ show (age :: Int) ++ " anos de idade."
 ```
 
-## Mergulho Profundo
+Assumindo que `people.csv` contenha:
+```
+John,30
+Jane,25
+```
+A saída será:
+```
+John tem 30 anos de idade.
+Jane tem 25 anos de idade.
+```
 
-O formato CSV foi criado na década de 70 e tornou-se um padrão informal universal para intercâmbio de dados. Alternativas como JSON e XML oferecem estruturas mais complexas, mas CSV é rei em simplicidade e legibilidade. Na implementação, cascateio e análise (parsing) são detalhes importantes; bibliotecas como Cassava em Haskell facilitam esse processo, abstraindo as partes complicadas na manipulação de arquivos CSV.
+**2. Escrevendo um arquivo CSV:**
 
-## Veja Também
+Para criar um arquivo CSV, você pode usar a função `encode` da `cassava`.
 
-- Cassava: hackage.haskell.org/package/cassava
-- Especificação CSV: tools.ietf.org/html/rfc4180
-- Tutorial Haskell: learnyouahaskell.com/chapters
+Aqui está como você poderia escrever uma lista de registros em um arquivo CSV:
+
+```haskell
+{-# LANGUAGE OverloadedStrings #-}
+import Data.Csv
+import qualified Data.ByteString.Lazy as BL
+
+main :: IO ()
+main = BL.writeFile "output.csv" $ encode [("John", 30), ("Jane", 25)]
+```
+
+Após executar este programa, `output.csv` conterá:
+
+```
+John,30
+Jane,25
+```
+
+Esta introdução concisa ao trabalho com arquivos CSV em Haskell usando a biblioteca `cassava` demonstra como ler e escrever em arquivos CSV, tornando as tarefas de manipulação de dados mais acessíveis para aqueles novos na linguagem.

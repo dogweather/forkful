@@ -1,44 +1,90 @@
 ---
-title:                "Написання тестів"
-date:                  2024-01-19
-simple_title:         "Написання тестів"
-
+title:                "Письмо тестів"
+date:                  2024-02-03T19:31:10.924488-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Письмо тестів"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/java/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Що та Чому?)
-Писати тести - це створення коду для перевірки бізнес-логіки вашого додатку. Тестування гарантує, що ваша програма працює правильно і захищає від майбутніх помилок при змінах.
+## Що і чому?
+Написання тестів на Java полягає в перевірці того, що ваш код працює так, як очікувалося, в різних умовах. Програмісти пишуть тести, щоб запобігати помилкам, забезпечити правильність функціональності після змін, а також сприяти добрим принципам проектування програмного забезпечення.
 
-## How to: (Як на практиці:)
-```Java
+## Як це зробити:
+Розробники на Java здебільшого використовують два фреймворки для тестування: JUnit та TestNG. Тут ми зосередимось на JUnit, більш популярному виборі для написання тестів через його простоту та широке використання.
+
+### Основи JUnit
+
+Щоб використовувати JUnit у вашому Maven проекті, додайте таку залежність до вашого `pom.xml`:
+
+```xml
+<dependency>
+    <groupId>org.junit.jupiter</groupId>
+    <artifactId>junit-jupiter</artifactId>
+    <version>5.9.0</version>
+    <scope>test</scope>
+</dependency>
+```
+
+Базовий тест в JUnit виглядає так:
+
+```java
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class CalculatorTest {
+public class CalculatorTest {
+    
+    @Test
+    public void testAdd() {
+        Calculator calculator = new Calculator();
+        assertEquals(5, calculator.add(2, 3), "2 + 3 має бути 5");
+    }
+}
+```
+
+Виконання цього тесту або пройде, показуючи, що метод `add` працює, як очікувалося, або не пройде, показуючи повідомлення про помилку.
+
+### Мокування з Mockito
+
+У реальних сценаріях об’єкти часто залежать від інших об’єктів. Mockito – популярний фреймворк для створення мок-об'єктів з метою тестування.
+
+Додайте Mockito до вашого Maven проекту:
+
+```xml
+<dependency>
+    <groupId>org.mockito</groupId>
+    <artifactId>mockito-core</artifactId>
+    <version>4.5.1</version>
+    <scope>test</scope>
+</dependency>
+```
+
+Простий випадок використання з Mockito:
+
+```java
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.*;
+
+public class UserServiceTest {
 
     @Test
-    void testAddition() {
-        Calculator calculator = new Calculator();
-        assertEquals(5, calculator.add(2, 3), "2 + 3 must equal 5");
+    public void testGetUsername() {
+        // Створимо мок UserRepository
+        UserRepository mockRepository = mock(UserRepository.class);
+
+        // Визначимо поведінку для мок-об'єкту
+        when(mockRepository.getUsername(1)).thenReturn("john_doe");
+
+        UserService userService = new UserService(mockRepository);
+        
+        assertEquals("john_doe", userService.getUsername(1), "ІД користувача 1 має бути john_doe");
     }
 }
-
-class Calculator {
-    int add(int a, int b) {
-        return a + b;
-    }
-}
-```
-Sample Output:
-```
-[Test successful]
 ```
 
-## Deep Dive (Занурюємось глибше):
-Тести в Java почали писати з JUnit, який з’явився у вісімдесятих. Є альтернативи, такі як TestNG або Spock. Важливість тестів вбудована в Agile і TDD (Test-Driven Development). Грунтувати розроблення на тестуванні – значить мінімізувати ризики.
-
-## See Also (Дивись також):
-- [JUnit 5 User Guide](https://junit.org/junit5/docs/current/user-guide/)
+Цей мок дозволяє нам тестувати `UserService` без потреби в реальному `UserRepository`, зосереджуючи тест на логіці всередині `UserService`.

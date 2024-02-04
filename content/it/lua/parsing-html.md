@@ -1,38 +1,67 @@
 ---
-title:                "Analisi dell'HTML"
-date:                  2024-01-20T15:32:42.901630-07:00
-simple_title:         "Analisi dell'HTML"
-
+title:                "Analisi del HTML"
+date:                  2024-02-03T19:12:34.984319-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Analisi del HTML"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/lua/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Cosa e Perché?)
-Il parsing di HTML significa estrarre dati da una pagina web. I programmatori lo fanno per automatizzare la raccolta di informazioni, come i prezzi dei prodotti o i titoli delle news.
+## Cosa & Perché?
+L'analisi dell'HTML (Parsing HTML) consiste nell'estrazione di dati e informazioni dai documenti HTML, che è cruciale per il web scraping, l'analisi dei dati e i compiti di automazione. I programmatori eseguono questa operazione per raccogliere, analizzare o manipolare il contenuto web programmaticamente, abilitando l'automazione di ciò che altrimenti sarebbe l'estrazione manuale dei dati dai siti web.
 
-## How to: (Come Fare)
-Lua non ha una libreria standard per il parsing di HTML, quindi dobbiamo usare una esterna come `lua-html` o `luascrape`. Qui un esempio con `lua-html`:
+## Come fare:
+Lua non ha una libreria incorporata per l'analisi dell'HTML, ma è possibile utilizzare librerie di terze parti come `LuaHTML` o sfruttare i binding per `libxml2` tramite `LuaXML`. Un approccio popolare è utilizzare la libreria `lua-gumbo` per l'analisi dell'HTML, che fornisce una capacità di parsing conforme ad HTML5 e diretta.
 
-```Lua
-local html = require("html")
+### Installazione di lua-gumbo:
+Prima di tutto, assicurati che `lua-gumbo` sia installato. Tipicamente puoi installarlo usando luarocks:
 
--- Caricare l'HTML da una stringa (si può anche usare html.parseFile per caricare da file)
-local doc = html.parse("<html><head><title>Prova</title></head><body><p>Ciao, mondo!</p></body></html>")
-
--- Trovare il titolo della pagina
-local title = doc:select("title")[1]
-print(title:getcontent())  -- Output: Prova
-
--- Trovare tutti i paragrafi
-for _, p in ipairs(doc:select("p")) do
-    print(p:getcontent())  -- Output: Ciao, mondo!
-end
+```sh
+luarocks install lua-gumbo
 ```
 
-## Deep Dive (Approfondimento)
-Il parsing di HTML in Lua non è built-in: devi affidarti a librerie di terze parti. Fino a poco tempo fa, la comunità Lua mancava di una solida libreria HTML, spingendo gli sviluppatori verso soluzioni come l'espressioni regolari, che possono essere inefficienti e inaffidabili per questo scopo. Le moderne librerie, come `lua-html`, hanno colmato questa lacuna. Un'alternativa è `luascrape`, che facilita il web scraping. Tenete presente che il parsing dipenderà dalla correttezza dell'HTML; HTML malformato potrebbe richiedere una pre-elaborazione.
+### Parsing di base con lua-gumbo:
+Ecco come puoi analizzare un frammento HTML semplice ed estrarre dati da esso usando `lua-gumbo`:
 
-## See Also (Vedi Anche)
-- Documentazione ufficiale Lua: [Lua Official Documentation](https://www.lua.org/manual/5.4/)
+```lua
+local gumbo = require "gumbo"
+local document = gumbo.parse[[<html><body><p>Ciao, mondo!</p></body></html>]]
+
+local p = document:getElementsByTagName("p")[1]
+print(p.textContent)  -- Output: Ciao, mondo!
+```
+
+### Esempio Avanzato - Estrazione di Link:
+Per estrarre gli attributi `href` da tutti i tag di ancoraggio (`<a>` elements) in un documento HTML:
+
+```lua
+local gumbo = require "gumbo"
+local document = gumbo.parse([[
+<html>
+<head><title>Pagina Campione</title></head>
+<body>
+  <a href="http://example.com/1">Link 1</a>
+  <a href="http://example.com/2">Link 2</a>
+  <a href="http://example.com/3">Link 3</a>
+</body>
+</html>
+]])
+
+for _, element in ipairs(document.links) do
+    if element.getAttribute then  -- Assicurati che sia un Elemento e che abbia attributi
+        local href = element:getAttribute("href")
+        if href then print(href) end
+    end
+end
+
+-- Esempio di Output:
+-- http://example.com/1
+-- http://example.com/2
+-- http://example.com/3
+```
+
+Questo frammento di codice itera attraverso tutti i link nel documento e stampa i loro attributi `href`. La capacità della libreria `lua-gumbo` di analizzare e comprendere la struttura di un documento HTML semplifica il processo di estrazione di elementi specifici in base ai loro tag o attributi.

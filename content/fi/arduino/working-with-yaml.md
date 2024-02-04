@@ -1,62 +1,83 @@
 ---
-title:                "YAML-tiedostojen käsittely"
-date:                  2024-01-19
-simple_title:         "YAML-tiedostojen käsittely"
-
+title:                "Työskentely YAML:n kanssa"
+date:                  2024-02-03T19:24:49.620194-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Työskentely YAML:n kanssa"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/arduino/working-with-yaml.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-- YAML on data-muoto, joka on helppolukuinen ja johon on helppo kirjoittaa.
-- Koodarit käyttävät YAML:ää konfiguraatiotiedostoihin ja datan tallentamiseen, koska se on selkeä ja ymmärrettävä.
+## Mikä & Miksi?
 
-## How to:
-```arduino
-#include <ArduinoJson.h>
+YAML (YAML Ain't Markup Language) on ihmisen luettavissa oleva datan serialisointistandardi, jota voidaan käyttää määritystiedostoissa, ohjelmien välisessä viestinnässä ja datan tallennuksessa. Ohjelmoijat kääntyvät YAMLin puoleen Arduino-projekteissa, jotta sovellusten määritysprosessia voidaan virtaviivaistaa, mikä helpottaa parametrien muokkaamista syvälle koodiin sukeltamatta, parantaa luettavuutta ja yksinkertaistaa määritysten jakamista.
 
-// An example of YAML data as a string
-const char* yaml = 
-"date: 2023-02-28\n"
-"time: 19:30:00\n"
-"event: Arduino Workshop\n";
+## Kuinka:
 
-void setup() {
-  StaticJsonDocument<200> doc;
-  deserializeJson(doc, yaml);
-  Serial.begin(9600);
-  while (!Serial) {
-    // wait for serial port to connect
+YAMLin käyttäminen suoraan Arduinossa ei ole yhtä suoraviivaista kuin korkeamman tason ohjelmointiympäristöissä muistirajoitusten ja natiivien YAML-käsittelykirjastojen puuttumisen vuoksi. Kuitenkin projekteille, jotka vaativat YAMLin jäsentämistä tai generointia, tyypillinen lähestymistapa sisältää avustavan tietokoneen käytön (kuten Raspberry Pi) tai YAML-tiedostojen muuntamisen Arduino-ystävällisempään muotoon (kuten JSON) käyttäen ulkoisia skriptejä. Demonstrointitarkoituksessa keskitymme jälkimmäiseen lähestymistapaan käyttäen suosittua kirjastoa: ArduinoJson.
+
+**Vaihe 1:** Muunna YAML-määrityksesi JSON-muotoon. Voit käyttää online-työkaluja tai komentorivin apuohjelmia, kuten `yq`.
+
+YAML-tiedosto (`config.yaml`):
+```yaml
+wifi:
+  ssid: "YourSSID"
+  salasana: "YourPassword"
+```
+
+Muunnettu JSON-muotoon (`config.json`):
+```json
+{
+  "wifi": {
+    "ssid": "YourSSID",
+    "salasana": "YourPassword"
   }
-  
-  int day = doc["date"].as<String>().substring(8, 10).toInt();
-  int month = doc["date"].as<String>().substring(5, 7).toInt();
-  int year = doc["date"].as<String>().substring(0, 4).toInt();
-  String event = doc["event"].as<String>();
-  
-  Serial.print("Event: ");
-  Serial.println(event);
-  Serial.print("Date: ");
-  Serial.print(day);
-  Serial.print(".");
-  Serial.print(month);
-  Serial.print(".");
-  Serial.println(year);
-}
-
-void loop() {
-  // nothing to do here
 }
 ```
 
-## Deep Dive
-- YAML syntyi 2000-luvun alussa, korvaamaan tai täydentämään XML:ää.
-- Vaihtoehtoina ovat JSON ja XML.
-- YAML käsittelee listoja, sanakirjoja ja skalaareja. C++:ssa YAMLin käsittely vaatii kirjastoa, kuten ArduinoJson.
+**Vaihe 2:** Käytä ArduinoJson-kirjastoa jäsentämään JSON-tiedosto Arduino-luonnoksessasi. Ensin sinun täytyy asentaa ArduinoJson-kirjasto kirjastohallinnan kautta Arduino IDE:ssa.
 
-## See Also
-- YAML virallinen sivusto: [https://yaml.org/](https://yaml.org/)
-- ArduinoJson kirjaston GitHub-sivu: [https://github.com/bblanchon/ArduinoJson](https://github.com/bblanchon/ArduinoJson)
-- YAML Wikipedia: [https://fi.wikipedia.org/wiki/YAML](https://fi.wikipedia.org/wiki/YAML)
+**Vaihe 3:** Lataa ja jäsenä JSON koodissasi. Arduino-laitteen tallennustilan rajoitusten vuoksi kuvittele, että JSON-merkkijono on tallennettu muuttujaan tai luettu SD-kortilta.
+
+Esimerkki Arduino-luonnoksesta:
+```cpp
+#include <ArduinoJson.h>
+
+const char* jsonConfig = "{\"wifi\":{\"ssid\":\"YourSSID\",\"salasana\":\"YourPassword\"}}";
+
+void setup() {
+  Serial.begin(9600);
+
+  StaticJsonDocument<200> doc;
+  DeserializationError error = deserializeJson(doc, jsonConfig);
+
+  if (error) {
+    Serial.print(F("deserializeJson() epäonnistui: "));
+    Serial.println(error.f_str());
+    return;
+  }
+
+  const char* ssid = doc["wifi"]["ssid"]; // "YourSSID"
+  const char* salasana = doc["wifi"]["salasana"]; // "YourPassword"
+
+  Serial.print("SSID: ");
+  Serial.println(ssid);
+  Serial.print("Salasana: ");
+  Serial.println(salasana);
+}
+
+void loop() {
+  // Ei mitään tässä esimerkissä
+}
+```
+
+Tuloste luonnoksen suorittamisen jälkeen:
+```
+SSID: YourSSID
+Salasana: YourPassword
+```
+
+Tämä lähestymistapa, joka sisältää muuntamisen JSON-muotoon ja ArduinoJson-kirjaston hyödyntämisen, mahdollistaa hallittavan YAML-määritysten käsittelyn Arduino-projekteissa, ohittaen suoran YAML-jäsentämisen mikrokontrollerissa.

@@ -1,65 +1,77 @@
 ---
 title:                "Робота з YAML"
-date:                  2024-01-19
+date:                  2024-02-03T19:24:53.839018-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Робота з YAML"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/cpp/working-with-yaml.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Що це таке & Чому?
+## Що і Чому?
 
-YAML — це людино-читабельний формат для конфігураційних файлів. Програмісти використовують його, щоб легко серіалізувати дані для зберігання або міжпроцесної комунікації.
+YAML, що означає YAML Ain't Markup Language, це формат серіалізації даних, зручний для читання людиною. Програмісти використовують його для файлів конфігурації, вивантаження даних та зберігання ієрархічних даних через його читабельність та легкість у сприйнятті синтаксису в порівнянні з XML або JSON.
 
 ## Як це зробити:
 
-У C++ робота з YAML вимагає сторонньої бібліотеки, наприклад, `yaml-cpp`. Ось як ви можете читати та писати YAML файлы:
+Для роботи з YAML у C++ популярним вибором є бібліотека `yaml-cpp`. Спершу, переконайтеся, що у вас встановлено `yaml-cpp` та правильно зв'язано з вашим проектом на C++.
 
-```C++
-#include <yaml-cpp/yaml.h>
+**Читання файлу YAML:**
+
+```cpp
 #include <iostream>
 #include <fstream>
-
-// Читаємо YAML
-void ReadYAML(const std::string &filename) {
-    YAML::Node config = YAML::LoadFile(filename);
-    if (config["name"]) {
-        std::cout << "Name: " << config["name"].as<std::string>() << std::endl;
-    }
-}
-
-// Пишемо YAML
-void WriteYAML(const std::string &filename) {
-    YAML::Emitter out;
-    out << YAML::BeginMap;
-    out << YAML::Key << "name" << YAML::Value << "Viktor";
-    out << YAML::EndMap;
-
-    std::ofstream fout(filename);
-    fout << out.c_str();
-}
+#include <yaml-cpp/yaml.h>
 
 int main() {
-    const std::string filename = "example.yaml";
+    YAML::Node config = YAML::LoadFile("config.yaml");
     
-    WriteYAML(filename);
-    ReadYAML(filename);
+    if(config["title"]) {
+        std::cout << "Назва: " << config["title"].as<std::string>() << std::endl;
+    }
     
     return 0;
 }
 ```
 
-Припустимо, ви отримаєте вивід: `Name: Viktor`.
+Припустимо, що `config.yaml` виглядає так:
 
-## Поглиблений розбір:
+```yaml
+title: "Приклад YAML"
+```
 
-YAML виник у 2001 році як більш читабельна альтернатива XML. Він дозволяє вкладеність, займає менше місця і простий у використанні. Альтернативи YAML — це JSON і XML, але YAML часто використовується завдяки його простоті. Бібліотека `yaml-cpp` є найпоширенішою для C++, вона об'єктно-орієнтована і підтримує серіалізацію/десеріалізацію складних даних.
+Виконання вищенаведеного коду на C++ дало б такий результат:
 
-## Дивіться також:
+```
+Назва: Приклад YAML
+```
 
-- Офіційний сайт YAML: https://yaml.org/
-- `yaml-cpp` GitHub: https://github.com/jbeder/yaml-cpp
-- YAML специфікація: https://yaml.org/spec/1.2/spec.html
-- YAML в порівнянні з JSON і XML: https://stackoverflow.com/questions/1726802/what-is-the-difference-between-yaml-and-json-when-to-prefer-one-over-the-other
+**Запис у файл YAML:**
+
+```cpp
+#include <fstream>
+#include <yaml-cpp/yaml.h>
+
+int main() {
+    YAML::Emitter out;
+    out << YAML::BeginMap;
+    out << YAML::Key << "title" << YAML::Value << "Приклад YAML";
+    out << YAML::EndMap;
+    
+    std::ofstream fout("output.yaml");
+    fout << out.c_str();
+    
+    return 0;
+}
+```
+
+Цей код створить `output.yaml` з вмістом:
+
+```yaml
+title: Приклад YAML
+```
+
+Ці приклади слугують базовим вступом до читання з файлів YAML та запису в них у C++ за допомогою бібліотеки `yaml-cpp`. Для більш складних структур та випадків використання, досліджуйте документацію `yaml-cpp`, щоб ознайомитися з особливостями, такими як послідовності, теги та більш продвинуті техніки серіалізації та десеріалізації.

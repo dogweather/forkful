@@ -1,50 +1,79 @@
 ---
-title:                "परीक्षण लिखना"
-date:                  2024-01-19
-simple_title:         "परीक्षण लिखना"
-
+title:                "टेस्ट लिखना"
+date:                  2024-02-03T19:31:32.268824-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "टेस्ट लिखना"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/haskell/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (क्या और क्यों?)
+## क्या और क्यों?
 
-टेस्ट लिखना मतलब आपके कोड का जाँच के लिए छोटे प्रोग्राम्स लिखना। यह काम इसलिए किया जाता है ताकि बग्स को पकड़ा जा सके और सुनिश्चित किया जा सके कि कोड में बदलावों के बाद भी सब कुछ सही काम करता रहे।
+Haskell में परीक्षण लिखना आपके फंक्शन्स के उम्मीद के अनुसार काम करने की जाँच के लिए स्वचालित जाँच के माध्यम से सुनिश्चित करने के बारे में है। प्रोग्रामर इसे जल्दी बग्स को पकड़ने, रीफैक्टरिंग को सुविधाजनक बनाने, और व्यवहार को दस्तावेजीकरण करने के लिए करते हैं, जिससे कोडबेस अधिक रख-रखाव योग्य और स्केलेबल बनता है।
 
-## How to: (कैसे करें:)
+## कैसे करें:
 
-Haskell में टेस्ट लिखने के लिए `Hspec` एक पॉपुलर लाइब्रेरी है। यहाँ एक सिम्पल उदाहरण है:
+Haskell विभिन्न टेस्टिंग फ्रेमवर्क का समर्थन करता है, लेकिन दो लोकप्रिय `Hspec` और `QuickCheck` हैं। Hspec आपको अपने कोड के लिए मानव-पठनीय विनिर्देशों को परिभाषित करने की अनुमति देता है, जबकि QuickCheck आपके कोड द्वारा संतुष्ट होने वाले गुणों का वर्णन करके स्वतः परीक्षणों को उत्पन्न करने देता है।
 
-```Haskell
+### Hspec का उपयोग करना
+
+सबसे पहले, आपके बिल्ड टूल कॉन्फिगरेशन (जैसे, `stack.yaml` या `cabal` फ़ाइल) में `hspec` जोड़ें। फिर, `Test.Hspec` को आयात करें और विनिर्देशों के रूप में परीक्षण लिखें:
+
+```haskell
+-- फाइल: spec/MyLibSpec.hs
 import Test.Hspec
-import Data.List (sort)
+import MyLib (add)
 
 main :: IO ()
-main = hspec $ do
+main = hspec $ describe "MyLib.add" $ do
+  it "दो संख्याओं को जोड़ता है" $
+    add 1 2 `shouldBe` 3
 
-  describe "sort" $ do
-    it "sorts an empty list" $
-      sort ([] :: [Int]) `shouldBe` ([] :: [Int])
-
-    it "sorts a list of integers" $
-      sort [3, 2, 1] `shouldBe` [1, 2, 3]
+  it "शून्य जोड़ने पर पहली संख्या लौटाता है" $
+    add 5 0 `shouldBe` 5
 ```
 
-सैम्पल आउटपुट:
+फिर, अपने बिल्ड टूल का उपयोग करके अपने परीक्षणों को चलाएं, जिससे एक आउटपुट निकल सकता है जैसे:
 
 ```
-Test Suites: 1 passed, 1 total
-Tests:       2 passed, 2 total
+MyLib.add
+  - दो संख्याओं को जोड़ता है
+  - शून्य जोड़ने पर पहली संख्या लौटाता है
+
+0.0001 सेकंड में समाप्त
+2 उदाहरण, 0 विफलताएँ
 ```
 
-## Deep Dive (गहराई में जानकारी:)
+### QuickCheck का उपयोग करना
 
-Hspec की शुरूवात Haskell में टेस्टिंग को सरल बनाने के लिए की गयी थी। यह Behaviour Driven Development (BDD) पर आधारित है। QuickCheck और HUnit कुछ अन्य अल्टरनेटिव्स हैं जो कि प्रोपर्टी और यूनिट टेस्टिंग को कवर करते हैं। Hspec एक ह्यूमन-रीडेबल फॉर्मेट में टेस्ट केसेज लिखने की क्षमता देता है और इसे गुड प्रैक्टिस माना जाता है।
+QuickCheck के साथ, आप उन गुणों को व्यक्त करते हैं जो आपके फंक्शन्स को संतुष्ट करना चाहिए। अपनी परियोजना कॉन्फिगरेशन में `QuickCheck` जोड़ें, फिर इसे आयात करें:
 
-## See Also (और जानें:)
+```haskell
+-- फाइल: test/MyLibProperties.hs
+import Test.QuickCheck
+import MyLib (add)
 
-- [Hspec User's Manual](https://hspec.github.io/)
-- [QuickCheck on Hackage](https://hackage.haskell.org/package/QuickCheck)
-- [HUnit on Hackage](https://hackage.haskell.org/package/HUnit)
+prop_addAssociative :: Int -> Int -> Int -> Bool
+prop_addAssociative x y z = x + (y + z) == (x + y) + z
+
+prop_addCommutative :: Int -> Int -> Bool
+prop_addCommutative x y = x + y == y + x
+
+main :: IO ()
+main = do
+  quickCheck prop_addAssociative
+  quickCheck prop_addCommutative
+```
+
+ये परीक्षण चलाने पर निर्दिष्ट गुणों की जाँच के लिए स्वतः इनपुट उत्पन्न होंगे:
+
+```
++++ OK, पास हुए 100 परीक्षण।
++++ OK, पास हुए 100 परीक्षण।
+```
+
+Hspec और QuickCheck दोनों उदाहरणों में, परीक्षण सूट्‌स निष्क्रिय दस्तावेजीकरण के रूप में कार्य करते हैं जो आपके कोड की सहीता को स्वतः सत्यापित कर सकते हैं।

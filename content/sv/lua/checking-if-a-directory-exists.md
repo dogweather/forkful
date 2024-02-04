@@ -1,52 +1,58 @@
 ---
-title:                "Kontrollera om en katalog finns"
-date:                  2024-01-20T14:57:53.236234-07:00
-simple_title:         "Kontrollera om en katalog finns"
-
+title:                "Kontrollera om en katalog existerar"
+date:                  2024-02-03T19:07:53.562527-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Kontrollera om en katalog existerar"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/lua/checking-if-a-directory-exists.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att kontrollera om en mapp finns innebär att man skriver kod som ser om en särskild katalog existerar på filsystemet. Programmerare gör detta för att undvika fel genom att förutsätta att en mapp finns, vilket kan vara fallet vid läsning, skrivning eller när man manipulerar filer.
+
+Att kontrollera om en katalog finns är en grundläggande operation när man skriver skript som interagerar med filsystemet, för att säkerställa att ditt program arbetar med giltiga sökvägar och förhindrar fel relaterade till icke-existerande kataloger. Denna uppgift är avgörande för att skapa nya filer i kataloger, läsa från dem eller utföra katalogspecifika operationer på ett säkert sätt.
 
 ## Hur man gör:
-```Lua
-local lfs = require("lfs") -- Ladda LuaFileSystem-modulen
 
--- Funktion för att kontrollera om en mapp finns
-function directory_exists(path)
-    local attributes = lfs.attributes(path)
-    return attributes and attributes.mode == "directory"
+I Lua har du ingen inbyggd funktion för att direkt kontrollera om en katalog finns, så du förlitar dig ofta på Lua File System (lfs) biblioteket, ett populärt tredjepartsbibliotek för filoperationer.
+
+Se till att du har Lua File System installerat först. Om inte, kan du vanligtvis installera det med LuaRocks:
+
+```sh
+luarocks install luafilesystem
+```
+
+Sedan kan du använda följande exempel för att kontrollera om en katalog finns:
+
+```lua
+local lfs = require "lfs"
+
+function directoryExists(directory)
+    local attr = lfs.attributes(directory)
+    return attr and attr.mode == "directory"
 end
 
--- Användning
-local path = "/din/önskade/sökväg"
-if directory_exists(path) then
-    print("Mappen finns!")
+-- Kontrollera om en specifik katalog finns
+if directoryExists("/path/to/your/directory") then
+    print("Katalogen finns.")
 else
-    print("Mappen existerar inte.")
+    print("Katalogen finns inte.")
 end
 ```
-### Exempel på utdata:
+
+Detta kommer att ge utskriften:
+
 ```
-Mappen finns!
-```
-eller
-```
-Mappen existerar inte.
+Katalogen finns.
 ```
 
-## Djupdykning
-Historiskt har tillgången till filsystemet i Lua krävt externa moduler som LuaFileSystem eftersom standardbiblioteket inte har den funktionaliteten. LuaFileSystem (lfs) är den vanligaste lösningen och har blivit de facto-standarden för filsystemåtgärder i Lua.
+Eller, om katalogen inte finns:
 
-Alternativ till LuaFileSystem inkluderar att använda `os`-biblioteket för att köra kommandon som är specifika för operativsystemet, men detta är mindre portabelt och kan vara säkerhetsrisk. Det finns också andra tredjepartsbibliotek och FFI-biblioteket (Foreign Function Interface) som kan användas för att åstadkomma samma sak.
+```
+Katalogen finns inte.
+```
 
-När det gäller implementationen använder `lfs.attributes` för att hämta attributen för en fil eller mapp. Genom att kontrollera att attributet 'mode' är 'directory' kan vi avgöra om sökvägen är en mapp.
-
-## Se också
-- LuaFileSystem dokumentation: http://keplerproject.github.io/luafilesystem/
-- Lua 5.4 referensmanual: https://www.lua.org/manual/5.4/
-- Lua Användar-Wiki för filsystemåtgärder: http://lua-users.org/wiki/FileSystemOperations
+Detta tillvägagångssätt använder funktionen `lfs.attributes` för att få attributen för sökvägen. Om sökvägen finns och dess `mode`-attribut är `directory`, bekräftar det katalogens existens.

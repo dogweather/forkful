@@ -1,46 +1,59 @@
 ---
 title:                "Escribiendo en el error estándar"
-date:                  2024-01-19
+date:                  2024-02-03T19:32:48.059339-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Escribiendo en el error estándar"
-
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/clojure/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Qué es y por qué?
-Escribir en el error estándar (stderr) es enviar mensajes de error o log de diagnóstico a un canal de salida específico. Programadores lo usan para separar errores de los datos de salida (stdout), ayudando así a depurar y monitorizar programas sin interferir con la salida regular.
+## Qué y Por Qué?
+Escribir en el error estándar (stderr) se trata de dirigir mensajes de error y diagnósticos al flujo stderr, separado de la salida estándar (stdout). Los programadores hacen esto para diferenciar la salida regular del programa de los mensajes de error, permitiendo una depuración y registro más efectivos.
 
 ## Cómo hacerlo:
-Clojure, como lenguaje en la JVM, usa los métodos de Java para escribir en stderr. Aquí hay un ejemplo:
+En Clojure, puedes escribir en stderr utilizando el flujo `*err*`. Aquí tienes un ejemplo básico:
 
-```Clojure
-;; Impresión simple en stderr
-(. System err (println "¡Ups! Ocurrió un error"))
+```clojure
+(.write *err* "Este es un mensaje de error.\n")
+```
 
-;; Uso de println directamente desde clojure.core
-(clojure.core/binding [*err* *out*]
-  (println "Esto también va a stderr"))
+Nota que después de escribir un mensaje, debes vaciar el flujo para asegurar que el mensaje se muestre inmediatamente:
 
-;; Escribiendo una excepción en stderr
+```clojure
+(flush)
+```
+
+Ejemplo de salida a stderr:
+```
+Este es un mensaje de error.
+```
+
+Si estás manejando excepciones, es posible que desees imprimir rastreos de pila en stderr. Usa `printStackTrace` para esto:
+
+```clojure
 (try
-  (throw (Exception. "Algo salió mal"))
+  ;; Código que podría lanzar una excepción
+  (/ 1 0)
   (catch Exception e
-    (. System err (println (.getMessage e)))))
+    (.printStackTrace e *err*)))
 ```
 
-Sample Output:
-```
-¡Ups! Ocurrió un error
-Esto también va a stderr
-Algo salió mal
+Para un registro de errores más estructurado, bibliotecas de terceros como `timbre` pueden configurarse para registrar en stderr. Aquí tienes una configuración y uso básicos:
+
+Primero, añade `timbre` a tus dependencias. Luego configúralo para usar stderr:
+
+```clojure
+(require '[taoensso.timbre :as timbre])
+
+(timbre/set-config! [:appenders :standard-out :enabled?] false) ;; Deshabilita el registro en stdout
+(timbre/set-config! [:appenders :spit :enabled?] false) ;; Deshabilita el registro en archivos
+(timbre/set-config! [:appenders :stderr :min-level] :error) ;; Habilita stderr para errores
+
+(timbre/error "Ocurrió un error mientras se procesaba su solicitud.")
 ```
 
-## Deep Dive:
-Escribir en stderr data desde los tiempos de los sistemas Unix y es una convención que la mayoría de los lenguajes de programación siguen. Además de `System/err`, se pueden usar otras bibliotecas en Clojure, como `tools.logging` para manejar logs más avanzados. En el nivel de implementación, Clojure usa la infraestructura de Java para stderr, que se puede redirigir o manipular como cualquier `java.io.PrintStream`.
-
-## See Also:
-- Documentación oficial de Clojure: [clojure.org](https://clojure.org/)
-- Documentación de Java sobre `System.err`: [System (Java Platform SE)](https://docs.oracle.com/javase/8/docs/api/java/lang/System.html)
-- Librería de logging para Clojure: [tools.logging](https://github.com/clojure/tools.logging)
+Esto dirigirá los mensajes de nivel de error a stderr, haciéndolos distintos de la salida estándar de la aplicación.

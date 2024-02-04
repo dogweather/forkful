@@ -1,40 +1,50 @@
 ---
-title:                "Створення текстового файлу"
-date:                  2024-01-19
-simple_title:         "Створення текстового файлу"
-
+title:                "Написання текстового файлу"
+date:                  2024-02-03T19:29:21.287316-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Написання текстового файлу"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/ruby/writing-a-text-file.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? / Що і чому?
-Writing a text file in Ruby means saving data to a file on your disk. Programmers do this to store info, like logs or user data.
+## Що і Чому?
+Запис у текстовий файл у Ruby - це фундаментальна операція, яка дозволяє вам зберігати результати та дані для подальшого доступу або модифікації. Програмісти часто виконують це завдання з різних причин, таких як ведення журналів, зберігання конфігурацій або експортування даних у форматі, зручному для людини.
 
-## How to: / Як це зробити:
-```Ruby
-# Open and write to a file
-File.open('example.txt', 'w') do |file|
-  file.puts "Привіт, світ!"
+## Як це зробити:
+Ruby спрощує роботу з файлами. Для запису в файл ви можете використовувати вбудований клас `File` в Ruby. Наступний приклад демонструє, як відкрити файл для запису (режим `"w"`) та додавання (режим `"a"`), потім записати рядок в нього і переконатися, що файл буде закрито після цього:
+
+```ruby
+# Запис нового вмісту до файлу, заміщення існуючого вмісту
+File.open("example.txt", "w") do |file|
+  file.puts "Привіт, Ruby!"
 end
 
-# Append to existing file
-File.open('example.txt', 'a') do |file|
-  file.puts "Ще один рядок."
+# Додавання вмісту до кінця файлу
+File.open("example.txt", "a") do |file|
+  file.puts "Додаємо ще один рядок."
+end
+```
+Після виконання обох фрагментів, вміст `example.txt` буде:
+```
+Привіт, Ruby!
+Додаємо ще один рядок.
+```
+
+### Використання сторонньої бібліотеки: FileUtils
+Для більш складних операцій з файлами стандартна бібліотека Ruby `FileUtils` може стати в нагоді, хоча для основного запису в файл достатньо стандартних методів класу `File`. Однак, якщо ви хочете копіювати, переміщувати, видаляти або виконувати інші операції з файловою системою у поєднанні з записом файлів, `FileUtils` варто вивчити.
+
+Приклад використання `FileUtils` для створення директорії та запису в файл у цій директорії:
+```ruby
+require 'fileutils'
+
+FileUtils.mkdir_p 'logs'
+File.open("logs/today.log", "w") do |file|
+  file.puts "Запис у журналі: #{Time.now}"
 end
 ```
 
-Sample output в 'example.txt':
-```
-Привіт, світ!
-Ще один рядок.
-```
-
-## Deep Dive / Поглиблений аналіз:
-Writing to text files has been basic to programming since early days. Alternatives include databases or cloud storage. In Ruby, `File.open` with a block auto-closes the file. Beware of file permissions and encodings.
-
-## See Also / Дивись також:
-- Ruby API for File: https://ruby-doc.org/core/File.html
-- Ruby IO class: https://ruby-doc.org/core/IO.html
-- Guide to File I/O: https://www.tutorialspoint.com/ruby/ruby_input_output.htm
+Це демонструє створення нової директорії `logs`, якщо вона ще не існує, і запис у новий файл `today.log` всередині неї, показуючи маніпуляції як з директоріями, так і з файлами без безпосереднього запису за допомогою FileUtils, але використовуючи його можливості обробки директорій.

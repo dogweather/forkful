@@ -1,47 +1,63 @@
 ---
 title:                "HTML parsen"
-date:                  2024-01-20T15:33:11.216226-07:00
+date:                  2024-02-03T19:12:39.581886-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "HTML parsen"
-
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/python/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Was & Warum?
-HTML-Parsing ist das Umwandeln von HTML-Dokumenten in eine Struktur, die von Software verarbeitet werden kann. Programmierer machen das, um Inhalte von Webseiten automatisch zu extrahieren und zu manipulieren.
+Das Parsen von HTML beinhaltet die Analyse des HTML-Codes einer Webseite, um spezifische Informationen oder Elemente zu extrahieren. Es ist eine gängige Aufgabe beim Web Scraping, Data Mining oder Automatisieren von Interaktionen mit Websites. Programmierer tun dies, um programmatisch mit Websites zu interagieren oder Daten von ihnen zu extrahieren, Aufgaben zu automatisieren oder Webanwendungen zu testen.
 
-## How to:
-Zum Parsen von HTML in Python verwenden wir BeautifulSoup. Es ist einfach und effektiv. Hier ein Beispiel:
+## Wie geht das:
+Python bietet leistungsstarke Bibliotheken wie BeautifulSoup und requests für Web Scraping und HTML-Parsing. Um zu beginnen, müssen Sie diese Bibliotheken installieren, falls Sie dies noch nicht getan haben:
 
-```Python
-from bs4 import BeautifulSoup
+```bash
+pip install beautifulsoup4 requests
+```
+
+Hier ist ein einfaches Beispiel, das `requests` verwendet, um den HTML-Inhalt einer Webseite abzurufen, und `BeautifulSoup`, um ihn zu parsen:
+
+```python
 import requests
+from bs4 import BeautifulSoup
 
-url = 'https://example.com'
-response = requests.get(url)
-html_content = response.text
+# Den Inhalt einer Webseite abrufen
+URL = 'https://example.com'
+page = requests.get(URL)
 
-soup = BeautifulSoup(html_content, 'html.parser')
-title = soup.find('title').get_text()
-print(title)
+# Den HTML-Inhalt parsen
+soup = BeautifulSoup(page.content, 'html.parser')
+
+# Beispiel für das Extrahieren des Titels der Webseite
+title = soup.find('title').text
+print(f'Webseitentitel: {title}')
 ```
 
-Wenn `https://example.com` einen Titel-Tag mit "Beispiel-Seite" hat, wird die Ausgabe:
-
+**Beispielausgabe**:
 ```
-Beispiel-Seite
+Webseitentitel: Beispiel-Domain
 ```
 
-## Deep Dive
-Historisch gesehen, wurde HTML-Parsing mit regulären Ausdrücken oder komplexen String-Operationen gemacht. Aber das ist fehleranfällig und ineffizient. BeautifulSoup hingegen nutzt einen Parser, der die Struktur von HTML versteht. Dies vereinfacht das Extrahieren von Informationen erheblich.
+Für komplexere Anfragen, wie das Extrahieren aller Links von einer Webseite, können Sie die verschiedenen Methoden von BeautifulSoup zum Navigieren und Durchsuchen des Parse-Baums verwenden:
 
-Als Alternative zu BeautifulSoup gibt es auch noch `lxml` oder `html.parser` in Python, aber BeautifulSoup bietet eine benutzerfreundlichere API. 
+```python
+# Alle Links innerhalb von <a>-Tags extrahieren
+links = soup.find_all('a')
 
-Implementierungsdetails: BeautifulSoup wandelt HTML in ein Baumdiagramm von Objekten um. Dadurch wird es einfacher, Elemente zu finden und zu bearbeiten. Man kann nach Tags, Klassen, IDs und mehr suchen.
+for link in links:
+    href = link.get('href')
+    print(href)
+```
 
-## See Also
-- BeautifulSoup Dokumentation: https://www.crummy.com/software/BeautifulSoup/bs4/doc/
-- `requests` Bibliothek: https://docs.python-requests.org/
-- Einführung zu HTML und CSS: https://developer.mozilla.org/de/docs/Learn/Getting_started_with_the_web/HTML_basics
+**Beispielausgabe**:
+```
+https://www.iana.org/domains/example
+```
+
+Die Flexibilität von BeautifulSoup erlaubt es Ihnen, Ihre Suche nach den exakt benötigten Daten anzupassen, was das HTML-Parsing zu einem mächtigen Werkzeug für Programmierer macht, die mit Webinhalten arbeiten.

@@ -1,8 +1,8 @@
 ---
 title:                "Writing tests"
-date:                  2024-01-19
+date:                  2024-02-03T19:03:22.617664-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Writing tests"
-
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/fish-shell/writing-tests.md"
 ---
@@ -10,46 +10,76 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Writing tests is creating little checks to ensure your code behaves as expected. Programmers write tests to catch bugs early, save time, and keep code reliable as it changes.
+
+Writing tests in Fish Shell involves creating scripts that automatically run your code to validate its behavior against expected outcomes. This practice is crucial as it ensures your shell scripts work as intended, catching errors early and making maintenance easier.
 
 ## How to:
-Fish doesn't have a built-in testing framework, but you can use `fisher` to install one like `Fishtape`. Here's a simple test with `Fishtape`:
+
+Fish doesn't have a built-in testing framework like some other programming environments. However, you can write simple test scripts that use assertions to check the behavior of your functions. Additionally, you can leverage third-party tools like `fishtape` for a more comprehensive testing suite.
+
+### Example 1: Basic Test Script
+
+Let's start with a basic function in Fish that calculates the sum of two numbers:
 
 ```fish
-# Install Fishtape first
-fisher install jorgebucaran/fishtape
-
-# Create a test file, `test_my_function.fish`
-function test_my_function
-    echo "Running my_function tests"
-
-    # Test case
-    my_function argument
-    echo $status | fishtape
+function add --description 'Add two numbers'
+    set -l sum (math $argv[1] + $argv[2])
+    echo $sum
 end
-
-# Run your test file in Fish Shell
-fishtape test_my_function.fish
 ```
 
-Sample output might look like this:
+You can write a basic test script for this function like so:
+
+```fish
+function test_add
+    set -l result (add 3 4)
+    if test $result -eq 7
+        echo "test_add passed"
+    else
+        echo "test_add failed"
+    end
+end
+
+test_add
+```
+
+Running this script would output:
+
+```
+test_add passed
+```
+
+### Example 2: Using Fishtape
+
+For a more robust testing solution, you can use `fishtape`, a TAP-producing test runner for Fish.
+
+First, install `fishtape` if you haven't already:
+
+```fish
+fisher install jorgebucaran/fishtape
+```
+
+Next, create a test file for your `add` function, e.g., `add_test.fish`:
+
+```fish
+test "Adding 3 and 4 yields 7"
+    set result (add 3 4)
+    echo "$result" | fishtape
+end
+```
+
+To run the test, use the following command:
+
+```fish
+fishtape add_test.fish
+```
+
+Sample output might look like:
 
 ```
 TAP version 13
-ok 1 my_function with argument
-
-1..1
-# tests 1
-# pass  1
-
-# ok
+# Adding 3 and 4 yields 7
+ok 1 - test_add passed
 ```
 
-## Deep Dive
-Fish shell came about in 2005, way after Bash. It's been about smart features and user-friendliness from the start. Unlike Bash, it doesn't come piled with testing tools. That's where third-party tools like `Fishtape` come in, adding the missing test functionality to Fish. Remember, Fish scripts can be tested like any other script—by checking output and exit statuses—but with `Fishtape`, you get TAP-compliant output that's easier to use in CI/CD pipelines and with test harnesses.
-
-## See Also
-Check out these resources to dive deeper into Fish Shell and `Fishtape`:
-- [Official Fish Documentation](https://fishshell.com/docs/current/index.html)
-- [Fishtape on GitHub](https://github.com/jorgebucaran/fishtape)
-- [Fisher Plugin Manager](https://github.com/jorgebucaran/fisher)
+This tells you that the test passed successfully. `fishtape` allows you to structure more detailed tests and provides informative output, facilitating easier debugging and comprehensive test coverage for your Fish scripts.

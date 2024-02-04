@@ -1,41 +1,45 @@
 ---
 title:                "Capitalizando uma string"
-date:                  2024-01-19
+date:                  2024-02-03T19:05:58.976186-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Capitalizando uma string"
-
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/powershell/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## O Que & Porquê?
-Capitalizar uma string significa tornar a primeira letra de cada palavra em maiúscula, mantendo as outras em minúscula. Programadores fazem isso para padronizar dados, como nomes próprios, ou para atender a requisitos estilísticos em interfaces de usuário, documentos e relatórios.
+## O que & Por quê?
+Capitalizar uma string no PowerShell envolve transformar o primeiro caractere de uma string dada em maiúsculo, deixando o restante da string inalterado. Programadores frequentemente realizam essa tarefa para fins de formatação, como preparar texto para exibição em interfaces de usuário ou seguir regras gramaticais em documentos gerados.
 
 ## Como fazer:
-Com o PowerShell, capitalizar uma string é simples. Aqui estão algumas maneiras:
+O PowerShell, sendo uma ferramenta versátil, permite que você capitalize uma string usando métodos diretos sem a necessidade de bibliotecas de terceiros. Veja como você pode fazer isso:
 
-```PowerShell
-# Usando o método ToTitleCase da classe CultureInfo
-$texto = "isto é um exemplo"
-$culture = [System.Globalization.CultureInfo]::CurrentCulture
-$titleCaseText = $culture.TextInfo.ToTitleCase($texto)
-Write-Output $titleCaseText
+```powershell
+# Usando o método .Net embutido 'ToTitleCase' de CultureInfo
+$text = "hello world"
+$culture = [System.Globalization.CultureInfo]::InvariantCulture
+$capitalizedText = $culture.TextInfo.ToTitleCase($text.ToLower())
+Write-Output $capitalizedText
+```
+Saída:
+```
+Hello world
 ```
 
-Saída da amostra:
+Nota: Este método capitaliza a primeira letra de cada palavra. Se você deseja estritamente capitalizar apenas a primeira letra da string e deixar o restante como está, você poderia fazer algo assim:
+
+```powershell
+# Capitalizando apenas o primeiro caractere de uma string
+$text = "hello world"
+$capitalizedText = $text.Substring(0,1).ToUpper() + $text.Substring(1)
+Write-Output $capitalizedText
 ```
-Isto É Um Exemplo
+Saída:
+```
+Hello world
 ```
 
-## Aprofundamento:
-Capitalizar palavras numa string não é uma invenção recente. Isso remonta ao desenvolvimento das primeiras linguagens de programação que lidam com texto, e regras tipográficas muito antes disso.
-
-Alternativas:
-- Além do método `ToTitleCase`, você pode usar expressões regulares ou iterar pela string e capitalizar cada palavra manualmente, mas isso geralmente é desnecessário e pode ser mais propenso a erros.
-  
-Detalhes de Implementação:
-- O método `ToTitleCase` não capitaliza palavras já em maiúsculas por questões de design, como em siglas. Se você precisar de um comportamento diferente, terá de implementar uma solução personalizada.
-
-## Veja Também:
-- Documentação da classe `TextInfo`: [Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/api/system.globalization.textinfo?view=net-6.0)
+O PowerShell não inclui diretamente uma função simples para capitalizar apenas a primeira letra de uma string, mas combinando os métodos básicos de manipulação de strings como `Substring(0,1).ToUpper()` e concatenação, podemos facilmente alcançar o resultado desejado.

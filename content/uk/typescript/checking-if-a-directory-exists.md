@@ -1,56 +1,83 @@
 ---
 title:                "Перевірка наявності директорії"
-date:                  2024-01-20T14:59:17.302907-07:00
+date:                  2024-02-03T19:09:01.958869-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Перевірка наявності директорії"
-
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/typescript/checking-if-a-directory-exists.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Що та Навіщо?)
-Перевіряємо існування директорії, щоб уникнути помилок під час читання, запису чи створення файлів. Це робимо, щоб забезпечити надійність та коректність програми.
+## Що і чому?
+Перевірка наявності директорії у TypeScript є суттєвою для завдань управління файлами, наприклад, для читання з файлів або запису даних у файли, забезпечуючи виконання операцій лише над існуючими директоріями. Ця операція критично важлива для уникнення помилок, що виникають при спробі доступу або маніпулювання неіснуючими директоріями.
 
-## How to: (Як це зробити:)
-```TypeScript
-import * as fs from 'fs';
+## Як робити:
 
-// Асинхронна функція для перевірки директорії
-async function checkDirectoryExists(path: string): Promise<Boolean> {
-  try {
-    await fs.promises.access(path, fs.constants.F_OK);
-    return true;
-  } catch {
-    return false;
-  }
+TypeScript, при виконанні в середовищі Node.js, дозволяє перевіряти наявність директорії за допомогою модуля `fs`, який надає функцію `existsSync()` або асинхронну функцію `access()` в комбінації з `constants.F_OK`.
+
+### Використання `fs.existsSync()`:
+
+```typescript
+import { existsSync } from 'fs';
+
+const directoryPath = './path/to/directory';
+
+if (existsSync(directoryPath)) {
+  console.log('Директорія існує.');
+} else {
+  console.log('Директорії не існує.');
 }
-
-// Приклад використання
-(async () => {
-  const directoryPath = './myDirectory';
-  const exists = await checkDirectoryExists(directoryPath);
-  console.log(`Directory "${directoryPath}" exists: ${exists}`);
-})();
 ```
 
-Sample Output:
-```
-Directory "./myDirectory" exists: true
-```
-або, якщо директорії не існує:
-```
-Directory "./myDirectory" exists: false
+### Використання `fs.access()` з `fs.constants.F_OK`:
+
+```typescript
+import { access, constants } from 'fs';
+
+const directoryPath = './path/to/directory';
+
+access(directoryPath, constants.F_OK, (err) => {
+  if (err) {
+    console.log('Директорії не існує.');
+    return;
+  }
+  console.log('Директорія існує.');
+});
 ```
 
-## Deep Dive (Детальний Розгляд)
-Перевірка існування директорій у TypeScript - це процес, заснований на Node.js file system (fs) модулі. Функція `fs.access()` перевіряє доступність файлу чи директорії. Параметр `fs.constants.F_OK` використовується, щоб перевірити існування шляху.
+**Приклад виводу** для обох методів, виходячи з припущення, що директорія існує:
+```
+Директорія існує.
+```
 
-Альтернативою асинхронної перевірки є синхронний метод `fs.existsSync(path)`, але він блокує event loop, тому краще використовувати асинхронні функції для неблокуючих операцій.
+А якщо ні:
+```
+Директорії не існує.
+```
 
-Раніше, до ES7, розробники часто використовували пакети, такі як `fs-extra`, або колбеки в `fs.exists()`, але це застарілі підходи в сучасному Node.js.
+### Використання сторонньої бібліотеки - `fs-extra`:
 
-## See Also (Дивіться також)
-- Node.js fs module docs: https://nodejs.org/api/fs.html
-- Understanding filesystem in Node.js: https://nodejs.dev/learn/the-nodejs-filesystem-module
-- Working with Promises: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises
+`fs-extra` - це популярна стороння бібліотека, яка покращує вбудований модуль `fs` і надає більш зручні функції.
+
+```typescript
+import { pathExists } from 'fs-extra';
+
+const directoryPath = './path/to/directory';
+
+pathExists(directoryPath).then(exists => {
+  console.log(`Директорія існує: ${exists}`);
+});
+```
+
+**Приклад виводу** коли директорія існує:
+```
+Директорія існує: true
+```
+
+А якщо ні:
+```
+Директорія існує: false
+```

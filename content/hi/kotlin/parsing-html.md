@@ -1,46 +1,50 @@
 ---
-title:                "HTML पार्स करना"
-date:                  2024-01-20T15:34:17.028152-07:00
-simple_title:         "HTML पार्स करना"
-
+title:                "HTML विश्लेषण"
+date:                  2024-02-03T19:13:14.090950-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "HTML विश्लेषण"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/kotlin/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## क्या और क्यों? (What & Why?)
-HTML पार्सिंग वेब डेटा को संरचित प्रारूप में बदलने की प्रक्रिया है। प्रोग्रामर इसे वेबसाइटों से डेटा निकालने, बॉट्स बनाने, और स्क्रेपिंग के लिए करते हैं।
+## क्या और क्यों?
+HTML पार्सिंग का मतलब एक वेबपेज के मार्कअप को किसी प्रोग्राम द्वारा समझे और हेरफेर कर सके ऐसे कुछ में विभाजित करना होता है। प्रोग्रामर HTML को पार्स करते हैं ताकि डाटा निकाल सकें, वेब इंटरैक्शन्स को ऑटोमेट कर सकें, या सिस्टम्स के बीच में सामग्री को माइग्रेट कर सकें।
 
-## कैसे करें? (How to:)
-Kotlin में HTML पार्सिंग के लिए, आप `Jsoup` लाइब्रेरी का उपयोग कर सकते हैं। यह एक सिंपल उदाहरण है:
+## कैसे करें:
+Kotlin में Jsoup जैसे लाइब्रेरीज की मदद से HTML पार्सिंग सीधी हो जाती है। यहां बताया गया है कि आप यह कैसे कर सकते हैं:
 
-```kotlin
-// Jsoup लाइब्रेरी का उपयोग करके HTML पार्सिंग
+```Kotlin
 import org.jsoup.Jsoup
 
 fun main() {
-    val html = "<html><head><title>नमस्ते Kotlin</title></head><body><p>पार्सिंग HTML मजेदार है!</p></body></html>"
+    val html = "<html><head><title>Sample Page</title></head><body><p>यह एक परीक्षण है।</p></body></html>"
     val doc = Jsoup.parse(html)
-    
-    val title = doc.select("title").first().text()
-    val pText = doc.select("p").first().text()
-    
-    println("टाइटल: $title")
-    println("पैराग्राफ: $pText")
-}
 
-// आउटपुट:
-// टाइटल: नमस्ते Kotlin
-// पैराग्राफ: पार्सिंग HTML मजेदार है!
+    val title = doc.title()
+    println("Title: $title")  // परिणाम: Title: Sample Page
+
+    val pText = doc.select("p").first()?.text()
+    println("Paragraph: $pText")  // परिणाम: Paragraph: यह एक परीक्षण है।
+}
 ```
 
-## गहराई से जानकारी (Deep Dive)
-HTML पार्सिंग का इतिहास वेब के शुरुआती दिनों से जुड़ा हुआ है, जब ब्राउजर को वेब पेजों को सही प्रारूप में प्रस्तुत करने के लिए HTML को समझना था। आज, डेटा एक्सट्रेक्शन, ऑटोमेशन और साइबर सुरक्षा जैसे क्षेत्रों में इसका बड़ा महत्व है। पार्सिंग के लिए अन्य विकल्प में `html.parser`, `lxml` और अन्य पायथन लाइब्रेरीज शामिल हैं, लेकिन Kotlin/जावा डेवेलपर्स के लिए `Jsoup` एक पसंदीदा है जो शक्तिशाली और सहज है। `Jsoup` स्थानीय HTML फाइल्स को पढ़ने, URL से डॉक्यूमेंट्स फेच करने, और डोम एलिमेंट्स को संपादित करने की सुविधा देता है।
+हमने शीर्षक और पैराग्राफ टेक्स्ट लिया, जो Jsoup के सक्षम होने की सामान्य जानकारी प्रदान करता है। लेकिन यह एक शुरूआत है।
 
-## और जानकारी (See Also)
-- Jsoup Quickstart गाइड: [Jsoup Documentation](https://jsoup.org/)
-- Kotlin प्रोग्रामिंग भाषा: [Kotlin Lang](https://kotlinlang.org/)
-- HTML पार्सिंग गाइड: [W3C Parsing](https://www.w3.org/TR/html5/syntax.html#parsing)
-- `lxml` पायथन लाइब्रेरी: [LXML Documentation](https://lxml.de/)
-- `html.parser` - पायथन स्टैण्डर्ड लाइब्रेरी: [Python Official Docs](https://docs.python.org/3/library/html.parser.html)
+## गहराई में जाएँ:
+Kotlin से पहले, इसके लिए Java मुख्यतः उपयोग होता था, अक्सर अजीब तरीके से। Jsoup ने स्क्रिप्ट को पलट दिया, jQuery जैसे दृष्टिकोण प्रदान करके। हालाँकि, HTML पार्सिंग केवल Jsoup तक ही सीमित नहीं है; HtmlUnit जैसी अन्य लाइब्रेरीज या यहाँ तक कि रेगेक्स (हालाँकि इसकी सलाह नहीं दी जाती) भी मौजूद हैं। Jsoup के साथ, आप सुनिश्चित करते हैं कि आपकी पार्सिंग दस्तावेज़ की संरचना का सम्मान करती है। यह एक DOM मॉडल का उपयोग करता है, जो तत्वों का चयन और हेरफेर को सक्षम बनाता है। यह लचीला भी है— यह सबसे अधिक गन्दे HTML को भी पार्स कर सकता है।
+
+## देखें भी:
+Jsoup में गहराई से जाने के लिए:
+
+- Jsoup आधिकारिक दस्तावेज़ीकरण: https://jsoup.org/
+- "Kotlin for Android Developers" पुस्तक: https://antonioleiva.com/kotlin-android-developers-book/
+- Kotlin प्रोग्रामिंग भाषा आधिकारिक साइट: https://kotlinlang.org/
+
+वेब स्क्रेपिंग और पार्सिंग पर व्यापक चर्चाओं और ट्यूटोरियल्स के लिए:
+
+- Kotlin और Jsoup के साथ वेब स्क्रेपिंग: https://medium.com/@hadiyarajesh/web-scraping-with-kotlin-and-jsoup-8b5b6c31c5a5
+- Kotlin और Jsoup के साथ Android पर HTML पार्सिंग: https://proandroiddev.com/parsing-html-on-android-1b766658be6a

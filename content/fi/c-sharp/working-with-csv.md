@@ -1,63 +1,151 @@
 ---
-title:                "CSV-tiedostojen käsittely"
-date:                  2024-01-19
-simple_title:         "CSV-tiedostojen käsittely"
-
+title:                "Työskentely CSV:n kanssa"
+date:                  2024-02-03T19:19:48.960918-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Työskentely CSV:n kanssa"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c-sharp/working-with-csv.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-"Mitä ja Miksi?"
+## Mikä & Miksi?
+CSV (Comma-Separated Values) tiedostot ovat yleinen datan vaihtoformaatti, joka esittää taulukollista tietoa puhtaana tekstinä käyttäen pilkkuja arvojen erottamiseen. Ohjelmoijat työskentelevät CSV-tiedostojen parissa tuodakseen, viedäkseen ja muokatakseen dataa vaivattomasti eri sovellusten ja palveluiden välillä, koska kyseessä on yksinkertainen, laajasti tuettu muoto, joka on yhteensopiva taulukkolaskentaohjelmien, tietokantojen ja ohjelmointikielien kanssa.
 
-CSV-formaatti tallentaa tietoa, jossa jokainen kenttä on erotettu toisistaan pilkuilla. Ohjelmoijat käyttävät CSV:tä, koska se on yksinkertainen ja laajasti yhteensopiva eri järjestelmien kanssa.
+## Kuinka:
+CSV-tiedostojen käsittely C#:ssa voidaan suorittaa `System.IO` nimiavaruuden avulla perustoimintoja varten, ja monimutkaisempien manipulointien tai suurempien tiedostojen käsittelyyn sujuvasti voi harkita kolmannen osapuolen kirjastoja, kuten `CsvHelper`. Alla on esimerkkejä, kuinka lukea ja kirjoittaa CSV-tiedostoja käyttäen molempia lähestymistapoja.
 
-## How to:
-"Kuinka tehdä:"
+### CSV-tiedoston lukeminen käyttäen System.IO
+```csharp
+using System;
+using System.IO;
 
-```C#
-// CSV-tiedoston luku
-var tiedostonPolku = @"C:\esimerkki.csv";
-var rivit = File.ReadAllLines(tiedostonPolku);
-foreach (var rivi in rivit)
+class ReadCSV
 {
-    var kentat = rivi.Split(',');
-    Console.WriteLine($"Nimi: {kentat[0]}, Ikä: {kentat[1]}");
-}
-
-// CSV-tiedoston kirjoitus
-var henkilot = new List<string[]>
-{
-    new string[] { "Matti Meikäläinen", "30" },
-    new string[] { "Liisa Virtanen", "25" }
-};
-var uusiTiedosto = @"C:\uusi_esimerkki.csv";
-using (var sw = new StreamWriter(uusiTiedosto))
-{
-    foreach (var henkilo in henkilot)
+    static void Main()
     {
-        var rivi = string.Join(",", henkilo);
-        sw.WriteLine(rivi);
+        string filePath = @"polku\tiedostoonne.csv";
+        // Lukee kaikki CSV-tiedoston rivit
+        string[] csvLines = File.ReadAllLines(filePath);
+        
+        foreach (string line in csvLines)
+        {
+            string[] rowData = line.Split(',');
+            Console.WriteLine($"Ensimmäinen sarake: {rowData[0]}, Toinen sarake: {rowData[1]}");
+        }
     }
 }
 ```
 
-Esimerkkitulostus:
+**Esimerkkitulostus:**
 ```
-Nimi: Matti Meikäläinen, Ikä: 30
-Nimi: Liisa Virtanen, Ikä: 25
+Ensimmäinen sarake: Nimi, Toinen sarake: Ikä
+Ensimmäinen sarake: John Doe, Toinen sarake: 30
 ```
 
-## Deep Dive
-"Syväsukellus"
+### Kirjoittaminen CSV-tiedostoon käyttäen System.IO
+```csharp
+using System;
+using System.Collections.Generic;
+using System.IO;
 
-CSV (Comma-Separated Values) on 1970-luvulta peräisin. Yksinkertaisuuden vuoksi CSV on kestänyt, vaikka XML ja JSON jne. ovat tulleet. Sen käyttö riippuu tarpeesta: pieniin, yksinkertaisiin datamäärityksiin se voi olla parempi kuin monimutkaisemmat formaatit. C#:ssa CSV:n käsittelyssä voi käyttää string-metodeja tai kirjastoja kuten CsvHelper, jolloin työ helpottuu.
+class WriteCSV
+{
+    static void Main()
+    {
+        string filePath = @"polku\tulostiedostoonne.csv";
+        var lines = new List<string>
+        {
+            "Nimi,Ikä",
+            "John Doe,30",
+            "Jane Smith,25"
+        };
+        
+        File.WriteAllLines(filePath, lines);
+        Console.WriteLine("CSV-tiedosto kirjoitettu.");
+    }
+}
+```
 
-## See Also
-"Näe Myös"
+**Esimerkkitulostus:**
+```
+CSV-tiedosto kirjoitettu.
+```
 
-- CsvHelper-kirjaston dokumentaatio: https://joshclose.github.io/CsvHelper/
-- Microsoftin ohjeet tiedoston lukuun ja kirjoittamiseen C#:ssa: https://docs.microsoft.com/en-us/dotnet/standard/io/ 
-- CSV-tiedoston määrittely RFC 4180: https://tools.ietf.org/html/rfc4180
+### CsvHelper:n käyttö CSV:n lukemiseen
+CsvHelper:n käyttämiseksi, lisää ensin `CsvHelper` paketti projektiisi käyttäen NuGet Package Manageria.
+
+```csharp
+using CsvHelper;
+using System.Globalization;
+using System.IO;
+using System.Linq;
+using CsvHelper.Configuration;
+
+class ReadCSVWithCsvHelper
+{
+    static void Main()
+    {
+        string filePath = @"polku\tiedostoonne.csv";
+
+        using (var reader = new StreamReader(filePath))
+        using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
+        {
+            var records = csv.GetRecords<dynamic>().ToList();
+            foreach (var record in records)
+            {
+                Console.WriteLine($"Ensimmäinen sarake: {record.Name}, Toinen sarake: {record.Age}");
+            }
+        }
+    }
+}
+```
+
+**Esimerkkitulostus:**
+```
+Ensimmäinen sarake: John Doe, Toinen sarake: 30
+Ensimmäinen sarake: Jane Smith, Toinen sarake: 25
+```
+
+### CsvHelper:n käyttö CSV:n kirjoittamiseen
+```csharp
+using CsvHelper;
+using System.Globalization;
+using System.IO;
+using System.Collections.Generic;
+using CsvHelper.Configuration;
+
+class WriteCSVWithCsvHelper
+{
+    public class Henkilö
+    {
+        public string Nimi { get; set; }
+        public int Ikä { get; set; }
+    }
+
+    static void Main()
+    {
+        string filePath = @"polku\tulostiedostoonne.csv";
+        var records = new List<Henkilö>
+        {
+            new Henkilö { Nimi = "John Doe", Ikä = 30 },
+            new Henkilö { Nimi = "Jane Smith", Ikä = 25 }
+        };
+
+        using (var writer = new StreamWriter(filePath))
+        using (var csv = new CsvWriter(writer, CultureInfo.InvariantCulture))
+        {
+            csv.WriteRecords(records);
+        }
+        
+        Console.WriteLine("CSV-tiedosto kirjoitettu CsvHelperin avulla.");
+    }
+}
+```
+
+**Esimerkkitulostus:**
+```
+CSV-tiedosto kirjoitettu CsvHelperin avulla.
+```

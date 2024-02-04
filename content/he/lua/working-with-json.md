@@ -1,38 +1,61 @@
 ---
 title:                "עבודה עם JSON"
-date:                  2024-01-19
+date:                  2024-02-03T19:23:49.205221-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "עבודה עם JSON"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/lua/working-with-json.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## מה ולמה?
-JSON הוא פורמט חליפין נתונים, פשוט לקריאה וכתיבה על ידי בני אדם, ולעיבוד על ידי מכונות. תכניתנים משתמשים ב-JSON בגלל התאימות הרחבה והיכולת להמיר בקלות מבני נתונים למחרוזת וחזרה.
+עבודה עם JSON ב-Lua כוללת ניתוח מחרוזות בפורמט JSON לטבלאות Lua ובחזרה, מה שמאפשר החלפת נתונים קלה בין אפליקציות Lua לשירותי ווב או ל-APIs חיצוניים. מתכנתים עושים זאת כדי לנצל את הפורמט הקל והקל לניתוח של JSON לאחסון נתונים יעיל, תצורה, או תקשורת API.
 
 ## איך לעשות:
-```Lua
--- טעינת ספריית cjson
-local cjson = require "cjson"
+Lua אינה כוללת ספריה מובנית לעיבוד JSON. לכן, אחת הספריות הצד שלישי הפופולריות היא `dkjson`, שאתה יכול להשתמש בה בקלות לקידוד ולפענוח של JSON. תחילה, וודא שהתקנת את `dkjson`, למשל דרך LuaRocks (`luarocks install dkjson`), ולאחר מכן עקוב אחרי הדוגמאות למטה.
 
--- יצירת אובייקט JSON מתוך מילון
-local my_table = { name = "Yossi", age = 30, is_programmer = true }
-local json_string = cjson.encode(my_table)
-print(json_string)
--- פלט: {"name":"Yossi","age":30,"is_programmer":true}
+### פענוח JSON לטבלת Lua
+```lua
+local dkjson = require "dkjson"
 
--- המרת מחרוזת JSON למילון
-local decoded_table = cjson.decode(json_string)
-print(decoded_table.name, decoded_table.age)
--- פלט: Yossi 30
+local jsonString = '{"name": "Lua Programmer", "age": 30, "languages": ["Lua", "JavaScript"]}'
+local luaTable, pos, err = dkjson.decode(jsonString, 1, nil)
+if err then
+  print ("Error:", err)
+else
+  print("Name:", luaTable.name) -- פלט: Name: Lua Programmer
+  print("Age:", luaTable.age) -- פלט: Age: 30
+  print("Languages:", table.concat(luaTable.languages, ", ")) -- פלט: Languages: Lua, JavaScript
+end
 ```
 
-## צלילה לעומק
-השימוש ב-JSON כמערכת נתונים התחיל בשנים המוקדמות של המילניום עם הטמעה ב-JavaScript. הלטרנטיבות כוללות XML ו-YAML, אך JSON נשאר פופולרי עקב פשטותו. ב-Lua, המרת JSON מתבצעת באמצעות ספריות חיצוניות כמו cjson או dkjson, שמאפשרות את הטמעת הפונקציות הדרושות.
+### קידוד טבלת Lua ל-JSON
+```lua
+local dkjson = require "dkjson"
 
-## ראה גם
-- מדריך לספריית cjson: https://www.kyne.com.au/~mark/software/lua-cjson-manual.html
-- מדריך לספריית dkjson: http://dkolf.de/src/dkjson-lua.fsl/home
-- השוואת פורמטים לחילופי נתונים: https://www.json.org/json-en.html
+local luaTable = {
+  name = "Lua Programmer",
+  age = 30,
+  languages = { "Lua", "JavaScript" }
+}
+
+local jsonString = dkjson.encode(luaTable, { indent = true })
+print(jsonString)
+```
+
+דוגמה לפלט של קידוד:
+```json
+{
+  "age": 30,
+  "languages": [
+    "Lua",
+    "JavaScript"
+  ],
+  "name": "Lua Programmer"
+}
+```
+
+דוגמאות פשוטות אלו מדגימות איך לעבוד עם JSON ב-Lua, הופכות את התהליך לקל לשילוב של אפליקציות Lua עם טכנולוגיות ווב שונות ו-APIs חיצוניים. זכור, בעוד ש`dkjson` משמש בדוגמאות אלו, ספריות אחרות כמו `cjson` ו`RapidJSON` יכולות גם להיות חלופות מתאימות בהתאם לצרכים של הפרויקט שלך.

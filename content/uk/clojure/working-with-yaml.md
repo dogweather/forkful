@@ -1,47 +1,53 @@
 ---
 title:                "Робота з YAML"
-date:                  2024-01-19
+date:                  2024-02-03T19:25:20.746260-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Робота з YAML"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/clojure/working-with-yaml.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Що це таке і навіщо?
-YAML - це формат серіалізації даних, читабельний для людей. Програмісти використовують його для конфігураційних файлів та обміну даними завдяки його простоті та лаконічності.
+## Що та Чому?
 
-## Як це зробити:
-```Clojure
-(require '[clj-yaml.core :as yaml])
+YAML, рекурсивний акронім "YAML Ain't Markup Language" (YAML - це не мова розмітки), є форматом серіалізації даних, зрозумілим для людини, який використовується для файлів конфігурації та обміну даними між мовами з різними структурами даних. Програмісти використовують YAML через його простоту та читабельність, що робить його ідеальним вибором для конфігурації додатків та сприяння обміну даними в поліглотних програмних середовищах.
 
-; Зчитування YAML
-(def config-string "
-http:
-  port: 80
-  hostname: example.com
-")
+## Як:
 
-(def config-map (yaml/parse-string config-string))
-(println config-map)
+Clojure не має вбудованої підтримки для YAML, однак ви можете використовувати сторонні бібліотеки, такі як `clj-yaml` для аналізу та генерації даних YAML. Спочатку додайте бібліотеку до залежностей вашого проекту:
 
-; Вивід: {:http {:port 80, :hostname "example.com"}}
-
-; Запис YAML
-(def config-data 
-  {:database {:user "dbuser", :password "dbpass"}})
-
-(println (yaml/generate-string config-data))
-
-; Вивід: "database:\n  user: dbuser\n  password: dbpass\n"
+```clojure
+;; Додайте це до залежностей вашого project.clj
+[clj-yaml "0.7.0"]
 ```
 
-## Поглиблене вивчення:
-YAML (YAML Ain't Markup Language) з'явився в 2001 році і позиціонувався як легша альтернатива XML. Альтернативи YAML - це JSON і TOML. У Clojure для роботи з YAML можна використовувати бібліотеку `clj-yaml`, яка ґрунтується на Java-бібліотеці `snakeyaml`. В Clojure важливо управління залежностями, тому не забувайте вказати бібліотеку у файлі `project.clj` або `deps.edn`.
+Ось як ви можете використовувати `clj-yaml` для аналізу YAML та конвертації мап Clojure в YAML.
 
-## Більше інформації:
-- Clojure офіційна сторінка: https://clojure.org
-- `clj-yaml` бібліотека на GitHub: https://github.com/clj-commons/clj-yaml
-- Як працювати з Leiningen та `project.clj`: https://leiningen.org
-- Ресурси для вивчення Clojure: https://clojurecademy.com
+### Аналіз YAML:
+
+```clojure
+(require '[clj-yaml.core :as yaml])
+
+;; Аналіз рядка YAML
+(let [yaml-str "name: John Doe\nage: 30\nlanguages:\n  - Clojure\n  - Python"]
+  (yaml/parse-string yaml-str))
+;; Вивід:
+;; => {"name" "John Doe", "age" 30, "languages" ["Clojure" "Python"]}
+```
+
+### Генерація YAML з Clojure:
+
+```clojure
+(require '[clj-yaml.core :as yaml])
+
+;; Конвертація мапи Clojure в рядок YAML
+(let [data-map {:name "Jane Doe" :age 28 :languages ["Java" "Ruby"]}]
+  (yaml/generate-string data-map))
+;; Вивід:
+; "age: 28\nlanguages:\n- Java\n- Ruby\nname: Jane Doe\n"
+```
+
+Ці прості операції з `clj-yaml` можна інтегрувати в додатки Clojure для обробки файлів конфігурації або сприяння обміну даними з іншими сервісами чи компонентами, що використовують YAML.

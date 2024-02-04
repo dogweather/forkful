@@ -1,37 +1,51 @@
 ---
-title:                "Escrevendo no erro padrão"
-date:                  2024-01-19
-simple_title:         "Escrevendo no erro padrão"
-
+title:                "Escrevendo para o erro padrão"
+date:                  2024-02-03T19:33:18.089492-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Escrevendo para o erro padrão"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/haskell/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## O Quê & Porquê?
-Escrever no erro padrão (*standard error*) é a prática de enviar mensagens de erro para um stream específico, separado da saída padrão (*standard output*). Isso permite aos programadores diferenciar saída normal de mensagens de erro, e é essencial para diagnóstico e depuração.
+## O Que & Por Que?
+Escrever para o erro padrão (stderr) em Haskell permite que os programas diferenciem sua saída entre resultados normais e mensagens de erro. Isso é crucial para sinalizar problemas e depurar, sem encher a saída padrão (stdout) que muitas vezes carrega os dados principais ou resultado do programa.
 
-## Como Fazer:
-```Haskell
+## Como fazer:
+Em Haskell, escrever para stderr é direto com o módulo `System.IO` da biblioteca base. Abaixo está um exemplo básico para demonstrar:
+
+```haskell
 import System.IO
 
 main :: IO ()
 main = do
-    hPutStrLn stderr "Isto é uma mensagem de erro."
-    putStrLn "Isto é uma saída normal."
-
--- Saída esperada:
--- No console (stderr):
--- Isto é uma mensagem de erro.
--- No console (stdout):
--- Isto é uma saída normal.
+  hPutStrLn stderr "Esta é uma mensagem de erro."
 ```
 
-## Aprofundamento
-O erro padrão é um canal de output que existe desde os primórdios dos sistemas Unix, criado para que programas possam comunicar problemas sem interferir na saída de dados. Alternativas incluem a escrita em arquivos de log ou o uso de bibliotecas para lidar com mensagens de erro. Este último pode dar mais controle e opções de formatação, mas escrever diretamente no erro padrão é prático para scripts rápidos ou programas menores. Ao implementar essa funcionalidade em Haskell, usamos a biblioteca `System.IO` que provê a abstração necessária para trabalhar com vários streams de input/output, de forma a manter o código claro e conciso.
+A saída deste programa para stderr seria:
 
-## Veja Também:
-- [Haskell Documentation on System.IO](https://hackage.haskell.org/package/base-4.16.0.0/docs/System-IO.html)
-- [Learn You a Haskell for Great Good! on Input and Output](http://learnyouahaskell.com/input-and-output)
-- [Real World Haskell – Chapter 7: I/O](http://book.realworldhaskell.org/read/io.html)
+```
+Esta é uma mensagem de erro.
+```
+
+Se você está trabalhando em uma aplicação mais complexa, ou se precisa de melhor controle sobre o registro de atividades (incluindo erros), você pode optar por uma biblioteca de terceiros. Uma escolha popular é `monad-logger` que se integra com o estilo `mtl` de programação em Haskell. Aqui está um pequeno trecho usando `monad-logger`:
+
+```haskell
+{-# LANGUAGE OverloadedStrings #-}
+import Control.Monad.Logger
+
+main :: IO ()
+main = runStderrLoggingT $ do
+  logErrorN "Esta é uma mensagem de erro usando monad-logger."
+```
+
+Quando executado, a versão `monad-logger` similarmente produz uma mensagem de erro, mas ela é equipada com mais contexto como carimbos de data/hora ou níveis de registro, dependendo da configuração:
+
+```
+[Error] Esta é uma mensagem de erro usando monad-logger.
+```
+
+Ambos os métodos servem ao propósito de escrever para stderr, com a escolha dependendo em grande parte da complexidade e das necessidades da sua aplicação.

@@ -1,44 +1,72 @@
 ---
 title:                "שימוש בביטויים רגולריים"
-date:                  2024-01-19
+date:                  2024-02-03T19:17:01.136580-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "שימוש בביטויים רגולריים"
-
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/elm/using-regular-expressions.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## מה ולמה?
-רגולר אקספרשנס (Regular Expressions, או regex) זו דרך לחיפוש ותיקון דפוסים בטקסט. מתכנתים משתמשים בהם כי הם חזקים ויעילים לניתוח ועיבוד מידע.
+ביטויים רגולריים (regex) בתכנות הם תבניות המשמשות להתאמת צירופי תווים במחרוזות. ב-Elm, כמו בשפות אחרות, מתכנתים משתמשים ב-regex למשימות כמו אימות קלט, חיפוש, והחלפת טקסט בתוך מחרוזות בשל גמישותם ויעילותם.
 
-## איך עושים את זה:
-ב-Elm, נחשוף את החבילה Regex ונבדוק אם מחרוזת כוללת מספר:
+## איך ל:
+ב-Elm אין פונקציות regex מובנות בספרייה המרכזית שלה, מה שדורש שימוש בספריות צד שלישי לפעולות אלו. אחת מהאפשרויות הפופולריות לעבודה עם regex היא `elm/regex`. ניתן להוסיף אותה לפרויקט שלך באמצעות `elm install elm/regex`.
 
-```Elm
-import Regex exposing (..)
+הנה איך אפשר להשתמש ב-`elm/regex` למשימות נפוצות כמה:
 
-hasNumber : String -> Bool
-hasNumber text =
-    let
-        regex = regex "\\d+"
-    in
-    case contains regex text of
-        Nothing ->
-            False
+### 1. התאמה לתבנית
+כדי לבדוק אם מחרוזת תואמת לתבנית, ניתן להשתמש ב-`Regex.contains`.
 
-        Just _ ->
-            True
+```elm
+import Regex
 
--- דוגמא לשימוש:
-hasNumber "Elm0Programming" -- תוצאה: True
-hasNumber "ElmProgramming"  -- תוצאה: False
+pattern : Regex.Regex
+pattern = Regex.fromString "^[a-zA-Z0-9]+$" |> Maybe.withDefault Regex.never
+
+isAlphanumeric : String -> Bool
+isAlphanumeric input = Regex.contains pattern input
+
+-- דוגמה לשימוש:
+isAlphanumeric "Elm2023"     -- פלט: True
+isAlphanumeric "Elm 2023!"   -- פלט: False
 ```
 
-## טבילה עמוקה
-Regular Expressions היו סביב כבר מאז שנות ה-50 והפכו לפופולריים בתוך שפות תכנות שונות. ב-Elm, חבילת Regex אינה כלולה כברירת מחדל וצריך להתקינה באמצעות elm-package. חלופות ל-regex עשויים להיות פונקציות ספציפיות למחרוזות (כגון contains או startsWith), אבל הם לא מציעים את אותה רמת הגמישות. היישום מתבצע על ידי פענוח הדפוס למכונת מצבים דטרמיניסטית או נון-דטרמיניסטית.
+### 2. מציאת כל ההתאמות
+כדי למצוא את כל המופעים של תבנית בתוך מחרוזת, ניתן להשתמש ב-`Regex.find`.
 
-## ראו גם
-- [Elm Regex package](http://package.elm-lang.org/packages/elm/regex/latest)
-- [Learn Regex](https://regexone.com/)
-- [Regex Tester and Debugger](https://regex101.com/)
+```elm
+matches : Regex.Regex
+matches = Regex.fromString "\\b\\w+\\b" |> Maybe.withDefault Regex.never
+
+getWords : String -> List String
+getWords input = 
+    input
+        |> Regex.find matches
+        |> List.map (.match)
+
+-- דוגמה לשימוש:
+getWords "Elm is fun!"  -- פלט: ["Elm", "is", "fun"]
+```
+
+### 3. החלפת טקסט
+כדי להחליף חלקים ממחרוזת שתואמים לתבנית, משתמשים ב-`Regex.replace`.
+
+```elm
+replacePattern : Regex.Regex
+replacePattern = Regex.fromString "Elm" |> Maybe.withDefault Regex.never
+
+replaceElmWithHaskell : String -> String
+replaceElmWithHaskell input = 
+    Regex.replace replacePattern (\_ -> "Haskell") input
+
+-- דוגמה לשימוש:
+replaceElmWithHaskell "Learning Elm is fun!"  
+-- פלט: "Learning Haskell is fun!"
+```
+
+בדוגמאות אלו, משתמשים ב-`Regex.fromString` כדי לקומפל regex pattern, שבו `\b` מתאים לגבולות מילים, ו-`\w` מתאים לכל תו של מילה. תמיד נהוג לטפל בתוצאת `Maybe` של `Regex.fromString` כדי להגן על נגד תבניות regex לא תקינות, בדרך כלל באמצעות `Maybe.withDefault`.

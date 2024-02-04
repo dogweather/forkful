@@ -1,47 +1,65 @@
 ---
-title:                "Перетворення рядка на великі літери"
-date:                  2024-01-19
-simple_title:         "Перетворення рядка на великі літери"
-
+title:                "Зробити першу літеру рядка великою"
+date:                  2024-02-03T19:06:59.806967-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Зробити першу літеру рядка великою"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/rust/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Що і Чому?)
-Capitalizing a string means transforming the first letter of each word to uppercase. Programmers do this for formatting names, titles, or any text where a proper noun needs distinction.
+## Що та Чому?
 
-## How to: (Як це зробити:)
-```Rust
-fn capitalize_first_letter(s: &str) -> String {
-    s.split_whitespace()
-        .map(|word| {
-            word.chars()
-                .enumerate()
-                .map(|(i, c)| {
-                    if i == 0 { c.to_uppercase().to_string() } else { c.to_string() }
-                })
-                .collect::<String>()
-        })
-        .collect::<Vec<String>>()
-        .join(" ")
+Здійснення великої літери у рядку в Rust полягає у модифікації рядка таким чином, щоб його перший символ був прописною (якщо це літера), тоді як решта рядка залишається без змін. Програмісти часто виконують цю операцію для форматування, наприклад, при підготовці слів для заголовків або забезпеченні консистентності у вводі користувачів.
+
+## Як це зробити:
+
+Щоб здійснити велику літеру у рядку в Rust, у вас є два основні шляхи: використання функціональності стандартної бібліотеки або застосування сторонніх крейтів для більш складних або специфічних потреб. Ось як ви можете зробити обидва.
+
+### Використання стандартної бібліотеки Rust
+
+Стандартна бібліотека Rust не надає прямого методу для перетворення рядків у формат із великою початковою літерою, але ви можете досягти цього, маніпулюючи символами рядка.
+
+```rust
+fn capitalize_first(s: &str) -> String {
+    let mut c = s.chars();
+    match c.next() {
+        None => String::new(),
+        Some(f) => f.to_uppercase().collect::<String>() + c.as_str(),
+    }
 }
 
 fn main() {
-    let input = "rust programming language";
-    let capitalized = capitalize_first_letter(&input);
-    println!("{}", capitalized); // Output: Rust Programming Language
+    let my_string = "hello";
+    println!("{}", capitalize_first(my_string)); // Вивід: Hello
 }
 ```
 
-## Deep Dive (Поглиблений Аналіз)
-Capitalizing strings is no new concept; it's been a common operation since early text-processing and word-processing programs. In Rust, there isn't a built-in method to capitalize every word in a string directly, so a custom function like `capitalize_first_letter` is crafted. Rust's `.map()` and `.enumerate()` iterators are used here to iterate over each word and then each character, respectively. The `to_uppercase()` method applies only to the first character, providing capitalization.
+### Використання крейту `heck`
 
-Alternative methods like regular expressions or other crates could also achieve this, but they come with performance trade-offs and added complexity. Rust prioritizes safety and speed, so the standard library's methods are often preferred.
+Для більш простого підходу, особливо при роботі в більш широкому контексті обробки тексту, ви можете віддати перевагу використанню сторонніх бібліотек, таких як `heck`. Крейт `heck` пропонує різні функціональності перетворення кейсів, включаючи простий спосіб зробити першу літеру рядка прописною.
 
-## See Also (Дивіться Також)
-- [Rust std::str Documentation](https://doc.rust-lang.org/stable/std/str/)
-- [The Rust Programming Language Book](https://doc.rust-lang.org/book/)
-- [Rust By Example](https://doc.rust-lang.org/rust-by-example/)
-- [crates.io, for community-contributed Rust tools](https://crates.io/)
+Спочатку додайте `heck` до вашого `Cargo.toml`:
+
+```toml
+[dependencies]
+heck = "0.4.0"
+```
+
+Потім використайте його для того, щоб зробити першу літеру рядка великою:
+
+```rust
+extern crate heck; // Не потрібно в Rust 2018 редакції або пізніше
+use heck::TitleCase;
+
+fn main() {
+    let my_string = "hello world";
+    let capitalized = my_string.to_title_case();
+    println!("{}", capitalized); // Вивід: Hello World
+}
+```
+
+Примітка: Метод `to_title_case`, який надає `heck`, робить великою літеру кожне слово у рядку, що може бути більшим за те, що вам потрібно, якщо ви хочете зробити великою лише першу літеру рядка. Коригуйте своє використання відповідно до ваших конкретних потреб.

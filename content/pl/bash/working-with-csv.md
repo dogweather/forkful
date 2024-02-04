@@ -1,48 +1,75 @@
 ---
 title:                "Praca z plikami CSV"
-date:                  2024-01-19
+date:                  2024-02-03T19:18:45.511560-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Praca z plikami CSV"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/bash/working-with-csv.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Co i dlaczego?
-Praca z plikami CSV to manipulacja danymi w formacie "Comma-Separated Values" - prostym i uniwersalnym, dlatego często wybieranym do przechowywania i wymiany danych między różnymi systemami.
+Praca z plikami CSV (Comma-Separated Values - wartości rozdzielone przecinkami) w Bashu polega na przetwarzaniu i manipulowaniu danymi tabelarycznymi przechowywanymi w formacie tekstu zwykłego. Jest to kluczowe dla programistów, ponieważ pozwala na automatyzację zadań transformacji, analizy i integracji danych bezpośrednio z linii poleceń, bez potrzeby korzystania z bardziej zaawansowanych narzędzi czy środowisk programistycznych.
 
-## Jak to zrobić?
+## Jak to zrobić:
 
-```Bash
-# Wczytanie pliku CSV i wyświetlenie zawartości
-cat dane.csv
+**Czytanie pliku CSV linia po linii**
 
-# Filtrowanie danych z pliku CSV: wybieranie wierszy z wartością większą niż 100 w drugiej kolumnie
-awk -F, '$2 > 100' dane.csv
-
-# Sortowanie pliku CSV po pierwszej kolumnie, numerycznie
-sort -t, -k1,1n dane.csv
-
-# Zliczanie ile razy pojawiła się unikalna wartość w pierwszej kolumnie
-cut -d, -f1 dane.csv | sort | uniq -c
-
-# Podmienianie przecinków na średniki, zapisać do nowego pliku
-sed 's/,/;/g' dane.csv > dane_semicolon.csv
+```bash
+while IFS=, read -r kolumna1 kolumna2 kolumna3
+do
+  echo "Kolumna 1: $kolumna1, Kolumna 2: $kolumna2, Kolumna 3: $kolumna3"
+done < przykładowy.csv
 ```
 
-Przykładowe wyjście dla komendy `cat dane.csv`:
+*Przykładowe wyjście:*
+
 ```
-Jan,Kowalski,30
-Anna,Nowak,45
+Kolumna 1: id, Kolumna 2: nazwa, Kolumna 3: email
+...
 ```
 
-## W głębi tematu
+**Filtrowanie wierszy CSV na podstawie warunku**
 
-Format CSV wywodzi się z lat 70., kiedy to po raz pierwszy zaczęto go używać w programach komputerowych do przechowywania danych tabelarycznych. Alternatywy dla CSV to m.in. JSON, XML, YAML, które mogą być bardziej elastyczne pod względem struktury danych, jednak CSV nadal pozostaje popularne ze względu na prostotę i szeroką kompatybilność. Ważne jest, aby pamiętać o odpowiednim cytowaniu danych, jeśli w wartościach występują przecinki, oraz o ujednoliceniu kodowania znaków, szczególnie podczas pracy na różnych systemach.
+Używając `awk`, możesz łatwo filtrować wiersze. Na przykład, aby znaleźć wiersze, gdzie druga kolumna równa się "Alice":
 
-## Zobacz też
+```bash
+awk -F, '$2 == "Alice" { print $0 }' przykładowy.csv
+```
 
-- [GNU Awk User's Guide](https://www.gnu.org/software/gawk/manual/) – dokumentacja składni i używania `awk`.
-- [GNU sed manual](https://www.gnu.org/software/sed/manual/sed.html) – dokumentacja `sed` i wyrażeń regularnych.
-- [Bash Guide for Beginners](https://tldp.org/LDP/Bash-Beginners-Guide/html/) – przewodnik po podstawach skryptów w Bashu.
+**Modyfikacja wartości kolumny**
+
+Aby zmienić wartość drugiej kolumny na wielkie litery:
+
+```bash
+awk -F, 'BEGIN {OFS=",";} { $2 = toupper($2); print $0; }' przykładowy.csv
+```
+
+**Sortowanie pliku CSV na podstawie kolumny**
+
+Możesz sortować plik CSV na podstawie na przykład trzeciej kolumny (numerycznie):
+
+```bash
+sort -t, -k3,3n przykładowy.csv
+```
+
+**Użycie `csvkit` do bardziej złożonych zadań**
+
+`csvkit` to zbiór narzędzi wiersza poleceń do konwersji i pracy z plikami CSV. Może być zainstalowany za pomocą pip.
+
+Aby przekonwertować plik JSON na CSV:
+
+```bash
+in2csv dane.json > dane.csv
+```
+
+Aby zapytać plik CSV przy użyciu SQL:
+
+```bash
+csvsql --query "SELECT nazwa FROM przykładowy WHERE id = 10" przykładowy.csv
+```
+
+*Uwaga: Instalowanie `csvkit` wymaga Pythona i może być wykonane za pomocą `pip install csvkit`.*

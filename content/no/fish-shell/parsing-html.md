@@ -1,57 +1,81 @@
 ---
-title:                "Analyse av HTML"
-date:                  2024-01-20T15:31:34.320060-07:00
-simple_title:         "Analyse av HTML"
-
+title:                "Analysering av HTML"
+date:                  2024-02-03T19:12:11.861189-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Analysering av HTML"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/fish-shell/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Hva & Hvorfor?
-Parsing av HTML betyr å lese og gjøre om koden til et strukturert format som kan manipuleres programmert. Grunnen til at programmerere gjør dette er for å hente eller bearbeide innhold fra websider automatisk.
+## Hva og hvorfor?
+
+Parsing av HTML handler om å trekke ut data eller informasjon fra HTML-innhold, en vanlig oppgave når man håndterer webdata. Programmerere gjør dette for å automatisere utvinningen av informasjon fra nettsteder, for oppgaver som web scraping, datautvinning, eller automatisert testing.
 
 ## Hvordan:
-I Fish Shell kan vi bruke verktøy som `pup` for å tolke HTML. Her er hvordan man installerer og bruker `pup`:
+
+Fish shell er, fremfor alt, ikke designet for direkte parsing av HTML. Det utmerker seg imidlertid ved å lime sammen Unix-verktøy som `curl`, `grep`, `sed`, `awk`, eller ved å bruke spesialiserte verktøy som `pup` eller `beautifulsoup` i et Python-script. Nedenfor er eksempler som viser hvordan du kan utnytte disse verktøyene innenfor Fish shell for å parse HTML.
+
+### Bruke `curl` og `grep`:
+Hente HTML-innhold og trekke ut linjer som inneholder lenker:
 
 ```fish
-# Installer 'pup', et kommandolinjeverktøy for parsing av HTML 
-sudo apt install pup
-
-# Parse en HTML-fil og hent ut alle titler (antatt at du har en fil 'index.html')
-cat index.html | pup 'title text{}'
+curl -s https://example.com | grep -oP '(?<=href=")[^"]*'
 ```
 
-Eksempel på utskrift:
+Utdata:
 ```
-Din Hjemside Tittel
+/page1.html
+/page2.html
+...
 ```
 
-For å hente ut lenker:
+### Bruke `pup` (et kommandolinjeverktøy for parsing av HTML):
+
+Først, sørg for at `pup` er installert. Deretter kan du bruke det til å trekke ut elementer ved deres tagger, id-er, klasser, osv.
+
 ```fish
-cat index.html | pup 'a attr{href}'
+curl -s https://example.com | pup 'a attr{href}'
 ```
 
-Eksempel på utskrift:
+Utdata, likt `grep`-eksemplet, ville listet href-attributter til `<a>`-taggene.
+
+### Med et Python-script og `beautifulsoup`:
+
+Selv om Fish i seg selv ikke kan parse HTML på en naturlig måte, integreres det sømløst med Python-script. Nedenfor er et kort eksempel som bruker Python med `BeautifulSoup` for å parse og trekke ut titler fra HTML. Pass på at du har `beautifulsoup4` og `requests` installert i ditt Python-miljø.
+
+**parse_html.fish**
+
+```fish
+function parse_html -a url
+    python -c "
+import sys
+import requests
+from bs4 import BeautifulSoup
+
+response = requests.get(sys.argv[1])
+soup = BeautifulSoup(response.text, 'html.parser')
+
+titles = soup.find_all('title')
+
+for title in titles:
+    print(title.get_text())
+" $url
+end
 ```
-http://eksempel.com
-http://eksempel.com/om
-http://eksempel.com/kontakt
+
+Bruk:
+
+```fish
+parse_html 'https://example.com'
 ```
 
-## Dypdykk:
-Fra de første dagene av nettet har det vært behov for å automatisere henting av informasjon fra HTML-dokumenter. Dette startet med enkle skript som grep og sed, men har utviklet seg til mer komplekse verktøy som BeautifulSoup for Python, Nokogiri for Ruby og `pup` for kommandolinjen.
+Utdata:
+```
+Eksempeldomene
+```
 
-Alternativer til `pup` inkluderer:
-- `htmlq`: Ligner på `jq`, men for HTML.
-- `xmllint`: Del av libxml2 pakken, mer allsidig men også mer kompleks.
-
-Implementasjonsdetaljer å merke seg:
-- HTML er vanligvis ikke så strukturer som XML, og kan være vanskeligere å parse feilfritt.
-- Parsing i Fish Shell ved hjelp av rør og andre kommandolinjeverktøy betyr at du behandler HTML som tekst, så det er viktig å håndtere uforutsigbarheter i hvordan HTML er formatert.
-
-## Se Også:
-- [pup GitHub side](https://github.com/ericchiang/pup)
-- [HTML parsing i Python med BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/)
-- [Parsing HTML med Nokogiri og Ruby](https://nokogiri.org/)
+Hver av disse metodene tjener forskjellige bruksområder og kompleksitetsnivåer, fra enkel tekstmanipulering på kommandolinjen til den fulle parsingkraften av `beautifulsoup` i Python-skript. Avhengig av dine behov og kompleksiteten til HTML-strukturen, kan du velge en enkel Unix-pipeline eller en kraftigere skripttilnærming.

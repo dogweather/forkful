@@ -1,62 +1,71 @@
 ---
-title:                "Sjekke om en mappe eksisterer"
-date:                  2024-01-20T14:58:53.833421-07:00
-simple_title:         "Sjekke om en mappe eksisterer"
-
+title:                "Sjekker om en mappe eksisterer"
+date:                  2024-02-03T19:08:41.318032-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Sjekker om en mappe eksisterer"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/swift/checking-if-a-directory-exists.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Hva & Hvorfor?)
-Å sjekke om en mappe eksisterer betyr å verifisere at en spesifikk sti på filsystemet ditt peker til en faktisk mappe. Programmerere gjør dette for å unngå feil ved filhåndtering, som å forsøke å lese fra eller skrive til en ikke-eksisterende mappe.
+## Hva & hvorfor?
+Å sjekke om en katalog eksisterer i filsystemet er essensielt for å håndtere filstrukturer fra dine Swift-applikasjoner. Denne oppgaven gjør det mulig for utviklere å verifisere tilstedeværelsen av kataloger før de forsøker å lese fra eller skrive til dem, og dermed unngå mulige kjøretidsfeil.
 
-## How to: (Hvordan:)
-Swift gir oss `FileManager` for å håndtere filsystemoperasjoner. Her er hvordan du sjekker om en mappe eksisterer:
+## Hvordan:
 
-```Swift
+Swifts Foundation-rammeverk tilbyr `FileManager`-klassen, som har metoder for å håndtere filsystemet. Du kan bruke `FileManager` for å sjekke om en katalog eksisterer. Her er et kodeutdrag om hvordan du gjør dette:
+
+```swift
 import Foundation
 
 let fileManager = FileManager.default
-let path = "/some/path/to/directory"
+let path = "/sti/til/din/katalog"
 
 if fileManager.fileExists(atPath: path, isDirectory: nil) {
-    print("Mappen eksisterer!")
+    print("Katalogen eksisterer")
 } else {
-    print("Mappen eksisterer ikke.")
+    print("Katalogen eksisterer ikke")
 }
 ```
 
-Output kan være:
+Men, dette sjekker for både filer og kataloger. Hvis du spesifikt ønsker å verifisere at en katalog eksisterer, må du sende en peker til en Boolesk verdi i `isDirectory`:
 
-```
-Mappen eksisterer!
-```
+```swift
+import Foundation
 
-Eller:
+let fileManager = FileManager.default
+let path = "/sti/til/din/katalog"
+var isDirectory: ObjCBool = false
 
-```
-Mappen eksisterer ikke.
-```
-
-## Deep Dive (Dypdykk)
-Før `FileManager` var NSFileManager standarden i Objective-C. Swift forenklet prosessen med høyere nivå API'er. Det finnes alternativer som å bruke `URL`-objekter og `fileSystemRepresentation` for mer robust håndtering av sti-tegnkodinger. Ved sjekking med `fileExists(atPath:)`, husk at funksjonen returnerer `true` for både filer og mapper, så for å spesifikt bekrefte en mappe, bruk `isDirectory` parameteret.
-
-```Swift
-var isDir: ObjCBool = false
-if fileManager.fileExists(atPath: path, isDirectory: &isDir) {
-    if isDir.boolValue {
-        // Det er bekreftet å være en mappe
-    } else {
-        // Stien eksisterer, men det er en fil, ikke en mappe
-    }
+if fileManager.fileExists(atPath: path, isDirectory: &isDirectory), isDirectory.boolValue {
+    print("Katalogen eksisterer")
+} else {
+    print("Katalogen eksisterer ikke")
 }
 ```
 
-Ved å referere til `isDir`, kan vi skille mellom filer og mapper.
+### Bruke et tredjepartsbibliotek
 
-## See Also (Se også)
-- [Apple FileManager Documentation](https://developer.apple.com/documentation/foundation/filemanager)
-- [Swift API Design Guidelines](https://www.swift.org/documentation/api-design-guidelines/)
-- [File System Basics](https://developer.apple.com/library/archive/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/FileSystemOverview/FileSystemOverview.html)
+Per nå krever vanligvis ikke sjekking for eksistensen av en katalog i Swift tredjepartsbiblioteker på grunn av robustheten til `FileManager`-klassen. Men, for mer kompleks filmanipulasjon og sjekking, tilbyr biblioteker som **Files** av John Sundell en mer Swift-vennlig API.
+
+Slik kan du bruke det:
+
+Først, legg til Files i prosjektet ditt via Swift Package Manager.
+
+Deretter kan du sjekke for eksistensen av en katalog slik:
+
+```swift
+import Files
+
+do {
+    _ = try Folder(path: "/sti/til/din/katalog")
+    print("Katalogen eksisterer")
+} catch {
+    print("Katalogen eksisterer ikke")
+}
+```
+
+Merk: Siden tredjepartsbiblioteker kan endres, referer alltid til den nyeste dokumentasjonen for bruk og beste praksiser.

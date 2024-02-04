@@ -1,53 +1,149 @@
 ---
 title:                "Trabajando con JSON"
-date:                  2024-01-19
+date:                  2024-02-03T19:24:00.539955-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Trabajando con JSON"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/python/working-with-json.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Qué y Por Qué?
+## ¿Qué y Por Qué?
 
-JSON (JavaScript Object Notation) es un formato ligero para el intercambio de datos. Los programadores lo usan por su facilidad de lectura para humanos y por ser sencillo de interpretar y generar para las máquinas.
+Trabajar con JSON (Notación de Objetos de JavaScript) implica parsear cadenas formateadas en JSON a objetos de Python y viceversa. Esto es crucial para el desarrollo de web y API ya que JSON es la lingua franca para el intercambio de datos entre servidores y clientes.
 
-## Cómo Hacerlo:
+## Cómo hacerlo:
 
-Para manipular JSON en Python, usamos el módulo `json`, que viene incorporado en el lenguaje. Aquí unos ejemplos básicos:
+La biblioteca integrada `json` de Python simplifica el proceso de codificación (convertir objetos de Python a JSON) y decodificación (convertir JSON a objetos de Python). Así es como puedes usarla:
 
-```Python
+### Codificando objetos Python a JSON:
+
+```python
 import json
 
-# Convertir de JSON a un diccionario de Python (Deserialización)
-json_string = '{"nombre": "Carmen", "edad": 30, "ciudad": "Madrid"}'
-persona = json.loads(json_string)
-print(persona)
-
-# Convertir un diccionario de Python a JSON (Serialización)
-persona_dict = {"nombre": "Carmen", "edad": 30, "ciudad": "Madrid"}
-json_string = json.dumps(persona_dict, indent=4)
-print(json_string)
-```
-
-Salida:
-
-```
-{'nombre': 'Carmen', 'edad': 30, 'ciudad': 'Madrid'}
-{
-    "nombre": "Carmen",
+datos = {
+    "nombre": "John Doe",
     "edad": 30,
-    "ciudad": "Madrid"
+    "esEmpleado": True,
+    "direcciones": [
+        {"ciudad": "Nueva York", "codigoPostal": "10001"},
+        {"ciudad": "San Francisco", "codigoPostal": "94016"}
+    ]
+}
+
+cadena_json = json.dumps(datos, indent=4)
+print(cadena_json)
+```
+
+**Salida:**
+
+```json
+{
+    "nombre": "John Doe",
+    "edad": 30,
+    "esEmpleado": true,
+    "direcciones": [
+        {
+            "ciudad": "Nueva York",
+            "codigoPostal": "10001"
+        },
+        {
+            "ciudad": "San Francisco",
+            "codigoPostal": "94016"
+        }
+    ]
 }
 ```
 
-## Profundizando:
+### Decodificando JSON a objetos Python:
 
-El uso de JSON como formato de intercambio de datos se popularizó a principios de los años 2000 gracias a su simplicidad frente a XML. Alternativas modernas incluyen YAML, que es aún más legible para humanos, y Protocol Buffers, que es más eficiente para la comunicación entre máquinas. Mientras que JSON se decodifica en diccionarios y listas en Python, es importante manejar correctamente los tipos de datos soportados y las conversiones, teniendo en cuenta cosas como los números grandes y las fechas/tiempos.
+```python
+cadena_json = '''
+{
+    "nombre": "John Doe",
+    "edad": 30,
+    "esEmpleado": true,
+    "direcciones": [
+        {
+            "ciudad": "Nueva York",
+            "codigoPostal": "10001"
+        },
+        {
+            "ciudad": "San Francisco",
+            "codigoPostal": "94016"
+        }
+    ]
+}
+'''
 
-## Ver También:
+datos = json.loads(cadena_json)
+print(datos)
+```
 
-- Documentación oficial de Python para el módulo `json`: [link](https://docs.python.org/3/library/json.html)
-- W3Schools para un tutorial de JSON en Python: [link](https://www.w3schools.com/python/python_json.asp)
-- JSON en 10 minutos: una guía rápida para principiantes: [link](https://www.youtube.com/watch?v=iiADhChRriM)
+**Salida:**
+
+```python
+{
+    'nombre': 'John Doe', 
+    'edad': 30, 
+    'esEmpleado': True, 
+    'direcciones': [
+        {'ciudad': 'Nueva York', 'codigoPostal': '10001'}, 
+        {'ciudad': 'San Francisco', 'codigoPostal': '94016'}
+    ]
+}
+```
+
+### Trabajando con bibliotecas de terceros:
+
+Para manejar JSON complejo, como la validación de esquemas o el análisis de archivos JSON directamente desde URLs, bibliotecas como `requests` para solicitudes HTTP y `jsonschema` para validación pueden ser útiles.
+
+#### Ejemplo con `requests` para analizar JSON desde una URL:
+
+```python
+import requests
+
+respuesta = requests.get('https://api.ejemplo.com/datos')
+datos = respuesta.json()
+
+print(datos)
+```
+
+Este fragmento obtiene datos JSON de una URL dada y los convierte directamente en un objeto Python.
+
+#### Usando `jsonschema` para validar JSON:
+
+Primero, instala la biblioteca mediante pip:
+
+```bash
+pip install jsonschema
+```
+
+Luego, úsala de la siguiente manera:
+
+```python
+from jsonschema import validate
+import jsonschema
+
+esquema = {
+    "tipo": "objeto",
+    "propiedades": {
+        "nombre": {"tipo": "cadena"},
+        "edad": {"tipo": "número"},
+        "esEmpleado": {"tipo": "booleano"},
+    },
+    "requerido": ["nombre", "edad", "esEmpleado"]
+}
+
+# Suponiendo que `datos` es un diccionario obtenido de la decodificación de JSON
+try:
+    validate(instance=datos, schema=esquema)
+    print("Datos JSON válidos.")
+except jsonschema.exceptions.ValidationError as err:
+    print("Error de validación:", err)
+```
+
+Este ejemplo valida tu diccionario Python (obtenido de datos JSON decodificados) contra un esquema predefinido, asegurando que los datos se ajusten a los formatos y tipos esperados.

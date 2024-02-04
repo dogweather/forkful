@@ -1,90 +1,120 @@
 ---
-title:                "Arbeiten mit CSV-Dateien"
-date:                  2024-01-19
-simple_title:         "Arbeiten mit CSV-Dateien"
-
+title:                "Arbeiten mit CSV"
+date:                  2024-02-03T19:20:34.389717-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Arbeiten mit CSV"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/lua/working-with-csv.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-CSV-Dateien speichern Tabellendaten in Klartext. Programmierer nutzen CSV, weil es einfach und weit verbreitet ist und sich leicht in Datenbanken oder Tabellenkalkulationen importieren lässt.
+## Was & Warum?
 
-## How to:
-CSV-Datei lesen:
-```Lua
-local filename = "beispieldaten.csv"
+Die Arbeit mit CSV-Dateien (Comma-Separated Values, auf Deutsch „durch Kommas getrennte Werte“) umfasst das Parsen und Generieren von Textdaten, die in Reihen und Spalten organisiert sind, wobei Kommas verwendet werden, um einzelne Werte zu trennen. Programmierer beschäftigen sich oft mit diesem Prozess, um den Datenaustausch zwischen verschiedenen Anwendungen, Datenbanken oder für Aufgaben der Datenverarbeitung und -analyse zu erleichtern, aufgrund der weit verbreiteten Unterstützung und Einfachheit von CSV.
 
-local function read_csv(filePath)
-    local file = io.open(filePath, "r")
-    local data = {}
-    if not file then return nil, "Datei konnte nicht geöffnet werden" end
+## Wie geht das:
 
-    for line in file:lines() do
-        table.insert(data, line:split(","))
-    end
+In Lua kann die Arbeit mit CSV-Dateien durch grundlegende Datei-IO-Operationen, die von der Sprache bereitgestellt werden, ohne die Notwendigkeit externer Bibliotheken für einfache Aufgaben, angegangen werden. Für komplexere Operationen, wie z.B. die Behandlung von Sonderfällen (z.B. Kommas innerhalb von Werten), könnte es vorteilhaft sein, Drittanbieter-Bibliotheken wie `lua-csv` zu verwenden.
 
-    file:close()
-    return data
-end
+### Eine CSV-Datei lesen
+Hier ist ein einfaches Beispiel, um eine CSV-Datei Zeile für Zeile zu lesen, wobei jede Zeile basierend auf dem Kommatrennzeichen in Werte aufgeteilt wird.
 
--- Definiere zusätzlich die 'split' Funktion für Strings
-function string:split(delimiter)
+```lua
+function parseCSVLine(line)
     local result = {}
-    local from  = 1
-    local delim_from, delim_to = string.find( self, delimiter, from  )
-    while delim_from do
-        table.insert( result, string.sub( self, from , delim_from-1 ) )
-        from  = delim_to + 1
-        delim_from, delim_to = string.find( self, delimiter, from  )
+    local from = 1
+    local sep = ","
+    local field
+    while true do
+        local start, finish = string.find(line, sep, from)
+        if not start then
+            table.insert(result, string.sub(line, from))
+            break
+        end
+        field = string.sub(line, from, start - 1)
+        table.insert(result, field)
+        from = finish + 1
     end
-    table.insert( result, string.sub( self, from  ) )
     return result
 end
 
-local data, error = read_csv(filename)
-if not error then
-    for i, row in ipairs(data) do
-        for j, value in ipairs(row) do
-            print(value)
-        end
+local file = io.open("example.csv", "r")
+for line in file:lines() do
+    local values = parseCSVLine(line)
+    for i, v in ipairs(values) do
+        print(i, v)
     end
-else
-    print(error)
+end
+file:close()
+```
+
+**Beispielausgabe** (für eine `example.csv` mit Inhalt "name,age\newlineJohn Doe,30\newlineJane Doe,32"):
+```
+1	name
+2	age
+1	John Doe
+2	30
+1	Jane Doe
+2	32
+```
+
+### Eine CSV-Datei schreiben
+Um eine CSV-Datei zu generieren, konstruiert man einfach Zeichenketten mit kommagetrennten Werten und schreibt sie Zeile für Zeile in eine Datei.
+
+```lua
+local data = {
+    {"name", "age"},
+    {"John Doe", "30"},
+    {"Jane Doe", "32"}
+}
+
+local file = io.open("output.csv", "w")
+for _, v in ipairs(data) do
+    file:write(table.concat(v, ","), "\n")
+end
+file:close()
+```
+
+Dies würde eine `output.csv`-Datei mit den angegebenen Daten erstellen (oder überschreiben).
+
+### lua-csv verwenden
+Für fortgeschrittenere CSV-Handhabungen, einschließlich Unterstützung für Anführungszeichen und Escape-Zeichen, ist die Bibliothek `lua-csv` eine robuste Wahl.
+
+Zuerst installieren Sie sie mit LuaRocks:
+```shell
+luarocks install lua-csv
+```
+
+Dann wird das Lesen einer CSV-Datei so einfach wie:
+
+```lua
+local csv = require("csv")
+
+-- Lesen aus einer Datei
+for fields in csv.open("example.csv") do
+    for i, v in ipairs(fields) do
+        print(i, v)
+    end
 end
 ```
 
-CSV-Datei schreiben:
-```Lua
-local data = { {"Name", "Alter", "Stadt"}, {"Alice", "30", "Hamburg"}, {"Bob", "25", "Berlin"} }
-local filename = "export.csv"
+Und das Schreiben in eine CSV mit korrekter Quotierung und Escaping:
 
-local function write_csv(data, filePath)
-    local file = io.open(filePath, "w")
-    if not file then return false, "Datei konnte nicht geschrieben werden" end
+```lua
+local file = csv.open("output.csv", {write=true})
 
-    for i, row in ipairs(data) do
-        file:write(table.concat(row, ","), "\n")
-    end
+local data = {
+    {"name", "profession", "location"},
+    {"John Doe", "Software Engineer", "New York, NY"},
+    {"Jane Doe", "Data Scientist", "\"San Francisco, CA\""}
+}
 
-    file:close()
-    return true
-end
-
-local success, error = write_csv(data, filename)
-if success then
-    print("CSV erfolgreich geschrieben.")
-else
-    print(error)
+for _, v in ipairs(data) do
+    file:write(v)
 end
 ```
 
-## Deep Dive
-CSV steht für "Comma-separated values" und hat seit den frühen Computerzeiten an Bedeutung gewonnen. Alternativen wie JSON oder XML bieten strukturierte Datenformate, sind aber komplexer im Handling. Die Implementierung von CSV in Lua erfordert den Umgang mit Datei-IO und String-Manipulation, da Lua keine eingebaute CSV-Unterstützung hat.
-
-## See Also
-- Lua-Referenzhandbuch: https://www.lua.org/manual/5.4/
-- Tutorial für Dateioperationen in Lua: https://www.tutorialspoint.com/lua/lua_file_io.htm
-- CSV zu Lua Table Konverter online: https://www.convertcsv.com/csv-to-lua.htm
+Dieser Ansatz behandelt automatisch Komplexitäten wie Kommas und Anführungszeichen innerhalb von Werten.

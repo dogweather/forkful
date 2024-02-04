@@ -1,43 +1,69 @@
 ---
-title:                "ניתוח תאריך ממחרוזת"
-date:                  2024-01-20T15:38:23.292741-07:00
-simple_title:         "ניתוח תאריך ממחרוזת"
-
+title:                "פרסום תאריך ממחרוזת"
+date:                  2024-02-03T19:15:48.023901-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "פרסום תאריך ממחרוזת"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/powershell/parsing-a-date-from-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (מה ולמה?)
-פיענוח תאריכים ממחרוזות הוא תהליך שבו אנו הופכים טקסט לסוג של אובייקט תאריך. זה עוזר למתכנתים להתמודד עם תאריכים בבקרת פורמט, חישובים ושמירת נתונים באופן יעיל.
+## מה ולמה?
+ניתוח תאריך ממחרוזת מדובר על זיהוי והמרת תאריכים כתובים בטקסט לסוג נתוני תאריך ש-PowerShell יכול להבין ולעבוד איתו. מתכנתים עושים זאת כדי לתפעל, לעצב, להשוות, או לחשב תאריכים, אשר הם משימות נפוצות בסקריפטים העוסקים בקבצי לוג, קלט משתמש, או עיבוד נתונים.
 
-## How to (איך לעשות:)
-```PowerShell
-# דוגמא לפיענוח תאריך ממחרוזת
-$DateString = "23/04/2023" # פורמט dd/MM/yyyy
-$DateObject = [datetime]::ParseExact($DateString, 'dd/MM/yyyy', $null)
-Write-Output $DateObject  # יוצג התאריך כאובייקט תאריך של PowerShell
+## איך לעשות:
+PowerShell מקל על ניתוח תאריכים ממחרוזות באמצעות ה- `Get-Date` cmdlet ותאוצת הסוג `[datetime]`, אשר עובדים היטב עבור פורמטי תאריכים סטנדרטיים. עבור מחרוזות תאריך מורכבות או לא סטנדרטיות, ניתן להשתמש בשיטת `.ParseExact` של `[datetime]` כדי לציין את הפורמט המדויק.
 
-# פלט
-Sunday, April 23, 2023 12:00:00 AM
+### שימוש ב- `Get-Date` ו- `[datetime]`:
+```powershell
+# המרה פשוטה באמצעות Get-Date
+$stringDate = "2023-04-01"
+$date = Get-Date $stringDate
+echo $date
+```
+**פלט דוגמה:**
+```
+Saturday, April 1, 2023 12:00:00 AM
 ```
 
-```PowerShell
-# כיצד להתמודד עם פורמטים שונים ואזורי זמן
-$DateString = "2023-04-23T14:00:00Z" # ISO 8601 format
-$CultureInfo = [System.Globalization.CultureInfo]::InvariantCulture
-$DateObject = [datetime]::Parse($DateString, $CultureInfo)
-Write-Output $DateObject
-
-# פלט
-Sunday, April 23, 2023 2:00:00 PM
+```powershell
+# שימוש בתאוצת הסוג [datetime]
+$stringDate = "April 1, 2023"
+$date = [datetime]$stringDate
+echo $date
+```
+**פלט דוגמה:**
+```
+Saturday, April 1, 2023 12:00:00 AM
 ```
 
-## Deep Dive (צלילה עמוקה)
-Parsing תאריכים היה אתגר מאז התחלתו של תכנות. למרות שהקונספט נשאר זהה - להפוך טקסט לאובייקט תאריך - הכלים והשיטות השתנו. PowerShell, לדוגמה, עושה שימוש ב.NET Framework לפיענוח תאריכים.
+### שימוש ב- `[datetime]::ParseExact` עבור פורמטים לא סטנדרטיים:
+עבור פורמטים שאינם מזוהים באופן אוטומטי, ניתן להגדיר את הפורמט המדויק כדי להבטיח ניתוח נכון.
+```powershell
+$stringDate = "01-04-2023 14:00"
+$format = "dd-MM-yyyy HH:mm"
+$culture = [Globalization.CultureInfo]::InvariantCulture
+$date = [datetime]::ParseExact($stringDate, $format, $culture)
+echo $date
+```
+**פלט דוגמה:**
+```
+Saturday, April 1, 2023 2:00:00 PM
+```
 
-ישנן אלטרנטיבות כמו `Parse` ו-`TryParse`, אך `ParseExact` מאפשר בקרה מלאה על פורמט הקלט. באזורים שבהם פורמטי תאריך יכולים להיות סובייקטיביים, חשוב להשתמש בפונקציות שיבטיחו קריאה נכונה של הנתונים.
+### שימוש בספריות של גורמים שלישיים
+למרות ש-PowerShell בפני עצמו די חזק לניתוח תאריכים, עבור תרחישים מורכבים מאוד או פונקציונאליות נוספת, כדאי לחקור ספריות .NET כמו NodaTime, למרות שעבור רוב השימושים הטיפוסיים, היכולות הטבעיות של PowerShell יהיו מספיקות.
 
-## See Also (ראו גם)
-- [תיעוד רשמי של עצמי התאריך של .NET](https://docs.microsoft.com/en-us/dotnet/api/system.datetime?view=net-5.0)
+```powershell
+# שימוש ב-NodaTime רק כדוגמה, שימו לב שצריך להוסיף את הספריה לפרויקט שלכם
+# Install-Package NodaTime -Version 3.0.5
+# שימוש ב-NodaTime לניתוח תאריך
+[string]$stringDate = "2023-04-01T14:00:00Z"
+[NodaTime.Instant]::FromDateTimeUtc([datetime]::UtcNow)
+[NodaTime.LocalDate]$localDate = [NodaTime.LocalDate]::FromDateTime([datetime]::UtcNow)
+echo $localDate
+```
+**הערת דוגמה:** הקוד הנ"ל הוא איור מושגי. בפועל, ודאו ש-NodaTime נוסף באופן תקין לפרויקט שלכם כדי שהסוגים והשיטות יהיו זמינים.

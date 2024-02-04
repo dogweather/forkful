@@ -1,51 +1,53 @@
 ---
 title:                "Trabalhando com YAML"
-date:                  2024-01-19
+date:                  2024-02-03T19:25:02.554694-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Trabalhando com YAML"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/clojure/working-with-yaml.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## O Que é & Por Quê?
-YAML, que significa "YAML Ain't Markup Language", é um formato de serialização de dados legível por humanos, comumente usado para arquivos de configuração. Programadores o utilizam pela sua simplicidade e facilidade de leitura/escrita em comparação com formatos como XML ou JSON.
+## O que é & Por quê?
 
-## Como Fazer:
-Vamos usar a biblioteca `clj-yaml` para trabalhar com YAML em Clojure. Primeiro, instale adicionando `[clj-yaml "0.7.0"]` ao seu arquivo `project.clj`.
+YAML, um acrônimo recursivo para "YAML Ain't Markup Language" (YAML Não é uma Linguagem de Marcação), é um formato de serialização de dados legível por humanos usado para arquivos de configuração e troca de dados entre linguagens com diferentes estruturas de dados. Programadores aproveitam o YAML devido à sua simplicidade e legibilidade, tornando-o uma escolha ideal para configurar aplicações e facilitar a troca de dados em ambientes de programação poliglota.
 
-```Clojure
-(require '[clj-yaml.core :as yaml])
+## Como fazer:
 
-; Ler YAML de uma string
-(def yaml-string "
-nome: João
-idade: 30
-linguagens:
-  - Clojure
-  - Python
-")
-(def dados (yaml/parse-string yaml-string))
-(println dados)
-; Saída: {:nome "João", :idade 30, :linguagens ["Clojure" "Python"]}
+Clojure não inclui suporte embutido para YAML, mas você pode utilizar bibliotecas de terceiros como `clj-yaml` para analisar e gerar dados YAML. Primeiro, adicione a biblioteca às dependências do seu projeto:
 
-; Escrever um mapa Clojure para uma string YAML
-(def clojure-map {:nome "Maria", :idade 28, :linguagens ["Ruby" "Elixir"]})
-(def yaml-output (yaml/generate-string clojure-map))
-(println yaml-output)
-; Saída:
-; nome: Maria
-; idade: 28
-; linguagens:
-; - Ruby
-; - Elixir
+```clojure
+;; Adicione isso às dependências do seu project.clj
+[clj-yaml "0.7.0"]
 ```
 
-## Mergulho Profundo
-YAML foi introduzido em 2001 e é frequentemente comparado com JSON, outro formato amplamente usado. Enquanto JSON é baseado em estruturas de array e objeto do JavaScript, YAML emprega espaços e indentação para representar hierarquia de dados, favorecendo a legibilidade humana. Além de `clj-yaml`, existem outras bibliotecas como `snakeyaml` (para Java) e `PyYAML` (para Python), que permitem a manipulação de YAML em diferentes ecossistemas de programação. Ao implementar o suporte a YAML, deve-se ter atenção com a segurança, pois a carga de objetos arbitrários pode apresentar riscos.
+Aqui está como você pode usar `clj-yaml` para analisar YAML e converter mapas Clojure para YAML.
 
-## Veja Também
-- [clj-yaml GitHub repository](https://github.com/clj-commons/clj-yaml)
-- [YAML Specification](https://yaml.org/spec/1.2/spec.html)
-- [Clojure Official Website](https://clojure.org/)
+### Analisando YAML:
+
+```clojure
+(require '[clj-yaml.core :as yaml])
+
+;; Analisando uma string YAML
+(let [yaml-str "nome: João Doe\nidade: 30\nlinguagens:\n  - Clojure\n  - Python"]
+  (yaml/parse-string yaml-str))
+;; Saída:
+;; => {"nome" "João Doe", "idade" 30, "linguagens" ["Clojure" "Python"]}
+```
+
+### Gerando YAML a partir de Clojure:
+
+```clojure
+(require '[clj-yaml.core :as yaml])
+
+;; Convertendo um mapa Clojure para uma string YAML
+(let [data-map {:nome "Jane Doe" :idade 28 :linguagens ["Java" "Ruby"]}]
+  (yaml/generate-string data-map))
+;; Saída:
+; "idade: 28\nlinguagens:\n- Java\n- Ruby\nnome: Jane Doe\n"
+```
+
+Estas operações simples com `clj-yaml` podem ser integradas em aplicações Clojure para lidar com arquivos de configuração ou facilitar a troca de dados com outros serviços ou componentes que usam YAML.

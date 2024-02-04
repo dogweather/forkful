@@ -1,47 +1,81 @@
 ---
 title:                "Praca z plikami CSV"
-date:                  2024-01-19
+date:                  2024-02-03T19:20:56.248166-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Praca z plikami CSV"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/powershell/working-with-csv.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Co i dlaczego?
-CSV to prosty format pliku do przechowywania tabelarnych danych. W PowerShellu często używamy CSV, bo to uniwersalny format – łatwy do odczytu i pisania zarówno dla ludzi, jak i maszyn.
+
+Praca z plikami CSV (Comma-Separated Values - wartości oddzielone przecinkami) to częste zadanie podczas zarządzania i manipulowania danymi w strukturalnej, tabelarycznej formie. Programiści często wykonują tę operację, aby importować, eksportować lub efektywnie manipulować danymi dla różnych aplikacji, takich jak analiza danych, raportowanie, czy nawet zasilanie aplikacji internetowych.
 
 ## Jak to zrobić:
 
-### Importowanie danych z pliku CSV
-```PowerShell
-$csvData = Import-Csv -Path 'ścieżka/do/pliku.csv'
-$csvData
+### Odczytywanie pliku CSV
+
+Aby odczytać plik CSV, użyj cmdletu `Import-Csv`. Ten cmdlet odczytuje plik i konwertuje go na niestandardowe obiekty PowerShell dla każdego wiersza.
+
+```powershell
+# Importowanie pliku CSV
+$data = Import-Csv -Path "C:\Data\users.csv"
+# Wyświetlanie zawartości
+$data
 ```
 
-### Eksportowanie danych do pliku CSV
-```PowerShell
-$csvData | Export-Csv -Path 'ścieżka/do/nowego_pliku.csv' -NoTypeInformation
+**Przykładowy wynik:**
+
+```
+Name    Age    City
+----    ---    ----
+John    23     New York
+Doe     29     Los Angeles
 ```
 
-### Dodawanie wierszy do istniejącego pliku CSV
-```PowerShell
-$newRow = [PSCustomObject]@{Name='Jan'; Age=30}
-$newRow | Export-Csv -Path 'ścieżka/do/pliku.csv' -Append -NoTypeInformation
+### Zapisywanie do pliku CSV
+
+Odwracając sytuację, aby zapisać dane do pliku CSV, używany jest cmdlet `Export-Csv`. Ten cmdlet pobiera obiekty wejściowe i konwertuje je na format CSV.
+
+```powershell
+# Tworzenie obiektu do eksportu
+$users = @(
+    [PSCustomObject]@{Name='John'; Age='23'; City='New York'},
+    [PSCustomObject]@{Name='Doe'; Age='29'; City='Los Angeles'}
+)
+
+# Eksportowanie do pliku CSV
+$users | Export-Csv -Path "C:\Data\new_users.csv" -NoTypeInformation
 ```
 
-### Filtrowanie i selekcja danych
-```PowerShell
-$csvData | Where-Object { $_.Age -gt 25 } | Select-Object -Property Name, Age
+Po wykonaniu, plik o nazwie `new_users.csv` zostaje utworzony z podanymi danymi.
+
+### Filtrowanie i manipulowanie zawartością CSV
+
+Aby filtrować lub manipulować danymi z pliku CSV, używaj możliwości manipulacji obiektami w PowerShell. Na przykład, aby wybrać tylko użytkowników powyżej pewnego wieku i z określonego miasta:
+
+```powershell
+# Importowanie i filtrowanie danych
+$filteredData = Import-Csv -Path "C:\Data\users.csv" | Where-Object {
+    $_.Age -gt 25 -and $_.City -eq 'Los Angeles'
+}
+
+# Wyświetlanie filtrowanych danych
+$filteredData
 ```
 
-## Deep Dive
+**Przykładowy wynik:**
 
-CSV (Comma Separated Values) to format pojawiający się w latach 70. Prostota CSV sprawia, że jest kompatybilny z wieloma systemami i aplikacjami. Alternatywy dla CSV obejmują JSON, XML czy bazy danych SQLite. W PowerShellu, cmdlety takie jak `Import-Csv` i `Export-Csv` wykorzystują klasy .NET do przetwarzania danych, co zapewnia wydajność i elastyczność.
+```
+Name    Age    City
+----    ---    ----
+Doe     29     Los Angeles
+```
 
-## Zobacz też
+### Użycie bibliotek firm trzecich
 
-- Oficjalna dokumentacja PowerShell dla `Import-Csv`: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/import-csv
-- Oficjalna dokumentacja PowerShell dla `Export-Csv`: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/export-csv
-- Artykuł na temat zaawansowanych technik pracy z CSV w PowerShellu: https://devblogs.microsoft.com/powershell/working-with-csv-files-in-powershell/
+Chociaż natywne cmdlety PowerShell zazwyczaj wystarczają do zadań typowych, bardziej złożone operacje mogą korzystać z bibliotek lub narzędzi firm trzecich. Jednak dla standardowej manipulacji CSV, takiej jak odczyt, zapis, filtrowanie czy sortowanie, wbudowane cmdlety PowerShell, takie jak `Import-Csv` i `Export-Csv`, zazwyczaj oferują solidną funkcjonalność bez potrzeby korzystania z dodatkowych bibliotek.

@@ -1,52 +1,93 @@
 ---
-title:                "यामल के साथ काम करना"
-date:                  2024-01-19
-simple_title:         "यामल के साथ काम करना"
-
+title:                "YAML के साथ काम करना"
+date:                  2024-02-03T19:26:46.768397-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "YAML के साथ काम करना"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/lua/working-with-yaml.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (क्या और क्यों?)
-YAML एक डेटा सीरियलाइजेशन फॉर्मेट है जो ह्यूमन-रीडेबल है। प्रोग्रामर इसका इस्तेमाल कॉन्फ़िगरेशन फाइल्स, डेटा स्टोरेज, और डेटा एक्सचेंज के लिए करते हैं, क्योंकि इसे पढ़ना और लिखना आसान होता है।
+## क्या और क्यों?
 
-## How to: (कैसे करें:)
-Lua में YAML के साथ काम करने के लिए, `lyaml` लाइब्रेरी का इस्तेमाल करें। इसे इंस्टॉल करने के लिए `luarocks install lyaml` कमांड चलाएं।
+YAML, जिसका पूरा नाम "YAML Ain't Markup Language" है, एक मानव-पठनीय डेटा सीरियलाइजेशन मानक है जो अक्सर कॉन्फिगरेशन फाइलों और भाषाओं के बीच डेटा विनिमय के लिए प्रयोग किया जाता है। प्रोग्रामर YAML का उपयोग इसकी सादगी और पठनीयता के कारण करते हैं, जिससे यह सेटिंग्स, विविध एप्लिकेशन कॉन्फिगरेशंस, या ऐसी सामग्री के लिए पसंदीदा विकल्प बन जाता है जिसे गैर-प्रोग्रामरों द्वारा संपादित किया जाना चाहिए।
 
-YAML को पार्स करने के लिए:
+## कैसे करें:
 
-```Lua
-local lyaml = require('lyaml')
+Lua में YAML के लिए निर्मित समर्थन नहीं है, लेकिन आप `lyaml` जैसी तृतीय-पक्ष पुस्तकालयों का उपयोग करके YAML फाइलों के साथ काम कर सकते हैं। यह पुस्तकालय Lua के साथ YAML डेटा को एन्कोडिंग और डीकोडिंग करने की सुविधा देता है। पहले, आपको LuaRocks के माध्यम से `lyaml` स्थापित करने की आवश्यकता होगी, Lua का पैकेज मैनेजर:
 
-local yamlStr = [[
-- name: John Doe
-  age: 30
-- name: Jane Doe
-  age: 25
-]]
-
-local data = lyaml.load(yamlStr)
-print(data[1].name)  -- Output: John Doe
+```bash
+luarocks install lyaml
 ```
 
-YAML को जेनरेट करने के लिए:
+### YAML को डीकोड करना:
 
-```Lua
-local dataToYaml = {
-  {name = "John Doe", age = 30},
-  {name = "Jane Doe", age = 25}
+मान लीजिए आपके पास `config.yaml` नामक फाइल में निम्नलिखित YAML सामग्री है:
+
+```yaml
+database:
+  host: localhost
+  port: 3306
+  username: user
+  password: pass
+```
+
+आप इस YAML फाइल को निम्न कोड के साथ एक Lua तालिका में डीकोड कर सकते हैं:
+
+```lua
+local yaml = require('lyaml')
+local file = io.open("config.yaml", "r")
+local content = file:read("*all")
+file:close()
+
+local data = yaml.load(content)
+for k,v in pairs(data.database) do
+  print(k .. ": " .. v)
+end
+```
+
+जब आप यह स्क्रिप्ट चलाएंगे, तो यह आउटपुट देगा:
+
+```output
+host: localhost
+port: 3306
+username: user
+password: pass
+```
+
+### YAML को एन्कोड करना:
+
+Lua तालिकाओं को YAML प्रारूप में एन्कोड करने के लिए, आप `lyaml` द्वारा प्रदान किए गए `dump` फ़ंक्शन का उपयोग करते हैं। मान लें आप निम्नलिखित Lua तालिका का YAML प्रतिनिधित्व बनाना चाहते हैं:
+
+```lua
+local data = {
+  website = {
+    name = "Example",
+    owner = "Jane Doe",
+    metadata = {
+      creation_date = "2023-01-01",
+      tags = {"blog", "personal", "lua"}
+    }
+  }
 }
 
-local yamlOutput = lyaml.dump(dataToYaml)
-print(yamlOutput)
+local yaml = require('lyaml')
+local yaml_data = yaml.dump({data})
+print(yaml_data)
 ```
 
-## Deep Dive (गहराई में जानकारी)
-YAML (YAML Ain't Markup Language) 2001 में डेवलप किया गया था। इसके विकल्प में JSON और XML हैं, जो कि कमैन्यूनिटी में भी पॉपुलर हैं। YAML ह्यूमन-रीडेबल होने के साथ-साथ कंप्यूटरज़ के लिए भी आसानी से प्रोसेसेबल है। 'lyaml' मॉड्यूल Lua के लिए YAML प्रोसेसिंग का एक मजबूत टूल है, जो LibYAML लाइब्रेरी का उपयोग करता है। 
+आउटपुट YAML होगा:
 
-## See Also (और भी जानकारियां)
-- YAML की अधिक जानकारी के लिए: https://yaml.org
-- `lyaml` लाइब्रेरी डॉक्युमेंटेशन: https://github.com/gvvaughan/lyaml
-- LuaRocks: https://luarocks.org
+```yaml
+- website:
+    metadata:
+      creation_date: '2023-01-01'
+      tags: [blog, personal, lua]
+    name: Example
+    owner: Jane Doe
+```
+
+इन पैटर्नों का पालन करते हुए, Lua प्रोग्रामर विभिन्न एप्लिकेशनों के लिए YAML डेटा का प्रभावी ढंग से प्रबंधन कर सकते हैं। YAML के साथ ये क्रियाएँ अन्य प्रणालियों के साथ या सीधे अन्य प्रणालियों के साथ सुचारू रूप से बातचीत करने वाले बहुमुखी Lua एप्लिकेशनों के विकास के लिए महत्वपूर्ण हैं।

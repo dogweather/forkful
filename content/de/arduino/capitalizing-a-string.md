@@ -1,47 +1,53 @@
 ---
-title:                "String in Großbuchstaben umwandeln"
-date:                  2024-01-19
-simple_title:         "String in Großbuchstaben umwandeln"
-
+title:                "Einen String großschreiben"
+date:                  2024-02-03T19:05:06.961671-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Einen String großschreiben"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/arduino/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Was & Warum?
+Das Kapitalisieren eines Strings bedeutet, den ersten Buchstaben jedes Wortes in einem String in Großbuchstaben umzuwandeln, während sichergestellt wird, dass der Rest klein bleibt. Diese Operation ist bei der Datenformatierung und der Normalisierung der Benutzereingabe üblich, um Konsistenz zu wahren und die Lesbarkeit zu verbessern.
 
-Das Großschreiben eines Strings bedeutet, jeden Buchstaben darin in Großbuchstaben umzuwandeln. Programmierer nutzen das, um Textdaten einheitlich zu gestalten und beispielsweise Überschriften oder Schaltflächenbeschriftungen hervorzuheben.
+## Wie:
+Arduino, hauptsächlich bekannt für die Interaktion mit Hardware, bietet auch grundlegende Möglichkeiten zur String-Manipulation durch sein `String`-Objekt. Es fehlt jedoch eine direkte `capitalize`-Funktion, wie sie in höheren Programmiersprachen zu sehen ist. Daher implementieren wir die Kapitalisierung durch Iterieren über einen String und Anwendung von Fallumwandlungen.
 
-## Anleitung:
+Hier ist ein einfaches Beispiel ohne die Verwendung von Drittanbieter-Bibliotheken:
 
-```Arduino
+```cpp
+String capitalizeString(String input) {
+  if (input.length() == 0) {
+    return ""; // Gibt einen leeren String zurück, wenn die Eingabe leer ist
+  }
+  input.toLowerCase(); // Wandelt den gesamten String zuerst in Kleinbuchstaben um
+  input.setCharAt(0, input.charAt(0) - 32); // Kapitalisiert den ersten Buchstaben
+  
+  // Kapitalisiert Buchstaben, die auf ein Leerzeichen folgen
+  for (int i = 1; i < input.length(); i++) {
+    if (input.charAt(i - 1) == ' ') {
+      input.setCharAt(i, input.charAt(i) - 32);
+    }
+  }
+  return input;
+}
+
 void setup() {
   Serial.begin(9600);
-  char text[] = "Das ist ein Teststring.";
-  capitalizeString(text);
-  Serial.println(text); // Gibt aus: "DAS IST EIN TESTSTRING."
+  String testStr = "hello arduino world";
+  String capitalizedStr = capitalizeString(testStr);
+  Serial.println(capitalizedStr); // Ausgabe: "Hello Arduino World"
 }
 
 void loop() {
-  // Hier könnte Ihre kontinuierliche Logik stehen
-}
-
-void capitalizeString(char* str) {
-  for (; *str; str++) {
-    if (*str >= 'a' && *str <= 'z') {
-      *str = *str - 'a' + 'A';
-    }
-  }
+  // Leere Schleife
 }
 ```
 
-## Hintergrundwissen:
+Dieser Code-Ausschnitt definiert eine `capitalizeString`-Funktion, die den gesamten String zuerst in Kleinbuchstaben umwandelt, um seine Schreibweise zu standardisieren. Anschließend wird der erste Buchstabe und jeder Buchstabe, der auf ein Leerzeichen folgt, großgeschrieben, was effektiv jedes Wort im Eingabestring kapitalisiert. Beachten Sie, dass diese rudimentäre Implementierung von der ASCII-Zeichenkodierung ausgeht und möglicherweise Anpassungen für die vollständige Unterstützung von Unicode benötigt.
 
-Die Großschreibung von Strings ist seit den Anfängen des Programmierens ein Standardverfahren. Es gibt verschiedene Wege, die Umwandlung zu implementieren, wie beispielsweise ASCII-Wert-Manipulation oder die Verwendung von Standardfunktionen in Hochsprachen. In C basierten Sprachen wie Arduino ist der direkte Zugriff auf Zeichen und ihre ASCII-Werte eine effiziente Methode. Alternativen dazu könnten höher abstrahierte Funktionen sein, die jedoch möglicherweise mehr Speicherplatz beanspruchen, was bei Mikrocontrollern kritisch sein kann.
-
-## Siehe Auch:
-
-- Arduino String Reference: https://www.arduino.cc/reference/en/language/variables/data-types/string/
-- ASCII-Tabelle: https://www.asciitable.com/
-- Anleitungen zur String-Manipulation in C: https://www.cprogramming.com/tutorial/c/lesson6.html
+Derzeit gibt es keine weit verbreiteten Drittanbieter-Bibliotheken speziell für die String-Manipulation im Arduino-Ökosystem, hauptsächlich aufgrund seines Schwerpunkts auf Hardware-Interaktion und Effizienz. Das bereitgestellte Beispiel bietet jedoch eine unkomplizierte Möglichkeit, die Kapitalisierung von Strings innerhalb der Arduino-Programmierumgebung zu erreichen.

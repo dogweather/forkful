@@ -1,52 +1,87 @@
 ---
-title:                "यामल के साथ काम करना"
-date:                  2024-01-19
-simple_title:         "यामल के साथ काम करना"
-
+title:                "YAML के साथ काम करना"
+date:                  2024-02-03T19:26:10.211081-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "YAML के साथ काम करना"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/haskell/working-with-yaml.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## क्या और क्यों?
 
-YAML यानी "YAML Ain't Markup Language" एक सरल डेटा सीरियलाइज़ेशन फॉर्मेट है जिसका इस्तेमाल कॉन्फ़िगरेशन फ़ाइल, डेटा आदान-प्रदान, और स्टोरेज के लिए होता है। प्रोग्रामर YAML का उपयोग इसकी सरलता और पढ़ने में आसानी के कारण करते हैं।
+YAML, जिसका पूरा नाम "YAML Ain't Markup Language" है, एक मानव-अनुकूल डेटा सीरियलाइजेशन मानक है जिसका उपयोग सभी प्रोग्रामिंग भाषाओं के लिए किया जा सकता है। प्रोग्रामर अक्सर YAML का उपयोग कॉन्फ़िगरेशन फ़ाइलों और भाषाओं के बीच डेटा विनिमय के लिए करते हैं क्योंकि इसकी पढ़ने योग्यता और सरल संरचना होती है।
 
-## कैसे करें:
+## कैसे:
 
-Haskell में YAML से काम करने के लिए `yaml` पैकेज का उपयोग होता है। सबसे पहले, Stack या Cabal का इस्तेमाल कर `yaml` पैकेज इंस्टॉल करें। 
+Haskell में YAML प्रोसेसिंग के लिए बिल्ट-इन सपोर्ट नहीं है, लेकिन आप `yaml` और `aeson` जैसी तृतीय-पक्ष लाइब्रेरी का उपयोग करके YAML डेटा को पार्स और जेनरेट कर सकते हैं। यहाँ पर आपको शुरू करने का तरीका दिया गया है:
 
-```Haskell
--- dependencies: yaml
-import Data.Yaml
-import qualified Data.ByteString.Char8 as BS
+### YAML पढ़ना
+सबसे पहले, अपने प्रोजेक्ट की निर्भरताओं में `yaml` पैकेज को जोड़ें। फिर, आप एक साधारण YAML दस्तावेज़ को पार्स करने के लिए निम्नलिखित उदाहरण का उपयोग कर सकते हैं:
 
--- YAML स्ट्रिंग से पार्स करने का फंक्शन
-parseYAML :: BS.ByteString -> IO ()
-parseYAML yamlData = do
-    let parsed = decodeEither' yamlData :: Either ParseException Value
-    case parsed of
-        Left err -> print err
-        Right val -> print val
+```haskell
+{-# LANGUAGE OverloadedStrings #-}
+
+import Data.YAML
+import Data.ByteString (ByteString)
+import Control.Monad.IO.Class (liftIO)
+
+-- उदाहरण YAML डेटा
+yamlData :: ByteString
+yamlData = "
+name: John Doe
+age: 30
+"
+
+-- YAML दस्तावेज़ से मेल खाने वाली एक डेटा संरचना परिभाषित करें
+data Person = Person
+  { name :: String
+  , age :: Int
+  } deriving (Show)
+
+instance FromYAML Person where
+  parseYAML = withMap "Person" $ \m -> Person
+    <$> m .: "name"
+    <*> m .: "age"
 
 main :: IO ()
 main = do
-    let myYAML = "name: John Doe\nage: 30\n"
-    parseYAML (BS.pack myYAML)
+  let parsed = decode1 yamlData :: Either (Pos,String) Person
+  case parsed of
+    Left err -> putStrLn $ "YAML पार्स करने में त्रुटि: " ++ show err
+    Right person -> print person
+```
+ऊपर दिए गए कोड के लिए नमूना आउटपुट ऐसा दिख सकता है:
+```
+Person {name = "John Doe", age = 30}
 ```
 
-इस कोड में, हमने एक YAML स्ट्रिंग `myYAML` से पार्स किया है और पार्स किए हुए डेटा को प्रिंट किया है।
+### YAML लिखना
+Haskell डेटा संरचनाओं से YAML जेनरेट करने के लिए, आप नीचे दिखाए अनुसार `yaml` पैकेज की एन्कोडिंग कार्यक्षमताओं का उपयोग कर सकते हैं:
 
-## गहराई से समझिए:
+```haskell
+{-# LANGUAGE OverloadedStrings #-}
 
-YAML की शुरुआत 2001 में हुई थी और यह JSON का एक विकल्प है क्योंकि यह ह्यूमन-रीडेबल है। YAML में डेटा स्ट्रक्चर को समझना आसान होता है, और इसे टैब्स के बजाय इंडेंटेशन से रिप्रेजेंट किया जाता है। Haskell में `yaml` पैकेज लाइब्रिएरी `libyaml` पर आधारित है और `aeson` पैकेज के डेटा टाइप्स के साथ इंटीग्रेशन प्रदान करता है जो JSON प्रोसेसिंग के लिए भी इस्तेमाल होता है। 
+import Data.YAML
+import Data.ByteString.Lazy.Char8 (unpack)
 
-JSON की तरह, YAML भी प्लेटफार्म-निरपेक्ष है और विभिन्न प्रोग्रामिंग भाषाओं में पार्स और जेनरेट किया जा सकता है, लेकिन इसे पढ़ना और समझना आसान होता है, जिससे यह कॉन्फ़िगुरेशन फ़ाइलों के लिए ज्यादा प्रिय है।
+-- पिछले उदाहरण से Person डेटा संरचना का उपयोग करते हुए
 
-## और भी स्रोत:
+person :: Person
+person = Person "Jane Doe" 25
 
-- YAML स्पेसिफिकेशन: [The Official YAML Website](https://yaml.org/)
-- Haskell `yaml` पैकेज: [yaml on Hackage](https://hackage.haskell.org/package/yaml)
-- Haskell JSON प्रोसेसिंग (`aeson` पैकेज): [aeson on Hackage](https://hackage.haskell.org/package/aeson)
-- YAML और JSON की तुलना: [Comparing YAML and JSON](https://en.wikipedia.org/wiki/YAML#Comparison_with_JSON)
+main :: IO ()
+main = do
+  let yamlData = encode1 person
+  putStrLn $ unpack yamlData
+```
+इस प्रोग्राम का आउटपुट एक YAML-फॉरमेटेड स्ट्रिंग होगा:
+```
+name: Jane Doe
+age: 25
+```
+
+ये उदाहरण Haskell में YAML के साथ काम करने के लिए एक प्रारंभिक बिंदु के रूप में काम करना चाहिए। अपनी आवश्यकताओं के आधार पर, आप इन लाइब्रेरियों द्वारा प्रदान की गई अधिक उन्नत सुविधाओं और विकल्पों का पता लगाना चाह सकते हैं।

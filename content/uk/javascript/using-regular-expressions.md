@@ -1,42 +1,90 @@
 ---
 title:                "Використання регулярних виразів"
-date:                  2024-01-19
+date:                  2024-02-03T19:17:33.799540-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Використання регулярних виразів"
-
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/javascript/using-regular-expressions.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Що це таке & Навіщо?
-Регулярні вирази – це шаблони для пошуку та маніпуляції текстом. Програмісти використовують їх, щоб з легкістю знаходити, замінювати, або перевіряти наявність певних шаблонів у рядках.
+## Що та чому?
 
-## Як це зробити:
+Регулярні вирази (або regex) в JavaScript — це шаблони, що використовуються для пошуку комбінацій символів у рядках. Програмісти використовують їх для пошуку, екстракції та маніпулювання текстом, дозволяючи виконувати потужні операції з обробкою рядків за допомогою стислого коду.
+
+## Як:
+
+### Базовий пошук
+
+Для початку можна створити простий regex-шаблон і використовувати його для пошуку відповідностей у рядку. Тут ми знайдемо слово "code":
+
 ```javascript
-// Пошук слів, що починаються на "в":
-let regex = /\bв\w*/gi;
-console.log("ведмідь весна вітер".match(regex));
-// Виведе: ['ведмідь', 'весна', 'вітер']
-
-// Заміна рядків:
-let replaceRegex = /кіт/gi;
-let result = "Кіт спить на килимку.".replace(replaceRegex, "пес");
-console.log(result);
-// Виведе: 'пес спить на килимку.'
-
-// Валідація електронної адреси:
-let emailRegex = /^\w+@\w+\.\w+$/;
-let emailToTest = "example@test.com";
-console.log(emailRegex.test(emailToTest));
-// Виведе: true
+const str = "I love to code in JavaScript.";
+const pattern = /code/;
+const result = pattern.test(str);
+console.log(result); // true
 ```
 
-## Поглиблений огляд
-Регулярні вирази (RegEx) виникли у 1950-х. Стівен Кліні з MIT розробив базові концепції, що лягли в основу багатьох сучасних інструментів текстової обробки. Альтернативи RegEx, такі як парсери рядків та вбудовані мовні методи, можуть бути кращі в конкретних випадках, але менш гнучкі. При роботі з RegEx у JavaScript важливо розуміти флаги, групування та класи символів, щоб збільшити ефективність і точність пошуку.
+### Використання `String.prototype.match()`
 
-## Дивіться також
-- [MDN Web Docs - Regular Expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
-- [RegExp Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp)
-- [Regex101: Online Regex Tester and Debugger](https://regex101.com/)
-- [JavaScript RegExp Reference](https://www.w3schools.com/jsref/jsref_obj_regexp.asp)
+Для отримання масиву відповідностей:
+
+```javascript
+const matches = str.match(/code/);
+console.log(matches[0]); // "code"
+console.log(matches.index); // 10
+```
+
+### Глобальний пошук
+
+Для пошуку всіх відповідностей використовуйте прапорець `g`:
+
+```javascript
+const globalMatches = str.match(/o/g);
+console.log(globalMatches); // ["o", "o", "o"]
+```
+
+### Пошук без врахування регістра
+
+Прапорець `i` ігнорує регістр:
+
+```javascript
+const caseInsensitiveMatch = "JavaScript is fun".match(/javascript/i);
+console.log(caseInsensitiveMatch[0]); // "JavaScript"
+```
+
+### Заміна тексту
+
+Використовуйте `String.prototype.replace()`, щоб замінити частини рядка:
+
+```javascript
+const newStr = "JavaScript is fun".replace(/fun/, "awesome");
+console.log(newStr); // "JavaScript is awesome"
+```
+
+### Використання груп
+
+Групи можуть захоплювати частини шаблону:
+
+```javascript
+const groupedPattern = /(\w+) is (\w+)/;
+const replaceWithGroups = "JavaScript is fun".replace(groupedPattern, "$2 is $1");
+console.log(replaceWithGroups); // "fun is JavaScript"
+```
+
+### Сторонні бібліотеки
+
+Хоча вбудовані можливості regex в JavaScript є потужними, деякі завдання можна спростити за допомогою бібліотек, таких як `XRegExp`. Вона пропонує додатковий синтаксис та прапорці, роблячи складні шаблони більш зрозумілими:
+
+```javascript
+// Приклад використання бібліотеки XRegExp
+const XRegExp = require('xregexp');
+const str = "Cats are fantastic.";
+const unicodeWordMatch = XRegExp.match(str, XRegExp('\\p{L}+'), 'all');
+console.log(unicodeWordMatch); // ["Cats", "are", "fantastic"]
+```
+
+Цей фрагмент демонструє використання `XRegExp` для пошуку всіх Unicode слів у рядку, демонструючи здатність бібліотеки обробляти розширені набори символів, які виходять за межі вбудованих можливостей JavaScript.

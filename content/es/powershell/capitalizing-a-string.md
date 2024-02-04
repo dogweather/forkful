@@ -1,51 +1,45 @@
 ---
 title:                "Capitalizando una cadena de texto"
-date:                  2024-01-19
+date:                  2024-02-03T19:05:56.421753-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Capitalizando una cadena de texto"
-
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/powershell/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## ¿Qué y Por Qué?
-
-Capitalizar un texto significa convertir la primera letra de cada palabra en mayúsculas. Los programadores lo hacen para mejorar la legibilidad y para formatear la salida de datos de manera consistente.
+## ¿Qué y por qué?
+Capitalizar una cadena en PowerShell implica transformar el primer carácter de una cadena dada a mayúscula, mientras que el resto de la cadena permanece sin cambios. Los programadores a menudo realizan esta tarea con fines de formato, como preparar texto para su visualización en interfaces de usuario o seguir reglas gramaticales en documentos generados.
 
 ## Cómo hacerlo:
+PowerShell, siendo una herramienta versátil, te permite capitalizar una cadena utilizando métodos simples sin necesidad de bibliotecas de terceros. Aquí te mostramos cómo puedes hacerlo:
 
-Aquí tienes varios ejemplos de cómo capitalizar strings en PowerShell:
-
-```PowerShell
-# Capitalizing each word in a string
-$texto = "hola mundo, estoy programando en PowerShell"
-$textoCapitalizado = $texto | ForEach-Object { $_.ToTitleCase() }
-Write-Output $textoCapitalizado
-# Salida: Hola Mundo, Estoy Programando En PowerShell
-
-# Capitalizing the first letter of a string
-$texto = "esto es un ejemplo"
-$primerCaracterEnMayuscula = $texto.Substring(0,1).ToUpper() + $texto.Substring(1)
-Write-Output $primerCaracterEnMayuscula
-# Salida: Esto es un ejemplo
-
-# Uso de métodos de .NET para capitalizar
-[System.Globalization.TextInfo]$textInfo = [System.Globalization.CultureInfo]::CurrentCulture.TextInfo
-$texto = "otro ejemplo para powershell"
-$textoCapitalizado = $textInfo.ToTitleCase($texto)
-Write-Output $textoCapitalizado
-# Salida: Otro Ejemplo Para Powershell
+```powershell
+# Usando el método integrado .Net 'ToTitleCase' de CultureInfo
+$text = "hello world"
+$culture = [System.Globalization.CultureInfo]::InvariantCulture
+$capitalizedText = $culture.TextInfo.ToTitleCase($text.ToLower())
+Write-Output $capitalizedText
+```
+Salida:
+```
+Hello world
 ```
 
-## Profundización:
+Nota: Este método capitaliza la primera letra de cada palabra. Si estrictamente deseas capitalizar solo la primera letra de la cadena y dejar el resto tal como está, podrías hacer algo como esto:
 
-Históricamente, capitalizar texto ha sido importante tanto en la escritura como en la programación. Antes de PowerShell y otros lenguajes modernos, manipular strings requería lógica más compleja. En PowerShell, gracias al acceso a métodos .NET, capitalizar strings es sencillo y versátil.
+```powershell
+# Capitalizando solo el primer carácter de una cadena
+$text = "hello world"
+$capitalizedText = $text.Substring(0,1).ToUpper() + $text.Substring(1)
+Write-Output $capitalizedText
+```
+Salida:
+```
+Hello world
+```
 
-Además del método `ToTitleCase()`, puedes utilizar métodos personalizados o expresiones regulares para resultados específicos. La elección del método depende de tus necesidades: puede que necesites capitalizar solo la primera letra de una frase o cada palabra en un título.
-
-En cuanto a implementación, es crucial entender que `ToTitleCase()` no cambiará palabras en mayúsculas a minúsculas, excepto la primera letra. También, las culturas difieren en cómo manejan la capitalización; por ejemplo, algunas no capitalizan después de ciertos caracteres.
-
-## Ver También:
-
-- [Culturas y sus diferencias con TextInfo](https://docs.microsoft.com/en-us/dotnet/api/system.globalization.textinfo?view=net-6.0)
+PowerShell no incluye directamente una función simple para capitalizar solo la primera letra de una cadena, pero combinando los métodos básicos de manipulación de cadenas como `Substring(0,1).ToUpper()` y la concatenación, podemos lograr fácilmente el resultado deseado.

@@ -1,43 +1,77 @@
 ---
-title:                "ניתוח HTML"
-date:                  2024-01-20T15:33:09.939096-07:00
-simple_title:         "ניתוח HTML"
-
+title:                "פיענוח HTML"
+date:                  2024-02-03T19:13:15.859184-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "פיענוח HTML"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/php/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## מה ולמה?
-פענוח (Parsing) של HTML הוא תהליך שבו אנחנו מתרגמים ומנתחים את קוד ה-HTML לצורה שניתן לנהל אותה תכנותית. מתכנתים עושים זאת כדי לשנות, להוציא, או לאפיין מידע מתוך מסמכי HTML.
+ניתוח HTML ב-PHP מערב חילוץ מידע מסוים ממסמכי HTML. מתכנתים מבצעים משימה זו כדי לאוטמט את חילוץ הנתונים, לגרוף אתרי אינטרנט, או לשלב תוכן מדפי אינטרנט שונים בתוך היישומים שלהם, ובכך לשפר את הפונקציונליות ללא התערבות ידנית.
 
 ## איך לעשות:
-```PHP
-<?php
-$doc = new DOMDocument();
-@$doc->loadHTMLFile('path-to-your-html-file.html'); // התעלמות מאזהרות על HTML לא תקני
-$xpath = new DOMXPath($doc);
+לניתוח HTML, מתכנתי PHP יכולים להשתמש בפונקציות מובנות או להיעזר בספריות חזקות כמו Simple HTML DOM Parser. כאן, נחקור דוגמאות באמצעות ה-`DOMDocument` של PHP וה-Simple HTML DOM Parser.
 
-// קבלת כל הקישורים
-$links = $xpath->query('//a');
-foreach ($links as $link) {
-    echo $link->getAttribute('href') . PHP_EOL;
+### באמצעות `DOMDocument`:
+המחלקה `DOMDocument` של PHP היא חלק מההרחבה ה-DOM שלו, שמאפשרת ניתוח ומניפולציה של מסמכי HTML ו-XML. הנה דוגמא מהירה איך להשתמש ב-`DOMDocument` כדי למצוא את כל התמונות במסמך HTML:
+
+```php
+$html = <<<HTML
+<!DOCTYPE html>
+<html>
+<head>
+    <title>דף דוגמה</title>
+</head>
+<body>
+    <img src="image1.jpg" alt="תמונה 1">
+    <img src="image2.jpg" alt="תמונה 2">
+</body>
+</html>
+HTML;
+
+$doc = new DOMDocument();
+@$doc->loadHTML($html);
+$images = $doc->getElementsByTagName('img');
+
+foreach ($images as $img) {
+    echo $img->getAttribute('src') . "\n";
 }
 ```
 
-תוצאה:
+פלט לדוגמה:
 ```
-http://example.com/page1
-http://example.com/page2
-...
+image1.jpg
+image2.jpg
 ```
 
-## צלילה לעומק:
-בעבר, פענוח HTML היה קרבה של רגקסים (regular expressions) וקוד מסורבל, אבל עם הזמן התפתחו כלים מתקדמים יותר כמו DOMDocument ו-DOMXPath ב-PHP, שמקלים על המשימה. האלטרנטיבות כוללות ספריות צד שלישי כמו Simple HTML DOM Parser ו-phpQuery, אבל DOMDocument הוא עמיד בזמן ומובנה ב-PHP. פרטי היישום כוללים את היכולת לעבוד עם XPath לשאילתות מורכבות, והמורכבות שבהתמודדות עם HTML לא תקני - שפתוח הקבצים עם "@" מטפל בכך על ידי התעלמות מהאזהרות.
+### באמצעות Simple HTML DOM Parser:
+למשימות מורכבות יותר או תחביר נוח יותר, ייתכן שתעדיף להשתמש בספריה של צד שלישי. Simple HTML DOM Parser הוא בחירה פופולרית, שמספקת ממשק דומה ל-jQuery לניווט ומניפולציה של מבנים HTML. הנה איך להשתמש בו:
 
-## ראו גם:
-- [PHP: DOMDocument](https://www.php.net/manual/en/class.domdocument.php) - המדריך הרשמי של PHP לעבודה עם DOMDocument.
-- [PHP: DOMXPath](https://www.php.net/manual/en/class.domxpath.php) - המדריך הרשמי של PHP לשימוש ב-DOMXPath.
-- [W3Schools XPath Tutorial](https://www.w3schools.com/xml/xpath_intro.asp) - מדריך ל-XPath, שישמש לניתוח וביצוע שאילתות במסמך HTML/XML.
-- [Simple HTML DOM Parser](http://simplehtmldom.sourceforge.net/) - ספריית PHP לפרסור HTML שמציעה אינטרפייס פשוט יותר.
+ראשית, התקן את הספריה באמצעות Composer:
+```
+composer require simple-html-dom/simple-html-dom
+```
+
+אחר כך, מניפול את ה-HTML למצוא למשל את כל הקישורים:
+
+```php
+require_once 'vendor/autoload.php';
+
+use simplehtmldom\HtmlWeb;
+
+$client = new HtmlWeb();
+$html = $client->load('http://www.example.com');
+
+foreach($html->find('a') as $element) {
+    echo $element->href . "\n";
+}
+```
+
+קטע הקוד הזה ייקח את תוכן ה-HTML של 'http://www.example.com', ינתח אותו, וידפיס את כל הקישורים. זכור להחליף את 'http://www.example.com' ב-URL האמיתי שאתה רוצה לנתח.
+
+בעזרת שיטות אלו, מפתחי PHP יכולים לנתח תוכן HTML ביעילות, להתאים את חילוץ הנתונים לצרכים שלהם, או לשלב תוכן אינטרנטי חיצוני בפרויקטים שלהם בחלקות.

@@ -1,39 +1,48 @@
 ---
-title:                "Przetwarzanie daty ze łańcucha znaków"
-date:                  2024-01-20T15:35:54.519991-07:00
-simple_title:         "Przetwarzanie daty ze łańcucha znaków"
-
+title:                "Analiza składniowa daty z łańcucha znaków"
+date:                  2024-02-03T19:14:25.591683-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Analiza składniowa daty z łańcucha znaków"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/fish-shell/parsing-a-date-from-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Co i dlaczego?)
-Parsing a date from a string means extracting date information from text. Programmers do it to manipulate dates, compare them, or convert formats.
+## Co i dlaczego?
+Parsowanie daty ze stringa polega na ekstrahowaniu informacji o dacie zakodowanej w ciągach znaków i konwersji jej na strukturyzowany format, który środowiska programistyczne mogą rozpoznawać i manipulować. Programiści robią to, aby umożliwić operacje takie jak porównywanie dat, arytmetykę, formatowanie i lokalizację, które są niezbędne do efektywnego obsługiwania planowania, znaczników czasu i danych historycznych w oprogramowaniu.
 
-## How to: (Jak to zrobić:)
-In Fish Shell, you can use `date` command with custom formats for parsing.
+## Jak to zrobić:
+W Fish Shell nie masz wbudowanych poleceń specjalnie zaprojektowanych do parsowania dat z ciągów znaków. Zamiast tego, polegasz na zewnętrznych narzędziach takich jak `date` (dostępne w Linux i macOS) lub wykorzystujesz popularne narzędzia stron trzecich takie jak `GNU date` do bardziej skomplikowanego parsowania. Oto jak się za to zabrać:
 
-```Fish Shell
-# Parse a date string into a specific format
-set date_str "2023-03-14 15:09:26"
-date -d $date_str "+%Y-%m-%d"
+**Korzystając z `date` w Fish:**
 
-# Sample Output: 2023-03-14
+Aby przeanalizować ciąg daty w formacie "RRRR-MM-DD", możesz użyć polecenia `date` z opcją `-d` (lub `--date` dla GNU date) po której następuje string. Opcja `+` jest używana do formatowania wyjścia.
+
+```fish
+set date_str "2023-04-01"
+date -d $date_str +"%A, %d %B %Y"
+# Wyjście: Sobota, 01 Kwiecień 2023
 ```
 
-```Fish Shell
-# Convert a date string to epoch time
-date -d "2023-03-14 15:09:26" "+%s"
+Dla systemu macOS (który wymaga innego formatu dla flag `-j` i `-f`):
 
-# Sample Output: 1678812566
+```fish
+set date_str "2023-04-01"
+date -j -f "%Y-%m-%d" $date_str +"%A, %d %B %Y"
+# Wyjście: Sobota, 01 Kwiecień 2023
 ```
 
-## Deep Dive (Dogłębna analiza)
-Parsing dates from strings wasn't always straightforward. Historically, Unix systems used different tools, with `date` being a standard later on. Alternatives like `strptime` exist in programming languages like Python or C, but for Fish Shell, `date` is the go-to tool. It handles multiple date formats and can convert to both human-readable forms and epoch time. Implementation depends on clearly defining the expected date string format and using `date` accordingly.
+**Korzystając z GNU `date` do skomplikowanego parsowania:**
 
-## See Also (Zobacz również)
-- Fish Shell documentation for date: https://fishshell.com/docs/current/cmds/date.html
-- GNU Coreutils 'date': https://www.gnu.org/software/coreutils/manual/coreutils.html#date-invocation
-- Comprehensive date format specifier guide: https://en.wikipedia.org/wiki/Date_(Unix)#Formatting
+GNU `date` jest bardziej elastyczne w zakresie formatów ciągów. Może automatycznie wykrywać wiele wspólnych formatów ciągów dat bez konieczności jawnego określania formatu wejściowego:
+
+```fish
+set complex_date_str "1 Kwiecień 2023 14:00"
+date -d "$complex_date_str" '+%Y-%m-%d %H:%M:%S'
+# Wyjście: 2023-04-01 14:00:00
+```
+
+Jednak, przy pracy z ciągami dat, które mogą nie być automatycznie rozpoznawane lub gdy potrzebna jest precyzyjna kontrola nad formatem wejściowym, jawne określenie formatu wejściowego z GNU `date` nie jest bezpośrednio obsługiwane. W takich przypadkach rozważ przetworzenie wcześniejsze ciągu lub użycie innego narzędzia zaprojektowanego do bardziej skomplikowanych rutyn parsowania dat.

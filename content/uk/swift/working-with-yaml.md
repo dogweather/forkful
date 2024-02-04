@@ -1,49 +1,104 @@
 ---
 title:                "Робота з YAML"
-date:                  2024-01-19
+date:                  2024-02-03T19:27:20.100598-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Робота з YAML"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/swift/working-with-yaml.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Що і Чому?)
-YAML — це мова розмітки для конфігурації даних. Програмісти використовують його через легкість читання та інтеграцію з різноманітними мовами програмування.
+## Що і чому?
+YAML, що означає "YAML Ain't Markup Language" (YAML - це не мова розмітки), є стандартом серіалізації даних, дружнім до користувача, для всіх мов програмування. Програмісти використовують його для файлів конфігурації, міжпроцесного обміну повідомленнями та зберігання даних, оскільки його читабельність набагато ближча до звичайної англійської мови порівняно з іншими форматами даних, як-от XML або JSON, що робить його простішим для розуміння і написання.
 
-## How to: (Як це зробити:)
-Swift не має вбудованої підтримки YAML, але бібліотека Yams може допомогти.
+## Як це зробити:
+Swift не включає вбудованої підтримки для парсингу та серіалізації YAML, що вимагає використання сторонніх бібліотек. Популярним вибором є `Yams`, бібліотека для роботи з YAML у Swift.
 
-```Swift
-// Підключення Yams
+Спочатку вам потрібно додати `Yams` до вашого проекту. Якщо ви використовуєте Swift Package Manager, ви можете додати його як залежність у ваш файл `Package.swift`:
+
+```swift
+dependencies: [
+    .package(url: "https://github.com/jpsim/Yams.git", from: "4.0.0")
+]
+```
+
+### Парсинг YAML у Swift
+Припустимо, у вас є така конфігурація YAML для простого додатку:
+
+```yaml
+name: MyApp
+version: 1.0
+environment: development
+features:
+  - login
+  - notifications
+```
+
+Ось як ви можете розібрати цей YAML рядок у Swift за допомогою `Yams`:
+
+```swift
 import Yams
 
 let yamlString = """
-- name: Oleksiy
-  job: Developer
-- name: Iryna
-  job: Designer
+name: MyApp
+version: 1.0
+environment: development
+features:
+  - login
+  - notifications
 """
 
-// Десеріалізація YAML строки в Swift масив
-if let people = try? Yams.load(yaml: yamlString) as? [[String: String]] {
-    for person in people {
-        print("\(person["name"] ?? "") is a \(person["job"] ?? "").")
+do {
+    if let data = try Yams.load(yaml: yamlString) as? [String: Any] {
+        print(data)
+        // Приклад доступу до розібраних даних
+        if let name = data["name"] as? String {
+            print("Назва додатку: \(name)")
+        }
     }
+} catch {
+    print("Помилка парсингу YAML: \(error)")
 }
 ```
 
-Друкує:
+Приклад виводу:
+
 ```
-Oleksiy is a Developer.
-Iryna is a Designer.
+["name": MyApp, "version": 1.0, "environment": "development", "features": ["login", "notifications"]]
+Назва додатку: MyApp
 ```
 
-## Deep Dive (Поглиблений Розгляд):
-YAML, випущений у 2001 році, побудований на основі XML і JSON. Альтернативи, такі як JSON і plist в Swift, також популярні для конфігурації. Yams реалізує що дозволяє здійснювати десеріалізацію та серіалізацію YAML даних.
+### Серіалізація об'єктів Swift у YAML
+Конвертація об'єкту Swift назад у рядок YAML також проста за допомогою `Yams`. Припустимо, у вас є та сама структура даних, яка потребує серіалізації:
 
-## See Also (Дивіться також):
-- [Yams GitHub репозиторій](https://github.com/jpsim/Yams)
-- [Офіційна YAML специфікація](https://yaml.org/spec/1.2/spec.html)
-- [Swift документація по plist (Property List файлам)](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/PropertyLists/UnderstandXMLPlist/UnderstandXMLPlist.html)
+```swift
+let appInfo = [
+    "name": "MyApp",
+    "version": 1.0,
+    "environment": "development",
+    "features": ["login", "notifications"]
+] as [String : Any]
+
+do {
+    let yamlString = try Yams.dump(object: appInfo)
+    print(yamlString)
+} catch {
+    print("Помилка серіалізації у YAML: \(error)")
+}
+```
+
+Це виробить рядок, відформатований у YAML:
+
+```yaml
+environment: development
+features:
+  - login
+  - notifications
+name: MyApp
+version: 1.0
+```
+
+Ці приклади демонструють основні операції для роботи з YAML у додатках Swift. Пам'ятайте, хоча YAML перевершує у читабельності для людини та простоті використання, завжди враховуйте специфічні потреби вашого додатку, особливо стосовно продуктивності та складності, при виборі вашого формату серіалізації даних.

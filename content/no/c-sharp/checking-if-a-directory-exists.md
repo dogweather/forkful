@@ -1,66 +1,100 @@
 ---
-title:                "Sjekke om en mappe finnes"
-date:                  2024-01-19
-simple_title:         "Sjekke om en mappe finnes"
-
+title:                "Sjekker om en mappe eksisterer"
+date:                  2024-02-03T19:07:18.966699-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Sjekker om en mappe eksisterer"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/c-sharp/checking-if-a-directory-exists.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
+## Hva & hvorfor?
 
-Å sjekke om en katalog eksisterer handler om å bekrefte at en bestemt mappe er tilgjengelig på filsystemet før du prøver å lese fra eller skrive til den. Dette forhindrer feil som oppstår når kode antar at en mappe finnes, og den faktisk ikke gjør det.
+Å sjekke om en mappe eksisterer i C# innebærer å verifisere tilstedeværelsen av en mappe på en spesifisert bane i filsystemet. Programmerere gjør dette for å unngå feil som å forsøke å lese fra eller skrive til en ikke-eksisterende mappe, noe som sikrer jevnere manipulasjoner med filer og mapper.
 
-## How to:
+## Hvordan:
 
-For å sjekke om en katalog eksisterer i C#, bruk `Directory.Exists()` metoden fra `System.IO`-navneområdet. Se på eksempelet:
+### Bruke System.IO
 
-```C#
+C# tilbyr `System.IO`-navnerommet som inneholder `Directory`-klassen, som tilbyr en direkte måte å sjekke for eksistensen av en mappe gjennom `Exists`-metoden.
+
+```csharp
 using System;
 using System.IO;
 
-class DirectoryCheck
+class Program
 {
     static void Main()
     {
-        string path = @"C:\EksempelKatalog";
+        string directoryPath = @"C:\EksempelMappe";
 
-        if(Directory.Exists(path))
-        {
-            Console.WriteLine($"Katalogen {path} eksisterer.");
-        }
-        else
-        {
-            Console.WriteLine($"Katalogen {path} eksisterer ikke.");
-        }
+        // Sjekk om mappen eksisterer
+        bool directoryExists = Directory.Exists(directoryPath);
+
+        // Skriv ut resultatet
+        Console.WriteLine("Mappe eksisterer: " + directoryExists);
     }
 }
 ```
 
-Om katalogen finnes, får du output:
+**Eksempel på utskrift:**
 
 ```
-Katalogen C:\EksempelKatalog eksisterer.
+Mappe eksisterer: False
 ```
 
-Ellers:
+I tilfelle mappen faktisk eksisterer på banen `C:\EksempelMappe`, vil utskriften være `True`.
+
+### Bruke System.IO.Abstractions for enhetstesting
+
+Når det kommer til å gjøre koden din enhetstestbar, spesielt når den samhandler med filsystemet, er pakken `System.IO.Abstractions` et populært valg. Den lar deg abstrahere og mocke filsystemoperasjoner i testene dine. Her er hvordan du kan sjekke for en mappe sin eksistens ved å bruke denne tilnærmingen:
+
+Først, sørg for at du har installert pakken:
 
 ```
-Katalogen C:\EksempelKatalog eksisterer ikke.
+Install-Package System.IO.Abstractions
 ```
 
-## Deep Dive
+Deretter kan du injisere et `IFileSystem` i klassen din og bruke det til å sjekke om en mappe eksisterer, noe som tillater enklere enhetstesting.
 
-Å sjekke om en katalog eksisterer er en vesentlig operasjon datamaskiner har gjort siden de fikk et filsystem. I eldre programmeringsspråk var det oftere nødvendig å håndtere filsystemfeil direkte. I C#, derimot, tar `System.IO`-klassene seg av mye av den kompleksiteten for oss.
+```csharp
+using System;
+using System.IO.Abstractions;
 
-Alternativene inkluderer å prøve å lese eller skrive til en katalog og håndtere eventuelle unntak som en 'FileNotFoundException'. Men det er generelt sett dårlig praksis – det er bedre å bruke `Directory.Exists()` for eksplicitte sjekker før du prøver operasjoner på katalogen.
+class Program
+{
+    private readonly IFileSystem _fileSystem;
 
-I bakhånd håndterer `Directory.Exists()` et par viktige sjekker for oss: det ser ikke bare at stien peker til noe som eksisterer, men det bekrefter også at dette noe er en katalog, ikke en fil.
+    public Program(IFileSystem fileSystem)
+    {
+        _fileSystem = fileSystem;
+    }
 
-## See Also
+    public bool CheckDirectoryExists(string directoryPath)
+    {
+        return _fileSystem.Directory.Exists(directoryPath);
+    }
 
-- Microsofts offisielle dokumentasjon for Directory.Exists metoden: [Directory.Exists Method](https://docs.microsoft.com/en-us/dotnet/api/system.io.directory.exists)
-- Guide til System.IO-navneområdet: [System.IO Namespace](https://docs.microsoft.com/en-us/dotnet/standard/io/)
-- Feilhåndtering i C#: [Exception Handling](https://docs.microsoft.com/en-us/dotnet/csharp/fundamentals/exceptions/exception-handling)
+    static void Main()
+    {
+        var fileSystem = new FileSystem();
+        var program = new Program(fileSystem);
+
+        string directoryPath = @"C:\EksempelMappe";
+        bool directoryExists = program.CheckDirectoryExists(directoryPath);
+
+        Console.WriteLine("Mappe eksisterer: " + directoryExists);
+    }
+}
+```
+
+**Eksempel på utskrift:**
+
+```
+Mappe eksisterer: False
+```
+
+Denne tilnærmingen skiller applikasjonslogikken din fra direkte tilgang til filsystemet, noe som gjør koden din mer modulær, testbar og vedlikeholdbar.

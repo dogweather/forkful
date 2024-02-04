@@ -1,61 +1,132 @@
 ---
-title:                "Робота з CSV файлами"
-date:                  2024-01-19
-simple_title:         "Робота з CSV файлами"
-
+title:                "Робота з CSV"
+date:                  2024-02-03T19:20:44.963849-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Робота з CSV"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/javascript/working-with-csv.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-"## Що та Чому?"
+## Що і чому?
+Робота з CSV (Comma-Separated Values — значення, розділені комами) у JavaScript передбачає аналіз або генерацію файлів CSV для того, щоб імпортувати табличні дані з зовнішніх джерел або експортувати дані для використання в інших програмах. Програмісти роблять це тому, що це дозволяє легко та з мінімальними витратами обмінюватися даними між програмами, базами даних і системами, де більш складні формати, наприклад, JSON, можуть бути надлишковими.
 
-Працювати з CSV - це означає читати, писати і маніпулювати даними у форматі Comma-Separated Values. Програмісти це роблять, бо CSV - це простий і широко підтримуваний формат обміну даними, зручний для табличних даних.
+## Як це зробити:
+JavaScript не має вбудованої функціональності для аналізу або створення CSV, на відміну від JSON. Проте ви легко можете керувати даними CSV, використовуючи або сирий JavaScript для простіших задач, або вдаючись до потужних бібліотек, як-от `PapaParse`, для більш складних сценаріїв.
 
-## How to:
-"## Як це зробити:"
+### Базовий аналіз за допомогою сирого JavaScript
+Для аналізу простого рядка CSV у масив об'єктів:
 
 ```javascript
-// Парсинг CSV рядка в масив
-const csv = require('csv-parser');
-const fs = require('fs');
-const results = [];
+const csv = `name,age,city
+John,23,New York
+Jane,28,Los Angeles`;
 
-fs.createReadStream('data.csv')
-  .pipe(csv())
-  .on('data', (data) => results.push(data))
-  .on('end', () => {
-    console.log(results);
-    // Працюємо з отриманими даними
-  });
+function parseCSV(csv) {
+  const lines = csv.split("\n");
+  const result = [];
+  const headers = lines[0].split(",");
 
-// Генерація CSV з масиву об'єктів
-const { Parser } = require('json2csv');
-const myData = [
-  { name: 'Andriy', age: 30 },
-  { name: 'Yulia', age: 28 }
-];
+  for (let i = 1; i < lines.length; i++) {
+    const obj = {};
+    const currentline = lines[i].split(",");
+    
+    for (let j = 0; j < headers.length; j++) {
+      obj[headers[j]] = currentline[j];
+    }
+    result.push(obj);
+  }
+  
+  return result;
+}
 
-const json2csvParser = new Parser();
-const csv = json2csvParser.parse(myData);
+console.log(parseCSV(csv));
+```
+Вивід:
 
-console.log(csv);
+```
+[
+  { name: 'John', age: '23', city: 'New York' },
+  { name: 'Jane', age: '28', city: 'Los Angeles' }
+]
 ```
 
-## Deep Dive
-"## Поглиблений Аналіз:"
+### Базова генерація до CSV за допомогою сирого JavaScript
+Для перетворення масиву об'єктів на рядок CSV:
 
-CSV з'явився у ранніх роках програмування як метод організації та обміну табличними даними. Хоча JSON і XML пропонують більш структуровані формати, CSV залишається популярним через свою простоту і читабельність.
+```javascript
+const data = [
+  { name: 'John', age: 23, city: 'New York' },
+  { name: 'Jane', age: 28, city: 'Los Angeles' }
+];
 
-Окрім `csv-parser` і `json2csv`, існують інші бібліотеки як `PapaParse`, `csv-writer`. Вибір бібліотеки залежить від конкретних потреб проекту, роботи зі складними CSV або простотою API.
+function arrayToCSV(arr) {
+  const csv = arr.map(row => 
+    Object.values(row).join(',')
+  ).join('\n');
+  
+  return csv;
+}
 
-Зверніть увагу, що коли ми працюємо з CSV у Node.js, потрібно користуватися модулем потоків (streams), щоб ефективно обробляти великі обсяги даних.
+console.log(arrayToCSV(data));
+```
 
-## See Also
-"## Дивіться Також:"
+Вивід:
 
-- [RFC 4180, “Common Format and MIME Type for Comma-Separated Values (CSV) Files”](https://tools.ietf.org/html/rfc4180)
-- [PapaParse - Powerful CSV Parser for JavaScript](https://www.papaparse.com/)
-- [csv-writer - CSV Writing for Node.js](https://github.com/ryu1kn/csv-writer)
+```
+John,23,New York
+Jane,28,Los Angeles
+```
+
+### Використання PapaParse для складних завдань з CSV
+Для більш складних сценаріїв `PapaParse` є надійною бібліотекою, придатною для аналізу та формування файлів CSV з опціями для потоків, воркерів і обробки великих файлів.
+
+Аналіз файлу CSV або рядка з використанням PapaParse:
+
+```javascript
+// Після додавання PapaParse до вашого проекту
+const Papa = require('papaparse');
+const csv = `name,age,city
+John,23,New York
+Jane,28,Los Angeles`;
+
+Papa.parse(csv, {
+  complete: function(results) {
+    console.log("Розібрано:", results.data);
+  }
+});
+```
+
+Генерує:
+
+```
+Розібрано: [
+  ["name", "age", "city"],
+  ["John", "23", "New York"],
+  ["Jane", "28", "Los Angeles"]
+]
+```
+
+Створення рядка CSV з масиву з використанням PapaParse:
+
+```javascript
+const data = [
+  { name: 'John', age: 23, city: 'New York' },
+  { name: 'Jane', age: 28, city: 'Los Angeles' }
+];
+
+console.log(Papa.unparse(data));
+```
+
+Генерує:
+
+```
+name,age,city
+John,23,New York
+Jane,28,Los Angeles
+```
+
+Ці приклади ілюструють базове та розширене управління CSV у JavaScript, спрощуючи обмін даними в веб-додатках і не тільки.

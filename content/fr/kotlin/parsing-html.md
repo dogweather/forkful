@@ -1,50 +1,50 @@
 ---
-title:                "Analyse syntaxique de HTML"
-date:                  2024-01-20T15:32:47.497411-07:00
-simple_title:         "Analyse syntaxique de HTML"
-
+title:                "Analyse Syntaxique du HTML"
+date:                  2024-02-03T19:12:19.244408-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Analyse Syntaxique du HTML"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/kotlin/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Quoi et Pourquoi ?)
-L'analyse de HTML, c'est lire et comprendre le code HTML avec un programme. On fait ça pour extraire des données ou manipuler la structure du contenu web.
+## Quoi & Pourquoi ?
+Parser du HTML signifie disséquer le balisage d'une page web en quelque chose qu'un programme peut comprendre et manipuler. Les programmeurs analysent le HTML pour extraire des données, automatiser les interactions web ou migrer du contenu entre des systèmes.
 
-## How to: (Comment faire ?)
-On va utiliser Jsoup, une bibliothèque Java populaire qui fonctionne bien avec Kotlin.
+## Comment faire :
+Kotlin rend le parsing HTML simple avec des bibliothèques comme Jsoup. Voici comment procéder :
 
-```kotlin
+```Kotlin
 import org.jsoup.Jsoup
 
 fun main() {
-    val html = "<html><head><title>Salut, Kotlin!</title></head>" +
-               "<body><p>Ceci est un paragraphe.</p></body></html>"
+    val html = "<html><head><title>Page d'exemple</title></head><body><p>Ceci est un test.</p></body></html>"
     val doc = Jsoup.parse(html)
-    val title = doc.title()
-    val pText = doc.select("p").first()?.text()
 
-    println("Le titre est: $title")
-    println("Texte du paragraphe: $pText")
+    val title = doc.title()
+    println("Titre : $title")  // Sortie : Titre : Page d'exemple
+
+    val pText = doc.select("p").first()?.text()
+    println("Paragraphe : $pText")  // Sortie : Paragraphe : Ceci est un test.
 }
 ```
-Sortie :
-```
-Le titre est: Salut, Kotlin!
-Texte du paragraphe: Ceci est un paragraphe.
-```
 
-Ce code parse un simple document HTML et extrait le titre et le texte du paragraphe.
+Nous récupérons le titre et le texte du paragraphe, ce qui n'est qu'un aperçu de ce que Jsoup peut faire. Mais c'est un début.
 
-## Deep Dive (Plongée en profondeur)
-Historiquement, analyser du HTML était compliqué et sujet à erreurs en raison de la souplesse du format HTML. Les bibliothèques comme Jsoup ont grandement simplifié la tâche en fournissant une interface DOM claire et en gérant les bizarreries du HTML pour nous.
+## Plongée en profondeur :
+Avant Kotlin, Java était le choix préféré pour cela, souvent de manière maladroite. Jsoup a changé la donne en proposant une approche à la jQuery. Cependant, le parsing HTML n'est pas exclusif à Jsoup ; d'autres bibliothèques comme HtmlUnit ou même les expressions régulières (bien que déconseillées) existent. Avec Jsoup, vous assurez que votre analyse respecte la structure du document. Il utilise un modèle DOM, permettant la sélection et la manipulation des éléments. Il est résilient, aussi - il peut parse même le HTML le plus désordonné.
 
-Il existe des alternatives à Jsoup, comme HtmlUnit ou le parsing basé sur les expressions régulières, mais elles ont leurs propres complexités ou limites. Jsoup brille avec sa facilité d'utilisation et sa capacité à gérer du HTML "réel", souvent imparfait.
+## Voir également :
+Plongez plus profondément dans Jsoup :
 
-L'implémentation repose sur l'utilisation d'un sélecteur CSS pour accéder aux éléments désirés, très similaire à jQuery en JavaScript, rendant la transition entre les langages presque transparente pour les développeurs.
+- Documentation officielle de Jsoup : https://jsoup.org/
+- Livre "Kotlin for Android Developers" : https://antonioleiva.com/kotlin-android-developers-book/
+- Site officiel du langage de programmation Kotlin : https://kotlinlang.org/
 
-## See Also (Voir aussi)
-- [Jsoup Documentation](https://jsoup.org/)
-- [Kotlin Programming Language](https://kotlinlang.org/)
-- [HTML Parsing in Java using Jsoup - Tutorial](https://www.baeldung.com/java-with-jsoup)
+Pour des discussions plus larges et des tutoriels sur le web scraping et l'analyse :
+
+- Web Scraping avec Kotlin et Jsoup : https://medium.com/@hadiyarajesh/web-scraping-with-kotlin-and-jsoup-8b5b6c31c5a5
+- Analyse du HTML sur Android avec Kotlin et Jsoup : https://proandroiddev.com/parsing-html-on-android-1b766658be6a

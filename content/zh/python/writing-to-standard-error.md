@@ -1,41 +1,75 @@
 ---
 title:                "写入标准错误"
-date:                  2024-01-19
+date:                  2024-02-03T19:34:14.435228-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "写入标准错误"
-
 tag:                  "Files and I/O"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/python/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (是什么 & 为什么？)
-在Python中，往标准错误（stderr）写数据是把程序中的错误信息输出到一个特定的通道，这样用户就能分清正常消息和错误消息。程序员这么做是为了调试程序更方便，同时让正常输出和错误输出分开，便于重定向和日志记录。
+## 什么和为什么？
+在 Python 中写入标准错误是指将程序的错误消息或诊断消息导向错误流（`stderr`），与标准输出（`stdout`）分开。程序员这样做是为了将正常程序输出与错误消息分开，便于调试和日志分析。
 
-## How to: (如何做：)
-使用Python写入标准错误很简单。看例子：
+## 如何操作：
+### 使用 `sys.stderr`
+Python 的内置 `sys` 模块允许显式写入`stderr`。这种方法适用于简单的错误消息或诊断信息。
 
-```Python
+```python
 import sys
 
-# 正常输出
-print("这是正常输出的信息。")
-
-# 错误输出
-print("这是错误输出的信息。", file=sys.stderr)
-
-# 例子输出：（注意，实际上错误信息可能会先显示，这取决于缓冲区的处理方式）
-# 这是正常输出的信息。
-# 这是错误输出的信息。
+sys.stderr.write('Error: Something went wrong.\n')
+```
+示例输出（到 stderr）：
+```
+Error: Something went wrong.
 ```
 
-## Deep Dive (深入了解)
-- 历史背景：UNIX哲学中强调了工具链和组合的概念，其中‘stderr’是一个重要部分，用于分离普通输出和错误。
-- 替代方案：有时候，你可能会用日志库（比如`logging`），或是直接打开一个文件写入错误信息，但`sys.stderr`是最直接的标准错误输出方式。
-- 实现细节：在底层，标准错误是一个文件描述符，它默认指向控制台，但它可以被重定向到文件或其他设备。
+### 使用 `print` 函数
+Python 的 `print` 函数可以通过指定 `file` 参数将其输出重定向到 `stderr`。这种方法利用了 `print` 的用户友好特性，同时处理错误消息。
+```python
+from sys import stderr
 
-## See Also (另请参阅)
-- Python官方文档：[sys.stderr](https://docs.python.org/3/library/sys.html#sys.stderr)
-- Python官方文档：[logging](https://docs.python.org/3/library/logging.html)
-- Wikipedia上有关UNIX哲学的文章：[Unix philosophy](https://en.wikipedia.org/wiki/Unix_philosophy)
+print('Error: Failure in module.', file=stderr)
+```
+示例输出（到 stderr）：
+```
+Error: Failure in module.
+```
+
+### 使用 `logging` 模块
+对于更全面的解决方案，Python 的 `logging` 模块可以将消息导向 `stderr` 以及更多，如写入文件或自定义消息格式。这种方法最适合需要不同日志级别、消息格式或目标的应用。
+```python
+import logging
+
+logging.basicConfig(level=logging.WARNING)
+logger = logging.getLogger(__name__)
+
+logger.error('Error: Database connection failed.')
+```
+示例输出（到 stderr）：
+```
+ERROR:__main__:Error: Database connection failed.
+```
+
+### 第三方库：`loguru`
+`loguru` 是一个受欢迎的第三方库，它简化了 Python 应用中的日志记录。它自动将错误定向到 `stderr`，除了其他功能。
+
+要使用 `loguru`，首先通过 pip 安装它：
+```shell
+pip install loguru
+```
+
+然后，按如下方式将其纳入你的 Python 脚本：
+```python
+from loguru import logger
+
+logger.error('Error: Failed to open file.')
+```
+示例输出（到 stderr）：
+```
+2023-04-05 12:00:00.000 | ERROR    | __main__:<module>:6 - Error: Failed to open file.
+```

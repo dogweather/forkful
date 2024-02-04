@@ -1,58 +1,80 @@
 ---
-title:                "הפיכת מחרוזת לאותיות רישיות"
-date:                  2024-01-19
-simple_title:         "הפיכת מחרוזת לאותיות רישיות"
-
+title:                "הגדלת אותיות במחרוזת"
+date:                  2024-02-03T19:05:36.786957-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "הגדלת אותיות במחרוזת"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/cpp/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (מה ולמה?)
-Capitalizing a string means converting the first character of each word to uppercase. Programmers do this to format text for consistency, readability, or to meet specific data standards.
+## מה ולמה?
+הגדלת אות ראשונה במחרוזת מערבת המרת התו הראשון של כל מילה במחרוזת לאות גדולה אם הוא באות קטנה, תוך שמירה על שאר התווים ללא שינוי. מתכנתים לעיתים קרובות מבצעים משימה זו עבור עיצוב פלטים, קלטים של משתמשים או עיבוד נתונים כדי להבטיח עקביות באופן שבו הטקסט מוצג או מעובד, במיוחד בממשקי משתמש או משימות נרמול נתונים.
 
-## How to: (איך לעשות:)
-```C++
+## איך לעשות:
+ב-C++, ניתן להגדיל אות ראשונה במחרוזת באמצעות הספרייה הסטנדרטית ללא צורך בספריות צד שלישי. עם זאת, עבור התנהגויות הגדלה מורכבות או ספציפיות יותר, ספריות כמו Boost יכולות להיות מועילות מאוד. להלן דוגמאות הממחישות את שתי הגישות.
+
+### באמצעות ספריית C++ סטנדרטית:
+
+```cpp
 #include <iostream>
-#include <cctype>
+#include <cctype> // עבור std::tolower ו-std::toupper
 #include <string>
 
-std::string capitalize(const std::string& input) {
+std::string capitalizeString(const std::string& input) {
     std::string result;
-    bool newWord = true;
-    
+    bool capitalizeNext = true;
+
     for (char ch : input) {
-        if (newWord && std::isalpha(ch)) {
-            result += std::toupper(ch);
-            newWord = false;
-        } else {
-            result += ch;
-        }
         if (std::isspace(ch)) {
-            newWord = true;
+            capitalizeNext = true;
+        } else if (capitalizeNext) {
+            ch = std::toupper(ch);
+            capitalizeNext = false;
         }
+        result += ch;
     }
-    
+
     return result;
 }
 
 int main() {
-    std::string text = "hello, world! here's some text.";
-    std::string capitalizedText = capitalize(text);
-    std::cout << capitalizedText << std::endl;
-    // Output: Hello, World! Here's Some Text.
+    std::string text = "hello world from c++";
+    std::string capitalizedText = capitalizeString(text);
+    std::cout << capitalizedText << std::endl; // פלט: "Hello World From C++"
 }
 ```
 
-## Deep Dive (עומק השקעה)
-Historically, capitalizing words in programming can be traced to early computing when systems were case-insensitive. Different languages and libraries have their own methods to capitalize strings. For instance, in Python, there's a title() method. 
+### באמצעות ספריית Boost:
 
-In C++, there's no built-in method for string capitalization but we usually use a mix of character checking and manipulation functions like `isalpha()`, `toupper()`, and `isspace()`.
+למניפולציה מתקדמת של מחרוזות, כולל הגדלת אות ראשונה תוך התחשבות באזור, ייתכן שתרצה להשתמש בספריית Boost String Algo.
 
-One alternative way to capitalize is to use locale-specific functions if dealing with non-English texts. Implementing your own function, as shown above, gives you control over the capitalization process, especially for words with apostrophes or special characters.
+ראשית, הבטח שהספרייה של Boost מותקנת ומוגדרת בפרויקט שלך. לאחר מכן תוכל לכלול את הכותרות הנדרשות ולהשתמש בתכונות שלה כפי שמוצג למטה.
 
-## See Also (ראה גם)
-- C++ reference for `<cctype>` functions: https://en.cppreference.com/w/cpp/header/cctype
-- C++ reference for string class: https://en.cppreference.com/w/cpp/string/basic_string
-- Discussion on string manipulation in C++: https://stackoverflow.com/questions/tagged/c%2b%2b+string+manipulation
+```cpp
+#include <boost/algorithm/string.hpp>
+#include <iostream>
+#include <string>
+
+int main() {
+    std::string text = "hello world from c++";
+    std::string capitalizedText = text;
+
+    // הגדלת אות ראשונה של כל מילה
+    boost::algorithm::to_lower(capitalizedText); // הבטחת שהמחרוזת באותיות קטנות
+    capitalizedText[0] = std::toupper(capitalizedText[0]); // הגדלת התו הראשון
+
+    for (std::size_t i = 1; i < capitalizedText.length(); ++i) {
+        if (isspace(capitalizedText[i - 1])) { // הגדלה לאחר רווח
+            capitalizedText[i] = std::toupper(capitalizedText[i]);
+        }
+    }
+
+    std::cout << capitalizedText << std::endl; // פלט: "Hello World From C++"
+}
+```
+
+במקרה זה, Boost מפשטת חלק ממשימות מניפולציית המחרוזת אך עדיין דורשת גישה מותאמת אישית להגדלה אמיתית מכיוון שהיא בעיקר מציעה פונקציונליות להמרה והעברה בין רישיות.

@@ -1,36 +1,75 @@
 ---
 title:                "שימוש בביטויים רגולריים"
-date:                  2024-01-19
+date:                  2024-02-03T19:17:11.463153-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "שימוש בביטויים רגולריים"
-
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/clojure/using-regular-expressions.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## מה ולמה?
-השימוש בביטויים רגולריים מאפשר חיפוש והתאמה של טקסט על פי תבנית. תכנתים עושים זאת כדי למצוא, להחליף או לבדוק תוכן טקסט בצורה חכמה ויעילה.
+ביטויים רגולריים, כלי עוצמתי להתאמת תבניות ולניהול נתונים, הם חיוניים במשימות עיבוד טקסט כמו אימות קלט, חיפוש והחלפת טקסט. מתכנתים משתמשים בהם רבות לטיפול במשימות פירוק מחרוזות מורכבות ואימות נתונים בצורה יעילה ותמציתית.
 
 ## איך לעשות:
-ב-Clojure, אנו משתמשים בביטויים רגולריים בעזרת סינטקסיס דומה ל-Java. זה כולל פונקציות כמו `re-find`, `re-seq` לחיפוש, ו `re-matches` לבדיקת התאמות.
+Clojure, נאמן לשורשיו במשפחת Lisp, מציע מערך עשיר של פונקציות המתממשקות בחלקות עם יכולות הביטוי הרגולרי של Java. הנה איך אפשר לנצל אותם:
 
-```Clojure
-; חיפוש התאמה יחידה
-(def pattern #"\b[Cc]lojure\b")
-(re-find pattern "Clojure is awesome!") ; => "Clojure"
+### התאמה בסיסית
+כדי לבדוק אם מחרוזת מתאימה לתבנית, השתמשו ב- `re-matches`. היא מחזירה את ההתאמה המלאה אם הצליחה או `nil` אחרת.
 
-; מציאת כל ההתאמות
-(re-seq pattern "Clojure and clojure are both cool.") ; => ("Clojure" "clojure")
-
-; בדיקת התאמה מלאה
-(re-matches pattern "Clojure") ; => "Clojure"
-(re-matches pattern "I love Clojure") ; => nil
+```clojure
+(re-matches #"\d+" "123")  ;=> "123"
+(re-matches #"\d+" "abc")  ;=> nil
 ```
 
-## צלילה לעומק:
-ביטויים רגולריים הם חלק מתכנות כמעט מהימים הראשונים שלו. במקור פותחו על ידי תאורטיקנים של מדעי המחשב כמו Ken Thompson. חלופות כוללות פרסור סינטקסי מובנית, אולם ביטויים רגולריים עדיין נשארים פופולריים בגלל הגמישות והעוצמה שלהם. בקרבת, יעילות אלגוריתמים כמו סיבוכיות זמן עבודה הינה נושא חשוב.
+### חיפוש תבניות
+כדי למצוא את הופעת התבנית הראשונה, `re-find` היא הפונקציה אליה תפנו:
 
-## ראה גם:
-- [ClojureDocs - Regular Expressions](https://clojuredocs.org/clojure.core/re-find)
-- [Mozilla Developer Network - Regular Expressions Guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
+```clojure
+(re-find #"\d+" "Order 123")  ;=> "123"
+```
+
+### קיבוץ תפיסות
+השתמשו ב- `re-find` יחד עם סוגריים בתבנית כדי לתפוס קבוצות:
+
+```clojure
+(let [[_ area code] (re-find #"(1)?(\d{3})" "Phone: 123-4567")]
+  (println "Area Code:" area "Code:" code))
+;; פלט: Area Code: nil Code: 123
+```
+
+### חיפוש גלובלי (מציאת כל ההתאמות)
+ב-Clojure אין חיפוש גלובלי מובנה כמו בחלק מהשפות. במקום זאת, השתמשו ב- `re-seq` כדי לקבל רצף עצלן של כל ההתאמות:
+
+```clojure
+(re-seq #"\d+" "id: 123, qty: 456")  ;=> ("123" "456")
+```
+
+### פיצול מחרוזות
+כדי לפצל מחרוזת בהתבסס על תבנית, השתמשו ב- `clojure.string/split`:
+
+```clojure
+(clojure.string/split "John,Doe,30" #",")  ;=> ["John" "Doe" "30"]
+```
+
+### החלפה
+החליפו חלקים ממחרוזת שמתאימים לתבנית עם `clojure.string/replace`:
+
+```clojure
+(clojure.string/replace "2023-04-01" #"\d{4}" "YYYY")  ;=> "YYYY-04-01"
+```
+
+### ספריות צד שלישי
+למרות שהתמיכה המובנית של Clojure מספיקה לרוב המקרים, לסיטואציות מורכבות יותר, שקלו שימוש בספריות כמו `clojure.spec` לאימות נתונים תקף ו-`reagent` לניהול DOM ריאקטיבי ביישומי אינטרנט עם ניתוב ואימות קלט מבוססי ביטויים רגולריים.
+
+```clojure
+;; דוגמה של שימוש ב-clojure.spec לאימות דואר אלקטרוני
+(require '[clojure.spec.alpha :as s])
+(s/def ::email (s/and string? #(re-matches #".+@.+\..+" %)))
+(s/valid? ::email "test@example.com")  ;=> נכון
+```
+
+זכרו, למרות שביטויים רגולריים הם כלי עוצמתי, הם גם יכולים להפוך קוד לקשה לקריאה ולתחזוקה. השתמשו בהם בשיקול דעת ותמיד שקלו פונקציות פשוטות יותר של ניהול מחרוזות ככל הניתן.

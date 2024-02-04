@@ -1,35 +1,83 @@
 ---
 title:                "Tekstitiedoston kirjoittaminen"
-date:                  2024-01-19
+date:                  2024-02-03T19:29:34.985667-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Tekstitiedoston kirjoittaminen"
-
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/typescript/writing-a-text-file.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Tekstitiedostojen kirjoittamista käytetään tiedon tallentamiseen pysyvästi. Koodaajille se tarjoaa yksinkertaisen tavan säilöä sovelluksen dataa tai lokitietoja.
+## Mikä ja miksi?
+Tekstitiedoston kirjoittaminen TypeScriptillä on kriittinen taito datan pysyvyyden, konfiguraatioiden tai lokiin kirjoittamisen kannalta. Ohjelmoijat suorittavat usein tämän tehtävän tallentaakseen ja manipuloidakseen tietoa sovelluksen muistin ulkopuolella syistä kuten datan analysointi, raportointi tai yksinkertaisesti käyttäjäasetusten tallentaminen istuntojen välillä.
 
-## How to:
-Asenna ensin tiedostojen käsittelyyn tarvittava Node.js `fs`-moduuli:
+## Kuinka:
+TypeScript ei itsessään käsittele suoraan tiedosto-operaatioita, sillä se kääntyy JavaScriptiksi, joka perinteisesti toimii selaimessa rajoitetulla pääsyllä tiedostojärjestelmään. Kuitenkin, kun sitä käytetään Node.js-ympäristössä, `fs`-moduuli (File System) tarjoaa toiminnallisuuden tiedostojen kirjoittamiseen.
 
-```TypeScript
+### Node.js fs-moduulin käyttäminen
+Varmista ensin, että työskentelet Node.js-ympäristössä. Käytä sitten `fs`-moduulia teksti-tiedostojen kirjoittamiseen. Tässä on yksinkertainen esimerkki:
+
+```typescript
 import * as fs from 'fs';
 
-fs.writeFile('tervehdys.txt', 'Hei vaan TypeScriptin ystävät!', err => {
-  if (err) throw err;
-  console.log('Tiedosto on tallennettu!');
+const data = 'Hello, world!';
+const filePath = './message.txt';
+
+fs.writeFile(filePath, data, 'utf8', (err) => {
+    if (err) throw err;
+    console.log('Tiedosto on tallennettu!');
 });
 ```
 
-Koodi luo tekstitiedoston nimeltä "tervehdys.txt" ja kirjoittaa siihen viestin. Jos onnistuu, konsoliin tulostuu ilmoitus.
+Tämä kirjoittaa asynkronisesti "Hello, world!" `message.txt`-tiedostoon. Jos tiedostoa ei ole olemassa, Node.js luo sen; jos on, Node.js ylikirjoittaa sen.
 
-## Deep Dive
-Typescript on kehittynyt JavaScriptin supersetiksi, joka mahdollistaa tyypitetyn ohjelmoinnin. Se on saanut vaikutteita aiemmista ohjelmointikielistä, kuten Java ja C#. Aikaisemmin tiedostojen käsittelyyn käytettiin pelkkää JavaScriptia, mutta TypeScript tarjoaa vahvan tyypityksen ja luokkien tuoman selkeyden. Vaihtoehtoina tiedostojen kirjoittamiseen voivat olla erilaiset tietokannat tai pilvipalvelut, mutta perinteinen tiedostojärjestelmän käyttö on edelleen arvokasta nopean kehityksen ja helpon testauksen vuoksi.
+Synkroniseen tiedoston kirjoittamiseen, käytä `writeFileSync`:
 
-## See Also
-- [Node.js File System -dokumentaatio](https://nodejs.org/api/fs.html)
-- [TypeScriptin viralliset ohjeet](https://www.typescriptlang.org/docs/)
-- [Modernin JavaScriptin oppiminen](https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript)
+```typescript
+import * as fs from 'fs';
+
+const data = 'Hello again, world!';
+const filePath = './message.txt';
+
+try {
+    fs.writeFileSync(filePath, data, 'utf8');
+    console.log('Tiedosto on tallennettu!');
+} catch (err) {
+    console.error(err);
+}
+```
+
+### Suosittujen kolmannen osapuolen kirjastojen käyttäminen
+Vaikka alkuperäinen `fs`-moduuli on tehokas, jotkin kehittäjät suosivat kolmannen osapuolen kirjastojen käyttöä lisämukavuuden ja toiminnallisuuden vuoksi. `fs-extra` on suosittu valinta, joka laajentaa `fs`:ää ja tekee tiedosto-operaatioista suoraviivaisempia.
+
+Asenna ensin `fs-extra`:
+
+```
+npm install fs-extra
+```
+
+Sitten voit käyttää sitä TypeScript-tiedostossasi kirjoittaaksesi tekstisisältöä:
+
+```typescript
+import * as fs from 'fs-extra';
+
+const data = 'Tämä on fs-extra!';
+const filePath = './extraMessage.txt';
+
+// Käyttäen async/await
+async function writeFile() {
+    try {
+        await fs.writeFile(filePath, data, 'utf8');
+        console.log('Tiedosto on tallennettu fs-extra:n avulla!');
+    } catch (err) {
+        console.error(err);
+    }
+}
+
+writeFile();
+```
+
+Tämä koodinpätkä tekee saman asian kuin aiemmat `fs`-esimerkit, mutta hyödyntää `fs-extra`-kirjastoa, tarjoten puhtaamman syntaksin lupausten käsittelyyn.

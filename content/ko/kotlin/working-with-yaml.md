@@ -1,82 +1,101 @@
 ---
-title:                "YAML 다루기"
-date:                  2024-01-19
-simple_title:         "YAML 다루기"
-
+title:                "YAML로 작업하기"
+date:                  2024-02-03T19:26:01.387356-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "YAML로 작업하기"
 tag:                  "Data Formats and Serialization"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/kotlin/working-with-yaml.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (무엇인가 & 왜 사용하는가?)
-YAML은 "YAML Ain't Markup Language"의 약어로, 데이터 직렬화 포맷입니다. 프로그래머들은 설정 파일, 데이터 교환 등을 간편하게 하기 위해 YAML을 사용합니다.
+## 무엇 & 왜?
+YAML은 "YAML Ain't Markup Language"의 약자로, 구성 파일, 데이터 저장, 프로세스 간 메시징에 자주 사용되는 매우 읽기 쉬운 데이터 직렬화 형식입니다. 프로그래머들은 구성 및 설정을 구조적이면서도 간단한 방식으로 관리하기 위해 종종 YAML을 사용하며, 읽기 쉬움이 중요할 때 JSON이나 XML보다 그 명확성과 간단함으로부터 이점을 얻습니다.
 
-## How to: (어떻게 사용하는가)
-Kotlin에서 YAML을 다루려면 외부 라이브러리를 사용해야 합니다. `snakeyaml` 라이브러리를 예로 들어 실습 코드를 보여드리겠습니다.
+## 방법:
+Kotlin은 YAML 파싱 및 직렬화를 위한 내장 지원을 제공하지 않지만, 일반 YAML 파싱을 위한 `snakeyaml`과 YAML 형식 확장을 사용하는 `kotlinx.serialization`과 같은 인기 있는 타사 라이브러리를 사용하여 YAML 파일을 작업할 수 있습니다.
 
-1. 의존성 추가하기(build.gradle):
+### `snakeyaml` 사용하기
+**의존성:**
 ```kotlin
-dependencies {
-    implementation("org.yaml:snakeyaml:1.29")
-}
+implementation 'org.yaml:snakeyaml:1.30'
 ```
 
-2. Kotlin 내에서 YAML 읽기:
+**YAML 읽기:**
 ```kotlin
 import org.yaml.snakeyaml.Yaml
+import java.io.FileInputStream
 
-fun main() {
+fun readYaml(filePath: String) {
     val yaml = Yaml()
-    val document = """
-        name: Yoon
-        role: Developer
-        skills:
-          - Kotlin
-          - YAML
-    """.trimIndent()
+    val inputStream = FileInputStream(filePath)
+    val data = yaml.load<Map<String, Any>>(inputStream)
 
-    val data = yaml.load<Map<String, Any>>(document)
     println(data)
 }
+
+// 샘플 사용법
+fun main() {
+    readYaml("config.yaml")
+}
+```
+**샘플 `config.yaml`:**
+```yaml
+database:
+  host: localhost
+  port: 5432
+```
+**샘플 출력:**
+```
+{database={host=localhost, port=5432}}
+```
+### `kotlinx.serialization`과 함께 YAML 사용하기
+먼저, 적합한 YAML 지원 라이브러리가 포함된 `kotlinx-serialization` 라이브러리를 갖추었는지 확인하세요(사용 가능하다면, `kotlinx.serialization`은 주로 JSON 및 기타 형식을 직접 대상으로 합니다).
+
+**의존성:**
+```kotlin
+// JSON을 위한 것(설명용, YAML 지원이나 대체 라이브러리 확인)
+implementation 'org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.2'
 ```
 
-출력:
+**직렬화 가능한 데이터 클래스 정의하기:**
 ```kotlin
-{name=Yoon, role=Developer, skills=[Kotlin, YAML]}
+import kotlinx.serialization.Serializable
+
+@Serializable
+data class Config(
+    val database: Database
+)
+
+@Serializable
+data class Database(
+    val host: String,
+    val port: Int
+)
 ```
 
-3. Kotlin에서 YAML 쓰기:
+글을 쓰는 시점에서, `kotlinx.serialization`에서의 직접적인 YAML 지원은 제한적일 수 있거나 발전 중일 수 있습니다. `snakeyaml`을 사용하여 YAML을 JSON으로 변환한 다음 `kotlinx.serialization`으로 JSON을 파싱하는 중간 표현을 사용해야 하거나 `kotlinx.serialization`과 호환되는 커뮤니티 주도의 YAML 직렬화 프로젝트를 찾아야 할 수도 있습니다.
+
+JSON의 경우 코드는 다음과 같습니다:
 ```kotlin
-import org.yaml.snakeyaml.Yaml
+import kotlinx.serialization.json.Json
+import kotlinx.serialization.decodeFromString
 
 fun main() {
-    val yaml = Yaml()
-    val data = mapOf(
-        "name" to "Yoon",
-        "role" to "Developer",
-        "skills" to listOf("Kotlin", "YAML")
-    )
-
-    val output = yaml.dump(data)
-    println(output)
+    val jsonText = """
+    {
+        "database": {
+            "host": "localhost",
+            "port": 5432
+        }
+    }
+    """.trimIndent()
+    
+    val config = Json.decodeFromString<Config>(jsonText)
+    println(config)
 }
 ```
 
-출력:
-```yaml
-name: Yoon
-role: Developer
-skills:
-- Kotlin
-- YAML
-```
-
-## Deep Dive (깊게 파기)
-YAML은 2001년에 Clark Evans, Ingy döt Net, Oren Ben-Kiki에 의해 생성되었습니다. JSON, XML 같은 다른 데이터 직렬화 포맷에 비해 가독성을 중시합니다. `snakeyaml` 같은 라이브러리로 파싱 및 생성을 수행하지만, Kotlin 환경에서는 `kotlinx.serialization` 모듈과 같은 코틀린-옵티마이즈된 라이브러리들도 있습니다.
-
-## See Also (추가 정보)
-- YAML 공식 웹사이트: https://yaml.org
-- SnakeYAML 공식 문서: https://bitbucket.org/asomov/snakeyaml/wiki/Documentation
-- kotlinx.serialization GitHub: https://github.com/Kotlin/kotlinx.serialization
+Kotlin과 그 생태계가 계속 발전함에 따라, YAML 지원 및 라이브러리의 최신 소식을 위해 공식 문서와 커뮤니티 리소스를 주시하세요.

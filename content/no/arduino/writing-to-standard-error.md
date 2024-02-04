@@ -1,43 +1,81 @@
 ---
-title:                "Skrive til standardfeil"
-date:                  2024-01-19
-simple_title:         "Skrive til standardfeil"
-
+title:                "Skriving til standardfeil"
+date:                  2024-02-03T19:32:31.047837-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Skriving til standardfeil"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/arduino/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Hva & Hvorfor?
-Skrive til standard error (stderr) er å sende feilmeldinger separat fra vanlig utskriftsdata (stdout). Programmerere gjør dette for å logge feil uten å blande det med hoveddataflyten.
+## Hva & hvorfor?
+
+Å skrive til standard feil (stderr) i Arduino-programmering innebærer å dirigere feilmeldinger og diagnostikk til en separat kanal, slik at de ikke blandes med standard utdata (stdout). Programmerere gjør dette for å skille normale programutdata fra feilmeldinger, noe som gjør feilsøking og logganalyse mer rett frem.
 
 ## Hvordan:
-I Arduino-miljøet kan man ikke direkte skrive til stderr som på vanlige datamaskiner. Men vi kan bruke `Serial.print` til feilsøking:
 
-```Arduino
+Arduino skiller ikke innebygd mellom standard utdata og standard feil slik konvensjonelle databehandlingssystemer gjør. Både `Serial.print()` og `Serial.println()` metodene skriver til samme serielle utdata, som vanligvis ses i Arduino IDE Seriell Monitor. Men vi kan etterligne skriving til stderr ved spesifikt å formatere feilmeldinger eller dirigere dem til et alternativt utdata, som en fil på et SD-kort eller over en nettverksforbindelse.
+
+For å etterligne stderr, kan du prefikse feilmeldinger med en tag som "ERROR:" for å skille dem ut i Seriell Monitor:
+
+```cpp
 void setup() {
-  Serial.begin(9600);
+  Serial.begin(9600); // Initialiser seriell kommunikasjon på 9600 baud rate
 }
 
 void loop() {
-  // Skriv ut feilmelding hvis knappetrykk oppdages (antatt på pin 2)
-  int buttonState = digitalRead(2);
-  if (buttonState == HIGH) {
-    Serial.print("Feil: Knappen skal ikke være trykket nå!");
+  int result = someFunction();
+  if (result == -1) {
+    // Etterligner stderr ved å prefikse feilmeldingen
+    Serial.println("ERROR: Funksjonen feilet å utføre.");
+  } else {
+    Serial.println("Funksjonen ble utført vellykket.");
   }
-  
-  // Vanlig kode her ...
+  delay(1000); // Vent i ett sekund før du starter løkken på nytt
+}
 
-  delay(1000);
+int someFunction() {
+  // En dummy funksjon som returnerer -1 ved feil
+  return -1;
 }
 ```
-Seriemotoren vil vise feilmeldingen hvis tilstanden oppdages. Husk å åpne Serial Monitor for å se utskriftene.
 
-## Dypdykk:
-I tradisjonell programmering kan stderr brukes for å skille ut feil fra normal utskrift. På Arduino har vi ikke separasjon på samme måte, men Serial-kommunikasjonen hjelper til med feilsøking. Historisk sett har forskjellen på stdout og stderr vært viktig i Unix-baserte systemer. Uten støtte for stderr på Arduino, blir Serial Monitor og Serial Plotter vårt beste verktøy for diagnostisering.
+Eksempelutdata i Arduino IDE Seriell Monitor kunne se slik ut:
 
-## Se Også:
-- Arduino Serial Library: https://www.arduino.cc/reference/en/language/functions/communication/serial/
-- Feilsøking med Arduino: https://www.arduino.cc/en/Guide/Troubleshooting
-- Innsikt i stderr og stdout: https://en.wikipedia.org/wiki/Standard_streams
+```
+ERROR: Funksjonen feilet å utføre.
+```
+
+For prosjekter som krever en mer sofistikert tilnærming, inkludert skriving til forskjellige fysiske utdata, kan bruk av tredjepartsbiblioteker eller ekstra maskinvare være nødvendig. For eksempel krever logging av feilmeldinger til et SD-kort `SD`-biblioteket:
+
+```cpp
+#include <SPI.h>
+#include <SD.h>
+
+File myFile;
+
+void setup() {
+  Serial.begin(9600);
+  if (!SD.begin()) {
+    Serial.println("ERROR: Initialisering av SD-kortet feilet!");
+    return;
+  }
+  
+  myFile = SD.open("error.log", FILE_WRITE);
+  if (myFile) {
+    myFile.println("ERROR: Funksjonen feilet å utføre.");
+    myFile.close(); // Sørg for å lukke filen for å lagre innholdet
+  } else {
+    Serial.println("ERROR: Åpning av error.log feilet!");
+  }
+}
+
+void loop() {
+  // Din hovedkode ville gå her
+}
+```
+
+Med denne tilnærmingen fysisk separerer du normale programutdata og feilmeldinger ved å dirigere sistnevnte til en `error.log` fil på et SD-kort, noe som muliggjør post-mortem analyser uten å forstyrre den primære utdatakanalen.

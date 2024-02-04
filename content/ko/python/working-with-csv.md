@@ -1,60 +1,95 @@
 ---
-title:                "CSV 파일 다루기"
-date:                  2024-01-19
-simple_title:         "CSV 파일 다루기"
-
+title:                "CSV와 함께 작업하기"
+date:                  2024-02-03T19:21:07.526194-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "CSV와 함께 작업하기"
 tag:                  "Data Formats and Serialization"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/python/working-with-csv.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (무엇과 왜?)
-CSV는 Comma-Separated Values의 약자로 데이터를 저장하기 위한 단순한 형식입니다. 프로그래머들은 CSV를 사용하여 데이터를 쉽게 읽고 쓸 수 있으며 다양한 프로그램 간에 호환성을 제공하기 때문에 사용합니다.
+## 무엇을, 왜?
+CSV(쉼표로 구분된 값)를 다루는 것은 CSV 파일에서 데이터를 읽고 쓰는 작업을 포함하며, 이는 표 데이터를 저장하기 위한 일반적인 형식입니다. 프로그래머들은 다양한 플랫폼과 언어에서 널리 지원되는 간단한 텍스트 기반 형식으로 데이터를 쉽게 교환하고 저장하기 위해 이 작업을 합니다.
 
-## How to: (어떻게 하나요?)
-Python에서 CSV 파일을 다루는 기본적인 방법을 알아봅니다. 아래 코드는 CSV 파일을 읽고 쓰는 예시입니다.
+## 방법:
+Python은 내장된 `csv` 모듈을 제공하여 CSV 파일을 다루는 것을 간단하게 해주어, 이를 통해 파일로부터 읽고 쓰기가 쉬워집니다. 더 견고하고 복잡한 데이터 조작을 위해, 서드 파티 라이브러리인 `pandas`가 매우 인기가 높습니다.
 
-```Python
-# CSV 파일 쓰기
+### `csv` 모듈 사용하기
+
+#### CSV 파일 읽기
+```python
 import csv
 
-# header 포함 데이터 준비
-header = ["이름", "나이", "도시"]
-data = [
-    ["김철수", 28, "서울"],
-    ["이영희", 34, "부산"]
-]
-
-# 'people.csv' 파일을 쓰기 모드로 열기
-with open('people.csv', 'w', newline='', encoding='utf-8') as csvfile:
-    writer = csv.writer(csvfile)
-    writer.writerow(header)
-    writer.writerows(data)
-    
-# CSV 파일 읽기
-import csv
-
-# 'people.csv' 파일을 읽기 모드로 열기
-with open('people.csv', 'r', encoding='utf-8') as csvfile:
-    reader = csv.reader(csvfile)
-    for row in reader:
+with open('sample.csv', mode='r') as file:
+    csv_reader = csv.reader(file)
+    for row in csv_reader:
         print(row)
-
+```
+*`sample.csv`에 다음과 같은 내용이 있다고 가정:*
+```
+name,age,city
+John,22,New York
+Jane,28,Los Angeles
+```
+*출력:*
+```
+['name', 'age', 'city']
+['John', '22', 'New York']
+['Jane', '28', 'Los Angeles']
 ```
 
-Sample Output:
+#### CSV 파일 쓰기
+```python
+import csv
+
+rows = [['name', 'age', 'city'], ['Jack', '33', 'Chicago'], ['Emily', '41', 'Denver']]
+
+with open('output.csv', mode='w', newline='') as file:
+    writer = csv.writer(file)
+    writer.writerows(rows)
 ```
-['이름', '나이', '도시']
-['김철수', '28', '서울']
-['이영희', '34', '부산']
+*`output.csv`를 다음으로 생성하거나 덮어씁니다:*
+```
+name,age,city
+Jack,33,Chicago
+Emily,41,Denver
 ```
 
-## Deep Dive (심층 분석)
-CSV 형식은 1970년대부터 사용되어 왔으며 데이터를 표현하는 가장 기본적인 방법 중 하나입니다. JSON, XML과 같은 대안들도 있지만, CSV는 가독성과 단순함 때문에 여전히 많이 사용됩니다. Python의 표준 라이브러리인 `csv` 모듈은 CSV 파일의 생성, 읽기, 쓰기를 도와주며 각 row를 리스트 형태로 처리합니다.
+### `pandas`로 CSV 다루기
+`pandas`는 데이터 조작을 단순화하는 강력한 라이브러리로 다른 데이터 형식들 사이에서도 CSV 파일을 다루는 것을 간편하게 합니다.
 
-## See Also (더 보기)
-- [Python 공식 문서 - csv 모듈](https://docs.python.org/3/library/csv.html)
-- [Wikipedia - Comma-separated values](https://en.wikipedia.org/wiki/Comma-separated_values)
-- [CSV 읽고 쓰기에 대한 더 심화된 가이드](https://realpython.com/python-csv/)
+#### pandas 설치
+```shell
+pip install pandas
+```
+
+#### pandas로 CSV 파일 읽기
+```python
+import pandas as pd
+
+df = pd.read_csv('sample.csv')
+print(df)
+```
+*출력:*
+```
+    name  age         city
+0   John   22    New York
+1   Jane   28  Los Angeles
+```
+
+#### pandas로 CSV 파일 쓰기
+```python
+import pandas as pd
+
+df = pd.DataFrame({'name': ['Jack', 'Emily'], 'age': [33, 41], 'city': ['Chicago', 'Denver']})
+df.to_csv('output_pandas.csv', index=False)
+```
+*`output_pandas.csv`를 다음으로 생성하거나 덮어씁니다:*
+```
+name,age,city
+Jack,33,Chicago
+Emily,41,Denver
+```

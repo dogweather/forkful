@@ -1,61 +1,78 @@
 ---
 title:                "Escribiendo en el error estándar"
-date:                  2024-01-19
+date:                  2024-02-03T19:33:30.444282-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Escribiendo en el error estándar"
-
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/java/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## ¿Qué & Por Qué?
-Escribir en 'standard error' (stderr) significa mandar un mensaje a un flujo especial, usado para errores o diagnósticos. Lo hacemos para separar la info de errores de la salida regular ('standard output' o stdout), facilitando así el manejo de los errores y el debugging.
+## ¿Qué y por qué?
+Escribir en el error estándar (stderr) implica enviar mensajes de error y diagnósticos a la consola o terminal. Los programadores lo hacen para separar la información de error de la salida estándar (stdout), facilitando la depuración y el análisis de logs.
 
 ## Cómo hacerlo:
-Aquí, dos ejemplos de cómo escribir en stderr en Java:
 
-```Java
-public class StderrExample {
-    public static void main(String[] args) {
-        System.err.println("Este es un error");
-    }
-}
-```
+### Salida básica a stderr en Java
+Java proporciona una forma sencilla de escribir en stderr utilizando `System.err.print()` o `System.err.println()`. Así es cómo se hace:
 
-Salida esperada:
-
-```
-Este es un error
-```
-
-Y para escribir una excepción en stderr:
-
-```Java
-public class StderrException {
+```java
+public class StdErrExample {
     public static void main(String[] args) {
         try {
-            int result = 10 / 0;
+            int division = 10 / 0;
         } catch (ArithmeticException e) {
-            System.err.println("Se produjo un error: " + e.getMessage());
-            e.printStackTrace(System.err);
+            System.err.println("Error: No se puede dividir por cero.");
         }
     }
 }
 ```
 
-Salida esperada:
+Salida de ejemplo:
 
 ```
-Se produjo un error: / by zero
-java.lang.ArithmeticException: / by zero
-    at StderrException.main(StderrException.java:5)
+Error: No se puede dividir por cero.
 ```
 
-## Profundizando
-Escribir en stderr viene de los sistemas Unix, donde se definen tres flujos estándar: stdin, stdout y stderr (0, 1, y 2, respectivamente). Alternativas incluyen el uso de frameworks de logging como Log4j, que ofrecen más control sobre la salida. En Java, `System.err` es un `PrintStream` y utilizar sus métodos escribe directamente en stderr sin buffers, lo que significa que los mensajes de error se muestran inmediatamente.
+Esto imprimirá directamente el mensaje de error al flujo de error estándar.
 
-## Ver También
-- Documentación de la clase `System` de Java: [System JavaDocs](https://docs.oracle.com/javase/10/docs/api/java/lang/System.html)
-- Tutorial de Oracle sobre excepciones: [Oracle Exceptions Tutorial](https://docs.oracle.com/javase/tutorial/essential/exceptions/)
-- Apache Log4j: [Apache Log4j 2](https://logging.apache.org/log4j/2.x/)
+### Uso de un Logger para el Manejo Avanzado de Errores
+Para aplicaciones que necesitan un manejo de errores y registro más sofisticados, es común usar una biblioteca de registro como SLF4J con Logback o Log4J2. Esto permite más flexibilidad en la gestión de la salida de errores, incluyendo la redirección de archivos, filtrado y formateo.
+
+#### Ejemplo con Logback
+
+Primero, añade la dependencia de Logback a tu archivo `pom.xml` (Maven) o `build.gradle` (Gradle). Para Maven:
+
+```xml
+<dependency>
+    <groupId>ch.qos.logback</groupId>
+    <artifactId>logback-classic</artifactId>
+    <version>1.2.3</version>
+</dependency>
+```
+
+Luego, puedes usar el siguiente código para registrar errores:
+
+```java
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+public class LoggerExample {
+    private static final Logger logger = LoggerFactory.getLogger(LoggerExample.class);
+    
+    public static void main(String[] args) {
+        try {
+            int result = 10 / 0;
+        } catch (ArithmeticException e) {
+            logger.error("Error: No se puede dividir por cero.", e);
+        }
+    }
+}
+```
+
+Esto imprimirá el mensaje de error junto con un seguimiento de la pila en la consola o un archivo, dependiendo de la configuración de Logback.
+
+Usar marcos de trabajo para registro como Logback proporciona más control sobre el manejo de errores, facilitando la gestión de aplicaciones y sistemas grandes.

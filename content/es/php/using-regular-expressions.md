@@ -1,51 +1,70 @@
 ---
-title:                "Uso de expresiones regulares"
-date:                  2024-01-19
-simple_title:         "Uso de expresiones regulares"
-
+title:                "Usando expresiones regulares"
+date:                  2024-02-03T19:17:31.447971-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Usando expresiones regulares"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/php/using-regular-expressions.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Qué y Por Qué?
+## ¿Qué y Por Qué?
 
-Las expresiones regulares son patrones que permiten encontrar y manipular textos de forma avanzada. Los programadores las usan para validaciones, búsqueda, y sustituciones complejas en cadenas de caracteres.
+Las expresiones regulares (regex) en PHP son patrones utilizados para coincidir con combinaciones de caracteres en cadenas de texto, permitiendo operaciones de búsqueda y reemplazo sofisticadas y validación de datos. Los programadores aprovechan regex por su potencia y flexibilidad en el análisis de texto, validación de formularios o scraping de datos web, convirtiéndolo en una herramienta indispensable en el arsenal de un desarrollador.
 
-## Cómo Hacerlo:
+## Cómo utilizarlas:
 
-```PHP
-<?php
-$texto = "El correo de Ana es ana@example.com y el de Juan es juan@example.net";
+PHP soporta las expresiones regulares a través de la biblioteca PCRE (Perl Compatible Regular Expressions), ofreciendo un rico conjunto de funciones. Así es cómo se utilizan:
 
-//Buscar correos electrónicos usando una expresión regular
-preg_match_all('/[a-z]+@[a-z]+\.[a-z]{2,3}/', $texto, $correos);
-print_r($correos[0]);
+### Coincidir con un patrón:
 
-//Sustituir correos encontrados por '***@***.***'
-$textoModificado = preg_replace('/[a-z]+@[a-z]+\.[a-z]{2,3}/', '***@***.***', $texto);
-echo $textoModificado;
-?>
+Para verificar si un patrón existe dentro de una cadena, se utiliza `preg_match()`. Esta función devuelve 1 si el patrón fue encontrado en la cadena y 0 si no.
+
+```php
+if (preg_match("/\bweb\b/i", "PHP es un lenguaje de scripting web")) {
+    echo "Se encontró una coincidencia.";
+} else {
+    echo "No se encontró una coincidencia.";
+}
+// Salida: Se encontró una coincidencia.
 ```
 
-Salida:
+### Encontrando todas las coincidencias:
 
+`preg_match_all()` se utiliza cuando necesitas encontrar todas las ocurrencias de un patrón dentro de una cadena.
+
+```php
+$texto = "gatos y perros";
+$patrón = "/\b([a-z]+)\b/i";
+preg_match_all($patrón, $texto, $coincidencias);
+print_r($coincidencias[0]);
+// Salida: Array ( [0] => gatos [1] => y [2] => perros )
 ```
-Array
-(
-    [0] => ana@example.com
-    [1] => juan@example.net
-)
-El correo de Ana es ***@***.*** y el de Juan es ***@***.***
+
+### Reemplazando texto:
+
+Para reemplazar texto que coincide con una expresión regular, se utiliza `preg_replace()`. Es increíblemente poderoso para formatear y limpiar datos.
+
+```php
+$textoOriginal = "15 de abril de 2003";
+$patrón = "/(\w+) (\d+), (\d+)/i";
+$reemplazo = '${1}1,$3';
+echo preg_replace($patrón, $reemplazo, $textoOriginal);
+// Salida: 15 de abril1,2003
 ```
 
-## Profundizando:
+### Dividiendo cadenas:
 
-Las expresiones regulares se originaron en la teoría de autómatas y la lingüística computacional, siendo parte de la programación en los años 60. Como alternativas, podrías usar funciones de cadenas, aunque son menos potentes. Para su implementación, PHP utiliza la biblioteca PCRE (Perl Compatible Regular Expressions), ofreciendo funciones como `preg_match`, `preg_replace`, entre otras.
+Puedes dividir una cadena en un arreglo usando `preg_split()`, especificando un patrón para el delimitador.
 
-## Ver También:
+```php
+$texto = "PHP es, un lenguaje de scripting, extremadamente popular";
+$partes = preg_split("/,\s*/", $texto);
+print_r($partes);
+// Salida: Array ( [0] => PHP es [1] => un lenguaje de scripting [2] => extremadamente popular )
+```
 
-- Documentación oficial de PHP sobre expresiones regulares: [php.net/manual/es/book.pcre.php](https://www.php.net/manual/es/book.pcre.php)
-- Tutorial interactivo para aprender expresiones regulares: [regexone.com](https://regexone.com)
-- Herramienta para probar expresiones regulares en línea: [regex101.com](https://regex101.com)
+Además, para patrones regex complejos y tareas, marcos y bibliotecas como el componente `Finder` de Symfony o la colección de funciones de ayuda de Laravel podrían proporcionar una capa de abstracción más conveniente. Sin embargo, entender y utilizar las funciones PCRE integradas en PHP es crucial para el procesamiento de texto eficiente y la validación directamente dentro de los scripts de PHP.

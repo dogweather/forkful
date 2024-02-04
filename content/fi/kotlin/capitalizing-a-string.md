@@ -1,50 +1,44 @@
 ---
 title:                "Merkkijonon muuttaminen isoiksi kirjaimiksi"
-date:                  2024-01-19
+date:                  2024-02-03T19:05:48.804351-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Merkkijonon muuttaminen isoiksi kirjaimiksi"
-
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/kotlin/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Merkkijonon muuttaminen isokirjaimiseksi tarkoittaa, että kaikki kirjaimet muutetaan suuriksi kirjaimiksi. Koodarit tekevät tätä usein käyttöliittymiä luodessaan tai tietoja esittäessään, jotta teksti erottuisi selkeämmin.
+## Mikä & Miksi?
 
-## How to:
-Kotlinissa stringin muuttaminen isokirjaimiseksi on helppoa. Katsotaan esimerkki:
+Merkkijonon alkukirjaimen muuttaminen suureksi ohjelmoinnissa tarkoittaa merkkijonon ensimmäisen merkin muuttamista suuraakkoseksi, jos se ei jo ole, mikä on hyödyllistä käyttäjäsyötteiden muotoilussa tai tekstin näyttämisessä käyttöliittymässä standardoidummalla tai ihmisläheisemmällä tavalla. Ohjelmoijat suorittavat tämän toimenpiteen varmistaakseen tietojen johdonmukaisuuden tai täyttääkseen tiettyjä muotoiluvaatimuksia ohjelmistosovelluksissaan.
 
-```Kotlin
-fun main() {
-    val original = "moi maailma"
-    val capitalized = original.uppercase()
-    println(capitalized)
+## Kuinka:
+
+Kotlinissa merkkijonoja voidaan muuttaa alkamaan suuraakkosella käyttämällä standardikirjaston funktioita ilman kolmannen osapuolen kirjastoja. Kotlinin lähestymistapa merkkijonojen käsittelyssä tekee näistä toimenpiteistä suoraviivaisia ja suppeita.
+
+### Koko merkkijonon muuttaminen suuraakkosiksi:
+
+```kotlin
+val viesti = "hei maailma!"
+val isoViesti = viesti.uppercase()
+
+println(isoViesti) // Tuloste: HEI MAAILMA!
+```
+
+### Vain ensimmäisen merkin muuttaminen suuraakkoseksi:
+
+Kotlinin versiossa 1.5 `capitalize()`-funktio on vanhentunut ja korvattu yhdistelmällä `replaceFirstChar` ja lambda, joka tarkistaa, onko kyseessä pieni kirjain muuttaakseen sen suuraakkoseksi.
+
+```kotlin
+val tervehdys = "hei maailma!"
+val isoTervehdys = tervehdys.replaceFirstChar {
+    if (it.isLowerCase()) it.titlecase() else it.toString()
 }
+
+println(isoTervehdys) // Tuloste: Hei maailma!
 ```
 
-Tuloste:
-```
-MOI MAAILMA
-```
-
-## Deep Dive
-Kotlinkielisessä ohjelmoinnissa `.uppercase()` on virallinen tapa muuttaa merkkijono isokirjaimiseksi. Historiallisesti `.toUpperCase()` oli käytössä, mutta Kotlin 1.5 alkaen `.uppercase()` on suositeltu, sillä se tukee paremmin erilaisia kulttuurikohtaisia sääntöjä kirjainten käsittelyssä.
-
-Vaihtoehtoisia tapoja on, kuten `.capitalize()`, joka tekee isoksi vain ensimmäisen kirjaimen, tai käyttäen `java.util.Locale`:a tarkentaakseen kirjainten isontamista kulttuurisidonnaisesti:
-
-```Kotlin
-val capitalizedWithLocale = original.uppercase(Locale("fi", "FI"))
-```
-
-Merkkijonojen isontamisen käytäntö on kuitenkin suoraviivaista. Kotlinin sisäisesti `uppercase()` käyttää Java Standard Libraryn toimintoja.
-
-## See Also
-Kotlinin virallinen dokumentaatio `.uppercase()` -metodista:
-[Kotlin Documentation: uppercase](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/uppercase.html)
-
-Java `Locale`-luokasta:
-[Java Locale Documentation](https://docs.oracle.com/javase/8/docs/api/java/util/Locale.html)
-
-Unicode-standardit kirjaimille ja isontamiselle:
-[Unicode Case Folding](https://www.unicode.org/reports/tr21/tr21-5.html)
+Tämä lähestymistapa säilyttää loput lauseesta alkuperäisessä muodossaan muuttaen ainoastaan ensimmäisen kirjaimen suuraakkoseksi.

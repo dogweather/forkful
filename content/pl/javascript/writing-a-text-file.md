@@ -1,52 +1,69 @@
 ---
-title:                "Zapisywanie pliku tekstowego"
-date:                  2024-01-19
-simple_title:         "Zapisywanie pliku tekstowego"
-
+title:                "Pisanie pliku tekstowego"
+date:                  2024-02-03T19:28:23.947725-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Pisanie pliku tekstowego"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/javascript/writing-a-text-file.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Co i dlaczego?
-Zapisywanie pliku tekstowego to proces tworzenia lub modyfikowania danych w formacie czytelnym dla człowieka. Programiści robią to, aby zapisywać konfiguracje, logi lub wymieniać dane między systemami.
+Pisanie pliku tekstowego w JavaScript często odnosi się do tworzenia i zapisywania danych w prostym, czytelnym formacie dla celów logowania, eksportowania danych użytkownika lub konfiguracji. Ta funkcjonalność jest kluczowa dla aplikacji, które muszą zachować dane poza czasem życia procesu aplikacji, dostarczając sposób na przechowywanie i późniejsze pobieranie lub udostępnianie informacji.
 
 ## Jak to zrobić:
-Node.js umożliwia pracę z plikami. Użyj `fs` do zapisu:
+W środowisku Node.js możesz użyć wbudowanego modułu `fs` (File System) do pisania plików tekstowych. Ten przykład demonstruje asynchroniczne pisanie tekstu do pliku:
 
-```Javascript
+```javascript
 const fs = require('fs');
 
-let data = "Cześć! To przykładowy tekst.";
+const data = 'Hello, World! To jest tekst, który zostanie zapisany w pliku.';
 
-// Zapisz do nowego pliku
-fs.writeFile('przykladowy.txt', data, (err) => {
-  if (err) throw err;
-  console.log('Plik został zapisany!');
-});
-
-// Zapisz do istniejącego pliku
-fs.appendFile('przykladowy.txt', '\nDo widzenia!', (err) => {
-  if (err) throw err;
-  console.log('Tekst został dopisany!');
+fs.writeFile('example.txt', data, (err) => {
+  if (err) {
+    throw err;
+  }
+  console.log('Plik został zapisany.');
 });
 ```
 
-W przeglądarkach użyj `Blob` i `URL.createObjectURL()`:
-
-```Javascript
-let data = new Blob(["Cześć! To tekst w pliku."], { type: 'text/plain' });
-let textFile = window.URL.createObjectURL(data);
-
-// Pobierz URL do świeżo utworzonego pliku
-console.log('URL pliku:', textFile);
+Przykładowe wyjście:
+```
+Plik został zapisany.
 ```
 
-## Deep Dive
-W Node.js, `fs` jest od lat, ale można użyć też `fs/promises` dla async/await. Przeglądarki wcześniej polegały na `FileReader` i `document.execCommand()`, ale Blob i `createObjectURL()` są nowocześniejsze. Warto też znać `fs.readFileSync()` i `fs.writeFileSync()` dla synchronicznej pracy z plikami.
+Dla synchronicznego zapisu pliku użyj `writeFileSync`:
+```javascript
+try {
+  fs.writeFileSync('example.txt', data);
+  console.log('Plik został zapisany.');
+} catch (error) {
+  console.error('Błąd przy zapisie pliku:', error);
+}
+```
 
-## Zobacz również
-- [Node.js `fs` documentation](https://nodejs.org/api/fs.html)
-- [MDN Web Docs on Blobs](https://developer.mozilla.org/en-US/docs/Web/API/Blob)
-- [HTML Living Standard for `createObjectURL`](https://html.spec.whatwg.org/multipage/browsers.html#dom-url-createobjecturl)
+We współczesnych przeglądarkach internetowych interfejs API dostępu do systemu plików (File System Access API) wprowadza możliwość odczytywania i zapisywania plików. Jednak jego użycie jest uzależnione od pozwoleń użytkownika. Oto jak utworzyć i zapisać plik:
+
+```javascript
+if ('showSaveFilePicker' in window) {
+  const handle = await window.showSaveFilePicker();
+  const writable = await handle.createWritable();
+  await writable.write('Hello, World! To jest przykład zapisu pliku tekstowego w przeglądarce.');
+  await writable.close();
+}
+```
+
+Dla bardziej złożonych scenariuszy lub przy pracy z dużymi plikami, możesz zdecydować się na użycie bibliotek stron trzecich takich jak `FileSaver.js` dla przeglądarek:
+
+```html
+<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.2/FileSaver.min.js"></script>
+<script>
+  const blob = new Blob(["Hello, World! To jest tekst z FileSaver.js."], {type: "text/plain;charset=utf-8"});
+  saveAs(blob, "example.txt");
+</script>
+```
+
+Pamiętaj, że zapisywanie plików po stronie klienta (w przeglądarkach) jest ograniczone ze względów bezpieczeństwa, i każda operacja wymagająca zapisu na lokalnym dysku użytkownika zazwyczaj wymaga jego wyraźnego pozwolenia.

@@ -1,42 +1,71 @@
 ---
-title:                "Написання тестів"
-date:                  2024-01-19
-simple_title:         "Написання тестів"
-
+title:                "Письмо тестів"
+date:                  2024-02-03T19:29:52.244642-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Письмо тестів"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/bash/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Що це таке та навіщо?
-Тести дозволяють перевіряти код на коректність. Програмісти пишуть тести для автоматизації перевірки функцій та скриптів, знижуючи ризик помилок при розробці.
+## Що та Чому?
+Написання тестів на Bash передбачає створення скриптових тестових випадків для перевірки функціональності ваших скриптів на Bash. Програмісти проводять тести, щоб переконатися, що їх скрипти працюють як очікується в різних умовах, виявляючи помилки та баги перед розгортанням.
 
-## Як це робити:
-```Bash
-# Приклад простого тесту для функції:
-sum() {
-  echo $(($1 + $2))
+## Як:
+Bash не має вбудованої системи тестування, але ви можете написати прості тестові функції. Для більш складного тестування популярні сторонні інструменти, як-от `bats-core`.
+
+### Простий приклад тесту на чистому Bash:
+```bash
+function test_example_function {
+  result=$(your_function 'test_input')
+  expected_output="expected_output"
+  
+  if [[ "$result" == "$expected_output" ]]; then
+    echo "Тест пройшов."
+    return 0
+  else
+    echo "Тест не пройшов. Очікувано '$expected_output', отримано '$result'"
+    return 1
+  fi
 }
 
-# Тест функції sum:
-result=$(sum 2 3)
-expected_result=5
-
-if [ "$result" -eq "$expected_result" ]; then
-  echo "Тест пройшов"
-else
-  echo "Тест не пройшов: очікувалось $expected_result, отримано $result"
-fi
+# Виклик функції тесту
+test_example_function
 ```
-```Bash
-Тест пройшов
+Приклад виводу:
+```
+Тест пройшов.
 ```
 
-## Поглиблене вивчення:
-Історично, Bash-тестування було простим, але з часом з'явились розширені інструменти як bash_unit, shunit2. Альтернативи, як Python's PyTest чи JavaScript's Jest, призначені для більш комплексних завдань та мов. Для Bash, рекомендується використовувати [ -перевірки ] і [[ розширені перевірки ]].
+### Використання `bats-core` для тестування:
+Спочатку встановіть `bats-core`. Це зазвичай можна зробити через вашого менеджера пакетів або клонуванням його репозиторію.
 
-## Дивіться також:
-- bash_unit: https://github.com/pgrange/bash_unit
-- shunit2: https://github.com/kward/shunit2
-- Advanced Bash-Scripting Guide: https://www.tldp.org/LDP/abs/html/
+Потім напишіть свої тести у окремих файл `.bats`.
+
+```bash
+# Файл: example_function.bats
+
+#!/usr/bin/env bats
+
+@test "тест прикладної функції" {
+  result="$(your_function 'test_input')"
+  expected_output="expected_output"
+  
+  [ "$result" == "$expected_output" ]
+}
+```
+Щоб запустити свої тести, просто виконайте файл `.bats`:
+```bash
+bats example_function.bats
+```
+Приклад виводу:
+```
+ ✓ тест прикладної функції
+
+1 тест, 0 невдач
+```
+
+Цей підхід дозволяє легко інтегрувати тестування у ваш робочий процес розробки, забезпечуючи надійність і стабільність ваших скриптів на Bash.

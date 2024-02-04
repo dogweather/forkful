@@ -1,45 +1,99 @@
 ---
 title:                "Testien kirjoittaminen"
-date:                  2024-01-19
+date:                  2024-02-03T19:31:08.992962-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Testien kirjoittaminen"
-
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/kotlin/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Testaus on koodin automatisoitu tarkistus virheiden löytämiseksi. Ohjelmoijat testaavat koodia varmistaakseen, että ohjelmat toimivat suunnitellusti ja tehostavat koodin ylläpidettävyyttä.
+## Mitä & Miksi?
 
-## How to:
-Kotlinissa yksikkötestit kirjoitetaan usein käyttäen JUnit-kehyksellä. Esimerkki:
+Testien kirjoittaminen Kotlinissa tarkoittaa koodinpätkien rakentamista, jotka automaattisesti varmistavat ohjelmistomoduuliesi toiminnallisen oikeellisuuden, varmistaen niiden toimivan odotetusti. Ohjelmoijat tekevät sen löytääkseen virheitä aikaisin, helpottaakseen koodin uudelleenjärjestelyä ja tarjotakseen dokumentaation siitä, miten ohjelmiston komponenttien on tarkoitus toimia.
+
+## Kuinka:
+
+Kotlin tukee testivetoinen kehitystä eri frameworkien avulla, suosituimpina JUnit, Kotest ja MockK mockaamiseen. Tässä on yksinkertainen esimerkki käyttäen JUnitia:
 
 ```kotlin
-import org.junit.Test
-import org.junit.Assert.*
+import org.junit.jupiter.api.Test
+import kotlin.test.assertEquals
 
-class ExampleUnitTest {
+class CalculatorTest {
+
     @Test
-    fun addition_isCorrect() {
-        assertEquals(4, 2 + 2)
+    fun `lisää kaksi numeroa`() {
+        val calculator = Calculator()
+        val tulos = calculator.add(2, 3)
+        assertEquals(5, tulos)
     }
 }
 
-// Suorita testi komennolla:
-// ./gradlew test --tests ExampleUnitTest
+class Calculator {
+    fun add(a: Int, b: Int): Int = a + b
+}
 ```
 
-Tuloste:
+**Esimerkki Tuloste**
 
+```text
+Testi läpi.
 ```
-Test passed: addition_isCorrect
+
+Monimutkaisempaa testaustapaa käyttäen Kotestia, joka tarjoaa idiomaattisemman Kotlin-testikirjoitustyylisi, katso esimerkki alla:
+
+```kotlin
+import io.kotest.core.spec.style.StringSpec
+import io.kotest.matchers.shouldBe
+
+class CalculatorSpec : StringSpec({
+    "2 ja 3 yhteenlaskun tulisi palauttaa 5" {
+        val calculator = Calculator()
+        calculator.add(2, 3) shouldBe 5
+    }
+})
 ```
 
-## Deep Dive
-JUnit käyttöön tuli Java-maailmassa, ja se on saatavilla myös Kotlinille. Vaihtoehtoina on muitakin testauskehyksiä kuten Spek ja MockK. Yksikkötestauksessa keskitytään pieniin koodinpätkiin, kuten funktioihin, kun taas integraatiotestit varmistavat että eri osat toimivat yhteen.
+Käyttäen MockK:ta testaamiseen mockien kanssa:
 
-## See Also
-- [JUnit 5 -käyttöohje](https://junit.org/junit5/docs/current/user-guide/)
-- [MockK-kehyksen kotisivu](https://mockk.io/)
-- [Spek framework kotisivu](https://www.spekframework.org/)
+```kotlin
+import io.mockk.every
+import io.mockk.mockk
+import org.junit.jupiter.api.Test
+import kotlin.test.assertEquals
+
+class ServiceTest {
+
+    private val repository = mockk<Repository>()
+    private val palvelu = Service(repository)
+
+    @Test
+    fun `hanki data palauttaa mockatun datan`() {
+        every { repository.getData() } returns "Mockattu Data"
+
+        val tulos = palvelu.getData()
+
+        assertEquals("Mockattu Data", tulos)
+    }
+}
+
+class Service(private val repository: Repository) {
+    fun getData(): String = repository.getData()
+}
+
+interface Repository {
+    fun getData(): String
+}
+```
+
+**Esimerkki Tuloste**
+
+```text
+Testi läpi.
+```
+
+Nämä esimerkit havainnollistavat perusteet yksikkötestien kirjoittamisesta Kotlinissa. Sovelluksesi kasvaessa harkitse syventymistä edistyneempiin testaustekniikoihin ja -työkaluihin, joita kunkin kehyksen avulla tarjotaan.

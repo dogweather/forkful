@@ -1,48 +1,81 @@
 ---
 title:                "Робота з YAML"
-date:                  2024-01-19
+date:                  2024-02-03T19:26:50.291014-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Робота з YAML"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/ruby/working-with-yaml.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Що це та навіщо?
-YAML — це формат серіалізації даних, легкий для людського сприйняття. Програмісти використовують YAML, щоб з легкістю записувати конфігурації, обмінюватись даними між мовами програмування та управляти інфраструктурою.
+## Що і Чому?
+YAML, що розшифровується як YAML Ain't Markup Language (YAML - це не мова розмітки), широко використовується в Ruby для файлів конфігурації та серіалізації даних завдяки його людино-читабельному формату. Програмісти віддають перевагу YAML, коли їм потрібно зберігати або передавати об'єкти даних у читабельному, але водночас структурованому вигляді, спрощуючи завдання, такі як управління конфігурацією, зберігання даних та обмін даними між мовами.
 
-## Як це робити:
-В Ruby працювати з YAML просто. Потрібна бібліотека `yaml`. Ось як ви можете серіалізувати і десеріалізувати YAML:
+## Як:
+Ruby має вбудовану бібліотеку, яка називається Psych, для аналізу та формування YAML. Щоб її використати, спочатку потрібно підключити стандартну бібліотеку YAML. Ось базовий приклад для початку:
 
-```Ruby
+```ruby
 require 'yaml'
 
-# Серіалізація Ruby об'єкта в YAML строку
-my_data = { name: 'Ivan', occupation: 'Developer', location: 'Kyiv' }
-yaml_string = my_data.to_yaml
-puts yaml_string
+# Хеш, який буде серіалізовано
+person = { name: "John Doe", age: 30, skills: ["Ruby", "JavaScript"] }
 
-# Десеріалізація YAML строки назад в Ruby об'єкт
-parsed_data = YAML.load(yaml_string)
-puts parsed_data
+# Перетворення хешу в YAML
+yaml_data = person.to_yaml
+
+puts yaml_data
 ```
 
-Це дасе вам наступний вивід:
-```
+**Зразок Виводу:**
+
+```yaml
 ---
-:name: Ivan
-:occupation: Developer
-:location: Kyiv
-
-{:name=>"Ivan", :occupation=>"Developer", :location=>"Kyiv"}
+:name: John Doe
+:age: 30
+:skills:
+- Ruby
+- JavaScript
 ```
 
-## Поглиблений розбір:
-YAML (вимовляється як "ям-л" або "я-м-л") означає "YAML Ain't Markup Language" (YAML не є мовою розмітки). Попри це, спочатку це значило "Yet Another Markup Language". YAML виник на початку 2000-х. Він простіший і зручніший для людей, ніж XML або JSON для невеликих файлів. Альтернативи YAML — це JSON та TOML. Проте, YAML часто використовують у таких інструментах як Ansible, Docker та Kubernetes через його читабельність.
+Щоб завантажити дані YAML назад в об'єкт Ruby:
 
-## Дивіться також:
-- Офіційний сайт YAML: [https://yaml.org](https://yaml.org)
-- Ruby YAML модуль документація: [https://ruby-doc.org/stdlib-2.5.1/libdoc/yaml/rdoc/YAML.html](https://ruby-doc.org/stdlib-2.5.1/libdoc/yaml/rdoc/YAML.html)
-- YAML на GitHub, щоб побачити його специфікації: [https://github.com/yaml/yaml](https://github.com/yaml/yaml)
-- YAML в Ruby on Rails: [https://guides.rubyonrails.org/configuring.html#using-the-config-for-yaml-configuration-files](https://guides.rubyonrails.org/configuring.html#using-the-config-for-yaml-configuration-files)
+```ruby
+loaded_person = YAML.load(yaml_data)
+
+puts loaded_person
+```
+
+**Зразок Виводу:**
+
+```ruby
+{name: "John Doe", age: 30, skills: ["Ruby", "JavaScript"]}
+```
+
+### Використання сторонніх бібліотек:
+
+Хоча стандартної бібліотеки достатньо для базових завдань, для складніших потреб ви можете розглянути сторонні геми, такі як 'safe_yaml'. Щоб використати такі бібліотеки, спочатку потрібно встановити гем:
+
+```bash
+gem install safe_yaml
+```
+
+Після цього ви можете використовувати його для безпечного завантаження даних YAML, зменшуючи ризики, такі як створення об'єктів з даних, що контролюються користувачем:
+
+```ruby
+require 'safe_yaml'
+
+safe_loaded_person = SafeYAML.load(yaml_data)
+
+puts safe_loaded_person
+```
+
+**Зразок Виводу:**
+
+```ruby
+{name: "John Doe", age: 30, skills: ["Ruby", "JavaScript"]}
+```
+
+Цей підхід покращує безпеку ваших операцій з YAML, роблячи його хорошим вибором для програм, які завантажують YAML з ненадійних джерел.

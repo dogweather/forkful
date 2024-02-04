@@ -1,51 +1,58 @@
 ---
-title:                "स्ट्रिंग को कैपिटलाइज़ करना"
-date:                  2024-01-19
-simple_title:         "स्ट्रिंग को कैपिटलाइज़ करना"
-
+title:                "स्ट्रिंग को कैपिटलाइज करना"
+date:                  2024-02-03T19:05:51.839516-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "स्ट्रिंग को कैपिटलाइज करना"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/haskell/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## क्या और क्यों?
-
-एक स्ट्रिंग कैपिटलाइज़ करना मतलब है हर शब्द के पहले अक्षर को बड़ा (कैपिटल लेटर) करना। प्रोग्रामर इसे डेटा फॉर्मेटिंग, यूजर इंटरफेस को सुधारने, या टेक्स्ट नॉर्मलाइजेशन के लिए करते हैं।
+किसी शब्द को Capitalize करने का अर्थ है, दिए गए स्ट्रिंग के पहले अक्षर को बड़े अक्षर (uppercase) में बदलना, साथ ही बाकी अक्षरों को छोटे अक्षरों (lowercase) में रखना। प्रोग्रामर इस काम को आउटपुट की फॉर्मेटिंग, टेक्स्ट में व्याकरणिक सहीपन बनाये रखने, या जनरेट किये गए डेटा की पठनीयता में सुधार के लिए करते हैं।
 
 ## कैसे करें:
+Haskell में, आप किसी शब्द को Capitalize करने के लिए मानक पुस्तकालय का उपयोग कर सकते हैं, बिना किसी तृतीय-पक्ष की लाइब्रेरी की आवश्यकता के।
 
-```Haskell
-import Data.Char (toUpper)
+```haskell
+import Data.Char (toUpper, toLower)
 
--- सिम्पल फंक्शन जो पहले अक्षर को बड़ा करता है।
 capitalize :: String -> String
 capitalize "" = ""
-capitalize (x:xs) = toUpper x : xs
+capitalize (head:tail) = toUpper head : map toLower tail
 
--- प्रत्येक शब्द को कैपिटलाइज़ करने वाला फंक्शन।
-capitalizeWords :: String -> String
-capitalizeWords = unwords . map capitalize . words
-
-main :: IO ()
-main = do
-    let exampleString = "यह हास्केल उदाहरण है।"
-    putStrLn $ capitalizeWords exampleString
+-- नमूना उपयोग:
+main = putStrLn $ capitalize "hello world"
 ```
 
-**Sample Output:**
+आउटपुट:
 ```
-"यह हास्केल उदाहरण है।"
+Hello world
 ```
 
-## गहराई से जानकारी:
+अधिक जटिल परिस्थितियों या उपयोग की आसानी के लिए, आप `text` जैसी तृतीय-पक्ष की लाइब्रेरी का उपयोग करना चाहेंगे, जो Haskell में कुशल स्ट्रिंग संचालन के लिए लोकप्रिय है।
 
-जब हम टेक्स्ट प्रोसेसिंग करते हैं, तो कभी-कभी हमें स्ट्रिंग्स को नाम, शीर्षक या दूसरे डोमेन-विशेष कारणों के लिए स्टैण्डर्डाइज़ करने की जरूरत होती है। हास्केल में `Data.Char` मॉड्यूल `toUpper` फंक्शन के जरिए हमें ये कार्यशीलता प्रदान करता है। इसका विकल्प हो सकता है एक लाइब्रेरी जैसे कि `text` पैकेज जो दक्षता और अधिक कार्यक्षमता के लिए हास्केल में टेक्स्ट प्रोसेसिंग में सहायक होती है।
+पहले, आपको अपनी परियोजना की निर्भरताओं में `text` जोड़ने की आवश्यकता है। फिर, आप इसके फंक्शन्स का उपयोग करके निम्नलिखित तरीके से एक स्ट्रिंग को Capitalize कर सकते हैं:
 
-## यह भी देखें:
+```haskell
+import qualified Data.Text as T
+import Data.Char (toUpper)
 
-- Haskell `Data.Char` Module Documentation: [Hackage Data.Char](https://hackage.haskell.org/package/base-4.16.0.0/docs/Data-Char.html)
-- Haskell Text Processing with the `text` Package: [Hackage Text](https://hackage.haskell.org/package/text)
-- "Learn You a Haskell for Great Good!" कैपिटलाइज़ेशन संबंधित अध्याय: [Learn You a Haskell](http://learnyouahaskell.com/)
+capitalizeText :: T.Text -> T.Text
+capitalizeText text = case T.uncons text of
+    Nothing -> T.empty
+    Just (first, rest) -> T.cons (toUpper first) (T.toLower rest)
 
-**नोट:** आउटपुट में बदलाव हो सकता है यदि हास्केल संस्करण या पर्यावरण विभिन्न हो।
+-- टेक्स्ट लाइब्रेरी के साथ नमूना उपयोग:
+main = putStrLn $ T.unpack $ capitalizeText (T.pack "hello world")
+```
+
+आउटपुट:
+```
+Hello world
+```
+
+ये दोनों उदाहरण Haskell में, बिना या तृतीय-पक्ष की लाइब्रेरियों के साथ, स्ट्रिंग को Capitalize करने के आसान और प्रभावी तरीके प्रदर्शित करते हैं।

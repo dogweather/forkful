@@ -1,64 +1,59 @@
 ---
-title:                "Kontrollera om en katalog finns"
-date:                  2024-01-19
-simple_title:         "Kontrollera om en katalog finns"
-
+title:                "Kontrollera om en katalog existerar"
+date:                  2024-02-03T19:06:42.931217-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Kontrollera om en katalog existerar"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/bash/checking-if-a-directory-exists.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att kontrollera om en katalog finns är processen att verifiera om en viss katalog redan existerar i filsystemet. Programmerare gör detta för att undvika fel vid filoperationer och för att säkerställa att skriptet beter sig som förväntat.
+
+I Bash-programmering är det att kontrollera om en katalog finns en väsentlig kontrollmekanism som används för att verifiera närvaron av en katalog innan filoperationer utförs. Denna kontroll är avgörande för att undvika fel, såsom att försöka åtkomst eller modifiera kataloger som inte finns, vilket säkerställer smidigare och mer förutsägbar skriptkörning.
 
 ## Hur man gör:
-För att checka om en katalog finns, använd `-d` flaggan i `if` satser. Här är några exempel hur man kan göra det:
 
-```Bash
-if [ -d "$DIRECTORY" ]; then
+I grunden tillåter Bash dig att kontrollera om en katalog existerar med hjälp av villkorssatser och `-d`-operatorn. Nedan följer ett rakt på sak exempel som demonstrerar hur man utför denna kontroll.
+
+```bash
+if [ -d "/path/to/directory" ]; then
     echo "Katalogen finns."
 else
     echo "Katalogen finns inte."
 fi
 ```
 
-Eller med `[[ ]]` som är mer modern syntax:
-
-```Bash
-if [[ -d "$DIRECTORY" ]]; then
-    echo "Katalogen finns."
-else
-    echo "Katalogen finns inte."
-fi
+Exempelutskrift (om katalogen finns):
+```
+Katalogen finns.
 ```
 
-Testa skriptet med olika kataloger för att se olika resultat:
-
-```Bash
-DIRECTORY=/någon/katalog
-
-if [[ -d "$DIRECTORY" ]]; then
-    echo "Katalogen finns."
-else
-    echo "Katalogen finns inte."
-fi
-```
-
-Sample Output:
-
+Exempelutskrift (om katalogen inte finns):
 ```
 Katalogen finns inte.
 ```
 
-## Fördjupning
-Möjligheten att kontrollera filsystemet i Bash har funnits sedan tidiga versioner av shellskriptning, vilket reflekterar Unix-filosofin att allt är en fil – inklusive kataloger. Andra alternativ för att kontrollera existerande kataloger inkluderar att använda `test` kommandot eller kommandot `find`, men de kan vara överdrivet komplicerade för så enkla operationer.
+För mer komplexa skript är det vanligt att kombinera kontrollen med andra operationer, såsom att skapa katalogen om den inte finns:
 
-`test -d` och `[[ -d ]]` är snabbare och enklare sätt att göra jobbet. De skiljer sig åt där `[[ ]]` är en mer modern version som erbjuder förbättrad funktionalitet, som att till exempel hantera strängar som innehåller blanksteg utan behov av att citera dem.
+```bash
+DIR="/path/to/directory"
+if [ -d "$DIR" ]; then
+    echo "$DIR finns."
+else
+    echo "$DIR finns inte. Skapar nu..."
+    mkdir -p "$DIR"
+    echo "$DIR skapad."
+fi
+```
 
-Under motorhuven använder Bash olika systemanrop för att kontrollera tillståndet av filsystemet. Flaggor som `-d` ber operativsystemet att bekräfta om sökvägen refererar till en vanlig katalog och inte en fil eller en annan resurs.
+Exempelutskrift (om katalogen inte finns och sedan skapas):
+```
+/path/to/directory finns inte. Skapar nu...
+/path/to/directory skapad.
+```
 
-## Se även
-- [GNU Bash manual](https://www.gnu.org/software/bash/manual/bash.html)
-- [Advanced Bash-Scripting Guide](http://www.tldp.org/LDP/abs/html/index.html)
-- [Stack Overflow: "How to check if a directory exists in a Bash shell script?"](https://stackoverflow.com/questions/59838/check-if-a-directory-exists-in-a-shell-script)
+Även om Bash själv tillhandahåller robusta verktyg för sådana kontroller, finns det inga populära tredjepartsbibliotek specifikt för denna uppgift, eftersom inbyggda Bash-kommandon är fullt kapabla och effektiva för validering av katalognärvaro.

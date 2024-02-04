@@ -1,35 +1,52 @@
 ---
-title:                "Escritura de un archivo de texto"
-date:                  2024-01-19
-simple_title:         "Escritura de un archivo de texto"
-
+title:                "Escribiendo un archivo de texto"
+date:                  2024-02-03T19:27:52.926442-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Escribiendo un archivo de texto"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/haskell/writing-a-text-file.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Qué y Por Qué?
-Escribir en un archivo de texto permite guardar datos para usar en el futuro. Programadores lo hacen para mantener registros, guardar estados de un programa, o facilitar la interacción con otros sistemas.
 
-## Cómo Hacerlo:
-En Haskell, usamos la función `writeFile` del módulo `System.IO` para escribir en archivos.
+Escribir en un archivo de texto en Haskell se trata de crear o actualizar archivos con contenido textual de manera programática. Los programadores hacen esto para persistir datos como mensajes de registro, salida de aplicaciones o para almacenar contenido generado por usuarios, lo que lo convierte en una tarea fundamental para aplicaciones que requieren persistencia de datos o registro.
 
-```Haskell
+## Cómo hacerlo:
+
+El Prelude estándar de Haskell proporciona soporte elemental para escribir en archivos usando las funciones `writeFile` y `appendFile` del módulo `System.IO`. Aquí hay un ejemplo básico de cómo crear un archivo nuevo (o sobrescribir uno existente) y luego agregar texto a un archivo.
+
+```haskell
 import System.IO
 
+-- Escribiendo en un archivo, sobrescribiéndolo si existe
 main :: IO ()
 main = do
-    let str = "Hola, este es un archivo de texto!" -- Texto para escribir
-    writeFile "ejemplo.txt" str -- Crea o sobrescribe el archivo "ejemplo.txt" con el texto
-    putStrLn "Archivo escrito con éxito!"
+  writeFile "example.txt" "Esta es la línea uno.\n"
+  appendFile "example.txt" "Esta es la línea dos.\n"
 ```
 
-La ejecución del programa creará o sobrescribirá el archivo `ejemplo.txt` con el texto indicado.
+Cuando ejecutas este programa, crea (o limpia) `example.txt` y escribe "Esta es la línea uno." seguido de "Esta es la línea dos." en la siguiente línea.
 
-## Inmersión Profunda
-Historicamente, la lectura y escritura de archivos en Haskell necesitaba manejar explícitamente los manejar de archivos (`Handle`), pero `writeFile` simplifica el proceso. Alternativamente, `appendFile` añade texto al final de un archivo existente. Detrás de escenas, `writeFile` abre el archivo, escribe el contenido y lo cierra automáticamente.
+Para un manejo de archivos más avanzado, los programadores de Haskell a menudo recurren al paquete `text` para un procesamiento eficiente de cadenas y al paquete `bytestring` para manejar datos binarios. Aquí tienes cómo usar el paquete `text` para IO de archivos:
 
-## Ver También
-- [Haskell `System.IO` documentation](https://hackage.haskell.org/package/base-4.16.1.0/docs/System-IO.html)
-- [LYAHFGG: Input and Output](http://learnyouahaskell.com/input-and-output)
+Primero, necesitas agregar `text` a las dependencias de tu proyecto. Luego, puedes usarlo de la siguiente manera:
+
+```haskell
+import qualified Data.Text as T
+import qualified Data.Text.IO as TIO
+
+-- Escribiendo en un archivo usando el paquete text
+main :: IO ()
+main = do
+  let content = T.pack "Usando el paquete text para un mejor rendimiento.\n"
+  TIO.writeFile "textExample.txt" content
+  TIO.appendFile "textExample.txt" $ T.pack "Agregando línea dos.\n"
+```
+
+En este fragmento, `T.pack` convierte una `String` regular al tipo `Text`, que es más eficiente. `TIO.writeFile` y `TIO.appendFile` son los equivalentes en `text` para escribir y agregar a archivos, respectivamente.
+
+Ejecutar este código resultará en un archivo llamado `textExample.txt` con dos líneas de texto, demostrando tanto las capacidades de creación como de agregación usando la avanzada biblioteca `text` para un mejor rendimiento y capacidad en el manejo de texto Unicode.

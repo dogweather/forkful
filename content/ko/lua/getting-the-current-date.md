@@ -1,47 +1,50 @@
 ---
 title:                "현재 날짜 가져오기"
-date:                  2024-01-20T15:15:56.188006-07:00
+date:                  2024-02-03T19:10:14.192656-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "현재 날짜 가져오기"
-
 tag:                  "Dates and Times"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/lua/getting-the-current-date.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (무엇과 왜?)
-현재 날짜를 얻는 것은 시스템의 날짜와 시간을 확인하는 과정입니다. 프로그래머들은 로깅, 타임스탬프, 기능 제한 같은 작업을 위해 이를 사용합니다.
+## 무엇 & 왜?
 
-## How to: (방법:)
-```Lua
--- 현재 날짜와 시간 얻기
-local current_time = os.date("*t") -- os.date() 함수 사용
+프로그래밍에서 현재 날짜를 검색하는 것은 로깅, 이벤트 타임스탬핑 또는 작업 스케줄링을 포함한 다양한 애플리케이션에 대해 중요한 작업입니다. Lua에서 이 기능은 프로그래머가 자신의 애플리케이션 내에서 날짜 및 시간 작업을 원활하게 처리할 수 있도록 하여 소프트웨어가 실시간 데이터와 효과적으로 상호 작용할 수 있도록 합니다.
 
--- 현재 연, 월, 일 출력하기
-print("Year:", current_time.year)
-print("Month:", current_time.month)
-print("Day:", current_time.day)
+## 사용 방법:
 
--- 바로 사용자에게 날짜 보여주기
-print("Today is:", os.date("%Y-%m-%d"))
+Lua는 현재 날짜와 시간을 얻기 위해 `os.date` 함수를 제공합니다. 이 함수는 형식화된 문자열을 얻기 위해 아규먼트 없이 사용할 수 있거나 출력을 사용자 정의하기 위해 형식 지정자와 함께 사용할 수 있습니다. 사용 방법은 다음과 같습니다:
+
+```lua
+-- 형식화된 문자열로 현재 날짜와 시간 가져오기
+print(os.date())  -- 예: Thu Mar  3 14:02:03 2022
+
+-- 출력 형식 사용자 정의하기
+-- %Y는 연도, %m은 월, %d는 일, %H는 시간, %M은 분
+print(os.date("%Y-%m-%d %H:%M"))  -- 예: 2022-03-03 14:02
 ```
 
-**Sample Output:**
+보다 정교한 날짜 및 시간 조작을 위해 Lua에는 다른 프로그래밍 언어만큼 풍부한 내장 라이브러리가 없습니다. 그러나 `lua-date`(https://github.com/Tieske/date)와 같은 타사 라이브러리를 사용할 수 있습니다. 이 라이브러리는 날짜와 시간을 조작하기 위한 보다 포괄적인 기능을 제공합니다. 다음은 사용 방법입니다:
+
+먼저, `lua-date` 라이브러리가 설치되어 있는지 확인합니다. 주로 LuaRocks를 사용하여 다음 명령어로 설치할 수 있습니다:
+
+```bash
+luarocks install lua-date
 ```
-Year: 2023
-Month: 4
-Day: 10
-Today is: 2023-04-10
+
+그런 다음, Lua 스크립트에서 다음과 같이 사용할 수 있습니다:
+
+```lua
+local date = require("date")
+
+-- 현재 날짜와 시간에 대한 날짜 객체 생성
+local now = date()
+
+print(now:fmt("%Y-%m-%d %H:%M:%S"))  -- 예: 2022-03-03 14:02:03
 ```
 
-## Deep Dive (심층 분석)
-Lua에서 `os.date()` 함수는 ANSI C의 `strftime()` 함수를 기반으로 합니다. 1993년에 처음으로 Lua가 등장했을 때부터 날짜와 시간 기능은 중요한 부분이었습니다. Lua에서는 간단하지만 유연한 방식으로 날짜를 표현하고 처리합니다.
-
-`os.date()`에 넘기는 포맷 문자열은 출력을 조정하는 데 사용됩니다. 기본값인 `*t`는 테이블 형태로 날짜의 모든 정보를 제공합니다. 대안으로는 `os.time()` 함수가 있는데, 이 함수는 현재 시간을 초 단위의 숫자로 반환합니다.
-
-Lua는 플랫폼 간 차이를 처리하기 위해 내부적으로 시간 관련 기능을 구현합니다. 그러나 시계의 정확성은 실행 중인 시스템의 시간 설정에 따라 달라질 수 있습니다.
-
-## See Also (더 보기)
-- Lua 5.4 Reference Manual: `os.date`에 대한 자세한 내용은 [Lua 5.4 Manual](https://www.lua.org/manual/5.4/manual.html#pdf-os.date)을 참조하세요.
-- Programming in Lua: Lua 프로그래밍의 기본을 배우기 위한 책 [Programming in Lua](https://www.lua.org/pil/)를 읽어보세요.
+이 예제는 `os.date` 함수와 유사하게 포맷할 수 있으면서도 `lua-date` 라이브러리에서 제공하는 추가적인 유연성과 옵션을 사용해 현재 순간을 나타내는 `date` 객체의 생성을 보여줍니다.

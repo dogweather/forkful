@@ -1,57 +1,99 @@
 ---
-title:                "Uso de expresiones regulares"
-date:                  2024-01-19
-simple_title:         "Uso de expresiones regulares"
-
+title:                "Usando expresiones regulares"
+date:                  2024-02-03T19:18:09.031800-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Usando expresiones regulares"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/rust/using-regular-expressions.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
+## Qué y Por Qué?
 
-Las expresiones regulares son patrones usados para encontrar y manipular texto. Los programadores las usan por su potencia y flexibilidad al trabajar con cadenas de caracteres, permitiéndoles realizar búsquedas y reemplazos complejos de forma sencilla y eficiente.
+Las expresiones regulares, o regex, permiten a los desarrolladores buscar, coincidir y manipular cadenas con técnicas avanzadas de coincidencia de patrones. En Rust, utilizar regex ayuda en el análisis y manejo eficiente de datos de texto, haciendo tareas como la validación de datos, búsqueda y transformaciones de texto más eficientes y mantenibles.
 
 ## Cómo hacerlo:
 
-Para trabajar con expresiones regulares en Rust, utiliza la librería `regex`. Aquí tienes cómo incluirla en tu proyecto y algunos ejemplos básicos:
+La biblioteca `regex` de Rust es la opción predilecta para trabajar con expresiones regulares. Para usarla, primero necesitarás añadirla a tu `Cargo.toml`:
 
-```Rust
-// Añade esto a tu Cargo.toml:
-// [dependencies]
-// regex = "1.5.4"
+```toml
+[dependencies]
+regex = "1"
+```
 
+Luego, puedes comenzar a implementar funcionalidades de regex en tu código Rust. Así es como se realizan algunas operaciones comunes:
+
+### Coincidir un Patrón en una Cadena
+
+```rust
 use regex::Regex;
 
 fn main() {
-    let texto = "El rápido zorro marrón salta sobre el perro perezoso";
-    
-    // Encontrar si el patrón coincide
-    let re = Regex::new(r"rápido").unwrap();
-    println!("¿Se encontró 'rápido'? {}", re.is_match(texto)); // Salida: ¿Se encontró 'rápido'? true
+    let re = Regex::new(r"^\d{4}-\d{2}-\d{2}$").unwrap();
+    let fecha = "2023-04-15";
 
-    // Encontrar todas las coincidencias
-    let re = Regex::new(r"\b\w{5}\b").unwrap();
-    re.find_iter(texto).for_each(|match_| {
-        println!("Palabra encontrada: {}", match_.as_str())
-    });
-    // Salida:
-    // Palabra encontrada: rápido
-    // Palabra encontrada: zorro
-    // Palabra encontrada: salta
-    // Palabra encontrada: sobre
-    // Palabra encontrada: perro
+    println!("¿El texto coincide con el patrón de fecha? {}", re.is_match(fecha));
+    // Salida: ¿El texto coincide con el patrón de fecha? true
 }
-
 ```
 
-## Inmersión profunda:
+### Encontrar y Acceder a Coincidencias
 
-Las expresiones regulares tienen sus raíces en la teoría de autómatas y lenguajes formales que se desarrollaron en la década de 1950. Alternativas a `regex` en Rust incluyen trabajar con métodos de strings o bibliotecas de análisis de texto especializadas. Al implementar expresiones regulares, considera la eficiencia y la complejidad que pueden añadir al código; la compilación de expresiones regulares puede ser costosa si se realiza muchas veces.
+```rust
+use regex::Regex;
 
-## Ver también:
+fn main() {
+    let texto = "Rust 2023, C++ 2022, Python 2021";
+    let re = Regex::new(r"\b(\w+)\s(\d{4})").unwrap();
 
-- La documentación oficial de `regex` en Rust: [https://docs.rs/regex](https://docs.rs/regex)
-- Un tutorial interactivo para aprender expresiones regulares: [https://regexone.com/](https://regexone.com/)
-- 'The Book' de Rust sobre cómo manejar texto (incluyendo expresiones regulares): [https://doc.rust-lang.org/book/ch08-02-strings.html](https://doc.rust-lang.org/book/ch08-02-strings.html)
+    for cap in re.captures_iter(texto) {
+        println!("Lenguaje: {}, Año: {}", &cap[1], &cap[2]);
+    }
+    // Salida:
+    // Lenguaje: Rust, Año: 2023
+    // Lenguaje: C++, Año: 2022
+    // Lenguaje: Python, Año: 2021
+}
+```
+
+### Reemplazar Texto
+
+```rust
+use regex::Regex;
+
+fn main() {
+    let re = Regex::new(r"\b(\w+)\s(\d{4})").unwrap();
+    let texto = "Rust 2023, C++ 2022, Python 2021";
+    let reemplazado = re.replace_all(texto, "$1 fue actualizado en $2");
+
+    println!("Texto actualizado: {}", reemplazado);
+    // Salida: Texto actualizado: Rust fue actualizado en 2023, C++ fue actualizado en 2022, Python fue actualizado en 2021
+}
+```
+
+### Dividir Texto Usando un Regex
+
+```rust
+use regex::Regex;
+
+fn main() {
+    let re = Regex::new(r"\W+").unwrap(); // dividir en cualquier carácter que no sea de palabra
+    let texto = "Rust-C++-Python-Go";
+
+    let campos: Vec<&str> = re.split(texto).collect();
+
+    for campo in campos {
+        println!("Lenguaje: {}", campo);
+    }
+    // Salida:
+    // Lenguaje: Rust
+    // Lenguaje: C++
+    // Lenguaje: Python
+    // Lenguaje: Go
+}
+```
+
+Estos ejemplos proporcionan una guía básica para comenzar con las expresiones regulares en Rust. A medida que tus necesidades se vuelvan más sofisticadas, el 'crate' `regex` ofrece una gran cantidad de funcionalidades para tareas complejas de coincidencia de patrones y manipulación de texto.

@@ -1,51 +1,75 @@
 ---
 title:                "שימוש בביטויים רגולריים"
-date:                  2024-01-19
+date:                  2024-02-03T19:17:11.560584-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "שימוש בביטויים רגולריים"
-
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/arduino/using-regular-expressions.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (מה ולמה?)
-משתמשים בביטויים רגולריים לחיפוש והחלפת טקסט לפי תבניות. זה עוזר לפרוסס מידע מהר וביעילות.
+## מה ולמה?
+ביטויים רגולריים (regex) הם סדרות של תווים המגדירות תבניות חיפוש, המשמשות בעיקר להתאמת מחרוזות ולשינויין. מתכנתים מנצלים ביטויים רגולריים בפרויקטים של Arduino לניתוח קלטים סריאליים, ולידציה של קלט מהמשתמש, או לחילוץ נתונים ממחרוזות, מה שמעלה את יעילות וגמישות עיבוד הנתונים.
 
-## How to: (איך עושים את זה?)
-ב-Arduino לא מובנה תמיכה בביטויים רגולריים, אבל אפשר להשתמש בספרייה כמו `Regexp`. דוגמה:
+## איך לעשות:
+ב-Arduino אין תמיכה מובנית לביטויים רגולריים ישירות בספריית התקנית שלו. עם זאת, ניתן להשיג פונקציונליות דומה ל-regex עבור תבניות פשוטות באמצעות פונקציות בסיסיות של מחרוזות, או לצרכים מורכבים יותר, לשלב ספרייה צד שלישי כמו `regex`.
 
-```Arduino
-#include <Regexp.h>
+### התאמת מחרוזות בסיסית ללא Regex
+לצרכים בסיסיים, כמו מציאת תת-מחרוזת, ניתן להשתמש בפונקציה `String.indexOf()`:
+```cpp
+String data = "Sensor value: 12345";
+int index = data.indexOf("value:");
+if (index != -1) {
+  String value = data.substring(index + 6).trim();
+  Serial.println(value); // מוציא: 12345
+}
+```
+
+### שימוש בספרייה צד שלישי ל-Regex
+לניהול תבניות מורכבות יותר, כדאי לשקול ספרייה כמו `regex`. לאחר התקנת הספרייה, ניתן להשתמש בה כדלקמן:
+
+1. **התקנה**: ספריית ה-`regex` עשויה שלא להיות זמינה במאגר הספריות של Arduino, ולכן ייתכן שתצטרך להתקין אותה ידנית על ידי הורדה ממקור אמין והוספתה לתיקיית הספריות של Arduino שלך.
+
+2. **דוגמה לשימוש**:
+בהנחה שהספרייה מספקת פונקציונליות דומה ליישומי regex סטנדרטיים, ייתכן שתשתמש בה כך:
+
+```cpp
+#include <regex.h>
 
 void setup() {
   Serial.begin(9600);
-
-  MatchState ms;
-  ms.Target("Arduino123!");
+  while (!Serial); // המתן עד שהסריאל יהיה מוכן
   
-  char result = ms.Match("%a+");
-
-  if (result == REGEXP_MATCHED) {
-    Serial.println("Match found!");
+  regex_t reg;
+  const char* pattern = "[0-9]+"; // מתאים לסדרה של ספרות
+  regcomp(&reg, pattern, REG_EXTENDED);
+  
+  const char* test_str = "Sensor value: 12345";
+  
+  regmatch_t matches[1];
+  if (regexec(&reg, test_str, 1, matches, 0) == 0) {
+    // חילוץ והדפסה של החלק התואם
+    int start = matches[0].rm_so;
+    int end = matches[0].rm_eo;
+    char match[end-start+1];
+    strncpy(match, test_str + start, end-start);
+    match[end-start] = '\0';
+    
+    Serial.print("נמצאה התאמה: ");
+    Serial.println(match); // מוציא: 12345
   } else {
-    Serial.println("No match found.");
+    Serial.println("לא נמצאה התאמה");
   }
+  
+  regfree(&reg); // שחרור הזיכרון שהוקצה עבור ה-regex
 }
 
 void loop() {
-  // פה לא צריך כלום. הכל ב-setup.
+  // הכנס את הקוד העיקרי שלך כאן, להרצה חוזרת ונשנית:
 }
 ```
-פלט:
-```
-Match found!
-```
 
-## Deep Dive (צלילה לעומק)
-ביטויים רגולריים לא תמיד נתמכים בכל שפות או פלטפורמות. ב-Arduino, צריך ספרייה נוספת. הם הומצאו בשנות ה-50 ומשמשים ברוב שפות התכנות המודרניות. אלטרנטיבות לביטויים רגולריים כוללות חיפוש פשוט יותר עם `indexOf`, `lastIndexOf`, `startsWith`, ו-`endsWith` שכבר מובנות ב-Arduino.
-
-## See Also (ראה גם)
-- Regexp library on GitHub: https://github.com/nickgammon/Regexp
-- Arduino String Reference: https://www.arduino.cc/reference/en/language/variables/data-types/string/
-- Arduino Forum – Using regular expressions: https://forum.arduino.cc/index.php?topic=393655.0
+**הערה**: התחביר והפונקציות הספציפיות שהוצגו כאן הן לצורך המחשה בלבד ועשויות להשתנות בהתאם לפרטי היישום המדויקים של ספריית ה-`regex` שתבחר. בכל מקרה, מומלץ תמיד לעיין בתיעוד של הספרייה למידע מדויק ומעודכן.

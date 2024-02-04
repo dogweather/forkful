@@ -1,105 +1,100 @@
 ---
 title:                "Trabajando con JSON"
-date:                  2024-01-19
+date:                  2024-02-03T19:23:09.877143-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Trabajando con JSON"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/haskell/working-with-json.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Qué es y por qué?
+## ¿Qué y Por Qué?
+Trabajar con JSON (Notación de Objeto de JavaScript) en Haskell implica analizar los datos JSON en tipos de Haskell y convertir los tipos de Haskell de vuelta en JSON. Los programadores hacen esto para permitir que sus aplicaciones Haskell intercambien datos con servicios web o APIs sin problemas, una práctica común en el desarrollo de software moderno para el intercambio de datos multiplataforma.
 
-Trabajar con JSON (JavaScript Object Notation) es manejar un formato ligero de intercambio de datos, fácil para humanos leer y para máquinas procesar. Programadores lo usan por su simplicidad para transferir datos entre servidor y cliente, y porque es independiente del lenguaje de programación.
+## Cómo:
+Haskell no tiene soporte incorporado para JSON como JavaScript, pero con la ayuda de bibliotecas de terceros como **Aeson**, manejar JSON se vuelve sencillo. Aeson proporciona funciones de alto y bajo nivel tanto para la codificación (convertir valores de Haskell a JSON) como para la decodificación (analizar JSON en valores de Haskell).
 
-## Cómo hacerlo:
+### Instalando Aeson
+Primero, añade Aeson a las dependencias de tu proyecto actualizando tu archivo `.cabal` o usando Stack o Cabal directamente:
 
-Para trabajar con JSON en Haskell, usaremos la biblioteca `aeson`.
-
-Primero, importamos los módulos necesarios:
-
-```Haskell
-import Data.Aeson
-import Data.ByteString.Lazy as B
-import Data.Text
-import Control.Monad
-import Data.Maybe (fromJust)
+```shell
+cabal update && cabal install aeson
+```
+o, si estás usando Stack:
+```shell
+stack install aeson
 ```
 
-Supongamos que tenemos el siguiente JSON:
+### Analizando JSON
+Empecemos con un ejemplo básico de decodificación de datos JSON en un tipo de Haskell. Supongamos que tenemos el siguiente JSON que representa a una persona:
 
 ```json
 {
-  "nombre": "Juan",
-  "edad": 30,
-  "email": "juan@example.com"
+  "name": "John Doe",
+  "age": 30
 }
 ```
 
-Para decodificar este JSON, definamos un tipo de dato y una instancia de `FromJSON`:
+Primero, define un tipo de datos Haskell correspondiente y hazlo una instancia de `FromJSON`:
 
-```Haskell
-{-# LANGUAGE OverloadedStrings #-}
-import Data.Aeson
+```haskell
+{-# LANGUAGE DeriveGeneric #-}
 
-data Persona = Persona
-  { nombre :: Text
-  , edad   :: Int
-  , email  :: Text
-  } deriving (Show)
+import GHC.Generics (Generic)
+import Data.Aeson (FromJSON, decode)
+import qualified Data.ByteString.Lazy as B
 
-instance FromJSON Persona where
-    parseJSON = withObject "Persona" $ \v -> Persona
-        <$> v .: "nombre"
-        <*> v .: "edad"
-        <*> v .: "email"
+data Person = Person
+  { name :: String
+  , age :: Int
+  } derivando (Generic, Show)
 
--- Ejemplo de cómo decodificarlo
+instance FromJSON Person
+
+-- Función para decodificar JSON de un archivo
+decodePerson :: FilePath -> IO (Maybe Person)
+decodePerson filePath = do
+  personJson <- B.readFile filePath
+  return $ decode personJson
+```
+Uso:
+Asumiendo que `person.json` contiene los datos JSON mostrados arriba, ejecutar:
+```haskell
+main :: IO ()
 main = do
-    let jsonBytes = "{\"nombre\":\"Juan\",\"edad\":30,\"email\":\"juan@example.com\"}"
-    let jsonData = eitherDecode jsonBytes :: Either String Persona
-    print jsonData
+  maybePerson <- decodePerson "person.json"
+  print maybePerson
+```
+Salida de muestra:
+```haskell
+Just (Person {name = "John Doe", age = 30})
 ```
 
-Resultado:
+### Codificando Valores Haskell como JSON
+Para convertir un valor Haskell de vuelta a JSON, necesitas hacer tu tipo una instancia de `ToJSON` y luego usar `encode`.
 
-```
-Right (Persona {nombre = "Juan", edad = 30, email = "juan@example.com"})
-```
+```haskell
+import Data.Aeson (ToJSON, encode)
+import GHC.Generics (Generic)
 
-Para codificar datos a JSON, utilizamos `toJSON`:
+-- Asumiendo el tipo Person de antes
 
-```Haskell
-instance ToJSON Persona where
-    toJSON (Persona nombre edad email) =
-        object ["nombre" .= nombre, "edad" .= edad, "email" .= email]
+instance ToJSON Person
 
+encodePerson :: Person -> B.ByteString
+encodePerson = encode
+
+main :: IO ()
 main = do
-    let persona = Persona "Juan" 30 "juan@example.com"
-    B.putStrLn (encode persona)
+  let person = Person "Jane Doe" 32
+  putStrLn $ show $ encodePerson person
+```
+Salida de muestra:
+```json
+{"name":"Jane Doe","age":32}
 ```
 
-Resultado:
-
-```
-{"nombre":"Juan","edad":30,"email":"juan@example.com"}
-```
-
-## Profundizando
-
-JSON apareció en los primeros años del 2000, ideado por Douglas Crockford. A diferencia de XML, JSON es más liviano y su sintaxis está muy alineada con el código de programación, haciendo su manipulación más intuitiva.
-
-A pesar de que `aeson` es la librería estándar en Haskell para trabajar con JSON, hay alternativas como `json` o `jsonb`. `aeson` es preferido por su rendimiento y facilidad de uso.
-
-Detalles de implementación:
-- `aeson` usa operadores como `.=` y `.:` para construir y acceder a datos en JSON.
-- Con GHC (Glasgow Haskell Compiler), `aeson` puede aprovechar la extensión `OverloadedStrings` para simplificar la manipulación de texto.
-- Es común el uso de `ByteString` para representar datos en bruto JSON y `Text` para cadenas de caracteres Unicode.
-
-## Ver También
-
-- `aeson` en Hackage: <https://hackage.haskell.org/package/aeson>
-- Tutorial de JSON en Haskell: <https://artyom.me/aeson>
-- Artículo de Douglas Crockford sobre JSON: <https://www.crockford.com/mckeeman.html>
-- Especificación de JSON: <http://json.org/>
+Estos ejemplos demuestran los conceptos básicos de trabajar con JSON en Haskell usando Aeson. Recuerda, Aeson ofrece mucho más, incluyendo reglas de análisis personalizadas, trabajar con JSON anidado complejo, y mucho más, adecuado para diversas necesidades y escenarios.

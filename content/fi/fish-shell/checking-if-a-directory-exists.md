@@ -1,37 +1,43 @@
 ---
 title:                "Tarkistetaan, onko hakemisto olemassa"
-date:                  2024-01-19
+date:                  2024-02-03T19:07:18.852533-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Tarkistetaan, onko hakemisto olemassa"
-
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/fish-shell/checking-if-a-directory-exists.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? - Mikä ja Miksi?
-Hakemiston olemassaolon tarkistaminen tarkoittaa, että selvitetään, onko tietyllä polulla oleva hakemisto olemassa. Ohjelmoijat tekevät tämän, koska se auttaa välttämään virheitä, kun he yrittävät käyttää hakemistoa, jota ei ole olemassa.
+## Mikä ja miksi?
+Hakemiston olemassaolon tarkistaminen Fish Shellissä mahdollistaa skriptien tehdä päätöksiä perustuen hakemistorakenteiden läsnäoloon tai puuttumiseen, mahdollistaen tehtäviä kuten ehdolliset tiedosto-operaatiot, lokitiedot tai ympäristön asetukset. Tämä tekniikka on olennainen osa kestävien skriptien kirjoittamisessa, jotka vuorovaikuttavat tiedostojärjestelmän kanssa ennustettavalla tavalla.
 
-## How to: - Kuinka:
-```Fish Shell
-if test -d /path/to/directory
-    echo "Directory exists"
+## Miten:
+Fish Shell käyttää `test`-komentoa tarkistaakseen tiedostotyypit ja -ominaisuudet, mukaan lukien onko kohde hakemisto. Tässä on perusmalli hakemiston olemassaolon tarkistamiseksi:
+
+```fish
+if test -d /polku/hakemistoon
+    echo "Hakemisto on olemassa"
 else
-    echo "Directory does not exist"
+    echo "Hakemisto ei ole olemassa"
+end
+```
+Esimerkki tuloste:
+```
+Hakemisto on olemassa
+```
+
+Sulavampien tiedosto- ja hakemisto-operaatioiden suorittamiseksi, saattaisi kääntyä ulkoisten työkalujen, kuten `fd`:n puoleen, vaikka sitä käytetään yleisemmin tiedostojen ja hakemistojen löytämiseksi kuin pelkästään olemassaolon tarkistamiseen. Kuitenkin sen yhdistäminen Fish-skriptaukseen voi tuottaa käteviä tuloksia:
+
+```fish
+set dir "/polku/hakuun"
+if fd . $dir --type directory --max-depth 1 | grep -q $dir
+    echo "Hakemisto on olemassa"
+else
+    echo "Hakemisto ei ole olemassa"
 end
 ```
 
-Esimerkkituloste:
-```
-Directory exists
-```
-tai jos hakemistoa ei ole:
-```
-Directory does not exist
-```
-
-## Deep Dive - Syväsukellus:
-Vanhat Unix-perinteet elävät `test`-komennossa; Fish Shell käyttää sitä, kuten muutkin shellit. Vaihtoehtoisia tapoja tarkistaa hakemisto on käyttää funktioita tai skriptejä, mutta `test` ylläpitää yksinkertaisuutta ja siirrettävyyttä. Kun test-komento suoritetaan `-d`-vivun kanssa, se tarkistaa, viittaako polku oikeasti olemassa olevaan hakemistoon. Teknisesti Fish Shell välittää tämän tarkistuksen Unix-kernelille joka hoitaa työn käyttöjärjestelmän tasolla.
-
-## See Also - Katso Myös:
-- Fish Shell:n virallinen dokumentaatio: [https://fishshell.com/docs/current/index.html](https://fishshell.com/docs/current/index.html)
+Tämä `fd`-esimerkki etsii hakemistoa määritellyllä syvyydellä, ja `grep` tarkistaa vastaavuuden, tehden siitä monipuolisen hienovaraisiin tarkistuksiin. Kuitenkin, suoraan olemassaolon tarkistamisen tarkoitukseen, Fishin sisäänrakennetun `test`:n käyttö on sekä tehokasta että suoraviivaista.

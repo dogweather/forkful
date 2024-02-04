@@ -1,46 +1,61 @@
 ---
-title:                "文字列の先頭を大文字にする"
-date:                  2024-01-19
-simple_title:         "文字列の先頭を大文字にする"
-
+title:                "文字列を大文字にする"
+date:                  2024-02-03T19:04:56.096508-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "文字列を大文字にする"
 tag:                  "Strings"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/bash/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (なぜ？とは？)
-文字列を大文字にするとは、小文字だったアルファベットを全部または一部を大文字に変換することです。これは、タイトルや固有名詞を強調したり、一貫したフォーマットを維持するために行われます。
+## 何となぜ？
+Bashで文字列を大文字化するとは、文字列の最初の文字を大文字に変換し、残りの文字列は変更せずに残すことを指します。この技術は、出力のフォーマット変更や、一部の文字列が読みやすさやスタイルの好みのために大文字で始まることを要求するコーディング規約に準拠するために一般的に使用されます。
 
-## How to (やり方)
-Bashでの文字列の大文字化は、`tr` コマンドや組み込みの機能を使って行えます。ここに二つの例を示します。
+## どうやって：
 
-```Bash
-# 全ての文字を大文字にする
-echo "hello world" | tr '[:lower:]' '[:upper:]'
-```
-出力:
-```
-HELLO WORLD
-```
+Bashには文字列を大文字化するための専用の組み込み関数はありませんが、パラメータ展開や`awk`のような外部ツールを使用してこのタスクを達成することができます。ここに、Bashで文字列を大文字化するいくつかの方法を示します：
 
-```Bash
-# 変数を使った文字列の最初の文字だけを大文字にする
+**パラメータ展開を使用する：**
+
+この方法は、シェル内で直接文字列を操作します。
+
+```bash
 str="hello world"
-echo "${str^}"
+capitalized="${str^}"
+echo "$capitalized"
 ```
-出力:
+出力：
 ```
 Hello world
 ```
 
-## Deep Dive (掘り下げ)
-UNIXやLinuxの`tr`コマンドは、文字の置換や削除に使われる古くからあるコマンドです。これで簡単に文字列を大文字や小文字に変換できます。しかし、Bash 4.0以降では、組み込み機能が追加され、特別なパターンを使って文字列の変換を行なうことができるようになりました。例えば、`${str^^}`を使って全ての文字を大文字に、`${str,}`で最初の文字だけを小文字に変更できます。
+**`awk`を使用する：**
 
-他の言語には専用の関数がありますが、Bashはシンプルな構造のため、コマンドやパターンに頼ります。
+`awk`は、ほとんどのUnix系オペレーティングシステムで利用可能な、強力なテキスト処理ツールであり、文字列を大文字化するために利用することができます。
 
-## See Also (関連情報)
-- Bashのマニュアル: [GNU Bash manual](https://www.gnu.org/software/bash/manual/bash.html)
-- tr コマンドの情報: [tr man page](https://man7.org/linux/man-pages/man1/tr.1.html)
-- 組み込みパターンと文字列操作: [Parameter Expansion](https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html)
+```bash
+str="hello world"
+echo "$str" | awk '{print toupper(substr($0, 1, 1)) tolower(substr($0, 2))}'
+```
+出力：
+```
+Hello world
+```
+
+**`sed`を使用する：**
+
+より伝統的な方法として、`sed`は文字列の最初の文字を大文字にするために使用することができます。しかし、これは前述の方法に比べると少し複雑です。
+
+```bash
+str="hello world"
+echo "$str" | sed 's/./\u&/'
+```
+出力：
+```
+Hello world
+```
+
+これらのスニペットは、Bashで文字列の最初の文字を大文字にする方法を示しており、テキストを操作する際のシェルスクリプティングの柔軟性を強調しています。

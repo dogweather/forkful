@@ -1,41 +1,75 @@
 ---
-title:                "Arbeid med CSV"
-date:                  2024-01-19
-simple_title:         "Arbeid med CSV"
-
+title:                "Arbeide med CSV"
+date:                  2024-02-03T19:18:49.382736-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Arbeide med CSV"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/bash/working-with-csv.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Arbeid med CSV (Comma-Separated Values) innebærer å håndtere tekstfiler organisert ved at verdier skilles med komma. Programmerere gjør dette fordi CSV er et enkelt og utbredt format for utveksling av data mellom ulike systemer.
+Å arbeide med CSV-filer (Comma-Separated Values) i Bash innebærer å behandle og manipulere tabelldata lagret i vanlig tekstformat. Dette er essensielt for programmerere da det muliggjør automatisering av oppgaver relatert til datatransformasjon, analyse og integrasjon direkte fra kommandolinjen, uten behov for tyngre verktøy eller programmeringsmiljøer.
 
 ## Hvordan:
-```Bash
-# Leser en CSV-fil linje for linje
-while IFS=, read -r kolonne1 kolonne2
+
+**Lese en CSV-fil Linje for Linje**
+
+```bash
+while IFS=, read -r kolonne1 kolonne2 kolonne3
 do
-  echo "Kolonne 1: $kolonne1 - Kolonne 2: $kolonne2"
-done < input.csv
-
-# Skriver til en CSV-fil
-echo "verdi1,verdi2" > output.csv
-
-# Sorterer en CSV-fil etter den andre kolonnen
-sort -t, -k2,2 input.csv
-```
-Output eksempel:
-```
-Kolonne 1: eple - Kolonne 2: 5
-Kolonne 1: banan - Kolonne 2: 7
+  echo "Kolonne 1: $kolonne1, Kolonne 2: $kolonne2, Kolonne 3: $kolonne3"
+done < eksempel.csv
 ```
 
-## Dykk Dypt
-CSV-formatet har ingen standardisering, men det er i praksis fra det tidlige 1970-tallet. Alternativer inkluderer JSON, XML og SQLite. Når du arbeider med CSV i Bash, bruk kommandoer som `cut`, `awk`, `sort`, og `grep` for å bearbeide dataene.
+*Eksempel på utskrift:*
 
-## Se Også
-- [GNU Coreutils Manual](https://www.gnu.org/software/coreutils/manual/coreutils.html)
-- [CSV på Wikipedia](https://no.wikipedia.org/wiki/CSV)
-- [Bash Programming Guide](https://www.tldp.org/LDP/Bash-Beginners-Guide/html/)
+```
+Kolonne 1: id, Kolonne 2: navn, Kolonne 3: epost
+...
+```
+
+**Filtrere CSV-rader Basert på en Betingelse**
+
+Ved å bruke `awk`, kan du enkelt filtrere rader. For eksempel, for å finne rader hvor andre kolonne er lik "Alice":
+
+```bash
+awk -F, '$2 == "Alice" { print $0 }' eksempel.csv
+```
+
+**Endre en Kolonneverdi**
+
+For å endre den andre kolonnen til store bokstaver:
+
+```bash
+awk -F, 'BEGIN {OFS=",";} { $2 = toupper($2); print $0; }' eksempel.csv
+```
+
+**Sortere en CSV-fil Basert på en Kolonne**
+
+Du kan sortere en CSV-fil basert på, si, den tredje kolonnen (numerisk):
+
+```bash
+sort -t, -k3,3n eksempel.csv
+```
+
+**Bruke `csvkit` til Mer Komplekse Oppgaver**
+
+`csvkit` er en samling av kommandolinjeverktøy for å konvertere til og arbeide med CSV. Det kan installeres via pip.
+
+For å konvertere en JSON-fil til CSV:
+
+```bash
+in2csv data.json > data.csv
+```
+
+For å spørre en CSV-fil ved bruk av SQL:
+
+```bash
+csvsql --query "SELECT name FROM eksempel WHERE id = 10" eksempel.csv
+```
+
+*Merk: Installasjon av `csvkit` krever Python og kan gjøres ved å bruke `pip install csvkit`.*

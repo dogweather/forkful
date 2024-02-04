@@ -1,49 +1,52 @@
 ---
-title:                "文字列の先頭を大文字にする"
-date:                  2024-01-19
-simple_title:         "文字列の先頭を大文字にする"
-
+title:                "文字列を大文字にする"
+date:                  2024-02-03T19:05:03.623831-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "文字列を大文字にする"
 tag:                  "Strings"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/elm/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (なんで？どうして？)
-文字列を大文字にすることは、文字列内のすべての文字を大文字に変換するプロセスです。これにより、ユーザーインターフェースでの見出し表示や、データの正規化の際に利用されます。
+## 何となぜ？
 
-## How to: (やり方)
-Elmには文字列を全部大文字にする組み込み関数はありません。そのため、`String` モジュールと `List` モジュールの関数を組み合わせて実装します。
+文字列の最初の文字を大文字に変換し、残りを小文字に保つことで文字列を大文字化することを指します。これは、標準化されたフォーマットや可読性のためによく行われます。特にユーザーインターフェイスやユーザー入力の処理と表示を行う際、プログラマーはデータが一貫して提示されるようにこの作業を頻繁に行います。
 
-```Elm
-import String exposing (toList, fromList, toUpper)
-import List exposing (map)
+## どのようにして：
 
-capitalizeString : String -> String
-capitalizeString str =
-    str |> toList |> map toUpper |> fromList
+Elmには、文字列を大文字化するための専用の組み込み関数はありません。しかし、`toUpper`、`toLower`、`left`、`dropLeft`のような組み込みの`String`モジュール関数を使用することで、これを簡単に実現できます。
 
--- 使用例
+```elm
+capitalize : String -> String
+capitalize str =
+    if String.isEmpty str then
+        ""
+    else
+        String.toUpper (String.left 1 str) ++ String.toLower (String.dropLeft 1 str)
+
+-- 例の使用法
 main =
-    let
-        originalString = "hello, world!"
-    in
-    Html.text (capitalizeString originalString)
-
--- 出力: "HELLO, WORLD!"
+    String.toList "hello world" |> List.map capitalize |> String.join " "
+    -- 出力: "Hello World"
 ```
 
-## Deep Dive (探検)
-Elmは関数型言語です。`String` を大文字にする関数がないので、文字列を一文字ずつのリストに変換（`toList`）、それぞれの文字を大文字に変換（`map toUpper`）、そして再び文字列に結合します（`fromList`）。
+より複雑なシナリオや文字列を直接大文字化する機能を提供するライブラリを使用したい場合は、`elm-community/string-extra`のようなサードパーティのパッケージを検討するかもしれません。しかし、最後の更新時点で、Elmのエコシステムは、言語とプロジェクトをすっきりさせるために、そのようなタスクを組み込み関数を使って処理することを推奨しています。
 
-過去、多くのプログラミング言語でこれは一般的な処理でした。Elmはパフォーマンスと可読性を重視するため、このような方法を取ります。
+```elm
+import String.Extra as StringExtra
 
-他言語の代替策としては、全ての文字をループ処理で個々に大文字に変換することが挙げられます。
+-- サードパーティのライブラリに`capitalize`関数がある場合
+capitalizeWithLibrary : String -> String
+capitalizeWithLibrary str =
+    StringExtra.capitalize str
 
-文字列操作において、Elmはコードの安全性と保守性を向上させるため、純粋関数の使用を推奨しています。
+-- 仮想のライブラリ関数を使った例の使用法
+main =
+    "this is elm" |> capitalizeWithLibrary
+    -- 仮想の出力: "This is elm"
+```
 
-## See Also (関連情報)
-- Elm String documentation: [https://package.elm-lang.org/packages/elm/core/latest/String](https://package.elm-lang.org/packages/elm/core/latest/String)
-- Elm List documentation: [https://package.elm-lang.org/packages/elm/core/latest/List](https://package.elm-lang.org/packages/elm/core/latest/List)
-- Elmの公式ガイド（関数型プログラミングについて）: [https://guide.elm-lang.org](https://guide.elm-lang.org)
+文字列操作のための標準ライブラリを超えた追加機能を探している場合は、常にElmパッケージリポジトリをチェックして、文字列操作用の最新で最も好ましいライブラリを確認してください。

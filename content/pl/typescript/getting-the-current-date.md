@@ -1,34 +1,63 @@
 ---
 title:                "Pobieranie aktualnej daty"
-date:                  2024-01-20T15:16:56.837979-07:00
+date:                  2024-02-03T19:11:07.745246-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Pobieranie aktualnej daty"
-
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/typescript/getting-the-current-date.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Co i dlaczego?)
-Pobieranie bieżącej daty to podstawowa umiejętność – pozwala aplikacjom na uświadamianie sobie "teraz". Programiści robią to dla logów, znaczników czasowych i wszelkich funkcji zależnych od czasu.
+## Co i Dlaczego?
+Pobieranie bieżącej daty w TypeScript, języku opartym na JavaScript, pozwala na dostęp i manipulację bieżącymi informacjami o dacie i czasie. Programiści często potrzebują tej funkcjonalności do tworzenia znaczników czasu, planowania i innych funkcji związanych z czasem w swoich aplikacjach.
 
-## How to: (Jak to zrobić:)
-```TypeScript
-const currentDate: Date = new Date();
+## Jak to zrobić:
+W TypeScript możesz użyć obiektu `Date`, aby uzyskać bieżącą datę i czas. Oto jak możesz to zrobić:
+
+```typescript
+const currentDate = new Date();
 console.log(currentDate);
-// Wyświetla coś w rodzaju: 2023-01-30T14:25:37.000Z
-```
-```TypeScript
-// Formatowanie dla czytelności:
-console.log(currentDate.toLocaleDateString('pl-PL'));
-// Wyświetla format daty zgodny z ustawieniami regionalnymi, np. '30.01.2023'
 ```
 
-## Deep Dive (Dogłębna analiza)
-JavaScript (i TypeScript, jako jego nadzbiór) wykorzystuje obiekt `Date` do pracy z datami i czasem. Obiekt ten pochodzi z początków JavaScriptu, kiedy to Brendan Eich tworzył język. Jest kilka alternatyw takich jak biblioteki `date-fns` czy `moment.js`, które oferują więcej opcji i lepszą strefę czasową, ale są też większe i nie zawsze potrzebne. TypeScript dodaje typesafety, ale manipulacja datą leży po stronie standardowych możliwości JavaScriptu.
+Przykładowe wyjście:
+```
+2023-04-12T07:20:50.52Z
+```
 
-## See Also (Zobacz także)
-- MDN Web Docs na temat Date: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date
-- Dokumentacja TypeScript: https://www.typescriptlang.org/docs/
-- 'date-fns' biblioteka: https://date-fns.org/
-- 'moment.js' biblioteka: https://momentjs.com/
+Ten fragment kodu tworzy nowy obiekt `Date` zawierający bieżącą datę i czas, który następnie jest wyświetlany w konsoli. Możesz również sformatować datę za pomocą funkcji toLocaleDateString(), aby uzyskać bardziej czytelne formaty:
+
+```typescript
+const currentDate = new Date();
+console.log(currentDate.toLocaleDateString());
+```
+
+Przykładowe wyjście:
+```
+12.04.2023
+```
+
+### Użycie biblioteki date-fns
+Do bardziej zaawansowanej manipulacji i formatowania daty popularny jest wybór biblioteki `date-fns`. Najpierw zainstaluj ją za pomocą npm:
+
+```bash
+npm install date-fns
+```
+
+Następnie możesz jej użyć, aby sformatować bieżącą datę:
+
+```typescript
+import { format } from 'date-fns';
+
+const currentDate = new Date();
+console.log(format(currentDate, 'yyyy-MM-dd'));
+```
+
+Przykładowe wyjście:
+```
+2023-04-12
+```
+
+Ten przykład z użyciem `date-fns` formatuje bieżącą datę jako łańcuch znaków w formacie "RRRR-MM-DD". Biblioteka oferuje mnóstwo funkcji do manipulacji datą, czyniąc ją wszechstronnym narzędziem dla każdego programisty TypeScript pracującego z datami.

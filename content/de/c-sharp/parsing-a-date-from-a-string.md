@@ -1,51 +1,88 @@
 ---
-title:                "Datum aus einem String parsen"
-date:                  2024-01-20T15:35:03.449068-07:00
-simple_title:         "Datum aus einem String parsen"
-
+title:                "Einen Datum aus einem String analysieren"
+date:                  2024-02-03T19:13:43.095329-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Einen Datum aus einem String analysieren"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/c-sharp/parsing-a-date-from-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Das Parsen eines Datums aus einem String bedeutet, einen Text in ein `DateTime`-Objekt umzuwandeln. Wir machen das, weil Daten und Zeiten oft als Text aus Dateien, Benutzereingaben oder APIs kommen und für Datumsoperationen in einem standardisierten Format vorliegen müssen.
+Das Parsen eines Datums aus einem String in C# beinhaltet das Umwandeln von textuellen Darstellungen von Daten und Zeiten in ein `DateTime`-Objekt. Dies ist essentiell für Anwendungen, die Daten und Zeiten in verschiedenen Formaten manipulieren, speichern oder anzeigen müssen, wie beispielsweise Planungs-Apps, Log-Verarbeitungen oder jegliches System, das Dateneingaben von Benutzern oder externen Quellen handhabt.
 
-## How to:
-```C#
-using System;
+## Wie geht das:
+
+**Basis-Parsing:**
+
+Die Methoden `DateTime.Parse` und `DateTime.TryParse` sind die ersten Anlaufstellen, um einen String in ein `DateTime` umzuwandeln. Hier ist ein kurzes Beispiel:
+
+```csharp
+string dateString = "2023-04-12";
+DateTime parsedDate;
+
+if (DateTime.TryParse(dateString, out parsedDate))
+{
+    Console.WriteLine($"Erfolgreich geparst: {parsedDate}");
+}
+else
+{
+    Console.WriteLine("Parsen fehlgeschlagen.");
+}
+// Ausgabe: Erfolgreich geparst: 12.04.2023 00:00:00
+```
+
+**Spezifische Kultur angeben:**
+
+Manchmal muss ein Datumsstring in einem spezifischen Kulturformat geparst werden. Dies kann mit der `CultureInfo`-Klasse erreicht werden:
+
+```csharp
 using System.Globalization;
 
-class Program
+string dateString = "12 avril 2023";
+var cultureInfo = new CultureInfo("fr-FR");
+DateTime parsedDate = DateTime.Parse(dateString, cultureInfo);
+
+Console.WriteLine(parsedDate);
+// Ausgabe: 12.04.2023 00:00:00
+```
+
+**Exaktes Parsen mit einem spezifischen Format:**
+
+Für Szenarien, in denen Daten in einem spezifischen Format vorliegen, das möglicherweise nicht standardmäßig ist, kommt `DateTime.ParseExact` gelegen:
+
+```csharp
+string dateString = "Mittwoch, 12 April 2023";
+string format = "dddd, d MMMM yyyy";
+DateTime parsedDate = DateTime.ParseExact(dateString, format, CultureInfo.InvariantCulture);
+
+Console.WriteLine(parsedDate);
+// Ausgabe: 12.04.2023 00:00:00
+```
+
+**Mit NodaTime:**
+
+Für noch robustere Datums- und Zeitparsings, ziehen Sie die Verwendung der beliebten Drittanbieterbibliothek NodaTime in Betracht. Sie bietet eine breitere Palette von Datums-/Zeitbehandlungsfähigkeiten:
+
+```csharp
+using NodaTime;
+using NodaTime.Text;
+
+var pattern = LocalDatePattern.CreateWithInvariantCulture("yyyy-MM-dd");
+var parseResult = pattern.Parse("2023-04-12");
+
+if (parseResult.Success)
 {
-    static void Main()
-    {
-        string dateString = "24.12.2023";
-        string format = "dd.MM.yyyy";
-        CultureInfo provider = CultureInfo.InvariantCulture;
-        
-        try
-        {
-            DateTime parsedDate = DateTime.ParseExact(dateString, format, provider);
-            Console.WriteLine(parsedDate.ToString("d")); // Gibt das Datum aus: 24.12.2023
-        }
-        catch (FormatException)
-        {
-            Console.WriteLine("Ungültiges Datum.");
-        }
-    }
+    LocalDate localDate = parseResult.Value;
+    Console.WriteLine(localDate); // 2023-04-12
+}
+else
+{
+    Console.WriteLine("Parsen fehlgeschlagen.");
 }
 ```
 
-## Deep Dive
-Das Parsen von Datumsangaben ist wichtig, da verschiedene Kulturen verschiedene Formate verwenden. Deshalb bietet .NET `CultureInfo`, um Missverständnisse zu vermeiden. Vor .NET gab es mehr Arbeit, da Entwickler eigene Parser schreiben mussten oder sich auf weniger flexible APIs verließen.
-
-Alternativen zu `DateTime.ParseExact` sind `DateTime.TryParse` und `DateTime.TryParseExact`, die fehlertoleranter sind und `false` zurückgeben statt eine Ausnahme zu werfen. Für die Verarbeitung von Zeitstempeln in verschiedenen Formaten können wir `DateTimeOffset` verwenden.
-
-Details der Implementierung: `ParseExact` verlangt ein genaues Format, sonst wirft es eine `FormatException`. Die `CultureInfo.InvariantCulture` hilft dabei, kulturunabhängig zu parsen, z.B. wenn wir wissen, das Datum ist immer im gleichen Format.
-
-## Siehe Auch
-- Microsoft Dokumentation zu `DateTime`: https://docs.microsoft.com/en-us/dotnet/api/system.datetime?view=netcore-3.1
-- Über `CultureInfo`: https://docs.microsoft.com/en-us/dotnet/api/system.globalization.cultureinfo?view=netcore-3.1
-- Zum Thema Zeitformate in C#: https://docs.microsoft.com/en-us/dotnet/standard/base-types/standard-date-and-time-format-strings
+NodaTime bietet umfangreiche Unterstützung für Zeitzonen, Perioden- und Dauerkonzepte sowie viele verschiedene Kalendersysteme, was es zu einer leistungsstarken Wahl für komplexe Datum- und Zeitmanipulationen in .NET-Anwendungen macht.

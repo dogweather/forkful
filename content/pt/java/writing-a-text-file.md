@@ -1,43 +1,114 @@
 ---
 title:                "Escrevendo um arquivo de texto"
-date:                  2024-01-19
+date:                  2024-02-03T19:28:10.590064-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Escrevendo um arquivo de texto"
-
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/java/writing-a-text-file.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## O Que & Porquê?
-Escrever um arquivo de texto é basicamente gravar dados em um documento que podemos ler e editar. Programadores fazem isso para salvar configurações, resultados ou para exportar dados para que outros sistemas e usuários possam acessá-los.
+## O Que & Por Que?
 
-## Como Fazer:
-```Java
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
+Escrever um arquivo de texto em Java envolve utilizar as capacidades da linguagem para criar e escrever conteúdo em arquivos no sistema de arquivos. Programadores fazem isso por várias razões, como registro (logging), exportação de dados, ou salvar o estado da aplicação para recuperação posterior.
 
-public class EscritorDeArquivo {
+## Como fazer:
+
+### Usando `java.nio.file` (Biblioteca Padrão)
+
+O pacote New I/O (NIO) do Java (`java.nio.file`) fornece uma abordagem mais versátil para lidar com arquivos. Aqui está uma maneira simplista de escrever em um arquivo usando `Files.write()`:
+
+```java
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.Arrays;
+import java.util.List;
+
+public class TextFileWriterNIO {
     public static void main(String[] args) {
-        String caminhoDoArquivo = "exemplo.txt";
-        String conteudo = "Olá, este é um texto de exemplo!";
-        
-        try (BufferedWriter escritor = new BufferedWriter(new FileWriter(caminhoDoArquivo))) {
-            escritor.write(conteudo);
+        List<String> linhas = Arrays.asList("Linha 1", "Linha 2", "Linha 3");
+        try {
+            Files.write(Paths.get("exemplo.txt"), linhas);
             System.out.println("Arquivo escrito com sucesso!");
-        } catch (IOException e) {
-            System.err.println("Ocorreu um erro ao escrever o arquivo: " + e.getMessage());
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 }
 ```
-Saída esperada: `Arquivo escrito com sucesso!`
 
-## Mergulho Profundo:
-No passado, Java usava `FileWriter` de maneira direta, bem menos eficientes em termos de performance comparado ao padrão `BufferedWriter` de hoje. Alternativas modernas incluem o uso de `Files`, parte do NIO.2 (New I/O 2), que veio com a versão 7 do Java, permitindo escrita de arquivos com menos código. Por detalhes de implementação, usar `try-with-resources`, como no exemplo acima, garante que recursos são fechados adequadamente após uso, evitando vazamentos de memória.
+Saída:
 
-## Veja Também:
-- [Documentação Oficial do BufferedWriter](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/BufferedWriter.html)
-- [Tutorial Oracle sobre I/O de arquivos](https://docs.oracle.com/javase/tutorial/essential/io/)
-- [Diferenças entre FileWriter e BufferedWriter](https://stackoverflow.com/questions/9648811/specific-difference-between-bufferedwriter-and-filewriter)
+```
+Arquivo escrito com sucesso!
+```
+
+### Usando `java.io` (Biblioteca Padrão)
+
+Para uma abordagem mais tradicional, `java.io.FileWriter` é uma boa escolha para escrever arquivos de texto de maneira simples:
+
+```java
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class TextFileWriterIO {
+    public static void main(String[] args) {
+        try (FileWriter writer = new FileWriter("exemplo.txt")) {
+            writer.write("Olá, Mundo!\n");
+            writer.append("Esta é outra linha.");
+            System.out.println("Arquivo escrito com sucesso!");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+Saída:
+
+```
+Arquivo escrito com sucesso!
+```
+
+### Usando Apache Commons IO
+
+A biblioteca Apache Commons IO simplifica muitas operações, incluindo a escrita de arquivos. Veja como escrever em um arquivo usando `FileUtils.writeStringToFile()`:
+
+Primeiro, adicione a dependência ao seu projeto. Se estiver usando Maven, inclua:
+
+```xml
+<dependency>
+  <groupId>org.apache.commons</groupId>
+  <artifactId>commons-io</artifactId>
+  <version>2.11.0</version> <!-- Verifique a última versão -->
+</dependency>
+```
+
+Depois, use o seguinte código para escrever texto em um arquivo:
+
+```java
+import org.apache.commons.io.FileUtils;
+import java.io.File;
+import java.io.IOException;
+
+public class TextFileWriterCommonsIO {
+    public static void main(String[] args) {
+        try {
+            FileUtils.writeStringToFile(new File("exemplo.txt"), "Este é um texto escrito usando Commons IO.", "UTF-8");
+            System.out.println("Arquivo escrito com sucesso!");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+
+```
+
+Saída:
+
+```
+Arquivo escrito com sucesso!
+```

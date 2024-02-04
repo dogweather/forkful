@@ -1,35 +1,70 @@
 ---
 title:                "標準エラーへの書き込み"
-date:                  2024-01-19
+date:                  2024-02-03T19:35:16.978404-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "標準エラーへの書き込み"
-
 tag:                  "Files and I/O"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/rust/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? （何となぜ？）
-標準エラー出力（stderr）はエラーメッセージや警告を出すためにある。プログラムの正常な出力を分けて、問題が起きた時にすぐ察知するために使う。
+## 何となぜ？
+Rustでの標準エラー（stderr）への書き込みは、エラーメッセージや診断を標準出力（stdout）とは別にコンソールに向けて出力することに関します。プログラマーはこれを行うことで、通常のプログラム出力とエラーメッセージを区別し、実行中にエラーを適切に扱ったり、ログやファイルにリダイレクトしたりするのを容易にします。
 
-## How to: （方法）
-```Rust
-use std::io::{self, Write};
+## 方法：
+Rustは`eprintln!`マクロを使用してstderrに書き込む直観的な方法を提供します。これは`println!`がstdoutに使用されるのと同様です。基本的な例を以下に示します：
 
+```rust
 fn main() {
-    writeln!(io::stderr(), "エラーが発生しました").unwrap();
+    eprintln!("これはエラーメッセージです！");
 }
 ```
 
-出力:
+標準エラーへのサンプル出力：
 ```
-エラーが発生しました
+これはエラーメッセージです！
 ```
 
-## Deep Dive （深堀り）
-標準エラー（stderr）はUnix由来で、標準出力(stdout)と分けられている。`println!`はstdoutに書き込むが、`writeln!`に`io::stderr()`を使ってエラーをstderrに出力する。ファイルやネットワークにも同じように書けるが、stderrはコンソールアプリケーションにおいてデバッグやログに便利。
+エラーメッセージをよりコントロールしたい場合、例えばテキストをフォーマットしたり、I/Oの結果を扱いたりする場合は、`std::io`モジュールから`stderr`関数を使用します。この方法はグローバルなstderrストリームへのハンドルを提供し、`Write`トレイトからの`write_all`や`writeln`のようなメソッドを使用して書き込むことができます：
 
-## See Also （関連情報）
-- Rustの公式ドキュメント: [std::io](https://doc.rust-lang.org/std/io/)
-- Unixにおける標準ストリームの解説: [Standard streams (Wikipedia)](https://en.wikipedia.org/wiki/Standard_streams)
+```rust
+use std::io::{self, Write};
+
+fn main() {
+    let stderr = io::stderr();
+    let mut handle = stderr.lock();
+    
+    writeln!(handle, "フォーマットされたエラーメッセージ：{}", 404).expect("stderrへの書き込みに失敗");
+}
+```
+
+標準エラーへのサンプル出力：
+```
+フォーマットされたエラーメッセージ：404
+```
+
+ライブラリを頼りにする環境やアプリケーションで作業している場合、`log`や`env_logger`のようなライブラリが人気です。これらはログ記録の目的でより多用されていますが、設定可能でエラーログレベルをstderrに向けることができます。以下は`log`と`env_logger`を使用した簡単な使用例です：
+
+まず、`Cargo.toml`に依存関係を追加します：
+```toml
+[dependencies]
+log = "0.4"
+env_logger = "0.9"
+```
+
+次に、アプリケーションでロギングを設定して使用します：
+```rust
+fn main() {
+    env_logger::init();
+    log::error!("これはstderrに記録されたエラーメッセージです");
+}
+```
+
+このプログラムを実行する（適切な環境変数、例えば`RUST_LOG=error`で`env_logger`を設定した後）と、ログインフラストラクチャを利用してエラーメッセージがstderrに出力されます。
+
+```plaintext
+ERROR: これはstderrに記録されたエラーメッセージです
+```

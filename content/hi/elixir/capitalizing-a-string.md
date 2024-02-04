@@ -1,41 +1,52 @@
 ---
-title:                "स्ट्रिंग को कैपिटलाइज़ करना"
-date:                  2024-01-19
-simple_title:         "स्ट्रिंग को कैपिटलाइज़ करना"
-
+title:                "स्ट्रिंग को कैपिटलाइज करना"
+date:                  2024-02-03T19:05:27.055612-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "स्ट्रिंग को कैपिटलाइज करना"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/elixir/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## क्या और क्यों? (What & Why?)
+## क्या और क्यों?
 
-स्ट्रिंग्स को कैपिटलाइज़ करने का मतलब है प्रत्येक शब्द की पहली अक्षर को बड़ा (कैपिटल लेटर) करना। प्रोग्रामर्स यह तब करते हैं जब उन्हें यूजर इंटरफ़ेस या डॉक्युमेंट्स में खास नामों या टाइटल्स को साफ और स्पष्ट दिखाना होता है।
+एक स्ट्रिंग की पहली अक्षर को बड़ा अक्षर (अपरकेस) में बदलना जबकि बाकी अक्षरों को छोटे लेटर्स (लोअरकेस) में सुनिश्चित करना, यह है स्ट्रिंग का पूंजीकरण। यह कार्रवाई अक्सर उपयोगकर्ता इनपुट को स्वरूपित करने या उपयोगकर्ता इंटरफेस में पाठ प्रदर्शित करते समय आवश्यक होती है, जहाँ संगति और पठनीयता महत्वपूर्ण होती है।
 
-## कैसे करें? (How to:)
+## कैसे:
+
+Elixir अपने निर्मित फ़ंक्शनों का उपयोग करते हुए स्ट्रिंग्स को पूंजीकृत करने का एक सीधा तरीका प्रदान करता है बिना तृतीय-पार्टी लाइब्रेरी की आवश्यकता के। यहाँ एक साधारण उदाहरण है:
 
 ```elixir
-defmodule StringHelper do
-  def capitalize_string(str) when is_binary(str) do
-    str
-    |> String.split()
-    |> Enum.map(&String.capitalize/1)
-    |> Enum.join(" ")
-  end
-end
-
-StringHelper.capitalize_string("नमस्ते, यह एक टेस्ट स्ट्रिंग है।")
+string = "elixir programming"
+capitalized_string = String.capitalize(string)
+IO.puts capitalized_string
 ```
 
-सैंपल आउटपुट: `"नमस्ते, यह एक टेस्ट स्ट्रिंग है।"`
+आउटपुट:
 
-## गहराई से जानकारी (Deep Dive)
+```
+Elixir programming
+```
 
-ईलिक्सिर में स्ट्रिंग को कैपिटलाइज़ करने की कार्यप्रणाली बहुत सरल है। `String.capitalize/1` फंक्शन हर शब्द के पहले अक्षर को बड़ा कर देता है। ऐतिहासिक संदर्भ में, यह कंसेप्ट पुरानी प्रोग्रामिंग भाषाओं से आया है। विकल्प के रूप में, कुछ प्रोग्रामिंग भाषाओं में अलग बिल्ट-इन फंक्शंस होते हैं पर ईलिक्सिर इसे बहुत आसान बनाता है। `Enum.map/2` के साथ सम्मिलन करके, हम पूरी स्ट्रिंग के हर शब्द को लूप कर सकते हैं।
+जहाँ अधिक नियंत्रण या जटिल पूंजीकरण तर्क की आवश्यकता होती है, वहाँ आप विभिन्न String फ़ंक्शनों को संयोजित कर सकते हैं। उदाहरण के लिए, यदि आप एक वाक्य में हर शब्द को पूंजीकृत करना चाहते हैं, तो आप वाक्य को शब्दों में विभाजित कर सकते हैं, प्रत्येक को पूंजीकृत कर सकते हैं, और फिर उन्हें एक साथ जोड़ सकते हैं:
 
-## सम्बंधित स्रोत (See Also)
+```elixir
+sentence = "elixir is fun"
+capitalized_sentence = sentence 
+                        |> String.split() 
+                        |> Enum.map(&String.capitalize/1) 
+                        |> Enum.join(" ")
 
-- [Elixir String Module Documentation](https://hexdocs.pm/elixir/String.html)
-- [Elixir School: Strings](https://elixirschool.com/en/lessons/basics/strings/)
-- [Programming Elixir 1.6 by Dave Thomas](https://pragprog.com/titles/elixir16/programming-elixir-1-6/)
+IO.puts capitalized_sentence
+```
+
+आउटपुट:
+
+```
+Elixir Is Fun
+```
+
+जबकि Elixir की मानक पुस्तकालय अधिकांश आवश्यकताओं को कवर करती है, अधिक सूक्ष्म पाठ संचालन के लिए, जिसमें उन्नत स्ट्रिंग पूंजीकरण शामिल है, आप तृतीय-पार्टी लाइब्रेरियों जैसे कि Cldr का अन्वेषण कर सकते हैं, जो अंतरराष्ट्रीयकरण के लिए है, जो स्थान-विशिष्ट पूंजीकरण व्यवहार प्रदान कर सकता है।

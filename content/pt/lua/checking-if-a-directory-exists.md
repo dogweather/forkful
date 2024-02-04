@@ -1,54 +1,58 @@
 ---
 title:                "Verificando se um diretório existe"
-date:                  2024-01-20T14:57:30.897224-07:00
+date:                  2024-02-03T19:07:54.411229-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Verificando se um diretório existe"
-
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/lua/checking-if-a-directory-exists.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## O que é & Porquê?
-Verificar se um diretório existe é o processo de confirmar se um caminho específico leva a um diretório no sistema de arquivos. Programadores fazem isso para evitar erros ao tentar acessar, ler ou escrever em diretórios que podem não estar presentes.
+## O Que & Por Que?
 
-## Como Fazer:
-Em Lua, você pode verificar a existência de um diretório utilizando a função `os.execute` com comandos do sistema ou o módulo `lfs` (Lua File System) para um método mais robusto e independente de plataforma.
+Verificar se um diretório existe é uma operação fundamental ao escrever scripts que interagem com o sistema de arquivos, garantindo que seu programa opere em caminhos válidos e previna erros relacionados a diretórios inexistentes. Essa tarefa é crucial para criar novos arquivos em diretórios, ler a partir deles, ou executar operações específicas de diretório de forma segura.
 
-```Lua
--- Exemplo com os.execute (pode variar conforme o sistema operacional)
-local directory = "./meuDiretorio"
+## Como fazer:
 
-if os.execute("cd " .. directory) then
-    print("O diretório existe!")
+No Lua, você não tem uma função embutida para verificar diretamente se um diretório existe, então frequentemente depende da biblioteca Lua File System (lfs), uma biblioteca terceirizada popular para operações de arquivo.
+
+Primeiro, garanta que você tenha Lua File System instalado. Caso contrário, geralmente você pode instalá-lo usando LuaRocks:
+
+```sh
+luarocks install luafilesystem
+```
+
+Então, você pode usar o seguinte exemplo para verificar a existência de um diretório:
+
+```lua
+local lfs = require "lfs"
+
+function directoryExists(directory)
+    local attr = lfs.attributes(directory)
+    return attr and attr.mode == "directory"
+end
+
+-- Verificar se um diretório específico existe
+if directoryExists("/caminho/para/seu/diretório") then
+    print("Diretório existe.")
 else
-    print("O diretório não existe.")
+    print("Diretório não existe.")
 end
 ```
 
-```Lua
--- Exemplo com lfs (requer a instalação do módulo lfs)
-local lfs = require("lfs")
+Isso vai sair:
 
-local directory = "./meuDiretorio"
-local attributes = lfs.attributes(directory)
-
-if attributes and attributes.mode == "directory" then
-    print("O diretório existe!")
-else
-    print("O diretório não existe.")
-end
+```
+Diretório existe.
 ```
 
-## Mergulho Profundo:
-Antes de ter ferramentas dedicadas, verificar a existência de diretórios em Lua era feito com chamadas de sistema, mas isso exigia conhecimento dos comandos específicos do sistema operacional e não era portátil. O módulo `lfs` foi criado para superar essas limitações, fornecendo uma interface uniforme para manipulação de arquivos e diretórios.
+Ou, se o diretório não existir:
 
-Alternativas incluem a execução de outros comandos de sistema como `"ls"` (Linux) ou `"dir"` (Windows), mas eles também são dependentes do sistema operacional.
+```
+Diretório não existe.
+```
 
-Um detalhe interessante sobre a implementação do `lfs` é que ele é uma biblioteca escrita em C e projetada para ser integrada com Lua, assim oferece performance e acesso a funcionalidades de baixo nível do sistema de arquivos.
-
-## Veja Também:
-- Documentação oficial do Lua File System (lfs): http://keplerproject.github.io/luafilesystem/
-- Livro online "Programming in Lua" (contém exemplos e explicações mais detalhadas): https://www.lua.org/pil/contents.html
-- Referência do Lua 5.4 (versão atual): https://www.lua.org/manual/5.4/
-- Post no Stack Overflow sobre verificação de diretório em Lua: https://stackoverflow.com/questions/1340230/check-if-directory-exists-in-lua
+Essa abordagem usa a função `lfs.attributes` para obter os atributos do caminho. Se o caminho existir e seu atributo `mode` for `directory`, isso confirma a existência do diretório.

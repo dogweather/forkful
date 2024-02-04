@@ -1,37 +1,71 @@
 ---
 title:                "Escrevendo testes"
-date:                  2024-01-19
+date:                  2024-02-03T19:29:35.473067-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Escrevendo testes"
-
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/bash/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## O quê & Por quê?
-Escrever testes é definir um conjunto de procedimentos para verificar se o código se comporta como esperado. Programadores testam para evitar bugs, garantir qualidade e facilitar manutenção.
+## O Que & Por Que?
+Escrever testes em Bash envolve criar scripts de casos de teste para validar a funcionalidade dos seus scripts Bash. Os programadores realizam testes para garantir que seus scripts funcionem conforme esperado sob várias condições, capturando erros e bugs antes do lançamento.
 
 ## Como fazer:
-```Bash
-# Teste simples para verificar se um arquivo existe
-if [ -f "meu_arquivo.txt" ]; then
-  echo "Teste PASSOU: Arquivo existe."
-else
-  echo "Teste FALHOU: Arquivo não encontrado."
-fi
+O Bash não possui uma estrutura de testes embutida, mas você pode escrever funções de teste simples. Para testes mais sofisticados, ferramentas de terceiros como `bats-core` são populares.
 
-# Exemplo de saída para um teste que passou
-Teste PASSOU: Arquivo existe.
+### Exemplo Básico de Teste em Bash Puro:
+```bash
+function test_example_function {
+  result=$(your_function 'test_input')
+  expected_output="expected_output"
+  
+  if [[ "$result" == "$expected_output" ]]; then
+    echo "Teste passou."
+    return 0
+  else
+    echo "Teste falhou. Esperava-se '$expected_output', obteve-se '$result'"
+    return 1
+  fi
+}
 
-# Exemplo de saída para um teste que falhou
-Teste FALHOU: Arquivo não encontrado.
+# Invocando a função de teste
+test_example_function
+```
+Saída de Amostra:
+```
+Teste passou.
 ```
 
-## Mergulho Profundo
-Nos primórdios, testes eram realizados manualmente por desenvolvedores. Alternativas modernas incluem frameworks de testes unitários como o Bash Automated Testing System (BATS). Esses frameworks permitem a implementação de testes mais complexos, validando funções individuais e integrando testes no processo de integração contínua.
+### Usando `bats-core` para Testes:
+Primeiro, instale `bats-core`. Isso geralmente pode ser feito através do seu gerenciador de pacotes ou clonando seu repositório.
 
-## Veja Também
-- Para aprender mais sobre testes em shell scripts, confira o Bash Automated Testing System (BATS) aqui: https://github.com/bats-core/bats-core
-- A documentação oficial do Bash fornece detalhes sobre condicionais, úteis para scripts de teste: https://www.gnu.org/software/bash/manual/
-- Artigos sobre melhores práticas de testes de software em geral, disponíveis em: https://martinfowler.com/articles/practical-test-pyramid.html
+Em seguida, escreva seus testes em arquivos `.bats` separados.
+
+```bash
+# Arquivo: example_function.bats
+
+#!/usr/bin/env bats
+
+@test "testar exemplo de função" {
+  result="$(your_function 'test_input')"
+  expected_output="expected_output"
+  
+  [ "$result" == "$expected_output" ]
+}
+```
+Para executar seus testes, simplesmente execute o arquivo `.bats`:
+```bash
+bats example_function.bats
+```
+Saída de Amostra:
+```
+ ✓ testar exemplo de função
+
+1 teste, 0 falhas
+```
+
+Essa abordagem permite que você integre facilmente os testes no seu fluxo de trabalho de desenvolvimento, garantindo a confiabilidade e estabilidade dos seus scripts Bash.

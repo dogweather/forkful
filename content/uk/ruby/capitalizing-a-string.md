@@ -1,38 +1,44 @@
 ---
-title:                "Перетворення рядка на великі літери"
-date:                  2024-01-19
-simple_title:         "Перетворення рядка на великі літери"
-
+title:                "Зробити першу літеру рядка великою"
+date:                  2024-02-03T19:06:21.461017-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Зробити першу літеру рядка великою"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/ruby/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Що і Чому?
-Коли ми кажемо "зробити рядок з великої літери", маємо на увазі зміну першої букви тексту на велику. Програмісти це роблять, щоб виділити слова або дотримуватися певних стандартів введення тексту.
+Заглавлення рядка у програмуванні часто має на увазі перетворення першого символу рядка на велику букву, а решту - на малі. Програмісти роблять це з різних причин, таких як дотримання конвенцій іменування, підвищення читабельності виводу або забезпечення консистенції даних для порівнянь та зберігання.
 
-## Як це зробити:
-```Ruby
-# Варіант 1: capitalize
-name = "василь"
-puts name.capitalize  # Виводить "Василь"
+## Як:
+Ruby надає прості методи для маніпулювання рядками, включаючи заглавлення. Ось як ви можете заглавити рядок в Ruby:
 
-# Варіант 2: З великої літери всі слова в реченні
-phrase = "слава україні!"
-puts phrase.split.map(&:capitalize).join(' ')  # Виводить "Слава Україні!"
-
-# Варіант 3: Unicode-свідомий спосіб (враховуючи мовні особливості)
-require 'active_support/core_ext/string'
-
-locale_string = "щасливого ранку"
-puts locale_string.mb_chars.capitalize.to_s  # Виводить "Щасливого ранку"
+```ruby
+# Вбудований метод Ruby
+string = "hello world"
+capitalized_string = string.capitalize
+puts capitalized_string # => "Hello world"
 ```
 
-## Поглиблений Занурення:
-Сам метод `capitalize` в Ruby з'явився давно, щоб допомогти стандартизувати рядки. Метод простий: він перетворює перший символ рядка у великий регістр, а решту — у маленький. Але є нюанси, особливо з не-англійськими мовами через їхній осібний Unicode склад. Альтернативи? Active Support (Rails) надає методи, які краще обходяться з Unicode, і забезпечують більше функціональности (зокрема, `mb_chars`). Щодо впровадження, Ruby використовує UTF-8 за замовчуванням, тож краще підтримує різноманітність символів і регіонів.
+Метод `.capitalize` в Ruby зручний, але впливає лише на першу літеру. Для більшого контролю або для заглавлення кожного слова у рядку (відомого як регістр заголовку), можна використати метод `titleize` з розширення Rails ActiveSupport або реалізувати його самостійно:
 
-## Посилання для Ознайомлення:
-- [Ruby's String Documentation](https://ruby-doc.org/core-3.1.0/String.html)
-- [Rails' Active Support Core Extensions](https://api.rubyonrails.org/classes/String.html)
-- [Керівництво по стилю Ruby](https://github.com/rubocop/ruby-style-guide)
+```ruby
+# Використання 'titleize' від ActiveSupport в Rails
+require 'active_support/core_ext/string/inflections'
+string = "hello world"
+puts string.titleize # => "Hello World"
+```
+
+Якщо ви не використовуєте Rails або віддаєте перевагу чистому рішенню на Ruby, ось як ви можете заглавити кожне слово в рядку:
+
+```ruby
+string = "hello world"
+capitalized_each_word = string.split.map(&:capitalize).join(' ')
+puts capitalized_each_word # => "Hello World"
+```
+
+Цей метод розбиває рядок на масив слів, заглавляє кожне з них, а потім з'єднує їх знову разом з пробілом.

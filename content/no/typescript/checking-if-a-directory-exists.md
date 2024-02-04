@@ -1,56 +1,83 @@
 ---
-title:                "Sjekke om en mappe eksisterer"
-date:                  2024-01-20T14:58:48.161121-07:00
-simple_title:         "Sjekke om en mappe eksisterer"
-
+title:                "Sjekker om en mappe eksisterer"
+date:                  2024-02-03T19:08:45.957614-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Sjekker om en mappe eksisterer"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/typescript/checking-if-a-directory-exists.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Å sjekke om en mappe eksisterer betyr å programmert verifisere at et bestemt mappe på filsystemet er tilgjengelig. Programmerere gjør dette for å unngå feil når de forsøker å lese fra eller skrive til mapper som kanskje ikke finnes.
+## Hva og hvorfor?
+Å sjekke om en mappe eksisterer i TypeScript er essensielt for filhåndteringsoppgaver, slik som å lese fra eller skrive data til filer, og sikre at operasjoner kun utføres på gyldige mapper. Denne operasjonen er avgjørende for å unngå feil som oppstår fra å forsøke å få tilgang til eller manipulere ikke-eksisterende mapper.
 
-## How to:
-I TypeScript bruker vi `fs`-modulen for å jobbe med filsystemet. Her er et eksempel på hvordan å sjekke om en mappe eksisterer:
+## Hvordan:
 
-```TypeScript
-import * as fs from 'fs';
+TypeScript, når det kjøres i et Node.js-miljø, lar deg sjekke om en mappe eksisterer ved å bruke `fs`-modulen, som gir `existsSync()`-funksjonen eller den asynkrone `access()`-funksjonen kombinert med `constants.F_OK`.
 
-function checkDirectoryExists(path: string): boolean {
-  return fs.existsSync(path);
-}
+### Bruke `fs.existsSync()`:
 
-const dirPath = './path/to/your/directory';
+```typescript
+import { existsSync } from 'fs';
 
-if (checkDirectoryExists(dirPath)) {
+const directoryPath = './path/to/directory';
+
+if (existsSync(directoryPath)) {
   console.log('Mappen eksisterer.');
 } else {
   console.log('Mappen eksisterer ikke.');
 }
 ```
 
-Kjør programmet. Hvis mappen finnes, får du output:
+### Bruke `fs.access()` med `fs.constants.F_OK`:
 
+```typescript
+import { access, constants } from 'fs';
+
+const directoryPath = './path/to/directory';
+
+access(directoryPath, constants.F_OK, (err) => {
+  if (err) {
+    console.log('Mappen eksisterer ikke.');
+    return;
+  }
+  console.log('Mappen eksisterer.');
+});
+```
+
+**Eksempel på utdata** for begge metodene, under antagelse av at mappen eksisterer:
 ```
 Mappen eksisterer.
 ```
 
-Om den ikke finnes, får du:
-
+Og hvis den ikke gjør det:
 ```
 Mappen eksisterer ikke.
 ```
 
-## Deep Dive
-Historisk sett har `fs.exists` og `fs.existsSync` vært brukt til å sjekke om en fil eller mappe eksisterer. Fra Node.js har det blitt anbefalt å bruke `fs.access` eller `fs.stat` i stedet, da disse gir mer nøyaktig informasjon og følger beste praksiser.
+### Bruke et bibliotek fra tredjepart - `fs-extra`:
 
-Andre alternativer er å prøve å lese mappen med `fs.readdir` eller `fs.readdirSync`, som vil gi en feil dersom mappen ikke eksisterer.
+`fs-extra` er et populært tredjeparts bibliotek som forbedrer det innebygde `fs`-modulen og gir mer bekvemme funksjoner.
 
-Detaljer om implementasjon: `fs.existsSync` sjekker synkront, mens `fs.exists` er asynkron og har blitt foreldet. I en moderne applikasjon vil du kanskje håndtere dette asynkront med `fs.promises` eller ved bruk av `async/await` sammen med `fs.access`.
+```typescript
+import { pathExists } from 'fs-extra';
 
-## See Also
-- Node.js File System Dokumentasjon: https://nodejs.org/api/fs.html
-- TypeScript Handbook: https://www.typescriptlang.org/docs/handbook/intro.html
-- MDN om asynkron programmering i JavaScript: https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous
+const directoryPath = './path/to/directory';
+
+pathExists(directoryPath).then(exists => {
+  console.log(`Mappen eksisterer: ${exists}`);
+});
+```
+
+**Eksempel på utdata** når mappen eksisterer:
+```
+Mappen eksisterer: true
+```
+
+Og hvis den ikke gjør det:
+```
+Mappen eksisterer: false
+```

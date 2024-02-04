@@ -1,39 +1,62 @@
 ---
 title:                "写入标准错误"
-date:                  2024-01-19
+date:                  2024-02-03T19:32:43.915678-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "写入标准错误"
-
 tag:                  "Files and I/O"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/cpp/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-# 写入标准错误：何为何用？
-在C++编程中，写入标准错误(`stderr`)让你可以将错误信息与常规程序输出分开。这样能够方便地监控和记录程序运行时的问题。
+## 什么和为什么？
 
-# 操作指南：
-下面的代码展示了如何写入标准错误：
+在 C++ 中写入标准错误（`stderr`）涉及输出与主程序输出分开的错误消息或诊断信息。程序员这样做是为了将错误引导至不同的流，通过区分正常输出和错误消息，使得调试和错误处理更加容易。
 
-```C++
+## 如何操作：
+
+在 C++ 中，可以通过使用标准库中的 `cerr` 流来实现写入标准错误。这里有一个基本示例：
+
+```cpp
 #include <iostream>
 
 int main() {
-    std::cerr << "发生了一个错误！" << std::endl;
+    // 写入标准输出
+    std::cout << "这是一条普通消息。" << std::endl;
+    
+    // 写入标准错误
+    std::cerr << "这是一条错误消息。" << std::endl;
+    
     return 0;
 }
 ```
 
-输出样例：
+示例输出：
 ```
-发生了一个错误！
+这是一条普通消息。
+这是一条错误消息。
 ```
 
-# 深入探讨：
-标准错误流(`stderr`)的概念来源于早期Unix哲学，目的是让错误信息可以被重定向或独立处理。作为标准输出(`stdout`)的一个重要补充，其允许错误信息即使在输出被重定向时也能被看到或存储。作为替代，你可以使用日志库写入日志文件。在C++中，标准库提供了`std::cerr`对象，它默认连接到标准错误流，并且是非缓冲的，这意味着信息会立即输出。
+在这个例子中，两条消息通常会在终端上显示，但你可以在 shell 中分别重定向它们。例如，你可以将标准输出发送到一个文件，同时让错误显示在屏幕上。
 
-# 延伸阅读：
-- C++标准库参考资料：http://www.cplusplus.com/reference/iostream/cerr/
-- Unix编程艺术，讨论标准流：https://en.wikipedia.org/wiki/Unix_philosophy
-- C++日志库Boost.Log：https://www.boost.org/doc/libs/1_75_0/libs/log/doc/html/index.html
+对于更高级的日志和错误处理，可以使用第三方库，如 `spdlog` 或 `boost.log`。这些库为日志记录提供了增强的功能，包括格式化、日志级别和文件输出。
+
+这里展示了如何使用 `spdlog` 来写入一条错误消息：
+
+```cpp
+#include "spdlog/spdlog.h"
+
+int main() {
+    // 初始化 spdlog
+    spdlog::info("这是一条普通消息。");
+    spdlog::error("这是一条错误消息。");
+    
+    return 0;
+}
+```
+
+注意：要使用 `spdlog`，你需要将其添加到你的项目中。你可以通过从 GitHub 克隆仓库或使用包管理器如 `vcpkg` 或 `conan` 来完成此操作。
+
+记住，直接使用标准流或如 `spdlog` 这样的库之间的选择，取决于你的应用程序的复杂性和你对错误处理及日志的具体需求。

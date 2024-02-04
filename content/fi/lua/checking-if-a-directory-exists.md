@@ -1,50 +1,58 @@
 ---
-title:                "Onko hakemisto olemassa? Tarkistaminen"
-date:                  2024-01-20T14:57:33.517556-07:00
-simple_title:         "Onko hakemisto olemassa? Tarkistaminen"
-
+title:                "Tarkistetaan, onko hakemisto olemassa"
+date:                  2024-02-03T19:07:55.183791-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Tarkistetaan, onko hakemisto olemassa"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/lua/checking-if-a-directory-exists.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? - Mikä & Miksi?
-Tarkistaminen, onko hakemisto olemassa, on tapa varmistaa kansion olemassaolo tiedostojärjestelmässä. Koodarit tekevät tämän estääkseen virheitä, jotka voivat ilmetä, jos hakemistolle yritetään tehdä jotain vaikka sitä ei olekaan.
+## Mikä ja miksi?
 
-## How to: - Kuinka:
-```Lua
-local lfs = require('lfs')
+Hakemiston olemassaolon tarkistaminen on perusoperaatio, kun kirjoitetaan skriptejä, jotka vuorovaikuttavat tiedostojärjestelmän kanssa. Se varmistaa, että ohjelmasi toimii kelvollisilla poluilla ja estää virheet, jotka liittyvät olemattomiin hakemistoihin. Tämä tehtävä on ratkaisevan tärkeä, kun luodaan uusia tiedostoja hakemistoihin, luetaan niitä tai suoritetaan hakemistokohtaisia toimenpiteitä turvallisesti.
 
-function directoryExists(path)
-    local attributes = lfs.attributes(path)
-    return attributes and attributes.mode == 'directory'
+## Miten:
+
+Luassa ei ole sisäänrakennettua funktiota suoraan tarkistaa, onko hakemisto olemassa, joten usein nojaudutaan Lua File System (lfs) -kirjastoon, joka on suosittu kolmannen osapuolen kirjasto tiedosto-operaatioihin.
+
+Varmista ensin, että sinulla on Lua File System asennettu. Jos ei, sen voi yleensä asentaa käyttämällä LuaRocksia:
+
+```sh
+luarocks install luafilesystem
+```
+
+Sen jälkeen voit käyttää seuraavaa esimerkkiä tarkistaaksesi hakemiston olemassaolon:
+
+```lua
+local lfs = require "lfs"
+
+function directoryExists(directory)
+    local attr = lfs.attributes(directory)
+    return attr and attr.mode == "directory"
 end
 
--- Käyttöesimerkki:
-local path = "/path/to/directory"
-if directoryExists(path) then
+-- Tarkista, onko tietty hakemisto olemassa
+if directoryExists("/path/to/your/directory") then
     print("Hakemisto on olemassa.")
 else
-    print("Hakemisto ei ole olemassa.")
+    print("Hakemistoa ei ole olemassa.")
 end
 ```
-Sample output:
+
+Tämä tulostaa:
+
 ```
 Hakemisto on olemassa.
 ```
-or
+
+Tai, jos hakemistoa ei ole olemassa:
+
 ```
-Hakemisto ei ole olemassa.
+Hakemistoa ei ole olemassa.
 ```
 
-## Deep Dive - Syväsukellus:
-Aluksi Lua ei tarjonnut sisäänrakennettua tukea hakemistojen olemassaolon tarkistamiseen. `lfs` (LuaFileSystem) on kuitenkin kolmannen osapuolen kirjasto, joka täydentää tätä puutetta. Se tarjoaa `attributes` funktion, jolla saadaan tietoa tiedostoista ja hakemistoista.
-
-Vaihtoehtoiset menetelmät sisältävät `os.execute` käytön komennon kanssa `if exist`, mutta se on alustariippuvaista ja vähemmän suositeltavaa.
-
-Tiedostojärjestelmän osaksi, hakemistojen olemassaolo tarkastus on kriittinen tiedon kirjoittamisen, lukemisen ja ohjelmien asentamisen kannalta. Liiallisen tai tarpeettoman käsittelyn välttämiseksi tehokas tarkistus on tärkeää.
-
-## See Also - Katso Myös:
-- Lua 5.4 referenssikäsikirja: [https://www.lua.org/manual/5.4/](https://www.lua.org/manual/5.4/)
-- Stack Overflow, yleisiä Lua ongelmia: [https://stackoverflow.com/questions/tagged/lua](https://stackoverflow.com/questions/tagged/lua)
+Tämä lähestymistapa käyttää `lfs.attributes`-funktiota saadakseen polun attribuutit. Jos polku on olemassa ja sen `mode`-attribuutti on `directory`, se vahvistaa hakemiston olemassaolon.

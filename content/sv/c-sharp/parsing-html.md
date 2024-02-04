@@ -1,53 +1,102 @@
 ---
 title:                "Tolka HTML"
-date:                  2024-01-20T15:30:44.788950-07:00
+date:                  2024-02-03T19:11:42.257455-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Tolka HTML"
-
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/c-sharp/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att parsa HTML innebär att man analyserar HTML-kod för att plocka ut specifik data eller strukturer. Programmerare gör detta för att kunna interagera med webbsidor, extrahera information eller automatisera webb-baserade uppgifter.
 
-## Hur man gör:
-I C# kan vi använda HtmlAgilityPack för att parsa HTML enkelt. Här är ett grunt dyk med exempel:
+Att tolka HTML i programmering innebär att analysera en HTML-dokuments struktur, vilket möjliggör för dig att extrahera, manipulera och interagera med dess innehåll programmatiskt. Programmerare gör detta för att automatisera webbskrapning, dataextraktion eller till och med modifiera webbsidor eller HTML-dokument dynamiskt för olika applikationer, vilket gör det till en viktig färdighet inom webbutveckling, dataanalys och automatiska testningsscenarier.
 
-```C#
-// Installera HtmlAgilityPack med NuGet
-// Install-Package HtmlAgilityPack
+## Hur:
 
-using HtmlAgilityPack;
+Medan .NET tillhandahåller grundläggande stöd för att arbeta med HTML, som `HttpClient` för att hämta webbsidor, saknar det en inbyggd, omfattande HTML-tolk. Därför vänder sig de flesta C#-utvecklare till populära tredjepartsbibliotek som HtmlAgilityPack eller AngleSharp för robusta funktioner för HTML-tolkning. Båda biblioteken tillåter lätt frågeställning, manipulation och traversal av HTML DOM.
 
-var html = @"<!DOCTYPE html>
-<html>
-<body>
-    <h1>Hej Sverige!</h1>
-    <p>Det här är ett paragraf.</p>
-</body>
-</html>";
+### Använda HtmlAgilityPack
 
-var htmlDoc = new HtmlDocument();
-htmlDoc.LoadHtml(html);
+1. **Installera HtmlAgilityPack**: Lägg först till HtmlAgilityPack-paketet i ditt projekt via NuGet.
+   ```
+   Install-Package HtmlAgilityPack
+   ```
 
-var headerNode = htmlDoc.DocumentNode.SelectSingleNode("//h1");
-var paragraphNode = htmlDoc.DocumentNode.SelectSingleNode("//p");
+2. **Exempelkod**: Tolka en HTML-sträng och extrahera titlarna på alla `<h1>`-element.
 
-Console.WriteLine(headerNode.InnerText); // Skriver ut: Hej Sverige!
-Console.WriteLine(paragraphNode.InnerText); // Skriver ut: Det här är ett paragraf.
-```
+   ```csharp
+   using HtmlAgilityPack;
+   using System;
+   using System.Linq;
 
-## Fördjupning
-Parsing av HTML är inte nytt. En av de äldsta metoderna är att använda reguljära uttryck, men det är opraktiskt och skört för komplex HTML. HtmlAgilityPack är ett C# bibliotek som har använts sedan början av 2000-talet. Det fungerar genom att skapa en DOM-trädstruktur av HTML-koden som kan navigeras och manipuleras.
+   class Program
+   {
+       static void Main(string[] args)
+       {
+           var html = @"<html>
+                         <body>
+                             <h1>Titel 1</h1>
+                             <h1>Titel 2</h1>
+                         </body>
+                        </html>";
+           var htmlDoc = new HtmlDocument();
+           htmlDoc.LoadHtml(html);
 
-Alternativ till HtmlAgilityPack inkluderar AngleSharp, en modernare bibliotek som följer de senaste webbstandarderna.
+           var h1Taggar = htmlDoc.DocumentNode.SelectNodes("//h1").Select(node => node.InnerText);
+           foreach (var titel in h1Taggar)
+           {
+               Console.WriteLine(titel);
+           }
+       }
+   }
+   ```
 
-I termer av utförande använder HtmlAgilityPack XPath- och Linq-querys för att hämta specifika noder, vilket är kraftfullt men kräver förståelse för frågespråken.
+   **Exempelutskrift:**
+   ```
+   Titel 1
+   Titel 2
+   ```
 
-## Se också
-- HtmlAgilityPack GitHub-repo: https://github.com/zzzprojects/html-agility-pack
-- AngleSharp GitHub-repo: https://github.com/AngleSharp/AngleSharp
-- XPath tutorial: https://www.w3schools.com/xml/xpath_intro.asp
-- LINQ to XML-dokumentation: https://docs.microsoft.com/en-us/dotnet/standard/linq/linq-xml-overview
+### Använda AngleSharp
+
+1. **Installera AngleSharp**: Lägg till AngleSharp-biblioteket i ditt projekt via NuGet.
+   ```
+   Install-Package AngleSharp
+   ```
+
+2. **Exempelkod**: Ladda ett HTML-dokument och fråga efter `div`-element med en specifik klass.
+
+   ```csharp
+   using AngleSharp;
+   using AngleSharp.Dom;
+   using System;
+   using System.Linq;
+   using System.Threading.Tasks;
+
+   class Program
+   {
+       static async Task Main(string[] args)
+       {
+           var context = BrowsingContext.New(Configuration.Default);
+           var document = await context.OpenAsync(req => req.Content("<div class='item'>Artikel 1</div><div class='item'>Artikel 2</div>"));
+
+           var artiklar = document.QuerySelectorAll(".item").Select(element => element.TextContent);
+           foreach (var artikel in artiklar)
+           {
+               Console.WriteLine(artikel);
+           }
+       }
+   }
+   ```
+
+   **Exempelutskrift:**
+   ```
+   Artikel 1
+   Artikel 2
+   ```
+
+Både HTMLAgilityPack och AngleSharp är kraftfulla verktyg för att tolka HTML, men ditt val mellan dem kan bero på specifika projektbehov, prestandaöverväganden eller personliga preferenser i API-design.

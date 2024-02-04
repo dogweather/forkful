@@ -1,46 +1,64 @@
 ---
-title:                "Écrire dans l'erreur standard"
-date:                  2024-01-19
-simple_title:         "Écrire dans l'erreur standard"
-
+title:                "Écrire sur l'erreur standard"
+date:                  2024-02-03T19:34:36.994591-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Écrire sur l'erreur standard"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/typescript/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Écrire sur la sortie d'erreur standard (stderr) permet de séparer les messages d'erreur des autres sorties de votre programme. Les programmeurs font ça pour faciliter le débogage et la gestion d'erreurs.
+## Quoi & Pourquoi ?
+En TypeScript, écrire sur l'erreur standard (stderr) est un processus consistant à envoyer des messages d'erreur ou des journaux directement sur le flux de sortie d'erreur de l'environnement (par exemple, la console dans node.js ou un navigateur web). Ceci est essentiel pour diagnostiquer des problèmes sans interférer avec la sortie standard (stdout) utilisée généralement pour les données du programme, assurant que la gestion des erreurs et le journalisation soient gérés de manière efficace et cohérente.
 
-## How to:
-Pour écrire sur stderr en TypeScript, utilisez `process.stderr`.
+## Comment faire :
+TypeScript, étant un sur-ensemble de JavaScript, repose sur l'environnement d'exécution JS sous-jacent (comme Node.js) pour écrire sur stderr. Voici comment vous pouvez le faire directement :
 
-```TypeScript
-process.stderr.write('Ceci est une erreur\n');
+```typescript
+console.error("Ceci est un message d'erreur.");
 ```
 
-Sortie:
-
+Exemple de sortie sur stderr :
 ```
-Ceci est une erreur
-```
-
-Vous pouvez aussi utiliser `console.error`:
-
-```TypeScript
-console.error('Oups, une autre erreur');
+Ceci est un message d'erreur.
 ```
 
-Sortie:
+Dans un environnement Node.js, vous pouvez également utiliser la méthode `process.stderr.write()` pour une écriture de plus bas niveau :
 
+```typescript
+process.stderr.write("Message d'erreur de bas niveau.\n");
 ```
-Oups, une autre erreur
+
+Exemple de sortie sur stderr :
+```
+Message d'erreur de bas niveau.
 ```
 
-## Deep Dive
-Avant, en C, stderr était typiquement utilisé pour séparer les entrées/sorties standards (stdin/stdout) des erreurs. Comme en C, en TypeScript, stderr est non-bufferisé par défaut, donc les messages d'erreur s'affichent immédiatement. Alternativement, on pourrait écrire dans un fichier de log, mais stderr permet de voir les messages d'erreur directement dans la console. L'utilisation de stderr est standard pour les outils en ligne de commande et contribue à une meilleure gestion de flux.
+Pour une journalisation des erreurs plus structurée, vous pourriez utiliser des bibliothèques tierces populaires telles que `winston` ou `pino`. Voici comment journaliser des erreurs en utilisant `winston` :
 
-## See Also
-- Node.js documentation on process.stderr: [Node.js process.stderr](https://nodejs.org/api/process.html#processstderr)
-- Console API reference: [MDN Web Docs - Console](https://developer.mozilla.org/en-US/docs/Web/API/Console)
-- Unix Standard Streams: [Wikipedia - Standard streams](https://en.wikipedia.org/wiki/Standard_streams)
+D'abord, installez `winston` :
+
+```bash
+npm install winston
+```
+
+Ensuite, utilisez-le dans votre fichier TypeScript :
+
+```typescript
+import * as winston from 'winston';
+
+const logger = winston.createLogger({
+  levels: winston.config.syslog.levels,
+  transports: [
+    new winston.transports.Console(),
+    new winston.transports.File({ filename: 'error.log', level: 'error' })
+  ],
+});
+
+logger.error('Erreur journalisée en utilisant winston.');
+```
+
+Ceci écrira l'erreur à la fois sur la console et un fichier nommé `error.log`. Rappelez-vous, lors de l'écriture dans des fichiers, il est important de gérer les permissions des fichiers et le roulement pour prévenir les problèmes liés à l'utilisation de l'espace disque.

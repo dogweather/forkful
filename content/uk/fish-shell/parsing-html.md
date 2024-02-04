@@ -1,53 +1,81 @@
 ---
-title:                "Парсинг HTML"
-date:                  2024-01-20T15:31:29.732986-07:00
-simple_title:         "Парсинг HTML"
-
+title:                "Аналіз HTML"
+date:                  2024-02-03T19:12:28.127421-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Аналіз HTML"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/fish-shell/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? / Що і Чому?
-Parsing HTML means extracting data from HTML code. Programmers do it to use web content in their applications or to automate browsing tasks.
+## Що і чому?
 
-## How to / Як це зробити
-Fish doesn't have built-in HTML parsing, but you can use external tools like `pup`, `hxselect`, or `xmllint`. Here's an example with `pup`.
+Парсинг HTML полягає в екстракції даних або інформації з HTML-контенту, звичайній задачі при роботі з веб-данними. Програмісти роблять це, щоб автоматизувати витягу інформації з вебсайтів для таких завдань, як веб скрапінг, добування даних або автоматизоване тестування.
 
-```Fish Shell
-# Install 'pup'
-sudo apt install pup
+## Як робити:
 
-# Fetch HTML and parse for titles
-curl -s http://example.com | pup 'h1 text{}'
+Переважно, Fish shell не призначена для безпосереднього парсингу HTML. Проте, вона відмінно справляється з об'єднанням інструментів Unix таких як `curl`, `grep`, `sed`, `awk`, або використанням спеціалізованих інструментів як `pup` чи `beautifulsoup` в Python скрипті. Нижче наведено приклади, що демонструють, як використовувати ці інструменти з Fish shell для парсингу HTML.
 
-# Sample output
+### Використання `curl` та `grep`:
+Завантаження HTML-контенту та витягування рядків, що містять посилання:
+
+```fish
+curl -s https://example.com | grep -oP '(?<=href=")[^"]*'
+```
+
+Вивід:
+```
+/page1.html
+/page2.html
+...
+```
+
+### Використання `pup` (командного інструменту для парсингу HTML):
+
+Спочатку переконайтеся, що `pup` встановлено. Потім ви можете використовувати його для витягу елементів за їх тегами, ідентифікаторами, класами і т.д.
+
+```fish
+curl -s https://example.com | pup 'a attr{href}'
+```
+
+Вивід, схожий на приклад з `grep`, буде перелічувати атрибути href тегів `<a>`.
+
+### З Python скриптом та `beautifulsoup`:
+
+Хоча Fish сам по собі не може парсити HTML нативно, він безпроблемно інтегрується з Python скриптами. Нижче наведено стислий приклад, що використовує Python з `BeautifulSoup` для парсингу та витягу назв з HTML. Переконайтеся, що у вашому Python середовищі встановлені `beautifulsoup4` та `requests`.
+
+**parse_html.fish**
+
+```fish
+function parse_html -a url
+    python -c "
+import sys
+import requests
+from bs4 import BeautifulSoup
+
+response = requests.get(sys.argv[1])
+soup = BeautifulSoup(response.text, 'html.parser')
+
+titles = soup.find_all('title')
+
+for title in titles:
+    print(title.get_text())
+" $url
+end
+```
+
+Використання:
+
+```fish
+parse_html 'https://example.com'
+```
+
+Вивід:
+```
 Example Domain
 ```
 
-To select elements with `xmllint`, try this:
-
-```Fish Shell
-# Install 'xmllint'
-sudo apt install libxml2-utils
-
-# Parse HTML, get titles
-curl -s http://example.com | xmllint --html --xpath '//h1/text()' - 2>/dev/null
-
-# Sample output
-Example Domain
-```
-
-## Deep Dive / Поглиблений Аналіз
-HTML parsing has roots in data scraping, going back to the early days of the web. `pup` is a command-line tool that processes HTML like `jq` does for JSON. `hxselect` is part of the HTML-XML-utils, ideal for HTML handling. `xmllint`, part of libxml, targets XML but also parses HTML.
-
-Remember, parsing complex HTML only with regex is fragile—there's more to HTML's structure than regex can reliably handle. Tools like `pup` are specialized for this task.
-
-When implementing, consider efficiency. Fetch only necessary HTML. Limit calls to external commands within Fish to reduce overhead. Parsing HTML in Fish often means delegating to these tools and processing the results.
-
-## See Also / Дивіться Також
-- `pup` documentation: https://github.com/EricChiang/pup
-- HTML-XML-utils: https://www.w3.org/Tools/HTML-XML-utils/
-- xmllint: http://xmlsoft.org/xmllint.html
-- Fish Shell scripting tutorial: https://fishshell.com/docs/current/index.html
+Кожен з цих методів служить різним випадкам використання і масштабам складності, від простої маніпуляції текстом в командному рядку до повного парсинг потужності `beautifulsoup` в Python скриптах. Залежно від ваших потреб і складності структури HTML, можна обрати прямолінійний Unix pipeline або більш потужний скриптовий підхід.

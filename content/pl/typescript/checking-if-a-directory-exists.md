@@ -1,82 +1,83 @@
 ---
 title:                "Sprawdzanie, czy katalog istnieje"
-date:                  2024-01-20T14:59:01.054667-07:00
+date:                  2024-02-03T19:08:46.693454-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Sprawdzanie, czy katalog istnieje"
-
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/typescript/checking-if-a-directory-exists.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-**Co i dlaczego?**
+## Co i dlaczego?
+Sprawdzanie, czy katalog istnieje w TypeScript, jest kluczowe dla zadań związanych z zarządzaniem plikami, takich jak odczytywanie z plików lub zapisywanie do nich danych, zapewniając, że operacje są wykonywane tylko na istniejących katalogach. Ta operacja jest istotna, aby unikać błędów wynikających z prób dostępu lub manipulacji nieistniejącymi katalogami.
 
-Sprawdzanie istnienia katalogu to zapytanie o to, czy folder naprawdę jest tam, gdzie go oczekujemy. Programiści robią to, by uniknąć błędów podczas pracy z plikami i katalogami, które mogłyby nie istnieć.
+## Jak to zrobić:
 
-## How to:
-**Jak to zrobić:**
+TypeScript, uruchomiony w środowisku Node.js, umożliwia sprawdzenie, czy katalog istnieje, za pomocą modułu `fs`, który dostarcza funkcję `existsSync()` lub asynchroniczną funkcję `access()` połączoną z `constants.F_OK`.
+
+### Używając `fs.existsSync()`:
 
 ```typescript
-import * as fs from 'fs';
-import * as path from 'path';
+import { existsSync } from 'fs';
 
-// Callback style
-const directoryPath = path.join(__dirname, 'exampleDir');
+const directoryPath = './sciezka/do/katalogu';
 
-fs.access(directoryPath, fs.constants.F_OK, (err) => {
-  if (err) {
-    console.error('Directory does not exist:', directoryPath);
-  } else {
-    console.log('Directory exists:', directoryPath);
-  }
-});
-
-// Synchronous style
-if (fs.existsSync(directoryPath)) {
-  console.log('Directory exists:', directoryPath);
+if (existsSync(directoryPath)) {
+  console.log('Katalog istnieje.');
 } else {
-  console.error('Directory does not exist:', directoryPath);
+  console.log('Katalog nie istnieje.');
 }
+```
 
-// Async/Await with Promises
-const checkDirectoryExists = async (dirPath: string): Promise<void> => {
-  try {
-    await fs.promises.access(dirPath, fs.constants.F_OK);
-    console.log('Directory exists:', dirPath);
-  } catch {
-    console.error('Directory does not exist:', dirPath);
+### Używając `fs.access()` z `fs.constants.F_OK`:
+
+```typescript
+import { access, constants } from 'fs';
+
+const directoryPath = './sciezka/do/katalogu';
+
+access(directoryPath, constants.F_OK, (err) => {
+  if (err) {
+    console.log('Katalog nie istnieje.');
+    return;
   }
-};
-
-// Usage
-checkDirectoryExists(directoryPath);
+  console.log('Katalog istnieje.');
+});
 ```
 
-Sample output when the directory does not exist:
+**Przykładowy wynik** dla obu metod, zakładając, że katalog istnieje:
 ```
-Directory does not exist: /path/to/your/project/exampleDir
-```
-
-Sample output when the directory exists:
-```
-Directory exists: /path/to/your/project/exampleDir
+Katalog istnieje.
 ```
 
-## Deep Dive
-**Wgłębienie się:**
+A jeśli nie istnieje:
+```
+Katalog nie istnieje.
+```
 
-W przeszłości sprawdzanie istnienia katalogu w Node.js odbywało się głównie za pomocą metod `fs.exists` lub `fs.existsSync`. Jednakże, `fs.exists` została uznana za przestarzałą (deprecated), ponieważ miała nieco mylące API.
+### Używając biblioteki innej firmy - `fs-extra`:
 
-Obecnie zaleca się korzystanie z `fs.access()` lub `fs.promises.access()` z odpowiednim flagą np. `fs.constants.F_OK`, aby sprawdzić dostępność pliku. Albo, jeśli potrzebujemy synchronicznej wersji, `fs.existsSync()` nadal jest dostępnym wyborem.
+`fs-extra` to popularna biblioteka innej firmy, która ulepsza wbudowany moduł `fs` i dostarcza bardziej wygodne funkcje.
 
-Alternatywami mogą być własne funkcje oparte na wyjątkach, które próbują coś zrobić z danym katalogiem i łapią błędy, jeśli katalog nie istnieje. Choć takie podejście może być w niektórych przypadkach bardziej "robuste", to jednak zwiększa złożoność kodu.
+```typescript
+import { pathExists } from 'fs-extra';
 
-Dobrze zaprojektowana aplikacja sprawdza istnienie kluczowych katalogów na wczesnym etapie swojego uruchamiania, aby uniknąć niespodziewanych błędów w trakcie działania. 
+const directoryPath = './sciezka/do/katalogu';
 
-## See Also
-**Zobacz także:**
+pathExists(directoryPath).then(exists => {
+  console.log(`Katalog istnieje: ${exists}`);
+});
+```
 
-- Dokumentacja Node.js fs module: https://nodejs.org/api/fs.html
-- TypeScript Handbook: https://www.typescriptlang.org/docs/handbook/intro.html
-- Przewodnik po technikach asynchronicznych Node.js: https://nodejs.dev/learn/modern-asynchronous-javascript-with-async-and-await
+**Przykładowy wynik** gdy katalog istnieje:
+```
+Katalog istnieje: true
+```
+
+A jeśli nie:
+```
+Katalog istnieje: false
+```

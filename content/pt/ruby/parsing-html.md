@@ -1,52 +1,48 @@
 ---
-title:                "Análise de HTML"
-date:                  2024-01-20T15:33:28.439903-07:00
-simple_title:         "Análise de HTML"
-
+title:                "Analisando HTML"
+date:                  2024-02-03T19:12:58.854865-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Analisando HTML"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/ruby/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## O Que é & Por Que?
+## O Que & Por Que?
+Analisar HTML significa desmembrar um pedaço de código HTML para compreender sua estrutura e conteúdo. Os programadores fazem isso para extrair dados, manipular conteúdo ou migrar informações entre formatos e sistemas.
 
-Parsing HTML é o processo de transformar código HTML em uma estrutura compreensível para o programa manipular. Programadores fazem isso para extrair dados, manipular conteúdo ou até automatizar testes em páginas web.
+## Como fazer:
+Para analisar HTML em Ruby, instale a 'gema' Nokogiri com `gem install nokogiri`. Nokogiri é como um canivete suíço para trabalhar com HTML e XML em Ruby. Aqui está um exemplo rápido:
 
-## Como Fazer:
-
-Para parsear HTML com Ruby, pode-se usar a gem Nokogiri, que é bem direta e poderosa. Instale-a com `gem install nokogiri`, e veja abaixo um exemplo básico:
-
-```Ruby
+```ruby
 require 'nokogiri'
 require 'open-uri'
 
-html = open('https://www.exemplo.com/')
-doc = Nokogiri::HTML(html)
+# Carregar o conteúdo HTML de um website
+html_content = URI.open('http://example.com').read
 
-titulos = doc.css('h1')
-titulos.each do |titulo|
-  puts titulo.content
-end
+# Analisar o HTML
+doc = Nokogiri::HTML(html_content)
+
+# Extrair o título
+title = doc.xpath('//title').text
+puts "O título da página é: #{title}"
 ```
 
-E a saída será algo assim, dependendo do HTML da página acessada:
+Isso vai resultar em algo como: `O título da página é: Domínio de Exemplo`.
 
-```
-Título no topo da página
-Outro título importante
-```
+## Aprofundamento
+Nos primeiros dias do Ruby, as opções para análise de HTML eram limitadas. REXML era embutido, mas lento. Então surgiu o Hpricot, mas ele acabou desaparecendo. Nokogiri estreou em 2008, combinando a facilidade do Hpricot com a velocidade e potência do libxml, um toolkit XML comprovado.
 
-## Mergulho Profundo:
+No mundo da análise, sempre existem alternativas. Alguns preferem a biblioteca embutida 'rexml' ou 'oga', outro analisador de XML/HTML para Ruby. Mas Nokogiri continua sendo o favorito por sua robustez e velocidade, sem mencionar sua vasta gama de recursos.
 
-Historicamente, parsing de HTML era complexo e propenso a erros devido à natureza mal-estruturada de muitos documentos HTML. O Nokogiri é um dos melhores amigos de um programador Ruby para essa tarefa, pois fornece uma maneira simples porém robusta de navegar e manipular o DOM.
+Por baixo dos panos, Nokogiri converte HTML em um Modelo de Objeto de Documento (DOM) — uma estrutura de árvore. Isso facilita a navegação e manipulação dos elementos. Usando XPath e seletores CSS, você pode identificar qualquer informação que precise.
 
-Alternativas ao Nokogiri são o Hpricot (descontinuado), que já foi popular, e bibliotecas baseadas em expressões regulares – mas cuidado, pois regex geralmente não é recomendado para parsear HTML devido à complexidade do mesmo.
-
-Detalhes de implementação importantes: o Nokogiri pode se basear tanto em libxml2 quanto em nekoHTML para fazer o parsing, dependendo da configuração e do uso.
-
-## Veja Também:
-
-Para mais informações, aqui estão alguns links úteis:
-- [Documentação Oficial do Nokogiri](https://nokogiri.org/)
-- [Ruby Toolbox para HTML Parsing](https://www.ruby-toolbox.com/categories/html_parsing)
+## Veja Também
+- Gema Nokogiri: [https://nokogiri.org/](https://nokogiri.org/)
+- Documentação do rexml do Ruby: [https://ruby-doc.org/stdlib-2.6.3/libdoc/rexml/rdoc/REXML/Document.html](https://ruby-doc.org/stdlib-2.6.3/libdoc/rexml/rdoc/REXML/Document.html)
+- Analisador alternativo 'oga': [https://github.com/YorickPeterse/oga](https://github.com/YorickPeterse/oga)
+- Aprender sobre XPath: [https://www.w3schools.com/xml/xpath_intro.asp](https://www.w3schools.com/xml/xpath_intro.asp)

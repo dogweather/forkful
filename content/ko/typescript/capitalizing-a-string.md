@@ -1,34 +1,68 @@
 ---
-title:                "문자열 대문자로 변환하기"
-date:                  2024-01-19
-simple_title:         "문자열 대문자로 변환하기"
-
+title:                "문자열 대문자화"
+date:                  2024-02-03T19:06:58.511053-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "문자열 대문자화"
 tag:                  "Strings"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/typescript/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (무엇과 왜?)
-문자열 대문자화는 작은 문자들을 모두 대문자로 바꾸는 처리 과정입니다. 프로그래머들이 이 작업을 해주는 이유는 주로 UI 표현의 일관성을 위해 혹은 사용자 입력 데이터를 표준화하는 데 있습니다.
+## 무엇인가 & 왜인가?
+문자열을 대문자화하는 것은 주어진 문자열의 첫 번째 문자를 소문자인 경우 대문자로 변경하는 작업을 말하며, 대부분 문자열의 나머지 부분은 변경하지 않습니다. 이 작업은 대명사나 문장의 시작이 문법 규칙을 준수하도록 하여 텍스트 처리 시 결과물이 전문적이고 읽기 쉽게 만드는 데 주로 사용됩니다.
 
-## How to: (방법)
+## 방법:
+
+TypeScript는 JavaScript의 상위 집합으로, 순수 JavaScript 방식부터 더 복잡하거나 특정 사용 사례에 더 적합한 서드파티 라이브러리를 활용하는 다양한 방법으로 문자열을 대문자화할 수 있습니다.
+
+**순수 JavaScript 접근법:**
+
 ```typescript
-function capitalizeString(input: string): string {
-  return input.toUpperCase();
+function capitalize(str: string): string {
+  return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
-// 사용 예시
-const originalString = "hello world";
-const capitalized = capitalizeString(originalString);
-console.log(capitalized);  // "HELLO WORLD"
+// 샘플 출력:
+console.log(capitalize('hello TypeScript!')); // 'Hello TypeScript!'
 ```
 
-## Deep Dive (심화 탐구)
-문자열을 대문자로 바꾸는 방법은 컴퓨터 과학 초기부터 있어왔습니다. ASCII 테이블은 대-소문자 간의 명확한 숫자 차이를 가지고 있기 때문에 간단한 연산으로 대소문자를 전환할 수 있습니다. 자바스크립트에서는 `toUpperCase()`라는 내장 메소드를 사용하여 이 처리를 손쉽게 할 수 있으며 TypeScript 역시 자바스크립트의 이 메소드를 그대로 사용합니다. 다양한 대체 방법이 존재하지만, `toUpperCase()`는 가장 널리 사용되고 표준화된 방법입니다. 구현 세부사항에서 한 가지 주의할 점은 유니코드 문자가 포함된 문자열에 대문자화를 적용할 때 일부 특수 문자는 예상치 못한 결과를 초래할 수 있다는 점입니다. 따라서, 다국어 혹은 특수 기호를 처리할 때는 추가적인 논리가 필요할 때가 있습니다.
+이 방법은 간단하며 `charAt()` 메소드를 사용하여 문자열의 첫 번째 문자에 접근하고 `toUpperCase()`로 대문자로 변환합니다. 그 다음 `slice(1)` 메소드로 문자열의 나머지 부분을 그대로 가져옵니다.
 
-## See Also (참고 자료)
-- [MDN toUpperCase() documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase)
-- [Unicode and JavaScript](https://flaviocopes.com/javascript-unicode/)
-- [ASCII Table Reference](https://www.asciitable.com/)
+**Lodash 라이브러리 사용하기:**
+
+이미 [Lodash](https://lodash.com/) 라이브러리를 사용 중인 프로젝트의 경우 더 적은 보일러플레이트 코드로 같은 결과를 달성할 수 있는 `_.capitalize` 함수를 활용할 수 있습니다.
+
+먼저, Lodash를 설치하세요:
+
+```bash
+npm install lodash
+```
+
+그 다음, TypeScript 파일에서 사용하세요:
+
+```typescript
+import * as _ from 'lodash';
+
+// 샘플 출력:
+console.log(_.capitalize('hello TypeScript!')); // 'Hello typescript!'
+```
+
+참고: Lodash의 `_.capitalize` 메소드는 문자열의 나머지 부분을 소문자로 변환하므로 항상 원하는 결과가 아닐 수 있습니다.
+
+**정규 표현식 사용하기:**
+
+정규 표현식을 사용하면 문자열의 첫 글자를 대문자화하는 간결한 방법을 제공할 수 있으며, 특히 문자열의 각 단어의 첫 글자를 대문자화해야 하는 경우 유용합니다.
+
+```typescript
+function capitalizeWords(str: string): string {
+  return str.replace(/\b\w/g, char => char.toUpperCase());
+}
+
+// 샘플 출력:
+console.log(capitalizeWords('hello typescript world!')); // 'Hello Typescript World!'
+```
+
+이 방법은 `replace()` 함수를 사용하여 단어 경계 뒤에 오는 영숫자 문자(`\b\w`)를 찾아 각각을 대문자화합니다. 특히 제목이나 헤딩에 유용합니다.

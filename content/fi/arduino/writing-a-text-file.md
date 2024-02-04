@@ -1,57 +1,67 @@
 ---
 title:                "Tekstitiedoston kirjoittaminen"
-date:                  2024-01-19
+date:                  2024-02-03T19:27:01.373528-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Tekstitiedoston kirjoittaminen"
-
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/arduino/writing-a-text-file.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-"Mikä & Miksi?"
-Tekstitiedoston kirjoittaminen tarkoittaa tiedon tallentamista tekstimuodossa laitteelle. Ohjelmoijat tekevät sen datan säilyttämiseen, lokien kirjaamiseen tai asetusten tallentamiseen.
+## Mikä & Miksi?
+Tekstitiedoston kirjoittaminen Arduinolla tarkoittaa datan tallentamista tiedostoon SD-kortilla tai vastaavalla tallennusmoduulilla, usein datan loggauksen tarpeisiin. Ohjelmoijat tekevät näin tallentaakseen sensorilukemia, tallentaakseen konfiguraatioita tai loggatakseen sovellustapahtumia ajan myötä, mikä on olennaista projekteille, jotka vaativat data-analyysia tai seurantaa.
 
-## How to: 
-"Kuinka:"
-```Arduino
+## Kuinka:
+Kirjoittaaksesi tekstitiedostoon SD-kortilla käyttäen Arduinoa, sinun täytyy ensin sisällyttää `SD.h` kirjasto, joka tarjoaa tarvittavat toiminnot vuorovaikutuksessa SD-korttien kanssa. Varmista, että Arduino-lautasi on yhdistetty SD-korttimoduuliin.
+
+```cpp
+#include <SPI.h>
 #include <SD.h>
 
-File tiedosto;
+File myFile;
 
 void setup() {
-  // Käynnistä sarjaliikenne
+  // Alusta sarjaviestintä 9600 bitillä sekunnissa:
   Serial.begin(9600);
-  // Oleta, että SD-kortti on liitettynä pin 4
+  
+  // Tarkista SD-kortin alustus
   if (!SD.begin(4)) {
-    Serial.println("SD-kortin alustus epäonnistui!");
+    Serial.println("Alustus epäonnistui!");
     return;
   }
-  // Luo ja avaa teksti.txt kirjoitusta varten
-  tiedosto = SD.open("teksti.txt", FILE_WRITE);
+  Serial.println("Alustus valmis.");
   
-  // Tarkista, voitiinko tiedosto avata
-  if (tiedosto) {
-    tiedosto.println("Hei Arduino!");
-    tiedosto.close(); // Sulje tiedosto
-    Serial.println("Kirjoitus onnistui.");
+  // Avaa tiedosto. Huomaa, että vain yksi tiedosto voi olla auki kerrallaan,
+  // joten sinun täytyy sulkea tämä ennen kuin voit avata toisen.
+  myFile = SD.open("test.txt", FILE_WRITE);
+  
+  // Jos tiedosto avautui kunnolla, kirjoita siihen:
+  if (myFile) {
+    Serial.print("Kirjoitetaan test.txt-tiedostoon...");
+    myFile.println("Testataan tekstitiedoston kirjoitusta.");
+    // Sulje tiedosto:
+    myFile.close();
+    Serial.println("valmis.");
   } else {
-    Serial.println("Tiedoston avaaminen epäonnistui.");
+    // Jos tiedostoa ei saatu auki, tulosta virheilmoitus:
+    Serial.println("Virhe avattaessa test.txt");
   }
 }
 
 void loop() {
-  // Tyhjä silmukka
+  // Mitään ei tapahdu setupin jälkeen
 }
 ```
 
-## Deep Dive
-"Sukellus syvyyksiin"
-Historiallisesti teksti- ja datatiedostot ovat olleet tärkeitä koneiden ja ohjelmien välisessä kommunikoinnissa. SD-kortille kirjoittamisen vaihtoehtoja ovat EEPROM tai etäpalvelimelle lähetys. Arduino käyttää FAT16/32-tiedostojärjestelmiä ja kirjoittamisen toteutus riippuu käytettävästä laitteistosta ja kirjastosta.
+### Esimerkkitulo:
+Kun ajat tämän koodin, Arduino IDE:n sarjamonitori näyttää:
+```
+Alustus valmis.
+Kirjoitetaan test.txt-tiedostoon...valmis.
+```
+Tarkistaaksesi, että data kirjoitettiin oikein, voit ottaa SD-kortin pois Arduinosta, laittaa sen tietokoneeseen ja avata `test.txt` tiedoston nähdäksesi viestin "Testataan tekstitiedoston kirjoitusta."
 
-## See Also
-"Katso myös"
-- Arduino SD-kirjaston opas: https://www.arduino.cc/en/Reference/SD
-- EEPROMin kirjoittaminen Arduinolla: https://www.arduino.cc/en/Tutorial/LibraryExamples/EEPROMWrite
-- FAT16/32-tiedostojärjestelmä: https://www.självklart.fi/fat16-32
+Projekteille, jotka vaativat kehittyneempiä tiedosto-operaatioita tai käsittelyä, harkitse lisäkirjastojen tutkimista tai räätälöityjen toimintojen kirjoittamista tiettyihin tarpeisiisi.

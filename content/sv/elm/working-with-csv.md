@@ -1,46 +1,67 @@
 ---
-title:                "Arbeta med csv"
-date:                  2024-01-19
-simple_title:         "Arbeta med csv"
-
+title:                "Arbeta med CSV"
+date:                  2024-02-03T19:19:31.003091-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Arbeta med CSV"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/elm/working-with-csv.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-CSV står för "Comma-Separated Values". Det är ett enkelt filformat som används för att lagra tabulär data, som i kalkylblad eller databaser. Programmerare använder CSV för att enkelt importera och exportera data från olika applikationer.
+## Vad & Varför?
 
-## How to:
-Elm har inget inbyggt bibliotek för CSV-hantering, så vi använder en extern paket, som `elm-csv`. Installera det med `elm install panthershark/elm-csv` och kolla på koden nedan:
+Att arbeta med CSV (Comma Separated Values) involverar tolkning och generering av filer som lagrar tabulär data i ett enkelt, klartextformat. Detta praktiseras ofta av programmerare för att möjliggöra enkel datautbyte mellan olika applikationer eller för att effektivt bearbeta stora datamängder på ett typsäkert sätt inom Elm.
 
-```Elm
-import Csv
+## Hur man gör:
 
-decodeCsv : String -> List (List String)
-decodeCsv data =
-    case Csv.decode data of
-        Ok rows ->
-            rows
+Elm har inte inbyggt stöd för tolkning eller generering av CSV; istället används ofta tredjepartspaket såsom `panosoft/elm-csv`. Nedanstående exempel lyfter fram grundläggande användning av detta bibliotek för tolkning och generering av CSV.
 
-        Err errorMessage ->
-            []
+### Tolka CSV
 
-sampleCsv : String
-sampleCsv =
-    "name,age\nAlice,30\nBob,25"
+Först behöver du lägga till CSV-paketet till ditt Elm-projekt:
 
--- Använd `decodeCsv` och skriv ut resultatet
-main =
-    decodeCsv sampleCsv |> toString |> text
+```bash
+elm install panosoft/elm-csv
 ```
 
-Output i Elm's `main` blir: `[["name", "age"], ["Alice", "30"], ["Bob", "25"]]`
+Sedan kan du tolka en CSV-sträng till en lista av poster. Ett enkelt exempel:
 
-## Deep Dive
-CSV skapades på 1970-talet och är fortfarande populärt på grund av sin enkelhet. Alternativ till CSV inkluderar JSON och XML, men de är inte lika lättlästa för människor. När man använder `elm-csv`, hanteras CSV-strängen genom att dela upp den i rader och sedan kolumner. Detaljer som att hantera specialtecken och radavslutningar sköts automatiskt.
+```elm
+import Csv
 
-## See Also
-- Elm officiell guide: [The Official Elm Guide](https://guide.elm-lang.org/)
-- CSV på Wikipedia: [Comma-Separated Values on Wikipedia](https://en.wikipedia.org/wiki/Comma-separated_values)
+csvData : String
+csvData =
+    "name,age\nJohn Doe,30\nJane Smith,25"
+
+parseResult : Result String (List (List String))
+parseResult =
+    Csv.parse csvData
+
+-- Exempel på utdata: Ok [["name","age"],["John Doe","30"],["Jane Smith","25"]]
+```
+
+### Generera CSV
+
+För att generera en CSV-sträng från Elm-data, använd funktionen `Csv.encode`:
+
+```elm
+import Csv
+
+records : List (List String)
+records =
+    [ ["name", "age"]
+    , ["John Doe", "30"]
+    , ["Jane Smith", "25"]
+    ]
+
+csvOutput : String
+csvOutput =
+    Csv.encode records
+
+-- Exempel på utdata: "name,age\nJohn Doe,30\nJane Smith,25\n"
+```
+
+Detta förenklade tillvägagångssätt gör det möjligt för dig att integrera CSV-funktionalitet inom dina Elm-applikationer, med fördelen av en typsäker miljö för datahantering och utbyte.

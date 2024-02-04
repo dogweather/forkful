@@ -1,52 +1,63 @@
 ---
 title:                "HTMLの解析"
-date:                  2024-01-20T15:34:14.448959-07:00
+date:                  2024-02-03T19:13:19.179348-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "HTMLの解析"
-
 tag:                  "HTML and the Web"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/typescript/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-# HTMLの解析って何？どうして？
+## 何となぜ？
 
-HTMLを解析するとは、HTMLドキュメントからデータを抜き出し、使いやすい形に変換するプロセスのこと。プログラマーは通常、Webスクレイピング、データ抽出、または自動化タスクのためにこれを行います。
+HTMLを解析するとは、HTMLコードを細かく調べて情報を探し、抽出または操作することを意味します。プログラマーは、データをスクレイピングしたり、ブラウザを自動操作したりするためにこれを行います。
 
-# 実装方法
+## 方法：
 
-```TypeScript
-// npmでnode-html-parserをインストール
-import { parse } from 'node-html-parser';
+始めるには、`node-html-parser`のようなライブラリをインストールします。こちらがターミナルコマンドです：
 
-// サンプルHTMLコード
-const html = `<ul id="fruits">
-  <li class="apple">Apple</li>
-  <li class="orange">Orange</li>
-  <li class="pear">Pear</li>
-</ul>`;
-
-// HTMLを解析
-const root = parse(html);
-
-// 要素を取得
-const fruits = root.querySelectorAll('li');
-fruits.forEach(fruit => {
-  console.log(fruit.textContent);
-});
-
-// 出力:
-// Apple
-// Orange
-// Pear
+```bash
+npm install node-html-parser
 ```
 
-# 詳細解説
+それでは、TypeScriptで基本的なHTMLを解析してみましょう：
 
-HTML解析は、90年代初頭のウェブの浮上以来、開発者が取り組んでいます。初期は文字列操作や正規表現が多用されましたが、ツールの進化により、DOMベースの解析が主流になりました。解析の代わりに、JSONやXMLのような構造化されたデータフォーマットが使われることもあります。実装面では、速度や正確性、どれほどのHTML標準に準拠しているかが重要です。`node-html-parser`は、これらの条件を満たし、Node.js環境での使用に適した選択肢です。
+```typescript
+import { parse } from 'node-html-parser';
 
-# 参考リンク
+const html = `<ul class="fruits">
+                <li>Apple</li>
+                <li>Banana</li>
+              </ul>`;
 
-- Node-html-parserのGitHubページ: [https://github.com/taoqf/node-html-parser](https://github.com/taoqf/node-html-parser)
-- HTMLパースに関するMozillaのドキュメント: [https://developer.mozilla.org/en-US/docs/Web/API/HTML_DOM_API](https://developer.mozilla.org/en-US/docs/Web/API/HTML_DOM_API)
+const root = parse(html);
+console.log(root.querySelector('.fruits').textContent);  // "Apple Banana"
+```
+
+そして、バナナだけを取得したい場合は：
+
+```typescript
+const bananas = root.querySelectorAll('li')[1].textContent;
+console.log(bananas);  // "Banana"
+```
+
+## 深掘り
+
+HTMLの解析は新しいものではありません。それはウェブの初期の日々からありました。最初は開発者が正規表現を使用していたかもしれませんが、それはすぐに混乱しました。DOMパーサーの出現：安定していますが、ブラウザに縛られています。
+
+`node-html-parser`のようなライブラリは苦痛を抽象化します。これらは、jQueryで行うようにHTMLをクエリすることを可能にしますが、Node.jsでサーバーサイドで行います。それは速く、不適切なHTMLに対して寛容で、DOMに優しいです。
+
+`jsdom`もあります。これは完全なブラウザ環境をシミュレートします。それはより重いですが、より徹底的で、操作と相互作用のための完全なドキュメントオブジェクトモデル（DOM）を作成します。
+
+Cheerioを忘れてはなりません。それは、速度と小さなフットプリントとjQueryのような構文を融合させ、二つの間に幸せに位置しています。
+
+## 参照
+
+もっと知りたい場合は、これらに飛び込んでみてください：
+- [DOM Parsing and Serialization W3C Specification](https://www.w3.org/TR/DOM-Parsing/)
+- [node-html-parser on GitHub](https://github.com/taoqf/node-html-parser)
+- [jsdom GitHubリポジトリ](https://github.com/jsdom/jsdom)
+- [Cheerioウェブサイト](https://cheerio.js.org/)

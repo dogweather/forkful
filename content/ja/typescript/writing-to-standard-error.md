@@ -1,41 +1,64 @@
 ---
 title:                "標準エラーへの書き込み"
-date:                  2024-01-19
+date:                  2024-02-03T19:34:55.021319-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "標準エラーへの書き込み"
-
 tag:                  "Files and I/O"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/typescript/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (何となぜ？)
+## 何となぜ？
+TypeScriptでは、標準エラー（stderr）に書き込むことは、エラーメッセージやログを環境のエラー出力ストリーム（例えば、node.jsやWebブラウザのコンソール）に直接送信するプロセスです。これは、通常プログラムデータに使用される標準出力（stdout）と干渉せずに、問題の診断を確実に行うために不可欠です。これにより、エラー処理とロギングが効率的かつ一貫して管理されます。
 
-標準エラーへの書き込みは、プログラムのエラーメッセージや診断を出力する方式です。これを行う理由は、エラー情報を標準出力（ログやユーザーへの通常の出力）から分離して、問題の解析やデバッグを容易にするためです。
-
-## How to: (方法)
+## 方法：
+TypeScriptはJavaScriptのスーパーセットであるため、stderrへの書き込みには基盤となるJSのランタイム環境（Node.jsなど）に依存しています。これが直接行う方法です：
 
 ```typescript
-// 標準エラーにメッセージを書き込むシンプルな方法
-console.error('エラーが発生しました。');
-
-// 標準エラーを直接使うより洗練された方法
-process.stderr.write('詳細なエラー情報。\n');
+console.error("これはエラーメッセージです。");
 ```
 
-サンプル出力（コンソール）：
-
+stderrへのサンプル出力：
 ```
-エラーが発生しました。
-詳細なエラー情報。
+これはエラーメッセージです。
 ```
 
-## Deep Dive (深い潜水)
+Node.js環境では、より低レベルの書き込みに`process.stderr.write()`メソッドも使用できます：
 
-標準エラーはUNIX時代から存在し、プログラムとユーザ間でエラーメッセージを分ける伝統的な方法です。`console.error`は簡単で直感的な方法ですが、`process.stderr.write`はNode.jsに特有な、より直接的な書き込み方法です。また、ストリームを使って非同期に書き込みを行うこともできます。標準出力とは異なり、バッファリングされないためエラー情報が即座にユーザーに届けられます。
+```typescript
+process.stderr.write("低レベルのエラーメッセージ。\n");
+```
 
-## See Also (関連情報)
+stderrへのサンプル出力：
+```
+低レベルのエラーメッセージ。
+```
 
-- [Node.js公式ドキュメント](https://nodejs.org/api/process.html#process_process_stderr)
-- [Console API リファレンス](https://developer.mozilla.org/ja/docs/Web/API/console)
+より構造化されたエラーロギングには、`winston`や`pino`などの人気のサードパーティライブラリを使用することがあります。ここでは、`winston`を使ってエラーをログする方法を紹介します：
+
+まず、`winston`をインストールします：
+
+```bash
+npm install winston
+```
+
+次に、TypeScriptファイルでそれを使用します：
+
+```typescript
+import * as winston from 'winston';
+
+const logger = winston.createLogger({
+  levels: winston.config.syslog.levels,
+  transports: [
+    new winston.transports.Console(),
+    new winston.transports.File({ filename: 'error.log', level: 'error' })
+  ],
+});
+
+logger.error('winstonを使用してログされたエラー。');
+```
+
+これにより、エラーはコンソールと`error.log`という名前のファイルの両方に書き込まれます。ファイルに書き込む場合、ディスクスペースの使用に関連する問題を防ぐために、ファイルの権限とロールオーバーを管理することが重要です。

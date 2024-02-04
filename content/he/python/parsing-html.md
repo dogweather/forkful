@@ -1,76 +1,63 @@
 ---
-title:                "ניתוח HTML"
-date:                  2024-01-20T15:33:37.391683-07:00
-simple_title:         "ניתוח HTML"
-
+title:                "פיענוח HTML"
+date:                  2024-02-03T19:13:11.117360-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "פיענוח HTML"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/python/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## מה ולמה?
-פיענוח HTML הוא תהליך שבו אנו ממירים מסמך HTML למבנה נתונים שאפשר לנהל ולעבד בשפת תכנות, כמו Python. אנחנו עושים זאת כדי לחלץ מידע, לפרוס ממשקים אינטרנטיים, ולאוטומטיזציה של קטינות ובדיקות אתרי אינטרנט.
+ניתוח HTML מערב ניתוח קוד ה-HTML של דף אינטרנט כדי לחלץ מידע או אלמנטים מסוימים, משימה נפוצה עבור scraping באינטרנט, כריית נתונים, או אוטומציה של אינטראקציות עם אתרי אינטרנט. תכניתנים עושים זאת כדי להתממשק תכנותית עם אתרי אינטרנט או לחלץ מהם נתונים, לאוטמט פעולות או לבדוק אפליקציות רשת.
 
 ## איך לעשות:
-על מנת לפרסר HTML בפייתון, אחת הספריות הפופולריות היא BeautifulSoup. קודם כל, ניצור סביבת עבודה וירטואלית ונתקין אותה:
+פייתון מספקת ספריות חזקות כמו BeautifulSoup ו-requests עבור scraping ברשת וניתוח HTML. להתחיל, תצטרך להתקין את הספריות הללו אם עדיין לא עשית זאת:
 
-```Python
-python -m venv venv
-source venv/bin/activate
-pip install beautifulsoup4
+```bash
+pip install beautifulsoup4 requests
 ```
 
-דוגמא לקוד פרסור:
+הנה דוגמה בסיסית שמשתמשת ב-`requests` כדי לצלוף את תוכן ה-HTML של דף אינטרנט וב-`BeautifulSoup` כדי לנתח אותו:
 
-```Python
+```python
+import requests
 from bs4 import BeautifulSoup
 
-html_doc = """
-<html><head><title>The Dormouse's story</title></head>
-<body>
-<p class="title"><b>The Dormouse's story</b></p>
+# צליפת תוכן של דף אינטרנט
+URL = 'https://example.com'
+page = requests.get(URL)
 
-<p class="story">Once upon a time there were three little sisters; and their names were
-<a href="http://example.com/elsie" class="sister" id="link1">Elsie</a>,
-<a href="http://example.com/lacie" class="sister" id="link2">Lacie</a> and
-<a href="http://example.com/tillie" class="sister" id="link3">Tillie</a>;
-and they lived at the bottom of a well.</p>
+# ניתוח תוכן ה-HTML
+soup = BeautifulSoup(page.content, 'html.parser')
 
-<p class="story">...</p>
-"""
+# דוגמה לחילוץ כותרת הדף
+title = soup.find('title').text
+print(f'כותרת הדף: {title}')
+```
 
-# האובייקט soup מייצג את הדף
-soup = BeautifulSoup(html_doc, 'html.parser')
+**פלט לדוגמה**:
+```
+כותרת הדף: Example Domain
+```
 
-# קבלת טקסט הכותרת
-title_text = soup.title.string
-print(f"The title of the story is: {title_text}")
+לשאלות מורכבות יותר, כמו לחלץ את כל הקישורים מדף אינטרנט, ניתן להשתמש בשיטות שונות של BeautifulSoup לניווט וחיפוש בעץ הניתוח:
 
-# חיפוש כל הקישורים בדף (tags של <a>)
+```python
+# חילוץ כל הקישורים בתגי <a>
 links = soup.find_all('a')
+
 for link in links:
-    print(link.get('href'))
+    href = link.get('href')
+    print(href)
 ```
 
-פלט הדוגמה:
-
+**פלט לדוגמה**:
 ```
-The title of the story is: The Dormouse's story
-http://example.com/elsie
-http://example.com/lacie
-http://example.com/tillie
+https://www.iana.org/domains/example
 ```
 
-## צלילה לעומק:
-פרסור HTML אינו חידוש, וכבר בראשית ימי האינטרנט היו כלים לכך. BeautifulSoup היא ספרייה שנכתבה ב-2004 והפכה לסטנדרט בפייתון לפרסור HTML ו-XML. יחד עם ספריות כמו lxml ו-html.parser, היא מאפשרת גישה נוחה וגמישה לניתוח מסמכים אלו.
-
-היתרון של BeautifulSoup הוא שהיא עמידה גם בפני HTML "שבור" – דפים שלא מתאימים בדיוק למפרט. זה מאפשר לה לעבוד גם על אתרים עם קוד לא מסודר או ישן.
-
-קיימים גם כלים אחרים כמו Scrapy, שהם יותר ממערכת גריפינג מלאה, אבל עבור פרויקטים קטנים ומטלות פשוטות - BeautifulSoup מספיקה בהרבה מקרים.
-
-## ראה גם:
-- [מדריך ל-BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
-- [מדריך רשמי לספריית lxml](https://lxml.de/)
-- [מסמך קידוד עברית בהיסטוריה של HTML5](https://www.w3.org/International/questions/qa-html-dir)
-- [Scrapy, פריימוורק לגריפינג](https://scrapy.org/)
+גמישותה של BeautifulSoup מאפשרת לך להתאים אישית את חיפושך לנתונים הדרושים בדיוק, מה שהופך את ניתוח HTML לכלי עוצמתי עבור תכניתנים העובדים עם תוכן רשת.

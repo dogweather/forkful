@@ -1,48 +1,95 @@
 ---
-title:                "Arbeid med CSV"
-date:                  2024-01-19
-simple_title:         "Arbeid med CSV"
-
+title:                "Arbeide med CSV"
+date:                  2024-02-03T19:21:07.117359-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Arbeide med CSV"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/python/working-with-csv.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-CSV-formatet brukes for å lagre og utveksle data. Programmerere jobber med det fordi det er enkelt, universelt og støttes av de fleste programmer og språk.
+Å jobbe med CSV (kommaseparerte verdier) innebærer lesing fra og skriving til CSV-filer, et vanlig format for lagring av tabulære data. Programmerere gjør dette for å enkelt utveksle og lagre data i et enkelt, tekstbasert format som er bredt støttet på tvers av forskjellige plattformer og språk.
 
-## Slik gjør du:
-Her er enkle eksempler på hvordan lese og skrive CSV-filer i Python.
+## Hvordan:
+Python tilbyr den innebygde `csv`-modulen for å håndtere CSV-filer, noe som gjør det enkelt å lese fra og skrive til dem. For mer robuste og komplekse datahåndteringer er tredjepartsbiblioteket `pandas` svært populært.
 
-### Lese CSV:
-```Python
+### Bruke `csv`-modulen
+
+#### Lese en CSV-fil
+```python
 import csv
 
-# Åpne filen og lese innholdet med csv.reader
-with open('eksempel.csv', mode='r', encoding='utf-8') as file:
-    reader = csv.reader(file)
-    for row in reader:
+with open('sample.csv', mode='r') as file:
+    csv_reader = csv.reader(file)
+    for row in csv_reader:
         print(row)
 ```
-
-### Skrive til CSV:
-```Python
-import csv
-
-# Data som skal skrives til CSV
-data = [['Navn', 'Alder', 'By'], ['Ola', 29, 'Oslo'], ['Kari', 35, 'Bergen']]
-
-# Åpne filen og skrive data med csv.writer
-with open('eksempel_output.csv', mode='w', encoding='utf-8', newline='') as file:
-    writer = csv.writer(file)
-    writer.writerows(data)
+*Antar at `sample.csv` inneholder:*
+```
+name,age,city
+John,22,New York
+Jane,28,Los Angeles
+```
+*Utdata:*
+```
+['name', 'age', 'city']
+['John', '22', 'New York']
+['Jane', '28', 'Los Angeles']
 ```
 
-## Dypdykk
-CSV står for Comma-Separated Values og har vært i bruk siden 1970-tallet. Alternativer til CSV inkluderer JSON og XML som også er populære dataformat. I Python håndterer `csv`-modulen parsing og skriving, men det finnes også tredjepartsbiblioteker som `pandas` som tilbyr mer avanserte funksjoner.
+#### Skrive til en CSV-fil
+```python
+import csv
 
-## Se Også
-- Python's offisielle dokumentasjon for CSV-modulen: https://docs.python.org/3/library/csv.html
-- Pandas-dokumentasjon for å jobbe med CSV: https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html
-- W3Schools Python CSV Reader Tutorial: https://www.w3schools.com/python/python_csv.asp
+rows = [['name', 'age', 'city'], ['Jack', '33', 'Chicago'], ['Emily', '41', 'Denver']]
+
+with open('output.csv', mode='w', newline='') as file:
+    writer = csv.writer(file)
+    writer.writerows(rows)
+```
+*Oppretter eller overskriver `output.csv` med:*
+```
+name,age,city
+Jack,33,Chicago
+Emily,41,Denver
+```
+
+### Bruke `pandas` for CSV
+`pandas` er et kraftig bibliotek for datahåndtering som forenkler arbeid med CSV-filer blant andre dataformater.
+
+#### Installere pandas
+```shell
+pip install pandas
+```
+
+#### Lese en CSV-fil med pandas
+```python
+import pandas as pd
+
+df = pd.read_csv('sample.csv')
+print(df)
+```
+*Utdata:*
+```
+    name  age         city
+0   John   22    New York
+1   Jane   28  Los Angeles
+```
+
+#### Skrive til en CSV-fil med pandas
+```python
+import pandas as pd
+
+df = pd.DataFrame({'name': ['Jack', 'Emily'], 'age': [33, 41], 'city': ['Chicago', 'Denver']})
+df.to_csv('output_pandas.csv', index=False)
+```
+*Oppretter eller overskriver `output_pandas.csv` med:*
+```
+name,age,city
+Jack,33,Chicago
+Emily,41,Denver
+```

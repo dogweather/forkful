@@ -1,68 +1,119 @@
 ---
 title:                "Escribiendo pruebas"
-date:                  2024-01-19
+date:                  2024-02-03T19:30:10.813394-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Escribiendo pruebas"
-
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/c-sharp/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Qué y Por Qué?
 
-Escribir tests significa crear código que verifica que otros códigos funcionan como deben. Programadores los usan para asegurarse de que sus aplicaciones son estables y para prevenir fallas futuras al modificar el código.
+Escribir pruebas en C# implica crear scripts automatizados para validar la funcionalidad de tu código, asegurando que se comporte como se espera. Los programadores lo hacen para detectar errores tempranamente, facilitar la refactorización del código y asegurar que los nuevos cambios no interrumpan las funciones existentes, aumentando así la calidad y fiabilidad del software.
 
 ## Cómo hacerlo:
 
-Para escribir pruebas en C#, se utiliza principalmente el framework NUnit. A continuación, un ejemplo de cómo implementar una prueba unitaria básica con NUnit:
+Los desarrolladores de C# usan principalmente los marcos de trabajo NUnit o xUnit para escribir pruebas debido a su flexibilidad y extenso conjunto de características. Aquí hay un ejemplo básico utilizando NUnit para probar una simple función de adición:
 
-```C#
+1. **Instala NUnit y NUnit3TestAdapter** a través del Administrador de Paquetes NuGet o la CLI de .NET:
+```powershell
+dotnet add package NUnit
+dotnet add package NUnit3TestAdapter
+```
+
+2. **Crea un proyecto de biblioteca de clases C#** si aún no lo has hecho.
+
+3. **Escribe una función simple** para probar. Por ejemplo, un método de adición en una clase llamada `Calculator`:
+```csharp
+public class Calculator
+{
+    public int Add(int a, int b)
+    {
+        return a + b;
+    }
+}
+```
+
+4. **Escribe una clase de prueba** usando NUnit:
+```csharp
 using NUnit.Framework;
 
-namespace Tests
+namespace CalculatorTests
 {
-    public class CalculosTest
+    [TestFixture]
+    public class CalculatorTests
     {
         [Test]
-        public void Suma_DeberiaRetornarSumaCorrecta()
+        public void Add_AddsTwoIntegers_ReturnsCorrectSum()
         {
-            // Arrange
-            var a = 5;
-            var b = 10;
-            var esperado = 15;
+            // Arrange (Preparar)
+            var calculator = new Calculator();
+            int expected = 5;
 
-            // Act
-            var resultado = Suma(a, b);
+            // Act (Actuar)
+            int actual = calculator.Add(2, 3);
 
-            // Assert
-            Assert.AreEqual(esperado, resultado);
-        }
-
-        private int Suma(int num1, int num2)
-        {
-            return num1 + num2;
+            // Assert (Afirmar)
+            Assert.AreEqual(expected, actual);
         }
     }
 }
 ```
 
-Y así se ve la salida cuando la prueba pasa exitosamente:
-
+5. **Ejecuta la prueba** usando el ejecutor de pruebas de tu IDE o la CLI de .NET:
+```powershell
+dotnet test
 ```
-Test Passed: Suma_DeberiaRetornarSumaCorrecta
+
+### Salida de Muestra:
+
+Asumiendo que tu prueba sea exitosa, deberías ver una salida similar a esta:
+```
+Test Run Successful.
+Total tests: 1
+     Passed: 1
+ Total time: 1.2345 Seconds
 ```
 
-## Deep Dive
+### Usando xUnit:
 
-Historia: Kent Beck creó el desarrollo impulsado por pruebas (TDD) en la década de 1990. TDD promueve escribir tests antes del código de producción.
+Si prefieres xUnit, la configuración es similar a NUnit. Así es como reescribirías el ejemplo de prueba para la clase `Calculator` usando xUnit:
 
-Alternativas: A parte de NUnit, existen otros frameworks como MSTest y xUnit en el mundo de .NET para pruebas unitarias.
+1. **Instala xUnit y xUnit.runner.visualstudio**:
+```powershell
+dotnet add package xUnit
+dotnet add package xUnit.runner.visualstudio
+```
 
-Detalles de Implementación: Al escribir tests, es importante mantenerlos aislados y enfocados. Utiliza mocks y stubs para simular comportamientos externos.
+2. **Escribe una clase de prueba usando xUnit**:
+```csharp
+using Xunit;
 
-## Ver también:
+namespace CalculatorTests
+{
+    public class CalculatorTests
+    {
+        [Fact]
+        public void Add_AddsTwoIntegers_ReturnsCorrectSum()
+        {
+            // Arrange (Preparar)
+            var calculator = new Calculator();
+            int expected = 5;
 
-- Documentación oficial de NUnit: https://nunit.org/
-- Tutorial de TDD en C#: https://docs.microsoft.com/en-us/learn/modules/test-driven-development-csharp/
-- Comparación entre frameworks de tests para .NET: https://dzone.com/articles/comparing-net-unit-testing-frameworks
+            // Act (Actuar)
+            int actual = calculator.Add(2, 3);
+
+            // Assert (Afirmar)
+            Assert.Equal(expected, actual);
+        }
+    }
+}
+```
+
+3. **Ejecuta la prueba usando la CLI de .NET** o el ejecutor de pruebas integrado en tu IDE.
+
+Tanto NUnit como xUnit ofrecen características poderosas para pruebas parametrizadas, operaciones de configuración/finalización, y organización de pruebas en categorías, haciéndolos herramientas indispensables en el conjunto de herramientas del programador C# para asegurar la calidad y funcionalidad del código.

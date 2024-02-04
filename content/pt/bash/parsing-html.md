@@ -1,56 +1,67 @@
 ---
-title:                "Análise de HTML"
-date:                  2024-01-20T15:30:03.409061-07:00
-simple_title:         "Análise de HTML"
-
+title:                "Analisando HTML"
+date:                  2024-02-03T19:11:29.093603-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Analisando HTML"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/bash/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## O Que É & Por Que?
-Analisar HTML é o ato de processar um documento HTML para extrair informações específicas dele, como conteúdo textual, links, imagens e estrutura. Os programadores fazem isso para automatizar a coleta de dados, testar websites ou para scraping de conteúdo web.
+## O Quê & Por Quê?
 
-## Como Fazer:
-Primeiro, um aviso: Bash não é ideal para parsing de HTML complexo, mas pode ser útil para tarefas simples. Para um parsing mais robusto, considere ferramentas como Python com Beautiful Soup ou um scraper dedicado. 
+Analisar HTML significa vasculhar a estrutura e o conteúdo de um arquivo HTML para extrair informações. Programadores fazem isso para acessar dados, manipular conteúdo ou raspar websites.
 
-Aqui está um exemplo usando `grep`, `cut` e `awk` para pegar os títulos de uma página HTML:
+## Como fazer:
 
-```Bash
-cat index.html | grep '<title>' | cut -d '>' -f2 | cut -d '<' -f1
+Bash não é a primeira opção para análise de HTML, mas pode ser feito com ferramentas como `grep`, `awk`, `sed`, ou utilitários externos como `lynx`. Para robustez, usaremos `xmllint` do pacote `libxml2`.
+
+```bash
+# Instalar xmllint se necessário
+sudo apt-get install libxml2-utils
+
+# Exemplo de HTML
+cat > sample.html <<EOF
+<html>
+<head>
+  <title>Página de Exemplo</title>
+</head>
+<body>
+  <h1>Olá, Bash!</h1>
+  <p id="myPara">Bash pode me ler.</p>
+</body>
+</html>
+EOF
+
+# Analisar o Título
+title=$(xmllint --html --xpath '//title/text()' sample.html 2>/dev/null)
+echo "O título é: $title"
+
+# Extrair Parágrafo por ID
+para=$(xmllint --html --xpath '//*[@id="myPara"]/text()' sample.html 2>/dev/null)
+echo "O conteúdo do parágrafo é: $para"
 ```
 
-Digamos que `index.html` tenha a seguinte linha:
-
-```html
-<title>Exemplo de Título</title>
+Saída:
+```
+O título é: Página de Exemplo
+O conteúdo do parágrafo é: Bash pode me ler.
 ```
 
-Saída esperada:
+## Aprofundando
 
-```
-Exemplo de Título
-```
+No passado, programadores usavam ferramentas baseadas em regex como `grep` para escanear HTML, mas isso era complicado. HTML não é regular - é contextual. Ferramentas tradicionais não percebem isso e podem ser propensas a erros.
 
-Se precisarmos de mais precisão, podemos usar o `xmlstarlet`:
+Alternativas? Muitas. Python com Beautiful Soup, PHP com DOMDocument, JavaScript com analisadores DOM - linguagens com bibliotecas projetadas para entender a estrutura do HTML.
 
-```Bash
-xmlstarlet sel -t -v "//title" -n index.html
-```
+Usar `xmllint` em scripts bash é sólido para tarefas simples. Ele entende XML, e por extensão, XHTML. HTML regular pode ser imprevisível, no entanto. Ele nem sempre segue as regras estritas do XML. `xmllint` força o HTML a se adequar a um modelo XML o que funciona bem para HTML bem formado, mas pode tropeçar em coisas bagunçadas.
 
-Isso vai extrair corretamente o título, mesmo em documentos HTML mais complexos.
+## Veja Também
 
-## Aprofundando:
-O parsing de HTML com Bash é como usar uma colher para cavar um buraco; não é a ferramenta para o trabalho, mas em um aperto, pode funcionar. Historicamente, os programadores tendem a utilizar regex via `sed` ou `grep` para extrair dados de HTML, mas essas soluções têm suas limitações e não são recomendadas para um HTML irregular - o famoso problema "You can't parse [X]HTML with regex."
-
-À medida que avançamos, linguagens como Python com bibliotecas especializadas em parsing de HTML/XML, como Beautiful Soup ou Lxml, tornaram-se a norma devido à sua flexibilidade e robustez.
-
-Implementar parsing de maneira correta e eficiente exige compreender a árvore DOM do HTML e fazer consultas especializadas para extrair os dados necessários, algo que ferramentas nativas do Bash não foram projetadas para fazer com eficiência.
-
-## Veja Também:
-- Documentação oficial do `xmlstarlet`: http://xmlstarlet.sourceforge.net/
-- Tutorial Beautiful Soup para Python: https://www.crummy.com/software/BeautifulSoup/bs4/doc/
-- W3C sobre DOM: https://www.w3.org/DOM/
-- Guia sobre scraping com Bash: https://bash.cyberciti.biz/web-scraping/
-- Por que não usar regex para parsing de HTML: https://stackoverflow.com/a/1732454/2557030
+- [W3Schools - HTML DOM Parser](https://www.w3schools.com/xml/dom_intro.asp): Desmistifica o DOM HTML.
+- [MDN Web Docs - Parsing and serializing XML](https://developer.mozilla.org/pt-BR/docs/Web/Guide/Parsing_and_serializing_XML): Para princípios de análise de XML que se aplicam ao XHTML.
+- [Documentação Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/): Uma biblioteca Python para análise de HTML.
+- [Documentação libxml2](http://xmlsoft.org/): Detalhes sobre `xmllint` e ferramentas XML relacionadas.

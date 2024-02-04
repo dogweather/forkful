@@ -1,43 +1,90 @@
 ---
 title:                "Rédaction de tests"
-date:                  2024-01-19
+date:                  2024-02-03T19:32:13.162701-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Rédaction de tests"
-
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/typescript/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Quoi et Pourquoi ?
-Écrire des tests, c'est comme mettre un filet de sécurité sur votre code pour chasser les bugs. Les développeurs le font pour dormir tranquilles, en sachant que leur code fonctionne comme prévu et que les nouvelles modifications ne cassent rien.
+## Quoi & Pourquoi ?
+Écrire des tests en TypeScript implique de créer des scripts automatisés pour vérifier la fonctionnalité et la correction de votre code. Les programmeurs le font pour assurer la fiabilité, attraper rapidement les bugs, et faciliter une croissance de code maintenable, étant donné que le typage statique de TypeScript ajoute un niveau de prévisibilité aux tests JavaScript.
 
 ## Comment faire :
+TypeScript fonctionne harmonieusement avec la plupart des cadres de test JavaScript. À titre de démonstration, nous utiliserons Jest, un cadre de test populaire, en raison de sa configuration zéro pour les projets TypeScript.
 
-Voici un test unitaire simple avec Jest, un framework populaire.
+Premièrement, assurez-vous d'avoir Jest et les types TypeScript nécessaires installés :
 
-```TypeScript
-import { somme } from './math';
+```bash
+npm install --save-dev jest typescript ts-jest @types/jest
+```
 
-test('additionne 2 + 2 pour obtenir 4', () => {
-  expect(somme(2, 2)).toBe(4);
+Ensuite, configurez Jest pour travailler avec TypeScript en modifiant le `jest.config.js` ou en en créant un nouveau :
+
+```javascript
+module.exports = {
+  preset: 'ts-jest',
+  testEnvironment: 'node',
+};
+```
+
+Maintenant, écrivons une fonction simple et un test pour elle. Considérez un fichier `sum.ts` avec la fonction suivante :
+
+```typescript
+// sum.ts
+export function sum(a: number, b: number): number {
+  return a + b;
+}
+```
+
+Créez un fichier de test nommé `sum.test.ts` :
+
+```typescript
+// sum.test.ts
+import { sum } from './sum';
+
+test('additionne 1 + 2 pour égaler 3', () => {
+  expect(sum(1, 2)).toBe(3);
 });
 ```
 
-Si tout va bien, le résultat affiché sera :
+Exécutez vos tests avec :
 
+```bash
+npx jest
 ```
-PASS  ./math.test.ts
-✓ additionne 2 + 2 pour obtenir 4 (5ms)
+
+Un exemple de sortie indiquant un test réussi devrait ressembler à ceci :
+
+```plaintext
+ PASS  ./sum.test.ts
+  ✓ additionne 1 + 2 pour égaler 3 (2 ms)
 ```
 
-## Plongée Profonde
+Pour du code asynchrone, Jest s'adapte avec `async/await`. Supposons que vous ayez une fonction asynchrone `fetchData` :
 
-Historiquement, les tests sont anciens comme le code. Mais ce n'est que récemment que les frameworks de tests modernes ont simplifié la tâche. Alternatives ? Il y en a plein : Mocha, Jasmine, et Ava, pour n'en nommer que quelques-uns. Pour l'implémentation ? On écrit souvent des tests en employant le TDD (Test-Driven Development) – où les tests guident le design du code.
+```typescript
+// asyncFunctions.ts
+export async function fetchData(): Promise<string> {
+  return "data";
+}
+```
 
-## Voir Aussi
+Votre test utilisant des fonctions asynchrones :
 
-* Jest: [https://jestjs.io/fr/](https://jestjs.io/fr/)
-* Jasmine: [https://jasmine.github.io/](https://jasmine.github.io/)
-* Mocha: [https://mochajs.org/](https://mochajs.org/)
-* Guide TDD: [https://www.agilealliance.org/glossary/tdd/](https://www.agilealliance.org/glossary/tdd/)
+```typescript
+// asyncFunctions.test.ts
+import { fetchData } from './asyncFunctions';
+
+test('récupère les données avec succès', async () => {
+  expect(await fetchData()).toBe('data');
+});
+```
+
+Lors de l'exécution de vos tests, Jest attendra que la promesse soit résolue, testant correctement les opérations asynchrones.
+
+Rappelez-vous, un test efficace inclut l'écriture de plusieurs tests pour différents scénarios, y compris les cas limites, pour s'assurer que votre code TypeScript se comporte comme prévu.

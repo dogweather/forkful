@@ -1,46 +1,48 @@
 ---
 title:                "解析HTML"
-date:                  2024-01-20T15:33:28.286296-07:00
+date:                  2024-02-03T19:13:04.997869-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "解析HTML"
-
 tag:                  "HTML and the Web"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/ruby/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? 什么是HTML解析以及为什么要进行解析?
-解析HTML即是指把网页标记语言（HTML）转换为程序能理解的结构。程序员这么做是为了能从网页中提取数据，进行自动化处理或内容分析。
+## 什么 & 为什么？
+解析HTML意味着拆分一大块HTML代码以掌握其结构和内容。程序员这样做是为了提取数据、操纵内容或在格式和系统之间迁移信息。
 
-## How to: 如何进行HTML解析
-Ruby中进行HTML解析最受欢迎的库之一是Nokogiri。下面是一个简单的Nokogiri使用示例：
+## 如何操作：
+要在Ruby中解析HTML，请用`gem install nokogiri`安装'Nokogiri'宝石。Nokogiri就像是用于在Ruby中处理HTML和XML的瑞士军刀。这里有一个快速示例：
 
-```Ruby
+```ruby
 require 'nokogiri'
 require 'open-uri'
 
-# 打开网页并读取内容
-html_content = URI.open('https://www.example.com').read
+# 从网站加载HTML内容
+html_content = URI.open('http://example.com').read
 
-# 用Nokogiri解析HTML
+# 解析HTML
 doc = Nokogiri::HTML(html_content)
 
-# 查找所有的标题（h1）
-doc.css('h1').each do |h1|
-  puts h1.content
-end
+# 提取标题
+title = doc.xpath('//title').text
+puts "该页面的标题是：#{title}"
 ```
 
-以上代码会输出网页上所有`<h1>`标签的内容。
+这会输出类似于：`该页面的标题是：Example Domain`的东西。
 
-## Deep Dive: 深入了解
-- **历史背景**: HTML解析在Web的早期并不受重视，但随着互联网的快速发展，它变得越来越关键，尤其是在数据挖掘和网络爬虫的领域。
-- **替代方案**: 除了Nokogiri，还有其他解析库如Oga, Hpricot（已不再维护）等。每个库都有其优缺点，选择哪个取决于具体需求。
-- **实现细节**: Nokogiri底层使用了libxml2库，效率极高。它支持CSS选择器和XPATH查询，可以灵活地定位和提取HTML文档中的信息。
+## 深入探讨
+回到早期的Ruby日子，解析HTML的选项有限。REXML内置但缓慢。然后出现了Hpricot，但它逐渐淡出。Nokogiri在2008年面世，将Hpricot的易用性与libxml的速度和力量结合起来，libxml是一个经过验证的XML工具包。
 
-## See Also: 参考链接
-- [Nokogiri官网](https://nokogiri.org)
-- [W3Schools上关于HTML教程](https://www.w3schools.com/html/)
+在解析世界中，总是有替代品。有些人宣誓依靠内置的'rexml'库或'oga'，另一个用于Ruby的XML/HTML解析器。但是Nokogiri因其健壮性和速度保持着人们的喜爱，更不用说其庞大的功能数组了。
 
-通过参考以上链接，你可以更深入地了解HTML解析和Nokogiri库的使用。
+在底层，Nokogiri将HTML转换为文档对象模型（DOM）——一种树状结构。这让导航和操纵元素变得简单。使用XPath和CSS选择器，您可以精确地指向您需要的任何信息。
+
+## 另请参阅
+- Nokogiri宝石：[https://nokogiri.org/](https://nokogiri.org/)
+- Ruby的rexml文档：[https://ruby-doc.org/stdlib-2.6.3/libdoc/rexml/rdoc/REXML/Document.html](https://ruby-doc.org/stdlib-2.6.3/libdoc/rexml/rdoc/REXML/Document.html)
+- 替代解析器'oga'：[https://github.com/YorickPeterse/oga](https://github.com/YorickPeterse/oga)
+- 了解XPath：[https://www.w3schools.com/xml/xpath_intro.asp](https://www.w3schools.com/xml/xpath_intro.asp)

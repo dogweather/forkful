@@ -1,36 +1,55 @@
 ---
-title:                "Kirjoittaminen vakiovirheeseen"
-date:                  2024-01-19
-simple_title:         "Kirjoittaminen vakiovirheeseen"
-
+title:                "Kirjoittaminen standardivirheeseen"
+date:                  2024-02-03T19:33:09.529952-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Kirjoittaminen standardivirheeseen"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/elm/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Mikä ja Miksi?
-Standardivirheeseen kirjoittaminen tarkoittaa virheviestien lähettämistä erilliseen virhevirtsaan, joka on erillään päävirrasta. Ohjelmoijat käyttävät tätä erottelemaan normaalin tulosteen ja virheet, jotta virheitä voi käsitellä ja lokittaa tehokkaammin.
+## Mitä & Miksi?
 
-## How to:
-Elmissä ei voi suoraan kirjoittaa standardivirheeseen, mutta voit logata virheitä `Debug.log` avulla. Esimerkiksi:
+Standardivirheeseen (stderr) kirjoittaminen tarkoittaa virheviestien ja diagnostiikkatietojen ohjaamista erilleen pääohjelman tulosteesta, joka menee vakiotulostukseen (stdout). Ohjelmoijat tekevät näin virheenkäsittelyn ja lokitiedon hallinnan helpottamiseksi, erityisesti ympäristöissä, joissa tulosteen erottaminen on kriittistä vianmäärityksen ja seurannan kannalta.
 
-```Elm
-import Html
+## Kuinka:
+
+Elm on ensisijaisesti suunnattu web-kehitykseen, jossa suoraan stderriin kirjoittamisen käsite ei päde samalla tavalla kuin perinteisissä komentorivi-ympäristöissä. Kuitenkin, Elm-ohjelmille, jotka toimivat Node.js:ssä tai vastaavissa ympäristöissä, interop JavaScriptin kanssa käyttäen portteja on keskeinen lähestymistapa saavuttaa samanlainen toiminnallisuus. Tässä on, miten saat sen pystytettyä:
+
+Elm-koodi (`Main.elm`):
+```elm
+port module Main exposing (main)
+
+import Browser
+
+port errorOut : String -> Cmd msg
+
+-- Esimerkkifunktio, joka lähettää virheviestin JS:ään
+generateError : String -> Cmd msg
+generateError message =
+    errorOut message
 
 main =
-    let
-        _ = Debug.log "Error" "Jotain meni pieleen"
-    in
-    Html.text "Katso konsolia virheen tiimoilta!"
+    generateError "Tämä on virheviesti stderriin"
 ```
 
-Luo yllä oleva funktio ja avaa ohjelmasi konsoli nähdäksesi tulosteen.
+JavaScript-Interop (`index.js`):
+```javascript
+const { Elm } = require('./Main.elm');
 
-## Deep Dive
-Elm on suunniteltu niin, että sivuvaikutukset, kuten tiedoston käsittely tai konsoliin kirjoittaminen, hoidetaan erillisten komentojen kautta. Tavallisesti, kielet kuten C tai Python tukevat standardivirheeseen kirjoittamista suoraan, mutta Elmissä sivuvaikutuksia hallitaan tarkemmin. Tästä johtuen, suora standardivirheeseen kirjoittaminen ei ole idiomaattista Elm-koodia, ja kehittäjät käyttävät `Debug.log` virheiden loggaamiseen kehitysvaiheessa. Tuotantokoodiin tätä ei yleensä jätetä.
+var app = Elm.Main.init();
 
-## See Also
-- Elm virallinen dokumentaatio: [https://guide.elm-lang.org/](https://guide.elm-lang.org/)
-- `Debug.log` käyttö: [https://package.elm-lang.org/packages/elm/core/latest/Debug#log](https://package.elm-lang.org/packages/elm/core/latest/Debug#log)
-- Hyvät käytännöt Elm-koodaukseen: [https://elm-lang.org/docs/style-guide](https://elm-lang.org/docs/style-guide)
+app.ports.errorOut.subscribe((message) => {
+  console.error(message);
+});
+```
+
+Tämä Elm-koodi määrittelee portin `errorOut`, joka mahdollistaa viestien lähettämisen Elmistä JavaScriptiin. Sitten JavaScript-koodissa kuuntelemme viestejä, jotka on lähetetty tämän portin kautta, ja ohjaamme ne stderriin käyttämällä `console.error()`. Tällä tavalla voit tehokkaasti kirjoittaa stderriin ympäristössä, joka tukee sitä, hyödyntämällä Elmin interop-ominaisuuksia JavaScriptin kanssa.
+
+Esimerkkituloste Node.js-terminaalissa (kun `index.js` ajetaan):
+```
+Tämä on virheviesti stderriin
+```

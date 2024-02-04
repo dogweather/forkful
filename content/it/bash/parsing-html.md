@@ -1,43 +1,67 @@
 ---
-title:                "Analisi dell'HTML"
-date:                  2024-01-20T15:29:49.817357-07:00
-simple_title:         "Analisi dell'HTML"
-
+title:                "Analisi del HTML"
+date:                  2024-02-03T19:11:35.633354-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Analisi del HTML"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/bash/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-L'analisi HTML consiste nel decomporre il codice HTML per estrarne dati specifici. I programmatori la eseguono per raccogliere informazioni dai siti web in modo automatico.
+## Cosa e Perché?
 
-## How to:
-Per analizzare HTML in Bash, possiamo utilizzare strumenti come `grep`, `sed`, o `awk`. Ma il migliore è `pup`, uno strumento specifico per l'HTML.
+L'analisi dell'HTML significa setacciare la struttura e il contenuto di un file HTML per estrarre informazioni. I programmatori lo fanno per accedere ai dati, manipolare il contenuto o fare scraping dei siti web.
 
-Installiamo `pup`:
-```Bash
-sudo apt-get install -y pup
+## Come fare:
+
+Bash non è la prima scelta per l'analisi dell'HTML, ma può essere fatto con strumenti come `grep`, `awk`, `sed`, o utilità esterne come `lynx`. Per una maggiore robustezza, useremo `xmllint` dal pacchetto `libxml2`.
+
+```bash
+# Installa xmllint se necessario
+sudo apt-get install libxml2-utils
+
+# Esempio di HTML
+cat > sample.html <<EOF
+<html>
+<head>
+  <title>Pagina di Esempio</title>
+</head>
+<body>
+  <h1>Ciao, Bash!</h1>
+  <p id="myPara">Bash può leggermi.</p>
+</body>
+</html>
+EOF
+
+# Analizza il Titolo
+title=$(xmllint --html --xpath '//title/text()' sample.html 2>/dev/null)
+echo "Il titolo è: $title"
+
+# Estrai Paragrafo per ID
+para=$(xmllint --html --xpath '//*[@id="myPara"]/text()' sample.html 2>/dev/null)
+echo "Il contenuto del paragrafo è: $para"
 ```
 
-Supponiamo di voler estrarre i titoli da una pagina HTML:
-```Bash
-curl -s https://esempio.com | pup 'h1 text{}'
+Output:
+```
+Il titolo è: Pagina di Esempio
+Il contenuto del paragrafo è: Bash può leggermi.
 ```
 
-Questo estrae tutti i testi all'interno degli elementi `<h1>`. Semplice, no?
+## Approfondimento
 
-## Deep Dive
-L'analisi di HTML con i classici strumenti di testo di Unix può essere ostica. Questi strumenti non comprendono la struttura HTML, così facilmente rompono con HTML complicato.
+Anticamente, i programmatori usavano strumenti basati su regex come `grep` per scansionare l'HTML, ma era un metodo goffo. L'HTML non è regolare, è contestuale. Gli strumenti tradizionali non tengono conto di questo e possono essere soggetti a errori.
 
-`pup` è venuto a colmare questa lacuna, offrendo un modo specifico per analizzare HTML in linea di comando. 
+Alternative? Numerose. Python con Beautiful Soup, PHP con DOMDocument, JavaScript con parser DOM—linguaggi con librerie progettate per comprendere la struttura dell'HTML.
 
-Altre alternative includono: `xmllint`, `html-xml-utils` e linguaggi come Python che hanno librerie come BeautifulSoup.
+Usare `xmllint` negli script bash è solido per compiti semplici. Capisce l'XML e, per estensione, l'XHTML. L'HTML regolare può essere imprevedibile, però. Non segue sempre le rigorose regole dell'XML. `xmllint` forza l'HTML in un modello XML il che funziona bene per l'HTML ben formato ma può inciampare sulle cose disordinate.
 
-Dettaglio implementativo: mentre `grep` cerca semplicemente pattern di testo, `pup` converte l'HTML in un documento DOM, che può poi navigare e manipolare.
+## Vedi Anche
 
-## See Also
-- Documentazione `pup`: https://github.com/ericchiang/pup
-- BeautifulSoup (Python): https://www.crummy.com/software/BeautifulSoup/
-- `xmllint`: http://xmlsoft.org/xmllint.html
-- `html-xml-utils`: https://www.w3.org/Tools/HTML-XML-utils/
+- [W3Schools - HTML DOM Parser](https://www.w3schools.com/xml/dom_intro.asp): Smistifica l'HTML DOM.
+- [MDN Web Docs - Analisi e serializzazione XML](https://developer.mozilla.org/en-US/docs/Web/Guide/Parsing_and_serializing_XML): Per i principi di analisi XML che si applicano a XHTML.
+- [Documentazione di Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/): Una libreria Python per l'analisi dell'HTML.
+- [Documentazione di libxml2](http://xmlsoft.org/): Dettagli su `xmllint` e strumenti XML correlati.

@@ -1,64 +1,53 @@
 ---
-title:                "Перетворення рядка на великі літери"
-date:                  2024-01-19
-simple_title:         "Перетворення рядка на великі літери"
-
+title:                "Зробити першу літеру рядка великою"
+date:                  2024-02-03T19:05:35.729941-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Зробити першу літеру рядка великою"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/arduino/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? / Що таке і навіщо?
+## Що і Чому?
+Приведення рядка до великих літер полягає в перетворенні першого символу кожного слова в рядку в верхній регістр, переконуючись, що решта залишаються в нижньому регістрі. Ця операція є поширеною при форматуванні даних та нормалізації введення користувача для підтримки консистенції та покращення читабельності.
 
-Capitalize a string means converting the first letter of each word to uppercase, while keeping the rest lowercase. Programmers use it to normalize data input, for readability, or to meet coding standards.
+## Як це зробити:
+Arduino, яке в основному відоме взаємодією з апаратним забезпеченням, також включає базові можливості маніпулювання рядками через свій об'єкт `String`. Однак, воно не має прямої функції `capitalize`, яка бачена в мовах вищого рівня. Таким чином, ми реалізуємо приведення до великої літери, перебираючи рядок і застосовуючи перетворення регістру.
 
-## How to: / Як це зробити:
+Ось простий приклад без використання сторонніх бібліотек:
 
-In Arduino, you handle strings with the `String` object. Here's how you can capitalize words:
-
-```Arduino
-String capitalize(String input) {
-  String output = "";
-  bool capitalizeNext = true;
-
-  for (int i = 0; i < input.length(); i++) {
-    if (capitalizeNext && isLowerCase(input[i])) {
-      output += (char)(input[i] - 32); // convert to uppercase
-    } else {
-      output += input[i];
-    }
-    capitalizeNext = isspace(input[i]); // check for space
+```cpp
+String capitalizeString(String input) {
+  if (input.length() == 0) {
+    return ""; // Повертаємо порожній рядок, якщо вхідний рядок порожній
   }
-  return output;
+  input.toLowerCase(); // Спочатку перетворюємо весь рядок в нижній регістр
+  input.setCharAt(0, input.charAt(0) - 32); // Приводимо перший символ до великої літери
+  
+  // Приводимо до великої літери символи, які йдуть після пробілу
+  for (int i = 1; i < input.length(); i++) {
+    if (input.charAt(i - 1) == ' ') {
+      input.setCharAt(i, input.charAt(i) - 32);
+    }
+  }
+  return input;
 }
 
 void setup() {
   Serial.begin(9600);
-  String myString = "hello world"; // String to capitalize
-  Serial.println(capitalize(myString));
+  String testStr = "hello arduino world";
+  String capitalizedStr = capitalizeString(testStr);
+  Serial.println(capitalizedStr); // Вивід: "Hello Arduino World"
 }
 
 void loop() {
-  // Nothing to do here
+  // Пустий цикл
 }
 ```
 
-Sample output:
-```
-Hello World
-```
+Цей фрагмент коду визначає функцію `capitalizeString`, яка спочатку перетворює весь рядок в нижній регістр, щоб стандартизувати його випадок. Потім вона приводить до великої літери перший символ та будь-який символ, що слідує за пробілом, ефективно приводячи кожне слово у вхідному рядку до великих літер. Зауважте, що ця первісна реалізація передбачає кодування символів ASCII і може потребувати коригувань для повної підтримки Unicode.
 
-## Deep Dive / Поглиблене занурення:
-
-Capitalizing strings isn't new. It's been around since the early days of computing. In C, you'd iterate over each character and use ASCII values to transform lowercase to uppercase. Arduino's `String` makes it a bit easier.
-
-Alternatives? Sure. You could use `charAt()` and `setCharAt()` to modify the string in place. But this is simpler and cleaner.
-
-As for implementation details, remember that ASCII value of 'a' is 97, and 'A' is 65. The difference is 32, which is why you see `input[i] - 32` in the code.
-
-## See Also / Дивіться також:
-
-- Arduino `String` reference: https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/
-- ASCII table for understanding character conversions: https://www.asciitable.com/
-- More on C/C++ strings for background knowledge: http://www.cplusplus.com/reference/string/string/
+Наразі, не існує широко прийнятих сторонніх бібліотек, спеціально для маніпуляції рядками в екосистемі Arduino, головним чином через її акцент на взаємодії з апаратним забезпеченням та ефективності. Однак, наданий приклад є простим способом досягти приведення рядка до великих літер в програмному середовищі Arduino.

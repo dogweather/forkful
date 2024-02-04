@@ -1,57 +1,120 @@
 ---
-title:                "Arbeta med csv"
-date:                  2024-01-19
-simple_title:         "Arbeta med csv"
-
+title:                "Arbeta med CSV"
+date:                  2024-02-03T19:20:47.990254-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Arbeta med CSV"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/lua/working-with-csv.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-CSV står för "Comma-Separated Values" och används för att lagra data på ett tabelliknande, textbaserat format. Programmerare använder det för dess enkelhet att importera, exportera och bearbeta data mellan olika system och applikationer.
 
-## Steg för steg:
-För att läsa och skriva CSV-filer i Lua, kan vi använda den inbyggda `io`-biblioteket. Där kan vi enkelt iterera genom varje rad och dela upp raderna baserat på kommatecken.
+Att arbeta med CSV (Comma-Separated Values) filer innebär att tolka och generera textdata organiserad i rader och kolumner, där komman används för att separera enskilda värden. Programmerare engagerar sig ofta i denna process för att underlätta datautbyte mellan olika applikationer, databaser, eller för uppgifter avseende databearbetning och analys, på grund av CSV:s utbredda stöd och enkelhet.
 
-```Lua
--- Läs in en CSV-fil
-local function read_csv(filepath)
+## Hur man gör:
+
+I Lua kan arbete med CSV-filer närmas genom grundläggande fil-IO-operationer som språket tillhandahåller, utan behov av externa bibliotek för enkla uppgifter. För mer komplexa operationer, såsom hantering av specialfall (t.ex., komman inom värden), kan det vara fördelaktigt att använda tredjepartsbibliotek som `lua-csv`.
+
+### Läsa en CSV-fil
+Här är ett enkelt exempel på att läsa en CSV-fil rad för rad, dela varje rad i värden baserat på kommatecknet som separator.
+
+```lua
+function parseCSVLine(line)
     local result = {}
-    local file = io.open(filepath, "r")
-
-    for line in file:lines() do
-        table.insert(result, line:split(","))
+    local from = 1
+    local sep = ","
+    local field
+    while true do
+        local start, finish = string.find(line, sep, from)
+        if not start then
+            table.insert(result, string.sub(line, from))
+            break
+        end
+        field = string.sub(line, from, start - 1)
+        table.insert(result, field)
+        from = finish + 1
     end
-
-    file:close()
     return result
 end
 
--- Skriv ut till en CSV-fil
-local function write_csv(filepath, data)
-    local file = io.open(filepath, "w+")
-    
-    for _, row in ipairs(data) do
-        file:write(table.concat(row, ",") .. "\n")
+local file = io.open("example.csv", "r")
+for line in file:lines() do
+    local values = parseCSVLine(line)
+    for i, v in ipairs(values) do
+        print(i, v)
     end
+end
+file:close()
+```
 
-    file:close()
+**Exempelutskrift** (för en `example.csv` med innehållet "name,age\nJohn Doe,30\nJane Doe,32"):
+```
+1	name
+2	age
+1	John Doe
+2	30
+1	Jane Doe
+2	32
+```
+
+### Skriva en CSV-fil
+För att generera en CSV-fil konstruerar du helt enkelt strängar med komma-separerade värden och skriver dem rad för rad till en fil.
+
+```lua
+local data = {
+    {"name", "age"},
+    {"John Doe", "30"},
+    {"Jane Doe", "32"}
+}
+
+local file = io.open("output.csv", "w")
+for _, v in ipairs(data) do
+    file:write(table.concat(v, ","), "\n")
+end
+file:close()
+```
+
+Detta skulle skapa (eller skriva över) en `output.csv`-fil med de specificerade datan.
+
+### Använda lua-csv
+För mer avancerad hantering av CSV, inklusive stöd för citattecken och escape-tecken, är `lua-csv`-biblioteket ett robust val.
+
+Först, installera det med LuaRocks:
+```shell
+luarocks install lua-csv
+```
+
+Sedan, att läsa en CSV-fil blir så enkelt som:
+
+```lua
+local csv = require("csv")
+
+-- Läsa från en fil
+for fields in csv.open("example.csv") do
+    for i, v in ipairs(fields) do
+        print(i, v)
+    end
 end
 ```
-Antag att vi har en CSV-fil `data.csv` med följande innehåll:
-```
-name,age,city
-Alice,30,Stockholm
-Bob,25,Göteborg
-```
-Exemplet ovan skulle läsa filen och skriva datan till en ny CSV-fil.
 
-## Fördjupning
-CSV-formatet har använts sedan 1970-talet och är ett av de enklaste sätten att importera och exportera enkelt strukturerad data. Lua saknar native stöd för CSV men dess flexibilitet låter en lätt implementera funktionalitet med basbiblioteket `io`. Alternativ till CSV inkluderar JSON och XML, vilka hanterar komplexa datastrukturer bättre men är inte lika raka att arbeta med för enkla datatabeller.
+Och skriva till en CSV med korrekt citering och escaping:
 
-## Se även
-- Lua Manual för IO-biblioteket: https://www.lua.org/manual/5.4/manual.html#6.8
-- CSV på Wikipedia: https://sv.wikipedia.org/wiki/Komma-separerade_v%C3%A4rden
-- Lua CSV moduler på LuaRocks: https://luarocks.org/search?q=csv
+```lua
+local file = csv.open("output.csv", {write=true})
+
+local data = {
+    {"name", "profession", "location"},
+    {"John Doe", "Software Engineer", "New York, NY"},
+    {"Jane Doe", "Data Scientist", "\"San Francisco, CA\""}
+}
+
+for _, v in ipairs(data) do
+    file:write(v)
+end
+```
+
+Detta tillvägagångssätt hanterar automatiskt komplexiteter såsom komma och citattecken inom värden.

@@ -1,64 +1,90 @@
 ---
-title:                "编写测试代码"
-date:                  2024-01-19
-simple_title:         "编写测试代码"
-
+title:                "编写测试"
+date:                  2024-02-03T19:31:01.754928-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "编写测试"
 tag:                  "Testing and Debugging"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/java/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (是什么 & 为什么?)
-写测试就是编写代码验证其他代码是否按预期工作。程序员这么做是为了确保代码质量，提前发现bug，以及促进安全的代码重构。
+## 什么 & 为什么？
+在 Java 中编写测试的目的是为了验证你的代码在各种条件下的行为是否符合预期。程序员编写测试来防止 bug，确保在更改后功能仍然正确，并促进良好的软件设计原则。
 
-## How to: (如何做)
+## 如何：
+Java 开发人员主要使用两个测试框架：JUnit 和 TestNG。这里，我们将关注 JUnit，由于其简单性和广泛的采用，它是编写测试的更受欢迎的选择。
+
+### JUnit 基础
+
+要在你的 Maven 项目中使用 JUnit，请将以下依赖项添加到你的 `pom.xml` 中：
+
+```xml
+<dependency>
+    <groupId>org.junit.jupiter</groupId>
+    <artifactId>junit-jupiter</artifactId>
+    <version>5.9.0</version>
+    <scope>test</scope>
+</dependency>
+```
+
+在 JUnit 中，一个基本测试看起来像这样：
+
 ```java
-import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class CalculatorTest {
-
-    private Calculator calculator = new Calculator();
-
-    @BeforeEach
-    void setUp() {
-        calculator.clear();
+    
+    @Test
+    public void testAdd() {
+        Calculator calculator = new Calculator();
+        assertEquals(5, calculator.add(2, 3), "2 + 3 应该等于 5");
     }
+}
+```
+
+执行这个测试将会通过，表明 `add` 方法的工作如预期，或者失败，显示错误消息。
+
+### 使用 Mockito 进行模拟
+
+在现实世界的场景中，对象经常依赖于其他对象。Mockito 是一个流行的模拟框架，有助于为测试目的创建模拟对象。
+
+将 Mockito 添加到你的 Maven 项目中：
+
+```xml
+<dependency>
+    <groupId>org.mockito</groupId>
+    <artifactId>mockito-core</artifactId>
+    <version>4.5.1</version>
+    <scope>test</scope>
+</dependency>
+```
+
+使用 Mockito 的一个简单用例：
+
+```java
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.*;
+
+public class UserServiceTest {
 
     @Test
-    void testAdd() {
-        Assertions.assertEquals(5, calculator.add(2, 3));
-    }
+    public void testGetUsername() {
+        // 创建一个模拟 UserRepository
+        UserRepository mockRepository = mock(UserRepository.class);
 
-    @AfterEach
-    void tearDown() {
-        calculator.clear();
-    }
-}
+        // 为模拟对象定义行为
+        when(mockRepository.getUsername(1)).thenReturn("john_doe");
 
-class Calculator {
-    private int result;
-
-    void clear() {
-        result = 0;
-    }
-
-    int add(int a, int b) {
-        result = a + b;
-        return result;
+        UserService userService = new UserService(mockRepository);
+        
+        assertEquals("john_doe", userService.getUsername(1), "用户 ID 1 应该是 john_doe");
     }
 }
 ```
-输出：
-```
-测试成功 (Test successful)
-```
 
-## Deep Dive (深入了解)
-单元测试可追溯至1950年代。JUnit框架的推出标志着Java单元测试的新时代。除了JUnit，还有TestNG、Spock等替代测试框架。详细实现方面，测试框架使用反射调用测试方法，通常配合mocking工具来模拟外部依赖。
-
-## See Also (另请参阅)
-- JUnit 5用户指南：https://junit.org/junit5/docs/current/user-guide/
-- TestNG官方文档：https://testng.org/doc/
-- Mockito：模拟框架，用于创建和配置测试中的mock对象。
+这种模拟允许我们测试 `UserService` 而不需要一个真实的 `UserRepository`，将测试的焦点放在 `UserService` 本身的逻辑上。

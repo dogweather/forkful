@@ -1,37 +1,53 @@
 ---
 title:                "Pobieranie aktualnej daty"
-date:                  2024-01-20T15:13:37.066335-07:00
+date:                  2024-02-03T19:09:21.992312-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Pobieranie aktualnej daty"
-
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/clojure/getting-the-current-date.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-W programowaniu pozyskiwanie bieżącej daty to chwytanie momentu "teraz" w cyfrowych ramionach. Używamy tego do logowania, znakowania czasowego transakcji lub ustawiania limitów czasowych – w sumie, to podstawy.
+## Co i dlaczego?
+Pobranie bieżącej daty w programowaniu jest kluczowe z wielu przyczyn, w tym logowania, oznaczania czasu zdarzeń i planowania zadań. W Clojure, dialekcie Lispu na JVM, to zadanie korzysta z możliwości interop Java, umożliwiając bezproblemowy dostęp do bogatego Java Date-Time API.
 
-## How to:
-```Clojure
-;; Podłączamy bibliotekę czasową
-(require '[java-time :as jt])
+## Jak to zrobić:
 
-;; Pobieranie aktualnej daty
+### Korzystając z Java Interop
+Bezproblemowa interoperacyjność Clojure z Javą umożliwia bezpośrednie korzystanie z Java Date-Time API. Oto jak można uzyskać bieżącą datę:
+
+```clojure
+(import java.time.LocalDate)
+
 (defn get-current-date []
-  (jt/local-date))
+  (str (LocalDate/now)))
 
-;; Użycie funkcji i wydruk wyniku
-(println (get-current-date))
-```
-Oczekiwany wynik wygląda mniej więcej tak:
-```
-2023-04-07
+;; Przykładowe wyjście
+(get-current-date) ; "2023-04-15"
 ```
 
-## Deep Dive
-W Clojure data aktualna nie jest trudną sprawą, ale drzemie tu historia. `java-time` to wygodny wrapper do Java Time API znanego z Java 8. Alternatywa to starsze `clj-time`, które bazowało na Joda-Time. Detale? Clojure jest hostowany na JVM, więc wykorzystuje narzędzia Javy do obsługi czasu.
+### Korzystając z biblioteki clj-time
+Dla bardziej idiomatycznego rozwiązania w Clojure, możesz zdecydować się na bibliotekę `clj-time`, opakowanie wokół Joda-Time, chociaż dla większości nowych projektów zalecane jest wbudowane Java 8 Date-Time API. Jednakże, jeśli preferujesz lub wymagasz `clj-time`:
 
-## See Also
-- Porównanie `java-time` i `clj-time`: [https://github.com/clj-time/clj-time](https://github.com/clj-time/clj-time)
-- Oficjalny przewodnik Java Time API: [https://docs.oracle.com/javase/tutorial/datetime/](https://docs.oracle.com/javase/tutorial/datetime/)
+Najpierw dodaj `clj-time` do zależności twojego projektu. W twoim pliku `project.clj`, dołącz:
+
+```clojure
+[clj-time "0.15.2"]
+```
+
+Następnie, użyj tego do uzyskania bieżącej daty:
+
+```clojure
+(require '[clj-time.core :as time])
+
+(defn get-current-date-clj-time []
+  (str (time/now)))
+
+;; Przykładowe wyjście
+(get-current-date-clj-time) ; "2023-04-15T12:34:56.789Z"
+```
+
+Obie metody zapewniają szybki, skuteczny sposób na uzyskanie bieżącej daty w Clojure, wykorzystując moc leżącej u podstaw platformy Java lub wygodę biblioteki specyficznej dla Clojure.

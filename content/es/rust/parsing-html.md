@@ -1,43 +1,54 @@
 ---
-title:                "Análisis de HTML"
-date:                  2024-01-20T15:33:45.778168-07:00
-simple_title:         "Análisis de HTML"
-
+title:                "Analizando HTML"
+date:                  2024-02-03T19:12:57.663092-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Analizando HTML"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/rust/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 
-Parsear HTML es procesar y convertir el código HTML en una estructura que tu programa pueda entender y manipular. Los programadores lo hacen para extraer información, manipular contenido o interactuar con páginas web de forma automática.
+Analizar HTML en Rust se trata de extraer datos de documentos HTML, lo cual es esencial para el web scraping, la extracción de datos o la construcción de recolectores web. Los programadores hacen esto para automatizar la recopilación de información de la web, analizar el contenido web o migrar contenido de una plataforma a otra.
 
 ## Cómo:
 
-Para parsear HTML en Rust, podemos usar la crate `scraper`, que facilita la selección y manipulación de elementos HTML.
+Para analizar HTML en Rust, a menudo utilizarás el crate `scraper`, que proporciona una interfaz de alto nivel para recorrer y manipular documentos HTML.
 
-```Rust
+Primero, añade `scraper` a tu `Cargo.toml`:
+
+```toml
+[dependencies]
+scraper = "0.12.0"
+```
+
+A continuación, aquí tienes un ejemplo simple que extrae todas las URLs de enlaces de una cadena HTML dada:
+
+```rust
+extern crate scraper;
+
 use scraper::{Html, Selector};
 
 fn main() {
-    let html_code = r#"
-        <html>
-            <body>
-                <p>Hola, soy un párrafo en español!</p>
-            </body>
-        </html>
+    let html = r#"
+    <html>
+    <body>
+        <a href="http://example.com/1">Enlace 1</a>
+        <a href="http://example.com/2">Enlace 2</a>
+    </body>
+    </html>
     "#;
 
-    // Parsear el código HTML
-    let document = Html::parse_document(html_code);
+    let document = Html::parse_document(html);
+    let selector = Selector::parse("a").unwrap();
 
-    // Crear un Selector para encontrar elementos <p>
-    let selector = Selector::parse("p").unwrap();
-
-    // Iterar sobre elementos encontrados
     for element in document.select(&selector) {
-        println!("Texto encontrado: {}", element.inner_html());
+        let link = element.value().attr("href").unwrap();
+        println!("Enlace encontrado: {}", link);
     }
 }
 ```
@@ -45,19 +56,8 @@ fn main() {
 Salida:
 
 ```
-Texto encontrado: Hola, soy un párrafo en español!
+Enlace encontrado: http://example.com/1
+Enlace encontrado: http://example.com/2
 ```
 
-## Deep Dive
-
-Parsear HTML no es algo nuevo; ha sido un requisito común para los programadores web durante décadas. En Rust, crates como `scraper` ofrecen una manera segura y rápida de hacerlo, gracias al fuerte tipado y manejo de errores que el lenguaje proporciona.
-
-Alternativamente, podrías usar `html5ever`, desarrollado por Servo, el proyecto de navegador experimental de Mozilla. Es extremadamente rápido y conforme a las especificaciones de HTML5, pero es más bajo nivel comparado con `scraper`.
-
-Al parsear HTML, `scraper` y similares crean un 'DOM virtual', una representación del documento que permite navegar y modificar elementos fácilmente. Dado que HTML es inherentemente resistente a errores (los navegadores lo procesan incluso si está malformado), estas librerías son igualmente robustas y diseñadas para manejar HTML imperfecto.
-
-## See Also
-
-- Documentación de `scraper`: https://docs.rs/scraper/latest/scraper/
-- Crates relacionadas con HTML en Rust: https://crates.io/keywords/html
-- Proyecto Servo de Mozilla y `html5ever`: https://github.com/servo/html5ever
+En este ejemplo, analizamos un documento HTML simple para encontrar todos los elementos `<a>` y extraer sus atributos `href`, imprimiendo efectivamente las URLs de todos los enlaces en el documento. La biblioteca `scraper` simplifica el análisis y la selección de elementos HTML específicos utilizando selectores CSS, convirtiéndola en una opción predilecta para tareas de web scraping en Rust.

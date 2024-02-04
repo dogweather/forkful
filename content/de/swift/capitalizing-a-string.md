@@ -1,36 +1,46 @@
 ---
-title:                "String in Großbuchstaben umwandeln"
-date:                  2024-01-19
-simple_title:         "String in Großbuchstaben umwandeln"
-
+title:                "Einen String großschreiben"
+date:                  2024-02-03T19:06:34.244820-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Einen String großschreiben"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/swift/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Was & Warum?)
-String-Kapitalisierung verwandelt alle Buchstaben in Großbuchstaben oder macht den ersten Buchstaben eines Satzes groß. Das hilft bei der Konsistenz in Nutzeroberflächen oder beim Vergleichen von Text ohne Groß- und Kleinschreibung zu beachten.
+## Was & Warum?
 
-## How to: (Wie geht das?)
-```Swift
-let smallTalk = "hallo, wie geht's?"
-let shouting = smallTalk.uppercased() // "HALLO, WIE GEHT'S?"
-let properGreeting = smallTalk.capitalized // "Hallo, Wie Geht's?"
+Das Kapitalisieren eines Strings in Swift verändert den gegebenen String so, dass sein erstes Zeichen großgeschrieben wird und die verbleibenden Zeichen klein. Programmierer machen dies aus Gründen wie der Formatierung von Namen oder Sätzen gemäß grammatischer Regeln oder Benutzeroberflächenstandards.
 
-// Beispiel-Ausgabe
-print(shouting)      // HALLO, WIE GEHT'S?
-print(properGreeting) // Hallo, Wie Geht's?
+## Wie:
+
+Swifts `String`-Strukturen kommen mit ein paar integrierten Methoden, um die Groß- und Kleinschreibung von Strings zu manipulieren. Hier sind einige Ansätze, um Strings in Swift zu kapitalisieren, einschließlich der Verwendung von Standardmethoden und Drittanbieter-Bibliotheken, falls nötig.
+
+### Verwendung eingebauter Methoden
+
+Um den ersten Buchstaben eines Strings groß und den Rest klein zu schreiben:
+
+```swift
+let myString = "hallo, welt"
+let capitalizedString = myString.prefix(1).uppercased() + myString.dropFirst().lowercased()
+print(capitalizedString) // Ausgabe: "Hallo, welt"
 ```
 
-## Deep Dive (Tiefgang)
-String-Kapitalisierung in Swift verwendet Funktionen wie `uppercased()` und `capitalized`. `uppercased()` verwandelt jeden Buchstaben in Großbuchstaben, während `capitalized` nur den ersten Buchstaben jedes Wortes groß macht. Seit Swift 1.0 ist das möglich, und es hilft bei der Textverarbeitung enorm.
+Um den ersten Buchstaben jedes Wortes in einem Satz großzuschreiben, kann die `capitalized`-Eigenschaft verwendet werden:
 
-Alternativen gibt es nicht wirklich, da diese Funktionen Teil der Swift-Standardbibliothek sind und alles Nötige abdecken. Intern verwenden diese Methoden Unicode, um auch mit nicht-lateinischen Alphabeten umgehen zu können.
+```swift
+let sentence = "hallo, welt"
+let capitalizedSentence = sentence.capitalized
+print(capitalizedSentence) // Ausgabe: "Hallo, Welt"
+```
 
-Die Implementierung hängt von `Locale` ab – zum Beispiel werden bei `capitalized` mit einer türkischen Locale 'i's zu 'İ' anstatt 'I'. Das ist wichtig für korrekte Darstellung von Texten in verschiedenen Sprachen.
+### Verwendung einer Drittanbieter-Bibliothek
 
-## See Also (Siehe auch)
-- Swift Standard Library Reference: [Apple's Documentation](https://developer.apple.com/documentation/swift/string)
-- Unicode Standard: [unicode.org](https://www.unicode.org/)
-- Locale in Swift: [NSLocale Documentation](https://developer.apple.com/documentation/foundation/nslocale)
+Obwohl die Standardbibliothek von Swift recht umfassend ist, könnten einige spezifische Großschreibungsformate komplexere Operationen erfordern oder können unter Verwendung von Drittanbieter-Bibliotheken vereinfacht werden. Eine der beliebten für die String-Manipulation ist SwiftRichString. (Hinweis: Stellen Sie immer sicher, dass Sie Drittanbieter-Bibliotheken über Swift Package Manager, CocoaPods oder Carthage hinzufügen und in Ihrer Datei importieren.)
+
+Zuerst müssten Sie `SwiftRichString` zu Ihrem Projekt hinzufügen. Einmal installiert, können Sie es verwenden, um verschiedene String-Operationen durchzuführen, einschließlich spezifischer Großschreibungsbedürfnisse. Jedoch decken ab jetzt Swifts eingebaute Methoden die meisten Großschreibungsfälle ausreichend ab, ohne externe Bibliotheken nur für das Kapitalisieren von Strings zu benötigen.
+
+Beziehen Sie sich immer auf die neueste Dokumentation der Bibliothek für alle Updates oder Änderungen in den Methoden.

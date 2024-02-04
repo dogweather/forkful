@@ -1,44 +1,44 @@
 ---
-title:                "הפיכת מחרוזת לאותיות רישיות"
-date:                  2024-01-19
-simple_title:         "הפיכת מחרוזת לאותיות רישיות"
-
+title:                "הגדלת אותיות במחרוזת"
+date:                  2024-02-03T19:06:37.437229-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "הגדלת אותיות במחרוזת"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/ruby/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## מה ולמה?
-הופכים מחרוזת לאותיות גדולות כשרוצים שהטקסט יהיה גלוי ובולט יותר. זה שימושי בעיקר לכותרות או כשמובילים לדבר מרכזי.
+הפיכת מחרוזת לאותיות ראשיות בתכנות פירושה להמרה של התו הראשון במחרוזת לאות גדולה ואת שאר האותיות לאותיות קטנות. תכנתים עושים זאת מסיבות כמו התאמה למוסכמות ניסוח, הפיכת הפלטים לקריאים יותר, או הבטחת עקביות נתונים לצורך השוואות ואחסון.
 
-## איך לעשות:
-ב-Ruby, כשרוצים להפוך תווים לאותיות גדולות משתמשים ב-methods כמו `.upcase` או `.capitalize`. נתחיל עם `.capitalize`:
-
-```ruby
-puts "shalom".capitalize
-# Output: Shalom
-```
-
-עכשיו `.upcase`:
+## איך לעשות זאת:
+Ruby מספקת שיטות ישירות למניפולציית מחרוזות, כולל הפיכה לאותיות ראשיות. הנה איך אפשר להפוך מחרוזת לאותיות ראשיות ב-Ruby:
 
 ```ruby
-puts "shalom".upcase
-# Output: SHALOM
+# שיטה מובנית של Ruby
+string = "hello world"
+capitalized_string = string.capitalize
+puts capitalized_string # => "Hello world"
 ```
 
-`.capitalize` מגדיל רק את האות הראשונה, בעוד `.upcase` מגדיל הכל.
-
-## צלילה לעומק:
-בעברית, עניין ההפיכה לאותיות גדולות פחות רלוונטי, אבל באנגלית זו פעולה נפוצה. שיטות כמו `.upcase` ו`.capitalize` זמינות כבר מהתחלה ב-Ruby. אלטרנטיבה פחות ידועה היא `.swapcase` שמחליפה בין גדולות לקטנות.
+שיטת ה`.capitalize` של Ruby נוחה אבל משפיעה רק על האות הראשונה. לשליטה רבה יותר או להפיכת כל מילה במחרוזת לאות ראשית (הידועה כ-case כותרת), ייתכן שתרצה להשתמש בשיטת ה`titleize` מהרחבת ActiveSupport של Rails, או ליישם אותה בעצמך:
 
 ```ruby
-puts "Shalom".swapcase
-# Output: sHALOM
+# שימוש ב'titleize' של ActiveSupport ב-Rails
+require 'active_support/core_ext/string/inflections'
+string = "hello world"
+puts string.titleize # => "Hello World"
 ```
 
-מבחינת היישום, Ruby משתמש בטבלת ASCII או Unicode כדי להפוך אותיות קטנות לגדולות ולהפך. הפעולה הזו אינה משנה את המחרוזת המקורית אלא יוצרת מחרוזת חדשה.
+אם אינך משתמש ב-Rails או מעדיף פתרון רובי טהור, הנה איך תוכל להפוך כל מילה במחרוזת לאות ראשית:
 
-## ראה גם:
-- תיעוד Ruby למתודות של מחרוזת: [Ruby String Documentation](https://ruby-doc.org/core-3.1.2/String.html)
-- פורום תכנות Ruby עבור שאלות ותמיכה: [Ruby Forum](https://www.ruby-forum.com/)
+```ruby
+string = "hello world"
+capitalized_each_word = string.split.map(&:capitalize).join(' ')
+puts capitalized_each_word # => "Hello World"
+```
+
+שיטה זו מחלקת את המחרוזת למערך של מילים, מרימה את כל אחת מהן לאות ראשית, ולאחר מכן מחברת אותן בחזרה יחדיו בעזרת רווח.

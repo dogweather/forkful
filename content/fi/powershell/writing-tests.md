@@ -1,58 +1,76 @@
 ---
 title:                "Testien kirjoittaminen"
-date:                  2024-01-19
+date:                  2024-02-03T19:31:42.797877-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Testien kirjoittaminen"
-
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/powershell/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? - Mikä & Miksi?
-Testaus tarkoittaa koodisi varmistamista: tekeekö se mitä pitää. Testaamalla säilytät mielenrauhan ja säästät aikaa, kun bugit löytyvät nopeasti.
+## Mikä & Miksi?
 
-## How to: - Kuinka Tehdään:
-Testien kirjoittaminen PowerShellissa käyttämällä Pester-testikehystä:
+Testien kirjoittaminen PowerShellillä tarkoittaa skriptien luomista, jotka automaattisesti varmistavat PowerShell-koodisi toiminnallisuuden, taaten sen toimivan odotetulla tavalla. Ohjelmoijat tekevät tämän havaitakseen virheet ajoissa, yksinkertaistaakseen koodin ylläpitoa ja varmistaakseen, että koodimuutokset eivät tahattomasti riko olemassa olevaa toiminnallisuutta.
 
-```PowerShell
-# Asenna Pester-moduuli, jos sitä ei vielä ole
-Install-Module -Name Pester -Scope CurrentUser -Force -SkipPublisherCheck
+## Miten:
 
-# Lataa Pester
-Import-Module Pester
+PowerShell ei sisällä sisäänrakennettua testauskehystä, mutta Pester, suosittu kolmannen osapuolen moduuli, on laajalti käytetty testien kirjoittamiseen ja suorittamiseen. Näin pääset alkuun Pesterin kanssa testataksesi PowerShell-funktioitasi.
 
-# Luo yksinkertainen funktio, jota testataan
-function Get-MultiplyResult($a, $b) {
-    return $a * $b
+Ensin, asenna Pester, jos et ole vielä tehnyt niin:
+
+```powershell
+Install-Module -Name Pester -Scope CurrentUser -Force
+```
+
+Seuraavaksi, oletetaan että sinulla on yksinkertainen PowerShell-funktio, jonka haluat testata, tallennettuna nimellä `MyFunction.ps1`:
+
+```powershell
+function Get-MultipliedNumber {
+    param (
+        [int]$Number,
+        [int]$Multiplier = 2
+    )
+
+    return $Number * $Multiplier
 }
+```
 
-# Kirjoita testit
-Describe "Get-MultiplyResult Tests" {
-    It "Kertoo luvut oikein" {
-        Get-MultiplyResult 7 3 | Should -Be 21
+Testataksesi tätä funktiota Pesterin avulla, luo testiskripti nimeltä `MyFunction.Tests.ps1`. Tässä skriptissä, käytä Pesterin `Describe` ja `It` lohkoja määritelläksesi testitapaukset:
+
+```powershell
+# Tuo testattava funktio
+. .\MyFunction.ps1
+
+Describe "Get-MultipliedNumber tests" {
+    It "Kertoo numeron kahdella, kun kertojaa ei ole annettu" {
+        $result = Get-MultipliedNumber -Number 3
+        $result | Should -Be 6
     }
-    It "Ei palauta virheellistä tulosta" {
-        Get-MultiplyResult 2 2 | Should -Not -Be 5
+
+    It "Kertoo numeron oikein annetulla kertojalla" {
+        $result = Get-MultipliedNumber -Number 3 -Multiplier 3
+        $result | Should -Be 9
     }
 }
-
-# Suorita testit
-Invoke-Pester
 ```
 
-Testien tulokset näyttävät seuraavalta:
+Testien suorittamiseksi, avaa PowerShell, siirry hakemistoon, jossa testiskriptisi sijaitsee, ja käytä `Invoke-Pester` komentoa:
 
-```
-Describing Get-MultiplyResult Tests
- [+] Kertoo luvut oikein 40ms
- [+] Ei palauta virheellistä tulosta 5ms
+```powershell
+Invoke-Pester .\MyFunction.Tests.ps1
 ```
 
-## Deep Dive - Syväsukellus:
-Testaaminen PowerShellissä ei ole aina ollut yhtä helppoa. Pester-testikehys ilmestyi vuonna 2015 ja muutti pelin. Vaihtoehtoja on, esimerkiksi PSUnit, mutta Pester on suosituin ja PowerShellin yhteisön eniten hyväksymä. Testeissä käytetään BDD-tyylisiä "Describe" ja "It" lohkoja, mikä tekee niistä luettavia ja ylläpidettäviä.
+Esimerkkituloste näyttää tältä, ilmaisten onko testisi läpäisseet vai epäonnistuneet:
 
-## See Also - Katso Myös:
-- Pester-projektin GitHub-sivu: https://github.com/pester/Pester
-- PowerShellin testaamisen parhaat käytännöt: https://docs.microsoft.com/en-us/powershell/scripting/dev-cross-plat/writing-portable-modules?view=powershell-7.1
-- Mikä on BDD (Behavior-Driven Development): https://en.wikipedia.org/wiki/Behavior-driven_development
+```
+Starting discovery in 1 files.
+Discovery finished in 152ms.
+[+] C:\polku\to\MyFunction.Tests.ps1 204ms (182ms|16ms)
+Tests completed in 204ms
+Tests Passed: 2, Failed: 0, Skipped: 0 NotRun: 0
+```
+
+Tämä tuloste osoittaa, että molemmat testit ovat läpäisseet, antaen sinulle varmuuden siitä, että `Get-MultipliedNumber` funktiosi toimii odotetusti testaamissasi skenaarioissa.

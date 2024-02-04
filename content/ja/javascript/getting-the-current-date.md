@@ -1,32 +1,49 @@
 ---
-title:                "現在の日付を取得する"
-date:                  2024-01-20T15:15:20.959683-07:00
-simple_title:         "現在の日付を取得する"
-
+title:                "現在の日付の取得"
+date:                  2024-02-03T19:10:00.163649-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "現在の日付の取得"
 tag:                  "Dates and Times"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/javascript/getting-the-current-date.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (何とその理由？)
-JavaScriptで現在の日付を取得するのは基本です。アプリケーションに現実の時刻を反映させたり、ログを記録するためによく使われます。
+## 何となぜ？
+JavaScriptで現在の日付を取得することは、基本的な作業であり、今日の日付と時刻の取得、および場合によっては操作を行います。プログラマーは、ウェブサイトやアプリケーションに日付を表示したり、ユーザーの操作を追跡したり、時間に敏感なデータを扱うためにこれを行います。
 
-## How to (やり方):
-```Javascript
-// 現在の日付と時刻を取得する
-const now = new Date();
+## 方法：
+バニラJavaScriptでは、`Date`オブジェクトを使用して日付と時刻を操作します。ここでは、現在の日付と時刻を取得する方法を示します：
 
-// 結果をコンソールに表示
-console.log(now.toString()); // 例: Mon Mar 13 2023 17:45:00 GMT+0900 (Japan Standard Time)
+```javascript
+const currentDate = new Date();
+console.log(currentDate); // 例：Fri Apr 14 2023 12:34:56 GMT+0100 (British Summer Time)
 ```
 
-## Deep Dive (詳細な解説):
-JavaScriptで`Date`オブジェクトを作ると、その時点の日付と時刻が記録されます。`Date`は1970年代のUNIX時間が始まる以前からあります。代替方法として`Date.now()`, `performance.now()`やライブラリの使用がありますが、単純な使用では`new Date()`が最も一般的です。実装の詳細としては、ブラウザやサーバーのローカル時刻に依存することが挙げられます。
+よりユーザーフレンドリーな形式で日付のみを表示するには、`toLocaleDateString()`のようなメソッドを使用できます：
 
-## See Also (関連リンク):
-- MDN Web Docsの`Date`に関するドキュメント: [MDN Date](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- 日付操作ライブラリMoment.js: [Moment.js](https://momentjs.com/)
-- 日付と時刻を操作するための新しいライブラリLuxon: [Luxon](https://moment.github.io/luxon/)
-- 精度の高い時刻を測定する`performance.now()`: [MDN performance.now()](https://developer.mozilla.org/ja/docs/Web/API/Performance/now)
+```javascript
+console.log(currentDate.toLocaleDateString()); // 例：4/14/2023
+```
+
+形式をより細かく制御するには、*Moment.js*や*date-fns*のようなサードパーティライブラリが非常に人気がありますが、Moment.jsは現在メンテナンスモードのレガシープロジェクトと見なされていることに注意が必要です。
+
+*Moment.js*を使用する：
+
+```javascript
+const moment = require('moment'); // Node.jsを仮定するか、モジュールバンドラを使用
+const formattedDate = moment().format('YYYY-MM-DD');
+console.log(formattedDate); // 例：2023-04-14
+```
+
+必要なものだけをインポートできるようにモジュール化を強調する*date-fns*を使用する場合：
+
+```javascript
+const { format } = require('date-fns');
+const formattedDate = format(new Date(), 'yyyy-MM-dd');
+console.log(formattedDate); // 例：2023-04-14
+```
+
+それぞれのアプローチは、ビルトインの`Date`オブジェクトからライブラリを通じて利用可能な、より洗練されたフォーマッティングや操作の能力に至るまで、JavaScriptで日付を扱うための異なる利便性と柔軟性のレベルを提供します。

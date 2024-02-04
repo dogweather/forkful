@@ -1,56 +1,79 @@
 ---
-title:                "Написання тестів"
-date:                  2024-01-19
-simple_title:         "Написання тестів"
-
+title:                "Письмо тестів"
+date:                  2024-02-03T19:31:06.291428-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Письмо тестів"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/haskell/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Що і чому?
 
-Тестування це процес перевірки коду на коректність. Програмісти пишуть тести, щоб забезпечити надійність та якість коду і уникнути помилок.
+Написання тестів на Haskell полягає в тому, щоб забезпечити роботу ваших функцій так, як очікується, за допомогою автоматизованих перевірок. Програмісти роблять це, щоб виявляти помилки на ранньому етапі, полегшити рефакторинг і задокументувати поведінку, роблячи кодову базу більш обслуговуваною і масштабованою.
 
-## Як це робити:
+## Як:
 
-В Haskell тести часто пишуть за допомогою бібліотеки Hspec. Ось приклад простого тесту:
+Haskell підтримує кілька тестових фреймворків, але два популярні - це `Hspec` і `QuickCheck`. Hspec дозволяє вам визначати зрозумілі для людини специфікації для вашого коду, тоді як QuickCheck дозволяє автоматично генерувати тести, описуючи властивості, які ваш код повинен задовольняти.
 
-```Haskell
+### Використання Hspec
+
+Спочатку додайте `hspec` до конфігурації вашого інструмента збірки (наприклад, у файл `stack.yaml` або `cabal`). Потім імпортуйте `Test.Hspec` та напишіть тести як специфікації:
+
+```haskell
+-- файл: spec/MyLibSpec.hs
 import Test.Hspec
+import MyLib (add)
 
 main :: IO ()
-main = hspec $ do
-  describe "abs" $ do
-    it "returns the number if given a positive input" $
-      abs 1 `shouldBe` 1
-      
-    it "returns a positive number if given a negative input" $
-      abs (-1) `shouldBe` 1
-      
-    it "returns zero if given zero" $
-      abs 0 `shouldBe` 0
+main = hspec $ describe "MyLib.add" $ do
+  it "додає два числа" $
+    add 1 2 `shouldBe` 3
+
+  it "повертає перше число при додаванні нуля" $
+    add 5 0 `shouldBe` 5
 ```
 
-Виконання цього тесту дасть вам такий результат:
+Потім запустіть ваші тести за допомогою вашого інструменту збірки, результат може виглядати так:
 
 ```
-abs
-  returns the number if given a positive input
-  returns a positive number if given a negative input
-  returns zero if given zero
+MyLib.add
+  - додає два числа
+  - повертає перше число при додаванні нуля
 
-Finished in 0.0001 seconds
-3 examples, 0 failures
+Завершено за 0.0001 секунди
+2 приклади, 0 невдач
 ```
 
-## Поглиблений огляд
+### Використання QuickCheck
 
-Тестування в Haskell має довгу історію, Hspec не є єдиною опцією. QuickCheck - інструмент, що дозволяє автоматично генерувати випадкові дані для тестів. Для тестування продуктивності можна використовувати Criterion. Hspec працює на основі BDD (Behavior Driven Development), тобто фокусується на поведінці коду замість його імплементації.
+З QuickCheck ви виражаєте властивості, які ваші функції мають задовольняти. Додайте `QuickCheck` до конфігурації вашого проекту, потім імпортуйте його:
 
-## Дивись також
+```haskell
+-- файл: test/MyLibProperties.hs
+import Test.QuickCheck
+import MyLib (add)
 
-- [Hspec User's Manual](https://hspec.github.io/)
-- [QuickCheck на Hackage](https://hackage.haskell.org/package/QuickCheck)
-- [Criterion на Hackage](https://hackage.haskell.org/package/criterion)
+prop_addAssociative :: Int -> Int -> Int -> Bool
+prop_addAssociative x y z = x + (y + z) == (x + y) + z
+
+prop_addCommutative :: Int -> Int -> Bool
+prop_addCommutative x y = x + y == y + x
+
+main :: IO ()
+main = do
+  quickCheck prop_addAssociative
+  quickCheck prop_addCommutative
+```
+
+Запуск цих тестів автоматично генерує вхідні дані для перевірки зазначених властивостей:
+
+```
++++ OK, пройшло 100 тестів.
++++ OK, пройшло 100 тестів.
+```
+
+У прикладах як з Hspec, так і з QuickCheck, набори тестів служать як виконувана документація, яка може автоматично перевірити правильність вашого коду.

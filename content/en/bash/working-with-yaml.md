@@ -1,8 +1,8 @@
 ---
 title:                "Working with YAML"
-date:                  2024-01-19
+date:                  2024-02-03T19:03:17.132416-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Working with YAML"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/bash/working-with-yaml.md"
 ---
@@ -10,37 +10,86 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-YAML ain't Markup Language (YAML) is a human-readable data serialization standard. Programmers use it for config files, data storage, and inter-process messaging because of its simplicity and readability.
+
+YAML, which stands for YAML Ain't Markup Language, is a human-readable data serialization standard that can be used for configuration files, as well as in applications where data is being stored or transmitted. Programmers gravitate towards YAML due to its clarity and simplicity, especially in projects involving complex configurations or the need for easily editable data structures.
 
 ## How to:
-Here's a simple example of reading a YAML file using Bash. 
 
-Given `config.yaml`:
+Working directly with YAML in Bash requires a bit of ingenuity since Bash does not have built-in support for parsing YAML. However, you can use external tools like `yq` (a lightweight and portable command-line YAML processor) to interact with YAML files efficiently. Let's go through some common operations:
+
+### Installing `yq`:
+
+Before diving into the examples, ensure you have `yq` installed. You can usually install it from your package manager, for example, on Ubuntu:
+
+```bash
+sudo apt-get install yq
+```
+
+Or you can download it directly from its GitHub repository.
+
+### Reading a value:
+
+Consider you have a file named `config.yaml` with the following content:
+
 ```yaml
 database:
   host: localhost
-  port: 3306
-  username: user
-  password: pass123
+  port: 5432
+user:
+  name: admin
+  password: secret
 ```
 
-Use this script to read the YAML and print the database host:
+To read the database host, you can use `yq` as follows:
 
-```Bash
-#!/bin/bash
-value=$(grep 'host:' config.yaml | awk '{ print $2 }')
-echo "Database Host: ${value}"
+```bash
+yq e '.database.host' config.yaml
 ```
 
-Sample output:
+**Sample Output:**
+
 ```
-Database Host: localhost
+localhost
 ```
 
-## Deep Dive
-YAML, created in 2001, is a more human-friendly alternative to XML or JSON. It's widely used in cloud services, app deployment, and devops tools. Though Bash lacks native YAML parsing, tools like `yq` and parsing via `awk` or `grep` can get the job done. However, complex parsing may need proper YAML tooling.
+### Updating a value:
 
-## See Also
-- YAML official website: https://yaml.org
-- `yq`, a command-line YAML processor: https://github.com/kislyuk/yq
-- Bash YAML parsing discussion: https://stackoverflow.com/questions/5014632/how-can-i-parse-a-yaml-file-from-a-linux-shell-script
+To update the user's name in `config.yaml`, use the `yq eval` command with the `-i` (in-place) option:
+
+```bash
+yq e '.user.name = "newadmin"' -i config.yaml
+```
+
+Verify the change with:
+
+```bash
+yq e '.user.name' config.yaml
+```
+
+**Sample Output:**
+
+```
+newadmin
+```
+
+### Adding a new element:
+
+To add a new element under the database section, like a new field `timeout`:
+
+```bash
+yq e '.database.timeout = 30' -i config.yaml
+```
+
+Checking the contents of the file will confirm the addition.
+
+### Deleting an element:
+
+To remove the password under user:
+
+```bash
+yq e 'del(.user.password)' -i config.yaml
+```
+
+This operation will remove the password field from the configuration.
+
+Remember, `yq` is a powerful tool and has a lot more capabilities, including converting YAML to JSON, merging files, and even more complex manipulations. Refer to the `yq` documentation for further exploration.

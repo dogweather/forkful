@@ -1,51 +1,79 @@
 ---
 title:                "Escribiendo pruebas"
-date:                  2024-01-19
+date:                  2024-02-03T19:30:32.052437-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Escribiendo pruebas"
-
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/haskell/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Qué y Por Qué?
-Escribir tests es crear casos de prueba automáticos para asegurarse de que tu código funciona como esperas. Lo hacemos para cazar bugs antes de que lleguen a producción, ahorrar tiempo en pruebas manuales y mantener la calidad del código a largo plazo.
+## ¿Qué y por qué?
 
-## Cómo se hace:
-```Haskell
--- Usamos Hspec, un framework de testing para Haskell.
--- Primero, importamos el módulo.
+Escribir pruebas en Haskell se trata de asegurar que tus funciones funcionen como se espera mediante controles automatizados. Los programadores lo hacen para capturar errores temprano, facilitar la refactorización y documentar el comportamiento, haciendo que la base de código sea más mantenible y escalable.
+
+## Cómo hacerlo:
+
+Haskell soporta varios marcos de pruebas, pero dos populares son `Hspec` y `QuickCheck`. Hspec te permite definir especificaciones legibles por humanos para tu código, mientras que QuickCheck te permite generar pruebas automáticamente describiendo propiedades que tu código debería satisfacer.
+
+### Usando Hspec
+
+Primero, añade `hspec` a la configuración de tu herramienta de construcción (por ejemplo, `stack.yaml` o archivo `cabal`). Luego, importa `Test.Hspec` y escribe pruebas como especificaciones:
+
+```haskell
+-- archivo: spec/MyLibSpec.hs
 import Test.Hspec
+import MyLib (add)
 
--- Definimos una función simple a testear.
-sumar :: Int -> Int -> Int
-sumar x y = x + y
-
--- Escribimos nuestros tests.
 main :: IO ()
-main = hspec $ do
-  describe "sumar" $ do
-    it "sumar 1 y 2 resulta en 3" $ do
-      sumar 1 2 `shouldBe` 3
+main = hspec $ describe "MyLib.add" $ do
+  it "suma dos números" $
+    add 1 2 `shouldBe` 3
 
-    it "sumar 0 y 5 resulta en 5" $ do
-      sumar 0 5 `shouldBe` 5
+  it "devuelve el primer número al sumar cero" $
+    add 5 0 `shouldBe` 5
 ```
 
-Output:
+Luego, ejecuta tus pruebas usando tu herramienta de construcción, resultando en una salida que podría verse así:
+
 ```
-sumar
-  sumar 1 y 2 resulta en 3
-  sumar 0 y 5 resulta en 5
+MyLib.add
+  - suma dos números
+  - devuelve el primer número al sumar cero
 
-Finished in 0.0001 seconds
-2 examples, 0 failures
+Terminado en 0.0001 segundos
+2 ejemplos, 0 fallos
 ```
 
-## Profundización
-El testing en Haskell tiene sus raíces en la cultura de la programación funcional, con un enfoque en funciones puras que son ideales para testing. Alternativas como QuickCheck permiten tests basados en propiedades donde se generan entradas aleatorias. La implementación de tests hace uso de funciones de alto orden, lo cual se alinea con el paradigma funcional de Haskell.
+### Usando QuickCheck
 
-## Ver También
-- [Hspec documentation](https://hspec.github.io/)
-- [QuickCheck on Hackage](https://hackage.haskell.org/package/QuickCheck)
+Con QuickCheck, expresas propiedades que tus funciones deberían satisfacer. Añade `QuickCheck` a la configuración de tu proyecto, luego impórtalo:
+
+```haskell
+-- archivo: test/MyLibProperties.hs
+import Test.QuickCheck
+import MyLib (add)
+
+prop_addAssociative :: Int -> Int -> Int -> Bool
+prop_addAssociative x y z = x + (y + z) == (x + y) + z
+
+prop_addCommutative :: Int -> Int -> Bool
+prop_addCommutative x y = x + y == y + x
+
+main :: IO ()
+main = do
+  quickCheck prop_addAssociative
+  quickCheck prop_addCommutative
+```
+
+Ejecutar estas pruebas generará automáticamente entradas para comprobar las propiedades especificadas:
+
+```
++++ OK, pasó 100 pruebas.
++++ OK, pasó 100 pruebas.
+```
+
+En ambos ejemplos, de Hspec y QuickCheck, los conjuntos de pruebas sirven como documentación ejecutable que puede verificar automáticamente la corrección de tu código.

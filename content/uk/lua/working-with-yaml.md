@@ -1,49 +1,93 @@
 ---
 title:                "Робота з YAML"
-date:                  2024-01-19
+date:                  2024-02-03T19:26:24.863853-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Робота з YAML"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/lua/working-with-yaml.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? / Що таке & Чому?
-YAML - це формат серіалізації даних, легкий для людського ока. Програмісти використовують YAML через його зрозумілість та простоту інтеграції з різними мовами програмування.
+## Що і Чому?
 
-## How to: / Як це зробити:
-Lua не має вбудованої підтримки YAML, але ви можете використовувати зовнішні бібліотеки. Приклад з `lyaml`:
+YAML, скорочення від "YAML Ain't Markup Language" (YAML - це не мова розмітки), є стандартом серіалізації даних, який сприймається людиною та часто використовується для файлів конфігурації та обміну даними між мовами програмування. Програмісти використовують YAML завдяки його простоті та зручності для сприйняття, що робить його переважним вибором для налаштувань, різноманітних конфігурацій програм або вмісту, який повинен бути доступний для редагування не програмістами.
 
-```Lua
-local lyaml = require 'lyaml'
--- Читання YAML
-local yaml_data = [[
-- Вітаємо
-- у
-- YAML
-]]
-local table_from_yaml = lyaml.load(yaml_data)
-print(table_from_yaml[1])  -- Виведе: Вітаємо
+## Як це зробити:
 
--- Запис у YAML
-local table_to_yaml = { "Рік", "Місяць", "День" }
-local yaml_output = lyaml.dump({table_to_yaml})
-print(yaml_output)
+Lua не має вбудованої підтримки для YAML, але ви можете працювати з YAML-файлами, використовуючи сторонні бібліотеки, такі як `lyaml`. Ця бібліотека дозволяє кодувати та декодувати дані YAML за допомогою Lua. Спочатку вам потрібно встановити `lyaml` через LuaRocks, менеджер пакетів Lua:
+
+```bash
+luarocks install lyaml
 ```
 
-Sample output / Приклад виводу:
-```
-Вітаємо
-- Рік
-- Місяць
-- День
+### Декодування YAML:
+
+Припустимо, у вас є наступний YAML-вміст у файлі під назвою `config.yaml`:
+
+```yaml
+database:
+  host: localhost
+  port: 3306
+  username: user
+  password: pass
 ```
 
-## Deep Dive / Занурення у деталі:
-YAML (YAML Ain't Markup Language) з'явився у 2001 році як зручний формат для конфігураційних файлів. Альтернативами є JSON та XML. YAML визначається із простоти читання та відсутності зайвих символів, на відміну від XML. При роботі з YAML у Lua, важливо вибрати потрібну бібліотеку та зважати на можливі питання перетворення типів даних.
+Ви можете декодувати цей YAML-файл у Lua-таблицю за допомогою наступного коду:
 
-## See Also / Дивіться також:
-- Офіційний сайт YAML: [YAML](https://yaml.org)
-- lyaml бібліотека: [GitHub lyaml](https://github.com/gvvaughan/lyaml)
-- YAML для більшої глибини специфікацій: [YAML Spec](https://yaml.org/spec/1.2/spec.html)
+```lua
+local yaml = require('lyaml')
+local file = io.open("config.yaml", "r")
+local content = file:read("*all")
+file:close()
+
+local data = yaml.load(content)
+for k,v in pairs(data.database) do
+  print(k .. ": " .. v)
+end
+```
+
+Коли ви запустите цей скрипт, він має вивести:
+
+```output
+host: localhost
+port: 3306
+username: user
+password: pass
+```
+
+### Кодування YAML:
+
+Щоб закодувати Lua-таблиці у формат YAML, ви використовуєте функцію `dump`, яку надає `lyaml`. Припустімо, ви хочете створити YAML-представлення наступної Lua-таблиці:
+
+```lua
+local data = {
+  website = {
+    name = "Example",
+    owner = "Jane Doe",
+    metadata = {
+      creation_date = "2023-01-01",
+      tags = {"blog", "personal", "lua"}
+    }
+  }
+}
+
+local yaml = require('lyaml')
+local yaml_data = yaml.dump({data})
+print(yaml_data)
+```
+
+Вивід YAML буде:
+
+```yaml
+- website:
+    metadata:
+      creation_date: '2023-01-01'
+      tags: [blog, personal, lua]
+    name: Example
+    owner: Jane Doe
+```
+
+Дотримуючись цих шаблонів, програмісти Lua можуть ефективно управляти даними YAML для різноманітних застосувань. Ці операції з YAML є критично важливими для розробки універсальних програм Lua, які взаємодіють гладко з іншими частинами системи або безпосередньо з іншими системами.

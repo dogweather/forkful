@@ -1,46 +1,81 @@
 ---
 title:                "標準エラーへの書き込み"
-date:                  2024-01-19
+date:                  2024-02-03T19:32:42.007025-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "標準エラーへの書き込み"
-
 tag:                  "Files and I/O"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/arduino/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-エラーメッセージを標準エラー出力（stderr）に書き込むのは、ログやユーザーへのフィードバックと分けて、プログラムの問題を報告するためです。
+## 何となぜ？
 
-## How to:
-Arduinoでは標準エラーに直接書き込む機能はありません。シリアル出力を使うのが一般的です。
+Arduinoプログラミングにおいて標準エラー(stderr)への書き込みは、エラーメッセージや診断を標準出力(stdout)とは別のチャネルへ向けることを含みます。これにより、エラーメッセージが標準出力と混ざることがないようにし、プログラマーは正常なプログラム出力とエラーメッセージを区別することができます。これにより、デバッグとログ分析がより直接的になります。
 
-```Arduino
+## 方法:
+
+Arduinoは、従来のコンピューティングシステムが行うように、標準出力と標準エラーを本来的に区別しません。`Serial.print()`メソッドと`Serial.println()`メソッドの両方が、一般にArduino IDEのシリアルモニタで表示される同じシリアル出力に書き込みます。しかし、エラーメッセージを特別にフォーマットしたり、SDカード上のファイルやネットワーク接続経由で別の出力に向けたりすることで、stderrへ書き込むことをエミュレートすることができます。
+
+stderrをエミュレートするために、エラーメッセージに"ERROR:"のようなタグを前置して、シリアルモニタで区別することができます：
+
+```cpp
 void setup() {
-  Serial.begin(9600); // シリアル通信の初期化
+  Serial.begin(9600); // 9600のボーレートでシリアル通信を初期化
 }
 
 void loop() {
-  // エラーをシリアルに出力
-  Serial.println("ERROR: Something went wrong!");
-  delay(1000); // 1秒間隔で繰り返す
+  int result = someFunction();
+  if (result == -1) {
+    // エラーメッセージの前にエミュレートするstderrを前置
+    Serial.println("ERROR: 関数の実行に失敗しました。");
+  } else {
+    Serial.println("関数は正常に実行されました。");
+  }
+  delay(1000); // ループを再開する前に1秒待つ
+}
+
+int someFunction() {
+  // エラーの場合-1を返すダミー関数
+  return -1;
 }
 ```
 
-シリアルモニター出力:
+Arduino IDEのシリアルモニタでのサンプル出力は、こんな感じになります：
+
 ```
-ERROR: Something went wrong!
-ERROR: Something went wrong!
-...
+ERROR: 関数の実行に失敗しました。
 ```
 
-## Deep Dive
-Arduinoには標準エラーストリーム`stderr`がないため、`Serial.print()`や`Serial.println()`で代用します。歴史的には環境が限られていたため、単一のシリアルチャンネルを使っていました。デバッグライブラリや外部ツールを使う方法もあります。
+異なる物理的出力への書き込みを含む、より洗練されたアプローチが必要なプロジェクトの場合、サードパーティのライブラリや追加のハードウェアが必要になることがあります。例えば、SDカードへのエラーメッセージのログ記録には`SD`ライブラリが必要です：
 
-## See Also
-- [Arduino 公式サイト](https://www.arduino.cc/)
-- [Arduino Serial リファレンス](https://www.arduino.cc/reference/en/language/functions/communication/serial/)
-- [デバッグ技術についてのAdafruitのガイド](https://learn.adafruit.com/adafruit-guide-excellent-soldering/common-problems)
+```cpp
+#include <SPI.h>
+#include <SD.h>
 
-この記事ではArduinoプラットフォームでの標準エラー出力の基本を解説しました。興味があれば上記リンクも調べてみてください。
+File myFile;
+
+void setup() {
+  Serial.begin(9600);
+  if (!SD.begin()) {
+    Serial.println("ERROR: SDカードの初期化に失敗しました！");
+    return;
+  }
+  
+  myFile = SD.open("error.log", FILE_WRITE);
+  if (myFile) {
+    myFile.println("ERROR: 関数の実行に失敗しました。");
+    myFile.close(); // 内容を保存するため、ファイルを閉じることを確認する
+  } else {
+    Serial.println("ERROR: error.logのオープンに失敗しました！");
+  }
+}
+
+void loop() {
+  // ここにメインのコードが入ります
+}
+```
+
+このアプローチにより、SDカード上の`error.log`ファイルへエラーメッセージを向けることで、物理的に正常なプログラム出力とエラーメッセージを分離し、主要な出力チャネルを散らかすことなく事後分析を可能にします。

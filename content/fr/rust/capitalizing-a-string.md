@@ -1,35 +1,65 @@
 ---
-title:                "Mettre une chaîne de caractères en majuscules"
-date:                  2024-01-19
-simple_title:         "Mettre une chaîne de caractères en majuscules"
-
+title:                "Mettre en majuscule une chaîne"
+date:                  2024-02-03T19:06:23.170611-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Mettre en majuscule une chaîne"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/rust/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
-Mettre une chaîne de caractères en majuscules, c'est transformer toutes ses lettres en majuscules. Les développeurs font ça pour normaliser les données, pour l'importance visuelle, ou pour répondre à des besoins spécifiques de mise en forme.
+
+Mettre en majuscule la première lettre d'une chaîne de caractères en Rust implique de modifier cette chaîne afin que son premier caractère soit une majuscule s'il s'agit d'une lettre, tout en laissant le reste de la chaîne inchangé. Les programmeurs effectuent souvent cette opération à des fins de formatage, comme préparer des mots pour des titres ou assurer la cohérence dans les entrées utilisateur.
 
 ## Comment faire :
+
+Pour mettre en majuscule la première lettre d'une chaîne de caractères en Rust, vous avez deux options principales : utiliser les fonctionnalités de la bibliothèque standard ou employer des crates tierces pour des besoins plus complexes ou spécifiques. Voici comment procéder dans les deux cas.
+
+### Utiliser la bibliothèque standard de Rust
+
+La bibliothèque standard de Rust ne propose pas de méthode directe pour mettre en majuscule les chaînes de caractères, mais vous pouvez y parvenir en manipulant les caractères de la chaîne.
+
 ```rust
-fn main() {
-    let salutation = "bonjour tout le monde";
-    println!("{}", salutation.to_uppercase());
+fn capitalize_first(s: &str) -> String {
+    let mut c = s.chars();
+    match c.next() {
+        None => String::new(),
+        Some(f) => f.to_uppercase().collect::<String>() + c.as_str(),
+    }
 }
 
-// Sortie :
-// BONJOUR TOUT LE MONDE
+fn main() {
+    let my_string = "hello";
+    println!("{}", capitalize_first(my_string)); // Résultat : Hello
+}
 ```
 
-## Plongée en profondeur :
-Autrefois, la capitalisation était surtout manuelle : chaque lettre était vérifiée et transformée. En Rust, la méthode `.to_uppercase()` fait le travail pour nous. C’est plus complexe qu'une simple correspondance 'a' à 'A', particulièrement avec des caractères Unicode. Certains alphabets, comme le grec ou le russe, ont des règles uniques pour la capitalisation. Rust gère ça correctement grâce à sa prise en charge d’Unicode.
+### Utiliser la crate `heck`
 
-Alternatives ? Utilisez `.to_lowercase()` pour la transformation inverse ou `.capitalize()` dans certains crates pour ne capitaliser que la première lettre. 
+Pour une approche plus directe, surtout lorsque vous travaillez dans un contexte de traitement de texte plus vaste, vous pourriez préférer utiliser des bibliothèques tierces telles que `heck`. La crate `heck` offre diverses fonctionnalités de conversion de cas, y compris un moyen simple de mettre en majuscule les chaînes de caractères.
 
-Implémentation ? Rust itère sur chaque caractère Unicode, vérifie si une version en majuscules existe et la remplace si nécessaire. Performance-wise, attention aux gros textes : toute la chaîne est copiée.
+Tout d'abord, ajoutez `heck` à votre `Cargo.toml` :
 
-## Voir aussi :
-- Rust documentation on `.to_uppercase()`: [https://doc.rust-lang.org/std/primitive.str.html#method.to_uppercase](https://doc.rust-lang.org/std/primitive.str.html#method.to_uppercase)
-- Unicode `case mapping`: [https://www.unicode.org/reports/tr21/tr21-5.html](https://www.unicode.org/reports/tr21/tr21-5.html)
+```toml
+[dependencies]
+heck = "0.4.0"
+```
+
+Ensuite, utilisez-la pour mettre en majuscule votre chaîne :
+
+```rust
+extern crate heck; // Non nécessaire dans l'édition Rust 2018 ou ultérieure
+use heck::TitleCase;
+
+fn main() {
+    let my_string = "hello world";
+    let capitalized = my_string.to_title_case();
+    println!("{}", capitalized); // Résultat : Hello World
+}
+```
+
+Note : La méthode `to_title_case` fournie par `heck` met en majuscule chaque mot de la chaîne, ce qui pourrait être plus que ce que vous recherchez si vous souhaitez uniquement que le premier caractère de la chaîne soit en majuscule. Ajustez votre utilisation selon vos besoins spécifiques.

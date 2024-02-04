@@ -1,50 +1,79 @@
 ---
 title:                "Testien kirjoittaminen"
-date:                  2024-01-19
+date:                  2024-02-03T19:30:09.494018-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Testien kirjoittaminen"
-
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/cpp/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Testit ovat koodeja jotka tarkistavat ohjelmasi käyttäytymisen automaattisesti. Testauksesta on tullut ohjelmoinnin peruskivi koska se vahvistaa koodin oikeellisuutta, havaitsee virheet ajoissa ja helpottaa kunnossapitoa.
+## Mikä ja miksi?
 
-## How to:
-```C++
-#include <cassert>
+Testien kirjoittaminen C++:ssa tarkoittaa pienten, itsenäisten ohjelmien luomista, jotka automaattisesti varmistavat koodikannan osien toiminnan. Ohjelmoijat tekevät näin varmistaakseen, että heidän koodinsa toimii odotetulla tavalla, estääkseen regressiot (eli uusien muutosten rikkovan olemassa olevaa toiminnallisuutta) ja helpottaakseen ylläpidettävien koodikantojen hallintaa ajan myötä.
 
-// Funktion esittely
-int summa(int a, int b) {
+## Kuinka:
+
+### Käyttäen Google Test -kehystä
+
+Yksi suosituimmista kolmannen osapuolen kirjastoista C++:n testien kirjoittamiseen on Google Test. Ensin sinun tulee asentaa Google Test ja linkittää se projektiisi. Kun olet valmis, voit alkaa kirjoittaa testitapauksia.
+
+```cpp
+#include <gtest/gtest.h>
+
+int add(int a, int b) {
     return a + b;
 }
 
-// Testifunktio
-void testaa_summa() {
-    assert(summa(1, 2) == 3);
-    assert(summa(-1, -2) == -3);
-    assert(summa(0, 0) == 0);
-
-    // Tulostetaan "Testit ok!", jos edelliset assert-lauseet eivät aiheuta virhettä
-    std::cout << "Testit ok!" << std::endl;
+TEST(TestSuiteName, TestName) {
+    EXPECT_EQ(3, add(1, 2));
 }
 
-int main() {
-    testaa_summa(); // Testien ajaminen
-    return 0;
+int main(int argc, char **argv) {
+    ::testing::InitGoogleTest(&argc, argv);
+    return RUN_ALL_TESTS();
 }
 ```
-Output:
+
+Tallenna koodi tiedostoon ja käännä se g++-kääntäjällä, linkittaen Google Test -kirjasto. Jos kaikki on asetettu oikein, tuloksena olevan suoritettavan tiedoston suorittaminen ajaa testin, ja jos `add`-funktio toimii odotetulla tavalla, näet jotain seuraavaa:
+
 ```
-Testit ok!
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from TestSuiteName
+[ RUN      ] TestSuiteName.TestName
+[       OK ] TestSuiteName.TestName (0 ms)
+[----------] 1 test from TestSuiteName (0 ms total)
+
+[==========] 1 test from 1 test suite ran. (1 ms total)
+[  PASSED  ] 1 test.
 ```
 
-## Deep Dive
-Alun perin ohjelmoinnin alkuaikoina testaus oli manuaalista ja aikaa vievää. Nykyään on olemassa monia testaustyökaluja kuten Google Test C++:lle. Vaihtoehtoisesti voit käyttää TDD (Test-Driven Development) periaatetta, missä luot testit ennen itse koodia. Käytännön toteutus testeissä vaihtelee unit-testeistä integraatio- ja hyväksymistesteihin, jotka kaikki tähtäävät ohjelman laadun varmistamiseen eri tasoilla.
+### Käyttäen Catch2:ta
 
-## See Also
-- [Google Test GitHub](https://github.com/google/googletest) - Google Test, C++ testaustyökalu
-- [C++ Reference Testing](http://www.cplusplus.com/reference/cassert/) - C++ `cassert` kirjaston dokumentaatio
-- [Test-Driven Development](https://en.wikipedia.org/wiki/Test-driven_development) - Lisätietoa TDD:stä
+Toinen suosittu testauskehys C++:lle on Catch2. Siinä on yksinkertaisempi syntaksi eikä se yleensä vaadi linkittämistä kirjastoa vasten (vain otsikkotiedosto). Tässä on esimerkki yksinkertaisen testin kirjoittamisesta Catch2:lla:
+
+```cpp
+#define CATCH_CONFIG_MAIN  // Tämä kertoo Catchille että se tarjoaa main()-funktion - tee näin vain yhdessä cpp-tiedostossa
+#include <catch.hpp>
+
+int multiply(int a, int b) {
+    return a * b;
+}
+
+TEST_CASE( "Kokonaislukuja kertolasketaan", "[multiply]" ) {
+    REQUIRE( multiply(2, 3) == 6 );
+}
+```
+
+Kääntämisen ja tämän testin suorittamisen jälkeen Catch2 tarjoaa selkeän tulosteen, joka osoittaa, jäikö testi läpäiseväksi tai hylätyksi, mukaan lukien kaikki vianjäljitykseen tarvittavat tiedot:
+
+```
+===============================================================================
+Kaikki testit läpäisty (1 väite 1 testitapauksessa)
+```
+
+Nämä esimerkit näyttävät, kuinka testauskehyksien integroiminen C++-kehitystyönkulkuusi voi merkittävästi parantaa koodisi luotettavuutta ja ylläpidettävyyttä.

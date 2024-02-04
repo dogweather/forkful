@@ -1,62 +1,80 @@
 ---
 title:                "Trabajando con JSON"
-date:                  2024-01-19
+date:                  2024-02-03T19:21:33.560340-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Trabajando con JSON"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/bash/working-with-json.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Qué y Por Qué?
-Trabajar con JSON significa manipular un formato ligero de intercambio de datos. Los programadores lo usan porque es fácil de leer para humanos y simple de interpretar para máquinas.
+## ¿Qué y por qué?
+Trabajar con JSON en programación Bash implica analizar, extraer y manipular datos JSON directamente desde la línea de comandos. Los programadores a menudo hacen esto para integrar sin problemas scripts de shell con APIs web y formatos modernos de intercambio de datos, haciendo que los scripts Bash sean más poderosos y relevantes en un ecosistema pesado de JSON.
 
 ## Cómo hacerlo:
-Usaremos `jq`, una herramienta de línea de comandos para manipular JSON.
+Bash por sí solo carece de capacidades integradas de análisis de JSON, pero `jq` es un poderoso procesador JSON de línea de comandos que llena este vacío. Así es como se usa:
 
-Instalación de `jq`:
-```Bash
-sudo apt-get update
-sudo apt-get install jq
-```
+**Leyendo un archivo JSON:**
 
-Suponiendo que tienes un archivo `datos.json`:
-```JSON
+Ejemplo de `data.json`:
+```json
 {
-  "nombre": "Juan",
-  "edad": 30,
-  "esProgramador": true
+  "name": "Jane Doe",
+  "email": "jane@example.com",
+  "location": {
+    "city": "New York",
+    "country": "USA"
+  }
 }
 ```
 
-Para leer el campo `nombre`, ejecuta:
-```Bash
-cat datos.json | jq '.nombre'
+Para leer y extraer el nombre del archivo JSON:
+```bash
+jq '.name' data.json
 ```
 Salida:
 ```
-"Juan"
+"Jane Doe"
 ```
 
-Para añadir un campo:
-```Bash
-jq '. + {"habilidades": ["bash", "python"]}' datos.json
+**Modificando datos JSON:**
+
+Para actualizar la ciudad a "Los Angeles" y volver a escribir en el archivo:
+```bash
+jq '.location.city = "Los Angeles"' data.json > temp.json && mv temp.json data.json
+```
+
+**Analizando JSON desde una variable:**
+
+Si tienes JSON en una variable Bash, `jq` aún puede procesarlo:
+```bash
+json_string='{"name": "John Doe", "email": "john@example.com"}'
+echo $json_string | jq '.name'
 ```
 Salida:
-```JSON
+```
+"John Doe"
+```
+
+**Trabajando con arreglos:**
+
+Dado un arreglo de elementos en JSON:
+```json
 {
-  "nombre": "Juan",
-  "edad": 30,
-  "esProgramador": true,
-  "habilidades": ["bash", "python"]
+  "items": ["apple", "banana", "cherry"]
 }
 ```
 
-## Profundizando
-JSON, acrónimo de JavaScript Object Notation, fue propuesto por Douglas Crockford en 2001. Aunque hay alternativas como XML, JSON es más ligero y su sintaxis es más sencilla. `jq` no es la única herramienta que existe para trabajar con JSON en Bash; `jshon` y `json.sh` son otras opciones, pero `jq` es notable por su potencia y flexibilidad.
+Para extraer el segundo elemento (la indexación comienza en 0):
+```bash
+jq '.items[1]' data.json
+```
+Salida:
+```
+"banana"
+```
 
-## Ver También
-- Manual oficial de `jq`: https://stedolan.github.io/jq/manual/
-- JSON en Wikipedia: https://es.wikipedia.org/wiki/JSON
-- Tutorial de Bash: https://linuxconfig.org/bash-scripting-tutorial
+Para operaciones más complejas y filtros, `jq` tiene un manual comprensivo y tutoriales disponibles en línea, haciéndolo una herramienta versátil para todas tus necesidades de Bash/JSON.

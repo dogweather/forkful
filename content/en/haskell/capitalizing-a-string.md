@@ -1,8 +1,8 @@
 ---
 title:                "Capitalizing a string"
-date:                  2024-01-19
+date:                  2024-02-03T19:02:30.982258-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Capitalizing a string"
-
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/haskell/capitalizing-a-string.md"
 ---
@@ -10,39 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-
-Capitalizing a string means fixing its casing so the first letter is uppercase, and the rest are lowercase. Programmers do this for consistency, readability, and to meet data formatting standards.
+Capitalizing a string involves transforming the first letter of a given string to uppercase while ensuring the rest of the letters remain lowercase. Programmers do this for formatting outputs, adhering to grammatical correctness in texts, or improving the readability of generated data.
 
 ## How to:
+In Haskell, you can capitalize a string using the standard library without needing any third-party libraries.
 
-To capitalize strings in Haskell, the language itself doesn't have a built-in `capitalize` function. So, we'll make our own using the `toUpper` and `toLower` functions from the `Data.Char` module.
-
-```Haskell
+```haskell
 import Data.Char (toUpper, toLower)
 
--- Capitalizes the first character of a string and lowercases the rest
 capitalize :: String -> String
-capitalize ""     = ""
-capitalize (x:xs) = toUpper x : map toLower xs
+capitalize "" = ""
+capitalize (head:tail) = toUpper head : map toLower tail
 
-main = do
-  print $ capitalize "haskell"       -- Outputs "Haskell"
-  print $ capitalize "hASKELL"       -- Outputs "Haskell"
-  print $ capitalize ""              -- Outputs ""
-  print $ capitalize "hello world!"  -- Outputs "Hello world!"
+-- Sample usage:
+main = putStrLn $ capitalize "hello world"
 ```
 
-## Deep Dive
+Output:
+```
+Hello world
+```
 
-Haskell, a functional programming language, doesn't include simple string capitalization in its standard library, possibly because it's trivial to implement and not a common necessity in the type of programming it's designed for.
+For more complex scenarios or ease of use, you might want to use a third-party library such as `text`, which is popular for efficient string manipulation in Haskell.
 
-Alternatives to the `capitalize` function could use `Data.Text` which may provide performance benefits for large texts due to more efficient internal representations. Or look into libraries like `text-icu` for robust locale-sensitive capitalization.
+First, you need to add `text` to your project's dependencies. Then, you can use its functions to capitalize a string as follows:
 
-Implementation wise, it's worth noting that our `capitalize` function doesn't deal with non-ASCII characters. If you need full Unicode support, you'd have to look for a library solution or handle complex cases of Unicode capitalization where simple character-by-character transformations don't cut it.
+```haskell
+import qualified Data.Text as T
+import Data.Char (toUpper)
 
-## See Also
+capitalizeText :: T.Text -> T.Text
+capitalizeText text = case T.uncons text of
+    Nothing -> T.empty
+    Just (first, rest) -> T.cons (toUpper first) (T.toLower rest)
 
-- Haskell's `Data.Char` module: http://hackage.haskell.org/package/base-4.16.0.0/docs/Data-Char.html
-- `Data.Text` for efficient text manipulation: http://hackage.haskell.org/package/text
-- Introduction to text processing in Haskell: https://wiki.haskell.org/Text_Processing
-- Unicode considerations in Haskell: https://wiki.haskell.org/Unicode_input_and_output
+-- Sample usage with the text library:
+main = putStrLn $ T.unpack $ capitalizeText (T.pack "hello world")
+```
+
+Output:
+```
+Hello world
+```
+
+Both of these examples demonstrate simple yet effective ways to capitalize a string in Haskell, with or without third-party libraries.

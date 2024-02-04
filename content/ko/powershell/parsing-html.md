@@ -1,52 +1,72 @@
 ---
 title:                "HTML 파싱"
-date:                  2024-01-20T15:33:31.694024-07:00
+date:                  2024-02-03T19:12:58.983787-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "HTML 파싱"
-
 tag:                  "HTML and the Web"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/powershell/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (무엇과 왜?)
-HTML 파싱은 HTML 마크업에서 데이터를 추출하는 과정입니다. 프로그래머들은 웹 페이지의 내용을 자동으로 읽고 가공하기 위해 이를 수행합니다.
+## 무엇 & 왜?
+PowerShell에서 HTML 파싱은 특정 데이터를 추출하거나 웹 관련 작업을 자동화하기 위해 HTML 콘텐츠를 분석하는 것을 의미합니다. 프로그래머들은 웹 페이지와 상호작용하거나 웹 콘텐츠를 스크레이핑하거나 웹 브라우저 없이 폼 제출이나 다른 웹 상호작용을 자동화하기 위해 이 작업을 수행합니다.
 
-## How to: (어떻게 하나요?)
-PowerShell에서는 HTML 파싱을 다양한 방법으로 수행할 수 있습니다. 가장 간단한 방법 중 하나는 `Invoke-WebRequest`로 HTML을 가져온 다음 HTML Agility Pack 같은 라이브러리를 사용하여 파싱하는 것입니다.
+## 방법:
 
-```PowerShell
-# 필요한 라이브러리를 설치합니다.
-Install-Package HtmlAgilityPack
+PowerShell은 기본적으로 전용 HTML 파서를 가지고 있지 않지만, `Invoke-WebRequest` cmdlet을 사용하여 HTML 콘텐츠에 접근하고 파싱할 수 있습니다. 보다 복잡한 파싱과 조작을 위해서는 인기 있는 .NET 라이브러리인 HtmlAgilityPack을 활용할 수 있습니다.
 
-# 웹 페이지를 가져옵니다.
+### `Invoke-WebRequest` 사용하기:
+
+```powershell
+# 웹페이지에서 제목을 가져오는 간단한 예
 $response = Invoke-WebRequest -Uri 'http://example.com'
-
-# HTML Agility Pack을 이용하여 파싱합니다.
-$html = New-Object HtmlAgilityPack.HtmlDocument
-$html.LoadHtml($response.Content)
-
-# 특정 요소를 선택하여 출력합니다.
-$node = $html.DocumentNode.SelectSingleNode('//h1')
-$node.InnerText
+# ParsedHtml 속성을 사용하여 DOM 요소에 접근
+$title = $response.ParsedHtml.title
+Write-Output $title
 ```
 
-출력 예시:
+샘플 출력:
 
 ```
-웹 페이지의 제목
+Example Domain
 ```
 
-## Deep Dive: (심층 분석)
-HTML 파싱은 웹의 초창기부터 중요한 작업이었습니다. PowerShell이 등장하기 전에는 Perl이나 Python 같은 다른 언어가 이 작업을 주로 담당했습니다. PowerShell에서는 내장된 `Invoke-WebRequest`와 `Invoke-RestMethod` 같은 명령어를 제공하여 웹 콘텐츠 작업을 간소화했습니다.
+### HtmlAgilityPack 사용하기:
 
-하지만 HTML 파싱은 복잡할 수 있으며, HTML이 항상 정규화되지는 않기 때문에 강인한 파서가 필요합니다. HTML Agility Pack은 .NET 기반의 라이브러리로서 이런 복잡성을 다루고, XPath나 CSS 선택자를 사용해 원하는 데이터를 찾을 수 있게 해줍니다.
+먼저, HtmlAgilityPack을 설치해야 합니다. NuGet 패키지 관리자를 통해 설치할 수 있습니다:
 
-대안으로는 `AngleSharp`, `CsQuery`와 같은 다른 .NET 라이브러리들이 있으며, 이들도 비슷한 방식으로 작동합니다. PowerShell 스크립트를 사용하여 이 라이브러리들을 활용할 수 있고, 그로 인해 파싱 과정이 매우 유연해집니다.
+```powershell
+Install-Package HtmlAgilityPack -ProviderName NuGet
+```
 
-## See Also: (관련 자료)
-- HTML Agility Pack 공식 문서: [https://html-agility-pack.net/](https://html-agility-pack.net/)
-- PowerShell 문서: [https://docs.microsoft.com/en-us/powershell/](https://docs.microsoft.com/en-us/powershell/)
-- AngleSharp GitHub 페이지: [https://github.com/AngleSharp/AngleSharp](https://github.com/AngleSharp/AngleSharp)
-- CsQuery GitHub 페이지: [https://github.com/jamietre/CsQuery](https://github.com/jamietre/CsQuery)
+그런 다음, PowerShell에서 HTML을 파싱하기 위해 사용할 수 있습니다:
+
+```powershell
+# HtmlAgilityPack 어셈블리 로드
+Add-Type -Path "path\to\HtmlAgilityPack.dll"
+
+# HtmlDocument 객체 생성
+$doc = New-Object HtmlAgilityPack.HtmlDocument
+
+# 파일이나 웹 요청에서 HTML 로드
+$htmlContent = (Invoke-WebRequest -Uri "http://example.com").Content
+$doc.LoadHtml($htmlContent)
+
+# XPath나 다른 쿼리 메소드를 사용하여 요소 추출
+$node = $doc.DocumentNode.SelectSingleNode("//h1")
+
+if ($node -ne $null) {
+    Write-Output $node.InnerText
+}
+```
+
+샘플 출력:
+
+```
+Welcome to Example.com!
+```
+
+이 예제에서, `Invoke-WebRequest`는 간단한 작업에 가장 적합하며, 반면 HtmlAgilityPack은 복잡한 HTML 파싱 및 조작을 위한 훨씬 더 풍부한 기능 세트를 제공합니다.

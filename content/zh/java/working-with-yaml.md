@@ -1,54 +1,93 @@
 ---
-title:                "处理 YAML 文件"
-date:                  2024-01-19
-simple_title:         "处理 YAML 文件"
-
+title:                "使用YAML工作"
+date:                  2024-02-03T19:25:43.564928-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "使用YAML工作"
 tag:                  "Data Formats and Serialization"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/java/working-with-yaml.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-什么是 YAML？YAML 是 "YAML Ain't Markup Language"（YAML 不是标记语言）的递归缩写，用于配置文件和数据交换。为何使用 YAML？它易读，结构清晰，广泛用于配置文件、数据存储和跨语言数据分享。
+## 什么和为什么？
+YAML，即“YAML Ain't Markup Language（YAML不是标记语言）”，是一种供程序员用于配置文件、数据转储和语言间数据传输的可读性数据序列化标准。由于它的可读性和易用性，YAML成为配置应用程序和服务的常用选择。
 
-## How to:
-要在 Java 中使用 YAML，首先确保引入了 YAML 解析库，如 `snakeyaml`。以下是一个简单的例子。
+## 如何操作：
+在Java中，由于Java标准版不包括对YAML的内置支持，您可以使用第三方库来操作YAML文件。一个流行的库是SnakeYAML，它允许轻松解析和生成YAML数据。
 
-```Java
+### 设置SnakeYAML
+首先，将SnakeYAML包含到您的项目中。如果您使用Maven，请将以下依赖项添加到您的`pom.xml`中：
+
+```xml
+<dependency>
+    <groupId>org.yaml</groupId>
+    <artifactId>snakeyaml</artifactId>
+    <version>1.30</version>
+</dependency>
+```
+
+### 读取YAML
+```java
 import org.yaml.snakeyaml.Yaml;
 import java.io.InputStream;
 import java.util.Map;
 
-public class YamlExample {
+public class ReadYamlExample {
     public static void main(String[] args) {
         Yaml yaml = new Yaml();
-        InputStream inputStream = YamlExample.class
-            .getClassLoader()
-            .getResourceAsStream("config.yaml");
-        Map<String, Object> data = yaml.load(inputStream);
-        System.out.println(data);
+        try (InputStream inputStream = ReadYamlExample.class
+                .getClassLoader()
+                .getResourceAsStream("config.yml")) {
+            Map<String, Object> data = yaml.load(inputStream);
+            System.out.println(data);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
 ```
-
-`config.yaml` 文件:
+假设`config.yml`看起来像这样：
 ```yaml
-database:
-  host: localhost
-  port: 3306
+name: Example
+version: 1.0
+features:
+  - login
+  - signup
+```
+输出将是：
+```
+{name=Example, version=1.0, features=[login, signup]}
 ```
 
-输出:
-```plaintext
-{database={host=localhost, port=3306}}
+### 写入YAML
+要从Java对象生成YAML，请使用SnakeYAML提供的`dump`方法：
+```java
+import org.yaml.snakeyaml.Yaml;
+import java.util.Arrays;
+import java.util.LinkedHashMap;
+import java.util.Map;
+
+public class WriteYamlExample {
+    public static void main(String[] args) {
+        Map<String, Object> data = new LinkedHashMap<>();
+        data.put("name", "Example");
+        data.put("version", 1.0);
+        data.put("features", Arrays.asList("login", "signup"));
+
+        Yaml yaml = new Yaml();
+        String output = yaml.dump(data);
+        System.out.println(output);
+    }
+}
 ```
-
-## Deep Dive
-YAML 诞生于 2001 年，目的是更易读易用。JSON 和 XML 都是替代格式，但 YAML 特别适合配置文件。在 Java 中处理 YAML，通常通过 `snakeyaml` 库来解析和生成 YAML 数据，但也有其他库，如 `jackson-dataformat-yaml`.
-
-## See Also
-- YAML 官网: https://yaml.org/
-- SnakeYAML 官方文档: https://bitbucket.org/asomov/snakeyaml/wiki/Documentation
-- Jackson 数据格式库: https://github.com/FasterXML/jackson-dataformats-text/tree/master/yaml
+这将生成并打印以下YAML内容：
+```yaml
+name: Example
+version: 1.0
+features:
+- login
+- signup
+```
+通过利用SnakeYAML，Java开发者可以轻松地将YAML解析和生成集成到他们的应用程序中，从而受益于YAML在配置和数据交换目的上的可读性和简洁性。

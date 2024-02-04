@@ -1,45 +1,95 @@
 ---
-title:                "עבודה עם קבצי CSV"
-date:                  2024-01-19
-simple_title:         "עבודה עם קבצי CSV"
-
+title:                "עובדים עם CSV"
+date:                  2024-02-03T19:21:13.744336-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "עובדים עם CSV"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/python/working-with-csv.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## עקרונות וסיבות
-עבודה עם קבצי CSV (ערכים מופרדים בפסיקים) היא טיפול בנתונים טבלאיים בפורמט פשוט ונפוץ. תוכניתנים משתמשים בשיטה זו בגלל נגישותה ותאימותה עם סוגי תוכנה שונים.
+## מה ולמה?
+עבודה עם CSV (ערכים מופרדים בפסיק) כוללת קריאה מקבצי CSV וכתיבה אליהם, פורמט נפוץ לאחסון נתונים טבלאיים. מתכנתים עושים זאת כדי להחליף ולאחסן נתונים בקלות בפורמט טקסטואלי פשוט, התומך רחבות בפלטפורמות ושפות שונות.
 
 ## איך לעשות:
-קוד לקריאה מ-CSV:
-```Python
+פייתון מספקת את מודול ה-`csv` המובנה לטיפול בקבצי CSV, והופכת את קריאה מהם וכתיבה אליהם לפשוטה. למניפולציות נתונים חזקות ומורכבות יותר, הספרייה `pandas` מתוך צד שלישי היא פופולרית ביותר.
+
+### שימוש במודול `csv`
+
+#### קריאה של קובץ CSV
+```python
 import csv
 
-# קריאת קובץ CSV
-with open('example.csv', newline='') as csvfile:
-    reader = csv.reader(csvfile)
-    for row in reader:
-        print(', '.join(row))
+with open('sample.csv', mode='r') as file:
+    csv_reader = csv.reader(file)
+    for row in csv_reader:
+        print(row)
+```
+*בהנחה ש-`sample.csv` מכיל:*
+```
+name,age,city
+John,22,New York
+Jane,28,Los Angeles
+```
+*פלט:*
+```
+['name', 'age', 'city']
+['John', '22', 'New York']
+['Jane', '28', 'Los Angeles']
 ```
 
-קוד לכתיבה ל-CSV:
-```Python
+#### כתיבה לקובץ CSV
+```python
 import csv
 
-# כתיבת נתונים לקובץ CSV
-with open('output.csv', mode='w', newline='') as csvfile:
-    writer = csv.writer(csvfile)
-    writer.writerow(['name', 'age'])
-    writer.writerow(['Alice', 30])
-    writer.writerow(['Bob', 25])
+rows = [['name', 'age', 'city'], ['Jack', '33', 'Chicago'], ['Emily', '41', 'Denver']]
+
+with open('output.csv', mode='w', newline='') as file:
+    writer = csv.writer(file)
+    writer.writerows(rows)
+```
+*יוצר או דורס את `output.csv` עם:*
+```
+name,age,city
+Jack,33,Chicago
+Emily,41,Denver
 ```
 
-## פלונטר בעומק:
-CSV הופיע בשנות ה-70 כפורמט פשוט לייצוא ויבוא נתונים. ישנם פורמטים אחרים כמו JSON ו-XML אבל CSV נשאר פופולרי בגלל פשטותו. בפייתון, עבודה עם CSV מתבצעת בעזרת המודול `csv` או ספריות חיצוניות כמו `pandas` לטיפול יותר מתקדם.
-  
-## ראה גם:
-- [מדריך קריאה וכתיבה של קבצי CSV ב-Python](https://docs.python.org/3/library/csv.html)
-- [ספריית pandas לעבודה עם נתונים טבלאיים](https://pandas.pydata.org/)
-- [שיעורים למתחילים בנושא נתונים ב-Python](https://realpython.com/python-csv/)
+### שימוש ב`pandas` לCSV
+`pandas` היא ספרייה עוצמתית למניפולציית נתונים שמפשטת את העבודה עם קבצי CSV בין פורמטים אחרים.
+
+#### התקנת pandas
+```shell
+pip install pandas
+```
+
+#### קריאה של קובץ CSV עם pandas
+```python
+import pandas as pd
+
+df = pd.read_csv('sample.csv')
+print(df)
+```
+*פלט:*
+```
+    name  age         city
+0   John   22    New York
+1   Jane   28  Los Angeles
+```
+
+#### כתיבה לקובץ CSV עם pandas
+```python
+import pandas as pd
+
+df = pd.DataFrame({'name': ['Jack', 'Emily'], 'age': [33, 41], 'city': ['Chicago', 'Denver']})
+df.to_csv('output_pandas.csv', index=False)
+```
+*יוצר או דורס את `output_pandas.csv` עם:*
+```
+name,age,city
+Jack,33,Chicago
+Emily,41,Denver
+```

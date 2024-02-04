@@ -1,55 +1,56 @@
 ---
-title:                "ניתוח HTML"
-date:                  2024-01-20T15:32:57.537478-07:00
-simple_title:         "ניתוח HTML"
-
+title:                "פיענוח HTML"
+date:                  2024-02-03T19:12:42.974817-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "פיענוח HTML"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/haskell/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## מה ולמה?
-פירסום HTML הוא התהליך שבו תוכנה מפרקת את תוכן דף אינטרנט מפורמט HTML למרכיבים שפת תכנות יכולה לעבוד איתם. תכניתנים עושים זאת כדי לאסוף נתונים, לבצע בדיקות אוטומטיות, או לשנות תוכן בדפים.
 
-## איך לעשות:
-בואו נבחן את הספרייה `tagsoup` הנפוצה ב-Haskell לפירסום HTML.
-```Haskell
+פיענוח HTML בHaskell מאפשר לך לחלץ נתונים, לשנות תוכן HTML, או להתקשר עם דפי אינטרנט תכנותית. פעולה זו הכרחית למשימות כמו גריפת אתרים, בדיקות אוטומטיות של אפליקציות אינטרנט, וחילוץ נתונים מאתרים - תוך ניצול המערכת הטיפוסית החזקה של Haskell ופרדיגמות התכנות הפונקציונליות כדי להבטיח קוד חזק ותמציתי.
+
+## איך:
+
+לצורך פיענוח HTML בHaskell, נשתמש בספרייה `tagsoup` בשל פשטותה וגמישותה. ראשית, וודאו שהספרייה מותקנת על ידי הוספת `tagsoup` לקובץ הcabal של הפרויקט שלכם או על ידי הרצת `cabal install tagsoup`.
+
+```haskell
+{-# LANGUAGE OverloadedStrings #-}
+
 import Text.HTML.TagSoup
 
--- דוגמא פשוטה לפירוס HTML
-parseHTML :: String -> [Tag String]
-parseHTML html = parseTags html
+-- HTML לדוגמה להדגמה
+let sampleHtml = "<html><body><p>Learn Haskell!</p><a href='http://example.com'>Click Here</a></body></html>"
 
--- נניח שיש לנו את ה-HTML הבא:
-exampleHTML :: String
-exampleHTML = "<html><head><title>דוגמא</title></head><body><p>זו דוגמא לפסקה מפורמטת ב-HTML.</p></body></html>"
+-- לפענח HTML ולסנן לינקים (תגי a)
+let tags = parseTags sampleHtml
+let links = [fromAttrib "href" tag | tag <- tags, isTagOpenName "a" tag]
 
--- הפעלה:
-main :: IO ()
-main = print $ parseHTML exampleHTML
-
-{- פלט לדוגמא:
-[TagOpen "html" [],TagOpen "head" [],TagOpen "title" [],TagText "דוגמא",TagClose "title",TagClose "head",TagOpen "body" [],TagOpen "p" [],TagText "זו דוגמא לפסקה מפורמטת ב-HTML.",TagClose "p",TagClose "body",TagClose "html"]
--}
+-- להדפיס קישורים שנחלצו
+print links
 ```
-עם זאת, ברוב המקרים נרצה למצוא תגים מסוימים ולחלץ את התוכן שלהם:
-```Haskell
-import Text.HTML.TagSoup
 
--- חיפוש תגית כותרת וחילוץ הטקסט
-findTitle :: [Tag String] -> String
-findTitle = innerText . takeWhile (~/= "</title>") . dropWhile (~/= "<title>")
-
-main :: IO ()
-main = print $ findTitle $ parseHTML exampleHTML
-
--- פלט: "דוגמא"
+פלט לדוגמה:
+```plaintext
+["http://example.com"]
 ```
-## צלילה עמוקה
-הספרייה `tagsoup` הוצגה לראשונה בשנת 2006 והיא מתמקדת בגמישות וחסינות לשגיאות, המאפשרת עיבוד HTML "בעולם האמיתי" גם אם הוא לא תקני לחלוטין. קיימות גם ספריות אלטרנטיביות, כגון `hxt` המאפשרת עבודה עם XPath ו-XSLT, ו-`pandoc` לתכניתנים שמעוניינים במרחב רחב יותר של פירמטים ותכנים. `tagsoup` משתמשת בכללי העיסוק של "אם זה נראה כמו HTML, זה כנראה HTML", ובכך מנצחת רוב המקרים של הפרדה שגויה או שימוש לא תקני בתגי HTML.
 
-## ראו גם
-- הדוקומנטציה הרשמית של [`tagsoup`](https://hackage.haskell.org/package/tagsoup).
-- ספריית [`hxt`](https://hackage.haskell.org/package/hxt), אלטרנטיבה לפירסום ועיבוד XML ו-HTML. 
-- כלי [`pandoc`](https://pandoc.org/), להמרות מתוך ולתוך מגוון פורמטים שונים של מסמכים.
+לצרכי פיענוח HTML מורכבים יותר, שקלו להשתמש בספריית `pandoc`, במיוחד אם אתם עוסקים בהמרת מסמכים. היא גמישה ביותר אך מגיעה עם מורכבות רבה יותר:
+
+```haskell
+import Text.Pandoc
+
+-- בהנחה שיש לכם מסמך Pandoc (doc) טעון, לדוגמה, מקריאת קובץ
+let doc = ... -- המסמך Pandoc שלכם יופיע כאן
+
+-- להמיר את המסמך למחרוזת HTML
+let htmlString = writeHtmlString def doc
+
+-- כעת, יש לפענח את `htmlString` כמתואר לעיל או להמשיך לפי הצורך שלכם.
+```
+זכרו כי `pandoc` היא ספרייה גדולה המתמקדת בהמרה בין פורמטים רבים של סימון, אז השתמשו בה אם אתם זקוקים ליכולות הנוספות שלה או אם אתם כבר מתמודדים עם פורמטים של מסמכים ביישום שלכם.

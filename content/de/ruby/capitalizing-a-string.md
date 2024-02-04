@@ -1,56 +1,44 @@
 ---
-title:                "String in Großbuchstaben umwandeln"
-date:                  2024-01-19
-simple_title:         "String in Großbuchstaben umwandeln"
-
+title:                "Einen String großschreiben"
+date:                  2024-02-03T19:06:05.660565-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Einen String großschreiben"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/ruby/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Was & Warum?
+Das Großschreiben eines Strings in der Programmierung bezieht sich oft darauf, den ersten Buchstaben eines Strings in Großbuchstaben und den Rest in Kleinbuchstaben umzuwandeln. Programmierer tun dies aus Gründen wie der Einhaltung von Benennungskonventionen, um Ausgaben lesbarer zu machen oder um Datenkonsistenz für Vergleiche und Speicherung zu gewährleisten.
 
-Eine Zeichenkette zu kapitalisieren bedeutet, den ersten Buchstaben im Wort groß zu machen, oft für bessere Lesbarkeit oder Einhaltung bestimmter Schreibstandards. Programmierer nutzen dies, um Nutzereingaben zu formatieren oder Textausgaben zu normieren.
-
-## Anleitung:
-
-Um in Ruby einen String zu kapitalisieren, verwenden wir einfach die Methode `.capitalize`. Hier ist ein Codebeispiel:
+## Wie geht das:
+Ruby bietet einfache Methoden für die String-Manipulation, einschließlich der Großschreibung. So können Sie einen String in Ruby großschreiben:
 
 ```ruby
-mein_string = "ruby ist fantastisch"
-puts mein_string.capitalize
+# Rubys eingebaute Methode
+string = "hallo welt"
+capitalized_string = string.capitalize
+puts capitalized_string # => "Hallo welt"
 ```
 
-Ausgabe:
-
-```
-Ruby ist fantastisch
-```
-
-Falls du jeden Wortanfang groß haben möchtest, gibt es `titleize` in Rails oder Du kannst `.split.map(&:capitalize).join(' ')` in plain Ruby nutzen:
+Rubys `.capitalize` Methode ist praktisch, betrifft aber nur den ersten Buchstaben. Für mehr Kontrolle oder um jedes Wort in einem String großzuschreiben (bekannt als Titelgroßschreibung), möchten Sie vielleicht die `titleize` Methode aus der Rails ActiveSupport-Erweiterung verwenden oder sie selbst implementieren:
 
 ```ruby
-mein_string = "ruby ist wirklich fantastisch"
-puts mein_string.split.map(&:capitalize).join(' ')
+# Verwendung von ActiveSupports 'titleize' in Rails
+require 'active_support/core_ext/string/inflections'
+string = "hallo welt"
+puts string.titleize # => "Hallo Welt"
 ```
 
-Ausgabe:
+Wenn Sie Rails nicht verwenden oder eine reine Ruby-Lösung bevorzugen, so könnten Sie jedes Wort in einem String großschreiben:
 
+```ruby
+string = "hallo welt"
+capitalized_each_word = string.split.map(&:capitalize).join(' ')
+puts capitalized_each_word # => "Hallo Welt"
 ```
-Ruby Ist Wirklich Fantastisch
-```
 
-## Vertiefung:
-
-Ein kurzer historischer Kontext: In frühen Textverarbeitungssystemen war das Kapitalisieren eine nützliche Funktion, um Schlüsselwörter oder Titel hervorzuheben. In Ruby wurde `.capitalize` dazu entworfen, diese Aufgabe einfach zu machen.
-
-Als alternative Methoden stehen `.upcase` für die Umwandlung aller Buchstaben in Großbuchstaben oder `.downcase` für Kleinschreibung zur Verfügung. Für aufwändigere Formatierungen könnt ihr auf Regular Expressions oder externe Bibliotheken wie ActiveSupport aus Rails zurückgreifen, die die Methode `titleize` anbietet.
-
-Die interne Implementierung von `.capitalize` betrachtet nur den ersten Buchstaben des Strings und ändert dessen Case, während der Rest des Strings zu Kleinbuchstaben wird. Es handelt sich also nicht um eine vollständige Titel-Kapitalisierung im Sinne von Buchtiteln oder Überschriften.
-
-## Siehe Auch:
-
-- Ruby-Dokumentation zur `.capitalize` Methode: [ruby-doc.org/core-2.7.0/String.html#method-i-capitalize](https://ruby-doc.org/core-2.7.0/String.html#method-i-capitalize)
-- Rails ActiveSupport `titleize`: [api.rubyonrails.org/classes/String.html#method-i-titleize](https://api.rubyonrails.org/classes/String.html#method-i-titleize)
-- Ein tieferer Blick in Ruby's String Methoden: [ruby-doc.org/core-2.7.0/String.html](https://ruby-doc.org/core-2.7.0/String.html)
+Diese Methode teilt den String in ein Array von Wörtern, macht jedes einzelne groß und fügt sie dann wieder mit einem Leerzeichen zusammen.

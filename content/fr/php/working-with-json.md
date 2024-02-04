@@ -1,51 +1,100 @@
 ---
-title:                "Manipulation de JSON"
-date:                  2024-01-19
-simple_title:         "Manipulation de JSON"
-
+title:                "Travailler avec JSON"
+date:                  2024-02-03T19:23:35.077059-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Travailler avec JSON"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/php/working-with-json.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Travailler avec JSON en PHP, c'est gérer des données formatées, légères et universelles. Les programmeurs l'adorent pour sa simplicité et son intégrabilité aisée aux services web.
+## Quoi & Pourquoi ?
+JSON, ou JavaScript Object Notation, est un format léger d'échange de données qui est facile à lire et à écrire pour les humains, et facile à analyser et à générer pour les machines. Les programmeurs travaillent souvent avec JSON pour échanger des données entre les serveurs et les applications web en raison de sa simplicité et de son indépendance linguistique, ce qui en fait une pierre angulaire dans le développement web moderne et les API.
 
-## How to:
-### Encoder des données en JSON
-```PHP
-<?php
-$data = ['nom' => 'Dupont', 'age' => 47];
-$json = json_encode($data);
-echo $json; // {"nom":"Dupont","age":47}
-?>
+## Comment faire :
+Travailler avec JSON en PHP est simple grâce aux fonctions intégrées `json_encode()` et `json_decode()`. Ci-dessous se trouvent des exemples montrant comment convertir un tableau PHP en chaîne JSON, et inversement :
+
+### Encodage d'un tableau PHP en chaîne JSON
+```php
+// Définir un tableau associatif
+$data = [
+    "name" => "John Doe",
+    "age" => 30,
+    "email" => "john.doe@example.com"
+];
+
+// Convertir le tableau PHP en chaîne JSON
+$jsonString = json_encode($data);
+
+// Afficher la chaîne JSON
+echo $jsonString;
+```
+**Exemple de sortie :**
+```json
+{"name":"John Doe","age":30,"email":"john.doe@example.com"}
 ```
 
-### Décoder du JSON en PHP
-```PHP
-<?php
-$json = '{"nom":"Dupont","age":47}';
-$data = json_decode($json, true);
-print_r($data); // Array ( [nom] => Dupont [age] => 47 )
-?>
+### Décodage d'une chaîne JSON en tableau PHP
+```php
+// Chaîne JSON
+$jsonString = '{"name":"John Doe","age":30,"email":"john.doe@example.com"}';
+
+// Convertir la chaîne JSON en tableau PHP
+$data = json_decode($jsonString, true);
+
+// Afficher le tableau PHP
+print_r($data);
+```
+**Exemple de sortie :**
+```
+Array
+(
+    [name] => John Doe
+    [age] => 30
+    [email] => john.doe@example.com
+)
 ```
 
-### Gestion des erreurs
-```PHP
-<?php
-$json_errone = '{"nom":"Dupont",age:"47"}'; // Erreur de JSON
-$data = json_decode($json_errone, true);
-if (json_last_error() != JSON_ERROR_NONE) {
-    echo json_last_error_msg(); // Syntax error
-}
-?>
+### Travailler avec une bibliothèque tierce : GuzzleHttp
+Pour une gestion complexe des requêtes web et des données JSON, une bibliothèque PHP populaire est GuzzleHttp. Elle simplifie les requêtes HTTP et fonctionne facilement avec les données JSON.
+
+**Installation via Composer :**
+```
+composer require guzzlehttp/guzzle
 ```
 
-## Deep Dive
-JSON, "JavaScript Object Notation", a été inventé dans les années 2000, simplifiant la vie des programmeurs après XML. Alternatives incluent XML et YAML, mais la simplicité de JSON réside dans sa facilité à être analysée et générée par divers langages. En PHP, `json_encode()` et `json_decode()` sont les fonctions clés. Depuis PHP 5.2.0, le support JSON est implémenté nativement, et avec PHP 7, la performance s'est améliorée. Il est important de gérer les erreurs avec `json_last_error()` pour avoir des implémentations robustes.
+**Exemple de requête :**
+```php
+require 'vendor/autoload.php';
 
-## See Also
-- Documentation PHP sur JSON: [PHP: JSON - Manual](https://www.php.net/manual/fr/book.json.php)
-- JSONLint pour valider le JSON: [JSONLint](https://jsonlint.com/)
-- JSON Formatter pour formater et colorer le JSON : [JSON Formatter & Validator](https://jsonformatter.curiousconcept.com/)
+use GuzzleHttp\Client;
+
+$client = new Client();
+
+// Envoyer une requête à une API qui retourne du JSON
+$response = $client->request('GET', 'https://api.example.com/data', [
+    'headers' => [
+        'Accept' => 'application/json',
+    ],
+]);
+
+// Décoder la réponse JSON en tableau PHP
+$data = json_decode($response->getBody(), true);
+
+// Afficher les données
+print_r($data);
+```
+
+**En supposant que l'API renvoie des données JSON similaires :**
+```
+Array
+(
+    [name] => John Doe
+    [age] => 30
+    [email] => john.doe@example.com
+)
+```
+Cela illustre la facilité d'utilisation de PHP pour la manipulation de JSON, à la fois avec les fonctions natives et avec des bibliothèques robustes comme GuzzleHttp pour des tâches plus complexes.

@@ -1,49 +1,52 @@
 ---
-title:                "String in Großbuchstaben umwandeln"
-date:                  2024-01-19
-simple_title:         "String in Großbuchstaben umwandeln"
-
+title:                "Einen String großschreiben"
+date:                  2024-02-03T19:04:49.285021-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Einen String großschreiben"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/elixir/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Ein String wird großgeschrieben, indem der erste Buchstabe in einen Großbuchstaben umgewandelt wird. Das ist nötig für korrekte Grammatik, Namen oder Titel und erleichtert oft die Textlesbarkeit.
 
-## So geht’s:
+Das Kapitalisieren eines Strings bedeutet, den ersten Buchstaben des Strings in Großbuchstaben umzuwandeln, während sichergestellt wird, dass alle anderen Buchstaben in Kleinbuchstaben sind. Diese Aktion ist häufig notwendig, um Benutzereingaben zu formatieren oder Text in Benutzeroberflächen anzuzeigen, wo Konsistenz und Lesbarkeit wichtig sind.
+
+## Wie geht das:
+
+Elixir bietet eine unkomplizierte Möglichkeit, Strings zu kapitalisieren, indem es seine eingebauten Funktionen nutzt, ohne dass Drittanbieter-Bibliotheken erforderlich sind. Hier ist ein einfaches Beispiel:
+
 ```elixir
-defmodule StringHelper do
-  def capitalize_string(s) do
-    String.capitalize(s)
-  end
-end
-
-# Beispielverwendung
-IO.puts StringHelper.capitalize_string("elixir ist spaß")
+string = "elixir programmierung"
+capitalized_string = String.capitalize(string)
+IO.puts capitalized_string
 ```
+
 Ausgabe:
+
 ```
-Elixir ist spaß
+Elixir programmierung
 ```
 
-## Vertiefung
-### Historischer Kontext
-Das Großschreiben von Zeichenketten ist so alt wie die Textverarbeitung selbst. Frühe Computersysteme implementierten diese Funktion für bessere Textformatierung.
+Für Fälle, in denen mehr Kontrolle oder eine komplexere Kapitalisierungslogik benötigt wird, könnten Sie verschiedene String-Funktionen kombinieren. Wenn Sie beispielsweise jedes Wort in einem Satz großschreiben möchten, können Sie den Satz in Wörter teilen, jedes kapitalisieren und dann wieder zusammenfügen:
 
-### Alternativen
-In Elixir gibt es `String.capitalize/1`, aber man könnte auch eigene Funktionen schreiben, z.B.:
 ```elixir
-def my_capitalize(s) do
-  [first | rest] = String.to_charlist(s)
-  String.from_charlist([first |> to_upper_case] ++ rest)
-end
-```
-### Implementierungsdetails
-`String.capitalize/1` funktioniert unter der Haube mit Unicode und achtet auf Sonderzeichen. Großschreibung in Elixir ist also sprach- und kultursensitiv.
+sentence = "elixir macht spaß"
+capitalized_sentence = sentence 
+                        |> String.split() 
+                        |> Enum.map(&String.capitalize/1) 
+                        |> Enum.join(" ")
 
-## Siehe auch
-- [Elixir String Module Docs](https://hexdocs.pm/elixir/String.html)
-- [Unicode Standard](http://www.unicode.org/versions/latest/)
-- Weitere String-Manipulations-Funktionen in Standardbibliothek von Elixir.
+IO.puts capitalized_sentence
+```
+
+Ausgabe:
+
+```
+Elixir Macht Spaß
+```
+
+Obwohl die Standardbibliothek von Elixir die meisten Bedürfnisse abdeckt, könnten Sie für eine nuanciertere Textmanipulation, einschließlich fortgeschrittener String-Kapitalisierung, Drittanbieter-Bibliotheken wie Cldr für Internationalisierung erforschen, die verhaltensspezifische Kapitalisierung nach Lokalität anbieten können.

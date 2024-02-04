@@ -1,57 +1,71 @@
 ---
 title:                "Rédaction de tests"
-date:                  2024-01-19
+date:                  2024-02-03T19:29:47.061995-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Rédaction de tests"
-
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/bash/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Écrire des tests, c'est s'assurer que notre code fait ce qu'il doit faire. Les dev le font pour éviter des bugs, gagner du temps et dormir tranquilles.
+## Quoi & Pourquoi ?
+Écrire des tests en Bash implique de scripter des cas de test pour valider la fonctionnalité de vos scripts Bash. Les programmeurs effectuent des tests pour s'assurer que leurs scripts fonctionnent comme prévu dans diverses conditions, capturant les erreurs et les bugs avant le déploiement.
 
-## How to:
-Créer un script de test simple en bash. Disons que t'as une fonc `addition()` dans `maths.sh`:
+## Comment faire :
+Bash n'a pas de cadre de test intégré, mais vous pouvez écrire des fonctions de test simples. Pour des tests plus sophistiqués, des outils tiers comme `bats-core` sont populaires.
+
+### Exemple de Test Basique en Bash Pur :
+```bash
+function test_example_function {
+  result=$(your_function 'test_input')
+  expected_output="expected_output"
+  
+  if [[ "$result" == "$expected_output" ]]; then
+    echo "Test réussi."
+    return 0
+  else
+    echo "Test échoué. Attendu '$expected_output', obtenu '$result'"
+    return 1
+  fi
+}
+
+# Invocation de la fonction de test
+test_example_function
+```
+Sortie d'exemple :
+```
+Test réussi.
+```
+
+### Utilisation de `bats-core` pour les Tests :
+Premièrement, installez `bats-core`. Cela peut généralement être fait via votre gestionnaire de paquets ou en clonant son dépôt.
+
+Ensuite, écrivez vos tests dans des fichiers `.bats` séparés.
 
 ```bash
-# maths.sh
-addition() {
-  echo $(($1 + $2))
+# Fichier : example_function.bats
+
+#!/usr/bin/env bats
+
+@test "tester l'exemple de fonction" {
+  result="$(your_function 'test_input')"
+  expected_output="expected_output"
+  
+  [ "$result" == "$expected_output" ]
 }
 ```
-
-Voilà le test dans `test_maths.sh`:
-
+Pour exécuter vos tests, exécutez simplement le fichier `.bats` :
 ```bash
-# test_maths.sh
-source maths.sh
-result=$(addition 2 3)
+bats example_function.bats
+```
+Sortie d'exemple :
+```
+ ✓ tester l'exemple de fonction
 
-if [ $result -eq 5 ]; then
-  echo "Ça marche!"
-else
-  echo "Houston, on a un problème..."
-fi
+1 test, 0 échecs
 ```
 
-Lance ton test:
-
-```bash
-bash test_maths.sh
-```
-
-Sortie attendue:
-
-```
-Ça marche!
-```
-
-## Deep Dive
-À l'origine, tests en Bash étaient rudimentaires, genre vérifier le code retour d'un prog. Aujourd'hui, t'as des frameworks de test, comme shUnit2 et Bats, qui simplifient la vie. Avec ces outils, tu peux mocker des foncs, et même tester des scripts interactifs.
-
-## See Also
-- shUnit2 : [https://github.com/kward/shunit2](https://github.com/kward/shunit2)
-- Bats : [https://github.com/bats-core/bats-core](https://github.com/bats-core/bats-core)
-- Guide Bash avancé : [https://tldp.org/LDP/abs/html/](https://tldp.org/LDP/abs/html/)
+Cette approche vous permet d'intégrer facilement les tests dans votre flux de travail de développement, garantissant la fiabilité et la stabilité de vos scripts Bash.

@@ -1,56 +1,151 @@
 ---
-title:                "Arbeta med csv"
-date:                  2024-01-19
-simple_title:         "Arbeta med csv"
-
+title:                "Arbeta med CSV"
+date:                  2024-02-03T19:19:19.790459-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Arbeta med CSV"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/c-sharp/working-with-csv.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Vad & Varför?
-CSV står för "Comma-Separated Values". Det är en enkel filformat där data separeras med kommatecken, vilket är smidigt för att lagra och utbyta enkla datatabeller mellan program.
+## Vad och varför?
+CSV-filer (Comma-Separated Values) är ett vanligt datautbytesformat som representerar tabulär data i ren text, genom att använda kommatecken för att separera enskilda värden. Programmerare arbetar med CSV-filer för att importera, exportera och manipulera data enkelt över olika applikationer och tjänster, eftersom det är ett enkelt, brett stöttat format som är kompatibelt med kalkylapplikationer, databaser och programmeringsspråk.
 
-## How to:
-```C#
+## Hur man gör:
+Att arbeta med CSV-filer i C# kan åstadkommas genom namnrymden `System.IO` för grundläggande operationer, och för mer komplexa manipulationer eller för att hantera större filer sömlöst, kan man överväga tredjepartsbibliotek som `CsvHelper`. Nedan finns exempel på hur man läser från och skriver till CSV-filer med båda metoderna.
+
+### Läsa en CSV-fil med System.IO
+```csharp
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 
-public class CsvReader
+class ReadCSV
 {
-    public static void Main()
+    static void Main()
     {
-        string filePath = "exempel.csv";
-        var data = ReadCsvFile(filePath);
-
-        foreach (var row in data)
+        string filePath = @"sökväg\till\din\fil.csv";
+        // Läser alla rader i CSV-filen
+        string[] csvLines = File.ReadAllLines(filePath);
+        
+        foreach (string line in csvLines)
         {
-            Console.WriteLine(string.Join(", ", row));
+            string[] rowData = line.Split(',');
+            Console.WriteLine($"Första kolumnen: {rowData[0]}, Andra kolumnen: {rowData[1]}");
         }
-    }
-
-    public static List<List<string>> ReadCsvFile(string path)
-    {
-        var lines = File.ReadAllLines(path);
-        var data = lines.Select(l => l.Split(',').ToList()).ToList();
-        return data;
     }
 }
 ```
-Output:
-```plaintext
-Namn, Ålder, Stad
-Alice, 29, Stockholm
-Bob, 34, Göteborg
+
+**Exempelutskrift:**
+```
+Första kolumnen: Namn, Andra kolumnen: Ålder
+Första kolumnen: John Doe, Andra kolumnen: 30
 ```
 
-## Deep Dive
-CSV-filer har använts sedan 1970-talet, ett enkelt format som kan skapas och läsas av kalkylprogram samt programmeringsspråk. Alternativ till CSV inkluderar JSON och XML, som båda kan hantera mer komplext data. När du arbetar med CSV i C#, se till att hantera olika kantfall som t.ex. kommatecken inuti ett värde eller radbyten inuti fält.
+### Skriva till en CSV-fil med System.IO
+```csharp
+using System;
+using System.Collections.Generic;
+using System.IO;
 
-## See Also
-- Microsofts dokumentation om `File` klassen: [File Class (System.IO)](https://docs.microsoft.com/en-us/dotnet/api/system.io.file?view=netcore-3.1)
-- Detaljer om CSV-formatet: [RFC 4180](https://tools.ietf.org/html/rfc4180)
-- För en mer avancerad CSV-läsning, se `CsvHelper` biblioteket: [CsvHelper (Github)](https://github.com/JoshClose/CsvHelper)
+class WriteCSV
+{
+    static void Main()
+    {
+        string filePath = @"sökväg\till\din\utdata.csv";
+        var lines = new List<string>
+        {
+            "Namn,Ålder",
+            "John Doe,30",
+            "Jane Smith,25"
+        };
+        
+        File.WriteAllLines(filePath, lines);
+        Console.WriteLine("CSV-fil skriven.");
+    }
+}
+```
+
+**Exempelutskrift:**
+```
+CSV-fil skriven.
+```
+
+### Använda CsvHelper för att läsa CSV
+För att använda CsvHelper, lägg först till `CsvHelper`-paketet till ditt projekt med NuGet Package Manager.
+
+```csharp
+using CsvHelper;
+using System.Globalization;
+using System.IO;
+using System.Linq;
+using CsvHelper.Configuration;
+
+class ReadCSVWithCsvHelper
+{
+    static void Main()
+    {
+        string filePath = @"sökväg\till\din\fil.csv";
+
+        using (var reader = new StreamReader(filePath))
+        using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
+        {
+            var records = csv.GetRecords<dynamic>().ToList();
+            foreach (var record in records)
+            {
+                Console.WriteLine($"Första kolumnen: {record.Name}, Andra kolumnen: {record.Age}");
+            }
+        }
+    }
+}
+```
+
+**Exempelutskrift:**
+```
+Första kolumnen: John Doe, Andra kolumnen: 30
+Första kolumnen: Jane Smith, Andra kolumnen: 25
+```
+
+### Använda CsvHelper för att skriva CSV
+```csharp
+using CsvHelper;
+using System.Globalization;
+using System.IO;
+using System.Collections.Generic;
+using CsvHelper.Configuration;
+
+class WriteCSVWithCsvHelper
+{
+    public class Person
+    {
+        public string Namn { get; set; }
+        public int Ålder { get; set; }
+    }
+
+    static void Main()
+    {
+        string filePath = @"sökväg\till\din\utdata.csv";
+        var records = new List<Person>
+        {
+            new Person { Namn = "John Doe", Ålder = 30 },
+            new Person { Namn = "Jane Smith", Ålder = 25 }
+        };
+
+        using (var writer = new StreamWriter(filePath))
+        using (var csv = new CsvWriter(writer, CultureInfo.InvariantCulture))
+        {
+            csv.WriteRecords(records);
+        }
+        
+        Console.WriteLine("CSV-fil skriven med CsvHelper.");
+    }
+}
+```
+
+**Exempelutskrift:**
+```
+CSV-fil skriven med CsvHelper.
+```

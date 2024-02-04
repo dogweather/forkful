@@ -1,45 +1,72 @@
 ---
-title:                "ניתוח HTML"
-date:                  2024-01-20T15:34:06.809775-07:00
-simple_title:         "ניתוח HTML"
-
+title:                "פיענוח HTML"
+date:                  2024-02-03T19:13:55.239122-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "פיענוח HTML"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/swift/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## מה ולמה?
-פירוס HTML הוא תהליך של הפיכת מבנה HTML למבנה נתונים שניתן לניתוח ושימוש בקוד. תוכניתנים עושים זאת כדי לקרוא או לשנות את תוכן ומבנה דפי אינטרנט באופן אוטומטי.
+פענוח HTML מתייחס לתהליך של פירוק ופרשנות של מבנה תוכן HTML, בדרך כלל בכדי לחלץ נתונים ספציפיים או לשנות את התוכן הזה באופן תכנותי. תכנתנים עוסקים בפענוח HTML עבור גריפת אתרים, חציבת נתונים, בדיקות אוטומטיות, ומשימות של העברת תוכן, מה שמאפשר ליישומים לתקשר עם מסמכי רשת ולעבד אותם ביעילות.
 
 ## איך לעשות:
-בדוגמה נשתמש בספריית `SwiftSoup`. קודם כל, צריך להתקין את הספרייה דרך Swift Package Manager.
+Swift, כברירת מחדל, אינה כוללת ספרייה מובנית לפענוח HTML, דבר המחייב שימוש בספריות צד שלישי כדי לבצע את המשימה הזו בצורה יעילה. אחת האפשרויות הפופולריות ביותר היא SwiftSoup, ספרייה טהורה של Swift שמציעה תחביר דומה ל-jQuery לפענוח ולשינוי HTML.
 
-```Swift
+### התקנה
+ראשית, אתה צריך להוסיף את SwiftSoup לפרוייקט שלך. אם אתה משתמש במנהל החבילות של Swift, תוכל להוסיף אותו לתלות שלך ב`Package.swift`:
+
+```swift
+dependencies: [
+    .package(url: "https://github.com/scinfu/SwiftSoup.git", from: "2.3.2")
+]
+```
+
+### דוגמה: חילוץ קישורים מ-HTML
+נניח שיש לך מסמך HTML ואתה רוצה לחלץ את כל הקישורים (`<a href="...">`). עם SwiftSoup, אתה יכול לעשות זאת בקלות:
+
+```swift
 import SwiftSoup
 
-let htmlString = "<html><head><title>שלום</title></head><body><p>זה טקסט בעברית!</p></body></html>"
+let html = """
+<!DOCTYPE html>
+<html>
+<head>
+    <title>דף דוגמה</title>
+</head>
+<body>
+    <p>ברוכים הבאים לאתר שלנו</p>
+    <a href="https://example.com/page1">עמוד 1</a>
+    <a href="https://example.com/page2">עמוד 2</a>
+</body>
+</html>
+"""
 
 do {
-    let doc: Document = try SwiftSoup.parse(htmlString)
-    let bodyText = try doc.body()?.text()
-    print(bodyText ?? "לא נמצא טקסט")
+    let doc: Document = try SwiftSoup.parse(html)
+    let links: Elements = try doc.select("a")
+    for link in links.array() {
+        let linkHref: String = try link.attr("href")
+        let linkText: String = try link.text()
+        print("\(linkText) - \(linkHref)")
+    }
 } catch Exception.Error(let type, let message) {
-    print("משהו השתבש: \(type) \(message)")
+    print("סוג השגיאה: \(type) הודעה: \(message)")
 } catch {
-    print("אירעה שגיאה כללית")
+    print("שגיאה")
 }
 ```
 
-פלט דוגמה:
+### פלט לדוגמה
+הקוד הקודם מחלץ URLs ואת טקסטם מה-HTML, ומוציא לפלט:
+
 ```
-זה טקסט בעברית!
+עמוד 1 - https://example.com/page1
+עמוד 2 - https://example.com/page2
 ```
 
-## ניתוח עמוק
-הרעיון שמאחורי ניתוח HTML הוא לא חדש. כבר בשנות ה-90 התוכניתנים נאלצו לעבוד עם HTML כדי לטעון ולעבד נתונים מדפי אינטרנט. הבעיה המרכזית היא ש-HTML נוטה לא להיות מהוקצע ולכן זקוק לניתוח קפדני. בעולם המודרני, ספריות כמו `SwiftSoup` מנצלות כלים לניתוח מורכב כדי להסיר את הקושי הזה. ישנן גם אלטרנטיבות כמו `WebKit` או `libxml2` עבור מטרות שונות, כולל פיר(מ)וס של קבצים XML.
-
-## ראה גם
-- [SwiftSoup GitHub](https://github.com/scinfu/SwiftSoup)
-- [WebKit Documentation](https://developer.apple.com/documentation/webkit)
-- [libxml2](http://xmlsoft.org/)
+הדוגמה הבסיסית הזו מדגימה איך לנצל את SwiftSoup לצורך פענוח מסמכי HTML. בחקירה נוספת של תיעוד SwiftSoup, תוכל למצוא שיטות רבות נוספות לנווט, לחפש, ולשנות את תוכן ה-HTML, דבר המעניק ליישומי Swift שלך את היכולת לעבד תוכן רשת מורכב בקלות.

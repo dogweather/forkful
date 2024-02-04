@@ -1,36 +1,56 @@
 ---
-title:                "Sette streng til store bokstaver"
-date:                  2024-01-19
-simple_title:         "Sette streng til store bokstaver"
-
+title:                "Sette stor bokstav i en streng"
+date:                  2024-02-03T19:06:01.646920-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Sette stor bokstav i en streng"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/php/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Å kapitalisere en streng betyr å gjøre første bokstav i hvert ord til en stor bokstav. Programmerere gjør dette for å forbedre lesbarheten av tekst, som i titler eller navn.
+Å gjøre om en streng til stor forbokstav innebærer å endre det første tegnet i gitt tekst til stor bokstav, for å sikre at setninger, titler eller egennavn starter korrekt i et datasett. Programmerere utfører ofte kapitalisering av strenger for datanormalisering, for å forbedre lesbarheten eller sikre konsistens i brukerinndata eller tekstlig databehandling.
 
-## Slik gjør du:
-Kapitaliser en streng med `ucwords()` for hvert ord eller `strtoupper()` for hele strenger. Her er et eksempel:
+## Hvordan:
+PHP støtter natively forskjellige funksjoner for å kapitalisere strenger, hver med et forskjellig formål. Her er hvordan du kan bruke dem:
+
+### Kapitalisere den første bokstaven i en streng:
 
 ```php
-<?php
-$tekst = "hallo verden!";
-$kapitalisert = ucwords($tekst);
-$fullStor = strtoupper($tekst);
-
-echo $kapitalisert; // Output: Hallo Verden!
-echo "\n";
-echo $fullStor; // Output: HALLO VERDEN!
-?>
+$string = "hello, world!";
+$capitalizedString = ucfirst($string);
+echo $capitalizedString; // Resultat: Hello, world!
 ```
 
-## Dypdykk:
-Tilbake på 80-tallet, i C programmeringsspråket, startet vi å manipulere tekst med funksjoner som `toupper()`. I PHP har vi flere verktøy for dette. `ucfirst()` gjør kun første bokstav i en streng stor, mens `ucwords()` tar seg av hvert ord. Det er også `mb_convert_case()` for multibyte (UTF-8) strenger, viktig for å støtte internasjonale språk korrekt. Hver funksjon bruker litt CPU-tid, så tenk på behovet før du bruker dem på store tekststykker.
+### Kapitalisere den første bokstaven i hvert ord:
 
-## Se Også:
-- PHP offisiell dokumentasjon for strengfunksjoner: [PHP: String Functions - Manual](https://www.php.net/manual/en/ref.strings.php)
-- Utforsk `mb_convert_case()` for UTF-8 støtte: [PHP: mb_convert_case - Manual](https://www.php.net/manual/en/function.mb-convert-case.php)
-- Lær om funksjonen `strtolower()` for å gjøre tekst til små bokstaver: [PHP: strtolower - Manual](https://www.php.net/manual/en/function.strtolower.php)
+```php
+$string = "hello, world!";
+$capitalizedWords = ucwords($string);
+echo $capitalizedWords; // Resultat: Hello, World!
+```
+
+### Konvertere hele strengen til store bokstaver:
+
+```php
+$string = "hello, world!";
+$upperCaseString = strtoupper($string);
+echo $upperCaseString; // Resultat: HELLO, WORLD!
+```
+
+For scenarioer som krever mer tilpasning eller tredjeparts løsninger, kan biblioteker som `mbstring` (for flerbyte strenger) benyttes, spesielt når man håndterer internasjonalisering hvor tegn kan strekke seg utover det grunnleggende ASCII-settet.
+
+### Bruke mbstring for å kapitalisere UTF-8 strenger:
+
+Sørg for at du har `mbstring`-utvidelsen aktivert i din PHP-konfigurasjon, deretter:
+
+```php
+$string = "élégant";
+$capitalizedString = mb_convert_case($string, MB_CASE_TITLE, "UTF-8");
+echo $capitalizedString; // Resultat: Élégant
+```
+
+Denne tilnærmingen hjelper til med å nøyaktig kapitalisere strenger som inkluderer ikke-ASCII-tegn, og følger dermed de språklige nyansene i forskjellige språk.

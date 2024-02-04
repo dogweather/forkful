@@ -1,52 +1,75 @@
 ---
-title:                "ניתוח HTML"
-date:                  2024-01-20T15:31:12.689295-07:00
-simple_title:         "ניתוח HTML"
-
+title:                "פיענוח HTML"
+date:                  2024-02-03T19:12:00.801329-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "פיענוח HTML"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/clojure/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## מה ולמה?
 
-לעשות פרסינג ל-HTML זה להמיר את הקוד של דף אינטרנט לנתונים שאפשר לקרוא ולעבד בשפת תכנות. תוכניתנים עושים את זה כדי לחלץ מידע, לאוטומט טפסים, ולעשות בדיקות אוטומטיות לאתרים.
+פענוח HTML ב-Clojure כולל שליפה תכנותית של מידע ממסמכי HTML. מתכנתים עושים זאת כדי לגשת, לנהל או לנטר תכני אינטרנט דינאמית, מאוטמת של משימות או הזנת נתונים לאפליקציות.
 
 ## איך לעשות:
 
-```Clojure
-(require '[enlive.core :as enlive])
+ב-Clojure אין יכולות פענוח HTML מובנות, אך ניתן לנצל ספריות של Java או מעטפות של Clojure כגון `enlive` או `hickory`. הנה כיצד להשתמש בשניהם:
 
-;; נטען את ה-HTML
-(defn fetch-html [url]
-  (-> (java.net.URL. url) .openStream slurp))
+### באמצעות Enlive:
 
-;; מחזיר את כל טקסטים מתגית מסוימת
-(defn extract-texts [html tag]
-  (map :content (enlive/select (enlive/html-resource (java.io.StringReader. html)) [tag])))
+Enlive הוא בחירה פופולרית לפענוח HTML ולגריפת אתרים. ראשית, כלול אותו בתלותיות הפרויקט שלך:
 
-;; דוגמה לשימוש
-(def html-sample (fetch-html "https://www.example.com"))
-(println (extract-texts html-sample :p))
+```clojure
+[net.cgrand/enlive "1.1.6"]
 ```
 
-דוגמת פלט:
+לאחר מכן, תוכל לפרסר ולנווט ב-HTML כך:
 
+```clojure
+(require '[net.cgrand.enlive-html :as html])
+
+(let [doc (html/html-resource (java.net.URL. "http://example.com"))]
+  (html/select doc [:div.some-class]))
 ```
-("טקסט של פסקה ראשונה" "טקסט של פסקה שנייה" ...)
+
+קטע זה משיג דף HTML ובוחר את כל אלמנטי ה-`<div>` עם המחלקה `some-class`.
+
+הפלט עשוי להיראות כך:
+
+```clojure
+({:tag :div, :attrs {:class "some-class"}, :content ["הנה קצת תוכן."]})
 ```
 
-## עומק הים:
+### באמצעות Hickory:
 
-פרסינג ל-HTML אינו פשוט כמו המרה טקסטואלית רגילה. HTML יכול להיות מורכב ולא תמיד תקני. במהלך השנים, ספריות רבות נוצרו למטרה זו. הן מנסות להיות קשוחות לשגיאות ולנהל מגוון רחב של קידודי HTML.
+Hickory מספק דרך לפענח HTML לפורמט שנוח יותר לעבוד איתו ב-Clojure. הוסף את Hickory לתלותיות הפרויקט שלך:
 
-enlive, שראינו לעיל, היא ספרייה חזקה לפרסינג של HTML/XML ב-Clojure. היא מאפשרת לנו לבצע שאילתות ולשנות את ה-HTML בצורה מוכוונת נתונים. חלופות כוללות ספריות כמו Hickory או jsoup, אשר מספקות יכולות דומות בזהויות של דומיינים שונים של מידע.
+```clojure
+[hickory "0.7.1"]
+```
 
-כאשר מגיעים לבחירה של כלי פרסינג, חשוב לשקול גמישות מראש, ביצועים וקלות שימוש. בחירת הכלים הנכונים יכולה להבדיל בין קוד פשוט ואלגנטי לבין קוד מסורבל ומתסכל.
+הנה דוגמה פשוטה:
 
-## ראה גם:
+```clojure
+(require '[hickory.core :as hickory]
+         '[hickory.select :as select])
 
-- [Enlive GitHub Repository](https://github.com/cgrand/enlive)
-- [Hickory GitHub Repository](https://github.com/davidsantiago/hickory)
-- [Jsoup: Java HTML Parser](https://jsoup.org/)
+;; פרסור ה-HTML לפורמט Hickory
+(let [doc (hickory/parse "<html><body><div id='main'>שלום, עולם!</div></body></html>")]
+  ;; בחירת ה-div עם ה-id 'main'
+  (select/select (select/id "main") doc))
+```
+
+קוד זה מפרסר מחרוזת HTML פשוטה ומשתמש בבורר CSS כדי למצוא `div` עם ה-ID `main`.
+
+דוגמה לפלט:
+
+```clojure
+[{:type :element, :tag :div, :attrs {:id "main"}, :content ["שלום, עולם!"]}]
+```
+
+גם `enlive` וגם `hickory` מציעים פתרונות מוצקים לפענוח HTML ב-Clojure, כש-`enlive` מתמקד יותר בתבניות ו-`hickory` מדגיש המרה של נתונים.

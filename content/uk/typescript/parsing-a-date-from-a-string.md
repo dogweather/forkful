@@ -1,54 +1,53 @@
 ---
-title:                "Аналіз дати з рядка"
-date:                  2024-01-20T15:39:01.048697-07:00
-simple_title:         "Аналіз дати з рядка"
-
+title:                "Розбір дати з рядка"
+date:                  2024-02-03T19:16:28.116492-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Розбір дати з рядка"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/typescript/parsing-a-date-from-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-## Що це таке та Навіщо?
+## Що і чому?
+Розбір дати з рядка полягає в перетворенні текстових представлень дат і часу на формат, який можна маніпулювати та аналізувати програмою. Це поширене завдання в програмуванні, оскільки воно дозволяє обробляти введення користувачів, зберігати дані з часовими мітками та взаємодіяти з API, що робить додатки більш функціональними та зручними для користувача.
 
-Parsing a date from a string means converting text that represents a date into a `Date` object. Programmers do this to manipulate and use date-related information in their code.
+## Як зробити:
+TypeScript, будучи надмножиною JavaScript, покладається на об'єкт Date для розбору дат з рядків. Однак, робота з датами в JS/TS може стати мудрою або неточною через особливості об'єкта Date. Ось базовий приклад, за яким йде підхід з використанням популярної бібліотеки `date-fns` для більш надійних рішень.
 
-## How to:
-## Як це зробити:
-
-```TypeScript
-// Simple parsing using the Date constructor
-const dateString: string = '2023-04-01T10:00:00Z';
-const parsedDate: Date = new Date(dateString);
-console.log(parsedDate);  // Outputs: 2023-04-01T10:00:00.000Z
-
-// Using Date.parse (less recommended)
-const timeInMs: number = Date.parse('01 Apr 2023 10:00:00 GMT');
-const dateFromMs: Date = new Date(timeInMs);
-console.log(dateFromMs);  // Outputs: 2023-04-01T10:00:00.000Z
-
-// Using libraries like date-fns or moment.js for more complex parsing
-import { parseISO } from 'date-fns';
-
-const complexDateString: string = '1st of April 2023 at 10 o'clock UTC';
-// With date-fns, we need a standard format
-const standardizedDate: Date = parseISO('2023-04-01T10:00:00Z');
-console.log(standardizedDate);  // Outputs: 2023-04-01T10:00:00.000Z
+### Використання об'єкта Date JavaScript
+```typescript
+// Базовий розбір з використанням конструктора Date
+const dateFromString = new Date("2023-04-21T15:00:00Z");
+console.log(dateFromString.toString()); 
+// Вивід для GMT: "Fri Apr 21 2023 15:00:00 GMT+0000 (Координований всесвітній час)"
 ```
 
-## Deep Dive:
-## Поглиблений Розбір:
+Цей метод працює для рядків формату ISO та деяких інших форматів дат, але може давати неоднозначні результати для неоднозначних форматів у різних браузерах та локаціях.
 
-Parsing dates has been tricky historically because of variation in formats and timezones. JavaScript's `Date` has limitations and quirks. It often uses the local timezone which can be problematic.
+### Використання date-fns
+Бібліотека `date-fns` забезпечує просте та консистентне управління датами. Це модульна бібліотека, що дозволяє включати тільки ті частини, які вам потрібні, зменшуючи розмір пакета.
 
-Alternatives like `Moment.js` or `date-fns` provide powerful functions for parsing, formatting, and manipulating dates, and they handle edge cases more gracefully.
+Спочатку встановіть `date-fns`:
 
-Details: JavaScript `Date` objects are built on milliseconds since the Unix epoch (1 January 1970 UTC). Parsing strings into dates involves calculating this time value based on the input string's format.
+```sh
+npm install date-fns
+```
 
-## See Also:
-## Дивіться також:
+Потім використовуйте її для розбору рядка дати:
 
-- MDN Web Docs on `Date`: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date
-- `date-fns` documentation: https://date-fns.org/
-- `Moment.js` guide: https://momentjs.com/docs/#/parsing/
+```typescript
+import { parseISO, format } from 'date-fns';
+
+// Розбір ISO рядка
+const dateString = "2023-04-21T15:00:00Z";
+const parsedDate = parseISO(dateString);
+
+// Форматування дати (наприклад, у зручну для читання форму)
+console.log(format(parsedDate, "PPPpp")); 
+// Вивід: "Apr 21st, 2023 at 3:00 PM" (вивід може варіюватись залежно від локації)
+```
+
+`date-fns` підтримує широкий спектр форматів та локацій, роблячи її надійним вибором для додатків, яким потрібен точний розбір та форматування дат у різних користувацьких регіонах.

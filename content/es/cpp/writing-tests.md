@@ -1,38 +1,35 @@
 ---
 title:                "Escribiendo pruebas"
-date:                  2024-01-19
+date:                  2024-02-03T19:30:08.478122-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Escribiendo pruebas"
-
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/cpp/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Qué y Por Qué?
+## ¿Qué y Por qué?
 
-Escribir pruebas es validar que nuestro código hace lo que esperamos; evita sorpresas en el futuro. Los programadores las escriben para asegurar calidad, ahorrar tiempo de depuración y facilitar mantenimiento.
+Escribir pruebas en C++ implica crear programas pequeños y autónomos que verifican automáticamente el comportamiento de secciones de tu base de código. Los programadores hacen esto para asegurarse de que su código funcione como se espera, para prevenir regresiones (es decir, cambios nuevos que rompen funcionalidades existentes) y para facilitar bases de código mantenibles con el tiempo.
 
 ## Cómo hacerlo:
 
-Usaremos `Google Test`, un framework popular para pruebas en C++. Primero, instalalo y configuralo en tu entorno. Aquí un test simple para una función que suma dos números.
+### Usando el Framework de Google Test
 
-```C++
-// suma.h
-int suma(int a, int b);
+Una de las bibliotecas de terceros más populares para escribir pruebas en C++ es Google Test. Primero, necesitarás instalar Google Test y enlazarlo con tu proyecto. Una vez configurado, puedes comenzar a escribir casos de prueba.
 
-// suma.cpp
-#include "suma.h"
-int suma(int a, int b) {
+```cpp
+#include <gtest/gtest.h>
+
+int add(int a, int b) {
     return a + b;
 }
 
-// test_suma.cpp
-#include "suma.h"
-#include <gtest/gtest.h>
-
-TEST(TestSuma, CalculoBasico) {
-    EXPECT_EQ(3, suma(1, 2));
+TEST(TestSuiteName, TestName) {
+    EXPECT_EQ(3, add(1, 2));
 }
 
 int main(int argc, char **argv) {
@@ -41,32 +38,42 @@ int main(int argc, char **argv) {
 }
 ```
 
-Compila con `g++ -std=c++17 test_suma.cpp suma.cpp -lgtest -lgtest_main -pthread -o test_suma` y luego ejecuta `./test_suma`. Deberías ver algo así:
+Guarda el código en un archivo y compílalo con el compilador g++, enlazando la biblioteca de Google Test. Si todo está configurado correctamente, ejecutar el ejecutable resultante ejecutará la prueba, y si la función `add` funciona como se espera, verás algo como:
 
 ```
-[==========] Running 2 tests from 1 test case.
+[==========] Running 1 test from 1 test suite.
 [----------] Global test environment set-up.
-[----------] 1 test from TestSuma
-[ RUN      ] TestSuma.CalculoBasico
-[       OK ] TestSuma.CalculoBasico (0 ms)
-[----------] 1 test from TestSuma (0 ms total)
+[----------] 1 test from TestSuiteName
+[ RUN      ] TestSuiteName.TestName
+[       OK ] TestSuiteName.TestName (0 ms)
+[----------] 1 test from TestSuiteName (0 ms total)
 
-[----------] Global test environment tear-down
-[==========] 2 tests from 1 test case ran. (1 ms total)
-[  PASSED  ] 2 tests.
+[==========] 1 test from 1 test suite ran. (1 ms total)
+[  PASSED  ] 1 test.
 ```
 
-## Profundizando
+### Usando Catch2
 
-La prueba de software no es nueva; ha evolucionado desde los 70. Frameworks como `Google Test` (C++), `JUnit` (Java) o `pytest` (Python), permiten estructurar pruebas de manera sencilla y eficaz. Algunos prefieren TDD (Test-Driven Development), donde las pruebas guían el diseño del código. Otras alternativas son Catch2 y Boost.Test para C++. Poco a poco cambia la implementación, pero el objetivo persiste: código confiable y mantenible.
+Otro framework de pruebas popular para C++ es Catch2. Tiene una sintaxis más simple y usualmente no requiere enlazarse contra una biblioteca (solo encabezado). Aquí hay un ejemplo de cómo escribir una prueba simple con Catch2:
 
-## Ver También
+```cpp
+#define CATCH_CONFIG_MAIN  // Esto le dice a Catch que proporcione un main() - solo hazlo en un archivo cpp
+#include <catch.hpp>
 
-Aquí algunos enlaces para aprender más:
+int multiply(int a, int b) {
+    return a * b;
+}
 
-- Google Test: https://github.com/google/googletest
-- Catch2: https://github.com/catchorg/Catch2
-- Boost.Test: https://www.boost.org/doc/libs/release/libs/test/
-- Guía de Google Test: https://google.github.io/googletest/quickstart-cmake.html
+TEST_CASE( "Los enteros se multiplican", "[multiply]" ) {
+    REQUIRE( multiply(2, 3) == 6 );
+}
+```
 
-Estos recursos te darán un gran punto de partida y profundidad en la materia de pruebas de software en C++.
+Al compilar y ejecutar esta prueba, Catch2 proporciona una salida clara indicando si la prueba pasó o falló, junto con cualquier información necesaria para depurar fallas:
+
+```
+===============================================================================
+All tests passed (1 assertion in 1 test case)
+```
+
+Estos ejemplos muestran cómo la integración de frameworks de pruebas en tu flujo de trabajo de desarrollo en C++ puede mejorar significativamente la fiabilidad y mantenibilidad de tu código.

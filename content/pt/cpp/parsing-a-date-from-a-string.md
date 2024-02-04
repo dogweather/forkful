@@ -1,59 +1,76 @@
 ---
 title:                "Analisando uma data a partir de uma string"
-date:                  2024-01-20T15:35:08.224658-07:00
+date:                  2024-02-03T19:13:33.674532-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Analisando uma data a partir de uma string"
-
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/cpp/parsing-a-date-from-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## O Que & Por Quê?
-
-Analisar uma data a partir de uma string significa extrair informações de data e hora de um texto. Programadores fazem isso para manipular e utilizar datas de maneira eficiente em sistemas e aplicações.
+## O Que & Por Que?
+Analisar uma data a partir de uma string envolve interpretar o formato da string para extrair componentes da data como dia, mês e ano. Programadores fazem isso para manipular entradas de usuários, ler arquivos de dados ou interagir com APIs que comunicam datas em formatos de strings. É essencial para processamento de dados, validação e execução de aritmética de datas em aplicações.
 
 ## Como Fazer:
+No C++ moderno, você pode usar a biblioteca `<chrono>` para manipular datas e horas nativamente, mas ela não suporta diretamente a análise de strings sem um parsing manual para formatos mais complexos. No entanto, para formatos de data ISO 8601 e formatos customizados simples, aqui está como você pode realizar a análise.
 
-Para analisar datas de strings em C++, podemos usar a biblioteca `chrono` do C++20 junto com `stringstream` da biblioteca `<sstream>` e formatações personalizadas. Aqui está um exemplo:
-
-```C++
+**Usando `<chrono>` e `<sstream>`:**
+```cpp
 #include <iostream>
 #include <sstream>
 #include <chrono>
-#include <format>
+#include <iomanip>
 
 int main() {
-    std::string data_str = "20/04/2023";
-    std::istringstream iss(data_str);
-    std::chrono::sys_days data;
+    std::string date_str = "2023-04-15"; // Formato ISO 8601
+    std::istringstream iss(date_str);
     
-    iss >> std::chrono::parse("%d/%m/%Y", data);
+    std::chrono::year_month_day data_analisada;
+    iss >> std::chrono::parse("%F", data_analisada);
     
-    if (iss.fail()) {
-        std::cout << "Análise falhou." << std::endl;
+    if (!iss.fail()) {
+        std::cout << "Data analisada: " << data_analisada << std::endl;
     } else {
-        std::cout << "Análise bem-sucedida: " 
-                  << std::format("{:%d de %B de %Y}", data) << std::endl;
+        std::cout << "Falha ao analisar a data." << std::endl;
     }
     
     return 0;
 }
 ```
-
-Output:
+Saída de exemplo:
 ```
-Análise bem-sucedida: 20 de abril de 2023
+Data analisada: 2023-04-15
 ```
 
-## Mergulho Profundo:
+Para formatos mais complexos ou ao lidar com versões mais antigas do C++, bibliotecas de terceiros como `date.h` (biblioteca de data de Howard Hinnant) são populares. Aqui está como você pode analisar vários formatos com ela:
 
-A análise de datas está presente desde o C++11 com a biblioteca `<chrono>`, mas o processo foi simplificado com o novo C++20, que introduziu uma interface de formato/parsing mais amigável. Alternativas incluem o uso da função `strptime` ou bibliotecas de terceiros como `boost::date_time`.
+**Usando a Biblioteca `date.h`:**
+Certifique-se de ter a biblioteca instalada. Você pode encontrá-la [aqui](https://github.com/HowardHinnant/date).
 
-Detalhes de implementação envolvem entender o papel dos `locales` para configurações regionais e o manuseio de diferentes formatos de data, como ISO 8601 ou formatos locais. É crucial tratar erros como formatos inválidos ou entradas corruptas para evitar comportamento indesejado.
+```cpp
+#include "date/date.h"
+#include <iostream>
 
-## Ver Também:
+int main() {
+    std::string date_str = "April 15, 2023";
+    
+    std::istringstream iss(date_str);
+    date::sys_days data_analisada;
+    iss >> date::parse("%B %d, %Y", data_analisada);
+    
+    if (!iss.fail()) {
+        std::cout << "Data analisada: " << data_analisada << std::endl;
+    } else {
+        std::cout << "Falha ao analisar data da string." << std::endl;
+    }
 
-- [Documentação da std::chrono](https://en.cppreference.com/w/cpp/header/chrono)
-- [Documentação do std::format (C++20)](https://en.cppreference.com/w/cpp/utility/format)
-- [Biblioteca Boost.Date_Time](https://www.boost.org/doc/libs/release/libs/date_time/)
+    return 0;
+}
+```
+Saída de exemplo (pode variar dependendo da localização do sistema e das configurações de data):
+```
+Data analisada: 2023-04-15
+```

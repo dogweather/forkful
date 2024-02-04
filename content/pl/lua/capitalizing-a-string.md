@@ -1,36 +1,53 @@
 ---
-title:                "Zamiana liter na wielkie w ciągu znaków"
-date:                  2024-01-19
-simple_title:         "Zamiana liter na wielkie w ciągu znaków"
-
+title:                "Zamiana liter na wielkie w łańcuchu znaków"
+date:                  2024-02-03T19:05:57.350233-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Zamiana liter na wielkie w łańcuchu znaków"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/lua/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Co i Dlaczego?)
-W Lua kapitalizacja łańcucha to zmiana pierwszej litery każdego słowa na wielką, a reszty na małe. Programiści używają kapitalizacji, aby ujednolicić teksty (np. w tytułach) i poprawić czytelność.
+## Co i dlaczego?
+Wielką literą zaczyna się każde słowo w zdaniu, modyfikując pierwszy znak każdego słowa na wielką literę, jednocześnie zapewniając, że pozostałe są małe. Ta technika jest powszechnie stosowana do formatowania tekstu na potrzeby bardziej profesjonalnej lub czytelnej prezentacji, takich jak przygotowywanie tytułów lub danych wejściowych użytkownika do wyświetlenia.
 
-## How to: (Jak to zrobić:)
-```Lua
-function capitalizeString(str)
-    return (str:gsub("(%a)([%w_']*)", function(first, rest) return first:upper()..rest:lower() end))
+## Jak to zrobić:
+Lua nie posiada wbudowanej funkcji do zmiany wielkości liter w ciągu, ale możesz łatwo osiągnąć ten cel, używając podstawowych funkcji manipulacji ciągami. Oto prosta funkcja do zamiany pierwszej litery pojedynczego słowa na wielką:
+
+```lua
+function capitalize(word)
+    return word:sub(1,1):upper() .. word:sub(2):lower()
 end
 
--- Przykładowe wykorzystanie:
-
-local myString = "witaj w świecie lua!"
-local capitalizedString = capitalizeString(myString)
-print(capitalizedString) -- "Witaj W Świecie Lua!"
+print(capitalize("hello"))  -- Wyjście: Hello
 ```
 
-## Deep Dive (Głębsze Zanurzenie)
-Kapitalizacja łańcucha nie ma długiej historii w Lua, gdyż standardowa biblioteka nie zawiera gotowej funkcji do tego zadania. Musimy napisać własną, jak w powyższym przykładzie. Alternatywnie, niektóre biblioteki zewnętrzne mogą oferować takie narzędzia. Lua operuje na bajtach, więc powyższy kod zakłada użycie systemu kodowania ASCII i może nie działać poprawnie z Unicode bez dodatkowych bibliotek.
+Aby zamienić pierwszą literę każdego słowa w zdaniu na wielką, możesz podzielić zdanie na słowa, zamienić każde z nich, a następnie połączyć je ponownie:
 
-## See Also (Zobacz także)
-- Dokumentacja Lua: https://www.lua.org/manual/5.4/
-- Wprowadzenie do pattern matchingu w Lua: https://www.lua.org/pil/20.2.html
-- Repozytorium "Penlight" z zaawansowanymi narzędziami dla Lua: https://github.com/lunarmodules/Penlight
+```lua
+function capitalizeSentence(sentence)
+    local words = {}
+    for word in sentence:gmatch("%S+") do
+        table.insert(words, capitalize(word))
+    end
+    return table.concat(words, " ")
+end
 
-Pamiętaj, że w praktyce kapitalizacja może być bardziej złożona, zwłaszcza przy obsłudze różnych systemów pisania i języków, co może wymagać zastosowania dedykowanych bibliotek do obsługi Unicode, takich jak ICU - International Components for Unicode.
+print(capitalizeSentence("hello world from lua"))  -- Wyjście: Hello World From Lua
+```
+
+Jeśli pracujesz nad projektem, w którym kluczowa jest wydajność i znajdziesz się w potrzebie zaawansowanych możliwości manipulacji ciągami, rozważ użycie biblioteki innej firmy, jak `Penlight`. Penlight wzbogaca Lua o bardziej wszechstronne funkcje obsługi ciągów, wśród innych narzędzi:
+
+```lua
+-- Zakładając, że Penlight jest zainstalowany:
+local pl = require("pl.stringx")
+local text = "hello lua users"
+text = pl.capitalized(text)
+print(text)  -- Wyjście: Hello lua users
+
+-- Uwaga: Funkcja capitalized z Penlight zmienia na wielką literę tylko pierwsze słowo.
+-- Do zmiany wielkości liter każdego słowa, nadal byłoby potrzebne zaimplementowanie własnego rozwiązania lub eksploracja innych bibliotek.
+```

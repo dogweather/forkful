@@ -1,53 +1,67 @@
 ---
-title:                "텍스트 파일 작성하기"
-date:                  2024-01-19
-simple_title:         "텍스트 파일 작성하기"
-
+title:                "텍스트 파일 쓰기"
+date:                  2024-02-03T19:27:07.238092-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "텍스트 파일 쓰기"
 tag:                  "Files and I/O"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/arduino/writing-a-text-file.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (무엇과 왜?)
-텍스트 파일 작성은 데이터를 영구적으로 저장하는 것입니다. 프로그래머는 로그, 설정, 사용자 데이터 저장을 위해 이를 수행합니다.
+## 무엇을, 왜?
+아두이노에서 텍스트 파일을 작성한다는 것은 SD 카드나 비슷한 저장 모듈에 데이터를 파일로 저장하는 것을 말하며, 종종 데이터 로깅 목적으로 사용됩니다. 프로그래머들은 센서 읽기 값을 기록하거나, 구성을 저장하거나, 시간이 지남에 따라 애플리케이션 이벤트를 기록하기 위해 이 작업을 수행합니다. 이는 데이터 분석이나 추적을 요구하는 프로젝트에 있어 중요합니다.
 
-## How to: (방법)
-```arduino
+## 방법:
+아두이노를 사용하여 SD 카드에 텍스트 파일을 쓰려면, 먼저 SD 카드와 상호작용하는 데 필요한 함수를 제공하는 `SD.h` 라이브러리를 포함해야 합니다. 아두이노 보드가 SD 카드 모듈에 연결되어 있는지 확인하세요.
+
+```cpp
+#include <SPI.h>
 #include <SD.h>
 
 File myFile;
 
 void setup() {
+  // 9600 비트 당 초 속도로 직렬 통신을 초기화합니다:
   Serial.begin(9600);
-  SD.begin(10); // SD 카드 모듈 CS 핀이 10번 핀일 때
-  myFile = SD.open("example.txt", FILE_WRITE);
-
+  
+  // SD 카드 초기화 확인
+  if (!SD.begin(4)) {
+    Serial.println("Initialization failed!");
+    return;
+  }
+  Serial.println("Initialization done.");
+  
+  // 파일을 엽니다. 한 번에 하나의 파일만 열 수 있음을 참고하세요,
+  // 따라서 이 파일을 닫기 전에는 다른 파일을 열 수 없습니다.
+  myFile = SD.open("test.txt", FILE_WRITE);
+  
+  // 파일을 성공적으로 열었다면, 작성합니다:
   if (myFile) {
-    myFile.println("Hello, World!");
+    Serial.print("Writing to test.txt...");
+    myFile.println("Testing text file write.");
+    // 파일을 닫습니다:
     myFile.close();
-    Serial.println("Writing done.");
+    Serial.println("done.");
   } else {
-    Serial.println("File open failed!");
+    // 파일이 열리지 않았다면, 오류 메시지를 출력합니다:
+    Serial.println("Error opening test.txt");
   }
 }
 
 void loop() {
-  // 여기서 파일 작성이 필요하지 않으므로 빈 loop 함수를 사용합니다.
+  // 설정 이후 아무 일도 일어나지 않습니다
 }
 ```
-샘플 출력:
-```
-Writing done.
-```
 
-## Deep Dive (심화 학습)
-- 역사적 맥락: 초기에는 개인용 컴퓨터들이 작은 데이터를 텍스트로 저장했습니다.
-- 대안: EEPROM, 클라우드 저장소, 외부 데이터베이스.
-- 구현 세부 사항: `SD.h` 라이브러리를 사용, SPI 통신을 통해 SD 카드와 인터페이스합니다.
+### 샘플 출력:
+이 코드를 실행하면, 아두이노 IDE 시리얼 모니터에 다음과 같이 표시됩니다:
+```
+Initialization done.
+Writing to test.txt...done.
+```
+데이터가 올바르게 작성되었는지 확인하기 위해서, 아두이노에서 SD 카드를 제거한 후 컴퓨터에 삽입하여 `test.txt` 파일을 열어 "Testing text file write." 메시지를 확인할 수 있습니다.
 
-## See Also (참조)
-- Arduino SD 라이브러리 공식 문서: https://www.arduino.cc/en/Reference/SD
-- SPI 통신에 대해: https://www.arduino.cc/en/reference/SPI
-- 파일 시스템 및 SD 카드 사용 예제들: https://www.arduino.cc/en/Tutorial/LibraryExamples
+보다 고급 파일 작업이나 처리를 요구하는 프로젝트를 위해서는, 추가적인 라이브러리를 탐색하거나 특정 요구 사항에 맞춰 맞춤 함수를 작성하는 것을 고려하세요.

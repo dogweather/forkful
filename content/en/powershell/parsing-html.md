@@ -1,8 +1,8 @@
 ---
 title:                "Parsing HTML"
-date:                  2024-01-20T15:33:02.616930-07:00
+date:                  2024-02-03T19:03:00.218296-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Parsing HTML"
-
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/powershell/parsing-html.md"
 ---
@@ -10,40 +10,61 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Parsing HTML means breaking down HTML content to extract specific data. Programmers do it to automate web scraping, data mining, or to integrate web content into applications.
+Parsing HTML in PowerShell is about dissecting HTML content to extract specific data or to automate web-related tasks. Programmers do it to interact with web pages, scrape web content, or automate form submissions and other web interactions without needing a web browser.
 
 ## How to:
-Let's grab some data from a web page. We'll use Invoke-WebRequest and then siphon out what we need.
 
-```PowerShell
-# Fetch the page content
-$response = Invoke-WebRequest -Uri "http://example.com"
+PowerShell does not natively have a dedicated HTML parser, but you can utilize the `Invoke-WebRequest` cmdlet to access and parse HTML content. For more complex parsing and manipulation, the HtmlAgilityPack, a popular .NET library, can be employed.
 
-# Parse the HTML content
-$parsedHtml = $response.ParsedHtml
+### Using `Invoke-WebRequest`:
 
-# Extract data
-# Say we want all the hyperlink texts
-$links = $parsedHtml.getElementsByTagName('a') | ForEach-Object { $_.innerText }
-$links
+```powershell
+# Simple example to fetch titles from a webpage
+$response = Invoke-WebRequest -Uri 'http://example.com'
+# Utilize the ParsedHtml property to access DOM elements
+$title = $response.ParsedHtml.title
+Write-Output $title
 ```
 
-Sample output:
+Sample Output:
 
 ```
-Home
-About Us
-Services
-Contact
+Example Domain
 ```
 
-## Deep Dive
-Historically, parsing HTML in PowerShell could be clunky. You had the choice of using regex (notoriously problematic for HTML), COM objects with Internet Explorer, or third-party libraries. Now, PowerShell's Invoke-WebRequest cmdlet simplifies the process, integrating with the Internet Explorer engine to parse HTML — though it's a bit slow and cumbersome.
+### Using HtmlAgilityPack:
 
-Alternatives like the HtmlAgilityPack library exist, which is far more robust and fine-tuned for parsing HTML. It requires extra setup but pays off with flexibility and performance.
+First, you need to install the HtmlAgilityPack. You can do this via NuGet Package Manager:
 
-Implementation-wise, note that PowerShell's approach is not always accurate for dynamic content filled by JavaScript. To handle dynamic content, you might need browser automation tools like Selenium.
+```powershell
+Install-Package HtmlAgilityPack -ProviderName NuGet
+```
 
-## See Also
-- [HtmlAgilityPack on GitHub](https://github.com/zzzprojects/html-agility-pack)
-- [Selenium with PowerShell](https://github.com/adamdriscoll/selenium-powershell)
+Then, you can use it in PowerShell to parse HTML:
+
+```powershell
+# Load the HtmlAgilityPack assembly
+Add-Type -Path "path\to\HtmlAgilityPack.dll"
+
+# Create an HtmlDocument object
+$doc = New-Object HtmlAgilityPack.HtmlDocument
+
+# Load HTML from a file or a web request
+$htmlContent = (Invoke-WebRequest -Uri "http://example.com").Content
+$doc.LoadHtml($htmlContent)
+
+# Use XPath or other query methods to extract elements
+$node = $doc.DocumentNode.SelectSingleNode("//h1")
+
+if ($node -ne $null) {
+    Write-Output $node.InnerText
+}
+```
+
+Sample Output:
+
+```
+Welcome to Example.com!
+```
+
+In these examples, `Invoke-WebRequest` is best for simple tasks, whereas HtmlAgilityPack offers a much richer set of features for complex HTML parsing and manipulation.

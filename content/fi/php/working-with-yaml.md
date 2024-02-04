@@ -1,55 +1,129 @@
 ---
-title:                "YAML-tiedostojen käsittely"
-date:                  2024-01-19
-simple_title:         "YAML-tiedostojen käsittely"
-
+title:                "Työskentely YAML:n kanssa"
+date:                  2024-02-03T19:26:45.746025-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Työskentely YAML:n kanssa"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/php/working-with-yaml.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? - Mitä & Miksi?
-YAML on ihmisen luettavaa dataformaattia käyttävä tiedostoformaatti asetusten, konfiguraatioiden ja datan ilmaisuun. Ohjelmoijat käyttävät YAMLia sen selkeyden ja helpon luettavuuden vuoksi, erityisesti monimutkaisissa konfiguraatioissa tai datan serialisoinnissa.
+## Mikä ja miksi?
 
-## How to: - Kuinka:
+YAML, jonka nimi tulee sanoista "YAML Ain't Markup Language", on ihmisen luettavissa oleva datan serialisointiformaatti, jota käytetään yleisesti konfiguraatiotiedostoissa. Ohjelmoijat suosivat YAML:n käyttöä sen yksinkertaisuuden ja luettavuuden vuoksi, mikä tekee siitä erinomaisen valinnan asetusten, parametrien ja jopa monimutkaisten datarakenteiden tallentamiseen helposti hallittavassa muodossa.
+
+## Kuinka:
+
+PHP ei nykyisissä versioissaan tue YAML:n jäsentämistä osana sen vakio kirjastoa. Helpoin tapa työskennellä YAML:n kanssa PHP:ssä on käyttämällä Symfony YAML -komponenttia tai `yaml` PECL-laajennusta.
+
+### Käyttäen Symfony YAML -komponenttia
+
+Asenna ensin Symfony YAML -komponentti Composerin kautta:
+
+```bash
+composer require symfony/yaml
+```
+
+Sitten voit jäsentää ja luoda YAML-sisältöä seuraavasti:
+
 ```php
 <?php
-// Lataa YAML-parsija, esim. Symfony YAML
-require 'vendor/autoload.php';
+require_once __DIR__.'/vendor/autoload.php';
+
 use Symfony\Component\Yaml\Yaml;
 
-// YAML-tiedoston lukeminen ja PHP-taulukoksi muuntaminen
-$yaml_content = Yaml::parseFile('config.yaml');
-print_r($yaml_content);
+// YAML:n jäsentäminen
+$yamlString = <<<YAML
+greet: Hei, maailma!
+framework:
+  name: Symfony
+  language: PHP
+YAML;
 
-// PHP-taulukon muuntaminen YAML-muotoon
-$array = ['asetukset' => ['resoluutio' => '1920x1080', 'volyymi' => 75]];
-$yaml_data = Yaml::dump($array);
-echo $yaml_data;
-?>
+$array = Yaml::parse($yamlString);
+print_r($array);
+
+// YAML:n luominen taulukosta
+$array = [
+    'greet' => 'Hei, YAML!',
+    'framework' => [
+        'name' => 'Symfony',
+        'language' => 'PHP',
+    ],
+];
+
+$yaml = Yaml::dump($array);
+echo $yaml;
 ```
 
-### Esimerkkituloste:
-```php
+Esimerkkituloste jäsentäessä:
+
+```
 Array
 (
-    [asetukset] => Array
+    [greet] => Hei, maailma!
+    [framework] => Array
         (
-            [resoluutio] => 1920x1080
-            [volyymi] => 75
+            [name] => Symfony
+            [language] => PHP
         )
+
 )
-asetukset:
-    resoluutio: '1920x1080'
-    volyymi: 75
 ```
 
-## Deep Dive - Syväkatsaus:
-YAML, lyhenne sanoista "YAML Ain't Markup Language", julkaistiin alun perin vuonna 2001. YAML on JSON:in ja XML:n vaihtoehto, mutta ihmisille ystävällisempi lukumuodossa. Se on suosittu erityisesti konfiguraatiotiedostoissa ja sovellusten asetuksissa. PHP:ssä YAML-tiedostojen käsittelyyn voidaan käyttää useita kirjastoja, kuten Symfony YAML-komponenttia. Tämä komponentti toteuttaa YAML 1.2 -spesifikaation ja tarjoaa intuitiiviset funktiot datan lukemiseen ja kirjoittamiseen.
+Esimerkkituloste luodessa:
 
-## See Also - Katso Myös:
-- [Symfony YAML-komponentti dokumentaatio](https://symfony.com/doc/current/components/yaml.html)
-- [YAML-kielen virallinen sivusto](https://yaml.org/)
-- [YAML-lintteri](http://www.yamllint.com/), jolla voit varmistaa YAML-koodisi oikeellisuuden
-- [PHP.net -yaml funktioiden manuaali](https://www.php.net/manual/en/book.yaml.php)
+```
+greet: Hei, YAML!
+framework:
+    name: Symfony
+    language: PHP
+```
+
+### Käyttäen `yaml` PECL-laajennusta
+
+Jos haluat, tai jos projektin vaatimukset sallivat, PECL-laajennus voi olla toinen tehokas tapa työskennellä YAML:n kanssa. Varmista ensin, että laajennus on asennettu:
+
+```bash
+pecl install yaml
+```
+
+Ota sitten käyttöön `php.ini`-konfiguraatiossasi:
+
+```ini
+extension=yaml.so
+```
+
+Näin jäsentät ja muodostat YAML:ää:
+
+```php
+<?php
+
+// YAML:n jäsentäminen
+$yamlString = <<<YAML
+greet: Hei, maailma!
+framework:
+  name: Symfony
+  language: PHP
+YAML;
+
+$array = yaml_parse($yamlString);
+print_r($array);
+
+// YAML:n luominen taulukosta
+$array = [
+    'greet' => 'Hei, YAML!',
+    'framework' => [
+        'name' => 'Symfony',
+        'language' => 'PHP',
+    ],
+];
+
+$yaml = yaml_emit($array);
+echo $yaml;
+```
+
+Tulos on samankaltainen kuin Symfony-komponentin kanssa, mikä havainnollistaa YAML:n roolia sillassa ihmisen luettavan muodon ja PHP-taulukkorakenteiden välillä, helpottaen konfiguraation ja datan käsittelyä.

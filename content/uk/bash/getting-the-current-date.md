@@ -1,76 +1,53 @@
 ---
 title:                "Отримання поточної дати"
-date:                  2024-01-20T15:12:55.289412-07:00
+date:                  2024-02-03T19:09:09.052186-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Отримання поточної дати"
-
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/bash/getting-the-current-date.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Що і Навіщо?
+## Що і чому?
+Отримання поточної дати в Bash включає використання вбудованих команд для відображення дати та часу у різних форматах. Програмісти використовують цю функціональність для завдань, таких як додавання часових міток до логів, планування завдань або просто як частину своїх скриптів інформації системи для відстеження, коли дії були виконані.
 
-Getting the current date in Bash lets you stamp when events happen in scripts. It's useful for logging, backups, and any time-sensitive tasks.
+## Як це зробити:
+У Bash команда `date` є вашим основним інструментом для отримання поточної дати та часу. Ось кілька прикладів того, як її використовувати:
 
-## How to:
-Як це зробити:
+1. **Отримання поточної дати та часу у форматі за замовчуванням:**
 
-To get the current date and time, you just use `date`. Here’s a quick example:
-
-```Bash
+```bash
 date
 ```
 
-Output might look like this:
-
+*Приклад виводу:*
 ```
-Tue Mar 14 17:22:36 EET 2023
-```
-
-Get the date in `YYYY-MM-DD` format:
-
-```Bash
-date +%F
+Срд кві 5 14:22:04 PDT 2023
 ```
 
-Output:
+2. **Налаштувати формат виведення:** Можна вказати формат виведення, використовуючи специфікатори формату `+%`. Наприклад, для виведення дати у форматі РРРР-ММ-ДД:
 
-```
-2023-03-14
-```
-
-Want just the year?
-
-```Bash
-date +%Y
+```bash
+date "+%Y-%m-%d"
 ```
 
-Output:
-
+*Приклад виводу:*
 ```
-2023
+2023-04-05
 ```
-  
-## Deep Dive
-Поглиблене Вивчення:
 
-In older scripts, you might see `date` commands with backticks (`). It’s an old way to capture command output. Now we use `$(...)`. Like `$(date)`. Why? It's more readable and nests better.
+3. **Отримати поточний UNIX часовий запис:** UNIX часовий запис - це кількість секунд з моменту UNIX епохи (1 січня 1970 року). Це корисно для скриптів, які виконують розрахунки, засновані на різниці часу.
 
-Alternatives? You bet. For complex needs, people use `date` with options, like `date +%Y-%m-%d-%H:%M:%S` for a full timestamp.
+```bash
+date "+%s"
+```
 
-Implementation detail: `date` reads system time. Setting the system time correctly, often via NTP (Network Time Protocol), thus matters.
+*Приклад виводу:*
+```
+1672877344
+```
 
-## See Also
-Дивись Також:
-
-For more on `date`:
-
-- Bash Manual: https://www.gnu.org/software/bash/manual/
-- `man date` or `info date` in the terminal.
-
-Interested in scripts and scheduling?
-
-- Cron Jobs: https://opensource.com/article/17/11/how-use-cron-linux
-- `at` and `batch` commands: https://linux.die.net/man/1/at
+Популярні сторонні бібліотеки зазвичай не використовуються для цієї базової операції в Bash, оскільки вбудована команда `date` забезпечує комплексну функціональність. Проте, для більш складних маніпуляцій з датою та часом, програмісти можуть використовувати інші мови програмування чи інструменти, які пропонують бібліотеки для арифметики дат і розбору, такі як модуль `datetime` в Python.

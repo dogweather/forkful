@@ -1,47 +1,67 @@
 ---
 title:                "HTML parsen"
-date:                  2024-01-20T15:32:33.737464-07:00
+date:                  2024-02-03T19:12:24.323299-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "HTML parsen"
-
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/lua/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Was & Warum?
-HTML-Parser ermöglichen das Auslesen und Verarbeiten von HTML-Dateien. Programmierer nutzen sie, um Daten automatisiert zu sammeln oder Inhalte von Webseiten zu manipulieren.
+Das Parsen von HTML beinhaltet das Extrahieren von Daten und Informationen aus HTML-Dokumenten, was für das Web-Scraping, die Datenanalyse und Automatisierungsaufgaben von entscheidender Bedeutung ist. Programmierer führen dies durch, um Webinhalte programmatisch zu sammeln, zu analysieren oder zu manipulieren, wodurch die Automatisierung dessen ermöglicht wird, was sonst eine manuelle Extraktion von Daten von Websites wäre.
 
-## How to:
-Um HTML in Lua zu parsen, nutzt man häufig Bibliotheken wie `lua-html` oder `luaxml`. Hier ein einfaches Beispiel mit `lua-html`:
+## Wie geht das:
+Lua verfügt nicht über eine integrierte Bibliothek zum Parsen von HTML, aber Sie können Drittanbieter-Bibliotheken wie `LuaHTML` nutzen oder Bindungen für `libxml2` durch `LuaXML` verwenden. Ein beliebter Ansatz ist die Verwendung der `lua-gumbo`-Bibliothek zum Parsen von HTML, die eine unkomplizierte, HTML5-konforme Parsing-Fähigkeit bietet.
+
+### lua-gumbo installieren:
+Stellen Sie zunächst sicher, dass `lua-gumbo` installiert ist. Sie können es in der Regel mit luarocks installieren:
+
+```sh
+luarocks install lua-gumbo
+```
+
+### Grundlegendes Parsen mit lua-gumbo:
+So können Sie einen einfachen HTML-Schnipsel parsen und Daten daraus extrahieren mit `lua-gumbo`:
 
 ```lua
-local html = require("lua-html")
+local gumbo = require "gumbo"
+local document = gumbo.parse[[<html><body><p>Hallo, Welt!</p></body></html>]]
 
-local text = [[
+local p = document:getElementsByTagName("p")[1]
+print(p.textContent)  -- Ausgabe: Hallo, Welt!
+```
+
+### Fortgeschrittenes Beispiel - Links extrahieren:
+Um `href`-Attribute von allen Anker-Tags (`<a>`-Elementen) in einem HTML-Dokument zu extrahieren:
+
+```lua
+local gumbo = require "gumbo"
+local document = gumbo.parse([[
 <html>
-<head><title>Testseite</title></head>
-<body><p>Hallo, Welt!</p></body>
+<head><title>Beispielseite</title></head>
+<body>
+  <a href="http://beispiel.com/1">Link 1</a>
+  <a href="http://beispiel.com/2">Link 2</a>
+  <a href="http://beispiel.com/3">Link 3</a>
+</body>
 </html>
-]]
+]])
 
-local parsed_html = html.parse(text)
-local paragraphs = parsed_html:query_selector('p')
-
-for _, p in ipairs(paragraphs) do
-    print(p:get_text())
+for _, element in ipairs(document.links) do
+    if element.getAttribute then  -- Stellen Sie sicher, dass es ein Element ist und Attribute hat
+        local href = element:getAttribute("href")
+        if href then print(href) end
+    end
 end
+
+-- Beispiel Ausgabe:
+-- http://beispiel.com/1
+-- http://beispiel.com/2
+-- http://beispiel.com/3
 ```
 
-Ausgabe:
-```
-Hallo, Welt!
-```
-
-## Deep Dive
-HTML-Parser gab es schon, seitdem Webseiten entwickelt werden. Sie sind kritisch für Suchmaschinen und Datenanalyse-Tools. Während Lua nicht die Hauptwahl für Web-Scraping ist, bietet es doch effiziente Libraries dafür. Alternativen zu Lua-Parsern sind BeautifulSoup (Python) oder Nokogiri (Ruby). Die Herausforderung beim Parsen von HTML ist das Handling von schlecht geformtem HTML, was oft zu Parser-spezifischer Logik führt.
-
-## See Also
-- Lua-html Github: https://github.com/tarantool/lua-html
-- LuaXML GitHub: https://github.com/LuaDist/luaxml
-- W3C HTML Parser Spezifikationen: https://html.spec.whatwg.org/multipage/parsing.html
+Dieser Codeausschnitt iteriert durch alle Links im Dokument und druckt deren `href`-Attribute aus. Die Fähigkeit der `lua-gumbo`-Bibliothek, die Struktur eines HTML-Dokuments zu parsen und zu verstehen, vereinfacht den Prozess der Extraktion spezifischer Elemente basierend auf ihren Tags oder Attributen.

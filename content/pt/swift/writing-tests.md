@@ -1,52 +1,64 @@
 ---
 title:                "Escrevendo testes"
-date:                  2024-01-19
+date:                  2024-02-03T19:32:01.436897-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Escrevendo testes"
-
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/swift/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (O Que e Por Que?)
-Escrever testes é criar verificações automáticas para o seu código. Isso é feito para garantir que tudo funcione como esperado e para prevenir bugs quando alterações são feitas.
+## O Que & Por Que?
+Escrever testes em Swift envolve criar e executar código que verifica a correção de outras unidades de código na sua aplicação. Programadores fazem isso para assegurar a confiabilidade, detectar bugs cedo no ciclo de desenvolvimento, e facilitar o refatoramento de código futuro sem consequências não intencionais.
 
-## How to: (Como fazer:)
+## Como fazer:
+Swift suporta testes por meio de seu framework XCTest, que é integrado ao Xcode. Você pode escrever testes de unidade para verificar partes individuais do seu código, por exemplo, uma função que calcula a soma de dois números.
 
-Exemplo de Teste de Unidade usando XCTest:
-
-```Swift
+```swift
 import XCTest
-@testable import YourApp
+@testable import SuaApp
 
-class YourAppTests: XCTestCase {
-    
-    func testExample() {
-        let result = YourApp.addTwoNumbers(numberOne: 2, numberTwo: 3)
-        XCTAssertEqual(result, 5, "A soma de 2 + 3 deve ser 5")
+class TestesDaSuaApp: XCTestCase {
+
+    func testaSoma() {
+        let resultado = Calculadora().soma(a: 1, b: 2)
+        XCTAssertEqual(resultado, 3, "A função de soma não retornou o valor esperado.")
     }
-    
 }
-
 ```
 
-Saída esperada após rodar o teste:
+Para rodar este teste, você normalmente pressionaria Command-U no Xcode. A saída no navegador de testes do Xcode dirá se o teste foi aprovado ou reprovado.
 
-``` 
-Test Suite 'All tests' started at 2023-03-18 17:06:12.467
-Test Suite 'YourAppTests' started at 2023-03-18 17:06:13.134
-Test Case '-[YourAppTests testExample]' started.
-Test Case '-[YourAppTests testExample]' passed (0.007 seconds).
+Por exemplo, uma saída de teste bem-sucedida:
+```
+Test Case '-[TestesDaSuaApp testaSoma]' passed (0.005 seconds).
 ```
 
-## Deep Dive (Mergulho Profundo)
+Para cenários de teste mais avançados, você pode adotar bibliotecas de terceiros como Quick/Nimble, que oferecem uma sintaxe mais expressiva para escrever testes.
 
-O XCTest é o framework de teste fornecido pela Apple, introduzido ao lado do Xcode 5 e iOS 7. Alternativas incluem Quick e Nimble para um estilo de descrição mais expressivo, mas XCTest é suficiente para a maioria dos casos. Internamente, escrever testes implica em entender asserções e o ciclo de vida do XCTestCase.
+Com Quick/Nimble, você poderia escrever o mesmo teste assim:
 
-## See Also (Veja Também)
+```swift
+// Adicione Quick e Nimble ao seu gerenciador de pacotes Swift ou use CocoaPods/Carthage para instalá-los
+import Quick
+import Nimble
+@testable import SuaApp
 
-- Documentação XCTest da Apple: https://developer.apple.com/documentation/xctest
-- Tutorial de testes em Swift: https://www.raywenderlich.com/960290-ios-unit-testing-and-ui-testing-tutorial
-- Quick, uma lib de testes BDD para Swift: https://github.com/Quick/Quick
-- Nimble, uma lib de asserções correspondente: https://github.com/Quick/Nimble
+class EspecCalculadora: QuickSpec {
+    override func spec() {
+        describe("Calculadora") {
+            context("ao somar números") {
+                it("deve retornar a soma correta") {
+                    let calculadora = Calculadora()
+                    expect(calculadora.soma(a: 1, b: 2)).to(equal(3))
+                }
+            }
+        }
+    }
+}
+```
+
+Rodar este teste daria uma saída similar no seu console de teste ou log da ferramenta de CI/CD, indicando se o teste foi bem-sucedido ou não, com um formato mais legível para descrever testes e expectativas.

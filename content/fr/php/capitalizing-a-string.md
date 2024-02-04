@@ -1,56 +1,56 @@
 ---
-title:                "Mettre une chaîne de caractères en majuscules"
-date:                  2024-01-19
-simple_title:         "Mettre une chaîne de caractères en majuscules"
-
+title:                "Mettre en majuscule une chaîne"
+date:                  2024-02-03T19:05:52.245010-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Mettre en majuscule une chaîne"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/php/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-(Majuscule : Quoi et Pourquoi ?)
+## Quoi & Pourquoi ?
+Mettre en majuscule une chaîne implique de modifier le premier caractère d'un texte donné en majuscule, afin que les phrases, les titres ou les noms propres commencent correctement dans un ensemble de données. Les programmeurs exécutent souvent la capitalisation de chaînes pour normaliser les données, améliorer la lisibilité ou assurer la cohérence dans la saisie utilisateur ou le traitement de données textuelles.
 
-Capitaliser une chaîne de caractères, c'est transformer la première lettre de chaque mot en majuscule. Les programmeurs l'utilisent souvent pour normaliser des titres ou des noms propres afin de préserver une constance esthétique et une lisibilité dans les interfaces utilisateurs.
+## Comment faire :
+PHP prend en charge nativement diverses fonctions pour mettre en majuscule les chaînes, chacune servant un objectif différent. Voici comment vous pouvez les utiliser :
 
-## How to:
-(Comment faire : )
-
-PHP facilite la capitalisation des chaînes avec quelques fonctions prêtes à l'emploi. Voici comment utiliser `ucwords()` et `mb_convert_case()` :
+### Mettre en majuscule la première lettre d'une chaîne :
 
 ```php
-$texte = "bonjour le monde!";
-// Capitalise chaque mot.
-$texteCap = ucwords($texte);
-echo $texteCap; // Affiche : Bonjour Le Monde!
-
-// Pour gérer les caractères multioctets (comme les lettres accentuées) :
-$texteUtf8 = "salut à tous!";
-$texteCapUtf8 = mb_convert_case($texteUtf8, MB_CASE_TITLE, "UTF-8");
-echo $texteCapUtf8; // Affiche : Salut À Tous!
+$string = "bonjour, monde !";
+$capitalizedString = ucfirst($string);
+echo $capitalizedString; // Affiche : Bonjour, monde !
 ```
 
-## Deep Dive
-(Exploration approfondie)
-
-Historiquement, PHP a ajouté `ucwords()` dans les premières versions pour répondre aux besoins de mise en forme des chaines de caractères. Cependant, avec l'internationalisation, `mb_convert_case()` est devenu essentiel pour gérer correctement les caractères hors de la table ASCII standard, comme les accents.
-
-Alternativement, certains préfèrent travailler au niveau des tableaux pour plus de contrôle :
+### Mettre en majuscule la première lettre de chaque mot :
 
 ```php
-$texteArray = explode(' ', $texteUtf8);
-$texteArray = array_map(function($mot){
-    return mb_convert_case($mot, MB_CASE_TITLE, "UTF-8");
-}, $texteArray);
-echo implode(' ', $texteArray); // Salut À Tous!
+$string = "bonjour, monde !";
+$capitalizedWords = ucwords($string);
+echo $capitalizedWords; // Affiche : Bonjour, Monde !
 ```
 
-Cette technique décompose et reconstruit les chaînes, offrant une flexibilité pour appliquer des règles de capitalisation plus spécifiques.
+### Convertir toute la chaîne en majuscules :
 
-## See Also
-(Voir aussi)
+```php
+$string = "bonjour, monde !";
+$upperCaseString = strtoupper($string);
+echo $upperCaseString; // Affiche : BONJOUR, MONDE !
+```
 
-- La [documentation officielle de PHP](https://www.php.net/manual/fr/function.ucwords.php) sur `ucwords()`.
-- La [documentation officielle de PHP](https://www.php.net/manual/fr/function.mb-convert-case.php) sur `mb_convert_case()`.
-- Un [guide sur l'utilisation des expressions régulières en PHP](https://www.php.net/manual/fr/reference.pcre.pattern.syntax.php) si vous voulez plus de contrôle dans la manipulation des chaînes.
+Pour les scénarios nécessitant plus de personnalisation ou des solutions tierces, des bibliothèques comme `mbstring` (pour les chaînes multioctets) peuvent être utilisées, en particulier lorsqu'il s'agit d'internationalisation où les caractères peuvent aller au-delà de l'ensemble de caractères ASCII de base.
+
+### Utiliser mbstring pour mettre en majuscule les chaînes UTF-8 :
+
+Assurez-vous que l'extension `mbstring` est activée dans votre configuration PHP, puis :
+
+```php
+$string = "élégant";
+$capitalizedString = mb_convert_case($string, MB_CASE_TITLE, "UTF-8");
+echo $capitalizedString; // Affiche : Élégant
+```
+
+Cette approche aide à mettre en majuscule avec précision les chaînes qui incluent des caractères non-ASCII, en respectant les nuances de diverses langues.

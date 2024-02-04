@@ -1,62 +1,77 @@
 ---
-title:                "Парсинг HTML"
-date:                  2024-01-20T15:33:03.330136-07:00
-simple_title:         "Парсинг HTML"
-
+title:                "Аналіз HTML"
+date:                  2024-02-03T19:13:11.451836-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Аналіз HTML"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/php/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
+## Що і Чому?
+Парсинг HTML за допомогою PHP полягає у витягуванні певної інформації з HTML-документів. Програмісти виконують це завдання для автоматизації збору даних, веб-скрепінгу або для інтеграції вмісту різних веб-сторінок у свої додатки, покращуючи функціональність без ручного втручання.
 
-Парсинг HTML — це процес витягування даних із структури HTML-документа. Програмісти це роблять для аналізу веб-сторінок, збору інформації та автоматизації веб-інтерактивів.
+## Як:
+Для парсингу HTML програмісти PHP можуть використовувати вбудовані функції або звертатися до потужних бібліотек, як-от Simple HTML DOM Parser. Тут ми розглянемо приклади використання як класу `DOMDocument` в PHP, так і Simple HTML DOM Parser.
 
-## How to:
-
-У PHP можна парсити HTML, використовуючи клас `DOMDocument`. Ось як це працює:
+### Використання `DOMDocument`:
+Клас `DOMDocument` в PHP є частиною розширення DOM, що дозволяє парсити та маніпулювати HTML- та XML-документами. Ось швидкий приклад того, як використовувати `DOMDocument` для пошуку всіх зображень у HTML-документі:
 
 ```php
-<?php
 $html = <<<HTML
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Test Page</title>
+    <title>Приклад сторінки</title>
 </head>
 <body>
-    <h1>Welcome to my Website!</h1>
-    <p>This is a paragraph.</p>
+    <img src="image1.jpg" alt="Зображення 1">
+    <img src="image2.jpg" alt="Зображення 2">
 </body>
 </html>
 HTML;
 
-$dom = new DOMDocument();
-@$dom->loadHTML($html);
-$titles = $dom->getElementsByTagName('title');
+$doc = new DOMDocument();
+@$doc->loadHTML($html);
+$images = $doc->getElementsByTagName('img');
 
-foreach ($titles as $title) {
-    echo $title->nodeValue; // Виведе: Test Page
+foreach ($images as $img) {
+    echo $img->getAttribute('src') . "\n";
 }
-?>
 ```
 
-Ми використовуємо `loadHTML` для завантаження HTML і `getElementsByTagName` для отримання елементів за тегом.
+Приклад виводу:
+```
+image1.jpg
+image2.jpg
+```
 
-## Deep Dive:
+### Використання Simple HTML DOM Parser:
+Для більш складних завдань або для спрощеного синтаксису ви можете віддати перевагу використанню сторонньої бібліотеки. Simple HTML DOM Parser є популярним вибором, надаючи інтерфейс схожий на jQuery для навігації та маніпулювання структурами HTML. Ось як це використовувати:
 
-Парсинг HTML у PHP має довгу історію. Раніше це робили з регулярними виразами, але цей метод схильний до помилок. Пізніше почали використовувати `DOMDocument` і бібліотеки типу `SimpleHTMLDom`.
+Спочатку встановіть бібліотеку за допомогою Composer:
+```
+composer require simple-html-dom/simple-html-dom
+```
 
-Є альтернативи: `XPath` для складних запитів і `Curl` для завантаження HTML із веб. Один із недоліків `DOMDocument` в PHP - слабка обробка помилок у неправильно сформованому HTML, тому ми використовуємо `@` для придушення помилок.
+Потім маніпулюйте HTML, щоб, наприклад, знайти всі посилання:
 
-При роботі з UTF-8 текстом, не забудьте ставити `mb_internal_encoding('UTF-8')` перед парсингом і встановлювати заголовок `Content-type: text/html; charset=utf-8` у HTTP відповіді.
+```php
+require_once 'vendor/autoload.php';
 
-## See Also:
+use simplehtmldom\HtmlWeb;
 
-- [PHP DOMDocument](https://www.php.net/manual/en/class.domdocument.php)
-- [XPath Syntax](https://www.w3schools.com/xml/xpath_syntax.asp)
-- [SimpleHTMLDom Parser](http://simplehtmldom.sourceforge.net/)
-- [Curl with PHP](https://www.php.net/manual/en/book.curl.php)
+$client = new HtmlWeb();
+$html = $client->load('http://www.example.com');
 
-Всі ці ресурси нададуть вам більше інформації про парсинг HTML та способи роботи з ним у PHP.
+foreach($html->find('a') as $element) {
+    echo $element->href . "\n";
+}
+```
+
+Цей код завантажить HTML-вміст 'http://www.example.com', проаналізує його та виведе всі гіперпосилання. Не забудьте замінити `'http://www.example.com'` на фактичну URL-адресу, яку ви бажаєте проаналізувати.
+
+Використовуючи ці методи, розробники PHP можуть ефективно парсити HTML-вміст, налаштувати витягування даних відповідно до своїх потреб або безпроблемно інтегрувати зовнішній веб-вміст у свої проєкти.

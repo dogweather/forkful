@@ -1,48 +1,79 @@
 ---
-title:                "Wykorzystanie wyrażeń regularnych"
-date:                  2024-01-19
-simple_title:         "Wykorzystanie wyrażeń regularnych"
-
+title:                "Korzystanie z wyrażeń regularnych"
+date:                  2024-02-03T19:18:23.837602-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Korzystanie z wyrażeń regularnych"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/ruby/using-regular-expressions.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-W Ruby regexy to narzędzia do wyszukiwania wzorców w tekście. Służą do walidacji, przeszukiwania czy też transformowania stringów – zwiększają elastyczność i efektywność kodu.
+## Co i dlaczego?
+Wyrażenia regularne (regex) w Ruby to wzorce używane do dopasowywania kombinacji znaków w ciągach tekstowych, co umożliwia programistom efektywne wyszukiwanie, dopasowywanie i manipulowanie tekstem. Programiści wykorzystują regex do zadań takich jak walidacja, parsowanie i manipulowanie ciągami znaków, co czyni go niezbędnym narzędziem do przetwarzania tekstu.
 
-## How to:
-Użycie regexpa w praktyce:
+## Jak to zrobić:
+### Podstawowe dopasowywanie
+Aby dopasować ciąg znaków do prostego wzorca, możesz użyć metody `match`. Poniżej sprawdzamy, czy słowo "Ruby" występuje w danym ciągu.
 
-```Ruby
-# Wyszukiwanie słowa 'ruby'
-text = "Lubię programować w Ruby!"
-pattern = /ruby/i
-puts "Znaleziono!" if text.match(pattern)
-
-# Output: Znaleziono!
-
-# Podmiana tekstu
-text = "Jest zimno i pada śnieg"
-new_text = text.gsub(/zimno/, 'ciepło')
-puts new_text
-
-# Output: Jest ciepło i pada śnieg
-
-# Capturing groups - wyłuskanie danych
-date = "Data wydarzenia: 2023-04-26"
-pattern = /(\d{4})-(\d{2})-(\d{2})/
-if date =~ pattern
-  puts "Rok: #{$1}, Miesiąc: #{$2}, Dzień: #{$3}"
+```ruby
+if /Ruby/.match("Hello, Ruby!")
+  puts "Znaleziono dopasowanie!"
 end
-
-# Output: Rok: 2023, Miesiąc: 04, Dzień: 26
+# Output: Znaleziono dopasowanie!
 ```
 
-## Deep Dive:
-Regularne wyrażenia, czyli regexy, pojawiły się w latach 50. XX wieku. Są standardem w większości języków programowania. Alternatywą dla regexów jest manualne przeszukiwanie stringów, co jest pracochłonne i mniej wydajne. W Ruby regexy są wbudowane i korzystają z różnych implementacji, np. Oniguruma.
+### Dopasowywanie wzorców z użyciem zmiennych
+Możesz interpolować zmienne do swojego wyrażenia regularnego za pomocą składni `#{}`, czyniąc swoje wzorce dynamicznymi.
 
-## See Also:
-- Dokładniejsze wyjaśnienie regexów: [rubular.com](http://rubular.com/)
-- Interaktywne tutoriali: [regexone.com](https://regexone.com/)
+```ruby
+language = "Ruby"
+if /#{language}/.match("Programowanie w Ruby jest zabawne.")
+  puts "Mowa o Ruby!"
+end
+# Output: Mowa o Ruby!
+```
+
+### Użycie wyrażeń regularnych do zamiany
+Metoda `gsub` pozwala zastąpić każde wystąpienie wzorca określonym ciągiem zastępczym.
+
+```ruby
+puts "foobarfoo".gsub(/foo/, "bar")
+# Output: barbarbar
+```
+
+### Przechwytywanie
+Nawiasy w wyrażeniu regularnym służą do przechwytywania części dopasowania. Metoda `match` zwraca obiekt `MatchData`, który można użyć do dostępu do przechwyceń.
+
+```ruby
+match_data = /(\w+): (\d+)/.match("Wiek: 30")
+puts match_data[1] # Przechwycony etykieta
+puts match_data[2] # Przechwycona wartość
+# Output:
+# Wiek
+# 30
+```
+
+### Korzystanie z bibliotek firm trzecich
+Chociaż standardowa biblioteka Ruby jest potężna, czasami możesz potrzebować bardziej wyspecjalizowanej funkcjonalności. Jednym z popularnych gemów do pracy z regex jest `Oniguruma`, który oferuje dodatkowe funkcje regex poza wbudowanym silnikiem regex Ruby.
+
+Zainstaluj go używając:
+```bash
+gem install oniguruma
+```
+
+Przykład użycia może wyglądać tak (zakładając, że masz zainstalowany i zażądzony `oniguruma`):
+
+```ruby
+# To jest bardziej zaawansowany przykład i może wymagać dodatkowej konfiguracji
+require 'oniguruma'
+
+pattern = Oniguruma::ORegexp.new('(\d+)')
+match_data = pattern.match("Numer to 42.")
+puts match_data[1]
+# Output: 42
+```
+
+Pamiętaj, że choć wyrażenia regularne są potężne, mogą stać się skomplikowane i trudne do zarządzania dla bardziej złożonych wzorców. Dąż do czytelności i rozważ alternatywne metody, jeśli twoje wyrażenie regularne stanie się zbyt zagmatwane.

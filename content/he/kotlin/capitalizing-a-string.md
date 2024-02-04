@@ -1,42 +1,44 @@
 ---
-title:                "הפיכת מחרוזת לאותיות רישיות"
-date:                  2024-01-19
-simple_title:         "הפיכת מחרוזת לאותיות רישיות"
-
+title:                "הגדלת אותיות במחרוזת"
+date:                  2024-02-03T19:06:05.162111-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "הגדלת אותיות במחרוזת"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/kotlin/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## מה ולמה?
-מונח "הגדלת אותיות" בהקשר של מחרוזות מתייחס להמרת כל התווים במחרוזת לאותיות גדולות (רישיות). תכניתנים משתמשים בזה לצורכי עקביות, עיבוד טקסט וממשק משתמש.
+
+להון אות ראשונה במחרוזת בתכנות כולל המרה של התו הראשון של המחרוזת לאות גדולה, אם הוא כבר לא כזה, מה ששימושי לעיצוב קלטי משתמש או הצגת טקסט בממשק משתמש באופן יותר תקני או ידידותי לאדם. מתכנתים מבצעים את הפעולה הזו כדי להבטיח אחידות נתונים או לעמוד בדרישות עיצוב מסוימות בתוך האפליקציות התוכנה שלהם.
 
 ## איך לעשות:
-ב-Kotlin, תהליך ההגדלת אותיות פשוט. נעשה שימוש בפונקציה `.uppercase()`:
 
-```Kotlin
-fun main() {
-    val original = "shalom"
-    val capitalized = original.uppercase()
-    println(capitalized) // Output: SHALOM
-}
+בקוטלין, ניתן להון מחרוזות באמצעות פונקציות הספרייה הסטנדרטית ללא הצורך בספריות צד שלישי. גישת קוטלין לטיפול במחרוזות הופכת את הפעולות האלה לפשוטות ותמציתיות.
+
+### הונה של כל המחרוזת:
+
+```kotlin
+val message = "hello, world!"
+val capitalizedMessage = message.uppercase()
+
+println(capitalizedMessage) // פלט: HELLO, WORLD!
 ```
 
-קל וברור, נכון?
+### הונה של התו הראשון בלבד:
 
-## להתעמקות
+נכון לקוטלין 1.5, פונקציית ה`capitalize()` אינה בשימוש והוחלפה בשילוב של `replaceFirstChar` ולמבדא שבודק אם זה אות קטנה כדי להמיר אותה לאות גדולה.
 
-בעבר, בשפות תכנות אחרות ואף בגרסאות ישנות יותר של Kotlin, השימוש היה בפונקציה אחרת בשם `.toUpperCase()`. מאז Kotlin 1.5, `.uppercase()` היא האפשרות המומלצת. 
+```kotlin
+val greeting = "hello, world!"
+val capitalizedGreeting = greeting.replaceFirstChar {
+    if (it.isLowerCase()) it.titlecase() else it.toString()
+}
 
-למרות שהמרה לאותיות גדולות נראית פשוטה, יש מקרים מורכבים, כמו תווים בשפות שונות שהתנהגותם שונה בעת ההמרה. 
+println(capitalizedGreeting) // פלט: Hello, world!
+```
 
-אלטרנטיבה אחרת היא `.capitalize()` שמגדילה רק את האות הראשונה של המחרוזת, אך שימו לב שהיא נחשבת ללא מומלצת (deprecated) מ-Kotlin 1.5 ואילך.
-
-## לקרוא גם
-
-- [Kotlin's Standard Library Documentation for String functions](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/)
-- [Kotlin's REPL (Read-Eval-Print Loop) to test code snippets](https://try.kotlinlang.org/)
-- [Official Kotlin Coding Conventions](https://kotlinlang.org/docs/coding-conventions.html)
-
-במידה ואתם מעוניינים להתמקצע יותר בנושאים הקשורים לעיבוד מחרוזות והמרות תווים, כדאי לחפש מאמרים ומדריכים שספציפיים לשפה שעובדים איתה, כי כל שפה יש את הדרכים הייחודיות שלה להתמודד עם אתגרים אלה.
+הגישה הזו שומרת על שאר המשפט בצורתו המקורית תוך שינוי האות הראשונה בלבד לאות גדולה.

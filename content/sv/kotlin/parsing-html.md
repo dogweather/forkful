@@ -1,43 +1,50 @@
 ---
 title:                "Tolka HTML"
-date:                  2024-01-20T15:32:32.502103-07:00
+date:                  2024-02-03T19:12:28.459562-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Tolka HTML"
-
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/kotlin/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-HTML-parsing är när vi extraherar data från HTML-kod, lite som att plocka äpplen från ett träd. Vi gör det för att använda webbinnehållet i våra appar, som datakälla eller för att analysera webbsidor.
+Att tolka HTML innebär att dissekera en webbsidas märkspråk till något som ett program kan förstå och manipulera. Programmerare tolkar HTML för att extrahera data, automatisera webbinteraktioner eller migrera innehåll mellan system.
 
-## Så här gör du:
-I Kotlin använder vi ofta biblioteket Jsoup för att göra HTML-parsing. Det är smidigt och kraftfullt. Här är ett snabbt exempel:
+## Hur man gör:
+Kotlin gör det enkelt att tolka HTML med bibliotek som Jsoup. Så här gör du:
 
-```kotlin
+```Kotlin
 import org.jsoup.Jsoup
 
 fun main() {
-    val html = "<html><head><title>Hej Sverige!</title></head><body><p>Välkommen till Kotlin.</p></body></html>"
+    val html = "<html><head><title>Exempelsida</title></head><body><p>Detta är ett test.</p></body></html>"
     val doc = Jsoup.parse(html)
-    
+
     val title = doc.title()
-    println(title)  // Skriver ut: Hej Sverige!
+    println("Titel: $title")  // Output: Titel: Exempelsida
 
     val pText = doc.select("p").first()?.text()
-    println(pText)  // Skriver ut: Välkommen till Kotlin.
+    println("Paragraf: $pText")  // Output: Paragraf: Detta är ett test.
 }
 ```
 
-## Djupdykning
-HTML-parsing är inte nytt. I Java-eran använde vi SAX och DOM, men de krävde mycket kod och var klumpiga. Jsoup förändrade spelet genom sin "jQuery-liknande" syntax som förenklar parsning och manipulation av HTML.
+Vi tar titeln och texten i paragrafen, bara för att skrapa på ytan av vad Jsoup kan göra. Men det är en början.
 
-Alternativ till Jsoup skulle kunna vara HtmlUnit eller Kotlinx.html, men Jsoup är ofta favoriten på grund av dess enkelhet och tillförlitlighet.
+## Fördjupning:
+Före Kotlin var Java det självklara valet för detta, ofta på ett klumpigt sätt. Jsoup vände på steken genom att erbjuda ett jQuery-liknande tillvägagångssätt. Att tolka HTML är dock inte exklusivt för Jsoup; andra bibliotek som HtmlUnit eller till och med regex (även om det avråds) finns. Med Jsoup säkerställer du att din tolkning respekterar dokumentets struktur. Det använder en DOM-modell, som möjliggör val och manipulation av element. Det är motståndskraftigt också – det kan tolka även den mest oordnade HTML.
 
-När du implementerar parsing, kom ihåg att respektera webbsidors användningsvillkor och robots.txt-filer för att undvika juridiska problem.
+## Se även:
+Fördjupa dig i Jsoup:
 
-## Se även
-- Jsoup's officiella webbplats: [https://jsoup.org/](https://jsoup.org/)
-- Kotlinx.html GitHub-repo: [https://github.com/Kotlin/kotlinx.html](https://github.com/Kotlin/kotlinx.html)
-- HtmlUnit's webbplats: [http://htmlunit.sourceforge.net/](http://htmlunit.sourceforge.net/)
+- Jsoups officiella dokumentation: https://jsoup.org/
+- Boken "Kotlin for Android Developers": https://antonioleiva.com/kotlin-android-developers-book/
+- Kotlin programmeringsspråkets officiella webbplats: https://kotlinlang.org/
+
+För bredare diskussioner och handledning om webbskrapning och tolkning:
+
+- Webbskrapning med Kotlin och Jsoup: https://medium.com/@hadiyarajesh/web-scraping-with-kotlin-and-jsoup-8b5b6c31c5a5
+- Att tolka HTML på Android med Kotlin och Jsoup: https://proandroiddev.com/parsing-html-on-android-1b766658be6a

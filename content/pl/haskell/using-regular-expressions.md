@@ -1,57 +1,66 @@
 ---
-title:                "Wykorzystanie wyrażeń regularnych"
-date:                  2024-01-19
-simple_title:         "Wykorzystanie wyrażeń regularnych"
-
+title:                "Korzystanie z wyrażeń regularnych"
+date:                  2024-02-03T19:17:04.476648-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Korzystanie z wyrażeń regularnych"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/haskell/using-regular-expressions.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Co i dlaczego?
-
-Regularne wyrażenia to wzorce wykorzystywane do wyszukiwania i manipulowania tekstami. Programiści używają ich, aby szybko znajdować, weryfikować i przekształcać ciągi znaków, co jest kluczowe np. w przetwarzaniu danych czy walidacji inputu.
+Wyrażenia regularne w programowaniu to sekwencje znaków definiujące wzorzec wyszukiwania, typowo wykorzystywane do przeszukiwania i manipulacji ciągami znaków. Programiści Haskell wykorzystują wyrażenia regularne do zadań, począwszy od prostego dopasowywania ciągów znaków po złożone przetwarzanie tekstu, wykorzystując ich efektywność i wszechstronność w obsłudze danych tekstowych.
 
 ## Jak to zrobić:
+W Haskell funkcjonalności regex nie są częścią standardowej biblioteki, co wymaga używania pakietów stron trzecich takich jak `regex-base` wraz z kompatybilnym backendem jak `regex-posix` (dla wsparcia POSIX regex), `regex-pcre` (dla kompatybilnych z Perlem regex) itp. Oto jak możesz używać tych pakietów do pracy z wyrażeniami regularnymi.
 
-Haskell używa pakietu `regex-base` w połączeniu z `regex-posix` (lub podobnych) do pracy z regularnymi wyrażeniami. Sprawdźmy to na przykładach:
+Najpierw upewnij się, że masz zainstalowane pakiety, dodając `regex-posix` lub `regex-pcre` do pliku `.cabal` twojego projektu lub instalując bezpośrednio przez cabal:
 
-```Haskell
-import Text.Regex.Posix
+```bash
+cabal install regex-posix
+```
+lub
+```bash
+cabal install regex-pcre
+```
 
--- Sprawdzanie czy string pasuje do wyrażenia
-matchesPattern :: String -> String -> Bool
-matchesPattern text pattern = text =~ pattern :: Bool
+### Użycie `regex-posix`:
 
--- Wyszukiwanie wszystkich dopasowań
-findAllMatches :: String -> String -> [String]
-findAllMatches text pattern = text =~ pattern :: [String]
+```haskell
+import Text.Regex.Posix ((=~))
+
+-- Sprawdź, czy ciąg znaków pasuje do wzorca
+isMatch :: String -> String -> Bool
+isMatch text pattern = text =~ pattern :: Bool
+
+-- Znajdź pierwsze dopasowanie
+findFirst :: String -> String -> String
+findFirst text pattern = text =~ pattern :: String
 
 main :: IO ()
 main = do
-    let text1 = "programowanie w Haskell ma swój urok"
-    let pattern1 = "ma"
-    print $ matchesPattern text1 pattern1
-
-    let text2 = "koty to fajne zwierzaki, tak jak koty syberyjskie"
-    let pattern2 = "koty"
-    print $ findAllMatches text2 pattern2
+    print $ isMatch "hello world" "wo"
+    -- Wynik: True
+    print $ findFirst "dzień dobry, dobranoc" "dobry"
+    -- Wynik: "dobry"
 ```
 
-Wyjście:
+### Użycie `regex-pcre`:
+
+```haskell
+import Text.Regex.PCRE ((=~))
+
+-- Znajdź wszystkie dopasowania
+findAll :: String -> String -> [String]
+findAll text pattern = text =~ pattern :: [String]
+
+main :: IO ()
+main = do
+    print $ findAll "test1 test2 test3" "\\btest[0-9]\\b"
+    -- Wynik: ["test1","test2","test3"]
 ```
-True
-["koty","koty"]
-```
 
-## Deep Dive
-
-Regularne wyrażenia pojawiły się w latach 50., a w Haskellu dostępne są przez kilka bibliotek. Alternatywą dla nich są parsery, takie jak `Parsec` czy `Megaparsec`, które są potężniejsze, ale też trudniejsze w użytkowaniu. Implementacja w Haskellu wykorzystuje maszyny stanów i leniwe obliczenia, pozwalając na efektywne przetwarzanie danych tekstowych, nawet o dziwnych formatach.
-
-## Zobacz też:
-
-- Dokumentacja Hackage dla `regex-base`: http://hackage.haskell.org/package/regex-base
-- Dokumentacja Hackage dla `regex-posix`: http://hackage.haskell.org/package/regex-posix
-- Opis wyrażeń regularnych w Haskellu: https://www.schoolofhaskell.com/school/starting-with-haskell/libraries-and-frameworks/text-manipulation/regexes
-- Wprowadzenie do parserów w Haskellu: https://www.schoolofhaskell.com/school/to-infinity-and-beyond/pick-of-the-week/parsing-values
+Każda biblioteka ma swoje szczególności, ale ogólna metodologia użycia `=~` do stosowania regex pozostaje spójna, czy to przy sprawdzaniu dopasowania, czy przy ekstrakcji podciągów. Wybór między `regex-posix` a `regex-pcre` w dużej mierze zależy od potrzeb twojego projektu i specyficznych możliwości regex, których wymagasz.

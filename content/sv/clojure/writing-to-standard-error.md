@@ -1,38 +1,59 @@
 ---
 title:                "Skriva till standardfel"
-date:                  2024-01-19
+date:                  2024-02-03T19:33:27.283934-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Skriva till standardfel"
-
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/clojure/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Skriva till standardfel är hur program rapporterar fel och diagnostisk info. Programmerare gör detta för att skilja vanlig output från felmeddelanden, vilket gör debugging lättare.
+Att skriva till standardfel (stderr) handlar om att dirigera felmeddelanden och diagnostik till stderr-strömmen, separat från standardutdata (stdout). Programmerare gör detta för att skilja vanlig programutdata från felmeddelanden, vilket möjliggör mer effektiv felsökning och loggning.
 
 ## Hur man gör:
-```Clojure
-; Skriv ett enkelt felmeddelande till standard error
-(.println System/err "Det där gick inte som planerat.")
+I Clojure kan du skriva till stderr med hjälp av `*err*`-strömmen. Här är ett grundläggande exempel:
 
-; Fånga och logga ett undantagsfel till standard error
+```clojure
+(.write *err* "Det här är ett felmeddelande.\n")
+```
+
+Observera att efter att du har skrivit ett meddelande, bör du tömma strömmen för att säkerställa att meddelandet omedelbart blir utskrivet:
+
+```clojure
+(flush)
+```
+
+Exempelutdata till stderr:
+```
+Det här är ett felmeddelande.
+```
+
+Om du hanterar undantag, kanske du vill skriva ut stackspårningar till stderr. Använd `printStackTrace` för detta:
+
+```clojure
 (try
-  (throw (Exception. "Ett oväntat fel inträffade"))
+  ;; Kod som kanske kastar ett undantag
+  (/ 1 0)
   (catch Exception e
-    (.println System/err (.getMessage e))))
-```
-Sample Output:
-```
-Det där gick inte som planerat.
-Ett oväntat fel inträffade
+    (.printStackTrace e *err*)))
 ```
 
-## Djupdykning
-Historiskt sett är standardfel en del av Unix konventionen, avsedd för att skilja normal data från felmeddelanden. Alternativ till skrivning till standardfel inkluderar loggbibliotek som `clojure.tools.logging`. Intern implementation använder Java's `System/err` som är bunden till standarfelströmmen.
+För mer strukturerad felloggning kan tredjepartsbibliotek som `timbre` konfigureras för att logga till stderr. Här är en grundläggande inställning och användning:
 
-## Se Också
-- Clojure's officiella dokumentation: https://clojure.org/
-- `clojure.tools.logging`: https://github.com/clojure/tools.logging
-- Java's `System/err`: https://docs.oracle.com/javase/8/docs/api/java/lang/System.html#err
+Först, lägg till `timbre` i dina beroenden. Konfigurera sedan den för att använda stderr:
+
+```clojure
+(require '[taoensso.timbre :as timbre])
+
+(timbre/set-config! [:appenders :standard-out :enabled?] false) ;; Inaktivera stdout-loggning
+(timbre/set-config! [:appenders :spit :enabled?] false) ;; Inaktivera filloggning
+(timbre/set-config! [:appenders :stderr :min-level] :error) ;; Aktivera stderr för fel
+
+(timbre/error "Ett fel inträffade vid behandling av din förfrågan.")
+```
+
+Detta kommer att dirigera meddelanden på felnivå till stderr, och göra dem distinkta från den standardmässiga applikationsutdatan.

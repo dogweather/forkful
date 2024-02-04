@@ -1,60 +1,72 @@
 ---
-title:                "Arbeid med CSV"
-date:                  2024-01-19
-simple_title:         "Arbeid med CSV"
-
+title:                "Arbeide med CSV"
+date:                  2024-02-03T19:21:37.378610-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Arbeide med CSV"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/swift/working-with-csv.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-CSV står for "comma-separated values". Det brukes for å lagre og dele tabelldata fordi det er enkelt og universelt kompatibelt.
+## Hva & Hvorfor?
 
-## How to:
-Hvordan lese en CSV-fil i Swift:
+Å jobbe med CSV-filer (kommaseparerte verdier) innebærer parsing og generering av strukturerte data fra tekstfiler der hver linje representerer en post og hver post består av felt adskilt med komma. Programmerere engasjerer seg ofte i denne aktiviteten for å enkelt importere, eksportere og manipulere tabelldata ved bruk av et format som er bredt støttet på tvers av forskjellige plattformer og programmeringsspråk, på grunn av dets enkelhet og menneskelesbare format.
 
-```Swift
-import Foundation
+## Hvordan:
 
-// Anta at du har en streng som representerer en CSV-fils innhold
-let csvData = """
-name,age,city
-Alice,30,New York
-Bob,25,Los Angeles
+I Swift er det ingen innebygd støtte for direkte parsing av CSV-filer, men du kan håndtere CSV-data ved å bruke `String`-metoder for å splitte innholdet, eller ved å dra fordel av tredjepartsbiblioteker som SwiftCSV for en mer strømlinjeformet tilnærming. Her er begge metodene:
+
+### Manuel parsing uten eksterne biblioteker
+```swift
+// Vurder en enkel CSV-streng
+let csvString = """
+navn,alder,by
+John Doe,29,New York
+Jane Smith,34,Los Angeles
 """
 
-// Splitt hver linje og parse innholdet
-let rows = csvData.components(separatedBy: "\n")
-var header: [String]?
-var users = [[String: String]]()
+// Splitt CSV-strengen inn i linjer
+let rows = csvString.components(separatedBy: "\n")
 
-for (index, row) in rows.enumerated() {
-    let columns = row.components(separatedBy: ",")
-    if index == 0 {
-        header = columns
-    } else {
-        var userData = [String: String]()
-        for (hIndex, column) in columns.enumerated() {
-            if let title = header?[hIndex] {
-                userData[title] = column
-            }
-        }
-        users.append(userData)
-    }
+// Trekk ut nøklene fra den første raden
+let keys = rows.first?.components(separatedBy: ",")
+
+// Iterer over radene startende fra den andre
+var resultat: [[String: String]] = []
+for rad in rows.dropFirst() {
+    let verdier = rad.components(separatedBy: ",")
+    let dict = Dictionary(uniqueKeysWithValues: zip(keys!, verdier))
+    resultat.append(dict)
 }
 
-print(users)
+// Eksempel på utskrift
+print(resultat)
+// Utganger: [{"city": "New York", "age": "29", "name": "John Doe"}, {"city": "Los Angeles", "age": "34", "name": "Jane Smith"}]
 ```
-Sample output:
-```
-[["name": "Alice", "age": "30", "city": "New York"], ["name": "Bob", "age": "25", "city": "Los Angeles"]]
-```
+Denne tilnærmingen er grei, men mangler robusthet, spesifikt med CSV-filer som inneholder spesialtilfeller som komma i verdier, linjeskift innenfor felt osv.
 
-## Deep Dive
-CSV-formatet har vært i bruk siden 1970-tallet og er fremdeles populært på grunn av dets enkelhet. Alternativer til CSV inkluderer JSON og XML, men disse kan være overkill for enkle, tabulære data. Implementasjonen i Swift er rett fram, men vær obs på potensielle komplikasjoner som felt med komma, nye linjer eller tilpassede tegnsett.
+### Ved bruk av SwiftCSV-biblioteket
+Først, legg til SwiftCSV i prosjektet ditt ved å inkludere det i `Package.swift`-avhengighetene dine:
+```swift
+.package(url: "https://github.com/swiftcsv/SwiftCSV.git", from: "0.5.6")
+```
+Deretter, importer og bruk det som følger:
+```swift
+import SwiftCSV
 
-## See Also
-- Swift Programmeringsspråk Dokumentasjon: [swift.org/documentation](https://swift.org/documentation/)
-- CSV Parsing bibliotek for Swift – SwiftCSV: [github.com/swiftcsv/SwiftCSV](https://github.com/swiftcsv/SwiftCSV)
+// Anta `csvString` er definert som ovenfor
+
+// Opprett et CSV-objekt
+if let csv = try? CSV(string: csvString) {
+    // Tilgang rader som ordbøker
+    let rows = csv.namedRows
+    
+    // Eksempel på utskrift
+    print(rows)
+    // Utganger: [{"city": "New York", "age": "29", "name": "John Doe"}, {"city": "Los Angeles", "age": "34", "name": "Jane Smith"}]
+}
+```
+SwiftCSV forenkler parsing ved automatisk å håndtere nyanser som innkapslede kommaer, linjeskift i felt, og tegnkoding. Husk imidlertid å håndtere mulige feil i virkelige applikasjoner, spesielt når man håndterer eksterne datakilder.

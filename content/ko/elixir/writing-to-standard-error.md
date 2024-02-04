@@ -1,44 +1,53 @@
 ---
-title:                "표준 오류로 쓰기"
-date:                  2024-01-19
-simple_title:         "표준 오류로 쓰기"
-
+title:                "표준 에러에 쓰기"
+date:                  2024-02-03T19:33:06.372138-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "표준 에러에 쓰기"
 tag:                  "Files and I/O"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/elixir/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (무엇인가 & 왜 사용하는가?)
-표준 에러 출력(standard error)은 프로그램 실행 중 발생하는 에러나 경고 메시지를 사용자나 다른 시스템에게 보여주기 위한 수단이다. 프로그래머들은 문제 진단 및 디버깅을 용이하게 하고, 로그 파일에 기록하기 위해 이를 사용한다.
+## 무엇과 왜?
 
-## How to: (방법)
-Elixir에서 표준 에러에 메시지를 쓰는 예제입니다.
+Elixir에서 표준 오류(stderr)로 쓰기는 오류 메시지와 진단을 주 출력(stdout)과 분리하여 직접하는 방법입니다. 프로그래머는 stderr를 사용하여 프로그램의 주 출력을 혼란스럽게 하지 않고 오류를 디버그하고 처리함으로써 문제를 쉽게 식별하고 해결할 수 있습니다.
+
+## 어떻게:
+
+Elixir에서는 `IO.puts/2` 및 `IO.warn/2`과 같은 `IO` 모듈 함수를 사용하여 표준 오류에 메시지를 작성할 수 있습니다:
 
 ```elixir
-# 예제 1: 표준 에러로 메시지 보내기
-IO.puts(:stderr, "에러 발생!")
+# stderr에 간단한 메시지를 쓰기
+IO.puts(:stderr, "Error: 무언가 잘못되었습니다!")
 
-# 예제 2: 표준 에러로 포맷된 메시지 보내기
-IO.write(:stderr, "경고: 잘못된 입력")
+# 경고/오류에 더 의미 있는 IO.warn 사용
+IO.warn("경고: 제한을 초과하려고 합니다!")
 ```
 
-예제 실행 시에 당신의 셸에 다음과 같이 출력될 겁니다.
-
+`IO.puts/2`에 대한 터미널에서의 샘플 출력:
 ```
-에러 발생!
-경고: 잘못된 입력
+Error: 무언가 잘못되었습니다!
 ```
 
-## Deep Dive (심화 학습)
-표준 에러는 UNIX 시스템에서 오래전부터 사용되어 왔다. 세 가지 주요 스트림 중 하나이며, 표준 입력(stdin), 표준 출력(stdout)과 함께 시스템과의 통신을 관리한다. Elixir에서는 `IO` 모듈을 이용해 쉽게 접근 가능하다.
+`IO.warn/2`의 경우, 출력은 비슷하지만 `IO.warn/2`는 특히 경고용으로 설계되어 있어 향후 Elixir 버전에서 추가적인 형식이나 동작을 포함할 수 있습니다.
 
-표준 에러를 파일로 리다이렉트하거나 다른 프로세스에 파이프하는 것도 가능하다. 또한, 로깅 라이브러리를 사용해 로그에 메시지를 기록하는 다른 방법들도 있다.
+**타사 라이브러리 사용하기**
 
-구현 세부사항으로, Elixir는 Erlang VM 위에서 동작하며, 이는 더 낮은 수준의 OS 기능과 상호작용을 Erlang의 기능을 통해 처리한다.
+Elixir의 표준 라이브러리만으로 표준 오류 출력을 처리하기에 충분한 경우가 많지만, 더 복잡한 애플리케이션을 위해 또는 다른 로그 수준과 출력을 구성하기 위해 `Logger`와 같은 라이브러리를 유용하게 사용할 수 있습니다.
 
-## See Also (참고 자료)
-- Elixir 공식 문서의 `IO` 모듈: [https://hexdocs.pm/elixir/IO.html](https://hexdocs.pm/elixir/IO.html)
-- Elixir 소개: [https://elixir-lang.org/getting-started/introduction.html](https://elixir-lang.org/getting-started/introduction.html)
-- UNIX 표준 스트림과의 작업 방법에 대한 더 깊은 이해를 위해: [https://en.wikipedia.org/wiki/Standard_streams](https://en.wikipedia.org/wiki/Standard_streams)
+오류 메시지를 출력하기 위해 `Logger` 사용 예:
+
+```elixir
+require Logger
+
+# Logger를 stderr로 출력하도록 구성
+Logger.configure_backend(:console, device: :stderr)
+
+# 오류 메시지 작성
+Logger.error("Error: 데이터베이스에 연결하지 못했습니다.")
+```
+
+이 설정은 `Logger`의 출력을 특정적으로 stderr로 직접하여, 오류 로깅을 표준 로그 메시지와 분리하는 데 유용합니다.

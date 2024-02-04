@@ -1,54 +1,48 @@
 ---
-title:                "Merkkijonosta päivämäärän jäsentäminen"
-date:                  2024-01-20T15:36:28.342089-07:00
-simple_title:         "Merkkijonosta päivämäärän jäsentäminen"
-
+title:                "Päivämäärän jäsennys merkkijonosta"
+date:                  2024-02-03T19:14:16.479293-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Päivämäärän jäsennys merkkijonosta"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/fish-shell/parsing-a-date-from-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Mikä & Miksi?)
-Tietojen jäsennys merkkijonosta tarkoittaa päivämäärän erottelua tekstiformaatista. Ohjelmoijat tekevät sen, koska päivämäärät on saatava muunnettua eri järjestelmien ymmärtämään muotoon. 
+## Mikä & Miksi?
+Päivämäärän jäsentäminen merkkijonosta tarkoittaa päivämäärätiedon erottelua merkkijonoista ja sen muuntamista rakenteelliseen muotoon, jonka ohjelmointiympäristöt voivat tunnistaa ja käsitellä. Ohjelmoijat tekevät tämän mahdollistaakseen toimenpiteitä, kuten päivämäärien vertailun, aritmetiikan, muotoilun ja lokalisoinnin, jotka ovat olennaisia aikataulujen, aikaleimojen ja historiallisen datan tehokkaalle käsittelylle ohjelmistoissa.
 
-## How to: (Kuinka tehdään:)
-Fish Shell tarjoaa työkaluja päivämäärän jäsentämiseen. Voit muuntaa merkkijonon päivämääräksi hyödyntäen `string` ja `date` komentoja:
+## Kuinka:
+Fish Shellissä ei ole sisäänrakennettuja komentoja erityisesti merkkijonoista päivämäärien jäsentämiseksi suunniteltuina. Sen sijaan tukeudutaan ulkoisiin työkaluihin, kuten `date` (saatavilla Linuxissa ja macOS:ssa) tai hyödynnetään suosittuja kolmannen osapuolen työkaluja, kuten `GNU date` monimutkaisempiin jäsentämisiin. Näin se tehdään:
 
-```Fish Shell
+**Käyttäen `date` Fishissä:**
+
+Jäsentääksesi päivämäärämerkkijonon muodossa "VVVV-KK-PP", voit käyttää `date`-komentoa `-d` (tai `--date` GNU datelle) valitsimen kanssa seurattuna merkkijonosta. `+`-valitsinta käytetään tulosteen muotoiluun.
+
+```fish
 set date_str "2023-04-01"
-set epoch_time (date -ud "$date_str" +"%s")
-echo $epoch_time
+date -d $date_str +"%A, %d %B %Y"
+# Tuloste: Lauantai, 01 Huhtikuu 2023
 ```
 
-Esimerkin tulostus näyttäisi tältä, joka on Unix-aikaleima:
+macOS:lle (joka vaatii erilaisen muodon `-j` ja `-f` lipuille):
 
-```
-1679942400
-```
-
-Toinen esimerkki, missä muutetaan aikaleima normaaliksi päivämääräksi:
-
-```Fish Shell
-set epoch_time 1679942400
-set normal_date (date -ur "$epoch_time" +"%Y-%m-%d")
-echo $normal_date
+```fish
+set date_str "2023-04-01"
+date -j -f "%Y-%m-%d" $date_str +"%A, %d %B %Y"
+# Tuloste: Lauantai, 01 Huhtikuu 2023
 ```
 
-Tulostuu:
+**Käyttäen GNU `date` monimutkaiseen jäsentämiseen:** 
 
+GNU `date` on joustavampi merkkijonojen muotojen kanssa. Se voi automaattisesti tunnistaa monia yleisiä päivämäärämerkkijonojen muotoja ilman, että syöttömuotoa tarvitsee nimenomaisesti määrittää:
+
+```fish
+set complex_date_str "Huhtikuu 1, 2023 14:00"
+date -d "$complex_date_str" '+%Y-%m-%d %H:%M:%S'
+# Tuloste: 2023-04-01 14:00:00
 ```
-2023-04-01
-```
 
-## Deep Dive (Syväsukellus)
-Ennen Unix-aikaleimoja ja standardoituja päivämäärämuotoja, päivämääräkäsittely oli hankalaa. Yksi ratkaisu oli luoda omia funktioita merkkijonojen purkamiseen. 
-
-Fish Shell, kuten monet muut kuoret, ei itsessään tarjoa päivämääräjäsennystä, vaan se nojaa ulkoisiin komentoihin kuten `date`. Tämä on käyttöjärjestelmistä riippuvaista; esimerkiksi GNU date ja BSD date saattavat käyttäytyä eri tavalla. Varmista käyttämäsi version sopivuus.
-
-Päivämääräkomennolle annettavat muotoiluoptiot (`+%Y-%m-%d`) määrittelevät, miten tulostettu aika esitetään. Komento `date -u` käyttää UTC-aikaa ja `-r` tulkitsee annetun Unix-aikaleiman. Fish:n vahvuuksia on että se integroituu saumattomasti käyttöjärjestelmän työkaluihin, kuten `date` komentoon, mahdollistaen tehokkaan päivämäärän käsittelyn yhdessä muiden Unix-komentojen kanssa.
-
-## See Also (Katso Myös)
-- Fish Shell dokumentaatio: [https://fishshell.com/docs/current/index.html](https://fishshell.com/docs/current/index.html)
-- GNU Coreutils `date` komento: [https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html)
-- Unix-aikaleimat sekä niiden muuntaminen: [https://en.wikipedia.org/wiki/Unix_time](https://en.wikipedia.org/wiki/Unix_time)
+Kuitenkin, kun työskennellään päivämäärämerkkijonojen kanssa, joita ei voida automaattisesti tunnistaa tai kun tarkan kontrollin syöttömuodosta tarvitaan, GNU `date`n syöttömuodon määrittely ei ole suoraan tuettua. Tällaisissa tapauksissa harkitse merkkijonon esikäsittelyä tai toisen työkalun käyttöä, joka on suunniteltu monimutkaisempiin päivämääräjäsentämisen rutiineihin.

@@ -1,42 +1,57 @@
 ---
-title:                "字符串首字母大写"
-date:                  2024-01-19
-simple_title:         "字符串首字母大写"
-
+title:                "字符串大写化"
+date:                  2024-02-03T19:05:30.126773-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "字符串大写化"
 tag:                  "Strings"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/fish-shell/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? 什么和为什么?
-将字符串大写意味着将所有字符转换为大写形式。程序员这样做是为了格式统一、强调或满足编程上的需求。
+## 什么与为何?
 
-## How to: 如何操作
-在Fish Shell中，使用`string`命令和`upper`子命令可以轻松实现字符串大写化：
+将字符串首字母大写，意味着修改它使得第一个字母为大写，而字符串的其余部分为小写。这在文本处理、用户输入标准化以及数据格式化中是一项常见的任务，用以确保一致性或满足特定的格式化标准。
+
+## 如何操作:
+
+在 Fish Shell 中，可以直接使用内置函数来操作字符串，无需外部工具或库。要使字符串首字母大写，你可以结合使用 `string` 命令及其子命令。
 
 ```fish
-# 将小写字符串转换为大写
-set lowercase_string "hello, world"
-echo $lowercase_string | string upper
+# 示例字符串
+set sample_string "hello world"
+
+# 大写首字母
+set capitalized_string (string sub -l 1 -- $sample_string | string upper)(string sub -s 2 -- $sample_string)
+
+echo $capitalized_string
 ```
 
-输出：
+输出:
 ```
-HELLO, WORLD
-```
-
-## Deep Dive 深入探讨
-字符串大写转换的需求可以追溯到计算机早期，尤其在区分命令或代码中的关键字时它显得尤为重要。在Fish Shell中，`string`命令的`upper`子命令是一个内建的功能，无需依赖外部程序就能完成转换。与其他Shell相比，Fish在处理字符串时更加简洁直观。Bash等其他Shell可能需要调用`tr`或`awk`程序来实现相同功能。
-
-```bash
-# Bash中大写字符串的示例
-echo "hello, world" | tr '[:lower:]' '[:upper:]'
+Hello world
 ```
 
-Fish Shell提供的`string`命令是一个全面的工具集，除了`upper`，还包括其他操作如`lower`、`trim`、`substr`等。这些命令使得字符串操作在Fish中更为直接和易于理解。
+对于需要将字符串中多个单词首字母大写的情况（例如，将 "hello world" 转换为 "Hello World"），你需要对每个单词进行迭代，对每个单词应用首字母大写的逻辑：
 
-## See Also 相关链接
-- Fish Shell 官方文档：[string](https://fishshell.com/docs/current/cmds/string.html)
-- 老版本Shell和字符串大写比较：[Bash string manipulation](https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html)
+```fish
+# 示例句子
+set sentence "hello fish shell programming"
+
+# 每个单词首字母大写
+set capitalized_words (string split " " -- $sentence | while read -l word; string sub -l 1 -- $word | string upper; and string sub -s 2 -- $word; end)
+
+# 连接首字母大写的单词
+set capitalized_sentence (string join " " -- $capitalized_words)
+
+echo $capitalized_sentence
+```
+
+输出:
+```
+Hello Fish Shell Programming
+```
+
+注意，Fish Shell 没有直接提供一种像某些编程语言那样通过其字符串方法实现整个句子首字母大写的单命令方式。因此，结合使用 `string split`、`string sub`、`string upper` 然后重新连接，代表了在 Fish Shell 中实现这一目标的惯用方法。

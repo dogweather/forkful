@@ -1,46 +1,85 @@
 ---
-title:                "정규 표현식 활용하기"
-date:                  2024-01-19
-simple_title:         "정규 표현식 활용하기"
-
+title:                "정규 표현식 사용하기"
+date:                  2024-02-03T19:16:14.240113-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "정규 표현식 사용하기"
 tag:                  "Strings"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/cpp/using-regular-expressions.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? [무엇이며, 왜 사용하는가?]
-정규 표현식은 문자열 패턴을 찾기 위한 강력한 도구입니다. 프로그래머는 코드를 단순화하고, 유효성 검사나 문자열 분석을 효율적으로 하기 위해 사용합니다.
+## 무엇인가 & 왜 사용하는가?
+C++에서 정규 표현식은 검색 패턴을 정의하는 문자의 연속으로, 문자열 일치나 조작에 사용됩니다. 프로그래머는 입력 검증, 문자열 내 발생하는 항목 검색, 문자열을 토큰으로 분리하는 등의 작업에 정규 표현식을 사용하여, 효율적이고 효과적인 텍스트 처리에 필수적인 도구로 삼습니다.
 
-## How to: [사용 방법]
-```C++
+## 사용 방법:
+C++11은 `<regex>`라는 표준 라이브러리에서 정규 표현식에 대한 지원을 도입하여, 문자열 검색 및 조작을 위한 견고한 프레임워크를 제공합니다. 다음은 문자열 내에서 패턴을 검색하기 위해 정규 표현식을 사용하는 기본 예입니다:
+
+```cpp
 #include <iostream>
 #include <regex>
 
 int main() {
-    std::string text = "The C++ convention starts on 2023-04-05.";
-    std::regex date_pattern(R"(\d{4}-\d{2}-\d{2})"); // YYYY-MM-DD 포맷
+    std::string target = "Hello, my email is example@example.com";
+    std::regex email_pattern(R"(\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b)");
 
-    std::smatch matches;
-    if (std::regex_search(text, matches, date_pattern)) {
-        std::cout << "Found date: " << matches[0] << std::endl;
+    if (std::regex_search(target, email_pattern)) {
+        std::cout << "이메일 찾음!" << std::endl;
+    } else {
+        std::cout << "이메일 없음." << std::endl;
     }
 
     return 0;
 }
 ```
-출력:
+**출력 예시**
 ```
-Found date: 2023-04-05
+이메일 찾음!
 ```
 
-## Deep Dive [심층 분석]
-- **역사적 맥락**: 정규 표현식은 1950년대부터 존재했고, Perl 등의 언어에서 대중화되었습니다.
-- **대안들**: 문자열 검색에는 `std::find` 또는 `std::string` 메서드들이 있지만, 정무 표현식처럼 강력하지 않습니다.
-- **구현 세부사항**: C++에는 `<regex>` 헤더를 통해 정규 표현식 라이브러리가 내장되어 있습니다. `std::regex` 객체를 사용해 패턴을 정의하고, `std::regex_search`로 검색합니다.
+문자열 내 패턴을 대체하는 등 좀 더 복잡한 조작이 필요한 경우, C++의 정규 표현식은 매우 유용할 수 있습니다:
 
-## See Also [추가 정보]
-- C++ `<regex>` library: https://en.cppreference.com/w/cpp/regex
-- 정규 표현식 입문: https://www.regular-expressions.info/tutorial.html
-- 정규 표현식을 연습할 수 있는 온라인 툴: https://regex101.com/
+```cpp
+#include <iostream>
+#include <regex>
+
+int main() {
+    std::string text = "The rain in Spain falls mainly in the plain.";
+    std::regex vowel_regex("([aeiou])");
+
+    std::string replaced_text = std::regex_replace(text, vowel_regex, "*");
+    std::cout << replaced_text << std::endl;
+
+    return 0;
+}
+```
+**출력 예시**
+```
+Th* r**n *n Sp**n f*lls m**nly *n th* pl**n.
+```
+
+표준 라이브러리를 넘어서 탐색하는 프로그래머를 위해, Boost Regex 라이브러리(`boost/regex.hpp`)는 특히 복잡한 패턴이나 대량의 데이터 처리에 대한 향상된 정규 표현식 기능과 성능 최적화를 제공하는 인기 있는 제3자 옵션입니다:
+
+```cpp
+#include <iostream>
+#include <boost/regex.hpp>
+
+int main() {
+    std::string s = "Boost libraries are fun!";
+    boost::regex expr("(\\w+)\\s(libraries)"); // "Boost libraries"와 일치
+    std::string fmt("GNU \\1"); // "GNU Boost"로 대체
+
+    std::string result = boost::regex_replace(s, expr, fmt);
+    std::cout << result << std::endl;
+
+    return 0;
+}
+```
+**출력 예시**
+```
+GNU Boost는 재미있습니다!
+```
+
+이 예제들은 C++의 정규 표현식으로 가능한 기능들을 간략하게 보여주며, 표준 라이브러리를 사용하든 Boost의 강력한 정규 표현식 구현을 활용하든 기본적인 검색, 패턴 일치, 대체 등을 보여줍니다.

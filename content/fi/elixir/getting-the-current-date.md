@@ -1,51 +1,70 @@
 ---
 title:                "Nykyisen päivämäärän hankkiminen"
-date:                  2024-01-20T15:14:14.046216-07:00
+date:                  2024-02-03T19:09:36.803762-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Nykyisen päivämäärän hankkiminen"
-
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/elixir/getting-the-current-date.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
-Päivämäärän haku tarkoittaa nykyhetken päivämäärän selvittämistä ohjelmassa. Tämä on hyödyllistä lokituksessa, aikaleimoissa ja päivämääräriippuvaisten toimintojen hallinnassa.
+## Mikä ja miksi?
+Nykyisen päivämäärän saaminen Elixirissa käsittää järjestelmän päivämäärän ja ajan tiedon saavuttamisen, yleinen tehtävä lokitukseen, datan leimaamiseen tai mihin tahansa toimintoon, joka edellyttää nykyisen päivämäärän tuntemista. Tämä operaatio on olennainen aikaan tietoisten sovellusten luomiselle ja tehtäville, kuten raporttien generoinnille tai aikaleimojen lisäämiselle verkkosovellukseen.
 
 ## Kuinka:
+Elixirin standardikirjaston, `DateTime` moduulin kautta, voi hakea nykyisen päivämäärän ja ajan. Koska Elixir toimii Erlang VM (BEAM) päällä, se hyödyntää taustalla olevia Erlangin ajan käsittelyn toiminnallisuuksia.
+
+### Käyttäen Elixirin Standardikirjastoa
+Elixir tarjoaa `DateTime.utc_now/0` funktion nykyisen päivämäärän ja ajan saamiseksi UTC:ssä.
+
 ```elixir
-# Käytetään Elixirin sisäänrakennettua DateTime-moduulia
-# Hankitaan nykyhetken päivämäärä ja aika UTC-muodossa
-nykyhetki = DateTime.utc_now()
-
-# Tulostetaan se näytölle
-IO.inspect(nykyhetki)
-
-# Määritellään myös aikavyöhyke, esim. Helsinki (+2 tai +3 UTC riippuen kesä- tai talviajasta)
-helsinki_aikavyohyke = "Europe/Helsinki"
-
-# Muunnetaan nykyhetki Helsinki-ajaksi käyttäen Calendar-moduulin toiminnallisuutta
-helsinki_aika = nykyhetki |> DateTime.shift_zone!(helsinki_aikavyohyke)
-
-# Tulostetaan Helsinki-ajan
-IO.inspect(helsinki_aika)
+current_datetime_utc = DateTime.utc_now()
+IO.inspect(current_datetime_utc)
 ```
 
-Sample output:
+**Esimerkkituloste:**
 ```
-# UTC-aika
-~U[2023-04-02 12:34:56Z]
-
-# Helsinki-aika
-# Huom: Lähtökohta otaksuu että nyt on kesäaika
-~U[2023-04-02 15:34:56+03]
+#DateTime<2023-05-04 15:00:00Z>
 ```
 
-## Syväsukellus
-Elixirin `DateTime`-moduuli on osa Elixirin peruskirjastoa jo versiosta 1.3 lähtien. Elixir käyttää sisäisesti Erlangin aikatoiminnoita, mutta tarjoaa niiden käyttöön helpomman ja Elixiriin sopivamman rajapinnan. Aikavyöhykkeiden käsittelyyn `DateTime.shift_zone!` funktio hyödyntää tz-databasea, joten aikavyöhyketiedot ovat ajan tasalla. Vaihtoehtoisia kirjastoja aikasempien Elixiriin ei sisäänrakennettuja aikatoiminnallisuuksien kanssa on esimerkiksi Timex, mutta moderni Elixir sisältää jo kaiken tarpeellisen useimmille aikaan liittyville tehtäville.
+Saat nykyisen päivämäärän erikseen, sinun tulee eristää vuoden, kuukauden ja päivän osat:
 
-## Katso Myös
-- Elixirin viralliset DateTime-dokumentaatiot: https://hexdocs.pm/elixir/DateTime.html
-- Elixirin viralliset Calendar-dokumentaatiot: https://hexdocs.pm/elixir/Calendar.html
-- tz-database informaatio: https://www.iana.org/time-zones
-- Timex-kirjaston GitHub-sivu: https://github.com/bitwalker/timex
+```elixir
+{:ok, current_date} = Date.new(current_datetime_utc.year, current_datetime_utc.month, current_datetime_utc.day)
+IO.inspect(current_date)
+```
+
+**Esimerkkituloste:**
+```
+~D[2023-05-04]
+```
+
+### Käyttäen Timex-kirjastoa
+Monimutkaisempiin päivämäärä-aika vaatimuksiin voi hyödyntää suosittua kolmannen osapuolen kirjastoa nimeltä Timex. Lisää ensin `Timex` riippuvuudeksi mix.exs tiedostoosi:
+
+```elixir
+defp deps do
+  [
+    {:timex, "~> 3.7"}
+  ]
+end
+```
+
+Riippuvuuden asentamisen jälkeen (`mix deps.get`), voit käyttää Timexia nykyisen päivämäärän saamiseksi:
+
+```elixir
+current_date = Timex.today()
+IO.inspect(current_date)
+```
+
+**Esimerkkituloste:**
+```
+~D[2023-05-04]
+```
+
+Timex tarjoaa laajat toiminnallisuudet päivämäärän-aika manipulaatiolle, tehden siitä tehokkaan lisän Elixir-sovelluksiisi, erityisesti kun käsitellään aikavyöhykkeitä, muotoilua ja päivämäärien sekä aikojen jäsentämistä.
+
+Ymmärtämällä ja hyödyntämällä Elixirin sisäänrakennettuja kyvykkyyksiä sekä Timex-kirjastoa, voit helposti käsitellä päivämääriä ja aikoja Elixir-sovelluksissasi, räätälöiden kokemuksen sovelluksesi tarpeiden mukaan tarkkuudella ja vaivattomuudella.

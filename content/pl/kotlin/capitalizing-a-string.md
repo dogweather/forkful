@@ -1,49 +1,44 @@
 ---
-title:                "Zamiana liter na wielkie w ciągu znaków"
-date:                  2024-01-19
-simple_title:         "Zamiana liter na wielkie w ciągu znaków"
-
+title:                "Zamiana liter na wielkie w łańcuchu znaków"
+date:                  2024-02-03T19:05:49.515398-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Zamiana liter na wielkie w łańcuchu znaków"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/kotlin/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Capitalizing a string means changing the first letter of each word to uppercase. Programmers do it to ensure names, titles, and other important elements are formatted correctly and are easily readable.
- 
-## How to:
-In Kotlin, you can capitalize a string using `replaceFirstChar` and `uppercase`.
+## Co i dlaczego?
 
-```Kotlin
-fun main() {
-    val lowercaseString = "kotlin jest fajny"
-    val capitalizedString = lowercaseString.replaceFirstChar { if (it.isLowerCase()) it.titlecase() else it.toString() }
+Zamiana pierwszej litery ciągu znaków na wielką (kapitalizacja) w programowaniu polega na konwersji pierwszego znaku ciągu na wielką literę, jeśli już taka nie jest. Jest to przydatne do formatowania danych wejściowych użytkownika lub wyświetlania tekstów w interfejsie użytkownika w bardziej ustandaryzowany lub przyjazny dla człowieka sposób. Programiści wykonują tę operację, aby zapewnić spójność danych lub spełnić konkretne wymagania dotyczące formatowania w swoich aplikacjach.
 
-    println(capitalizedString) // Output: Kotlin jest fajny
-}
+## Jak to zrobić:
+
+W Kotlinie napisy mogą być zamieniane na wielkie litery za pomocą standardowych funkcji biblioteki, bez potrzeby korzystania z bibliotek firm trzecich. Podejście Kotlina do obsługi ciągów znaków sprawia, że te operacje są proste i zwięzłe.
+
+### Zamiana całego ciągu na wielkie litery:
+
+```kotlin
+val message = "hello, world!"
+val capitalizedMessage = message.uppercase()
+
+println(capitalizedMessage) // Wynik: HELLO, WORLD!
 ```
 
-## Deep Dive
-Before Kotlin 1.5, developers commonly used `capitalize()` for this purpose. However, it was deprecated because it only worked with the English alphabet correctly. Now, `replaceFirstChar` combined with `titlecase()` or `uppercase` covers more languages respecting Unicode standards.
+### Zamiana tylko pierwszej litery na wielką:
 
-An alternative approach would use the `split` function to create a list, capitalize each element, and then `joinToString`:
+Od Kotlin 1.5, funkcja `capitalize()` jest przestarzała i zastąpiona przez połączenie `replaceFirstChar` i wyrażenia lambda, które sprawdza, czy jest to mała litera, aby przekształcić ją na wielką.
 
-```Kotlin
-fun String.capitalizeWords(): String =
-    split(" ").joinToString(" ") { it.replaceFirstChar { char -> char.uppercase() } }
-
-fun main() {
-    val title = "pan tadeusz"
-    val capitalizedTitle = title.capitalizeWords()
-
-    println(capitalizedTitle) // Output: Pan Tadeusz
+```kotlin
+val greeting = "hello, world!"
+val capitalizedGreeting = greeting.replaceFirstChar {
+    if (it.isLowerCase()) it.titlecase() else it.toString()
 }
+
+println(capitalizedGreeting) // Wynik: Hello, world!
 ```
 
-This method capitalizes the first letter of each word, not just the first letter of the string.
-
-## See Also
-- Kotlin Standard Library Documentation: https://kotlinlang.org/api/latest/jvm/stdlib/
-- Unicode Standard: http://www.unicode.org/standard/standard.html
-- Practical applications of string capitalization: https://developer.android.com/guide/topics/resources/string-resource#FormattingAndStyling
+To podejście zachowuje resztę zdania w jego oryginalnej formie, zmieniając tylko pierwszą literę na wielką.

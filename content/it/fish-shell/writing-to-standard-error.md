@@ -1,41 +1,53 @@
 ---
 title:                "Scrivere sull'errore standard"
-date:                  2024-01-19
+date:                  2024-02-03T19:33:12.822597-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Scrivere sull'errore standard"
-
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/fish-shell/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Scrivere su standard error (stderr) permette di separare i messaggi di errore dall'output standard di un programma. I programmatori lo fanno per diagnosticare problemi e tracciare errori senza intasare il normale flusso di output.
+## Cosa e Perché?
 
-## How to:
-In Fish Shell, usa `>&2` per reindirizzare l'output a stderr.
+Scrivere su standard error (stderr) in Fish Shell riguarda il reindirizzare messaggi di errore o diagnostica separatamente dall'output standard (stdout). I programmatori fanno ciò per garantire che le informazioni di errore possano essere facilmente identificate, gestite o reindirizzate, facilitando processi di debug e registrazione più fluidi.
 
-```Fish Shell
+## Come fare:
+
+In Fish Shell, puoi scrivere su stderr reindirizzando il tuo output utilizzando `>&2`. Ecco un esempio base:
+
+```fish
 echo "Questo è un messaggio di errore" >&2
 ```
 
-Output esempio quando guardi solo l'stdout (`echo "msg" >/dev/null` per ignorare stdout):
+Questo comando semplicemente fa eco a un messaggio su stderr invece che su stdout. Se dovessi scrivere uno script che produce sia messaggi regolari che di errore, potresti fare qualcosa di simile a questo:
 
-```Fish Shell
-echo "Normale output"
-echo "Questo è un messaggio di errore" >&2 >/dev/null
+```fish
+echo "Avviamento del processo"
+echo "Si è verificato un errore" >&2
+echo "Processo completato"
 ```
 
-Vedi solo l'errore:
+Output esemplificativo se esegui lo script e reindirizzi stderr in un file:
 
 ```
-Questo è un messaggio di errore
+Avviamento del processo
+Processo completato
 ```
 
-## Deep Dive
-Nel contesto storico, stderr è stato introdotto con Unix come uno dei tre flussi di dati standard: input, output e errore. Un'alternativa a scrivere su stderr è l'uso di file di log, ma stderr è immediato e universale. Su Fish (e altri shell Unix-like), stderr ha il file descriptor 2, ed è per questa ragione che usiamo `>&2` per reindirizzare l'output.
+Il messaggio di errore non comparirebbe nell'output standard ma si troverebbe nel file a cui hai reindirizzato stderr.
 
-## See Also
-- Manuale di Fish Shell su reindirizzamento: [fishshell.com/docs/current/index.html](https://fishshell.com/docs/current/index.html#redirects)
-- Confronto tra stdout e stderr: [gnu.org/software/libc/manual/html_node/Standard-Streams.html](https://www.gnu.org/software/libc/manual/html_node/Standard-Streams.html)
-- Spiegazione approfondita di file descriptors: [en.wikipedia.org/wiki/File_descriptor](https://en.wikipedia.org/wiki/File_descriptor)
+In scenari che richiedono gestione degli errori o registrazione più sofisticata, Fish non viene fornito con librerie integrate progettate espressamente per questo. Tuttavia, puoi sfruttare strumenti esterni o scrivere funzioni per assistere. Ad esempio, creare una semplice funzione di registrazione potrebbe sembrare così:
+
+```fish
+function log_error
+    echo $argv >&2
+end
+
+log_error "Questo è un messaggio di errore avanzato"
+```
+
+Questa funzione `log_error` prenderà qualsiasi stringa gli fornisci e la scriverà su stderr. Utilizzare funzioni come questa può aiutare a mantenere la gestione degli errori pulita e coerente in tutto i tuoi script.

@@ -1,47 +1,75 @@
 ---
 title:                "Escribiendo en el error estándar"
-date:                  2024-01-19
+date:                  2024-02-03T19:34:12.336735-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Escribiendo en el error estándar"
-
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/python/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Qué y Por Qué?
-Escribir en el error estándar (stderr) permite mostrar mensajes de error y diagnóstico mientras el flujo normal (stdout) sigue libre para la salida de datos. Los programadores usan stderr para separar la lógica de errores de la salida principal y facilitar la depuración.
+Escribir en el error estándar en Python trata sobre dirigir los mensajes de error o diagnósticos de tu programa al flujo de error (`stderr`), separado de la salida estándar (`stdout`). Los programadores hacen esto para diferenciar las salidas normales del programa de los mensajes de error, facilitando la depuración y el análisis de registros.
 
 ## Cómo hacerlo:
-Python simplifica la escritura en stderr a través del módulo `sys`. A continuación, unos ejemplos:
+### Usando `sys.stderr`
+El módulo incorporado `sys` de Python permite escribir explícitamente en `stderr`. Este enfoque es directo para mensajes de error simples o diagnósticos.
 
-```Python
+```python
 import sys
 
-print("Esto va a stdout")
-sys.stderr.write("Esto va a stderr\n")
-
-# Usando la función print
-print("Otro mensaje de error", file=sys.stderr)
+sys.stderr.write('Error: Algo salió mal.\n')
+```
+Salida de muestra (a stderr):
+```
+Error: Algo salió mal.
 ```
 
-Salida esperada:
+### Usando la función `print`
+La función `print` de Python puede redirigir su salida a `stderr` especificando el parámetro `file`. Este método es útil para aprovechar la amigabilidad de `print` mientras se manejan mensajes de error.
+```python
+from sys import stderr
+
+print('Error: Fallo en el módulo.', file=stderr)
 ```
-Esto va a stdout
-Esto va a stderr
-Otro mensaje de error
+Salida de muestra (a stderr):
+```
+Error: Fallo en el módulo.
 ```
 
-Notarás que "Esto va a stdout" aparecerá en la salida estándar, mientras que los mensajes de error lo harán en el error estándar.
+### Usando el módulo `logging`
+Para una solución más completa, el módulo `logging` de Python puede dirigir mensajes a `stderr` y mucho más, como escribir en un archivo o personalizar el formato del mensaje. Este método es mejor para aplicaciones que requieren diferentes niveles de registro, formateo de mensajes o destinos.
+```python
+import logging
 
-## Profundizando:
-Historia: Originalmente en los sistemas Unix, stderr fue diseñado para que los mensajes de error no se mezclaran con la salida de datos regular.
+logging.basicConfig(level=logging.WARNING)
+logger = logging.getLogger(__name__)
 
-Alternativas: En vez de usar `sys.stderr`, se puede usar el módulo `logging` para una gestión más avanzada de mensajes de error y diagnóstico.
+logger.error('Error: La conexión a la base de datos falló.')
+```
+Salida de muestra (a stderr):
+```
+ERROR:__main__:Error: La conexión a la base de datos falló.
+```
 
-Detalles de implementación: Cuando escribes a stderr usando `sys.stderr.write()`, debes asegurarte de agregar tú mismo el carácter de nueva línea `\n`, mientras que `print()` lo añade automáticamente.
+### Bibliotecas de terceros: `loguru`
+`loguru` es una biblioteca de terceros popular que simplifica el registro en aplicaciones Python. Automáticamente dirige los errores a `stderr`, entre otras características.
 
-## Ver También:
-- La documentación oficial de Python sobre E/S: https://docs.python.org/3/tutorial/inputoutput.html
-- Tutorial sobre el módulo `logging`: https://docs.python.org/3/howto/logging.html
-- Explicación de stdout y stderr en sistemas Unix: https://en.wikipedia.org/wiki/Standard_streams
+Para usar `loguru`, primero instálalo a través de pip:
+```shell
+pip install loguru
+```
+
+Luego, incorpóralo en tu script de Python de la siguiente manera:
+```python
+from loguru import logger
+
+logger.error('Error: No se pudo abrir el archivo.')
+```
+Salida de muestra (a stderr):
+```
+2023-04-05 12:00:00.000 | ERROR    | __main__:<module>:6 - Error: No se pudo abrir el archivo.
+```

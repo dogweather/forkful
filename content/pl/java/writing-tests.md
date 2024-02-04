@@ -1,60 +1,90 @@
 ---
 title:                "Pisanie testów"
-date:                  2024-01-19
+date:                  2024-02-03T19:31:00.434714-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Pisanie testów"
-
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/java/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Co i Dlaczego?)
-Pisanie testów to tworzenie kodu sprawdzającego poprawność innego kodu. Programiści to robią, by zapewnić jakość aplikacji, wyłapać błędy i uniknąć przyszłych problemów.
+## Co i dlaczego?
+Pisanie testów w Java ma na celu weryfikację, czy Twój kod zachowuje się zgodnie z oczekiwaniami w różnych warunkach. Programiści piszą testy, aby zapobiegać błędom, zapewnić poprawność funkcjonalności po zmianach i promować dobre zasady projektowania oprogramowania.
 
-## How to: (Jak to zrobić?)
-Testowanie w Javie często wykonujemy z użyciem JUnit. Poniżej znajdziesz prosty test jednostkowy oraz wynik jego działania:
+## Jak to robić:
+Programiści Java głównie używają dwóch frameworków testowych: JUnit i TestNG. Tutaj skupimy się na JUnit, który jest popularniejszym wyborem do pisania testów ze względu na swoją prostotę i szerokie przyjęcie.
 
-```Java
-import org.junit.jupiter.api.Assertions;
+### Podstawy JUnit
+
+Aby użyć JUnit w projekcie Maven, dodaj następującą zależność do pliku `pom.xml`:
+
+```xml
+<dependency>
+    <groupId>org.junit.jupiter</groupId>
+    <artifactId>junit-jupiter</artifactId>
+    <version>5.9.0</version>
+    <scope>test</scope>
+</dependency>
+```
+
+Podstawowy test w JUnit wygląda tak:
+
+```java
 import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class CalculatorTest {
+    
+    @Test
+    public void testAdd() {
+        Calculator calculator = new Calculator();
+        assertEquals(5, calculator.add(2, 3), "2 + 3 powinno równać się 5");
+    }
+}
+```
+
+Wykonanie tego testu zakończy się sukcesem, co oznacza, że metoda `add` działa zgodnie z oczekiwaniami, lub porażką, wyświetlając komunikat o błędzie.
+
+### Mokowanie z użyciem Mockito
+
+W rzeczywistych scenariuszach, obiekty często zależą od innych obiektów. Mockito to popularny framework do mokowania, który pomaga w tworzeniu mokowanych obiektów do celów testowych.
+
+Dodaj Mockito do swojego projektu Maven:
+
+```xml
+<dependency>
+    <groupId>org.mockito</groupId>
+    <artifactId>mockito-core</artifactId>
+    <version>4.5.1</version>
+    <scope>test</scope>
+</dependency>
+```
+
+Prosty przypadek użycia z Mockito:
+
+```java
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.*;
+
+public class UserServiceTest {
 
     @Test
-    public void shouldAddTwoNumbers() {
-        Calculator calculator = new Calculator();
-        Assertions.assertEquals(5, calculator.add(2, 3), "2 + 3 should equal 5");
-    }
-}
+    public void testGetUsername() {
+        // Utworzenie mokowanego UserRepository
+        UserRepository mockRepository = mock(UserRepository.class);
 
-class Calculator {
-    int add(int a, int b) {
-        return a + b;
+        // Zdefiniowanie zachowania dla mokowanego obiektu
+        when(mockRepository.getUsername(1)).thenReturn("john_doe");
+
+        UserService userService = new UserService(mockRepository);
+        
+        assertEquals("john_doe", userService.getUsername(1), "User ID 1 powinien być john_doe");
     }
 }
 ```
 
-Po uruchomieniu testu, jeśli wszystko jest OK, output będzie wyglądał tak:
-
-```plaintext
-Test run finished after 40 ms
-[         1 containers found      ]
-[         0 containers skipped    ]
-[         1 containers started    ]
-[         1 containers successful ]
-[         0 containers failed     ]
-[         1 tests found           ]
-[         0 tests skipped         ]
-[         1 tests started         ]
-[         1 tests successful      ]
-[         0 tests failed          ]
-```
-
-## Deep Dive (Dogłębna analiza)
-Testy jednostkowe (ang. *unit tests*) pojawiły się jako część ekstremalnego programowania (XP) w latach 90. Alternatywą jest TDD (ang. *Test-Driven Development*), gdzie najpierw pisze się testy a dopiero potem kod. Ważne jest, by test był niezależny i powtarzalny. Utrudnia to zastosowanie testów do metod z efektami ubocznymi, jak np. zapis do bazy danych.
-
-## See Also (Zobacz również)
-- [JUnit 5 User Guide](https://junit.org/junit5/docs/current/user-guide/)
-- [Test-Driven Development](https://en.wikipedia.org/wiki/Test-driven_development)
-- [Martin Fowler on Unit Testing](https://martinfowler.com/bliki/UnitTest.html)
+Ten mok pozwala nam testować `UserService` bez potrzeby posiadania rzeczywistego `UserRepository`, skupiając test na logice znajdującej się w samym `UserService`.

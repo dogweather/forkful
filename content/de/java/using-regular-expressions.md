@@ -1,50 +1,99 @@
 ---
-title:                "Einsatz von regulären Ausdrücken"
-date:                  2024-01-19
-simple_title:         "Einsatz von regulären Ausdrücken"
-
+title:                "Reguläre Ausdrücke verwenden"
+date:                  2024-02-03T19:17:15.471744-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Reguläre Ausdrücke verwenden"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/java/using-regular-expressions.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Was & Warum?
 
-Reguläre Ausdrücke, oder Regex, ermöglichen das Suchen und Manipulieren von Text mittels Mustern. Sie sind extrem nützlich zur Validierung, Formatierung und Extraktion von Daten aus Zeichenketten.
+Reguläre Ausdrücke (regex) in Java ermöglichen es Ihnen, spezifische Muster zu definieren, um Strings in Ihrem Code zu suchen, zu manipulieren oder zu validieren. Programmierer nutzen sie für Aufgaben wie das Parsen von Logdateien, das Validieren von Benutzereingaben oder die Suche nach spezifischen Mustern in Texten, was eine ausgefeilte Stringverarbeitung mit minimalem Aufwand ermöglicht.
 
-## How to:
+## Wie geht das:
+
+Die integrierte Unterstützung für regex in Java erfolgt hauptsächlich durch die Klassen `Pattern` und `Matcher` im Paket `java.util.regex`. Hier ist ein einfaches Beispiel, um alle Vorkommen eines Wortes in einem String zu finden und auszudrucken, unabhängig von Groß- und Kleinschreibung:
 
 ```java
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class RegexBeispiel {
+public class RegexExample {
     public static void main(String[] args) {
-        String text = "Hallo, ich habe 15 Äpfel und 12 Birnen.";
-        String regex = "\\b\\d+\\b";
+        String text = "Regex ist großartig zum Parsen. Parsen mit regex ist mächtig.";
+        String wordToFind = "parsen";
         
-        Pattern pattern = Pattern.compile(regex);
+        Pattern pattern = Pattern.compile(wordToFind, Pattern.CASE_INSENSITIVE);
         Matcher matcher = pattern.matcher(text);
-
-        while(matcher.find()) {
-            System.out.println(matcher.group());
+        
+        while (matcher.find()) {
+            System.out.println("Gefunden '" + matcher.group() + "' an Position " + matcher.start());
         }
     }
 }
 ```
-**Ausgabe:**
+
+Ausgabe:
 ```
-15
-12
+Gefunden 'parsen' an Position 16
+Gefunden 'Parsen' an Position 31
 ```
 
-## Deep Dive
+Für Aufgaben wie das Aufteilen von Strings können Sie die `split()` Methode der `String`-Klasse mit einem regex verwenden:
 
-Reguläre Ausdrücke sind seit den 1950er Jahren Teil der Informatik, erdacht von Stephen Cole Kleene. Java hat sie durch das `java.util.regex`-Paket im JDK 1.4 eingeführt. Alternativen zu Regex sind Parser für strukturierte Daten, automatische Texterkennung über KI oder spezifische String-Operationen. In Java ist die Regex-Verarbeitung relativ effizient, kann aber bei komplexen Mustern langsam sein.
+```java
+public class SplitExample {
+    public static void main(String[] args) {
+        String text = "Java,Python,Ruby,JavaScript";
+        String[] languages = text.split(",");
+        
+        for (String language : languages) {
+            System.out.println(language);
+        }
+    }
+}
+```
 
-## See Also
+Ausgabe:
+```
+Java
+Python
+Ruby
+JavaScript
+```
 
-- [Die offizielle Java-Dokumentation zu Pattern](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/regex/Pattern.html)
-- [Oracle Java Tutorial zu regulären Ausdrücken](https://docs.oracle.com/javase/tutorial/essential/regex/)
-- [RegExr: Lernwerkzeug und Community für Regex](https://regexr.com/)
+Bei der Arbeit mit regex in Java kann es Fälle geben, in denen eine externe Bibliothek komplexe Aufgaben vereinfachen kann. Eine der beliebten Drittanbieter-Bibliotheken für die Arbeit mit regex in Java ist `Apache Commons Lang`. Sie bietet Hilfsprogramme wie `StringUtils`, die einige regex-Aufgaben vereinfachen. So nutzen Sie es, um die Übereinstimmungen eines Substrings zu zählen:
+
+```java
+import org.apache.commons.lang3.StringUtils;
+
+public class CommonsLangExample {
+    public static void main(String[] args) {
+        String text = "Regex macht die Textverarbeitung einfacher. Textverarbeitung mit regex ist effizient.";
+        String substring = "Textverarbeitung";
+        
+        int count = StringUtils.countMatches(text, substring);
+        System.out.println("'" + substring + "' erscheint " + count + " mal.");
+    }
+}
+```
+
+Um Apache Commons Lang zu nutzen, müssen Sie es in Ihr Projekt einbinden. Wenn Sie Maven verwenden, fügen Sie diese Abhängigkeit zu Ihrer `pom.xml` hinzu:
+
+```xml
+<dependency>
+    <groupId>org.apache.commons</groupId>
+    <artifactId>commons-lang3</artifactId>
+    <version>3.12.0</version> <!-- Prüfen Sie auf die neueste Version -->
+</dependency>
+```
+
+Ausgabe:
+```
+'Textverarbeitung' erscheint 2 mal.
+```

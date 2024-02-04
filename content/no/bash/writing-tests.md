@@ -1,44 +1,71 @@
 ---
-title:                "Skriving av tester"
-date:                  2024-01-19
-simple_title:         "Skriving av tester"
-
+title:                "Skrive tester"
+date:                  2024-02-03T19:29:34.576252-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Skrive tester"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/bash/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Tester verifiserer kode fungerer som forventet. Programmerere skriver tester for å fange feil tidlig, sikre kvalitet, og forenkle vedlikehold.
+## Hva & Hvorfor?
+Å skrive tester i Bash innebærer å lage testtilfeller for å validere funksjonaliteten til Bash-skriptene dine. Programmerere utfører tester for å sikre at skriptene deres fungerer som forventet under ulike forhold, og fanger opp feil og bugs før utrulling.
 
-## How to:
-Her er en enkel Bash-funksjon og en test for den i `test.sh`:
-```Bash
-# fil: functions.sh
-function add_numbers {
-    echo $(($1 + $2))
+## Hvordan:
+Bash har ikke et innebygd testrammeverk, men du kan skrive enkle testfunksjoner. For mer sofistikerte tester er tredjepartsverktøy som `bats-core` populære.
+
+### Grunnleggende Testeksempel i Ren Bash:
+```bash
+function test_example_function {
+  result=$(your_function 'test_input')
+  expected_output="expected_output"
+  
+  if [[ "$result" == "$expected_output" ]]; then
+    echo "Test bestått."
+    return 0
+  else
+    echo "Test mislyktes. Forventet '$expected_output', fikk '$result'"
+    return 1
+  fi
 }
 
-# fil: test.sh
-source ./functions.sh
-
-result=$(add_numbers 3 5)
-if [ "$result" -eq 8 ]; then
-    echo "Test passed!"
-else
-    echo "Test failed: expected 8 but got $result"
-fi
+# Kaller på testfunksjonen
+test_example_function
 ```
-Output etter kjøring av `bash test.sh`:
+Eksempel på Utdata:
 ```
-Test passed!
+Test bestått.
 ```
 
-## Deep Dive
-Bash er ikke primært for testing, men `test`-kommandoen og dens alias `[...]` tillater enkle sjekker. Historisk sett har Bash vokst fra en enkel kommandolinjetolker til et skriptspråk med logiske operasjoner og funksjoner. Andre løsninger som `shunit2` eller `BATS` gir rikere testrammeverk. Når du skriver tester i Bash, bruk funksjoner for å organisere kode og `source` for å inkludere.
+### Bruk av `bats-core` for Testing:
+Først installerer du `bats-core`. Dette kan vanligvis gjøres gjennom pakkebehandleren din eller ved å klone repositoriet dens.
 
-## See Also
-- [Advanced Bash-Scripting Guide](http://www.tldp.org/LDP/abs/html/)
-- [shunit2 på GitHub](https://github.com/kward/shunit2) 
-- [BATS på GitHub](https://github.com/sstephenson/bats)
+Deretter skriver du testene dine i separate `.bats`-filer.
+
+```bash
+# Fil: example_function.bats
+
+#!/usr/bin/env bats
+
+@test "test eksempel funksjon" {
+  result="$(your_function 'test_input')"
+  expected_output="expected_output"
+  
+  [ "$result" == "$expected_output" ]
+}
+```
+For å kjøre testene dine, kjører du ganske enkelt `.bats`-filen:
+```bash
+bats example_function.bats
+```
+Eksempel på Utdata:
+```
+ ✓ test eksempel funksjon
+
+1 test, 0 feil
+```
+
+Denne tilnærmingen lar deg enkelt integrere testing i din utviklingsflyt, og sørger for påliteligheten og stabiliteten til Bash-skriptene dine.

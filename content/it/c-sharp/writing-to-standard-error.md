@@ -1,45 +1,56 @@
 ---
 title:                "Scrivere sull'errore standard"
-date:                  2024-01-19
+date:                  2024-02-03T19:32:43.834118-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Scrivere sull'errore standard"
-
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/c-sharp/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Scrivere su standard error (stderr) permette di separare i messaggi di errore dall'output normale del programma. È un canale utile per comunicare fallimenti e problemi agli utenti e ad altri programmi senza intasare l'output principale (stdout).
+## Cosa & Perché?
+Scrivere su standard error (stderr) in C# implica dirigere i messaggi di errore e le diagnostiche separatamente dall'output regolare (stdout) per aiutare utenti e sviluppatori a distinguere tra l'output normale del programma e le notifiche di errore. I programmatori fanno ciò per rendere il debug e la registrazione più efficienti, consentendo un'operazione e manutenzione delle applicazioni più scorrevoli.
 
-## How to:
-Per scrivere su stderr in C#, usa `Console.Error.WriteLine()`. Ecco un semplice esempio:
+## Come fare:
+In C#, scrivere su standard error può essere ottenuto utilizzando il flusso `Console.Error`. Questo flusso è usato specificamente per messaggi di errore e diagnostiche. Ecco un esempio base:
 
-```C#
-using System;
-
-class Program
-{
-    static void Main()
-    {
-        Console.Error.WriteLine("Questo è un messaggio di errore.");
-        Console.WriteLine("Questo è un messaggio normale.");
-    }
-}
-```
-Output `stderr` (supponendo che venga reindirizzato o visualizzato separatamente):
-```
-Questo è un messaggio di errore.
-```
-Output `stdout`:
-```
-Questo è un messaggio normale.
+```csharp
+Console.Error.WriteLine("Errore: Impossibile elaborare la richiesta.");
 ```
 
-## Deep Dive
-`Console.Error` è stato parte del .NET Framework fin dall'inizio, permettendo una chiara distinzione tra normali output e errori. Un'alternativa è usare `Debug` o `Trace` per messaggi diagnostici durante lo sviluppo. Per l'implementazione, `Console.Error` è un `TextWriter` che si comporta come una stream di output per gli errori, simile a come `Console.Out` gestisce l'output standard.
+Output di esempio (su stderr):
+```
+Errore: Impossibile elaborare la richiesta.
+```
 
-## See Also
-- Documentazione ufficiale Microsoft su `Console.Error`: [Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/api/system.console.error)
-- Guida su `TextWriter` per output personalizzati: [Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/api/system.io.textwriter)
-- Panoramica su `Debug` e `Trace` in .NET: [Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.debug)
+Per scenari in cui potresti utilizzare una libreria di terze parti che offre capacità di registrazione avanzate, come `Serilog` o `NLog`, puoi configurare queste librerie per scrivere i log degli errori su stderr. Mentre questi esempi si concentrano sulla semplice reindirizzamento della console, ricorda che in applicazioni in produzione, i framework di registrazione offrono opzioni di gestione degli errori e di output molto più robuste. Ecco un semplice esempio con `Serilog`:
+
+Prima, installa il pacchetto Serilog e il suo sink per la Console:
+
+```
+Install-Package Serilog
+Install-Package Serilog.Sinks.Console
+```
+
+Poi, configura Serilog per scrivere su stderr:
+
+```csharp
+using Serilog;
+
+Log.Logger = new LoggerConfiguration()
+    .WriteTo.Console(standardErrorFromLevel: Serilog.Events.LogEventLevel.Error)
+    .CreateLogger();
+
+Log.Information("Questo è un messaggio normale.");
+Log.Error("Questo è un messaggio di errore.");
+```
+
+Output di esempio (su stderr per il messaggio di errore):
+```
+[15:04:20 ERR] Questo è un messaggio di errore.
+```
+
+Nota: La configurazione `standardErrorFromLevel` nel sink console di Serilog reindirizza tutti gli eventi di log al livello specificato (Errore, in questo caso) o superiore verso il flusso di errore standard, mentre messaggi di livello inferiore come Informazioni vengono scritti sul flusso di output standard.

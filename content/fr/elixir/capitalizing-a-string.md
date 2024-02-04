@@ -1,38 +1,52 @@
 ---
-title:                "Mettre une chaîne de caractères en majuscules"
-date:                  2024-01-19
-simple_title:         "Mettre une chaîne de caractères en majuscules"
-
+title:                "Mettre en majuscule une chaîne"
+date:                  2024-02-03T19:04:46.891725-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Mettre en majuscule une chaîne"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/elixir/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 
-Capitaliser une chaîne de caractères, ça veut dire transformer la première lettre en majuscule. C'est utile pour normaliser l'affichage des noms propres ou des titres.
+La capitalisation d'une chaîne de caractères implique de convertir la première lettre de la chaîne en majuscule tout en s'assurant que le reste des lettres est en minuscules. Cette action est couramment nécessaire pour le formatage de l'entrée utilisateur ou l'affichage de texte dans les interfaces utilisateur, où la cohérence et la lisibilité sont importantes.
 
 ## Comment faire :
 
-```elixir
-defmodule StringCapitalize do
-  def capitalize(str) when is_binary(str) do
-    String.capitalize(str)
-  end
-end
+Elixir fournit une manière simple de capitaliser les chaînes de caractères en utilisant ses fonctions intégrées sans nécessiter de bibliothèques tierces. Voici un exemple simple :
 
-IO.puts StringCapitalize.capitalize("elixir") # "Elixir"
-IO.puts StringCapitalize.capitalize("bonjour le monde") # "Bonjour le monde"
+```elixir
+string = "elixir programming"
+capitalized_string = String.capitalize(string)
+IO.puts capitalized_string
 ```
 
-## Plongée en profondeur
+Sortie :
 
-La fonction de capitalisation vient de loin. En informatique, ça date des débuts du traitement de texte. En Elixir, on a `String.capitalize/1` - simple et efficace.
+```
+Elixir programming
+```
 
-Alternatives? Vous pouvez rouler votre propre fonction si vous voulez des règles spéciales. Implémentation? `String.capitalize/1` s'appuie sur les règles Unicode pour la casse, mais attention avec les langues qui n'ont pas de concept de majuscule.
+Pour les cas où plus de contrôle ou une logique de capitalisation plus complexe est nécessaire, vous pourriez combiner différentes fonctions de la chaîne. Par exemple, si vous souhaitez capitaliser chaque mot dans une phrase, vous pouvez diviser la phrase en mots, capitaliser chacun, puis les réunir :
 
-## Voir également
+```elixir
+sentence = "elixir is fun"
+capitalized_sentence = sentence 
+                        |> String.split() 
+                        |> Enum.map(&String.capitalize/1) 
+                        |> Enum.join(" ")
 
-- Elixir `String` module: https://hexdocs.pm/elixir/String.html
-- Unicode standard: http://www.unicode.org/reports/tr21/tr21-5.html
+IO.puts capitalized_sentence
+```
+
+Sortie :
+
+```
+Elixir Is Fun
+```
+
+Bien que la bibliothèque standard d'Elixir couvre la plupart des besoins, pour des manipulations de texte plus nuancées, incluant la capitalisation avancée de chaînes de caractères, vous pourriez explorer des bibliothèques tierces telles que Cldr pour l'internationalisation, qui peuvent offrir des comportements de capitalisation spécifiques à chaque locale.

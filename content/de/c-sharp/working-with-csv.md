@@ -1,67 +1,151 @@
 ---
-title:                "Arbeiten mit CSV-Dateien"
-date:                  2024-01-19
-simple_title:         "Arbeiten mit CSV-Dateien"
-
+title:                "Arbeiten mit CSV"
+date:                  2024-02-03T19:19:14.618285-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Arbeiten mit CSV"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/c-sharp/working-with-csv.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Arbeiten mit CSV (Comma-Separated Values) bedeutet, Daten in einer simplen Textform zu handhaben, bei der Werte durch Kommas getrennt sind. Programmierer greifen darauf zurück, weil CSV eine leicht lesbare und schreibbare, weit verbreitete Datenformatierung für den Datenaustausch ist.
+CSV-Dateien (Comma-Separated Values), also durch Kommata getrennte Werte, sind ein übliches Datenformat für den Austausch, das tabellarische Daten in reinem Text darstellt, wobei Kommata verwendet werden, um einzelne Werte voneinander zu trennen. Programmierer arbeiten mit CSV-Dateien, um Daten einfach zu importieren, zu exportieren und zu manipulieren, und dies über verschiedene Anwendungen und Dienste hinweg, da es ein einfaches, weit verbreitetes Format ist, das mit Tabellenkalkulationsanwendungen, Datenbanken und Programmiersprachen kompatibel ist.
 
-## How to:
-```C#
+## Wie geht das:
+Die Arbeit mit CSV-Dateien in C# kann durch den `System.IO`-Namespace für grundlegende Operationen erreicht werden, und für komplexere Manipulationen oder um größere Dateien nahtlos zu handhaben, könnte man Drittanbieter-Bibliotheken wie `CsvHelper` in Betracht ziehen. Unten sind Beispiele, wie man CSV-Dateien liest und in sie schreibt, unter Verwendung beider Ansätze.
+
+### Eine CSV-Datei lesen mit System.IO
+```csharp
+using System;
+using System.IO;
+
+class ReadCSV
+{
+    static void Main()
+    {
+        string filePath = @"Pfad\zu\deiner\Datei.csv";
+        // Alle Zeilen der CSV-Datei lesen
+        string[] csvLines = File.ReadAllLines(filePath);
+        
+        foreach (string line in csvLines)
+        {
+            string[] rowData = line.Split(',');
+            Console.WriteLine($"Erste Spalte: {rowData[0]}, Zweite Spalte: {rowData[1]}");
+        }
+    }
+}
+```
+
+**Beispielausgabe:**
+```
+Erste Spalte: Name, Zweite Spalte: Alter
+Erste Spalte: John Doe, Zweite Spalte: 30
+```
+
+### In eine CSV-Datei schreiben mit System.IO
+```csharp
 using System;
 using System.Collections.Generic;
 using System.IO;
 
-// CSV erstellen und schreiben
-var datenListe = new List<string[]>()
+class WriteCSV
 {
-    new string[] {"Name", "Alter", "Stadt"},
-    new string[] {"Max", "25", "Berlin"},
-    new string[] {"Anna", "30", "München"}
-};
-
-var csvPfad = "beispiel.csv";
-using (var sw = new StreamWriter(csvPfad, false))
-{
-    foreach (var zeile in datenListe)
+    static void Main()
     {
-        var csvZeile = string.Join(",", zeile);
-        sw.WriteLine(csvZeile);
+        string filePath = @"Pfad\zu\deiner\Ausgabe.csv";
+        var lines = new List<string>
+        {
+            "Name,Alter",
+            "John Doe,30",
+            "Jane Smith,25"
+        };
+        
+        File.WriteAllLines(filePath, lines);
+        Console.WriteLine("CSV-Datei geschrieben.");
     }
 }
+```
 
-// CSV lesen
-var geleseneDaten = new List<string[]>();
-using (var sr = new StreamReader(csvPfad))
+**Beispielausgabe:**
+```
+CSV-Datei geschrieben.
+```
+
+### CSV lesen mit CsvHelper
+Um CsvHelper zu verwenden, füge zunächst das `CsvHelper` Paket zu deinem Projekt hinzu, indem du den NuGet-Paket-Manager verwendest.
+
+```csharp
+using CsvHelper;
+using System.Globalization;
+using System.IO;
+using System.Linq;
+using CsvHelper.Configuration;
+
+class ReadCSVWithCsvHelper
 {
-    string zeile;
-    while ((zeile = sr.ReadLine()) != null)
+    static void Main()
     {
-        geleseneDaten.Add(zeile.Split(','));
+        string filePath = @"Pfad\zu\deiner\Datei.csv";
+
+        using (var reader = new StreamReader(filePath))
+        using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
+        {
+            var records = csv.GetRecords<dynamic>().ToList();
+            foreach (var record in records)
+            {
+                Console.WriteLine($"Erste Spalte: {record.Name}, Zweite Spalte: {record.Age}");
+            }
+        }
     }
 }
+```
 
-// Erste Zeile ausgeben
-foreach (var zelle in geleseneDaten[0])
+**Beispielausgabe:**
+```
+Erste Spalte: John Doe, Zweite Spalte: 30
+Erste Spalte: Jane Smith, Zweite Spalte: 25
+```
+
+### CSV schreiben mit CsvHelper
+```csharp
+using CsvHelper;
+using System.Globalization;
+using System.IO;
+using System.Collections.Generic;
+using CsvHelper.Configuration;
+
+class WriteCSVWithCsvHelper
 {
-    Console.Write(zelle + " ");
+    public class Person
+    {
+        public string Name { get; set; }
+        public int Age { get; set; }
+    }
+
+    static void Main()
+    {
+        string filePath = @"Pfad\zu\deiner\Ausgabe.csv";
+        var records = new List<Person>
+        {
+            new Person { Name = "John Doe", Age = 30 },
+            new Person { Name = "Jane Smith", Age = 25 }
+        };
+
+        using (var writer = new StreamWriter(filePath))
+        using (var csv = new CsvWriter(writer, CultureInfo.InvariantCulture))
+        {
+            csv.WriteRecords(records);
+        }
+        
+        Console.WriteLine("CSV-Datei geschrieben mit CsvHelper.");
+    }
 }
 ```
-Sample Output:
-```
-Name Alter Stadt
-```
 
-## Deep Dive
-CSV ist seit den frühen Computertagen im Gebrauch und überzeugt durch seine Simplizität. Alternativen wie JSON oder XML bieten strukturierte Datenhaltung und Metadaten, sind aber komplexer. Beim Umgang mit CSV in .NET existieren Bibliotheken wie `CsvHelper`, welche die Implementation vereinfachen und robuste Funktionalitäten, etwa für Serialisierung und Fehlerbehandlung, bieten.
-
-## See Also
-- [RFC 4180](https://tools.ietf.org/html/rfc4180) – Das CSV-Standardformat
-- [CsvHelper library](https://joshclose.github.io/CsvHelper/) – Beliebte .NET-Bibliothek für CSV
-- [Microsoft's guide to file IO](https://docs.microsoft.com/en-us/dotnet/standard/io/) – Microsofts Anleitung für Datei-IO in .NET
+**Beispielausgabe:**
+```
+CSV-Datei geschrieben mit CsvHelper.
+```

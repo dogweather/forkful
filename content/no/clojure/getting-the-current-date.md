@@ -1,49 +1,53 @@
 ---
-title:                "Slik får du tak i dagens dato"
-date:                  2024-01-20T15:13:55.066582-07:00
-simple_title:         "Slik får du tak i dagens dato"
-
+title:                "Få dagens dato"
+date:                  2024-02-03T19:09:16.363112-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Få dagens dato"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/clojure/getting-the-current-date.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Hente nåværende dato i Clojure lar deg merke hendelser og spore endringer over tid. Programmerere bruker det for logging, tidsstyring og funksjonaliteten som krever tidsspesifikke data.
+## Hva & Hvorfor?
+Å få den nåværende datoen i programmering er avgjørende av en rekke grunner, inkludert logging, tidsstempel på hendelser og planlegging av oppgaver. I Clojure, en Lisp-dialekt på JVM, utnytter denne oppgaven Java-interoperabilitetsmuligheter, som tillater enkel tilgang til det rike Java Date-Time API-et.
 
-## How to:
-I Clojure får du tak i dagens dato slik:
+## Hvordan:
 
-```Clojure
-(import 'java.util.Calendar)
-(defn current-date []
-  (let [cal (Calendar/getInstance)]
-    (.getTime cal)))
+### Ved bruk av Java Interop
+Clojures sømløse interoperabilitet med Java lar deg tappe direkte inn i Java Date-Time API-et. Slik kan du få den nåværende datoen:
 
-(println (current-date)) ;; => Sat Mar 25 14:34:56 CET 2023
-```
+```clojure
+(import java.time.LocalDate)
 
-Enklere, bruk `java.time.LocalDate`:
-
-```Clojure
-(import 'java.time.LocalDate)
-(defn today []
+(defn get-current-date []
   (str (LocalDate/now)))
 
-(println (today)) ;; => 2023-03-25
+;; Eksempel på utdata
+(get-current-date) ; "2023-04-15"
 ```
 
-Output blir dagens dato.
+### Ved å bruke clj-time-biblioteket
+For en mer idiomatisk Clojure-løsning, kan du velge `clj-time`-biblioteket, en innpakning rundt Joda-Time, selv om det for de fleste nye prosjekter anbefales å bruke det innebygde Java 8 Date-Time API-et. Men, skulle du foretrekke eller trenge `clj-time`:
 
-## Deep Dive
-Tilbake i Java's tidlige dager brukte vi `java.util.Date`, men det hadde mangler, som datosikkerhet og tidsone-håndtering. `java.util.Calendar` ble introdusert for å gi mer fleksibilitet, men ganske snart kom Java 8 med `java.time` pakken, en sterkere og mer intuitiv API for dato og tid.
+Først, legg til `clj-time` i prosjektavhengighetene dine. I din `project.clj`, inkluder:
 
-I Clojure, en funksjonell LISP-inspirert språk på JVM, er det vanlig å bruke Java-klasser for tid- og dato-operasjoner. Å bruke `java.time.LocalDate/now` er effektivt og gir et ISO-8601 representasjon av datoen, som er et globalt anerkjent format.
+```clojure
+[clj-time "0.15.2"]
+```
 
-Alternativer inkluderer biblioteker som clj-time, et wrapper-bibliotek rundt Joda-Time, men siden Joda-Time nå anbefaler `java.time`, anbefales det kun for eldre prosjekter.
+Deretter, bruk det for å få den nåværende datoen:
 
-## See Also
-- [Clojure's java-time library](https://github.com/dm3/clojure.java-time)
-- [Java 8 Date/Time API documentation](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
-- [clj-time GitHub repository](https://github.com/clj-time/clj-time)
+```clojure
+(require '[clj-time.core :as time])
+
+(defn get-current-date-clj-time []
+  (str (time/now)))
+
+;; Eksempel på utdata
+(get-current-date-clj-time) ; "2023-04-15T12:34:56.789Z"
+```
+
+Begge metodene gir raske, effektive måter å få den nåværende datoen på i Clojure, ved å utnytte kraften fra den underliggende Java-plattformen eller bekvemmeligheten av et Clojure-spesifikt bibliotek.

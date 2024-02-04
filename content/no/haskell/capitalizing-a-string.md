@@ -1,56 +1,58 @@
 ---
-title:                "Sette streng til store bokstaver"
-date:                  2024-01-19
-simple_title:         "Sette streng til store bokstaver"
-
+title:                "Sette stor bokstav i en streng"
+date:                  2024-02-03T19:05:25.995963-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Sette stor bokstav i en streng"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/haskell/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Hva & Hvorfor?
-Kapitalisering av en streng betyr å gjøre første bokstav i hvert ord stor. Programmerere gjør dette for å standardisere tekstvisning, for eksempel i titler eller navn.
+## Hva & hvorfor?
+Det å kapitalisere en streng innebærer å transformere den første bokstaven i en gitt streng til stor bokstav mens resten av bokstavene forblir små. Programmerere gjør dette for å formatere utdata, overholde grammatisk korrekthet i tekster eller forbedre lesbarheten til genererte data.
 
-## Hvordan gjøre det:
-For å kapitalisere hver bokstav i en Haskell-streng, bruker vi en kombinasjon av innebygde funksjoner. Se på eksemplene nedenfor.
+## Hvordan:
+I Haskell kan du kapitalisere en streng ved å bruke standardbiblioteket uten å trenge noen tredjepartsbiblioteker.
 
-```Haskell
-import Data.Char (toUpper)
+```haskell
+import Data.Char (toUpper, toLower)
 
--- Kapitaliserer den første bokstaven i et ord
 capitalize :: String -> String
 capitalize "" = ""
-capitalize (head:tail) = toUpper head : tail
+capitalize (head:tail) = toUpper head : map toLower tail
 
--- Kapitaliserer den første bokstaven i hvert ord i en setning
-capitalizeWords :: String -> String
-capitalizeWords = unwords . map capitalize . words
-
--- Eksempel på bruk
-main = do
-    let sentence = "haskell programmering er gøy"
-    putStrLn $ capitalizeWords sentence
+-- Eksempel på bruk:
+main = putStrLn $ capitalize "hello world"
 ```
 
-Output:
+Utdata:
 ```
-"Haskell Programmering Er Gøy"
-```
-
-## Dypdykk
-Kapitalisering av strenger i Haskell kan spore sine røtter tilbake til tidlige tekstbehandlingssystemer, hvor slike manipulasjoner var vanlige for å oppnå korrekt typografisk utforming. Mens Haskell standardbibliotek har basisfunksjoner som `toUpper`, finnes det flere biblioteker som `Data.Text` som tilbyr mer effektive metoder for tekstmanipulasjon.
-
-En alternativ metode for å kapitalisere en streng er å bruke listekomprehensjon:
-
-```Haskell
-capitalizeWords' :: String -> String
-capitalizeWords' s = unwords [toUpper (head w) : tail w | w <- words s, not (null w)]
+Hello world
 ```
 
-Når det gjelder implementasjon, er det viktig å håndtere kanterilfeller, som tomme strenger eller strenger som inneholder tegn som ikke er bokstaver.
+For mer komplekse scenarioer eller for enklere bruk, kan du ønske å bruke et tredjepartsbibliotek som `text`, som er populært for effektiv strengmanipulering i Haskell.
 
-## Se Også
-- Haskell sin offisielle dokumentasjon om `Data.Char`: https://hackage.haskell.org/package/base-4.16.0.0/docs/Data-Char.html
-- `Data.Text` bibliotek for effektiv tekstmanipulasjon: https://hackage.haskell.org/package/text
-- En nyttig Stack Overflow-tråd om emnet: https://stackoverflow.com/questions/1959715/how-to-make-a-char-uppercase-in-haskell
+Først må du legge til `text` i prosjektets avhengigheter. Deretter kan du bruke funksjonene dens til å kapitalisere en streng som følger:
+
+```haskell
+import qualified Data.Text as T
+import Data.Char (toUpper)
+
+capitalizeText :: T.Text -> T.Text
+capitalizeText text = case T.uncons text of
+    Nothing -> T.empty
+    Just (first, rest) -> T.cons (toUpper first) (T.toLower rest)
+
+-- Eksempel på bruk med tekstbiblioteket:
+main = putStrLn $ T.unpack $ capitalizeText (T.pack "hello world")
+```
+
+Utdata:
+```
+Hello world
+```
+
+Begge disse eksemplene viser enkle men effektive måter å kapitalisere en streng på i Haskell, med eller uten tredjepartsbiblioteker.

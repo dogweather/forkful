@@ -1,49 +1,100 @@
 ---
-title:                "यह जांचना कि डायरेक्टरी मौजूद है या नहीं"
-date:                  2024-01-19
-simple_title:         "यह जांचना कि डायरेक्टरी मौजूद है या नहीं"
-
+title:                "डायरेक्टरी मौजूद है या नहीं जाँचना"
+date:                  2024-02-03T19:08:12.024645-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "डायरेक्टरी मौजूद है या नहीं जाँचना"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/c-sharp/checking-if-a-directory-exists.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (क्या और क्यों?)
-Directory का पता लगाना है कि वह मौजूद है या नहीं। Programmers इसे करते हैं ताकि errors को रोका जा सके जब कोई file या data उस directory में save किया जा रहा हो।
+## क्या और क्यों?
 
-## How to: (कैसे करें:)
-C# में directory का पता लगाने के लिए `System.IO` namespace का `Directory.Exists` method का इस्तेमाल करते हैं। 
+C# में एक निर्देशिका के अस्तित्व की जांच करना फ़ाइल सिस्टम में निर्दिष्ट मार्ग पर एक फ़ोल्डर की उपस्थिति को सत्यापित करने की प्रक्रिया है। प्रोग्रामर यह इसलिए करते हैं ताकि गैर-मौजूद निर्देशिका से पढ़ने या लिखने जैसी त्रुटियों से बच सकें, इससे फ़ाइल और निर्देशिका संचालन सरल हो जाता है।
 
-```C#
+## कैसे:
+
+### System.IO का उपयोग करना
+
+C# में `System.IO` नामस्थान `Directory` क्लास को प्रदान करता है, जो `Exists` मेथड के माध्यम से निर्देशिका के अस्तित्व की जांच करने का सीधा तरीका उपलब्ध कराता है।
+
+```csharp
 using System;
 using System.IO;
 
-class Program {
-    static void Main() {
-        string directoryPath = @"C:\examplepath";
+class Program
+{
+    static void Main()
+    {
+        string directoryPath = @"C:\ExampleDirectory";
 
-        if (Directory.Exists(directoryPath)) {
-            Console.WriteLine("Directory मौजूद है।");
-        } else {
-            Console.WriteLine("Directory मौजूद नहीं है।");
-        }
+        // यह जांचें कि निर्देशिका मौजूद है या नहीं
+        bool directoryExists = Directory.Exists(directoryPath);
+
+        // परिणाम प्रिंट करें
+        Console.WriteLine("निर्देशिका मौजूद है: " + directoryExists);
     }
 }
 ```
 
-Sample Output:
-- अगर directory मौजूद है: `Directory मौजूद है।`
-- अगर directory मौजूद नहीं है: `Directory मौजूद नहीं है।`
+**नमूना आउटपुट:**
 
-## Deep Dive (गहराई में जानकारी)
-`System.IO.Directory.Exists` method C# में लंबे समय से है और यह .NET Framework के साथ ही आया था। इस method का use करते हुए, programmers सीधे check कर सकते हैं कि कोई directory है भी या नहीं बिना किसी exception के। 
+```
+निर्देशिका मौजूद है: असत्य
+```
 
-Alternatives की बात करें, तो कुछ programmers `DirectoryInfo` class का `Exists` property का भी उपयोग कर सकते हैं, लेकिन `Directory.Exists` सरल और सीधी विधि है।
+यदि निर्देशिका पथ `C:\ExampleDirectory` पर मौजूद है, तो आउटपुट `सत्य` होगा।
 
-Implementation details में, यह method न सिर्फ directory की मौजूदगी चेक करता है, बल्कि यह भी ध्यान देता है कि उस path तक access की permissions हैं या नहीं। यदि path तक पहुंचने में असमर्थ होता है तो यह `false` return करता है।
+### यूनिट परीक्षण के लिए System.IO.Abstractions का उपयोग करना
 
-## See Also (और अधिक जानकारी के लिए)
-- Microsoft's documentation on `Directory.Exists`: [Link](https://docs.microsoft.com/en-us/dotnet/api/system.io.directory.exists)
-- MSDN article on `DirectoryInfo.Exists` vs `Directory.Exists`: [Link](https://docs.microsoft.com/en-us/dotnet/api/system.io.directoryinfo.exists)
-- Stack Overflow discussions on file I/O in C#: [Link](https://stackoverflow.com/questions/tagged/c%23+file-io)
+जब आपका कोड फ़ाइल सिस्टम के साथ इंटरएक्ट करता है, खासकर यूनिट परीक्षण योग्य बनाने की बात आती है, तो `System.IO.Abstractions` पैकेज एक लोकप्रिय विकल्प है। यह आपको अपने परीक्षणों में फ़ाइल सिस्टम संचालनों को अमूर्त और मॉक करने की अनुमति देता है। इस दृष्टिकोण का उपयोग करके निर्देशिका के अस्तित्व की जांच कैसे करें, यहाँ देखें:
+
+पहले, सुनिश्चित करें कि आपने पैकेज स्थापित किया है:
+
+```
+Install-Package System.IO.Abstractions
+```
+
+फिर, आप अपनी क्लास में एक `IFileSystem` इंजेक्ट कर सकते हैं और इसका उपयोग करके निर्देशिका के अस्तित्व की जांच कर सकते हैं, जो यूनिट परीक्षण को आसान बनाता है।
+
+```csharp
+using System;
+using System.IO.Abstractions;
+
+class Program
+{
+    private readonly IFileSystem _fileSystem;
+
+    public Program(IFileSystem fileSystem)
+    {
+        _fileSystem = fileSystem;
+    }
+
+    public bool CheckDirectoryExists(string directoryPath)
+    {
+        return _fileSystem.Directory.Exists(directoryPath);
+    }
+
+    static void Main()
+    {
+        var fileSystem = new FileSystem();
+        var program = new Program(fileSystem);
+
+        string directoryPath = @"C:\ExampleDirectory";
+        bool directoryExists = program.CheckDirectoryExists(directoryPath);
+
+        Console.WriteLine("निर्देशिका मौजूद है: " + directoryExists);
+    }
+}
+```
+
+**नमूना आउटपुट:**
+
+```
+निर्देशिका मौजूद है: असत्य
+```
+
+यह दृष्टिकोण आपकी एप्लिकेशन लॉजिक को सीधे फ़ाइल सिस्टम एक्सेस से अलग कर देता है, जिससे आपका कोड अधिक मॉड्यूलर, परीक्षण योग्य और अनुरक्षण योग्य बन जाता है।

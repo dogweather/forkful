@@ -1,47 +1,68 @@
 ---
-title:                "ディレクトリが存在するかどうかを確認する"
-date:                  2024-01-19
-simple_title:         "ディレクトリが存在するかどうかを確認する"
-
+title:                "ディレクトリが存在するかどうかの確認"
+date:                  2024-02-03T19:07:02.044660-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "ディレクトリが存在するかどうかの確認"
 tag:                  "Files and I/O"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/cpp/checking-if-a-directory-exists.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (何となぜ？)
-存在チェックは、ディレクトリが存在するかどうかを確認するプロセスです。プログラマはこれを行うことで、ファイル操作がエラー無く動作するかを事前に確認できます。
+## 何となぜ？
+ディレクトリの存在を確認するというのは、ファイルの読み書きなどの操作を実行する前に、指定されたパスにディレクトリが存在するかどうかを判断することを指します。プログラマーは、ファイル操作に関連するエラーを避け、アプリケーション内のファイル処理タスクの実行をよりスムーズで信頼性の高いものにするために、これを行います。
 
-## How to: (方法)
-```C++
+## 方法：
+現代のC++（C++17以降）では、ファイルシステムライブラリを使用してディレクトリが存在するかどうかを確認することができます。これは、ディレクトリの存在を確認することを含むファイルシステム操作を実行するための直接的かつ標準化された方法を提供します。
+
+```cpp
 #include <iostream>
 #include <filesystem>
 
+namespace fs = std::filesystem;
+
 int main() {
-    std::string path = "/path/to/directory";
-    if (std::filesystem::exists(path)) {
-        std::cout << "Directory exists: " << path << std::endl;
+    const fs::path dirPath = "/path/to/directory";
+
+    if (fs::exists(dirPath) && fs::is_directory(dirPath)) {
+        std::cout << "ディレクトリが存在します。" << std::endl;
     } else {
-        std::cout << "Directory does not exist: " << path << std::endl;
+        std::cout << "ディレクトリは存在しません。" << std::endl;
     }
+
     return 0;
 }
 ```
-
-サンプル出力:
+ディレクトリが存在する場合のサンプル出力：
 ```
-Directory exists: /path/to/directory
-```
-または
-```
-Directory does not exist: /path/to/directory
+ディレクトリが存在します。
 ```
 
-## Deep Dive (深掘り)
-ディレクトリの存在チェックは、以前は `stat` 関数や `opendir()` 関数を使用していましたが、C++17からは `std::filesystem` ライブラリを使って簡単に行えるようになりました。`std::filesystem::exists` 関数は簡潔にこのチェックを行えますが、ファイルが存在するかどうかだけでなく、それがディレクトリかどうかも確認できます。この機能は、プログラムがファイルシステムの特定の場所の状態に依存する場合に特に有用です。ただし、この呼び出しはファイルシステムへアクセスするため、頻繁に使用するとパフォーマンスに影響を与えることがあります。
+ディレクトリが存在しない場合のサンプル出力：
+```
+ディレクトリは存在しません。
+```
 
-## See Also (関連情報)
-- C++17 `std::filesystem` リファレンス: https://en.cppreference.com/w/cpp/filesystem
-- ファイルシステム操作のチュートリアル: https://www.learncpp.com/cpp-tutorial/working-with-directories/
-- `boost::filesystem`（C++17以前の代替手段）ドキュメンテーション: https://www.boost.org/doc/libs/1_75_0/libs/filesystem/doc/index.htm
+まだC++17を使用していないプロジェクトや追加の機能のためには、同様の機能を提供する人気のサードパーティ製ライブラリであるBoost Filesystemライブラリがあります。
+
+```cpp
+#include <iostream>
+#include <boost/filesystem.hpp>
+
+namespace fs = boost::filesystem;
+
+int main() {
+    const fs::path dirPath = "/path/to/directory";
+
+    if (fs::exists(dirPath) && fs::is_directory(dirPath)) {
+        std::cout << "ディレクトリが存在します。" << std::endl;
+    } else {
+        std::cout << "ディレクトリは存在しません。" << std::endl;
+    }
+
+    return 0;
+}
+```
+Boost Filesystemを使用した場合、出力は指定されたパスにディレクトリの存在によって、C++17ファイルシステムの例と同一になります。

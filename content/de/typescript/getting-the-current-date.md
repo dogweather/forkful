@@ -1,46 +1,63 @@
 ---
-title:                "Aktuelles Datum abrufen"
-date:                  2024-01-20T15:16:48.785213-07:00
-simple_title:         "Aktuelles Datum abrufen"
-
+title:                "Den aktuellen Datum abrufen"
+date:                  2024-02-03T19:11:07.839559-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Den aktuellen Datum abrufen"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/typescript/getting-the-current-date.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Das Abrufen des aktuellen Datums ist der Prozess, bei dem dein Programm das heutige Datum und die Uhrzeit ermittelt. Entwickler brauchen das für Funktionen wie Datumsstempel, Zeitverfolgung oder Gültigkeitsprüfungen.
+Das Abrufen des aktuellen Datums in TypeScript, einer auf JavaScript aufbauenden Sprache, ermöglicht den Zugriff auf und die Manipulation von aktuellen Datums- und Zeitinformationen. Programmierer benötigen diese Funktionalität oft, um Zeitstempel zu erstellen, Planungen vorzunehmen und andere zeitkritische Funktionen in ihren Anwendungen zu implementieren.
 
-## How to:
-Um das aktuelle Datum in TypeScript zu holen, nutzt man das `Date` Objekt so:
+## Wie geht das:
+In TypeScript können Sie das `Date`-Objekt verwenden, um das aktuelle Datum und die aktuelle Zeit zu erhalten. So können Sie das machen:
 
 ```typescript
-// Das aktuelle Datum und Uhrzeit holen
-const jetzt = new Date();
-
-// Datum in einem String-Format ausgeben
-console.log(jetzt.toString());
-
-// Nur das Datum ohne Zeit ausgeben
-console.log(jetzt.toDateString());
-
-// Datum und Zeit in ISO-Format (YYYY-MM-DDTHH:mm:ss.sssZ)
-console.log(jetzt.toISOString());
+const currentDate = new Date();
+console.log(currentDate);
 ```
 
 Beispielausgabe:
-
 ```
-Fri Apr 14 2023 16:20:13 GMT+0200 (Central European Summer Time)
-Fri Apr 14 2023
-2023-04-14T14:20:13.000Z
+2023-04-12T07:20:50.52Z
 ```
 
-## Deep Dive
-Das `Date` Objekt in JavaScript (und somit auch in TypeScript) existiert seit den Anfängen der Sprache. Alternativen wie `moment.js` oder `date-fns` bieten mehr Funktionen und Flexibilität, sind aber für einfache Anwendungen meist Overkill. Beim Arbeiten mit Zeitzonen und Lokalisierung können diese Bibliotheken jedoch sehr hilfreich sein. TypeScript verbessert das Arbeiten mit `Date` durch Typisierung und verbessert so die Lesbarkeit und Debugging.
+Dieser Code-Schnipsel erstellt ein neues `Date`-Objekt, das das aktuelle Datum und die Uhrzeit enthält, welches dann in der Konsole ausgegeben wird. Sie können das Datum auch mit toLocaleDateString() formatieren, um es lesbarer zu machen:
 
-## See Also
-- MDN Web Docs zu `Date`: https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Date
-- `moment.js`: https://momentjs.com/
-- `date-fns`: https://date-fns.org/
+```typescript
+const currentDate = new Date();
+console.log(currentDate.toLocaleDateString());
+```
+
+Beispielausgabe:
+```
+12.4.2023
+```
+
+### Verwendung von date-fns
+Für umfangreichere Datumsmanipulationen und -formatierungen ist die Bibliothek `date-fns` eine beliebte Wahl. Installieren Sie sie zuerst über npm:
+
+```bash
+npm install date-fns
+```
+
+Anschließend können Sie sie verwenden, um das aktuelle Datum zu formatieren:
+
+```typescript
+import { format } from 'date-fns';
+
+const currentDate = new Date();
+console.log(format(currentDate, 'yyyy-MM-dd'));
+```
+
+Beispielausgabe:
+```
+2023-04-12
+```
+
+Dieses `date-fns`-Beispiel formatiert das aktuelle Datum als Zeichenkette im Format "JJJJ-MM-TT". Die Bibliothek bietet eine Fülle von Funktionen für die Datumsmanipulation und macht sie zu einem vielseitigen Werkzeug für jeden TypeScript-Programmierer, der mit Daten arbeitet.

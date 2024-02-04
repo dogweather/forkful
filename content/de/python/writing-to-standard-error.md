@@ -1,40 +1,75 @@
 ---
 title:                "Schreiben auf Standardfehler"
-date:                  2024-01-19
+date:                  2024-02-03T19:34:10.778212-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Schreiben auf Standardfehler"
-
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/python/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Schreiben auf `stderr` (Standardfehler) ermöglicht es Programmen, Fehlermeldungen separat von regulären Ausgaben zu senden. Dadurch können Entwickler und Benutzer Fehler leicht erkennen und die normale Ausgabe von der Fehlersuche trennen.
+Das Schreiben auf Standardfehler in Python bedeutet, die Fehlermeldungen oder Diagnosen Ihres Programms auf den Fehlerstrom (`stderr`) zu lenken, getrennt von der Standardausgabe (`stdout`). Programmierer tun dies, um normale Programmausgaben von Fehlermeldungen zu unterscheiden, was das Debuggen und die Log-Analyse erleichtert.
 
-## How to:
-Python bietet verschiedene Wege, um mit `stderr` zu arbeiten. Hier zwei einfache Methoden:
+## Wie geht das:
+### Verwendung von `sys.stderr`
+Das in Python integrierte `sys`-Modul ermöglicht ein explizites Schreiben auf `stderr`. Dieser Ansatz ist unkompliziert für einfache Fehlermeldungen oder Diagnosen.
 
-1. `sys.stderr.write()` nutzen:
-```Python
+```python
 import sys
 
-sys.stderr.write('Das ist eine Fehlermeldung.\n')
+sys.stderr.write('Fehler: Etwas ist schiefgelaufen.\n')
 ```
-Ausgabe im Terminal: `Das ist eine Fehlermeldung.`
-
-2. `print()` mit dem Argument `file=sys.stderr` verwenden:
-```Python
-import sys
-
-print('Das ist auch eine Fehlermeldung.', file=sys.stderr)
+Beispielausgabe (auf stderr):
 ```
-Ausgabe im Terminal: `Das ist auch eine Fehlermeldung.`
+Fehler: Etwas ist schiefgelaufen.
+```
 
-## Deep Dive
-Historisch gesehen kommt das Konzept von `stderr` aus den Unix-Systemen, wo es zusammen mit `stdout` (Standardausgabe) und `stdin` (Standardeingabe) eingeführt wurde. Alternativen zu `sys.stderr.write()` und `print(file=sys.stderr)` sind zum Beispiel Logging-Frameworks, die mehr Funktionalität bieten. Intern funktioniert `sys.stderr` als ein File-Objekt, welches Methoden wie `.write()` und `.flush()` anbietet.
+### Verwendung der `print`-Funktion
+Die `print`-Funktion von Python kann ihre Ausgabe umleiten auf `stderr`, indem der `file`-Parameter angegeben wird. Diese Methode ist nützlich, um die Benutzerfreundlichkeit von `print` bei der Behandlung von Fehlermeldungen zu nutzen.
+```python
+from sys import stderr
 
-## See Also
-- Python-Dokumentation für `sys`-Modul: https://docs.python.org/3/library/sys.html
-- Python-Logging-HowTo: https://docs.python.org/3/howto/logging.html
-- Erklärung zu Standard Streams: https://en.wikipedia.org/wiki/Standard_streams
+print('Fehler: Fehler im Modul.', file=stderr)
+```
+Beispielausgabe (auf stderr):
+```
+Fehler: Fehler im Modul.
+```
+
+### Verwendung des `logging`-Moduls
+Für eine umfassendere Lösung kann das `logging`-Modul von Python Nachrichten auf `stderr` und vieles mehr lenken, wie das Schreiben in eine Datei oder das Anpassen des Nachrichtenformats. Diese Methode ist am besten für Anwendungen geeignet, die unterschiedliche Ebenen von Protokollierung, Nachrichtenformatierung oder Ziele erfordern.
+```python
+import logging
+
+logging.basicConfig(level=logging.WARNING)
+logger = logging.getLogger(__name__)
+
+logger.error('Fehler: Datenbankverbindung fehlgeschlagen.')
+```
+Beispielausgabe (auf stderr):
+```
+FEHLER:__main__:Fehler: Datenbankverbindung fehlgeschlagen.
+```
+
+### Drittanbieter-Bibliotheken: `loguru`
+`loguru` ist eine beliebte Drittanbieter-Bibliothek, die das Protokollieren in Python-Anwendungen vereinfacht. Fehler werden automatisch auf `stderr` geleitet, unter anderem.
+
+Um `loguru` zu verwenden, installieren Sie es zunächst über pip:
+```shell
+pip install loguru
+```
+
+Dann binden Sie es wie folgt in Ihr Python-Skript ein:
+```python
+from loguru import logger
+
+logger.error('Fehler: Datei konnte nicht geöffnet werden.')
+```
+Beispielausgabe (auf stderr):
+```
+2023-04-05 12:00:00.000 | FEHLER    | __main__:<module>:6 - Fehler: Datei konnte nicht geöffnet werden.
+```

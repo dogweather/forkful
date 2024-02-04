@@ -1,47 +1,48 @@
 ---
-title:                "Tolka ett datum från en sträng"
-date:                  2024-01-20T15:36:02.329170-07:00
-simple_title:         "Tolka ett datum från en sträng"
-
+title:                "Analysera ett datum från en sträng"
+date:                  2024-02-03T19:14:10.948469-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Analysera ett datum från en sträng"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/fish-shell/parsing-a-date-from-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att tolka ett datum från en sträng innebär att omvandla textformaterad datuminformation till ett strukturerat format som datorn kan förstå och använda. Programmerare gör detta för att hantera och manipulera datumdata effektivt, som att sortera eller jämföra händelser.
+Att tolka ett datum från en sträng innebär att extrahera datuminformation kodad i strängar och omvandla den till ett strukturerat format som programmeringsmiljöer kan känna igen och manipulera. Programmerare gör detta för att möjliggöra operationer såsom datumjämförelse, aritmetik, formatering och lokalisering, vilket är nödvändigt för att effektivt hantera schemaläggning, tidsstämplar och historiska data i mjukvara.
 
-## Så här gör du:
-För att parsa ett datum i Fish Shell använder vi `date` kommandot. 
+## Hur man gör:
+I Fish Shell har du inte inbyggda kommandon som specifikt är designade för att tolka datum från strängar. Istället förlitar du dig på externa verktyg som `date` (tillgängligt i Linux och macOS) eller använder dig av populära tredjepartsverktyg som `GNU date` för mer komplex tolkning. Så här går du tillväga:
 
-```
-set -l date_str "2023-04-01 14:00"
-date -d $date_str +"%Y-%m-%d %H:%M"
-```
-Output:
-```
-2023-04-01 14:00
-```
-Ett annat exempel, där vi vill ha veckodagen:
+**Använda `date` med Fish:**
 
-```
-set -l date_str "2023-04-01 14:00"
-date -d $date_str +"%A"
-```
-Output:
-```
-lördag
+För att tolka en datumsträng i formatet "ÅÅÅÅ-MM-DD" kan du använda `date`-kommandot med `-d` (eller `--date` för GNU date) alternativet följt av strängen. `+`-alternativet används för att formatera utdatan.
+
+```fish
+set date_str "2023-04-01"
+date -d $date_str +"%A, %d %B %Y"
+# Utdata: Lördag, 01 April 2023
 ```
 
-## Fördjupning
-Att tolka datum från strängar har länge varit centralt i programmering, eftersom datum och tid är kärnan i så många system. I tidiga datorer var datumhantering oftast begränsad till enkla textsträngar, men med tiden har behovet av mer komplexa beräkningar (som tidszoner och skottår) drivit utvecklingen av mer avancerade funktioner och verktyg, som `date` kommandot i Unix-baserade system.
+För macOS (som kräver ett annat format för `-j` och `-f` flaggorna):
 
-I Fish Shell är `date` rättfram; vi använder det för att formatera och manipulera datum. Det finns alternativ som Python's `datetime` bibliotek eller JavaScript's Date-objekt som erbjuder liknande funktioner i olika programmeringsmiljöer.
+```fish
+set date_str "2023-04-01"
+date -j -f "%Y-%m-%d" $date_str +"%A, %d %B %Y"
+# Utdata: Lördag, 01 April 2023
+```
 
-Om vi behöver avancerade tidszonedata eller mer komplex manipulering av datum kan vi använda externa verktyg som `dateutils` eller skripting med ett annat programmeringsspråk.
+**Använda GNU `date` för komplex tolkning:** 
 
-## Se även
-* Fish Shell dokumentation om datumhantering: https://fishshell.com/docs/current/cmds/date.html
-* GNU 'date' manual: https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html
-* Dateutils för mer avancerad datum- och tidszonehantering: http://www.fresse.org/dateutils/
+GNU `date` är mer flexibelt med strängformat. Det kan automatiskt detektera många vanliga datumsträngsformat utan att explicit ange inmatningsformatet:
+
+```fish
+set complex_date_str "April 1, 2023 14:00"
+date -d "$complex_date_str" '+%Y-%m-%d %H:%M:%S'
+# Utdata: 2023-04-01 14:00:00
+```
+
+Dock, när man arbetar med datumsträngar som kanske inte automatiskt känns igen eller när exakt kontroll över inmatningsformatet behövs, stöds inte direkt angivning av inmatningsformatet med GNU `date`. I sådana fall, överväg att förbehandla strängen eller använda ett annat verktyg som är utformat för mer komplexa datumtolkningsrutiner.

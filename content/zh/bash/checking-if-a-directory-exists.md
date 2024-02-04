@@ -1,43 +1,59 @@
 ---
 title:                "检查目录是否存在"
-date:                  2024-01-19
+date:                  2024-02-03T19:06:41.348699-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "检查目录是否存在"
-
 tag:                  "Files and I/O"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/bash/checking-if-a-directory-exists.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-检查目录是否存在就是确认在文件系统中该目录是否真实存在。程序员经常需要这个操作来避免错误，比如读取不存在的目录，或者尝试在一个已经存在的目录里创建同名目录。
+## 什么与为什么？
 
-## How to:
-```Bash
-if [ -d "$DIRECTORY" ]; then
-  echo "The directory $DIRECTORY exists."
+在 Bash 编程中，检查目录是否存在是一种基本的控制机制，用于在执行文件操作之前验证目录的存在性。这种检查对于避免尝试访问或修改不存在的目录的错误至关重要，保证脚本执行更加顺滑和可预测。
+
+## 如何操作：
+
+Bash 核心是使用条件语句和 `-d` 操作符来检查目录是否存在。下面是一个直接的示例，展示了如何进行这种检查。
+
+```bash
+if [ -d "/path/to/directory" ]; then
+    echo "目录存在。"
 else
-  echo "The directory $DIRECTORY does not exist."
+    echo "目录不存在。"
 fi
 ```
-示例输出：
+
+样例输出（如果目录存在）:
 ```
-The directory /path/to/your/directory exists.
-```
-或
-```
-The directory /path/to/your/directory does not exist.
+目录存在。
 ```
 
-## Deep Dive
-在Unix和类Unix系统中，检查文件和目录的存在是一项基础功能，几乎所有的shell脚本编程语言都提供了这个能力。Bash使用`-d`标志来特别检查一个目录是否存在。这个标志是`test`命令的一部分，也经常以`[` 作为`test`命令的一个别名。为什么要检测目录存在？因为它可以帮助你决定是否可以继续执行后续的文件操作，从而避免可能出现的运行时错误。
+样例输出（如果目录不存在）:
+```
+目录不存在。
+```
 
-方法的替代品包括使用`mkdir -p`来创建目录，这个命令会创建目录，如果该目录已经存在，它会静默地成功执行。另外，对于复杂的脚本，程序员可能会选择更高级的语言如Python或Ruby来处理文件系统的交互。
+对于更复杂的脚本，常见的做法是将检查与其他操作结合，比如如果目录不存在，则创建它：
 
-关于实现细节，`-d`标志背后，Bash实际上调用的是`stat`系统调用。这个调用会返回文件或目录的元信息，包括类型，然后Bash会检查它是否为目录。
+```bash
+DIR="/path/to/directory"
+if [ -d "$DIR" ]; then
+    echo "$DIR 存在。"
+else
+    echo "$DIR 不存在。正在创建..."
+    mkdir -p "$DIR"
+    echo "$DIR 已创建。"
+fi
+```
 
-## See Also
-- Bash手册：https://www.gnu.org/software/bash/manual/
-- `test`命令详细信息：https://www.gnu.org/software/coreutils/manual/html_node/test-invocation.html
-- `stat`系统调用参考：http://man7.org/linux/man-pages/man2/stat.2.html
+样例输出（如果目录不存在然后被创建）:
+```
+/path/to/directory 不存在。正在创建...
+/path/to/directory 已创建。
+```
+
+尽管 Bash 本身提供了强大的工具进行此类检查，但没有专门用于此任务的流行第三方库，因为原生 Bash 命令已完全能够和高效地完成目录存在性验证。

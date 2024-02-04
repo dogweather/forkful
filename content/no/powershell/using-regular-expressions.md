@@ -1,62 +1,70 @@
 ---
-title:                "Bruk av regulære uttrykk"
-date:                  2024-01-19
-simple_title:         "Bruk av regulære uttrykk"
-
+title:                "Bruke regulære uttrykk"
+date:                  2024-02-03T19:17:43.918618-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Bruke regulære uttrykk"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/powershell/using-regular-expressions.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Regulære uttrykk er søkemønstre som brukes for å matche tekststrenger. Programmerere bruker det for å finne, erstatte, og validere tekst raskt og konsist.
+## Hva & Hvorfor?
 
-## How to:
+Regulære uttrykk (regex) er sekvenser av tegn som former et søkemønster, primært brukt for strengsøking og manipulasjon. Programmerere utnytter regex i PowerShell for oppgaver som datavalidering, parsing og transformasjon på grunn av dets effektivitet og fleksibilitet i håndtering av komplekse mønstre.
 
-### Finne en match
-```PowerShell
-$text = 'Finn kode: PS-1234'
-$pattern = 'PS-\d+'
-if ($text -match $pattern) {
-    "Match funnet: $($matches[0])"
+## Hvordan:
+
+I PowerShell kan du bruke operatørene `-match`, `-replace` og `-split`, blant andre, for å utføre handlinger med regulære uttrykk. La oss utforske noen eksempler:
+
+### Bruke `-match` for å sjekke om en streng matcher et mønster
+Denne operatøren returnerer `$true` hvis mønsteret er funnet innen strengen, og `$false` ellers.
+
+```powershell
+"hello world" -match "\w+orld"
+# Utdata: True
+```
+
+### Ekstrahere treff
+Du kan trekke ut den treffende verdien ved å aksessere den automatiske variabelen `$matches`.
+
+```powershell
+if ("I have 100 apples" -match "\d+") {
+    "Nummer funnet: " + $matches[0]
 }
-```
-#### Output
-```
-Match funnet: PS-1234
+# Utdata: Nummer funnet: 100
 ```
 
-### Erstatte tekst
-```PowerShell
-$nyTekst = $text -replace $pattern, 'NO-4321'
-"Erstattet tekst: $nyTekst"
-```
-#### Output
-```
-Erstattet tekst: Finn kode: NO-4321
+### Bruke `-replace` for erstatninger
+Operatøren `-replace` erstatter alle forekomster av et mønster med en spesifisert erstatningstekst.
+
+```powershell
+"foo bar baz" -replace "ba[rz]", "qux"
+# Utdata: foo qux qux
 ```
 
-### Validere e-post
-```PowerShell
-$epost = 'bruker@example.com'
-$epostMønster = '^\S+@\S+\.\S+$'
-if ($epost -match $epostMønster) {
-    "E-posten er valid."
-} else {
-    "E-posten er ikke valid."
-}
-```
-#### Output
-```
-E-posten er valid.
+### Dele strenger med `-split`
+Del en streng inn i et array av delstrenger basert på et regex-mønster.
+
+```powershell
+"The quick-brown_fox jumps" -split "[-_ ]"
+# Utdata: The quick brown fox jumps
 ```
 
-## Deep Dive
+### Avansert Mønstergjenkjenning
+PowerShell støtter også mer komplekse regex-operasjoner via `[regex]`-klassen, som gir deg tilgang til metoder som `Matches()`, `Replace()`, og `Split()`.
 
-Regular expressions, eller "regex", har sin historie helt tilbake til 1950-tallet. Alternativene til regex inkluderer tekstbehandling ved hjelp av vanlige strengefunksjoner eller parsere, som kan være tregere og mindre fleksible. Regex i PowerShell bruker .NET sitt regex-bibliotek, noe som gjør det kraftig og i stand til komplekse søkeoperasjoner.
+```powershell
+[regex]::Matches("June 24, August 9, Dec 12", "\b[A-Za-z]+\b").Value
+# Utdata: June August Dec
 
-## See Also
+[regex]::Replace("100,000", "\B(?=(?:\d{3})+(?!\d))", ",")
+# Utdata: 100,000
 
-- RegExr, et online verktøy for å lære, bygge, og teste regulære uttrykk: [RegExr](https://regexr.com/)
-- PowerShell sin offisielle dokumentasjonsside: [PowerShell Documentation](https://docs.microsoft.com/en-us/powershell/)
+[regex]::Split("one,two;three four", ",|;| ")
+# Utdata: one two three four
+```
+
+Disse eksemplene viser kraften og allsidigheten til regulære uttrykk i PowerShell for datamanipulasjon og mønstergjenkjenning. Ved å utnytte regex, kan programmerere utføre kompleks tekstbehandling effektivt.

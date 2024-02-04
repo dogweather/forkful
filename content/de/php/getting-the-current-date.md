@@ -1,52 +1,51 @@
 ---
-title:                "Aktuelles Datum abrufen"
-date:                  2024-01-20T15:15:50.286020-07:00
-simple_title:         "Aktuelles Datum abrufen"
-
+title:                "Den aktuellen Datum abrufen"
+date:                  2024-02-03T19:10:14.190544-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Den aktuellen Datum abrufen"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/php/getting-the-current-date.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Das Abrufen des aktuellen Datums in PHP ist ein häufig gebrauchtes Verfahren, um zeitbezogene Funktionen zu realisieren – von Timestamps für Log-Einträge bis zu Datumsangaben auf Benutzeroberflächen. Es ist wichtig, weil Zeitstempel oft zentral für die Logik einer Anwendung sind.
+Das Abrufen des aktuellen Datums in PHP ist eine grundlegende Aufgabe, die es Ihnen ermöglicht, das Systemdatum und die Systemzeit abzurufen und zu manipulieren. Dies ist entscheidend für Funktionen wie das Protokollieren, Zeitstempeln von Beiträgen, Planen von Ereignissen oder Ausführen von zeitkritischen Operationen in Ihren Anwendungen.
 
-## So geht's:
+## Wie geht das:
+### Native PHP
+Die integrierte `date()`-Funktion von PHP ist der direkteste Weg, um das aktuelle Datum zu erhalten. Sie können das Datum auf verschiedene Weise formatieren, indem Sie den Formatparameter angeben.
+
 ```php
-<?php
-// Aktuelles Datum und Uhrzeit in der Standard-Formatierung
-echo date('Y-m-d H:i:s');
-
-// Aktuelles Datum ohne Uhrzeit
-echo date('Y-m-d');
-
-// Zeitstempel der aktuellen Zeit
-echo time();
-?>
-```
-Möglicher Output:
-```
-2023-03-15 15:42:01
-2023-03-15
-1678902121
+echo date("Y-m-d"); // Gibt aus: 2023-04-01 (zum Beispiel)
+echo date("l, F j, Y"); // Gibt aus: Samstag, 1. April 2023
 ```
 
-## Tiefergehende Infos:
-Zeit- und Datumsfunktionen sind seit den frühen Versionen von PHP integriert. `date()` und `time()` sind die Basisfunktionen für zeitbezogene Operationen. Es gibt Alternativen wie das DateTime-Objekt, das mit PHP 5.2 eingeführt wurde. DateTime bietet mehr Möglichkeiten und bessere Objektorientierung.
+Um das Datum und die Uhrzeit mit Zeitzonenunterstützung zu erhalten, können Sie die `DateTime`-Klasse zusammen mit `DateTimeZone` verwenden.
 
-`date()` ist abhängig von der Standard-Zeitzone des Servers, die mit `date_default_timezone_set()` gesetzt werden kann. `time()` gibt einen Unix-Zeitstempel zurück - die Anzahl der Sekunden seit dem 1. Januar 1970 (UTC).
-
-Mit DateTime:
 ```php
-<?php
-$jetzt = new DateTime();
-echo $jetzt->format('Y-m-d H:i:s');
-?>
+$dateTime = new DateTime('now', new DateTimeZone('America/New_York'));
+echo $dateTime->format('Y-m-d H:i:s'); // Gibt aus: 2023-04-01 12:00:00 (zum Beispiel)
 ```
-Das gibt uns mehr Flexibilität und Ausnahmebehandlung, und die Möglichkeit, Zeitzonen direkt beim Erstellen des Objekts zu berücksichtigen.
 
-## Weiterführende Links:
-- [PHP date() Funktion](https://www.php.net/manual/de/function.date.php)
-- [PHP DateTime Klasse](https://www.php.net/manual/de/class.datetime.php)
-- [Zeitzonen in PHP](https://www.php.net/manual/de/timezones.php)
+### Verwendung von Carbon (Eine Beliebte Drittanbieter-Bibliothek)
+[Carbon](https://carbon.nesbot.com/) ist eine einfache API-Erweiterung für `DateTime`, die eine sauberere und fließendere Möglichkeit bietet, mit Daten und Zeiten zu arbeiten.
+
+Stellen Sie zunächst sicher, dass Sie Carbon über Composer installiert haben:
+```bash
+composer require nesbot/carbon
+```
+
+Anschließend können Sie es verwenden, um das aktuelle Datum zu erhalten:
+
+```php
+use Carbon\Carbon;
+
+echo Carbon::now(); // Gibt aus: 2023-04-01 12:00:00 (zum Beispiel, im Standardformat)
+echo Carbon::now()->toDateString(); // Gibt aus: 2023-04-01
+echo Carbon::now()->format('l, F j, Y'); // Gibt aus: Samstag, 1. April 2023
+```
+
+Carbon bereichert die Datum-Zeit-Verarbeitung in PHP durch Hinzufügung von Lesbarkeit und einer Fülle von Funktionalitäten für Zeitmanipulation, -vergleich und -formatierung.

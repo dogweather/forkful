@@ -1,63 +1,76 @@
 ---
-title:                "Аналіз дати з рядка"
-date:                  2024-01-20T15:35:07.657841-07:00
-simple_title:         "Аналіз дати з рядка"
-
+title:                "Розбір дати з рядка"
+date:                  2024-02-03T19:13:59.348315-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Розбір дати з рядка"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/cpp/parsing-a-date-from-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-## Що і чому?
+## Що та чому?
+Розбір дати з рядка передбачає інтерпретацію формату рядка для вилучення компонентів дати, таких як день, місяць та рік. Програмісти роблять це, щоб обробляти введення користувача, читати файли даних або взаємодіяти з API, які передають дати у форматі рядків. Це важливо для обробки даних, валідації та виконання арифметичних операцій з датами в додатках.
 
-Parsing a date from a string means extracting the date components—day, month, year—from text. Programmers often do this to handle user input, store or manipulate dates, or interface with databases.
+## Як:
+У сучасному C++ ви можете використовувати бібліотеку `<chrono>` для роботи з датами та часом нативно, але вона безпосередньо не підтримує розбір з рядків без ручного аналізу для більш складних форматів. Однак, для форматів дат ISO 8601 та простих налаштовуваних форматів, ось як ви можете досягнути розбору.
 
-## How to:
-## Як це зробити:
-
-```C++
+**Використовуючи `<chrono>` та `<sstream>`:**
+```cpp
 #include <iostream>
 #include <sstream>
+#include <chrono>
 #include <iomanip>
-#include <ctime>
 
 int main() {
-    std::string date_str = "2023-03-15";
-    std::istringstream ss(date_str);
-    std::tm date = {};
+    std::string date_str = "2023-04-15"; // Формат ISO 8601
+    std::istringstream iss(date_str);
     
-    ss >> std::get_time(&date, "%Y-%m-%d");
-    if(ss.fail()) {
-        std::cerr << "Failed to parse date." << std::endl;
+    std::chrono::year_month_day parsed_date;
+    iss >> std::chrono::parse("%F", parsed_date);
+    
+    if (!iss.fail()) {
+        std::cout << "Розібрана дата: " << parsed_date << std::endl;
     } else {
-        std::cout << "Parsed date: "
-                  << std::put_time(&date, "%d-%m-%Y") << std::endl;
+        std::cout << "Не вдалося розібрати дату." << std::endl;
     }
     
     return 0;
 }
 ```
-
-Sample output:
+Приклад виводу:
 ```
-Parsed date: 15-03-2023
+Розібрана дата: 2023-04-15
 ```
 
-## Deep Dive:
-## Поглиблений розбір:
+Для більш складних форматів або коли працюєте зі старими версіями C++, популярними є сторонні бібліотеки, такі як `date.h` (бібліотека дати Говарда Гіннанта). Ось як ви можете розібрати різні формати з її допомогою:
 
-Historically, C++ has relied on C-style strings and structs. The `<ctime>` header provides `struct tm` to represent time. The `std::get_time` and `std::put_time` functions, introduced in C++11, facilitate parsing and formatting.
+**Використовуючи бібліотеку `date.h`:**
+Переконайтеся, що у вас встановлена бібліотека. Знайти її можна [тут](https://github.com/HowardHinnant/date).
 
-Alternatives include using third-party libraries, like Boost.DateTime, or since C++20, the `<chrono>` library's more comprehensive date and time utilities.
+```cpp
+#include "date/date.h"
+#include <iostream>
 
-Implementation-wise, understand that `std::get_time` uses format specifiers like `%Y` and `%d`. They match the expected form of the string. Tread carefully: if the string format doesn't match, parsing fails.
+int main() {
+    std::string date_str = "April 15, 2023";
+    
+    std::istringstream iss(date_str);
+    date::sys_days parsed_date;
+    iss >> date::parse("%B %d, %Y", parsed_date);
+    
+    if (!iss.fail()) {
+        std::cout << "Розібрана дата: " << parsed_date << std::endl;
+    } else {
+        std::cout << "Не вдалося розібрати дату з рядка." << std::endl;
+    }
 
-## See Also:
-## Див. також:
-
-- [C++ reference for std::get_time](https://en.cppreference.com/w/cpp/io/manip/get_time)
-- [C++ reference for std::put_time](https://en.cppreference.com/w/cpp/io/manip/put_time)
-- [C++ reference for <chrono> library](https://en.cppreference.com/w/cpp/header/chrono)
-- [Boost.DateTime documentation](https://www.boost.org/doc/libs/release/libs/date_time/)
+    return 0;
+}
+```
+Приклад виводу (може варіюватися в залежності від локалі вашої системи та налаштувань дати):
+```
+Розібрана дата: 2023-04-15
+```

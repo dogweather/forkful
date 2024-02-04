@@ -1,68 +1,61 @@
 ---
-title:                "स्ट्रिंग को कैपिटलाइज़ करना"
-date:                  2024-01-19
-simple_title:         "स्ट्रिंग को कैपिटलाइज़ करना"
-
+title:                "स्ट्रिंग को कैपिटलाइज करना"
+date:                  2024-02-03T19:05:42.755548-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "स्ट्रिंग को कैपिटलाइज करना"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/bash/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (क्या और क्यों?)
+## क्या और क्यों?
+Bash में एक स्ट्रिंग को कैपिटलाइज़ करना इसके पहले अक्षर को अपरकेस में परिवर्तित करने और बाकी स्ट्रिंग को अपरिवर्तित छोड़ने की प्रक्रिया है। यह तकनीक सामान्यतः आउटपुट को फॉर्मेट करने या कोडिंग कन्वेंशन्स के साथ अनुपालन करने के लिए उपयोग की जाती है जिसमें कुछ स्ट्रिंग्स को पठनीयता या शैलीगत प्राथमिकताओं के लिए एक कैपिटल अक्षर से शुरू होना आवश्यक होता है।
 
-String capitalization मतलब हर शब्द के पहले अक्षर को बड़ा (Capital Letter) करना। Programmers इसे readability और user interfaces को अच्छा बनाने के लिए करते हैं।
+## कैसे करें:
 
-## How to: (कैसे करें:)
+Bash में स्ट्रिंग्स को कैपिटलाइज़ करने के लिए विशेष रूप से बनाया गया एक बिल्ट-इन फंक्शन नहीं है, परंतु आप यह कार्य पैरामीटर एक्सपैंशन या बाहरी टूल्स जैसे `awk` का उपयोग करके संपादित कर सकते हैं। यहाँ Bash में एक स्ट्रिंग को कैपिटलाइज़ करने के कुछ तरीके दिए गए हैं:
 
-Bash में string को capitalize करने का सीधा तरीका नहीं है, पर workarounds हैं। यहां दो examples हैं:
+**पैरामीटर एक्सपैंशन का उपयोग करना:**
 
-1. पूरी string के हर शब्द का पहला अक्षर बड़ा करना।
+यह विधि सीधे शेल में स्ट्रिंग को मैनिपुलेट करती है।
 
-```Bash
-#!/bin/bash
-capitalize_string() {
-  echo "$1" | awk '{for(i=1;i<=NF;i++) $i=toupper(substr($i,1,1)) substr($i,2)}1'
-}
-
-input="namaste duniya"
-capitalized=$(capitalize_string "$input")
-echo $capitalized
+```bash
+str="hello world"
+capitalized="${str^}"
+echo "$capitalized"
+```
+आउटपुट:
+```
+Hello world
 ```
 
-Sample Output:
+**`awk` का उपयोग करना:**
+
+`awk` अधिकांश Unix-जैसे ऑपरेटिंग सिस्टम्स पर उपलब्ध एक शक्तिशाली पाठ प्रोसेसिंग टूल है, जिसे स्ट्रिंग्स को कैपिटलाइज़ करने के लिए उपयोग में लाया जा सकता है।
+
+```bash
+str="hello world"
+echo "$str" | awk '{print toupper(substr($0, 1, 1)) tolower(substr($0, 2))}'
 ```
-Namaste Duniya
+आउटपुट:
 ```
-
-2. केवल पहले शब्द का पहला अक्षर बड़ा करना।
-
-```Bash
-#!/bin/bash
-capitalize_first_word() {
-  echo "$1" | sed 's/^\(.\)/\U\1/'
-}
-
-input="namaste duniya"
-capitalized=$(capitalize_first_word "$input")
-echo $capitalized
+Hello world
 ```
 
-Sample Output:
+**`sed` का उपयोग करना:**
+
+एक पारंपरिक दृष्टिकोण के लिए, `sed` का उपयोग करके स्ट्रिंग के पहले अक्षर को कैपिटलाइज़ किया जा सकता है। हालांकि, यह पिछली विधियों की तुलना में थोड़ा अधिक जटिल है।
+
+```bash
+str="hello world"
+echo "$str" | sed 's/./\u&/'
 ```
-Namaste duniya
+आउटपुट:
+```
+Hello world
 ```
 
-## Deep Dive (गहराई से जानकारी):
-
-Bash में string manipulation को directly support नहीं किया जाता जैसे कि कुछ high-level programming languages में होता है। इसे script में शामिल करने के लिए awk और sed जैसे tools का इस्तेमाल करते हैं। awk powerful text-processing language है जो complex pattern recognition और processing को संभव बनाता हैं। sed, यानी stream editor, भी text manipulation के लिए उपयोग में लिया जाता है।
-
-ऐतिहासिक रूप से, text processing के लिए dedicated utilities का उपयोग करने का प्रचलन इसलिए है क्योंकि original Unix philosophy में छोटे और विशेषीकृत प्रोग्राम्स का महत्व था जो एक साथ पाइप किये जा सकते हैं।
-
-इन-built string manipulation capabilities, जैसे कि `bash parameter expansion`, भी हैं, पर वे capitalization के लिए नहीं हैं।
-
-## See Also (और देखें):
-
-- [GNU Awk User's Guide](https://www.gnu.org/software/gawk/manual/gawk.html)
-- [GNU sed Manual](https://www.gnu.org/software/sed/manual/sed.html)
-- [Bash Parameter Expansion](https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html)
+ये स्निपेट्स Bash में एक स्ट्रिंग के पहले अक्षर को कैपिटलाइज़ करने के तरीकों को दर्शाते हैं, जो पाठ को मैनिपुलेट करते समय शेल स्क्रिप्टिंग की लचीलापन को उजागर करते हैं।

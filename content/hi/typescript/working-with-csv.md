@@ -1,45 +1,100 @@
 ---
 title:                "CSV के साथ काम करना"
-date:                  2024-01-19
+date:                  2024-02-03T19:22:22.383905-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "CSV के साथ काम करना"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/typescript/working-with-csv.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (क्या और क्यों?)
-CSV यानी Comma-Separated Values एक साधारण फाइल फॉर्मेट है जो डेटा को सरल स्वरूप में स्टोर करती है। प्रोग्रामर इसका इस्तेमाल डेटा को आसानी से आयात और निर्यात करने के लिए करते हैं क्योंकि यह हर तरह के प्रोग्राम्स और भाषाओं में आसानी से पढ़ा जा सकता है।
+## क्या और क्यों?
 
-## How to: (कैसे करें:)
-चलिए TypeScript में CSV फाइल को पढ़ने और लिखने का एक सिंपल उदाहरण देखते हैं।
+CSV (Comma-Separated Values) के साथ काम करना शामिल है CSV फाइलों से पढ़ना और उनमें लिखना, जो कि इसकी सादगी और विभिन्न प्लेटफॉर्मों और भाषाओं में व्यापक समर्थन के कारण प्रयोग होने वाला एक सामान्य डेटा आदान-प्रदान प्रारूप है। प्रोग्रामर्स एप्लिकेशनों, डेटाबेसों, और सेवाओं से डेटा आयात करने या निर्यात करने के लिए CSV फाइलों के साथ संलग्न होते हैं, जिससे डेटा को आसानी से छेड़छाड़ कर सकने और साझा करने की सुविधा मिलती है।
 
-```TypeScript
-// CSV पढ़ने के लिए
-import * as fs from 'fs';
-import * as csv from 'fast-csv';
+## कैसे:
 
-let filePath = 'data.csv';
+TypeScript में, आप मूल कोड के माध्यम से या `csv-parser` जैसे तृतीय-पक्ष पुस्तकालयों का लाभ उठाकर CSV फाइलों के साथ काम कर सकते हैं जो पढ़ने के लिए और `csv-writer` जो लिखने के लिए CSV फाइलों के लिए है।
 
-fs.createReadStream(filePath)
-  .pipe(csv.parse({ headers: true }))
-  .on('data', (row) => console.log(row))
-  .on('end', () => console.log('CSV पढ़ना पूरा हो गया!'));
+### `csv-parser` के साथ CSV पढ़ना
 
-// CSV लिखने के लिए
-const writeStream = fs.createWriteStream('out.csv');
-csv.write([
-    { name: 'John', age: 27 },
-    { name: 'Jane', age: 32 }
-], { headers: true }).pipe(writeStream);
+सबसे पहले, npm के माध्यम से `csv-parser` स्थापित करें:
+
+```
+npm install csv-parser
 ```
 
-## Deep Dive (गहराई में जानकारी)
-CSV प्रारूप का इतिहास 1970 के दशक तक जाता है, और यह डेटा के सरल विनिमय के लिए एक मानक माना जाता है। इसके विकल्पों में JSON, XML हैं, जो कि अधिक जटिल डेटा संरचना के लिए उपयोगी हैं। CSV के साथ काम करते समय, फाइल एनकोडिंग और डेटा सेनिटाइजेशन पर ध्यान देना महत्वपूर्ण है। `fast-csv` जैसी लाइब्रेरीज का इस्तेमाल करके हम इसे आसानी से कर सकते हैं।
+फिर, इस तरह से एक CSV फाइल पढ़ें:
 
-## See Also (और भी देखें)
-- [Node.js CSV parser (fast-csv)](https://c2fo.github.io/fast-csv/docs/introduction/getting-started)
-- [MDN Web Docs - Working with text](https://developer.mozilla.org/en-US/docs/Web/API/File/Using_files_from_web_applications#Example.3A_Using_object_URLs_to_display_images)
-- [npm: CSV package](https://www.npmjs.com/package/csv)
-- [Stack Overflow CSV questions](https://stackoverflow.com/questions/tagged/csv)
+```typescript
+import fs from 'fs';
+import csv from 'csv-parser';
+
+const results = [];
+
+fs.createReadStream('data.csv')
+  .pipe(csv())
+  .on('data', (data) => results.push(data))
+  .on('end', () => {
+    console.log(results);
+    // आउटपुट: ऑब्जेक्ट्स का एक ऐरे, प्रत्येक CSV में एक पंक्ति का प्रतिनिधित्व करता है
+  });
+```
+
+मान लें `data.csv` में शामिल है:
+
+```
+name,age
+Alice,30
+Bob,25
+```
+
+आउटपुट होगा:
+
+```
+[ { name: 'Alice', age: '30' }, { name: 'Bob', age: '25' } ]
+```
+
+### `csv-writer` के साथ CSV लिखना
+
+एक CSV फाइल में लिखने के लिए, पहले `csv-writer` स्थापित करें:
+
+```
+npm install csv-writer
+```
+
+फिर, इसे इस तरह उपयोग करें:
+
+```typescript
+import { createObjectCsvWriter as createCsvWriter } from 'csv-writer';
+
+const csvWriter = createCsvWriter({
+  path: 'out.csv',
+  header: [
+    {id: 'name', title: 'NAME'},
+    {id: 'age', title: 'AGE'}
+  ]
+});
+
+const data = [
+  { name: 'Alice', age: 30 },
+  { name: 'Bob', age: 25 }
+];
+
+csvWriter
+  .writeRecords(data)
+  .then(() => console.log('The CSV file was written successfully'));
+```
+
+यह कोड `out.csv` में निम्नलिखित लिखता है:
+
+```
+NAME,AGE
+Alice,30
+Bob,25
+```
+
+ये उदाहरण दिखाते हैं कि आपके TypeScript परियोजनाओं में कुशलतापूर्वक CSV प्रक्रिया को कैसे एकीकृत कर सकते हैं, चाहे वह विश्लेषण के लिए डेटा पढ़ना हो या बाहरी रूप से एप्लिकेशन डेटा को संरक्षित करना हो।

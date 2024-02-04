@@ -1,78 +1,110 @@
 ---
-title:                "处理 YAML 文件"
-date:                  2024-01-19
-simple_title:         "处理 YAML 文件"
-
+title:                "使用YAML工作"
+date:                  2024-02-03T19:25:00.344004-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "使用YAML工作"
 tag:                  "Data Formats and Serialization"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/c-sharp/working-with-yaml.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (什么和为什么?)
-YAML是一种简洁的数据序列化格式，方便数据存储和传输。编程中用YAML是因为它易读易写，且被广泛应用于配置文件和数据交换。
+## 什么 & 为什么?
+YAML，代表“YAML Ain't Markup Language”（YAML不是标记语言），是一种人类可读的数据序列化格式。程序员经常使用它来处理配置文件、进程间消息传递和数据存储，因为与XML或JSON等其他数据格式相比，它的简单性和可读性。
 
-## How to: (如何操作)
-为处理YAML，我们先安装YamlDotNet库：
+## 如何操作:
+C# 没有内置对 YAML 的支持，但你可以通过使用第三方库如 *YamlDotNet* 来轻松地处理 YAML。首先，你需要安装 YamlDotNet 包：
 
 ```bash
-dotnet add package YamlDotNet
+Install-Package YamlDotNet -Version 11.2.1
 ```
 
-示例代码读取并解析YAML文件：
+### 读取 YAML:
+假设你有一个包含以下内容的 YAML 文件 `config.yaml`:
+```yaml
+appSettings:
+  name: MyApp
+  version: 1.0.0
+```
 
-```C#
+你可以像这样在 C# 中读取并解析这个 YAML 文件:
+```csharp
 using System;
+using System.IO;
 using YamlDotNet.Serialization;
 using YamlDotNet.Serialization.NamingConventions;
 
-public class Program
+public class AppConfig
 {
-    public static void Main()
-    {
-        var yaml = @"
-name: Zhang San
-age: 30
-languages:
-  - C#
-  - Python
-";
+    public AppSettings appSettings { get; set; }
+}
 
+public class AppSettings
+{
+    public string name { get; set; }
+    public string version { get; set; }
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        var yaml = File.ReadAllText("config.yaml");
         var deserializer = new DeserializerBuilder()
-            .WithNamingConvention(CamelCaseNamingConvention.Instance)
+            .WithNamingConvention(UnderscoredNamingConvention.Instance) // 根据需要调整命名约定
             .Build();
 
-        var person = deserializer.Deserialize<Person>(yaml);
+        var config = deserializer.Deserialize<AppConfig>(yaml);
 
-        Console.WriteLine($"Name: {person.Name}, Age: {person.Age}");
-        foreach(var lang in person.Languages)
-        {
-            Console.WriteLine($"Language: {lang}");
-        }
+        Console.WriteLine($"Name: {config.appSettings.name}, Version: {config.appSettings.version}");
     }
 }
+```
+**样例输出:**
+```
+Name: MyApp, Version: 1.0.0
+```
 
-public class Person
+### 写入 YAML:
+要将数据写入 YAML 文件，请使用 YamlDotNet 的 `Serializer` 类。以下是如何将对象序列化回 YAML:
+
+```csharp
+using System;
+using System.IO;
+using YamlDotNet.Serialization;
+using YamlDotNet.Serialization.NamingConventions;
+
+class Program
 {
-    public string Name { get; set; }
-    public int Age { get; set; }
-    public List<string> Languages { get; set; }
+    static void Main(string[] args)
+    {
+        var config = new AppConfig
+        {
+            appSettings = new AppSettings
+            {
+                name = "MyApp",
+                version = "2.0.0"
+            }
+        };
+
+        var serializer = new SerializerBuilder()
+            .WithNamingConvention(UnderscoredNamingConvention.Instance) // 根据需要调整命名约定
+            .Build();
+
+        var yaml = serializer.Serialize(config);
+        File.WriteAllText("updatedConfig.yaml", yaml);
+
+        Console.WriteLine(yaml);
+    }
 }
 ```
-
-输出结果：
-
-```
-Name: Zhang San, Age: 30
-Language: C#
-Language: Python
+**样例输出:**
+```yaml
+appSettings:
+  name: MyApp
+  version: 2.0.0
 ```
 
-## Deep Dive (深入研究)
-YAML在2001年出现，意为“YAML Ain't Markup Language”。其他数据序列化格式如JSON和XML，JSON更简洁但不支持注释，XML支持注释但较冗长。在C#中，我们通常使用YamlDotNet库处理YAML，它提供了强大的序列化和反序列化功能。
-
-## See Also (另请参阅)
-- YamlDotNet库官方文档: [https://github.com/aaubry/YamlDotNet/wiki](https://github.com/aaubry/YamlDotNet/wiki)
-- YAML官方网站: [https://yaml.org/](https://yaml.org/)
-- YAML和JSON对比: [https://stackoverflow.com/questions/1726802/what-is-the-difference-between-yaml-and-json](https://stackoverflow.com/questions/1726802/what-is-the-difference-between-yaml-and-json)
+这种直接的方法展示了如何在你的 C# 项目中高效地处理 YAML，使用 YamlDotNet 库可以简单地从 YAML 文件读取和写入数据。

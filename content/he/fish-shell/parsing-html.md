@@ -1,52 +1,81 @@
 ---
-title:                "ניתוח HTML"
-date:                  2024-01-20T15:31:09.974537-07:00
-simple_title:         "ניתוח HTML"
-
+title:                "פיענוח HTML"
+date:                  2024-02-03T19:12:46.043912-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "פיענוח HTML"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/fish-shell/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (מה ולמה?)
-Parsing HTML means extracting information from HTML documents. Programmers parse HTML to manipulate, scrape, or analyze web data.
+## מה ולמה?
 
-## How to: (איך לעשות:)
-Fish doesn't have built-in HTML parsing abilities. You'll need external tools. Here’s how to use `pup`, a command-line HTML parser, with Fish.
+פיענוח HTML הוא על אודות הוצאת נתונים או מידע מתוכן HTML, משימה נפוצה בעת התמודדות עם נתוני אינטרנט. תכנתים עושים זאת כדי לאוטמט את הוצאת המידע מאתרי אינטרנט, למשימות כמו שרטוט אינטרנט, חציבת נתונים או בדיקה אוטומטית.
 
-Install `pup`:
-```Fish Shell
-sudo apt install pup
+## איך לעשות:
+
+בעיקר, קליפת Fish אינה מיועדת לפיענוח HTML באופן ישיר. עם זאת, היא מצטיינת בהדבקת כלים של Unix כמו `curl`, `grep`, `sed`, `awk`, או שימוש בכלים מתמחים כמו `pup` או `beautifulsoup` בתסריט Python. להלן דוגמאות הממחישות איך לנצל את הכלים האלה מתוך קליפת Fish כדי לפענח HTML.
+
+### שימוש ב-`curl` ו-`grep`:
+להוציא תוכן HTML ולחלץ שורות המכילות קישורים:
+
+```fish
+curl -s https://example.com | grep -oP '(?<=href=")[^"]*'
 ```
 
-Suppose we have a file `example.html` with this content:
-```html
-<ul>
-    <li>First Item</li>
-    <li>Second Item</li>
-</ul>
+פלט:
+```
+/page1.html
+/page2.html
+...
 ```
 
-To extract list items:
-```Fish Shell
-cat example.html | pup 'li text{}'
+### שימוש ב-`pup` (כלי שורת פקודה לפיענוח HTML):
+
+ראשית, ודא ש-`pup` מותקן. לאחר מכן תוכל להשתמש בו לחלץ אלמנטים לפי התגיות, ids, כיתות וכולי.
+
+```fish
+curl -s https://example.com | pup 'a attr{href}'
 ```
 
-Sample output:
+הפלט, דומה לדוגמה של `grep`, היה מפרט את מאפייני href של תגיות `<a>`.
+
+### באמצעות תסריט Python ו-`beautifulsoup`:
+
+למרות ש-Fish עצמה לא יכולה לפענח HTML באופן טבעי, היא משתלבת ללא תקלות עם תסריטי Python. להלן דוגמה תמציתית המשתמשת ב-Python עם `BeautifulSoup` כדי לפרש ולחלץ כותרות מ-HTML. ודא ש-`beautifulsoup4` ו-`requests` מותקנים בסביבת ה-Python שלך.
+
+**parse_html.fish**
+
+```fish
+function parse_html -a url
+    python -c "
+import sys
+import requests
+from bs4 import BeautifulSoup
+
+response = requests.get(sys.argv[1])
+soup = BeautifulSoup(response.text, 'html.parser')
+
+titles = soup.find_all('title')
+
+for title in titles:
+    print(title.get_text())
+" $url
+end
 ```
-First Item
-Second Item
+
+שימוש:
+
+```fish
+parse_html 'https://example.com'
 ```
 
-## Deep Dive (עומק הצלילה)
-Fish, being a shell designed for interactive use, isn't intended for HTML parsing. Historically, Unix philosophy suggests using specialized tools in combination. `pup` parses HTML using CSS selectors. Other tools like `xmllint` and `tidy` can serve similar purposes. 
+פלט:
+```
+Example Domain
+```
 
-Working with `pup` in Fish is simple due to the piping mechanism, which is a robust Unix feature. This modular approach leverages the power of existing Unix command-line utilities, keeping scripts simple and maintainable.
-
-## See Also (ראה גם)
-[Pup GitHub Repository](https://github.com/ericchiang/pup) - Learn more about `pup`.
-
-[HTML Parsing with Python](https://docs.python.org/3/library/html.parser.html) - For a language with built-in support.
-
-[Web Scraping Best Practices](https://www.scrapingbee.com/blog/web-scraping-best-practices/) - To understand the ethics and legalities.
+כל אחת מהשיטות הללו משרתת מקרי שימוש ורמות שונות של מורכבות, החל מניפולציה פשוטה של טקסט בשורת הפקודה ועד לכוח הפיענוח המלא של `beautifulsoup` בתסריטי Python. בהתאם לצרכים שלך ולמורכבות של מבנה ה-HTML, תוכל לבחור בגישת Unix הישירה או בגישת תסריט עוצמתית יותר.

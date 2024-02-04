@@ -1,59 +1,53 @@
 ---
 title:                "Obtenir la date actuelle"
-date:                  2024-01-20T15:13:11.898168-07:00
+date:                  2024-02-03T19:08:44.687685-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Obtenir la date actuelle"
-
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/bash/getting-the-current-date.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-("Quoi et Pourquoi?")
-La récupération de la date actuelle consiste à obtenir la date et l'heure précises à l'instant où la commande est exécutée. Les programmeurs ont besoin de cette information pour des tâches comme logger des événements, planifier des jobs, et horodater des fichiers.
+## Quoi & Pourquoi ?
+Récupérer la date actuelle en Bash implique l'utilisation de commandes intégrées pour afficher la date et l'heure dans divers formats. Les programmeurs utilisent cette fonctionnalité pour des tâches telles que le marquage horaire des journaux, la planification de tâches ou simplement comme partie de leurs scripts d'informations système pour suivre quand les actions ont été effectuées.
 
-## How to:
-("Comment faire :")
-Pour obtenir la date et l'heure :
+## Comment faire :
+En Bash, la commande `date` est votre principal outil pour obtenir la date et l'heure actuelles. Voici quelques exemples de comment l'utiliser :
 
-```Bash
+1. **Obtenir la date et l'heure actuelles au format par défaut :**
+
+```bash
 date
 ```
 
-Sortie typique :
-
-```plaintext
-Mer 12 Jan 2023 15:04:12 CET
+*Exemple de sortie :*
+```
+Wed Apr 5 14:22:04 PDT 2023
 ```
 
-Pour un formatage personnalisé :
+2. **Personnaliser le format de sortie :** Vous pouvez spécifier le format de sortie en utilisant les spécificateurs de format `+%`. Par exemple, pour afficher la date au format AAAA-MM-JJ :
 
-```Bash
-date "+%Y-%m-%d %H:%M:%S"
+```bash
+date "+%Y-%m-%d"
 ```
 
-Sortie personnalisée :
-
-```plaintext
-2023-01-12 15:04:12
+*Exemple de sortie :*
+```
+2023-04-05
 ```
 
-## Deep Dive
-("Plongée en Profondeur")
-La commande `date` existe dans Unix depuis les premiers jours. POSIX a standardisé la commande, donc elle fonctionne assez uniformément sur les systèmes Unix-like. `date` utilise généralement la timezone du système, mais tu peux la modifier avec `TZ`.
+3. **Obtenir le horodatage UNIX actuel :** L'horodatage UNIX est le nombre de secondes depuis l'Époque Unix (1er janvier 1970). Ceci est utile pour les scripts qui effectuent des calculs basés sur les différences de temps.
 
-Autres méthodes :
-- `hwclock` pour l'heure matérielle
-- `date -u` pour UTC
-- Les scripts en Perl ou Python pour des besoins complexes
+```bash
+date "+%s"
+```
 
-Détails d'implémentation :
-- `date` appelle des fonctions C standard comme `time()` et `strftime()` pour obtenir et formater la date.
+*Exemple de sortie :*
+```
+1672877344
+```
 
-## See Also
-("Voir aussi")
-
-- Man page: Tape `man date` dans le terminal pour lire le manuel.
-- GNU Coreutils: [https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html)
-- POSIX specifications: [https://pubs.opengroup.org/onlinepubs/9699919799/utilities/date.html](https://pubs.opengroup.org/onlinepubs/9699919799/utilities/date.html)
+Aucune bibliothèque tierce populaire n'est généralement utilisée pour cette opération de base en Bash car la commande `date` intégrée offre une fonctionnalité complète. Cependant, pour des manipulations de date et d'heure plus avancées, les programmeurs pourraient utiliser d'autres langages de programmation ou outils qui offrent des bibliothèques pour l'arithmétique et l'analyse de dates, tels que le module `datetime` de Python.

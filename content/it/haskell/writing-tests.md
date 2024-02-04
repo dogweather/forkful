@@ -1,58 +1,79 @@
 ---
 title:                "Scrivere test"
-date:                  2024-01-19
+date:                  2024-02-03T19:30:46.390929-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Scrivere test"
-
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/haskell/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Che cosa e perché?
-Scrivere test nel codice serve a verificare che il software funzioni come atteso. I programmatori lo fanno per prevenire bug e garantire che le modifiche future non rompano funzionalità esistenti.
+## Cosa & Perché?
+
+Scrivere test in Haskell consiste nell'assicurarsi che le tue funzioni funzionino come previsto attraverso controlli automatizzati. I programmatori lo fanno per individuare precocemente i bug, facilitare il refactoring e documentare il comportamento, rendendo il codice più manutenibile e scalabile.
 
 ## Come fare:
-Haskell utilizza HUnit e QuickCheck come librerie popolari per il testing. Ecco un esempio semplice con HUnit:
 
-```Haskell
-import Test.HUnit
+Haskell supporta vari framework per i test, ma due popolari sono `Hspec` e `QuickCheck`. Hspec ti permette di definire specifiche leggibili per il tuo codice, mentre QuickCheck ti permette di generare automaticamente test descrivendo proprietà che il tuo codice dovrebbe soddisfare.
 
-testAddition = TestCase (assertEqual "Verifica che 1 + 1 uguale 2" 2 (1 + 1))
+### Usare Hspec
+
+Prima, aggiungi `hspec` alla configurazione del tuo strumento di costruzione (ad es., `stack.yaml` o file `cabal`). Poi, importa `Test.Hspec` e scrivi i test come specifiche:
+
+```haskell
+-- file: spec/MyLibSpec.hs
+import Test.Hspec
+import MyLib (add)
 
 main :: IO ()
-main = runTestTT testAddition >>= print
+main = hspec $ describe "MyLib.add" $ do
+  it "aggiunge due numeri" $
+    add 1 2 `shouldBe` 3
+
+  it "restituisce il primo numero quando si aggiunge zero" $
+    add 5 0 `shouldBe` 5
 ```
 
-Output previsto:
+Poi, esegui i tuoi test usando il tuo strumento di costruzione, ottenendo un output che potrebbe assomigliare a:
 
 ```
-Cases: 1  Tried: 1  Errors: 0  Failures: 0
-Counts {cases = 1, tried = 1, errors = 0, failures = 0}
+MyLib.add
+  - aggiunge due numeri
+  - restituisce il primo numero quando si aggiunge zero
+
+Terminato in 0.0001 secondi
+2 esempi, 0 fallimenti
 ```
 
-Con QuickCheck per test basati su proprietà:
+### Usare QuickCheck
 
-```Haskell
+Con QuickCheck, esprimi proprietà che le tue funzioni dovrebbero soddisfare. Aggiungi `QuickCheck` alla configurazione del tuo progetto, poi importalo:
+
+```haskell
+-- file: test/MyLibProperties.hs
 import Test.QuickCheck
+import MyLib (add)
 
-prop_reverseTwice :: [Int] -> Bool
-prop_reverseTwice list = reverse (reverse list) == list
+prop_addAssociative :: Int -> Int -> Int -> Bool
+prop_addAssociative x y z = x + (y + z) == (x + y) + z
+
+prop_addCommutative :: Int -> Int -> Bool
+prop_addCommutative x y = x + y == y + x
 
 main :: IO ()
-main = quickCheck prop_reverseTwice
-```
-Output previsto:
-
-```
-+++ OK, passed 100 tests.
+main = do
+  quickCheck prop_addAssociative
+  quickCheck prop_addCommutative
 ```
 
-## Analisi dettagliata:
-HUnit è ispirato a JUnit e permette di scrivere test di unità. QuickCheck implementa test basati su proprietà con input generati casualmente. Storicamente, QuickCheck ha influenzato il testing in altri linguaggi con concetti simili di generazione di test cases. Per implementare i test in Haskell, è importante comprendere il Controllo dei Tipi e le Funzioni Pure per un'efficacia ottimale.
+Eseguendo questi test verranno generati automaticamente input per verificare le proprietà specificate:
 
-## Guarda anche:
-- HUnit: [http://hackage.haskell.org/package/HUnit](http://hackage.haskell.org/package/HUnit)
-- QuickCheck: [http://hackage.haskell.org/package/QuickCheck](http://hackage.haskell.org/package/QuickCheck)
-- Un articolo introduttivo ai test in Haskell: [https://wiki.haskell.org/Introduction_to_HUnit](https://wiki.haskell.org/Introduction_to_HUnit)
-- Una guida per approfondire QuickCheck: [https://begriffs.com/posts/2017-01-14-design-use-quickcheck.html](https://begriffs.com/posts/2017-01-14-design-use-quickcheck.html)
+```
++++ OK, superato 100 test.
++++ OK, superato 100 test.
+```
+
+In entrambi gli esempi di Hspec e QuickCheck, le suite di test fungono da documentazione eseguibile che può verificare automaticamente la correttezza del tuo codice.

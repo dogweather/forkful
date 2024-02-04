@@ -1,64 +1,71 @@
 ---
 title:                "Sprawdzanie, czy katalog istnieje"
-date:                  2024-01-20T14:58:54.072154-07:00
+date:                  2024-02-03T19:08:46.097436-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Sprawdzanie, czy katalog istnieje"
-
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/swift/checking-if-a-directory-exists.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Sprawdzanie istnienia katalogu to sposób na upewnienie się, że folder faktycznie znajduje się na dysku. Programiści robią to, by zapobiec błędom podczas próby dostępu do nieistniejących ścieżek lub zapisu danych.
+## Co i dlaczego?
+Sprawdzanie, czy katalog istnieje w systemie plików, jest niezbędne do zarządzania strukturami plików w aplikacjach Swift. To zadanie umożliwia programistom weryfikację obecności katalogów przed próbą odczytu z nich lub zapisu do nich, co pozwala uniknąć możliwych błędów w czasie wykonania.
 
-## How to:
-W Swift możesz użyć `FileManager` do sprawdzenia istnienia katalogu. Oto przykład:
+## Jak to zrobić:
 
-```Swift
+Framework Foundation w Swifcie dostarcza klasę `FileManager`, która posiada metody do zarządzania systemem plików. Możesz użyć `FileManager`, aby sprawdzić, czy katalog istnieje. Oto fragment kodu, jak to zrobić:
+
+```swift
 import Foundation
 
 let fileManager = FileManager.default
-let path = "/path/to/directory"
+let path = "/ścieżka/do/twojego/katalogu"
 
 if fileManager.fileExists(atPath: path, isDirectory: nil) {
-    print("Katalog istnieje.")
+    print("Katalog istnieje")
 } else {
-    print("Katalog nie istnieje.")
+    print("Katalog nie istnieje")
 }
 ```
 
-Wyjście zależy od istnienia katalogu:
-```
-Katalog istnieje.
-```
-lub
-```
-Katalog nie istnieje.
-```
+Jednak sprawdza to zarówno pliki, jak i katalogi. Jeśli chcesz specjalnie zweryfikować, czy katalog istnieje, musisz przekazać wskaźnik do wartości logicznej w `isDirectory`:
 
-Możesz też podać wskaźnik Bool jako drugi parametr, aby sprawdzić, czy ścieżka jest katalogiem:
+```swift
+import Foundation
 
-```Swift
+let fileManager = FileManager.default
+let path = "/ścieżka/do/twojego/katalogu"
 var isDirectory: ObjCBool = false
 
-if fileManager.fileExists(atPath: path, isDirectory: &isDirectory) {
-    if isDirectory.boolValue {
-        print("To jest katalog.")
-    } else {
-        print("To nie jest katalog, tylko plik.")
-    }
+if fileManager.fileExists(atPath: path, isDirectory: &isDirectory), isDirectory.boolValue {
+    print("Katalog istnieje")
+} else {
+    print("Katalog nie istnieje")
 }
 ```
 
-## Deep Dive
-Sprawdzanie istnienia katalogu sięga początków systemów plików. W Unix-owych systemach, na których wzoruje się iOS i macOS, istnieje pojęcie katalogów i plików, które są integralną częścią systemu plików.
+### Używanie biblioteki zewnętrznej
 
-We wcześniejszych wersjach Swift i Objective-C, `NSFileManager` pełnił podobną rolę co obecne `FileManager`. Oprócz prostego sprawdzania istnienia, `FileManager` oferuje metody do bardziej złożonych zadań związanych z systemem plików, jak tworzenie i usuwanie katalogów, listowanie zawartości czy zmiana uprawnień.
+Na obecną chwilę, sprawdzenie istnienia katalogu w Swifcie zazwyczaj nie wymaga stosowania bibliotek zewnętrznych z powodu solidności klasy `FileManager`. Jednak dla bardziej złożonych manipulacji i kontroli plików, biblioteki takie jak **Files** autorstwa Johna Sundella dostarczają bardziej przyjazne dla Swifta API.
 
-Możliwe alternatywy to bezpośrednie używanie API systemu operacyjnego, np. funkcji `stat` z libc w C, ale `FileManager` jest zdecydowanie bardziej "swiftowy" i bezpieczniejszy w obsłudze.
+Oto jak możesz jej użyć:
 
-## See Also
-- Dokumentacja Apple dotycząca `FileManager`: https://developer.apple.com/documentation/foundation/filemanager
-- Przykład używania `FileManager` w praktyce: https://www.hackingwithswift.com/example-code/system/how-to-find-the-path-to-a-file-in-your-bundle
-- Obsługa błędów w Swift związana z plikami i katalogami: https://docs.swift.org/swift-book/LanguageGuide/ErrorHandling.html
+Najpierw dodaj Files do swojego projektu za pomocą Swift Package Manager.
+
+Następnie, możesz sprawdzić istnienie katalogu w ten sposób:
+
+```swift
+import Files
+
+do {
+    _ = try Folder(path: "/ścieżka/do/twojego/katalogu")
+    print("Katalog istnieje")
+} catch {
+    print("Katalog nie istnieje")
+}
+```
+
+Uwaga: Ponieważ biblioteki zewnętrzne mogą ulegać zmianom, zawsze odwołuj się do najnowszej dokumentacji w celu uzyskania informacji o użytkowaniu i najlepszych praktykach.

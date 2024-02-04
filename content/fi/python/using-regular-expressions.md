@@ -1,42 +1,97 @@
 ---
 title:                "Säännöllisten lausekkeiden käyttö"
-date:                  2024-01-19
+date:                  2024-02-03T19:18:21.268634-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Säännöllisten lausekkeiden käyttö"
-
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/python/using-regular-expressions.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Pythonissa säännölliset lausekkeet, eli regex, ovat tekstinhakutyökalu. Niillä löydetään, tarkastetaan ja muokataan merkkijonoja nopeasti ja tehokkaasti.
+## Mikä ja miksi?
+Säännölliset lausekkeet (regex) ovat malleja, joita käytetään merkkiyhdistelmien etsimiseen merkkijonoista. Ohjelmoijat käyttävät niitä tekstin etsimiseen, muokkaamiseen tai manipulointiin määriteltyjen mallien perusteella, mikä tekee niistä välttämättömiä tehtävissä kuten datan validointi, jäsentäminen tai muuntaminen.
 
-## How to:
-Pythoniin sisäänrakennettu `re`-moduuli käsittelee regexiä. Tässä pari esimerkkiä.
+## Kuinka:
+Pythonissa regexin käyttöön liittyy `re`-moduuli, joka tarjoaa joukon funktioita tekstin käsittelyyn säännöllisten lausekkeiden avulla.
 
-```Python
+### Perusmallin Etsintä
+Jos haluat etsiä mallia merkkijonosta, käytä `re.search()`. Se palauttaa otteluobjektin, kun malli löytyy, muuten `None`.
+```python
 import re
 
-# Etsitään kaikki sanat, jotka alkavat 'h' ja päättyvät 'n'
-teksti = "hello world, hyvää huomenta, henkilö, huon"
-pattern = r'\bh\w*n\b'
-matches = re.findall(pattern, teksti)
-print(matches)  # Output: ['hen', 'huon']
-
-# Korvataan kaikki numerot tähdillä
-teksti = "H4u37t2 5k4iv44t!"
-pattern = r'\d'  # \d vastaa numeroita
-korvattu_teksti = re.sub(pattern, '*', teksti)
-print(korvattu_teksti)  # Output: H*u**t* *k*iv**t!
+teksti = "Opettele Python-ohjelmointia"
+ottelu = re.search("Python", teksti)
+if ottelu:
+    print("Malli löytyi!")
+else:
+    print("Mallia ei löytynyt.")
+```
+Tuloste:
+```
+Malli löytyi!
 ```
 
-## Deep Dive:
-Regexit kehittyivät 1950-luvulla auttamaan merkkijonon käsittelyä. Nykyisin niitä on lähes kaikissa ohjelmointikielissä. Vaihtoehtoina regexille voidaan käyttää esim. Pythonin merkkijonometodeja, mutta ne ovat usein hitaampia monimutkaisemmissa hakutehtävissä. Pythonin `re`-moduulissa käytetään backtracking-algoritmia tehokkuuden vuoksi.
+### Säännöllisten Lausekkeiden Kokoaminen
+Jos samaa mallia käytetään toistuvasti, käännä se ensin `re.compile()`-toiminnolla paremman suorituskyvyn saavuttamiseksi.
+```python
+malli = re.compile("Python")
+ottelu = malli.search("Opettele Python-ohjelmointia")
+if ottelu:
+    print("Koottu malli löytyi!")
+```
+Tuloste:
+```
+Koottu malli löytyi!
+```
 
-## See Also:
-Regexin opetteluun ja testaamiseen:
+### Merkkijonojen Jakaminen
+Merkkijonon jakamiseksi jokaisessa regex-mallin vastaavuudessa käytä `re.split()`.
+```python
+tulos = re.split("\s", "Python on kivaa")
+print(tulos)
+```
+Tuloste:
+```
+['Python', 'on', 'kivaa']
+```
 
-- Pythonin viralliset `re`-moduulin dokumentit: https://docs.python.org/3/library/re.html
-- Regex101, interaktiivinen regex-testaustyökalu: https://regex101.com/
-- Pythex, toinen hyvä regex-testeri: https://pythex.org/
+### Kaikkien Vastaavuuksien Etsiminen
+Kaikkien päällekkäisyyksiä vailla olevien mallien esiintymien etsimiseksi käytä `re.findall()`.
+```python
+ottelut = re.findall("n", "Python-ohjelmointi")
+print(ottelut)
+```
+Tuloste:
+```
+['n', 'n']
+```
+
+### Tekstin Korvaaminen
+Käytä `re.sub()` korvataksesi mallin esiintymät uudella merkkijonolla.
+```python
+korvattu_teksti = re.sub("kivaa", "mahtavaa", "Python on kivaa")
+print(korvattu_teksti)
+```
+Tuloste:
+```
+Python on mahtavaa
+```
+
+### Kolmannen Osapuolen Kirjastot
+Vaikka Pythonin sisäänrakennettu `re`-moduuli on tehokas, tarjoavat kolmannen osapuolen kirjastot, kuten `regex`, lisää ominaisuuksia ja parannettua suorituskykyä. `regex`-kirjaston käyttämiseksi asenna se pip:n kautta (`pip install regex`) ja tuo se koodiisi.
+
+```python
+import regex
+
+teksti = "Opiskellaan Python 3.8"
+ottelu = regex.search(r"Python\s(\d+\.\d+)", teksti)
+if ottelu:
+    print(f"Löydetty versio: {ottelu.group(1)}")
+```
+Tuloste:
+```
+Löydetty versio: 3.8
+```

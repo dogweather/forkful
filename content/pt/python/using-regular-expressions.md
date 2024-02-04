@@ -1,55 +1,97 @@
 ---
-title:                "Utilizando expressões regulares"
-date:                  2024-01-19
-simple_title:         "Utilizando expressões regulares"
-
+title:                "Usando expressões regulares"
+date:                  2024-02-03T19:18:19.779729-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Usando expressões regulares"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/python/using-regular-expressions.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## O que é & Por quê?
+## O Que & Por Quê?
+Expressões regulares (regex) são padrões usados para combinar sequências de caracteres em strings. Programadores as utilizam para buscar, editar ou manipular texto baseado em padrões definidos, tornando-as indispensáveis para tarefas como validação de dados, análise sintática ou transformação.
 
-Expressões regulares são padrões usados para encontrar correspondências de strings de texto. Programadores usam-nas para validação de dados, busca e substituição de texto complexo, e manipulação de strings com eficiência e precisão.
+## Como usar:
+Usar regex em Python envolve o módulo `re`, que fornece um conjunto de funções para processar texto usando expressões regulares.
 
-## Como fazer:
-
-```Python
+### Correspondência de Padrão Básica
+Para procurar um padrão em uma string, use `re.search()`. Ele retorna um objeto de correspondência quando o padrão é encontrado, caso contrário `None`.
+```python
 import re
 
-# Encontrar todos os e-mails
-texto = "contato@exemplo.com, suporte@exemplo.br, user@domain.info"
-emails = re.findall(r'\b[\w.-]+@[\w.-]+\.\w{2,4}\b', texto)
-print(emails)
-
-# Validar um número de telefone brasileiro (formato simples)
-telefone = "+55 (21) 90000-0000"
-if re.match(r'\+\d{2} \(\d{2}\) \d{5}-\d{4}', telefone):
-    print("Telefone válido")
+text = "Aprenda a programar em Python"
+match = re.search("Python", text)
+if match:
+    print("Padrão encontrado!")
 else:
-    print("Telefone inválido")
-
-# Substituir espaços múltiplos por um único espaço
-texto_com_espacos = "Texto   com  espaços desnecessários."
-texto_limpo = re.sub(r'\s+', ' ', texto_com_espacos)
-print(texto_limpo)
+    print("Padrão não encontrado.")
 ```
-
 Saída:
-
 ```
-['contato@exemplo.com', 'suporte@exemplo.br', 'user@domain.info']
-Telefone válido
-Texto com espaços desnecessários.
+Padrão encontrado!
 ```
 
-## Mergulho Profundo
+### Compilando Expressões Regulares
+Para uso repetido do mesmo padrão, compile-o primeiro com `re.compile()` para melhor desempenho.
+```python
+pattern = re.compile("Python")
+match = pattern.search("Aprenda a programar em Python")
+if match:
+    print("Padrão compilado encontrado!")
+```
+Saída:
+```
+Padrão compilado encontrado!
+```
 
-Expressões regulares surgiram nos anos 1950 com o matemático Stephen Cole Kleene. Alternativas a expressões regulares incluem métodos de string específicos como `str.find()` ou `str.replace()`, mas eles não têm a mesma potência ou flexibilidade. Sob o capô, expressões regulares utilizam um motor de busca que pode ser do tipo "greedy" (guloso) ou "non-greedy" (não-guloso), sendo o primeiro o padrão em muitas implementações, o que significa que busca a maior correspondência possível.
+### Dividindo Strings
+Para dividir uma string em cada correspondência de um padrão regex, use `re.split()`.
+```python
+result = re.split("\s", "Python é divertido")
+print(result)
+```
+Saída:
+```
+['Python', 'é', 'divertido']
+```
 
-## Veja Também
+### Encontrando Todas as Correspondências
+Para encontrar todas as ocorrências não sobrepostas de um padrão, use `re.findall()`.
+```python
+matches = re.findall("n", "Programação em Python")
+print(matches)
+```
+Saída:
+```
+['n', 'n']
+```
 
-- Documentação oficial do Python sobre expressões regulares: https://docs.python.org/3/library/re.html
-- Tutorial interativo de expressões regulares: https://regexr.com/
-- Artigo sobre a teoria computacional por trás das expressões regulares: https://www.geeksforgeeks.org/regular-expressions-in-python/
+### Substituindo Texto
+Use `re.sub()` para substituir ocorrências de um padrão por uma nova string.
+```python
+replaced_text = re.sub("divertido", "incrível", "Python é divertido")
+print(replaced_text)
+```
+Saída:
+```
+Python é incrível
+```
+
+### Bibliotecas de Terceiros
+Embora o módulo `re` embutido do Python seja poderoso, bibliotecas de terceiros como `regex` oferecem mais recursos e desempenho aprimorado. Para usar `regex`, instale-o via pip (`pip install regex`) e importe-o em seu código.
+
+```python
+import regex
+
+text = "Aprendendo Python 3.8"
+match = regex.search(r"Python\s(\d+\.\d+)", text)
+if match:
+    print(f"Versão encontrada: {match.group(1)}")
+```
+Saída:
+```
+Versão encontrada: 3.8
+```

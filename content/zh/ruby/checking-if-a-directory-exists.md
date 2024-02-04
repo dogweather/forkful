@@ -1,48 +1,48 @@
 ---
 title:                "检查目录是否存在"
-date:                  2024-01-20T14:58:16.705651-07:00
+date:                  2024-02-03T19:08:16.938325-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "检查目录是否存在"
-
 tag:                  "Files and I/O"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/ruby/checking-if-a-directory-exists.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (是什么？为什么？)
-检查目录是否存在就是确认某个文件夹在电脑上是否真的存在。程序员这么做是为了避免错误，例如尝试访问不存在的目录会导致程序崩溃。
+## 什么及为什么？
+在Ruby中检查目录是否存在允许程序员在执行读取文件或创建新目录等操作之前验证目录的存在。这对于避免文件处理错误和确保文件系统操作的可靠性至关重要。
 
-## How to: (如何操作：)
-在Ruby中，你可以使用`Dir.exist?`方法检查目录是否存在。看看下面的例子：
+## 如何做：
+Ruby的标准库提供了直接的方法来检查目录是否存在。以下是使用纯Ruby进行检查的方法，无需任何第三方库：
 
-```Ruby
+```ruby
+require 'fileutils'
+
+# 检查目录是否存在
 if Dir.exist?('/path/to/directory')
-  puts 'Directory exists!'
+  puts '目录存在。'
 else
-  puts 'Directory does not exist.'
+  puts '目录不存在。'
 end
 ```
-
-如果目录存在，输出将是：
-
+示例输出：
 ```
-Directory exists!
+目录存在。
 ```
-
-如果不存在，输出将是：
-
+或：
 ```
-Directory does not exist.
+目录不存在。
 ```
 
-## Deep Dive (深入了解)
-在Ruby的早期版本中，你可能会使用`File.exist?`或`File.directory?`来检查目录是否存在。`Dir.exist?`是在Ruby 1.9中引入的，现在是最推荐的用法，因为它更清晰地表达了你的意图。值得一提的是，文件和目录实际上都被认为是文件系统中的“文件”，所以旧的方法仍然有效，但`Dir.exist?`是专门用来检查目录的。
+除了使用`Dir.exist?`之外，你还可以使用`File.directory?`方法，如果给定的路径是一个目录，它会返回`true`：
 
-其它语言中，检查目录存在的方法可能不同。例如，在Python中，你会用`os.path.isdir`方法。
-
-在实际项目中，检查目录是否存在通常是文件操作前的初步步骤，比如说读取或写入文件时。
-
-## See Also (另请参阅)
-- Ruby官方文档关于`Dir.exist?`的页面: [Dir.exist?](https://ruby-doc.org/core-2.7.0/Dir.html#method-c-exist-3F)
-- Stack Overflow上关于检查目录是否存在的讨论: [How to check if a directory exists in Ruby](https://stackoverflow.com/questions/5471032/how-to-check-if-a-directory-exists-in-ruby)
+```ruby
+if File.directory?('/path/to/directory')
+  puts '目录存在。'
+else
+  puts '目录不存在。'
+end
+```
+`Dir.exist?`和`File.directory?`都是Ruby标准库的一部分，使用它们不需要任何外部gems，这使它们成为检查目录的便捷且高效的选项。

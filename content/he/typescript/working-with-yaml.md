@@ -1,56 +1,93 @@
 ---
 title:                "עבודה עם YAML"
-date:                  2024-01-19
+date:                  2024-02-03T19:27:15.412587-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "עבודה עם YAML"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/typescript/working-with-yaml.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## מה ולמה?
-YAML הוא פורמט קובץ שמשמש לתצורת יישומים ונתונים, כמעט כמו ה-JSON, אך במבנה יותר קריא לאדם. תכנתים משתמשים ב-YAML בגלל הקריאות הגבוהה שלו והשילוב הפשוט עם כלים כמו Kubernetes ו-Docker.
+YAML, שפת סידור נתונים שתוכננה להיות ידידותית לאדם, משמשת לעיתים קרובות עבור קבצי תצורה, הודעות בין-תהליכים, ואחסון נתונים. מתכנתים נשענים על YAML בזכות קריאותה ונוחות השימוש שלה, במיוחד כאשר מתמודדים עם נתונים מובנים מורכבים, דבר ההופך אותה לבחירה מצוינת עבור יישומים שפותחו ב-TypeScript.
 
-## איך לעשות:
-```TypeScript
+## איך לעשות זאת:
+עבודה עם YAML ב-TypeScript בדרך כלל כוללת פרסור של תוכן YAML לאובייקטים של JavaScript ואפשר גם המרה של אובייקטים של JavaScript בחזרה ל-YAML. זה דורש מפענח; אחת הבחירות הפופולריות היא `js-yaml`, ספריה שניתן לשלב בקלות בפרויקטים של TypeScript.
+
+### התקנת js-yaml
+ראשית, הוספו את `js-yaml` לפרויקט שלכם:
+
+```bash
+npm install js-yaml
+```
+
+### פרסור YAML לאובייקט JavaScript
+נניח שיש לכם קובץ YAML `config.yaml` עם התוכן הבא:
+
+```yaml
+database:
+  host: localhost
+  port: 5432
+  username: user
+  password: pass
+```
+
+תוכלו לקרוא ולפרסר קובץ זה לאובייקט של JavaScript כדלהלן:
+
+```typescript
+import * as fs from 'fs';
 import * as yaml from 'js-yaml';
-import fs from 'fs';
 
-// קריאת קובץ YAML
-const doc = yaml.load(fs.readFileSync('./config.yaml', 'utf8'));
+// טעינה ופרסור של קובץ ה-YAML
+const fileContents = fs.readFileSync('./config.yaml', 'utf8');
+const data = yaml.load(fileContents) as Record<string, any>;
 
-// הדפסת אובייקט מתוך קובץ YAML
-console.log(doc);
-
-// כתיבת אובייקט לקובץ YAML
-const data = { title: 'מאמר על YAML', version: 1.0 };
-fs.writeFileSync('./output.yaml', yaml.dump(data), 'utf8');
+console.log(data);
 ```
-**פלט:**
-בהנחה שב-'config.yaml' יש:
+
+**דוגמת פלט:**
+
+```json
+{
+  "database": {
+    "host": "localhost",
+    "port": 5432,
+    "username": "user",
+    "password": "pass"
+  }
+}
+```
+
+### המרת אובייקט JavaScript ל-YAML
+אם אתם צריכים לעשות את הכיוון השני ולהמיר אובייקט של JavaScript למחרוזת YAML, ניתן להשתמש ב-`js-yaml` כך:
+
+```typescript
+import * as yaml from 'js-yaml';
+
+const obj = {
+  title: "Example",
+  is_published: true,
+  author: {
+    name: "Jane Doe",
+    age: 34
+  }
+};
+
+const yamlStr = yaml.dump(obj);
+console.log(yamlStr);
+```
+
+**דוגמת פלט:**
+
 ```yaml
-version: 1
-services:
-  web:
-    image: "node:14"
-    ports:
-      - "3000:3000"
-```
-בקונסול ירוץ:
-```plaintext
-{ version: 1, services: { web: { image: 'node:14', ports: [ '3000:3000' ] } } }
-```
-ב-'output.yaml' יכתב:
-```yaml
-title: מאמר על YAML
-version: 1.0
+title: Example
+is_published: true
+author:
+  name: Jane Doe
+  age: 34
 ```
 
-## עומק הבנה
-YAML (YAML Ain't Markup Language) פותח לראשונה ב-2001 כאלטרנטיבה ל-XML. הוא מאפשר תיאור מבנים כמו אובייקטים ומערכים בצורה נקייה וברורה. ישנם אלטרנטיבות כמו JSON ו-TOML, אך YAML נשאר פופולרי בעקבות הקריאות שלו. ב-TypeScript, נעשה שימוש בחבילות כמו `js-yaml` להמרה בין אובייקטים ל-YAML.
-
-## ראה גם
-- מסמך ה-YAML הרשמי: [YAML Spec](https://yaml.org/spec/)
-- חבילת `js-yaml` ב-npm: [js-yaml](https://www.npmjs.com/package/js-yaml)
-- מדריך ל-YAML ב-Kubernetes: [Kubernetes YAML Guide](https://kubernetes.io/docs/concepts/configuration/overview/#general-configuration-tips)
+קטע קוד זה ממיר אובייקט JavaScript למחרוזת YAML ומציג אותה. בפועל, ייתכן שתכתבו זאת בחזרה לקובץ או תשתמשו בה בחלקים אחרים של היישום שלכם.

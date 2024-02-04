@@ -1,36 +1,52 @@
 ---
-title:                "Maiuscolizzare una stringa"
-date:                  2024-01-19
-simple_title:         "Maiuscolizzare una stringa"
-
+title:                "Capitalizzare una stringa"
+date:                  2024-02-03T19:04:54.287494-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Capitalizzare una stringa"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/elm/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Cosa & Perché?)
-Capitalizzare una stringa significa trasformare tutte le lettere in maiuscolo. Questo serve a uniformare i dati per confronti o visualizzazioni e a rimarcare l'importanza di certi testi.
+## Cosa e Perché?
 
-## How to: (Come fare:)
-Per capitalizzare una stringa in Elm, utilizza la funzione `String.toUpper`. Ecco un esempio:
+La capitalizzazione di una stringa comporta la trasformazione del carattere iniziale di una stringa data in maiuscolo, mantenendo il resto in minuscolo, spesso a fini di formattazione standardizzata o leggibilità. I programmatori eseguono frequentemente questo compito per garantire che i dati siano presentati in modo consistente, specialmente nelle interfacce utente o quando elaborano e visualizzano l'input dell'utente.
 
-```Elm
-import String
+## Come fare:
 
-capitalizedString : String -> String
-capitalizedString string =
-    String.toUpper string
+In Elm, non esiste una funzione incorporata specificamente per capitalizzare le stringhe. Tuttavia, puoi ottenere facilmente questo risultato utilizzando le funzioni del modulo `String` incorporate come `toUpper`, `toLower`, `left` e `dropLeft`.
 
--- Uso della funzione
+```elm
+capitalize : String -> String
+capitalize str =
+    if String.isEmpty str then
+        ""
+    else
+        String.toUpper (String.left 1 str) ++ String.toLower (String.dropLeft 1 str)
+
+-- Esempio di utilizzo
 main =
-    Html.text (capitalizedString "ciao mondo!")
-
--- Risultato stampato: "CIAO MONDO!"
+    String.toList "hello world" |> List.map capitalize |> String.join " "
+    -- Output: "Hello World"
 ```
 
-## Deep Dive (Approfondimento)
-Capitlizzare stringhe è un'operazione antica quanto la programmazione. In Elm, la funzionalità è diretta e senza fronzoli grazie alla standard library. Alternative? Beh, potresti iterare carattere per carattere e capitalizzarli individualmente, ma non c'è motivo di complicarsi la vita: `String.toUpper` fa il lavoro per te. Internamente, gestisce anche correttamente le lettere accentate e i caratteri speciali.
+Per scenari più complessi o se preferisci utilizzare una libreria che fornisce un modo diretto per capitalizzare le stringhe, potresti considerare un pacchetto di terze parti come `elm-community/string-extra`. Tuttavia, come da ultimo aggiornamento, l'ecosistema di Elm incoraggia a gestire tali compiti usando funzioni incorporate per mantenere il linguaggio e i progetti snelli.
 
-## See Also (Vedi Anche)
-- Documentazione ufficiale Elm su `String.toUpper`: [String.toUpper](https://package.elm-lang.org/packages/elm/core/latest/String#toUpper)
+```elm
+import String.Extra as StringExtra
+
+-- Nel caso ci sia una funzione `capitalize` in una libreria di terze parti
+capitalizeWithLibrary : String -> String
+capitalizeWithLibrary str =
+    StringExtra.capitalize str
+
+-- Esempio di utilizzo con funzione ipotetica di libreria
+main =
+    "this is elm" |> capitalizeWithLibrary
+    -- Output ipotetico: "This is elm"
+```
+
+Controlla sempre il repository dei pacchetti di Elm per le librerie più recenti e preferite per la manipolazione delle stringhe se stai cercando funzionalità aggiuntive rispetto alla libreria standard.

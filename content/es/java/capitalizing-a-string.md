@@ -1,54 +1,67 @@
 ---
 title:                "Capitalizando una cadena de texto"
-date:                  2024-01-19
+date:                  2024-02-03T19:05:31.079939-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Capitalizando una cadena de texto"
-
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/java/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Qué y Por Qué?
-Capitalizar una cadena significa convertir la primera letra de cada palabra a mayúscula. Los programadores lo hacen para asegurar la consistencia en los datos, mejorar la legibilidad o cumplir con especificaciones estéticas y de formato.
+## ¿Qué y por qué?
+Capitalizar una cadena implica modificar la primera letra de cada palabra en la cadena a mayúsculas, asegurando que el resto permanezcan en minúsculas. Esta tarea común de manipulación de cadenas es útil para formatear texto en aplicaciones, como preparar nombres de usuarios o títulos para ser mostrados de acuerdo a la convención o corrección gramatical.
 
 ## Cómo hacerlo:
+La biblioteca estándar de Java no proporciona un método directo para capitalizar cadenas enteras de una vez, pero puedes lograr esto con una combinación de métodos integrados. Para necesidades más sofisticadas, bibliotecas de terceros como Apache Commons Lang ofrecen soluciones directas.
 
-Para capitalizar una cadena en Java, la clase `String` es tu amiga. Aquí tienes un ejemplo:
+### Usando Métodos Incorporados de Java
+Para capitalizar una cadena sin bibliotecas externas, puedes dividir la cadena en palabras, capitalizar la primera letra de cada una y luego reunirlas. Aquí tienes un enfoque simple:
 
 ```java
-public class Capitalizador {
+public class CapitalizeString {
     public static void main(String[] args) {
-        String frase = "java es genial";
-        String fraseCapitalizada = capitalizarCadena(frase);
-        System.out.println(fraseCapitalizada);  // Salida: Java Es Genial
+        String text = "hello, world!";
+        String capitalizedText = capitalizeWords(text);
+        System.out.println(capitalizedText); // Salida: "Hello, World!"
     }
 
-    public static String capitalizarCadena(String cadena) {
-        String[] palabras = cadena.split("\\s+");
-        StringBuilder cadenaCapitalizada = new StringBuilder();
-
-        for(String palabra : palabras) {
-            String primeraLetra = palabra.substring(0, 1).toUpperCase();
-            String restoLetras = palabra.substring(1);
-            cadenaCapitalizada.append(primeraLetra).append(restoLetras).append(" ");
+    public static String capitalizeWords(String str) {
+        char[] chars = str.toLowerCase().toCharArray();
+        boolean encontrado = false;
+        for (int i = 0; i < chars.length; i++) {
+            if (!encontrado && Character.isLetter(chars[i])) {
+                chars[i] = Character.toUpperCase(chars[i]);
+                encontrado = true;
+            } else if (Character.isWhitespace(chars[i]) || chars[i]=='.' || chars[i]=='\'') { 
+                encontrado = false;
+            }
         }
-
-        return cadenaCapitalizada.toString().trim();
+        return String.valueOf(chars);
     }
 }
 ```
 
-## Profundizando
+Este fragmento de código convierte toda la cadena a minúsculas, luego itera a través de cada carácter, capitalizando la primera letra de cada palabra. Considera los espacios, puntos y apóstrofos como separadores de palabras.
 
-Históricamente, capitalizar texto ha sido importante en la escritura y la tipografía, y eso se refleja en la programación. Es crucial para crear interfaces de usuario que se lean naturalmente. Además, ayuda a formatear datos de manera estándar, como nombres propios o títulos de libros.
+### Usando Apache Commons Lang
 
-Alternativas para capitalizar cadenas en Java incluyen el uso de bibliotecas de terceros como Apache Commons Lang con su método `capitalize`, o simplemente manejar casos más específicos a mano. Cada implementación tiene sus propias consideraciones, como la localización o el manejo de casos especiales (por ejemplo, apóstrofes en nombres como O'Malley).
+La biblioteca Apache Commons Lang ofrece una solución más elegante con el método `WordUtils.capitalizeFully()`, que maneja varios casos límite y delimitadores por ti:
 
-La implementación mostrada arriba se basa en manipulación simple de cadenas. Divide la cadena original en palabras utilizando el método `split` y luego procesa cada palabra individual. Es importante tratar adecuadamente caracteres no alfabéticos y prestar atención a la eficiencia si trabajas con textos muy grandes.
+```java
+// Añadir dependencia: org.apache.commons:commons-lang3:3.12.0
 
-## Ver También
+import org.apache.commons.text.WordUtils;
 
-- Documentación oficial de la clase `String` de Java: https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html
-- Apache Commons Lang `StringUtils`: https://commons.apache.org/proper/commons-lang/apidocs/org/apache/commons/lang3/StringUtils.html
-- Patrones de diseño para manipulación de cadenas: https://refactoring.guru/design-patterns/java
+public class CapitalizeString {
+    public static void main(String[] args) {
+        String text = "hello, world!";
+        String capitalizedText = WordUtils.capitalizeFully(text);
+        System.out.println(capitalizedText); // Salida: "Hello, World!"
+    }
+}
+```
+
+Para usar este método, necesitarás añadir la biblioteca Apache Commons Lang a tu proyecto. Este método de la biblioteca no solo capitaliza la primera letra de cada palabra sino que también convierte el resto de las letras en cada palabra a minúsculas, asegurando un patrón de capitalización consistente a lo largo de la cadena.

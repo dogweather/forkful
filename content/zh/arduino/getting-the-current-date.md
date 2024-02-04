@@ -1,29 +1,33 @@
 ---
 title:                "获取当前日期"
-date:                  2024-01-20T15:12:54.690352-07:00
+date:                  2024-02-03T19:08:46.106528-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "获取当前日期"
-
 tag:                  "Dates and Times"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/arduino/getting-the-current-date.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? 什么和为什么?
-获取当前日期是读取当前日历时间的过程。 程序员需要日期来跟踪事件、记录数据、执行定时任务。
+## 什么 & 为什么？
+在Arduino项目中获取当前日期涉及获取实时信息，这对于日志记录、时间戳或安排任务至关重要。程序员通常需要这个功能以增强功能性，确保数据的相关性，并在他们的IoT和嵌入式项目中促进与时间敏感的操作。
 
-## How to 如何操作:
-Arduino本身没有内建的时钟来得到日期。你需要一个外部的实时时钟(RTC)模块，比如DS3231。下面是如何使用它的示例。
+## 如何实现：
+Arduino本身没有内置的方法可以直接获取当前日期，因为它缺少实时时钟（RTC）。然而，可以使用外部RTC模块（如DS3231）和库（例如Adafruit开发的`RTClib`），这使得与这些模块的接口变得简单。
 
-```Arduino
+首先，确保`RTClib`库安装在你的Arduino IDE中。然后，根据其文档将你的RTC模块连接到Arduino。
+
+以下是一个简单的示例，帮助你开始：
+
+```cpp
 #include <Wire.h>
-#include <RTClib.h>
+#include "RTClib.h"
 
 RTC_DS3231 rtc;
 
 void setup() {
-  Wire.begin();
   Serial.begin(9600);
 
   if (!rtc.begin()) {
@@ -32,45 +36,30 @@ void setup() {
   }
 
   if (rtc.lostPower()) {
-    Serial.println("RTC失电，需要设置时间！");
-    // 当RTC失电时，使用下面的行来设置时间
+    Serial.println("RTC失去电源，让我们设置时间！");
+    // 当需要在新设备上设置时间或电源丢失后，你可以在这里设置时间。
     // rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
   }
 }
 
 void loop() {
   DateTime now = rtc.now();
-  
+
+  Serial.print("当前日期：");
   Serial.print(now.year(), DEC);
   Serial.print('/');
   Serial.print(now.month(), DEC);
   Serial.print('/');
-  Serial.print(now.day(), DEC);
-  Serial.print(" ");
-  Serial.print(now.hour(), DEC);
-  Serial.print(':');
-  Serial.print(now.minute(), DEC);
-  Serial.print(':');
-  Serial.print(now.second(), DEC);
-  Serial.println();
-  
-  delay(1000);
+  Serial.println(now.day(), DEC);
+
+  delay(3000); // 延迟3秒以减少串行垃圾
 }
 ```
 
-输出样例:
+示例输出（假设你的RTC之前已设置）：
+
 ```
-2023/9/17 15:45:32
+当前日期：2023/4/15
 ```
 
-## Deep Dive 深入了解:
-最早的微控制器没有内建的时钟，因此需要外部硬件来跟踪时间。RTC模块，例如DS3231，通常使用一个小型的硬币型电池，可以在主电源断开时继续运行。除了DS3231，还有其他许多RTC模块可供选择，例如DS1307或者更高精度的模块。
-
-RTC模块通过I2C总线与Arduino通信，这意味着只需要两个引脚（SDA和SCL）。RTClib库使得使用这些RTC模块更为简单，因为库封装了所有复杂的底层操作。
-
-除了使用RTC模块，你还可以通过网络获取时间，如使用NTP(Network Time Protocol)客户端。但这将会需要互联网连接并且相对复杂。
-
-## See Also 查看更多:
-1. [RTClib库文档](https://github.com/adafruit/RTClib)
-2. [DS3231产品手册](https://datasheets.maximintegrated.com/en/ds/DS3231.pdf)
-3. [I2C通信教程](https://www.arduino.cc/en/Tutorial/LibraryExamples/MasterReader)
+该代码初始化RTC模块，然后，在循环中，每3秒将当前日期获取并打印到串行监视器一次。请记住，`rtc.adjust(...)`这一行可以取消注释并修改，以最初或在其失去电力后设置RTC的日期和时间。

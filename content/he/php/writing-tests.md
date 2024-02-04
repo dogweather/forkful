@@ -1,58 +1,86 @@
 ---
 title:                "כתיבת בדיקות"
-date:                  2024-01-19
+date:                  2024-02-03T19:31:42.095142-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "כתיבת בדיקות"
-
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/php/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## מה ולמה?
-כתיבת בדיקות זה לבדוק שהקוד שלנו עובד כמתוכנן. מתכנתים עושים את זה כדי למצוא ולתקן באגים בצורה מסודרת ולהבטיח איכות ויציבות באפליקציה.
+כתיבת בדיקות בתכנות כוללת יצירה והרצת סקריפטים שמאמתים שהקוד מתנהג כצפוי תחת תנאים שונים. מתכנתים עושים זאת כדי להבטיח איכות, למנוע נסיגות, ולהקל על שיפוץ בטוח, שהוא קריטי לתחזוקת בסיס קוד בריא, מתפשט וחופשי מבאגים.
 
-## איך לעשות:
-בדוגמה הבאה נשתמש ב-PHPUnit - כלי פופולרי לבדיקות יחידה ב-PHP.
-
-התקנה:
+## איך לעשות זאת:
+### PHP ילידי – PHPUnit
+כלי שנמצא בשימוש נרחב לבדיקות ב-PHP הוא PHPUnit. ניתן להתקין אותו באמצעות Composer:
 ```bash
-composer require --dev phpunit/phpunit
+composer require --dev phpunit/phpunit ^9
 ```
 
-כתיבת בדיקה בסיסית:
-```PHP
-<?php
+#### כתיבת בדיקה פשוטה:
+צרו קובץ `CalculatorTest.php` בתיקייה `tests`:
+```php
 use PHPUnit\Framework\TestCase;
 
-class SampleTest extends TestCase
+// בהנחה שיש לכם מחלקת Calculator שמחברת מספרים
+class CalculatorTest extends TestCase
 {
-    // בדיקה שאחד ועוד אחד שווים שניים
-    public function testAddition()
+    public function testAdd()
     {
-        $this->assertEquals(2, 1 + 1);
+        $calculator = new Calculator();
+        $this->assertEquals(4, $calculator->add(2, 2));
     }
 }
 ```
-
-הרצת הבדיקות:
+הריצו את הבדיקות עם:
 ```bash
 ./vendor/bin/phpunit tests
 ```
 
-תוצאת הבדיקה:
+#### פלט דוגמה:
 ```
 PHPUnit 9.5.10 by Sebastian Bergmann and contributors.
 
 .                                                                   1 / 1 (100%)
 
+Time: 00:00.005, Memory: 6.00 MB
+
 OK (1 test, 1 assertion)
 ```
 
-## צלילה עמוקה:
-ב-2004 PHPUnit יצא לאור, והשפיע רבות על פיתוח ה-Testing culture ב-PHP. חלופות כוללות Codeception לאינטגרציה ואפשרויות UI, ו-PHPSpec ל-BDD. כאשר אתה כותב בדיקות, חשוב למקם את הבדיקה קרוב לתיקייה של הקוד שהיא בודקת ולהשתמש ב-naming convention שקל להבין.
+### ספריות של צד שלישי – Mockery
+לבדיקות מורכבות, כולל מזיוף אובייקטים, Mockery הוא בחירה פופולרית.
 
-## גם ראו:
-- הדוקומנטציה של PHPUnit: [PHPUnit Manual](https://phpunit.de/manual/current/en/index.html)
-- סדרת הדרכות ל-PHP Testing ב-YouTube: [PHP Testing Tutorials](https://www.youtube.com/playlist?list=PLfdtiltiRHWFsPxAGO-SVbCEvhSPHxS7w)
-- מאמר על הבדיקות ב-PHP בעבודה מול בסיסי נתונים: [Testing PHP with Databases](https://phpunit.de/manual/current/en/database.html)
+```bash
+composer require --dev mockery/mockery
+```
+
+#### אינטגרציה של Mockery עם PHPUnit:
+```php
+use PHPUnit\Framework\TestCase;
+use Mockery as m;
+
+class ServiceTest extends TestCase
+{
+    public function tearDown(): void
+    {
+        m::close();
+    }
+
+    public function testServiceCallsExternalService()
+    {
+        $externalServiceMock = m::mock(ExternalService::class);
+        $externalServiceMock->shouldReceive('process')->once()->andReturn('mocked result');
+
+        $service = new Service($externalServiceMock);
+        $result = $service->execute();
+
+        $this->assertEquals('mocked result', $result);
+    }
+}
+```
+להרצה, השתמשו באותה פקודת PHPUnit כמו לעיל. Mockery מאפשר אובייקטים דמויים ביטוייתיים וגמישים, מה שמקל על בדיקת אינטראקציות מורכבות בתוך היישום שלכם.

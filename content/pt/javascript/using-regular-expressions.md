@@ -1,43 +1,90 @@
 ---
-title:                "Utilizando expressões regulares"
-date:                  2024-01-19
-simple_title:         "Utilizando expressões regulares"
-
+title:                "Usando expressões regulares"
+date:                  2024-02-03T19:18:00.895562-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Usando expressões regulares"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/javascript/using-regular-expressions.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## O Que São & Por Que Usar?
+## O Que & Por Que?
 
-Expressões regulares são padrões usados para encontrar combinações de caracteres em strings. Programadores usam-nas para validação de dados, busca e substituição de texto e para tarefas de análise de texto mais complexas, devido à sua poderosa flexibilidade.
+Expressões regulares (regex) em JavaScript são padrões usados para combinar sequências de caracteres em strings. Programadores as usam para buscar, extrair e manipular texto, permitindo operações de processamento de string poderosas com um código conciso.
 
-## Como Fazer:
+## Como fazer:
+
+### Correspondência Básica
+
+Para começar, você pode criar um padrão de regex simples e usá-lo para encontrar correspondências em uma string. Aqui, vamos encontrar a palavra "codigo":
 
 ```javascript
-// Validando um email
-const validarEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-console.log(validarEmail("exemplo@dominio.com")); // true
-console.log(validarEmail("exemplo@dominio")); // false
-
-// Encontrando todos os números em uma string
-const numeros = "Os números 2, 42 e 789 estão aqui.";
-const regexNumeros = /\d+/g;
-const resultado = numeros.match(regexNumeros);
-console.log(resultado); // ["2", "42", "789"]
+const str = "Eu amo programar em JavaScript.";
+const pattern = /codigo/;
+const result = pattern.test(str);
+console.log(result); // true
 ```
 
-## Mergulho Profundo:
+### Usando `String.prototype.match()`
 
-Historicamente, as expressões regulares têm suas raízes na teoria dos autômatos e na linguística formal. Linguagens de programação modernas, como JavaScript, implementam expressões regulares compatíveis com a sintaxe introduzida pelo Perl, que popularizou seu uso.
+Para recuperar um array de correspondências:
 
-Alternativas às expressões regulares incluem o uso de métodos de string como `indexOf`, `split` e `replace`, mas estes são geralmente mais limitados e menos potentes para padrões complexos.
+```javascript
+const matches = str.match(/codigo/);
+console.log(matches[0]); // "codigo"
+console.log(matches.index); // 10
+```
 
-Quanto à implementação, JavaScript usa expressões regulares baseadas na biblioteca PCRE (Perl Compatible Regular Expressions). Uma expressão regular em JavaScript é um objeto `RegExp` que pode ser construído literalmente ou através de um construtor.
+### Busca Global
 
-## Veja Também:
+Para encontrar todas as correspondências, use a flag `g`:
 
-- MDN Web Docs sobre expressões regulares em JavaScript: [MDN RegExp](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Regular_Expressions)
-- Testador de expressões regulares online: [RegExr](https://regexr.com/)
-- Resumo de métodos e propriedades de `RegExp` no JavaScript: [JavaScript RegExp Reference](https://www.w3schools.com/jsref/jsref_obj_regexp.asp)
+```javascript
+const globalMatches = str.match(/o/g);
+console.log(globalMatches); // ["o", "o", "o"]
+```
+
+### Correspondência Insensível a Maiúsculas
+
+A flag `i` ignora o case:
+
+```javascript
+const caseInsensitiveMatch = "JavaScript é divertido".match(/javascript/i);
+console.log(caseInsensitiveMatch[0]); // "JavaScript"
+```
+
+### Substituindo Texto
+
+Use `String.prototype.replace()` para substituir partes da string:
+
+```javascript
+const newStr = "JavaScript é divertido".replace(/divertido/, "incrível");
+console.log(newStr); // "JavaScript é incrível"
+```
+
+### Usando Grupos
+
+Grupos podem capturar partes do padrão:
+
+```javascript
+const groupedPattern = /(\w+) é (\w+)/;
+const replaceWithGroups = "JavaScript é divertido".replace(groupedPattern, "$2 é $1");
+console.log(replaceWithGroups); // "divertido é JavaScript"
+```
+
+### Bibliotecas de Terceiros
+
+Embora as capacidades de regex integradas do JavaScript sejam poderosas, algumas tarefas podem ser simplificadas com bibliotecas como `XRegExp`. Ela oferece sintaxe e flags adicionais, tornando padrões complexos mais legíveis:
+
+```javascript
+// Exemplo da biblioteca XRegExp
+const XRegExp = require('xregexp');
+const str = "Gatos são fantásticos.";
+const unicodeWordMatch = XRegExp.match(str, XRegExp('\\p{L}+'), 'all');
+console.log(unicodeWordMatch); // ["Gatos", "são", "fantásticos"]
+```
+
+Este trecho demonstra o uso de `XRegExp` para combinar todas as palavras Unicode em uma string, mostrando a capacidade da biblioteca de lidar com conjuntos de caracteres estendidos além das capacidades integradas do JavaScript.

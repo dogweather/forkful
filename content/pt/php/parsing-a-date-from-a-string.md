@@ -1,76 +1,64 @@
 ---
 title:                "Analisando uma data a partir de uma string"
-date:                  2024-01-20T15:37:42.122604-07:00
+date:                  2024-02-03T19:14:51.193404-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Analisando uma data a partir de uma string"
-
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/php/parsing-a-date-from-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## O Que e Por Quê?
+## O que & Por quê?
 
-Em PHP, converter uma string para uma data é pegar um texto que representa uma data e hora e transformá-lo num objeto `DateTime`. Fazemos isso para poder manipular datas de forma mais precisa e flexível no nosso código.
+Analisar uma data a partir de uma string em PHP envolve converter um texto que representa uma data e/ou hora em um objeto `DateTime` do PHP ou outros formatos de data/hora. Isso é crucial para fins de validação, manipulação, armazenamento e apresentação de dados, especialmente ao trabalhar com entradas de usuários ou dados de fontes externas.
 
-## Como Fazer:
+## Como fazer:
 
-Comecemos com um exemplo básico. Vou usar a função `date_create_from_format` para converter uma string para uma data.
+A classe integrada `DateTime` do PHP fornece um conjunto poderoso de funções para analisar e trabalhar com datas. Você pode criar uma instância de `DateTime` a partir de uma string de data usando o construtor, e então formatá-la conforme necessário. Veja como:
 
-```PHP
-<?php
-$dataString = '25-03-2023';
-$dataObjeto = date_create_from_format('d-m-Y', $dataString);
-echo $dataObjeto->format('Y-m-d'); // Saída: 2023-03-25
-?>
+```php
+$dateString = "2023-04-25 15:30:00";
+$dateObject = new DateTime($dateString);
+
+echo $dateObject->format('Y-m-d H:i:s');
+// Saída: 2023-04-25 15:30:00
 ```
 
-Se recebermos uma data em formato ISO 8601, podemos usar a função `date_create`:
+Para lidar com strings que seguem formatos não padrão, você pode usar o método `createFromFormat`, que permite especificar o formato exato da data de entrada:
 
-```PHP
-<?php
-$dataIsoString = '2023-03-25T15:30:00';
-$dataObjetoIso = date_create($dataIsoString);
-echo $dataObjetoIso->format('Y-m-d H:i:s'); // Saída: 2023-03-25 15:30:00
-?>
+```php
+$dateString = "25-04-2023 3:30 PM";
+$dateObject = DateTime::createFromFormat('d-m-Y g:i A', $dateString);
+
+echo $dateObject->format('Y-m-d H:i:s');
+// Saída: 2023-04-25 15:30:00
 ```
 
-E se a coisa der errado? Vamos pegar os erros:
+Para análises mais complexas que podem não ser diretamente suportadas por `DateTime`, o PHP oferece a função `strtotime`, que tenta analisar qualquer descrição textual inglesa de data/hora em um timestamp Unix:
 
-```PHP
-<?php
-$dataStringErrada = '2023-02-30';
-$dataObjetoErrado = date_create_from_format('Y-m-d', $dataStringErrada);
-$erros = date_get_last_errors();
-if ($erros['warning_count'] > 0 || $erros['error_count'] > 0) {
-    print_r($erros);
-}
-?>
+```php
+$timestamp = strtotime("next Thursday");
+echo date('Y-m-d', $timestamp);
+// A saída variará dependendo da data atual, por exemplo, "2023-05-04"
 ```
 
-## Aprofundando:
+**Usando bibliotecas de terceiros:**
 
-A capacidade de interpretar strings de datas em PHP evoluiu bastante. Desde o PHP 5.2.0, temos a classe `DateTime`, que melhorou muito o trabalho com datas.
+Embora as funções integradas do PHP cubram uma ampla gama de casos de uso, às vezes você pode precisar de capacidades de análise mais sofisticadas. A biblioteca Carbon, uma extensão da classe DateTime do PHP, oferece um rico conjunto de recursos para manipulação de data/hora:
 
-Antes disso, estávamos limitados a funções como `strtotime()`, que, apesar de úteis, tinham as suas limitações e não forneciam a mesma flexibilidade ou recursos de internacionalização.
+```php
+require 'vendor/autoload.php';
 
-Existem outras formas de lidar com datas, como o objeto `IntlDateFormatter` da extensão `intl` para formatar e analisar datas de maneira localizada.
+use Carbon\Carbon;
 
-Na prática, quando tratamos de parsear datas, há muitas opções. Escolher a função depende do seu caso específico. Por exemplo:
+$dateString = "Tomorrow";
+$date = Carbon::parse($dateString);
 
-- `strtotime()` é útil para strings de datas em inglês e operações simples.
-- `DateTime::createFromFormat()` permite mais controle sobre o formato e é ideal quando você conhece o formato de entrada da data.
-- `IntlDateFormatter::parse()` é bom para projetos que exigem localização.
+echo $date->toDateTimeString();
+// A saída variará, por exemplo, "2023-04-26 00:00:00"
+```
 
-Coisas que você deveria saber:
-
-- O PHP assumirá o fuso horário configurado no servidor se você não especificar um.
-- Erros de parsing podem occur se o formato da data não combinar com a string fornecida.
-- Funções de data e hora são afetadas pelas configurações locais e regionais.
-
-## Veja Também:
-
-- Documentação oficial do PHP sobre `DateTime`: https://www.php.net/manual/pt_BR/class.datetime.php
-- Função `strtotime()`: https://www.php.net/manual/pt_BR/function.strtotime.php
-- Extensão `Intl` e classe `IntlDateFormatter`: https://www.php.net/manual/pt_BR/class.intldateformatter.php
-- A função `date_get_last_errors()`: https://www.php.net/manual/pt_BR/function.date-get-last-errors.php
+O método `parse` do Carbon pode lidar de forma inteligente com uma infinidade de formatos de data e hora, tornando-o uma ferramenta inestimável para aplicações que exigem uma funcionalidade de análise de data flexível.

@@ -1,52 +1,70 @@
 ---
 title:                "קבלת התאריך הנוכחי"
-date:                  2024-01-20T15:14:03.998868-07:00
+date:                  2024-02-03T19:10:11.974939-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "קבלת התאריך הנוכחי"
-
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/elixir/getting-the-current-date.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## מה ולמה?
-לקבל את התאריך הנוכחי זה פשוט לשאול את המחשב "איזה יום אנחנו?" זה מועיל במיוחד כשאתה רוצה לתייג יומנים, לבדוק זמנים או לתזמן משימות.
+קבלת התאריך הנוכחי ב-Elixir כוללת גישה למידע על התאריך והשעה של המערכת, משימה נפוצה עבור תיעוד, חותמת נתונים, או כל פונקציונליות שדורשת ידע על התאריך הנוכחי. הפעולה הזו חיונית ליצירת יישומים חכמים לזמן ולמשימות כמו יצירת דוחות או חותמות זמן ביישום אינטרנטי.
 
 ## איך לעשות:
-ב-Elixir, שימוש במודול `Date` יתן את התאריך הנוכחי כך:
+ספריית הסטנדרט של Elixir, דרך המודול `DateTime`, מאפשרת לאחזר את התאריך והשעה הנוכחיים. מאחר ש-Elixir רץ על JVM של Erlang (BEAM), הוא נכנס לתכונות הבסיסיות של Erlang לגבי פעולות של זמן.
 
-```Elixir
-today = Date.utc_today()
-IO.inspect(today)
+### שימוש בספריית הסטנדרט של Elixir
+Elixir מספקת את הפונקציה `DateTime.utc_now/0` כדי לקבל את התאריך והשעה הנוכחיים ב-UTC.
+
+```elixir
+current_datetime_utc = DateTime.utc_now()
+IO.inspect(current_datetime_utc)
 ```
 
-פלט לדוגמה:
+**פלט לדוגמה:**
 ```
-~D[2023-04-12]
-```
-
-אם אתה רוצה שעה ודקות:
-
-```Elixir
-time = DateTime.utc_now()
-IO.inspect(time)
+#DateTime<2023-05-04 15:00:00Z>
 ```
 
-פלט לדוגמה:
+כדי לקבל רק את התאריך הנוכחי, תוכל לחלץ את רכיבי השנה, החודש, והיום:
+
+```elixir
+{:ok, current_date} = Date.new(current_datetime_utc.year, current_datetime_utc.month, current_datetime_utc.day)
+IO.inspect(current_date)
 ```
-#DateTime<2023-04-12 15:30:45.123456Z>
+
+**פלט לדוגמה:**
+```
+~D[2023-05-04]
 ```
 
-## עומק הנושא
-בעבר, פונקציות זמן ותאריך לא היו חלק מ-Elixir עצמו, אלא דרך ספריות צד שלישי. עכשיו, עם מודולים כמו `Date` ו-`DateTime`, זה חלק מהשפה.
+### שימוש בספריית Timex
+עבור דרישות מורכבות יותר של תאריך-זמן, ניתן להשתמש בספרייה צד שלישי פופולרית בשם Timex. תחילה, הוסף את `Timex` לתלות ב-mix.exs שלך:
 
-דרך נוספת לקבל תאריך וזמן היא להשתמש בספריית Timex שמציעה יותר גמישות ואופציות.
+```elixir
+defp deps do
+  [
+    {:timex, "~> 3.7"}
+  ]
+end
+```
 
-על מנת להבין איך המערכת שומרת ומנהלת זמנים, חשוב לדעת על המושגים של UTC ו-Time Zones. Elixir משתמשת ב-UTC (`Coordinated Universal Time`) ברירת מחדל.
+לאחר התקנת התלות (`mix deps.get`), אתה יכול להשתמש ב-Timex כדי לקבל את התאריך הנוכחי:
 
-## ראה גם
-- [Elixir Date Documentation](https://hexdocs.pm/elixir/Date.html)
-- [Elixir DateTime Documentation](https://hexdocs.pm/elixir/DateTime.html)
-- [Timex Documentation](https://hexdocs.pm/timex/Timex.html)
-- [Understanding Date, Time, and Time Zones in Elixir](https://elixirschool.com/en/lessons/basics/date-time/)
-- [UTC and Time Zone in Elixir](https://hexdocs.pm/elixir/1.12/Time.html)
+```elixir
+current_date = Timex.today()
+IO.inspect(current_date)
+```
+
+**פלט לדוגמה:**
+```
+~D[2023-05-04]
+```
+
+Timex מציע פונקציות רבות למניפולציה של תאריך-זמן, הופכת אותה לתוספת חזקה ליישומי Elixir שלך במיוחד כאשר מתעסקים עם אזורי זמן, עיצוב ופירוק של תאריכים וזמנים.
+
+על ידי הבנה ושימוש ביכולות הטבעיות של Elixir ובספריית Timex, אתה יכול בקלות לעבוד עם תאריכים ושעות ביישומי Elixir שלך, מותאם אישית לצרכים של היישום שלך בדייקנות ובנוחות.

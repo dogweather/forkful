@@ -1,46 +1,75 @@
 ---
-title:                "Analyse av HTML"
-date:                  2024-01-20T15:30:45.295705-07:00
-simple_title:         "Analyse av HTML"
-
+title:                "Analysering av HTML"
+date:                  2024-02-03T19:12:14.751264-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Analysering av HTML"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/clojure/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Parsing HTML betyr å tolke og konvertere HTML-kode slik at data kan hentetes og manipuleres. Programmerere gjør dette for å skrape nettsider, trekke ut informasjon, eller migrere innhold til en annen plattform.
+## Hva og hvorfor?
 
-## How to:
-I Clojure kan du bruke `enlive` biblioteket for å enkelt parse HTML.
+Å tolke HTML i Clojure innebærer å programmelt trekke ut informasjon fra HTML-dokumenter. Programmerere gjør dette for å få tilgang til, manipulere eller overvåke webinnhold dynamisk, automatisere oppgaver eller mate data inn i applikasjoner.
 
-```Clojure
+## Hvordan:
+
+Clojure har ikke innebygd evne til å tolke HTML, men du kan utnytte Java-biblioteker eller Clojure-wrappere som `enlive` eller `hickory`. Her er hvordan du bruker begge:
+
+### Bruke Enlive:
+
+Enlive er et populært valg for HTML-tolkning og web-skrapping. Først, inkluder det i prosjektavhengighetene dine:
+
+```clojure
+[net.cgrand/enlive "1.1.6"]
+```
+
+Deretter kan du tolke og navigere i HTML slik:
+
+```clojure
 (require '[net.cgrand.enlive-html :as html])
 
-(defn fetch-titles [html-content]
-  (html/select (html/html-resource (java.io/StringReader. html-content))
-               [:title]))
-
-(let [html-content "<html><head><title>Hei, Norge!</title></head><body></body></html>"]
-  (println (:content (first (fetch-titles html-content)))))
+(let [doc (html/html-resource (java.net.URL. "http://example.com"))]
+  (html/select doc [:div.some-class]))
 ```
 
-Forventet resultat:
+Dette kodeutsnittet henter en HTML-side og velger alle `<div>`-elementer med klassen `some-class`.
 
+Utdata kan se slik ut:
+
+```clojure
+({:tag :div, :attrs {:class "some-class"}, :content ["Her er noe innhold."]})
 ```
-"Hei, Norge!"
+
+### Bruke Hickory:
+
+Hickory tilbyr en måte å tolke HTML på til et format som er lettere å jobbe med i Clojure. Legg Hickory til prosjektavhengighetene dine:
+
+```clojure
+[hickory "0.7.1"]
 ```
-Dette eksemplet henter ut innholdet i `<title>` tagger fra HTML-strengen.
 
-## Deep Dive
-HTML-parsing har en lang historie, tett knyttet til utviklingen av internett og behovet for datahøsting. I Clojure-miljøet har `enlive` lenge vært et sterk verktøy for parsing, men alternativer som `hickory` og `jsoup` (via Java interoperabilitet) finnes også.
+Her er et enkelt eksempel:
 
-Ved å benytte `enlive` kan du utnytte dens DSL (domain-specific language) for å peke på spesifikke HTML-elementer du er interessert i. Dette krever forståelse av CSS-selektorer og grundig kunnskap om HTML-strukturen du jobber med.
+```clojure
+(require '[hickory.core :as hickory]
+         '[hickory.select :as select])
 
-Interessant nok er parsing av HTML en ikke-triviell oppgave på grunn av "uren" HTML som ofte finnes i det virkelige liv, noe som fører til at parseren må være både tolerant og intelligent for å håndtere varierende kvaliteter på HTML-koden.
+;; Tolke HTML-en til Hickory-format
+(let [doc (hickory/parse "<html><body><div id='main'>Hei, verden!</div></body></html>")]
+  ;; Velg div-en med id 'main'
+  (select/select (select/id "main") doc))
+```
 
-## See Also
-- Enlive GitHub Repo: https://github.com/cgrand/enlive
-- ClojureDocs Enlive Examples: https://clojuredocs.org/net.cgrand.enlive-html
-- jsoup: https://jsoup.org/ (for Java interoperabilitet)
+Denne koden tolker en enkel HTML-streng og bruker en CSS-selektor for å finne en `div` med ID-en `main`.
+
+Eksempelutdata:
+
+```clojure
+[{:type :element, :tag :div, :attrs {:id "main"}, :content ["Hei, verden!"]}]
+```
+
+Både `enlive` og `hickory` tilbyr robuste løsninger for HTML-tolkning i Clojure, med `enlive` som fokuserer mer på templating og `hickory` som legger vekt på datatransformasjon.

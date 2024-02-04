@@ -1,70 +1,46 @@
 ---
-title:                "Maiuscolizzare una stringa"
-date:                  2024-01-19
-simple_title:         "Maiuscolizzare una stringa"
-
+title:                "Capitalizzare una stringa"
+date:                  2024-02-03T19:06:31.363892-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Capitalizzare una stringa"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/swift/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Capitalizzare una stringa significa convertire tutte le lettere in maiuscolo. I programmatori lo fanno per uniformare il testo, per enfasi o per confrontare stringhe in modo case-insensitive.
+## Cosa & Perché?
 
-## How to:
-Ecco come capitalizzare una stringa in Swift:
+Capitalizzare una stringa in Swift modifica la stringa data in modo che il suo primo carattere sia maiuscolo, e i caratteri rimanenti minuscoli. I programmatori fanno questo per scopi come la formattazione di nomi o frasi secondo regole grammaticali o standard dell'interfaccia utente.
 
-```Swift
-let fraseMinusc = "ciao mondo"
-let fraseMaiusc = fraseMinusc.uppercased()
-print(fraseMaiusc)
+## Come fare:
+
+Le strutture `String` di Swift vengono fornite con un paio di metodi integrati per manipolare il caso delle stringhe. Ecco alcuni approcci per capitalizzare le stringhe in Swift, inclusi l'uso di metodi standard e di librerie di terze parti se necessario.
+
+### Usando metodi integrati
+
+Per capitalizzare la prima lettera di una stringa e mettere in minuscolo il resto:
+
+```swift
+let myString = "hello, world"
+let capitalizedString = myString.prefix(1).uppercased() + myString.dropFirst().lowercased()
+print(capitalizedString) // Output: "Hello, world"
 ```
 
-Output:
-```
-CIAO MONDO
-```
+Per capitalizzare la prima lettera di ogni parola in una frase, puoi usare la proprietà `capitalized`:
 
-E un'esempio su come capitalizzare solo la prima lettera di ogni parola:
-
-```Swift
-let titolo = "benvenuti al tutorial swift"
-let titoloCapitalizzato = titolo.capitalized
-print(titoloCapitalizzato)
+```swift
+let sentence = "hello, world"
+let capitalizedSentence = sentence.capitalized
+print(capitalizedSentence) // Output: "Hello, World"
 ```
 
-Output:
-```
-Benvenuti Al Tutorial Swift
-```
+### Usando una libreria di terze parti
 
-## Deep Dive
-La capitalizzazione delle stringhe viene da lontano. Inizialmente utilizzata nei testi per distingue nomi propri, sigle, ecc., ora aiuta i programmatori a gestire l'input degli utenti e l'interfaccia utente. 
+Anche se la libreria standard di Swift è piuttosto completa, alcuni formati di capitalizzazione specifici potrebbero richiedere operazioni più complesse o possono essere semplificati utilizzando librerie di terze parti. Una delle più popolari per la manipolazione delle stringhe è SwiftRichString. (Nota: Assicurati sempre di includere le librerie di terze parti tramite Swift Package Manager, CocoaPods o Carthage, e di importarle nel tuo file.)
 
-Alternativamente, in Swift, potresti voler trasformare solo la prima lettera di una stringa in maiuscolo. Non c'è una funzione built-in per questo, quindi tocca a te:
+Prima, dovresti aggiungere `SwiftRichString` al tuo progetto. Una volta installato, puoi usarlo per eseguire varie operazioni sulle stringhe, includendo esigenze di capitalizzazione specifiche. Tuttavia, ad oggi, i metodi integrati di Swift coprono adeguatamente la maggior parte dei casi d'uso di capitalizzazione senza la necessità di librerie esterne solo per capitalizzare le stringhe.
 
-```Swift
-extension String {
-    func capitalizeFirstLetter() -> String {
-        return prefix(1).uppercased() + dropFirst()
-    }
-}
-
-let parola = "esempio"
-print(parola.capitalizeFirstLetter())
-```
-
-Output:
-```
-Esempio
-```
-
-Per quanto riguarda l'implementazione, `uppercased()` e `capitalized` sono metodi forniti da Swift sul tipo `String`. Usano regole specifiche di localizzazione (es. l'inglese usa maiuscole all'inizio di ogni parola nei titoli, l'italiano no).
-
-## See Also
-Per maggiori dettagli su come manipolare le stringhe in Swift:
-
-- La documentazione ufficiale di Swift sulle stringhe: [Swift String](https://developer.apple.com/documentation/swift/string)
-- Un'introduzione alla programmazione in Swift su: [Swift.org - Guided Tour](https://docs.swift.org/swift-book/GuidedTour/GuidedTour.html)
-- Informazioni aggiuntive sulle estensioni e personalizzazioni in Swift: [Swift String Customization](https://www.hackingwithswift.com/articles/58/swift-extensions-every-ios-developer-should-know)
+Fai sempre riferimento all'ultima documentazione della libreria per eventuali aggiornamenti o modifiche nei metodi.

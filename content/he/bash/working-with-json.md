@@ -1,49 +1,80 @@
 ---
 title:                "עבודה עם JSON"
-date:                  2024-01-19
+date:                  2024-02-03T19:21:56.661844-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "עבודה עם JSON"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/bash/working-with-json.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## מה ולמה?
-JSON הוא פורמט נתונים, פופולרי להחלפת מידע באינטרנט בזכות קריאותו ופשטותו. תכנתים משתמשים בו לשמירת קונפיגורציות, התקשורת עם API-ים ועוד.
+עבודה עם JSON בתכנות Bash כוללת פענוח, חילוץ ושינוי נתוני JSON ישירות משורת הפקודה. תכנתים לעיתים קרובות עושים זאת כדי לשלב באופן חלק סקריפטים עם ממשקי API של אתרי אינטרנט ותסדירי החלפת מידע מודרניים, הופך את הסקריפטינג של Bash לחזק ורלוונטי יותר באקוסיסטם שלוקח JSON בחשיבות רבה.
 
 ## איך לעשות:
-בשביל לעבוד עם JSON ב-Bash, נצטרך כלי כמו `jq`. הנה דוגמה פשוטה:
+Bash עצמו חסר יכולות פרסור JSON מובנות, אך `jq` הוא מעבד שורת פקודה JSON חזק שממלא את החסר. הנה איך להשתמש בו:
 
-```Bash
-echo '{"שם": "דני", "עיר": "תל אביב"}' | jq '.שם'
-```
+**קריאת קובץ JSON:**
 
-וזה יוציא:
-
-```
-"דני"
-```
-
-אפשר גם לשנות נתונים:
-
-```Bash
-echo '{"שם": "דני", "עיר": "תל אביב"}' | jq '.עיר = "ירושלים"'
-```
-
-זה יחזיר:
-
+דוגמה ל`data.json`:
 ```json
 {
-  "שם": "דני",
-  "עיר": "ירושלים"
+  "name": "Jane Doe",
+  "email": "jane@example.com",
+  "location": {
+    "city": "New York",
+    "country": "USA"
+  }
 }
 ```
 
-## צלילה עמוקה
-JSON נוצר בתחילת שנות ה-2000 כ- JavaScript Object Notation, אבל מהר מאוד הפך לעצמאי. חלק מהאלטרנטיבות כוללות XML ו-YAML, שכל אחד יש לו יתרונות וחסרונות משלו. ב-Bash, עבודה עם JSON דורשת לרוב כלים חיצוניים כמו `jq` כיוון שלא קיימת תמיכה ילידית לפרסור ויצירת JSON.
+לקרוא ולחלץ את השם מתוך הקובץ JSON:
+```bash
+jq '.name' data.json
+```
+פלט:
+```
+"Jane Doe"
+```
 
-## ראו גם
-- [jq Manual](https://stedolan.github.io/jq/manual/)
-- [Bash Scripting Cheatsheet](https://devhints.io/bash)
-- [JSON Introduction](https://www.w3schools.com/whatis/whatis_json.asp)
+**שינוי נתוני JSON:**
+
+עדכון העיר ל"Los Angeles" וכתיבה חוזרת לקובץ:
+```bash
+jq '.location.city = "Los Angeles"' data.json > temp.json && mv temp.json data.json
+```
+
+**פרסור JSON מתוך משתנה:**
+
+אם יש לך JSON במשתנה של Bash, `jq` יכול עדיין לעבד אותו:
+```bash
+json_string='{"name": "John Doe", "email": "john@example.com"}'
+echo $json_string | jq '.name'
+```
+פלט:
+```
+"John Doe"
+```
+
+**עבודה עם מערכים:**
+
+נתון מערך של פריטים בJSON:
+```json
+{
+  "items": ["apple", "banana", "cherry"]
+}
+```
+
+לחלץ את הפריט השני (האינדקסים מתחילים מ-0):
+```bash
+jq '.items[1]' data.json
+```
+פלט:
+```
+"banana"
+```
+
+לפעולות מורכבות וסינון נוסף, ל-`jq` יש מדריך מלא ומדריכים מקוונים, הופך אותו לכלי גמיש לכל הצרכים שלך ב-Bash/JSON.

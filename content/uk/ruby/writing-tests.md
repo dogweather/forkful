@@ -1,66 +1,89 @@
 ---
-title:                "Написання тестів"
-date:                  2024-01-19
-simple_title:         "Написання тестів"
-
+title:                "Письмо тестів"
+date:                  2024-02-03T19:32:33.853563-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Письмо тестів"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/ruby/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Що це таке & Навіщо?
-Тестування коду - це перевірка, щоб програма працювала правильно. Програмісти пишуть тести для виявлення помилок, гарантування якості та уникнення проблем у майбутньому.
+## Що та Чому?
+Тестування в Ruby полягає у перевірці того, що ваш код працює так, як очікується, в різних умовах. Програмісти пишуть тести, щоб забезпечити коректність, запобігти регресії та полегшити рефакторинг, прагнучи до розробки надійних та зручних у обслуговуванні додатків.
 
-## Як це зробити:
-```Ruby
-# Приклад простого тесту використовуючи RSpec
+## Як:
+Ruby має вбудовану бібліотеку під назвою `Test::Unit` для написання модульних тестів, упаковуючи практики тестування в прості структури. Однак, спільнота Ruby часто схиляється до використання сторонніх бібліотек, таких як RSpec та Minitest через їх підвищену виразність та гнучкість.
 
-# Встановити RSpec (у командному рядку):
-gem install rspec
+### Використання `Test::Unit`:
+```ruby
+require 'test/unit'
 
-# Spec файл
-# game_spec.rb
-require_relative 'game'
-
-describe Game do
-  it "scores a gutter game" do
-    game = Game.new
-    20.times { game.roll(0) }
-    expect(game.score).to eq(0)
+class CalculatorTest < Test::Unit::TestCase
+  def test_addition
+    result = 2 + 2
+    assert_equal 4, result
   end
 end
-
-# Код програми
-# game.rb
-class Game
-  def initialize
-    @score = 0
-  end
-
-  def roll(pins)
-    @score += pins
-  end
-
-  def score
-    @score
-  end
-end
-
-# Виконання тесту
-# В командному рядку:
-rspec game_spec.rb
-
-# Вивід
-# .
-#
-# Finished in 0.00276 seconds (files took 0.114 seconds to load)
-# 1 example, 0 failures
+```
+Запустіть ваш тестовий файл з терміналу, і ви повинні отримати результат, що вказує на успіх або невдачу тестів:
+```
+Loaded suite test_calculator
+Started
+.
+Finished in 0.001288 секунд.
+1 тест, 1 твердження, 0 несправностей, 0 помилок, 0 в очікуванні, 0 пропущено, 0 повідомлень
+100% пройдено
 ```
 
-## Поглиблений аналіз:
-Тестування коду - не новий тренд, воно стало частиною програмування з часів ранніх мов, таких як SUnit для Smalltalk. Альтернативами RSpec в Ruby можуть бути MiniTest, Test::Unit, або Cucumber для BDD. Деталі реалізації включають написання тестових сценаріїв, що імітують потенційні паттерни користувача та перевірка відповідності очікувань.
+### Використання RSpec:
+RSpec — популярний фреймворк для розробки на основі поведінки (BDD) для Ruby. Встановіть гем за допомогою команди `gem install rspec`, потім ініціалізуйте його у своєму проекті за допомогою `rspec --init`.
 
-## Дивіться також:
-- [RubyTapas: Free Screencasts about Ruby Testing](https://www.rubytapas.com/)
-- [RSpec GitHub repository](https://github.com/rspec/rspec)
+```ruby
+# calculator_spec.rb
+require_relative '../calculator'
+
+describe Calculator do
+  it 'правильно додає два числа' do
+    expect(Calculator.add(2, 2)).to eq(4)
+  end
+end
+```
+Запустіть тести з командою `rspec`. Приклад результату:
+```
+.
+
+Закінчено за 0.002 секунд (файли завантажувались 0.1секунд)
+1 приклад, 0 невдач
+```
+
+### Використання Minitest:
+Minitest надає повний набір можливостей для тестування, підтримуючи TDD, BDD, макетування та бенчмаркінг. Встановіть його за допомогою команди `gem install minitest` і використовуйте так:
+
+```ruby
+# test_calculator.rb
+require 'minitest/autorun'
+require_relative '../calculator'
+
+class CalculatorTest < Minitest::Test
+  def test_addition
+    assert_equal 4, Calculator.add(2, 2)
+  end
+end
+```
+
+Запустіть ваш тестовий файл безпосередньо або через задачу `rake`, налаштовану для minitest. Зразок результату:
+```
+Опції запуску: --seed 33407
+
+# Виконання:
+
+.
+
+Закінчено за 0.001027с, 974.5922 запусків/с, 974.5922 тверджень/с.
+1 запуск, 1 твердження, 0 несправностей, 0 помилок, 0 пропусків
+```
+
+Імплементуючи тести у ваших проектах на Ruby, використовуючи ці бібліотеки, ви дотримуєтесь найкращих практик, що призводить до створення більш надійних та зручних у обслуговуванні баз коду.

@@ -1,34 +1,105 @@
 ---
 title:                "Tekstitiedoston kirjoittaminen"
-date:                  2024-01-19
+date:                  2024-02-03T19:28:56.205256-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Tekstitiedoston kirjoittaminen"
-
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/lua/writing-a-text-file.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? - Mitä & Miksi?
-Tekstitiedosto kirjoittaminen tallentaa dataa tiedostoon. Ohjelmoijat tekevät tätä tiedon säilömiseen ja jakamiseen.
+## Mikä & Miksi?
 
-## How to: - Miten:
-```Lua
--- Tiedoston avaaminen kirjoitusmoodissa
-local tiedosto = io.open("esimerkki.txt", "w")
+Tekstitiedostoon kirjoittaminen Luassa tarkoittaa tiedoston luomista tai avaamista kirjoitustilassa ja sen jälkeen tiedosto-operaatioiden käyttämistä tekstin lisäämiseen. Tämä on perusoperaatio tehtävissä kuten lokitiedostojen kirjaaminen, datan tallennus tai konfiguraation hallinta, jonka avulla ohjelmat voivat tallentaa tietoa pysyvästi istuntojen välillä.
+
+## Kuinka:
+
+Luassa tiedostojen käsittely kirjoitusta varten on suoraviivaista. Tyypillisesti käytät `io.open()` -funktiota tiedoston avaamiseen (tai luomiseen), määritellen toimintatilan -- tässä tapauksessa `"w"` kirjoittamista varten. Jos tiedostoa ei ole olemassa, se luodaan; jos on, sen sisältö ylikirjoitetaan. On tärkeää sulkea tiedosto kirjoittamisen jälkeen, jotta tiedot tallentuvat kunnolla ja resurssit vapautetaan.
+
+Tässä on yksinkertainen esimerkki, joka kirjoittaa merkkijonon tiedostoon nimeltä "example.txt":
+
+```lua
+-- Tiedoston avaaminen kirjoitustilassa
+local file, err = io.open("example.txt", "w")
+
+-- Tarkistetaan virheet tiedostoa avattaessa
+if not file then
+    print("Tiedostoa ei voitu avata: ", err)
+    return
+end
+
+-- Teksti, joka kirjoitetaan tiedostoon
+local text = "Hei, Lua!"
 
 -- Tekstin kirjoittaminen tiedostoon
-tiedosto:write("Terve maailma!\n")
+file:write(text)
 
 -- Tiedoston sulkeminen
-tiedosto:close()
+file:close()
+
+print("Tiedosto kirjoitettu onnistuneesti.")
 ```
-Tämä luo `esimerkki.txt` tiedoston, joka sisältää tekstin "Terve maailma!".
 
-## Deep Dive - Syväsukellus
-Lua on käyttänyt tiedostojen käsittelyä versiosta 1.0, joka julkaistiin 1993. Vaihtoehtoisia tapoja sisältävät `io.popen` ulkoisia komentoja varten ja `io.tmpfile` väliaikaisten tiedostojen käsittelyyn. Kirjoitus suoritetaan puskuroituina operaatioina tehokkuuden vuoksi.
+**Esimerkkitulostus:**
+```
+Tiedosto kirjoitettu onnistuneesti.
+```
 
-## See Also - Katso Myös
-- Lua-ohjelmoinnin virallinen dokumentaatio: [www.lua.org/manual/](https://www.lua.org/manual/)
-- Lua File I/O - Tutoriaali: [www.tutorialspoint.com/lua/lua_file_io.htm](https://www.tutorialspoint.com/lua/lua_file_io.htm)
-- Stack Overflow - Lua-yhteisön kysymykset ja vastaukset: [stackoverflow.com/questions/tagged/lua](https://stackoverflow.com/questions/tagged/lua)
+**Useamman Rivin Kirjoittaminen:**
+
+Useamman rivin kirjoittaminen onnistuu käyttämällä `\n` uusille riveille tekstimerkkijonossasi tai kutsumalla `file:write` toistuvasti.
+
+```lua
+local lines = {
+    "Ensimmäinen rivi.",
+    "Toinen rivi.",
+    "Kolmas rivi."
+}
+
+local file = assert(io.open("multiple_lines.txt", "w"))
+
+for _, line in ipairs(lines) do
+    file:write(line, "\n")
+end
+
+file:close()
+
+print("Useita rivejä kirjoitettu onnistuneesti.")
+```
+
+**Esimerkkitulostus:**
+```
+Useita rivejä kirjoitettu onnistuneesti.
+```
+
+**Kolmannen Osapuolen Kirjastojen Käyttäminen:**
+
+Vaikka Luankin vakio kirjasto on varsin pätevä, monimutkaisempien tiedosto-operaatioiden kohdalla saatat harkita kolmannen osapuolen kirjaston, kuten *Penlightin*, käyttämistä. Penlight laajentaa Luan vakiotiedosto-operaatioita ja tarjoaa helpompia tapoja työskennellä tiedostojen ja hakemistojen kanssa.
+
+Penlightin asentamisen jälkeen voit kirjoittaa tiedostoon näin:
+
+```lua
+local pl = require "pl"
+local path = require "pl.path"
+local file = require "pl.file"
+
+-- Kirjoitettava teksti
+local text = "Hei, Penlight!"
+
+-- Penlightin käyttö tiedostoon kirjoittamiseen
+local result, err = file.write("hello_penlight.txt", text)
+
+if not result then
+    print("Virhe tiedoston kirjoittamisessa: ", err)
+else
+    print("Tiedosto kirjoitettu onnistuneesti Penlightin kanssa.")
+end
+```
+
+**Esimerkkitulostus:**
+```
+Tiedosto kirjoitettu onnistuneesti Penlightin kanssa.
+```

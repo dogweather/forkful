@@ -1,30 +1,35 @@
 ---
 title:                "테스트 작성하기"
-date:                  2024-01-19
+date:                  2024-02-03T19:30:17.734113-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "테스트 작성하기"
-
 tag:                  "Testing and Debugging"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/cpp/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (무엇이며, 왜?)
-테스트 작성은 코드가 의도한 대로 작동하는지 검증하는 과정입니다. 개발자는 버그를 줄이고, 코드 품질을 유지하며, 장기적으로 시간을 절약하기 위해 테스트를 합니다.
+## 무엇 & 왜?
 
-## How to: (방법)
-C++에서 테스트를 작성하는 한 가지 표준 방법은 Google Test 프레임워크를 사용하는 것입니다. 아래 예제 코드를 보세요:
+C++에서 테스트 작성은 코드베이스의 섹션들의 행동을 자동으로 검증하는 작고 독립적인 프로그램을 만드는 것을 포함합니다. 프로그래머들은 이 작업을 코드가 예상대로 작동하는지 확실히 하고, 회귀(즉, 새로운 변경사항이 기존 기능을 망가뜨리는 것)를 방지하며, 시간이 지나도 유지보수 가능한 코드베이스를 촉진하기 위해 이를 실시합니다.
 
-```c++
+## 방법:
+
+### Google Test 프레임워크 사용하기
+
+C++에서 테스트를 작성하기 위한 가장 인기 있는 제3자 라이브러리 중 하나는 Google Test입니다. 먼저, Google Test를 설치하고 프로젝트와 연결해야 합니다. 설정이 완료되면, 테스트 케이스 작성을 시작할 수 있습니다.
+
+```cpp
 #include <gtest/gtest.h>
 
-int Add(int a, int b) {
+int add(int a, int b) {
     return a + b;
 }
 
-TEST(AdditionTest, HandlesPositiveNumbers) {
-    EXPECT_EQ(7, Add(3, 4));
+TEST(TestSuiteName, TestName) {
+    EXPECT_EQ(3, add(1, 2));
 }
 
 int main(int argc, char **argv) {
@@ -32,26 +37,43 @@ int main(int argc, char **argv) {
     return RUN_ALL_TESTS();
 }
 ```
-컴파일 후 해당 테스트를 실행하면 다음과 같은 결과가 출력됩니다:
+
+코드를 파일에 저장하고, g++ 컴파일러를 사용하여 Google Test 라이브러리와 연결하여 컴파일합니다. 모든 설정이 정확히 이루어진다면, 결과 실행 파일을 실행하면 테스트가 실행되고, `add` 함수가 예상대로 작동한다면 다음과 같은 것을 볼 수 있습니다:
 
 ```
-[==========] Running 2 tests from 1 test case.
-[----------] Global test environment set-up.
-[----------] 2 tests from AdditionTest
-[ RUN      ] AdditionTest.HandlesPositiveNumbers
-[       OK ] AdditionTest.HandlesPositiveNumbers (0 ms)
-[----------] 2 tests from AdditionTest (0 ms total)
+[==========] 1개의 테스트 스위트에서 1개의 테스트가 실행되었습니다.
+[----------] 글로벌 테스트 환경 설정.
+[----------] TestSuiteName에서 1개의 테스트
+[ RUN      ] TestSuiteName.TestName
+[       OK ] TestSuiteName.TestName (0 ms)
+[----------] TestSuiteName에서 1개의 테스트 (총 0 ms)
 
-[----------] Global test environment tear-down
-[==========] 2 tests from 1 test case ran. (1 ms total)
-[  PASSED  ] 2 tests.
+[==========] 1개의 테스트 스위트에서 1개의 테스트가 실행되었습니다. (총 1 ms)
+[  PASSED  ] 1개의 테스트.
 ```
 
-## Deep Dive (심층 분석)
-테스트 작성 방법은 오래 전부터 중요했습니다. 초기에는 단순히 출력을 확인하는 방식이었지만, 지금은 TDD(Test-Driven Development) 같은 체계적인 접근 방식이 있습니다. Google Test는 C++의 여러 테스트 프레임워크 중 하나로, xUnit 아키텍처를 따르며 사용자에게 많은 기능을 제공합니다. 이외에도 Catch2, Boost.Test 등 다양한 대안이 존재합니다. 구현 세부 사항으로는 테스트 케이스, 테스트 스위트, 어설션 등이 있으며, 이들은 개발자가 보다 쉽게 코드를 검증할 수 있도록 돕습니다.
+### Catch2 사용하기
 
-## See Also (참고 자료)
-- [Google Test GitHub repository](https://github.com/google/googletest)
-- [Google Test official documentation](https://google.github.io/googletest/)
-- [Catch2 GitHub repository](https://github.com/catchorg/Catch2)
-- [Boost.Test Documentation](https://www.boost.org/doc/libs/1_75_0/libs/test/doc/html/index.html)
+C++을 위한 또 다른 인기 있는 테스트 프레임워크는 Catch2입니다. 이는 더 간단한 문법을 가지고 있으며, 보통 라이브러리에 대한 링크가 필요 없습니다(헤더 전용). Catch2를 사용하여 간단한 테스트를 작성하는 예는 다음과 같습니다:
+
+```cpp
+#define CATCH_CONFIG_MAIN  // 이것은 Catch에게 main()을 제공하라고 알립니다 - 이것은 하나의 cpp 파일에서만 수행하세요
+#include <catch.hpp>
+
+int multiply(int a, int b) {
+    return a * b;
+}
+
+TEST_CASE( "정수는 곱해진다", "[multiply]" ) {
+    REQUIRE( multiply(2, 3) == 6 );
+}
+```
+
+이 테스트를 컴파일하고 실행하면, Catch2는 테스트가 통과했는지 실패했는지를 나타내는 명확한 출력을 제공하며, 실패를 디버깅하는데 필요한 정보를 제공합니다:
+
+```
+===============================================================================
+모든 테스트가 통과했습니다 (1개의 테스트 케이스에서 1개의 주장)
+```
+
+이 예시들은 테스트 프레임워크를 C++ 개발 워크플로우에 통합하는 것이 코드의 신뢰성과 유지보수 가능성을 크게 향상시킬 수 있음을 보여줍니다.

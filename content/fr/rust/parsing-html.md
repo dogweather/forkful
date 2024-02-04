@@ -1,52 +1,63 @@
 ---
-title:                "Analyse syntaxique de HTML"
-date:                  2024-01-20T15:34:40.895770-07:00
-simple_title:         "Analyse syntaxique de HTML"
-
+title:                "Analyse Syntaxique du HTML"
+date:                  2024-02-03T19:12:56.048147-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Analyse Syntaxique du HTML"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/rust/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
-Le parsing HTML, c'est transformer le code HTML en structures de données utilisables en Rust. On le fait pour manipuler, extraire des données ou interagir avec le contenu web.
+
+Analyser du HTML en Rust consiste à extraire des données de documents HTML, ce qui est essentiel pour le web scraping, l'extraction de données ou la création de web crawlers. Les programmeurs font cela pour automatiser la collecte d'informations sur le web, analyser le contenu web ou migrer du contenu d'une plateforme à une autre.
 
 ## Comment faire :
-```Rust
+
+Pour analyser du HTML en Rust, vous utiliserez souvent le crate `scraper`, qui fournit une interface de haut niveau pour parcourir et manipuler des documents HTML.
+
+Premièrement, ajoutez `scraper` à votre `Cargo.toml` :
+
+```toml
+[dependencies]
+scraper = "0.12.0"
+```
+
+Ensuite, voici un exemple simple qui extrait toutes les URLs de lien d'une chaîne HTML donnée :
+
+```rust
+extern crate scraper;
+
 use scraper::{Html, Selector};
 
 fn main() {
-    // HTML example
     let html = r#"
-        <html>
-            <body>
-                <h1>Welcome to my website!</h1>
-                <p>Here is some text</p>
-            </body>
-        </html>
+    <html>
+    <body>
+        <a href="http://example.com/1">Lien 1</a>
+        <a href="http://example.com/2">Lien 2</a>
+    </body>
+    </html>
     "#;
 
-    // Parse the HTML
-    let parsed_html = Html::parse_document(&html);
+    let document = Html::parse_document(html);
+    let selector = Selector::parse("a").unwrap();
 
-    // Create a Selector
-    let selector = Selector::parse("h1").unwrap();
-
-    // Use the Selector to find the matching element and print its text
-    if let Some(element) = parsed_html.select(&selector).next() {
-        println!("Text in <h1>: {}", element.inner_html().trim()); // Prints: Welcome to my website!
+    for element in document.select(&selector) {
+        let link = element.value().attr("href").unwrap();
+        println!("Lien trouvé : {}", link);
     }
 }
 ```
 
-## Exploration en profondeur
-Historiquement, le parsing HTML a toujours été compliqué en raison de la nature nébuleuse des standards du web et des implémentations divergentes des navigateurs. Rust offre une façon sûre et performante de le faire grâce à des bibliothèques comme `scraper`. C'est important de se rappeler que le parsing de HTML peut être sujet aux erreurs à cause de malformations ou d'incompatibilités dans le code source HTML — s'attendre à et gérer les erreurs est essentiel.
+Sortie :
 
-Les alternatives populaires en Rust comprennent `html5ever` et `select`. `html5ever` est un parseur HTML conforme aux spécifications WHATWG, tandis que `select` est inspiré par `jQuery` et facilite la sélection des éléments du document. Choisir entre ces options dépend du niveau de contrôle et de précision souhaité par le développeur.
+```
+Lien trouvé : http://example.com/1
+Lien trouvé : http://example.com/2
+```
 
-Lors de la mise en œuvre, il est crucial de respecter la gestion efficace de la mémoire — une force de Rust — surtout lors du traitement de gros documents HTML. Les bibliothèques Rust pour le parsing HTML utilisent souvent une combinaison d'analyse lexique et syntaxique pour transformer le texte brut en une structure de données (comme une arborescence DOM).
-
-## Voir aussi
-- Rust documentation for web scraping: [https://docs.rs/scraper/](https://docs.rs/scraper/)
-- WHATWG HTML parsing spec: [https://html.spec.whatwg.org/multipage/parsing.html](https://html.spec.whatwg.org/multipage/parsing.html)
+Dans cet exemple, nous analysons un document HTML simple pour trouver tous les éléments `<a>` et extraire leurs attributs `href`, imprimant effectivement les URLs de tous les liens dans le document. La bibliothèque `scraper` simplifie l'analyse HTML et la sélection d'éléments spécifiques en utilisant les sélecteurs CSS, la rendant incontournable pour les tâches de web scraping en Rust.

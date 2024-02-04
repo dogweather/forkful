@@ -1,47 +1,65 @@
 ---
-title:                "Escrevendo no erro padrão"
-date:                  2024-01-19
-simple_title:         "Escrevendo no erro padrão"
-
+title:                "Escrevendo para o erro padrão"
+date:                  2024-02-03T19:34:06.891507-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Escrevendo para o erro padrão"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/powershell/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## O Que é & Porquê?
-Escrever no 'standard error' (stderr) é direcionar mensagens de erro para um stream específico, separando-as da saída padrão (stdout). Programadores fazem isso para diagnosticar problemas e permitir que usuários ou outros programas tratem erros de maneira apropriada.
+## O Que & Por Quê?
+
+Escrever para o erro padrão (stderr) no PowerShell envolve enviar mensagens de erro ou diagnósticos diretamente para o stream stderr, distinto do stream de saída padrão (stdout). Essa separação permite um controle mais preciso sobre a saída de um script, possibilitando aos desenvolvedores direcionar mensagens normais e de erro para destinos diferentes, o que é fundamental para o tratamento de erros e registro de logs.
 
 ## Como Fazer:
-```PowerShell
-# Escrevendo no stderr
-Write-Error "Este é um erro!"
 
-# Redirecionando stderr para um arquivo
-Write-Error "Este é um erro!" 2> errolog.txt
+O PowerShell simplifica o processo de escrever para stderr através do uso do cmdlet `Write-Error` ou direcionando a saída para o método `$host.ui.WriteErrorLine()`. No entanto, para a redireção direta de stderr, você pode preferir usar métodos .NET ou a redireção de descritor de arquivo oferecida pelo próprio PowerShell.
 
-# Capturando stderr em uma variável
-$erro = Write-Error "Este é um erro!" 2>&1
+**Exemplo 1:** Usando `Write-Error` para escrever uma mensagem de erro para stderr.
+
+```powershell
+Write-Error "Esta é uma mensagem de erro."
 ```
 
-Saída esperada na tela para o primeiro exemplo:
+Saída para stderr:
 ```
-Write-Error : Este é um erro!
-At line:1 char:1
-+ Write-Error "Este é um erro!"
-+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : NotSpecified: (:) [Write-Error], WriteErrorException
-    + FullyQualifiedErrorId : Microsoft.PowerShell.Commands.WriteErrorException
+Write-Error: Esta é uma mensagem de erro.
 ```
 
-No segundo exemplo, nenhum output é exibido na tela; a mensagem de erro é salva no arquivo `errolog.txt`.
+**Exemplo 2:** Usando `$host.ui.WriteErrorLine()` para escrita direta em stderr.
 
-No terceiro exemplo, o erro é capturado na variável `$erro` e mais nada é exibido na tela.
+```powershell
+$host.ui.WriteErrorLine("Escrita direta em stderr.")
+```
 
-## Aprofundando
-Historicamente, dividir a saída em streams dedicados (stdout e stderr) deriva de práticas de sistemas Unix para facilitar o processamento e filtragem de dados. Em PowerShell, `Write-Error` é um cmdlet específico para enviar mensagens de erro ao stderr, porém existem alternativas como `Throw` para exceções e `$host.ui.WriteErrorLine()` para um controle mais fino. Escrever para stderr é essencial em scripts que exigem uma separação clara entre conteúdo de saída (dados) e mensagens de erro para fins de log e análise.
+Saída para stderr:
+```
+Escrita direta em stderr.
+```
 
-## Veja Também
-- Documentação do PowerShell sobre `Write-Error`: https://docs.microsoft.com/pt-br/powershell/module/microsoft.powershell.utility/write-error
-- Guia sobre redirecionamento no PowerShell, incluindo stderr: https://docs.microsoft.com/pt-br/powershell/scripting/learn/deep-dives/everything-about-redirects
-- Informações sobre handling de erros no PowerShell: https://docs.microsoft.com/pt-br/powershell/scripting/learn/deep-dives/everything-about-exceptions-errors
+**Exemplo 3:** Usando métodos .NET para escrever em stderr.
+
+```powershell
+[Console]::Error.WriteLine("Usando método .NET para stderr")
+```
+
+Saída deste método:
+```
+Usando método .NET para stderr
+```
+
+**Exemplo 4:** Redirecionando a saída de erro usando o descritor de arquivo `2>`.
+
+Descritores de arquivos no PowerShell podem redirecionar diferentes streams. Para stderr, o descritor de arquivo é `2`. Aqui está um exemplo de redirecionamento de stderr para um arquivo chamado `error.log` enquanto executa um comando que gera um erro.
+
+```powershell
+Get-Item NonExistentFile.txt 2> error.log
+```
+
+Este exemplo não produz saída no console, mas gera um arquivo `error.log` no diretório atual contendo a mensagem de erro ao tentar acessar um arquivo que não existe.
+
+Concluindo, o PowerShell oferece múltiplos métodos para escrever e gerenciar efetivamente a saída de erro, permitindo estratégias sofisticadas de tratamento de erros e registro de logs em scripts e aplicações.

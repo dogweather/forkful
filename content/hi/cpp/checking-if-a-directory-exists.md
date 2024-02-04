@@ -1,58 +1,68 @@
 ---
-title:                "यह जांचना कि डायरेक्टरी मौजूद है या नहीं"
-date:                  2024-01-19
-simple_title:         "यह जांचना कि डायरेक्टरी मौजूद है या नहीं"
-
+title:                "डायरेक्टरी मौजूद है या नहीं, कैसे जांचें"
+date:                  2024-02-03T19:07:43.458291-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "डायरेक्टरी मौजूद है या नहीं, कैसे जांचें"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/cpp/checking-if-a-directory-exists.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (क्या और क्यों?)
+## क्या और क्यों?
+एक निर्देशिका के अस्तित्व की जाँच करना, इसका मतलब है किसी निश्चित पथ पर एक निर्देशिका के मौजूद होने का निर्धारण करना, उसके भीतर से फ़ाइलों को पढ़ने या उन पर लिखने जैसे क्रियाकलापों को करने से पूर्व। प्रोग्रामर इसे फ़ाइल संचालनों से संबंधित त्रुटियों से बचने के लिए करते हैं, इससे उनके अनुप्रयोगों में फ़ाइल कार्यों का संचालन अधिक सहज और विश्वसनीय बनता है।
 
-डायरेक्टरी की जाँच से मतलब है कि क्या एक निश्चित पाथ पर फोल्डर मौजूद है या नहीं का पता लगाना। प्रोग्रामर इसे इसलिए करते हैं ताकि वे सुनिश्चित कर सकें कि डेटा को सहेजने, खोलने या मोडिफाई करने से पहले वह डायरेक्टरी मौजूद हो।
+## कैसे करें:
+आधुनिक C++ (C++17 और उसके बाद) में, आप फ़ाइलसिस्टम लाइब्रेरी का उपयोग करके जाँच सकते हैं कि कोई निर्देशिका मौजूद है या नहीं। यह फ़ाइलसिस्टम संचालन, जिनमें निर्देशिका के अस्तित्व की जाँच शामिल है, को करने के लिए एक सरल और मानकीकृत तरीका प्रदान करता है।
 
-## How to: (कैसे करें:)
-
-```c++
+```cpp
 #include <iostream>
 #include <filesystem>
 
-int main() {
-    std::string directory_path = "/path/to/your/directory";
+namespace fs = std::filesystem;
 
-    // std::filesystem का उपयोग कर के डायरेक्टरी की जाँच करें
-    if (std::filesystem::exists(directory_path)) {
-        std::cout << "Directory exists: " << directory_path << std::endl;
+int main() {
+    const fs::path dirPath = "/path/to/directory";
+
+    if (fs::exists(dirPath) && fs::is_directory(dirPath)) {
+        std::cout << "निर्देशिका मौजूद है।" << std::endl;
     } else {
-        std::cout << "Directory does not exist: " << directory_path << std::endl;
+        std::cout << "निर्देशिका मौजूद नहीं है।" << std::endl;
     }
 
     return 0;
 }
 ```
-
-सैंपल आउटपुट:
-
+अगर निर्देशिका मौजूद है तो सैंपल आउटपुट:
 ```
-Directory exists: /path/to/your/directory
-```
-या
-```
-Directory does not exist: /path/to/your/directory
+निर्देशिका मौजूद है।
 ```
 
-## Deep Dive (गहराई से जानकारी):
+अगर निर्देशिका मौजूद नहीं है तो सैंपल आउटपुट:
+```
+निर्देशिका मौजूद नहीं है।
+```
 
-पहले, डायरेक्टरी की जाँच POSIX सिस्टम कॉल `stat` का उपयोग करके की जाती थी। लेकिन C++17 के बाद से, `std::filesystem` मॉड्यूल पेश किया गया जो फाइल सिस्टम ऑपरेशन को मानकीकृत करता है। इससे पोर्टेबल कोड लिखना आसान हो जाता है।
+जिन परियोजनाओं में अभी तक C++17 का उपयोग नहीं किया जा रहा है या अतिरिक्त विशेषताओं के लिए, बूस्ट फ़ाइलसिस्टम लाइब्रेरी एक लोकप्रिय तृतीय-पक्ष विकल्प है जो समान कार्यक्षमता प्रदान करती है।
 
-वैकल्पिक तरीके में बूस्ट फाइलसिस्टम लाइब्रेरी या `dirent.h` (POSIX स्पेसिफिक) शामिल हैं, पर `std::filesystem` का उपयोग करना ज्यादा सीधा और मानकीकृत है।
+```cpp
+#include <iostream>
+#include <boost/filesystem.hpp>
 
-डायरेक्टरी की जाँच का व्यवहार प्लेटफार्म पर निर्भर करता है, और यह व्यवहार एक्सेस परमीशन, फाइल सिस्टम की सुरक्षा सेटिंग्स, और सिम्लिंक्स के साथ विवर्तनिक हो सकता है। इसलिए, अच्छे प्रोग्राम को इन सब विचारों को महत्व देना चाहिए।
+namespace fs = boost::filesystem;
 
-## See Also (देखें भी):
+int main() {
+    const fs::path dirPath = "/path/to/directory";
 
-- [Filesystem library documentation](https://en.cppreference.com/w/cpp/filesystem)
-- [Boost.Filesystem Tutorial](https://www.boost.org/doc/libs/1_75_0/libs/filesystem/doc/tutorial.html)
-- [ISO C++ Standards Committee - Filesystem Technical Specification](https://isocpp.org/std/the-standard)
+    if (fs::exists(dirPath) && fs::is_directory(dirPath)) {
+        std::cout << "निर्देशिका मौजूद है।" << std::endl;
+    } else {
+        std::cout << "निर्देशिका मौजूद नहीं है।" << std::endl;
+    }
+
+    return 0;
+}
+```
+बूस्ट फ़ाइलसिस्टम का उपयोग करते हुए, आउटपुट C++17 फ़ाइलसिस्टम उदाहरण के समान होगा, निर्दिष्ट पथ पर निर्देशिका की मौजूदगी पर निर्भर करता है।

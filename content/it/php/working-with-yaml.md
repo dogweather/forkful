@@ -1,70 +1,129 @@
 ---
 title:                "Lavorare con YAML"
-date:                  2024-01-19
+date:                  2024-02-03T19:26:19.632344-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Lavorare con YAML"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/php/working-with-yaml.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-YAML è un formato per serializzare dati - pensa a un JSON ma più leggibile dall'uomo. I programmatori lo usano per configurazioni o dati strutturati semplici, perché è chiaro e facile da scrivere e leggere.
+## Cosa & Perché?
+
+YAML, acronimo di "YAML Ain't Markup Language", è un formato di serializzazione dei dati leggibile dall'uomo comunemente usato per i file di configurazione. I programmatori scelgono di utilizzare YAML per la sua semplicità e leggibilità, rendendolo un'ottima scelta per memorizzare impostazioni, parametri e persino strutture dati complesse in una forma facilmente gestibile.
 
 ## Come fare:
-PHP gestisce YAML con l'estensione 'yaml'; se non installata, usa `pecl install yaml`.
 
-```PHP
+PHP, nelle sue versioni attuali, non supporta l'analisi di YAML come parte della sua libreria standard. Il modo più diretto per lavorare con YAML in PHP è utilizzare il componente YAML di Symfony o l'estensione PECL `yaml`.
+
+### Utilizzando il Componente YAML di Symfony
+
+Prima di tutto, installa il componente YAML di Symfony tramite Composer:
+
+```bash
+composer require symfony/yaml
+```
+
+Poi, puoi analizzare e generare contenuti YAML come segue:
+
+```php
 <?php
-$yaml = <<<EOD
-primo: Primo elemento
-secondo:
-  - Lista
-  - Di
-  - Elementi
-EOD;
+require_once __DIR__.'/vendor/autoload.php';
 
-// Converti YAML in PHP Array
-$array = yaml_parse($yaml);
+use Symfony\Component\Yaml\Yaml;
+
+// Analisi YAML
+$yamlString = <<<YAML
+greet: Ciao, Mondo!
+framework:
+  name: Symfony
+  language: PHP
+YAML;
+
+$array = Yaml::parse($yamlString);
 print_r($array);
 
-// Output
+// Creazione di YAML da un array
+$array = [
+    'greet' => 'Ciao, YAML!',
+    'framework' => [
+        'name' => 'Symfony',
+        'language' => 'PHP',
+    ],
+];
+
+$yaml = Yaml::dump($array);
+echo $yaml;
+```
+
+Output di esempio durante l'analisi:
+
+```
 Array
 (
-    [primo] => Primo elemento
-    [secondo] => Array
+    [greet] => Ciao, Mondo!
+    [framework] => Array
         (
-            [0] => Lista
-            [1] => Di
-            [2] => Elementi
+            [name] => Symfony
+            [language] => PHP
         )
 
 )
+```
 
-// Converti Array PHP in YAML
+Output di esempio durante la generazione:
+
+```
+greet: Ciao, YAML!
+framework:
+    name: Symfony
+    language: PHP
+```
+
+### Utilizzando l'Estensione PECL `yaml`
+
+Se preferisci, o se i requisiti del tuo progetto lo consentono, l'estensione PECL può essere un altro modo efficiente per lavorare con YAML. Prima di tutto, assicurati che l'estensione sia installata:
+
+```bash
+pecl install yaml
+```
+
+Poi, abilitala nella tua configurazione `php.ini`:
+
+```ini
+extension=yaml.so
+```
+
+Ecco come analizzare ed emettere YAML:
+
+```php
+<?php
+
+// Analisi YAML
+$yamlString = <<<YAML
+greet: Ciao, Mondo!
+framework:
+  name: Symfony
+  language: PHP
+YAML;
+
+$array = yaml_parse($yamlString);
+print_r($array);
+
+// Creazione di YAML da un array
 $array = [
-    'primo' => 'Primo elemento',
-    'secondo' => ['Lista', 'Di', 'Elementi'],
+    'greet' => 'Ciao, YAML!',
+    'framework' => [
+        'name' => 'Symfony',
+        'language' => 'PHP',
+    ],
 ];
 
 $yaml = yaml_emit($array);
 echo $yaml;
-
-// Output
-primo: Primo elemento
-secondo:
-  - Lista
-  - Di
-  - Elementi
-
-?>
 ```
 
-## Approfondimenti
-Nato nei primi anni 2000, YAML stava per "Yet Another Markup Language", ma ora è "YAML Ain't Markup Language". Alternativa a XML e JSON, YAML è ottimo per la leggibilità umana ma attenzione a errori di indentazione. In PHP, usa `yaml_parse` per interpretare e `yaml_emit` per generare YAML; queste funzioni gestiscono rispettivamente la decodifica e la codifica dei tuoi dati.
-
-## Vedi Anche:
-- Documentazione ufficiale YAML: https://yaml.org
-- Estensione PHP YAML su PECL: https://pecl.php.net/package/yaml
-- Documentazione PHP per funzioni YAML: https://www.php.net/manual/en/book.yaml.php
+L'output sarà simile a quello del componente Symfony, illustrando il ruolo di YAML come ponte tra il formato leggibile dall'uomo e le strutture di array PHP, facilitando una configurazione e gestione dei dati più semplice.

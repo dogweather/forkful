@@ -1,56 +1,94 @@
 ---
-title:                "YAML-tiedostojen käsittely"
-date:                  2024-01-19
-simple_title:         "YAML-tiedostojen käsittely"
-
+title:                "Työskentely YAML:n kanssa"
+date:                  2024-02-03T19:25:45.352804-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Työskentely YAML:n kanssa"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/javascript/working-with-yaml.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-"Mitä & Miksi?"
-YAML on ihmisen luettava datan serialisointikieli, jota käytetään konfiguraatiotiedostoihin ja datan tallentamiseen. Ohjelmoijat käyttävät YAMLia sen selkeyden ja helpon luettavuuden vuoksi, mikä nopeuttaa ja yksinkertaistaa konfiguraatioiden hallintaa.
+## Mikä & Miksi?
 
-## How to:
-"Kuinka:"
-Javascript-kirjasto `js-yaml` on helppo tapa käsitellä YAML-tiedostoja. Tässä esimerkki kuinka luetaan ja muunnetaan YAML JavaScript-objektiksi.
+YAML, lyhenteenä ilmaisulle YAML Ain't Markup Language, on ihmisen luettavaa tietojen sarjallistamismuotoa. Ohjelmoijat käyttävät sitä usein konfiguraatiotiedostoissa ja tietojen vaihdossa kielten välillä sen yksinkertaisuuden ja luettavuuden vuoksi verrattuna JSONiin tai XML:ään.
+
+## Kuinka:
+
+JavaScriptissä YAMLin kanssa työskentely tapahtuu tyypillisesti käyttämällä kolmannen osapuolen kirjastoa, koska kieli ei sisällä sisäänrakennettua jäsentäjää YAMLille. Yksi suosituimmista kirjastoista tähän tarkoitukseen on `js-yaml`. Voit käyttää `js-yaml`ia jäsentämään YAMLia JavaScript-objekteiksi ja päinvastoin.
+
+Ensin sinun on asennettava `js-yaml`:
+
+```bash
+npm install js-yaml
+```
+
+Sitten, voit käyttää sitä projekteissasi. Näin voit ladata YAML-tiedoston ja jäsentää sen JavaScript-objektiksi:
 
 ```javascript
+// Vaadi js-yaml-moduuli
 const yaml = require('js-yaml');
 const fs   = require('fs');
 
+// Lataa YAML tiedostosta
 try {
-  // Lue YAML-tiedosto
-  const data = fs.readFileSync('config.yaml', 'utf8');
-  // Muunna YAML JavaScript-objektiksi
-  const config = yaml.load(data);
-  console.log(config);
+  const doc = yaml.load(fs.readFileSync('./config.yaml', 'utf8'));
+  console.log(doc);
 } catch (e) {
   console.error(e);
 }
 ```
-Jos `config.yaml` sisältää:
+
+Jos `config.yaml`-tiedostosi näyttää tältä:
+
 ```yaml
 version: 1
 services:
-  webapp:
-    image: "my-webapp:latest"
+  web:
+    image: "myapp/web:latest"
     ports:
-      - "8080:80"
-```
-Tulostus olisi:
-```json
-{ version: 1, services: { webapp: { image: 'my-webapp:latest', ports: [ '8080:80' ] } } }
+      - "5000:5000"
 ```
 
-## Deep Dive
-"Syväsukellus":
-YAML (YAML Ain't Markup Language) lanseerattiin 2001, ja se on kehittynyt yhdeksi suosituimmista konfiguraatiokieliä erityisesti DevOps-kulttuurissa. YAMLin vaihtoehtoja ovat JSON ja XML, jotka ovat myös laajasti käytettyjä datan serialisointikieliä. Yksi YAMLin implementaation erikoisuuksia on sen kyky käsitellä monimutkaisia datarakenteita, kuten listoja ja hajautustauluja, luonnollisella ja loogisella tavalla.
+Tulos on:
 
-## See Also
-"Näihin kannattaa tutustua myös":
-- YAML virallinen sivusto: https://yaml.org/
-- `js-yaml` GitHub-sivu: https://github.com/nodeca/js-yaml
-- YAML vs. JSON vertailu: https://phoenixnap.com/kb/yaml-vs-json-vs-xml
+```javascript
+{ version: 1,
+  services: 
+   { web: 
+      { image: 'myapp/web:latest',
+        ports: [ '5000:5000' ] } } }
+```
+
+Tehdäksesi päinvastaisen, muuntaaksesi JavaScript-objektin YAML-merkkijonoksi:
+
+```javascript
+const yaml = require('js-yaml');
+const obj = {
+  version: 1,
+  services: {
+    web: {
+      image: "myapp/web:latest",
+      ports: ["5000:5000"]
+    }
+  }
+};
+
+const yamlStr = yaml.dump(obj);
+console.log(yamlStr);
+```
+
+Tämä koodi tuottaa:
+
+```yaml
+version: 1
+services:
+  web:
+    image: myapp/web:latest
+    ports:
+      - '5000:5000'
+```
+
+Käyttämällä `js-yaml`ia, voit helposti integroida YAMLin jäsentämisen ja sarjallistamisen JavaScript-projekteihisi, parantamaan tiedon vaihtokelpoisuutta ja konfiguraationhallintaa.

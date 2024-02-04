@@ -1,50 +1,86 @@
 ---
 title:                "テストの作成"
-date:                  2024-01-19
+date:                  2024-02-03T19:31:26.447635-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "テストの作成"
-
 tag:                  "Testing and Debugging"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/php/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (テストの書き方とその理由)
-テストとは、プログラムが期待通りに動作することを保証するためのコードです。品質を保ち、将来の変更で不具合が起きないようにするため、プログラマはテストを書きます。
+## 何となぜ？
+プログラミングにおけるテストの記述とは、コードがさまざまな条件下で期待通りに動作することを確認するスクリプトを作成して実行することを指します。プログラマーは、品質を保証し、リグレッションを防止し、安全なリファクタリングを容易にするためにこれを行います。これは、健全でスケーラブルでバグのないコードベースを維持するために重要です。
 
-## How to: (やり方)
-PHPでテストを書くには、PHPUnitというツールを使うのが一般的です。以下は簡単なテストの例です。
+## 方法：
+### ネイティブPHP – PHPUnit
+PHPでのテストに広く使用されているツールはPHPUnitです。Composer経由でインストールします：
+```bash
+composer require --dev phpunit/phpunit ^9
+```
 
-```PHP
-<?php
+#### シンプルなテストの記述：
+`tests`ディレクトリに`CalculatorTest.php`ファイルを作成します：
+```php
 use PHPUnit\Framework\TestCase;
 
-class SampleTest extends TestCase
+// 数字を追加するCalculatorクラスがあると仮定します
+class CalculatorTest extends TestCase
 {
-    public function testAddition()
+    public function testAdd()
     {
-        $this->assertEquals(4, 2 + 2);
+        $calculator = new Calculator();
+        $this->assertEquals(4, $calculator->add(2, 2));
     }
 }
 ```
+テストを実行するには：
+```bash
+./vendor/bin/phpunit tests
+```
 
-実行結果:
-
+#### サンプル出力：
 ```
 PHPUnit 9.5.10 by Sebastian Bergmann and contributors.
 
 .                                                                   1 / 1 (100%)
 
-Time: 00:00.020, Memory: 6.00 MB
+Time: 00:00.005, Memory: 6.00 MB
 
 OK (1 test, 1 assertion)
 ```
 
-## Deep Dive (詳細情報)
-PHPUnitは2001年にSebastian Bergmannによって作成されました。代替手段には、BehatやPHPSpecなどが存在します。PHPUnitでは、アサーションを使用して期待値と実際の値を比較し、テストの結果を決定します。テスト駆動開発(TDD)やビヘイビア駆動開発(BDD)などのテスト方法論を利用する場合もあります。
+### サードパーティライブラリ – Mockery
+複雑なテスト、オブジェクトのモックを含む場合、Mockeryが人気の選択です。
 
-## See Also (関連情報)
-- [PHPUnit公式サイト](https://phpunit.de/)
-- [テスト駆動開発(TDD)](https://en.wikipedia.org/wiki/Test-driven_development)
-- [ビヘイビア駆動開発(BDD)](https://en.wikipedia.org/wiki/Behavior-driven_development)
+```bash
+composer require --dev mockery/mockery
+```
+
+#### PHPUnitとのMockeryの統合：
+```php
+use PHPUnit\Framework\TestCase;
+use Mockery as m;
+
+class ServiceTest extends TestCase
+{
+    public function tearDown(): void
+    {
+        m::close();
+    }
+
+    public function testServiceCallsExternalService()
+    {
+        $externalServiceMock = m::mock(ExternalService::class);
+        $externalServiceMock->shouldReceive('process')->once()->andReturn('mocked result');
+
+        $service = new Service($externalServiceMock);
+        $result = $service->execute();
+
+        $this->assertEquals('mocked result', $result);
+    }
+}
+```
+実行するには、上記と同じPHPUnitコマンドを使用します。Mockeryを使用すると、表現力豊かで柔軟なモックオブジェクトを利用でき、アプリケーション内の複雑な相互作用のテストが容易になります。

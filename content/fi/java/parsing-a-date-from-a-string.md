@@ -1,43 +1,70 @@
 ---
-title:                "Merkkijonosta päivämäärän jäsentäminen"
-date:                  2024-01-20T15:36:51.341190-07:00
-simple_title:         "Merkkijonosta päivämäärän jäsentäminen"
-
+title:                "Päivämäärän jäsennys merkkijonosta"
+date:                  2024-02-03T19:14:33.339772-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Päivämäärän jäsennys merkkijonosta"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/java/parsing-a-date-from-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Mitä & Miksi?)
-Päivämäärän jäsentäminen merkkijonosta tarkoittaa sen muuttamista ohjelmoinnissa käsiteltävään muotoon. Tämä on hyödyllistä, sillä se mahdollistaa päivämäärän vertaamisen, laskennan ja muotoilun ohjelmissa.
+## Mikä & Miksi?
+Päivämäärän jäsennys merkkijonosta tarkoittaa päivämäärän ja ajan tekstiesityksen muuntamista `Date`-objektiksi tai modernimmaksi `LocalDateTime`-objektiksi. Ohjelmoijat tekevät tämän manipuloidakseen, muotoillakseen, verratakseen tai tallentaakseen päivämääriä standardoidussa muodossa, mikä on ratkaisevan tärkeää sovelluksille, jotka vaativat päivämäärälaskelmia, validointia tai yhtenäistä kansainvälistämistä.
 
-## How to: (Kuinka tehdään:)
+## Kuinka:
+
+### Käyttäen `java.time` pakettia (Suositellaan Java 8:ssa ja myöhemmissä):
 ```java
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.time.format.DateTimeParseException;
 
-public class DateParser {
+public class PaivamaaranJasentaja {
     public static void main(String[] args) {
-        String dateString = "2023-04-05";
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        String paivamaaraMerkkijono = "2023-04-30";
+        DateTimeFormatter muotoilija = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        LocalDate paivamaara = LocalDate.parse(paivamaaraMerkkijono, muotoilija);
+        System.out.println(paivamaara); // Tuloste: 2023-04-30
+    }
+}
+```
 
+### Käyttäen `SimpleDateFormat` (Vanhempi Lähestymistapa):
+```java
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+public class PaivamaaranJasentaja {
+    public static void main(String[] args) {
+        String paivamaaraMerkkijono = "30/04/2023";
+        SimpleDateFormat muotoilija = new SimpleDateFormat("dd/MM/yyyy");
         try {
-            LocalDate date = LocalDate.parse(dateString, formatter);
-            System.out.println("Parsed date is: " + date);
-        } catch (DateTimeParseException e) {
-            System.out.println("Error parsing date: " + e.getMessage());
+            Date paivamaara = muotoilija.parse(paivamaaraMerkkijono);
+            System.out.println(paivamaara); // Tulosteen muoto riippuu järjestelmäsi oletusmuodosta
+        } catch (ParseException e) {
+            e.printStackTrace();
         }
     }
 }
 ```
-Tulostus: `Parsed date is: 2023-04-05`
 
-## Deep Dive (Syväsukellus)
-Aikaisemmin Java-ohjelmoijat käyttivät `SimpleDateFormat`-luokkaa päivämäärän jäsentämiseen, mutta se oli ongelmallinen monisäikeisissä ympäristöissä. Java 8 toi `DateTimeFormatter`:n, mikä on turvallisempi ja tehokkaampi. Vaihtoehtoja on muitakin, kuten Joda-Time-kirjasto, mutta se on nyt suurelta osin korvattu `java.time`-paketin myötä. Jäsentäessä tärkeää on määritellä oikea formaatti, jotta muunnos merkkijonosta päivämäärä-olioksi onnistuu.
+### Käyttäen Kolmannen Osapuolen Kirjastoja (esim., Joda-Time):
+Joda-Time on ollut merkittävä kolmannen osapuolen kirjasto, mutta on nyt ylläpitotilassa `java.time`-paketin käyttöönoton johdosta Java 8:ssa. Kuitenkin, niille, jotka käyttävät Java-versioita ennen 8:aa, Joda-Time on hyvä valinta.
+```java
+import org.joda.time.LocalDate;
+import org.joda.time.format.DateTimeFormat;
+import org.joda.time.format.DateTimeFormatter;
 
-## See Also (Katso Myös)
-- [DateTimeFormatter documentation](https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html)
-- [Java 8 Date and Time guide](https://www.oracle.com/technical-resources/articles/java/jf14-date-time.html)
-- [Joda-Time library](https://www.joda.org/joda-time/)
+public class PaivamaaranJasentaja {
+    public static void main(String[] args) {
+        String paivamaaraMerkkijono = "2023-04-30";
+        DateTimeFormatter muotoilija = DateTimeFormat.forPattern("yyyy-MM-dd");
+        LocalDate paivamaara = LocalDate.parse(paivamaaraMerkkijono, muotoilija);
+        System.out.println(paivamaara); // Tuloste: 2023-04-30
+    }
+}
+```
+Huomaa, että työskennellessäsi päivämäärien kanssa, ole aina tietoinen aikavyöhykkeen asetuksista, jos jäsennät tai muotoilet päivämäärä-aikoja eikä vain päivämääriä.

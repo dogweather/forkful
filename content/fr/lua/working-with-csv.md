@@ -1,58 +1,120 @@
 ---
-title:                "Manipulation des fichiers CSV"
-date:                  2024-01-19
-simple_title:         "Manipulation des fichiers CSV"
-
+title:                "Travailler avec CSV"
+date:                  2024-02-03T19:20:42.671643-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Travailler avec CSV"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/lua/working-with-csv.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Travailler avec CSV, c'est manipuler des données textuelles structurées comme une feuille de calcul, où chaque ligne est un enregistrement et chaque enregistrement est divisé par des virgules. Les programmeurs le font car c'est un format léger et universel pour l'échange de données.
+## Quoi & Pourquoi ?
 
-## How to:
-```Lua
--- Lire un fichier CSV
-local function lire_csv(fichier)
+Travailler avec des fichiers CSV (Comma-Separated Values ou Valeurs Séparées par des Virgules) implique de parser et de générer des données textuelles organisées en lignes et colonnes, en utilisant des virgules pour séparer les valeurs individuelles. Les programmeurs s'engagent souvent dans ce processus pour faciliter l'échange de données entre différentes applications, bases de données, ou pour des tâches de traitement et d'analyse de données, en raison du support généralisé et de la simplicité du CSV.
+
+## Comment faire :
+
+En Lua, travailler avec des fichiers CSV peut être abordé en utilisant les opérations de base d'entrée/sortie de fichiers fournies par le langage, sans nécessiter de bibliothèques externes pour des tâches simples. Pour des opérations plus complexes, comme la gestion de cas spéciaux (par exemple, des virgules dans les valeurs), il pourrait être bénéfique d'utiliser des bibliothèques tierces comme `lua-csv`.
+
+### Lire un fichier CSV
+Voici un exemple simple pour lire un fichier CSV ligne par ligne, en divisant chaque ligne en valeurs basées sur le séparateur de virgules.
+
+```lua
+function parseCSVLine(ligne)
     local resultat = {}
-    local file = io.open(fichier, "r")
-
-    for ligne in file:lines() do
-        table.insert(resultat, ligne:split(','))
+    local de = 1
+    local sep = ","
+    local champ
+    while true do
+        local debut, fin = string.find(ligne, sep, de)
+        if not debut then
+            table.insert(resultat, string.sub(ligne, de))
+            break
+        end
+        champ = string.sub(ligne, de, debut - 1)
+        table.insert(resultat, champ)
+        de = fin + 1
     end
-
-    file:close()
     return resultat
 end
 
--- Écrire dans un fichier CSV
-local function ecrire_csv(donnees, fichier)
-    local file = io.open(fichier, "w+")
-
-    for _, enreg in pairs(donnees) do
-        file:write(table.concat(enreg, ',') .. '\n')
+local fichier = io.open("exemple.csv", "r")
+for ligne in fichier:lines() do
+    local valeurs = parseCSVLine(ligne)
+    for i, v in ipairs(valeurs) do
+        print(i, v)
     end
-
-    file:close()
 end
+fichier:close()
+```
 
--- Utilisation
-local donnees = lire_csv("donnees.csv")
-ecrire_csv(donnees, "nouveau.csv")
+**Exemple de sortie** (pour un `exemple.csv` avec contenu "nom,âge\newlineJohn Doe,30\newlineJane Doe,32"):
+```
+1	nom
+2	âge
+1	John Doe
+2	30
+1	Jane Doe
+2	32
+```
 
--- Affichage des données
-for _, enreg in ipairs(donnees) do
-    print(table.concat(enreg, ', '))
+### Écrire un fichier CSV
+Pour générer un fichier CSV, il suffit de construire des chaînes avec des valeurs séparées par des virgules et de les écrire dans un fichier ligne par ligne.
+
+```lua
+local donnees = {
+    {"nom", "âge"},
+    {"John Doe", "30"},
+    {"Jane Doe", "32"}
+}
+
+local fichier = io.open("sortie.csv", "w")
+for _, v in ipairs(donnees) do
+    fichier:write(table.concat(v, ","), "\n")
+end
+fichier:close()
+```
+
+Cela créerait (ou écraserait) un fichier `sortie.csv` avec les données spécifiées.
+
+### Utiliser lua-csv
+Pour une gestion plus avancée des CSV, incluant le support des guillemets et des caractères d'échappement, la bibliothèque `lua-csv` est un choix robuste.
+
+Premièrement, installez-la en utilisant LuaRocks :
+```shell
+luarocks install lua-csv
+```
+
+Ensuite, lire un fichier CSV devient aussi simple que :
+
+```lua
+local csv = require("csv")
+
+-- Lire depuis un fichier
+for champs in csv.open("exemple.csv") do
+    for i, v in ipairs(champs) do
+        print(i, v)
+    end
 end
 ```
 
-## Deep Dive
+Et écrire dans un CSV avec des guillemets et échappements appropriés :
 
-Le format CSV existe depuis les premiers jours de l'informatique personnelle, servant de pont entre les tableurs et les bases de données. Des alternatives comme JSON et XML proposent plus d'expressivité, mais avec plus de lourdeur. En Lua, travailler avec CSV est direct grâce a `io` pour la lecture et écriture, et la manipulation de tables pour stocker des données.
+```lua
+local fichier = csv.open("sortie.csv", {write=true})
 
-## See Also
-- Documentation Lua `io`: https://www.lua.org/manual/5.4/manual.html#6.8
-- RFC 4180, la norme CSV: https://tools.ietf.org/html/rfc4180
-- Site Lua-users CSV pour des bibliothèques plus avancées : http://lua-users.org/wiki/CsvUtils
+local donnees = {
+    {"nom", "profession", "lieu"},
+    {"John Doe", "Ingénieur Logiciel", "New York, NY"},
+    {"Jane Doe", "Scientifique de Données", "\"San Francisco, CA\""}
+}
+
+for _, v in ipairs(donnees) do
+    fichier:write(v)
+end
+```
+
+Cette approche gère automatiquement les complexités telles que les virgules et guillemets à l'intérieur des valeurs.

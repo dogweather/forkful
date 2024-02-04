@@ -1,48 +1,76 @@
 ---
-title:                "문자열 대문자로 변환하기"
-date:                  2024-01-19
-simple_title:         "문자열 대문자로 변환하기"
-
+title:                "문자열 대문자화"
+date:                  2024-02-03T19:05:35.614286-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "문자열 대문자화"
 tag:                  "Strings"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/c-sharp/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (무엇이며, 왜?)
+## 무엇 & 왜?
+C#에서 문자열의 첫 글자를 대문자로 변경하는 것은, 그 문자가 이미 대문자가 아닌 경우 문자열의 첫 문자를 대문자로 변환하는 것을 포함합니다. 이러한 변경은 출력 형식 지정, 코딩 표준 강화 또는 사용자 인터페이스 텍스트의 가독성 향상에 중요할 수 있습니다.
 
-문자열을 대문자로 만든다는 것은 문자열 속 모든 글자를 대문자 형태로 변환하는 것을 말합니다. 프로그래머들은 일관성 있게 데이터를 표시하거나 사용자에게 보일 때 중요한 부분을 강조하기 위해 이를 사용합니다.
+## 방법:
+C#은 내장 메소드를 사용하여 문자열의 첫 글자를 대문자로 만드는 간단한 접근 방식을 제공합니다. 가장 간단한 방법은 이러한 메소드를 사용하여 문자열을 직접 수정하는 것입니다. 보다 복잡하거나 특정한 대문자화 규칙(예: 각 단어의 첫 글자를 대문자로 만드는 경우)에 대해서는 추가 라이브러리나 수동 방법이 필요할 수 있습니다. 아래 예제는 C#에서 다양한 방식으로 문자열의 첫 글자를 대문자로 만드는 방법을 보여줍니다.
 
-## How to: (어떻게 할까?)
+### 기본 대문자화:
+단어 또는 문장의 첫 글자를 대문자로 만들려면:
 
-C#에는 문자열을 대문자로 쉽게 바꿀 수 있는 메서드들이 있습니다. 예시를 통해 살펴봅시다.
+```csharp
+string originalString = "hello world";
+string capitalizedString = char.ToUpper(originalString[0]) + originalString.Substring(1);
+Console.WriteLine(capitalizedString); // 출력: "Hello world"
+```
 
-```C#
+### 각 단어의 첫 글자 대문자화:
+문자열의 각 단어의 첫 글자를 대문자로 만들기 위해, `System.Globalization` 네임스페이스에 있는 `TextInfo.ToTitleCase` 메소드를 사용할 수 있습니다:
+
+```csharp
+using System;
+using System.Globalization;
+
+string originalString = "hello world";
+TextInfo textInfo = CultureInfo.CurrentCulture.TextInfo;
+string capitalizedString = textInfo.ToTitleCase(originalString);
+Console.WriteLine(capitalizedString); // 출력: "Hello World"
+```
+
+참고: `ToTitleCase`는 나머지 글자의 대소문자를 변경하지 않고, 각 단어의 첫 글자만 대문자로 바꿉니다. 또한, 제목 규칙에 따른 특정 단어("and", "or", "of" 등)는 문화권 설정에 따라 대문자로 바뀌지 않을 수 있습니다.
+
+### 재사용성을 위한 확장 메소드 사용:
+대문자화 과정을 단순화하고 코드를 더 깨끗하고 재사용 가능하게 만들기 위해 `string` 클래스에 대한 확장 메소드를 만들 수 있습니다. 다음은 그러한 메소드를 생성하고 사용하는 방법입니다:
+
+```csharp
 using System;
 
-class CapitalizeString
+public static class StringExtensions
 {
-    static void Main()
+    public static string Capitalize(this string input)
     {
-        var example = "hello, world!";
-        var capitalizedExample = example.ToUpper();
-        Console.WriteLine(capitalizedExample);
+        if (string.IsNullOrEmpty(input))
+        {
+            return input;
+        }
+        return char.ToUpper(input[0]) + input.Substring(1);
+    }
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        string originalString = "hello world";
+        string capitalizedString = originalString.Capitalize();
+        Console.WriteLine(capitalizedString); // 출력: "Hello world"
     }
 }
 ```
 
-출력:
-```
-HELLO, WORLD!
-```
+이 확장 메소드 `Capitalize`는 네임스페이스 내의 모든 문자열 객체에서 호출할 수 있으며, C#에서 문자열 조작을 더 직관적이고 객체 지향적인 접근 방식으로 제공합니다.
 
-## Deep Dive (심층 분석)
-
-대문자 변환은 프로그래밍 언어가 발전하면서 도입되었습니다. C#의 경우 `.ToUpper()`는 간단하게 모든 소문자를 대문자로 변환해 줄 수 있는 메서드입니다. 이 메서드는 문화권과 관련된 문자에 대응하여 `.ToUpperInvariant()` 같은 대안도 제공합니다. 문자열을 대문자로 변환 시 내부적으로는 각 문자의 유니코드 값을 참조하여 대응하는 대문자로 매핑합니다.
-
-## See Also (참고 자료)
-
-- [Microsoft Documentation on ToUpper](https://docs.microsoft.com/en-us/dotnet/api/system.string.toupper)
-- [Microsoft Documentation on ToUpperInvariant](https://docs.microsoft.com/en-us/dotnet/api/system.string.toupperinvariant)
-- [Unicode Standard](https://home.unicode.org/)
+### 타사 라이브러리:
+C#의 표준 라이브러리는 문자열 또는 문자열 내 각 단어를 대문자로 만드는 작업에 대부분의 요구를 충족시키지만, 특정 전문 작업에는 Humanizer와 같은 타사 라이브러리가 도움이 될 수 있습니다. 그러나 문자열 또는 각 단어를 단순히 대문자로 만드는 작업의 경우, 표준 C# 메소드가 충분하고 효율적이므로 외부 의존성이 필요하지 않습니다.

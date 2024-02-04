@@ -1,41 +1,71 @@
 ---
 title:                "Pisanie testów"
-date:                  2024-01-19
+date:                  2024-02-03T19:29:36.706359-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Pisanie testów"
-
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/bash/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Testowanie kodu to proces sprawdzania, czy nasze skrypty działają poprawnie. Programiści testują, aby zapobiec błędom, oszczędzać czas i upewnić się, że nowe zmiany nie psują istniejących funkcji.
+## Co i dlaczego?
+Pisanie testów w Bashu obejmuje tworzenie skryptów testowych w celu weryfikacji funkcjonalności twoich skryptów Bash. Programiści przeprowadzają testy, aby upewnić się, że ich skrypty działają zgodnie z oczekiwaniami w różnych warunkach, wyławiając błędy i usterki przed wdrożeniem.
 
-## How to:
-Testowanie w Bashu często odbywa się przez porównanie oczekiwanego wyniku z tym, który zwraca skrypt. Użyj `test` albo nawiasów kwadratowych `[]`.
+## Jak to zrobić:
+Bash nie posiada wbudowanego frameworka do testowania, ale można pisać proste funkcje testowe. Dla bardziej zaawansowanego testowania popularne są narzędzia stron trzecich, takie jak `bats-core`.
 
-```Bash
-#!/bin/bash
-# test_example.sh
+### Podstawowy przykład testu w czystym Bashu:
+```bash
+function test_example_function {
+  result=$(your_function 'test_input')
+  expected_output="expected_output"
+  
+  if [[ "$result" == "$expected_output" ]]; then
+    echo "Test zakończony sukcesem."
+    return 0
+  else
+    echo "Test nieudany. Oczekiwano '$expected_output', otrzymano '$result'"
+    return 1
+  fi
+}
 
-expected_output="Hello, World!"
-actual_output=$(echo "Hello, World!")
-
-# Testowanie porównaniem stringów
-if [ "$expected_output" == "$actual_output" ]; then
-    echo "Test passed!"
-else
-    echo "Test failed!"
-fi
+# Wywołanie funkcji testowej
+test_example_function
+```
+Przykładowe wyjście:
+```
+Test zakończony sukcesem.
 ```
 
-Wykonanie skryptu wyświetli `Test passed!` jeśli test się powiedzie.
+### Używanie `bats-core` do testowania:
+Najpierw zainstaluj `bats-core`. Zwykle można to zrobić za pomocą menedżera pakietów lub klonując jego repozytorium.
 
-## Deep Dive
-W Bashu nie ma wbudowanego zaawansowanego frameworka testowego, ale istnieją narzędzia jak `shunit2` czy `bats` ułatwiające proces. Historia testowania w Bashu sięga jego początków, gdyż nawet proste skrypty potrzebują weryfikacji. Najprostsze formy to porównania wyników lub statusów wyjścia.
+Następnie napisz swoje testy w oddzielnych plikach `.bats`.
 
-## See Also
-- Bash Automated Testing System (BATS): https://github.com/bats-core/bats-core
-- shUnit2 - xUnit based unit testing for shell scripts: https://github.com/kward/shunit2
-- Bash guide for beginners: https://tldp.org/LDP/Bash-Beginners-Guide/html/
+```bash
+# Plik: example_function.bats
+
+#!/usr/bin/env bats
+
+@test "test przykładowej funkcji" {
+  result="$(your_function 'test_input')"
+  expected_output="expected_output"
+  
+  [ "$result" == "$expected_output" ]
+}
+```
+Aby uruchomić swoje testy, wystarczy wykonać plik `.bats`:
+```bash
+bats example_function.bats
+```
+Przykładowe wyjście:
+```
+ ✓ test przykładowej funkcji
+
+1 test, 0 porażek
+```
+
+To podejście pozwala na łatwe zintegrowanie testowania z twoim procesem tworzenia oprogramowania, zapewniając niezawodność i stabilność twoich skryptów Bash.

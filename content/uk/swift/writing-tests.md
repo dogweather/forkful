@@ -1,47 +1,64 @@
 ---
-title:                "Написання тестів"
-date:                  2024-01-19
-simple_title:         "Написання тестів"
-
+title:                "Письмо тестів"
+date:                  2024-02-03T19:32:37.176420-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Письмо тестів"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/swift/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Що та Чому?
-Тестування коду — це перевірка частин програми на коректність. Програмісти пишуть тести, щоб забезпечити надійність та якість коду, а також щоб уникнути помилок у майбутньому.
+## Що та чому?
+Написання тестів на Swift полягає у створенні та виконанні коду, що перевіряє коректність інших кодових одиниць у вашому застосунку. Програмісти роблять це, щоб забезпечити надійність, виявити помилки на ранніх стадіях розробки, та полегшити майбутній рефакторинг коду без непередбачених наслідків.
 
-## Як?
-```Swift
+## Як:
+Swift підтримує тестування через свій фреймворк XCTest, який інтегрований у Xcode. Ви можете написати модульні тести, щоб перевірити окремі частини вашого коду, наприклад, функцію, яка розраховує суму двох чисел.
+
+```swift
 import XCTest
-@testable import MyAwesomeApp
+@testable import YourApp
 
-class MyTests: XCTestCase {
+class YourAppTests: XCTestCase {
 
-    func testExample() {
-        let result = MyClass().multiplyNumbers(3, 5)
-        XCTAssertEqual(result, 15, "Multiplication should be 15")
-    }
-}
-
-class MyClass {
-    func multiplyNumbers(_ a: Int, _ b: Int) -> Int {
-        return a * b
+    func testSum() {
+        let result = Calculator().sum(a: 1, b: 2)
+        XCTAssertEqual(result, 3, "Функція суми не повернула очікуване значення.")
     }
 }
 ```
-Вихідні дані:
+
+Щоб запустити цей тест, зазвичай ви натискаєте Command-U у Xcode. Вивід у навігаторі тестів Xcode покаже, чи тест пройшов успішно чи ні.
+
+Наприклад, вивід успішного тесту:
 ```
-Test Suite 'MyTests' passed at 2023-03-21 18:36:24.824.
-        Executed 1 test, with 0 failures (0 unexpected) in 0.004 (0.006) seconds
+Test Case '-[YourAppTests testSum]' passed (0.005 секунд).
 ```
 
-## Поглиблений Розділ
-Тестування коду має довгу історію і пройшло еволюцію від простих перевірок до комплексних автоматизованих систем. Альтернативами до XCTest у Swift можуть бути Quick/Nimble, або зовнішні фреймворки, як Appium чи Calabash. Глибина і складність тестів може варіюватись від простих unit tests до комплексних UI та integration tests.
+Для більш розширених сценаріїв тестування ви можете використовувати сторонні бібліотеки, такі як Quick/Nimble, які пропонуют більш виразний синтаксис для написання тестів.
 
-## Додатково
-- [Swift Testing](https://swift.org/documentation/#the-swift-programming-language)
-- [XCTest Documentation](https://developer.apple.com/documentation/xctest)
-- [Про тестування від Apple](https://developer.apple.com/library/archive/documentation/DeveloperTools/Conceptual/testing_with_xcode/chapters/01-introduction.html)
-- [Quick/Nimble GitHub](https://github.com/Quick/Nimble)
+З Quick/Nimble, ви могли б написати той самий тест так:
+
+```swift
+// Додайте Quick та Nimble до вашого Swift package manager або використовуйте CocoaPods/Carthage для їх встановлення
+import Quick
+import Nimble
+@testable import YourApp
+
+class CalculatorSpec: QuickSpec {
+    override func spec() {
+        describe("Калькулятор") {
+            context("при сумуванні чисел") {
+                it("повинен повертати коректну суму") {
+                    let calculator = Calculator()
+                    expect(calculator.sum(a: 1, b: 2)).to(equal(3))
+                }
+            }
+        }
+    }
+}
+```
+
+Запуск цього тесту дасть вам подібний вивід у вашу консоль тестування чи журнал інструменту CI/CD, вказуючи, чи тест успішний чи ні, з більш зрозумілим форматом для опису тестів та очікувань.

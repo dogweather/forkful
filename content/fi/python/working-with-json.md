@@ -1,44 +1,149 @@
 ---
-title:                "JSON-tiedostojen käsittely"
-date:                  2024-01-19
-simple_title:         "JSON-tiedostojen käsittely"
-
+title:                "Työskentely JSON:n kanssa"
+date:                  2024-02-03T19:24:11.790279-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Työskentely JSON:n kanssa"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/python/working-with-json.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Mitä & Miksi?)
-JSON (JavaScript Object Notation) on helppolukuinen tiedonvaihtomuoto. Käytämme JSONia datan tallentamiseen ja verkon yli siirtämiseen koska se on kevyt ja kieliriippumaton.
+## Mikä ja miksi?
 
+Työskentely JSON-muotoisten merkkijonojen (JavaScript Object Notation) kanssa sisältää JSON-muotoisten merkkijonojen jäsentämisen Python-objekteiksi ja päinvastoin. Tämä on ratkaisevan tärkeää web- ja API-kehityksessä, koska JSON toimii yleiskielenä palvelinten ja asiakkaiden välisen datan vaihdossa.
 
-## How to: (Kuinka tehdä:)
-Pythonissa JSONin käsittely onnistuu `json` moduulilla. Lue ja kirjoita JSON dataa näin:
+## Kuinka:
 
-```Python
+Pythonin sisäänrakennettu `json`-kirjasto yksinkertaistaa enkoodausprosessia (Python-objektien muuntaminen JSON-muotoon) ja dekoodausta (JSONin muuntaminen Python-objekteiksi). Näin voit käyttää sitä:
+
+### Python-objektien enkoodaus JSON-muotoon:
+
+```python
 import json
 
-# JSON dataa string-muodossa
-json_data = '{"nimi": "Esa", "ika": 30, "onkoOhjelmoija": true}'
+data = {
+    "name": "John Doe",
+    "age": 30,
+    "isEmployee": True,
+    "addresses": [
+        {"city": "New York", "zipCode": "10001"},
+        {"city": "San Francisco", "zipCode": "94016"}
+    ]
+}
 
-# Muunnetaan JSON data Python objektiksi (deserialisointi)
-python_objekti = json.loads(json_data)
-print(python_objekti['nimi'])  # Tulostaa: Esa
-
-# Muunnetaan Python objekti JSON stringiksi (serialisointi)
-uusi_json_data = json.dumps(python_objekti, indent=4)
-print(uusi_json_data)
+json_string = json.dumps(data, indent=4)
+print(json_string)
 ```
 
+**Tuloste:**
 
-## Deep Dive (Syväsukellus)
-JSON kehitettiin 2000-luvun alussa helpottamaan tiedonsiirtoa. XML oli aiemmin suosiossa, mutta JSON on selkeästi yksinkertaisempi ja nopeampi. JSONin käsittelyssä on tärkeää muistaa, että datatyypit ja merkintätavat saattavat vaihdella hieman eri ohjelmointikielissä. Pythonissa esimerkiksi `true` on `True`, ja `-` ei ole sallittu muuttujan nimessä.
+```json
+{
+    "name": "John Doe",
+    "age": 30,
+    "isEmployee": true,
+    "addresses": [
+        {
+            "city": "New York",
+            "zipCode": "10001"
+        },
+        {
+            "city": "San Francisco",
+            "zipCode": "94016"
+        }
+    ]
+}
+```
 
-Natiivin `json` moduulin lisäksi voit käyttää muita kirjastoja kuten `ujson` tai `simplejson` tarvittaessa nopeampaa serialisointia tai erikoisominaisuuksia varten.
+### JSONin dekoodaus Python-objekteiksi:
 
+```python
+json_string = '''
+{
+    "name": "John Doe",
+    "age": 30,
+    "isEmployee": true,
+    "addresses": [
+        {
+            "city": "New York",
+            "zipCode": "10001"
+        },
+        {
+            "city": "San Francisco",
+            "zipCode": "94016"
+        }
+    ]
+}
+'''
 
-## See Also (Katso Myös)
-- Pythonin virallinen `json` moduulin dokumentaatio: https://docs.python.org/3/library/json.html
-- JSONin virallinen määrittely: https://www.json.org/json-en.html
-- W3Schools JSON opas: https://www.w3schools.com/js/js_json_intro.asp
+data = json.loads(json_string)
+print(data)
+```
+
+**Tuloste:**
+
+```python
+{
+    'name': 'John Doe', 
+    'age': 30, 
+    'isEmployee': True, 
+    'addresses': [
+        {'city': 'New York', 'zipCode': '10001'}, 
+        {'city': 'San Francisco', 'zipCode': '94016'}
+    ]
+}
+```
+
+### Kolmansien osapuolien kirjastojen käyttö:
+
+Monimutkaisemmissa JSON-käsittelyissä, kuten skeemavalidaatiossa tai JSON-tiedostojen jäsentämisessä suoraan URL-osoitteista, voi olla hyödyllistä käyttää kirjastoja kuten `requests` HTTP-pyyntöihin ja `jsonschema` validaatioon.
+
+#### Esimerkki `requests`-kirjaston kanssa JSONin jäsentämiseen URL:sta:
+
+```python
+import requests
+
+response = requests.get('https://api.example.com/data')
+data = response.json()
+
+print(data)
+```
+
+Tämä koodinpätkä noutaa JSON-dataa annetusta URL-osoitteesta ja muuntaa sen suoraan Python-objektiksi.
+
+#### `jsonschema`-kirjaston käyttö JSONin validaatioon:
+
+Asenna ensin kirjasto pip:n kautta:
+
+```bash
+pip install jsonschema
+```
+
+Käytä sitten seuraavasti:
+
+```python
+from jsonschema import validate
+import jsonschema
+
+schema = {
+    "type": "object",
+    "properties": {
+        "name": {"type": "string"},
+        "age": {"type": "number"},
+        "isEmployee": {"type": "boolean"},
+    },
+    "required": ["name", "age", "isEmployee"]
+}
+
+# Olettaen, että `data` on sanakirja, joka on saatu JSON-dekoodauksesta
+try:
+    validate(instance=data, schema=schema)
+    print("Validi JSON-data.")
+except jsonschema.exceptions.ValidationError as err:
+    print("Validaatiovirhe:", err)
+```
+
+Tässä esimerkissä validoidaan Python-sanakirjasi (joka on saatu JSON-datan dekoodauksesta) ennalta määritettyä skeemaa vasten, varmistetaan, että data vastaa odotettuja formaatteja ja tyyppejä.

@@ -1,48 +1,79 @@
 ---
-title:                "Tests schreiben"
-date:                  2024-01-19
-simple_title:         "Tests schreiben"
-
+title:                "Tests Schreiben"
+date:                  2024-02-03T19:30:37.210856-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Tests Schreiben"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/haskell/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Beim Programmieren sind Tests entscheidend, um sicherzustellen, dass Code korrekt funktioniert. Sie helfen dabei, Fehler frühzeitig zu erkennen und sorgen dafür, dass Änderungen nicht unbeabsichtigt andere Teile der Software stören.
 
-## How to:
-Installiere die `HUnit`-Testbibliothek mit `cabal install HUnit`. Schreibe dann einen einfachen Funktionstest:
+Tests in Haskell zu schreiben, dient dazu, sicherzustellen, dass Ihre Funktionen wie erwartet durch automatisierte Überprüfungen arbeiten. Entwickler tun dies, um frühzeitig Fehler zu finden, das Refactoring zu erleichtern und das Verhalten zu dokumentieren, was die Codebasis wartbarer und skalierbarer macht.
 
-```Haskell
-import Test.HUnit
+## Wie:
 
--- Eine einfache Funktion, die getestet wird
-addiere :: Int -> Int -> Int
-addiere x y = x + y
+Haskell unterstützt verschiedene Test-Frameworks, aber zwei beliebte sind `Hspec` und `QuickCheck`. Hspec ermöglicht es Ihnen, menschenlesbare Spezifikationen für Ihren Code zu definieren, während QuickCheck es Ihnen erlaubt, Tests automatisch zu generieren, indem Sie Eigenschaften beschreiben, die Ihr Code erfüllen sollte.
 
--- Ein Testfall für die Funktion
-testAddiere1 :: Test
-testAddiere1 = TestCase (assertEqual "Fuer (addiere 2 2)," 4 (addiere 2 2))
+### Hspec verwenden
 
--- Hauptfunktion, die alle Tests ausführt
-main :: IO Counts
-main = runTestTT testAddiere1
+Fügen Sie zuerst `hspec` zu Ihrer Build-Tool-Konfiguration hinzu (z.B. `stack.yaml` oder `cabal`-Datei). Importieren Sie dann `Test.Hspec` und schreiben Sie Tests als Spezifikationen:
 
+```haskell
+-- Datei: spec/MyLibSpec.hs
+import Test.Hspec
+import MyLib (add)
+
+main :: IO ()
+main = hspec $ describe "MyLib.add" $ do
+  it "addiert zwei Zahlen" $
+    add 1 2 `shouldBe` 3
+
+  it "gibt die erste Zahl zurück, wenn Null addiert wird" $
+    add 5 0 `shouldBe` 5
 ```
 
-Ausführen des Tests liefert:
+Führen Sie dann Ihre Tests mit Ihrem Build-Tool aus, was zu einer Ausgabe führen könnte, die so aussieht:
+
 ```
-Cases: 1  Tried: 1  Errors: 0  Failures: 0
-Counts {cases = 1, tried = 1, errors = 0, failures = 0}
+MyLib.add
+  - addiert zwei Zahlen
+  - gibt die erste Zahl zurück, wenn Null addiert wird
+
+Beendet in 0.0001 Sekunden
+2 Beispiele, 0 Fehler
 ```
 
-## Deep Dive
-HUnit ist inspiriert vom JUnit-Framework und ermöglicht das Schreiben von Unit-Tests in Haskell. Alternativen sind QuickCheck für Property-basiertes Testen und Tasty als Testframework, das verschiedene Testansätze integriert. Effektives Testen erfordert Verständnis der zu testenden Funktionen und deren Edge-Cases. Historisch gesehen hat Test-Driven Development (TDD), welches das Schreiben von Tests vor dem eigentlichen Code beinhaltet, zur Entwicklung robuster Software-Systeme beigetragen.
+### QuickCheck verwenden
 
-## See Also
-- [HUnit-Dokumentation](http://hackage.haskell.org/package/HUnit)
-- [QuickCheck auf Hackage](http://hackage.haskell.org/package/QuickCheck)
-- [Tasty auf Hackage](http://hackage.haskell.org/package/tasty)
-- [Ein Haskell Testing Tutorial](https://wiki.haskell.org/Testing)
+Mit QuickCheck drücken Sie Eigenschaften aus, die Ihre Funktionen erfüllen sollten. Fügen Sie `QuickCheck` zu Ihrer Projektkonfiguration hinzu und importieren Sie es:
+
+```haskell
+-- Datei: test/MyLibProperties.hs
+import Test.QuickCheck
+import MyLib (add)
+
+prop_addAssociative :: Int -> Int -> Int -> Bool
+prop_addAssociative x y z = x + (y + z) == (x + y) + z
+
+prop_addCommutative :: Int -> Int -> Bool
+prop_addCommutative x y = x + y == y + x
+
+main :: IO ()
+main = do
+  quickCheck prop_addAssociative
+  quickCheck prop_addCommutative
+```
+
+Das Ausführen dieser Tests generiert automatisch Eingaben, um die angegebenen Eigenschaften zu überprüfen:
+
+```
++++ OK, bestanden 100 Tests.
++++ OK, bestanden 100 Tests.
+```
+
+In beiden Beispielen, Hspec und QuickCheck, dienen die Test-Suiten als ausführbare Dokumentation, die die Korrektheit Ihres Codes automatisch überprüfen kann.

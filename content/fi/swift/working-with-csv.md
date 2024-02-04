@@ -1,67 +1,72 @@
 ---
-title:                "CSV-tiedostojen käsittely"
-date:                  2024-01-19
-simple_title:         "CSV-tiedostojen käsittely"
-
+title:                "Työskentely CSV:n kanssa"
+date:                  2024-02-03T19:22:05.648349-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Työskentely CSV:n kanssa"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/swift/working-with-csv.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Mikä & Miksi?
-CSV (Comma-Separated Values) on tiedostomuoto, joka tallentaa taulukollista tietoa, kuten Excelissä. Ohjelmoijat käyttävät CSV:tä, koska se on yksinkertainen, laajasti tuettu ja helppo vaihtaa eri ohjelmien välillä.
 
-## How to:
-Swiftissä CSV:n käsittely onnistuu helposti. Tässä perusesimerkki:
+CSV-tiedostoilla (Comma-Separated Values, pilkulla erotetut arvot) työskentely sisältää rakenteellisen datan jäsennyksen ja tuottamisen teksti-tiedostoista, joissa jokainen rivi edustaa merkintää ja jokainen merkintä koostuu pilkuilla erotetuista kentistä. Ohjelmoijat osallistuvat usein tähän toimintaan, jotta he voivat helposti tuoda, viedä ja manipuloida taulukkomuotoista dataa käyttämällä formaattia, joka on laajasti tuettu eri alustoilla sekä ohjelmointikielillä, johtuen sen yksinkertaisuudesta ja ihmislukuisesta muodosta.
 
-```Swift
-import Foundation
+## Kuinka:
 
-// Oletetaan, että `csvString` sisältää CSV-muotoista dataa
+Swiftissä ei ole natiivia tukea CSV-tiedostojen suoraan jäsentämiseen, mutta voit käsitellä CSV-dataa käyttämällä `String`-metodeja sisällön jakamiseen, tai hyödyntämällä kolmansien osapuolien kirjastoja, kuten SwiftCSV, saadaksesi sujuvamman lähestymistavan. Tässä ovat molemmat menetelmät:
+
+### Manuaalinen jäsentäminen ilman ulkoisia kirjastoja
+```swift
+// Harkitse yksinkertaista CSV-merkkijonoa
 let csvString = """
 name,age,city
-John Doe,29,Helsinki
-Jane Smith,34,Espoo
+John Doe,29,New York
+Jane Smith,34,Los Angeles
 """
 
-// Funktio CSV-datan muuntamiseen arrayksi dictionaryjä
-func parseCSV(contents: String) -> [[String: String]] {
-    var result: [[String: String]] = []
-    let rows = contents.components(separatedBy: "\n")
+// Jaetaan CSV-merkkijono riveihin
+let rows = csvString.components(separatedBy: "\n")
 
-    // Otetaan otsikkorivi
-    guard let headers = rows.first?.components(separatedBy: ",") else { return [] }
-    for row in rows.dropFirst() {
-        let columns = row.components(separatedBy: ",")
-        let entry = Dictionary(zip(headers, columns), uniquingKeysWith: { first, _ in first })
-        result.append(entry)
-    }
+// Otetaan avaimet ensimmäiseltä riviltä
+let keys = rows.first?.components(separatedBy: ",")
+
+// Iteroidaan rivien yli alkaen toisesta
+var result: [[String: String]] = []
+for row in rows.dropFirst() {
+    let values = row.components(separatedBy: ",")
+    let dict = Dictionary(uniqueKeysWithValues: zip(keys!, values))
+    result.append(dict)
+}
+
+// Näyte tulos
+print(result)
+// Tuloste: [{"city": "New York", "age": "29", "name": "John Doe"}, {"city": "Los Angeles", "age": "34", "name": "Jane Smith"}]
+```
+Tämä lähestymistapa on suoraviivainen, mutta puuttuu robustiutta, erityisesti CSV-tiedostojen kanssa, jotka sisältävät erikoistapauksia kuten pilkkuja arvoissa, rivinvaihtoja kentissä jne.
+
+### Käyttäen SwiftCSV-kirjastoa
+Lisää ensin SwiftCSV projektiisi sisällyttämällä se `Package.swift`-riippuvuuksiisi:
+```swift
+.package(url: "https://github.com/swiftcsv/SwiftCSV.git", from: "0.5.6")
+```
+Sen jälkeen, tuo ja käytä sitä seuraavasti:
+```swift
+import SwiftCSV
+
+// Oletetaan, että `csvString` on määritelty yllä
+
+// Luo CSV-objekti
+if let csv = try? CSV(string: csvString) {
+    // Pääsy rivit sanakirjoina
+    let rows = csv.namedRows
     
-    return result
-}
-
-// CSV-datan käsittely ja tulostaminen
-let parsedData = parseCSV(contents: csvString)
-for user in parsedData {
-    print("Name: \(user["name"] ?? ""), Age: \(user["age"] ?? ""), City: \(user["city"] ?? "")")
+    // Näyte tulos
+    print(rows)
+    // Tuloste: [{"city": "New York", "age": "29", "name": "John Doe"}, {"city": "Los Angeles", "age": "34", "name": "Jane Smith"}]
 }
 ```
-
-Sample output:
-```
-Name: John Doe, Age: 29, City: Helsinki
-Name: Jane Smith, Age: 34, City: Espoo
-```
-
-## Deep Dive
-CSV on syntynyt 1970-luvulla ja on siitä lähtien toiminut yksinkertaisena tapana tallentaa taulukollista tietoa. Vaikka se ei tue tietotyyppejä eikä monitahoista rakennetta, sen yksinkertaisuus tekee siitä ihanteellisen suurien datamäärien nopeaan siirtämiseen. JSON ja XML ovat monipuolisempia vaihtoehtoja, mutta eivät yhtä kevyitä. CSV:n käsittely Swiftissä edellyttää tiedon erottelua ja muuntamista käsiteltävään muotoon, mutta se on suoraviivaista, kuten koodiesimerkissä nähty.
-
-## See Also
-Lisätietoja ja resursseja Swiftin ja CSV:n käsittelystä:
-
-- Swift Standard Library: https://developer.apple.com/documentation/swift
-- CSV:n erottimien käsittely: https://en.wikipedia.org/wiki/Comma-separated_values
-- Swiftin tiedostonkäsittely: https://developer.apple.com/documentation/foundation/filemanager
-
-Tarkempaa tietoa saat tutustumalla Swiftin dokumentaatioon ja CSV-formaatin standardiin.
+SwiftCSV yksinkertaistaa jäsentämistä automaattisesti käsittelemällä vivahteita kuten kapseloidut pilkut, rivinvaihdot kentissä ja merkistökoodauksen. Muista kuitenkin käsitellä mahdollisia virheitä todellisissa sovelluksissa, erityisesti kun käsitellään ulkoisia datalähteitä.

@@ -1,52 +1,53 @@
 ---
-title:                "Maiuscolizzare una stringa"
-date:                  2024-01-19
-simple_title:         "Maiuscolizzare una stringa"
-
+title:                "Capitalizzare una stringa"
+date:                  2024-02-03T19:04:56.378902-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Capitalizzare una stringa"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/arduino/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Capitalizzare una stringa significa convertire ogni lettera minuscola in maiuscola. Si fa per uniformità, per esempio, nei titoli o quando si confrontano stringhe senza considerare il maiuscolo o minuscolo.
+## Cos'è & Perché?
+Capitalizzare una stringa implica convertire il primo carattere di ogni parola in una stringa in maiuscolo, assicurando che il resto rimanga in minuscolo. Questa operazione è comune nella formattazione dei dati e nella normalizzazione dell'input dell'utente per mantenere la coerenza e migliorare la leggibilità.
 
-## How to:
-Utilizza la funzione `toUpperCase()` per capitalizzare una stringa in Arduino. Ecco un esempio semplice:
+## Come fare:
+Arduino, principalmente noto per l'interazione con l'hardware, include anche capacità di base di manipolazione delle stringhe attraverso il suo oggetto `String`. Tuttavia, manca di una funzione `capitalize` diretta vista nei linguaggi di livello superiore. Quindi, implementiamo la capitalizzazione iterando su una stringa e applicando trasformazioni di maiuscolo/minuscolo.
 
-```arduino
+Ecco un esempio base senza utilizzare librerie di terze parti:
+
+```cpp
+String capitalizeString(String input) {
+  if (input.length() == 0) {
+    return ""; // Restituisce una stringa vuota se l'input è vuoto
+  }
+  input.toLowerCase(); // Converti l'intera stringa in minuscolo all'inizio
+  input.setCharAt(0, input.charAt(0) - 32); // Capitalizza il primo carattere
+  
+  // Capitalizza le lettere che seguono uno spazio
+  for (int i = 1; i < input.length(); i++) {
+    if (input.charAt(i - 1) == ' ') {
+      input.setCharAt(i, input.charAt(i) - 32);
+    }
+  }
+  return input;
+}
+
 void setup() {
-  // Avvio della comunicazione seriale
   Serial.begin(9600);
-  
-  // La tua stringa
-  String miaStringa = "Ciao mondo!";
-  
-  // Capitalizzazione
-  miaStringa.toUpperCase();
-  
-  // Stampa il risultato
-  Serial.println(miaStringa);
+  String testStr = "hello arduino world";
+  String capitalizedStr = capitalizeString(testStr);
+  Serial.println(capitalizedStr); // Output: "Hello Arduino World"
 }
 
 void loop() {
-  // Qui non mettiamo nulla per ora
+  // Ciclo vuoto
 }
 ```
 
-Output:
-```
-CIAO MONDO!
-```
+Questo frammento di codice definisce una funzione `capitalizeString` che prima converte l'intera stringa in minuscolo per standardizzare il suo caso. Poi capitalizza il primo carattere e qualsiasi carattere che segue uno spazio, capitalizzando efficacemente ogni parola nella stringa di input. Notare che questa implementazione rudimentale assume la codifica dei caratteri ASCII e potrebbe necessitare di aggiustamenti per un pieno supporto Unicode.
 
-## Deep Dive
-La funzione `toUpperCase()` è stata introdotta per semplificare la manipolazione di stringhe. Prima, si doveva iterare ogni carattere convertendolo manualmente.
-
-Le alternative includono l'uso di array di char e manipolare i codici ASCII, o l'uso di librerie esterne che offrono più funzionalità.
-
-L'implementazione interna di `toUpperCase()` lavora direttamente sui buffer dei caratteri della stringa, evitando la creazione di nuove stringhe e risparmiando memoria.
-
-## See Also
-- Documentazione di Arduino su String: https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/
-- Tutorial sulla gestione delle stringhe in Arduino: https://www.arduino.cc/en/Tutorial/BuiltInExamples/StringExamples
+Attualmente, non ci sono librerie di terze parti ampiamente adottate specificamente per la manipolazione delle stringhe nell'ecosistema Arduino, principalmente a causa del suo focus sull'interazione hardware e sull'efficienza. Tuttavia, l'esempio fornito è un modo semplice per ottenere la capitalizzazione delle stringhe all'interno dell'ambiente di programmazione di Arduino.

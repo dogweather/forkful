@@ -1,46 +1,72 @@
 ---
-title:                "Använda reguljära uttryck"
-date:                  2024-01-19
-simple_title:         "Använda reguljära uttryck"
-
+title:                "Att använda reguljära uttryck"
+date:                  2024-02-03T19:16:41.169308-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Att använda reguljära uttryck"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/elm/using-regular-expressions.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Reguljära uttryck är mönster för strängmatchning. Programmerare använder dem för att söka, ersätta och validera textdata snabbt.
+Reguljära uttryck (regex) inom programmering är mönster som används för att matcha teckenkombinationer i strängar. I Elm, precis som i andra språk, använder programmerare regex för uppgifter som att validera inmatning, söka och ersätta text inom strängar på grund av deras flexibilitet och effektivitet.
 
-## Steg för steg:
-Elm erbjuder inte inbyggt stöd för reguljära uttryck, men vi kan använda `elm/regex` paketet. Här är ett enkelt exempel:
+## Hur man gör:
+Elm har inte inbyggda regex-funktioner i sitt kärnbibliotek, vilket kräver användning av tredjepartsbibliotek för dessa operationer. Ett av de populära valen för att arbeta med regex är `elm/regex`. Du kan lägga till det i ditt projekt genom att använda `elm install elm/regex`.
 
-```Elm
-import Regex exposing (Regex, fromString, find, Match)
+Så här kan du använda `elm/regex` för några vanliga uppgifter:
 
--- Skapar ett reguljärt uttryck
-maybeRegex : Maybe Regex
-maybeRegex = fromString "h[aeiou]llo"
+### 1. Matcha ett mönster
+För att kontrollera om en sträng matchar ett mönster kan du använda `Regex.contains`.
 
--- Använder det reguljära uttrycket för att hitta matcher
-findMatches : String -> List Match
-findMatches input =
-    case maybeRegex of
-        Just regex ->
-            find regex input
-        Nothing ->
-            []
+```elm
+import Regex
 
--- Visa ett exempel
-sampleOutput : List Match
-sampleOutput = findMatches "hello hallo hillo"
+pattern : Regex.Regex
+pattern = Regex.fromString "^[a-zA-Z0-9]+$" |> Maybe.withDefault Regex.never
+
+isAlphanumeric : String -> Bool
+isAlphanumeric input = Regex.contains pattern input
+
+-- Exempelanvändning:
+isAlphanumeric "Elm2023"     -- Utdata: True
+isAlphanumeric "Elm 2023!"   -- Utdata: False
 ```
 
-Kör koden ovan och `sampleOutput` blir en lista av `Match` objekt där varje `Match` innehåller detaljer om varje matchning.
+### 2. Hitta alla matchningar
+För att hitta alla förekomster av ett mönster inom en sträng kan du använda `Regex.find`.
 
-## Djupdykning:
-Reguljära uttryck, ofta förkortade som "regex", används sedan 1950-talet. I Elm hanteras de lite annorlunda eftersom Elm fokuserar på säkerhet och förutsägbarhet. Istället för inbyggt stöd som i JavaScript, tillhandahåller Elm ett paket `elm/regex`. Detta paket anser Elm's typsystem och därmed minskar riskerna för oförutsedda runtime-fel. För textmanipulering utan regex kan man använda inbyggda strängfunktioner som `String.contains`, `String.split` och `String.join`.
+```elm
+matches : Regex.Regex
+matches = Regex.fromString "\\b\\w+\\b" |> Maybe.withDefault Regex.never
 
-## Se även:
-- Elm Regex paketet: [http://package.elm-lang.org/packages/elm/regex/latest](http://package.elm-lang.org/packages/elm/regex/latest)
-- Elm strängdokumentation: [https://package.elm-lang.org/packages/elm/core/latest/String](https://package.elm-lang.org/packages/elm/core/latest/String)
+getWords : String -> List String
+getWords input = 
+    input
+        |> Regex.find matches
+        |> List.map (.match)
+
+-- Exempelanvändning:
+getWords "Elm is fun!"  -- Utdata: ["Elm", "is", "fun"]
+```
+
+### 3. Ersätta text
+För att ersätta delar av en sträng som matchar ett mönster använder du `Regex.replace`.
+
+```elm
+replacePattern : Regex.Regex
+replacePattern = Regex.fromString "Elm" |> Maybe.withDefault Regex.never
+
+replaceElmWithHaskell : String -> String
+replaceElmWithHaskell input = 
+    Regex.replace replacePattern (\_ -> "Haskell") input
+
+-- Exempelanvändning:
+replaceElmWithHaskell "Learning Elm is fun!"  
+-- Utdata: "Learning Haskell is fun!"
+```
+
+I dessa exempel används `Regex.fromString` för att kompilera ett regex-mönster, där `\b` matchar ordgränser, och `\w` matchar vilket ordtecken som helst. Hantera alltid `Maybe`-resultatet av `Regex.fromString` för att skydda mot ogiltiga regex-mönster, vanligtvis med `Maybe.withDefault`.

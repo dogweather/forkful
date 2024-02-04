@@ -1,45 +1,77 @@
 ---
 title:                "Tolka HTML"
-date:                  2024-01-20T15:33:11.862316-07:00
+date:                  2024-02-03T19:12:49.592629-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Tolka HTML"
-
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/php/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att parsa HTML betyder att man analyserar HTML-koden för att förstå dess struktur och innehåll. Programmerare gör detta för att manipulera, extrahera eller integrera information från webbsidor.
+Att tolka HTML med PHP innebär att extrahera specifik information från HTML-dokument. Programmerare utför denna uppgift för att automatisera dataextrahering, webskrapning eller för att integrera innehåll från olika webbsidor inom sina applikationer, vilket förbättrar funktionaliteten utan manuella ingripanden.
 
 ## Hur man gör:
-För att parsa HTML i PHP kan du använda DOMDocument klassen. Här är ett enkelt exempel:
+För att tolka HTML kan PHP-programmerare använda inbyggda funktioner eller luta sig mot robusta bibliotek som Simple HTML DOM Parser. Här kommer vi att utforska exempel med användning av både PHP:s `DOMDocument` och Simple HTML DOM Parser.
 
-```PHP
-<?php
-// Skapa ett nytt DOMDocument-objekt
-$dom = new DOMDocument();
+### Använda `DOMDocument`:
+PHP:s `DOMDocument`-klass är en del av dess DOM-tillägg, som tillåter tolkning och manipulering av HTML- och XML-dokument. Här är ett snabbt exempel på hur man använder `DOMDocument` för att hitta alla bilder i ett HTML-dokument:
 
-// Ladda HTML från en sträng
-$html = "<!DOCTYPE html><html><body><h1>Hej Världen!</h1></body></html>";
-@$dom->loadHTML($html);
+```php
+$html = <<<HTML
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exempelsida</title>
+</head>
+<body>
+    <img src="image1.jpg" alt="Bild 1">
+    <img src="image2.jpg" alt="Bild 2">
+</body>
+</html>
+HTML;
 
-// Hitta element med taggen h1
-$h1 = $dom->getElementsByTagName('h1')->item(0);
+$doc = new DOMDocument();
+@$doc->loadHTML($html);
+$images = $doc->getElementsByTagName('img');
 
-// Skriv ut textinnehållet i h1-elementet
-echo $h1->textContent;
+foreach ($images as $img) {
+    echo $img->getAttribute('src') . "\n";
+}
 ```
 
-Detta kommer att ge följande output:
+Exempel på utmatning:
 ```
-Hej Världen!
+image1.jpg
+image2.jpg
 ```
 
-## Djupdykning
-Historiskt sett har HTML-parsning varit knepigt eftersom HTML ofta är dåligt formaterad eller inte följer standarder. PHP's DOMDocument klass hanterar detta genom att korrekt formatera HTML innan parsningen påbörjas. Alternativ till PHP:s inbyggda funktioner inkluderar bibliotek som SimpleHTMLDom eller avancerade verktyg som XPath för att göra komplexa förfrågningar i dokumentet. Implementationsdetaljerna innefattar att DOMDocument kan hantera både encoding-frågor och olika dokumenttyper (som XHTML).
+### Använda Simple HTML DOM Parser:
+För mer komplexa uppgifter eller enklare syntax kan du föredra att använda ett tredjepartsbibliotek. Simple HTML DOM Parser är ett populärt val som erbjuder ett jQuery-liknande gränssnitt för att navigera och manipulera HTML-strukturer. Så här använder du det:
 
-## Se också
-- PHP:s officiella dokumentation på DOMDocument: https://www.php.net/manual/en/class.domdocument.php
-- SimpleHTMLDom biblioteket: http://simplehtmldom.sourceforge.net/
-- En introduktion till XPath i PHP: https://www.php.net/manual/en/domxpath.query.php
+Installera först biblioteket med Composer:
+```
+composer require simple-html-dom/simple-html-dom
+```
+
+Därefter, manipulera HTML för att till exempel hitta alla länkar:
+
+```php
+require_once 'vendor/autoload.php';
+
+use simplehtmldom\HtmlWeb;
+
+$client = new HtmlWeb();
+$html = $client->load('http://www.example.com');
+
+foreach($html->find('a') as $element) {
+    echo $element->href . "\n";
+}
+```
+
+Denna kodsnutt kommer att hämta HTML-innehållet för 'http://www.example.com', tolka det, och skriva ut alla hyperlänkar. Kom ihåg att ersätta `'http://www.example.com'` med den faktiska URL du önskar tolka.
+
+Genom att använda dessa metoder kan PHP-utvecklare effektivt tolka HTML-innehåll, anpassa dataextrahering till sina behov eller sömlöst integrera externt webbinnehåll i sina projekt.

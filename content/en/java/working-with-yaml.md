@@ -1,8 +1,8 @@
 ---
 title:                "Working with YAML"
-date:                  2024-01-19
+date:                  2024-02-03T19:03:12.830996-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Working with YAML"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/java/working-with-yaml.md"
 ---
@@ -10,106 +10,82 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-
-YAML, "YAML Ain't Markup Language," is a data serialization language. Programmers use it due to its readability and simplicity, particularly for config files, initial data dumps, or as a communication format between different systems.
+YAML, short for "YAML Ain't Markup Language," is a human-readable data serialization standard that programmers use for configuration files, data dumping, and data transmission between languages. It's popular due to its readability and ease of use, making it a common choice for configuring applications and services.
 
 ## How to:
+In Java, you can work with YAML files using third-party libraries since the Java Standard Edition does not include built-in support for YAML. One popular library is SnakeYAML, which allows for parsing and generating YAML data easily.
 
-To handle YAML in Java, let's use `snakeyaml`, a popular lib.
-
-First, add the dependency to your `pom.xml`:
+### Setting up SnakeYAML
+First, include SnakeYAML in your project. If you're using Maven, add the following dependency to your `pom.xml`:
 
 ```xml
 <dependency>
     <groupId>org.yaml</groupId>
     <artifactId>snakeyaml</artifactId>
-    <version>1.29</version>
+    <version>1.30</version>
 </dependency>
 ```
 
-Now, read a YAML file:
-
+### Reading YAML
 ```java
 import org.yaml.snakeyaml.Yaml;
 import java.io.InputStream;
 import java.util.Map;
 
-public class YamlReader {
+public class ReadYamlExample {
     public static void main(String[] args) {
         Yaml yaml = new Yaml();
-        try (InputStream in = YamlReader.class
-            .getClassLoader()
-            .getResourceAsStream("config.yaml")) {
-            
-            Map<String, Object> data = yaml.load(in);
+        try (InputStream inputStream = ReadYamlExample.class
+                .getClassLoader()
+                .getResourceAsStream("config.yml")) {
+            Map<String, Object> data = yaml.load(inputStream);
             System.out.println(data);
-            
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 }
 ```
-
-Suppose `config.yaml` looks like this:
-
+Assuming `config.yml` looks like this:
 ```yaml
-version: '1.0'
-services:
-  webapp:
-    build: .
-    ports:
-      - "5000:5000"
+name: Example
+version: 1.0
+features:
+  - login
+  - signup
+```
+The output will be:
+```
+{name=Example, version=1.0, features=[login, signup]}
 ```
 
-The output will be a `Map` representation of your YAML:
-
-```
-{version=1.0, services={webapp={build=., ports=[5000:5000]}}}
-```
-
-Now, let's write YAML:
-
+### Writing YAML
+To generate a YAML from Java objects, use the `dump` method provided by SnakeYAML:
 ```java
 import org.yaml.snakeyaml.Yaml;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.HashMap;
+import java.util.Arrays;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
-public class YamlWriter {
+public class WriteYamlExample {
     public static void main(String[] args) {
+        Map<String, Object> data = new LinkedHashMap<>();
+        data.put("name", "Example");
+        data.put("version", 1.0);
+        data.put("features", Arrays.asList("login", "signup"));
+
         Yaml yaml = new Yaml();
-        Map<String, Object> data = new HashMap<>();
-        
-        data.put("name", "myapp");
-        data.put("version", "2.0");
-        
-        try (FileWriter writer = new FileWriter("output.yaml")) {
-            yaml.dump(data, writer);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        String output = yaml.dump(data);
+        System.out.println(output);
     }
 }
 ```
-
-Check `output.yaml` to see the new YAML content:
-
+This will generate and print the following YAML content:
 ```yaml
-name: myapp
-version: '2.0'
+name: Example
+version: 1.0
+features:
+- login
+- signup
 ```
-
-## Deep Dive
-
-YAML hit the scene in the early 2000s as an alternative to XML for simpler data structuring. While JSON's rise overshadowed it for API communication, YAML’s human-friendliness keeps it popular for configs. Same data, but JSON and TOML are alternatives to YAML, depending on use cases. One YAML caveat: tabs aren't allowed for indentation; spaces only.
-
-## See Also
-
-Explore further with these resources:
-
-- Official YAML Spec: https://yaml.org/spec/1.2.2/
-- snakeyaml GitHub Repo: https://github.com/asomov/snakeyaml
-- YAML vs JSON: https://phoenixnap.com/kb/yaml-vs-json
-- YAML Lint, to validate your YAML files: http://www.yamllint.com/
+By leveraging SnakeYAML, Java developers can easily integrate YAML parsing and generation into their applications, benefiting from YAML's readability and simplicity for configuration and data exchange purposes.

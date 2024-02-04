@@ -1,42 +1,53 @@
 ---
-title:                "Slik får du tak i dagens dato"
-date:                  2024-01-20T15:13:15.523886-07:00
-simple_title:         "Slik får du tak i dagens dato"
-
+title:                "Få dagens dato"
+date:                  2024-02-03T19:08:47.967157-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Få dagens dato"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/bash/getting-the-current-date.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Å hente den gjeldende datoen i programmering betyr å få tak i dagens dato og tidspunkt. Programmere gjør dette for å loggføre hendelser, håndtere tidsavhengige funksjoner eller bare for å vise datoen.
+Å hente dagens dato i Bash involverer bruk av innebygde kommandoer for å vise dato og tid i forskjellige formater. Programmerere bruker denne funksjonaliteten til oppgaver som å tidsstemple logger, planlegge oppgaver, eller bare som en del av sine systeminformasjonsskript for å spore når handlinger ble utført.
 
-## Slik gjør du:
-```Bash
-# For å få den gjeldende datoen og tiden i standardformat:
+## Hvordan:
+I Bash er `date`-kommandoen ditt primære verktøy for å få tak i dagens dato og tid. Her er noen eksempler på hvordan du kan bruke den:
+
+1. **Få dagens dato og tid i standardformatet:**
+
+```bash
 date
-
-# For å tilpasse formatet, bruk "+format":
-date +"%Y-%m-%d"
-date +"%H:%M:%S"
-
-# Eksempel på standardformat:
-# fre. 07 april 2023 13:37:22 +0200
-
-# Eksempel med tilpasset format (bare dato):
-# 2023-04-07
-
-# Eksempel med tilpasset format (bare klokkeslett):
-# 13:37:22
 ```
 
-## Dypdykk:
-`date`-kommandoen har vært en essensiell del av Unix og Linux-systemer siden de tidlige dagene. Alternativer som `hwclock` kan også brukes for å hente tid direkte fra maskinvaren, selv om `date` er mer vanlig. På implementasjonsnivå henter `date` verdier fra systemklokken som oppdateres av operativsystemet i henhold til tidssonen som er satt av brukeren.
+*Eksempel på utdata:*
+```
+Wed Apr 5 14:22:04 PDT 2023
+```
 
-I skript og programmer kan du for eksempel bruke `date` til å generere tidsstempel for logger, time jobber med `cron` eller for å stille inn dato- og tidskrav i applikasjoner. Det er også mulig å sette systemtiden med `date`, men det krever administratorrettigheter.
+2. **Tilpass utdataformatet:** Du kan spesifisere utdataformatet ved å bruke `+%` format-spesifikatorer. For eksempel, for å vise datoen i YYYY-MM-DD format:
 
-## Se også:
-- [Date Man Pages](https://man7.org/linux/man-pages/man1/date.1.html) - manualen for `date` med flere detaljer og eksempler.
-- [Bash Scripting Guide](https://www.tldp.org/LDP/abs/html/) - en guide til skripting i Bash, inkludert bruk av dato og tid.
-- [Advanced Bash-Scripting Guide: Date and Time](https://www.tldp.org/LDP/abs/html/timedate.html) - dybdeinformasjon om hvordan man håndterer dato og tid i Bash-skript.
+```bash
+date "+%Y-%m-%d"
+```
+
+*Eksempel på utdata:*
+```
+2023-04-05
+```
+
+3. **Få det nåværende UNIX tidsstempelet:** UNIX-tidsstempelet er antallet sekunder siden Unix Epoch (1. januar 1970). Dette er nyttig for skript som utfører beregninger basert på tidsforskjeller.
+
+```bash
+date "+%s"
+```
+
+*Eksempel på utdata:*
+```
+1672877344
+```
+
+Ingen populære tredjepartsbiblioteker brukes vanligvis til denne grunnleggende operasjonen i Bash, ettersom den innebygde `date`-kommandoen gir omfattende funksjonalitet. Imidlertid, for mer avanserte dato- og tidsmanipulasjoner, kan programmerere bruke andre programmeringsspråk eller verktøy som tilbyr biblioteker for datoaritmetikk og parsing, som for eksempel Pythons `datetime`-modul.

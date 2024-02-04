@@ -1,47 +1,89 @@
 ---
 title:                "테스트 작성하기"
-date:                  2024-01-19
+date:                  2024-02-03T19:30:32.959810-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "테스트 작성하기"
-
 tag:                  "Testing and Debugging"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/elm/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-테스트 작성이란 코드가 원하는 대로 동작하는지 확인하는 과정입니다. 버그를 줄이고, 코드의 품질을 높이며, 나중에 변경이 생겼을 때 코드가 여전히 잘 동작하는지 검증하기 위해 프로그래머들이 합니다.
+## 무엇 & 왜?
 
-## How to:
-Elm에서 테스트를 작성하려면 `elm-test` 패키지가 필요합니다. 간단한 예제를 보여드리겠습니다.
+Elm에서 테스트 작성은 Elm 코드의 정확성을 검증하는 테스트 케이스를 작성하는 것을 포함합니다. 이는 코드가 예상대로 동작하는지 확인하기 위함입니다. 프로그래머들은 이를 통해 버그를 조기에 발견하고, 유지 보수를 용이하게 하며, 응용 프로그램의 품질과 신뢰성을 향상시키려고 합니다.
 
-```Elm
-import Expect exposing (Expectation)
+## 방법:
+
+Elm은 단위 테스트 및 퍼즈 테스트를 작성하기 위해 `elm-explorations/test` 패키지를 사용합니다. 패키지를 프로젝트에 추가하려면 다음을 시작하세요:
+
+```elm
+elm install elm-explorations/test
+```
+
+테스트 파일을 생성하세요. 예를 들어 `tests/ExampleTest.elm`이라고 하고, 테스트 모듈을 가져옵니다. 다음은 함수 `add : Int -> Int -> Int`를 검증하는 간단한 테스트입니다:
+
+```elm
+module ExampleTest exposing (..)
+
+import Expect
 import Test exposing (..)
-import ExampleProgram exposing (add)
+import YourModuleName exposing (add)
 
 suite : Test
 suite =
-    describe "ExampleProgram"
-        [ test "add 함수 테스트" <|
-            \_ -> 
-                2 
-                    |> add 2 
-                    |> Expect.equal 4
+    describe "A simple addition function"
+        [ test "Adding 2 and 3 yields 5" <| 
+            \_ -> add 2 3 |> Expect.equal 5
         ]
 
--- 이 테스트를 실행하면 다음과 같은 결과가 나옵니다.
-
-TEST RUN PASSED
-
-1 test run, all passed
 ```
 
-## Deep Dive
-Elm에서 테스트는 프로그램이 시간과 함께 안정적으로 발전할 수 있도록 돕습니다. Evan Czaplicki가 만든 Elm은 강력한 타입 시스템을 가졌지만 테스팅은 여전히 필요합니다. elm-test는 Noah Hall과 Richard Feldman 등에 의해 개발되었습니다. elm-test의 주요 대안은 없으며, Elm 커뮤니티에서 널리 사용됩니다. 구현 상세로, elm-test는 무작위 데이터 생성 및 퍼지 테스팅을 포함합니다.
+테스트를 실행하려면 `elm-test`가 필요합니다:
 
-## See Also
-- [Elm 공식 테스트 가이드](https://package.elm-lang.org/packages/elm-explorations/test/latest)
-- [Elm 테스트 Github 저장소](https://github.com/elm-explorations/test)
-- [Elm 커뮤니티 예제와 튜토리얼](https://elm-lang.org/examples)
+```shell
+npm install -g elm-test
+elm-test
+```
+
+이렇게 하면 테스트가 컴파일되고 결과가 터미널에 출력됩니다. 위의 예시에서 출력은 다음과 같아야 합니다:
+
+```
+TEST RUN PASSED
+
+Duration: 42 ms
+Passed:   1
+Failed:   0
+```
+
+더 복잡한 예시를 살펴보겠습니다. 넓은 범위의 정수 입력을 올바르게 처리하는지 확인하기 위해 `add` 함수를 퍼즈 테스트하고 싶다고 가정해 보세요. `ExampleTest.elm`을 다음과 같이 수정하면 됩니다:
+
+```elm
+module ExampleTest exposing (..)
+
+import Expect
+import Fuzz exposing (int)
+import Test exposing (..)
+import YourModuleName exposing (add)
+
+suite : Test
+suite =
+    describe "Testing add with fuzzing"
+        [ fuzz int "Fuzz testing add with random ints" <| 
+            \int1 int2 -> add int1 int2 |> Expect.equal (int1 + int2)
+        ]
+```
+
+`elm-test`를 다시 실행하여 퍼즈 테스트를 확인하세요. 랜덤 입력에 따라 출력은 달라지겠지만, 성공적인 테스트는 실패가 없음을 나타냅니다:
+
+```
+TEST RUN PASSED
+
+Duration: 183 ms
+Passed:   100
+Failed:   0
+``` 
+
+이 예시들은 `elm-explorations/test` 패키지를 사용하여 Elm에서 간단한 단위 및 퍼즈 테스트를 작성하고 실행하는 방법을 보여줍니다. 테스트는 개발 과정에서 중요한 부분으로, Elm 애플리케이션이 신뢰성을 유지하고 높은 품질을 보장하는 데 도움이 됩니다.

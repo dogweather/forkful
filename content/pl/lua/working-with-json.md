@@ -1,49 +1,61 @@
 ---
 title:                "Praca z JSON"
-date:                  2024-01-19
+date:                  2024-02-03T19:23:30.260283-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Praca z JSON"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/lua/working-with-json.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
+## Co i dlaczego?
+Praca z JSON w Lua polega na parsowaniu łańcuchów znaków sformatowanych w JSON do tabel Lua i odwrotnie, co umożliwia łatwą wymianę danych między aplikacjami Lua a usługami sieciowymi lub zewnętrznymi API. Programiści robią to, aby wykorzystać lekki i łatwy do parsowania format JSON dla efektywnego przechowywania danych, konfiguracji lub komunikacji z API.
 
-JSON to format wymiany danych, lekki i łatwo czytelny dla ludzi. Programiści używają JSON do komunikacji między serwerem a klientem oraz do przechowywania danych.
+## Jak to zrobić:
+Lua nie zawiera wbudowanej biblioteki do przetwarzania JSON. Dlatego jedną z popularnych bibliotek firm trzecich jest `dkjson`, którą możesz łatwo użyć do kodowania i dekodowania JSON. Najpierw upewnij się, że zainstalowałeś `dkjson`, np. przez LuaRocks (`luarocks install dkjson`), a następnie postępuj zgodnie z poniższymi przykładami.
 
-## How to:
+### Dekodowanie JSON do tabeli Lua
+```lua
+local dkjson = require "dkjson"
 
-Do obsługi JSON w Lua użyjemy biblioteki `dkjson`. Najpierw zainstaluj ją przez luarocks lub pobierz bezpośrednio.
-
-```Lua
--- Zainstaluj dkjson poprzez luarocks
-luarocks install dkjson
+local jsonString = '{"name": "Programista Lua", "age": 30, "languages": ["Lua", "JavaScript"]}'
+local luaTable, pos, err = dkjson.decode(jsonString, 1, nil)
+if err then
+  print ("Błąd:", err)
+else
+  print("Nazwa:", luaTable.name) -- Wyjście: Nazwa: Programista Lua
+  print("Wiek:", luaTable.age) -- Wyjście: Wiek: 30
+  print("Języki:", table.concat(luaTable.languages, ", ")) -- Wyjście: Języki: Lua, JavaScript
+end
 ```
 
-Kodowanie i dekodowanie:
+### Kodowanie tabeli Lua do JSON
+```lua
+local dkjson = require "dkjson"
 
-```Lua
-local json = require "dkjson"
+local luaTable = {
+  name = "Programista Lua",
+  age = 30,
+  languages = { "Lua", "JavaScript" }
+}
 
--- Kodowanie do JSON
-local data = { name = "Marek", age = 30, likesLua = true }
-local json_data = json.encode(data)
-print(json_data)  -- Output: {"name":"Marek","age":30,"likesLua":true}
-
--- Dekodowanie z JSON
-local decoded_data = json.decode(json_data)
-print(decoded_data.name)  -- Output: Marek
+local jsonString = dkjson.encode(luaTable, { indent = true })
+print(jsonString)
 ```
 
-## Deep Dive
+Przykładowe wyjście dla kodowania:
+```json
+{
+  "age": 30,
+  "languages": [
+    "Lua",
+    "JavaScript"
+  ],
+  "name": "Programista Lua"
+}
+```
 
-JSON, czyli JavaScript Object Notation, powstał jako podzbiór języka JavaScript. Dzisiaj jest standardem niezależnym od platformy. Alternatywą dla JSON jest np. XML, lecz JSON jest lżejszy i szybszy. W Lua JSON nie jest wbudowany, więc korzysta się z bibliotek zewnętrznych, takich jak `dkjson`, `cjson`, czy `lua-cjson`.
-
-## See Also
-
-- Dokumentacja `dkjson`: http://dkolf.de/src/dkjson-lua.fsl/home
-- Specyfikacja JSON: https://www.json.org/json-pl.html
-- LuaRocks `dkjson`: https://luarocks.org/modules/dkolf/dkjson
-- Json.lua, alternatywna biblioteka: https://github.com/rxi/json.lua
+Te proste przykłady demonstrują, jak pracować z JSON w Lua, ułatwiając integrację aplikacji Lua z różnymi technologiami internetowymi i zewnętrznymi API. Pamiętaj, że choć w tych przykładach użyto `dkjson`, inne biblioteki takie jak `cjson` i `RapidJSON` mogą również być odpowiednie w zależności od potrzeb twojego projektu.

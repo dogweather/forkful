@@ -1,43 +1,99 @@
 ---
-title:                "Написання тестів"
-date:                  2024-01-19
-simple_title:         "Написання тестів"
-
+title:                "Письмо тестів"
+date:                  2024-02-03T19:31:31.927994-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Письмо тестів"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/kotlin/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Що це таке & Навіщо?
-Тестування - це процес перевірки, що ваш код робить те, що ви від нього чекаєте. Програмісти тестують, щоб запобігти помилкам, впевнитися у правильності коду та полегшити майбутні оновлення.
+## Що та Чому?
+
+Написання тестів на Kotlin включає створення фрагментів коду, які автоматично перевіряють функціональну правильність ваших програмних модулів, забезпечуючи їх роботу відповідно до очікувань. Програмісти роблять це для раннього виявлення помилок, полегшення рефакторингу коду і надання документації щодо того, як передбачається, що програмні компоненти будуть працювати.
 
 ## Як це робити:
-В Kotlin тести зазвичай пишуть з використанням JUnit. Ось простий приклад тесту:
+
+Kotlin підтримує розробку, орієнтовану на тестування, з використанням різних фреймворків, найпопулярнішими з яких є JUnit, Kotest та MockK для мокування. Ось простий приклад з використанням JUnit:
 
 ```kotlin
-import org.junit.Test
-import org.junit.Assert.*
+import org.junit.jupiter.api.Test
+import kotlin.test.assertEquals
 
-class ExampleUnitTest {
+class CalculatorTest {
+
     @Test
-    fun `addition is correct`() {
-        assertEquals(4, 2 + 2)
+    fun `adds two numbers`() {
+        val calculator = Calculator()
+        val result = calculator.add(2, 3)
+        assertEquals(5, result)
     }
 }
 
+class Calculator {
+    fun add(a: Int, b: Int): Int = a + b
+}
 ```
 
-Цей тест перевіряє, що 2 + 2 справді дорівнює 4. Виконання тесту надасть наступний вивід:
+**Приклад виводу**
 
-```plaintext
-Test passed.
+```text
+Тест пройдено.
 ```
 
-## Поглиблено:
-Тестування Kotlin почалося з використанням JUnit, але з часом з'явилися і інші фреймворки, такі як Spek та Kotest, які пропонують більш ідіоматичні можливості для Kotlin. Порівняно з JUnit, їх синтаксис може забезпечувати кращу підтримку DSL (Domain-Specific Language), що робить тести більш читабельними. Важливо розуміти, як управляти станом тестів та як ізолювати зовнішні залежності за допомогою моків та шпигунів.
+Для більш складного підходу до тестування з використанням Kotest, який пропонує стиль написання тестів, більш ідіоматичний для Kotlin, дивіться наведений нижче приклад:
 
-## Дивись також:
-- [JUnit 5 User Guide](https://junit.org/junit5/docs/current/user-guide/)
-- [Kotest](https://kotest.io/)
-- [Mockk, a mocking library for Kotlin](https://mockk.io/)
+```kotlin
+import io.kotest.core.spec.style.StringSpec
+import io.kotest.matchers.shouldBe
+
+class CalculatorSpec : StringSpec({
+    "додавання 2 і 3 повинно повернути 5" {
+        val calculator = Calculator()
+        calculator.add(2, 3) shouldBe 5
+    }
+})
+```
+
+Використання MockK для тестування з моками:
+
+```kotlin
+import io.mockk.every
+import io.mockk.mockk
+import org.junit.jupiter.api.Test
+import kotlin.test.assertEquals
+
+class ServiceTest {
+
+    private val repository = mockk<Repository>()
+    private val service = Service(repository)
+
+    @Test
+    fun `отримання даних повертає замоковані дані`() {
+        every { repository.getData() } returns "Замоковані Дані"
+
+        val result = service.getData()
+
+        assertEquals("Замоковані Дані", result)
+    }
+}
+
+class Service(private val repository: Repository) {
+    fun getData(): String = repository.getData()
+}
+
+interface Repository {
+    fun getData(): String
+}
+```
+
+**Приклад виводу**
+
+```text
+Тест пройдено.
+```
+
+Ці приклади ілюструють основи написання модульних тестів на Kotlin. По мірі зростання вашого додатку, розгляньте можливість дослідження більш передових технік тестування та інструментів, які надаються кожним фреймворком.

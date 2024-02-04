@@ -1,45 +1,53 @@
 ---
 title:                "Pobieranie aktualnej daty"
-date:                  2024-01-20T15:12:53.293410-07:00
+date:                  2024-02-03T19:09:00.408037-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Pobieranie aktualnej daty"
-
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/bash/getting-the-current-date.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-W Bashu polecenie daty zwraca aktualną datę i czas, a programiści wykorzystują to do logowania, harmonogramowania zadań lub do wyświetlania informacji o czasie w skryptach.
+## Co i dlaczego?
+Pobieranie aktualnej daty w Bashu polega na używaniu wbudowanych poleceń do wyświetlania daty i czasu w różnych formatach. Programiści używają tej funkcjonalności do zadań takich jak dodawanie znaczników czasowych do logów, planowanie zadań lub po prostu jako część swoich skryptów informacji systemowych, aby śledzić, kiedy wykonano akcje.
 
-## How to:
-Aby wyświetlić aktualną datę i czas, użyj polecenia `date`. Sprawdź kilka przykładów:
+## Jak to zrobić:
+W Bashu polecenie `date` jest twoim głównym narzędziem do pobierania aktualnej daty i czasu. Oto kilka przykładów, jak można go używać:
 
-```Bash
-# Wyświetla aktualną datę i czas w domyślnym formacie
+1. **Pobierz aktualną datę i czas w domyślnym formacie:**
+
+```bash
 date
-
-# Wyświetla datę w określonym formacie, np. RRRR-MM-DD
-date +"%Y-%m-%d"
-
-# Wyświetla czas w określonym formacie, np. GG:MM:SS
-date +"%H:%M:%S"
 ```
 
-Przykładowe wyjścia:
-
-```Bash
-Tue Mar  9 15:20:45 PST 2021
-2021-03-09
-15:20:45
+*Przykładowe wyjście:*
+```
+Śro, 5 kwi 14:22:04 PDT 2023
 ```
 
-## Deep Dive
-Polecenie `date` w systemach Unix-like, w tym Linux, pochodzi z tradycji narzędzi systemowych zapewnionych przez AT&T System V oraz BSD (Berkeley Software Distribution). Alternatywnie, możesz użyć `strftime` w skryptach Bash do jeszcze większej kontroli nad formatowaniem, a `date` jest często używane razem z cronem do planowania zadań. 
+2. **Dostosuj format wyjściowy:** Możesz określić format wyjściowy, używając specyfikatorów formatu `+%`. Na przykład, aby wyświetlić datę w formacie RRRR-MM-DD:
 
-Implementacja `date` opiera się na standardzie C POSIX library i może pokazywać różne strefy czasowe, co jest przydatne w pracy globalnej lub z rozproszonymi systemami. Dodatkowo, dla zaawansowanego formatowania możesz łączyć różne sekwencje formatowania w jednym wywołaniu polecenia.
+```bash
+date "+%Y-%m-%d"
+```
 
-## See Also
-- GNU Coreutils `date`: https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html
-- Bash scripting cheatsheet: https://devhints.io/bash
-- Advanced Bash-Scripting Guide: https://tldp.org/LDP/abs/html/
+*Przykładowe wyjście:*
+```
+2023-04-05
+```
+
+3. **Pobierz aktualną sygnaturę czasową UNIX:** Sygnatura czasowa UNIX to liczba sekund od Epoki UNIX (1 stycznia 1970). Jest to przydatne dla skryptów, które wykonują obliczenia oparte na różnicach czasowych.
+
+```bash
+date "+%s"
+```
+
+*Przykładowe wyjście:*
+```
+1672877344
+```
+
+Do tej podstawowej operacji w Bashu zazwyczaj nie używa się popularnych bibliotek firm trzecich, ponieważ wbudowane polecenie `date` zapewnia obszerną funkcjonalność. Jednakże, do bardziej zaawansowanych manipulacji datą i czasem, programiści mogą używać innych języków programowania lub narzędzi oferujących biblioteki do arytmetyki i analizy dat, takie jak moduł `datetime` w Pythonie.

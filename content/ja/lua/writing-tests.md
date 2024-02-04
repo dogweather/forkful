@@ -1,42 +1,78 @@
 ---
 title:                "テストの作成"
-date:                  2024-01-19
+date:                  2024-02-03T19:31:26.587341-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "テストの作成"
-
 tag:                  "Testing and Debugging"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/lua/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (何となぜ？)
-テストとは、コードが期待通りに動くことを保証する手法です。品質を保ち、将来のバグやエラーを防ぐためにプログラマーが行います。
+## 何となぜ？
 
-## How to: (やり方)
-Luaには標準のテストフレームワークがないため、`busted`や`luaunit`などの外部ライブラリを使う。以下は`luaunit`を使った簡単なテスト例です。
+プログラミングにおけるテストの記述は、アプリケーションの異なる部分が期待どおりに動作することを自動的に確認するために、小さな個別のコード片を作成することを含んでいます。Luaプログラマーにとって、テストは信頼性を確保し、コード品質の維持に役立ち、デバッグプロセスを加速し、コードベースの変更をより安全に行うことができます。
 
-```Lua
-local luaunit = require('luaunit')
-local mymodule = require('mymodule')
+## どのように：
+
+軽量でありながら強力なスクリプト言語であるLuaは、組み込みのテストフレームワークを含まない。しかし、BustedやLuaUnitのようなサードパーティのライブラリを使用すると、テストが比較的簡単になります。ここでは、これら両方を使用した例を見ていきます。
+
+### Bustedを使う
+
+Bustedは、柔軟な方法でテストを書くことができる人気のLuaテストフレームワークです。まず、LuaRocks（Luaのパッケージマネージャー）を使って`luarocks install busted`でBustedをインストールします。インストールしたら、テストを書くことができます。2つの数値を合計する関数`add`のためのシンプルなテストは以下のとおりです：
+
+```lua
+-- add.lua
+local function add(a, b)
+  return a + b
+end
+
+return add
+```
+
+```lua
+-- add_spec.lua
+local add = require('add')
+
+describe("Add function", function()
+  it("should add two numbers correctly", function()
+    assert.are.equal(5, add(2, 3))
+  end)
+end)
+```
+
+テストを実行するには、ターミナルで`busted`を実行します。テストが通った場合のサンプル出力は次のようになります：
+
+```
+●
+1 success / 0 failures / 0 errors / 0 pending : 0.002 seconds
+```
+
+### LuaUnitを使う
+
+LuaUnitはxUnit規約に従う別のテストフレームワークで、セットアップが簡単です。LuaRocksを使って`luarocks install luaunit`でLuaUnitをインストールします。上記と同様のテストをLuaUnitで書く方法は以下のとおりです：
+
+```lua
+-- add.luaはそのまま
+
+-- test_add.lua
+luaunit = require('luaunit')
+local add = require('add')
 
 function testAdd()
-    luaunit.assertEquals(mymodule.add(1, 1), 2)
+  luaunit.assertEquals(add(2, 3), 5)
 end
 
 os.exit(luaunit.LuaUnit.run())
 ```
 
-実行結果は以下の通りです。
+このスクリプトをLuaで直接実行する（`lua test_add.lua`）と、次のような出力が得られます：
 
 ```
-..
-Ran 1 test in 0.001 seconds
-OK
+.
+Ran 1 tests in 0.001 seconds, 1 success, 0 failures
 ```
 
-## Deep Dive (詳細情報)
-テストの記述は、1990年代にソフトウェア開発の一部となりました。Lua言語は比較的新しい言語なので、テストエコシステムも進化し続けています。`busted`はBDDスタイルのテストを、`luaunit`はxUnitスタイルのテストをサポートします。Luaにおけるテストは、主に独立したライブラリを使用して行うのが一般的ですが、`TAP`や`TestMore`のようなプロトコルを支持するものもあります。
-
-## See Also (参照)
-- [`luaunit`](https://github.com/bluebird75/luaunit) – luaunitのGitHubリポジトリ。
+BustedとLuaUnitの両方とも、モッキング、スパイ、非同期テストを含む様々なテストシナリオを処理するための広範囲の機能を提供しています。それらの選択は、プロジェクトの具体的なニーズと、構文および機能に関する個人的な好みによります。

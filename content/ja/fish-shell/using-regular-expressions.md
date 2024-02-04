@@ -1,50 +1,76 @@
 ---
 title:                "正規表現の使用"
-date:                  2024-01-19
+date:                  2024-02-03T19:16:56.851676-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "正規表現の使用"
-
 tag:                  "Strings"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/fish-shell/using-regular-expressions.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-正規表現とは？プログラマーがなぜ使うのか？
+## 何となぜ？
 
-正規表現（RegExp）は文字列内でのパターン検索や置き換えに使用する強力なツールです。テキストデータを効率的に処理するため、パターンマッチングやテキスト操作などを柔軟に行うために使われます。
+Fish Shellにおける正規表現（regex）は、特定のパターンに基づいて文字列を検索、一致させ、操作することを可能にします。プログラマーは、入力検証、パーシング、テキスト処理などのタスクにregexを利用します。これは、複雑なテキストパターンを指定するためのコンパクトで強力な方法を提供するからです。
 
-## How to:
-### 文字列内のパターン検索
-```Fish Shell
-echo "今日は2023年3月15日です" | string match -r '[0-9]+年[0-9]+月[0-9]+日'
-```
-#### 出力:
-```
-2023年3月15日
-```
+## どのようにして：
 
-### 文字列置換
-```Fish Shell
-echo "FishShellは素晴らしい!" | string replace -r '素晴らしい' '強力な'
-```
-#### 出力:
-```
-FishShellは強力な!
+Fish Shell自体にはregexのための組み込みコマンドはありませんが、`grep`、`sed`、`awk`のような外部コマンドを効果的に使用します。これらのコマンドはregexをサポートしており、スクリプトにregex操作を組み込むことを可能にします。
+
+### `grep`による基本的なパターンマッチング
+ファイル内のパターンに一致する行を検索する：
+
+```fish
+grep '^[0-9]+' myfile.txt
 ```
 
-## Deep Dive
-### 歴史的背景
-正規表現は、1950年代に数学者スティーブン・クリーネによって提案されました。プログラミング言語Perlが普及すると共に広く使われるようになりました。Fish Shellでは`string`コマンドを利用して正規表現が実装されています。
+このコマンドは`myfile.txt`で、1つ以上の数字で始まる行を見つけます。
 
-### 代替手段
-正規表現以外にも`grep`、`sed`、`awk`のようなツールでテキスト処理が可能ですが、Fish Shell内蔵コマンド`string`の使用は簡単で統合性があります。
+### `sed`による抽出と置換
+ファイルから電話番号を抽出する：
 
-### 実装詳細
-Fish Shellの正規表現は、POSIX準拠のエンジンを使用し、基本的なパターンマッチングからより複雑な検索・置き換えまで実現できます。フラグや構文は他のツールとは異なる場合があるため、`man string`を参照しましょう。
+```fish
+sed -n '/\([0-9]\{3\}\)-\([0-9]\{3\}\)-\([0-9]\{4\}\)/p' contacts.txt
+```
 
-## See Also
-- Fish公式ドキュメント: [https://fishshell.com/docs/current/index.html](https://fishshell.com/docs/current/index.html)
-- 正規表現についての詳細: [https://www.regular-expressions.info/](https://www.regular-expressions.info/)
-- オンライン正規表現テスター: [https://regex101.com/](https://regex101.com/)
+`data.txt`内の"foo"のすべての発生を"bar"に置換する：
+
+```fish
+sed 's/foo/bar/g' data.txt
+```
+
+### 基本的なRegexのための`string`の使用
+Fish Shellの`string`コマンドは、マッチや置換のようなシンプルなregex操作をサポートしています：
+
+文字列内のパターンをマッチ：
+
+```fish
+echo "fish 3.1.2" | string match -r '3\.[0-9]+\.[0-9]+'
+```
+出力：
+```
+3.1.2
+```
+
+'fish'に続く数字を'X.X.X'に置換する：
+
+```fish
+echo "Welcome to fish 3.1.2" | string replace -ra '([fish]+\s)[0-9\.]+' '$1X.X.X'
+```
+出力：
+```
+Welcome to fish X.X.X
+```
+
+### `awk`による高度なマッチング
+最初の列が特定のパターンに一致する場合に第二列のデータを出力する：
+
+```fish
+awk '$1 ~ /^a[0-9]+$/ {print $2}' datafile
+```
+
+このコマンドは`datafile`で最初の列が"a"に続く1つ以上の数字で始まる行を探し、第二列を出力します。
+
+これらの外部コマンドを統合することで、Fish Shellプログラマーは複雑なテキスト操作タスクのために正規表現の全力を活用でき、シェルのネイティブ機能を強化できます。

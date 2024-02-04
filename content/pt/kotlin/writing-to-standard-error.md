@@ -1,33 +1,77 @@
 ---
-title:                "Escrevendo no erro padrão"
-date:                  2024-01-19
-simple_title:         "Escrevendo no erro padrão"
-
+title:                "Escrevendo para o erro padrão"
+date:                  2024-02-03T19:33:48.311137-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Escrevendo para o erro padrão"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/kotlin/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## O Que É & Por Que?
-Escrever no erro padrão (standard error) em Kotlin permite separar mensagens de erro das saídas normais do programa. Programadores fazem isso para diagnosticar problemas e facilitar a depuração sem misturar com saídas regulares.
+## O que & Por quê?
 
-## Como Fazer:
+Escrever no erro padrão (stderr) trata de enviar mensagens de erro e diagnósticos para um fluxo separado, distinto da saída padrão (stdout), o que permite um melhor manejo de erros e análise de logs. Programadores fazem isso para facilitar a depuração e para garantir que mensagens de erro possam ser facilmente identificadas e redirecionadas se necessário, mantendo os logs de saída ou mensagens para o usuário limpos.
+
+## Como fazer:
+
+Em Kotlin, escrever no stderr pode ser alcançado usando `System.err.println()`. Este método é similar a `System.out.println()`, mas direciona a saída para o fluxo de erro padrão em vez do fluxo de saída padrão.
+
 ```kotlin
 fun main() {
-    println("Saida padrão")
-    System.err.println("Erro padrão")
+    System.err.println("Esta é uma mensagem de erro!")
 }
 ```
-Resultado:
-```
-Saida padrão
-Erro padrão
-```
-A mensagem "Erro padrão" será escrita em `System.err` em vez de `System.out`.
 
-## Mergulho Profundo:
-Em sistemas UNIX, desde as décadas de 60 e 70, existe a convenção de ter saídas separadas para dados regulares (`stdout`) e erros (`stderr`). No Kotlin, `System.err` é um `PrintStream` que por padrão escreve na saída de erro do seu ambiente de execução. Alternativas incluem o uso de logging frameworks como Log4j, que fornecem uma gestão mais avançada das mensagens de erro e outras informações. Kotlin adere ao padrão JVM e usa `System.err` diretamente para escrever em `stderr`; isso pode ser redirecionado e manipulado conforme necessário.
+Saída de exemplo:
+```
+Esta é uma mensagem de erro!
+```
 
-## Veja Também:
-- Para saber mais sobre logging com Log4j em Kotlin: [https://logging.apache.org/log4j/kotlin/](https://logging.apache.org/log4j/kotlin/)
+Para aplicações mais estruturadas ou complexas, particularmente aquelas que envolvem frameworks de log como Logback ou SLF4J, você pode configurar loggers para escrever no stderr para certos níveis de log (por exemplo, ERROR).
+
+Usando SLF4J com Logback:
+
+1. Primeiro, adicione a API SLF4J e a implementação Logback ao seu `build.gradle`:
+
+```groovy
+dependencies {
+    implementation 'org.slf4j:slf4j-api:1.7.30'
+    implementation 'ch.qos.logback:logback-classic:1.2.3'
+}
+```
+
+2. Em seguida, configure o Logback (em `src/main/resources/logback.xml`) para direcionar mensagens de nível de erro para stderr:
+
+```xml
+<configuration>
+    <appender name="STDERR" class="ch.qos.logback.core.ConsoleAppender">
+        <target>System.err</target>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+    
+    <root level="error">
+        <appender-ref ref="STDERR" />
+    </root>
+</configuration>
+```
+
+3. Então, use SLF4J no seu código Kotlin para registrar mensagens de erro:
+
+```kotlin
+import org.slf4j.LoggerFactory
+
+fun main() {
+    val logger = LoggerFactory.getLogger("ExampleLogger")
+    logger.error("Esta é uma mensagem de log de erro!")
+}
+```
+
+Saída de exemplo (para stderr):
+```
+2023-04-01 12:34:56 [main] ERROR ExampleLogger - Esta é uma mensagem de log de erro!
+```

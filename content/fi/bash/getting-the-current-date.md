@@ -1,40 +1,53 @@
 ---
 title:                "Nykyisen päivämäärän hankkiminen"
-date:                  2024-01-20T15:12:54.278240-07:00
+date:                  2024-02-03T19:09:00.310952-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Nykyisen päivämäärän hankkiminen"
-
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/bash/getting-the-current-date.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Mitä & Miksi?)
-Komentorivillä nykyisen päivämäärän hakeminen on pientä digitalista taikuutta: näpäytä komento ja näyttöön ilmestyy päiväys. Miksi? Skriptit käyttävät päivämääriä lokien luomiseen, tiedostonimien merkkaamiseen ja aikasidonnaisten tehtävien automatisointiin.
+## Mikä ja miksi?
+Nykyisen päivämäärän hakeminen Bashissa käsittää sisäänrakennettujen komentojen käyttämisen päivämäärän ja ajan näyttämiseen eri muodoissa. Ohjelmoijat käyttävät tätä toiminnallisuutta tehtäviin, kuten lokitiedostojen aikaleimojen lisäämiseen, tehtävien aikatauluttamiseen tai vain osana järjestelmätietoskriptejään toimintojen suorittamisen ajankohdan seurantaan.
 
-## How to: (Kuinka tehdään:)
-```Bash
-# Peruskomento päivämäärän näyttämiseen
+## Kuinka:
+Bashissa `date`-komento on ensisijainen työkalusi nykyisen päivämäärän ja ajan saamiseksi. Tässä on muutamia esimerkkejä sen käytöstä:
+
+1. **Hanki nykyinen päivämäärä ja aika oletusmuodossa:**
+
+```bash
 date
-
-# Esimerkkituloste
-pe maali 12 15:23:08 EET 2023
-
-# Mukautettu muotoilu
-date "+%Y-%m-%d"
-
-# Esimerkkituloste
-2023-03-12
-
-# Aikaleiman lisääminen tiedostonimeen
-echo "Tämä on esimerkkitiedosto" > "tiedosto_$(date "+%Y-%m-%d").txt"
 ```
 
-## Deep Dive (Sukellus syvyyksiin):
-Unix-tyyppisissä käyttöjärjestelmissä `date` on perinyt geeneissään 70-luvun alusta asti ajan ja päivämäärien käsittelyn. Vaihtoehtoja? `strftime` C-ohjelmointikielessä tai modernit skriptikielet, kuten Python, jossa `datetime`-moduuli. Unix-aika, aikaleimat sekä alueelliset aika-asetukset ovat osa `date`:n taustamagiaa.
+*Esimerkkituloste:*
+```
+Ke Apr 5 14:22:04 PDT 2023
+```
 
-## See Also (Katso myös):
-- `man date`: Komentorivin ohje `date`-komennolle
-- GNU Coreutils: https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html
-- Advanced Bash-Scripting Guide: https://www.tldp.org/LDP/abs/html/x23170.html
-- Linux Date Command Tutorial for Beginners (8 Examples): https://www.howtoforge.com/linux-date-command/
+2. **Mukauta tulosteen muotoa:** Voit määrittää tulosteen muodon käyttämällä `+%` muotoiluspesifikaattoreita. Esimerkiksi, näyttääksesi päivämäärän YYYY-MM-DD muodossa:
+
+```bash
+date "+%Y-%m-%d"
+```
+
+*Esimerkkituloste:*
+```
+2023-04-05
+```
+
+3. **Hanki nykyinen UNIX-aikaleima:** UNIX-aikaleima on sekuntien määrä Unix Epochista (1. tammikuuta 1970) lähtien. Tämä on hyödyllistä skripteille, jotka suorittavat laskelmia aikaerojen perusteella.
+
+```bash
+date "+%s"
+```
+
+*Esimerkkituloste:*
+```
+1672877344
+```
+
+Tyypillisiä kolmannen osapuolen kirjastoja ei yleensä käytetä tämän perustoiminnon kanssa Bashissa, koska sisäänrakennettu `date`-komento tarjoaa kattavan toiminnallisuuden. Kuitenkin monimutkaisempien päivämäärän ja ajan käsittelyjen yhteydessä ohjelmoijat saattavat käyttää muita ohjelmointikieliä tai työkaluja, jotka tarjoavat kirjastoja päivämäärän aritmetiikkaan ja jäsentämiseen, kuten Pythonin `datetime`-moduuli.

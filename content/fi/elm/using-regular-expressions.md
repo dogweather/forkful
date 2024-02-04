@@ -1,44 +1,72 @@
 ---
 title:                "Säännöllisten lausekkeiden käyttö"
-date:                  2024-01-19
+date:                  2024-02-03T19:16:49.350347-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Säännöllisten lausekkeiden käyttö"
-
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/elm/using-regular-expressions.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Säännölliset lausekkeet ovat hakumalleja tekstissä tunnistamiseen. Käytämme niitä, koska ne tekevät tekstin prosessoinnista nopeaa ja joustavaa.
+## Mikä & Miksi?
+Säännölliset lausekkeet (regex) ohjelmoinnissa ovat malleja, joita käytetään merkkiyhdistelmien vastaavuuden tarkistamiseen merkkijonoissa. Elm:ssä, kuten muissakin ohjelmointikielissä, ohjelmoijat käyttävät regexiä tehtäviin kuten syötteen validointi, etsintä ja tekstin korvaaminen merkkijonoissa niiden joustavuuden ja tehokkuuden vuoksi.
 
-## How to:
-Elm käyttää `Regex`-pakettia säännöllisten lausekkeiden käsittelyyn. Tässä helppo esimerkki:
+## Kuinka:
+Elm ei sisällä sisäänrakennettuja regex-funktioita sen ydinkirjastossa, joten näiden operaatioiden suorittamiseen tarvitaan kolmannen osapuolen kirjastoja. Yksi suosittu valinta regexin kanssa työskentelyyn on `elm/regex`. Voit lisätä sen projektiisi käyttäen `elm install elm/regex`.
 
-```Elm
+Tässä on, miten voit käyttää `elm/regex`iä muutamassa yleisessä tehtävässä:
+
+### 1. Mallin vastaavuuden tarkistaminen
+Tarkistaaksesi, vastaako merkkijono mallia, voit käyttää `Regex.contains`.
+
+```elm
 import Regex
 
--- Säännöllisen lausekkeen luominen
-emailRegex : Regex.Regex
-emailRegex =
-    Regex.fromString "[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}" |> Maybe.withDefault Regex.never
+pattern : Regex.Regex
+pattern = Regex.fromString "^[a-zA-Z0-9]+$" |> Maybe.withDefault Regex.never
 
--- Tekstin hakeminen säännöllisen lausekkeen avulla
-isEmailValid : String -> Bool
-isEmailValid email =
-    Regex.contains emailRegex email
+isAlphanumeric : String -> Bool
+isAlphanumeric input = Regex.contains pattern input
 
--- Käytön esimerkki
-main =
-    Html.text (String.fromBool (isEmailValid "esimerkki@domain.fi"))
+-- Esimerkin käyttö:
+isAlphanumeric "Elm2023"     -- Tuloste: True
+isAlphanumeric "Elm 2023!"   -- Tuloste: False
 ```
 
-Tämän pitäisi tulostaa `True` jos sähköposti on kelvollinen.
+### 2. Kaikkien vastaavuuksien löytäminen
+Löytääksesi kaikki mallin esiintymät merkkijonossa, voit käyttää `Regex.find`.
 
-## Deep Dive
-Säännöllisiä lausekkeita on hyödynnetty jo 1950-luvulta lähtien. Elm ei ole yhtä suoraviivainen regexien kanssa kuin jotkin muut kielet. Esimerkiksi `JavaScript` on perinteisesti ollut regex-vahva. Elm käyttää natiivia `Regex`-kirjastoa, ja regexien käsittely tapahtuu puhtaasti funktionaalisesti, mikä on Elmin periaatteiden mukainen tapa.
+```elm
+matches : Regex.Regex
+matches = Regex.fromString "\\b\\w+\\b" |> Maybe.withDefault Regex.never
 
-## See Also
-- Elm `Regex`-dokumentaatio: [package.elm-lang.org/packages/elm/regex/latest](https://package.elm-lang.org/packages/elm/regex/latest)
-- Regex101, testaa säännöllisiä lausekkeita: [regex101.com](https://regex101.com/)
-- Säännöllisten lausekkeiden opas: [regular-expressions.info](https://www.regular-expressions.info/)
+getWords : String -> List String
+getWords input = 
+    input
+        |> Regex.find matches
+        |> List.map (.match)
+
+-- Esimerkin käyttö:
+getWords "Elm on kivaa!"  -- Output: ["Elm", "on", "kivaa"]
+```
+
+### 3. Tekstin korvaaminen
+Korvataksesi osia merkkijonosta, jotka vastaavat mallia, käytä `Regex.replace`.
+
+```elm
+replacePattern : Regex.Regex
+replacePattern = Regex.fromString "Elm" |> Maybe.withDefault Regex.never
+
+replaceElmWithHaskell : String -> String
+replaceElmWithHaskell input = 
+    Regex.replace replacePattern (\_ -> "Haskell") input
+
+-- Esimerkin käyttö:
+replaceElmWithHaskell "Elmin oppiminen on kivaa!"  
+-- Tuloste: "Haskellin oppiminen on kivaa!"
+```
+
+Näissä esimerkeissä `Regex.fromString` käytetään regex-mallin kokoamiseen, jossa `\b` vastaa sanarajoja ja `\w` vastaa mitä tahansa sanamerkkiä. Käsittele aina `Regex.fromString` tuloksena saatu `Maybe` varmistaaksesi, että et joudu invalidin regex-mallin kanssa ongelmiin, tyypillisesti käyttämällä `Maybe.withDefault`.

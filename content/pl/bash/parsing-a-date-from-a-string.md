@@ -1,41 +1,85 @@
 ---
-title:                "Przetwarzanie daty ze łańcucha znaków"
-date:                  2024-01-20T15:34:30.692890-07:00
-simple_title:         "Przetwarzanie daty ze łańcucha znaków"
-
+title:                "Analiza składniowa daty z łańcucha znaków"
+date:                  2024-02-03T19:14:11.225821-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Analiza składniowa daty z łańcucha znaków"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/bash/parsing-a-date-from-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Co i dlaczego?
-Parseowanie daty z ciągu znaków to proces wyłuskiwania informacji o dacie z tekstu. Programiści robią to, by przetworzyć dane wejściowe, np. z formularzy lub logów, do formatów użytecznych w programach i skryptach.
+
+Analiza daty ze stringa w Bashu polega na ekstrakcji i konwersji informacji daty z danych tekstowych na format, który Bash może manipulować lub używać do dalszych procesów. Jest to często wymagane w skryptach do takich zadań, jak analiza plików logów, organizacja plików na podstawie znaczników daty czy automatyczne raportowanie, co czyni to istotną umiejętnością dla programistów do skutecznego zarządzania i wykorzystywania danych czasowych.
 
 ## Jak to zrobić:
-```Bash
-#!/bin/bash
 
-# Przykład parsowania daty z ciągu znaków
-date_string="2023-04-05 14:23:00"
-parsed_date=$(date -d "$date_string" '+%Y-%m-%d %H:%M:%S')
+Sam Bash jest dość ograniczony w bezpośrednich możliwościach analizy dat, często polegając na zewnętrznych narzędziach takich jak `date` i `awk` do bardziej zaawansowanej manipulacji. Oto jak można przeanalizować określony format, a następnie użyć go z poleceniem `date` do konwersji lub wykonania operacji.
 
-echo "Oryginalny ciąg znaków: $date_string"
-echo "Sparsowana data: $parsed_date"
+**Przykład 1:** Wyodrębnij string daty i przekształć go na inny format.
+
+Załóżmy, że masz datę w formacie `rrrr-mm-dd` i chcesz ją przekształcić na `dd-mm-rrrr`.
+
+```bash
+original_date="2023-04-01"
+formatted_date=$(date -d $original_date '+%d-%m-%Y')
+
+echo $formatted_date
 ```
 
-Output:
+**Przykładowy wynik:**
 ```
-Oryginalny ciąg znaków: 2023-04-05 14:23:00
-Sparsowana data: 2023-04-05 14:23:00
+01-04-2023
 ```
 
-## Głębsze spojrzenie:
-Parsowanie dat w Bashu polega na wykorzystaniu polecenia `date`, które ma długą historię w systemach Unix i Linux. Działa poprzez konwersję tekstowych reprezentacji daty i czasu do formatu, który Bash może łatwiej przetworzyć. Alternatywą jest użycie zewnętrznych programów jak `awk`, `sed` czy języków skryptowych jak Python, gdzie posługują się one własnymi, bardziej zaawansowanymi metodami parsowania.
+Używa to polecenie `date` z opcją `-d` do określenia wejściowego stringa daty i `+%d-%m-%Y` do formatowania wyniku.
 
-Szczegółowo, funkcja `date` w Bash pozwala na formatowanie wyjściowego ciągu znaków z daty (opcja '+%Y-%m-%d %H:%M:%S') i parsowanie niestandardowych formatów daty przy pomocy opcji `-d`. Obraca ona zróżnicowane formaty wejściowe na standardowe daty i godziny.
+**Przykład 2:** Użycie `awk` do wyodrębnienia daty z uporządkowanego tekstu logu i jej przekształcenia.
 
-## Zobacz również:
-- Bash manual: https://www.gnu.org/software/bash/manual/
-- Advanced Bash-Scripting Guide: https://tldp.org/LDP/abs/html/index.html
-- Date command examples: https://www.cyberciti.biz/faq/linux-unix-formatting-dates-for-display/
+Załóżmy, że masz linię pliku logu:
+
+```
+2023-04-01 12:00:00 User logged in
+```
+
+Możesz wyodrębnić i przekształcić część daty używając `awk` i `date`.
+
+```bash
+log_line="2023-04-01 12:00:00 User logged in"
+date_part=$(echo $log_line | awk '{print $1}')
+formatted_date=$(date -d $date_part "+%A, %B %d, %Y")
+
+echo $formatted_date
+```
+
+**Przykładowy wynik:**
+```
+Sobota, Kwiecień 01, 2023
+```
+
+Ten przykład używa `awk` do podzielenia linii logu i wyodrębnienia części daty (`$1` reprezentuje pierwsze pole rozdzielone spacją), a następnie `date` jest używany do jej ponownego sformatowania.
+
+### Użycie narzędzi stron trzecich
+
+Do bardziej złożonej analizy lub przy radzeniu sobie z szeroką gamą formatów dat, bardzo przydatne mogą być narzędzia stron trzecich, takie jak `dateutils`.
+
+**Przykład z `dateutils`:**
+
+Załóżmy, że masz string daty w niestandardowym formacie, na przykład `Kwiecień 01, 2023`.
+
+```bash
+original_date="Kwiecień 01, 2023"
+formatted_date=$(dateconv -i "%B %d, %Y" -f "%Y-%m-%d" <<< $original_date)
+
+echo $formatted_date
+```
+
+**Przykładowy wynik:**
+```
+2023-04-01
+```
+
+To polecenie korzysta z `dateconv` z `dateutils`, określając format wejściowy za pomocą `-i` i pożądany format wyjściowy za pomocą `-f`. `dateutils` obsługuje ogromny zakres formatów dat i czasu, co czyni go bardzo wszechstronnym narzędziem do zadań związanych z analizą daty w skryptach Bash.

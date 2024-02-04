@@ -1,42 +1,81 @@
 ---
-title:                "YAML-tiedostojen käsittely"
-date:                  2024-01-19
-simple_title:         "YAML-tiedostojen käsittely"
-
+title:                "Työskentely YAML:n kanssa"
+date:                  2024-02-03T19:26:24.538004-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Työskentely YAML:n kanssa"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/ruby/working-with-yaml.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
-YAML on ihmisen luettavissa oleva tiedostoformaatti datan esittämiseen. Ruby-ohjelmoijat käyttävät sitä konfiguraatioiden, asetusten ja muiden rakenteellisten tietojen tallennukseen, koska sen puhtaan ja yksinkertaisen syntaksin ansiosta tiedoston muokkaaminen ja ymmärtäminen on vaivatonta.
+## Mikä ja miksi?
+YAML, joka tarkoittaa YAML Ain't Markup Language, on laajalti käytössä Rubyn konfiguraatiotiedostoissa ja datan sarjallistamisessa sen ihmislukuisan muodon vuoksi. Ohjelmoijat suosivat YAMLia, kun heidän tarvitsee tallentaa tai siirtää dataobjekteja lukuisassa mutta rakenteellisesti jäsennellyssä muodossa, mikä yksinkertaistaa tehtäviä kuten konfiguraation hallinta, datan tallennus ja kielten välisen datan jakaminen.
 
-## How to:
-Rubyssa YAML-tiedostojen käsittely on helppoa `yaml`-kirjaston avulla. Esimerkiksi näin:
+## Kuinka:
+Ruby sisältää sisäänrakennetun kirjaston nimeltä Psych YAMLin jäsennystä ja tuottamista varten. Käyttääksesi sitä, sinun täytyy ensin vaatia YAML-standardikirjastoa. Tässä on yksinkertainen esimerkki aloittamiseen:
 
-```Ruby
+```ruby
 require 'yaml'
 
-# YAML-tiedoston lukeminen
-config = YAML.load_file('config.yml')
+# Sarjallistettava hajautustaulu
+person = { name: "John Doe", age: 30, skills: ["Ruby", "JavaScript"] }
 
-# Hash-tietueena olevan datan tulostus
-puts config.inspect
+# Hajautustaulun muuntaminen YAMLiksi
+yaml_data = person.to_yaml
 
-# YAML-tiedoston luominen
-user_data = { name: 'Matti', language: 'Ruby', level: 'beginner' }
-File.open('user.yml', 'w') { |file| file.write(user_data.to_yaml) }
+puts yaml_data
 ```
 
-Output:
-```Ruby
-{ "name" => "Matti", "language" => "Ruby", "level" => "beginner" }
+**Esimerkkituloste:**
+
+```yaml
+---
+:name: John Doe
+:age: 30
+:skills:
+- Ruby
+- JavaScript
 ```
 
-## Deep Dive:
-YAML, lyhennys sanoista "YAML Ain't Markup Language", on vuonna 2001 ilmestynyt ja W3C:n standardoima. Se on suunniteltu olemaan selkeämpi ja yksinkertaisempi kuin sen vaihtoehdot, kuten XML ja JSON. YAML-perusteita koodatessa tarvittaa `yaml`-kirjasto, joka on usein jo sisäänrakennettu Ruby-version mukana. Tiedostot tyypillisesti päättyvät `.yml` tai `.yaml` ja noudattavat avain-arvo -periaatetta.
+Ladataksesi YAML-datan takaisin Ruby-objektiksi:
 
-## See Also:
-- YAML:n virallinen sivusto: [yaml.org](https://yaml.org/)
-- Ruby-dokumentaatio YAML-moduulille: [ruby-doc.org](https://ruby-doc.org/stdlib-2.5.1/libdoc/yaml/rdoc/YAML.html)
+```ruby
+loaded_person = YAML.load(yaml_data)
+
+puts loaded_person
+```
+
+**Esimerkkituloste:**
+
+```ruby
+{name: "John Doe", age: 30, skills: ["Ruby", "JavaScript"]}
+```
+
+### Kolmannen osapuolen kirjastojen käyttö:
+
+Vaikka standardikirjasto riittää perustehtäviin, monimutkaisiin tarpeisiin saattaisit haluta tutkia kolmannen osapuolen jalokiviä kuten 'safe_yaml'. Käyttääksesi tällaisia kirjastoja, sinun täytyy ensin asentaa jalokivi:
+
+```bash
+gem install safe_yaml
+```
+
+Sen jälkeen voit käyttää sitä turvallisesti ladatakseen YAML-dataa, vähentäen riskejä kuten objektien instanssiointi käyttäjän hallitsemista lähteistä:
+
+```ruby
+require 'safe_yaml'
+
+safe_loaded_person = SafeYAML.load(yaml_data)
+
+puts safe_loaded_person
+```
+
+**Esimerkkituloste:**
+
+```ruby
+{name: "John Doe", age: 30, skills: ["Ruby", "JavaScript"]}
+```
+
+Tämä lähestymistapa parantaa YAML-käsittelysi turvallisuutta, tehden siitä hyvän valinnan sovelluksille, jotka lataavat YAML-dataa luottamattomista lähteistä.

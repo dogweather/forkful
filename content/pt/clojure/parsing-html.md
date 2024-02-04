@@ -1,44 +1,75 @@
 ---
-title:                "Análise de HTML"
-date:                  2024-01-20T15:30:49.095351-07:00
-simple_title:         "Análise de HTML"
-
+title:                "Analisando HTML"
+date:                  2024-02-03T19:11:41.138354-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Analisando HTML"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/clojure/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## O Que é & Porquê?
-Analisar HTML consiste em transformar o conteúdo marcado de uma página web em dados compreensíveis e manipuláveis. Programadores fazem isso para extrair informação, automatizar interações com websites ou testar conteúdos web.
+## O Que & Por Quê?
 
-## Como Fazer:
-```Clojure
-;; Adicione a biblioteca Enlive ao seu projeto
+Analisar HTML em Clojure envolve extrair programaticamente informações de documentos HTML. Programadores fazem isso para acessar, manipular ou monitorar conteúdo web dinamicamente, automatizando tarefas ou alimentando dados em aplicações.
+
+## Como fazer:
+
+Clojure não possui capacidades de análise de HTML internamente, mas você pode utilizar bibliotecas Java ou invólucros Clojure como `enlive` ou `hickory`. Aqui está como usar ambos:
+
+### Usando Enlive:
+
+Enlive é uma escolha popular para análise de HTML e raspagem web. Primeiro, inclua-o nas dependências do seu projeto:
+
+```clojure
+[net.cgrand/enlive "1.1.6"]
+```
+
+Então, você pode analisar e navegar por HTML assim:
+
+```clojure
 (require '[net.cgrand.enlive-html :as html])
 
-;; Defina a URL e pegue o HTML dela
-(def url "http://example.com")
-(def page-html (html/html-resource (java.net.URL. url)))
-
-;; Extrair títulos usando Enlive
-(defn get-titles [html]
-  (map :content (html/select html [:title])))
-
-;; Uso da função
-(println (get-titles page-html))
-```
-Saída de exemplo:
-```
-("Este é o título da página de exemplo")
+(let [doc (html/html-resource (java.net.URL. "http://example.com"))]
+  (html/select doc [:div.some-class]))
 ```
 
-## Aprofundamento
-Analisar HTML é uma tática usada desde o início da web. Inicialmente, as análises eram mais rudimentares, muitas vezes, usando expressões regulares. Hoje, têm-se bibliotecas especializadas como Enlive ou Jsoup (em Java), que entendem a estrutura do HTML e oferecem maneiras mais confiáveis e flexíveis de acessar os dados.
+Este trecho de código busca uma página HTML e seleciona todos os elementos `<div>` com a classe `some-class`.
 
-Enlive, por exemplo, não altera o documento durante a análise, o que significa que o seu HTML não será "arruinado" durante o processo. Alternativamente, para tarefas mais complexas ou manipulação de DOM, algo como HtmlUnit pode ser mais apropriado, mas tem o custo de maior sobrecarga.
+A saída pode parecer com:
 
-## Veja Também
-- Documentação do Enlive: [https://github.com/cgrand/enlive](https://github.com/cgrand/enlive)
-- Jsoup, uma alternativa Java: [https://jsoup.org/](https://jsoup.org/)
-- HtmlUnit, para simular um navegador: [http://htmlunit.sourceforge.net/](http://htmlunit.sourceforge.net/)
+```clojure
+({:tag :div, :attrs {:class "some-class"}, :content ["Aqui está algum conteúdo."]})
+```
+
+### Usando Hickory:
+
+Hickory oferece uma maneira de analisar HTML em um formato que é mais fácil de trabalhar em Clojure. Adicione Hickory às dependências do seu projeto:
+
+```clojure
+[hickory "0.7.1"]
+```
+
+Aqui está um exemplo simples:
+
+```clojure
+(require '[hickory.core :as hickory]
+         '[hickory.select :as select])
+
+;; Analise o HTML no formato Hickory
+(let [doc (hickory/parse "<html><body><div id='main'>Olá, mundo!</div></body></html>")]
+  ;; Selecione o div com id 'main'
+  (select/select (select/id "main") doc))
+```
+
+Este código analisa uma string HTML simples e usa um seletor CSS para encontrar um `div` com o ID `main`.
+
+Exemplo de saída:
+
+```clojure
+[{:type :element, :tag :div, :attrs {:id "main"}, :content ["Olá, mundo!"]}]
+```
+
+Tanto `enlive` quanto `hickory` oferecem soluções robustas para análise de HTML em Clojure, com `enlive` focando mais em templating e `hickory` enfatizando transformação de dados.

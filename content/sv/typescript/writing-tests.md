@@ -1,25 +1,29 @@
 ---
 title:                "Skriva tester"
-date:                  2024-01-19
+date:                  2024-02-03T19:32:25.576066-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Skriva tester"
-
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/typescript/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att skriva tester är som en kvalitetskontroll för koden, där man systematiskt verifierar att varje del fungerar som den ska. Programmerare gör det för att tidigt upptäcka fel, förenkla framtida underhåll och säkerställa att koden står pall över tid.
+Att skriva tester i TypeScript innebär att man skapar automatiska skript för att verifiera funktionaliteten och korrektheten i koden. Programmerare gör detta för att säkerställa tillförlitlighet, snabbt upptäcka buggar och underlätta underhåll av kodtillväxten, eftersom TypeScript's statiska typning lägger till en nivå av förutsägbarhet till JavaScript-testning.
 
-## Hur gör man:
-Här är ett enkelt exempel med Jest, ett populärt testramverk för JavaScript och TypeScript. Först installerar du Jest:
+## Hur man gör:
+TypeScript fungerar harmoniskt med de flesta JavaScript-testningsramverk. För demonstrationsändamål kommer vi att använda Jest, ett populärt testningsramverk, på grund av dess konfigurationsfria uppsättning för TypeScript-projekt.
+
+Först, se till att du har installerat Jest och de nödvändiga TypeScript-typerna:
 
 ```bash
-npm install --save-dev jest @types/jest ts-jest
+npm install --save-dev jest typescript ts-jest @types/jest
 ```
 
-Ange inställningar i din `jest.config.js` för TypeScript:
+Nästa steg, sätt upp Jest för att arbeta med TypeScript genom att modifiera `jest.config.js` eller om du skapar en ny:
 
 ```javascript
 module.exports = {
@@ -28,38 +32,59 @@ module.exports = {
 };
 ```
 
-Nu skriver vi ett simpelt test för en funktion som adderar två tal:
+Nu ska vi skriva en enkel funktion och ett test för den. Betrakta en `sum.ts` fil med följande funktion:
 
 ```typescript
 // sum.ts
 export function sum(a: number, b: number): number {
   return a + b;
 }
+```
 
+Skapa en testfil som heter `sum.test.ts`:
+
+```typescript
 // sum.test.ts
 import { sum } from './sum';
 
-test('adds 1 + 2 to equal 3', () => {
+test('lägger till 1 + 2 för att bli 3', () => {
   expect(sum(1, 2)).toBe(3);
 });
 ```
 
-Kör testet med:
+Kör dina tester med:
 
 ```bash
 npx jest
 ```
 
-Exempel på utskrift:
+Exempel på utdata som indikerar ett godkänt test kan se ut ungefär så här:
 
+```plaintext
+ PASS  ./sum.test.ts
+  ✓ lägger till 1 + 2 för att bli 3 (2 ms)
 ```
-PASS  ./sum.test.ts
-✓ adds 1 + 2 to equal 3 (5ms)
+
+För asynkron kod hanterar Jest detta med `async/await`. Anta att du har en asynkron `fetchData` funktion:
+
+```typescript
+// asyncFunctions.ts
+export async function fetchData(): Promise<string> {
+  return "data";
+}
 ```
 
-## Fördjupning
-Tester har alltid varit centrala i mjukvaruutveckling. På 70-talet pratade man om "debugging", men idag är "test-driven development" och "behavior-driven development" standard. Alternativ till Jest inkluderar Mocha, Jasmine och QUnit. Jest sköter båda enhetstester och integrationstester bra, och dess "snapshot" funktion är perfekt för att testa stora datamängder.
+Ditt test som använder asynkrona funktioner:
 
-## Se även
-- Jest officiell hemsida: [https://jestjs.io](https://jestjs.io)
-- Artikel om testdriven utveckling (TDD): [https://en.wikipedia.org/wiki/Test-driven_development](https://en.wikipedia.org/wiki/Test-driven_development)
+```typescript
+// asyncFunctions.test.ts
+import { fetchData } from './asyncFunctions';
+
+test('hämtar data framgångsrikt', async () => {
+  expect(await fetchData()).toBe('data');
+});
+```
+
+När du kör dina tester kommer Jest att vänta på att löftet uppfylls, och korrekt testar asynkrona operationer.
+
+Kom ihåg, effektiv testning innefattar att skriva flera tester för olika scenarion, inklusive gränsfall, för att säkerställa att din TypeScript-kod fungerar som förväntat.

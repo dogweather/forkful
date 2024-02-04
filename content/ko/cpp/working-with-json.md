@@ -1,80 +1,87 @@
 ---
-title:                "JSON 다루기"
-date:                  2024-01-19
-simple_title:         "JSON 다루기"
-
+title:                "JSON과 함께 일하기"
+date:                  2024-02-03T19:22:08.807630-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "JSON과 함께 일하기"
 tag:                  "Data Formats and Serialization"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/cpp/working-with-json.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (무엇과 왜?)
-JSON은 데이터 교환 형식이다. 쉽고, 읽기 좋은 구조로 데이터를 전송하고 저장할 때 사용한다. 프로그래머는 빠른 데이터 교환과 플랫폼 간 호환성을 위해 JSON을 쓴다.
+## 무엇이며 왜 사용하는가?
 
-## How to: (어떻게 하나요?)
-C++로 JSON을 다뤄보자. `nlohmann/json` 라이브러리를 사용한다. 설치 후 코드 예제를 테스트하자.
+JSON(JavaScript Object Notation)은 데이터를 저장하고 전송하기 위한 경량 포맷으로, 서버와 웹 애플리케이션 간의 데이터 교환을 위한 훌륭한 매체입니다. 프로그래머들은 JSON을 사용하는데, 이는 인간에게 쉽게 읽히고, 기계가 분석하기에 직관적이기 때문입니다. 특히 인터넷을 통한 데이터 교환 또는 구성 설정이 필요한 애플리케이션을 작업할 때 그렇습니다.
 
-설치:
-```sh
-pip install nlohmann-json
+## 사용 방법:
+
+C++에서는 JSON을 기본적으로 지원하지 않지만, nlohmann/json과 같은 서드파티 라이브러리를 사용하면 간단합니다. 기본 작업을 위해 사용하는 방법은 다음과 같습니다:
+
+우선, 라이브러리가 설치되어 있는지 확인하세요. vcpkg나 Conan과 같은 패키지 관리자를 사용한다면, 프로젝트에 `nlohmann/json`을 쉽게 추가할 수 있습니다.
+
+### 문자열에서 JSON 파싱하기
+
+```cpp
+#include <iostream>
+#include <nlohmann/json.hpp>
+
+int main() {
+    // 문자열로 된 JSON 데이터
+    std::string jsonData = "{\"name\":\"John\", \"age\":30, \"city\":\"New York\"}";
+
+    // JSON 문자열 파싱
+    auto jsonObject = nlohmann::json::parse(jsonData);
+
+    // 데이터 접근
+    std::cout << "Name: " << jsonObject["name"] << "\n"
+              << "Age: " << jsonObject["age"] << "\n"
+              << "City: " << jsonObject["city"] << std::endl;
+
+    return 0;
+}
 ```
 
-기본 JSON 생성:
-```C++
+**샘플 출력:**
+
+```
+Name: John
+Age: 30
+City: New York
+```
+
+### JSON 생성하기
+
+JSON 데이터를 생성하는 것도 마찬가지로 간단합니다; 단지 `nlohmann::json` 객체에 값을 할당하면 됩니다.
+
+```cpp
 #include <nlohmann/json.hpp>
 #include <iostream>
-
-using json = nlohmann::json;
 
 int main() {
     // JSON 객체 생성
-    json j;
-    j["name"] = "Kim";
-    j["age"] = 25;
-    j["is_programmer"] = true;
-    
-    // JSON을 문자열로 변환
-    std::string s = j.dump();
-    
-    // 결과 출력
-    std::cout << s << std::endl;
-}
-```
-출력:
-```plaintext
-{"age":25,"is_programmer":true,"name":"Kim"}
-```
+    nlohmann::json jsonObject;
+    jsonObject["name"] = "Jane";
+    jsonObject["age"] = 25;
+    jsonObject["city"] = "Los Angeles";
 
-JSON 파일 읽기 및 쓰기:
-```C++
-#include <nlohmann/json.hpp>
-#include <iostream>
-#include <fstream>
+    // JSON 객체를 문자열로 변환하고 출력
+    std::string jsonString = jsonObject.dump(4); // 예쁘게 출력하기 위해 인자 4 사용
+    std::cout << jsonString << std::endl;
 
-using json = nlohmann::json;
-
-int main() {
-    // 파일에서 JSON 읽기
-    std::ifstream i("example.json");
-    json j;
-    i >> j;
-    
-    // JSON 사용
-    std::cout << "Name: " << j["name"] << std::endl;
-    
-    // JSON 파일로 쓰기
-    std::ofstream o("new_example.json");
-    o << j.dump(4); // 예쁜 출력을 위한 들여쓰기
+    return 0;
 }
 ```
 
-## Deep Dive (심층 탐구)
-JSON(JavaScript Object Notation)은 2001년에 Douglas Crockford가 소개했다. XML과 달리 더 적은 코드로 데이터를 나타낼 수 있다. C++에서 `nlohmann/json` 말고도 `RapidJSON`, `JsonCpp` 같은 라이브러리들도 있다. `nlohmann/json`은 쉬운 사용법과 표준 C++ 기능 때문에 인기가 있다. 표준 라이브러리에는 JSON 지원이 내장되어 있지 않다.
+**샘플 출력:**
 
-## See Also (더 보기)
-- nlohmann/json GitHub 페이지: https://github.com/nlohmann/json
-- JSON 표준 사양: https://www.json.org/json-en.html
-- RapidJSON 라이브러리: http://rapidjson.org/
-- JsonCpp 라이브러리: https://github.com/open-source-parsers/jsoncpp
+```
+{
+    "name": "Jane",
+    "age": 25,
+    "city": "Los Angeles"
+}
+```
+
+이 예제들은 `nlohmann/json` 라이브러리를 사용하여 C++에서 JSON을 다루는 핵심 기능을 보여줍니다. 이 기본 사항들을 이용하면, 구성 파일부터 네트워크 애플리케이션에 이르기까지 다양한 애플리케이션에서 JSON을 파싱하고 생성할 수 있습니다.

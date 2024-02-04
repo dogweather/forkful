@@ -1,43 +1,58 @@
 ---
 title:                "Escribiendo en el error estándar"
-date:                  2024-01-19
+date:                  2024-02-03T19:33:25.499262-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Escribiendo en el error estándar"
-
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/javascript/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## ¿Qué y Por Qué?
-Escribir en el error estándar (`stderr`) permite separar los mensajes de error de la salida principal del programa (`stdout`). Los programadores lo utilizan para depurar y reportar errores sin interferir con la salida de datos que se podría estar usando en otro lugar.
+## Qué y Por Qué
+Escribir en el error estándar (stderr) en JavaScript se trata de dirigir mensajes de error o cualquier información crítica a un flujo específico y separado, lo cual es especialmente útil en entornos similares a Unix para propósitos de registro y depuración. Los programadores hacen esto para diferenciar la salida normal del programa de los mensajes de error, permitiendo una gestión de salida más limpia y un monitoreo de errores más sencillo.
 
-## Cómo hacerlo:
+## Cómo:
+En Node.js, escribir en stderr se puede lograr utilizando el método `console.error()` o escribiendo directamente en `process.stderr`. Aquí hay ejemplos que demuestran ambos enfoques:
+
 ```javascript
-// Escribir un mensaje de error en stderr
-console.error('Esto es un mensaje de error');
+// Usando console.error()
+console.error('Este es un mensaje de error.');
 
-// Ejemplo con una función para manejar errores
-function funcionQuePuedeFallar() {
-    throw new Error('Algo salió mal');
-}
-
-try {
-    funcionQuePuedeFallar();
-} catch (error) {
-    console.error('Error capturado:', error);
-}
-```
-Salida de muestra en la consola:
-```
-Esto es un mensaje de error
-Error capturado: Error: Algo salió mal
+// Escribiendo directamente en process.stderr
+process.stderr.write('Este es otro mensaje de error.\n');
 ```
 
-## Análisis Profundo
-Históricamente, `stderr` se utilizó en sistemas Unix para que los errores se imprimieran de manera diferente a la salida estándar. Se puede redirigir en la consola para separar la información. Node.js implementa `process.stderr` como un stream en donde `console.error()` lo utiliza bajo el capó. Una alternativa es escribir directamente al stream usando `process.stderr.write('Mensaje de error\n')`.
+La salida de muestra para ambos métodos aparecería en el flujo de stderr, sin mezclarse con stdout:
+```
+Este es un mensaje de error.
+Este es otro mensaje de error.
+```
 
-## Ver También
-- Documentación oficial de Node.js para `console.error()`: https://nodejs.org/api/console.html#consoleerror
-- Una guía completa sobre los streams en Node.js, incluyendo `stderr`: https://nodejs.org/api/stream.html
-- Explicación detallada de `stdout` vs. `stderr`: https://www.jstorimer.com/blogs/workingwithcode/7766119-when-to-use-stderr-instead-of-stdout
+Para un registro más sofisticado o específico de la aplicación, muchos programadores de JavaScript utilizan bibliotecas de terceros como `winston` o `bunyan`. He aquí un rápido ejemplo usando `winston`:
+
+Primero, instala `winston` vía npm:
+```shell
+npm install winston
+```
+
+Luego, configura `winston` para registrar errores en stderr:
+```javascript
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  levels: winston.config.syslog.levels,
+  transports: [
+    new winston.transports.Console({
+      stderrLevels: ['error']
+    })
+  ]
+});
+
+// Registrando un mensaje de error
+logger.error('Error registrado a través de winston.');
+```
+
+Esta configuración asegura que cuando registras un error usando `winston`, este se dirige a stderr, ayudando a mantener una clara separación entre las salidas estándar y de error.

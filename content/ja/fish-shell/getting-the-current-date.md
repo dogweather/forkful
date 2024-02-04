@@ -1,41 +1,54 @@
 ---
-title:                "現在の日付を取得する"
-date:                  2024-01-20T15:14:11.533361-07:00
-simple_title:         "現在の日付を取得する"
-
+title:                "現在の日付の取得"
+date:                  2024-02-03T19:09:34.615080-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "現在の日付の取得"
 tag:                  "Dates and Times"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/fish-shell/getting-the-current-date.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (何となぜ？)
-カレントデートを取得するって、今日の日付を手に入れることです。プログラマーはロギング、タイムスタンプ、日付ベースの機能でこれを使います。
+## 何となぜ？
+プログラミングで現在の日付を取得することは、システムの日付と時刻のデータを取得して操作するための基本的な作業です。スクリプトや自動化タスクでは、タイムスタンプの生成、タスクのスケジューリング、ログの作成に不可欠です。
 
-## How to: (やり方)
-```Fish Shell
-# 現在の日付を「年-月-日」の形式で表示
-set -l today (date "+%Y-%m-%d")
-echo $today
-```
-```
-# 出力例: 2023-03-21
-```
+## 方法：
+Fish Shellは、必要に応じて出力の形式を整形する柔軟性を提供する`date`のような外部コマンドを利用して現在の日付を取得します。使い方は以下の通りです：
 
-```Fish Shell
-# もっと詳しい日付と時刻を取得
-set -l now (date "+%Y-%m-%d %H:%M:%S")
-echo $now
-```
-```
-# 出力例: 2023-03-21 15:45:30
+```fish
+# デフォルト形式で現在の日付を表示
+echo (date)
+
+# 出力例：Wed 25 Oct 2023 15:42:03 BST
 ```
 
-## Deep Dive (深掘り)
-Fish Shellでは`date`コマンドはUnix系の伝統的なコマンドです。各OSに応じて微妙に違うけれど、基本的な使い方は同じ。他のシェル（BASHやZSH）も似たやり方ですが、Fishの構文はもっとシンプル。`date`コマンドのフォーマットオプションは多く、必要に応じてカスタマイズできます。例えば、`+%Y`は4桁の年を表示し、`+%m`は2桁の月を示す。組み合わせることで色んなフォーマットが可能。
+日付の形式をカスタマイズするには、フォーマット指定子に続けて`+`オプションを使用できます：
 
-## See Also (関連情報)
-- Fishの公式ドキュメンテーション: [fishshell.com/docs](https://fishshell.com/docs/current/index.html)
-- `date`コマンドについてのGNUの説明: [GNU Coreutils `date`](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html)
-- 日付フォーマットのカスタマイズについて: [strftime.org](https://strftime.org/)
+```fish
+# YYYY-MM-DD形式で現在の日付を表示
+echo (date "+%Y-%m-%d")
+
+# 出力例：2023-10-25
+```
+
+タイムスタンプの取り扱いや日付演算のようなもっと複雑なタスクに対しては、スクリプティングの性質上、Fish Shellは`date`のような外部ツールに頼っています。現在のUNIXタイムスタンプを取得する例を以下に示します：
+
+```fish
+# 現在のUNIXタイムスタンプを取得
+echo (date "+%s")
+
+# 出力例：1666710123
+```
+
+そして`date`を使って現在の日付に一日を加えるには：
+
+```fish
+# 現在の日付に一日加える
+echo (date -d "+1 day" "+%Y-%m-%d")
+
+# 出力例：2023-10-26
+```
+
+注：例ではGNU coreutilsで動作する`date`コマンドのオプションを使用しています。macOSなど、デフォルトでBSD dateコマンドを使用する他の環境ではオプションが異なる場合があります。常に`date --help`またはmanページを参照して、ご自身の環境に特有の詳細を確認してください。

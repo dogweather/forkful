@@ -1,50 +1,119 @@
 ---
 title:                "Skriva tester"
-date:                  2024-01-19
+date:                  2024-02-03T19:30:13.005481-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Skriva tester"
-
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/c-sharp/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att skriva tester innebär att du skapar kod som kontrollerar att annan kod fungerar som den ska. Programmerare gör detta för att snabbt kunna upptäcka buggar, garantera kvalitet och förenkla framtida underhåll.
 
-## Hur gör man:
-För att skriva tester i C#, kan du använda testramverket NUnit. Kolla koden nedan för ett enkelt test.
+Att skriva tester i C# innebär att skapa automatiserade skript för att validera din kods funktionalitet, säkerställa att den beter sig som förväntat. Programmerare gör detta för att fånga upp buggar tidigt, underlätta kodrefaktorering och säkerställa att nya ändringar inte bryter befintliga funktioner, vilket därigenom ökar mjukvarans kvalitet och tillförlitlighet.
 
-```C#
+## Hur man gör:
+
+C#-utvecklare använder primärt ramverken NUnit eller xUnit för att skriva tester på grund av deras flexibilitet och omfattande funktionssätt. Här är ett grundläggande exempel som använder NUnit för att testa en enkel additionsfunktion:
+
+1. **Installera NUnit och NUnit3TestAdapter** via NuGet Package Manager eller .NET CLI:
+```powershell
+dotnet add package NUnit
+dotnet add package NUnit3TestAdapter
+```
+
+2. **Skapa ett C#-klassbiblioteksprojekt** om du inte redan har gjort det.
+
+3. **Skriv en enkel funktion** att testa. Till exempel en additions metod i en klass som heter `Calculator`:
+```csharp
+public class Calculator
+{
+    public int Add(int a, int b)
+    {
+        return a + b;
+    }
+}
+```
+
+4. **Skriv en testklass** med NUnit:
+```csharp
 using NUnit.Framework;
 
-namespace MyApplication.Tests
+namespace CalculatorTests
 {
     [TestFixture]
-    public class ExampleTests
+    public class CalculatorTests
     {
         [Test]
-        public void AdditionTest()
+        public void Add_AddsTwoIntegers_ReturnsCorrectSum()
         {
-            Assert.AreEqual(4, 2 + 2);
+            // Arrange
+            var calculator = new Calculator();
+            int expected = 5;
+
+            // Act
+            int actual = calculator.Add(2, 3);
+
+            // Assert
+            Assert.AreEqual(expected, actual);
         }
     }
 }
 ```
 
-Kör testet och så bör det lyckas. Testresultatet ser ut ungefär så här:
+5. **Kör testet** med din IDE:s testkörare eller .NET CLI:
+```powershell
+dotnet test
+```
 
+### Exempel på utskrift:
+
+Om ditt test passerar bör du se en utskrift liknande denna:
 ```
 Test Run Successful.
 Total tests: 1
      Passed: 1
- Total time: 1.234s
+ Total time: 1.2345 Sekunder
 ```
 
-## Fördjupning
-Tester i programvaruutveckling har funnits sedan 1950-talet. Alternativ till NUnit inkluderar xUnit och MSTest i C#-ekosystemet. Detaljerna vid testskrivning inkluderar att isolera testfall, mocka beroenden och organisera test i logiska samlingar.
+### Använda xUnit:
 
-## Se även
-- NUnit: https://nunit.org/
-- xUnit: https://xunit.net/
-- MSTest documentation: https://docs.microsoft.com/en-us/dotnet/core/testing/unit-testing-with-mstest
+Om du föredrar xUnit är inställningen liknande NUnit. Så här skriver du om testexemplet för `Calculator`-klassen med xUnit:
+
+1. **Installera xUnit och xUnit.runner.visualstudio**:
+```powershell
+dotnet add package xUnit
+dotnet add package xUnit.runner.visualstudio
+```
+
+2. **Skriv en testklass med xUnit**:
+```csharp
+using Xunit;
+
+namespace CalculatorTests
+{
+    public class CalculatorTests
+    {
+        [Fact]
+        public void Add_AddsTwoIntegers_ReturnsCorrectSum()
+        {
+            // Arrange
+            var calculator = new Calculator();
+            int expected = 5;
+
+            // Act
+            int actual = calculator.Add(2, 3);
+
+            // Assert
+            Assert.Equal(expected, actual);
+        }
+    }
+}
+```
+
+3. **Kör testet med .NET CLI** eller din IDE:s integrerade testkörare.
+
+Både NUnit och xUnit erbjuder kraftfulla funktioner för parametriserade tester, setup/teardown-operationer och att organisera tester i kategorier, vilket gör dem till oumbärliga verktyg i C#-programmerarens verktygslåda för att säkerställa kodkvalitet och funktionalitet.

@@ -1,46 +1,56 @@
 ---
 title:                "Capitalizando una cadena de texto"
-date:                  2024-01-19
+date:                  2024-02-03T19:05:53.781569-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Capitalizando una cadena de texto"
-
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/php/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Qué y por qué?
-Capitalizar una cadena significa convertir la primera letra de cada palabra a mayúscula. Los programadores lo hacen para asegurar que los nombres propios, títulos o para dar énfasis visual sigan las reglas de la gramática y mejoren la legibilidad.
+## ¿Qué y por qué?
+Capitalizar una cadena implica modificar el primer carácter de un texto dado a mayúsculas, asegurando que frases, títulos o nombres propios comiencen correctamente en un conjunto de datos. Los programadores a menudo ejecutan la capitalización de cadenas para la normalización de datos, mejorando la legibilidad o asegurando la consistencia en la entrada del usuario o en el procesamiento de datos textuales.
 
 ## Cómo hacerlo:
-Capitaliza cadenas en PHP con `ucwords` o `mb_convert_case` si necesitas soporte para UTF-8:
+PHP soporta de forma nativa varias funciones para capitalizar cadenas, cada una sirviendo a un propósito diferente. Así es cómo puedes usarlas:
 
-```PHP
-<?php
-$texto = "bienvenidos a mi blog de programación en php.";
+### Capitalizando la primera letra de una cadena:
 
-// Capitalizar con ucwords:
-echo ucwords($texto);
-// Salida: "Bienvenidos A Mi Blog De Programación En Php."
-
-// Si necesitas considerar caracteres UTF-8:
-echo mb_convert_case($texto, MB_CASE_TITLE, "UTF-8");
-// Salida: "Bienvenidos A Mi Blog De Programación En Php."
-?>
+```php
+$string = "hola, mundo!";
+$capitalizedString = ucfirst($string);
+echo $capitalizedString; // Devuelve: Hola, mundo!
 ```
-## Inmersión Profunda
-Antes, PHP no manejaba bien los caracteres no ASCII. `ucwords` y `strtoupper` podían fallar con caracteres especiales o acentuados. Desde PHP 5.4.0, `mb_convert_case` mejora el tratamiento de caracteres multibyte como los acentos en español.
 
-Alternativas incluyen:
-- `strtoupper` para convertir toda la cadena a mayúsculas.
-- `strtolower` para todo en minúsculas y luego `ucfirst` para capitalizar solo la primera letra de la cadena.
+### Capitalizando la primera letra de cada palabra:
 
-Detalles de implementación:
-- `ucwords` es rápido y adecuado para la mayoría de las necesidades, pero con limitaciones en cuanto a locales.
-- `mb_convert_case` usa la extensión `mbstring` para soporte extendido de codificación de caracteres, incluyendo caracteres no latinos.
+```php
+$string = "hola, mundo!";
+$capitalizedWords = ucwords($string);
+echo $capitalizedWords; // Devuelve: Hola, Mundo!
+```
 
-## Ver también
-- [PHP String Functions](https://www.php.net/manual/en/ref.strings.php) - Funciones de cadenas en PHP.
-- [PHP Multibyte String Functions](https://www.php.net/manual/en/ref.mbstring.php) - Funciones de la extensión mbstring en PHP.
-- [PHP ucwords](https://www.php.net/manual/en/function.ucwords.php) - Documentación oficial de `ucwords`.
-- [PHP mb_convert_case](https://www.php.net/manual/en/function.mb-convert-case.php) - Documentación oficial de `mb_convert_case`.
+### Convirtiendo toda la cadena a mayúsculas:
+
+```php
+$string = "hola, mundo!";
+$upperCaseString = strtoupper($string);
+echo $upperCaseString; // Devuelve: HOLA, MUNDO!
+```
+
+Para escenarios que requieren más personalización o soluciones de terceros, se pueden utilizar bibliotecas como `mbstring` (para cadenas de múltiples bytes), especialmente al tratar con internacionalización donde los caracteres pueden extenderse más allá del conjunto básico ASCII.
+
+### Usando mbstring para capitalizar cadenas UTF-8:
+
+Asegúrate de tener habilitada la extensión `mbstring` en tu configuración de PHP, luego:
+
+```php
+$string = "élégant";
+$capitalizedString = mb_convert_case($string, MB_CASE_TITLE, "UTF-8");
+echo $capitalizedString; // Devuelve: Élégant
+```
+
+Este enfoque ayuda a capitalizar de manera precisa cadenas que incluyen caracteres no ASCII, adhiriéndose a las sutilezas de varios idiomas.

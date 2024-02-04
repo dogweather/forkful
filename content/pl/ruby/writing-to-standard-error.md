@@ -1,45 +1,54 @@
 ---
 title:                "Pisanie do standardowego błędu"
-date:                  2024-01-19
+date:                  2024-02-03T19:34:26.376529-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Pisanie do standardowego błędu"
-
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/ruby/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Co i Dlaczego?)
-Pisanie do standardowego błędu (stderr) pozwala segregować normalny output od komunikatów o błędach. Programiści robią to, by łatwo rozróżniać standardowe dane wyjściowe od informacji o wyjątkach i innych błędach.
+## Co i dlaczego?
+Pisanie do standardowego błędu (stderr) w Ruby polega na kierowaniu komunikatów o błędach lub informacji diagnostycznych do oddzielnego strumienia wyjściowego, różnego od standardowego wyjścia (stdout). Programiści robią to, aby odróżnić regularne wyjście programu od błędów i informacji debugujących, co ułatwia diagnozowanie problemów i analizę logów.
 
-## How to: (Jak to zrobić:)
-```Ruby
-# Wypisanie komunikatu na standardowe wyjście
-puts "Hello, this is standard output."
+## Jak to zrobić:
+Standardowa biblioteka Ruby'ego zapewnia prosty sposób na zapis do stderr za pomocą `$stderr` lub `STDERR`. Nie potrzebujesz bibliotek stron trzecich do tej podstawowej operacji.
 
-# Wypisanie komunikatu na standardowe wyjście błędów
-$stderr.puts "Warning, this is an error message!"
-
-# Użycie STDERR jest równoznaczne z $stderr
-STDERR.puts "ERROR: Something bad happened!"
+### Zapisywanie prostej wiadomości do stderr:
+```ruby
+$stderr.puts "Błąd: Nie znaleziono pliku."
+# Lub równoważnie
+STDERR.puts "Błąd: Nie znaleziono pliku."
+```
+Przykładowe wyjście (do stderr):
+```
+Błąd: Nie znaleziono pliku.
 ```
 
-Przykładowy output:
+### Przekierowywanie stderr do pliku:
+```ruby
+File.open('error.log', 'w') do |plik|
+  STDERR.reopen(plik)
+  STDERR.puts "Nie udało się otworzyć konfiguracji."
+end
 ```
-Hello, this is standard output.
+Ten fragment kodu przekierowuje stderr do pliku o nazwie `error.log`, a wszystkie kolejne zapisane błędy będą tam wyjściowane aż do zresetowania przekierowania stderr lub zakończenia programu.
+
+### Użycie stderr z obsługą wyjątków:
+```ruby
+begin
+  # Symulacja operacji, która może się nie powieść, np. otwarcie pliku
+  File.open('nonexistent_file.txt')
+rescue Exception => e
+  STDERR.puts "Wystąpił wyjątek: #{e.message}"
+end
 ```
-Przykładowy standard error (stderr):
+Przykładowe wyjście (do stderr):
 ```
-Warning, this is an error message!
-ERROR: Something bad happened!
+Wystąpił wyjątek: No such file or directory @ rb_sysopen - nonexistent_file.txt
 ```
 
-## Deep Dive (Wnikliwa analiza)
-Historia: STDERR zostało stworzone jako jedno z trzech głównych strumieni danych w Unix, ułatwiających zarządzanie wyjściem procesów.
-Alternatywy: Możesz przekierować stderr do pliku lub innego strumienia za pomocą IO, jak `$stderr.reopen('errors.log', 'w')`.
-Implementacja: W Rubym, `STDERR` i `$stderr` to globalne zmienne reprezentujące standardowy strumień błędów. Z reguły `STDERR` jest to samo co `$stderr`, ale `$stderr` może zostać przekierowany.
-
-## See Also (Zobacz też)
-- Ruby Docs on I/O: [https://ruby-doc.org/core-2.7.0/IO.html](https://ruby-doc.org/core-2.7.0/IO.html)
-- StackOverflow: ["How to redirect stdout and stderr to a file in Ruby?"](https://stackoverflow.com/questions/1154846/how-to-redirect-stdout-and-stderr-to-a-file-in-ruby)
-- UNIX Stdout and Stderr: [https://en.wikipedia.org/wiki/Standard_streams#Standard_error_(stderr)](https://en.wikipedia.org/wiki/Standard_streams#Standard_error_(stderr))
+Chociaż wbudowane metody Ruby'ego do pisania do stderr wystarczają dla wielu zastosowań, dla bardziej złożonych potrzeb logowania można rozważyć użycie standardowej biblioteki `logger` lub zewnętrznych gemów takich jak `Log4r`. Zapewniają one konfigurowalne mechanizmy logowania, w tym poziomy ważności, formatowanie i możliwość zapisu do różnych wyjść, w tym do plików, e-maili i innych.

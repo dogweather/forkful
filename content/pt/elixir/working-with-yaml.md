@@ -1,58 +1,91 @@
 ---
 title:                "Trabalhando com YAML"
-date:                  2024-01-19
+date:                  2024-02-03T19:25:08.055660-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Trabalhando com YAML"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/elixir/working-with-yaml.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## O Que é & Por Que?
+## O quê e Por quê?
 
-YAML é um formato de serialização de dados legível por humanos, frequentemente usado para configurações de aplicativos e troca de dados entre linguagens. Programadores usam YAML pela sua simplicidade e legibilidade.
+YAML, abreviação de YAML Ain't Markup Language, é um padrão de serialização de dados legível por humanos comumente usado para arquivos de configuração e troca de dados entre linguagens com diferentes estruturas de dados. Programadores o utilizam devido à sua simplicidade e capacidade de representar facilmente dados hierárquicos complexos.
 
-## Como Fazer:
+## Como fazer:
+
+Elixir não inclui suporte embutido para YAML. No entanto, você pode usar bibliotecas de terceiros, como `yamerl` ou `yaml_elixir`, para trabalhar com YAML. Aqui, vamos nos concentrar em `yaml_elixir` pela sua facilidade de uso e recursos abrangentes.
+
+Primeiro, adicione `yaml_elixir` às suas dependências em mix.exs:
 
 ```elixir
-# Para trabalhar com YAML em Elixir, adicionaremos a biblioteca "yaml_elixir" no mix.exs
 defp deps do
   [
-    {:yaml_elixir, "~> 2.5"}
+    {:yaml_elixir, "~> 2.9"}
   ]
 end
-
-# Carregar e ler um arquivo YAML
-yaml_content =
-  """
-  config:
-    language: "Elixir"
-    features:
-      - "Pattern Matching"
-      - "First-Class Functions"
-  """
-
-# Uso da biblioteca YamlElixir para ler o conteúdo YAML
-parsed_content = YamlElixir.read_from_string!(yaml_content)
-IO.inspect(parsed_content)
 ```
-Saída:
+
+Depois, execute `mix deps.get` para buscar a nova dependência.
+
+### Lendo YAML
+
+Dado um simples arquivo YAML, `config.yaml`, que se parece com isto:
+
+```yaml
+database:
+  adapter: postgres
+  username: user
+  password: pass
+```
+
+Você pode ler este arquivo YAML e convertê-lo para um mapa Elixir assim:
+
 ```elixir
-%{
-  "config" => %{
-    "language" => "Elixir",
-    "features" => ["Pattern Matching", "First-Class Functions"]
-  }
-}
+defmodule Config do
+  def read do
+    {:ok, content} = YamlElixir.read_from_file("config.yaml")
+    content
+  end
+end
+
+# Exemplo de uso
+Config.read()
+# Saída: 
+# %{
+#   "database" => %{
+#     "adapter" => "postgres",
+#     "username" => "user",
+#     "password" => "pass"
+#   }
+# }
 ```
 
-## Aprofundamento
+### Escrevendo YAML
 
-O YAML foi introduzido em 2001 como uma alternativa ao XML e ao JSON, com ênfase na legibilidade. Alternativas incluem JSON, XML e TOML, mas YAML é geralmente escolhido para configuração devido à facilidade de leitura e escrita. Internamente, as bibliotecas de Elixir que trabalham com YAML convertem os dados para estruturas Elixir nativas, como mapas e listas.
+Para escrever um mapa de volta para um arquivo YAML:
 
-## Veja Também
+```elixir
+defmodule ConfigWriter do
+  def write do
+    content = %{
+      database: %{
+        adapter: "mysql",
+        username: "root",
+        password: "s3cret"
+      }
+    }
+    
+    YamlElixir.write_to_file("new_config.yaml", content)
+  end
+end
 
-- [YamlElixir (Hex package)](https://hex.pm/packages/yaml_elixir): A página do pacote YamlElixir no Hex.
-- [Documentação Oficial do YAML](https://yaml.org): Para entender completamente o padrão YAML.
-- [Elixir School](https://elixirschool.com/pt/): Tutoriais sobre Elixir, incluindo trabalhar com formatos de dados externos.
+# Exemplo de uso
+ConfigWriter.write()
+# Isso criará ou sobrescreverá `new_config.yaml` com o conteúdo especificado
+```
+
+Note como `yaml_elixir` permite uma tradução direta entre arquivos YAML e estruturas de dados Elixir, tornando-o uma excelente escolha para programadores Elixir que precisam trabalhar com dados YAML.

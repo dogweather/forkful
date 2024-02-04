@@ -1,57 +1,151 @@
 ---
-title:                "Arbeid med CSV"
-date:                  2024-01-19
-simple_title:         "Arbeid med CSV"
-
+title:                "Arbeide med CSV"
+date:                  2024-02-03T19:19:43.162345-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Arbeide med CSV"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/c-sharp/working-with-csv.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-CSV står for Comma-Separated Values - enkle tekstfiler som inneholder tabellinfo, linje for linje. Programmerere bruker CSV fordi det er et lettvekt-format for datautveksling, som er enkelt å lese og skrive både for mennesker og maskiner.
+CSV-filer (Comma-Separated Values, verdier skilt med komma) er et vanlig datautvekslingsformat som representerer tabelldata i ren tekst ved å bruke kommaer for å skille individuelle verdier. Programmerere arbeider med CSV-filer for å importere, eksportere, og manipulere data enkelt på tvers av ulike applikasjoner og tjenester, siden det er et enkelt, bredt støttet format som er kompatibelt med regnearkprogrammer, databaser og programmeringsspråk.
 
-## Slik gjør du:
-Lesing av CSV:
-```C#
+## Hvordan:
+Arbeid med CSV-filer i C# kan gjøres gjennom `System.IO` navneområdet for grunnleggende operasjoner, og for mer komplekse manipulasjoner eller for å håndtere større filer sømløst, kan man vurdere tredjepartsbiblioteker som `CsvHelper`. Nedenfor er eksempler på hvordan man leser fra og skriver til CSV-filer ved hjelp av begge tilnærminger.
+
+### Lese en CSV-fil ved hjelp av System.IO
+```csharp
 using System;
 using System.IO;
 
-string csvFilePath = @"dinCsvFil.csv";
-
-foreach (var line in File.ReadLines(csvFilePath))
+class ReadCSV
 {
-    var values = line.Split(',');
-    // Antar ingen komma inni selve dataene
-    Console.WriteLine($"Navn: {values[0]}, Alder: {values[1]}");
+    static void Main()
+    {
+        string filePath = @"sti\til\din\fil.csv";
+        // Lese alle linjene i CSV-filen
+        string[] csvLines = File.ReadAllLines(filePath);
+        
+        foreach (string line in csvLines)
+        {
+            string[] rowData = line.Split(',');
+            Console.WriteLine($"Første kolonne: {rowData[0]}, Andre kolonne: {rowData[1]}");
+        }
+    }
 }
 ```
-Skriving til CSV:
-```C#
+
+**Eksempel på utdata:**
+```
+Første kolonne: Navn, Andre kolonne: Alder
+Første kolonne: John Doe, Andre kolonne: 30
+```
+
+### Skrive til en CSV-fil ved hjelp av System.IO
+```csharp
+using System;
+using System.Collections.Generic;
 using System.IO;
 
-string csvFilePath = @"dinCsvFil.csv";
-using (var writer = new StreamWriter(csvFilePath))
+class WriteCSV
 {
-    writer.WriteLine("Navn,Alder");
-    writer.WriteLine("Ola,42");
-    writer.WriteLine("Kari,36");
+    static void Main()
+    {
+        string filePath = @"sti\til\din\output.csv";
+        var lines = new List<string>
+        {
+            "Navn,Alder",
+            "John Doe,30",
+            "Jane Smith,25"
+        };
+        
+        File.WriteAllLines(filePath, lines);
+        Console.WriteLine("CSV-filen er skrevet.");
+    }
 }
 ```
-Test output etter skriving vil være en fil `dinCsvFil.csv` med innholdet:
+
+**Eksempel på utdata:**
 ```
-Navn,Alder
-Ola,42
-Kari,36
+CSV-filen er skrevet.
 ```
 
-## Dykk dypere
-CSV er gammelt, helt tilbake til det tidlige 1970-årene. Alternativer som XML og JSON er ofte bedre for komplekse data, men CSV vinner på enkelhet. Det viktigste er å håndtere variasjon i format, som anførselstegn rundt tekst med komma og newline-karakterer inni verdier. .NET's `TextFieldParser` eller tredjepartsbiblioteker som CsvHelper kan hjelpe til med dette.
+### Bruke CsvHelper til å lese CSV
+For å bruke CsvHelper, legg først til `CsvHelper`-pakken til prosjektet ditt ved bruk av NuGet Package Manager.
 
-## Se også
-- Microsoft TextFieldParser dokumentasjon: https://docs.microsoft.com/en-us/dotnet/api/microsoft.visualbasic.fileio.textfieldparser
-- CsvHelper bibliotek: https://joshclose.github.io/CsvHelper/
-- RFC 4180, standard for CSV-format: https://www.rfc-editor.org/rfc/rfc4180.txt
+```csharp
+using CsvHelper;
+using System.Globalization;
+using System.IO;
+using System.Linq;
+using CsvHelper.Configuration;
 
-Disse kildene gir mer info og hjelper deg å gripe ansvaret for dine CSV-operasjoner.
+class ReadCSVWithCsvHelper
+{
+    static void Main()
+    {
+        string filePath = @"sti\til\din\fil.csv";
+
+        using (var reader = new StreamReader(filePath))
+        using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
+        {
+            var records = csv.GetRecords<dynamic>().ToList();
+            foreach (var record in records)
+            {
+                Console.WriteLine($"Første kolonne: {record.Name}, Andre kolonne: {record.Age}");
+            }
+        }
+    }
+}
+```
+
+**Eksempel på utdata:**
+```
+Første kolonne: John Doe, Andre kolonne: 30
+Første kolonne: Jane Smith, Andre kolonne: 25
+```
+
+### Bruke CsvHelper til å skrive CSV
+```csharp
+using CsvHelper;
+using System.Globalization;
+using System.IO;
+using System.Collections.Generic;
+using CsvHelper.Configuration;
+
+class WriteCSVWithCsvHelper
+{
+    public class Person
+    {
+        public string Navn { get; set; }
+        public int Alder { get; set; }
+    }
+
+    static void Main()
+    {
+        string filePath = @"sti\til\din\output.csv";
+        var records = new List<Person>
+        {
+            new Person { Navn = "John Doe", Alder = 30 },
+            new Person { Navn = "Jane Smith", Alder = 25 }
+        };
+
+        using (var writer = new StreamWriter(filePath))
+        using (var csv = new CsvWriter(writer, CultureInfo.InvariantCulture))
+        {
+            csv.WriteRecords(records);
+        }
+        
+        Console.WriteLine("CSV-filen er skrevet med CsvHelper.");
+    }
+}
+```
+
+**Eksempel på utdata:**
+```
+CSV-filen er skrevet med CsvHelper.
+```

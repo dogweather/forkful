@@ -1,57 +1,58 @@
 ---
-title:                "Mettre une chaîne de caractères en majuscules"
-date:                  2024-01-19
-simple_title:         "Mettre une chaîne de caractères en majuscules"
-
+title:                "Mettre en majuscule une chaîne"
+date:                  2024-02-03T19:05:39.634245-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Mettre en majuscule une chaîne"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/javascript/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Quoi & Pourquoi?)
-Capitaliser une chaîne, c'est transformer toutes ses lettres en majuscules. Les développeurs font ça pour uniformiser les données, pour l'importance visuelle ou pour respecter des conventions de nommage.
+## Quoi et pourquoi ?
+Mettre une chaîne de caractères en capitale signifie convertir le premier caractère de la chaîne en majuscule tout en conservant les caractères restants tels quels. Cette opération est couramment effectuée en JavaScript pour formater les entrées des utilisateurs, afficher des noms ou des titres, et assurer la cohérence dans les textes de l'interface utilisateur.
 
-## How to: (Comment faire : )
-En JavaScript, pour capitaliser une chaîne, on utilise souvent la méthode `toUpperCase()` :
+## Comment faire :
+En JavaScript, il n'existe pas de méthode intégrée pour mettre directement en capitale les chaînes de caractères, mais c'est simple à implémenter en utilisant les méthodes de manipulation de chaînes de base.
 
-```Javascript
-let phrase = "bonjour le monde!";
-let phraseCapitale = phrase.toUpperCase();
-
-console.log(phraseCapitale); // Affiche "BONJOUR LE MONDE!"
-```
-
-Et pour changer le premier caractère seul en majuscule :
-
-```Javascript
-let mot = "paris";
-let motCapitalise = mot.charAt(0).toUpperCase() + mot.slice(1);
-
-console.log(motCapitalise); // Affiche "Paris"
-```
-
-## Deep Dive (Plongée en profondeur)
-Historiquement, capitaliser une chaîne n'était pas aussi direct qu'aujourd'hui. Les premières versions de JavaScript ne disposaient pas de méthodes natives pour changer la casse. Les développeurs utilisaient des boucles pour transformer chaque lettre.
-
-La méthode `toUpperCase()` est la plus directe, mais pas la seule. Pour seulement capitaliser la première lettre, l'exemple précédent est utile. Ceci est aussi pertinent si vous travaillez avec des systèmes qui exigent certaines conventions, comme un prénom toujours débutant par une majuscule.
-
-Si on a besoin de plus de flexibilité, par exemple changer la casse dans différents contextes (comme camelCase ou PascalCase), on doit implémenter des fonctions personnalisées. Voici un aperçu :
-
-```Javascript
-function toPascalCase(str) {
-    return str
-        .match(/[a-z]+/gi)
-        .map(word => word.charAt(0).toUpperCase() + word.substr(1).toLowerCase())
-        .join('');
+### Utiliser le JavaScript Standard
+```javascript
+function capitalize(str) {
+  if (!str) return '';
+  return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
-console.log(toPascalCase("envie d'apprendre")); // Affiche "EnvieDApprendre"
+console.log(capitalize('hello world')); // Sortie: "Hello world"
 ```
 
-Cette fonction recherche les mots, capitalise la première lettre de chacun, puis les assemble.
+### Version ES6
+Avec les littéraux de gabarits ES6, la fonction peut être écrite de manière plus succincte :
+```javascript
+const capitalize = (str) => !str ? '' : `${str[0].toUpperCase()}${str.slice(1)}`;
 
-## See Also (Voir aussi)
-- MDN Web Docs pour `toUpperCase()`: https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase
-- MDN Web Docs pour `charAt()`: https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/String/charAt
-- W3Schools sur JavaScript String Methods: https://www.w3schools.com/js/js_string_methods.asp
+console.log(capitalize('hello ES6')); // Sortie: "Hello ES6"
+```
+
+### Utiliser Lodash
+Lodash est une bibliothèque d'utilitaires tiers populaire qui offre une large gamme de fonctions pour manipuler et travailler avec les valeurs JavaScript, y compris les chaînes de caractères. Pour mettre une chaîne en capitale en utilisant Lodash :
+```javascript
+// D'abord, installez lodash si vous ne l'avez pas fait : npm install lodash
+const _ = require('lodash');
+
+console.log(_.capitalize('EXEMPLE LODASH')); // Sortie: "Lodash exemple"
+```
+_Remarquez comment Lodash non seulement met la première lettre en majuscule mais aussi convertit le reste de la chaîne en minuscule, ce qui diffère légèrement de l'implémentation en JavaScript pur._
+
+### Utiliser CSS (Uniquement à des Fins d'Affichage)
+Si l'objectif est de mettre le texte en capitale pour l'affichage dans l'UI, le CSS peut être utilisé :
+```css
+.capitalize {
+  text-transform: capitalize;
+}
+```
+```html
+<div class="capitalize">bonjour css</div> <!-- Affiche "Bonjour css" -->
+```
+**Note :** Cette méthode change l'apparence du texte sur la page web sans modifier la chaîne elle-même en JavaScript.

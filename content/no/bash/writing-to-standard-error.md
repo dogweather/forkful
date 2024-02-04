@@ -1,31 +1,52 @@
 ---
-title:                "Skrive til standardfeil"
-date:                  2024-01-19
-simple_title:         "Skrive til standardfeil"
-
+title:                "Skriving til standardfeil"
+date:                  2024-02-03T19:32:27.762491-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Skriving til standardfeil"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/bash/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Skrive til standard error (stderr) er å sende feilmeldinger og diagnostikk separat fra vanlig utdata (stdout). Programmerere gjør dette for å logge feil uten å forstyrre programmets faktiske output.
+## Hva & Hvorfor?
+Å skrive til standard feil (stderr) i Bash handler om å dirigere feilmeldinger eller viktig diagnostisk utdata separat fra standard utdata (stdout). Programmerere gjør dette for å sikre at feilmeldinger lett kan identifiseres, loggføres, eller til og med ignoreres, noe som bistår i feilsøkings- og loggføringsprosesser.
 
-## How to:
-For å skrive til stderr i Bash, bruk `>&2`. Her er et eksempel:
+## Hvordan gjøre det:
+I Bash bruker du `>&2` for å omdirigere utdata til stderr. Her er et grunnleggende eksempel:
 
-```Bash
+```bash
 echo "Dette er en normal melding"
 echo "Dette er en feilmelding" >&2
 ```
 
-Kjør koden, og du vil se begge meldingene, men feilmeldingen er sendt til stderr.
+Å kjøre dette skriptet vil vise begge meldingene på konsollen, men hvis du omdirigerer dem, kan du skille stdout fra stderr. For eksempel:
 
-## Deep Dive
-I de tidlige dagene av Unix ble stderr introdusert for å skille feil fra ordinær output. Du kan omdirigere stderr til en fil eller et annet program. Alternativt kan `2>` brukes for å omdirigere feil. Selv om dagens programmeringsspråk har avanserte loggesystemer, forblir direkte skriving til stderr gjennom shell-scripting grunnleggende og nyttig i mange sammenhenger.
+```bash
+bash script.sh > output.txt 2> error.txt
+```
 
-## See Also
-- Bash Manual: https://www.gnu.org/software/bash/manual/
-- Advanced Bash-Scripting Guide: https://tldp.org/LDP/abs/html/
-- Stack Overflow, for praktiske spørsmål og svar: https://stackoverflow.com/questions/tagged/bash
+`output.txt` vil inneholde `"Dette er en normal melding"`, mens `error.txt` vil fange opp `"Dette er en feilmelding"`.
+
+For et praktisk bruksområde, vurder et skript som behandler filer og rapporterer en feil hvis en fil ikke eksisterer:
+
+```bash
+filename="example.txt"
+
+if [ ! -f "$filename" ]; then
+    echo "$filename finnes ikke!" >&2
+    exit 1
+else
+    echo "Behandler $filename"
+fi
+```
+
+Eksempel på utdata direkte i konsollen når `example.txt` ikke eksisterer:
+
+```
+example.txt finnes ikke!
+```
+
+Det finnes ingen direkte tredjepartsbiblioteker i Bash for håndtering av stderr, ettersom omdirigering er nativt støttet og generelt tilstrekkelig. Men for komplekse applikasjoner kan loggingsrammeverk eller eksterne loggingsverktøy som `syslog` eller `log4bash` inkorporeres for å håndtere både stdout og stderr mer effektivt.

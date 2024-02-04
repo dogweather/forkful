@@ -1,37 +1,57 @@
 ---
-title:                "הפיכת מחרוזת לאותיות רישיות"
-date:                  2024-01-19
-simple_title:         "הפיכת מחרוזת לאותיות רישיות"
-
+title:                "הגדלת אותיות במחרוזת"
+date:                  2024-02-03T19:05:41.811360-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "הגדלת אותיות במחרוזת"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/fish-shell/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## מה ולמה?
-הפיכת מחרוזת לאותיות רישיות היא תהליך שבו משנים את האותיות הראשונות של כל מילה במחרוזת לאות גדולה. תכניתנים משתמשים בזה לשם עיצוב טקסט, הקלה על קריאה או עמידה בקונבנציות קוד.
+
+הפיכת מחרוזת לראשית גדולה משמעה שינוי שם האות הראשונה לאות גדולה ושאר המחרוזת לאותיות קטנות. זהו משימה נפוצה בעיבוד טקסט, נרמול קלט משתמש ועיצוב נתונים כדי להבטיח עקביות או לעמוד בקריטריונים ספציפיים של עיצוב.
 
 ## איך לעשות:
-```Fish Shell
-function capitalize
-    for word in (string split " " $argv)
-        set first_char (echo $word | string sub -l 1 | string upper)
-        echo -n $first_char
-        echo (echo $word | string sub -s 2 | string lower)
-    end
-end
 
-set my_string "שלום לכולם בדוגמה זו"
-capitalize $my_string
-# Output:
-# שלום לכולם בדוגמה זו
+ב-Fish Shell, ניתן לעבד מחרוזות ישירות עם פונקציות מובנות, מבלי צורך בכלים חיצוניים או ספריות. לצורך הפיכת מחרוזת לראשית גדולה, ניתן לשלב את פקודת `string` עם תת-פקודות.
+
+```fish
+# מחרוזת לדוגמא
+set sample_string "hello world"
+
+# הפיכת האות הראשונה לראשית גדולה
+set capitalized_string (string sub -l 1 -- $sample_string | string upper)(string sub -s 2 -- $sample_string)
+
+echo $capitalized_string
 ```
 
-## צלילה עמוקה:
-הפיכת מחרוזות לרישיות אינה חדשה והיא קיימת כבר מאז שפות התכנות הראשונות נכנסו לשימוש. בשפות אחרות יש פונקציית עזר מובנית, אבל ב-Fish Shell אנחנו יוצרים פונקציה בעצמנו. הפונקציה שראינו מפרקת כל מילה, מרימה את האות הראשונה ואז מחזירה אותה למחרוזת. אתה יכול לשחק עם שיטות אלו, כולל שימוש ב-expressions רגולריים, בהתאם לצרכים שלך.
+פלט:
+```
+Hello world
+```
 
-## גם כדאי לראות:
-- [Fish Shell Documentation](https://fishshell.com/docs/current/index.html)
-- [String Manipulation in Fish Shell](https://fishshell.com/docs/current/commands.html#string)
-- [Programming Style Guide](https://google.github.io/styleguide/shellguide.html)
+לצורך תרחישים שדורשים הפיכת מספר מילים במחרוזת לאות ראשית גדולה (לדוגמא, המרת "hello world" ל-"Hello World"), יש לנהל לולאה על כל מילה, תוך החלת לוגיקת ההפיכה לראשית גדולה על כל אחת:
+
+```fish
+# משפט לדוגמא
+set sentence "hello fish shell programming"
+
+# הפיכת כל מילה לראשית גדולה
+set capitalized_words (string split " " -- $sentence | while read -l word; string sub -l 1 -- $word | string upper; and string sub -s 2 -- $word; end)
+
+# שילוב המילים המופכות לראשיות גדולות מחדש
+set capitalized_sentence (string join " " -- $capitalized_words)
+
+echo $capitalized_sentence
+```
+
+פלט:
+```
+Hello Fish Shell Programming
+```
+
+שימו לב ש-Fish Shell אינו מציע ישירות גישה של פקודה יחידה להפיכת משפטים באופן מלא כמו שחלק משפות התכנות עושות עם שיטות מחרוזת שלהן. לכן, שילוב `string split`,` string sub`, `string upper`, ואז שילוב מחדש, מייצג גישה אידיומטית ב-Fish Shell להשגת זאת.

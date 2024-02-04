@@ -1,43 +1,93 @@
 ---
-title:                "YAML-tiedostojen käsittely"
-date:                  2024-01-19
-simple_title:         "YAML-tiedostojen käsittely"
-
+title:                "Työskentely YAML:n kanssa"
+date:                  2024-02-03T19:27:18.898952-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Työskentely YAML:n kanssa"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/typescript/working-with-yaml.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-"## Mikä & Miksi?"
-YAML on datan serialisointikieli, jota käytetään konfiguraatiotiedostoihin ja datan tallennukseen. Käytämme YAMLia sen selkeyden ja ihmislukuisuuden vuoksi.
+## Mikä & Miksi?
+YAML, ihmisläheisesti suunniteltu tietojen serialisointikieli, on usein käytössä konfiguraatiotiedostoissa, prosessien välisessä viestinnässä ja tietojen tallennuksessa. Ohjelmoijat suosivat YAMLia sen luettavuuden ja helppokäyttöisyyden vuoksi, erityisesti käsiteltäessä monimutkaista rakenteistettua tietoa, mikä tekee siitä erinomaisen valinnan TypeScriptillä kehitettyihin sovelluksiin.
 
-## How to:
-"## Kuinka:"
-```TypeScript
-// Asenna yaml-kirjasto: npm install js-yaml
-import * as yaml from 'js-yaml';
-import * as fs from 'fs';
+## Kuinka:
+YAMLin käsittely TypeScriptissä sisältää tyypillisesti YAML-sisällön jäsentämisen JavaScript-objekteiksi ja mahdollisesti JavaScript-objektien muuntamisen takaisin YAMLiksi. Tämä vaatii jäsentimen; yksi suosittu vaihtoehto on `js-yaml`, kirjasto, joka voidaan helposti integroida TypeScript-projekteihin.
 
-// Lukee YAML-tiedoston ja muuntaa sen JavaScript-objektiksi
-const doc = yaml.load(fs.readFileSync('config.yaml', 'utf8'));
-console.log(doc);
+### js-yaml:n asentaminen
+Ensimmäiseksi, lisää `js-yaml` projektiisi:
 
-// Muuntaa JavaScript-objektin YAML-muotoon ja tallentaa tiedostoon
-const data = { title: 'Esimerkki', status: 'toimii' };
-fs.writeFileSync('output.yaml', yaml.dump(data));
+```bash
+npm install js-yaml
 ```
-*Tuloste*:
-Konsoli näyttää `config.yaml` sisällön JS-objektina.
-`output.yaml` sisältää muunnetun datan YAML-muodossa.
 
-## Deep Dive
-"## Syväsukellus"
-YAML (YAML Ain't Markup Language) on helppolukuinen datan kuvauskieli, joka ilmestyi 2001. JSON ja XML ovat vaihtoehtoisia kieliä, mutta YAML on suosittu ihmislukuisuuden ja kirjoittamisen helppouden vuoksi. YAMLin käyttö TypeScriptissa vaatii yleensä ulkopuolisen kirjaston, kuten `js-yaml`, jolla voi lukea ja kirjoittaa YAML-tietoa.
+### YAMLin jäsentäminen JavaScript-objektiksi
+Kuvittele, että sinulla on YAML-tiedosto `config.yaml`, jossa on seuraava sisältö:
 
-## See Also
-"## Katso Myös"
-- YAML:n virallinen sivusto: [https://yaml.org](https://yaml.org)
-- `js-yaml` GitHub-repositorio: [https://github.com/nodeca/js-yaml](https://github.com/nodeca/js-yaml)
-- TypeScriptin dokumentaatio: [https://www.typescriptlang.org](https://www.typescriptlang.org)
+```yaml
+database:
+  host: localhost
+  port: 5432
+  username: user
+  password: pass
+```
+
+Voit lukea ja jäsentää tämän tiedoston JavaScript-objektiksi seuraavasti:
+
+```typescript
+import * as fs from 'fs';
+import * as yaml from 'js-yaml';
+
+// Lataa ja jäsenä YAML-tiedosto
+const fileContents = fs.readFileSync('./config.yaml', 'utf8');
+const data = yaml.load(fileContents) as Record<string, any>;
+
+console.log(data);
+```
+
+**Esimerkkituloste:**
+
+```json
+{
+  "database": {
+    "host": "localhost",
+    "port": 5432,
+    "username": "user",
+    "password": "pass"
+  }
+}
+```
+
+### JavaScript-objektin muuntaminen YAMLiksi
+Jos tarvitset tehdä muunnoksen toiseen suuntaan ja muuntaa JavaScript-objektin YAML-merkkijonoksi, voit käyttää `js-yaml`ia seuraavasti:
+
+```typescript
+import * as yaml from 'js-yaml';
+
+const obj = {
+  title: "Esimerkki",
+  is_published: true,
+  author: {
+    name: "Jane Doe",
+    age: 34
+  }
+};
+
+const yamlStr = yaml.dump(obj);
+console.log(yamlStr);
+```
+
+**Esimerkkituloste:**
+
+```yaml
+title: Esimerkki
+is_published: true
+author:
+  name: Jane Doe
+  age: 34
+```
+
+Tämä pätkä muuntaa JavaScript-objektin YAML-merkkijonoksi ja tulostaa sen. Käytännössä saatat kirjoittaa tämän takaisin tiedostoon tai käyttää sitä muissa sovelluksesi osissa.

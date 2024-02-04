@@ -1,39 +1,62 @@
 ---
-title:                "Uso de expresiones regulares"
-date:                  2024-01-19
-simple_title:         "Uso de expresiones regulares"
-
+title:                "Usando expresiones regulares"
+date:                  2024-02-03T19:16:20.075666-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Usando expresiones regulares"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/elixir/using-regular-expressions.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## ¿Qué y Por Qué?
-Las expresiones regulares son patrones usados para encontrar coincidencias y manipular texto. Los programadores las usan por su potencia y flexibilidad para validar, buscar y editar cadenas de caracteres de manera eficiente.
+## Qué y Por Qué?
+
+Las expresiones regulares (regex) en Elixir se utilizan para buscar, coincidir y manipular cadenas basadas en patrones específicos. Los programadores aprovechan regex para tareas como validar formatos (correo electrónico, URLs), analizar registros o extracción de datos, gracias a su eficiencia y versatilidad en el manejo de cadenas.
 
 ## Cómo hacerlo:
+
+Elixir utiliza el módulo `Regex`, aprovechando la biblioteca regex de Erlang, para operaciones de regex. Aquí están los usos básicos:
+
 ```elixir
-# Definir una expresión regular
-regex = ~r/elixir/
+# Coincidir con un patrón - Devuelve la primera coincidencia
+match_result = Regex.run(~r/hello/, "hello world")
+IO.inspect(match_result) # Salida: ["hello"]
 
-# Encontrar una coincidencia en una cadena
-"Me encanta programar en Elixir". =~ regex
-# Resultado: true
+# Encontrar todas las coincidencias
+all_matches = Regex.scan(~r/\d/, "Hay 2 manzanas y 5 naranjas.")
+IO.inspect(all_matches) # Salida: [["2"], ["5"]]
 
-# Extraer todas las coincidencias
-Regex.scan(~r/\d/, "Año 2023: el futuro del Elixir")
-# Resultado: [["2"], ["0"], ["2"], ["3"]]
-
-# Reemplazar texto que coincida
-Regex.replace(~r/\s/, "espacio por guión", "-")
-# Resultado: "espacio-por-guión"
+# Reemplazar partes de una cadena
+replaced_string = Regex.replace(~r/\s+/, "Elixir es divertido", "_")
+IO.inspect(replaced_string) # Salida: "Elixir_es_divertido"
 ```
 
-## En Profundidad:
-Históricamente, las expresiones regulares vienen de la teoría de autómatas y lenguajes formales. En Elixir, las regex se implementan mediante la biblioteca `:re`, que es una API de Erlang para el motor de expresiones regulares PCRE (Perl Compatible Regular Expressions). Como alternativas a las regex, a veces se pueden usar funciones del módulo `String` para tareas simples, aunque con menos potencia.
+Para patrones más complejos y funcionalidades, podrías considerar usar bibliotecas de terceros, aunque para la mayoría de las tareas básicas de coincidencia de cadenas y patrones, el módulo `Regex` incorporado en Elixir es bastante poderoso.
 
-## Ver También:
-- [Documentación de `Regex` en Elixir](https://hexdocs.pm/elixir/Regex.html)
-- [Guía de inicio rápido de expresiones regulares](https://www.regular-expressions.info/quickstart.html)
-- [PCRE(Perl Compatible Regular Expressions)](http://www.pcre.org/)
+Para realizar una coincidencia sin tener en cuenta mayúsculas o minúsculas, usa la opción `i`:
+
+```elixir
+case_insensitive_match = Regex.run(~r/hello/i, "Hello World")
+IO.inspect(case_insensitive_match) # Salida: ["Hello"]
+```
+
+Las expresiones Regex pueden precompilarse para aumentar la eficiencia cuando se usan varias veces:
+
+```elixir
+precompiled_regex = Regex.compile!("hello")
+match_result_precompiled = Regex.run(precompiled_regex, "hello world")
+IO.inspect(match_result_precompiled) # Salida: ["hello"]
+```
+
+Elixir también soporta capturas nombradas, que pueden ser muy útiles para extraer partes específicas de una cadena mientras hacen tu código más legible:
+
+```elixir
+date_string = "2023-04-15"
+pattern = ~r/(?<year>\d{4})-(?<month>\d{2})-(?<day>\d{2})/
+{:ok, captures} = Regex.run(pattern, date_string, capture: :all_names)
+IO.inspect(captures) # Salida: %{"year" => "2023", "month" => "04", "day" => "15"}
+```
+
+Esta breve descripción general subraya la facilidad con la que Elixir maneja las expresiones regulares, permitiendo técnicas potentes de manipulación de cadenas y extracción de datos.

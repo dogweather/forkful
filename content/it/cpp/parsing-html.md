@@ -1,66 +1,64 @@
 ---
-title:                "Analisi dell'HTML"
-date:                  2024-01-20T15:30:21.039794-07:00
-simple_title:         "Analisi dell'HTML"
-
+title:                "Analisi del HTML"
+date:                  2024-02-03T19:11:35.652552-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Analisi del HTML"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/cpp/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Cosa e Perché?)
-Il parsing di HTML significa leggere e interpretare il codice HTML per estrarne dati o struture. I programmatori lo fanno per automatizzare l'interazione con le pagine web, estrarre informazioni, o alimentare servizi web scraping.
+## Cosa & Perché?
+Analizzare HTML significa scomporre il contenuto HTML in qualcosa che un programma può comprendere e manipolare. I programmatori fanno ciò per estrarre dati, manipolare contenuti o integrare lo scraping web nelle loro applicazioni.
 
-## How to: (Come fare:)
-In C++, possiamo usare la libreria `libxml2` per fare parsing dell'HTML. Qui un esempio di base:
+## Come fare:
+C++ non viene fornito con capacità di analisi HTML integrate. Spesso si utilizza una libreria come Gumbo-parser di Google o qualcosa di simile. Ecco un rapido esempio utilizzando Gumbo-parser:
 
 ```C++
 #include <iostream>
-#include <libxml/HTMLparser.h>
+#include <gumbo.h>
 
-int main() {
-    const char* htmlContent = "<html><body><p>Hello, World!</p></body></html>";
-    htmlDocPtr doc = htmlReadDoc((xmlChar*)htmlContent, NULL, NULL, HTML_PARSE_RECOVER | HTML_PARSE_NOERROR | HTML_PARSE_NOWARNING);
-
-    // Assumiamo che il parsing non fallisca.
-    xmlNode *root_element = xmlDocGetRootElement(doc);
-
-    // Stampa il contenuto del tag <p>.
-    for (xmlNode *currentNode = root_element; currentNode; currentNode = currentNode->next) {
-        if (currentNode->type == XML_ELEMENT_NODE && strcmp((const char *)currentNode->name, "body") == 0) {
-            xmlNode *pNode = currentNode->children->next;
-            if (pNode) {
-                std::cout << pNode->name << ":" << pNode->children->content << std::endl;
-            }
+void search_for_links(GumboNode* node) {
+    if (node->type != GUMBO_NODE_ELEMENT) {
+        return;
+    }
+    if (node->v.element.tag == GUMBO_TAG_A) {
+        GumboAttribute* href = gumbo_get_attribute(&node->v.element.attributes, "href");
+        if (href) {
+            std::cout << href->value << std::endl;
         }
     }
-    
-    // Pulizia.
-    xmlFreeDoc(doc);
-    xmlCleanupParser();
+    GumboVector* children = &node->v.element.children;
+    for (unsigned int i = 0; i < children->length; ++i) {
+        search_for_links(static_cast<GumboNode*>(children->data[i]));
+    }
+}
 
+int main() {
+    const char* html = "<html><body><a href='https://example.com'>Link</a></body></html>";
+    GumboOutput* output = gumbo_parse(html);
+    search_for_links(output->root);
+    gumbo_destroy_output(&kGumboDefaultOptions, output);
     return 0;
 }
 ```
 
-Output:
+Esempio di output:
 ```
-p:Hello, World!
+https://example.com
 ```
 
-## Deep Dive (Approfondimenti)
-### Contesto storico
-Il parsing di HTML è antico quanto il web stesso, ma le librerie moderne hanno semplificato molto il processo.
+## Approfondimento
+Analizzare HTML non è sempre stato semplice in C++. Storicamente, i programmatori utilizzavano espressioni regolari o parser scritti a mano, entrambi fonti di errori e difficoltosi. Oggi, librerie robuste come Gumbo-parser gestiscono le complessità dell'analisi, rendendola più semplice ed affidabile.
 
-### Alternative
-Esistono diverse librerie per il parsing HTML in C++ come `Gumbo` o `QtWebKit`. I programmatori scelgono in base alle proprie necessità.
+Le alternative includono Tidy, MyHTML, o anche integrare C++ con BeautifulSoup di Python tramite la funzione `system` di C++ o interpreti integrati.
 
-### Dettagli implementativi
-`libxml2` implementa il DOM e SAX per processi di parsing. Può gestire anche XML difettosi grazie all'opzione `HTML_PARSE_RECOVER`.
+Dal punto di vista dell'implementazione, queste librerie convertono HTML in un albero Modello Oggetto Documento (DOM). Attraversare e manipolare il DOM consente agli utenti di estrarre e lavorare con i dati come dimostrato nella sezione Come fare.
 
-## See Also (Vedi anche)
-- Documentazione di `libxml2`: http://xmlsoft.org/html/libxml-HTMLparser.html
-- Progetto `Gumbo`: https://github.com/google/gumbo-parser
-- QtWebKit: https://doc.qt.io/qt-5/qtwebkit-guide.html
-- Informazioni su web scraping con C++: https://www.scrapingbee.com/blog/web-scraping-c/
+## Vedere Anche
+- [Repository GitHub di Gumbo-parser](https://github.com/google/gumbo-parser)
+- [Lista di librerie per l'analisi HTML](https://en.cppreference.com/w/c/experimental/dynamic)
+- [Interoperabilità tra C++ e Python](https://docs.python.org/3/extending/embedding.html)

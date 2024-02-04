@@ -1,43 +1,56 @@
 ---
-title:                "Przetwarzanie HTML"
-date:                  2024-01-20T15:31:54.755875-07:00
-simple_title:         "Przetwarzanie HTML"
-
+title:                "Analiza składniowa HTML"
+date:                  2024-02-03T19:12:20.178233-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Analiza składniowa HTML"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/haskell/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Co i dlaczego?)
-Parsing HTML to proces wydobywania danych z dokumentów HTML. Programiści robią to, by manipulować, analizować lub ekstrahować specyficzne informacje z stron internetowych.
+## Co & Dlaczego?
 
-## How to: (Jak to zrobić:)
-Haskell posiada kilka bibliotek do parsowania HTML, ale skupimy się na `hxt`, która jest potężna i wygodna w użyciu.
+Parsowanie HTML w Haskellu pozwala na ekstrakcję danych, manipulowanie zawartością HTML lub programistyczne interakcje ze stronami internetowymi. Operacja ta jest niezbędna do zadań takich jak scraping stron internetowych, automatyczne testowanie aplikacji webowych oraz wydobywanie danych ze stron - wykorzystując silny system typów i paradygmaty programowania funkcyjnego Haskella, aby zapewnić solidny i zwięzły kod.
 
-```Haskell
-{-# LANGUAGE Arrows #-}
+## Jak to zrobić:
 
-import Text.XML.HXT.Core
+Do parsowania HTML w Haskellu użyjemy biblioteki `tagsoup` ze względu na jej prostotę i elastyczność. Najpierw upewnij się, że zainstalowałeś bibliotekę, dodając `tagsoup` do pliku cabal Twojego projektu lub uruchamiając `cabal install tagsoup`.
 
-main :: IO ()
-main = do
-    -- Załóżmy, że 'example.html' zawiera HTML do sparsowania
-    runX $ readDocument [withParseHTML yes, withWarnings no] "example.html"
-         >>> deep (isElem >>> hasName "a" >>> getAttrValue "href")
-         >>= print
+```haskell
+{-# LANGUAGE OverloadedStrings #-}
+
+import Text.HTML.TagSoup
+
+-- Przykładowy HTML do demonstracji
+let sampleHtml = "<html><body><p>Ucz się Haskella!</p><a href='http://example.com'>Kliknij tutaj</a></body></html>"
+
+-- Parsowanie HTML i filtrowanie linków (tagów a)
+let tags = parseTags sampleHtml
+let links = [fromAttrib "href" tag | tag <- tags, isTagOpenName "a" tag]
+
+-- Wydrukowanie wyekstrahowanych linków
+print links
 ```
-Wyjście to lista URL-i, które są wartościami atrybutu href dla tagów anchor (`<a>`).
 
-## Deep Dive (Głębsze spojrzenie)
-Początki bibliotek do parsowania HTML w Haskellu sięgają lat, kiedy język ten zyskiwał na popularności wśród entuzjastów programowania funkcyjnego. `hxt` wykorzystuje koncepcję arrowów, oferując wyrafinowany, ale czytelny sposób pracy z XML i HTML.
+Przykładowe wyjście:
+```plaintext
+["http://example.com"]
+```
 
-Alternatywą dla `hxt` może być `tagsoup`, prościej podejście, które jest mniej rygorystyczne co do poprawności parsowanego HTML.
+Dla bardziej zaawansowanych potrzeb parsowania HTML rozważ użycie biblioteki `pandoc`, szczególnie jeśli pracujesz z konwersją dokumentów. Jest wyjątkowo wszechstronna, ale wiąże się z większą złożonością:
 
-Parsowanie HTML polega na konwersji stringów (lub strumieni bajtów) na strukturę danych, zazwyczaj drzewo, co ułatwia wyszukiwanie elementów i atrybutów.
+```haskell
+import Text.Pandoc
 
-## See Also (Zobacz też)
-- HXT tutorial: http://haskell.github.io/hxt/
-- TagSoup: http://hackage.haskell.org/package/tagsoup
-- Haskell XML Toolbox (HXT): http://hackage.haskell.org/package/hxt
-- "Real World Haskell" (rozdział o parsowaniu XML/HTML): http://book.realworldhaskell.org/read/programming-with-monads.html
+-- Zakładając, że masz załadowany dokument Pandoc (doc), np. z czytania pliku
+let doc = ... -- Tutaj wprowadź swój dokument Pandoc
+
+-- Konwersja dokumentu do łańcucha HTML
+let htmlString = writeHtmlString def doc
+
+-- Teraz możesz sparsować `htmlString` jak powyżej lub postępować zgodnie z własnymi wymaganiami.
+```
+Pamiętaj, że `pandoc` to znacznie większa biblioteka skoncentrowana na konwersji między licznymi formatami znaczników, więc użyj jej, jeśli potrzebujesz tych dodatkowych możliwości lub jeśli już zajmujesz się formatami dokumentów w swojej aplikacji.

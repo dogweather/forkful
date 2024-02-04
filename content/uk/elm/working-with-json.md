@@ -1,65 +1,115 @@
 ---
 title:                "Робота з JSON"
-date:                  2024-01-19
+date:                  2024-02-03T19:23:08.004986-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Робота з JSON"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/elm/working-with-json.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Що & Чому?
-Робота з JSON (JavaScript Object Notation) - це обмін даними між сервером і клієнтом. Програмісти використовують JSON для роботи з даними через його легку читаємість і широку підтримку у веб-технологіях.
+## Що і чому?
+Робота з JSON у Elm полягає в декодуванні даних JSON до типів Elm і кодуванні значень Elm назад у JSON. Цей процес є важливим для веб-додатків для взаємодії з API та зовнішніми джерелами даних, дозволяючи безперебійний обмін даними між клієнтом (Elm) та серверами або іншими сервісами.
 
-## Як це зробити:
-```Elm
-import Html exposing (text)
-import Json.Decode exposing (decodeString)
-import Json.Encode exposing (object, string)
+## Як робити:
 
-type alias User =
-    { name : String
+Elm ставиться до обробки JSON з явністю та безпечністю, в першу чергу використовуючи модулі `Json.Decode` та `Json.Encode`. Щоб почати працювати з JSON, спочатку вам потрібно визначити декодер для вашого типу даних. Припустимо, ми працюємо з простим об'єктом профілю користувача.
+
+Спочатку визначте свій тип Elm:
+
+```elm
+type alias UserProfile = 
+    { id : Int
+    , name : String
     , email : String
     }
-
-userDecoder : Json.Decode.Decoder User
-userDecoder =
-    Json.Decode.map2 User
-        (Json.Decode.field "name" Json.Decode.string)
-        (Json.Decode.field "email" Json.Decode.string)
-
-userEncoder : User -> Json.Encode.Value
-userEncoder user =
-    object
-        [ ( "name", Json.Encode.string user.name )
-        , ( "email", Json.Encode.string user.email )
-        ]
-
-main =
-    let
-        userData =
-            """
-            {"name":"Oleksiy","email":"oleksiy@example.com"}
-            """
-
-        decoded = decodeString userDecoder userData
-    in
-    case decoded of
-        Ok user ->
-            text (user.name ++ " " ++ user.email)
-
-        Err err ->
-            text ("Could not decode user: " ++ toString err)
-
--- Вивід:
--- Oleksiy oleksiy@example.com
 ```
 
-## Поглиблений Розділ
-JSON виник як простіший альтернатива до XML і швидко став стандартом для веб-додатків. В Elm JSON-декодер і енкодер - це містки між строго типізованим Elm кодом і гнучким форматом JSON. Ви можете використовувати пакет `elm/json` для роботи з JSON, але, на відміну від багатьох мов програмування, Elm потребує явного опису структури даних.
+### Декодування JSON в Elm
 
-## Дивіться також:
-- Офіційна документація JSON в Elm: https://package.elm-lang.org/packages/elm/json/latest/
-- Elm Guide - глава про роботу з JSON: https://guide.elm-lang.org/effects/json.html
-- Детальний туторіал про custom types і JSON: https://thoughtbot.com/blog/decoding-json-structures-with-elm
+Щоб декодувати рядок JSON в тип `UserProfile`, створіть декодер:
+
+```elm
+import Json.Decode exposing (Decoder, int, string, field, map3)
+
+userProfileDecoder : Decoder UserProfile
+userProfileDecoder =
+    map3 UserProfile
+        (field "id" int)
+        (field "name" string)
+        (field "email" string)
+```
+
+Для декодування об'єкта JSON:
+
+```elm
+import Json.Decode exposing (decodeString)
+
+jsonString : String
+jsonString = 
+    """{"id": 1, "name": "John Doe", "email": "john@example.com"}"""
+
+decoded : Result String UserProfile
+decoded =
+    decodeString userProfileDecoder jsonString
+
+{- Приклад виводу:
+Result.Ok { id = 1, name = "John Doe", email = "john@example.com" }
+-}
+```
+
+### Кодування Elm у JSON
+
+Щоб закодувати значення Elm назад у JSON, скористайтесь модулем `Json.Encode`.
+
+```elm
+import Json.Encode exposing (object, int, string)
+
+encodeUserProfile : UserProfile -> String
+encodeUserProfile userProfile =
+    object
+        [ ("id", int userProfile.id)
+        , ("name", string userProfile.name)
+        , ("email", string userProfile.email)
+        ]
+        |> Json.Encode.encode 0
+
+{- 
+Використання:
+encodeUserProfile { id = 1, name = "John Doe", email = "john@example.com" }
+
+Приклад виводу:
+"{"id":1,"name":"John Doe","email":"john@example.com"}"
+-}
+```
+
+### Сторонні бібліотеки
+
+Пакети Elm, як-от `elm-json-decode-pipeline`, можуть спростити створення декодерів, використовуючи стиль конвеєра, що особливо зручно для декодування складних об'єктів.
+
+Спочатку додайте бібліотеку до свого проекту:
+
+```shell
+elm install NoRedInk/elm-json-decode-pipeline
+```
+
+Потім ви можете спростити визначення декодера так:
+
+```elm
+import Json.Decode exposing (int, string, succeed)
+import Json.Decode.Pipeline exposing (required, decode)
+
+userProfileDecoder : Decoder UserProfile
+userProfileDecoder =
+    decode UserProfile
+        |> required "id" int
+        |> required "name" string
+        |> required "email" string
+
+{- Використовуйте цей декодер як і раніше з decodeString для декодування рядків JSON. -}
+```
+
+Цей підхід спрощує декодер, роблячи код чистішим та легшим для підтримки, особливо коли структури даних стають складнішими.

@@ -1,55 +1,55 @@
 ---
-title:                "Écriture d'un fichier texte"
-date:                  2024-01-19
-simple_title:         "Écriture d'un fichier texte"
-
+title:                "Rédiger un fichier texte"
+date:                  2024-02-03T19:28:16.445611-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Rédiger un fichier texte"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/kotlin/writing-a-text-file.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
-
-Écrire dans un fichier texte signifie enregistrer des données en format lisible. C'est essentiel pour sauvegarder des configurations, enregistrer des logs ou partager des informations entre systèmes et utilisateurs.
+Écrire un fichier texte en Kotlin implique la création d'un fichier et l'insertion de contenu textuel à l'intérieur, une tâche courante pour le stockage de données, la journalisation ou les paramètres de configuration. Les programmeurs le font pour sauvegarder et manipuler des données en dehors de l'espace mémoire volatile, assurant ainsi la persistance à travers les sessions.
 
 ## Comment faire :
+Kotlin offre une approche simple pour écrire dans des fichiers, en tirant parti de la bibliothèque standard sans nécessiter de bibliothèques tierces supplémentaires. Voici un exemple simple :
 
 ```kotlin
 import java.io.File
 
 fun main() {
-    val text = "Bonjour, ceci est un test d'écriture dans un fichier."
-    File("example.txt").writeText(text)
+    val texteAÉcrire = "Bonjour, écriture de fichier Kotlin !"
+    File("exemple.txt").writeText(texteAÉcrire)
 }
 ```
+Ce fragment de code crée un fichier nommé "exemple.txt" dans le répertoire racine du projet et écrit la chaîne `Bonjour, écriture de fichier Kotlin !` dedans. Si le fichier existe déjà, il sera écrasé.
 
-Sortie : Un fichier nommé `example.txt` est créé avec le contenu "Bonjour, ceci est un test d'écriture dans un fichier."
-
-Pour ajouter du texte sans écraser le contenu existant :
+Pour ajouter du texte à un fichier de manière plus contrôlée ou écrire de plus grandes quantités de données, vous pouvez utiliser `appendText` ou `bufferedWriter()` :
 
 ```kotlin
 import java.io.File
 
+fun appendToFile() {
+    val plusDeTexte = "Ajout de plus de texte."
+    File("exemple.txt").appendText(plusDeTexte)
+}
+
+fun writeWithBufferedWriter() {
+    val grandTexte = "De grandes quantités de texte...\nSur plusieurs lignes."
+    File("sortie.txt").bufferedWriter().use { out ->
+        out.write(grandTexte)
+    }
+}
+
 fun main() {
-    val text = "Ajoutons cette ligne."
-    File("example.txt").appendText(text)
+    appendToFile() // Ajoute du texte au fichier existant
+    writeWithBufferedWriter() // Écrit de grandes données de texte de manière efficace
 }
 ```
 
-Sortie : `example.txt` contient maintenant le texte original plus "Ajoutons cette ligne."
+Dans la fonction `appendToFile`, nous ajoutons plus de texte à "exemple.txt" sans écraser son contenu actuel. La fonction `writeWithBufferedWriter` montre une manière efficace d'écrire de grandes quantités de texte ou de données, particulièrement utile pour minimiser les opérations d'entrée/sortie lors de la manipulation de plusieurs lignes ou de grands fichiers.
 
-## Exploration approfondie
-
-Historiquement, l'écriture de fichiers en code est aussi ancienne que la programmation elle-même, permettant la persistance des données au-delà de la durée d'exécution du programme.
-
-Alternativement, on peut utiliser `BufferedWriter`, `FileWriter` ou l'API `Files` de Java NIO pour plus de contrôle et d'efficacité, surtout avec des fichiers volumineux. 
-
-Kotlin fournit l'API standard de Java avec quelques ajouts pour faciliter le développement, comme les fonctions `writeText` et `appendText`.
-
-## Voir aussi
-
-- [Documentation Kotlin pour File writeText](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/write-text.html)
-- [Documentation Kotlin pour File appendText](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/append-text.html)
-- [Oracle Java tutorials - File I/O](https://docs.oracle.com/javase/tutorial/essential/io/)
-- [Stack Overflow: Kotlin Write to File](https://stackoverflow.com/questions/35421699/how-to-write-to-file-in-kotlin)
+Ces exemples couvrent les opérations de base pour écrire des fichiers texte en Kotlin, démontrant la simplicité et la puissance de la bibliothèque standard de Kotlin pour les opérations d'entrée/sortie de fichiers.

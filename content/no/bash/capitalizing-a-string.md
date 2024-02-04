@@ -1,41 +1,61 @@
 ---
-title:                "Sette streng til store bokstaver"
-date:                  2024-01-19
-simple_title:         "Sette streng til store bokstaver"
-
+title:                "Sette stor bokstav i en streng"
+date:                  2024-02-03T19:04:53.082612-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Sette stor bokstav i en streng"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/bash/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Hva & Hvorfor?)
-Kapitalisering av strenger betyr å gjøre første bokstav i hvert ord til en stor bokstav. Programmerere gjør dette for å formatere tekst, for eksempel i titler eller når man skal starte en ny setning.
+## Hva & Hvorfor?
+Å sette stor forbokstav i en streng i Bash innebærer å omdanne det første tegnet i strengen til en stor bokstav, mens resten av strengen forblir uendret. Denne teknikken brukes ofte for å formatere utdata eller for å overholde kodingskonvensjoner som krever at visse strenger starter med en stor bokstav for lesbarhet eller stilistiske preferanser.
 
-## How to (Slik gjør du det)
-```Bash
-#!/bin/bash
-# Enkel funksjon for å kapitalisere strenger
-capitalize() {
-  echo "$1" | awk '{ for(i=1;i<=NF;i++) $i=toupper(substr($i,1,1)) tolower(substr($i,2)); }1'
-}
+## Hvordan:
 
-# Bruk funksjonen
-capitalize "hei, dette er en test."
+Bash har ikke en innebygd funksjon spesifikt for å sette stor bokstav i strenger, men du kan oppnå dette ved å bruke parameterutvidelse eller eksterne verktøy som `awk`. Her er noen måter å sette stor bokstav i en streng i Bash:
+
+**Ved bruk av parameterutvidelse:**
+
+Denne metoden manipulerer strengen direkte i skallet.
+
+```bash
+str="hello world"
+capitalized="${str^}"
+echo "$capitalized"
 ```
-Output:
+Utskrift:
 ```
-Hei, Dette Er En Test.
+Hello world
 ```
 
-## Deep Dive (Dypdykk)
-Tidligere var det vanlig å bruke `tr` eller `sed` for tekstmanipulasjon i bash, men disse hadde begrensninger. Med `awk`, et kraftfullt tekstbehandlingsverktøy lansert på slutten av 1970-tallet, er det enkelt å iterere over ord og endre bokstavstørrelsen.
+**Ved bruk av `awk`:**
 
-Alternativer til `awk` er å bruke andre programmeringsspråk som Python eller Perl direkte i bash-skriptet, men dette er tyngre og ikke alltid nødvendig.
+`awk` er et kraftig tekstbehandlingsverktøy tilgjengelig på de fleste Unix-lignende operativsystemer, som kan benyttes for å sette stor bokstav i strenger.
 
-Når det gjelder implementering, bør `toupper` og `tolower` i `awk` brukes varsomt da de er avhengige av lokalisering (locale), som kan variere i ulike systemer.
+```bash
+str="hello world"
+echo "$str" | awk '{print toupper(substr($0, 1, 1)) tolower(substr($0, 2))}'
+```
+Utskrift:
+```
+Hello world
+```
 
-## See Also (Se også)
-- GNU Awk User's Guide: https://www.gnu.org/software/gawk/manual/gawk.html
-- The Single UNIX Specification, Version 2 – Shell & Utilities: https://pubs.opengroup.org/onlinepubs/007908799/catidex.html
-- Advanced Bash-Scripting Guide: https://tldp.org/LDP/abs/html/
+**Ved bruk av `sed`:**
+
+For en mer tradisjonell tilnærming kan `sed` benyttes for å sette stor bokstav i den første bokstaven av en streng. Men, det er litt mer komplekst sammenlignet med de tidligere metodene.
+
+```bash
+str="hello world"
+echo "$str" | sed 's/./\u&/'
+```
+Utskrift:
+```
+Hello world
+```
+
+Disse kodene demonstrerer hvordan man setter stor forbokstav på den første bokstaven i en streng i Bash, og understreker fleksibiliteten til skripting i skallet når det gjelder tekstmanipulering.

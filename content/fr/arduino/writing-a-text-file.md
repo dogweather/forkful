@@ -1,49 +1,67 @@
 ---
-title:                "Écriture d'un fichier texte"
-date:                  2024-01-19
-simple_title:         "Écriture d'un fichier texte"
-
+title:                "Rédiger un fichier texte"
+date:                  2024-02-03T19:26:55.852652-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Rédiger un fichier texte"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/arduino/writing-a-text-file.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? / Quoi et Pourquoi?
-Écrire dans un fichier texte permet de sauvegarder des données. Les programmeurs font ça pour conserver des infos comme des logs, des paramètres ou des données sensorielles.
+## Quoi & Pourquoi ?
+Écrire un fichier texte avec Arduino implique de sauvegarder des données dans un fichier sur une carte SD ou un module de stockage similaire, souvent dans le but de consigner des données. Les programmeurs font cela pour enregistrer les lectures de capteurs, sauvegarder des configurations ou journaliser des événements d'application au fil du temps, cela étant crucial pour les projets nécessitant une analyse de données ou un suivi.
 
-## How to: / Comment faire :
-```arduino
+## Comment :
+Pour écrire dans un fichier texte sur une carte SD en utilisant Arduino, vous devez d'abord inclure la bibliothèque `SD.h`, qui fournit les fonctions nécessaires pour interagir avec les cartes SD. Assurez-vous que votre carte Arduino est connectée à un module de carte SD.
+
+```cpp
+#include <SPI.h>
 #include <SD.h>
 
-File monFichier;
+File myFile;
 
 void setup() {
+  // Initialise la communication série à 9600 bits par seconde :
   Serial.begin(9600);
+  
+  // Vérifie l'initialisation de la carte SD
   if (!SD.begin(4)) {
-    Serial.println("Initialisation SD échouée!");
+    Serial.println("L'initialisation a échoué !");
     return;
   }
-  monFichier = SD.open("test.txt", FILE_WRITE);
-
-  if (monFichier) {
-    monFichier.println("Salut Arduino!");
-    monFichier.close(); 
-    Serial.println("Écriture réalisée");
+  Serial.println("Initialisation réussie.");
+  
+  // Ouvre le fichier. Notez qu'un seul fichier peut être ouvert à la fois,
+  // donc vous devez fermer celui-ci avant d'en ouvrir un autre.
+  myFile = SD.open("test.txt", FILE_WRITE);
+  
+  // Si le fichier s'ouvre correctement, écrivez dedans :
+  if (myFile) {
+    Serial.print("Écriture dans test.txt...");
+    myFile.println("Test d'écriture de fichier texte.");
+    // Ferme le fichier :
+    myFile.close();
+    Serial.println("terminé.");
   } else {
-    Serial.println("Erreur d'ouverture du fichier");
+    // Si le fichier ne s'ouvre pas, affiche une erreur :
+    Serial.println("Erreur à l'ouverture de test.txt");
   }
 }
 
 void loop() {
-  // Pas besoin de code ici pour l'instant.
+  // Rien ne se passe après le setup
 }
 ```
 
-## Deep Dive / Plongée en Profondeur
-Créer ou ouvrir et écrire dans des fichiers texte avec Arduino a commencé avec les cartes SD. D'autres options incluent l'EEPROM ou les systèmes de fichiers SPIFFS/NFFS sur ESP. Ces techniques dépendent de la bibliothèque et du matériel utilisé. Écrire efficacement minimise l'usure de la mémoire.
+### Sortie Exemple :
+Lorsque vous exécutez ce code, le moniteur série de l'IDE Arduino affichera :
+```
+Initialisation réussie.
+Écriture dans test.txt...terminé.
+```
+Pour vérifier si les données ont été correctement écrites, vous pouvez retirer la carte SD de l'Arduino, l'insérer dans un ordinateur et ouvrir le fichier `test.txt` pour voir le message "Test d'écriture de fichier texte."
 
-## See Also / Voir Aussi
-- Arduino SD library - https://www.arduino.cc/en/Reference/SD
-- Guide to PROGMEM on Arduino - https://www.arduino.cc/reference/en/language/variables/utilities/progmem/
-- File system usage with ESP8266/ESP32 - https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/storage/spiffs.html
+Pour les projets nécessitant des opérations de fichier plus avancées ou un traitement, pensez à explorer des bibliothèques supplémentaires ou à écrire des fonctions personnalisées adaptées à vos besoins spécifiques.

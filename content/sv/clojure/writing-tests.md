@@ -1,41 +1,64 @@
 ---
 title:                "Skriva tester"
-date:                  2024-01-19
+date:                  2024-02-03T19:30:10.285894-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Skriva tester"
-
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/clojure/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Skriva tester innebär att skapa små program som kontrollerar att din kod fungerar som förväntat. Programmerare gör det för att upptäcka buggar snabbt, förenkla framtida förändringar och säkerställa att programmet fortsätter att fungera korrekt genom olika utvecklingsstadier.
+Att skriva tester i Clojure, precis som i andra programmeringsspråk, innebär att skapa särskild kod för att verifiera att din huvudkod fungerar som förväntat. Det hjälper till att säkerställa korrekthet, underlätta refaktorering och förbättra kodstabiliteten.
 
-## Hur gör man?
-Clojure använder `clojure.test` för att skriva tester. Här är ett exempel på en enkel test-funktion och dess output:
+## Hur man gör:
+Clojure, som utnyttjar JVM, stödjer olika testramverk. Dock är ett vanligt använt inbyggt bibliotek `clojure.test`. Här är ett enkelt exempel:
 
-```Clojure
-(require '[clojure.test :refer :all])
+```clojure
+(ns example.test
+  (:require [clojure.test :refer :all]
+            [example.core :refer :all]))
 
-(deftest addition-test
-  (testing "Addition fungerar"
-    (is (= 5 (+ 2 3)))))
+(deftest test-addition
+  (testing "Additionsfunktionalitet"
+    (is (= 4 (add 2 2)))
+    (is (= 7 (add 3 4)))))
 
 (run-tests)
+```
+Efter att ha kört detta test skulle du se en utskrift liknande:
 
-; Test output:
-;=> 
-;Ran 1 tests containing 1 assertions.
-;0 failures, 0 errors.
+```
+Testar example.test
+
+Körde 2 tester innehållande 2 påståenden.
+0 misslyckanden, 0 fel.
 ```
 
-Detta exempel definierar ett test för en enkel addition och kör detta med `run-tests`.
+För de som söker mer funktionsrika alternativ kan man använda tredjepartsbibliotek som `Midje` eller `test.check`. Så här kan du använda Midje för ett liknande test:
 
-## Fördjupning
-Historiskt sett har testning i programmering utvecklats från manuell granskning till automatiserade system som det i Clojure. Alternativ till `clojure.test` inkluderar ramverk som `Midje` och `test.check`, som erbjuder olika förhållningssätt och förbättrade funktioner. När du skriver tester är det viktigt att fokusera på testfallens relevans snarare än kvantitet för att effektivt täcka kritiska aspekter av koden.
+Först, lägg till Midje i dina projekt.clj beroenden:
+```clojure
+[midje "1.9.9"]
+```
 
-## Se även
-- Clojure's officiella guide för `clojure.test`: https://clojure.github.io/clojure/clojure.test-api.html
-- Midje på GitHub: https://github.com/marick/Midje
-- Användbar guide till Property-based testing med `test.check`: https://github.com/clojure/test.check
+Sedan kan ditt test med Midje se ut så här:
+
+```clojure
+(ns example.test
+  (:require [midje.sweet :refer :all]
+            [example.core :refer :all]))
+
+(fact "Testar addition"
+  (add 2 2) => 4
+  (add 3 4) => 7)
+```
+
+När du kör testet genom Midje med `lein midje`, skulle utskriften visa något liknande:
+
+```
+Alla kontroller (2) lyckades.
+```

@@ -1,35 +1,71 @@
 ---
-title:                "Escrevendo no erro padrão"
-date:                  2024-01-19
-simple_title:         "Escrevendo no erro padrão"
-
+title:                "Escrevendo para o erro padrão"
+date:                  2024-02-03T19:34:08.600820-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Escrevendo para o erro padrão"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/php/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## O Que é & Por Que?
-Escrever no erro padrão (stderr) é uma maneira de os programas de computador enviarem mensagens de erro ou de diagnóstico, separadas dos dados de saída comuns. Programadores fazem isso para facilitar a depuração e o monitoramento, permitindo que as mensagens de erro sejam direcionadas e registradas de forma independente.
+## O Que & Porquê?
 
-## Como Fazer:
-Para escrever para o erro padrão em PHP, você pode usar a função `fwrite()`, especificando `STDERR` como o primeiro argumento. Aqui está um exemplo:
+Escrever no erro padrão (stderr) em PHP diz respeito a direcionar mensagens de erro ou diagnósticos separadamente da saída padrão (stdout), permitindo que desenvolvedores gerenciem melhor seus fluxos de saída para fins de depuração e registro. Programadores utilizam essa técnica para garantir que mensagens de erro não interfiram na saída do programa, facilitando o monitoramento e a solução de problemas em aplicações.
 
-```PHP
+## Como fazer:
+
+Em PHP, escrever no stderr pode ser alcançado usando a função `fwrite()` juntamente com a constante predefinida `STDERR`, que representa o fluxo de saída de erros.
+
+```php
 <?php
-fwrite(STDERR, "Essa é uma mensagem de erro.\n");
-?>
+// Escrevendo uma mensagem simples no stderr.
+fwrite(STDERR, "Esta é uma mensagem de erro.\n");
 ```
 
-Saída esperada no console, se você executar o script PHP via linha de comando:
+Saída de amostra quando o script é executado a partir da linha de comando:
 ```
-Essa é uma mensagem de erro.
+Esta é uma mensagem de erro.
 ```
 
-## Mergulho Profundo
-A prática de escrever para stderr vem do Unix, onde o fluxo de erro padrão é um canal de saída separado padrão, usado para emitir mensagens de erro ou diagnóstico. Alternativamente, o PHP oferece a função `error_log()`, mas ela é mais usada para enviar mensagens de erro para outros destinos, como arquivos ou servidores remotos de log. Tecnicamente, ao usar `fwrite(STDERR)`, você está interagindo diretamente com o buffer de I/O do PHP, o que pode ser mais eficiente para mensagens simples de erro.
+Para demonstrar um uso mais prático, considere um cenário em que você está analisando a entrada do usuário e encontra dados inesperados:
+```php
+<?php
+$input = 'dados inesperados';
 
-## Veja Também
-Para mais informações sobre como usar `STDERR` e `error_log()` no PHP, consulte:
-- Documentação PHP sobre STDERR: https://www.php.net/manual/pt_BR/features.commandline.io-streams.php
-- Documentação PHP sobre error_log: https://www.php.net/manual/pt_BR/function.error-log.php
+// Simulando um erro no processamento da entrada do usuário.
+if ($input === 'dados inesperados') {
+    fwrite(STDERR, "Erro: Entrada inesperada recebida.\n");
+    exit(1); // Saindo com um valor não nulo para indicar um erro.
+}
+```
+
+Embora as capacidades internas do PHP para lidar com stderr geralmente sejam suficientes, ao lidar com aplicações mais complexas ou desejar integrar o registro de stderr com sistemas externos, bibliotecas de terceiros como o Monolog podem ser um grande aliado. Monolog é uma biblioteca de registro que pode lidar com stderr entre muitos outros alvos (arquivos, soquetes, etc.).
+
+Usando Monolog para escrever no stderr:
+
+Primeiro, certifique-se de ter o Monolog instalado via Composer:
+```
+composer require monolog/monolog
+```
+
+Em seguida, você pode configurar o Monolog para usar o `StreamHandler` direcionado para `php://stderr`:
+
+```php
+<?php
+require 'vendor/autoload.php';
+
+use Monolog\Logger;
+use Monolog\Handler\StreamHandler;
+
+// Criar um canal de registro
+$log = new Logger('name');
+$log->pushHandler(new StreamHandler('php://stderr', Logger::WARNING));
+
+// Adicionar uma mensagem de registro no stderr
+$log->warning('Esta é uma mensagem de aviso.');
+```
+
+O código acima utiliza o Monolog para enviar uma mensagem de aviso ao stderr, o que é particularmente útil para aplicações que requerem configurações de registro detalhadas ou monitoramento de registro externo.

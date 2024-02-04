@@ -1,62 +1,52 @@
 ---
 title:                "Ottenere la data corrente"
-date:                  2024-01-20T15:15:06.127514-07:00
+date:                  2024-02-03T19:09:38.505539-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Ottenere la data corrente"
-
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/haskell/getting-the-current-date.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Ottenere la data corrente in Haskell è fondamentale per interagire con il tempo reale nei nostri programmi, da semplici log a funzionalità basate sulla data.
+## Cosa & Perché?
+Ottenere la data corrente in Haskell comporta il recupero del tempo corrente del sistema e la sua trasformazione in un formato di data leggibile. I programmatori fanno ciò per eseguire operazioni basate sulla data, come il logging, la pianificazione di compiti, o il timestamping di eventi nelle applicazioni.
 
-## How to:
-Per ottenere la data corrente in Haskell, utilizza il modulo `Data.Time`. Prima, assicurati che la libreria `time` sia elencata nel tuo file cabal o stack.
+## Come fare:
+La libreria standard di Haskell, `base`, fornisce il modulo `Data.Time` che offre funzionalità per lavorare con date e orari. Ecco come usarlo per ottenere la data corrente:
 
-```Haskell
+```haskell
+import Data.Time (getCurrentTime, utctDay)
+
+main :: IO ()
+main = do
+    now <- getCurrentTime
+    let today = utctDay now
+    print today
+```
+
+Output di esempio:
+```
+2023-04-12
+```
+
+Per maggiore flessibilità, come la formattazione della data o il lavoro con diversi fusi orari, la libreria `time` è inestimabile. Ecco come potreste formattare la data corrente:
+
+```haskell
 import Data.Time
 
 main :: IO ()
 main = do
-  currentDate <- getCurrentTime
-  print $ utctDay currentDate
+    now <- getCurrentTime
+    timezone <- getCurrentTimeZone
+    let zoneNow = utcToLocalTime timezone now
+    putStrLn $ formatTime defaultTimeLocale "%Y-%m-%d" zoneNow
 ```
 
-Eseguendo il programma riceverai un output simile al seguente:
+Questo stampa la data corrente nel formato `AAAA-MM-GG`, aggiustato al fuso orario locale.
 
-```
-2023-04-05
-```
+Inoltre, per il supporto di librerie di terze parti, `time` è fortemente raccomandata ed è spesso usata all'interno della comunità Haskell per le sue ampie capacità di manipolazione di date e orari. Gli esempi sopra utilizzano questa libreria.
 
-## Deep Dive
-Haskell non include funzioni per il tempo nel suo Prelude, quindi usiamo `Data.Time`, una libreria standard disponibile da `ghc-6.6.1`. L'alternativa meno diretta sarebbe utilizzare la libreria `old-time`, ma è più complicata e, beh, vecchia. `Data.Time` è preferibile perché segue gli standard internazionali (ISO 8601) e offre una maggiore flessibilità.
-
-Una specifica attenzione va al trattamento dei fusi orari. Per default, `getCurrentTime` ti restituisce l'UTC. Se necessiti del fuso orario locale, entra in gioco `getCurrentTimeZone`. Ecco come:
-
-```Haskell
-import Data.Time
-
-main :: IO ()
-main = do
-  timeZone <- getCurrentTimeZone
-  zonedTime <- getZonedTime
-  print zonedTime
-  let localTime = utcToLocalTime timeZone $ zonedTimeToUTC zonedTime
-  putStrLn $ "Data locale: " ++ show (localDay localTime)
-```
-
-Dovresti vedere un output che rispecchia il tuo fuso orario locale:
-
-```
-Data locale: 2023-04-05
-```
-
-Questo riporta l'attenzione sui dettagli di implementazione, come la rappresentazione del tempo in Haskell tramite la struttura `UTCTime`. Questo fa sì che le operazioni sul tempo siano coerenti a livello globale, evitando confusione su diverse rappresentazioni.
-
-## See Also
-Per una panoramica più completa delle funzionalità relative alla data e ora in Haskell, consulta le seguenti risorse:
-
-- Data.Time library on Hackage: [https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time.html](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time.html)
-- Layering Time: [http://chrisdone.com/posts/measuring-duration-in-haskell](http://chrisdone.com/posts/measuring-duration-in-haskell)
+Se avete bisogno di una manipolazione delle date più comprensiva, inclusa l'analisi da stringhe o operazioni aritmetiche con date e orari, esplorare funzioni aggiuntive all'interno di `Data.Time` sarà utile.

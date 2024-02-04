@@ -1,53 +1,90 @@
 ---
 title:                "Escrevendo testes"
-date:                  2024-01-19
+date:                  2024-02-03T19:32:08.534062-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Escrevendo testes"
-
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/typescript/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## O Que é & Por Que?
+## O Que & Por Que?
+Escrever testes em TypeScript envolve criar scripts automatizados para verificar a funcionalidade e corretude do seu código. Os programadores fazem isso para garantir a confiabilidade, capturar rapidamente bugs e facilitar o crescimento do código de forma sustentável, já que a tipagem estática do TypeScript adiciona um nível de previsibilidade aos testes em JavaScript.
 
-Escrever testes é criar verificações automatizadas para seu código. Programadores os utilizam para garantir que suas funções façam exatamente o que são supostas a fazer e nunca menos, nunca mais.
+## Como fazer:
+O TypeScript funciona em harmonia com a maioria dos frameworks de teste em JavaScript. Para fins de demonstração, usaremos o Jest, um framework de teste popular, devido à sua configuração zero para projetos TypeScript.
 
-## Como Fazer:
+Primeiro, certifique-se de que você tenha o Jest e os tipos necessários do TypeScript instalados:
 
-Vamos usar Jest, uma biblioteca de testes para JavaScript e TypeScript. Instale-a com `npm install --save-dev jest @types/jest ts-jest`, e configure o Jest para TypeScript adicionando uma configuração `jest.config.js`.
+```bash
+npm install --save-dev jest typescript ts-jest @types/jest
+```
 
-```TypeScript
-// soma.ts
-export function soma(a: number, b: number): number {
+Em seguida, configure o Jest para trabalhar com TypeScript modificando o `jest.config.js` ou criando um novo:
+
+```javascript
+module.exports = {
+  preset: 'ts-jest',
+  testEnvironment: 'node',
+};
+```
+
+Agora, vamos escrever uma função simples e um teste para ela. Considere um arquivo `sum.ts` com a seguinte função:
+
+```typescript
+// sum.ts
+export function sum(a: number, b: number): number {
   return a + b;
 }
+```
 
-// soma.test.ts
-import { soma } from './soma';
+Crie um arquivo de teste chamado `sum.test.ts`:
 
-test('soma 1 + 2 igual a 3', () => {
-  expect(soma(1, 2)).toBe(3);
+```typescript
+// sum.test.ts
+import { sum } from './sum';
+
+test('soma 1 + 2 para igual a 3', () => {
+  expect(sum(1, 2)).toBe(3);
 });
 ```
 
-Execute os testes com `npm test` ou `npx jest`. Você deverá ver algo como:
+Execute seus testes com:
 
+```bash
+npx jest
 ```
-PASS  ./soma.test.ts
-✓ soma 1 + 2 igual a 3 (5ms)
+
+Um exemplo de saída indicando um teste aprovado deve parecer algo assim:
+
+```plaintext
+ PASS  ./sum.test.ts
+  ✓ soma 1 + 2 para igual a 3 (2 ms)
 ```
 
-## Aprofundamento
+Para código assíncrono, o Jest acomoda com `async/await`. Suponha que você tenha uma função assíncrona `fetchData`:
 
-Testes automatizados começaram na década de 1950 com programas que autotestavam suas próprias funções. Alternativas ao Jest incluem Mocha, Jasmine, e Ava. A decisão entre eles depende do gosto pessoal e necessidades específicas do projeto, como melhor integração CI/CD ou preferência de sintaxe.
+```typescript
+// asyncFunctions.ts
+export async function fetchData(): Promise<string> {
+  return "data";
+}
+```
 
-Quanto aos detalhes, escrever bons testes envolve entender de mocks e spies para isolar componentes, e o conceito de test coverage para saber quanta do seu código está sendo testada.
+Seu teste usando funções assíncronas:
 
-## Veja Também
+```typescript
+// asyncFunctions.test.ts
+import { fetchData } from './asyncFunctions';
 
-- Jest: https://jestjs.io/pt-BR/
-- TypeScript com Jest: https://kulshekhar.github.io/ts-jest/
-- Documentação de Testing Library: https://testing-library.com/docs/
-- Jasmine: https://jasmine.github.io/
-- Mocha: https://mochajs.org/
+test('busca dados com sucesso', async () => {
+  expect(await fetchData()).toBe('data');
+});
+```
+
+Ao executar seus testes, o Jest esperará a promessa ser resolvida, testando corretamente as operações assíncronas.
+
+Lembre-se, testes eficazes incluem escrever múltiplos testes para diferentes cenários, incluindo casos extremos, para garantir que o seu código TypeScript se comporte como esperado.

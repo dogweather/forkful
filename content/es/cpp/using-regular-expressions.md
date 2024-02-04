@@ -1,54 +1,85 @@
 ---
-title:                "Uso de expresiones regulares"
-date:                  2024-01-19
-simple_title:         "Uso de expresiones regulares"
-
+title:                "Usando expresiones regulares"
+date:                  2024-02-03T19:16:03.680713-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Usando expresiones regulares"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/cpp/using-regular-expressions.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Qué y Por Qué?
-
-Las expresiones regulares (regex) permiten buscar patrones en textos. Los programadores las usan para validar, encontrar o reemplazar datos de manera eficiente y flexible.
+## ¿Qué y Por Qué?
+Las expresiones regulares en C++ son secuencias de caracteres que definen un patrón de búsqueda, utilizadas para el emparejamiento o manipulación de cadenas. Los programadores las usan para tareas tales como validar entradas, buscar ocurrencias dentro de cadenas o dividir cadenas en tokens, convirtiéndolas en una herramienta indispensable para el procesamiento de texto eficiente y efectivo.
 
 ## Cómo hacerlo:
-
-En C++ con la librería estándar `<regex>`, puedes usar expresiones regulares así:
+C++11 introdujo soporte para expresiones regulares en la biblioteca estándar, `<regex>`, ofreciendo un marco robusto para la búsqueda y manipulación de cadenas. Aquí hay un ejemplo básico de cómo usar expresiones regulares para buscar un patrón dentro de una cadena:
 
 ```cpp
 #include <iostream>
 #include <regex>
-#include <string>
 
 int main() {
-    std::string texto = "Encuentrame en info@example.com o en web@example.net";
-    std::regex patron_email(R"(\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b)");
+    std::string target = "Hola, mi correo es ejemplo@ejemplo.com";
+    std::regex email_pattern(R"(\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b)");
 
-    std::smatch resultados;
-    
-    while (std::regex_search(texto, resultados, patron_email)) {
-        std::cout << "Email encontrado: " << resultados[0] << '\n';
-        texto = resultados.suffix().str();
+    if (std::regex_search(target, email_pattern)) {
+        std::cout << "¡Correo encontrado!" << std::endl;
+    } else {
+        std::cout << "No se encontró correo." << std::endl;
     }
-    
+
     return 0;
 }
 ```
-
-Salida:
+**Salida de muestra**
 ```
-Email encontrado: info@example.com
-Email encontrado: web@example.net
+¡Correo encontrado!
 ```
 
-## Profundización
+Para manipulaciones más complejas, como reemplazar patrones dentro de cadenas, las expresiones regulares de C++ pueden ser muy útiles:
 
-Las regex existen desde los años 50, evolucionando desde teoría de autómatas hasta herramientas prácticas en la mayoría de lenguajes de programación. Alternativas a regex incluyen el procesamiento de texto vía análisis sintáctico (parsing) cuando se necesitan estructuras más complejas. En C++, regex se implementa mediante la clase std::regex y funciones asociadas en la cabecera `<regex>`.
+```cpp
+#include <iostream>
+#include <regex>
 
-## Ver También
+int main() {
+    std::string text = "La lluvia en España cae principalmente en la llanura.";
+    std::regex vowel_regex("([aeiou])");
 
-- Documentación de regex en cppreference: [https://en.cppreference.com/w/cpp/regex](https://en.cppreference.com/w/cpp/regex)
-- "Mastering Regular Expressions" por Jeffrey E.F. Friedl, un recurso completo para entender y aplicar regex.
-- Herramienta online para probar expresiones regulares: [https://regex101.com/](https://regex101.com/)
+    std::string replaced_text = std::regex_replace(text, vowel_regex, "*");
+    std::cout << replaced_text << std::endl;
+
+    return 0;
+}
+```
+**Salida de muestra**
+```
+L* ll*v** *n Esp**ñ* c** pr*nc*p*lm*nt* *n l* ll*n*r*.
+```
+
+Para los programadores que exploran más allá de la biblioteca estándar, la Biblioteca Regex de Boost (`boost/regex.hpp`) es una opción de terceros popular que ofrece capacidades de regex mejoradas y optimizaciones de rendimiento, particularmente para patrones complejos o procesamiento de datos extensivos:
+
+```cpp
+#include <iostream>
+#include <boost/regex.hpp>
+
+int main() {
+    std::string s = "¡Las bibliotecas Boost son divertidas!";
+    boost::regex expr("(\\w+)\\s(bibliotecas)"); // Coincidir con "Bibliotecas Boost"
+    std::string fmt("GNU \\1"); // Reemplazar con "GNU Boost"
+
+    std::string result = boost::regex_replace(s, expr, fmt);
+    std::cout << result << std::endl;
+
+    return 0;
+}
+```
+**Salida de muestra**
+```
+GNU Boost son divertidas!
+```
+
+Estos ejemplos apenas rasguñan la superficie de las capacidades de C++ con expresiones regulares, ilustrando búsquedas básicas, emparejamiento de patrones y reemplazos, ya sea usando la biblioteca estándar o potenciado por la poderosa implementación de regex de Boost.

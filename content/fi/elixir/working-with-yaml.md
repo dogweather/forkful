@@ -1,51 +1,91 @@
 ---
-title:                "YAML-tiedostojen käsittely"
-date:                  2024-01-19
-simple_title:         "YAML-tiedostojen käsittely"
-
+title:                "Työskentely YAML:n kanssa"
+date:                  2024-02-03T19:25:15.424696-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Työskentely YAML:n kanssa"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/elixir/working-with-yaml.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-"Mikä & Miksi?"
-YAML on datan sarjoituskieli, jota käytetään konfiguraatiotiedostoissa ja datan siirrossa. Ohjelmoijat käyttävät YAMLia, koska se on luettavissa ihmiselle ja helppo muokata, mutta silti koneystävällinen.
+## Mikä & Miksi?
 
-## How to:
-"Kuinka:"
-Elixirissä käytetään YAML:ia `yamerl` -kirjaston avulla. Esimerkiksi voimme purkaa YAML-tiedoston ja muuttaa sen Elixirin kartaksi (map):
+YAML, lyhenne sanoista YAML Ain't Markup Language, on ihmisen luettavissa oleva datan sarjallistamisstandardi, jota käytetään yleisesti konfiguraatiotiedostoissa ja datan vaihdossa eri kielten välillä, joilla on erilaiset datarakenteet. Ohjelmoijat käyttävät sitä sen yksinkertaisuuden ja kyvyn helposti esittää monimutkaisia hierarkisia tietoja takia.
 
-```Elixir
-# Lisää ensin yamerl riippuvuutena mix.exs-tiedostossa
+## Miten:
+
+Elixir ei sisällä sisäänrakennettua tukea YAML:lle. Voit kuitenkin käyttää kolmannen osapuolen kirjastoja, kuten `yamerl` tai `yaml_elixir`, työskennelläksesi YAML:n kanssa. Tässä keskitymme `yaml_elixir`-kirjastoon sen käytön helppouden ja kattavien ominaisuuksien vuoksi.
+
+Lisää ensin `yaml_elixir` mix.exs-riippuvuuksiisi:
+
+```elixir
 defp deps do
-  [{:yamerl, "~> 0.8.0"}]
+  [
+    {:yaml_elixir, "~> 2.9"}
+  ]
+end
+```
+
+Suorita sitten `mix deps.get` hakeaksesi uuden riippuvuuden.
+
+### YAML:n lukeminen
+
+Oletetaan, että sinulla on yksinkertainen YAML-tiedosto, `config.yaml`, joka näyttää tältä:
+
+```yaml
+database:
+  adapter: postgres
+  username: user
+  password: pass
+```
+
+Voit lukea tämän YAML-tiedoston ja muuntaa sen Elixir-mappiin näin:
+
+```elixir
+defmodule Config do
+  def read do
+    {:ok, content} = YamlElixir.read_from_file("config.yaml")
+    content
+  end
 end
 
-# Sitten pura YAML-tiedosto
-:ok = Application.ensure_all_started(:yamerl)
-yaml_content = """
----
-foo: bar
-number: 1
-"""
-
-{:ok, [parsed_yaml]} = :yamerl_constr.string(yaml_content)
-parsed_yaml |> Enum.into(%{})
+# Esimerkki käyttö
+Config.read()
+# Tuloste: 
+# %{
+#   "database" => %{
+#     "adapter" => "postgres",
+#     "username" => "user",
+#     "password" => "pass"
+#   }
+# }
 ```
 
-Tuloksena on Elixir-kartta:
-```
-%{"foo" => "bar", "number" => 1}
+### YAML:n kirjoittaminen
+
+Mapin kirjoittaminen takaisin YAML-tiedostoon:
+
+```elixir
+defmodule ConfigWriter do
+  def write do
+    content = %{
+      database: %{
+        adapter: "mysql",
+        username: "root",
+        password: "s3cret"
+      }
+    }
+    
+    YamlElixir.write_to_file("new_config.yaml", content)
+  end
+end
+
+# Esimerkki käyttö
+ConfigWriter.write()
+# Tämä luo tai ylikirjoittaa `new_config.yaml`-tiedoston määritellyllä sisällöllä
 ```
 
-## Deep Dive
-"Syvä sukellus":
-YAML kehitettiin vuonna 2001 ja on lyhenne sanoista "YAML Ain't Markup Language", mikä korostaa, että se ei ole merkkauskieli. Vaihtoehtoja YAML:lle ovat JSON ja XML. Elixirissä työskentely YAML-tiedostojen kanssa nojaa Erlangin kirjastoihin, kuten `yamerl`, joka on natiivi YAML-parseri Erlangille.
-
-## See Also
-"Katso myös":
-YAML-spesifikaatio: https://yaml.org/spec/
-`yamerl` GitHub-sivu: https://github.com/yakaz/yamerl
-Elixir School YAML-oppitunti: https://elixirschool.com/en/lessons/advanced/yaml/
+Huomaa, kuinka `yaml_elixir` mahdollistaa suoraviivaisen käännöksen YAML-tiedostojen ja Elixir-tietorakenteiden välillä, tehden siitä erinomaisen valinnan Elixir-ohjelmoijille, jotka tarvitsevat työskennellä YAML-datan kanssa.

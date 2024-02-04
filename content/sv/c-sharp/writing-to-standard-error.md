@@ -1,40 +1,56 @@
 ---
 title:                "Skriva till standardfel"
-date:                  2024-01-19
+date:                  2024-02-03T19:32:50.859456-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Skriva till standardfel"
-
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/c-sharp/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Skriva till standardfel (stderr) används för att separera felmeddelanden från vanlig utdata. Detta gör det lättare för användare och andra program att skilja på resultatdata och felloggning.
+Att skriva till standardfel (stderr) i C# innebär att rikta felmeddelanden och diagnostik separat från reguljär utdata (stdout) för att hjälpa användare och utvecklare att skilja mellan normal programutdata och felnotifikationer. Programmerare gör detta för att göra felsökning och loggning mer effektiv, vilket möjliggör smidigare drift och underhåll av applikationer.
 
-## Steg för steg
-```C#
-using System;
+## Hur man gör:
+I C# kan skrivning till standardfel uppnås genom att använda strömmen `Console.Error`. Denna ström används specifikt för felmeddelanden och diagnostik. Här är ett grundläggande exempel:
 
-class Program
-{
-    static void Main()
-    {
-        Console.Error.WriteLine("Ett fel inträffade!");
-        Console.WriteLine("Detta är vanlig utdata.");
-    }
-}
-```
-Kör du koden ovan kommer "Ett fel inträffade!" att skrivas till stderr och "Detta är vanlig utdata." till stdout. Prova att omdirigera dem i ett kommandofönster för att se skillnaden:
-
-```shell
-dotnet run 1> out.txt 2> err.txt
+```csharp
+Console.Error.WriteLine("Error: Misslyckades med att bearbeta förfrågan.");
 ```
 
-## Fördjupning
-Stderr dök först upp i Unix och används för att separera olika typer av utdata. Alternativ till att skriva till stderr inkluderar att logga till filer eller använda loggföring bibliotek som log4net. Implementationsmässigt hanterar `Console.Error` i C# det som ett `TextWriter`-objekt vilket gör det lätt att skriva till.
+Exempel på utdata (till stderr):
+```
+Error: Misslyckades med att bearbeta förfrågan.
+```
 
-## Se även
-- Microsofts docs om `Console.Error`: [Console.Error](https://docs.microsoft.com/en-us/dotnet/api/system.console.error)
-- Förstå stdout och stderr: [Standard streams](https://en.wikipedia.org/wiki/Standard_streams)
-- log4net, ett loggföringsbibliotek: [log4net in Apache Logging Services](https://logging.apache.org/log4net/)
+För scenarier där du kanske använder ett tredjepartsbibliotek som erbjuder avancerade loggningsmöjligheter, som `Serilog` eller `NLog`, kan du konfigurera dessa bibliotek för att skriva felloggar till stderr. Även om dessa exempel fokuserar på enkel konsolomdirigering, kom ihåg att i produktionsapplikationer erbjuder loggningsramverk mycket mer robust felhantering och utdatalternativ. Här är ett enkelt exempel med `Serilog`:
+
+Först, installera Serilog-paketet och dess Console sink:
+
+```
+Install-Package Serilog
+Install-Package Serilog.Sinks.Console
+```
+
+Sedan, konfigurera Serilog för att skriva till stderr:
+
+```csharp
+using Serilog;
+
+Log.Logger = en ny LoggerConfiguration()
+    .WriteTo.Console(standardErrorFromLevel: Serilog.Events.LogEventLevel.Error)
+    .CreateLogger();
+
+Log.Information("Det här är ett vanligt meddelande.");
+Log.Error("Det här är ett felmeddelande.");
+```
+
+Exempel på utdata (till stderr för felmeddelandet):
+```
+[15:04:20 ERR] Det här är ett felmeddelande.
+```
+
+Notera: Konfigurationen `standardErrorFromLevel` i Serilogs console sink omdirigerar alla logghändelser på den angivna nivån (Error, i detta fall) eller högre till standardfelsströmmen, medan meddelanden på lägre nivåer som Information skrivs till standardutströmmen.

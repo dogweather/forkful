@@ -1,36 +1,75 @@
 ---
 title:                "Робота з JSON"
-date:                  2024-01-19
+date:                  2024-02-03T19:23:31.324962-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Робота з JSON"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/javascript/working-with-json.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Що це таке і навіщо?
-JavaScript Object Notation (JSON) - це легкий формат обміну даними. Програмісти використовують його через простоту читання та написання даних, а також легку інтеграцію з мережами.
+## Що і Чому?
+
+JSON (JavaScript Object Notation) - це легкий формат обміну даними, який легко читається і пишеться людиною, а також легко аналізується і генерується машиною. Програмісти використовують його для зберігання та передачі даних у веб-додатках, що робить його основою сучасного API та спілкування веб-сервісів.
 
 ## Як це зробити:
-У наступних прикладах показано, як працювати з JSON у JavaScript:
+
+### Парсинг JSON
+Щоб перетворити рядок JSON у об'єкт JavaScript, використовуйте `JSON.parse()`.
 
 ```javascript
-// Парсинг JSON рядка
-let jsonData = '{"name": "Oleksiy", "age": 30}';
-let user = JSON.parse(jsonData);
-console.log(user.name); // Виведе: Oleksiy
-
-// Перетворення об'єкта в JSON рядок
-let userObject = { name: "Iryna", age: 25 };
-let jsonString = JSON.stringify(userObject);
-console.log(jsonString); // Виведе: {"name":"Iryna","age":25}
+const jsonString = '{"name":"John", "age":30, "city":"New York"}';
+const obj = JSON.parse(jsonString);
+console.log(obj.name); // Вивід: John
 ```
 
-## Поглиблене вивчення:
-JSON виник у 2001 році як альтернатива XML. На відміну від XML, він не містить тагів, що робить його менш об'ємним та швидшим для аналізу. Крім того, більшість мов програмування підтримують JSON нативно або через бібліотеки. Fetch API та XMLHttpRequest - приклади інструментів, що працюють з JSON у веб-програмуванні.
+### Приведення об’єктів JavaScript до рядка JSON
+Щоб перетворити об'єкт JavaScript назад у рядок JSON, використовуйте `JSON.stringify()`.
 
-## Дивіться також:
-- [MDN JSON Documentation](https://developer.mozilla.org/uk/docs/Web/JavaScript/Reference/Global_Objects/JSON) - всебічний ресурс по JSON від Mozilla.
-- [JSON.org](https://www.json.org/json-en.html) - основи JSON, з ілюстраціями та прикладами.
-- [ECMA-404 The JSON Data Interchange Standard](https://www.ecma-international.org/publications-and-standards/standards/ecma-404/) - офіційний стандарт JSON.
+```javascript
+const user = { name: "Jane", age: 25, city: "London" };
+const jsonString = JSON.stringify(user);
+console.log(jsonString); // Вивід: {"name":"Jane","age":25,"city":"London"}
+```
+
+### Робота з файлами в Node.js
+Щоб прочитати файл JSON і перетворити його на об'єкт у середовищі Node.js, ви можете використати модуль `fs`. Припустимо, у вас є файл під назвою `data.json`.
+
+```javascript
+const fs = require('fs');
+
+fs.readFile('data.json', 'utf-8', (err, data) => {
+    if (err) throw err;
+    const obj = JSON.parse(data);
+    console.log(obj);
+});
+```
+
+Для запису об'єкта у файл JSON:
+
+```javascript
+const fs = require('fs');
+const user = { name: "Mike", age: 22, city: "Berlin" };
+
+fs.writeFile('user.json', JSON.stringify(user, null, 2), (err) => {
+    if (err) throw err;
+    console.log('Дані записано у файл');
+});
+```
+
+### Сторонні бібліотеки
+Для складніших операцій з JSON, фреймворки і бібліотеки, як-от `lodash`, можуть спростити завдання, але для базових операцій часто достатньо нативних функцій JavaScript. Для масштабних або критичних за продуктивністю додатків можна розглянути бібліотеки на кшталт `fast-json-stringify` для швидшого перетворення в рядок JSON або `json5` для парсингу та зворотного перетворення за допомогою більш гнучкого формату JSON.
+
+Парсинг за допомогою `json5`:
+```javascript
+const JSON5 = require('json5');
+
+const jsonString = '{name:"John", age:30, city:"New York"}';
+const obj = JSON5.parse(jsonString);
+console.log(obj.name); // Вивід: John
+```
+
+Ці приклади охоплюють базові операції з JSON у JavaScript, ідеально підходять для початківців, які переходять з інших мов і бажають ефективно працювати з даними у веб-додатках.

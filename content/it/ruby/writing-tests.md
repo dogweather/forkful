@@ -1,57 +1,89 @@
 ---
 title:                "Scrivere test"
-date:                  2024-01-19
+date:                  2024-02-03T19:31:55.105294-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Scrivere test"
-
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/ruby/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Scrivere test significa creare codice specifico per verificare che altri codici funzionino come previsto. I programmatori testano per prevenire bug, assicurare qualità, e facilitare aggiornamenti futuri.
+## Cos'è & Perché?
+Nel contesto di Ruby, il testing si riferisce alla verifica che il codice si comporti come previsto in varie condizioni. I programmatori scrivono test per assicurare la correttezza, prevenire regressioni e facilitare il refactoring, con l'obiettivo di realizzare applicazioni robuste e mantenibili.
 
-## How to:
-Ruby usa MiniTest e RSpec come framework di test. Ecco un esempio con MiniTest:
+## Come fare:
+Ruby include una libreria integrata chiamata `Test::Unit` per scrivere test unitari, incapsulando le pratiche di testing in strutture semplici. Tuttavia, la comunità Ruby tende spesso a preferire librerie di terze parti come RSpec e Minitest per la loro maggiore espressività e flessibilità.
 
-```Ruby
+### Usare `Test::Unit`:
+```ruby
+require 'test/unit'
+
+class CalculatorTest < Test::Unit::TestCase
+  def test_addition
+    result = 2 + 2
+    assert_equal 4, result
+  end
+end
+```
+Esegui il tuo file di test dal terminale, e dovresti ottenere un output che indica il successo o il fallimento dei test:
+```
+Loaded suite test_calculator
+Started
+.
+Finished in 0.001288 seconds.
+1 tests, 1 assertions, 0 failures, 0 errors, 0 pendings, 0 omissions, 0 notifications
+100% passed
+```
+
+### Usare RSpec:
+RSpec è un popolare framework BDD (Behavior-Driven Development) per Ruby. Installa la gemma con `gem install rspec`, poi inizializzala nel tuo progetto con `rspec --init`.
+
+```ruby
+# calculator_spec.rb
+require_relative '../calculator'
+
+describe Calculator do
+  it 'aggiunge correttamente due numeri' do
+    expect(Calculator.add(2, 2)).to eq(4)
+  end
+end
+```
+Esegui i test con il comando `rspec`. Esempio di output:
+```
+.
+
+Finished in 0.002 seconds (files took 0.1 seconds to load)
+1 example, 0 failures
+```
+
+### Usare Minitest:
+Minitest fornisce una suite completa di strumenti di testing che supporta TDD, BDD, mocking e benchmarking. Installala con `gem install minitest` e usala come segue:
+
+```ruby
+# test_calculator.rb
 require 'minitest/autorun'
+require_relative '../calculator'
 
-class CalcolatriceTest < Minitest::Test
-  def setup
-    @calc = Calcolatrice.new
-  end
-
-  def test_somma
-    assert_equal 5, @calc.somma(2, 3)
-  end
-end
-
-class Calcolatrice
-  def somma(a, b)
-    a + b
+class CalculatorTest < Minitest::Test
+  def test_addition
+    assert_equal 4, Calculator.add(2, 2)
   end
 end
 ```
 
-Output atteso:
-
+Esegui direttamente il tuo file di test o tramite il task `rake` impostato per minitest. Output di esempio:
 ```
-Run options: --seed 12345
+Run options: --seed 33407
 
 # Running:
 
 .
 
-Finished in 0.001025s, 976.5625 runs/s, 976.5625 assertions/s.
-
+Finished in 0.001027s, 974.5922 runs/s, 974.5922 assertions/s.
 1 runs, 1 assertions, 0 failures, 0 errors, 0 skips
 ```
 
-## Deep Dive
-Il TDD (Test-Driven Development) guida lo sviluppo con test scritti prima del codice vero e proprio. MiniTest è integrato in Ruby, mentre RSpec è una gemma BDD (Behavior-Driven Development) che offre un DSL più leggibile. L'implementazione di test nei progetti Ruby è diventata norma per molti sviluppatori per la sua efficacia nel ridurre errori e fornire documentazione.
-
-## See Also
-- RSpec: [Guida ufficiale](https://rspec.info/)
-- TDD/BDD: [Approfondimenti su TDD/BDD](https://martinfowler.com/bliki/TestDrivenDevelopment.html)
+Implementando i test nei tuoi progetti Ruby utilizzando queste librerie, aderisci alle migliori pratiche, portando a basi di codice più affidabili e mantenibili.

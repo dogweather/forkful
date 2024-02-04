@@ -1,43 +1,97 @@
 ---
 title:                "Trabajando con YAML"
-date:                  2024-01-19
+date:                  2024-02-03T19:24:36.411388-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Trabajando con YAML"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/bash/working-with-yaml.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## ¿Qué & Por Qué?
+## ¿Qué y Por Qué?
 
-Trabajar con YAML implica manipular un formato de datos legible por humanos, común en configuraciones y archivos de despliegue. Los programadores lo hacen por su simplicidad y facilidad de uso en diversas aplicaciones, especialmente en DevOps.
+YAML, que significa YAML Ain't Markup Language (YAML no es un lenguaje de marcado), es un estándar de serialización de datos legible por humanos que se puede utilizar para archivos de configuración, así como en aplicaciones donde se almacenan o transmiten datos. Los programadores se inclinan hacia YAML debido a su claridad y simplicidad, especialmente en proyectos que involucran configuraciones complejas o la necesidad de estructuras de datos fácilmente editables.
 
-## Cómo hacerlo:
+## Cómo:
 
-Instalación de las herramientas de YAML en Bash:
-```Bash
-sudo apt-get update
-sudo apt-get install -y python3-pip
-pip3 install pyyaml
+Trabajar directamente con YAML en Bash requiere un poco de ingenio ya que Bash no tiene soporte incorporado para analizar YAML. Sin embargo, puedes usar herramientas externas como `yq` (un procesador de YAML de línea de comandos ligero y portátil) para interactuar de manera eficiente con archivos YAML. Repasemos algunas operaciones comunes:
+
+### Instalando `yq`:
+
+Antes de sumergirte en los ejemplos, asegúrate de tener `yq` instalado. Usualmente puedes instalarlo desde tu gestor de paquetes, por ejemplo, en Ubuntu:
+
+```bash
+sudo apt-get install yq
 ```
 
-Leer un archivo YAML:
-```Bash
-python3 -c 'import yaml; print(yaml.safe_load(open("archivo.yaml")))'
+O puedes descargarlo directamente de su repositorio de GitHub.
+
+### Leyendo un valor:
+
+Considera que tienes un archivo llamado `config.yaml` con el siguiente contenido:
+
+```yaml
+database:
+  host: localhost
+  port: 5432
+user:
+  name: admin
+  password: secreto
 ```
 
-Escribir en un archivo YAML:
-```Bash
-python3 -c 'import yaml; data = {"clave": "valor"}; open("salida.yaml", "w").write(yaml.dump(data))'
+Para leer el host de la base de datos, puedes usar `yq` de la siguiente manera:
+
+```bash
+yq e '.database.host' config.yaml
 ```
 
-## Profundización
+**Salida de muestra:**
 
-YAML, que significa "YAML Ain't Markup Language" (YAML no es un lenguaje de marcado), surgió en 2001 como una alternativa a XML para datos más fáciles de leer y escribir. Aunque JSON es otro formato popular por su simplicidad, YAML es más adecuado para configuraciones humanos debido a su alta legibilidad. En la implementación, herramientas como PyYAML en Python permiten manipular YAML de manera eficiente en scripts de Bash.
+```
+localhost
+```
 
-## Ver También
+### Actualizando un valor:
 
-- Documentación oficial de YAML: https://yaml.org/spec/1.2/spec.html
-- PyYAML en GitHub: https://github.com/yaml/pyyaml
-- Tutorial de YAML: https://learnxinyminutes.com/docs/yaml/
+Para actualizar el nombre del usuario en `config.yaml`, usa el comando `yq eval` con la opción `-i` (en el lugar):
+
+```bash
+yq e '.user.name = "newadmin"' -i config.yaml
+```
+
+Verifica el cambio con:
+
+```bash
+yq e '.user.name' config.yaml
+```
+
+**Salida de muestra:**
+
+```
+newadmin
+```
+
+### Agregando un nuevo elemento:
+
+Para añadir un nuevo elemento bajo la sección de base de datos, como un nuevo campo `timeout`:
+
+```bash
+yq e '.database.timeout = 30' -i config.yaml
+```
+
+Revisar el contenido del archivo confirmará la adición.
+
+### Eliminando un elemento:
+
+Para eliminar la contraseña bajo usuario:
+
+```bash
+yq e 'del(.user.password)' -i config.yaml
+```
+
+Esta operación eliminará el campo de contraseña de la configuración.
+
+Recuerda, `yq` es una herramienta poderosa y tiene muchas más capacidades, incluyendo la conversión de YAML a JSON, la fusión de archivos, y manipulaciones aún más complejas. Consulta la documentación de `yq` para explorar más a fondo.

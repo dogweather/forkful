@@ -1,38 +1,48 @@
 ---
 title:                "Tolka HTML"
-date:                  2024-01-20T15:33:25.166506-07:00
+date:                  2024-02-03T19:13:07.879532-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Tolka HTML"
-
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/ruby/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Parsing HTML handlar om att tolka och manipulera HTML-kod så att vi kan interagera med dess innehåll och struktur. Programmerare gör detta för att skrapa webbsidor, automatisera tester av webbapplikationer, och bearbeta information strukturerat.
+Att tolka HTML innebär att bryta ned en bit HTML-kod för att förstå dess struktur och innehåll. Programmerare gör detta för att extrahera data, manipulera innehåll eller migrera information mellan format och system.
 
 ## Hur man gör:
-I Ruby används ofta gemet Nokogiri för att parsa HTML. Det är kraftfullt och enkelt. Här är ett grundläggande exempel:
+För att tolka HTML i Ruby, installera 'Nokogiri'-gem med `gem install nokogiri`. Nokogiri är som en schweizisk armékniv för att arbeta med HTML och XML i Ruby. Här är ett snabbt exempel:
 
 ```ruby
 require 'nokogiri'
 require 'open-uri'
 
-# Ladda ner och parsa HTML från en webbsida
-html = open('https://example.com')
-doc = Nokogiri::HTML(html.read)
+# Ladda in HTML-innehåll från en webbsida
+html_content = URI.open('http://example.com').read
 
-# Hämta alla h2-taggar
-doc.css('h2').each do |h2|
-  puts h2.content
-end
+# Tolka HTML:en
+doc = Nokogiri::HTML(html_content)
+
+# Extrahera titeln
+title = doc.xpath('//title').text
+puts "Titeln på sidan är: #{title}"
 ```
-Exempelutskrift kan vara webbsidans h2-rubriker.
 
-## Djupdykning
-Nokogiri, släppt 2008, bygger på libxml2 och libxslt, vilka är standardbibliotek för att parsa XML och XSLT. Alternativ till Nokogiri inkluderar Oga och REXML, som är ren Ruby, men Nokogiri är vanligtvis snabbare. När du parsa HTML, är det viktigt att hantera inkonsekvent och "trasig" HTML, vilket Nokogiri hanterar bra med sin felkorrigering.
+Detta ger något i stil med: `Titeln på sidan är: Exempeldomän`.
 
-## Se också:
-- Nokogiri-dokumentation: [http://nokogiri.org/](http://nokogiri.org/)
-- W3C HTML-parser specifikation: [https://html.spec.whatwg.org/multipage/parsing.html](https://html.spec.whatwg.org/multipage/parsing.html)
+## Fördjupning
+Tillbaka i de tidiga Ruby-dagarna var alternativen för att tolka HTML begränsade. REXML var inbyggt men långsamt. Sedan kom Hpricot, men det svalnade. Nokogiri debuterade 2008, och kombinerade Hpricots enkelhet med snabbheten och kraften hos libxml, ett beprövat XML-verktyg.
+
+I tolkningsvärlden finns det alltid alternativ. Vissa svär vid det inbyggda 'rexml'-biblioteket eller 'oga', en annan XML/HTML-tolk för Ruby. Men Nokogiri förblir en favorit för dess robusthet och snabbhet, för att inte tala om dess omfattande utbud av funktioner.
+
+Under huven omvandlar Nokogiri HTML till ett Document Object Model (DOM) - en trädstruktur. Detta gör det enkelt att navigera och manipulera element. Med hjälp av XPath och CSS-selektorer kan du pinpunkta precis den information du behöver.
+
+## Se även
+- Nokogiri-gem: [https://nokogiri.org/](https://nokogiri.org/)
+- Rubys rexml-dokumentation: [https://ruby-doc.org/stdlib-2.6.3/libdoc/rexml/rdoc/REXML/Document.html](https://ruby-doc.org/stdlib-2.6.3/libdoc/rexml/rdoc/REXML/Document.html)
+- Alternativ tolk 'oga': [https://github.com/YorickPeterse/oga](https://github.com/YorickPeterse/oga)
+- Lär dig om XPath: [https://www.w3schools.com/xml/xpath_intro.asp](https://www.w3schools.com/xml/xpath_intro.asp)

@@ -1,57 +1,93 @@
 ---
-title:                "YAML-tiedostojen käsittely"
-date:                  2024-01-19
-simple_title:         "YAML-tiedostojen käsittely"
-
+title:                "Työskentely YAML:n kanssa"
+date:                  2024-02-03T19:26:04.976972-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Työskentely YAML:n kanssa"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/lua/working-with-yaml.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-"Mikä ja Miksi?"
+## Mitä ja Miksi?
 
-YAML on datan serialisointikieli, joka on ihmisen luettavissa ja helposti ymmärrettävä. Ohjelmoijat käyttävät sitä konfiguraatiotiedostoihin ja datan vaihtoon, koska se on selkeä ja laajasti yhteensopiva eri teknologioiden kanssa.
+YAML, lyhennys sanoista "YAML Ain't Markup Language", on ihmisen luettavissa oleva datan serialisointistandardi, jota käytetään usein asetustiedostoissa sekä datan vaihdossa eri kielten välillä. Ohjelmoijat suosivat YAMLia sen yksinkertaisuuden ja luettavuuden vuoksi, mikä tekee siitä ensisijaisen valinnan asetuksille, monipuolisille sovelluskonfiguraatioille tai sisällölle, jota ei-ohjelmoijien tulisi voida muokata.
 
-## How to:
-"Kuinka tehdä:"
+## Miten:
 
-```Lua
--- Install yaml module using luarocks or your package manager of choice
--- luarocks install lyaml
+Lualla ei ole sisäänrakennettua tukea YAMLille, mutta voit työskennellä YAML-tiedostojen kanssa käyttämällä kolmannen osapuolen kirjastoja, kuten `lyaml`. Tämä kirjasto mahdollistaa YAML-datan koodaamisen ja dekoodaamisen Lualla. Ensimmäiseksi sinun täytyy asentaa `lyaml` LuaRocksin, Luann paketinhallintajärjestelmän, kautta:
 
+```bash
+luarocks install lyaml
+```
+
+### YAML:n dekoodaus:
+
+Oletetaan, että sinulla on seuraava YAML-sisältö tiedostossa nimeltä `config.yaml`:
+
+```yaml
+database:
+  host: localhost
+  port: 3306
+  username: user
+  password: pass
+```
+
+Voit dekoodata tämän YAML-tiedoston Lua-taulukoksi seuraavalla koodilla:
+
+```lua
 local yaml = require('lyaml')
-local example_yaml = [[
-- name: Yoda
-  age: 900
-- name: Luke Skywalker
-  age: 53
-]]
+local file = io.open("config.yaml", "r")
+local content = file:read("*all")
+file:close()
 
--- Parse YAML string
-local people = yaml.load(example_yaml)
-
--- Iterate and print
-for _, person in ipairs(people) do
-  print(person.name .. " on " .. person.age .. " vuotta vanha.")
+local data = yaml.load(content)
+for k,v in pairs(data.database) do
+  print(k .. ": " .. v)
 end
 ```
 
-Sample Output:
+Kun ajat tämän skriptin, sen tulisi tulostaa:
+
+```output
+host: localhost
+port: 3306
+username: user
+password: pass
 ```
-Yoda on 900 vuotta vanha.
-Luke Skywalker on 53 vuotta vanha.
+
+### YAML:n koodaus:
+
+Lua-taulukoiden koodaamiseksi YAML-muotoon käytät `lyaml`-kirjaston tarjoamaa `dump`-funktiota. Oletetaan, että haluat luoda YAML-esityksen seuraavasta Lua-taulukosta:
+
+```lua
+local data = {
+  website = {
+    name = "Example",
+    owner = "Jane Doe",
+    metadata = {
+      creation_date = "2023-01-01",
+      tags = {"blog", "personal", "lua"}
+    }
+  }
+}
+
+local yaml = require('lyaml')
+local yaml_data = yaml.dump({data})
+print(yaml_data)
 ```
 
-## Deep Dive
-"Sukellus syvälle:"
+Tulostettu YAML olisi:
 
-YAML (YAML Ain’t Markup Language) on kehitetty alun perin 2001. Se muistuttaa JSONia kerätessään tietoja avain-arvopareina, mutta on luettavuudeltaan parempi. Vaihtoehtoina ovat JSON ja XML, joista molemmat ovat yhtä koneellisesti käsiteltävissä mutta vähemmän ihmiskäytössä ystävällisiä. Työskennellessäsi YAML:n kanssa Luassa, `lyaml` on suosittu kirjasto, mutta muista asentaa se ensin esimerkiksi luarocks-paketinhallinnalla.
+```yaml
+- website:
+    metadata:
+      creation_date: '2023-01-01'
+      tags: [blog, personal, lua]
+    name: Example
+    owner: Jane Doe
+```
 
-## See Also
-"Katso myös:"
-
-- YAML-virallinen sivusto: [https://yaml.org/](https://yaml.org/)
-- LuaRocks lyaml-paketti: [https://luarocks.org/modules/gvvaughan/lyaml](https://luarocks.org/modules/gvvaughan/lyaml)
-- YAML ja JSON vertailu: [https://json2yaml.com/](https://json2yaml.com/)
+Näiden mallien mukaisesti Lua-ohjelmoijat voivat tehokkaasti käsitellä YAML-dataa monenlaisissa sovelluksissa. Nämä toimenpiteet YAMLin kanssa ovat olennaisia monipuolisten Lua-sovellusten kehittämiselle, jotka toimivat sujuvasti osana suurempaa järjestelmää tai suoraan muiden järjestelmien kanssa.

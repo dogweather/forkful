@@ -1,51 +1,81 @@
 ---
 title:                "Schreiben auf Standardfehler"
-date:                  2024-01-19
+date:                  2024-02-03T19:32:21.577065-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Schreiben auf Standardfehler"
-
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/arduino/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Schreiben auf Standard Error (stderr) bedeutet, Fehlermeldungen und Diagnoseinformationen getrennt von der normalen Ausgabe (stdout) zu behandeln. Programmierer tun dies, um Fehler leicht zu identifizieren und mit Log-Dateien oder Konsolenausgaben effizienter zu arbeiten.
 
-## So geht's:
-Arduino bietet keine native Unterscheidung zwischen stdout und stderr. Wir verwenden `Serial.print` für die normale Ausgabe und definieren eine eigene Funktion für Fehlermeldungen.
+Das Schreiben auf den Standardfehler (stderr) in der Arduino-Programmierung bedeutet, Fehlermeldungen und Diagnosen in einen separaten Kanal zu leiten, um zu verhindern, dass sie sich mit der Standardausgabe (stdout) vermischen. Programmierer tun dies, um normale Programmausgaben von Fehlermeldungen zu unterscheiden und das Debugging sowie die Log-Analyse zu erleichtern.
 
-```Arduino
+## Wie:
+
+Arduino unterscheidet nicht nativ zwischen Standardausgabe und Standardfehler, wie es bei konventionellen Computersystemen der Fall ist. Sowohl die Methoden `Serial.print()` als auch `Serial.println()` schreiben auf denselben seriellen Ausgang, der typischerweise im Serial Monitor der Arduino IDE angezeigt wird. Wir können jedoch das Schreiben auf stderr emulieren, indem wir Fehlermeldungen speziell formatieren oder sie auf einen alternativen Ausgang leiten, wie eine Datei auf einer SD-Karte oder über eine Netzwerkverbindung.
+
+Um stderr zu emulieren, können Sie Fehlermeldungen mit einem Tag wie "ERROR:" präfixen, um sie im Serial Monitor zu unterscheiden:
+
+```cpp
 void setup() {
-  Serial.begin(9600);
+  Serial.begin(9600); // Initialisiere die serielle Kommunikation mit einer Baudrate von 9600
 }
 
 void loop() {
-  // Normal output
-  Serial.println("Alles in Ordnung");
+  int result = someFunction();
+  if (result == -1) {
+    // Emulation von stderr durch Voranstellen der Fehlermeldung
+    Serial.println("ERROR: Die Funktion konnte nicht ausgeführt werden.");
+  } else {
+    Serial.println("Die Funktion wurde erfolgreich ausgeführt.");
+  }
+  delay(1000); // Warte eine Sekunde, bevor die Schleife neu startet
+}
 
-  // Error output
-  if (analogRead(A0) > 400) {
-    errorPrint("Spannung zu hoch!");
+int someFunction() {
+  // Eine Dummy-Funktion, die bei einem Fehler -1 zurückgibt
+  return -1;
+}
+```
+
+Eine beispielhafte Ausgabe im Serial Monitor der Arduino IDE könnte so aussehen:
+
+```
+ERROR: Die Funktion konnte nicht ausgeführt werden.
+```
+
+Für Projekte, die einen ausgefeilteren Ansatz erfordern, einschließlich das Schreiben auf unterschiedliche physische Ausgänge, kann die Verwendung von Drittanbieterbibliotheken oder zusätzlicher Hardware notwendig sein. Zum Beispiel erfordert das Protokollieren von Fehlermeldungen auf einer SD-Karte die `SD`-Bibliothek:
+
+```cpp
+#include <SPI.h>
+#include <SD.h>
+
+File myFile;
+
+void setup() {
+  Serial.begin(9600);
+  if (!SD.begin()) {
+    Serial.println("ERROR: Initialisierung der SD-Karte fehlgeschlagen!");
+    return;
+  }
+  
+  myFile = SD.open("error.log", FILE_WRITE);
+  if (myFile) {
+    myFile.println("ERROR: Die Funktion konnte nicht ausgeführt werden.");
+    myFile.close(); // Stelle sicher, dass die Datei geschlossen wird, um den Inhalt zu speichern
+  } else {
+    Serial.println("ERROR: Öffnen von error.log fehlgeschlagen!");
   }
 }
 
-void errorPrint(String errMsg) {
-  Serial.print("ERROR: ");
-  Serial.println(errMsg);
+void loop() {
+  // Dein Hauptcode würde hier stehen
 }
 ```
 
-Erwartete Ausgabe:
-```
-Alles in Ordnung
-ERROR: Spannung zu hoch!
-```
-
-## Hintergrundwissen:
-Standard Error ist eine Standard-Datenstrom, der ursprünglich in UNIX-Systemen eingeführt wurde, um Programmfehler von normalen Ausgaben zu trennen. Arduino selbst unterscheidet nicht zwischen stdout und stderr, aber wir können mit `Serial` beides simulieren. Alternativen wie `stderr`-Streams sind typischer auf Betriebssystem-Ebene oder in komplexeren Programmiersprachen wie C oder Python zu finden, nicht in der Arduino-Welt.
-
-## Siehe auch:
-- [Serial - Arduino Reference](https://www.arduino.cc/reference/en/language/functions/communication/serial/)
-- [Understanding Standard Streams - GNU](https://www.gnu.org/software/libc/manual/html_node/Standard-Streams.html)
-- [Error Handling in Arduino - Arduino Project Hub](https://create.arduino.cc/projecthub)
+Mit diesem Ansatz trennen Sie physisch die normale Programmausgabe und Fehlermeldungen, indem Sie letztere in eine `error.log`-Datei auf einer SD-Karte leiten, was post-mortem-Analysen ohne Überfüllung des primären Ausgabekanals ermöglicht.

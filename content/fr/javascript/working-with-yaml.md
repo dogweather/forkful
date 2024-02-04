@@ -1,51 +1,94 @@
 ---
 title:                "Travailler avec YAML"
-date:                  2024-01-19
+date:                  2024-02-03T19:26:01.609191-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Travailler avec YAML"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/javascript/working-with-yaml.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Le YAML, c'est du texte pour structurer des données, genre config ou input pour nos apps. On le kiffe car il est lisible et simple à piger pour les humains.
+## Quoi & Pourquoi ?
 
-## How to:
-Pour tripatouiller du YAML en JS, on utilise souvent `js-yaml`. Faut d'abord l'installer :
+YAML, abréviation de YAML Ain't Markup Language, est un format de sérialisation de données lisible par l'homme. Les programmeurs l'utilisent souvent pour les fichiers de configuration et l'échange de données entre langages en raison de sa simplicité et de sa lisibilité par rapport à JSON ou XML.
+
+## Comment faire :
+
+En JavaScript, travailler avec YAML implique généralement l'utilisation d'une bibliothèque tierce puisque le langage n'inclut pas d'analyseur intégré pour YAML. L'une des bibliothèques les plus populaires à cet effet est `js-yaml`. Vous pouvez utiliser `js-yaml` pour analyser le YAML en objets JavaScript et vice versa.
+
+Tout d'abord, vous devez installer `js-yaml` :
 
 ```bash
 npm install js-yaml
 ```
 
-Après, c'est un jeu d'enfant pour l'importer et s'en servir :
+Ensuite, vous pouvez l'utiliser dans vos projets. Voici comment vous pouvez charger un fichier YAML et l'analyser en un objet JavaScript :
+
+```javascript
+// Requérir le module js-yaml
+const yaml = require('js-yaml');
+const fs   = require('fs');
+
+// Charger le YAML à partir d'un fichier
+try {
+  const doc = yaml.load(fs.readFileSync('./config.yaml', 'utf8'));
+  console.log(doc);
+} catch (e) {
+  console.error(e);
+}
+```
+
+Si votre fichier `config.yaml` ressemble à cela :
+
+```yaml
+version: 1
+services:
+  web:
+    image: "myapp/web:latest"
+    ports:
+      - "5000:5000"
+```
+
+La sortie sera :
+
+```javascript
+{ version: 1,
+  services: 
+   { web: 
+      { image: 'myapp/web:latest',
+        ports: [ '5000:5000' ] } } }
+```
+
+Pour faire l'inverse, convertir un objet JavaScript en une chaîne YAML :
 
 ```javascript
 const yaml = require('js-yaml');
-const fs = require('fs');
+const obj = {
+  version: 1,
+  services: {
+    web: {
+      image: "myapp/web:latest",
+      ports: ["5000:5000"]
+    }
+  }
+};
 
-// Pour lire un fichier YAML et le convertir en JS
-try {
-  const doc = yaml.load(fs.readFileSync('/mon/dossier/config.yaml', 'utf8'));
-  console.log(doc);
-} catch (e) {
-console.error(e);
-}
-
-// Pour faire l'inverse, de JS à YAML
-const data = { clé: 'valeur', liste: [1, 2, 3] };
-
-const yamlStr = yaml.dump(data);
-fs.writeFileSync('/mon/dossier/config.yaml', yamlStr, 'utf8');
+const yamlStr = yaml.dump(obj);
+console.log(yamlStr);
 ```
 
-Ces exemples montrent comment lire un fichier YAML, le convertir en objet JavaScript, puis comment reprendre cet objet et l'écrire en format YAML.
+Ce code produira :
 
-## Deep Dive
-Le YAML, ça date de 2001, conçu pour être plus lisible que le XML. Aujourd'hui, beaucoup l'utilisent pour Docker, Kubernetes, GitLab CI, etc. Si on compare avec JSON, YAML accepte les commentaires, c'est plus "relax" pour le formatage. En JS, faudrait aussi checker `json2yaml` et `yamljs`, mais `js-yaml` est roy pour sa sécurité et performance.
+```yaml
+version: 1
+services:
+  web:
+    image: myapp/web:latest
+    ports:
+      - '5000:5000'
+```
 
-## See Also
-- La doc officielle de YAML pour piger le format : https://yaml.org
-- Repo `js-yaml` pour les détails et docs : https://github.com/nodeca/js-yaml
-- Un petit comparo entre JSON et YAML : https://www.json2yaml.com/
+En utilisant `js-yaml`, vous pouvez facilement intégrer l'analyse et la sérialisation YAML dans vos projets JavaScript, améliorant l'interéchangeabilité des données et la gestion de la configuration.

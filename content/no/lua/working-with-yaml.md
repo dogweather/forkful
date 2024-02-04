@@ -1,47 +1,93 @@
 ---
-title:                "Arbeid med YAML"
-date:                  2024-01-19
-simple_title:         "Arbeid med YAML"
-
+title:                "Arbeider med YAML"
+date:                  2024-02-03T19:26:09.343791-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Arbeider med YAML"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/lua/working-with-yaml.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Hva & Hvorfor?
-YAML, "YAML Ain't Markup Language", er et dataformat for å strukturere data. Programmere bruker YAML for enkel lesbarhet og skrivbarhet i konfigurasjonsfiler og datautveksling.
+## Hva og hvorfor?
+
+YAML, forkortet fra "YAML Ain't Markup Language", er en menneskelesbar data-serialiseringsstandard som ofte brukes for konfigurasjonsfiler og datautveksling mellom språk. Programmerere benytter YAML på grunn av dets enkelhet og lesbarhet, noe som gjør det til et foretrukket valg for innstillinger, varierte applikasjonskonfigurasjoner, eller innhold som skal kunne redigeres av ikke-programmerere.
 
 ## Hvordan:
-Lua har ikke innebygget YAML-støtte, så vi bruker `lyaml` biblioteket. Installer via luarocks:
+
+Lua har ikke innebygd støtte for YAML, men du kan arbeide med YAML-filer ved å bruke tredjeparts biblioteker som `lyaml`. Dette biblioteket tillater koding og dekoding av YAML-data med Lua. Først må du installere `lyaml` via LuaRocks, Lua sin pakkehåndterer:
 
 ```bash
 luarocks install lyaml
 ```
 
-Enkelt eksempel for å laste inn YAML-streng:
-```lua
-local lyaml = require('lyaml')
-local yaml_data = [[
-- Hanne
-- Ole
-- Kari
-]]
+### Dekoding av YAML:
 
-local table_from_yaml = lyaml.load(yaml_data)
-print(table_from_yaml[2])  -- Output: Ole
+Anta at du har følgende YAML-innhold i en fil kalt `config.yaml`:
+
+```yaml
+database:
+  host: localhost
+  port: 3306
+  brukernavn: bruker
+  passord: pass
 ```
 
-For å serialisere table til YAML:
+Du kan dekode denne YAML-filen til et Lua-tabell med følgende kode:
+
 ```lua
-local table_to_yaml = lyaml.dump({[1] = "Hanne", [2] = "Ole", [3] = "Kari"})
-print(table_to_yaml)
+local yaml = require('lyaml')
+local fil = io.open("config.yaml", "r")
+local innhold = fil:read("*all")
+fil:close()
+
+local data = yaml.load(innhold)
+for k,v in pairs(data.database) do
+  print(k .. ": " .. v)
+end
 ```
 
-## Dypdykk
-YAML startet i 2001, en enklere og mer menneske-vennlig alternativ til XML og JSON. Alternativer til YAML er JSON for datautveksling eller TOML for konfigurasjon. Detaljene i YAML-implementeringen avhenger av biblioteket, men det følger standarden YAML 1.2.
+Når du kjører dette skriptet, skal det gi følgende utskrift:
 
-## Se Også
-- Offisiell YAML-nettside: https://yaml.org
-- `lyaml` dokumentasjon: http://gvvaughan.github.io/lyaml/
-- YAML 1.2 spesifikasjon: https://yaml.org/spec/1.2/spec.html
+```output
+host: localhost
+port: 3306
+brukernavn: bruker
+passord: pass
+```
+
+### Koding av YAML:
+
+For å kode Lua-tabeller til YAML-format, bruker du `dump`-funksjonen som tilbys av `lyaml`. Med tanke på at du ønsker å lage en YAML-representasjon av følgende Lua-tabell:
+
+```lua
+local data = {
+  nettside = {
+    navn = "Eksempel",
+    eier = "Jane Doe",
+    metadata = {
+      opprettelsesdato = "2023-01-01",
+      tagger = {"blogg", "personlig", "lua"}
+    }
+  }
+}
+
+local yaml = require('lyaml')
+local yaml_data = yaml.dump({data})
+print(yaml_data)
+```
+
+Det YAML-utgitte vil være:
+
+```yaml
+- nettside:
+    metadata:
+      opprettelsesdato: '2023-01-01'
+      tagger: [blogg, personlig, lua]
+    navn: Eksempel
+    eier: Jane Doe
+```
+
+Ved å følge disse mønstrene, kan Lua-programmerere effektivt håndtere YAML-data for en rekke applikasjoner. Disse operasjonene med YAML er avgjørende for å utvikle fleksible Lua-applikasjoner som interagerer jevnt med andre deler av et system eller direkte med andre systemer.

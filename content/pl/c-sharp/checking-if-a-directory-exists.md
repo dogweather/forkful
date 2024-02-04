@@ -1,21 +1,27 @@
 ---
 title:                "Sprawdzanie, czy katalog istnieje"
-date:                  2024-01-19
+date:                  2024-02-03T19:07:08.298215-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Sprawdzanie, czy katalog istnieje"
-
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/c-sharp/checking-if-a-directory-exists.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Co i Dlaczego?)
-Sprawdzanie czy katalog istnieje to sposób na uniknięcie błędów, gdy aplikacja próbuje operować na plikach. Programiści to robią, aby upewnić się, że operacja na plikach nie zakończy się niepowodzeniem z powodu braku katalogu.
+## Co i dlaczego?
 
-## How to (Jak to zrobić):
-Sprawdźmy, jak łatwo możemy to zrobić w C#. Skorzystamy z klasy `Directory` z przestrzeni nazw `System.IO`.
+Sprawdzanie, czy katalog istnieje w C#, polega na weryfikowaniu obecności folderu w określonej ścieżce w systemie plików. Programiści robią to, aby uniknąć błędów, takich jak próby odczytu z lub zapisu do nieistniejącego katalogu, zapewniając płynniejsze manipulacje plikami i katalogami.
 
-```C#
+## Jak to zrobić:
+
+### Używając System.IO
+
+C# zapewnia przestrzeń nazw `System.IO`, która zawiera klasę `Directory`, oferującą bezpośredni sposób na sprawdzenie istnienia katalogu za pomocą metody `Exists`.
+
+```csharp
 using System;
 using System.IO;
 
@@ -23,37 +29,72 @@ class Program
 {
     static void Main()
     {
-        string path = @"C:\ExampleDirectory";
+        string directoryPath = @"C:\ExampleDirectory";
 
-        if (Directory.Exists(path))
-        {
-            Console.WriteLine("Katalog istnieje!");
-        }
-        else
-        {
-            Console.WriteLine("Katalog nie istnieje.");
-        }
+        // Sprawdź, czy katalog istnieje
+        bool directoryExists = Directory.Exists(directoryPath);
+
+        // Wydrukuj wynik
+        Console.WriteLine("Katalog istnieje: " + directoryExists);
     }
 }
 ```
-Odpalając ten kod zobaczysz:
-```
-Katalog istnieje!
-```
-lub
-```
-Katalog nie istnieje.
-```
-zależnie od tego, czy katalog istnieje czy nie.
 
-## Deep Dive (Dogłębna analiza):
-Sprawdzanie istnienia katalogu jest ważną czynnością w programowaniu już od wczesnych lat systemów plików. W C#, `Directory.Exists` jest standardowym podejściem i częścią .NET Framework od wersji 1.0. 
+**Przykładowy wynik:**
 
-Alternatywą jest próba wykonania operacji na katalogu i obsłużenie ewentualnego wyjątku, ale to nie jest zalecane jako pierwsza linia obrony. Jest to tzw. programowanie przez wyjątki i może prowadzić do wolniejszego działania aplikacji w przypadku częstego nieistnienia katalogu.
+```
+Katalog istnieje: False
+```
 
-Za kulisy, `Directory.Exists` wywołuje natywne funkcje systemu operacyjnego, aby stwierdzić status katalogu, co jest efektywne, ale wymaga również zrozumienia, że różne systemy operacyjne mogą zwracać różne wyniki (np. wrażliwość na wielkość liter w ścieżkach).
+W przypadku, gdy katalog istnieje pod ścieżką `C:\ExampleDirectory`, wynik będzie `True`.
 
-## See Also (Zobacz również):
-- Dokumentacja Microsoft dla `Directory.Exists`: [Link](https://docs.microsoft.com/en-us/dotnet/api/system.io.directory.exists)
-- Microsoft .NET API Documentation: [Link](https://docs.microsoft.com/en-us/dotnet/)
-- Artykuł o obsłudze wyjątków w C#: [Link](https://docs.microsoft.com/en-us/dotnet/standard/exceptions/)
+### Używając System.IO.Abstractions do testów jednostkowych
+
+Gdy chodzi o możliwość testowania jednostkowego kodu, szczególnie gdy wchodzi on w interakcję z systemem plików, pakiet `System.IO.Abstractions` jest popularnym wyborem. Pozwala on abstrahować i udawać operacje na systemie plików w testach. Oto jak można sprawdzić istnienie katalogu, korzystając z tego podejścia:
+
+Najpierw upewnij się, że zainstalowałeś pakiet:
+
+```
+Install-Package System.IO.Abstractions
+```
+
+Następnie możesz wstrzyknąć `IFileSystem` do swojej klasy i używać go do sprawdzania, czy katalog istnieje, co ułatwia testowanie jednostkowe.
+
+```csharp
+using System;
+using System.IO.Abstractions;
+
+class Program
+{
+    private readonly IFileSystem _fileSystem;
+
+    public Program(IFileSystem fileSystem)
+    {
+        _fileSystem = fileSystem;
+    }
+
+    public bool CheckDirectoryExists(string directoryPath)
+    {
+        return _fileSystem.Directory.Exists(directoryPath);
+    }
+
+    static void Main()
+    {
+        var fileSystem = new FileSystem();
+        var program = new Program(fileSystem);
+
+        string directoryPath = @"C:\ExampleDirectory";
+        bool directoryExists = program.CheckDirectoryExists(directoryPath);
+
+        Console.WriteLine("Katalog istnieje: " + directoryExists);
+    }
+}
+```
+
+**Przykładowy wynik:**
+
+```
+Katalog istnieje: False
+```
+
+To podejście rozdziela logikę aplikacji od bezpośredniego dostępu do systemu plików, czyniąc kod bardziej modułowym, testowalnym i łatwym do utrzymania.

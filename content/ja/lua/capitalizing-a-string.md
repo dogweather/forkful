@@ -1,35 +1,53 @@
 ---
-title:                "文字列の先頭を大文字にする"
-date:                  2024-01-19
-simple_title:         "文字列の先頭を大文字にする"
-
+title:                "文字列を大文字にする"
+date:                  2024-02-03T19:06:00.543955-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "文字列を大文字にする"
 tag:                  "Strings"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/lua/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (なにとなぜ？)
+## 何を、なぜ？
+文字列を大文字にするとは、文中の各単語の最初の文字を大文字にし、残りを小文字にすることを意味します。この技術は、タイトルの準備やユーザー入力を表示用にフォーマットするなど、よりプロフェッショナルまたは可読性の高い出力のために一般的に使用されます。
 
-文字列を大文字にすることは、その文字列の初めの文字を大文字に変換することです。プログラマーは可読性を高めたり、文法的な要件を満たすためによく行います。
+## 方法：
+Luaには文字列を大文字にするための組み込み関数はありませんが、基本的な文字列操作関数を使用してこのタスクを簡単に実行できます。ここに、単一の単語の最初の文字を大文字にする簡単な関数があります：
 
-## How to: (やり方)
-
-```Lua
-local function capitalize(str)
-    return (str:gsub("^%l", string.upper))
+```lua
+function capitalize(word)
+    return word:sub(1,1):upper() .. word:sub(2):lower()
 end
 
-print(capitalize("こんにちは")) -- 期待される出力: こんにちは
-print(capitalize("luaは楽しい！")) -- 期待される出力: Luaは楽しい！
+print(capitalize("hello"))  -- 出力: Hello
 ```
 
-## Deep Dive (深掘り)
+文中の各単語を大文字にするには、文を単語に分割し、それぞれを大文字にしてから再結合します：
 
-文字列の最初の文字を大文字にするのは、Luaの標準ライブラリには含まれていません。`gsub`関数を使って、最初の小文字を大文字に変換する一般的な独自の関数が必要です。PythonやJavaScriptなど他の言語には組み込みのメソッドがありますが、Luaでは関数を自作することで対応します。実装は簡単で、正規表現と`string.upper`を使い、先頭の小文字を大文字に変えることが一般的です。
+```lua
+function capitalizeSentence(sentence)
+    local words = {}
+    for word in sentence:gmatch("%S+") do
+        table.insert(words, capitalize(word))
+    end
+    return table.concat(words, " ")
+end
 
-## See Also (関連項目)
+print(capitalizeSentence("hello world from lua"))  -- 出力: Hello World From Lua
+```
 
-- Lua 5.4 Reference Manual - [string library](https://www.lua.org/manual/5.4/manual.html#6.4)
-- Roberto Ierusalimschy's book, "Programming in Lua" - [Available online](https://www.lua.org/pil/contents.html)
+もし、パフォーマンスが重要なプロジェクトに取り組んでおり、より高度な文字列操作機能が必要になった場合は、`Penlight`のようなサードパーティライブラリの使用を検討してください。Penlightは、Luaに他のユーティリティとともに、より多様な文字列処理機能を強化します：
+
+```lua
+-- Penlightがインストールされていると仮定：
+local pl = require("pl.stringx")
+local text = "hello lua users"
+text = pl.capitalized(text)
+print(text)  -- 出力: Hello lua users
+
+-- 注意：Penlightのcapitalized関数は最初の単語のみを大文字にします。
+-- 各単語を大文字にするには、カスタムソリューションを実装するか、他のライブラリを探索することになります。
+```

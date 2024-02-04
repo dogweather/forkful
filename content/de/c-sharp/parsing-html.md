@@ -1,52 +1,102 @@
 ---
 title:                "HTML parsen"
-date:                  2024-01-20T15:30:41.030612-07:00
+date:                  2024-02-03T19:12:26.825658-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "HTML parsen"
-
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/c-sharp/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Das Parsen von HTML bedeutet, den Code einer Webseite zu analysieren und zu interpretieren, um spezifische Inhalte und Strukturen zu extrahieren. Programmierer tun das, um Daten zu sammeln, Inhalte zu scrapen oder die Struktur einer Webseite programmatisch zu manipulieren.
 
-## So geht's:
-C# bietet mehrere Wege, um HTML zu parsen. Eine beliebte Bibliothek ist `HtmlAgilityPack`. Hier ist ein kurzes Beispiel, wie man es verwendet:
+Das Parsen von HTML in der Programmierung beinhaltet die Analyse der Struktur eines HTML-Dokuments, was Ihnen erlaubt, dessen Inhalt programmatisch zu extrahieren, zu manipulieren und zu interagieren. Programmierer machen dies, um das automatisierte Web-Scraping, die Datenextraktion oder sogar die dynamische Modifikation von Webseiten oder HTML-Dokumenten für verschiedene Anwendungen zu automatisieren, was es zu einer essenziellen Fähigkeit in der Webentwicklung, Datenanalyse und in automatisierten Testszenarien macht.
 
-```C#
-using HtmlAgilityPack;
-using System;
+## Wie:
 
-class HtmlParser
-{
-    static void Main()
-    {
-        HtmlWeb web = new HtmlWeb();
-        HtmlDocument doc = web.Load("http://example.com");
+Während .NET grundlegende Unterstützung für die Arbeit mit HTML bietet, wie den `HttpClient` zum Abrufen von Webseiten, fehlt es an einem integrierten, umfassenden HTML-Parser. Daher wenden sich die meisten C#-Entwickler an beliebte Drittanbieter-Bibliotheken wie HtmlAgilityPack oder AngleSharp für robuste HTML-Parsing-Fähigkeiten. Beide Bibliotheken ermöglichen einfaches Abfragen, Manipulieren und Durchlaufen des HTML-DOM.
 
-        foreach (HtmlNode link in doc.DocumentNode.SelectNodes("//a[@href]"))
-        {
-            HtmlAttribute att = link.Attributes["href"];
-            Console.WriteLine(att.Value);
-        }
-    }
-}
-```
+### Verwendung von HtmlAgilityPack
 
-Ausgabe (beispielhaft für die extrahierten Links von `example.com`):
-```
-http://example.com/about
-http://example.com/contact
-http://example.com/login
-```
+1. **HtmlAgilityPack installieren**: Fügen Sie zunächst das HtmlAgilityPack-Paket Ihrem Projekt über NuGet hinzu.
+   ```
+   Install-Package HtmlAgilityPack
+   ```
 
-## Tiefere Einblicke:
-HTML-Parsing ist kein neues Konzept und war schon immer Teil des Webscrapings und der Webdatenverarbeitung. Früher griffen Entwickler oft zu Regular Expressions, aber das ist fehleranfällig und ineffizient für komplexes HTML.
+2. **Beispielcode**: Parsen Sie einen HTML-String und extrahieren Sie die Titel aller `<h1>`-Elemente.
 
-Alternativen zum `HtmlAgilityPack` könnten Bibliotheken wie `AngleSharp` sein, die modernere, LINQ-ähnliche Abfragen bieten. Beim Implementieren eines HTML-Parsers sollte man bedenken, dass HTML oft nicht wohlgeformt ist; eine robuste Bibliothek kann fehlertoleranter beim Umgang mit solchem Code sein.
+   ```csharp
+   using HtmlAgilityPack;
+   using System;
+   using System.Linq;
 
-## Siehe auch:
-- HtmlAgilityPack auf GitHub: [https://github.com/zzzprojects/html-agility-pack](https://github.com/zzzprojects/html-agility-pack)
-- AngleSharp GitHub-Repo: [https://github.com/AngleSharp/AngleSharp](https://github.com/AngleSharp/AngleSharp)
+   class Program
+   {
+       static void Main(string[] args)
+       {
+           var html = @"<html>
+                         <body>
+                             <h1>Titel 1</h1>
+                             <h1>Titel 2</h1>
+                         </body>
+                        </html>";
+           var htmlDoc = new HtmlDocument();
+           htmlDoc.LoadHtml(html);
+
+           var h1Tags = htmlDoc.DocumentNode.SelectNodes("//h1").Select(node => node.InnerText);
+           foreach (var title in h1Tags)
+           {
+               Console.WriteLine(title);
+           }
+       }
+   }
+   ```
+
+   **Beispielausgabe:**
+   ```
+   Titel 1
+   Titel 2
+   ```
+
+### Verwendung von AngleSharp
+
+1. **AngleSharp installieren**: Fügen Sie die AngleSharp-Bibliothek Ihrem Projekt über NuGet hinzu.
+   ```
+   Install-Package AngleSharp
+   ```
+
+2. **Beispielcode**: Laden Sie ein HTML-Dokument und fragen Sie `div`-Elemente mit einer spezifischen Klasse ab.
+
+   ```csharp
+   using AngleSharp;
+   using AngleSharp.Dom;
+   using System;
+   using System.Linq;
+   using System.Threading.Tasks;
+
+   class Program
+   {
+       static async Task Main(string[] args)
+       {
+           var context = BrowsingContext.New(Configuration.Default);
+           var document = await context.OpenAsync(req => req.Content("<div class='item'>Artikel 1</div><div class='item'>Artikel 2</div>"));
+
+           var items = document.QuerySelectorAll(".item").Select(element => element.TextContent);
+           foreach (var item in items)
+           {
+               Console.WriteLine(item);
+           }
+       }
+   }
+   ```
+
+   **Beispielausgabe:**
+   ```
+   Artikel 1
+   Artikel 2
+   ```
+
+Sowohl HTMLAgilityPack als auch AngleSharp sind leistungsstarke Werkzeuge zum Parsen von HTML, aber Ihre Wahl zwischen ihnen könnte von spezifischen Projektanforderungen, Leistungsüberlegungen oder persönlichen Vorlieben im API-Design abhängen.

@@ -1,65 +1,91 @@
 ---
-title:                "Tolka ett datum från en sträng"
-date:                  2024-01-20T15:34:49.074757-07:00
-simple_title:         "Tolka ett datum från en sträng"
-
+title:                "Analysera ett datum från en sträng"
+date:                  2024-02-03T19:13:26.613644-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Analysera ett datum från en sträng"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/arduino/parsing-a-date-from-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att tolka ett datum från en sträng innebär att göra om textformat till datumformat som programmet kan använda. Programmerare gör detta för att lättare hantera och manipulera datumdata, användbart för allt från att sätta tidsstämplar till att skapa schemaläggningssystem.
 
-## How to:
-```Arduino
+Att tolka ett datum från en sträng i Arduino innebär att extrahera och konvertera datumkomponenterna (år, månad, dag) från en textuell representation till ett format som kan användas för tidsuppföljning, jämförelser eller manipulationer inom sketcher. Programmerare utför ofta denna uppgift för att interagera med komponenter som realtidsklockor, loggar, eller för att bearbeta indata från webb-API:er och användargränssnitt där datum kan presenteras i ett läsbart format.
+
+## Hur man gör:
+
+Direkt metod utan tredjepartsbibliotek:
+
+```cpp
 #include <Wire.h>
 #include <RTClib.h>
 
-RTC_DS3231 rtc;
+void setup() {
+  Serial.begin(9600);
+  // Exempel på datumsträng i YYYY-MM-DD-format
+  String dateString = "2023-04-01"; 
+
+  int year = dateString.substring(0, 4).toInt();
+  int month = dateString.substring(5, 7).toInt();
+  int day = dateString.substring(8, 10).toInt();
+
+  // Initiera ett DateTime-objekt med tolkade komponenter
+  DateTime parsedDate(year, month, day);
+  
+  Serial.print("Tolkat Datum: ");
+  Serial.print(parsedDate.year(), DEC);
+  Serial.print("/");
+  Serial.print(parsedDate.month(), DEC);
+  Serial.print("/");
+  Serial.println(parsedDate.day(), DEC);
+}
+
+void loop() {}
+```
+
+Exempel på utdata:
+```
+Tolkat Datum: 2023/4/1
+```
+
+Använda ett tredjepartsbibliotek (*ArduinoJson* för mer komplexa tolkningsscenarier, som att hämta ett datum från ett JSON-svar):
+
+Först, installera ArduinoJson-biblioteket genom Arduino Library Manager.
+
+```cpp
+#include <ArduinoJson.h>
 
 void setup() {
   Serial.begin(9600);
-  if (!rtc.begin()) {
-    Serial.println("Couldn't find RTC");
-    while (1);
-  }
 
-  // Anta att vi har en datumsträng i formatet "DD-MM-YYYY"
-  String dateString = "23-04-2023";
+  // Simulera ett JSON-svar
+  String jsonResponse = "{\"date\":\"2023-07-19\"}";
+  StaticJsonDocument<200> doc;
+  deserializeJson(doc, jsonResponse);
 
-  // Parse the string to individual parts
-  int day = dateString.substring(0, 2).toInt();
-  int month = dateString.substring(3, 5).toInt();
-  int year = dateString.substring(6).toInt();
+  // Extrahera datumsträngen
+  const char* date = doc["date"];
 
-  // Sätt RTC till det parsade datumet
-  rtc.adjust(DateTime(year, month, day));
-
-  // Visa det parsade datumet
-  DateTime now = rtc.now();
-  Serial.print(now.day());
-  Serial.print('/');
-  Serial.print(now.month());
-  Serial.print('/');
-  Serial.println(now.year());
+  // Tolkar datumet från strängen som tidigare
+  int year = String(date).substring(0, 4).toInt();
+  int month = String(date).substring(5, 7).toInt();
+  int day = String(date).substring(8, 10).toInt();
+  
+  Serial.print("Tolkat Datum från JSON: ");
+  Serial.print(year);
+  Serial.print("/");
+  Serial.print(month);
+  Serial.print("/");
+  Serial.println(day);
 }
 
-void loop() {
-  // Inget att göra här
-}
+void loop() {}
 ```
 
-## Deep Dive:
-Att parsning av datum och tid har en lång historia i programmering är ingen nyhet. Före väletablerade bibliotek var programmerare tvungna att själva hantera alla aspekter av tolkningen, vilket ledde till många fel och inkompatibiliteter. 
-
-I Arduino-världen finns bibliotek som RTClib som förenklar tolkning och hantering av datum och tid. Arduino självt har ingen inbyggd support för datum och tidsformat, det kräver tillsatshårdvara (som en RTC – Real Time Clock – modul) och bibliotek som RTClib.
-
-Alternativ till RTClib kan inkludera TimeLib eller egna funktioner om det är en liten projektet. Viktigt att här komma ihåg är standarder för datumformat; internationellt är ISO 8601 (YYYY-MM-DD) standard, men i olika länder kan lokala format (som DD-MM-YYYY i Europa) också användas. Stränghantering är alltid kritisk, och man bör vara medveten om att formaten kan variera.
-
-När det gäller implementation kräver datumtolkning från sträng hantering av textsträngar (strings), som kan innehålla fel och oavsiktliga tecken. Validering och felsökning är därför nyckelkomponenter i processen.
-
-## Se Även:
-- [RTClib GitHub-repository](https://github.com/adafruit/RTClib)
-- [ISO 8601 standard information](https://www.iso.org/iso-8601-date-and-time-format.html)
+Exempel på utdata:
+```
+Tolkat Datum från JSON: 2023/7/19
+```

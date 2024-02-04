@@ -1,55 +1,63 @@
 ---
 title:                "כתיבת בדיקות"
-date:                  2024-01-19
+date:                  2024-02-03T19:32:01.143678-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "כתיבת בדיקות"
-
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/python/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## מה ולמה?
-כתיבת בדיקות היא תהליך שבו מתכנתים יוצרים קוד שמוודא שתוכנתם עובדת כשורה. הם עושים זאת כדי להבטיח יציבות, למצוא תקלות לפני לקוחות ולשפר את איכות הקוד.
+כתיבת בדיקות ב-Python כוללת יצירת סקריפטים אוטומטיים לאימות נכונות הקוד שלך. מתכנתים עושים זאת כדי לוודא שהפונקציות או המחלקות שלהם פועלות כצפוי תחת תנאים שונים, מה שעוזר לזהות טעויות מוקדם ומקל על תחזוקה ושיפוץ קוד.
 
-## איך לעשות:
-הנה דוגמא פשוטה ליצירת בדיקה ב-Python באמצעות המודול `unittest`.
+## איך לעשות את זה:
+Python מגיעה עם מודול מובנה לכתיבת בדיקות בשם `unittest`. זו הדרך שבה אתה יכול להשתמש בה כדי לבדוק פונקציה פשוטה:
 
-```Python
+```python
 import unittest
 
-def sum(a, b):
+def add(a, b):
     return a + b
 
-class TestSum(unittest.TestCase):
-    def test_sum(self):
-        self.assertEqual(sum(1, 2), 3)
+class TestAddFunction(unittest.TestCase):
+    def test_add(self):
+        self.assertEqual(add(1, 2), 3)
+        self.assertEqual(add(-1, 1), 0)
+        self.assertNotEqual(add(10, 2), 12, "אמור להיות 12")
 
 if __name__ == '__main__':
     unittest.main()
 ```
 
-הפלט של ריצת הקוד הזה יהיה:
+כשתריץ את סקריפט הבדיקה הזה, אתה אמור לראות פלט שמציין שהבדיקות שלך עברו (או נכשלו).
 
-```
-.
-----------------------------------------------------------------------
-Ran 1 test in 0.000s
+לבדיקות יותר מודרניות ומובעות, אתה יכול להשתמש בספרייה צד שלישי כמו `pytest`. ראשית, תצטרך להתקין את זה באמצעות pip:
 
-OK
+```shell
+pip install pytest
 ```
 
-## עיון מעמיק:
-### היסטוריה
-פיתוח בדיקות החל כשתוכניתים הבינו שבדיקת תוכנה יכולה לפחות חלקית להתאוטמט. זה הוביל לפיתוח של TDD (Test-Driven Development) ו-BDD (Behavior-Driven Development).
+לאחר מכן, אתה יכול לכתוב את הבדיקות שלך בדרך פשוטה יותר ללא הצורך לירש מתת-מחלקה כלשהי:
 
-### חלופות
-`unittest` הוא רק אחד ממספר תשתיות לפיתוח בדיקות ב-Python. חלופות פופולריות כוללות `pytest` ו-`nose2`.
+```python
+# שמור את זה בקובץ בשם test_with_pytest.py
+def add(a, b):
+    return a + b
 
-### פרטי יישום
-בעת כתיבת בדיקות, מתכנתים צריכים לוודא שהם לא רק מכסים את כל הקוד אלא גם כוללים מקרי קצה ותרחישים לא טריוויאליים.
+def test_add():
+    assert add(1, 2) == 3
+    assert add(-1, 1) == 0
+    assert add(10, 2) != 12, "אמור להיות 12"
+```
 
-## ראה גם:
-1. התיעוד הרשמי של Python למודול `unittest`: https://docs.python.org/3/library/unittest.html
-2. הדרכת Pytest רשמית: https://docs.pytest.org/en/stable/
-3. מדריך מעמיק על TDD למתכנתי Python: https://realpython.com/tdd-start-to-finish/
+כדי להריץ את הבדיקות שלך עם `pytest`, פשוט בצע:
+
+```shell
+pytest test_with_pytest.py
+```
+
+אתה אמור לראות פלט מ-pytest המראה את תוצאות הבדיקות שלך.

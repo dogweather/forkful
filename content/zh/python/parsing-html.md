@@ -1,54 +1,63 @@
 ---
 title:                "解析HTML"
-date:                  2024-01-20T15:33:36.964458-07:00
+date:                  2024-02-03T19:12:48.467993-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "解析HTML"
-
 tag:                  "HTML and the Web"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/python/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (什么是HTML解析以及为什么要进行HTML解析?)
-HTML解析就是将网页上的HTML代码转换成可供程序使用的数据结构。程序员通常这样做是为了提取网页中的信息，比如链接、文本或者其他数据。
+## 什么和为什么？
+解析HTML涉及分析网页的HTML代码以提取特定信息或元素，这是网络抓取、数据挖掘或自动化与网站互动的常见任务。程序员之所以进行解析，是为了以编程方式与网站互动或从网站提取数据、自动化任务或测试Web应用程序。
 
-## How to: (如何进行HTML解析)
-Python中进行HTML解析，我们通常使用`BeautifulSoup`库。下面的代码展示了如何用它来抓取网页标题：
+## 如何：
+Python提供了像BeautifulSoup和requests这样的强大库用于网络抓取和HTML解析。首先，如果你还没有安装这些库，你需要安装它们：
 
-```Python
-from bs4 import BeautifulSoup
+```bash
+pip install beautifulsoup4 requests
+```
+
+这里有一个使用`requests`来获取网页的HTML内容和使用`BeautifulSoup`来解析它的基本示例：
+
+```python
 import requests
+from bs4 import BeautifulSoup
 
-# 抓取网页
-response = requests.get('http://example.com')
-html = response.content
+# 获取网页的内容
+URL = 'https://example.com'
+page = requests.get(URL)
 
-# 解析HTML
-soup = BeautifulSoup(html, 'html.parser')
+# 解析HTML内容
+soup = BeautifulSoup(page.content, 'html.parser')
 
-# 提取标题并打印
-title = soup.find('title').get_text()
-print(title)
+# 提取网页标题的示例
+title = soup.find('title').text
+print(f'网页标题: {title}')
 ```
 
-运行这段代码，输出应该是网页的标题：
-
+**示例输出**:
 ```
-Example Domain
+网页标题: 示例域名
 ```
 
-## Deep Dive (深入了解)
-HTML解析可以追溯到万维网的早期。最初，提取数据不外乎遍历字符串。后来，出现了像`BeautifulSoup`、`lxml`和`html.parser`这样的库，它们的容错能力更强，使用也更为简便。
+对于更复杂的查询，例如提取网页上的所有链接，你可以使用BeautifulSoup的各种方法来导航和搜索解析树：
 
-Python的标准库带有`html.parser`，但它速度比较慢且容错能力有限。`BeautifulSoup`是第三方库，易用而且功能丰富。它可以结合`html.parser`,`lxml`或`html5lib`使用。
+```python
+# 提取<a>标签内的所有链接
+links = soup.find_all('a')
 
-除了抓取静态HTML外，有时你可能需要从动态内容生成的HTML中解析数据，这时可以使用`Selenium`或`Pyppeteer`等工具。
+for link in links:
+    href = link.get('href')
+    print(href)
+```
 
-## See Also (延伸阅读)
-- BeautifulSoup文档：https://www.crummy.com/software/BeautifulSoup/bs4/doc/
-- Requests库文档：https://requests.readthedocs.io/en/master/
-- `lxml`解析器：https://lxml.de/
-- `html5lib`解析器：https://html5lib.readthedocs.io/en/latest/
-- `Selenium`自动化工具：https://www.selenium.dev/documentation/en/
-- `Pyppeteer`库：https://pyppeteer.github.io/pyppeteer/
+**示例输出**:
+```
+https://www.iana.org/domains/example
+```
+
+BeautifulSoup的灵活性允许你根据需要调整搜索，以准确获取所需的数据，使HTML解析成为与Web内容打交道的程序员的强大工具。

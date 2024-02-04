@@ -1,49 +1,33 @@
 ---
-title:                "Sjekke om en mappe finnes"
-date:                  2024-01-19
-simple_title:         "Sjekke om en mappe finnes"
-
+title:                "Sjekker om en mappe eksisterer"
+date:                  2024-02-03T19:07:06.802505-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Sjekker om en mappe eksisterer"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/elixir/checking-if-a-directory-exists.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Hva & Hvorfor?
-I Elixir sjekker vi om en mappe eksisterer for å unngå feil ved filhåndtering. Det er essensielt for å sørge for at programmet fungerer glatt uten å krasje.
+## Hva og hvorfor?
+Å sjekke om en katalog finnes i Elixir handler om å verifisere tilstedeværelsen av en katalog på en angitt bane i filsystemet. Programmerere gjør dette for å sikre at de trygt kan lese fra, skrive til eller utføre operasjoner på katalogen uten å støte på feil på grunn av dens fravær.
 
 ## Hvordan:
-Det enkleste er å bruke `File` modulen:
+Elixirs standardbibliotek tilbyr en enkel måte å sjekke for eksistensen av en katalog gjennom `File`-modulen. Her er hvordan du kan bruke den:
 
 ```elixir
-if File.dir?("sti/til/mappen") do
-  IO.puts("Mappen eksisterer!")
+if File.dir?("path/to/directory") do
+  IO.puts "Katalogen finnes!"
 else
-  IO.puts("Mappen finnes ikke.")
+  IO.puts "Katalogen finnes ikke."
 end
 ```
 
-Forventet output:
+Eksempel på utskrift, med forutsetningen om at katalogen ikke eksisterer:
 ```
-Mappen eksisterer!
-# eller
-Mappen finnes ikke.
+Katalogen finnes ikke.
 ```
 
-Eller med `File.stat/2` for mer detaljer:
-
-```elixir
-case File.stat("sti/til/mappen") do
-  {:ok, _stats} -> IO.puts("Mappen eksisterer!")
-  {:error, :enoent} -> IO.puts("Mappen finnes ikke.")
-  {:error, _reason} -> IO.puts("Det oppstod en ukjent feil.")
-end
-```
-
-## Dypdykk
-Før Elixir, i Erlang, brukte vi `filelib` biblioteket for lignende funksjonalitet. Elixir har gjort det mer brukervennlig med `File` modulen. Alternativt kan man bruke tredjepartsbiblioteker for mer avanserte filsystemoperasjoner. Når vi sjekker om en mappe eksisterer, bør vi også være klar over race conditions; en mappe kan slettes mellom sjekken og neste bruk, så en god praksis er å håndtere Exceptions som kan oppstå.
-
-## Se også:
-- Elixir's offisielle dokumentasjon for `File` modulen: [https://hexdocs.pm/elixir/File.html](https://hexdocs.pm/elixir/File.html)
-- Erlang's `filelib` dokumentasjon for historisk kontekst: [http://erlang.org/doc/man/filelib.html](http://erlang.org/doc/man/filelib.html)
-- Innføring i filhåndtering i Elixir: [https://elixir-lang.org/getting-started/io-and-the-file-system.html](https://elixir-lang.org/getting-started/io-and-the-file-system.html)
+For mer avanserte filsysteminteraksjoner, inkludert å sjekke eksistensen av kataloger, kan det være aktuelt å bruke tredjepartsbiblioteker som `FileSystem`. Mens Elixirs standardfunksjoner er tilstrekkelige for mange tilfeller, kan `FileSystem` tilby mer nyansert kontroll og tilbakemeldinger for komplekse applikasjoner. Imidlertid, for det grunnleggende behovet med å sjekke om en katalog finnes, anbefales det vanligvis å holde seg til den innfødte `File`-modulen ettersom den er lett tilgjengelig og ikke krever noen eksterne avhengigheter.

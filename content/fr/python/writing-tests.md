@@ -1,62 +1,63 @@
 ---
 title:                "Rédaction de tests"
-date:                  2024-01-19
+date:                  2024-02-03T19:31:37.328574-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Rédaction de tests"
-
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/python/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Quoi et Pourquoi ?)
-Écrire des tests, c'est vérifier que chaque pièce de ton code fonctionne comme prévu. Les développeurs font ça pour éviter les bugs, faciliter les mises à jour et dormir tranquilles.
+## Quoi et Pourquoi ?
+Écrire des tests en Python implique la création de scripts automatisés pour valider la correction de votre code. Les programmeurs font cela pour s'assurer que leurs fonctions ou leurs classes fonctionnent comme prévu sous diverses conditions, ce qui aide à détecter les erreurs tôt et facilite la maintenance et le refactoring.
 
-## How to: (Comment faire :)
-Python utilise `unittest` pour les tests. Voici un exemple simple. Imagine un fichier `maths.py` avec la fonction `addition(x, y)`:
-
-```python
-# maths.py
-def addition(x, y):
-    return x + y
-```
-
-Crée un test dans `test_maths.py`:
+## Comment faire :
+Python est livré avec un module intégré pour écrire des tests appelé `unittest`. Voici comment vous pouvez l'utiliser pour tester une fonction simple :
 
 ```python
-# test_maths.py
 import unittest
-from maths import addition
 
-class TestMaths(unittest.TestCase):
-    def test_addition(self):
-        self.assertEqual(addition(3, 4), 7)
+def add(a, b):
+    return a + b
+
+class TestAddFunction(unittest.TestCase):
+    def test_add(self):
+        self.assertEqual(add(1, 2), 3)
+        self.assertEqual(add(-1, 1), 0)
+        self.assertNotEqual(add(10, 2), 12, "Devrait être 12")
 
 if __name__ == '__main__':
     unittest.main()
 ```
 
-Exécute le test:
+Lorsque vous exécutez ce script de test, vous devriez voir une sortie indiquant que vos tests ont réussi (ou échoué).
 
-```
-python -m unittest test_maths
-```
+Pour des tests plus modernes et expressifs, vous pouvez utiliser une bibliothèque tierce comme `pytest`. Tout d'abord, vous devrez l'installer en utilisant pip :
 
-Si tout va bien, tu verras:
-
-```
-.
-----------------------------------------------------------------------
-Ran 1 test in 0.001s
-
-OK
+```shell
+pip install pytest
 ```
 
-## Deep Dive (Plongée en profondeur)
-Avant `unittest`, les gens imprimaient des valeurs, les comparant manuellement - c'était le chaos. D'autres options incluent `pytest` - très populaire, et `nose`. En interne, `unittest` crée une instance de la classe `TestCase` pour chaque test, exécute la méthode et compare le résultat.
+Ensuite, vous pouvez écrire vos tests d'une manière plus simple sans avoir besoin de sous-classer quoi que ce soit :
 
-## See Also (Voir aussi)
-Pour plus d'info, consulte:
-- La documentation Python sur `unittest`: https://docs.python.org/3/library/unittest.html
-- Un guide pour `pytest`: https://docs.pytest.org/
-- Plus sur l'histoire des tests: https://en.wikipedia.org/wiki/Test-driven_development
+```python
+# Sauvegardez ceci dans un fichier nommé test_with_pytest.py
+def add(a, b):
+    return a + b
+
+def test_add():
+    assert add(1, 2) == 3
+    assert add(-1, 1) == 0
+    assert add(10, 2) != 12, "Devrait être 12"
+```
+
+Pour exécuter vos tests avec `pytest`, exécutez simplement :
+
+```shell
+pytest test_with_pytest.py
+```
+
+Vous devriez voir la sortie de pytest montrant vos résultats de tests.

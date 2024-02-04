@@ -1,56 +1,103 @@
 ---
 title:                "עבודה עם JSON"
-date:                  2024-01-19
+date:                  2024-02-03T19:23:52.278802-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "עבודה עם JSON"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/java/working-with-json.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## מה ולמה?
-JSON זה תסדיר להתכתבויות מידע, קל לקריאה וכתיבה גם על ידי מחשבים וגם על ידי בני אדם. מתכנתים משתמשים ב-Java כדי לנהל נתונים בפורמט JSON כי זה נפוץ, גמיש, וקל לשילוב ברשת.
+עבודה עם JSON (תסדיר אובייקטים של JavaScript) פירושה לטפל בתסדיר החליפין הקל הזה בתוך היישומים שלך ב-Java. מתכנתים בוחרים ב-JSON כדי לסריאלז ולשדר נתונים מובנים דרך רשת וגם קל להגדיר ולאחסן נתונים מכיוון שהוא קריא לבן אדם ובלתי תלוי שפה.
 
-## איך לעשות:
+## איך ל:
+בואו נגלגל שרוולים ונתחיל לתכנת עם JSON ב-Java.
+
+ראשית, תצטרכו ספריית עיבוד JSON כמו `Jackson` או `Google Gson`. כאן נשתמש ב-`Jackson`, לכן הוסיפו תלות זו ל-`pom.xml` שלכם:
+
+```xml
+<dependency>
+    <groupId>com.fasterxml.jackson.core</groupId>
+    <artifactId>jackson-databind</artifactId>
+    <version>2.13.1</version>
+</dependency>
+```
+
+עכשיו, בואו נסריאלז (נכתוב) אובייקט ג'אווה פשוט ל-JSON:
+
 ```java
-import org.json.JSONObject;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class JsonExample {
     public static void main(String[] args) {
-        // יצירת JSON אובייקט
-        JSONObject obj = new JSONObject();
-        obj.put("name", "Yossi");
-        obj.put("age", 30);
-        obj.put("isProgrammer", true);
+        try {
+            ObjectMapper mapper = new ObjectMapper();
+            Person person = new Person("Alex", 30);
+            String json = mapper.writeValueAsString(person);
+            System.out.println(json);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
 
-        // הדפסת ה-JSON לקונסול
-        System.out.println(obj.toString());
+class Person {
+    public String name;
+    public int age;
 
-        // קריאה מ-JSON אובייקט
-        String name = obj.getString("name");
-        int age = obj.getInt("age");
-        boolean isProgrammer = obj.getBoolean("isProgrammer");
-
-        System.out.println("Name: " + name);
-        System.out.println("Age: " + age);
-        System.out.println("Is Programmer: " + isProgrammer);
+    public Person(String name, int age) {
+        this.name = name;
+        this.age = age;
     }
 }
 ```
-פלט לדוגמה:
-```
-{"isProgrammer":true,"name":"Yossi","age":30}
-Name: Yossi
-Age: 30
-Is Programmer: true
+
+הפלט יהיה:
+
+```json
+{"name":"Alex","age":30}
 ```
 
-## צלילה לעומק
-JSON התפתח בשנות ה-2000 כתסדיר נגיש לעבודה עם נתוני AJAX. ארנטיונות: XML, BSON, YAML. JSON קל לשימוש בזכות ספריות כמו `org.json` או `Jackson` ו`Gson` שמקלות על פענוח והרכבת JSON. הפרטים טכניים הם קידוד UTF-8 ותמיכה במילון (אובייקטים) ומערכים.
+עכשיו, לדיסריאליזציה (קריאה) של JSON חזרה לאובייקט ג'אווה:
 
-## לקרוא גם
-- [מדריך לספריית org.json](https://stleary.github.io/JSON-java/)
-- [הדרכת Jackson JSON](https://www.baeldung.com/jackson)
-- [מבוא ל-Gson](https://www.javatpoint.com/gson-tutorial)
-- מפרט התקן הרשמי ל-JSON: [RFC 7159](https://tools.ietf.org/html/rfc7159)
+```java
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+public class JsonExample {
+    public static void main(String[] args) {
+        String json = "{\"name\":\"Alex\",\"age\":30}";
+        try {
+            ObjectMapper mapper = new ObjectMapper();
+            Person person = mapper.readValue(json, Person.class);
+            System.out.println(person.name + " בן " + person.age + " שנה.");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+הפלט יהיה:
+
+```
+Alex בן 30 שנה.
+```
+
+## צלילה עמוקה
+הפשטות והיעילות של JSON הפכו אותו לתקן הדה-פקטו להחלפת נתונים ברשת, והדיחו את XML מעל כיסאו. המוצג בראשית שנות ה-2000, JSON נגזר מ-JavaScript אך כיום נתמך ברוב השפות.
+
+אלטרנטיבות ל-JSON כוללות XML, שהוא יותר מפורט, ותבניות בינאריות כמו Protocol Buffers או MessagePack, שהן פחות קריאות לבן אדם אך יעילות יותר בגודל ובמהירות. לכל אחת מהן יש מקרי שימוש; הבחירה תלויה בצרכי הנתונים הספציפיים ובהקשר שלכם.
+
+ב-Java, מעבר ל-`Jackson` ו-`Gson`, יש לנו גם את `JsonB` ו-`org.json` כספריות נוספות לטיפול ב-JSON. Jackson מציע עיבוד מבוסס זרם וידוע במהירותו, בעוד ש-Gson מפורסם בקלות השימוש שלו. JsonB הוא חלק מ-Jakarta EE, ומציע גישה יותר מתקנתית.
+
+כשמיישמים את JSON, זכרו לטפל היטב בחריגות שלכם - הקוד שלכם צריך להיות עמיד נגד קלטים שגויים. כמו כן, שקלו את ההשלכות הביטחוניות של קשירת נתונים אוטומטית - תמיד אמתו את קלטיכם!
+
+## ראו גם
+- [פרויקט Jackson](https://github.com/FasterXML/jackson)
+- [הפרויקט Gson](https://github.com/google/gson)
+- [מפרט JSON](https://www.json.org/json-en.html)
+- [מפרט JsonB](https://jakarta.ee/specifications/jsonb/)

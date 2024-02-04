@@ -1,58 +1,33 @@
 ---
 title:                "Sprawdzanie, czy katalog istnieje"
-date:                  2024-01-19
+date:                  2024-02-03T19:07:15.897727-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Sprawdzanie, czy katalog istnieje"
-
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/elixir/checking-if-a-directory-exists.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Co i Dlaczego?)
+## Co i dlaczego?
+Sprawdzanie, czy katalog istnieje w Elixirze, polega na weryfikacji obecności katalogu pod określoną ścieżką w systemie plików. Programiści robią to, aby upewnić się, że mogą bezpiecznie czytać z katalogu, zapisywać do niego lub wykonywać na nim operacje bez napotkania błędów spowodowanych jego brakiem.
 
-Sprawdzanie, czy katalog istnieje, to jak zaglądanie do szafy, by wiedzieć, czy jest sukienka na specjalną okazję. Programiści to robią, żeby uniknąć błędów związanych z brakiem plików lub katalogów gdy aplikacja próbuje z nich korzystać.
-
-## How to: (Jak to zrobić:)
-
-W Elixirze sprawdzenie, czy katalog istnieje, jest proste. Oto jak:
+## Jak to zrobić:
+Standardowa biblioteka Elixira oferuje prosty sposób na sprawdzenie, czy katalog istnieje, za pośrednictwem modułu `File`. Oto jak możesz z tego skorzystać:
 
 ```elixir
-File.dir?('path/to/directory')
+if File.dir?("path/to/directory") do
+  IO.puts "Katalog istnieje!"
+else
+  IO.puts "Katalog nie istnieje."
+end
 ```
 
-Jeśli katalog istnieje, dostaniesz `true`, jeśli nie, to `false`. Przykład:
-
-```elixir
-# Sprawdzamy istnienie katalogu
-exists = File.dir?("/etc")
-
-# Wynik
-IO.puts(exists)
+Przykładowy wynik, zakładając, że katalog nie istnieje:
+```
+Katalog nie istnieje.
 ```
 
-Jeśli `/etc` istnieje, ujrzysz w konsoli:
-
-```
-true
-```
-
-W przeciwnym przypadku:
-
-```
-false
-```
-
-## Deep Dive (Dogłębna analiza):
-
-Historia funkcji sprawdzających istnienie katalogu sięga starych systemów operacyjnych, gdzie niepoprawne odwołania do plików mogły powodować poważne problemy. W Elixirze, funkcja `File.dir?/1` jest opakowaniem wokół wywołania `:filelib.is_dir/1` z biblioteki Erlanga, której Elixir jest nakładką.
-
-Alternatywą dla `File.dir?` jest używanie `File.stat/2` lub `File.lstat/2`, które zwracają więcej informacji o pliku/katalogu, ale do sprawdzenia istnienia katalogu jest to overkill.
-
-Implementacyjnie Elixir korzysta z możliwości platformy BEAM (maszyna wirtualna dla Erlanga), która jest wyjątkowo potężna w obsłudze operacji na plikach, zarówno pod względem wydajności, jak i obsługi różnych systemów operacyjnych.
-
-## See Also (Zobacz również):
-
-- Oficjalna dokumentacja `File` modułu w Elixirze: [https://hexdocs.pm/elixir/File.html](https://hexdocs.pm/elixir/File.html)
-- Dokumentacja Erlanga dla `filelib`: [http://erlang.org/doc/man/filelib.html](http://erlang.org/doc/man/filelib.html)
-- Przydatne dyskusje i przykłady dotyczące obsługi plików na forum Elixir: [https://elixirforum.com](https://elixirforum.com)
+Dla bardziej zaawansowanych interakcji z systemem plików, w tym sprawdzania istnienia katalogu, możesz rozważyć użycie bibliotek stron trzecich, takich jak `FileSystem`. Chociaż standardowe możliwości Elixira są wystarczające w wielu przypadkach, `FileSystem` może oferować bardziej subtelne sterowanie i informacje zwrotne dla złożonych aplikacji. Jednak dla podstawowej potrzeby sprawdzenia, czy katalog istnieje, zaleca się zazwyczaj korzystanie z natywnego modułu `File`, ponieważ jest on łatwo dostępny i nie wymaga żadnych zewnętrznych zależności.

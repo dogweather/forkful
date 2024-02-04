@@ -1,55 +1,48 @@
 ---
 title:                "HTMLの解析"
-date:                  2024-01-20T15:33:46.117022-07:00
+date:                  2024-02-03T19:13:08.071343-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "HTMLの解析"
-
 tag:                  "HTML and the Web"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/ruby/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (何となぜ？)
-HTMLパースは、HTMLドキュメントからデータを取得・解析することです。プログラマーは情報を抽出したり、Webスクレイピングを行ったりするためにこれを行います。
+## 何となぜ？
+HTMLのパースとは、HTMLコードの塊を分解してその構造と内容を理解することを意味します。プログラマーは、データを抽出したり、コンテンツを操作したり、フォーマットやシステム間で情報を移行するためにこれを行います。
 
-## How to (やり方)
-RubyではNokogiriというライブラリを使って簡単にHTMLをパースできます。インストールしてみましょう。
-
-```ruby
-gem install nokogiri
-```
-
-以下は基本的な使い方です。
+## 方法：
+RubyでHTMLをパースするには、`gem install nokogiri`で'Nokogiri'ジェムをインストールします。Nokogiriは、RubyでHTMLとXMLを扱うためのスイスアーミーナイフのようなものです。こちらが簡単な例です：
 
 ```ruby
 require 'nokogiri'
 require 'open-uri'
 
-# HTMLを読み込む
-doc = Nokogiri::HTML(URI.open('http://example.com'))
+# ウェブサイトからHTMLコンテンツを読み込む
+html_content = URI.open('http://example.com').read
 
-# タイトルを取得
-title = doc.css('title').first.content
-puts title # => "Example Domain"
+# HTMLをパースする
+doc = Nokogiri::HTML(html_content)
 
-# リンクを全て取得
-links = doc.css('a').map { |link| link['href'] }
-puts links # => ["http://www.iana.org/domains/example"]
+# タイトルを抽出する
+title = doc.xpath('//title').text
+puts "ページのタイトルは：#{title}"
 ```
 
-このコードは、まずNokogiriを使ってHTMLを読み込み、タイトルタグの内容と全てのリンクを取得しています。
+これは次のような結果を出力します：`ページのタイトルは：Example Domain`。
 
-## Deep Dive (深掘り)
-Nokogiriは、2008年にリリースされたRubyのライブラリです。パースのスピードが速く、多くの開発者に信頼されています。
+## 詳細解説
+初期のRuby時代には、HTMLをパースする選択肢は限られていました。REXMLは組み込まれていましたが遅かったです。その後Hpricotが登場しましたが、それは消えてしまいました。Nokogiriは2008年に登場し、Hpricotの簡単さと、実績のあるXMLツールキットであるlibxmlの速度と力を組み合わせました。
 
-他にもオプションはありますが、Nokogiriは文書操作が容易で、CSSセレクタやXPathをサポートしています。内部的には、Nokogiriはlibxml2というXMLのCライブラリを利用していて、そのためパフォーマンスが良好です。
+パースの世界には常に代替品があります。一部の人々は、組み込みの'rexml'ライブラリや、Rubyの別のXML/HTMLパーサである'oga'を信じています。しかし、その堅牢性と速度、そして豊富な機能の配列で、Nokogiriはお気に入りのままです。
 
-処理速度をさらに向上させたい場合は、HTMLをパースする前に不要な内容を削除する等の前処理を行うことが可能です。
+内部的には、NokogiriはHTMLをドキュメントオブジェクトモデル（DOM）—ツリー構造に変換します。これにより、要素を簡単にナビゲートして操作できます。XPathとCSSセレクタを使用して、必要な情報の任意の部分を特定できます。
 
-## See Also (関連情報)
-- Nokogiriの公式ドキュメント: [http://nokogiri.org/](http://nokogiri.org/)
-- Rubyのダウンロードとインストールガイド: [https://www.ruby-lang.org/ja/downloads/](https://www.ruby-lang.org/ja/downloads/)
-- Webスクレイピングの法的側面: [https://www.eff.org/issues/coders rights](https://www.eff.org/issues/coders-rights)
-
-注意: Webスクレイピングは対象サイトの利用規約や法律を遵守する必要があります。使用前に確認しましょう。
+## 参考
+- Nokogiri gem: [https://nokogiri.org/](https://nokogiri.org/)
+- Rubyのrexmlドキュメント：[https://ruby-doc.org/stdlib-2.6.3/libdoc/rexml/rdoc/REXML/Document.html](https://ruby-doc.org/stdlib-2.6.3/libdoc/rexml/rdoc/REXML/Document.html)
+- 代替パーサー 'oga'：[https://github.com/YorickPeterse/oga](https://github.com/YorickPeterse/oga)
+- XPathについて学ぶ：[https://www.w3schools.com/xml/xpath_intro.asp](https://www.w3schools.com/xml/xpath_intro.asp)

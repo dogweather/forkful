@@ -1,45 +1,53 @@
 ---
 title:                "Obtendo a data atual"
-date:                  2024-01-20T15:13:56.366029-07:00
+date:                  2024-02-03T19:09:10.377251-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Obtendo a data atual"
-
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/clojure/getting-the-current-date.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## O Que & Porquê?
-Obter a data atual em Clojure significa acessar informações do sistema sobre o momento presente. Programadores fazem isso para registrar eventos, gerar timestamps e para funcionalidades que dependem do tempo real.
+## O Que & Por Quê?
+Obter a data atual na programação é crucial por uma miríade de razões, incluindo o registro em log, marcação de tempo em eventos e agendamento de tarefas. Em Clojure, um dialeto Lisp na JVM, essa tarefa aproveita as capacidades de interoperabilidade com Java, permitindo um acesso direto à rica API de Data e Hora do Java.
 
-## Como fazer:
-```Clojure
-;; Importando a classe necessária
-(import java.util.Calendar)
+## Como Fazer:
 
-;; Função para pegar a data e hora atuais
-(defn get-current-date-time []
-  (let [calendar (Calendar/getInstance)]
-    (println (str "Data e hora atual: "
-                  (.get calendar Calendar/YEAR) "-"
-                  (.get calendar Calendar/MONTH) "-"
-                  (.get calendar Calendar/DATE) " "
-                  (.get calendar Calendar/HOUR_OF_DAY) ":"
-                  (.get calendar Calendar/MINUTE) ":"
-                  (.get calendar Calendar/SECOND)))))
+### Usando Interoperabilidade com Java
+A interoperabilidade sem emendas de Clojure com o Java permite que você acesse diretamente a API de Data e Hora do Java. Veja como você pode obter a data atual:
 
-;; Executando a função
-(get-current-date-time)
-```
-**Saída esperada (varia com o momento da execução):**
-```
-Data e hora atual: 2023-3-25 14:32:47
+```clojure
+(import java.time.LocalDate)
+
+(defn get-current-date []
+  (str (LocalDate/now)))
+
+;; Saída de exemplo
+(get-current-date) ; "2023-04-15"
 ```
 
-## Mergulho Profundo
-Historicamente, manipular datas e horas em Java e Clojure podia ser complexo e propenso a erros. Isso mudou com a introdução do Joda-Time e, posteriormente, da API `java.time` no Java 8, oferecendo uma melhoria significativa. Clojure, sendo uma linguagem hospedada na JVM, também se beneficia dessas melhorias. Alternativas à classe `Calendar` incluem `java.time.LocalDateTime` e `java.time.ZonedDateTime`. A implementação costuma envolver chamadas interop a essas bibliotecas Java, mas é possível utilizar bibliotecas Clojure específicas como `clj-time`.
+### Usando a Biblioteca clj-time
+Para uma solução mais idiomática em Clojure, você pode optar pela biblioteca `clj-time`, um wrapper em torno do Joda-Time, embora para a maioria dos novos projetos, a API de Data e Hora do Java 8 incorporada seja recomendada. No entanto, caso prefira ou necessite do `clj-time`:
 
-## Veja Também
-- Documentação oficial do Clojure: [https://clojure.org/](https://clojure.org/)
-- Biblioteca clj-time no GitHub: [https://github.com/clj-time/clj-time](https://github.com/clj-time/clj-time)
-- Guia sobre a API java.time: [https://www.oracle.com/technical-resources/articles/java/jf14-date-time.html](https://www.oracle.com/technical-resources/articles/java/jf14-date-time.html)
+Primeiro, adicione `clj-time` às dependências do seu projeto. No seu `project.clj`, inclua:
+
+```clojure
+[clj-time "0.15.2"]
+```
+
+Depois, use-o para obter a data atual:
+
+```clojure
+(require '[clj-time.core :as time])
+
+(defn get-current-date-clj-time []
+  (str (time/now)))
+
+;; Saída de exemplo
+(get-current-date-clj-time) ; "2023-04-15T12:34:56.789Z"
+```
+
+Ambos os métodos fornecem maneiras rápidas e eficazes de obter a data atual em Clojure, aproveitando o poder da plataforma Java subjacente ou a conveniência de uma biblioteca específica para Clojure.

@@ -1,54 +1,83 @@
 ---
 title:                "Pobieranie aktualnej daty"
-date:                  2024-01-20T15:13:15.358492-07:00
+date:                  2024-02-03T19:09:25.428983-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Pobieranie aktualnej daty"
-
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/cpp/getting-the-current-date.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-## Co i dlaczego?
-Pobieranie aktualnej daty to sposób na odczytanie bieżącego czasu systemu. Programiści wykorzystują to do logowania, wygaśnięcia sesji, time-stamping i innych funkcji zależnych od czasu.
+## Czym i dlaczego?
+Pobieranie bieżącej daty w C++ jest podstawowym zadaniem dla programów, które muszą przetwarzać lub wyświetlać daty w oparciu o zegar systemowy. Jest to niezbędne do logowania, znakowania czasu, planowania zadań i wszelkiej funkcjonalności, która opiera się na datach i czasie.
 
-## How to:
 ## Jak to zrobić:
+C++ oferuje kilka sposobów na uzyskanie bieżącej daty, w tym standardową bibliotekę C++ i biblioteki stron trzecich, takie jak Boost. Poniższe przykłady pokazują, jak to osiągnąć.
 
-```C++
+### Korzystając z `<chrono>` (C++20 i nowsze)
+C++20 wprowadził więcej funkcjonalności w bibliotece `<chrono>`, ułatwiając uzyskanie bieżącej daty:
+```cpp
 #include <iostream>
 #include <chrono>
-#include <ctime>
+#include <format> // Dla std::format (C++20)
 
 int main() {
-    // Zdobądź aktualny czas systemowy jako czas w sekundach od epoki
-    auto now = std::chrono::system_clock::now();
-    // Przekształć czas na typ tm dla czytelności
-    std::time_t now_c = std::chrono::system_clock::to_time_t(now);
-    // Wyświetl aktualną datę i czas
-    std::cout << "Current date and time: " << std::ctime(&now_c) << std::endl;
+    auto current_time_point = std::chrono::system_clock::now(); // Złap bieżący czas
+    auto current_time_t = std::chrono::system_clock::to_time_t(current_time_point); // Konwersja na time_t
+
+    // Formatuj czas do czytelnego formatu
+    std::cout << "Aktualna Data: " << std::format("{:%Y-%m-%d}", std::chrono::system_clock::to_time_t(current_time_point)) << std::endl;
+
     return 0;
 }
 ```
-
-Sample output:
+**Przykładowy Wynik:**
+```plaintext
+Aktualna Data: 2023-03-15
 ```
-Current date and time: Wed Mar 10 14:26:07 2023
+
+### Korzystając z `<ctime>`
+Dla programistów pracujących ze starszymi wersjami C++ lub tych, którzy preferują tradycyjną bibliotekę C:
+```cpp
+#include <iostream>
+#include <ctime>
+
+int main() {
+    std::time_t t = std::time(0); // Pobierz bieżący czas
+    std::tm* now = std::localtime(&t);
+    std::cout << "Aktualna Data: " 
+              << (now->tm_year + 1900) << '-' 
+              << (now->tm_mon + 1) << '-'
+              <<  now->tm_mday
+              << std::endl;
+
+    return 0;
+}
+```
+**Przykładowy Wynik:**
+```plaintext
+Aktualna Data: 2023-03-15
 ```
 
-## Deep Dive:
-## W głąb tematu:
+### Korzystając z Boost Date_Time
+Dla projektów, które wykorzystują biblioteki Boost, biblioteka Boost Date_Time oferuje alternatywną metodę na uzyskanie bieżącej daty:
+```cpp
+#include <iostream>
+#include <boost/date_time.hpp>
 
-Historia pobierania daty sięga początków programowania. W C++ z epoki przed-standardowej, programiści często polegali na funkcjach związanych z systemem operacyjnym. Za czasów C++03 używano `std::time` z biblioteki `<ctime>`. Od C++11, `std::chrono` zapewnia bardziej precyzyjne i portable metody.
+int main() {
+    // Pobierz bieżący dzień korzystając z kalendarza gregoriańskiego Boost
+    boost::gregorian::date today = boost::gregorian::day_clock::local_day();
+    std::cout << "Aktualna Data: " << today << std::endl;
 
-Alternatywy obejmują używanie pliku nagłówkowego `<ctime>`, który dostarcza `std::strftime` do formatowania daty i czasu. Zawansowane zastosowania mogą wymagać bibliotek zewnętrznych jak Boost.DateTime.
-
-W implementacji `std::chrono`, czas jest reprezentowany jako punkty i trwania. Punkty to momenty w czasie, a trwania to różnice pomiędzy punktami. `std::chrono::system_clock::now()` zwraca aktualny punkt w czasie, a `std::time_t` to typ używany do przedstawienia czasu w sekundach od tzw. epoki Unixowej (początek 1970 roku).
-
-## See Also:
-## Zobacz również:
-
-- [cppreference.com, `std::chrono`](https://en.cppreference.com/w/cpp/chrono)
-- [cppreference.com, `std::ctime`](https://en.cppreference.com/w/cpp/header/ctime)
-- [Boost.DateTime documentation](https://www.boost.org/doc/libs/1_75_0/doc/html/date_time.html)
+    return 0;
+}
+```
+**Przykładowy Wynik:**
+```plaintext
+Aktualna Data: 2023-Mar-15
+```
+Te przykłady zapewniają podstawową wiedzę na temat pracy z datami w C++, która jest kluczowa dla szerokiego zakresu zastosowań.

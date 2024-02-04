@@ -1,50 +1,67 @@
 ---
 title:                "正規表現の使用"
-date:                  2024-01-19
+date:                  2024-02-03T19:18:44.847199-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "正規表現の使用"
-
 tag:                  "Strings"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/swift/using-regular-expressions.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-正規表現とは、文字列のパターンマッチングを行うための強力なツールです。プログラマーはテキストデータの検索、置換、解析のために使い、効率的な文字処理を実現します。
+## 何となぜ？
+正規表現、またはregexは、検索パターンを形成する文字のシーケンスで、文字列の一致や操作のタスクによく使用されます。データ検証やパースから変換まで、プログラマーはそれらを利用して、Swiftを含む様々なプログラミング言語でのテキスト処理や操作タスクにおいて欠かせないツールにしています。
 
-## How to:
+## 方法：
+Swiftの正規表現のネイティブサポートは、`NSRegularExpression`クラスとStringクラスの範囲および置換メソッドを利用します。以下は、テキストブロック内のメールアドレスを見つけてハイライトするために正規表現を使用する例です：
 
-Swiftで正規表現を使うには、`NSRegularExpression`クラスを活用します。以下に例を示します。
-
-```Swift
+```swift
 import Foundation
 
-let string = "swift@example.com"
-let pattern = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+let text = "詳しくは、support@example.com または feedback@example.org までお問い合わせください。"
+let regexPattern = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
 
-if let regex = try? NSRegularExpression(pattern: pattern) {
-    let range = NSRange(location: 0, length: string.utf16.count)
-    if regex.firstMatch(in: string, range: range) != nil {
-        print("メールアドレスが有効です。")
+do {
+    let regex = try NSRegularExpression(pattern: regexPattern)
+    let matches = regex.matches(in: text, range: NSRange(text.startIndex..., in: text))
+
+    if !matches.isEmpty {
+        for match in matches {
+            let range = Range(match.range, in: text)!
+            print("見つかりました: \(text[range])")
+        }
     } else {
-        print("メールアドレスが無効です。")
+        print("一致するものが見つかりませんでした。")
+    }
+} catch {
+    print("Regexエラー: \(error.localizedDescription)")
+}
+
+// サンプル出力：
+// 見つかりました: support@example.com
+// 見つかりました: feedback@example.org
+```
+
+より複雑または便利さを重視するシナリオについては、SwiftRegexのようなサードパーティライブラリを使用できます。これにより、構文が単純化され、可能性が広がります。Swiftの標準ライブラリは強力ですが、一部の開発者は、簡潔な構文と追加機能のためにこれらのライブラリを好む場合があります。以下は、仮想のサードパーティライブラリを使用して類似のタスクを実行する方法です：
+
+```swift
+// SwiftRegexというライブラリが存在し、インポートされていると仮定
+let text = "hello@world.com に連絡するか、当社のウェブサイトにアクセスしてください。"
+let emailPattern = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
+
+let emails = text.matches(for: emailPattern) // SwiftRegexによって提供される仮定のメソッド
+if emails.isEmpty {
+    print("メールアドレスが見つかりませんでした。")
+} else {
+    emails.forEach { email in
+        print("見つかりました: \(email)")
     }
 }
+
+// `matches(for:)`メソッドがSwiftRegexに存在すると仮定した場合の想定出力：
+// 見つかりました: hello@world.com
 ```
-出力: `メールアドレスが有効です。`
 
-## Deep Dive
-
-正規表現は、1960年代に初めて導入されました。Swift言語においては、`NSRegularExpression`クラスを通して利用可能となっていますが、これは元々Objective-Cのクラスです。代替として文字列メソッドもありますが、複雑なパターンには正規表現が適しています。`NSRegularExpression`ではキャプチャグループ、ルックアラウンドなど高度なマッチングも可能です。
-
-## See Also
-
-- Appleの`NSRegularExpression`ドキュメント:
-    [NSRegularExpression](https://developer.apple.com/documentation/foundation/nsregularexpression)
-- Swift公式ドキュメント:
-    [Swift.org](https://www.swift.org/documentation/)
-- 正規表現を学ぶ:
-    [正規表現101](https://regex101.com/)
-- 無料のコード学習リソース:
-    [Codecademy](https://www.codecademy.com/learn/learn-regex)
+この例は、`matches(for:)`のような便利メソッドが存在すると仮定して、文字列内の一致を簡単に見つけるためにサードパーティ正規表現パッケージを使用する方法を説明しています。正確な構文とメソッドの可用性については、それぞれのサードパーティライブラリのドキュメントを参照してください。

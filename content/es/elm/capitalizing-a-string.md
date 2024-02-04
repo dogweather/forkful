@@ -1,55 +1,52 @@
 ---
 title:                "Capitalizando una cadena de texto"
-date:                  2024-01-19
+date:                  2024-02-03T19:04:48.395236-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Capitalizando una cadena de texto"
-
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/elm/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## ¿Qué y Por Qué?
+## ¿Qué y por qué?
 
-Capitalizar una cadena significa convertir la primera letra de cada palabra a mayúscula. Los programar lo hacen para normalizar textos, como nombres propios o títulos, asegurando consistencia y legibilidad.
+Capitalizar una cadena implica transformar el carácter inicial de una cadena dada a mayúsculas mientras se mantienen el resto en minúsculas, a menudo por motivos de formato estandarizado o legibilidad. Los programadores realizan frecuentemente esta tarea para asegurar que los datos se presenten de manera consistente, especialmente en interfaces de usuario o cuando se procesa y muestra la entrada del usuario.
 
-## Cómo Hacerlo:
+## Cómo hacerlo:
 
-Elm no tiene una función incorporada para capitalizar automáticamente las strings, así que vamos a crear una nosotros mismos. El truco está en convertir la primera letra a mayúscula y luego concatenarla con el resto de la cadena.
+En Elm, no hay una función integrada específicamente para capitalizar cadenas. Sin embargo, puedes lograr esto fácilmente utilizando funciones del módulo `String` incluido, como `toUpper`, `toLower`, `left` y `dropLeft`.
 
-```Elm
-import String exposing (toUpper, toLower, right, left)
-
+```elm
 capitalize : String -> String
 capitalize str =
-    case String.uncons str of
-        Nothing ->
-            ""
+    if String.isEmpty str then
+        ""
+    else
+        String.toUpper (String.left 1 str) ++ String.toLower (String.dropLeft 1 str)
 
-        Just ( first, rest ) ->
-            toUpper (String.fromChar first) ++ toLower rest
-
--- Uso
+-- Ejemplo de uso
 main =
-    String.split " " "hola mundo" -- separamos la cadena por espacios
-    |> List.map capitalize -- capitalizamos cada palabra
-    |> String.join " " -- reconcatenamos la cadena
-
--- Salida: "Hola Mundo"
+    String.toList "hello world" |> List.map capitalize |> String.join " "
+    -- Salida: "Hello World"
 ```
 
-## Análisis Profundo
+Para escenarios más complejos o si prefieres usar una biblioteca que ofrezca una manera directa de capitalizar cadenas, podrías considerar un paquete de terceros como `elm-community/string-extra`. Sin embargo, hasta mi última actualización, el ecosistema de Elm alienta a tratar tales tareas usando funciones integradas para mantener el lenguaje y los proyectos esbeltos.
 
-Históricamente, la capitalización de cadenas de texto no es algo nuevo y ha sido aplicada en múltiples lenguajes de programación. En Elm, como es un lenguaje funcional, se prefiere manipular las cadenas de manera explícita mediante funciones. 
+```elm
+import String.Extra as StringExtra
 
-Además de la función `capitalize` que creamos, podemos tener alternativas que, por ejemplo, solo capitalicen la primera letra de toda la cadena, no cada palabra. Esto resulta útil para ciertos casos específicos donde no se requiere capitalizar todo.
+-- En caso de que haya una función `capitalize` en una biblioteca de terceros
+capitalizeWithLibrary : String -> String
+capitalizeWithLibrary str =
+    StringExtra.capitalize str
 
-Detalles de implementación: La clave aquí es la función `String.uncons`, que divide la cadena en su primer carácter y el resto. Luego usamos `toUpper` y `toLower` del módulo `String` para cambiar el caso de los caracteres. Es una solución eficiente y elegante que se adapta bien al estilo funcional de Elm.
+-- Ejemplo de uso con función hipotética de biblioteca
+main =
+    "this is elm" |> capitalizeWithLibrary
+    -- Salida hipotética: "This is elm"
+```
 
-## Ver También
-
-Para más información sobre las funciones que utilizamos, puedes visitar la documentación oficial de Elm:
-
-- String module: https://package.elm-lang.org/packages/elm/core/latest/String
-- Función uncons: https://package.elm-lang.org/packages/elm/core/latest/String#uncons
-- List.map: https://package.elm-lang.org/packages/elm/core/latest/List#map
+Siempre verifica el repositorio de paquetes de Elm para las últimas y más preferidas bibliotecas para la manipulación de cadenas si estás buscando funcionalidades adicionales más allá de la biblioteca estándar.

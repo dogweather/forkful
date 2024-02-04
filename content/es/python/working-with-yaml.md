@@ -1,58 +1,100 @@
 ---
 title:                "Trabajando con YAML"
-date:                  2024-01-19
+date:                  2024-02-03T19:26:33.361324-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Trabajando con YAML"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/python/working-with-yaml.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Qué es y Por Qué?
+## ¿Qué y por qué?
+YAML, que significa "YAML Ain't Markup Language" (YAML no es un lenguaje de marcado), es un formato de serialización de datos legible por humanos. Los programadores utilizan YAML para archivos de configuración, mensajería entre procesos y almacenamiento de datos debido a su sintaxis simple y facilidad de lectura en comparación con otros formatos como XML o JSON.
 
-YAML es un formato para guardar objetos de datos que es legible por humanos. Los programadores lo usan porque es más simple y claro que formatos como XML o JSON para ciertos tipos de datos y configuraciones.
+## Cómo hacerlo:
+Leer y escribir YAML en Python generalmente implica el uso de una biblioteca de terceros, siendo `PyYAML` la más popular. Para comenzar, necesitarás instalar PyYAML ejecutando `pip install PyYAML`.
 
-## Cómo:
+**Ejemplo: Escribir en un archivo YAML**
 
-Para trabajar con YAML en Python, deberás usar `PyYAML`, una biblioteca que facilita la carga y escritura de datos YAML. Aquí tienes unos ejemplos básicos:
-
-### Instalar PyYAML
-
-```Python
-pip install PyYAML
-```
-
-### Leer YAML
-
-```Python
+```python
 import yaml
 
-# Lee un archivo YAML
-with open('datos.yaml', 'r') as file:
-    datos = yaml.safe_load(file)
+data = {'una lista': [1, 42, 3.141, 1337, 'ayuda', u'€'],
+        'una cadena': '¡bu!',
+        'otro diccionario': {'foo': 'bar', 'clave': 'valor', 'la respuesta': 42}}
 
-print(datos)
+with open('ejemplo.yaml', 'w') as f:
+    yaml.dump(data, f, default_flow_style=False)
+
+# Esto crea `ejemplo.yaml` con los datos estructurados en formato YAML.
 ```
 
-### Escribir YAML
+**Ejemplo: Leer de un archivo YAML**
 
-```Python
+```python
 import yaml
 
-datos = {'clave': 'valor', 'lista': [1, 2, 3]}
+with open('ejemplo.yaml', 'r') as f:
+    data_cargada = yaml.safe_load(f)
 
-# Escribe datos a un archivo YAML
-with open('datos.yaml', 'w') as file:
-    yaml.dump(datos, file)
+print(data_cargada)
+
+# Salida:
+# {'una lista': [1, 42, 3.141, 1337, 'ayuda', '€'],
+#  'una cadena': '¡bu!',
+#  'otro diccionario': {'foo': 'bar', 'clave': 'valor', 'la respuesta': 42}}
 ```
 
-## Inmersión Profunda
+**Usar YAML para Configuración**
 
-YAML, que significa "YAML Ain't Markup Language" (YAML no es un lenguaje de marcado), se desarrolló para ser accesible y cómodo para guardar datos de configuración y serialización. Alternativas populares incluyen JSON, considerado más compacto para la web, y XML, que es más detallado y extenso. Un detalle clave de implementación de YAML es su capacidad para representar relaciones de datos complejas, como referencias cíclicas.
+Muchos programadores usan YAML para gestionar configuraciones de aplicaciones. Aquí tienes un ejemplo de cómo uno podría estructurar un archivo de configuración y leerlo:
 
-## Ver También
+config.yaml:
+```yaml
+base_de_datos:
+  host: localhost
+  puerto: 5432
+  nombre_usuario: admin
+  contraseña: secreto
+```
 
-- Documentación oficial de PyYAML: https://pyyaml.org/
-- Especificación YAML 1.2: https://yaml.org/spec/1.2/spec.html
-- Tutorial YAML: https://www.tutorialspoint.com/yaml/index.htm
+Leyendo el archivo de configuración en Python:
+```python
+import yaml
+
+with open('config.yaml', 'r') as f:
+    config = yaml.safe_load(f)
+
+print(config['base_de_datos']['host'])  # Salida: localhost
+```
+
+**Manejo de Estructuras Complejas**
+
+Para estructuras complejas, PyYAML te permite definir objetos Python personalizados. Sin embargo, asegúrate de practicar métodos seguros utilizando `safe_load` para evitar ejecutar funciones u objetos arbitrarios.
+
+```python
+import yaml
+
+# Definir un objeto Python
+class Ejemplo:
+    def __init__(self, valor):
+        self.valor = valor
+
+# Constructor personalizado
+def constructor_ejemplo(loader, node):
+    valor = loader.construct_scalar(node)
+    return Ejemplo(valor)
+
+# Añadir constructor para la etiqueta "!example"
+yaml.add_constructor('!example', constructor_ejemplo)
+
+yaml_str = "!example 'datos'"
+cargado = yaml.load(yaml_str, Loader=yaml.FullLoader)
+
+print(cargado.valor)  # Salida: datos
+```
+
+En este fragmento, `!example` es una etiqueta personalizada utilizada para instanciar un objeto `Ejemplo` con el valor 'datos' de una cadena YAML. Cargadores personalizados como este aumentan la flexibilidad de PyYAML, permitiendo el procesamiento de estructuras de datos y tipos más complejos.

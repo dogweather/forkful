@@ -1,48 +1,72 @@
 ---
 title:                "HTML parsen"
-date:                  2024-01-20T15:33:14.141709-07:00
+date:                  2024-02-03T19:12:35.163566-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "HTML parsen"
-
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/powershell/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Das Parsen von HTML bedeutet, den HTML-Code zu analysieren, um spezifische Daten herauszuziehen. Programmierer machen das, um Informationen aus Webseiten zu extrahieren, sei es für Datenanalyse, Web Scraping oder um automatisierte Tests für Webanwendungen zu erstellen.
+Das Parsen von HTML in PowerShell bedeutet, HTML-Inhalte zu untersuchen, um spezifische Daten zu extrahieren oder webbezogene Aufgaben zu automatisieren. Programmierer tun dies, um mit Webseiten zu interagieren, Webinhalte zu scrapen oder Formulareinreichungen und andere Webinteraktionen ohne die Notwendigkeit eines Webbrowsers zu automatisieren.
 
-## Wie geht das?
-In PowerShell kannst du das `Invoke-WebRequest` Cmdlet nutzen, um HTML-Inhalte einer Webseite abzurufen. Mit `Invoke-WebRequest` erhältst du ein Objekt, das Methoden und Eigenschaften bietet, um auf die verschiedenen Teile des HTML-Dokuments zuzugreifen. Hier ein einfaches Beispiel, wie man den Titel einer Webseite bekommt:
+## Wie geht das:
 
-```PowerShell
-$response = Invoke-WebRequest -Uri "https://example.com"
+PowerShell verfügt nativ nicht über einen dedizierten HTML-Parser, aber Sie können das Cmdlet `Invoke-WebRequest` verwenden, um auf HTML-Inhalte zuzugreifen und diese zu parsen. Für komplexeres Parsen und Manipulieren kann der HtmlAgilityPack, eine beliebte .NET-Bibliothek, verwendet werden.
+
+### Verwendung von `Invoke-WebRequest`:
+
+```powershell
+# Einfaches Beispiel, um Titel von einer Webseite zu holen
+$response = Invoke-WebRequest -Uri 'http://example.com'
+# Die ParsedHtml-Eigenschaft nutzen, um auf DOM-Elemente zuzugreifen
 $title = $response.ParsedHtml.title
-$title.innerText
+Write-Output $title
 ```
 
-Die Ausgabe wäre der Text des `<title>`-Tags von `https://example.com`.
+Beispielausgabe:
 
-Um komplexere HTML-Elemente zu durchsuchen, kannst du CSS-Selektoren verwenden:
+```
+Example Domain
+```
 
-```PowerShell
-$links = $response.ParsedHtml.querySelectorAll('a')
-foreach ($link in $links) {
-    $link.href
+### Verwendung von HtmlAgilityPack:
+
+Zuerst müssen Sie den HtmlAgilityPack installieren. Das können Sie über den NuGet Package Manager tun:
+
+```powershell
+Install-Package HtmlAgilityPack -ProviderName NuGet
+```
+
+Dann können Sie ihn in PowerShell verwenden, um HTML zu parsen:
+
+```powershell
+# Das HtmlAgilityPack-Assembly laden
+Add-Type -Path "Pfad\zum\HtmlAgilityPack.dll"
+
+# Ein HtmlDocument-Objekt erstellen
+$doc = New-Object HtmlAgilityPack.HtmlDocument
+
+# HTML aus einer Datei oder einer Webanfrage laden
+$htmlContent = (Invoke-WebRequest -Uri "http://example.com").Content
+$doc.LoadHtml($htmlContent)
+
+# XPath oder andere Abfragemethoden nutzen, um Elemente zu extrahieren
+$node = $doc.DocumentNode.SelectSingleNode("//h1")
+
+if ($node -ne $null) {
+    Write-Output $node.InnerText
 }
 ```
 
-Dies zeigt die `href`-Attribute aller `<a>`-Tags auf der Seite.
+Beispielausgabe:
 
-## Tiefgang
-Früher war HTML-Parsing in PowerShell umständlicher; man musste externe Bibliotheken wie HTML Agility Pack über .NET-Interop laden. PowerShell hat sich allerdings weiterentwickelt, und `Invoke-WebRequest` sowie `Invoke-RestMethod` machen es einfacher, da sie direkt Objekte zurückgeben, die man durchsuchen kann.
+```
+Willkommen bei Example.com!
+```
 
-Es gibt Alternativen wie die Verwendung der HtmlAgilityPack-Bibliothek in .NET, die speziell für das Parsen von HTML ausgelegt ist und mehr Flexibilität bietet, oder Puppeteer und Selenium, die für Browserautomatisierung konzipiert sind.
-
-Das Parsen mittels PowerShell ist nicht immer fehlerfrei, da Webseiten komplexe JavaScript-Logik enthalten können, die das DOM nach dem Laden verändert. Für solche Fälle werden oft Headless-Browser wie Chrome oder Firefox in Kombination mit Automatisierungstools benutzt.
-
-## Siehe auch
-- [Invoke-WebRequest Hilfe und Beispiele](https://docs.microsoft.com/de-de/powershell/module/microsoft.powershell.utility/invoke-webrequest)
-- [HtmlAgilityPack GitHub Repository](https://github.com/zzzprojects/html-agility-pack)
-- [Puppeteer GitHub Repository](https://github.com/puppeteer/puppeteer)
-- [Selenium WebDriver](https://www.selenium.dev/documentation/webdriver/)
+In diesen Beispielen ist `Invoke-WebRequest` am besten für einfache Aufgaben geeignet, während HtmlAgilityPack ein wesentlich umfangreicheres Set von Funktionen für komplexes HTML-Parsen und -Manipulation bietet.

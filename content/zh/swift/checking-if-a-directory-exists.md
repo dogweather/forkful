@@ -1,57 +1,71 @@
 ---
 title:                "检查目录是否存在"
-date:                  2024-01-20T14:58:49.533069-07:00
+date:                  2024-02-03T19:08:38.461764-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "检查目录是否存在"
-
 tag:                  "Files and I/O"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/swift/checking-if-a-directory-exists.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (是什么？为什么？)
-检查目录是否存在意味着确认计算机文件系统中某个路径的目录是否已经创建。程序员这么做是为了避免错误，比如尝试访问或在不存在的目录中创建文件。
+## 什么 & 为什么？
+在文件系统中检查目录是否存在对于从 Swift 应用程序内部管理文件结构至关重要。这一任务使得开发者能够在尝试读取或写入它们之前，验证目录的存在性，从而避免可能的运行时错误。
 
-## How to (如何实现)
-Swift 提供了`FileManager`类来处理文件系统操作。以下是检查目录是否存在的示例：
+## 如何操作：
 
-```Swift
+Swift 的 Foundation 框架提供了 `FileManager` 类，它有管理文件系统的方法。您可以使用 `FileManager` 来检查目录是否存在。这里是如何做到这一点的代码片段：
+
+```swift
 import Foundation
 
 let fileManager = FileManager.default
-let directoryPath = "/path/to/directory"
+let path = "/path/to/your/directory"
 
-if fileManager.fileExists(atPath: directoryPath) {
+if fileManager.fileExists(atPath: path, isDirectory: nil) {
     print("目录存在")
 } else {
     print("目录不存在")
 }
 ```
 
-输出将根据实际情况显示“目录存在”或“目录不存在”。
+然而，这会同时检查文件和目录。如果您特别想要验证目录存在，您需要在 `isDirectory` 中传递一个指向布尔值的指针：
 
-## Deep Dive (深入探讨)
-在历史上，不同的编程语言和操作系统提供了多种方法来检查文件和目录的存在。Swift 和 Objective-C 通过 Cocoa 和 Cocoa Touch 框架的`FileManager`提供了这一功能。除了`fileExists(atPath:)`方法，Swift 开发人员还可以通过捕获文件创建或读取过程中的错误来间接确认目录的存在。
+```swift
+import Foundation
 
-例如，尝试将文件写入目录可以确认其存在：
+let fileManager = FileManager.default
+let path = "/path/to/your/directory"
+var isDirectory: ObjCBool = false
 
-```Swift
-let filePath = directoryPath + "/test.txt"
-let content = "测试内容"
-
-do {
-    try content.write(toFile: filePath, atomically: true, encoding: .utf8)
-    print("文件写入成功，目录存在")
-} catch {
-    print("出现错误，可能目录不存在")
+if fileManager.fileExists(atPath: path, isDirectory: &isDirectory), isDirectory.boolValue {
+    print("目录存在")
+} else {
+    print("目录不存在")
 }
 ```
 
-不过，直接使用`fileExists(atPath:)`方法更直接、高效。
+### 使用第三方库
 
-## See Also (另请参阅)
-- Apple 官方文件系统编程指南: https://developer.apple.com/library/archive/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/Introduction/Introduction.html
-- Swift FileManager Documentation: https://developer.apple.com/documentation/foundation/filemanager
+到目前为止，由于 `FileManager` 类的强大，通常不需要使用第三方库来检查 Swift 中的目录是否存在。然而，对于更复杂的文件操作和检查，像 John Sundell 的 **Files** 这样的库提供了一个更符合 Swift 风格的 API。
 
-这些资源提供了关于`FileManager`以及更多文件系统相关操作的详细教程和文档。
+以下是你可能使用它的方式：
+
+首先，通过 Swift 包管理器将 Files 添加到你的项目中。
+
+然后，您可以这样检查目录是否存在：
+
+```swift
+import Files
+
+do {
+    _ = try Folder(path: "/path/to/your/directory")
+    print("目录存在")
+} catch {
+    print("目录不存在")
+}
+```
+
+注意：由于第三方库可能会更改，始终参考最新的文档以了解使用和最佳实践。

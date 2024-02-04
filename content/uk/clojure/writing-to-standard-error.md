@@ -1,37 +1,59 @@
 ---
-title:                "Запис в стандартний потік помилок"
-date:                  2024-01-19
-simple_title:         "Запис в стандартний потік помилок"
-
+title:                "Запис до стандартної помилки"
+date:                  2024-02-03T19:33:15.694480-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Запис до стандартної помилки"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/clojure/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Що це таке та навіщо?
-Стандартна помилка (stderr) — це окремий потік виводу, призначений для логування помилок та діагностичних повідомлень, щоб не змішувати їх із основним виводом (stdout). Програмісти використовують stderr, щоб зробити обробку помилок більш гнучкою, особливо при перенаправленні виводу в файл чи інші програми.
+## Що та чому?
+Запис в стандартну помилку (stderr) стосується перенаправлення повідомлень про помилки та діагностики в потік stderr, окремо від стандартного виводу (stdout). Програмісти роблять це для розмежування звичайного виводу програми від повідомлень про помилки, що дозволяє ефективніше налагоджувати та логувати.
 
-## Як це робити:
-```Clojure
-;; Приклад запису в stderr у Clojure
-(let [err-writer (java.io.OutputStreamWriter. *err*)]
-  (.write err-writer "Це повідомлення помилки\n")
-  (.flush err-writer))
+## Як це зробити:
+У Clojure ви можете писати в stderr, використовуючи потік `*err*`. Ось простий приклад:
 
-;; Або використовуючи println для stderr
-(clojure.core/binding [*out* *err*]
-  (println "Це також повідомлення помилки"))
-
-;; Припустимі виводи:
-;; Це повідомлення помилки
-;; Це також повідомлення помилки
+```clojure
+(.write *err* "Це повідомлення про помилку.\n")
 ```
 
-## Поглиблений огляд
-Historically, stderr was established to keep error messages separate from stdout, allowing users or other programs to handle only the necessary output. One alternative is logging to a file, but stderr remains useful for real-time monitoring and debugging. In Clojure, which runs on the JVM, stderr is exposed by the `*err*` writer, just like stdout is exposed by `*out*`. Both are bound to Java's `System/err` and `System/out`, respectively.
+Зауважте, що після написання повідомлення, вам слід очистити потік, щоб переконатись, що повідомлення відразу виводиться:
 
-## Додатково
-- [Clojure Docs](https://clojuredocs.org/) – офіційна документація з прикладами.
-- [Про потоки виводу в Unix](http://www.tldp.org/LDP/abs/html/io-redirection.html) – більше про stdout і stderr в контексті Unix систем.
-- [Java OutputStreamWriter](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/OutputStreamWriter.html) – для глибшого розуміння низькорівневої роботи з потоками у Java, на якій базується Clojure.
+```clojure
+(flush)
+```
+
+Приклад виводу в stderr:
+```
+Це повідомлення про помилку.
+```
+
+Якщо ви обробляєте виключення, вам може знадобитися друкувати траси стека в stderr. Для цього використовуйте `printStackTrace`:
+
+```clojure
+(try
+  ;; Код, що може сгенерувати виключення
+  (/ 1 0)
+  (catch Exception e
+    (.printStackTrace e *err*)))
+```
+
+Для більш структурованого логування помилок могли бути налаштовані сторонні бібліотеки, як-от `timbre`, для логування в stderr. Ось основна настройка та використання:
+
+Спочатку додайте `timbre` до ваших залежностей. Потім налаштуйте його на використання stderr:
+
+```clojure
+(require '[taoensso.timbre :as timbre])
+
+(timbre/set-config! [:appenders :standard-out :enabled?] false) ;; Вимкнути логування stdout
+(timbre/set-config! [:appenders :spit :enabled?] false) ;; Відключити логування до файлу
+(timbre/set-config! [:appenders :stderr :min-level] :error) ;; Увімкнути stderr для помилок
+
+(timbre/error "Під час обробки вашого запиту сталася помилка.")
+```
+
+Це спрямує повідомлення про помилки на рівні помилок в stderr, роблячи їх відмінними від стандартного виводу програми.

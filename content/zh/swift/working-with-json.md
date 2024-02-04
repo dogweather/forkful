@@ -1,56 +1,64 @@
 ---
-title:                "处理JSON数据"
-date:                  2024-01-19
-simple_title:         "处理JSON数据"
-
+title:                "使用JSON进行编程"
+date:                  2024-02-03T19:24:13.649974-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "使用JSON进行编程"
 tag:                  "Data Formats and Serialization"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/swift/working-with-json.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (是什么？为什么？)
-在Swift中，使用JSON（JavaScript Object Notation）处理数据是常规做法，因为它轻量且易于交换。程序员利用它与服务器交互数据，实现应用与互联网的对接。
+## 什么 & 为什么？
 
-## How to: (怎么做？)
+在 Swift 中处理 JSON 意味着处理一种轻量级的数据交换格式。程序员使用 JSON 在服务器和网络应用程序之间传输数据，因为它易于阅读和解析，对人和机器都很友好。
+
+## 如何操作：
+
+Swift 使用 `Codable` 协议使得 JSON 解析变得简单直接。下面是如何将 JSON 解码为 Swift 对象的方法：
+
 ```Swift
 import Foundation
 
-// 定义一个匹配JSON结构的结构体
+// 定义一个遵循 Codable 的模型
 struct User: Codable {
     var name: String
     var age: Int
 }
 
-// 一个JSON字符串例子
+// JSON 字符串
 let jsonString = """
 {
-    "name": "张三",
-    "age": 28
+    "name": "John Doe",
+    "age": 30
 }
 """
 
-// 将JSON字符串转换为Swift对象
+// 将 JSON 字符串转换为 Data
 if let jsonData = jsonString.data(using: .utf8) {
+    // 将 JSON 数据解码为 User 对象
     do {
         let user = try JSONDecoder().decode(User.self, from: jsonData)
-        print("姓名: \(user.name), 年龄: \(user.age)")
+        print("姓名：\(user.name)，年龄：\(user.age)")
     } catch {
-        print("解析错误: \(error)")
+        print("解码 JSON 出错：\(error)")
     }
 }
 ```
-执行以上代码，输出应该是：
+
+示例输出：
 ```
-姓名: 张三, 年龄: 28
+姓名：John Doe，年龄：30
 ```
 
-## Deep Dive (深入探究)
-JSON从2001年开始被使用，最初由Douglas Crockford提出，现已成为互联网数据交换的事实标准。在Swift中，我们经常使用`Codable`协议（`Decodable`和`Encodable`的组合）来简化序列化和反序列化过程。除了Swift的原生JSON处理，还有第三方库如`SwiftyJSON`和`ObjectMapper`可以考虑使用，但对于绝大多数场景，Swift标准库中的工具已经足够强大。
+## 深入探究
 
-## See Also (另请参阅)
-- [Swift的官方文档关于JSON](https://developer.apple.com/documentation/foundation/jsonserialization)
-- [可编码和可解码类型官方指南](https://developer.apple.com/documentation/swift/codable)
-- [SwiftyJSON GitHub](https://github.com/SwiftyJSON/SwiftyJSON)
-- [ObjectMapper GitHub](https://github.com/tristanhimmelman/ObjectMapper)
+自从 Douglas Crockford 在 2000 年代初期指定 JSON（JavaScript 对象表示法）以来，它已被广泛采用。它由于语法更简单、性能更好，已在许多用例中取代 XML。虽然 Swift 的 `Codable` 是处理 JSON 的首选，但当处理非 Codable 兼容类型时，还存在其他选择，如 `JSONSerialization`。在底层，`Codable` 抽象了较低级别的解析，并使得序列化/反序列化变得无缝。
+
+## 另请参阅
+
+- 在官方 Swift 博客中进一步探索有关 JSON 和 Swift 的信息：[Swift.org](https://swift.org/blog/)
+- 查看 `Codable` 文档：[Swift Codable](https://developer.apple.com/documentation/swift/codable)
+- 对于复杂的 JSON 结构，考虑使用诸如 SwiftyJSON 这样的第三方库，可在 [GitHub](https://github.com/SwiftyJSON/SwiftyJSON) 上找到。

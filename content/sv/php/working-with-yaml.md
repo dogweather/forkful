@@ -1,55 +1,129 @@
 ---
-title:                "Arbete med YAML"
-date:                  2024-01-19
-simple_title:         "Arbete med YAML"
-
+title:                "Att Arbeta med YAML"
+date:                  2024-02-03T19:26:22.892013-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Att Arbeta med YAML"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/php/working-with-yaml.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-YAML är ett format för datautbyte, enkelt för människor att läsa och skriva. Programmerare använder YAML för konfigurationsfiler, datautbyte mellan språk och eftersom det är mer lättläst än XML eller JSON för komplex data.
 
-## Så här gör du:
-För att jobba med YAML-i PHP behöver du `yaml`-tillägget. Här är ett exempel på hur du läser och skriver YAML:
+YAML, som står för "YAML Ain't Markup Language", är ett läsbart data-serialiseringsformat som vanligtvis används för konfigurationsfiler. Programmerare väljer att använda YAML på grund av dess enkelhet och läsbarhet, vilket gör det till ett utmärkt val för att lagra inställningar, parametrar och till och med komplexa datastrukturer i en lättförvaltad form.
 
-```PHP
-<?php
-// Förutsätter att yaml-tillägget är installerat
-$yamlStr = "
-en: Hello World
-sv: Hej Världen
-";
+## Hur man gör:
 
-// Läsa YAML till en array
-$data = yaml_parse($yamlStr);
-print_r($data);
+PHP, i sina nuvarande iterationer, stöder inte tolkning av YAML som en del av sitt standardbibliotek. Det enklaste sättet att arbeta med YAML i PHP är genom att använda Symfony YAML-komponenten eller `yaml` PECL-tillägget.
 
-// Skapa en YAML-sträng
-$array = ['en' => 'Goodbye World', 'sv' => 'Hej då Världen'];
-$yaml = yaml_emit($array);
-echo $yaml;
-?>
+### Använda Symfony YAML-komponenten
+
+Först, installera Symfony YAML-komponenten via Composer:
+
+```bash
+composer require symfony/yaml
 ```
 
-Du bör se något liknande:
+Sedan kan du tolka och dumpa YAML-innehåll på följande sätt:
 
-```PHP
+```php
+<?php
+require_once __DIR__.'/vendor/autoload.php';
+
+use Symfony\Component\Yaml\Yaml;
+
+// Tolka YAML
+$yamlString = <<<YAML
+greet: Hej, världen!
+framework:
+  name: Symfony
+  language: PHP
+YAML;
+
+$array = Yaml::parse($yamlString);
+print_r($array);
+
+// Skapa YAML från en array
+$array = [
+    'greet' => 'Hej, YAML!',
+    'framework' => [
+        'name' => 'Symfony',
+        'language' => 'PHP',
+    ],
+];
+
+$yaml = Yaml::dump($array);
+echo $yaml;
+```
+
+Exempelutskrift vid tolkning:
+
+```
 Array
 (
-    [en] => Hello World
-    [sv] => Hej Världen
+    [greet] => Hej, världen!
+    [framework] => Array
+        (
+            [name] => Symfony
+            [language] => PHP
+        )
+
 )
-en: Goodbye World
-sv: Hej då Världen
 ```
 
-## Fördjupning
-YAML (YAML Ain't Markup Language) började användas tidigt på 2000-talet. Det står i kontrast till XML och JSON men behåller interoperabilitet. Tillägget `yaml` för PHP är inte standard, så det måste installeras manuellt. Alternativ för att jobba med YAML i PHP inkluderar också bibliotek som Symfony's Yaml-komponent.
+Exempelutskrift vid dumpning:
 
-## Se även
-- Officiella YAML-webbplatsen: https://yaml.org
-- PHP:s yaml-tillägg: https://pecl.php.net/package/yaml
-- Symfony's Yaml-komponent: https://symfony.com/doc/current/components/yaml.html
+```
+greet: Hej, YAML!
+framework:
+    name: Symfony
+    language: PHP
+```
+
+### Använda `yaml` PECL-tillägget
+
+Om du föredrar, eller om ditt projekt tillåter, kan PECL-tillägget vara ett annat effektivt sätt att arbeta med YAML. Först, se till att tillägget är installerat:
+
+```bash
+pecl install yaml
+```
+
+Aktivera sedan det i din `php.ini`-konfiguration:
+
+```ini
+extension=yaml.so
+```
+
+Så här tolkar och emitterar du YAML:
+
+```php
+<?php
+
+// Tolka YAML
+$yamlString = <<<YAML
+greet: Hej, världen!
+framework:
+  name: Symfony
+  language: PHP
+YAML;
+
+$array = yaml_parse($yamlString);
+print_r($array);
+
+// Skapa YAML från en array
+$array = [
+    'greet' => 'Hej, YAML!',
+    'framework' => [
+        'name' => 'Symfony',
+        'language' => 'PHP',
+    ],
+];
+
+$yaml = yaml_emit($array);
+echo $yaml;
+```
+
+Utskriften kommer att likna Symfony-komponentens, vilket illustrerar YAML:s roll som en bro mellan människoläsbar form och PHP-arraystrukturer, underlättar enklare konfiguration och datahantering.

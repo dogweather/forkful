@@ -1,62 +1,76 @@
 ---
-title:                "Tests schreiben"
-date:                  2024-01-19
-simple_title:         "Tests schreiben"
-
+title:                "Tests Schreiben"
+date:                  2024-02-03T19:31:33.495071-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Tests Schreiben"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/powershell/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Tests im Programmierkontext automatisieren den Überprüfungsprozess von Code, um sicherzustellen, dass er wie erwartet funktioniert. Programmierer schreiben Tests, um Fehler frühzeitig zu erkennen, die Qualität des Codes zu verbessern und das Vertrauen in ihre Software zu stärken.
 
-## How to:
-PowerShell nutzt das `Pester`-Framework für Tests. Mit `Describe`, `Context` und `It` baust du strukturierte Tests. Hier ein einfaches Beispiel:
+Tests in PowerShell zu schreiben, umfasst das Erstellen von Skripten, die automatisch die Funktionalität Ihres PowerShell-Codes validieren und sicherstellen, dass er sich wie erwartet verhält. Programmierer tun dies, um Fehler frühzeitig zu erkennen, die Wartung des Codes zu vereinfachen und sicherzustellen, dass Codeänderungen nicht versehentlich vorhandene Funktionalitäten zerstören.
 
-```PowerShell
-# Installiere Pester, falls noch nicht vorhanden
-# Install-Module -Name Pester -Force -SkipPublisherCheck
+## Wie:
 
-# Importiere Pester
-Import-Module Pester
+PowerShell verfügt nicht über ein eingebautes Testframework, aber Pester, ein beliebtes Drittanbieter-Modul, wird weitgehend verwendet, um Tests zu schreiben und auszuführen. Hier erfahren Sie, wie Sie mit Pester beginnen können, um Ihre PowerShell-Funktionen zu testen.
 
-# Schreibe einen Test
-Describe "Testen meiner Funktion" {
-    Context "Wenn meine Funktion mit gültigen Parametern aufgerufen wird" {
-        It "gibt 'Hallo Welt!' zurück" {
-            # Eventuelle Funktion, die getestet wird
-            function SendeBegrüßung() {
-                return "Hallo Welt!"
-            }
-            SendeBegrüßung | Should -Be "Hallo Welt!"
-        }
+Zuerst installieren Sie Pester, falls Sie das noch nicht getan haben:
+
+```powershell
+Install-Module -Name Pester -Scope CurrentUser -Force
+```
+
+Betrachten Sie als nächstes eine einfache PowerShell-Funktion, die Sie testen möchten, gespeichert als `MyFunction.ps1`:
+
+```powershell
+function Get-MultipliedNumber {
+    param (
+        [int]$Number,
+        [int]$Multiplier = 2
+    )
+
+    return $Number * $Multiplier
+}
+```
+
+Um diese Funktion mit Pester zu testen, erstellen Sie ein Testsript mit dem Namen `MyFunction.Tests.ps1`. In diesem Skript verwenden Sie Pestersiste `Describe`- und `It`-Blöcke, um die Testfälle zu definieren:
+
+```powershell
+# Importiere die zu testende Funktion
+. .\MyFunction.ps1
+
+Describe "Get-MultipliedNumber Tests" {
+    It "Multipliziert Zahl mit 2, wenn kein Multiplikator angegeben wird" {
+        $result = Get-MultipliedNumber -Number 3
+        $result | Should -Be 6
+    }
+
+    It "Multipliziert Zahl korrekt mit gegebenem Multiplikator" {
+        $result = Get-MultipliedNumber -Number 3 -Multiplier 3
+        $result | Should -Be 9
     }
 }
-
-# Führe den Test aus
-Invoke-Pester
 ```
 
-Ausgabe könnte so aussehen:
+Um die Tests auszuführen, öffnen Sie PowerShell, navigieren zum Verzeichnis, das Ihr Testskript enthält, und verwenden den Befehl `Invoke-Pester`:
 
-```shell
-Executing all tests in '.'
-
-Executing script /Path/To/Test.ps1
-
-  Describing Testen meiner Funktion
-    Context Wenn meine Funktion mit gültigen Parametern aufgerufen wird
-      [+] gibt 'Hallo Welt!' zurück 40ms
-Tests completed in 40ms
-Tests Passed: 1, Failed: 0, Skipped: 0 NotRun: 0
+```powershell
+Invoke-Pester .\MyFunction.Tests.ps1
 ```
 
-## Deep Dive
-Pester wurde 2014 als das führende Test-Framework für PowerShell eingeführt. Alternativ gibt es Tools wie `psake`, `Invoke-Build` für Build-Automatisierung und `PlatyPS` für die Dokumentation, aber für das reine Testing bleibt Pester unangefochten. Effektives Testen erfordert Verständnis vom Test-Scope, Mocking und Code Coverage.
+Eine beispielhafte Ausgabe sieht folgendermaßen aus und zeigt an, ob Ihre Tests bestanden oder fehlgeschlagen sind:
 
-## See Also
-- Pester: https://pester.dev
-- PowerShell Testing: https://docs.microsoft.com/en-us/powershell/scripting/dev-cross-plat/write-pester-tests?view=powershell-7.1
-- PowerShell Gallery Pester-Seite: https://www.powershellgallery.com/packages/Pester
+```
+Starte Entdeckung in 1 Dateien.
+Entdeckung abgeschlossen in 152ms.
+[+] C:\Pfad\zu\MyFunction.Tests.ps1 204ms (182ms|16ms)
+Tests abgeschlossen in 204ms
+Tests Bestanden: 2, Fehlgeschlagen: 0, Übersprungen: 0 NichtGelaufen: 0
+```
+
+Diese Ausgabe zeigt, dass beide Tests bestanden haben und gibt Ihnen die Sicherheit, dass Ihre `Get-MultipliedNumber`-Funktion unter den getesteten Szenarien wie erwartet funktioniert.

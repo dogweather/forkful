@@ -1,42 +1,57 @@
 ---
-title:                "Sette streng til store bokstaver"
-date:                  2024-01-19
-simple_title:         "Sette streng til store bokstaver"
-
+title:                "Sette stor bokstav i en streng"
+date:                  2024-02-03T19:05:19.170453-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Sette stor bokstav i en streng"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/fish-shell/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Kapitalisering av strenger innebærer å gjøre første bokstav i hvert ord til en stor forbokstav. Programmerere bruker det for å møte språknormer eller forbedre tekstutseende for brukergrensesnitt.
 
-## Hvordan gjøre det:
-I Fish Shell, forvandler du små til store forbokstaver slik:
+Å sette stor forbokstav i en streng betyr å endre den slik at den første bokstaven er stor, og resten av strengen er med små bokstaver. Dette er en vanlig oppgave i tekstbehandling, normalisering av brukerinndata, og dataformatering for å sikre konsistens eller for å møte spesifikke formateringskriterier.
+
+## Hvordan:
+
+I Fish Shell kan strenger manipuleres direkte med innebygde funksjoner, uten behov for eksterne verktøy eller biblioteker. For å sette stor forbokstav i en streng, kan du kombinere `string`-kommandoen med underkommandoer.
 
 ```fish
-function capitalize
-    for word in $argv
-        echo -n (string collect (string sub -s 1 -- $word | string upper) (string sub -s 2 -- $word)) " "
-    end
-    echo
-end
+# Eksempelstreng
+set sample_string "hello world"
 
-# Bruk
-capitalize "fisk er vennlig og fin"
+# Stor forbokstav på første bokstav
+set capitalized_string (string sub -l 1 -- $sample_string | string upper)(string sub -s 2 -- $sample_string)
+
+echo $capitalized_string
 ```
 
-Eksempel på utdata:
-
+Output:
 ```
-Fisk Er Vennlig Og Fin
+Hello world
 ```
 
-## Dypdykk
-I gamle dager brukte enkelte skall begrensede, innebygde strengoperasjoner. Med Fish, som er et moderne skall, får programmerere innebyggede strengfunksjoner som `string` som kan dele opp, erstatte og transformere tekst på kraftfulle måter. Alternativer til Fish-funksjonen `capitalize` kan inkludere bruk av `awk` eller kall til eksterne programmer som `sed`, men Fish tilbyr en renere og mer effektiv syntaks uten behov for eksterne verktøy. `string sub` og `string upper` er Fish-funksjoner som henholdsvis henter en delstreng og konverterer til store bokstaver.
+For scenarier som krever at flere ord i en streng begynner med stor bokstav (for eksempel, konvertere "hello world" til "Hello World"), ville du iterere over hvert ord, og anvende logikken for å sette stor bokstav på hvert:
 
-## Se Også
-- Offisiell Fish Shell-dokumentasjon: [https://fishshell.com/docs/current/index.html](https://fishshell.com/docs/current/index.html)
-- String-manipluasjon i Fish Shell: [https://fishshell.com/docs/current/cmds/string.html](https://fishshell.com/docs/current/cmds/string.html)
-- Generell tekstbehandling i Unix-skall: [https://en.wikipedia.org/wiki/Text_processing](https://en.wikipedia.org/wiki/Text_processing)
+```fish
+# Eksempelsetning
+set sentence "hello fish shell programming"
+
+# Stor bokstav på hvert ord
+set capitalized_words (string split " " -- $sentence | while read -l word; string sub -l 1 -- $word | string upper; and string sub -s 2 -- $word; end)
+
+# Koble sammen de store bokstavene
+set capitalized_sentence (string join " " -- $capitalized_words)
+
+echo $capitalized_sentence
+```
+
+Output:
+```
+Hello Fish Shell Programming
+```
+
+Merk at Fish Shell ikke direkte tilbyr en enkel-kommando tilnærming for setting av stor forbokstav i hele setninger på samme måte som noen programmeringsspråk gjør med deres strengmetoder. Derfor representerer kombineringen av `string split`, `string sub`, `string upper`, og deretter sammenføyning en idiomatisk tilnærming i Fish Shell for å oppnå dette.

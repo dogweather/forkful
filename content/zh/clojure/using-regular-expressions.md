@@ -1,46 +1,75 @@
 ---
 title:                "使用正则表达式"
-date:                  2024-01-19
+date:                  2024-02-03T19:16:33.856445-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "使用正则表达式"
-
 tag:                  "Strings"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/clojure/using-regular-expressions.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? | 什么是正则表达式，以及为什么要使用？
+## 什么与为什么？
+正则表达式是处理文本任务（如验证输入、搜索和替换文本）中不可或缺的强大工具，用于模式匹配和数据操作。程序员广泛使用它们来高效、简洁地处理复杂的字符串解析和数据验证任务。
 
-正则表达式是一种文本模式匹配的工具。程序员用它来搜索、编辑、检查或操纵字符串。
+## 如何操作：
+Clojure，作为Lisp家族的一份子，提供了一整套丰富的函数，它们与Java的正则表达式能力无缝接口。以下是如何利用它们：
 
-## How to: | 如何操作：
+### 基本匹配
+要检查字符串是否匹配某个模式，使用`re-matches`。如果成功，它返回整个匹配；否则返回`nil`。
 
-```Clojure
-;; 匹配字符串
-(re-find #"hello" "hello world")
-; => "hello"
-
-;; 分割字符串
-(re-seq #"\d+" "The numbers are 42 and 1234")
-; => ("42" "1234")
-
-;; 替换文本
-(clojure.string/replace "foo123" #"\d+" "ABC")
-; => "fooABC"
-
-;; 提取具体信息
-(let [regex #"(?i)the (\w+) fox"]
-  (re-find regex "The Quick Brown Fox"))
-; => ["The Quick fox" "Quick"]
+```clojure
+(re-matches #"\d+" "123")  ;=> "123"
+(re-matches #"\d+" "abc")  ;=> nil
 ```
 
-## Deep Dive | 深入了解：
+### 搜索模式
+要找到模式的第一次出现，`re-find`是你要去的函数：
 
-正则表达式起源于上世纪50年代的理论计算机科学领域，现在是文本处理不可或缺的工具。Clojure作为一种现代的Lisp方言，直接在语言层面支持正则表达式。与Perl或Python等语言相比，Clojure中正则表达式的使用更简洁，因其采用了Java的正则表达式引擎。一些常见的替代方案包括字符串处理函数和parser combinator库，但它们经常不如正则表达式高效。
+```clojure
+(re-find #"\d+" "Order 123")  ;=> "123"
+```
 
-## See Also | 相关资源：
+### 捕获组
+使用带有括号的模式和`re-find`来捕获组：
 
-- Clojure官方文档关于正则表达式的章节：[Clojure - Regular Expressions](https://clojure.org/guides/learn/functions#_regular_expressions)
-- Java正则表达式文档，了解Clojure背后的引擎：[Java Pattern Class](https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html)
-- 正则表达式的详细入门指导：[Regular-Expressions.info](https://www.regular-expressions.info/)
+```clojure
+(let [[_ area code] (re-find #"(1)?(\d{3})" "Phone: 123-4567")]
+  (println "Area Code:" area "Code:" code))
+;; 输出：Area Code: nil Code: 123
+```
+
+### 全局搜索（查找所有匹配项）
+Clojure没有像某些语言那样的内置全局搜索。相反，使用`re-seq`来获取所有匹配项的延迟序列：
+
+```clojure
+(re-seq #"\d+" "id: 123, qty: 456")  ;=> ("123" "456")
+```
+
+### 分割字符串
+要基于模式分割字符串，使用`clojure.string/split`：
+
+```clojure
+(clojure.string/split "John,Doe,30" #",")  ;=> ["John" "Doe" "30"]
+```
+
+### 替换
+用`clojure.string/replace`替换匹配某个模式的字符串部分：
+
+```clojure
+(clojure.string/replace "2023-04-01" #"\d{4}" "YYYY")  ;=> "YYYY-04-01"
+```
+
+### 第三方库
+尽管Clojure的内置支持在大多数情况下已足够，但对于更复杂的情况，考虑使用如`clojure.spec`之类的库，用于健壮的数据验证，以及在Web应用中用正则表达式基于路由和输入验证的反应式DOM操作的`reagent`。
+
+```clojure
+;; 使用clojure.spec验证电子邮件的示例
+(require '[clojure.spec.alpha :as s])
+(s/def ::email (s/and string? #(re-matches #".+@.+\..+" %)))
+(s/valid? ::email "test@example.com")  ;=> true
+```
+
+记住，虽然正则表达式强大，但它们也可能使代码难以阅读和维护。审慎使用它们，并尽可能考虑使用更简单的字符串操作函数。

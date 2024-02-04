@@ -1,46 +1,50 @@
 ---
 title:                "Nykyisen päivämäärän hankkiminen"
-date:                  2024-01-20T15:15:38.643060-07:00
+date:                  2024-02-03T19:10:15.049822-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Nykyisen päivämäärän hankkiminen"
-
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/lua/getting-the-current-date.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Mikä & Miksi? Päivämäärän hakeminen tarkoittaa senhetkisen päivän ja ajan selvittämistä. Ohjelmoijat käyttävät tätä toimintaa aikaleimojen luomiseen, tapahtumien ajoitukseen ja käyttäjäkokemuksen personointiin.
+## Mikä & Miksi?
 
-## How to:
-Miten tehdään:
+Nykyisen päivämäärän hakeminen ohjelmoinnissa on olennainen tehtävä monille sovelluksille, mukaan lukien lokit, tapahtumien aikaleimat tai tehtävien ajoittaminen. Luassa tämä toiminnallisuus mahdollistaa ohjelmoijien käsittellä päivämäärä- ja aikaoperaatioita saumattomasti sovelluksissaan, varmistaen että heidän ohjelmistonsa voi toimia tehokkaasti reaaliaikaisen datan kanssa.
 
-```Lua
--- Nykyisen päivän ja ajan hankkiminen
-local pvm = os.date("*t")  -- hakee nykyisen paikallisen ajan taulukkona
+## Kuinka:
 
--- Tulostetaan päivämäärä ja kellonaika
-print("Päivämäärä:", pvm.year, pvm.month, pvm.day)
-print("Kellonaika:", pvm.hour, pvm.min, pvm.sec)
+Lua tarjoaa `os.date` funktion nykyisen päivämäärän ja ajan hakemiseen. Funktion voi käyttää ilman argumentteja saadakseen muotoillun merkkijonon tai muotoiluspesifikaattoreiden kanssa tuloksen mukauttamiseksi. Näin sitä käytetään:
 
--- Formaattiin sopiva merkkijonoesitys
-local aikaleima = os.date("%Y-%m-%d %H:%M:%S")
-print("Aikaleima:", aikaleima)
+```lua
+-- Nykyisen päivämäärän ja ajan hakeminen muotoiltuna merkkijonona
+print(os.date())  -- esim., Thu Mar  3 14:02:03 2022
+
+-- Tulosteen muotoilun mukauttaminen
+-- %Y vuodelle, %m kuukaudelle, %d päivälle, %H tunnille, %M minuuteille
+print(os.date("%Y-%m-%d %H:%M"))  -- esim., 2022-03-03 14:02
 ```
 
-Sample output:
+Monimutkaisempia päivämäärä- ja aikamanipulointeja varten Lualla ei ole yhtä kattavia sisäänrakennettuja kirjastoja kuin joissakin muissa ohjelmointikielissä. Voit kuitenkin käyttää kolmansien osapuolien kirjastoja, kuten `lua-date` (https://github.com/Tieske/date). Tämä kirjasto tarjoaa kattavampia toiminnallisuuksia päivämäärien ja aikojen käsittelyyn. Näin saatat käyttää sitä:
 
+Ensiksi, varmista että olet asentanut `lua-date` kirjaston. Sen voi yleensä asentaa LuaRocksilla seuraavalla komennolla:
+
+```bash
+luarocks install lua-date
 ```
-Päivämäärä: 2023 3 15
-Kellonaika: 16 45 22
-Aikaleima: 2023-03-15 16:45:22
+
+Sitten, voit käyttää sitä Lua-skriptissäsi seuraavasti:
+
+```lua
+local date = require("date")
+
+-- Luodaan päivämääräobjekti nykyiselle päivämäärälle ja ajalle
+local now = date()
+
+print(now:fmt("%Y-%m-%d %H:%M:%S"))  -- esim., 2022-03-03 14:02:03
 ```
 
-## Deep Dive
-Syväsukellus: `os.date`-funktio on Lua-kirjaston osa, joka on peräisin C-kielestä. Se muuntaa ajan merkkijonoksi tai taulukkoksi, joten on helppoa valita joustava esitystapa. Vaihtoehtoisesti `os.time` palauttaa sekunneissa nykyisen Unix-aikaleiman. `os.date`-funktio hyväksyy useita muotoiluja, ja sillä on globaaleja siirtymiä (kuten UTC) ja paikallisia aikoja käsittelevät versiot.
-
-## See Also
-Katso myös:
-- [Lua 5.4 referenssi](https://www.lua.org/manual/5.4/)
-- [Lua-date-funktioon syvemmin](https://www.lua.org/pil/22.1.html)
-- [Unix-aikaleiman käsittely](https://en.wikipedia.org/wiki/Unix_time)
+Tämä esimerkki osoittaa `date` objektin luomisen, joka edustaa nykyistä hetkeä, ja jonka voit sitten muotoilla samankaltaisesti kuin `os.date` funktion, mutta lisäjoustavuudella ja vaihtoehdoilla, joita `lua-date` kirjasto tarjoaa.

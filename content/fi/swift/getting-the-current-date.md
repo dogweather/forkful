@@ -1,47 +1,69 @@
 ---
 title:                "Nykyisen päivämäärän hankkiminen"
-date:                  2024-01-20T15:16:34.136006-07:00
+date:                  2024-02-03T19:11:14.499567-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Nykyisen päivämäärän hankkiminen"
-
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/swift/getting-the-current-date.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Mikä & Miksi?)
-Haluatko tietää tämän hetken päiväyksen koodissasi? Se on arkipäivää esimerkiksi lokitiedoissa ja aikaleimoissa. Käyttämällä Swiftiä saat nykyisen päivämäärän ja kellonajan helposti, mikä auttaa sinua tallentamaan tai vertailemaan ajankohtia.
+## Mikä ja miksi?
+Nykyisen päivämäärän saaminen Swiftille tarkoittaa `Date` luokan käyttämistä päästäksesi käsiksi päivämäärään ja aikaan, jolloin sovellusta ajetaan. Ohjelmoijien on tarpeen hakea nykyinen päivämäärä monista syistä, jotka vaihtelevat tapahtumien aikaleimaamisesta, päivämäärälaskentojen suorittamiseen, päivämäärien ja aikojen näyttämiseen käyttöliittymässä.
 
-## How to: (Kuinka tehdä:)
-```Swift
+## Kuinka:
+Swiftin `Foundation` kehys tarjoaa `Date` luokan, mikä tekee nykyisen päivämäärän ja ajan saamisesta suoraviivaista. Tässä on perusesimerkki siitä, kuinka saada nykyinen päivämäärä:
+
+```swift
 import Foundation
 
-let nyt = Date()
-print(nyt)
-```
-Tämä tulostaa jotain tämän kaltaista (riippuu ajankohdasta):
-```
-2023-04-12 14:23:46 +0000
+let currentDate = Date()
+print(currentDate)
 ```
 
-## Deep Dive (Sukellus syvemmälle)
-Swiftissä `Date` luokka on yleiskäyttöinen tapa edustaa tiettyjä hetkiä ajassa. Se kirjaa ajan ohitukset koordinoituna yleisaikana (UTC). Historiallisesti ajankäsittely on ollut monimutkaista ohjelmoinnissa eri aikavyöhykkeiden ja formaattien takia. Swift simplifioi tätä prosessia mutta antaa myös välineet syvemmälle hallintaan, kuten `DateFormatter` ja `Calendar` apit, näille, jotka tarvitsevat lisäkontrollia.
+Tämä tulostaa jotain tällaista:
 
-Aikaisemmissa kielissä kuten Objective-C:ssä piti käyttää `NSDate`, joka on käytännössä sama kuin Swiftin `Date`.
-
-Jos haluat muuttaa päivämäärän merkkijonoksi tietyssä muodossa, voit tehdä näin:
-```Swift
-let muotoilija = DateFormatter()
-muotoilija.dateFormat = "dd.MM.yyyy HH:mm"
-let paivamaaranMerkkijono = muotoilija.string(from: nyt)
-print(paivamaaranMerkkijono)
 ```
+2023-04-12 07:46:23 +0000
+```
+
+Tulosteen muoto noudattaa ISO 8601 -standardia, käyttäen UTC-aikavyöhykettä. Saatat kuitenkin haluta muotoilla tämän päivämäärän näyttötarkoituksiin. Swiftin `DateFormatter` luokka tulee avuksi:
+
+```swift
+let formatter = DateFormatter()
+formatter.dateStyle = .long
+formatter.timeStyle = .medium
+let formattedDate = formatter.string(from: currentDate)
+print(formattedDate)
+```
+
+Esimerkkituloste voisi olla:
+
+```
+12. huhtikuuta 2023 klo 10.46.23
+```
+
+Huomaa, että tulosteen muoto vaihtelee laitteen lokaation mukaan, jolla koodia ajetaan.
+
+Projekteille, jotka vaativat monimutkaisempaa päivämäärän käsittelyä, monet Swift-kehittäjät kääntyvät kolmannen osapuolen kirjastojen, kuten `SwiftDate`, puoleen. Tässä on miten saatat käyttää `SwiftDate`a saadaksesi nykyisen päivämäärän tietyssä aikavyöhykkeessä ja muodossa:
+
+Ensiksi, lisää `SwiftDate` projektiisi käyttäen SPM:ää, CocoaPodsia, tai Carthagea. Sitten:
+
+```swift
+import SwiftDate
+
+let rome = Region(calendar: .gregorian, zone: .europeRome, locale: .current)
+let currentDateInRome = DateInRegion(Date(), region: rome)
+print(currentDateInRome.toFormat("yyyy-MM-dd HH:mm:ss"))
+```
+
 Tämä voisi tulostaa:
-```
-12.04.2023 17:23
-```
-Huomaa, että esimerkki käyttää suomalaista päivämäärän esitysmuotoa.
 
-## See Also (Katso myös)
-- Swiftin virallinen dokumentaatio `Date`-lohkosta: [Date - Swift Standard Library | Apple Developer Documentation](https://developer.apple.com/documentation/foundation/date)
-- Ajanhallinta Swiftissä: [Work with Dates and Times in Swift | raywenderlich.com](https://www.raywenderlich.com/101-an-introduction-to-datetime-in-swift)
+```
+2023-04-12 09:46:23
+```
+
+Käyttämällä `SwiftDate`a, voit helposti käsitellä päivämääriä ja aikoja eri aikavyöhykkeissä ja lokaatioissa, yksinkertaistaen monimutkaisia päivämäärän käsittelytehtäviä Swift-sovelluksissasi.

@@ -1,34 +1,45 @@
 ---
-title:                "字符串首字母大写"
-date:                  2024-01-19
-simple_title:         "字符串首字母大写"
-
+title:                "字符串大写化"
+date:                  2024-02-03T19:06:02.241237-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "字符串大写化"
 tag:                  "Strings"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/powershell/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (什么和为什么？)
-大写化字符串是指将字符串中的字母转换为大写形式。程序员这么做通常是为了统一数据格式、提高可读性或满足特定编码要求。
+## 什么 & 为什么？
+在 PowerShell 中，将字符串首字母大写涉及到将给定字符串的第一个字符转换为大写，同时保留字符串的其余部分不变。程序员经常执行此任务以达到格式化目的，例如为用户界面显示准备文本或在生成的文档中遵循语法规则。
 
-## How to: (如何操作：)
-```PowerShell
-# 使用内建的ToUpper()方法将字符串转换为全大写
-$string = "hello world"
-$capitalizedString = $string.ToUpper()
+## 如何操作：
+PowerShell 作为一个多功能工具，允许您使用简单的方法对字符串进行首字母大写，无需第三方库。以下是如何做到这一点：
 
-# 输出结果
-$capitalizedString
+```powershell
+# 使用内置的 .Net 方法 'ToTitleCase' 从 CultureInfo
+$text = "hello world"
+$culture = [System.Globalization.CultureInfo]::InvariantCulture
+$capitalizedText = $culture.TextInfo.ToTitleCase($text.ToLower())
+Write-Output $capitalizedText
 ```
 输出：
 ```
-HELLO WORLD
+Hello world
 ```
 
-## Deep Dive (深入探索)
-PowerShell使用.NET框架的字符串方法来调整大小写。ToUpper()方法存在很久了，通常跟着.NET版本更新，保证了灵活性和兼容性。虽然ToUpper()是最直接的方法，还有其他方式，例如使用文本处理工具或正则表达式进行自定义的大小写转换。值得注意的是，根据区域设置，某些字符的大写转换可能并不符合你的预期，因为它依赖于文化上的字符表示。
+注意：此方法将每个单词的第一个字母大写。如果您严格地只想将字符串的第一个字母大写，并保留其余部分不变，您可以这样做：
 
-## See Also (另请参阅)
-- [关于 .NET 中的 ToUpper() 方法](https://docs.microsoft.com/en-us/dotnet/api/system.string.toupper?view=net-6.0)
+```powershell
+# 仅将字符串的第一个字符大写
+$text = "hello world"
+$capitalizedText = $text.Substring(0,1).ToUpper() + $text.Substring(1)
+Write-Output $capitalizedText
+```
+输出：
+```
+Hello world
+```
+
+PowerShell 直接不包括一个简单的函数来仅将字符串的第一个字母大写，但通过组合基本的字符串操作方法，如 `Substring(0,1).ToUpper()` 和连接，我们可以轻松实现预期结果。

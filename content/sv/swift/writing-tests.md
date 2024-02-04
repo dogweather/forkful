@@ -1,56 +1,64 @@
 ---
 title:                "Skriva tester"
-date:                  2024-01-19
+date:                  2024-02-03T19:32:04.622849-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Skriva tester"
-
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/swift/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att skriva tester innebär att koda speciella funktioner som kontrollerar att din kod gör det den ska. Programmerare gör detta för att hitta buggar tidigt, säkra kodkvalitet och förenkla framtida underhåll.
+Att skriva tester i Swift innebär att skapa och köra kod som verifierar riktigheten hos andra kodenheter i din applikation. Programmerare gör detta för att säkerställa tillförlitlighet, upptäcka buggar tidigt i utvecklingscykeln och underlätta framtida kodrefaktorering utan oavsiktliga konsekvenser.
 
-## Gör så här:
-Swift använder XCTest-ramverket för att hantera testning. Här är en enkel XCTest-fall för att testa en funktion som adderar två tal:
+## Hur:
+Swift stöder testning genom sitt XCTest-ramverk, som är integrerat i Xcode. Du kan skriva enhetstester för att verifiera individuella delar av din kod, till exempel en funktion som beräknar summan av två tal.
 
-```Swift
+```swift
 import XCTest
+@testable import YourApp
 
-// Din funktion som ska testas
-func addera(_ a: Int, _ b: Int) -> Int {
-    return a + b
-}
+class YourAppTests: XCTestCase {
 
-// Testfall
-class MathTests: XCTestCase {
-    func testAddera() {
-        XCTAssertEqual(addera(2, 3), 5, "Adderingsfunktionen borde ge 5 när vi adderar 2 och 3")
+    func testSum() {
+        let result = Calculator().sum(a: 1, b: 2)
+        XCTAssertEqual(result, 3, "Summafunktionen returnerade inte det förväntade värdet.")
     }
 }
-
-// TestRunner (normalt automatiskt hanterad av Xcode)
-XCTMain([
-    testCase(MathTests.allTests)
-])
 ```
 
-Resultat:
+För att köra detta test skulle du vanligtvis trycka på Command-U i Xcode. Utdata i Xcodes testnavigerare kommer att tala om för dig om testet lyckades eller misslyckades.
+
+Till exempel, en lyckad testutdata:
 ```
-Test Suite 'All tests' started at 2023-03-29 15:23:17.170
-Test Suite 'MathTests' started at 2023-03-29 15:23:17.172
-Test Case '-[MathTests testAddera]' started.
-Test Case '-[MathTests testAddera]' passed (0.001 seconds).
-Test Suite 'MathTests' finished at 2023-03-29 15:23:17.173.
+Testfall '-[YourAppTests testSum]' lyckades (0.005 sekunder).
 ```
 
-## Deep Dive
-Tidiga versioner av Swift hade inget inbyggt stöd för tester, men XCTest, som härstammar från OCUnit för Objective-C, infördes i Swift för att möjliggöra TDD (Test-Driven Development). Alternativ till XCTest inkluderar Quick/Nimble som erbjuder en mer beskrivande BDD-stil (Behavior-Driven Development). När du skriver tester är det viktigt att hålla dem isolerade och snabbkörande för att effektivisera utvecklingscykeln.
+För mer avancerade testscenarier, kan du använda tredjepartsbibliotek som Quick/Nimble, vilka erbjuder en mer uttrycksfull syntax för att skriva tester.
 
-## Se även:
-- [Apple's dokumentation av XCTest](https://developer.apple.com/documentation/xctest)
-- [Artikel om Test-Driven Development i Swift](https://www.raywenderlich.com/5522-test-driven-development-tutorial-for-ios-getting-started)
-- [Quick GitHub repository](https://github.com/Quick/Quick)
+Med Quick/Nimble kan du skriva samma test så här:
 
-**Observera:** Länkarna är på engelska då robusta Swift-resurser på svenska är begränsade.
+```swift
+// Lägg till Quick och Nimble i din Swift pakethanterare eller använd CocoaPods/Carthage för att installera dem
+import Quick
+import Nimble
+@testable import YourApp
+
+class CalculatorSpec: QuickSpec {
+    override func spec() {
+        describe("Kalkylatorn") {
+            context("när den summerar tal") {
+                it("bör den returnera den korrekta summan") {
+                    let calculator = Calculator()
+                    expect(calculator.sum(a: 1, b: 2)).to(equal(3))
+                }
+            }
+        }
+    }
+}
+```
+
+Att köra detta test skulle ge dig liknande utdata i din testkonsol eller CI/CD-verktygs logg, som anger om testet lyckades eller misslyckades, med ett mer läsbart format för att beskriva tester och förväntningar.

@@ -1,42 +1,57 @@
 ---
-title:                "Mettre une chaîne de caractères en majuscules"
-date:                  2024-01-19
-simple_title:         "Mettre une chaîne de caractères en majuscules"
-
+title:                "Mettre en majuscule une chaîne"
+date:                  2024-02-03T19:05:21.469262-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Mettre en majuscule une chaîne"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/fish-shell/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Capitaliser une chaîne, c'est transformer toutes les lettres en majuscules. Les programmeurs font ça pour normaliser les inputs utilisateur, pour des raisons esthétiques ou pour respecter certaines conventions.
+## Quoi & Pourquoi ?
 
-## How to:
-Avec Fish, capitaliser une chaîne c'est facile. Voici comment faire :
+Mettre en majuscule une chaîne de caractères signifie la modifier pour que la première lettre soit en majuscule et que le reste de la chaîne soit en minuscule. Il s'agit d'une tâche courante dans le traitement de texte, la normalisation des entrées utilisateur et le formatage des données pour garantir la cohérence ou pour répondre à des critères de formatage spécifiques.
 
-```Fish Shell
-# Déclarer une variable avec du texte
-set phrase "bonjour le monde"
+## Comment faire :
 
-# Capitaliser la chaîne et imprimer le résultat
-echo $phrase | string to-upper
+Dans Fish Shell, les chaînes peuvent être manipulées directement avec des fonctions intégrées, sans avoir besoin d'outils externes ou de bibliothèques. Pour mettre en majuscule une chaîne de caractères, vous pouvez combiner la commande `string` avec des sous-commandes.
+
+```fish
+# Chaîne d'exemple
+set sample_string "hello world"
+
+# Mettre en majuscule la première lettre
+set capitalized_string (string sub -l 1 -- $sample_string | string upper)(string sub -s 2 -- $sample_string)
+
+echo $capitalized_string
 ```
 
 Sortie :
-
 ```
-BONJOUR LE MONDE
+Hello world
 ```
 
-## Deep Dive
-Historiquement, la capitalisation dans les systèmes informatiques pouvait indiquer un statut important, comme dans le cas des noms de fichiers UNIX des années 70. En Fish, `string to-upper` est simple mais puissant. Alternativement, vous pouvez utiliser `awk`, `tr`, ou `sed` dans un script bash, mais Fish offre une syntaxe plus claire.
+Pour des scénarios nécessitant la mise en majuscule de plusieurs mots dans une chaîne (par exemple, convertir "hello world" en "Hello World"), vous itéreriez sur chaque mot, en appliquant la logique de capitalisation à chacun :
 
-En interne, `string to-upper` utilise les fonctionnalités de conversion de caractères de Unicode, ce qui signifie qu'elle gère correctement les caractères non ASCII.
+```fish
+# Phrase d'exemple
+set sentence "hello fish shell programming"
 
-## See Also
-Pour aller plus loin avec `string` dans Fish :
+# Mettre en majuscule chaque mot
+set capitalized_words (string split " " -- $sentence | while read -l word; string sub -l 1 -- $word | string upper; and string sub -s 2 -- $word; end)
 
-- Documentation officielle de `string`: https://fishshell.com/docs/current/cmds/string.html
-- Unicode Standard pour la casse des lettres: https://www.unicode.org/faq/casemap_charprop.html
-- Forum Fish, pour poser des questions ou partager des astuces: https://fishshell.com/docs/current/index.html#discussion
+# Joindre les mots capitalisés
+set capitalized_sentence (string join " " -- $capitalized_words)
+
+echo $capitalized_sentence
+```
+
+Sortie :
+```
+Hello Fish Shell Programming
+```
+
+Notez que Fish Shell n'offre pas directement une méthode unique de commande pour la capitalisation complète de phrases de la même manière que certains langages de programmation le font avec leurs méthodes de chaînes. Par conséquent, combiner `string split`, `string sub`, `string upper`, puis les réunir représente une approche idiomatique dans Fish Shell pour atteindre cet objectif.

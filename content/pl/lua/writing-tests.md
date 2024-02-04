@@ -1,37 +1,78 @@
 ---
 title:                "Pisanie testów"
-date:                  2024-01-19
+date:                  2024-02-03T19:31:31.319974-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Pisanie testów"
-
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/lua/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Testy w programowaniu to skrypty sprawdzające poprawność działania kodu. Programiści je piszą, aby zapewnić jakość, wykryć błędy i uniknąć kłopotów w przyszłości.
+## Co i dlaczego?
 
-## How to:
-Lua nie ma biblioteki standardowej dla testów, ale można używać zewnętrznych. Oto prosty przykład użycia `busted`:
+Pisanie testów w programowaniu polega na tworzeniu małych, oddzielnych kawałków kodu, które automatycznie weryfikują, czy różne części aplikacji działają zgodnie z oczekiwaniami. Dla programistów Lua, testowanie zapewnia niezawodność i pomaga w utrzymaniu jakości kodu, przyspiesza proces debugowania i czyni modyfikacje w bazie kodu bezpieczniejszymi.
 
-```Lua
-describe("addition", function()
-    it("adds two numbers", function()
-        assert.are.equal(4, 2+2)
-    end)
+## Jak to zrobić:
+
+Lua, będąc lekkim, lecz potężnym językiem skryptowym, nie zawiera wbudowanego frameworka do testowania. Jednakże biblioteki stron trzecich, takie jak Busted i LuaUnit, sprawiają, że testowanie jest stosunkowo proste. Tutaj przyjrzymy się przykładom z użyciem obu.
+
+### Korzystanie z Busted
+
+Busted to popularny framework do testowania Lua, który oferuje elastyczny sposób na pisanie testów. Po pierwsze, zainstaluj Busted przez LuaRocks (menedżer pakietów Lua) z `luarocks install busted`. Po instalacji możesz pisać swoje testy. Oto prosty test dla funkcji `add`, która sumuje dwie liczby:
+
+```lua
+-- add.lua
+local function add(a, b)
+  return a + b
+end
+
+return add
+```
+
+```lua
+-- add_spec.lua
+local add = require('add')
+
+describe("Funkcja dodawania", function()
+  it("powinna prawidłowo dodawać dwie liczby", function()
+    assert.are.equal(5, add(2, 3))
+  end)
 end)
 ```
 
-Uruchomienie `busted` powinno dać taki wynik:
+Aby uruchomić testy, wykonaj `busted` w terminalu. Przykładowe wyjście dla udanego testu wyglądałoby tak:
+
 ```
-●●
-2 successes / 0 failures / 0 errors / 0 pending : 0.0 seconds
+●
+1 sukces / 0 porażek / 0 błędów / 0 oczekujących : 0.002 sekundy
 ```
 
-## Deep Dive:
-Lua nie zawsze miała narzędzia do testowania. Wcześniej programiści używali prostych asercji lub pisali własny kod testujący. Dostępne alternatywy to `busted`, `luassert`, czy `TestMore`. Implementacja testów zależy od potrzeb projektu i preferowanego stylu testowania (TDD, BDD).
+### Korzystanie z LuaUnit
 
-## See Also:
-- [Luassert - Assertion library for Lua](https://github.com/Olivine-Labs/luassert)
-- [LuaUnit - xUnit for Lua](https://luaunit.readthedocs.io/en/latest/)
+LuaUnit to kolejny framework do testowania, który podąża za konwencjami xUnit i jest łatwy w konfiguracji. Zainstaluj LuaUnit przez LuaRocks używając `luarocks install luaunit`. Oto jak można napisać podobny test jak wyżej z LuaUnit:
+
+```lua
+-- add.lua pozostaje bez zmian
+
+-- test_add.lua
+luaunit = require('luaunit')
+local add = require('add')
+
+function testAdd()
+  luaunit.assertEquals(add(2, 3), 5)
+end
+
+os.exit(luaunit.LuaUnit.run())
+```
+
+Uruchomienie tego skryptu bezpośrednio za pomocą Lua (`lua test_add.lua`) wyświetli coś takiego:
+
+```
+.
+Uruchomiono 1 test w 0.001 sekundy, 1 sukces, 0 porażek
+```
+
+Zarówno Busted, jak i LuaUnit oferują obszerne funkcje do radzenia sobie z różnymi scenariuszami testowymi, w tym mokowanie, szpiegowanie i testowanie asynchroniczne. Wybór między nimi zależy od konkretnych potrzeb projektu i osobistych preferencji dotyczących składni i funkcjonalności.

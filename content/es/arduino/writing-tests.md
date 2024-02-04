@@ -1,46 +1,64 @@
 ---
 title:                "Escribiendo pruebas"
-date:                  2024-01-19
+date:                  2024-02-03T19:29:29.588196-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Escribiendo pruebas"
-
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/arduino/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## ¿Qué es y por qué?
-Escribir pruebas en programación significa crear pequeñas verificaciones para tu código. Los programadores las usan para asegurarse de que su código funciona correctamente y para evitar futuros errores tras cambios o actualizaciones.
+## ¿Qué y por qué?
 
-## Cómo hacerlo:
-No hay un framework de pruebas unitarias incluido en el entorno de desarrollo de Arduino, pero puedes hacer pruebas manuales con código simple. Por ejemplo, para probar una función que suma dos números:
+Escribir pruebas en el entorno de Arduino se refiere al proceso de crear pruebas automatizadas que validan la funcionalidad de tu código en dispositivos Arduino. Los programadores lo hacen para asegurarse de que su código funciona como se espera, reduce errores y mejora la calidad de sus proyectos, especialmente crucial en sistemas embebidos donde la depuración puede ser más desafiante.
 
-```arduino
+## Cómo:
+
+Arduino no tiene un marco de pruebas integrado como algunos otros entornos de programación. Sin embargo, puedes usar bibliotecas de terceros como `AUnit` para la prueba unitaria del código Arduino. AUnit está inspirado en la biblioteca integrada de Arduino, `ArduinoUnit`, y el marco de pruebas de Google, `Google Test`.
+
+### Ejemplo con AUnit:
+
+Primero, instala AUnit a través del Administrador de Bibliotecas en el IDE de Arduino: ve a Sketch > Incluir Biblioteca > Administrar Bibliotecas... > busca AUnit e instálalo.
+
+Luego, puedes escribir pruebas de la siguiente manera:
+
+```cpp
+#include <AUnit.h>
+
+test(ledPinHigh) {
+  const int ledPin = 13;
+  pinMode(ledPin, SALIDA);
+  digitalWrite(ledPin, ALTO);
+  assertTrue(digitalRead(ledPin));
+}
+
+test(ledPinLow) {
+  const int ledPin = 13;
+  pinMode(ledPin, SALIDA);
+  digitalWrite(ledPin, BAJO);
+  assertFalse(digitalRead(ledPin));
+}
+
 void setup() {
   Serial.begin(9600);
-  int resultado = sumar(5, 3);
-  Serial.print("Resultado: ");
-  Serial.println(resultado);
+  aunit::TestRunner::run();
 }
 
 void loop() {
-  // Aquí va el código que queremos ejecutar continuamente.
-}
-
-int sumar(int a, int b) {
-  return a + b;
+  // Vacío
 }
 ```
+Después de subir esta prueba a tu placa Arduino, abre el Monitor Serial para ver los resultados de la prueba. Deberías ver una salida que indica si cada prueba pasó o falló:
 
-Salida esperada en el Serial Monitor:
 ```
-Resultado: 8
+TestRunner comenzó en 2 prueba(s).
+Test ledPinHigh pasó.
+Test ledPinLow pasó.
+Duración de TestRunner: 0.002 segundos.
+Resumen de TestRunner: 2 pasaron, 0 fallaron, 0 omitidos, 0 agotaron el tiempo, de un total de 2 prueba(s).
 ```
 
-## Profundizando
-En el contexto histórico, Arduino no se diseñó con un enfoque en pruebas unitarias debido a la limitación de recursos en microcontroladores. Alternativas para pruebas más complejas incluyen simular el Arduino en un PC o usar librerías como `ArduinoUnit`. La implementación de pruebas requiere una mezcla de seguimiento manual y automatización cuidadosamente planificada para ser efectiva en sistemas embebidos.
-
-## Ver también
-- ArduinoUnit library: https://github.com/Arduino-CI/ArduinoUnit
-- Información sobre cómo simular Arduino en tu computador: https://www.sites.google.com/site/unoardusim/home
-- Fundamentos de pruebas de software para no iniciados: https://www.pluralsight.com/courses/software-testing-fundamentals
+Este ejemplo simple demuestra el uso de AUnit para probar el estado de un pin de LED. Al crear pruebas, confirmas que tu Arduino se comporta como se espera en diferentes condiciones. Con AUnit, puedes escribir pruebas más complejas, suites de pruebas y disfrutar de características como tiempos de espera de pruebas y procedimientos de configuración/desmontaje para escenarios más avanzados.

@@ -1,50 +1,58 @@
 ---
-title:                "字符串首字母大写"
-date:                  2024-01-19
-simple_title:         "字符串首字母大写"
-
+title:                "字符串大写化"
+date:                  2024-02-03T19:05:26.316284-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "字符串大写化"
 tag:                  "Strings"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/haskell/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## 什么 & 为什么？
-字符串大写化指的是将字符串中的字母转换为大写形式。程序员这样做，是为了统一数据格式、提升可读性或满足特定编程需求。
+将字符串的首字母转换为大写，同时确保其余字母保持小写，这一过程被称为字符串首字母大写。程序员这样做是为了格式化输出、遵循文本中的语法正确性或改善生成数据的可读性。
 
-## 如何：
-让我们来看看Haskell中如何将字符串大写化的例子：
+## 如何操作：
+在 Haskell 中，你可以使用标准库来实现字符串首字母大写，无需任何第三方库。
 
-```Haskell
+```haskell
+import Data.Char (toUpper, toLower)
+
+capitalize :: String -> String
+capitalize "" = ""
+capitalize (head:tail) = toUpper head : map toLower tail
+
+-- 示例用法：
+main = putStrLn $ capitalize "hello world"
+```
+
+输出：
+```
+Hello world
+```
+
+对于更复杂的场景或为了使用上的便利，你可能会想要使用第三方库，如 `text`，它因在 Haskell 中高效的字符串操作而受欢迎。
+
+首先，你需要将 `text` 添加到项目的依赖中。然后，你可以按如下方式使用其函数来实现字符串首字母大写：
+
+```haskell
+import qualified Data.Text as T
 import Data.Char (toUpper)
 
-capitalize :: String -> String
-capitalize = map toUpper
+capitalizeText :: T.Text -> T.Text
+capitalizeText text = case T.uncons text of
+    Nothing -> T.empty
+    Just (first, rest) -> T.cons (toUpper first) (T.toLower rest)
 
-main :: IO ()
-main = putStrLn $ capitalize "hello, world!"
+-- 使用 text 库的示例用法：
+main = putStrLn $ T.unpack $ capitalizeText (T.pack "hello world")
 ```
 
-运行上述代码会输出：
-
+输出：
 ```
-HELLO, WORLD!
-```
-
-## 深入探索
-在历史上，字符串的大写化是早期打字机和电脑使用的一种方式，用于突出文本或指示标题。在Haskell中，`Data.Char`模块中的`toUpper`函数能够实现该功能，它适用于任何Unicode字符。
-
-除了`map toUpper`以外，也有其他方法可以实现字符串的大写化，比如使用列表推导式：
-
-```Haskell
-capitalize :: String -> String
-capitalize str = [toUpper char | char <- str]
+Hello world
 ```
 
-在实际应用中，大写转换函数需要考虑效率和国际化问题。例如，不同语言中字符大写的规则可能不同，这就需要更复杂的逻辑来处理特殊情况。
-
-## 参见
-- Haskell `Data.Char` 模块文档：https://hackage.haskell.org/package/base-4.16.1.0/docs/Data-Char.html
-- Wikipedia 对 Unicode 和字符大写化的解释：https://en.wikipedia.org/wiki/Unicode
-- Stack Overflow 上有关Haskell字符串大写化的讨论：https://stackoverflow.com/search?q=haskell+capitalize+string
+这两个例子都展示了在 Haskell 中使用或不使用第三方库来实现字符串首字母大写的简单而有效的方法。

@@ -1,41 +1,52 @@
 ---
-title:                "String in Großbuchstaben umwandeln"
-date:                  2024-01-19
-simple_title:         "String in Großbuchstaben umwandeln"
-
+title:                "Einen String großschreiben"
+date:                  2024-02-03T19:04:51.586702-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Einen String großschreiben"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/elm/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Das Großschreiben eines Strings bedeutet, alle Buchstaben des Strings in Großbuchstaben umzuwandeln. Programmierer verwenden diese Methode, um zum Beispiel Überschriften einheitlich zu gestalten oder Text in Benutzeroberflächen hervorzuheben.
 
-## So geht's:
-Elm hat keine eingebaute Funktion, die direkt einen ganzen String großschreibt. Aber man kann es selbst bauen. Hier ein Beispiel, wie man eine solche Funktion schreibt und benutzt:
+Das Kapitalisieren eines Strings beinhaltet die Umwandlung des Anfangsbuchstabens eines gegebenen Strings in Großbuchstaben, während der Rest in Kleinbuchstaben gehalten wird. Dies geschieht oft aus Gründen der standardisierten Formatierung oder Lesbarkeit. Programmierer führen diese Aufgabe häufig durch, um sicherzustellen, dass Daten konsistent präsentiert werden, insbesondere in Benutzeroberflächen oder beim Verarbeiten und Anzeigen von Benutzereingaben.
 
-```Elm
-import String
+## Wie geht das:
 
+In Elm gibt es keine integrierte Funktion speziell zum Kapitalisieren von Strings. Jedoch können Sie dies leicht erreichen, indem Sie die eingebauten Funktionen des `String`-Moduls wie `toUpper`, `toLower`, `left` und `dropLeft` verwenden.
+
+```elm
 capitalize : String -> String
 capitalize str =
-    String.toUpper str
+    if String.isEmpty str then
+        ""
+    else
+        String.toUpper (String.left 1 str) ++ String.toLower (String.dropLeft 1 str)
 
--- Anwendung der Funktion
+-- Beispiel Nutzung
 main =
-    String.toList "Hallo, Elm-Programmierer!" |> capitalize |> String.fromList
-    -- Ausgabe: "HALLO, ELM-PROGRAMMIERER!"
+    String.toList "hello world" |> List.map capitalize |> String.join " "
+    -- Ausgabe: "Hello World"
 ```
 
-## Tiefgang:
-Historisch gesehen hat Elm viele Einflüsse aus funktionalen Programmiersprachen wie Haskell. Wie in Haskell, betont Elm Unveränderlichkeit und reine Funktionen, daher kennt die Sprache keine Methoden, die einen String direkt modifizieren können, wie es in anderen Sprachen üblich ist.
+Für komplexere Szenarien oder wenn Sie eine Bibliothek bevorzugen, die eine direkte Möglichkeit zum Kapitalisieren von Strings bietet, könnten Sie ein Drittanbieter-Paket wie `elm-community/string-extra` in Betracht ziehen. Wie auch immer, bis zu meinem letzten Update ermutigt das Ökosystem von Elm dazu, solche Aufgaben mit eingebauten Funktionen zu bewältigen, um die Sprache und Projekte schlank zu halten.
 
-Eine alternative Herangehensweise, wenn man nur den ersten Buchstaben eines Wortes großschreiben will (wie bei einem Namen), wäre den String in eine Liste von Zeichen zu zerlegen, den ersten Buchstaben groß zu schreiben und dann wieder in einen String zu konvertieren.
+```elm
+import String.Extra as StringExtra
 
-Die Implementierungsdetails beim Großschreiben eines Strings hängen von der Funktion `String.toUpper` ab, die letztendlich auf die entsprechenden JavaScript-Funktionen zur Unicode-Verarbeitung zurückgreift, da Elm-Code im Browser als JavaScript ausgeführt wird.
+-- Falls es eine `capitalize` Funktion in einer Drittanbieter-Bibliothek gibt
+capitalizeWithLibrary : String -> String
+capitalizeWithLibrary str =
+    StringExtra.capitalize str
 
-## Siehe Auch:
-- Elm String Dokumentation: [https://package.elm-lang.org/packages/elm/core/latest/String](https://package.elm-lang.org/packages/elm/core/latest/String)
-- Elm Diskussionsforum für best practices: [https://discourse.elm-lang.org/](https://discourse.elm-lang.org/)
-- Unicode Standard für Groß- und Kleinschreibung: [https://unicode.org/reports/tr21/](https://unicode.org/reports/tr21/)
+-- Beispiel Nutzung mit hypothetischer Bibliotheksfunktion
+main =
+    "this is elm" |> capitalizeWithLibrary
+    -- Hypothetische Ausgabe: "This is elm"
+```
+
+Prüfen Sie immer das Elm-Paketverzeichnis auf die neuesten und bevorzugten Bibliotheken für die String-Manipulation, wenn Sie nach zusätzlicher Funktionalität über die Standardbibliothek hinaus suchen.

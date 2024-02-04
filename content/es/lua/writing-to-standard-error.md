@@ -1,35 +1,52 @@
 ---
 title:                "Escribiendo en el error estándar"
-date:                  2024-01-19
+date:                  2024-02-03T19:33:41.656539-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Escribiendo en el error estándar"
-
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/lua/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
-Escribir en el error estándar (stderr) permite separar la información de error de la salida normal. Los programadores usan esto para depurar y registrar errores sin interrumpir el flujo regular.
+Escribir en el error estándar (stderr) se trata de dirigir mensajes de error y salidas de diagnóstico a un canal separado, distinto de la salida estándar (stdout). Los programadores hacen esto para diferenciar los resultados regulares del programa de la información de error, simplificando los procesos de depuración y registro.
 
 ## Cómo hacerlo:
-```Lua
--- Para enviar un mensaje de error
-io.stderr:write("Ha ocurrido un error\n")
+En Lua, se puede lograr escribir en stderr utilizando la función `io.stderr:write()`. Así es como puedes escribir un simple mensaje de error en el error estándar:
 
--- Ejemplo más complejo con assert
-local archivo, err = io.open("archivo_inexistente.txt", "r")
-assert(archivo, "Error al abrir el archivo: " .. tostring(err))
+```lua
+io.stderr:write("Error: Entrada inválida.\n")
 ```
 
-Salida de muestra al ejecutar el código anterior (suponiendo que el archivo no existe):
-```
-Error al abrir el archivo: archivo_inexistente.txt: No such file or directory
+Si necesitas sacar una variable o combinar múltiples piezas de datos, concaténalas dentro de la función write:
+
+```lua
+local errorMessage = "Entrada inválida."
+io.stderr:write("Error: " .. errorMessage .. "\n")
 ```
 
-## Análisis Profundo:
-Antes, en versiones antiguas de Lua, `io.stderr` no existía y se usaban otros métodos como `os.execute()` para manejar los errores. Hoy en día, `io.stderr` es la forma estándar y directa de escribir en stderr. A diferencia de la salida estándar (stdout), lo escrito en stderr se muestra incluso cuando stdout es redirigido.
+**Salida de muestra en stderr:**
+```
+Error: Entrada inválida.
+```
 
-## Ver También:
-- Documentación oficial de Lua: [io library](https://www.lua.org/manual/5.4/manual.html#6.8)
-- Guía sobre manejo de errores en Lua: [Programming in Lua (Fourth edition)](https://www.lua.org/pil/contents.html)
+Para escenarios más complejos, o cuando se trabaja con aplicaciones más grandes, podrías considerar bibliotecas de registro de terceros como LuaLogging. Con LuaLogging, puedes dirigir los registros a diferentes destinos, incluyendo stderr. Aquí tienes un breve ejemplo:
+
+Primero, asegúrate de que LuaLogging esté instalado usando LuaRocks:
+
+```
+luarocks install lualogging
+```
+
+Luego, para escribir un mensaje de error en stderr usando LuaLogging:
+
+```lua
+local logging = require("logging")
+local logger = logging.stderr()
+logger:error("Error: Entrada inválida.")
+```
+
+Este enfoque ofrece la ventaja de un registro estandarizado en toda tu aplicación, con la flexibilidad adicional de establecer niveles de registro (por ejemplo, ERROR, ADVERTENCIA, INFORMACIÓN) a través de una API sencilla.

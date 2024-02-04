@@ -1,31 +1,58 @@
 ---
-title:                "Kirjoittaminen vakiovirheeseen"
-date:                  2024-01-19
-simple_title:         "Kirjoittaminen vakiovirheeseen"
-
+title:                "Kirjoittaminen standardivirheeseen"
+date:                  2024-02-03T19:33:42.557424-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Kirjoittaminen standardivirheeseen"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/javascript/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Standard error on virheiden ja lokiviestien streami. Koodaajat käyttävät sitä raportoimaan ohjelman suorituksen aikaisia ongelmia ilman, että se sekoittuu pääohjelman tulosteeseen.
+## Mikä & Miksi?
+Standardivirheeseen (stderr) kirjoittaminen JavaScriptillä tarkoittaa virheilmoitusten tai minkä tahansa kriittisen tiedon ohjaamista tiettyyn, erilliseen virtaan, mikä on erityisen hyödyllistä Unix-tyyppisissä ympäristöissä lokiin kirjaamisen ja virheenkorjauksen kannalta. Ohjelmoijat tekevät näin erottaakseen normaalin ohjelman tulosteen virheilmoituksista, mahdollistaen selkeämmän tulostuksen hallinnan ja helpomman virheiden seurannan.
 
-## How to:
+## Miten:
+Node.js:ssä stderriin kirjoittaminen voidaan saavuttaa käyttämällä `console.error()`-metodia tai kirjoittamalla suoraan `process.stderr`iin. Tässä esimerkit molemmista lähestymistavoista:
+
+```javascript
+// Käyttäen console.error()
+console.error('Tämä on virheviesti.');
+
+// Kirjoittaen suoraan process.stderriin
+process.stderr.write('Tämä on toinen virheviesti.\n');
 ```
-// Kirjoittaminen standard erroriin Javascriptillä
-console.error('Tapahtui virhe!');
 
-// Esimerkkituloste konsolissa:
-// Tapahtui virhe!
+Molemman menetelmän tuloste näkyy stderr-virrassa, sekoittumatta stdoutiin:
+```
+Tämä on virheviesti.
+Tämä on toinen virheviesti.
 ```
 
-## Deep Dive
-Historiallisesti standard error (stderr) erotettiin standard outputista (stdout), jotta virheet saatiin käsiteltyä eri tavoin. Javascriptissä `console.error()` näyttää lähetetyn viestin stderr-virrassa. Tämä on lineäärinen tapa välittää virhesanomia, mutta näppärä väline kehitysvaiheessa. Vaihtoehtoisesti voit kirjoittaa lokitiedoston tai käyttää kolmannen osapuolen kirjastoja, kuten Winston tai Bunyan, jotka tarjoavat monipuolisempaa lokinhallintaa.
+Monimutkaisempiin tai sovelluskohtaisiin lokitustarpeisiin monet JavaScript-ohjelmoijat käyttävät kolmansien osapuolten kirjastoja, kuten `winston` tai `bunyan`. Tässä pikainen esimerkki käyttäen `winston`:
+ 
+Ensin asenna `winston` npm:n kautta:
+```shell
+npm install winston
+```
 
-## See Also
-- MDN Web Docs, Console API: https://developer.mozilla.org/en-US/docs/Web/API/Console/error
-- Node.js, Console Class: https://nodejs.org/api/console.html#console_console_error_data_args
+Sitten konfiguroi `winston` kirjaamaan virheet stderriin:
+```javascript
+const winston = require('winston');
 
-Useissa ympäristöissä `console.error` voi olla mukautettavissa ja kytkettävissä osaksi laajempaa lokinhallintaa, mutta standardikäyttö konsoliin kirjoittamiseen on edelleen yleinen ja käyttökelpoinen.
+const logger = winston.createLogger({
+  levels: winston.config.syslog.levels,
+  transports: [
+    new winston.transports.Console({
+      stderrLevels: ['error']
+    })
+  ]
+});
+
+// Kirjaten virheviestin
+logger.error('Virhe kirjattu winstonin kautta.');
+```
+
+Tämä asetus varmistaa, että kun loggaat virheen käyttäen `winston`ia, se ohjautuu stderriin, auttaen ylläpitämään selvää eroa normaalin ja virhetulosteen välillä.

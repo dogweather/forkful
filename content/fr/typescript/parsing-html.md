@@ -1,53 +1,63 @@
 ---
-title:                "Analyse syntaxique de HTML"
-date:                  2024-01-20T15:34:24.432021-07:00
-simple_title:         "Analyse syntaxique de HTML"
-
+title:                "Analyse Syntaxique du HTML"
+date:                  2024-02-03T19:13:11.716447-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Analyse Syntaxique du HTML"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/typescript/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-# TypeScript: Parsing HTML Simplifié
+## Quoi et pourquoi ?
 
-## What & Why? (Quoi et Pourquoi ?)
-Le parsing HTML, c'est lire et comprendre le code HTML en utilisant un programme. On le fait pour extraire des données, manipuler le contenu, et interagir avec des pages web depuis nos applications.
+Parser du HTML signifie fouiller dans le code HTML pour trouver, extraire ou manipuler des informations. Les programmeurs le font pour interagir avec le contenu web—peut-être en grattant des données, ou en automatisant des navigateurs.
 
-## How to: (Comment faire :)
-Imaginez que l'on veut extraire le titre d'une page web. Avec TypeScript, on utilise souvent la librairie `node-html-parser`. Installons et utilisons-la :
+## Comment faire :
 
-```TypeScript
-import { parse } from 'node-html-parser';
+Pour commencer, installez une bibliothèque comme `node-html-parser`. Voici la commande de terminal :
 
-async function getTitle(html: string): Promise<string> {
-  const root = parse(html);
-  const title = root.querySelector('title')?.textContent;
-  return title || 'Titre non trouvé';
-}
-
-// Utilisation exemple
-const htmlContent = '<!DOCTYPE html><html><head><title>Page Exemple</title></head></html>';
-getTitle(htmlContent).then(title => console.log(title)); // Affiche: Page Exemple
-```
-
-Installation nécessaire:
 ```bash
 npm install node-html-parser
 ```
 
-## Deep Dive (Plongée en profondeur)
-Historiquement, le parsing HTML nécessitait des méthodes complexes et non standardisées. Avec l'évolution de JavaScript et TypeScript, des librairies modernes comme `node-html-parser` simplifient la tâche. Par rapport à `DOMParser` (le choix natif du navigateur), `node-html-parser` est plus flexible et fonctionne aussi côté serveur (Node.js).
+Maintenant, analysons un peu de HTML basique en TypeScript :
 
-On trouve d'autres options comme `cheerio` pour qui préfère une syntaxe proche de jQuery, ou `jsdom` pour simuler un DOM complet en dehors du navigateur.
+```typescript
+import { parse } from 'node-html-parser';
 
-Les détails d'implémentation incluent la gestion de l'encodage des caractères, les nuances du DOM, et le respect des spécifications HTML5 pour ne pas introduire de vulnérabilités XSS (Cross-Site Scripting) lors de manipulations.
+const html = `<ul class="fruits">
+                <li>Pomme</li>
+                <li>Banane</li>
+              </ul>`;
 
-## See Also (Voir également)
-- Documentation de `node-html-parser`: [github.com/taoqf/node-html-parser](https://github.com/taoqf/node-html-parser)
-- Comparaison des librairies de parsing HTML en Node.js: 
-  [www.npmjs.com/search?q=html+parser](https://www.npmjs.com/search?q=html+parser)
-- Spécifications de l'HTML5 concernant le parsing: 
-  [html.spec.whatwg.org/multipage/parsing.html](https://html.spec.whatwg.org/multipage/parsing.html)
-- Informations sur les vulnérabilités XSS: 
-  [owasp.org/www-community/attacks/xss/](https://owasp.org/www-community/attacks/xss/)
+const root = parse(html);
+console.log(root.querySelector('.fruits').textContent);  // "Pomme Banane"
+```
+
+Et si vous voulez juste saisir les bananes :
+
+```typescript
+const bananas = root.querySelectorAll('li')[1].textContent;
+console.log(bananas);  // "Banane"
+```
+
+## Plongée profonde
+
+Parser du HTML n'est pas nouveau—cela existe depuis les premiers jours du web. Initialement, les développeurs auraient pu utiliser des expressions régulières, mais cela est devenu compliqué rapidement. Entrez le DOM Parser : stable, mais lié au navigateur.
+
+Des bibliothèques comme `node-html-parser` éliminent la douleur. Elles vous permettent d'interroger le HTML comme vous le feriez avec jQuery, mais côté serveur avec Node.js. C'est rapide, tolérant au HTML sale, et sympathique au DOM.
+
+Il y a aussi `jsdom`, simulant un environnement de navigateur entier. C'est plus lourd mais plus complet, créant un modèle d'objet de document (DOM) complet pour la manipulation et l'interaction.
+
+N'oublions pas Cheerio, non plus. Il mélange la vitesse avec une syntaxe similaire à jQuery et une empreinte plus petite, se positionnant heureusement entre les deux.
+
+## Voir aussi
+
+Si vous avez soif de plus, plongez dans ceux-ci :
+- [Spécification W3C de l'analyse et de la sérialisation du DOM](https://www.w3.org/TR/DOM-Parsing/)
+- [node-html-parser sur GitHub](https://github.com/taoqf/node-html-parser)
+- [Dépôt GitHub jsdom](https://github.com/jsdom/jsdom)
+- [Site Web Cheerio](https://cheerio.js.org/)

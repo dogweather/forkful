@@ -1,45 +1,87 @@
 ---
 title:                "Skriva tester"
-date:                  2024-01-19
+date:                  2024-02-03T19:30:39.427792-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Skriva tester"
-
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/fish-shell/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Tester ser till att din kod funkar som den ska. De förebygger fel och sparar tid under utveckling och underhåll.
 
-## Hur till:
-För att skriva och köra tester i Fish Shell, kan vi använda `fisher` för att installera ramverket `Fishtape`. Här är ett exempel:
+Att skriva tester i Fish Shell innebär att skapa skript som automatiskt kör din kod för att validera dess beteende mot förväntade resultat. Denna praxis är avgörande eftersom den säkerställer att dina shellskript fungerar som avsett, fångar fel tidigt och gör underhåll enklare.
 
-```Fish Shell
-fisher install jorgebucaran/fishtape
+## Hur:
 
-# Testfil: example_test.fish
-function test_addition -S
-    echo $((2 + 2)) | grep -q '4'
-    and return 0
-    or return 1
+Fish har inte ett inbyggt testramverk som vissa andra programmeringsmiljöer. Du kan dock skriva enkla testskript som använder påståenden för att kontrollera funktionernas beteende. Dessutom kan du utnyttja tredjepartsverktyg som `fishtape` för en mer omfattande testsamling.
+
+### Exempel 1: Grundläggande Testskript
+
+Låt oss börja med en grundläggande funktion i Fish som beräknar summan av två tal:
+
+```fish
+function add --description 'Lägg till två nummer'
+    set -l sum (math $argv[1] + $argv[2])
+    echo $sum
+end
+```
+
+Du kan skriva ett grundläggande testskript för denna funktion så här:
+
+```fish
+function test_add
+    set -l resultat (add 3 4)
+    if test $resultat -eq 7
+        echo "test_add lyckades"
+    else
+        echo "test_add misslyckades"
+    end
 end
 
-# Kör testet
-fishtape example_test.fish
+test_add
 ```
 
-Förväntad utskrift:
+När du kör detta skript skulle utdatan bli:
+
+```
+test_add lyckades
+```
+
+### Exempel 2: Använda Fishtape
+
+För en mer robust testlösning kan du använda `fishtape`, en TAP-producera testkörare för Fish.
+
+Först, installera `fishtape` om du inte redan har gjort det:
+
+```fish
+fisher install jorgebucaran/fishtape
+```
+
+Nästa, skapa en testfil för din `add` funktion, t.ex., `add_test.fish`:
+
+```fish
+test "Att lägga till 3 och 4 ger 7"
+    set resultat (add 3 4)
+    echo "$resultat" | fishtape
+end
+```
+
+För att köra testet, använd följande kommando:
+
+```fish
+fishtape add_test.fish
+```
+
+Exempel på utdata kan se ut som:
+
 ```
 TAP version 13
-ok 1 test_addition
-1..1
+# Att lägga till 3 och 4 ger 7
+ok 1 - test_add lyckades
 ```
 
-## Djupdykning
-Fishtape startades 2015 och är inspirerat av TAP (Test Anything Protocol). Alternativ för Fish-skripttestning är begränsade jämfört med andra skal. Tester körs normalt på isolerade miljöer för att inte påverka din nuvarande session.
-
-## Se Även
-- Fish Shell officiella websida: [https://fishshell.com](https://fishshell.com)
-- Fishtape på GitHub: [https://github.com/jorgebucaran/fishtape](https://github.com/jorgebucaran/fishtape)
-- `fisher` plugin manager: [https://github.com/jorgebucaran/fisher](https://github.com/jorgebucaran/fisher)
+Detta meddelar dig att testet lyckades. `fishtape` möjliggör strukturering av mer detaljerade tester och ger informativ utdata, vilket underlättar felsökning och omfattande testtäckning för dina Fish-skript.

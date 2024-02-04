@@ -1,42 +1,52 @@
 ---
 title:                "Säännöllisten lausekkeiden käyttö"
-date:                  2024-01-19
+date:                  2024-02-03T19:18:43.594163-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Säännöllisten lausekkeiden käyttö"
-
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/typescript/using-regular-expressions.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-"Mitä ja Miksi?"
-Käytämme säännöllisiä lausekkeita tekstin hakuun ja manipulointiin. Ne säästävät aikaa ja vaivaa kun tarvitsemme suodattaa, etsiä tai korvata tekstiä koodissa.
+## Mitä & Miksi?
+Säännölliset lausekkeet eli regex ovat tehokas mallin vastaavuuden etsimisen ja hakemisen työkalu ohjelmoinnissa. Ohjelmoijat käyttävät regexiä tehtäviin kuten käyttäjän syötteen validointiin, tekstin etsimiseen tai merkkijonojen manipulointiin, koska se on tehokasta ja monipuolista.
 
-## How to:
-"Kuinka:"
-```TypeScript
-// Etsitään sanoja, jotka alkavat 'p' kirjaimella.
-let pattern = /\bp\w+/g;
-let text = "programming in TypeScript is pretty fun";
-let matches = text.match(pattern);
-console.log(matches); // Tulostuu: ['programming', 'pretty']
-```
+## Kuinka:
+
+Sukelletaan TypeScriptiin ja katsotaan, miten regexiä käytetään yleisiin tehtäviin.
 
 ```TypeScript
-// Korvataan kaikki numerot tähdillä.
-let digitPattern = /\d+/g;
-let input = "Yhdeksänkymmentä9 kakkosta2";
-let output = input.replace(digitPattern, '*');
-console.log(output); // Tulostuu: "Yhdeksänkymmentä* kakkosta*"
+// Määritellään sähköpostiosoitteen regex-malli
+const emailPattern = /\S+@\S+\.\S+/;
+
+// Testataan, vastaako merkkijono sähköpostimallia
+const email = "user@example.com";
+console.log(emailPattern.test(email)); // Tuloste: true
+
+// Etsitään ja korvataan numerot merkkijonosta
+const replaceDigits = "Item 25 costs $30".replace(/\d+/g, '#');
+console.log(replaceDigits); // Tuloste: "Item # costs $#"
+
+// Tiettyjen osien erottaminen merkkijonosta käyttäen kaappausryhmiä
+const data = "April 10, 2021";
+const datePattern = /(\w+) (\d+), (\d+)/;
+const [, month, day, year] = datePattern.exec(data) || [];
+console.log(month, day, year); // Tuloste: "April" "10" "2021"
 ```
 
-## Deep Dive
-"Sukellus syvyyksiin"
-Säännölliset lausekkeet ovat syntyneet 1950-luvulla matemaatikko Stephen Kleenen töiden pohjalta. JavaScriptin säännölliset lausekkeet perustuvat Perl-kielen standardiin. Vaihtoehtoja säännöllisille lausekkeille voivat olla merkkijonojen sisäänrakennetut metodit, kuten `.indexOf` tai `.startsWith`, mutta ne eivät ole yhtä joustavia. TypeScript toteuttaa säännölliset lausekkeet pohjautuen JavaScriptin `RegExp`-objektiin.
+## Syväsukellus
 
-## See Also
-"Katso Myös"
-- [MDN Web Docs: Regular Expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
-- [RegExr: Learn, Build, & Test RegEx](https://regexr.com/)
-- [TypeScript Handbook: Everyday Types](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#type-assertions)
+1950-luvulla matemaatikko Stephen Kleene kuvasi säännöllisiä lausekkeita mallina esittämään säännöllisiä kieliä, jotka myöhemmin tulivat oleellisiksi tietojenkäsittelytieteessä. Edetessä regex on kaikkialla ohjelmoinnissa tekstin käsittelyssä.
+
+Vaikka regex on kuin linkkuveitsi merkkijono-operaatioille, ei se ole ilman vaihtoehtoja. Tehtävän monimutkaisuudesta riippuen joskus merkkijonometodit kuten `includes()`, `startsWith()`, `endsWith()` tai jopa jäsentäminen kirjaston avulla voivat olla parempia. Esimerkiksi monimutkaisen JSON-merkkijonon jäsentäminen regexin avulla voi olla painajainen – käytä sen sijaan JSON-jäsentäjää.
+
+Toteutukseen liittyen, regex JavaScriptissä ja TypeScriptissä perustuu ECMAScript-kielispesifikaatioon. Kulissien takana moottorit käyttävät tilakoneita tehokkaaseen mallien vastaavuuteen. On huomionarvoista, että regex-operaatiot voivat olla kalliita suorituskyvyn kannalta, erityisesti huonosti kirjoitettujen mallien kanssa – varo "katastrofaalista takaisinkytkentää".
+
+## Katso Myös
+
+- MDN Web Docs säännöllisistä lausekkeista: [MDN Säännölliset Lausekkeet](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
+- Regex101: Työkalu testata ja debugata regex-malleja [Regex101](https://regex101.com/)
+- "Mastering Regular Expressions" -kirja syvälliseen ymmärrykseen: [O'Reilly](https://www.oreilly.com/library/view/mastering-regular-expressions/0596528124/)

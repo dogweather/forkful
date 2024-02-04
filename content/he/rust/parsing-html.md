@@ -1,63 +1,63 @@
 ---
-title:                "ניתוח HTML"
-date:                  2024-01-20T15:33:54.229003-07:00
-simple_title:         "ניתוח HTML"
-
+title:                "פיענוח HTML"
+date:                  2024-02-03T19:13:23.123224-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "פיענוח HTML"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/rust/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## מה ולמה?
 
-Parsing HTML בעברית פירושו לפרק ולהבין קוד HTML. תכנתים עושים את זה כדי לעבד תוכן מדפי אינטרנט – לקרוא, לשנות, או לאסוף מידע מהם.
+פרסור HTML ב-Rust הוא על חילוץ נתונים ממסמכי HTML, מה שחיוני לטובת גריפת אתרים, חילוץ נתונים, או בניית זחלני אתרים. תכנתים עושים זאת כדי לאוטמט את איסוף המידע מהאינטרנט, לנתח תוכן אינטרנטי או להעביר תוכן מפלטפורמה אחת לאחרת.
 
 ## איך לעשות:
 
-שימוש בספריה `scraper`:
+כדי לפרסר HTML ב-Rust, לרוב תשתמשו ב-`scraper` crate, אשר מספק ממשק גבוה לניווט ולניפוי מסמכי HTML.
 
-```Rust
+ראשית, הוסיפו את `scraper` ל-`Cargo.toml` שלכם:
+
+```toml
+[dependencies]
+scraper = "0.12.0"
+```
+
+לאחר מכן, הנה דוגמה פשוטה שחולצת כתובות URL של קישורים ממחרוזת HTML נתונה:
+
+```rust
+extern crate scraper;
+
 use scraper::{Html, Selector};
 
 fn main() {
-    // קוד HTML לדוגמה
     let html = r#"
-        <ul>
-            <li>עגבניה</li>
-            <li>מלפפון</li>
-            <li>פלפל</li>
-        </ul>
+    <html>
+    <body>
+        <a href="http://example.com/1">Link 1</a>
+        <a href="http://example.com/2">Link 2</a>
+    </body>
+    </html>
     "#;
 
-    // פרסינג של הקוד
     let document = Html::parse_document(html);
+    let selector = Selector::parse("a").unwrap();
 
-    // יצירת בורר (selector) לפריטי הרשימה
-    let selector = Selector::parse("li").unwrap();
-
-    // איטרציה על פריטים והדפסתם
     for element in document.select(&selector) {
-        let text = element.text().collect::<Vec<_>>().join("");
-        println!("פריט: {}", text);
+        let link = element.value().attr("href").unwrap();
+        println!("מצאתי קישור: {}", link);
     }
 }
 ```
-פלט לדוגמה:
+
+פלט:
 
 ```
-פריט: עגבניה
-פריט: מלפפון
-פריט: פלפל
+מצאתי קישור: http://example.com/1
+מצאתי קישור: http://example.com/2
 ```
 
-## צלילה לעומק
-
-Parsing HTML הוא חלק מאתגר של עיבוד קודים שנוצרו לאינטרנט. בעבר, רוב הפרסינג נעשה בשפות כמו Perl, אבל היום יש ספריות בכל שפה כמעט, כולל Rust. האתגר הוא בקריאה נכונה של מבנים מורכבים וגם בעמידה בתקני האינטרנט השונים. אלטרנטיבות ל`scraper` ב-Rust כוללות את `html5ever` ו`select.rs`. כשאתה כותב קוד לפרסינג, חשוב לבדוק שזה גמיש ויכול להתמודד עם HTML פחות מובנה היטב.
-
-## ראו גם:
-
-- מסמכי הספריה `scraper`: https://docs.rs/scraper
-- תיעוד `HTML5` לפיתוח ובדיקות ב-Rust: https://github.com/servo/html5ever
-- `select.rs`, ספריה לביטויים כמו ב-jQuery: https://crates.io/crates/select
-- מערכת בדיקת ה-RFC ל-HTML כדי להבין את תקני הפרסינג: https://validator.w3.org/
+בדוגמה זו, אנו מפרסרים מסמך HTML פשוט כדי למצוא את כל האלמנטים `<a>` ולחלץ את המאפיינים `href` שלהם, מה שלמעשה מדפיס את כתובות ה-URL של כל הקישורים במסמך. הספרייה `scraper` מפשטת את פרסור HTML ובחירת אלמנטים ספציפיים באמצעות בוררי CSS, מה שהופך אותה לבחירה הנפוצה למשימות גריפת אתרים ב-Rust.

@@ -1,42 +1,93 @@
 ---
-title:                "Arbeid med YAML"
-date:                  2024-01-19
-simple_title:         "Arbeid med YAML"
-
+title:                "Arbeider med YAML"
+date:                  2024-02-03T19:26:57.944350-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Arbeider med YAML"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/typescript/working-with-yaml.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-YAML er et menneskelesbart dataformat brukt til konfigurasjon og datautveksling. Programmerere bruker YAML fordi det er enkelt å skrive og lese, og passer godt med mange programmeringsspråk inkludert TypeScript.
+## Hva & Hvorfor?
+YAML, et data serialiseringsspråk designet for å være brukervennlig, brukes ofte til konfigurasjonsfiler, mellomprosessmeldinger og datalagring. Programmerere støtter seg på YAML på grunn av dets lesbarhet og brukervennlighet, spesielt når de håndterer kompleks strukturerte data, noe som gjør det til et utmerket valg for applikasjoner utviklet i TypeScript.
 
-## How to:
-TypeScript kan jobbe med YAML ved å bruke et pakkebibliotek som `js-yaml`. Her er hvordan du leser og skriver YAML:
+## Hvordan:
+Å arbeide med YAML i TypeScript innebærer vanligvis å parse YAML-innhold til JavaScript-objekter og muligens konvertere JavaScript-objekter tilbake til YAML. Dette krever en parser; et populært valg er `js-yaml`, et bibliotek som enkelt kan integreres i TypeScript-prosjekter.
+
+### Installere js-yaml
+Først, legg til `js-yaml` i prosjektet ditt:
+
+```bash
+npm install js-yaml
+```
+
+### Parse YAML til JavaScript-objekt
+Tenk deg at du har en YAML-fil `config.yaml` med følgende innhold:
+
+```yaml
+database:
+  vert: localhost
+  port: 5432
+  brukernavn: bruker
+  passord: pass
+```
+
+Du kan lese og parse denne filen til et JavaScript-objekt som følger:
+
+```typescript
+import * as fs from 'fs';
+import * as yaml from 'js-yaml';
+
+// Last inn og parse YAML-filen
+const fileContents = fs.readFileSync('./config.yaml', 'utf8');
+const data = yaml.load(fileContents) as Record<string, any>;
+
+console.log(data);
+```
+
+**Eksempel på utskrift:**
+
+```json
+{
+  "database": {
+    "vert": "localhost",
+    "port": 5432,
+    "brukernavn": "bruker",
+    "passord": "pass"
+  }
+}
+```
+
+### Konvertere JavaScript-objekt til YAML
+Hvis du trenger å gjøre det motsatte og konvertere et JavaScript-objekt til en YAML-streng, kan du bruke `js-yaml` slik:
 
 ```typescript
 import * as yaml from 'js-yaml';
-import * as fs from 'fs';
 
-// Lese YAML fra en fil
-const doc = yaml.load(fs.readFileSync('config.yaml', 'utf8'));
-console.log(doc);
+const obj = {
+  tittel: "Eksempel",
+  er_publisert: true,
+  forfatter: {
+    navn: "Jane Doe",
+    alder: 34
+  }
+};
 
-// Skrive et JavaScript-objekt til YAML
-const data = { title: 'YAML Article', readers: ['Norwegian'] };
-fs.writeFileSync('output.yaml', yaml.dump(data));
-
-// output.yaml filen inneholder nå:
-// title: YAML Article
-// readers:
-//   - Norwegian
+const yamlStr = yaml.dump(obj);
+console.log(yamlStr);
 ```
 
-## Deep Dive
-YAML (YAML Ain't Markup Language) har eksistert siden 2001 og er et superset av JSON. Alternativer som JSON og XML brukes også, men YAMLs minimalistiske natur gir klarhet. Under kjøring konverterer TypeScript biblioteker som `js-yaml` YAML til JavaScript-objekter, hvilket tillater en sømløs integrasjon i prosjekter.
+**Eksempel på utskrift:**
 
-## See Also
-- YAML offisiell side: https://yaml.org
-- `js-yaml` GitHub-repositorium: https://github.com/nodeca/js-yaml
-- TypeScript offisiell dokumentasjon: https://www.typescriptlang.org/docs/
+```yaml
+tittel: Eksempel
+er_publisert: true
+forfatter:
+  navn: Jane Doe
+  alder: 34
+```
+
+Dette utsnittet konverterer et JavaScript-objekt til en YAML-streng og skriver den ut. I praksis kan du skrive dette tilbake til en fil eller bruke den i andre deler av applikasjonen din.

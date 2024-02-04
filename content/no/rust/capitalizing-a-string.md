@@ -1,49 +1,65 @@
 ---
-title:                "Sette streng til store bokstaver"
-date:                  2024-01-19
-simple_title:         "Sette streng til store bokstaver"
-
+title:                "Sette stor bokstav i en streng"
+date:                  2024-02-03T19:06:30.281347-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Sette stor bokstav i en streng"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/rust/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Å kapitalisere en tekststreng betyr å gjøre første bokstav i hvert ord til en stor bokstav. Programmere gjør dette for å standardisere formatering, ofte for visning av titler eller overskrifter.
 
-## Slik gjør du:
-Rusts standardbibliotek tilbyr ingen innebygd metode for å kapitalisere hver ord i en streng, men vi kan bruke `to_uppercase()` sammen med egendefinert logikk. Her er et eksempel:
+Å kapitalisere en streng i Rust innebærer å endre strengen slik at dens første bokstav er stor hvis det er en bokstav, mens resten av strengen forblir uendret. Programmerere utfører ofte denne operasjonen for formateringsformål, slik som å forberede ord for titler eller sikre konsekvens i brukerinput.
 
-```Rust
-fn capitalize_words(s: &str) -> String {
-    s.split_whitespace()
-        .map(|word| {
-            let mut chars = word.chars();
-            match chars.next() {
-                Some(first_char) => first_char.to_uppercase().collect::<String>() + chars.as_str(),
-                None => String::new(),
-            }
-        })
-        .collect::<Vec<_>>()
-        .join(" ")
+## Hvordan:
+
+For å kapitalisere en streng i Rust, har du to hovedruter: å bruke standardbibliotekfunksjoner eller å bruke tredjeparts cratest for mer komplekse eller spesifikke behov. Her er hvordan du kan gjøre begge deler.
+
+### Ved å bruke Rusts standardbibliotek
+
+Rusts standardbibliotek tilbyr ikke en direkte metode for å kapitalisere strenger, men du kan oppnå dette ved å manipulere strengens tegn.
+
+```rust
+fn kapitaliser_første(s: &str) -> String {
+    let mut c = s.chars();
+    match c.next() {
+        None => String::new(),
+        Some(f) => f.to_uppercase().collect::<String>() + c.as_str(),
+    }
 }
 
 fn main() {
-    let greeting = "hei på deg, verden!";
-    let capitalized = capitalize_words(greeting);
-    println!("{}", capitalized); // "Hei På Deg, Verden!"
+    let min_streng = "hallo";
+    println!("{}", kapitaliser_første(min_streng)); // Utdata: Hallo
 }
 ```
 
-## Dykk dypere
-Historisk sett har kapitalkonvertering av tekst vært standard praksis i typografi, brukt til å fremheve titler og navn. I mange programmeringsspråk er operasjonen tilgjengelig som en enkel funksjon. Rust, derimot, fokuserer på sikkerhet og ytelse fremfor å inkludere mange hjelpefunksjoner.
+### Ved å bruke `heck` Craten
 
-Alternativer for kapitalisering inkluderer biblioteker som `regex` for komplekse mønstergjenkjenninger, eller `unicode-segmentation` for riktig behandling av Unicode tekst.
+For en mer rett frem tilnærming, spesielt når du arbeider innenfor en større tekstbehandlingskontekst, kan du foretrekke å bruke tredjepartsbiblioteker som `heck`. `heck` craten tilbyr ulike kasusomformingsfunksjonaliteter, inkludert en enkel måte å kapitalisere strenger på.
 
-Når du implementerer en slik funksjon, er det viktig å håndtere Unicode og flerbyte-karakterer korrekt. Rust bruker UTF-8-strenger, så operasjonen håndteres på et skalerbart og internasjonalt nivå.
+Først, legg til `heck` i din `Cargo.toml`:
 
-## Se også
-- Rust Docs på `to_uppercase()`: https://doc.rust-lang.org/std/primitive.char.html#method.to_uppercase
-- Regex Crate: https://crates.io/crates/regex
-- Unicode Segmentation Crate: https://crates.io/crates/unicode-segmentation
+```toml
+[dependencies]
+heck = "0.4.0"
+```
+
+Deretter, bruk den for å kapitalisere strengen din:
+
+```rust
+extern crate heck; // Ikke nødvendig i Rust 2018 utgaven eller senere
+use heck::TitleCase;
+
+fn main() {
+    let min_streng = "hallo verden";
+    let kapitalisert = min_streng.to_title_case();
+    println!("{}", kapitalisert); // Utdata: Hallo Verden
+}
+```
+
+Merk: Metoden `to_title_case` som tilbys av `heck` kapitaliserer hvert ord i strengen, noe som kan være mer enn hva du ser etter hvis du kun ønsker den første tegnet i strengen kapitalisert. Juster bruken din i henhold til dine spesifikke behov.

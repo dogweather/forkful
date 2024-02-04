@@ -1,64 +1,87 @@
 ---
 title:                "Робота з YAML"
-date:                  2024-01-19
+date:                  2024-02-03T19:25:47.304027-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Робота з YAML"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/haskell/working-with-yaml.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Що це таке & Навіщо?
-YAML – це формат серіалізації даних, зручний для читання людиною. Програмісти використовують його для налаштувань, обміну даними та конфігурації проектів.
+## Що і чому?
 
-## Як це зробити:
-В Haskell для роботи з YAML можна використовувати бібліотеку `yaml`. Давайте перетворимо дані з/в YAML.
+YAML, скорочення від "YAML Ain't Markup Language", є зручним для людей стандартом серіалізації даних, який може бути використаний у всіх мовах програмування. Програмісти часто використовують YAML у файлах конфігурації та для обміну даними між мовами завдяки його зрозумілості та простій структурі.
 
-```Haskell
+## Як робити:
+
+Haskell не має вбудованої підтримки для обробки YAML, але ви можете використовувати сторонні бібліотеки, такі як `yaml` та `aeson`, для розбору та генерації даних YAML. Ось як ви можете розпочати:
+
+### Читання YAML
+Спочатку, додайте пакет `yaml` до залежностей вашого проекту. Потім, ви можете використовувати наступний приклад для розбору простого документа YAML:
+
+```haskell
 {-# LANGUAGE OverloadedStrings #-}
 
-import Data.Yaml
-import qualified Data.ByteString.Char8 as BS
+import Data.YAML
+import Data.ByteString (ByteString)
+import Control.Monad.IO.Class (liftIO)
 
--- Представлення наших даних в Haskell
-data Config = Config
+-- Приклад даних YAML
+yamlData :: ByteString
+yamlData = "
+name: John Doe
+age: 30
+"
+
+-- Визначаємо структуру даних, яка відповідає документу YAML
+data Person = Person
   { name :: String
-  , enableLogging :: Bool
-  , port :: Int
-  } deriving (Show, Eq)
+  , age :: Int
+  } deriving (Show)
 
--- Інстанси для автоматичного (де)серіалізування
-instance FromJSON Config where
-  parseJSON (Object v) =
-    Config <$> v .: "name"
-           <*> v .: "enableLogging"
-           <*> v .: "port"
+instance FromYAML Person where
+  parseYAML = withMap "Person" $ \m -> Person
+    <$> m .: "name"
+    <*> m .: "age"
 
-instance ToJSON Config where
-  toJSON (Config name enableLogging port) =
-    object ["name" .= name, "enableLogging" .= enableLogging, "port" .= port]
-
--- Зчитування та запис в YAML
 main :: IO ()
 main = do
-  -- Зчитування YAML з файлу
-  configData <- BS.readFile "config.yaml"
-  let decodedConfig = decodeEither' configData :: Either ParseException Config
-  print decodedConfig
-  
-  -- Запис об'єкта в YAML
-  let config = Config "Server" True 8080
-  BS.writeFile "output.yaml" (encode config)
-
+  let parsed = decode1 yamlData :: Either (Pos,String) Person
+  case parsed of
+    Left err -> putStrLn $ "Помилка при розборі YAML: " ++ show err
+    Right person -> print person
+```
+Зразок виводу для вище наведеного коду може виглядати так:
+```
+Person {name = "John Doe", age = 30}
 ```
 
-Даний код зчитує `config.yaml`, перетворює його на `Config` і друкує. Також він серіалізує `Config` і зберігає в `output.yaml`.
+### Запис YAML
+Для генерації YAML з структур даних Haskell можна використовувати функціонал кодування пакету `yaml`, як показано нижче:
 
-## Поглиблене вивчення:
-YAML виник у 2001 році як спрощення XML. В Haskell існують альтернативи: `aeson` для JSON, `tomland` для TOML. Робота з YAML у Haskell ґрунтується на швидкодії парсерів та міцній типізації.
+```haskell
+{-# LANGUAGE OverloadedStrings #-}
 
-## Дивіться також:
-- [Official YAML website](https://yaml.org)
-- [Hackage `yaml` package](https://hackage.haskell.org/package/yaml)
-- [YAML Wikipedia article](https://uk.wikipedia.org/wiki/YAML)
+import Data.YAML
+import Data.ByteString.Lazy.Char8 (unpack)
+
+-- Використовуючи структуру даних Person з попереднього прикладу
+
+person :: Person
+person = Person "Jane Doe" 25
+
+main :: IO ()
+main = do
+  let yamlData = encode1 person
+  putStrLn $ unpack yamlData
+```
+Вивід цієї програми буде рядком, відформатованим у YAML:
+```
+name: Jane Doe
+age: 25
+```
+
+Ці приклади повинні стати відправною точкою для роботи з YAML у Haskell. Залежно від ваших потреб, можливо, вам захочеться дослідити більш розширені можливості та опції, які пропонують ці бібліотеки.

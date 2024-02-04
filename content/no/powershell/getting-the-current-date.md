@@ -1,39 +1,85 @@
 ---
-title:                "Slik får du tak i dagens dato"
-date:                  2024-01-20T15:15:53.109763-07:00
-simple_title:         "Slik får du tak i dagens dato"
-
+title:                "Få dagens dato"
+date:                  2024-02-03T19:10:25.480314-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Få dagens dato"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/powershell/getting-the-current-date.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Hva & Hvorfor?
-Å hente dato betyr å få tak i dagens dato og tid. Programmerere gjør dette for å loggføre hendelser, merke data og håndtere tidsavhengige funksjoner.
+## Hva og hvorfor?
+
+Å hente dagens dato i PowerShell handler om å hente systemets nåværende dato og tid. Denne operasjonen er fundamental for oppgaver som logging, tidsoperasjoner, eller å ta avgjørelser basert på datoer. Programmerere bruker denne muligheten til å spore hendelser, planlegge oppgaver og håndtere dato-spesifikk logikk i skript og applikasjoner.
 
 ## Hvordan:
-```PowerShell
-# Få den nåværende datoen og tiden
+
+PowerShell tilbyr enkle cmdleter for å få tak i dato og klokkeslett. Cmdleten `Get-Date` er hovedverktøyet for dette formålet. Den kan returnere fullstendig dato og tid, som du kan formatere eller manipulere etter dine behov.
+
+```powershell
+# Få den nåværende datoen og klokkeslettet
 Get-Date
-
-# Resultat
-onsdag 29. mars 2023 15:42:07
-
-# Tilpass formatet
-Get-Date -Format "yyyy-MM-dd"
-# Resultat
-2023-03-29
-
-# Vis kun dagens dato, uten tid
-(Get-Date).Date
-
-# Resultat
-onsdag 29. mars 2023 00:00:00
 ```
 
-## Dypdykk
-`Get-Date` kommandoen i PowerShell kom til i de tidlige dagene av PowerShell, som en del av versjon 1.0. Den erstattet eldre metoder for tidsregistrering, som for eksempel bruk av `DateTime`-objektet i .NET. En alternativ måte å hente dato på kan være `[System.DateTime]::Now`, men `Get-Date` er mer Powershell-idiomatisk og leverer mer umiddelbare formateringsmuligheter. Når det kommer til implementasjonsdetaljer, tar `Get-Date` hensyn til tidssonen som er satt på systemet, noe som er viktig for tidsavhengige programmer.
+**Eksempelutdata:**
 
-## Se Også
-- [PowerShell DateTime dokumentasjon](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-date?view=powershell-7.1)
+```
+Tirsdag, september 5, 2023 9:46:02 AM
+```
+
+Du kan også formatere utdataene for å vise bare informasjonen du trenger, slik som bare datoen eller bare klokkeslettet.
+
+```powershell
+# Få bare dagens dato i et spesifikt format
+Get-Date -Format "yyyy-MM-dd"
+```
+
+**Eksempelutdata:**
+
+```
+2023-09-05
+```
+
+```powershell
+# Få bare det nåværende klokkeslettet
+Get-Date -Format "HH:mm:ss"
+```
+
+**Eksempelutdata:**
+
+```
+09:46:02
+```
+
+### Bruke .NET-klasse
+
+PowerShell tillater direkte tilgang til .NET-klasser, som tilbyr en alternativ måte å jobbe med datoer og klokkeslett på.
+
+```powershell
+# Bruke .NET DateTime-klassen for å få den nåværende datoen og klokkeslettet
+[System.DateTime]::Now
+```
+
+**Eksempelutdata:**
+
+```
+Tirsdag, september 5, 2023 9:46:02 AM
+```
+
+For UTC-tid:
+
+```powershell
+# Bruke .NET DateTime-klassen for å få den nåværende UTC-datoen og klokkeslettet
+[System.DateTime]::UtcNow
+```
+
+**Eksempelutdata:**
+
+```
+Tirsdag, september 5, 2023 1:46:02 PM
+```
+
+Disse kommandoene og klassene tilbyr kraftfulle og fleksible alternativer for å jobbe med datoer og tider i PowerShell, essensielt for mange skripting- og automatiseringsoppgaver.

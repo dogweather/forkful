@@ -1,44 +1,93 @@
 ---
 title:                "Trabalhando com YAML"
-date:                  2024-01-19
+date:                  2024-02-03T19:26:11.030275-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Trabalhando com YAML"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/lua/working-with-yaml.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## O que & Por quê?
-YAML é uma linguagem de serialização de dados legível por humanos, frequentemente usada em configurações de projetos e transmissão de dados entre diferentes linguagens de programação. Programadores usam YAML por sua facilidade de leitura e compatibilidade com várias tecnologias.
+## O Que & Por Quê?
+
+YAML, abreviação de "YAML Ain't Markup Language" (YAML Não é Uma Linguagem de Marcação), é um padrão de serialização de dados legível por humanos frequentemente usado para arquivos de configuração e troca de dados entre linguagens. Programadores utilizam YAML devido à sua simplicidade e legibilidade, tornando-o a escolha preferida para configurações, configurações de aplicativos diversos ou conteúdo que deve ser editável por não programadores.
 
 ## Como fazer:
-Para manipular YAML em Lua, você vai precisar de uma biblioteca como o `lyaml`. Aqui está um exemplo de como carregar e imprimir dados de um arquivo YAML:
 
-```Lua
-local lyaml = require 'lyaml'
-local file = io.open('config.yaml', 'r')
-local data = lyaml.load(file:read('*a'))
+Lua não possui suporte embutido para YAML, mas você pode trabalhar com arquivos YAML usando bibliotecas de terceiros, como `lyaml`. Esta biblioteca permite a codificação e decodificação de dados YAML com Lua. Primeiro, você precisará instalar o `lyaml` via LuaRocks, o gerenciador de pacotes do Lua:
+
+```bash
+luarocks install lyaml
+```
+
+### Decodificando YAML:
+
+Suponha que você tenha o seguinte conteúdo YAML em um arquivo chamado `config.yaml`:
+
+```yaml
+database:
+  host: localhost
+  port: 3306
+  username: usuário
+  password: senha
+```
+
+Você pode decodificar este arquivo YAML em uma tabela Lua com o seguinte código:
+
+```lua
+local yaml = require('lyaml')
+local file = io.open("config.yaml", "r")
+local content = file:read("*all")
 file:close()
 
-for key, value in pairs(data) do
-  print(key .. ": " .. tostring(value))
+local data = yaml.load(content)
+for k,v in pairs(data.database) do
+  print(k .. ": " .. v)
 end
 ```
-Se `config.yaml` for:
+
+Quando você executar este script, ele deverá produzir a saída:
+
+```output
+host: localhost
+port: 3306
+username: usuário
+password: senha
+```
+
+### Codificando YAML:
+
+Para codificar tabelas Lua no formato YAML, você utiliza a função `dump` fornecida pela `lyaml`. Considerando que você queira criar uma representação YAML da seguinte tabela Lua:
+
+```lua
+local data = {
+  website = {
+    name = "Exemplo",
+    owner = "Jane Doe",
+    metadata = {
+      creation_date = "2023-01-01",
+      tags = {"blog", "pessoal", "lua"}
+    }
+  }
+}
+
+local yaml = require('lyaml')
+local yaml_data = yaml.dump({data})
+print(yaml_data)
+```
+
+O YAML resultante será:
+
 ```yaml
-versao: 1.0
-nome: MeuProjeto
-```
-A saída será:
-```
-versao: 1.0
-nome: MeuProjeto
+- website:
+    metadata:
+      creation_date: '2023-01-01'
+      tags: [blog, pessoal, lua]
+    name: Exemplo
+    owner: Jane Doe
 ```
 
-## Mergulho Profundo:
-O YAML, criado em 2001, surgiu como uma alternativa ao XML para configurações e dados. Enquanto o JSON é uma alternativa popular devido à sua aderência ao JavaScript, o YAML é mais legível e pode representar mais complexidades, como comentários e referências. Em Lua, trabalhar com YAML geralmente envolve uma biblioteca de terceiros porque o núcleo da linguagem não tem suporte interno para YAML. 
-
-## Veja Também:
-- Documentação da biblioteca `lyaml`: [http://github.com/gvvaughan/lyaml](http://github.com/gvvaughan/lyaml)
-- Especificação YAML: [https://yaml.org/spec/1.2/spec.html](https://yaml.org/spec/1.2/spec.html)
+Seguindo esses padrões, programadores Lua podem gerenciar efetivamente dados YAML para uma variedade de aplicações. Essas operações com YAML são cruciais para o desenvolvimento de aplicações Lua versáteis que interagem suavemente com outras partes de um sistema ou diretamente com outros sistemas.

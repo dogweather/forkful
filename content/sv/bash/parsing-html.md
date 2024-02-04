@@ -1,46 +1,67 @@
 ---
 title:                "Tolka HTML"
-date:                  2024-01-20T15:30:11.843567-07:00
+date:                  2024-02-03T19:11:31.909745-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Tolka HTML"
-
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/bash/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Vad och varför?
-Parsing av HTML handlar om att extrahera specifik data från HTML-kod. Programmerare gör detta för att automatisera samlandet av information från webbsidor eller för att bearbeta innehållet.
+## Vad & Varför?
 
-## Hur man gör:
-Att parse:a HTML kan vara klurigt med Bash eftersom det inte är designat för riktigt så komplexa strukturer. Men med verktyg som `grep`, `sed`, och `awk`, kan man göra enkla extraktioner. För bättre resultat är specialiserade verktyg som `xmllint` eller `pup` att föredra.
+Att parsa HTML innebär att gå igenom strukturen och innehållet i en HTML-fil för att extrahera information. Programmerare gör det för att komma åt data, manipulera innehåll eller skrapa webbplatser.
 
-### Enkel extraktion med grep:
-```Bash
-echo '<p>Hej världen!</p>' | grep -oP '(?<=<p>).*(?=</p>)'
+## Hur man gör: 
+
+Bash är inte förstahandsvalet för att parsa HTML, men det kan göras med verktyg som `grep`, `awk`, `sed`, eller externa verktyg som `lynx`. För att vara robusta kommer vi att använda `xmllint` från `libxml2`-paketet.
+
+```bash
+# Installera xmllint om det behövs
+sudo apt-get install libxml2-utils
+
+# Exempel på HTML
+cat > sample.html <<EOF
+<html>
+<head>
+  <title>Exempelsida</title>
+</head>
+<body>
+  <h1>Hej, Bash!</h1>
+  <p id="myPara">Bash kan läsa mig.</p>
+</body>
+</html>
+EOF
+
+# Parsa Titeln
+title=$(xmllint --html --xpath '//title/text()' sample.html 2>/dev/null)
+echo "Titeln är: $title"
+
+# Extrahera stycke efter ID
+para=$(xmllint --html --xpath '//*[@id="myPara"]/text()' sample.html 2>/dev/null)
+echo "Styckets innehåll är: $para"
 ```
-Output:
-```
-Hej världen!
-```
 
-### Extrahera titel med sed:
-```Bash
-echo '<title>Min Sida</title>' | sed -n 's/.*<title>\(.*\)<\/title>.*/\1/p'
+Utdata:
 ```
-Output:
-```
-Min Sida
+Titeln är: Exempelsida
+Styckets innehåll är: Bash kan läsa mig.
 ```
 
-## Fördjupning:
-Bash-scriptning är inte idealisk för att parse:a HTML eftersom HTML inte är en regelbunden syntax och kan vara svårt att förutsäga. Historiskt sett har folk använt regex-verktyg som `grep`, `sed`, och `awk`, men dessa kan lätt krångla till det och är inte robusta lösningar.
+## Fördjupning
 
-Alternativ som `xmllint`, en del av `libxml2` paketet, ger en bättre konsekvens och säkerhet. Ett annat alternativ är `pup`, ett kommandoradsverktyg för HTML parsing inspirerad av `jq`.
+Förr i tiden använde programmerare regex-baserade verktyg som `grep` för att skanna HTML, men det var klumpigt. HTML är inte reguljärt – det är kontextuellt. Traditionella verktyg missar detta och kan vara felbenägna.
 
-I Bash är det viktigt att hålla sig till enkla parseringsscenarion, eller att överväga ett mer lämpligt programmeringsspråk som Python med bibliotek som Beautiful Soup när det krävs mer avancerad och detaljerad parsing.
+Alternativ? Massor. Python med Beautiful Soup, PHP med DOMDocument, JavaScript med DOM-parsrar – språk med bibliotek designade för att förstå HTML:s struktur.
 
-## Se även:
-- xmllint: http://xmlsoft.org/xmllint.html
-- pup: https://github.com/ericchiang/pup
-- Beautiful Soup dokumentation (för Python): https://www.crummy.com/software/BeautifulSoup/bs4/doc/
+Att använda `xmllint` i bash-skript är solid för enkla uppgifter. Det förstår XML och därmed även XHTML. Vanlig HTML kan vara oförutsägbar, dock. Den följer inte alltid XML:s strikta regler. `xmllint` tvingar HTML in i en XML-modell vilket fungerar bra för välformulerad HTML men kan snubbla på röriga saker.
+
+## Se också
+
+- [W3Schools - HTML DOM Parsare](https://www.w3schools.com/xml/dom_intro.asp): Avmystifierar HTML DOM.
+- [MDN Web Docs - Att parsa och serialisera XML](https://developer.mozilla.org/en-US/docs/Web/Guide/Parsing_and_serializing_XML): För XML-parsningsprinciper som gäller XHTML.
+- [Beautiful Soup Dokumentation](https://www.crummy.com/software/BeautifulSoup/bs4/doc/): Ett Python-bibliotek för HTML-parsning.
+- [libxml2 Dokumentation](http://xmlsoft.org/): Detaljer om `xmllint` och relaterade XML-verktyg.

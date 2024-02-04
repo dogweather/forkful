@@ -1,40 +1,70 @@
 ---
-title:                "Använda reguljära uttryck"
-date:                  2024-01-19
-simple_title:         "Använda reguljära uttryck"
-
+title:                "Att använda reguljära uttryck"
+date:                  2024-02-03T19:17:45.583477-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Att använda reguljära uttryck"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/php/using-regular-expressions.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Reguljära uttryck är mönster för att matcha textsträngar. Programmerare använder dem för sökning, ersättning och datavalidering, det sparar tid och kodrader.
 
-## Hur gör man:
-```PHP
-<?php
-// Hitta alla ord som börjar med 'b' och följs av 'at'
-$pattern = '/\bbat\b/';
-$text = "The bat went splat at the brat.";
-preg_match_all($pattern, $text, $matches);
-print_r($matches[0]);
-// Output: Array ( [0] => bat )
+Reguljära uttryck (regex) i PHP är mönster som används för att matcha teckenkombinationer i strängar, vilket möjliggör avancerade sök-och-ersätt-operationer och datavalidering. Programmerare utnyttjar regex för dess kraft och flexibilitet vid tolkning av text, validering av formulär eller skrapning av webbdata, vilket gör det till ett ovärderligt verktyg i en utvecklares arsenal.
 
-// Ersätta alla siffror med '#'
-$text = "Husnummer 123B, Lägenhet 45.";
-$replacedText = preg_replace('/\d/', '#', $text);
-echo $replacedText;
-// Output: Husnummer ###B, Lägenhet ##.
-?>
+## Hur man gör:
+
+PHP stöder reguljära uttryck genom PCRE-biblioteket (Perl Compatible Regular Expressions), som erbjuder en rik uppsättning funktioner. Så här använder du dem:
+
+### Matcha ett mönster:
+
+För att kontrollera om ett mönster finns inom en sträng, använd `preg_match()`. Denna funktion returnerar 1 om mönstret hittades i strängen och 0 om inte.
+
+```php
+if (preg_match("/\bweb\b/i", "PHP är ett skriptspråk för webben")) {
+    echo "En matchning hittades.";
+} else {
+    echo "Ingen matchning hittades.";
+}
+// Utdata: En matchning hittades.
 ```
 
-## Deep Dive
-Reguljära uttryck härstammar från teoretisk datavetenskap och formaliserades på 1950-talet. Alternativ till regex är oftast inbyggda strängfunktioner som `strpos()` eller `str_replace()`, men de är mindre kraftfulla. PHP använder PERL-stil regex-mönster, och funktioner som `preg_match` under huven använder PCRE-biblioteket (Perl Compatible Regular Expressions).
+### Hitta alla matchningar:
 
-## Se Också
-- PHP Manual on preg_match: https://www.php.net/manual/en/function.preg-match.php
-- PHP Manual on preg_replace: https://www.php.net/manual/en/function.preg-replace.php
-- Regex tester och läromaterial: https://regexr.com/
-- PCRE dokumentation: https://www.pcre.org/
+`preg_match_all()` används när du behöver hitta alla förekomster av ett mönster inom en sträng.
+
+```php
+$text = "katter och hundar";
+$pattern = "/\b([a-z]+)\b/i";
+preg_match_all($pattern, $text, $matches);
+print_r($matches[0]);
+// Utdata: Array ( [0] => katter [1] => och [2] => hundar )
+```
+
+### Ersätta text:
+
+För att ersätta text som matchar ett reguljärt uttryck används `preg_replace()`. Det är otroligt kraftfullt för formatering och rensning av data.
+
+```php
+$originalText = "15 april, 2003";
+$pattern = "/(\w+) (\d+), (\d+)/i";
+$replacement = '${1}1,$3';
+echo preg_replace($pattern, $replacement, $originalText);
+// Utdata: 151,2003
+```
+
+### Dela upp strängar:
+
+Du kan dela en sträng i en array med `preg_split()`, genom att specificera ett mönster för avgränsaren.
+
+```php
+$text = "PHP är, ett extremt populärt, skriptspråk";
+$parts = preg_split("/,\s*/", $text);
+print_r($parts);
+// Utdata: Array ( [0] => PHP är [1] => ett extremt populärt [2] => skriptspråk )
+```
+
+Förutom detta kan ramverk och bibliotek som Symfony’s `Finder`-komponent eller Laravels samling av hjälpfunktioner erbjuda ett mer bekvämt abstraktionslager för komplexa regex-mönster och uppgifter. Dock är det avgörande att förstå och använda PHP:s inbyggda PCRE-funktioner för effektiv textbehandling och validering direkt inom PHP-skript.

@@ -1,37 +1,75 @@
 ---
-title:                "CSV 파일 다루기"
-date:                  2024-01-19
-simple_title:         "CSV 파일 다루기"
-
+title:                "CSV와 함께 작업하기"
+date:                  2024-02-03T19:18:51.431508-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "CSV와 함께 작업하기"
 tag:                  "Data Formats and Serialization"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/bash/working-with-csv.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (무엇과 왜?)
-CSV(Comma-Separated Values)는 데이터를 저장하는 텍스트 형식이다. 프로그래머는 이를 이용해 데이터를 쉽게 교환하고, 다양한 프로그램에서 호환할 수 있게 사용한다.
+## 무엇 & 왜?
+Bash에서 CSV(쉼표로 구분된 값) 파일을 다루는 것은 평문 형식으로 저장된 표 형식 데이터를 처리하고 조작하는 것과 관련이 있습니다. 이는 데이터 변환, 분석, 그리고 명령 줄에서 직접 더 무거운 도구나 프로그래밍 환경 없이 작업을 자동화할 수 있기 때문에 프로그래머에게 필수적입니다.
 
-## How to: (어떻게 하나?)
-```Bash
-# CSV 파일 읽기
-while IFS=, read -r col1 col2 col3
+## 방법:
+
+**CSV 파일을 줄 단위로 읽기**
+
+```bash
+while IFS=, read -r 컬럼1 컬럼2 컬럼3
 do
-  echo "Column 1: $col1 - Column 2: $col2 - Column 3: $col3"
-done < input.csv
-
-# CSV 파일에 쓰기
-echo "data1,data2,data3" >> output.csv
-
-# 출력 예시
-Column 1: data1 - Column 2: data2 - Column 3: data3
+  echo "컬럼 1: $컬럼1, 컬럼 2: $컬럼2, 컬럼 3: $컬럼3"
+done < 예시.csv
 ```
 
-## Deep Dive (심층 탐구)
-CSV는 1972년 IBM의 포트란용 라이브러리에서 처음 등장했다. JSON, XML 같은 대안 형식들이 존재하지만, CSV는 가독성과 간결함으로 여전히 인기가 있다. Bash에서는 `cut`, `awk`, `sed` 같은 텍스트 처리 도구로 CSV를 다룰 수 있으나, 복잡한 CSV 처리에는 이러한 도구들의 한계가 있다.
+*샘플 출력:*
 
-## See Also (참조)
-- [CSV 관련 RFC 문서](https://tools.ietf.org/html/rfc4180)
-- [GNU awk 매뉴얼](https://www.gnu.org/software/gawk/manual/gawk.html)
-- [Bash scripting cheatsheet](https://devhints.io/bash)
+```
+컬럼 1: id, 컬럼 2: 이름, 컬럼 3: 이메일
+...
+```
+
+**조건에 따라 CSV 행 필터링하기**
+
+`awk`를 사용하면 쉽게 행을 필터링할 수 있습니다. 예를 들어, 두 번째 컬럼이 "Alice"인 행을 찾으려면:
+
+```bash
+awk -F, '$2 == "Alice" { print $0 }' 예시.csv
+```
+
+**컬럼 값 수정하기**
+
+두 번째 컬럼을 대문자로 변경하려면:
+
+```bash
+awk -F, 'BEGIN {OFS=",";} { $2 = toupper($2); print $0; }' 예시.csv
+```
+
+**컬럼을 기준으로 CSV 파일 정렬하기**
+
+예를 들어, 세 번째 컬럼을 기준으로 (숫자로) CSV 파일을 정렬할 수 있습니다:
+
+```bash
+sort -t, -k3,3n 예시.csv
+```
+
+**더 복잡한 작업을 위한 `csvkit` 사용하기**
+
+`csvkit`은 CSV로 변환하고 작업하기 위한 커맨드 라인 도구 모음입니다. pip를 통해 설치할 수 있습니다.
+
+JSON 파일을 CSV로 변환하기:
+
+```bash
+in2csv 데이터.json > 데이터.csv
+```
+
+SQL을 사용해 CSV 파일 쿼리하기:
+
+```bash
+csvsql --query "SELECT name FROM sample WHERE id = 10" 예시.csv
+```
+
+*참고: `csvkit`을 설치하려면 Python이 필요하며 `pip install csvkit`을 사용하여 할 수 있습니다.*

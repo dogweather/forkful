@@ -1,70 +1,82 @@
 ---
 title:                "Trabalhando com YAML"
-date:                  2024-01-19
+date:                  2024-02-03T19:25:26.075905-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Trabalhando com YAML"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/fish-shell/working-with-yaml.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## O Que é & Por Que?
-YAML é um formato de serialização de dados amigável para humanos, comumente usado para arquivos de configuração. Programadores utilizam YAML pela sua legibilidade e simplicidade, facilitando a definição e compartilhamento de estruturas de dados.
+## O Que & Porquê?
+Trabalhar com YAML envolve analisar e manipular arquivos YAML (YAML Ain't Markup Language), um formato de serialização de dados usado para arquivos de configuração, no Fish Shell. Programadores fazem isso para automatizar e configurar aplicações ou serviços de forma eficiente dentro do contexto de ambientes shell, facilitando tarefas como gerenciamento de configurações e provisionamento de recursos.
 
-## Como Fazer:
-Trabalhar com YAML no Fish Shell geralmente envolve ler e modificar esses arquivo. Vamos usar `yq`, uma ferramenta de linha de comando para processar YAML.
+## Como fazer:
+O Fish Shell não tem suporte nativo para analisar YAML, mas você pode utilizar ferramentas de terceiros como o `yq` (um processador de linha de comando YAML leve e portátil) para manipular dados YAML.
 
-Instale o `yq`:
-
-```Fish Shell
-fisher install jorgebucaran/fisher
-fisher install PatrickF1/fundle
-fundle plugin add mikefarah/yq
+**Instalação do yq (se ainda não estiver instalado):**
+```fish
+sudo apt-get install yq
 ```
 
-Exemplo de como ler um valor:
-
-Arquivo `exemplo.yaml`:
+**Lendo um valor de um arquivo YAML:**
+Suponha que você tenha um arquivo YAML `config.yaml` com o seguinte conteúdo:
 ```yaml
-usuário:
-  nome: João
-  idade: 30
+database:
+  host: localhost
+  port: 3306
 ```
 
-Lendo o nome do usuário:
-
-```Fish Shell
-yq e '.usuário.nome' exemplo.yaml
+Para ler o host do banco de dados, você usaria:
+```fish
+set host (yq e '.database.host' config.yaml)
+echo $host
+```
+**Saída de exemplo:**
+```
+localhost
 ```
 
-Saída esperada:
+**Atualizando um valor em um arquivo YAML:**
+Para atualizar o `port` para `5432`, use:
+```fish
+yq e '.database.port = 5432' -i config.yaml
 ```
-João
+**Verifique a atualização:**
+```fish
+yq e '.database.port' config.yaml
 ```
-
-Mudando a idade do usuário:
-
-```Fish Shell
-yq e '.usuário.idade = 31' -i exemplo.yaml
+**Saída de exemplo:**
 ```
-
-Confirmando a alteração:
-
-```Fish Shell
-cat exemplo.yaml
-```
-Saída esperada:
-```yaml
-usuário:
-  nome: João
-  idade: 31
+5432
 ```
 
-## Mergulho Profundo
-YAML, que significa "YAML Ain't Markup Language", foi introduzido em 2001. Alternativas incluem JSON e XML, mas YAML é preferido por sua ênfase na simplicidade de leitura. A principal implementação de YAML no Fish Shell é feita via `yq`, que é baseado na biblioteca `libyaml`, escrita em C para máxima eficiência.
+**Escrevendo um novo arquivo YAML:**
+Para criar um novo `new_config.yaml` com conteúdo predefinido:
+```fish
+echo "webserver:
+  host: '127.0.0.1'
+  port: 8080" | yq e -P - > new_config.yaml
+```
+Isso usa o `yq` para processar e imprimir de forma bonita (-P flag) uma string em um novo arquivo YAML.
 
-## Veja Também
-- Documentação oficial do `yq`: https://mikefarah.gitbook.io/yq/
-- Especificação YAML: https://yaml.org/spec/
-- Tutorial interativo de YAML: https://www.learn-yaml.org/
+**Analisando estruturas complexas:**
+Se você tem um arquivo YAML mais complexo e precisa buscar arrays ou objetos aninhados, você pode:
+```fish
+echo "servers:
+  - name: server1
+    ip: 192.168.1.101
+  - name: server2
+    ip: 192.168.1.102" > servers.yaml
+
+yq e '.servers[].name' servers.yaml
+```
+**Saída de exemplo:**
+```
+server1
+server2
+```
+Usando o `yq`, o Fish Shell torna simples navegar por documentos YAML e manipulá-los para várias tarefas de automação e configuração.

@@ -1,55 +1,81 @@
 ---
 title:                "Travailler avec YAML"
-date:                  2024-01-19
+date:                  2024-02-03T19:26:20.538766-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Travailler avec YAML"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/ruby/working-with-yaml.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Quoi & Pourquoi ?
-
-YAML, c'est comme du JSON mais lisible par les humains. Les devs l'utilisent pour des configs, des données ou des fichiers de sauvegarde. C'est simple et ça fait le boulot efficacement.
+## Quoi et Pourquoi ?
+YAML, qui signifie "YAML Ain't Markup Language" (YAML n'est pas un langage de balisage), est largement utilisé en Ruby pour les fichiers de configuration et la sérialisation des données en raison de son format lisible par l'homme. Les programmeurs se tournent vers YAML lorsqu'ils ont besoin de stocker ou de transmettre des objets de données de manière lisible mais structurée, simplifiant des tâches comme la gestion de configuration, le stockage de données et le partage de données entre langages.
 
 ## Comment faire :
+Ruby est livré avec une bibliothèque intégrée appelée Psych pour l'analyse et l'émission de YAML. Pour l'utiliser, vous devez d'abord requérir la bibliothèque standard YAML. Voici un exemple de base pour commencer :
 
-```Ruby
+```ruby
 require 'yaml'
 
-# Création d'un hash pour démo
-config = {
-  'environment' => 'production',
-  'api_key' => '12345',
-  'enabled' => true
-}
+# Hash à sérialiser
+person = { name: "John Doe", age: 30, skills: ["Ruby", "JavaScript"] }
 
 # Conversion du hash en YAML
-yaml_string = config.to_yaml
-puts yaml_string
+yaml_data = person.to_yaml
 
-# Écriture du YAML dans un fichier
-File.write('config.yml', yaml_string)
-
-# Lecture d'un fichier YAML
-loaded_config = YAML.load_file('config.yml')
-puts loaded_config['api_key'] # Affiche 12345
+puts yaml_data
 ```
 
-## Exploration :
+**Sortie d'exemple :**
 
-**Contexte historique :**
-YAML signifie "YAML Ain't Markup Language" (YAML n'est pas un langage de balisage), un jeu de mots indiquant que c'est pour les données, pas la présentation. Il existe depuis les débuts des années 2000. 
+```yaml
+---
+:name: John Doe
+:age: 30
+:skills:
+- Ruby
+- JavaScript
+```
 
-**Alternatives :**
-Des formats comme JSON ou XML pourraient être utilisés à la place, mais YAML est plus simple à écrire et à lire pour un humain.
+Pour charger des données YAML dans un objet Ruby :
 
-**Détails d'implémentation :**
-En Ruby, la librairie Psych, incluse par défaut, s'occupe de parser et d'écrire le YAML. Assurez-vous que votre Ruby est à jour pour avoir la version la plus sécurisée et performante de Psych.
+```ruby
+loaded_person = YAML.load(yaml_data)
 
-## Voir aussi :
+puts loaded_person
+```
 
-- La spec YAML pour les détails pointus : https://yaml.org/spec/
-- Ruby-Doc pour des détails sur Psych lib : https://ruby-doc.org/stdlib-3.0.0/libdoc/psych/rdoc/Psych.html
-- Un tutoriel pour une introduction plus douce : https://www.tutorialspoint.com/ruby/ruby_yaml.htm
+**Sortie d'exemple :**
+
+```ruby
+{name: "John Doe", age: 30, skills: ["Ruby", "JavaScript"]}
+```
+
+### Utilisation de bibliothèques tierces :
+
+Bien que la bibliothèque standard soit suffisante pour les tâches de base, pour des besoins complexes, vous pouvez envisager des gemmes tierces comme 'safe_yaml'. Pour utiliser de telles bibliothèques, vous devez d'abord installer la gemme :
+
+```bash
+gem install safe_yaml
+```
+
+Ensuite, vous pouvez l'utiliser pour charger en toute sécurité des données YAML, atténuant les risques comme l'instanciation d'objets à partir de sources contrôlées par l'utilisateur :
+
+```ruby
+require 'safe_yaml'
+
+safe_loaded_person = SafeYAML.load(yaml_data)
+
+puts safe_loaded_person
+```
+
+**Sortie d'exemple :**
+
+```ruby
+{name: "John Doe", age: 30, skills: ["Ruby", "JavaScript"]}
+```
+
+Cette approche améliore la sécurité de votre gestion de YAML, en faisant un bon choix pour les applications qui chargent du YAML à partir de sources non fiables.

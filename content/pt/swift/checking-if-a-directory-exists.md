@@ -1,51 +1,71 @@
 ---
 title:                "Verificando se um diretório existe"
-date:                  2024-01-20T14:58:50.860876-07:00
+date:                  2024-02-03T19:08:39.157233-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Verificando se um diretório existe"
-
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/swift/checking-if-a-directory-exists.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Verificar a existência de diretórios ajuda a prevenir erros de arquivo não encontrado e permite que programas tomem decisões com base na estrutura atual do sistema de arquivos. Programadores fazem isso para garantir que seus apps leiam ou escrevam só se o diretório estiver lá.
+## O Que & Por Quê?
+Verificar se um diretório existe no sistema de arquivos é essencial para gerenciar estruturas de arquivo dentro de suas aplicações Swift. Esta tarefa permite aos desenvolvedores verificar a presença de diretórios antes de tentarem ler ou escrever neles, evitando assim possíveis erros de execução.
 
-## How to:
-Vamos usar a classe `FileManager` para verificar se um diretório existe no Swift.
+## Como fazer:
 
-```Swift
+O framework Foundation do Swift fornece a classe `FileManager`, que possui métodos para gerenciar o sistema de arquivos. Você pode usar o `FileManager` para verificar se um diretório existe. Aqui está um trecho sobre como fazer isso:
+
+```swift
 import Foundation
 
 let fileManager = FileManager.default
-let directoryPath = "/caminho/para/seu/diretório"
+let path = "/caminho/para/seu/diretório"
 
-var isDirectory = ObjCBool(false)
-if fileManager.fileExists(atPath: directoryPath, isDirectory: &isDirectory) && isDirectory.boolValue {
-    print("O diretório existe.")
+if fileManager.fileExists(atPath: path, isDirectory: nil) {
+    print("O Diretório existe")
 } else {
-    print("O diretório não existe.")
+    print("O Diretório não existe")
 }
 ```
 
-Saída, dependendo da situação:
-```
-O diretório existe.
-```
-ou
-```
-O diretório não existe.
+No entanto, isso verifica tanto arquivos quanto diretórios. Se você quiser verificar especificamente se um diretório existe, você precisa passar um ponteiro para um valor Booleano em `isDirectory`:
+
+```swift
+import Foundation
+
+let fileManager = FileManager.default
+let path = "/caminho/para/seu/diretório"
+var isDirectory: ObjCBool = false
+
+if fileManager.fileExists(atPath: path, isDirectory: &isDirectory), isDirectory.boolValue {
+    print("O Diretório existe")
+} else {
+    print("O Diretório não existe")
+}
 ```
 
-## Deep Dive
-Historicamente, a manipulação de arquivos em Swift se apoia fortemente no `FileManager`, que vem do Foundation framework. Alternativamente, você poderia usar APIs de nível mais baixo como `posix` para chegar ao mesmo resultado, mas com complexidade maior.
+### Usando uma Biblioteca de Terceiros
 
-O método `fileExists(atPath:)` verifica tanto arquivos quanto diretórios. Ao passar um ponteiro booleano `isDirectory`, podemos verificar especificamente por um diretório. Cuidado ao considerar thread-safety: `FileManager.default` é thread-safe, mas instâncias criadas pelo usuário não são garantidas como tal.
+Até o momento, verificar a existência de um diretório em Swift geralmente não necessita de bibliotecas de terceiros devido à robustez da classe `FileManager`. No entanto, para manipulações e verificações de arquivos mais complexas, bibliotecas como **Files** de John Sundell oferecem uma API mais amigável ao Swift.
 
-Ao trabalhar com iOS, lembre de que o app só pode verificar diretórios dentro de seu sandbox, a menos que você tenha permissões especiais.
+Aqui está como você pode usá-la:
 
-## See Also
-- Documentação oficial do `FileManager`: https://developer.apple.com/documentation/foundation/filemanager
-- Guia sobre o sistema de arquivos do iOS: https://developer.apple.com/library/archive/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/FileSystemOverview/FileSystemOverview.html
-- Tutorial sobre manipulação de arquivos em Swift: https://www.raywenderlich.com/9664901-ios-file-management-with-filemanager
+Primeiramente, adicione Files ao seu projeto via Swift Package Manager.
+
+Então, você pode verificar a existência de um diretório assim:
+
+```swift
+import Files
+
+do {
+    _ = try Folder(path: "/caminho/para/seu/diretório")
+    print("O Diretório existe")
+} catch {
+    print("O Diretório não existe")
+}
+```
+
+Nota: Como bibliotecas de terceiros podem mudar, sempre consulte a documentação mais recente para uso e melhores práticas.

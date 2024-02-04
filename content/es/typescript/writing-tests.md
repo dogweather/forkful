@@ -1,57 +1,90 @@
 ---
 title:                "Escribiendo pruebas"
-date:                  2024-01-19
+date:                  2024-02-03T19:32:40.782813-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Escribiendo pruebas"
-
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/typescript/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Qué & Por Qué?
+## Qué y Por Qué?
+Escribir pruebas en TypeScript implica crear scripts automatizados para verificar la funcionalidad y la corrección de tu código. Los programadores lo hacen para garantizar la fiabilidad, capturar rápidamente errores y facilitar el crecimiento mantenible del código, ya que la tipificación estática de TypeScript añade un nivel de previsibilidad a las pruebas de JavaScript.
 
-Escribir pruebas es crear verificaciones automáticas para tu código. Los programadores lo hacen para asegurarse de que sus programas funcionen correctamente, detectar fallos rápido y mejorar la calidad del software.
+## Cómo hacerlo:
+TypeScript funciona armoniosamente con la mayoría de los marcos de pruebas de JavaScript. Para fines de demostración, utilizaremos Jest, un marco de pruebas popular, debido a su configuración cero para proyectos TypeScript.
 
-## Cómo Hacerlo:
+Primero, asegúrate de tener Jest y los tipos de TypeScript necesarios instalados:
 
-Escribe una prueba básica con Jest, una librería popular para pruebas en TypeScript:
+```bash
+npm install --save-dev jest typescript ts-jest @types/jest
+```
+
+Luego, configura Jest para trabajar con TypeScript modificando el `jest.config.js` o creando uno nuevo:
+
+```javascript
+module.exports = {
+  preset: 'ts-jest',
+  testEnvironment: 'node',
+};
+```
+
+Ahora, escribamos una función simple y una prueba para ella. Considera un archivo `sum.ts` con la siguiente función:
 
 ```typescript
-import sumar from './sumar';
+// sum.ts
+export function sum(a: number, b: number): number {
+  return a + b;
+}
+```
 
-test('suma 1 + 2 para obtener 3', () => {
-  expect(sumar(1, 2)).toBe(3);
+Crea un archivo de prueba llamado `sum.test.ts`:
+
+```typescript
+// sum.test.ts
+import { sum } from './sum';
+
+test('suma 1 + 2 para igual a 3', () => {
+  expect(sum(1, 2)).toBe(3);
 });
 ```
 
-Archivo `sumar.ts`:
+Ejecuta tus pruebas con:
+
+```bash
+npx jest
+```
+
+La salida de muestra que indica una prueba superada debería verse algo así:
+
+```plaintext
+ PASS  ./sum.test.ts
+  ✓ suma 1 + 2 para igual a 3 (2 ms)
+```
+
+Para código asincrónico, Jest se acomoda con `async/await`. Supongamos que tienes una función asincrónica `fetchData`:
 
 ```typescript
-function sumar(a: number, b: number): number {
-  return a + b;
+// asyncFunctions.ts
+export async function fetchData(): Promise<string> {
+  return "data";
 }
-
-export default sumar;
 ```
 
-Corre las pruebas con `npm test` y obtén algo así:
-
-```
-PASS  ./sumar.test.ts
-✓ suma 1 + 2 para obtener 3 (5ms)
-```
-
-## Profundización
-
-Las pruebas automatizadas comenzaron en los años 50. Jest es solo una opción. Alternativas incluyen Mocha, Jasmine y Tape. Para TypeScript, es esencial usar tipos para capturar errores en las pruebas. Importa tipos de Jest así:
+Tu prueba usando funciones asíncronas:
 
 ```typescript
-import '@types/jest';
+// asyncFunctions.test.ts
+import { fetchData } from './asyncFunctions';
+
+test('obtiene datos exitosamente', async () => {
+  expect(await fetchData()).toBe('data');
+});
 ```
 
-Esto ayuda a que el editor de código ofrezca sugerencias y detección de errores en tiempo real.
+Cuando ejecutas tus pruebas, Jest esperará a que la promesa se resuelva, probando correctamente las operaciones asincrónicas.
 
-## Ver También:
-
-- Documentación de Jest: [jestjs.io](https://jestjs.io/)
+Recuerda, la prueba efectiva incluye escribir múltiples pruebas para diferentes escenarios, incluidos casos límite, para asegurar que tu código TypeScript se comporte como se espera.

@@ -1,46 +1,89 @@
 ---
 title:                "Rédaction de tests"
-date:                  2024-01-19
+date:                  2024-02-03T19:31:46.293863-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Rédaction de tests"
-
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/ruby/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Quoi & Pourquoi ?)
-Écrire des tests, c'est comme préparer des mini-challenges pour son code: on vérifie que tout fonctionne. Les devs font ça pour dormir sur leurs deux oreilles, éviter les bugs, et simplifier les mises à jour.
+## Quoi & Pourquoi ?
+Le test en Ruby consiste à vérifier que votre code se comporte comme prévu dans diverses conditions. Les programmeurs écrivent des tests pour assurer la correction, prévenir les régressions et faciliter le remaniement, visant des applications robustes et maintenables.
 
-## How to: (Comment faire : )
-En Ruby, on utilise souvent RSpec pour les tests. Voilà le genre de code qu'on écrit :
+## Comment faire :
+Ruby est fourni avec une bibliothèque intégrée appelée `Test::Unit` pour écrire des tests unitaires, encapsulant les pratiques de test dans des structures simples. Cependant, la communauté Ruby a souvent une préférence pour des bibliothèques tierces comme RSpec et Minitest en raison de leur expressivité et flexibilité accrues.
 
-```Ruby
-# installation de RSpec
-# gem install rspec
+### Utiliser `Test::Unit` :
+```ruby
+require 'test/unit'
 
-# Exemple de test
-require 'rspec'
-
-describe 'Calculatrice' do
-  it 'additionne deux nombres' do
-    expect(2 + 2).to eq(4)
+class CalculatorTest < Test::Unit::TestCase
+  def test_addition
+    result = 2 + 2
+    assert_equal 4, result
   end
+end
+```
+Exécutez votre fichier de test depuis le terminal, et vous devriez obtenir une sortie indiquant le succès ou l'échec des tests :
+```
+Loaded suite test_calculator
+Started
+.
+Finished in 0.001288 seconds.
+1 tests, 1 assertions, 0 failures, 0 errors, 0 pendings, 0 omissions, 0 notifications
+100% passed
+```
 
-  it 'soustrait deux nombres' do
-    expect(5 - 3).to eq(2)
+### Utiliser RSpec :
+RSpec est un cadre populaire de BDD (Développement Dirigé par le Comportement) pour Ruby. Installez le gem avec `gem install rspec`, puis initialisez-le dans votre projet avec `rspec --init`.
+
+```ruby
+# calculator_spec.rb
+require_relative '../calculator'
+
+describe Calculator do
+  it 'ajoute correctement deux nombres' do
+    expect(Calculator.add(2, 2)).to eq(4)
+  end
+end
+```
+Exécutez les tests avec la commande `rspec`. Exemple de sortie :
+```
+.
+
+Finished in 0.002 seconds (files took 0.1 seconds to load)
+1 example, 0 failures
+```
+
+### Utiliser Minitest :
+Minitest fournit une suite complète de facilités de test supportant le TDD, BDD, le mocking et le benchmarking. Installez-le avec `gem install minitest` et utilisez-le comme suit :
+
+```ruby
+# test_calculator.rb
+require 'minitest/autorun'
+require_relative '../calculator'
+
+class CalculatorTest < Minitest::Test
+  def test_addition
+    assert_equal 4, Calculator.add(2, 2)
   end
 end
 ```
 
-Exécutez les tests avec `rspec votre_fichier_spec.rb`. Vous devriez voir quelque chose comme ça si tout est au vert :
-
+Exécutez votre fichier de test directement ou via la tâche `rake` configurée pour minitest. Exemple de sortie :
 ```
-2 examples, 0 failures
+Run options: --seed 33407
+
+# Running:
+
+.
+
+Finished in 0.001027s, 974.5922 runs/s, 974.5922 assertions/s.
+1 runs, 1 assertions, 0 failures, 0 errors, 0 skips
 ```
 
-## Deep Dive (Plongée profonde)
-Les tests automatisés existent depuis que les devs réalisent qu'ils recyclent plus leur code qu'ils ne recyclent leur verre. Alternatives ? Minitest en est une autre bien connue en Ruby. Ça s'utilise à peu près pareil mais c'est plus minimaliste, moins de fioritures. Pourquoi RSpec alors ? Il est expressif, lisible, et donc plus facile à maintenir.
-
-## See Also (Voir aussi)
-- Un bon tuto RSpec : [https://www.betterspecs.org/](https://www.betterspecs.org/)
+En mettant en œuvre des tests dans vos projets Ruby en utilisant ces bibliothèques, vous adhérez aux meilleures pratiques, menant à des bases de code plus fiables et maintenables.

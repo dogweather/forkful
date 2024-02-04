@@ -1,44 +1,65 @@
 ---
 title:                "Skriva till standardfel"
-date:                  2024-01-19
+date:                  2024-02-03T19:34:16.677984-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Skriva till standardfel"
-
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/powershell/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-I PowerShell kan du skriva till standardfelet (stderr) för att hantera felmeddelanden separat från vanlig utmatning (stdout). Det är viktigt för att kunna skilja på normal data och fel, vilket förenklar felsökning och loggning.
+## Vad & Varför?
 
-## How to:
-```PowerShell
-# Skicka ett enkelt meddelande till standardfelet
-Write-Host "Det här är ett felmeddelande" -ForegroundColor Red 1>&2
+Att skriva till standardfel (stderr) i PowerShell innebär att skicka felmeddelanden eller diagnostik direkt till stderr-strömmen, separat från standardutdataströmmen (stdout). Denna separation möjliggör en mer exakt kontroll över ett skripts utdata, vilket gör det möjligt för utvecklare att rikta normala och felmeddelanden till olika destinationer, vilket är grundläggande för felhantering och loggning.
 
-# Alternativt använd Write-Error för att generera en felutmatning
-Write-Error "Oops, något gick fel"
+## Hur man gör:
 
-# Fånga felet i en try-catch-block
-try {
-    Get-Item "icke_existerande_fil.txt"
-} catch {
-    $_ | Out-String | Write-Host -ForegroundColor Red 1>&2
-}
+PowerShell förenklar processen att skriva till stderr genom användning av cmdleten `Write-Error` eller genom att rikta utdatan till metoden `$host.ui.WriteErrorLine()`. Dock, för direkt stderr-omdirigering, kan du föredra att använda .NET-metoder eller fildeskriptorsomdirigering som erbjuds av själva PowerShell.
 
-# Exempelutmatning för Write-Error
-Oops, något gick fel
-+ CategoryInfo          : NotSpecified: (:) [Write-Error], WriteErrorException
-+ FullyQualifiedErrorId : Microsoft.PowerShell.Commands.WriteErrorException
+**Exempel 1:** Använda `Write-Error` för att skriva ett felmeddelande till stderr.
+
+```powershell
+Write-Error "Detta är ett felmeddelande."
 ```
 
-## Deep Dive:
-Standardfelet introducerades i UNIX och har länge använts för att hantera felmeddelanden. PowerShell, inspirerat av UNIX shell, tillhandahåller detta. `Write-Error` är specifik för PowerShell och skapar ett error record. Alternativt kan operatören `1>&2` omdirigera stdout till stderr; `1` representerar stdout och `2` stderr. Implementationen av stderr i PowerShell är viktig vid skript som används i större automatiseringar, där felmeddelanden behöver hanteras skilt.
+Utdata till stderr:
+```
+Write-Error: Detta är ett felmeddelande.
+```
 
-## See Also:
-- [about_Redirection](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_redirection)
-- [Write-Error](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/write-error)
-- [about_Try_Catch_Finally](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_try_catch_finally)
+**Exempel 2:** Använda `$host.ui.WriteErrorLine()` för direkt skrivning till stderr.
 
-Observera att länkarna leder till engelskspråkiga resurser, då Microsofts dokumentation oftast är på engelska.
+```powershell
+$host.ui.WriteErrorLine("Direkt skrivning till stderr.")
+```
+
+Utdata till stderr:
+```
+Direkt skrivning till stderr.
+```
+
+**Exempel 3:** Använda .NET-metoder för skrivning till stderr.
+
+```powershell
+[Console]::Error.WriteLine("Använder .NET-metod för stderr")
+```
+
+Denna metods utdata:
+```
+Använder .NET-metod för stderr
+```
+
+**Exempel 4:** Omdirigera felutdata med fildeskriptor `2>`.
+
+Fildeskriptorer i PowerShell kan omdirigera olika strömmar. För stderr är filbeskrivaren `2`. Här är ett exempel på omdirigering av stderr till en fil med namnet `error.log` samtidigt som ett kommando körs som genererar ett fel.
+
+```powershell
+Get-Item NonExistentFile.txt 2> error.log
+```
+
+Detta exempel producerar ingen konsolutdata, men genererar en fil `error.log` i den aktuella katalogen som innehåller felmeddelandet från försöket att komma åt en fil som inte finns.
+
+Sammanfattningsvis erbjuder PowerShell flera metoder för effektiv skrivning och hantering av felutdata, vilket möjliggör sofistikerade strategier för felhantering och loggning i skript och applikationer.

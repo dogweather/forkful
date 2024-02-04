@@ -1,62 +1,110 @@
 ---
-title:                "YAML-tiedostojen käsittely"
-date:                  2024-01-19
-simple_title:         "YAML-tiedostojen käsittely"
-
+title:                "Työskentely YAML:n kanssa"
+date:                  2024-02-03T19:25:01.705830-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Työskentely YAML:n kanssa"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c-sharp/working-with-yaml.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Mitä & Miksi?)
-YAML on ihmisen luettava datan serialisointiformaatti konfiguraatioihin, automaatioon ja sovellusten asetuksiin. Ohjelmoijat käyttävät YAML:ia sen selkeyden ja yksinkertaisuuden vuoksi, mikä tekee siitä ihanteellisen nopeasti muuttuviin ympäristöihin.
+## Mikä ja miksi?
+YAML, joka tarkoittaa YAML Ain't Markup Language, on ihmisen luettavissa oleva datan sarjallistamisformaatti. Ohjelmoijat käyttävät sitä usein konfiguraatiotiedostoihin, prosessien väliseen viestintään ja datan tallennukseen sen yksinkertaisuuden ja luettavuuden vuoksi verrattuna muihin datamuotoihin kuten XML tai JSON.
 
-## How to: (Kuinka tehdä:)
-C# koodiesimerkki, joka käsittelee YAML-dataa käyttäen YamlDotNet-kirjastoa. Asenna YamlDotNet nuget-paketista ennen koodin testaamista.
+## Kuinka:
+C# ei sisällä sisäänrakennettua tukea YAML:lle, mutta voit helposti työskennellä YAML:n kanssa käyttämällä kolmannen osapuolen kirjastoja, kuten *YamlDotNet*. Ensin sinun täytyy asentaa YamlDotNet-paketti:
 
-```C#
+```bash
+Install-Package YamlDotNet -Version 11.2.1
+```
+
+### YAML:n lukeminen:
+Kuvittele, että sinulla on YAML-tiedosto `config.yaml` seuraavalla sisällöllä:
+```yaml
+appSettings:
+  name: MyApp
+  version: 1.0.0
+```
+
+Voit lukea ja jäsentää tämän YAML-tiedoston C#:ssa näin:
+```csharp
 using System;
+using System.IO;
 using YamlDotNet.Serialization;
 using YamlDotNet.Serialization.NamingConventions;
 
-public class Program
+public class AppConfig
 {
-    public static void Main()
-    {
-        var input = @"
-            name: Mikko Mallikas
-            age: 30
-            occupation: Developer
-        ";
+    public AppSettings appSettings { get; set; }
+}
 
+public class AppSettings
+{
+    public string name { get; set; }
+    public string version { get; set; }
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        var yaml = File.ReadAllText("config.yaml");
         var deserializer = new DeserializerBuilder()
-            .WithNamingConvention(CamelCaseNamingConvention.Instance)
+            .WithNamingConvention(UnderscoredNamingConvention.Instance) // Sovita nimeämiskonventio tarpeen mukaan
             .Build();
 
-        var person = deserializer.Deserialize<Person>(input);
+        var config = deserializer.Deserialize<AppConfig>(yaml);
 
-        Console.WriteLine($"Nimi: {person.Name}, Ikä: {person.Age}, Ammatti: {person.Occupation}");
+        Console.WriteLine($"Nimi: {config.appSettings.name}, Versio: {config.appSettings.version}");
     }
 }
+```
+**Esimerkkituloste:**
+```
+Nimi: MyApp, Versio: 1.0.0
+```
 
-public class Person
+### YAML:n kirjoittaminen:
+Jotta voit kirjoittaa dataa YAML-tiedostoon, käytä `Serializer`-luokkaa YamlDotNetistä. Tässä on, miten voit sarjallistaa olion takaisin YAML:ksi:
+
+```csharp
+using System;
+using System.IO;
+using YamlDotNet.Serialization;
+using YamlDotNet.Serialization.NamingConventions;
+
+class Program
 {
-    public string Name { get; set; }
-    public int Age { get; set; }
-    public string Occupation { get; set; }
+    static void Main(string[] args)
+    {
+        var config = new AppConfig
+        {
+            appSettings = new AppSettings
+            {
+                name = "MyApp",
+                version = "2.0.0"
+            }
+        };
+
+        var serializer = new SerializerBuilder()
+            .WithNamingConvention(UnderscoredNamingConvention.Instance) // Sovita nimeämiskonventio tarpeen mukaan
+            .Build();
+
+        var yaml = serializer.Serialize(config);
+        File.WriteAllText("updatedConfig.yaml", yaml);
+
+        Console.WriteLine(yaml);
+    }
 }
 ```
-
-#### Tuloste:
+**Esimerkkituloste:**
+```yaml
+appSettings:
+  name: MyApp
+  version: 2.0.0
 ```
-Nimi: Mikko Mallikas, Ikä: 30, Ammatti: Developer
-```
 
-## Deep Dive (Syväsukellus)
-YAML (YAML Ain't Markup Language) kehitettiin vuonna 2001, helpottamaan datan luettavuutta ja konfiguraatioita XML:n sijaan. YAML-formaattia vertaillaan usein JSON:iin; kumpikin on datan serialisointikieli, mutta YAML on usein helpommin luettavissa ihmisille. C# -ohjelmoijat voivat käyttää YamlDotNet-kirjastoa YAML-tiedostojen deserialisointiin ja serialisointiin. Kirjasto tukee sekä .NET Framework että .NET Core sovelluksia.
-
-## See Also (Katso Myös)
-- YamlDotNet GitHub: https://github.com/aaubry/YamlDotNet
-- YAML virallinen sivusto: https://yaml.org
-- Microsoftin C# dokumentaatio: https://docs.microsoft.com/en-us/dotnet/csharp/
+Tämä suoraviivainen lähestymistapa osoittaa, miten voit tehokkaasti työskennellä YAML:n kanssa C# projekteissasi. Se tekee YAML-tiedostojen lukemisesta ja kirjoittamisesta yksinkertaista käyttäen YamlDotNet-kirjastoa.

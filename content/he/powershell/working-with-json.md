@@ -1,47 +1,62 @@
 ---
 title:                "עבודה עם JSON"
-date:                  2024-01-19
+date:                  2024-02-03T19:23:56.790004-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "עבודה עם JSON"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/powershell/working-with-json.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## מה ולמה?
-עבודה עם JSON ב-PowerShell משמשת לניתוח ויצירת מידע מבוסס-טקסט בפורמט הנפוץ JSON. תוכניתנים עושים זאת כיוון ש-JSON משמש סטנדרט המאפשר שיתוף נתונים בקלות בין לקוחות, שרתים ויישומים שונים.
+
+אינטגרציית PowerShell עם JSON (צורת JavaScript לייצוג עצמים) עוסקת בפיענוח (קריאה) וביצירה (כתיבה) של נתוני JSON, פורמט נפוץ להחלפת נתונים ברשת. מתכנתים עובדים עם JSON כדי להתממשק עם ממשקי API ברשת, קבצי תצורה, או לקדם החלפת נתונים בין שפות ופלטפורמות שונות, הודות לאופן קל משקלו וחוסר התלות שלו בשפה מסוימת.
 
 ## איך לעשות:
-```PowerShell
-# המרה מ-JSON לאובייקט PowerShell
-$json = '{"שם": "דוד", "גיל": 30}'
-$אובייקט = $json | ConvertFrom-Json
-$אובייקט.שם
 
-# תוצאה: דוד
+### פיענוח JSON
 
-# המרה מאובייקט PowerShell ל-JSON
-$אובייקט = [PSCustomObject]@{
-    שם = 'שרה'
-    גיל = 32
-}
-$json = $אובייקט | ConvertTo-Json
-Write-Output $json
+כדי לקרוא או לפענח JSON ב-PowerShell, ניתן להשתמש ב-cmdlet `ConvertFrom-Json`. בהינתן מחרוזת JSON, cmdlet זה ממיר אותה לאובייקט של PowerShell.
 
-# תוצאה:
-# {
-#     "שם":  "שרה",
-#     "גיל":  32
-# }
-
-# שמירת JSON לקובץ
-Set-Content -Path 'משתמש.json' -Value $json
+```powershell
+$json = '{"name": "John Doe", "age": 30, "city": "New York"}'
+$person = $json | ConvertFrom-Json
+$person.name
 ```
-## חפירה עמוקה
-JSON (JavaScript Object Notation) היא פורמט התחלתי להחליף XML בשנת 2001, והפך לסטנדרט רשמי ב-2013. בניגוד ל-XML, JSON יותר קריא ופשוט. ב-PowerShell, הפקודות `ConvertFrom-Json` ו-`ConvertTo-Json` מיישמות את המרה ויצירת ה-JSON. ישנם חלופות בספריות שונות כמו Newtonsoft.Json ל.NET, אך ב-PowerShell הן לא נדרשות ברוב המקרים.
 
-## ראו גם
-- [מבוא ל-JSON](https://www.json.org/json-he.html)
-- [תיעוד PowerShell על פקודת ConvertFrom-Json](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/convertfrom-json)
-- [תיעוד PowerShell על פקודת ConvertTo-Json](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/convertto-json)
+פלט לדוגמה:
+
+```
+John Doe
+```
+
+דוגמה זו מדגימה איך לפענח מחרוזת JSON פשוטה על מנת לגשת לתכונות של האובייקט הנוצר.
+
+### יצירת JSON
+
+כדי ליצור JSON מאובייקט של PowerShell, ניתן להשתמש ב-cmdlet `ConvertTo-Json`. זה שימושי להכנת נתונים לשליחה לשירות רשת או לשמירה בקובץ תצורה.
+
+```powershell
+$person = [PSCustomObject]@{
+    name = "Jane Doe"
+    age = 25
+    city = "Los Angeles"
+}
+$json = $person | ConvertTo-Json
+Write-Output $json
+```
+
+פלט לדוגמה:
+
+```json
+{
+    "name":  "Jane Doe",
+    "age":  25,
+    "city":  "Los Angeles"
+}
+```
+
+קטע קוד זה יוצר אובייקט של PowerShell ולאחר מכן ממיר אותו למחרוזת JSON.

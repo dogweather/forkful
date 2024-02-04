@@ -1,57 +1,64 @@
 ---
 title:                "Trabajando con JSON"
-date:                  2024-01-19
+date:                  2024-02-03T19:24:01.079897-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Trabajando con JSON"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/swift/working-with-json.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Qué es y por qué?
+## Qué y Por Qué?
 
-Trabajar con JSON significa manipular el formato de intercambio de datos JavaScript Object Notation. Los programadores lo hacen porque es ligero, fácil de leer para humanos y esencial para la comunicación en aplicaciones web y móviles.
+Trabajar con JSON en Swift implica lidiar con un formato de datos ligero para el intercambio de datos. Los programadores utilizan JSON para transmitir datos entre un servidor y una aplicación web porque es legible y fácil de analizar tanto para humanos como para máquinas.
 
 ## Cómo hacerlo:
+
+Swift facilita el análisis de JSON con el protocolo `Codable`. Así es cómo puedes decodificar JSON a un objeto Swift:
 
 ```Swift
 import Foundation
 
-// Definir un struct para mapear los datos JSON
-struct Usuario: Codable {
-    var nombre: String
-    var edad: Int
+// Definir un modelo que se ajuste a Codable
+struct User: Codable {
+    var name: String
+    var age: Int
 }
 
-// Simular un JSON desde un string para el ejemplo
-let jsonString = "{\"nombre\": \"Juan\", \"edad\": 30}"
+// Cadena de JSON
+let jsonString = """
+{
+    "name": "John Doe",
+    "age": 30
+}
+"""
 
-// Convertir el string JSON a datos
+// Convertir la cadena JSON a Data
 if let jsonData = jsonString.data(using: .utf8) {
+    // Decodificar los datos JSON a un objeto User
     do {
-        // Decodificar el JSON a nuestro struct
-        let usuario = try JSONDecoder().decode(Usuario.self, from: jsonData)
-        print("Nombre: \(usuario.nombre), Edad: \(usuario.edad)")
+        let user = try JSONDecoder().decode(User.self, from: jsonData)
+        print("Nombre: \(user.name), Edad: \(user.age)")
     } catch {
-        print("Error al decodificar: \(error)")
+        print("Error decodificando JSON: \(error)")
     }
 }
 ```
 
-Salida de ejemplo:
+Salida de muestra:
 ```
-Nombre: Juan, Edad: 30
+Nombre: John Doe, Edad: 30
 ```
 
-## Profundización:
+## Análisis Profundo
 
-1. **Contexto histórico**: JSON se originó en los primeros años 2000 como una manera más sencilla de usar alternativa a XML en AJAX.
-2. **Alternativas**: XML es una alternativa más antigua, pero más compleja. Protobuf de Google y BSON son consideradas para sistemas que necesitan serialización binaria.
-3. **Detalles de implementación**: Swift utiliza el protocolo `Codable` para codificar y decodificar. La key strategy de `JSONDecoder` y `JSONEncoder` puede ser usada para trabajar con diferentes estilos de claves JSON.
+JSON (JavaScript Object Notation) ha sido ampliamente adoptado desde principios de los años 2000, después de que Douglas Crockford lo especificara. Reemplazó a XML en muchos casos de uso debido a su sintaxis más simple y mejor rendimiento. Aunque `Codable` de Swift es la opción predilecta para JSON, existen alternativas como `JSONSerialization` para cuando se trata de tipos que no cumplen con Codable. Bajo el capó, `Codable` abstrae el análisis de bajo nivel y hace que la serialización/deserialización sea fluida.
 
-## Ver También:
+## Ver También
 
-- Documentación oficial de Swift sobre JSON: [Apple Developer Documentation](https://developer.apple.com/documentation/foundation/jsonencoder)
-- RFC 7159 - The JavaScript Object Notation (JSON) Data Interchange Format: [RFC 7159](https://tools.ietf.org/html/rfc7159)
-- Tutorial de Ray Wenderlich sobre JSON y Swift: [Ray Wenderlich](https://www.raywenderlich.com/3418439-encoding-and-decoding-in-swift)
+- Explora más sobre JSON y Swift en el blog oficial de Swift: [Swift.org](https://swift.org/blog/)
+- Consulta la documentación de `Codable`: [Swift Codable](https://developer.apple.com/documentation/swift/codable)
+- Para estructuras JSON complejas, considera bibliotecas de terceros como SwiftyJSON disponibles en [GitHub](https://github.com/SwiftyJSON/SwiftyJSON).

@@ -1,44 +1,58 @@
 ---
 title:                "Skriva till standardfel"
-date:                  2024-01-19
+date:                  2024-02-03T19:33:39.107706-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Skriva till standardfel"
-
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/javascript/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-`Standard error` (stderr) är en output-kanal för att visa felmeddelanden och loggar. Programmerare använder den för att skilja vanlig data från fel, vilket är användbart för felsökning och loggning.
+## Vad & Varför?
+Att skriva till standardfel (stderr) i JavaScript handlar om att dirigera felmeddelanden eller kritisk information till en specifik, separat ström, vilket är särskilt användbart i Unix-lika miljöer för loggning och felsökning. Programmerare gör detta för att skilja normal programutdata från felmeddelanden, vilket möjliggör enklare hantering av utdata och enklare övervakning av fel.
 
-## How to:
-Skriv till stderr med `console.error()`.
-
-```javascript
-console.error('Det här är ett felmeddelande!');
-```
-
-Output i terminal:
-```
-Det här är ett felmeddelande!
-```
-
-Använd `process.stderr.write()` för att skriva utan newline-tecken.
+## Hur:
+I Node.js kan skrivning till stderr utföras med metoden `console.error()` eller genom att skriva direkt till `process.stderr`. Här är exempel som demonstrerar båda tillvägagångssätten:
 
 ```javascript
-process.stderr.write('Felmeddelande utan newline');
+// Använda console.error()
+console.error('Det här är ett felmeddelande.');
+
+// Skriva direkt till process.stderr
+process.stderr.write('Det här är ett annat felmeddelande.\n');
 ```
 
-Output i terminal:
+Exempelutdata för båda metoderna skulle visas i stderr-strömmen, utan att blanda sig med stdout:
 ```
-Felmeddelande utan newline%
+Det här är ett felmeddelande.
+Det här är ett annat felmeddelande.
 ```
 
-## Deep Dive
-Stderr härstammar från Unix och C systemanrop. Det är filnummer 2, medan standard output (stdout) är 1. Alternativ till stderr inkluderar loggfiler och externa loggtjänster. Implementation av stderr i Node.js används genom `process`-objektet som en Writable Stream.
+För mer sofistikerad eller applikationsspecifik loggning använder många JavaScript-programmerare tredjepartsbibliotek som `winston` eller `bunyan`. Här är ett snabbt exempel med `winston`:
 
-## See Also
-- Node.js documentation on console.error() (https://nodejs.org/api/console.html#console_console_error_data_args)
-- Node.js process.stderr (https://nodejs.org/api/process.html#process_process_stderr)
-- Stream handling in Node.js (https://nodejs.org/api/stream.html)
+Först, installera `winston` via npm:
+```shell
+npm install winston
+```
+
+Konfigurera sedan `winston` att logga fel till stderr:
+```javascript
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  levels: winston.config.syslog.levels,
+  transports: [
+    new winston.transports.Console({
+      stderrLevels: ['error']
+    })
+  ]
+});
+
+// Loggar ett felmeddelande
+logger.error('Fel loggat genom winston.');
+```
+
+Denna setup säkerställer att när du loggar ett fel med `winston`, dirigeras det till stderr, vilket hjälper till att upprätthålla en tydlig separation mellan standard- och felutdata.

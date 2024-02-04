@@ -1,41 +1,65 @@
 ---
 title:                "Capitalizando uma string"
-date:                  2024-01-19
+date:                  2024-02-03T19:06:25.732336-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Capitalizando uma string"
-
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/rust/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## O Que & Por Que?
-Transformar uma string em maiúsculas significa alterar todos os caracteres alfabéticos para a sua forma maiúscula. Programadores fazem isso para uniformizar dados, garantir consistência para comparações, ou atender requisitos estéticos e de apresentação.
+## O que & Por quê?
 
-## Como Fazer:
-```Rust
+Capitalizar uma string em Rust envolve modificar a string de modo que seu primeiro caractere seja maiúsculo, caso seja uma letra, enquanto o restante da string permanece inalterado. Programadores frequentemente realizam essa operação para fins de formatação, tais como preparar palavras para títulos ou garantir consistência na entrada de dados dos usuários.
+
+## Como fazer:
+
+Para capitalizar uma string em Rust, você tem duas principais vias: usar as funcionalidades da biblioteca padrão ou empregar crates de terceiros para necessidades mais complexas ou específicas. Aqui está como você pode fazer ambos.
+
+### Usando a Biblioteca Padrão do Rust
+
+A biblioteca padrão do Rust não oferece um método direto para capitalizar strings, mas você pode alcançar isso manipulando os caracteres da string.
+
+```rust
+fn capitalize_first(s: &str) -> String {
+    let mut c = s.chars();
+    match c.next() {
+        None => String::new(),
+        Some(f) => f.to_uppercase().collect::<String>() + c.as_str(),
+    }
+}
+
 fn main() {
-    let minha_string = "olá, mundo!";
-    let string_maiuscula = minha_string.to_uppercase();
-
-    println!("Original: {}", minha_string);
-    println!("Maiúscula: {}", string_maiuscula);
+    let my_string = "hello";
+    println!("{}", capitalize_first(my_string)); // Saída: Hello
 }
 ```
-O programa acima imprimiria:
+
+### Usando o Crate `heck`
+
+Para uma abordagem mais direta, especialmente quando trabalhando dentro de um contexto mais amplo de processamento de texto, você pode preferir usar bibliotecas de terceiros como `heck`. O crate `heck` oferece várias funcionalidades de conversão de caso, incluindo uma maneira simples de capitalizar strings.
+
+Primeiro, adicione `heck` ao seu `Cargo.toml`:
+
+```toml
+[dependencies]
+heck = "0.4.0"
 ```
-Original: olá, mundo!
-Maiúscula: OLÁ, MUNDO!
+
+Depois, use-o para capitalizar sua string:
+
+```rust
+extern crate heck; // Não necessário na edição Rust 2018 ou posterior
+use heck::TitleCase;
+
+fn main() {
+    let my_string = "hello world";
+    let capitalized = my_string.to_title_case();
+    println!("{}", capitalized); // Saída: Hello World
+}
 ```
 
-## Mergulho Profundo
-O método `to_uppercase()` em Rust utiliza a biblioteca `unicode-segmentation` para iterar sobre cada ponto de código Unicode da string e convertê-los para sua forma maiúscula. Historicamente, a capitalização era mais simples em ASCII, mas o suporte global a Unicode introduziu complexidades, como caracteres que não têm uma forma maiúscula direta ou que mudam de tamanho ao serem capitalizados.
-
-Existem alternativas, como o método `make_ascii_uppercase()` para strings que você sabe serem ASCII e o crate `unicase` para comparações que ignoram a caixa.
-
-A implementação do Rust garante que todas as localidades sejam respeitadas, importante em contextos internacionais.
-
-## Veja Também
-- Rust docs on Strings: https://doc.rust-lang.org/stable/std/string/struct.String.html
-- Unicode Segmentation: https://unicode.org/reports/tr29/
-- Unicase crate: https://crates.io/crates/unicase
+Nota: O método `to_title_case` fornecido por `heck` capitaliza cada palavra na string, o que pode ser mais do que você está procurando se quiser apenas o primeiro caractere da string capitalizado. Ajuste seu uso de acordo com suas necessidades específicas.

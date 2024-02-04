@@ -1,53 +1,63 @@
 ---
-title:                "编写测试代码"
-date:                  2024-01-19
-simple_title:         "编写测试代码"
-
+title:                "编写测试"
+date:                  2024-02-03T19:31:33.046068-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "编写测试"
 tag:                  "Testing and Debugging"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/python/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (是什么？为什么？)
-编写测试即是为代码创建一系列检验，确保其按预期运行。程序员这么做是为了提前发现错误，保证软件的质量和可靠性。
+## 什么 & 为什么？
+在 Python 中编写测试涉及创建自动化脚本来验证代码的正确性。程序员这样做是为了确保他们的函数或类在各种条件下按预期工作，这有助于早期发现错误并促进更容易的维护和重构。
 
-## How to: (如何操作)
-以下示例使用Python内置的`unittest`模块：
+## 如何操作：
+Python 自带了一个用于编写测试的内置模块，名为 `unittest`。这是使用它来测试一个简单函数的方法：
 
-```Python
+```python
 import unittest
 
-def add(x, y):
-    return x + y
+def add(a, b):
+    return a + b
 
-class TestAddition(unittest.TestCase):
-    def test_add_integers(self):
-        self.assertEqual(add(3, 4), 7)
-
-    def test_add_strings(self):
-        self.assertEqual(add("Hello", "World"), "HelloWorld")
+class TestAddFunction(unittest.TestCase):
+    def test_add(self):
+        self.assertEqual(add(1, 2), 3)
+        self.assertEqual(add(-1, 1), 0)
+        self.assertNotEqual(add(10, 2), 12, "应该是 12")
 
 if __name__ == '__main__':
     unittest.main()
 ```
 
-运行后输出:
+当你运行这个测试脚本时，你应该会看到输出，指示你的测试通过（或失败）。
+
+若要进行更现代和更具表达性的测试，你可以使用第三方库，如 `pytest`。首先，你需要使用 pip 安装它：
+
+```shell
+pip install pytest
 ```
-..
-----------------------------------------------------------------------
-Ran 2 tests in 0.001s
 
-OK
+然后，你可以以更简单的方式编写你的测试，无需继承任何内容：
+
+```python
+# 将此保存在一个名为 test_with_pytest.py 的文件中
+def add(a, b):
+    return a + b
+
+def test_add():
+    assert add(1, 2) == 3
+    assert add(-1, 1) == 0
+    assert add(10, 2) != 12, "应该是 12"
 ```
 
-## Deep Dive (深度探索)
-- 历史背景: 测试驱动开发（TDD）自2000年起变得流行，强调先写测试再写功能代码。
-- 替代方案: 除了`unittest`，还有`pytest`、`nose2`等测试框架。
-- 实现细节: `unittest`支持测试固件、测试用例、测试套件和测试运行器的概念，专业地组织和运行测试。
+要使用 `pytest` 运行你的测试，只需执行：
 
-## See Also (另请参见)
-- 官方unittest文档: https://docs.python.org/3/library/unittest.html
-- pytest官网: https://pytest.org/
-- 测试驱动开发(TDD): https://en.wikipedia.org/wiki/Test-driven_development
+```shell
+pytest test_with_pytest.py
+```
+
+你应该会看到 pytest 显示的测试结果输出。

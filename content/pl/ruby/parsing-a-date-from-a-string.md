@@ -1,47 +1,65 @@
 ---
-title:                "Przetwarzanie daty ze łańcucha znaków"
-date:                  2024-01-20T15:38:27.410677-07:00
-simple_title:         "Przetwarzanie daty ze łańcucha znaków"
-
+title:                "Analiza składniowa daty z łańcucha znaków"
+date:                  2024-02-03T19:15:14.329153-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Analiza składniowa daty z łańcucha znaków"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/ruby/parsing-a-date-from-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Co i Dlaczego?)
-Parsing a date from a string is turning text into a date/time object. Programmers do it to make sense of dates in logs, user input, and saved data.
+## Co i dlaczego?
+Przetwarzanie daty z ciągu znaków polega na konwersji tekstu, który reprezentuje datę, na obiekt `Date` lub `DateTime`, który jest zrozumiały dla Ruby. Programiści robią to, aby wykonywać operacje takie jak porównania, obliczenia czy formatowanie dat, co jest częstym zadaniem w aplikacjach zajmujących się planowaniem, analizą czy przetwarzaniem danych.
 
-## How to: (Jak to zrobić?)
-```Ruby
+## Jak to zrobić:
+W Ruby standardowa biblioteka zapewnia bezpośrednie sposoby na przetwarzanie dat z ciągów znaków przy użyciu klas `Date` i `DateTime`. Oto jak to zrobić za pomocą wbudowanych metod Ruby:
+
+```ruby
 require 'date'
 
-# Parse a date from a string
-date_string = "2023-04-10"
+# Przetwarzanie daty z ciągu znaków
+date_string = "2023-04-01"
 parsed_date = Date.parse(date_string)
+puts parsed_date
+# => 2023-04-01
 
-puts parsed_date           # Outputs: 2023-04-10
-puts parsed_date.class     # Outputs: Date
-
-# Parse a date and time
-datetime_string = "2023-04-10 14:30"
+# DateTime dla bardziej szczegółowego przedstawienia czasu
+datetime_string = "2023-04-01T15:30:45+00:00"
 parsed_datetime = DateTime.parse(datetime_string)
-
-puts parsed_datetime       # Outputs: 2023-04-10T14:30:00+00:00
-puts parsed_datetime.class # Outputs: DateTime
+puts parsed_datetime
+# => 2023-04-01T15:30:45+00:00
 ```
-Remember, Date and DateTime are part of Ruby's standard library. No gem installation needed.
 
-## Deep Dive (Głębsze Zagłębienie)
-Rubies didn't always come with great date parsing. It used to be a pain. Now, the built-in `Date` and `DateTime` classes make it easy. They've got `parse` methods that read various date formats automatically. You try '2023-01-01', '01/01/2023', or 'January 1, 2023' – it just works.
+Dla większej kontroli lub aby obsłużyć formaty, których metoda `parse` może nie rozumieć bezpośrednio, można użyć `strptime` (string parse time), określając format wyraźnie:
 
-But there's more. If you need to parse more obscure formats, or need stricter parsing, there's `strptime` – it lets you specify the exact format. There's also Chronic, a gem that's really forgiving about input. Great for user-provided data.
+```ruby
+# Używanie strptime dla niestandardowych formatów
+custom_date_string = "01-04-2023"
+parsed_date_custom = Date.strptime(custom_date_string, '%d-%m-%Y')
+puts parsed_date_custom
+# => 2023-04-01
+```
 
-Speaking of gem alternatives, Rails has ActiveSupport's `TimeWithZone` for time zone support. It's more robust if you need to handle different time zones.
+### Korzystanie z bibliotek stron trzecich:
 
-Finally, time zones: `DateTime.parse` assumes UTC if no zone is provided. If you need specific time zone handling, you must take extra steps.
+Chociaż wbudowane możliwości Ruby są potężne, czasami możesz preferować biblioteki stron trzecich dla dodatkowych funkcji lub prostszej składni. Popularnym wyborem jest gem `Chronic` do parsowania języka naturalnego:
 
-## See Also (Zobacz Również)
-- [Ruby DateTime documentation](https://ruby-doc.org/stdlib-3.0.0/libdoc/date/rdoc/DateTime.html)
-- [Chronic gem](https://github.com/mojombo/chronic)
-- [Rails ActiveSupport TimeWithZone](https://api.rubyonrails.org/classes/ActiveSupport/TimeWithZone.html)
+1. Najpierw dodaj Chronic do pliku Gemfile i uruchom `bundle install`:
+```ruby
+gem 'chronic'
+```
+
+2. Następnie użyj go w taki sposób:
+```ruby
+require 'chronic'
+
+parsed_chronic = Chronic.parse('next Tuesday')
+puts parsed_chronic
+# Wynik będzie zależał od aktualnej daty; zakłada przetwarzanie na 2023-04-01
+# => 2023-04-04 12:00:00 +0000
+```
+
+`Chronic` jest bardzo użyteczny dla danych wejściowych użytkownika, ponieważ może rozumieć szeroki zakres formatów dat w języku naturalnym, co czyni go potężnym narzędziem dla aplikacji wymagających elastycznego wprowadzania dat.

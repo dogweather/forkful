@@ -1,43 +1,59 @@
 ---
-title:                "Vérification de l'existence d'un répertoire"
-date:                  2024-01-19
-simple_title:         "Vérification de l'existence d'un répertoire"
-
+title:                "Vérifier si un répertoire existe"
+date:                  2024-02-03T19:06:38.884079-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Vérifier si un répertoire existe"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/bash/checking-if-a-directory-exists.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Vérifier l'existence d'un répertoire confirme que le dossier que vous souhaitez utiliser est bien là où vous le pensez. Les programmeurs font ça pour éviter des erreurs chiantes: imaginez écrire dans un dossier qui n'existe pas!
+## Quoi & Pourquoi ?
 
-## How to:
-Pour voir si un répertoire existe, utilisez `if` avec `[-d /chemin/du/repertoire]`. Voici la syntaxe et un exemple :
+En programmation Bash, vérifier si un répertoire existe est un mécanisme de contrôle essentiel utilisé pour vérifier la présence d'un répertoire avant d'effectuer des opérations sur des fichiers. Cette vérification est cruciale pour éviter des erreurs telles que tenter d'accéder ou de modifier des répertoires qui n'existent pas, assurant ainsi une exécution de script plus fluide et plus prévisible.
 
-```Bash
-if [ -d /chemin/du/repertoire ]; then
-  echo "Le répertoire existe!"
+## Comment faire :
+
+Au cœur de Bash, vous pouvez vérifier l'existence d'un répertoire en utilisant des instructions conditionnelles et l'opérateur `-d`. Voici un exemple simple qui montre comment effectuer cette vérification.
+
+```bash
+if [ -d "/chemin/vers/repertoire" ]; then
+    echo "Le répertoire existe."
 else
-  echo "Le répertoire n'existe pas."
+    echo "Le répertoire n'existe pas."
 fi
 ```
 
-Si `/chemin/du/repertoire` existe, vous verrez :
-
+Sortie d'exemple (si le répertoire existe) :
 ```
-Le répertoire existe!
+Le répertoire existe.
 ```
-Sinon :
 
+Sortie d'exemple (si le répertoire n'existe pas) :
 ```
 Le répertoire n'existe pas.
 ```
 
-## Deep Dive
-Historiquement sous Unix, la vérification de l'existence d'un fichier ou d'un répertoire est fondamentale. Elle assure que le script ne plante pas pour une faute aussi bête qu'un mauvais chemin. En alternative au test `[ -d ]`, il y a `[[ -d /chemin/du/repertoire ]]` pour des scripts plus modernes et `if [ "$(ls -A /chemin/du/repertoire)" ]` si vous voulez aussi savoir si le répertoire est vide. Néanmoins, la première option reste la plus directe et efficace.
+Pour des scripts plus complexes, il est courant de combiner la vérification avec d'autres opérations, comme créer le répertoire s'il n'existe pas :
 
-## See Also
-- Le manuel de Bash : `man bash`
-- Guide avancé de script Bash : https://www.tldp.org/LDP/abs/html/
-- Comparaison des tests de fichiers dans Bash : https://mywiki.wooledge.org/BashGuide/TestsAndConditionals
+```bash
+REP="/chemin/vers/repertoire"
+if [ -d "$REP" ]; then
+    echo "$REP existe."
+else
+    echo "$REP n'existe pas. Création en cours..."
+    mkdir -p "$REP"
+    echo "$REP créé."
+fi
+```
+
+Sortie d'exemple (si le répertoire n'existe pas puis est créé) :
+```
+/chemin/vers/repertoire n'existe pas. Création en cours...
+/chemin/vers/repertoire créé.
+```
+
+Bien que Bash lui-même fournisse des outils robustes pour de telles vérifications, il n'existe pas de bibliothèques tierces populaires spécifiquement pour cette tâche, car les commandes Bash natives sont tout à fait capables et efficaces pour la validation de la présence de répertoires.

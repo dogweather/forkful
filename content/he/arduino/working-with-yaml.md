@@ -1,61 +1,83 @@
 ---
 title:                "עבודה עם YAML"
-date:                  2024-01-19
+date:                  2024-02-03T19:25:37.447984-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "עבודה עם YAML"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/arduino/working-with-yaml.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## מה ולמה?
-YAML הוא תסדיר קל לקריאה להצגת נתונים אשר משמש בתכנות לקובצי תצורה ותוכן. תכנתים משתמשים בו בגלל הקריאות הגבוהה והקלות לכתיבה ופענוח, בניגוד ל-JSON או XML.
 
-## איך לעשות:
-תקשורת עם YAML ב-Arduino אינה אפשרית בצורה ישירה, מכיוון שמדובר במיקרו-קונטרולרים עם משאבים מוגבלים ו-YAML מיועד יותר לשרתים ולמחשבים אישיים. במקום זאת, אפשר להשתמש בפורמטים יותר חסכוניים כמו JSON.
+YAML (YAML אינו שפת סימון) היא תקן סידור נתונים קריא לאדם, הניתן לשימוש בקבצי קונפיגורציה, תקשורת בין-תכניות, ואחסון נתונים. מתכנתים פונים ל-YAML בפרויקטים של Arduino כדי להפשיט את תהליך הקונפיגורציה של היישומים שלהם, ובכך להקל על שינוי פרמטרים מבלי להצטרך לחדור לעומקי הקוד, לשפר את קריאות הקוד, ולהקל על שיתוף הקונפיגורציה.
 
-```Arduino
-// לדוג' אין קוד ספציפי ל-YAML ב-Arduino
+## כיצד לעשות זאת:
+
+עבודה עם YAML ישירות על Arduino אינה פשוטה כמו בסביבות תכנות ברמה גבוהה יותר, בשל מגבלות זיכרון והיעדר ספריות עיבוד YAML מובנות. עם זאת, לפרויקטים הדורשים ניתוח או יצירת YAML, גישה טיפוסית כוללת שימוש במחשב נלווה (כמו Raspberry Pi) או המרת קבצי YAML לפורמט ידידותי יותר ל-Arduino (כמו JSON) באמצעות תסריטים חיצוניים. לצורך הדגמה, בואו נתמקד בגישה האחרונה באמצעות ספרייה פופולרית: ArduinoJson.
+
+**שלב 1:** המר את הקונפיגורציה שלך מ-YAML ל-JSON. תוכל להשתמש בכלים מקוונים או ביותיליטים שורת פקודה כמו `yq`.
+
+קובץ YAML (`config.yaml`):
+```yaml
+wifi:
+  ssid: "YourSSID"
+  password: "YourPassword"
 ```
 
-אבל, קוד לשימוש ב-JSON:
+הומר ל-JSON (`config.json`):
+```json
+{
+  "wifi": {
+    "ssid": "YourSSID",
+    "password": "YourPassword"
+  }
+}
+```
 
-```Arduino
+**שלב 2:** השתמש בספריית ArduinoJson כדי לנתח את קובץ ה-JSON בסקיצה שלך ב-Arduino. תחילה, עליך להתקין את ספריית ArduinoJson דרך מנהל הספריות בסביבת הפיתוח של Arduino.
+
+**שלב 3:** טען ונתח את ה-JSON בקוד שלך. בשל מגבלות האחסון ב-Arduino, נניח שמחרוזת ה-JSON מאוחסנת במשתנה או קרואה מכרטיס SD.
+
+סקיצת Arduino לדוגמה:
+```cpp
 #include <ArduinoJson.h>
 
+const char* jsonConfig = "{\"wifi\":{\"ssid\":\"YourSSID\",\"password\":\"YourPassword\"}}";
+
 void setup() {
-    Serial.begin(9600);
+  Serial.begin(9600);
 
-    const char* json = "{\"sensor\":\"gps\",\"time\":1351824120}";
+  StaticJsonDocument<200> doc;
+  DeserializationError error = deserializeJson(doc, jsonConfig);
 
-    DynamicJsonDocument doc(1024);
-    deserializeJson(doc, json);
+  if (error) {
+    Serial.print(F("deserializeJson() failed: "));
+    Serial.println(error.f_str());
+    return;
+  }
 
-    const char* sensor = doc["sensor"];
-    long time = doc["time"];
+  const char* ssid = doc["wifi"]["ssid"]; // "YourSSID"
+  const char* password = doc["wifi"]["password"]; // "YourPassword"
 
-    Serial.println(sensor);
-    Serial.println(time);
+  Serial.print("SSID: ");
+  Serial.println(ssid);
+  Serial.print("Password: ");
+  Serial.println(password);
 }
 
 void loop() {
-    // פונקציית ה-loop אינה מבצעת פעולות בדוגמה זו
+  // כאן לא נמצא דבר במשל הזה
 }
 ```
 
-תוצאה:
+פלט לאחר הרצת הסקיצה:
 ```
-gps
-1351824120
+SSID: YourSSID
+Password: YourPassword
 ```
 
-## עומק הצלילה
-YAML, שמעמיד ישראל יתיר בקצה ימינו Yet Another Markup Language, הופך לתקן פופולרי לכתיבת קבצי תצורה מאז שנות ה-2000 בזכות קלות השימוש והקיבולת הרחבה של סוגי נתונים. גרסאות קודמות של קבצי תצורה כללו INI ו-XML, אך הם נחשבים כבדים ופחות קריאים. YAML מאפשר ייצוג של מבנה נתונים מורכב בצורה פשוטה וברורה, כך שקל להבינו גם ללא רקע טכני.
-
-בעולם אינטרנט הדברים ומעגלי המיקרו-קונטרולר, כמו Arduino, יש צורך בתקשורת יעילה וקומפקטית. לכן, פורמטים כמו JSON או תקשורת בינארית נעשים שימוש בהם בעיקר בהתבסס על המגבלות ההאדרוואריות והנפח התעבורתי הנמוך של המכשירים.
-
-## לראות גם
-- המסמך המקיף ל-YAML: [https://yaml.org/spec/1.2/spec.html](https://yaml.org/spec/1.2/spec.html)
-- ArduinoJson, ספריית JSON ל-Arduino: [https://arduinojson.org/](https://arduinojson.org/)
-- מידע על סוגי נתונים בארדואינו: [https://www.arduino.cc/reference/en/](https://www.arduino.cc/reference/en/)
+הגישה הזו, הכוללת המרה ל-JSON וניצול של ספריית ArduinoJson, מאפשרת טיפול נוח בקונפיגורציית YAML בתוך פרויקטים של Arduino, מתחמקת מניתוח ישיר של YAML על המיקרו-בקר.

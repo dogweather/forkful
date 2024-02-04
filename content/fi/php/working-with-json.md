@@ -1,43 +1,100 @@
 ---
-title:                "JSON-tiedostojen käsittely"
-date:                  2024-01-19
-simple_title:         "JSON-tiedostojen käsittely"
-
+title:                "Työskentely JSON:n kanssa"
+date:                  2024-02-03T19:23:56.801945-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Työskentely JSON:n kanssa"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/php/working-with-json.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? - Mitä & Miksi?
-JSON, JavaScript Object Notation, on dataformaatii, jonka avulla tiedot vaihtuvat siististi ja tiiviisti. Käytämme sitä koska se on helppolukuinen ihmisten ja koneiden kannalta ja koska se toimii saumattomasti lähes kaikkien ohjelmointikielien kanssa.
+## Mikä ja miksi?
+JSON eli JavaScript Object Notation on kevyt tiedonvaihtoformaatti, joka on ihmisten luettavissa ja kirjoitettavissa helposti, sekä koneiden jäsentämä ja tuottama vaivattomasti. Ohjelmoijat työskentelevät usein JSONin kanssa vaihtaakseen tietoja palvelimien ja web-sovellusten välillä sen yksinkertaisuuden ja kieliriippumattomuuden ansiosta, mikä tekee siitä kulmakiven nykyaikaisessa web-kehityksessä ja API:ssa.
 
-## How to: - Kuinka:
-PHP:ssä JSON:ia käsitellään `json_encode` ja `json_decode` funktioilla. Tässä pari esimerkkiä:
+## Kuinka:
+Työskentely JSONin kanssa PHP:ssä on suoraviivaista kiitos sisäänrakennettujen funktioiden `json_encode()` ja `json_decode()`. Alla on esimerkkejä, jotka näyttävät, kuinka PHP-taulukko muunnetaan JSON-merkkijonoksi ja päinvastoin:
 
-```PHP
-<?php
-// Luodaan PHP-array
-$data = array('nimi' => 'Jari', 'ammatti' => 'Koodari');
+### PHP-taulukon koodaaminen JSON-merkkijonoksi
+```php
+// Määritelty assosiatiivinen taulukko
+$data = [
+    "name" => "John Doe",
+    "age" => 30,
+    "email" => "john.doe@example.com"
+];
 
-// Muunnetaan PHP-array JSON-stringiksi
-$jsonData = json_encode($data);
-echo $jsonData;
-// Output: {"nimi":"Jari","ammatti":"Koodari"}
+// Muunna PHP-taulukko JSON-merkkijonoksi
+$jsonString = json_encode($data);
 
-// Muunnetaan JSON-string takaisin PHP-arrayksi
-$decodedData = json_decode($jsonData, true);
-print_r($decodedData);
-// Output: Array ( [nimi] => Jari [ammatti] => Koodari )
-?>
+// Tulosta JSON-merkkijono
+echo $jsonString;
+```
+**Esimerkkituloste:**
+```json
+{"name":"John Doe","age":30,"email":"john.doe@example.com"}
 ```
 
-JSON-stringistä tulee PHP-olio, jos `json_decode` funktiolle ei anneta toista parametriä (true).
+### JSON-merkkijonon purkaminen PHP-taulukoksi
+```php
+// JSON-merkkijono
+$jsonString = '{"name":"John Doe","age":30,"email":"john.doe@example.com"}';
 
-## Deep Dive - Syväsukellus:
-JSON muoto syntyi 2000-luvun alussa, helpottamaan selaimen ja palvelimen välistä kommunikointia. XML oli aiempi suosikki, mutta sen raskas luonne antoi tien JSONille. PHP käsittelee JSON-dataa nativiisti `json_encode` ja `json_decode` funktioiden kautta, jotka tulivat mukaan versiossa 5.2.0. JSON formaatti on tehokas, koska se on yksinkertainen, kevyt ja kielet välinen.
+// Muunna JSON-merkkijono PHP-taulukoksi
+$data = json_decode($jsonString, true);
 
-## See Also - Katso Myös:
-- PHP:n virallinen JSON käsittelyn dokumentaatio: [php.net/manual/en/book.json.php](https://www.php.net/manual/en/book.json.php)
-- JSON-syntaksin virallinen käsittely: [json.org](http://json.org/)
-- Web-API:tietoa ja JSONin käyttö esimerkit: [Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON)
+// Tulosta PHP-taulukko
+print_r($data);
+```
+**Esimerkkituloste:**
+```
+Array
+(
+    [name] => John Doe
+    [age] => 30
+    [email] => john.doe@example.com
+)
+```
+
+### Työskentely kolmannen osapuolen kirjaston kanssa: GuzzleHttp
+Monimutkaisen JSON- ja web-pyyntöjen käsittelyyn yksi suosittu PHP-kirjasto on GuzzleHttp. Se yksinkertaistaa HTTP-pyyntöjä ja toimii helposti JSON-tietojen kanssa.
+
+**Asennus Composerin kautta:**
+```
+composer require guzzlehttp/guzzle
+```
+
+**Esimerkkipyyntö:**
+```php
+require 'vendor/autoload.php';
+
+use GuzzleHttp\Client;
+
+$client = new Client();
+
+// Lähetä pyyntö API:lle, joka palauttaa JSONia
+$response = $client->request('GET', 'https://api.example.com/data', [
+    'headers' => [
+        'Accept' => 'application/json',
+    ],
+]);
+
+// Pure JSON-vaste PHP-taulukoksi
+$data = json_decode($response->getBody(), true);
+
+// Tulosta data
+print_r($data);
+```
+
+**Olettaen, että API palauttaa samankaltaisia JSON-tietoja:**
+```
+Array
+(
+    [name] => John Doe
+    [age] => 30
+    [email] => john.doe@example.com
+)
+```
+Tämä esittelee PHP:n helppokäyttöisyyden JSONin käsittelyssä, sekä natiivien funktioiden että monimutkaisempiin tehtäviin tarkoitettujen, kuten GuzzleHttp-kirjaston avulla.

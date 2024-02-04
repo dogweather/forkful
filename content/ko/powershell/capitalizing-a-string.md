@@ -1,44 +1,45 @@
 ---
-title:                "문자열 대문자로 변환하기"
-date:                  2024-01-19
-simple_title:         "문자열 대문자로 변환하기"
-
+title:                "문자열 대문자화"
+date:                  2024-02-03T19:06:07.195832-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "문자열 대문자화"
 tag:                  "Strings"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/powershell/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (무엇과 왜?)
-문자열을 대문자로 만드는 것은 각 단어의 첫 글자나 모든 글자를 대문자로 바꾸는 것입니다. 프로그래머들은 보통 이렇게 처리하여 사용자 인터페이스를 깔끔하게 보이게 하거나 데이터의 일관성을 유지하기 위해 사용합니다.
+## 무엇을, 왜?
+PowerShell에서 문자열을 대문자로 만드는 것은 주어진 문자열의 첫 글자를 대문자로 변환하면서 나머지 문자열은 변경하지 않는 작업을 말합니다. 프로그래머들은 종종 사용자 인터페이스에서 텍스트를 표시하거나 생성된 문서에서 문법 규칙을 따르기 위해 이러한 작업을 수행합니다.
 
-## How to: (어떻게:)
-### 단어의 첫 글자만 대문자로
-```PowerShell
-$exampleString = "안녕하세요, powershell을 배우고 있습니다."
-$capitalizedString = $exampleString | ForEach-Object { $_.Substring(0,1).ToUpper() + $_.Substring(1).ToLower() }
-$capitalizedString
+## 어떻게:
+PowerShell은 다재다능한 도구로서, 제3자 라이브러리가 필요 없이 문자열을 대문자로 만드는 간단한 방법을 제공합니다. 다음은 그 방법입니다:
+
+```powershell
+# CultureInfo의 내장 .Net 메서드 'ToTitleCase'를 사용
+$text = "hello world"
+$culture = [System.Globalization.CultureInfo]::InvariantCulture
+$capitalizedText = $culture.TextInfo.ToTitleCase($text.ToLower())
+Write-Output $capitalizedText
 ```
 출력:
 ```
-안녕하세요, Powershell을 배우고 있습니다.
+Hello world
 ```
 
-### 모든 글자를 대문자로
-```PowerShell
-$exampleString = "안녕하세요, powershell이 재미있습니다."
-$uppercasedString = $exampleString.ToUpper()
-$uppercasedString
+참고: 이 메서드는 각 단어의 첫 글자를 대문자로 만듭니다. 문자열의 첫 글자만 대문자로 만들고 나머지는 그대로 두고 싶다면, 다음과 같이 할 수 있습니다:
+
+```powershell
+# 문자열의 첫 문자만 대문자로 만들기
+$text = "hello world"
+$capitalizedText = $text.Substring(0,1).ToUpper() + $text.Substring(1)
+Write-Output $capitalizedText
 ```
 출력:
 ```
-안녕하세요, POWERSHELL이 재미있습니다.
+Hello world
 ```
 
-## Deep Dive (심층 분석)
-문자열을 대문자로 바꾸는 것은 컴퓨터프로그래밍 이래로 흔히 사용되어 왔습니다. 데이터베이스 검색에서 대소문자를 구별하지 않게 하거나 텍스트를 보기 좋게 하기 위해서 사용됐죠. PowerShell에서는 `.ToUpper()`와 `.ToLower()` 메소드를 사용하여 쉽게 문자열의 대소문자 변환을 수행할 수 있습니다. 또한, `.ToTitleCase()` 함수를 사용해서 TextInfo 객체를 통해 첫 글자만 대문자로 바꿀 수도 있습니다. 구현의 세부 사항에 있어서, 이 메소드들은 내부적으로 유니코드 표준을 따르고 있어서 다국어에도 잘 대응합니다.
-
-## See Also (참고자료)
-- [[.NET의 TextInfo Class에 관한 문서]](https://docs.microsoft.com/en-us/dotnet/api/system.globalization.textinfo.totitlecase?view=net-5.0)
-- [유니코드 표준에 대한 공식 문서](https://unicode.org/standard/standard.html)
+PowerShell은 문자열의 첫 글자만 대문자로 만드는 간단한 함수를 직접 포함하고 있지 않지만, `Substring(0,1).ToUpper()`와 같은 기본 문자열 조작 메서드와 연결 작업을 결합함으로써 원하는 결과를 쉽게 얻을 수 있습니다.

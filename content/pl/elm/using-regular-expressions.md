@@ -1,49 +1,72 @@
 ---
-title:                "Wykorzystanie wyrażeń regularnych"
-date:                  2024-01-19
-simple_title:         "Wykorzystanie wyrażeń regularnych"
-
+title:                "Korzystanie z wyrażeń regularnych"
+date:                  2024-02-03T19:16:44.072939-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Korzystanie z wyrażeń regularnych"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/elm/using-regular-expressions.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Co i Dlaczego?)
+## Co i dlaczego?
+Wyrażenia regularne (regex) w programowaniu to wzorce używane do dopasowywania kombinacji znaków w ciągach znaków. W Elm, podobnie jak w innych językach, programiści używają regexów do zadań takich jak walidacja danych wejściowych, wyszukiwanie oraz zamiana tekstu w ciągach znaków ze względu na ich elastyczność i wydajność.
 
-Regular expressions (regex) to wzorce służące do wyszukiwania i manipulowania tekstami. Programiści używają ich, by łatwo znajdować, weryfikować i zamieniać ciągi znaków przy minimalnym kodzie.
+## Jak to zrobić:
+Elm nie posiada wbudowanych funkcji regex w swojej głównej bibliotece, wymaga używania bibliotek stron trzecich dla tych operacji. Jednym z popularnych wyborów do pracy z regexami jest `elm/regex`. Możesz dodać to do swojego projektu używając `elm install elm/regex`.
 
-## How to: (Jak to zrobić:)
+Oto jak możesz używać `elm/regex` do kilku częstych zadań:
 
-Elm używa pakietu `Regex` do pracy z wyrażeniami regularnymi. Poniżej kilka przykładów:
+### 1. Dopasowywanie wzorca
+Aby sprawdzić, czy ciąg znaków pasuje do wzorca, możesz użyć `Regex.contains`.
 
-```Elm
-import Regex exposing (..)
+```elm
+import Regex
 
--- Sprawdzanie czy tekst pasuje do wzorca
-isMatch : String -> String -> Bool
-isMatch pattern text =
-    case Regex.fromString pattern of
-        Just re -> Regex.contains re text
-        Nothing -> False
+pattern : Regex.Regex
+pattern = Regex.fromString "^[a-zA-Z0-9]+$" |> Maybe.withDefault Regex.never
 
--- Użycie isMatch
-isEmail : String -> Bool
-isEmail email = isMatch "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$" email
+isAlphanumeric : String -> Bool
+isAlphanumeric input = Regex.contains pattern input
 
--- Wynik sprawdzenia
-exampleEmailCheck : Bool
-exampleEmailCheck = isEmail "example@test.com"
+-- Przykład użycia:
+isAlphanumeric "Elm2023"     -- Wyjście: True
+isAlphanumeric "Elm 2023!"   -- Wyjście: False
 ```
 
-Przykład zwróci `True`, ponieważ string pasuje do wzorca emaila.
+### 2. Znajdowanie wszystkich dopasowań
+Aby znaleźć wszystkie wystąpienia wzorca w ciągu znaków, możesz użyć `Regex.find`.
 
-## Deep Dive (Więcej szczegółów)
+```elm
+matches : Regex.Regex
+matches = Regex.fromString "\\b\\w+\\b" |> Maybe.withDefault Regex.never
 
-Wyrażenia regularne mają korzenie w teorii automatów i języków formalnych z lat 50. Ich implementacje różnią się w zależności od języka, ale idea pozostaje taka sama. W Elm, regex obsługiwany jest przez pakiet `Regex`, ale jest mniej rozbudowany niż w językach takich jak JavaScript czy Python. Alternatywą może być stosowanie funkcji `String`, gdy potrzebujemy prostszej manipulacji tekstami.
+getWords : String -> List String
+getWords input = 
+    input
+        |> Regex.find matches
+        |> List.map (.match)
 
-## See Also (Zobacz też)
+-- Przykład użycia:
+getWords "Elm is fun!"  -- Wyjście: ["Elm", "is", "fun"]
+```
 
-- Dokumentacja Elm `Regex`: https://package.elm-lang.org/packages/elm/regex/latest/Regex
-- Interaktywny tester wyrażeń regularnych: https://regex101.com/
-- Tutorial RegExp w JavaScript (dobrze tłumaczy podstawy, które są podobne): https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions
+### 3. Zamiana tekstu
+Aby zamienić części ciągu znaków, które pasują do wzorca, użyj `Regex.replace`.
+
+```elm
+replacePattern : Regex.Regex
+replacePattern = Regex.fromString "Elm" |> Maybe.withDefault Regex.never
+
+replaceElmWithHaskell : String -> String
+replaceElmWithHaskell input = 
+    Regex.replace replacePattern (\_ -> "Haskell") input
+
+-- Przykład użycia:
+replaceElmWithHaskell "Ucząc się Elm jest zabawnie!"  
+-- Wyjście: "Ucząc się Haskell jest zabawnie!"
+```
+
+W tych przykładach użycie `Regex.fromString` służy do kompilacji wzorca regex, gdzie `\b` pasuje do granic słów, a `\w` do dowolnego znaku słowa. Zawsze obsługuj wynik `Maybe` z `Regex.fromString` dla ochrony przed nieprawidłowymi wzorcami regex, typowo używając `Maybe.withDefault`.

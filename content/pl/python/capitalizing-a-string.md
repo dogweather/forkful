@@ -1,42 +1,68 @@
 ---
-title:                "Zamiana liter na wielkie w ciągu znaków"
-date:                  2024-01-19
-simple_title:         "Zamiana liter na wielkie w ciągu znaków"
-
+title:                "Zamiana liter na wielkie w łańcuchu znaków"
+date:                  2024-02-03T19:06:20.835334-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Zamiana liter na wielkie w łańcuchu znaków"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/python/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-"Co to jest i dlaczego?"
+## Co i dlaczego?
+Kapitalizacja ciągu znaków oznacza przekształcenie pierwszego znaku ciągu na wielką literę, a resztę na małe litery. Operacja ta jest powszechnie stosowana w przetwarzaniu danych w celu normalizacji danych wejściowych lub poprawy czytelności tytułów, nazwisk itp.
 
-Kapitalizacja to proces zmiany pierwszej litery wyrazu na dużą. Programiści używają kapitalizacji, by poprawić czytelność tekstu lub wyznaczyć standard formatowania, np. w nazwach tytułów czy własnych.
+## Jak to zrobić:
 
-## How to:
-"Jak to zrobić:"
+### Korzystając z wbudowanej metody Pythona:
+Python posiada wbudowaną metodę `.capitalize()` dla ciągów znaków, która pozwala łatwo wykonać to zadanie.
 
 ```python
-# Kapitalizacja pojedynczego słowa
-word = "python"
-capitalized_word = word.capitalize()
-print(capitalized_word) # Wyjście: Python
-
-# Kapitalizacja każdego wyrazu w stringu
-title = "przykład kapitalizacji tytułu"
-capitalized_title = title.title()
-print(capitalized_title) # Wyjście: Przykład Kapitalizacji Tytułu
+my_string = "hello world"
+capitalized_string = my_string.capitalize()
+print(capitalized_string)
+```
+**Wynik:**
+```
+Hello world
 ```
 
-## Deep Dive
-"Dogłębna analiza"
+### Obsługa wielu słów:
+W przypadkach, gdy chcesz, aby każde słowo w ciągu rozpoczynało się od wielkiej litery (tak jak w tytułach), można zastosować metodę `.title()`.
 
-Kapitalizacja w informatyce nie zawsze była standardem, ale stała się popularna wraz z potrzebą lepszego dostosowywania tekstu dla użytkownika. Inne metody to np. `upper()` (wszystkie litery duże) czy `lower()` (wszystkie litery małe). Implementacja kapitalizacji zależy od języka programowania i użytego zestawu znaków (np. ASCII, Unicode). Python, korzystając z Unicode, pozwala na kapitalizację znaków z różnych alfabetów, nie tylko łacińskiego.
+```python
+my_title = "python programming essentials"
+title_case = my_title.title()
+print(title_case)
+```
+**Wynik:**
+```
+Python Programming Essentials
+```
 
-## See Also
-"Zobacz także"
+### Korzystanie z bibliotek zewnętrznych:
+Chociaż standardowa biblioteka Pythona jest wyposażona do podstawowej kapitalizacji ciągów znaków, biblioteki takie jak `textblob` mogą oferować bardziej subtelne sterowanie, szczególnie przy przetwarzaniu języka naturalnego.
 
-- Dokumentacja Pythona o metodach stringów: https://docs.python.org/3/library/stdtypes.html#string-methods
-- Unicode Standard: https://www.unicode.org/standard/standard.html
-- PEP 8 – Style Guide for Python Code, który opisuje konwencje nazewnictwa: https://www.python.org/dev/peps/pep-0008/
+Najpierw upewnij się, że masz zainstalowany `textblob`:
+```bash
+pip install textblob
+```
+
+Następnie użyj go do kapitalizacji ciągów znaków, pamiętając, że kapitalizacja w `textblob` może działać inaczej w zależności od kontekstu użycia:
+
+```python
+from textblob import TextBlob
+
+my_sentence = "this is a test sentence"
+blob = TextBlob(my_sentence)
+capitalized_blob = TextBlob(blob.string.capitalize())
+print(capitalized_blob)
+```
+**Wynik:**
+```
+This is a test sentence
+```
+
+Pamiętaj, że choć metody `capitalize()` i `title()` są uniwersalnie przydatne, korzystanie z bibliotek takich jak `textblob` może zapewnić dodatkową elastyczność dla konkretnych zastosowań.

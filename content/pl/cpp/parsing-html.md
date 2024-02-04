@@ -1,19 +1,21 @@
 ---
-title:                "Przetwarzanie HTML"
-date:                  2024-01-20T15:30:37.482508-07:00
-simple_title:         "Przetwarzanie HTML"
-
+title:                "Analiza składniowa HTML"
+date:                  2024-02-03T19:11:39.403985-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Analiza składniowa HTML"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/cpp/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
-Parsowanie HTML to proces wydobywania danych ze struktury dokumentu HTML. Programiści robią to, by manipulować treścią, wydobywać informacje, czy integracji z innymi aplikacjami.
+## Co i dlaczego?
+Parsowanie HTML polega na rozbijaniu zawartości HTML na coś, co program może zrozumieć i manipulować. Programiści robią to w celu wyodrębniania danych, manipulowania treścią lub integracji z zadaniami web scrapingu w ich aplikacjach.
 
 ## Jak to zrobić:
-Aby sparsować HTML w C++, możesz skorzystać z biblioteki `Gumbo-parser` od Google. Poniżej znajdziesz prosty przykład użycia:
+C++ nie posiada wbudowanych możliwości parsowania HTML. Często używa się do tego biblioteki, takiej jak Gumbo-parser od Google'a, lub czegoś podobnego. Oto krótki przykład użycia Gumbo-parser:
 
 ```C++
 #include <iostream>
@@ -29,10 +31,9 @@ void search_for_links(GumboNode* node) {
             std::cout << href->value << std::endl;
         }
     }
-
-    GumboVector* children = &node->v.element.children;
-    for (unsigned int i = 0; i < children->length; ++i) {
-        search_for_links(static_cast<GumboNode*>(children->data[i]));
+    GumboVector* dzieci = &node->v.element.children;
+    for (unsigned int i = 0; i < dzieci->length; ++i) {
+        search_for_links(static_cast<GumboNode*>(dzieci->data[i]));
     }
 }
 
@@ -45,20 +46,19 @@ int main() {
 }
 ```
 
-Wyjście z tego programu:
+Przykładowe wyjście:
 ```
 https://example.com
 ```
 
-## Deep Dive:
-Parsowanie HTML powstało wraz z potrzebą analizy i interakcji z siecią WWW. Wczesne metody opierały się na prostych sztuczkach tekstowych i wyrażeniach regularnych, ale były podatne na błędy. Obecnie mamy solidne parsery, które rozumieją skomplikowaną strukturę HTML.
+## Dogłębna analiza
+Parsowanie HTML nigdy nie było prostym zadaniem w C++. Historycznie, programiści używali wyrażeń regularnych lub pisanych ręcznie parserów, obie metody są podatne na błędy i uciążliwe. Obecnie, solidne biblioteki takie jak Gumbo-parser zajmują się zawiłościami parsowania, czyniąc je łatwiejszym i bardziej niezawodnym.
 
-Alternatywy dla `Gumbo-parser` to na przykład `htmlcxx`, `MyHTML` czy `libxml2` z modułem HTML. Wybór biblioteki zależy od wymagań projektowych - wydajności, licencji, łatwości użycia.
+Do alternatyw należą Tidy, MyHTML, czy nawet integracja C++ z Pythonowym BeautifulSoup za pośrednictwem funkcji `system` w C++ lub wbudowanych interpreterów.
 
-Implementacja parsera HTML zawiera masę detali – obsługę błędów w kodzie HTML, rozróżnianie elementów DOM, czy zarządzanie pamięcią. Tworzenie własnego parsera od zera jest wyzwaniem, więc częściej wybierane są gotowe rozwiązania.
+Pod względem implementacji, te biblioteki konwertują HTML na drzewo modelu obiektowego dokumentu (DOM). Przechodzenie i manipulowanie DOM pozwala użytkownikom na wyodrębnianie i pracę z danymi, jak pokazano w sekcji Jak to zrobić.
 
-## Zobacz także:
-- Dokumentacja Gumbo-parser: https://github.com/google/gumbo-parser
-- Strona projektu htmlcxx: http://htmlcxx.sourceforge.net/
-- Repozytorium MyHTML: https://github.com/lexborisov/myhtml
-- Informacje o libxml2: http://xmlsoft.org/html/libxml-HTMLparser.html
+## Zobacz też
+- [Repozytorium Gumbo-parser na GitHubie](https://github.com/google/gumbo-parser)
+- [Lista bibliotek do parsowania HTML](https://en.cppreference.com/w/c/experimental/dynamic)
+- [Współpraca C++ i Pythona](https://docs.python.org/3/extending/embedding.html)

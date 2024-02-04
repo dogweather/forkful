@@ -1,64 +1,100 @@
 ---
-title:                "Manipulation des fichiers CSV"
-date:                  2024-01-19
-simple_title:         "Manipulation des fichiers CSV"
-
+title:                "Travailler avec CSV"
+date:                  2024-02-03T19:21:24.853526-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Travailler avec CSV"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/typescript/working-with-csv.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Le CSV, ou "Comma-Separated Values", est un format de fichier pour stocker des données tabulaires. Les programmeurs l'utilisent pour la simplicité d'échange de données entre des systèmes et des applications.
+## Quoi et pourquoi ?
 
-## How to:
-Pour gérer les fichiers CSV en TypeScript, on peut utiliser la bibliothèque `papaparse`. Voici comment lire et écrire des CSV.
+Travailler avec des fichiers CSV (Valeurs Séparées par des Virgules) implique la lecture et l'écriture de fichiers CSV, un format d'échange de données courant utilisé en raison de sa simplicité et de son large support à travers diverses plateformes et langages. Les programmeurs traitent des fichiers CSV pour importer ou exporter des données depuis des applications, des bases de données et des services, facilitant ainsi la manipulation et le partage de données.
 
-```TypeScript
-import Papa from 'papaparse';
+## Comment faire :
 
-// Lire un CSV
-const csvFile = `prenom,nom,age
-Thomas,Durand,28
-Julie,Moreau,33`;
+En TypeScript, vous pouvez travailler avec des fichiers CSV soit par du code natif, soit en utilisant des bibliothèques tierces comme `csv-parser` pour la lecture et `csv-writer` pour l'écriture de fichiers CSV.
 
-Papa.parse(csvFile, {
-  header: true,
-  complete: (results) => {
-    console.log('Résultats:', results.data);
-  }
+### Lire un fichier CSV avec `csv-parser`
+
+D'abord, installez `csv-parser` via npm :
+
+```
+npm install csv-parser
+```
+
+Ensuite, lisez un fichier CSV comme suit :
+
+```typescript
+import fs from 'fs';
+import csv from 'csv-parser';
+
+const results = [];
+
+fs.createReadStream('data.csv')
+  .pipe(csv())
+  .on('data', (data) => results.push(data))
+  .on('end', () => {
+    console.log(results);
+    // Sortie : Tableau d'objets, chacun représentant une ligne dans le fichier CSV
+  });
+```
+
+En supposant que `data.csv` contient :
+
+```
+name,age
+Alice,30
+Bob,25
+```
+
+La sortie sera :
+
+```
+[ { name: 'Alice', age: '30' }, { name: 'Bob', age: '25' } ]
+```
+
+### Écrire dans un fichier CSV avec `csv-writer`
+
+Pour écrire dans un fichier CSV, installez d'abord `csv-writer` :
+
+```
+npm install csv-writer
+```
+
+Puis, utilisez-le comme suit :
+
+```typescript
+import { createObjectCsvWriter as createCsvWriter } from 'csv-writer';
+
+const csvWriter = createCsvWriter({
+  path: 'out.csv',
+  header: [
+    {id: 'name', title: 'NOM'},
+    {id: 'age', title: 'ÂGE'}
+  ]
 });
 
-// Écrire un CSV
 const data = [
-  { prenom: 'Marc', nom: 'Lavoine', age: 22 },
-  { prenom: 'Sophie', nom: 'Ferrand', age: 45 }
+  { name: 'Alice', age: 30 },
+  { name: 'Bob', age: 25 }
 ];
 
-const csv = Papa.unparse(data);
-console.log('CSV Généré:', csv);
+csvWriter
+  .writeRecords(data)
+  .then(() => console.log('Le fichier CSV a été écrit avec succès'));
 ```
 
-Output pour la lecture:
+Ce code écrit ce qui suit dans `out.csv` :
+
 ```
-Résultats: [
-  { prenom: 'Thomas', nom: 'Durand', age: '28' },
-  { prenom: 'Julie', nom: 'Moreau', age: '33' }
-]
+NOM,ÂGE
+Alice,30
+Bob,25
 ```
 
-Output pour l'écriture:
-```
-CSV Généré: prenom,nom,age
-Marc,Lavoine,22
-Sophie,Ferrand,45
-```
-
-## Deep Dive
-Le format CSV existe depuis les premières années de l'informatique personnelle. Des alternatives incluent JSON ou XML, mais le CSV reste populaire pour sa lisibilité et sa facilité d'import/export dans des tableurs. La plupart des langages de programmation ont des bibliothèques pour gérer les CSV, en TypeScript, `papaparse` offre un bon équilibre entre simplicité et fonctionnalités.
-
-## See Also
-- La documentation de 'papaparse': https://www.papaparse.com/docs
-- Spécifications RFC 4180 pour CSV: https://tools.ietf.org/html/rfc4180
-- Manipulation de CSV avec Node.js: https://nodejs.org/api/fs.html
+Ces exemples montrent comment intégrer le traitement de fichiers CSV dans vos projets TypeScript de manière efficace, que ce soit pour lire des données en vue d'une analyse ou pour persister des données d'application de manière externe.

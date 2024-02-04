@@ -1,62 +1,113 @@
 ---
-title:                "Arbeiten mit CSV-Dateien"
-date:                  2024-01-19
-simple_title:         "Arbeiten mit CSV-Dateien"
-
+title:                "Arbeiten mit CSV"
+date:                  2024-02-03T19:20:32.250924-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Arbeiten mit CSV"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/php/working-with-csv.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Was & Warum?
-CSV steht für "Comma-Separated Values" und ist ein Dateiformat, das Daten in Tabellenform speichert. Programmierer nutzen CSV, weil es leicht verständlich, einfach zu lesen und zu schreiben ist und von den meisten Tabellenkalkulationsprogrammen unterstützt wird.
 
-## Anleitung
-Lese eine CSV-Datei:
+Die Arbeit mit CSV-Dateien (Comma-Separated Values, auf Deutsch etwa "durch Kommas getrennte Werte") umfasst das Lesen von und das Schreiben in CSV-Dateien, einem beliebten Format zur Darstellung von tabellarischen Daten in Klartext. Programmierer tun dies, um Daten zwischen verschiedenen Programmen, Systemen oder Datenbanken leicht austauschen zu können, dank seiner Einfachheit und breiten Unterstützung über Plattformen und Programmiersprachen hinweg.
+
+## Wie:
+
+PHP bietet eingebaute Funktionen zur Handhabung von CSV-Dateien, wodurch es unkompliziert wird, aus diesen Dateien zu lesen und in sie zu schreiben, ohne dass Drittanbieterbibliotheken benötigt werden. Hier sind Beispiele, um Ihnen den Einstieg zu erleichtern:
+
+### Lesen einer CSV-Datei
+
+Sie können eine CSV-Datei öffnen und ihren Inhalt mittels `fopen()` in Kombination mit `fgetcsv()` lesen:
+
 ```php
 <?php
-$handle = fopen("meine_daten.csv", "r");
+$filename = 'data.csv';
+$handle = fopen($filename, "r");
 if ($handle !== FALSE) {
     while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
-        print_r($data);
+        $num = count($data);
+        echo "Anzahl der Felder in Zeile: $num\n";
+        for ($c = 0; $c < $num; $c++) {
+            echo $data[$c] . "\n";
+        }
     }
     fclose($handle);
 }
 ?>
 ```
-Schreibe eine CSV-Datei:
+
+Dieses Skript druckt die Anzahl der Felder in jeder Zeile gefolgt vom Inhalt jedes Feldes.
+
+### Schreiben in eine CSV-Datei
+
+Um in eine CSV-Datei zu schreiben, verwenden Sie `fopen()` im Schreibmodus (`w`) und `fputcsv()`:
+
 ```php
 <?php
-$list = array (
-    array('Alice', 'Bob', 'Charlie'),
-    array('Deutschland', 'Frankreich', 'Italien'),
-);
+$list = [
+    ['ID', 'Name', 'Email'],
+    [1, 'John Doe', 'john@example.com'],
+    [2, 'Jane Doe', 'jane@example.com']
+];
 
-$fp = fopen('datei.csv', 'w');
+$handle = fopen('users.csv', 'w');
 
-foreach ($list as $fields) {
-    fputcsv($fp, $fields);
+foreach ($list as $row) {
+    fputcsv($handle, $row);
 }
 
-fclose($fp);
+fclose($handle);
 ?>
 ```
-Ausgabe für das Lesebeispiel (abhängig von `meine_daten.csv`):
-```
-Array
-(
-    [0] => Alice
-    [1] => Bob
-    [2] => Charlie
-)
-...
+
+Dieses Skript erstellt eine Datei namens `users.csv` und schreibt die Kopfzeile sowie zwei Datensätze in sie.
+
+### Verwendung einer Bibliothek: League\Csv
+
+Für eine fortgeschrittenere Handhabung von CSV-Daten bietet die Bibliothek `League\Csv` einen robusten Satz von Funktionen. Nach der Installation über Composer (`composer require league/csv`) können Sie sie flexibler zum Lesen und Schreiben von CSV-Daten verwenden.
+
+#### Lesen mit League\Csv
+
+```php
+<?php
+require 'vendor/autoload.php';
+
+use League\Csv\Reader;
+
+$csv = Reader::createFromPath('data.csv', 'r');
+$csv->setHeaderOffset(0); // Setzen Sie dies, wenn Sie die erste Zeile als Kopfzeile verwenden möchten
+
+$results = $csv->getRecords();
+foreach ($results as $row) {
+    print_r($row);
+}
+?>
 ```
 
-## Deep Dive
-CSV-Dateien sind seit den frühen Anfängen der Computertechnologie im Einsatz und erlauben eine einfache Interoperabilität zwischen verschiedenen Programmen. Neben Standard-CSV gibt es Formate wie TSV (Tab-Separated Values) - wobei die Werte durch Tabulatoren getrennt sind. In PHP arbeitet man häufig mit den eingebauten Funktionen `fgetcsv()` und `fputcsv()`, die komfortabel Zeilen lesen und schreiben. Dabei ist auf korrektes Encoding und die Einhaltung des gewünschten Trennzeichens zu achten.
+Dieses Skript liest `data.csv`, behandelt die erste Zeile als Spaltenüberschriften und gibt jede Zeile als assoziatives Array aus.
 
-## See Also
-- PHP Manual auf CSV-Funktionen: https://www.php.net/manual/de/function.fgetcsv.php
-- RFC 4180, das den CSV-Standard beschreibt: https://tools.ietf.org/html/rfc4180
-- Eine Diskussion über CSV-Manipulation in PHP auf Stack Overflow: https://stackoverflow.com/questions/tagged/php+csv
+#### Schreiben mit League\Csv
+
+```php
+<?php
+require 'vendor/autoload.php';
+
+use League\Csv\Writer;
+
+$csv = Writer::createFromPath('users_new.csv', 'w+');
+
+$csv->insertOne(['ID', 'Name', 'Email']);
+$csv->insertAll([
+    [3, 'Alex Doe', 'alex@example.com'],
+    [4, 'Anna Smith', 'anna@example.com']
+]);
+
+echo "Erfolgreich in users_new.csv geschrieben.";
+?>
+```
+
+Das erstellt `users_new.csv` und schreibt eine Kopfzeile gefolgt von zwei Datenreihen.

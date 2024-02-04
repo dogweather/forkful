@@ -1,62 +1,82 @@
 ---
-title:                "HTML पार्स करना"
-date:                  2024-01-20T15:30:51.137928-07:00
-simple_title:         "HTML पार्स करना"
-
+title:                "HTML विश्लेषण"
+date:                  2024-02-03T19:12:53.880729-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "HTML विश्लेषण"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/arduino/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (क्या और क्यों?)
-HTML पार्सिंग का मतलब है HTML डेटा को विश्लेषित करके उससे संरचना और जानकारी निकालना। प्रोग्रामर इसलिए HTML पार्सिंग करते हैं ताकि वे वेब पेजेस से डेटा निकाल सकें और IoT डिवाइस के साथ इंटरैक्ट कर सकें।
+## क्या और क्यों?
 
-## How to: (कैसे करें)
-ध्यान दें कि Arduino में सीधे HTML पार्सिंग करना मुश्किल हो सकता है। आपको अक्सर स्पेशलिज्ड लाइब्रेरीज की जरूरत होती है। आइए एक उदाहरण देखें:
+आर्डुइनो परियोजनाओं में HTML की पार्सिंग वेब पन्नों से जानकारी निकालने के बारे में होती है। प्रोग्रामर इसे इसलिए करते हैं ताकि वे अपने आर्डुइनो उपकरणों को इंटरनेट के साथ इंटरैक्ट करने में सक्षम बना सकें, वेबसाइटों से डेटा एकत्रित करके घर के ऑटोमेशन से लेकर पर्यावरणीय निगरानी तक के उद्देश्यों के लिए।
 
-```Arduino
-#include <Ethernet.h>
-#include <HttpClient.h>
-#include <ArduinoJson.h>
+## कैसे:
 
-EthernetClient client;
-HttpClient http(client);
-int statusCode = 0;
-String response;
+आर्डुइनो पर HTML पार्सिंग आम तौर पर सीमित डिवाइस संसाधनों के कारण न्यूनतम फुटप्रिंट लाइब्रेरीज़ की मांग करती है। वेब स्क्रेपिंग और पार्सिंग के लिए एक लोकप्रिय विकल्प `ESP8266HTTPClient` और `ESP8266WiFi` लाइब्रेरीज़ का उपयोग करना है ESP8266 के लिए, या उनके ESP32 समकक्ष, दिए गए उनके मूल समर्थन के लिए वाई-फाई क्षमताओं और HTTP प्रोटोकॉल के लिए। यहाँ एक मूल उदाहरण है HTML लाने और पार्स करने के लिए, मानते हुए आप ESP8266 या ESP32 के साथ काम कर रहे हैं:
 
+पहले, आवश्यक लाइब्रेरीज़ को शामिल करें:
+```cpp
+#include <ESP8266WiFi.h> // ESP8266 के लिए
+#include <ESP8266HTTPClient.h>
+#include <WiFiClient.h>
+// यदि आप ESP32 का उपयोग कर रहे हैं तो समरूप ESP32 लाइब्रेरीज़ का उपयोग करें
+
+const char* ssid = "yourSSID";
+const char* password = "yourPASSWORD";
+```
+
+अपने वाई-फाई नेटवर्क से जुड़ें:
+```cpp
 void setup() {
-  Serial.begin(9600);
-  // नेटवर्क सेटिंग्स के लिए क्रमांकन
-  // इथरनेट शुरू करें
-}
+    Serial.begin(115200);
+    WiFi.begin(ssid, password);
 
+    while (WiFi.status() != WL_CONNECTED) {
+        delay(1000);
+        Serial.println("Connecting...");
+    }
+}
+```
+
+एक HTTP अनुरोध बनाएं और एक सरल HTML टुकड़े को पार्स करें:
+```cpp
 void loop() {
-  http.get("http://example.com"); // HTML पेज की रिक्वेस्ट
-  http.responseStatusCode();       // स्टेटस कोड
-  http.responseBody();             // रिस्पॉन्स बॉडी
-  
-  // यहां पार्सिंग लॉजिक होगा
-  
-  delay(10000); // कुछ समय के लिए रुकें
+    if (WiFi.status() == WL_CONNECTED) { //वाई-फाई कनेक्शन स्थिति की जाँच करें
+        HTTPClient http;  //HTTPClient क्लास की एक वस्तु की घोषणा
+
+        http.begin("http://example.com");  //अनुरोध गंतव्य निर्दिष्ट करें
+        int httpCode = http.GET();  //अनुरोध भेजें
+
+        if (httpCode > 0) { //लौटने वाले कोड की जाँच करें
+            String payload = http.getString();   //अनुरोध प्रतिक्रिया लोड प्राप्त करें
+            Serial.println(payload);             //प्रतिक्रिया लोड मुद्रित करें
+
+            // एक विशिष्ट भाग को पार्स करें, उदाहरण के लिए, शीर्षक निकालना लोड से
+            int titleStart = payload.indexOf("<title>") + 7; // +7 टैग "<title>" से आगे बढ़ने के लिए
+            int titleEnd = payload.indexOf("</title>", titleStart);
+            String pageTitle = payload.substring(titleStart, titleEnd);
+
+            Serial.print("Page Title: ");
+            Serial.println(pageTitle);
+        }
+
+        http.end();   //कनेक्शन बंद करें
+    }
+
+    delay(10000); //हर 10 सेकंड में एक अनुरोध करें
 }
 ```
-Sample Output (नमूना आउटपुट):
+
+नमूना आउटपुट (मानते हुए http://example.com में एक सरल HTML संरचना है):
 ```
-HTTP/1.1 200 OK
-Content-Type: text/html
-<html> ... </html>
+Connecting...
+...
+Page Title: Example Domain
 ```
-## Deep Dive (गहराई से जानकारी)
 
-HTML पार्सिंग, कंप्यूटर साइंस की एक बेसिक अवधारणा है जो वेब से जानकारी प्राप्त करने के लिए महत्वपूर्ण है। पुराने जमाने में, वेब पेज को मैन्युअली पढ़कर डेटा निकाला जाता था, जो कि समय लेने वाला और थकाऊ था। कंप्यूटर प्रोग्राम्स ने इस प्रक्रिया को तेज और आसान बना दिया है। Arduino के संदर्भ में, HTML पार्सिंग आमतौर पर वेब सर्वर से डेटा प्राप्त करने और IoT प्रोजेक्ट्स में लागू करने के लिए की जाती है। हालांकि, क्योंकि Arduino डिवाइस में प्रोसेसिंग क्षमता और मेमोरी सीमित होती है, इसलिए साधारण और हल्की पार्सिंग लाइब्रेरीज़ का उपयोग ज्यादा कारगर होता है। 
-
-ArduinoJson जैसी लाइब्रेरीज JSON डेटा को पार्स करने में अधिक उपयुक्त हैं, क्योंकि ज्यादातर एपीआई कॉल्स JSON फॉर्मेट में डेटा लौटाते हैं। HTML पार्सिंग के लिए किसी स्पेशल HTML पार्सिंग लाइब्रेरी का उपयोग करना होगा या फिर बहुत बेसिक रेगेक्स पैटर्न और स्ट्रिंग मैनिपुलेशन की मदद से सिम्पल डेटा को निकाला जा सकता है।
-
-## See Also (अन्य संसाधन)
-
-- ArduinoJson लाइब्रेरी: [ArduinoJson GitHub](https://github.com/bblanchon/ArduinoJson)
-- इथरनेट शील्ड के उपयोग के बारे में अधिक जानकारी: [Arduino Ethernet Library](https://www.arduino.cc/en/Reference/Ethernet)
-- रेगेक्स (Regex) और स्ट्रिंग मैनिपुलेशन के तरीके: [Arduino String Reference](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/)
-  
-इस लेख में दी गई जानकारी आपकी Arduino प्रोजेक्ट्स में HTML पार्सिंग करने के लिए एक शुरुआती गाइड के तौर पर काम कर सकती है।
+यह उदाहरण एक HTML पेज लाने और `<title>` टैग सामग्री निकालने का प्रदर्शन करता है। अधिक जटिल HTML पार्सिंग के लिए, स्मृति प्रतिबंधों के कारण सावधानी के साथ नियमित एक्सप्रेशन्स का उपयोग करने पर विचार करें या HTML संरचना के माध्यम से नेविगेट करने के लिए स्ट्रिंग मैनिप्यूलेशन फंक्शनों का उपयोग करें। उन्नत पार्सिंग अधिक जटिल दृष्टिकोणों की मांग कर सकती है, जिसमें आपके सामने आने वाले HTML की विशिष्ट संरचना के लिए तैयार की गई कस्टम पार्सिंग एल्गोरिदम शामिल हो सकते हैं, क्योंकि मानक आर्डुइनो वातावरण में एक निर्मित HTML पार्सिंग लाइब्रेरी शामिल नहीं है।

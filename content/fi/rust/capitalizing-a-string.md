@@ -1,37 +1,65 @@
 ---
 title:                "Merkkijonon muuttaminen isoiksi kirjaimiksi"
-date:                  2024-01-19
+date:                  2024-02-03T19:06:33.208382-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Merkkijonon muuttaminen isoiksi kirjaimiksi"
-
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/rust/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Merkkijonon suurentaminen tarkoittaa tekstissä olevien kirjainten muuttamista isoiksi kirjaimiksi. Ohjelmoijat tekevät tätä datan yhdenmukaistamiseen ja ulkoasun parantamiseen.
+## Mikä & Miksi?
 
-## How to:
-Katsotaan miten tämä tapahtuu Rustissa. Käytämme `to_uppercase`-metodia.
+Merkkijonon ensimmäisen kirjaimen muuttaminen suuraakkoseksi Rustissa tarkoittaa merkkijonon muokkaamista siten, että sen ensimmäinen merkki muutetaan suuraakkoseksi, jos se on kirjain, samalla kun loput merkkijonosta jätetään muuttumattomiksi. Ohjelmoijat suorittavat usein tämän toimenpiteen muotoilutarkoituksissa, kuten valmistellessaan sanoja otsikoita varten tai varmistaakseen johdonmukaisuuden käyttäjän syötteessä.
 
-```Rust
+## Kuinka:
+
+Merkkijonon ensimmäisen kirjaimen muuttamiseksi suuraakkoseksi Rustissa on kaksi pääreittiä: standardikirjaston toiminnallisuuksien käyttö tai kolmannen osapuolen pakettien käyttö monimutkaisempien tai erityistarpeiden kannalta. Tässä on, miten voit tehdä molemmat.
+
+### Käyttäen Rustin Standardikirjastoa
+
+Rustin standardikirjasto ei tarjoa suoraa menetelmää merkkijonojen suuraakkostamiseksi, mutta voit saavuttaa tämän manipuloimalla merkkijonon merkkejä.
+
+```rust
+fn capitalize_first(s: &str) -> String {
+    let mut c = s.chars();
+    match c.next() {
+        None => String::new(),
+        Some(f) => f.to_uppercase().collect::<String>() + c.as_str(),
+    }
+}
+
 fn main() {
-    let tervehdys = "moikka maailma!";
-    let isona = tervehdys.to_uppercase();
-
-    println!("{}", isona); // output: MOIKKA MAAILMA!
+    let my_string = "hello";
+    println!("{}", capitalize_first(my_string)); // Tuloste: Hello
 }
 ```
 
-## Deep Dive
-Rustissa merkkijonojen suurentaminen on yleensä suoraviivaista, mutta on muutama juttu, jotka kannattaa pitää mielessä. Metodi `to_uppercase` ottaa huomioon paikalliset kirjaimiston erityispiirteet ja muuntaa kirjaimet Unicode-standardin mukaisesti. Tämä on enemmän kuin pelkkä ASCII-muunnos - se käsittelee monimutkaisempia ja eri kielten kirjainmerkkejä.
+### Käyttäen `heck`-pakettia
 
-Vanhoissa ohjelmointikielissä, kuten C:ssa, merkkijonojen manipulointi oli haastavampaa ja virhealtista, kun taas Rust käsittelee merkkijonoja 'String'-oliona, joka tarjoaa turvallisen ja modernin tavan käsitellä tekstidataa.
+Suoraviivaisempaa lähestymistapaa varten, erityisesti työskennellessä laajemmassa tekstinkäsittelykontekstissa, saatat mieluummin käyttää kolmannen osapuolen kirjastoja, kuten `heck`. `heck`-paketti tarjoaa erilaisia kirjainkoon muuntotoiminnallisuuksia, mukaan lukien yksinkertaisen tavan muuttaa merkkijonojen ensimmäinen kirjain suuraakkoseksi.
 
-Vaihtoehtoisesti, jos haluat vain ASCII-tekstin suurentamisen, voit käyttää `to_ascii_uppercase`-metodia, joka on nopeampi, mutta ei ymmärrä Unicode-kirjaimistoja.
+Lisää ensin `heck` `Cargo.toml`-tiedostoosi:
 
-## See Also
-- Rust-kielen dokumentaatio `to_uppercase`-metodista: [Rust Docs: to_uppercase](https://doc.rust-lang.org/std/primitive.str.html#method.to_uppercase)
-- Rust String API: [Rust String API](https://doc.rust-lang.org/std/string/struct.String.html)
-- Unicode-standardin ymmärtäminen: [Unicode](http://unicode.org/standard/standard.html)
+```toml
+[dependencies]
+heck = "0.4.0"
+```
+
+Käytä sitten sitä merkkijonosi suuraakkostamiseen:
+
+```rust
+extern crate heck; // Ei tarvita Rustin 2018 editionissa tai myöhemmissä
+use heck::TitleCase;
+
+fn main() {
+    let my_string = "hello world";
+    let capitalized = my_string.to_title_case();
+    println!("{}", capitalized); // Tuloste: Hello World
+}
+```
+
+Huomio: `heck`-paketin tarjoama `to_title_case`-metodi suuraakkostaa jokaisen sanan merkkijonossa, mikä saattaa olla enemmän kuin mitä etsit, jos haluat vain merkkijonon ensimmäisen merkin suuraakkoseksi. Säädä käyttöäsi tarpeidesi mukaan.

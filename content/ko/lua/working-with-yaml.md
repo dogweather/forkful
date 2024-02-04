@@ -1,48 +1,93 @@
 ---
-title:                "YAML 다루기"
-date:                  2024-01-19
-simple_title:         "YAML 다루기"
-
+title:                "YAML로 작업하기"
+date:                  2024-02-03T19:26:07.958032-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "YAML로 작업하기"
 tag:                  "Data Formats and Serialization"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/lua/working-with-yaml.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-YAML은 데이터를 표현하는 언어입니다. 프로그래머들은 설정 파일, 데이터 저장, 메시지 교환이나 서버와 클라이언트 간의 통신을 위해 YAML을 많이 사용합니다.
+## 무엇이며 왜 사용하나요?
 
-## How to:
-Lua에서 YAML을 다루려면 `lyaml` 라이브러리를 사용할 수 있습니다. 아래는 간단한 예시 코드와 결과입니다.
+YAML은 "YAML Ain't Markup Language"의 약자로, 인간이 읽을 수 있는 데이터 직렬화 표준입니다. 일반적으로 설정 파일이나 언어 간 데이터 교환에 사용됩니다. 프로그래머들은 YAML의 단순성과 가독성 때문에 이를 선호하며, 이는 설정, 다양한 어플리케이션 구성 또는 비프로그래머가 편집해야 하는 내용에 적합합니다.
 
-```Lua
--- lyaml 라이브러리 설치 필요
-local lyaml = require('lyaml')
+## 어떻게 사용하나요?
 
--- YAML 문자열을 Lua 테이블로 파싱
-local yaml_data = [[
-- name: Kim
-  age: 25
-- name: Lee
-  age: 28
-]]
-local people = lyaml.load(yaml_data)
-print(people[1].name)  -- 결과: Kim
+Lua는 기본적으로 YAML을 지원하지 않지만, `lyaml`과 같은 타사 라이브러리를 사용하여 YAML 파일을 작업할 수 있습니다. 이 라이브러리는 Lua와 YAML 데이터의 인코딩 및 디코딩을 가능하게 합니다. 먼저, Lua의 패키지 관리자인 LuaRocks를 통해 `lyaml`을 설치해야 합니다:
 
--- Lua 테이블을 YAML 문자열로 변환
-local people_table = {
-  { name = "Park", age = 33 },
-  { name = "Choi", age = 41 }
-}
-local yaml_string = lyaml.dump(people_table)
-print(yaml_string)
+```bash
+luarocks install lyaml
 ```
 
-## Deep Dive
-YAML은 "YAML Ain't Markup Language"의 약어이며 데이터 직렬화 포맷으로 사용됩니다. 2001년에 등장했고, JSON, XML과 같은 다른 데이터 표현 언어들에 비해 읽기 쉽고 쓰기 쉬운 것이 특징입니다. YAML은 구성 관리, 문서 교환 등에서 널리 채택되고 있으며 Lua에서는 lyaml 이나 다른 서드 파티 라이브러리를 통해 YAML 데이터를 처리할 수 있습니다.
+### YAML 디코딩:
 
-## See Also
-- `lyaml` 라이브러리: http://github.com/gvvaughan/lyaml
-- YAML 공식 사이트: https://yaml.org
-- YAML 문법 가이드: https://learnxinyminutes.com/docs/yaml/
+예를 들어, `config.yaml`이라는 파일에 다음과 같은 YAML 내용이 있다고 가정해보겠습니다:
+
+```yaml
+database:
+  host: localhost
+  port: 3306
+  username: user
+  password: pass
+```
+
+다음 코드를 사용하여 이 YAML 파일을 Lua 테이블로 디코딩할 수 있습니다:
+
+```lua
+local yaml = require('lyaml')
+local file = io.open("config.yaml", "r")
+local content = file:read("*all")
+file:close()
+
+local data = yaml.load(content)
+for k,v in pairs(data.database) do
+  print(k .. ": " .. v)
+end
+```
+
+이 스크립트를 실행하면 다음과 같은 출력이 나옵니다:
+
+```output
+host: localhost
+port: 3306
+username: user
+password: pass
+```
+
+### YAML 인코딩:
+
+Lua 테이블을 YAML 형식으로 인코딩하려면 `lyaml`에서 제공하는 `dump` 함수를 사용합니다. 다음과 같은 Lua 테이블의 YAML 표현을 생성하려는 경우를 생각해 보겠습니다:
+
+```lua
+local data = {
+  website = {
+    name = "Example",
+    owner = "Jane Doe",
+    metadata = {
+      creation_date = "2023-01-01",
+      tags = {"blog", "personal", "lua"}
+    }
+  }
+}
+
+local yaml = require('lyaml')
+local yaml_data = yaml.dump({data})
+print(yaml_data)
+```
+
+출력된 YAML은 다음과 같습니다:
+
+```yaml
+- website:
+    metadata:
+      creation_date: '2023-01-01'
+      tags: [blog, personal, lua]
+    name: Example
+    owner: Jane Doe
+```
+
+이러한 패턴을 따르면, Lua 프로그래머는 다양한 어플리케이션을 위한 YAML 데이터를 효과적으로 관리할 수 있습니다. 이러한 YAML 작업은 다른 시스템 부분이나 직접적으로 다른 시스템과 원활하게 상호 작용하는 다양한 Lua 어플리케이션을 개발하는 데 중요합니다.

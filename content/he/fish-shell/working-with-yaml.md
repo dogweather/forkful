@@ -1,45 +1,82 @@
 ---
 title:                "עבודה עם YAML"
-date:                  2024-01-19
+date:                  2024-02-03T19:25:47.539386-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "עבודה עם YAML"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/fish-shell/working-with-yaml.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## מה ולמה?
-YAML הוא פורמט שמשמש לייצוג נתונים בצורה נגישה לקריאה על ידי בני אדם. תכניתנים משתמשים בו להגדרת קונפיגורציות, מבנים ותיעוד כי הוא פשוט, גמיש ונפוץ.
+עבודה עם YAML כוללת פרסון (פיענוח) ומניפולציה של קבצי YAML (YAML Ain't Markup Language - YAML אינו שפת סימון), פורמט של סידרול נתונים שנמצא בשימוש לקבצי הגדרות (קונפיגורציה), ב-Fish Shell. מתכנתים עושים זאת על מנת לאוטמט ולהגדיר יישומים או שירותים ביעילות בהקשר של סביבות של (חלונית פקודה), מה שמקל על משימות כמו ניהול הגדרות והקצאת משאבים.
 
 ## איך לעשות:
-כדי לעבוד עם קבצי YAML ב-Fish, ניתן להשתמש בפקודות ואבזרים חיצוניים כמו `yq`. זה דוגמא לתסריט פשוט:
+Fish Shell אינו כולל תמיכה מובנית לפרסון של YAML, אך ניתן להשתמש בכלים צד שלישי כמו `yq` (מעבד שורת פקודה קל משקל ונייד ל-YAML) כדי לטפל בנתוני YAML.
 
-```Fish Shell
-# התקן את yq
+**התקנת yq (אם לא הותקן בעבר):**
+```fish
 sudo apt-get install yq
-
-# פרס קובץ YAML והצג את הערך מתחת למפתח 'user'
-yq e '.user' config.yaml
 ```
 
-נניח שיש לנו `config.yaml` עם התוכן הבא:
+**קריאת ערך מתוך קובץ YAML:**
+נניח שיש לכם קובץ YAML בשם `config.yaml` עם התוכן הבא:
 ```yaml
-user:
-  name: "dvora"
-  role: "developer"
+database:
+  host: localhost
+  port: 3306
 ```
 
-הפלט יהיה:
+כדי לקרוא את מארח המסד נתונים, תשתמשו ב:
+```fish
+set host (yq e '.database.host' config.yaml)
+echo $host
 ```
-name: "dvora"
-role: "developer"
+**דוגמת פלט:**
+```
+localhost
 ```
 
-## עיון עמוק
-YAML (YAML Ain't Markup Language) הוא קרוי "אנטי מארקאפ" בשעשוע. הוא נוצר ב-2001 לסייע במשימות תכנות בהן XML היה כבד ומסובך. תחליפים כוללים JSON ו-TOML. כאשר עובדים עם YAML ב-Fish, זכור להסתמך על כלים חיצוניים כי Fish אינו מספק תמיכה ישירה ב-YAML כמו שפות אחרות.
+**עדכון ערך בקובץ YAML:**
+כדי לעדכן את `port` ל-`5432`, השתמשו ב:
+```fish
+yq e '.database.port = 5432' -i config.yaml
+```
+**האמתו את העדכון:**
+```fish
+yq e '.database.port' config.yaml
+```
+**דוגמת פלט:**
+```
+5432
+```
 
-## ר' גם
-- [YAML ויקיפדיה](https://he.wikipedia.org/wiki/YAML)
-- [מדריך ל-Fish Shell](https://fishshell.com/docs/current/index.html)
-- [עמוד הגיטהאב של yq](https://github.com/mikefarah/yq)
+**כתיבת קובץ YAML חדש:**
+ליצירת `new_config.yaml` חדש עם תוכן מוגדר מראש:
+```fish
+echo "webserver:
+  host: '127.0.0.1'
+  port: 8080" | yq e -P - > new_config.yaml
+```
+זה משתמש ב-`yq` כדי לעבד ולהדפיס בצורה נאה (-P flag) מחרוזת לקובץ YAML חדש.
+
+**פרסון מבנים מורכבים:**
+אם יש לכם קובץ YAML מורכב יותר ואתם צריכים לאחזר מערכים או אובייקטים מקוננים, תוכלו:
+```fish
+echo "servers:
+  - name: server1
+    ip: 192.168.1.101
+  - name: server2
+    ip: 192.168.1.102" > servers.yaml
+
+yq e '.servers[].name' servers.yaml
+```
+**דוגמת פלט:**
+```
+server1
+server2
+```
+באמצעות `yq`, Fish Shell הופך את הניווט והמניפולציה במסמכי YAML לפשוטים לשימוש במגוון משימות אוטומטיות וקונפיגורציה.

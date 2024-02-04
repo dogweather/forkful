@@ -1,39 +1,75 @@
 ---
-title:                "Zapisywanie pliku tekstowego"
-date:                  2024-01-19
-simple_title:         "Zapisywanie pliku tekstowego"
-
+title:                "Pisanie pliku tekstowego"
+date:                  2024-02-03T19:29:19.767781-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Pisanie pliku tekstowego"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/rust/writing-a-text-file.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
-Pisanie pliku tekstowego to zapisywanie danych w formacie czytelnym dla człowieka. Programiści robią to, by trwale zapisywać wyniki pracy programu, ustawienia użytkownika lub logi.
+## Co i dlaczego?
+Pisanie plików tekstowych w Rust polega na tworzeniu, zapisywaniu i potencjalnie dodawaniu danych do pliku w systemie plików. Programiści wykonują tę operację, aby zachować dane, takie jak logi aplikacji, konfiguracja czy treści generowane przez użytkowników, zapewniając trwałość danych poza zakresem wykonania programu.
 
 ## Jak to zrobić:
-```Rust
-use std::fs::File;
-use std::io::{self, Write};
+Standardowa biblioteka Rusta oferuje solidne narzędzia do manipulacji plikami, głównie zawarte w modułach `std::fs` i `std::io`. Oto podstawowy przykład, jak stworzyć i zapisać do pliku tekstowego:
 
-fn main() -> io::Result<()> {
-    let mut plik = File::create("przyklad.txt")?;
-    plik.write_all(b"Witaj, swiecie!")?;
-    
+```rust
+use std::fs::File;
+use std::io::prelude::*;
+
+fn main() -> std::io::Result<()> {
+    let mut file = File::create("hello.txt")?;
+    file.write_all(b"Witaj, świecie!")?;
     Ok(())
 }
 ```
-Po uruchomieniu, w pliku `przyklad.txt` zobaczysz:
-```
-Witaj, swiecie!
+
+Po uruchomieniu tego kodu znajdziesz plik o nazwie `hello.txt` z zawartością "Witaj, świecie!".
+
+Dla bardziej złożonych scenariuszy, takich jak dodawanie do istniejącego pliku czy efektywne obsługiwanie większych danych, Rust oferuje dodatkowe funkcjonalności. Oto jak dodać tekst do istniejącego pliku:
+
+```rust
+use std::fs::OpenOptions;
+use std::io::prelude::*;
+
+fn main() -> std::io::Result<()> {
+    let mut file = OpenOptions::new()
+        .write(true)
+        .append(true)
+        .open("hello.txt")?;
+        
+    file.write_all(b" Dodaję więcej tekstu.")?;
+    Ok(())
+}
 ```
 
-## Wnikliwe spojrzenie
-Zapis pliku tekstowego w Rust ma swoje korzenie w podobnych operacjach w innych językach, ale wyróżnia się obsługą błędów i bezpieczeństwem typów. Alternatywy to między innymi biblioteki zewnętrzne jak `serde` do serializacji danych. Rust używa `trait` jak `Write`, by abstrahować detale implementacyjne.
+Uruchomienie tego spowoduje dodanie " Dodaję więcej tekstu." na końcu `hello.txt`.
 
-## Zobacz także
-- [Dokumentacja modułu `std::fs`](https://doc.rust-lang.org/std/fs/)
-- [Dokumentacja modułu `std::io`](https://doc.rust-lang.org/std/io/)
-- [Rust by Example - File I/O](https://doc.rust-lang.org/rust-by-example/std_misc/file.html)
-- [The Rust Programming Language – Chapter 12](https://doc.rust-lang.org/book/ch12-00-an-io-project.html)
+W niektórych przypadkach wykorzystanie bibliotek stron trzecich może uproszczać operacje na plikach. Na przykład zestawienie `serde` z `serde_json` pozwala na serializację i deserializację struktur danych do i z formatu JSON, oferując wysokopoziomowe podejście do zapisu plików:
+
+```rust
+use serde::{Serialize, Deserialize};
+use serde_json;
+use std::fs::File;
+
+#[derive(Serialize, Deserialize)]
+struct User {
+    id: u32,
+    name: String,
+}
+
+fn main() -> std::io::Result<()> {
+    let user = User { id: 1, name: "Jane Doe".into() };
+    let file = File::create("user.json")?;
+    serde_json::to_writer(file, &user)?;
+    Ok(())
+}
+```
+
+Po uruchomieniu powyższego kodu, `user.json` będzie zawierał reprezentację JSON struktury `User`. Należy zauważyć, że użycie `serde` i `serde_json` wymaga dodania tych skrzynek do pliku `Cargo.toml`.
+
+Pisanie plików tekstowych w Rust, zarówno za pomocą biblioteki standardowej, jak i z pomocą zewnętrznych skrzynek, jest prostym, a jednocześnie potężnym sposobem na zarządzanie trwałością danych w twoich aplikacjach.

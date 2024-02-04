@@ -1,35 +1,49 @@
 ---
 title:                "עבודה עם JSON"
-date:                  2024-01-19
+date:                  2024-02-03T19:22:08.378990-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "עבודה עם JSON"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/arduino/working-with-json.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## מה ולמה?
-JSON (JavaScript Object Notation) הוא פורמט נתונים קליל וקריא. מתכנתים משתמשים בו להחלפת נתונים בין חומרה ותוכנה, כמו בין שרת ו-Arduino, בגלל פשטותו ורווחיותו.
+
+JSON, או JavaScript Object Notation, הוא פורמט להחלפת נתונים קליל, הופך אותו למושלם לאחסון נתונים או קבצי תצורה בפרויקטים של Arduino. תכנתים משתמשים בו בשל פשטותו וקריאותו במגוון סביבות תכנות, כולל Arduino, מאפשר החלפת נתונים בצורה חלקה עם API-ים של אתרי אינטרנט או מערכות אחרות.
 
 ## איך לעשות:
-```Arduino
+
+לעבוד עם JSON ב-Arduino, הספרייה `ArduinoJson` היא בחירה פופולרית בשל נוחות השימוש והיעילות שלה. היא מאפשרת ניתוח מחרוזות JSON, שינוים בהן, וסידור מחדש של אובייקטים למחרוזות JSON. כך משתמשים בה:
+
+1. **להתקין את ספריית ArduinoJson**: השתמשו במנהל הספריות בסביבת הפיתוח של Arduino והתקינו "ArduinoJson".
+
+2. **הפיכת מחרוזת JSON לאובייקט**: כך מנתחים מחרוזת JSON ומוציאים ממנה ערכים.
+
+```cpp
 #include <ArduinoJson.h>
 
+const char* json = "{\"sensor\":\"gps\",\"time\":1351824120,\"data\":[48.756080,2.302038]}";
+
 void setup() {
-  Serial.begin(115200);
+  Serial.begin(9600);
+  StaticJsonDocument<200> doc; // התאימו את הגודל בהתאם למסמך JSON
+  DeserializationError error = deserializeJson(doc, json);
 
-  // JSON טקסט דוגמא
-  const char* json = "{\"sensor\":\"gps\",\"time\":1351824120,\"data\":[48.756080,2.302038]}";
+  if (error) {
+    Serial.print(F("deserializeJson() failed: "));
+    Serial.println(error.f_str());
+    return;
+  }
 
-  StaticJsonDocument<200> doc;
-  deserializeJson(doc, json);
-
-  const char* sensor = doc["sensor"];
-  long time = doc["time"];
-  float latitude = doc["data"][0];
-  float longitude = doc["data"][1];
-
+  const char* sensor = doc["sensor"]; // "gps"
+  long time = doc["time"]; // 1351824120
+  float latitude = doc["data"][0]; // 48.756080
+  float longitude = doc["data"][1]; // 2.302038
+  
   Serial.println(sensor);
   Serial.println(time);
   Serial.println(latitude, 6);
@@ -37,10 +51,12 @@ void setup() {
 }
 
 void loop() {
-  // nothing to do here
+  // לולאה ריקה
 }
 ```
-תוצאות לדוגמא:
+
+דוגמת פלט:
+
 ```
 gps
 1351824120
@@ -48,10 +64,33 @@ gps
 2.302038
 ```
 
-## נסיגה לעומק:
-תקן ה-JSON התפתח מאובייקטים ב-JavaScript אבל הפך לעצמאי ונתמך ברוב שפות התכנות. אלטרנטיבות נוספות כוללות XML ו-YAML. ארדואינו משתמשת בספריית ArduinoJson לניתוח וכתיבה של JSON, מה שדורש מנהלת זיכרון ותכנון מראש של המבנה.
+3. **המרה למחרוזת JSON**: כך יוצרים מחרוזת JSON מנתונים.
 
-## גם ראה:
-- מדריך [ArduinoJson](https://arduinojson.org/)
-- מפרט התקניות [JSON](https://www.json.org/json-en.html)
-- דוקומנטציה לספרייה [ArduinoJson GitHub](https://github.com/bblanchon/ArduinoJson)
+```cpp
+#include <ArduinoJson.h>
+
+void setup() {
+  Serial.begin(9600);
+
+  StaticJsonDocument<200> doc; // התאימו את הגודל בהתאם לנתונים
+  doc["sensor"] = "gps";
+  doc["time"] = 1351824120;
+  JsonArray data = doc.createNestedArray("data");
+  data.add(48.756080);
+  data.add(2.302038);
+
+  serializeJson(doc, Serial);
+}
+
+void loop() {
+  // לולאה ריקה
+}
+```
+
+דוגמת פלט (מעוצבת לקריאות):
+
+```
+{"sensor":"gps","time":1351824120,"data":[48.756080,2.302038]}
+```
+
+השימוש בספריית `ArduinoJson` מאפשר לפרויקטים של Arduino לתקשר מבני נתונים מורכבים בפורמט קריא לאדם, ומקל על הפיתוח והשילוב עם שירותי אינטרנט.

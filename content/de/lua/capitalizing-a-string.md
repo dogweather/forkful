@@ -1,33 +1,53 @@
 ---
-title:                "String in Großbuchstaben umwandeln"
-date:                  2024-01-19
-simple_title:         "String in Großbuchstaben umwandeln"
-
+title:                "Einen String großschreiben"
+date:                  2024-02-03T19:05:53.269950-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Einen String großschreiben"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/lua/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Das Großschreiben eines Strings bedeutet, jeden Buchstaben des Strings in einen Großbuchstaben umzuwandeln. Programmierer verwenden es, um Konsistenz in Nutzereingaben zu gewährleisten oder um Texte gemäß bestimmten Formatanforderungen zu standardisieren.
+Das Kapitalisieren eines Strings beinhaltet die Modifikation des ersten Buchstabens jedes Wortes in einem Satz zu einem Großbuchstaben, während sichergestellt wird, dass die restlichen Buchstaben klein geschrieben werden. Diese Technik wird üblicherweise verwendet, um Texte professioneller oder lesbarer zu gestalten, beispielsweise bei der Vorbereitung von Titeln oder Benutzereingaben zur Anzeige.
 
-## So geht's:
-```Lua
--- Konvertierung eines Strings zu Großbuchstaben in Lua
-local text = "hallo, wie geht es dir?"
-local capitalizedText = text:upper()
+## Wie geht das:
+Lua verfügt nicht über eine integrierte Funktion zum Kapitalisieren von Strings, aber Sie können diese Aufgabe mithilfe von grundlegenden String-Manipulationsfunktionen leicht bewältigen. Hier ist eine einfache Funktion, um den ersten Buchstaben eines einzelnen Wortes zu kapitalisieren:
 
-print(capitalizedText)  -- Ausgabe: "HALLO, WIE GEHT ES DIR?"
+```lua
+function capitalize(word)
+    return word:sub(1,1):upper() .. word:sub(2):lower()
+end
+
+print(capitalize("hallo"))  -- Ausgabe: Hallo
 ```
 
-## Tiefgang
-In den frühen Tagen der Computerprogrammierung war die Unterscheidung zwischen Groß- und Kleinschreibung oft bedeutungslos; Computer und Programme nutzten Bezeichner in konstanten Formaten. Heute wird das Großschreiben genutzt, um benutzergenerierte Inhalte zu normieren oder einen String für bestimmte Anzeigekontexte zu formatieren.
+Um jedes Wort in einem Satz zu kapitalisieren, können Sie den Satz in Worte aufteilen, jedes einzelne kapitalisieren und sie dann wieder zusammenführen:
 
-Lua bietet mit der `upper`-Methode der String-Bibliothek eine eingebaute Funktion, um Strings komplett in Großbuchstaben zu konvertieren. Alternativen wie manuelle Iteration über Charaktere und ASCII-Werte-Umwandlung sind unnötig kompliziert und nicht empfehlenswert.
+```lua
+function capitalizeSentence(sentence)
+    local words = {}
+    for word in sentence:gmatch("%S+") do
+        table.insert(words, capitalize(word))
+    end
+    return table.concat(words, " ")
+end
 
-Die `upper`-Methode ist effizient und direkt; sie kümmert sich um die Besonderheiten der Zeichenkodierung, sodass Entwickler sich nicht mit einzelnen Codepunkten und deren Transformationen auseinandersetzen müssen.
+print(capitalizeSentence("hallo welt von lua"))  -- Ausgabe: Hallo Welt Von Lua
+```
 
-## Siehe auch
-1. Lua-Handbuch zur `upper`-Methode: [http://www.lua.org/manual/5.4/manual.html#pdf-string.upper](http://www.lua.org/manual/5.4/manual.html#pdf-string.upper)
-2. Artikel über Unicode und Zeichenkodierung in Lua: [https://www.lua.org/pil/21.2.2.html](https://www.lua.org/pil/21.2.2.html)
+Wenn Sie an einem Projekt arbeiten, bei dem die Leistung entscheidend ist und Sie mehr fortgeschrittene String-Manipulationsfähigkeiten benötigen, erwägen Sie die Verwendung einer Drittanbieterbibliothek wie `Penlight`. Penlight erweitert Lua um vielseitigere Stringbearbeitungsfunktionen, unter anderem:
+
+```lua
+-- Unter der Annahme, dass Penlight installiert ist:
+local pl = require("pl.stringx")
+local text = "hallo lua benutzer"
+text = pl.capitalized(text)
+print(text)  -- Ausgabe: Hallo lua benutzer
+
+-- Hinweis: Die capitalized-Funktion von Penlight kapitalisiert nur das erste Wort.
+-- Um jedes Wort zu kapitalisieren, müssten Sie immer noch eine benutzerdefinierte Lösung implementieren oder andere Bibliotheken erkunden.
+```

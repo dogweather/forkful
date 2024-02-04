@@ -1,48 +1,56 @@
 ---
-title:                "String in Großbuchstaben umwandeln"
-date:                  2024-01-19
-simple_title:         "String in Großbuchstaben umwandeln"
-
+title:                "Einen String großschreiben"
+date:                  2024-02-03T19:05:56.366719-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Einen String großschreiben"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/php/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Das Großschreiben eines Strings bedeutet, alle Buchstaben in einem Text zu Großbuchstaben zu konvertieren; praktisch für Titel oder wenn Konsistenz erforderlich ist. Entwickler nutzen das, um Lesbarkeit zu verbessern oder um Daten zu normalisieren, bevor sie verglichen oder gespeichert werden.
+Das Großschreiben eines Strings beinhaltet die Modifikation des ersten Zeichens eines gegebenen Textes in Großbuchstaben, um sicherzustellen, dass Sätze, Titel oder Eigennamen korrekt in einem Datensatz beginnen. Programmierer führen oft die Großschreibung von Strings durch, um die Datennormalisierung zu verbessern, die Lesbarkeit zu erhöhen oder die Konsistenz bei Benutzereingaben oder der Verarbeitung textueller Daten zu gewährleisten.
 
-## How to:
-Hier ein einfaches Beispiel, wie du einen String in PHP großschreiben kannst:
+## Wie:
+PHP unterstützt nativ verschiedene Funktionen zum Großschreiben von Strings, die jeweils unterschiedlichen Zwecken dienen. Hier ist, wie Sie sie verwenden können:
 
-```php
-<?php
-$originalString = "das ist ein test";
-$capitalizedString = strtoupper($originalString);
-echo $capitalizedString; // Ausgabe: DAS IST EIN TEST
-?>
-```
-
-Und so verwendest du `mb_strtoupper()` für Strings mit Multibyte-Zeichen (wie Umlaute oder andere nicht-ASCII-Zeichen):
+### Großschreiben des ersten Buchstabens eines Strings:
 
 ```php
-<?php
-$originalString = "füße überflüssig";
-$capitalizedString = mb_strtoupper($originalString);
-echo $capitalizedString; // Ausgabe: FÜßE ÜBERFLÜSSIG
-?>
+$string = "hallo, welt!";
+$capitalizedString = ucfirst($string);
+echo $capitalizedString; // Gibt aus: Hallo, welt!
 ```
 
-## Deep Dive:
-Das Großschreiben von Strings ist seit den Anfängen von PHP ein grundlegendes Feature, das durch Funktionen wie `strtoupper()` ermöglicht wird. PHP bietet auch `mb_strtoupper()` für die Arbeit mit Multibyte-Zeichen, die in verschiedenen Sprachen und Kodierungen wichtig sind (z.B. UTF-8). Während `strtoupper()` nur für Single-Byte-Zeichen (ASCII) geeignet ist, ist `mb_strtoupper()` flexibel genug, um beispielsweise deutsche Umlaute korrekt zu verarbeiten.
+### Großschreiben des ersten Buchstabens jedes Wortes:
 
-Alternativ zur vollständigen Großschreibung gibt es auch `ucfirst()` zum Großschreiben des ersten Buchstabens und `ucwords()`, um den ersten Buchstaben jedes Wortes in einem String zu großzuschreiben. Die Wahl der Funktion hängt vom gewünschten Ergebnis ab.
+```php
+$string = "hallo, welt!";
+$capitalizedWords = ucwords($string);
+echo $capitalizedWords; // Gibt aus: Hallo, Welt!
+```
 
-Die Implementierungsdetails von `strtoupper()` und `mb_strtoupper()` unterscheiden sich in der Art, wie sie mit Zeichensätzen umgehen. `strtoupper()` betrachtet den String als Sammlung von Einzelbyte-Zeichen, während `mb_strtoupper()` eine Multibyte-freundliche Betrachtung hat und auf die angegebene Zeichenkodierung in `mb_internal_encoding()` oder einen optionalen Parameter achtet.
+### Umwandeln des gesamten Strings in Großbuchstaben:
 
-## See Also:
-Die offizielle PHP-Dokumentation ist deine Anlaufstelle, um tiefer in die Materie einzutauchen und weitere Funktionen rund um die String-Behandlung in PHP zu entdecken:
+```php
+$string = "hallo, welt!";
+$upperCaseString = strtoupper($string);
+echo $upperCaseString; // Gibt aus: HALLO, WELT!
+```
 
-- PHP `strtoupper()` Funktion: [php.net/manual/de/function.strtoupper.php](https://www.php.net/manual/de/function.strtoupper.php)
-- PHP `mb_strtoupper()` Funktion: [php.net/manual/de/function.mb-strtoupper.php](https://www.php.net/manual/de/function.mb-strtoupper.php)
-- PHP String-Funktionen: [php.net/manual/de/ref.strings.php](https://www.php.net/manual/de/ref.strings.php)
+Für Szenarien, die mehr Anpassung oder Drittlösungen erfordern, können Bibliotheken wie `mbstring` (für Multibyte-Strings) verwendet werden, insbesondere, wenn es um Internationalisierung geht, bei der Zeichen über den grundlegenden ASCII-Satz hinausgehen können.
+
+### Verwendung von mbstring zum Großschreiben von UTF-8-Strings:
+
+Stellen Sie sicher, dass die `mbstring`-Erweiterung in Ihrer PHP-Konfiguration aktiviert ist, dann:
+
+```php
+$string = "élégant";
+$capitalizedString = mb_convert_case($string, MB_CASE_TITLE, "UTF-8");
+echo $capitalizedString; // Gibt aus: Élégant
+```
+
+Dieser Ansatz hilft, Strings, die Nicht-ASCII-Zeichen enthalten, genau zu großzuschreiben und den Feinheiten verschiedener Sprachen gerecht zu werden.

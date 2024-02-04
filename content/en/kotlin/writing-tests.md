@@ -1,8 +1,8 @@
 ---
 title:                "Writing tests"
-date:                  2024-01-19
+date:                  2024-02-03T19:03:33.785130-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Writing tests"
-
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/kotlin/writing-tests.md"
 ---
@@ -10,39 +10,88 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Writing tests means scripting code to check if other code works right. Programmers do it to catch bugs early, save time, and ensure the software does what it's supposed to do consistently.
+
+Writing tests in Kotlin involves crafting code snippets that automatically validate the functional correctness of your software modules, ensuring they work as expected. Programmers do it to catch bugs early, facilitate code refactoring, and provide documentation on how software components are intended to work.
 
 ## How to:
-Kotlin uses JUnit for testing. Here's how to write and run a simple test:
+
+Kotlin supports test-driven development with various frameworks, the most popular being JUnit, Kotest, and MockK for mocking. Here's a simple example using JUnit:
 
 ```kotlin
-import org.junit.Assert.assertEquals
-import org.junit.Test
+import org.junit.jupiter.api.Test
+import kotlin.test.assertEquals
 
 class CalculatorTest {
-    
+
     @Test
     fun `adds two numbers`() {
-        assertEquals(4, Calculator.add(2, 2))
+        val calculator = Calculator()
+        val result = calculator.add(2, 3)
+        assertEquals(5, result)
     }
 }
 
-object Calculator {
-    fun add(a: Int, b: Int) = a + b
+class Calculator {
+    fun add(a: Int, b: Int): Int = a + b
 }
 ```
 
-Run it. If your output's like this, you're golden:
+**Sample Output**
 
+```text
+Test passed.
 ```
-Test passed
+
+For a more sophisticated testing approach using Kotest, which offers a more idiomatic Kotlin test writing style, see the example below:
+
+```kotlin
+import io.kotest.core.spec.style.StringSpec
+import io.kotest.matchers.shouldBe
+
+class CalculatorSpec : StringSpec({
+    "adding 2 and 3 should return 5" {
+        val calculator = Calculator()
+        calculator.add(2, 3) shouldBe 5
+    }
+})
 ```
 
-## Deep Dive
-JUnit, the go-to framework for testing in Kotlin, trails back to Java. Alternative test frameworks include Spek and Kotest, each having distinct syntaxes and features. Writing tests often involves understanding the SUT (System Under Test) structure, mocking dependencies with MockK or similar, and knowing the difference between unit, integration, and functional testing.
+Using MockK for testing with mocks:
 
-## See Also
-- JUnit 5 User Guide: [junit.org/junit5/docs/current/user-guide/](https://junit.org/junit5/docs/current/user-guide/)
-- MockK Library: [mockk.io](https://mockk.io)
-- Spek Framework: [spekframework.org](https://spekframework.org)
-- Kotest: [kotest.io](https://kotest.io)
+```kotlin
+import io.mockk.every
+import io.mockk.mockk
+import org.junit.jupiter.api.Test
+import kotlin.test.assertEquals
+
+class ServiceTest {
+
+    private val repository = mockk<Repository>()
+    private val service = Service(repository)
+
+    @Test
+    fun `get data returns mocked data`() {
+        every { repository.getData() } returns "Mocked Data"
+
+        val result = service.getData()
+
+        assertEquals("Mocked Data", result)
+    }
+}
+
+class Service(private val repository: Repository) {
+    fun getData(): String = repository.getData()
+}
+
+interface Repository {
+    fun getData(): String
+}
+```
+
+**Sample Output**
+
+```text
+Test passed.
+```
+
+These examples illustrate the basics of writing unit tests in Kotlin. As your application grows, consider exploring more advanced testing techniques and tools provided by each framework.

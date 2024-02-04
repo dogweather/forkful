@@ -1,45 +1,65 @@
 ---
-title:                "文字列から日付を解析する"
-date:                  2024-01-20T15:36:58.951392-07:00
-simple_title:         "文字列から日付を解析する"
-
+title:                "文字列から日付をパースする"
+date:                  2024-02-03T19:14:42.584334-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "文字列から日付をパースする"
 tag:                  "Dates and Times"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/haskell/parsing-a-date-from-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-# Haskellでの日付文字列の解析
+## 何となぜ？
 
-## 何となぜ？ (What & Why?)
-日付文字列を解析するとは、テキスト形式で書かれた日付をプログラムが理解できる形式に変換する行為です。データ入力、ログ分析、ユーザーインターフェースなど、様々な場面で必要とされます。
+Haskellで文字列から日付を解析することは、日付のテキスト表現をプログラムが操作できる構造化された形式に変換することを意味します。このプロセスは、カレンダーデータを扱うアプリケーションにとって基本的であり、期間の計算、スケジューリング、データの検証などの機能を可能にします。
 
-## どうやって？ (How to:)
-以下は`time`ライブラリを使った日付文字列の解析の例です。ソースコード内のコメントも確認してください。
+## どのようにして：
 
-```Haskell
-import Data.Time.Format (parseTimeM, defaultTimeLocale)
-import Data.Time.Clock (UTCTime)
+Haskellは、箱から出してすぐに日付を解析するための基本的なツールを提供していますが、`time`ライブラリをコア機能として使ったり、より柔軟な解析のために`date-parse`や`time-parse`のようなライブラリを活用することで、この作業を大幅に簡素化できます。
 
--- 日付文字列を解析し、Maybe UTCTime を返す関数
-parseDate :: String -> Maybe UTCTime
-parseDate = parseTimeM defaultTimeLocale "%Y-%m-%d %H:%M:%S"
+まず、`time`ライブラリが利用可能であることを確認してください。それはしばしばGHCに含まれていますが、依存関係として指定する必要がある場合は、プロジェクトのcabalファイルに`time`を追加するか、`cabal install time`を使用して手動でインストールしてください。
 
-main :: IO ()
-main = do
-  let exampleDateString = "2023-03-14 15:09:26"
-  print $ parseDate exampleDateString  -- 結果のサンプル出力: Just 2023-03-14 15:09:26 UTC
+```haskell
+import Data.Time.Format
+import Data.Time.Clock
+import System.Locale (defaultTimeLocale)
+
+-- time ライブラリを使って標準フォーマットの日付を解析する
+parseBasicDate :: String -> Maybe UTCTime
+parseBasicDate = parseTimeM True defaultTimeLocale "%Y-%m-%d" 
 ```
 
-このコードは "2023-03-14 15:09:26" のような日付文字列を `UTCTime` 型に変換します。
+使用例と出力：
 
-## 詳細解説 (Deep Dive)
-`time`ライブラリの `parseTimeM` 関数は、Haskellにおける日付と時刻の解析の標準的な手段です。`%Y-%m-%d %H:%M:%S` という書式指定子は、ISO 8601 形式の日付と時刻を解析するのに用います。
-過去には `old-time` ライブラリがよく使われましたが、今日では `time` が広く推奨されています。別の選択肢として、より強力なパーサーを持つ `Data.Time.Calendar` や `Data.Time.Clock` が存在します。
-解析処理の内部実装は、パーサーコンビネータを用いて文字列から日付データへと段階的に変換しています。
+```haskell
+main :: IO ()
+main = print $ parseBasicDate "2023-04-01"
 
-## 関連情報 (See Also)
-- Haskell `time` ライブラリドキュメント: https://hackage.haskell.org/package/time
-- `Data.Time.Format` の書式指定子: https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time-Format.html#v:formatTime
-- ISO 8601 標準: https://www.iso.org/iso-8601-date-and-time-format.html
+-- 出力: Just 2023-03-31 22:00:00 UTC
+```
+
+複数のフォーマットやロケールを扱う必要があるより複雑なシナリオの場合、`date-parse`のようなサードパーティライブラリを使う方が便利です：
+
+`date-parse`を依存関係に追加してインストールしたと仮定すると、ここに使用例があります：
+
+```haskell
+import Data.Time.Calendar
+import Text.Date.Parse (parseDate)
+
+-- date-parse ライブラリを使って日付文字列を解析すると、複数のフォーマットをサポートする
+parseFlexibleDate :: String -> Maybe Day
+parseFlexibleDate = parseDate
+```
+
+`date-parse`を使った使用例：
+
+```haskell
+main :: IO ()
+main = print $ parseFlexibleDate "April 1, 2023"
+
+-- 出力: Just 2023-04-01
+```
+
+それぞれの例は、文字列を取り、それをHaskellで使える日付オブジェクトに変換する基本的なアプローチを示しています。`time`ライブラリの組み込み機能を使うか、`date-parse`のようなサードパーティの解決策を選ぶかは、扱う必要のある入力フォーマットの範囲など、アプリケーションの特定のニーズに依存します。

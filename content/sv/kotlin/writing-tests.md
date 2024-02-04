@@ -1,45 +1,99 @@
 ---
 title:                "Skriva tester"
-date:                  2024-01-19
+date:                  2024-02-03T19:31:16.734948-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Skriva tester"
-
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/kotlin/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Testning är processen att verifiera att din kod gör vad den ska. Programmerare skriver tester för att säkerställa att programmet fungerar rätt och för att undvika framtida buggar vid uppdateringar.
 
-## Hur gör man:
+Att skriva tester i Kotlin innebär att man skapar kodsnuttar som automatiskt validerar den funktionella korrektheten i dina mjukvarumoduler, för att säkerställa att de fungerar som förväntat. Programmerare gör detta för att fånga upp buggar tidigt, underlätta kodrefaktorering och tillhandahålla dokumentation om hur mjukvarukomponenter är avsedda att fungera.
+
+## Hur man gör:
+
+Kotlin stöder testdriven utveckling med olika ramverk, där de mest populära är JUnit, Kotest och MockK för att skapa mockobjekt. Här är ett enkelt exempel med JUnit:
+
 ```kotlin
-import org.junit.Test
-import org.junit.Assert.*
+import org.junit.jupiter.api.Test
+import kotlin.test.assertEquals
 
-class ExampleUnitTest {
+class CalculatorTest {
+
     @Test
-    fun addition_isCorrect() {
-        assertEquals(4, 2 + 2)
-    }
-
-    @Test(expected = ArithmeticException::class)
-    fun division_byZero() {
-        val result = 2 / 0
+    fun `lägger till två nummer`() {
+        val calculator = Calculator()
+        val result = calculator.add(2, 3)
+        assertEquals(5, result)
     }
 }
-```
-Köper du koden ser du något i stil med:
-```
-Test passed: addition_isCorrect
-Test failed: division_byZero, expected: ArithmeticException
+
+class Calculator {
+    fun add(a: Int, b: Int): Int = a + b
+}
 ```
 
-## Fördjupning
-Testning i Kotlin görs ofta med JUnit, ett ramverk som funnits sedan 90-talet. Alternativ till JUnit inkluderar TestNG eller Kotest. Inom Kotlin använder man ofta Mockk för att mocka beroenden och JetBrains utvecklade Spek för BDD-style testning.
+**Exempelutdata**
 
-## Se även
-- [JUnit 5 User Guide](https://junit.org/junit5/docs/current/user-guide/)
-- [Kotest, a powerful Kotlin testing library](https://kotest.io/)
-- [Mockk, mocking library for Kotlin](https://mockk.io/)
-- [Spek Framework](https://www.spekframework.org/)
+```text
+Test passed.
+```
+
+För en mer sofistikerad testansats med Kotest, som erbjuder en mer idiomatisk Kotlin-testskrivningsstil, se exempel nedan:
+
+```kotlin
+import io.kotest.core.spec.style.StringSpec
+import io.kotest.matchers.shouldBe
+
+class CalculatorSpec : StringSpec({
+    "att lägga till 2 och 3 ska returnera 5" {
+        val calculator = Calculator()
+        calculator.add(2, 3) shouldBe 5
+    }
+})
+```
+
+Använda MockK för testning med mockobjekt:
+
+```kotlin
+import io.mockk.every
+import io.mockk.mockk
+import org.junit.jupiter.api.Test
+import kotlin.test.assertEquals
+
+class ServiceTest {
+
+    private val repository = mockk<Repository>()
+    private val service = Service(repository)
+
+    @Test
+    fun `get data returnerar mockad data`() {
+        every { repository.getData() } returns "Mockad Data"
+
+        val result = service.getData()
+
+        assertEquals("Mockad Data", result)
+    }
+}
+
+class Service(private val repository: Repository) {
+    fun getData(): String = repository.getData()
+}
+
+interface Repository {
+    fun getData(): String
+}
+```
+
+**Exempelutdata**
+
+```text
+Test passed.
+```
+
+Dessa exempel illustrerar grunderna för att skriva enhetstester i Kotlin. När din applikation växer, överväg att utforska mer avancerade testtekniker och verktyg som tillhandahålls av varje ramverk.

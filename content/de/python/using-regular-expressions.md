@@ -1,61 +1,97 @@
 ---
-title:                "Einsatz von regulären Ausdrücken"
-date:                  2024-01-19
-simple_title:         "Einsatz von regulären Ausdrücken"
-
+title:                "Reguläre Ausdrücke verwenden"
+date:                  2024-02-03T19:18:08.789897-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Reguläre Ausdrücke verwenden"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/python/using-regular-expressions.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Reguläre Ausdrücke, kurz Regex, sind Muster, um Text nach bestimmten Regeln zu durchsuchen und zu manipulieren. Programmierer verwenden sie, weil sie mächtig und effizient für Textanalyse und -verarbeitung sind.
+## Was & Warum?
+Reguläre Ausdrücke (Regex) sind Muster, die verwendet werden, um Kombinationen von Zeichen in Zeichenketten zu finden. Programmierer nutzen sie für die Suche, Bearbeitung oder Manipulation von Text basierend auf definierten Mustern, was sie für Aufgaben wie Datenvalidierung, Parsen oder Transformation unverzichtbar macht.
 
-## How to:
+## Wie geht das:
+Die Verwendung von Regex in Python erfolgt über das Modul `re`, das eine Reihe von Funktionen zur Verarbeitung von Text mit regulären Ausdrücken bereitstellt.
 
-In Python verwenden wir das `re`-Modul, um mit Regulären Ausdrücken zu arbeiten. Hier sind ein paar Beispiele:
-
-```Python
+### Grundlegende Mustersuche
+Um nach einem Muster in einer Zeichenkette zu suchen, verwenden Sie `re.search()`. Es gibt ein Match-Objekt zurück, wenn das Muster gefunden wird, sonst `None`.
+```python
 import re
 
-# Beispiel: Überprüfe, ob eine Zeichenkette eine E-Mail-Adresse enthält
-text = "schreib.mir@beispiel.de"
-match = re.search(r"\b[\w\.-]+@[\w\.-]+\.\w{2,4}\b", text)
+text = "Lerne Python-Programmierung"
+match = re.search("Python", text)
 if match:
-    print("Gefundene E-Mail-Adresse:", match.group())
-
-# Beispiel: Trenne Text an jedem Komma
-text = "Apfel, Birne, Banane, Kiwi"
-gesplittet = re.split(r",\s*", text)
-print("Aufgeteilte Wörter:", gesplittet)
-
-# Beispiel: Ersetze alle Zahlen durch das Wort "Zahl"
-text = "In diesem Jahr, 2021, wird Python 30."
-ersetzt = re.sub(r"\d+", "Zahl", text)
-print("Text mit ersetzen Zahlen:", ersetzt)
+    print("Muster gefunden!")
+else:
+    print("Muster nicht gefunden.")
+```
+Ausgabe:
+```
+Muster gefunden!
 ```
 
-Erwartete Ausgabe:
-
+### Kompilieren von regulären Ausdrücken
+Für die wiederholte Verwendung desselben Musters, kompilieren Sie es zuerst mit `re.compile()` für eine bessere Leistung.
+```python
+muster = re.compile("Python")
+match = muster.search("Lerne Python-Programmierung")
+if match:
+    print("Kompiliertes Muster gefunden!")
 ```
-Gefundene E-Mail-Adresse: schreib.mir@beispiel.de
-Aufgeteilte Wörter: ['Apfel', 'Birne', 'Banane', 'Kiwi']
-Text mit ersetzen Zahlen: In diesem Jahr, Zahl, wird Python Zahl.
+Ausgabe:
+```
+Kompiliertes Muster gefunden!
 ```
 
-## Deep Dive
+### Zeichenketten aufteilen
+Um eine Zeichenkette bei jedem Treffer eines Regex-Musters aufzuteilen, verwenden Sie `re.split()`.
+```python
+ergebnis = re.split("\s", "Python macht Spaß")
+print(ergebnis)
+```
+Ausgabe:
+```
+['Python', 'macht', 'Spaß']
+```
 
-Reguläre Ausdrücke haben ihre Wurzeln in der theoretischen Informatik, speziell in der Automatentheorie und der formalen Sprache. Sie wurden in den 1950er Jahren entwickelt und sind seitdem in verschiedenen Formen in Programmiersprachen und Texteditoren integriert worden.
+### Alle Treffer finden
+Um alle nicht überlappenden Vorkommen eines Musters zu finden, verwenden Sie `re.findall()`.
+```python
+treffer = re.findall("n", "Python-Programmierung")
+print(treffer)
+```
+Ausgabe:
+```
+['n', 'n']
+```
 
-Alternativen zu Regulären Ausdrücken sind Parser sowie textbasierte Such- und Ersetzungsfunktionen, die jedoch oft weniger mächtig sind.
+### Text ersetzen
+Verwenden Sie `re.sub()`, um Vorkommen eines Musters durch einen neuen String zu ersetzen.
+```python
+ersetzer_text = re.sub("Spaß", "großartig", "Python macht Spaß")
+print(ersetzer_text)
+```
+Ausgabe:
+```
+Python ist großartig
+```
 
-Was das Arbeiten mit Regex in Python angeht, findet die Verarbeitung größtenteils im `re`-Modul statt. Dieses Modul verwendet eine Syntax, die sehr ähnlich zu anderen Programmiersprachen ist, wodurch die erlernten Muster oft portierbar sind.
+### Drittanbieter-Bibliotheken
+Obwohl das integrierte `re`-Modul von Python leistungsfähig ist, bieten Drittanbieter-Bibliotheken wie `regex` mehr Funktionen und verbesserte Leistung. Um `regex` zu verwenden, installieren Sie es über pip (`pip install regex`) und importieren Sie es in Ihren Code.
 
-## See Also
+```python
+import regex
 
-Weitere Informationen und tiefergehende Tutorials findest du in der offiziellen Python-Dokumentation zum `re`-Modul: https://docs.python.org/3/library/re.html
-
-Für interaktives Üben empfehle ich Seiten wie https://regexr.com oder https://regex101.com, wo du Reguläre Ausdrücke testen und lernen kannst. 
-
-Außerdem ist das Buch "Mastering Regular Expressions" von Jeffrey Friedl eine ausgezeichnete Ressource, um tiefer in das Thema einzutauchen.
+text = "Lerne Python 3.8"
+match = regex.search(r"Python\s(\d+\.\d+)", text)
+if match:
+    print(f"Gefundene Version: {match.group(1)}")
+```
+Ausgabe:
+```
+Gefundene Version: 3.8
+```

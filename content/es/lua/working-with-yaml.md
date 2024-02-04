@@ -1,53 +1,93 @@
 ---
 title:                "Trabajando con YAML"
-date:                  2024-01-19
+date:                  2024-02-03T19:25:58.993019-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Trabajando con YAML"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/lua/working-with-yaml.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Qué es y por qué?
+## ¿Qué y por qué?
 
-YAML (YAML Ain't Markup Language) es un formato de serialización de datos fácil de leer por humanos, usado comúnmente para configuración de aplicaciones. Lo usan los programadores por su claridad y compatibilidad con diferentes lenguajes de programación.
+YAML, abreviatura de "YAML Ain't Markup Language" (YAML no es un lenguaje de marcado), es un estándar de serialización de datos legible por humanos que se utiliza a menudo para archivos de configuración e intercambio de datos entre lenguajes. Los programadores aprovechan YAML debido a su simplicidad y legibilidad, lo que lo convierte en una opción preferida para ajustes, configuraciones de aplicaciones diversas o contenido que debería ser editable por no programadores.
 
 ## Cómo hacerlo:
 
-Para trabajar con YAML en Lua, necesitas una librería externa como 'lyaml'. Aquí un ejemplo básico:
+Lua no tiene soporte integrado para YAML, pero puedes trabajar con archivos YAML utilizando bibliotecas de terceros como `lyaml`. Esta biblioteca permite la codificación y decodificación de datos YAML con Lua. Primero, necesitarás instalar `lyaml` a través de LuaRocks, el gestor de paquetes de Lua:
 
-```Lua
--- asegúrate de instalar lyaml con 'luarocks install lyaml'
+```bash
+luarocks install lyaml
+```
 
-local lyaml = require('lyaml')
-local yaml_data = [[
-nombre: Juan
-edad: 30
-pasatiempos:
-  - programar
-  - ciclismo
-]]
+### Decodificando YAML:
 
--- Cargar datos YAML
-local datos = lyaml.load(yaml_data)
+Supongamos que tienes el siguiente contenido YAML en un archivo llamado `config.yaml`:
 
--- Acceder a los valores
-print(datos.nombre) -- salida: Juan
-print(datos.edad) -- salida: 30
+```yaml
+database:
+  host: localhost
+  port: 3306
+  username: usuario
+  password: contraseña
+```
 
--- Muestra los pasatiempos
-for index, hobby in ipairs(datos.pasatiempos) do
-   print('Pasatiempo '..index..': '..hobby)
+Puedes decodificar este archivo YAML en una tabla de Lua con el siguiente código:
+
+```lua
+local yaml = require('lyaml')
+local archivo = io.open("config.yaml", "r")
+local contenido = archivo:read("*all")
+archivo:close()
+
+local datos = yaml.load(contenido)
+for k,v in pairs(datos.database) do
+  print(k .. ": " .. v)
 end
 ```
 
-## Profundización:
+Cuando ejecutes este script, debería producir:
 
-YAML se originó en 2001. Su enfoque en la legibilidad lo hace popular, pero cuidado, es más lento que JSON o XML y puede ser inseguro si se permite la ejecución de código arbitrario durante la deserialización. Alternativas incluyen JSON, XML, TOML. Es importante escoger la librería correcta para prevenir problemas de seguridad y aprovechar características del lenguaje.
+```output
+host: localhost
+port: 3306
+username: usuario
+password: contraseña
+```
 
-## Ver también:
+### Codificando YAML:
 
-- Documentación oficial de YAML: [https://yaml.org](https://yaml.org)
-- lyaml en GitHub: [https://github.com/gvvaughan/lyaml](https://github.com/gvvaughan/lyaml)
-- Alternativa de serialización JSON para Lua: [https://www.json.org/json-es.html](https://www.json.org/json-es.html)
+Para codificar tablas de Lua en formato YAML, usas la función `dump` proporcionada por `lyaml`. Considerando que quieres crear una representación YAML de la siguiente tabla de Lua:
+
+```lua
+local datos = {
+  website = {
+    name = "Ejemplo",
+    owner = "Jane Doe",
+    metadata = {
+      creation_date = "2023-01-01",
+      tags = {"blog", "personal", "lua"}
+    }
+  }
+}
+
+local yaml = require('lyaml')
+local datos_yaml = yaml.dump({datos})
+print(datos_yaml)
+```
+
+El YAML de salida será:
+
+```yaml
+- website:
+    metadata:
+      creation_date: '2023-01-01'
+      tags: [blog, personal, lua]
+    name: Ejemplo
+    owner: Jane Doe
+```
+
+Siguiendo estos patrones, los programadores de Lua pueden gestionar eficazmente los datos de YAML para una variedad de aplicaciones. Estas operaciones con YAML son cruciales para el desarrollo de aplicaciones de Lua versátiles que interactúan sin problemas con otras partes de un sistema o directamente con otros sistemas.

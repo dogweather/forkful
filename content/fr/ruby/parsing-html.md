@@ -1,45 +1,48 @@
 ---
-title:                "Analyse syntaxique de HTML"
-date:                  2024-01-20T15:33:25.915221-07:00
-simple_title:         "Analyse syntaxique de HTML"
-
+title:                "Analyse Syntaxique du HTML"
+date:                  2024-02-03T19:12:57.870387-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Analyse Syntaxique du HTML"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/ruby/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Quoi et Pourquoi ?)
-Le parsing HTML, c'est lire et transformer le HTML en informations exploitables. Les programmeurs le font pour récupérer des données, automatiser des interactions avec des sites web, ou import/export de contenu.
+## Quoi & Pourquoi ?
+Analyser du HTML signifie décomposer un bloc de code HTML pour en saisir la structure et le contenu. Les programmeurs le font pour extraire des données, manipuler le contenu, ou migrer des informations entre formats et systèmes.
 
-## How to: (Comment faire :)
-```Ruby
+## Comment faire :
+Pour analyser du HTML en Ruby, installez le gem 'Nokogiri' avec `gem install nokogiri`. Nokogiri est comme un couteau suisse pour travailler avec HTML et XML en Ruby. Voici un rapide exemple :
+
+```ruby
 require 'nokogiri'
 require 'open-uri'
 
-# Récupérer le HTML depuis un site web
+# Charger le contenu HTML d'un site web
 html_content = URI.open('http://example.com').read
 
-# Parser ce contenu avec Nokogiri
-document = Nokogiri::HTML(html_content)
+# Analyser le HTML
+doc = Nokogiri::HTML(html_content)
 
-# Rechercher des éléments spécifiques avec CSS selectors
-headings = document.css('h1').map(&:text)
-
-puts headings
-# Exemple de sortie :
-# ["Welcome to example.com"]
-
+# Extraire le titre
+title = doc.xpath('//title').text
+puts "Le titre de la page est : #{title}"
 ```
 
-## Deep Dive (Plongée en profondeur)
-Historiquement, le parsing HTML était bordélique. Conçu pour être tolérant aux erreurs, le HTML peut être un cauchemar à analyser précisément. Nokogiri et d'autres bibliothèques fournissent une analyse robuste et indulgente. Qui plus est, elles gèrent les subtilités de l'encodage et la sécurisation des appels réseau.
+Cela affiche quelque chose comme : `Le titre de la page est : Domaine Exemple`.
 
-On pourrait aussi utiliser d'autres gemmes comme Oga ou des outils intégrés comme Regexp mais chaque méthode a ses avantages et inconvénients. Nokogiri, par exemple, mise sur l'équilibre entre la facilité d'utilisation et la performance grâce à sa construction sur libxml2.
+## Plongée Profonde
+Au début des temps de Ruby, les options pour analyser le HTML étaient limitées. REXML était intégré mais lent. Puis Hpricot est apparu, mais il s'est éteint. Nokogiri a fait ses débuts en 2008, alliant la facilité d'Hpricot avec la vitesse et la puissance de libxml, une boîte à outils XML éprouvée.
 
-Et le choix de la bibliothèque peut dépendre des besoins : extraction rapide de données, sécurité, compatibilité, ou la consommation de ressources.
+Dans le monde de l'analyse, il y a toujours des alternatives. Certains jurent uniquement par la bibliothèque intégrée 'rexml' ou 'oga', un autre analyseur XML/HTML pour Ruby. Mais Nokogiri reste un favori pour sa robustesse et sa vitesse, sans parler de sa vaste gamme de fonctionnalités.
 
-## See Also (Voir aussi)
-- Nokogiri documentation: [https://nokogiri.org/](https://nokogiri.org/)
-- 'open-uri' Ruby Standard Library: [https://ruby-doc.org/stdlib-3.0.0/libdoc/open-uri/rdoc/OpenURI.html](https://ruby-doc.org/stdlib-3.0.0/libdoc/open-uri/rdoc/OpenURI.html)
-- Ruby Regexp documentation: [https://ruby-doc.org/core-3.0.0/Regexp.html](https://ruby-doc.org/core-3.0.0/Regexp.html)
+Sous le capot, Nokogiri convertit le HTML en un Modèle Objet de Document (DOM) – une structure arborescente. Cela facilite la navigation et la manipulation des éléments. En utilisant XPath et les sélecteurs CSS, vous pouvez localiser n'importe quelle information dont vous avez besoin.
+
+## Voir Aussi
+- Gem Nokogiri : [https://nokogiri.org/](https://nokogiri.org/)
+- Documentation de rexml de Ruby : [https://ruby-doc.org/stdlib-2.6.3/libdoc/rexml/rdoc/REXML/Document.html](https://ruby-doc.org/stdlib-2.6.3/libdoc/rexml/rdoc/REXML/Document.html)
+- Analyseur alternatif 'oga' : [https://github.com/YorickPeterse/oga](https://github.com/YorickPeterse/oga)
+- Apprendre à propos de XPath : [https://www.w3schools.com/xml/xpath_intro.asp](https://www.w3schools.com/xml/xpath_intro.asp)

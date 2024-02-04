@@ -1,50 +1,95 @@
 ---
-title:                "עבודה עם קבצי CSV"
-date:                  2024-01-19
-simple_title:         "עבודה עם קבצי CSV"
-
+title:                "עובדים עם CSV"
+date:                  2024-02-03T19:20:04.199650-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "עובדים עם CSV"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/elixir/working-with-csv.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## מה ולמה?
-עבודה עם קבצי CSV (ערכים מופרדים בפסיקים) נפוצה בתוכנות עבור קריאה וכתיבה של נתונים טבלאיים פשוטים. תוכניתנים משתמשים בזה כי זה תקן תעשייתי, נגיש וקל לעיבוד בכלי גיליונות עבודה כמו Excel.
+
+עבודה עם קבצי CSV (ערכים מופרדים בפסיק) כוללת קריאה מתוך וכתיבה לקבצים אלו, צורך נפוץ למשימות הדורשות ייבוא/יצוא נתונים או פתרונות אחסון פשוטים. מתכנתים מנצלים את היכולת הזו להחלפת נתונים בין מערכות, עריכת נתונים מהירה, או למקרים שבהם פורמט נתונים קליל וקל לשינוי הוא יתרון.
 
 ## איך לעשות:
-באליקסיר, עבודה עם CSV יכולה להתבצע בעזרת ספריית חיצונית. דוגמא לקריאה וכתיבה של קובץ CSV:
+
+Elixir, עם התאמת תבניות החזקה שלו והתמיכה בפייפליינינג, יכול לטפל בקבצי CSV ביעילות, גם ללא ספריות צד שלישי. עם זאת, לצרכים מתקדמים יותר, הספרייה `nimble_csv` היא בחירה מהירה ופשוטה.
+
+### קריאה של קובץ CSV ללא ספריות חיצוניות
+
+ניתן לקרוא ולפענח קובץ CSV על ידי שימוש בפונקציות הקיימות ב-Elixir:
 
 ```elixir
-# כדי להשתמש בספריית CSV תצטרך להוסיף את :csv בתלותות של הפרויקט שלך
-defmodule CSVExample do
-  require CSV
-
-  def read_csv(file_path) do
-    file_path
-    |> File.stream!()
-    |> CSV.decode(headers: true)
+defmodule CSVReader do
+  def read_file(file_path) do
+    File.stream!(file_path)
+    |> Stream.map(&String.trim_trailing/1)
+    |> Stream.map(&String.split(&1, ","))
     |> Enum.to_list()
-  end
-
-  def write_csv(data, file_path) do
-    CSV.encode_to_iodata(data, headers: true)
-    |> Enum.map(&IO.iodata_to_binary(&1))
-    |> :ok = File.write(file_path)
   end
 end
 
-# קריאת CSV
-data = CSVExample.read_csv("data.csv")
-# כתיבת CSV
-CSVExample.write_csv(data, "new_data.csv")
+# שימוש לדוגמה
+CSVReader.read_file("data.csv")
+# פלט: [["Header1", "Header2"], ["Row1Value1", "Row1Value2"], ["Row2Value1", "Row2Value2"]]
 ```
-הדפסת `data` תראה לנו את הנתונים שנקראו מהקובץ.
 
-## ניתוח עמוק
-התקן CSV התפתח לאורך השנים וכלול ברוב שפות התכנות. אלטרנטיבות פופולריות כוללות JSON ו-XML, שהם יותר גמישים אך פחות נגישים לצופים רגילים. בביצוע יש לשים לב לסוגי הנתונים ולבעיות של תאימות (לדוג', שדות עם פסיקים בתוכם).
+### כתיבה לקובץ CSV
 
-## ראה גם
-- מסמך התקנים לCSV: https://tools.ietf.org/html/rfc4180
-- הספריה `CSV` ב- Hex: https://hex.pm/packages/csv
-- תיעוד Elixir לטיפול בקבצים: https://hexdocs.pm/elixir/File.html
+בדומה, לכתיבת נתונים לקובץ CSV:
+
+```elixir
+defmodule CSVWriter do
+  def write_to_file(file_path, data) do
+    File.open(file_path, [:write], fn file ->
+      Enum.each(data, fn row ->
+        IO.write(file, Enum.join(row, ",") <> "\n")
+      end)
+    end)
+  end
+end
+
+# שימוש לדוגמה
+data = [["Header1", "Header2"], ["Value1", "Value2"], ["Value3", "Value4"]]
+CSVWriter.write_to_file("output.csv", data)
+# יוצר output.csv עם הנתונים בפורמט CSV
+```
+
+### שימוש ב-`nimble_csv`
+
+לטיפול מורכב יותר ב-CSV, `nimble_csv` מספק דרך חזקה וגמישה לעבוד עם נתוני CSV. ראשית, הוסף את `nimble_csv` לתלות שלך ב-`mix.exs` והרץ `mix deps.get`:
+
+```elixir
+defp deps do
+  [
+    {:nimble_csv, "~> 1.2"}
+  ]
+end
+```
+
+פיענוח נתוני CSV עם `nimble_csv`:
+
+```elixir
+defmodule MyCSVParser do
+  NimbleCSV.define(MyParser, separator: ",", escape: "\\")
+
+  def parse(file_path) do
+    file_path
+    |> File.stream!()
+    |> MyParser.parse_stream()
+    |> Enum.to_list()
+  end
+end
+
+# שימוש לדוגמה
+MyCSVParser.parse("data.csv")
+# הפלט עם nimble_csv ניתן להתאמה בהתבסס על ההגדרה, אך בדרך כלל נראה כמו רשימת רשימות או צמדים תלוי באיך שהגדרת את המפענח שלך.
+```
+
+כתיבת נתוני CSV באמצעות `nimble_csv` דורשת המרה ידנית של הנתונים שלך לפורמט הנכון ולאחר מכן כתיבתם לקובץ, דומה מאוד לדוגמה הפשטית של Elixir אך מנצלת את `nimble_csv` ליצירת שורות CSV מעוצבות נכון.
+
+בבחירה של הגישה המתאימה למורכבות המשימה שלך, תוכל לטפל בקבצי CSV ב-Elixir עם גמישות ועוצמה רבה.

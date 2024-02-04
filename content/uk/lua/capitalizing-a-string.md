@@ -1,30 +1,53 @@
 ---
-title:                "Перетворення рядка на великі літери"
-date:                  2024-01-19
-simple_title:         "Перетворення рядка на великі літери"
-
+title:                "Зробити першу літеру рядка великою"
+date:                  2024-02-03T19:06:10.752290-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Зробити першу літеру рядка великою"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/lua/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Що і Чому?)
-Capitalizing a string means making the first letter of each word uppercase. Programmers do it to make text look nicer or follow certain writing rules.
+## Що і Чому?
+Приведення рядка до великих літер включає в себе зміну першого символа кожного слова в реченні на велику літеру, при цьому решта літер залишаються малими. Ця техніка часто використовується для форматування тексту для більш професійного або читабельного виводу, такого як підготовка заголовків або введення користувачем для відображення.
 
-## How to: (Як це зробити:)
-```Lua
--- Capitalize each word in a string
-function capitalize(str)
-  return (str:gsub("(%l)(%w*)", function(a,b) return a:upper()..b end))
+## Як це зробити:
+Lua не має вбудованої функції для приведення рядків до великих літер, але ви легко можете досягти цього за допомогою базових функцій маніпуляції з рядками. Ось проста функція для приведення першої літери одного слова до великої літери:
+
+```lua
+function capitalize(word)
+    return word:sub(1,1):upper() .. word:sub(2):lower()
 end
 
-print(capitalize("привіт, це lua стаття!"))  -- Output: Привіт, Це Lua Стаття!
+print(capitalize("hello"))  -- Вивід: Hello
 ```
 
-## Deep Dive (Занурення у деталі)
-In Lua, there's no built-in function to capitalize strings. Historically, programmers write their own or use libraries. `gsub` is versatile, applying a function to pattern matches – perfect for capitalization, where we match the first letter of each word. An alternative is iterating over words, but `gsub` keeps our code concise. Understanding the Lua pattern matching system enhances implementation – `%l` matches lowercase letters, `%w` matches a word's remaining letters.
+Щоб привести кожне слово в реченні до великої літери, ви можете розділити речення на слова, зробити кожне з них з великої літери, а потім з'єднати їх знову:
 
-## See Also (Див. також)
-- [Lua 5.4 Reference Manual: Patterns](https://www.lua.org/manual/5.4/manual.html#6.4.1)
-- [Stack Overflow: How do I capitalize the first letter of each word in a string?](https://stackoverflow.com/questions/20284515/how-do-i-capitalize-first-letter-of-first-name-and-last-name-in-lua)
+```lua
+function capitalizeSentence(sentence)
+    local words = {}
+    for word in sentence:gmatch("%S+") do
+        table.insert(words, capitalize(word))
+    end
+    return table.concat(words, " ")
+end
+
+print(capitalizeSentence("hello world from lua"))  -- Вивід: Hello World From Lua
+```
+
+Якщо ви працюєте над проектом, де ключовим є продуктивність і вам потрібні додаткові можливості маніпуляції з рядками, розгляньте можливість використання сторонньої бібліотеки, як-от `Penlight`. Penlight розширює Lua більш універсальними функціями обробки рядків, серед іншого:
+
+```lua
+-- Припускаючи, що Penlight встановлено:
+local pl = require("pl.stringx")
+local text = "hello lua users"
+text = pl.capitalized(text)
+print(text)  -- Вивід: Hello lua users
+
+-- Зауважте: функція capitalized в Penlight приводить до великої літери лише перше слово.
+-- Для приведення кожного слова до великої літери вам все ще доведеться реалізувати власне рішення або дослідити інші бібліотеки.
+```

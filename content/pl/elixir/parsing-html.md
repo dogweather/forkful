@@ -1,48 +1,84 @@
 ---
-title:                "Przetwarzanie HTML"
-date:                  2024-01-20T15:31:02.072462-07:00
-simple_title:         "Przetwarzanie HTML"
-
+title:                "Analiza składniowa HTML"
+date:                  2024-02-03T19:11:59.130046-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Analiza składniowa HTML"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/elixir/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Co i Dlaczego?)
-Parsing HTML to proces wydobywania danych ze struktur dokumentów HTML. Programiści robią to, by uzyskać informacje, manipulować treścią, czy automatyzować interakcje z witrynami internetowymi.
+## Co i dlaczego?
 
-## How to: (Jak to zrobić?)
-W Elixirze do parsowania HTML możemy użyć pakietu `Floki`. Oto jak łatwo zacząć:
+Parsowanie HTML w Elixirze polega na ekstrakcji informacji z dokumentów HTML. Programiści robią to, aby programowo współdziałać ze stronami internetowymi, pobierać dane lub automatyzować interakcje w sieci, umożliwiając aplikacjom dynamiczne zrozumienie i wykorzystanie treści internetowych.
+
+## Jak to zrobić:
+
+Elixir, z jego rozbudowanym modelem współbieżności i paradygmatem programowania funkcyjnego, nie zawiera wbudowanych możliwości parsowania HTML. Można jednak użyć popularnych bibliotek stron trzecich, takich jak `Floki`, do tego celu. Floki czyni parsowanie HTML intuicyjnym i efektywnym, wykorzystując dopasowanie wzorców i rury (piping) w Elixirze.
+
+Najpierw dodaj Floki do swoich zależności w mix.exs:
 
 ```elixir
-# Dodaj Floki do mix.exs jako zależność
 defp deps do
-  [{:floki, "~> 0.30.0"}]
+  [
+    {:floki, "~> 0.31.0"}
+  ]
 end
-
-# Uruchom `mix deps.get`, aby zainstalować Floki
 ```
 
-Przykład użycia Floki do znalezienia tytułu strony:
+Następnie uruchom `mix deps.get`, aby zainstalować nową zależność.
+
+Teraz przeanalizujmy prosty ciąg HTML, aby wydobyć dane. Poszukamy tytułów wewnątrz tagów `<h1>`:
+
 ```elixir
-html = "<html><head><title>Super Strona</title></head><body></body></html>"
-{:ok, document} = Floki.parse_document(html)
-title = Floki.find(document, "title")
-|> Floki.text()
+html_content = """
+<html>
+  <body>
+    <h1>Witaj, Elixir!</h1>
+    <h1>Inny Tytuł</h1>
+  </body>
+</html>
+"""
 
-IO.puts title  # Wydrukuje "Super Strona"
+titles = html_content
+         |> Floki.find("h1")
+         |> Floki.text()
+
+IO.inspect(titles)
 ```
 
-## Deep Dive (Dogłębna analiza)
-Floki bazuje na „mochei” - silniku XPath napisanym w Elixirze. W przeszłości częściej używano `:erlsom` czy `:xmerl`, ale te biblioteki miały skomplikowane API i obsługiwały tylko XML. Floki zmieniło grę, oferując prostszy interfejs i skupienie na HTML. Ma również elastyczne selektory CSS pozwalające na łatwe znajdowanie elementów.
+**Przykładowe wyjście:**
 
-Inną opcją jest wykorzystanie `meeseeks`, inspirującego się „beautifulsoup” z Pythona, zapewniające jeszcze większą moc przetwarzania.
+```elixir
+["Witaj, Elixir!", "Inny Tytuł"]
+```
 
-Gdybyśmy robili to natywnie, musielibyśmy opierać się na wyrażeniach regularnych i ręcznym parsowaniu - a to ciężka i błędu praca.
+Aby zagłębić się głębiej, powiedzmy, że chcesz wyodrębnić linki (tagi `<a>`) wraz z ich atrybutami href. Oto jak możesz to osiągnąć:
 
-## See Also (Zobacz również)
-- [Floki na Hex.pm](https://hex.pm/packages/floki)
-- [Dokumentacja Floki](https://hexdocs.pm/floki)
-- [Meeseeks na Hex.pm](https://hex.pm/packages/meeseeks)
-- [Porównanie parserów HTML w Elixirze](https://elixirforum.com/t/comparing-html-parsers-nokogiri-mochei-floki-etc/11904)
+```elixir
+html_content = """
+<html>
+  <body>
+    <a href="https://elixir-lang.org/">Oficjalna strona Elixira</a>
+    <a href="https://hexdocs.pm/">HexDocs</a>
+  </body>
+</html>
+"""
+
+links = html_content
+        |> Floki.find("a")
+        |> Enum.map(fn({_, attrs, [text]}) -> {text, List.keyfind(attrs, "href", 0)} end)
+        
+IO.inspect(links)
+```
+
+**Przykładowe wyjście:**
+
+```elixir
+[{"Oficjalna strona Elixira", {"href", "https://elixir-lang.org/"}}, {"HexDocs", {"href", "https://hexdocs.pm/"}}]
+```
+
+To podejście pozwala na efektywne nawigowanie i parsowanie dokumentów HTML, ułatwiając zadania ekstrakcji i manipulacji danymi internetowymi w aplikacjach Elixira.

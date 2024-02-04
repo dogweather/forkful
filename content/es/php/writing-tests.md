@@ -1,53 +1,86 @@
 ---
 title:                "Escribiendo pruebas"
-date:                  2024-01-19
+date:                  2024-02-03T19:31:17.430741-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Escribiendo pruebas"
-
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/php/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## ¿Qué es y por qué?
-
-Escribir tests es crear scripts que automáticamente verifican si tu código funciona como debería. Los desarrolladores lo hacen para asegurarse de que su código sea confiable y para evitar futuros errores al modificarlo.
+## Qué y Por Qué?
+Escribir pruebas en programación implica crear y ejecutar scripts que verifican que el código se comporte como se espera bajo diversas condiciones. Los programadores lo hacen para asegurar la calidad, prevenir regresiones y facilitar la refactorización segura, lo cual es crucial para mantener una base de código saludable, escalable y libre de errores.
 
 ## Cómo hacerlo:
+### PHP Nativo – PHPUnit
+Una herramienta ampliamente utilizada para pruebas en PHP es PHPUnit. Instálalo vía Composer:
+```bash
+composer require --dev phpunit/phpunit ^9
+```
 
-Con PHPUnit, una herramienta de testing para PHP popular y poderosa. Instálalo con `composer` y escribe tests en clases y métodos. Aquí un ejemplillo:
-
-```PHP
-<?php
+#### Escribiendo una prueba simple:
+Crea un archivo `CalculatorTest.php` en un directorio `tests`:
+```php
 use PHPUnit\Framework\TestCase;
 
-class CalculadoraTest extends TestCase {
-    public function testSuma() {
-        $calculadora = new Calculadora();
-        $this->assertEquals(4, $calculadora->suma(2, 2));
+// Asumiendo que tienes una clase Calculator que suma números
+class CalculatorTest extends TestCase
+{
+    public function testAdd()
+    {
+        $calculator = new Calculator();
+        $this->assertEquals(4, $calculator->add(2, 2));
     }
 }
+```
+Ejecuta las pruebas con:
+```bash
+./vendor/bin/phpunit tests
+```
 
-class Calculadora {
-    public function suma($a, $b) {
-        return $a + $b;
+#### Salida de muestra:
+```
+PHPUnit 9.5.10 por Sebastian Bergmann y contribuyentes.
+
+.                                                                   1 / 1 (100%)
+
+Tiempo: 00:00.005, Memoria: 6.00 MB
+
+OK (1 prueba, 1 afirmación)
+```
+
+### Bibliotecas de Terceros – Mockery
+Para pruebas complejas, incluyendo el mocking de objetos, Mockery es una opción popular.
+
+```bash
+composer require --dev mockery/mockery
+```
+
+#### Integrando Mockery con PHPUnit:
+```php
+use PHPUnit\Framework\TestCase;
+use Mockery as m;
+
+class ServiceTest extends TestCase
+{
+    public function tearDown(): void
+    {
+        m::close();
+    }
+
+    public function testServiceCallsExternalService()
+    {
+        $externalServiceMock = m::mock(ExternalService::class);
+        $externalServiceMock->shouldReceive('process')->once()->andReturn('mocked result');
+
+        $service = new Service($externalServiceMock);
+        $result = $service->execute();
+
+        $this->assertEquals('mocked result', $result);
     }
 }
-?>
 ```
-Ejecuta los tests con `./vendor/bin/phpunit`. Si todo está bien, verás algo como:
-
-```
-OK (1 test, 1 assertion)
-```
-
-## Detalles en Profundidad:
-
-Testing automático existe desde los 60, pero ha cobrado más importancia con métodos como TDD (Test-Driven Development). Alternativas a PHPUnit incluyen PHPSpec, Codeception y Behat. Cada uno tiene su enfoque, como BDD (Behavior-Driven Development) en Behat. Implementa testing integrándolo en tu ciclo de desarrollo y ejecútalo regularmente.
-
-## Ver También:
-
-- [PHPUnit](https://phpunit.de/)
-- [Introducción a PHPSpec](https://www.phpspec.net/en/stable/)
-- [Codeception para pruebas de aceptación](https://codeception.com/)
-- [Behat, otro framework de testing con enfoque BDD](https://docs.behat.org/en/latest/)
+Para ejecutar, utiliza el mismo comando de PHPUnit que arriba. Mockery permite objetos mock expresivos y flexibles, facilitando la prueba de interacciones complejas dentro de tu aplicación.

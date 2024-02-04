@@ -1,37 +1,71 @@
 ---
 title:                "Skriva till standardfel"
-date:                  2024-01-19
+date:                  2024-02-03T19:34:17.334981-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Skriva till standardfel"
-
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/php/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Vad & Varför?
-Skrivning till standardfel (stderr) separerar felmeddelanden från vanlig utdata. Programmers gör det för att hantera fel effektivt och underlätta felsökning.
+## Vad och varför?
 
-## Hur Gör Man:
-För att skriva till stderr i PHP används `fwrite()` mot `php://stderr`.
+Att skriva till standardfel (stderr) i PHP handlar om att styra felmeddelanden eller diagnostik separat från standardutdata (stdout), vilket gör det möjligt för utvecklare att bättre hantera sina utdataströmmar för felsökning och loggning. Programmerare använder denna teknik för att säkerställa att felmeddelanden inte stör programmets utdata, vilket gör det enklare att övervaka och felsöka applikationer.
 
-```PHP
+## Hur man gör:
+
+I PHP kan man skriva till stderr genom att använda funktionen `fwrite()` tillsammans med den fördefinierade konstanten `STDERR`, som representerar strömmen för felutdata.
+
+```php
 <?php
-// Skicka ett felmeddelande till standardfel.
-fwrite(STDERR, "Ett fel har uppstått!\n");
-?>
+// Skriver ett enkelt meddelande till stderr.
+fwrite(STDERR, "Det här är ett felmeddelande.\n");
 ```
 
-Exempelutdata i terminalen skulle kunna se ut så här efter att ha körts:
-
+Exempelutdata när skriptet körs från kommandotolken:
 ```
-Ett fel har uppstått!
+Det här är ett felmeddelande.
 ```
 
-## Djupdykning:
-`STDERR` är en inbyggd filbeskrivare i PHP som är tillgänglig utan att öppna en ström manuellt. Historiskt sett kommer konceptet med standardfel från Unix-operativsystemen, där stderr används för att skilja vanlig utdata från errorutdata. Alternativt kan man använda `error_log()` för att skicka felmeddelanden direkt till den förkonfigurerade loggen. Implementationen av stderr i PHP följer principer etablerade i C's stdio-bibliotek.
+För att demonstrera en mer praktisk användning, tänk dig ett scenario där du analyserar användarinput och stöter på oväntade data:
+```php
+<?php
+$input = 'oväntade data';
 
-## Se även:
-- PHP:s officiella dokumentation om felhantering: https://www.php.net/manual/en/book.errorfunc.php
-- PHP:s officiella dokumentation om de olika I/O-strömmarna: https://www.php.net/manual/en/wrappers.php.php
-- Mer om standardströmmar i Unix: https://en.wikipedia.org/wiki/Standard_streams
+// Simulerar ett fel vid bearbetning av användarinput.
+if ($input === 'oväntade data') {
+    fwrite(STDERR, "Fel: Oväntad input mottagen.\n");
+    exit(1); // Avslutar med ett icke-noll värde för att indikera ett fel.
+}
+```
+
+Även om PHP:s inbyggda möjligheter att hantera stderr generellt är tillräckliga, när man arbetar med mer komplexa applikationer eller vill integrera stderr-loggning med externa system, kan tredjepartsbibliotek som Monolog vara en kraftfull allierad. Monolog är ett loggningsbibliotek som kan hantera stderr bland många andra mål (filer, sockets, etc.).
+
+Att använda Monolog för att skriva till stderr:
+
+Först, se till att du har installerat Monolog via Composer:
+```
+composer require monolog/monolog
+```
+
+Sedan kan du konfigurera Monolog att använda `StreamHandler` riktad mot `php://stderr`:
+
+```php
+<?php
+require 'vendor/autoload.php';
+
+use Monolog\Logger;
+use Monolog\Handler\StreamHandler;
+
+// Skapar en loggkanal
+$log = new Logger('namn');
+$log->pushHandler(new StreamHandler('php://stderr', Logger::WARNING));
+
+// Lägger till ett loggmeddelande till stderr
+$log->warning('Det här är ett varningsmeddelande.');
+```
+
+Koden ovan använder Monolog för att skicka ett varningsmeddelande till stderr, vilket är särskilt användbart för applikationer som kräver detaljerade loggningskonfigurationer eller extern loggövervakning.

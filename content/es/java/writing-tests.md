@@ -1,54 +1,90 @@
 ---
 title:                "Escribiendo pruebas"
-date:                  2024-01-19
+date:                  2024-02-03T19:30:44.518849-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Escribiendo pruebas"
-
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/java/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Qué y Por Qué?
-Escribir tests es crear código para probar otro código. Programadores lo hacen para asegurarse de que su código funciona como debe y para prevenir fallos en el futuro.
+Escribir pruebas en Java se trata de verificar que tu código se comporta como se espera bajo varias condiciones. Los programadores escriben pruebas para prevenir errores, asegurar que la funcionalidad permanezca correcta después de cambios, y fomentar buenos principios de diseño de software.
 
-## Cómo Hacerlo:
-Imagina que tienes una función simple para sumar dos números. Vamos a escribir un test para ella usando JUnit, que es un framework popular para tests en Java.
+## Cómo hacerlo:
+Los desarrolladores de Java usan principalmente dos marcos de pruebas: JUnit y TestNG. Aquí, nos centraremos en JUnit, la elección más popular para escribir pruebas debido a su simplicidad y adopción generalizada.
+
+### Fundamentos de JUnit
+
+Para usar JUnit en tu proyecto Maven, añade la siguiente dependencia a tu `pom.xml`:
+
+```xml
+<dependency>
+    <groupId>org.junit.jupiter</groupId>
+    <artifactId>junit-jupiter</artifactId>
+    <version>5.9.0</version>
+    <scope>test</scope>
+</dependency>
+```
+
+Una prueba básica en JUnit luce así:
 
 ```java
-import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class CalculadoraTest {
+public class CalculatorTest {
 
     @Test
-    public void testSuma() {
-        assertEquals(5, Calculadora.suma(2, 3));
-    }
-}
-
-public class Calculadora {
-    public static int suma(int a, int b) {
-        return a + b;
+    public void testAdd() {
+        Calculator calculator = new Calculator();
+        assertEquals(5, calculator.add(2, 3), "2 + 3 debería ser igual a 5");
     }
 }
 ```
 
-Output esperado al pasar el test:
+Ejecutar esta prueba resultará en un éxito, indicando que el método `add` funciona como se espera, o en un fallo, mostrando un mensaje de error.
 
+### Simulación con Mockito
+
+En escenarios del mundo real, los objetos a menudo dependen de otros objetos. Mockito es un marco de simulación popular que ayuda en la creación de objetos simulados con el propósito de probar.
+
+Agrega Mockito a tu proyecto Maven:
+
+```xml
+<dependency>
+    <groupId>org.mockito</groupId>
+    <artifactId>mockito-core</artifactId>
+    <version>4.5.1</version>
+    <scope>test</scope>
+</dependency>
 ```
-Test passed.
+
+Un caso de uso sencillo con Mockito:
+
+```java
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.*;
+
+public class UserServiceTest {
+
+    @Test
+    public void testGetUsername() {
+        // Crear un UserRepository simulado
+        UserRepository mockRepository = mock(UserRepository.class);
+
+        // Definir comportamiento para el objeto simulado
+        when(mockRepository.getUsername(1)).thenReturn("john_doe");
+
+        UserService userService = new UserService(mockRepository);
+        
+        assertEquals("john_doe", userService.getUsername(1), "El ID de usuario 1 debería ser john_doe");
+    }
+}
 ```
 
-Si hay un fallo, veríamos algo como:
-
-```
-org.opentest4j.AssertionFailedError: expected: <5> but was: <4>
-```
-
-## Profundización:
-Históricamente, los tests han estado menospreciados, pero enfoques como TDD (Test-Driven Development) los han hecho esenciales. Alternativas a JUnit incluyen TestNG y Spock. El detalle clave al escribir tests es que deben ser independientes y repetibles, sin efectos secundarios que alteren resultados futuros.
-
-## Ver También:
-- JUnit 5 User Guide: [https://junit.org/junit5/docs/current/user-guide/](https://junit.org/junit5/docs/current/user-guide/)
-- Spock Framework: [http://spockframework.org](http://spockframework.org)
-- Artículo sobre TDD: [https://martinfowler.com/bliki/TestDrivenDevelopment.html](https://martinfowler.com/bliki/TestDrivenDevelopment.html)
+Esta simulación nos permite probar `UserService` sin necesitar un `UserRepository` real, enfocando la prueba en la lógica dentro de `UserService` en sí.

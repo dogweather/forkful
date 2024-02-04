@@ -1,55 +1,67 @@
 ---
-title:                "Перетворення рядка на великі літери"
-date:                  2024-01-19
-simple_title:         "Перетворення рядка на великі літери"
-
+title:                "Зробити першу літеру рядка великою"
+date:                  2024-02-03T19:06:10.456224-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Зробити першу літеру рядка великою"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/java/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? / Що і чому?
+## Що та чому?
+Перетворення рядка з великої літери включає зміну першої літери кожного слова в рядку на велику, одночасно забезпечуючи, щоб решта букв залишилися маленькими. Це поширене завдання з маніпулювання рядками корисне для форматування тексту в додатках, наприклад, підготовки користувацьких імен або заголовків для відображення відповідно до конвенцій чи граматичної правильності.
 
-Capitalizing a string means turning the first character of each word to uppercase. Programmers often use it to normalize data inputs or enhance readability for users.
+## Як зробити:
+Стандартна бібліотека Java не надає прямого методу для перетворення всіх рядків на великі літери одразу, але ви можете досягти цього за допомогою комбінації вбудованих методів. Для більш складних потреб сторонні бібліотеки, як-от Apache Commons Lang, пропонують прості рішення.
 
-## How to: / Як це зробити:
-
-Look at this code. It's simple. We use Java's `StringUtils` from Apache Commons Lang to capitalize words easily. No Apache Commons? No problem. You can also do it with pure Java using `String.split` and a for-loop.
+### Використання вбудованих методів Java
+Щоб перетворити рядок на великі літери без зовнішніх бібліотек, ви можете розділити рядок на слова, зробити велику першу літеру кожного, а потім з'єднати їх назад. Ось простий підхід:
 
 ```java
-import org.apache.commons.lang3.StringUtils;
-
-public class CapitalizeExample {
+public class CapitalizeString {
     public static void main(String[] args) {
-        String message = "вітаю вас у світі java!";
-        
-        // Using Apache Commons Lang StringUtils
-        String capitalizedWithApache = StringUtils.capitalize(message);
-        System.out.println(capitalizedWithApache); // Вітаю вас у світі java!
+        String text = "привіт, світ!";
+        String capitalizedText = capitalizeWords(text);
+        System.out.println(capitalizedText); // Виводить: "Привіт, Світ!"
+    }
 
-        // Using pure Java
-        String[] words = message.split("\\s");
-        StringBuilder capitalizedWithJava = new StringBuilder();
-        for (String word : words) {
-            String firstLetter = word.substring(0, 1).toUpperCase();
-            String restOfWord = word.substring(1);
-            capitalizedWithJava.append(firstLetter).append(restOfWord).append(" ");
+    public static String capitalizeWords(String str) {
+        char[] chars = str.toLowerCase().toCharArray();
+        boolean found = false;
+        for (int i = 0; i < chars.length; i++) {
+            if (!found && Character.isLetter(chars[i])) {
+                chars[i] = Character.toUpperCase(chars[i]);
+                found = true;
+            } else if (Character.isWhitespace(chars[i]) || chars[i]=='.' || chars[i]=='\'') { 
+                found = false;
+            }
         }
-        System.out.println(capitalizedWithJava.toString().trim()); // Вітаю вас у світі java!
+        return String.valueOf(chars);
     }
 }
 ```
 
-## Deep Dive / Занурення глибше:
+Цей фрагмент коду перетворює весь рядок на маленькі літери, а потім ітерує через кожен символ, роблячи велику першу літеру кожного слова. Він вважає пробіли, точки й апострофи роздільниками слів.
 
-Back in the day, methods to capitalize a string were written from scratch. Now, utility libraries like Apache Commons Lang save time. Talking alternatives, there's also Google's Guava `CaseFormat`. Each method has its quirks; for example, `StringUtils` only capitalizes the first character and leaves rest untouched. In custom implementations, you control everything, but it takes more code and adds complexity. Remember, these small details matter for functions like proper name formatting where consistency is key.
+### Використання Apache Commons Lang
 
-## See Also / Дивись також:
+Бібліотека Apache Commons Lang пропонує більш елегантне рішення за допомогою методу `WordUtils.capitalizeFully()`, який оброблює різні крайові випадки та роздільники за вас:
 
-To explore more:
-- Apache Commons Lang: https://commons.apache.org/proper/commons-lang/
-- Google's Guava: https://guava.dev/releases/snapshot/api/docs/com/google/common/base/CaseFormat.html
-- JavaDoc for String: https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html
+```java
+// Додати залежність: org.apache.commons:commons-lang3:3.12.0
 
-These sources offer additional insight and methods that might better suit your use case. Happy coding!
+import org.apache.commons.text.WordUtils;
+
+public class CapitalizeString {
+    public static void main(String[] args) {
+        String text = "привіт, світ!";
+        String capitalizedText = WordUtils.capitalizeFully(text);
+        System.out.println(capitalizedText); // Виводить: "Привіт, Світ!"
+    }
+}
+```
+
+Щоб використати цей метод, вам потрібно додати бібліотеку Apache Commons Lang до вашого проекту. Цей метод бібліотеки не лише робить великою першу літеру кожного слова, але й перетворює решту літер в кожному слові на маленькі, забезпечуючи послідовний паттерн капіталізації по всьому рядку.

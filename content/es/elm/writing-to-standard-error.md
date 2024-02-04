@@ -1,48 +1,55 @@
 ---
 title:                "Escribiendo en el error estándar"
-date:                  2024-01-19
+date:                  2024-02-03T19:33:03.711018-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Escribiendo en el error estándar"
-
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/elm/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Qué & Por qué?
-Escribir en el error estándar significa mostrar mensajes aparte del flujo normal de datos. Los programadores lo hacen para reportar errores sin interferir con la salida regular del programa.
+## ¿Qué y Por Qué?
 
-## Cómo hacerlo:
-Elm corre en el navegador y no tiene acceso directo a STDERR como un lenguaje de servidor o de scripting, así que este código es conceptual y puedes ejecutar similar en JavaScript incorporado en Elm.
+Escribir en el error estándar (stderr) se trata de redirigir los mensajes de error y diagnósticos por separado del resultado principal del programa, que va a la salida estándar (stdout). Los programadores lo hacen para hacer el manejo de errores y el registro más manejables, especialmente en entornos donde la distinción de salida es crucial para la depuración y monitoreo.
 
-```Elm
-port module Main exposing (..)
+## Cómo:
 
--- Define un puerto para reportar errores
-port reportError : String -> Cmd msg
+Elm está dirigido principalmente al desarrollo web, donde el concepto de escribir directamente en stderr no se aplica de la misma manera que en los entornos de línea de comandos tradicionales. Sin embargo, para los programas de Elm que se ejecutan en Node.js o entornos similares, la interoperabilidad con JavaScript usando puertos es el enfoque clave para lograr una funcionalidad similar. Así es como podrías configurarlo:
 
--- Manda un error usando el puerto
-reportError "Este es un error estándar de ejemplo."
+Código Elm (`Main.elm`):
+```elm
+port module Main exposing (main)
+
+import Browser
+
+port errorOut : String -> Cmd msg
+
+-- Ejemplo ficticio de función que envía un mensaje de error a JS
+generateError : String -> Cmd msg
+generateError message =
+    errorOut message
+
+main =
+    generateError "Este es un mensaje de error para stderr"
 ```
 
-La implementación en JavaScript podría ser:
+Interoperabilidad con JavaScript (`index.js`):
+```javascript
+const { Elm } = require('./Main.elm');
 
-```JavaScript
-app.ports.reportError.subscribe(function(errorMessage) {
-  console.error(errorMessage);
+var app = Elm.Main.init();
+
+app.ports.errorOut.subscribe((mensaje) => {
+  console.error(mensaje);
 });
 ```
 
-Salida de ejemplo en la consola del navegador:
+Este código de Elm define un puerto `errorOut` que permite enviar mensajes fuera de Elm a JavaScript. Luego, en el código de JavaScript, escuchamos los mensajes enviados a través de este puerto y los redirigimos a stderr usando `console.error()`. De esta manera, puedes escribir efectivamente en stderr en un entorno que lo soporte, aprovechando las características de interoperabilidad de Elm con JavaScript.
 
-```plaintext
-Este es un error estándar de ejemplo.
+Salida de muestra en el terminal de Node.js (cuando se ejecuta `index.js`):
 ```
-
-## Análisis Profundo
-Históricamente, los programas de línea de comandos usan STDERR para permitir que se separen los errores de la salida estándar. En Elm, como en otros lenguajes que se ejecutan en el navegador como JavaScript, no hay un concepto directo de STDERR pero se puede simular con `console.error` para propósitos de depuración o para informar de errores. La idea detrás es comunicar fallas sin afectar el flujo principal del programa.
-
-## Ver También
-- Documentación de Elm sobre puertos: https://guide.elm-lang.org/interop/ports.html
-- Console API en MDN para `console.error`: https://developer.mozilla.org/en-US/docs/Web/API/Console/error
-- Guía de Elm: https://guide.elm-lang.org/
+Este es un mensaje de error para stderr
+```

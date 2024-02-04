@@ -1,8 +1,8 @@
 ---
 title:                "Writing tests"
-date:                  2024-01-19
+date:                  2024-02-03T19:03:16.905534-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Writing tests"
-
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/clojure/writing-tests.md"
 ---
@@ -10,35 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Writing tests means crafting code that checks if other code works as expected. Programmers do it to catch bugs, ensure reliability, and save headaches later.
+Writing tests in Clojure, much like in other programming languages, involves creating dedicated code to verify that your main codebase works as expected. It helps in ensuring correctness, facilitating refactoring, and enhancing code stability.
 
 ## How to:
-Clojure uses a library called `clojure.test` to write and run tests. Here's how to use it:
+Clojure, leveraging the JVM, supports various testing frameworks. However, a commonly used built-in library is `clojure.test`. Here's a simple example:
 
-```Clojure
-(require '[clojure.test :refer :all])
+```clojure
+(ns example.test
+  (:require [clojure.test :refer :all]
+            [example.core :refer :all]))
 
-(deftest addition-test
-  (testing "Basic addition"
-    (is (= 4 (+ 2 2)))))
-    
+(deftest test-addition
+  (testing "Addition functionality"
+    (is (= 4 (add 2 2)))
+    (is (= 7 (add 3 4)))))
+
 (run-tests)
 ```
-
-Sample output after running the test:
+After running this test, you would see an output similar to:
 
 ```
-lein test user
-Testing user
+Testing example.test
 
-Ran 1 tests containing 1 assertions.
+Ran 2 tests containing 2 assertions.
 0 failures, 0 errors.
 ```
 
-## Deep Dive
-Clojure's testing approach stems from the REPL-driven development environment. Generative testing with `test.check` and property-based testing are alternative strategies. They auto-generate test cases instead of writing all by hand. Implementation relies heavily on macros, providing a dynamic testing environment. 
+For those seeking more feature-rich options, one can utilize third-party libraries like `Midje` or `test.check`. Here's how you might use Midje for a similar test:
 
-## See Also
-- [Clojure Testing](https://clojure.org/guides/deps_and_cli#_testing)
-- [clojure.test documentation on GitHub](https://github.com/clojure/clojure/blob/master/src/clj/clojure/test.clj)
-- [Introduction to property-based testing with `test.check`](https://github.com/clojure/test.check)
+First, add Midje to your project.clj dependencies:
+```clojure
+[midje "1.9.9"]
+```
+
+Then, your test with Midje might look like this:
+
+```clojure
+(ns example.test
+  (:require [midje.sweet :refer :all]
+            [example.core :refer :all]))
+
+(fact "Testing addition"
+  (add 2 2) => 4
+  (add 3 4) => 7)
+```
+
+Upon running the test through Midje with `lein midje`, the output would display something akin to:
+
+```
+All checks (2) succeeded.
+```

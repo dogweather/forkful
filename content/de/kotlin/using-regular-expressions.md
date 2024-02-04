@@ -1,46 +1,78 @@
 ---
-title:                "Einsatz von regulären Ausdrücken"
-date:                  2024-01-19
-simple_title:         "Einsatz von regulären Ausdrücken"
-
+title:                "Reguläre Ausdrücke verwenden"
+date:                  2024-02-03T19:17:22.762608-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Reguläre Ausdrücke verwenden"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/kotlin/using-regular-expressions.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Reguläre Ausdrücke sind Muster, die Text nach bestimmten Regeln durchsuchen. Programmierer nutzen sie, um Text zu überprüfen, zu zerlegen und zu manipulieren, weil sie mächtig und effizient sind.
 
-## Anleitung:
-```kotlin
-fun main() {
-    val text = "Die Email-Adresse ist kontakt@example.com."
-    val regex = "\\S+@\\S+".toRegex()
+Reguläre Ausdrücke (regex) sind ein mächtiges Werkzeug zur Textverarbeitung, das es Programmierern ermöglicht, mit fortgeschrittenen Musterabgleichtechniken nach Zeichenfolgen zu suchen, Übereinstimmungen zu finden und Zeichenfolgen zu manipulieren. In Kotlin hilft die Nutzung von regex, komplexe Textverarbeitungsaufgaben wie Validierung, Parsing oder Transformation effizient durchzuführen, was es für Aufgaben von einfacher Zeichenfolgenmanipulation bis hin zu komplexer Textanalyse unentbehrlich macht.
 
-    val found = regex.find(text)
-    println(found?.value)  // Ausgabe: kontakt@example.com
-}
-```
+## Wie geht das:
+
+### Basisabgleich
+Um zu überprüfen, ob eine Zeichenfolge in Kotlin einem bestimmten Muster entspricht, können Sie die `matches` Methode der `Regex` Klasse verwenden.
 
 ```kotlin
-fun extractPhoneNumbers(text: String): List<String> {
-    val phoneRegex = "\\+\\d{2,3}(\\s|-)\\d{3,4}(\\s|-)\\d{6,7}".toRegex()
-    return phoneRegex.findAll(text).map { it.value }.toList()
-}
+val pattern = "kotlin".toRegex()
+val input = "Ich liebe kotlin"
+val result = pattern.containsMatchIn(input)
 
-fun main() {
-    val text = "Peter's Telefon ist +49 1234 567890, Hanna's ist +48 9876 543210."
-    val phoneNumbers = extractPhoneNumbers(text)
-    phoneNumbers.forEach { println(it) }  // Ausgabe: +49 1234 567890
-                                           //          +48 9876 543210
-}
+println(result)  // Ausgabe: true
 ```
 
-## Tiefgang:
-Reguläre Ausdrücke, oft abgekürzt als Regex, stammen aus der theoretischen Informatik und wurden erstmals in den 1950er Jahren beschrieben. Alternativen zu Regex sind spezifische Parser, die jedoch oft mehr Code erfordern und schwerer zu warten sind. Die Nutzung von RegEx in Kotlin erfolgt über die Java-Regex-API, da Kotlin auf der JVM läuft.
+### Finden und Extrahieren von Teilen der Zeichenfolge
+Wenn Sie Teile einer Zeichenfolge finden möchten, die einem Muster entsprechen, ermöglicht es Kotlin, über alle Übereinstimmungen zu iterieren:
 
-## Siehe Auch:
-- [Kotlin Dokumentation zu regulären Ausdrücken](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-regex/)
-- [RegExr: Online-Tool zum Testen von regulären Ausdrücken](https://regexr.com/)
-- [Java Pattern Klasse](https://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html) (da Kotlin die Java API verwendet)
+```kotlin
+val datePattern = "\\d{2}/\\d{2}/\\d{4}".toRegex()
+val input = "Das heutige Datum ist 07/09/2023."
+val dates = datePattern.findAll(input)
+
+for (date in dates) {
+    println(date.value)
+}
+// Ausgabe: 07/09/2023
+```
+
+### Text ersetzen
+Das Ersetzen von Teilen einer Zeichenfolge, die einem Muster entsprechen, ist mit der `replace` Funktion einfach:
+
+```kotlin
+val input = "Benutzername: user123"
+val sanitizedInput = input.replace("\\d+".toRegex(), "XXX")
+
+println(sanitizedInput)  // Ausgabe: Benutzername: userXXX
+```
+
+### Zeichenfolgen aufteilen
+Teilen Sie eine Zeichenfolge in eine Liste auf, indem Sie ein Regexp-Muster als Trennzeichen verwenden:
+
+```kotlin
+val input = "1,2,3,4,5"
+val numbers = input.split(",".toRegex())
+
+println(numbers)  // Ausgabe: [1, 2, 3, 4, 5]
+```
+
+### Drittanbieter-Bibliotheken: Kotest
+[Kotest](https://github.com/kotest/kotest) ist eine beliebte Kotlin-Testbibliothek, die die integrierte Regex-Unterstützung von Kotlin erweitert, besonders nützlich für die Validierung in Testfällen.
+
+```kotlin
+// Vorausgesetzt, Kotest ist Ihrem Projekt hinzugefügt
+import io.kotest.matchers.string.shouldMatch
+
+val input = "kotlin@test.com"
+input shouldMatch "\\S+@\\S+\\.com".toRegex()
+
+// Dies wird den Test bestehen lassen, wenn die Eingabe dem E-Mail-Muster entspricht.
+```
+
+Indem Sie reguläre Ausdrücke in Ihre Kotlin-Anwendungen integrieren, können Sie anspruchsvolle Textverarbeitungsaufgaben effizient durchführen. Ob Sie Benutzereingaben validieren, Daten extrahieren oder Zeichenfolgen transformieren, Regex-Muster bieten eine robuste Lösung.

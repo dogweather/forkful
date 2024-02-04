@@ -1,51 +1,67 @@
 ---
-title:                "ניתוח HTML"
-date:                  2024-01-20T15:32:59.864311-07:00
-simple_title:         "ניתוח HTML"
-
+title:                "פיענוח HTML"
+date:                  2024-02-03T19:12:57.762624-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "פיענוח HTML"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/lua/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## מה ולמה?
-פענוח HTML הוא תהליך שבו מתוכנת מנתח את המבנה והתוכן של דף אינטרנט. תכנותים עושים זאת כדי לאחזר, לעבד, או לשנות נתונים מדפי ווב.
+פענוח HTML כולל את חילוץ הנתונים והמידע ממסמכי HTML, מה שחשוב לצורך סריקת אינטרנט, ניתוח נתונים ומשימות אוטומטיות. מתכנתים מבצעים זאת כדי לאסוף, לנתח או לתפעל תוכן אינטרנטי תכנותית, ובכך מאפשרים את אוטומציה של מה שאחרת היה חילוץ ידני של נתונים מאתרי אינטרנט.
 
-## איך לעשות:
-Lua אינה כוללת מודולים מובנים לפענוח HTML במובנה הקלאסי. אנו נשתמש בחבילה חיצונית כמו `luahtml` לדוגמה:
+## איך לעשות זאת:
+ל-Lua אין ספרייה מובנית לפענוח HTML, אך ניתן להשתמש בספריות של צד שלישי כמו `LuaHTML` או להיעזר בקשרים ל-`libxml2` דרך `LuaXML`. גישה פופולרית היא להשתמש בספריית `lua-gumbo` לפענוח HTML, שמספקת יכולת פענוח תקנית וישירה ל-HTML5.
 
-```Lua
-local htmlparser = require "htmlparser"
+### התקנת lua-gumbo:
+ראשית, וודאו ש-`lua-gumbo` מותקן. בדרך כלל תוכלו להתקין אותו באמצעות luarocks:
 
--- טען HTML כמחרוזת
-local htmlString = [[
-<html>
-  <head>
-    <title>דוגמה</title>
-  </head>
-  <body>
-    <h1>שלום עולם</h1>
-  </body>
-</html>
-]]
-
--- פענח את ה-HTML
-local root = htmlparser.parse(htmlString)
-
--- הדפס את כותרת הדף
-local title = root:select("title")[1]
-print(title:getcontent()) -- תוציא "דוגמה"
+```sh
+luarocks install lua-gumbo
 ```
 
-הקוד משתמש בפונקציה `parse` כדי להמיר את מחרוזת HTML לעץ DOM, שאותו אפשר לחפש ולחלץ ממנו מידע.
+### פענוח בסיסי עם lua-gumbo:
+הנה איך אפשר לפענח קטע HTML פשוט ולחלץ ממנו נתונים באמצעות `lua-gumbo`:
 
-## צלילה עמוקה
-במקור, Lua לא פותחה כדי לעבד את האינטרנט, ולכן אינה מספקת כלים לפענוח HTML מהקופסא. יחד עם זאת, הקהילה פיתחה ספריות כגון `luahtml` ו-`luaxml` שממלאות פער זה.
+```lua
+local gumbo = require "gumbo"
+local document = gumbo.parse[[<html><body><p>שלום, עולם!</p></body></html>]]
 
-חלופות ללואה בעבודה עם HTML יכולים להיות שפות אחרות עם ספריות עשירות יותר, כמו Python עם BeautifulSoup או חבילת lxml. אבל אם רוצים להשאר עם Lua, אז השימוש בחבילות חיצוניות הוא הדרך ללכת.
+local p = document:getElementsByTagName("p")[1]
+print(p.textContent)  -- Output: שלום, עולם!
+```
 
-מימוש פענוח HTML בלואה מתבצע בדרך כלל דרך פרסור המחרוזת והמרתה לעץ DOM, דומה לשפות אחרות. זה כולל חיפוש וחלץ אלמנטים באמצעות מתודות כמו `select` ו-`getcontent`.
+### דוגמה מתקדמת - חילוץ קישורים:
+לחילוץ מאפייני `href` מכל תגיות העוגן (`<a>` elements) במסמך HTML:
 
-## ראה גם
-- למד עוד על DOM (Document Object Model): [https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model)
+```lua
+local gumbo = require "gumbo"
+local document = gumbo.parse([[
+<html>
+<head><title>דף לדוגמה</title></head>
+<body>
+  <a href="http://example.com/1">קישור 1</a>
+  <a href="http://example.com/2">קישור 2</a>
+  <a href="http://example.com/3">קישור 3</a>
+</body>
+</html>
+]])
+
+for _, element in ipairs(document.links) do
+    if element.getAttribute then  -- לוודא שזה אלמנט ויש לו מאפיינים
+        local href = element:getAttribute("href")
+        if href then print(href) end
+    end
+end
+
+-- פלט לדוגמה:
+-- http://example.com/1
+-- http://example.com/2
+-- http://example.com/3
+```
+
+קטע הקוד הזה עובר על כל הקישורים במסמך ומדפיס את מאפייני ה-`href` שלהם. היכולת של ספריית ה-`lua-gumbo` לפענח ולהבין את מבנה מסמך HTML מפשטת את התהליך של חילוץ יסודות ספציפיים לפי התגיות או המאפיינים שלהם.

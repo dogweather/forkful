@@ -1,39 +1,71 @@
 ---
-title:                "Verifica dell'esistenza di una directory"
-date:                  2024-01-20T14:58:48.746645-07:00
-simple_title:         "Verifica dell'esistenza di una directory"
-
+title:                "Verifica se una directory esiste"
+date:                  2024-02-03T19:08:39.569191-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Verifica se una directory esiste"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/swift/checking-if-a-directory-exists.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-"Che cos'è e Perché?"
-Controllare l'esistenza di una directory permette di sapere se un percorso nel file system contiene i dati che ci aspettiamo. Lo facciamo per evitare errori quando leggiamo, scriviamo o cancelliamo file.
+## Cosa & Perché?
+Verificare se una directory esiste nel filesystem è essenziale per gestire le strutture dei file all'interno delle tue applicazioni Swift. Questo compito consente agli sviluppatori di verificare la presenza di directory prima di tentare di leggere o scrivere su di esse, evitando così possibili errori di runtime.
 
-## How to:
-"Come Fare:"
-```Swift
+## Come fare:
+
+Il framework Foundation di Swift fornisce la classe `FileManager`, che ha metodi per gestire il filesystem. Puoi usare `FileManager` per verificare se una directory esiste. Ecco uno snippet su come fare:
+
+```swift
 import Foundation
 
 let fileManager = FileManager.default
 let path = "/path/to/your/directory"
 
-if fileManager.fileExists(atPath: path) {
-    print("La directory esiste.")
+if fileManager.fileExists(atPath: path, isDirectory: nil) {
+    print("La directory esiste")
 } else {
-    print("La directory non esiste.")
+    print("La directory non esiste")
 }
 ```
-Output: `La directory esiste.` o `La directory non esiste.` a seconda del caso.
 
-## Deep Dive:
-"Approfondimento:"
-Historicamente, la gestione dei file in Swift si appoggia alla libreria `Foundation`, introdotta da Apple per Objective-C e poi portata in Swift. Un'alternativa è usare le syscall di sistema UNIX direttamente tramite le API di basso livello in Swift. Tuttavia, `FileManager` è più alto livello, più sicuro e più facile da usare. Quando controlliamo l'esistenza di una directory, il sistema effettua un'operazione di I/O, che può essere costosa: usalo con giudizio.
+Tuttavia, questo verifica sia i file che le directory. Se vuoi specificamente verificare l'esistenza di una directory, devi passare un puntatore a un valore booleano in `isDirectory`:
 
-## See Also:
-"Vedi Anche:"
-- Documentazione Apple su `FileManager`: [Documentazione FileManager](https://developer.apple.com/documentation/foundation/filemanager)
-- Discussioni sull'uso efficiente delle API di file system su Stack Overflow: [Stack Overflow File System API](https://stackoverflow.com/questions/tagged/file-system+swift)
+```swift
+import Foundation
+
+let fileManager = FileManager.default
+let path = "/path/to/your/directory"
+var isDirectory: ObjCBool = false
+
+if fileManager.fileExists(atPath: path, isDirectory: &isDirectory), isDirectory.boolValue {
+    print("La directory esiste")
+} else {
+    print("La directory non esiste")
+}
+```
+
+### Usare una Libreria di Terze Parti
+
+Attualmente, verificare l’esistenza di una directory in Swift di solito non richiede librerie di terze parti grazie alla robustezza della classe `FileManager`. Tuttavia, per manipolazioni e controlli di file più complessi, librerie come **Files** di John Sundell offrono un'API più orientata a Swift.
+
+Ecco come potresti usarla:
+
+Prima, aggiungi Files al tuo progetto tramite Swift Package Manager.
+
+Poi, puoi verificare l’esistenza di una directory così:
+
+```swift
+import Files
+
+do {
+    _ = try Folder(path: "/path/to/your/directory")
+    print("La directory esiste")
+} catch {
+    print("La directory non esiste")
+}
+```
+
+Nota: Dato che le librerie di terze parti possono cambiare, fai sempre riferimento all'ultima documentazione per l'uso e le migliori pratiche.

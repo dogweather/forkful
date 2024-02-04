@@ -1,49 +1,57 @@
 ---
 title:                "Capitalizando una cadena de texto"
-date:                  2024-01-19
+date:                  2024-02-03T19:05:13.861291-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Capitalizando una cadena de texto"
-
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/fish-shell/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## ¿Qué & Por Qué?
+## ¿Qué y por qué?
 
-Capitalizar una cadena significa convertir la primera letra de cada palabra a mayúscula. Los programadores lo hacen para formatear textos, como títulos o nombres propios, respetando normas de escritura.
+Capitalizar una cadena significa modificarla de modo que la primera letra esté en mayúscula y el resto de la cadena en minúscula. Esta es una tarea común en el procesamiento de textos, la normalización de entradas de usuario y el formateo de datos para asegurar consistencia o cumplir con criterios de formateo específicos.
 
 ## Cómo hacerlo:
 
-Para capitalizar una cadena en Fish, puedes usar la función `string` con la opción `capitalize`. Aquí tienes un ejemplo:
+En Fish Shell, las cadenas pueden ser manipuladas directamente con funciones integradas, sin la necesidad de herramientas o bibliotecas externas. Para capitalizar una cadena, puedes combinar el comando `string` con subcomandos.
 
-```Fish Shell
-set frase "hola mundo desde fish"
-echo $frase | string capitalize
+```fish
+# Cadena de ejemplo
+set cadena_muestra "hello world"
+
+# Capitalizar la primera letra
+set cadena_capitalizada (string sub -l 1 -- $cadena_muestra | string upper)(string sub -s 2 -- $cadena_muestra)
+
+echo $cadena_capitalizada
 ```
 
 Salida:
-
 ```
-Hola Mundo Desde Fish
-```
-
-## En Profundidad:
-
-Antes, en los scripts de shell, capitalizar una cadena era un rollo. Tenías que apañártelas con `awk`, `sed` o `tr` para conseguirlo. Pero Fish hace que sea pan comido con su función `string`, que ya trae soporte incorporado para este tipo de operaciones.
-
-Alternativamente, podrías usar `awk` como en otros shells:
-
-```Fish Shell
-echo "hola mundo desde awk" | awk '{for(i=1;i<=NF;i++) $i=toupper(substr($i,1,1)) tolower(substr($i,2))}1'
+Hello world
 ```
 
-La implementación en Fish es moderna y directa, evitando los pequeños líos que suponían las alternativas antiguas, especialmente en scripts complejos.
+Para escenarios que requieren la capitalización de múltiples palabras en una cadena (por ejemplo, convertir "hello world" a "Hello World"), iterarías sobre cada palabra, aplicando la lógica de capitalización a cada una:
 
-## Ver También:
+```fish
+# Oración de ejemplo
+set oracion "hello fish shell programming"
 
-- Documentación oficial de Fish sobre el comando `string`: https://fishshell.com/docs/current/cmds/string.html
-- Tutorial de Fish Shell para principiantes: https://fishshell.com/docs/current/tutorial.html
-- Foro de la comunidad Fish: https://fishshell.com/community.html
+# Capitalizar cada palabra
+set palabras_capitalizadas (string split " " -- $oracion | while read -l word; string sub -l 1 -- $word | string upper; and string sub -s 2 -- $word; end)
 
-Esto te dará más contexto e ideas sobre cómo manipular cadenas y otros datos en Fish.
+# Unir las palabras capitalizadas
+set oracion_capitalizada (string join " " -- $palabras_capitalizadas)
+
+echo $oracion_capitalizada
+```
+
+Salida:
+```
+Hello Fish Shell Programming
+```
+
+Nota que Fish Shell no ofrece directamente un enfoque de comandos único para la capitalización completa de oraciones de la misma manera en que algunos lenguajes de programación lo hacen con sus métodos de cadena. Por lo tanto, combinar `string split`, `string sub`, `string upper` y luego reunir representa un enfoque idiomático en Fish Shell para lograr esto.

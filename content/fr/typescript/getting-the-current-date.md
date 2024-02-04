@@ -1,48 +1,63 @@
 ---
 title:                "Obtenir la date actuelle"
-date:                  2024-01-20T15:16:46.582308-07:00
+date:                  2024-02-03T19:10:54.572526-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Obtenir la date actuelle"
-
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/typescript/getting-the-current-date.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
-
-Obtenir la date courante, c'est récupérer la date et l'heure actuelles de l'ordinateur où s'exécute le programme. Les développeurs font ça pour des tâches comme horodater des événements, des logs, ou pour manipuler des données temporelles.
+Obtenir la date courante en TypeScript, un langage construit sur JavaScript, vous permet d'accéder et de manipuler les informations actuelles de date et d'heure. Les programmeurs ont souvent besoin de cette fonctionnalité pour créer des horodatages, planifier et autres caractéristiques sensibles au temps dans leurs applications.
 
 ## Comment faire :
+En TypeScript, vous pouvez utiliser l'objet `Date` pour obtenir la date et l'heure actuelles. Voici comment vous pouvez le faire :
 
 ```typescript
-const maintenant: Date = new Date();
-console.log(maintenant);
+const currentDate = new Date();
+console.log(currentDate);
 ```
 
-Sortie (exemple) :
+Exemple de sortie :
 ```
-2023-03-25T14:45:30.655Z
+2023-04-12T07:20:50.52Z
 ```
 
-## Plongée en profondeur
-
-La classe `Date` en JavaScript, que TypeScript étend, date des premières versions de ECMAScript. C'est la méthode standard pour gérer les dates heure. Il y a d'autres bibliothèques comme `moment.js` ou `date-fns` qui offrent plus de fonctionnalités et une meilleure gestion des zones horaires, mais pour les bases, `Date` est suffisant.
-
-`Date` utilise l'heure UTC (Temps Universel Coordonné) pour créer des dates, mais vous pouvez manipuler des données selon le fuseau horaire local avec des méthodes telles que `toLocaleDateString()` ou `toLocaleTimeString()`.
-
-Exemple de ces méthodes:
+Ce fragment de code crée un nouvel objet `Date` contenant la date et l'heure actuelles, qui est ensuite imprimé dans la console. Vous pouvez également formater la date en utilisant toLocaleDateString() pour des formats plus lisibles :
 
 ```typescript
-console.log(maintenant.toLocaleDateString()); // '25/03/2023' en fonction de la localisation
-console.log(maintenant.toLocaleTimeString()); // '14:45:30' en fonction de la localisation
+const currentDate = new Date();
+console.log(currentDate.toLocaleDateString());
 ```
 
-Il est également important de se rappeler que le temps est mesuré en millisecondes depuis l'époque UNIX, qui est le 1er janvier 1970. Cette mesure est ce qui permet de calculer les intervalles de temps et de comparer des dates.
+Exemple de sortie :
+```
+12/04/2023
+```
 
-## Voir aussi
+### Utilisation de date-fns
+Pour une manipulation et un formatage de date plus étendus, la bibliothèque `date-fns` est un choix populaire. Tout d'abord, installez-la via npm :
 
-- MDN Web Docs sur l'objet Date : [MDN Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- Moment.js, une bibliothèque populaire pour gérer les dates : [Moment.js](https://momentjs.com/)
-- Date-fns, une bibliothèque moderne pour manipuler les dates : [date-fns](https://date-fns.org/)
-- ECMAScript, la spécification sur laquelle se base JavaScript : [ECMAScript](https://www.ecma-international.org/publications-and-standards/standards/ecma-262/)
+```bash
+npm install date-fns
+```
+
+Ensuite, vous pouvez l'utiliser pour formater la date courante :
+
+```typescript
+import { format } from 'date-fns';
+
+const currentDate = new Date();
+console.log(format(currentDate, 'yyyy-MM-dd'));
+```
+
+Exemple de sortie :
+```
+2023-04-12
+```
+
+Cet exemple `date-fns` formate la date courante en chaîne de caractères au format "AAAA-MM-JJ". La bibliothèque offre une pléthore de fonctions pour la manipulation des dates, la rendant un outil polyvalent pour tout programmeur TypeScript travaillant avec les dates.

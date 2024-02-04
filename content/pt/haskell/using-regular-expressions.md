@@ -1,66 +1,66 @@
 ---
-title:                "Utilizando expressões regulares"
-date:                  2024-01-19
-simple_title:         "Utilizando expressões regulares"
-
+title:                "Usando expressões regulares"
+date:                  2024-02-03T19:16:57.090413-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Usando expressões regulares"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/haskell/using-regular-expressions.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## O Que & Por Quê?
+## O Que & Por Que?
+Expressões regulares na programação são sequências de caracteres que definem um padrão de busca, tipicamente empregadas para pesquisa e manipulação de strings. Programadores utilizando Haskell recorrem a expressões regulares para tarefas que vão desde simples correspondências de strings até processamento de texto complexo, capitalizando em sua eficiência e versatilidade no tratamento de dados textuais.
 
-Regular expressions, ou regex, são padrões usados para encontrar correspondências de texto. Programadores utilizam regex para busca e substituição de texto, validação de dados e análise sintática de cadeias de caracteres.
+## Como:
+Em Haskell, as funcionalidades de regex não fazem parte da biblioteca padrão, necessitando do uso de pacotes de terceiros como `regex-base` junto com um backend compatível como `regex-posix` (para suporte a regex POSIX), `regex-pcre` (para regex compatível com Perl), etc. Veja como você pode usar esses pacotes para trabalhar com expressões regulares.
 
-## Como Fazer:
+Primeiro, garanta que você tenha os pacotes instalados adicionando `regex-posix` ou `regex-pcre` ao arquivo `.cabal` do seu projeto ou instalando diretamente via cabal:
 
-Em Haskell, você pode usar o pacote `regex-posix` para trabalhar com regex. Aqui estão exemplos de código e saída mostrando como usar regex para encontrar correspondências de texto:
+```bash
+cabal install regex-posix
+```
+ou
+```bash
+cabal install regex-pcre
+```
+
+### Usando `regex-posix`:
 
 ```haskell
-import Text.Regex.Posix
+import Text.Regex.Posix ((=~))
 
--- Verifica se uma string corresponde a um padrão regex
-corresponde :: String -> String -> Bool
-corresponde texto padrão = texto =~ padrão :: Bool
+-- Verifica se uma string corresponde a um padrão
+isMatch :: String -> String -> Bool
+isMatch text pattern = text =~ pattern :: Bool
+
+-- Encontra a primeira correspondência
+findFirst :: String -> String -> String
+findFirst text pattern = text =~ pattern :: String
 
 main :: IO ()
 main = do
-    print $ "123abc" `corresponde` "[a-zA-Z]+"
-    print $ "abc" `corresponde` "[a-zA-Z]+"
+    print $ isMatch "hello world" "wo"
+    -- Saída: True
+    print $ findFirst "good morning, good night" "good"
+    -- Saída: "good"
 ```
 
-Saída:
-
-```
-False
-True
-```
-
-Encontrando todas as correspondências em uma string:
+### Usando `regex-pcre`:
 
 ```haskell
+import Text.Regex.PCRE ((=~))
+
 -- Encontra todas as correspondências
-findMatches :: String -> String -> [String]
-findMatches texto padrão = texto =~ padrão :: [String]
+findAll :: String -> String -> [String]
+findAll text pattern = text =~ pattern :: [String]
 
 main :: IO ()
 main = do
-    print $ findMatches "a1 b2 c3" "[a-zA-Z]"
+    print $ findAll "test1 test2 test3" "\\btest[0-9]\\b"
+    -- Saída: ["test1","test2","test3"]
 ```
 
-Saída:
-
-```
-["a","b","c"]
-```
-
-## Visão Detalhada:
-
-O uso de regex em Haskell é suportado por vários pacotes, como `regex-posix` que segue POSIX regex, e `regex-pcre`, que oferece compatibilidade com a biblioteca PCRE. Regex surgiu nos anos 1950 com o matemático Stephen Kleene e evoluiu significativamente desde então. Alternativas para regex incluem parsers combinator e linguagens específicas de domínio (DSLs), que podem oferecer maior clareza e desempenho em determinados contextos. Internamente, regex é implementado utilizando automatos finitos para análise e correspondência de padrões.
-
-## Veja Também:
-
-- Documentação do regex-posix: [Hackage: regex-posix](https://hackage.haskell.org/package/regex-posix)
-- Tutorial Haskell sobre regex: [HaskellWiki: Regular expressions](https://wiki.haskell.org/Regular_expressions)
-- Comparação de regex e parser combinators: [Stack Overflow: Regex vs. Parser Combinators](https://stackoverflow.com/questions/30734615/regex-vs-parser-combinators)
+Cada biblioteca tem suas particularidades, mas a metodologia geral de usar `=~` para aplicar a regex permanece consistente, seja verificando por uma correspondência ou extraindo substrings. Escolher entre `regex-posix` ou `regex-pcre` depende em grande parte das necessidades do seu projeto e das capacidades específicas de regex requeridas.

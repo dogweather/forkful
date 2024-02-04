@@ -1,54 +1,93 @@
 ---
 title:                "Arbeiten mit YAML"
-date:                  2024-01-19
+date:                  2024-02-03T19:25:54.647298-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Arbeiten mit YAML"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/lua/working-with-yaml.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Was & Warum?
-YAML ist ein menschenlesbares Datenformat für Konfigurationsdateien und Datenaustausch. Programmierer nutzen es wegen seiner Klarheit und Einfachheit im Vergleich zu JSON oder XML.
 
-## How to:
-Zuerst musst du das `lyaml` Modul installieren. Benutze `luarocks`:
+YAML, eine Abkürzung für "YAML Ain't Markup Language", ist ein für Menschen lesbarer Daten-Serialisierungsstandard, der oft für Konfigurationsdateien und den Datenaustausch zwischen Sprachen verwendet wird. Programmierer nutzen YAML aufgrund seiner Einfachheit und Lesbarkeit, was es zur bevorzugten Wahl für Einstellungen, diverse Anwendungskonfigurationen oder Inhalte macht, die von Nicht-Programmierern bearbeitet werden sollen.
+
+## Wie geht das:
+
+Lua hat keine integrierte Unterstützung für YAML, aber man kann mit YAML-Dateien arbeiten, indem man Drittanbieter-Bibliotheken wie `lyaml` verwendet. Diese Bibliothek ermöglicht das Kodieren und Dekodieren von YAML-Daten mit Lua. Zuerst müssen Sie `lyaml` über LuaRocks, den Paketmanager von Lua, installieren:
 
 ```bash
 luarocks install lyaml
 ```
 
-Hier ein einfaches Beispiel, YAML zu laden und zu parsen:
+### YAML dekodieren:
 
-```Lua
-local lyaml = require('lyaml')
-local yaml_data = [[
-- Just
-- A simple
-- YAML
-- List
-]]
+Nehmen wir an, Sie haben den folgenden YAML-Inhalt in einer Datei namens `config.yaml`:
 
-local lua_table = lyaml.load(yaml_data)
-for i, item in ipairs(lua_table) do
-  print(i, item)
+```yaml
+database:
+  host: localhost
+  port: 3306
+  username: user
+  password: pass
+```
+
+Sie können diese YAML-Datei in eine Lua-Tabelle dekodieren mit folgendem Code:
+
+```lua
+local yaml = require('lyaml')
+local file = io.open("config.yaml", "r")
+local content = file:read("*all")
+file:close()
+
+local data = yaml.load(content)
+for k,v in pairs(data.database) do
+  print(k .. ": " .. v)
 end
 ```
 
-Ausgabe:
+Wenn Sie dieses Skript ausführen, sollte es ausgeben:
 
-```plaintext
-1 Just
-2 A simple
-3 YAML
-4 List
+```output
+host: localhost
+port: 3306
+username: user
+password: pass
 ```
 
-## Deep Dive
-YAML, kurz für "YAML Ain't Markup Language", wurde früh in den 2000ern entwickelt. Es gilt als einfacher in der Handhabung als XML und ist oft besser lesbar als JSON. Libraries wie `lyaml` erlauben die Implementierung in Lua. Alternativen zu YAML könnten JSON oder TOML sein, je nach Anwendungszweck.
+### YAML kodieren:
 
-## See Also
-- YAML Spezifikation: https://yaml.org/spec/
-- `lyaml` Dokumentation: https://github.com/gvvaughan/lyaml
-- LuaRocks Repository: https://luarocks.org/modules/gvvaughan/lyaml
+Um Lua-Tabellen in das YAML-Format zu kodieren, verwenden Sie die Funktion `dump`, die von `lyaml` bereitgestellt wird. Angenommen, Sie möchten eine YAML-Darstellung der folgenden Lua-Tabelle erstellen:
+
+```lua
+local data = {
+  website = {
+    name = "Beispiel",
+    owner = "Jane Doe",
+    metadata = {
+      creation_date = "2023-01-01",
+      tags = {"blog", "personal", "lua"}
+    }
+  }
+}
+
+local yaml = require('lyaml')
+local yaml_data = yaml.dump({data})
+print(yaml_data)
+```
+
+Das ausgegebene YAML wird sein:
+
+```yaml
+- website:
+    metadata:
+      creation_date: '2023-01-01'
+      tags: [blog, personal, lua]
+    name: Beispiel
+    owner: Jane Doe
+```
+
+Indem sie diesen Mustern folgen, können Lua-Programmierer YAML-Daten für eine Vielzahl von Anwendungen effektiv verwalten. Diese Operationen mit YAML sind entscheidend für die Entwicklung vielseitiger Lua-Anwendungen, die reibungslos mit anderen Teilen eines Systems oder direkt mit anderen Systemen interagieren.

@@ -1,68 +1,77 @@
 ---
 title:                "Trabajando con YAML"
-date:                  2024-01-19
+date:                  2024-02-03T19:24:31.051461-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Trabajando con YAML"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/cpp/working-with-yaml.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Qué y por qué?
-YAML es un formato de serialización de datos legible por humanos, usado para configuración, almacenamiento de datos y comunicación entre servicios. Los programadores lo utilizan por su simplicidad y la facilidad para mapear estructuras de lenguajes de programación como listas y diccionarios.
+## ¿Qué y Por Qué?
+
+YAML, que significa "YAML Ain't Markup Language" (YAML no es un lenguaje de marcado), es un formato de serialización de datos legible por humanos. Los programadores lo utilizan para archivos de configuración, volcado de datos y almacenamiento de datos jerárquicos debido a su legibilidad y sintaxis fácil de entender en comparación con XML o JSON.
 
 ## Cómo hacerlo:
-Para trabajar con YAML en C++, necesitas una biblioteca como yaml-cpp. Instala con `vcpkg install yaml-cpp` o similar. Ahora, veamos cómo cargar y escribir YAML.
 
-```C++
-#include <yaml-cpp/yaml.h>
+Para trabajar con YAML en C++, una opción popular es la biblioteca `yaml-cpp`. Primero, asegúrate de tener `yaml-cpp` instalado y correctamente vinculado a tu proyecto de C++.
+
+**Leyendo un archivo YAML:**
+
+```cpp
 #include <iostream>
 #include <fstream>
-#include <string>
+#include <yaml-cpp/yaml.h>
 
 int main() {
-    // Cargar YAML
     YAML::Node config = YAML::LoadFile("config.yaml");
+    
+    if(config["title"]) {
+        std::cout << "Título: " << config["title"].as<std::string>() << std::endl;
+    }
+    
+    return 0;
+}
+```
 
-    std::string username = config["user"]["name"].as<std::string>();
-    int age = config["user"]["age"].as<int>();
+Dado un `config.yaml` que luce así:
 
-    std::cout << "Name: " << username << ", Age: " << age << std::endl;
+```yaml
+title: "Ejemplo YAML"
+```
 
-    // Escribir YAML
+Ejecutar el código C++ anterior produciría:
+
+```
+Título: Ejemplo YAML
+```
+
+**Escribiendo en un archivo YAML:**
+
+```cpp
+#include <fstream>
+#include <yaml-cpp/yaml.h>
+
+int main() {
     YAML::Emitter out;
     out << YAML::BeginMap;
-    out << YAML::Key << "language" << YAML::Value << "C++";
-    out << YAML::Key << "version" << YAML::Value << "11";
+    out << YAML::Key << "title" << YAML::Value << "Ejemplo YAML";
     out << YAML::EndMap;
-
+    
     std::ofstream fout("output.yaml");
     fout << out.c_str();
     
     return 0;
 }
 ```
-Supone que `config.yaml` es:
+
+Este código creará un `output.yaml` con el contenido:
+
 ```yaml
-user:
-  name: Juan
-  age: 30
-```
-El resultado sería:
-```
-Name: Juan, Age: 30
-```
-Y genera `output.yaml`:
-```yaml
-language: C++
-version: 11
+title: Ejemplo YAML
 ```
 
-## Deep Dive:
-YAML, que significa "YAML Ain't Markup Language" (un acrónimo recursivo), apareció a principios de los años 2000 como una alternativa fácil de usar a XML. Otras opciones para serialización de datos incluyen JSON y Protobuf, cada uno con sus pros y contras. Mientras JSON es igual de legible, YAML es más limpio para la configuración por la ausencia de corchetes. Protobuf es más eficiente para la comunicación entre servicios, pero no es legible por humanos. En C++, yaml-cpp es la biblioteca más reconocida para manejar YAML y generalmente se prefiere por su API intuitiva y buen rendimiento.
-
-## See Also:
-- Documentación oficial de yaml-cpp: https://github.com/jbeder/yaml-cpp/wiki
-- Especificación de YAML para entender el formato completo: https://yaml.org/spec/1.2/spec.html
-- Tutorial interactivo de YAML para probar ejemplos en línea: https://learnxinyminutes.com/docs/yaml/
+Estos ejemplos sirven como una introducción básica a la lectura y escritura de archivos YAML en C++ utilizando la biblioteca `yaml-cpp`. Para estructuras más complejas y casos de uso, explora la documentación de `yaml-cpp` para características como secuencias, etiquetas y técnicas de serialización y deserialización más avanzadas.

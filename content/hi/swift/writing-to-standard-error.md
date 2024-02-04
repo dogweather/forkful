@@ -1,45 +1,104 @@
 ---
-title:                "मानक त्रुटि में लिखना"
-date:                  2024-01-19
-simple_title:         "मानक त्रुटि में लिखना"
-
+title:                "मानक त्रुटि के लिए लिखना"
+date:                  2024-02-03T19:35:40.592458-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "मानक त्रुटि के लिए लिखना"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/swift/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (क्या और क्यों?)
-‘Standard error’ (stderr) एक स्ट्रीम होती है, जहाँ प्रोग्राम्स अपनी गलतियाँ और डायग्नोस्टिक मैसेजेस लिखते हैं ताकि यूजर को पता चल सके कि क्या सही नहीं है। प्रोग्रामर इसका उपयोग ऑउटपुट (stdout) और एरर मैसेजेस को अलग करने के लिए करते हैं।
+## क्या और क्यों?
 
-## How to: (कैसे करें:)
-Swift में `FileHandle` का उपयोग करके stderr पर लिखें:
+मानक त्रुटि (stderr) में लिखना, आपके कार्यक्रम के त्रुटि संदेशों या निदान आउटपुट को मानक आउटपुट (stdout) से अलग एक पृथक धारा में निर्देशित करने के बारे में है। यह बिना मानक आउटपुट को गन्दा किए, डीबगिंग और लॉगिंग त्रुटियों के लिए महत्वपूर्ण है, जिससे विकासकर्ताओं और उपयोगकर्ताओं दोनों को कार्यक्रम की स्थिति और समस्याओं की समझ में सहायता मिलती है।
 
-```Swift
+## कैसे:
+
+Swift में, मानक त्रुटि में लिखना सीधे stderr तक पहुँच के लिए `FileHandle` क्लास का उपयोग करके किया जा सकता है। यहाँ एक साधारण उदाहरण है:
+
+```swift
 import Foundation
 
-// Standard Error में मैसेज लिखना
-func writeError(_ message: String) {
-    if let data = "\(message)\n".data(using: .utf8) {
-        FileHandle.standardError.write(data)
+// एक संदेश परिभाषित करें
+let errorMessage = "एक त्रुटि उत्पन्न हुई।\n"
+
+// संदेश को डेटा में परिवर्तित करें
+if let data = errorMessage.data(using: .utf8) {
+    // त्रुटि संदेश को stderr में लिखें
+    FileHandle.standardError.write(data)
+}
+```
+
+stderr को आउटपुट (आमतौर पर एक कंसोल या टर्मिनल में देखा जाता है):
+```
+एक त्रुटि उत्पन्न हुई।
+```
+
+अधिक जटिल लॉगिंग के लिए या बाहरी लाइब्रेरी के साथ काम करते समय, आप **SwiftLog** जैसी तृतीय-पक्ष लाइब्रेरी का उपयोग करने पर विचार करेंगे। हालाँकि, **SwiftLog** सीधे तौर पर बॉक्स से बाहर stderr में नहीं लिखता, आप इसे प्राप्त करने के लिए एक कस्टम लॉगिंग बैकेंड को लागू कर सकते हैं। यहाँ stderr में लिखने वाले कस्टम लॉग हैंडलर को परिभाषित करने का एक सरलीकृत उदाहरण है:
+
+पहले, `Package.swift` में अपनी परियोजना निर्भरताओं में **SwiftLog** जोड़ें:
+```swift
+// swift-tools-version:5.3
+
+import PackageDescription
+
+let package = Package(
+    name: "YourPackageName",
+    dependencies: [
+        .package(url: "https://github.com/apple/swift-log.git", from: "1.0.0"),
+    ],
+    targets: [
+        .target(
+            name: "YourTargetName",
+            dependencies: [
+                .product(name: "Logging", package: "swift-log"),
+            ]),
+    ]
+)
+```
+
+फिर, stderr में लिखने वाला कस्टम लॉग हैंडलर लागू करें:
+
+```swift
+import Logging
+import Foundation
+
+struct StderrLogHandler: LogHandler {
+    let label: String
+    
+    var logLevel: Logger.Level = .info
+    
+    func log(level: Logger.Level, message: Logger.Message, metadata: Logger.Metadata?, source: String, file: String, function: String, line: UInt) {
+        let output = "\(message)\n"
+        if let data = output.data(using: .utf8) {
+            FileHandle.standardError.write(data)
+        }
+    }
+    
+    subscript(metadataKey metadataKey: String) -> Logger.Metadata.Value? {
+        get { return nil }
+        set(newValue) { }
+    }
+    
+    var metadata: Logger.Metadata {
+        get { return [:] }
+        set(newMetadata) { }
     }
 }
 
-// उदाहरण
-writeError("यह एक एरर मैसेज है")
+// उपयोग
+LoggingSystem.bootstrap(StderrLogHandler.init)
+let logger = Logger(label: "com.example.yourapp")
+
+logger.error("यह एक त्रुटि संदेश है")
 ```
 
-सैंपल आउटपुट:
+stderr को आउटपुट:
 ```
-यह एक एरर मैसेज है
+यह एक त्रुटि संदेश है
 ```
 
-## Deep Dive (गहराई से जानकारी)
-Standard error stream (stderr) UNIX/Linux सिस्टम्स की एक विशेषता है जिसे अन्य ऑपरेटिंग सिस्टम्स ने भी अपनाया है। ऑउटपुट (stdout) के साथ मिलकर, यह प्रोग्रामर को डेटा और लॉग मैसेजेस के बीच फर्क करने का मौका देता है। `print` स्टेटमेंट से stdout पर लिखना आसान होता है, लेकिन stderr लिखने के लिए `FileHandle` या निचले स्तर के POSIX APIs की जरूरत होती है।
-
-## See Also (और जानकारी)
-और अधिक जानकारी के लिए, स्विफ्ट के आधिकारिक डॉक्युमेंटेशन और निम्नलिखित संसाधनों को देखें:
-
-- [Swift.org Documentation](https://docs.swift.org/swift-book/index.html)
-- [Apple Developer Documentation](https://developer.apple.com/documentation)
-- [Unix stderr Documentation](https://man7.org/linux/man-pages/man3/stderr.3.html)
+यह कस्टम हैंडलर आपको अपने SwiftLog त्रुटि संदेशों को सीधे मानक त्रुटि में मार्गनिर्देश करने की अनुमति देता है, जिससे आपके एप्लीकेशन द्वारा उत्पन्न अन्य लॉग संदेशों के साथ सहजता से एकीकृत हो सकते हैं।

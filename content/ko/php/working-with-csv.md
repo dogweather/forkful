@@ -1,65 +1,113 @@
 ---
-title:                "CSV 파일 다루기"
-date:                  2024-01-19
-simple_title:         "CSV 파일 다루기"
-
+title:                "CSV와 함께 작업하기"
+date:                  2024-02-03T19:20:42.309578-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "CSV와 함께 작업하기"
 tag:                  "Data Formats and Serialization"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/php/working-with-csv.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (CSV 작업의 이해와 필요성)
-CSV(Comma-Separated Values) 파일은 간단한 텍스트로 데이터를 저장합니다. 프로그래머는 데이터 교환과 저장 효율성을 위해 CSV를 사용합니다.
+## 무엇인가 & 왜인가?
 
-## How to: (실제 사용법)
-CSV 파일 읽기:
-```PHP
+CSV(쉼표로 구분된 값) 작업은 평문으로 표 형식 데이터를 나타내는 인기 있는 형식인 CSV 파일에서 데이터를 읽고 쓰는 것을 포함합니다. 프로그래머들이 다양한 프로그램, 시스템 또는 데이터베이스 간에 데이터를 쉽게 교환하기 위해 이 작업을 수행하는데, 이는 그 단순성과 플랫폼 및 프로그래밍 언어 전반에 걸친 넓은 지원 덕분입니다.
+
+## 방법:
+
+PHP는 CSV 파일을 다루기 위한 내장 함수를 제공하여, 제3자 라이브러리가 필요 없이 이러한 파일을 읽고 쓰는 것을 간단하게 만들어줍니다. 시작하기 위한 예제들은 다음과 같습니다:
+
+### CSV 파일 읽기
+
+`fopen()`과 함께 `fgetcsv()`를 사용하여 CSV 파일을 열고 그 내용을 읽을 수 있습니다:
+
+```php
 <?php
 $filename = 'data.csv';
-if (($handle = fopen($filename, 'r')) !== FALSE) {
+$handle = fopen($filename, "r");
+if ($handle !== FALSE) {
     while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
-        print_r($data);
+        $num = count($data);
+        echo "라인의 필드 수: $num\n";
+        for ($c = 0; $c < $num; $c++) {
+            echo $data[$c] . "\n";
+        }
     }
     fclose($handle);
 }
 ?>
 ```
-출력 예시:
-```
-Array
-(
-    [0] => 이름
-    [1] => 직업
-    [2] => 연락처
-)
-...
-```
 
-CSV 파일 쓰기:
-```PHP
+이 스크립트는 각 라인의 필드 수와 각 필드의 내용을 출력합니다.
+
+### CSV 파일 쓰기
+
+`fopen()`을 쓰기 모드(`w`)로 사용하고, `fputcsv()`을 사용하여 CSV 파일에 쓸 수 있습니다:
+
+```php
 <?php
 $list = [
-    ['홍길동', '개발자', '012-3456-7890'],
-    ['이순신', '디자이너', '098-7654-3210']
+    ['ID', '이름', '이메일'],
+    [1, 'John Doe', 'john@example.com'],
+    [2, 'Jane Doe', 'jane@example.com']
 ];
 
-$filename = 'output.csv';
-$handle = fopen($filename, 'w');
-foreach ($list as $fields) {
-    fputcsv($handle, $fields);
+$handle = fopen('users.csv', 'w');
+
+foreach ($list as $row) {
+    fputcsv($handle, $row);
 }
+
 fclose($handle);
 ?>
 ```
 
-## Deep Dive (심화 탐구)
-- 초기 컴퓨터 시대부터 데이터 교환 형식으로 CSV가 사용되었습니다.
-- JSON, XML 같은 현대적 데이터 포맷과 비교하며 CSV는 여전히 단순한 데이터 이동에 최적화되어 있습니다.
-- PHP에서 `fgetcsv`와 `fputcsv` 함수는 CSV 파일과의 데이터 입출력을 처리합니다. 각각 읽기와 쓰기 작업에 사용됩니다.
+이 스크립트는 `users.csv`라는 파일을 생성하고 헤더와 두 개의 데이터 행을 그 안에 씁니다.
 
-## See Also (참고자료)
-- PHP Manual on fgetcsv: [https://www.php.net/manual/en/function.fgetcsv.php](https://www.php.net/manual/en/function.fgetcsv.php)
-- PHP Manual on fputcsv: [https://www.php.net/manual/en/function.fputcsv.php](https://www.php.net/manual/en/function.fputcsv.php)
-- RFC 4180, Common Format and MIME Type for Comma-Separated Values (CSV) Files: [https://tools.ietf.org/html/rfc4180](https://tools.ietf.org/html/rfc4180)
+### 라이브러리 사용하기: League\Csv
+
+보다 고급 CSV 처리를 위해서, `League\Csv` 라이브러리는 강력한 기능 세트를 제공합니다. Composer를 통해 설치한 후 (`composer require league/csv`), CSV 데이터를 더 유연하게 읽고 쓸 수 있습니다.
+
+#### League\Csv로 읽기
+
+```php
+<?php
+require 'vendor/autoload.php';
+
+use League\Csv\Reader;
+
+$csv = Reader::createFromPath('data.csv', 'r');
+$csv->setHeaderOffset(0); // 첫 번째 행을 헤더로 사용하려면 설정
+
+$results = $csv->getRecords();
+foreach ($results as $row) {
+    print_r($row);
+}
+?>
+```
+
+이 스크립트는 `data.csv`를 읽고, 첫 번째 행을 열 헤더로 취급하여 각 행을 연관 배열로 출력합니다.
+
+#### League\Csv로 쓰기
+
+```php
+<?php
+require 'vendor/autoload.php';
+
+use League\Csv\Writer;
+
+$csv = Writer::createFromPath('users_new.csv', 'w+');
+
+$csv->insertOne(['ID', '이름', '이메일']);
+$csv->insertAll([
+    [3, 'Alex Doe', 'alex@example.com'],
+    [4, 'Anna Smith', 'anna@example.com']
+]);
+
+echo "users_new.csv에 성공적으로 쓰였습니다.";
+?>
+```
+
+이는 `users_new.csv`를 생성하고 헤더 행을 쓴 다음 두 데이터 행을 씁니다.

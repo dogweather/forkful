@@ -1,54 +1,56 @@
 ---
 title:                "वर्तमान तारीख प्राप्त करना"
-date:                  2024-01-20T15:14:41.409871-07:00
+date:                  2024-02-03T19:10:18.175563-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "वर्तमान तारीख प्राप्त करना"
-
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/elm/getting-the-current-date.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (क्या है और क्यों?)
+## क्या और क्यों?
+Elm में वर्तमान तिथि प्राप्त करने का मतलब है सिस्टम से वर्तमान कैलेंडर तिथि को लाना। हम इसे घटनाओं को टाइमस्टैम्प करने, कार्यों की अनुसूची बनाने, या अवधि को ट्रैक करने के लिए करते हैं।
 
-वर्तमान तारीख पाना यह सुनिश्चित करता है कि आप कार्यक्रम में आज की तारीख का इस्तेमाल कर सकें। कोडर्स इसे फीचर्स जैसे कैलेंडर, टाइम्लाइन्स और लॉगिंग में इस्तेमाल करते हैं।
-
-## How to: (कैसे करें:)
-
-Elm में वर्तमान तारीख पाने के लिए Time मॉड्यूल का उपयोग होता है। यहां एक साधारण उदाहरण दिखाया गया है:
+## कैसे करें:
+Elm `Time` मॉड्यूल के साथ तिथियों को संभालता है। आप वर्तमान समय को एक POSIX टाइमस्टैम्प के रूप में प्राप्त करेंगे, फिर उसे तिथि में परिवर्तित करेंगे।
 
 ```Elm
-import Time exposing (Posix)
-import Task exposing (Task)
+import Browser
+import Task
+import Time
 
--- सर्वर से वर्तमान समय प्राप्त करें
-getCurrentTime : Task x Posix
+type Msg = GetCurrentTime Time.Posix
+
+update : Msg -> Model -> (Model, Cmd Msg)
+update msg model =
+    case msg of
+        GetCurrentTime posixTime ->
+            let
+                -- POSIX समय को एक तारीख रिकॉर्ड में बदलें
+                date = Time.toDate posixTime
+            in
+            -- यहाँ पर अपने मॉडल को उसी अनुसार अपडेट करें
+            ({ model | date = date }, Cmd.none)
+
+-- वर्तमान समय प्राप्त करने की प्रक्रिया आरंभ करने के लिए
+getCurrentTime : Cmd Msg
 getCurrentTime =
-    Time.now
+    Task.perform GetCurrentTime Time.now
 
--- Posix समय को तारीख में बदलें
-toDateString : Posix -> String
-toDateString posix =
-    Time.posixToMillis posix
-        |> fromMillis
-        |> (\date -> date.year ++ "-" ++ date.month ++ "-" ++ date.day)
-
--- उदाहरण का उपयोग
-main =
-    getCurrentTime
-        |> Task.perform (always ()) (\posix -> Debug.log "Current Date" (toDateString posix))
+-- उदाहरण आउटपुट:
+-- date { year = 2023, month = Mar, day = 26 }
 ```
 
-यह कोड संख्येय प्रारूप (Posix) में वर्तमान समय प्राप्त करेगा और इसे एक ह्यूमन-रीडेबल तारीख में परिवर्तित करेगा।
+## गहराई में जानकारी
+पुरानी वेब भाषाओं में, तिथि प्राप्त करना एक-लाइन कोड है। Elm अलग है। यह साइड-इफेक्ट्स जैसे कि वर्तमान समय प्राप्त करना Elm आर्किटेक्चर के माध्यम से स्पष्ट बनाता है। यह कोड की शुद्धता और रखरखाव को प्रोत्साहित करता है।
 
-## Deep Dive (गहन जानकारी)
+विकल्पों में तृतीय-पक्ष पैकेज का उपयोग करना या अपने सर्वर कोड में तिथियों को संभालना और उन्हें Elm के लिए फ्लैग्स या पोर्ट्स के माध्यम से पास करना शामिल है।
 
-Elm में `Time` मॉड्यूल का निर्माण समय-संबंधित सुविधाओं को सरल और सुरक्षित तरीके से हासिल करने के लिए किया गया था। `Time.now` एक Task देता है जिसे perform करने पर, आपको सर्वर पर वर्तमान UTC समय मिलता है। यह समय `Posix` प्रारूप में होता है, जिसे मिलीसेकैंड्स या ह्यूमन-रीडेबल फॉर्मैट में परिवर्तित किया जा सकता है।
+कार्यान्वयन के लिहाज से, Elm का `Time.now` POSIX टाइमस्टैम्प (Unix epoch के बाद से मिलीसेकंड्स) के रूप में समय प्राप्त करता है। यह समय क्षेत्र से स्वतंत्र है, और आप इसे `Time` मॉड्यूल से फंक्शन्स का उपयोग करके आवश्यकतानुसार प्रारूपित कर सकते हैं।
 
-विकल्पों की बात करें तो, अन्य प्रोग्रामिंग भाषाओं में समय को पाने के और भी तरीके हो सकते हैं। जैसे कि, JavaScript में `new Date()` का उपयोग होता है, जबकि Python में `datetime.datetime.now()` का। Elm के पहले के संस्करणों में समय को प्राप्त करने के लिए सीधे पॉजिक्स मानों का उपयोग होता था, जिसे अब Task के साथ किया जाता है ताकि साइड इफेक्ट्स को संभाला जा सके।
-
-## See Also (देखें भी)
-
-- Elm के `Time` मॉड्यूल की आधिकारिक दस्तावेज़ीकरण: [Elm Time Module](https://package.elm-lang.org/packages/elm/time/latest/Time)
-- Elm भाषा का आधिकारिक गाइड: [Elm Guide](https://guide.elm-lang.org/)
-- Elm के साथ कार्य करने के लिए संदर्भित प्रोजेक्ट्स: [Awesome Elm](https://github.com/sporto/awesome-elm)
+## और भी देखें
+- [Elm Time दस्तावेज़ीकरण](https://package.elm-lang.org/packages/elm/time/latest/)
+- [कमांड्स और सब्सक्रिप्शन्स के लिए Elm की मार्गदर्शिका](https://guide.elm-lang.org/effects/)

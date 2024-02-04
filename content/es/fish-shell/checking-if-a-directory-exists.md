@@ -1,45 +1,43 @@
 ---
-title:                "Comprobando si existe un directorio"
-date:                  2024-01-20T14:56:08.277577-07:00
-simple_title:         "Comprobando si existe un directorio"
-
+title:                "Comprobando si un directorio existe"
+date:                  2024-02-03T19:07:11.809657-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Comprobando si un directorio existe"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/fish-shell/checking-if-a-directory-exists.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
-Comprobar si un directorio existe en Fish Shell te permite asegurar que puedas leer o escribir en dicho directorio sin problemas. Los programadores hacen esto para manejar errores y evitar sorpresas desagradables como intentar acceder a algo que no está ahí.
+Verificar si un directorio existe en Fish Shell permite que los scripts tomen decisiones basadas en la presencia o ausencia de estructuras de directorio, habilitando tareas como operaciones condicionales de archivos, registros o configuración del entorno. Esta técnica es crucial para escribir scripts robustos que interactúen con el sistema de archivos de manera predecible.
 
-## Cómo Hacerlo:
-```Fish Shell
-if test -d /ruta/al/directorio
-    echo "El directorio existe."
+## Cómo hacerlo:
+Fish Shell utiliza el comando `test` para verificar tipos de archivos y características, incluyendo si un objetivo es un directorio. Aquí hay un patrón básico para verificar si un directorio existe:
+
+```fish
+if test -d /ruta/al/dir
+    echo "El directorio existe"
 else
-    echo "El directorio no existe."
+    echo "El directorio no existe"
+end
+```
+Salida de muestra:
+```
+El directorio existe
+```
+
+Para operaciones de archivos y directorios más simplificadas, uno podría recurrir a herramientas externas como `fd`, aunque se usa más comúnmente para encontrar archivos y directorios en lugar de simplemente verificar su existencia. Sin embargo, combinarlo con scripts de Fish puede producir resultados útiles:
+
+```fish
+set dir "/ruta/a/buscar"
+if fd . $dir --type directory --max-depth 1 | grep -q $dir
+    echo "El directorio existe"
+else
+    echo "El directorio no existe"
 end
 ```
 
-Ejemplo de salida si el directorio existe:
-```
-El directorio existe.
-```
-
-Ejemplo de salida si el directorio no existe:
-```
-El directorio no existe.
-```
-
-## Inmersión Profunda
-En Fish Shell, el comando `test` permite realizar pruebas de archivos y directorios. El flag `-d` se usa específicamente para directorios. Antiguamente, en otros shells como Bash, se utilizaba `[ -d /ruta ] && echo "Existe"` lo que también se puede hacer en Fish, pero `test` es más legible y preferido.
-
-Otras alternativas incluyen usar `stat` y capturar errores, o incluso intentar cambiar al directorio con `cd` y verificar si fue exitoso. Estas alternativas pueden ofrecer más información, como los permisos del directorio.
-
-En cuanto a la implementación, Fish ejecuta `test` como un comando integrado.
-Esto significa que su ejecución es rápida y eficiente ya que no se inicia un proceso externo.
-
-## Véase También
-- Documentación del comando `test`: https://fishshell.com/docs/current/commands.html#test
-- Tutorial oficial de Fish Shell: https://fishshell.com/docs/current/tutorial.html
-- Guía de scripting en Fish: https://fishshell.com/docs/current/index.html#scripting
+Este ejemplo de `fd` busca el directorio a una profundidad especificada, y `grep` verifica la coincidencia, haciéndolo versátil para comprobaciones matizadas. Sin embargo, para el propósito directo de verificar la existencia, apegarse al `test` incorporado de Fish es tanto eficiente como sencillo.

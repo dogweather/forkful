@@ -1,63 +1,61 @@
 ---
 title:                "Capitalizando uma string"
-date:                  2024-01-19
+date:                  2024-02-03T19:05:02.277461-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Capitalizando uma string"
-
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/bash/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## O quê & Por quê?
-Capitalizar uma string é transformar todas as suas letras em maiúsculas. Fazemos isso para normalizar dados, criar ênfase ou atender a requisitos de formatação.
+## O Que & Por Que?
+Capitalizar uma string em Bash envolve transformar o primeiro caractere da string para maiúscula, mantendo o resto da string inalterado. Esta técnica é comumente usada para formatar saídas ou cumprir com convenções de código que requerem que certas strings comecem com uma letra maiúscula para legibilidade ou preferências estilísticas.
 
 ## Como fazer:
-Aqui estão alguns exemplos simples de como capitalizar strings em Bash:
 
-```Bash
-#!/bin/bash
-string_min="vamos capitalizar!"
-string_mai=$(echo "$string_min" | tr '[:lower:]' '[:upper:]')
-echo $string_mai
+O Bash não possui uma função embutida especificamente para capitalizar strings, mas você pode realizar essa tarefa usando expansão de parâmetro ou ferramentas externas como `awk`. Aqui estão algumas maneiras de capitalizar uma string em Bash:
+
+**Usando Expansão de Parâmetro:**
+
+Este método manipula a string diretamente no shell.
+
+```bash
+str="hello world"
+capitalized="${str^}"
+echo "$capitalized"
 ```
-
 Saída:
 ```
-VAMOS CAPITALIZAR!
+Hello world
 ```
 
-Outra forma, usando o comando `awk`:
-```Bash
-#!/bin/bash
-string_min="aprendendo com diversão"
-echo $string_min | awk '{print toupper($0)}'
-```
+**Usando `awk`:**
 
+`awk` é uma ferramenta poderosa de processamento de texto disponível na maioria dos sistemas operacionais do tipo Unix, que pode ser utilizada para capitalizar strings.
+
+```bash
+str="hello world"
+echo "$str" | awk '{print toupper(substr($0, 1, 1)) tolower(substr($0, 2))}'
+```
 Saída:
 ```
-APRENDENDO COM DIVERSÃO
+Hello world
 ```
 
-E se você quiser apenas a primeira letra maiúscula:
-```Bash
-#!/bin/bash
-string_min="olá, mundo!"
-string_cap="$(tr '[:lower:]' '[:upper:]' <<< ${string_min:0:1})${string_min:1}"
-echo $string_cap
-```
+**Usando `sed`:**
 
+Para uma abordagem mais tradicional, `sed` pode ser utilizado para capitalizar a primeira letra de uma string. No entanto, é um pouco mais complexo comparado aos métodos anteriores.
+
+```bash
+str="hello world"
+echo "$str" | sed 's/./\u&/'
+```
 Saída:
 ```
-Olá, mundo!
+Hello world
 ```
 
-## Aprofundamento
-Originalmente, capitalizar strings em computadores era importante porque os primeiros sistemas eram case-sensitive e, às vezes, apenas reconheciam maiúsculas. Questões legadas persistem, e por isso ainda hoje a capitalização é importante em programação.
-
-Alternativamente, em scripts Bash modernos, você pode usar expansões de parâmetro do Bash para capitalizar strings sem chamar utilitários externos, como `tr` ou `awk`. No entanto, essas expansões de shell são um tanto mais avançadas e podem não ser portáveis para todas as versões do shell.
-
-Detalhes de implementação a serem observados são que o comando `tr` funciona por substituição de caracteres e é muito rápido para strings longas, enquanto o `awk` é uma ferramenta de manipulação de texto mais poderosa e flexível, capaz de executar uma grande variedade de tarefas.
-
-## Veja também
-- [AWK Command in Unix/Linux with Examples](https://www.geeksforgeeks.org/awk-command-unixlinux-examples/)
+Estes trechos demonstram como capitalizar a primeira letra de uma string em Bash, destacando a flexibilidade da programação em shell ao manipular texto.

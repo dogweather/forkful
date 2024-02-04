@@ -1,51 +1,67 @@
 ---
-title:                "HTML:n jäsentäminen"
-date:                  2024-01-20T15:32:38.710308-07:00
-simple_title:         "HTML:n jäsentäminen"
-
+title:                "HTML:n jäsennys"
+date:                  2024-02-03T19:12:46.725841-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "HTML:n jäsennys"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/lua/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Mikä & Miksi?)
-HTML-parsinta tarkoittaa HTML-koodin lukemista ja sen rakenteen käsittelemistä ohjelmallisesti. Sitä tarvitaan, kun halutaan esimerkiksi kaivaa tietoa verkkosivuilta tai muokata HTML-sisältöä automaattisesti.
+## Mikä ja miksi?
+HTML:n jäsennys sisältää tietojen ja datan poimimisen HTML-dokumenteista, mikä on ratkaisevan tärkeää verkkosivujen kaapauksessa, datan analysoinnissa ja automaatiotehtävissä. Ohjelmoijat suorittavat tätä kerätäkseen, analysoidakseen tai manipuloidakseen verkkosisältöä ohjelmallisesti, mahdollistaen automaation, joka muutoin vaatisi manuaalista datan poimintaa verkkosivustoilta.
 
-## How to: (Kuinka tehdä:)
-Lua ei oletuksena tue HTML-parsintaa, mutta käytännössä tarvitaan ulkoista kirjastoa, kuten luasoup. 
+## Kuinka:
+Lua ei sisällä sisäänrakennettua kirjastoa HTML:n jäsennykseen, mutta voit hyödyntää kolmannen osapuolen kirjastoja kuten `LuaHTML` tai käyttää `libxml2`-sidoksia `LuaXML`-kirjaston kautta. Suosittu lähestymistapa on käyttää `lua-gumbo`-kirjastoa HTML:n jäsennykseen, joka tarjoaa suoraviivaisen, HTML5-standardin mukaisen jäsennyskyvyn.
 
-```Lua
-local luasoup = require('luasoup')
+### lua-gummon asentaminen:
+Aluksi varmista, että `lua-gumbo` on asennettu. Sen voi yleensä asentaa luarocksilla:
 
--- Ladataan HTML-sisältö merkkijonona
-local html_content = [[
-<html>
-    <head>
-        <title>Esimerkkisivu</title>
-    </head>
-    <body>
-        <h1>Tervetuloa!</h1>
-        <p>HTML-parsinta on kivaa.</p>
-    </body>
-</html>
-]]
-
--- Parsitaan HTML sisältö luasoup-kirjaston avulla
-local soup = luasoup.parse(html_content)
-
--- Etsitään otsikko
-local h1_tag = soup:select('h1')[1]
-print(h1_tag:text())  -- Output: Tervetuloa!
-
--- Muutetaan kappaleen tekstiä
-local p_tag = soup:select('p')[1]
-p_tag:set_text('HTML-parsinta Lualla on sujuvaa.')
-print(soup:select('p')[1]:text())  -- Output: HTML-parsinta Lualla on sujuvaa.
+```sh
+luarocks install lua-gumbo
 ```
 
-## Deep Dive (Sukellus syvemmälle)
-Ennen luasoupia ja muita kirjastoja Lua-ohjelmoijat joutuivat turvautumaan säännöllisiin lausekkeisiin (regex), jotka ovat virhealttiita ja hankalia monimutkaisessa HTML:n käsittelyssä. Luasoup tarjoaa DOM-pohjaista lähestymistapaa, joka on luotettavampi ja luettavampi. Vaihtoehtoisesti voi käyttää LuaXML-kirjastoa XML:n ja HTML:n käsittelyyn, mutta se on vähemmän suosittu. Luasoup käyttää sisäisesti lxml parseria, joka perustuu libxml2-kirjastoon.
+### Perusjäsennys lua-gumbolla:
+Tässä on kuinka voit jäsentää yksinkertaisen HTML-katkelman ja poimia siitä tietoja käyttäen `lua-gumboa`:
 
-## See Also (Katso myös)
-- [luaxml GitHub repository](https://github.com/LuaDist/luaxml)
+```lua
+local gumbo = require "gumbo"
+local document = gumbo.parse[[<html><body><p>Hei, maailma!</p></body></html>]]
+
+local p = document:getElementsByTagName("p")[1]
+print(p.textContent)  -- Tulostus: Hei, maailma!
+```
+
+### Edistynyt esimerkki - Linkkien poimiminen:
+Poimiaksesi `href`-attribuutit kaikista ankkuritagieista (`<a>`-elementit) HTML-dokumentissa:
+
+```lua
+local gumbo = require "gumbo"
+local document = gumbo.parse([[
+<html>
+<head><title>Esimerkkisivu</title></head>
+<body>
+  <a href="http://example.com/1">Linkki 1</a>
+  <a href="http://example.com/2">Linkki 2</a>
+  <a href="http://example.com/3">Linkki 3</a>
+</body>
+</html>
+]])
+
+for _, element in ipairs(document.links) do
+    if element.getAttribute then  -- Varmista, että se on Element ja sillä on attribuutteja
+        local href = element:getAttribute("href")
+        if href then print(href) end
+    end
+end
+
+-- Esimerkkitulostus:
+-- http://example.com/1
+-- http://example.com/2
+-- http://example.com/3
+```
+
+Tämä koodinpätkä iteroi läpi kaikki dokumentin linkit ja tulostaa niiden `href`-attribuutit. `lua-gumbo`-kirjaston kyky jäsentää ja ymmärtää HTML-dokumentin rakennetta yksinkertaistaa prosessia tietyillä tageilla tai attribuuteilla varustettujen elementtien poimimiseksi.

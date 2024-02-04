@@ -1,50 +1,65 @@
 ---
-title:                "Manipulation de JSON"
-date:                  2024-01-19
-simple_title:         "Manipulation de JSON"
-
+title:                "Travailler avec JSON"
+date:                  2024-02-03T19:22:41.473993-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Travailler avec JSON"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/fish-shell/working-with-json.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Travailler avec JSON, c'est jongler avec des données structurées – pensez configurations, API, et stockage. Les développeurs s'y collent pour échanger des données facilement entre différentes langues de programmation.
+## Quoi & Pourquoi ?
 
-## How to:
-Utiliser `jq` avec Fish pour manipuler du JSON:
+Travailler avec le JSON dans le Fish Shell implique l'analyse et la génération de données JSON, une tâche courante pour configurer des applications, interagir avec des API et rationaliser les flux de travail en ligne de commande. Étant donné l'ubiquité du JSON dans le développement web et d'applications, maîtriser sa manipulation directement dans le shell peut considérablement améliorer l'automatisation et l'efficacité de la gestion des données pour les programmeurs.
 
-```Fish Shell
-# Installez jq
-sudo apt-get install jq
+## Comment faire :
 
-# Parsez un JSON simple et accédez aux champs
-echo '{"nom":"Jean", "age": 25}' | jq '.nom'
+Le Fish Shell, en lui-même, ne dispose pas d'utilitaires intégrés pour l'analyse et la génération de JSON. Cependant, il s'intègre sans problème avec des outils tiers comme `jq` pour le traitement du JSON. `jq` est un processeur JSON en ligne de commande puissant et polyvalent qui vous permet de découper, filtrer, mapper et transformer des données structurées avec un langage simple et expressif.
+
+### Analyser du JSON avec jq
+Pour analyser un fichier JSON et extraire des données à l'aide de `jq` :
+
+```fish
+# En supposant que vous avez un fichier JSON nommé 'data.json' avec le contenu : {"name":"Fish Shell","version":"3.4.0"}
+cat data.json | jq '.name'
+# Exemple de sortie
+"Fish Shell"
 ```
 
-Sortie:
-```
-"Jean"
+### Génération de JSON avec jq
+Créer un contenu JSON à partir de variables de shell ou de sorties :
+
+```fish
+# Créer un objet JSON à partir de variables
+set name "Fish Shell"
+set version "3.4.0"
+jq -n --arg name "$name" --arg version "$version" '{name: $name, version: $version}'
+# Exemple de sortie
+{
+  "name": "Fish Shell",
+  "version": "3.4.0"
+}
 ```
 
-```Fish Shell
-# Transformez JSON avec jq
-echo '[{"nom":"Jean"}, {"nom":"Marie"}]' | jq 'map(.nom |= "Prénom: " + .)'
-```
-
-Sortie:
-```
+### Filtrer les collections JSON
+Supposons que nous avons un tableau JSON d'objets dans un fichier nommé `versions.json` :
+```json
 [
-  {"nom": "Prénom: Jean"},
-  {"nom": "Prénom: Marie"}
+  {"version": "3.1.2", "stable": true},
+  {"version": "3.2.0", "stable": false},
+  {"version": "3.4.0", "stable": true}
 ]
 ```
+Pour filtrer ce tableau pour seulement les versions stables :
 
-## Deep Dive
-JSON, abréviation de JavaScript Object Notation, est né des besoins de JavaScript mais a conquis tous les langages. Alternatives? XML, trop lourd. YAML, pas mal pour la config. Pour l'implémentation, Fish n'analyse pas JSON nativement, d'où le recours à `jq`, un processeur JSON léger et puissant.
+```fish
+cat versions.json | jq '.[] | select(.stable == true) | .version'
+# Exemple de sortie
+"3.1.2"
+"3.4.0"
+```
 
-## See Also
-- Documentation `jq`: https://stedolan.github.io/jq/manual/
-- Guide JSON pour débutants: https://www.w3schools.com/whatis/whatis_json.asp
-- Fish Shell Scripting Tutorial: https://fishshell.com/docs/current/tutorial.html
+Les exemples fournis démontrent la puissance de l'intégration de `jq` avec Fish Shell pour les opérations JSON. Utiliser de tels outils enrichit l'expérience shell, en faisant un environnement redoutable pour la manipulation des formats de données modernes.

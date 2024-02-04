@@ -1,48 +1,63 @@
 ---
 title:                "Escribiendo pruebas"
-date:                  2024-01-19
+date:                  2024-02-03T19:31:27.244641-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Escribiendo pruebas"
-
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/python/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Qué y Por Qué?
-Escribir pruebas es crear código para verificar que tu código funcione como esperas. Los programadores las hacen para prevenir errores, hacer refactoring sin miedo y ayudar a otros a entender su uso.
+## ¿Qué & Por qué?
+Escribir pruebas en Python implica crear scripts automatizados para validar la corrección de tu código. Los programadores hacen esto para asegurarse de que sus funciones o clases funcionen como se espera bajo varias condiciones, lo que ayuda a detectar errores temprano y facilita un mantenimiento y refactorización más sencillos.
 
-## Cómo se hace:
-Vamos a usar `unittest`, un framework de pruebas incluido en Python:
+## Cómo hacerlo:
+Python viene con un módulo incorporado para escribir pruebas llamado `unittest`. Así es como puedes usarlo para probar una función simple:
 
-```Python
+```python
 import unittest
 
-def suma(x, y):
-    return x + y
+def add(a, b):
+    return a + b
 
-class PruebaSuma(unittest.TestCase):
-    def test_suma(self):
-        self.assertEqual(suma(3, 4), 7)
+class TestAddFunction(unittest.TestCase):
+    def test_add(self):
+        self.assertEqual(add(1, 2), 3)
+        self.assertEqual(add(-1, 1), 0)
+        self.assertNotEqual(add(10, 2), 12, "Debería ser 12")
 
 if __name__ == '__main__':
     unittest.main()
 ```
 
-Ejecuta el script y verás algo como:
+Cuando ejecutes este script de prueba, deberías ver una salida indicando que tus pruebas pasaron (o fallaron).
 
-```
-.
-----------------------------------------------------------------------
-Ran 1 test in 0.000s
+Para pruebas más modernas y expresivas, puedes usar una biblioteca de terceros como `pytest`. Primero, tendrás que instalarla usando pip:
 
-OK
+```shell
+pip install pytest
 ```
 
-## Inmersión Profunda
-Las pruebas son una parte vital del desarrollo desde hace décadas. Alternativas a `unittest` incluyen `pytest` y `nose`. Al escribir pruebas, considera casos borde y uso erróneo para hacer tu código más robusto.
+Luego, puedes escribir tus pruebas de manera más simple sin necesidad de subclasificar nada:
 
-## Ver También
-- Documentación oficial de unittest: https://docs.python.org/3/library/unittest.html
-- Pytest: https://docs.pytest.org/
-- Historia del desarrollo guiado por pruebas (TDD): https://en.wikipedia.org/wiki/Test-driven_development
+```python
+# Guarda esto en un archivo llamado test_with_pytest.py
+def add(a, b):
+    return a + b
+
+def test_add():
+    assert add(1, 2) == 3
+    assert add(-1, 1) == 0
+    assert add(10, 2) != 12, "Debería ser 12"
+```
+
+Para ejecutar tus pruebas con `pytest`, simplemente ejecuta:
+
+```shell
+pytest test_with_pytest.py
+```
+
+Deberías ver la salida de pytest mostrando los resultados de tus pruebas.

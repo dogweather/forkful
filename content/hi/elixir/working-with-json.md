@@ -1,48 +1,67 @@
 ---
 title:                "JSON के साथ काम करना"
-date:                  2024-01-19
+date:                  2024-02-03T19:22:49.042163-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "JSON के साथ काम करना"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/elixir/working-with-json.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (क्या और क्यों?)
-JSON (JavaScript Object Notation) एक हल्का फॉर्मेट है जिससे डेटा आदान-प्रदान में आसानी होती है। Elixir प्रोग्रामर्स JSON का उपयोग करते हैं क्योंकि यह ह्यूमन और मशीन दोनों के लिए पढ़ने में सरल होता है, और वेब APIs के साथ इंटरैक्शन में बहुत मदद करता है।
+## क्या और क्यों?
 
-## How to: (कैसे करें:)
-Elixir में JSON से काम करने के लिए, `jason` हेक्स पैकेज आमतौर पर उपयोग किया जाता है। नीचे कुछ उदाहरण हैं:
+JSON के साथ कार्य करना इसमें JSON-स्वरूपित स्ट्रिंग्स को डेटा संरचनाओं में पार्स करना शामिल है जिसे एलिक्सिर संचालित कर सकता है, और एलिक्सिर डेटा संरचनाओं को वापस JSON स्ट्रिंग्स में सीरियलाइज़ करना। यह वेब विकास, APIs, और कॉन्फ़िगरेशन फाइलों के लिए आवश्यक है, क्योंकि JSON एक हल्का, पाठ-आधारित, भाषा-स्वतंत्र डेटा एक्सचेंज स्वरूप है जो इसकी सादगी और मानव-पठनीयता के लिए व्यापक रूप से प्रयोग किया जाता है।
+
+## कैसे:
+
+एलिक्सिर में, आप JSON पार्सिंग और जेनरेशन के लिए `Jason` पुस्तकालय का उपयोग कर सकते हैं, जो एक लोकप्रिय विकल्प है। सबसे पहले, `mix.exs` में अपने प्रोजेक्ट की निर्भरताओं में `Jason` जोड़ें:
 
 ```elixir
-# Jason पैकेज को अपने mix.exs फाइल में जोड़ें
 defp deps do
   [
-    {:jason, "~> 1.2"}
+    {:jason, "~> 1.3"}
   ]
 end
-
-# JSON स्ट्रिंग को Elixir मैप में परिवर्तित करना
-json_string = "{\"name\": \"Ajay\", \"age\": 30}"
-{:ok, data} = Jason.decode(json_string)
-IO.inspect(data)
-
-# Elixir मैप को JSON स्ट्रिंग में परिवर्तित करना
-data_to_encode = %{"name" => "Vijay", "age" => 25}
-{:ok, json_output} = Jason.encode(data_to_encode)
-IO.puts(json_output)
 ```
 
-Sample Output:
-```
-%{"age" => 30, "name" => "Ajay"}
-{"age":25,"name":"Vijay"}
+फिर, निर्भरता फेच करने के लिए `mix deps.get` चलाएं।
+
+### JSON पार्स करना:
+एक JSON स्ट्रिंग को एलिक्सिर डेटा संरचनाओं में परिवर्तित करने के लिए:
+
+```elixir
+json_string = "{\"name\":\"John\", \"age\":30}"
+{:ok, person} = Jason.decode(json_string)
+IO.inspect(person)
+# आउटपुट: %{"name" => "John", "age" => 30}
 ```
 
-## Deep Dive (गहराई से समझिए):
-ऐतिहासिक रूप से, JSON को डग क्रॉकफोर्ड ने प्रोमोट किया, और यह XML का एक लाइटवेट अल्टरनेटिव बन गया। इलिक्सिर में, `poison` और `jsx` जैसे अन्य लाइब्रेरीज भी हैं जो JSON पार्सिंग सपोर्ट करते हैं। लेकिन `jason` तेज़ और मेंटेन करने में आसान होने के कारण पसंद की जाती है। इम्प्लीमेंटेशन में कोई Elixir डेटा स्ट्रक्चर को JSON में ट्रांसफॉर्म करता है और उल्टा भी।
+### JSON जेनरेट करना:
+एक एलिक्सिर मैप को JSON स्ट्रिंग में परिवर्तित करने के लिए:
 
-## See Also (और देखें):
-- Elixir के `jason` पैकेज का डॉक्युमेंटेशन: [https://hexdocs.pm/jason/](https://hexdocs.pm/jason/)
-- JSON स्पेसिफिकेशन: [https://www.json.org/json-en.html](https://www.json.org/json-en.html)
+```elixir
+person_map = %{"name" => "Jane", "age" => 25}
+{:ok, json_string} = Jason.encode(person_map)
+IO.puts(json_string)
+# आउटपुट: {"age":25,"name":"Jane"}
+```
+
+### स्ट्रक्चर्स के साथ काम करना:
+एक एलिक्सिर स्ट्रक्चर को एनकोड करने के लिए, आपको अपने स्ट्रक्चर के लिए `Jason.Encoder` प्रोटोकॉल को लागू करना होगा। यहाँ एक उदाहरण है:
+
+```elixir
+defmodule Person do
+  @derive {Jason.Encoder, only: [:name, :age]}
+  defstruct name: nil, age: nil
+end
+
+person_struct = %Person{name: "Mike", age: 28}
+{:ok, json_string} = Jason.encode(person_struct)
+IO.puts(json_string)
+# आउटपुट: {"age":28,"name":"Mike"}
+```
+
+यह सरल दृष्टिकोण आपको विभिन्न प्रोग्रामिंग वातावरणों में डेटा आदान-प्रदान की सुविधा प्रदान करते हुए आपके एलिक्सिर अनुप्रयोगों में JSON प्रक्रिया को एकीकृत करने पर शुरू करेगा।

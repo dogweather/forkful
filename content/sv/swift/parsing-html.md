@@ -1,41 +1,72 @@
 ---
 title:                "Tolka HTML"
-date:                  2024-01-20T15:34:13.889327-07:00
+date:                  2024-02-03T19:13:36.254656-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Tolka HTML"
-
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/swift/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Parsing av HTML innebär att vi tolkar och omvandlar HTML-kod för att kunna hantera dess innehåll programmässigt. Programmerare gör detta för att extrahera data, manipulera innehåll, eller för att integrera webbinnehåll i appar.
+Att tolka HTML innebär processen att bryta ner och tolka strukturen av HTML-innehåll, typiskt för att extrahera specifik data eller hantera detta innehåll programmatiskt. Programmerare engagerar sig i HTML-tolkning för webbskrapning, datautvinning, automatiserad testning och innehållsmigrering, vilket möjliggör att applikationer kan interagera med och bearbeta webbdokument effektivt.
 
 ## Hur man gör:
-Du kan använda ett bibliotek som SwiftSoup för att enkelt hantera HTML. Här är ett grundläggande exempel:
+Swift inkluderar som standard inte ett inbyggt bibliotek för HTML-tolkning, vilket kräver användning av tredjepartsbibliotek för att effektivt hantera denna uppgift. Ett av de mest populära valen är SwiftSoup, ett rent Swift-bibliotek som erbjuder jQuery-lik syntax för HTML-tolkning och manipulation.
 
-```Swift
+### Installation
+Först behöver du lägga till SwiftSoup i ditt projekt. Om du använder Swift Package Manager, kan du lägga till det i dina `Package.swift` beroenden:
+
+```swift
+dependencies: [
+    .package(url: "https://github.com/scinfu/SwiftSoup.git", från: "2.3.2")
+]
+```
+
+### Exempel: Extrahera Länkar från HTML
+Anta att du har ett HTML-dokument och du vill extrahera alla länkar (`<a href="...">`). Med SwiftSoup kan du enkelt åstadkomma detta:
+
+```swift
 import SwiftSoup
 
-do {
-    let html = "<html><head><title>Första Exemplet</title></head><body><p>Hej Swift!</p></body></html>"
-    let doc = try SwiftSoup.parse(html)
-    let bodyText = try doc.text()
-    print(bodyText)  // Output: "Hej Swift!"
-} catch Exception.Error(let type, let message) {
-    print("Message: \(message)")
-} catch {
-    print("error")
+let html = """
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exempelsida</title>
+</head>
+<body>
+    <p>Välkommen till vår webbplats</p>
+    <a href="https://example.com/page1">Sida 1</a>
+    <a href="https://example.com/page2">Sida 2</a>
+</body>
+</html>
+"""
+
+gör {
+    let doc: Document = försök SwiftSoup.parse(html)
+    let links: Elements = försök doc.select("a")
+    för link i links.array() {
+        let linkHref: String = försök link.attr("href")
+        let linkText: String = försök link.text()
+        print("\(linkText) - \(linkHref)")
+    }
+} fånga Exception.Error(låt typ, låt meddelande) {
+    print("Feltyp: \(typ) Meddelande: \(meddelande)")
+} fånga {
+    print("fel")
 }
 ```
 
-## Fördjupning:
-HTML-parsing är inte nytt – det har varit en del av webbutveckling sedan webbens födelse. Alternativ till SwiftSoup inkluderar andra bibliotek som Kanna eller till och med en manuell tillvägagångssätt via regex, men det senare är inte rekommenderat på grund av HTML:s komplexa natur.
+### Exempel på Utdata
+Den föregående koden extraherar URL:er och deras text från HTML, och skriver ut:
 
-SwiftSoup, inspirerat av Java-biblioteket Jsoup, tillhandahåller Swiftnära syntax och funktionalitet. Implementeringen använder intern parsinglogik som omvandlar HTML till en DOM-struktur som sedan kan sökas igenom och manipuleras. Detta abstraherar komplexiteten kring HTML-struktur och gör det programmerarvänligt.
+```
+Sida 1 - https://example.com/page1
+Sida 2 - https://example.com/page2
+```
 
-## Se Även:
-- SwiftSoup GitHub: https://github.com/scinfu/SwiftSoup
-- Kanna GitHub: https://github.com/tid-kijyun/Kanna
-- W3Schools HTML Parser: https://www.w3schools.com/xml/dom_intro.asp
+Detta grundläggande exempel demonstrerar hur man utnyttjar SwiftSoup för att tolka HTML-dokument. Genom att utforska SwiftSoup's dokumentation ytterligare, kan du hitta många metoder för att navigera, söka och modifiera HTML-innehållet, vilket ger dina Swift-applikationer möjligheten att bearbeta komplex webbinnehåll med lätthet.

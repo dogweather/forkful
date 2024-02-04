@@ -1,43 +1,65 @@
 ---
-title:                "Arbeid med JSON"
-date:                  2024-01-19
-simple_title:         "Arbeid med JSON"
-
+title:                "Arbeider med JSON"
+date:                  2024-02-03T19:22:49.505996-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Arbeider med JSON"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/fish-shell/working-with-json.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? 
-JSON, eller JavaScript Object Notation, er et lettvekts datautvekslingsformat. Programmerere bruker det fordi det er lett å lese og skrive for mennesker og enkelt å tolke og generere for maskiner.
+## Hva & Hvorfor?
 
-## How to:
-Fish Shell støtter ikke direkte JSON-manipulering, men med `jq`-verktøyet blir det en lek. Installer `jq` med pakkesystemet ditt (for eksempel `apt-get install jq` på Ubuntu).
+Å jobbe med JSON i Fish Shell innebærer parsing og generering av JSON-data, en vanlig oppgave for konfigurering av applikasjoner, API-interaksjon, og effektivisering av kommandolinjeflyter. Gitt JSONs allestedsnærvær i web- og applikasjonsutvikling, kan mestring av manipulasjonen direkte i shellen betydelig forbedre automatisering og effektivitet i databehandling for programmerere.
 
-```Fish Shell
-# Parse en JSON-streng og hent en verdi
-echo '{"name": "Ola", "age": 28}' | jq '.name'
-```
-Output:
-```
-"Ola"
-```
+## Hvordan:
 
-```Fish Shell
-# Oppdater en verdi i en JSON-fil
-echo '{"name": "Ola", "age": 28}' | jq '.age = 29' > updated.json
-cat updated.json
-```
-Output:
-```
-{"name":"Ola","age":29}
+Fish Shell har i seg selv ikke innebygde verktøy for å parse og generere JSON. Imidlertid integrerer den sømløst med tredjepartsverktøy som `jq` for JSON-behandling. `jq` er en kraftig og allsidig kommandolinje JSON-prosessor som lar deg skive, filtrere, kartlegge og transformere strukturerte data med et enkelt og uttrykksfullt språk.
+
+### Parse JSON med jq
+For å parse en JSON-fil og ekstrahere data ved hjelp av `jq`:
+
+```fish
+# Anta at du har en JSON-fil ved navn 'data.json' med innhold: {"name":"Fish Shell","version":"3.4.0"}
+cat data.json | jq '.name'
+# Eksempel på utdata
+"Fish Shell"
 ```
 
-## Deep Dive
-JSON ble introdusert i 2001, og har siden blitt web-utviklingens språk for datautveksling. Alternativer som XML er mer verbose og tungvinte. `jq` er kraftig og kan håndtere komplekse spørringer og transformasjoner i JSON, mens lignende verktøy som `Python`-biblioteket `json` også kan være et alternativ for større applikasjoner eller skripting.
+### Generere JSON med jq
+Lage JSON-innhold fra shell-variabler eller utdata:
 
-## See Also
-- `jq` Manual: https://stedolan.github.io/jq/manual/
-- Fish Shell Documentation: https://fishshell.com/docs/current/
-- JSON Specifikasjon: https://www.json.org/json-no.html
+```fish
+# Opprett JSON-objekt fra variabler
+set name "Fish Shell"
+set version "3.4.0"
+jq -n --arg name "$name" --arg version "$version" '{name: $name, version: $version}'
+# Eksempel på utdata
+{
+  "name": "Fish Shell",
+  "version": "3.4.0"
+}
+```
+
+### Filtrere JSON-samlinger
+Anta at vi har en JSON-array med objekter i en fil ved navn `versions.json`:
+```json
+[
+  {"version": "3.1.2", "stable": true},
+  {"version": "3.2.0", "stable": false},
+  {"version": "3.4.0", "stable": true}
+]
+```
+For å filtrere denne arrayen for kun stabile versjoner:
+
+```fish
+cat versions.json | jq '.[] | select(.stable == true) | .version'
+# Eksempel på utdata
+"3.1.2"
+"3.4.0"
+```
+
+Eksemplene som er gitt demonstrerer kraften av å integrere `jq` med Fish Shell for JSON-operasjoner. Å utnytte slike verktøy beriker shell-opplevelsen, noe som gjør den til et formidabelt miljø for håndtering av moderne dataformater.

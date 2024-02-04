@@ -1,43 +1,64 @@
 ---
-title:                "Att hämta aktuellt datum"
-date:                  2024-01-20T15:16:37.460916-07:00
-simple_title:         "Att hämta aktuellt datum"
-
+title:                "Få det aktuella datumet"
+date:                  2024-02-03T19:10:56.687492-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Få det aktuella datumet"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/rust/getting-the-current-date.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Vad & Varför?
 
-Att hämta aktuellt datum betyder att du får tag på dagens datum i programmet. Programmerare gör det för att loggföra, för funktioner som är tidsberoende, eller helt enkelt för att visa datumet för användaren.
+Att hämta det aktuella datumet i Rust är en vanlig uppgift för sådana saker som loggning, tidsbaserade operationer eller helt enkelt för att visa datumet. Till skillnad från några språk som inkluderar datum- och tidsfunktionalitet i sitt standardbibliotek, uppmuntrar Rust användningen av ett robust tredjepartsbibliotek, chrono, för omfattande manipulation av datum och tid på grund av dess överlägsna funktionalitet och användarvänlighet.
 
 ## Hur man gör:
 
-```Rust
+### Använda Rusts Standardbibliotek
+Rusts standardbibliotek erbjuder ett begränsat men snabbt sätt att få den aktuella tiden, dock inte direkt det aktuella datumet i ett kalenderformat. Så här gör du:
+
+```rust
+use std::time::{SystemTime, UNIX_EPOCH};
+
+fn main() {
+    match SystemTime::now().duration_since(UNIX_EPOCH) {
+        Ok(n) => println!("Aktuell tid: {} sekunder sedan Unix epoken.", n.as_secs()),
+        Err(_) => panic!("SystemTid före Unix epoken!"),
+    }
+}
+```
+
+Utdata:
+```
+Aktuell tid: 1615390665 sekunder sedan Unix epoken.
+```
+
+### Använda Chrono-biblioteket
+För mer omfattande datum- och tidsfunktionalitet, inklusive att få det aktuella datumet, bör du använda `chrono`-biblioteket. Lägg först till `chrono` i din `Cargo.toml`:
+
+```toml
+[dependencies]
+chrono = "0.4"
+```
+
+Sedan kan du använda `chrono` för att få det aktuella datumet:
+
+```rust
+extern crate chrono;
 use chrono::{Local, Datelike};
 
 fn main() {
     let nu = Local::now();
-    println!("Idag är det {}-{}-{}", nu.year(), nu.month(), nu.day());
+    println!("Aktuella datumet: {}-{}-{}", nu.year(), nu.month(), nu.day());
 }
 ```
-Exempel på output:
+
+Utdata:
 ```
-Idag är det 2023-04-07
+Aktuella datumet: 2023-4-20
 ```
 
-## Djupdykning
-
-Att hämta aktuellt datum är inget nytt i programmeringsvärlden, men sättet vi gör det på har förändrats över tid. I Rust används ofta `chrono`-paketet för att hantera datum och tid eftersom det inte finns något inbyggt i standardbiblioteket som hanterar detta väl.
-
-Alternativ till `chrono` kan vara att använda `time`-biblioteket eller, om du har mer specifika behov, att använda plattformsspecifika funktioner genom FFI (Foreign Function Interface).
-
-Detaljerna i att implementera datumhantering involverar tidszoner, skottår och formattering. `chrono` hanterar detta elegant, och metoder som `.year()`, `.month()`, och `.day()` returnerar helt enkelt aktuella värden baserade på systemets lokala tid.
-
-## Se också
-
-- The `chrono` crate documentation: https://docs.rs/chrono/
-- The `time` crate as an alternative: https://docs.rs/time/
-- Rust FFI for interacting with other languages: https://doc.rust-lang.org/nomicon/ffi.html
+`chrono`-biblioteket gör det enkelt att arbeta med datum och tider, och erbjuder en mängd funktionaliteter utöver att bara hämta det aktuella datumet, inklusive att tolka, formatera och utföra aritmetiska operationer på datum och tider.

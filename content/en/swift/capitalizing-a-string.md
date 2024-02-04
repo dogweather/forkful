@@ -1,8 +1,8 @@
 ---
 title:                "Capitalizing a string"
-date:                  2024-01-19
+date:                  2024-02-03T19:02:38.526736-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Capitalizing a string"
-
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/swift/capitalizing-a-string.md"
 ---
@@ -10,53 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Capitalization means changing the first letter of words to uppercase; in strings, it's often about formatting or making text user-friendly. Programmers capitalize strings for readability, to follow grammatical rules, or to match a style guide.
+
+Capitalizing a string in Swift modifies the given string so that its first character is uppercase, and the remaining characters are lowercase. Programmers do this for purposes like formatting names or sentences according to grammatical rules or user interface standards.
 
 ## How to:
-Swift makes capitalizing strings straightforward. Here's a quick tour:
 
-```Swift
-let lowercasedString = "hello, world!"
-let titleCased = lowercasedString.capitalized // "Hello, World!"
-let uppercasedString = lowercasedString.uppercased() // "HELLO, WORLD!"
+Swift's `String` structs come with a couple of built-in methods to manipulate the case of strings. Here are a few approaches to capitalize strings in Swift, including the use of standard methods and third-party libraries if necessary.
 
-// Sample Output:
-print(titleCased)  // Prints "Hello, World!"
-print(uppercasedString)  // Prints "HELLO, WORLD!"
+### Using built-in methods
+
+To capitalize the first letter of a string and lowercasing the rest:
+
+```swift
+let myString = "hello, world"
+let capitalizedString = myString.prefix(1).uppercased() + myString.dropFirst().lowercased()
+print(capitalizedString) // Output: "Hello, world"
 ```
 
-For more control, we'll dabble with the `Locale`:
+To capitalize the first letter of each word in a sentence, you can use the `capitalized` property:
 
-```Swift
-let sentence = "the quick brown fox"
-let titleCasedWithLocale = sentence.capitalized(with: Locale(identifier: "en_US"))
-// "The Quick Brown Fox"
-
-// Sample Output:
-print(titleCasedWithLocale)  // Prints "The Quick Brown Fox"
+```swift
+let sentence = "hello, world"
+let capitalizedSentence = sentence.capitalized
+print(capitalizedSentence) // Output: "Hello, World"
 ```
 
-## Deep Dive
-Capitalization in programming has been around as long as we've had digital text processing - it's all about meeting user expectations. While `capitalized` in Swift standardizes strings to Title Case, where the first character of each word is uppercase, there are nuances.
+### Using a third-party library
 
-Historically, programmers needed custom methods to capitalize, handling edge cases themselves. Swift’s `capitalized` takes a locale into account, which matters for proper nouns or locale-specific casing rules.
+While Swift's standard library is quite comprehensive, some specific capitalization formats might require more complex operations or can be simplified using third-party libraries. One of the popular ones for string manipulation is SwiftRichString. (Note: Always ensure to include third-party libraries through Swift Package Manager, CocoaPods, or Carthage, and import them in your file.)
 
-Speaking of alternatives, those dissatisfied with `capitalized` often turn to regex or write extensions on `String` for more complex rules. Implementation-wise, `capitalized` is essentially a built-in method that loops through the string, applying uppercase to the first letter after a non-letter character.
+First, you would need to add `SwiftRichString` to your project. Once installed, you can use it to perform various string operations, including specific capitalization needs. However, as of now, Swift's built-in methods adequately cover most capitalization use cases without needing external libraries for just capitalizing strings.
 
-```Swift
-extension String {
-    func customCapitalized() -> String {
-        return self.lowercased().replacingOccurrences(of: "\\b\\w", with: { 
-            guard let firstChar = $0.first else { return $0 }
-            return String(firstChar).uppercased() + $0.dropFirst()
-        }, options: .regularExpression)
-    }
-}
-```
-
-The above extension uses a regular expression to capitalize the first letter of each word.
-
-## See Also
-For a deeper dive into Swift string manipulation, here are some helpful resources:
-- [Swift Documentation on Strings](https://developer.apple.com/documentation/swift/string)
-- [Ray Wenderlich's String Tutorial for Swift](https://www.raywenderlich.com/5492-working-with-strings-in-swift)
+Always refer to the latest documentation of the library for any updates or changes in methods.

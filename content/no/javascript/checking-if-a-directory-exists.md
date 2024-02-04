@@ -1,42 +1,74 @@
 ---
-title:                "Sjekke om en mappe eksisterer"
-date:                  2024-01-20T14:57:14.227289-07:00
-simple_title:         "Sjekke om en mappe eksisterer"
-
+title:                "Sjekker om en mappe eksisterer"
+date:                  2024-02-03T19:07:45.985179-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Sjekker om en mappe eksisterer"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/javascript/checking-if-a-directory-exists.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Hva & Hvorfor?
-Sjekking av om en katalog eksisterer innebærer å finne ut om en bestemt mappe finnes på filsystemet. Programmere gjør dette for å unngå feil, som å prøve å lese fra eller skrive til en ikke-eksisterende katalog.
+## Hva og hvorfor?
+Å sjekke om en mappe finnes i JavaScript er essensielt for oppgaver som involverer manipulasjon av filer, slik at skript kan verifisere mappens tilstedeværelse før man leser fra eller skriver til den. Denne operasjonen forhindrer feil og sikrer en jevnere kjøring av programmet, spesielt i applikasjoner som dynamisk håndterer filer eller mapper basert på brukerinndata eller eksterne datakilder.
 
-## Slik gjør du:
-For å sjekke om en katalog eksisterer i nyere versjoner av Node.js, bruk `fs.existsSync` eller asynkron `fs.access` sammen med `fs.constants.F_OK`.
+## Hvordan:
+I Node.js, siden JavaScript i seg selv ikke har direkte tilgang til filsystemet, brukes `fs`-modulen typisk for slike operasjoner. Her er en enkel måte å sjekke om en mappe finnes ved bruk av `fs.existsSync()`:
 
 ```javascript
 const fs = require('fs');
 
-// Synkron metode
-const directoryExistsSync = fs.existsSync('/path/to/directory');
-console.log(directoryExistsSync); // Output: true eller false
+const directoryPath = './sample-directory';
 
-// Asynkron metode
-fs.access('/path/to/directory', fs.constants.F_OK, (err) => {
-    const directoryExistsAsync = !err;
-    console.log(directoryExistsAsync); // Output: true eller false
-});
+// Sjekk om mappen finnes
+if (fs.existsSync(directoryPath)) {
+  console.log('Mappen finnes.');
+} else {
+  console.log('Mappen finnes ikke.');
+}
+```
+**Eksempel på utskrift:**
+```
+Mappen finnes.
+```
+Eller, for en ikke-blokkerende asynkron tilnærming, bruk `fs.promises` med `async/await`:
+
+```javascript
+const fs = require('fs').promises;
+
+async function checkDirectory(directoryPath) {
+  try {
+    await fs.access(directoryPath);
+    console.log('Mappen finnes.');
+  } catch (error) {
+    console.log('Mappen finnes ikke.');
+  }
+}
+
+checkDirectory('./sample-directory');
+```
+**Eksempel på utskrift:**
+```
+Mappen finnes.
 ```
 
-## Dypdykk
-Tidligere, brukte programmere `fs.exists`, men dette er nå foreldet på grunn av sin ikke-standard tilbakekallingsargumenter og uforutsigbar natur. Selv `fs.existsSync` kan potensielt føre til ytelsesproblemer da det er synkront og blokkerer event-loopen. Asynkrone alternativer som `fs.access` med `fs.constants.F_OK` er foretrukket for non-blocking kode.
+For prosjekter som i stor grad benytter seg av fil- og mappeoperasjoner, tilbyr `fs-extra`-pakken, en utvidelse av den native `fs`-modulen, praktiske tilleggsfunksjoner. Her er hvordan du kan oppnå det samme med `fs-extra`:
 
-Noen ganger bruker programmerere tredjeparts bibliotek som `fs-extra` eller frameworks som gir abstraksjoner over filsystemet, for mer komfortabel håndtering av slike operasjoner.
+```javascript
+const fs = require('fs-extra');
 
-Det er også verdt å merke seg at på grunn av race conditions kan en katalog som sjekkes for eksistens bli slettet før den faktisk brukes, så noen situasjoner kan kreve ytterligere håndtering av slike tilfeller.
+const directoryPath = './sample-directory';
 
-## Se også
-- Node.js `fs` dokumentasjon: https://nodejs.org/api/fs.html
-- `fs-extra` modulen: https://www.npmjs.com/package/fs-extra
-- Artikkel om å håndtere race conditions: https://nodejs.org/en/docs/guides/race-conditions/
+// Sjekk om mappen finnes
+fs.pathExists(directoryPath)
+  .then(exists => console.log(exists ? 'Mappen finnes.' : 'Mappen finnes ikke.'))
+  .catch(err => console.error(err));
+```
+**Eksempel på utskrift:**
+```
+Mappen finnes.
+```
+
+Denne tilnærmingen muliggjør ren, lesbar kode som smidig integreres med moderne JavaScript-praksiser.

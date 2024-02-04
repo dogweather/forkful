@@ -1,54 +1,91 @@
 ---
-title:                "Arbete med YAML"
-date:                  2024-01-19
-simple_title:         "Arbete med YAML"
-
+title:                "Att Arbeta med YAML"
+date:                  2024-02-03T19:25:17.166599-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Att Arbeta med YAML"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/elm/working-with-yaml.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-YAML är ett format för datastrukturer, tänkt för konfigurationsfiler. Programmerare använder det för dess läsbarhet och enkelhet att parsa till olika datatyper.
+Elm stöder inte YAML inbyggt, ett data serialiseringsformat som ofta används för konfigurationsfiler eller datadelning, på grund av dess starka betoning på typsäkerhet och förutsägbara resultat. Programmerare stöter dock ofta på YAML när de hanterar API:er eller konfigurationer inom webbutveckling, vilket kräver tillförlitliga metoder för att tolka YAML-data till Elms strikt typade ekosystem för sömlös integration och manipulation.
 
-## Hur gör man:
-Elm har inget inbyggt stöd för YAML, så vi använder `elm-yaml` paketet. Installera genom `elm install elm/json` följt av `elm install kraklin/elm-yaml`. Här är ett exempel:
+## Hur man gör:
+För att hantera YAML i Elm behöver du vanligtvis konvertera YAML till JSON utanför Elm och sedan använda Elms inbyggda JSON-avkodningsfunktionalitet för att arbeta med datan. Även om denna metod kräver ett extra konverteringssteg, utnyttjar den Elms starka typsystem för att säkerställa dataintegritet. Populära verktyg för konvertering av YAML till JSON inkluderar onlinekonverterare eller backend-tjänster. När du har JSON kan du använda Elms `Json.Decode`-modul för att arbeta med datan.
 
-```Elm
-import Json.Decode exposing (Decoder)
-import Yaml.Decode exposing (yamlString, string, int, dict, decodeValue)
+Först, anta att du har följande YAML-data:
+
+```yaml
+person:
+  name: Jane Doe
+  age: 30
+```
+
+Konvertera det till JSON-format:
+
+```json
+{
+  "person": {
+    "name": "Jane Doe",
+    "age": 30
+  }
+}
+```
+
+Definiera sedan din Elm-modell och avkodare:
+
+```elm
+module Main exposing (..)
+
+import Html exposing (text)
+import Json.Decode as Decode
 
 type alias Person =
     { name : String
     , age : Int
     }
 
-personDecoder : Decoder Person
+personDecoder : Decode.Decoder Person
 personDecoder =
-    Yaml.Decode.map2 Person
-        (dict "name" string)
-        (dict "age" int)
+    Decode.map2 Person
+        (Decode.field "name" Decode.string)
+        (Decode.field "age" Decode.int)
 
-sampleYaml : String
-sampleYaml =
-    """
-    name: John Doe
-    age: 30
-    """
-
-parseResult : Result String Person
-parseResult =
-    sampleYaml
-        |> yamlString
-        |> decodeValue personDecoder
 ```
 
-Du parsar `sampleYaml` och får antingen ett felmeddelande eller ett `Person` objekt.
+För att använda denna avkodare för att konvertera JSON till en Elm-typ:
 
-## Fördjupning
-YAML, "YAML Ain't Markup Language", lanserades i början av 2000-talet som ett enklare alternativ till XML. JSON är också ett alternativ men YAML's mer läsbara format är ofta att föredra för konfigurationsfiler. I Elm implementeras YAML-parsing genom externa bibliotek som `elm-yaml`, som bygger på att omvandla YAML till JSON för sedan använda Elms kraftfulla JSON dekodare.
+```elm
+import Json.Decode as Decode
 
-## Se även
-- YAML specifikation: [yaml.org/spec/1.2/spec.html](https://yaml.org/spec/1.2/spec.html)
-- En jämförelse mellan JSON och YAML: [stackoverflow.com/a/1729545/3047276](https://stackoverflow.com/a/1729545/3047276)
+jsonString = 
+    """
+    {
+      "person": {
+        "name": "Jane Doe",
+        "age": 30
+      }
+    }
+    """
+
+decodeResult = Decode.decodeString (Decode.field "person" personDecoder) jsonString
+
+main =
+    case decodeResult of
+        Ok person ->
+            Html.text ("Hej, " ++ person.name ++ "!")
+            
+        Err _ ->
+            Html.text "Ett fel uppstod vid avkodningen."
+```
+
+Utdata (renderad i en Elm-applikation):
+```
+Hej, Jane Doe!
+```
+
+Denna metod säkerställer att du kan arbeta med YAML-data i Elm genom att använda JSON som ett intermediärt format, vilket utnyttjar Elms robusta typsystem och JSON-avkodningsförmåga för att säkert och effektivt hantera extern data.

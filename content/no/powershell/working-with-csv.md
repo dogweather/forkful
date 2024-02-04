@@ -1,49 +1,81 @@
 ---
-title:                "Arbeid med CSV"
-date:                  2024-01-19
-simple_title:         "Arbeid med CSV"
-
+title:                "Arbeide med CSV"
+date:                  2024-02-03T19:20:53.731117-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Arbeide med CSV"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/powershell/working-with-csv.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Hva & Hvorfor?
-CSV (Comma Separated Values) er et enkelt filformat som brukes til å lagre tabelldata, slik som en database eller et regneark i ren tekst. Programmerere bruker CSV fordi det er lett å lese og skrive data i et standard format som kan deles mellom ulike systemer.
+## Hva og hvorfor?
 
-## Hvordan gjøre det:
-For å jobbe med CSV-filer i PowerShell bruker vi ofte Import-Csv og Export-Csv cmdletene. La oss se noen eksempler:
+Å jobbe med CSV-filer (Comma-Separated Values) er en vanlig oppgave for å håndtere og manipulere data i en strukturert, tabellform. Programmerere utfører ofte denne operasjonen for å importere, eksportere eller manipulere data effektivt for ulike applikasjoner, slik som dataanalyse, rapportering eller til og med for å drive webapplikasjoner.
 
-```PowerShell
+## Hvordan:
+
+### Lese en CSV-fil
+
+For å lese fra en CSV-fil, bruk `Import-Csv` cmdleten. Denne cmdleten leser filen og konverterer den til egendefinerte PowerShell-objekter for hver rad.
+
+```powershell
 # Importere en CSV-fil
-$data = Import-Csv -Path "C:\eksempel\data.csv"
-
-# Vise de første fem radene
-$data | Select-Object -First 5
-
-# Eksportere data til en ny CSV-fil
-$data | Export-Csv -Path "C:\eksempel\utdata.csv" -NoTypeInformation
+$data = Import-Csv -Path "C:\Data\users.csv"
+# Vise innholdet
+$data
 ```
 
-Sample output for å vise de første fem radene:
+**Eksempel på utdata:**
 
-```PowerShell
-Navn  Alder  Yrke
-----  -----  ----
-Ola   34     Snekr
-Kari  28     Designer
-Per   45     Lærer
-Eva   52     Forsker
-Jon   38     Utvikler
+```
+Navn    Alder    By
+----    -----    ---
+John    23      New York
+Doe     29      Los Angeles
 ```
 
-## Dypdykk
-Historisk sett kommer CSV fra tidlige dager i databehandling hvor det var et behov for et enkelt, tekstbasert format for å utveksle data. Alternativene inkluderer nå XML, JSON og andre spesialiserte dataformater, men CSV forblir populær på grunn av sin enkelhet.
+### Skrive til en CSV-fil
 
-Implementasjonsdetaljer å merke seg i PowerShell er at Import-Csv automatisk lager objekter hvor hvert felt i CSV blir en egenskap. Dette gjør det enkelt å manipulere dataene med andre PowerShell cmdlets.
+På den andre siden, for å skrive data til en CSV-fil, brukes `Export-Csv` cmdleten. Denne cmdleten tar inndataobjekter og konverterer dem til et CSV-format.
 
-## Se Også
-- Microsofts offisielle dokumentasjon for Import-Csv: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/import-csv
-- Microsofts offisielle dokumentasjon for Export-Csv: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/export-csv
-- Learn PowerShell Book - Arbeide med CSV-filer: https://www.leanpub.com/learn-powershell
+```powershell
+# Lage et objekt for eksport
+$users = @(
+    [PSCustomObject]@{Navn='John'; Alder='23'; By='New York'},
+    [PSCustomObject]@{Navn='Doe'; Alder='29'; By='Los Angeles'}
+)
+
+# Eksportere til en CSV-fil
+$users | Export-Csv -Path "C:\Data\new_users.csv" -NoTypeInformation
+```
+
+Etter utførelse, en fil med navnet `new_users.csv` er opprettet med den angitte dataen.
+
+### Filtrering og manipulering av CSV-innhold
+
+For å filtrere eller manipulere data fra en CSV-fil, bruk PowerShell sine objektmanipuleringsegenskaper. For eksempel, for å kun velge brukere over en viss alder og fra en spesifikk by:
+
+```powershell
+# Importere og filtrere data
+$filteredData = Import-Csv -Path "C:\Data\users.csv" | Where-Object {
+    $_.Alder -gt 25 -og $_.By -eq 'Los Angeles'
+}
+
+# Vise filtrerte data
+$filteredData
+```
+
+**Eksempel på utdata:**
+
+```
+Navn    Alder    By
+----    -----    ---
+Doe     29      Los Angeles
+```
+
+### Bruk av tredjepartsbiblioteker
+
+Selv om PowerShell sine innebygde cmdleter vanligvis er tilstrekkelige for vanlige oppgaver, kan mer komplekse operasjoner ha nytte av tredjepartsbiblioteker eller verktøy. Imidlertid, for standard CSV-manipulasjon, som lesing, skriving, filtrering eller sortering, tilbyr vanligvis PowerShell sine innebygde cmdleter robust funksjonalitet uten behov for ekstra biblioteker.

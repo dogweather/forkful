@@ -1,38 +1,53 @@
 ---
 title:                "Capitalizando una cadena de texto"
-date:                  2024-01-19
+date:                  2024-02-03T19:05:49.390749-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Capitalizando una cadena de texto"
-
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/lua/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## ¿Qué y Por Qué?
-Capitalizar una cadena significa convertir la primera letra de cada palabra a mayúscula. Los programadores lo hacen para formatear títulos o nombres propios, asegurando uniformidad y legibilidad en el texto.
+## ¿Qué y por qué?
+Capitalizar una cadena implica modificar el primer carácter de cada palabra en una oración para que sea mayúscula, mientras se asegura de que el resto sean minúsculas. Esta técnica se utiliza comúnmente para formatear texto para que tenga una salida más profesional o legible, como preparar títulos o entradas de usuario para su visualización.
 
-## Cómo hacer:
-Aquí tienes un ejemplo de cómo capitalizar una cadena en Lua:
+## Cómo hacerlo:
+Lua no tiene una función integrada para capitalizar cadenas, pero puedes lograr fácilmente esta tarea utilizando funciones básicas de manipulación de cadenas. Aquí hay una función simple para capitalizar la primera letra de una sola palabra:
 
-```Lua
-function capitalizar(cadena)
-    return (cadena:gsub("%f[%a](%a)", function(letra) return letra:upper() end))
+```lua
+function capitalize(word)
+    return word:sub(1,1):upper() .. word:sub(2):lower()
 end
 
--- Uso de la función
-local frase = "lua es divertido"
-print(capitalizar(frase))  -- Output: Lua Es Divertido
+print(capitalize("hello"))  -- Salida: Hello
 ```
 
-## Inmersión Profunda
-En el pasado convierte rápidamente las cadenas a mayúsculas con funciones básicas. Hoy Lua no tiene una función incorporada para capitalizar, así que creamos una usando patrones de coincidencia (`gsub`) y manipulando cada palabra.
+Para capitalizar cada palabra en una oración, puedes dividir la oración en palabras, capitalizar cada una y luego volver a unirlas:
 
-Alternativas incluyen usar librerías externas o escribir funciones adicionales para manejar casos especiales, como abreviaturas o acrónimos.
+```lua
+function capitalizeSentence(sentence)
+    local words = {}
+    for word in sentence:gmatch("%S+") do
+        table.insert(words, capitalize(word))
+    end
+    return table.concat(words, " ")
+end
 
-La función `gsub` es poderosa; permite modificar texto con gran precisión. En nuestro caso, `%f[%a]` es un patrón que encuentra la frontera entre un carácter no alfabético y uno alfabético, y `(%a)` coincide con la primera letra alfabética encontrada.
+print(capitalizeSentence("hello world from lua"))  -- Salida: Hello World From Lua
+```
 
-## Ver También
-- [Documentación oficial de Lua](https://www.lua.org/manual/5.4/)
-- [Tutorial de los patrones de Lua](https://www.lua.org/pil/20.2.html)
-- [Foros de la comunidad Lua](http://www.lua.org/community.html)
+Si estás trabajando en un proyecto donde el rendimiento es clave y te encuentras necesitando capacidades de manipulación de cadenas más avanzadas, considera usar una biblioteca de terceros como `Penlight`. Penlight mejora Lua con funciones de manejo de cadenas más versátiles, entre otras utilidades:
+
+```lua
+-- Asumiendo que Penlight está instalado:
+local pl = require("pl.stringx")
+local text = "hello lua users"
+text = pl.capitalized(text)
+print(text)  -- Salida: Hello lua users
+
+-- Nota: La función capitalized de Penlight solo capitaliza la primera palabra.
+-- Para capitalizar cada palabra, todavía deberías implementar una solución personalizada o explorar otras bibliotecas.
+```

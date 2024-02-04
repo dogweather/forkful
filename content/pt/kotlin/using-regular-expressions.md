@@ -1,47 +1,78 @@
 ---
-title:                "Utilizando expressões regulares"
-date:                  2024-01-19
-simple_title:         "Utilizando expressões regulares"
-
+title:                "Usando expressões regulares"
+date:                  2024-02-03T19:17:32.989217-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Usando expressões regulares"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/kotlin/using-regular-expressions.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Expressões regulares, ou regex, são ferramentas para encontrar padrões em texto. Programadores as utilizam para buscar, substituir ou validar dados de forma eficiente.
+## O Que e Por Que?
 
-## How to:
+Expressões regulares (regex) são uma ferramenta poderosa para o processamento de texto, permitindo que programadores busquem, correspondam e manipulem strings com técnicas avançadas de correspondência de padrões. Em Kotlin, utilizar regex ajuda a executar de forma eficiente tarefas complexas de processamento de texto como validação, análise sintática ou transformação, tornando-se indispensável para tarefas que vão desde a simples manipulação de strings até a análise de texto complexa.
+
+## Como Fazer:
+
+### Correspondência Básica
+Para verificar se uma string corresponde a um padrão específico em Kotlin, você pode usar o método `matches` da classe `Regex`.
 
 ```kotlin
-fun main() {
-    val texto = "O Kotlin é divertido! Versão 2023."
+val pattern = "kotlin".toRegex()
+val input = "Eu amo kotlin"
+val result = pattern.containsMatchIn(input)
 
-    // Procurar por palavras que começam com "d"
-    val regex = Regex("\\bd\\w+")
-    val resultado = regex.find(texto)
-    println(resultado?.value)  // Saída: "divertido"
-
-    // Substituir "divertido" por "incrível"
-    val textoAtualizado = texto.replace(regex, "incrível")
-    println(textoAtualizado)  // Saída: "O Kotlin é incrível! Versão 2023."
-
-    // Validar formato de data (DD/MM/AAAA)
-    val regexData = Regex("\\b\\d{2}/\\d{2}/\\d{4}\\b")
-    val dataValida = "15/10/2023"
-    val dataInvalida = "32/13/2023"
-
-    println(regexData.matches(dataValida))    // Saída: true
-    println(regexData.matches(dataInvalida))  // Saída: false
-}
+println(result)  // Saída: true
 ```
 
-## Deep Dive
-Expressões regulares surgiram nos anos 1950 com o matemático Stephen Kleene. Alternativas incluem parsers de strings e linguagens específicas de domínio (DSLs), mas são mais complexas pra implementar. A biblioteca `kotlin.text` oferece suporte a regex com classes como `Regex` e funções como `matches`, `find`, e `replace`.
+### Encontrando e Extraindo Partes da String
+Se você deseja encontrar partes de uma string que correspondam a um padrão, em Kotlin, você pode iterar sobre todas as correspondências:
 
-## See Also
+```kotlin
+val datePattern = "\\d{2}/\\d{2}/\\d{4}".toRegex()
+val input = "A data de hoje é 07/09/2023."
+val dates = datePattern.findAll(input)
 
-- [Documentação Oficial Kotlin - Regex](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-regex/)
-- [w3schools - Regex Tutorial](https://www.w3schools.com/java/java_regex.asp)
-- [Regex101 - Teste suas Expressões Regulares](https://regex101.com/)
+for (date in dates) {
+    println(date.value)
+}
+// Saída: 07/09/2023
+```
+
+### Substituindo Texto
+Substituir partes de uma string que correspondem a um padrão é simples com a função `replace`:
+
+```kotlin
+val input = "Nome do usuário: usuario123"
+val sanitizedInput = input.replace("\\d+".toRegex(), "XXX")
+
+println(sanitizedInput)  // Saída: Nome do usuário: usuarioXXX
+```
+
+### Dividindo Strings
+Divida uma string em uma lista, usando um padrão regex como delimitador:
+
+```kotlin
+val input = "1,2,3,4,5"
+val numbers = input.split(",".toRegex())
+
+println(numbers)  // Saída: [1, 2, 3, 4, 5]
+```
+
+### Bibliotecas de Terceiros: Kotest
+[Kotest](https://github.com/kotest/kotest) é uma biblioteca de testes Kotlin popular que estende o suporte regex integrado de Kotlin, particularmente útil para validação em casos de teste.
+
+```kotlin
+// Assumindo que o Kotest foi adicionado ao seu projeto
+import io.kotest.matchers.string.shouldMatch
+
+val input = "kotlin@teste.com"
+input shouldMatch "\\S+@\\S+\\.com".toRegex()
+
+// Isso passará no teste se a entrada corresponder ao padrão de email.
+```
+
+Ao incorporar expressões regulares em suas aplicações Kotlin, você pode realizar processamento de texto sofisticado de forma eficiente. Seja validando entrada de usuário, extraindo dados ou transformando strings, padrões regex oferecem uma solução robusta.

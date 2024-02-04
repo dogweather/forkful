@@ -1,43 +1,53 @@
 ---
-title:                "現在の日付を取得する"
-date:                  2024-01-20T15:12:56.792615-07:00
-simple_title:         "現在の日付を取得する"
-
+title:                "現在の日付の取得"
+date:                  2024-02-03T19:09:01.143972-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "現在の日付の取得"
 tag:                  "Dates and Times"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/bash/getting-the-current-date.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (なぜとは？)
-プログラマは日付データをよく使います。ログ作成、スケジューリング、有効期限の管理などに現在日付を取得することが必要です。
+## なぜ & どうして?
+Bashで現在の日付を取得するには、組み込みのコマンドを使用して、さまざまな形式で日付と時刻を表示することが関わっています。プログラマーは、ログのタイムスタンプ、タスクのスケジューリング、または行動がいつ行われたかを追跡するためのシステム情報スクリプトの一部として、この機能を使用します。
 
-## How to: (方法)
-```Bash
-# 現在の日付を表示
+## 使い方:
+Bashでは、`date`コマンドが現在の日付と時刻を取得するための主要なツールです。これを使用する方法のいくつかの例を以下に示します:
+
+1. **デフォルトフォーマットで現在の日付と時刻を取得する:**
+
+```bash
+date
+```
+
+*サンプル出力:*
+```
+Wed Apr 5 14:22:04 PDT 2023
+```
+
+2. **出力フォーマットをカスタマイズする:** 出力フォーマットは、`+%`形式指定子を使用して指定できます。たとえば、日付をYYYY-MM-DD形式で表示するには:
+
+```bash
 date "+%Y-%m-%d"
 ```
 
-出力例:
+*サンプル出力:*
 ```
 2023-04-05
 ```
 
-```Bash
-# 時間も含めて表示
-date "+%Y-%m-%d %H:%M:%S"
+3. **現在のUNIXタイムスタンプを取得する:** UNIXタイムスタンプは、Unix Epoch（1970年1月1日）以来の秒数です。これは、時間差に基づいて計算を行うスクリプトにとって便利です。
+
+```bash
+date "+%s"
 ```
 
-出力例:
+*サンプル出力:*
 ```
-2023-04-05 15:21:30
+1672877344
 ```
 
-## Deep Dive (詳細情報)
-UNIX系システムでは、1970年1月1日を初めとするエポックタイムからの経過時間で日付が計算されます。`date` コマンドはこのエポックタイムを元に現在日付を提供します。他の方法として `awk` や `perl` を使うことも可能ですが、`date` コマンドが最も直接的で簡単です。スクリプト内で `$(date)` 構文を使用し、コマンドの出力を変数に代入し操作を行うことが一般的です。タイムゾーンやロケールによって表示形式が変わることも重要な点です。
-
-## See Also (関連情報)
-- GNU Coreutils `date`: https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html
-- Bash Scripting Tutorial: https://ryanstutorials.net/bash-scripting-tutorial/
-- Epoch & Unix Timestamp Conversion Tools: https://www.epochconverter.com/
+この基本操作には、通常、サードパーティのライブラリが使用されません。というのも、組み込みの`date`コマンドが包括的な機能を提供しているからです。しかし、より高度な日付と時刻の操作については、日付の算術や解析のためのライブラリを提供する他のプログラミング言語やツール、例えばPythonの`datetime`モジュールを使用する場合があります。

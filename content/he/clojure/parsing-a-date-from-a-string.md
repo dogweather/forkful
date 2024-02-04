@@ -1,38 +1,49 @@
 ---
-title:                "ניתוח תאריך ממחרוזת"
-date:                  2024-01-20T15:35:40.157966-07:00
-simple_title:         "ניתוח תאריך ממחרוזת"
-
+title:                "פרסום תאריך ממחרוזת"
+date:                  2024-02-03T19:14:18.016754-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "פרסום תאריך ממחרוזת"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/clojure/parsing-a-date-from-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## מה ולמה?
-פיענוח תאריך ממחרוזת הוא התהליך שבו אנו ממירים טקסט למבנה תאריך מובנה. תכנתים עושים זאת כדי לאפשר עיבוד וניתוח של נתוני תאריכים בצורה יעילה ונכונה.
+לפרס תאריך ממחרוזת ב-Clojure הוא פעולה של המרת הצגות טקסטואליות של תאריכים וזמנים לצורה יותר שימושית (למשל, אובייקט DateTime של Clojure). תהליך זה הוא יסודי לעיבוד נתונים, רישום (לוגינג), או כל יישום המניפולט נתונים זמניים, מאפשר לתכנתים לבצע משימות של פעולה, השוואה, או מניפולציה על תאריכים ביעילות.
 
 ## איך לעשות:
-מוטב העסקה הוא תוספת `java-time` המתממשקת עם Java Time API בקלות.
+Clojure, בתור שפה המבוססת על JVM, מאפשרת לך להשתמש ישירות בספריות התאריכים והזמנים של Java. בואו נתחיל עם השילוב הטבעי של Java ואז נבדוק איך להשתמש בספרייה צד שלישי פופולרית, clj-time, לפתרונות יותר אידיומטיים ב-Clojure.
 
-```Clojure
-(require '[java-time :as jt])
+### שימוש בשילוב עם Java
+Clojure יכולה להשתמש ישירות ב-`java.time.LocalDate` של Java לפרס תאריכים ממחרוזות:
+```clojure
+(require '[clojure.java.io :as io])
 
-(defn parse-date [date-str]
-  (jt/local-date date-str))
-
-(parse-date "2023-04-01")
-;; => #object[java.time.LocalDate 0x4e64842e "2023-04-01"]
+; פרס תאריך באמצעות שילוב עם Java
+(let [date-str "2023-04-01"
+      date (java.time.LocalDate/parse date-str)]
+  (println date))
+; פלט: 2023-04-01
 ```
-כעת יש לנו עצם `LocalDate` שאיתו אפשר לעבוד בקלות.
 
-## צלילה לעומק
-פעם היינו משתמשים ב`java.util.Date` אך ה-API של Java Time החדש הוא הרבה יותר רובוסטי ונוח. התוספת `java-time` מנצלת זאת לטובת מתכנתי Clojure ומציעה ממשק נעים ופונקציונלי.
+### שימוש ב-clj-time
+ספרייה יותר אידיומטית לטיפול בתאריכים וזמנים ב-Clojure היא `clj-time`. היא עוטפת את Joda-Time, ספרייה מקיפה לפעולות עם תאריכים וזמנים. ראשית, תצטרכו להוסיף את `clj-time` לתלות של הפרויקט שלכם. הנה איך אתם פורסים מחרוזת תאריך באמצעות `clj-time`:
 
-אלטרנטיבה לכך היא דרך `clj-time` שהיא ספרייה פופולרית גם כן, אך היא נחשבת כיום לפחות עדכנית לאחר הופעת `java-time`.
+```clojure
+; הקפידו להוסיף את [clj-time "0.15.2"] ל-project.clj שלכם תחת :dependencies
 
-במידת הצורך, ניתן לעבוד ישירות עם Java API ללא תוספים, אך דורש זאת היכרות עמוקה יותר של ה-Java Interop.
+(require '[clj-time.format :as fmt]
+         '[clj-time.core :as time])
 
-## ראה גם
-- [java-time GitHub](https://github.com/dm3/clojure.java-time)
-- [Java Time API](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
+; הגדרת פורמטר
+(let [formatter (fmt/formatter "yyyy-MM-dd")
+      date-str "2023-04-01"
+      parsed-date (fmt/parse formatter date-str)]
+  (println parsed-date))
+; פלט: #object[org.joda.time.DateTime 0x76eccb5d "2023-04-01T00:00:00.000Z"]
+```
+
+דוגמאות אלה מדגימות פרס תאריך בסיסי. שני השיטות שימושיות, אך `clj-time` יכולה לספק גישה יותר ממוקדת ב-Clojure עם פונקציונליות נוספת לדרישות מורכבות יותר.

@@ -1,51 +1,68 @@
 ---
 title:                "Tarkistetaan, onko hakemisto olemassa"
-date:                  2024-01-19
+date:                  2024-02-03T19:07:14.166338-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Tarkistetaan, onko hakemisto olemassa"
-
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/cpp/checking-if-a-directory-exists.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Mitä & Miksi?)
-Tarkistetaan, olemassaoleeko kansio koodissa. Näin vältetään virheitä, kun tiedostoja luetaan tai kirjoitetaan. Tärkeää luotettavuuden ja käyttäjäkokemuksen kannalta.
+## Mikä & Miksi?
+Hakemiston olemassaolon tarkistaminen tarkoittaa määrittämistä, onko tietyssä polussa hakemistoa ennen toimintojen, kuten tiedostojen lukemisen tai niihin kirjoittamisen, suorittamista. Ohjelmoijat tekevät sen välttääkseen tiedosto-operaatioihin liittyviä virheitä, varmistaen sujuvamman ja luotettavamman tiedostonkäsittelyn tehtävien suorituksen sovelluksissaan.
 
-## How to (Kuinka tehdään)
-```C++
+## Miten:
+Modernissa C++:ssa (C++17 ja siitä eteenpäin) voit käyttää tiedostojärjestelmäkirjastoa hakemiston olemassaolon tarkistamiseen. Se tarjoaa suoraviivaisen ja standardoidun tavan suorittaa tiedostojärjestelmäoperaatioita, mukaan lukien hakemiston olemassaolon tarkistaminen.
+
+```cpp
 #include <iostream>
 #include <filesystem>
 
 namespace fs = std::filesystem;
 
 int main() {
-    fs::path dirPath = "/polun/tarkistettava/kansio";
+    const fs::path dirPath = "/path/to/directory";
 
-    if (fs::exists(dirPath)) {
-        std::cout << "Kansio on olemassa!" << std::endl;
+    if (fs::exists(dirPath) && fs::is_directory(dirPath)) {
+        std::cout << "Hakemisto on olemassa." << std::endl;
     } else {
-        std::cout << "Kansiota ei löydy." << std::endl;
+        std::cout << "Hakemistoa ei ole olemassa." << std::endl;
     }
 
     return 0;
 }
 ```
-**Tulostus:**
+Näyte tulosteesta, jos hakemisto on olemassa:
 ```
-Kansio on olemassa!
-```
-tai
-```
-Kansiota ei löydy.
+Hakemisto on olemassa.
 ```
 
-## Deep Dive (Sukellus syvälle)
-Tiedostojärjestelmien hallinta on ollut osa C++:aa pitkään, mutta vasta C++17 standardin myötä `std::filesystem` kirjasto tuli standardiksi. Ennen sitä, kehittäjät turvautuivat kolmannen osapuolen kirjastoihin, kuten Boost.Filesystem. Tietojen kirjoittaminen ja lukeminen olemattomiin kansioihin voi johtaa runtime-virheisiin, jotka ovat turhauttavia käyttäjille ja aiheuttavat ohjelman kaatumisia.
+Näyte tulosteesta, jos hakemistoa ei ole olemassa:
+```
+Hakemistoa ei ole olemassa.
+```
 
-C++17-standardi mahdollistaa kansioihin liittyvien toimintojen suorittamisen yhtenäisellä tavalla riippumatta käyttöjärjestelmästä. `std::filesystem`-kirjasto tarjoaa työkalut polkujen hallintaan, tarkasteluun ja manipulointiin. Jos sovelluksesi edellyttää vanhempia C++-standardeja, vaihtoehtona on käyttää `boost::filesystem` tai käyttöjärjestelmäkohtaisia rajapintoja, kuten `stat` POSIX-järjestelmissä tai `GetFileAttributes` Windowsissa.
+Projekteille, jotka eivät vielä käytä C++17:ää tai tarvitsevat lisäominaisuuksia, Boost Filesystem -kirjasto on suosittu kolmannen osapuolen valinta, joka tarjoaa samanlaisen toiminnallisuuden.
 
-## See Also (Katso myös)
-- C++ Standard Library reference: [std::filesystem](https://en.cppreference.com/w/cpp/filesystem)
-- Boost.Filesystem library documentation: [Boost.Filesystem](https://www.boost.org/doc/libs/1_75_0/libs/filesystem/doc/index.htm)
-- POSIX 'stat': [POSIX stat](https://pubs.opengroup.org/onlinepubs/009695399/functions/stat.html)
+```cpp
+#include <iostream>
+#include <boost/filesystem.hpp>
+
+namespace fs = boost::filesystem;
+
+int main() {
+    const fs::path dirPath = "/path/to/directory";
+
+    if (fs::exists(dirPath) && fs::is_directory(dirPath)) {
+        std::cout << "Hakemisto on olemassa." << std::endl;
+    } else {
+        std::cout << "Hakemistoa ei ole olemassa." << std::endl;
+    }
+
+    return 0;
+}
+```
+Boost Filesystemin käyttöä, tuloste olisi identtinen C++17 tiedostojärjestelmäesimerkin kanssa, riippuen hakemiston olemassaolosta määritetyssä polussa.

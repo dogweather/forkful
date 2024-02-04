@@ -1,39 +1,75 @@
 ---
 title:                "Trabalhando com CSV"
-date:                  2024-01-19
+date:                  2024-02-03T19:18:40.153847-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Trabalhando com CSV"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/bash/working-with-csv.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## O que é & Por quê?
-Trabalhar com CSV (Valores Separados por Vírgula) é lidar com dados em um formato de texto simples muito usado para troca de informações entre diferentes sistemas. Programadores o utilizam pela simplicidade, interoperabilidade e por ser amplamente suportado.
+## O que é & Por que?
+Trabalhar com arquivos CSV (Valores Separados por Vírgula) no Bash é sobre processar e manipular dados tabulares armazenados em formato de texto simples. Isso é essencial para programadores, pois permite a automação de tarefas de transformação, análise e integração de dados diretamente da linha de comando, sem a necessidade de ferramentas mais pesadas ou ambientes de programação.
 
 ## Como fazer:
-```Bash
-# Lendo um arquivo CSV linha por linha
-while IFS=, read -r col1 col2 col3
+
+**Lendo um Arquivo CSV Linha por Linha**
+
+```bash
+while IFS=, read -r coluna1 coluna2 coluna3
 do
-  echo "Coluna1: $col1 - Coluna2: $col2 - Coluna3: $col3"
+  echo "Coluna 1: $coluna1, Coluna 2: $coluna2, Coluna 3: $coluna3"
 done < exemplo.csv
 ```
-Saída esperada:
+
+*Saída de exemplo:*
+
 ```
-Coluna1: Valor1 - Coluna2: Valor2 - Coluna3: Valor3
+Coluna 1: id, Coluna 2: nome, Coluna 3: email
 ...
 ```
-```Bash
-# Extraindo dados com 'cut'
-cut -d ',' -f 2 exemplo.csv # Retorna a segunda coluna de cada linha
+
+**Filtrando Linhas do CSV com Base em uma Condição**
+
+Usando `awk`, você pode facilmente filtrar linhas. Por exemplo, para encontrar linhas onde a segunda coluna é igual a "Alice":
+
+```bash
+awk -F, '$2 == "Alice" { print $0 }' exemplo.csv
 ```
 
-## Mergulho Profundo
-O formato CSV surgiu na década de 1970 e se tornou um padrão informal ao longo do tempo devido à sua simplicidade. Alternativas, como o formato JSON ou XML, oferecem estruturas mais ricas, mas são mais complexas. Detalhes de implementação no Bash incluem a manipulação do delimitador de campo (IFS) e o uso de loops para processar cada linha.
+**Modificando o Valor de uma Coluna**
 
-## Veja Também
-- Manual do Bash: https://www.gnu.org/software/bash/manual/
-- Tutorial AWK para processamento de CSV: https://www.gnu.org/software/gawk/manual/gawk.html
-- Guia avançado de scripts de shell: https://tldp.org/LDP/abs/html/
+Para alterar a segunda coluna para maiúsculas:
+
+```bash
+awk -F, 'BEGIN {OFS=",";} { $2 = toupper($2); print $0; }' exemplo.csv
+```
+
+**Ordenando um Arquivo CSV Baseado em uma Coluna**
+
+Você pode ordenar um arquivo CSV baseado, digamos, na terceira coluna (numericamente):
+
+```bash
+sort -t, -k3,3n exemplo.csv
+```
+
+**Usando `csvkit` para Tarefas Mais Complexas**
+
+`csvkit` é um conjunto de ferramentas de linha de comando para converter para e trabalhar com CSV. Pode ser instalado via pip.
+
+Para converter um arquivo JSON para CSV:
+
+```bash
+in2csv data.json > data.csv
+```
+
+Para consultar um arquivo CSV usando SQL:
+
+```bash
+csvsql --query "SELECT name FROM sample WHERE id = 10" exemplo.csv
+```
+
+*Nota: A instalação do `csvkit` requer Python e pode ser feita usando `pip install csvkit`.*

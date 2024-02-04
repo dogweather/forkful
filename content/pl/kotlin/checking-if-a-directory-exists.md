@@ -1,48 +1,43 @@
 ---
 title:                "Sprawdzanie, czy katalog istnieje"
-date:                  2024-01-20T14:57:26.506770-07:00
+date:                  2024-02-03T19:07:42.416439-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Sprawdzanie, czy katalog istnieje"
-
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/kotlin/checking-if-a-directory-exists.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Co i dlaczego?)
-Sprawdzanie, czy katalog istnieje w systemie plików, to kontrola przed próbą dostępu czy modyfikacji. Programiści robią to, aby uniknąć błędów i zapewnić prawidłowe działanie aplikacji.
+## Co i dlaczego?
+Sprawdzanie, czy katalog istnieje w Kotlinie, polega na weryfikacji obecności katalogu pod określoną ścieżką. Programiści wykonują to zadanie, aby zapobiec błędom, takim jak próba odczytu z katalogu, który nie istnieje, lub zapisu do niego, zapewniając płynniejszą obsługę plików i zarządzanie danymi w aplikacjach.
 
-## How to: (Jak to zrobić:)
-Użyjemy `File` z Javy w Kotlinie:
+## Jak to zrobić:
+Kotlin, działający na JVM, wykorzystuje Java File API do operacji na plikach, co czyni sprawdzanie istnienia katalogów prostym. Oto podstawowy przykład:
 
 ```kotlin
 import java.io.File
 
 fun main() {
-    val directoryPath = "/path/to/directory"
-    val directory = File(directoryPath)
+    val path = "/ścieżka/do/katalogu"
+    val katalog = File(path)
 
-    if (directory.exists() && directory.isDirectory) {
-        println("Katalog istnieje: $directoryPath")
+    if (katalog.exists() && katalog.isDirectory) {
+        println("Katalog istnieje: $path")
     } else {
-        println("Katalog nie istnieje.")
+        println("Katalog nie istnieje: $path")
     }
 }
 ```
-Jeśli katalog istnieje, output to:
+Przykładowe wyjście, zakładając, że katalog istnieje:
 ```
-Katalog istnieje: /path/to/directory
+Katalog istnieje: /ścieżka/do/katalogu
 ```
-Jeśli nie, output to:
+A jeśli nie:
 ```
-Katalog nie istnieje.
+Katalog nie istnieje: /ścieżka/do/katalogu
 ```
 
-## Deep Dive (Dogłębna analiza):
-Sprawdzanie czy katalog istnieje nie jest nowością – funkcje do tego służące są w językach programowania od dawna. W Kotlinie korzystamy bezpośrednio z klas Javy, bo Kotlin jest z nią kompatybilny. Alternatywy? Możesz użyć `Files.exists(Paths.get(directoryPath))` z Java NIO dla większej elastyczności i czytelności kodu. Gdy sprawdzasz istnienie katalogu, pamiętaj o uprawnieniach – możesz napotkać `SecurityException`. Optymalizacja? Sprawdzaj istnienie tylko wtedy, gdy to konieczne – nadmiarowe sprawdzanie może spowolnić aplikację.
-
-## See Also (Zobacz również):
-- [Kotlin Documentation](https://kotlinlang.org/docs/reference/)
-- [Java File Class](https://docs.oracle.com/javase/7/docs/api/java/io/File.html)
-- [Java NIO Files](https://docs.oracle.com/javase/8/docs/api/java/nio/file/Files.html)
-- [Handling Permissions in Kotlin](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/)
+W projekcie Kotlin, możesz również często pracować z bibliotekami lub frameworkami specyficznymi dla Kotlina, jak Ktor do aplikacji webowych czy kotlinx.coroutines do programowania asynchronicznego. Jednakże, do sprawdzania, czy katalog istnieje, standardowe Java `File` API, jak pokazano, jest zazwyczaj wystarczające i szeroko stosowane ze względu na interoperacyjność Kotlina z Javą. Nie są wymagane żadne biblioteki stron trzecich do tego konkretnego zadania, co czyni je dostępnym i prostym dla początkujących przechodzących z innych języków programowania na Kotlina.

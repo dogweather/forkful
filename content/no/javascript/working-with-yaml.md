@@ -1,47 +1,94 @@
 ---
-title:                "Arbeid med YAML"
-date:                  2024-01-19
-simple_title:         "Arbeid med YAML"
-
+title:                "Arbeider med YAML"
+date:                  2024-02-03T19:25:36.601474-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Arbeider med YAML"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/javascript/working-with-yaml.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-YAML er et enkelt format for data serialisering, ofte brukt i konfigurasjonsfiler og datautveksling. Utviklere bruker YAML fordi det er lettleselig for mennesker og enkelt å integrere med moderne programmeringsspråk som JavaScript.
+
+YAML, forkortelse for YAML Ain't Markup Language, er et menneskelesbart data serialiseringsformat. Programmerere bruker det ofte for konfigurasjonsfiler og datautveksling mellom språk på grunn av dets enkelhet og lesbarhet sammenlignet med JSON eller XML.
 
 ## Hvordan:
-For å jobbe med YAML i JavaScript, starter vi med å parse en YAML-streng til et JavaScript-objekt. Vi ser på et eksempel med `js-yaml`-biblioteket.
 
-```Javascript
+I JavaScript innebærer arbeid med YAML vanligvis bruk av et tredjeparts bibliotek siden språket ikke inkluderer en innebygd parser for YAML. Et av de mest populære bibliotekene til dette formålet er `js-yaml`. Du kan bruke `js-yaml` til å parse YAML til JavaScript-objekter og motsatt.
+
+Først må du installere `js-yaml`:
+
+```bash
+npm install js-yaml
+```
+
+Deretter kan du bruke det i prosjektene dine. Slik kan du laste en YAML-fil og parse den til et JavaScript-objekt:
+
+```javascript
+// Krev js-yaml-modulen
 const yaml = require('js-yaml');
-const fs = require('fs');
+const fs   = require('fs');
 
-// Les en YAML-fil og konverter til et JavaScript-objekt.
-let config = yaml.load(fs.readFileSync('config.yaml', 'utf8'));
-
-console.log(config);
+// Last inn YAML fra en fil
+prøv {
+  const doc = yaml.load(fs.readFileSync('./config.yaml', 'utf8'));
+  console.log(doc);
+} catch (e) {
+  console.error(e);
+}
 ```
-Anta at `config.yaml` inneholder:
+
+Hvis din `config.yaml` fil ser slik ut:
+
 ```yaml
-versjon: 1
-tjenester: 
-  webapp:
-    image: 'node:14'
-    ports: 
-      - '80:80'
-```
-Sample output vil være:
-```Javascript
-{ versjon: 1, tjenester: { webapp: { image: 'node:14', ports: ['80:80'] } } }
+version: 1
+services:
+  web:
+    image: "myapp/web:latest"
+    ports:
+      - "5000:5000"
 ```
 
-## Deep Dive
-YAML koden "YAML Ain't Markup Language" (tidligere "Yet Another Markup Language") formidler essensen: enkelhet og fokus på data fremfor markup. YAML ble foreslått tidlig på 2000-tallet som et brukervennlig alternativ til XML. Mens JSON også er et alternativ for konfigurasjon og serialisering, foretrekker mange YAML for dets lesbarhet og muligheten til å kommentere koden. Når YAML konverteres til et JavaScript-objekt, behandles dataene akkurat som om de ble definert direkte i JavaScript.
+Vil utdataen være:
 
-## Se Også
-- YAML offisiell nettside for spesifikasjoner: https://yaml.org/
-- `js-yaml` GitHub-side: https://github.com/nodeca/js-yaml
-- YAML vs. JSON sammenligning: https://json2yaml.com/compare-yaml-json
+```javascript
+{ version: 1,
+  services: 
+   { web: 
+      { image: 'myapp/web:latest',
+        ports: [ '5000:5000' ] } } }
+```
+
+For å gjøre det omvendte, å konvertere et JavaScript-objekt til en YAML-streng:
+
+```javascript
+const yaml = require('js-yaml');
+const obj = {
+  version: 1,
+  services: {
+    web: {
+      image: "myapp/web:latest",
+      ports: ["5000:5000"]
+    }
+  }
+};
+
+const yamlStr = yaml.dump(obj);
+console.log(yamlStr);
+```
+
+Denne koden vil produsere:
+
+```yaml
+version: 1
+services:
+  web:
+    image: myapp/web:latest
+    ports:
+      - '5000:5000'
+```
+
+Ved å bruke `js-yaml`, kan du enkelt integrere YAML-parsing og serialisering i JavaScript-prosjektene dine, noe som forbedrer datautvekslingsbarheten og konfigurasjonsstyringen.

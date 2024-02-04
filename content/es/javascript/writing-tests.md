@@ -1,56 +1,125 @@
 ---
 title:                "Escribiendo pruebas"
-date:                  2024-01-19
+date:                  2024-02-03T19:31:03.015066-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Escribiendo pruebas"
-
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/javascript/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Qué y Por Qué?
-Escribir tests significa crear pruebas automáticas que verifican si los diferentes partes de tu código funcionan como esperas. Los programadores escriben tests para ahorrar tiempo, evitar errores futuros y garantizar que los cambios no rompan funcionalidades existentes.
 
-## Cómo Hacerlo:
-Para escribir tests en JavaScript, puedes utilizar librerías como Jest. Aquí tienes un ejemplo sencillo de cómo se vería un test para una función que suma dos números:
+Escribir pruebas en JavaScript se refiere a la práctica de crear scripts automatizados que ejecutan tu código para asegurarse de que se comporte como se espera, lo que puede mejorar significativamente la fiabilidad y mantenibilidad de tus aplicaciones. Los programadores hacen esto para detectar errores temprano, facilitar la refactorización del código y asegurar que las nuevas características no rompan la funcionalidad existente.
 
-```Javascript
-// sum.js
-function sum(a, b) {
-    return a + b;
-}
+## Cómo hacerlo:
 
-module.exports = sum;
+### Enfoque Nativo (usando Jest)
+
+Jest es un marco de prueba popular que proporciona una API amigable para escribir pruebas unitarias en JavaScript. Requiere una configuración mínima y viene con características como funciones simuladas, temporizadores y pruebas de instantáneas.
+
+1. **Instalación**:
+
+```bash
+npm install --save-dev jest
 ```
 
-```Javascript
-// sum.test.js
-const sum = require('./sum');
+2. **Escribir una prueba simple**:
 
-test('suma 1 + 2 para dar como resultado 3', () => {
-    expect(sum(1, 2)).toBe(3);
+Crea un archivo llamado `sum.test.js`:
+
+```javascript
+const sum = require('./sum'); // Supongamos que esta función simplemente suma dos números
+
+test('suma 1 + 2 para igualar 3', () => {
+  expect(sum(1, 2)).toBe(3);
 });
 ```
 
-Línea de comando para correr Jest:
+3. **Ejecutar tu prueba**:
+
 ```bash
-$ npm run test
+npx jest
 ```
 
-Resultado esperado:
+**Salida de Ejemplo:**
+
+```plaintext
+PASS  ./sum.test.js
+✓ suma 1 + 2 para igualar 3 (5ms)
 ```
-PASS ./sum.test.js
-✓ suma 1 + 2 para dar como resultado 3 (5ms)
+
+### Probando Código Asíncrono
+
+Jest facilita la prueba de promesas y la sintaxis async/await:
+
+```javascript
+// asyncSum.js
+async function asyncSum(a, b) {
+  return Promise.resolve(a + b);
+}
+
+// asyncSum.test.js
+test('la suma asíncrona funciona', async () => {
+  await expect(asyncSum(1, 2)).resolves.toBe(3);
+});
+
 ```
 
-## Análisis Profundo:
-Historialmente, se ha hecho testing manualmente, pero esto resulta ser ineficiente y propenso a omitir errores. Ahora, la automatización es la clave. Alternativas a Jest incluyen Mocha, Jasmine y QUnit, entre otros. Vale la pena explorar la documentación oficial de Jest para aprender sobre mocks, spies y el ciclo de vida de los tests. Asegúrate de entender conceptos de testing como "unit tests", "integration tests" y "end-to-end tests" y cuándo aplicar cada uno.
+### Usando Bibliotecas de Terceros (Mocha & Chai)
 
-## Ver También:
-Puedes ampliar tu conocimiento sobre testing en JavaScript con las siguientes fuentes:
+Mocha es otro marco de prueba popular, a menudo utilizado con la biblioteca de aserciones Chai para pruebas más expresivas.
 
-- Documentación oficial de Jest: [jestjs.io](https://jestjs.io/)
-- Comparación de frameworks de testing en JavaScript: [https://stateofjs.com/](https://stateofjs.com/)
-- Artículos y guías sobre testing de JavaScript en [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Client-side_JavaScript_frameworks/Introduction)
-- Series de videos y tutoriales didácticos en [YouTube](https://www.youtube.com/results?search_query=javascript+testing)
+1. **Instalación**:
+
+```bash
+npm install --save-dev mocha chai
+```
+
+2. **Escribir una prueba con Mocha y Chai**:
+
+Crea `calculate.test.js`:
+
+```javascript
+const chai = require('chai');
+const expect = chai.expect;
+
+const calculate = require('./calculate'); // Un módulo de cálculo simple
+
+describe('Calculate', function() {
+  it('debería sumar dos valores', function() {
+    expect(calculate.sum(5, 2)).to.equal(7);
+  });
+});
+```
+
+3. **Ejecutar tus pruebas con Mocha**:
+
+Agrega un script en tu `package.json`:
+
+```json
+"scripts": {
+  "test": "mocha"
+}
+```
+
+Luego ejecuta:
+
+```bash
+npm test
+```
+
+**Salida de Ejemplo:**
+
+```plaintext
+  Calculate
+    ✓ debería sumar dos valores
+
+
+  1 passing (8ms)
+```
+
+Estos ejemplos ilustran la escritura y ejecución básica de pruebas en JavaScript. Adoptar un marco de prueba como Jest o Mocha con Chai puede proporcionar una base sólida para pruebas robustas de aplicaciones, ayudando a asegurar que tu código funcione según lo previsto a través de actualizaciones y refactorizaciones.

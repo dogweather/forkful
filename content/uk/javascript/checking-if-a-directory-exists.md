@@ -1,54 +1,74 @@
 ---
 title:                "Перевірка наявності директорії"
-date:                  2024-01-20T14:57:35.116137-07:00
+date:                  2024-02-03T19:08:00.633928-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Перевірка наявності директорії"
-
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/javascript/checking-if-a-directory-exists.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Що та Чому?)
-Перевірка існування директорії дозволяє уникнути помилок перед читанням чи записом файлів. Програмісти виконують таку перевірку щоб не спричинити збої у програмі при доступі до неіснуючих папок.
+## Що та Чому?
+Перевірка наявності директорії в JavaScript є невід'ємною для завдань маніпулювання файлами, дозволяючи скриптам підтверджувати наявність директорії перед читанням з неї або записом у неї. Ця операція запобігає помилкам і забезпечує плавнішу виконання програми, особливо в додатках, які динамічно обробляють файли або директорії на основі введення користувача або зовнішніх даних.
 
-## How to: (Як це зробити:)
-Використовуйте модуль `fs` з Node.js, щоб перевірити наявність директорії:
+## Як це зробити:
+У Node.js, оскільки JavaScript сам по собі не має прямого доступу до файлової системи, зазвичай використовується модуль `fs` для таких операцій. Ось простий спосіб перевірити, чи існує директорія, використовуючи `fs.existsSync()`:
 
-```Javascript
+```javascript
 const fs = require('fs');
-const path = './path/to/directory';
 
-try {
-  if (fs.statSync(path).isDirectory()) {
-    console.log('Directory exists.');
-  }
-} catch (e) {
-  if (e.code === 'ENOENT') {
-    console.log('Directory does not exist.');
-  } else {
-    console.error('An error occurred:', e);
-  }
+const directoryPath = './sample-directory';
+
+// Перевірка наявності директорії
+if (fs.existsSync(directoryPath)) {
+  console.log('Директорія існує.');
+} else {
+  console.log('Директорія не існує.');
 }
 ```
+**Вивід прикладу:**
+```
+Директорія існує.
+```
+Або, для неблокуючого асинхронного підходу, використовуйте `fs.promises` з `async/await`:
 
-Цей код дасть наступний вивід:
-- Якщо директорія існує: `Directory exists.`
-- Якщо директорії немає: `Directory does not exist.`
-- Якщо виникла інша помилка: `An error occurred: [Error object]`
+```javascript
+const fs = require('fs').promises;
 
-## Deep Dive (Занурення глибше):
-Перевірка існування директорії важлива з часів Unix. На початку, програмісти вручну перевіряли файлову систему, але це неефективно. Node.js використовує асинхронне виконання для ефективності, але ми показали синхронний метод для простоти.
+async function checkDirectory(directoryPath) {
+  try {
+    await fs.access(directoryPath);
+    console.log('Директорія існує.');
+  } catch (error) {
+    console.log('Директорія не існує.');
+  }
+}
 
-Альтернативою `fs.statSync()` є використання `fs.existsSync()`, який повертає `true` чи `false` без виключень:
-
-```Javascript
-const directoryExists = fs.existsSync(path);
-console.log(directoryExists ? 'Directory exists.' : 'Directory does not exist.');
+checkDirectory('./sample-directory');
+```
+**Вивід прикладу:**
+```
+Директорія існує.
 ```
 
-Проте використання синхронних методів може сповільнити ваш додаток, якщо ви виконуєте багато операцій з файловою системою. Розгляньте асинхронні варіанти для продакшен сценаріїв.
+Для проєктів, які активно використовують операції з файлами та директоріями, пакет `fs-extra`, розширення нативного модуля `fs`, пропонує зручні додаткові методи. Ось як ви можете досягти цього з `fs-extra`:
 
-## See Also (Дивіться також):
-- Node.js fs Docs: [https://nodejs.org/api/fs.html](https://nodejs.org/api/fs.html)
-- Блог про асинхронне програмування в Node.js: [https://blog.risingstack.com/mastering-async-await-in-nodejs/](https://blog.risingstack.com/mastering-async-await-in-nodejs/)
+```javascript
+const fs = require('fs-extra');
+
+const directoryPath = './sample-directory';
+
+// Перевірка наявності директорії
+fs.pathExists(directoryPath)
+  .then(exists => console.log(exists ? 'Директорія існує.' : 'Директорія не існує.'))
+  .catch(err => console.error(err));
+```
+**Вивід прикладу:**
+```
+Директорія існує.
+```
+
+Цей підхід дозволяє мати чистий, читабельний код, який безперервно інтегрується з сучасними практиками JavaScript.

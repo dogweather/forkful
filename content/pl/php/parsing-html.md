@@ -1,48 +1,77 @@
 ---
-title:                "Przetwarzanie HTML"
-date:                  2024-01-20T15:32:59.958768-07:00
-simple_title:         "Przetwarzanie HTML"
-
+title:                "Analiza składniowa HTML"
+date:                  2024-02-03T19:12:44.264362-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Analiza składniowa HTML"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/php/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
-Parsing HTML to proces tłumaczenia kodu HTML na struktury danych, które łatwo przetwarzają programy. Robimy to, aby wydobyć informacje, manipulować zawartością lub integrować rozmaite usługi z istniejącymi stronami internetowymi.
+## Co i dlaczego?
+Parsowanie HTML w PHP polega na wydobywaniu określonych informacji z dokumentów HTML. Programiści wykonują to zadanie, aby automatyzować ekstrakcję danych, web scraping, lub integrować zawartość z różnych stron internetowych w swoich aplikacjach, zwiększając funkcjonalność bez ręcznej interwencji.
 
-## Jak to zrobić?
-PHP ma wbudowany sposób na parsing HTML – rozszerzenie `DOMDocument`. Oto prosty przykład użycia:
+## Jak to zrobić:
+Do parsowania HTML, programiści PHP mogą wykorzystać wbudowane funkcje lub opierać się na solidnych bibliotekach takich jak Simple HTML DOM Parser. Tutaj zbadamy przykłady używając zarówno klasy `DOMDocument` PHP, jak i Simple HTML DOM Parser.
+
+### Używanie `DOMDocument`:
+Klasa `DOMDocument` w PHP jest częścią rozszerzenia DOM, umożliwiając parsowanie i manipulowanie dokumentami HTML i XML. Oto szybki przykład, jak użyć `DOMDocument` do znalezienia wszystkich obrazów w dokumencie HTML:
 
 ```php
-<?php
-$html = '<!DOCTYPE html><html><body><p>Witaj, Świecie!</p></body></html>';
+$html = <<<HTML
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Przykładowa strona</title>
+</head>
+<body>
+    <img src="image1.jpg" alt="Obraz 1">
+    <img src="image2.jpg" alt="Obraz 2">
+</body>
+</html>
+HTML;
 
-$dom = new DOMDocument();
-@$dom->loadHTML($html);
-$paragraphs = $dom->getElementsByTagName('p');
+$doc = new DOMDocument();
+@$doc->loadHTML($html);
+$images = $doc->getElementsByTagName('img');
 
-foreach ($paragraphs as $p) {
-    echo $p->nodeValue . "\n";
+foreach ($images as $img) {
+    echo $img->getAttribute('src') . "\n";
 }
-?>
-```
-Wynik:
-```
-Witaj, Świecie!
 ```
 
-## A może głębiej?
+Przykładowy wynik:
+```
+image1.jpg
+image2.jpg
+```
 
-Historia łamanek HTML sięga lat 90-tych, kiedy to internet zaczął prężnie rosnąć. PHP wspierał różne techniki, ale `DOMDocument` trafiło do mainstreamu.
+### Używanie Simple HTML DOM Parser:
+Do bardziej złożonych zadań lub łatwiejszej składni, można preferować użycie biblioteki zewnętrznej. Simple HTML DOM Parser jest popularnym wyborem, oferując interfejs podobny do jQuery do nawigowania i manipulowania strukturami HTML. Oto jak go użyć:
 
-Inne metody to `SimpleXML` czy używanie wyrażeń regularnych (regex), jednak te ostatnie są niezalecane z powodu skomplikowości HTML.
+Najpierw zainstaluj bibliotekę za pomocą Composera:
+```
+composer require simple-html-dom/simple-html-dom
+```
 
-Implementation parsingu HTML powinna kierować się standardami, tak aby był odporny na zmienny i czasem niepoprawny kod HTML. `libxml` używane przez PHP do obsługi XML i HTML, pomaga sobie z tym znakomicie.
+Następnie manipuluj HTML, aby na przykład odnaleźć wszystkie linki:
 
-## Zobacz też
+```php
+require_once 'vendor/autoload.php';
 
-- Oficjalna dokumentacja PHP `DOMDocument`: https://www.php.net/manual/en/class.domdocument.php
-- Wprowadzenie do `libxml`: https://www.php.net/manual/en/book.libxml.php
-- `SimpleXML` — alternatywna, prostsza biblioteka do manipulacji XML: https://www.php.net/manual/en/book.simplexml.php
+use simplehtmldom\HtmlWeb;
+
+$client = new HtmlWeb();
+$html = $client->load('http://www.example.com');
+
+foreach($html->find('a') as $element) {
+    echo $element->href . "\n";
+}
+```
+
+Ten fragment kodu pobierze zawartość HTML z 'http://www.example.com', przeanalizuje ją i wydrukuje wszystkie hiperłącza. Pamiętaj, aby zamienić `'http://www.example.com'` na faktyczny URL, który chcesz przeanalizować.
+
+Wykorzystując te metody, programiści PHP mogą skutecznie parsować zawartość HTML, dostosowywać ekstrakcję danych do swoich potrzeb lub bezproblemowo integrować zewnętrzną zawartość internetową w swoich projektach.

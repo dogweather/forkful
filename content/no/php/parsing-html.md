@@ -1,47 +1,77 @@
 ---
-title:                "Analyse av HTML"
-date:                  2024-01-20T15:33:02.577964-07:00
-simple_title:         "Analyse av HTML"
-
+title:                "Analysering av HTML"
+date:                  2024-02-03T19:12:46.454658-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Analysering av HTML"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/php/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Parsing av HTML betyr å lese og tolke HTML-koden for å forstå strukturen og innholdet. Programmerere parser HTML for å manipulere, hente ut data, eller integrere med andre tjenester.
+Parsing av HTML i PHP involverer å trekke ut spesifikk informasjon fra HTML-dokumenter. Utviklere utfører denne oppgaven for å automatisere datautvinning, webskraping, eller for å integrere innhold fra ulike nettsider i sine applikasjoner, noe som forbedrer funksjonaliteten uten manuell inngripen.
 
 ## Hvordan:
-For å parse HTML i PHP kan du bruke `DOMDocument` klassen. Her er et enkelt eksempel:
+For å parse HTML, kan PHP-utviklere utnytte innebygde funksjoner eller støtte seg på robuste biblioteker som Simple HTML DOM Parser. Her vil vi utforske eksempler ved å bruke både PHPs `DOMDocument` og Simple HTML DOM Parser.
 
-```PHP
-<?php
-// Innholdet du vil parse
-$htmlString = '<!DOCTYPE html><html><body><h1>Hei Norge</h1></body></html>';
+### Bruke `DOMDocument`:
+PHPs `DOMDocument`-klasse er en del av dens DOM-utvidelse, som tillater parsing og manipulering av HTML- og XML-dokumenter. Her er et raskt eksempel på hvordan du bruker `DOMDocument` for å finne alle bildene i et HTML-dokument:
 
-// Opprett en ny DOMDocument
-$dom = new DOMDocument();
+```php
+$html = <<<HTML
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Eksempelside</title>
+</head>
+<body>
+    <img src="bilde1.jpg" alt="Bilde 1">
+    <img src="bilde2.jpg" alt="Bilde 2">
+</body>
+</html>
+HTML;
 
-// Last inn HTML, undertrykk feilmelding med @
-@$dom->loadHTML($htmlString);
+$doc = new DOMDocument();
+@$doc->loadHTML($html);
+$images = $doc->getElementsByTagName('img');
 
-// Finn h1-tag ved hjelp av DOMXPath
-$xpath = new DOMXPath($dom);
-$h1 = $xpath->query('//h1')->item(0);
-
-// Skriv ut h1-innholdet
-echo $h1->nodeValue;
-?>
+foreach ($images as $img) {
+    echo $img->getAttribute('src') . "\n";
+}
 ```
 
-Utdata vil bli `Hei Norge`.
+Eksempel på utdata:
+```
+bilde1.jpg
+bilde2.jpg
+```
 
-## Dypdykk:
-Historisk har HTML-parsing vært plundrete på grunn av ulike nettleserstandarder. `DOMDocument` og `DOMXPath` i PHP gjør det enklere. Disse er foretrukne fremfor regulære uttrykk på grunn av nøyaktighet og mindre sjanse for feil. Vær oppmerksom på `loadHTML` kan være kresen med HTML5, så `libxml_use_internal_errors(true);` kan være nyttig for å undertrykke parse-feil. Andre verktøy inkluderer SimpleXML og tredjeparts biblioteker som `phpQuery`.
+### Bruke Simple HTML DOM Parser:
+For mer komplekse oppgaver eller enklere syntaks, kan du foretrekke å bruke et tredjepartsbibliotek. Simple HTML DOM Parser er et populært valg, som tilbyr et jQuery-lignende grensesnitt for navigering og manipulasjon av HTML-strukturer. Her er hvordan du bruker det:
 
-## Se Også:
-- Offisiell PHP dokumentasjon for DOMDocument: https://www.php.net/manual/en/class.domdocument.php
-- SimpleXML funksjonalitet: https://www.php.net/manual/en/book.simplexml.php
-- `phpQuery` på GitHub: https://github.com/punkave/phpQuery
-- Andre biblioteker på Packagist: https://packagist.org/
+Først, installer biblioteket ved hjelp av Composer:
+```
+composer require simple-html-dom/simple-html-dom
+```
+
+Deretter, manipuler HTML for å, for eksempel, finne alle lenker:
+
+```php
+require_once 'vendor/autoload.php';
+
+use simplehtmldom\HtmlWeb;
+
+$client = new HtmlWeb();
+$html = $client->load('http://www.eksempel.com');
+
+foreach($html->find('a') as $element) {
+    echo $element->href . "\n";
+}
+```
+
+Dette kodeutdraget vil hente HTML-innholdet fra 'http://www.eksempel.com', parse det, og skrive ut alle hyperlenkene. Husk å erstatte `'http://www.eksempel.com'` med den faktiske URL-en du ønsker å parse.
+
+Ved å bruke disse metodene kan PHP-utviklere effektivt parse HTML-innhold, tilpasse datautvinning etter sine behov, eller sømløst integrere eksternt webinnhold i sine prosjekter.

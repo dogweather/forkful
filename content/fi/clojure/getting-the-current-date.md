@@ -1,70 +1,53 @@
 ---
 title:                "Nykyisen päivämäärän hankkiminen"
-date:                  2024-01-20T15:13:41.303102-07:00
+date:                  2024-02-03T19:09:17.315610-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Nykyisen päivämäärän hankkiminen"
-
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/clojure/getting-the-current-date.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Mitä ja miksi? Clojuressa nykyisen päivämäärän hakeminen tarkoittaa, että ohjelma noutaa reaaliajassa olevan päivämäärän tiedot. Tätä tehdään, kun tarvitaan käyttäjän toiminnan aikaleimausta tai päivämääräriippuvaista logiikkaa.
+## Mikä & Miksi?
+Nykyisen päivämäärän saaminen ohjelmoinnissa on ratkaisevan tärkeää monista syistä, mukaan lukien lokitiedot, tapahtumien aikaleimat ja tehtävien ajoittaminen. Clojuressa, Lisp-murteessa JVM:llä, tämä tehtävä hyödyntää Javan välisten toimintojen mahdollisuuksia, mahdollistaen suoraviivaisen pääsyn rikkaaseen Java Date-Time API:in.
 
-## How to:
-Kuinka tehdään:
+## Kuinka tehdä:
 
-```clojure
-;; Tuodaan Java-kirjaston luokat käyttöön
-(import 'java.util.Date)
-(import 'java.text.SimpleDateFormat)
-
-;; Luo Date-instanssi, joka edustaa nykyhetkeä
-(def now (Date.))
-
-;; Tulosta nykyhetken päivämäärä oletusmuodossa
-(println now) ; esim. output: Thu Apr 06 15:20:51 EEST 2023
-
-;; Määritetään päivämäärän esitysmuoto
-(def format (SimpleDateFormat. "dd-MM-yyyy"))
-
-;; Muunnetaan ja tulostetaan päivämäärä halutussa muodossa
-(println (.format format now)) ; output: 06-04-2023
-```
-Koodiesimerkki luo nykyisen päivämäärän ja tulostaa sen sekä oletusmuodossa että määritellyssä muodossa.
-
-## Deep Dive
-Sukellus syvemmälle:
-
-Clojure on Lisp-perheen kieli, joka toimii JVM:ssä (Java Virtual Machine). Sen vuoksi päivämäärät käsitellään usein hyödyntäen Javan valmiita luokkia kuten `java.util.Date`. Historiallisesti Lisp-kielet ovat olleet vahvoilla symbolisen laskennan ja metaprogrammoinnin alueilla, ja Clojure jatkaa tätä perinnettä funktionaalisen ohjelmoinnin maailmassa.
-
-Vaihtoehtoisina keinoja daten käsittelyyn Clojuressa olisi käyttää Joda-Time-kirjastoa (ennen Java 8:aa) tai `java.time` pakkauksen luokkia (Java 8 ja uudemmat). Esimerkiksi:
+### Käyttäen Javan välistä yhteentoimivuutta
+Clojuren saumaton yhteentoimivuus Javan kanssa antaa sinun hyödyntää Java Date-Time API:a suoraan. Näin voit saada nykyisen päivämäärän:
 
 ```clojure
-;; Java 8:n java.time kirjastoa käyttäen
-(import 'java.time.LocalDate)
-(import 'java.time.format.DateTimeFormatter)
+(import java.time.LocalDate)
 
-;; Nykyinen paikallinen päivämäärä
-(def today (LocalDate/now))
+(defn get-current-date []
+  (str (LocalDate/now)))
 
-;; Tulostetaan nykyinen päivämäärä
-(println today) ; output: 2023-04-06
-
-;; Määritellään formatteri
-(def formatter (DateTimeFormatter/ofPattern "dd-MM-yyyy"))
-
-;; Tulostetaan muotoiltu päivämäärä
-(println (.format formatter today)) ; output: 06-04-2023
+;; Esimerkkituloste
+(get-current-date) ; "2023-04-15"
 ```
 
-Clojuressa päivämäärän käsittelyyn on tarjolla lukuisia kirjastoja, jotka mahdollistavat monipuoliset manipulaatiot ja lähestymistavat ajanhallintaan.
+### Käyttäen clj-time-kirjastoa
+Idiomatisemman Clojure-ratkaisun saamiseksi saatat valita `clj-time`-kirjaston, joka on kääre Joda-Timeen, vaikkakin useimmille uusille projekteille sisäänrakennettua Java 8 Date-Time API:a suositellaan. Kuitenkin, jos preferoit tai tarvitset `clj-time`:
 
-## See Also
-Katso myös:
+Lisää ensin `clj-time` projektisi riippuvuuksiin. `project.clj`-tiedostossasi, sisällytä:
 
-- Clojure-dokumentaatio: [https://clojure.org/](https://clojure.org/)
-- Java 8 Date and Time API -esimerkkejä: [https://docs.oracle.com/javase/tutorial/datetime/](https://docs.oracle.com/javase/tutorial/datetime/)
-- Joda-Time -projektin kotisivu: [https://www.joda.org/joda-time/](https://www.joda.org/joda-time/)
-- Clojure for the Brave and True, luku päivämääristä ja ajasta: [https://www.braveclojure.com/do-things/](https://www.braveclojure.com/do-things/)
+```clojure
+[clj-time "0.15.2"]
+```
+
+Käytä sitten sitä saadaksesi nykyisen päivämäärän:
+
+```clojure
+(require '[clj-time.core :as time])
+
+(defn get-current-date-clj-time []
+  (str (time/now)))
+
+;; Esimerkkituloste
+(get-current-date-clj-time) ; "2023-04-15T12:34:56.789Z"
+```
+
+Molemmat menetelmät tarjoavat nopeat, tehokkaat tavat saada nykyinen päivämäärä Clojuressa, hyödyntäen alla olevan Javan alustan voimaa tai Clojure-spesifin kirjaston mukavuutta.

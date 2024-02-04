@@ -1,38 +1,52 @@
 ---
 title:                "Schreiben auf Standardfehler"
-date:                  2024-01-19
+date:                  2024-02-03T19:33:45.872471-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Schreiben auf Standardfehler"
-
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/lua/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Standardfehler (stderr) ist ein Ausgabekanal, der für Fehlermeldungen und Diagnostik genutzt wird, um sie von regulären Ausgaben (stdout) zu trennen. Programmierer verwenden stderr, um Probleme und wichtige Warnungen sichtbar zu machen, ohne den normalen Outputflow zu stören.
+Das Schreiben auf Standardfehler (stderr) bedeutet, Fehlermeldungen und diagnostische Ausgaben auf einen separaten Kanal zu leiten, getrennt von der Standardausgabe (stdout). Programmierer tun dies, um reguläre Programmergebnisse von Fehlerinformationen zu unterscheiden, was das Debuggen und Protokollieren vereinfacht.
 
-## So geht's:
-In Lua schreiben wir mit `io.stderr:write()` auf stderr.
+## Wie:
+In Lua kann das Schreiben auf stderr mit der Funktion `io.stderr:write()` erreicht werden. Hier ist, wie Sie eine einfache Fehlermeldung an Standardfehler schreiben können:
 
 ```lua
--- Schreibt eine Warnmeldung auf stderr
-io.stderr:write("Warnung: Etwas lief schief!\n")
-
--- Normale Ausgabe auf stdout
-print("Das ist eine normale Ausgabe.")
+io.stderr:write("Fehler: Ungültige Eingabe.\n")
 ```
 
-Ausgabe im Terminal könnte so aussehen:
-```
-Warnung: Etwas lief schief!
-Das ist eine normale Ausgabe.
+Sollten Sie eine Variable ausgeben müssen oder mehrere Datenstücke kombinieren wollen, fügen Sie diese innerhalb der Schreibfunktion zusammen:
+
+```lua
+local errorMessage = "Ungültige Eingabe."
+io.stderr:write("Fehler: " .. errorMessage .. "\n")
 ```
 
-## Deep Dive
-Stderr hat seine Wurzeln in UNIX-Systemen und ist ein Standarddateistream, der für Fehlermeldungen vorgesehen ist. Alternativen wie Logging in Dateien oder die Verwendung dedizierter Logging-Frameworks sind gebräuchlich, können aber die direkte und schnelle Natur von stderr beeinträchtigen. In Lua geht die Implementierung von stderr über die standardisierte `io`-Bibliothek, wobei `io.stderr` eine Datei repräsentiert, die für Fehlerausgaben reserviert ist. Da stderr unabhängig von stdout ist, können Ausgaben umgeleitet oder separat behandelt werden.
+**Beispielausgabe auf stderr:**
+```
+Fehler: Ungültige Eingabe.
+```
 
-## Siehe auch
-- Lua 5.4 Referenzhandbuch: [https://www.lua.org/manual/5.4/](https://www.lua.org/manual/5.4/)
-- `io`-Bibliothek in Lua: [https://www.lua.org/pil/21.html](https://www.lua.org/pil/21.html)
-- Mehr zu stdout und stderr: [https://en.wikipedia.org/wiki/Standard_streams](https://en.wikipedia.org/wiki/Standard_streams)
+Für komplexere Szenarien oder bei der Arbeit mit größeren Anwendungen könnten Sie Bibliotheken von Drittanbietern für die Protokollierung in Betracht ziehen, wie LuaLogging. Mit LuaLogging können Sie Protokolle an verschiedene Ziele lenken, einschließlich stderr. Hier ist ein kurzes Beispiel:
+
+Zuerst stellen Sie sicher, dass LuaLogging mit LuaRocks installiert ist:
+
+```
+luarocks install lualogging
+```
+
+Dann, um eine Fehlermeldung mit LuaLogging an stderr zu schreiben:
+
+```lua
+local logging = require("logging")
+local logger = logging.stderr()
+logger:error("Fehler: Ungültige Eingabe.")
+```
+
+Dieser Ansatz bietet den Vorteil einer standardisierten Protokollierung in Ihrer Anwendung, mit der zusätzlichen Flexibilität, Protokollebenen (z. B. ERROR, WARN, INFO) durch eine einfache API festzulegen.

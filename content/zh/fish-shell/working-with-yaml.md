@@ -1,41 +1,82 @@
 ---
-title:                "处理 YAML 文件"
-date:                  2024-01-19
-simple_title:         "处理 YAML 文件"
-
+title:                "使用YAML工作"
+date:                  2024-02-03T19:25:24.324500-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "使用YAML工作"
 tag:                  "Data Formats and Serialization"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/fish-shell/working-with-yaml.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (是什么以及为什么？)
-YAML是一种数据序列化格式，用于配置文件和数据交换。程序员使用它因为它易于阅读，结构清晰，且跨语言兼容。
+## 什么与为什么？
+通过Fish Shell操作YAML涉及到解析和操纵YAML（YAML Ain't Markup Language，YAML不是标记语言）文件，一种用于配置文件的数据序列化格式。程序员这样做是为了在shell环境的背景下有效地自动化和配置应用程序或服务，便于执行配置管理和资源配置等任务。
 
-## How to (如何操作)
-YAML 文件在 Fish Shell 中的处理通常需要外部工具，如 `yq`。以下是使用 `yq` 在 Fish Shell 里读取和修改 YAML 文件的示例。
+## 如何操作：
+Fish Shell没有内置支持解析YAML，但你可以利用第三方工具，如`yq`（一个轻量级且便携的命令行YAML处理器）来处理YAML数据。
 
-读取 YAML:
-
-```Fish Shell
-echo 'name: Tom\nage: 30' | yq e '.name' -
-# 输出: Tom
+**安装yq（如果尚未安装）：**
+```fish
+sudo apt-get install yq
 ```
 
-写入 YAML:
-
-```Fish Shell
-echo '{name: "Tom", age: 30}' | yq e '.age = 31' -
-# 输出更新后的YAML:
-# name: Tom
-# age: 31
+**从YAML文件中读取值：**
+假设你有一个含以下内容的YAML文件`config.yaml`：
+```yaml
+database:
+  host: localhost
+  port: 3306
 ```
 
-## Deep Dive (深入探索)
-YAML诞生于2001年，致力于数据可读性和易用性。相比JSON和XML，YAML更适合配置文件。使用外部工具如`yq`是处理 YAML 的常见方法，`yq` 是基于强大的 `jq` 工具。Fish Shell 自身不内置处理 YAML 的功能，因此你需要借助工具或者在其他支持 YAML 的语言中进行处理。
+要读取数据库主机，你可以使用：
+```fish
+set host (yq e '.database.host' config.yaml)
+echo $host
+```
+**示例输出：**
+```
+localhost
+```
 
-## See Also (另请参阅)
-- YAML 官网: https://yaml.org/
-- `yq` GitHub 页面: https://github.com/mikefarah/yq 
-- Learn X in Y minutes — YAML: https://learnxinyminutes.com/docs/yaml/
+**更新YAML文件中的值：**
+要将`port`更新为`5432`，使用：
+```fish
+yq e '.database.port = 5432' -i config.yaml
+```
+**验证更新：**
+```fish
+yq e '.database.port' config.yaml
+```
+**示例输出：**
+```
+5432
+```
+
+**写入新的YAML文件：**
+为了创建一个带有预定义内容的新`new_config.yaml`：
+```fish
+echo "webserver:
+  host: '127.0.0.1'
+  port: 8080" | yq e -P - > new_config.yaml
+```
+这使用`yq`来处理并美化打印（-P标记）字符串到一个新的YAML文件。
+
+**解析复杂结构：**
+如果你有一个更复杂的YAML文件，并且需要获取嵌套的数组或对象，你可以：
+```fish
+echo "servers:
+  - name: server1
+    ip: 192.168.1.101
+  - name: server2
+    ip: 192.168.1.102" > servers.yaml
+
+yq e '.servers[].name' servers.yaml
+```
+**示例输出：**
+```
+server1
+server2
+```
+使用`yq`，Fish Shell使得浏览YAML文档并为各种自动化和配置任务操纵它们变得简单明了。

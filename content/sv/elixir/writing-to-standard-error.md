@@ -1,46 +1,53 @@
 ---
 title:                "Skriva till standardfel"
-date:                  2024-01-19
+date:                  2024-02-03T19:33:04.629717-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Skriva till standardfel"
-
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/elixir/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Skriva till standard error (stderr) innebär att skicka felmeddelanden och diagnostik separat från standard output (stdout). Det hjälper till att separera programdata från fel och loggning, vilket gör det enklare att analysera problem.
 
-## Hur gör man:
+Att skriva till standardfel (stderr) i Elixir är en metod för att dirigera felmeddelanden och diagnostik separat från huvudutdata (stdout). Programmerare använder stderr för att felsöka och hantera fel utan att göra programmets huvudutdata oöverskådlig, vilket gör det enklare att identifiera och åtgärda problem.
+
+## Hur:
+
+I Elixir kan du använda funktioner i `IO`-modulen såsom `IO.puts/2` och `IO.warn/2` för att skriva meddelanden till standardfel:
+
 ```elixir
-# Skicka ett enkelt meddelande till stderr
-IO.puts(:stderr, "Ett fel inträffade!")
+# Skriva ett enkelt meddelande till stderr
+IO.puts(:stderr, "Fel: Något gick fel!")
 
-# Använda :io.format/3 för formaterade meddelanden
-IO.format(:stderr, "Fel: ~s~n", ["Något gick snett"])
-
-# Logga ett fel med en stack trace
-try do
-  raise "Ett undantag!"
-rescue
-  exception -> 
-    IO.puts(:stderr, Exception.format(:error_report, exception))
-end
+# Använda IO.warn, vilket är mer semantiskt för varningar/fel
+IO.warn("Varning: Du är på väg att överskrida gränsen!")
 ```
 
-Exempelutdata:
+Exempel på utdata i terminalen för `IO.puts/2`:
 ```
-Ett fel inträffade!
-Fel: Något gick snett
-=ERROR REPORT==== 24-Feb-2023::12:31:15 ===
-** (RuntimeError) Ett undantag!
+Fel: Något gick fel!
 ```
 
-## Djupdykning
-Io-modulen i Elixir har hanterat stderr sedan språkets tidiga dagar, följer konventionen från erlang och andra UNIX-baserade system. Alternativ till stderr inkluderar skriva loggfiler och använda externa loggtjänster. Stderr-strömmen är vanligen obuffrad, vilket innebär att utdata skrivs direkt utan fördröjning, till skillnad från stdout som kan buffras.
+För `IO.warn/2` skulle utdatan vara liknande, men `IO.warn/2` är specifikt utformat för varningar och kan inkludera ytterligare formatering eller beteende i framtida Elixir-versioner.
 
-## Se även
-- Elixir's officiella dokumentation för IO-modulen: https://hexdocs.pm/elixir/IO.html
-- Erlang's :io bibliotek, som Elixir's IO bygger på: http://erlang.org/doc/man/io.html
-- UNIX-standard för standard streams (stdin, stdout, stderr): https://en.wikipedia.org/wiki/Standard_streams
+**Använda Tredjepartsbibliotek**
+
+Även om Elixirs standardbibliotek vanligtvis är tillräckligt för att hantera utdata till standardfel, kan du finna bibliotek som `Logger` användbara för mer komplexa applikationer eller för att konfigurera olika loggnivåer och utdatamy.
+
+Exempel på användning av `Logger` för att utge ett felmeddelande:
+
+```elixir
+require Logger
+
+# Konfigurera Logger för att utdata till stderr
+Logger.configure_backend(:console, device: :stderr)
+
+# Skriva ett felmeddelande
+Logger.error("Fel: Misslyckades med att ansluta till databasen.")
+```
+
+Denna inställning dirigerar `Logger`-s utdata specifikt till stderr, vilket är användbart för att separera felloggning från standard loggmeddelanden.

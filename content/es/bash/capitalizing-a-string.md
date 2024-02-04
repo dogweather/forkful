@@ -1,41 +1,61 @@
 ---
 title:                "Capitalizando una cadena de texto"
-date:                  2024-01-19
+date:                  2024-02-03T19:04:49.084996-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Capitalizando una cadena de texto"
-
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/bash/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Capitalizar un string significa convertir sus letras en mayúsculas. Programadores lo hacen para normalizar datos, mejorar legibilidad, o cumplir con requisitos técnicos.
+## Qué y por qué?
+Capitalizar una cadena en Bash implica transformar el primer carácter de la cadena a mayúscula mientras que el resto de la cadena permanece sin cambios. Esta técnica se utiliza comúnmente para formatear la salida o cumplir con convenciones de codificación que requieren que ciertas cadenas comiencen con una letra mayúscula por legibilidad o preferencias estilísticas.
 
-## How to:
-En Bash, capitalizar un texto es sencillo. Usa `tr`, `awk`, o directamente en una variable Bash. Ejemplos:
+## Cómo hacerlo:
 
-```Bash
-# Usando tr
-echo "hola mundo" | tr '[:lower:]' '[:upper:]'
-# Salida: HOLA MUNDO
+Bash no tiene una función integrada específicamente para capitalizar cadenas, pero puedes lograr esta tarea usando expansión de parámetros o herramientas externas como `awk`. Aquí hay algunas formas de capitalizar una cadena en Bash:
 
-# Usando awk
-echo "hola mundo" | awk '{ print toupper($0) }'
-# Salida: HOLA MUNDO
+**Usando expansión de parámetros:**
 
-# Bash 4.0 o superior: usando variable con expansion
-texto="hola mundo"
-echo "${texto^^}"
-# Salida: HOLA MUNDO
+Este método manipula la cadena directamente en la shell.
+
+```bash
+str="hola mundo"
+capitalizado="${str^}"
+echo "$capitalizado"
+```
+Salida:
+```
+Hola mundo
 ```
 
-## Deep Dive
-Antes de Bash 4.0, tenías que confiar en herramientas externas como `tr` o `awk` para cambiar la capitalización. Con Bash 4.0 en adelante, puedes hacerlo dentro del propio lenguaje, lo que puede ser más eficiente. Alternativas como `sed` o Perl también son comunes, pero `awk` y `tr` son típicamente fáciles de recordar y usar para esta tarea.
+**Usando `awk`:**
 
-En cuanto a implementación, `tr` realiza el cambio de caracteres en un flujo de datos (pipe), mientras que las expansiones de variable de Bash hacen el cambio en memoria, lo que es más rápido. Por último, no olvides que la capitalización es dependiente del locale: hacerlo en inglés es diferente que en turco, por ejemplo, donde la 'i' minúscula tiene más de una forma mayúscula.
+`awk` es una poderosa herramienta de procesamiento de texto disponible en la mayoría de los sistemas operativos tipo Unix, que se puede utilizar para capitalizar cadenas.
 
-## See Also
-- GNU Bash manual: [https://www.gnu.org/software/bash/manual/](https://www.gnu.org/software/bash/manual/)
-- `man tr`: [https://linux.die.net/man/1/tr](https://linux.die.net/man/1/tr)
-- `man awk`: [https://linux.die.net/man/1/awk](https://linux.die.net/man/1/awk)
+```bash
+str="hola mundo"
+echo "$str" | awk '{print toupper(substr($0, 1, 1)) tolower(substr($0, 2))}'
+```
+Salida:
+```
+Hola mundo
+```
+
+**Usando `sed`:**
+
+Para un enfoque más tradicional, se puede emplear `sed` para capitalizar la primera letra de una cadena. Sin embargo, es un poco más complejo en comparación con los métodos anteriores.
+
+```bash
+str="hola mundo"
+echo "$str" | sed 's/./\u&/'
+```
+Salida:
+```
+Hola mundo
+```
+
+Estos fragmentos demuestran cómo capitalizar la primera letra de una cadena en Bash, destacando la flexibilidad de la programación en shell cuando se manipula texto.

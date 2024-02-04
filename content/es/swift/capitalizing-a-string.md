@@ -1,59 +1,46 @@
 ---
 title:                "Capitalizando una cadena de texto"
-date:                  2024-01-19
+date:                  2024-02-03T19:06:32.796928-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Capitalizando una cadena de texto"
-
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/swift/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Qué y Por Qué?
+## ¿Qué y Por Qué?
 
-Capitalizar una cadena en Swift significa convertir la primera letra de cada palabra a mayúscula. Los programadores lo hacen para asegurarse de que los títulos, nombres propios o cualquier texto que requiera un formato estándar, se vean consistentes y profesionales.
+Capitalizar una cadena en Swift modifica la cadena dada de modo que su primer carácter sea mayúscula y los caracteres restantes sean minúsculas. Los programadores hacen esto por propósitos como formatear nombres o frases de acuerdo con las reglas gramaticales o los estándares de la interfaz de usuario.
 
 ## Cómo hacerlo:
 
-En Swift, puedes capitalizar strings fácilmente utilizando el método `capitalized`. Aquí te muestro cómo:
+Las estructuras `String` de Swift vienen con un par de métodos integrados para manipular el caso de las cadenas. Aquí hay algunos enfoques para capitalizar cadenas en Swift, incluido el uso de métodos estándar y bibliotecas de terceros si es necesario.
 
-```Swift
-let phrase = "bienvenidos al mundo de Swift"
-let capitalizedPhrase = phrase.capitalized
-print(capitalizedPhrase)
+### Usando métodos integrados
+
+Para capitalizar la primera letra de una cadena y convertir el resto en minúsculas:
+
+```swift
+let myString = "hola, mundo"
+let capitalizedString = myString.prefix(1).uppercased() + myString.dropFirst().lowercased()
+print(capitalizedString) // Salida: "Hola, mundo"
 ```
 
-Salida de muestra:
+Para capitalizar la primera letra de cada palabra en una oración, puedes usar la propiedad `capitalized`:
 
-```
-Bienvenidos Al Mundo De Swift
-```
-
-Si solo quieres la primera letra de la cadena en mayúscula, usa esto:
-
-```Swift
-let firstLetterCapitalized = phrase.prefix(1).uppercased() + phrase.dropFirst()
-print(firstLetterCapitalized)
+```swift
+let sentence = "hola, mundo"
+let capitalizedSentence = sentence.capitalized
+print(capitalizedSentence) // Salida: "Hola, Mundo"
 ```
 
-Salida de muestra:
+### Usando una biblioteca de terceros
 
-```
-Bienvenidos al mundo de Swift
-```
+Aunque la biblioteca estándar de Swift es bastante completa, algunos formatos de capitalización específicos podrían requerir operaciones más complejas o pueden simplificarse utilizando bibliotecas de terceros. Una de las más populares para la manipulación de cadenas es SwiftRichString. (Nota: Siempre asegúrate de incluir bibliotecas de terceros a través de Swift Package Manager, CocoaPods o Carthage, e importarlas en tu archivo.)
 
-## Inmersión Profunda:
+Primero, necesitarías agregar `SwiftRichString` a tu proyecto. Una vez instalado, puedes usarlo para realizar varias operaciones de cadena, incluidas necesidades de capitalización específicas. Sin embargo, hasta ahora, los métodos integrados de Swift cubren adecuadamente la mayoría de los casos de uso de capitalización sin necesidad de bibliotecas externas solo para capitalizar cadenas.
 
-Históricamente, los métodos para cambiar la capitalización de cadenas tienen sus raíces en la necesidad de la tipografía y la gramática adecuada. En la era digital, la consistencia visual en las interfaces y en los datos se ha vuelto esencial, y funciones como `capitalized` simplifican este proceso.
-
-Swift proporciona una implementación clara con `capitalized`, pero ten en cuenta que este método es específico para el lenguaje inglés y puede no funcionar correctamente con otros idiomas o caracteres especiales. En contraste, las bibliotecas de internacionalización pueden ofrecer alternativas que respeten las reglas de capitalización específicas de cada idioma. 
-
-La capitalización también afecta a la comparación de cadenas si uno espera que sea insensible a mayúsculas y minúsculas. Para esos casos, Swift ofrece métodos como `caseInsensitiveCompare`.
-
-En cuanto a la implementación, `capitalized` es parte de la extensión de String y utiliza las reglas de Unicode para transformar la primera letra de cada palabra en mayúscula y el resto en minúscula.
-
-## Ver También:
-
-- [Documentación oficial de Swift sobre Strings](https://developer.apple.com/documentation/swift/string)
-- [Guía de Unicode sobre la capitalización de palabras](http://unicode.org/faq/casemap_charprop.html#7)
-- [Tutorial de Swift sobre la manipulación de strings](https://www.hackingwithswift.com/sixty/5/2/uppercased-and-lowercased)
+Siempre consulta la documentación más reciente de la biblioteca para cualquier actualización o cambio en los métodos.

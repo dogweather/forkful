@@ -1,44 +1,63 @@
 ---
-title:                "ניתוח HTML"
-date:                  2024-01-20T15:31:42.243036-07:00
-simple_title:         "ניתוח HTML"
-
+title:                "פיענוח HTML"
+date:                  2024-02-03T19:12:33.565118-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "פיענוח HTML"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/elm/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## מה ולמה?
-פרסור HTML הוא תהליך שבו אנחנו מתרגמים את קוד הHTML למבנה שהתוכנית שלנו יכולה להבין ולעבוד איתו. תכנתים עושים את זה כדי לקרוא ולנתח נתונים מדפי אינטרנט, לשפר אבטחה, או לבצע בדיקות אוטומטיות.
+פענוח HTML ב-Elm כולל חילוץ מידע ממסמכי HTML. מתכנתים עושים זאת כדי להתממשק עם תוכן אינטרנטי או API-ים שמחזירים HTML, מה שמאפשר יצירה של אפליקציות אינטרנט יותר אינטראקטיביות ודינמיות.
 
 ## איך לעשות:
-בעזרת החבילה `html-parser` אפשר לפרסר HTML בElm. להלן קטע קוד שמראה איך לנתח קטע של HTML:
+ב-Elm אין ספריה מובנית לפענוח HTML ישירות בדומה לספריות ב-JavaScript או Python בשל הדגש על בטיחות טיפוסית ומניעת שגיאות בזמן ריצה. עם זאת, אפשר להשתמש בבקשות `Http` כדי לאסוף תוכן ולאחר מכן להשתמש בביטויים רגולריים או בעיבוד בצד השרת כדי לחלץ את המידע הנדרש. לפענוח HTML מורכב יותר, גישה נפוצה כוללת שימוש בשירות backend מוקדש לפענוח ה-HTML והחזרת הנתונים בפורמט שכן ניתן לעבוד איתו ישירות ב-Elm, כמו JSON.
 
-```Elm
-import Html.Parser exposing (parse)
-import Html.Parser.Node exposing (Node)
+הנה דוגמה לאיסוף תוכן HTML (בהנחה שתגובת השרת נמצאת בפורמט נקי או תוכן של תג מסוים):
 
-parseHtml : String -> List Node
-parseHtml html =
-    case parse html of
-        Ok nodes -> nodes
-        Err _ -> []
+```elm
+import Browser
+import Html exposing (Html, text)
+import Http
 
-sampleHtml = "<div>Hello, Elm!</div>"
-nodes = parseHtml sampleHtml
+type alias Model =
+    { content : String }
+
+initialModel : Model
+initialModel =
+    { content = "" }
+
+type Msg
+    = Fetch
+    | ReceiveContent String
+
+update : Msg -> Model -> (Model, Cmd Msg)
+update msg model =
+    case msg of
+        Fetch ->
+            ( model
+            , Http.get
+                { url = "https://example.com"
+                , expect = Http.expectString ReceiveContent
+                }
+            )
+
+        ReceiveContent content ->
+            ( { model | content = content }
+            , Cmd.none
+            )
+
+view : Model -> Html Msg
+view model =
+    text model.content
+
+-- נניח שהגדרות הפונקציה הראשית וההרשמות עוקבות אחר מבנה היישום הסטנדרטי של Elm.
 ```
 
-ההדפסה של `nodes` תפלט מבנה שמייצג את ה HTML.
+לעיבוד התגובה כדי לפרש רכיבים או נתונים ספציפיים, כדאי לשקול לשלוח את תוכן ה-HTML לנקודת קצה של שרת שאתה שולט עליו, שם אפשר להשתמש בספריות שזמינות בשפות כמו JavaScript (Cheerio, Jsdom) או Python (BeautifulSoup, lxml) לצורך פענוח, ולאחר מכן להחזיר נתונים מובנים (כמו JSON) חזרה לאפליקציה שלך ב-Elm.
 
-## צלילה עמוקה:
-היסטוריה: Elm עצמה היא שפת תכנות פונקציונלית שנוצרה על מנת להפוך את פיתוח וביצוע של יישומי ווב לקל ונעים יותר.
-
-אלטרנטיבות: בשפות אחרות כמו JavaScript, ישנם ספריות כמו Cheerio או JSDom לפרסור. בElm, ישנם מספר חבילות שונות לפרסור, אבל `html-parser` היא אחת מהפופולריות.
-
-פרטי יישום: פרסור HTML בElm מתבצע תוך כדי שהיא מתמודדת עם אופיינה של שפה פונקציונלית טהורה – כלומר, חסרת תופעות לוואי, זו דורשת טיפול מיוחד בשגיאות ובנתונים שאינם צפויים.
-
-## ראה גם:
-- חבילת `html-parser`: [package.elm-lang.org/packages/hecrj/html-parser/latest/](https://package.elm-lang.org/packages/hecrj/html-parser/latest/)
-- המדריך לתחביר של `Html.Parser`: [package.elm-lang.org/packages/elm/parser/latest/Parser](https://package.elm-lang.org/packages/elm/parser/latest/Parser)
-- מבוא לשפת Elm: [elm-lang.org](https://elm-lang.org/)
+זכור, פענוח ישיר של HTML בקוד Elm בצד הלקוח אינו הדפוס הטיפוסי בשל מגבלות השפה והפילוסופיה לעודד הפרדה ברורה בין איסוף תוכן לבין עיבוד תוכן. ארכיטקטורת Elm נוטה לעיבוד נתונים בפורמט בטוח וניתן לחיזוי יותר כמו JSON.

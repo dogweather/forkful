@@ -1,52 +1,72 @@
 ---
 title:                "CSV के साथ काम करना"
-date:                  2024-01-19
+date:                  2024-02-03T19:22:51.028250-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "CSV के साथ काम करना"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/swift/working-with-csv.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (क्या और क्यों?)
-CSV (Comma-separated values) से हम सरलता से डेटा स्टोर और एक्सचेंज कर सकते हैं. प्रोग्रामर्स इसे इसलिए इस्तेमाल करते हैं क्योंकि यह फॉर्मेट बहुत सारे एप्लीकेशन्स के साथ कॉम्पेटिबल है और डेटा प्रॉसेसिंग में आसानी प्रदान करता है.
+## क्या और क्यों?
 
-## How to: (कैसे करें:)
-```Swift
-import Foundation
+CSV (Comma-Separated Values) फ़ाइलों के साथ कार्य करना पाठ फ़ाइलों से संरचित डेटा को पार्स करने और उत्पन्न करने की प्रक्रिया होती है, जहाँ प्रत्येक पंक्ति एक रिकॉर्ड का प्रतिनिधित्व करती है और प्रत्येक रिकॉर्ड अल्पविरामों द्वारा विभाजित क्षेत्रों से मिलकर बनता है। प्रोग्रामर अक्सर इस गतिविधि में संलग्न होते हैं ताकि वे आसानी से तालिका डेटा को आयात कर सकें, निर्यात कर सकें और उसे विभिन्न मंचों और प्रोग्रामिंग भाषाओं में व्यापक रूप से समर्थित एक प्रारूप का उपयोग करके मैनिप्यूलेट कर सकें, इसकी सादगी और मानव-पठनीय प्रारूप के कारण।
 
-// CSV फाइल की कंटेंट्स को पढ़ना
+## कैसे:
+
+Swift में, CSV फ़ाइलों को सीधे पार्स करने के लिए मूल समर्थन नहीं है, लेकिन आप सामग्री को विभाजित करने के लिए `String` विधियों का उपयोग करके या SwiftCSV जैसी तृतीय-पक्ष पुस्तकालयों का लाभ उठाकर CSV डेटा को संभाल सकते हैं जो एक अधिक सुगम दृष्टिकोण प्रदान करता है। यहाँ दोनों विधियाँ हैं:
+
+### बाहरी पुस्तकालयों के बिना मैन्युअल पार्सिंग
+```swift
+// एक सरल CSV स्ट्रिंग पर विचार करें
 let csvString = """
 name,age,city
 John Doe,29,New York
-Jane Smith,35,Los Angeles
+Jane Smith,34,Los Angeles
 """
 
-// CSV डेटा को पार्स करने का फंक्शन
-func parseCSV(contents: String) {
-    let rows = contents.components(separatedBy: "\n")
-    
-    for row in rows {
-        let columns = row.components(separatedBy: ",")
-        print("Name: \(columns[0]), Age: \(columns[1]), City: \(columns[2])")
-    }
+// CSV स्ट्रिंग को पंक्तियों में विभाजित करें
+let rows = csvString.components(separatedBy: "\n")
+
+// पहली पंक्ति से कीज़ निकालें
+let keys = rows.first?.components(separatedBy: ",")
+
+// दूसरी पंक्ति से शुरू होकर पंक्तियों पर इटरेट करें
+var result: [[String: String]] = []
+for row in rows.dropFirst() {
+    let values = row.components(separatedBy: ",")
+    let dict = Dictionary(uniqueKeysWithValues: zip(keys!, values))
+    result.append(dict)
 }
 
-// पार्स फंक्शन को कॉल करना
-parseCSV(contents: csvString)
+// नमूना आउटपुट
+print(result)
+// आउटपुट देता है: [{"city": "New York", "age": "29", "name": "John Doe"}, {"city": "Los Angeles", "age": "34", "name": "Jane Smith"}]
 ```
-Sample Output:
-```
-Name: name, Age: age, City: city
-Name: John Doe, Age: 29, City: New York
-Name: Jane Smith, Age: 35, City: Los Angeles
-```
+यह दृष्टिकोण सीधा है लेकिन विशेष मामलों जैसे कि मूल्यों में अल्पविराम, क्षेत्रों के भीतर लाइन ब्रेक्स आदि वाली CSV फ़ाइलों के साथ रोबस्टनेस की कमी होती है।
 
-## Deep Dive (गहराई से जानकारी):
-CSV 1972 से डेटा के सिम्पल एक्सचेंज फॉर्मेट के रूप में इस्तेमाल हो रहा है. इसके विकल्प में जेसन (JSON), एक्सएमएल (XML), और एक्सेल फॉर्मेट्स (XLS) आते हैं. हालांकि, CSV की सादगी और सार्वत्रिकता इसे हमेशा की तरह पसंदीदा बनाए रखती है.
+### SwiftCSV पुस्तकालय का उपयोग करना
+पहले, अपनी परियोजना में SwiftCSV जोड़ें जिसे आपकी `Package.swift` निर्भरताओं में शामिल करके किया जा सकता है:
+```swift
+.package(url: "https://github.com/swiftcsv/SwiftCSV.git", from: "0.5.6")
+```
+फिर, इस प्रकार इसे आयात करें और उपयोग करें:
+```swift
+import SwiftCSV
 
-## See Also (यह भी देखें):
-- CSV के बारे में और [Apple के Swift डॉक्यूमेंटेशन](https://developer.apple.com/documentation) में पढ़ें.
-- Swift में डेटा प्रॉसेसिंग के लिए [Swift Algorithms GitHub रिपोजिटरी](https://github.com/apple/swift-algorithms).
-- प्रोग्रामेटिक CSV प्रॉसेसिंग के लिए [SwiftCSV GitHub रिपोजिटरी](https://github.com/swiftcsv/SwiftCSV).
+// मान लें कि `csvString` उपरोक्त के रूप में परिभाषित है
+
+// एक CSV ऑब्जेक्ट बनाएँ
+if let csv = try? CSV(string: csvString) {
+    // डिक्शनरीज के रूप में पंक्तियों तक पहुंचें
+    let rows = csv.namedRows
+    
+    // नमूना आउटपुट
+    print(rows)
+    // आउटपुट देता है: [{"city": "New York", "age": "29", "name": "John Doe"}, {"city": "Los Angeles", "age": "34", "name": "Jane Smith"}]
+}
+```
+SwiftCSV में समाहित अल्पविराम, क्षेत्रों में लाइन ब्रेक्स, और अक्षर एन्कोडिंग जैसे बारीकियों को स्वचालित रूप से सामना करके पार्सिंग को सरल बनाया जाता है। हालाँकि, वास्तविक दुनिया के अनुप्रयोगों में, विशेष रूप से बाहरी डेटा स्रोतों से निपटते समय संभावित त्रुटियों से निपटना याद रखें।

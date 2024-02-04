@@ -1,53 +1,73 @@
 ---
 title:                "正規表現の使用"
-date:                  2024-01-19
+date:                  2024-02-03T19:17:43.499909-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "正規表現の使用"
-
 tag:                  "Strings"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/lua/using-regular-expressions.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (何となぜ?)
-正規表現は文字列パターンを認識するための強力なツールです。プログラマーはこれを使用して、検索、置換、データ検証などを高速で正確に行います。
+## 何となぜ？
 
-## How to: (方法)
-Lua で正規表現のような機能を使うには、パターンマッチング機能を用います。以下に例を示します。
+プログラミングにおける正規表現は、特定のパターンに基づいて文字列のパターンマッチングおよび操作を可能にします。文字列操作の複雑な操作を効率的に扱うことができる柔軟性と効率性のために、プログラマーは検証、検索、テキスト操作などのタスクにそれらを使用します。
 
-```Lua
-local text = "私の電話番号は123-4567です。"
-local pattern = "%d%d%d%-%d%d%d%d"
-print(string.match(text, pattern))
-```
+## 方法
 
-出力:
-```
-123-4567
-```
+LuaはPerlやPythonといった言語のようにネイティブに正規表現をサポートしていません。代わりに、多くの一般的な正規表現の使用例をカバーするパターンマッチング機能を提供しています。しかし、完全な正規表現サポートには、`lrexlib`のようなサードパーティ製のライブラリを使用できます。
 
-文字列中の単語を探すには:
+### Luaにおける基本的なパターンマッチング：
 
-```Lua
-local text = "Luaは素晴らしいです。"
-local pattern = "%a+"
-for word in string.gmatch(text, pattern) do
-    print(word)
+Luaはシンプルな置換や検索に使用できる強力なパターンマッチングシステムを提供しています：
+
+```lua
+-- シンプルな検索
+local str = "Hello, World!"
+if string.find(str, "World") then
+  print("マッチが見つかりました！")
 end
+-- 出力: マッチが見つかりました！
+
+-- シンプルな置換
+local s = string.gsub("Lua は素晴らしい！", "素晴らしい", "素晴らしくすばらしい")
+print(s)
+-- 出力: Lua は素晴らしくすばらしい！
 ```
 
-出力:
-```
-Lua
-は
-素晴らしい
-です
+### 文字列の部分をキャプチャする：
+
+パターンにマッチした文字列の部分をキャプチャすることができます：
+
+```lua
+local date = "今日は 17/05/2023です。"
+local d, m, y = string.match(date, "(%d+)/(%d+)/(%d+)")
+print("日:", d, "月:", m, "年:", y)
+-- 出力: 日: 17 月: 05 年: 2023
 ```
 
-## Deep Dive (詳細情報)
-正規表現は1970年代に発明されました。Luaには、PerlやPythonの正規表現と同じくらい強力ではない、単純なパターンマッチング機能が備わっています。組み込みのパターンマッチングは限られていますが、読みやすく、理解しやすいです。 `string.find`, `string.match`, `string.gmatch` の Lua 標準関数を用いてパターンマッチングが実行できます。外部ライブラリを使えば、完全な正規表現機能をLuaに追加することも可能です。
+### `lrexlib`を使って正規表現を使用する：
 
-## See Also (関連情報)
-- Luaマニュアル (パターンマッチングについて): [Lua 5.4 Reference Manual](https://www.lua.org/manual/5.4/manual.html#6.4.1)
-- 正規表現に関してより広範な情報: [Regular-Expressions.info](https://www.regular-expressions.info/)
+実際の正規表現を使用するには、`lrexlib`をインストールして使用できます。それをインストールしていると仮定します（`luarocks install lrexlib-pcre`）、より複雑なパターンマッチングを行うことができます：
+
+```lua
+local rex = require 'rex_pcre'
+
+local text = "スペインの雨は主に平野に降ります。"
+local regex = "\\bS\\w+"
+local count, err = rex.gsub(text, regex, function(w)
+  return w:upper()
+end)
+if err then
+  print("エラー:", err)
+else
+  print("変更されたテキスト:", text)
+  print("置換された回数:", count)
+end
+-- 例の出力: 変更されたテキスト: スペインの雨は主に平野に降ります。
+-- 置換された回数: 3
+```
+
+上記の例は、Lua自体のパターンマッチングシステム内での基本的な使用方法と、`lrexlib`を介して正規表現の力を利用する方法を示しています。シンプルな文字列操作を実行する場合も、正規表現の全ての柔軟性を必要とする場合も、強力なライブラリと組み合わせたLuaは、あなたのニーズに応えることができます。

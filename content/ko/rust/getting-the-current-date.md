@@ -1,48 +1,64 @@
 ---
 title:                "현재 날짜 가져오기"
-date:                  2024-01-20T15:17:12.854205-07:00
+date:                  2024-02-03T19:11:04.237732-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "현재 날짜 가져오기"
-
 tag:                  "Dates and Times"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/rust/getting-the-current-date.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (무엇이며 왜?)
-현재 날짜를 얻는 것은 날짜와 시간 정보를 프로그래밍적으로 가지고 오는 행위입니다. 이는 로깅, 날짜 기반 기능 혹은 사용자 인터페이스를 위해 필수적일 수 있습니다.
+## 무엇과 왜?
 
-## How to: (방법)
-```Rust
+Rust에서 현재 날짜를 검색하는 것은 로깅, 시간 기반 작업 또는 단순히 날짜를 표시하는 등의 작업에서 일반적인 작업입니다. 일부 언어가 표준 라이브러리에 날짜와 시간 기능을 포함하는 것과 달리, Rust는 우수한 기능성과 사용의 용이성 때문에 날짜와 시간 조작을 위해 강력한 타사 라이브러리인 chrono의 사용을 권장합니다.
+
+## 사용 방법:
+
+### Rust의 표준 라이브러리 사용하기
+Rust의 표준 라이브러리는 현재 시간을 얻는 데는 제한적이지만 빠른 방법을 제공하지만, 직접적으로 캘린더 형식의 현재 날짜를 얻는 것은 아닙니다. 다음은 그 방법입니다:
+
+```rust
+use std::time::{SystemTime, UNIX_EPOCH};
+
+fn main() {
+    match SystemTime::now().duration_since(UNIX_EPOCH) {
+        Ok(n) => println!("현재 시간: Unix Epoch 이후 {}초.", n.as_secs()),
+        Err(_) => panic!("SystemTime이 Unix Epoch 이전입니다!"),
+    }
+}
+```
+
+출력:
+```
+현재 시간: Unix Epoch 이후 1615390665초.
+```
+
+### Chrono 라이브러리 사용하기
+더욱 포괄적인 날짜 및 시간 기능을 포함하여 현재 날짜를 얻으려면 `chrono` 라이브러리를 사용해야 합니다. 먼저, `chrono`를 `Cargo.toml`에 추가하세요:
+
+```toml
+[dependencies]
+chrono = "0.4"
+```
+
+그런 다음, `chrono`를 사용하여 현재 날짜를 얻습니다:
+
+```rust
+extern crate chrono;
 use chrono::{Local, Datelike};
 
 fn main() {
-    let today = Local::today();
-    
-    println!("Current year: {}", today.year());
-    println!("Current month: {}", today.month());
-    println!("Current day: {}", today.day());
-    // 오늘 날짜를 YYYY-MM-DD 형태로 출력합니다.
-    println!("Today's date: {}", today.format("%Y-%m-%d").to_string());
+    let now = Local::now();
+    println!("현재 날짜: {}-{}-{}", now.year(), now.month(), now.day());
 }
 ```
-출력 예시:
+
+출력:
 ```
-Current year: 2023
-Current month: 3
-Current day: 15
-Today's date: 2023-03-15
+현재 날짜: 2023-4-20
 ```
 
-## Deep Dive (심층 분석)
-초기 Rust에서는 표준 라이브러리에 날짜와 시간을 다루는 기능이 제한적이었습니다. 이를 보완하기 위해, `chrono` 크레이트가 개발되었습니다. `chrono`는 다양한 날짜와 시간 연산을 지원하며, Rust에서 가장 인기 있는 날짜-시간 라이브러리가 되었습니다. `Local::today()`의 경우, 시스템의 로컬 타임존을 사용하여 현재 날짜를 반환합니다. `chrono`는 time zone-aware 연산을 할 수 있어, 다양한 시간대에서 작동하는 애플리케이션에 적합합니다. 
-
-Rust의 표준 라이브러리에서는 `std::time` 모듈을 통해 시간을 다룰 수 있지만, 현재 날짜에 대한 직접적인 지원은 제공하지 않습니다. 따라서, 현재 날짜를 취급할 때는 대부분 `chrono`를 선택하게 됩니다. 
-
-추가로, `chrono`는 날짜-시간 파싱, 포매팅, 계산 등의 다양한 기능을 제공하며, 기존의 `time` 라이브러리의 기능을 확장합니다. `Datelike` 트레이트를 사용하면 연(year), 월(month), 일(day)과 같은 정보를 쉽게 추출할 수 있습니다.
-
-## See Also (추가 자료)
-- Rust `chrono` 크레이트 문서: https://docs.rs/chrono
-- Rust 공식 `std::time` 모듈 문서: https://doc.rust-lang.org/std/time/index.html
-- `time` 크레이트 문서: https://docs.rs/time
+`chrono` 라이브러리는 날짜와 시간을 다루기 쉽게 만들어 주며, 현재 날짜를 검색하는 것을 넘어서 날짜와 시간에 대한 파싱, 포맷팅, 산술 연산 등 폭넓은 기능을 제공합니다.

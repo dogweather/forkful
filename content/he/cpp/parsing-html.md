@@ -1,19 +1,21 @@
 ---
-title:                "ניתוח HTML"
-date:                  2024-01-20T15:31:02.107014-07:00
-simple_title:         "ניתוח HTML"
-
+title:                "פיענוח HTML"
+date:                  2024-02-03T19:12:01.602213-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "פיענוח HTML"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/cpp/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## מה ולמה?
-פירסום HTML הוא התהליך שבו ניתוח קוד ה-HTML כדי לאחזר מידע ספציפי או לעבד אותו. תכניתנים עושים זאת כדי ליצור אינטראקציה עם תוכן של אתרי אינטרנט ולהשתמש בנתונים באפליקציות שלהם.
+פירוס HTML פירושו לפרק תוכן HTML למשהו שתוכנית יכולה להבין ולתפעל. מתכנתים עושים זאת על מנת לחלץ נתונים, לשנות תוכן, או לשלב בתוכניות שלהם את תחום ה-scraping מהאינטרנט.
 
-## איך לעשות:
-בדוגמאות הקוד הבאות, אנו משתמשים בספריה חיצונית בשם Gumbo-parser לפירסום HTML ב-C++. לפני שנתחיל, התקן את Gumbo-parser במערכת שלך.
+## איך לעשות זאת:
+C++ אינו מגיע עם יכולות פירוס HTML מובנות. לרוב תשתמשו בספרייה כמו Gumbo-parser מבית Google, או משהו דומה. להלן דוגמה מהירה באמצעות Gumbo-parser:
 
 ```C++
 #include <iostream>
@@ -23,14 +25,12 @@ void search_for_links(GumboNode* node) {
     if (node->type != GUMBO_NODE_ELEMENT) {
         return;
     }
-
     if (node->v.element.tag == GUMBO_TAG_A) {
         GumboAttribute* href = gumbo_get_attribute(&node->v.element.attributes, "href");
         if (href) {
             std::cout << href->value << std::endl;
         }
     }
-
     GumboVector* children = &node->v.element.children;
     for (unsigned int i = 0; i < children->length; ++i) {
         search_for_links(static_cast<GumboNode*>(children->data[i]));
@@ -38,28 +38,27 @@ void search_for_links(GumboNode* node) {
 }
 
 int main() {
-    const char* html = "<html><body><a href='http://example.com'>Example</a></body></html>";
+    const char* html = "<html><body><a href='https://example.com'>Link</a></body></html>";
     GumboOutput* output = gumbo_parse(html);
-    
     search_for_links(output->root);
-    
     gumbo_destroy_output(&kGumboDefaultOptions, output);
     return 0;
 }
 ```
-הפלט של קוד זה יהיה כתובת האינטרנט שניתחת:
+
+פלט לדוגמה:
 ```
-http://example.com
+https://example.com
 ```
 
-## עיון מעמיק
-פירסום HTML הוא אחד ממשימות הסטנדרט של מתכנתים כבר שנים רבות. בעבר השתמשו בביטויים רגולריים, אבל זה לא תמיד מדויק ויכול להיות מבלבל. לכן, פיתחו ספריות מסובכות יותר כמו Gumbo-parser שמנתחות את ה-HTML באופן מובנה ואמין יותר.
+## לעומק
+פירוס HTML לא תמיד היה פשוט ב-C++. בעבר, מתכנתים היו משתמשים בביטויים רגולריים או במפענחים שנכתבו ביד, שניהם נוטים לשגיאות ומסורבלים. כיום, ספריות חזקות כמו Gumbo-parser מתמודדות עם המורכבויות של פירוס, והופכות את התהליך לקל ואמין יותר.
 
-בנוסף ל-Gumbo, ישנם כלים אחרים כמו Beautiful Soup ב-Python או Jsoup ב-Java, שמספקים יכולת דומה בשפות אחרות. בחירת הכלי תלויה בשפת התכנות שאתה משתמש בה ובדרישות המסוימות של הפרויקט שלך.
+אלטרנטיבות כוללות את Tidy, MyHTML, או אפילו שילוב של C++ עם BeautifulSoup של Python באמצעות הפונקציה `system` של C++ או מתרגמים מוטמעים.
 
-## ראה גם
-- [Gumbo-parser GitHub](https://github.com/google/gumbo-parser)
-- [מדריך ל-Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
-- [מדריך ל-Jsoup](https://jsoup.org/)
+מבחינה יישומית, ספריות אלה ממירות HTML לעץ מודל האובייקטים של המסמך (DOM). חציית ותפעול ה-DOM מאפשר למשתמשים לחלץ ולעבוד עם נתונים, כפי שהודגם בסעיף "איך לעשות זאת".
 
-בקיצור, בבחירה של כלי לפירסום HTML חשוב לשקול את סוג הפרויקט, נוחות השימוש ואיך הכלי מתממשק עם שפת התכנות שאתה בוחר.
+## ראו גם
+- [מאגר ה-GitHub של Gumbo-parser](https://github.com/google/gumbo-parser)
+- [רשימת ספריות לפירוס HTML](https://en.cppreference.com/w/c/experimental/dynamic)
+- [אינטראופרביליות בין C++ ל-Python](https://docs.python.org/3/extending/embedding.html)

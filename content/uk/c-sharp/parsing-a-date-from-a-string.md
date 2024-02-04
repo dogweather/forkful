@@ -1,64 +1,88 @@
 ---
-title:                "Аналіз дати з рядка"
-date:                  2024-01-20T15:35:16.481704-07:00
-simple_title:         "Аналіз дати з рядка"
-
+title:                "Розбір дати з рядка"
+date:                  2024-02-03T19:14:22.321798-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Розбір дати з рядка"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/c-sharp/parsing-a-date-from-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-## Що та Навіщо?
+## Що і Чому?
+Аналіз дати з рядка в C# полягає у конвертації текстових представлень дат та часу у об'єкт `DateTime`. Це необхідно для додатків, які потребують маніпуляції, збереження або відображення дат та часу в різних форматах, таких як додатки для планування, обробники журналів чи будь-які системи, що обробляють введення дати від користувачів або зовнішніх джерел.
 
-Parsing a date means converting a string into a DateTime object. Programmers do it to handle date information within a program, such as saving or comparing dates.
+## Як:
 
-## How to:
-## Як це зробити:
+**Базовий аналіз:**
 
-```C#
-using System;
+Методи `DateTime.Parse` та `DateTime.TryParse` є основними варіантами для конвертації рядка у `DateTime`. Ось швидкий приклад:
+
+```csharp
+string dateString = "2023-04-12";
+DateTime parsedDate;
+
+if (DateTime.TryParse(dateString, out parsedDate))
+{
+    Console.WriteLine($"Успішно аналізовано: {parsedDate}");
+}
+else
+{
+    Console.WriteLine("Не вдалося аналізувати.");
+}
+// Вивід: Успішно аналізовано: 4/12/2023 12:00:00 AM
+```
+
+**Вказівка культури:**
+
+Іноді вам потрібно аналізувати рядок дати, який є у певному форматі культури. Це можна досягнути за допомогою класу `CultureInfo`:
+
+```csharp
 using System.Globalization;
 
-class Program
-{
-    static void Main()
-    {
-        string dateString = "24-03-2023";
-        string format = "dd-MM-yyyy";
-        CultureInfo provider = CultureInfo.InvariantCulture;
+string dateString = "12 avril 2023";
+var cultureInfo = new CultureInfo("fr-FR");
+DateTime parsedDate = DateTime.Parse(dateString, cultureInfo);
 
-        try
-        {
-            DateTime parsedDate = DateTime.ParseExact(dateString, format, provider);
-            Console.WriteLine(parsedDate.ToString("dddd, dd MMMM yyyy"));
-        }
-        catch (FormatException)
-        {
-            Console.WriteLine($"{dateString} is not in the correct format.");
-        }
-    }
+Console.WriteLine(parsedDate);
+// Вивід: 4/12/2023 12:00:00 AM
+```
+
+**Точний аналіз з певним форматом:**
+
+У сценаріях, де дати надходять у певному форматі, який може бути нестандартним, `DateTime.ParseExact` стане в нагоді:
+
+```csharp
+string dateString = "Wednesday, 12 April 2023";
+string format = "dddd, d MMMM yyyy";
+DateTime parsedDate = DateTime.ParseExact(dateString, format, CultureInfo.InvariantCulture);
+
+Console.WriteLine(parsedDate);
+// Вивід: 4/12/2023 12:00:00 AM
+```
+
+**Використання NodaTime:**
+
+Для ще більш надійного аналізу дати та часу, розгляньте використання популярної сторонньої бібліотеки NodaTime. Вона надає ширший спектр можливостей обробки дати/часу:
+
+```csharp
+using NodaTime;
+using NodaTime.Text;
+
+var pattern = LocalDatePattern.CreateWithInvariantCulture("yyyy-MM-dd");
+var parseResult = pattern.Parse("2023-04-12");
+
+if (parseResult.Success)
+{
+    LocalDate localDate = parseResult.Value;
+    Console.WriteLine(localDate); // 2023-04-12
+}
+else
+{
+    Console.WriteLine("Не вдалося аналізувати.");
 }
 ```
 
-Sample Output:
-```
-Friday, 24 March 2023
-```
-
-## Deep Dive:
-## Поглиблений Аналіз:
-
-Historically, date parsing in C# has evolved. Previous versions relied on `DateTime.Parse` which works well but lacks precision. `DateTime.ParseExact` and `TryParseExact` methods provide more control by requiring a specific date format.
-
-Alternatives include using DateTimeOffset for time zone-aware applications or third-party libraries like NodaTime for more complex scenarios.
-
-Implementation-wise, it's crucial to use `CultureInfo`, as date formats vary worldwide. For example, the US uses "MM-dd-yyyy", while most of Europe prefers "dd-MM-yyyy". You have to use the right culture to avoid date interpretation errors.
-
-## See Also:
-## Дивіться Також:
-
-- [Microsoft Docs - DateTime.ParseExact Method](https://docs.microsoft.com/en-us/dotnet/api/system.datetime.parseexact)
-- [Microsoft Docs - Custom date and time format strings](https://docs.microsoft.com/en-us/dotnet/standard/base-types/custom-date-and-time-format-strings)
-- [NodaTime Documentation](https://nodatime.org/)
+NodaTime пропонує широку підтримку часових зон, концепцій періоду та тривалості, а також багато різних календарних систем, роблячи її потужним вибором для складної маніпуляції з датами та часом у .NET додатках.

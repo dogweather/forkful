@@ -1,47 +1,81 @@
 ---
 title:                "HTML 파싱"
-date:                  2024-01-20T15:31:52.139126-07:00
+date:                  2024-02-03T19:12:17.170813-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "HTML 파싱"
-
 tag:                  "HTML and the Web"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/fish-shell/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (무엇이며 왜?)
-HTML 파싱은 HTML 문서의 구조를 분석해서 데이터를 추출하는 과정입니다. 프로그래머들은 데이터를 재사용하거나 웹 콘텐츠를 분석하기 위해 이 작업을 합니다.
+## 무엇 & 왜?
 
-## How to:
-Fish에서 HTML을 파싱하려면, 주로 외부 도구를 호출합니다. 여기에 `pup`를 사용하는 예제를 보여드리죠.
+HTML 파싱은 HTML 컨텐츠에서 데이터나 정보를 추출하는 것을 말하며, 웹 데이터를 다룰 때 흔한 작업입니다. 프로그래머들은 웹 사이트에서 정보를 자동으로 추출하기 위한 작업, 예를 들면 웹 스크래핑, 데이터 마이닝, 자동화된 테스팅 등을 수행하기 위해 이를 수행합니다.
 
-```Fish Shell
-# pup을 설치합니다 (brew를 이용한 macOS 기준)
-brew install pup
+## 어떻게:
 
-# 간단한 HTML 파일을 만든 후 파싱합니다.
-echo "<html><body><p>Hello, Fish!</p></body></html>" | pup 'p text{}'
+주로, Fish shell은 직접적으로 HTML을 파싱하기 위해 설계되지 않았습니다. 하지만, `curl`, `grep`, `sed`, `awk` 같은 Unix 도구들을 함께 사용하거나, `pup` 또는 Python 스크립트에서 `beautifulsoup` 같은 전문 도구를 사용하는데 뛰어납니다. 아래 예제들은 Fish shell 내에서 이러한 도구들을 이용하여 HTML을 파싱하는 방법을 보여줍니다.
 
-# 출력
-Hello, Fish!
+### `curl`과 `grep` 사용하기:
+HTML 컨텐츠를 가져와 링크가 포함된 줄을 추출합니다:
+
+```fish
+curl -s https://example.com | grep -oP '(?<=href=")[^"]*'
 ```
 
-`pup`은 CSS 선택자를 사용해 HTML 요소를 편리하게 추출할 수 있습니다.
+출력:
+```
+/page1.html
+/page2.html
+...
+```
 
-## Deep Dive (심층 탐구)
-HTML 파싱은 초기 월드와이드웹의 시절부터 필요했습니다. 복잡성이 증가함에 따라 더 강력하고 빠른 도구들이 개발되었죠.
+### `pup` 사용하기 (HTML을 파싱하기 위한 커맨드라인 도구):
 
-Fish Shell 자체에는 HTML 파싱 기능이 내장되어 있지 않습니다. 하지만 `pup`, `hxselect` 또는 `xmllint`와 같은 외부 프로그램을 Fish 스크립트에서 호출하여 사용합니다.
+먼저, `pup`이 설치되어 있는지 확인합니다. 그런 다음 태그, id, 클래스 등으로 요소를 추출할 수 있습니다.
 
-Fish의 장점은 쉘 스크립트 내에서 다른 프로그램과의 연계가 매우 간단하다는 점입니다. 다른 언어로 작성된 파싱 도구를 쉽게 조합할 수 있어 유연한 해결책을 제공합니다.
+```fish
+curl -s https://example.com | pup 'a attr{href}'
+```
 
-HTML 파싱 기술 중에는 정규 표현식이 자주 언급되지만, 이 방법은 복잡하거나 예외적인 경우에 적합하지 않아 권장하지 않습니다.
+출력은 `grep` 예제와 유사하게, `<a>` 태그의 href 속성을 나열합니다.
 
-## See Also (더 보기)
-- pup: https://github.com/ericchiang/pup
-- hxselect: http://man7.org/linux/man-pages/man1/hxselect.1.html
-- xmllint: http://xmlsoft.org/xmllint.html
-- Fish Shell 공식 문서: http://fishshell.com/docs/current/index.html
+### Python 스크립트와 `beautifulsoup` 사용하기:
 
-이 글이 HTML 파싱에 대한 간단한 도입 부분을 이해하는 데 도움이 되기를 바랍니다. '더 보기' 섹션의 도구들을 더 살펴보시면 Fish Shell 환경에서 강력한 HTML 파싱 스킬을 키울 수 있습니다.
+Fish 자체는 네이티브로 HTML을 파싱할 수 없지만, Python 스크립트와는 원활하게 통합됩니다. 아래는 Python과 `BeautifulSoup`을 사용하여 HTML에서 타이틀을 파싱하고 추출하는 간결한 예제입니다. Python 환경에 `beautifulsoup4`와 `requests`가 설치되어 있는지 확인하세요.
+
+**parse_html.fish**
+
+```fish
+function parse_html -a url
+    python -c "
+import sys
+import requests
+from bs4 import BeautifulSoup
+
+response = requests.get(sys.argv[1])
+soup = BeautifulSoup(response.text, 'html.parser')
+
+titles = soup.find_all('title')
+
+for title in titles:
+    print(title.get_text())
+" $url
+end
+```
+
+사용법:
+
+```fish
+parse_html 'https://example.com'
+```
+
+출력:
+```
+Example Domain
+```
+
+이러한 각각의 방법은 간단한 커맨드라인 텍스트 조작부터 Python 스크립트에서 `beautifulsoup`의 전체 파싱 파워에 이르기까지, 다양한 사용 사례와 복잡성의 스케일을 지원합니다. HTML 구조의 복잡성과 필요에 따라, 당신은 단순한 Unix 파이프라인이나 더 강력한 스크립팅 접근법을 선택할 수 있습니다.

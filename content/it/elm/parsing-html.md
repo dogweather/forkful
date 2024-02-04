@@ -1,55 +1,63 @@
 ---
-title:                "Analisi dell'HTML"
-date:                  2024-01-20T15:31:05.298225-07:00
-simple_title:         "Analisi dell'HTML"
-
+title:                "Analisi del HTML"
+date:                  2024-02-03T19:11:55.049121-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Analisi del HTML"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/elm/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Il parsing di HTML è l’analisi del codice HTML per estrarne dati o strutture. I programmatori lo fanno per manipolare o accedere a contenuti da pagine web in modo programmatico.
+## Cosa & Perché?
+Analizzare HTML in Elm implica l'estrazione di informazioni da documenti HTML. I programmatori lo fanno per interfacciarsi con contenuti web o API che restituiscono HTML, consentendo la creazione di applicazioni web più interattive e dinamiche.
 
-## How to:
-```Elm
-import Html exposing (text)
-import Html.Attributes exposing (href)
-import Html.Parser exposing (run, oneOf, text, tag, attribute)
+## Come Fare:
+Elm non ha una libreria integrata per l'analisi diretta dell'HTML simile a quelle in JavaScript o Python a causa del suo enfasi sulla sicurezza del tipo e sull'evitare errori di runtime. Tuttavia, è possibile utilizzare richieste `Http` per recuperare contenuti e poi usare espressioni regolari o elaborazione lato server per estrarre le informazioni necessarie. Per un'analisi HTML più complessa, un approccio comune coinvolge l'uso di un servizio backend dedicato per analizzare l'HTML e restituire i dati in un formato con cui Elm può lavorare direttamente, come JSON.
 
--- Definisco una semplice funzione per estrarre il contenuto del tag <a>
-extractHref : String -> Result String String
-extractHref html =
-    run (oneOf [tag "a" (attribute "href" href)]) html
-        |> Result.mapError (\_ -> "Unable to parse HTML")
+Ecco un esempio di come recuperare contenuti HTML (assumendo che la risposta del server sia in un formato pulito o un contenuto di un tag specifico):
 
--- Esempio di HTML
-htmlSample : String
-htmlSample = "<a href='https://elm-lang.org'>Visit Elm!</a>"
+```elm
+import Browser
+import Html exposing (Html, text)
+import Http
 
--- Output
-main =
-    text <| toString <| extractHref htmlSample
+type alias Model =
+    { content : String }
 
--- Esempio di output: 
--- Ok "https://elm-lang.org"
+initialModel : Model
+initialModel =
+    { content = "" }
+
+type Msg
+    = Fetch
+    | ReceiveContent String
+
+update : Msg -> Model -> (Model, Cmd Msg)
+update msg model =
+    case msg of
+        Fetch ->
+            ( model
+            , Http.get
+                { url = "https://example.com"
+                , expect = Http.expectString ReceiveContent
+                }
+            )
+
+        ReceiveContent content ->
+            ( { model | content = content }
+            , Cmd.none
+            )
+
+view : Model -> Html Msg
+view model =
+    text model.content
+
+-- Si assume che la definizione della funzione principale e delle sottoscrizioni segua la struttura dell'applicazione standard di Elm.
 ```
 
-## Deep Dive
-Elm fornisce un'elegante libreria di parsing HTML chiamata `Html.Parser` che facilita l'estrazione di dati dal codice HTML. Iniziato come linguaggio funzionale per il front-end, Elm ha introdotto il parsing HTML come parte del suo ecosistema per semplificare le interazioni con il DOM.
+Per elaborare la risposta per analizzare effettivamente elementi o dati specifici, potresti considerare di inviare il contenuto HTML a un endpoint del server che controlli, dove puoi usare librerie disponibili in linguaggi come JavaScript (Cheerio, Jsdom) o Python (BeautifulSoup, lxml) per l'analisi, e poi restituire dati strutturati (come JSON) al tuo applicativo Elm.
 
-Come alternativa, si potrebbe utilizzare JavaScript con libraries come `cheerio` o `jsdom`, ma Elm offre un tipo di sicurezza e una sintassi dichiarativa che aiutano a prevenire errori comuni durante il parsing.
-
-Implementare parsing HTML in Elm richiede una buona comprensione dei `Result` e delle `Parser Combinators`, tecniche che consentono di combinare parser più semplici per gestire strutture HTML complesse. Elm favorisce un approccio immutabile e funzionale, rendendo il codice più prevedibile e facile da mantenere.
-
-## See Also
-Per approfondire, ecco alcune risorse utili:
-
-- Documentazione su `Html.Parser`: https://package.elm-lang.org/packages/elm/html/latest/Html-Parser
-- Guida ai `Parser Combinators` in Elm: https://elmprogramming.com/parser-combinators.html
-- Elm Language Guide: https://guide.elm-lang.org/
-
-Ricorda di visitare la community di Elm per ricevere supporto e condividere esperienze:
-- Elm Slack: http://elmlang.herokuapp.com/
-- Elm Discourse: https://discourse.elm-lang.org/
+Ricorda, l'analisi diretta dell'HTML nel codice Elm lato client non è il modello tipico a causa dei vincoli del linguaggio e della filosofia di incoraggiare una chiara separazione tra il recupero del contenuto e l'elaborazione del contenuto. L'architettura di Elm tende verso l'elaborazione dei dati in un formato più sicuro e prevedibile, come JSON.

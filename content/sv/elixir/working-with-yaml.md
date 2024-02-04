@@ -1,63 +1,91 @@
 ---
-title:                "Arbete med YAML"
-date:                  2024-01-19
-simple_title:         "Arbete med YAML"
-
+title:                "Att Arbeta med YAML"
+date:                  2024-02-03T19:25:22.332085-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Att Arbeta med YAML"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/elixir/working-with-yaml.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-YAML är ett dataformat för att strukturera information, liknande JSON men mer läsbart för människor. Programmerare använder YAML för konfigurationsfiler, datautbyte och att definiera datastrukturer på ett enkelt sätt.
 
-## Hur gör man:
-För att hantera YAML i Elixir behöver du ett bibliotek som `yamerl`. Lägg till den som beroende i din `mix.exs` och kör `mix deps.get` för att installera.
+YAML, som står för YAML Ain't Markup Language, är en standard för serialisering av data som är läsbar för människor och som vanligtvis används för konfigurationsfiler och datadelning mellan språk med olika datastrukturer. Programmerare använder den på grund av dess enkelhet och dess förmåga att enkelt representera komplex hierarkisk data.
+
+## Hur man gör:
+
+Elixir inkluderar inte inbyggt stöd för YAML. Du kan dock använda tredjepartsbibliotek såsom `yamerl` eller `yaml_elixir` för att arbeta med YAML. Här kommer vi att fokusera på `yaml_elixir` på grund av dess användarvänlighet och omfattande funktioner.
+
+Först, lägg till `yaml_elixir` i dina beroenden i mix.exs:
 
 ```elixir
-# Lägg till yamerl i mix.exs
 defp deps do
   [
-    {:yamerl, "~> 0.8"}
+    {:yaml_elixir, "~> 2.9"}
   ]
 end
 ```
 
-Läs en YAML-fil och omvandla till Elixir datastruktur:
+Kör sedan `mix deps.get` för att hämta det nya beroendet.
 
-```elixir
-# Använda Yamerl för att läsa YAML
-{:ok, yamerl} = Application.ensure_all_started(:yamerl)
+### Läsa YAML
 
-yaml_content = """
-- cat
-- dog
-- mouse
-"""
+Givet en enkel YAML-fil, `config.yaml`, som ser ut så här:
 
-{:ok, data} = :yamerl_constr.string(yaml_content)
-IO.inspect(data) # Skriver ut: [cat, dog, mouse]
+```yaml
+database:
+  adapter: postgres
+  username: user
+  password: pass
 ```
 
-Skriva en Elixir datastruktur till en YAML-sträng:
+Du kan läsa denna YAML-fil och konvertera den till en Elixir-mapp på följande sätt:
 
 ```elixir
-# Skapa en YAML-sträng från Elixir
-list = ["cat", "dog", "mouse"]
-yaml_string = :yamerl.encode(list)
-IO.puts(yaml_string)
-# Output:
-# - cat
-# - dog
-# - mouse
+%module Config do
+  def read do
+    {:ok, content} = YamlElixir.read_from_file("config.yaml")
+    content
+  end
+end
+
+# Exempelanvändning
+Config.read()
+# Output: 
+# %{
+#   "database" => %{
+#     "adapter" => "postgres",
+#     "username" => "user",
+#     "password" => "pass"
+#   }
+# }
 ```
 
-## Deep Dive
-YAML (YAML Ain't Markup Language) skapades 2001 för att vara användarvänligt och lätt att förstå. Alternativ som JSON och XML används också för datarepresentation, men YAML är populär bland utvecklare för sin tydlighet och enkelhet. Elixirs YAML-hantering bygger på Erlang-biblioteket `yamerl`, vilket gör det enkelt att infoga YAML-stöd i Elixir-program.
+### Skriva YAML
 
-## Se Också
-- YAML officiell webbplats: [https://yaml.org](https://yaml.org)
-- `yamerl` GitHub sida: [https://github.com/yakaz/yamerl](https://github.com/yakaz/yamerl)
-- Elixir officiell dokumentation: [https://hexdocs.pm/elixir/](https://hexdocs.pm/elixir/)
-- Elixir Forum för diskussioner: [https://elixirforum.com](https://elixirforum.com)
+För att skriva en mapp tillbaka till en YAML-fil:
+
+```elixir
+defmodule ConfigWriter do
+  def write do
+    content = %{
+      database: %{
+        adapter: "mysql",
+        username: "root",
+        password: "s3cret"
+      }
+    }
+    
+    YamlElixir.write_to_file("new_config.yaml", content)
+  end
+end
+
+# Exempelanvändning
+ConfigWriter.write()
+# Detta kommer att skapa eller skriva över `new_config.yaml` med det angivna innehållet
+```
+
+Notera hur `yaml_elixir` möjliggör en enkel översättning mellan YAML-filer och Elixir-datastrukturer, vilket gör det till ett utmärkt val för Elixir-programmerare som behöver arbeta med YAML-data.

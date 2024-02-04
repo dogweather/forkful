@@ -1,42 +1,109 @@
 ---
 title:                "वर्तमान तारीख प्राप्त करना"
-date:                  2024-01-20T15:15:48.518024-07:00
+date:                  2024-02-03T19:11:24.433015-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "वर्तमान तारीख प्राप्त करना"
-
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/kotlin/getting-the-current-date.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (क्या और क्यों?)
-प्रोग्राम में वर्तमान तारीख जानना आवश्यक हो सकता है, जैसे लॉग्स के लिए या किसी कार्यक्रम घटना का समय दर्ज करने के लिए। यह एप्लिकेशन को अधिक प्रासंगिक और प्रयोगकर्ता-अनुरूप बनाता है।
+## क्या और क्यों?
+प्रोग्रामिंग में, वर्तमान दिनांक प्राप्त करना एक मौलिक कार्य है जो डेवलपर्स को उनके एप्लिकेशन्स में वर्तमान दिनांक को एक्सेस, प्रदर्शित, या मैनिपुलेट करने की क्षमता प्रदान करता है। यह क्षमता घटनाओं के लॉगिंग और समय-चिह्नित करने से लेकर दिनांकों पर आधारित गणनाओं तक के लिए अत्यंत महत्वपूर्ण है।
 
-## How to: (कैसे करें:)
-Kotlin में वर्तमान तारीख प्राप्त करना बेहद आसान है। नीचे दिए गए कोड स्निपेट का प्रयोग करें:
+## कैसे:
 
-```Kotlin
+### मानक कोटलिन का उपयोग करके
+कोटलिन की अपनी कोई दिनांक और समय API नहीं है, लेकिन यह इस कार्यक्षमता के लिए जावा स्टैंडर्ड लाइब्रेरी पर निर्भर करता है। यहाँ आप वर्तमान दिनांक कैसे प्राप्त कर सकते हैं:
+
+```kotlin
 import java.time.LocalDate
 
 fun main() {
     val today = LocalDate.now()
-    println("आज की तारीख है: $today")
+    println("आज की तारीख: $today")
 }
 ```
 
-जब आप इस कोड को चलाएंगे, आउटपुट कुछ ऐसा दिखाई देगा (तारीख आपके वर्तमान दिन पर आधारित होगी):
-
+**नमूना आउटपुट:**
 ```
-आज की तारीख है: 2023-03-25
+आज की तारीख: 2023-04-05
 ```
 
-## Deep Dive (गहराई में जानकारी):
-तारीख और समय को हैंडल करने के लिए Java 8 से पहले `java.util.Date` और `java.util.Calendar` का इस्तेमाल होता था। हालांकि, इनमें कुछ समस्याएं थीं, जैसे असुरक्षित थ्रेड और डिज़ाइन में पेचीदगियां। Java 8 में `java.time` पैकेज इस समस्या का समाधान लेकर आया और इसे Kotlin में भी अपनाया गया। 
+### java.util.Date का उपयोग करके
+जिन ऑपरेशनों को दिनांक और समय दोनों की आवश्यकता होती है, आप `java.util.Date` पसंद कर सकते हैं।
 
-`LocalDate.now()` का प्रयोग करना इसलिए बेहतर है क्योंकि यह टाइम-ज़ोन से स्वतंत्र होता है और केवल दिनांक प्रदान करता है। अगर आपको समय ज़ोन के साथ वर्तमान दिनांक और समय चाहिए, तो `ZonedDateTime.now()` या `OffsetDateTime.now()` का इस्तेमाल कर सकते हैं।
+```kotlin
+import java.util.Date
 
-## See Also (और जानकारी):
+fun main() {
+    val currentDate = Date()
+    println("वर्तमान दिनांक और समय: $currentDate")
+}
+```
 
-- Kotlin डॉक्युमेंटेशन: [Kotlin Documentation](https://kotlinlang.org/docs/reference/)
-- java.time पैकेज: [Oracle java.time package](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
-- Kotlin और डेटा हैंडलिंग: [Handling Dates in Kotlin](https://medium.com/@kashifmin/handling-dates-in-kotlin-978c9ae1b5e5)
+**नमूना आउटपुट:**
+```
+वर्तमान दिनांक और समय: Wed Apr 05 15:20:45 GMT 2023
+```
+
+### Joda-Time पुस्तकालय का उपयोग करके
+जावा 8 ने एक नई दिनांक और समय API पेश की थी, उससे पहले Joda-Time जावा और कोटलिन में दिनांक-समय ऑपरेशनों के लिए डी-फैक्टो मानक था। हालाँकि अब यह कई प्रोजेक्ट्स के लिए आवश्यक नहीं है, कुछ इसे अभी भी पुराने कारणों या व्यक्तिगत पसंद के लिए उपयोग कर सकते हैं।
+
+अपनी प्रोजेक्ट की build.gradle फ़ाइल में Joda-Time पुस्तकालय जोड़ें:
+```
+implementation 'joda-time:joda-time:2.10.10'
+```
+
+```kotlin
+import org.joda.time.LocalDate
+
+fun main() {
+    val today = LocalDate.now()
+    println("आज की तारीख: $today")
+}
+```
+
+**नमूना आउटपुट:**
+```
+आज की तारीख: 2023-04-05
+```
+
+### Android के लिए ThreeTenABP का उपयोग करके
+Android विकास के लिए, Android API Level 26 से पहले के संस्करणों के लिए जावा टाइम API की बैकपोर्ट वाया थ्रीटेन एंड्रॉइड बैकपोर्ट प्रोजेक्ट का उपयोग करना सुझाया जाता है।
+
+अपने एप की build.gradle फ़ाइल में निर्भरता जोड़ें:
+```
+implementation 'com.jakewharton.threetenabp:threetenabp:1.3.1'
+```
+
+इसे अपने एप्लिकेशन क्लास में प्रारंभ करें:
+```kotlin
+import android.app.Application
+import com.jakewharton.threetenabp.AndroidThreeTen
+
+class MyApp : Application() {
+    override fun onCreate() {
+        super.onCreate()
+        AndroidThreeTen.init(this)
+    }
+}
+```
+
+फिर, आप इसे इस तरह उपयोग कर सकते हैं:
+```kotlin
+import org.threeten.bp.LocalDate
+
+fun main() {
+    val today = LocalDate.now()
+    println("आज की तारीख: $today")
+}
+```
+
+**नमूना आउटपुट:**
+```
+आज की तारीख: 2023-04-05
+```

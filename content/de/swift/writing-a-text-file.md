@@ -1,46 +1,104 @@
 ---
 title:                "Eine Textdatei schreiben"
-date:                  2024-01-19
+date:                  2024-02-03T19:29:47.767691-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Eine Textdatei schreiben"
-
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/swift/writing-a-text-file.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Was & Warum?
 
-Das Schreiben in eine Textdatei bedeutet, dass Daten dauerhaft gespeichert werden. Programmierer nutzen dies, um Daten zu loggen, Einstellungen zu speichern oder Informationen zwischen Sessions zu übertragen.
+Das Schreiben einer Textdatei in Swift ermöglicht es Ihnen, Zeichenketten-Daten dauerhaft auf dem Dateisystem zu speichern, was für Aufgaben wie das Speichern von Konfigurationseinstellungen, Benutzerdaten oder Protokollen wesentlich ist. Programmierer tun dies oft, um Daten zwischen App-Starts zu erhalten, Daten zwischen verschiedenen Teilen einer Anwendung zu teilen oder Daten zu exportieren, die von anderen Programmen verwendet werden sollen.
 
-## How to:
+## Wie zu:
 
-Swift bietet `String` die Methode `write(to:atomically:encoding:)`, um Daten einfach in Dateien zu schreiben.
+### Verwendung der Swift Standardbibliothek
 
-```Swift
+Die Standardbibliothek von Swift umfasst alle notwendigen Werkzeuge zum Schreiben von Textdateien. Hier ist ein grundlegender Ansatz:
+
+```swift
 import Foundation
 
-let text = "Hallo, Welt!"
-if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
-    let fileURL = dir.appendingPathComponent("meineDatei.txt")
-    
-    do {
-        try text.write(to: fileURL, atomically: false, encoding: .utf8)
-        print("Datei erfolgreich gespeichert.")
-    } catch {
-        print("Fehler beim Schreiben der Datei: \(error)")
+let content = "Hallo, Wired-Leser! Swift zu lernen macht Spaß."
+let filePath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String
+let fileName = "\(filePath)/beispiel.txt"
+
+do {
+    try content.write(toFile: fileName, atomically: false, encoding: String.Encoding.utf8)
+    print("Datei erfolgreich geschrieben")
+} catch let error as NSError {
+    print("Schreiben zur URL fehlgeschlagen: \(fileName), Fehler: " + error.localizedDescription)
+}
+```
+
+Dieser Codeausschnitt schreibt eine Zeichenkette in eine Datei namens `beispiel.txt` im Dokumentenverzeichnis. Er behandelt mögliche Fehler mit Swifts Fehlerbehandlung do-try-catch.
+
+### Verwendung von FileManager für mehr Kontrolle
+
+Für mehr Kontrolle über Dateiattribute oder um zu überprüfen, ob die Datei bereits existiert, kann `FileManager` verwendet werden:
+
+```swift
+import Foundation
+
+let fileManager = FileManager.default
+let directories = fileManager.urls(for: .documentDirectory, in: .userDomainMask)
+if let documentDirectory = directories.first {
+    let fileURL = documentDirectory.appendingPathComponent("beispiel.txt")
+    let content = "Swift für Dateiverwaltung zu erkunden ist aufschlussreich."
+
+    if fileManager.fileExists(atPath: fileURL.path) {
+        print("Datei existiert bereits")
+    } else {
+        do {
+            try content.write(to: fileURL, atomically: true, encoding: .utf8)
+            print("Datei erfolgreich erstellt und geschrieben")
+        } catch {
+            print("Fehler beim Schreiben der Datei: \(error)")
+        }
     }
 }
 ```
 
-Beim Ausführen schreibt das Programm "Hallo, Welt!" in die Datei `meineDatei.txt` im Dokumentenverzeichnis des Nutzers.
+### Verwendung von Drittanbieter-Bibliotheken
 
-## Deep Dive
+Eine beliebte Drittanbieter-Bibliothek für Dateisystemoperationen in Swift ist `Files` von John Sundell:
 
-Historisch gesehen wurde in Swift `NSFileManager` genutzt, das Teil von Foundation ist. Mittlerweile bietet `FileManager` modernere und sicherere Schnittstellen. Als Alternative kannst du Streams oder niedrigere APIs wie `fwrite` in POSIX verwenden, falls nötig. Beim Schreiben von Textdateien sollte man auf korrekte Kodierung achten (meistens UTF-8), um Zeichensatzprobleme zu vermeiden.
+Fügen Sie zunächst Files Ihrem Projekt hinzu, üblicherweise über den Swift Package Manager.
 
-## See Also
+```swift
+// swift-tools-version:5.3
+import PackageDescription
 
-- Swift Documentation zum `FileManager`: [FileManager | Apple Developer Documentation](https://developer.apple.com/documentation/foundation/filemanager)
-- Swift Standard Library zum String Handling: [String | Apple Developer Documentation](https://developer.apple.com/documentation/swift/string)
-- Apple Guide zu Dateisystem-Interaktionen: [File System Programming Guide](https://developer.apple.com/library/archive/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/Introduction/Introduction.html)
+let package = Package(
+    name: "IhrPaketName",
+    dependencies: [
+        .package(url: "https://github.com/JohnSundell/Files", from: "4.0.0"),
+    ],
+    targets: [
+        .target(
+            name: "IhrZielName",
+            dependencies: ["Files"]),
+    ]
+)
+```
+
+Verwenden Sie es dann, um in eine Datei zu schreiben:
+
+```swift
+import Files
+
+do {
+    let file = try File(path: "/pfad/zu/ihrem/verzeichnis/beispiel.txt")
+    try file.write(string: "Swift und die Files-Bibliothek bilden eine starke Kombination.")
+    print("Datei erfolgreich mit Files-Bibliothek geschrieben.")
+} catch {
+    print("Ein Fehler ist aufgetreten: \(error)")
+}
+```
+
+Mit der `Files`-Bibliothek wird die Dateibehandlung unkomplizierter, sodass Sie sich auf die Geschäftslogik Ihrer Anwendung konzentrieren können anstatt auf die Details der Dateiverwaltung.

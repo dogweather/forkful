@@ -1,54 +1,72 @@
 ---
-title:                "Робота з CSV файлами"
-date:                  2024-01-19
-simple_title:         "Робота з CSV файлами"
-
+title:                "Робота з CSV"
+date:                  2024-02-03T19:21:59.625998-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Робота з CSV"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/swift/working-with-csv.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Що це та навіщо?
-Робота з CSV в Swift - це парсинг і запис кома-сепарейтед велью файлів. Дозволяє обмінюватися даними з таблицями й базами даних, бо формат універсальний і легко читається людьми.
+## Що і чому?
 
-## Як це зробити:
-```Swift
-import Foundation
+Робота з файлами CSV (Comma-Separated Values, значення, розділені комами) передбачає аналіз та генерацію структурованих даних з текстових файлів, де кожен рядок представляє запис, а кожен запис складається з полів, розділених комами. Програмісти часто займаються цією діяльністю, щоб легко імпортувати, експортувати та маніпулювати табличними даними за допомогою формату, який широко підтримується на різних платформах і мовами програмування завдяки його простоті та формату, зрозумілому для людини.
 
-// Читання CSV файлу
+## Як:
+
+У Swift немає вбудованої підтримки для безпосереднього аналізу файлів CSV, але ви можете обробляти дані CSV, використовуючи методи `String` для розбиття вмісту, або використовуючи сторонні бібліотеки, такі як SwiftCSV, для більш зручного підходу. Ось обидва методи:
+
+### Ручний аналіз без зовнішніх бібліотек
+```swift
+// Розглянемо простий рядок CSV
 let csvString = """
 name,age,city
-Alice,30,New York
-Bob,25,Los Angeles
-Charlie,35,Chicago
+John Doe,29,New York
+Jane Smith,34,Los Angeles
 """
 
-// Розбивка на рядки і колонки
-var rows = csvString.components(separatedBy: .newlines)
-rows.removeFirst() // Видалити заголовки
+// Розділімо рядок CSV на рядки
+let rows = csvString.components(separatedBy: "\n")
 
-let columns = rows.map { $0.components(separatedBy: ",") }
+// Витягнемо ключі з першого рядка
+let keys = rows.first?.components(separatedBy: ",")
 
-// Працюємо з даними
-for row in columns {
-    if !row.isEmpty {
-        print("Name: \(row[0]), Age: \(row[1]), City: \(row[2])")
-    }
+// Проходимося по рядках, починаючи з другого
+var result: [[String: String]] = []
+for row in rows.dropFirst() {
+    let values = row.components(separatedBy: ",")
+    let dict = Dictionary(uniqueKeysWithValues: zip(keys!, values))
+    result.append(dict)
+}
+
+// Приклад виводу
+print(result)
+// Виводить: [{"city": "New York", "age": "29", "name": "John Doe"}, {"city": "Los Angeles", "age": "34", "name": "Jane Smith"}]
+```
+Цей підхід простий, але не дуже надійний, особливо у випадках із спеціальними умовами, такими як коми у значеннях, розриви рядків у полях тощо.
+
+### Використання бібліотеки SwiftCSV
+Спочатку додайте SwiftCSV до вашого проєкту, включивши її в залежності вашого `Package.swift`:
+```swift
+.package(url: "https://github.com/swiftcsv/SwiftCSV.git", from: "0.5.6")
+```
+Потім імпортуйте та використовуйте її наступним чином:
+```swift
+import SwiftCSV
+
+// Припустимо, `csvString` визначено як вище
+
+// Створимо об'єкт CSV
+if let csv = try? CSV(string: csvString) {
+    // Доступ до рядків як до словників
+    let rows = csv.namedRows
+    
+    // Приклад виводу
+    print(rows)
+    // Виводить: [{"city": "New York", "age": "29", "name": "John Doe"}, {"city": "Los Angeles", "age": "34", "name": "Jane Smith"}]
 }
 ```
-
-Вивід:
-```
-Name: Alice, Age: 30, City: New York
-Name: Bob, Age: 25, City: Los Angeles
-Name: Charlie, Age: 35, City: Chicago
-```
-
-## Глибоке занурення:
-CSV (Comma-Separated Values) зародився у ранніх 1970-х, коли потрібен був простий формат обміну табличними даними. Його альтернативи зараз — JSON і XML, кожен із своїми перевагами. В CSV, немає типу даних, тільки рядки, тому під час роботи часто треба конвертувати типи вручну. Основна задача Swift коду, який працює з CSV, — правильно обробити краєві випадки, такі як коми і переноси рядків в значеннях.
-
-## Дивіться також:
-- [Swift CSV](https://github.com/swiftcsv/SwiftCSV), бібліотека для роботи з CSV в Swift.
-- [RFC 4180](https://tools.ietf.org/html/rfc4180), офіційний стандарт CSV.
-- [CodableCSV](https://github.com/dehesa/CodableCSV), ще одна бібліотека, яка надає кодувальні й декодувальні можливості для CSV.
+SwiftCSV спрощує аналіз, автоматично обробляючи нюанси, такі як коми всередині тексту, розриви рядків у полях та кодування символів. Однак, пам'ятайте про необхідність обробки можливих помилок у реальних додатках, особливо при роботі з зовнішніми джерелами даних.

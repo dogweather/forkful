@@ -1,51 +1,56 @@
 ---
-title:                "Analisi dell'HTML"
-date:                  2024-01-20T15:32:12.868016-07:00
-simple_title:         "Analisi dell'HTML"
-
+title:                "Analisi del HTML"
+date:                  2024-02-03T19:12:12.619816-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Analisi del HTML"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/haskell/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Cosa & Perché?)
-Il parsing HTML consiste nel leggere e interpretare il codice HTML per estrarre dati o manipolare la struttura. I programmatori lo fanno per automatizzare l'analisi dei contenuti web, per data mining o per testare le applicazioni.
+## Cosa & Perché?
 
-## How to: (Come fare:)
-```Haskell
+Parsare HTML in Haskell ti permette di estrarre dati, manipolare il contenuto HTML o interagire con le pagine web programmaticamente. Questa operazione è essenziale per compiti come lo scraping web, il testing automatizzato di applicazioni web e il data mining da siti web - sfruttando il robusto sistema di tipi di Haskell e i paradigmi di programmazione funzionale per garantire codice robusto e conciso.
+
+## Come fare:
+
+Per parsare HTML in Haskell, useremo la libreria `tagsoup` per la sua semplicità e flessibilità. Prima di tutto, assicurati di installare la libreria aggiungendo `tagsoup` al file cabal del tuo progetto o eseguendo `cabal install tagsoup`.
+
+```haskell
 {-# LANGUAGE OverloadedStrings #-}
-import qualified Data.Text as T
-import qualified Data.Text.IO as TIO
-import Text.HTML.Scalpel
 
--- Definizione del tipo per estrarre il contenuto del titolo
-type Title = T.Text
+import Text.HTML.TagSoup
 
--- Estrae il titolo da una stringa HTML
-extractTitle :: T.Text -> Maybe Title
-extractTitle html = scrapeStringLike html $ text "title"
+-- HTML di esempio per dimostrazione
+let sampleHtml = "<html><body><p>Impara Haskell!</p><a href='http://example.com'>Clicca Qui</a></body></html>"
 
--- Test della funzione `extractTitle`
-main :: IO ()
-main = do
-    html <- TIO.readFile "example.html" -- sostituisci con il tuo file HTML
-    let title = extractTitle html
-    case title of
-        Nothing -> putStrLn "Nessun titolo trovato."
-        Just t  -> TIO.putStrLn $ "Titolo: " <> t
+-- Parsare HTML e filtrare per i link (tag a)
+let tags = parseTags sampleHtml
+let links = [fromAttrib "href" tag | tag <- tags, isTagOpenName "a" tag]
+
+-- Stampare i link estratti
+print links
 ```
 
-Output di esempio, dato un file HTML con `<title>Benvenuti in Haskell!</title>` nel head:
+Output di esempio:
+```plaintext
+["http://example.com"]
 ```
-Titolo: Benvenuti in Haskell!
+
+Per esigenze di parsing HTML più sofisticate, considera l'uso della libreria `pandoc`, specialmente se stai lavorando con la conversione di documenti. È eccezionalmente versatile ma comporta maggiore complessità:
+
+```haskell
+import Text.Pandoc
+
+-- Assumendo di avere un documento Pandoc (doc) caricato, ad esempio, dalla lettura di un file
+let doc = ... -- Il tuo documento Pandoc va qui
+
+-- Convertire il documento in una stringa HTML
+let htmlString = writeHtmlString def doc
+
+-- Ora, dovresti parsare `htmlString` come sopra o procedere secondo le tue necessità.
 ```
-
-## Deep Dive (Approfondimento)
-Il parsing di HTML risale agli albori del web. Da allora, molteplici librerie sono emerse per facilitare questo compito, alcune performanti ed altre focalizzate sulla facilità d'uso. In Haskell, `Text.HTML.Scalpel` è una scelta popolare per la sua sintassi chiara e capacità di gestire HTML complesso. Alternative come `Text.HTML.TagSoup` offrono un approccio più tollerante agli errori di markup.
-
-Dettaglio implementativo: Scalpel utilizza i Selector per trovare elementi HTML, e può restituire dati in diverse strutture, inclusi testi semplici, liste, o elementi annidati. Fa uso intenso del potente sistema di tipi di Haskell e della programmazione funzionale per mantenere il codice conciso e espressivo.
-
-## See Also (Vedi Anche)
-- [Scalpel documentation](https://hackage.haskell.org/package/scalpel)
-- [TagSoup on Hackage](https://hackage.haskell.org/package/tagsoup)
+Tieni presente che `pandoc` è una libreria molto più ampia che si concentra sulla conversione tra numerosi formati di markup, quindi usala se hai bisogno di quelle capacità extra o se stai già trattando formati di documenti nella tua applicazione.

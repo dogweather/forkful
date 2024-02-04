@@ -1,75 +1,120 @@
 ---
-title:                "עבודה עם קבצי CSV"
-date:                  2024-01-19
-simple_title:         "עבודה עם קבצי CSV"
-
+title:                "עובדים עם CSV"
+date:                  2024-02-03T19:21:14.479387-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "עובדים עם CSV"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/lua/working-with-csv.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## מה ולמה?
 
-עבודה עם קבצי CSV משמעותה לקרוא ולכתוב נתונים בפורמט טקסט פשוט שבו הערכים מופרדים בפסיקים. תכניתנים עושים זאת כי זה מאפשר החלפת נתונים עם תוכנות אחרות בצורה קלה וגמישה.
+עבודה עם קבצי CSV (ערכים מופרדים בפסיק) כוללת ניתוח ויצירת נתוני טקסט המאורגנים לשורות ועמודות, באמצעות שימוש בפסיקים להפרדה בין ערכים בודדים. מתכנתים לעיתים קרובות עוסקים בתהליך זה כדי לקדם החלפת נתונים בין יישומים שונים, בסיסי נתונים, או למטרות עיבוד וניתוח נתונים, בשל התמיכה הנרחבת והפשטות של פורמט הCSV.
 
-## איך עושים את זה?
+## איך לעשות:
 
-קוד לקריאת CSV:
-```Lua
-function parse_csv(input_string)
-  local results = {}
-  for line in input_string:gmatch("[^\r\n]+") do
-    local row = {}
-    for value in line:gmatch("[^,]+") do
-      table.insert(row, value)
+בLua, עבודה עם קבצי CSV יכולה להתקיים באמצעות פעולות קלט/פלט קובצים בסיסיות שהשפה מספקת, ללא הצורך בספריות חיצוניות למשימות פשוטות. עם זאת, לטיפול בפעולות מורכבות יותר, כמו טיפול במקרים מיוחדים (לדוגמה, פסיקים בתוך ערכים), יכול להיות רווחי להשתמש בספריות חיצוניות כמו `lua-csv`.
+
+### קריאת קובץ CSV
+הנה דוגמה פשוטה לקרוא קובץ CSV שורה אחר שורה, תוך פיצול כל שורה לערכים על פי הפסיק.
+
+```lua
+function parseCSVLine(line)
+    local result = {}
+    local from = 1
+    local sep = ","
+    local field
+    while true do
+        local start, finish = string.find(line, sep, from)
+        if not start then
+            table.insert(result, string.sub(line, from))
+            break
+        end
+        field = string.sub(line, from, start - 1)
+        table.insert(result, field)
+        from = finish + 1
     end
-    table.insert(results, row)
-  end
-  return results
+    return result
 end
 
-local csv_data = "שם,גיל\nדני,30\nרחל,25"
-local parsed_data = parse_csv(csv_data)
-for i, row in ipairs(parsed_data) do
-  print(row[1], row[2])
+local file = io.open("example.csv", "r")
+for line in file:lines() do
+    local values = parseCSVLine(line)
+    for i, v in ipairs(values) do
+        print(i, v)
+    end
+end
+file:close()
+```
+
+**פלט לדוגמה** (עבור `example.csv` עם התוכן "name,age\newlineJohn Doe,30\newlineJane Doe,32"):
+```
+1	name
+2	age
+1	John Doe
+2	30
+1	Jane Doe
+2	32
+```
+
+### כתיבת קובץ CSV
+כדי ליצור קובץ CSV, פשוט מרכיבים מחרוזות עם ערכים המופרדים בפסיקים וכותבים אותם לקובץ שורה אחרי שורה.
+
+```lua
+local data = {
+    {"name", "age"},
+    {"John Doe", "30"},
+    {"Jane Doe", "32"}
+}
+
+local file = io.open("output.csv", "w")
+for _, v in ipairs(data) do
+    file:write(table.concat(v, ","), "\n")
+end
+file:close()
+```
+
+פעולה זו תביא ליצירת (או לדריסה) של קובץ `output.csv` עם הנתונים שצוינו.
+
+### שימוש בlua-csv
+לטיפול מתקדם יותר בCSV, כולל תמיכה בציטוטים ותווי בריחה, הספריה `lua-csv` היא בחירה עמידה.
+
+ראשית, התקנו אותה באמצעות LuaRocks:
+```shell
+luarocks install lua-csv
+```
+
+לאחר מכן, קריאת קובץ CSV הופכת לפשוטה כמו:
+
+```lua
+local csv = require("csv")
+
+-- קריאה מקובץ
+for fields in csv.open("example.csv") do
+    for i, v in ipairs(fields) do
+        print(i, v)
+    end
 end
 ```
 
-פלט דוגמא:
-```
-דני 30
-רחל 25
-```
+וכתיבה לCSV עם ציטוט ובריחה כהלכה:
 
-קוד לכתיבת CSV:
-```Lua
-function to_csv(data)
-  local csv_string = ""
-  for _, row in ipairs(data) do
-    csv_string = csv_string .. table.concat(row, ",") .. "\n"
-  end
-  return csv_string
+```lua
+local file = csv.open("output.csv", {write=true})
+
+local data = {
+    {"name", "profession", "location"},
+    {"John Doe", "Software Engineer", "New York, NY"},
+    {"Jane Doe", "Data Scientist", "\"San Francisco, CA\""}
+}
+
+for _, v in ipairs(data) do
+    file:write(v)
 end
-
-local people = {{"נעמי", "22"}, {"אלון", "33"}}
-local csv_output = to_csv(people)
-print(csv_output)
 ```
 
-פלט דוגמא:
-```
-נעמי,22
-אלון,33
-```
-
-## עומק הנושא
-
-פורמט CSV התפתח בשנות ה-70 כדרך פשוטה לייצוא וייבוא נתונים בין תוכנות שונות. אלטרנטיבות פחות פשוטות לפורמט כוללות JSON או XML, שניהם מספקים עושר ייצוג נתונים גדול יותר. בנוגע לCSV, פרטי היישום יכולים להיות מורכבים מאחר והפורמט אינו ממש ממותג וישנן הרחבות כמו תמיכה בטקסט מוקף בתיבות או פסיקים בתוך ערכים.
-
-## ראו גם
-
-- Lua 5.4 רשמי [המדריך העצמי](https://www.lua.org/manual/5.4/)
-- [RFC 4180](https://tools.ietf.org/html/rfc4180) - תקן שמגדיר את הפורמט של הCSV
-- ספריית Lua [Penlight](https://github.com/lunarmodules/Penlight), שכוללת פונקציות לעבודה עם CSV
-- כלים מקוונים להמרת קבצי CSV לפורמטים אחרים, כמו [CSV to JSON](https://csvjson.com/csv2json)
+גישה זו מטפלת אוטומטית במורכבויות כגון פסיקים וציטוטים בתוך ערכים.

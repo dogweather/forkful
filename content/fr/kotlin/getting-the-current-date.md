@@ -1,48 +1,109 @@
 ---
 title:                "Obtenir la date actuelle"
-date:                  2024-01-20T15:15:33.201850-07:00
+date:                  2024-02-03T19:10:08.147127-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Obtenir la date actuelle"
-
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/kotlin/getting-the-current-date.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Pourquoi et comment obtenir la date actuelle en Kotlin ? C'est simple : on a souvent besoin de savoir "quand" dans nos applis – pour des logs, des timestamps ou juste afficher la date. C'est une opération de base mais cruciale.
+## Quoi & Pourquoi ?
+En programmation, obtenir la date actuelle est une tâche fondamentale qui permet aux développeurs d'accéder, d'afficher ou de manipuler la date actuelle au sein de leurs applications. Cette capacité est cruciale pour tout, du journalisation et du marquage temporel des événements aux calculs basés sur les dates.
 
-## How to:
-Kotlin rend l'obtention de la date actuelle assez facile avec la librairie `java.time`. Voici comment on fait :
+## Comment faire :
 
-```Kotlin
+### En utilisant Kotlin Standard
+Kotlin n'a pas sa propre API de date et d'heure, mais s'appuie sur la bibliothèque standard Java pour cette fonctionnalité. Voici comment vous pouvez obtenir la date actuelle :
+
+```kotlin
 import java.time.LocalDate
-import java.time.format.DateTimeFormatter
 
 fun main() {
-    val currentDate = LocalDate.now()
-    println("La date actuelle est: $currentDate")
-
-    // Pour afficher la date dans un autre format
-    val formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy")
-    val formattedDate = currentDate.format(formatter)
-    println("La date formatée est: $formattedDate")
+    val aujourd'hui = LocalDate.now()
+    println("Date d'aujourd'hui : $aujourd'hui")
 }
 ```
-Et voilà le résultat :
+
+**Exemple de sortie :**
 ```
-La date actuelle est: 2023-04-12
-La date formatée est: 12/04/2023
+Date d'aujourd'hui : 2023-04-05
 ```
 
-## Deep Dive:
-Avant `java.time`, introduit dans Java 8, on utilisait `java.util.Date` mais c'était moins intuitif et sûr. `java.time` est inspiré de Joda-Time et conçu pour être plus clair et immuable, ce qui facilite la manipulation des dates sans side-effects.
+### En utilisant java.util.Date
+Pour les opérations nécessitant à la fois la date et l'heure, vous pourriez préférer `java.util.Date`.
 
-Il y a des alternatives : on peut utiliser `Calendar` pour les anciennes versions de Java ou des biblio externes si on veut. Mais sincèrement, `java.time` est tellement bien intégré et puissant qu'il vaut mieux l'adopter.
+```kotlin
+import java.util.Date
 
-Concernant l'implémentation, `LocalDate.now()` utilise l'horloge système pour récupérer la date actuelle. Ça s'appuie sur le fuseau horaire par défaut, donc la date retournée sera différente suivant l'endroit où le code tourne.
+fun main() {
+    val dateActuelle = Date()
+    println("Date et Heure actuelles : $dateActuelle")
+}
+```
 
-## See Also:
-- La doc officielle de `java.time`: https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html
-- Pour comprendre les différences entre `java.time`, `java.util.Date` et `Calendar`: https://www.baeldung.com/java-8-date-time-intro
-- La page Stack Overflow pour résoudre les problèmes courants avec les dates en Kotlin: https://stackoverflow.com/questions/tagged/kotlin+date
+**Exemple de sortie :**
+```
+Date et Heure actuelles : Mer Apr 05 15:20:45 GMT 2023
+```
+
+### En utilisant la bibliothèque Joda-Time
+Avant que Java 8 n'introduise une nouvelle API de date et d'heure, Joda-Time était la norme de facto pour les opérations de date-heure en Java et Kotlin. Même si ce n'est plus nécessaire pour de nombreux projets, certains peuvent toujours l'utiliser pour des raisons d'héritage ou par préférence personnelle.
+
+Ajoutez la bibliothèque Joda-Time au fichier build.gradle de votre projet :
+```
+implementation 'joda-time:joda-time:2.10.10'
+```
+
+```kotlin
+import org.joda.time.LocalDate
+
+fun main() {
+    val aujourd'hui = LocalDate.now()
+    println("Date d'aujourd'hui : $aujourd'hui")
+}
+```
+
+**Exemple de sortie :**
+```
+Date d'aujourd'hui : 2023-04-05
+```
+
+### En utilisant ThreeTenABP pour Android
+Pour le développement Android, il est recommandé d'utiliser la rétroportage de l'API Time Java via le projet ThreeTen Android Backport pour les versions antérieures à l'API Level 26 d'Android.
+
+Ajoutez la dépendance au fichier build.gradle de votre application :
+```
+implementation 'com.jakewharton.threetenabp:threetenabp:1.3.1'
+```
+
+Initialisez-le dans votre classe Application :
+```kotlin
+import android.app.Application
+import com.jakewharton.threetenabp.AndroidThreeTen
+
+class MonApp : Application() {
+    override fun onCreate() {
+        super.onCreate()
+        AndroidThreeTen.init(this)
+    }
+}
+```
+
+Ensuite, vous pouvez l'utiliser ainsi :
+```kotlin
+import org.threeten.bp.LocalDate
+
+fun main() {
+    val aujourd'hui = LocalDate.now()
+    println("Date d'aujourd'hui : $aujourd'hui")
+}
+```
+
+**Exemple de sortie :**
+```
+Date d'aujourd'hui : 2023-04-05
+```

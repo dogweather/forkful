@@ -1,46 +1,114 @@
 ---
 title:                "Tekstitiedoston kirjoittaminen"
-date:                  2024-01-19
+date:                  2024-02-03T19:28:25.215622-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Tekstitiedoston kirjoittaminen"
-
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/java/writing-a-text-file.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Tekstitiedoston kirjoittaminen tarkoittaa tiedon tallentamista tekstimuodossa tiedostoon. Ohjelmoijat kirjoittavat tiedostoja, koska se on helppo tapa tallentaa ja jakaa tietoa pysyvästi.
+## Mikä ja miksi?
 
-## How to:
-Tässä on yksinkertainen esimerkki tekstitiedoston kirjoittamisesta Javalla:
+Tekstitiedoston kirjoittaminen Javalla liittyy kielen kyvykkyyksien hyödyntämiseen sisällön luomiseen ja kirjoittamiseen tiedostojärjestelmän tiedostoihin. Ohjelmoijat tekevät tätä monista syistä, kuten lokitiedostojen kirjaamiseen, datan viemiseen tai sovelluksen tilan tallentamiseen myöhempää noutoa varten.
 
-```Java
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
+## Kuinka:
 
-public class TextFileWriter {
+### Käyttäen `java.nio.file` (Vakiokirjasto)
+
+Javan uusi I/O (NIO)-paketti (`java.nio.file`) tarjoaa monipuolisemman lähestymistavan tiedostojen käsittelyyn. Tässä on yksinkertainen tapa kirjoittaa tiedostoon käyttäen `Files.write()`:
+
+```java
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.Arrays;
+import java.util.List;
+
+public class TextFileWriterNIO {
     public static void main(String[] args) {
-        String text = "Hei! Tämä on tekstiviesti tiedostoon.";
-        String filePath = "tervehdys.txt";
-
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath))) {
-            writer.write(text);
-            System.out.println("Tiedosto kirjoitettu: " + filePath);
-        } catch (IOException e) {
-            System.out.println("Virhe tiedostoa kirjoittaessa: " + e.getMessage());
+        List<String> lines = Arrays.asList("Rivi 1", "Rivi 2", "Rivi 3");
+        try {
+            Files.write(Paths.get("example.txt"), lines);
+            System.out.println("Tiedosto kirjoitettu onnistuneesti!");
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 }
 ```
-Tämä koodi luo "tervehdys.txt" nimisen tiedoston ja kirjoittaa siihen "Hei! Tämä on tekstiviesti tiedostoon.".
 
-## Deep Dive
-Tekstitiedoston kirjoittamisen historia ulottuu tietokoneiden alkuaikoihin, jolloin tiedot tallennettiin magneettinauhalle. Nykyään on monia tapoja kirjoittaa tekstitiedostoja Javassa, kuten `FileWriter`, `BufferedWriter`, `PrintWriter` ja `Files` luokat. `BufferedWriter` on suosittu, koska se tarjoaa puskuroinnin, mikä parantaa suorituskykyä suurten tiedostojen kirjoittamisessa. Tiedostojen käsittelyyn liittyy kuitenkin aina virheiden käsittely – siksi virheenkäsittely (esim. try-with-resources) on olennainen osa tiedostojen kirjoittamista.
+Tuloste:
 
-## See Also
-- [Oracle's Official Java Documentation for FileWriter](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/FileWriter.html)
-- [BufferedWriter documentation](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/BufferedWriter.html)
-- [Java Practices for Reading and Writing Files](http://www.javapractices.com/topic/TopicAction.do?Id=42)
-- [Stack Overflow: Writing a file in Java](https://stackoverflow.com/questions/2885173/how-do-i-create-a-file-and-write-to-it-in-java)
+```
+Tiedosto kirjoitettu onnistuneesti!
+```
+
+### Käyttäen `java.io` (Vakiokirjasto)
+
+Perinteisempää lähestymistapaa varten `java.io.FileWriter` on hyvä valinta tekstiedostojen yksinkertaiseen kirjoittamiseen:
+
+```java
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class TextFileWriterIO {
+    public static void main(String[] args) {
+        try (FileWriter writer = new FileWriter("example.txt")) {
+            writer.write("Hei, Maailma!\n");
+            writer.append("Tämä on toinen rivi.");
+            System.out.println("Tiedosto kirjoitettu onnistuneesti!");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+Tuloste:
+
+```
+Tiedosto kirjoitettu onnistuneesti!
+```
+
+### Käyttäen Apache Commons IO
+
+Apache Commons IO -kirjasto yksinkertaistaa monia operaatioita, mukaan lukien tiedostoon kirjoittamisen. Näin kirjoitat tiedostoon käyttäen `FileUtils.writeStringToFile()`:
+
+Lisää ensin riippuvuus projektiisi. Jos käytät Mavenia, sisällytä:
+
+```xml
+<dependency>
+  <groupId>org.apache.commons</groupId>
+  <artifactId>commons-io</artifactId>
+  <version>2.11.0</version> <!-- Tarkista viimeisin versio -->
+</dependency>
+```
+
+Käytä sitten seuraavaa koodia tekstin kirjoittamiseen tiedostoon:
+
+```java
+import org.apache.commons.io.FileUtils;
+import java.io.File;
+import java.io.IOException;
+
+public class TextFileWriterCommonsIO {
+    public static void main(String[] args) {
+        try {
+            FileUtils.writeStringToFile(new File("example.txt"), "Tämä on tekstiä, joka on kirjoitettu käyttäen Commons IO:ta.", "UTF-8");
+            System.out.println("Tiedosto kirjoitettu onnistuneesti!");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+
+```
+
+Tuloste:
+
+```
+Tiedosto kirjoitettu onnistuneesti!
+```

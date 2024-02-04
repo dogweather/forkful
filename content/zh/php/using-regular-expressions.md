@@ -1,42 +1,70 @@
 ---
 title:                "使用正则表达式"
-date:                  2024-01-19
+date:                  2024-02-03T19:17:42.487385-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "使用正则表达式"
-
 tag:                  "Strings"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/php/using-regular-expressions.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## 什么 & 为什么?
-正则表达式是模式匹配的工具，可以处理字符串的搜索和替换。程序员常用它处理文本数据，快速有效地执行复杂的匹配和数据提取。
+## 什么 & 为什么？
 
-## 如何操作:
-```PHP
-<?php
-// 示例：匹配邮箱
-$emailPattern = "/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/";
-$email = "example@mail.com";
-if (preg_match($emailPattern, $email)) {
-    echo "有效的邮箱地址";
+在 PHP 中的正则表达式（regex）是用于匹配字符串中字符组合的模式，允许进行复杂的搜索和替代操作以及数据验证。程序员利用正则表达式因其在解析文本、验证表单或抓取网页数据等方面的强大和灵活性，使其成为开发者工具箱中不可或缺的工具。
+
+## 如何使用：
+
+PHP 通过 PCRE（Perl 兼容的正则表达式）库支持正则表达式，提供了丰富的函数集。以下是如何使用它们：
+
+### 匹配模式：
+
+要检查字符串中是否存在模式，请使用 `preg_match()`。若字符串中找到了模式，此函数返回 1，否则返回 0。
+
+```php
+if (preg_match("/\bweb\b/i", "PHP 是一种 web 脚本语言")) {
+    echo "找到了匹配。";
 } else {
-    echo "无效的邮箱地址";
+    echo "未找到匹配。";
 }
-// 输出：有效的邮箱地址
-
-// 示例：替换字符串中的空格为下划线
-$text = "Hello World!";
-$replacedText = preg_replace("/\s+/", "_", $text);
-echo $replacedText;
-// 输出：Hello_World!
+// 输出：找到了匹配。
 ```
 
-## 深度解析:
-正则表达式起源于20世纪50年代的理论计算机科学。它们是由数学家Stephen Kleene发明的，作为对字符集合进行操作的一种方式。尽管如今还有其他字符串处理方法，如字符串函数或解析库，但正则表达式因其强大灵活而独占鳌头。在PHP中，通过preg_*系列函数实现了PCRE（Perl Compatible Regular Expressions）标准，提供了丰富的正则表达功能。
+### 查找所有匹配项：
 
-## 参考链接:
-- [PHP官方文档：PCRE函数](https://www.php.net/manual/zh/book.pcre.php)
-- [正则表达式基础教程](https://www.regular-expressions.info/tutorial.html)
-- [在线正则表达式测试器](https://regex101.com/)
+当需要在字符串中找到模式的所有出现时，使用 `preg_match_all()`。
+
+```php
+$text = "猫和狗";
+$pattern = "/\b([a-z]+)\b/i";
+preg_match_all($pattern, $text, $matches);
+print_r($matches[0]);
+// 输出：Array ( [0] => 猫 [1] => 和 [2] => 狗 )
+```
+
+### 替换文本：
+
+要替换与正则表达式匹配的文本，使用 `preg_replace()`。它对于格式化和清理数据非常强大。
+
+```php
+$originalText = "2003年4月15日";
+$pattern = "/(\w+) (\d+), (\d+)/i";
+$replacement = '${1}1,$3';
+echo preg_replace($pattern, $replacement, $originalText);
+// 输出：2003年4月1,15
+```
+
+### 分割字符串：
+
+你可以使用 `preg_split()` 将字符串分割成数组，指定一个模式作为分隔符。
+
+```php
+$text = "PHP 是, 一种极为流行的, 脚本语言";
+$parts = preg_split("/,\s*/", $text);
+print_r($parts);
+// 输出：Array ( [0] => PHP 是 [1] => 一种极为流行的 [2] => 脚本语言 )
+```
+
+此外，对于复杂的正则表达式模式和任务，如 Symfony 的 `Finder` 组件或 Laravel 的帮助函数集合等框架和库可能提供更便利的抽象层。然而，理解和使用 PHP 内置的 PCRE 函数对于直接在 PHP 脚本中有效地进行文本处理和验证至关重要。

@@ -1,40 +1,76 @@
 ---
-title:                "文字列の先頭を大文字にする"
-date:                  2024-01-19
-simple_title:         "文字列の先頭を大文字にする"
-
+title:                "文字列を大文字にする"
+date:                  2024-02-03T19:05:25.678937-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "文字列を大文字にする"
 tag:                  "Strings"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/c-sharp/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (なぜ？とは？)
-文字列を大文字にすることは、単純に文字列内の小文字を大文字に変換する操作です。これは、タイトル、見出し、ユーザー名など特定のテキストを強調したい場合や、一貫性のあるデータフォーマットを実現するために行われます。
+## 何となぜ？
+C#で文字列の最初の文字を大文字にすることは、その文字が既に大文字でない場合に、最初の文字を大文字に変換することを含みます。この変更は、出力のフォーマット、コーディング標準の適用、またはユーザーインターフェーステキストの読みやすさを向上させるために、重要な場合があります。
 
-## How to: (やり方)
-```C#
-string original = "こんにちは、世界！";
-string capitalized = original.ToUpper();
+## どのように：
+C#は、組み込みのメソッドを使用して文字列を大文字化する直接的な方法を提供します。これを達成する最も簡単な方法は、これらのメソッドで文字列を直接修正することです。より複雑または特定の大文字化ルール（例えば、各単語の最初の文字を大文字にする）については、追加のライブラリや手動の方法が必要になるかもしれません。以下に、C#で様々な方法で文字列を大文字化する方法を示す例を紹介します。
 
-Console.WriteLine(capitalized); // 出力: こんにちは、世界！
-```
-`.ToUpper()` メソッドを使って簡単に文字列を大文字化できます。このコードは `"こんにちは、世界！"` を出力します。なぜなら、`.ToUpper()` は英字のみを大文字に変換し、日本語のテキストには影響を与えないからです。英語圏のテキストを大文字にする場合は以下のようになります。
-```C#
-string greeting = "hello, world!";
-string capitalizedGreeting = greeting.ToUpper();
+### 基本的な大文字化：
+単語または文の最初の文字を大文字にするには：
 
-Console.WriteLine(capitalizedGreeting); // 出力: HELLO, WORLD!
+```csharp
+string originalString = "hello world";
+string capitalizedString = char.ToUpper(originalString[0]) + originalString.Substring(1);
+Console.WriteLine(capitalizedString); // 出力: "Hello world"
 ```
 
-## Deep Dive (深掘り)
-`.ToUpper()` は .NET Framework の初期から存在し、文字列内の全ての英字を大文字に変換する最も一般的な方法です。当然ながら、日本語を含む unicode 文字対応していますが、大文字・小文字の区別がない言語には影響を与えません。
+### 各単語の最初の文字を大文字にする：
+文字列の各単語の最初の文字を大文字にするためには、`System.Globalization`名前空間にある`TextInfo.ToTitleCase`メソッドを使用できます：
 
-`ToUpperInvariant` と `TextInfo.ToUpper` などの代替手段もあります。これらは異なるロケールやカルチャ設定に対応しており、一般的な `.ToUpper()` より柔軟に大文字への変換を行うことができます。
+```csharp
+using System;
+using System.Globalization;
 
-詳細な実装では、拡張メソッドを作成して特定のシナリオやカルチャ固有のルールに合わせることも可能です。 .NET Core および .NET 5.0 以降では、パフォーマンスの向上と共に大文字・小文字変換の正確性が改善されています。
+string originalString = "hello world";
+TextInfo textInfo = CultureInfo.CurrentCulture.TextInfo;
+string capitalizedString = textInfo.ToTitleCase(originalString);
+Console.WriteLine(capitalizedString); // 出力: "Hello World"
+```
 
-## See Also (関連情報)
-- [.NET API Documentation: ToUpper Method](https://docs.microsoft.com/en-us/dotnet/api/system.string.toupper?view=netframework-4.8)
-- [.NET API Documentation: ToUpperInvariant Method](https://docs.microsoft.com/en-us/dotnet/api/system.string.toupperinvariant?view=netframework-4.8)
+注意：`ToTitleCase`は残りの文字のケースを小文字には変えず、単語の最初の文字のみを大文字に変更します。また、タイトルケースルールの特定の単語（「and」、「or」、「of」など）は、文化設定によって大文字にされない場合があります。
+
+### 再利用性のための拡張メソッドの使用：
+大文字化プロセスを簡素化するために`string`クラスの拡張メソッドを作成し、コードをよりクリーンで再利用可能にすることができます。以下は、そのようなメソッドを作成して使用する方法です：
+
+```csharp
+using System;
+
+public static class StringExtensions
+{
+    public static string Capitalize(this string input)
+    {
+        if (string.IsNullOrEmpty(input))
+        {
+            return input;
+        }
+        return char.ToUpper(input[0]) + input.Substring(1);
+    }
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        string originalString = "hello world";
+        string capitalizedString = originalString.Capitalize();
+        Console.WriteLine(capitalizedString); // 出力: "Hello world"
+    }
+}
+```
+
+この拡張メソッド`Capitalize`は、名前空間内の任意の文字列オブジェクトで呼び出すことができ、C#での文字列操作をより直感的でオブジェクト指向的なアプローチを提供します。
+
+### サードパーティライブラリの使用:
+C#の標準ライブラリは、文字列の大文字化や、文字列の各単語を大文字化するためのほとんどのニーズをカバーしている一方で、特定の特化したタスクには、Humanizerのようなサードパーティライブラリが有益な場合があります。しかし、単に文字列や各単語を大文字化するタスクのためには、標準のC#メソッドが十分で効率的であり、外部依存性の必要性を否定します。

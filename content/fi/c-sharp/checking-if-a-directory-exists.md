@@ -1,21 +1,27 @@
 ---
 title:                "Tarkistetaan, onko hakemisto olemassa"
-date:                  2024-01-19
+date:                  2024-02-03T19:07:17.037311-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Tarkistetaan, onko hakemisto olemassa"
-
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c-sharp/checking-if-a-directory-exists.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Mikä ja Miksi?)
-Tarkistetaan, onko hakemisto olemassa, jotta välttämme virheitä yrittäessämme käsitellä sitä. Koodarit tekevät tämän varmistaakseen, ettei sovellus kaadu eikä tieto katoa.
+## Mikä ja miksi?
 
-## How to: (Kuinka tehdä:)
-Käytä `Directory.Exists` -metodia. Se palauttaa `true`, jos hakemisto on olemassa, ja `false`, jos ei. Esimerkki: 
+Hakemiston olemassaolon tarkistaminen C#:ssa tarkoittaa kansion läsnäolon varmistamista määritetyssä polussa tiedostojärjestelmässä. Ohjelmoijat tekevät tämän välttääkseen virheitä, kuten yrittämistä lukea tai kirjoittaa olemattomaan hakemistoon, varmistaen sujuvamman tiedosto- ja hakemistokäsittelyn.
 
-```C#
+## Kuinka:
+
+### Käyttäen System.IO
+
+C# tarjoaa `System.IO` nimiavaruuden, joka sisältää `Directory` luokan, tarjoten suoran tavan tarkistaa hakemiston olemassaolo `Exists` metodin avulla.
+
+```csharp
 using System;
 using System.IO;
 
@@ -23,34 +29,72 @@ class Program
 {
     static void Main()
     {
-        string path = @"C:\test";
-        
-        if (Directory.Exists(path))
-        {
-            Console.WriteLine($"{path} exists.");
-        }
-        else
-        {
-            Console.WriteLine($"{path} does not exist.");
-        }
+        string directoryPath = @"C:\ExampleDirectory";
+
+        // Tarkista, onko hakemisto olemassa
+        bool directoryExists = Directory.Exists(directoryPath);
+
+        // Tulosta tulos
+        Console.WriteLine("Hakemisto on olemassa: " + directoryExists);
     }
 }
 ```
 
-Sample Output:
+**Esimerkkituloste:**
 
 ```
-C:\test exists.
-```
-tai jos hakemistoa ei ole,
-```
-C:\test does not exist.
+Hakemisto on olemassa: False
 ```
 
-## Deep Dive (Syväsukellus)
-Hakemiston olemassaolon tarkistus on ollut oleellinen osa ohjelmistokehitystä jo varhaisista käyttöjärjestelmistä lähtien. Tiedostojärjestelmien hallinta on keskeistä, ja ennen `System.IO`-nimiavaruuden myötä tuotuja nykyaikaisia apuvälineitä kehittäjien tuli turvautua alhaisemman tason kutsuihin. Vaihtoehtoisia tapoja tarkistaa hakemiston olemassaolo ovat esimerkiksi `FileInfo`- tai `DriveInfo`-olioiden käyttö, mutta `Directory.Exists` on yksinkertaisin ja suoraviivaisin lähestymistapa. Sen toteutus hyödyntää alustan riippumattomuutta, mikä tarkoittaa sitä, että sovellukset toimivat saumattomasti eri käyttöjärjestelmien välillä.
+Jos hakemisto todellakin on olemassa polussa `C:\ExampleDirectory`, tuloste on `True`.
 
-## See Also (Katso Myös)
-- Microsoft Docs `Directory.Exists` method: https://docs.microsoft.com/en-us/dotnet/api/system.io.directory.exists
-- MSDN File and Stream I/O: https://docs.microsoft.com/en-us/dotnet/standard/io/
-- MSDN How to: Enumerate Directories and Files: https://docs.microsoft.com/en-us/dotnet/standard/io/how-to-enumerate-directories-and-files
+### Käyttäen System.IO.Abstractions yksikkötestaukseen
+
+Kun kyse on koodisi yksikkötestattavuuden mahdollistamisesta, erityisesti kun se vuorovaikuttaa tiedostojärjestelmän kanssa, `System.IO.Abstractions` paketti on suosittu valinta. Se mahdollistaa tiedostojärjestelmän toimintojen abstrahoinnin ja mockaamisen testeissäsi. Tässä on miten voit tarkistaa hakemiston olemassaolon käyttäen tätä lähestymistapaa:
+
+Ensin, varmista että olet asentanut paketin:
+
+```
+Install-Package System.IO.Abstractions
+```
+
+Sitten, voit injektoida `IFileSystem`-rajapinnan luokkaasi ja käyttää sitä tarkistamaan, onko hakemisto olemassa, mikä mahdollistaa helpomman yksikkötestauksen.
+
+```csharp
+using System;
+using System.IO.Abstractions;
+
+class Program
+{
+    private readonly IFileSystem _fileSystem;
+
+    public Program(IFileSystem fileSystem)
+    {
+        _fileSystem = fileSystem;
+    }
+
+    public bool CheckDirectoryExists(string directoryPath)
+    {
+        return _fileSystem.Directory.Exists(directoryPath);
+    }
+
+    static void Main()
+    {
+        var fileSystem = new FileSystem();
+        var program = new Program(fileSystem);
+
+        string directoryPath = @"C:\ExampleDirectory";
+        bool directoryExists = program.CheckDirectoryExists(directoryPath);
+
+        Console.WriteLine("Hakemisto on olemassa: " + directoryExists);
+    }
+}
+```
+
+**Esimerkkituloste:**
+
+```
+Hakemisto on olemassa: False
+```
+
+Tämä lähestymistapa erottaa sovelluslogiikkasi suorasta pääsystä tiedostojärjestelmään, tehden koodistasi modulaarisemman, testattavamman ja ylläpidettävämmän.

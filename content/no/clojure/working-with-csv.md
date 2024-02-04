@@ -1,43 +1,54 @@
 ---
-title:                "Arbeid med CSV"
-date:                  2024-01-19
-simple_title:         "Arbeid med CSV"
-
+title:                "Arbeide med CSV"
+date:                  2024-02-03T19:19:04.650386-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Arbeide med CSV"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/clojure/working-with-csv.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-CSV står for komma-separerte verdier, en filformat brukt for å lagre tabell-data. Programmerere bruker det fordi det er universelt, lett å lese og skrive, og det kan brukes av mange forskjellige programmer.
 
-## How to:
-Å jobbe med CSV i Clojure er enkelt med `clojure.data.csv` biblioteket. Her er hvordan du leser og skriver CSV-data:
+Å jobbe med CSV-filer (Comma-Separated Values) innebærer parsing og generering av tekstdata strukturert som rader og kolonner, likt som regnearkdata. Denne prosessen er essensiell for datautveksling mellom applikasjoner, databaser, og for oppgaver knyttet til datatransformasjon, på grunn av CSVs brede adopsjon som et lettvekt, interoperabelt format.
 
-```Clojure
-;; Legg til nødvendig bibliotek
-(require '[clojure.data.csv :as csv])
-(require '[clojure.java.io :as io])
+## Hvordan:
 
-;; Lese CSV-fil
-(with-open [reader (io/reader "data.csv")]
-  (let [data (csv/read-csv reader)]
-    (println data)))  ; Skriver ut CSV-data som en liste av rader
+### Lese en CSV-fil
+Clojure har ikke innebygd CSV-parsing i sitt standardbibliotek, men du kan bruke `clojure.data.csv` biblioteket til dette formålet. Først, legg til biblioteket i prosjektavhengighetene dine.
 
-;; Skrive til CSV-fil
-(with-open [writer (io/writer "data.csv")]
-  (csv/write-csv writer [["ID", "Navn", "Alder"] ["1", "Ola", "42"] ["2", "Kari", "36"]]))
+I din `project.clj`, legg til denne avhengigheten:
+```clojure
+[clojure.data.csv "1.0.0"]
 ```
-Eksempeloutput:
-```
-(["ID" "Navn" "Alder"] ["1" "Ola" "42"] ["2" "Kari" "36"])
-```
+For å lese en CSV-fil og skrive ut hver rad:
+```clojure
+(require '[clojure.data.csv :as csv]
+         '[clojure.java.io :as io])
 
-## Deep Dive
-CSV-formatet har vært brukt siden 1970-tallet og er fortsatt populært på grunn av dets enkelhet. Alternativer inkluderer JSON og XML, men de er mer komplekse. I Clojure kan `clojure.data.csv` håndtere de fleste CSV-relaterte oppgaver. Det er viktig å håndtere felter som inneholder komma eller nye linjer riktig, ved å omslutte dem med anførselstegn.
+(with-open [reader (io/reader "sti/til/dinfile.csv")]
+  (doall
+   (map println (csv/read-csv reader))))
+```
+Dette vil skrive ut hver rad av CSV-en som en Clojure-vektor.
 
-## See Also
-- Clojure.data.csv dokumentasjon: https://clojure.github.io/data.csv/
-- Clojure for the Brave and True (bok): https://www.braveclojure.com/
-- Clojure.org: https://clojure.org/
+### Skrive til en CSV-fil
+For å skrive data til en CSV-fil, kan du bruke det samme `clojure.data.csv`-biblioteket:
+```clojure
+(require '[clojure.data.csv :as csv]
+         '[clojure.java.io :as io])
+
+(let [data [["id" "navn" "alder"]
+            ["1" "John Doe" "28"]
+            ["2" "Jane Doe" "31"]]]
+  (with-open [writer (io/writer "sti/til/utdatafil.csv")]
+    (csv/write-csv writer data)))
+```
+Dette oppretter eller overskriver `utdatafil.csv`, og fyller den med de angitte dataene.
+
+### Bruk av et tredjepartsbibliotek: `clojure.data.csv`
+
+Selv om `clojure.data.csv` er utvilsomt det mest rettframme biblioteket for håndtering av CSV i Clojure, for mer komplekse oppgaver, som å håndtere CSV-er med spesialtegn eller uvanlige skilletegn, kan du utforske flere alternativer innen økosystemet eller til og med vurdere Java interop med biblioteker som Apache Commons CSV. Imidlertid, for de fleste standard CSV-behandlingsoppgaver i Clojure, tilbyr `clojure.data.csv` et enkelt og effektivt verktøysett.

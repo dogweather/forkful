@@ -1,37 +1,55 @@
 ---
 title:                "Skriva till standardfel"
-date:                  2024-01-19
+date:                  2024-02-03T19:33:13.728084-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Skriva till standardfel"
-
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/elm/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Skrift till standardfel (stderr) handlar om att skicka felmeddelanden och diagnostik separat från huvuddataflödet. Det gör det lättare att spåra och hantera fel under utveckling och i produktion.
+## Vad & Varför?
 
-## How to:
-Elm har ingen inbyggd funktionalitet för skrift direkt till stderr då all utmatning hanteras via JavaScript-konsolen. Använd `Debug.log` för att spåra värden under utveckling:
+Att skriva till standardfel (stderr) handlar om att omdirigera felmeddelanden och diagnostik separat från huvudprogrammets utdata, som går till standardutdata (stdout). Programmerare gör detta för att göra felsökning och loggning mer hanterbart, särskilt i miljöer där utdataåtskillnad är avgörande för felsökning och övervakning.
 
-```Elm
-import Debug
+## Hur man gör:
+
+Elm är främst inriktad på webbutveckling, där konceptet att skriva direkt till stderr inte tillämpas på samma sätt som det gör i traditionella kommandoradsmiljöer. Dock, för Elm-program som körs i Node.js eller liknande miljöer, är interaktion med JavaScript genom portar den främsta metoden för att uppnå liknande funktionalitet. Här är hur du kan ställa in det:
+
+Elm-kod (`Main.elm`):
+```elm
+port module Main exposing (main)
+
+import Browser
+
+port errorOut : String -> Cmd msg
+
+-- Fiktivt exempel på funktion som skickar ett felmeddelande till JS
+generateError : String -> Cmd msg
+generateError message =
+    errorOut message
 
 main =
-    Debug.log "Error" "Ett fel har uppstått"
+    generateError "Det här är ett felmeddelande för stderr"
 ```
 
-Konsolutmatning:
+JavaScript-interaktion (`index.js`):
+```javascript
+const { Elm } = require('./Main.elm');
 
+var app = Elm.Main.init();
+
+app.ports.errorOut.subscribe((message) => {
+  console.error(message);
+});
 ```
-"Error: Ett fel har uppstått"
+
+Denna Elm-kod definierar en port `errorOut` som tillåter skickande av meddelanden från Elm till JavaScript. Sedan i JavaScript-koden lyssnar vi på meddelanden som skickas genom denna port och omdirigerar dem till stderr med `console.error()`. På så sätt kan du effektivt skriva till stderr i en miljö som stöder det, genom att utnyttja Elms interops-funktioner med JavaScript.
+
+Exempelutdata i Node.js-terminal (när `index.js` körs):
 ```
-
-## Deep Dive
-Elm är utformad för frontend-utveckling där stderr-konceptet ikke riktigt finns. Men Elm kan prata med JavaScript genom ports för mer avancerad funktionalitet. I historiskt perspektiv ersätter Elm’s `Debug.log` behovet av stderr i en lokal utvecklingsmiljö. För serverbaserade applikationer kan Node.js och tillägg användas för skrift till stderr.
-
-## See Also
-- Elm's officiella dokumentation om `Debug`: https://package.elm-lang.org/packages/elm/browser/latest/Browser#sandbox
-- Elm's guide om portar för interaktion med JavaScript: https://guide.elm-lang.org/interop/ports.html
-- Node.js dokumentation om stderr: https://nodejs.org/api/process.html#process_stderr
+Det här är ett felmeddelande för stderr
+```

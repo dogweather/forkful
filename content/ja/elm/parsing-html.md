@@ -1,57 +1,63 @@
 ---
 title:                "HTMLの解析"
-date:                  2024-01-20T15:31:23.254587-07:00
+date:                  2024-02-03T19:12:21.337482-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "HTMLの解析"
-
 tag:                  "HTML and the Web"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/elm/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (なぜとは?)
+## 何となぜ？
+ElmでHTMLを解析するとは、HTMLドキュメントから情報を抽出することを指します。プログラマーは、HTMLを返すWebコンテンツやAPIと連携するためにこの作業を行い、よりインタラクティブでダイナミックなWebアプリケーションを作成します。
 
-HTMLパースとは、HTMLドキュメントを解析してプログラムが扱えるデータ構造に変換することです。これにより、HTMLの内容を効率的に読み取ったり操作したりできるようになります。
+## 方法:
+Elmは、JavaScriptやPythonのライブラリのようなHTMLを直接解析するための組み込みライブラリを持っていません。これは、型安全性と実行時エラーを避けるというその重点によるものです。しかし、`Http`リクエストを使用してコンテンツをフェッチした後、正規表現やサーバーサイドの処理を使って必要な情報を抽出することができます。より複雑なHTMLの解析には、HTMLを解析してElmが直接扱える形式（例えばJSON）でデータを返す専用のバックエンドサービスを使用するという一般的なアプローチがあります。
 
-## How to: (やり方)
+以下は、HTMLコンテンツをフェッチする例です（サーバーのレスポンスがクリーンなフォーマットであるか、特定のタグの内容であると仮定）：
 
-Elmでは、`html-parser`というライブラリを使用してHTMLをパースします。以下は簡単な例です。
+```elm
+import Browser
+import Html exposing (Html, text)
+import Http
 
-```Elm
-import Html.Parser exposing (run, text, oneOf, tag)
-import Html.Parser.Attribute exposing (string)
+type alias Model =
+    { content : String }
 
-parseTitle : String -> Result String String
-parseTitle html =
-    run (tag "title" |> oneOf [ text ]) html
-        |> Result.mapError (\_ -> "Parsing error")
+initialModel : Model
+initialModel =
+    { content = "" }
 
-sampleHtml : String
-sampleHtml = "<title>Elm is Fun!</title>"
+type Msg
+    = Fetch
+    | ReceiveContent String
 
--- 実行例
-main : String
-main =
-    case parseTitle sampleHtml of
-        Ok title -> title
-        Err error -> error
+update : Msg -> Model -> (Model, Cmd Msg)
+update msg model =
+    case msg of
+        Fetch ->
+            ( model
+            , Http.get
+                { url = "https://example.com"
+                , expect = Http.expectString ReceiveContent
+                }
+            )
 
--- 出力: "Elm is Fun!"
+        ReceiveContent content ->
+            ( { model | content = content }
+            , Cmd.none
+            )
+
+view : Model -> Html Msg
+view model =
+    text model.content
+
+-- メイン関数やサブスクリプションの定義がElmの標準的なアプリケーション構造に従っていると仮定しています。
 ```
 
-## Deep Dive (掘り下げ)
+特定の要素やデータを実際に解析するためにレスポンスを処理する場合、HTMLコンテンツを自分がコントロールするサーバーエンドポイントに送り、JavaScript（Cheerio、Jsdom）やPython（BeautifulSoup、lxml）などの言語で利用可能なライブラリを使用して解析し、構造化されたデータ（例えばJSON）をElmアプリケーションに返すことを検討するかもしれません。
 
-HTMLパーシングは、Webブラウザがページを表示する際の基本プロセスです。ElmでHTMLをパースする理由は、通常、サーバーから送られてくるデータがHTML形式である場合や、Elmアプリケーションでスクレイピングする必要がある場合です。
-
-歴史的に、HTMLパーサーは多くの言語で実装されてきましたが、Elmのようなフロントエンドに特化した言語では、より安全で予測可能な方法でのHTMLパーサーが求められています。
-
-JavaScriptには`DOMParser`などの代替方法がありますが、Elmのパーサーは型安全を提供し、ランタイムエラーを排除します。
-
-実装時には、パーサーのパフォーマンスとHTMLの複雑性のバランスを取ることが重要です。また、Elmのバージョンアップに伴い、`html-parser`ライブラリも更新されることがあります。
-
-## See Also (関連情報)
-
-- [`html-parser`パッケージ](https://package.elm-lang.org/packages/hecrj/html-parser/latest/)
-- [Elmの公式ガイド](https://guide.elm-lang.org/)
-- [Elmパッケージドキュメント](https://package.elm-lang.org/)
+クライアントサイドのElmコードで直接HTMLを解析するのは、言語の制約や、コンテンツの取得とコンテンツの処理の明確な分離を促進する哲学のため、一般的なパターンではありません。Elmアーキテクチャは、JSONのようにより安全で予測可能なフォーマットでデータを処理することを優先します。

@@ -1,45 +1,64 @@
 ---
-title:                "编写测试代码"
-date:                  2024-01-19
-simple_title:         "编写测试代码"
-
+title:                "编写测试"
+date:                  2024-02-03T19:31:58.489122-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "编写测试"
 tag:                  "Testing and Debugging"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/swift/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-编写测试是验证代码按预期工作的过程。程序员这么做是为了确保质量，提前发现问题，节省未来修改成本。
+## 什么 & 为什么？
+使用 Swift 编写测试涉及创建并执行代码，以验证应用程序中其他代码单元的正确性。程序员之所以这样做，是为了确保可靠性，早期发现开发周期中的错误，并促进未来的代码重构而不引发意外后果。
 
-## How to:
-在Swift中，你可以使用XCTest框架来写单元测试。下面展示了如何测试一个简单的加法函数：
+## 如何操作：
+Swift 通过其 XCTest 框架支持测试，该框架集成在 Xcode 中。你可以编写单元测试来验证代码的各个部分，例如，一个计算两个数字之和的函数。
 
-```Swift
+```swift
 import XCTest
+@testable import YourApp
 
-class MathTests: XCTestCase {
+class YourAppTests: XCTestCase {
 
-    func testAddition() {
-        let sum = addNumbers(a: 2, b: 3)
-        XCTAssertEqual(sum, 5, "加法函数返回的结果不正确")
-    }
-    
-    func addNumbers(a: Int, b: Int) -> Int {
-        return a + b
+    func testSum() {
+        let result = Calculator().sum(a: 1, b: 2)
+        XCTAssertEqual(result, 3, "求和函数没有返回预期的值。")
     }
 }
-
-// 测试运行后的输出示例：
-// Test Suite 'All tests' passed at 2023-01-01 12:00:00.
-// Executed 1 test, with 0 failures (0 unexpected) in 0.005 (0.006) seconds
 ```
 
-## Deep Dive
-最早的测试框架SUnit由Kent Beck在Smalltalk语言中开发。现在Swift常用的XCTest是Xcode自带的测试框架，运用了SUnit的很多原理。当然，除了XCTest，你也可以选择其他库，比如Quick和Nimble，它们提供了不同风格的测试方法。实现细节上，编写测试代码时应确保测试独立且可重复，目的是模拟各种可能的使用场景。
+要运行此测试，你通常会在 Xcode 中按 Command-U。Xcode 测试导航器中的输出将告诉你测试是通过还是失败。
 
-## See Also
-- [苹果官方文档—测试你的应用](https://developer.apple.com/documentation/xctest)
-- [Ray Wenderlich关于Swift单元测试的教程](https://www.raywenderlich.com/960290-ios-unit-testing-and-ui-testing-tutorial)
-- [Quick GitHub页面](https://github.com/Quick/Quick)
+例如，一个成功的测试输出：
+```
+测试用例 '-[YourAppTests testSum]' 通过 (0.005 秒)。
+```
+
+对于更高级的测试场景，你可能会采用第三方库，例如 Quick/Nimble，它们提供更具表现力的语法来编写测试。
+
+使用 Quick/Nimble，你可能会这样编写相同的测试：
+
+```swift
+// 将 Quick 和 Nimble 添加到你的 Swift 包管理器中，或使用 CocoaPods/Carthage 安装它们
+import Quick
+import Nimble
+@testable import YourApp
+
+class CalculatorSpec: QuickSpec {
+    override func spec() {
+        describe("计算器") {
+            context("当计算数字之和时") {
+                it("应该返回正确的和") {
+                    let calculator = Calculator()
+                    expect(calculator.sum(a: 1, b: 2)).to(equal(3))
+                }
+            }
+        }
+    }
+}
+```
+
+运行此测试会在测试控制台或 CI/CD 工具的日志中给出类似的输出，指示测试是成功还是失败，为描述测试和期望提供更可读的格式。

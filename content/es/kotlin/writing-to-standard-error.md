@@ -1,37 +1,77 @@
 ---
 title:                "Escribiendo en el error estándar"
-date:                  2024-01-19
+date:                  2024-02-03T19:33:41.942388-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Escribiendo en el error estándar"
-
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/kotlin/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Qué y Por Qué?
-Escribir en el error estándar permite comunicar errores y diagnósticos sin mezclarlos con la salida de datos normales. Los programadores usan esto para separar los flujos de información y facilitar el debugging y el manejo de errores por parte de sistemas que consumen la salida del programa.
+## ¿Qué y Por Qué?
 
-## Cómo Hacerlo:
+Escribir en el error estándar (stderr) se trata de enviar mensajes de error y diagnósticos a un flujo separado, distinto del salida estándar (stdout), lo que permite un mejor manejo de errores y análisis de registros. Los programadores hacen esto para facilitar la depuración y asegurar que los mensajes de error se puedan identificar fácilmente y redirigir si es necesario, manteniendo registros de salida limpios o mensajes para el usuario.
+
+## Cómo hacerlo:
+
+En Kotlin, escribir en stderr se puede lograr utilizando `System.err.println()`. Este método es similar a `System.out.println()`, pero dirige la salida al flujo de error estándar en lugar del flujo de salida estándar.
+
 ```kotlin
 fun main() {
-    // Imprimir en la salida estándar (stdout)
-    println("Esto es un mensaje en la salida estándar.")
-
-    // Imprimir en el error estándar (stderr)
-    System.err.println("¡Ups! Esto es un error.")
+    System.err.println("¡Este es un mensaje de error!")
 }
 ```
-Salida esperada:
+
+Salida de muestra:
 ```
-Esto es un mensaje en la salida estándar.
-¡Ups! Esto es un error.
+¡Este es un mensaje de error!
 ```
 
-## Análisis Profundo
-Históricamente, la diferencia entre salida estándar y error estándar viene de Unix, donde se estableció una convención para separar los flujos de información. Existen alternativas para emitir errores, como el uso de archivos log o frameworks especializados para manejo de errores. La implementación depende del sistema operativo, pero generalmente, la escritura en el error estándar no está sujeta al buffering de salida, lo que significa que los mensajes de error se muestran inmediatamente.
+Para aplicaciones más estructuradas o complejas, particularmente aquellas que involucran marcos de registro como Logback o SLF4J, puedes configurar los registradores para escribir en stderr para ciertos niveles de registro (por ejemplo, ERROR).
 
-## Ver También
-- Documentación oficial de Kotlin: https://kotlinlang.org/docs/reference/
-- Unix Standard Streams: https://en.wikipedia.org/wiki/Standard_streams
-- Guía de manejo de errores en Kotlin: https://kotlinlang.org/docs/exceptions.html
+Usando SLF4J con Logback:
+
+1. Primero, agrega la API SLF4J y la implementación de Logback a tu `build.gradle`:
+
+```groovy
+dependencies {
+    implementation 'org.slf4j:slf4j-api:1.7.30'
+    implementation 'ch.qos.logback:logback-classic:1.2.3'
+}
+```
+
+2. A continuación, configura Logback (en `src/main/resources/logback.xml`) para dirigir mensajes de nivel de error a stderr:
+
+```xml
+<configuration>
+    <appender name="STDERR" class="ch.qos.logback.core.ConsoleAppender">
+        <target>System.err</target>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+    
+    <root level="error">
+        <appender-ref ref="STDERR" />
+    </root>
+</configuration>
+```
+
+3. Luego, utiliza SLF4J en tu código Kotlin para registrar mensajes de error:
+
+```kotlin
+import org.slf4j.LoggerFactory
+
+fun main() {
+    val logger = LoggerFactory.getLogger("EjemploLogger")
+    logger.error("¡Este es un mensaje de registro de error!")
+}
+```
+
+Salida de muestra (a stderr):
+```
+2023-04-01 12:34:56 [main] ERROR EjemploLogger - ¡Este es un mensaje de registro de error!
+```

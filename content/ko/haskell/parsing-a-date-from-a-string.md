@@ -1,48 +1,65 @@
 ---
-title:                "문자열에서 날짜 파싱하기"
-date:                  2024-01-20T15:36:51.709676-07:00
-simple_title:         "문자열에서 날짜 파싱하기"
-
+title:                "문자열에서 날짜 분석하기"
+date:                  2024-02-03T19:14:29.584560-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "문자열에서 날짜 분석하기"
 tag:                  "Dates and Times"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/haskell/parsing-a-date-from-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (무엇과 왜?)
-문자열에서 날짜를 파싱한다는 것은 텍스트 형태의 날짜를 프로그램이 이해할 수 있는 날짜 데이터로 변환하는 과정입니다. 이것은 사용자의 입력을 처리하거나 로그 데이터를 분석할 때 필요합니다.
+## 무엇 & 왜?
 
-## How to:
-```Haskell
-import Data.Time
+Haskell에서 문자열로부터 날짜를 파싱하는 것은 날짜의 텍스트 표현을 프로그램이 조작할 수 있는 구조화된 형식으로 변환하는 과정을 말합니다. 이 과정은 기간 계산, 스케줄링, 데이터 검증 같은 기능을 가능하게 해주며, 달력 데이터를 다루는 애플리케이션에 있어 기본적입니다.
 
--- 문자열에서 날짜로 파싱을 시도합니다.
-parseDate :: String -> Maybe Day
-parseDate = parseTimeM True defaultTimeLocale "%Y-%m-%d"
+## 어떻게:
 
--- 예시 사용
+기본적으로, Haskell은 날짜를 파싱하기 위한 기본 도구를 제공하지만, 핵심 기능을 위한 `time` 라이브러리와 더 유연한 파싱을 위한 `date-parse` 또는 `time-parse` 같은 라이브러리를 활용하면 작업을 상당히 단순화할 수 있습니다.
+
+먼저 `time` 라이브러리를 사용할 수 있도록 합니다; 이것은 종종 GHC와 함께 포함되어 있지만, 의존성으로 명시해야 할 필요가 있다면 프로젝트의 cabal 파일에 `time`을 추가하거나 `cabal install time`을 사용해 수동으로 설치하세요.
+
+```haskell
+import Data.Time.Format
+import Data.Time.Clock
+import System.Locale (defaultTimeLocale)
+
+-- time 라이브러리를 사용해 표준 형식의 날짜를 파싱하기
+parseBasicDate :: String -> Maybe UTCTime
+parseBasicDate = parseTimeM True defaultTimeLocale "%Y-%m-%d" 
+```
+
+예제 사용 및 출력:
+
+```haskell
 main :: IO ()
-main = do
-    let dateString = "2023-04-01"
-    print $ parseDate dateString
-```
-출력:
+main = print $ parseBasicDate "2023-04-01"
 
-```Haskell
-Just 2023-04-01
+-- 출력: Just 2023-03-31 22:00:00 UTC
 ```
 
-## Deep Dive (심층 분석)
-파싱은 1970년대 초반에 개발된 함수형 프로그래밍 언어에서 시작됐습니다. Haskell은 강력한 타입 시스템과 순수 함수형 언어임에도 불구하고, 날짜와 시간을 다루는 데 있어서 편리한 라이브러리를 제공합니다. `Data.Time` 모듈을 이용하면, 표준 시간 포맷을 다루고 조작하기 쉽습니다. 위 예시에서는 간단한 ISO 8601 포맷(`"%Y-%m-%d"`)을 사용했습니다. `parseTimeM` 함수는 실패할 수 있으므로 `Maybe` 타입을 사용하여 결과를 돌려줍니다. 
+여러 형식이나 로케일을 처리해야 하는 보다 복잡한 상황에서는, `date-parse`와 같은 서드파티 라이브러리가 더 편리할 수 있습니다:
 
-대안으로는 `time` 패키지 외에도 `Data.Time.Format`의 `parseTime` 또는 `readTime`을 사용할 수 있습니다. 또는 외부 라이브러리인 `Thyme`와 `Chronos`를 사용하는 방법도 있습니다.
+`date-parse`를 의존성에 추가하고 설치했다고 가정하면, 다음과 같이 사용할 수 있습니다:
 
-구현 세부사항으로, `parseTimeM` 함수는 문자열을 분석할 때 올바른 날짜 포맷을 지정해야 합니다. 잘못된 포맷이 주어지면 `Nothing`을 반환합니다.
+```haskell
+import Data.Time.Calendar
+import Text.Date.Parse (parseDate)
 
-## See Also (관련 자료)
-- `Data.Time` 모듈 문서: https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time.html
-- Haskell `time` 패키지: https://hackage.haskell.org/package/time
-- Haskell Wiki의 날짜와 시간 처리 방법: https://wiki.haskell.org/Working_with_time
-- `Thyme` 라이브러리: https://hackage.haskell.org/package/thyme
-- `Chronos` 라이브러리: https://hackage.haskell.org/package/chronos
+-- date-parse 라이브러리를 사용해 날짜 문자열을 파싱하면 다양한 형식을 지원합니다
+parseFlexibleDate :: String -> Maybe Day
+parseFlexibleDate = parseDate
+```
+
+`date-parse`를 사용한 예제:
+
+```haskell
+main :: IO ()
+main = print $ parseFlexibleDate "April 1, 2023"
+
+-- 출력: Just 2023-04-01
+```
+
+각 예제는 문자열을 Haskell에서 사용 가능한 날짜 객체로 변환하는 기본적인 접근 방식을 보여 줍니다. `time` 라이브러리의 내장 함수를 사용하거나 `date-parse` 같은 서드파티 솔루션을 선택하는 것은 처리해야 할 입력 형식의 범위와 같은 애플리케이션의 특정 요구 사항에 따라 달라집니다.

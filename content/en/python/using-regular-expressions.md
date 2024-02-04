@@ -1,8 +1,8 @@
 ---
 title:                "Using regular expressions"
-date:                  2024-01-19
+date:                  2024-02-03T19:03:03.774454-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Using regular expressions"
-
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/python/using-regular-expressions.md"
 ---
@@ -10,32 +10,86 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Regular expressions (regex) are patterns used to match character combinations in strings. Programmers use regex for searching, editing, or manipulating text because it’s powerful and efficient.
+Regular expressions (regex) are patterns used to match character combinations in strings. Programmers utilize them for searching, editing, or manipulating text based on defined patterns, making them indispensable for tasks like data validation, parsing, or transformation.
 
 ## How to:
-Below are Python examples using the `re` module for common regex operations:
+Using regex in Python involves the `re` module, which provides a set of functions to process text using regular expressions.
 
-```Python
+### Basic Pattern Matching
+To search for a pattern in a string, use `re.search()`. It returns a match object when the pattern is found, else `None`.
+```python
 import re
 
-# Find all matches of 'abc' in a string
-matches = re.findall('abc', 'abc123abc')
-print(matches)  # Output: ['abc', 'abc']
-
-# Search for 'def' and return a Match object
-match = re.search('def', '123def456')
+text = "Learn Python programming"
+match = re.search("Python", text)
 if match:
-    print(match.group())  # Output: 'def'
-
-# Replace 'ghi' with 'xyz'
-replaced = re.sub('ghi', 'xyz', 'ghi123ghi')
-print(replaced)  # Output: 'xyz123xyz'
+    print("Pattern found!")
+else:
+    print("Pattern not found.")
+```
+Output:
+```
+Pattern found!
 ```
 
-## Deep Dive
-Regular expressions have been around since the 1950s, developed alongside formal language theory. Alternatives to regex include parsing libraries and string methods like `str.find()` or `str.replace()`, but these lack the pattern-matching versatility of regex. Implementation-wise, Python uses the `re` module, which is based on the traditional UNIX regex library but includes some enhancements.
+### Compiling Regular Expressions
+For repeated use of the same pattern, compile it first with `re.compile()` for better performance.
+```python
+pattern = re.compile("Python")
+match = pattern.search("Learn Python programming")
+if match:
+    print("Compiled pattern found!")
+```
+Output:
+```
+Compiled pattern found!
+```
 
-## See Also
-- Python `re` module docs: https://docs.python.org/3/library/re.html
-- Regular expression syntax guide: https://www.regular-expressions.info/
-- Regex tester and debugger: https://regex101.com/
+### Splitting Strings
+To split a string at each match of a regex pattern, use `re.split()`.
+```python
+result = re.split("\s", "Python is fun")
+print(result)
+```
+Output:
+```
+['Python', 'is', 'fun']
+```
+
+### Finding All Matches
+To find all non-overlapping occurrences of a pattern, use `re.findall()`.
+```python
+matches = re.findall("n", "Python programming")
+print(matches)
+```
+Output:
+```
+['n', 'n']
+```
+
+### Replacing Text
+Use `re.sub()` to replace occurrences of a pattern with a new string.
+```python
+replaced_text = re.sub("fun", "awesome", "Python is fun")
+print(replaced_text)
+```
+Output:
+```
+Python is awesome
+```
+
+### Third-Party Libraries
+While Python's built-in `re` module is powerful, third-party libraries like `regex` offer more features and enhanced performance. To use `regex`, install it via pip (`pip install regex`) and import it in your code.
+
+```python
+import regex
+
+text = "Learning Python 3.8"
+match = regex.search(r"Python\s(\d+\.\d+)", text)
+if match:
+    print(f"Found version: {match.group(1)}")
+```
+Output:
+```
+Found version: 3.8
+```

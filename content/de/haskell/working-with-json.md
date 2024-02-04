@@ -1,60 +1,100 @@
 ---
 title:                "Arbeiten mit JSON"
-date:                  2024-01-19
+date:                  2024-02-03T19:23:00.257212-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Arbeiten mit JSON"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/haskell/working-with-json.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-JSON ist ein Datenformat, das für den Datenaustausch zwischen Server und Webanwendungen verwendet wird. Es ist weit verbreitet, weil es einfach, lesbar und sprachunabhängig ist.
+## Was & Warum?
+Mit JSON (JavaScript Object Notation) in Haskell zu arbeiten, umfasst das Parsen von JSON-Daten in Haskell-Typen und das Umwandeln von Haskell-Typen zurück in JSON. Programmierer tun dies, um ihren Haskell-Anwendungen zu ermöglichen, Daten nahtlos mit Webdiensten oder APIs auszutauschen, eine gängige Praxis in der modernen Softwareentwicklung für den plattformübergreifenden Datenaustausch.
 
-## How to:
-In Haskell benutzen wir das `aeson` Paket, um mit JSON zu arbeiten. Zuerst musst du es installieren:
+## Wie:
+Haskell hat keine integrierte Unterstützung für JSON wie JavaScript, aber mit Hilfe von Drittanbieterbibliotheken wie **Aeson** wird die Handhabung von JSON unkompliziert. Aeson bietet sowohl High-Level- als auch Low-Level-Funktionen für das Kodieren (Umwandeln von Haskell-Werten in JSON) und Dekodieren (Parsen von JSON in Haskell-Werte).
 
-```bash
-cabal install aeson
+### Aeson installieren
+Fügen Sie zunächst Aeson zu den Abhängigkeiten Ihres Projekts hinzu, indem Sie Ihre `.cabal`-Datei aktualisieren oder Stack oder Cabal direkt verwenden:
+
+```shell
+cabal update && cabal install aeson
+```
+oder, wenn Sie Stack verwenden:
+```shell
+stack install aeson
 ```
 
-Dann kannst du es in deinem Haskell-Code verwenden:
+### JSON parsen
+Beginnen wir mit einem grundlegenden Beispiel für das Dekodieren von JSON-Daten in einen Haskell-Typ. Angenommen, wir haben das folgende JSON, das eine Person darstellt:
 
-```Haskell
+```json
+{
+  "name": "John Doe",
+  "age": 30
+}
+```
+
+Definieren Sie zunächst einen entsprechenden Haskell-Datentyp und machen Sie ihn zu einer Instanz von `FromJSON`:
+
+```haskell
 {-# LANGUAGE DeriveGeneric #-}
 
-import Data.Aeson
-import GHC.Generics
+import GHC.Generics (Generic)
+import Data.Aeson (FromJSON, decode)
+import qualified Data.ByteString.Lazy as B
 
-data User = User {
-  name :: String,
-  age  :: Int
-} deriving (Show, Generic)
+data Person = Person
+  { name :: String
+  , age :: Int
+  } deriving (Generic, Show)
 
-instance ToJSON User
-instance FromJSON User
+instance FromJSON Person
+
+-- Funktion, um JSON aus einer Datei zu dekodieren
+decodePerson :: FilePath -> IO (Maybe Person)
+decodePerson filePath = do
+  personJson <- B.readFile filePath
+  return $ decode personJson
+```
+Verwendung:
+Angenommen, `person.json` enthält die oben gezeigten JSON-Daten, führen Sie aus:
+```haskell
+main :: IO ()
+main = do
+  maybePerson <- decodePerson "person.json"
+  print maybePerson
+```
+Beispielausgabe:
+```haskell
+Just (Person {name = "John Doe", age = 30})
+```
+
+### Haskell-Werte als JSON kodieren
+Um einen Haskell-Wert zurück in JSON umzuwandeln, müssen Sie Ihren Typ zu einer Instanz von `ToJSON` machen und dann `encode` verwenden.
+
+```haskell
+import Data.Aeson (ToJSON, encode)
+import GHC.Generics (Generic)
+
+-- Unter der Annahme des Person-Typs von zuvor
+
+instance ToJSON Person
+
+encodePerson :: Person -> B.ByteString
+encodePerson = encode
 
 main :: IO ()
 main = do
-  let user = User "Max Mustermann" 30
-  let json = encode user
-  print json
-  
-  -- Output ist ein JSON String
-  -- "{\"name\":\"Max Mustermann\",\"age\":30}"
-
-  -- JSON String in ein User-Objekt umwandeln
-  let decodedUser = decode "{\"name\":\"Max Mustermann\",\"age\":30}" :: Maybe User
-  print decodedUser
-  
-  -- Output ist Just (User {name = "Max Mustermann", age = 30})
+  let person = Person "Jane Doe" 32
+  putStrLn $ show $ encodePerson person
+```
+Beispielausgabe:
+```json
+{"name":"Jane Doe","age":32}
 ```
 
-## Deep Dive
-JSON steht für JavaScript Object Notation und wurde Anfang der 2000er Jahre populär. Als Alternative kann XML verwendet werden, allerdings ist JSON leichtgewichtiger und schneller zu verarbeiten. Technische Details: `aeson` verwendet Typable- und Generic-Features von GHC, um Haskell-Datentypen automatisch in JSON zu serialisieren und zu deserialisieren.
-
-## See Also
-- `aeson` Paket: https://hackage.haskell.org/package/aeson
-- JSON Specifikation (RFC 7159): https://tools.ietf.org/html/rfc7159
-- Tutorial zum Haskell/JSON-Handling: https://www.schoolofhaskell.com/school/starting-with-haskell/libraries-and-frameworks/text-manipulation/json
+Diese Beispiele demonstrieren die Grundlagen der Arbeit mit JSON in Haskell unter Verwendung von Aeson. Denken Sie daran, Aeson bietet viel mehr, einschließlich benutzerdefinierten Parsing-Regeln, Arbeit mit komplex verschachteltem JSON und vieles mehr, geeignet für verschiedene Bedürfnisse und Szenarien.

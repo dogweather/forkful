@@ -1,44 +1,81 @@
 ---
 title:                "עבודה עם YAML"
-date:                  2024-01-19
+date:                  2024-02-03T19:26:41.693240-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "עבודה עם YAML"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/ruby/working-with-yaml.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## מה ולמה?
-YAML הוא פורמט קל לקריאה לעיבוד נתונים, תומך במבנים כמו מפות, רשימות וסקלרים. תוכניתנים משתמשים ב-YAML בגלל קריאות ופשטות הפורמט, ואפשרות להטמעה קלה בתוכניות Ruby.
+YAML, שעומד ל-YAML Ain't Markup Language, משמש רבות ברובי לקבצי תצורה ולסידורי נתונים בזכות התצורה הקריאה לבני אדם. תכנתים נמשכים ל-YAML כאשר הם צריכים לאחסן או לשדר אובייקטים של נתונים בצורה קריאה אך מבנית, פשטות משימות כמו ניהול תצורה, אחסון נתונים, ושיתוף נתונים בין שפות.
 
-## איך לעשות:
-```Ruby
+## איך ל:
+ברובי יש ספרייה מובנית בשם Psych לניתוח והפקת YAML. לשימוש בה, קודם כל צריך לדרוש את ספריית התקן של YAML. הנה דוגמה בסיסית להתחלה:
+
+```ruby
 require 'yaml'
 
-# יצירת מבנה נתונים ברובי (Ruby Data Structure)
-data = {
-  "name" => "Yossi",
-  "role" => "Developer",
-  "skills" => ["Ruby", "Rails", "Docker"]
-}
+# Hash לסידור
+person = { name: "John Doe", age: 30, skills: ["Ruby", "JavaScript"] }
 
-# שמירת הנתונים לקובץ YAML
-File.open("employee.yaml", "w") { |file| file.write(data.to_yaml) }
+# המרת ה-hash ל-YAML
+yaml_data = person.to_yaml
 
-# קריאת נתונים מקובץ YAML
-yaml_content = YAML.load(File.read("employee.yaml"))
-puts yaml_content
-```
-פלט (Output):
-```
-{"name"=>"Yossi", "role"=>"Developer", "skills"=>["Ruby", "Rails", "Docker"]}
+puts yaml_data
 ```
 
-## טבילה עמוקה
-YAML (YAML Ain't Markup Language) נוצר ב-2001 כתחליף קל ל-XML. הפשטות של YAML מאפשרת עריכה ושיתוף נוח של קובצי הגדרות וקונפיגורציות. חלופות ל-YAML כוללות JSON ו-TOML. YAML משתלב טוב עם Ruby באמצעות הספרייה 'yaml', המבוססת על libyaml, ספרייה נפוצה לניתוח YAML.
+**פלט דוגמה:**
 
-## ראו גם:
-- YAML רשמי: [https://yaml.org](https://yaml.org)
-- מסמך המתאר את הספרייה 'yaml' ב-Ruby: [https://ruby-doc.org/stdlib-3.1.0/libdoc/yaml/rdoc/YAML.html](https://ruby-doc.org/stdlib-3.1.0/libdoc/yaml/rdoc/YAML.html)
-- ג'יטהאב של libyaml: [https://github.com/yaml/libyaml](https://github.com/yaml/libyaml)
+```yaml
+---
+:name: John Doe
+:age: 30
+:skills:
+- Ruby
+- JavaScript
+```
+
+לטעינת נתוני YAML בחזרה לאובייקט של רובי:
+
+```ruby
+loaded_person = YAML.load(yaml_data)
+
+puts loaded_person
+```
+
+**פלט דוגמה:**
+
+```ruby
+{name: "John Doe", age: 30, skills: ["Ruby", "JavaScript"]}
+```
+
+### שימוש בספריות צד שלישי:
+
+למרות שהספרייה הסטנדרטית מספיקה למשימות בסיסיות, לצרכים מורכבים ייתכן ותחפשו gem-ים של צד שלישי כמו 'safe_yaml'. לשימוש בספריות כאלו, קודם כל צריך להתקין את ה-gem:
+
+```bash
+gem install safe_yaml
+```
+
+אז, אתם יכולים להשתמש בה לטעינה בטוחה של נתוני YAML, בהפחתת סיכונים כמו יצירת אובייקט ממקורות שנשלטים על ידי המשתמש:
+
+```ruby
+require 'safe_yaml'
+
+safe_loaded_person = SafeYAML.load(yaml_data)
+
+puts safe_loaded_person
+```
+
+**פלט דוגמה:**
+
+```ruby
+{name: "John Doe", age: 30, skills: ["Ruby", "JavaScript"]}
+```
+
+הגישה הזו משפרת את הביטחון של הטיפול ב-YAML שלכם, והופכת אותה לבחירה טובה ליישומים הטוענים נתוני YAML ממקורות לא מהימנים.

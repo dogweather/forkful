@@ -1,47 +1,43 @@
 ---
-title:                "Kontrollera om en katalog finns"
-date:                  2024-01-20T14:56:10.320092-07:00
-simple_title:         "Kontrollera om en katalog finns"
-
+title:                "Kontrollera om en katalog existerar"
+date:                  2024-02-03T19:07:16.544687-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Kontrollera om en katalog existerar"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/fish-shell/checking-if-a-directory-exists.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att kontrollera om en mapp finns är ett sätt att se till att en väg pekar mot en faktisk mapp i filsystemet. Programmerare gör det för att undvika fel när de försöker läsa från eller skriva till mappar som inte finns.
+Att kontrollera om en katalog finns i Fish Shell gör att skript kan ta beslut baserade på närvaron eller frånvaron av katalogstrukturer, vilket möjliggör uppgifter som villkorliga filoperationer, loggning eller miljökonfigurering. Denna teknik är avgörande för att skriva robusta skript som interagerar med filsystemet på ett förutsägbart sätt.
 
 ## Hur gör man:
-Kontrollera om en mapp finns i Fish genom att använda `test` kommandot.
+Fish Shell använder kommandot `test` för att kontrollera filtyper och egenskaper, inklusive om ett mål är en katalog. Här är ett grundläggande mönster för att kontrollera om en katalog finns:
 
-```Fish Shell
-if test -d /din/mapp/väg
-    echo "Mappen finns!"
+```fish
+if test -d /path/to/dir
+    echo "Katalogen finns"
 else
-    echo "Mappen finns inte!"
+    echo "Katalogen finns inte"
+end
+```
+Exempelutdata:
+```
+Katalogen finns
+```
+
+För mer strömlinjeformade fil- och katalogoperationer kan man vända sig till externa verktyg som `fd`, även om det oftare används för att hitta filer och kataloger snarare än bara att kontrollera existens. Men genom att kombinera det med Fish-skriptning kan man uppnå praktiska resultat:
+
+```fish
+set dir "/path/to/search"
+if fd . $dir --type directory --max-depth 1 | grep -q $dir
+    echo "Katalogen finns"
+else
+    echo "Katalogen finns inte"
 end
 ```
 
-Testa om en hem-mapp finns:
-
-```Fish Shell
-if test -d ~/Documents
-    echo "Ditt 'Documents' katalog finns!"
-else
-    echo "Ditt 'Documents' katalog finns inte!"
-end
-```
-
-Sample Output:
-```
-Ditt 'Documents' katalog finns!
-```
-
-## Fördjupning
-Förr i tiden använde många `if [ -d /path/to/dir ]`, men i Fish är `test` inbyggt och behöver inte hakparanteser. Alternativ för att kontrollera mappar inkluderar `stat` och direkt-listning med `ls`, men dessa kan vara överdrivet komplicerade till detta enkla behov. `test -d` kontrollerar om sökvägen existerar och är en mapp, vilket är implementationen som främst används idag för dess enkelhet och direktinformation.
-
-## Se även
-- Fish dokumentation om `test` kommandot: https://fishshell.com/docs/current/commands.html#test
-- Filhantering i Fish: https://fishshell.com/docs/current/tutorial.html#tut_file_operations
-- Manualsidan för `test` (inbyggt): https://fishshell.com/docs/current/cmds/test.html
+Detta `fd`-exempel söker efter katalogen på ett angivet djup, och `grep` kontrollerar matchningen, vilket gör det mångsidigt för nyanserade kontroller. Dock, för det direkta syftet att kontrollera existens, är det mer effektivt och okomplicerat att hålla sig till Fish:s inbyggda `test`.

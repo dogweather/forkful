@@ -1,39 +1,54 @@
 ---
-title:                "Att hämta aktuellt datum"
-date:                  2024-01-20T15:14:19.459122-07:00
-simple_title:         "Att hämta aktuellt datum"
-
+title:                "Få det aktuella datumet"
+date:                  2024-02-03T19:09:33.226122-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Få det aktuella datumet"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/fish-shell/getting-the-current-date.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att hämta dagens datum innebär att få fram det aktuella datumet som en sträng eller ett tal. Programmerare gör detta för att logga händelser, sortera data eller som en del av användargränssnitt.
+Att hämta det aktuella datumet i programmering är en grundläggande uppgift som möjliggör att hämta och manipulera systemets datum- och tidsdata. I skriptning och automatiseringsuppgifter är det väsentligt för att generera tidsstämplar, schemalägga uppgifter och skapa loggar.
 
 ## Hur man gör:
-```Fish Shell
-# Hämta nuvarande datum och tid
-set -l nu (date)
-echo $nu
+Fish Shell använder externa kommandon som `date` för att hämta det aktuella datumet, vilket ger flexibilitet att formatera utdatan som behövs. Så här använder du det:
 
-# Resultat: tis 25 apr 2023 15:42:36 CEST
+```fish
+# Visa det aktuella datumet i standardformatet
+echo (date)
+
+# Exempel på utdata: Ons 25 Okt 2023 15:42:03 BST
 ```
 
-```Fish Shell
-# Hämta enbart datumet i formatet ÅÅÅÅ-MM-DD
-set -l datum (date "+%Y-%m-%d")
-echo $datum
+För att anpassa datumets format kan du använda `+`-alternativet följt av formatidentifierare:
 
-# Resultat: 2023-04-25
+```fish
+# Visa det aktuella datumet i YYYY-MM-DD-format
+echo (date "+%Y-%m-%d")
+
+# Exempel på utdata: 2023-10-25
 ```
 
-## Djupdykning:
-Historiskt sett har kommandon som `date` använts i shell-skript sedan de tidiga dagarna av operativsystem med tidsdelning. I Fish Shell använder du liknande kommandon som i andra skal, men syntaxen kan vara lite annorlunda, då Fish inte följer POSIX-standarder till fullo.
+För mer komplexa uppgifter, som att arbeta med tidsstämplar eller utföra datumaritmetik, förlitar sig Fish Shell på externa verktyg som `date` på grund av dess skriptnatur. Här är ett exempel på att få det aktuella UNIX-tidsstämpeln:
 
-Alternativ till `date` kan vara inbyggda Fish-funktioner eller externa verktyg som `ntpdate` för att synkronisera tiden via nätet. Detaljmässigt använder `date` systemklockan för att generera datum och tidsinformation. Du kan ändra formatet med argumentet `+"%Y-%m-%d"` där varje specifierare ger en del av datumet som år, månad eller dag.
+```fish
+# Hämta det aktuella UNIX-tidsstämpeln
+echo (date "+%s")
 
-## Se även:
-- Fish dokumentation för datum och tidsvariabler: https://fishshell.com/docs/current/index.html#variables-date-and-time
-- GNU Coreutils `date` dokumentation för olika formatoptioner: https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html
+# Exempel på utdata: 1666710123
+```
+
+Och för att lägga till en dag till det aktuella datumet med `date`:
+
+```fish
+# Lägg till en dag till det aktuella datumet
+echo (date -d "+1 day" "+%Y-%m-%d")
+
+# Exempel på utdata: 2023-10-26
+```
+
+Notera: Exemplen använder `date`-kommandots alternativ som fungerar med GNU coreutils. Alternativ kan variera i andra miljöer som macOS, som använder BSD date-kommando som standard. Hänvisa alltid till `date --help` eller manualsidan för detaljer specifika till din miljö.

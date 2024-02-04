@@ -1,45 +1,54 @@
 ---
 title:                "Obtenir la date actuelle"
-date:                  2024-01-20T15:14:06.719855-07:00
+date:                  2024-02-03T19:09:28.123294-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Obtenir la date actuelle"
-
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/fish-shell/getting-the-current-date.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Obtenir la date actuelle, c'est savoir quel jour on est. Les programmeurs l'utilisent pour des logs, des timestamps, ou pour gérer des événements basés sur la date.
+## Quoi et pourquoi ?
+Obtenir la date actuelle en programmation est une tâche fondamentale qui permet de récupérer et de manipuler les données de date et d'heure du système. Dans les tâches de script et d'automatisation, c'est essentiel pour générer des horodatages, planifier des tâches et créer des journaux.
 
-## How to:
-Voici comment afficher la date et l'heure actuelles dans Fish :
+## Comment faire :
+Fish Shell utilise des commandes externes comme `date` pour obtenir la date actuelle, offrant la flexibilité de formater la sortie selon les besoins. Voici comment l'utiliser :
 
-```Fish Shell
-set current_date (date)
-echo $current_date
+```fish
+# Afficher la date actuelle dans le format par défaut
+echo (date)
+
+# Exemple de sortie : Wed 25 Oct 2023 15:42:03 BST
 ```
 
-Et si on veut juste la date sans l'heure :
+Pour personnaliser le format de la date, vous pouvez utiliser l'option `+` suivie des spécificateurs de format :
 
-```Fish Shell
-set current_date (date +%Y-%m-%d)
-echo $current_date
+```fish
+# Afficher la date actuelle au format AAAA-MM-JJ
+echo (date "+%Y-%m-%d")
+
+# Exemple de sortie : 2023-10-25
 ```
 
-Résultat pour la deuxième commande, par exemple :
+Pour des tâches plus complexes, comme travailler avec des horodatages ou effectuer de l'arithmétique de dates, Fish Shell s'appuie sur des outils externes comme `date` en raison de sa nature de script. Voici un exemple pour obtenir l'horodatage UNIX actuel :
 
+```fish
+# Obtenir l'horodatage UNIX actuel
+echo (date "+%s")
+
+# Exemple de sortie : 1666710123
 ```
-2023-04-01
+
+Et pour ajouter un jour à la date actuelle en utilisant `date` :
+
+```fish
+# Ajouter un jour à la date actuelle
+echo (date -d "+1 day" "+%Y-%m-%d")
+
+# Exemple de sortie : 2023-10-26
 ```
 
-## Deep Dive
-Historiquement, Fish, short pour "friendly interactive shell", s'est distingué par sa simplicité et ses fonctionnalités avancées. En comparant avec d'autres shells, comme Bash, Fish propose un scripting plus clair et des fonctions intégrées qui simplifient de nombreuses tâches. 
-
-Pour la date, `date` est une commande Unix standard, aussi accessible dans Fish. Les alternatives incluent l'utilisation de commandes intégrées Fish ou de scripts externes, mais `date` reste un choix fiable et universel.
-
-Au niveau de l'implémentation, `date` se sert du système d'exploitation pour obtenir les informations temporelles. Avec le paramètre `+%Y-%m-%d`, on formate cette sortie pour obtenir une chaîne de caractères représentant l'année, le mois et le jour.
-
-## See Also
-- Pour savoir plus sur la commande `date` : [man7.org/linux/man-pages/man1/date.1.html](https://man7.org/linux/man-pages/man1/date.1.html)
-- Comparaison entre Fish et autres shells : [github.com/fish-shell/fish-shell/wiki/Design-Philosophy](https://github.com/fish-shell/fish-shell/wiki/Design-Philosophy)
+Note : Les exemples utilisent des options de la commande `date` qui fonctionnent avec les GNU coreutils. Les options peuvent varier dans d'autres environnements comme macOS, qui utilise par défaut la commande date de BSD. Référez-vous toujours à `date --help` ou à la page de manuel pour les détails spécifiques à votre environnement.

@@ -1,64 +1,53 @@
 ---
-title:                "Merkkijonosta päivämäärän jäsentäminen"
-date:                  2024-01-20T15:39:03.536623-07:00
-simple_title:         "Merkkijonosta päivämäärän jäsentäminen"
-
+title:                "Päivämäärän jäsennys merkkijonosta"
+date:                  2024-02-03T19:15:54.585869-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Päivämäärän jäsennys merkkijonosta"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/typescript/parsing-a-date-from-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-"Päivämäärän jäsentäminen merkkijonosta" tarkoittaa päivämäärän muuntamista tekstistä päivämäärä-objektiksi. Ohjelmoijat tekevät tämän, jotta voivat käsitellä päivämääriä logiikassa ja varmistaa niiden oikeellisuuden.
+## Mikä & Miksi?
+Merkkijonosta päivämäärän jäsentäminen tarkoittaa päivämäärien ja aikojen tekstiesitysten muuntamista muotoon, jota ohjelma voi käsitellä ja analysoida. Tämä on yleinen tehtävä ohjelmoinnissa, koska se mahdollistaa käyttäjän syötteen käsittelyn, aikaleimattujen tietojen tallennuksen ja API-rajapintojen kanssa toimimisen, mikä tuottaa toiminnallisempia ja käyttäjäystävällisempiä sovelluksia.
 
-## How to:
+## Kuinka:
+TypeScript, ollessaan JavaScriptin yliluokka, nojaa Date-objektiin merkkijonoista päivämäärien jäsentämiseksi. Kuitenkin päivämäärien käsittely JS/TS:ssä voi muuttua monisanaiseksi tai epätarkaksi johtuen Date-objektin omituisuuksista. Tässä on perusesimerkki, minkä jälkeen tulee lähestymistapa käyttäen suosittua kirjastoa, `date-fns`, kestävämpiin ratkaisuihin.
 
-Jäsennä merkkijonopäivämäärä TypeScriptissä näin:
-
+### JavaScriptin Date-objektin käyttö
 ```typescript
-const dateString: string = '2023-04-01';
-const parsedDate: Date = new Date(dateString);
-
-console.log(parsedDate); // Tulostuu: 2023-04-01T00:00:00.000Z (tai vastaava paikallisessa ajassa)
+// Perusjäsennys käyttäen Date-konstruktoria
+const dateFromString = new Date("2023-04-21T15:00:00Z");
+console.log(dateFromString.toString()); 
+// Tuloste GMT:lle: "Fri Apr 21 2023 15:00:00 GMT+0000 (Koordinoitu yleisaika)"
 ```
 
-Virheentarkistus ja alueelliset muodot:
+Tämä menetelmä toimii ISO-muotoisten merkkijonojen ja joittenkin muiden päivämäärämuotojen kanssa, mutta voi tuottaa epäjohdonmukaisia tuloksia epäselvien muotojen kanssa eri selaimissa ja paikallisasetuksissa.
 
-```typescript
-function parseDate(dateStr: string): Date | null {
-  if (isNaN(Date.parse(dateStr))) {
-    console.error('Invalid date string');
-    return null;
-  }
-  
-  return new Date(dateStr);
-}
+### date-fns:n käyttö
+`date-fns`-kirjasto tarjoaa suoraviivaisen ja johdonmukaisen tavan käsitellä päivämääriä. Se on modulaarinen kirjasto, joka mahdollistaa vain tarvitsemiisi osiin keskittymisen, vähentäen paketin kokoa.
 
-const validDate = parseDate('2023-04-01');
-const invalidDate = parseDate('abc');
+Asenna ensin `date-fns`: 
 
-console.log(validDate); // 2023-04-01T00:00:00.000Z
-console.log(invalidDate); // null
+```sh
+npm install date-fns
 ```
 
-## Deep Dive
-
-Alkuaikoina JavaScriptissä päivämäärän käsittely oli vähäistä. ES5 toi tarkempaa käsittelyä. TypeScript tarjoaa tyypitetyn ympäristön, mutta käyttää JavaScriptin Date-objektia.
-
-Vaihtoehtoina on kirjastoja, kuten Moment.js ja Date-fns. Ne tarjoavat joustavuutta, kuten alueellisia muotoja ja lisämetodeja päivämäärien käsittelyyn. TypeScriptissä datan tyyppiturvallisuus on tärkeää; Date-tietotyyppi auttaa siinä.
+Käytä sen jälkeen sitä merkkijonosta päivämäärän jäsentämiseen:
 
 ```typescript
-import moment from 'moment';
+import { parseISO, format } from 'date-fns';
 
-const momentDate = moment('2023-04-01', 'YYYY-MM-DD').toDate();
-console.log(momentDate); // 2023-04-01T00:00:00.000Z
+// ISO-merkkijonon jäsentäminen
+const dateString = "2023-04-21T15:00:00Z";
+const parsedDate = parseISO(dateString);
+
+// Päivämäärän muotoilu (esim. ihmislukukelpoiseen muotoon)
+console.log(format(parsedDate, "PPPpp")); 
+// Tuloste: "Apr 21st, 2023 at 3:00 PM" (tuloste voi vaihdella paikallisasetusten mukaan)
 ```
 
-Tämä esimerkki käyttää Moment.js-kirjastoa, mutta Moment.js on jäämässä eläkkeelle. Date-fns on moderni vaihtoehto.
-
-## See Also
-
-- MDN Web Docs Date - [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- Date-fns dokumentaatio - [https://date-fns.org/](https://date-fns.org/)
-- TypeScriptin virallinen sivusto - [https://www.typescriptlang.org/](https://www.typescriptlang.org/)
+`date-fns` tukee laajaa valikoimaa muotoja ja paikallisia asetuksia, tehden siitä vankan valinnan sovelluksille, jotka vaativat tarkkaa päivämäärän jäsentämistä ja muotoilua eri käyttäjäalueilla.

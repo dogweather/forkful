@@ -1,48 +1,44 @@
 ---
 title:                "Capitalizando uma string"
-date:                  2024-01-19
+date:                  2024-02-03T19:05:40.227377-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Capitalizando uma string"
-
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/kotlin/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## O Que & Porquê?
 
-Capitalizar uma string significa transformar todas as letras iniciais de palavras em maiúsculas, ou apenas a primeira letra da string inteira. Programadores fazem isso para formatar textos, como nomes próprios ou títulos, seguindo padrões de legibilidade e estilo.
+Capitalizar uma string na programação envolve converter o primeiro caractere da string em maiúsculo, caso ele não seja, o que é útil para formatar entradas de usuário ou exibir texto em uma interface de usuário de maneira mais padronizada ou amigável. Os programadores realizam essa operação para garantir a consistência dos dados ou para atender a requisitos específicos de formatação dentro de suas aplicações de software.
 
-## Como Fazer:
+## Como fazer:
 
-Capitalizar a primeira letra:
+Em Kotlin, as strings podem ser capitalizadas usando as funções da biblioteca padrão, sem a necessidade de bibliotecas de terceiros. A abordagem de Kotlin para manipulação de strings torna essas operações diretas e concisas.
 
-```kotlin
-fun main() {
-    val texto = "kotlin é legal!"
-    val capitalizado = texto.replaceFirstChar { if (it.isLowerCase()) it.titlecase() else it.toString() }
-    println(capitalizado)
-}
-// Saída: Kotlin é legal!
-```
-
-Capitalizar todas as palavras:
+### Capitalizando toda a string:
 
 ```kotlin
-fun main() {
-    val texto = "kotlin é muito legal!"
-    val capitalizado = texto.split(" ").joinToString(" ") { it.capitalize() }
-    println(capitalizado)
-}
-// Saída: Kotlin É Muito Legal!
+val message = "hello, world!"
+val capitalizedMessage = message.uppercase()
+
+println(capitalizedMessage) // Saída: HELLO, WORLD!
 ```
 
-## Aprofundamento
+### Capitalizando apenas o primeiro caractere:
 
-Historicamente, a função `capitalize()` era usada para capitalizar a primeira letra de strings no Kotlin, mas a partir do Kotlin 1.5, ela foi substituída por `replaceFirstChar`, pois a função original estava limitada ao idioma inglês e não tratava adequadamente os caracteres Unicode. Além disso, existem diversas bibliotecas Java que também podem ser usadas em Kotlin para capitalizar strings, como a Apache Commons Lang. A implementação de capitalização em Kotlin pode variar, pois alguns idiomas têm regras específicas para capitalização que podem não ser seguidas utilizando métodos simples.
+A partir do Kotlin 1.5, a função `capitalize()` foi depreciada e substituída por uma combinação de `replaceFirstChar` e uma lambda que verifica se é uma letra minúscula para transformá-la em maiúscula.
 
-## Veja Também
+```kotlin
+val greeting = "hello, world!"
+val capitalizedGreeting = greeting.replaceFirstChar {
+    if (it.isLowerCase()) it.titlecase() else it.toString()
+}
 
-- Documentação oficial da Kotlin Standard Library sobre manipulação de strings: [Kotlinlang - Strings](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/)
-- Projeto Apache Commons Lang para manipulação de strings: [Apache Commons Lang - StringUtils](https://commons.apache.org/proper/commons-lang/javadocs/api-release/org/apache/commons/lang3/StringUtils.html)
-- Aprofunde seus conhecimentos sobre os caracteres Unicode e suas particularidades na capitalização: [Unicode Character Database](https://www.unicode.org/ucd/)
+println(capitalizedGreeting) // Saída: Hello, world!
+```
+
+Essa abordagem mantém o restante da frase em sua forma original, alterando apenas a primeira letra para maiúscula.

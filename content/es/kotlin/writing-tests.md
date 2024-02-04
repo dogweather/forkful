@@ -1,67 +1,99 @@
 ---
 title:                "Escribiendo pruebas"
-date:                  2024-01-19
+date:                  2024-02-03T19:31:15.971426-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Escribiendo pruebas"
-
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/kotlin/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Qué y por qué?
-Las pruebas en programación sirven para verificar que el código funcione correctamente. Los programadores las escriben para evitar errores, asegurar la calidad del código y facilitar mantenimientos futuros.
+## ¿Qué y por qué?
+
+Escribir pruebas en Kotlin implica elaborar fragmentos de código que validan automáticamente la corrección funcional de tus módulos de software, asegurando que funcionen como se espera. Los programadores lo hacen para detectar errores tempranamente, facilitar la refactorización del código y proporcionar documentación sobre cómo se supone que funcionen los componentes del software.
 
 ## Cómo hacerlo:
-Para introducir pruebas en Kotlin, usaremos JUnit, un framework popular para pruebas unitarias.
 
-Primero, agrega la dependencia de JUnit en tu archivo `build.gradle.kts`:
-
-```kotlin
-dependencies {
-    testImplementation("org.junit.jupiter:junit-jupiter:5.8.1")
-}
-```
-
-Aquí un ejemplo de una prueba simple en Kotlin:
+Kotlin soporta el desarrollo guiado por pruebas con varios marcos de trabajo, siendo los más populares JUnit, Kotest y MockK para el mockeo. Aquí hay un ejemplo simple utilizando JUnit:
 
 ```kotlin
-import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
+import kotlin.test.assertEquals
 
-class CalculadoraTest {
-    
+class CalculatorTest {
+
     @Test
-    fun `sumar dos numeros retorna el resultado correcto`() {
-        val resultado = sumar(2, 3)
-        assertEquals(5, resultado, "2 + 3 debe ser igual a 5")
+    fun `suma dos números`() {
+        val calculator = Calculator()
+        val result = calculator.add(2, 3)
+        assertEquals(5, result)
     }
+}
 
-    fun sumar(a: Int, b: Int): Int {
-        return a + b
-    }
+class Calculator {
+    fun add(a: Int, b: Int): Int = a + b
 }
 ```
 
-Ejecuta tus pruebas con el siguiente comando:
+**Salida de muestra**
 
-```shell
-./gradlew test
+```text
+Prueba pasada.
 ```
 
-Si la prueba pasa satisfactoriamente, el resultado será algo como esto:
+Para un enfoque de prueba más sofisticado utilizando Kotest, que ofrece un estilo de escritura de prueba más idiomático de Kotlin, vea el ejemplo a continuación:
 
+```kotlin
+import io.kotest.core.spec.style.StringSpec
+import io.kotest.matchers.shouldBe
+
+class CalculatorSpec : StringSpec({
+    "sumar 2 y 3 debería retornar 5" {
+        val calculator = Calculator()
+        calculator.add(2, 3) shouldBe 5
+    }
+})
 ```
-> Task :test
 
-CalculadoraTest > sumar dos numeros retorna el resultado correcto() PASSED
+Usando MockK para pruebas con mocks:
+
+```kotlin
+import io.mockk.every
+import io.mockk.mockk
+import org.junit.jupiter.api.Test
+import kotlin.test.assertEquals
+
+class ServiceTest {
+
+    private val repository = mockk<Repository>()
+    private val service = Service(repository)
+
+    @Test
+    fun `obtener datos retorna datos simulados`() {
+        every { repository.getData() } returns "Datos Simulados"
+
+        val result = service.getData()
+
+        assertEquals("Datos Simulados", result)
+    }
+}
+
+class Service(private val repository: Repository) {
+    fun getData(): String = repository.getData()
+}
+
+interface Repository {
+    fun getData(): String
+}
 ```
 
-## Profundización
-Las pruebas unitarias se popularizaron con frameworks como JUnit en Java, y en Kotlin seguimos este legado. Existen alternativas en Kotlin como Kotest y Spek que ofrecen una sintaxis más idiomática de Kotlin. Detalles importantes al escribir pruebas incluyen la confiabilidad, es decir, que las pruebas siempre deben dar el mismo resultado si el código no cambia, y la cobertura de código, que mide qué tan bien las pruebas exploran el código fuente.
+**Salida de muestra**
 
-## Ver También
-- Documentación de JUnit 5: [https://junit.org/junit5/docs/current/user-guide/](https://junit.org/junit5/docs/current/user-guide/)
-- Kotest, una poderosa librería de pruebas para Kotlin: [https://kotest.io/](https://kotest.io/)
-- Spek, un framework de especificaciones para Kotlin: [https://www.spekframework.org/](https://www.spekframework.org/)
-- Guía sobre cobertura de código con Jacoco en Kotlin: [https://www.baeldung.com/jacoco](https://www.baeldung.com/jacoco)
+```text
+Prueba pasada.
+```
+
+Estos ejemplos ilustran los conceptos básicos de escribir pruebas unitarias en Kotlin. A medida que tu aplicación crezca, considera explorar técnicas y herramientas de prueba más avanzadas proporcionadas por cada marco de trabajo.

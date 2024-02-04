@@ -1,48 +1,45 @@
 ---
-title:                "स्ट्रिंग को कैपिटलाइज़ करना"
-date:                  2024-01-19
-simple_title:         "स्ट्रिंग को कैपिटलाइज़ करना"
-
+title:                "स्ट्रिंग को कैपिटलाइज करना"
+date:                  2024-02-03T19:06:34.801118-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "स्ट्रिंग को कैपिटलाइज करना"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/powershell/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (क्या है और क्यों?)
-**क्या है**: स्ट्रिंग कैपिटलाइज़ेशन का मतलब होता है हर शब्द के पहले अक्षर को बड़ा (कैपिटल) करना।
-**क्यों**: प्रोग्रामर्स अकसर टेक्स्ट को औपचारिकता देने या नाम और शीर्षक को स्पष्टता से प्रदर्शित करने के लिए स्ट्रिंग कैपिटलाइज़ करते हैं।
+## क्या और क्यों?
+PowerShell में एक स्ट्रिंग को कैपिटलाइज़ करना इसका मतलब है दिए गए स्ट्रिंग के पहले अक्षर को ऊपरी केस (बड़ा अक्षर) में बदलना, जबकि बाकी स्ट्रिंग को अपरिवर्तित रखना। प्रोग्रामर अक्सर फॉर्मेटिंग के उद्देश्यों के लिए इस कार्य को करते हैं, जैसे कि यूज़र इंटरफेस में प्रदर्शित करने के लिए टेक्स्ट तैयार करना या जनरेटेड दस्तावेज़ों में व्याकरणिक नियमों का पालन करना।
 
-## How to: (कैसे करें?)
-PowerShell में, स्ट्रिंग्स को कैपिटलाइज़ करने के लिए आप `ToTitleCase` मेथड का उपयोग कर सकते हैं:
+## कैसे करें:
+PowerShell, एक बहुउद्देश्यीय उपकरण होने के नाते, आपको तृतीय-पक्ष पुस्तकालयों की आवश्यकता के बिना सीधे तरीके से एक स्ट्रिंग को कैपिटलाइज़ करने की अनुमति देता है। आप यह कैसे कर सकते हैं यह यहां है:
 
-```PowerShell
-# ग्लोबलाइज़ेशन क्लास लोड करें
-Add-Type -AssemblyName System.Globalization
-
-# कल्चर इन्फो ऑब्जेक्ट तैयार करें
-$textInfo = [Globalization.CultureInfo]::CurrentCulture.TextInfo
-
-# स्ट्रिंग कैपिटलाइज़ करें
-$capitalizedString = $textInfo.ToTitleCase("yeh ek udaharan hai")
-$capitalizedString
+```powershell
+# CultureInfo से .Net का निर्मित method 'ToTitleCase' का उपयोग करना
+$text = "hello world"
+$culture = [System.Globalization.CultureInfo]::InvariantCulture
+$capitalizedText = $culture.TextInfo.ToTitleCase($text.ToLower())
+Write-Output $capitalizedText
 ```
-नतीजा:
+आउटपुट:
 ```
-Yeh Ek Udaharan Hai
+Hello world
 ```
 
-## Deep Dive (गहराई से जानकारी)
-PowerShell स्ट्रिंग मेथड `ToTitleCase` .NET क्लास `TextInfo` से आता है, जो `System.Globalization` नेमस्पेस का हिस्सा है। यह प्रकार्य पहली बार .NET Framework में शामिल किया गया था। आज भी, यह मेथड प्रोग्रामर्स को स्ट्रिंग्स के हर शब्द के पहले अक्षर को बड़ा करने की अनुमति देता है।
+नोट: यह विधि प्रत्येक शब्द के पहले अक्षर को कैपिटलाइज़ करती है। अगर आप सख्ती से केवल स्ट्रिंग के पहले अक्षर को ही कैपिटलाइज़ करना चाहते हैं और बाकी को जैसा है वैसा ही रखना चाहते हैं, तो आप इस तरह कुछ कर सकते हैं:
 
-विकल्प: PowerShell में डायरेक्ट स्ट्रिंग मेथड `ToUpper()` और `ToLower()` भी हैं, जो क्रमश: पूरे स्ट्रिंग को कैपिटल या स्मॉल केस में बदल देते हैं। लेकिन `ToTitleCase` प्रत्येक शब्द के लिए कैपिटलाइज़ेशन प्रदान करता है, जो हेडिंग्स या टाइटल्स में उपयोगी होता है।
+```powershell
+# केवल स्ट्रिंग के पहले अक्षर को कैपिटलाइज़ करना
+$text = "hello world"
+$capitalizedText = $text.Substring(0,1).ToUpper() + $text.Substring(1)
+Write-Output $capitalizedText
+```
+आउटपुट:
+```
+Hello world
+```
 
-इम्प्लीमेंटेशन डीटेल्स: `ToTitleCase` को इस्तेमाल करते वक्त, यह ध्यान देना जरुरी है कि यह मेथड शब्दों की सामान्य सीमा पर ध्यान देता है। यदि स्ट्रिंग पहले से ही अप्पर केस में हैं, तो इसे प्रत्येक शब्द की पहचान नहीं हो पाएगी। इसलिए इसे स्ट्रिंग्स के साथ उपयोग से पहले उसे `ToLower()` या `ToLowerCase()` से छोटा करना उत्तम होगा।
-
-## See Also (और भी जानकारी)
-- [Microsoft Docs on TextInfo](
-  https://docs.microsoft.com/en-us/dotnet/api/system.globalization.textinfo)
-- [Microsoft Docs on ToTitleCase](
-  https://docs.microsoft.com/en-us/dotnet/api/system.globalization.textinfo.totitlecase)
-- [PowerShell string manipulation](
-  https://docs.microsoft.com/en-us/powershell/scripting/learn/deep-dives/everything-about-strings?view=powershell-7.1)
+PowerShell सीधे तौर पर केवल स्ट्रिंग के पहले अक्षर को कैपिटलाइज़ करने के लिए एक सरल फ़ंक्शन शामिल नहीं करता है, लेकिन `Substring(0,1).ToUpper()` और संयोजन जैसे मूल स्ट्रिंग मैनीपुलेशन तरीकों को जोड़कर, हम आसानी से वांछित परिणाम प्राप्त कर सकते हैं।

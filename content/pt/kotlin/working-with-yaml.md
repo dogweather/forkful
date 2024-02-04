@@ -1,65 +1,101 @@
 ---
 title:                "Trabalhando com YAML"
-date:                  2024-01-19
+date:                  2024-02-03T19:26:06.249025-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Trabalhando com YAML"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/kotlin/working-with-yaml.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-YAML é um formato de serialização de dados legível por humanos, usado para configuração de aplicativos, integração entre serviços e armazenamento de dados. Programadores utilizam YAML pela simplicidade e facilidade de ler e escrever comparado a XML ou JSON.
+## O Que & Por Que?
+YAML, que significa YAML Ain't Markup Language (YAML Não é Uma Linguagem de Marcação), é um formato de serialização de dados altamente legível, frequentemente utilizado para arquivos de configuração, armazenamento de dados e mensagens entre processos. Os programadores frequentemente trabalham com YAML para gerenciar configurações e ajustes de uma maneira estruturada, porém simples, se beneficiando de sua clareza e simplicidade em relação ao JSON ou XML quando a legibilidade é importante.
 
-## How to:
-Em Kotlin, podemos usar a biblioteca `snakeyaml` para trabalhar com YAML. Primeiro, adicione a dependência no seu `build.gradle`:
+## Como Fazer:
+Kotlin não possui suporte nativo para análise (parsing) e serialização de YAML, mas você pode utilizar bibliotecas de terceiros populares como `snakeyaml` (para análise de YAML em geral) e `kotlinx.serialization` (com uma extensão de formato YAML) para trabalhar com arquivos YAML.
 
+### Usando `snakeyaml`
+**Dependência:**
 ```kotlin
-dependencies {
-    implementation("org.yaml:snakeyaml:1.29")
-}
+implementation 'org.yaml:snakeyaml:1.30'
 ```
 
-Agora, vamos ler e escrever YAML:
-
+**Ler YAML:**
 ```kotlin
 import org.yaml.snakeyaml.Yaml
 import java.io.FileInputStream
-import java.io.FileWriter
+
+fun readYaml(filePath: String) {
+    val yaml = Yaml()
+    val inputStream = FileInputStream(filePath)
+    val data = yaml.load<Map<String, Any>>(inputStream)
+
+    println(data)
+}
+
+// Uso de exemplo
+fun main() {
+    readYaml("config.yaml")
+}
+```
+**Exemplo de `config.yaml`:**
+```yaml
+database:
+  host: localhost
+  port: 5432
+```
+**Saída de Exemplo:**
+```
+{database={host=localhost, port=5432}}
+```
+### Usando `kotlinx.serialization` com YAML
+Primeiro, certifique-se de ter a biblioteca `kotlinx-serialization` com uma biblioteca de suporte YAML adequada (se disponível, já que `kotlinx.serialization` visa primariamente JSON e outros formatos diretamente).
+
+**Dependência:**
+```kotlin
+// Para JSON (ilustrativo, verifique o suporte para YAML ou bibliotecas alternativas)
+implementation 'org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.2'
+```
+
+**Definir uma classe de dados serializável:**
+```kotlin
+import kotlinx.serialization.Serializable
+
+@Serializable
+data class Config(
+    val database: Database
+)
+
+@Serializable
+data class Database(
+    val host: String,
+    val port: Int
+)
+```
+
+Infelizmente, no momento da escrita, o suporte direto a YAML em `kotlinx.serialization` pode ser limitado ou estar evoluindo. Você pode precisar usar uma representação intermediária (como converter YAML para JSON com `snakeyaml` e depois analisar JSON com `kotlinx.serialization`) ou procurar por projetos de serialização de YAML impulsionados pela comunidade e compatíveis com `kotlinx.serialization`.
+
+Para JSON, o código seria algo assim:
+```kotlin
+import kotlinx.serialization.json.Json
+import kotlinx.serialization.decodeFromString
 
 fun main() {
-    // Ler YAML
-    val yaml = Yaml()
-    val inputStream = FileInputStream("config.yaml")
-    val data = yaml.load<Map<String, Any>>(inputStream)
-    println(data)
-
-    // Escrever YAML
-    val outputData = mapOf("name" to "João", "idade" to 30)
-    val writer = FileWriter("output.yaml")
-    yaml.dump(outputData, writer)
+    val jsonText = """
+    {
+        "database": {
+            "host": "localhost",
+            "port": 5432
+        }
+    }
+    """.trimIndent()
+    
+    val config = Json.decodeFromString<Config>(jsonText)
+    println(config)
 }
 ```
 
-Output `config.yaml` lido:
-```yaml
-nome: João
-idade: 30
-```
-
-Output `output.yaml` escrito:
-```yaml
-idade: 30
-nome: João
-```
-
-## Deep Dive
-YAML, que significa "YAML Ain't Markup Language" (ou recursivamente "YAML Ain't Markup Language"), foi introduzido em 2001 como uma alternativa ao XML. Opções como JSON e TOML também são usadas, mas YAML é preferido quando legibilidade e comentários são importantes. Internamente, bibliotecas como `snakeyaml` convertem dados YAML para estruturas de dados nativas, como Mapas e Listas no Kotlin.
-
-## See Also
-- Documentação Oficial YAML: https://yaml.org/spec/1.2/spec.html
-- SnakeYAML Engine GitHub: https://bitbucket.org/asomov/snakeyaml/src/master/
-- Tutorial JSON em Kotlin para comparação: https://www.baeldung.com/kotlin/json
-
-Lembre que ao trabalhar com YAML, atenção especial a indentação é crucial, pois a estrutura do arquivo depende disso. Boa codificação!
+À medida que Kotlin e seu ecossistema continuam a evoluir, fique de olho na documentação oficial e nos recursos da comunidade para as últimas novidades sobre suporte a YAML e bibliotecas.

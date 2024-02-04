@@ -1,8 +1,8 @@
 ---
 title:                "Getting the current date"
-date:                  2024-01-20T15:13:36.063434-07:00
+date:                  2024-02-03T19:02:40.198503-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Getting the current date"
-
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/elixir/getting-the-current-date.md"
 ---
@@ -10,33 +10,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Fetching the current date in a program is like asking, "Hey, what's today's date?" We do this to timestamp events, handle scheduling, or just show users what day it is.
+Getting the current date in Elixir involves accessing the system's date and time information, a common task for logging, data stamping, or any functionality that requires knowledge of the current date. This operation is essential for creating time-aware applications and for tasks like generating reports or timestamps in a web application.
 
 ## How to:
-Elixir makes getting the current date straightforward using the `Date` module:
+Elixir's standard library, through the `DateTime` module, allows fetching the current date and time. Since Elixir runs on the Erlang VM (BEAM), it leverages the underlying Erlang functionalities for time operations.
+
+### Using Elixir's Standard Library
+Elixir provides the `DateTime.utc_now/0` function to get the current date and time in UTC.
 
 ```elixir
-# Fetch the current date
-current_date = Date.utc_today()
+current_datetime_utc = DateTime.utc_now()
+IO.inspect(current_datetime_utc)
+```
 
-# Print it out
+**Sample Output:**
+```
+#DateTime<2023-05-04 15:00:00Z>
+```
+
+To get just the current date, you might extract the year, month, and day components:
+
+```elixir
+{:ok, current_date} = Date.new(current_datetime_utc.year, current_datetime_utc.month, current_datetime_utc.day)
 IO.inspect(current_date)
 ```
 
-Sample output:
-
-```elixir
-~D[2023-04-06]
+**Sample Output:**
+```
+~D[2023-05-04]
 ```
 
-## Deep Dive
-Back in the day, programmers dealt with more primitive languages and had to manually calculate dates based on seconds since an epoch (usually January 1, 1970). Nowadays, Elixir provides the `Date` module, simplifying date handling.
+### Using the Timex Library
+For more complex date-time requirements, a popular third-party library called Timex can be utilized. First, add `Timex` to your mix.exs dependencies:
 
-Alternatives include using `DateTime.utc_now()` if you need the exact time besides the date, or `NaiveDateTime.local_now()` if you're working with local time without timezone information.
+```elixir
+defp deps do
+  [
+    {:timex, "~> 3.7"}
+  ]
+end
+```
 
-Underneath the hood, Elixir relies on Erlang's time handling capabilities. When you call `Date.utc_today()`, it interfaces with Erlang to get Coordinated Universal Time (UTC).
+After installing the dependency (`mix deps.get`), you can use Timex to get the current date:
 
-## See Also
-- Elixir's `Date` module documentation: https://hexdocs.pm/elixir/Date.html
-- Elixir's `DateTime` module for more complex time-related tasks: https://hexdocs.pm/elixir/DateTime.html
-- Introduction to `NaiveDateTime`: https://hexdocs.pm/elixir/NaiveDateTime.html
+```elixir
+current_date = Timex.today()
+IO.inspect(current_date)
+```
+
+**Sample Output:**
+```
+~D[2023-05-04]
+```
+
+Timex offers extensive functionalities for date-time manipulation, making it a powerful addition to your Elixir applications especially when dealing with time zones, formatting, and parsing of dates and times.
+
+By understanding and utilizing Elixir's built-in capabilities and the Timex library, you can easily work with dates and times in your Elixir applications, tailoring the experience to the needs of your application with precision and ease.

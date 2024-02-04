@@ -1,50 +1,67 @@
 ---
 title:                "Säännöllisten lausekkeiden käyttö"
-date:                  2024-01-19
+date:                  2024-02-03T19:18:26.743101-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Säännöllisten lausekkeiden käyttö"
-
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/swift/using-regular-expressions.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
+## Mikä & Miksi?
+Säännölliset lausekkeet, tai regex, ovat merkkijonoja, jotka muodostavat haun kaavan ja joita käytetään usein merkkijonojen etsimiseen tai manipulointiin. Ohjelmoijat käyttävät niitä kaikkeen tiedon validoinnista ja jäsentämisestä muunnoksiin, tehden niistä korvaamattoman työkalun tekstinkäsittely- ja manipulointitehtävissä eri ohjelmointikielillä, mukaan lukien Swift.
 
-Regular expressions (regex) ovat tapa etsiä kaavoja tekstistä. Ohjelmoijat käyttävät niitä tekstin prosessointiin, validointiin ja hakutulosten jalostamiseen.
+## Miten:
+Swiftin natiivi tuki regexille hyödyntää `NSRegularExpression` luokkaa, jonka lisäksi käytetään String-luokan range- ja replacement-metodeja. Alla on esimerkki, kuinka regexiä käytetään löytämään ja korostamaan sähköpostiosoitteet tekstilohkosta:
 
-## How to:
-
-```Swift
+```swift
 import Foundation
 
-let testString = "Hello, world! 123456"
-let regexPattern = "\\b\\w+\\b"
+let text = "Ota yhteyttä osoitteeseen support@example.com tai feedback@example.org saadaksesi lisätietoja."
+let regexPattern = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
 
-// Luodaan regular expression
-if let regex = try? NSRegularExpression(pattern: regexPattern) {
-    // Etsitään kaikki täsmäävät tulokset
-    let matches = regex.matches(in: testString, range: NSRange(testString.startIndex..., in: testString))
-    
-    // Tulostetaan löydetyt tulokset
-    for match in matches {
-        if let range = Range(match.range, in: testString) {
-            print(testString[range])
+try {
+    let regex = try NSRegularExpression(pattern: regexPattern)
+    let matches = regex.matches(in: text, range: NSRange(text.startIndex..., in: text))
+
+    if !matches.isEmpty {
+        for match in matches {
+            let range = Range(match.range, in: text)!
+            print("Löytyi: \(text[range])")
         }
+    } else {
+        print("Vastaavuuksia ei löytynyt.")
+    }
+} catch {
+    print("Regex-virhe: \(error.localizedDescription)")
+}
+
+// Esimerkkituloste:
+// Löytyi: support@example.com
+// Löytyi: feedback@example.org
+```
+
+Monimutkaisemmissa tai mukavuuteen keskittyvissä skenaarioissa voit käyttää kolmansien osapuolien kirjastoja, kuten SwiftRegex, joka yksinkertaistaa syntaksia ja laajentaa mahdollisuuksia. Vaikka Swiftin vakio kirjasto on voimakas, jotkut kehittäjät suosivat näitä kirjastoja niiden tiiviin syntaksin ja lisäominaisuuksien vuoksi. Tässä on, miten voisit suorittaa samanlaisen tehtävän käyttäen hypoteettista kolmannen osapuolen kirjastoa:
+
+```swift
+// Oletetaan, että kirjasto nimeltä SwiftRegex on olemassa ja tuotu käyttöön
+let text = "Ota yhteyttä hello@world.com tai vieraile verkkosivustollamme."
+let emailPattern = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
+
+let emails = text.matches(for: emailPattern) // Hypoteettinen metodi, jonka SwiftRegex tarjoaa
+if emails.isEmpty {
+    print("Sähköpostiosoitteita ei löytynyt.")
+} else {
+    emails.forEach { email in
+        print("Löytyi: \(email)")
     }
 }
 
-// Output:
-// Hello
-// world
-// 123456
+// Hypoteettinen tuloste olettaen, että `matches(for:)` metodi on olemassa SwiftRegex:ssä:
+// Löytyi: hello@world.com
 ```
 
-## Deep Dive
-
-Regular expressions juontavat juurensa teoreettiseen tietojenkäsittelytieteeseen, 1950-luvulle. Vaihtoehtoja regexille ovat mm. merkkijonojen manuaalinen käsittely tai parserit. Swiftin `NSRegularExpression`-luokan taustalla on ICU-kirjasto, joka on yleinen C-ohjelmointikielen regex-kirjasto.
-
-## See Also
-
-- Swift-turorialit ["NSRegularExpression"](https://developer.apple.com/documentation/foundation/nsregularexpression)
-- ICU User Guide Regex-osio ["ICU User Guide"](https://unicode-org.github.io/icu/userguide/strings/regexp.html)
+Tämä esimerkki havainnollistaa kolmannen osapuolen säännöllisen lausekkeen paketin käyttöä yksinkertaistaen vastaavuuksien löytämistä merkkijonosta, olettaen että tällaiset mukavuusmetodit kuten `matches(for:)` ovat olemassa. On tärkeää viitata vastaavan kolmannen osapuolen kirjaston dokumentaatioon tarkan syntaksin ja metodien saatavuuden varmistamiseksi.

@@ -1,39 +1,97 @@
 ---
-title:                "YAML-tiedostojen käsittely"
-date:                  2024-01-19
-simple_title:         "YAML-tiedostojen käsittely"
-
+title:                "Työskentely YAML:n kanssa"
+date:                  2024-02-03T19:24:48.391143-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Työskentely YAML:n kanssa"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/bash/working-with-yaml.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Mikä ja Miksi?)
-YAML on datankuvauskieli konfiguraatioihin ja viestintään, joka on helppo lukea sekä koneille että ihmisille. Ohjelmoijat käyttävät YAMLia, koska se on yksinkertainen, laajalti tuettu ja tiiviisti integroitavissa erilaisiin sovelluksiin ja automaatioprosesseihin.
+## Mikä & Miksi?
 
-## How to: (Kuinka tehdä:)
-```Bash
-# YAML-tiedoston lukeminen komentosarjassa
-apt update
-apt install -y python3-pip
-pip3 install pyyaml
+YAML, joka tarkoittaa YAML Ain't Markup Languagea, on ihmisluettava tiedon serialisointistandardi, jota voidaan käyttää asetustiedostoissa sekä sovelluksissa, joissa dataa tallennetaan tai välitetään. Ohjelmoijat suosivat YAMLia sen selkeyden ja yksinkertaisuuden vuoksi, erityisesti projekteissa, jotka sisältävät monimutkaisia kokoonpanoja tai tarvitsevat helposti muokattavia tietorakenteita.
 
-# Luo yksinkertainen esimerkki YAML-tiedosto
-echo 'tervehdys: hei maailma' > esimerkki.yaml
+## Miten:
 
-# Lue ja tulosta YAML-tiedoton sisältö
-python3 -c 'import yaml; print(yaml.safe_load(open("esimerkki.yaml")))'
+Suoraan YAML:n kanssa työskentely Bashissa vaatii hieman kekseliäisyyttä, koska Bash ei sisällä valmiiksi tukia YAML:n jäsentämiseen. Voit kuitenkin käyttää ulkoisia työkaluja, kuten `yq`:ta (kevyt ja siirrettävä komentorivin YAML-prosessori), interaktiivisesti työskennelläksesi YAML-tiedostojen kanssa tehokkaasti. Käydään läpi joitakin yleisiä toimenpiteitä:
 
-# Tulosteen pitäisi näyttää jotakin tältä:
-# {'tervehdys': 'hei maailma'}
+### `yq`:n asentaminen:
+
+Ennen esimerkkien käsittelyä, varmista että sinulla on `yq` asennettuna. Sen voi yleensä asentaa paketinhallintasi kautta, esimerkiksi Ubuntussa:
+
+```bash
+sudo apt-get install yq
 ```
 
-## Deep Dive (Syväsukellus)
-YAML, lyhenne sanoista "YAML Ain't Markup Language" (aiemmin "Yet Another Markup Language"), on luotu vuonna 2001 helpottamaan konfiguraatioiden hallintaa ja tiedonjakoa eri ohjelmointikielissä ja -ympäristöissä. Vaihtoehtoja YAMLille ovat JSON ja XML, jotka ovat myös suosittuja datankuvauskieliä. YAML erottuu legibiliteetinsä ja pyrkimyksen vähämerkkiseen syntaksiin. Ohjelmakirjastot eri ohjelmointikielissä tarjoavat YAML-tiedostojen käsittelyn, ja se toimii usein konfiguraatioissa, kuten Dockerissa ja Kubernetesissa.
+Tai voit ladata sen suoraan sen GitHub-repositoriosta.
 
-## See Also (Katso Myös)
-- YAML: [https://yaml.org](https://yaml.org)
-- YAML-syntaksi: [https://yaml.org/spec/1.2/spec.html](https://yaml.org/spec/1.2/spec.html)
-- YAML ja Python: [https://pyyaml.org/wiki/PyYAMLDocumentation](https://pyyaml.org/wiki/PyYAMLDocumentation)
-- Bash-skriptausopas: [https://www.gnu.org/software/bash/manual/](https://www.gnu.org/software/bash/manual/)
+### Arvon lukeminen:
+
+Oletetaan, että sinulla on tiedosto nimeltä `config.yaml`, jossa on seuraava sisältö:
+
+```yaml
+database:
+  host: localhost
+  port: 5432
+user:
+  name: admin
+  password: secret
+```
+
+Tietokannan isäntää voit lukea käyttäen `yq` seuraavasti:
+
+```bash
+yq e '.database.host' config.yaml
+```
+
+**Esimerkkituloste:**
+
+```
+localhost
+```
+
+### Arvon päivittäminen:
+
+Käyttäjän nimen päivittämiseen `config.yaml`:ssa, käytä `yq eval` komentoa `-i` (paikallaan) valitsimen kanssa:
+
+```bash
+yq e '.user.name = "newadmin"' -i config.yaml
+```
+
+Varmista muutos käyttäen:
+
+```bash
+yq e '.user.name' config.yaml
+```
+
+**Esimerkkituloste:**
+
+```
+newadmin
+```
+
+### Uuden elementin lisääminen:
+
+Lisätäksesi uuden elementin tietokanta-osioon, kuten uusi kenttä `timeout`:
+
+```bash
+yq e '.database.timeout = 30' -i config.yaml
+```
+
+Tiedoston sisällön tarkistaminen vahvistaa lisäyksen.
+
+### Elementin poistaminen:
+
+Poistaaksesi salasanan käyttäjän alta:
+
+```bash
+yq e 'del(.user.password)' -i config.yaml
+```
+
+Tämä toimenpide poistaa salasana-kentän konfiguraatiosta.
+
+Muista, että `yq` on tehokas työkalu ja sillä on paljon muitakin kyvykkyyksiä, mukaan lukien YAML:n muuntaminen JSON:ksi, tiedostojen yhdistäminen ja vielä monimutkaisemmat manipulaatiot. Tutustu `yq` dokumentaatioon lisätutkimuksia varten.

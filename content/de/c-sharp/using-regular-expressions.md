@@ -1,19 +1,25 @@
 ---
-title:                "Einsatz von regulären Ausdrücken"
-date:                  2024-01-19
-simple_title:         "Einsatz von regulären Ausdrücken"
-
+title:                "Reguläre Ausdrücke verwenden"
+date:                  2024-02-03T19:16:27.551915-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Reguläre Ausdrücke verwenden"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/c-sharp/using-regular-expressions.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Reguläre Ausdrücke ermöglichen Dir, Muster in Strings zu finden und zu manipulieren. Programmierer nutzen sie für valide Eingabeprüfungen, Suchen und Ersetzen von Text sowie für komplexe Textanalysen.
+## Was & Warum?
+Reguläre Ausdrücke (regex) in C# sind ein mächtiges Werkzeug für das Musterabgleichen innerhalb von Zeichenketten, das es Programmierern ermöglicht, effizient nach Daten zu suchen, diese zu ersetzen, aufzuteilen oder zu extrahieren. Programmierer nutzen regex für Aufgaben, die von einfachen Validierungen, wie der Überprüfung des E-Mail-Formats, bis zu komplexen Textverarbeitungsaufgaben reichen, aufgrund seiner Flexibilität und Leistung.
 
-## How to:
-```C#
+## Wie:
+
+### Einfaches Mustervergleichen
+Um zu überprüfen, ob eine Zeichenkette ein spezifisches Muster enthält, können Sie die `Regex.IsMatch` Methode aus dem `System.Text.RegularExpressions` Namensraum nutzen.
+
+```csharp
 using System;
 using System.Text.RegularExpressions;
 
@@ -21,33 +27,100 @@ class Program
 {
     static void Main()
     {
-        // Ein einfaches Matching-Beispiel
-        string pattern = @"\d+";
-        string input = "Es gibt 123 Äpfel und 456 Birnen.";
-        MatchCollection matches = Regex.Matches(input, pattern);
+        string sampleText = "Hallo, Welt!";
+        string pattern = "Welt";
+        bool containsPattern = Regex.IsMatch(sampleText, pattern);
 
-        foreach (Match match in matches)
-        {
-            Console.WriteLine(match.Value);
-        }
-        // Ausgabe:
-        // 123
-        // 456
-
-        // Beispiel für Ersetzungen
-        string replacePattern = @"\bApfel\b";
-        string result = Regex.Replace(input, replacePattern, "Orange");
-        Console.WriteLine(result);
-        // Ausgabe:
-        // Es gibt 123 Orangen und 456 Birnen.
+        Console.WriteLine(containsPattern);  // Ausgabe: True
     }
 }
 ```
 
-## Deep Dive
-Reguläre Ausdrücke gibt es seit den 1950er Jahren, entwickelt von Stephen Cole Kleene. Abseits der C# `System.Text.RegularExpressions`-Klasse können auch andere Bibliotheken wie `PCRE` oder Sprachfeatures wie LINQ für manche Aufgaben eingesetzt werden. Die Implementierung in .NET basiert auf einem NFA (Nondeterministic Finite Automaton), was Performance-Implikationen hat - besonders bei "backtracking".
+### Daten extrahieren
+Das Extrahieren von Daten aus einer Zeichenkette mit Gruppen in einem regex kann mit der `Regex.Match` Methode durchgeführt werden.
 
-## See Also
-- [Microsoft Docs zu Regular Expressions](https://docs.microsoft.com/de-de/dotnet/standard/base-types/regular-expressions)
-- [Regexr: Online-Tool zum Testen von regulären Ausdrücken](https://regexr.com/)
-- [Regular Expression Library: Eine Sammlung von fertigen Ausdrücken](http://www.regexlib.com/)
+```csharp
+using System;
+using System.Text.RegularExpressions;
+
+class Program
+{
+    static void Main()
+    {
+        string sampleText = "Datum: 2023-04-12";
+        string pattern = @"Datum: (\d{4})-(\d{2})-(\d{2})";
+        Match match = Regex.Match(sampleText, pattern);
+
+        if (match.Success)
+        {
+            Console.WriteLine($"Jahr: {match.Groups[1].Value}");  // Ausgabe: Jahr: 2023
+            Console.WriteLine($"Monat: {match.Groups[2].Value}");  // Ausgabe: Monat: 04
+            Console.WriteLine($"Tag: {match.Groups[3].Value}");  // Ausgabe: Tag: 12
+        }
+    }
+}
+```
+
+### Text ersetzen
+Die `Regex.Replace` Methode ermöglicht es Ihnen, Text in einer Zeichenkette, der einem spezifizierten Muster entspricht, zu ersetzen.
+
+```csharp
+using System;
+using System.Text.RegularExpressions;
+
+class Program
+{
+    static void Main()
+    {
+        string sampleText = "Besuche Microsoft!";
+        string pattern = "Microsoft";
+        string replacement = "Google";
+
+        string result = Regex.Replace(sampleText, pattern, replacement);
+
+        Console.WriteLine(result);  // Ausgabe: Besuche Google!
+    }
+}
+```
+
+### Zeichenketten aufteilen
+Sie können eine Zeichenkette basierend auf einem regex Muster mit der `Regex.Split` Methode in ein Array aufteilen.
+
+```csharp
+using System;
+using System.Text.RegularExpressions;
+
+class Program
+{
+    static void Main()
+    {
+        string sampleText = "eins,zwei,drei,vier,fünf";
+        string pattern = ",";
+
+        string[] result = Regex.Split(sampleText, pattern);
+
+        foreach (string item in result)
+        {
+            Console.WriteLine(item);
+        }
+        // Ausgabe: 
+        // eins
+        // zwei
+        // drei
+        // vier
+        // fünf
+    }
+}
+```
+
+### Nutzung von Drittanbieter-Bibliotheken
+Obwohl das .NET Framework umfassende Unterstützung für reguläre Ausdrücke bietet, gibt es auch Drittanbieter-Bibliotheken wie `PCRE.NET`, die Perl-kompatible reguläre Ausdrücke (PCRE) in C# anbieten. Dies kann nützlich sein, wenn Sie Funktionen oder eine Syntax aus Perls Regex-Engine benötigen, die in der .NET-Implementierung nicht verfügbar sind.
+
+Um `PCRE.NET` zu nutzen, würden Sie zunächst sein NuGet-Paket installieren, und dann können Sie es ähnlich verwenden, wie Sie die nativen .NET regex Klassen nutzen.
+
+```csharp
+// Beispiel mit PCRE.NET hier
+// Hinweis: Stellen Sie sich ein Beispiel vor, ähnlich den oben genannten, zugeschnitten darauf, ein einzigartiges Feature von PCRE.NET zu zeigen.
+```
+
+Bei der Integration von Drittanbieter-Bibliotheken für reguläre Ausdrücke konsultieren Sie immer deren Dokumentation für detaillierte Nutzung- und Kompatibilitätsinformationen.

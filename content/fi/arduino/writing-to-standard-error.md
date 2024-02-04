@@ -1,50 +1,81 @@
 ---
-title:                "Kirjoittaminen vakiovirheeseen"
-date:                  2024-01-19
-simple_title:         "Kirjoittaminen vakiovirheeseen"
-
+title:                "Kirjoittaminen standardivirheeseen"
+date:                  2024-02-03T19:32:54.175094-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Kirjoittaminen standardivirheeseen"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/arduino/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? - Mitä & Miksi?
-Kirjoittaminen standardivirheeseen tarkoittaa virheilmoitusten ja muiden diagnostisten viestien tulostamista erilliseen virhekanavaan. Ohjelmoijat tekevät näin virheiden jäljittämiseen ja ohjelmien oikean toiminnan varmistamiseen.
+## Mikä & Miksi?
 
-## How to: - Kuinka tehdä:
-Arduino-ympäristössä standardivirhekanavaa ei ole suoraan tarjolla, mutta voimme käyttää sarjaporttiviestintää (Serial) debuggaustarkoituksiin.
+Standardivirheen (stderr) kirjoittaminen Arduinon ohjelmoinnissa tarkoittaa virheilmoitusten ja diagnostiikkatietojen ohjaamista erilliselle kanavalle, varmistaen, että ne eivät sekoitu standarditulosteeseen (stdout). Ohjelmoijat tekevät näin erottellakseen normaalit ohjelman tulosteet virheilmoituksista, mikä tekee vianmäärityksestä ja lokianalyysistä suoraviivaisempaa.
 
-```Arduino
+## Kuinka:
+
+Arduino ei natiivisti erota standarditulostetta ja standardivirhettä kuten tavalliset tietokonejärjestelmät tekevät. Sekä `Serial.print()` että `Serial.println()` -metodit kirjoittavat samaan sarjatulosteeseen, jota tyypillisesti katsellaan Arduino IDE:n sarjamonitorista. Voimme kuitenkin emuloida kirjoittamista stderr:iin erityisesti muotoilemalla virheilmoituksia tai ohjaamalla ne vaihtoehtoiseen tulosteeseen, kuten tiedostoon SD-kortilla tai verkkoyhteyden kautta.
+
+Stderr:n emuloimiseksi voit etuliittää virheilmoitukset tunnisteella kuten "VIRHE:" erottaaksesi ne sarjamonitorissa:
+
+```cpp
 void setup() {
-    Serial.begin(9600); // Avaa sarjaporttiyhteys nopeudella 9600 bps
+  Serial.begin(9600); // Alusta sarjaviestintä 9600 bittinopeudella
 }
 
 void loop() {
-    // Oletetaan, että funktio 'doSomething' voi epäonnistua
-    bool result = doSomething();
-    if(!result) {
-        Serial.println("ERROR: 'doSomething' failed."); // Tulosta virheilmoitus sarjaporttiin
-    }
+  int tulos = jokuFunktio();
+  if (tulos == -1) {
+    // Emuloidaan stderr:iä etuliittämällä virheilmoitus
+    Serial.println("VIRHE: Funktion suoritus epäonnistui.");
+  } else {
+    Serial.println("Funktio suoritettiin onnistuneesti.");
+  }
+  delay(1000); // Odota sekunti ennen silmukan uudelleenaloitusta
 }
 
-bool doSomething() {
-    // Funktio, joka voi epäonnistua
-    // Simuloidaan epäonnistumista satunnaisesti
-    return random(10) > 5;
+int jokuFunktio() {
+  // Esimerkkifunktio, joka palauttaa -1 virheessä
+  return -1;
 }
 ```
 
-Kun tämän ohjelman suorittaa, sarjaporttiin voidaan saada esimerkiksi viesti:
+Esimerkkituloste Arduino IDE:n sarjamonitorissa saattaisi näyttää tältä:
 
 ```
-ERROR: 'doSomething' failed.
+VIRHE: Funktion suoritus epäonnistui.
 ```
 
-## Deep Dive - Syväsukellus:
-Arduino-alustalla älykkäitä virheenkorjauskeinoja ei ole vakiona. Historiallisesti mikrokontrollerit eivät käyttäneet standardivirheeseen kirjoittamista, koska niillä ei ole käyttöjärjestelmän tarjoamaa monipuolista I/O-hallintaa. Vaihtoehtoisena debuggausmenetelmänä voidaan käyttää LED-merkkivaloja tai sarjaporttia, kuten yllä esimerkissä. Kirjoittaminen standardivirheeseen tapahtuu yleisesti tietokoneissa, joissa on käyttöjärjestelmät, jotka hallitsevat eri tulostuskanavia.
+Projekteissa, jotka vaativat monimutkaisempaa lähestymistapaa, mukaan lukien kirjoittaminen eri fyysisiin tulosteisiin, kolmannen osapuolen kirjastojen tai lisälaitteiston käyttö saattaa olla tarpeen. Esimerkiksi virheilmoitusten kirjaaminen SD-kortille vaatii `SD`-kirjaston:
 
-## See Also - Katso Myös:
-- Arduino viralliset ohjelmointioppaat: https://www.arduino.cc/en/Guide
-- Serial (Sarjaportti) -kommunikointi: https://www.arduino.cc/reference/en/language/functions/communication/serial/
-- Debuggaus mikrokontrollereissa: https://www.arduino.cc/en/Tutorial/BuiltInExamples/SerialEvent
+```cpp
+#include <SPI.h>
+#include <SD.h>
+
+File tiedostoni;
+
+void setup() {
+  Serial.begin(9600);
+  if (!SD.begin()) {
+    Serial.println("VIRHE: SD-kortin alustus epäonnistui!");
+    return;
+  }
+  
+  tiedostoni = SD.open("error.log", FILE_WRITE);
+  if (tiedostoni) {
+    tiedostoni.println("VIRHE: Funktion suoritus epäonnistui.");
+    tiedostoni.close(); // Varmista, että suljet tiedoston sisällön tallentamiseksi
+  } else {
+    Serial.println("VIRHE: error.log-tiedoston avaaminen epäonnistui!");
+  }
+}
+
+void loop() {
+  // Pääkoodisi menisi tähän
+}
+```
+
+Tällä lähestymistavalla fyysisesti erotat normaalit ohjelman tulosteet ja virheilmoitukset ohjaamalla jälkimmäiset `error.log`-tiedostoon SD-kortilla, mahdollistaen jälkikäteisanalyysit ilman, että pääkanava sotkeentuu.

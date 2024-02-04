@@ -1,61 +1,82 @@
 ---
 title:                "HTML 파싱"
-date:                  2024-01-20T15:29:55.049999-07:00
+date:                  2024-02-03T19:11:36.295569-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "HTML 파싱"
-
 tag:                  "HTML and the Web"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/arduino/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (무엇이며, 왜?)
-HTML 파싱은 HTML 마크업에서 데이터를 추출하는 과정입니다. 프로그래머들은 웹페이지의 데이터를 자유롭게 활용하기 위해 이를 수행합니다.
+## 무엇인가 & 왜?
 
-## How to: (방법)
-```Arduino
-#include <Ethernet.h>
-#include <HttpClient.h>
+아두이노 프로젝트에서 HTML 파싱은 웹 페이지로부터 정보를 추출하는 것을 말합니다. 프로그래머들은 이를 통해 아두이노 기기가 인터넷과 상호작용하도록 하여, 홈 자동화부터 환경 모니터링에 이르기까지 다양한 목적을 위해 웹사이트에서 데이터를 수집하게 합니다.
 
-EthernetClient ethClient;
-HttpClient client = HttpClient(ethClient, "example.com");
-int statusCode = 0;
-String response;
+## 방법:
 
+아두이노에서 HTML을 파싱하려면 제한된 기기 자원 때문에 최소한의 메모리를 차지하는 라이브러리가 필요합니다. 웹 스크래핑과 파싱을 위한 인기 있는 선택은 ESP8266 혹은 ESP32에서 `ESP8266HTTPClient`와 `ESP8266WiFi` 라이브러리의 사용입니다, 왜냐하면 이들은 Wi-Fi 기능과 HTTP 프로토콜을 위한 네이티브 지원을 제공하기 때문입니다. 여기 ESP8266이나 ESP32와 작업한다고 가정했을 때, HTML을 가져오고 파싱하는 기본 예제를 보여드리겠습니다:
+
+먼저 필요한 라이브러리를 포함합니다:
+```cpp
+#include <ESP8266WiFi.h> // ESP8266을 위해
+#include <ESP8266HTTPClient.h>
+#include <WiFiClient.h>
+// ESP32를 사용한다면 유사한 ESP32 라이브러리를 사용하세요
+
+const char* ssid = "yourSSID";
+const char* password = "yourPASSWORD";
+```
+
+Wi-Fi 네트워크에 연결합니다:
+```cpp
 void setup() {
-  Ethernet.begin(mac);
-  Serial.begin(9600);
-  client.get("/path/to/resource");
-  statusCode = client.responseStatusCode();
-  response = client.responseBody();
-  parseHtml(response);
-}
+    Serial.begin(115200);
+    WiFi.begin(ssid, password);
 
-void parseHtml(String htmlContent) {
-  // HTML 파싱 로직: 간단한 예시
-  int startIndex = htmlContent.indexOf("<title>") + 7;
-  int endIndex = htmlContent.indexOf("</title>");
-  if (startIndex > 0 && endIndex > 0) {
-    String pageTitle = htmlContent.substring(startIndex, endIndex);
-    Serial.println(pageTitle);
-  }
+    while (WiFi.status() != WL_CONNECTED) {
+        delay(1000);
+        Serial.println("연결 중...");
+    }
 }
+```
 
+HTTP 요청을 보내고 간단한 HTML 조각을 파싱합니다:
+```cpp
 void loop() {
-  // 여기서는 필요없습니다.
+    if (WiFi.status() == WL_CONNECTED) { //Wi-Fi 연결 상태 확인
+        HTTPClient http;  //HTTPClient 클래스의 객체 선언
+
+        http.begin("http://example.com");  //요청 목적지 지정
+        int httpCode = http.GET();  //요청 보내기
+
+        if (httpCode > 0) { //반환 코드 확인
+            String payload = http.getString();   //요청 응답 페이로드 가져오기
+            Serial.println(payload);             //응답 페이로드 출력
+
+            // 특정 부분 파싱, 예: 페이로드에서 title 추출
+            int titleStart = payload.indexOf("<title>") + 7; // "<title>" 태그 이후로 이동하기 위해 +7
+            int titleEnd = payload.indexOf("</title>", titleStart);
+            String pageTitle = payload.substring(titleStart, titleEnd);
+
+            Serial.print("페이지 제목: ");
+            Serial.println(pageTitle);
+        }
+
+        http.end();   //연결 종료
+    }
+
+    delay(10000); //10초마다 요청하기
 }
 ```
-**Sample Output:**
+
+샘플 출력 (http://example.com이 간단한 HTML 구조를 가지고 있다고 가정):
 ```
-Example Domain
+연결 중...
+...
+페이지 제목: Example Domain
 ```
 
-## Deep Dive (심층 분석)
-HTML 파싱은 1990년대 웹의 초창기부터 필요했습니다. 초기에 파싱은 주로 서버 사이드에서 이루어졌으나, IoT의 발달로 마이크로컨트롤러에서도 필요해졌습니다. Arduino 같은 보드에는, 리소스가 제한적이므로 경량 라이브러리 또는 단순한 문자열 처리를 주로 사용합니다. 대안으로는 regex(정규 표현식) 또는 전용 HTML 파싱 라이브러리가 있지만, 메모리 제한 떄문에 Arduino에서는 일반적이지 않습니다. 구현할 때는 HTML의 구조를 잘 이해하고 있어야 하며, 파싱 로직은 대상 HTML에 따라 달라질 수 있습니다.
-
-## See Also (추가 정보)
-- Arduino Ethernet 라이브러리: https://www.arduino.cc/en/Reference/Ethernet
-- Arduino HttpClient 라이브러리: https://github.com/amcewen/HttpClient
-- HTML 파싱에 대한 일반적인 정보: https://www.w3schools.com/html/html_intro.asp
-- 문자열 처리에 대한 Arduino 참고자료: https://www.arduino.cc/reference/en/language/variables/data-types/string/
+이 예제는 HTML 페이지를 가져와서 `<title>` 태그 내용을 추출하는 방법을 보여줍니다. 보다 복잡한 HTML 파싱을 위해서는, 메모리 제약 때문에 조심스럽게 정규 표현식을 사용하거나, HTML 구조를 통해 탐색하기 위한 문자열 조작 함수를 고려하세요. 고급 파싱은 아두이노 표준 환경에 내장된 HTML 파싱 라이브러리가 포함되어 있지 않기 때문에, 다루고 있는 HTML의 특정 구조에 맞춰진 맞춤형 파싱 알고리즘을 포함하여 더 복잡한 접근이 필요할 수 있습니다.

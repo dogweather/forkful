@@ -1,44 +1,73 @@
 ---
 title:                "Säännöllisten lausekkeiden käyttö"
-date:                  2024-01-19
+date:                  2024-02-03T19:17:44.566675-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Säännöllisten lausekkeiden käyttö"
-
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/lua/using-regular-expressions.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Mikä & Miksi?
-Säännölliset lausekkeet ovat tekstinkäsittelyyn käytettyjä kaavoja, joilla haetaan, korvataan tai validoidaan tietyn kaavan mukaisia merkkijonoja. Ne tekevät monimutkaisesta tekstin käsittelystä nopeaa ja tehokasta.
 
-## Kuinka:
-```Lua
--- Perus haku
-local teksti = "Hei, kuinka voit tänään?"
-local etsitty = string.match(teksti, "kuinka")
-print(etsitty)  -- tulostaa: kuinka
+Ohjelmoinnissa säännölliset lausekkeet mahdollistavat merkkijonojen hakemisen ja manipuloinnin tiettyjen mallien perusteella. Ohjelmoijat käyttävät niitä tehtäviin, kuten validointiin, hakuun ja tekstimanipulaatioon, niiden monipuolisuuden ja tehokkuuden ansiosta monimutkaisten merkkijono-operaatioiden käsittelyssä.
 
--- Numeroiden löytäminen
-local viesti = "Syntymävuosi: 1984, Kengännumero: 42"
-for numero in string.gmatch(viesti, "%d+") do
-    print(numero)
+## Miten:
+
+Lua ei tue säännöllisiä lausekkeita natiivisti samalla tavalla kuin kielet kuten Perl tai Python. Sen sijaan se tarjoaa mallihakutoiminnallisuutta, joka kattaa monia säännöllisten lausekkeiden yleisiä käyttötarkoituksia. Kuitenkin täyden säännöllisten lausekkeiden tuen saamiseksi voidaan käyttää kolmannen osapuolen kirjastoa, kuten `lrexlib`.
+
+### Perusmallihaku Luassa:
+
+Lua tarjoaa voimakkaan mallihakujärjestelmän, jota voit käyttää yksinkertaisiin korvaamisiin ja hakuun:
+
+```lua
+-- Yksinkertainen haku
+local str = "Hello, World!"
+if string.find(str, "World") then
+  print("Osuma löydetty!")
 end
--- tulostaa:
--- 1984
--- 42
+-- Tuloste: Osuma löydetty!
 
--- Merkkijonon korvaaminen
-local puhdistettu_teksti = string.gsub("7 kissoa", "7", "seitsemän")
-print(puhdistettu_teksti)  -- tulostaa: seitsemän kissoa
+-- Yksinkertainen korvaaminen
+local s = string.gsub("Lua on mahtavaa!", "mahtavaa", "upeaa")
+print(s)
+-- Tuloste: Lua on upeaa!
 ```
 
-## Syvemmälle:
-Säännölliset lausekkeet juontavat juurensa teoreettisesta tietojenkäsittelystä ja Stephen Kleenen työstä 1950-luvulla. Lua -kielessä regex-vastaava on ominaista sen kuviojärjestelmälle, joka on yksinkertaisempi ja rajoitetumpi kuin monissa muissa ohjelmointikielissä. Lua käyttää omaa kuviojärjestelmäänsä, joka ei ole täysin POSIX- tai PCRE-yhteensopiva, mutta riittävän tehokas perus käyttöön. Vaihtoehtoisesti, voit käyttää luajit ja lrexlib-kirjastoa, jotka tarjoavat laajemmat regex-ominaisuudet.
+### Merkkijono-osien ottaminen talteen:
 
-## Katso Myös:
-- Lua manuaali: https://www.lua.org/manual/5.4/
-- Online Lua demo, jossa regex-testi: https://www.lua.org/cgi-bin/demo
-- lrexlib projekti: https://github.com/rrthomas/lrexlib
+Voit ottaa talteen merkkijonojen osia, jotka vastaavat malleja:
 
-Muista, että Luassa käytetään 'pattern matching' -termiä säännöllisten lausekkeiden sijaan, mutta ajatus on sama.
+```lua
+local date = "Tänään on 17/05/2023."
+local d, m, y = string.match(date, "(%d+)/(%d+)/(%d+)")
+print("Päivä:", d, "Kuukausi:", m, "Vuosi:", y)
+-- Tuloste: Päivä: 17 Kuukausi: 05 Vuosi: 2023
+```
+
+### `lrexlibin` käyttäminen säännöllisiin lausekkeisiin:
+
+Käyttääksesi varsinaisia säännöllisiä lausekkeita, voit asentaa ja käyttää `lrexlibiä`. Olettaen, että sinulla on se asennettuna (`luarocks install lrexlib-pcre`), voit suorittaa monimutkaisempia mallihakuja:
+
+```lua
+local rex = require 'rex_pcre'
+
+local text = "Sade Espanjassa pysyy pääasiassa tasangolla."
+local regex = "\\bS\\w+"
+local count, err = rex.gsub(text, regex, function(w)
+  return w:upper()
+end)
+if err then
+  print("Virhe:", err)
+else
+  print("Muokattu teksti:", text)
+  print("Korvauksia tehty:", count)
+end
+-- Esimerkkituloste: Muokattu teksti: Sade ESPANJASSA pysyy PÄÄASIASSA tasangolla.
+-- Korvauksia tehty: 3
+```
+
+Yllä olevat esimerkit kuvaavat peruskäyttöä Luassa oman mallihakujärjestelmänsä kanssa ja kuinka hyödyntää säännöllisten lausekkeiden voimaa `lrexlibin` kautta. Olitpa sitten suorittamassa yksinkertaisia merkkijonojen manipulaatioita tai tarvitset säännöllisten lausekkeiden täyttä monipuolisuutta, Lua yhdessä voimakkaiden kirjastojen kanssa voi vastata tarpeisiisi.

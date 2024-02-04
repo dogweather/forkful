@@ -1,55 +1,53 @@
 ---
 title:                "Escribiendo en el error estándar"
-date:                  2024-01-19
+date:                  2024-02-03T19:33:05.247384-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Escribiendo en el error estándar"
-
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/fish-shell/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Qué es y por qué?
+## ¿Qué y Por Qué?
 
-Escribir en el error estándar permite separar la salida normal de los mensajes de error. Los programadores lo usan para depurar y proporcionar información de diagnóstico sin afectar la salida principal del programa.
+Escribir en el error estándar (stderr) en Fish Shell se trata de dirigir mensajes de error o diagnósticos de forma separada de la salida estándar (stdout). Los programadores hacen esto para asegurarse de que la información de error pueda ser fácilmente identificada, gestionada o redirigida, facilitando procesos de depuración y registro más suaves.
 
 ## Cómo hacerlo:
 
-```Fish Shell
-# Enviar un mensaje de error a stderr
-echo "¡Ha ocurrido un error!" >&2
+En Fish Shell, puedes escribir en stderr redirigiendo tu salida usando `>&2`. Aquí hay un ejemplo básico:
 
-# Ejemplo de redireccionamiento de stderr a un archivo
-echo "¡Ha ocurrido un error!" 2> error_log.txt
-
-# Ejemplo combinando stdout y stderr en un solo archivo
-echo "Este es un mensaje normal"
+```fish
 echo "Este es un mensaje de error" >&2
-both_output.txt 2>&1
 ```
 
-Salida de muestra de stderr en la consola:
+Este comando simplemente hace eco de un mensaje en stderr en lugar de stdout. Si fueras a escribir un script que genere tanto mensajes regulares como de error, podrías hacer algo como esto:
 
-```
-¡Ha ocurrido un error!
-```
-
-Contenido de `error_log.txt` tras la redirección:
-
-```
-¡Ha ocurrido un error!
+```fish
+echo "Iniciando el proceso"
+echo "Ocurrió un error" >&2
+echo "Proceso completado"
 ```
 
-## Análisis a fondo:
+Salida de muestra si ejecutas el script y rediriges stderr a un archivo:
 
-Históricamente, las terminales proporcionaban diversas corrientes para distintos tipos de información. Al estándar de error (stderr) le asignaron el descriptor de archivo 2. Usarlo garantiza que, incluso si la salida estándar (stdout) se redirecciona, los errores siguen siendo visibles o manejables de forma separada.
+```
+Iniciando el proceso
+Proceso completado
+```
 
-Alternativas incluyen el uso de syslog en sistemas Unix-like para manejar mensajes de error, aunque suele utilizarse para programas que corren como servicios o daemons.
+El mensaje de error no aparecería en la salida estándar sino que se encontraría en el archivo al cual redirigiste stderr.
 
-Detalles de implementación: en Fish Shell, al igual que en otros shells, se usa el operador '>&' para redireccionar un descriptor de archivo específico. Es crucial para el diseño de scripts y programas que sean robustos y fáciles de mantener.
+En escenarios que requieren un manejo de errores o registro más sofisticado, Fish no viene con bibliotecas integradas diseñadas explícitamente para esto. Sin embargo, puedes aprovechar herramientas externas o escribir funciones para ayudar. Por ejemplo, crear una función de registro simple podría verse así:
 
-## Ver también:
+```fish
+function log_error
+    echo $argv >&2
+end
 
-- Documentación oficial de Fish Shell sobre la redirección de salida: [fishshell.com/docs/current/index.html#redirects](https://fishshell.com/docs/current/index.html#redirects)
-- Tutorial POSIX Shell acerca de redirección de I/O: [https://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO-3.html](https://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO-3.html)
-- Explicación en Stack Overflow de stderr: [https://stackoverflow.com/questions/3385201/confused-about-stdin-stdout-and-stderr](https://stackoverflow.com/questions/3385201/confused-about-stdin-stdout-and-stderr)
+log_error "Este es un mensaje de error avanzado"
+```
+
+Esta función `log_error` tomará cualquier cadena que le des y la escribirá en stderr. Usar funciones como esta puede ayudar a mantener tu manejo de errores limpio y consistente a lo largo de tus scripts.

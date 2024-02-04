@@ -1,44 +1,64 @@
 ---
 title:                "테스트 작성하기"
-date:                  2024-01-19
+date:                  2024-02-03T19:30:19.061521-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "테스트 작성하기"
-
 tag:                  "Testing and Debugging"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/clojure/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## 무엇이며 왜?
-테스트 코딩은 코드가 올바르게 동작하는지 확인하기 위한 과정입니다. 프로그래머는 예상치 못한 오류를 방지하고, 코드의 품질을 보증하기 위해 테스트를 작성합니다.
+## 무엇 & 왜?
+Clojure에서 테스트를 작성하는 것은 다른 프로그래밍 언어에서처럼, 주 코드베이스가 예상대로 작동하는지 검증하기 위해 전용 코드를 생성하는 과정을 포함합니다. 이는 정확성을 보장하고 리팩토링을 용이하게 하며 코드 안정성을 향상시키는 데 도움이 됩니다.
 
-## 작성 방법:
-Clojure에서 테스트를 작성하려면 `clojure.test` 라이브러리를 사용합니다.
+## 방법:
+Clojure는 JVM을 활용하여 다양한 테스팅 프레임워크를 지원합니다. 그러나 일반적으로 사용되는 내장 라이브러리는 `clojure.test`입니다. 다음은 간단한 예입니다:
 
-```Clojure
-(require '[clojure.test :refer [deftest is testing]])
+```clojure
+(ns example.test
+  (:require [clojure.test :refer :all]
+            [example.core :refer :all]))
 
 (deftest test-addition
-  (testing "기본 덧셈 기능"
-    (is (= 4 (+ 2 2)))
-    (is (= 7 (+ 3 4)))))
+  (testing "덧셈 기능"
+    (is (= 4 (add 2 2)))
+    (is (= 7 (add 3 4)))))
 
-(clojure.test/run-tests)
+(run-tests)
+```
+이 테스트를 실행한 후, 다음과 비슷한 출력을 볼 수 있습니다:
+
+```
+Testing example.test
+
+Ran 2 tests containing 2 assertions.
+0 failures, 0 errors.
 ```
 
-위 코드는 두 개의 덧셈 테스트를 수행하며, 테스트 결과는 다음과 같습니다.
+더 많은 기능을 원하는 사용자의 경우, `Midje`나 `test.check`와 같은 서드파티 라이브러리를 활용할 수 있습니다. 다음은 Midje를 사용한 비슷한 테스트 방법입니다:
 
-```Clojure
-{:test 2, :pass 2, :fail 0, :error 0, :type :summary}
+먼저, project.clj 의존성에 Midje를 추가합니다:
+```clojure
+[midje "1.9.9"]
 ```
 
-## 깊이 알아보기:
-Clojure의 테스트 프레임워크는 JUnit 같은 자바의 테스팅 도구와 같은 역할을 합니다. 다른 대안으로는 Midje나 Speclj 같은 도구가 있지만 `clojure.test`는 Clojure 코어에 포함되어 있어서 별도의 설치 없이 사용할 수 있습니다. 테스트 함수 안에서는 `is` 매크로를 사용하여 실제 값과 예상 값을 비교합니다.
+그런 다음, Midje로 테스트를 다음과 같이 작성할 수 있습니다:
 
-## 참고자료:
-- Clojure 공식 가이드: [Clojure - Functional Programming for the JVM](https://clojure.org/)
-- `clojure.test` 사용법: [Clojure Test Framework](https://clojure.github.io/clojure/clojure.test-api.html)
-- 대안적인 테스트 라이브러리:
-  - [Midje on GitHub](https://github.com/marick/Midje)
-  - [Speclj on GitHub](https://github.com/slagyr/speclj)
+```clojure
+(ns example.test
+  (:require [midje.sweet :refer :all]
+            [example.core :refer :all]))
+
+(fact "덧셈 테스트"
+  (add 2 2) => 4
+  (add 3 4) => 7)
+```
+
+`lein midje`를 통해 테스트를 실행하면, 다음과 비슷한 출력이 표시됩니다:
+
+```
+모든 검사(2개)가 성공했습니다.
+```

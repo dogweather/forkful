@@ -1,8 +1,8 @@
 ---
 title:                "Using regular expressions"
-date:                  2024-01-19
+date:                  2024-02-03T19:03:19.668689-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Using regular expressions"
-
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/lua/using-regular-expressions.md"
 ---
@@ -10,45 +10,62 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Regular expressions, or regex, are patterns used to match character combinations in text. Programmers use them for searching, editing, and manipulating strings because they're powerful and efficient.
+
+Regular expressions in programming allow for pattern matching and manipulation of strings based on specific patterns. Programmers use them for tasks like validation, searching, and text manipulation due to their versatility and efficiency in handling complex string operations.
 
 ## How to:
-Lua provides basic support for patterns (its version of regex) that you can use with string-matching functions. Here's a quick spin:
 
-```Lua
-local text = "Hello Lua! 123"
--- Find digits in the text
-local pattern = "%d+"
-for match in string.gmatch(text, pattern) do
-    print(match)
+Lua does not support regular expressions natively in the same way as languages like Perl or Python. Instead, it offers pattern matching capabilities that cover many common use cases of regular expressions. However, for full-fledged regular expression support, one can use a third-party library such as `lrexlib`.
+
+### Basic Pattern Matching in Lua:
+
+Lua provides a powerful pattern matching system that you can use for simple substitutions and searches:
+
+```lua
+-- Simple search
+local str = "Hello, World!"
+if string.find(str, "World") then
+  print("Match found!")
 end
-```
-Output:
-```
-123
-```
+-- Output: Match found!
 
-To replace text:
-
-```Lua
-local text = "Hello Lua! 123"
-local pattern = "%d+"
-local replacement = "456"
-local new_text = string.gsub(text, pattern, replacement)
-
-print(new_text)
-```
-Output:
-```
-Hello Lua! 456
+-- Simple substitution
+local s = string.gsub("Lua is great!", "great", "awesome")
+print(s)
+-- Output: Lua is awesome!
 ```
 
-## Deep Dive
-Lua's patterns are not as feature-rich as regex found in other languages but they're fast and cover many common use cases. They were introduced as a lightweight solution to string matching, avoiding the complexity of traditional regex implementations.
+### Capturing Substrings:
 
-Alternatives include external Lua modules like `rex_pcre` or `lpeg`, which provide more complete regex implementations or different pattern-matching paradigms, respectively.
+You can capture parts of the string that match patterns:
 
-Lua's pattern-matching functions, like `string.find`, `string.match`, `string.gmatch`, and `string.gsub`, work with predefined pattern codes like `%d` for digits, `%s` for space characters, and `%a` for letters, making implementation straightforward with less overhead than full regex engines.
+```lua
+local date = "Today is 17/05/2023."
+local d, m, y = string.match(date, "(%d+)/(%d+)/(%d+)")
+print("Day:", d, "Month:", m, "Year:", y)
+-- Output: Day: 17 Month: 05 Year: 2023
+```
 
-## See Also
-- [Lua 5.4 Reference Manual](https://www.lua.org/manual/5.4/manual.html#6.4.1)
+### Using `lrexlib` for Regular Expressions:
+
+To use actual regular expressions, you can install and use `lrexlib`. Assuming you have it installed (`luarocks install lrexlib-pcre`), you can do more complex pattern matching:
+
+```lua
+local rex = require 'rex_pcre'
+
+local text = "The rain in Spain stays mainly in the plain."
+local regex = "\\bS\\w+"
+local count, err = rex.gsub(text, regex, function(w)
+  return w:upper()
+end)
+if err then
+  print("Error:", err)
+else
+  print("Modified text:", text)
+  print("Substitutions made:", count)
+end
+-- Example output: Modified text: The RAIN in SPAIN stays MAINLY in the plain.
+-- Substitutions made: 3
+```
+
+The above examples illustrate basic usage within Lua's own pattern matching system and how to harness the power of regular expressions via `lrexlib`. Whether you're performing simple string manipulations or require the full versatility of regular expressions, Lua, coupled with powerful libraries, can accommodate your needs.

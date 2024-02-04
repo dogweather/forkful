@@ -1,50 +1,52 @@
 ---
-title:                "Zamiana liter na wielkie w ciągu znaków"
-date:                  2024-01-19
-simple_title:         "Zamiana liter na wielkie w ciągu znaków"
-
+title:                "Zamiana liter na wielkie w łańcuchu znaków"
+date:                  2024-02-03T19:05:33.304610-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Zamiana liter na wielkie w łańcuchu znaków"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/elm/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Co i Dlaczego?)
+## Co i dlaczego?
 
-Zmiana stringa tak, by zaczynał się z dużej litery, to "kapitalizacja". W Elmie robi się to, by dopasować tekst do konwencji językowych, jak np. tytuły czy imiona.
+Kapitalizacja łańcucha znaków polega na przekształceniu pierwszej litery danego łańcucha na wielką literę, zachowując resztę liter w formie małych, często w celu ujednolicenia formatowania lub czytelności. Programiści często wykonują to zadanie, aby zapewnić spójne prezentowanie danych, zwłaszcza w interfejsach użytkownika lub podczas przetwarzania i wyświetlania wprowadzonych przez użytkownika danych.
 
-## How to: (Jak to zrobić:)
+## Jak to zrobić:
 
-```Elm
-module Capitalize exposing (capitalize)
+W Elm nie ma wbudowanej funkcji specjalnie do kapitalizacji łańcuchów znaków. Jednak można łatwo osiągnąć ten cel, korzystając z funkcji wbudowanego modułu `String`, takich jak `toUpper`, `toLower`, `left` i `dropLeft`.
 
+```elm
 capitalize : String -> String
-capitalize string =
-    if String.isEmpty string then
-        string
+capitalize str =
+    if String.isEmpty str then
+        ""
     else
-        let
-            firstChar =
-                String.left 1 string
-                    |> String.toUpper
+        String.toUpper (String.left 1 str) ++ String.toLower (String.dropLeft 1 str)
 
-            remainingChars =
-                String.dropLeft 1 string
-        in
-        firstChar ++ remainingChars
-
--- Przykład użycia i wynik
-result = capitalize "cześć Elm!"
--- "Cześć Elm!"
+-- Przykład użycia
+main =
+    String.toList "hello world" |> List.map capitalize |> String.join " "
+    -- Wynik: "Hello World"
 ```
 
-## Deep Dive (Wgłębiając się)
+Dla bardziej złożonych scenariuszy lub jeśli preferujesz użycie biblioteki, która zapewnia bezpośrednią możliwość kapitalizacji łańcuchów znaków, możesz rozważyć pakiet zewnętrzny, tak jak `elm-community/string-extra`. Jednakże, według mojej ostatniej aktualizacji, ekosystem Elm zachęca do radzenia sobie z tego typu zadaniami, korzystając z funkcji wbudowanych, aby zachować język i projekty w prostocie.
 
-Do Elm 0.19 nie było gotowej funkcji do kapitalizacji, więc trzeba było kombinować jak wyżej. Można też użyć pakietów zewnętrznych. Alternatywa to użycie `String.toUpper` na całym stringu, ale to nie to samo, co kapitalizacja.
+```elm
+import String.Extra as StringExtra
 
-Kapitalizacja to nie `toUpperCase`; nie chcemy wszystkich liter wielkich. Elm operuje na Unicodzie, co jest wygodne, ale uważaj na pułapki jak ligatury (np. "ﬂ" na "FL").
+-- W przypadku, gdy w bibliotece zewnętrznej znajduje się funkcja `capitalize`
+capitalizeWithLibrary : String -> String
+capitalizeWithLibrary str =
+    StringExtra.capitalize str
 
-## See Also (Zobacz również)
+-- Przykład użycia z hipotetyczną funkcją biblioteczną
+main =
+    "this is elm" |> capitalizeWithLibrary
+    -- Hipotetyczny wynik: "This is elm"
+```
 
-- Elm `String` documentation: [Elm String](http://package.elm-lang.org/packages/elm/core/latest/String)
-- Unicode issues with capitalization: [Unicode and Strings](https://unicode.org/reports/tr44/#General_Category_Values)
+Zawsze sprawdzaj repozytorium pakietów Elm, aby uzyskać najnowsze i najbardziej preferowane biblioteki do manipulacji łańcuchami znaków, jeśli szukasz dodatkowej funkcjonalności poza standardową biblioteką.

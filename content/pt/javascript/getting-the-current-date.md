@@ -1,35 +1,49 @@
 ---
 title:                "Obtendo a data atual"
-date:                  2024-01-20T15:15:14.921716-07:00
+date:                  2024-02-03T19:09:45.851729-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Obtendo a data atual"
-
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/javascript/getting-the-current-date.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## O Que & Porquê?
-Obter a data atual em Javascript significa acessar o momento exato em que a linha de código é executada. Programadores fazem isso para funcionalidades como logs de atividades, datas de criação de conteúdo ou simplesmente para mostrar o dia corrente numa página web.
+## O Que & Por Que?
+Obter a data atual em JavaScript é uma tarefa fundamental, envolvendo a recuperação e, possivelmente, a manipulação da data e hora de hoje. Programadores realizam isso para exibir datas em websites, em aplicações, acompanhar interações do usuário, ou lidar com dados sensíveis ao tempo.
 
-## Como Fazer:
-```Javascript
-// Obtém a data e hora atual
-const agora = new Date();
+## Como fazer:
+No JavaScript puro, o objeto `Date` é usado para trabalhar com datas e horas. Aqui está como você pode obter a data e hora atuais:
 
-// Exibe no console
-console.log(agora.toString()); // Exemplo de saída: Wed Mar 10 2021 15:50:00 GMT+0000 (Horário Coordenado Universal)
-
-// Formata para uma apresentação mais legível em pt-BR
-const opcoes = { day: '2-digit', month: '2-digit', year: 'numeric' };
-console.log(agora.toLocaleDateString('pt-BR', opcoes)); // Exemplo de saída: 10/03/2021
+```javascript
+const currentDate = new Date();
+console.log(currentDate); // Saída de exemplo: Sex Abr 14 2023 12:34:56 GMT+0100 (Horário de Verão Britânico)
 ```
 
-## Mergulho Profundo
-`Date` é um objeto embutido em Javascript desde a sua primeira versão. Ele armazena a data e hora baseado no tempo do sistema e no fuso horário do navegador. Possíveis alternativas incluem bibliotecas como Moment.js ou Date-fns para manipulações de data mais complexas e robustas. Apesar de acréscimos periódicos de métodos ao objeto Date, as operações básicas mantêm-se inalteradas. O desafio ao usar o Date é lidar com fusos horários e horário de verão, que podem causar inconsistências.
+Para exibir apenas a data em um formato mais amigável ao usuário, você pode usar métodos como `toLocaleDateString()`:
 
-## Veja Também
-- MDN Web Docs sobre o objeto Date: https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Date
-- Documentação do Moment.js: https://momentjs.com/docs/
-- Documentação do Date-fns: https://date-fns.org/docs/Getting-Started
-- Artigo sobre fusos horários e horário de verão: https://www.iana.org/time-zones
+```javascript
+console.log(currentDate.toLocaleDateString()); // Saída de exemplo: 14/4/2023
+```
+
+Para ter mais controle sobre o formato, bibliotecas de terceiros como *Moment.js* ou *date-fns* são muito populares, embora seja bom estar ciente de que Moment.js agora é considerado um projeto legado em modo de manutenção.
+
+Usando *Moment.js*:
+
+```javascript
+const moment = require('moment'); // assumindo Node.js ou usando um empacotador de módulos
+const formattedDate = moment().format('YYYY-MM-DD');
+console.log(formattedDate); // Saída de exemplo: 2023-04-14
+```
+
+Com *date-fns*, que enfatiza a modularização permitindo que você importe apenas o que precisa:
+
+```javascript
+const { format } = require('date-fns');
+const formattedDate = format(new Date(), 'yyyy-MM-dd');
+console.log(formattedDate); // Saída de exemplo: 2023-04-14
+```
+
+Cada abordagem oferece diferentes níveis de conveniência e flexibilidade para trabalhar com datas em JavaScript, desde o objeto `Date` embutido até capacidades mais sofisticadas de formatação e manipulação disponíveis através de bibliotecas.

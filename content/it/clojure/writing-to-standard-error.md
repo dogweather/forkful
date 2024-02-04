@@ -1,33 +1,59 @@
 ---
 title:                "Scrivere sull'errore standard"
-date:                  2024-01-19
+date:                  2024-02-03T19:32:43.697794-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Scrivere sull'errore standard"
-
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/clojure/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Scrivere su standard error, STDERR, permette di separare errori e log dagli output normali del programma. Questo è essenziale per il debug e la gestione degli errori.
+## Cosa & Perché?
+Scrivere sull'errore standard (stderr) riguarda l'indirizzare messaggi di errore e diagnostiche allo stream stderr, separato dall'output standard (stdout). I programmatori fanno questo per differenziare l'output regolare del programma dai messaggi di errore, consentendo un debugging e un logging più efficaci.
 
-## How to:
-In Clojure, `(binding [*err* *out*] ...)` reindirizza STDERR a STDOUT, e `(binding [*out* *err*] ...)` fa l'opposto. Ecco come usare STDERR:
+## Come fare:
+In Clojure, puoi scrivere su stderr utilizzando lo stream `*err*`. Ecco un esempio basilare:
 
-```Clojure
-;; Scrivere a STDERR
-(binding [*err* *out*]
-  (println "Questo è un messaggio di errore"))
-
-;; Output
-Questo è un messaggio di errore
+```clojure
+(.write *err* "Questo è un messaggio di errore.\n")
 ```
 
-## Deep Dive
-Prima del Clojure, molte lingue hanno gestito STDERR simile, con meccanismi di reindirizzamento integrati. Come alternativa, library di logging offrono più controllo. Internamente, la scrittura su STDERR in Clojure avviene attraverso Java interop, dato che Clojure è hostato su JVM.
+Nota che dopo aver scritto un messaggio, dovresti fare il flush dello stream per assicurarti che il messaggio venga immediatamente emesso:
 
-## See Also
-- Documentazione Clojure su [binding](https://clojuredocs.org/clojure.core/binding)
-- Library di logging Clojure come [Timbre](https://github.com/ptaoussanis/timbre)
-- [Java interop in Clojure](https://clojure.org/reference/java_interop)
+```clojure
+(flush)
+```
+
+Esempio di output su stderr:
+```
+Questo è un messaggio di errore.
+```
+
+Se stai gestendo eccezioni, potresti voler stampare le tracce dello stack su stderr. Usa `printStackTrace` per questo:
+
+```clojure
+(try
+  ;; Codice che potrebbe generare un'eccezione
+  (/ 1 0)
+  (catch Exception e
+    (.printStackTrace e *err*)))
+```
+
+Per un logging degli errori più strutturato, librerie di terze parti come `timbre` possono essere configurate per registrare su stderr. Ecco una configurazione e un uso basilari:
+
+Prima di tutto, aggiungi `timbre` alle tue dipendenze. Poi configuralo per utilizzare stderr:
+
+```clojure
+(require '[taoensso.timbre :as timbre])
+
+(timbre/set-config! [:appenders :standard-out :enabled?] false) ;; Disabilita il logging su stdout
+(timbre/set-config! [:appenders :spit :enabled?] false) ;; Disabilita il logging su file
+(timbre/set-config! [:appenders :stderr :min-level] :error) ;; Abilita stderr per gli errori
+
+(timbre/error "Si è verificato un errore durante l'elaborazione della tua richiesta.")
+```
+
+Ciò dirigerà i messaggi di livello errore su stderr, rendendoli distinti dall'output standard dell'applicazione.

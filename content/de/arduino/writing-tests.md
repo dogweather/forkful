@@ -1,59 +1,64 @@
 ---
-title:                "Tests schreiben"
-date:                  2024-01-19
-simple_title:         "Tests schreiben"
-
+title:                "Tests Schreiben"
+date:                  2024-02-03T19:29:28.240710-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Tests Schreiben"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/arduino/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Was & Warum?
 
-Tests schreiben bedeutet, Code zu erstellen, der deinen eigenen Code prüft. Das machen Programmierer, um Fehler früh zu erkennen, die Stabilität des Programms zu garantieren und spätere Änderungen sicherer durchzuführen.
+Tests im Arduino-Umfeld zu schreiben, bezieht sich auf den Prozess des Erstellens von automatisierten Tests, die die Funktionalität Ihres Codes auf Arduino-Geräten validieren. Programmierer tun dies, um sicherzustellen, dass ihr Code wie erwartet funktioniert, Fehler reduziert und die Qualität ihrer Projekte verbessert, was besonders in eingebetteten Systemen, in denen das Debugging herausfordernder sein kann, von entscheidender Bedeutung ist.
 
-## How to:
+## Wie:
 
-Tests auf Arduino-Plattformen sind nicht so gängig wie in anderen Entwicklungsökosystemen, vor allem wegen des begrenzten Speichers und der Hardware-Fokus. Trotzdem kannst du ein einfaches Beispiel für eine Testfunktion nutzen, die eine LED blinken lässt, um eine „Hello World“-Funktionalität zu testen.
+Arduino verfügt nicht über ein eingebautes Test-Framework wie einige andere Programmierumgebungen. Sie können jedoch Drittanbieter-Bibliotheken wie `AUnit` für das Unit-Testing von Arduino-Code verwenden. AUnit ist inspiriert von der in Arduino integrierten Bibliothek `ArduinoUnit` und dem Test-Framework von Google, `Google Test`.
 
-```Arduino
+### Beispiel mit AUnit:
+
+Installieren Sie zuerst AUnit über den Bibliotheks-Manager in der Arduino-IDE: gehen Sie zu Sketch > Bibliothek einbinden > Bibliotheken verwalten... > suchen Sie nach AUnit und installieren Sie es.
+
+Danach können Sie Tests wie folgt schreiben:
+
+```cpp
+#include <AUnit.h>
+
+test(ledPinHigh) {
+  const int ledPin = 13;
+  pinMode(ledPin, OUTPUT);
+  digitalWrite(ledPin, HIGH);
+  assertTrue(digitalRead(ledPin));
+}
+
+test(ledPinLow) {
+  const int ledPin = 13;
+  pinMode(ledPin, OUTPUT);
+  digitalWrite(ledPin, LOW);
+  assertFalse(digitalRead(ledPin));
+}
+
 void setup() {
-  pinMode(LED_BUILTIN, OUTPUT);
+  Serial.begin(9600);
+  aunit::TestRunner::run();
 }
 
 void loop() {
-  testBlinkLED();
-  delay(1000); // Warte eine Sekunde zwischen den Tests
-}
-
-void testBlinkLED() {
-  digitalWrite(LED_BUILTIN, HIGH);   // LED an
-  delay(1000);                       // Warte einen Moment
-  digitalWrite(LED_BUILTIN, LOW);    // LED aus
-  delay(1000);                       // Warte einen Moment
-}
-
-void assertLEDState(int expectedState) {
-  int actualState = digitalRead(LED_BUILTIN);
-  if (actualState != expectedState) {
-    Serial.print("Test fehlgeschlagen: Erwarteter Status: ");
-    Serial.print(expectedState);
-    Serial.print(", Tatsächlicher Status: ");
-    Serial.println(actualState);
-  } else {
-    Serial.println("Test erfolgreich!");
-  }
+  // Leer
 }
 ```
-Dieses einfache Testskript lässt eine eingebaute LED blinken und überprüft den Zustand.
+Nachdem Sie diesen Test auf Ihr Arduino-Board hochgeladen haben, öffnen Sie den Seriellen Monitor, um die Testergebnisse einzusehen. Sie sollten eine Ausgabe sehen, die angibt, ob jeder Test bestanden oder fehlgeschlagen ist:
 
-## Deep Dive:
+```
+TestRunner gestartet mit 2 Test(s).
+Test ledPinHigh bestanden.
+Test ledPinLow bestanden.
+TestRunner Dauer: 0.002 Sekunden.
+TestRunner Zusammenfassung: 2 bestanden, 0 fehlgeschlagen, 0 übersprungen, 0 abgelaufen, von 2 Test(s).
+```
 
-Arduino selbst bietet keine eingebauten Testframeworks wie andere Entwicklungsumgebungen. Historisch gesehen konzentriert sich die Arduino-Entwicklung eher auf direktes Ausprobieren (Trial-and-Error) und weniger auf automatisierte Tests. Alternativen wie das Unit-Test-Framework „AUnit“ sind verfügbar und bieten strukturierte Möglichkeiten, das Verhalten von Code zu überprüfen. Die Implementierung von Tests auf Arduino-Boards sollte berücksichtigen, dass Ressourcen sehr begrenzt sind – es geht darum, Minimaltests zu schreiben, die die Key-Funktionalitäten absichern.
-
-## See Also:
-
-- AUnit, ein Unit-Test-Framework für Arduino: https://github.com/bxparks/AUnit
-- Arduinos offizielles Getting Started Guide: https://www.arduino.cc/en/Guide
-- Eine Einführung in das Testen von Software allgemein: http://softwaretestingfundamentals.com/
+Dieses einfache Beispiel demonstriert die Verwendung von AUnit zum Testen des Zustands eines LED-Pins. Durch das Erstellen von Tests bestätigen Sie, dass sich Ihr Arduino unter verschiedenen Bedingungen wie erwartet verhält. Mit AUnit können Sie komplexere Tests, Test-Suiten erstellen und Funktionen wie Test-Timeouts und Einrichtungs-/Abbauverfahren für fortgeschrittenere Szenarien nutzen.

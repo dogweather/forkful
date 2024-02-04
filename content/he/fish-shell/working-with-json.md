@@ -1,38 +1,62 @@
 ---
 title:                "עבודה עם JSON"
-date:                  2024-01-19
+date:                  2024-02-03T19:23:12.956106-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "עבודה עם JSON"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/fish-shell/working-with-json.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## מה ולמה?
-עבודה עם JSON מתייחסת לניתוח ויצירת מידע בתסדיר JSON, פורמט נתונים פופולרי באינטרנט. תכניתנים משתמשים בו מכיוון שהוא קל לקריאה ופשוט לעיבוד בשפות תכנות רבות.
+
+עבודה עם JSON ב-Fish Shell כרוכה בניתוח וייצור נתוני JSON, משימה נפוצה לקביעת תצורה של יישומים, תקשורת API, ושיפור זרימות עבודה בשורת הפקודה. בהתחשב בנוכחות הכללית של JSON בפיתוח אתרים ויישומים, שליטה בהפעלתו ישירות בשל יכולה לשפר משמעותית את היעילות באוטומציה ובטיפול בנתונים עבור מתכנתים.
 
 ## איך לעשות:
-ב-Fish Shell, תוכלו להשתמש בכלים כמו `jq` לעבודה עם JSON. דוגמאות לפקודות ופלט:
 
-```Fish Shell
-# ניתוח JSON והשגת ערך של מפתח (key)
-echo '{"name": "Yonatan", "age": 30}' | jq '.name'
-# פלט: "Yonatan"
+Fish Shell, בפני עצמו, אינו מכיל כלים מובנים לניתוח וייצור JSON. עם זאת, הוא משתלב בחלקה עם כלים חיצוניים כמו `jq` לעיבוד JSON. `jq` הוא מעבד JSON בשורת הפקודה, חזק וגמיש, המאפשר לך לחתוך, לסנן, למפות, ולשנות נתונים מובנים בעזרת שפה פשוטה וביטוייתית.
 
-# תיקון פורמט של JSON
-echo '{"name":"Yonatan","age":30}' | jq .
-# פלט:
-# {
-#   "name": "Yonatan",
-#   "age": 30
-# }
+### ניתוח JSON עם jq
+לנתח קובץ JSON ולחלץ ממנו נתונים באמצעות `jq`:
+```fish
+# בהנחה ויש לך קובץ JSON בשם 'data.json' עם התוכן: {"name":"Fish Shell","version":"3.4.0"}
+cat data.json | jq '.name'
+# דוגמא לפלט
+"Fish Shell"
 ```
 
-## לעומק:
-JSON (JavaScript Object Notation) הוא תסדיר שהתפתח משפת JavaScript, אך הוא תומך במגוון שפות. החלופות כוללות XML וYAML, אבל JSON נמצא בשימוש נרחב בגלל הקלות לשימוש בו בפרונט-אנד ובק-אנד. כאשר עובדים עם Fish Shell, `jq` הוא כלי חזק שמממש יכולות ניתוח ועריכה של JSON.
+### יצירת JSON עם jq
+יצירת תוכן JSON ממשתנים או פלטים בשל:
+```fish
+# יצירת אובייקט JSON ממשתנים
+set name "Fish Shell"
+set version "3.4.0"
+jq -n --arg name "$name" --arg version "$version" '{name: $name, version: $version}'
+# דוגמא לפלט
+{
+  "name": "Fish Shell",
+  "version": "3.4.0"
+}
+```
 
-## קישורים נוספים:
-- [דוקומנטציה של jq](https://stedolan.github.io/jq/manual/)
-- [מדריך למתחילים על JSON](https://www.w3schools.com/js/js_json_intro.asp)
-- [תיעוד Fish Shell](https://fishshell.com/docs/current/index.html)
+### סינון אוספי JSON
+נניח שיש לנו מערך של אובייקטים ב-JSON בקובץ בשם `versions.json`:
+```json
+[
+  {"version": "3.1.2", "stable": true},
+  {"version": "3.2.0", "stable": false},
+  {"version": "3.4.0", "stable": true}
+]
+```
+לסנן את המערך הזה לגרסאות יציבות בלבד:
+```fish
+cat versions.json | jq '.[] | select(.stable == true) | .version'
+# דוגמא לפלט
+"3.1.2"
+"3.4.0"
+```
+
+הדוגמאות הנתונות מדגימות את העוצמה שבאינטגרציה של `jq` עם Fish Shell לטיפול ב-JSON. השימוש בכלים כאלו מעשיר את חוויית השל, הופך אותו לסביבה חזקה לטיפול בפורמטים מודרניים של נתונים.

@@ -1,46 +1,75 @@
 ---
-title:                "Análisis de HTML"
-date:                  2024-01-20T15:30:57.210334-07:00
-simple_title:         "Análisis de HTML"
-
+title:                "Analizando HTML"
+date:                  2024-02-03T19:11:31.405398-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Analizando HTML"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/clojure/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 
-El análisis (parsing) de HTML implica interpretar y extraer información de documentos HTML. Los programadores lo hacen para procesar y manipular datos, como recoger información de páginas web o alimentar servicios de scraping.
+Analizar HTML en Clojure implica extraer información de documentos HTML de manera programática. Los programadores hacen esto para acceder, manipular o monitorear el contenido web de manera dinámica, automatizando tareas o alimentando datos a aplicaciones.
 
-## ¿Cómo hacerlo?
+## Cómo hacerlo:
 
-Para analizar HTML en Clojure, podemos usar la librería [Enlive](https://github.com/cgrand/enlive). Aquí tienes un ejemplo sencillo:
+Clojure no tiene capacidades de análisis de HTML incorporadas, pero puedes usar bibliotecas de Java o envoltorios de Clojure como `enlive` o `hickory`. Aquí te muestro cómo usar ambos:
 
-```Clojure
-(require '[net.cgrand.enlive-html :as enlive])
+### Usando Enlive:
 
-(defn extraer-titulos [html]
-  (map :content (enlive/select html [:title])))
+Enlive es una opción popular para el análisis de HTML y la obtención de datos web. Primero, inclúyelo en las dependencias de tu proyecto:
 
-(let [html (enlive/html-resource (java.net.URL. "http://ejemplo.com"))]
-  (println (extraer-titulos html)))
+```clojure
+[net.cgrand/enlive "1.1.6"]
 ```
 
-Salida de ejemplo:
+Luego, puedes analizar y navegar por HTML de la siguiente manera:
 
+```clojure
+(require '[net.cgrand.enlive-html :as html])
+
+(let [doc (html/html-resource (java.net.URL. "http://example.com"))]
+  (html/select doc [:div.some-class]))
 ```
-("El título de la página")
+
+Este fragmento obtiene una página HTML y selecciona todos los elementos `<div>` con la clase `some-class`.
+
+La salida puede parecerse a:
+
+```clojure
+({:tag :div, :attrs {:class "some-class"}, :content ["Aquí hay algo de contenido."]})
 ```
 
-## Inmersión Profunda
+### Usando Hickory:
 
-Originalmente, el análisis de HTML solía ser una tarea complicada debido a la inconsistencia y complejidad del HTML en la web. Librerías como Enlive han simplificado este proceso al permitir consultas estilo CSS para localizar elementos específicos. Alternativamente, puedes usar otras bibliotecas como [Hickory](https://github.com/davidsantiago/hickory) que convierte HTML en una estructura de datos de Clojure, permitiéndote trabajar con HTML como si fueras a trabajar con cualquier otra colección de datos en Clojure.
+Hickory ofrece una manera de analizar HTML a un formato que es más fácil de manejar en Clojure. Agrega Hickory a las dependencias de tu proyecto:
 
-Los detalles de implementación varían, pero en general, el parsing HTML se trata de convertir una cadena de texto con marcado HTML en una representación estructurada que el código puede entender y manipular. Esto suele implicar tokenizar el HTML, construir un árbol de nodos del documento, y luego permitir al usuario hacer consultas sobre este árbol.
+```clojure
+[hickory "0.7.1"]
+```
 
-## Ver También
+Aquí tienes un ejemplo simple:
 
-- Documentación de Enlive: [Enlive Wiki](https://github.com/cgrand/enlive/wiki)
-- Referencia rápida de CSS para selectores usados en Enlive: [Selectores CSS](https://developer.mozilla.org/es/docs/Web/CSS/CSS_Selectors)
-- Tutorial de Clojure: [Clojure for the Brave and True](https://www.braveclojure.com/)
+```clojure
+(require '[hickory.core :as hickory]
+         '[hickory.select :as select])
+
+;; Analizar el HTML al formato de Hickory
+(let [doc (hickory/parse "<html><body><div id='main'>¡Hola, mundo!</div></body></html>")]
+  ;; Seleccionar el div con id 'main'
+  (select/select (select/id "main") doc))
+```
+
+Este código analiza una simple cadena HTML y utiliza un selector CSS para encontrar un `div` con el ID `main`.
+
+Resultado de muestra:
+
+```clojure
+[{:type :element, :tag :div, :attrs {:id "main"}, :content ["¡Hola, mundo!"]}]
+```
+
+Tanto `enlive` como `hickory` ofrecen soluciones robustas para el análisis de HTML en Clojure, con `enlive` enfocándose más en la plantilla y `hickory` enfatizando la transformación de datos.

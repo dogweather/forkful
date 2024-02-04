@@ -1,70 +1,90 @@
 ---
 title:                "CSV के साथ काम करना"
-date:                  2024-01-19
+date:                  2024-02-03T19:22:24.108588-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "CSV के साथ काम करना"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/ruby/working-with-csv.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (क्या और क्यों?)
-CSV (Comma-Separated Values) फ़ाइलें डाटा स्टोर और ट्रांसफर करने का एक सरल तरीका हैं। प्रोग्रामर्स इन्हें टेब्युलर डाटा के सरलतम स्वरूप में पढ़ने, बनाने और संपादित करने के लिए प्रयोग करते हैं।
+## क्या और क्यों?
 
-## How to (कैसे करें):
-यहाँ Ruby की मदद से CSV फ़ाइल को कैसे हैंडल किया जाता है, इसके कुछ उदाहरण दिए गए हैं:
+रूबी में CSV फाइल्स के साथ काम करने का तरीका सारणीय डेटा को संभालने के लिए एक सरल दृष्टिकोण प्रदान करता है। प्रोग्रामर्स अक्सर इस प्रथा को डेटा पार्सिंग, निकालने, परिवर्तन, और संग्रहण हेतु अपनाते हैं, जो डेटा मेनिपुलेशन या विश्लेषण में शामिल कार्यों के लिए एक महत्वपूर्ण कौशल बनाता है।
 
-- CSV फ़ाइल पढ़ना:
-```Ruby
+## कैसे:
+
+रूबी में CSV लाइब्रेरी डिफ़ॉल्ट रूप से शामिल होती है, जो CSV फाइल्स से पढ़ने और उनमें लिखने को सरलीकृत करती है। यहाँ आप कैसे सामान्य कार्यों के लिए इसका लाभ उठा सकते हैं:
+
+### एक CSV फाइल पढ़ना
+एक CSV फाइल से पढ़ने के लिए, पहले आपको CSV लाइब्रेरी की आवश्यकता होती है। फिर, आप पंक्तियों पर इटरेट कर सकते हैं या उन्हें एक ऐरे में पढ़ सकते हैं।
+
+```ruby
 require 'csv'
 
-# Sample CSV file path
-file_path = 'example.csv'
-
-# Reading a CSV file
-CSV.foreach(file_path, headers: true) do |row|
-  puts row.to_hash
+# प्रत्येक पंक्ति को एक ऐरे के रूप में पढ़ना
+CSV.foreach("data.csv") do |row|
+  puts row.inspect
 end
+
+# प्रत्येक पंक्ति के लिए आउटपुट इस तरह दिख सकता है: ["data1", "data2", "data3"]
 ```
 
-- CSV फ़ाइल लिखना:
-```Ruby
+### एक CSV में लिखना
+एक CSV फाइल में लिखना भी सरल है। आप एक मौजूदा फ़ाइल में जोड़ सकते हैं या लिखने के लिए एक नई फ़ाइल बना सकते हैं।
+
+```ruby
 require 'csv'
 
-# Sample CSV file path
-file_path = 'example_output.csv'
-
-# Writing to a CSV file
-CSV.open(file_path, 'wb') do |csv|
-  csv << ['Name', 'Age', 'City']
-  csv << ['Rahul', '30', 'Delhi']
-  csv << ['Priya', '25', 'Mumbai']
+CSV.open("output.csv", "wb") do |csv|
+  csv << ["header1", "header2", "header3"]
+  csv << ["value1", "value2", "value3"]
 end
+
+# इससे 'output.csv' को निर्धारित हेडर्स और मूल्यों के साथ बनाया या अधिलेखित किया जाता है।
 ```
 
-- CSV डाटा को बदलना:
-```Ruby
+### एक CSV स्ट्रिंग का पार्सिंग
+कभी-कभी आपको सीधे एक स्ट्रिंग से CSV डेटा पार्स करने की आवश्यकता होती है। यहाँ कैसे:
+
+```ruby
 require 'csv'
 
-# Reading and modifying a CSV file and then saving it
-input_file_path = 'example.csv'
-output_file_path = 'modified_example.csv'
+data = "name,age,city\nJohn Doe,29,New York\nJane Doe,31,Chicago"
+csv = CSV.parse(data, headers: true)
 
-CSV.open(output_file_path, 'wb', headers: true) do |csv|
-  CSV.foreach(input_file_path, headers: true) do |row|
-    row['Age'] = row['Age'].to_i + 1  # Updating age by adding 1
-    csv << row
-  end
+csv.each do |row|
+  puts "#{row['name']} - #{row['age']} - #{row['city']}"
 end
+
+# अपेक्षित आउटपुट:
+# John Doe - 29 - New York
+# Jane Doe - 31 - Chicago
 ```
 
-## Deep Dive (गहरी जानकारी):
-CSV प्रारूप डाटा का एक साधारण और आमतौर पर समझा जाने वाला प्रारूप है, जिसे 1970 के दशक से ही कंप्यूटिंग में प्रयोग किया जा रहा है। CSV फाइलें बिना किसी प्रोग्रामिंग भाषा के भी मानव-पठनीय होती हैं और इन्हें टेक्स्ट एडिटर्स या एक्सेल जैसे प्रोग्रामों में आसानी से खोला जा सकता है। 
-Ruby में 'CSV' लाइब्रेरी का प्रयोग करके CSV संरचनाओं के साथ काम करना सरल हो जाता है।
-वैकल्पिक रूप से, JSON और XML जैसे अन्य प्रारूपों का प्रयोग करते हुए भी डाटा को संग्रहित और साझा किया जा सकता है, लेकिन जब सरल टेब्युलर डाटा की बात आती है तो CSV का उपयोग अधिक प्रचलित है।
+### SmarterCSV का उपयोग करना
+अधिक जटिल CSV कार्यों के लिए, `SmarterCSV` गेम एक मूल्यवान उपकरण हो सकता है। पहले, गेम इंस्टॉल करें:
 
-## See Also (यह भी देखें):
-रूबी डाक्यूमेंटेशन फॉर CSV: [Ruby's CSV documentation](https://ruby-doc.org/stdlib-2.6.1/libdoc/csv/rdoc/CSV.html)
-CSV के बारे में विस्तृत जानकारी के लिए: [RFC 4180](https://tools.ietf.org/html/rfc4180)
-Ruby के साथ काम करते समय अन्य डेटा-पार्सिंग लाइब्रेरीज़: [Nokogiri for XML](https://nokogiri.org/), [Roo for Excel files](https://github.com/roo-rb/roo)
+```shell
+gem install smarter_csv
+```
+
+फिर, आप इसका उपयोग बड़ी फाइलों से निपटने या अधिक सोफिस्टिकेटेड पार्सिंग और मेनिप्युलेशन करने के लिए कर सकते हैं:
+
+```ruby
+require 'smarter_csv'
+
+options = {}
+data = SmarterCSV.process('large_data.csv', options)
+
+data.each do |hash|
+  puts hash.inspect
+end
+
+# यह 'large_data.csv' को पढ़ेगा और हेडर्स के आधार पर प्रत्येक पंक्ति को हैश के रूप में आउटपुट करेगा।
+```
+
+संक्षेप में, रूबी के बिल्ट-इन CSV लाइब्रेरी और `SmarterCSV` जैसे थर्ड-पार्टी जेम्स के साथ, CSV डेटा के साथ हैंडलिंग के लिए मजबूत समर्थन प्रदान करता है, जिससे कुशल डेटा प्रोसेसिंग और मेनिप्युलेशन कार्यों की अनुमति मिलती है।

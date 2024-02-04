@@ -1,52 +1,89 @@
 ---
 title:                "Rédaction de tests"
-date:                  2024-01-19
+date:                  2024-02-03T19:30:24.784643-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Rédaction de tests"
-
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/elm/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Les tests sont des vérifications automatisées de votre code. Ils préviennent les bugs et assurent que tout fonctionne après des modifications. C'est une assurance qualité pour votre projet.
+## Quoi & Pourquoi ?
 
-## How to:
+Écrire des tests en Elm consiste à créer des cas de test pour vérifier la justesse de votre code Elm, en s'assurant qu'il se comporte comme prévu. Les programmeurs le font pour attraper les bugs tôt, faciliter la maintenance, et améliorer la qualité et la fiabilité de leurs applications.
 
-Pour écrire des tests en Elm, utilisez `elm-test`. Voici un exemple simple :
+## Comment faire :
 
-```Elm
+Elm utilise le paquet `elm-explorations/test` pour écrire des tests unitaires et de fuzz. Commencez par ajouter le paquet à votre projet :
+
+```elm
+elm install elm-explorations/test
+```
+
+Créez un fichier de test, disons `tests/ExampleTest.elm`, et importez les modules de test. Voici un test simple qui vérifie une fonction `add : Int -> Int -> Int` :
+
+```elm
+module ExampleTest exposant (..)
+
 import Expect
-import Test exposing (..)
+import Test exposant (..)
+import YourModuleName exposant (add)
 
-suiteDeTests : Test
-suiteDeTests =
-    describe "Un exemple de test"
-        [ test "addition simple" <|
-            \_ -> 2 + 2 |> Expect.equal 4
+suite : Test
+suite =
+    describe "Une simple fonction d'addition"
+        [ test "Ajouter 2 et 3 donne 5" <| 
+            \_ -> add 2 3 |> Expect.equal 5
         ]
 
--- Pour lancer les tests :
--- $ elm-test
 ```
 
-Sortie attendue :
+Pour exécuter vos tests, vous aurez besoin de `elm-test` :
 
-```
-TEST RUN PASSED
-
-Un exemple de test
-    ✓ addition simple
-
-1 test run, 0 failures.
+```shell
+npm install -g elm-test
+elm-test
 ```
 
-## Deep Dive
+Cela compilera vos tests et imprimera les résultats dans votre terminal. Pour l'exemple ci-dessus, le résultat devrait être quelque chose comme :
 
-Les tests en Elm ont été influencés par les pratiques de développement logiciel comme TDD. Les alternatives populaires incluent QuickCheck pour les tests de propriétés. Elm a intégré le système de types pour minimiser les bugs, mais les tests restent essentiels pour valider la logique.
+```
+RUN DE TEST RÉUSSI
 
-## See Also
+Durée : 42 ms
+Réussis :   1
+Échoués :   0
+```
 
-- [Guide officiel elm-test](https://package.elm-lang.org/packages/elm-explorations/test/latest/)
-- [Elm Test Runner pour l'intégration avec CI](https://github.com/rtfeldman/node-test-runner)
+Pour un exemple plus complexe, disons que vous voulez tester la fonction `add` avec du fuzz pour vous assurer qu'elle gère correctement une large gamme d'entrées entières. Vous modifieriez votre `ExampleTest.elm` comme suit :
+
+```elm
+module ExampleTest exposant (..)
+
+import Expect
+import Fuzz exposant (int)
+import Test exposant (..)
+import YourModuleName exposant (add)
+
+suite : Test
+suite =
+    describe "Tester add avec du fuzz"
+        [ fuzz int "Test de fuzz sur add avec des entiers aléatoires" <| 
+            \int1 int2 -> add int1 int2 |> Expect.equal (int1 + int2)
+        ]
+```
+
+Exécutez `elm-test` à nouveau pour voir les tests de fuzz en action. Le résultat variera avec des entrées aléatoires mais des tests réussis indiqueront qu'il n'y a pas d'échecs :
+
+```
+RUN DE TEST RÉUSSI
+
+Durée : 183 ms
+Réussis :   100
+Échoués :   0
+``` 
+
+Ces exemples montrent comment écrire et exécuter des tests unitaires simples et de fuzz en Elm, en utilisant le paquet `elm-explorations/test`. Les tests sont une partie vitale du processus de développement, aidant à assurer que vos applications Elm sont fiables et maintiennent une haute qualité.

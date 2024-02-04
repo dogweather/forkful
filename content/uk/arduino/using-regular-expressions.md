@@ -1,53 +1,75 @@
 ---
 title:                "Використання регулярних виразів"
-date:                  2024-01-19
+date:                  2024-02-03T19:16:33.081975-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Використання регулярних виразів"
-
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/arduino/using-regular-expressions.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Що це та навіщо?
-Регулярні вирази – це шаблони, щоб знайти та керувати текстом. Програмісти використовують їх для пошуку, валідації та заміни даних.
+## Що та Чому?
+Регулярні вирази (regex) - це послідовності символів, які визначають шаблони пошуку, головним чином використовуються для пошуку та маніпулювання рядками. Програмісти використовують regex у проектах Arduino для розбору серійних входів, перевірки користувацького вводу або екстракції даних з рядків, підвищуючи ефективність та гнучкість обробки даних.
 
-## Як це зробити:
-Arduino не має вбудованої підтримки регулярних виразів, але можна використати бібліотеки сторонніх розробників.
+## Як:
+Arduino не має вбудованої підтримки regex безпосередньо у своїй стандартній бібліотеці. Однак, ви можете досягнути regex-подібної функціональності для простих шаблонів, використовуючи базові функції рядків, або для більш складних потреб, інтегрувати сторонню бібліотеку, таку як `regex`.
 
-```Arduino
+### Базове співставлення рядків без Regex
+Для базових потреб, як-от знаходження підрядка, ви можете використовувати функцію `String.indexOf()`:
+```cpp
+String data = "Sensor value: 12345";
+int index = data.indexOf("value:");
+if (index != -1) {
+  String value = data.substring(index + 6).trim();
+  Serial.println(value); // Виводить: 12345
+}
+```
+
+### Використання сторонньої бібліотеки для Regex
+Для обробки більш складних шаблонів ви можете розглянути використання бібліотеки, як-от `regex`. Після встановлення бібліотеки ви можете використовувати її наступним чином:
+
+1. **Встановлення**: Бібліотека `regex` може не бути відразу доступна в Менеджері Бібліотек Arduino, тому вам може знадобитися вручну встановити її, завантаживши з надійного джерела та додавши до папки бібліотек Arduino.
+
+2. **Приклад Використання**:
+Припускаючи, що бібліотека надає функціональність, схожу на стандартні імплементації regex, ви могли б використовувати її наступним чином:
+
+```cpp
 #include <regex.h>
 
 void setup() {
   Serial.begin(9600);
+  while (!Serial); // Чекаємо, поки Serial буде готовий
+  
   regex_t reg;
-  const char * regex_text = "Arduino";
-  const char * find_text = "I love Arduino boards!";
-
-  if (regcomp(&reg, regex_text, REG_EXTENDED) == 0) {
-    regmatch_t matches[MAX_MATCHES];
-    if (regexec(&reg, find_text, MAX_MATCHES, matches, 0) == 0) {
-      Serial.println("Match found!");
-    } else {
-      Serial.println("No match found.");
-    }
+  const char* pattern = "[0-9]+"; // Відповідає послідовності цифр
+  regcomp(&reg, pattern, REG_EXTENDED);
+  
+  const char* test_str = "Sensor value: 12345";
+  
+  regmatch_t matches[1];
+  if (regexec(&reg, test_str, 1, matches, 0) == 0) {
+    // Витягнути та надрукувати відповідну частину
+    int start = matches[0].rm_so;
+    int end = matches[0].rm_eo;
+    char match[end-start+1];
+    strncpy(match, test_str + start, end-start);
+    match[end-start] = '\0';
+    
+    Serial.print("Знайдено співпадіння: ");
+    Serial.println(match); // Виводить: 12345
+  } else {
+    Serial.println("Співпадінь не знайдено");
   }
-  regfree(&reg);
+  
+  regfree(&reg); // Звільнити виділену пам'ять для regex
 }
 
 void loop() {
-  // Nothing to do here
+  // помістіть ваш основний код сюди, для постійного виконання:
 }
 ```
 
-Sample output:
-```
-Match found!
-```
-
-## Поглиблений огляд:
-Регулярні вирази з'явились у 1950-х, до Arduino часів. Без прямої підтримки, в Arduino можна використовувати бібліотеки `regex.h` або аналоги. Важливо знати: регулярні вирази вимагають більше пам'яті.
-
-## Дивись також:
-- [Arduino Regex Library by Nick Gammon](http://www.gammon.com.au/forum/?id=11063)
-- [Matching Strings with Regular Expressions in C++](https://www.cplusplus.com/reference/regex/)
+**Примітка**: Синтаксис та конкретні функції, які використовуються тут, наведені для наочності і можуть відрізнятись в залежності від деталей реалізації бібліотеки `regex`, яку ви оберете. Завжди звертайтеся до документації бібліотеки за точною та актуальною інформацією.

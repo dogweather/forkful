@@ -1,40 +1,70 @@
 ---
 title:                "Utilisation des expressions régulières"
-date:                  2024-01-19
+date:                  2024-02-03T19:17:36.979692-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Utilisation des expressions régulières"
-
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/powershell/using-regular-expressions.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Les expressions régulières, ou regex, sont des motifs utilisés pour matcher des chaînes de caractères dans du texte. Les programmeurs les utilisent pour valider, rechercher ou manipuler des données facilement.
+## Quoi & Pourquoi ?
 
-## How to:
-```PowerShell
-# Trouver un numéro de téléphone dans un texte
-$texte = 'Mon numéro est 06-123-456 mais celui de Laura est 07-234-567'
-$regex = '\b\d{2}-\d{3}-\d{3}\b'
-[regex]::Matches($texte, $regex) | ForEach-Object { $_.Value }
+Les expressions régulières (regex) sont des séquences de caractères qui forment un motif de recherche, principalement utilisées pour la recherche et la manipulation de chaînes de caractères. Les programmeurs utilisent les regex dans PowerShell pour des tâches comme la validation de données, l'analyse et la transformation, en raison de leur efficacité et leur flexibilité dans la gestion des motifs complexes.
 
-# Sortie attendue:
-# 06-123-456
-# 07-234-567
+## Comment :
 
-# Remplacer des espaces multiples par un seul espace
-$phrase = 'Ceci    est    un   test.'
-$phrase -replace '\s+', ' '
+Dans PowerShell, vous pouvez utiliser les opérateurs `-match`, `-replace` et `-split`, entre autres, pour effectuer des actions avec des expressions régulières. Explorons quelques exemples :
 
-# Sortie attendue:
-# Ceci est un test.
+### Utilisation de `-match` pour vérifier si une chaîne correspond à un motif
+Cet opérateur retourne `$true` si le motif est trouvé dans la chaîne, et `$false` autrement.
+
+```powershell
+"hello world" -match "\w+orld"
+# Sortie : True
 ```
 
-## Deep Dive
-Les regex existent depuis les années 1950, initialement théorisées par le mathématicien Stephen Kleene. Alternativement, on peut utiliser des méthodes de chaînes comme `.Contains()`, `.IndexOf()`, mais les regex offrent plus de flexibilité pour les motifs complexes. En PowerShell, les regex sont implémentées via le type `[regex]`, une classe du .NET Framework qui supporte des opérations performantes de correspondance de chaînes.
+### Extraction des correspondances
+Vous pouvez extraire la valeur correspondante en accédant à la variable automatique `$matches`.
 
-## See Also
-- [Microsoft Official Documentation for Regular Expressions](https://docs.microsoft.com/fr-fr/dotnet/standard/base-types/regular-expression-language-quick-reference)
-- [Regex101: Online regex tester and debugger](https://regex101.com/)
-- [PowerShell Gallery Script Samples](https://www.powershellgallery.com/)
+```powershell
+if ("J'ai 100 pommes" -match "\d+") {
+    "Nombre trouvé : " + $matches[0]
+}
+# Sortie : Nombre trouvé : 100
+```
+
+### Utilisation de `-replace` pour des substitutions
+L'opérateur `-replace` remplace toutes les occurrences d'un motif par une chaîne de remplacement spécifiée.
+
+```powershell
+"foo bar baz" -replace "ba[rz]", "qux"
+# Sortie : foo qux qux
+```
+
+### Scinder des chaînes avec `-split`
+Scinde une chaîne en un tableau de sous-chaînes basé sur un motif regex.
+
+```powershell
+"The quick-brown_fox jumps" -split "[-_ ]"
+# Sortie : The quick brown fox jumps
+```
+
+### Correspondance de motifs avancée
+PowerShell prend également en charge des opérations regex plus complexes via la classe `[regex]`, vous donnant accès à des méthodes telles que `Matches()`, `Replace()`, et `Split()`.
+
+```powershell
+[regex]::Matches("Juin 24, Août 9, Déc 12", "\b[A-Za-z]+\b").Value
+# Sortie : Juin Août Déc
+
+[regex]::Replace("100,000", "\B(?=(?:\d{3})+(?!\d))", ",")
+# Sortie : 100,000
+
+[regex]::Split("un,deux;trois quatre", ",|;| ")
+# Sortie : un deux trois quatre
+```
+
+Ces exemples montrent la puissance et la polyvalence des expressions régulières dans PowerShell pour la manipulation de données et la correspondance de motifs. En exploitant les regex, les programmeurs peuvent effectuer un traitement de texte complexe de manière efficace.

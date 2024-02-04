@@ -1,60 +1,64 @@
 ---
-title:                "Análise de HTML"
-date:                  2024-01-20T15:30:52.091200-07:00
-simple_title:         "Análise de HTML"
-
+title:                "Analisando HTML"
+date:                  2024-02-03T19:11:35.767137-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Analisando HTML"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/cpp/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## O Que é & Por Que?
-Analisar HTML é o processo de transformação de texto HTML bruto em algo compreensível e manipulável por programas. Programadores fazem isso para extrair informações, automatizar interações com páginas web ou para testar conteúdos de sites.
+## O Que & Por Quê?
+Analisar HTML significa decompor o conteúdo HTML em algo que um programa possa entender e manipular. Os programadores fazem isso para extrair dados, manipular conteúdo ou integrar a raspagem da web em suas aplicações.
 
-## Como Fazer:
-O exemplo a seguir usa a biblioteca `Gumbo-parser` para analisar HTML em C++. Primeiro, instale a biblioteca e inclua-a no seu arquivo.
+## Como fazer:
+C++ não vem com capacidades integradas de análise de HTML. Você frequentemente usará uma biblioteca como Gumbo-parser do Google, ou algo semelhante. Aqui está um exemplo rápido usando Gumbo-parser:
 
 ```C++
 #include <iostream>
 #include <gumbo.h>
 
-static void buscar_links(const GumboNode* node) {
+void search_for_links(GumboNode* node) {
     if (node->type != GUMBO_NODE_ELEMENT) {
         return;
     }
-
-    GumboAttribute* href;
-    if (node->v.element.tag == GUMBO_TAG_A &&
-        (href = gumbo_get_attribute(&node->v.element.attributes, "href"))) {
-        std::cout << href->value << std::endl;
+    if (node->v.element.tag == GUMBO_TAG_A) {
+        GumboAttribute* href = gumbo_get_attribute(&node->v.element.attributes, "href");
+        if (href) {
+            std::cout << href->value << std::endl;
+        }
     }
-
-    const GumboVector* children = &node->v.element.children;
+    GumboVector* children = &node->v.element.children;
     for (unsigned int i = 0; i < children->length; ++i) {
-        buscar_links(static_cast<GumboNode*>(children->data[i]));
+        search_for_links(static_cast<GumboNode*>(children->data[i]));
     }
 }
 
 int main() {
     const char* html = "<html><body><a href='https://example.com'>Link</a></body></html>";
     GumboOutput* output = gumbo_parse(html);
-    
-    buscar_links(output->root);
+    search_for_links(output->root);
     gumbo_destroy_output(&kGumboDefaultOptions, output);
+    return 0;
 }
 ```
 
-Saída esperada:
+Saída de exemplo:
 ```
 https://example.com
 ```
 
-## Análise Profunda:
-Antigamente, a análise de HTML em C++ era complicada e propensa a erros, mas hoje, com a ajuda de bibliotecas como a `Gumbo-parser`, tornou-se muito mais simples. Alternativas incluem `libxml2` e `Htmlcxx`. Cada biblioteca tem suas próprias vantagens, dependendo da complexidade do HTML e do tipo de informação que você quer extrair. A implementação detalhada acima é somente um basicão - a `Gumbo-parser` suporta muito mais detalhes sofisticados, como manipulação de nós, atributos e muito mais.
+## Mergulhando Fundo
+Analisar HTML nem sempre foi algo direto em C++. Historicamente, os programadores usariam regex ou analisadores escritos manualmente, ambos propensos a erros e pesados. Atualmente, bibliotecas robustas como Gumbo-parser lidam com as complexidades da análise, tornando-a mais fácil e mais confiável.
 
-## Veja Também:
-- [Documentação da Gumbo-parser](https://github.com/google/gumbo-parser)
-- [Tutorial de libxml2](http://xmlsoft.org/html/libxml-HTMLparser.html)
-- [Referência de Htmlcxx](http://htmlcxx.sourceforge.net/)
-- [Tutorial de BeautifulSoup para Python (se quiser experimentar algo em alto nível)](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
+Alternativas incluem Tidy, MyHTML, ou até mesmo integrar C++ com BeautifulSoup do Python através da função `system` do C++ ou interpretadores embutidos.
+
+Em termos de implementação, essas bibliotecas convertem HTML para uma árvore de Modelo de Objeto de Documento (DOM). Percorrer e manipular o DOM permite aos usuários extrair e trabalhar com dados conforme demonstrado na seção Como fazer.
+
+## Veja Também
+- [Repositório do GitHub do Gumbo-parser](https://github.com/google/gumbo-parser)
+- [Lista de bibliotecas de análise de HTML](https://en.cppreference.com/w/c/experimental/dynamic)
+- [Interoperabilidade entre C++ e Python](https://docs.python.org/3/extending/embedding.html)

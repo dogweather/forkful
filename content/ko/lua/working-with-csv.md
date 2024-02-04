@@ -1,59 +1,120 @@
 ---
-title:                "CSV 파일 다루기"
-date:                  2024-01-19
-simple_title:         "CSV 파일 다루기"
-
+title:                "CSV와 함께 작업하기"
+date:                  2024-02-03T19:20:44.125056-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "CSV와 함께 작업하기"
 tag:                  "Data Formats and Serialization"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/lua/working-with-csv.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-CSV는 'Comma Separated Values'의 약어로, 데이터를 저장하고 교환하는 간단한 포맷입니다. 프로그래머들은 CSV를 사용하여 테이블 데이터를 편집하고 다른 언어나 프로그램 간에 쉽게 데이터를 주고받기 위해 사용합니다.
+## 무엇 & 왜?
 
-## How to:
-Lua 코드로 CSV 파일 읽기와 쓰기 예제입니다:
+CSV(쉼표로 구분된 값) 파일을 다루는 작업은 개별 값들을 쉼표로 구분하여 행과 열로 조직된 텍스트 데이터를 파싱하고 생성하는 것을 포함합니다. 프로그래머들은 종종 다양한 애플리케이션, 데이터베이스 간의 데이터 교환을 용이하게 하거나 데이터 처리 및 분석 작업을 위해 이 과정에 참여하며, 이는 CSV의 광범위한 지원과 단순성 때문입니다.
 
-```Lua
--- CSV 파일 읽기
-local function read_csv(filePath)
-    local file = io.open(filePath, "r")
-    if not file then return nil end
-    local data = {}
-    for line in file:lines() do
-        table.insert(data, line:split(','))
+## 방법:
+
+Lua에서는 CSV 파일을 다루는 작업을 외부 라이브러리 없이도 언어가 제공하는 기본 파일 IO 작업을 사용하여 간단한 작업을 위해 접근할 수 있습니다. 더 복잡한 작업에 대해서는, 예를 들어 값 내에 쉼표가 있는 경우와 같은 특별한 경우를 처리하는 것처럼, `lua-csv`와 같은 타사 라이브러리를 사용하는 것이 유익할 수 있습니다.
+
+### CSV 파일 읽기
+다음은 쉼표 구분자를 기반으로 각 줄을 값으로 분리하여 CSV 파일을 한 줄씩 읽는 간단한 예제입니다.
+
+```lua
+function parseCSVLine(line)
+    local result = {}
+    local from = 1
+    local sep = ","
+    local field
+    while true do
+        local start, finish = string.find(line, sep, from)
+        if not start then
+            table.insert(result, string.sub(line, from))
+            break
+        end
+        field = string.sub(line, from, start - 1)
+        table.insert(result, field)
+        from = finish + 1
     end
-    file:close()
-    return data
+    return result
 end
 
--- CSV 파일 쓰기
-local function write_csv(filePath, data)
-    local file = io.open(filePath, "w")
-    for _, row in ipairs(data) do
-        file:write(table.concat(row, ',') .. '\n')
+local file = io.open("example.csv", "r")
+for line in file:lines() do
+    local values = parseCSVLine(line)
+    for i, v in ipairs(values) do
+        print(i, v)
     end
-    file:close()
+end
+file:close()
+```
+
+**샘플 출력** ("name,age\newlineJohn Doe,30\newlineJane Doe,32" 내용을 가진 `example.csv`의 경우):
+```
+1	name
+2	age
+1	John Doe
+2	30
+1	Jane Doe
+2	32
+```
+
+### CSV 파일 작성하기
+CSV 파일을 생성하기 위해서는 쉼표로 구분된 값을 갖는 문자열을 구성하여 파일에 한 줄씩 쓰기만 하면 됩니다.
+
+```lua
+local data = {
+    {"name", "age"},
+    {"John Doe", "30"},
+    {"Jane Doe", "32"}
+}
+
+local file = io.open("output.csv", "w")
+for _, v in ipairs(data) do
+    file:write(table.concat(v, ","), "\n")
+end
+file:close()
+```
+
+이것은 지정된 데이터로 `output.csv` 파일을 생성(또는 덮어쓰기)합니다.
+
+### lua-csv 사용하기
+따옴표와 이스케이프 문자를 지원하는 더 고급 CSV 처리를 위해서는 `lua-csv` 라이브러리가 견고한 선택입니다.
+
+먼저 LuaRocks를 사용하여 설치하세요:
+```shell
+luarocks install lua-csv
+```
+
+그런 다음, CSV 파일을 읽기는 다음과 같이 간단해집니다:
+
+```lua
+local csv = require("csv")
+
+-- 파일에서 읽기
+for fields in csv.open("example.csv") do
+    for i, v in ipairs(fields) do
+        print(i, v)
+    end
 end
 ```
 
-실행 예시:
+그리고 제대로 된 따옴표와 이스케이프로 CSV에 쓰기:
 
-```Lua
-local csvData = read_csv("sample.csv")
-for _, row in ipairs(csvData) do
-    print(table.concat(row, ', '))
+```lua
+local file = csv.open("output.csv", {write=true})
+
+local data = {
+    {"name", "profession", "location"},
+    {"John Doe", "Software Engineer", "New York, NY"},
+    {"Jane Doe", "Data Scientist", "\"San Francisco, CA\""}
+}
+
+for _, v in ipairs(data) do
+    file:write(v)
 end
-
-write_csv("new_sample.csv", csvData)
 ```
 
-## Deep Dive
-CSV 포맷은 1972년 IBM이 선보였고, 쉬운 사용법 때문에 여전히 인기가 많습니다. 대안으로는 JSON이나 XML 같은 데이터 포맷들이 있으나, CSV는 테이블 형태의 데이터를 처리할 때 가장 직관적입니다. Lua에서 CSV를 다룰 때는 문자열 함수와 파일 I/O 기능을 사용합니다.
-
-## See Also
-- Lua 문자열 함수: https://www.lua.org/manual/5.4/manual.html#6.4
-- Lua 파일 I/O: https://www.lua.org/manual/5.4/manual.html#6.8
-- LuaRocks CSV 모듈: https://luarocks.org/modules/search?q=csv
+이 방법은 값 내의 쉼표와 따옴표와 같은 복잡성을 자동으로 처리합니다.

@@ -1,48 +1,62 @@
 ---
-title:                "Einsatz von regulären Ausdrücken"
-date:                  2024-01-19
-simple_title:         "Einsatz von regulären Ausdrücken"
-
+title:                "Reguläre Ausdrücke verwenden"
+date:                  2024-02-03T19:16:29.192011-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Reguläre Ausdrücke verwenden"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/elixir/using-regular-expressions.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Reguläre Ausdrücke sind Muster zur Textsuche und -verarbeitung. Programmierer nutzen sie, um Textmuster effizient zu erkennen, extrahieren und zu manipulieren.
 
-## How To:
-Mit Elixir kannst du mit regulären Ausdrücken arbeiten, indem du das Modul `Regex` verwendest. Hier ein paar Beispiele:
+Reguläre Ausdrücke (regex) in Elixir werden verwendet, um in Zeichenketten basierend auf spezifischen Mustern zu suchen, Übereinstimmungen zu finden und Zeichenketten zu manipulieren. Programmierer nutzen regex für Aufgaben wie die Validierung von Formaten (E-Mail, URLs), das Parsen von Logs oder die Datenextraktion, dank seiner Effizienz und Vielseitigkeit im Umgang mit Zeichenketten.
 
-### Match finden
+## Wie geht das:
+
+Elixir verwendet das `Regex`-Modul, welches die regex-Bibliothek von Erlang nutzt, für regex-Operationen. Hier sind grundlegende Anwendungen:
+
 ```elixir
-Regex.match?(~r/hallo/, "hallo welt!")
-# Ausgabe: true
+# Einem Muster entsprechen - Gibt die erste Übereinstimmung zurück
+match_result = Regex.run(~r/hello/, "hello world")
+IO.inspect(match_result) # Ausgabe: ["hello"]
+
+# Alle Übereinstimmungen finden
+all_matches = Regex.scan(~r/\d/, "Es gibt 2 Äpfel und 5 Orangen.")
+IO.inspect(all_matches) # Ausgabe: [["2"], ["5"]]
+
+# Teile eines Strings ersetzen
+replaced_string = Regex.replace(~r/\s+/, "Elixir macht Spaß", "_")
+IO.inspect(replaced_string) # Ausgabe: "Elixir_macht_Spaß"
 ```
 
-### Alle Vorkommen finden
+Für komplexere Muster und Funktionalitäten könnte man in Erwägung ziehen, Drittanbieter-Bibliotheken zu verwenden, obwohl für die meisten grundlegenden Zeichenketten- und Musterabgleichsaufgaben, das eingebaute `Regex`-Modul von Elixir ziemlich mächtig ist.
+
+Um eine Groß-/Kleinschreibung unabhängige Übereinstimmung zu durchführen, verwendet man die Option `i`:
+
 ```elixir
-Regex.scan(~r/\d+/, "Es gibt 3 Äpfel und 5 Birnen.")
-# Ausgabe: [["3"], ["5"]]
+case_insensitive_match = Regex.run(~r/hello/i, "Hello World")
+IO.inspect(case_insensitive_match) # Ausgabe: ["Hello"]
 ```
 
-### Ersetzen
+Regex-Ausdrücke können vorab kompiliert werden, um Effizienz zu erzielen, wenn sie mehrmals verwendet werden:
+
 ```elixir
-Regex.replace(~r/ä/, "Kätzchen", "ae")
-# Ausgabe: "Kaetzchen"
+precompiled_regex = Regex.compile!("hello")
+match_result_precompiled = Regex.run(precompiled_regex, "hello world")
+IO.inspect(match_result_precompiled) # Ausgabe: ["hello"]
 ```
 
-### Capture Groups
+Elixir unterstützt auch benannte Erfassungen, welche sehr praktisch sein können, um spezifische Teile einer Zeichenkette zu extrahieren und dabei Ihren Code lesbarer zu machen:
+
 ```elixir
-Regex.run(~r/(Apache) (\d+.\d+)/, "Server-Version: Apache 2.4")
-# Ausgabe: ["Apache 2.4", "Apache", "2.4"]
+date_string = "2023-04-15"
+pattern = ~r/(?<year>\d{4})-(?<month>\d{2})-(?<day>\d{2})/
+{:ok, captures} = Regex.run(pattern, date_string, capture: :all_names)
+IO.inspect(captures) # Ausgabe: %{"year" => "2023", "month" => "04", "day" => "15"}
 ```
 
-## Deep Dive
-Historisch gesehen entstammen reguläre Ausdrücke der Theorie formaler Sprachen und wurden in den 1950ern konzipiert. Alternativen zu regulären Ausdrücken in Elixir sind String-Funktionen oder pattern matching, die in manchen Fällen lesbarer oder schneller sein können. Die `Regex`-Module in Elixir nutzen die PCRE-Bibliothek (Perl Compatible Regular Expressions), welche eine reichhaltige Auswahl an Pattern-Matching-Optionen bieten.
-
-## See Also
-- Elixir Dokumentation zu Regex: [https://hexdocs.pm/elixir/Regex.html](https://hexdocs.pm/elixir/Regex.html)
-- Online Regex Tester und Debugger: [https://regex101.com/](https://regex101.com/)
-- Einführung in Elixir Pattern Matching: [https://elixir-lang.org/getting-started/pattern-matching.html](https://elixir-lang.org/getting-started/pattern-matching.html)
+Diese kurze Übersicht unterstreicht, wie einfach Elixir den Umgang mit regulären Ausdrücken handhabt und ermöglicht leistungsstarke Techniken zur Zeichenkettenmanipulation und Datengewinnung.

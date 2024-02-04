@@ -1,59 +1,70 @@
 ---
-title:                "Einsatz von regulären Ausdrücken"
-date:                  2024-01-19
-simple_title:         "Einsatz von regulären Ausdrücken"
-
+title:                "Reguläre Ausdrücke verwenden"
+date:                  2024-02-03T19:17:31.959069-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Reguläre Ausdrücke verwenden"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/powershell/using-regular-expressions.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Reguläre Ausdrücke, oft Regex genannt, sind Muster zur Textsuche und -manipulation. Programmierer verwenden sie, um Textdaten effizient zu durchsuchen, zu überprüfen und zu bearbeiten.
 
-## How to:
-PowerShell lässt dich leicht mit Regex arbeiten. Hier ein paar Beispiele:
+Reguläre Ausdrücke (regex) sind Zeichenfolgen, die ein Suchmuster bilden, das hauptsächlich für die Stringsuche und -manipulation verwendet wird. Programmierer nutzen regex in PowerShell für Aufgaben wie Datenvalidierung, Parsing und Transformation aufgrund seiner Effizienz und Flexibilität beim Umgang mit komplexen Mustern.
 
-```PowerShell
-# Finde alle E-Mail-Adressen in einem Text
-$text = "Kontaktiere uns unter info@example.com oder support@example.org."
-$pattern = "\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z]{2,}\b"
-[regex]::Matches($text, $pattern).Value
+## Wie geht das:
 
-# Ergebnis:
-# info@example.com
-# support@example.org
+In PowerShell können Sie die Operatoren `-match`, `-replace` und `-split` unter anderen verwenden, um Aktionen mit regulären Ausdrücken durchzuführen. Lassen Sie uns einige Beispiele erkunden:
+
+### Verwendung von `-match` um zu prüfen, ob ein String einem Muster entspricht
+Dieser Operator gibt `$true` zurück, wenn das Muster innerhalb des Strings gefunden wird, und andernfalls `$false`.
+
+```powershell
+"hello world" -match "\w+orld"
+# Ausgabe: Wahr
 ```
 
-```PowerShell
-# Ersetze Zahlen durch das Wort 'Zahl'
-$text = "Es gibt 3 Äpfel und 4 Birnen."
-$pattern = "\d+"
-$replacement = "Zahl"
-$text -replace $pattern, $replacement
+### Extrahieren von Treffern
+Sie können den abgeglichenen Wert abrufen, indem Sie auf die automatische Variable `$matches` zugreifen.
 
-# Ergebnis:
-# Es gibt Zahl Äpfel und Zahl Birnen.
-```
-
-```PowerShell
-# Validiere ein deutsches Kfz-Kennzeichen
-$licensePlate = "B-AB 1234"
-$pattern = "^[A-Z]{1,3}-[A-Z]{1,2} \d{1,4}$"
-if ($licensePlate -match $pattern) {
-    "$licensePlate ist ein gültiges Kennzeichen."
-} else {
-    "$licensePlate ist kein gültiges Kennzeichen."
+```powershell
+if ("I have 100 apples" -match "\d+") {
+    "Gefundene Zahl: " + $matches[0]
 }
-
-# Ergebnis:
-# B-AB 1234 ist ein gültiges Kennzeichen.
+# Ausgabe: Gefundene Zahl: 100
 ```
 
-## Deep Dive
-Die Nutzung von Regex geht auf die 1950er Jahre zurück und ist tief in der Informatik verwurzelt. Alternativen zu Regex sind spezialisierte Parser, Text-to-SQL-Abfragekonverter und String-Funktionen, die ohne Mustererkennung auskommen, aber weniger mächtig sind. PowerShell verwendet das .NET Regex-Objekt, welches eine Implementation der Regex-Funktionalität mit Zusatzfeatures wie benannten Gruppen und Lookaheads bietet.
+### Verwendung von `-replace` für Substitutionen
+Der `-replace` Operator ersetzt alle Vorkommen eines Musters mit einem angegebenen Ersatzstring.
 
-## See Also
-- Online Regex Tester und Debugger: [regex101](https://regex101.com/)
-- Einsteigerfreundliches Regex-Tutorial: [RegexOne](https://regexone.com/)
+```powershell
+"foo bar baz" -replace "ba[rz]", "qux"
+# Ausgabe: foo qux qux
+```
+
+### Aufteilen von Strings mit `-split`
+Teilt einen String in ein Array von Teilstrings basierend auf einem regex-Muster auf.
+
+```powershell
+"The quick-brown_fox jumps" -split "[-_ ]"
+# Ausgabe: The quick brown fox jumps
+```
+
+### Fortgeschrittenes Musterabgleichen
+PowerShell unterstützt auch komplexere regex-Operationen über die `[regex]` Klasse, die Ihnen Zugriff auf Methoden wie `Matches()`, `Replace()` und `Split()` gibt.
+
+```powershell
+[regex]::Matches("June 24, August 9, Dec 12", "\b[A-Za-z]+\b").Value
+# Ausgabe: June August Dec
+
+[regex]::Replace("100,000", "\B(?=(?:\d{3})+(?!\d))", ",")
+# Ausgabe: 100,000
+
+[regex]::Split("one,two;three four", ",|;| ")
+# Ausgabe: one two three four
+```
+
+Diese Beispiele zeigen die Kraft und Vielseitigkeit von regulären Ausdrücken in PowerShell für die Datenmanipulation und das Musterabgleichen. Durch die Nutzung von regex können Programmierer komplexe Textverarbeitungen effizient durchführen.

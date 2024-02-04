@@ -1,65 +1,53 @@
 ---
-title:                "Maiuscolizzare una stringa"
-date:                  2024-01-19
-simple_title:         "Maiuscolizzare una stringa"
-
+title:                "Capitalizzare una stringa"
+date:                  2024-02-03T19:05:48.153814-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Capitalizzare una stringa"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/lua/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Capitalizzare una stringa in Lua significa trasformare tutte le lettere minuscole in maiuscole. I programmatori lo fanno per uniformità, enfasi, o per assicurarsi che una stringa sia interpretata in modo consistente (come le chiavi in un dizionario).
+## Cos'è & Perché?
+Capitalizzare una stringa significa modificare il primo carattere di ogni parola in una frase per renderlo maiuscolo, garantendo che i restanti caratteri siano minuscoli. Questa tecnica è comunemente usata per formattare il testo rendendolo più professionale o leggibile, come ad esempio preparare titoli o input degli utenti per la visualizzazione.
 
-## How to:
-La capitalizzazione di una stringa in Lua è semplice:
+## Come fare:
+Lua non dispone di una funzione incorporata per capitalizzare le stringhe, ma è possibile realizzare facilmente questo compito utilizzando funzioni basilari di manipolazione delle stringhe. Ecco una semplice funzione per capitalizzare la prima lettera di una singola parola:
 
-```Lua
-function capitalize(str)
-    return string.upper(str)
+```lua
+function capitalize(word)
+    return word:sub(1,1):upper() .. word:sub(2):lower()
 end
 
--- Uso della funzione
-local myString = "ciao mondo!"
-local capitalizedString = capitalize(myString)
-print(capitalizedString)  -- Output: CIAO MONDO!
+print(capitalize("hello"))  -- Output: Hello
 ```
 
-Se vuoi capitalizzare solo la prima lettera:
+Per capitalizzare ogni parola in una frase, puoi dividere la frase in parole, capitalizzarle una ad una e poi riunirle:
 
-```Lua
-function capitalizeFirst(str)
-    return str:sub(1,1):upper() .. str:sub(2)
+```lua
+function capitalizeSentence(sentence)
+    local words = {}
+    for word in sentence:gmatch("%S+") do
+        table.insert(words, capitalize(word))
+    end
+    return table.concat(words, " ")
 end
 
--- Uso della funzione
-local greeting = "ciao mondo!"
-local capitalizedGreeting = capitalizeFirst(greeting)
-print(capitalizedGreeting)  -- Output: Ciao mondo!
+print(capitalizeSentence("hello world from lua"))  -- Output: Hello World From Lua
 ```
 
-## Deep Dive
-La funzione `string.upper()` in Lua è direttamente collegata alla libreria standard C, che offre funzionalità di manipolazione delle stringhe. Prima delle versioni più moderne, i programmatori dovevano scrivere queste funzioni da zero o utilizzare librerie esterne.
+Se stai lavorando a un progetto dove la performance è fondamentale e ti ritrovi a necessitare capacità di manipolazione delle stringhe più avanzate, considera l'utilizzo di una libreria di terze parti come `Penlight`. Penlight migliora Lua con funzioni di gestione delle stringhe più versatili, tra le altre utilità:
 
-Una alternativa è l'uso di pattern matching in Lua per capitalizzare ogni parola in una stringa:
+```lua
+-- Assumendo che Penlight sia installato:
+local pl = require("pl.stringx")
+local text = "hello lua users"
+text = pl.capitalized(text)
+print(text)  -- Output: Hello lua users
 
-```Lua
-function capitalizeWords(str)
-    return (str:gsub("%f[%a](%a)", string.upper))
-end
-
--- Uso della funzione
-local title = "il signore degli anelli"
-local capitalizedTitle = capitalizeWords(title)
-print(capitalizedTitle)  -- Output: Il Signore Degli Anelli
+-- Nota: La funzione capitalized di Penlight capitalizza solo la prima parola.
+-- Per capitalizzare ogni parola, dovrai comunque implementare una soluzione personalizzata o esplorare altre librerie.
 ```
-
-Qui, `%f[%a]` è un pattern che individua una transizione da non-lettera a lettera e `(%a)` matcha la prima lettera della parola.
-
-## See Also
-Ecco alcune risorse per approfondire:
-
-- [Documentazione ufficiale Lua](https://www.lua.org/manual/5.4/)
-- [Tutorial su stringhe Lua](https://www.tutorialspoint.com/lua/lua_strings.htm)
-- Post di Stack Overflow su [come capitalizzare le stringhe](https://stackoverflow.com/questions/20284515/capitalize-first-letter-of-every-word-in-lua) in Lua.

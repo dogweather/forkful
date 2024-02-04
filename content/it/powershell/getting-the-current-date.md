@@ -1,57 +1,85 @@
 ---
 title:                "Ottenere la data corrente"
-date:                  2024-01-20T15:16:09.106129-07:00
+date:                  2024-02-03T19:10:37.226709-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Ottenere la data corrente"
-
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/powershell/getting-the-current-date.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Ottenere la data corrente è semplicemente recuperare l'informazione sulla data e ora attuali dal tuo sistema. I programmatori lo fanno per log, misurazioni di tempo e funzionalità dipendenti dalla data.
+## Cosa & Perché?
 
-## How to:
-Ottenere la data corrente in PowerShell è chiaro e semplice. Usa `Get-Date`:
+Ottenere la data corrente in PowerShell riguarda il recupero della data e dell'ora attuali del sistema. Quest'operazione è fondamentale per compiti come la registrazione, la temporizzazione delle operazioni o la presa di decisioni basate sulle date. I programmatori usano questa capacità per tracciare eventi, pianificare compiti e gestire la logica specifica delle date negli script e nelle applicazioni.
 
-```PowerShell
-# Ottieni la data e l'ora correnti
-$dataCorrente = Get-Date
-echo $dataCorrente
+## Come fare:
+
+PowerShell fornisce cmdlet semplici per ottenere data e ora. Il cmdlet `Get-Date` è lo strumento primario per questo scopo. Può restituire la data e l'ora complete, che puoi formattare o manipolare secondo le tue esigenze.
+
+```powershell
+# Ottenere la data e l'ora correnti
+Get-Date
 ```
 
-Output tipico:
-```
-lunedì 2 gennaio 2023 15:25:35
-```
+**Output di esempio:**
 
-Per formattare la data, aggiungi argomenti:
-
-```PowerShell
-# Data in formato specifico
-echo (Get-Date -Format "yyyy-MM-dd")
+```
+Martedì, 5 Settembre 2023 9:46:02 AM
 ```
 
-Output tipico:
+È anche possibile formattare l'output per visualizzare solo le informazioni necessarie, come solo la data o solo l'ora.
+
+```powershell
+# Ottenere solo la data corrente in un formato specifico
+Get-Date -Format "yyyy-MM-dd"
 ```
-2023-01-02
+
+**Output di esempio:**
+
+```
+2023-09-05
 ```
 
-## Deep Dive
-`Get-Date` è un cmdlet PowerShell che esiste fin dalla prima versione, rilasciata nel 2006. È stato costruito per essere versatile e si è evoluto nel tempo.
+```powershell
+# Ottenere solo l'ora corrente
+Get-Date -Format "HH:mm:ss"
+```
 
-Alternative:
-Anche se `Get-Date` è lo standard, puoi anche usare il .NET class `[DateTime]`:
+**Output di esempio:**
 
-```PowerShell
+```
+09:46:02
+```
+
+### Utilizzando la Classe .NET
+
+PowerShell consente l'accesso diretto alle classi .NET, offrendo un modo alternativo di lavorare con date e orari.
+
+```powershell
+# Usando la classe DateTime .NET per ottenere la data e l'ora correnti
 [System.DateTime]::Now
 ```
 
-Dettagli implementativi:
-`Get-Date` offre un sacco di opzioni. Ti permette di cambiare la formattazione, aggiungere o sottrarre tempo e persino creare oggetti date personalizzati per qualsiasi timestamp.
+**Output di esempio:**
 
-## See Also
-- [Get-Date Command | Microsoft Docs](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-date?view=powershell-7)
-- [Custom Date and Time Format Strings | Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/standard/base-types/custom-date-and-time-format-strings)
-- [DateTime Struct | Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/api/system.datetime?view=netframework-4.8)
+```
+Martedì, 5 Settembre 2023 9:46:02 AM
+```
+
+Per l'ora UTC:
+
+```powershell
+# Usando la classe DateTime .NET per ottenere la data e l'ora UTC correnti
+[System.DateTime]::UtcNow
+```
+
+**Output di esempio:**
+
+```
+Martedì, 5 Settembre 2023 1:46:02 PM
+```
+
+Questi comandi e classi forniscono opzioni potenti e flessibili per lavorare con date e orari in PowerShell, essenziali per molti compiti di scripting e automazione.

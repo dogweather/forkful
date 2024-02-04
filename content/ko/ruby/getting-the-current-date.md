@@ -1,48 +1,65 @@
 ---
 title:                "현재 날짜 가져오기"
-date:                  2024-01-20T15:16:13.924673-07:00
+date:                  2024-02-03T19:10:47.005461-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "현재 날짜 가져오기"
-
 tag:                  "Dates and Times"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/ruby/getting-the-current-date.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (무엇과 왜?)
+## 무엇을, 왜?
+어떤 프로그래밍 작업에서든 현재 날짜를 가져오는 것은 거의 필수적인 작업입니다. 애플리케이션에서 활동을 기록하는 것부터 날짜 스탬프를 포함한 보고서를 생성하는 것까지 다양합니다. Ruby에서는 표준 라이브러리를 사용하여 날짜와 관련된 작업을 쉽게 수행할 수 있습니다.
 
-현재 날짜 가져오기는 컴퓨터의 시스템 날짜와 시간을 알아내는 행위입니다. 프로그래머들은 로깅, 사용자 경험 향상, 데이터의 시간적 추적을 위해 이를 사용합니다.
-
-## How to: (방법)
-
-Ruby에서 현재 날짜와 시간을 가져오는 것은 간단합니다. 기본 내장된 `Date`와 `Time` 클래스를 활용해 보세요:
+## 방법:
+Ruby의 표준 라이브러리에는 날짜와 시간을 다루기 위한 `Date`와 `Time` 클래스가 포함되어 있습니다. 현재 날짜를 얻는 방법은 다음과 같습니다:
 
 ```ruby
 require 'date'
 
-# 현재 날짜 출력
-puts Date.today
+current_date = Date.today
+puts current_date
 ```
+
+샘플 출력:
+```
+2023-04-12
+```
+
+날짜와 함께 시간을 포함시키고 싶다면, Ruby의 `Time` 클래스가 더 적합합니다:
 
 ```ruby
-# 현재 시간을 초 단위로 출력
-puts Time.now
+current_time = Time.now
+puts current_time
 ```
 
-예상 출력에서 날짜와 시간 형식은 시스템 설정과 로케일에 따라 다를 수 있습니다.
+샘플 출력:
+```
+2023-04-12 14:33:07 +0200
+```
 
-## Deep Dive (심층 분석)
+시간대 관리와 같은 더 많은 기능이 필요한 경우, `ActiveSupport`와 같은 타사 젬을 사용하고 싶을 수 있습니다(`ActiveSupport`는 Rails의 일부이지만 독립적으로 사용할 수 있습니다).
 
-Ruby 언어에는 날짜와 시간을 다루는 몇 가지 방법이 있습니다. `Date` 클래스는 날짜에 초점을 맞추고 `Time` 클래스는 시간도 포함하여 날짜와 시간을 모두 다룹니다.
+먼저, Gemfile에 `activesupport`를 추가하고 `bundle install`을 실행하세요:
 
-`DateTime`은 `Time`과 비슷하지만, 고대 날짜와 같은 범위가 넓은 날짜를 다루기 위해 고안되었습니다. 그러나 일상적인 용도로는 `Time`이 더 효율적입니다.
+```ruby
+gem 'activesupport'
+```
 
-`Time` 객체는 1970년 1월 1일(유닉스 시간의 시작점) 이후의 초를 사용하여 시간을 계산합니다. 이 방식은 프로그래밍에서 표준적으로 사용되며, Ruby에서도 마찬가지입니다.
+그런 다음, 시간대를 처리하기 위해 사용하세요:
 
-Ruby의 시간 클래스들은 내부적으로 시스템의 시간 정보를 사용하여 현재 날짜와 시간을 결정합니다. 이는 Ruby 프로그램이 운영되는 시스템의 시간이 정확해야 정확한 값이 보장된다는 것을 의미합니다.
+```ruby
+require 'active_support/time'
 
-## See Also (참고 자료)
+Time.zone = 'Eastern Time (US & Canada)'  # 원하는 시간대 설정
+current_time_with_zone = Time.zone.now
+puts current_time_with_zone
+```
 
-- Ruby 공식 문서: [Time](https://ruby-doc.org/core-3.1.2/Time.html)
-- 유닉스 시간에 대한 추가 정보: [Unix Time - Wikipedia](https://en.wikipedia.org/wiki/Unix_time)
+샘플 출력:
+```
+Wed, 12 Apr 2023 08:33:07 EDT -04:00
+```

@@ -1,54 +1,65 @@
 ---
-title:                "Аналіз дати з рядка"
-date:                  2024-01-20T15:37:08.224833-07:00
-simple_title:         "Аналіз дати з рядка"
-
+title:                "Розбір дати з рядка"
+date:                  2024-02-03T19:14:36.448196-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Розбір дати з рядка"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/haskell/parsing-a-date-from-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Що та Чому?
-Розбір дати з рядка — це процес отримання структурованої інформації про дату з текстового формату. Програмісти роблять це, щоб користувачі могли вводити дати як простий текст, а потім обробляти ці дані машинами.
+## Що і чому?
 
-## Як це зробити:
-Найпростіший спосіб розпізнати дату в Haskell — використовувати пакунок `time`. Розберемо на прикладі:
+Розбір дати з рядка в Haskell полягає в перетворенні текстових представлень дат у структурований формат, який програма може маніпулювати. Цей процес є фундаментальним для додатків, що працюють з календарними даними, дозволяючи виконувати функції, такі як обчислення тривалості, планування та валідація даних.
 
-```Haskell
+## Як:
+
+"З коробки" Haskell пропонує базові інструменти для розбору дат, але використання бібліотек, таких як `time` для основної функціональності, та `date-parse` або `time-parse` для більш гнучкого розбору, може значно спростити завдання.
+
+Спочатку переконайтеся, що у вас є бібліотека `time`; часто вона включена у GHC, але якщо вам потрібно визначити її як залежність, додайте `time` до файлу cabal вашого проєкту або використовуйте `cabal install time` для її ручної установки.
+
+```haskell
 import Data.Time.Format
 import Data.Time.Clock
 import System.Locale (defaultTimeLocale)
 
--- Функція для парсингу дати з рядка
-parseDate :: String -> Maybe UTCTime
-parseDate dateString = parseTimeM True defaultTimeLocale "%Y-%m-%d" dateString
+-- Використання бібліотеки time для розбору дати у стандартному форматі
+parseBasicDate :: String -> Maybe UTCTime
+parseBasicDate = parseTimeM True defaultTimeLocale "%Y-%m-%d" 
+```
 
+Приклад використання та виводу:
+
+```haskell
 main :: IO ()
-main = do
-    let dateStr = "2023-03-14"
-    case parseDate dateStr of
-        Just date -> putStrLn $ "Успішно розпізнано дату: " ++ show date
-        Nothing -> putStrLn "Не вдалося розпізнати дату."
+main = print $ parseBasicDate "2023-04-01"
+
+-- Вивід: Just 2023-03-31 22:00:00 UTC
 ```
 
-При запуску цього коду ви отримаєте:
+Для більш складних сценаріїв, коли вам потрібно обробляти кілька форматів або локалей, бібліотеки сторонніх виробників, такі як `date-parse`, можуть бути зручнішими:
+
+Припускаючи, що ви додали `date-parse` до своїх залежностей і встановили його, ось як ви могли б його використовувати:
+
+```haskell
+import Data.Time.Calendar
+import Text.Date.Parse (parseDate)
+
+-- Розбір рядка дати з бібліотекою date-parse підтримує кілька форматів
+parseFlexibleDate :: String -> Maybe Day
+parseFlexibleDate = parseDate
 ```
-Успішно розпізнано дату: 2023-03-14 00:00:00 UTC
+
+Приклад використання з `date-parse`:
+
+```haskell
+main :: IO ()
+main = print $ parseFlexibleDate "April 1, 2023"
+
+-- Вивід: Just 2023-04-01
 ```
 
-## Розбір Деталей
-Функція `parseTimeM` в Haskell використовується для парсингу рядків у дати. Вона належить до бібліотеки `time`, яка є стандартною для роботи з часом і датами.
-
-Історично, робота з датами була досить складною через різноманіття форматів та календарів. В Haskell, `time` стандартизує обробку часу. Однак, є альтернативи, як-от `Data.Time.Calendar` для більш складних завдань.
-
-Метод `%Y-%m-%d` у `formatTime` вказує на конкретний формат дати: рік, місяць, день. Змініть цей шаблон, щоб розпізнати різні формати дат.
-
-Парсинг дати можна кастомізувати, використовуючи власні формати часу і шаблони. Для більшої гнучкості та узгодження з іншими системами можна використовувати бібліотеки, такі як `time-locale-compat`, яка забезпечує більше локалей.
-
-## Також Гляньте
-- Офіційні документи для `time` пакунка: http://hackage.haskell.org/package/time
-- Про `Data.Time.Clock`: http://hackage.haskell.org/package/time-1.9.3/docs/Data-Time-Clock.html
-- Про `Data.Time.Format` та `formatTime`: http://hackage.haskell.org/package/time-1.9.3/docs/Data-Time-Format.html
-- Про `System.Locale` та локалі: http://hackage.haskell.org/package/time-1.9.3/docs/System-Locale.html
-- Про `time-locale-compat` для компатибільності локалей: http://hackage.haskell.org/package/time-locale-compat
+Кожен приклад демонструє основний підхід до перетворення рядка в корисний об'єкт дати в Haskell. Вибір між використанням вбудованих функцій бібліотеки `time` та вибором рішення сторонніх виробників, таких як `date-parse`, залежить від конкретних потреб вашого додатку, таких як діапазон форматів вводу, які вам потрібно обробити.

@@ -1,35 +1,62 @@
 ---
-title:                "JSON-tiedostojen käsittely"
-date:                  2024-01-19
-simple_title:         "JSON-tiedostojen käsittely"
-
+title:                "Työskentely JSON:n kanssa"
+date:                  2024-02-03T19:23:45.721355-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Työskentely JSON:n kanssa"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/powershell/working-with-json.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-JSON (JavaScript Object Notation) on dataformaatti tietojen tallentamiseen ja välittämiseen. Ohjelmoijat käyttävät sitä, koska se on helppolukuinen ihmisille ja koneille ymmärrettävä.
+## Mikä & Miksi?
 
-## How to:
-```PowerShell
-# JSON-muotoisen tiedon luominen ja tallentaminen tiedostoon
-$jsonObject = @{
-    nimi = 'Matti'
-    ikä = 30
-    taidot = @('PowerShell', 'Azure')
-}
-$jsonData = $jsonObject | ConvertTo-Json
-$jsonData | Out-File -FilePath 'tiedot.json'
+PowerShellin integraatio JSONiin (JavaScript Object Notation) liittyy JSON-tietojen jäsentämiseen (lukeminen) ja tuottamiseen (kirjoittaminen), mikä on yleinen muoto tietojen vaihtoon verkossa. Ohjelmoijat työskentelevät JSONin kanssa ollakseen vuorovaikutuksessa verkon API:en kanssa, konfiguraatiotiedostojen kanssa tai helpottaakseen tietojen vaihtoa eri kielten ja alustojen välillä sen kevytrakenteisen ja kieli-riippumattoman luonteen vuoksi.
 
-# JSON-tiedoston lukeminen ja muuttamisen objektiksi
-$jsonFromFile = Get-Content -Path 'tiedot.json' | ConvertFrom-Json
-Write-Output $jsonFromFile.nimi  # Tulostaa 'Matti'
+## Kuinka:
+
+### JSONin jäsentäminen
+
+JSONin lukemiseksi tai jäsentämiseksi PowerShellissa voit käyttää `ConvertFrom-Json` cmdletiä. Annetulle JSON-merkkijonolle tämä cmdlet muuntaa sen PowerShell-objektiksi.
+
+```powershell
+$json = '{"name": "John Doe", "age": 30, "city": "New York"}'
+$person = $json | ConvertFrom-Json
+$person.name
 ```
 
-## Deep Dive:
-PowerShell lisäsi JSON-tuen versiosta 3.0 lähtien, mikä helpotti web-palvelimien ja muiden ohjelmistojen kanssa kommunikoimista. JSON vaihtoehtoihin kuuluu XML, mutta JSON on yleensä kevyempi ja nopeampi. Implementaatiossa PowerShell käyttää .NET-kirjastoja, kuten Newtonsoft.Json-pakettia JSON-käsittelyyn.
+Esimerkkituloste:
 
-## See Also:
-- [JSON-spesifikaatio](https://www.json.org/json-en.html)
+```
+John Doe
+```
+
+Tämä esimerkki havainnollistaa, kuinka jäsentää yksinkertainen JSON-merkkijono ja päästä käsiksi tuloksen ominaisuuksiin.
+
+### JSONin tuottaminen
+
+JSONin tuottamiseksi PowerShell-objektista voit käyttää `ConvertTo-Json` cmdletiä. Tämä on kätevää valmisteltaessa tietoja lähetettäväksi verkkopalveluun tai tallennettavaksi konfiguraatiotiedostoon.
+
+```powershell
+$person = [PSCustomObject]@{
+    name = "Jane Doe"
+    age = 25
+    city = "Los Angeles"
+}
+$json = $person | ConvertTo-Json
+Write-Output $json
+```
+
+Esimerkkituloste:
+
+```json
+{
+    "name":  "Jane Doe",
+    "age":  25,
+    "city":  "Los Angeles"
+}
+```
+
+Tämä koodinpätkä luo PowerShell-objektin ja muuntaa sen sitten JSON-merkkijonoksi.

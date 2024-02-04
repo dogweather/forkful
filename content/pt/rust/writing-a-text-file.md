@@ -1,39 +1,75 @@
 ---
 title:                "Escrevendo um arquivo de texto"
-date:                  2024-01-19
+date:                  2024-02-03T19:29:18.734838-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Escrevendo um arquivo de texto"
-
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/rust/writing-a-text-file.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## O Que é & Porquê?
+## O que & Por quê?
+Escrever um arquivo de texto em Rust envolve criar, escrever e, potencialmente, acrescentar dados a um arquivo no sistema de arquivos. Os programadores realizam essa operação para persistir dados, como logs de aplicativo, configuração ou conteúdo gerado pelo usuário, garantindo a durabilidade dos dados além do escopo da execução do programa.
 
-Escrever um arquivo de texto em Rust envolve salvar dados em formato legível num arquivo no sistema de arquivos. Programadores fazem isso para persistir informação como configurações, logs ou intercâmbio de dados entre sistemas.
+## Como fazer:
+A biblioteca padrão do Rust fornece ferramentas robustas para manipulação de arquivos, encapsuladas principalmente dentro dos módulos `std::fs` e `std::io`. Aqui está um exemplo básico para criar e escrever em um arquivo de texto:
 
-## Como Fazer:
-
-```Rust
+```rust
 use std::fs::File;
-use std::io::Write;
+use std::io::prelude::*;
 
 fn main() -> std::io::Result<()> {
-    let mut arquivo = File::create("saida.txt")?;
-    arquivo.write_all(b"Olá, Rustaceans!")?;
+    let mut file = File::create("hello.txt")?;
+    file.write_all(b"Hello, world!")?;
     Ok(())
 }
 ```
 
-_Ao executar, cria um arquivo chamado `saida.txt` com o conteúdo "Olá, Rustaceans!"._
+Depois de executar esse código, você encontrará um arquivo chamado `hello.txt` com o conteúdo "Hello, world!".
 
-## Mergulho Profundo
+Para cenários mais complexos, como acrescentar a um arquivo ou lidar com dados maiores de forma eficiente, o Rust oferece funcionalidades adicionais. Veja como acrescentar texto a um arquivo existente:
 
-Antigamente, manipular arquivos em linguagens de baixo nível exigia conhecimento detalhado do sistema operacional. Em Rust, a biblioteca padrão abstrai esses detalhes com o módulo `std::fs`. Alternativas incluem usar bibliotecas de terceiros como `tokio` para I/O assíncrono. A efetividade vem da segurança de tipos e gestão de erros, que previne corrupção de dados e vazamentos de memória.
+```rust
+use std::fs::OpenOptions;
+use std::io::prelude::*;
 
-## Veja Também
+fn main() -> std::io::Result<()> {
+    let mut file = OpenOptions::new()
+        .write(true)
+        .append(true)
+        .open("hello.txt")?;
+        
+    file.write_all(b" Adding more text.")?;
+    Ok(())
+}
+```
 
-- [Documentação oficial std::fs](https://doc.rust-lang.org/std/fs/)
-- [Guia de programação de Rust](https://doc.rust-lang.org/book/)
-- [Tutorial sobre I/O assíncrono com tokio](https://tokio.rs/tokio/tutorial)
+Ao executar isso, será adicionado " Adding more text." ao final do `hello.txt`.
+
+Em alguns casos, o uso de bibliotecas de terceiros pode simplificar as operações de arquivo. A crate `serde`, combinada com `serde_json`, por exemplo, permite serializar e desserializar estruturas de dados para e a partir do formato JSON, oferecendo uma abordagem de alto nível para escrever arquivos:
+
+```rust
+use serde::{Serialize, Deserialize};
+use serde_json;
+use std::fs::File;
+
+#[derive(Serialize, Deserialize)]
+struct User {
+    id: u32,
+    name: String,
+}
+
+fn main() -> std::io::Result<()> {
+    let user = User { id: 1, name: "Jane Doe".into() };
+    let file = File::create("user.json")?;
+    serde_json::to_writer(file, &user)?;
+    Ok(())
+}
+```
+
+Após executar o código acima, `user.json` conterá uma representação em JSON da struct `User`. Note que usar `serde` e `serde_json` requer a adição dessas crates ao seu `Cargo.toml`.
+
+Escrever arquivos de texto em Rust, seja através da biblioteca padrão ou com a ajuda de crates externas, é uma maneira direta, mas poderosa, de gerenciar a persistência de dados em suas aplicações.

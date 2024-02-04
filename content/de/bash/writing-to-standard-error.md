@@ -1,47 +1,52 @@
 ---
 title:                "Schreiben auf Standardfehler"
-date:                  2024-01-19
+date:                  2024-02-03T19:32:14.353142-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Schreiben auf Standardfehler"
-
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/bash/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
+## Was & Warum?
+Das Schreiben auf den Standardfehler (stderr) in Bash bedeutet, Fehlermeldungen oder jede wichtige diagnostische Ausgabe getrennt von der Standardausgabe (stdout) zu leiten. Programmierer tun dies, um sicherzustellen, dass Fehlermeldungen leicht identifiziert, protokolliert oder sogar ignoriert werden können, was bei der Fehlersuche und den Protokollierungsprozessen hilft.
 
-Schreiben auf Standardfehler (stderr) ermöglicht es Programmen, Fehlermeldungen von der normalen Ausgabe zu trennen. Das ist wichtig für die Fehlersuche und hilft dabei, die normale Ausgabe in Dateien umzuleiten, ohne Fehlermeldungen zu verlieren.
+## Wie:
+In Bash verwenden Sie `>&2`, um die Ausgabe auf stderr umzuleiten. Hier ein einfaches Beispiel:
 
-## How to:
-
-### Fehlermeldungen nach stderr schreiben:
-```Bash
-echo "Das ist ein Fehler" >&2
+```bash
+echo "Das ist eine normale Nachricht"
+echo "Das ist eine Fehlermeldung" >&2
 ```
 
-### Normale Ausgabe und Fehlerausgabe umleiten:
-```Bash
-echo "Normale Ausgabe"
-echo "Das ist ein Fehler" >&2
-```
-Sample Output:
-```
-Normale Ausgabe
-Das ist ein Fehler
-```
-### Ausgabe in eine Datei und Fehlermeldungen in eine andere Datei umleiten:
-```Bash
-echo "Normale Ausgabe" > output.txt
-echo "Das ist ein Fehler" >&2 2>error.txt
+Wenn Sie dieses Skript ausführen, werden beide Nachrichten auf der Konsole angezeigt, aber wenn Sie sie umleiten, können Sie die stdout von der stderr trennen. Zum Beispiel:
+
+```bash
+bash script.sh > output.txt 2> error.txt
 ```
 
-## Deep Dive
+`output.txt` wird `"Das ist eine normale Nachricht"` enthalten, während `error.txt` `"Das ist eine Fehlermeldung"` erfassen wird.
 
-In den Anfangstagen von Unix wurden zwei separate Datenströme eingeführt: Standardausgabe (stdout) für die reguläre Ausgabe eines Programms und Standardfehler (stderr) für Fehlermeldungen. Das trennt Fehler von normalen Daten, was besonders wichtig ist bei Pipelines und Weiterleitungen. Alternativen wie das Schreiben beider Streams in eine Datei (`&> file.txt`) sind möglich, aber die Trennung ist oft sinnvoller. Bei der Implementierung leitet der File Descriptor 2 stderr, während File Descriptor 1 stdout anspricht.
+Für einen praktischen Anwendungsfall betrachten Sie ein Skript, das Dateien verarbeitet und einen Fehler meldet, wenn eine Datei nicht existiert:
 
-## See Also
+```bash
+filename="example.txt"
 
-- Bash Manual: https://www.gnu.org/software/bash/manual/
-- Advanced Bash-Scripting Guide: http://www.tldp.org/LDP/abs/html/
-- Unix Streams, Pipes, and Redirects: https://www.ibm.com/support/knowledgecenter/ssw_ibm_i_74/rzabc/redirection.htm
+if [ ! -f "$filename" ]; then
+    echo "$filename existiert nicht!" >&2
+    exit 1
+else
+    echo "Verarbeite $filename"
+fi
+```
+
+Beispiel für eine Ausgabe direkt in der Konsole, wenn `example.txt` nicht existiert:
+
+```
+example.txt existiert nicht!
+```
+
+Es gibt keine direkten Drittanbieter-Bibliotheken in Bash für die Behandlung von stderr, da die Umleitung nativ unterstützt wird und im Allgemeinen ausreichend ist. Für komplexe Anwendungen können jedoch Logging-Frameworks oder externe Protokollierungstools wie `syslog` oder `log4bash` integriert werden, um sowohl stdout als auch stderr effektiver zu verwalten.

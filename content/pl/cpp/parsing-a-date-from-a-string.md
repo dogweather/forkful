@@ -1,59 +1,76 @@
 ---
-title:                "Przetwarzanie daty ze łańcucha znaków"
-date:                  2024-01-20T15:35:25.414984-07:00
-simple_title:         "Przetwarzanie daty ze łańcucha znaków"
-
+title:                "Analiza składniowa daty z łańcucha znaków"
+date:                  2024-02-03T19:13:55.322604-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Analiza składniowa daty z łańcucha znaków"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/cpp/parsing-a-date-from-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
-Parsowanie daty z ciągu znaków polega na konwersji tekstowej reprezentacji daty do struktury data/czas, którą można potem łatwo manipulować w programie. Programiści robią to, aby umożliwić użytkownikom wprowadzanie dat w różnych formatach oraz przetwarzać i analizować informacje o czasie w aplikacjach.
+## Co i dlaczego?
+Parsowanie daty ze stringa polega na interpretacji formatu ciągu znaków w celu wyodrębnienia składników daty, takich jak dzień, miesiąc i rok. Programiści robią to, aby obsłużyć dane wejściowe użytkownika, odczytać pliki danych lub współpracować z API, które komunikują daty w formatach tekstowych. Jest to istotne dla przetwarzania danych, walidacji oraz wykonywania arytmetyki dat w aplikacjach.
 
 ## Jak to zrobić:
-```C++
+We współczesnym C++ można użyć biblioteki `<chrono>` do obsługi dat i czasów natywnie, ale nie obsługuje ona bezpośrednio parsowania ze stringów bez ręcznego parsowania dla bardziej skomplikowanych formatów. Jednak dla formatów dat ISO 8601 i prostych niestandardowych formatów, oto jak możesz osiągnąć parsowanie.
+
+**Korzystając z `<chrono>` i `<sstream>`:**
+```cpp
 #include <iostream>
 #include <sstream>
+#include <chrono>
 #include <iomanip>
-#include <ctime>
 
 int main() {
-    std::string date_str = "2023-04-02 14:20:12";
-    std::tm tm = {};
+    std::string date_str = "2023-04-15"; // format ISO 8601
+    std::istringstream iss(date_str);
     
-    std::istringstream ss(date_str);
-    ss >> std::get_time(&tm, "%Y-%m-%d %H:%M:%S");  // format odpowiadający wzorcowi daty
+    std::chrono::year_month_day parsed_date;
+    iss >> std::chrono::parse("%F", parsed_date);
     
-    if (ss.fail()) {
-        std::cerr << "Parsowanie daty nie powiodło się." << std::endl;
-        return 1;
+    if (!iss.fail()) {
+        std::cout << "Zinterpretowana data: " << parsed_date << std::endl;
+    } else {
+        std::cout << "Nie udało się zinterpretować daty." << std::endl;
     }
-
-    std::cout << "Dzień: " << tm.tm_mday << std::endl;
-    std::cout << "Miesiąc: " << tm.tm_mon + 1 << std::endl;  // tm_mon jest od 0 do 11
-    std::cout << "Rok: " << tm.tm_year + 1900 << std::endl;  // tm_year jest liczone od 1900
-    std::cout << "Godzina: " << tm.tm_hour << std::endl;
-    std::cout << "Minuta: " << tm.tm_min << std::endl;
-    std::cout << "Sekunda: " << tm.tm_sec << std::endl; 
+    
     return 0;
 }
 ```
-Sample Output:
+Przykładowe wyjście:
 ```
-Dzień: 2
-Miesiąc: 4
-Rok: 2023
-Godzina: 14
-Minuta: 20
-Sekunda: 12
+Zinterpretowana data: 2023-04-15
 ```
 
-## Deep Dive
-W przeszłości do parsowania dat używano funkcji takich jak `strptime` czy `strftime`. W nowoczesnym C++ warto używać biblioteki `<chrono>` oraz `<iomanip>` dla większej czytelności i bezpieczeństwa typów. Alternatywą dla wbudowanych funkcji jest także użycie bibliotek zewnętrznych, jak `boost::date_time`. W przypadku `std::get_time`, jest to funkcja manipulatora strumienia, która działa razem z `std::istringstream` w celu przekonwertowania stringa na strukturę `std::tm`. Ważne jest, aby znać format daty, który chcemy odczytać, co określamy za pomocą specyfikatorów formatu jak `%Y`, `%m`, `%d`, itd.
+Dla bardziej złożonych formatów lub gdy mamy do czynienia ze starszymi wersjami C++, popularne są biblioteki stron trzecich jak `date.h` (biblioteka dat Howarda Hinnanta). Oto jak możesz zinterpretować różne formaty z jej pomocą:
 
-## See Also
-- [cppreference.com - std::get_time](https://en.cppreference.com/w/cpp/io/manip/get_time)
-- [cppreference.com - <chrono> Library](https://en.cppreference.com/w/cpp/header/chrono)
-- [Boost Date_Time](https://www.boost.org/doc/libs/1_75_0/doc/html/date_time.html)
+**Korzystając z biblioteki `date.h`:**
+Upewnij się, że masz zainstalowaną bibliotekę. Możesz ją znaleźć [tutaj](https://github.com/HowardHinnant/date).
+
+```cpp
+#include "date/date.h"
+#include <iostream>
+
+int main() {
+    std::string date_str = "Kwiecień 15, 2023";
+    
+    std::istringstream iss(date_str);
+    date::sys_days parsed_date;
+    iss >> date::parse("%B %d, %Y", parsed_date);
+    
+    if (!iss.fail()) {
+        std::cout << "Zinterpretowana data: " << parsed_date << std::endl;
+    } else {
+        std::cout << "Nie udało się zinterpretować daty z ciągu znaków." << std::endl;
+    }
+
+    return 0;
+}
+```
+Przykładowe wyjście (może się różnić w zależności od ustawień regionalnych i daty w twoim systemie):
+```
+Zinterpretowana data: 2023-04-15
+```

@@ -1,67 +1,87 @@
 ---
 title:                "Робота з JSON"
-date:                  2024-01-19
+date:                  2024-02-03T19:22:26.665114-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Робота з JSON"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/cpp/working-with-json.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Що це таке і навіщо?
-JSON (JavaScript Object Notation) - це текстовий формат обміну даними. Програмісти використовують його для зручної передачі структурованих даних між різними мовами програмування та сервісами.
+## Що і чому?
 
-## Як це робити:
-В C++ для роботи з JSON часто використовують бібліотеку nlohmann/json. Ось як можна її використати:
+JSON (JavaScript Object Notation) — це легковаговий формат для зберігання та передачі даних, що робить його відмінним засобом для обміну даними між серверами та веб-додатками. Програмісти використовують JSON через його легкість для читання людиною та простоту парсингу машиною, особливо під час роботи над додатками, що потребують обміну даними через інтернет або налаштування конфігурацій.
 
-```C++
-#include "json.hpp" // Підключаємо бібліотеку nlohmann/json
+## Як це зробити:
+
+У C++ немає вбудованої підтримки для JSON, але сторонні бібліотеки, як-от nlohmann/json, роблять це простим. Ось як можна її використовувати для базових завдань:
+
+Перш за все, переконайтеся, що у вас встановлена бібліотека. Якщо ви використовуєте менеджер пакунків, такий як vcpkg або Conan, ви легко можете додати `nlohmann/json` до свого проєкту.
+
+### Парсинг JSON з рядка
+
+```cpp
 #include <iostream>
+#include <nlohmann/json.hpp>
 
 int main() {
-    // Створення та серіалізація JSON об'єкта
-    nlohmann::json j;
-    j["name"] = "Ivan";
-    j["age"] = 30;
-    j["is_programmer"] = true;
-    
-    // Виведення JSON як string
-    std::cout << j.dump(4) << std::endl;
-    
-    // Десеріалізація JSON зі string
-    auto parsed = nlohmann::json::parse(R"({"city":"Kyiv","population":2884000})");
-    std::cout << "City: " << parsed["city"] << std::endl;
-    std::cout << "Population: " << parsed["population"] << std::endl;
-    
-    // Використання JSON як мапи
-    for (auto& element : j.items()) {
-        std::cout << element.key() << " : " << element.value() << std::endl;
-    }
-    
+    // JSON дані як рядок
+    std::string jsonData = "{\"name\":\"John\", \"age\":30, \"city\":\"New York\"}";
+
+    // Парсинг рядка JSON
+    auto jsonObject = nlohmann::json::parse(jsonData);
+
+    // Доступ до даних
+    std::cout << "Ім'я: " << jsonObject["name"] << "\n"
+              << "Вік: " << jsonObject["age"] << "\n"
+              << "Місто: " << jsonObject["city"] << std::endl;
+
     return 0;
 }
 ```
 
-Приклад виводу:
+**Приклад виводу:**
+
+```
+Ім'я: John
+Вік: 30
+Місто: New York
+```
+
+### Генерація JSON
+
+Створення даних JSON є також простим; вам лише потрібно присвоїти значення об'єкту `nlohmann::json`.
+
+```cpp
+#include <nlohmann/json.hpp>
+#include <iostream>
+
+int main() {
+    // Створення об'єкта JSON
+    nlohmann::json jsonObject;
+    jsonObject["name"] = "Jane";
+    jsonObject["age"] = 25;
+    jsonObject["city"] = "Los Angeles";
+
+    // Конвертація об'єкта JSON у рядок та його друк
+    std::string jsonString = jsonObject.dump(4); // Аргумент 4 для красивого виводу
+    std::cout << jsonString << std::endl;
+
+    return 0;
+}
+```
+
+**Приклад виводу:**
 
 ```
 {
-    "age": 30,
-    "is_programmer": true,
-    "name": "Ivan"
+    "name": "Jane",
+    "age": 25,
+    "city": "Los Angeles"
 }
-City: Kyiv
-Population: 2884000
-age : 30
-is_programmer : true
-name : Ivan
 ```
 
-## Поглиблені знання:
-JSON з'явився у 2001 році як альтернатива XML. Його переваги - простота та легка читабельність. Існують альтернативи, як-от YAML чи BSON, але JSON залишається популярним через свою універсальність та підтримку у багатьох мовах програмування. На C++ робота з JSON часто реалізується через зовнішні бібліотеки, такі як nlohmann/json, jsoncpp, або RapidJSON, які забезпечують парсинг і серіалізацію даних.
-
-## Також дивіться:
-- Документація бібліотеки nlohmann/json: https://github.com/nlohmann/json
-- JSON стандарт: https://www.json.org/json-uk.html
-- Співставлення JSON бібліотек для C++: https://en.cppreference.com/w/cpp/links/libs
+Ці приклади демонструють основну функціональність роботи з JSON в C++ за допомогою бібліотеки `nlohmann/json`. З цими основами ви можете парсити та генерувати JSON для різних додатків, від файлів конфігурації до обміну даними в мережевих додатках.

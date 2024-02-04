@@ -1,61 +1,53 @@
 ---
-title:                "YAML-tiedostojen käsittely"
-date:                  2024-01-19
-simple_title:         "YAML-tiedostojen käsittely"
-
+title:                "Työskentely YAML:n kanssa"
+date:                  2024-02-03T19:24:56.378953-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Työskentely YAML:n kanssa"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/clojure/working-with-yaml.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-YAML on datan serialisointikieli, jota käytetään säätöjen, asetusten ja ohjelmoitavien sovellusten tietojen tallennukseen. Ohjelmoijat käyttävät YAMLia, koska se on ihmisen luettavissa ja sillä voidaan kuvata monimutkaisia rakenteita selkeästi.
+## Mikä & Miksi?
 
-## How to:
-Clojuren YAML-käsittely vaatii kirjaston, esimerkiksi `clj-yaml`. Asenna se lisäämällä projektisi `deps.edn`-tiedostoon:
+YAML, rekursiivinen lyhenne sanoista "YAML Ain't Markup Language", on ihmisen luettavissa oleva datan sarjallistamisformaatti, jota käytetään määritystiedostoissa ja datan vaihdossa eri tietorakenteita käyttävien kielten välillä. Ohjelmoijat käyttävät YAMLia sen yksinkertaisuuden ja luettavuuden vuoksi, mikä tekee siitä ihanteellisen valinnan sovellusten konfigurointiin ja datan vaihtoon polyglot-ohjelmointiympäristöissä.
 
-```Clojure
-{:deps {clj-yaml {:mvn/version "0.7.0"}}}
+## Kuinka:
+
+Clojure ei sisällä sisäänrakennettua tukea YAMLille, mutta voit käyttää kolmannen osapuolen kirjastoja, kuten `clj-yaml`, YAML-datan jäsentämiseen ja luomiseen. Ensiksi, lisää kirjasto projektisi riippuvuuksiin:
+
+```clojure
+;; Lisää tämä projektisi project.clj riippuvuuksiin
+[clj-yaml "0.7.0"]
 ```
 
-Lue YAML-tiedosto ja muunna se Clojure-mapiksi:
+Tässä on miten voit käyttää `clj-yaml`ia YAMLin jäsentämiseen ja Clojure map:ien muuntamiseen YAMLiksi.
 
-```Clojure
+### YAMLin jäsentäminen:
+
+```clojure
 (require '[clj-yaml.core :as yaml])
 
-(defn lue-yaml-tiedosto [polku]
-  (with-open [rdr (java.io.FileReader. polku)]
-    (yaml/parse-string (slurp rdr))))
-
-(def yaml-data (lue-yaml-tiedosto "config.yaml"))
+;; YAML-merkkijonon jäsentäminen
+(let [yaml-str "name: John Doe\nage: 30\nlanguages:\n  - Clojure\n  - Python"]
+  (yaml/parse-string yaml-str))
+;; Tuloste:
+;; => {"name" "John Doe", "age" 30, "languages" ["Clojure" "Python"]}
 ```
 
-Tallenna Clojure-map YAML-tiedostoksi:
+### YAMLin luominen Clojuresta:
 
-```Clojure
+```clojure
 (require '[clj-yaml.core :as yaml])
 
-(defn tallenna-yaml-tiedosto [data polku]
-  (spit polku (yaml/generate-string data)))
- 
-(tallenna-yaml-tiedosto {:asiakas {:id 123, :nimi "Yritys Oy"}} "uusi-config.yaml")
+;; Clojure map:in muuntaminen YAML-merkkijonoksi
+(let [data-map {:name "Jane Doe" :age 28 :languages ["Java" "Ruby"]}]
+  (yaml/generate-string data-map))
+;; Tuloste:
+; "age: 28\nlanguages:\n- Java\n- Ruby\nname: Jane Doe\n"
 ```
 
-Näyte `uusi-config.yaml`-tiedostosta:
-
-```yaml
-asiakas:
-  id: 123
-  nimi: "Yritys Oy"
-```
-
-## Deep Dive:
-YAML (YAML Ain't Markup Language) julkaistiin alun perin 2001. Se suunniteltiin yksinkertaistamaan XML:n käyttöä ja nykyään se on usein valinta rakenne- ja konfiguraatiotiedostoihin. Vaihtoehtoja YAMLille ovat JSON ja TOML. Clojure-kielessä YAMLia käsitellään muuntamalla YAML-stringit Clojure-dattostruktuureiksi ja takaisin, yleensä kirjaston avulla, kuten clj-yaml.
-
-## See Also:
-- clj-yaml GitHub-sivu: https://github.com/clj-commons/clj-yaml
-- Clojure virallinen sivusto: https://clojure.org
-- YAML virallinen sivusto: https://yaml.org
-- JSON: https://www.json.org/json-fi.html
-- TOML: https://github.com/toml-lang/toml
+Nämä yksinkertaiset toiminnot `clj-yaml`in avulla voidaan integroida Clojure-sovelluksiin käsittelemään määritystiedostoja tai helpottamaan datan vaihtoa muiden palveluiden tai komponenttien kanssa, jotka käyttävät YAMLia.

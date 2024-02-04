@@ -1,54 +1,56 @@
 ---
-title:                "Аналіз дати з рядка"
-date:                  2024-01-20T15:37:41.587647-07:00
-simple_title:         "Аналіз дати з рядка"
-
+title:                "Розбір дати з рядка"
+date:                  2024-02-03T19:15:14.315704-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Розбір дати з рядка"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/lua/parsing-a-date-from-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Що таке й Навіщо?)
-Parsing a date from a string means converting text into a date object. Programmers do it to manipulate dates, compare them, or save them efficiently.
+## Що та Чому?
+Парсинг дати з рядка полягає у перетворенні текстових представлень дат і часів на формат, який можна легко маніпулювати, зберігати або порівнювати в межах програми Lua. Програмісти виконують це завдання, щоб полегшити операції, такі як планування, реєстрування або будь-які тимчасові розрахунки, та для того, щоб подолати розрив між форматами дат, зрозумілими людині, і структурованими типами даних, які комп'ютер може ефективно обробляти.
 
-## How to: (Як зробити:)
-```Lua
--- Lua 5.4 example
+## Як:
+Lua не має вбудованої підтримки для маніпулювання датами та часом, крім обмеженої функціональності, яку надають функції `os.date` і `os.time`. Однак їх можна використовувати для базового парсингу, а для більш складних вимог можна використати бібліотеку `luadate`, зовнішню бібліотеку.
 
--- Load the OS library for date and time functions
-local os = require("os")
+**Використання `os.date` і `os.time`:**
+```lua
+-- Перетворення зрозумілої людині дати в мітку часу та назад
+local dateString = "2023-09-21 15:00:00"
+local pattern = "(%d+)-(%d+)-(%d+) (%d+):(%d+):(%d+)"
+local year, month, day, hour, minute, second = dateString:match(pattern)
 
--- Parse a date in the format "dd/mm/yyyy"
-function parseDate(dateString)
-  local pattern = "(%d+)%/(%d+)%/(%d+)"
-  local day, month, year = dateString:match(pattern)
-  -- Convert to numerical values
-  day, month, year = tonumber(day), tonumber(month), tonumber(year)
-  -- Return os.time table
-  return os.time({year = year, month = month, day = day})
-end
+local timestamp = os.time({
+  year = year,
+  month = month,
+  day = day,
+  hour = hour,
+  min = minute,
+  sec = second
+})
 
--- Usage example
-local dateStr = "27/03/2023"
-local parsedDate = parseDate(dateStr)
-print(os.date("%A, %d %B %Y", parsedDate))  -- Output: Monday, 27 March 2023
+-- Перетворення мітки часу назад у зрозумілий формат дати
+local formattedDate = os.date("%Y-%m-%d %H:%M:%S", timestamp)
+print(formattedDate)  -- Вивід: 2023-09-21 15:00:00
 ```
 
-## Deep Dive (Поглиблений Розділ)
-Parsing dates in Lua isn't built-in like in some languages. Historically, Lua focuses on a small set of core features, relying on external libraries or custom functions for specifics like date parsing.
+**Використання `luadate` (стороння бібліотека):**
+Щоб використовувати `luadate`, переконайтесь, що вона встановлена через LuaRocks або ваш менеджер пакетів на вибір. `luadate` додає широкі можливості парсингу та маніпулювання датами та часом.
 
-Alternatives:
-1. `os.date` and `os.time` functions work for basic needs. They are part of the standard library.
-2. Patterns (Lua's version of regex) to extract parts of the string manually.
-3. External libraries, like `luadate` if advanced date manipulation is needed.
+```lua
+local date = require('date')
 
-Implementation details:
-- `os.time` creates a time object from a table. 
-- Patterns can be complex based on the date format. Always validate to avoid errors.
-- Don't forget time zones and locales when dealing with dates.
+-- Прямий парсинг рядка дати
+local parsedDate = date.parse("2023-09-21 15:00:00")
+print(parsedDate:fmt("%Y-%m-%d %H:%M:%S"))  -- Вивід: 2023-09-21 15:00:00
 
-## See Also (Дивись Також)
-- Official Lua documentation: http://www.lua.org/manual/5.4/manual.html#6.9
-- LuaDate library for more complex operations: https://github.com/Tieske/date
-- A tutorial on Lua patterns: https://www.lua.org/pil/20.2.html
+-- Додавання тривалостей
+local oneWeekLater = parsedDate:adddays(7)
+print(oneWeekLater:fmt("%Y-%m-%d %H:%M:%S"))  -- Вивід: 2023-09-28 15:00:00
+```
+
+Бібліотека `luadate` пропонує більш інтуїтивний і потужний спосіб роботи з датами, включно з парсингом з рядків, форматуванням та арифметичними операціями над датами, що значно спрощує роботу з тимчасовими даними в Lua.

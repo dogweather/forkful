@@ -1,31 +1,33 @@
 ---
 title:                "Verificando se um diretório existe"
-date:                  2024-01-19
+date:                  2024-02-03T19:06:53.274473-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Verificando se um diretório existe"
-
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/cpp/checking-if-a-directory-exists.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## O Que & Por Quê?
+## O Que & Por Que?
+Verificar se um diretório existe é sobre determinar a presença de um diretório em um caminho especificado antes de realizar operações como ler ou escrever arquivos dentro dele. Os programadores fazem isso para evitar erros relacionados a operações de arquivo, garantindo uma execução mais suave e confiável das tarefas de manipulação de arquivos em suas aplicações.
 
-Verificar se um diretório existe é simplesmente checar se um determinado caminho no sistema de arquivos aponta para um lugar que realmente está lá. Programadores fazem isso para evitar erros ao tentar acessar, ler, ou escrever em diretórios que não existem, prevenindo assim falhas e comportamentos indesejados em seus programas.
+## Como fazer:
+No C++ moderno (C++17 e além), você pode usar a biblioteca filesystem para verificar se um diretório existe. Ela fornece uma maneira direta e padronizada de realizar operações no sistema de arquivos, incluindo a verificação da existência de um diretório.
 
-## Como Fazer:
-
-A biblioteca `filesystem` em C++ faz esse trabalho. Veja como usar:
-
-```C++
+```cpp
 #include <iostream>
 #include <filesystem>
 
-int main() {
-    std::filesystem::path dir = "algum_diretorio/";
+namespace fs = std::filesystem;
 
-    if (std::filesystem::exists(dir)) {
-        std::cout << "O diretório existe!" << std::endl;
+int main() {
+    const fs::path dirPath = "/caminho/para/diretorio";
+
+    if (fs::exists(dirPath) && fs::is_directory(dirPath)) {
+        std::cout << "O diretório existe." << std::endl;
     } else {
         std::cout << "O diretório não existe." << std::endl;
     }
@@ -33,27 +35,34 @@ int main() {
     return 0;
 }
 ```
-Se o diretório `algum_diretorio/` existir, a saída será:
-
+Saída de exemplo se o diretório existir:
 ```
-O diretório existe!
+O diretório existe.
 ```
-Caso contrário:
 
+Saída de exemplo se o diretório não existir:
 ```
 O diretório não existe.
 ```
 
-## Aprofundamento
+Para projetos que ainda não estão usando C++17 ou para recursos adicionais, a biblioteca Boost Filesystem é uma escolha de terceiros popular que oferece funcionalidade similar.
 
-Antes do C++17, os programadores usavam bibliotecas de terceiros como o Boost ou sys/stat.h para essa tarefa. A introdução do módulo `filesystem` no C++17 padronizou as operações de sistema de arquivos. Além de `std::filesystem::exists`, você pode usar funções como `is_directory` para verificar especificamente por diretórios, ou `create_directory` para criar um diretório se ele não existir. Sob o capô, `exists` faz chamadas de sistema específicas para cada plataforma, como o `stat` em Unix ou `GetFileAttributes` no Windows.
+```cpp
+#include <iostream>
+#include <boost/filesystem.hpp>
 
-## Veja Também
+namespace fs = boost::filesystem;
 
-Para mais detalhes sobre o módulo filesystem, consulte:
+int main() {
+    const fs::path dirPath = "/caminho/para/diretorio";
 
-- [Documentação do std::filesystem](https://en.cppreference.com/w/cpp/filesystem)
+    if (fs::exists(dirPath) && fs::is_directory(dirPath)) {
+        std::cout << "O diretório existe." << std::endl;
+    } else {
+        std::cout << "O diretório não existe." << std::endl;
+    }
 
-E para entender erros comuns e exceções ao usar filesystem:
-
-- [Exceções no std::filesystem](https://en.cppreference.com/w/cpp/filesystem/exists#Exceptions)
+    return 0;
+}
+```
+Usando Boost Filesystem, a saída seria idêntica ao exemplo do filesystem C++17, dependendo da existência do diretório no caminho especificado.

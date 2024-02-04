@@ -1,42 +1,64 @@
 ---
-title:                "Написання тестів"
-date:                  2024-01-19
-simple_title:         "Написання тестів"
-
+title:                "Письмо тестів"
+date:                  2024-02-03T19:30:15.169211-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Письмо тестів"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/clojure/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Що це таке & Навіщо?
-Тестування коду – це перевірка, чи ваші функції ведуть себе як очікується. Програмісти тестують, щоб уникнути помилок, забезпечити якість та спростити подальші зміни коду.
+## Що і чому?
+Написання тестів на Clojure, як і в інших мовах програмування, передбачає створення окремого коду для перевірки того, що ваш основний код працює очікуваним чином. Це допомагає забезпечити правильність, полегшує рефакторинг та підвищує стабільність коду.
 
-## Як робити:
-Тестування в Clojure зазвичай роблять із `clojure.test`. Ось приклад простого тесту:
+## Як:
+Clojure, використовуючи JVM, підтримує різні фреймворки для тестування. Однак, загальноприйнятою вбудованою бібліотекою є `clojure.test`. Ось простий приклад:
 
-```Clojure
-(require '[clojure.test :refer :all])
+```clojure
+(ns example.test
+  (:require [clojure.test :refer :all]
+            [example.core :refer :all]))
 
-(deftest test-sum
-  (testing "Перевірка функції додавання"
-    (is (= 10 (+ 5 5)))
-    (is (= 7 (+ 3 4)))))
-  
+(deftest test-addition
+  (testing "Функціонал додавання"
+    (is (= 4 (add 2 2)))
+    (is (= 7 (add 3 4)))))
+
 (run-tests)
+```
+Після запуску цього тесту ви побачите результат, схожий на:
 
-;; Вивід
-;;
-;; Testing user
-;;
-;; Ran 1 tests containing 2 assertions.
-;; 0 failures, 0 errors.
+```
+Testing example.test
+
+Ran 2 tests containing 2 assertions.
+0 failures, 0 errors.
 ```
 
-## Поглиблене вивчення:
-Тести з'явились одночасно з першими програмами. Clojure використовує бібліотеку `clojure.test`, але є альтернативи як Midje чи test.check для властивостей тестування. Деталі реалізації включають виконання як блоків `testing`, так і окремих асерцій `is`.
+Для тих, хто шукає більш функціональні варіанти, можна використовувати сторонні бібліотеки, такі як `Midje` або `test.check`. Ось як ви могли б використати Midje для подібного тесту:
 
-## Дивіться також:
-- [Clojure Testing with clojure.test](https://clojure.org/guides/deps_and_cli#_testing)
-- [Introduction to Midje](https://github.com/marick/Midje/wiki)
-- [clojure.test.check](https://github.com/clojure/test.check)
+Спочатку додайте Midje до залежностей вашого project.clj:
+```clojure
+[midje "1.9.9"]
+```
+
+Потім ваш тест з Midje може виглядати так:
+
+```clojure
+(ns example.test
+  (:require [midje.sweet :refer :all]
+            [example.core :refer :all]))
+
+(fact "Тестування додавання"
+  (add 2 2) => 4
+  (add 3 4) => 7)
+```
+
+Після запуску тесту через Midje з `lein midje`, вивід покаже щось на зразок:
+
+```
+All checks (2) succeeded.
+```

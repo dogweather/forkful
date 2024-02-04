@@ -1,56 +1,68 @@
 ---
-title:                "디렉토리의 존재 여부 확인하기"
-date:                  2024-01-19
-simple_title:         "디렉토리의 존재 여부 확인하기"
-
+title:                "디렉토리가 존재하는지 확인하기"
+date:                  2024-02-03T19:07:10.072343-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "디렉토리가 존재하는지 확인하기"
 tag:                  "Files and I/O"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/cpp/checking-if-a-directory-exists.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (무엇과 왜?)
-`directory` 존재 여부를 확인하는 것은 파일 시스템에 특정 폴더가 있는지 확인하는 과정이다. 프로그래머는 파일을 저장하거나 읽기 전 유효한 경로인지 확인하기 위해 이 작업을 수행한다.
+## 무엇을, 왜?
+디렉토리가 존재하는지 확인한다는 것은, 파일을 읽거나 쓰기 전에 지정된 경로에 디렉토리가 있는지를 결정하는 것입니다. 프로그래머들은 파일 작업과 관련된 오류를 피하고, 자신들의 애플리케이션에서 파일 처리 작업의 실행을 더욱 원활하고 신뢰할 수 있게 만들기 위해 이런 작업을 합니다.
 
-## How to: (어떻게 하나요?)
-C++17부터 지원하는 `<filesystem>` 헤더를 사용해서 `directory` 존재 여부를 간단하게 확인할 수 있다. 다음은 예제 코드와 그 출력 결과이다.
+## 방법:
+현대의 C++(C++17 이후)에서는 파일시스템 라이브러리를 사용하여 디렉토리의 존재 여부를 확인할 수 있습니다. 이 라이브러리는 디렉토리의 존재 여부를 확인하는 것을 포함하여 파일시스템 작업을 수행하는 표준화되고 직관적인 방법을 제공합니다.
 
-```C++
+```cpp
 #include <iostream>
 #include <filesystem>
 
 namespace fs = std::filesystem;
 
 int main() {
-    fs::path dir_to_check = "/path/to/directory";
+    const fs::path dirPath = "/path/to/directory";
 
-    if (fs::exists(dir_to_check)) {
-        std::cout << "The directory exists.\n";
+    if (fs::exists(dirPath) && fs::is_directory(dirPath)) {
+        std::cout << "디렉토리가 존재합니다." << std::endl;
     } else {
-        std::cout << "The directory does not exist.\n";
+        std::cout << "디렉토리가 존재하지 않습니다." << std::endl;
     }
 
     return 0;
 }
 ```
-
-예제 출력 결과는 다음과 같다:
-
+디렉토리가 존재하는 경우 샘플 출력:
 ```
-The directory exists.
-```
-또는 
-```
-The directory does not exist.
+디렉토리가 존재합니다.
 ```
 
-## Deep Dive (심층 분석)
-과거에는 C++ 표준에는 디렉토리 존재 여부를 직접적으로 확인할 수 있는 기능이 없었다. 대신, `boost::filesystem` 라이브러리가 사용되곤 했다. C++17 이전에는 `stat` 함수(POSIX API)를 사용하거나 플랫폼 종속적인 API를 이용해야 했다.
+디렉토리가 존재하지 않는 경우 샘플 출력:
+```
+디렉토리가 존재하지 않습니다.
+```
 
-`<filesystem>`은 파일 시스템을 다루는 표준이며, `fs::exists` 함수는 말 그대로 파일이나 디렉토리가 존재하는지 확인한다. 기존에는 직접 OS에 따른 API를 호출하거나 외부 라이브러리에 의존해야 했던 작업을, 이제는 훨씬 간단하게 할 수 있게 되었다. 또한 에러 처리도 간결해졌다. `fs::exists`는 `fs::filesystem_error`를 던지지 않고 실패 시에는 단지 `false`를 반환한다.
+아직 C++17을 사용하지 않거나 추가 기능이 필요한 프로젝트의 경우, Boost 파일시스템 라이브러리는 유사한 기능을 제공하는 인기 있는 타사 선택입니다.
 
-## See Also (참고 자료)
-- [cppreference.com on std::filesystem](https://en.cppreference.com/w/cpp/filesystem)
-- Boost Filesystem (이용하고자 한다면, C++17 이전에 대한 읽어볼 만한 내용): [Boost Filesystem Documentation](https://www.boost.org/doc/libs/1_75_0/libs/filesystem/doc/index.htm)
-- POSIX 'stat' function documentation for comparison: [POSIX stat](https://pubs.opengroup.org/onlinepubs/009695399/functions/stat.html)
+```cpp
+#include <iostream>
+#include <boost/filesystem.hpp>
+
+namespace fs = boost::filesystem;
+
+int main() {
+    const fs::path dirPath = "/path/to/directory";
+
+    if (fs::exists(dirPath) && fs::is_directory(dirPath)) {
+        std::cout << "디렉토리가 존재합니다." << std::endl;
+    } else {
+        std::cout << "디렉토리가 존재하지 않습니다." << std::endl;
+    }
+
+    return 0;
+}
+```
+Boost 파일시스템을 사용하면, 지정된 경로의 디렉토리 존재 여부에 따라 C++17 파일시스템 예제와 동일한 출력이 됩니다.

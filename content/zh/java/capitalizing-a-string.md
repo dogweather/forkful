@@ -1,43 +1,67 @@
 ---
-title:                "字符串首字母大写"
-date:                  2024-01-19
-simple_title:         "字符串首字母大写"
-
+title:                "字符串大写化"
+date:                  2024-02-03T19:05:43.989328-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "字符串大写化"
 tag:                  "Strings"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/java/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? 什么以及为什么?
-大写字符串指的是将字符串中的所有小写字母转换成大写字母。程序员通常这样做来标准化文本输入，比如用户输入、数据处理前统一格式，或者当系统需要以一致的方式显示信息时。
+## 什么和为什么？
+字符串的首字母大写涉及修改字符串中每个单词的首字母为大写，同时确保其余的字母保持小写。这种常见的字符串操作任务对于格式化应用程序中的文本非常有用，比如按照约定或语法正确性准备用户名称或标题。
 
-## How to: 如何操作
+## 如何操作：
+Java的标准库没有提供直接一次性将整个字符串大写的方法，但你可以结合内置方法来实现这一目标。对于更复杂的需求，第三方库像Apache Commons Lang提供了直接的解决方案。
+
+### 使用Java的内置方法
+不使用外部库来大写字符串，你可以将字符串分割成单词，将每个单词的首字母大写，然后再将它们重新连接。这里有一个简单的方法：
+
 ```java
-public class CapitalizeStringExample {
+public class CapitalizeString {
     public static void main(String[] args) {
-        String original = "hello world!";
-        String capitalized = original.toUpperCase();
-        System.out.println(capitalized); // HELLO WORLD!
+        String text = "hello, world!";
+        String capitalizedText = capitalizeWords(text);
+        System.out.println(capitalizedText); // 输出: "Hello, World!"
+    }
+
+    public static String capitalizeWords(String str) {
+        char[] chars = str.toLowerCase().toCharArray();
+        boolean found = false;
+        for (int i = 0; i < chars.length; i++) {
+            if (!found && Character.isLetter(chars[i])) {
+                chars[i] = Character.toUpperCase(chars[i]);
+                found = true;
+            } else if (Character.isWhitespace(chars[i]) || chars[i]=='.' || chars[i]=='\'') { 
+                found = false;
+            }
+        }
+        return String.valueOf(chars);
     }
 }
 ```
-输出:
+
+这段代码将整个字符串转换为小写，然后遍历每个字符，将每个单词的首字母大写。它将空格、句号和撇号视为单词分隔符。
+
+### 使用Apache Commons Lang
+
+Apache Commons Lang库使用`WordUtils.capitalizeFully()`方法提供了更优雅的解决方案，这个方法为你处理了各种边缘情况和分隔符：
+
+```java
+// 添加依赖: org.apache.commons:commons-lang3:3.12.0
+
+import org.apache.commons.text.WordUtils;
+
+public class CapitalizeString {
+    public static void main(String[] args) {
+        String text = "hello, world!";
+        String capitalizedText = WordUtils.capitalizeFully(text);
+        System.out.println(capitalizedText); // 输出: "Hello, World!"
+    }
+}
 ```
-HELLO WORLD!
-```
 
-## Deep Dive 深入探究
-字符串大写在 Java 中相当简单。使用 `String` 类的 `toUpperCase()` 方法，就可以轻松实现。这个方法回溯到 Java 早期版本，提供了一种快速方便的方式来转换字符。
-
-
-还有其他方法，比如通过 `StringBuilder` 或者遍历字符串中的每个字符来手动转换。但是这些方法的效率没有 `toUpperCase()` 高，因为 `toUpperCase()` 方法已经高度优化。还有 `Locale` 考虑： `toUpperCase(Locale locale)` 版本允许你针对特定语言环境（比如土耳其语）做出正确的字符转换。
-
-
-字符串处理是编程中的常见任务。它涉及到的知识有字符编码、内部字符串表示（在 Java 中是 UTF-16）和性能考量。字符串操作，尤其是在大数据量时，可能会影响应用性能。因此，合理优化字符串使用是很重要的。
-
-## See Also 相关链接
-- Oracle官方文档: [String.toUpperCase()](https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/String.html#toUpperCase())
-- Java String API 指南: [Guide to java.lang.String](https://www.baeldung.com/java-string)
-- 字符编码简介: [Understanding Character Encoding](https://www.w3schools.com/charsets/default.asp)
+要使用这个方法，你需要将Apache Commons Lang库添加到你的项目中。这个库方法不仅将每个单词的首字母大写，还将每个单词中其余的字母转换为小写，确保整个字符串中的大小写模式一致。

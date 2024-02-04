@@ -1,47 +1,100 @@
 ---
-title:                "Trabajando con archivos CSV"
-date:                  2024-01-19
-simple_title:         "Trabajando con archivos CSV"
-
+title:                "Trabajando con CSV"
+date:                  2024-02-03T19:21:19.699380-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Trabajando con CSV"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/typescript/working-with-csv.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Qué es y por qué?
-Trabajar con CSV implica manipular archivos del formato “Valores Separados por Comas”, que es común para datos tabulares. Los programadores lo hacen porque es un formato simple, ampliamente soportado y fácil de integrar con hojas de cálculo y bases de datos.
+## Qué y Por Qué?
+
+Trabajar con CSV (Valores Separados por Comas) implica la lectura y escritura de archivos CSV, un formato común de intercambio de datos utilizado debido a su simplicidad y amplio soporte a través de diversas plataformas e idiomas. Los programadores interactúan con archivos CSV para importar o exportar datos desde aplicaciones, bases de datos y servicios, permitiendo una fácil manipulación y compartición de datos.
 
 ## Cómo hacerlo:
-```TypeScript
+
+En TypeScript, puedes trabajar con archivos CSV mediante código nativo o aprovechando bibliotecas de terceros como `csv-parser` para leer y `csv-writer` para escribir archivos CSV.
+
+### Leyendo CSV con `csv-parser`
+
+Primero, instala `csv-parser` a través de npm:
+
+```
+npm install csv-parser
+```
+
+Luego, lee un archivo CSV así:
+
+```typescript
 import fs from 'fs';
-import parse from 'csv-parse/lib/sync';
+import csv from 'csv-parser';
 
-// Leer archivo CSV
-const input = fs.readFileSync('./datos.csv', 'utf-8');
+const results = [];
 
-// Convertir CSV a JSON
-const records = parse(input, {
-  columns: true,
-  skip_empty_lines: true
+fs.createReadStream('data.csv')
+  .pipe(csv())
+  .on('data', (data) => results.push(data))
+  .on('end', () => {
+    console.log(results);
+    // Salida: Array de objetos, cada uno representando una fila en el CSV
+  });
+```
+
+Asumiendo que `data.csv` contiene:
+
+```
+name,age
+Alice,30
+Bob,25
+```
+
+La salida será:
+
+```
+[ { name: 'Alice', age: '30' }, { name: 'Bob', age: '25' } ]
+```
+
+### Escribiendo CSV con `csv-writer`
+
+Para escribir en un archivo CSV, primero instala `csv-writer`:
+
+```
+npm install csv-writer
+```
+
+Luego, úsalo de la siguiente manera:
+
+```typescript
+import { createObjectCsvWriter as createCsvWriter } from 'csv-writer';
+
+const csvWriter = createCsvWriter({
+  path: 'out.csv',
+  header: [
+    {id: 'name', title: 'NOMBRE'},
+    {id: 'age', title: 'EDAD'}
+  ]
 });
 
-// Uso de los datos
-records.forEach((record) => {
-  console.log(`Nombre: ${record.Nombre}, Edad: ${record.Edad}`);
-});
-```
-Salida de ejemplo:
-```
-Nombre: Juan, Edad: 30
-Nombre: Ana, Edad: 25
-...
+const data = [
+  { name: 'Alice', age: 30 },
+  { name: 'Bob', age: 25 }
+];
+
+csvWriter
+  .writeRecords(data)
+  .then(() => console.log('El archivo CSV se escribió con éxito'));
 ```
 
-## Análisis profundo:
-El formato CSV existe desde los primeros días de las computadoras personales. Alternativas como XML y JSON ofrecen estructuras más complejas, pero el CSV sigue siendo popular por su simplicidad. En TypeScript, puedes implementar la manipulación de CSV con librerías como `csv-parse` para lectura o `csv-stringify` para escritura, lo cual facilita trabajar con archivos CSV de una manera más tipada y segura.
+Este código escribe lo siguiente en `out.csv`:
 
-## Ver también:
-- Documentación sobre `csv-parse`: https://csv.js.org/parse/
-- Guía de Node.js para trabajar con archivos del sistema: https://nodejs.dev/learn/reading-files-with-nodejs
-- Convertir CSV a JSON en línea: https://csvjson.com/csv2json
+```
+NOMBRE,EDAD
+Alice,30
+Bob,25
+```
+
+Estos ejemplos muestran cómo integrar el procesamiento de CSV en tus proyectos de TypeScript de manera eficiente, ya sea para el análisis de datos o la persistencia de datos de aplicaciones externamente.

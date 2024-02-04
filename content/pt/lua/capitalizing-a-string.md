@@ -1,33 +1,53 @@
 ---
 title:                "Capitalizando uma string"
-date:                  2024-01-19
+date:                  2024-02-03T19:05:48.766397-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Capitalizando uma string"
-
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/lua/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## O Que & Porquê?
-Capitalizar uma string significa transformar todas as letras iniciais de palavras em maiúsculas. Programadores fazem isso para padronizar textos, como títulos ou nomes próprios, melhorando a legibilidade e a apresentação dos dados.
+Capitalizar uma string envolve modificar o primeiro caractere de cada palavra em uma frase para maiúscula, garantindo que o restante esteja em minúscula. Essa técnica é comumente usada para formatar texto para uma saída mais profissional ou legível, como preparar títulos ou entrada de usuário para exibição.
 
 ## Como Fazer:
-Para capitalizar uma string em Lua, você pode utilizar a função `gsub` encontrada na biblioteca padrão de string. Aqui está um exemplo simples:
+Lua não possui uma função embutida para capitalizar strings, mas você pode facilmente realizar essa tarefa usando funções básicas de manipulação de strings. Aqui está uma função simples para capitalizar a primeira letra de uma única palavra:
 
-```Lua
-function capitalizarString(str)
-  return (str:gsub("(%a)([%w_']*)", function(first, rest) return first:upper()..rest:lower() end))
+```lua
+function capitalize(word)
+    return word:sub(1,1):upper() .. word:sub(2):lower()
 end
 
-print(capitalizarString("olá, mundo do lua!"))  -- Saída: Olá, Mundo Do Lua!
+print(capitalize("hello"))  -- Saída: Hello
 ```
 
-## Mergulho Profundo:
-O método `gsub` é usado para substituir ocorrências em strings. Desde o surgimento do Lua em 1993, a capitalização de strings sempre foi realizada por meio de funções personalizadas, pois Lua não fornece uma função integrada para isso. Alternativas incluem o uso de `string.lower` e `string.upper` para manipular a string em mais detalhes ou o emprego de expressões regulares em ambientes que ofereçam essa funcionalidade, como o LuaJIT.
+Para capitalizar cada palavra em uma frase, você pode dividir a frase em palavras, capitalizar cada uma, e depois juntá-las novamente:
 
-A capitalização de uma string deve considerar também casos especiais, como abreviações e nomes que não seguem a regra padrão. Outra consideração é o desempenho, uma vez que, a função `gsub` pode ser menos eficiente se usada repetidamente em grandes volumes de texto.
+```lua
+function capitalizeSentence(sentence)
+    local words = {}
+    for word in sentence:gmatch("%S+") do
+        table.insert(words, capitalize(word))
+    end
+    return table.concat(words, " ")
+end
 
-## Veja Também:
-- Documentação oficial do Lua `string` library: [http://www.lua.org/manual/5.4/manual.html#6.4](http://www.lua.org/manual/5.4/manual.html#6.4)
-- LuaJIT, uma implementação Just-In-Time Compiler do Lua que oferece expressões regulares: [http://luajit.org/](http://luajit.org/)
+print(capitalizeSentence("hello world from lua"))  -- Saída: Hello World From Lua
+```
+
+Se você estiver trabalhando em um projeto onde o desempenho é crucial e você se encontrar precisando de capacidades de manipulação de string mais avançadas, considere usar uma biblioteca de terceiros como `Penlight`. Penlight melhora Lua com funções de manipulação de strings mais versáteis, entre outras utilidades:
+
+```lua
+-- Assumindo que Penlight está instalado:
+local pl = require("pl.stringx")
+local text = "hello lua users"
+text = pl.capitalized(text)
+print(text)  -- Saída: Hello lua users
+
+-- Nota: A função capitalized do Penlight só capitaliza a primeira palavra.
+-- Para capitalizar cada palavra, você ainda implementaria uma solução personalizada ou exploraria outras bibliotecas.
+```

@@ -1,53 +1,72 @@
 ---
-title:                "עבודה עם קבצי CSV"
-date:                  2024-01-19
-simple_title:         "עבודה עם קבצי CSV"
-
+title:                "עובדים עם CSV"
+date:                  2024-02-03T19:21:55.336344-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "עובדים עם CSV"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/swift/working-with-csv.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## מה ולמה?
-עבודה עם קובצי CSV מתייחסת לעיבוד ואינטראקציה עם נתונים המאורגנים בתצורת "ערכים מופרדים בפסיקים" – פורמט פופולרי לייצוא ויבוא של נתונים. תכניתנים עובדים עם קובצי CSV מכיוון שהם פשוטים לקריאה ולעיבוד גם על ידי מחשבים וגם על ידי בני אדם.
+
+עבודה עם קבצי CSV (ערכים מופרדים בפסיק) כוללת ניתוח ויצירת נתונים מובנים מקבצי טקסט שבהם כל שורה מייצגת רשומה וכל רשומה מורכבת משדות המופרדים בפסיקים. מתכנתים לעיתים קרובות מתעסקים בפעילות זו כדי לייבא, לייצא ולשנות נתונים טבלאיים בקלות באמצעות פורמט שנתמך ברחבי פלטפורמות ושפות תכנות שונות, בשל פשטותו ופורמט הקריא לאדם.
 
 ## איך לעשות:
-```Swift
-import Foundation
 
-// קריאת CSV מקובץ
-func readCSV(from filePath: String) -> String? {
-    do {
-        let contents = try String(contentsOfFile: filePath, encoding: .utf8)
-        return contents
-    } catch {
-        print("Error reading the file.")
-        return nil
-    }
+ב-Swift, אין תמיכה ייחודית לניתוח קבצי CSV ישירות, אך ניתן להתמודד עם נתוני CSV באמצעות שימוש בשיטות `String` לפיצול התוכן, או על ידי הפעלת ספריות צד ג' כמו SwiftCSV לגישה מסודרת יותר. הנה שתי השיטות:
+
+### ניתוח ידני ללא ספריות חיצוניות
+```swift
+// שקול מחרוזת CSV פשוטה
+let csvString = """
+name,age,city
+John Doe,29,New York
+Jane Smith,34,Los Angeles
+"""
+
+// פצל את מחרוזת ה-CSV לשורות
+let rows = csvString.components(separatedBy: "\n")
+
+// חלץ את המפתחות מהשורה הראשונה
+let keys = rows.first?.components(separatedBy: ",")
+
+// עבור על השורות החל מהשנייה
+var result: [[String: String]] = []
+for row in rows.dropFirst() {
+    let values = row.components(separatedBy: ",")
+    let dict = Dictionary(uniqueKeysWithValues: zip(keys!, values))
+    result.append(dict)
 }
 
-// פירוק לשורות ועמודות
-func parseCSV(_ contents: String) -> [[String]] {
-    let rows = contents.components(separatedBy: "\n")
-    return rows.map { $0.components(separatedBy: ",") }
-}
-
-// דוגמא לשימוש
-if let filePath = Bundle.main.path(forResource: "example", ofType: "csv"),
-   let csvContent = readCSV(from: filePath) {
-    let parsedData = parseCSV(csvContent)
-    print(parsedData)
-}
-
-// פלט דוגמא
-// [["שם", "תז", "אימייל"], ["דני", "123", "danny@example.com"], ...]
+// פלט לדוגמה
+print(result)
+// פלט: [{"city": "New York", "age": "29", "name": "John Doe"}, {"city": "Los Angeles", "age": "34", "name": "Jane Smith"}]
 ```
+גישה זו פשוטה אך חסרה עמידות, במיוחד עם קבצי CSV המכילים מקרים מיוחדים כמו פסיקים בערכים, שבירות שורה בתוך שדות וכו'.
 
-## עיון מעמיק
-CSV, שהוחדר בשנות ה-70, הוא פורמט פשוט לייצג טבלאות נתונים כטקסט רגיל. ישנם פורמטים אלטרנטיביים כגון JSON ו-XML אשר מאפשרים מורכבות רבה יותר אך גם דורשים עיבוד מורכב יותר. ב-Swift, קריאה וניתוח של קבצי CSV מתבצעת לרוב באמצעות המרת הקובץ למחרוזת ולאחר מכן שימוש במתודות פירוק המחרוזת לשורות ועמודות.
+### שימוש בספריית SwiftCSV
+ראשית, הוסף את SwiftCSV לפרויקט שלך על ידי כלולה בתלות `Package.swift` שלך:
+```swift
+.package(url: "https://github.com/swiftcsv/SwiftCSV.git", from: "0.5.6")
+```
+לאחר מכן, יבא והשתמש בה כך:
+```swift
+import SwiftCSV
 
-## ראו גם
-- תיעוד Swift רשמי: [https://swift.org/documentation/](https://swift.org/documentation/)
-- מדריך לקריאה וכתיבה של קבצי CSV ב-Swift: [https://www.hackingwithswift.com/example-code/system/how-to-parse-a-csv-file-into-an-array](https://www.hackingwithswift.com/example-code/system/how-to-parse-a-csv-file-into-an-array)
-- דיון בפורומים על ניתוח נתוני CSV ב-Swift: [https://forums.swift.org/](https://forums.swift.org/)
+// הנח ש-`csvString` מוגדר כמו לעיל
+
+// צור אובייקט CSV
+if let csv = try? CSV(string: csvString) {
+    // גש לשורות כמילונות
+    let rows = csv.namedRows
+    
+    // פלט לדוגמה
+    print(rows)
+    // פלט: [{"city": "New York", "age": "29", "name": "John Doe"}, {"city": "Los Angeles", "age": "34", "name": "Jane Smith"}]
+}
+```
+SwiftCSV מפשטת את הניתוח על ידי התמודדות אוטומטית עם דקויות כמו פסיקים מוכלים, שבירות שורה בשדות, וקידוד תווים. עם זאת, זכור להתמודד עם שגיאות אפשריות ביישומים בעולם האמיתי, במיוחד כאשר מתמודדים עם מקורות נתונים חיצוניים.

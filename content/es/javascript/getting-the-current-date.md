@@ -1,44 +1,49 @@
 ---
 title:                "Obteniendo la fecha actual"
-date:                  2024-01-20T15:15:04.878084-07:00
+date:                  2024-02-03T19:09:43.174356-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Obteniendo la fecha actual"
-
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/javascript/getting-the-current-date.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Qué y Por Qué?
-Obtener la fecha actual en Javascript es acceder al momento presente en el código. Los programadores lo hacen para registros, funciones de tiempo real y todo lo que necesita una marcación temporal.
+Obtener la fecha actual en JavaScript es una tarea fundamental, que implica recuperar y posiblemente manipular la fecha y hora de hoy. Los programadores realizan esto para mostrar fechas en sitios web, en aplicaciones, para rastrear interacciones de usuarios, o para manejar datos sensibles al tiempo.
 
 ## Cómo hacerlo:
-Aquí tienes el cómo. Simple y directo:
+En JavaScript puro (vanilla), el objeto `Date` se utiliza para trabajar con fechas y horas. Así es como puedes obtener la fecha y hora actuales:
 
-```Javascript
-// Obtener la fecha y hora actuales
-const ahora = new Date();
-
-// Mostrar la fecha y hora
-console.log(ahora);
+```javascript
+const currentDate = new Date();
+console.log(currentDate); // Salida de ejemplo: Fri Apr 14 2023 12:34:56 GMT+0100 (Hora de Verano Británica)
 ```
 
-Si corres eso, obtienes algo como:
+Para mostrar solo la fecha en un formato más amigable para el usuario, puedes usar métodos como `toLocaleDateString()`:
 
+```javascript
+console.log(currentDate.toLocaleDateString()); // Salida de ejemplo: 14/4/2023
 ```
-2023-04-01T12:34:56.789Z
+
+Para tener más control sobre el formato, bibliotecas de terceros como *Moment.js* o *date-fns* son muy populares, aunque es bueno saber que Moment.js ahora se considera un proyecto legado en modo de mantenimiento.
+
+Usando *Moment.js*:
+
+```javascript
+const moment = require('moment'); // asumiendo Node.js o usando un paquete de módulos
+const formattedDate = moment().format('YYYY-MM-DD');
+console.log(formattedDate); // Salida de ejemplo: 2023-04-14
 ```
 
-Eso es todo. Ahora sabes la hora exacta.
+Con *date-fns*, que enfatiza la modularización permitiéndote importar solo lo que necesitas:
 
-## Profundizando
-Breve historia: JavaScript nació en 1995. Desde entonces, `Date` ha estado allí, aunque ha evolucionado.
+```javascript
+const { format } = require('date-fns');
+const formattedDate = format(new Date(), 'yyyy-MM-dd');
+console.log(formattedDate); // Salida de ejemplo: 2023-04-14
+```
 
-Alternativas: Además de `new Date()`, librerías como Moment.js o date-fns ofrecen más funciones y flexibilidad, pero muchas veces son innecesarias para tareas sencillas.
-
-Detalles de implementación: `Date` en JavaScript usa el tiempo del sistema. Zonas horarias pueden complicar las cosas. La fecha/hora es UTC, universal.
-
-## Ver También
-- MDN Web Docs sobre `Date`: https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Date
-- Documentación de Moment.js: https://momentjs.com/docs/
-- Documentación de date-fns: https://date-fns.org/docs/Getting-Started
+Cada enfoque ofrece diferentes niveles de conveniencia y flexibilidad para trabajar con fechas en JavaScript, desde el objeto `Date` incorporado hasta capacidades de formato y manipulación más sofisticadas disponibles a través de bibliotecas.

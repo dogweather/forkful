@@ -1,42 +1,52 @@
 ---
 title:                "Obtenir la date actuelle"
-date:                  2024-01-20T15:14:41.973384-07:00
+date:                  2024-02-03T19:09:31.312136-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Obtenir la date actuelle"
-
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/haskell/getting-the-current-date.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Obtenir la date actuelle en Haskell est fondamental. Les programmeurs le font pour des logs, des timestamps ou des fonctionnalités dépendantes du temps.
+## Quoi & Pourquoi ?
+Récupérer la date actuelle en Haskell implique d'obtenir le temps système actuel et de le transformer en un format de date lisible. Les programmeurs font cela pour effectuer des opérations basées sur la date, telles que la journalisation, la planification de tâches ou le marquage temporel d'événements dans les applications.
 
-## How to:
-Pour choper la date du jour, Haskell est ton ami. Utilise `Data.Time` ; check l'exemple :
+## Comment faire :
+La bibliothèque standard de Haskell, `base`, fournit le module `Data.Time` qui offre des fonctionnalités pour travailler avec les dates et les heures. Voici comment l'utiliser pour obtenir la date actuelle :
 
-```Haskell
+```haskell
+import Data.Time (getCurrentTime, utctDay)
+
+main :: IO ()
+main = do
+    now <- getCurrentTime
+    let today = utctDay now
+    print today
+```
+
+Exemple de sortie :
+```
+2023-04-12
+```
+
+Pour plus de flexibilité, comme pour formater la date ou travailler avec différents fuseaux horaires, la bibliothèque `time` est inestimable. Voici comment vous pourriez formater la date actuelle :
+
+```haskell
 import Data.Time
 
 main :: IO ()
 main = do
-    currentDay <- getCurrentTime
-    putStrLn $ "La date et l'heure actuelles sont : " ++ show currentDay
+    now <- getCurrentTime
+    timezone <- getCurrentTimeZone
+    let zoneNow = utcToLocalTime timezone now
+    putStrLn $ formatTime defaultTimeLocale "%Y-%m-%d" zoneNow
 ```
 
-Si tu lances ça, voici ce que tu auras :
+Cela affiche la date actuelle au format `AAAA-MM-JJ`, ajusté au fuseau horaire local.
 
-```
-La date et l'heure actuelles sont : 2023-04-14 12:34:56.7891011 UTC
-```
+De plus, pour le support de bibliothèques tierces, `time` est fortement recommandé et souvent utilisé au sein de la communauté Haskell pour ses capacités étendues de manipulation des dates et des heures. Les exemples ci-dessus utilisent cette bibliothèque.
 
-Simple, non ?
-
-## Deep Dive
-Haskell et les dates, c'est une vieille histoire. `Data.Time` est l'évolution moderne, plus simple d'usage que l'antique `System.Time`. Côté alternatives, tu peux tenter `old-time` mais franchement, `Data.Time` t'offre tout ce qu'il te faut. Pense à `TimeZone` et `FormatTime` pour des manip' plus complexes (comme gérer les fuseaux horaires). Haskell gère les dates système via les types de données comme `UTCTime`, et tu peux formatter à ta sauce avec le package `time`.
-
-## See Also
-Pour creuser :
-
-- [`Data.Time` documentation](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time.html)
-- [Time package sur Hackage](https://hackage.haskell.org/package/time)
+Si vous avez besoin de manipulations de dates plus complètes, y compris le parsing à partir de chaînes ou des opérations arithmétiques avec des dates et des heures, explorer les fonctions supplémentaires dans `Data.Time` sera bénéfique.

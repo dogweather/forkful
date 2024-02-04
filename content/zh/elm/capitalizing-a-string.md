@@ -1,41 +1,52 @@
 ---
-title:                "字符串首字母大写"
-date:                  2024-01-19
-simple_title:         "字符串首字母大写"
-
+title:                "字符串大写化"
+date:                  2024-02-03T19:05:18.558406-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "字符串大写化"
 tag:                  "Strings"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/elm/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (是什么？为什么？)
-大写化字符串就是把所有字母变成大写。这样做有助于统一格式，比如用户输入或显示重要信息。
+## 什么和为什么？
 
-## How to (怎么做)
-Elm中没有内置的全大写函数，需要自己写个。下面是个简单的例子：
+字符串的首字母大写是指将给定字符串的首个字符转换为大写，同时保持其余部分为小写，这通常是为了标准化格式化或可读性目的。程序员频繁执行此任务，以确保数据一致地呈现，特别是在用户界面中或当处理和显示用户输入时。
+
+## 如何操作：
+
+在Elm中，没有一个内置函数是专门用来首字母大写字符串的。然而，你可以通过使用内置的`String`模块函数，如`toUpper`、`toLower`、`left`和`dropLeft`，来轻松实现这一点。
 
 ```elm
-import String
-
 capitalize : String -> String
 capitalize str =
-    String.toUpper str
+    if String.isEmpty str then
+        ""
+    else
+        String.toUpper (String.left 1 str) ++ String.toLower (String.dropLeft 1 str)
 
+-- 示例用法
 main =
-    String.toUpper "hello, world!"
+    String.toList "hello world" |> List.map capitalize |> String.join " "
+    -- 输出："Hello World"
 ```
 
-运行这段代码，输出会是 `HELLO, WORLD!`。
+对于更复杂的场景，或者如果你更愿意使用一个提供直接首字母大写字符串的库，你可能会考虑使用第三方包，比如`elm-community/string-extra`。然而，根据我最后的更新，Elm的生态系统鼓励使用内置函数来处理此类任务，以保持语言和项目的精简。
 
-## Deep Dive (深入了解)
-字符串的大写化不是Elm特有的。很多编程语言都有这个功能。在历史上，大写字符被用来提高文本的可读性，强调重要信息。大多数语言都提供了原生方法来实现这个任务，但Elm要求开发者自己动手。实际上，`String.toUpper` 函数就是通过遍历字符串中的每一个字符，并且一个个地把它们转换成大写字母来实现的。
+```elm
+import String.Extra as StringExtra
 
-Elm中对字符串的处理遵循不变性原则，这意味着原始字符串在转换为大写之后不会改变，而是创建一个新的字符串。这种处理方式在功能性编程中很常见，有助于避免副作用，使程序更可靠、更易于维护。
+-- 如果第三方库中有`capitalize`函数的情况
+capitalizeWithLibrary : String -> String
+capitalizeWithLibrary str =
+    StringExtra.capitalize str
 
-尽管Elm提供了`String.toUpper`这样的基础函数，但其他一些操作字符串的库，比如`elm-string-extra`，可以用于更复杂的字符串处理。
+-- 使用假想库函数的示例用法
+main =
+    "this is elm" |> capitalizeWithLibrary
+    -- 假想输出："This is elm"
+```
 
-## See Also (另请参阅)
-- Elm 官方文档中的[String模块](https://package.elm-lang.org/packages/elm/core/latest/String)
-- [elm-string-extra](https://package.elm-lang.org/packages/elm-community/string-extra/latest/)，提供了一些额外的字符串处理功能。
+如果你正在寻找额外的功能，超出标准库的范畴，请始终检查Elm包仓库，了解最新和最受欢迎的字符串操作库。

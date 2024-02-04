@@ -1,89 +1,129 @@
 ---
-title:                "处理 YAML 文件"
-date:                  2024-01-19
-simple_title:         "处理 YAML 文件"
-
+title:                "使用YAML工作"
+date:                  2024-02-03T19:26:19.131684-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "使用YAML工作"
 tag:                  "Data Formats and Serialization"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/php/working-with-yaml.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (什么以及为什么？)
-YAML 是 "YAML Ain't Markup Language" 的缩写，一种易于阅读的数据序列化标准。PHP程序员使用YAML是因为它清晰、直观，适合配置文件、数据交换。
+## 什么 & 为什么？
 
-## How to: (怎么做：)
-PHP 使用 `yaml` 扩展来解析和生成 YAML。要操作 YAML，你需要安装这个扩展。
+YAML，即“YAML Ain't Markup Language”（YAML不是标记语言），是一种人类可读的数据序列化格式，常用于配置文件。程序员选择使用YAML是因为它简单易读，非常适合以易于管理的形式存储设置、参数乃至复杂的数据结构。
 
-```PHP
+## 如何操作：
+
+截至当前版本，PHP尚不支持在其标准库中解析YAML。在PHP中使用YAML最直接的方式是通过使用Symfony YAML组件或者`yaml` PECL扩展。
+
+### 使用Symfony YAML组件
+
+首先，通过Composer安装Symfony YAML组件：
+
+```bash
+composer require symfony/yaml
+```
+
+然后，您可以按如下方式解析和生成YAML内容：
+
+```php
 <?php
-// 安装扩展：pecl install yaml
+require_once __DIR__.'/vendor/autoload.php';
 
-// 解析 YAML 字符串
-$yamlString = "
-shop:
-  book:
-    - title: 'Learning PHP'
-      price: 10
-    - title: 'Mastering YAML'
-      price: 15
-";
+use Symfony\Component\Yaml\Yaml;
 
-$array = yaml_parse($yamlString);
+// 解析YAML
+$yamlString = <<<YAML
+greet: Hello, World!
+framework:
+  name: Symfony
+  language: PHP
+YAML;
 
-// 输出数组
+$array = Yaml::parse($yamlString);
 print_r($array);
 
-// 生成 YAML 字符串
-$arrayToYaml = [
-    'store' => [
-        'fruit' => [
-            ['name' => 'apple', 'color' => 'red'],
-            ['name' => 'banana', 'color' => 'yellow'],
-        ],
+// 从数组创建YAML
+$array = [
+    'greet' => 'Hello, YAML!',
+    'framework' => [
+        'name' => 'Symfony',
+        'language' => 'PHP',
     ],
 ];
 
-$yamlOutput = yaml_emit($arrayToYaml);
-echo $yamlOutput;
+$yaml = Yaml::dump($array);
+echo $yaml;
 ```
 
-样例输出：
+解析时的示例输出：
+
 ```
 Array
 (
-    [shop] => Array
+    [greet] => Hello, World!
+    [framework] => Array
         (
-            [book] => Array
-                (
-                    [0] => Array
-                        (
-                            [title] => Learning PHP
-                            [price] => 10
-                        )
-
-                    [1] => Array
-                        (
-                            [title] => Mastering YAML
-                            [price] => 15
-                        )
-                )
+            [name] => Symfony
+            [language] => PHP
         )
-)
 
-store:
-  fruit:
-    - name: apple
-      color: red
-    - name: banana
-      color: yellow
+)
 ```
 
-## Deep Dive (深入探索)
-YAML 从 2001 年起就有了，用于取代复杂的 XML。相比 JSON，YAML 更注重人类可读性，但JSON更紧凑、解析更快。在PHP中，`yaml_parse()` 和 `yaml_emit()`是主要函数，内部解析细节依赖LibYAML库，这保证了速度和兼容性。
+生成时的示例输出：
 
-## See Also (另请参阅)
-- PHP 官方文档关于 YAML 扩展: [https://www.php.net/manual/en/book.yaml.php](https://www.php.net/manual/en/book.yaml.php)
-- YAML 官方网站，了解YAML标准: [https://yaml.org/](https://yaml.org/)
-- LibYAML 项目页面，了解底层库: [http://pyyaml.org/wiki/LibYAML](http://pyyaml.org/wiki/LibYAML)
+```
+greet: Hello, YAML!
+framework:
+    name: Symfony
+    language: PHP
+```
+
+### 使用`yaml` PECL扩展
+
+如果您愿意，或者如果您的项目要求允许，PECL扩展可以是另一种有效的方法来处理YAML。首先，确保安装了扩展：
+
+```bash
+pecl install yaml
+```
+
+然后，在您的`php.ini`配置中启用它：
+
+```ini
+extension=yaml.so
+```
+
+以下是如何解析和发出YAML：
+
+```php
+<?php
+
+// 解析YAML
+$yamlString = <<<YAML
+greet: Hello, World!
+framework:
+  name: Symfony
+  language: PHP
+YAML;
+
+$array = yaml_parse($yamlString);
+print_r($array);
+
+// 从数组创建YAML
+$array = [
+    'greet' => 'Hello, YAML!',
+    'framework' => [
+        'name' => 'Symfony',
+        'language' => 'PHP',
+    ],
+];
+
+$yaml = yaml_emit($array);
+echo $yaml;
+```
+
+输出将与Symfony组件的类似，展示了YAML作为人类可读格式与PHP数组结构之间桥梁的角色，方便了配置和数据处理。

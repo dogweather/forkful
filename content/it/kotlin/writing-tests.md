@@ -1,52 +1,99 @@
 ---
 title:                "Scrivere test"
-date:                  2024-01-19
+date:                  2024-02-03T19:31:02.263834-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Scrivere test"
-
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/kotlin/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Cosa & Perché?
 
-Scrivere test è il processo di creare script programmati che controllano il funzionamento del codice. I programmatori lo fanno per assicurare che il codice funzioni correttamente e per prevenire la comparsa di bug nel futuro.
+Scrivere test in Kotlin implica la creazione di frammenti di codice che validano automaticamente la correttezza funzionale dei moduli software, assicurando che funzionino come previsto. I programmatori lo fanno per individuare precocemente i bug, facilitare il refactoring del codice e fornire documentazione su come si intendono lavorare i componenti software.
 
 ## Come fare:
 
-In Kotlin puoi scrivere test unitari usando JUnit. Ecco una classe di esempio e un test unitario semplice.
+Kotlin supporta lo sviluppo guidato dai test con vari framework, i più popolari sono JUnit, Kotest e MockK per il mocking. Ecco un semplice esempio utilizzando JUnit:
 
 ```kotlin
-class Calcolatrice {
-    fun somma(a: Int, b: Int): Int {
-        return a + b
-    }
-}
+import org.junit.jupiter.api.Test
+import kotlin.test.assertEquals
 
-class CalcolatriceTest {
+class CalculatorTest {
+
     @Test
-    fun testSomma() {
-        val calc = Calcolatrice()
-        val risultato = calc.somma(2, 3)
+    fun `aggiunge due numeri`() {
+        val calcolatrice = Calculator()
+        val risultato = calcolatrice.add(2, 3)
         assertEquals(5, risultato)
     }
 }
+
+class Calculator {
+    fun add(a: Int, b: Int): Int = a + b
+}
 ```
 
-Output del test:
+**Output dell'esempio**
 
+```text
+Test superato.
 ```
-Test passed: testSomma(0.01s)
+
+Per un approccio ai test più sofisticato con Kotest, che offre uno stile di scrittura dei test più idiomatico per Kotlin, vedi l'esempio di seguito:
+
+```kotlin
+import io.kotest.core.spec.style.StringSpec
+import io.kotest.matchers.shouldBe
+
+class CalculatorSpec : StringSpec({
+    "aggiungere 2 e 3 dovrebbe ritornare 5" {
+        val calcolatrice = Calculator()
+        calcolatrice.add(2, 3) shouldBe 5
+    }
+})
 ```
 
-## Approfondimento
+Utilizzando MockK per testare con mock:
 
-Testare codice ha radici nelle prime giornate dello sviluppo software. Alternativamente, potresti usare strumenti come Mockito per mock objects o KotlinTest per un approccio specifico per Kotlin. I test possono essere scritti a diversi livelli: unità, integrazione, sistema, accettazione. 
+```kotlin
+import io.mockk.every
+import io.mockk.mockk
+import org.junit.jupiter.api.Test
+import kotlin.test.assertEquals
 
-## Vedi Anche:
+class ServiceTest {
 
-- Kotlin Testing Docs: https://kotlinlang.org/docs/reference/testing-overview.html
-- JUnit 5 User Guide: https://junit.org/junit5/docs/current/user-guide/
-- Mockito: https://site.mockito.org/
-- KotlinTest: https://github.com/kotest/kotest
+    private val repository = mockk<Repository>()
+    private val service = Service(repository)
+
+    @Test
+    fun `get data ritorna dati mockati`() {
+        every { repository.getData() } returns "Dati Mockati"
+
+        val risultato = service.getData()
+
+        assertEquals("Dati Mockati", risultato)
+    }
+}
+
+class Service(private val repository: Repository) {
+    fun getData(): String = repository.getData()
+}
+
+interface Repository {
+    fun getData(): String
+}
+```
+
+**Output dell'esempio**
+
+```text
+Test superato.
+```
+
+Questi esempi illustrano le basi della scrittura di test unitari in Kotlin. Man mano che la tua applicazione cresce, considera l'esplorazione di tecniche e strumenti di test più avanzati forniti da ogni framework.

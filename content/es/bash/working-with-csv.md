@@ -1,54 +1,75 @@
 ---
-title:                "Trabajando con archivos CSV"
-date:                  2024-01-19
-simple_title:         "Trabajando con archivos CSV"
-
+title:                "Trabajando con CSV"
+date:                  2024-02-03T19:18:29.613852-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Trabajando con CSV"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/bash/working-with-csv.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Qué es y por qué?
-Trabajar con CSV (valores separados por comas) significa manipular archivos de texto que almacenan tablas de datos, cada línea un registro y cada registro dividido en campos por comas. Los programadores lo usan por su simplicidad y compatibilidad universal para importar, exportar y manipular datos.
+## Qué y Por Qué
+Trabajar con archivos CSV (Valores Separados por Comas) en Bash consiste en procesar y manipular datos tabulares almacenados en formato de texto plano. Esto es esencial para los programadores, ya que permite la automatización de tareas de transformación, análisis e integración de datos directamente desde la línea de comandos, sin la necesidad de herramientas más pesadas o entornos de programación.
 
 ## Cómo hacerlo:
-Vamos directo al grano con algunos ejemplos de manipulación de CSV en Bash.
 
-```Bash
-# Leer y mostrar contenido de un archivo CSV
-cat datos.csv
+**Leyendo un Archivo CSV Línea por Línea**
 
-# Contar el número de filas en un archivo CSV
-wc -l < datos.csv
-
-# Mostrar la primera columna de todos los registros
-cut -d',' -f1 datos.csv
-
-# Añadir una columna al final de cada fila
-awk -F',' '{print $0",nueva_columna"}' datos.csv
-
-# Filtrar filas que contienen 'ejemplo'
-grep 'ejemplo' datos.csv
-
-# Ordenar el contenido de un archivo CSV según la segunda columna
-sort -t',' -k2 datos.csv
-```
-Ejemplo de salida para el comando `cut`:
-```
-id_usuario
-123
-456
-789
+```bash
+while IFS=, read -r column1 column2 column3
+do
+  echo "Columna 1: $column1, Columna 2: $column2, Columna 3: $column3"
+done < sample.csv
 ```
 
-## Más detalles:
-CSV es el formato de intercambio de datos más simple, concebido en los inicios de la informática personal cuando se buscaba una forma eficiente de mover datos en aplicaciones como bases de datos y hojas de cálculo. A pesar de su simplicidad, hay alternativas como JSON o XML, que proporcionan estructuras más complejas y metadatos. Sin embargo, CSV sigue siendo relevante por su facilidad de uso y amplia aceptación. Implementar scripts de Bash para manipular CSV es directo, pero se complica con datos complejos o cuando se requieren acciones más avanzadas, para lo cual se podrían considerar herramientas como `csvkit`.
+*Salida de muestra:*
 
-## Ver también:
-Para ampliación y herramientas adicionales consulta los siguientes enlaces:
+```
+Columna 1: id, Columna 2: nombre, Columna 3: correo electrónico
+...
+```
 
-- GNU `coreutils`: https://www.gnu.org/software/coreutils/manual/coreutils.html
-- `awk`: https://www.gnu.org/software/gawk/manual/gawk.html
-- `csvkit`: https://csvkit.readthedocs.io/en/latest/
-- Bash scripting guide: https://tldp.org/LDP/Bash-Beginners-Guide/html/
+**Filtrando Filas CSV Basadas en una Condición**
+
+Usando `awk`, puedes filtrar filas fácilmente. Por ejemplo, para encontrar filas donde la segunda columna sea igual a "Alice":
+
+```bash
+awk -F, '$2 == "Alice" { print $0 }' sample.csv
+```
+
+**Modificando el Valor de una Columna**
+
+Para cambiar la segunda columna a mayúsculas:
+
+```bash
+awk -F, 'BEGIN {OFS=",";} { $2 = toupper($2); print $0; }' sample.csv
+```
+
+**Ordenando un Archivo CSV Basado en una Columna**
+
+Puedes ordenar un archivo CSV basado en, digamos, la tercera columna (numéricamente):
+
+```bash
+sort -t, -k3,3n sample.csv
+```
+
+**Usando `csvkit` para Tareas Más Complejas**
+
+`csvkit` es un conjunto de herramientas de línea de comandos para convertir y trabajar con CSV. Se puede instalar a través de pip.
+
+Para convertir un archivo JSON a CSV:
+
+```bash
+in2csv data.json > data.csv
+```
+
+Para consultar un archivo CSV usando SQL:
+
+```bash
+csvsql --query "SELECT name FROM sample WHERE id = 10" sample.csv
+```
+
+*Nota: Instalar `csvkit` requiere Python y se puede hacer usando `pip install csvkit`.*

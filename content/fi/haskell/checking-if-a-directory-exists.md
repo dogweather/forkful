@@ -1,36 +1,42 @@
 ---
-title:                "Onko hakemisto olemassa? Tarkistaminen"
-date:                  2024-01-20T14:56:26.752490-07:00
-simple_title:         "Onko hakemisto olemassa? Tarkistaminen"
-
+title:                "Tarkistetaan, onko hakemisto olemassa"
+date:                  2024-02-03T19:07:37.950076-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Tarkistetaan, onko hakemisto olemassa"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/haskell/checking-if-a-directory-exists.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? - Mitä ja miksi?
-Tarkistetaan, onko hakemisto olemassa, eli testataan tiedostojärjestelmässä kyseisen polun olemassaolo. Ohjelmoijat tekevät tämän välttääkseen virheitä kuten tiedoston kirjoittamisen olemattomaan hakemistoon.
+## Mikä & Miksi?
+Hakemiston olemassaolon tarkistaminen on perustoiminto monissa ohjelmointitehtävissä, mikä mahdollistaa ehdolliset toimenpiteet hakemistorakenteiden läsnäolon tai puuttumisen perusteella. Se on elintärkeää tiedostojen käsittelyssä, automatisoiduissa skripteissä ja ohjelmiston alustavassa asetuksessa varmistettaessa, että tarvittavat hakemistot ovat paikoillaan, tai vältettäessä hakemistojen kaksoiskappaleiden luomista.
 
-## How to: - Kuinka tehdä:
+## Kuinka:
+Haskell tarjoaa peruskirjastonsa kautta suoraviivaisia tapoja tarkistaa hakemiston olemassaolo, pääasiassa käyttämällä `System.Directory` -moduulia. Katsotaanpa yksinkertaista esimerkkiä:
+
 ```haskell
 import System.Directory (doesDirectoryExist)
 
--- Pääfunktio, joka käyttää tarkistusta
 main :: IO ()
 main = do
-    let dirPath = "/path/to/directory"
-    exists <- doesDirectoryExist dirPath
-    putStrLn $ "Directory " ++ dirPath ++ (if exists then " exists." else " does not exist.")
-
--- Esimerkkinä voisi olla:
--- Directory /path/to/directory exists.
+  let dirPath = "/path/to/your/directory"
+  exists <- doesDirectoryExist dirPath
+  putStrLn $ "Onko hakemisto olemassa? " ++ show exists
 ```
 
-## Deep Dive - Syväsukellus:
-Haskell käyttää `System.Directory` -moduulia hakemistojen tarkistamiseen. Funktio `doesDirectoryExist` tuli käyttöön GHC:n version 6.2.2 mukana. Vaihtoehtoisesti voi käyttää `System.FilePath` yhdistettynä käyttöjärjestelmäkohtaisiin toimintoihin, kuten `posix` ja `unix`, mutta `doesDirectoryExist` on yksinkertaisin ja idiomaattisin tapa Haskellissa. Funktion toteutus käyttää alhaisen tason API-kutsuja tiedostojärjestelmän tilan selvittämiseen.
+Esimerkkitulo, riippuen siitä, onko hakemisto olemassa:
 
-## See Also - Katso myös:
-- Haskell `System.Directory` dokumentaatio: https://hackage.haskell.org/package/directory-1.3.6.1/docs/System-Directory.html
-- `System.FilePath` moduulin dokumentaatio: https://hackage.haskell.org/package/filepath
-- Virallinen oppaasi Haskell-ohjelmointikieleen: https://www.haskell.org/documentation
+```
+Onko hakemisto olemassa? True
+```
+Tai:
+```
+Onko hakemisto olemassa? False
+```
+
+Monimutkaisemmissa skenaarioissa tai lisäominaisuuksien tarpeessa saatat harkita suosittua kolmannen osapuolen kirjastoa, kuten `filepath`, tiedostopolkuja käsittelemään ja manipuloimaan abstraktimmalla tavalla. Kuitenkin pelkästään hakemiston olemassaolon tarkistamisen tarkoitukseen peruskirjaston `System.Directory` riittää ja on tehokas.
+
+Muista, että tiedostojärjestelmien kanssa työskentely voi vaihdella alustojen välillä, ja Haskellin lähestymistapa pyrkii abstrahoimaan joitakin näistä eroista. Testaa aina tiedostotoimintosi kohdejärjestelmässä varmistaaksesi odotetun käyttäytymisen.

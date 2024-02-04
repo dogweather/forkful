@@ -1,20 +1,25 @@
 ---
-title:                "रेगुलर एक्सप्रेशन का उपयोग"
-date:                  2024-01-19
-simple_title:         "रेगुलर एक्सप्रेशन का उपयोग"
-
+title:                "रेगुलर एक्सप्रेशन्स का उपयोग करना"
+date:                  2024-02-03T19:17:26.746742-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "रेगुलर एक्सप्रेशन्स का उपयोग करना"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/c-sharp/using-regular-expressions.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (क्या और क्यों?)
-Regular expressions (regex) का इस्तेमाल टेक्स्ट को पैटर्न के अनुसार खोजने, बदलने या उस पर ऑपरेशन करने के लिए किया जाता है। Programmers इसका इस्तेमाल इसलिए करते हैं क्योंकि यह जटिल टेक्स्ट प्रोसेसिंग टास्क को आसान और जल्दी हल करने में मदद करता है। 
+## क्या और क्यों?
+C# में नियमित अभिव्यक्तियाँ (regex) स्ट्रिंग्स के भीतर पैटर्न मिलान के लिए एक शक्तिशाली उपकरण हैं, जो प्रोग्रामरों को डेटा को खोजने, बदलने, विभाजित करने या निष्कर्षण करने में कुशलता से सक्षम बनाती हैं। प्रोग्रामर इसकी लचीलापन और प्रदर्शन के कारण सरल सत्यापनों से लेकर, जैसे कि ईमेल प्रारूप की जाँच करना, जटिल पाठ प्रसंस्करण कार्यों तक के लिए regex का उपयोग करते हैं।
 
-## How to: (कैसे करें:)
-साधारण regex पैटर्न के इस्तेमाल का उदाहरण:
-```C#
+## कैसे:
+
+### साधारण पैटर्न मिलान
+यदि एक स्ट्रिंग में एक विशेष पैटर्न होता है, तो आप `System.Text.RegularExpressions` नेमस्पेस से `Regex.IsMatch` मेथड का उपयोग कर सकते हैं।
+
+```csharp
 using System;
 using System.Text.RegularExpressions;
 
@@ -22,27 +27,100 @@ class Program
 {
     static void Main()
     {
-        string text = "मेरा ईमेल है example@domain.com";
-        string pattern = @"\w+@\w+\.\w+"; // ईमेल पते के लिए regex pattern
+        string sampleText = "Hello, World!";
+        string pattern = "World";
+        bool containsPattern = Regex.IsMatch(sampleText, pattern);
 
-        Match match = Regex.Match(text, pattern);
+        Console.WriteLine(containsPattern);  // आउटपुट: True
+    }
+}
+```
+
+### डेटा निष्कर्षण
+रेगेक्स में समूहों का उपयोग करके एक स्ट्रिंग से डेटा निष्कर्ष किया जा सकता है जिसे `Regex.Match` मेथड के साथ किया जा सकता है।
+
+```csharp
+using System;
+using System.Text.RegularExpressions;
+
+class Program
+{
+    static void Main()
+    {
+        string sampleText = "Date: 2023-04-12";
+        string pattern = @"Date: (\d{4})-(\d{2})-(\d{2})";
+        Match match = Regex.Match(sampleText, pattern);
 
         if (match.Success)
         {
-            Console.WriteLine("मिला हुआ ईमेल: " + match.Value);
+            Console.WriteLine($"Year: {match.Groups[1].Value}");  // आउटपुट: वर्ष: 2023
+            Console.WriteLine($"Month: {match.Groups[2].Value}");  // आउटपुट: माह: 04
+            Console.WriteLine($"Day: {match.Groups[3].Value}");  // आउटपुट: दिवस: 12
         }
     }
 }
 ```
-Sample Output:
-```
-मिला हुआ ईमेल: example@domain.com
+
+### पाठ बदलना
+`Regex.Replace` मेथड आपको एक स्ट्रिंग में एक निर्दिष्ट पैटर्न से मिलान करने वाले पाठ को बदलने देता है।
+
+```csharp
+using System;
+using System.Text.RegularExpressions;
+
+class Program
+{
+    static void Main()
+    {
+        string sampleText = "Visit Microsoft!";
+        string pattern = "Microsoft";
+        string replacement = "Google";
+
+        string result = Regex.Replace(sampleText, pattern, replacement);
+
+        Console.WriteLine(result);  // आउटपुट: Visit Google!
+    }
+}
 ```
 
-## Deep Dive (गहराई में जानकारी):
-Regex का प्रयोग प्रोग्रामिंग में 1950 के दशक से होता आया है। इसके विकल्प के रूप में string मेथोड्स का उपयोग हो सकता है लेकिन वे regex की तरह शक्तिशाली और सुगम नहीं हैं। C# में, regex की कार्यान्वयन `System.Text.RegularExpressions` नामस्थान (namespace) में होती है और यह .NET Framework का भाग है, जोकि powerful regex engine प्रदान करता है।
+### स्ट्रिंग्स विभाजित करना
+आप `Regex.Split` मेथड का उपयोग करके एक रेगेक्स पैटर्न के आधार पर एक स्ट्रिंग को एक सरणी में विभाजित कर सकते हैं।
 
-## See Also (इसे भी देखें):
-- [.NET डॉक्स पर Regular Expressions](https://docs.microsoft.com/en-us/dotnet/standard/base-types/regular-expressions)
-- [Regex101: ऑनलाइन regex tester और debugger](https://regex101.com/)
-- [Regex सीखने के लिए interactive exercises](https://regexone.com/)
+```csharp
+using System;
+using System.Text.RegularExpressions;
+
+class Program
+{
+    static void Main()
+    {
+        string sampleText = "one,two,three,four,five";
+        string pattern = ",";
+
+        string[] result = Regex.Split(sampleText, pattern);
+
+        foreach (string item in result)
+        {
+            Console.WriteLine(item);
+        }
+        // आउटपुट: 
+        // one
+        // two
+        // three
+        // four
+        // five
+    }
+}
+```
+
+### तृतीय-पक्ष पुस्तकालयों का उपयोग करना
+जबकि .NET ढांचा नियमित अभिव्यक्तियों के लिए व्यापक समर्थन प्रदान करता है, `PCRE.NET` जैसे तृतीय-पक्ष पुस्तकालय भी हैं जो C# में Perl-संगत नियमित अभिव्यक्तियाँ (PCRE) प्रदान करते हैं। यह उपयोगी हो सकता है यदि आपको .NET के कार्यान्वयन में उपलब्ध नहीं विशेषताओं या सिन्टैक्स की आवश्यकता हो।
+
+`PCRE.NET` का उपयोग करने के लिए, आप पहले इसके NuGet पैकेज को स्थापित करेंगे, और फिर आप इसे मूल .NET regex क्लासों का उपयोग करने के समान तरीक़े से उपयोग कर सकते हैं।
+
+```csharp
+// PCRE.NET का उपयोग करने का उदाहरण यहाँ है
+// ध्यान दें: PCRE.NET की एक विशेषता को प्रदर्शित करने के लिए ऊपर दिए गए नमूनों के समान एक नमूना कल्पना करें।
+```
+
+नियमित अभिव्यक्तियों के लिए तृतीय-पक्ष पुस्तकालयों का एकीकरण करते समय, हमेशा विस्तृत उपयोग और संगतता की जानकारी के लिए उनके दस्तावेज़ों का परामर्श लें।

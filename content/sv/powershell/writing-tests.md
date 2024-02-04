@@ -1,51 +1,76 @@
 ---
 title:                "Skriva tester"
-date:                  2024-01-19
+date:                  2024-02-03T19:31:40.125826-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Skriva tester"
-
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/powershell/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att skriva tester är processen att kontrollera att din kod fungerar som förväntat. Programmerare gör det för att hitta buggar tidigt, förbättra kodkvaliteten och säkerställa att programvaran är stabil över tid.
 
-## How to:
-Du kan skriva PowerShell-tester med hjälp av modulen Pester. Här är ett enkelt exempel:
+Att skriva tester i PowerShell innebär att skapa skript som automatiskt validerar funktionaliteten i din PowerShell-kod, för att säkerställa att den beter sig som förväntat. Programmerare gör detta för att upptäcka buggar tidigt, förenkla kodunderhåll och säkerställa att kodändringar inte oavsiktligt bryter befintlig funktionalitet.
 
-```PowerShell
-# Installera Pester om det inte redan är installerat
-Install-Module -Name Pester -Force -SkipPublisherCheck
+## Hur man gör:
 
-# Importera Pester-modulen
-Import-Module Pester
+PowerShell har inte ett inbyggt testramverk, men Pester, en populär tredjepartsmodul, används ofta för att skriva och köra tester. Så här kommer du igång med Pester för att testa dina PowerShell-funktioner.
 
-# Skriv ett enkelt test
-Describe "Min Testgrupp" {
-    It "Kollar om siffrorna är lika" {
-        $expected = 2
-        $actual = 1 + 1
-        $actual | Should -Be $expected
+Först, installera Pester om du inte redan har gjort det:
+
+```powershell
+Install-Module -Name Pester -Scope CurrentUser -Force
+```
+
+Nästa, anta att du har en enkel PowerShell-funktion du vill testa, sparad som `MyFunction.ps1`:
+
+```powershell
+function Get-MultipliedNumber {
+    param (
+        [int]$Number,
+        [int]$Multiplier = 2
+    )
+
+    return $Number * $Multiplier
+}
+```
+
+För att testa den här funktionen med Pester, skapa ett testskript med namnet `MyFunction.Tests.ps1`. I detta skript, använd Pesters `Describe` och `It` block för att definiera testfallen:
+
+```powershell
+# Importera funktionen som ska testas
+. .\MyFunction.ps1
+
+Describe "Get-MultipliedNumber tester" {
+    It "Multiplicerar tal med 2 när ingen multiplikator ges" {
+        $result = Get-MultipliedNumber -Number 3
+        $result | Should -Be 6
+    }
+
+    It "Multiplicerar korrekt tal med angiven multiplikator" {
+        $result = Get-MultipliedNumber -Number 3 -Multiplier 3
+        $result | Should -Be 9
     }
 }
-
-# Kör testet
-Invoke-Pester
-```
-Sample output:
-```
-Describing Min Testgrupp
-  [+] Kollar om siffrorna är lika 82ms
-Tests completed in 82ms
-Tests Passed: 1, Failed: 0, Skipped: 0, Pending: 0, Inconclusive: 0 
 ```
 
-## Deep Dive:
-Pester är den ledande testramverket för PowerShell, skapat 2010 av Scott Muc och andra medarbetare. Alternativ till Pester inkluderar PSUnit och PowerShell xUnit men Pester är mest integrerad med PowerShell och är den de-facto standarden. För att skriva effektiva tester, tänk på att hålla dem isolerade, fokuserade och snabba. Lär dig om 'mocking' för att simulera och isolera funktioner.
+För att köra testerna, öppna PowerShell, navigera till katalogen som innehåller ditt testskript, och använd kommandot `Invoke-Pester`:
 
-## See Also:
-- Pester’s GitHub repository: https://github.com/pester/Pester
-- Pester documentation: https://pester.dev
-- Microsoft's guide to testing med Pester: https://docs.microsoft.com/en-us/powershell/scripting/learn/deep-dives/pester?view=powershell-7.1
+```powershell
+Invoke-Pester .\MyFunction.Tests.ps1
+```
+
+Exempelutmatning kommer se ut så här, vilket indikerar om dina tester har passerat eller misslyckats:
+
+```
+Starting discovery in 1 files.
+Discovery finished in 152ms.
+[+] C:\path\till\MyFunction.Tests.ps1 204ms (182ms|16ms)
+Tester slutförda på 204ms
+Tester Passerade: 2, Misslyckades: 0, Hoppade över: 0 EjKörda: 0
+```
+
+Denna utmatning visar att båda testerna har passerat, vilket ger dig förtroende för att din `Get-MultipliedNumber` funktion beter sig som förväntat under de scenarier du har testat.

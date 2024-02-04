@@ -1,39 +1,61 @@
 ---
-title:                "JSON-tiedostojen käsittely"
-date:                  2024-01-19
-simple_title:         "JSON-tiedostojen käsittely"
-
+title:                "Työskentely JSON:n kanssa"
+date:                  2024-02-03T19:23:26.897980-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Työskentely JSON:n kanssa"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/lua/working-with-json.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-JSON (JavaScript Object Notation) on kevyt tiedonvaihtoformaatti. Ohjelmoijat käyttävät JSONia sen yksinkertaisuuden ja ihmisen sekä koneen luettavuuden vuoksi.
+## Mikä & Miksi?
+JSONin käsittely Luassa käsittää JSON-muotoiltujen merkkijonojen jäsentämisen Lua-taulukoihin ja päinvastoin, mikä mahdollistaa helpon datan vaihdon Lualla tehtyjen sovellusten ja verkkopalveluiden tai ulkoisten APIen välillä. Ohjelmoijat tekevät tämän hyödyntääkseen JSONin kevyttä ja helposti jäsentävää muotoa tehokkaan datan tallennuksen, konfiguraation tai API-viestinnän kannalta.
 
-## How to:
-```Lua
--- Ladataan JSON-kirjasto
-local json = require("dkjson")
+## Kuinka:
+Lua ei sisällä valmiiksi tehtyä kirjastoa JSON-käsittelyyn. Siksi yhtenä suosittuna kolmannen osapuolen kirjastona on `dkjson`, jota voit helposti käyttää JSONin koodaamiseen ja dekoodaamiseen. Varmista ensin, että olet asentanut `dkjson`in, esim. käyttäen LuaRocksia (`luarocks install dkjson`), ja sitten seuraa alla olevia esimerkkejä.
 
--- JSON-muotoisen merkkijonon käsittely
-local jsonString = '{"nimi": "Matti", "ika": 30}'
-local luaTable = json.decode(jsonString)
+### JSONin dekoodaus Lua-taulukoksi
+```lua
+local dkjson = require "dkjson"
 
-print(luaTable.nimi)  -- Output: Matti
-
--- Luodaan taulukko ja muunnetaan JSONiksi
-local uusiTable = { nimi = "Liisa", ika = 28 }
-local uusiJsonString = json.encode(uusiTable)
-
-print(uusiJsonString)  -- Output: {"ika":28,"nimi":"Liisa"}
+local jsonString = '{"name": "Lua Programmer", "age": 30, "languages": ["Lua", "JavaScript"]}'
+local luaTable, pos, err = dkjson.decode(jsonString, 1, nil)
+if err then
+  print ("Error:", err)
+else
+  print("Nimi:", luaTable.name) -- Tuloste: Nimi: Lua Programmer
+  print("Ikä:", luaTable.age) -- Tuloste: Ikä: 30
+  print("Kielet:", table.concat(luaTable.languages, ", ")) -- Tuloste: Kielet: Lua, JavaScript
+end
 ```
 
-## Deep Dive
-JSON syntyi 2000-luvun alussa, helpottamaan JavaScriptin ja palvelimien välisiä tietojenvaihtoja. XML oli ennen JSONia suosittu, mutta JSONin keveys ja nopeus ovat sen valttikortteja. Lua ei sisällä vakio JSON-tukea, joten ulkopuolisia kirjastoja, kuten 'dkjson', käytetään JSONin käsittelyyn.
+### Lua-taulukon koodaus JSONiksi
+```lua
+local dkjson = require "dkjson"
 
-## See Also
-- Lua JSON kirjaston kotisivu: http://dkolf.de/src/dkjson-lua.fsl/home
-- JSON viralliset kotisivut: https://www.json.org/json-fi.html
-- Online JSON visualisointi: https://jsoneditoronline.org/
+local luaTable = {
+  name = "Lua Programmer",
+  age = 30,
+  languages = { "Lua", "JavaScript" }
+}
+
+local jsonString = dkjson.encode(luaTable, { indent = true })
+print(jsonString)
+```
+
+Esimerkkituloste koodauksesta:
+```json
+{
+  "ikä": 30,
+  "kielet": [
+    "Lua",
+    "JavaScript"
+  ],
+  "nimi": "Lua Programmer"
+}
+```
+
+Nämä yksinkertaiset esimerkit osoittavat, kuinka työskennellä JSONin kanssa Luassa, tehdäkseen Lualla tehtyjen sovellusten integraation erilaisten web-teknologioiden ja ulkoisten APIen kanssa helpoksi. Muista, että vaikka näissä esimerkeissä käytetään `dkjson`ia, myös muut kirjastot kuten `cjson` ja `RapidJSON` voivat olla sopivia vaihtoehtoja projektisi tarpeista riippuen.

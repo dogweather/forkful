@@ -1,46 +1,48 @@
 ---
 title:                "HTML 파싱"
-date:                  2024-01-20T15:33:54.376022-07:00
+date:                  2024-02-03T19:13:08.501360-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "HTML 파싱"
-
 tag:                  "HTML and the Web"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/ruby/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (무엇을 위해? 왜 사용하나요?)
-HTML 파싱은 웹 페이지의 구조를 분석하는 과정입니다. 이를 통해 프로그래머는 웹 데이터를 추출하고, 조작하며, 웹의 정보를 자동으로 처리할 수 있습니다.
+## 무엇 & 왜?
+HTML 파싱은 HTML 코드 조각을 분해하여 그 구조와 내용을 파악하는 것을 의미합니다. 프로그래머는 데이터를 추출하거나, 내용을 조작하거나, 형식과 시스템 간에 정보를 이전하기 위해 이 작업을 수행합니다.
 
-## How to: (어떻게 하나요?)
-Ruby에서 HTML을 파싱하기 위해 `Nokogiri`라는 보석(라이브러리)을 자주 사용합니다. 간단한 예제를 살펴보죠.
+## 방법:
+Ruby에서 HTML을 파싱하려면 `gem install nokogiri`로 'Nokogiri' 젬을 설치하십시오. Nokogiri는 Ruby에서 HTML 및 XML을 다루는 스위스 군용 나이프와 같습니다. 다음은 간단한 예입니다:
 
-```Ruby
+```ruby
 require 'nokogiri'
 require 'open-uri'
 
-# 웹페이지를 불러옵니다.
-html = URI.open("https://example.com")
+# 웹사이트에서 HTML 내용을 불러옵니다
+html_content = URI.open('http://example.com').read
 
-# Nokogiri를 사용해 HTML을 파싱합니다.
-doc = Nokogiri::HTML(html)
+# HTML을 파싱합니다
+doc = Nokogiri::HTML(html_content)
 
-# CSS 선택자를 이용해 특정 요소를 찾습니다.
-titles = doc.css('h1').map(&:text)
-
-# 제목을 출력합니다.
-puts titles
+# 제목을 추출합니다
+title = doc.xpath('//title').text
+puts "페이지의 제목은: #{title}"
 ```
 
-이 코드는 웹페이지의 `<h1>` 태그에 있는 모든 텍스트를 출력할 것입니다.
+이것은 대략 이런 결과를 내놓습니다: `페이지의 제목은: Example Domain`.
 
-## Deep Dive (깊이 들여다보기)
-HTML 파싱은 웹의 초창기부터 중요한 작업이었습니다. `Nokogiri`는 Ruby에서 가장 인기 있는 파싱 라이브러리 중 하나로, 그 편리함과 빠른 처리 능력 때문에 많이 사용됩니다. `Hpricot`과 같은 다른 라이브러리도 있지만, `Nokogiri`가 가장 널리 쓰입니다. `Nokogiri`는 내부적으로 `libxml2`을 사용해서 구문 분석을 하고, 문서 구조에 빠르고 쉽게 접근할 수 있게 해 줍니다.
+## 깊이 있게 살펴보기
+초기 Ruby 시절에는 HTML을 파싱할 수 있는 옵션이 제한적이었습니다. REXML은 내장되어 있었지만 느렸습니다. 그다음 Hpricot이 등장했지만 서서히 사라졌습니다. Nokogiri는 2008년에 데뷔하여 Hpricot의 사용 편의성과 검증된 XML 툴킷인 libxml의 속도 및 파워를 결합했습니다.
 
-HTML 파싱의 복잡성은 주로 HTML 자체의 비정형적인 특성 때문에 발생합니다. 올바르지 않은 HTML 마크업조차 처리할 수 있어야 하고, 다양한 형태의 HTML 문서에 대응할 수 있는 유연함이 필요합니다.
+파싱 세계에서는 항상 대안이 있습니다. 일부는 내장된 'rexml' 라이브러리나 또 다른 Ruby용 XML/HTML 파서인 'oga'를 선호합니다. 하지만 Nokogiri는 그 견고함과 속도, 그리고 방대한 기능 덕분에 여전히 많은 사람들의 선호도를 얻고 있습니다.
 
-## See Also (더 보기)
-- Nokogiri 공식 사이트: [http://www.nokogiri.org](http://www.nokogiri.org)
-- Ruby-Doc for Nokogiri: [https://rubydoc.info/gems/nokogiri](https://rubydoc.info/gems/nokogiri)
-- W3C HTML5 파싱 가이드라인: [https://www.w3.org/TR/html5/syntax.html#parsing](https://www.w3.org/TR/html5/syntax.html#parsing)
+내부적으로 Nokogiri는 HTML을 문서 객체 모델(DOM)—트리 구조—로 변환합니다. 이를 통해 요소를 쉽게 탐색하고 조작할 수 있습니다. XPath와 CSS 선택자를 사용하면 필요한 정보의 어떤 부분이든 정확히 지정할 수 있습니다.
+
+## 또한 보기
+- Nokogiri 젬: [https://nokogiri.org/](https://nokogiri.org/)
+- Ruby의 rexml 문서: [https://ruby-doc.org/stdlib-2.6.3/libdoc/rexml/rdoc/REXML/Document.html](https://ruby-doc.org/stdlib-2.6.3/libdoc/rexml/rdoc/REXML/Document.html)
+- 대안 파서 'oga': [https://github.com/YorickPeterse/oga](https://github.com/YorickPeterse/oga)
+- XPath에 대해 알아보기: [https://www.w3schools.com/xml/xpath_intro.asp](https://www.w3schools.com/xml/xpath_intro.asp)

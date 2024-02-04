@@ -1,42 +1,64 @@
 ---
 title:                "Pisanie testów"
-date:                  2024-01-19
+date:                  2024-02-03T19:32:05.567804-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Pisanie testów"
-
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/swift/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Co i dlaczego?
-Pisanie testów to proces tworzenia skryptów, które automatycznie sprawdzają, czy różne części aplikacji działają poprawnie. Robimy to, aby szybko wykrywać błędy, zwiększać pewność kodu i efektywnie wspierać przyszły rozwój projektu.
+Pisanie testów w języku Swift polega na tworzeniu i wykonywaniu kodu, który weryfikuje poprawność innych jednostek kodu w aplikacji. Programiści robią to, aby zapewnić niezawodność, wykryć błędy na wczesnym etapie cyklu rozwoju oraz ułatwić przyszłe refaktoryzacje kodu bez niezamierzonych konsekwencji.
 
 ## Jak to zrobić:
-```Swift
-import XCTest
-@testable import MyAmazingApp
+Swift wspiera testowanie poprzez swoje środowisko XCTest, które jest zintegrowane z Xcode. Można pisać testy jednostkowe w celu weryfikacji indywidualnych części kodu, na przykład funkcji, która oblicza sumę dwóch liczb.
 
-class MyAmazingAppTests: XCTestCase {
-    
-    func testExample() {
-        // Tutaj wpisujemy kod, który chcemy przetestować
-        let number = 42
-        // Sprawdzamy warunek, czy jest prawdziwy (test powinien się powieść)
-        XCTAssertEqual(number, 42, "Number should be equal to 42")
+```swift
+import XCTest
+@testable import TwojaAplikacja
+
+class TestyTwojejAplikacji: XCTestCase {
+
+    func testSumy() {
+        let wynik = Kalkulator().suma(a: 1, b: 2)
+        XCTAssertEqual(wynik, 3, "Funkcja sumująca nie zwróciła oczekiwanej wartości.")
     }
 }
-
-// Przykładowe wyjście
-// Test Suite 'All tests' started at 2023-03-15 18:23:11.649
-// Test Suite 'MyAmazingAppTests' started at 2023-03-15 18:23:11.650
-// Test Case '-[MyAmazingAppTests.MyAmazingAppTests testExample]' started.
-// Test Case '-[MyAmazingAppTests.MyAmazingAppTests testExample]' passed (0.001 seconds).
 ```
 
-## Deep Dive
-Historia: Pisanie testów jest częścią programowania od początku. Testy manualne były normą, dopóki testy automatyczne nie stały się popularne wraz z rozwojem technologii. Alternatywy: Oprócz XCTest, istnieją inne frameworki, jak Quick/Nimble czy KIF, które służą do testowania aplikacji iOS. Szczegóły implementacyjne: W implementacji testów kluczowe jest ustalanie oczekiwań (`XCTestExpectation`) i asercji, czyli sprawdzeń warunków (`XCTAssert...`).
+Aby uruchomić ten test, zwykle naciska się Command-U w Xcode. Wyjście w nawigatorze testów Xcode powie Ci, czy test przeszedł pomyślnie, czy nie.
 
-## Zobacz także
-- [Dokumentacja XCTest od Apple](https://developer.apple.com/documentation/xctest)
-- [Przewodnik po testach jednostkowych w Swift przez Ray Wenderlich](https://www.raywenderlich.com/960290-ios-unit-testing-and-ui-testing-tutorial)
+Na przykład, pomyślne wyjście testu:
+```
+Przypadek testowy '-[TestyTwojejAplikacji testSumy]' zakończony sukcesem (0.005 sekund).
+```
+
+W przypadku bardziej zaawansowanych scenariuszy testowych możesz korzystać z bibliotek firm trzecich takich jak Quick/Nimble, które oferują bardziej ekspresyjną składnię do pisania testów.
+
+Z Quick/Nimble możesz napisać ten sam test w następujący sposób:
+
+```swift
+// Dodaj Quick i Nimble do menedżera pakietów Swift lub użyj CocoaPods/Carthage, aby je zainstalować
+import Quick
+import Nimble
+@testable import TwojaAplikacja
+
+class SpecyfikacjaKalkulatora: QuickSpec {
+    override func spec() {
+        describe("Kalkulator") {
+            context("kiedy sumuje liczby") {
+                it("powinien zwrócić poprawną sumę") {
+                    let kalkulator = Kalkulator()
+                    expect(kalkulator.suma(a: 1, b: 2)).to(equal(3))
+                }
+            }
+        }
+    }
+}
+```
+
+Uruchomienie tego testu dałoby Ci podobne wyjście w konsoli testowej lub logu narzędzia CI/CD, wskazujące, czy test się powiódł czy nie, z bardziej czytelnym formatem opisującym testy i oczekiwania.

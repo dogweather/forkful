@@ -1,55 +1,83 @@
 ---
 title:                "获取当前日期"
-date:                  2024-01-20T15:13:23.870695-07:00
+date:                  2024-02-03T19:09:18.073668-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "获取当前日期"
-
 tag:                  "Dates and Times"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/cpp/getting-the-current-date.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (是什么 & 为什么？)
+## 什么与为什么？
+在 C++ 中获取当前日期是一个基本任务，对于需要基于系统时钟处理或显示日期的程序来说至关重要。它对于日志记录、时间戳记、任务调度以及任何依赖于日期和时间的功能都是必不可少的。
 
-获取当前日期意味着在程序中获得当前的年、月、日信息。程序员这么做通常是为了记录事件发生的时间或者对时间敏感的操作，例如生成报告、用户日志或是算出日期差。
+## 如何实现：
+C++ 提供了几种获取当前日期的方法，包括 C++ 标准库和第三方库，如 Boost。以下示例展示了如何完成这个任务。
 
-## How to: (如何操作：)
-
-```C++
+### 使用 `<chrono>`（C++20 及以后版本）
+C++20 在 `<chrono>` 库中引入了更多功能，使得获取当前日期变得直截了当：
+```cpp
 #include <iostream>
-#include <ctime>
+#include <chrono>
+#include <format> // 对于 std::format (C++20)
 
 int main() {
-    std::time_t t = std::time(nullptr);   // 获取当前时间
-    std::tm* now = std::localtime(&t);    // 转换为本地时间
+    auto current_time_point = std::chrono::system_clock::now(); // 捕获当前时间
+    auto current_time_t = std::chrono::system_clock::to_time_t(current_time_point); // 转换为 time_t
 
-    std::cout << "Year: " << (now->tm_year + 1900) << '\n'   // 输出年份
-              << "Month: " << (now->tm_mon + 1) << '\n'      // 输出月份
-              << "Day: " << now->tm_mday << std::endl;       // 输出日期
+    // 将时间格式化为可读格式
+    std::cout << "当前日期: " << std::format("{:%Y-%m-%d}", std::chrono::system_clock::to_time_t(current_time_point)) << std::endl;
 
     return 0;
 }
 ```
-
-运行结果：
-
-```
-Year: 2023
-Month: 3
-Day: 14
+**示例输出：**
+```plaintext
+当前日期: 2023-03-15
 ```
 
-## Deep Dive (深入探讨：)
+### 使用 `<ctime>`
+对于使用旧版本 C++ 或偏好传统 C 库的程序员：
+```cpp
+#include <iostream>
+#include <ctime>
 
-获取日期并不是新的需求，在早期，C语言就为此提供了 `<ctime>` 库。经过多年的发展，C++ 引入了更多现代和易用的库，如 `<chrono>`。`<ctime>` 实际上是 C++ 对 C 语言标准库 `<time.h>` 的适配，它提供了一套围绕时间的函数。
+int main() {
+    std::time_t t = std::time(0); // 获取当前时间
+    std::tm* now = std::localtime(&t);
+    std::cout << "当前日期: " 
+              << (now->tm_year + 1900) << '-' 
+              << (now->tm_mon + 1) << '-'
+              <<  now->tm_mday
+              << std::endl;
 
-除了 `<ctime>`，C++11 引入了 `<chrono>` 库，提供了稳定、类型安全的时间点和持续时间的操作。即便 `<ctime>` 有效，但 `<chrono>` 库通常是更现代和偏好的方式。
+    return 0;
+}
+```
+**示例输出：**
+```plaintext
+当前日期: 2023-03-15
+```
 
-实现细节上，`time_t` 是 C++ 用来表示时间的基础类型，它通常是一个长整形，表示自 1970-01-01 00:00:00 UTC 起的秒数。通过调用 `localtime` 函数，我们可以将 `time_t` 类型的值转换为表示本地时间的 `tm` 结构。
+### 使用 Boost Date_Time
+对于使用 Boost 库的项目，Boost Date_Time 库提供了一个获取当前日期的替代方法：
+```cpp
+#include <iostream>
+#include <boost/date_time.hpp>
 
-## See Also (另请参阅：)
+int main() {
+    // 使用 Boost 的格里历日历获取当前日
+    boost::gregorian::date today = boost::gregorian::day_clock::local_day();
+    std::cout << "当前日期: " << today << std::endl;
 
-- C++ `<chrono>` 库的使用：https://en.cppreference.com/w/cpp/header/chrono
-- C++ `<ctime>` 库的详细介绍：https://en.cppreference.com/w/cpp/header/ctime
-- 更多时间日期处理相关的推荐实践和例子：https://github.com/HowardHinnant/date
+    return 0;
+}
+```
+**示例输出：**
+```plaintext
+当前日期: 2023-Mar-15
+```
+这些示例为使用 C++ 处理日期提供了基本基础，对广泛的应用程序至关重要。

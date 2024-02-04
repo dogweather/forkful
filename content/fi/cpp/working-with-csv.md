@@ -1,90 +1,112 @@
 ---
-title:                "CSV-tiedostojen käsittely"
-date:                  2024-01-19
-simple_title:         "CSV-tiedostojen käsittely"
-
+title:                "Työskentely CSV:n kanssa"
+date:                  2024-02-03T19:19:11.292775-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Työskentely CSV:n kanssa"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/cpp/working-with-csv.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Mitä & Miksi?
+## Mikä & Miksi?
 
-CSV on yksinkertainen tiedostomuoto datan tallentamiseen. Ohjelmoijat käyttävät sitä, koska se on helppo lukea ja kirjoittaa sekä ihmisille että ohjelmille.
+CSV-tiedostojen (pilkuilla erotetut arvot) käsittely liittyy datan käsittelyyn ja muokkaamiseen yksinkertaisessa tekstiformaatissa, jossa jokainen tekstirivi edustaa taulukon riviä ja pilkut erottavat yksittäiset sarakkeet. Ohjelmoijat hyödyntävät tätä tuodakseen, viedäkseen ja hallinnoidakseen dataa eri järjestelmien välillä, koska CSV:n laaja hyväksyntä kevyenä, ihmisen luettavana datanvaihtoformaatina.
 
-## How to:
-Miten:
+## Kuinka tehdä:
 
-```C++
-#include <iostream>
+### CSV-tiedoston lukeminen käyttäen C++ Standard Libraryä:
+
+```cpp
 #include <fstream>
-#include <vector>
-#include <string>
+#include <iostream>
 #include <sstream>
-
-// CSV:n lukufunktio
-std::vector<std::vector<std::string>> lueCSV(const std::string& tiedosto) {
-    std::vector<std::vector<std::string>> data;
-    std::ifstream file(tiedosto);
-    std::string rivi;
-
-    while (std::getline(file, rivi)) {
-        std::stringstream rivi_stream(rivi);
-        std::string solu;
-        std::vector<std::string> rivi_data;
-
-        while (std::getline(rivi_stream, solu, ',')) {
-            rivi_data.push_back(solu);
-        }
-
-        data.push_back(rivi_data);
-    }
-
-    return data;
-}
-
-// CSV:n kirjoitusfunktio
-void kirjoitaCSV(const std::string& tiedosto, const std::vector<std::vector<std::string>>& data) {
-    std::ofstream file(tiedosto);
-    
-    for (const auto& rivi : data) {
-        for (size_t i = 0; i < rivi.size(); ++i) {
-            file << rivi[i];
-            if (i < rivi.size() - 1) file << ",";
-        }
-        file << "\n";
-    }
-}
+#include <vector>
 
 int main() {
-    // CSV:n lukeminen
-    auto data = lueCSV("esimerkki.csv");
+    std::ifstream file("data.csv");
+    std::string line;
     
-    // Tulosta luettu data
-    for (const auto& rivi : data) {
-        for (const auto& solu : rivi) {
-            std::cout << solu << " ";
+    while (std::getline(file, line)) {
+        std::stringstream lineStream(line);
+        std::string cell;
+        std::vector<std::string> parsedRow;
+        
+        while (std::getline(lineStream, cell, ',')) {
+            parsedRow.push_back(cell);
+        }
+        
+        // Käsittele parsedRow tässä
+        for (const auto& val : parsedRow) {
+            std::cout << val << "\t";
         }
         std::cout << std::endl;
     }
-    
-    // CSV:n kirjoittaminen
-    kirjoitaCSV("uusi.csv", data);
     
     return 0;
 }
 ```
 
-## Deep Dive
-Syvä Sukellus
+### Kirjoittaminen CSV-tiedostoon:
 
-CSV (Comma-Separated Values) syntyi jo 1970-luvulla, ja sen formaatti on pysyt melko muuttumattomana. Vaihtoehtoja CSV:lle ovat esimerkiksi JSON ja XML, jotka tukevat monimutkaisempia rakenteita. CSV:n käsittelyssä tärkeää on tietää, että standardoitu formaatti puuttuu, mikä voi johtaa yhteensopivuusongelmiin.
+```cpp
+#include <fstream>
+#include <vector>
 
-## See Also
-Lisätietoja
+int main() {
+    std::ofstream file("output.csv");
+    std::vector<std::vector<std::string>> data = {
+        {"Nimi", "Ikä", "Kaupunki"},
+        {"John Doe", "29", "New York"},
+        {"Jane Smith", "34", "Los Angeles"}
+    };
+    
+    for (const auto& row : data) {
+        for (size_t i = 0; i < row.size(); i++) {
+            file << row[i];
+            if (i < row.size() - 1) file << ",";
+        }
+        file << "\n";
+    }
+    
+    return 0;
+}
+```
 
-- [RFC 4180, Common Format and MIME Type for Comma-Separated Values (CSV) Files](https://tools.ietf.org/html/rfc4180)
-- [C++-kirjaston dokumentaatio](http://www.cplusplus.com/reference/)
-- [Boost Library for C++](https://www.boost.org/)
+### Kolmannen osapuolen kirjaston käyttö: `csv2`:
+
+Vaikka C++ Standard Library tarjoaa perustyökalut tiedostojen ja merkkijonojen käsittelyyn, kolmannen osapuolen kirjastojen hyödyntäminen voi yksinkertaistaa CSV-käsittelyä. Yksi tällainen kirjasto on `csv2`, joka tunnetaan sen helppokäyttöisyydestä ja tehokkuudesta.
+
+- Asennus: Tyypillisesti asennettu paketinhallintajärjestelmien kuten Conan kautta tai suoraan sen GitHub-repositoriosta.
+
+Esimerkki käyttäen `csv2` lukeakseen CSV-tiedoston:
+
+```cpp
+#include <csv2/reader.hpp>
+#include <iostream>
+
+int main() {
+    csv2::Reader<csv2::delimiter<','>, csv2::quote_character<'"'>, csv2::first_row_is_header<true>> csv;
+    if (csv.mmap("data.csv")) {
+        const auto header = csv.header();
+        for (const auto row : csv) {
+            for (const auto cell : row) {
+                std::cout << cell.second << "\t"; // Tulosta jokainen solun arvo
+            }
+            std::cout << std::endl;
+        }
+    }
+    return 0;
+}
+```
+
+Esimerkki tuloste lukemisoperaatioista voisi näyttää tältä (oletetaan yksinkertainen kolmisarakkeinen CSV-tiedosto):
+
+```
+John    29    New York    
+Jane    34    Los Angeles
+```
+
+Nämä esimerkit pyrkivät kattamaan perustason CSV-operaatiot C++:ssa. Monimutkaisemmissa skenaarioissa, kuten suurten tiedostojen käsittelyssä tai monimutkaisten datan muunnosten kanssa, voi olla tarpeen tutkia erikoistuneempia kirjastoja tai työkaluja.

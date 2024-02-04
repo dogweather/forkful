@@ -1,36 +1,52 @@
 ---
-title:                "כתיבה לפלט השגיאה הסטנדרטי"
-date:                  2024-01-19
-simple_title:         "כתיבה לפלט השגיאה הסטנדרטי"
-
+title:                "כתיבה לשגיאה התקנית"
+date:                  2024-02-03T19:34:16.514510-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "כתיבה לשגיאה התקנית"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/lua/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## מה ולמה?
-כתיבה ל- standard error (stderr) מאפשרת להפריד בין הודעות שגיאה ולוגים לבין הפלט הרגיל של התוכנית. זה חשוב כדי לאבחן בעיות ולעקוב אחרי כשלים בקוד.
+כתיבה לשגיאה סטנדרטית (stderr) עוסקת בהכוונת הודעות שגיאה ופלטים דיאגנוסטיים לערוץ נפרד, הנבדל מהפלט הסטנדרטי (stdout). מתכנתים עושים זאת כדי להבחין בין תוצאות התוכנית הרגילות לבין מידע על שגיאות, ובכך מייעלים את תהליכי הניפוי של באגים ותהליכי הלוגינג.
 
 ## איך לעשות:
-```Lua
--- כתיבה ל stderr בלואה
-io.stderr:write("שגיאה: קריאת הקובץ נכשלה!\n")
+בלואה, ניתן לכתוב ל-stderr באמצעות הפונקציה `io.stderr:write()`. הנה דוגמה איך אפשר לכתוב הודעת שגיאה פשוטה לשגיאה סטנדרטית:
 
--- כדי להדפיס עם פורמט
-io.stderr:write(string.format("שגיאה %d: קריאת הקובץ נכשלה!\n", 404))
+```lua
+io.stderr:write("Error: Invalid input.\n")
 ```
 
-הפלט שיוצא:
-```
-שגיאה: קריאת הקובץ נכשלה!
-שגיאה 404: קריאת הקובץ נכשלה!
+אם אתם צריכים להוציא פלט של משתנה או לשלב כמה חתיכות נתונים, תשלבו אותם בתוך הפונקציה write:
+
+```lua
+local errorMessage = "Invalid input."
+io.stderr:write("Error: " .. errorMessage .. "\n")
 ```
 
-## צלילה עמוקה:
-במערכות יוניקס, הפרדה בין stderr ו stdout (הפלט הרגיל) החל מהשנים הראשונות, כדי לאפשר ניתוב של הודעות שגיאה לקובץ או מכשיר אחר. בלואה, `io.stderr` הוא ממשק פשוט לזרם השגיאה הסטנדרטי. אפשרויות חלופיות כוללות יצירת קובץ לוגים נפרד או שימוש בספריות נוספות לניהול לוגים.
+**דוגמת פלט ב-stderr:**
+```
+Error: Invalid input.
+```
 
-## קישורים נלווים:
-- המדריך הרשמי ל-I/O בלואה: https://www.lua.org/pil/21.html
-- מבט על מערכת הקבצים וה-IO בלואה: https://lua-users.org/wiki/IoLibraryTutorial
-- עקרונות ניהול שגיאות בתכנות: https://en.wikipedia.org/wiki/Error_handling
+עבור תרחישים מורכבים יותר, או כאשר עובדים עם אפליקציות גדולות יותר, ייתכן שתרצו לשקול להשתמש בספריות לוגינג של צד שלישי כמו LuaLogging. עם LuaLogging, אתם יכולים להכוון יומנים ליעדים שונים, כולל stderr. הנה דוגמה קצרה:
+
+תחילה, וודאו ש-LuaLogging מותקן באמצעות LuaRocks:
+
+```
+luarocks install lualogging
+```
+
+לאחר מכן, כדי לכתוב הודעת שגיאה ל-stderr באמצעות LuaLogging:
+
+```lua
+local logging = require("logging")
+local logger = logging.stderr()
+logger:error("Error: Invalid input.")
+```
+
+הגישה הזו מציעה את היתרון של לוגינג מתוקנן ברחבי האפליקציה שלכם, עם הגמישות הנוספת של הגדרת רמות לוג (למשל, ERROR, WARN, INFO) דרך API פשוטה.

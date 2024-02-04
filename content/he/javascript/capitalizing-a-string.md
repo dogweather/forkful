@@ -1,37 +1,58 @@
 ---
-title:                "הפיכת מחרוזת לאותיות רישיות"
-date:                  2024-01-19
-simple_title:         "הפיכת מחרוזת לאותיות רישיות"
-
+title:                "הגדלת אותיות במחרוזת"
+date:                  2024-02-03T19:06:16.822546-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "הגדלת אותיות במחרוזת"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/javascript/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## מה ולמה?
-המרת מחרוזת לאותיות גדולות היא פעולה שמשנה כל אות במחרוזת לאות רישית (גדולה). פרוגרמרים עושים את זה לשם עקביות בממשק משתמש, הדפסת כותרות, או נירמול קלטים לבדיקות או לשמור נתונים.
+הופכים מחרוזת לאותיות ראשיות על ידי המרת התו הראשון של המחרוזת לאות רישית תוך שמירה על שאר התווים כפי שהם. ביצוע פעולה זו ב-JavaScript מקובל ביותר לצורך עיצוב קלטי משתמש, הצגת שמות או כותרות, והבטחת אחידות בטקסטים של ממשק המשתמש.
 
 ## איך לעשות:
-כדי להמיר מחרוזת לאותיות גדולות בJavaScript, קל להשתמש במתודה `.toUpperCase()`:
+ב-JavaScript, אין שיטה מובנית להפוך מחרוזת לאות ראשית באופן ישיר, אך ניתן לממש זאת בקלות באמצעות שיטות טיפול בסיסיות במחרוזות.
 
-```Javascript
-let myString = "שלום עולם!";
-let capitalizedString = myString.toUpperCase();
-console.log(capitalizedString); // "שלום עולם!"
+### באמצעות JavaScript סטנדרטי
+```javascript
+function capitalize(str) {
+  if (!str) return '';
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}
+
+console.log(capitalize('hello world')); // פלט: "Hello world"
 ```
 
-פלט לדוגמא:
+### גרסת ES6
+באמצעות תבניות מילוליות של ES6, ניתן לכתוב את הפונקציה בצורה קצרה יותר:
+```javascript
+const capitalize = (str) => !str ? '' : `${str[0].toUpperCase()}${str.slice(1)}`;
+
+console.log(capitalize('hello ES6')); // פלט: "Hello ES6"
 ```
-"שלום עולם!"
+
+### באמצעות Lodash
+Lodash היא ספריית עזר שלישית פופולרית המציעה מגוון רחב של פונקציות לטיפול ועבודה עם ערכי JavaScript, כולל מחרוזות. להפיכת מחרוזת לאות ראשית באמצעות Lodash:
+```javascript
+// קודם כל, התקן את lodash אם טרם עשית זאת: npm install lodash
+const _ = require('lodash');
+
+console.log(_.capitalize('LODASH example')); // פלט: "Lodash example"
 ```
+_שימו לב כיצד Lodash לא רק משנה את האות הראשונה לרישית, אלא גם משנה את שאר המחרוזת לאותיות קטנות, שונה מעט מהיישום הרגיל ב-JavaScript._
 
-שימו לב: בעברית אין הבחנה בין אותיות גדולות לקטנות, אבל המתודה יעילה במיוחד עבור טקסט באנגלית.
-
-## צלילה עמוקה
-המרת טקסט לגרסת האותיות הגדולות שלו היא פונקציונליות פשוטה, אך חשובה, שנמצאת ברוב שפות התכנות. היא מאוד שימושית בעיבוד טקסט ובמערכות שבהן חשובה הקפדה על רישום עקבי של נתונים. לוקחות בחשבון רק א-ז ואינן בודקת שפות נוספות. אם עובדים עם שפות נוספות שבהן יש הבחנה בין אותיות קטנות וגדולות, יש להתאים את הקוד או למצוא פתרון מתאים נוסף. בעיקרון, כאשר עושים שימוש ב`.toUpperCase()`, חשוב לבדוק תמיד שהטקסט אכן תואם לתרבות ואופי השפה הרלוונטית.
-
-## ראה גם
-- [MDN Web Docs - String.prototype.toUpperCase()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase)
-- [JavaScript.info - Strings](https://javascript.info/string)
-- [W3Schools - JavaScript String toUpperCase()](https://www.w3schools.com/jsref/jsref_touppercase.asp)
+### באמצעות CSS (למטרות הצגה בלבד)
+אם המטרה היא לעשות שימוש באותיות ראשיות לצורך הצגה בממשק המשתמש, ניתן להשתמש ב-CSS:
+```css
+.capitalize {
+  text-transform: capitalize;
+}
+```
+```html
+<div class="capitalize">hello css</div> <!-- מוצג כ-"Hello css" -->
+```
+**הערה:** שיטה זו משנה את האופן שבו הטקסט מופיע על הדף ללא שינוי של המחרוזת עצמה ב-JavaScript.

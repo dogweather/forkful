@@ -1,64 +1,69 @@
 ---
-title:                "Att hämta aktuellt datum"
-date:                  2024-01-20T15:16:57.519172-07:00
-simple_title:         "Att hämta aktuellt datum"
-
+title:                "Få det aktuella datumet"
+date:                  2024-02-03T19:11:01.185838-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Få det aktuella datumet"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/swift/getting-the-current-date.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att hämta aktuellt datum innebär att få tag på datum och tid just nu. Programmerare gör detta för att hantera deadlines, tidstämplar, schemaläggningar och mycket mer.
+Att få det aktuella datumet i Swift innebär att använda `Date`-klassen för att få tillgång till datum och tid när appen körs. Programmerare behöver hämta det aktuella datumet av många olika skäl, från att tidstämpla händelser, utföra datumberäkningar, till att visa datum och tider i ett användargränssnitt.
 
 ## Hur man gör:
-```Swift
+Swifts `Foundation`-ramverk tillhandahåller `Date`-klassen, vilket gör det enkelt att få det aktuella datumet och tiden. Här är ett grundläggande exempel på hur du får det aktuella datumet:
+
+```swift
 import Foundation
 
-let nu = Date()
-print(nu)
-```
-Exempel på utskrift:
-```
-2023-04-01 12:00:00 +0000
+let currentDate = Date()
+print(currentDate)
 ```
 
-För finjustering och format:
-```Swift
+Detta kommer att producera något liknande:
+
+```
+2023-04-12 07:46:23 +0000
+```
+
+Utdataformatet följer ISO 8601-standarden, med UTC-tidszonen. Dock kanske du vill formatera detta datum för visningsändamål. Swifts `DateFormatter`-klass kommer till undsättning:
+
+```swift
 let formatter = DateFormatter()
-formatter.dateStyle = .short
-formatter.timeStyle = .long
-
-let formatDatum = formatter.string(from: nu)
-print(formatDatum)
-```
-Exempel på utskrift:
-```
-01/04/2023, 12:00:00 GMT+1
+formatter.dateStyle = .long
+formatter.timeStyle = .medium
+let formattedDate = formatter.string(from: currentDate)
+print(formattedDate)
 ```
 
-## Djupdykning:
-Historiskt sett har hantering av datum och tid varit knepigt. Tidszoner, skottsekunder och olika kalendrar komplicerar. I Swift hanteras detta genom `Date`-klassen i Foundation-biblioteket. 
+Ett exempel på utdata kan vara:
 
-Ett alternativ till `Date()` är att använda `DateComponents` för mer kontroll:
-```Swift
-var komponenter = DateComponents()
-komponenter.year = 2023
-komponenter.month = 4
-komponenter.day = 1
-komponenter.timeZone = TimeZone(abbreviation: "CET") // Centraleuropeisk tid
-komponenter.hour = 12
-komponenter.minute = 0
-
-let kalender = Calendar.current
-if let specifiktDatum = kalender.date(from: komponenter) {
-    print(specifiktDatum)
-}
+```
+12 april 2023 kl. 10:46:23
 ```
 
-När det gäller prestanda är `Date()` snabb och effektiv för de flesta användningsfall. Det hanterar automatiskt tidzoner baserat på användarens enhetsinställningar.
+Notera att utdataformatet kommer att variera beroende på enhetens lokala inställningar som kör koden.
 
-## Se även:
-- [TimeZone dokumentation på Apple Developer](https://developer.apple.com/documentation/foundation/timezone)
-- [DateFormatter dokumentation på Apple Developer](https://developer.apple.com/documentation/foundation/dateformatter)
+För projekt som kräver mer komplex datummanipulation vänder sig många Swift-utvecklare till tredjepartsbibliotek såsom `SwiftDate`. Så här kan du använda `SwiftDate` för att få det aktuella datumet i en specifik tidszon och format:
+
+Först, lägg till `SwiftDate` i ditt projekt med SPM, CocoaPods eller Carthage. Sedan:
+
+```swift
+import SwiftDate
+
+let rome = Region(calendar: .gregorian, zone: .europeRome, locale: .current)
+let currentDateInRome = DateInRegion(Date(), region: rome)
+print(currentDateInRome.toFormat("yyyy-MM-dd HH:mm:ss"))
+```
+
+Detta kunde producera:
+
+```
+2023-04-12 09:46:23
+```
+
+Med hjälp av `SwiftDate` kan du enkelt manipulera datum och tider för olika tidszoner och platser, vilket förenklar komplexa datumhanteringsuppgifter i dina Swift-applikationer.

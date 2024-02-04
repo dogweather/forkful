@@ -1,62 +1,104 @@
 ---
 title:                "עבודה עם YAML"
-date:                  2024-01-19
+date:                  2024-02-03T19:27:12.364647-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "עבודה עם YAML"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/rust/working-with-yaml.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? / מה ולמה?
-YAML הוא פורמט תכנות שמשמש להגדרת הגדרות ותצורה. מתכנתים מטפלים ב-YAML כי הוא קריא לאנוש ומאוד נפוץ בתצורת פרויקטים ותשתיות.
+## מה ולמה?
 
-## How to: / איך ל:
-יש להתקין את החבילה `serde_yaml` לטיפול ב-YAML. הנה דוגמה של קוד פשוט לקריאה וכתיבת קובץ YAML:
+בתכנות בשפת Rust, עבודה עם YAML (YAML Ain't Markup Language) מתייחסת לניתוח ויצירה של נתונים בפורמט YAML, תקן סידור נתונים ידידותי לאדם. מתכנתים משלבים טיפול ב-YAML ב-Rust כדי להגדיר אפליקציות, לנהל הגדרות או לעבד מבני נתונים מורכבים בפורמט ברור וקריא, נצלים את פשטותו לעומת JSON או XML לקבצי תצורה והחלפת נתונים.
 
-```Rust
-use serde::{Serialize, Deserialize};
+## איך לעשות:
+
+Rust אינו תומך ב-YAML בספריית הסטנדרט שלו, ולכן אנו בדרך כלל משתמשים ב-crates צד שלישי כמו `serde` (לסידור וניתוח נתונים) בשילוב עם `serde_yaml`.
+
+ראשית, הוסף תלות לקובץ `Cargo.toml` שלך:
+
+```toml
+[dependencies]
+serde = { version = "1.0", features = ["derive"] }
+serde_yaml = "0.8"
+```
+
+עכשיו, בואו נראה איך לנתח מחרוזת YAML למבנה Rust ולסדר מחדש מבנה Rust למחרוזת YAML.
+
+### ניתוח YAML למבני Rust
+
+הגדר מבנה Rust שמשקף את הנתונים שאתה מצפה לקבל ב-YAML. השתמש בתכונות Serde להתאמה אישית אם נחוץ.
+
+```rust
+use serde::{Deserialize, Serialize};
 use serde_yaml;
-use std::fs;
 
-#[derive(Debug, Serialize, Deserialize)]
+#[derive(Debug, PartialEq, Serialize, Deserialize)]
 struct Config {
-    version: String,
-    features: Vec<String>,
+    name: String,
+    durability: i32,
+    owner: Owner,
 }
 
-fn main() -> Result<(), Box<dyn std::error::Error>> {
-    let config_yaml = fs::read_to_string("config.yaml")?;
-    let config: Config = serde_yaml::from_str(&config_yaml)?;
-    
-    println!("Read YAML: {:?}", config);
-    
-    let new_config = Config {
-        version: "2.0".to_string(),
-        features: vec!["feature1".to_string(), "feature2".to_string()],
+#[derive(Debug, PartialEq, Serialize, Deserialize)]
+struct Owner {
+    name: String,
+    age: i32,
+}
+
+fn main() {
+    let yaml_data = "
+name: Shield
+durability: 300
+owner:
+  name: Steve
+  age: 25
+";
+
+    let deserialized_config: Config = serde_yaml::from_str(yaml_data).unwrap();
+    println!("{:?}", deserialized_config);
+}
+```
+
+דוגמת פלט לאחר הרצת הקוד Rust לעיל תהיה:
+
+```plaintext
+Config { name: "Shield", durability: 300, owner: Owner { name: "Steve", age: 25 } }
+```
+
+### סידור מבני Rust ל-YAML
+
+דוגמה זו לוקחת את המבנה `Config` מהסעיף הקודם וסודרת אותו בחזרה לפורמט YAML.
+
+```rust
+fn main() {
+    let config = Config {
+        name: String::from("Axe"),
+        durability: 120,
+        owner: Owner {
+            name: String::from("Alex"),
+            age: 30,
+        },
     };
-    let new_yaml = serde_yaml::to_string(&new_config)?;
-    
-    fs::write("new_config.yaml", new_yaml)?;
-    
-    Ok(())
+
+    let serialized_yaml = serde_yaml::to_string(&config).unwrap();
+    println!("{}", serialized_yaml);
 }
 ```
 
-כאשר הקובץ `config.yaml` ייראה כך:
+הפלט הצפוי יהיה מחרוזת מסודרת בפורמט YAML:
+
 ```yaml
-version: "1.0"
-features:
-  - "featureA"
-  - "featureB"
+---
+name: Axe
+durability: 120
+owner:
+  name: Alex
+  age: 30
 ```
 
-## Deep Dive / נסיקה עמוקה:
-YAML (YAML Ain't Markup Language) נולד ב-2001. מתחרה עיקרי הוא JSON, שנועד למכונה ולא לאדם. ל-YAML יתרון בקריאות אך עלול להתגלות פחות יעיל בזמן ריצה. כאשר עובדים עם YAML ב-Rust יש להיות מודעים לסכנות של הזרמת תוכן לא בטוח (unsafe content).
-
-## See Also / גם כדאי לראות:
-1. מדריך רשמי ל-YAML: https://yaml.org/spec/1.2/spec.html
-2. דף הגיטהאב של Serde YAML: https://github.com/dtolnay/serde-yaml
-3. מדריך לתכנות ב-Rust: https://doc.rust-lang.org/book/
-4. פורום לתכנתים בעברית על Rust: https://rust-il.github.io/
+הקטעים האלו מדגימים כיצד לשלב ניתוח וייצור של YAML באפליקציות Rust שלכם ביעילות, באמצעות ה-crates הפופולריים `serde` ו-`serde_yaml`, מתאימים למבני נתונים מורכבים ומספקים תצורות פשוטות וקריאות לאדם.

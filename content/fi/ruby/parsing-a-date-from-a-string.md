@@ -1,47 +1,65 @@
 ---
-title:                "Merkkijonosta päivämäärän jäsentäminen"
-date:                  2024-01-20T15:38:09.249421-07:00
-simple_title:         "Merkkijonosta päivämäärän jäsentäminen"
-
+title:                "Päivämäärän jäsennys merkkijonosta"
+date:                  2024-02-03T19:15:24.572929-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Päivämäärän jäsennys merkkijonosta"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/ruby/parsing-a-date-from-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Mikä & Miksi?
-Päivämäärän jäsentäminen merkkijonosta tarkoittaa päivämäärä-arvojen lukemista ja niiden muuttamista ymmärrettävään muotoon. Ohjelmoijat tekevät tätä ymmärtääkseen ja manipuloidakseen päivämääriä, joita käytetään laajasti kaikenlaisissa sovelluksissa.
+Päivämäärän jäsentäminen merkkijonosta tarkoittaa tekstin, joka esittää päivämäärää, muuntamista `Date`- tai `DateTime`-objektiksi, jonka Ruby ymmärtää. Ohjelmoijat tekevät tämän suorittaakseen toimenpiteitä, kuten vertailuja, laskelmia tai muotoiluja päivämäärille, jotka ovat yleisiä tehtäviä sovelluksissa, jotka käsittelevät aikataulutusta, analytiikkaa tai datan käsittelyä.
 
 ## Kuinka:
-```Ruby
+Rubyn vakiokirjasto tarjoaa suorat tavat jäsentää päivämäärät merkkijonoista käyttämällä `Date`- ja `DateTime`-luokkia. Tässä on miten teet sen käyttäen Rubyn sisäänrakennettuja metodeja:
+
+```ruby
 require 'date'
 
-# Luodaan päivämäärä merkkijonosta
-date_string = "24-06-2023"
-parsed_date = Date.strptime(date_string, "%d-%m-%Y")
+# Jäsenetään päivämäärä merkkijonosta
+date_string = "2023-04-01"
+parsed_date = Date.parse(date_string)
 puts parsed_date
-# Tulostuu: 2023-06-24
+# => 2023-04-01
 
-# Tämän päivän päivämäärän saaminen
-today = Date.today
-puts today
-# Tulostuu: [Tämän päivän päivämäärä]
-
-# Jäsennys eri formaatilla
-datetime_string = "23. June 2023 14:30"
-parsed_datetime = DateTime.strptime(datetime_string, "%d. %B %Y %H:%M")
+# DateTime tarkempaa ajan esitystä varten
+datetime_string = "2023-04-01T15:30:45+00:00"
+parsed_datetime = DateTime.parse(datetime_string)
 puts parsed_datetime
-# Tulostuu: 2023-06-23T14:30:00+00:00
+# => 2023-04-01T15:30:45+00:00
 ```
 
-## Syventyminen:
-Ruby on tarjonnut päivämäärien käsittelyyn omat luokkansa, kuten `Date` ja `DateTime`, jo varhaisista versioista lähtien. Käyttämällä `strptime` metodia, voimme määritellä merkkijonojen tulkitsemisen tarkasti. Tämänkaltaiset työkalut ovat olennaisia, koska päivämäärien formaatit voivat merkittävästi vaihdella sovelluksesta toiseen ja eri maissa.
+Jos haluat enemmän kontrollia tai käsitellä muotoja, joita `parse`-metodi ei ehkä suoraan ymmärrä, voit käyttää `strptime` (merkkijono parsii ajan), määrittäen muodon nimenomaisesti:
 
-`Date`-luokka käyttää Gregoriaanista kalenteria välimuistin kanssa, mikä tekee siitä tehokkaan tavalta käsitellä päivämääriä. Vaihtoehtoiset kirjastot, kuten 'Time' tai 'ActiveSupport' (osa Rails-kehyksestä), tarjoavat lisää joustavuutta ja toimintoja.
+```ruby
+# Käytettäessä strptime-metodia mukautetuille formaateille
+custom_date_string = "01-04-2023"
+parsed_date_custom = Date.strptime(custom_date_string, '%d-%m-%Y')
+puts parsed_date_custom
+# => 2023-04-01
+```
 
-Selkeyden puolesta Rubylla klassiset päivä- ja aikakirjastot ovat yksinkertaisia ja suoria - useimmiten aivan riittäviä moniin sovellustarpeisiin.
+### Kolmannen osapuolen kirjastojen käyttö:
 
-## Katso Myös:
-- Ruby's Date class documentation: [Ruby Doc: Date](https://ruby-doc.org/stdlib-3.0.0/libdoc/date/rdoc/Date.html)
-- `DateTime` and `Time` class documentation for more complex needs: [Ruby Doc: DateTime](https://ruby-doc.org/stdlib-3.0.0/libdoc/date/rdoc/DateTime.html), [Ruby Doc: Time](https://ruby-doc.org/core-3.0.0/Time.html)
-- TimeZone handling with ActiveSupport: [API Dock: ActiveSupport TimeWithZone](https://apidock.com/rails/ActiveSupport/TimeWithZone)
+Vaikka Rubyn sisäänrakennetut mahdollisuudet ovat tehokkaita, joskus saatat mieluummin käyttää kolmannen osapuolen kirjastoja lisäominaisuuksien tai yksinkertaisemman syntaksin takia. Yksi suosittu valinta on `Chronic`-gem luonnollisen kielen jäsentämiseen:
+
+1. Lisää ensin Chronic Gemfileesi ja suorita `bundle install`:
+```ruby
+gem 'chronic'
+```
+
+2. Sitten käytä sitä näin:
+```ruby
+require 'chronic'
+
+parsed_chronic = Chronic.parse('seuraava tiistai')
+puts parsed_chronic
+# Tulostus vaihtelee nykyisen päivämäärän mukaan; olettaen että jäsentäminen tapahtuu 2023-04-01
+# => 2023-04-04 12:00:00 +0000
+```
+
+`Chronic` on erittäin hyödyllinen käyttäjän syötteen kannalta, sillä se ymmärtää laajan valikoiman luonnollisen kielen päivämäärämuotoja, tehden siitä tehokkaan työkalun sovelluksille, jotka vaativat joustavaa päivämäärän syöttöä.

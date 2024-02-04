@@ -1,56 +1,100 @@
 ---
-title:                "CSV 파일 다루기"
-date:                  2024-01-19
-simple_title:         "CSV 파일 다루기"
-
+title:                "CSV와 함께 작업하기"
+date:                  2024-02-03T19:21:28.133678-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "CSV와 함께 작업하기"
 tag:                  "Data Formats and Serialization"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/typescript/working-with-csv.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-CSV(Comma-Separated Values)는 데이터를 저장하고 관리하기 위한 파일 형식입니다. 개발자들은 CSV를 사용해 대량의 데이터를 쉽게 읽고, 쓰고, 교환하기 때문에 선호합니다. 
+## 무엇 & 왜?
 
-## How to:
-```TypeScript
-import * as fs from 'fs';
-import * as parse from 'csv-parse/lib/sync';
+CSV(콤마로 구분된 값)를 다루는 작업은 CSV 파일을 읽고 쓰는 과정을 포함합니다. CSV는 그 단순성과 다양한 플랫폼 및 언어에서의 폭넓은 지원 때문에 널리 사용되는 데이터 교환 형식입니다. 프로그래머들은 애플리케이션이나 데이터베이스, 서비스로부터 데이터를 가져오거나 내보내기 위해 CSV 파일을 다루며, 이를 통해 데이터 조작 및 공유가 쉽게 이루어집니다.
 
-const csvData = 'id,name,age\n1,John Doe,30\n2,Jane Smith,25';
+## 방법:
 
-// CSV 데이터 읽기
-const records = parse(csvData, {
-  columns: true,
-  skip_empty_lines: true
+TypeScript에서는 `csv-parser` 같은 서드 파티 라이브러리를 활용하거나, 네이티브 코드를 통해 CSV 파일을 다룰 수 있습니다. `csv-parser`는 읽기용이고, `csv-writer`는 쓰기용입니다.
+
+### `csv-parser`로 CSV 읽기
+
+먼저 npm을 통해 `csv-parser`를 설치하세요:
+
+```
+npm install csv-parser
+```
+
+그런 다음, 다음과 같이 CSV 파일을 읽습니다:
+
+```typescript
+import fs from 'fs';
+import csv from 'csv-parser';
+
+const results = [];
+
+fs.createReadStream('data.csv')
+  .pipe(csv())
+  .on('data', (data) => results.push(data))
+  .on('end', () => {
+    console.log(results);
+    // 출력: 각각 CSV의 한 행을 나타내는 객체의 배열
+  });
+```
+
+`data.csv`가 다음을 포함한다고 가정합니다:
+
+```
+name,age
+Alice,30
+Bob,25
+```
+
+출력은 다음과 같습니다:
+
+```
+[ { name: 'Alice', age: '30' }, { name: 'Bob', age: '25' } ]
+```
+
+### `csv-writer`로 CSV 쓰기
+
+CSV 파일에 쓰기 위해서는, 먼저 `csv-writer`를 설치하세요:
+
+```
+npm install csv-writer
+```
+
+그런 다음, 다음과 같이 사용합니다:
+
+```typescript
+import { createObjectCsvWriter as createCsvWriter } from 'csv-writer';
+
+const csvWriter = createCsvWriter({
+  path: 'out.csv',
+  header: [
+    {id: 'name', title: 'NAME'},
+    {id: 'age', title: 'AGE'}
+  ]
 });
 
-console.log(records);
+const data = [
+  { name: 'Alice', age: 30 },
+  { name: 'Bob', age: 25 }
+];
 
-// JSON으로 변환된 데이터를 CSV 파일로 저장하기
-const jsonToCsv = (json: object[], filename: string) => {
-  const keys = Object.keys(json[0]);
-  const csvRows = json.map((row) => keys.map((key) => row[key]).join(','));
-
-  const csvContent = [keys.join(','), ...csvRows].join('\n');
-
-  fs.writeFileSync(filename, csvContent, 'utf8');
-};
-
-jsonToCsv(records, 'output.csv');
+csvWriter
+  .writeRecords(data)
+  .then(() => console.log('The CSV file was written successfully'));
 ```
 
-```shell
-[ { id: '1', name: 'John Doe', age: '30' },
-  { id: '2', name: 'Jane Smith', age: '25' } ]
+이 코드는 `out.csv`에 다음을 씁니다:
+
+```
+NAME,AGE
+Alice,30
+Bob,25
 ```
 
-## Deep Dive
-CSV 형식은 1970년대부터 사용되며, 단순한 구조 덕분에 다양한 프로그램에서 호환됩니다. JSON이나 XML 같은 형식들도 대안으로 존재하지만, CSV는 낮은 용량과 높은 가독성 덕분에 데이터 교환의 표준 중 하나로 남아있습니다. 노드(Node.js)에서는 'csv-parse'와 같은 라이브러리를 통해 CSV 파일을 쉽게 처리할 수 있습니다.
-
-## See Also
-- RFC 4180 (https://tools.ietf.org/html/rfc4180)
-- csv-parse documentation (https://csv.js.org/parse/)
-- PapaParse (https://www.papaparse.com/) - 브라우져 기반 CSV 파서
-- d3-dsv (https://github.com/d3/d3-dsv) - D3 라이브러리의 CSV 파서
+이 예제들은 데이터 분석을 위해 데이터를 읽거나 애플리케이션 데이터를 외부에 영속화하기 위해, TypeScript 프로젝트에서 CSV 처리를 효율적으로 통합하는 방법을 보여줍니다.

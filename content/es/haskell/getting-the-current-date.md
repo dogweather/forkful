@@ -1,51 +1,52 @@
 ---
 title:                "Obteniendo la fecha actual"
-date:                  2024-01-20T15:14:56.942143-07:00
+date:                  2024-02-03T19:09:30.973636-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Obteniendo la fecha actual"
-
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/haskell/getting-the-current-date.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Qué y Por Qué?
-Obtener la fecha actual en Haskell es simplemente capturar la fecha y hora en este preciso momento. Los programadores hacen esto para registrar eventos, manejar operaciones relacionadas con el tiempo o simplemente mostrar la fecha al usuario.
+## ¿Qué y Por Qué?
+Recuperar la fecha actual en Haskell implica obtener el tiempo actual del sistema y transformarlo en un formato de fecha legible. Los programadores hacen esto para realizar operaciones basadas en la fecha, como registro de actividades, programación de tareas o estampado de tiempo en eventos en aplicaciones.
 
 ## Cómo hacerlo:
-Primero, necesitas importar el módulo `Data.Time`. Aquí hay dos funciones principales para obtener la fecha: `getCurrentTime`, que te da la hora y fecha UTC, y `getCurrentTimeZone` junto con `utcToLocalTime`, que convierten la hora UTC a tu zona horaria local.
+La biblioteca estándar de Haskell, `base`, proporciona el módulo `Data.Time` que ofrece funcionalidad para trabajar con fechas y horas. He aquí cómo usarlo para obtener la fecha actual:
 
-```Haskell
+```haskell
+import Data.Time (getCurrentTime, utctDay)
+
+main :: IO ()
+main = do
+    now <- getCurrentTime
+    let today = utctDay now
+    print today
+```
+
+Ejemplo de salida:
+```
+2023-04-12
+```
+
+Para mayor flexibilidad, como formatear la fecha o trabajar con diferentes zonas horarias, la biblioteca `time` es invaluable. Así es cómo podrías formatear la fecha actual:
+
+```haskell
 import Data.Time
 
 main :: IO ()
 main = do
-    -- Obtener la hora y fecha UTC actual
-    utcTime <- getCurrentTime
-    print utcTime
-
-    -- Convertir a hora y fecha local
-    zone <- getCurrentTimeZone
-    let localTime = utcToLocalTime zone utcTime
-    print localTime
+    now <- getCurrentTime
+    timezone <- getCurrentTimeZone
+    let zoneNow = utcToLocalTime timezone now
+    putStrLn $ formatTime defaultTimeLocale "%Y-%m-%d" zoneNow
 ```
-Salida de muestra:
-```
-2023-03-28 12:45:23.651971 UTC
-2023-03-28 14:45:23.651971 CET
-```
-Cambia los segundos según el momento en que ejecutes el código. La función `print` mostrará la hora en un formato estándar.
 
-## Análisis Profundo:
-Haskell ha tenido soporte para manejar fechas y horas desde sus primeras versiones. El paquete `time` es el standard en Haskell para trabajar con tiempo. Algunas alternativas a `Data.Time` incluyen `old-time` y librerías de terceros como `thyme`.
+Esto imprime la fecha actual en el formato `AAAA-MM-DD`, ajustada a la zona horaria local.
 
-`getCurrentTime` te da un valor de tipo `UTCTime`, que es básicamente un punto en tiempo universal coordinado (UTC). Usar UTC ayuda a evitar los líos que pueden surgir con zonas horarias y cambios de hora.
+Adicionalmente, para el soporte de bibliotecas de terceros, `time` es altamente recomendado y a menudo utilizado dentro de la comunidad de Haskell por sus extensas capacidades de manipulación de fechas y horas. Los ejemplos anteriores utilizan esta biblioteca.
 
-Si necesitas manejar fechas de manera más compleja, hay funciones como `addUTCTime` para sumar segundos, o `diffUTCTime` para obtener la diferencia entre dos momentos. Cada una manipula la fecha y hora de manera precisa y son parte de `Data.Time`.
-
-## Consultas Relacionadas:
-- Documentación de `Data.Time`: https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time.html
-- Tutorial de Haskell: http://learnyouahaskell.com/
-- Información sobre el manejo de zonas horarias: https://www.iana.org/time-zones
-
-Recuerda que las prácticas de manejo de tiempo están en constante evolución, así que mantenerse al día es clave para un manejo efectivo de fechas y horas en Haskell.
+Si necesitas una manipulación de fechas más completa, incluyendo el parseo desde cadenas o operaciones aritméticas con fechas y horas, explorar funciones adicionales dentro de `Data.Time` será beneficioso.

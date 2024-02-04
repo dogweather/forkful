@@ -1,65 +1,72 @@
 ---
-title:                "Análise de HTML"
-date:                  2024-01-20T15:33:43.017909-07:00
-simple_title:         "Análise de HTML"
-
+title:                "Analisando HTML"
+date:                  2024-02-03T19:12:43.228141-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Analisando HTML"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/powershell/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## O Quê e Por Quê?
-Parsear HTML é transformar o código HTML em algo que o PowerShell possa entender e manipular. Programadores fazem isso para extrair dados de websites, automatizar testes em páginas da web, ou manipular conteúdo de sites de forma programática.
+## O Que & Por Que?
+Analisar HTML no PowerShell é sobre desmembrar conteúdo HTML para extrair dados específicos ou automatizar tarefas relacionadas à web. Os programadores fazem isso para interagir com páginas da web, fazer raspagem de conteúdo web ou automatizar submissões de formulários e outras interações web sem a necessidade de um navegador.
 
-## Como Fazer:
-Para começar, você precisará de um módulo chamado `HtmlAgilityPack`. Este módulo não é nativo do PowerShell e precisará ser instalado. Use o seguinte comando:
+## Como fazer:
 
-```PowerShell
-Install-Package HtmlAgilityPack
+O PowerShell não possui nativamente um analisador HTML dedicado, mas você pode utilizar o cmdlet `Invoke-WebRequest` para acessar e analisar conteúdos HTML. Para análises e manipulações mais complexas, o HtmlAgilityPack, uma biblioteca .NET popular, pode ser empregado.
+
+### Usando `Invoke-WebRequest`:
+
+```powershell
+# Exemplo simples para buscar títulos de uma página da web
+$response = Invoke-WebRequest -Uri 'http://example.com'
+# Utilize a propriedade ParsedHtml para acessar elementos DOM
+$title = $response.ParsedHtml.title
+Write-Output $title
 ```
 
-Depois de instalado, você pode usá-lo para parsear HTML. Aqui está um exemplo básico:
+Saída de Exemplo:
 
-```PowerShell
-# Adiciona o HtmlAgilityPack ao seu script
-Add-Type -Path "C:\caminho\para\HtmlAgilityPack.dll"
+```
+Exemplo de Domínio
+```
 
-# Define o endereço do website que você quer parsear
-$url = 'http://exemplo.com'
+### Usando HtmlAgilityPack:
 
-# Baixa o HTML da página
-$html = Invoke-WebRequest -Uri $url
+Primeiro, você precisa instalar o HtmlAgilityPack. Você pode fazer isso via Gerenciador de Pacotes NuGet:
 
-# Carrega o HTML para o HtmlAgilityPack parsear
+```powershell
+Install-Package HtmlAgilityPack -ProviderName NuGet
+```
+
+Então, você pode usá-lo no PowerShell para analisar HTML:
+
+```powershell
+# Carregar o assembly HtmlAgilityPack
+Add-Type -Path "caminho\para\HtmlAgilityPack.dll"
+
+# Criar um objeto HtmlDocument
 $doc = New-Object HtmlAgilityPack.HtmlDocument
-$doc.LoadHtml($html.Content)
 
-# Extrai todos os nós de 'a' (links)
-$nodes = $doc.DocumentNode.SelectNodes('//a')
+# Carregar HTML de um arquivo ou uma solicitação web
+$htmlContent = (Invoke-WebRequest -Uri "http://example.com").Content
+$doc.LoadHtml($htmlContent)
 
-foreach ($node in $nodes)
-{
-    Write-Host "Texto do Link: $($node.InnerText.Trim())"
-    Write-Host "Href: $($node.Attributes['href'].Value)"
+# Usar XPath ou outros métodos de consulta para extrair elementos
+$node = $doc.DocumentNode.SelectSingleNode("//h1")
+
+if ($node -ne $null) {
+    Write-Output $node.InnerText
 }
 ```
 
-Output de exemplo:
+Saída de Exemplo:
+
 ```
-Texto do Link: Página Inicial
-Href: http://exemplo.com/home
+Bem-vindo ao Example.com!
 ```
 
-## Mergulho Profundo:
-Parsear HTML no PowerShell não era uma tarefa fácil até pouco tempo atrás. Tradicionalmente, a manipulação de HTML era feita com linguagens especializadas em web como JavaScript ou com ferramentas de server-side como PHP. No entanto, o crescimento de scripts de automação e testing fez com que essa necessidade se expandisse para outras linguagens.
-
-Antes do `HtmlAgilityPack`, algumas tarefas requeriam uso de regex para extrair informações do HTML, um método propenso a falhas devido à complexidade do HTML. Um conceito importante ao parsear HTML é entender que HTML é um documento estruturado e não apenas texto. O `HtmlAgilityPack` traz essa facilidade, funcionando como um parser de XML, o que é perfeito para HTML, que é essencialmente uma forma de XML.
-
-Além disso, tecnologias como `Invoke-WebRequest` e `ConvertFrom-Json` no PowerShell permitem interações web de alto nível. Outras alternativas incluem o uso de APIs, webscraping com outras linguagens, ou utilizando ferramentas como o Selenium para interações mais complexas com páginas web.
-
-## Veja Também:
-
-- Documentação do HtmlAgilityPack: [html-agility-pack.net/](https://html-agility-pack.net/)
-- PowerShell Gallery: [powershellgallery.com/](https://www.powershellgallery.com/)
-- Selenium WebDriver: [selenium.dev](https://www.selenium.dev/)
+Nestes exemplos, `Invoke-WebRequest` é melhor para tarefas simples, enquanto o HtmlAgilityPack oferece um conjunto de recursos muito mais rico para análise e manipulação complexa de HTML.

@@ -1,60 +1,96 @@
 ---
 title:                "Arbeiten mit JSON"
-date:                  2024-01-19
+date:                  2024-02-03T19:21:40.027050-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Arbeiten mit JSON"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/arduino/working-with-json.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Was & Warum?
 
-JSON (JavaScript Object Notation) wird für Datenaustausch verwendet, speziell, wenn Daten zwischen einem Server und einem Webclient verschickt werden. Es ist leicht zu lesen und zu schreiben, und von Maschinen einfach zu interpretieren und zu generieren, was die Programmierung effizienter macht.
+JSON, oder JavaScript Object Notation, ist ein leichtgewichtiges Daten-Austauschformat, was es perfekt für die Datenspeicherung oder Konfigurationsdateien in Arduino-Projekten macht. Programmierer verwenden es wegen seiner Einfachheit und Lesbarkeit in verschiedenen Programmierumgebungen, einschließlich Arduino, was den nahtlosen Datenaustausch mit Web-APIs oder anderen Systemen ermöglicht.
 
-## Anleitung:
+## Wie geht das:
 
-Installiere die `ArduinoJson` Bibliothek im Arduino IDE, dann probiere folgenden Code:
+Um mit JSON in Arduino zu arbeiten, ist die `ArduinoJson`-Bibliothek eine beliebte Wahl aufgrund ihrer Benutzerfreundlichkeit und Effizienz. Sie ermöglicht das Parsen von JSON-Strings, das Modifizieren dieser und das Serialisieren von Objekten zurück in JSON-Strings. Hier ist, wie man sie verwendet:
 
-```Arduino
+1. **Installiere die ArduinoJson-Bibliothek**: Verwende den Bibliotheks-Manager in der Arduino IDE und installiere "ArduinoJson".
+
+2. **Deserialisiere einen JSON-String**: So kannst du einen JSON-String parsen und Werte extrahieren.
+
+```cpp
+#include <ArduinoJson.h>
+
+const char* json = "{\"sensor\":\"gps\",\"time\":1351824120,\"data\":[48.756080,2.302038]}";
+
+void setup() {
+  Serial.begin(9600);
+  StaticJsonDocument<200> doc; // Größe an das JSON-Dokument anpassen
+  DeserializationError error = deserializeJson(doc, json);
+
+  if (error) {
+    Serial.print(F("deserializeJson() fehlgeschlagen: "));
+    Serial.println(error.f_str());
+    return;
+  }
+
+  const char* sensor = doc["sensor"]; // "gps"
+  long time = doc["time"]; // 1351824120
+  float latitude = doc["data"][0]; // 48.756080
+  float longitude = doc["data"][1]; // 2.302038
+  
+  Serial.println(sensor);
+  Serial.println(time);
+  Serial.println(latitude, 6);
+  Serial.println(longitude, 6);
+}
+
+void loop() {
+  // Leerlauf
+}
+```
+
+Beispielausgabe:
+
+```
+gps
+1351824120
+48.756080
+2.302038
+```
+
+3. **Serialisiere zu einem JSON-String**: So erstellst du einen JSON-String aus Daten.
+
+```cpp
 #include <ArduinoJson.h>
 
 void setup() {
   Serial.begin(9600);
 
-  // Ein JSON-Objekt erstellen
-  StaticJsonDocument<200> doc;
-  doc["sensor"] = "GPS";
+  StaticJsonDocument<200> doc; // Größe anhand der Daten anpassen
+  doc["sensor"] = "gps";
   doc["time"] = 1351824120;
+  JsonArray data = doc.createNestedArray("data");
+  data.add(48.756080);
+  data.add(2.302038);
 
-  // JSON im String umwandeln
-  String output;
-  serializeJson(doc, output);
-  Serial.println(output);
+  serializeJson(doc, Serial);
 }
 
 void loop() {
-  // Nichts zu tun hier
+  // Leerlauf
 }
 ```
 
-Dies wird ein JSON-Objekt erstellen und als String ausgeben:
+Beispielausgabe (formatiert für die Lesbarkeit):
 
 ```
-{"sensor":"GPS","time":1351824120}
+{"sensor":"gps","time":1351824120,"data":[48.756080,2.302038]}
 ```
 
-## Tiefergehende Infos:
-
-JSON wurde Anfang der 2000er Jahre entworfen und ist zu einem Standard für APIs und Webdienste geworden. Es hat XML in vielen Anwendungsbereichen ersetzt, weil es leichter und schneller zu parsen ist. Die `ArduinoJson` Bibliothek bietet eine einfache Nutzung und effizientes Speichermanagement unter Arduino.
-
-Alternativen wie MsgPack (MessagePack) existieren, die Daten in einem noch kompakteren Format darstellen, aber JSON bleibt wegen seiner Lesbarkeit und leichteren Handhabung beliebt.
-
-In der Microcontroller-Programmierung müssen Entwickler speicher- und rechenleistungsoptimierten Code schreiben, daher ist ein Verständnis von Speichernutzung und Speicherverwaltung wichtig, wenn man mit JSON auf solchen Systemen arbeitet.
-
-## Siehe Auch:
-
-- ArduinoJson Bibliothek Dokumentation: https://arduinojson.org/
-- JSON Spezifikation: https://www.json.org/json-de.html
-- Ein Tutorial zu JSON und Arduino: https://lastminuteengineers.com/handling-json-arduino/
+Die Verwendung der `ArduinoJson`-Bibliothek ermöglicht es Arduino-Projekten effektiv, komplexe Datenstrukturen in einem menschenlesbaren Format zu kommunizieren, was die Entwicklung und Integration mit Webdiensten erleichtert.

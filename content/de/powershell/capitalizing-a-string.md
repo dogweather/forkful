@@ -1,54 +1,45 @@
 ---
-title:                "String in Großbuchstaben umwandeln"
-date:                  2024-01-19
-simple_title:         "String in Großbuchstaben umwandeln"
-
+title:                "Einen String großschreiben"
+date:                  2024-02-03T19:05:57.057018-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Einen String großschreiben"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/powershell/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Das Großschreiben eines Strings ist die Umwandlung aller Buchstaben in Großbuchstaben. Programmierer verwenden dies, um Konsistenz in Benutzereingaben zu gewährleisten oder um Schriftzüge hervorzuheben.
+Das Großschreiben eines Strings in PowerShell beinhaltet die Umwandlung des ersten Zeichens eines gegebenen Strings in Großbuchstaben, während der Rest des Strings unverändert bleibt. Programmierer führen diese Aufgabe oft für Formatierungszwecke durch, wie zum Beispiel die Vorbereitung von Texten für die Anzeige in Benutzeroberflächen oder das Befolgen von grammatikalischen Regeln in generierten Dokumenten.
 
-## Vorgehensweise:
-Um in PowerShell einen String zu großzuschreiben, nutzt du die `.ToUpper()` Methode:
+## Wie:
+PowerShell, als vielseitiges Werkzeug, ermöglicht es Ihnen, einen String auf einfache Weise zu großzuschreiben, ohne dass Drittanbieterbibliotheken benötigt werden. So können Sie es machen:
 
-```PowerShell
-$text = "hallo welt"
-$capitalizedText = $text.ToUpper()
-Write-Host $capitalizedText
+```powershell
+# Verwenden der eingebauten .Net-Methode 'ToTitleCase' von CultureInfo
+$text = "hello world"
+$culture = [System.Globalization.CultureInfo]::InvariantCulture
+$capitalizedText = $culture.TextInfo.ToTitleCase($text.ToLower())
+Write-Output $capitalizedText
+```
+Ausgabe:
+```
+Hello world
 ```
 
-Ergebnis:
+Hinweis: Diese Methode setzt den ersten Buchstaben jedes Wortes groß. Wenn Sie strikt nur den ersten Buchstaben des Strings großschreiben und den Rest unverändert lassen möchten, könnten Sie so etwas machen:
 
+```powershell
+# Nur das erste Zeichen eines Strings großschreiben
+$text = "hello world"
+$capitalizedText = $text.Substring(0,1).ToUpper() + $text.Substring(1)
+Write-Output $capitalizedText
 ```
-HALLO WELT
+Ausgabe:
 ```
-
-Ein weiteres Beispiel, wenn man nur den ersten Buchstaben großschreiben möchte:
-
-```PowerShell
-$text = "hallo welt"
-$capitalizedText = $text.Substring(0,1).ToUpper()+$text.Substring(1)
-Write-Host $capitalizedText
-```
-
-Ergebnis:
-
-```
-Hallo welt
+Hello world
 ```
 
-## Vertiefung:
-Das Großschreiben von Strings war schon immer ein Teil von Programmiersprachen, um Text formatieren zu können. In PowerShell verwendet man `.ToUpper()` zum Großschreiben kompletter Strings oder `.Substring()` in Kombination mit `.ToUpper()`, um nur den ersten Buchstaben zu großzuschreiben.
-
-Es gibt Alternativen, wie etwa kulturell spezifische Methoden, die beim Großschreiben Buchstaben entsprechend der Sprachregeln verändern, zum Beispiel in der türkischen Sprache.
-
-In älteren Programmiersprachen oder bei sehr spezifischen Anforderungen könnte man jeden Buchstaben einzeln durchlaufen und in einen Großbuchstaben umwandeln. Dies ist aber in PowerShell selten erforderlich.
-
-## Siehe Auch:
-- [PowerShell Dokumentation zur String-Klasse](https://docs.microsoft.com/de-de/dotnet/api/system.string?view=netcore-3.1)
-- [StackOverflow: Großschreibung in PowerShell](https://stackoverflow.com/questions/tagged/powershell+uppercase)
-- [Microsoft Dokumentation: Kulturinformationen in .NET](https://docs.microsoft.com/de-de/dotnet/api/system.globalization.cultureinfo?view=netcore-3.1)
+PowerShell enthält direkt keine einfache Funktion zum Großschreiben nur des ersten Buchstabens eines Strings, aber durch die Kombination der grundlegenden Methoden zur Stringmanipulation wie `Substring(0,1).ToUpper()` und Verkettung können wir leicht das gewünschte Ergebnis erreichen.

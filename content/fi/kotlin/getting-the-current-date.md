@@ -1,56 +1,109 @@
 ---
 title:                "Nykyisen päivämäärän hankkiminen"
-date:                  2024-01-20T15:15:13.899445-07:00
+date:                  2024-02-03T19:10:24.836746-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Nykyisen päivämäärän hankkiminen"
-
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/kotlin/getting-the-current-date.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? 
-"Päivämäärän haku ja merkitys"
-Päivämäärän hakeminen tarkoittaa nykyisen päivän tiedon saamista ohjelmassasi. Sitä käytetään, kun tarvitaan ajanhetken leimausta, käyttäjän tapahtumien aikamerkintöjä tai päivittäisiä tehtäviä.
+## Mitä & Miksi?
+Ohjelmoinnissa nykyisen päivämäärän hankkiminen on perustehtävä, joka mahdollistaa kehittäjille pääsyn nykyisen päivämäärän tarkastelemiseen, näyttämiseen tai manipulointiin sovelluksissaan. Tämä ominaisuus on ratkaisevan tärkeä kaikkea varten lokituksesta ja tapahtumien aikaleimoista laskelmiin, jotka perustuvat päivämääriin.
 
-## How to:
-"Kuinka hakea päivämäärä:"
-Kotlin tekee päivämäärän hakemisen suoraviivaiseksi. Kokeile näitä esimerkkejä.
+## Kuinka:
 
-```Kotlin
+### Käyttäen vakio Kotlinia
+Kotlinilla ei ole omaa päivämäärän ja ajan API:a, mutta se nojautuu Java Standard Libraryyn tämän toiminnallisuuden osalta. Näin voit hankkia nykyisen päivämäärän:
+
+```kotlin
 import java.time.LocalDate
 
 fun main() {
     val today = LocalDate.now()
-    println(today) // Tulostaa tämänhetkisen päivämäärän muodossa vvvv-kk-pp
+    println("Päivän päivämäärä: $today")
 }
 ```
 
-Koodi antaa tulokseksi esim. `2023-04-01`, jos ajat sen 1. huhtikuuta 2023.
+**Näyte tuloste:**
+```
+Päivän päivämäärä: 2023-04-05
+```
 
-## Deep Dive
-"Syväluotaus"
-Kotlin käyttää JDK:n `java.time`-kirjastoa päivämäärän haussa - se on moderni Java-kirjasto ajan käsittelyyn, joka tuli standardiksi Java 8 -versiossa. Historiallisesti Java-kehittäjät käyttivät `java.util.Date`- tai `java.util.Calendar`-luokkia, jotka olivat monimutkaisia ja eivät aina kovin intuitiivisia. `java.time`-kirjasto korjasi näitä ongelmia ja tarjoaa paremman API:n ajan käsittelyyn.
+### Käyttäen java.util.Date
+Operaatioihin, jotka vaativat sekä päivämäärän että ajan, voit mieluummin käyttää `java.util.Date`.
 
-Vaihtoehtoinen tapa Kotlinissa on käyttää `java.util.Calendar`-luokkaa:
-
-```Kotlin
-import java.util.Calendar
+```kotlin
+import java.util.Date
 
 fun main() {
-    val today = Calendar.getInstance()
-    println("${today.get(Calendar.YEAR)}-${today.get(Calendar.MONTH) + 1}-${today.get(Calendar.DAY_OF_MONTH)}")
-    // Huomaa +1 kuukaudelle, koska Calendar-luokka indeksoi kuukaudet alkaen 0.
+    val currentDate = Date()
+    println("Nykyinen päivämäärä ja aika: $currentDate")
 }
 ```
-Tämä antaa sinulle saman tuloksen, mutta saattaa olla kömpelömpää.
 
-Tietoa ajantarkkuudesta: `LocalDate.now()` antaa päivän tarkkuudella ajan hetken ilman kellonaikaa. Jos tarvitset kellonajan, voit käyttää `LocalDateTime.now()`.
+**Näyte tuloste:**
+```
+Nykyinen päivämäärä ja aika: Wed Apr 05 15:20:45 GMT 2023
+```
 
-## See Also
-"Lisätietoja"
-- [Kotlin-dokumentaatio: Basic Types and Operations](https://kotlinlang.org/docs/basic-types.html)
-- [Oracle Java-dokumentaatio: Date Time API](https://docs.oracle.com/javase/tutorial/datetime/)
-- [Baeldung: Introduction to the Java 8 Date/Time API](https://www.baeldung.com/java-8-date-time-intro)
+### Käyttäen Joda-Time kirjastoa
+Ennen Java 8:n uuden Päivämäärä ja Aika API:n esittelyä, Joda-Time oli de-facto standardi päivämäärä-aika operaatioihin Java:ssa ja Kotlinissa. Vaikka monet projektit eivät enää tarvitse sitä, jotkin saattavat edelleen käyttää sitä perinteisistä syistä tai henkilökohtaisen mieltymyksen vuoksi.
 
-Kun kaipaat lisää, nuo linkit vievät syvemmälle Kotlinin ja Javan päivämäärä- ja aikakäsittelyyn.
+Lisää Joda-Time kirjasto projektisi build.gradle tiedostoon:
+```
+implementation 'joda-time:joda-time:2.10.10'
+```
+
+```kotlin
+import org.joda.time.LocalDate
+
+fun main() {
+    val today = LocalDate.now()
+    println("Päivän päivämäärä: $today")
+}
+```
+
+**Näyte tuloste:**
+```
+Päivän päivämäärä: 2023-04-05
+```
+
+### Käyttäen ThreeTenABP:tä Androidille
+Android-kehityksessä suositellaan käyttämään Java Time API:n takaisinsovitusta ThreeTen Android Backport Projectin kautta kaikille versioille ennen Android API-tason 26.
+
+Lisää riippuvuus sovelluksesi build.gradle tiedostoon:
+```
+implementation 'com.jakewharton.threetenabp:threetenabp:1.3.1'
+```
+
+Alusta se Application-luokassasi:
+```kotlin
+import android.app.Application
+import com.jakewharton.threetenabp.AndroidThreeTen
+
+class MyApp : Application() {
+    override fun onCreate() {
+        super.onCreate()
+        AndroidThreeTen.init(this)
+    }
+}
+```
+
+Sen jälkeen voit käyttää sitä näin:
+```kotlin
+import org.threeten.bp.LocalDate
+
+fun main() {
+    val today = LocalDate.now()
+    println("Päivän päivämäärä: $today")
+}
+```
+
+**Näyte tuloste:**
+```
+Päivän päivämäärä: 2023-04-05
+```

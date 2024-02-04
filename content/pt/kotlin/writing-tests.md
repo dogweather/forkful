@@ -1,58 +1,99 @@
 ---
 title:                "Escrevendo testes"
-date:                  2024-01-19
+date:                  2024-02-03T19:31:08.635411-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Escrevendo testes"
-
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/kotlin/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## O Que & Porquê?
-Escrever testes é criar verificações automatizadas para o seu código, garantindo que ele funcione como esperado. Programadores fazem isso para aumentar a confiança no software, facilitar a manutenção e permitir atualizações sem medo de quebrar funcionalidades existentes.
+## O Que & Por Quê?
+
+Escrever testes em Kotlin envolve a criação de trechos de código que validam automaticamente a correção funcional dos seus módulos de software, garantindo que eles funcionem conforme esperado. Os programadores fazem isso para detectar bugs precocemente, facilitar a refatoração do código e fornecer documentação sobre como os componentes de software devem funcionar.
 
 ## Como Fazer:
-Para começar com testes em Kotlin, você usará o JUnit. Primeiro, adicione a dependência no seu `build.gradle`:
+
+O Kotlin suporta o desenvolvimento guiado por testes com vários frameworks, sendo os mais populares o JUnit, o Kotest e o MockK para mock (simulação). Aqui está um exemplo simples usando JUnit:
 
 ```kotlin
-dependencies {
-    testImplementation("org.junit.jupiter:junit-jupiter:5.7.0")
-}
-```
-
-Agora, escreva um teste simples para avaliar uma função que soma dois números:
-
-```kotlin
-import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
+import kotlin.test.assertEquals
 
-class CalculadoraTest {
+class CalculatorTest {
 
     @Test
-    fun `soma de dois numeros`() {
-        val esperado = 4
-        val resultado = soma(2, 2)
-        assertEquals(esperado, resultado)
+    fun `soma dois números`() {
+        val calculator = Calculator()
+        val result = calculator.add(2, 3)
+        assertEquals(5, result)
     }
+}
 
-    fun soma(a: Int, b: Int) = a + b
+class Calculator {
+    fun add(a: Int, b: Int): Int = a + b
 }
 ```
 
-Execute os testes e veja o resultado:
+**Saída de Exemplo**
 
+```text
+Teste passou.
 ```
-Test passed
+
+Para uma abordagem de teste mais sofisticada usando o Kotest, que oferece um estilo de escrita de teste mais idiomático para Kotlin, veja o exemplo abaixo:
+
+```kotlin
+import io.kotest.core.spec.style.StringSpec
+import io.kotest.matchers.shouldBe
+
+class CalculatorSpec : StringSpec({
+    "somar 2 e 3 deve retornar 5" {
+        val calculator = Calculator()
+        calculator.add(2, 3) shouldBe 5
+    }
+})
 ```
 
-## Mergulho Profundo:
-O JUnit é o framework mais popular para testes em Java e Kotlin, originário nos anos 90. Alternativas incluem TestNG e Spek. Importante entender que bons testes devem ser fáceis de escrever e ler, rápidos para executar e confiáveis. Eles devem cobrir casos comuns e os cantos escondidos do código.
+Usando o MockK para testar com mocks:
 
-## Veja Também:
-Para aprender mais sobre testes unitários em Kotlin, confira:
+```kotlin
+import io.mockk.every
+import io.mockk.mockk
+import org.junit.jupiter.api.Test
+import kotlin.test.assertEquals
 
-- Documentação oficial do JUnit: https://junit.org/junit5/
-- Kotlin testing com MockK: https://mockk.io/
-- Testes de integração com Testcontainers: https://www.testcontainers.org/
-- Kotlin Academy sobre testes: https://blog.kotlin-academy.com/
+class ServiceTest {
+
+    private val repository = mockk<Repository>()
+    private val service = Service(repository)
+
+    @Test
+    fun `obter dados retorna dados simulados`() {
+        every { repository.getData() } returns "Dados Simulados"
+
+        val result = service.getData()
+
+        assertEquals("Dados Simulados", result)
+    }
+}
+
+class Service(private val repository: Repository) {
+    fun getData(): String = repository.getData()
+}
+
+interface Repository {
+    fun getData(): String
+}
+```
+
+**Saída de Exemplo**
+
+```text
+Teste passou.
+```
+
+Esses exemplos ilustram os conceitos básicos de escrita de testes unitários em Kotlin. À medida que sua aplicação cresce, considere explorar técnicas e ferramentas de teste mais avançadas fornecidas por cada framework.

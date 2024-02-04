@@ -1,44 +1,57 @@
 ---
 title:                "Capitalizando uma string"
-date:                  2024-01-19
+date:                  2024-02-03T19:05:25.215597-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Capitalizando uma string"
-
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/fish-shell/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## O Que & Porquê?
+## O que & Por quê?
 
-Capitalizar uma string significa transformar as primeiras letras das palavras em maiúsculas. Programadores fazem isso para normalizar dados, melhorar a legibilidade ou atender a requisitos estéticos e de formatação.
+Capitalizar uma string significa modificá-la para que a primeira letra fique em maiúscula e o restante da string em minúscula. Essa é uma tarefa comum no processamento de texto, normalização de entrada do usuário e formatação de dados para garantir consistência ou atender a critérios específicos de formatação.
 
-## Como Fazer:
+## Como fazer:
 
-```Fish Shell
-function capitalize
-    for word in $argv
-        echo -n (string ucfirst $word) " "
-    end
-    echo
-end
+No Fish Shell, strings podem ser manipuladas diretamente com funções internas, sem a necessidade de ferramentas externas ou bibliotecas. Para capitalizar uma string, você pode combinar o comando `string` com subcomandos.
 
-# Exemplo de uso
-set phrase "o mundo é vasto e maravilhoso"
-capitalize $phrase
+```fish
+# String de exemplo
+set sample_string "olá mundo"
+
+# Capitalizar a primeira letra
+set capitalized_string (string sub -l 1 -- $sample_string | string upper)(string sub -s 2 -- $sample_string)
+
+echo $capitalized_string
 ```
 
-Saída do exemplo:
+Saída:
 ```
-O Mundo É Vasto E Maravilhoso
+Olá mundo
 ```
 
-## Mergulho Profundo:
+Para cenários que exigem a capitalização de várias palavras em uma string (por exemplo, converter "olá mundo" para "Olá Mundo"), você iteraria sobre cada palavra, aplicando a lógica de capitalização a cada uma:
 
-Antigamente, capitalizar strings não era uma funcionalidade padrão em muitas linguagens de programação e shells – os desenvolvedores tinham que implementar suas próprias funções. Com o Fish Shell, isso mudou. A função `string ucfirst` é prática e direta. Existem alternativas, como usar comandos `awk` ou `sed` em outros shells, mas Fish traz isso de série, sem complicações.
+```fish
+# Frase de exemplo
+set sentence "olá programação shell fish"
 
-Em termos de implementação, a função `string ucfirst` modifica apenas o primeiro caractere para maiúsculo. Se precisar de mais controle ou quiser capitalizar cada palavra em uma string, você terá que usar um loop ou outra função personalizada, como mostrado acima.
+# Capitalizar cada palavra
+set capitalized_words (string split " " -- $sentence | while read -l word; string sub -l 1 -- $word | string upper; and string sub -s 2 -- $word; end)
 
-## Veja Também:
+# Juntar as palavras capitalizadas
+set capitalized_sentence (string join " " -- $capitalized_words)
 
-- Documentação oficial do comando `string` no Fish: [fishshell.com/docs/current/cmds/string.html](https://fishshell.com/docs/current/cmds/string.html)
+echo $capitalized_sentence
+```
+
+Saída:
+```
+Olá Programação Shell Fish
+```
+
+Note que o Fish Shell não oferece diretamente uma abordagem de comando único para a capitalização completa de frases da mesma forma que algumas linguagens de programação fazem com seus métodos de string. Portanto, combinar `string split`, `string sub`, `string upper` e depois reunir representa uma abordagem idiomática no Fish Shell para alcançar isso.

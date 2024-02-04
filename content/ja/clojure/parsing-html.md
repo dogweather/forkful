@@ -1,47 +1,75 @@
 ---
 title:                "HTMLの解析"
-date:                  2024-01-20T15:30:46.054042-07:00
+date:                  2024-02-03T19:11:48.803294-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "HTMLの解析"
-
 tag:                  "HTML and the Web"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/clojure/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (何となぜ？)
+## 何となぜ？
 
-HTMLパースは、HTMLからデータを読み取る過程です。プログラマは、ウェブページの内容を解析・取得するためや、ウェブスクレイピングするためにこれを行います。
+ClojureでのHTML解析は、プログラムでHTMLドキュメントから情報を抽出することを意味します。プログラマーはこれを行って、ウェブコンテンツにアクセスしたり、動的に操作したり、監視したりすることで、タスクを自動化したり、アプリケーションにデータを供給したりします。
 
-## How to (方法)
+## どのようにして：
 
-Clojureでは、`enlive`や`hiccup`のようなライブラリでHTMLをパースできます。以下は、`enlive`を使った基本的な例です。
+ClojureにはHTML解析機能が組み込まれていませんが、Javaライブラリや`enlive`や`hickory`のようなClojureラッパーを活用することができます。以下はその使用方法です：
+
+### Enliveを使用する：
+
+EnliveはHTML解析やウェブスクレイピングに人気の選択肢です。まず、プロジェクトの依存関係に追加してください：
+
+```clojure
+[net.cgrand/enlive "1.1.6"]
+```
+
+次に、HTMLを解析してナビゲートするには、以下のようにします：
 
 ```clojure
 (require '[net.cgrand.enlive-html :as html])
 
-(defn fetch-title [html-content]
-  (html/select (html/html-resource (java.io.StringReader. html-content)) [:title]))
-
-(let [html-string "<html><head><title>こんにちは、Clojure!</title></head><body>...</body></html>"]
-  (println (fetch-title html-string)))
+(let [doc (html/html-resource (java.net.URL. "http://example.com"))]
+  (html/select doc [:div.some-class]))
 ```
 
-出力サンプル:
+このスニペットはHTMLページを取得し、クラス`some-class`を持つ全ての`<div>`要素を選択します。
 
+出力は次のようになるかもしれません：
+
+```clojure
+({:tag :div, :attrs {:class "some-class"}, :content ["Here's some content."]})
 ```
-([:title "こんにちは、Clojure!"])
+
+### Hickoryを使用する：
+
+Hickoryは、Clojureで扱いやすい形式にHTMLを解析する方法を提供します。Hickoryをプロジェクトの依存関係に追加してください：
+
+```clojure
+[hickory "0.7.1"]
 ```
 
-## Deep Dive (深く掘り下げる)
+こちらは簡単な例です：
 
-HTMLをパースすることは1990年代から行われています。初期は簡素だったHTMLですが、次第に複雑になり、パースも進化しました。`enlive`はClojureのためのHTMLパージングライブラリの一つで、DOMの抽象化とクエリ機能を提供します。正規表現や文字列操作では難しいタスクも`enlive`を使えば簡単になります。
+```clojure
+(require '[hickory.core :as hickory]
+         '[hickory.select :as select])
 
-JavascriptライブラリやPythonの`BeautifulSoup`といった他言語のツールも存在しますが、Clojureにおいては、`enlive`や`hiccup`が好まれます。それは、Clojureのシンボリックな特性とデータ駆動のアプローチによく合っているためです。パースしたHTMLはS-expressionとして表され、Clojureのコレクションとして自然に操作が可能です。
+;; Hickory形式にHTMLを解析する
+(let [doc (hickory/parse "<html><body><div id='main'>Hello, world!</div></body></html>")]
+  ;; id'main'のdivを選択する
+  (select/select (select/id "main") doc))
+```
 
-## See Also (関連情報)
+このコードはシンプルなHTML文字列を解析し、IDが`main`の`div`をCSSセレクタで見つけます。
 
-- Enliveの公式ドキュメント: [https://github.com/cgrand/enlive](https://github.com/cgrand/enlive)
-- HiccupのGitHubリポジトリ: [https://github.com/weavejester/hiccup](https://github.com/weavejester/hiccup)
-- Clojureに関するその他のリソース: [https://clojure.org/](https://clojure.org/)
+サンプル出力：
+
+```clojure
+[{:type :element, :tag :div, :attrs {:id "main"}, :content ["Hello, world!"]}]
+```
+
+`enlive`と`hickory`はどちらもClojureでのHTML解析に堅牢なソリューションを提供しており、`enlive`はテンプレートに、`hickory`はデータ変換により重点を置いています。

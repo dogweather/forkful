@@ -1,38 +1,67 @@
 ---
-title:                "Att göra en sträng versal"
-date:                  2024-01-19
-simple_title:         "Att göra en sträng versal"
-
+title:                "Gör om en sträng till versaler"
+date:                  2024-02-03T19:05:45.795609-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Gör om en sträng till versaler"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/java/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att kapitalisera en sträng innebär att förvandla alla bokstäver i strängen till versaler. Programmerare gör detta för att standardisera textdata, betona viktiga ord eller för att uppfylla tekniska krav.
+Att göra första bokstaven i varje ord i en sträng till versal innebär att man modifierar första bokstaven till att vara stor bokstav medan resten gör man till gemener. Denna vanliga manipulering av strängar är användbar för att formatera text i applikationer, till exempel för att förbereda användarnamn eller titlar för visning enligt konvention eller grammatisk korrekthet.
 
-## Hur gör man:
+## Hur:
+Javas standardbibliotek erbjuder inte en direkt metod för att göra hela strängar versaler på en gång, men detta kan åstadkommas med en kombination av inbyggda metoder. För mer sofistikerade behov erbjuder tredjepartbibliotek som Apache Commons Lang enkla lösningar.
+
+### Använda Javas inbyggda metoder
+För att göra en sträng versal utan externa bibliotek kan du dela upp strängen i ord, göra första bokstaven i varje ord versal och sedan sätta ihop dem igen. Här är ett enkelt tillvägagångssätt:
+
 ```java
-public class StringCapitalizer {
-    
+public class CapitalizeString {
     public static void main(String[] args) {
-        String text = "hej världen";
-        String capitalizedText = text.toUpperCase();
-        System.out.println(capitalizedText); // HEJ VÄRLDEN
+        String text = "hello, world!";
+        String capitalizedText = capitalizeWords(text);
+        System.out.println(capitalizedText); // Skriver ut: "Hello, World!"
+    }
+
+    public static String capitalizeWords(String str) {
+        char[] chars = str.toLowerCase().toCharArray();
+        boolean found = false;
+        for (int i = 0; i < chars.length; i++) {
+            if (!found && Character.isLetter(chars[i])) {
+                chars[i] = Character.toUpperCase(chars[i]);
+                found = true;
+            } else if (Character.isWhitespace(chars[i]) || chars[i]=='.' || chars[i]=='\'') { 
+                found = false;
+            }
+        }
+        return String.valueOf(chars);
     }
 }
 ```
-Kör programmet. Utmatningen blir `HEJ VÄRLDEN`.
 
-## Djupdykning:
-Kapitalisering av strängar har länge varit en grundläggande operation i programmering. I tidiga dagar av datoranvändning, speciellt i system som bara stödde versaler, var detta absolut nödvändigt.
+Denna kodsnutt konverterar hela strängen till gemener och itererar sedan genom varje tecken, och gör första bokstaven i varje ord till en versal. Det betraktar blanksteg, punkter och apostrofer som ordavgränsare.
 
-Det finns alternativ till metoden `toUpperCase()`, till exempel `toLowerCase()` som gör motsatsen. Man kan också använda Apache Commons `StringUtils.capitalize()` för att endast göra första bokstaven stor.
+### Använda Apache Commons Lang
 
-När du kapitaliserar en sträng i Java, används under huven Unicode och Character-klassen för korrekt konvertering, även för bokstäver utanför ASCII-omfånget.
+Apache Commons Lang-biblioteket erbjuder en mer elegant lösning med metoden `WordUtils.capitalizeFully()`, som hanterar olika specialfall och avgränsare åt dig:
 
-## Se även:
-- [Oracle Java docs on toUpperCase](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html#toUpperCase())
-- [Wikipedia om Unicode](https://sv.wikipedia.org/wiki/Unicode)
-- [Apache Commons Lang StringUtils](https://commons.apache.org/proper/commons-lang/javadocs/api-release/org/apache/commons/lang3/StringUtils.html)
+```java
+// Lägg till beroende: org.apache.commons:commons-lang3:3.12.0
+
+import org.apache.commons.text.WordUtils;
+
+public class CapitalizeString {
+    public static void main(String[] args) {
+        String text = "hello, world!";
+        String capitalizedText = WordUtils.capitalizeFully(text);
+        System.out.println(capitalizedText); // Skriver ut: "Hello, World!"
+    }
+}
+```
+
+För att använda denna metod behöver du lägga till Apache Commons Lang-biblioteket i ditt projekt. Denna biblioteksmetod gör inte bara första bokstaven i varje ord till en versal utan konverterar också resten av bokstäverna i varje ord till gemener, vilket säkerställer ett konsekvent mönster av versalisering genom hela strängen.

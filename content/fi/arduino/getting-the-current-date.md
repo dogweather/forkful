@@ -1,75 +1,65 @@
 ---
 title:                "Nykyisen päivämäärän hankkiminen"
-date:                  2024-01-20T15:13:08.500787-07:00
+date:                  2024-02-03T19:09:00.393780-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Nykyisen päivämäärän hankkiminen"
-
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/arduino/getting-the-current-date.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-"Mikä & Miksi?"
+## Mikä ja miksi?
+Nykyisen päivämäärän saaminen Arduino-projekteissa tarkoittaa reaaliaikaisen tiedon hankkimista, joka voi olla ratkaisevan tärkeää lokitiedostojen kirjaamisessa, aikaleimojen lisäämisessä tai tehtävien ajoittamisessa. Ohjelmoijat tarvitsevat usein tätä kykyä toiminnallisuuden parantamiseen, datan ajantasaisuuden varmistamiseen ja aikaherkkien operaatioiden helpottamiseen IoT- ja sulautetuissa projekteissa.
 
-Ajan päivittäinen noutaminen kertoo, millä hetkellä ollaan menossa. Sitä käytetään tapahtumien aikaleimojen luomiseen, aikariippuvaisten toimintojen ohjaamiseen ja käyttäjien informoimiseen päivämäärästä.
+## Kuinka:
+Arduino itsessään ei sisällä sisäänrakennettua menetelmää nykyisen päivämäärän suoraan noutamiseen, sillä siitä puuttuu reaaliaikakello (RTC). Tämän voi kuitenkin saavuttaa käyttämällä ulkoisia RTC-moduuleja, kuten DS3231, ja kirjastoja, kuten `RTClib`, jonka on kehittänyt Adafruit, ja joka tekee näiden moduulien kanssa rajapinnan muodostamisesta suoraviivaista.
 
-## How to:
-"Miten tehdä:"
+Varmista ensin, että `RTClib`-kirjasto on asennettu Arduino IDE:eesi. Kytke sitten RTC-moduulisi Arduinoon sen dokumentaation mukaisesti.
 
-```Arduino
+Tässä on yksinkertainen esimerkki aloittamiseen:
+
+```cpp
 #include <Wire.h>
-#include <RTClib.h>
+#include "RTClib.h"
 
 RTC_DS3231 rtc;
 
 void setup() {
   Serial.begin(9600);
+
   if (!rtc.begin()) {
-    Serial.println("Ei löydetä RTC:ta");
+    Serial.println("Ei löydetty RTC:tä");
     while (1);
   }
 
   if (rtc.lostPower()) {
-    Serial.println("RTC on nollattu, aseta aika!");
-    // Näin asetetaan aika: rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
+    Serial.println("RTC menetti virran, asetetaan aika!");
+    // Kun laitteella on uusi tai sen jälkeen kun se on menettänyt virran ja aika täytyy asettaa, voit asettaa sen tässä.
+    // rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
   }
 }
 
 void loop() {
   DateTime now = rtc.now();
-  
-  Serial.print("Päiväys: ");
-  Serial.print(now.day());
-  Serial.print('/');
-  Serial.print(now.month());
-  Serial.print('/');
-  Serial.print(now.year());
-  Serial.print(" Aika: ");
-  Serial.print(now.hour());
-  Serial.print(':');
-  Serial.print(now.minute());
-  Serial.print(':');
-  Serial.println(now.second());
 
-  delay(1000);
+  Serial.print("Nykyinen päivämäärä: ");
+  Serial.print(now.year(), DEC);
+  Serial.print('/');
+  Serial.print(now.month(), DEC);
+  Serial.print('/');
+  Serial.println(now.day(), DEC);
+
+  delay(3000); // Viivästys 3 sekuntia vähentämään sarjatulostuksen määrää
 }
 ```
-Saatu tuloste näyttää tältä:  
-`Päiväys: 15/4/2023 Aika: 12:34:56`
 
-## Deep Dive:
-"Syväsukellus"
+Esimerkkilähtötieto (olettaen, että RTC on aiemmin asetettu):
 
-Arduino ei sisällä sisäänrakennettua reaaliaikakelloa (RTC). Tämän vuoksi käytetään ulkoista RTC-moduulia, kuten DS3231. RTC-moduulit ylläpitävät aikaa paristolla, joten ne toimivat vaikka Arduino sammutettaisiin.
+```
+Nykyinen päivämäärä: 2023/4/15
+```
 
-Historiallisesti ajannouginta tapahtui eri tavoilla, kuten loopissa olevilla viiveillä, mutta nämä menetelmät eivät olleet tarkkoja. RTC-moduulit tarjoavat tarkan ja luotettavan tavan seurata aikaa.
-
-Käyttäjät voivat käyttää muita kirjastoja tai moduuleja, kuten Time.h tai GPS-moduulit saadakseen ajan. Käytettävä menetelmä riippuu projektista ja tarvittavasta tarkkuudesta.
-
-## See Also:
-"Katso myös"
-
-- RTClib-kirjaston dokumentaatio: https://github.com/adafruit/RTClib
-- Arduino Time-kirjasto: https://www.arduino.cc/en/Reference/Time
-- DS3231 moduulin datalehti: https://datasheets.maximintegrated.com/en/ds/DS3231.pdf
+Tämä koodi alustaa RTC-moduulin ja hakee sitten pääsilmukassa ja tulostaa nykyisen päivämäärän sarjatarkkailuun joka 3. sekunti. Muista, että `rtc.adjust(...)`-rivi voidaan ottaa kommentista pois ja muuttaa, jotta RTC:n päivämäärä ja aika voidaan asettaa alunperin tai sen jälkeen, kun se on menettänyt virran.

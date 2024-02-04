@@ -1,8 +1,8 @@
 ---
 title:                "Writing tests"
-date:                  2024-01-19
+date:                  2024-02-03T19:03:20.795391-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Writing tests"
-
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/cpp/writing-tests.md"
 ---
@@ -10,35 +10,68 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Writing tests checks if your code does what it's supposed to, catching bugs early. Programmers test to save time, headaches, and ensure reliability.
+
+Writing tests in C++ involves creating small, self-contained programs that automatically verify the behavior of sections of your codebase. Programmers do this to ensure that their code works as expected, to prevent regressions (i.e., new changes breaking existing functionality), and to facilitate maintainable codebases over time.
 
 ## How to:
-Let's use a simple C++ function and a test using the Catch2 framework.
+
+### Using Google Test Framework
+
+One of the most popular third-party libraries for writing tests in C++ is Google Test. First, you'll need to install Google Test and link it with your project. Once set up, you can start writing test cases.
 
 ```cpp
-// main.cpp
-#define CATCH_CONFIG_MAIN  // Let Catch provide main().
-#include <catch2/catch.hpp>
+#include <gtest/gtest.h>
 
-int Add(int a, int b) {
+int add(int a, int b) {
     return a + b;
 }
 
-TEST_CASE( "Addition works", "[math]" ) {
-    REQUIRE( Add(2, 2) == 4 );
+TEST(TestSuiteName, TestName) {
+    EXPECT_EQ(3, add(1, 2));
+}
+
+int main(int argc, char **argv) {
+    ::testing::InitGoogleTest(&argc, argv);
+    return RUN_ALL_TESTS();
 }
 ```
-Compile with `g++ -std=c++17 main.cpp -o test -lcatch2` and run `./test`. Sample output:
+
+Save the code in a file, and compile it with the g++ compiler, linking the Google Test library. If everything is set up correctly, running the resulting executable will run the test, and if the `add` function works as expected, you'll see something like:
 
 ```
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from TestSuiteName
+[ RUN      ] TestSuiteName.TestName
+[       OK ] TestSuiteName.TestName (0 ms)
+[----------] 1 test from TestSuiteName (0 ms total)
+
+[==========] 1 test from 1 test suite ran. (1 ms total)
+[  PASSED  ] 1 test.
+```
+
+### Using Catch2
+
+Another popular testing framework for C++ is Catch2. It has a simpler syntax and doesn't usually require linking against a library (header-only). Here's an example of how to write a simple test with Catch2:
+
+```cpp
+#define CATCH_CONFIG_MAIN  // This tells Catch to provide a main() - only do this in one cpp file
+#include <catch.hpp>
+
+int multiply(int a, int b) {
+    return a * b;
+}
+
+TEST_CASE( "Integers are multiplied", "[multiply]" ) {
+    REQUIRE( multiply(2, 3) == 6 );
+}
+```
+
+Upon compiling and running this test, Catch2 provides clear output indicating whether the test passed or failed, along with any information needed to debug failures:
+
+```
+===============================================================================
 All tests passed (1 assertion in 1 test case)
 ```
 
-## Deep Dive
-Testing wasn't always the norm. In the '70s, it was manual. Now, automated tests are key in agile and TDD (Test-Driven Development). Alternatives to Catch2? Google Test, Boost.Test, and CppUnit, each with unique flavors. Remember: tests assess if code meets requirements, not if those requirements are correct—that's a spec issue.
-
-## See Also
-- Catch2: https://github.com/catchorg/Catch2
-- Google Test: https://github.com/google/googletest
-- Boost.Test: https://www.boost.org/doc/libs/release/libs/test/
-- CppUnit: https://freedesktop.org/wiki/Software/cppunit/
+These examples show how integrating testing frameworks into your C++ development workflow can significantly enhance the reliability and maintainability of your code.

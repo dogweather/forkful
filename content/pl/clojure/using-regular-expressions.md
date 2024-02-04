@@ -1,39 +1,75 @@
 ---
-title:                "Wykorzystanie wyrażeń regularnych"
-date:                  2024-01-19
-simple_title:         "Wykorzystanie wyrażeń regularnych"
-
+title:                "Korzystanie z wyrażeń regularnych"
+date:                  2024-02-03T19:16:43.605468-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Korzystanie z wyrażeń regularnych"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/clojure/using-regular-expressions.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Co i dlaczego?
-Regular expressions (regexpy) to wzorce używane do dopasowywania ciągów znaków. Programiści wykorzystują je do wyszukiwania, walidacji, edycji i ekstrakcji danych z tekstu.
+Wyrażenia regularne to potężne narzędzie do dopasowywania wzorców i manipulowania danymi, niezbędne w zadaniach przetwarzania tekstu, takich jak walidacja danych wejściowych, wyszukiwanie i zamiana tekstu. Programiści używają ich intensywnie do efektywnego i zwięzłego obsługiwania złożonych zadań związanych z analizą ciągów znaków i walidacją danych.
 
 ## Jak to zrobić:
-```Clojure
-;; Wyszukiwanie dopasowań
-(re-find #"\d+" "123 abc") ; Znajduje pierwszą sekwencję cyfr
-; Wynik: "123"
+Clojure, pozostając wiernym swoim korzeniom z rodziny Lisp, oferuje bogaty zestaw funkcji, które bezproblemowo współpracują z możliwościami wyrażeń regularnych Javy. Oto jak możesz z nich korzystać:
 
-;; Walidacja formatu
-(boolean (re-matches #"\d{2}-\d{3}" "12-345")) ; Sprawdza, czy tekst jest kodem pocztowym
-; Wynik: true
+### Podstawowe dopasowywanie
+Aby sprawdzić, czy ciąg znaków pasuje do wzorca, użyj `re-matches`. Zwraca całe dopasowanie w przypadku sukcesu lub `nil` w przeciwnym razie.
 
-;; Podział ciągu znaków
-(re-seq #"[A-Za-z]+" "abc 123 def") ; Dzieli tekst na słowa
-; Wynik: ("abc" "def")
-
-;; Zamiana za pomocą wyrażeń regularnych
-(clojure.string/replace "abc123" #"\d" "*")
-; Wynik: "abc***"
+```clojure
+(re-matches #"\d+" "123")  ;=> "123"
+(re-matches #"\d+" "abc")  ;=> nil
 ```
 
-## Dogłębna analiza:
-Regexy sięgają lat 50. XX wieku, a ich obecna forma wywodzi się z formalnej teorii automatów i języków formalnych. W Clojure używa się java.util.regex, bo Clojure działa na JVM. Alternatywy dla regexów to parsery i biblioteki do przetwarzania tekstów, jak np. `instaparse`. Implementacja regexów w Clojure jest wydajna, lecz nie zawsze przejrzysta przy skomplikowanych wzorcach.
+### Wyszukiwanie wzorców
+Aby znaleźć pierwsze wystąpienie wzorca, `re-find` jest funkcją, do której powinieneś się zwrócić:
 
-## Zobacz również:
-1. [ClojureDocs - Regular Expressions](https://clojuredocs.org/clojure.core/re-find)
-3. [Regular-Expressions.info](https://www.regular-expressions.info/tutorial.html) - ogólne informacje o regexach, niezależnie od języka.
+```clojure
+(re-find #"\d+" "Zamówienie 123")  ;=> "123"
+```
+
+### Grupy przechwytujące
+Użyj `re-find` wraz z nawiasami w swoim wzorcu, aby przechwycić grupy:
+
+```clojure
+(let [[_ area code] (re-find #"(1)?(\d{3})" "Telefon: 123-4567")]
+  (println "Kod obszaru:" area "Kod:" code))
+;; Wyjście: Kod obszaru: nil Kod: 123
+```
+
+### Wyszukiwanie globalne (Znajdź wszystkie dopasowania)
+Clojure nie ma wbudowanego globalnego wyszukiwania, jak niektóre języki. Zamiast tego użyj `re-seq` aby otrzymać leniwą sekwencję wszystkich dopasowań:
+
+```clojure
+(re-seq #"\d+" "id: 123, ilość: 456")  ;=> ("123" "456")
+```
+
+### Dzielenie ciągów znaków
+Aby podzielić ciąg znaków na podstawie wzorca, użyj `clojure.string/split`:
+
+```clojure
+(clojure.string/split "Jan,Kowalski,30" #",")  ;=> ["Jan" "Kowalski" "30"]
+```
+
+### Zamiana
+Zamień części ciągu znaków pasujące do wzorca za pomocą `clojure.string/replace`:
+
+```clojure
+(clojure.string/replace "2023-04-01" #"\d{4}" "RRRR")  ;=> "RRRR-04-01"
+```
+
+### Biblioteki firm trzecich
+Chociaż wbudowane wsparcie Clojure wystarcza w większości przypadków, dla bardziej złożonych scenariuszy, rozważ użycie bibliotek takich jak `clojure.spec` dla solidnej walidacji danych i `reagent` do reaktywnej manipulacji DOM w aplikacjach internetowych z wykorzystaniem wyrażeń regularnych do routingu i walidacji danych wejściowych.
+
+```clojure
+;; Przykład użycia clojure.spec do walidacji adresu email
+(require '[clojure.spec.alpha :as s])
+(s/def ::email (s/and string? #(re-matches #".+@.+\..+" %)))
+(s/valid? ::email "test@example.com")  ;=> true
+```
+
+Pamiętaj, że choć wyrażenia regularne są potężne, mogą również sprawić, że kod będzie trudny do odczytania i utrzymania. Używaj ich z rozwagą i zawsze rozważ prostsze funkcje manipulacji ciągami znaków, jeśli jest to możliwe.

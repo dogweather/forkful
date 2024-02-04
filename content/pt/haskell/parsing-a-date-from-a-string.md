@@ -1,40 +1,65 @@
 ---
 title:                "Analisando uma data a partir de uma string"
-date:                  2024-01-20T15:36:43.185321-07:00
+date:                  2024-02-03T19:14:15.759631-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Analisando uma data a partir de uma string"
-
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/haskell/parsing-a-date-from-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## O Quê & Porquê?
-Analisar datas de texto permite converter representações de data e hora em formatos legíveis por máquinas para uso posterior, como armazenamento, comparação ou manipulação. Fazemos isso porque os programas frequentemente precisam entender as datas que os usuários inserem como strings em formatos variados.
+## O Que & Por Quê?
 
-## Como fazer:
-```Haskell
-import Data.Time
+Analisar uma data a partir de uma string em Haskell envolve converter representações textuais de datas em um formato estruturado que o programa pode manipular. Este processo é fundamental para aplicações que lidam com dados calendáricos, habilitando funções como cálculo de durações, agendamento e validação de dados.
 
--- Considerando que você tem a biblioteca time instalada
--- Faça o parsing de uma data no formato ISO 8601
-parseIsoDate :: String -> Maybe Day
-parseIsoDate = parseTimeM True defaultTimeLocale "%Y-%m-%d"
+## Como Fazer:
 
--- Exemplo de uso e saída esperada
-main :: IO ()
-main = do
-    let maybeDate = parseIsoDate "2023-03-14"
-    case maybeDate of
-        Just date -> print date  -- Saída: 2023-03-14
-        Nothing -> putStrLn "Data inválida."
+De imediato, Haskell oferece ferramentas básicas para análise de datas, mas aproveitar bibliotecas como `time` para funcionalidades principais e `date-parse` ou `time-parse` para uma análise mais flexível pode significativamente simplificar a tarefa.
+
+Primeiro, garanta que você tem a biblioteca `time` disponível; ela normalmente está incluída com GHC, mas se precisar especificá-la como uma dependência, adicione `time` ao arquivo cabal do seu projeto ou use `cabal install time` para instalá-la manualmente.
+
+```haskell
+import Data.Time.Format
+import Data.Time.Clock
+import System.Locale (defaultTimeLocale)
+
+-- Usando a biblioteca time para analisar uma data em um formato padrão
+parseBasicDate :: String -> Maybe UTCTime
+parseBasicDate = parseTimeM True defaultTimeLocale "%Y-%m-%d" 
 ```
 
-## Aprofundamento
-O parsing de datas em Haskell tem como aliado a biblioteca 'time', que é madura e amplamente utilizada. Historicamente, a manipulação de datas e horas em computadores é desafiadora devido a considerações sobre fusos horários, calendários e formatos locais. Alternativas incluem bibliotecas como 'chronos' e 'thyme', mas 'time' permanece popular pelo seu suporte nativo e extensiva documentação.
+Exemplo de uso e saída:
 
-Detalhes de implementação normalmente giram em torno da função `parseTimeM`, que usa um locale (no exemplo, `defaultTimeLocale`), um formato de data (como "%Y-%m-%d" para ISO 8601) e a string a ser analisada. A função retorna um `Maybe Day`, onde `Just day` contém a data em caso de sucesso, e `Nothing` indica um erro de análise.
+```haskell
+main :: IO ()
+main = print $ parseBasicDate "2023-04-01"
 
-## Veja Também
-- [Documentação da biblioteca time](https://hackage.haskell.org/package/time-1.12/docs/Data-Time.html)
-- [SO: Parsing a date in Haskell](https://stackoverflow.com/questions/4426948/parsing-a-date-in-haskell)
+-- Saída: Just 2023-03-31 22:00:00 UTC
+```
+
+Para cenários mais complexos, onde é necessário lidar com múltiplos formatos ou localidades, bibliotecas de terceiros como `date-parse` podem ser mais convenientes:
+
+Assumindo que você adicionou `date-parse` às suas dependências e a instalou, eis como você poderia usá-la:
+
+```haskell
+import Data.Time.Calendar
+import Text.Date.Parse (parseDate)
+
+-- Analisando uma string de data com a biblioteca date-parse suporta múltiplos formatos
+parseFlexibleDate :: String -> Maybe Day
+parseFlexibleDate = parseDate
+```
+
+Exemplo de uso com `date-parse`:
+
+```haskell
+main :: IO ()
+main = print $ parseFlexibleDate "April 1, 2023"
+
+-- Saída: Just 2023-04-01
+```
+
+Cada exemplo demonstra a abordagem fundamental para pegar uma string e transformá-la em um objeto de data utilizável em Haskell. A escolha entre usar as funções integradas da biblioteca `time` e optar por uma solução de terceiros como `date-parse` depende das necessidades específicas da sua aplicação, como a variedade de formatos de entrada que você precisa manusear.

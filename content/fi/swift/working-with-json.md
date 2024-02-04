@@ -1,50 +1,64 @@
 ---
-title:                "JSON-tiedostojen käsittely"
-date:                  2024-01-19
-simple_title:         "JSON-tiedostojen käsittely"
-
+title:                "Työskentely JSON:n kanssa"
+date:                  2024-02-03T19:24:14.636963-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Työskentely JSON:n kanssa"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/swift/working-with-json.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-JSON (JavaScript Object Notation) on kevyt dataformaatti datan tallennukseen ja siirtoon. Ohjelmoijat käyttävät JSONia sen yksinkertaisuuden ja ihmisen lukevan muodon vuoksi, ja se toimii hyvin eri alustojen ja kielten välillä.
+## Mikä & Miksi?
 
-## How to:
-Swift käsittelee JSONia Codable-protokollan ja JSONDecoder-kirjaston avulla. Data muunnetaan `Encodable` -protokollaa toteuttavasta Swifin tyyppistä JSON:ksi ja päinvastoin. Katso esimerkki:
+JSON:n käyttäminen Swiftissä tarkoittaa kevyen datanvaihtoformaatin käsittelyä. Ohjelmoijat käyttävät JSONia datan siirtämiseen palvelimen ja web-sovelluksen välillä, koska se on luettavissa ja helppo jäsentää sekä ihmisille että koneille.
+
+## Kuinka:
+
+Swift tekee JSONin jäsentämisestä suoraviivaista `Codable`-protokollan avulla. Tässä on, kuinka dekoodaat JSONin Swift-objektiksi:
 
 ```Swift
 import Foundation
 
-// Malli, joka edustaa JSON-tietoa
-struct Käyttäjä: Codable {
-    var nimi: String
-    var ikä: Int
+// Määrittele malli, joka noudattaa Codablea
+struct User: Codable {
+    var name: String
+    var age: Int
 }
 
-// JSON merkkijono, jota käsitellään
-let jsonMerkkijono = """
+// JSON merkkijono
+let jsonString = """
 {
-    "nimi": "Matti",
-    "ikä": 28
+    "name": "John Doe",
+    "age": 30
 }
-""".data(using: .utf8)!
+"""
 
-// JSON datan muuntaminen Swift-olioksi
-do {
-    let dekoodattuKäyttäjä = try JSONDecoder().decode(Käyttäjä.self, from: jsonMerkkijono)
-    print(dekoodattuKäyttäjä) // Tulostaa Käyttäjän tiedot
-} catch {
-    print(error)
+// Muunna JSON merkkijono Dataksi
+if let jsonData = jsonString.data(using: .utf8) {
+    // Dekoodaa JSON data User-objektiksi
+    do {
+        let user = try JSONDecoder().decode(User.self, from: jsonData)
+        print("Nimi: \(user.name), Ikä: \(user.age)")
+    } catch {
+        print("Virhe JSONin dekoodauksessa: \(error)")
+    }
 }
 ```
 
-## Deep Dive
-JSON-muoto esitettiin vuonna 2001 ja se nousi nopeasti suosioon keveytensä ja helppokäyttöisyytensä vuoksi. Vaihtoehtoisia formaatteja ovat XML ja YAML. Swiftin `Codable`-protokolla, joka julkistettiin Swift 4:ssä, tekee JSONin käsittelystä helpompaa automatisoimalla monet siihen liittyvät rutiinit.
+Esimerkkituloste:
+```
+Nimi: John Doe, Ikä: 30
+```
 
-## See Also
-- Swiftin virallinen dokumentaatio Codable-protokollasta: [Swift Codable Documentation](https://developer.apple.com/documentation/swift/codable)
-- JSON-syntaksin selitys: [JSON.org](https://www.json.org/json-en.html)
-- Apple Developer -artikkeli JSONista ja Swiftistä: [Working with JSON in Swift](https://developer.apple.com/swift/blog/?id=37)
+## Syväsukellus
+
+JSON (JavaScript Object Notation) on ollut laajalti käytössä 2000-luvun alusta lähtien, kun Douglas Crockford määritteli sen. Se korvasi XML:n monissa käyttötapauksissa sen yksinkertaisemman syntaksin ja paremman suorituskyvyn vuoksi. Vaikka Swiftin `Codable` on mennä JSONille, vaihtoehtoja, kuten `JSONSerialization`, on olemassa, kun käsitellään ei-Codable-yhteensopivia tyyppejä. Kulissien takana `Codable` abstrahoi alemman tason jäsentämisen ja tekee serialisoinnin/deserialisoinnin saumattomaksi.
+
+## Katso Myös
+
+- Tutustu lisää JSONiin ja Swiftiin virallisessa Swift-blogissa: [Swift.org](https://swift.org/blog/)
+- Tutustu `Codable`-dokumentaatioon: [Swift Codable](https://developer.apple.com/documentation/swift/codable)
+- Monimutkaisia JSON-rakenteita varten harkitse kolmannen osapuolen kirjastoja, kuten SwiftyJSON, saatavilla [GitHubissa](https://github.com/SwiftyJSON/SwiftyJSON).

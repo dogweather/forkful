@@ -1,32 +1,53 @@
 ---
-title:                "Écrire dans l'erreur standard"
-date:                  2024-01-19
-simple_title:         "Écrire dans l'erreur standard"
-
+title:                "Écrire sur l'erreur standard"
+date:                  2024-02-03T19:32:51.573339-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Écrire sur l'erreur standard"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/elixir/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Quoi et Pourquoi ?)
-Écrire sur la sortie d'erreur standard, c'est envoyer des messages d'erreur ou diagnostics distincts de la sortie principale d'un programme. Cela aide à séparer les erreurs du flux de données normal, facilitant le débogage et la logistique.
+## Quoi et pourquoi ?
 
-## How to (Comment Faire) :
+Écrire sur l'erreur standard (stderr) en Elixir est une méthode permettant de diriger les messages d'erreur et les diagnostics à part de la sortie principale (stdout). Les programmeurs utilisent stderr pour déboguer et gérer les erreurs sans encombrer la sortie principale du programme, ce qui facilite l'identification et la résolution des problèmes.
+
+## Comment faire :
+
+En Elixir, vous pouvez utiliser des fonctions du module `IO` telles que `IO.puts/2` et `IO.warn/2` pour écrire des messages sur l'erreur standard :
+
 ```elixir
-# Envoyer un simple message à stderr
-:io.stderr(:hello_world)
-# Résultat: :hello_world
+# Écrire un message simple sur stderr
+IO.puts(:stderr, "Erreur : Quelque chose s'est mal passé !")
 
-# Écrire sur stderr avec IO.warn/1
-IO.warn("Attention! Il y a une erreur.")
-# Résultat: Attention! Il y a une erreur.
+# Utiliser IO.warn, qui est plus sémantique pour les avertissements/erreurs
+IO.warn("Avertissement : Vous êtes sur le point de dépasser la limite !")
 ```
 
-## Deep Dive (Plongée Profonde)
-Historiquement, la distinction entre sortie standard et sortie d'erreur permet la redirection indépendante des logs d'erreur des résultats d'exécution dans les systèmes Unix. En Elixir, on utilise souvent `IO.warn/1` pour la sortie d'erreur simple. Pour plus de contrôle, on manipule directement le port de `:stderr` avec `:io.format/2`. 
+Exemple de sortie dans le terminal pour `IO.puts/2`:
+```
+Erreur : Quelque chose s'est mal passé !
+```
 
-## See Also (Voir Aussi)
-- Documentation Elixir pour IO: https://hexdocs.pm/elixir/IO.html
-- Guide d'introduction au Mix et OTP: https://elixir-lang.org/getting-started/mix-otp/introduction-to-mix.html
-- Unix Standard Streams: https://en.wikipedia.org/wiki/Standard_streams
+Pour `IO.warn/2`, la sortie serait similaire, mais `IO.warn/2` est spécifiquement conçu pour les avertissements et pourrait inclure un formatage ou un comportement supplémentaire dans les futures versions d'Elixir.
+
+**Utiliser des bibliothèques tierces**
+
+Bien que la bibliothèque standard d'Elixir soit généralement suffisante pour gérer la sortie d'erreur standard, vous pourriez trouver utiles des bibliothèques comme `Logger` pour des applications plus complexes ou pour configurer différents niveaux de logs et sorties.
+
+Exemple d'utilisation de `Logger` pour afficher un message d'erreur :
+
+```elixir
+require Logger
+
+# Configurer Logger pour sortir sur stderr
+Logger.configure_backend(:console, device: :stderr)
+
+# Écrire un message d'erreur
+Logger.error("Erreur : Impossible de se connecter à la base de données.")
+```
+
+Cette configuration dirige spécifiquement la sortie du `Logger` vers stderr, ce qui est utile pour séparer la journalisation des erreurs des messages de journalisation standard.

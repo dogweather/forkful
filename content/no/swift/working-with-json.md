@@ -1,65 +1,64 @@
 ---
-title:                "Arbeid med JSON"
-date:                  2024-01-19
-simple_title:         "Arbeid med JSON"
-
+title:                "Arbeider med JSON"
+date:                  2024-02-03T19:24:07.266765-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Arbeider med JSON"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/swift/working-with-json.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Arbeid med JSON handler om å parse og generere strukturerte data. Programmerere trenger dette for å enkelt kommunisere med netttjenester og lagre kompleks data enkelt.
+## Hva & Hvorfor?
 
-## How to:
+Å jobbe med JSON i Swift betyr å håndtere et lettvekts dataformat for datautveksling. Programmerere bruker JSON for å overføre data mellom en server og en webapplikasjon fordi det er lesbart og enkelt å analysere for både mennesker og maskiner.
+
+## Hvordan:
+
+Swift gjør tolking av JSON enkelt med `Codable`-protokollen. Her er hvordan du dekoder JSON til et Swift-objekt:
+
 ```Swift
 import Foundation
 
-// JSON String
+// Definer en modell som overholder Codable
+struct User: Codable {
+    var name: String
+    var age: Int
+}
+
+// JSON-streng
 let jsonString = """
 {
-    "name": "Ola Nordmann",
-    "age": 30,
-    "isDeveloper": true
+    "name": "John Doe",
+    "age": 30
 }
 """
 
-// Konvertere JSON String til Dictionary
+// Konverter JSON-streng til Data
 if let jsonData = jsonString.data(using: .utf8) {
+    // Dekod JSON-data til User-objektet
     do {
-        if let person = try JSONSerialization.jsonObject(with: jsonData) as? [String: Any] {
-            print(person)
-        }
+        let user = try JSONDecoder().decode(User.self, from: jsonData)
+        print("Navn: \(user.name), Alder: \(user.age)")
     } catch {
-        print("JSON parsing feil: \(error)")
-    }
-}
-
-// Opprette og konvertere Dictionary til JSON String
-let personDict: [String: Any] = [
-    "name": "Kari Nordmann",
-    "age": 28,
-    "isDeveloper": false
-]
-
-if let jsonData = try? JSONSerialization.data(withJSONObject: personDict, options: []) {
-    if let jsonString = String(data: jsonData, encoding: .utf8) {
-        print(jsonString)
+        print("Feil ved dekoding av JSON: \(error)")
     }
 }
 ```
 
-Sample output:
+Eksempel på resultat:
 ```
-["name": "Ola Nordmann", "age": 30, "isDeveloper": true]
-{"name":"Kari Nordmann","isDeveloper":false,"age":28}
+Navn: John Doe, Alder: 30
 ```
 
-## Deep Dive
-JSON, JavaScript Object Notation, ble skapt tidlig på 2000-tallet og har blitt standard for dataformat på nettet. Alternativer inkluderer XML og YAML, men JSON er foretrukket for sin enkelhet. I Swift brukes `JSONSerialization` klassen for å parse og generere JSON, men Swift 4 introduserte `Codable`, en mer deklarativ måte å håndtere JSON.
+## Dypdykk
 
-## See Also
-- Swift's `Codable` documentation: https://developer.apple.com/documentation/swift/codable
-- JSON standard official site: https://www.json.org/json-en.html
-- Apple's Networking with URLSession: https://developer.apple.com/documentation/foundation/urlsession
+JSON (JavaScript Object Notation) har vært mye brukt siden tidlig på 2000-tallet, etter at Douglas Crockford spesifiserte det. Det erstattet XML i mange bruksområder på grunn av sin enklere syntaks og bedre ytelse. Mens Swifts `Codable` er gå-til-løsningen for JSON, eksisterer alternativer som `JSONSerialization` for når du håndterer typer som ikke er kompatible med Codable. Bak kulissene abstraherer `Codable` bort lavnivåtolkingen og gjør serialisering/deserialisering sømløs.
+
+## Se Også
+
+- Utforsk mer om JSON og Swift på det offisielle Swift-blogget: [Swift.org](https://swift.org/blog/)
+- Sjekk ut `Codable`-dokumentasjonen: [Swift Codable](https://developer.apple.com/documentation/swift/codable)
+- For komplekse JSON-strukturer, vurder tredjepartsbiblioteker som SwiftyJSON tilgjengelig på [GitHub](https://github.com/SwiftyJSON/SwiftyJSON).

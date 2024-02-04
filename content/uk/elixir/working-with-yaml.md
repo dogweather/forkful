@@ -1,52 +1,91 @@
 ---
 title:                "Робота з YAML"
-date:                  2024-01-19
+date:                  2024-02-03T19:25:24.326879-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Робота з YAML"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/elixir/working-with-yaml.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Що це та Навіщо?
-YAML – це формат для серіалізації даних, любимий за легкість читання. Програмісти використовують його для конфігурації проектів, документації та обміну даними між різними мовами програмування.
+## Що і чому?
 
-## Як робити:
-Щоб працювати з YAML в Elixir, використовуємо бібліотеку `YamlElixir`. Спочатку встановлюємо:
+YAML, скорочено від "YAML Ain't Markup Language" (YAML - це не мова розмітки), є стандартом серіалізації даних, зрозумілим для людини, який часто використовується для файлів конфігурації та обміну даними між мовами з різними структурами даних. Програмісти використовують його через його простоту та здатність легко представляти складні ієрархічні дані.
+
+## Як це зробити:
+
+Elixir не містить вбудованої підтримки YAML. Однак, ви можете використовувати сторонні бібліотеки, такі як `yamerl` або `yaml_elixir`, для роботи з YAML. Тут ми зосередимося на `yaml_elixir` через його простоту використання та комплексні можливості.
+
+Спочатку додайте `yaml_elixir` до вашої залежності mix.exs:
 
 ```elixir
-# Додаємо в mix.exs
 defp deps do
   [
-    {:yaml_elixir, "~> 2.5"}
+    {:yaml_elixir, "~> 2.9"}
   ]
 end
 ```
-Парсимо YAML файл:
-```elixir
-# Приклад парсингу YAML файлу
-{:ok, yaml} = YamlElixir.read_from_file("config.yaml")
-IO.inspect(yaml)
-```
-Генеруємо YAML з Elixir структур:
-```elixir
-# В YAML з Elixir map
-map = %{name: "Oleh", age: 28}
-yaml_content = YamlElixir.write_to_string(map)
-IO.puts(yaml_content)
-```
-Вивід:
+
+Потім, запустіть `mix deps.get`, щоб отримати нову залежність.
+
+### Читання YAML
+
+Уявімо простий YAML файл, `config.yaml`, який виглядає так:
+
 ```yaml
----
-age: 28
-name: Oleh
+database:
+  adapter: postgres
+  username: user
+  password: pass
 ```
 
-## Поглиблений огляд:
-YAML (YAML Ain't Markup Language) з'явився у 2001 році як зручний формат для серіалізації даних. В Elixir, зазвичай, працюють з YAML через зовнішні бібліотеки, оскільки стандартна бібліотека цього не підтримує. Альтернативою YAML є JSON і XML, які також широко використовуються для подібних цілей, але YAML виграш у читабельності. Передбачається, що YAML ефективніше для людського сприйняття, а JSON – для машинного. В Elixir працювати з YAML легко та ефективно завдяки бібліотекам, які хендлять усі нюанси парсингу та генерації.
+Ви можете прочитати цей YAML файл і перетворити його в карту Elixir таким чином:
 
-## Дивіться також:
-- Документація `YamlElixir`: [https://hexdocs.pm/yaml_elixir](https://hexdocs.pm/yaml_elixir)
-- YAML офіційний сайт: [https://yaml.org](https://yaml.org)
-- Серіалізація даних в Elixir: [https://elixir-lang.org/getting-started/binaries-strings-and-char-lists.html](https://elixir-lang.org/getting-started/binaries-strings-and-char-lists.html)
+```elixir
+defmodule Config do
+  def read do
+    {:ok, content} = YamlElixir.read_from_file("config.yaml")
+    content
+  end
+end
+
+# Приклад використання
+Config.read()
+# Вивід: 
+# %{
+#   "database" => %{
+#     "adapter" => "postgres",
+#     "username" => "user",
+#     "password" => "pass"
+#   }
+# }
+```
+
+### Запис YAML
+
+Щоб записати карту назад в YAML файл:
+
+```elixir
+defmodule ConfigWriter do
+  def write do
+    content = %{
+      database: %{
+        adapter: "mysql",
+        username: "root",
+        password: "s3cret"
+      }
+    }
+    
+    YamlElixir.write_to_file("new_config.yaml", content)
+  end
+end
+
+# Приклад використання
+ConfigWriter.write()
+# Це створить або перезапише `new_config.yaml` з вказаним змістом
+```
+
+Зверніть увагу, як `yaml_elixir` дозволяє легко перекладати файли YAML та структури даних Elixir, роблячи його відмінним вибором для програмістів Elixir, яким необхідно працювати з даними YAML.

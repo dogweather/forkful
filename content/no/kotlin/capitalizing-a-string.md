@@ -1,55 +1,44 @@
 ---
-title:                "Sette streng til store bokstaver"
-date:                  2024-01-19
-simple_title:         "Sette streng til store bokstaver"
-
+title:                "Sette stor bokstav i en streng"
+date:                  2024-02-03T19:05:44.183840-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Sette stor bokstav i en streng"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/kotlin/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Å kapitalisere en streng i programmering betyr å gjøre første bokstav i et ord eller en setning stor (versal). Vi gjør dette for å følge skriftlige konvensjoner, f.eks. i titler eller for å markere starten på setninger.
 
-## Hvordan gjøre det:
-```Kotlin
-fun main() {
-    val originalText = "trondheim er fin"
-    val capitalizedText = originalText.capitalize()
-    println(capitalizedText) // Output: Trondheim er fin
-}
-```
-I Kotlin kan `capitalize()` brukes for å kapitalisere kun første bokstav i strengen, men i nyere versjoner er den erstattet av `replaceFirstChar`.
+Å gjøre om en streng til stor forbokstav i programmering innebærer å konvertere det første tegnet i strengen til en stor bokstav hvis det ikke allerede er det, noe som er nyttig for formatering av brukerinndata eller visning av tekst i et brukergrensesnitt på en mer standardisert eller brukervennlig måte. Programmerere utfører denne operasjonen for å sikre datakonsistens eller for å møte spesifikke formateringskrav i sine programvareapplikasjoner.
 
-```Kotlin
-fun main() {
-    val originalText = "trondheim er fin"
-    val capitalizedText = originalText.replaceFirstChar { if (it.isLowerCase()) it.titlecase() else it.toString() }
-    println(capitalizedText) // Output: Trondheim er fin
-}
+## Hvordan:
+
+I Kotlin kan strenger gjøres om til stor forbokstav ved hjelp av standardbibliotekfunksjoner uten behov for tredjepartsbiblioteker. Kotlins tilnærming til å håndtere strenger gjør disse operasjonene greie og konsise.
+
+### Gjøre om hele strengen til stor forbokstav:
+
+```kotlin
+val melding = "hello, world!"
+val storForbokstavMelding = melding.uppercase()
+
+println(storForbokstavMelding) // Output: HELLO, WORLD!
 ```
 
-## Dypdykk
-Kapitalisering har gamle røtter i skriftspråket og er en standard måte å signalisere starten av en setning eller betydningen av et ord. I programmering speiler strengkapitalisering disse skrivereglene. Det finnes flere metoder for å kapitalisere strenger i Kotlin. `capitalize()` er enkel, men er faset ut i nyere versjoner til fordel for `replaceFirstChar` som gir mer kontroll og er kompatibel med Unicode-standarder, noe som er viktig når vi håndterer diverse skriftenheter på tvers av forskjellige språk.
+### Gjøre om kun den første bokstaven til stor forbokstav:
 
-En annen tilnærming er å bruke `toLowerCase()` kombinert med `toUpperCase()` for å kapitalisere hele strenger eller spesifikke deler:
+Fra og med Kotlin 1.5 er `capitalize()`-funksjonen avskrevet og erstattet med en kombinasjon av `replaceFirstChar` og en lambda som sjekker om det er en liten bokstav for å transformere den til en stor bokstav.
 
-```Kotlin
-fun String.capitalizeFully(): String {
-    return this.lowercase().split(" ").joinToString(" ") { it.replaceFirstChar { char -> 
-        if (char.isLowerCase()) char.titlecase() else char.toString() 
-    }}
+```kotlin
+val hilsen = "hello, world!"
+val storForbokstavHilsen = hilsen.replaceFirstChar {
+    if (it.isLowerCase()) it.titlecase() else it.toString()
 }
 
-fun main() {
-    val originalText = "trondheim er FIN"
-    val capitalizedText = originalText.capitalizeFully()
-    println(capitalizedText) // Output: Trondheim Er Fin
-}
+println(storForbokstavHilsen) // Output: Hello, world!
 ```
 
-## Se også
-- [Kotlin Standard Library Functions](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/)
-- [Unicode Standard](http://unicode.org/standard/standard.html)
-- [String.capitalize KDoc](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/capitalize.html)
+Denne tilnærmingen opprettholder resten av setningen i sin opprinnelige form mens kun den første bokstaven endres til en stor bokstav.

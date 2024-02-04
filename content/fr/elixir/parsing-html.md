@@ -1,56 +1,84 @@
 ---
-title:                "Analyse syntaxique de HTML"
-date:                  2024-01-20T15:30:54.398780-07:00
-simple_title:         "Analyse syntaxique de HTML"
-
+title:                "Analyse Syntaxique du HTML"
+date:                  2024-02-03T19:11:49.791565-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Analyse Syntaxique du HTML"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/elixir/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Quoi et Pourquoi ?)
-Analyser du HTML, c'est lire et comprendre le code d'une page web pour en extraire des informations spécifiques. Les programmeurs le font pour interagir avec des sites, collecter des données ou tester des applications web.
+## Quoi et Pourquoi ?
 
-## How to: (Comment faire :) 
-Avec Floki, une bibliothèque Elixir populaire pour l'analyse du HTML.
+L'analyse de HTML en Elixir consiste à extraire des informations des documents HTML. Les programmeurs font cela pour interagir de manière programmatique avec les pages web, récupérer des données, ou automatiser des interactions web, permettant ainsi aux applications de comprendre et d'utiliser le contenu web de manière dynamique.
+
+## Comment faire :
+
+Elixir, avec son modèle robuste de concurrence et son paradigme de programmation fonctionnelle, n'inclut pas de capacités d'analyse HTML intégrées. Cependant, vous pouvez utiliser des bibliothèques tierces populaires comme `Floki` à cet effet. Floki rend l'analyse de HTML intuitive et efficace, en tirant parti des fonctionnalités de correspondance de motifs et de mise en pipeline d'Elixir.
+
+Tout d'abord, ajoutez Floki à vos dépendances dans mix.exs :
 
 ```elixir
-# Ajoutez Floki à votre mix.exs
 defp deps do
   [
-    {:floki, "~> 0.34.0"}
+    {:floki, "~> 0.31.0"}
   ]
 end
+```
 
-# Exemple d'utilisation
-defp extract_html_data(html) do
-  # Parse the HTML
-  {:ok, document} = Floki.parse_document(html)
-  # Récupérez des éléments par leur sélecteur CSS
-  titles = Floki.find(document, "h1.title")
-  # Extrait le texte des éléments sélectionnés
-  Enum.map(titles, &Floki.text/1)
-end
+Ensuite, exécutez `mix deps.get` pour installer la nouvelle dépendance.
 
+Maintenant, analysons une simple chaîne HTML pour extraire des données. Nous rechercherons les titres à l'intérieur des balises `<h1>` :
+
+```elixir
 html_content = """
 <html>
-<head><title>Test Page</title></head>
-<body>
-  <h1 class="title">Welcome to Elixir</h1>
-  <h1 class="title">Parsing HTML with Floki</h1>
-</body>
+  <body>
+    <h1>Bonjour, Elixir !</h1>
+    <h1>Un Autre Titre</h1>
+  </body>
 </html>
 """
 
-IO.inspect extract_html_data(html_content)
-# Devrait afficher: ["Welcome to Elixir", "Parsing HTML with Floki"]
+titles = html_content
+         |> Floki.find("h1")
+         |> Floki.text()
+
+IO.inspect(titles)
 ```
 
-## Deep Dive (Plongée en Profondeur)
-Floki s'inspire de bibliothèques comme Nokogiri en Ruby et BeautifulSoup en Python. Avant ces outils, le parsing HTML était un cauchemar: fragile et sujet à erreur. Avec l'arrivée de HTML5 et des parseurs plus robustes, l'analyse de HTML est devenue plus prévisible. Floki utilise le parseur d'HTML5 mojic et s'appuie sur un modèle d'analyse basé sur des sélecteurs CSS pour extraire des données de manière concise.
+**Exemple de sortie :**
 
-## See Also (Voir Aussi)
-- Floki sur Hex: [https://hex.pm/packages/floki](https://hex.pm/packages/floki)
-- Guide officiel Elixir: [https://elixir-lang.org/getting-started/introduction.html](https://elixir-lang.org/getting-started/introduction.html)
-- Documentation du parseur mojic: [https://github.com/mojic/](https://github.com/mojic/)
+```elixir
+["Bonjour, Elixir !", "Un Autre Titre"]
+```
+
+Pour approfondir, disons que vous souhaitez extraire des liens (balises `<a>`) ainsi que leurs attributs href. Voici comment vous pouvez y parvenir :
+
+```elixir
+html_content = """
+<html>
+  <body>
+    <a href="https://elixir-lang.org/">Site Officiel d'Elixir</a>
+    <a href="https://hexdocs.pm/">HexDocs</a>
+  </body>
+</html>
+"""
+
+links = html_content
+        |> Floki.find("a")
+        |> Enum.map(fn({_, attrs, [text]}) -> {text, List.keyfind(attrs, "href", 0)} end)
+        
+IO.inspect(links)
+```
+
+**Exemple de sortie :**
+
+```elixir
+[{"Site Officiel d'Elixir", {"href", "https://elixir-lang.org/"}}, {"HexDocs", {"href", "https://hexdocs.pm/"}}]
+```
+
+Cette approche vous permet de naviguer et d'analyser efficacement les documents HTML, rendant les tâches d'extraction et de manipulation de données web simples dans les applications Elixir.

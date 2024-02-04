@@ -1,59 +1,91 @@
 ---
-title:                "यामल के साथ काम करना"
-date:                  2024-01-19
-simple_title:         "यामल के साथ काम करना"
-
+title:                "YAML के साथ काम करना"
+date:                  2024-02-03T19:26:03.968213-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "YAML के साथ काम करना"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/elixir/working-with-yaml.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (क्या और क्यों?)
-YAML एक डाटा सीरियलाइजेशन फॉर्मेट है जो क्यूरेटेड डाटा प्रकारों को संग्रहित और साझा करने के लिए इस्तेमाल होता है। Elixir में YAML के साथ काम करने की जरूरत प्रोजेक्ट कॉन्फिगरेशन, डाटा एक्सचेंज और विभिन्न सर्विसेज के साथ इंटीग्रेशन के लिए पड़ती है।
+## क्या और क्यों?
 
-## How to: (कैसे करें:)
-Elixir में YAML के साथ काम करने के लिए `yamerl` लाइब्रेरी का इस्तेमाल करें।
+YAML, जिसे YAML Ain't Markup Language के लिए छोटा किया गया है, एक मानव-पठनीय डेटा सीरियलाइजेशन मानक है जो आमतौर पर कॉन्फ़िगरेशन फाइलों और विभिन्न डेटा संरचनाओं के साथ भाषाओं के बीच डेटा आदान-प्रदान के लिए उपयोग किया जाता है। प्रोग्रामर इसकी सादगी और जटिल पदानुक्रमित डेटा को आसानी से प्रस्तुत करने की क्षमता के कारण इसका इस्तेमाल करते हैं।
 
-Elixir में YAML पढ़ने के लिए:
+## कैसे करें:
+
+Elixir में निर्मित YAML समर्थन शामिल नहीं है। हालांकि, आप तीसरे-पक्ष की लाइब्रेरी जैसे कि `yamerl` या `yaml_elixir` का उपयोग कर YAML के साथ काम कर सकते हैं। यहाँ, हम इसके उपयोग में आसानी और व्यापक सुविधाओं के लिए `yaml_elixir` पर ध्यान केंद्रित करेंगे।
+
+सबसे पहले, अपनी mix.exs निर्भरताओं में `yaml_elixir` जोड़ें:
+
 ```elixir
-# Add yamerl as a dependency in mix.exs
-
-def deps do
+defp deps do
   [
-    {:yamerl, "~> 0.8.0"}
+    {:yaml_elixir, "~> 2.9"}
   ]
 end
+```
 
-# Use YamlElixir to parse the YAML data
+फिर, नई निर्भरता को प्राप्त करने के लिए `mix deps.get` चलाएँ।
 
-defmodule MyYAML do
-  def parse_yaml do
-    yaml_data = """
-    ---
-    - Elixir
-    - Phoenix
-    - Nerves
-    """
+### YAML पढ़ना
 
-    {:ok, yamerl_conformant} = :yamerl_conform.documents(yaml_data)
-    {:ok, Enum.map(yamerl_conformant, &(&1[:content]))}
+एक साधारण YAML फाइल, `config.yaml`, जो इस प्रकार दिखती है:
+
+```yaml
+database:
+  adapter: postgres
+  username: user
+  password: pass
+```
+
+आप इस YAML फाइल को पढ़ सकते हैं और इसे एक Elixir मानचित्र में परिवर्तित कर सकते हैं इस प्रकार:
+
+```elixir
+defmodule Config do
+  def read do
+    {:ok, content} = YamlElixir.read_from_file("config.yaml")
+    content
   end
 end
 
-IO.inspect(MyYAML.parse_yaml)
-```
-नमूना आउटपुट होगा:
-```
-{:ok, [["Elixir", "Phoenix", "Nerves"]]}
+# नमूना उपयोग
+Config.read()
+# आउटपुट: 
+# %{
+#   "database" => %{
+#     "adapter" => "postgres",
+#     "username" => "user",
+#     "password" => "pass"
+#   }
+# }
 ```
 
-Elixir में YAML लिखने के लिए:
-Elixir में सीधे YAML लिखने के लिए कोई मूल लाइब्रेरी नहीं है, लेकिन आप JSON में कन्वर्ट कर फिर YAML में लिख सकते हैं।
+### YAML लिखना
 
-## Deep Dive (विस्तार से):
-YAML, जिसका पूरा नाम "YAML Ain't Markup Language" है, 2001 में विकसित किया गया था। यह JSON और XML के लिए एक सरल विकल्प के रूप में तैयार किया गया था। Elixir में, जहां देशीय सपोर्ट की कमी होती है, `yamerl` और `YamlElixir` लाइब्रेरीज का इस्तेमाल आमतौर पर YAML संबंधित कामों के लिए किया जाता है। YAML के प्रसार के पीछे इसका रीडेबल सिंटेक्स और डेटा-सेंट्रिक एप्लीकेशन्स के लिए सामर्थ्य है। एल्टनेटिव फॉर्मेट्स के तौर पर TOML और JSON भी लोकप्रिय हैं।
+एक मानचित्र को वापस YAML फाइल में लिखने के लिए:
 
-## See Also (और देखें):
-- YAML official website for documentation: [YAML](https://yaml.org/)
-- GitHub repository for `YamlElixir`: [YamlElixir on GitHub](https://github.com/KamilLelonek/yaml-elixir)
+```elixir
+defmodule ConfigWriter do
+  def write do
+    content = %{
+      database: %{
+        adapter: "mysql",
+        username: "root",
+        password: "s3cret"
+      }
+    }
+    
+    YamlElixir.write_to_file("new_config.yaml", content)
+  end
+end
+
+# नमूना उपयोग
+ConfigWriter.write()
+# यह `new_config.yaml` को निर्दिष्ट सामग्री के साथ बनाएगा या उसे ओवरराइट करेगा
+```
+
+ध्यान दें कैसे `yaml_elixir` YAML फाइलों और Elixir डेटा संरचनाओं के बीच एक सरलानुवाद की अनुमति देता है, जिससे यह Elixir प्रोग्रामरों के लिए एक उत्कृष्ट विकल्प बनता है जिन्हें YAML डेटा के साथ काम करने की आवश्यकता होती है।

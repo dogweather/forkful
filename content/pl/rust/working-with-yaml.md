@@ -1,19 +1,25 @@
 ---
-title:                "Praca z yaml"
-date:                  2024-01-19
-simple_title:         "Praca z yaml"
-
+title:                "Praca z YAML"
+date:                  2024-02-03T19:26:56.160845-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Praca z YAML"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/rust/working-with-yaml.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Co & Dlaczego?
-Praca z YAML to zarządzanie danymi w formacie, który jest łatwiejszy dla ludzi do odczytania i pisania niż JSON lub XML. Programiści wykorzystują YAML głównie do konfiguracji projektów oraz przechowywania prostych danych.
+## Co i dlaczego?
+
+W programowaniu w Rust, praca z YAML (YAML Ain't Markup Language) polega na analizowaniu i generowaniu danych w formacie YAML, czyli przyjaznym dla człowieka standardzie serializacji danych. Programiści integrują obsługę YAML w Rust, aby konfigurować aplikacje, zarządzać ustawieniami lub przetwarzać złożone struktury danych w przejrzystym i czytelnym formacie, wykorzystując jego prostotę w porównaniu do JSON lub XML dla plików konfiguracyjnych i wymiany danych.
 
 ## Jak to zrobić:
-Do obsługi YAML w Rust użyjemy biblioteki `serde_yaml`. Trzeba ją dodać do `Cargo.toml`:
+
+Rust nie obsługuje YAML w swojej bibliotece standardowej, dlatego powszechnie używamy zewnętrznych skrzyńek, takich jak `serde` (do serializacji i deserializacji danych) w połączeniu z `serde_yaml`.
+
+Najpierw dodaj zależności do swojego `Cargo.toml`:
 
 ```toml
 [dependencies]
@@ -21,7 +27,11 @@ serde = { version = "1.0", features = ["derive"] }
 serde_yaml = "0.8"
 ```
 
-Teraz zobaczmy przykład:
+Teraz zobaczmy, jak deserializować ciąg YAML do struktury Rust i serializować strukturę Rust z powrotem do ciągu YAML.
+
+### Deserializacja YAML do struktur Rust
+
+Zdefiniuj strukturę Rust, która odzwierciedla dane, jakich oczekujesz w YAML. Użyj atrybutów Serde do dostosowania, jeśli jest to potrzebne.
 
 ```rust
 use serde::{Deserialize, Serialize};
@@ -29,40 +39,66 @@ use serde_yaml;
 
 #[derive(Debug, PartialEq, Serialize, Deserialize)]
 struct Config {
-    title: String,
+    name: String,
+    durability: i32,
     owner: Owner,
 }
 
 #[derive(Debug, PartialEq, Serialize, Deserialize)]
 struct Owner {
     name: String,
-    dob: String,
+    age: i32,
 }
 
 fn main() {
-    let config_str = "
-title: Example YAML
+    let yaml_data = "
+name: Shield
+durability: 300
 owner:
-  name: Jan Kowalski
-  dob: 1979-05-27
-    ";
+  name: Steve
+  age: 25
+";
 
-    let parsed_config: Config = serde_yaml::from_str(config_str).unwrap();
-    println!("Tytuł: {}, Właściciel: {}", parsed_config.title, parsed_config.owner.name);
+    let deserialized_config: Config = serde_yaml::from_str(yaml_data).unwrap();
+    println!("{:?}", deserialized_config);
 }
 ```
 
-Wyjście:
+Przykładowe wyjście po uruchomieniu powyższego kodu Rust będzie takie:
+
+```plaintext
+Config { name: "Shield", durability: 300, owner: Owner { name: "Steve", age: 25 } }
 ```
-Tytuł: Example YAML, Właściciel: Jan Kowalski
+
+### Serializacja struktur Rust do YAML
+
+Ten przykład bierze strukturę `Config` z poprzedniej sekcji i serializuje ją z powrotem do formatu YAML.
+
+```rust
+fn main() {
+    let config = Config {
+        name: String::from("Axe"),
+        durability: 120,
+        owner: Owner {
+            name: String::from("Alex"),
+            age: 30,
+        },
+    };
+
+    let serialized_yaml = serde_yaml::to_string(&config).unwrap();
+    println!("{}", serialized_yaml);
+}
 ```
 
-## Pogłębienie:
+Oczekiwane wyjście będzie ciągiem sformatowanym w YAML:
 
-YAML (YAML Ain't Markup Language) powstał w 2001 roku jako udogodnienie dla ludzi w porównaniu do XML. Alternatywy dla YAMLa to JSON oraz TOML, z różnicami w czytelności i możliwościach. Ważne jest, że `serde_yaml` wykorzystuje Serde – potężną bibliotekę ser/deser Rusta, co pozwala na łatwą pracę z wieloma formatami danych.
+```yaml
+---
+name: Axe
+durability: 120
+owner:
+  name: Alex
+  age: 30
+```
 
-## Zobacz również:
-
-- Serde: https://serde.rs/
-- Oficjalna strona YAML: https://yaml.org/
-- Dokumentacja `serde_yaml`: https://docs.rs/serde_yaml/
+Te fragmenty kodu demonstrują, jak efektywnie zintegrować parsowanie i generowanie YAML w twoich aplikacjach Rust, używając popularnych skrzynek `serde` i `serde_yaml`, umożliwiając obsługę złożonych struktur danych i zapewniając proste, czytelne konfiguracje.

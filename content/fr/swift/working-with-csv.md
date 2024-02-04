@@ -1,60 +1,72 @@
 ---
-title:                "Manipulation des fichiers CSV"
-date:                  2024-01-19
-simple_title:         "Manipulation des fichiers CSV"
-
+title:                "Travailler avec CSV"
+date:                  2024-02-03T19:21:43.449643-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Travailler avec CSV"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/swift/working-with-csv.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Quoi et Pourquoi ?
-CSV, c'est texte simplifié pour stocker des données en tableau. Les programmeurs l'utilisent pour échanger des données facilement entre différents systèmes.
+## Quoi & Pourquoi ?
+
+Travailler avec des fichiers CSV (Valeurs Séparées par des Virgules) implique l'analyse et la génération de données structurées à partir de fichiers texte où chaque ligne représente un enregistrement et chaque enregistrement se compose de champs séparés par des virgules. Les programmeurs s'engagent souvent dans cette activité pour importer, exporter et manipuler facilement des données tabulaires en utilisant un format largement pris en charge sur différentes plateformes et langages de programmation, en raison de sa simplicité et de son format lisible par l'homme.
 
 ## Comment faire :
-```Swift
-import Foundation
 
-// Exemple : Lire un fichier CSV depuis le système de fichiers
-let cheminFichier = "/chemin/vers/votre/fichier.csv"
-if let contenu = try? String(contentsOfFile: cheminFichier, encoding: .utf8) {
-    let lignes = contenu.components(separatedBy: "\n")
-    for ligne in lignes {
-        let valeurs = ligne.components(separatedBy: ",")
-        print(valeurs)
-    }
+En Swift, il n'y a pas de prise en charge native pour l'analyse directe des fichiers CSV, mais vous pouvez gérer les données CSV en utilisant les méthodes `String` pour diviser le contenu, ou en tirant parti de bibliothèques tierces telles que SwiftCSV pour une approche plus rationalisée. Voici les deux méthodes :
+
+### Analyse Manuelle sans Bibliothèques Externes
+```swift
+// Considérez une simple chaîne CSV
+let csvString = """
+name,age,city
+John Doe,29,New York
+Jane Smith,34,Los Angeles
+"""
+
+// Divisez la chaîne CSV en lignes
+let rows = csvString.components(separatedBy: "\n")
+
+// Extrait les clés de la première ligne
+let keys = rows.first?.components(separatedBy: ",")
+
+// Itérez sur les lignes en commençant par la deuxième
+var result: [[String: String]] = []
+for row in rows.dropFirst() {
+    let values = row.components(separatedBy: ",")
+    let dict = Dictionary(uniqueKeysWithValues: zip(keys!, values))
+    result.append(dict)
 }
 
-// Exemple : Écrire des données dans un fichier CSV
-let donnees = [
-    ["id", "nom", "age"],
-    ["1", "Alice", "30"],
-    ["2", "Bob", "27"]
-]
+// Exemple de sortie
+print(result)
+// Affiche : [{"city": "New York", "age": "29", "name": "John Doe"}, {"city": "Los Angeles", "age": "34", "name": "Jane Smith"}]
+```
+Cette approche est simple mais manque de robustesse, surtout avec les fichiers CSV contenant des cas particuliers comme des virgules dans les valeurs, des sauts de ligne dans les champs, etc.
 
-let contenuCSV = donnees.map { ligne in
-    ligne.joined(separator: ",")
-}.joined(separator: "\n")
+### Utilisation de la Bibliothèque SwiftCSV
+Tout d'abord, ajoutez SwiftCSV à votre projet en l'incluant dans vos dépendances `Package.swift` :
+```swift
+.package(url: "https://github.com/swiftcsv/SwiftCSV.git", from: "0.5.6")
+```
+Puis, importez et utilisez-le comme suit :
+```swift
+import SwiftCSV
 
-do {
-    try contenuCSV.write(toFile: "/chemin/de/sortie/votre/fichier.csv", atomically: true, encoding: .utf8)
-    print("Fichier CSV sauvegardé.")
-} catch {
-    print("Erreur lors de l'écriture du fichier CSV.")
+// Supposons que `csvString` est défini comme ci-dessus
+
+// Créez un objet CSV
+if let csv = try? CSV(string: csvString) {
+    // Accédez aux lignes sous forme de dictionnaires
+    let rows = csv.namedRows
+    
+    // Exemple de sortie
+    print(rows)
+    // Affiche : [{"city": "New York", "age": "29", "name": "John Doe"}, {"city": "Los Angeles", "age": "34", "name": "Jane Smith"}]
 }
 ```
-
-Sortie de l'exemple d'écriture :
-```
-Fichier CSV sauvegardé.
-```
-
-## Plongée profonde
-Les CSV existent depuis les premiers jours de l'ordinateur personnel. Alternatives à CSV incluent JSON, XML – plus structurés, mais plus lourds. La manipulation CSV en Swift n'est pas intégrée ; utiliser `String` pour la lecture/écriture est une solution simple, mais des bibliothèques comme `CodableCSV` ou `SwiftCSV` offrent plus d'options et de sécurité.
-
-## Voir aussi
-- Documentation Swift pour `String`: https://developer.apple.com/documentation/swift/string
-- CodableCSV, une bibliothèque pour travailler avec des fichiers CSV en Swift: https://github.com/dehesa/CodableCSV
-- SwiftCSV, une autre bibliothèque Swift pour CSV: https://github.com/swiftcsv/SwiftCSV
-- Guide pratique pour l'import/export CSV en Swift: https://www.raywenderlich.com/3418439-swift-csv-library-getting-started
+SwiftCSV simplifie l'analyse en traitant automatiquement les subtilités comme les virgules encapsulées, les sauts de ligne dans les champs et le codage des caractères. Cependant, n'oubliez pas de gérer les erreurs possibles dans des applications réelles, surtout lorsque vous traitez avec des sources de données externes.

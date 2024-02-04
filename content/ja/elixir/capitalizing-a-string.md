@@ -1,35 +1,52 @@
 ---
-title:                "文字列の先頭を大文字にする"
-date:                  2024-01-19
-simple_title:         "文字列の先頭を大文字にする"
-
+title:                "文字列を大文字にする"
+date:                  2024-02-03T19:04:55.819487-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "文字列を大文字にする"
 tag:                  "Strings"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/elixir/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (なんで & どうして？)
-文字列を大文字にすることは、先頭の文字を大文字に、他は小文字に変えることです。読みやすさを向上させたり、固有名詞を強調したりするためによく使われます。
+## 何となぜ？
 
-## How to: (やり方)
-```Elixir
-# Elixirで文字列を大文字にする簡単な例
+文字列の先頭を大文字に変換し、残りの文字を小文字に保つことを文字列のキャピタライズ（先頭文字を大文字にすること）と言います。この操作は、ユーザー入力のフォーマットやユーザーインターフェイスでのテキスト表示など、一貫性と可読性が重要な場面でよく必要とされます。
 
-defmodule StringHelper do
-  def capitalize(str) when is_binary(str) do
-    String.capitalize(str)
-  end
-end
+## 方法：
 
-# 使用例
-IO.puts StringHelper.capitalize("elixir programming")  # 出力: "Elixir programming"
+Elixirは、サードパーティライブラリを必要とせずに、ビルトイン関数を使用して文字列をキャピタライズする簡単な方法を提供します。以下は簡単な例です：
+
+```elixir
+string = "elixir programming"
+capitalized_string = String.capitalize(string)
+IO.puts capitalized_string
 ```
 
-## Deep Dive (深掘り)
-Elixirの`String.capitalize/1`関数はUnicodeをサポートしていて、世界中の言語で使えます。昔の言語ではASCIIに限定されていたが、Elixirはそれを超えています。`String.upcase/1`や`String.downcase/1`と組み合わせて使用されることもあります。内部的には、Unicode文字の正規化と書式の違いに対応するために複雑な処理をしています。
+出力：
 
-## See Also (関連情報)
-- Elixirの公式ドキュメント [String.capitalize/1](https://hexdocs.pm/elixir/String.html#capitalize/2)
-- Unicodeの公式文書 [Unicode Standard](http://www.unicode.org/standard/standard.html)
+```
+Elixir programming
+```
+
+より複雑なキャピタライズのロジックやコントロールが必要な場合には、異なるString関数を組み合わせて使用することもできます。例えば、文中のすべての単語をキャピタライズする必要がある場合、文を単語に分割し、各単語をキャピタライズしてから再び結合します：
+
+```elixir
+sentence = "elixir is fun"
+capitalized_sentence = sentence 
+                        |> String.split() 
+                        |> Enum.map(&String.capitalize/1) 
+                        |> Enum.join(" ")
+
+IO.puts capitalized_sentence
+```
+
+出力：
+
+```
+Elixir Is Fun
+```
+
+Elixirの標準ライブラリがほとんどのニーズをカバーしている一方で、より繊細なテキスト操作、特に進んだ文字列のキャピタライズに関しては、国際化を扱うCldrのようなサードパーティライブラリを探求することもできます。これらはロケール固有のキャピタライズの挙動を提供することがあります。

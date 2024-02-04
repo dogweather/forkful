@@ -1,37 +1,45 @@
 ---
-title:                "Sjekke om en mappe finnes"
-date:                  2024-01-19
-simple_title:         "Sjekke om en mappe finnes"
-
+title:                "Sjekker om en mappe eksisterer"
+date:                  2024-02-03T19:07:14.997285-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Sjekker om en mappe eksisterer"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/clojure/checking-if-a-directory-exists.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Sjekking om en katalog eksisterer hjelper oss å unngå feil når filsystem operasjoner utføres. Det er viktig for kondisjonelle flyter og datapersistering.
+## Hva & Hvorfor?
+Å sjekke om en katalog eksisterer i Clojure innebærer å verifisere tilstedeværelsen av en filsystemkatalog fra inne i din Clojure-applikasjon. Denne oppgaven er avgjørende for filoperasjoner, for å forhindre feil når man leser fra eller skriver til kataloger som kanskje ikke er der, og sikrer robust og feilfri kodeutførelse.
 
-## How to:
-Clojure gjør det enkelt med `java.io.File` klassen:
+## Hvordan gjøre dette:
+Clojure, som er et JVM-språk, kan utnytte Java sin `java.io.File` klasse for dette formålet. Du trenger ikke noe tredjepartsbibliotek for en så grunnleggende operasjon. Her er hvordan du kan gjøre det:
 
 ```clojure
-(import '[java.io File])
+(import 'java.io.File)
 
-(defn directory-exists? [path]
-  (.isDirectory (File. path)))
+(defn directory-exists? [dir-path]
+  (let [dir (File. dir-path)]
+    (.exists dir)))
 
-(println (directory-exists? "/et/eksisterende/sted")) ; => true
-(println (directory-exists? "/et/ikke-eksisterende/sted")) ; => false
+;; Eksempel på bruk
+(println (directory-exists? "/path/to/your/directory")) ;; true eller false
 ```
-Output vil være `true` eller `false` avhengig av om katalogen finnes.
 
-## Deep Dive
-Fra starten, har Clojure levert effektive metoder for å samhandle med JVM og Java klasser. Sjekking av om kataloger eksisterer er ingen unntak. Denne funksjonaliteten er ikke spesifikk for Clojure – det låner fra Java IO-rammeverket. Alternative tilnærminger inkluderer bruk av `file-seq` for å generere en sekvens av filer i en katalog og sjekke om sekvensen er tom.
+Denne funksjonen, `directory-exists?`, tar en katalogbane som en streng og returnerer `true` hvis katalogen eksisterer og `false` ellers. Dette oppnås ved å opprette et `File` objekt med katalogbanen og deretter kalle `.exists` metoden på dette objektet.
 
-Når det gjelder underliggende implementeringsdetaljer, `File` klassen sjekker filsystemets metadata for å bestemme om en bestemt sti er en katalog. Ytelsen for denne operasjonen kan variere avhengig av filsystemets størrelse og type.
+I tillegg til direkte Java interop, kan du bruke Clojure-biblioteker som abstraherer bort noe av Java-boilerplate. Et slikt bibliotek er `clojure.java.io`. Imidlertid, for å sjekke om en katalog eksisterer, ville du fortsatt bruke `File` klassen, men du kan finne biblioteket nyttig for andre filoperasjoner. Eksempel:
 
-## See Also
-- Clojure Docs om IO: https://clojuredocs.org/clojure.java.io
-- Java `File` klasse: https://docs.oracle.com/javase/8/docs/api/java/io/File.html
-- Clojure `file-seq` funksjonen: https://clojuredocs.org/clojure.core/file-seq
+```clojure
+(require '[clojure.java.io :as io])
+
+(defn directory-exists?-clojure [dir-path]
+  (.exists (io/file dir-path)))
+
+;; Eksempel på bruk
+(println (directory-exists?-clojure "/another/path/to/check")) ;; true eller false
+```
+
+Denne versjonen er ganske lik, men bruker Clojure sin `io/file` funksjon for å opprette `File` objektet. Denne metoden blander seg mer naturlig inn i Clojure-kodebaser ved å utnytte Clojures bibliotek for IO-operasjoner, i stedet for å direkte grensesnitt med Java-klasser.

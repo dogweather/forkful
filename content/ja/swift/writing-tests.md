@@ -1,43 +1,64 @@
 ---
 title:                "テストの作成"
-date:                  2024-01-19
+date:                  2024-02-03T19:32:04.111532-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "テストの作成"
-
 tag:                  "Testing and Debugging"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/swift/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (テストの書き方とその理由)
-テストとは、コードが正しく動作することを保証するためのものです。バグを見つけ、将来的な機能追加やリファクタリングでのリスクを減らすためにプログラマはテストを行います。
+## 何となぜ？
+Swiftでテストを書くということは、アプリケーション内の他のコードユニットの正しさを検証するためのコードを作成し、実行することを意味します。プログラマーは、信頼性を確保し、開発サイクルの早い段階でバグを発見し、意図しない結果なしに将来的なコードのリファクタリングを容易にするためにこれを行います。
 
-## How to: (やり方)
-Swiftでのテスト書き方の例は次の通りです。XCTestフレームワークを使用しています。
+## 方法：
+SwiftはXCTestフレームワークを通じてテストのサポートを行っており、これはXcodeに統合されています。たとえば、2つの数の合計を計算する関数など、コードの個々の部分を検証するためのユニットテストを書くことができます。
 
-```Swift
+```swift
 import XCTest
+@testable import YourApp
 
-class MyTests: XCTestCase {
-    func testExample() {
-        let result = "Hello, World!"
-        XCTAssertEqual(result, "Hello, World!", "The result should be 'Hello, World!'")
+class YourAppTests: XCTestCase {
+
+    func testSum() {
+        let result = Calculator().sum(a: 1, b: 2)
+        XCTAssertEqual(result, 3, "合計関数は期待される値を返しませんでした。")
     }
 }
-
 ```
 
-コードを実行すると、以下の出力が得られます。
+このテストを実行するには、通常XcodeでCommand-Uを押します。Xcodeのテストナビゲーターの出力がテストが成功したか失敗したかを教えてくれます。
 
+例えば、成功したテストの出力：
 ```
-Test Case '-[MyTests testExample]' passed (0.001 seconds).
+Test Case '-[YourAppTests testSum]' passed (0.005 seconds).
 ```
 
-## Deep Dive (深堀り)
-テストはTDD（テスト駆動開発）の中核で、初期はSmalltalkの開発に使われました。他のテストフレームワークにはQuick/NimbleやSpectreなどがあります。XCTestはAppleのXcodeに組み込まれており、テストケース、アサーション、テストスイート管理が可能です。
+より高度なテストシナリオでは、より表現豊かな構文でテストを書くために、Quick/Nimbleなどのサードパーティ製ライブラリを採用することがあります。
 
-## See Also (関連情報)
-- AppleのXCTestドキュメント: [Testing Your Apps in Xcode](https://developer.apple.com/documentation/xctest)
-- SwiftにおけるTDDについての記事: [Test-Driven Swift Development](https://www.raywenderlich.com/5522-test-driven-development-tutorial-for-ios-getting-started)
-- 別のテストフレームワークQuick/NimbleのGitHub: [Quick/Nimble on GitHub](https://github.com/Quick/Nimble)
+Quick/Nimbleを使った場合の同じテストは、こんな感じに書くかもしれません：
+
+```swift
+// QuickとNimbleをSwiftパッケージマネージャーに追加するか、CocoaPods/Carthageを使ってインストールします
+import Quick
+import Nimble
+@testable import YourApp
+
+class CalculatorSpec: QuickSpec {
+    override func spec() {
+        describe("Calculator") {
+            context("数を合計するとき") {
+                it("正しい合計を返すべき") {
+                    let calculator = Calculator()
+                    expect(calculator.sum(a: 1, b: 2)).to(equal(3))
+                }
+            }
+        }
+    }
+}
+```
+
+このテストを実行すると、テスト終了時の出力がテストのコンソールやCI/CDツールのログに表示され、テストが成功したか失敗したかを示します。これにより、テストと期待値を記述する形式がより読みやすくなります。

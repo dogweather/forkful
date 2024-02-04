@@ -1,53 +1,68 @@
 ---
-title:                "Sjekke om en mappe finnes"
-date:                  2024-01-19
-simple_title:         "Sjekke om en mappe finnes"
-
+title:                "Sjekker om en mappe eksisterer"
+date:                  2024-02-03T19:06:56.406676-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Sjekker om en mappe eksisterer"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/cpp/checking-if-a-directory-exists.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Å sjekke om en mappe eksisterer betyr å bekrefte at en spesifikk sti refereres til en reell katalog i filsystemet. Programmerere gjør dette for å unngå feil ved filoperasjoner eller for å beslutte om å opprette en ny mappe.
+## Hva og hvorfor?
+Å sjekke om en mappe eksisterer handler om å fastslå tilstedeværelsen av en mappe på en angitt sti før man utfører operasjoner som å lese fra eller skrive til filer inni den. Programmerere gjør dette for å unngå feil relatert til filoperasjoner, og sørger for en jevnere og mer pålitelig utføring av oppgaver knyttet til filhåndtering i applikasjonene deres.
 
-## How to:
-I C++ kan du bruke filesystem biblioteket for å sjekke om en mappe eksisterer. Her er et eksempel:
+## Hvordan:
+I moderne C++ (C++17 og videre) kan du bruke filsystembiblioteket til å sjekke om en mappe eksisterer. Det gir en enkel og standardisert måte å utføre filsystemoperasjoner på, inkludert å sjekke for eksistensen av en mappe.
 
-```C++
+```cpp
 #include <iostream>
 #include <filesystem>
 
 namespace fs = std::filesystem;
 
 int main() {
-    fs::path dir = "/noen/mappe/sti";
-    
-    if (fs::exists(dir)) {
-        std::cout << "Mappen eksisterer!" << std::endl;
+    const fs::path dirPath = "/sti/til/mappe";
+
+    if (fs::exists(dirPath) && fs::is_directory(dirPath)) {
+        std::cout << "Mappen eksisterer." << std::endl;
     } else {
-        std::cout << "Mappen finnes ikke." << std::endl;
+        std::cout << "Mappen eksisterer ikke." << std::endl;
     }
-    
+
     return 0;
 }
 ```
-
-Dersom mappen eksisterer, vil du se:
+Eksempel på utskrift hvis mappen eksisterer:
 ```
-Mappen eksisterer!
-```
-
-Hvis mappen ikke finnes, blir det:
-```
-Mappen finnes ikke.
+Mappen eksisterer.
 ```
 
-## Deep Dive:
-I eldre C++ kode brukes ofte `stat` fra `sys/stat.h` for å sjekke mappeer, men dette var plattformsavhengig og mer komplisert. Med C++17 introduserte `std::filesystem`, et kraftig og plattformuavhengig bibliotek, en effektiv og type-sikker måte å håndtere filsystem operasjoner. `fs::exists()` er en funksjon i dette biblioteket som sjekker om en fil eller mappe finnes. Til tross for enkelheten til `exists()`, er det viktig å bemerke at denne funksjonen kun indikerer eksistensen av en sti, ikke at det er en mappe, og derfor bør brukes i kombinasjon med `fs::is_directory()` om man trenger å være sikker.
+Eksempel på utskrift hvis mappen ikke eksisterer:
+```
+Mappen eksisterer ikke.
+```
 
-## See Also:
-- [std::filesystem dokumentasjon](https://en.cppreference.com/w/cpp/filesystem)
-- [C++17 Nyheter](https://en.cppreference.com/w/cpp/17)
-- [Boost.Filesystem hvis ikke C++17 er tilgjengelig](https://www.boost.org/doc/libs/release/libs/filesystem/)
+For prosjekter som ennå ikke bruker C++17 eller for ekstra funksjonalitet, er Boost Filesystem-biblioteket et populært tredjepartsvalg som tilbyr lignende funksjonalitet.
+
+```cpp
+#include <iostream>
+#include <boost/filesystem.hpp>
+
+namespace fs = boost::filesystem;
+
+int main() {
+    const fs::path dirPath = "/sti/til/mappe";
+
+    if (fs::exists(dirPath) && fs::is_directory(dirPath)) {
+        std::cout << "Mappen eksisterer." << std::endl;
+    } else {
+        std::cout << "Mappen eksisterer ikke." << std::endl;
+    }
+
+    return 0;
+}
+```
+Ved å bruke Boost Filesystem vil utskriften være identisk med eksempelet fra C++17 filsystemet, avhengig av eksistensen av mappen på den angitte stien.

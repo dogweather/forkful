@@ -1,64 +1,87 @@
 ---
 title:                "Praca z JSON"
-date:                  2024-01-19
+date:                  2024-02-03T19:21:56.795905-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Praca z JSON"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/cpp/working-with-json.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Co i dlaczego?
-JSON, czyli JavaScript Object Notation, to format wymiany danych. Programiści używają go, bo jest lekki, łatwy do czytania i pisanie w nim jest łatwe zarówno dla ludzi, jak i maszyn.
+
+JSON (JavaScript Object Notation) to lekki format służący do przechowywania i transportowania danych, co czyni go doskonałym medium do wymiany danych między serwerami a aplikacjami internetowymi. Programiści używają JSON ze względu na jego łatwą czytelność dla ludzi i prostotę parsowania przez maszyny, szczególnie podczas pracy nad aplikacjami wymagającymi wymiany danych przez internet lub ustawienia konfiguracji.
 
 ## Jak to zrobić:
-W C++ do pracy z JSON-em potrzebujemy zewnętrznej biblioteki, np. `nlohmann/json`. Spójrzmy na przykład:
 
-```C++
+W C++ nie ma natywnego wsparcia dla JSON, jednak biblioteki stron trzecich, takie jak nlohmann/json, ułatwiają pracę. Oto jak jej użyć do podstawowych zadań:
+
+Najpierw upewnij się, że masz zainstalowaną bibliotekę. Jeśli korzystasz z menedżera pakietów takiego jak vcpkg lub Conan, łatwo możesz dodać `nlohmann/json` do swojego projektu.
+
+### Parsowanie JSON z ciągu znaków
+
+```cpp
 #include <iostream>
 #include <nlohmann/json.hpp>
 
 int main() {
-    // Tworzenie JSON-a w C++
-    nlohmann::json jsonExample;
-    jsonExample["nazwa"] = "Jan Kowalski";
-    jsonExample["wiek"] = 30;
-    jsonExample["hobby"] = {"książki", "gry", "muzyka"};
+    // Dane JSON jako ciąg znaków
+    std::string jsonData = "{\"name\":\"John\", \"age\":30, \"city\":\"New York\"}";
 
-    // Wyświetlanie JSON-a
-    std::cout << jsonExample.dump(4) << std::endl;
+    // Parsowanie ciągu JSON
+    auto jsonObject = nlohmann::json::parse(jsonData);
 
-    // Parsowanie JSON-a z ciągu znaków
-    std::string jsonString = R"({"miasto":"Warszawa","ulica":"Marszałkowska"})";
-    nlohmann::json parsedJson = nlohmann::json::parse(jsonString);
+    // Dostęp do danych
+    std::cout << "Name: " << jsonObject["name"] << "\n"
+              << "Age: " << jsonObject["age"] << "\n"
+              << "City: " << jsonObject["city"] << std::endl;
 
-    // Wyświetlanie sparsowanego JSON-a
-    std::cout << parsedJson.dump(4) << std::endl;
+    return 0;
 }
 ```
 
-Przykładowe wyjście:
+**Przykładowe wyjście:**
+
+```
+Name: John
+Age: 30
+City: New York
+```
+
+### Generowanie JSON
+
+Tworzenie danych JSON jest równie proste; po prostu przypisujesz wartości do obiektu `nlohmann::json`.
+
+```cpp
+#include <nlohmann/json.hpp>
+#include <iostream>
+
+int main() {
+    // Tworzenie obiektu JSON
+    nlohmann::json jsonObject;
+    jsonObject["name"] = "Jane";
+    jsonObject["age"] = 25;
+    jsonObject["city"] = "Los Angeles";
+
+    // Konwersja obiektu JSON na ciąg znaków i wydruk
+    std::string jsonString = jsonObject.dump(4); // Argument 4 służy do ładnego formatowania
+    std::cout << jsonString << std::endl;
+
+    return 0;
+}
+```
+
+**Przykładowe wyjście:**
+
 ```
 {
-    "nazwa": "Jan Kowalski",
-    "wiek": 30,
-    "hobby": [
-        "książki",
-        "gry",
-        "muzyka"
-    ]
-}
-{
-    "miasto": "Warszawa",
-    "ulica": "Marszałkowska"
+    "name": "Jane",
+    "age": 25,
+    "city": "Los Angeles"
 }
 ```
 
-## Deep Dive:
-JSON jest w użyciu od początku 2000 roku. Alternatywą dla JSON-a jest XML, ale JSON zyskał na popularności dzięki swej prostocie. C++ nie ma wbudowanego wsparcia dla JSON-a, dlatego korzystamy z bibliotek takich jak `nlohmann/json` czy `jsoncpp`. `nlohmann/json` jest zalecaną opcją ze względu na prostotę użycia i czytelność kodu, który za jej pomocą piszemy.
-
-## Zobacz również:
-- Oficjalne repozytorium `nlohmann/json`: https://github.com/nlohmann/json
-- Dokumentacja `jsoncpp`: https://github.com/open-source-parsers/jsoncpp
-- Wprowadzenie do JSON-a: https://www.json.org/json-pl.html
+Te przykłady demonstrują podstawowe funkcjonalności pracy z JSON w C++ przy użyciu biblioteki `nlohmann/json`. Znając te podstawy, możesz parsować i generować JSON dla różnych zastosowań, od plików konfiguracyjnych po wymianę danych w aplikacjach sieciowych.

@@ -1,59 +1,65 @@
 ---
-title:                "Sjekke om en mappe eksisterer"
-date:                  2024-01-20T14:56:26.611961-07:00
-simple_title:         "Sjekke om en mappe eksisterer"
-
+title:                "Sjekker om en mappe eksisterer"
+date:                  2024-02-03T19:07:41.365232-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Sjekker om en mappe eksisterer"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/elm/checking-if-a-directory-exists.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Hva & Hvorfor?
-Sjekke om en mappe finnes innebærer å bekrefte at en bestemt sti leder til en eksisterende katalog. Programmere gjør dette for å unngå feil før de forsøker operasjoner som lese fra eller skrive til filsystemet.
+## Hva og hvorfor?
+Å sjekke om en katalog eksisterer betyr å bekrefte om en spesifikk mappebane er til stede i filsystemet. Programmerere gjør dette for å unngå feil når de aksesserer, leser eller skriver filer.
 
-## Hvordan gjøre det:
-Elm kjører i nettleseren og har ikke direkte tilgang til filsystemet. Du må derfor bruke `ports` for å kommunisere med JavaScript, som kan sjekke filsystemet.
+## Hvordan:
+Elm er et front-end webprogrammeringsspråk, så det har ikke direkte tilgang til filsystemet. Imidlertid ville du typisk sende en kommando til en bakendtjeneste i JavaScript. Her er hvordan du kan strukturere en slik interaksjon med Elm:
 
-```Elm
+```elm
 port module Main exposing (..)
 
--- Definerer en port for å sende en sti til JavaScript
-port checkDirectory : String -> Cmd msg
+-- Definer en port for å snakke med JavaScript
+port checkDir : String -> Cmd msg
 
--- Definerer en port for å få svaret
-port directoryExists : (Bool -> msg) -> Sub msg
+-- Eksempel på bruk
+checkDirectory : String -> Cmd Msg
+checkDirectory dir =
+    checkDir dir
 ```
 
-I JavaScript ville du hatt noe lignende:
+Deretter, i JavaScriptet ditt:
 
-```JavaScript
-// Definerer en funksjon for å sjekke om mappen finnes
-function doesDirectoryExist(path) {
-  const fs = require('fs');
-  try {
-    return fs.existsSync(path) && fs.lstatSync(path).isDirectory();
-  } catch (err) {
-    return false;
-  }
-}
-
-// Abonnerer på Elm-porten
-app.ports.checkDirectory.subscribe(function(path) {
-  app.ports.directoryExists.send(doesDirectoryExist(path));
+```javascript
+app.ports.checkDir.subscribe(function(dir) {
+    var exists = fs.existsSync(dir); // Dette bruker Node's 'fs' modul for å sjekke katalogen
+    app.ports.dirExists.send(exists);
 });
 ```
 
-Elm vil sende en sti ned til JavaScript, som da sjekker om mappen finnes og sender tilbake et `Bool`.
+Tilbake i Elm, håndter responsen:
 
-## Dybde Undervannsbåt
-Elm er designet for webapplikasjoner, og har ingen innebygd evne til å håndtere filsystemet direkte ettersom det kjører i nettleseren. Historisk sett har dette betydd at Elm-applikasjoner må stole på server-side logikk eller JavaScript interop via `ports` for filsystemoppgaver.
+```elm
+port dirExists : (Bool -> msg) -> Sub msg
 
-Alternativer for en full backend-løsning inkluderer å benytte elm-serverless, som lar deg kjøre Elm på servere, eller å skrive en Node.js-tjeneste i JavaScript eller TypeScript som din Elm frontend kan kommunisere med gjennom HTTP.
+type Msg = DirExists Bool
 
-Når det gjelder implementeringsdetaljer, er sjekk av om en mappe finnes relativt rett frem i JavaScript ved bruk av `fs`-modulen, som i eksempelet over. Elm-porter formidler data mellom din Elm-kode og potensialet for sideeffekter i JavaScript.
+subscriptions : Model -> Sub Msg
+subscriptions model =
+    dirExists DirExists
+```
 
-## Se Også
-- Elm ports dokumentasjon: https://guide.elm-lang.org/interop/ports.html
+Merk: Dette krever oppsett av porter og passende bakendhåndtering i JavaScript.
+
+## Dypdykk
+Elm sitt nettleserrestriktede miljø betyr at det ikke kan få tilgang til filsystemet direkte, i motsetning til Node.js. Historisk sett har server-side språk og Node.js gitt funksjonalitet for tilgang til filsystemet, med nettleserspråk som støtter seg på server-APIer for å håndtere filer. Elms strenge typsystem håndterer ikke naturlig sideeffekter som I/O-operasjoner; i stedet bruker det porter for JavaScript-interoperabilitet. Selv om Elm i seg selv ikke kan sjekke om en katalog eksisterer, tillater bruk av Elm med en bakendtjeneste via porter denne funksjonaliteten i webapplikasjoner.
+
+Alternativer i et Node.js-miljø inkluderer metodene `fs.existsSync` eller `fs.access`. For Elm, vurder server-side Elm med en bakend som `elm-serverless` som kan håndtere filoperasjoner mer direkte enn klient-side Elm.
+
+Når det gjelder implementering, når du har satt opp portene dine, sender Elm-appen din meldinger til JavaScript som utfører sjekken av filsystemet. JavaScript sender deretter resultatene tilbake til Elm. Dette holder Elms front-end kode ren og fri for sideeffekter, og opprettholder dens arkitekturprinsipper.
+
+## Se også
+- Elms offisielle guide om porter: https://guide.elm-lang.org/interop/ports.html
 - Node.js `fs` modul dokumentasjon: https://nodejs.org/api/fs.html
-- Elm-serverless prosjektet: https://github.com/ktonon/elm-serverless
+- elm-serverless for server-side Elm-interaksjoner: https://package.elm-lang.org/packages/ktonon/elm-serverless/latest/

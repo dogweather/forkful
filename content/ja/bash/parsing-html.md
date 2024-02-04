@@ -1,44 +1,67 @@
 ---
 title:                "HTMLの解析"
-date:                  2024-01-20T15:29:56.433582-07:00
+date:                  2024-02-03T19:11:46.554410-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "HTMLの解析"
-
 tag:                  "HTML and the Web"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/bash/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (何となぜ？)
-HTML解析とはHTMLデータから特定の情報を取り出すことです。プログラマーはウェブスクレイピングやデータ処理、自動化のためにHTMLを解析します。
+## 何となぜ？
 
-## How to: (やり方)
-Bash単独ではHTML解析は得意ではありませんが、`grep`, `sed`, `awk`, そして`curl`と組み合わせると基本的なデータ抽出が可能です。ここでいう「基本的な」とは正確なHTMLパースではなく、簡易的な文字列操作を意味しています。
+HTMLのパースとは、HTMLファイルの構造と内容を精査して情報を抽出することを意味します。プログラマーは、データにアクセスしたり、コンテンツを操作したり、ウェブサイトから情報を抽出したりするためにこれを行います。
 
-例えば、`curl`を使ってHTMLコンテンツを取得し、`grep`で特定のタグを含む行を抽出する簡単なスクリプトです。
+## 方法：
 
-```Bash
-curl -s http://example.com | grep "<title>"
+HTMLをパースするためにBashが最初に思い浮かぶものではありませんが、`grep`、`awk`、`sed`や外部ユーティリティ`lynx`のようなツールを利用して行うことができます。ロバストさを求めるならば、`libxml2`パッケージから`xmllint`を使用します。
+
+```bash
+# 必要であれば xmllint をインストール
+sudo apt-get install libxml2-utils
+
+# サンプル HTML
+cat > sample.html <<EOF
+<html>
+<head>
+  <title>Sample Page</title>
+</head>
+<body>
+  <h1>Hello, Bash!</h1>
+  <p id="myPara">Bash can read me.</p>
+</body>
+</html>
+EOF
+
+# タイトルをパースする
+title=$(xmllint --html --xpath '//title/text()' sample.html 2>/dev/null)
+echo "タイトルは： $title"
+
+# IDによる段落の抽出
+para=$(xmllint --html --xpath '//*[@id="myPara"]/text()' sample.html 2>/dev/null)
+echo "段落の内容は： $para"
 ```
 
-これは出力します:
-
-```HTML
-<title>Example Domain</title>
+出力：
+```
+タイトルは： Sample Page
+段落の内容は： Bash can read me.
 ```
 
-より複雑な解析が必要な場合は、専用のツールを使うのが良いでしょう。
+## 深堀り
 
-## Deep Dive (深掘り)
-過去、BashスクリプトでのHTML解析は限界がありましたが、XMLStarletやpupのようなツールが導入され、コマンドラインからでもより高度な解析が可能になっています。
+昔、プログラマーは`grep`のような正規表現ベースのツールを使ってHTMLをスキャンしていましたが、それは不格好でした。HTMLは規則正しくなく、文脈に依存しています。伝統的なツールはこれを見落とし、エラーが発生しやすいです。
 
-代替方法としては、Pythonの`BeautifulSoup`やRubyの`Nokogiri`のような専門のパーサライブラリがあります。これらはHTML形式の厳密な解釈、破損したHTMLへの対応、DOMを利用したクエリが可能です。
+代替手段は？ 多数あります。Beautiful Soupを使ったPython、DOMDocumentを使ったPHP、DOMパーサーを使ったJavaScript—HTMLの構造を理解するように設計されたライブラリを持つ言語です。
 
-実装の詳細については、HTMLパースにおいては文法の正確さよりも、目的のデータをどれだけ効率的かつ正確に抽出できるかが重要です。
+bashスクリプトでの`xmllint`の使用は、単純な作業には確かです。XMLを理解し、その延長でXHTMLを理解します。ただし、通常のHTMLは予測不可能な場合があります。XMLの厳格なルールには常に従わないためです。`xmllint`はHTMLをXMLモデルに強制することで、形式が整っているHTMLにはうまく機能しますが、乱雑なものについては躓く可能性があります。
 
-## See Also (関連情報)
-- コマンドラインHTMLパーサーの詳細：[XMLStarlet](http://xmlstar.sourceforge.net/)
-- コマンドラインでのHTMLパーサー、pup: [pup](https://github.com/EricChiang/pup)
-- `BeautifulSoup`ドキュメント：[BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
-- `Nokogiri`について：[Nokogiri](https://nokogiri.org/)
+## 参照
+
+- [W3Schools - HTML DOM Parser](https://www.w3schools.com/xml/dom_intro.asp): HTML DOMを解説。
+- [MDN Web Docs - XMLのパースとシリアライズ](https://developer.mozilla.org/en-US/docs/Web/Guide/Parsing_and_serializing_XML): XHTMLに適用されるXMLパースの原則について。
+- [Beautiful Soup Documentation](https://www.crummy.com/software/BeautifulSoup/bs4/doc/): HTMLパースを行うPythonライブラリ。
+- [libxml2 Documentation](http://xmlsoft.org/): `xmllint`および関連するXMLツールに関する詳細。

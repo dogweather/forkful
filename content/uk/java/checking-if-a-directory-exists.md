@@ -1,49 +1,123 @@
 ---
 title:                "Перевірка наявності директорії"
-date:                  2024-01-20T14:57:36.218214-07:00
+date:                  2024-02-03T19:08:20.734561-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Перевірка наявності директорії"
-
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/java/checking-if-a-directory-exists.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Що це та Навіщо?
-Перевірка існування каталогу - це спосіб з'ясувати, чи є у файловій системі певна папка. Програмісти роблять це, щоб уникнути помилок при роботі з файлами або для створення каталогів, якщо таких ще немає.
+## Що і чому?
+Перевірка наявності директорії в Java — це основна завдання, яка передбачає верифікацію існування директорії файлової системи перед її читанням, записом або виконанням будь-яких операцій, для яких потрібно її існування. Це важливо для того, аби уникнути помилок чи винятків у програмах, які взаємодіють із файловою системою, забезпечуючи плавніше виконання та кращий досвід користувача.
 
-## Як це зробити:
+## Як:
+В Java існує кілька способів перевірити існування директорії, головним чином за допомогою класів `java.nio.file.Files` і `java.io.File`.
+
+**Використання `java.nio.file.Files`**:
+
+Цей метод є рекомендованим у новіших версіях Java.
+
 ```java
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.nio.file.Paths;
 
 public class DirectoryExists {
     public static void main(String[] args) {
-        // Перевірка чи існує каталог
-        Path path = Paths.get("/path/to/your/directory");
+        // Вкажіть шлях до директорії тут
+        String directoryPath = "path/to/directory";
 
-        if (Files.exists(path)) {
-            System.out.println("Каталог існує!");
+        // Перевірка існування директорії
+        if (Files.exists(Paths.get(directoryPath))) {
+            System.out.println("Директорія існує.");
         } else {
-            System.out.println("Каталог не існує!");
+            System.out.println("Директорії не існує.");
         }
     }
 }
 ```
-Вивід залежатиме від того, чи існує каталог на вашому комп'ютері:
+**Приклад виводу**:
 ```
-Каталог існує!
+Директорія існує.
 ```
-або
+Або
 ```
-Каталог не існує!
+Директорії не існує.
 ```
 
-## Поглибленно:
-Перевірка існування каталогу у Java використовує класи з пакету `java.nio.file` введеного у Java 7. Це більш гнучкий та комплексний спосіб роботи з файловою системою порівняно зі старішим `java.io.File`. `Path` та `Files` дозволяють легше моделювати шляхи у файловій системі, і забезпечують кращу переносимість коду між різними ОС. Альтернативою є використання методу `File.exists()`, але в разі роботи зі складнішими файловими операціями `java.nio.file` надає переваги іншим інструментам.
+**Використання `java.io.File`**:
 
-## Дивіться також:
-- [Official Java Documentation for Files](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/nio/file/Files.html)
-- [Oracle Tutorial on File I/O](https://docs.oracle.com/javase/tutorial/essential/io/)
-- [Stack Overflow discussion on checking a directory's existence](https://stackoverflow.com/questions/3634853/how-to-create-a-directory-in-java)
+Хоча `java.nio.file.Files` є рекомендованим варіантом, старший клас `java.io.File` також можна використовувати.
+
+```java
+import java.io.File;
+
+public class DirectoryExistsLegacy {
+    public static void main(String[] args) {
+        // Вкажіть шлях до директорії тут
+        String directoryPath = "path/to/directory";
+
+        // Створення об'єкта File
+        File directory = new File(directoryPath);
+
+        // Перевірка існування директорії
+        if (directory.exists() && directory.isDirectory()) {
+            System.out.println("Директорія існує.");
+        } else {
+            System.out.println("Директорії не існує.");
+        }
+    }
+}
+```
+**Приклад виводу**:
+```
+Директорія існує.
+```
+Або
+```
+Директорії не існує.
+```
+
+**Використання сторонніх бібліотек**:
+
+Хоча стандартна бібліотека Java зазвичай достатня для цього завдання, сторонні бібліотеки, як-от Apache Commons IO, пропонують додаткові утиліти для роботи з файлами, які можуть бути корисними в складніших додатках.
+
+**Apache Commons IO**:
+
+Спершу додайте залежність Apache Commons IO до вашого проєкту. Потім ви можете використовувати її можливості для перевірки існування директорії.
+
+```java
+// Припускаємо, що Apache Commons IO додано до проєкту
+
+import org.apache.commons.io.FileUtils;
+
+public class DirectoryExistsCommons {
+    public static void main(String[] args) {
+        // Вкажіть шлях до директорії тут
+        String directoryPath = "path/to/directory";
+
+        // Використання FileUtils для перевірки
+        boolean directoryExists = FileUtils.directoryContains(new File(directoryPath), null);
+
+        if (directoryExists) {
+            System.out.println("Директорія існує.");
+        } else {
+            System.out.println("Директорії не існує.");
+        }
+    }
+}
+```
+
+**Примітка**: `FileUtils.directoryContains` перевіряє, чи директорія містить конкретний файл, але передаючи `null` як другий аргумент, ви можете використовувати його для перевірки існування директорії. Будьте обережні, оскільки це може бути не найпряміший або передбачений метод використання.
+
+**Приклад виводу**:
+```
+Директорія існує.
+```
+Або
+```
+Директорії не існує.
+```

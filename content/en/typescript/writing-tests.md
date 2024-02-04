@@ -1,8 +1,8 @@
 ---
 title:                "Writing tests"
-date:                  2024-01-19
+date:                  2024-02-03T19:03:31.655800-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Writing tests"
-
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/typescript/writing-tests.md"
 ---
@@ -10,68 +10,79 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-
-Writing tests means crafting code that checks if other code works right. Programmers do it to catch bugs early, save time, and make sure changes don't break stuff.
+Writing tests in TypeScript involves creating automated scripts to verify the functionality and correctness of your code. Programmers do it to ensure reliability, quickly catch bugs, and facilitate maintainable code growth, as TypeScript's static typing adds a level of predictability to JavaScript testing.
 
 ## How to:
+TypeScript works harmoniously with most JavaScript testing frameworks. For demonstration purposes, we'll use Jest, a popular testing framework, due to its zero-configuration setup for TypeScript projects.
 
-Let's test a simple function using Jest, a popular testing framework for JavaScript and TypeScript.
-
-First, install Jest with TypeScript support:
+First, ensure you have Jest and the necessary TypeScript types installed:
 
 ```bash
-npm install --save-dev jest @types/jest ts-jest
+npm install --save-dev jest typescript ts-jest @types/jest
 ```
 
-Add a `jest.config.js`:
+Next, set up Jest to work with TypeScript by modifying the `jest.config.js` or if creating a new one:
 
-```js
+```javascript
 module.exports = {
   preset: 'ts-jest',
   testEnvironment: 'node',
 };
 ```
 
-Define a function in `math.ts`:
+Now, let's write a simple function and a test for it. Consider a `sum.ts` file with the following function:
 
 ```typescript
-export function add(a: number, b: number): number {
+// sum.ts
+export function sum(a: number, b: number): number {
   return a + b;
 }
 ```
 
-Write a test in `math.test.ts`:
+Create a test file named `sum.test.ts`:
 
 ```typescript
-import { add } from './math';
+// sum.test.ts
+import { sum } from './sum';
 
 test('adds 1 + 2 to equal 3', () => {
-  expect(add(1, 2)).toBe(3);
+  expect(sum(1, 2)).toBe(3);
 });
 ```
 
-Run tests:
+Run your tests with:
 
 ```bash
 npx jest
 ```
 
-Sample output:
+Sample output indicating a passed test should look something like:
 
+```plaintext
+ PASS  ./sum.test.ts
+  ✓ adds 1 + 2 to equal 3 (2 ms)
 ```
-PASS  ./math.test.ts
-✓ adds 1 + 2 to equal 3 (5ms)
+
+For asynchronous code, Jest accommodates with `async/await`. Suppose you have an asynchronous `fetchData` function:
+
+```typescript
+// asyncFunctions.ts
+export async function fetchData(): Promise<string> {
+  return "data";
+}
 ```
 
-## Deep Dive
+Your test using async functions:
 
-Testing in TypeScript builds off JavaScript testing practices. Here's what makes it special:
+```typescript
+// asyncFunctions.test.ts
+import { fetchData } from './asyncFunctions';
 
-- Historical context: TypeScript came to life in 2012. It was meant to add types to JavaScript, making code easier to maintain and test.
-- Alternatives: Other than Jest, there's Mocha, Jasmine, and more. Each has unique features; choose based on your needs.
-- Implementation details: Tests can live next to code or separately. TypeScript types help with autocompletion and added confidence in tests.
+test('fetches data successfully', async () => {
+  expect(await fetchData()).toBe('data');
+});
+```
 
-## See Also
+When running your tests, Jest will wait for the promise to resolve, correctly testing asynchronous operations.
 
-- Jest: [Jest Documentation](https://jestjs.io/docs/getting-started)
-- Comparison of JS Testing Frameworks: [StateOfJS 2022 Survey](https://2022.stateofjs.com/en-US/libraries/testing/)
+Remember, effective testing includes writing multiple tests for different scenarios, including edge cases, to ensure your TypeScript code behaves as expected.

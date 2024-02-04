@@ -1,91 +1,151 @@
 ---
 title:                "Trabalhando com CSV"
-date:                  2024-01-19
+date:                  2024-02-03T19:19:33.425761-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Trabalhando com CSV"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/c-sharp/working-with-csv.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## O Que é & Porquê?
-
-Trabalhar com CSV (valores separados por vírgulas) significa manipular dados em um formato de texto simples que é amplamente utilizado para importação e exportação de informações entre bancos de dados e aplicativos. Programadores utilizam CSV devido à sua simplicidade e compatibilidade universal.
+## O que é & Por quê?
+CSV (Valores Separados por Vírgula) são arquivos de um formato comum de troca de dados que representam dados tabulares em texto simples, usando vírgulas para separar os valores individuais. Programadores trabalham com arquivos CSV para importar, exportar e manipular dados com facilidade entre várias aplicações e serviços, já que é um formato simples, amplamente suportado e compatível com aplicações de planilhas, bancos de dados e linguagens de programação.
 
 ## Como fazer:
+Trabalhar com arquivos CSV em C# pode ser realizado através do namespace `System.IO` para operações básicas, e para manipulações mais complexas ou para lidar com arquivos maiores de forma fluente, pode-se considerar bibliotecas de terceiros como `CsvHelper`. Abaixo estão exemplos de como ler e escrever em arquivos CSV usando ambas as abordagens.
 
-Para ler e escrever em arquivos CSV em C#, você pode usar a biblioteca `TextFieldParser` ou `StreamWriter`. Aqui está um exemplo de cada:
-
-```C#
-// Lendo CSV com 'TextFieldParser'
-using Microsoft.VisualBasic.FileIO; // Você precisa adicionar referência
-using System;
-
-namespace CSVExample
-{
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            using(TextFieldParser csvParser = new TextFieldParser(@"caminho_do_arquivo.csv"))
-            {
-                csvParser.CommentTokens = new string[] { "#" };
-                csvParser.SetDelimiters(new string[] { "," });
-                csvParser.HasFieldsEnclosedInQuotes = true;
-
-                while (!csvParser.EndOfData)
-                {
-                    string[] fields = csvParser.ReadFields();
-                    Console.WriteLine($"Nome: {fields[0]}, Idade: {fields[1]}");
-                }
-            }
-        }
-    }
-}
-
-```
-
-```C#
-// Escrevendo em CSV com 'StreamWriter'
+### Lendo um arquivo CSV usando System.IO
+```csharp
 using System;
 using System.IO;
 
-namespace CSVExample
+class ReadCSV
 {
-    class Program
+    static void Main()
     {
-        static void Main(string[] args)
+        string filePath = @"caminho\para\seu\arquivo.csv";
+        // Lendo todas as linhas do arquivo CSV
+        string[] csvLines = File.ReadAllLines(filePath);
+        
+        foreach (string line in csvLines)
         {
-            string[] lines = {
-                "Nome,Idade",
-                "Alice,23",
-                "Bob,30"
-            };
+            string[] rowData = line.Split(',');
+            Console.WriteLine($"Primeira Coluna: {rowData[0]}, Segunda Coluna: {rowData[1]}");
+        }
+    }
+}
+```
 
-            using (StreamWriter sw = new StreamWriter(@"caminho_do_arquivo.csv"))
+**Saída do exemplo:**
+```
+Primeira Coluna: Nome, Segunda Coluna: Idade
+Primeira Coluna: John Doe, Segunda Coluna: 30
+```
+
+### Escrevendo em um arquivo CSV usando System.IO
+```csharp
+using System;
+using System.Collections.Generic;
+using System.IO;
+
+class WriteCSV
+{
+    static void Main()
+    {
+        string filePath = @"caminho\para\seu\saida.csv";
+        var lines = new List<string>
+        {
+            "Nome,Idade",
+            "John Doe,30",
+            "Jane Smith,25"
+        };
+        
+        File.WriteAllLines(filePath, lines);
+        Console.WriteLine("Arquivo CSV escrito.");
+    }
+}
+```
+
+**Saída do exemplo:**
+```
+Arquivo CSV escrito.
+```
+
+### Usando CsvHelper para Ler CSV
+Para usar CsvHelper, primeiro, adicione o pacote `CsvHelper` ao seu projeto usando o NuGet Package Manager.
+
+```csharp
+using CsvHelper;
+using System.Globalization;
+using System.IO;
+using System.Linq;
+using CsvHelper.Configuration;
+
+class ReadCSVWithCsvHelper
+{
+    static void Main()
+    {
+        string filePath = @"caminho\para\seu\arquivo.csv";
+
+        using (var reader = new StreamReader(filePath))
+        using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
+        {
+            var records = csv.GetRecords<dynamic>().ToList();
+            foreach (var record in records)
             {
-                foreach (string line in lines)
-                {
-                    sw.WriteLine(line);
-                }
+                Console.WriteLine($"Primeira Coluna: {record.Name}, Segunda Coluna: {record.Age}");
             }
         }
     }
 }
 ```
 
-Saída de exemplo ao ler um arquivo CSV:
+**Saída do exemplo:**
 ```
-Nome: Alice, Idade: 23
-Nome: Bob, Idade: 30
+Primeira Coluna: John Doe, Segunda Coluna: 30
+Primeira Coluna: Jane Smith, Segunda Coluna: 25
 ```
 
-## Aprofundando
+### Usando CsvHelper para Escrever CSV
+```csharp
+using CsvHelper;
+using System.Globalization;
+using System.IO;
+using System.Collections.Generic;
+using CsvHelper.Configuration;
 
-Historicamente, o formato CSV é valorizado pela sua simplicidade, porém a falta de um padrão estrito pode causar problemas de interoperabilidade. Alternativas como o formato JSON ou o XML são opções com estruturas mais rígidas. A implementação em C# pode ser otimizada com bibliotecas de terceiros como `CsvHelper`, que oferece funcionalidades avançadas e melhor performance na leitura e escrita de arquivos CSV.
+class WriteCSVWithCsvHelper
+{
+    public class Pessoa
+    {
+        public string Nome { get; set; }
+        public int Idade { get; set; }
+    }
 
-## Veja Também
+    static void Main()
+    {
+        string filePath = @"caminho\para\seu\saida.csv";
+        var registros = new List<Pessoa>
+        {
+            new Pessoa { Nome = "John Doe", Idade = 30 },
+            new Pessoa { Nome = "Jane Smith", Idade = 25 }
+        };
 
-- Documentação da Microsoft sobre o `TextFieldParser`: [TextFieldParser Class](https://docs.microsoft.com/en-us/dotnet/api/microsoft.visualbasic.fileio.textfieldparser)
-- Biblioteca `CsvHelper`: [CsvHelper GitHub](https://github.com/JoshClose/CsvHelper)
+        using (var writer = new StreamWriter(filePath))
+        using (var csv = new CsvWriter(writer, CultureInfo.InvariantCulture))
+        {
+            csv.WriteRecords(registros);
+        }
+        
+        Console.WriteLine("Arquivo CSV escrito com CsvHelper.");
+    }
+}
+```
+
+**Saída do exemplo:**
+```
+Arquivo CSV escrito com CsvHelper.
+```

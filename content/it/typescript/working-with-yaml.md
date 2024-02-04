@@ -1,57 +1,93 @@
 ---
 title:                "Lavorare con YAML"
-date:                  2024-01-19
+date:                  2024-02-03T19:26:49.797191-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Lavorare con YAML"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/typescript/working-with-yaml.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-YAML è un formato per dati leggibili da umani, usato per configurazioni o dati da serializzare. Programmatori lo usano per la sua leggibilità e semplicità, ideale per file di configurazione o integrazione con sistemi di deployment e orchestrazione.
+## Cosa e Perché?
+YAML, un linguaggio di serializzazione dati progettato per essere amichevole per l'utente, è spesso utilizzato per file di configurazione, messaggistica tra processi e memorizzazione dati. I programmatori si affidano a YAML per la sua leggibilità e facilità d'uso, specialmente quando si tratta di dati strutturati complessi, rendendolo una scelta eccellente per applicazioni sviluppate in TypeScript.
 
-## How to:
-Per lavorare con YAML in TypeScript, occorre prima un parser, come `js-yaml`. Installalo via npm:
+## Come fare:
+Lavorare con YAML in TypeScript tipicamente comporta l'analisi del contenuto YAML in oggetti JavaScript e, possibilmente, la conversione di oggetti JavaScript di nuovo in YAML. Questo richiede un parser; una scelta popolare è `js-yaml`, una libreria che può essere facilmente integrata nei progetti TypeScript.
+
+### Installare js-yaml
+Prima, aggiungi `js-yaml` al tuo progetto:
 
 ```bash
 npm install js-yaml
 ```
 
-Ecco come leggere YAML da file e trasformarlo in un oggetto JavaScript:
+### Convertire YAML in Oggetto JavaScript
+Immagina di avere un file YAML `config.yaml` con il seguente contenuto:
+
+```yaml
+database:
+  host: localhost
+  port: 5432
+  username: utente
+  password: pass
+```
+
+Puoi leggere e analizzare questo file in un oggetto JavaScript come segue:
 
 ```typescript
 import * as fs from 'fs';
 import * as yaml from 'js-yaml';
 
-const fileContents = fs.readFileSync('config.yaml', 'utf8');
-const data = yaml.load(fileContents);
+// Carica e analizza il file YAML
+const fileContents = fs.readFileSync('./config.yaml', 'utf8');
+const data = yaml.load(fileContents) as Record<string, any>;
+
 console.log(data);
 ```
 
-Assumendo che `config.yaml` sia:
+**Output Esempio:**
 
-```yaml
-version: 1
-services:
-  web:
-    image: 'node:14'
-    ports:
-      - '80:80'
+```json
+{
+  "database": {
+    "host": "localhost",
+    "port": 5432,
+    "username": "utente",
+    "password": "pass"
+  }
+}
 ```
 
-L'output sarà:
+### Convertire Oggetto JavaScript in YAML
+Se hai bisogno di fare il contrario e convertire un oggetto JavaScript in una stringa YAML, puoi usare `js-yaml` così:
 
 ```typescript
-{ version: 1, services: { web: { image: 'node:14', ports: ['80:80'] } } }
+import * as yaml from 'js-yaml';
+
+const obj = {
+  title: "Esempio",
+  is_published: true,
+  author: {
+    name: "Jane Doe",
+    age: 34
+  }
+};
+
+const yamlStr = yaml.dump(obj);
+console.log(yamlStr);
 ```
 
-## Deep Dive
-YAML, abbreviazione di "YAML Ain't Markup Language", è emerso nei primi anni 2000 come alternativa a XML. Alternativi a YAML includono JSON e TOML, ma YAML è spesso preferito per la sua leggibilità. Implementando il parsing di YAML in TypeScript, bisogna considerare le potenziali vulnerabilità come il YAML bombing, quindi è essenziale utilizzare librerie aggiornate e ben mantenute.
+**Output Esempio:**
 
-## See Also
-- Documentazione ufficiale YAML: https://yaml.org
-- Libreria `js-yaml` GitHub Repository: https://github.com/nodeca/js-yaml
-- Guide di YAML per il suo utilizzo con Kubernetes: https://kubernetes.io/docs/home/
-- Confronto tra YAML e JSON: https://stackoverflow.com/questions/1726802/what-is-the-difference-between-yaml-and-json
+```yaml
+title: Esempio
+is_published: true
+author:
+  name: Jane Doe
+  age: 34
+```
+
+Questo snippet converte un oggetto JavaScript in una stringa YAML e la stampa. Nella pratica, potresti scrivere questa stringa di nuovo su un file o usarla in altre parti della tua applicazione.

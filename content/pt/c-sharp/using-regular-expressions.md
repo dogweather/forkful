@@ -1,23 +1,25 @@
 ---
-title:                "Utilizando expressões regulares"
-date:                  2024-01-19
-simple_title:         "Utilizando expressões regulares"
-
+title:                "Usando expressões regulares"
+date:                  2024-02-03T19:16:25.293542-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Usando expressões regulares"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/c-sharp/using-regular-expressions.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## O Que & Porquê?
+## O Que & Por Que?
+Expressões regulares (regex) em C# são uma ferramenta poderosa para correspondência de padrões dentro de strings, permitindo que programadores procurem, substituam, dividam ou extraiam dados de forma eficiente. Os programadores utilizam regex para tarefas que variam desde validações simples, como a verificação do formato de e-mail, até tarefas complexas de processamento de texto devido à sua flexibilidade e desempenho.
 
-Expressões regulares (regex) vasculham texto para padrões específicos — útil para validações, busca, e substituições automáticas. Programadores usam para poupar tempo e evitar erros repetitivos.
+## Como fazer:
 
-## Como Fazer:
+### Correspondência de Padrões Simples
+Para verificar se uma string contém um padrão específico, você pode usar o método `Regex.IsMatch` do namespace `System.Text.RegularExpressions`.
 
-Código básico para validar um email:
-
-```C#
+```csharp
 using System;
 using System.Text.RegularExpressions;
 
@@ -25,23 +27,19 @@ class Program
 {
     static void Main()
     {
-        string email = "usuario@example.com";
-        bool isValid = Regex.IsMatch(email, @"^[^@\s]+@[^@\s]+\.[^@\s]+$");
+        string sampleText = "Hello, World!";
+        string pattern = "World";
+        bool containsPattern = Regex.IsMatch(sampleText, pattern);
 
-        Console.WriteLine(isValid ? "Email válido." : "Email inválido.");
+        Console.WriteLine(containsPattern);  // Saída: True
     }
 }
 ```
 
-Saída esperada:
+### Extração de Dados
+Extrair dados de uma string usando grupos em um regex pode ser feito com o método `Regex.Match`.
 
-```
-Email válido.
-```
-
-Substituir espaços por traços em uma string:
-
-```C#
+```csharp
 using System;
 using System.Text.RegularExpressions;
 
@@ -49,26 +47,80 @@ class Program
 {
     static void Main()
     {
-        string texto = "Texto com espaços";
-        string substituido = Regex.Replace(texto, @"\s+", "-");
+        string sampleText = "Date: 2023-04-12";
+        string pattern = @"Date: (\d{4})-(\d{2})-(\d{2})";
+        Match match = Regex.Match(sampleText, pattern);
 
-        Console.WriteLine(substituido);
+        if (match.Success)
+        {
+            Console.WriteLine($"Ano: {match.Groups[1].Value}");  // Saída: Ano: 2023
+            Console.WriteLine($"Mês: {match.Groups[2].Value}");  // Saída: Mês: 04
+            Console.WriteLine($"Dia: {match.Groups[3].Value}");  // Saída: Dia: 12
+        }
     }
 }
 ```
 
-Saída esperada:
+### Substituindo Texto
+O método `Regex.Replace` permite substituir texto em uma string que corresponde a um padrão especificado.
 
+```csharp
+using System;
+using System.Text.RegularExpressions;
+
+class Program
+{
+    static void Main()
+    {
+        string sampleText = "Visit Microsoft!";
+        string pattern = "Microsoft";
+        string replacement = "Google";
+
+        string result = Regex.Replace(sampleText, pattern, replacement);
+
+        Console.WriteLine(result);  // Saída: Visit Google!
+    }
+}
 ```
-Texto-com-espaços
+
+### Dividindo Strings
+Você pode dividir uma string em um array baseado em um padrão regex usando o método `Regex.Split`.
+
+```csharp
+using System;
+using System.Text.RegularExpressions;
+
+class Program
+{
+    static void Main()
+    {
+        string sampleText = "one,two,three,four,five";
+        string pattern = ",";
+
+        string[] result = Regex.Split(sampleText, pattern);
+
+        foreach (string item in result)
+        {
+            Console.WriteLine(item);
+        }
+        // Saída: 
+        // one
+        // two
+        // three
+        // four
+        // five
+    }
+}
 ```
 
-## Visão Detalhada:
+### Usando Bibliotecas de Terceiros
+Enquanto o Framework .NET fornece suporte extensivo para expressões regulares, também existem bibliotecas de terceiros, como `PCRE.NET`, que oferecem expressões regulares compatíveis com Perl (PCRE) em C#. Isso pode ser útil se você precisar de recursos ou sintaxe do motor de regex do Perl que não estão disponíveis na implementação do .NET.
 
-Regex vem da década de 1950, com uso em teoria da computação e linguística formal. Alternativas incluem parsing manual ou bibliotecas especializadas de manipulação de strings; no entanto, regex oferece flexibilidade inigualável. No C#, a implementação de regex é feita através do namespace `System.Text.RegularExpressions`, que compila expressões regulares para um formato intermediário rápido e eficiente.
+Para usar `PCRE.NET`, você primeiro instalaria seu pacote NuGet e, então, poderia usá-lo de maneira semelhante a como usa as classes regex nativas do .NET.
 
-## Ver Também:
+```csharp
+// Exemplo usando PCRE.NET aqui
+// Nota: Imagine um exemplo semelhante aos acima, adaptado para mostrar um recurso único do PCRE.NET.
+```
 
-- [Documentação oficial de expressões regulares em C#](https://docs.microsoft.com/pt-br/dotnet/standard/base-types/regular-expressions)
-- [Tutorial interativo de regex](https://regexone.com/)
-- [Ferramenta online para testar regex](https://regexr.com/)
+Ao integrar bibliotecas de terceiros para expressões regulares, sempre consulte a documentação delas para informações detalhadas de uso e compatibilidade.

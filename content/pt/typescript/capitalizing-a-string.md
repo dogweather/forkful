@@ -1,43 +1,68 @@
 ---
 title:                "Capitalizando uma string"
-date:                  2024-01-19
+date:                  2024-02-03T19:06:41.338634-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Capitalizando uma string"
-
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/typescript/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Capitalizar uma string significa converter a primeira letra de cada palavra para maiúscula, mantendo as restantes em minúscula. Programadores fazem isso para formatar textos, títulos ou para garantir consistência nos dados, como nomes próprios.
+## O Que & Por Que?
+Capitalizar uma string envolve modificar o primeiro caractere de uma string dada para maiúsculo se ele estiver em minúsculo, muitas vezes deixando o resto da string inalterado. Essa operação é tipicamente usada para garantir que substantivos próprios ou o início de frases adiram às regras gramaticais no processamento de texto, fazendo com que as saídas pareçam profissionais e legíveis.
 
-## How to:
-Em TypeScript, você pode usar o método `.replace()` junto com expressões regulares para capitalizar palavras, ou criar uma função dedicada. Aqui tá um exemplo de como fazer isso:
+## Como fazer:
 
-```TypeScript
-function capitalizeString(input: string): string {
-  return input.replace(/\b\w/g, letter => letter.toUpperCase());
+TypeScript, sendo um superconjunto de JavaScript, permite várias maneiras de capitalizar strings, variando de abordagens puras de JavaScript a utilização de bibliotecas de terceiros para casos de uso mais complexos ou específicos.
+
+**Abordagem Pura de JavaScript:**
+
+```typescript
+function capitalize(str: string): string {
+  return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
-let title = 'olá, mundo do typescript';
-let capitalizedTitle = capitalizeString(title);
-
-console.log(capitalizedTitle); // Saída: 'Olá, Mundo Do Typescript'
+// Saída de Exemplo:
+console.log(capitalize('hello TypeScript!')); // 'Hello TypeScript!'
 ```
 
-Esse código vai deixar sua string bem bonita.
+Este método é direto e depende do método `charAt()` para acessar o primeiro caractere da string e `toUpperCase()` para convertê-lo para maiúsculo. O método `slice(1)` então recupera o resto da string, deixando-a inalterada.
 
-## Deep Dive
-Historicamente, capitalizar strings é algo que vem dos tempos da imprensa onde títulos de livros, jornais e trabalhos acadêmicos possuíam a primeira letra de cada palavra em maiúscula para chamar atenção e criar um padrão visual. Em programação, existem várias maneiras de capitalizar strings dependendo da linguagem.
+**Usando a Biblioteca Lodash:**
 
-No TypeScript, como é uma linguagem que compila para JavaScript, as mesmas técnicas geralmente aplicadas em JavaScript são válidas. Alternativas à função customizada incluem o uso de bibliotecas como Lodash com seu método `.capitalize()` que capitaliza apenas a primeira letra da string inteira.
+Para projetos que já usam a biblioteca [Lodash](https://lodash.com/), você pode utilizar sua função `_.capitalize` para alcançar o mesmo resultado com menos código.
 
-A implementação do método `.replace()` com uma expressão regular é uma das abordagens mais diretas, e ela funciona bem porque JavaScript (e por extensão TypeScript) suporta as expressões regulares nativamente. A expressão `\b\w` pega o limite de uma palavra (`\b`) e o primeiro caractere alfanumérico (`\w`), permitindo a capitalização.
+Primeiro, instale o Lodash:
 
-## See Also
-- [MDN Web Docs on replace()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
-- [Lodash capitalize method](https://lodash.com/docs/4.17.15#capitalize)
-- [TypeScript Official Documentation](https://www.typescriptlang.org/docs/)
+```bash
+npm install lodash
+```
 
-Assim você explora a fundo o poder das strings e faz os textos brilharem no universo do TypeScript!
+Então, use-a no seu arquivo TypeScript:
+
+```typescript
+import * as _ from 'lodash';
+
+// Saída de Exemplo:
+console.log(_.capitalize('hello TypeScript!')); // 'Hello typescript!'
+```
+
+Nota: O método `_.capitalize` do Lodash converte o resto da string para minúsculo, o que pode não ser sempre o que você deseja.
+
+**Usando uma Expressão Regular:**
+
+Uma expressão regular pode fornecer uma maneira concisa de capitalizar a primeira letra de uma string, especialmente se você precisar capitalizar a primeira letra de cada palavra em uma string.
+
+```typescript
+function capitalizeWords(str: string): string {
+  return str.replace(/\b\w/g, char => char.toUpperCase());
+}
+
+// Saída de Exemplo:
+console.log(capitalizeWords('hello typescript world!')); // 'Hello Typescript World!'
+```
+
+Este método usa a função `replace()` para procurar qualquer limite de palavra seguido por um caractere alfanumérico (`\b\w`), capitalizando cada correspondência. É particularmente útil para títulos ou cabeçalhos.

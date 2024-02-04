@@ -1,36 +1,59 @@
 ---
 title:                "写入标准错误"
-date:                  2024-01-19
+date:                  2024-02-03T19:32:44.638636-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "写入标准错误"
-
 tag:                  "Files and I/O"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/clojure/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## 什么 & 为什么？
-标准错误是个特殊的输出流用来报告程序的错误消息。程序员用它分开正常的输出和错误信息，简化调试和日志记录。
+将错误消息和诊断信息写入标准错误（stderr）是指将这些信息定向到stderr流，与标准输出（stdout）分开。程序员这样做是为了区分常规程序输出和错误消息，从而实现更有效的调试和记录。
 
-## 如何做：
-```Clojure
-;; 输出到标准错误
-(defn write-to-stderr [msg]
-  (.write System/err (.getBytes msg)))
+## 如何操作：
+在Clojure中，你可以使用`*err*`流写入stderr。这里是一个基本示例：
 
-(write-to-stderr "出错了！\n")
+```clojure
+(.write *err* "这是一条错误信息。\n")
 ```
 
-输出样例：
-```
-出错了！
+注意，在写入消息后，你应该刷新流，以确保消息立即输出：
+
+```clojure
+(flush)
 ```
 
-## 深入探索
-标准错误（stderr）起源于Unix操作系统，它是三个主要的预定义流之一，其他两个是标准输入（stdin）和标准输出（stdout）。使用标准错误而不是标准输出可以让用户或其他程序区分正常消息和错误消息。Clojure中没有直接的语法来写入标准错误，但可以通过Java的系统类`System/err`来实现。其他语言如Python和Ruby有内建的stderr写入方法。
+stderr的示例输出：
+```
+这是一条错误信息。
+```
 
-## 相关资源
-- [Clojure Docs](https://clojuredocs.org/)
-- [Java Platform SE 8 - System](https://docs.oracle.com/javase/8/docs/api/java/lang/System.html)
-- [Unix Standard Streams](https://en.wikipedia.org/wiki/Standard_streams)
+如果你在处理异常，可能会想要将栈跟踪打印到stderr。使用`printStackTrace`来做这件事：
+
+```clojure
+(try
+  ;; 可能抛出异常的代码
+  (/ 1 0)
+  (catch Exception e
+    (.printStackTrace e *err*)))
+```
+
+对于更结构化的错误记录，第三方库如`timbre`可以配置为记录到stderr。这是一个基本的设置和使用方法：
+
+首先，将`timbre`添加到你的依赖中。然后配置它使用stderr：
+
+```clojure
+(require '[taoensso.timbre :as timbre])
+
+(timbre/set-config! [:appenders :standard-out :enabled?] false) ;; 禁用stdout日志
+(timbre/set-config! [:appenders :spit :enabled?] false) ;; 禁用文件日志
+(timbre/set-config! [:appenders :stderr :min-level] :error) ;; 对于错误启用stderr
+
+(timbre/error "处理您的请求时发生错误。")
+```
+
+这将会将错误级别的消息定向到stderr，使它们与标准应用程序输出区别开来。

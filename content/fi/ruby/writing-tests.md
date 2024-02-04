@@ -1,48 +1,89 @@
 ---
 title:                "Testien kirjoittaminen"
-date:                  2024-01-19
+date:                  2024-02-03T19:32:14.156097-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Testien kirjoittaminen"
-
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/ruby/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Testaus on koodin varmistusmetodi: se tarkistaa, että koodi toimii odotetusti. Testit nopeuttavat kehitystä, vähentävät bugeja ja helpottavat ylläpitoa.
+## Mikä & Miksi?
+Testaaminen Rubylla tarkoittaa koodisi toiminnan varmistamista odotetulla tavalla erilaisissa olosuhteissa. Ohjelmoijat kirjoittavat testejä varmistaakseen oikeellisuuden, estääkseen regressiot ja helpottaakseen refaktorointia, tähdäten vankkoihin ja ylläpidettäviin sovelluksiin.
 
-## How to:
+## Miten:
+Ruby sisältää valmiiksi `Test::Unit`-kirjaston yksikkötestien kirjoittamiseen, kapseloiden testikäytäntöjä yksinkertaisiin rakenteisiin. Kuitenkin Rubyn yhteisö kallistuu usein kolmannen osapuolen kirjastoihin, kuten RSpec ja Minitest, niiden paremman ilmaisukyvyn ja joustavuuden vuoksi.
 
-Rubyssa testien kirjoittaminen on suoraviivaista, erityisesti kun käytetään RSpec-kirjastoa. Asenna RSpec komennolla `gem install rspec` ja seuraa alla olevia esimerkkejä.
+### `Test::Unit`in käyttö:
+```ruby
+require 'test/unit'
 
-```Ruby
-# spec/calculator_spec.rb
-RSpec.describe 'Calculator' do
-  it 'summaa kaksi numeroa oikein' do
-    expect(2 + 2).to eq(4)
-  end
-  
-  it 'vähentää oikein' do
-    expect(5 - 3).to eq(2)
+class CalculatorTest < Test::Unit::TestCase
+  def test_addition
+    result = 2 + 2
+    assert_equal 4, result
   end
 end
 ```
-Ajetaan testit komennolla `rspec spec/calculator_spec.rb`.
-Tuloste:
+Aja testitiedostosi komentoriviltä, ja sinun pitäisi saada tuloste, joka ilmoittaa testien onnistumisesta tai epäonnistumisesta:
 ```
-...
-
-Finished in 0.00276 seconds (files took 0.15708 seconds to load)
-2 examples, 0 failures
+Loaded suite test_calculator
+Started
+.
+Valmis 0.001288 sekunnissa.
+1 testit, 1 väitteet, 0 epäonnistumiset, 0 virheet, 0 odottavat, 0 puutteet, 0 ilmoitukset
+100% läpäissyt
 ```
 
-## Deep Dive
+### RSpecin käyttö:
+RSpec on suosittu BDD (Behavior-Driven Development) kehys Rubyille. Asenna gem komennolla `gem install rspec`, sitten alusta se projektissasi komennolla `rspec --init`.
 
-Testaus on kehittynyt vuosien varrella osaksi ohjelmistokehityksen perusta. Testivetoisen kehityksen (Test-Driven Development, TDD) metodit ja käyttäytyminen määrittävä kehitys (Behavior-Driven Development, BDD) ovat esimerkkejä lähestymistavoista. Vaihtoehtoisia työkaluja Ruby-testaukseen ovat MiniTest ja Test::Unit. Tärkeää on tietää, milloin käyttää stubbia, mockia tai faketta.
+```ruby
+# calculator_spec.rb
+require_relative '../calculator'
 
-## See Also
+describe Calculator do
+  it 'laskee kaksi lukua oikein' do
+    expect(Calculator.add(2, 2)).to eq(4)
+  end
+end
+```
+Aja testit `rspec`-komennolla. Esimerkkituloste:
+```
+.
 
-- RSpec ohjekirja: https://relishapp.com/rspec
-- Ruby testausframeworkien vertailu: https://www.ruby-toolbox.com/categories/testing_frameworks
-- TDD:n opas: http://www.tddfellow.com/blog/2016/05/31/what-is-tdd-and-why-should-you-use-it/
+Valmis 0.002 sekunnissa (tiedostot ladattiin 0.1 sekunnissa)
+1 esimerkki, 0 epäonnistumisia
+```
+
+### Minitestin käyttö:
+Minitest tarjoaa täydellisen joukon testausmahdollisuuksia tukien TDD:tä, BDD:tä, väärentämistä ja suorituskyvyn testausta. Asenna se komennolla `gem install minitest` ja käytä seuraavasti:
+
+```ruby
+# test_calculator.rb
+require 'minitest/autorun'
+require_relative '../calculator'
+
+class CalculatorTest < Minitest::Test
+  def test_addition
+    assert_equal 4, Calculator.add(2, 2)
+  end
+end
+```
+
+Aja testitiedostosi suoraan tai `rake`-tehtävän kautta, joka on asetettu minitestille. Näytetuloste:
+```
+Ajoasetukset: --seed 33407
+
+# Suoritetaan:
+
+.
+
+Valmis 0.001027s, 974.5922 ajoa/s, 974.5922 väitteitä/s.
+1 ajoa, 1 väitteitä, 0 epäonnistumisia, 0 virheitä, 0 ohituksia
+```
+
+Käyttämällä näitä kirjastoja testien toteuttamiseen Ruby-projekteissasi, noudatat parhaita käytäntöjä, mikä johtaa luotettavampiin ja ylläpidettävämpiin koodikantoihin.

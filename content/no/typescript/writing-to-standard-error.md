@@ -1,37 +1,64 @@
 ---
-title:                "Skrive til standardfeil"
-date:                  2024-01-19
-simple_title:         "Skrive til standardfeil"
-
+title:                "Skriving til standardfeil"
+date:                  2024-02-03T19:34:39.513912-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Skriving til standardfeil"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/typescript/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Standard error (stderr) er en output-strøm for å skrive feilmeldinger og logge. Det gjør at vi kan skille vanlig output fra feil og diagnostisk informasjon.
+## Hva & hvorfor?
+I TypeScript er skriving til standardfeil (stderr) en prosess for å sende feilmeldinger eller logger direkte til miljøets feilutdatastrøm (for eksempel konsollen i node.js eller en nettleser). Dette er essensielt for diagnostisering av problemer uten å forstyrre standardutdata (stdout), som vanligvis brukes for programdata, og sikrer at feilhåndtering og logging håndteres effektivt og sammenhengende.
 
-## How to:
-For å skrive til stderr i TypeScript, bruk `process.stderr.write` for strenger eller `console.error` for mer komplekse meldinger.
+## Hvordan:
+TypeScript, som er et superset av JavaScript, stoler på den underliggende JS-runtime-miljøet (som Node.js) for å skrive til stderr. Slik kan du gjøre det direkte:
 
-```TypeScript
-// Skriver en enkel feilmelding til stderr
-process.stderr.write('En feil har oppstått!\n');
-
-// Bruker console.error for å skrive en feilmelding med variabler
-const errorObj = { id: 7, message: 'Ugyldig operasjon' };
-console.error('Detaljert feil:', errorObj);
-
-// Eksempel output til terminalen
-// En feil har oppstått!
-// Detaljert feil: { id: 7, message: 'Ugyldig operasjon' }
+```typescript
+console.error("Dette er en feilmelding.");
 ```
 
-## Deep Dive
-Standard output (stdout) og standard error (stderr) stammer fra Unix og historiske operativsystemer, hvor de skapte skille mellom normal data og feildata. Når du skriver feilmeldinger til stderr, kan brukere omdirigere disse separat fra standard output. I node.js, som TypeScript ofte kjører på, er `process.stderr` en skrivbar strøm, mens `console.error` også skriver til stderr, men håndterer flere datatyper og gir formattering.
+Eksempelutdata til stderr:
+```
+Dette er en feilmelding.
+```
 
-## See Also
-- Node.js dokumentasjon på `console.error`: [Node.js console.error](https://nodejs.org/api/console.html#consoleerrordata-args)
-- Node.js dokumentasjon på `process.stderr`: [Node.js process.stderr](https://nodejs.org/api/process.html#processstderr)
-- Guide til strømmer (streams) i node.js: [Stream Handbook](https://nodesource.com/blog/understanding-streams-in-nodejs/)
+I et Node.js-miljø kan du også bruke `process.stderr.write()`-metoden for mer lavnivåskriving:
+
+```typescript
+process.stderr.write("Lavnivå feilmelding.\n");
+```
+
+Eksempelutdata til stderr:
+```
+Lavnivå feilmelding.
+```
+
+For mer strukturert feillogging, kan du bruke populære tredjepartsbiblioteker som `winston` eller `pino`. Slik logger du feil ved hjelp av `winston`:
+
+Først, installer `winston`:
+
+```bash
+npm install winston
+```
+
+Deretter bruker du det i din TypeScript-fil:
+
+```typescript
+import * as winston from 'winston';
+
+const logger = winston.createLogger({
+  nivåer: winston.config.syslog.levels,
+  transports: [
+    new winston.transports.Console(),
+    new winston.transports.File({ filename: 'error.log', level: 'error' })
+  ],
+});
+
+logger.error('Feil logget ved bruk av winston.');
+```
+
+Dette vil skrive feilen til både konsollen og en fil med navn `error.log`. Husk, når du skriver til filer, er det viktig å håndtere filtillatelser og rollover for å forhindre problemer knyttet til diskplassbruk.

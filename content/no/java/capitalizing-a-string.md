@@ -1,52 +1,67 @@
 ---
-title:                "Sette streng til store bokstaver"
-date:                  2024-01-19
-simple_title:         "Sette streng til store bokstaver"
-
+title:                "Sette stor bokstav i en streng"
+date:                  2024-02-03T19:05:46.940187-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Sette stor bokstav i en streng"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/java/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Å kapitalisere en streng betyr å gjøre det første bokstaven i hvert ord stort, ofte brukt for titler eller for å markere begynnelse av setninger. Programmerere bruker dette til å standardisere tekstdata og forbedre lesbarheten.
+Det å sette stor bokstav i en streng innebærer å endre den første bokstaven i hvert ord i strengen til stor bokstav, mens man sørger for at resten forblir små bokstaver. Denne vanlige manipulasjonen av strenger er nyttig for formatering av tekst i applikasjoner, slik som forberedelse av brukernavn eller titler for visning i henhold til konvensjon eller grammatikal korrekthet.
 
-## Hvordan gjøre det:
+## Hvordan:
+Java sitt standardbibliotek tilbyr ikke en direkte metode for å sette stor bokstav i hele strenger i ett steg, men du kan oppnå dette med en kombinasjon av innebygde metoder. For mer sofistikerte behov tilbyr tredjepartsbiblioteker som Apache Commons Lang enkle løsninger.
+
+### Bruke Javas innebygde metoder
+For å sette stor bokstav i en streng uten eksterne biblioteker, kan du dele strengen opp i ord, sette stor bokstav i den første bokstaven av hvert ord, og deretter sette dem sammen igjen. Her er en enkel tilnærming:
+
 ```java
-import java.util.Arrays;
-import java.util.stream.Collectors;
-
 public class CapitalizeString {
-
-    public static String capitalizeWords(String input) {
-        if (input.isEmpty()) {
-            return input;
-        }
-        return Arrays.stream(input.split("\\s"))
-                .map(word -> word.substring(0, 1).toUpperCase() + word.substring(1).toLowerCase())
-                .collect(Collectors.joining(" "));
+    public static void main(String[] args) {
+        String tekst = "hallo, verden!";
+        String kapitalisertTekst = kapitaliserOrd(tekst);
+        System.out.println(kapitalisertTekst); // Skriver ut: "Hallo, Verden!"
     }
 
-    public static void main(String[] args) {
-        String text = "java er gøy, ikke sant?";
-        String capitalizedText = capitalizeWords(text);
-        System.out.println(capitalizedText);
+    public static String kapitaliserOrd(String str) {
+        char[] tegn = str.toLowerCase().toCharArray();
+        boolean funnet = false;
+        for (int i = 0; i < tegn.length; i++) {
+            if (!funnet && Character.isLetter(tegn[i])) {
+                tegn[i] = Character.toUpperCase(tegn[i]);
+                funnet = true;
+            } else if (Character.isWhitespace(tegn[i]) || tegn[i]=='.' || tegn[i]=='\'') { 
+                funnet = false;
+            }
+        }
+        return String.valueOf(tegn);
     }
 }
 ```
-Output:
+
+Dette kodeutdraget konverterer hele strengen til små bokstaver, og så itererer gjennom hver karakter, og setter stor bokstav i den første bokstaven i hvert ord. Det tar hensyn til mellomrom, punktum, og apostrofer som ordseparatorer.
+
+### Bruke Apache Commons Lang
+
+Apache Commons Lang-biblioteket tilbyr en mer elegant løsning med metoden `WordUtils.capitalizeFully()`, som håndterer ulike kanttilfeller og skilletegn for deg:
+
+```java
+// Legg til avhengighet: org.apache.commons:commons-lang3:3.12.0
+
+import org.apache.commons.text.WordUtils;
+
+public class CapitalizeString {
+    public static void main(String[] args) {
+        String tekst = "hallo, verden!";
+        String kapitalisertTekst = WordUtils.capitalizeFully(tekst);
+        System.out.println(kapitalisertTekst); // Skriver ut: "Hallo, Verden!"
+    }
+}
 ```
-Java Er Gøy, Ikke Sant?
-```
 
-## Dypdykk
-Før Unicode og internasjonalisering ble vanlig, var det å kapitalisere en streng mye enklere. I tidligere programmeringsspråk, med mindre tegnsett, utførte man enkel byte-manipulasjon. For eksempel, i ASCII er det en kjent forskjell på 32 desimaler mellom en liten og stor bokstav, noe som gjorde oppgaven triviell.
-
-Alternativer inkluderer bruk av `Character` klassen eller Apache Commons' `StringUtils`. I Java 8 og oppover er det mer vanlig å bruke `streams` for eleganse og lesbarhet.
-
-Implementasjonsdetaljer: Det er viktig å huske lokale forskjeller ved kapitalisering, som i Turkisk hvor 'i' blir 'İ' når den er kapitalisert. Java's `toUpperCase()` tar hensyn til lokalisering hvis du bruker den med locale-spesifikke overbelastninger.
-
-## Se Også
-- Oracle's Java documentation on `String`: https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html
-- Apache Commons Lang StringUtils, an elegant external library for string manipulation: https://commons.apache.org/proper/commons-lang/
+For å bruke denne metoden må du legge til Apache Commons Lang-biblioteket i prosjektet ditt. Denne metoden i biblioteket setter ikke bare stor bokstav i den første bokstaven i hvert ord, men konverterer også resten av bokstavene i hvert ord til små bokstaver, noe som sikrer et konsistent mønster med stor bokstav gjennom hele strengen.

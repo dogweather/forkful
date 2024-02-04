@@ -1,50 +1,81 @@
 ---
 title:                "Skriva till standardfel"
-date:                  2024-01-19
+date:                  2024-02-03T19:32:38.064364-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Skriva till standardfel"
-
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/arduino/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Vad & Varför?
 
-Att skriva till standardfel (stderr) är att rikta felmeddelanden och diagnostik till en särskild utdatakanal, skild från huvuddataflödet (stdout). Programmerare använder detta för att separera felloggar från normal output, vilket gör felsökning och loggning mer överskådlig.
+Att skriva till standardfel (stderr) i Arduino-programmering innebär att styra felmeddelanden och diagnostik till en separat kanal, för att säkerställa att de inte blandas med standardutmatning (stdout). Programmerare gör detta för att skilja normala programutmatningar från felmeddelanden, vilket gör felsökning och logganalys mer rättfram.
 
-## Hur gör man:
+## Hur man gör:
 
-Arduino plattformen har inte en dedikerad stderr kanal som mer komplexa operativsystem, men du kan simulera detta med Serial. Använd `Serial.print()` för normal output och definiera en funktion för felmeddelanden.
+Arduino skiljer inte nativt mellan standardutmatning och standardfel som traditionella datorsystem gör. Både `Serial.print()` och `Serial.println()` metoder skriver till samma seriella utmatning, som vanligtvis visas i Arduino IDE:s serieövervakare. Vi kan dock emulera att skriva till stderr genom att specifikt formatera felmeddelanden eller dirigera dem till ett alternativt utmatningsmedel, såsom en fil på ett SD-kort eller över en nätverksanslutning.
 
-```arduino
+För att emulera stderr kan du prefixa felmeddelanden med en tagg som "FEL:" för att differentiera dem i serieövervakaren:
+
+```cpp
 void setup() {
-  Serial.begin(9600); // Starta Serial-anslutningen
+  Serial.begin(9600); // Initiera seriell kommunikation med 9600 baud
 }
 
 void loop() {
-  Serial.println("Allt fungerar!"); // Normal output
-  logError("Något gick fel!");    // Felmeddelande
-  delay(2000); // Vänta 2 sekunder
+  int resultat = someFunction();
+  if (resultat == -1) {
+    // Emulerar stderr genom att prefixa felmeddelandet
+    Serial.println("FEL: Funktionen misslyckades med att exekvera.");
+  } else {
+    Serial.println("Funktionen exekverades framgångsrikt.");
+  }
+  delay(1000); // Vänta en sekund innan loopen startas om
 }
 
-void logError(String message) {
-  Serial.println("ERROR: " + message); // Simulerad stderr output
+int someFunction() {
+  // En dummy-funktion som returnerar -1 vid fel
+  return -1;
 }
 ```
 
-Exempel på output:
+Exempel på utmatning i Arduino IDE:s serieövervakare kan se ut så här:
+
 ```
-Allt fungerar!
-ERROR: Något gick fel!
+FEL: Funktionen misslyckades med att exekvera.
 ```
 
-## Djupdykning:
+För projekt som kräver ett mer sofistikerat tillvägagångssätt, inklusive att skriva till olika fysiska utmatningar, kan användning av tredjepartsbibliotek eller ytterligare hårdvara vara nödvändig. Till exempel kräver loggning av felmeddelanden till ett SD-kort biblioteket `SD`:
 
-I början av datortiden skickades stderr och stdout till samma plats, ofta en teletypeskrivare. Man skilde dem åt för att enkelt kunna omdirigera loggar och felmeddelanden till olika destinationer, något som är standard i Unix-baserade system idag. På Arduino blir all output hanterad av Serial-klassen och går oftast till konsolen i IDE:n eller till en ansluten dator. För mer robusta system bör man implementa andra metoder för att hantera felloggar, som att skriva till en extern fil eller skicka datan över nätverk.
+```cpp
+#include <SPI.h>
+#include <SD.h>
 
-## Se även:
+File myFile;
 
-- Arduino Serial Library: https://www.arduino.cc/reference/en/language/functions/communication/serial/
-- ”Effective use of stderr” av Garrick Aden-Buie: https://garrickadenbuie.com/blog/effictive-use-of-stderr
-- Wiki om standard streams: https://en.wikipedia.org/wiki/Standard_streams
+void setup() {
+  Serial.begin(9600);
+  if (!SD.begin()) {
+    Serial.println("FEL: Initialisering av SD-kort misslyckades!");
+    return;
+  }
+  
+  myFile = SD.open("error.log", FILE_WRITE);
+  if (myFile) {
+    myFile.println("FEL: Funktionen misslyckades med att exekvera.");
+    myFile.close(); // Se till att stänga filen för att spara innehållet
+  } else {
+    Serial.println("FEL: Öppning av error.log misslyckades!");
+  }
+}
+
+void loop() {
+  // Din huvudkod skulle gå här
+}
+```
+
+Med detta tillvägagångssätt separerar du fysiskt normal programutmatning och felmeddelanden genom att rikta de senare till en `error.log` fil på ett SD-kort, vilket möjliggör post-mortem analyser utan att kladda till den primära utmatningskanalen.

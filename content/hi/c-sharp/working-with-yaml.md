@@ -1,22 +1,78 @@
 ---
-title:                "यामल के साथ काम करना"
-date:                  2024-01-19
-simple_title:         "यामल के साथ काम करना"
-
+title:                "YAML के साथ काम करना"
+date:                  2024-02-03T19:26:12.933555-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "YAML के साथ काम करना"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/c-sharp/working-with-yaml.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (क्या और क्यों?)
-YAML (YAML Ain't Markup Language) एक ह्यूमन-रीडेबल डेटा सीरियलाइजेशन फॉर्मेट है। प्रोग्रामर्स कॉन्फ़िग फ़ाइलें, डेटा स्टोरेज, और मैसेज ट्रांसमिशन में YAML का उपयोग करते हैं क्योंकि यह साफ, सिंपल और लैंग्वेज-न्यूट्रल है।
+## क्या और क्यों?
+YAML, जिसका अर्थ है YAML Ain't Markup Language, एक मानव-पठनीय डेटा सीरियलाइज़ेशन प्रारूप है। प्रोग्रामर्स अक्सर इसका उपयोग कॉन्फ़िगरेशन फाइलों, प्रक्रियाओं के बीच संदेश भेजने, और डेटा स्टोरेज के लिए करते हैं क्योंकि यह XML या JSON जैसे अन्य डेटा प्रारूपों की तुलना में इसकी सादगी और पठन-शीलता के कारण है।
 
-## How to: (कैसे?)
-C# में YAML को हैंडल करने के लिए `YamlDotNet` लाइब्रेरी का इस्तेमाल किया जाता है। नीचे कोड सैंपल है:
+## कैसे करें:
+C# में YAML के लिए कोई बिल्ट-इन सपोर्ट नहीं है, लेकिन आप *YamlDotNet* जैसे तीसरे पक्ष के पुस्तकालयों का उपयोग करके YAML के साथ आसानी से काम कर सकते हैं। सबसे पहले, आपको YamlDotNet पैकेज इंस्टॉल करना होगा:
 
-```C#
+```bash
+Install-Package YamlDotNet -Version 11.2.1
+```
+
+### YAML पढ़ना:
+मान लीजिए आपके पास `config.yaml` नामक एक YAML फ़ाइल है जिसमें निम्नलिखित सामग्री है:
+```yaml
+appSettings:
+  name: MyApp
+  version: 1.0.0
+```
+
+आप इस YAML फाइल को C# में इस तरह पढ़ और पार्स कर सकते हैं:
+```csharp
 using System;
+using System.IO;
+using YamlDotNet.Serialization;
+using YamlDotNet.Serialization.NamingConventions;
+
+public class AppConfig
+{
+    public AppSettings appSettings { get; set; }
+}
+
+public class AppSettings
+{
+    public string name { get; set; }
+    public string version { get; set; }
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        var yaml = File.ReadAllText("config.yaml");
+        var deserializer = new DeserializerBuilder()
+            .WithNamingConvention(UnderscoredNamingConvention.Instance) // समुचित नामकरण सम्मेलन के अनुसार समायोजित करें
+            .Build();
+
+        var config = deserializer.Deserialize<AppConfig>(yaml);
+
+        Console.WriteLine($"Name: {config.appSettings.name}, Version: {config.appSettings.version}");
+    }
+}
+```
+**नमूना आउटपुट:**
+```
+Name: MyApp, Version: 1.0.0
+```
+
+### YAML लिखना:
+YAML फ़ाइल में डेटा लिखने के लिए, YamlDotNet से `Serializer` क्लास का उपयोग करें। यहाँ एक ऑब्जेक्ट को वापस YAML में सीरियलाइज़ करने का तरीका है:
+
+```csharp
+using System;
+using System.IO;
 using YamlDotNet.Serialization;
 using YamlDotNet.Serialization.NamingConventions;
 
@@ -24,40 +80,31 @@ class Program
 {
     static void Main(string[] args)
     {
-        var yamlStr = @"
-name: John Doe
-age: 30
-isProgrammer: true";
+        var config = new AppConfig
+        {
+            appSettings = new AppSettings
+            {
+                name = "MyApp",
+                version = "2.0.0"
+            }
+        };
 
-        var deserializer = new DeserializerBuilder()
-            .WithNamingConvention(CamelCaseNamingConvention.Instance)  // use camel case
+        var serializer = new SerializerBuilder()
+            .WithNamingConvention(UnderscoredNamingConvention.Instance) // समुचित नामकरण सम्मेलन के अनुसार समायोजित करें
             .Build();
 
-        var person = deserializer.Deserialize<Person>(yamlStr);
+        var yaml = serializer.Serialize(config);
+        File.WriteAllText("updatedConfig.yaml", yaml);
 
-        Console.WriteLine($"Name: {person.Name}, Age: {person.Age}, IsProgrammer: {person.IsProgrammer}");
+        Console.WriteLine(yaml);
     }
 }
-
-public class Person
-{
-    public string Name { get; set; }
-    public int Age { get; set; }
-    public bool IsProgrammer { get; set; }
-}
+```
+**नमूना आउटपुट:**
+```yaml
+appSettings:
+  name: MyApp
+  version: 2.0.0
 ```
 
-आउटपुट होगा:
-```
-Name: John Doe, Age: 30, IsProgrammer: True
-```
-
-## Deep Dive (विस्तृत जानकारी)
-YAML सन 2001 में डेवलप किया गया था। यह JSON और XML जैसे अन्य फॉर्मेट्स की तुलना में अधिक पठनीय है। इसे .NET में इम्प्लीमेंट करने के लिए `YamlDotNet` लाइब्रेरी सबसे ज्यादा पॉपुलर है, जो डीसीरियलाइजेशन और सीरियलाइजेशन दोनों को सपोर्ट करती है। YAML में डेटा को हायरार्किकल तरीके से डेफाइन किया जाता है, जिसमें इंडेंटेशन का बहुत महत्व होता है।
-
-## See Also (और देखें)
-- YAML स्पेसिफिकेशन: https://yaml.org/spec/1.2/spec.html
-- YamlDotNet गिटहब पेज: https://github.com/aaubry/YamlDotNet
-- YAML और JSON की तुलना: https://en.wikipedia.org/wiki/YAML#JSON
-
-इन लिंक्स पर जाकर आप YAML और इसके .NET इम्प्लीमेंटेशन के बारे में और अधिक जान सकते हैं।
+यह सीधे तरीके से दर्शाता है कि आप अपने C# परियोजनाओं में YAML के साथ कुशलतापूर्वक कैसे काम कर सकते हैं, जिससे YamlDotNet पुस्तकालय का उपयोग करके YAML फ़ाइलों से पढ़ना और लिखना सरल हो जाता है।

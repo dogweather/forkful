@@ -1,48 +1,88 @@
 ---
-title:                "문자열에서 날짜 파싱하기"
-date:                  2024-01-20T15:35:40.272691-07:00
-simple_title:         "문자열에서 날짜 파싱하기"
-
+title:                "문자열에서 날짜 분석하기"
+date:                  2024-02-03T19:13:53.367889-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "문자열에서 날짜 분석하기"
 tag:                  "Dates and Times"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/c-sharp/parsing-a-date-from-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (무엇이며 왜?)
-문자열에서 날짜 파싱은 텍스트 형식의 날짜 정보를 날짜와 시간 객체로 변환하는 것입니다. 이 과정은 사용자 입력이나 파일과 같은 외부 소스에서 날짜 데이터를 읽고 이해할 때 필수적입니다.
+## 무엇 & 왜?
+C#에서 문자열에서 날짜를 파싱하는 것은 날짜와 시간의 텍스트 표현을 `DateTime` 객체로 변환하는 것을 포함합니다. 이는 다양한 형식으로 날짜와 시간을 조작, 저장 또는 표시해야 하는 애플리케이션에 필수적입니다. 예를 들어 스케줄링 앱, 로그 프로세서, 사용자 또는 외부 소스로부터 날짜 입력을 처리하는 모든 시스템 등이 있습니다.
 
-## How to: (방법)
-```C#
-using System;
+## 방법:
+
+**기본 파싱:**
+
+문자열을 `DateTime`으로 변환하기 위한 주요 선택지는 `DateTime.Parse` 및 `DateTime.TryParse` 메서드입니다. 다음은 간단한 예시입니다:
+
+```csharp
+string dateString = "2023-04-12";
+DateTime parsedDate;
+
+if (DateTime.TryParse(dateString, out parsedDate))
+{
+    Console.WriteLine($"성공적으로 파싱됨: {parsedDate}");
+}
+else
+{
+    Console.WriteLine("파싱 실패.");
+}
+// 출력: 성공적으로 파싱됨: 2023년 4월 12일 오전 12:00:00
+```
+
+**문화권 지정:**
+
+특정 문화권 형식의 날짜 문자열을 파싱해야 할 때가 있습니다. 이를 위해 `CultureInfo` 클래스를 사용할 수 있습니다:
+
+```csharp
 using System.Globalization;
 
-class Program
+string dateString = "12 avril 2023";
+var cultureInfo = new CultureInfo("fr-FR");
+DateTime parsedDate = DateTime.Parse(dateString, cultureInfo);
+
+Console.WriteLine(parsedDate);
+// 출력: 2023년 4월 12일 오전 12:00:00
+```
+
+**특정 형식으로 정확한 파싱:**
+
+표준이 아닐 수 있는 특정 형식으로 날짜가 제공되는 시나리오의 경우, `DateTime.ParseExact`가 유용합니다:
+
+```csharp
+string dateString = "Wednesday, 12 April 2023";
+string format = "dddd, d MMMM yyyy";
+DateTime parsedDate = DateTime.ParseExact(dateString, format, CultureInfo.InvariantCulture);
+
+Console.WriteLine(parsedDate);
+// 출력: 2023년 4월 12일 오전 12:00:00
+```
+
+**NodaTime 사용하기:**
+
+더 강력한 날짜 및 시간 파싱을 위해, 인기 있는 타사 라이브러리인 NodaTime을 고려해 보세요. NodaTime은 더 넓은 범위의 날짜/시간 처리 기능을 제공합니다:
+
+```csharp
+using NodaTime;
+using NodaTime.Text;
+
+var pattern = LocalDatePattern.CreateWithInvariantCulture("yyyy-MM-dd");
+var parseResult = pattern.Parse("2023-04-12");
+
+if (parseResult.Success)
 {
-    static void Main()
-    {
-        // 문자열에서 날짜 파싱
-        string dateString = "2023-04-15";
-        DateTime parsedDate = DateTime.ParseExact(dateString, "yyyy-MM-dd", CultureInfo.InvariantCulture);
-        
-        // 결과 출력
-        Console.WriteLine(parsedDate); // 출력: 2023-04-15 00:00:00
-    }
+    LocalDate localDate = parseResult.Value;
+    Console.WriteLine(localDate); // 2023-04-12
+}
+else
+{
+    Console.WriteLine("파싱 실패.");
 }
 ```
-날짜 문자열을 `DateTime` 객체로 변환했습니다. `ParseExact` 메서드를 사용해 날짜 포맷을 명시적으로 지정했어요.
 
-## Deep Dive (심층 분석)
-날짜 파싱은 .NET의 초기부터 함께 했습니다. 연-월-일 형식은 표준적입니다만, `CultureInfo`를 이용해 다양한 지역과 포맷을 지원합니다. `DateTime.Parse`, `DateTime.ParseExact`, `DateTime.TryParse`, `DateTime.TryParseExact` 같은 메서드들이 있지요.
-
-- `DateTime.Parse`: 날짜와 시간의 문자열 표현을 `DateTime` 객체로 변환합니다.
-- `DateTime.TryParse`: 변환에 실패해도 예외를 발생시키지 않고 성공 여부를 반환합니다.
-- `DateTime.ParseExact`와 `DateTime.TryParseExact`: 정확한 형식이 알려져 있을 때 사용합니다.
-
-알맞은 메서드를 선택하는 건 중요합니다. `TryParse`와 `TryParseExact`는 변환 실패 시 예외 대신 false를 반환하기 때문에 더 안전한 파싱을 가능하게 합니다. 또한, `CultureInfo.InvariantCulture`를 사용함으로써 문화권-중립적 날짜 포맷을 정의할 수 있습니다.
-
-## See Also (참고 자료)
-- [DateTime.Parse Method | Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/api/system.datetime.parse?view=net-7.0)
-- [Custom Date and Time Format Strings | Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/standard/base-types/custom-date-and-time-format-strings)
-- [CultureInfo Class | Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/api/system.globalization.cultureinfo?view=net-7.0)
+NodaTime은 시간대, 기간 및 지속성 개념, 다양한 달력 시스템에 대한 광범위한 지원을 제공하며, .NET 애플리케이션에서 복잡한 날짜 및 시간 조작을 위한 강력한 선택입니다.

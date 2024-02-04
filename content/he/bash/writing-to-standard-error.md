@@ -1,37 +1,52 @@
 ---
-title:                "כתיבה לפלט השגיאה הסטנדרטי"
-date:                  2024-01-19
-simple_title:         "כתיבה לפלט השגיאה הסטנדרטי"
-
+title:                "כתיבה לשגיאה התקנית"
+date:                  2024-02-03T19:33:49.995037-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "כתיבה לשגיאה התקנית"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/bash/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## מה ולמה?
-כתיבה ל-Standard Error (stderr) מאפשרת לנו לשדר הודעות שגיאה ולוגים בנפרד מהפלט הרגיל. מתכנתים עושים זאת כדי להפריד בין מידע רגיל למידע על תקלות, ולאפשר ניתוח תקלות יעיל יותר.
+כתיבה לשגיאה סטנדרטית (stderr) ב-Bash היא על כיוון הודעות שגיאה או פלט אבחוני חשוב נפרד מהפלט הסטנדרטי (stdout). מתכנתים עושים זאת כדי לוודא שניתן לזהות בקלות הודעות שגיאה, לרשום אותן בלוג או אף להתעלם מהן, תוך סיוע בתהליכי דיבאג ורישום.
 
-## איך לעשות:
-```Bash
-#!/bin/bash
-# הדפסה ל-stdout
-echo "This is a normal message."
+## איך לעשות זאת:
+ב-Bash, אתה משתמש ב-`>&2` כדי להפנות פלט ל-stderr. הנה דוגמה בסיסית:
 
-# הדפסה ל-stderr
-echo "This is an error message." >&2
+```bash
+echo "זו הודעה רגילה"
+echo "זו הודעת שגיאה" >&2
 ```
-תוצאת דוגמה:
-```
-This is a normal message.
-This is an error message.
-```
-פלט השגיאה יופיע בטרמינל אבל ניתן להפנות אותו נפרד על ידי הפניה `2>`.
 
-## עיון מעמיק:
-הגדרת ה-standard error ב-UNIX התפתחה כחלק מפילוסופיית הפילוג בין ערוצי זרימת הנתונים שונים. לחלופין, ניתן להשתמש בפקודות כמו `logger` להדפסות ל-log system או בפקודות כמו `>&` להפניה משולבת של stdout וstderr. שימוש נכון ב-stderr מאפשר יצירת סקריפטים שהפלט שלהם יכול להיות מסונן ולשמר את הערות השגיאות לניתוח נפרד.
+הרצת סקריפט זה תציג את שתי ההודעות בקונסול, אך אם תפנה אותם, תוכל להפריד בין ה-stdout ל-stderr. לדוגמה:
 
-## ראה גם:
-- [Advanced Bash-Scripting Guide](https://www.tldp.org/LDP/abs/html/)
-- [GNU Bash documentation](https://www.gnu.org/software/bash/manual/bash.html)
-- [The Unix Programming Environment by Kernighan and Pike](https://en.wikipedia.org/wiki/The_Unix_Programming_Environment)
+```bash
+bash script.sh > output.txt 2> error.txt
+```
+
+`output.txt` יכיל את `"זו הודעה רגילה"`, בעוד ש-`error.txt` יתעד `"זו הודעת שגיאה"`.
+
+למקרה שימוש מעשי, שקול סקריפט שמעבד קבצים ומדווח על שגיאה אם קובץ לא קיים:
+
+```bash
+filename="example.txt"
+
+if [ ! -f "$filename" ]; then
+    echo "$filename לא קיים!" >&2
+    exit 1
+else
+    echo "מעבד את $filename"
+fi
+```
+
+פלט לדוגמה ישירות בקונסול כאשר `example.txt` לא קיים:
+
+```
+example.txt לא קיים!
+```
+
+אין ספריות צד שלישי ישירות ב-Bash לטיפול ב-stderr, שכן הכוונה מחודשת נתמכת כברירת מחדל ובדרך כלל מספיקה. עם זאת, ליישומים מורכבים יותר, ניתן להכניס מסגרות רישום או כלים חיצוניים לרישום כמו `syslog` או `log4bash` כדי לנהל את ה-stdout וה-stderr בצורה יעילה יותר.

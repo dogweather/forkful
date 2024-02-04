@@ -1,47 +1,97 @@
 ---
 title:                "Arbeiten mit YAML"
-date:                  2024-01-19
+date:                  2024-02-03T19:24:53.284339-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Arbeiten mit YAML"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/bash/working-with-yaml.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Was & Warum?
-YAML ist ein Datenformat für Konfigurationsdateien, das Lesbarkeit betont. Programmierer nutzen es, weil es menschenfreundlicher als XML oder JSON ist und um Konfigurationen für vielfältige Anwendungen, wie Kubernetes oder Docker, zu definieren.
 
-## How to:
-Arbeiten mit YAML in Bash kann mithilfe von `yq` erfolgen, einem kommandozeilenbasierten YAML-Prozessor:
+YAML, was für "YAML Ain't Markup Language" steht, ist ein für den Menschen lesbarer Daten-Serialisierungsstandard, der für Konfigurationsdateien sowie in Anwendungen verwendet werden kann, in denen Daten gespeichert oder übertragen werden. Programmierer ziehen YAML wegen seiner Klarheit und Einfachheit vor, besonders in Projekten mit komplexen Konfigurationen oder dem Bedarf an leicht editierbaren Datenstrukturen.
 
-Installation von `yq`:
-```Bash
-sudo wget https://github.com/mikefarah/yq/releases/download/v4.6.1/yq_linux_amd64 -O /usr/bin/yq && sudo chmod +x /usr/bin/yq
+## Wie:
+
+Direkt mit YAML in Bash zu arbeiten, erfordert ein wenig Einfallsreichtum, da Bash keine integrierte Unterstützung für das Parsen von YAML bietet. Sie können jedoch externe Tools wie `yq` (einen leichten und tragbaren Kommandozeilen YAML-Prozessor) nutzen, um effizient mit YAML-Dateien zu interagieren. Gehen wir einige gängige Operationen durch:
+
+### `yq` installieren:
+
+Bevor Sie in die Beispiele eintauchen, stellen Sie sicher, dass Sie `yq` installiert haben. Sie können es normalerweise über Ihren Paketmanager installieren, zum Beispiel auf Ubuntu:
+
+```bash
+sudo apt-get install yq
 ```
 
-Lesen eines Wertes:
-```Bash
-cat config.yaml | yq e '.server.port'
-# Ausgabe: 8080
+Oder Sie können es direkt aus seinem GitHub-Repository herunterladen.
+
+### Einen Wert lesen:
+
+Angenommen, Sie haben eine Datei namens `config.yaml` mit dem folgenden Inhalt:
+
+```yaml
+database:
+  host: localhost
+  port: 5432
+user:
+  name: admin
+  password: geheim
 ```
 
-Ändern eines Wertes:
-```Bash
-yq e '.server.port = "9090"' -i config.yaml
+Um den Datenbankhost zu lesen, können Sie `yq` wie folgt verwenden:
+
+```bash
+yq e '.database.host' config.yaml
 ```
 
-Überprüfen der Änderung:
-```Bash
-yq e '.server.port' config.yaml
-# Ausgabe: 9090
+**Beispielausgabe:**
+
+```
+localhost
 ```
 
-## Deep Dive
-YAML wurde erstmals Anfang der 2000er als eine einfachere Alternative zu XML eingeführt. Alternativen zu YAML sind JSON und TOML – jeweils mit eigenen Stärken. YAML nutzt Einrückungen zur Strukturierung, was Fehler anfällig machen kann. Tools wie `yq` basieren intern auf LibYAML für Parsing und Serialisierung und sorgen für effizientes Arbeiten mit YAML-Dateien.
+### Einen Wert aktualisieren:
 
-## See Also
-- YAML Spezifikation: https://yaml.org/spec/1.2/spec.html
-- `yq` GitHub Repository: https://github.com/mikefarah/yq
-- YAML und JSON vergleich: https://stackoverflow.com/questions/1726802/what-is-the-difference-between-yaml-and-json
-- Einführung in YAML und seine Unterschiede zu JSON: https://www.redhat.com/de/topics/automation/what-is-yaml
+Um den Namen des Benutzers in `config.yaml` zu aktualisieren, verwenden Sie den Befehl `yq eval` mit der Option `-i` (in-place):
+
+```bash
+yq e '.user.name = "neuadmin"' -i config.yaml
+```
+
+Überprüfen Sie die Änderung mit:
+
+```bash
+yq e '.user.name' config.yaml
+```
+
+**Beispielausgabe:**
+
+```
+neuadmin
+```
+
+### Ein neues Element hinzufügen:
+
+Um ein neues Element im Datenbankabschnitt hinzuzufügen, wie ein neues Feld `timeout`:
+
+```bash
+yq e '.database.timeout = 30' -i config.yaml
+```
+
+Das Überprüfen des Inhalts der Datei wird die Ergänzung bestätigen.
+
+### Ein Element löschen:
+
+Um das Passwort unter Benutzer zu entfernen:
+
+```bash
+yq e 'del(.user.password)' -i config.yaml
+```
+
+Diese Operation wird das Passwortfeld aus der Konfiguration entfernen.
+
+Denken Sie daran, `yq` ist ein leistungsfähiges Werkzeug und bietet noch viele weitere Möglichkeiten, einschließlich der Konvertierung von YAML zu JSON, dem Zusammenführen von Dateien und sogar komplexeren Manipulationen. Schauen Sie in die `yq`-Dokumentation für weitere Erkundungen.

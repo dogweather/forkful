@@ -1,42 +1,74 @@
 ---
 title:                "Trabalhando com CSV"
-date:                  2024-01-19
+date:                  2024-02-03T19:19:54.500519-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Trabalhando com CSV"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/fish-shell/working-with-csv.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## O Que & Por Quê?
-Trabalhar com CSV (Valores Separados por Vírgula) envolve ler, escrever e manipular dados em um formato amplamente utilizado para troca de dados estruturados. Programadores recorrem a CSV pela simplicidade e interoperabilidade entre sistemas e linguagens de programação.
+## O Que & Porquê?
 
-## Como Fazer:
-```Fish Shell
-# Lendo um arquivo CSV linha por linha
-for line in (cat dados.csv)
-    echo $line
-end
+Trabalhar com arquivos CSV (Valores Separados por Vírgula) envolve analisar, manipular e gerar dados em um formato tabular que é amplamente utilizado para a troca de dados entre aplicações. Programadores realizam essas operações para processar e analisar dados de forma eficiente, automatizar tarefas ou integrar com outros sistemas.
 
-# Dividindo os campos e acessando o segundo valor de cada linha
-for line in (cat dados.csv)
-    set -l campos (string split "," $line)
-    echo $campos[2]
-end
+## Como fazer:
 
-# Convertendo um arquivo CSV em um array de arrays (linhas e campos)
-set -l linhas_e_campos
-for line in (cat dados.csv)
-    set -l campos (string split "," $line)
-    set linhas_e_campos $linhas_e_campos $campos
-end
+O Fish Shell, por si só, não possui funções embutidas especificamente projetadas para a manipulação de CSV. No entanto, você pode aproveitar utilitários Unix como `awk`, `sed` e `cut` para operações básicas ou usar ferramentas especializadas como `csvkit` para tarefas mais avançadas.
+
+### Lendo um arquivo CSV e imprimindo a primeira coluna:
+Usando `cut` para extrair a primeira coluna:
+```fish
+cut -d ',' -f1 data.csv
+```
+Saída de exemplo:
+```
+Nome
+Alice
+Bob
 ```
 
-## Mergulho Profundo:
-O CSV é um formato de arquivo que data dos primeiros dias da computação, servindo como uma forma simples de importar e exportar dados de tabelas. Alternativas modernas incluem JSON e XML, que oferecem mais complexidade e estrutura. Em Fish Shell, diferentemente de outras shell scripts como Bash, não se usa ferramentas externas como `awk`, portanto a manipulação de CSV é feita através dos comandos internos `string split` e `for`.
+### Filtrando linhas CSV baseadas no valor da coluna:
+Usando `awk` para encontrar linhas onde a segunda coluna corresponde a "42":
+```fish
+awk -F, '$2 == "42" { print $0 }' data.csv
+```
+Saída de exemplo:
+```
+Bob,42,Londres
+```
 
-## Veja Também:
-- Documentação oficial do Fish Shell: https://fishshell.com/docs/current/index.html
-- Guia para manipulação de texto no Fish Shell: https://fishshell.com/docs/current/cmds/string.html
-- W3C sobre CSV: https://www.w3.org/TR/tabular-data-primer/
+### Modificando um arquivo CSV (por exemplo, adicionando uma coluna):
+Usando `awk` para adicionar uma coluna com um valor estático "NovaColuna":
+```fish
+awk -F, 'BEGIN {OFS=","} {print $0,"NovaColuna"}' data.csv > modified.csv
+```
+Saída de exemplo em `modified.csv`:
+```
+Nome,Idade,Cidade,NovaColuna
+Alice,30,Nova Iorque,NovaColuna
+Bob,42,Londres,NovaColuna
+```
+
+### Usando `csvkit` para operações mais avançadas:
+Primeiro, certifique-se de ter o `csvkit` instalado. Caso não, instale-o usando pip: `pip install csvkit`.
+
+**Convertendo um arquivo CSV para JSON:**
+```fish
+csvjson data.csv > data.json
+```
+Saída de exemplo em `data.json`:
+```json
+[{"Nome":"Alice","Idade":"30","Cidade":"Nova Iorque"},{"Nome":"Bob","Idade":"42","Cidade":"Londres"}]
+```
+
+**Filtrando com `csvgrep` do `csvkit`:**
+```fish
+csvgrep -c 2 -m 42 data.csv
+```
+Este comando replica a tarefa de filtragem, mas usando `csvkit`, visando a coluna 2 pelo valor "42".
+
+Em conclusão, embora o Fish Shell em si possa não oferecer capacidades diretas de manipulação de CSV, sua integração perfeita com utilitários Unix e a disponibilidade de ferramentas como `csvkit` fornecem opções poderosas para trabalhar com arquivos CSV.

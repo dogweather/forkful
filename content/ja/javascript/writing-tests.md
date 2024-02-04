@@ -1,52 +1,125 @@
 ---
 title:                "テストの作成"
-date:                  2024-01-19
+date:                  2024-02-03T19:31:27.794387-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "テストの作成"
-
 tag:                  "Testing and Debugging"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/javascript/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (テストを書くとは？ & なぜ？)
-JavaScriptでテストを書くとは、コードが期待通りに動くか検証する過程です。これにより、バグの発見、リファクタリングの容易さ、そして将来的な機能追加に対する信頼性が高まります。
+## 何となぜ？
 
-## How to: (方法)
-以下はJestを使ったテストの例です。このライブラリはシンプルで人気があるため、紹介します。
+JavaScriptでテストを書くことは、コードが期待通りに動作することを保証するために自動スクリプトを作成する実践を指します。これにより、アプリケーションの信頼性と保守性が大幅に向上します。プログラマーは、早期にバグを捕捉し、コードのリファクタリングを容易にし、新機能が既存の機能を壊さないことを確認するためにこれを行います。
+
+## 方法:
+
+### ネイティブアプローチ (Jestを使用)
+
+Jestは、JavaScriptでユニットテストを書くためのフレンドリーなAPIを提供する人気のテストフレームワークです。最小限の設定が必要で、モック関数、タイマー、スナップショットテストなどの機能が付属しています。
+
+1. **インストール**:
+
+```bash
+npm install --save-dev jest
+```
+
+2. **シンプルなテストを書く**:
+
+`sum.test.js`というファイルを作成します：
 
 ```javascript
-// sum.js
-function sum(a, b) {
-  return a + b;
-}
-module.exports = sum;
+const sum = require('./sum'); // この関数は単純に2つの数字を足すと仮定
 
-// sum.test.js
-const sum = require('./sum');
-
-test('1 + 2 は 3 になる', () => {
+test('1 + 2 が 3 になる', () => {
   expect(sum(1, 2)).toBe(3);
 });
-
-// コマンドラインでテストを実行
-// $ jest
 ```
 
-出力例：
+3. **テストを実行する**:
+
+```bash
+npx jest
 ```
+
+**サンプル出力:**
+
+```plaintext
 PASS  ./sum.test.js
-✓ 1 + 2 は 3 になる (5ms)
+✓ 1 + 2 が 3 になる (5ms)
 ```
 
-## Deep Dive (深掘り)
-テストはソフトウェア開発の古典的な部分であり、TDD（テスト駆動開発）のようなアプローチがあります。Jestは多くの代替品の中から選ばれることが多く、そのインターフェースの単純さと設定のしやすさからはじまり、リアクティブなウォッチモードやスナップショットテストなどの機能が魅力です。他にも、Mocha、Jasmine、QUnit等が知られています。
+### 非同期コードのテスト
 
-## See Also (関連情報)
-- Jest公式ドキュメント: https://jestjs.io/ja/
-- Jasmine: https://jasmine.github.io/
-- Mocha: https://mochajs.org/
-- QUnit: https://qunitjs.com/
+Jestは、プロミスとasync/await構文をテストするのを簡単にします：
 
-Jest以外にもいくつかのテストフレームワークが存在するので、プロジェクトの要件に応じて最適なものを選択しましょう。
+```javascript
+// asyncSum.js
+async function asyncSum(a, b) {
+  return Promise.resolve(a + b);
+}
+
+// asyncSum.test.js
+test('async 加算が機能する', async () => {
+  await expect(asyncSum(1, 2)).resolves.toBe(3);
+});
+
+```
+
+### サードパーティライブラリーの使用 (Mocha & Chai)
+
+Mochaは、より表現力豊かなテストのためにアサーションライブラリーのChaiとしばしば使用される、別の人気のあるテストフレームワークです。
+
+1. **インストール**:
+
+```bash
+npm install --save-dev mocha chai
+```
+
+2. **MochaとChaiでテストを書く**:
+
+`calculate.test.js`を作成します：
+
+```javascript
+const chai = require('chai');
+const expect = chai.expect;
+
+const calculate = require('./calculate'); // シンプルな計算モジュール
+
+describe('Calculate', function() {
+  it('should sum two values', function() {
+    expect(calculate.sum(5, 2)).to.equal(7);
+  });
+});
+```
+
+3. **Mochaでテストを実行する**:
+
+`package.json`にスクリプトを追加します：
+
+```json
+"scripts": {
+  "test": "mocha"
+}
+```
+
+そして実行します：
+
+```bash
+npm test
+```
+
+**サンプル出力:**
+
+```plaintext
+  Calculate
+    ✓ should sum two values
+
+
+  1 passing (8ms)
+```
+
+これらの例は、JavaScriptでの基本的なテストの書き方と実行方法を示しています。JestやMochaとChaiのようなテストフレームワークを採用することは、アプリケーションテストのための堅牢な基盤を提供し、アップデートやリファクタリングを通じてコードが意図した通りに機能することを確実にするのに役立ちます。

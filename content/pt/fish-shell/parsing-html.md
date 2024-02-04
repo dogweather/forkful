@@ -1,58 +1,81 @@
 ---
-title:                "Análise de HTML"
-date:                  2024-01-20T15:31:35.580204-07:00
-simple_title:         "Análise de HTML"
-
+title:                "Analisando HTML"
+date:                  2024-02-03T19:12:13.600128-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Analisando HTML"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/fish-shell/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## O Que é & Porquê?
-Parsear HTML é o processo de extrair informações específicas de um documento HTML. Programadores fazem isso para automatizar a coleta de dados, manipular conteúdos de páginas web e integrar diferentes sistemas.
+## O Que & Por Quê?
 
-## Como fazer:
-Em Fish Shell, não temos ferramentas nativas específicas para parsear HTML, por isso recorremos a utilitários externos como `pup` ou `hxselect`. Vamos usar `pup` como exemplo.
+Analisar HTML é sobre extrair dados ou informações de conteúdo HTML, uma tarefa comum ao lidar com dados da web. Programadores fazem isso para automatizar a extração de informações de sites, para tarefas como raspagem de web, mineração de dados ou testes automatizados.
 
-Instale o `pup` (assumindo que você está usando Homebrew):
-```Fish Shell
-brew install pup
+## Como Fazer:
+
+O shell Fish, predominantemente, não é projetado para analisar HTML diretamente. No entanto, ele se destaca em juntar ferramentas Unix como `curl`, `grep`, `sed`, `awk`, ou usando ferramentas especializadas como `pup` ou `beautifulsoup` em um script Python. Abaixo estão exemplos que mostram como aproveitar essas ferramentas dentro do Fish shell para analisar HTML.
+
+### Usando `curl` e `grep`:
+Buscando conteúdo HTML e extraindo linhas que contêm links:
+
+```fish
+curl -s https://exemplo.com | grep -oP '(?<=href=")[^"]*'
 ```
 
-Suponha que você tenha um arquivo HTML `pagina.html` e quer extrair todos os títulos:
-
-```Fish Shell
-cat pagina.html | pup 'h1 text{}'
+Saída:
+```
+/page1.html
+/page2.html
+...
 ```
 
-Se você quiser salvar o resultado em um arquivo:
+### Usando `pup` (uma ferramenta de linha de comando para analisar HTML):
 
-```Fish Shell
-cat pagina.html | pup 'h1 text{}' > titulos.txt
+Primeiro, garanta que o `pup` esteja instalado. Então você pode usá-lo para extrair elementos por suas tags, ids, classes, etc.
+
+```fish
+curl -s https://exemplo.com | pup 'a attr{href}'
 ```
 
-Mostrando os títulos extraídos:
-```Fish Shell
-cat titulos.txt
+A saída, similar ao exemplo do `grep`, listaria atributos href de tags `<a>`.
+
+### Com um script Python e `beautifulsoup`:
+
+Embora o Fish em si não possa analisar HTML nativamente, ele se integra perfeitamente com scripts Python. Abaixo está um exemplo conciso que usa Python com `BeautifulSoup` para analisar e extrair títulos do HTML. Garanta que você tenha `beautifulsoup4` e `requests` instalados no seu ambiente Python.
+
+**parse_html.fish**
+
+```fish
+function parse_html -a url
+    python -c "
+import sys
+import requests
+from bs4 import BeautifulSoup
+
+response = requests.get(sys.argv[1])
+soup = BeautifulSoup(response.text, 'html.parser')
+
+titles = soup.find_all('title')
+
+for title in titles:
+    print(title.get_text())
+" $url
+end
 ```
 
-Saída de exemplo:
+Uso:
+
+```fish
+parse_html 'https://exemplo.com'
 ```
-Olá Mundo
-Exemplo de Título
-Bem-vindo à Fish Shell
+
+Saída:
+```
+Exemplo de Domínio
 ```
 
-## Mergulho Profundo:
-Parsear HTML em Fish Shell normalmente requer ferramentas de terceiros, já que o shell em si não tem recursos inerentes para manipulação de HTML. `pup` é uma ferramenta minimalista de linha de comando para processar HTML, similar ao `jq` para JSON. `hxselect` é outra ferramenta que vem com `html-xml-utils` e permite seleções no estilo CSS.
-
-Historicamente, parsear HTML era comum em linguagens como Python ou PHP, mas com a ascensão de APIs RESTful e formatos de dados como JSON, tornou-se menos frequente. Contudo, ainda é crucial para web scraping e automação onde APIs não estão disponíveis.
-
-Quando se trata de implementação, ao escolher uma ferramenta de parseamento, considere a robustez, a suportabilidade de padrões web e a facilidade de uso.
-
-## Veja Também:
-- Documentação do `pup`: https://github.com/ericchiang/pup
-- Tutorial de `hxselect`: https://www.w3.org/Tools/HTML-XML-utils/
-- Sobre web scraping com Fish Shell (em inglês): https://github.com/fish-shell/fish-shell/wiki/Scripts#web-scraping
-- Guia de seletores CSS (em português): https://developer.mozilla.org/pt-BR/docs/Web/CSS/CSS_Selectors
+Cada um desses métodos serve diferentes casos de uso e escalas de complexidade, desde simples manipulações de texto de linha de comando até o pleno poder de análise do `beautifulsoup` em scripts Python. Dependendo das suas necessidades e da complexidade da estrutura do HTML, você pode escolher um pipeline Unix direto ou uma abordagem de script mais poderosa.

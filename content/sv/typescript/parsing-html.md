@@ -1,46 +1,63 @@
 ---
 title:                "Tolka HTML"
-date:                  2024-01-20T15:34:13.723455-07:00
+date:                  2024-02-03T19:13:26.645593-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Tolka HTML"
-
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/typescript/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Vad & Varför?)
-Parsing HTML innebär att vi läser och tolkar HTML-kod för att förstå dess struktur och innehåll. Programmerare gör detta för att manipulera, extrahera eller interagera med webbinnehåll.
+## Vad & Varför?
 
-## How to: (Hur?)
-Vi använder `DOMParser` för att parse:a HTML i TypeScript.
+Att parsa HTML innebär att sålla igenom HTML-kod för att hitta, extrahera eller manipulera information. Programmerare gör det för att interagera med webbinnehåll — kanske genom att skrapa data eller automatisera webbläsare.
 
-```typescript
-const htmlString = `<p>Hej världen!</p>`;
-const parser = new DOMParser();
-const doc = parser.parseFromString(htmlString, 'text/html');
+## Hur man gör:
 
-console.log(doc.body.firstChild?.textContent); // Output: "Hej världen!"
+För att komma igång, installera ett bibliotek som `node-html-parser`. Här är terminalkommandot:
+
+```bash
+npm install node-html-parser
 ```
 
-Ett mer komplext exempel, där vi får tag på element via klassnamn:
+Nu ska vi parsa lite grundläggande HTML i TypeScript:
 
 ```typescript
-const htmlString = `<div><p class="hälsning">Hej igen!</p></div>`;
-const doc = parser.parseFromString(htmlString, 'text/html');
+import { parse } from 'node-html-parser';
 
-const greeting = doc.querySelector('.hälsning');
-console.log(greeting?.textContent); // Output: "Hej igen!"
+const html = `<ul class="fruits">
+                <li>Apple</li>
+                <li>Banana</li>
+              </ul>`;
+
+const root = parse(html);
+console.log(root.querySelector('.fruits').textContent);  // "Apple Banana"
 ```
 
-## Deep Dive (Djupdykning)
-Förr i tiden extraherade vi data ur HTML med regular expressions, men det var knepigt och osäkert. DOMParser erbjuder en robust lösning som följer webbstandarder, vilket gör det enklare att arbeta med XML- eller HTML-dokument. 
+Och om du bara vill ta tag i bananerna:
 
-JavaScript-bibliotek som Cheerio är alternativ som kör på serversidan och erbjuder jQuery-liknande syntax för att navigera DOM-trädet. Andra ramverk som JSDom låter dig simulera en webbläsarmiljö.
+```typescript
+const bananas = root.querySelectorAll('li')[1].textContent;
+console.log(bananas);  // "Banana"
+```
 
-När du använder `DOMParser` bör du tänka på säkerhetsaspekter som innebär att inte manipulera DOM:n med farligt innehåll (t.ex., `XSS`-attacker).
+## Fördjupning
 
-## See Also (Se också)
-- MDN Web Docs om DOMParser: https://developer.mozilla.org/en-US/docs/Web/API/DOMParser
-- Cheerio GitHub-sida: https://github.com/cheeriojs/cheerio
-- JSDom GitHub-sida: https://github.com/jsdom/jsdom
+Att parsa HTML är inte nytt — det har funnits sedan webbens tidiga dagar. Inledningsvis kanske utvecklare använde reguljära uttryck, men det blev snabbt rörigt. Då kom DOM-parsern: stabil, men begränsad till webbläsare.
+
+Bibliotek som `node-html-parser` abstraherar bort smärtan. De låter dig fråga HTML som du skulle med jQuery, men på serversidan med Node.js. Det är snabbt, tolerant mot smutsig HTML och DOM-vänligt.
+
+Det finns också `jsdom`, som simulerar en hel webbläsarmiljö. Det är tyngre men mer genomgående, skapar ett fullständigt Document Object Model (DOM) för manipulation och interaktion.
+
+Vi får inte glömma Cheerio heller. Det blandar hastighet med en jQuery-liknande syntax och mindre fotavtryck, och sitter lyckligt mellan de två.
+
+## Se även
+
+Om du är törstig efter mer, dyk ner i dessa:
+- [DOM Parsing and Serialization W3C Specification](https://www.w3.org/TR/DOM-Parsing/)
+- [node-html-parser på GitHub](https://github.com/taoqf/node-html-parser)
+- [jsdom GitHub Repository](https://github.com/jsdom/jsdom)
+- [Cheerio Webbplats](https://cheerio.js.org/)

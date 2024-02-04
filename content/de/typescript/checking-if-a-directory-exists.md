@@ -1,62 +1,83 @@
 ---
 title:                "Überprüfung, ob ein Verzeichnis existiert"
-date:                  2024-01-20T14:58:57.857349-07:00
+date:                  2024-02-03T19:08:43.908869-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Überprüfung, ob ein Verzeichnis existiert"
-
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/typescript/checking-if-a-directory-exists.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Prüfen, ob ein Verzeichnis existiert, bedeutet, sicherzustellen, dass ein bestimmter Ordnerpfad im Dateisystem vorhanden ist. Programmierer machen das, um Fehler zu vermeiden, die auftreten können, wenn sie versuchen, auf ein nicht existierendes Verzeichnis zuzugreifen oder darin zu schreiben.
+Das Überprüfen, ob ein Verzeichnis in TypeScript existiert, ist für Dateiverwaltungsaufgaben essentiell, wie zum Beispiel das Lesen aus oder das Schreiben von Daten in Dateien, um sicherzustellen, dass Operationen nur auf gültigen Verzeichnissen ausgeführt werden. Diese Operation ist entscheidend, um Fehler zu vermeiden, die durch den Versuch, auf nicht vorhandene Verzeichnisse zuzugreifen oder diese zu manipulieren, entstehen können.
 
-## So geht's:
-Um in TypeScript zu überprüfen, ob ein Verzeichnis existiert, nutzen wir das `fs` Modul von Node.js. Hier ein kurzes Beispiel:
+## Wie geht das:
+
+TypeScript, ausgeführt in einer Node.js-Umgebung, ermöglicht es Ihnen zu überprüfen, ob ein Verzeichnis existiert, indem Sie das `fs` Modul verwenden, welches die Funktion `existsSync()` oder die asynchrone Funktion `access()` in Verbindung mit `constants.F_OK` bereitstellt.
+
+### Verwendung von `fs.existsSync()`:
 
 ```typescript
 import { existsSync } from 'fs';
 
-const directoryPath = './meinVerzeichnis';
+const directoryPath = './path/to/directory';
 
 if (existsSync(directoryPath)) {
-    console.log('Das Verzeichnis existiert.');
+  console.log('Verzeichnis existiert.');
 } else {
-    console.log('Das Verzeichnis existiert nicht.');
+  console.log('Verzeichnis existiert nicht.');
 }
 ```
 
-Ausgabe, falls das Verzeichnis existiert:
-```
-Das Verzeichnis existiert.
-```
-
-Ausgabe, falls das Verzeichnis nicht existiert:
-```
-Das Verzeichnis existiert nicht.
-```
-
-## Tiefgang
-Historisch gesehen war es üblich, die asynchrone Variante `fs.exists` zu verwenden, um die Blockierung des Event-Loops zu verhindern. Allerdings ist `fs.exists` nicht empfohlen, weil es veraltet ist und in zukünftigen Versionen entfernt werden könnte. Die Synchronversion `fs.existsSync` wird bevorzugt, wenn einfaches Blocking kein Problem ist (z.B. beim initialen Setup).
-
-Alternativ kann `fs.access` mit `fs.constants.F_OK` verwendet werden, um zu prüfen, ob ein Pfad zugänglich ist, was impliziert, dass das Verzeichnis existiert:
+### Verwendung von `fs.access()` mit `fs.constants.F_OK`:
 
 ```typescript
 import { access, constants } from 'fs';
 
+const directoryPath = './path/to/directory';
+
 access(directoryPath, constants.F_OK, (err) => {
-    if (err) {
-        console.log('Das Verzeichnis existiert nicht.');
-    } else {
-        console.log('Das Verzeichnis existiert.');
-    }
+  if (err) {
+    console.log('Verzeichnis existiert nicht.');
+    return;
+  }
+  console.log('Verzeichnis existiert.');
 });
 ```
 
-Implementationstechnisch arbeitet `fs.existsSync` direkt mit einer systemnahen API, um Dateiattribute zu überprüfen. Das ist effizient, weil es unnötige Overheads wie Promises oder Callbacks vermeidet.
+**Beispielausgabe** für beide Methoden, unter der Annahme, dass das Verzeichnis existiert:
+```
+Verzeichnis existiert.
+```
 
-## Siehe Auch
-- Node.js `fs` Dokumentation: https://nodejs.org/api/fs.html
-- TypeScript Handbuch: https://www.typescriptlang.org/docs/
-- Artikel über den Unterschied zwischen sync- und async-Methoden in Node.js: https://nodejs.org/en/docs/guides/blocking-vs-non-blocking/
+Und wenn nicht:
+```
+Verzeichnis existiert nicht.
+```
+
+### Verwendung einer Drittanbieterbibliothek - `fs-extra`:
+
+`fs-extra` ist eine beliebte Drittanbieterbibliothek, die das eingebaute `fs` Modul erweitert und bequemere Funktionen bereitstellt.
+
+```typescript
+import { pathExists } from 'fs-extra';
+
+const directoryPath = './path/to/directory';
+
+pathExists(directoryPath).then(exists => {
+  console.log(`Verzeichnis existiert: ${exists}`);
+});
+```
+
+**Beispielausgabe** wenn das Verzeichnis existiert:
+```
+Verzeichnis existiert: true
+```
+
+Und wenn nicht:
+```
+Verzeichnis existiert: false
+```

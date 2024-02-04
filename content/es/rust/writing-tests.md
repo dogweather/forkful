@@ -1,24 +1,31 @@
 ---
 title:                "Escribiendo pruebas"
-date:                  2024-01-19
+date:                  2024-02-03T19:31:55.156988-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Escribiendo pruebas"
-
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/rust/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Qué y Por Qué?
+## ¿Qué y por qué?
 
-Escribir pruebas es crear código para verificar que otro código funcione correctamente. Los programadores las usan para atrapar errores, evitar regresiones y garantizar que el comportamiento del código se mantenga tras cambios y adiciones futuras.
+Escribir pruebas en Rust implica crear comprobaciones automatizadas para asegurar que tu código funciona como se espera. Los programadores hacen esto para detectar errores temprano, facilitar la refactorización y mantener la calidad del código a lo largo del tiempo.
 
 ## Cómo hacerlo:
 
-En Rust, escribirás pruebas unitarias en el mismo archivo de tu código usando el atributo `#[test]`. Aquí tienes un ejemplo simple de una función y su prueba:
+El marco de prueba integrado de Rust soporta pruebas de unidad, integración y documentación sin necesidad de bibliotecas externas. Las pruebas se anotan con `#[test]`, y cualquier función anotada de tal manera se compila como una prueba.
 
-```Rust
-fn suma(a: i32, b: i32) -> i32 {
+### Escribiendo una Prueba de Unidad:
+
+Coloca las pruebas de unidad en el módulo que están probando usando un submódulo `tests` marcado con `#[cfg(test)]` para asegurar que solo se compilen al probar.
+
+```rust
+// lib.rs o main.rs
+pub fn add(a: i32, b: i32) -> i32 {
     a + b
 }
 
@@ -27,30 +34,67 @@ mod tests {
     use super::*;
 
     #[test]
-    fn prueba_suma() {
-        assert_eq!(suma(2, 2), 4);
+    fn it_adds_two() {
+        assert_eq!(add(2, 2), 4);
     }
 }
 ```
 
-Si corres las pruebas con `cargo test`, deberías ver algo así:
-
+Ejecutando pruebas:
+```shell
+$ cargo test
 ```
-   Compiling mi_caja v0.1.0 (/path/to/mi_caja)
-    Finished test [unoptimized + debuginfo] target(s) in 0.31s
-     Running unittests src/lib.rs (target/debug/deps/mi_caja-abc123)
+
+Salida:
+```shell
+   Compiling your_package_name v0.1.0 (/path/to/your_package)
+    Finished test [unoptimized + debuginfo] target(s) in 0.00 secs
+     Running unittests src/lib.rs (or src/main.rs)
 
 running 1 test
-test tests::prueba_suma ... ok
+test tests::it_adds_two ... ok
 
-test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out
 ```
 
-## Análisis Profundo:
+### Escribiendo Pruebas de Integración:
 
-Las pruebas en Rust tienen sus raíces en prácticas de desarrollo de software como TDD (Test-Driven Development). Aunque hay alternativas como las pruebas de integración, que se guardan en la carpeta `/tests`, las pruebas unitarias son esenciales y están integradas en la herramienta de construcción Cargo de Rust. Utilizan aserciones (`assert!`, `assert_eq!`, `assert_ne!`) para verificar condiciones y resultados esperados.
+Las pruebas de integración van en un directorio de pruebas en el nivel superior de tu proyecto, junto a `src`. Cada archivo `.rs` en `tests` se compila como su propia caja separada.
 
-## Ver También:
+```rust
+// tests/integration_test.rs
+use your_package_name;
 
-- La guía oficial de Rust sobre pruebas: [Rust Book - Testing](https://doc.rust-lang.org/book/ch11-00-testing.html)
-- Documentación de Cargo con respecto a las pruebas: [Cargo Guide - Tests](https://doc.rust-lang.org/cargo/guide/tests.html)
+#[test]
+fn it_adds_two() {
+    assert_eq!(your_package_name::add(2, 2), 4);
+}
+```
+
+### Pruebas con Bibliotecas de Terceros Populares:
+
+Para capacidades de prueba más extensas, la biblioteca `proptest` puede generar una amplia gama de entradas para probar funciones.
+
+Añade `proptest` como una dependencia de desarrollo en `Cargo.toml`:
+
+```toml
+[dev-dependencies]
+proptest = "1.0"
+```
+
+Usa `proptest` para ejecutar la misma prueba con muchas entradas generadas automáticamente:
+
+```rust
+// dentro de tests/integration_test.rs o un módulo #[cfg(test)]
+
+use proptest::prelude::*;
+
+proptest! {
+    #[test]
+    fn doesnt_crash(a: i32, b:i32) {
+        your_package_name::add(a, b);
+    }
+}
+```
+
+Esto verifica que `add` no entre en pánico para una amplia gama de entradas `i32`.

@@ -1,50 +1,100 @@
 ---
-title:                "Tests schreiben"
-date:                  2024-01-19
-simple_title:         "Tests schreiben"
-
+title:                "Tests Schreiben"
+date:                  2024-02-03T19:32:03.704943-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Tests Schreiben"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/rust/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Tests schreiben heißt, Code zur Überprüfung deines Codes zu erstellen, um sicherzustellen, dass er wie erwartet funktioniert. Programmierer machen das, um Bugs zu vermeiden, die Codequalität zu erhöhen und das Vertrauen in ihren Code zu stärken.
 
-## Anleitung:
-```Rust
-// Im lib.rs oder main.rs File
+Das Schreiben von Tests in Rust umfasst das Erstellen automatisierter Überprüfungen, um sicherzustellen, dass Ihr Code wie erwartet funktioniert. Programmierer machen dies, um frühzeitig Fehler zu erkennen, Refactoring zu erleichtern und die Codequalität über die Zeit hinweg zu erhalten.
+
+## Wie man:
+
+Rusts integriertes Test-Framework unterstützt Einheits-, Integrations- und Dokumentationstests ohne die Notwendigkeit externer Bibliotheken. Tests werden mit `#[test]` annotiert, und jede so annotierte Funktion wird als Test kompiliert.
+
+### Schreiben eines Einheitstests:
+
+Platzieren Sie Einheitstests im Modul, das sie testen, indem Sie ein `tests` Untermodul verwenden, das mit `#[cfg(test)]` markiert ist, um sicherzustellen, dass sie nur beim Testen kompiliert werden.
+
+```rust
+// lib.rs oder main.rs
+pub fn add(a: i32, b: i32) -> i32 {
+    a + b
+}
 
 #[cfg(test)]
 mod tests {
-    #[test]
-    fn es_testet_etwas() {
-        assert_eq!(2 + 2, 4);
-    }
+    use super::*;
 
     #[test]
-    #[should_panic(expected = "Das hätte nicht passieren dürfen!")]
-    fn es_sollte_panic() {
-        panic!("Das hätte nicht passieren dürfen!");
+    fn it_adds_two() {
+        assert_eq!(add(2, 2), 4);
     }
 }
-
-// Führe Tests aus mit:
-// $ cargo test
-
-// Mögliche Ausgabe:
-// running 2 tests
-// test tests::es_testet_etwas ... ok
-// test tests::es_sollte_panic ... ok
-
-// test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out
 ```
 
-## Vertiefung:
-Tests in Rust haben seit Rust 1.0 hohen Stellenwert. `cargo test` ist ein starkes Werkzeug, das Tests einfach macht. Alternativen zu den eingebauten Test-Frameworks sind `proptest` oder `quickcheck`, wenn es um Property-based Testing geht. Details: Tests können parallel laufen, um Zeit zu sparen und Tests sind oft in Dokumentation integriert, genannt Doc-Tests.
+Tests ausführen:
+```shell
+$ cargo test
+```
 
-## Siehe auch:
-- The Rust Programming Language (Buch): https://doc.rust-lang.org/book/ch11-00-testing.html
-- Rust by Example – Testing: https://doc.rust-lang.org/rust-by-example/testing.html
-- Rust Documentation zu Testing: https://doc.rust-lang.org/cargo/guide/tests.html
+Ausgabe:
+```shell
+   Kompilieren Ihres Paketnamens v0.1.0 (/Pfad/zu/Ihrem/Paket)
+    Fertiggestellt test [unoptimiert + debuginfo] Ziel(e) in 0,00 Sek.
+     Laufende Unittests src/lib.rs (oder src/main.rs)
+
+1 Test wird ausgeführt
+test tests::it_adds_two ... ok
+
+Testergebnis: ok. 1 bestanden; 0 fehlgeschlagen; 0 ignoriert; 0 gemessen; 0 ausgefiltert
+```
+
+### Schreiben von Integrationstests:
+
+Integrationstests gehören in ein Tests-Verzeichnis auf der obersten Ebene Ihres Projekts, neben `src`. Jede `.rs` Datei in `tests` wird als eigene separate Crate kompiliert.
+
+```rust
+// tests/integration_test.rs
+use your_package_name;
+
+#[test]
+fn it_adds_two() {
+    assert_eq!(your_package_name::add(2, 2), 4);
+}
+```
+
+### Testen mit beliebten Drittanbieter-Bibliotheken:
+
+Für umfangreichere Testmöglichkeiten kann die Bibliothek `proptest` eine breite Palette von Eingaben erzeugen, um Funktionen zu testen.
+
+Fügen Sie `proptest` als Entwicklungsabhängigkeit in `Cargo.toml` hinzu:
+
+```toml
+[dev-dependencies]
+proptest = "1.0"
+```
+
+Verwenden Sie `proptest`, um den gleichen Test mit vielen automatisch generierten Eingaben auszuführen:
+
+```rust
+// innerhalb von tests/integration_test.rs oder eines #[cfg(test)] Moduls
+
+use proptest::prelude::*;
+
+proptest! {
+    #[test]
+    fn doesnt_crash(a: i32, b:i32) {
+        your_package_name::add(a, b);
+    }
+}
+```
+
+Dies überprüft, dass `add` bei einer breiten Palette von `i32` Eingaben nicht panisch wird.

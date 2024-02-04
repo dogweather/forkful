@@ -1,66 +1,76 @@
 ---
-title:                "Att göra en sträng versal"
-date:                  2024-01-19
-simple_title:         "Att göra en sträng versal"
-
+title:                "Gör om en sträng till versaler"
+date:                  2024-02-03T19:05:26.131664-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Gör om en sträng till versaler"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/c-sharp/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att 'capitaliza' en sträng innebär att göra så att varje bokstav i strängen blir en stor bokstav. Programmerare gör detta för att standardisera data, förbättra användarupplevelsen eller göra text mer synlig.
+Att skriva med stor bokstav i en sträng i C# innebär att omvandla det första tecknet i en sträng till versal om det inte redan är det. Denna ändring kan vara avgörande för att formatera utdata, genomdriva kodningsstandarder eller göra texter i användargränssnittet mer läsliga.
 
-## Hur gör man:
-Kolla kodexemplen nedan för att se hur man förvandlar text till versaler i C#.
+## Hur man gör:
+C# erbjuder ett enkelt tillvägagångssätt för att skriva strängar med stor bokstav med inbyggda metoder. Det enklaste sättet att uppnå detta är genom att direkt modifiera strängen med dessa metoder. För mer komplexa eller specifika kapitaliseringsregler (t.ex. att skriva varje ord med stor bokstav) kan ytterligare bibliotek eller manuella metoder vara nödvändiga. Nedan finns exempel som demonstrerar hur man skriver en sträng med stor bokstav på olika sätt i C#.
 
-```C#
-using System;
+### Grundläggande kapitalisering:
+För att skriva första bokstaven i ett enda ord eller en mening med stor bokstav:
 
-class CapitalizeString
-{
-    static void Main()
-    {
-        string originalText = "hej sverige!";
-        string upperText = originalText.ToUpper();
-
-        Console.WriteLine(upperText);  // Output: HEJ SVERIGE!
-    }
-}
+```csharp
+string originalString = "hello world";
+string capitalizedString = char.ToUpper(originalString[0]) + originalString.Substring(1);
+Console.WriteLine(capitalizedString); // Utdata: "Hello world"
 ```
 
-Andra verktyg i .NET använder CultureInfo för att specificera kulturella konventioner:
+### Skriva varje ord med stor bokstav:
+För att skriva första bokstaven i varje ord i en sträng med stor bokstav kan du använda metoden `TextInfo.ToTitleCase` som finns i namnrymden `System.Globalization`:
 
-```C#
+```csharp
 using System;
 using System.Globalization;
 
-class CapitalizeString
-{
-    static void Main()
-    {
-        string originalText = "hej sverige!";
-        // Specific for Swedish culture
-        string upperText = originalText.ToUpper(new CultureInfo("sv-SE"));
+string originalString = "hello world";
+TextInfo textInfo = CultureInfo.CurrentCulture.TextInfo;
+string capitalizedString = textInfo.ToTitleCase(originalString);
+Console.WriteLine(capitalizedString); // Utdata: "Hello World"
+```
 
-        Console.WriteLine(upperText);  // Output: HEJ SVERIGE!
+Observera: `ToTitleCase` omvandlar inte resten av bokstäverna till gemener; den ändrar endast till versaler den första bokstaven i varje ord. Dessutom kanske vissa ord i regler för titelfall (som "and", "or", "of") inte skrivs med stor bokstav beroende på kulturinställningarna.
+
+### Använda utökningsmetoder för återanvändbarhet:
+Du kan skapa en utökningsmetod för `string`-klassen för att förenkla kapitaliseringsprocessen, vilket gör din kod renare och mer återanvändbar. Så här skapar och använder du en sådan metod:
+
+```csharp
+using System;
+
+public static class StringExtensions
+{
+    public static string Capitalize(this string input)
+    {
+        if (string.IsNullOrEmpty(input))
+        {
+            return input;
+        }
+        return char.ToUpper(input[0]) + input.Substring(1);
+    }
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        string originalString = "hello world";
+        string capitalizedString = originalString.Capitalize();
+        Console.WriteLine(capitalizedString); // Utdata: "Hello world"
     }
 }
 ```
-## Deep Dive
-Att göra bokstäver i en sträng till versaler är något som har stötts sedan de tidigaste programmeringsspråken. I C#, `ToUpper()` är metoden som används oftast för detta, och den kommer från .NET Frameworks `System.String` klass. Det är viktigt att tänka på att vissa språk har unika regler för kapitalisering, vilket C#'s `CultureInfo` kan hjälpa till med att hantera.
 
-Om prestanda är en fråga, eller om endast specifika delar av strängen ska vara i versaler, kan andra metoder eller tekniker vara mer lämpliga:
+Denna utökningsmetod `Capitalize` kan anropas på vilket strängobjekt som helst inom namnrymden, vilket erbjuder ett mer intuitivt och objektorienterat tillvägagångssätt för strängmanipulation i C#.
 
-- Använde `StringBuilder` om du ska förändra en sträng många gånger.
-- Att använda LINQ för att capitaliza endast vissa bokstäver eller ord.
-
-Men kom ihåg: `ToUpper()` är ditt go-to för enkelhet och direkt användning inbyggd direkt i .NET.
-
-## Se även
-För vidare läsning och relaterade ämnen:
-
-- [Microsoft Docs – ToUpper Method](https://docs.microsoft.com/en-us/dotnet/api/system.string.toupper?view=net-6.0)
-- [Microsoft Docs – CultureInfo Class](https://docs.microsoft.com/en-us/dotnet/api/system.globalization.cultureinfo?view=net-6.0)
-- [Stack Overflow – When to use CultureInfo](https://stackoverflow.com/questions/20978/when-to-use-cultureinfo-currentculture-or-cultureinfo-currentuiculture)
+### Tredjepartsbibliotek:
+Även om C#s standardbibliotek täcker de flesta behov för att skriva strängar med stor bokstav, kan vissa specialiserade uppgifter dra nytta av tredjepartsbibliotek, som Humanizer. Dock, för uppgiften att enkelt skriva strängar eller varje ord i en sträng med stor bokstav, är standardmetoderna i C# adekvata och effektiva, vilket eliminerar behovet av externa beroenden.

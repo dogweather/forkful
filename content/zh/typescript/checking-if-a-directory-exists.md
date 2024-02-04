@@ -1,59 +1,83 @@
 ---
 title:                "检查目录是否存在"
-date:                  2024-01-20T14:58:54.953171-07:00
+date:                  2024-02-03T19:08:41.349110-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "检查目录是否存在"
-
 tag:                  "Files and I/O"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/typescript/checking-if-a-directory-exists.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (什么以及为什么？)
-检查目录是否存在是指用代码确认文件系统中某个特定目录是否已经建立。程序员这么做以避免读写错误，确保数据被正确地存储和获取。
+## 什么 & 为什么？
+在TypeScript中检查目录是否存在对于文件管理任务至关重要，例如从文件中读取或向文件写入数据，确保只在有效目录上执行操作。这个操作对于避免尝试访问或操作不存在的目录而产生的错误至关重要。
 
-## How to: (如何操作：)
-TypeScript中，你可以通过`fs`模块来检查目录是否存在：
+## 如何操作：
 
-```TypeScript
-import fs from 'fs';
+当在Node.js环境中运行TypeScript时，你可以使用`fs`模块来检查目录是否存在，该模块提供了`existsSync()`函数或异步的`access()`函数结合`constants.F_OK`。
 
-const directoryPath = './path/to/your/directory';
+### 使用`fs.existsSync()`：
 
-// 异步检查
-fs.access(directoryPath, fs.constants.F_OK, (err) => {
-  if (err) {
-    console.error(`${directoryPath} does not exist`);
-  } else {
-    console.log(`${directoryPath} exists`);
-  }
-});
+```typescript
+import { existsSync } from 'fs';
 
-// 同步检查
-if (fs.existsSync(directoryPath)) {
-  console.log(`${directoryPath} exists`);
+const directoryPath = './path/to/directory';
+
+if (existsSync(directoryPath)) {
+  console.log('目录存在。');
 } else {
-  console.error(`${directoryPath} does not exist`);
+  console.log('目录不存在。');
 }
 ```
-输出可能会是：
-```
-./path/to/your/directory exists
-```
-或者
-```
-./path/to/your/directory does not exist
+
+### 使用`fs.access()`搭配`fs.constants.F_OK`：
+
+```typescript
+import { access, constants } from 'fs';
+
+const directoryPath = './path/to/directory';
+
+access(directoryPath, constants.F_OK, (err) => {
+  if (err) {
+    console.log('目录不存在。');
+    return;
+  }
+  console.log('目录存在。');
+});
 ```
 
-## Deep Dive (深入了解)
-在Node.js和TypeScript的早期版本中，大家习惯使用`fs.existsSync`来同步检查文件或目录是否存在。然而，这种方法会阻塞事件循环，影响性能。现代的实践倾向于使用异步的`fs.access`方法，这样即使在检查的时候，程序也能处理其他任务。
+**两种方法的示例输出**，假设目录确实存在：
+```
+目录存在。
+```
 
-替代方案包括使用第三方库如`fs-extra`或使用新的`fs.promises` API以支持`async/await`。ES的新版本甚至允许你直接在`import`语句中用异步方式动态加载模块，这也可以用于检查。
+如果不存在：
+```
+目录不存在。
+```
 
-实现上，`fs.access`使用底层系统调用来进行检查，它还可以检查读写权限等。
+### 使用第三方库 - `fs-extra`：
 
-## See Also (另请参阅)
-- [Node.js `fs` documentation](https://nodejs.org/api/fs.html)
-- [`fs-extra` GitHub repository](https://github.com/jprichardson/node-fs-extra)
-- [TypeScript Handbook](https://www.typescriptlang.org/docs/handbook/intro.html)
+`fs-extra`是一个受欢迎的第三方库，它增强了内置的`fs`模块，并提供了更方便的函数。
+
+```typescript
+import { pathExists } from 'fs-extra';
+
+const directoryPath = './path/to/directory';
+
+pathExists(directoryPath).then(exists => {
+  console.log(`目录存在: ${exists}`);
+});
+```
+
+**示例输出** 当目录存在时：
+```
+目录存在: true
+```
+
+如果不存在：
+```
+目录不存在: false
+```

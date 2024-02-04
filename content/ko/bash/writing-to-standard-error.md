@@ -1,45 +1,52 @@
 ---
-title:                "표준 오류로 쓰기"
-date:                  2024-01-19
-simple_title:         "표준 오류로 쓰기"
-
+title:                "표준 에러에 쓰기"
+date:                  2024-02-03T19:32:29.502397-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "표준 에러에 쓰기"
 tag:                  "Files and I/O"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/bash/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-표준 오류 출력(standard error)은 에러 메시지를 전달하기 위해 사용됩니다. 프로그래머는 문제를 신속하게 진단하고 로그 파일을 깨끗하게 유지하기 위해 표준 출력과 별도로 오류를 이곳에 씁니다.
+## 무엇과 왜?
+Bash에서 표준 에러(stderr)로 쓰기는 에러 메시지나 중요한 진단 출력을 표준 출력(stdout)과 별도로 지시하는 것입니다. 프로그래머는 이를 통해 에러 메시지를 쉽게 식별, 로깅하거나 심지어 무시하여 디버깅 및 로깅 과정을 돕습니다.
 
-## How to:
-```Bash
-#!/bin/bash
+## 방법:
+Bash에서는 `>&2`를 사용하여 출력을 stderr로 리다이렉션합니다. 기본 예는 다음과 같습니다:
 
-# 표준 출력 예제
-echo "이것은 표준 출력입니다."
+```bash
+echo "This is a normal message"
+echo "이것은 에러 메시지입니다" >&2
+```
 
-# 표준 오류 출력 예제
-echo "이것은 표준 오류입니다." >&2
+이 스크립트를 실행하면 두 메시지 모두 콘솔에 표시되지만, 리다이렉션하면 stdout과 stderr을 분리할 수 있습니다. 예를 들어:
 
-# 사용 예시
-if [[ -z "$1" ]]; then
-    echo "사용법: $0 파일명" >&2
+```bash
+bash script.sh > output.txt 2> error.txt
+```
+
+`output.txt`는 `"This is a normal message"`를 포함하고, `error.txt`는 `"이것은 에러 메시지입니다"`를 캡처할 것입니다.
+
+실용적인 사용 사례를 고려해보면, 파일을 처리하고 파일이 존재하지 않으면 에러를 보고하는 스크립트입니다:
+
+```bash
+filename="example.txt"
+
+if [ ! -f "$filename" ]; then
+    echo "$filename does not exist!" >&2
     exit 1
+else
+    echo "Processing $filename"
 fi
 ```
 
-출력 예제:
+`example.txt`가 존재하지 않을 때 콘솔에서 직접적인 샘플 출력:
+
 ```
-이것은 표준 출력입니다.
-이것은 표준 오류입니다.
+example.txt does not exist!
 ```
 
-## Deep Dive
-표준 오류는 유닉스(Unix)와 리눅스(Linux) 시스템의 초기부터 사용되었습니다. `2>`를 이용하여 오류 출력을 파일이나 다른 명령어로 리다이렉트할 수 있습니다. `1>` 또는 `>`를 사용하여 표준 출력을 리다이렉트할 수 있으며, 파이프(`|`)는 기본적으로 표준 출력만을 다음 명령어로 넘깁니다. 표준 오류를 다루는 다른 방법으로는 `stderr 2>&1`과 같이 표준 오류를 표준 출력과 병합할 수도 있습니다.
-
-## See Also
-- GNU Bash documentation: https://www.gnu.org/software/bash/manual/
-- Advanced Bash-Scripting Guide: https://www.tldp.org/LDP/abs/html/
-- Stack Overflow Questions on Bash: https://stackoverflow.com/questions/tagged/bash
+Bash에서 stderr를 처리하기 위한 직접적인 제3자 라이브러리는 없으며, 리다이렉션이 기본적으로 지원되어 일반적으로 충분합니다. 그러나 복잡한 애플리케이션의 경우, stdout과 stderr를 더 효과적으로 관리하기 위해 로깅 프레임워크나 외부 로깅 도구인 `syslog` 또는 `log4bash`와 같은 것을 도입할 수 있습니다.

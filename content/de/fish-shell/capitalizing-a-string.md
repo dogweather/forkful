@@ -1,47 +1,57 @@
 ---
-title:                "String in Großbuchstaben umwandeln"
-date:                  2024-01-19
-simple_title:         "String in Großbuchstaben umwandeln"
-
+title:                "Einen String großschreiben"
+date:                  2024-02-03T19:05:22.454498-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Einen String großschreiben"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/fish-shell/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Was & Warum?)
-Großschreibung wandelt alle Buchstaben eines Strings in Großbuchstaben um. Diese Operation hilft bei der Vereinheitlichung von Eingabedaten oder bei der Benutzerinteraktion, indem sie z.B. Schlagworte in Texten hervorhebt.
+## Was & Warum?
 
-## How to: (Wie macht man das?)
-In Fish Shell ist das Kapitalisieren eines Strings simpel. Hier sind ein paar Code-Beispiele:
+Das Kapitalisieren eines Strings bedeutet, ihn so zu modifizieren, dass der erste Buchstabe großgeschrieben und der Rest des Strings kleingeschrieben wird. Dies ist eine gängige Aufgabe bei der Textverarbeitung, der Normalisierung von Benutzereingaben und der Datenformatierung, um Konsistenz zu gewährleisten oder bestimmte Formatierungskriterien zu erfüllen.
 
-```Fish Shell
-# Beispiel 1: Einen String in Großbuchstaben umwandeln
-set my_string "wie geht's?"
-echo $my_string | string to-upper
+## Wie geht das:
 
-# Ausgabe: WIE GEHT'S?
+In Fish Shell können Strings direkt mit eingebauten Funktionen manipuliert werden, ohne dass externe Tools oder Bibliotheken erforderlich sind. Um einen String zu kapitalisieren, können Sie den `string`-Befehl mit Unterbefehlen kombinieren.
+
+```fish
+# Beispiel-String
+set sample_string "hello world"
+
+# Ersten Buchstaben großschreiben
+set capitalized_string (string sub -l 1 -- $sample_string | string upper)(string sub -s 2 -- $sample_string)
+
+echo $capitalized_string
 ```
 
-```Fish Shell
-# Beispiel 2: Kapitalisiere jeden Buchstaben in einer Liste von Strings
-set my_list "hallo" "welt" "fish shell"
-for word in $my_list
-    echo $word | string to-upper
-end
-
-# Ausgabe:
-# HALLO
-# WELT
-# FISH SHELL
+Ausgabe:
+```
+Hello world
 ```
 
-## Deep Dive (Tiefere Einblicke)
-Kapitalisierung in Programmiersprachen ist weit verbreitet und reicht bis in die frühen Tage der Computerei zurück. In Fish Shell wird der Kapitalisierungsbefehl `string to-upper` direkt unterstützt, was nicht in allen Shells der Fall ist. Alternativen in anderen Shells nutzen oft externe Programme wie `tr`, `awk`, oder `sed`.
+Für Szenarien, die die Kapitalisierung mehrerer Wörter in einem String erfordern (z. B. die Umwandlung von "hello world" in "Hello World"), würden Sie über jedes Wort iterieren und die Kapitalisierungslogik auf jedes anwenden:
 
-Die Implementierung in Fish Shell ist effektiv und benutzerfreundlich, da `string` eine eingebaute Funktion der Shell ist und keine externen Aufrufe notwendig macht. Diese integrierte Funktion macht die Arbeit mit Strings schneller und reduziert die Fehleranfälligkeit im Vergleich zu mehrschrittigen Prozessen in anderen Shells.
+```fish
+# Beispiel-Satz
+set sentence "hello fish shell programming"
 
-## See Also (Weitere Quellen)
-- [Fish Shell Documentation on String Manipulation](https://fishshell.com/docs/current/cmds/string.html)
-- [Fish Shell Tutorial](https://fishshell.com/docs/current/tutorial.html)
-- [GNU `awk` user's guide](https://www.gnu.org/software/gawk/manual/gawk.html)
+# Jedes Wort kapitalisieren
+set capitalized_words (string split " " -- $sentence | while read -l word; string sub -l 1 -- $word | string upper; and string sub -s 2 -- $word; end)
+
+# Die kapitalisierten Wörter verbinden
+set capitalized_sentence (string join " " -- $capitalized_words)
+
+echo $capitalized_sentence
+```
+
+Ausgabe:
+```
+Hello Fish Shell Programming
+```
+
+Beachten Sie, dass Fish Shell keinen direkten Ein-Befehl-Ansatz für die vollständige Satzkapitalisierung bietet, wie es einige Programmiersprachen mit ihren String-Methoden tun. Daher stellt die Kombination von `string split`, `string sub`, `string upper` und anschließendem Wiederzusammenfügen einen idiomatischen Ansatz in Fish Shell dar, um dies zu erreichen.

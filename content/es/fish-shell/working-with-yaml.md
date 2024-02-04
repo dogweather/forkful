@@ -1,61 +1,82 @@
 ---
 title:                "Trabajando con YAML"
-date:                  2024-01-19
+date:                  2024-02-03T19:25:23.602298-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Trabajando con YAML"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/fish-shell/working-with-yaml.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Qué y Por Qué?
+## ¿Qué y por qué?
+Trabajar con YAML implica analizar y manipular archivos YAML (YAML Ain't Markup Language), un formato de serialización de datos utilizado para archivos de configuración, en Fish Shell. Los programadores hacen esto para automatizar y configurar aplicaciones o servicios de manera eficiente dentro del contexto de entornos de shell, facilitando tareas como la gestión de configuraciones y la provisión de recursos.
 
-El YAML es un formato de serialización de datos legible por humanos, usado frecuentemente para los archivos de configuración. Los programadores lo utilizan por su simplicidad y facilidad de leer, especialmente en configuraciones complejas y proyectos que involucran múltiples lenguajes de programación.
+## Cómo hacerlo:
+Fish Shell no tiene soporte integrado para analizar YAML, pero puedes utilizar herramientas de terceros como `yq` (un procesador de YAML de línea de comandos ligero y portátil) para manejar datos YAML.
 
-## Cómo:
-
-En Fish Shell, no hay herramientas incorporadas para manejar YAML de manera nativa, pero puedes usar `yq`, una herramienta de línea de comandos basada en `jq`. Primero, instala `yq` usando Homebrew:
-
-```Fish Shell
-brew install yq
+**Instalación de yq (si aún no está instalado):**
+```fish
+sudo apt-get install yq
 ```
 
-Luego, puedes leer un archivo YAML:
-
-```Fish Shell
-yq e '.raíz.nodo' archivo.yaml
+**Leyendo un valor de un archivo YAML:**
+Supongamos que tienes un archivo YAML `config.yaml` con el siguiente contenido:
+```yaml
+database:
+  host: localhost
+  port: 3306
 ```
 
-O modificar un archivo YAML:
-
-```Fish Shell
-yq e '.raíz.nodo = "valorNuevo"' -i archivo.yaml
+Para leer el host de la base de datos, usarías:
+```fish
+set host (yq e '.database.host' config.yaml)
+echo $host
+```
+**Salida de ejemplo:**
+```
+localhost
 ```
 
-Comandos y salida de ejemplo para agregar un elemento a una lista:
-
-```Fish Shell
-echo -e "frutas:\n  - manzana\n  - banana" > frutas.yaml
-yq e '.frutas += "naranja"' -i frutas.yaml
-cat frutas.yaml
+**Actualizando un valor en un archivo YAML:**
+Para actualizar el `puerto` a `5432`, usa:
+```fish
+yq e '.database.port = 5432' -i config.yaml
+```
+**Verificar la actualización:**
+```fish
+yq e '.database.port' config.yaml
+```
+**Salida de ejemplo:**
+```
+5432
 ```
 
-Salida:
-
-```YAML
-frutas:
-  - manzana
-  - banana
-  - naranja
+**Escribiendo un nuevo archivo YAML:**
+Para crear un nuevo `new_config.yaml` con contenido predefinido:
+```fish
+echo "webserver:
+  host: '127.0.0.1'
+  port: 8080" | yq e -P - > new_config.yaml
 ```
+Esto utiliza `yq` para procesar e imprimir de forma bonita (-P flag) una cadena en un nuevo archivo YAML.
 
-## Profundización
+**Analizando estructuras complejas:**
+Si tienes un archivo YAML más complejo y necesitas buscar matrices o objetos anidados, puedes:
+```fish
+echo "servers:
+  - name: server1
+    ip: 192.168.1.101
+  - name: server2
+    ip: 192.168.1.102" > servers.yaml
 
-El YAML fue creado en 2001 y es un acrónimo para "YAML Ain't Markup Language". El diseño enfatiza la facilidad de lectura y soporta estructuras de datos como listas, mapas y escalares. Aunque JSON y XML son alternativas populares, YAML es preferido en ciertos entornos debido a su concisión y legibilidad. El uso correcto de `yq` y su integración en Fish Shell puede simplificar enormemente la manipulación de archivos YAML en múltiples contextos.
-
-## Ver También
-
-- Documentación oficial de `yq`: [https://mikefarah.gitbook.io/yq/](https://mikefarah.gitbook.io/yq/)
-- YAML 1.2 especificación oficial: [https://yaml.org/spec/1.2/spec.html](https://yaml.org/spec/1.2/spec.html)
-- Introducción a YAML para principiantes: [https://learnxinyminutes.com/docs/yaml/](https://learnxinyminutes.com/docs/yaml/)
+yq e '.servers[].name' servers.yaml
+```
+**Salida de ejemplo:**
+```
+server1
+server2
+```
+Utilizando `yq`, Fish Shell hace que sea sencillo navegar a través de documentos YAML y manipularlos para diversas tareas de automatización y configuración.

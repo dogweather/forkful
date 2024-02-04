@@ -1,32 +1,55 @@
 ---
-title:                "Skriva en textfil"
-date:                  2024-01-19
-simple_title:         "Skriva en textfil"
-
+title:                "Att skriva en textfil"
+date:                  2024-02-03T19:28:17.074415-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Att skriva en textfil"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/kotlin/writing-a-text-file.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att skriva till en textfil innebär att spara data som textsträngar i en fil. Programmerare gör det för att bevara data mellan sessioner, dela information eller för loggning.
+Att skriva en textfil i Kotlin innebär att skapa en fil och mata in textinnehåll i den, en vanlig uppgift för att lagra data, logga eller konfigurationsinställningar. Programmerare gör detta för att spara och manipulera data utanför det flyktiga minnesutrymmet, vilket säkerställer beständighet över sessioner.
 
-## Hur gör man:
-```Kotlin
+## Hur man gör:
+Kotlin tillhandahåller ett enkelt tillvägagångssätt för att skriva till filer, genom att dra nytta av standardbiblioteket utan att behöva ytterligare tredjepartsbibliotek. Här är ett enkelt exempel:
+
+```kotlin
 import java.io.File
 
 fun main() {
-    val text = "Hej, det här är text sparad i en fil!"
-    File("exempel.txt").writeText(text)
-    println("Texten har sparats!")
+    val textToWrite = "Hej, Kotlin filskrivning!"
+    File("example.txt").writeText(textToWrite)
 }
 ```
-Detta skapar en fil `exempel.txt` och skriver texten "Hej, det här är text sparad i en fil!" till den.
+Denna kodsnutt skapar en fil med namnet "example.txt" i projektets rotkatalog och skriver strängen `Hej, Kotlin filskrivning!` i den. Om filen redan finns kommer den att skrivas över.
 
-## Fördjupning
-Att skriva textfiler är ett klassiskt programmeringsbehov som har funnits ända sedan de tidiga datordagarna. Alternativ till `writeText` inkluderar strömmar (som `FileOutputStream` eller `PrintWriter`) för större filer eller mer kontroll. `writeText` använder `UTF-8` som standard och skriver om filen; för att lägga till text, använd `appendText`.
+För mer kontrollerad tillägg till en fil eller skrivning av större mängder data, kan du använda `appendText` eller `bufferedWriter()`:
 
-## Se även
-- [Kotlin API Reference for File](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/)
-- [Tutorial on file handling in Kotlin](https://kotlinlang.org/docs/tutorials/kotlin-for-py/file-io.html)
+```kotlin
+import java.io.File
+
+fun appendToFile() {
+    val moreText = "Lägger till mer text."
+    File("example.txt").appendText(moreText)
+}
+
+fun writeWithBufferedWriter() {
+    val largeText = "Stora mängder text...\nPå flera linjer."
+    File("output.txt").bufferedWriter().use { out ->
+        out.write(largeText)
+    }
+}
+
+fun main() {
+    appendToFile() // Lägger till text till den befintliga filen
+    writeWithBufferedWriter() // Skriver stora textdata effektivt
+}
+```
+
+I funktionen `appendToFile` lägger vi till mer text till "example.txt" utan att skriva över dess nuvarande innehåll. Funktionen `writeWithBufferedWriter` visar ett effektivt sätt att skriva stora mängder text eller data, särskilt användbart för att minimera I/O-operationer när man hanterar flera rader eller stora filer.
+
+Dessa exempel täcker grundläggande operationer för att skriva textfiler i Kotlin, och visar enkelheten och kraften i Kotlin standardbibliotek för fil-I/O-operationer.

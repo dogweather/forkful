@@ -1,45 +1,83 @@
 ---
 title:                "קבלת התאריך הנוכחי"
-date:                  2024-01-20T15:13:42.398222-07:00
+date:                  2024-02-03T19:09:35.436758-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "קבלת התאריך הנוכחי"
-
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/cpp/getting-the-current-date.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## מה ולמה?
-לקבל את התאריך הנוכחי בתכנות זה לשאול את המערכת, "איזה יום אנחנו היום?" זה נחוץ ליומן אירועים, להדפיס זמנים על קבצים, ליצור תגובות תקופתיות, ועוד.
+אחזור התאריך הנוכחי ב-C++ הוא משימה יסודית עבור תוכניות הזקוקות לעיבוד או הצגת תאריכים בהתבסס על שעון המערכת. זה חיוני לתיעוד, חותמות זמן, תזמון משימות, וכל פונקציונליות המתבססת על תאריכים וזמן.
 
-## איך לעשות:
-ב-C++20, יש מודול חדש ליצירת תאריכים בקלות. ננסה אותו:
+## איך ל:
+C++ מספק מספר דרכים לקבל את התאריך הנוכחי, כולל הספרייה הסטנדרטית של C++ וספריות של צד שלישי כגון Boost. הדוגמאות הבאות מדגימות איך לבצע את המשימה הזו.
 
-```C++
-#include <chrono>
+### באמצעות `<chrono>` (C++20 ואילך)
+C++20 הציג פונקציונליות נוספת בספרייה `<chrono>`, ההופכת את קבלת התאריך הנוכחי לפשוטה יותר:
+```cpp
 #include <iostream>
-#include <format>
+#include <chrono>
+#include <format> // עבור std::format (C++20)
 
 int main() {
-    auto current_time = std::chrono::system_clock::now(); // שואלים את השעה מהמחשב
-    std::time_t current_time_t = std::chrono::system_clock::to_time_t(current_time);
+    auto current_time_point = std::chrono::system_clock::now(); // לכידת הזמן הנוכחי
+    auto current_time_t = std::chrono::system_clock::to_time_t(current_time_point); // המרה ל-time_t
 
-    // מדפיסים עם פורמט ידידותי
-    std::cout << std::format("התאריך והשעה כרגע: {:%F %T}\n", std::chrono::system_clock::from_time_t(current_time_t));
+    // פורמט הזמן לפורמט קריא
+    std::cout << "Current Date: " << std::format("{:%Y-%m-%d}", std::chrono::system_clock::to_time_t(current_time_point)) << std::endl;
+
     return 0;
 }
 ```
-
-פלט שיכול לצאת מזה יראה כך:
+**פלט לדוגמה:**
+```plaintext
+Current Date: 2023-03-15
 ```
-התאריך והשעה כרגע: 2023-04-05 14:55:31
+
+### באמצעות `<ctime>`
+למתכנתים העובדים עם גרסאות ישנות יותר של C++ או אלה המעדיפים את הספרייה המסורתית של C:
+```cpp
+#include <iostream>
+#include <ctime>
+
+int main() {
+    std::time_t t = std::time(0); // קבלת הזמן הנוכחי
+    std::tm* now = std::localtime(&t);
+    std::cout << "Current Date: " 
+              << (now->tm_year + 1900) << '-' 
+              << (now->tm_mon + 1) << '-'
+              <<  now->tm_mday
+              << std::endl;
+
+    return 0;
+}
+```
+**פלט לדוגמה:**
+```plaintext
+Current Date: 2023-03-15
 ```
 
-## טבילת אש:
-כבר ב-1970, בתקנים הראשונים של C, היה סטנדרט להגדרת זמנים נקרא 'epoch', והוא התחיל ב-1 בינואר 1970. המידע על הזמן מאז נשמר במשתנה מסוג `time_t`. היום, ל-C++ יש תשתיות מזמן (`<chrono>`) עם אובייקטים ופונקציות עדכניות שמקלות על השימוש והפורמטים. לפני C++20, היינו נתקלים בשימוש בפונקציות כמו `strftime` ו-`localtime` לאותו מטרה, ואפשר עדיין למצוא קוד כזה. למרות היופי שב-STL חדשה ומתוקנת, כדאי לזכור שקוד קיים עדיין משתמש לעיתים רבות בגישות הישנות.
+### באמצעות Boost Date_Time
+לפרויקטים המשתמשים בספריות של Boost, ספריית Boost Date_Time מציעה דרך חלופית לקבל את התאריך הנוכחי:
+```cpp
+#include <iostream>
+#include <boost/date_time.hpp>
 
-## ראה גם:
-- [cppreference.com - std::chrono](https://en.cppreference.com/w/cpp/chrono)
-- [cppreference.com - std::format](https://en.cppreference.com/w/cpp/utility/format)
-- [cplusplus.com - C Date & Time](http://www.cplusplus.com/reference/ctime/) (על גישות ישנות יותר)
-- [ISO C++ - Working Draft](https://isocpp.org/std/the-standard) (הטיוטה הנוכחית של התקן C++)
+int main() {
+    // קבלת היום הנוכחי באמצעות לוח השנה הגרגוריאני של Boost
+    boost::gregorian::date today = boost::gregorian::day_clock::local_day();
+    std::cout << "Current Date: " << today << std::endl;
+
+    return 0;
+}
+```
+**פלט לדוגמה:**
+```plaintext
+Current Date: 2023-Mar-15
+```
+הדוגמאות הללו מספקות בסיס יסודי לעבודה עם תאריכים ב-C++, הכרחי עבור מגוון רחב של יישומים.

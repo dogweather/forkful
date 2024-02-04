@@ -1,45 +1,77 @@
 ---
 title:                "Tekstitiedoston kirjoittaminen"
-date:                  2024-01-19
+date:                  2024-02-03T19:27:22.303704-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Tekstitiedoston kirjoittaminen"
-
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/cpp/writing-a-text-file.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Tekstitiedostojen kirjoittaminen tarkoittaa datan tallentamista luettavaan muotoon tiedostoon. Ohjelmoijat kirjoittavat tekstitiedostoja, koska se on helppo tapa tallentaa ja jakaa tietoa.
+## Mikä & Miksi?
+Tekstitiedostoon kirjoittaminen C++:lla sisältää tiedoston luomisen tai avaamisen ja sitten datan kirjoittamisen siihen, mikä on perustavaa laatua oleva tehtävä sovelluksille, jotka tarvitsevat tietojen säilyttämistä, kuten lokit, käyttäjän luoma sisältö tai konfiguraatioasetukset. Ohjelmoijat tekevät tämän tallentaakseen datan, joka on luotu ohjelman suorituksen aikana tai viedäkseen datan käytettäväksi muissa ohjelmissa tai käyttäjien toimesta.
 
-## How to:
-```C++
-#include <iostream>
+## Kuinka:
+C++ tarjoaa useita tapoja kirjoittaa tekstitiedostoon, mutta yksi suoraviivaisimmista menetelmistä on `<fstream>`-kirjaston käyttö, joka tarjoaa `ofstream` (output file stream) -luokan, joka on suunniteltu tiedoston kirjoitusoperaatioille.
+
+### Esimerkki käyttäen `<fstream>`:
+
+```cpp
 #include <fstream>
-#include <string>
+#include <iostream>
 
 int main() {
-    std::ofstream outFile("esimerkki.txt");
-    if (outFile.is_open()) {
-        outFile << "Hei, tämä on tekstirivi tiedostossa.\n";
-        outFile << "Toinenkin rivi tekstiä.\n";
-        outFile.close();
+    std::ofstream file("example.txt");
+    if (file.is_open()) {
+        file << "Hello, world!\n";
+        file << "Kirjoittaminen tiedostoon C++:lla on yksinkertaista.";
+        file.close();
     } else {
-        std::cerr << "Tiedoston avaus epäonnistui.\n";
+        std::cerr << "Tiedoston avaaminen epäonnistui\n";
     }
     return 0;
 }
 ```
-Sample output in "esimerkki.txt":
+
+**Esimerkkituloste 'example.txt'-tiedostossa:**
 ```
-Hei, tämä on tekstirivi tiedostossa.
-Toinenkin rivi tekstiä.
+Hello, world!
+Kirjoittaminen tiedostoon C++:lla on yksinkertaista.
 ```
 
-## Deep Dive
-Alun perin C++ käytti C:n FILE* osoittimia tiedoston käsittelyyn. `std::ofstream` tuli myöhemmin C++:n standardikirjastoon parempana työkaluna tiedostojen kirjoittamiseen. `ofstream` on osa "fstream"-kirjastoa (file stream), ja se tukee RAII-periaatetta, joka automatisoi resurssien hallinnan. Vaihtoehtoisesti voitaisiin käyttää moderneja C++17-filesystem-kirjaston toimintoja tai vanhempia C:n "stdio.h"-tyyppisiä funktioita.
+Kun käsitellään monimutkaisempaa dataa tai tarvitaan enemmän kontrollia kirjoitusprosessiin, ohjelmoijat saattavat kääntyä kolmannen osapuolen kirjastojen, kuten Boost Filesystem, puoleen.
 
-## See Also
-- C++ Standard Library Documentation: [http://www.cplusplus.com/reference/fstream/ofstream/](http://www.cplusplus.com/reference/fstream/ofstream/)
-- C++ Filesystem Library: [https://en.cppreference.com/w/cpp/filesystem](https://en.cppreference.com/w/cpp/filesystem)
-- C I/O Functions Tutorial: [https://www.tutorialspoint.com/cprogramming/c_input_output.htm](https://www.tutorialspoint.com/cprogramming/c_input_output.htm)
+### Esimerkki käyttäen Boost Filesystem:
+
+Boostia tiedosto-operaatioihin käyttäessäsi sinun täytyy ensin asentaa Boost-kirjastot. Seuraava esimerkki demonstroi tiedoston luomista ja kirjoittamista käyttäen `boost::filesystem` ja `boost::iostreams`.
+
+```cpp
+#include <boost/filesystem.hpp>
+#include <boost/iostreams/device/file.hpp>
+#include <boost/iostreams/stream.hpp>
+#include <iostream>
+
+namespace io = boost::iostreams;
+namespace fs = boost::filesystem;
+
+int main() {
+    fs::path filePath("boost_example.txt");
+    io::stream_buffer<io::file_sink> buf(filePath.string());
+    std::ostream out(&buf);
+    out << "Boost tekee tiedosto-operaatioista helppoja.\n";
+    out << "Tämä on rivi kirjoitettu Boostilla.";
+    
+    return 0;
+}
+```
+
+**Esimerkkituloste 'boost_example.txt'-tiedostossa:**
+```
+Boost tekee tiedosto-operaatioista helppoja.
+Tämä on rivi kirjoitettu Boostilla.
+```
+
+Valinta raakojen C++ ja kolmannen osapuolen kirjaston, kuten Boost, välillä riippuu projektisi erityisvaatimuksista ja kuinka paljon kontrollia tai joustavuutta tarvitset tiedosto I/O -operaatioihin.

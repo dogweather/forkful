@@ -1,60 +1,104 @@
 ---
-title:                "YAML-tiedostojen käsittely"
-date:                  2024-01-19
-simple_title:         "YAML-tiedostojen käsittely"
-
+title:                "Työskentely YAML:n kanssa"
+date:                  2024-02-03T19:26:47.895478-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Työskentely YAML:n kanssa"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/rust/working-with-yaml.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? 
-"Mitä & Miksi?"
+## Mikä ja miksi?
 
-YAML on ihmislukuisen datan serialisointiformaatti konfiguraatioille, hallintaan ja sovellusten asetuksiin. Ohjelmoijat käyttävät YAMLia, koska se on helppolukuinen, muokattava ja yleisesti tuettu eri teknologioissa.
+Rust-ohjelmoinnissa YAML:n (YAML Ain't Markup Language) kanssa työskentely on YAML-muodossa olevan datan jäsentämisen ja tuottamisen käsittelemistä. YAML on ihmisen luettava tietojen sarjallistamisstandardi. Ohjelmoijat integroivat YAML-käsittelyn Rustiin sovellusten konfigurointia, asetusten hallintaa tai monimutkaisten tietorakenteiden käsittelyä varten selkeässä ja luettavassa muodossa, hyödyntäen sen yksinkertaisuutta JSON:n tai XML:n yli konfiguraatiotiedostoissa ja datan vaihdossa.
 
-## How to:
-"Kuinka tehdä:"
+## Kuinka:
 
-Rust-ohjelmissa YAML käsitellään 'serde_yaml' kirjaston avulla:
+Rust ei tue YAML:ää sen vakio kirjastossa, joten yleensä käytämme kolmannen osapuolen crateja kuten `serde` (datan serialisointiin ja deserialisointiin) yhdessä `serde_yaml`:n kanssa.
 
-```Rust
-use serde::{Serialize, Deserialize};
+Lisää ensin riippuvuudet `Cargo.toml`-tiedostoosi:
+
+```toml
+[dependencies]
+serde = { version = "1.0", features = ["derive"] }
+serde_yaml = "0.8"
+```
+
+Katsotaan nyt, miten YAML-merkkijono deserialisoidaan Rust-rakenteeseen ja miten Rust-rakenne serialisoidaan takaisin YAML-merkkijonoksi.
+
+### YAML:n Deserialisointi Rust-Rakenteisiin
+
+Määritä Rust-rakenne, joka peilaa odottamaasi dataa YAML:ssa. Käytä Serde-attribuutteja mukauttamisen tarvittaessa.
+
+```rust
+use serde::{Deserialize, Serialize};
 use serde_yaml;
 
-#[derive(Debug, Serialize, Deserialize)]
+#[derive(Debug, PartialEq, Serialize, Deserialize)]
 struct Config {
-    username: String,
-    language: String,
+    name: String,
+    durability: i32,
+    owner: Owner,
+}
+
+#[derive(Debug, PartialEq, Serialize, Deserialize)]
+struct Owner {
+    name: String,
+    age: i32,
 }
 
 fn main() {
-    let yaml_str = r#"
-username: "kayttajanimi"
-language: "Finnish"
-"#;
-    let config: Config = serde_yaml::from_str(yaml_str).expect("Invalid YAML format");
-    
-    println!("Username: {}", config.username);
-    println!("Language: {}", config.language);
+    let yaml_data = "
+name: Kilpi
+durability: 300
+owner:
+  name: Steve
+  age: 25
+";
+
+    let deserialized_config: Config = serde_yaml::from_str(yaml_data).unwrap();
+    println!("{:?}", deserialized_config);
 }
 ```
 
-Tuloste:
+Esimerkkituloste, kun yllä oleva Rust-koodi suoritetaan, olisi:
+
+```plaintext
+Config { name: "Kilpi", durability: 300, owner: Owner { name: "Steve", age: 25 } }
 ```
-Username: kayttajanimi
-Language: Finnish
+
+### Rust-Rakenteiden Serialisointi YAML:ksi
+
+Tämä esimerkki ottaa edellisessä osassa `Config`-rakenteen ja serialisoi sen takaisin YAML-muotoon.
+
+```rust
+fn main() {
+    let config = Config {
+        name: String::from("Kirves"),
+        durability: 120,
+        owner: Owner {
+            name: String::from("Alex"),
+            age: 30,
+        },
+    };
+
+    let serialized_yaml = serde_yaml::to_string(&config).unwrap();
+    println!("{}", serialized_yaml);
+}
 ```
 
-## Deep Dive:
-"Syvä sukellus:"
+Odotettu tulos on YAML-muodossa oleva merkkijono:
 
-YAML (YAML Ain't Markup Language) on kehitetty vuonna 2001 XML:n yksinkertaisemmaksi vaihtoehdoksi. Rustissa, 'serde_yaml' käyttää 'serde' (serialization/deserialization) kirjastoa datan käsittelyyn, ja se on yksi suosituimmista lähestymistavoista ruostepuolella. JSON ja TOML ovat suosittuja vaihtoehtoja YAMLille, mutta YAML on erottuva sen ihmislukuisuuden ja monimutkaisempien rakenteiden esittämiskyvyn ansiosta.
+```yaml
+---
+name: Kirves
+durability: 120
+owner:
+  name: Alex
+  age: 30
+```
 
-## See Also:
-"Katso myös:"
-
-- Serde YAML dokumentaatio: [Serde YAML](https://docs.rs/serde_yaml/)
-- YAML virallinen sivusto: [YAML](https://yaml.org)
-- Rust serialization/deserialization 'serde' kirjasto: [Serde](https://serde.rs)
+Nämä katkelmat osoittavat, miten voit tehokkaasti integroida YAML:n jäsentämisen ja tuottamisen Rust-sovelluksiisi, käyttäen suosittuja `serde`- ja `serde_yaml`-crates-paketteja, käsittellen monimutkaisia tietorakenteita ja tarjoten yksinkertaiset, ihmisen luettavat konfiguraatiot.

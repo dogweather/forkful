@@ -1,37 +1,44 @@
 ---
 title:                "Merkkijonon muuttaminen isoiksi kirjaimiksi"
-date:                  2024-01-19
+date:                  2024-02-03T19:06:21.983477-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Merkkijonon muuttaminen isoiksi kirjaimiksi"
-
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/ruby/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Mikä & Miksi?)
-Isoilla kirjaimilla kirjoittaminen muuttaa merkkijonon ensimmäisen kirjaimen isoksi. Ohjelmoijat käyttävät sitä, kun haluavat korostaa jotain, kuten nimen alun tai otsikon.
+## Mikä ja miksi?
+Merkkijonon alkukirjaimen suurentaminen ohjelmoinnissa viittaa yleensä ensimmäisen merkin muuntamiseen suuraakkoseksi ja lopun pienaakkosiksi. Ohjelmoijat tekevät näin syistä kuten noudattaakseen nimeämiskonventioita, parantaakseen tulosteiden luettavuutta tai varmistaakseen tietojen johdonmukaisuuden vertailuissa ja tallennuksessa.
 
-## How to: (Kuinka tehdä:)
-```Ruby
-# Käytä 'capitalize' metodia aloittaaksesi merkkijonon isolla kirjaimella
-puts "suomi".capitalize  # Tulostaa "Suomi"
+## Miten:
+Ruby tarjoaa suoraviivaisia ​​metodeja merkkijonojen käsittelyyn, mukaan lukien alkukirjaimen suurentaminen. Näin voit suurentaa merkkijonon alkukirjaimen Rubylla:
 
-# Ketjuta 'capitalize' toisiin metodeihin muokkauksen laajentamiseksi
-puts "hei maailma".split.each(&:capitalize).join(' ')  # Tulostaa "Hei Maailma"
-
-# Rails-kehyksessä 'titleize' metodi voi olla kätevä
-puts "hei maailma".titleize  # Tulostaa "Hei Maailma" (vain Railsissa)
+```ruby
+# Rubyn sisäänrakennettu metodi
+string = "hello world"
+capitalized_string = string.capitalize
+puts capitalized_string # => "Hello world"
 ```
 
-## Deep Dive (Sukellus syvälle):
-String-objektin pääkuori on ollut Rubyssa alusta asti. 'Capitalize'-metodi on suoraviivainen: se tekee ensimmäisestä kirjaimesta ison ja loput pieniksi. Historiallisesti tämä on yksinkertaistanut tekstinkäsittelyä. Vaihtoehtoja sisältävät 'upcase' (muuttaa kaikki kirjaimet isoiksi), 'downcase' (muuttaa kaikki pieniksi), ja 'swapcase' (vaihtaa isoja ja pieniä kirjaimia päittäin).
+Rubyn `.capitalize` metodi on kätevä, mutta se vaikuttaa vain ensimmäiseen kirjaimeen. Jos haluat enemmän hallintaa tai suurentaa jokaisen sanan alkukirjaimen merkkijonossa (tunnetaan nimellä nimiraja), saatat haluta käyttää `titleize` metodia Railsin ActiveSupport-laajennuksesta, tai toteuttaa sen itse:
 
-Rails-kehyksen 'titleize' metodi menee pidemmälle muuttaen jokaisen sanan ensimmäisen kirjaimen isoksi. Se on osa Railsin 'Active Support' -kirjastoa, ei puhtaan Rubyn kielen sisäänrakennettua toiminnallisuutta.
+```ruby
+# Käyttäen ActiveSupportin 'titleize' Railsissa
+require 'active_support/core_ext/string/inflections'
+string = "hello world"
+puts string.titleize # => "Hello World"
+```
 
-Rubiini toteuttaa merkkijono-operaatiot erittäin tehokkaasti, joten vaikka käsitteletkin suuria tekstimääriä, 'capitalize' ja muut vastaavat metodit toimivat sulavasti.
+Jos et käytä Railsia tai suosit puhdasta Ruby-ratkaisua, tässä on miten saatat suurentaa jokaisen sanan alkukirjaimen merkkijonossa:
 
-## See Also (Katso myös):
-- Rubyn dokumentaatio String#capitalize -metodista: [ruby-doc.org/core/String.html#method-i-capitalize](https://ruby-doc.org/core/String.html#method-i-capitalize)
-- Rails-dokumentaatio String#titleize -metodista Active Support -kirjastosta (vain jos käytät Railsia): [api.rubyonrails.org/classes/String.html#method-i-titleize](https://api.rubyonrails.org/classes/String.html#method-i-titleize)
-- Ruby Style Guide, hyvät käytännöt Rubyn kirjoittamiseen: [rubystyle.guide](https://rubystyle.guide)
+```ruby
+string = "hello world"
+capitalized_each_word = string.split.map(&:capitalize).join(' ')
+puts capitalized_each_word # => "Hello World"
+```
+
+Tämä menetelmä jakaa merkkijonon sanalistan, suurentaa jokaisen sanan alkukirjaimen, ja liittää ne sitten takaisin yhteen välilyönnillä.

@@ -1,49 +1,89 @@
 ---
 title:                "Scrivere test"
-date:                  2024-01-19
+date:                  2024-02-03T19:30:40.037112-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Scrivere test"
-
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/elm/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Cosa & Perché?
-Scrivere test consiste nel creare casi d'uso per provare che il codice funzioni come previsto. I programmatori li usano per assicurarsi che il codice sia robusto e per ridurre i bug durante gli aggiornamenti.
+
+Scrivere test in Elm comporta la creazione di casi di test per verificare la correttezza del tuo codice Elm, assicurandosi che si comporti come previsto. I programmatori lo fanno per individuare i bug in anticipo, facilitare la manutenzione e migliorare la qualità e l'affidabilità delle loro applicazioni.
 
 ## Come fare:
-```Elm
-import Expect exposing (Expectation)
-import Test exposing (Test, describe, test)
-import Test.Runner.Node
+
+Elm utilizza il pacchetto `elm-explorations/test` per scrivere test unitari e fuzz. Inizia aggiungendo il pacchetto al tuo progetto:
+
+```elm
+elm install elm-explorations/test
+```
+
+Crea un file di test, per esempio `tests/ExampleTest.elm`, e importa i moduli di testing. Ecco un semplice test che verifica una funzione `add : Int -> Int -> Int`:
+
+```elm
+module ExampleTest exposing (..)
+
+import Expect
+import Test exposing (..)
+import YourModuleName exposing (add)
 
 suite : Test
 suite =
-    describe "Esempio test"
-        [ test "Verifica dell'addizione" <|
-            \_ -> Expect.equal (2 + 3) 5
-        , test "Confronto liste" <|
-            \_ -> Expect.equal [1, 2, 3] [1, 2, 3]
+    describe "Una semplice funzione di addizione"
+        [ test "Aggiungendo 2 e 3 si ottiene 5" <| 
+            \_ -> add 2 3 |> Expect.equal 5
         ]
 
--- Per eseguire il test, usa il seguente comando nella CLI:
--- elm-test
 ```
 
-Output previsto:
-```
-TEST RUN PASSED
+Per eseguire i tuoi test, avrai bisogno di `elm-test`:
 
-Esempio test
-    Verifica dell'addizione: PASSED
-    Confronto liste: PASSED
-
-2 tests ran, all passed
+```shell
+npm install -g elm-test
+elm-test
 ```
 
-## Approfondimento
-Elm rende i test una comodità piuttosto che un'opzione. A differenza di JavaScript, dove il testing si è evoluto con più framework, Elm ha `elm-test` come scelta principale, creato in linea con l'architettura e i tipi del linguaggio. Alternative in Elm sono limitate e inclinate verso specifici casi d'uso. Al cuore di `elm-test`, c'è la concezione che ogni test ritorna una `Test` che descrive l'esito atteso.
+Ciò compilerà i tuoi test e stamperà i risultati nel tuo terminale. Per l'esempio sopra, l'output dovrebbe essere qualcosa di simile a:
 
-## Altre Risorse
-- Documentazione di `elm-test`: [elm-test](https://package.elm-lang.org/packages/elm-explorations/test/latest/)
+```
+TEST RUN PASSATO
+
+Durata: 42 ms
+Passati:   1
+Falliti:   0
+```
+
+Per un esempio più complesso, diciamo che vuoi fare un fuzz test della funzione `add` per assicurarti che gestisca correttamente un'ampia gamma di input interi. Dovresti modificare il tuo `ExampleTest.elm` come segue:
+
+```elm
+module ExampleTest exposing (..)
+
+import Expect
+import Fuzz exposing (int)
+import Test exposing (..)
+import YourModuleName exposing (add)
+
+suite : Test
+suite =
+    describe "Testando add con il fuzzing"
+        [ fuzz int "Fuzz test su add con interi casuali" <| 
+            \int1 int2 -> add int1 int2 |> Expect.equal (int1 + int2)
+        ]
+```
+
+Esegui di nuovo `elm-test` per vedere i fuzz test in azione. L'output varierà con input casuali ma i test riusciti indicheranno l'assenza di fallimenti:
+
+```
+TEST RUN PASSATO
+
+Durata: 183 ms
+Passati:   100
+Falliti:   0
+``` 
+
+Questi esempi mostrano come scrivere ed eseguire semplici test unitari e fuzz in Elm, utilizzando il pacchetto `elm-explorations/test`. Testare è una parte vitale del processo di sviluppo, aiutando a garantire che le tue applicazioni Elm siano affidabili e mantengano un'alta qualità.

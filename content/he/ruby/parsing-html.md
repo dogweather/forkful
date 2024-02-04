@@ -1,53 +1,48 @@
 ---
-title:                "ניתוח HTML"
-date:                  2024-01-20T15:34:11.437306-07:00
-simple_title:         "ניתוח HTML"
-
+title:                "פיענוח HTML"
+date:                  2024-02-03T19:13:20.345293-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "פיענוח HTML"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/ruby/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## מה ולמה?
-פירסופ של HTML הוא התהליך שבו אנחנו לוקחים מסמך HTML וממירים אותו למבנה נתונים שאפשר לעבוד איתו ב-Ruby. אנחנו עושים את זה כדי לחלץ מידע, לשנות תוכן, או לפרסם אותו בצורות שונות.
+פירוק HTML מתייחס לפירוק חתיכת קוד HTML כדי להבין את מבנהו ותוכנו. תכנתים עושים זאת בכדי לחלץ נתונים, לשנות תוכן, או להעביר מידע בין פורמטים ומערכות.
 
-## איך לעשות:
-```Ruby
+## איך לעשות זאת:
+כדי לפרק HTML בRuby, התקנו את הג'ם 'Nokogiri' עם `gem install nokogiri`. Nokogiri הוא כמו סכין שוויצרי לעבודה עם HTML וXML בRuby. הנה דוגמא מהירה:
+
+```ruby
 require 'nokogiri'
 require 'open-uri'
 
-# פתח את ה-HTML מURL או קובץ מקומי
-html = open('https://example.com/')
-doc = Nokogiri::HTML(html)
+# טעינת תוכן HTML מאתר
+html_content = URI.open('http://example.com').read
 
-# חלץ תוויות כותרת
-titles = doc.css('h1').map { |node| node.text }
-puts titles
+# פירוק הHTML
+doc = Nokogiri::HTML(html_content)
 
-# שנה טקסט בפסקה והדפס את ה-HTML המעודכן
-doc.css('p').first.content = 'שלום עולם!'
-puts doc.to_html
-```
-פלט דוגמא:
-```
-["כותרת בדף הדוגמא"]
-<!DOCTYPE html>
-<html>
-  <body>
-    <h1>כותרת בדף הדוגמא</h1>
-    <p>שלום עולם!</p>
-  </body>
-</html>
+# חילוץ הכותרת
+title = doc.xpath('//title').text
+puts "כותרת הדף היא: #{title}"
 ```
 
-## צלילה לעומק
-פירסופ של HTML התפתח כשהאינטרנט התפשט. ספריות נפוצות כמו Nokogiri ב-Ruby, BeautifulSoup ב-Python, ו-jsoup ב-Java, הפכו לסטנדרט לעיבוד HTML. פעולה זו חוסכת זמן ומאפשרת אוטומציה של פעולות על מסמכים ברשת.
-Nokogiri, למשל, משתמש במנוע XPath ו-CSS selectors לחיפוש יעיל במסמך. זה מתבסס על libxml2 ו-libxslt אשר מספקים יכולות נרחבות לעיבוד XML ו-XSLT, גם כן.
+זה יוציא משהו כמו: `כותרת הדף היא: Example Domain`.
 
-אלטרנטיבות ל-Nokogiri כוללות ספריות כמו Oga או Hpricot (שכיום כבר לא בשימוש רב). כל ספרייה מציעה נקודות חוזק וחולשה שווה להתייחס. לעיתים הבחירה בספרייה תלויה בצרכים הספציפיים של הפרויקט או בהעדפות האישיות של המפתח.
+## צלילה עמוקה
+בימים הראשונים של Ruby, האפשרויות לפירוק HTML היו מוגבלות. REXML היה מובנה אך איטי. אז הופיע Hpricot, אך הוא דעך. Nokogiri הושק ב-2008, משלב את נוחות השימוש של Hpricot עם המהירות והעוצמה של libxml, ערכת כלים מוכחת ל-XM״L.
+
+בעולם הפירוק, תמיד יש חלופות. חלק מעדיפים את ספריית 'rexml' המובנית או 'oga', פרסר נוסף לXML/HTML עבור Ruby. אך Nokogiri נשאר האהוב בשל חוסנו ומהירותו, שלא לדבר על מערך התכונות העצום שלו.
+
+מאחורי הקלעים, Nokogiri הופך את הHTML למודל אובייקט של מסמך (DOM)—מבנה עץ. זה מקל על הניווט ושינוי האלמנטים. באמצעות XPath ובוררי CSS, ניתן לזהות כל חלק של מידע שנדרש.
 
 ## ראה גם
-- [Nokogiri מדריך רשמי](http://www.nokogiri.org/)
-- [מידע נוסף על libxml2](http://xmlsoft.org/)
-- [מדריכים לניתוח HTML ב-Ruby](https://www.ruby-toolbox.com/categories/html_parsing)
+- הג'ם Nokogiri: [https://nokogiri.org/](https://nokogiri.org/)
+- תיעוד rexml של Ruby: [https://ruby-doc.org/stdlib-2.6.3/libdoc/rexml/rdoc/REXML/Document.html](https://ruby-doc.org/stdlib-2.6.3/libdoc/rexml/rdoc/REXML/Document.html)
+- הפרסר החלופי 'oga': [https://github.com/YorickPeterse/oga](https://github.com/YorickPeterse/oga)
+- למידה על XPath: [https://www.w3schools.com/xml/xpath_intro.asp](https://www.w3schools.com/xml/xpath_intro.asp)

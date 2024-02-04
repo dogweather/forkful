@@ -1,33 +1,73 @@
 ---
-title:                "Uso de expresiones regulares"
-date:                  2024-01-19
-simple_title:         "Uso de expresiones regulares"
-
+title:                "Usando expresiones regulares"
+date:                  2024-02-03T19:17:27.349636-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Usando expresiones regulares"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/lua/using-regular-expressions.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Qué & Por Qué?
-Las expresiones regulares son patrones que se usan para encontrar y manipular texto. Los programadores las utilizan porque son herramientas poderosas y eficientes para validar, buscar, y reemplazar secuencias de caracteres dentro de strings.
+## ¿Qué y Por Qué?
+
+Las expresiones regulares en la programación permiten la búsqueda y manipulación de cadenas basadas en patrones específicos. Los programadores las utilizan en tareas como validación, búsqueda y manipulación de texto debido a su versatilidad y eficiencia para manejar operaciones complejas con cadenas.
 
 ## Cómo hacerlo:
-```Lua
-local texto = "Hola, mi número es 123-456-7890."
--- Busca un número de teléfono
-local patron = "%d%d%d%-%d%d%d%-%d%d%d%d"
-print(texto:match(patron))  -- Output: 123-456-7890
 
--- Reemplaza números de teléfono con 'PRIVADO'
-local texto_modificado = texto:gsub(patron, "PRIVADO")
-print(texto_modificado)  -- Output: Hola, mi número es PRIVADO.
+Lua no admite expresiones regulares de manera nativa de la misma forma que lenguajes como Perl o Python. En su lugar, ofrece capacidades de coincidencia de patrones que cubren muchos casos de uso comunes de las expresiones regulares. Sin embargo, para obtener soporte completo de expresiones regulares, se puede usar una biblioteca de terceros como `lrexlib`.
+
+### Coincidencia de Patrones Básica en Lua:
+
+Lua proporciona un sistema de coincidencia de patrones poderoso que puedes utilizar para sustituciones y búsquedas simples:
+
+```lua
+-- Búsqueda simple
+local str = "Hola, Mundo!"
+if string.find(str, "Mundo") then
+  print("¡Coincidencia encontrada!")
+end
+-- Salida: ¡Coincidencia encontrada!
+
+-- Sustitución simple
+local s = string.gsub("¡Lua es genial!", "genial", "increíble")
+print(s)
+-- Salida: ¡Lua es increíble!
 ```
 
-## Inmersión Profunda
-Las expresiones regulares en Lua tienen su origen en las herramientas de manipulación de texto UNIX, pero son más simples y limitadas en funcionalidad. Alternativas como PCRE (Perl Compatible Regular Expressions) ofrecen una riqueza mayor en expresiones complejas, pero para su uso en Lua, se requieren bibliotecas adicionales. A nivel de implementación, Lua maneja las expresiones regulares a través de su propia librería de patrones, la cual difiere de la sintaxis POSIX o Perl típica.
+### Capturando Subcadenas:
 
-## Ver También
-- [Referencia de Patrones de Lua](https://www.lua.org/manual/5.4/manual.html#6.4.1)
-- [Tutorial en línea de Lua](https://www.lua.org/pil/20.2.html)
-- [Wikilibros sobre Expresiones regulares](https://en.wikibooks.org/wiki/Regular_Expressions)
+Puedes capturar partes de la cadena que coincidan con patrones:
+
+```lua
+local fecha = "Hoy es 17/05/2023."
+local d, m, a = string.match(fecha, "(%d+)/(%d+)/(%d+)")
+print("Día:", d, "Mes:", m, "Año:", a)
+-- Salida: Día: 17 Mes: 05 Año: 2023
+```
+
+### Usando `lrexlib` para Expresiones Regulares:
+
+Para usar expresiones regulares reales, puedes instalar y usar `lrexlib`. Suponiendo que lo tengas instalado (`luarocks install lrexlib-pcre`), puedes realizar coincidencias de patrones más complejas:
+
+```lua
+local rex = require 'rex_pcre'
+
+local texto = "La lluvia en España permanece principalmente en la llanura."
+local regex = "\\bS\\w+"
+local cuenta, err = rex.gsub(texto, regex, function(w)
+  return w:upper()
+end)
+if err then
+  print("Error:", err)
+else
+  print("Texto modificado:", texto)
+  print("Sustituciones realizadas:", cuenta)
+end
+-- Ejemplo de salida: Texto modificado: La lluvia en ESPAÑA permanece PRINCIPALMENTE en la llanura.
+-- Sustituciones realizadas: 3
+```
+
+Los ejemplos anteriores ilustran el uso básico dentro del propio sistema de coincidencia de patrones de Lua y cómo aprovechar el poder de las expresiones regulares a través de `lrexlib`. Ya sea que estés realizando manipulaciones simples de cadenas o requieras de toda la versatilidad de las expresiones regulares, Lua, junto con bibliotecas poderosas, puede satisfacer tus necesidades.

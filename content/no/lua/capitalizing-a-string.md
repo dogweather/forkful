@@ -1,34 +1,53 @@
 ---
-title:                "Sette streng til store bokstaver"
-date:                  2024-01-19
-simple_title:         "Sette streng til store bokstaver"
-
+title:                "Sette stor bokstav i en streng"
+date:                  2024-02-03T19:05:49.991882-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Sette stor bokstav i en streng"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/lua/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Å 'capitalise' en streng betyr å gjøre den første bokstaven i et ord eller hele strenger stor (store bokstaver). Programmerere bruker dette for å forbedre lesbarheten, spesielt når det gjelder brukergrensesnitt eller data som inneholder navn og titler.
+Å kapitalisere en streng innebærer å endre det første tegnet i hvert ord i en setning til stor bokstav, samtidig som resten sikres å være små bokstaver. Denne teknikken brukes ofte for å formatere tekst til et mer profesjonelt eller leselig resultat, slik som forberedelse av titler eller brukerinndata for visning.
 
 ## Hvordan:
-```Lua
-function capitalizeFirstLetter(str)
-    return str:gsub("(%l)(%w*)", function(a, b) return string.upper(a) .. b end)
+Lua har ikke en innebygd funksjon for å kapitalisere strenger, men du kan enkelt utføre denne oppgaven ved hjelp av grunnleggende strengmanipuleringsfunksjoner. Her er en enkel funksjon for å kapitalisere det første bokstaven i et enkelt ord:
+
+```lua
+function capitalize(word)
+    return word:sub(1,1):upper() .. word:sub(2):lower()
 end
 
-print(capitalizeFirstLetter("hallais folks, lua er gøy!"))
+print(capitalize("hello"))  -- Output: Hello
 ```
 
-Output:
-```
-Hallais folks, lua er gøy!
+For å kapitalisere hvert ord i en setning, kan du dele setningen inn i ord, kapitalisere hvert enkelt, og deretter slå dem sammen igjen:
+
+```lua
+function capitalizeSentence(sentence)
+    local words = {}
+    for word in sentence:gmatch("%S+") do
+        table.insert(words, capitalize(word))
+    end
+    return table.concat(words, " ")
+end
+
+print(capitalizeSentence("hello world from lua"))  -- Output: Hello World From Lua
 ```
 
-## Dypdykk
-Selv om 'capitalization' av strenger virker enkelt, er det ingen innebygd metode i Lua som håndterer dette direkte. Lua, som opprinnelig ble designet på 1990-tallet, har alltid vært minimalistisk. Derfor må vi definere våre egne funksjoner for oppgaver som å capitalise strenger. Alternativer til vår `capitalizeFirstLetter`-funksjon kan bruke mønstergjenkjenning eller arbeide med byte-verdier direkte for å manipulere tekst. Implementasjonsdetaljer kan variere avhengig av hvor strikt man ønsker å tolke 'capitalization', for eksempel om man ønsker å kun gjøre første bokstav i en setning stor, eller hver første bokstav i hvert ord.
+Hvis du jobber med et prosjekt der ytelse er nøkkelen, og du finner deg selv i behov av mer avanserte strengmanipuleringskapasiteter, vurder å bruke et tredjepartsbibliotek som `Penlight`. Penlight forbedrer Lua med mer fleksible strengbehandlingsfunksjoner, blant annet:
 
-## Se Også:
-- [Lua's offisielle nettsted](https://www.lua.org)
-- [String manipulation in Lua (PIL)](https://www.lua.org/pil/20.html)
+```lua
+-- Med forutsetning om at Penlight er installert:
+local pl = require("pl.stringx")
+local text = "hello lua users"
+text = pl.capitalized(text)
+print(text)  -- Output: Hello lua users
+
+-- Merk: Penlights capitalized-funksjon kapitaliserer kun det første ordet.
+-- For å kapitalisere hvert ord, ville du fortsatt implementere en egendefinert løsning eller utforske andre biblioteker.
+```

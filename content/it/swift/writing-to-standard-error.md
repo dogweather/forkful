@@ -1,40 +1,104 @@
 ---
 title:                "Scrivere sull'errore standard"
-date:                  2024-01-19
+date:                  2024-02-03T19:34:43.952308-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Scrivere sull'errore standard"
-
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/swift/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Scrivere su standard error (stderr) permette di separare i normali output di un programma dagli errori. Questo è utile per diagnosticare problemi e per registrare gli errori senza interferire con l'output standard.
+## Cosa e Perché?
 
-## How to:
-In Swift, usi `FileHandle.standardError` per scrivere su stderr. Ecco come:
+Scrivere sull'errore standard (stderr) consiste nel dirigere i messaggi di errore o l'output di diagnostica del tuo programma su un flusso separato, distinto dall'output standard (stdout). Questo è fondamentale per il debug e la registrazione degli errori senza ingombrare l'output standard, facilitando la comprensione dello stato e dei problemi del programma sia da parte degli sviluppatori che degli utenti.
 
-```Swift
+## Come fare:
+
+In Swift, scrivere sull'errore standard può essere fatto utilizzando la classe `FileHandle` per un accesso diretto a stderr. Ecco un semplice esempio:
+
+```swift
 import Foundation
 
-if let errorMessage = "Errore critico.\n".data(using: .utf8) {
-    FileHandle.standardError.write(errorMessage)
+// Definire un messaggio
+let errorMessage = "Si è verificato un errore.\n"
+
+// Convertire il messaggio in dati
+if let data = errorMessage.data(using: .utf8) {
+    // Scrivere il messaggio di errore su stderr
+    FileHandle.standardError.write(data)
 }
 ```
 
-Se esegui questo codice, vedi sul terminal:
-
+Output su stderr (tipicamente visualizzato in una console o un terminale):
 ```
-Errore critico.
+Si è verificato un errore.
 ```
 
-Nota: l'output di errore potrebbe non essere visibile nell'ambiente di sviluppo e potrebbe essere necessario eseguire il programma nel terminal per vederlo.
+Per una registrazione più complessa o quando si lavora con librerie esterne, si potrebbe considerare l'uso di una libreria di terze parti come **SwiftLog**. Anche se **SwiftLog** non scrive direttamente su stderr di default, è possibile implementare un backend di registrazione personalizzato per ottenere ciò. Ecco un esempio semplificato di definizione di un gestore di log personalizzato che scrive su stderr:
 
-## Deep Dive
-Swift non aveva un modo diretto per scrivere su stderr fino alla release di Foundation su macOS e sui sistemi Unix-like. In alternativa, potevi usare `fprintf(stderr, "messaggio")` da C. L'implementazione di Swift gestisce gli I/O come stream, e `FileHandle.standardError` è un'astrazione su `stderr` che facilita la scrittura in Swift.
+Prima, aggiungi **SwiftLog** alle dipendenze del tuo progetto in `Package.swift`:
+```swift
+// swift-tools-version:5.3
 
-## See Also
-Per approfondire, consulta i seguenti link:
-- Documentazione ufficiale Apple su [FileHandle](https://developer.apple.com/documentation/foundation/filehandle)
-- Tutorial su [Standard Streams](https://en.wikipedia.org/wiki/Standard_streams) da Wikipedia per capire come funzionano stdin, stdout e stderr.
+import PackageDescription
+
+let package = Package(
+    name: "IlTuoNomePacchetto",
+    dependencies: [
+        .package(url: "https://github.com/apple/swift-log.git", from: "1.0.0"),
+    ],
+    targets: [
+        .target(
+            name: "IlTuoNomeTarget",
+            dependencies: [
+                .product(name: "Logging", package: "swift-log"),
+            ]),
+    ]
+)
+```
+
+Poi, implementa un gestore di log personalizzato che scrive su stderr:
+
+```swift
+import Logging
+import Foundation
+
+struct StderrLogHandler: LogHandler {
+    let label: String
+    
+    var logLevel: Logger.Level = .info
+    
+    func log(level: Logger.Level, message: Logger.Message, metadata: Logger.Metadata?, source: String, file: String, function: String, line: UInt) {
+        let output = "\(message)\n"
+        if let data = output.data(using: .utf8) {
+            FileHandle.standardError.write(data)
+        }
+    }
+    
+    subscript(metadataKey metadataKey: String) -> Logger.Metadata.Value? {
+        get { return nil }
+        set(newValue) { }
+    }
+    
+    var metadata: Logger.Metadata {
+        get { return [:] }
+        set(newMetadata) { }
+    }
+}
+
+// Utilizzo
+LoggingSystem.bootstrap(StderrLogHandler.init)
+let logger = Logger(label: "com.esempio.latuaapp")
+
+logger.error("Questo è un messaggio di errore")
+```
+
+Output su stderr:
+```
+Questo è un messaggio di errore
+```
+
+Questo gestore personalizzato ti permette di indirizzare i tuoi messaggi di errore SwiftLog direttamente all'errore standard, integrandosi senza soluzione di continuità con altri messaggi di log che la tua applicazione potrebbe generare.

@@ -1,43 +1,70 @@
 ---
 title:                "Säännöllisten lausekkeiden käyttö"
-date:                  2024-01-19
+date:                  2024-02-03T19:17:49.591718-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Säännöllisten lausekkeiden käyttö"
-
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/php/using-regular-expressions.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? - "Mitä & Miksi?"
-Käytämme säännöllisiä lausekkeita (regex) tekstiä käsitellessä, kun etsitään, tarkastetaan tai muokataan merkkijonoja. Ne säästävät aikaa ja tekevät monimutkaisista tehtävistä yksinkertaisia.
+## Mikä & Miksi?
 
-## How to: - "Kuinka:"
-```PHP
-<?php
-// Etsitään puhelinnumeroa
-$teksti = "Hei, soita minulle numeroon +358 40 1234567.";
-$pattern = "/\+358 \d{2} \d{7}/";
+Säännölliset lausekkeet (regex) PHP:ssä ovat malleja, joita käytetään merkkijonossa hahmojen yhdistelmien etsimiseen, mahdollistaen kehittyneet haku- ja korvaustoiminnot sekä datan validoinnin. Ohjelmoijat hyödyntävät regexiä sen tehon ja joustavuuden vuoksi tekstin jäsentämisessä, lomakkeiden validoinnissa tai verkkodatan kaapimisessa, tehden siitä korvaamattoman työkalun kehittäjän työkalupakissa.
 
-if (preg_match($pattern, $teksti, $matches)) {
-    echo "Puhelinnumero löydetty: " . $matches[0];
+## Miten:
+
+PHP tukee säännöllisiä lausekkeita PCRE:n (Perl Compatible Regular Expressions) kirjaston kautta, tarjoten rikkaan joukon funktioita. Näin niitä käytetään:
+
+### Mallin vastaavuuden tarkistaminen:
+
+Jos haluat tarkistaa, esiintyykö malli merkkijonossa, käytä `preg_match()`-funktiota. Tämä funktio palauttaa 1, jos kuvio löytyi merkkijonosta, ja 0, jos ei.
+
+```php
+if (preg_match("/\bweb\b/i", "PHP on web-skriptauskieli")) {
+    echo "Vastaavuus löytyi.";
 } else {
-    echo "Numeroa ei löytynyt.";
+    echo "Vastaavuutta ei löytynyt.";
 }
-// Näyttää: Puhelinnumero löydetty: +358 40 1234567
-
-// Korvataan sähköpostiosoitteet
-$korvattavaTeksti = "Ota yhteyttä meihin: esimerkki@osoite.com.";
-$korvattuTeksti = preg_replace("/\b[\w\.-]+@[\w\.-]+\.\w{2,}\b/", "[sähköposti]", $korvattavaTeksti);
-echo $korvattuTeksti;
-// Näyttää: Ota yhteyttä meihin: [sähköposti].
-?>
+// Tuloste: Vastaavuus löytyi.
 ```
 
-## Deep Dive - "Syväsukellus":
-Regexien käyttö alkoi 1950-luvulla. Nykyisin ne ovat osa monia ohjelmointikieliä, PHP mukaan lukien `preg_*` funktioiden kautta. Vaihtoehtoisesti `strpos()` funktiota voidaan käyttää yksinkertaiseen etsintään, mutta se ei tarjoa regexien joustavuutta. Regexien toteutus PHP:ssa perustuu PCRE (Perl Compatible Regular Expressions) -kirjastoon, mikä takaa tehokkuuden ja monipuolisuuden.
+### Kaikkien vastaavuuksien löytäminen:
 
-## See Also - "Katso Myös":
-- PHP Manual - Regular Expressions (Perl-Compatible): https://www.php.net/manual/en/book.pcre.php
-- Regex101 - Interaktiivinen työkalu regexien testaamiseen ja opetteluun: https://regex101.com/
-- Regexone - Interaktiivisia harjoituksia regexien oppimiseen: https://regexone.com/
+`preg_match_all()`-funktiota käytetään, kun tarvitset löytää kaikki kuvion esiintymät merkkijonossa.
+
+```php
+$text = "kissat ja koirat";
+$pattern = "/\b([a-z]+)\b/i";
+preg_match_all($pattern, $text, $matches);
+print_r($matches[0]);
+// Tuloste: Array ( [0] => kissat [1] => ja [2] => koirat )
+```
+
+### Tekstin korvaaminen:
+
+Tekstin korvaamiseen, joka vastaa säännöllistä lauseketta, käytetään `preg_replace()`-funktiota. Se on uskomattoman tehokas datan muotoilussa ja siivoamisessa.
+
+```php
+$originalText = "Huhtikuu 15, 2003";
+$pattern = "/(\w+) (\d+), (\d+)/i";
+$replacement = '${1}1,$3';
+echo preg_replace($pattern, $replacement, $originalText);
+// Tuloste: Huhtikuu1,2003
+```
+
+### Merkkijonojen jakaminen:
+
+Voit jakaa merkkijonon taulukoksi käyttäen `preg_split()`-funktiota, määrittelemällä mallin erottimeksi.
+
+```php
+$text = "PHP on, erittäin suosittu, skriptauskieli";
+$parts = preg_split("/,\s*/", $text);
+print_r($parts);
+// Tuloste: Array ( [0] => PHP on [1] => erittäin suosittu [2] => skriptauskieli )
+```
+
+Lisäksi, monimutkaisia regex-malleja ja tehtäviä varten, kehykset ja kirjastot, kuten Symfonyn `Finder`-komponentti tai Laravelin apufunktioiden kokoelma, saattavat tarjota kätevämmän abstraktiotason. Kuitenkin PHP:n sisäänrakennettujen PCRE-funktioiden ymmärtäminen ja käyttö on elintärkeää tehokkaaseen tekstinkäsittelyyn ja validointiin suoraan PHP-skripteissä.

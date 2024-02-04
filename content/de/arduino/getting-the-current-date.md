@@ -1,60 +1,65 @@
 ---
-title:                "Aktuelles Datum abrufen"
-date:                  2024-01-20T15:13:07.107280-07:00
-simple_title:         "Aktuelles Datum abrufen"
-
+title:                "Den aktuellen Datum abrufen"
+date:                  2024-02-03T19:08:48.037680-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Den aktuellen Datum abrufen"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/arduino/getting-the-current-date.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Das Abrufen des aktuellen Datums auf einem Arduino zeigt dir das heutige Datum. Das ist nützlich für Zeitstempel, Logger, Uhrenanwendungen oder fürs Event-Management.
+Das aktuelle Datum in Arduino-Projekten zu bekommen, beinhaltet das Abrufen von Echtzeitinformationen, die für das Logging, Zeitstempeln oder das Planen von Aufgaben entscheidend sein können. Programmierer benötigen diese Fähigkeit oft, um die Funktionalität zu verbessern, die Datenrelevanz zu sichern und zeitkritische Operationen in ihren IoT- und Embedded-Projekten zu erleichtern.
 
-## How to:
-Um das aktuelle Datum auf einem Arduino zu erhalten, verwenden wir ein RTC (Real Time Clock) Modul wie das DS3231. Hier ist ein einfaches Beispiel, das die Zeit ausliest und ausgibt.
+## Wie geht das:
+Arduino selbst hat keine eingebaute Methode, um direkt das aktuelle Datum zu fetchen, da ihm eine Echtzeituhr (RTC) fehlt. Dies kann jedoch mit externen RTC-Modulen wie dem DS3231 und Bibliotheken wie `RTClib`, entwickelt von Adafruit, erreicht werden, was die Schnittstelle mit diesen Modulen unkompliziert macht.
 
-```Arduino
+Stellen Sie zunächst sicher, dass die `RTClib` Bibliothek in Ihrer Arduino IDE installiert ist. Verbinden Sie dann Ihr RTC-Modul gemäß seiner Dokumentation mit Ihrem Arduino.
+
+Hier ist ein einfaches Beispiel, um Ihnen den Einstieg zu erleichtern:
+
+```cpp
 #include <Wire.h>
-#include <RTClib.h>
+#include "RTClib.h"
 
 RTC_DS3231 rtc;
 
 void setup() {
   Serial.begin(9600);
+
   if (!rtc.begin()) {
-    Serial.println("RTC nicht gefunden!");
+    Serial.println("Konnte RTC nicht finden");
     while (1);
   }
-  
+
   if (rtc.lostPower()) {
-    Serial.println("RTC hat die Zeit verloren!");
-    // Hier könntest du die Zeit mit rtc.adjust(...) neu setzen.
+    Serial.println("RTC hat Strom verloren, lass uns die Zeit einstellen!");
+    // Wenn die Zeit auf einem neuen Gerät eingestellt werden muss oder nach einem Stromausfall, können Sie das hier tun.
+    // rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
   }
 }
 
 void loop() {
   DateTime now = rtc.now();
-  Serial.print(now.day());
-  Serial.print('.');
-  Serial.print(now.month());
-  Serial.print('.');
-  Serial.println(now.year());
-  delay(1000); // Update jede Sekunde
+
+  Serial.print("Aktuelles Datum: ");
+  Serial.print(now.year(), DEC);
+  Serial.print('/');
+  Serial.print(now.month(), DEC);
+  Serial.print('/');
+  Serial.println(now.day(), DEC);
+
+  delay(3000); // Verzögerung um 3 Sekunden, um den Serial-Spam zu reduzieren
 }
 ```
-Beispielausgabe:
+
+Beispielausgabe (unter der Annahme, dass Ihre RTC zuvor eingestellt wurde):
+
 ```
-17.3.2023
+Aktuelles Datum: 2023/4/15
 ```
 
-## Deep Dive
-In den frühen Tagen von Mikrocontrollern war das Abrufen der aktuellen Zeit nicht direkt möglich. RTC-Module lösten dieses Problem. Alternativen zum DS3231 sind z.B. das DS1307 oder Internet-basierte Zeit-Services mittels eines ESP8266.
-
-Der Schlüssel zu solch einem System ist die RTC-Bibliothek (`RTClib.h`), die verschiedene Funktionen zur Interaktion mit dem RTC-Modul bietet. Sie wandelt beispielsweise die Zeit in ein benutzerfreundliches Format um. Wichtig ist, bei Projekten, die auf die genaue Zeit angewiesen sind, die Batterie des RTC-Moduls im Auge zu behalten, da ein Stromverlust die Datum- und Zeitinformationen verliert.
-
-## See Also
-- RTClib Bibliothek: https://github.com/adafruit/RTClib
-- Arduino Zeitbibliothek (`TimeLib.h`): https://www.pjrc.com/teensy/td_libs_Time.html
-- NTP-Zeit synchronisieren mit ESP8266: https://randomnerdtutorials.com/esp8266-nodemcu-date-time-ntp-client-server-arduino/
+Dieser Code initialisiert das RTC-Modul und ruft dann in der Schleife alle 3 Sekunden das aktuelle Datum ab und druckt es auf den Serial Monitor. Denken Sie daran, die `rtc.adjust(...)` Zeile kann auskommentiert und modifiziert werden, um das Datum und die Zeit der RTC anfänglich oder nach einem Stromverlust einzustellen.

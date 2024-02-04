@@ -1,59 +1,64 @@
 ---
-title:                "文字列から日付を解析する"
-date:                  2024-01-20T15:37:48.221884-07:00
-simple_title:         "文字列から日付を解析する"
-
+title:                "文字列から日付をパースする"
+date:                  2024-02-03T19:15:10.957514-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "文字列から日付をパースする"
 tag:                  "Dates and Times"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/php/parsing-a-date-from-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (何となぜ？)
-日付のパースとは、文字列から日付データを抽出するプロセスです。なぜこれが必要かというと、フォームの入力など、様々な形式の日付を統一された形式に変換し、データベースに保存したり、日付計算を行うためです。
+## 何となく理由
 
-## How to: (方法)
-PHPでは`DateTime`クラスを使って日付をパースします。以下のコードを見てください。
+PHPで文字列から日付をパースすることは、日付および/または時間を表すテキストをPHPの`DateTime`オブジェクトまたはその他の日付/時間形式に変換することを意味します。これは、ユーザー入力や外部ソースからのデータを扱う際、特にデータの検証、操作、保存、および表示の目的で非常に重要です。
+
+## 方法：
+
+PHPの組み込み`DateTime`クラスは、日付をパースして操作するための強力な機能セットを提供します。コンストラクタを使って日付文字列から`DateTime`インスタンスを作成し、必要に応じてフォーマットできます。以下の方法です：
 
 ```php
-<?php
-// 日付文字列のパース
-$dateString = '2023-04-12 14:00:00';
+$dateString = "2023-04-25 15:30:00";
 $dateObject = new DateTime($dateString);
 
-// 日付の出力
-echo $dateObject->format('Y年m月d日 H:i:s');
+echo $dateObject->format('Y-m-d H:i:s');
+// 出力：2023-04-25 15:30:00
 ```
 
-出力:
-```
-2023年04月12日 14:00:00
-```
-
-曜日を取得するには？
+非標準フォーマットの文字列を扱う場合、入力日付の正確なフォーマットを指定できる`createFromFormat`メソッドを使用できます：
 
 ```php
-echo $dateObject->format('Y年m月d日 l');
+$dateString = "25-04-2023 3:30 PM";
+$dateObject = DateTime::createFromFormat('d-m-Y g:i A', $dateString);
+
+echo $dateObject->format('Y-m-d H:i:s');
+// 出力：2023-04-25 15:30:00
 ```
 
-出力:
-```
-2023年04月12日 Wednesday
-```
-
-## Deep Dive (詳細な情報)
-初期のPHPでは、日付のパースには`strtotime()`と`date()`関数を使っていました。しかし、`DateTime`クラスが導入されてからは、オブジェクト指向のアプローチでより柔軟な日付時刻処理が可能になりました。例として、タイムゾーンのサポート、DateTimeImmutableクラスを用いた変更不可な日付時刻オブジェクトの作成などがあります。代替としてまだ`date()`関数を使うこともできますが、`DateTime`クラスが提供する機能の多さと扱いやすさから、今日では`DateTime`を使う方が一般的です。
-
-たとえば、タイムゾーンを考慮したパースも簡単です。
+`DateTime`によって直接サポートされないようなより複雑なパースを行う場合、PHPは英文の日時記述をUnixタイムスタンプに変換しようとする`strtotime`関数を提供しています：
 
 ```php
-$dateObject = new DateTime($dateString, new DateTimeZone('Asia/Tokyo'));
+$timestamp = strtotime("next Thursday");
+echo date('Y-m-d', $timestamp);
+// 現在の日付によって出力は異なります。例："2023-05-04"
 ```
 
-これで、日本時間を正しく扱うことができます。
+**サードパーティのライブラリを使用する：**
 
-## See Also (関連情報)
-- [PHP: DateTime - Manual](https://www.php.net/manual/en/class.datetime.php)
-- [PHP: DateTimeZone - Manual](https://www.php.net/manual/en/class.datetimezone.php)
-- [PHP: Date/Time Functions - Manual](https://www.php.net/manual/en/book.datetime.php)
+PHPの組み込み関数は幅広いユースケースをカバーしていますが、時にはより洗練されたパース機能が必要になることがあります。PHPのDateTimeクラスの拡張であるCarbonライブラリは、日付/時間の操作に関する豊富な機能セットを提供します：
+
+```php
+require 'vendor/autoload.php';
+
+use Carbon\Carbon;
+
+$dateString = "Tomorrow";
+$date = Carbon::parse($dateString);
+
+echo $date->toDateTimeString();
+// 出力は変わります。例："2023-04-26 00:00:00"
+```
+
+Carbonの`parse`メソッドは多くの日付および時間の形式を賢く扱えるため、柔軟な日付パース機能が必要なアプリケーションにとって貴重なツールとなります。

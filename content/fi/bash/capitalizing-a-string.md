@@ -1,37 +1,61 @@
 ---
 title:                "Merkkijonon muuttaminen isoiksi kirjaimiksi"
-date:                  2024-01-19
+date:                  2024-02-03T19:04:59.073670-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Merkkijonon muuttaminen isoiksi kirjaimiksi"
-
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/bash/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Merkkijonojen suurentaminen tarkoittaa joko jokaisen sanan ensimmäisen kirjaimen tai koko merkkijonon muuttamista isoksi kirjaimeksi. Tämä auttaa tekstin erottumaan tai noudattamaan formaattistandardeja, kuten otsikoissa tai tunnisteissa.
+## Mikä ja miksi?
+Merkkijonon alkukirjaimen muuttaminen isoksi Bashissa tarkoittaa merkkijonon ensimmäisen merkin muuttamista isoksi kirjaimeksi, samalla kun loput merkkijonosta jätetään muuttumattomiksi. Tätä tekniikkaa käytetään yleisesti tulosteiden muotoiluun tai koodauskonventioiden noudattamiseen, jotka edellyttävät tiettyjen merkkijonojen alkavan isolla alkukirjaimella luettavuuden tai tyylillisten mieltymysten vuoksi.
 
-## How to:
-```Bash
-# Merkkijonon muuttaminen kokonaan isoksi kirjaimeksi
-echo "moikka maailma" | tr '[:lower:]' '[:upper:]'
-# Tulostuu: MOIKKA MAAILMA
+## Kuinka:
 
-# Vain sanan ensimmäisen kirjaimen suurentaminen
-echo "moikka maailma" | awk '{for(i=1;i<=NF;i++) $i=toupper(substr($i,1,1)) substr($i,2)} 1'
-# Tulostuu: Moikka Maailma
+Bash ei sisällä erityistä sisäänrakennettua toimintoa merkkijonojen alkukirjaimen muuttamiseen isoksi, mutta tämän tehtävän voi suorittaa käyttämällä parametrilaajennusta tai ulkoisia työkaluja, kuten `awk`. Tässä on muutama tapa muuttaa merkkijonon ensimmäinen kirjain isoksi Bashissa:
+
+**Käyttämällä parametrilaajennusta:**
+
+Tämä menetelmä manipuloi merkkijonoa suoraan kuorella.
+
+```bash
+str="hello world"
+capitalized="${str^}"
+echo "$capitalized"
+```
+Tuloste:
+```
+Hello world
 ```
 
-## Deep Dive:
-Komentotulkissa merkkijonojen suurentaminen ei ole uusin konsepti. Se on peräisin ajoilta, kun ohjelmat ja järjestelmät alkoivat käsitellä tekstiä ja kaipasivat tapoja muotoilla sitä. `tr` ja `awk` ovat klassisia työkaluja, jotka ovat olleet käytössä jo vuosikymmeniä.
+**Käyttämällä `awk`:**
 
-`tr` on yksinkertainen työkalu merkkien muuntamiseen; se ei ymmärrä sanoja, rivejä eikä lausekkeita, vain merkkejä. `awk` on tehokas tekstinkäsittelykieli, joka kykenee suorittamaan monimutkaisempia manipulaatioita, kuten sanakohtaisen pääkirjainmuunnoksen.
+`awk` on tehokas tekstinkäsittelytyökalu, joka on saatavilla useimmissa Unix-tyyppisissä käyttöjärjestelmissä, ja sitä voidaan hyödyntää merkkijonojen alkukirjaimen muuttamisessa isoksi.
 
-Bash-funktioita tai moderneja työkaluja kuten `sed` voi myös käyttää, mutta tässä on tärkeää tuntea työkalun syntaksi ja kyvyt. Pelkistetysti, Bash ei sisällä sisäänrakennettua komentoa pääkirjainmuunnokselle, mutta sen sijasta se tukee useita yleisiä työkaluja, joilla sama lopputulos saavutetaan.
+```bash
+str="hello world"
+echo "$str" | awk '{print toupper(substr($0, 1, 1)) tolower(substr($0, 2))}'
+```
+Tuloste:
+```
+Hello world
+```
 
-## See Also:
-- `man tr`: Kertoo lisää tr-komennon käyttämisestä ja vaihtoehdoista.
-- `man awk`: Antaa tietoa awk-komennosta ja sen syntaksista.
-- Bash String Manipulation -opas: https://www.gnu.org/software/bash/manual/bash.html#Shell-Parameter-Expansion
-- Advanced Bash-Scripting Guide: https://tldp.org/LDP/abs/html/
+**Käyttämällä `sed`:**
+
+Perinteisempään lähestymistapaan voidaan käyttää `sed`-työkalua merkkijonon ensimmäisen kirjaimen muuttamiseen isoksi. Tämä menetelmä on kuitenkin hieman monimutkaisempi verrattuna edellä mainittuihin menetelmiin.
+
+```bash
+str="hello world"
+echo "$str" | sed 's/./\u&/'
+```
+Tuloste:
+```
+Hello world
+```
+
+Nämä katkelmat osoittavat, miten Bashissa voidaan muuttaa merkkijonon ensimmäinen kirjain isoksi, korostaen kuoriskriptauksen joustavuutta tekstiä manipuloitaessa.

@@ -1,52 +1,53 @@
 ---
-title:                "現在の日付を取得する"
-date:                  2024-01-20T15:14:02.807869-07:00
-simple_title:         "現在の日付を取得する"
-
+title:                "現在の日付の取得"
+date:                  2024-02-03T19:09:20.548491-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "現在の日付の取得"
 tag:                  "Dates and Times"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/clojure/getting-the-current-date.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (何となぜ？)
-日付を取得するのは、今日の日付や時刻を知るプロセスです。プログラマはログ、タイムスタンプ、期限など、システムの日時に敏感な機能を実装するためにこれを行います。
+## 何となぜ？
+プログラムにおいて現在の日付を取得することは、ログ取り、イベントのタイムスタンプ記録、タスクのスケジュール設定を含め、様々な理由から極めて重要です。JVM上のLisp方言であるClojureでは、このタスクはJavaの相互運用能力を活用しており、豊富なJava Date-Time APIへの直接アクセスを可能にしています。
 
-## How to: (方法)
-Clojureで現在の日付を取得する最も一般的な方法は、Javaの `java.util.Date` クラスと `clj-time` ライブラリを使うことです。ここでは両方の方法を見てみましょう。
+## どのように：
 
-まずは `java.util.Date`:
+### Java相互運用を使用して
+ClojureのJavaとのシームレスな相互運用性により、Java Date-Time APIに直接アクセスすることができます。ここでは現在の日付を取得する方法を示します：
 
-```Clojure
-(import 'java.util.Date)
+```clojure
+(import java.time.LocalDate)
 
-(defn current-date []
-  (str (Date.)))
+(defn get-current-date []
+  (str (LocalDate/now)))
 
-(println (current-date)) ; => "Wed Mar 15 20:41:02 JST 2023"
+;; サンプル出力
+(get-current-date) ; "2023-04-15"
 ```
 
-次に `clj-time` を使った方法です:
+### clj-timeライブラリを使用して
+よりClojureらしい解決方法を求める場合は、Joda-Timeをラップした`clj-time`ライブラリが選択肢になりますが、ほとんどの新しいプロジェクトでは、組み込みのJava 8 Date-Time APIの使用が推奨されます。それでも`clj-time`を好む、または必要とする場合は：
 
-```Clojure
-(require '[clj-time.core :as t])
-(require '[clj-time.format :as f])
+まず、プロジェクトの依存関係に`clj-time`を追加します。`project.clj`に次のように記載します：
 
-(defn current-date-clj-time []
-  (f/unparse (f/formatters :basic-date-time) (t/now)))
-
-(println (current-date-clj-time)) ; => "20230315T204102.000Z"
+```clojure
+[clj-time "0.15.2"]
 ```
-出力は異なる形式になります。
 
-## Deep Dive (深掘り)
-歴史的に、ClojureはJavaのライブラリを利用することで日付と時刻を扱ってきました。`java.util.Date`はJavaの初期から存在しますが、デザイン上の問題点があり、2008年のJava 8で`java.time`パッケージに一新されました。Clojureプログラマは今でも`java.util.Date`を使うことができますが、`java.time`や`clj-time`といった、より現代的なライブラリの使用が推奨されます。
+その後、現在の日付を取得するためにそれを使います：
 
-`clj-time`はJoda-TimeをClojureに適合させたライブラリであり、取扱が容易で機能も豊富です。しかし、最新のJavaプラットフォームを使っているならば、Joda-Timeと`clj-time`は`java.time`ライブラリの後継者として段階的に廃止されるべきです。
+```clojure
+(require '[clj-time.core :as time])
 
-## See Also (関連情報)
-- Clojure公式ドキュメント: https://clojure.org/
-- `clj-time` GitHubページ: https://github.com/clj-time/clj-time
-- Java 8 `java.time` ドキュメント: https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html
-- Joda-Time公式ウェブサイト: https://www.joda.org/joda-time/
+(defn get-current-date-clj-time []
+  (str (time/now)))
+
+;; サンプル出力
+(get-current-date-clj-time) ; "2023-04-15T12:34:56.789Z"
+```
+
+これらの方法はどちらも、基盤となるJavaプラットフォームの力を活用するか、Clojure特有のライブラリの利便性を使用して、Clojureで現在の日付を迅速かつ効果的に取得する方法を提供します。

@@ -1,49 +1,58 @@
 ---
-title:                "문자열 대문자로 변환하기"
-date:                  2024-01-19
-simple_title:         "문자열 대문자로 변환하기"
-
+title:                "문자열 대문자화"
+date:                  2024-02-03T19:05:56.250826-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "문자열 대문자화"
 tag:                  "Strings"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/javascript/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (무엇과 왜?)
-문자열 대문자화는 문자열의 첫 글자를 대문자로 바꾸는 것입니다. 프로그래머들은 사용자 인터페이스를 일관되게 보이게 하고, 데이터를 정규화하기 위해 이 작업을 종종 수행합니다.
+## 무엇인가 & 왜인가?
+문자열의 첫 글자를 대문자로 변환하면서 나머지 문자들은 그대로 유지하는 작업을 문자열 대문자화라고 합니다. 이 작업은 사용자 입력을 포맷팅하거나, 이름이나 제목을 표시하고 사용자 인터페이스 텍스트의 일관성을 확보하기 위해 자바스크립트에서 흔히 수행됩니다.
 
-## How to: (어떻게 하나요?)
+## 어떻게 하나:
+자바스크립트에는 문자열을 직접 대문자화하는 내장 메소드가 없지만 기본 문자열 조작 방법을 사용해 쉽게 구현할 수 있습니다.
+
+### 표준 자바스크립트 사용하기
 ```javascript
-// 간단한 대문자화 함수
 function capitalize(str) {
-  if(str && typeof str === 'string') {
-    return str.charAt(0).toUpperCase() + str.slice(1);
-  }
-  return str;
+  if (!str) return '';
+  return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
-// 사용 예시
-console.log(capitalize('hello')); // 'Hello'
-console.log(capitalize('')); // ''
-console.log(capitalize(null)); // null
+console.log(capitalize('hello world')); // 출력: "Hello world"
 ```
 
-## Deep Dive (심층 분석)
-대소문자 변환은 프로그래밍 초기부터 있어왔습니다. 문자열의 가독성을 높이는 간단하지만 강력한 방법이죠. JavaScript에서는 `.toUpperCase()`와 `.toLowerCase()` 메서드를 내장하여 각 문자의 대문자와 소문자 변환이 가능합니다.
-
-대문자로 만들 때 주의할 점은 로케일(Locales)입니다. 특정 언어에서는 특수한 대문자 규칙을 가지고 있습니다. 이를 위해 `toLocaleUpperCase()` 메소드를 사용할 수 있습니다.
-
+### ES6 버전
+ES6 템플릿 리터럴을 사용하면, 함수를 더 간결하게 작성할 수 있습니다:
 ```javascript
-// 'i'의 터키어 대문자 변환 예시
-console.log('i'.toLocaleUpperCase('tr-TR')); // 'İ'
+const capitalize = (str) => !str ? '' : `${str[0].toUpperCase()}${str.slice(1)}`;
+
+console.log(capitalize('hello ES6')); // 출력: "Hello ES6"
 ```
 
-대문자화는 프로그래밍 언어가 진화하면서 여러 방법으로 구현할 수 있게 되었습니다. 이러한 방법 중 하나는 첫 글자만 대문자로 만드는 것입니다. `charAt()`, `slice()` 메서드를 사용하여 이를 쉽게 구현할 수 있습니다.
+### Lodash 사용하기
+Lodash는 문자열을 포함하여 자바스크립트 값들을 조작하고 작업하기 위한 다양한 함수를 제공하는 인기 있는 타사 유틸리티 라이브러리입니다. Lodash를 사용하여 문자열을 대문자화하려면:
+```javascript
+// 먼저 lodash를 설치하지 않았다면 설치하세요: npm install lodash
+const _ = require('lodash');
 
-자바스크립트 프레임워크나 라이브러리에서도 유사한 기능을 제공합니다. 예를 들어, Lodash 라이브러리는 `_.capitalize` 함수를 제공합니다.
+console.log(_.capitalize('LODASH example')); // 출력: "Lodash example"
+```
+_Lodash는 첫 글자를 대문자화하는 것뿐만 아니라 문자열의 나머지 부분을 소문자로 변환한다는 점에서 평범한 자바스크립트 구현과 약간 다릅니다._
 
-## See Also (참고 자료)
-- MDN Web Docs: String.prototype.toUpperCase() - [MDN toUpperCase](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase)
-- MDN Web Docs: String.prototype.toLocaleUpperCase() - [MDN toLocaleUpperCase](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLocaleUpperCase)
-- Lodash capitalize documentation - [Lodash capitalize](https://lodash.com/docs/#capitalize)
+### CSS 사용하기 (단지 표시 목적일 때)
+UI에서 텍스트를 대문자로 표시하려는 목적이라면 CSS를 사용할 수 있습니다:
+```css
+.capitalize {
+  text-transform: capitalize;
+}
+```
+```html
+<div class="capitalize">hello css</div> <!-- "Hello css"로 표시됩니다 -->
+```
+**참고:** 이 방법은 웹페이지에 텍스트가 어떻게 보이는지를 변경할 뿐, 자바스크립트 자체에서 문자열을 변경하지는 않습니다.

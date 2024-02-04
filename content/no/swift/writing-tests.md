@@ -1,44 +1,64 @@
 ---
-title:                "Skriving av tester"
-date:                  2024-01-19
-simple_title:         "Skriving av tester"
-
+title:                "Skrive tester"
+date:                  2024-02-03T19:32:01.333725-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Skrive tester"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/swift/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Tester er rutiner som sjekker om kode fungerer som forventet. De reduserer feil og forbedrer kodekvalitet ved å sikre at endringer ikke knekker funksjonalitet.
+## Hva & Hvorfor?
+Å skrive tester i Swift innebærer å lage og utføre kode som verifiserer korrektheten av andre kodeenheter i applikasjonen din. Programmerere gjør dette for å sikre pålitelighet, oppdage feil tidlig i utviklingssyklusen og lette fremtidig kodeomstrukturering uten utilsiktede konsekvenser.
 
-## How to:
-Swift bruker XCTest-rammeverket for testing. Her er et enkelt eksempel som tester en funksjon `leggTil(a:b:)`.
+## Hvordan:
+Swift støtter testing gjennom sitt XCTest-rammeverk, som er integrert i Xcode. Du kan skrive enhetstester for å verifisere individuelle deler av koden din, for eksempel en funksjon som beregner summen av to tall.
 
-```Swift
+```swift
 import XCTest
+@testable import YourApp
 
-class MinMatteTests: XCTestCase {
-    
-    func testLeggTil() {
-        let resultat = leggTil(a: 2, b: 3)
-        XCTAssertEqual(resultat, 5, "Feil: Forventet 5, fikk \(resultat)")
-    }
+class YourAppTests: XCTestCase {
 
-    func leggTil(a: Int, b: Int) -> Int {
-        return a + b
+    func testSum() {
+        let result = Calculator().sum(a: 1, b: 2)
+        XCTAssertEqual(result, 3, "Summefunksjonen returnerte ikke den forventede verdien.")
     }
 }
-
-// Sample Output:
-// Test Case '-[MinMatteTests testLeggTil]' passed (0.001 seconds).
 ```
 
-## Deep Dive
-Før XCTest kom Objective-C sin SenTestingKit. Alternativer inkluderer Quick og Nimble som gir mer beskrivende syntaks. Effektiv testing krever forståelse av begreper som `mocks`, `stubs` og `fake` objekter for å isolere testkoden.
+For å kjøre denne testen vil du vanligvis trykke Command-U i Xcode. Utdataen i Xcode-testnavigatoren vil fortelle deg om testen besto eller feilet.
 
-## See Also
-- [Apple Developer Documentation](https://developer.apple.com/documentation/xctest)
-- [Ray Wenderlich - iOS Unit Testing and UI Testing Tutorial](https://www.raywenderlich.com/21020457-ios-unit-testing-and-ui-testing-tutorial)
-- [Quick GitHub](https://github.com/Quick/Quick)
-- [Nimble GitHub](https://github.com/Quick/Nimble)
+For eksempel en vellykket testutdata:
+```
+Test Case '-[YourAppTests testSum]' passed (0.005 seconds).
+```
+
+For mer avanserte testsenarioer kan du ta i bruk tredjeparts biblioteker som Quick/Nimble, som tilbyr en mer uttrykksfull syntaks for å skrive tester.
+
+Med Quick/Nimble kan du skrive samme test slik:
+
+```swift
+// Legg til Quick og Nimble i din Swift pakkebehandler eller bruk CocoaPods/Carthage for å installere dem
+import Quick
+import Nimble
+@testable import YourApp
+
+class CalculatorSpec: QuickSpec {
+    override func spec() {
+        describe("Calculator") {
+            context("når man summerer tall") {
+                it("skal returnere den korrekte summen") {
+                    let calculator = Calculator()
+                    expect(calculator.sum(a: 1, b: 2)).to(equal(3))
+                }
+            }
+        }
+    }
+}
+```
+
+Å kjøre denne testen ville gitt deg lignende utdata i din testkonsoll eller CI/CD-verktøyets logg, som indikerer om testen lyktes eller feilet, med et mer leselig format for å beskrive tester og forventninger.

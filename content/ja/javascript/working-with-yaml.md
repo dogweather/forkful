@@ -1,41 +1,94 @@
 ---
-title:                "YAMLを扱う"
-date:                  2024-01-19
-simple_title:         "YAMLを扱う"
-
+title:                "YAML を操作する"
+date:                  2024-02-03T19:25:44.413426-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "YAML を操作する"
 tag:                  "Data Formats and Serialization"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/javascript/working-with-yaml.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (何となぜ？)
-YAMLはデータのシリアライゼーション形式。設定ファイルやデータ交換で使われる。読みやすく、JSONより簡潔。
+## 何となぜ？
 
-## How to: (どうやって？)
-JavascriptでYAMLを扱うには`js-yaml`ライブラリを使う。`npm install js-yaml`でインストール。
+YAMLは、「YAML Ain't Markup Language」の略です。これは、人が読みやすいデータ直列化形式です。JSONやXMLと比べて単純で読みやすいため、プログラマーはしばしば設定ファイルや言語間でのデータ交換にこれを使用します。
 
-```Javascript
-const yaml = require('js-yaml');
-const fs = require('fs');
+## 方法:
 
-// YAMLファイルの読み込み
-const data = yaml.load(fs.readFileSync('example.yml', 'utf8'));
+JavaScriptでYAMLを扱う場合、通常、JavaScriptにはYAMLの組み込みパーサーが含まれていないため、サードパーティのライブラリを使用することになります。この目的のために最も人気のあるライブラリの一つが`js-yaml`です。`js-yaml`を使用して、YAMLをJavaScriptオブジェクトにパースしたり、その逆を行うことができます。
 
-console.log(data);
+まず、`js-yaml`をインストールする必要があります：
 
-// JavaScriptオブジェクトをYAMLに変換
-const newYAML = yaml.dump({ title: 'New Item', value: 123 });
-fs.writeFileSync('newExample.yml', newYAML, 'utf8');
+```bash
+npm install js-yaml
 ```
 
-YAMLデータを読み込んでJavaScriptオブジェクトにし、逆も可能。
+その後、プロジェクトで使用できます。YAMLファイルを読み込み、それをJavaScriptオブジェクトにパースする方法は以下の通りです：
 
-## Deep Dive (深堀り)
-YAMLは「YAML Ain't Markup Language」(再帰的頭字語)。2001年に登場。JSON, XMLの代わりに使えるが、可読性が特徴。大規模データではパフォーマンスに注意。
+```javascript
+// js-yamlモジュールをrequireする
+const yaml = require('js-yaml');
+const fs   = require('fs');
 
-## See Also (関連する情報)
-- YAML公式サイト: https://yaml.org
-- `js-yaml`ライブラリ: https://github.com/nodeca/js-yaml
-- JSONとYAMLの比較: https://www.atatus.com/blog/yaml-vs-json/
+// ファイルからYAMLを読み込む
+try {
+  const doc = yaml.load(fs.readFileSync('./config.yaml', 'utf8'));
+  console.log(doc);
+} catch (e) {
+  console.error(e);
+}
+```
+
+もし`config.yaml`ファイルがこのようになっている場合：
+
+```yaml
+version: 1
+services:
+  web:
+    image: "myapp/web:latest"
+    ports:
+      - "5000:5000"
+```
+
+出力はこうなります：
+
+```javascript
+{ version: 1,
+  services: 
+   { web: 
+      { image: 'myapp/web:latest',
+        ports: [ '5000:5000' ] } } }
+```
+
+逆に、JavaScriptオブジェクトをYAML文字列に変換するには：
+
+```javascript
+const yaml = require('js-yaml');
+const obj = {
+  version: 1,
+  services: {
+    web: {
+      image: "myapp/web:latest",
+      ports: ["5000:5000"]
+    }
+  }
+};
+
+const yamlStr = yaml.dump(obj);
+console.log(yamlStr);
+```
+
+このコードはこんな出力を生成します：
+
+```yaml
+version: 1
+services:
+  web:
+    image: myapp/web:latest
+    ports:
+      - '5000:5000'
+```
+
+`js-yaml`を使用すると、YAMLのパースと直列化をJavaScriptプロジェクトに簡単に統合し、データの交換性と設定管理を強化することができます。

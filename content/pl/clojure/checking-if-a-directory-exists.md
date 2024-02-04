@@ -1,40 +1,45 @@
 ---
 title:                "Sprawdzanie, czy katalog istnieje"
-date:                  2024-01-19
+date:                  2024-02-03T19:07:20.801101-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Sprawdzanie, czy katalog istnieje"
-
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/clojure/checking-if-a-directory-exists.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Co i dlaczego?)
-Sprawdzanie, czy folder istnieje, to proces weryfikacji obecności katalogu w systemie plików. Programiści robią to, aby uniknąć błędów podczas próby dostępu lub modyfikacji nieistniejących ścieżek.
+## Co i dlaczego?
+Sprawdzanie czy katalog istnieje w Clojure polega na weryfikacji obecności katalogu systemu plików z poziomu aplikacji Clojure. Zadanie to jest kluczowe dla operacji na plikach, aby uniknąć błędów podczas odczytu z lub zapisu do katalogów, które mogą nie istnieć, zapewniając niezawodne i wolne od błędów wykonanie kodu.
 
-## How to: (Jak to zrobić:)
-W Clojure, używamy funkcji `file-seq` wraz z `some` do sprawdzenia, czy katalog istnieje. Oto przykład:
+## Jak to zrobić:
+Clojure, jako język działający na JVM, może wykorzystać klasę `java.io.File` z Javy do tego celu. Nie potrzebujesz żadnej biblioteki stron trzecich dla tak podstawowej operacji. Oto jak możesz to zrobić:
 
-```Clojure
-(import '[java.io File])
+```clojure
+(import 'java.io.File)
 
-(defn directory-exists? [path]
-  (some #(-> % .isDirectory) (file-seq (File. path))))
+(defn directory-exists? [dir-path]
+  (let [dir (File. dir-path)]
+    (.exists dir)))
 
-(println (directory-exists? "/path/to/directory")) ; true lub false, w zależności od przypadku
+;; Przykład użycia
+(println (directory-exists? "/ścieżka/do/twojego/katalogu")) ;; true albo false
 ```
 
-Jeśli folder istnieje, funkcja zwróci `true`. W przeciwnym razie otrzymasz `false`.
+Ta funkcja, `directory-exists?`, przyjmuje ścieżkę katalogu jako ciąg znaków i zwraca `true`, jeśli katalog istnieje, oraz `false` w przeciwnym razie. Jest to osiągane poprzez utworzenie obiektu `File` ze ścieżką katalogu, a następnie wywołanie metody `.exists` na tym obiekcie.
 
-## Deep Dive (Zanurzenie się głębiej)
-Checking czy katalog istnieje sięga czasów przed systemami wersji kontroli, gdy programy musiały bezpośrednio zarządzać plikami. W Clojure, mamy kilka sposobów, żeby to zrobić:
+Oprócz bezpośredniego wykorzystania Javy, możesz użyć bibliotek Clojure, które abstrahują część boilerplate'u Javy. Jedną z takich bibliotek jest `clojure.java.io`. Jednakże, do sprawdzenia czy katalog istnieje, nadal używałbyś klasy `File`, ale możesz uznać bibliotekę za przydatną do innych operacji na plikach. Przykład:
 
-1. Jako że Clojure działa na JVM, możesz użyć `java.io.File` lub `java.nio.file.Files` wraz z Java interop.
-2. Alternatywnie, są biblioteki takie jak `clojure.java.io`, które zapewniają clojurystyczne API do pracy z plikami i katalogami.
+```clojure
+(require '[clojure.java.io :as io])
 
-To powiedziawszy, `file-seq` i `some`, są często wystarczające i idiomatyczne dla Clojure. Wydajność natomiast zależy od wielkości drzewa katalogów, które `file-seq` musi przeszukać.
+(defn directory-exists?-clojure [dir-path]
+  (.exists (io/file dir-path)))
 
-## See Also (Zobacz też)
-- Clojure API docs on `file-seq`: [https://clojuredocs.org/clojure.core/file-seq](https://clojuredocs.org/clojure.core/file-seq)
-- Java interop guide for Clojure: [https://clojure.org/reference/java_interop](https://clojure.org/reference/java_interop)
-- clojure.java.io documentation: [https://clojuredocs.org/clojure.java.io](https://clojuredocs.org/clojure.java.io)
+;; Przykład użycia
+(println (directory-exists?-clojure "/inną/ścieżkę/do/sprawdzenia")) ;; true albo false
+```
+
+Ta wersja jest dość podobna, ale używa funkcji Clojure `io/file` do stworzenia obiektu `File`. Ta metoda bardziej naturalnie wpisuje się w bazy kodu Clojure przez wykorzystanie biblioteki Clojure do operacji IO, zamiast bezpośredniego interfejsowania się z klasami Javy.

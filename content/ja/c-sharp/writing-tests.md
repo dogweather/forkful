@@ -1,64 +1,119 @@
 ---
 title:                "テストの作成"
-date:                  2024-01-19
+date:                  2024-02-03T19:30:21.228783-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "テストの作成"
-
 tag:                  "Testing and Debugging"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/c-sharp/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (テストの「何」と「なぜ」?)
-テストコードはプログラムが正しい動作をする保証をするために書かれます。バグを早く見つけ、将来の機能追加やリファクタリングで発生するリスクを減らすためです。
+## 何となぜ？
 
-## How to: (やり方)
-C#のテストを書く一例を以下に示します。`NUnit` フレームワークを使った単体テストのサンプルです。
+C#でテストを書くとは、コードの機能を検証するための自動スクリプトを作成することを意味し、それが期待通りに動作するかどうかを確かめるためです。プログラマーは、早期にバグを発見し、コードのリファクタリングを容易にし、新しい変更が既存の機能を壊さないようにするため、そしてそれによってソフトウェアの品質と信頼性を向上させるためにこれを行います。
 
-```C#
+## どのように：
+
+C#開発者は、その柔軟性と広範な機能セットのために、NUnitまたはxUnitフレームワークを使用してテストを書くことが一般的です。こちらはNUnitを使用してシンプルな加算機能をテストする基本的な例です：
+
+1. **NUnitとNUnit3TestAdapterをNuGetパッケージマネージャーや.NET CLI経由でインストールします**:
+```powershell
+dotnet add package NUnit
+dotnet add package NUnit3TestAdapter
+```
+
+2. **まだ行っていない場合、C#クラスライブラリのプロジェクトを作成します**。
+
+3. **テストするシンプルな関数を書きます**。例えば、`Calculator`というクラス内の加算メソッド:
+```csharp
+public class Calculator
+{
+    public int Add(int a, int b)
+    {
+        return a + b;
+    }
+}
+```
+
+4. **NUnitを使用してテストクラスを書きます**：
+```csharp
 using NUnit.Framework;
 
-namespace SampleTests
+namespace CalculatorTests
 {
     [TestFixture]
     public class CalculatorTests
     {
         [Test]
-        public void Add_TwoNumbers_ReturnsSum()
+        public void Add_AddsTwoIntegers_ReturnsCorrectSum()
         {
             // Arrange
             var calculator = new Calculator();
-            int a = 5;
-            int b = 7;
+            int expected = 5;
 
             // Act
-            int result = calculator.Add(a, b);
+            int actual = calculator.Add(2, 3);
 
             // Assert
-            Assert.AreEqual(12, result);
-        }
-    }
-
-    public class Calculator
-    {
-        public int Add(int a, int b)
-        {
-            return a + b;
+            Assert.AreEqual(expected, actual);
         }
     }
 }
 ```
-実行すると、次のような出力が得られます。
 
+5. **IDEのテストランナーや.NET CLIを使用してテストを実行します**：
+```powershell
+dotnet test
 ```
-Test Passed - Add_TwoNumbers_ReturnsSum
+
+### サンプル出力：
+
+テストが合格した場合、次のような出力が表示されるはずです：
+```
+Test Run Successful.
+Total tests: 1
+     Passed: 1
+ Total time: 1.2345 Seconds
 ```
 
-## Deep Dive (詳細解説)
-テストの考え方はTDD（テスト駆動開発）から来ています。旧来は、コードを書いてからテストを作る流れでしたが、TDDではテストを先に書きます。代替手段としてはBDD（ビヘイビア駆動開発）があり、より行動にフォーカスを当てたテストが可能です。C#では、`NUnit`, `xUnit`, `MSTest` などのテストフレームワークが使われます。
+### xUnitを使用する場合：
 
-## See Also (関連情報)
-- [NUnit公式ドキュメント](https://nunit.org/docs/)
-- [Microsoftの単体テストの概要](https://docs.microsoft.com/ja-jp/dotnet/core/testing/)
-- [TDDに関するMartin Fowlerの記事](https://martinfowler.com/bliki/TestDrivenDevelopment.html)
+xUnitを好む場合、セットアップはNUnitに似ています。こちらは`Calculator`クラスのテスト例をxUnitを使用して書き換える方法です：
+
+1. **xUnitとxUnit.runner.visualstudioをインストールします**：
+```powershell
+dotnet add package xUnit
+dotnet add package xUnit.runner.visualstudio
+```
+
+2. **xUnitを使用してテストクラスを書きます**：
+```csharp
+using Xunit;
+
+namespace CalculatorTests
+{
+    public class CalculatorTests
+    {
+        [Fact]
+        public void Add_AddsTwoIntegers_ReturnsCorrectSum()
+        {
+            // Arrange
+            var calculator = new Calculator();
+            int expected = 5;
+
+            // Act
+            int actual = calculator.Add(2, 3);
+
+            // Assert
+            Assert.Equal(expected, actual);
+        }
+    }
+}
+```
+
+3. **.NET CLIあるいはIDEの統合テストランナーを使用してテストを実行します**。
+
+NUnitとxUnitの両方が、パラメータ化されたテスト、セットアップ/ティアダウン操作、テストのカテゴリ分けなどの強力な機能を提供するため、C#プログラマーのツールキットにとって、コードの品質と機能を確保するために欠かせないツールとなっています。

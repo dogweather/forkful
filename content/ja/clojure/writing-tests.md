@@ -1,48 +1,65 @@
 ---
 title:                "テストの作成"
-date:                  2024-01-19
+date:                  2024-02-03T19:30:06.227556-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "テストの作成"
-
 tag:                  "Testing and Debugging"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/clojure/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (テストの書き方とその理由)
-テストとは、プログラムが正しく動く保証をするための方法です。バグを見つけ、将来の機能追加やリファクタリングに安心感を持たせるために、プログラマーはテストを書きます。
+## 何となぜ？
+Clojureでのテスト作成は、他のプログラミング言語と同様に、主要なコードベースが期待通りに動作するかを検証するための専用コードを作成することを含みます。これは正確性を確保するのに役立ち、リファクタリングを容易にし、コードの安定性を高めます。
 
-## How to: (やり方)
-```Clojure
-;; Clojureのテストライブラリを使う
-(require '[clojure.test :refer :all])
+## 方法
+ClojureはJVMを活用しており、さまざまなテストフレームワークをサポートしています。しかし、一般的に使用される組み込みライブラリは`clojure.test`です。こちらが簡単な例です：
 
-;; サンプル関数定義
-(defn add [a b]
-  (+ a b))
+```clojure
+(ns example.test
+  (:require [clojure.test :refer :all]
+            [example.core :refer :all]))
 
-;; テスト定義
-(deftest test-add
-  (testing "add関数のテスト"
-    (is (= 3 (add 1 2)))
+(deftest test-addition
+  (testing "加算機能"
+    (is (= 4 (add 2 2)))
     (is (= 7 (add 3 4)))))
 
-;; テスト実行
 (run-tests)
-
-;; サンプル出力
-;; 
-;; Testing user
-;; 
-;; 2 tests, 0 failures.
 ```
 
-## Deep Dive (掘り下げ)
-過去、テストはオプションだったが今では必須と考えられています。Clojureでは、`clojure.test`が標準ライブラリとしてテストをサポート。JVMのエコシステムにおいて、JUnitなど他のテストライブラリも選択肢として使えますが、Clojureの関数型特有のアプローチにはclojure.testが適しています。テストの記述はアサーションを使って行い、関数の出力が期待値と一致しているかを検証します。
+このテストを実行した後、以下のような出力が表示されます：
 
-## See Also (関連情報)
-- Clojureの公式ドキュメントのテストセクション: https://clojure.org/guides/deps_and_cli#_testing
-- `clojure.test`のドキュメント: https://clojure.github.io/clojure/clojure.test-api.html
-- 実践的なClojureテスト戦略に関する記事: https://www.oreilly.com/library/view/clojure-programming/9781449310387/ch12.html
-- JUnit: https://junit.org/junit4/
+```
+Testing example.test
+
+Ran 2 tests containing 2 assertions.
+0 failures, 0 errors.
+```
+
+より多くの機能を求める人は、`Midje` や `test.check` などのサードパーティライブラリを利用することができます。以下はMidjeを使用した同様のテストの例です：
+
+まず、プロジェクト.cljの依存関係にMidjeを追加します：
+```clojure
+[midje "1.9.9"]
+```
+
+次に、Midjeを使用したテストは以下のようになります：
+
+```clojure
+(ns example.test
+  (:require [midje.sweet :refer :all]
+            [example.core :refer :all]))
+
+(fact "加算のテスト"
+  (add 2 2) => 4
+  (add 3 4) => 7)
+```
+
+`lein midje`を使ってテストを実行すると、出力は以下のようなものになります：
+
+```
+All checks (2) succeeded.
+```

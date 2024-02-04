@@ -1,42 +1,65 @@
 ---
-title:                "ניתוח HTML"
-date:                  2024-01-20T15:30:37.102213-07:00
-simple_title:         "ניתוח HTML"
-
+title:                "פיענוח HTML"
+date:                  2024-02-03T19:12:09.083259-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "פיענוח HTML"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/bash/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## מה ולמה?
-פירוס HTML הוא תהליך שבו אנו קוראים ומנתחים מבנה ה-HTML של עמוד ווב כדי להשיג מידע ספציפי ממנו. תכנתים עושים זאת כדי לאוטומט עיבוד נתונים, לקחת נתונים מאתרים ללא API, או לבצע בדיקות אוטומטיות על הממשק החזותי.
+פרסור HTML הוא סינון דרך מבנה ותוכן של קובץ HTML כדי לחלץ מידע. תוכניתנים עושים זאת כדי לגשת לנתונים, לשנות תוכן או לשרוט אתרים.
 
 ## איך לעשות:
-השתמשו בכלים כמו `curl` לשליפת דפי HTML ובכלים כמו `grep`, `awk`, ו `sed` לפירוס וחיפוש נתונים. עדיף להימנע מלעשות פירוס ידני ולהשתמש בספריות כמו `pup` או `html-xml-utils` שמקלות על העבודה:
+Bash אינו הבחירה הראשונה לפרסור HTML, אך ניתן לבצע זאת בעזרת כלים כמו `grep`, `awk`, `sed`, או כלים חיצוניים כמו `lynx`. למען העמידות, נשתמש בכלי `xmllint` מהחבילה `libxml2`.
 
-```Bash
-# קבלת ה-HTML של אתר ושמירתו בקובץ
-curl 'http://example.com' > example.html
+```bash
+# התקן את xmllint אם יש צורך
+sudo apt-get install libxml2-utils
 
-# פירוס תגית כותרת מהקובץ שהתקבל
-grep -oP '(?<=<title>).*?(?=</title>)' example.html
+# HTML לדוגמא
+cat > sample.html <<EOF
+<html>
+<head>
+  <title>דף לדוגמא</title>
+</head>
+<body>
+  <h1>שלום, Bash!</h1>
+  <p id="myPara">Bash יכול לקרוא אותי.</p>
+</body>
+</html>
+EOF
 
-# שימוש ב-pup לקבלת טקסט בתוך פסקה מסויימת
-pup 'p.some-class text{}' < example.html
+# ניתוח הכותרת
+title=$(xmllint --html --xpath '//title/text()' sample.html 2>/dev/null)
+echo "הכותרת היא: $title"
+
+# חילוץ פסקה לפי מזהה
+para=$(xmllint --html --xpath '//*[@id="myPara"]/text()' sample.html 2>/dev/null)
+echo "תוכן הפסקה הוא: $para"
 ```
 
-פלט הדוגמא:
+פלט:
 ```
-Title of Example Domain
-The text inside the paragraph with 'some-class' class.
+הכותרת היא: דף לדוגמא
+תוכן הפסקה הוא: Bash יכול לקרוא אותי.
 ```
 
-## עיון מעמיק:
-פירוס HTML היה חלק מההיסטוריה של האינטרנט עוד לפני ש- APIs הפכו לנפוצים. בימים הראשונים, הרבה נתונים נמשכו מדפים באינטרנט באמצעות פירוס ידני שאינו אידיאלי ויכול להתדרדר עם שינויים במבנה הדף. כיום יש ספריות עשירות כמו Beautiful Soup ב-Python או Nokogiri ב-Ruby שמספקות API עשיר וקל לשימוש לפירוס HTML. ב-Bash, ספריות כמו `pup` ו-`html-xml-utils` מוותרות על הצורך בפירוס ידני ומאפשרות עבודה מורכבת יותר על מבנה ה-HTML. חשוב לזכור שפירוס HTML באופן אוטומטי יכול להפר תנאי שימוש של אתר, לכן תמיד צריך לבדוק את המדיניות של האתר לפני שמתחילים.
+## צלילה עמוקה
 
-## ראו גם:
-- [pup](https://github.com/ericchiang/pup): כלי קונסולת Bash לפירוס וטיפול בקבצי HTML.
-- [html-xml-utils](https://www.w3.org/Tools/HTML-XML-utils): קבוצת כלים שפותחו על ידי W3C לעבודה עם HTML ו XML.
-- [Beautiful Soup Documentation](https://www.crummy.com/software/BeautifulSoup/bs4/doc/): מידע על ספריית Beautiful Soup של Python, פופולרית לפירוס HTML.
-- [Nokogiri Website](https://nokogiri.org/): האתר הרשמי של Nokogiri, ספריה לפירוס HTML וXML ב-Ruby.
+בעבר, תוכניתנים השתמשו בכלים מבוססי ביטויים רגולריים כמו `grep` לסריקה של HTML, אך זה היה מגושם. HTML אינו רגולרי - הוא קונטקסטואלי. כלים מסורתיים מפספסים זאת ועלולים להיות תועים.
+
+אלטרנטיבות? לרוב. Python עם Beautiful Soup, PHP עם DOMDocument, JavaScript עם פרסרים של DOM - שפות עם ספריות שתוכננו להבין את מבנה ה-HTML.
+
+השימוש ב-`xmllint` בתסריטי bash הוא מוצק למשימות פשוטות. הוא מבין XML, ובהארכה, XHTML. HTML רגיל יכול להיות לא צפוי, עם זאת. הוא לא תמיד עוקב אחרי כללי ה-XLM המחמירים. `xmllint` כופה על HTML להתאמץ למודל של XML, דבר שעובד היטב עבור HTML מסודר היטב, אך עלול להיתקל בבעיות עם קוד לא מסודר.
+
+## ראה גם
+
+- [W3Schools - HTML DOM Parser](https://www.w3schools.com/xml/dom_intro.asp): מפשט את HTML DOM.
+- [MDN Web Docs - ניתוח ושרשור XML](https://developer.mozilla.org/en-US/docs/Web/Guide/Parsing_and_serializing_XML): לעקרונות ניתוח של XML החלים גם על XHTML.
+- [מסמכי Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/): ספרייה של Python לניתוח HTML.
+- [מסמכי libxml2](http://xmlsoft.org/): פרטים על `xmllint` וכלים נוספים של XML.

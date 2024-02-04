@@ -1,40 +1,52 @@
 ---
 title:                "Merkkijonon muuttaminen isoiksi kirjaimiksi"
-date:                  2024-01-19
+date:                  2024-02-03T19:04:59.527923-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Merkkijonon muuttaminen isoiksi kirjaimiksi"
-
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/elm/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Isojen kirjainten käyttö stringissä tarkoittaa, että muutetaan kaikki merkit isoiksi kirjaimiksi. Ohjelmoijat tekevät tämän esimerkiksi korostaakseen otsikkoja tai varmistaakseen, että käyttäjän syöte käsitellään yhdenmukaisesti.
+## Mikä & Miksi?
 
-## How to:
-Elm:ssä stringien käsittely on suoraviivaista. Tässä esimerkki, miten muutetaan merkkijono isoiksi kirjaimiksi:
+Merkkijonon alkukirjaimen muuttaminen isoksi muuttaa annetun merkkijonon ensimmäisen merkin isoksi kirjaimeksi samalla, kun loput merkit jätetään pieniksi kirjaimiksi. Tätä tehdään usein standardoidun muotoilun tai luettavuuden vuoksi. Ohjelmoijat suorittavat tätä tehtävää usein varmistaakseen, että data esitetään johdonmukaisesti, erityisesti käyttöliittymissä tai käsiteltäessä ja näytettäessä käyttäjän syötettä.
 
-```Elm
-toUpper : String -> String
-toUpper str =
-    String.toUpper str
+## Kuinka:
 
+Elmissä ei ole sisäänrakennettua funktiota merkkijonojen alkukirjaimen suurentamiseen. Voit kuitenkin saavuttaa tämän helposti käyttämällä sisäänrakennettuja `String` moduulin funktioita kuten `toUpper`, `toLower`, `left`, ja `dropLeft`.
+
+```elm
+capitalize : String -> String
+capitalize str =
+    if String.isEmpty str then
+        ""
+    else
+        String.toUpper (String.left 1 str) ++ String.toLower (String.dropLeft 1 str)
+
+-- Esimerkin käyttö
 main =
-    let
-        original = "terveisiä suomesta!"
-        capitalized = toUpper original
-    in
-    Html.text capitalized
--- Output: "TERVEISIÄ SUOMESTA!"
+    String.toList "hello world" |> List.map capitalize |> String.join " "
+    -- Tuloste: "Hello World"
 ```
 
-## Deep Dive
-Elm ei sisällä samanlaista `toUpperCase` -funktiota kuin JavaScript, mutta `String.toUpper` ajaa saman asian. Historiallisesti, merkkijonojen muokkaus on ollut tärkeää, koska vanhemmissa järjestelmissä isoilla kirjaimilla oli erilaisia käyttötarkoituksia, kuten komentojen ja nimien erottaminen. Vaihtoehtoisesti, jos haluat vain ensimmäisen kirjaimen isoksi etkä koko stringiä, joudut toteuttamaan sen itse, koska Elm ei tarjoa valmista funktiota sille.
+Monimutkaisemmissa tilanteissa tai jos haluat käyttää kirjastoa, joka tarjoaa suoran tavan suurentaa merkkijonojen alkukirjaimia, harkitse kolmannen osapuolen paketin, kuten `elm-community/string-extra`, käyttöä. Kuitenkin viimeisimmän päivitykseni mukaan, Elmin ekosysteemi kannustaa käsittelemään tällaisia tehtäviä käyttämällä sisäänrakennettuja funktioita pitääkseen kielen ja projektit yksinkertaisina.
 
-Toinen vaihtoehto isoille kirjaimille on käyttää CSS:tä näyttövaiheessa, mutta Elm:ssä muutetaan merkkijono ohjelmallisesti ennen näyttöä. Suorituskyvyn suhteen stringien muuttaminen isoksi kirjaimin Elm:ssä on yhtä nopeaa kuin missä tahansa muussa modernissa ohjelmointikielessä.
+```elm
+import String.Extra as StringExtra
 
-## See Also
-Elm String dokumentaatio: [Elm String Docs](https://package.elm-lang.org/packages/elm/core/latest/String#toUpper)
-Stringin työskentelyn perusteet: [Working with Strings in Elm](https://elmprogramming.com/working-with-strings.html)
-Elm opas aloittelijoille: [Elm Guide for Beginners](https://guide.elm-lang.org/)
+-- Jos kolmannen osapuolen kirjastossa on `capitalize` funktio
+capitalizeWithLibrary : String -> String
+capitalizeWithLibrary str =
+    StringExtra.capitalize str
+
+-- Esimerkin käyttö oletetun kirjastofunktion kanssa
+main =
+    "this is elm" |> capitalizeWithLibrary
+    -- Oletettu tuloste: "This is elm"
+```
+
+Tarkista aina Elmin pakettirepositorio viimeisimmistä ja suosituimmista kirjastoista merkkijonojen käsittelyyn, jos etsit lisätoiminnallisuutta vakio kirjaston ulkopuolelta.

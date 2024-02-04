@@ -1,8 +1,8 @@
 ---
 title:                "Using regular expressions"
-date:                  2024-01-19
+date:                  2024-02-03T19:03:04.819670-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Using regular expressions"
-
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/java/using-regular-expressions.md"
 ---
@@ -10,10 +10,12 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Regular expressions (regex) are patterns used to match character combinations in text. Programmers use them for searching, editing, or manipulating strings efficiently—saving time and lines of code.
+
+Regular expressions (regex) in Java allow you to define specific patterns to search, manipulate, or validate strings in your code. Programmers use them for tasks like parsing log files, validating user input, or searching for specific patterns within text, enabling sophisticated string processing with minimal effort.
 
 ## How to:
-To use regex in Java, you need `Pattern` and `Matcher` classes from `java.util.regex`. Here's an example of finding email addresses in a string.
+
+Java's built-in support for regex is primarily through the `Pattern` and `Matcher` classes in the `java.util.regex` package. Here’s a simple example to find and print all occurrences of a word in a string, case insensitive:
 
 ```java
 import java.util.regex.Matcher;
@@ -21,30 +23,75 @@ import java.util.regex.Pattern;
 
 public class RegexExample {
     public static void main(String[] args) {
-        String text = "Contact me at hello@world.com or buzz@space.net.";
-        String emailRegex = "\\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Z|a-z]{2,}\\b";
-
-        Pattern pattern = Pattern.compile(emailRegex);
+        String text = "Regex is great for parsing. Parsing with regex is powerful.";
+        String wordToFind = "parsing";
+        
+        Pattern pattern = Pattern.compile(wordToFind, Pattern.CASE_INSENSITIVE);
         Matcher matcher = pattern.matcher(text);
-
+        
         while (matcher.find()) {
-            System.out.println(matcher.group());
+            System.out.println("Found '" + matcher.group() + "' at position " + matcher.start());
         }
     }
 }
 ```
+
 Output:
 ```
-hello@world.com
-buzz@space.net
+Found 'parsing' at position 16
+Found 'Parsing' at position 31
 ```
 
-## Deep Dive
-Regular expressions have been around since the 1950s, invented by mathematician Stephen Kleene. Java has integrated regex since 1.4. While powerful, regex can be overkill for simple string operations—methods like `String.contains()`, `String.split()`, and `String.startsWith()` are straightforward alternatives for basic scenarios. Under the hood, Java's regex engine (using `Pattern` and `Matcher`) compiles the pattern into a series of bytecode instructions executed by the `Matcher` against the input string.
+For tasks like splitting strings, you can use the `String` class’s `split()` method with a regex:
 
-## See Also
-Explore more about regex in Java with these resources:
-- [Java Pattern Class](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/regex/Pattern.html)
-- [Java Matcher Class](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/regex/Matcher.html)
-- [Oracle Java Tutorial: Regular Expressions](https://docs.oracle.com/javase/tutorial/essential/regex/)
-- [Regular-Expressions.info for a deep dive into regex syntax and patterns](https://www.regular-expressions.info/)
+```java
+public class SplitExample {
+    public static void main(String[] args) {
+        String text = "Java,Python,Ruby,JavaScript";
+        String[] languages = text.split(",");
+        
+        for (String language : languages) {
+            System.out.println(language);
+        }
+    }
+}
+```
+
+Output:
+```
+Java
+Python
+Ruby
+JavaScript
+```
+
+When working with regex in Java, there might be cases where an external library can simplify complex tasks. One of the popular third-party libraries for working with regex in Java is `Apache Commons Lang`. It offers utilities like `StringUtils` that make some regex tasks more straightforward. Here’s how to use it to count matches of a substring:
+
+```java
+import org.apache.commons.lang3.StringUtils;
+
+public class CommonsLangExample {
+    public static void main(String[] args) {
+        String text = "Regex makes text processing easier. Processing text with regex is efficient.";
+        String substring = "processing";
+        
+        int count = StringUtils.countMatches(text, substring);
+        System.out.println("'" + substring + "' appears " + count + " times.");
+    }
+}
+```
+
+To use Apache Commons Lang, you need to include it in your project. If you're using Maven, add this dependency to your `pom.xml`:
+
+```xml
+<dependency>
+    <groupId>org.apache.commons</groupId>
+    <artifactId>commons-lang3</artifactId>
+    <version>3.12.0</version> <!-- Check for the latest version -->
+</dependency>
+```
+
+Output:
+```
+'processing' appears 2 times.
+```

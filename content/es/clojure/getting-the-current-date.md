@@ -1,57 +1,53 @@
 ---
 title:                "Obteniendo la fecha actual"
-date:                  2024-01-20T15:13:39.121420-07:00
+date:                  2024-02-03T19:09:09.916572-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Obteniendo la fecha actual"
-
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/clojure/getting-the-current-date.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## ¿Qué y Por Qué?
-Obtener la fecha actual en Clojure es simplemente acceder al momento presente en tu programa. Los programadores hacen esto para registrar eventos, controlar el flujo de datos o manejar tareas programadas.
+## Qué y Por Qué?
+Obtener la fecha actual en programación es crucial por una miríada de razones, incluyendo el registro (logging), marcar eventos con una fecha y hora determinadas, y la programación de tareas. En Clojure, un dialecto de Lisp en la JVM, esta tarea aprovecha las capacidades de interoperabilidad con Java, permitiendo un acceso sencillo a la rica API de Fecha y Hora de Java.
 
 ## Cómo hacerlo:
-Clojure usa la biblioteca `java.util.Date` para trabajar con fechas. Aquí está cómo puedes obtener la fecha actual:
 
-```Clojure
-(import java.util.Date)
+### Usando la Interoperabilidad con Java
+La interoperabilidad sin fisuras de Clojure con Java te permite acceder directamente a la API de Fecha y Hora de Java. Así es como puedes obtener la fecha actual:
 
-(defn current-date []
-  (str (Date.)))
+```clojure
+(import java.time.LocalDate)
 
-(println (current-date))
+(defn get-current-date []
+  (str (LocalDate/now)))
+
+;; Salida de muestra
+(get-current-date) ; "2023-04-15"
 ```
 
-Salida de muestra:
-```
-"Tue Mar 14 21:02:33 CET 2023"
-```
+### Usando la Biblioteca clj-time
+Para una solución más idiomática en Clojure, podrías optar por la biblioteca `clj-time`, un envoltorio alrededor de Joda-Time, aunque para la mayoría de los proyectos nuevos, se recomienda la API de Fecha y Hora incorporada en Java 8. Sin embargo, si prefieres o necesitas `clj-time`:
 
-Para obtener una representación más detallada o modificada, podés usar `clj-time`, una biblioteca inspirada por Joda-Time pero más idiomática para Clojure:
+Primero, añade `clj-time` a las dependencias de tu proyecto. En tu `project.clj`, incluye:
 
-```Clojure
-(require '[clj-time.core :as time]
-         '[clj-time.format :as format])
-
-(defn formatted-current-date []
-  (format/unparse (format/formatters :basic-date-time) (time/now)))
-
-(println (formatted-current-date))
+```clojure
+[clj-time "0.15.2"]
 ```
 
-Salida de muestra:
+Luego, úsala para obtener la fecha actual:
+
+```clojure
+(require '[clj-time.core :as time])
+
+(defn get-current-date-clj-time []
+  (str (time/now)))
+
+;; Salida de muestra
+(get-current-date-clj-time) ; "2023-04-15T12:34:56.789Z"
 ```
-"20230314T202233.000Z"
-```
 
-## Profundización
-Históricamente, manejar fechas en programación ha sido complejo debido a zonas horarias, formatos y cálculos de fecha. En Java, `java.util.Date` y `java.util.Calendar` han sido reemplazados por clases de la API `java.time` en Java 8 debido a sus limitaciones y complicaciones de uso. Clojure, corriendo en la JVM, puede usar `java.time` directamente, pero bibliotecas como `clj-time` simplifican el proceso ofreciendo una abstracción más adecuada para trabajar con fechas y tiempos de manera funcional.
-
-Alternativas para obtener la fecha incluyen usar las clases `java.time.LocalDateTime` o `java.time.ZonedDateTime` para más precisión en el manejo de zonas horarias. La implementación depende del nivel de detalle y las operaciones que necesites hacer con la fecha.
-
-## Ver También
-- [clj-time GitHub Repository](https://github.com/clj-time/clj-time)
-- [Clojure documentation on java interop](https://clojure.org/reference/java_interop)
-- [Java 8 java.time API](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
+Ambos métodos proporcionan formas rápidas y efectivas de obtener la fecha actual en Clojure, aprovechando el poder de la plataforma Java subyacente o la conveniencia de una biblioteca específica de Clojure.

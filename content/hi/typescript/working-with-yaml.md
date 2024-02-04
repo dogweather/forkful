@@ -1,53 +1,93 @@
 ---
-title:                "यामल के साथ काम करना"
-date:                  2024-01-19
-simple_title:         "यामल के साथ काम करना"
-
+title:                "YAML के साथ काम करना"
+date:                  2024-02-03T19:27:47.080174-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "YAML के साथ काम करना"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/typescript/working-with-yaml.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (क्या और क्यों?)
-YAML एक डाटा सिरियलाइजेशन फॉर्मेट है जो JSON का सरलीकृत रूप है, और यह पठनीयता में उत्कृष्ट है। प्रोग्रामर इसे कॉन्फ़िगरेशन फ़ाइल्स, डाटा स्टोरेज और कम्यूनिकेशन बीच सर्विसेज़ के लिए इस्तेमाल करते हैं क्योंकि यह मानव और मशीन दोनों के लिए समझने में आसान होता है।
+## क्या और क्यों?
+YAML, एक डेटा सीरियलिजेशन भाषा जिसे मनुष्य-मित्रता के साथ डिज़ाइन किया गया है, अक्सर कॉन्फ़िगरेशन फ़ाइलों, इंटर-प्रॉसेस मेसेजिंग, और डेटा स्टोरेज के लिए इस्तेमाल किया जाता है। प्रोग्रामर YAML का उपयोग इसकी पठनीयता और उपयोग में आसानी के कारण करते हैं, खासकर जब जटिल संरचित डेटा के साथ डील करते समय, जो इसे TypeScript में विकसित किए गए एप्लीकेशनों के लिए एक उत्कृष्ट विकल्प बनाता है।
 
-## How to: (कैसे करें:)
-TypeScript में YAML के साथ काम करने के लिए, हम `js-yaml` लाइब्रेरी का इस्तेमाल कर सकते हैं। नीचे एक साधारण उदाहरण दिया गया है:
+## कैसे करें:
+TypeScript में YAML के साथ काम करना आमतौर पर YAML सामग्री को JavaScript ऑब्जेक्ट्स में पार्सिंग, और संभव हो तो JavaScript ऑब्जेक्ट्स को वापस YAML में परिवर्तित करना शामिल है। इसके लिए एक पार्सर की आवश्यकता होती है; एक लोकप्रिय विकल्प `js-yaml` है, एक लाइब्रेरी जिसे TypeScript प्रोजेक्ट्स में आसानी से एकीकृत किया जा सकता है।
+
+### js-yaml को इंस्टॉल करना
+पहले, अपने प्रोजेक्ट में `js-yaml` जोड़ें:
+
+```bash
+npm install js-yaml
+```
+
+### YAML को JavaScript ऑब्जेक्ट में पार्सिंग
+मान लीजिए आपके पास `config.yaml` नामक एक YAML फ़ाइल है जिसमें निम्नलिखित सामग्री है:
+
+```yaml
+database:
+  host: localhost
+  port: 5432
+  username: user
+  password: pass
+```
+
+आप इस फ़ाइल को निम्नलिखित रूप में पढ़ और पार्स कर सकते हैं ताकि यह एक JavaScript ऑब्जेक्ट बन जाए:
+
+```typescript
+import * as fs from 'fs';
+import * as yaml from 'js-yaml';
+
+// YAML फ़ाइल को लोड और पार्स करें
+const fileContents = fs.readFileSync('./config.yaml', 'utf8');
+const data = yaml.load(fileContents) as Record<string, any>;
+
+console.log(data);
+```
+
+**नमूना आउटपुट:**
+
+```json
+{
+  "database": {
+    "host": "localhost",
+    "port": 5432,
+    "username": "user",
+    "password": "pass"
+  }
+}
+```
+
+### JavaScript ऑब्जेक्ट को YAML में परिवर्तित करना
+यदि आपको दूसरी तरफ जाने की आवश्यकता है और एक JavaScript ऑब्जेक्ट को YAML स्ट्रिंग में परिवर्तित करने की आवश्यकता है, तो आप निम्नलिखित के रूप में `js-yaml` का उपयोग कर सकते हैं:
 
 ```typescript
 import * as yaml from 'js-yaml';
-import * as fs from 'fs';
 
-// YAML फाइल को पढ़ना और JS ऑब्जेक्ट में परिवर्तित करना
-const doc = yaml.load(fs.readFileSync('./config.yaml', 'utf8'));
-console.log(doc);
+const obj = {
+  title: "Example",
+  is_published: true,
+  author: {
+    name: "Jane Doe",
+    age: 34
+  }
+};
 
-// JS ऑब्जेक्ट को YAML स्ट्रिंग में परिवर्तित करना
-const yamlStr = yaml.dump(doc);
+const yamlStr = yaml.dump(obj);
 console.log(yamlStr);
 ```
-सैंपल `config.yaml`:
+
+**नमूना आउटपुट:**
+
 ```yaml
-version: 1
-services:
-  - web: 
-      image: "my-web-app:latest"
-  - database:
-      image: "mysql:5.7"
-      environment:
-        MYSQL_ROOT_PASSWORD: "s3cret"
-```
-संभावित आउटपुट:
-```
-{ version: 1, services: [ {...}, {...} ] }
+title: Example
+is_published: true
+author:
+  name: Jane Doe
+  age: 34
 ```
 
-## Deep Dive (गहराई में जानकारी)
-YAML, जिसे "YAML Ain't Markup Language" भी कहा जाता है, 2001 में विकसित किया गया था। यह JSON की तुलना में अधिक पठनीय है लेकिन कम व्यापक है। इसके विकल्पों में JSON और XML शामिल हैं। YAML का उपयोग करते समय आपको इंडेंटेशन पर ध्यान देना होता है क्योंकि यह स्ट्रक्चर को प्रभावित करता है। वर्तमान कंटेनराइजेशन और ऑर्केस्ट्रेशन सिस्टम्स जैसे कुबेरनेटीस YAML के लिए भारी निर्भरता बढ़ा रहे हैं।
-
-## See Also (यह भी देखें)
-- YAML ऑफिशल स्पेसिफिकेशन: https://yaml.org/spec.html
-- `js-yaml` NPM पैकेज: https://www.npmjs.com/package/js-yaml
-- YAML और JSON की तुलना: https://json2yaml.com/
-- YAML वैलिडेटर: http://www.yamllint.com/
+यह स्निपेट एक JavaScript ऑब्जेक्ट को YAML स्ट्रिंग में परिवर्तित करता है और इसे आउटपुट करता है। व्यवहार में, आप इसे वापस एक फ़ाइल में लिख सकते हैं या अपने एप्लीकेशन के अन्य हिस्सों में इसका उपयोग कर सकते हैं।

@@ -1,8 +1,8 @@
 ---
 title:                "Parsing HTML"
-date:                  2024-01-20T15:32:58.885783-07:00
+date:                  2024-02-03T19:02:45.807993-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Parsing HTML"
-
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/php/parsing-html.md"
 ---
@@ -10,35 +10,66 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Parsing HTML means to process and analyze the structure and content of HTML code. Programmers do it to scrape websites, manipulate or extract data, automate testing, or integrate web content into applications.
+Parsing HTML in PHP involves extracting specific information from HTML documents. Programmers perform this task to automate data extraction, web scraping, or to integrate content from various web pages within their applications, enhancing functionality without manual intervention.
 
 ## How to:
-PHP has a couple of built-in libraries to parse HTML, like DOMDocument. Here's a simple usage example:
+For parsing HTML, PHP programmers can utilize built-in functions or lean on robust libraries like Simple HTML DOM Parser. Here, we'll explore examples using both PHP's `DOMDocument` and the Simple HTML DOM Parser.
+
+### Using `DOMDocument`:
+PHP's `DOMDocument` class is a part of its DOM extension, allowing for parsing and manipulating HTML and XML documents. Here's a quick example on how to use `DOMDocument` to find all the images in an HTML document:
 
 ```php
-<?php
-$htmlString = '<!DOCTYPE html><html><body><h1>Hello, World!</h1></body></html>';
-$dom = new DOMDocument();
-@$dom->loadHTML($htmlString); // '@' suppresses warnings caused by invalid HTML structures
-$h1Tags = $dom->getElementsByTagName('h1');
+$html = <<<HTML
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sample Page</title>
+</head>
+<body>
+    <img src="image1.jpg" alt="Image 1">
+    <img src="image2.jpg" alt="Image 2">
+</body>
+</html>
+HTML;
 
-foreach ($h1Tags as $tag) {
-    echo $tag->nodeValue; // Output: Hello, World!
+$doc = new DOMDocument();
+@$doc->loadHTML($html);
+$images = $doc->getElementsByTagName('img');
+
+foreach ($images as $img) {
+    echo $img->getAttribute('src') . "\n";
 }
-?>
 ```
 
-This scripts outputs: `Hello, World!`
+Sample output:
+```
+image1.jpg
+image2.jpg
+```
 
-## Deep Dive
-Back in the early web days, we grabbed HTML with regex and ad-hoc solutions, but it was messy. Enter `DOMDocument` and `SimpleXMLElement`, with proper HTML and XML parsing since PHP 5. They let you navigate and manipulate HTML as a tree structure.
+### Using Simple HTML DOM Parser:
+For more complex tasks or easier syntax, you might prefer using a third-party library. Simple HTML DOM Parser is a popular choice, providing a jQuery-like interface for navigating and manipulating HTML structures. Here's how to use it:
 
-Nowadays, while `DOMDocument` is your go-to for handling internal parsing, alternatives like `SimpleHTMLDom` and `phpQuery` provide additional syntactic sugar and can be friendlier for those coming from a JavaScript/jQuery background.
+First, install the library using Composer:
+```
+composer require simple-html-dom/simple-html-dom
+```
 
-Internally, `DOMDocument` converts HTML to a DOM tree, making it easy to access specific elements, change attributes, and even modify the document on-the-fly. One cool thing about `DOMDocument` is its tolerance for poor HTML, cleaning it up and letting you work with real-world web pages that aren't always perfectly formatted.
+Then, manipulate HTML to, for example, find all links:
 
-## See Also
-- [DOMDocument on PHP.net](https://www.php.net/manual/en/class.domdocument.php)
-- [SimpleXML for handling basic XML tasks](https://www.php.net/manual/en/book.simplexml.php)
-- [simplehtmldom SourceForge Project](https://sourceforge.net/projects/simplehtmldom/)
-- [phpQuery GitHub repository](https://github.com/punkave/phpQuery)
+```php
+require_once 'vendor/autoload.php';
+
+use simplehtmldom\HtmlWeb;
+
+$client = new HtmlWeb();
+$html = $client->load('http://www.example.com');
+
+foreach($html->find('a') as $element) {
+    echo $element->href . "\n";
+}
+```
+
+This code snippet will fetch the HTML content of 'http://www.example.com', parse it, and print out all the hyperlinks. Remember to replace `'http://www.example.com'` with the actual URL you wish to parse.
+
+Utilizing these methods, PHP developers can effectively parse HTML content, tailor data extraction to their needs, or seamlessly integrate external web content into their projects.

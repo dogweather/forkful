@@ -1,39 +1,58 @@
 ---
-title:                "표준 오류로 쓰기"
-date:                  2024-01-19
-simple_title:         "표준 오류로 쓰기"
-
+title:                "표준 에러에 쓰기"
+date:                  2024-02-03T19:33:48.998979-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "표준 에러에 쓰기"
 tag:                  "Files and I/O"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/javascript/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (무엇이며, 왜?)
-표준 에러(standard error)에 쓰기는 프로세스의 오류 메시지를 출력하는 방법입니다. 개발자들은 디버깅을 용이하게 하고 오류 메시지를 표준 출력(로그나 주된 결과물)과 분리하기 위해 이를 사용합니다.
+## 무엇이며 왜인가?
+자바스크립트에서 표준 오류(stderr)로 작성하는 것은 오류 메시지나 중요한 정보를 로깅 및 디버깅 목적으로 특정 분리된 스트림에 지시하는 것입니다. 특히 Unix 계열 환경에서 유용합니다. 프로그래머들은 일반 프로그램 출력과 오류 메시지를 구분함으로써, 출력 관리를 더 깔끔하게 하고 오류 모니터링을 더 쉽게하기 위해 이를 수행합니다.
 
-## How to: (방법)
-Javascript에서 표준 에러에 쓰려면 `console.error()` 또는 `process.stderr.write()`를 사용합니다.
+## 방법:
+Node.js에서 stderr로 작성하는 것은 `console.error()` 메서드를 사용하거나 `process.stderr`에 직접 작성함으로써 달성할 수 있습니다. 아래는 두 접근 방식을 모두 보여주는 예시입니다:
 
 ```javascript
-// console.error 사용 예시
-console.error('에러 발생: 파일을 찾을 수 없습니다.');
+// console.error() 사용하기
+console.error('이것은 오류 메시지입니다.');
 
-// process.stderr.write 사용 예시
-process.stderr.write('에러 발생: 데이터베이스 연결 실패.\n');
+// process.stderr에 직접 작성하기
+process.stderr.write('이것은 또 다른 오류 메시지입니다.\n');
 ```
 
-**출력 결과:**
+두 방법 모두에 대한 샘플 출력은 stdout과 섞이지 않고 stderr 스트림에 나타날 것입니다:
 ```
-에러 발생: 파일을 찾을 수 없습니다.
-에러 발생: 데이터베이스 연결 실패.
+이것은 오류 메시지입니다.
+이것은 또 다른 오류 메시지입니다.
 ```
 
-## Deep Dive (심화 학습)
-초기 컴퓨터 시스템에서는 표준 출력(std out)과 표준 에러(std err) 스트림을 구분하여 오류 메시지를 분리하고 특별하게 처리할 수 있도록 했습니다. 대안으로는 로깅 라이브러리나 파일로의 직접 기록이 있지만, 표준 에러는 실시간으로 오류를 관찰할 때 유용합니다. `console.error`는 내부적으로 `process.stderr.write`를 사용하여 확장된 기능(스택 트레이스 같은)을 제공하고, 포맷팅 옵션도 가집니다.
+더 정교하거나 애플리케이션별 로깅을 위해, 많은 자바스크립트 프로그래머들은 `winston` 또는 `bunyan` 같은 제3자 라이브러리를 사용합니다. 여기 `winston`을 사용하는 간단한 예시가 있습니다:
 
-## See Also (참고 자료)
-- Node.js 공식 문서의 콘솔(Console): https://nodejs.org/api/console.html
-- Node.js 공식 문서의 프로세스(Process): https://nodejs.org/api/process.html#process_process_stderr
-- 기초적인 Node.js 로깅 가이드: https://www.twilio.com/blog/guide-node-js-logging
+먼저, npm을 통해 `winston`을 설치하세요:
+```shell
+npm install winston
+```
+
+그 다음, `winston`을 오류 로깅을 stderr에 하도록 설정하세요:
+```javascript
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  levels: winston.config.syslog.levels,
+  transports: [
+    new winston.transports.Console({
+      stderrLevels: ['error']
+    })
+  ]
+});
+
+// 오류 메시지 로깅하기
+logger.error('winston을 통해 로그된 오류.');
+```
+
+이 설정을 통해 `winston`을 사용하여 오류를 로그할 때, 표준 출력과 오류 출력 사이의 명확한 분리를 유지하도록 stderr로 지시하는 데 도움이 됩니다.

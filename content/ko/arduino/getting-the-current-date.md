@@ -1,65 +1,65 @@
 ---
 title:                "현재 날짜 가져오기"
-date:                  2024-01-20T15:13:20.529518-07:00
+date:                  2024-02-03T19:08:55.080407-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "현재 날짜 가져오기"
-
 tag:                  "Dates and Times"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/arduino/getting-the-current-date.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (무엇과 왜?)
-현재 날짜 가져오기는 실시간으로 연, 월, 일 정보를 기록하는 것입니다. 이를 통해 프로그래머들은 이벤트 타이밍 추적, 데이터 로깅, 사용자 경험의 시간 관련 기능을 구현합니다.
+## 무엇을, 왜?
+아두이노 프로젝트에서 현재 날짜를 얻는 것은 로깅, 타임스탬핑 또는 스케줄링 작업에 중요한 실시간 정보를 얻는 것을 포함합니다. 프로그래머들은 종종 기능성을 강화하고, 데이터의 관련성을 보장하며, IoT 및 내장 프로젝트에서 시간에 민감한 작업을 용이하게 하기 위해 이 기능이 필요합니다.
 
-## How to (어떻게 할까요?):
-```Arduino
+## 방법:
+아두이노 자체는 실시간 시계(RTC)가 없어 현재 날짜를 직접 가져올 수 있는 내장 메서드가 없습니다. 그러나, DS3231과 같은 외부 RTC 모듈과 Adafruit에 의해 개발된 `RTClib`과 같은 라이브러리를 사용하여 이를 달성할 수 있습니다. 이 라이브러리를 사용하면 이러한 모듈과의 인터페이싱을 간단하게 만듭니다.
+
+먼저, `RTClib` 라이브러리가 아두이노 IDE에 설치되어 있는지 확인하십시오. 그런 다음 RTC 모듈을 해당 문서에 따라 아두이노에 연결하십시오.
+
+시작하기 위한 간단한 예제를 소개합니다:
+
+```cpp
 #include <Wire.h>
-#include <RTClib.h>
+#include "RTClib.h"
 
 RTC_DS3231 rtc;
 
 void setup() {
   Serial.begin(9600);
+
   if (!rtc.begin()) {
-    Serial.println("Couldn't find RTC");
+    Serial.println("RTC를 찾을 수 없습니다");
     while (1);
   }
 
   if (rtc.lostPower()) {
-    Serial.println("RTC lost power, setting the time!");
-    // Set the date and time to the date and time this sketch was compiled
-    rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
+    Serial.println("RTC가 전원을 잃었습니다, 시간을 설정합시다!");
+    // 새 장치에서 시간을 설정하거나 전원 손실 후에 시간을 설정해야 할 때, 여기서 설정할 수 있습니다.
+    // rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
   }
 }
 
 void loop() {
   DateTime now = rtc.now();
 
+  Serial.print("현재 날짜: ");
   Serial.print(now.year(), DEC);
   Serial.print('/');
   Serial.print(now.month(), DEC);
   Serial.print('/');
   Serial.println(now.day(), DEC);
 
-  delay(1000);
+  delay(3000); // 시리얼 스팸을 줄이기 위해 3초 지연
 }
 ```
-Sample output:
+
+샘플 출력 (RTC가 사전에 설정되었다고 가정):
+
 ```
-2023/3/15
+현재 날짜: 2023/4/15
 ```
 
-## Deep Dive (심층 분석):
-현재 날짜를 가져오려면 실시간 클록(RTC) 모듈이 필요합니다. 이 예제에서는 DS3231 RTC를 사용했습니다. 왜냐하면 정확성과 배터리 백업 기능이 있기 때문입니다. 역사적으로, RTC는 하드웨어에 내장되어 PC 시계를 관리했습니다. 현재에는 비슷한 모듈을 아두이노 프로젝트에 쉽게 추가할 수 있습니다.
-
-알터네이티브로, 네트워크 시간 프로토콜(NTP) 클라이언트를 사용해 인터넷에서 시간을 가져올 수 있지만, 인터넷 연결이 필요합니다. 다른 구현 방식으로는 GPS 모듈을 사용해 UTC 시간을 확득하는 방법이 있습니다.
-
-실제 구현에서는 `RTClib` 라이브러리를 사용합니다. 이 라이브러리는 다양한 RTC 하드웨어와 인터페이스하도록 설계되었으며 간단한 API를 통해 날짜와 시간 정보에 접근을 용이하게 합니다. 코드에서 `rtc.now()` 함수를 호출하여 현재 날짜와 시간을 `DateTime` 객체로 받습니다. 이 객체로부터 년(`year()`), 월(`month()`), 일(`day()`)을 얻어낼 수 있습니다.
-
-## See Also (참고 자료):
-- RTClib 라이브러리: https://github.com/adafruit/RTClib
-- DS3231 RTC 모듈: https://datasheets.maximintegrated.com/en/ds/DS3231.pdf
-- NTP 클라이언트 구현 방법: https://www.arduino.cc/en/Tutorial/LibraryExamples/NTPClient
-- 아두이노와 GPS 시간 동기화: https://www.arduino.cc/en/Tutorial/GPSTimeSync
+이 코드는 RTC 모듈을 초기화한 다음, 루프에서 현재 날짜를 매 3초마다 시리얼 모니터에 가져와서 출력합니다. `rtc.adjust(...)` 줄은 주석 처리를 제거하고 수정하여 처음이나 전원이 손실된 후 RTC의 날짜와 시간을 설정할 수 있음을 기억하십시오.

@@ -1,95 +1,93 @@
 ---
-title:                "YAML-tiedostojen käsittely"
-date:                  2024-01-19
-simple_title:         "YAML-tiedostojen käsittely"
-
+title:                "Työskentely YAML:n kanssa"
+date:                  2024-02-03T19:25:38.928456-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Työskentely YAML:n kanssa"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/java/working-with-yaml.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Mitä & Miksi?)
-YAML on ihmisen luettava data-sarjoitustapa, jota käytetään konfiguraatiotiedostoissa. Ohjelmoijat käyttävät sitä, koska se on selkeämpi kuin monet muut formaatit, ja sitä tukevat useat ohjelmointikielet.
+## Mikä & Miksi?
+YAML, lyhenne sanoista "YAML Ain't Markup Language", on ihmisen luettavissa oleva datan serialisointistandardi, jota ohjelmoijat käyttävät konfiguraatiotiedostoihin, datan dumpaamiseen ja datan siirtoon kielten välillä. Se on suosittu sen luettavuuden ja käyttöhelppouden vuoksi, mikä tekee siitä yleisen valinnan sovellusten ja palveluiden konfigurointiin.
 
-## How to: (Kuinka tehdä:)
-Java-koodissa YAML-tiedostojen käsittelyyn tarvitaan kirjasto, kuten `SnakeYAML`. Asenna se Maven-projektiisi lisäämällä riippuvuus pom.xml-tiedostoon:
+## Kuinka:
+Javassa voit työskennellä YAML-tiedostojen kanssa käyttämällä kolmannen osapuolen kirjastoja, koska Java Standard Edition ei sisällä sisäänrakennettua tukea YAML:lle. Yksi suosittu kirjasto on SnakeYAML, joka mahdollistaa YAML-datan jäsentämisen ja generoinnin helposti.
+
+### SnakeYAML:n asettaminen
+Lisää ensin SnakeYAML projektiisi. Jos käytät Mavenia, lisää seuraava riippuvuus `pom.xml`-tiedostoosi:
 
 ```xml
 <dependency>
     <groupId>org.yaml</groupId>
     <artifactId>snakeyaml</artifactId>
-    <version>1.28</version>
+    <version>1.30</version>
 </dependency>
 ```
 
-Lukeaksesi YAML-tiedoston:
-
+### YAML:n lukeminen
 ```java
 import org.yaml.snakeyaml.Yaml;
-import org.yaml.snakeyaml.constructor.Constructor;
 import java.io.InputStream;
 import java.util.Map;
 
-public class YamlExample {
+public class ReadYamlExample {
     public static void main(String[] args) {
-        Yaml yaml = new Yaml(new Constructor(Map.class));
-        InputStream inputStream = YamlExample.class
-            .getClassLoader()
-            .getResourceAsStream("config.yaml");
-        Map<String, Object> data = yaml.load(inputStream);
-        System.out.println(data);
-    }
-}
-```
-
-Tuloste:
-
-```plaintext
-{database={connection=postgresql://localhost/test, user=admin, password=secret}}
-```
-
-Kirjoittaaksesi YAML-tiedostoon:
-
-```java
-import org.yaml.snakeyaml.Yaml;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
-
-public class YamlWriterExample {
-    public static void main(String[] args) {
-        Map<String, Object> data = new HashMap<>();
-        data.put("database", new HashMap<String, String>() {{
-            put("connection", "postgresql://localhost/test");
-            put("user", "admin");
-            put("password", "secret");
-        }});
-
         Yaml yaml = new Yaml();
-        try (FileWriter writer = new FileWriter("output.yaml")) {
-            yaml.dump(data, writer);
-        } catch (IOException e) {
+        try (InputStream inputStream = ReadYamlExample.class
+                .getClassLoader()
+                .getResourceAsStream("config.yml")) {
+            Map<String, Object> data = yaml.load(inputStream);
+            System.out.println(data);
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
 }
 ```
+Olettaen, että `config.yml` näyttää tältä:
+```yaml
+name: Example
+version: 1.0
+features:
+  - login
+  - signup
+```
+Tuloste on:
+```
+{name=Example, version=1.0, features=[login, signup]}
+```
 
-Tämä koodi luo `output.yaml` tiedoston sisältäen YAML-formaadissa olevat tiedot.
+### YAML:n kirjoittaminen
+Javan objekteista YAML:n generointiin, käytä SnakeYAML:n tarjoamaa `dump`-metodia:
+```java
+import org.yaml.snakeyaml.Yaml;
+import java.util.Arrays;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
-## Deep Dive (Syvä sukellus)
+public class WriteYamlExample {
+    public static void main(String[] args) {
+        Map<String, Object> data = new LinkedHashMap<>();
+        data.put("name", "Example");
+        data.put("version", 1.0);
+        data.put("features", Arrays.asList("login", "signup"));
 
-Historiallisesti YAML kehitettiin, koska tarvittiin helpommin luettava formaatti kuin XML. JSON:n kaltainen, mutta paremmin ihmisten luettavissa. Nimi oli aluksi lyhenne sanoista "Yet Another Markup Language", mutta nykyään se merkitsee "YAML Ain't Markup Language", korostaen sen datakeskeisyyttä.
-
-Vaihtoehtoja YAML:lle ovat esimerkiksi JSON ja XML. Nämä formaatit ovat myös laajasti tuettuja, mutta niillä on omat käyttötarkoituksensa. YAML on usein parempi valinta, kun tarvitset selkeää konfiguraatiota tai kun tiedot ovat syvästi hierarkisia.
-
-SnakeYAML on puhtaasti Java-kirjasto YAML:n parsimiseen ja tulostamiseen. Se noudattaa YAML 1.1 -standardia ja tarjoaa kyvyn lukea ja kirjoittaa kaikenlaista YAML-muotoista dataa. Käyttäessäsi SnakeYAML-kirjastoa, vastaat itse resurssien, kuten InputStreamin, hallinnasta.
-
-## See Also (Lisätietoa)
-
-- YAML-spesifikaatio: https://yaml.org/spec/1.2.2/
-- SnakeYAML GitHub-sivu: https://github.com/asomov/snakeyaml
-- Vertailu JSON:n ja YAML:n välillä: https://phoenixnap.com/kb/json-vs-yaml
-- XML:n perusteet: https://www.w3schools.com/xml/xml_whatis.asp
+        Yaml yaml = new Yaml();
+        String output = yaml.dump(data);
+        System.out.println(output);
+    }
+}
+```
+Tämä generoi ja tulostaa seuraavan YAML-sisällön:
+```yaml
+name: Example
+version: 1.0
+features:
+- login
+- signup
+```
+Hyödyntämällä SnakeYAML:ää, Java-kehittäjät voivat helposti integroida YAML:n jäsentämisen ja generoinnin sovelluksiinsa, hyötyen YAML:n luettavuudesta ja yksinkertaisuudesta konfiguraation ja datan vaihdon tarkoituksiin.

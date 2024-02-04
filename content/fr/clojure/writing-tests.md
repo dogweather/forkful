@@ -1,45 +1,64 @@
 ---
 title:                "Rédaction de tests"
-date:                  2024-01-19
+date:                  2024-02-03T19:29:57.989081-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Rédaction de tests"
-
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/clojure/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
-Écrire des tests, c'est vérifier que notre code fait ce qu'il doit. Les développeurs font cela pour éviter les bugs, gagner du temps au long terme, et pour que le refactoring ne devienne pas un cauchemar.
+Écrire des tests en Clojure, tout comme dans d'autres langages de programmation, implique de créer du code dédié pour vérifier que votre code principal fonctionne comme prévu. Cela aide à garantir la correction, à faciliter le refactoring et à améliorer la stabilité du code.
 
-## Comment ?
+## Comment faire :
+Clojure, en tirant parti de la JVM, prend en charge divers frameworks de test. Toutefois, une bibliothèque intégrée couramment utilisée est `clojure.test`. Voici un exemple simple :
 
-Pour faire un test en Clojure, on utilise souvent la librairie `clojure.test`. Voici un exemple :
+```clojure
+(ns exemple.test
+  (:require [clojure.test :refer :all]
+            [exemple.core :refer :all]))
 
-```Clojure
-(require '[clojure.test :refer :all])
+(deftest test-addition
+  (testing "Fonctionnalité d'addition"
+    (is (= 4 (add 2 2)))
+    (is (= 7 (add 3 4)))))
 
-(deftest addition-test
-  (testing "Testons l'addition simple"
-    (is (= 4 (+ 2 2)))))
-    
 (run-tests)
+```
+Après avoir exécuté ce test, vous verriez une sortie similaire à :
 
 ```
+Testing exemple.test
 
-La sortie ressemblera à quelque chose comme ça :
-
-```
-Testing user
-
-Ran 1 tests containing 1 assertions.
+Ran 2 tests containing 2 assertions.
 0 failures, 0 errors.
 ```
 
-## Exploration profonde
-Historiquement, les tests en programmation ont pris de l'ampleur avec l'arrivée des méthodologies agiles. Alternativement, des frameworks comme `Midje` et `expectations.clojure.test` existent pour ceux qui cherchent autre chose. Concernant l'implantation, Clojure, étant fonctionnelle, favorise les tests unitaires et l'approche TDD, où les fonctions pures sont plus faciles à tester du fait de leur absence d'effets de bord.
+Pour ceux qui recherchent des options plus riches en fonctionnalités, on peut utiliser des bibliothèques tierces comme `Midje` ou `test.check`. Voici comment vous pourriez utiliser Midje pour un test similaire :
 
-## Voir aussi
-- [clojure.test](https://clojure.github.io/clojure/clojure.test-api.html) pour la documentation officielle.
-- [Clojure for the Brave and True](https://www.braveclojure.com/) pour un guide sur Clojure, incluant des parties sur le test.
-- [Midje sur GitHub](https://github.com/marick/Midje) pour une alternative de clojure.test.
+D'abord, ajoutez Midje à vos dépendances de project.clj :
+```clojure
+[midje "1.9.9"]
+```
+
+Ensuite, votre test avec Midje pourrait ressembler à ceci :
+
+```clojure
+(ns exemple.test
+  (:require [midje.sweet :refer :all]
+            [exemple.core :refer :all]))
+
+(fact "Test de l'addition"
+  (add 2 2) => 4
+  (add 3 4) => 7)
+```
+
+Après l'exécution du test via Midje avec `lein midje`, la sortie afficherait quelque chose d'analogue à :
+
+```
+Tous les contrôles (2) ont réussi.
+```

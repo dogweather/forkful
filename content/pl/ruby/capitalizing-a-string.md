@@ -1,41 +1,44 @@
 ---
-title:                "Zamiana liter na wielkie w ciągu znaków"
-date:                  2024-01-19
-simple_title:         "Zamiana liter na wielkie w ciągu znaków"
-
+title:                "Zamiana liter na wielkie w łańcuchu znaków"
+date:                  2024-02-03T19:06:18.103640-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Zamiana liter na wielkie w łańcuchu znaków"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/ruby/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Co i Dlaczego?)
-Capitalizing a string means converting the first character to uppercase if it's a letter. Programmers do this for consistency in user interfaces, for proper nouns, or to match stylistic or language rules.
+## Co i dlaczego?
+Kapitalizacja ciągu znaków w programowaniu często odnosi się do zamiany pierwszego znaku ciągu na wielką literę, a resztę na małe litery. Programiści robią to z powodów takich jak przestrzeganie konwencji nazewnictwa, poprawa czytelności wyników lub zapewnienie spójności danych dla porównań i przechowywania.
 
-## How to: (Jak to zrobić:)
-```Ruby
-# Capitalizing the first letter of a string
-phrase = "warszawa jest super!"
-puts phrase.capitalize   # Output: "Warszawa jest super!"
+## Jak to zrobić:
+Ruby oferuje proste metody manipulacji ciągami znaków, w tym kapitalizację. Oto jak można zamienić ciąg na kapitałki w Ruby:
 
-# Capitalizing all words in a string
-require 'active_support/core_ext/string/inflections'
-puts phrase.titleize     # Output: "Warszawa Jest Super!"
-
-# Using 'capitalize' with bang (!) method for in-place modification
-phrase.capitalize!
-puts phrase              # Output: "Warszawa jest super!"
+```ruby
+# Wbudowana metoda Ruby
+string = "hello world"
+capitalized_string = string.capitalize
+puts capitalized_string # => "Hello world"
 ```
 
-## Deep Dive (Dogłębna analiza)
-Capitalizing strings is straightforward in Ruby, but there's more to it. Historically, it's been a feature of string manipulation in many programming languages to help with formatting and presenting text data. 
+Metoda `.capitalize` w Ruby jest wygodna, ale wpływa tylko na pierwszą literę. Dla większej kontroli lub aby zamienić każde słowo w ciągu na kapitałki (znane jako styl tytułowy), możesz chcieć użyć metody `titleize` z rozszerzenia Rails ActiveSupport, lub zaimplementować ją samodzielnie:
 
-There are alternatives like `upcase` for full uppercasing, `downcase` for lowercasing, and `titleize` (from the Rails framework) for capitalizing every word. These alternatives cater to different needs. 
+```ruby
+# Używanie 'titleize' z ActiveSupport w Rails
+require 'active_support/core_ext/string/inflections'
+string = "hello world"
+puts string.titleize # => "Hello World"
+```
 
-The Ruby method `capitalize` changes the first character to uppercase and the rest to lowercase. In other programming contexts, `capitalize` might only change the first character to uppercase, keeping the rest unchanged—a good thing to keep in mind when switching languages.
+Jeśli nie używasz Rails lub preferujesz czyste rozwiązanie w Ruby, oto jak możesz zamienić każde słowo w ciągu na kapitałki:
 
-Implementation-wise, Unicode support in capitalization can be tricky, as not all scripts have the concept of letter casing.
+```ruby
+string = "hello world"
+capitalized_each_word = string.split.map(&:capitalize).join(' ')
+puts capitalized_each_word # => "Hello World"
+```
 
-## See Also (Zobacz także)
-- Ruby Documentation for capitalize: [ruby-doc.org/core/String.html#method-i-capitalize](https://ruby-doc.org/core/String.html#method-i-capitalize)
-- Rails String Inflections for 'titleize': [api.rubyonrails.org](https://api.rubyonrails.org/classes/String.html#method-i-titleize)
+Ta metoda dzieli ciąg na tablicę słów, zamienia każde z nich na kapitałki, a następnie łączy je z powrotem razem z przestrzenią.

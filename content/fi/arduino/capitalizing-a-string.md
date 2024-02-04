@@ -1,36 +1,53 @@
 ---
 title:                "Merkkijonon muuttaminen isoiksi kirjaimiksi"
-date:                  2024-01-19
+date:                  2024-02-03T19:05:17.214058-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Merkkijonon muuttaminen isoiksi kirjaimiksi"
-
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/arduino/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Mikä & Miksi?)
-Isoilla kirjaimilla kirjoittaminen tarkoittaa merkkijonon muuntamista siten, että kaikki kirjaimet ovat suuraakkosia. Ohjelmoijat käyttävät tätä standardoidakseen tekstin esittämisen, helpottamaan vertailua tai korostamaan tietyn tekstin osan tärkeyttä.
+## Mitä & Miksi?
+Merkkijonon suurkirjoittaminen tarkoittaa jokaisen sanan ensimmäisen merkin muuntamista suuraakkoseksi samalla varmistaen, että loput merkit säilyvät pienaakkosina. Tämä operaatio on yleinen tiedon muotoilussa ja käyttäjän syötteen normalisoinnissa ylläpitämään johdonmukaisuutta ja parantamaan luettavuutta.
 
-## How to: (Kuinka tehdä:)
-```Arduino
+## Miten:
+Arduino, joka on pääasiassa tunnettu vuorovaikutuksesta laitteiston kanssa, sisältää myös perustason merkkijonon käsittelykykyjä `String`-objektinsa kautta. Kuitenkaan siinä ei ole suoraa `capitalize`-funktiota, joka nähdään korkeamman tason kielissä. Näin ollen toteutamme suurkirjoittamisen iteroimalla merkkijonon yli ja soveltamalla kirjainkoon muutoksia.
+
+Tässä on perusesimerkki ilman kolmannen osapuolen kirjastoja:
+
+```cpp
+String capitalizeString(String input) {
+  if (input.length() == 0) {
+    return ""; // Palauta tyhjä merkkijono, jos syöte on tyhjä
+  }
+  input.toLowerCase(); // Muunna koko merkkijono ensin pienaakkosiksi
+  input.setCharAt(0, input.charAt(0) - 32); // Säädä ensimmäinen merkki suuraakkoseksi
+  
+  // Säädä suuraakkoseksi kirjaimet, jotka seuraavat välilyöntiä
+  for (int i = 1; i < input.length(); i++) {
+    if (input.charAt(i - 1) == ' ') {
+      input.setCharAt(i, input.charAt(i) - 32);
+    }
+  }
+  return input;
+}
+
 void setup() {
   Serial.begin(9600);
+  String testStr = "hello arduino world";
+  String capitalizedStr = capitalizeString(testStr);
+  Serial.println(capitalizedStr); // Tuloste: "Hello Arduino World"
 }
 
 void loop() {
-  String message = "Moi Suomi!";
-  String upperCaseMessage = message.toUpperCase();
-  Serial.println(upperCaseMessage);
-  delay(2000); // Odotetaan kaksi sekuntia ennen seuraavaa toistoa.
+  // Tyhjä silmukka
 }
 ```
-Näyteväli: "MOI SUOMI!"
 
-## Deep Dive (Sukellus syvemmälle)
-String-objektin muuntaminen kokonaan suuraakkosiin on yksinkertainen toiminto, mutta mutkistuu, jos otetaan huomioon kansainvälinen merkistökoodaus ja eri kielet. Arduino käyttää `toUpperCase()`-metodia, joka on ollut osa kielen standardeja kirjastoja jo vuosia. Tämä metodi käsittelee ANSI:n määrittämiä merkkejä, mutta voi kohdata ongelmia erikoismerkkien tai esimerkiksi skandinaavisten merkkien kanssa. Vaihtoehtoisena ratkaisuna voit käyttää kirjastoja, jotka tukevat laajempaa merkistöä. Kapitalisointiin liittyvä suorituskyky on harvoin huolenaihe, mutta tietyn pituisten merkkijonojen käsittely voi hidastaa mikrokontrollerin toimintaa.
+Tämä koodipätkä määrittelee `capitalizeString`-funktion, joka ensin muuntaa koko merkkijonon pienaakkosiksi standardoidakseen sen kirjainkoon. Sitten se suurkirjoittaa ensimmäisen merkin ja minkä tahansa välilyönnin jälkeen tulevan merkin, tehokkaasti suurkirjoittaen jokaisen sanan syötteen merkkijonossa. Huomaa, että tämä alkeellinen toteutus olettaa ASCII-merkistökoodauksen ja saattaa vaatia säätöjä täyden Unicode-tuen saavuttamiseksi.
 
-## See Also (Katso myös)
-- Arduino String Reference: https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/
-- Unicode-koodaus: https://en.wikipedia.org/wiki/Unicode
-- C++ STL string transform -funktio: http://www.cplusplus.com/reference/algorithm/transform/
+Tällä hetkellä ei ole laajasti hyväksyttyjä kolmannen osapuolen kirjastoja nimenomaan merkkijonon käsittelyyn Arduinon ekosysteemissä, pääasiassa sen keskittyessä laitteistoon vuorovaikutukseen ja tehokkuuteen. Kuitenkin tarjottu esimerkki on suoraviivainen tapa saavuttaa merkkijonon suurkirjoittaminen Arduinon ohjelmointiympäristössä.

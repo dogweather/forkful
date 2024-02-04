@@ -1,46 +1,102 @@
 ---
 title:                "Arbeta med JSON"
-date:                  2024-01-19
+date:                  2024-02-03T19:24:33.727342-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Arbeta med JSON"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/typescript/working-with-json.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-JSON (JavaScript Object Notation) är ett textbaserat dataformat för att spara och utbyta data. Programmerare använder JSON för dess enkelhet och för att det är lätt att läsa för både människor och maskiner.
 
-## Hur gör man:
-Här är ett exempel på hur du hanterar JSON i TypeScript:
+Att arbeta med JSON (JavaScript Object Notation) innebär att tolka JSON-data till och från ett användbart format i TypeScript. Programmerare gör detta för att enkelt manipulera, lagra eller överföra strukturerad data, eftersom JSON är lättviktigt, textbaserat och lättläst för både människor och maskiner.
+
+## Hur man gör:
+
+### Tolka JSON till ett TypeScript-objekt
+För att konvertera en JSON-sträng till ett TypeScript-objekt använder du metoden `JSON.parse()`. Detta är användbart när du tar emot JSON-data från en webbserver eller läser en JSON-fil.
 
 ```typescript
-// Definiera en TypeScript-typ
-interface Användare {
-  namn: string;
-  ålder: number;
-  aktiv: boolean;
-}
+const jsonStr = '{"name": "John Doe", "age": 30}';
+const obj = JSON.parse(jsonStr);
 
-// Skapa ett JSON-strängexempel
-const jsonSträng = '{"namn": "Anna", "ålder": 28, "aktiv": true}';
-
-// Konvertera JSON-strängen till ett TypeScript-objekt
-const användare: Användare = JSON.parse(jsonSträng);
-
-console.log(användare.namn); // Skriver ut: Anna
-
-// Konvertera TypeScript-objekt tillbaka till en JSON-sträng
-const nyJsonSträng = JSON.stringify(användare);
-
-console.log(nyJsonSträng); // Skriver ut: {"namn":"Anna","ålder":28,"aktiv":true}
+console.log(obj.name); // Utdata: John Doe
 ```
 
-## Fördjupning
-JSON började användas i början av 2000-talet och är baserat på JavaScript-syntax, men är helt oberoende av språket. Alternativ till JSON inkluderar XML och YAML, men JSON är vanligtvis föredragen för dess kompakthet och hastighet. I TypeScript hanteras JSON via `JSON.parse()` och `JSON.stringify()` som omvandlar mellan JSON-strängar och TypeScript-objekt.
+### Omvandla ett TypeScript-objekt till JSON
+För att konvertera ett TypeScript-objekt till en JSON-sträng använder du metoden `JSON.stringify()`. Detta är särskilt användbart när du behöver skicka data till en webbserver.
 
-## Se även
-- [MDN Web Docs om JSON](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON)
-- [TypeScript Handbook](https://www.typescriptlang.org/docs/handbook/intro.html)
-- [JSON.org](https://www.json.org/json-en.html)
+```typescript
+const person = {
+  name: "Jane Doe",
+  age: 25,
+};
+
+const jsonStr = JSON.stringify(person);
+
+console.log(jsonStr); // Utdata: {"name":"Jane Doe","age":25}
+```
+
+### Arbeta med gränssnitt
+Du kan definiera TypeScript-gränssnitt för att arbeta sömlöst med JSON-data genom att säkerställa strukturen på dina objekt.
+
+```typescript
+interface Person {
+  name: string;
+  age: number;
+}
+
+const jsonStr = '{"name": "Alex", "age": 28}';
+const person: Person = JSON.parse(jsonStr);
+
+console.log(person.age); // Utdata: 28
+```
+
+### Använda populära tredjepartsbibliotek
+För mer komplexa scenarion, som schemavalidering eller transformation, kan du använda bibliotek som `class-transformer` eller `AJV` (Another JSON Schema Validator).
+
+#### class-transformer
+Detta bibliotek kan omvandla vanliga objekt till klassinstanser och vice versa, vilket är användbart för typkontroll och manipulation.
+
+```typescript
+import "reflect-metadata";
+import { plainToClass } from "class-transformer";
+import { Person } from "./person";
+
+const jsonStr = '{"name": "Mia", "age": 22}';
+const person = plainToClass(Person, JSON.parse(jsonStr));
+
+console.log(person instanceof Person); // Utdata: true
+console.log(person.name); // Utdata: Mia
+```
+
+#### AJV
+AJV är ett bibliotek som tillåter snabb JSON-schema validering. Det betyder att du kan validera JSON-objekt mot fördefinierade scheman.
+
+```typescript
+import Ajv from "ajv";
+
+const ajv = new Ajv();
+
+const schema = {
+  type: "object",
+  properties: {
+    name: { type: "string" },
+    age: { type: "number" },
+  },
+  required: ["name", "age"],
+  additionalProperties: false,
+};
+
+const validate = ajv.compile(schema);
+const valid = validate({ name: "Tom", age: 24 });
+
+console.log(valid); // Utdata: true
+if (!valid) console.log(validate.errors);
+```
+
+Med dessa verktyg och tekniker kan du effektivt hantera JSON-data i dina TypeScript-applikationer, säkerställa dataintegritet och utnyttja TypeScript:s kraftfulla typsystem.

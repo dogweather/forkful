@@ -1,41 +1,63 @@
 ---
 title:                "Obtendo a data atual"
-date:                  2024-01-20T15:16:55.558140-07:00
+date:                  2024-02-03T19:11:09.273195-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Obtendo a data atual"
-
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/typescript/getting-the-current-date.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## O Que & Porquê?
-Pegar a data atual é capturar o momento exato em que algo acontece no seu código. Programadores fazem isso para registrar eventos, comparar datas ou controlar prazos.
+## O Que e Por Quê?
+Obter a data atual em TypeScript, uma linguagem construída sobre o JavaScript, permite acessar e manipular as informações da data e hora atuais. Programadores frequentemente precisam dessa funcionalidade para criar registros de data e hora, agendamentos e outras características sensíveis ao tempo em suas aplicações.
 
 ## Como fazer:
-```TypeScript
-const agora = new Date();
-console.log(agora); // Exemplo de saída: 2023-04-02T15:47:11.446Z
+No TypeScript, você pode usar o objeto `Date` para obter a data e a hora atuais. Veja como você pode fazer isso:
+
+```typescript
+const currentDate = new Date();
+console.log(currentDate);
 ```
 
-Para formatar a data de maneira legível:
-```TypeScript
-const agora = new Date();
-console.log(agora.toLocaleDateString('pt-BR')); // Exemplo de saída: 02/04/2023
+Saída de exemplo:
+```
+2023-04-12T07:20:50.52Z
 ```
 
-Exibindo a hora:
-```TypeScript
-const agora = new Date();
-console.log(agora.toLocaleTimeString('pt-BR')); // Exemplo de saída: 15:47:11
+Este trecho de código cria um novo objeto `Date` contendo a data e a hora atuais, que é então impresso no console. Você também pode formatar a data usando toLocaleDateString() para formatos mais legíveis:
+
+```typescript
+const currentDate = new Date();
+console.log(currentDate.toLocaleDateString());
 ```
 
-## Mergulho Profundo
-Pegar a data e a hora sempre foi crucial para sistemas de computador. No JavaScript, a raiz do TypeScript, a classe `Date` está disponível desde o início. Alternativas, como as bibliotecas Moment.js ou date-fns, oferecem mais opções e zonas horárias, mas com a evolução do ECMAScript, a API nativa está ficando mais robusta.
+Saída de exemplo:
+```
+12/04/2023
+```
 
-Detalhe de implementação: `Date` no JavaScript/TypeScript é baseado na mesma data e hora do sistema, e usa o formato de tempo UTC para representar o momento. Contudo, com `toLocaleDateString` e `toLocaleTimeString`, é possível converter para o fuso horário local facilmente.
+### Usando date-fns
+Para manipulação e formatação de datas mais extensas, a biblioteca `date-fns` é uma escolha popular. Primeiro, instale-a via npm:
 
-## Veja Também
-- [MDN Web Docs: Date](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [TypeScript Official Documentation](https://www.typescriptlang.org/docs/)
-- [date-fns Documentation](https://date-fns.org/v2.28.0/docs/Getting-Started)
+```bash
+npm install date-fns
+```
+
+Depois, você pode usá-la para formatar a data atual:
+
+```typescript
+import { format } from 'date-fns';
+
+const currentDate = new Date();
+console.log(format(currentDate, 'yyyy-MM-dd'));
+```
+
+Saída de exemplo:
+```
+2023-04-12
+```
+
+Este exemplo usando `date-fns` formata a data atual como uma string no formato "YYYY-MM-DD". A biblioteca oferece uma infinidade de funções para manipulação de datas, tornando-a uma ferramenta versátil para qualquer programador TypeScript que trabalhe com datas.

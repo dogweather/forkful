@@ -1,51 +1,58 @@
 ---
-title:                "Écrire dans l'erreur standard"
-date:                  2024-01-19
-simple_title:         "Écrire dans l'erreur standard"
-
+title:                "Écrire sur l'erreur standard"
+date:                  2024-02-03T19:33:33.820463-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Écrire sur l'erreur standard"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/javascript/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Quoi et Pourquoi ?
-
-En JavaScript, écrire dans l'erreur standard (`stderr`) permet de sortir des messages d'erreur sans interrompre le flux de données normales (`stdout`). Les programmeurs utilisent `stderr` pour diagnostiquer les problèmes sans mélanger les erreurs avec le contenu de sortie habituel.
+## Quoi et pourquoi ?
+Écrire dans l'erreur standard (stderr) en JavaScript consiste à diriger les messages d'erreur ou toute information critique vers un flux spécifique et séparé, ce qui est particulièrement utile dans les environnements de type Unix pour la journalisation et le débogage. Les programmeurs font cela pour différencier la sortie normale du programme des messages d'erreur, permettant une gestion plus claire de la sortie et une surveillance des erreurs plus facile.
 
 ## Comment faire :
+Dans Node.js, écrire dans stderr peut être accompli en utilisant la méthode `console.error()` ou en écrivant directement dans `process.stderr`. Voici des exemples démontrant les deux approches :
 
 ```javascript
-// Pour écrire dans stderr :
-process.stderr.write("Un message d'erreur.\n");
+// Utilisation de console.error()
+console.error('Ceci est un message d\'erreur.');
 
-// Example avec console.error :
-console.error("Ceci est une erreur !");
+// Écriture directe dans process.stderr
+process.stderr.write('Ceci est un autre message d\'erreur.\n');
+```
 
-// Lancer un process avec une sortie d'erreur personnalisee
-const spawn = require('child_process').spawn;
-const child = spawn('un_command_invalide');
+La sortie d'échantillon pour les deux méthodes apparaîtrait dans le flux stderr, sans se mélanger avec stdout :
+```
+Ceci est un message d\'erreur.
+Ceci est un autre message d\'erreur.
+```
 
-child.stderr.on('data', (data) => {
-  console.error(`Erreur depuis le processus enfant: ${data}`);
+Pour une journalisation plus sophistiquée ou spécifique à l'application, de nombreux programmeurs JavaScript utilisent des bibliothèques tierces comme `winston` ou `bunyan`. Voici un rapide exemple utilisant `winston` :
+
+D'abord, installez `winston` via npm :
+```shell
+npm install winston
+```
+
+Ensuite, configurez `winston` pour enregistrer les erreurs dans stderr :
+```javascript
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  levels: winston.config.syslog.levels,
+  transports: [
+    new winston.transports.Console({
+      stderrLevels: ['error']
+    })
+  ]
 });
+
+// Enregistrer un message d'erreur
+logger.error('Erreur enregistrée par winston.');
 ```
 
-Sortie attendue dans la console:
-```
-Un message d'erreur.
-Ceci est une erreur !
-Erreur depuis le processus enfant: /bin/sh: un_command_invalide: command not found
-```
-
-## Exploration approfondie
-
-Historiquement, diviser la sortie normale (`stdout`) et les erreurs (`stderr`) a facilité la redirection des sorties dans des fichiers ou d'autres dispositifs sans mélanger les contenus. On pourrait aussi utiliser `process.stdout` pour les données régulières, mais `stderr` a l'avantage d'être non bloquant et immédiat.
-
-L'alternative à `stderr` est d'envoyer toutes les sorties via `stdout`, ce qui est moins pratique pour le débogage. L'implémentation de `stderr` dans Node.js utilise un flux `Writable` qui peut être redirigé, ce qui permet de capturer les erreurs pour les logs, sans interférer avec `stdout`.
-
-## Voir aussi
-
-- [La documentation Node.js sur les objets `console`](https://nodejs.org/api/console.html)
-- [Stream API de Node.js](https://nodejs.org/api/stream.html)
-- [Node.js process.stderr](https://nodejs.org/api/process.html#processstderr)
+Cette configuration garantit que lorsque vous enregistrez une erreur en utilisant `winston`, celle-ci est dirigée vers stderr, aidant à maintenir une séparation claire entre les sorties standard et d'erreur.

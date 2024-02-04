@@ -1,39 +1,62 @@
 ---
 title:                "Säännöllisten lausekkeiden käyttö"
-date:                  2024-01-19
+date:                  2024-02-03T19:16:34.163592-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Säännöllisten lausekkeiden käyttö"
-
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/elixir/using-regular-expressions.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Säännölliset lausekkeet ovat mallipohjaisia hakuja tekstissä. Niitä käytetään monimutkaisten merkkijonohakujen ja -korvausten toteuttamiseen nopeasti ja tehokkaasti.
+## Mikä ja miksi?
 
-## How to:
-Elixirisssa säännöllisiä lausekkeita käytetään `Regex`-moduulin avulla:
+Elixirissä säännöllisiä lausekkeita (regex) käytetään merkkijonojen hakemiseen, täsmäämiseen ja manipulointiin tiettyjen mallien perusteella. Ohjelmoijat hyödyntävät regexiä tehtäviin kuten muotojen validointiin (sähköposti, URL-osoitteet), lokien jäsentämiseen tai datan poimintaan, kiitos sen tehokkuuden ja monipuolisuuden merkkijonojen käsittelyssä.
+
+## Kuinka:
+
+Elixir käyttää `Regex`-moduulia, hyödyntäen Erlangin regex-kirjastoa, regex-operaatioihin. Tässä peruskäyttötapoja:
 
 ```elixir
-# Haku mallilla
-regex = ~r/hello/
-"hello world" |> Regex.match?(regex)
-# Output: true
+# Mallin täsmääminen - Palauttaa ensimmäisen osuman
+match_result = Regex.run(~r/hello/, "hello world")
+IO.inspect(match_result) # Tuloste: ["hello"]
 
-# Korvaus
-"hello world" |> Regex.replace(~r/o/, "a")
-# Output: "hella world"
+# Kaikkien osumien löytäminen
+all_matches = Regex.scan(~r/\d/, "There are 2 apples and 5 oranges.")
+IO.inspect(all_matches) # Tuloste: [["2"], ["5"]]
 
-# Kaikki osumat listana
-"hello world, hello universe" |> Regex.scan(~r/hello/)
-# Output: [["hello"], ["hello"]]
+# Merkkijonon osien korvaaminen
+replaced_string = Regex.replace(~r/\s+/, "Elixir on kivaa", "_")
+IO.inspect(replaced_string) # Tuloste: "Elixir_on_kivaa"
 ```
 
-## Deep Dive
-Säännölliset lausekkeet juontavat juurensa 1950-luvun lopun automaattiteoriaan. Elixir käyttää BEAM-koneen (Erlang virtuaalikone) tarjoamaa toteutusta, mikä on yhteneväinen Perl-tyylisiin ilmaisuihin. Vaihtoehtoina ovat esimerkiksi merkkijonojen sisäänrakennetut funktiot ja String-moduuli, mutta ne eivät ole yhtä joustavia monimutkaisissa hauissa.
+Monimutkaisempia malleja ja toiminnallisuuksia varten saatat harkita kolmannen osapuolen kirjastojen käyttöä, mutta useimpiin ydinteksti- ja mallintäsmäystehtäviin Elixiriin sisäänrakennettu `Regex`-moduuli on varsin tehokas.
 
-## See Also
-Elixirin virallinen dokumentaatio: [https://hexdocs.pm/elixir/Regex.html](https://hexdocs.pm/elixir/Regex.html)
-Säännöllisten lausekkeiden perusteet: [https://www.regular-expressions.info](https://www.regular-expressions.info)
-BEAM: [https://erlang.org/doc/apps/erts/erl_intro.html](https://erlang.org/doc/apps/erts/erl_intro.html)
+Sukupuolineutraaliin täsmäykseen käytä `i`-vaihtoehtoa:
+
+```elixir
+case_insensitive_match = Regex.run(~r/hello/i, "Hello World")
+IO.inspect(case_insensitive_match) # Tuloste: ["Hello"]
+```
+
+Regex-lausekkeet voidaan esikääntää tehokkuuden lisäämiseksi, kun niitä käytetään useita kertoja:
+
+```elixir
+precompiled_regex = Regex.compile!("hello")
+match_result_precompiled = Regex.run(precompiled_regex, "hello world")
+IO.inspect(match_result_precompiled) # Tuloste: ["hello"]
+```
+
+Elixir tukee myös nimettyjä kaappauksia, jotka voivat olla erittäin käteviä tiettyjen merkkijonojen osien poimintaan samalla, kun teet koodistasi luettavampaa:
+
+```elixir
+date_string = "2023-04-15"
+pattern = ~r/(?<year>\d{4})-(?<month>\d{2})-(?<day>\d{2})/
+{:ok, captures} = Regex.run(pattern, date_string, capture: :all_names)
+IO.inspect(captures) # Tuloste: %{"year" => "2023", "month" => "04", "day" => "15"}
+```
+
+Tämä lyhyt yleiskatsaus korostaa sitä, kuinka vaivattomasti Elixir käsittelee säännöllisiä lausekkeita, mahdollistaen tehokkaat merkkijonojen manipulointi- ja datanpoimintatekniikat.

@@ -1,21 +1,23 @@
 ---
 title:                "Trabajando con JSON"
-date:                  2024-01-19
+date:                  2024-02-03T19:24:00.698350-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Trabajando con JSON"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/rust/working-with-json.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## ¿Qué es y Por Qué?
+## ¿Qué & Por qué?
 
-Trabajar con JSON significa manejar un formato de texto ligero para intercambiar datos. Los programadores lo usan por su facilidad de lectura y porque es muy común en APIs y configuraciones.
+Trabajar con JSON (JavaScript Object Notation) en Rust consiste en analizar datos JSON para convertirlos en estructuras de datos de Rust y serializar estructuras de datos de Rust de vuelta a JSON. Los programadores lo hacen para interactuar con APIs web, archivos de configuración o cualquier formato de intercambio de datos donde se use JSON debido a su formato ligero y legible por humanos.
 
 ## Cómo hacerlo:
 
-Para manejar JSON en Rust, usamos la crate `serde_json`. Primero, inclúyela en tu `Cargo.toml`:
+Para trabajar con JSON en Rust, se utiliza ampliamente el crate `serde` junto con `serde_json` para la serialización y deserialización. Primero, asegúrate de incluir estos en tu `Cargo.toml`:
 
 ```toml
 [dependencies]
@@ -23,49 +25,65 @@ serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"
 ```
 
-Aquí un ejemplo básico de cómo serializar y deserializar:
+### Ejemplo 1: Deserializar JSON a una Estructura de Rust
+
+Define una estructura de Rust y usa las macros derivadas para `Deserialize` y `Serialize`:
 
 ```rust
-use serde::{Serialize, Deserialize};
-use serde_json::{Result, Value};
+use serde::{Deserialize, Serialize};
 
 #[derive(Serialize, Deserialize)]
 struct Usuario {
+    id: u32,
     nombre: String,
-    edad: u8,
+    email: String,
 }
 
-fn main() -> Result<()> {
-    // Serializar
-    let usuario = Usuario {
-        nombre: "Alicia".to_string(),
-        edad: 30,
-    };
-    let usuario_json = serde_json::to_string(&usuario)?;
-    println!("{}", usuario_json);
+fn main() {
+    let datos_json = r#"
+        {
+            "id": 1,
+            "nombre": "Jane Doe",
+            "email": "jane.doe@example.com"
+        }
+    "#;
 
-    // Deserializar
-    let datos_json = r#"{"nombre":"Alicia","edad":30}"#;
-    let u: Usuario = serde_json::from_str(datos_json)?;
-    println!("{} tiene {} años.", u.nombre, u.edad);
+    let usuario: Usuario = serde_json::from_str(datos_json).unwrap();
 
-    Ok(())
+    println!("ID del Usuario: {}", usuario.id);
+    println!("Nombre del Usuario: {}", usuario.nombre);
+    println!("Correo Electrónico del Usuario: {}", usuario.email);
 }
 ```
 
-Salida esperada:
+**Salida:**
 
 ```
-{"nombre":"Alicia","edad":30}
-Alicia tiene 30 años.
+ID del Usuario: 1
+Nombre del Usuario: Jane Doe
+Correo Electrónico del Usuario: jane.doe@example.com
 ```
 
-## Conociendo Más
+### Ejemplo 2: Serializar una Estructura de Rust a JSON
 
-JSON, acrónimo de JavaScript Object Notation, fue propuesto por Douglas Crockford en los 2000s. Otras alternativas incluyen XML y YAML, pero JSON prevalece por su simpleza. Cuando usas `serde_json` en Rust, aprovechas un proceso llamado serialización que convierte estructuras de datos a JSON y viceversa.
+Usando la misma estructura `Usuario`:
 
-## Ver También
+```rust
+let usuario = Usuario {
+    id: 1,
+    nombre: "Jane Doe".to_string(),
+    email: "jane.doe@example.com".to_string(),
+};
 
-- La documentación oficial de `serde_json`: https://docs.serde.rs/serde_json/
-- Guía de Serde sobre cómo trabajar con JSON en Rust: https://serde.rs/json.html
-- Repositorio de Rust `serde_json` en GitHub: https://github.com/serde-rs/json
+let datos_json = serde_json::to_string(&usuario).unwrap();
+
+println!("{}", datos_json);
+```
+
+**Salida:**
+
+```json
+{"id":1,"nombre":"Jane Doe","email":"jane.doe@example.com"}
+```
+
+Estos ejemplos demuestran el flujo básico de deserialización de JSON en estructuras de Rust y la serialización de estructuras de Rust de vuelta a cadenas JSON. Serde proporciona un rico conjunto de herramientas para trabajar con JSON, incluyendo el manejo de campos opcionales, anidamientos complejos y tipos no directamente soportados por JSON.

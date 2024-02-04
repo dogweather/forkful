@@ -1,48 +1,76 @@
 ---
 title:                "Utilizzo delle espressioni regolari"
-date:                  2024-01-19
+date:                  2024-02-03T19:16:47.108031-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Utilizzo delle espressioni regolari"
-
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/fish-shell/using-regular-expressions.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Cosa & Perché?)
-Le espressioni regolari, o regex, sono pattern che aiutano a identificare sequenze di caratteri all'interno di stringhe di testo con grande flessibilità, adattandosi ai vari casi con precisione. I programmatori le usano per effettuare ricerche complesse, convalidare dati, e manipolare testo in maniera efficiente.
+## Cos'è e perché?
 
-## How to: (Come fare:)
-```Fish Shell
-# Ricerca di parole che iniziano con 'es' e finiscono con 'oni'
-echo "espressioni estensioni esami esagoni" | string match -r 'es\w*oni'
+Le espressioni regolari (regex) in Fish Shell ti permettono di cercare, correlare e manipolare stringhe basate su schemi specifici. I programmatori utilizzano le regex per compiti come la validazione di input, l'analisi e l'elaborazione di testi perché offrono un modo compatto e potente per specificare schemi di testo complessi.
 
-# Output:
-espressioni
-estensioni
+## Come fare:
+
+Sebbene Fish Shell stesso non abbia un comando integrato per le regex, utilizza efficacemente comandi esterni come `grep`, `sed` e `awk` che supportano le regex, permettendoti di incorporare operazioni regex nei tuoi script.
+
+### Ricerca di Modelli di Base con `grep`
+Cerca righe in un file che corrispondono a un modello:
+
+```fish
+grep '^[0-9]+' myfile.txt
 ```
 
-```Fish Shell
-# Sostituzione di 'windows' con 'linux' in una frase
-set frase "Preferisco usare windows al posto di linux"
-echo $frase | string replace -r 'windows' 'linux'
+Questo comando trova le righe che iniziano con uno o più cifre in `myfile.txt`.
 
-# Output:
-Preferisco usare linux al posto di linux
+### Estrazione e Sostituzione con `sed`
+Estrai numeri di telefono da un file:
+
+```fish
+sed -n '/\([0-9]\{3\}\)-\([0-9]\{3\}\)-\([0-9]\{4\}\)/p' contacts.txt
 ```
 
-```Fish Shell
-# Validazione di indirizzi email formati correttamente
-echo "mario.rossi@example.com ciao@example m.rossi@ex@ample.com" | string match -r '([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,6})'
+Sostituisci tutte le occorrenze di "foo" con "bar" in `data.txt`:
 
-# Output:
-mario.rossi@example.com
+```fish
+sed 's/foo/bar/g' data.txt
 ```
 
-## Deep Dive (Approfondimento)
-Le regex esistono da decenni, evolvendo dai semplici wildcard a sistemi complessi gestiti dai moderni motori regex come quelli di Perl e PCRE (Perl Compatible Regular Expressions). Fish Shell non include un motore regex proprio ma utilizza comandi come `string match`, che usa le regex di sistema. Ci sono alternative come grep, sed, e awk, ma `string` in Fish è più coerente con il suo design moderno e user-friendly. Per l'implementazione, Fish usa regex ERE (Espressioni Regolari Estese) che sono potenti e flessibili.
+### Utilizzo di `string` per le Regex di Base
+Il comando `string` di Fish Shell supporta semplici operazioni regex come corrispondenza e sostituzione:
 
-## See Also (Vedi Anche)
-- La documentazione ufficiale di Fish sulla manipolazione di stringhe: [fishshell.com/docs/current/cmds/string.html](https://fishshell.com/docs/current/cmds/string.html)
-- Una guida interattiva alle regex: [regexr.com](https://regexr.com/)
-- Il manuale di PCRE per approfondire l’uso delle regex: [pcre.org](https://www.pcre.org/)
+Corrispondenza di un modello in una stringa:
+
+```fish
+echo "fish 3.1.2" | string match -r '3\.[0-9]+\.[0-9]+'
+```
+Output:
+```
+3.1.2
+```
+
+Sostituisci le cifre che seguono 'fish' con 'X.X.X':
+
+```fish
+echo "Welcome to fish 3.1.2" | string replace -ra '([fish]+\s)[0-9\.]+' '$1X.X.X'
+```
+Output:
+```
+Welcome to fish X.X.X
+```
+
+### Corrispondenze Avanzate con `awk`
+Stampa la seconda colonna dei dati dove la prima colonna corrisponde a un modello specifico:
+
+```fish
+awk '$1 ~ /^a[0-9]+$/ {print $2}' datafile
+```
+
+Questo comando cerca righe in `datafile` dove la prima colonna inizia con una "a" seguita da una o più cifre e stampa la seconda colonna.
+
+Integrando questi comandi esterni, i programmatori di Fish Shell possono sfruttare a pieno il potere delle espressioni regolari per compiti complessi di manipolazione del testo, migliorando le capacità native del shell.

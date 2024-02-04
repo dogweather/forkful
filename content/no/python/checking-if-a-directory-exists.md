@@ -1,55 +1,51 @@
 ---
-title:                "Sjekke om en mappe eksisterer"
-date:                  2024-01-20T14:58:16.833807-07:00
-simple_title:         "Sjekke om en mappe eksisterer"
-
+title:                "Sjekker om en mappe eksisterer"
+date:                  2024-02-03T19:08:14.987121-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Sjekker om en mappe eksisterer"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/python/checking-if-a-directory-exists.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Sjekke om en mappe finnes i Python betyr å verifisere at en bestemt sti peker til en reell mappe. Programmerere trenger å vite dette for å unngå feil under filhåndtering, som for eksempel ved lesing, skriving eller sletting av filer.
+Å sjekke om en mappe eksisterer i Python handler om å verifisere tilstedeværelsen av en mappe i filsystemet før man utfører operasjoner som å lese eller skrive filer. Programmerere gjør dette for å unngå feil som `FileNotFoundError`, for å sikre at applikasjonen oppfører seg pålitelig og ikke krasjer når den prøver å interagere med mapper.
 
-## Hvordan gjøre det:
-```Python
+## Hvordan:
+Python gir innebygde måter å sjekke for en katalogs eksistens ved hjelp av `os` og `pathlib` modulene. Her er eksempler for begge:
+
+### Bruke `os` modulen
+```python
 import os
 
-# Sti til mappen du vil sjekke
-mappe_sti = "/eksempel/mappe"
+# Spesifiser mappens sti
+dir_path = "/path/to/directory"
 
-# Sjekk om mappen finnes
-if os.path.isdir(mappe_sti):
-    print(f"Mappen '{mappe_sti}' finnes.")
+# Sjekk om mappen eksisterer
+if os.path.isdir(dir_path):
+    print(f"Mappen {dir_path} eksisterer.")
 else:
-    print(f"Mappen '{mappe_sti}' finnes ikke.")
+    print(f"Mappen {dir_path} eksisterer ikke.")
 ```
 
-### Sample Output
-```
-Mappen '/eksempel/mappe' finnes ikke.
-```
-
-## Dypdykk
-Før i tiden brukte man ofte `os.path.exists()` for å sjekke om en fil eller mappe fantes. Problemet er at `exists` kan være misvisende siden den returnerer `True` for både filer og mapper. Derfor er `os.path.isdir()` mer pålitelig når man eksplisitt vil vite om en sti peker til en mappe. Et alternativ til `os`-modulen er å bruke `pathlib`, et bibliotek introdusert i Python 3.4, som gir et høyere abstraksjonsnivå for filsystemoperasjoner.
-
-```Python
+### Bruke `pathlib` modulen
+```python
 from pathlib import Path
 
-# Sti til mappen du vil sjekke
-mappe_sti = Path("/eksempel/mappe")
+# Spesifiser mappens sti
+dir_path = Path("/path/to/directory")
 
-# Sjekk om mappen finnes bruker Path.exists()
-if mappe_sti.is_dir():
-    print(f"Mappen '{mappe_sti}' finnes.")
+# Sjekk om mappen eksisterer
+if dir_path.is_dir():
+    print(f"Mappen {dir_path} eksisterer.")
 else:
-    print(f"Mappen '{mappe_sti}' finnes ikke.")
+    print(f"Mappen {dir_path} eksisterer ikke.")
 ```
 
-Bare husk at `is_dir()` vil gi `False` hvis stien ikke eksisterer overhodet, så kombinere det med `exists()` kan være nyttig for å skille mellom ikke-eksisterende stier og stier som peker til filer.
+### Tredjeparts biblioteker
+Selv om Pythons standardbibliotek er tilstrekkelig for å sjekke om en mappe eksisterer, kan biblioteker som `pathlib2` være alternativer for konsistens på tvers av Python-versjoner eller for ekstra funksjonalitet.
 
-## Se Også
-- Python's offisielle dokumentasjon for `os`-modulen: https://docs.python.org/3/library/os.html
-- Python's offisielle dokumentasjon for `pathlib`-modulen: https://docs.python.org/3/library/pathlib.html
-- En nyttig Stack Overflow diskusjon om emnet: https://stackoverflow.com/questions/8933237/how-to-find-if-directory-exists-in-python
+***Merk:*** Per de siste Python-versjonene, er `pathlib` robust nok for de fleste brukstilfeller, noe som gjør tredjeparts biblioteker mindre nødvendige for denne spesifikke oppgaven.

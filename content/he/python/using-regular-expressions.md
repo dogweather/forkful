@@ -1,45 +1,97 @@
 ---
 title:                "שימוש בביטויים רגולריים"
-date:                  2024-01-19
+date:                  2024-02-03T19:18:21.159297-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "שימוש בביטויים רגולריים"
-
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/python/using-regular-expressions.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-מה זה ביטויים רגולריים, ולמה מתכנתים משתמשים בהם? ביטויים רגולריים (Regular Expressions או Regex) זה כלי לחיפוש והחלפת טקסט על פי דפוסים. מתכנתים משתמשים בהם כי הם מאפשרים עיבוד טקסט מתקדם ומהיר בצורה אוטומטית.
+## מה ולמה?
+ביטויים רגולריים (regex) הם תבניות שנמצאות בשימוש להתאמת שילובי תווים במחרוזות. מתכנתים משתמשים בהם לחיפוש, עריכה, או עיבוד טקסט בהתבסס על תבניות מוגדרות, מה שהופך אותם לנחוצים ביותר למשימות כמו אימות נתונים, פירוק, או המרה.
 
-## How to:
-יצירת ביטוי רגולרי:
-```Python
+## איך ל:
+השימוש בביטויים רגולריים בפייתון כרוך במודול `re`, שסופק קבוצה של פונקציות לעיבוד טקסט באמצעות ביטויים רגולריים.
+
+### התאמת תבנית בסיסית
+לחפש תבנית במחרוזת, השתמשו ב-`re.search()`. היא מחזירה אובייקט התאמה כאשר התבנית נמצאת, אחרת `None`.
+```python
 import re
 
-pattern = re.compile(r'\b[A-Za-z]+\b')
-text = "Regex בפייתון מאפשר עבודה עם טקסט!"
-matches = pattern.findall(text)
+text = "Learn Python programming"
+match = re.search("Python", text)
+if match:
+    print("נמצאה תבנית!")
+else:
+    print("התבנית לא נמצאה.")
+```
+פלט:
+```
+נמצאה תבנית!
+```
+
+### קומפילציה של ביטויים רגולריים
+לשימוש חוזר באותה תבנית, קומפלו אותה תחילה באמצעות `re.compile()` לביצועים טובים יותר.
+```python
+pattern = re.compile("Python")
+match = pattern.search("Learn Python programming")
+if match:
+    print("נמצאה תבנית מקומפלת!")
+```
+פלט:
+```
+נמצאה תבנית מקומפלת!
+```
+
+### פיצול מחרוזות
+לפצל מחרוזת בכל התאמה של תבנית regex, השתמשו ב-`re.split()`.
+```python
+result = re.split("\s", "Python is fun")
+print(result)
+```
+פלט:
+```
+['Python', 'is', 'fun']
+```
+
+### מציאת כל ההתאמות
+למצוא את כל המופעים שאינם מתנפחים של תבנית, השתמשו ב-`re.findall()`.
+```python
+matches = re.findall("n", "Python programming")
 print(matches)
 ```
 פלט:
 ```
-['Regex', 'בפייתון', 'מאפשר', 'עבודה', 'עם', 'טקסט']
+['n', 'n']
 ```
 
-החלפת תוכן באמצעות ביטוי רגולרי:
-```Python
-replaced_text = re.sub(r'\bטקסט\b', 'מילים', text)
+### החלפת טקסט
+השתמשו ב-`re.sub()` כדי להחליף הופעות של תבנית במחרוזת חדשה.
+```python
+replaced_text = re.sub("fun", "awesome", "Python is fun")
 print(replaced_text)
 ```
 פלט:
 ```
-Regex בפייתון מאפשר עבודה עם מילים!
+Python הוא מדהים
 ```
 
-## Deep Dive
-ביטויים רגולריים נוצרו בשנות ה-50 ומאז השתלבו ברוב שפות התכנות. אלטרנטיבות כוללות עבודה עם טקסט באמצעות מתודות כמו `split()` ו`find()`, אבל הן פחות גמישות מביטויים רגולריים. פייתון משתמשת בספרייה `re` לעבודה עם regex, שמבוססת על ספריית PCRE (Perl Compatible Regular Expressions) שמציעה דפוסים חזקים ומתקדמים.
+### ספריות צד שלישי
+למרות שמודול ה-`re` המובנה של פייתון חזק, ספריות צד שלישי כמו `regex` מציעות יותר תכונות וביצועים משופרים. כדי להשתמש ב-`regex`, התקינו אותה דרך pip (`pip install regex`) וייבאו אותה בקוד שלכם.
 
-## See Also
-- [תיעוד ביטויים רגולריים של Python](https://docs.python.org/3/library/re.html)
-- [Regex101](https://regex101.com/) - לבדוק וללמוד ביטויים רגולריים
+```python
+import regex
+
+text = "Learning Python 3.8"
+match = regex.search(r"Python\s(\d+\.\d+)", text)
+if match:
+    print(f"נמצאה גרסה: {match.group(1)}")
+```
+פלט:
+```
+נמצאה גרסה: 3.8
+```

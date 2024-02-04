@@ -1,8 +1,8 @@
 ---
 title:                "Capitalizing a string"
-date:                  2024-01-19
+date:                  2024-02-03T19:02:30.929223-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Capitalizing a string"
-
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/lua/capitalizing-a-string.md"
 ---
@@ -10,39 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-
-Capitalizing a string means making the first letter of each word uppercase. Programmers do it for formatting consistency, user readability, or data normalization.
+Capitalizing a string involves modifying the first character of each word in a sentence to be uppercase, while ensuring the rest are lowercase. This technique is commonly used to format text for more professional or readable output, such as preparing titles or user input for display.
 
 ## How to:
-
-Lua doesn't have a built-in capitalization function, so let's create one:
-
-```lua
-function capitalize(str)
-  return (str:gsub("(%l)(%w*)", function(first, rest) return first:upper()..rest end))
-end
-
-print(capitalize("hello world"))  -- Output: Hello World
-```
-
-## Deep Dive
-
-Capitalization functions are standard in many programming languages. In Lua, we make one using `string.gsub()`, a powerful pattern-matching function. Our custom `capitalize` function uses a pattern to find lowercase letters (`%l`) followed by zero or more word characters (`%w*`), and replaces them with the uppercase letter and the rest of the word.
+Lua does not have a built-in function for capitalizing strings, but you can easily accomplish this task using basic string manipulation functions. Here's a simple function to capitalize the first letter of a single word:
 
 ```lua
--- Here's another way to just capitalize the first word
-function capitalizeFirst(str)
-  if str == "" then return str end
-  return str:sub(1, 1):upper()..str:sub(2)
+function capitalize(word)
+    return word:sub(1,1):upper() .. word:sub(2):lower()
 end
+
+print(capitalize("hello"))  -- Output: Hello
 ```
 
-Lua's pattern matching capabilities are less powerful than full regular expressions but are suitable for many string manipulation tasks. Note that our `capitalize` function won't capitalize words following certain punctuation marks, so it's not foolproof. For more robust solutions, you may consider additional pattern matching or external libraries.
+To capitalize each word in a sentence, you can split the sentence into words, capitalize each one, and then rejoin them:
 
-Historically, the need for capitalization functions arose from the desire to present text data uniformly, especially in user interfaces. However, care must be taken to understand the context: different languages and cultures have their own rules for capitalization beyond simply the first letter of a sentence or name.
+```lua
+function capitalizeSentence(sentence)
+    local words = {}
+    for word in sentence:gmatch("%S+") do
+        table.insert(words, capitalize(word))
+    end
+    return table.concat(words, " ")
+end
 
-## See Also
+print(capitalizeSentence("hello world from lua"))  -- Output: Hello World From Lua
+```
 
-- Lua `string` library: https://www.lua.org/manual/5.4/manual.html#6.4
-- Lua Patterns: https://www.lua.org/pil/20.2.html
-- Text Processing in Lua: https://www.lua.org/pil/20.html
+If you're working on a project where performance is key and you find yourself needing more advanced string manipulation capabilities, consider using a third-party library like `Penlight`. Penlight enhances Lua with more versatile string handling functions, among other utilities:
+
+```lua
+-- Assuming Penlight is installed:
+local pl = require("pl.stringx")
+local text = "hello lua users"
+text = pl.capitalized(text)
+print(text)  -- Output: Hello lua users
+
+-- Note: Penlight's capitalized function only capitalizes the first word.
+-- For capitalizing each word, you'd still implement a custom solution or explore other libraries.
+```

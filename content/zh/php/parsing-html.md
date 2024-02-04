@@ -1,43 +1,77 @@
 ---
 title:                "解析HTML"
-date:                  2024-01-20T15:33:09.346015-07:00
+date:                  2024-02-03T19:12:44.111699-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "解析HTML"
-
 tag:                  "HTML and the Web"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/php/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (是什么？为什么？)
-解析HTML就是从一堆看似无序代码里提取有用信息。程序员这么做通常是为了自动化地处理网页数据，比如抓取、数据挖掘。
+## 什么 & 为什么？
+在PHP中解析HTML涉及从HTML文档中提取特定信息。程序员执行此任务以自动化数据提取、网络抓取，或者在他们的应用程序中集成来自各种网页的内容，无需手动干预即可增强功能。
 
-## How to: (如何做？)
-```PHP
-// 确保你安装了DOMDocument拓展
+## 如何操作：
+对于解析HTML，PHP程序员可以利用内置函数或依赖强大的库，如Simple HTML DOM Parser。这里，我们将探讨使用PHP的`DOMDocument`和Simple HTML DOM Parser的示例。
+
+### 使用`DOMDocument`：
+PHP的`DOMDocument`类是其DOM扩展的一部分，允许解析和操作HTML和XML文档。这里有一个快速的示例，展示如何使用`DOMDocument`找到HTML文档中的所有图片：
+
+```php
+$html = <<<HTML
+<!DOCTYPE html>
+<html>
+<head>
+    <title>示例页面</title>
+</head>
+<body>
+    <img src="image1.jpg" alt="图片1">
+    <img src="image2.jpg" alt="图片2">
+</body>
+</html>
+HTML;
+
 $doc = new DOMDocument();
-@$doc->loadHTML(file_get_contents('https://example.com'));
-$xpath = new DOMXPath($doc);
+@$doc->loadHTML($html);
+$images = $doc->getElementsByTagName('img');
 
-// 获取所有<h1>标签内容
-$h1s = $xpath->query('//h1');
-foreach($h1s as $h1) {
-    echo $h1->nodeValue . PHP_EOL;
-}
-
-// 查询class为"important"的div
-$importantDivs = $xpath->query('//div[@class="important"]');
-foreach($importantDivs as $div) {
-    echo $div->nodeValue . PHP_EOL;
+foreach ($images as $img) {
+    echo $img->getAttribute('src') . "\n";
 }
 ```
-输出会显示你查询的所有 `<h1>` 标签和类名为 "important" 的 `<div>` 标签的内容。
 
-## Deep Dive (深入研究)
-在早期，PHP程序员经常使用正则表达式来解析HTML，但这种方法易错且维护困难。DOMDocument 和 DOMXPath 出现后，提供了一个更强大和标准化的方式来解析HTML。这不仅更可靠，而且使得代码易于理解和维护。有时候，开发者可能会使用第三方库如 `Simple HTML DOM Parser`，但内置的 DOM 扩展在性能和兼容性上通常更胜一筹。相对来说，使用 DOMXPath 进行查询，可以实现更复杂的文档搜索和处理，尤其是当处理有特定结构的HTML时。
+样本输出：
+```
+image1.jpg
+image2.jpg
+```
 
-## See Also (另请参阅)
-- [DOMDocument](https://www.php.net/manual/zh/class.domdocument.php)
-- [DOMXPath](https://www.php.net/manual/zh/class.domxpath.php)
-- [Simple HTML DOM Parser](http://simplehtmldom.sourceforge.net/)
+### 使用Simple HTML DOM Parser：
+对于更复杂的任务或更易用的语法，你可能更愿意使用第三方库。Simple HTML DOM Parser是一个受欢迎的选择，为导航和操作HTML结构提供了类似jQuery的界面。以下是如何使用它：
+
+首先，使用Composer安装库：
+```
+composer require simple-html-dom/simple-html-dom
+```
+
+然后，操作HTML以找到所有链接，例如：
+
+```php
+require_once 'vendor/autoload.php';
+
+use simplehtmldom\HtmlWeb;
+
+$client = new HtmlWeb();
+$html = $client->load('http://www.example.com');
+
+foreach($html->find('a') as $element) {
+    echo $element->href . "\n";
+}
+```
+
+这段代码片段将获取“http://www.example.com”的HTML内容，解析它，并打印出所有超链接。记住将“'http://www.example.com'”替换为你希望解析的实际URL。
+
+通过使用这些方法，PHP开发人员可以有效地解析HTML内容，根据他们的需求定制数据提取，或无缝集成外部网络内容到他们的项目中。

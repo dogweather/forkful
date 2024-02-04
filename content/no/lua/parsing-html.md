@@ -1,50 +1,67 @@
 ---
-title:                "Analyse av HTML"
-date:                  2024-01-20T15:33:12.687950-07:00
-simple_title:         "Analyse av HTML"
-
+title:                "Analysering av HTML"
+date:                  2024-02-03T19:12:43.590611-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Analysering av HTML"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/lua/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Hva & Hvorfor?
-Parsing av HTML er å tolke og omforme HTML-koden til en struktur programmer kan jobbe med. Vi gjør dette for å hente ut eller manipulere data fra nettsider.
+## Hva & hvorfor?
+Parsing av HTML innebærer å trekke ut data og informasjon fra HTML-dokumenter, noe som er avgjørende for webskraping, dataanalyse og automatiseringsoppgaver. Programutviklere utfører dette for å samle, analysere eller manipulere webinnhold programmatisk, noe som muliggjør automatisering av det som ellers ville vært manuell uttrekking av data fra nettsider.
 
-## Slik gjør du:
-```Lua
-local htmlparser = require("htmlparser")
+## Hvordan:
+Lua har ikke et innebygd bibliotek for parsing av HTML, men du kan utnytte tredjepartsbiblioteker som `LuaHTML` eller bruke bindinger for `libxml2` gjennom `LuaXML`. En populær tilnærming er å bruke biblioteket `lua-gumbo` for parsing av HTML, som gir en enkel, HTML5-kompatibel parsingsevne.
 
-local html = [[
-<!DOCTYPE html>
+### Installere lua-gumbo:
+Først, sørg for at `lua-gumbo` er installert. Du kan vanligvis installere det ved hjelp av luarocks:
+
+```sh
+luarocks install lua-gumbo
+```
+
+### Grunnleggende parsing med lua-gumbo:
+Her er hvordan du kan parse et enkelt HTML-snutt og trekke ut data fra det ved bruk av `lua-gumbo`:
+
+```lua
+local gumbo = require "gumbo"
+local document = gumbo.parse[[<html><body><p>Hei, verden!</p></body></html>]]
+
+local p = document:getElementsByTagName("p")[1]
+print(p.textContent)  -- Utdata: Hei, verden!
+```
+
+### Avansert eksempel - Utvinning av lenker:
+For å trekke ut `href`-attributter fra alle ankertagger (`<a>`-elementer) i et HTML-dokument:
+
+```lua
+local gumbo = require "gumbo"
+local document = gumbo.parse([[
 <html>
-<head>
-    <title>Eksempelside</title>
-</head>
+<head><title>Eksempelside</title></head>
 <body>
-    <h1>Hei, Norge!</h1>
-    <p>Dette er en eksempeltekst.</p>
+  <a href="http://example.com/1">Lenke 1</a>
+  <a href="http://example.com/2">Lenke 2</a>
+  <a href="http://example.com/3">Lenke 3</a>
 </body>
 </html>
-]]
+]])
 
-local root = htmlparser.parse(html)
-local headings = root:select("h1")
-
-for _, heading in ipairs(headings) do
-    print(heading:getcontent())  -- Outputter teksten innenfor <h1>-taggen
+for _, element in ipairs(document.links) do
+    if element.getAttribute then  -- Sørg for at det er et Element og har attributter
+        local href = element:getAttribute("href")
+        if href then print(href) end
+    end
 end
-```
-Output:
-```
-Hei, Norge!
+
+-- Eksempel på utdata:
+-- http://example.com/1
+-- http://example.com/2
+-- http://example.com/3
 ```
 
-## Dypdykk
-Parsing av HTML startet for å kunne hente ut og bearbeide informasjon fra nettsider. Rundt midten av 90-tallet, med økningen av internettet, ble behovet større. Alternativer til Lua for HTML-parsing inkluderer biblioteker i språk som Python (BeautifulSoup) og JavaScript (Cheerio). Ved implementasjon er det viktig med robust håndtering fordi HTML ofte er ustrukturert og inneholder mangler.
-
-## Se Også
-- Lua HTML-parser repo på GitHub: [https://github.com/msva/lua-htmlparser](https://github.com/msva/lua-htmlparser)
-- Lua-dokumentasjon: [https://www.lua.org/manual/5.4/](https://www.lua.org/manual/5.4/)
-- W3Schools HTML Tutorial: [https://www.w3schools.com/html/](https://www.w3schools.com/html/)
+Dette kodeutdraget itererer gjennom alle lenkene i dokumentet og skriver ut deres `href`-attributter. `lua-gumbo`-bibliotekets evne til å parse og forstå strukturen av et HTML-dokument forenkler prosessen med å trekke ut spesifikke elementer basert på deres tagger eller attributter.

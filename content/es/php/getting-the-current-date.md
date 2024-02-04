@@ -1,57 +1,51 @@
 ---
 title:                "Obteniendo la fecha actual"
-date:                  2024-01-20T15:15:55.742396-07:00
+date:                  2024-02-03T19:10:15.616698-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Obteniendo la fecha actual"
-
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/php/getting-the-current-date.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Qué y Por Qué?
-
-Obtener la fecha actual en PHP es básicamente saber qué día es hoy según el servidor donde resides. Como programadores lo hacemos por miles de razones: desde mostrar la fecha en una página hasta calcular tiempos de expiración para sesiones o ofertas.
+## ¿Qué y Por Qué?
+Obtener la fecha actual en PHP es una tarea fundamental que te permite recuperar y manipular la fecha y la hora del sistema. Esto es crucial para funciones como el registro de actividades, marcar temporalmente publicaciones, programar eventos o realizar operaciones sensibles al tiempo en tus aplicaciones.
 
 ## Cómo hacerlo:
+### PHP Nativo
+La función incorporada `date()` de PHP es la manera más directa de obtener la fecha actual. Puedes formatear la fecha de diversas maneras especificando el parámetro de formato.
 
-Para obtener simplemente la fecha de hoy en PHP, usas la función `date()`. Aquí tienes un ejemplo:
-
-```PHP
-echo date("Y-m-d"); // Formato Año-Mes-Día
+```php
+echo date("Y-m-d"); // Muestra: 2023-04-01 (por ejemplo)
+echo date("l, F j, Y"); // Muestra: Saturday, April 1, 2023
 ```
 
-Salida de ejemplo:
-```
-2023-04-05
-```
+Para obtener la fecha y hora con soporte de zona horaria, puedes utilizar la clase `DateTime` junto con `DateTimeZone`.
 
-Si necesitas más, como la fecha y hora actual con zona horaria, puedes hacerlo así:
-
-```PHP
-date_default_timezone_set('Europe/Madrid'); // Ajusta a tu zona horaria
-echo date("Y-m-d H:i:s");
+```php
+$dateTime = new DateTime('now', new DateTimeZone('America/New_York'));
+echo $dateTime->format('Y-m-d H:i:s'); // Muestra: 2023-04-01 12:00:00 (por ejemplo)
 ```
 
-Salida de ejemplo:
-```
-2023-04-05 14:23:48
-```
+### Usando Carbon (Una Biblioteca de Terceros Muy Popular)
+[Carbon](https://carbon.nesbot.com/) es una extensión simple de la API para `DateTime` que proporciona una manera más limpia y fluida de trabajar con fechas y horas.
 
-## A Fondo
-
-Desde PHP 4, `date()` ha sido la forma estándar de obtener la fecha y hora. Antes existían otras formas más rudimentarias relacionadas con el sistema operativo del servidor. Hoy, alternativas como la clase `DateTime` ofrecen más flexibilidad y opciones orientadas a objetos:
-
-```PHP
-$fecha = new DateTime();
-echo $fecha->format("Y-m-d H:i:s");
+Primero, asegúrate de tener Carbon instalado a través de Composer:
+```bash
+composer require nesbot/carbon
 ```
 
-La implementación de `date()` y `DateTime` tiene en cuenta la zona horaria que puede ser configurada globalmente a través de `date_default_timezone_set()` o localmente por cada objeto `DateTime`. Es crucial manejar bien las zonas horarias para evitar confusiones con los tiempos.
+Luego, puedes usarlo para obtener la fecha actual:
 
-## Ver También
+```php
+use Carbon\Carbon;
 
-- Documentación oficial de PHP sobre la función `date()`: [php.net/manual/es/function.date.php](https://www.php.net/manual/es/function.date.php)
-- Uso de la clase `DateTime`: [php.net/manual/es/class.datetime.php](https://www.php.net/manual/es/class.datetime.php)
-- Función `date_default_timezone_set()`: [php.net/manual/es/function.date-default-timezone-set.php](https://www.php.net/manual/es/function.date-default-timezone-set.php)
-- Listado de zonas horarias soportadas: [php.net/manual/es/timezones.php](https://www.php.net/manual/es/timezones.php)
+echo Carbon::now(); // Muestra: 2023-04-01 12:00:00 (por ejemplo, en el formato por defecto)
+echo Carbon::now()->toDateString(); // Muestra: 2023-04-01
+echo Carbon::now()->format('l, F j, Y'); // Muestra: Saturday, April 1, 2023
+```
+
+Carbon enriquece el manejo de fechas y horas en PHP añadiendo legibilidad y una abundancia de funcionalidades para la manipulación, comparación y formateo del tiempo.

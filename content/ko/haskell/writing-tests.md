@@ -1,58 +1,79 @@
 ---
 title:                "테스트 작성하기"
-date:                  2024-01-19
+date:                  2024-02-03T19:31:13.820630-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "테스트 작성하기"
-
 tag:                  "Testing and Debugging"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/haskell/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (무엇과 왜?)
-테스트 작성은 코드가 예상대로 작동하는지 확인하기 위한 과정입니다. 프로그래머들은 버그를 미리 찾아내고, 나중에 코드 변경 시 안정성을 보장하기 위해 테스트를 합니다.
+## 무엇 & 왜?
 
-## How to: (어떻게 하나?)
-Haskell에서 테스트는 주로 Hspec과 QuickCheck 라이브러리를 사용해 작성합니다. 간단한 예시로 함수의 올바른 실행을 확인해봅시다.
+Haskell로 테스트를 작성하는 것은 함수가 예상대로 작동하는지 자동화된 체크를 통해 보장하는 것에 관한 것입니다. 프로그래머들은 이를 통해 버그를 조기에 발견하고, 리팩토링을 용이하게 하며, 동작을 문서화하여 코드베이스를 더 유지보수하기 쉽고 확장성 있게 만듭니다.
 
-```Haskell
--- simpleFunction.hs
-module SimpleFunction where
+## 방법:
 
-add :: Int -> Int -> Int
-add x y = x + y
-```
+Haskell은 여러 테스팅 프레임워크를 지원하지만, `Hspec`과 `QuickCheck`이라는 두 가지 인기 있는 프레임워크가 있습니다. Hspec을 사용하면 코드에 대한 인간이 읽을 수 있는 사양을 정의할 수 있고, QuickCheck을 사용하면 코드가 충족해야 하는 속성을 설명함으로써 테스트를 자동으로 생성할 수 있습니다.
 
-테스트를 위해 Hspec을 사용할 예제 코드입니다:
+### Hspec 사용하기
 
-```Haskell
--- simpleFunctionTest.hs
+먼저, 빌드 도구 설정(`stack.yaml` 또는 `cabal` 파일 등)에 `hspec`을 추가합니다. 그런 다음, `Test.Hspec`을 임포트하고 테스트를 사양으로 작성합니다:
+
+```haskell
+-- file: spec/MyLibSpec.hs
 import Test.Hspec
-import SimpleFunction
+import MyLib (add)
 
 main :: IO ()
-main = hspec $ do
-  describe "add function" $ do
-    it "correctly adds two numbers" $ do
-      add 2 3 `shouldBe` 5
+main = hspec $ describe "MyLib.add" $ do
+  it "두 숫자를 더한다" $
+    add 1 2 `shouldBe` 3
+
+  it "두 번째 숫자로 제로를 더하면 첫 번째 숫자를 반환한다" $
+    add 5 0 `shouldBe` 5
 ```
 
-실행 결과는 다음과 같습니다:
+그런 다음, 빌드 도구를 사용하여 테스트를 실행하면 다음과 같은 출력이 나타날 수 있습니다:
 
 ```
-add function
-  - correctly adds two numbers
+MyLib.add
+  - 두 숫자를 더한다
+  - 두 번째 숫자로 제로를 더하면 첫 번째 숫자를 반환한다
 
-Finished in 0.0001 seconds
-1 example, 0 failures
+0.0001초에 완료
+2개의 예제, 0개의 실패
 ```
 
-## Deep Dive (깊이 파기)
-Haskell의 테스트는 주로 두 가지 라이브러리로 구성됩니다: Hspec과 QuickCheck. Hspec은 BDD(Behavior-Driven Development) 스타일의 테스트를 가능하게 하며, QuickCheck은 프로퍼티 기반 테스팅을 제공하여 무작위 데이터로 테스트를 수행합니다. 이 두 라이브러리는 2000년대 초반에 개발되었으며, 타입 안정성과 함수의 순수성을 강조하는 Haskell의 철학을 반영합니다. 테스트 작성 시, 모나드의 사용이나 순수 함수의 특성에 주의를 기울여야 합니다.
+### QuickCheck 사용하기
 
-## See Also (추가 자료)
-- [Hspec User Manual](http://hspec.github.io/)
-- [Real World Haskell - Testing and quality assurance](http://book.realworldhaskell.org/read/testing-and-quality-assurance.html)
-- [Stackage: A Haskell Package Repository](https://www.stackage.org/)
-- [Haskell Wiki on Testing](https://wiki.haskell.org/Testing)
+QuickCheck을 사용하면 함수가 충족해야 하는 속성을 표현합니다. 프로젝트 설정에 `QuickCheck`을 추가한 후, 이를 임포트합니다:
+
+```haskell
+-- file: test/MyLibProperties.hs
+import Test.QuickCheck
+import MyLib (add)
+
+prop_addAssociative :: Int -> Int -> Int -> Bool
+prop_addAssociative x y z = x + (y + z) == (x + y) + z
+
+prop_addCommutative :: Int -> Int -> Bool
+prop_addCommutative x y = x + y == y + x
+
+main :: IO ()
+main = do
+  quickCheck prop_addAssociative
+  quickCheck prop_addCommutative
+```
+
+이 테스트를 실행하면 지정된 속성을 확인하기 위해 입력을 자동으로 생성합니다:
+
+```
++++ OK, 100회 테스트를 통과함.
++++ OK, 100회 테스트를 통과함.
+```
+
+Hspec과 QuickCheck 예제 모두에서 테스트 스위트는 코드의 정확성을 자동으로 검증할 수 있는 실행 가능한 문서로 기능합니다.

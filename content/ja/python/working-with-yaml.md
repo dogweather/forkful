@@ -1,59 +1,100 @@
 ---
-title:                "YAMLを扱う"
-date:                  2024-01-19
-simple_title:         "YAMLを扱う"
-
+title:                "YAML を操作する"
+date:                  2024-02-03T19:26:33.277206-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "YAML を操作する"
 tag:                  "Data Formats and Serialization"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/python/working-with-yaml.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (それは何？なぜ使うの？)
-YAMLは設定ファイルやデータの保存に使われるシンプルなフォーマット。読みやすく、人間が書きやすいため、多くのプログラマーに選ばれています。
+## 何となぜ?
+YAMLは "YAML Ain't Markup Language" の略で、人間が読めるデータ直列化形式です。プログラマーはそのシンプルな構文と、XMLやJSONのような他の形式と比べて読みやすさのために、設定ファイル、プロセス間メッセージング、およびデータストレージにYAMLを使用します。
 
-## How to: (やり方)
-PythonでYAMLを取り扱うには`PyYAML`ライブラリが必要です。インストール後、YAMLを読み書きできます。
+## どのようにして:
+PythonでYAMLを読み書きするには通常、サードパーティのライブラリを使用します。その中で`PyYAML`が最も人気があります。はじめに、`pip install PyYAML`を実行してPyYAMLをインストールする必要があります。
 
-```Python
-# PyYAMLのインストール
-# pip install PyYAML
+**例: YAMLファイルへの書き込み**
 
+```python
 import yaml
 
-# YAML文字列をパースする
-yaml_data = """
-fruits:
-  - Apple
-  - Orange
-  - Banana
-colors:
-  - Red
-  - Orange
-  - Yellow
-"""
-data = yaml.safe_load(yaml_data)
-print(data['fruits'])  # 結果: ['Apple', 'Orange', 'Banana']
+data = {'a list': [1, 42, 3.141, 1337, 'help', u'€'],
+        'a string': 'boo!',
+        'another dict': {'foo': 'bar', 'key': 'value', 'the answer': 42}}
 
-# PythonのディクショナリをYAML文字列に変換する
-dict_data = {'pets': ['Dog', 'Cat'], 'numbers': [1, 2, 3]}
-yaml_str = yaml.dump(dict_data)
-print(yaml_str)
-# 結果:
-# numbers:
-# - 1
-# - 2
-# - 3
-# pets:
-# - Dog
-# - Cat
+with open('example.yaml', 'w') as f:
+    yaml.dump(data, f, default_flow_style=False)
+
+# これにより、データがYAML形式で構造化された`example.yaml`が作成されます。
 ```
 
-## Deep Dive (詳細な情報)
-YAMLは"YAML Ain't Markup Language"の略で、2001年にリリースされました。JSONやXMLと比較して、人が読み書きしやすいのが特徴ですが、パーサーが複雑になる可能性もあります。`PyYAML`はPythonでYAMLを扱う一番ポピュラーなライブラリで、セキュリティやパフォーマンスに配慮しながらYAML操作を行います。
+**例: YAMLファイルからの読み込み**
 
-## See Also (関連リンク)
-- [YAML公式サイト](https://yaml.org/)
-- [PyYAMLドキュメント](https://pyyaml.org/wiki/PyYAMLDocumentation)
-- [YAMLとJSONの比較](https://en.wikipedia.org/wiki/YAML#Comparison_with_JSON)
+```python
+import yaml
+
+with open('example.yaml', 'r') as f:
+    data_loaded = yaml.safe_load(f)
+
+print(data_loaded)
+
+# 出力: 
+# {'a list': [1, 42, 3.141, 1337, 'help', '€'],
+#  'a string': 'boo!',
+#  'another dict': {'foo': 'bar', 'key': 'value', 'the answer': 42}}
+```
+
+**構成管理にYAMLを使用する**
+
+多くのプログラマーはYAMLをアプリケーションの設定管理に使用します。ここでは、設定ファイルをどのように構造化し、それを読み取るかの例です:
+
+config.yaml:
+```yaml
+database:
+  host: localhost
+  port: 5432
+  username: admin
+  password: secret
+```
+
+Pythonで設定ファイルを読む:
+```python
+import yaml
+
+with open('config.yaml', 'r') as f:
+    config = yaml.safe_load(f)
+
+print(config['database']['host'])  # 出力: localhost
+```
+
+**複雑な構造の取り扱い**
+
+PyYAMLでは、カスタムPythonオブジェクトを定義することで複雑な構造を扱うことができます。ただし、任意の関数やオブジェクトを実行しないように`safe_load`を使用する安全な方法を確保してください。
+
+```python
+import yaml
+
+# Pythonオブジェクトを定義
+class Example:
+    def __init__(self, value):
+        self.value = value
+
+# カスタムコンストラクタ
+def constructor_example(loader, node):
+    value = loader.construct_scalar(node)
+    return Example(value)
+
+# "!example" タグのためのコンストラクタを追加
+yaml.add_constructor('!example', constructor_example)
+
+yaml_str = "!example 'data'"
+loaded = yaml.load(yaml_str, Loader=yaml.FullLoader)
+
+print(loaded.value)  # 出力: data
+```
+
+このスニペットでは、`!example`はYAML文字列から値'data'で`Example`オブジェクトをインスタンス化するために使用されるカスタムタグです。このようなカスタムローダーは、より複雑なデータ構造やタイプの処理を可能にし、PyYAMLの柔軟性を拡大します。

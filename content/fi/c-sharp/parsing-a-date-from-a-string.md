@@ -1,53 +1,88 @@
 ---
-title:                "Merkkijonosta päivämäärän jäsentäminen"
-date:                  2024-01-20T15:35:05.147755-07:00
-simple_title:         "Merkkijonosta päivämäärän jäsentäminen"
-
+title:                "Päivämäärän jäsennys merkkijonosta"
+date:                  2024-02-03T19:13:53.948286-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Päivämäärän jäsennys merkkijonosta"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c-sharp/parsing-a-date-from-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Mitä & Miksi?)
-Kun muunnat merkkijonon päivämääräksi ('parsing a date from a string'), muutat tekstissä esitettyä päivämäärätietoa päivämäärä-objektiksi. Tämä mahdollistaa päivämäärän vertailun, laskennan ja muokkauksen ohjelmassasi.
+## Mikä & Miksi?
+Päivämäärän jäsennys merkkijonosta C#:ssa tarkoittaa päivämäärien ja aikojen tekstiesitysten muuntamista `DateTime`-objektiksi. Tämä on välttämätöntä sovelluksille, jotka tarvitsevat manipuloida, tallentaa tai näyttää päivämääriä ja aikoja eri muodoissa, kuten aikataulusovellukset, lokiprosessorit tai mikä tahansa järjestelmä, joka käsittelee päivämääräsyötettä käyttäjiltä tai ulkoisista lähteistä.
 
-## How to: (Kuinka tehdä:)
-C# tarjoaa `DateTime` luokan päivämäärän parsimiseksi. Esimerkiksi, käytä `Parse` tai `TryParse` metodia:
+## Kuinka:
 
-```C#
-using System;
+**Perusjäsennys:**
+
+`DateTime.Parse` ja `DateTime.TryParse` -menetelmät ovat go-to-vaihtoehtoja muuntaaksesi merkkijonon `DateTime`-objektiksi. Tässä on nopea esimerkki:
+
+```csharp
+string dateString = "2023-04-12";
+DateTime parsedDate;
+
+if (DateTime.TryParse(dateString, out parsedDate))
+{
+    Console.WriteLine($"Onnistuneesti jäsennetty: {parsedDate}");
+}
+else
+{
+    Console.WriteLine("Jäsennys epäonnistui.");
+}
+// Tuloste: Onnistuneesti jäsennetty: 12.4.2023 0:00:00
+```
+
+**Kulttuurin määrittäminen:**
+
+Joskus sinun on jäsenettävä päivämäärämerkkijono, joka on tietyn kulttuurin muodossa. Tämän voit saavuttaa käyttämällä `CultureInfo`-luokkaa:
+
+```csharp
 using System.Globalization;
 
-class DateParsingExample
-{
-    static void Main()
-    {
-        string dateStr = "24.12.2023";
-        DateTime dateTime;
+string dateString = "12 avril 2023";
+var cultureInfo = new CultureInfo("fr-FR");
+DateTime parsedDate = DateTime.Parse(dateString, cultureInfo);
 
-        if (DateTime.TryParse(dateStr, out dateTime))
-        {
-            Console.WriteLine(dateTime); // Output: 24.12.2023 00:00:00
-        }
-        else
-        {
-            Console.WriteLine("Invalid date format");
-        }
-    }
+Console.WriteLine(parsedDate);
+// Tuloste: 12.4.2023 0:00:00
+```
+
+**Tarkka jäsennys tietyllä muodolla:**
+
+Skenaarioissa, joissa päivämäärät tulevat tietyssä muodossa, joka ei välttämättä ole standardi, `DateTime.ParseExact` tulee tarpeeseen:
+
+```csharp
+string dateString = "Wednesday, 12 April 2023";
+string format = "dddd, d MMMM yyyy";
+DateTime parsedDate = DateTime.ParseExact(dateString, format, CultureInfo.InvariantCulture);
+
+Console.WriteLine(parsedDate);
+// Tuloste: 12.4.2023 0:00:00
+```
+
+**NodaTime:n käyttö:**
+
+Viela robustimpaan päivämäärän ja ajan jäsennykseen, harkitse suositun kolmannen osapuolen kirjaston NodaTime käyttöä. Se tarjoaa laajemman valikoiman päivämäärän/aika käsittelyn mahdollisuuksia:
+
+```csharp
+using NodaTime;
+using NodaTime.Text;
+
+var pattern = LocalDatePattern.CreateWithInvariantCulture("yyyy-MM-dd");
+var parseResult = pattern.Parse("2023-04-12");
+
+if (parseResult.Success)
+{
+    LocalDate localDate = parseResult.Value;
+    Console.WriteLine(localDate); // 2023-04-12
+}
+else
+{
+    Console.WriteLine("Jäsennys epäonnistui.");
 }
 ```
 
-## Deep Dive (Syväsukellus):
-Päivämäärän parsiminen C#:ssa on suoraviivaista, mutta ei aina suoraviivaista. Esimerkiksi, `Parse` heittää poikkeuksen virheellisillä tiedoilla, kun taas `TryParse` palauttaa `bool`, mikä kertoo onnistuiko parsiminen.
-
-Historiallisesti eri kulttuurit näyttävät päivämäärät eri formaateissa. C# tukee `CultureInfo`-luokkaa, joka huomioi kulttuurikohtaiset erot.
-
-Vaihtoehtoja? Voit käyttää myös `DateTimeOffset` tai kolmannen osapuolen kirjastoja, kuten NodaTime, monimutkaisempiin aikavyöhykkeiden hallintaan.
-
-Tärkeä yksityiskohta: virheenkäsittely ja validointi on välttämätöntä, koska käyttäjäsyötteet ovat arvaamattomia.
-
-## See Also (Katso myös):
-- Microsoftin dokumentaatio `DateTime`: [DateTime Struct (Microsoft Docs)](https://docs.microsoft.com/en-us/dotnet/api/system.datetime?view=netcore-3.1)
-- Kulttuurikohtainen päivämäärän käsittely: [CultureInfo Class (Microsoft Docs)](https://docs.microsoft.com/en-us/dotnet/api/system.globalization.cultureinfo?view=netcore-3.1)
-- NodaTime-kirjasto ajanhallintaan: [NodaTime](https://nodatime.org/)
+NodaTime tarjoaa laajamittaista tukea aikavyöhykkeille, ajanjaksoille ja kestokonsepteille sekä monille eri kalenterijärjestelmille, tehden siitä voimakkaan valinnan monimutkaisten päivämäärän ja ajan manipulointiin .NET-sovelluksissa.

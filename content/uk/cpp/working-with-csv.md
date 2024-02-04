@@ -1,90 +1,112 @@
 ---
-title:                "Робота з CSV файлами"
-date:                  2024-01-19
-simple_title:         "Робота з CSV файлами"
-
+title:                "Робота з CSV"
+date:                  2024-02-03T19:19:36.210589-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Робота з CSV"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/cpp/working-with-csv.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Що і чому?
-Робота з CSV полягає в читанні, записі, і маніпуляції даними у форматі, що їх легко читати як людині, так і машині. Програмісти використовують CSV через його простоту та сумісність з таблицями електронних таблиць.
+## Що і Чому?
 
-## Як це робити:
-```C++
-#include <iostream>
+Робота з файлами CSV (Comma Separated Values — значення, розділені комами) полягає у обробці та маніпулюванні даними, які зберігаються у простому текстовому форматі, де кожен рядок тексту представляє рядок у таблиці, а коми розділяють окремі стовпчики. Програмісти використовують це для імпорту, експорту та управління даними між різними системами через широке прийняття CSV як легкого, зрозумілого для людини формату обміну даними.
+
+## Як це зробити:
+
+### Читання файлу CSV за допомогою стандартної бібліотеки C++:
+
+```cpp
 #include <fstream>
-#include <vector>
-#include <string>
+#include <iostream>
 #include <sstream>
-
-// Функція для читання CSV-файлу
-std::vector<std::vector<std::string>> readCSV(const std::string& filename) {
-    std::vector<std::vector<std::string>> data;
-    std::ifstream file(filename);
-    std::string line;
-    while (getline(file, line)) {
-        std::stringstream linestream(line);
-        std::string cell;
-        std::vector<std::string> rowData;
-        while (getline(linestream, cell, ',')) {
-            rowData.push_back(cell);
-        }
-        data.push_back(rowData);
-    }
-    return data;
-}
-
-// Функція для запису даних у CSV-файл
-void writeCSV(const std::string& filename, const std::vector<std::vector<std::string>>& data) {
-    std::ofstream file(filename);
-    for (const auto& row : data) {
-        for (size_t i = 0; i < row.size(); ++i) {
-            file << row[i];
-            if (i < row.size() - 1) {
-                file << ",";
-            }
-        }
-        file << "\n";
-    }
-}
+#include <vector>
 
 int main() {
-    // Запис даних у CSV
-    std::vector<std::vector<std::string>> myData = {
-        {"Name", "Age", "City"},
-        {"Alex", "31", "Kyiv"},
-        {"Danylo", "29", "Lviv"}
-    };
+    std::ifstream file("data.csv");
+    std::string line;
     
-    writeCSV("example.csv", myData);
-    
-    // Читання даних з CSV
-    auto readData = readCSV("example.csv");
-    for (const auto& row : readData) {
-        for (const auto& cell : row) {
-            std::cout << cell << " ";
+    while (std::getline(file, line)) {
+        std::stringstream lineStream(line);
+        std::string cell;
+        std::vector<std::string> parsedRow;
+        
+        while (std::getline(lineStream, cell, ',')) {
+            parsedRow.push_back(cell);
+        }
+        
+        // Тут обробляємо parsedRow
+        for (const auto& val : parsedRow) {
+            std::cout << val << "\t";
         }
         std::cout << std::endl;
     }
-
+    
     return 0;
 }
 ```
 
-**Вивід:**
-```
-Name Age City
-Alex 31 Kyiv
-Danylo 29 Lviv
+### Запис у файл CSV:
+
+```cpp
+#include <fstream>
+#include <vector>
+
+int main() {
+    std::ofstream file("output.csv");
+    std::vector<std::vector<std::string>> data = {
+        {"Name", "Age", "City"},
+        {"John Doe", "29", "New York"},
+        {"Jane Smith", "34", "Los Angeles"}
+    };
+    
+    for (const auto& row : data) {
+        for (size_t i = 0; i < row.size(); i++) {
+            file << row[i];
+            if (i < row.size() - 1) file << ",";
+        }
+        file << "\n";
+    }
+    
+    return 0;
+}
 ```
 
-## Глибоке занурення
-CSV (Comma-Separated Values) — це простий формат обміну даними, який був створений у ранні 70-ті. Є альтернативи, такі як XML та JSON, що надають більше можливостей для серіалізації складних даних. Працювати з CSV у C++ можна без зовнішніх бібліотек, але для великих чи складних файлів є бібліотеки, такі як 'csv-parser' і 'Boost CSV'.
+### Використання сторонньої бібліотеки: `csv2`:
 
-## Див. також
-- [RFC 4180](https://tools.ietf.org/html/rfc4180), стандарт CSV.
-- [libcsv](http://sourceforge.net/projects/libcsv/), бібліотека C для читання і запису CSV файлів.
-- [Boost Library](https://www.boost.org/), збірка бібліотек для C++, які містять компонент для роботи з CSV.
+Хоча стандартна бібліотека C++ надає базові засоби для роботи з файлами та рядками, використання сторонніх бібліотек може спростити обробку CSV. Однією з таких бібліотек є `csv2`, відома своєю простотою у використанні та ефективністю.
+
+- Встановлення: Зазвичай встановлюється за допомогою менеджерів пакунків, як-от Conan, або безпосередньо з GitHub репозиторію.
+
+Приклад використання `csv2` для читання файлу CSV:
+
+```cpp
+#include <csv2/reader.hpp>
+#include <iostream>
+
+int main() {
+    csv2::Reader<csv2::delimiter<','>, csv2::quote_character<'"'>, csv2::first_row_is_header<true>> csv;
+    if (csv.mmap("data.csv")) {
+        const auto header = csv.header();
+        for (const auto row : csv) {
+            for (const auto cell : row) {
+                std::cout << cell.second << "\t"; // Виводимо значення кожної комірки
+            }
+            std::cout << std::endl;
+        }
+    }
+    return 0;
+}
+```
+
+Зразок виводу для операцій читання може виглядати так (припускаючи, що це простий триколонковий файл CSV):
+
+```
+John    29    New York    
+Jane    34    Los Angeles
+```
+
+Ці приклади покликані охопити основні операції з файлами CSV у C++. Для більш складних сценаріїв, таких як робота з великими файлами або складні трансформації даних, може бути виправданим подальше дослідження спеціалізованих бібліотек або інструментів.

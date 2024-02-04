@@ -1,78 +1,129 @@
 ---
 title:                "עבודה עם YAML"
-date:                  2024-01-19
+date:                  2024-02-03T19:26:37.244995-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "עבודה עם YAML"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/php/working-with-yaml.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-מה זה YAML ולמה זה משנה? YAML הוא פורמט קובץ המתאים לעבודה עם נתונים המיועד להיות קריא לאדם. תכניתנים משתמשים בו כיוון שהוא פשוט לעריכה ולקריאה, ומתאים לשילוב עם שפות תכנות רבות.
+## מה ולמה?
 
-## How to:
-לעבוד עם YAML ב-PHP? קל. השתמש בספריית `yaml` לקריאה וכתיבה.
-התקן את ההרחבה אם עוד לא עשית זאת:
+YAML, שמסמל "YAML Ain't Markup Language" (YAML אינו שפת סימון), הוא תבנית טקסטואלית קריאה לאדם לנירמול נתונים שמשמשת בעיקר עבור קבצי תצורה. מתכנתים בוחרים להשתמש ב-YAML בשל פשטותו וקריאותו, הופכים אותו לבחירה מעולה לאחסון הגדרות, פרמטרים ואף מבני נתונים מורכבים בצורה נוחה לניהול.
+
+## איך לעשות:
+
+PHP, כפי שהוא נמצא בגרסאותיו הנוכחיות, לא תומך בניתוח YAML כחלק מספרייתו הסטנדרטית. הדרך הפשוטה ביותר לעבוד עם YAML ב-PHP היא באמצעות רכיב YAML של Symfony או הרחבת PECL של `yaml`.
+
+### שימוש ברכיב YAML של Symfony
+
+ראשית, התקן את רכיב YAML של Symfony דרך Composer:
+
+```bash
+composer require symfony/yaml
+```
+
+לאחר מכן, תוכל לנתח וליצור תוכן ב-YAML כך:
+
+```php
+<?php
+require_once __DIR__.'/vendor/autoload.php';
+
+use Symfony\Component\Yaml\Yaml;
+
+// ניתוח YAML
+$yamlString = <<<YAML
+greet: Hello, World!
+framework:
+  name: Symfony
+  language: PHP
+YAML;
+
+$array = Yaml::parse($yamlString);
+print_r($array);
+
+// יצירת YAML ממערך
+$array = [
+    'greet' => 'Hello, YAML!',
+    'framework' => [
+        'name' => 'Symfony',
+        'language' => 'PHP',
+    ],
+];
+
+$yaml = Yaml::dump($array);
+echo $yaml;
+```
+
+דוגמא לפלט בעת ניתוח:
+
+```
+Array
+(
+    [greet] => Hello, World!
+    [framework] => Array
+        (
+            [name] => Symfony
+            [language] => PHP
+        )
+
+)
+```
+
+דוגמא לפלט בעת יצירה:
+
+```
+greet: Hello, YAML!
+framework:
+    name: Symfony
+    language: PHP
+```
+
+### שימוש בהרחבת `yaml` PECL
+
+אם אתה מעדיף, או אם דרישות הפרויקט שלך מאפשרות זאת, ההרחבה PECL יכולה להיות דרך יעילה נוספת לעבוד עם YAML. ראשית, ודא שההרחבה מותקנת:
+
 ```bash
 pecl install yaml
 ```
 
-דוגמא לקריאת מידע מ-YAML:
+לאחר מכן, הפעל אותה בתצורת ה-`php.ini` שלך:
+
+```ini
+extension=yaml.so
+```
+
+הנה איך לנתח ולפלוט YAML:
+
 ```php
 <?php
+
+// ניתוח YAML
 $yamlString = <<<YAML
-עץ:
-  תפוח: 3
-  בננה: 5
-  אפרסמון: 2
+greet: Hello, World!
+framework:
+  name: Symfony
+  language: PHP
 YAML;
 
-$data = yaml_parse($yamlString);
-print_r($data);
-```
+$array = yaml_parse($yamlString);
+print_r($array);
 
-פלט:
-```
-Array
-(
-    [עץ] => Array
-        (
-            [תפוח] => 3
-            [בננה] => 5
-            [אפרסמון] => 2
-        )
-)
-```
-
-דוגמא ליצירת YAML ממערך:
-```php
-<?php
+// יצירת YAML ממערך
 $array = [
-  'דוד' => [
-    'גובה' => 180,
-    'משקל' => 80,
-  ]
+    'greet' => 'Hello, YAML!',
+    'framework' => [
+        'name' => 'Symfony',
+        'language' => 'PHP',
+    ],
 ];
 
 $yaml = yaml_emit($array);
 echo $yaml;
 ```
 
-פלט:
-```
-דוד:
-  גובה: 180
-  משקל: 80
-```
-
-## Deep Dive:
-YAML (YAML Ain't Markup Language) הוא תכנון ידידותי לאדם לנתונים, שהתפרסם ב-2001. פורמטים חלופיים כוללים JSON ו-XML. חשוב לדעת ש-YAML תומך במבנים מורכבים כמו רשימות ומפות. ב-PHP, יישום יעיל דורש התקנת הרחבת PECL.
-
-## See Also:
-- מדריך על התקנת הרחבות PECL: https://www.php.net/manual/he/install.pecl.php
-- מסמכי YAML רשמיים: https://yaml.org
-- המדריך לספרייה `yaml` ב-PHP: https://www.php.net/manual/he/book.yaml.php
-
-זהו, כל מה שצריך כדי לתפעל YAML ב-PHP.
+הפלט יהיה דומה לזה של רכיב Symfony, הממחיש את תפקידו של YAML כגשר בין פורמט קריא לאדם לבין מבני מערך PHP, מקל על תצורה ועיבוד נתונים קל יותר.

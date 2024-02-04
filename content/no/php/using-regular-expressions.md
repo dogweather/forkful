@@ -1,35 +1,70 @@
 ---
-title:                "Bruk av regulære uttrykk"
-date:                  2024-01-19
-simple_title:         "Bruk av regulære uttrykk"
-
+title:                "Bruke regulære uttrykk"
+date:                  2024-02-03T19:17:40.724162-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Bruke regulære uttrykk"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/php/using-regular-expressions.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Regular expressions (regex) lar deg søke og manipulere tekst basert på mønstre. Programmerere bruker det for å effektivisere tekstbehandling, som datavalidering og -rensing.
 
-## Hvordan gjøre det:
-```PHP
-<?php
-$tekst = "Finn meg på email@example.com for mer info.";
-$regex_pattern = "/[a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}/";
+Regulære uttrykk (regex) i PHP er mønstre brukt til å matche tegnkombinasjoner i strenger, noe som muliggjør avanserte søk-og-erstatt-operasjoner og datavalidering. Programmerere utnytter regex for dets kraft og fleksibilitet i å analysere tekst, validere skjemaer, eller skrape webdata, noe som gjør det til et uunnværlig verktøy i en utviklers arsenal.
 
-if (preg_match($regex_pattern, $tekst, $matcher)) {
-    echo "Funnet e-post: " . $matcher[0] . "\n"; // Output: Funnet e-post: email@example.com
+## Hvordan:
+
+PHP støtter regulære uttrykk gjennom PCRE-biblioteket (Perl Compatible Regular Expressions), som tilbyr et rikt sett med funksjoner. Her er hvordan du bruker dem:
+
+### Matche et mønster:
+
+For å sjekke om et mønster finnes innenfor en streng, bruk `preg_match()`. Denne funksjonen returnerer 1 hvis mønsteret ble funnet i strengen, og 0 hvis ikke.
+
+```php
+if (preg_match("/\bweb\b/i", "PHP er et web scriptingspråk")) {
+    echo "En match ble funnet.";
 } else {
-    echo "Ingen e-post funnet.";
+    echo "Ingen match ble funnet.";
 }
-?>
+// Output: En match ble funnet.
 ```
 
-## Dypdykk
-Regular expressions har røtter tilbake til teoretisk informatikk fra 1950-tallet. Alternativer inkluderer tekstfunksjoner som `strpos()` for direkte søk, eller `str_replace()` for enkel erstatning, men de er mindre dynamiske. PHP implementerer regex via `PCRE` (Perl Compatible Regular Expressions), som støtter et bredt spekter av mønstre og operasjoner for komplekse søk.
+### Finne alle treff:
 
-## Se også
-- PHP Manual on PCRE: https://www.php.net/manual/en/book.pcre.php
-- Regex101 for å teste regex online: https://regex101.com/
-- PHP preg_match documentation: https://www.php.net/manual/en/function.preg-match.php
+`preg_match_all()` brukes når du trenger å finne alle forekomster av et mønster innenfor en streng.
+
+```php
+$text = "katter og hunder";
+$pattern = "/\b([a-z]+)\b/i";
+preg_match_all($pattern, $text, $matches);
+print_r($matches[0]);
+// Output: Array ( [0] => katter [1] => og [2] => hunder )
+```
+
+### Erstatte tekst:
+
+For å erstatte tekst som matcher et regulært uttrykk, brukes `preg_replace()`. Det er utrolig kraftfullt for formatering og opprydding av data.
+
+```php
+$originalText = "15. april 2003";
+$pattern = "/(\w+) (\d+), (\d+)/i";
+$replacement = '${1}1,$3';
+echo preg_replace($pattern, $replacement, $originalText);
+// Output: april1,2003
+```
+
+### Dele strenger:
+
+Du kan dele en streng inn i et array ved å bruke `preg_split()`, og spesifisere et mønster for skilletegnet.
+
+```php
+$text = "PHP er, et ekstremt populært, scriptingspråk";
+$parts = preg_split("/,\s*/", $text);
+print_r($parts);
+// Output: Array ( [0] => PHP er [1] => et ekstremt populært [2] => scriptingspråk )
+```
+
+Videre, for komplekse regex-mønstre og oppgaver, kan rammeverk og biblioteker som Symfony sitt `Finder`-komponent eller Laravel sin samling av hjelpefunksjoner tilby et mer praktisk abstraksjonslag. Likevel er forståelsen og bruk av PHPs innebygde PCRE-funksjoner avgjørende for effektiv tekstbehandling og validering direkte inne i PHP-skript.

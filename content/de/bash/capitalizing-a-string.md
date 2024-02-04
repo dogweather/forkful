@@ -1,56 +1,61 @@
 ---
-title:                "String in Großbuchstaben umwandeln"
-date:                  2024-01-19
-simple_title:         "String in Großbuchstaben umwandeln"
-
+title:                "Einen String großschreiben"
+date:                  2024-02-03T19:04:48.107457-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Einen String großschreiben"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/bash/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Das Kapitalisieren eines Strings bedeutet, alle Buchstaben in Großbuchstaben umzuwandeln. Programmierer nutzen dies, um Konsistenz in der Benutzereingabe sicherzustellen oder bestimmte Textelemente hervorzuheben.
+Das Kapitalisieren eines Strings in Bash beinhaltet die Umwandlung des ersten Buchstabens des Strings in einen Großbuchstaben, während der Rest des Strings unverändert bleibt. Diese Technik wird häufig verwendet, um die Ausgabe zu formatieren oder um Kodierungskonventionen zu entsprechen, die verlangen, dass bestimmte Strings mit einem Großbuchstaben beginnen, zur Lesbarkeit oder aus stilistischen Vorlieben.
 
-## How to:
-Capitalizing a string in Bash can be done using `tr`, `awk`, or native Bash parameter expansion. Here's how:
+## Wie geht das:
 
-Mit `tr`:
-```Bash
-echo "kleiner Buchstabe" | tr a-z A-Z
+Bash verfügt nicht über eine eingebaute Funktion speziell zum Kapitalisieren von Strings, aber Sie können diese Aufgabe mit Parametererweiterung oder externen Tools wie `awk` bewerkstelligen. Hier sind einige Wege, um einen String in Bash zu kapitalisieren:
+
+**Verwendung der Parametererweiterung:**
+
+Diese Methode manipuliert den String direkt in der Shell.
+
+```bash
+str="hello world"
+capitalized="${str^}"
+echo "$capitalized"
 ```
 Ausgabe:
 ```
-KLEINER BUCHSTABE
+Hello world
 ```
 
-Mit `awk`:
-```Bash
-echo "kleiner Buchstabe" | awk '{print toupper($0)}'
+**Verwendung von `awk`:**
+
+`awk` ist ein leistungsstarkes Textverarbeitungstool, das auf den meisten Unix-ähnlichen Betriebssystemen verfügbar ist und zum Kapitalisieren von Strings genutzt werden kann.
+
+```bash
+str="hello world"
+echo "$str" | awk '{print toupper(substr($0, 1, 1)) tolower(substr($0, 2))}'
 ```
 Ausgabe:
 ```
-KLEINER BUCHSTABE
+Hello world
 ```
 
-Mit Bash Erweiterung:
-```Bash
-str="kleiner Buchstabe"
-echo "${str^^}"
+**Verwendung von `sed`:**
+
+Für einen traditionelleren Ansatz kann `sed` verwendet werden, um den ersten Buchstaben eines Strings zu kapitalisieren. Es ist jedoch im Vergleich zu den vorherigen Methoden etwas komplexer.
+
+```bash
+str="hello world"
+echo "$str" | sed 's/./\u&/'
 ```
 Ausgabe:
 ```
-KLEINER BUCHSTABE
+Hello world
 ```
 
-## Deep Dive:
-Historisch kommt das Kapitalisieren von Strings aus dem Bedürfnis, Texte gleichförmig zu gestalten – beispielsweise in Titeln oder beim Setzen von Umgebungsvariablen in Unix-Systemen. Alternative Methoden, wie die Verwendung von `sed` oder das Umwandeln einzelner Buchstaben mit Hilfe von ASCII-Werten, sind ebenfalls möglich, aber die gezeigten Methoden mit `tr`, `awk` und Bash Erweiterungen sind eleganter und kürzer.
-
-Die `tr`-Methode ist direkt und schnell, perfekt für einfaches Umwandeln. `awk` ist mächtiger und bietet mehr Flexibilität für komplexe Manipulationen. Bash Erweiterungen sind sehr prägnant, jedoch sind ältere Versionen von Bash möglicherweise nicht kompatibel.
-
-Für die Bash-Erweiterung: Das doppelte `^^` wandelt den gesamten String in Großbuchstaben um. Ein einfaches `^` würde nur den ersten Buchstaben ändern.
-
-## See Also:
-- GNU `tr` Manual: https://www.gnu.org/software/coreutils/manual/html_node/tr-invocation.html
-- GNU `awk` Manual: https://www.gnu.org/software/gawk/manual/gawk.html
-- Bash Parameter Expansion: https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html
+Diese Ausschnitte demonstrieren, wie man den ersten Buchstaben eines Strings in Bash kapitalisiert, und heben die Flexibilität der Shell-Skripterstellung bei der Textmanipulation hervor.

@@ -1,61 +1,76 @@
 ---
-title:                "Manipulation des fichiers CSV"
-date:                  2024-01-19
-simple_title:         "Manipulation des fichiers CSV"
-
+title:                "Travailler avec CSV"
+date:                  2024-02-03T19:19:41.609255-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Travailler avec CSV"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/haskell/working-with-csv.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Manipuler des fichiers CSV (Comma-Separated Values), c'est travailler avec des données tabulaires simples. Les programmeurs le font pour importer, exporter, et traiter des données de manière interopérable.
+## Quoi & Pourquoi ?
 
-## How to:
-Utilisons `cassava`, une bibliothèque populaire pour gérer les CSV en Haskell. D'abord, installez le package avec cabal:
+Travailler avec des fichiers CSV (Valeurs Séparées par des Virgules) implique d'analyser et de générer des fichiers qui stockent des données tabulaires dans un format texte simple. Les programmeurs s'engagent fréquemment dans cette tâche pour importer ou exporter efficacement des données depuis des feuilles de calcul, des bases de données, ou pour faciliter l'échange de données entre différents programmes.
 
-```shell
-cabal update
-cabal install cassava
-```
+## Comment faire :
 
-Voici un exemple de lecture d'un fichier CSV et d'affichage de son contenu.
+En Haskell, la gestion des fichiers CSV peut être réalisée en utilisant la bibliothèque `cassava`, l'une des bibliothèques tierces populaires à cette fin. Ci-dessous, des exemples illustrant comment lire et écrire dans des fichiers CSV en utilisant `cassava`.
+
+**1. Lire un fichier CSV :**
+
+Tout d'abord, assurez-vous d'avoir `cassava` installé en l'ajoutant au fichier cabal de votre projet ou en utilisant Stack.
+
+Voici un exemple simple pour lire un fichier CSV et imprimer chaque enregistrement. Nous supposons que le fichier CSV a deux colonnes : nom et âge.
 
 ```haskell
 {-# LANGUAGE OverloadedStrings #-}
-
 import Data.Csv
 import qualified Data.ByteString.Lazy as BL
 import qualified Data.Vector as V
 
 main :: IO ()
 main = do
-    csvData <- BL.readFile "data.csv"
+    csvData <- BL.readFile "people.csv"
     case decode NoHeader csvData of
         Left err -> putStrLn err
-        Right v -> V.forM_ v $ \ (nom, age) ->
-            putStrLn $ nom ++ " a " ++ show age ++ " ans"
+        Right v -> V.forM_ v $ \(name, age) ->
+            putStrLn $ name ++ " a " ++ show (age :: Int) ++ " ans."
 ```
 
-Si "data.csv" contient:
-
+En supposant que `people.csv` contient :
 ```
-Jean,30
-Marie,22
+John,30
+Jane,25
 ```
-
-La sortie sera:
-
+Le résultat sera :
 ```
-Jean a 30 ans
-Marie a 22 ans
+John a 30 ans.
+Jane a 25 ans.
 ```
 
-## Deep Dive
-Le format CSV a été créé dans les années 70 et est depuis devenu un standard de facto pour l'échange de données. `cassava` est une alternative aux outils plus basiques comme `read` ou `writeFile`, offrant une API plus détaillée et une gestion des erreurs supérieure. Le parsing est réalisé grâce à des instances de `FromRecord` pour la lecture, et `ToRecord` pour l'écriture.
+**2. Écrire un fichier CSV :**
 
-## See Also
-- [cassava sur Hackage](https://hackage.haskell.org/package/cassava)
-- [Spécification CSV RFC 4180](https://tools.ietf.org/html/rfc4180)
-- [Tutoriel sur la lecture de fichiers CSV en Haskell](https://www.stackbuilders.com/tutorials/haskell/csv-encoding-decoding/)
+Pour créer un fichier CSV, vous pouvez utiliser la fonction `encode` de `cassava`.
+
+Voici comment vous pourriez écrire une liste d'enregistrements dans un fichier CSV :
+
+```haskell
+{-# LANGUAGE OverloadedStrings #-}
+import Data.Csv
+import qualified Data.ByteString.Lazy as BL
+
+main :: IO ()
+main = BL.writeFile "output.csv" $ encode [("John", 30), ("Jane", 25)]
+```
+
+Après l'exécution de ce programme, `output.csv` contiendra :
+
+```
+John,30
+Jane,25
+```
+
+Cette introduction concise au travail avec des fichiers CSV en Haskell en utilisant la bibliothèque `cassava` démontre comment lire et écrire dans des fichiers CSV, rendant les tâches de manipulation de données plus accessibles pour ceux qui sont nouveaux dans le langage.

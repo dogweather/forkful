@@ -1,21 +1,23 @@
 ---
-title:                "Använda reguljära uttryck"
-date:                  2024-01-19
-simple_title:         "Använda reguljära uttryck"
-
+title:                "Att använda reguljära uttryck"
+date:                  2024-02-03T19:16:36.377958-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Att använda reguljära uttryck"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/c-sharp/using-regular-expressions.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Vad & Varför?
+Reguljära uttryck (regex) i C# är ett kraftfullt verktyg för mönsterpassning inom strängar, vilket möjliggör för programmerare att söka, ersätta, dela upp eller extrahera data effektivt. Programmerare använder sig av regex för uppgifter som sträcker sig från enkla valideringar, som kontroll av e-postformat, till komplexa textbearbetningsuppgifter på grund av dess flexibilitet och prestanda.
 
-Reguljära uttryck är mönster för att leta efter specifika teckensträngar i en text. Programmerare använder dem för att validera, parse:a och manipulera text på ett kraftfullt och flexibelt sätt.
+## Hur man gör:
 
-## How to: Så här gör du
-
-För att använda reguljära uttryck i C#, inkludera `using System.Text.RegularExpressions;` och använd `Regex` klassen. Här är ett exempel som hittar alla e-postadresser i en text:
+### Enkel Mönsterpassning
+För att kontrollera om en sträng innehåller ett specifikt mönster kan du använda metoden `Regex.IsMatch` från namnrymden `System.Text.RegularExpressions`.
 
 ```csharp
 using System;
@@ -25,31 +27,100 @@ class Program
 {
     static void Main()
     {
-        string text = "Kontakta oss på info@example.com eller support@example.org.";
-        string pattern = @"\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b";
+        string sampleText = "Hej, världen!";
+        string pattern = "världen";
+        bool containsPattern = Regex.IsMatch(sampleText, pattern);
 
-        MatchCollection matches = Regex.Matches(text, pattern);
+        Console.WriteLine(containsPattern);  // Utdata: True
+    }
+}
+```
 
-        foreach (Match match in matches)
+### Extrahera Data
+Att extrahera data från en sträng med hjälp av grupper i ett regex kan göras med metoden `Regex.Match`.
+
+```csharp
+using System;
+using System.Text.RegularExpressions;
+
+class Program
+{
+    static void Main()
+    {
+        string sampleText = "Datum: 2023-04-12";
+        string pattern = @"Datum: (\d{4})-(\d{2})-(\d{2})";
+        Match match = Regex.Match(sampleText, pattern);
+
+        if (match.Success)
         {
-            Console.WriteLine(match.Value);
+            Console.WriteLine($"År: {match.Groups[1].Value}");  // Utdata: År: 2023
+            Console.WriteLine($"Månad: {match.Groups[2].Value}");  // Utdata: Månad: 04
+            Console.WriteLine($"Dag: {match.Groups[3].Value}");  // Utdata: Dag: 12
         }
     }
 }
 ```
 
-Output:
+### Ersätta Text
+Metoden `Regex.Replace` låter dig ersätta text i en sträng som matchar ett angivet mönster.
+
+```csharp
+using System;
+using System.Text.RegularExpressions;
+
+class Program
+{
+    static void Main()
+    {
+        string sampleText = "Besök Microsoft!";
+        string pattern = "Microsoft";
+        string replacement = "Google";
+
+        string result = Regex.Replace(sampleText, pattern, replacement);
+
+        Console.WriteLine(result);  // Utdata: Besök Google!
+    }
+}
 ```
-info@example.com
-support@example.org
+
+### Dela upp Strängar
+Du kan dela upp en sträng i en array baserad på ett regex-mönster med metoden `Regex.Split`.
+
+```csharp
+using System;
+using System.Text.RegularExpressions;
+
+class Program
+{
+    static void Main()
+    {
+        string sampleText = "ett,två,tre,fyra,fem";
+        string pattern = ",";
+
+        string[] result = Regex.Split(sampleText, pattern);
+
+        foreach (string item in result)
+        {
+            Console.WriteLine(item);
+        }
+        // Utdata: 
+        // ett
+        // två
+        // tre
+        // fyra
+        // fem
+    }
+}
 ```
 
-## Deep Dive: Djupdykning
+### Användning av Tredjepartsbibliotek
+Även om .NET Framework erbjuder omfattande stöd för reguljära uttryck, finns det också tredjepartsbibliotek såsom `PCRE.NET` som erbjuder Perl-kompatibla reguljära uttryck (PCRE) i C#. Detta kan vara användbart om du behöver funktioner eller syntax från Pearls regex-motor som inte är tillgängliga i .NET:s implementation.
 
-Regular expressions, ofta förkortat regex, dök upp på 1950-talet. I C# hanteras de genom `Regex` klassen i `System.Text.RegularExpressions` namnrymden. En del alternativ till regex inkluderar string metoder som `Contains`, `IndexOf` och `Substring` men dessa saknar regex flexibilitet och kraft. `Regex` klassen använder en intern lagningsalgoritm som kan optimeras med `RegexOptions.Compiled` för förbättrad prestanda vid upprepade anrop.
+För att använda `PCRE.NET`, skulle du först installera dess NuGet-paket, och sedan kan du använda det på ett liknande sätt som du använder de inbyggda .NET regex-klasserna.
 
-## See Also: Se även
+```csharp
+// Exempel med PCRE.NET här
+// Not: Föreställ dig ett exempel liknande dem ovan, anpassat för att visa en funktion unik för PCRE.NET.
+```
 
-- Microsofts dokumentation om reguljära uttryck i .NET: [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-language-quick-reference)
-- Regex101, ett online verktyg för att testa regex mönster: [regex101.com](https://regex101.com/)
-- En guide till .NET reguljära uttryck prestanda: [blog.codinghorror.com](https://blog.codinghorror.com/to-compile-or-not-to-compile/)
+När du integrerar tredjepartsbibliotek för reguljära uttryck, konsultera alltid deras dokumentation för detaljerad användnings- och kompatibilitetsinformation.

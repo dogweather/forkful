@@ -1,43 +1,65 @@
 ---
 title:                "Travailler avec YAML"
-date:                  2024-01-19
+date:                  2024-02-03T19:26:13.197468-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Travailler avec YAML"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/powershell/working-with-yaml.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-YAML, c'est quoi ? C'est un format de données lisible par l'humain, utilisé pour la configuration des applications. Pourquoi on s'en sert ? YAML est souvent préféré pour sa facilité de lecture et d'écriture comparé à XML ou JSON.
+## Quoi et Pourquoi ?
+YAML, ou "YAML Ain't Markup Language" (YAML n'est pas un langage de balisage), est un langage de sérialisation de données lisible par l'humain. Les programmeurs l'utilisent souvent pour les fichiers de configuration et la transmission de données entre langages. Sa simplicité et sa lisibilité le rendent particulièrement populaire pour des tâches impliquant la configuration d'environnements, d'applications ou de services où les configurations sont cruciales et doivent être facilement comprises et modifiées.
 
-## How to:
+## Comment faire :
+PowerShell, par défaut, ne vient pas avec un cmdlet intégré pour l'analyse de YAML, mais il fonctionne de manière transparente avec YAML lorsque vous tirez parti du module `powershell-yaml` ou convertissez du YAML en un objet PowerShell en utilisant `ConvertFrom-Json` en combinaison avec un outil comme `yq`.
 
-Pour travailler avec YAML en PowerShell, il faut souvent passer par un module comme `powershell-yaml`. On l'installe, on lit, et on écrit du YAML.
-
+### Utilisation du module `powershell-yaml` :
+D'abord, installez le module :
 ```PowerShell
-# Installer le module PowerShell-Yaml
 Install-Module -Name powershell-yaml
-
-# Lire un fichier YAML
-$yamlContent = Get-Content -Path 'config.yaml' | ConvertFrom-Yaml
-Write-Host "Contenu du YAML:" $yamlContent
-
-# Modifier le contenu
-$yamlContent['setting'] = "newValue"
-
-# Écrire dans un fichier YAML
-$yamlContent | ConvertTo-Yaml | Set-Content -Path 'config.yaml'
-Write-Host "YAML mis à jour."
 ```
 
-## Deep Dive
+Pour lire un fichier YAML :
+```PowerShell
+Import-Module powershell-yaml
+$content = Get-Content -Path 'config.yml' -Raw
+$yamlObject = ConvertFrom-Yaml -Yaml $content
+Write-Output $yamlObject
+```
 
-YAML est né en 2001, conçu pour être plus simple que XML pour les humains à lire et à écrire. En PowerShell, `powershell-yaml` n'est pas la seule option : il y a aussi `YamlDotNet` et d'autres alternatives. Mais `powershell-yaml` est facile à utiliser et s'intègre bien dans l'écosystème PowerShell. Techniquement, YAML se base sur l'indentation pour refléter la structure de données, ce qui le rend sensible aux erreurs liées à l'espacement.
+Pour écrire un objet PowerShell dans un fichier YAML :
+```PowerShell
+$myObject = @{
+    name = "John Doe"
+    age = 30
+    languages = @("PowerShell", "Python")
+}
+$yamlContent = ConvertTo-Yaml -Data $myObject
+$yamlContent | Out-File -FilePath 'output.yml'
+```
 
-## See Also
+Exemple de `output.yml` :
+```yaml
+name: John Doe
+age: 30
+languages:
+- PowerShell
+- Python
+```
 
-- YAML Specification: https://yaml.org/spec/
-- GitHub Page for PowerShell-Yaml Module: https://github.com/dfinke/PowerShellYaml
-- YamlDotNet, une autre bibliothèque pour gérer le YAML en .NET: https://github.com/aaubry/YamlDotNet
+### Analyse de YAML avec `yq` et `ConvertFrom-Json` :
+Une autre approche implique l'utilisation de `yq`, un processeur YAML en ligne de commande léger et portable. `yq` peut convertir du YAML en JSON, que PowerShell peut analyser nativement.
+
+D'abord, assurez-vous que `yq` est installé sur votre système.
+Ensuite, exécutez :
+```PowerShell
+$yamlToJson = yq e -o=json ./config.yml
+$jsonObject = $yamlToJson | ConvertFrom-Json
+Write-Output $jsonObject
+```
+
+Cette méthode est particulièrement utile pour les utilisateurs qui travaillent dans des environnements multi-plateformes ou préfèrent utiliser JSON au sein de PowerShell.

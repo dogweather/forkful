@@ -1,58 +1,112 @@
 ---
 title:                "Praca z plikami CSV"
-date:                  2024-01-19
+date:                  2024-02-03T19:19:41.119953-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Praca z plikami CSV"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/cpp/working-with-csv.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Co i dlaczego?)
-Praca z plikami CSV polega na odczycie, analizie i zapisie danych w formacie wartości rozdzielanych przecinkami - jest to uniwersalny format danych. Programiści używają go, bo CSV jest prosty, rozpowszechniony i łatwo się go przetwarza.
+## Co i dlaczego?
 
-## How to: (Jak to zrobić?)
-```C++
-#include <iostream>
+Praca z plikami CSV (Comma Separated Values - Wartości Oddzielone Przecinkami) dotyczy przetwarzania i manipulowania danymi przechowywanymi w prostym formacie tekstowym, gdzie każda linia tekstu reprezentuje wiersz w tabeli, a poszczególne kolumny są oddzielone przecinkami. Programiści wykorzystują to do importowania, eksportowania i zarządzania danymi między różnymi systemami ze względu na szerokie akceptowanie CSV jako lekkiego, czytelnego dla człowieka formatu wymiany danych.
+
+## Jak to zrobić:
+
+### Czytanie pliku CSV za pomocą Standardowej Biblioteki C++:
+
+```cpp
 #include <fstream>
-#include <vector>
-#include <string>
+#include <iostream>
 #include <sstream>
+#include <vector>
 
 int main() {
+    std::ifstream file("data.csv");
     std::string line;
-    std::ifstream file("dane.csv");
-
-    if (file.is_open()) {
-        while (getline(file, line)) {
-            std::stringstream ss(line);
-            std::vector<std::string> row;
-            std::string data;
-
-            while (getline(ss, data, ',')) {
-                row.push_back(data);
-            }
-
-            for (const auto& field : row) {
-                std::cout << field << ' ';
-            }
-            std::cout << '\n';
+    
+    while (std::getline(file, line)) {
+        std::stringstream lineStream(line);
+        std::string cell;
+        std::vector<std::string> parsedRow;
+        
+        while (std::getline(lineStream, cell, ',')) {
+            parsedRow.push_back(cell);
         }
-        file.close();
-    } else {
-        std::cout << "Nie można otworzyć pliku." << std::endl;
+        
+        // Tutaj przetwarzaj parsedRow
+        for (const auto& val : parsedRow) {
+            std::cout << val << "\t";
+        }
+        std::cout << std::endl;
     }
-
+    
     return 0;
 }
 ```
-Wynik działania programu zależy od zawartości `dane.csv`, ale każda linia pliku zostanie rozdzielona na pojedyncze wartości i wyświetlona w konsoli.
 
-## Deep Dive (Dogłębna analiza)
-CSV (Comma-Separated Values) zyskał na popularności wraz z rozwojem aplikacji biurowych. Alternatywami dla CSV są m.in. JSON i XML, które są bardziej elastyczne, ale też bardziej złożone. Przetwarzanie CSV w C++ jest proste, aczkolwiek nie ma dedykowanej biblioteki standardowej, co często prowadzi do pisania własnych parserów lub korzystania z bibliotek zewnętrznych, takich jak 'libcsv' czy 'Boost Tokenizer'.
+### Pisanie do pliku CSV:
 
-## See Also (Zobacz również)
-- [cppreference.com](https://cppreference.com) - Źródło informacji o funkcjach i bibliotekach C++.
-- [RFC 4180](https://tools.ietf.org/html/rfc4180) - Dokumentacja standardu CSV.
-- [Boost C++ Libraries](https://www.boost.org/doc/libs/?view=categorized) - Zestaw bibliotek C++, w tym Boost Tokenizer, który ułatwia pracę z tekstem.
+```cpp
+#include <fstream>
+#include <vector>
+
+int main() {
+    std::ofstream file("output.csv");
+    std::vector<std::vector<std::string>> data = {
+        {"Name", "Age", "City"},
+        {"John Doe", "29", "New York"},
+        {"Jane Smith", "34", "Los Angeles"}
+    };
+    
+    for (const auto& row : data) {
+        for (size_t i = 0; i < row.size(); i++) {
+            file << row[i];
+            if (i < row.size() - 1) file << ",";
+        }
+        file << "\n";
+    }
+    
+    return 0;
+}
+```
+
+### Używanie biblioteki zewnętrznej: `csv2`:
+
+Chociaż Standardowa Biblioteka C++ dostarcza podstawowych narzędzi do pracy z plikami i łańcuchami znaków, wykorzystanie bibliotek zewnętrznych może upraszczać przetwarzanie CSV. Jedną z takich bibliotek jest `csv2`, znana z łatwości użytkowania i wydajności.
+
+- Instalacja: Zwykle instalowana za pomocą menedżerów pakietów takich jak Conan lub bezpośrednio z jej repozytorium na GitHubie.
+
+Przykład użycia `csv2` do czytania pliku CSV:
+
+```cpp
+#include <csv2/reader.hpp>
+#include <iostream>
+
+int main() {
+    csv2::Reader<csv2::delimiter<','>, csv2::quote_character<'"'>, csv2::first_row_is_header<true>> csv;
+    if (csv.mmap("data.csv")) {
+        const auto header = csv.header();
+        for (const auto row : csv) {
+            for (const auto cell : row) {
+                std::cout << cell.second << "\t"; // Wydrukuj wartość każdej komórki
+            }
+            std::cout << std::endl;
+        }
+    }
+    return 0;
+}
+```
+
+Przykładowy wynik operacji czytania może wyglądać tak (zakładając prosty trzykolumnowy plik CSV):
+
+```
+John    29    New York    
+Jane    34    Los Angeles
+```
+
+Te przykłady mają na celu pokrycie podstawowych operacji CSV w C++. W przypadku bardziej złożonych scenariuszy, takich jak radzenie sobie z dużymi plikami lub złożonymi transformacjami danych, dalsze eksploracje specjalistycznych bibliotek lub narzędzi mogą być uzasadnione.

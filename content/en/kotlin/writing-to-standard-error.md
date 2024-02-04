@@ -1,8 +1,8 @@
 ---
 title:                "Writing to standard error"
-date:                  2024-01-19
+date:                  2024-02-03T19:03:45.561841-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Writing to standard error"
-
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/kotlin/writing-to-standard-error.md"
 ---
@@ -10,35 +10,66 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Standard error (stderr) is a stream where a program writes its error messages. Programmers use it to separate error logs from standard output (stdout) to debug more efficiently and streamline logging.
+
+Writing to standard error (stderr) is about outputting error messages and diagnostics to a separate stream, distinct from standard output (stdout), which allows for better error handling and log parsing. Programmers do this to facilitate debugging and to ensure that error messages can be easily identified and redirected if necessary, maintaining clean output logs or user messages.
 
 ## How to:
 
-Here's a simple Kotlin snippet to print to standard error:
+In Kotlin, writing to stderr can be achieved using `System.err.println()`. This method is similar to `System.out.println()` but directs the output to the standard error stream rather than the standard output stream.
 
 ```kotlin
 fun main() {
-    System.err.println("Oops, an error occurred.")
+    System.err.println("This is an error message!")
 }
 ```
 
-And the output in your console will look like this (style may vary by terminal):
-
+Sample output:
 ```
-Oops, an error occurred.
+This is an error message!
 ```
 
-## Deep Dive
+For more structured or complex applications, particularly those involving logging frameworks like Logback or SLF4J, you can configure loggers to write to stderr for certain log levels (e.g., ERROR).
 
-Originally in Unix-like systems, the rationale for stderr is clear-cut: stderr allows error messages to be sent to the screen or another file than normal output. It helps in distinguishing normal data from error messages, especially useful when output is piped elsewhere.
+Using SLF4J with Logback:
 
-Alternatives to `System.err.println` include using a logging framework like Logback or log4j, which offers more control and options like logging levels and file output.
+1. First, add the SLF4J API and Logback implementation to your `build.gradle`:
 
-The `System.err` in Kotlin is inherited from Java's `System` class, similar to `System.out` for standard output, both are PrintStream objects. By default, `System.err` prints to the console. However, it can be redirected to write to a file or a different output stream.
+```groovy
+dependencies {
+    implementation 'org.slf4j:slf4j-api:1.7.30'
+    implementation 'ch.qos.logback:logback-classic:1.2.3'
+}
+```
 
-## See Also
+2. Next, configure Logback (in `src/main/resources/logback.xml`) to direct error-level messages to stderr:
 
-- The Kotlin documentation on basic I/O: https://kotlinlang.org/docs/basic-io.html
-- Information about Unix standard streams: https://en.wikipedia.org/wiki/Standard_streams
-- Logback, a popular logging framework: http://logback.qos.ch/
-- Apache log4j, another logging framework: https://logging.apache.org/log4j/2.x/
+```xml
+<configuration>
+    <appender name="STDERR" class="ch.qos.logback.core.ConsoleAppender">
+        <target>System.err</target>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+    
+    <root level="error">
+        <appender-ref ref="STDERR" />
+    </root>
+</configuration>
+```
+
+3. Then, use SLF4J in your Kotlin code to log error messages:
+
+```kotlin
+import org.slf4j.LoggerFactory
+
+fun main() {
+    val logger = LoggerFactory.getLogger("ExampleLogger")
+    logger.error("This is an error log message!")
+}
+```
+
+Sample output (to stderr):
+```
+2023-04-01 12:34:56 [main] ERROR ExampleLogger - This is an error log message!
+```

@@ -1,58 +1,77 @@
 ---
-title:                "YAMLを扱う"
-date:                  2024-01-19
-simple_title:         "YAMLを扱う"
-
+title:                "YAML を操作する"
+date:                  2024-02-03T19:24:42.470224-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "YAML を操作する"
 tag:                  "Data Formats and Serialization"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/cpp/working-with-yaml.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?（何とその理由？）
-C++でYAML（YAML Ain't Markup Language）は、設定ファイルやデータ交換のために使われる。読みやすく、人間にもコンピュータにもフレンドリーだからだ。
+## 何となぜ？
 
-## How to:（方法）
-まず、YAML-CPPライブラリを使ってみよう。これはC++のためのYAMLパーサーやエミッタだ。
+YAMLは、「YAML Ain't Markup Language」を意味し、人間が読みやすいデータ直列化形式です。その読みやすさと理解しやすい構文のおかげで、プログラマーは設定ファイル、データダンプ、階層データの保存にXMLやJSONと比べてYAMLを使用します。
 
-```C++
-#include <yaml-cpp/yaml.h>
+## 方法:
+
+C++でYAMLを扱う場合、一般的な選択肢は`yaml-cpp`ライブラリです。まず、C++プロジェクトに`yaml-cpp`がインストールされており、適切にリンクされていることを確認してください。
+
+**YAMLファイルを読む:**
+
+```cpp
 #include <iostream>
 #include <fstream>
-#include <string>
+#include <yaml-cpp/yaml.h>
 
-// ΥAMLファイルを読み込む
-void loadYAML(const std::string &filename) {
-    YAML::Node config = YAML::LoadFile(filename);
-
-    if (config["title"]) {
-        std::cout << "Title: " << config["title"].as<std::string>() << std::endl;
-    }
-
-    if (config["owner"]["name"]) {
-        std::cout << "Owner Name: " << config["owner"]["name"].as<std::string>() << std::endl;
-    }
-}
-
-// メイン関数
 int main() {
-    // 例としてsample.yamlファイルを読む。
-    loadYAML("sample.yaml");
-
+    YAML::Node config = YAML::LoadFile("config.yaml");
+    
+    if(config["title"]) {
+        std::cout << "タイトル: " << config["title"].as<std::string>() << std::endl;
+    }
+    
     return 0;
 }
 ```
 
-上記のコードは、`sample.yaml`ファイルをロードし、`title`と`owner.name`を出力する。
+このような`config.yaml`があった場合：
 
-## Deep Dive（深掘り）
-YAMLは2001年に登場。JSONやXMLより読みやすく、シンプルだ。C++でYAMLを扱うときは、YAML-CPPやBoost.YAMLがあるが、YAML-CPPのほうが人気。C++でYAMLを扱う場合は、パフォーマンスとライブラリの依存性に気をつけよう。
+```yaml
+title: "Example YAML"
+```
 
-## See Also（関連情報）
-- YAML-CPP GitHubページ: https://github.com/jbeder/yaml-cpp
-- YAML公式サイト: https://yaml.org
-- Boost.YAML GitHubページ: https://github.com/boostorg/yaml
-- YAML 1.2 Spec: https://yaml.org/spec/1.2/spec.html
+上記のC++コードを実行すると、次のようになります：
 
-YAMLを学び、使いこなすには上のリンクが役立つだろう。
+```
+タイトル: Example YAML
+```
+
+**YAMLファイルへ書き込む:**
+
+```cpp
+#include <fstream>
+#include <yaml-cpp/yaml.h>
+
+int main() {
+    YAML::Emitter out;
+    out << YAML::BeginMap;
+    out << YAML::Key << "title" << YAML::Value << "Example YAML";
+    out << YAML::EndMap;
+    
+    std::ofstream fout("output.yaml");
+    fout << out.c_str();
+    
+    return 0;
+}
+```
+
+このコードは、以下の内容の`output.yaml`を作成します：
+
+```yaml
+title: Example YAML
+```
+
+これらの例は、`yaml-cpp`ライブラリを使ったC++でのYAMLファイルの読み書きへの基本的な導入です。より複雑な構造や使用例については、シーケンス、タグ、さらに進んだシリアライゼーションとデシリアライゼーションの技術などの機能について、`yaml-cpp`のドキュメントを探求してください。

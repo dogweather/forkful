@@ -1,45 +1,65 @@
 ---
-title:                "표준 오류로 쓰기"
-date:                  2024-01-19
-simple_title:         "표준 오류로 쓰기"
-
+title:                "표준 에러에 쓰기"
+date:                  2024-02-03T19:34:15.163773-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "표준 에러에 쓰기"
 tag:                  "Files and I/O"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/powershell/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (무엇이며, 왜 사용하는가?)
-표준 오류란, 스크립트나 프로그램이 오류 메시지를 출력하는 데 사용하는 출력 스트림이다. 프로그래머는 오류를 기록하고, 일반 출력과 구분하여 문제 해결에 도움이 되게 하기 위해 이것을 사용한다.
+## 무엇이며 왜인가?
 
-## How to: (사용 방법)
-PowerShell에서 표준 오류에 쓰기:
-```PowerShell
-# 오류 메시지를 표준 오류로 직접 보내기
-Write-Error "This is a sample error message." 2>&1
+PowerShell에서 표준 오류(stderr)에 쓰기는 오류 메시지나 진단을 표준 출력(stdout) 스트림과 구별되는 stderr 스트림에 직접 보내는 것을 포함합니다. 이 분리는 스크립트의 출력을 더 정확하게 제어할 수 있게 해주어 개발자가 정상 메시지와 오류 메시지를 다른 목적지로 직접 보낼 수 있도록 합니다. 이것은 오류 처리와 로깅에 있어 기본적인 것입니다.
 
-# 예외 발생시키기
-throw "This will go to standard error."
+## 어떻게:
 
-# try/catch 블록을 사용하여 오류를 잡고 표준 오류에 쓰기
-try {
-    Get-Item "nonexistentfile.txt"
-} catch {
-    Write-Error $_.Exception.Message
-}
-```
-샘플 출력:
-```
-Write-Error: This is a sample error message.
-This will go to standard error.
-Get-Item: Cannot find path 'C:\nonexistentfile.txt' because it does not exist.
+PowerShell은 `Write-Error` cmdlet 사용이나 `$host.ui.WriteErrorLine()` 메소드로 출력을 지시하는 것을 통해 stderr에 쓰기 과정을 단순화합니다. 그러나 직접적인 stderr 리디렉션을 위해서는 .NET 메소드나 PowerShell 자체가 제공하는 파일 설명자 리디렉션을 선호할 수 있습니다.
+
+**예제 1:** `Write-Error`를 사용하여 stderr에 오류 메시지를 쓰기.
+
+```powershell
+Write-Error "This is an error message."
 ```
 
-## Deep Dive (심층 분석)
-과거에는 표준 오류를 다루는 것이 오늘날처럼 직관적이지 않았다. PowerShell 2.0 이전 버전에서는 `2>&1`을 사용하여 표준 오류를 표준 출력으로 리다이렉션해야만 했다. 이제는 `Write-Error`나 `throw` 명령어를 활용해 오류 메시지를 쉽게 작성할 수 있다. 이러한 방법 이외에도, `Write-Host`를 사용하여 특정 색상의 텍스트로 오류 메시지를 표시할 수도 있다(사용하지 않는 것이 좋지만). 표준 오류에 문자열을 작성하면, 이 스트림을 모니터링하는 모니터링 소프트웨어나 로그 파일로 쉽게 리다이렉트할 수 있다.
+stderr 출력:
+```
+Write-Error: This is an error message.
+```
 
-## See Also (참고 자료)
-- [About Automatic Variables](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_automatic_variables?view=powershell-7.1)
-- [About Try, Catch, and Finally](https://docs.microsoft.com/en-us/powershell/scripting/learn/deep-dives/everything-about-exceptions?view=powershell-7.1)
-- [About_Redirection](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_redirection?view=powershell-7.1)
+**예제 2:** `$host.ui.WriteErrorLine()`를 사용하여 직접 stderr에 쓰기.
+
+```powershell
+$host.ui.WriteErrorLine("Direct stderr write.")
+```
+
+stderr 출력:
+```
+Direct stderr write.
+```
+
+**예제 3:** .NET 메소드를 사용하여 stderr에 쓰기.
+
+```powershell
+[Console]::Error.WriteLine("Using .NET method for stderr")
+```
+
+이 메소드의 출력:
+```
+Using .NET method for stderr
+```
+
+**예제 4:** 파일 설명자 `2>`를 사용한 오류 출력 리디렉션.
+
+PowerShell에서는 파일 설명자가 다양한 스트림을 리디렉션할 수 있습니다. stderr의 경우 파일 설명자는 `2`입니다. 여기에 오류를 생성하는 명령을 실행하는 동안 stderr를 `error.log`라는 파일로 리디렉션하는 예가 있습니다.
+
+```powershell
+Get-Item NonExistentFile.txt 2> error.log
+```
+
+이 예제는 콘솔 출력을 생성하지 않지만, 존재하지 않는 파일에 접근하려고 시도할 때의 오류 메시지를 포함하는 현재 디렉터리의 `error.log` 파일을 생성합니다.
+
+결론적으로, PowerShell은 스크립트와 애플리케이션에서 세련된 오류 처리 및 로깅 전략을 가능하게 하는 효과적인 오류 출력 쓰기 및 관리 방법을 여러 가지 제공합니다.

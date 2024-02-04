@@ -1,39 +1,78 @@
 ---
 title:                "Utilizzo delle espressioni regolari"
-date:                  2024-01-19
+date:                  2024-02-03T19:17:31.437453-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Utilizzo delle espressioni regolari"
-
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/kotlin/using-regular-expressions.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Cos'è e perché?
-Le espressioni regolari (regex) permettono di riconoscere pattern di testo. Sono uno strumento potente per la validazione, l'estrazione e la manipolazione di stringhe in modo efficiente.
+## Cosa e Perché?
+
+Le espressioni regolari (regex) sono uno strumento potente per l'elaborazione del testo, che permette ai programmatori di cercare, corrispondere e manipolare le stringhe con tecniche avanzate di corrispondenza di modelli. In Kotlin, sfruttare le regex aiuta a eseguire in modo efficiente compiti complessi di elaborazione del testo come la validazione, l'analisi o la trasformazione, rendendolo indispensabile per compiti che vanno dalla semplice manipolazione di stringhe all'analisi di testo complessa.
 
 ## Come fare:
-Esempi di codice con output.
+
+### Corrispondenza di base
+Per verificare se una stringa corrisponde a un modello specifico in Kotlin, puoi usare il metodo `matches` della classe `Regex`.
 
 ```kotlin
-fun main() {
-    val regex = Regex("[a-z]+")
-    val matchResult = regex.find("ciao mondo123") 
-    println(matchResult?.value)  // Output: ciao
+val pattern = "kotlin".toRegex()
+val input = "I love kotlin"
+val result = pattern.containsMatchIn(input)
 
-    val regexReplace = Regex("\\s+")
-    val replaced = regexReplace.replace("Spazi    multipli", " ")
-    println(replaced)  // Output: Spazi multipli
-
-    val regexSplit = Regex(",")
-    val splitList = regexSplit.split("mele,arance,banane")
-    println(splitList)  // Output: [mele, arance, banane]
-}
+println(result)  // Output: true
 ```
 
-## Nel Dettaglio
-Le regex risalgono agli anni '50 e furono introdotte da Stephen Kleene. Alternative alle regex includono parser e tokenizzatori specifici, ma nessuno è altrettanto versatile. Le regex in Kotlin sono implementate tramite la classe `Regex` e supportano la maggior parte dei pattern standard.
+### Trovare ed Estratte Parti di Stringa
+Se vuoi trovare parti di una stringa che corrispondono a un modello, Kotlin ti permette di iterare su tutte le corrispondenze:
 
-## Vedi Anche
-- [Documentazione ufficiale Kotlin Regex](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-regex/)
-- [Lezioni su espressioni regolari su RegexOne](https://regexone.com/)
+```kotlin
+val datePattern = "\\d{2}/\\d{2}/\\d{4}".toRegex()
+val input = "La data di oggi è 07/09/2023."
+val dates = datePattern.findAll(input)
+
+for (date in dates) {
+    println(date.value)
+}
+// Output: 07/09/2023
+```
+
+### Sostituire il Testo
+Sostituire parti di una stringa che corrispondono a un modello è semplice con la funzione `replace`:
+
+```kotlin
+val input = "Username: user123"
+val sanitizedInput = input.replace("\\d+".toRegex(), "XXX")
+
+println(sanitizedInput)  // Output: Username: userXXX
+```
+
+### Dividere le Stringhe
+Dividi una stringa in un elenco, usando un modello regex come delimitatore:
+
+```kotlin
+val input = "1,2,3,4,5"
+val numbers = input.split(",".toRegex())
+
+println(numbers)  // Output: [1, 2, 3, 4, 5]
+```
+
+### Librerie di terze parti: Kotest
+[Kotest](https://github.com/kotest/kotest) è una popolare libreria di testing per Kotlin che estende il supporto regex integrato di Kotlin, particolarmente utile per la validazione nei casi di test.
+
+```kotlin
+// Supponendo che Kotest sia aggiunto al tuo progetto
+import io.kotest.matchers.string.shouldMatch
+
+val input = "kotlin@test.com"
+input shouldMatch "\\S+@\\S+\\.com".toRegex()
+
+// Questo supererà il test se l'input corrisponde al modello di email.
+```
+
+Incorporando le espressioni regolari nelle tue applicazioni Kotlin, puoi eseguire l'elaborazione del testo in modo sofisticato ed efficiente. Che tu stia convalidando l'input dell'utente, estraendo dati o trasformando stringhe, i modelli regex offrono una soluzione robusta.

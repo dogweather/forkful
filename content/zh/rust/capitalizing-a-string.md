@@ -1,43 +1,65 @@
 ---
-title:                "字符串首字母大写"
-date:                  2024-01-19
-simple_title:         "字符串首字母大写"
-
+title:                "字符串大写化"
+date:                  2024-02-03T19:06:24.566972-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "字符串大写化"
 tag:                  "Strings"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/rust/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? 什么和为什么?
-字符串大写，就是把所有字母变成大写字母。程序员这么做为了统一格式，提升可读性，或者满足编程需求。
+## 什么 & 为什么？
 
-## How to: 怎么做
+在 Rust 中大写化一个字符串涉及修改字符串，使其第一个字符（如果是字母的话）为大写，同时保持字符串的其余部分不变。程序员经常进行这项操作是出于格式化的目的，比如为标题准备单词或确保用户输入的一致性。
 
-```Rust
+## 如何操作：
+
+要在 Rust 中大写化一个字符串，你有两个主要途径：使用标准库功能或使用第三方库来满足更复杂或特定的需求。以下是如何做到这两点。
+
+### 使用 Rust 的标准库
+
+Rust 的标准库没有提供直接大写化字符串的方法，但你可以通过操作字符串的字符来实现这一点。
+
+```rust
+fn capitalize_first(s: &str) -> String {
+    let mut c = s.chars();
+    match c.next() {
+        None => String::new(),
+        Some(f) => f.to_uppercase().collect::<String>() + c.as_str(),
+    }
+}
+
 fn main() {
-    let greeting = "hello, world!";
-    println!("{}", greeting.to_uppercase());
+    let my_string = "hello";
+    println!("{}", capitalize_first(my_string)); // 输出：Hello
 }
 ```
 
-输出：
+### 使用 `heck` 库
+
+对于一个更直接的方法，特别是在进行较大的文本处理时，你可能更倾向于使用第三方库，比如 `heck`。`heck` 库提供了各种情况转换功能，包括一种简单的大写化字符串的方法。
+
+首先，将 `heck` 添加到你的 `Cargo.toml` 中：
+
+```toml
+[dependencies]
+heck = "0.4.0"
 ```
-HELLO, WORLD!
+
+然后，使用它来大写化你的字符串：
+
+```rust
+extern crate heck; // 在 Rust 2018 版本或之后不需要
+use heck::TitleCase;
+
+fn main() {
+    let my_string = "hello world";
+    let capitalized = my_string.to_title_case();
+    println!("{}", capitalized); // 输出：Hello World
+}
 ```
 
-## Deep Dive 深入探索
-
-字符串大写不是Rust特有的；其他编程语言也有类似功能。在 Rust 中，`.to_uppercase()` 方法会遍历字符串中的每个字符，将其转换为大写形式。如果字符没有大写等价形式，就会保持不变。这一过程遵循Unicode标准。
-
-Rust提供的`.to_uppercase()`方法与其他语言不同之处在于它对Unicode字符有很好的支持。不像某些语言只能处理ASCII码，Rust可以正确大写所有语言的字母，包括带变音符的字母。
-
-此外，还有其它方法可以改变字符串的大小写，比如`.make_ascii_uppercase()`，但这个方法只对ASCII字符有效，对Unicode字符无效。
-
-## See Also 相关链接
-
-- Rust 标准库中的 `.to_uppercase()` 方法文档: https://doc.rust-lang.org/std/primitive.str.html#method.to_uppercase
-- Unicode标准: http://www.unicode.org/standard/standard.html
-- Rust `char` 类型和它的方法，包括 `.to_uppercase()`: https://doc.rust-lang.org/std/primitive.char.html
-- 更广泛的字符串处理方法讨论: https://rust-lang-nursery.github.io/rust-cookbook/strings.html
+注意：`heck` 提供的 `to_title_case` 方法会大写化字符串中的每个单词，如果你只想大写化字符串的第一个字符，这可能超出了你的需求。根据你的具体需求调整你的使用方式。

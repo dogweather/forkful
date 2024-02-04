@@ -1,56 +1,67 @@
 ---
 title:                "HTML 파싱"
-date:                  2024-01-20T15:32:51.859751-07:00
+date:                  2024-02-03T19:12:48.132159-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "HTML 파싱"
-
 tag:                  "HTML and the Web"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/lua/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## 무엇이며 왜하는가?
-HTML 파싱은 HTML 문서에서 정보를 추출하는 과정입니다. 프로그래머들은 데이터를 다루거나 웹 스크래핑할 때 이 작업을 합니다.
+## 무엇 & 왜?
+HTML 파싱은 HTML 문서로부터 데이터와 정보를 추출하는 것을 말하며, 웹 스크래핑, 데이터 분석, 자동화 작업에 있어 필수적입니다. 프로그래머들은 프로그래매틱하게 웹 콘텐츠를 수집, 분석 또는 조작하기 위해 이 작업을 수행하며, 이는 웹사이트에서 데이터를 수동으로 추출하는 것을 자동화할 수 있게 해줍니다.
 
-## 실행 방법:
-Lua에서 HTML을 파싱하기 위해 `lxsh` 모듈을 사용할 수 있습니다. 아래는 간단한 예제입니다:
+## 방법:
+Lua에는 HTML을 파싱하기 위한 내장 라이브러리가 없지만, `LuaHTML`이나 `LuaXML`을 통한 `libxml2` 바인딩을 활용할 수 있습니다. HTML을 파싱하기 위한 인기 있는 접근 방법은 HTML5 규격을 준수하는 간단하면서도 직관적인 파싱 기능을 제공하는 `lua-gumbo` 라이브러리를 사용하는 것입니다.
 
-```Lua
-local lxsh = require 'lxsh'
+### lua-gumbo 설치하기:
+먼저, `lua-gumbo`가 설치되어 있는지 확인하세요. 일반적으로 luarocks를 사용하여 설치할 수 있습니다:
 
--- HTML 문자열
-local html = [[
-<html>
-<head>
-    <title>Test Page</title>
-</head>
-<body>
-    <h1>Hello, Lua!</h1>
-    <p>This is a paragraph.</p>
-</body>
-</html>
-]]
-
--- lxsh를 사용한 파싱
-local parser = lxsh.parse.html()
-for kind, text in parser:match(html) do
-  if kind == 'start-tag' then
-    print('Start tag:', text)
-isCJKLanguage:        true
-  elseif kind == 'end-tag' then
-    print('End tag:', text)
-isCJKLanguage:        true
-  elseif kind == 'text' then
-    print('Text:', text)
-  end
-end
+```sh
+luarocks install lua-gumbo
 ```
 
-## 심층 탐구:
-HTML 파싱은 웹의 초창기부터 필요했습니다. 초기에는 정규식을 많이 사용했지만, 정확하지 않고 복잡한 HTML에는 적합하지 않았습니다. Lua에서 HTML 파싱을 위한 대안으로는 `luaxml`이나 `htmlparser` 라이브러리도 있습니다. `lxsh`는 구문 분석과 태그의 계층적 관계를 처리하는데 더 직관적입니다. 구현 세부 사항에서는 퍼포먼스 최적화를 위해 C 라이브러리를 바인딩하기도 합니다.
+### lua-gumbo를 사용한 기본 파싱:
+`lua-gumbo`를 사용하여 간단한 HTML 스니펫을 파싱하고 데이터를 추출하는 방법은 다음과 같습니다:
 
-## 참고 자료:
-- lxsh GitHub 페이지: https://github.com/daurnimator/lxsh
-- Lua HTML parser GitHub 페이지: https://github.com/msva/lua-htmlparser
-- LuaXML 공식 매뉴얼: http://www.keplerproject.org/luaxml/
+```lua
+local gumbo = require "gumbo"
+local document = gumbo.parse[[<html><body><p>안녕하세요, 세계!</p></body></html>]]
+
+local p = document:getElementsByTagName("p")[1]
+print(p.textContent)  -- 출력: 안녕하세요, 세계!
+```
+
+### 고급 예제 - 링크 추출하기:
+HTML 문서에서 모든 앵커 태그(`<a>` 엘리먼트)의 `href` 속성을 추출하기 위해서:
+
+```lua
+local gumbo = require "gumbo"
+local document = gumbo.parse([[
+<html>
+<head><title>샘플 페이지</title></head>
+<body>
+  <a href="http://example.com/1">링크 1</a>
+  <a href="http://example.com/2">링크 2</a>
+  <a href="http://example.com/3">링크 3</a>
+</body>
+</html>
+]])
+
+for _, element in ipairs(document.links) do
+    if element.getAttribute then  -- 이것이 엘리먼트이고 속성이 있는지 확인
+        local href = element:getAttribute("href")
+        if href then print(href) end
+    end
+end
+
+-- 샘플 출력:
+-- http://example.com/1
+-- http://example.com/2
+-- http://example.com/3
+```
+
+이 코드 스니펫은 문서의 모든 링크를 순회하며 그들의 `href` 속성을 출력합니다. `lua-gumbo` 라이브러리는 HTML 문서의 구조를 파싱하고 이해하는 능력을 통해 태그나 속성에 기반한 특정 요소를 추출하는 과정을 단순화합니다.

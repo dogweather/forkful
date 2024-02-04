@@ -1,41 +1,80 @@
 ---
 title:                "JSON के साथ काम करना"
-date:                  2024-01-19
+date:                  2024-02-03T19:22:21.291700-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "JSON के साथ काम करना"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/bash/working-with-json.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (क्या और क्यों?)
-JSON (JavaScript Object Notation) एक डेटा प्रारूप है जिसे संभालने के लिए Bash में काम करते हैं। यह वेब APIs और सर्वर के बीच डेटा शेयर करने के लिए मानक बन गया है, इसलिए प्रोग्रामर्स इसे समझते और इस्तेमाल करते हैं।
+## क्या और क्यों?
+Bash प्रोग्रामिंग में JSON के साथ काम करना आदेश पंक्ति से सीधे JSON डेटा को पार्स करने, निकालने और संशोधित करने की प्रक्रिया शामिल है। प्रोग्रामर अक्सर इसे वेब APIs और आधुनिक डेटा आदान-प्रदान प्रारूपों के साथ शेल स्क्रिप्ट्स को सहजता से एकीकृत करने के लिए करते हैं, जिससे Bash स्क्रिप्टिंग को एक JSON-भारी पारिस्थितिकी तंत्र में अधिक शक्तिशाली और प्रासंगिक बनाया जा सकता है।
 
-## How to: (कैसे करें:)
-आपको JSON से डेटा संभालने के लिए `jq` टूल की जरूरत पड़ेगी।
+## कैसे करें:
+Bash में अपने आप में JSON पार्सिंग क्षमताएं नहीं होती हैं, लेकिन `jq` एक शक्तिशाली कमांड-लाइन JSON प्रोसेसर है जो इस अंतर को भरता है। इसका उपयोग कैसे करें, यहाँ है:
 
-JSON फाइल पढ़ना:
-```Bash
-echo '{"name": "राहुल", "age": 30}' | jq '.'
+**एक JSON फ़ाइल पढ़ना:**
+
+नमूना `data.json`:
+```json
+{
+  "name": "Jane Doe",
+  "email": "jane@example.com",
+  "location": {
+    "city": "New York",
+    "country": "USA"
+  }
+}
 ```
 
-किसी खास कुंजी (key) का मान प्राप्त करना:
-```Bash
-echo '{"name": "राहुल", "age": 30}' | jq '.name'
+JSON फ़ाइल से नाम निकालने के लिए:
+```bash
+jq '.name' data.json
 ```
-आउटपुट: `"राहुल"`
-
-एरे में नया आइटम जोड़ना:
-```Bash
-echo '["आम", "जामुन"]' | jq '. + ["केला"]'
+आउटपुट:
 ```
-आउटपुट: `["आम", "जामुन", "केला"]`
+"Jane Doe"
+```
 
-## Deep Dive (गहन जानकारी):
-JSON, 2000 के दशक के शुरू में AJAX के साथ लोकप्रिय हुआ था। यह XML जैसे मोटे डेटा प्रारूपों का एक हल्का विकल्प है। Bash में JSON के साथ काम करने के लिए `jq` सबसे प्रचलित टूल है, पर Python की `json` लाइब्रेरी या JavaScript की नेटिव `JSON.parse()` और `JSON.stringify()` जैसे अन्य विकल्प भी हैं। बात करें `jq` की, तो इसका अपना टक्सट प्रोसेसिंग और फंक्शन के साथ एक मजबूत सिंटैक्स है।
+**JSON डेटा संशोधित करना:**
 
-## See Also (और देखें):
-- jq आधिकारिक दस्तावेज़: [https://stedolan.github.io/jq/manual/](https://stedolan.github.io/jq/manual/)
-- JSON प्रारूप के बारे में गहराई से सीखने के लिए: [https://www.json.org/json-en.html](https://www.json.org/json-en.html)
-- विकिपीडिया पर JSON: [https://en.wikipedia.org/wiki/JSON](https://en.wikipedia.org/wiki/JSON)
+शहर को "Los Angeles" में अपडेट करने और फाइल में वापस लिखने के लिए:
+```bash
+jq '.location.city = "Los Angeles"' data.json > temp.json && mv temp.json data.json
+```
+
+**एक वेरिएबल से JSON पार्स करना:**
+
+यदि आपके पास एक Bash वेरिएबल में JSON है, तो `jq` इसे भी प्रोसेस कर सकता है:
+```bash
+json_string='{"name": "John Doe", "email": "john@example.com"}'
+echo $json_string | jq '.name'
+```
+आउटपुट:
+```
+"John Doe"
+```
+
+**सरणियों के साथ काम करना:**
+
+JSON में आइटम्स की एक सरणी दी गई है:
+```json
+{
+  "items": ["apple", "banana", "cherry"]
+}
+```
+
+दूसरा आइटम निकालने के लिए (अनुक्रमण 0 से शुरू होता है):
+```bash
+jq '.items[1]' data.json
+```
+आउटपुट:
+```
+"banana"
+```
+
+अधिक जटिल संचालनों और फ़िल्टरिंग के लिए, `jq` के पास ऑनलाइन उपलब्ध एक व्यापक मैनुअल और ट्यूटोरियल हैं, जिसे आपकी सभी बैश/JSON आवश्यकताओं के लिए एक बहुमुखी उपकरण बनाते हैं।

@@ -1,54 +1,100 @@
 ---
-title:                "Überprüfen, ob ein Verzeichnis existiert"
-date:                  2024-01-19
-simple_title:         "Überprüfen, ob ein Verzeichnis existiert"
-
+title:                "Überprüfung, ob ein Verzeichnis existiert"
+date:                  2024-02-03T19:07:07.187714-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Überprüfung, ob ein Verzeichnis existiert"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/c-sharp/checking-if-a-directory-exists.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Überprüfen, ob ein Verzeichnis existiert, bedeutet einfach, zu kontrollieren, ob ein bestimmter Ordnerpfad auf dem Dateisystem vorhanden ist. Programmierer machen das, um Fehler zu vermeiden, die auftreten können, wenn sie versuchen, auf ein nicht existierendes Verzeichnis zuzugreifen oder Daten darin zu speichern.
 
-## Wie macht man das:
-Hier ist ein code-Schnipsel, der zeigt, wie man in C# überprüft, ob ein Verzeichnis existiert.
+Das Überprüfen, ob ein Verzeichnis in C# existiert, involviert die Verifizierung der Präsenz eines Ordners in einem spezifizierten Pfad im Dateisystem. Programmierer tun dies, um Fehler zu vermeiden, wie zum Beispiel den Versucht, aus einem nicht existierenden Verzeichnis zu lesen oder in dieses zu schreiben, was eine flüssigere Manipulation von Dateien und Verzeichnissen gewährleistet.
 
-```C#
+## Wie zu:
+
+### Unter Verwendung von System.IO
+
+C# stellt den `System.IO` Namespace bereit, der die `Directory` Klasse enthält und somit eine direkte Möglichkeit bietet, die Existenz eines Verzeichnisses über die `Exists` Methode zu prüfen.
+
+```csharp
 using System;
 using System.IO;
 
-class DirectoryChecker
+class Program
 {
     static void Main()
     {
-        string dirPath = @"C:\BeispielVerzeichnis";
+        string directoryPath = @"C:\ExampleDirectory";
 
-        if (Directory.Exists(dirPath))
-        {
-            Console.WriteLine("Das Verzeichnis existiert!");
-        }
-        else
-        {
-            Console.WriteLine("Das Verzeichnis existiert nicht.");
-        }
+        // Prüfen, ob das Verzeichnis existiert
+        bool directoryExists = Directory.Exists(directoryPath);
+
+        // Das Ergebnis ausgeben
+        Console.WriteLine("Verzeichnis existiert: " + directoryExists);
     }
 }
 ```
-Sample Output:
+
+**Beispielausgabe:**
+
 ```
-Das Verzeichnis existiert!
-```
-oder
-```
-Das Verzeichnis existiert nicht.
+Verzeichnis existiert: False
 ```
 
-## Tiefgang
-Es ist wichtig, weil Dateioperationen ohne vorherige Überprüfung der Pfadgültigkeit zu unvorhersehbaren Ergebnissen und Laufzeitfehlern führen können. Historisch gesehen, hat seit den frühen Versionen von .NET das `System.IO`-Namespace Funktionen für derartige Überprüfungen geboten. Alternativen zur `Directory.Exists`-Methode sind unter anderem das Abfangen von Ausnahmen, die beim Versuch des Zugriffs auf ein nicht vorhandenes Verzeichnis geworfen werden. Jedoch ist das Abfragen mit `Exists` präziser und weniger aufwendig als die Behandlung von Ausnahmen.
+Falls das Verzeichnis unter dem Pfad `C:\ExampleDirectory` tatsächlich existiert, würde die Ausgabe `True` sein.
 
-## Siehe Auch
-- Microsoft Docs zur `Directory.Exists`-Methode: https://docs.microsoft.com/de-de/dotnet/api/system.io.directory.exists
-- Microsoft Docs für Datei- und Stream-E/A: https://docs.microsoft.com/de-de/dotnet/standard/io
-- Zu Behandlung von Pfad- und Dateisystem-Fehlern: https://docs.microsoft.com/de-de/dotnet/standard/io/handling-io-errors
+### Verwendung von System.IO.Abstractions für Unit-Tests
+
+Wenn es darum geht, Ihren Code unit-testbar zu machen, besonders wenn er mit dem Dateisystem interagiert, ist das `System.IO.Abstractions` Paket eine beliebte Wahl. Es ermöglicht Ihnen, Dateisystemoperationen in Ihren Tests zu abstrahieren und zu mocken. Hier sehen Sie, wie Sie auf diese Weise die Existenz eines Verzeichnisses überprüfen können:
+
+Zuerst sollten Sie sicherstellen, dass Sie das Paket installiert haben:
+
+```
+Install-Package System.IO.Abstractions
+```
+
+Danach können Sie ein `IFileSystem` in Ihre Klasse injizieren und es verwenden, um zu prüfen, ob ein Verzeichnis existiert, was das Unit-Testing erleichtert.
+
+```csharp
+using System;
+using System.IO.Abstractions;
+
+class Program
+{
+    private readonly IFileSystem _fileSystem;
+
+    public Program(IFileSystem fileSystem)
+    {
+        _fileSystem = fileSystem;
+    }
+
+    public bool CheckDirectoryExists(string directoryPath)
+    {
+        return _fileSystem.Directory.Exists(directoryPath);
+    }
+
+    static void Main()
+    {
+        var fileSystem = new FileSystem();
+        var program = new Program(fileSystem);
+
+        string directoryPath = @"C:\ExampleDirectory";
+        bool directoryExists = program.CheckDirectoryExists(directoryPath);
+
+        Console.WriteLine("Verzeichnis existiert: " + directoryExists);
+    }
+}
+```
+
+**Beispielausgabe:**
+
+```
+Verzeichnis existiert: False
+```
+
+Dieser Ansatz entkoppelt Ihre Anwendungslogik vom direkten Dateisystemzugriff und macht Ihren Code modularer, testbarer und wartbarer.

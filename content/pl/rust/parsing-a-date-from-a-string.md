@@ -1,42 +1,73 @@
 ---
-title:                "Przetwarzanie daty ze łańcucha znaków"
-date:                  2024-01-20T15:38:30.256356-07:00
-simple_title:         "Przetwarzanie daty ze łańcucha znaków"
-
+title:                "Analiza składniowa daty z łańcucha znaków"
+date:                  2024-02-03T19:16:02.639723-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Analiza składniowa daty z łańcucha znaków"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/rust/parsing-a-date-from-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Co & Dlaczego?
-Parsowanie daty z ciągu tekstowego to proces konwertowania tekstu na strukturę danych reprezentującą datę. Programiści robią to, aby umożliwić komputerom rozumienie i manipulowanie datami na podstawie danych wejściowych z różnych źródeł, np. formularzy internetowych.
+## Co i dlaczego?
+
+Parsowanie daty z ciągu znaków to częste zadanie podczas pracy z danymi wprowadzanymi przez użytkownika lub odczytywaniem danych z plików. Polega to na konwersji danych w ciągu znaków na format daty rozpoznawany przez język programowania. W Rust, jest to kluczowe dla operacji na datach, takich jak porównania, arytmetyka czy formatowanie, i zwiększa walidację oraz integralność danych w aplikacjach.
 
 ## Jak to zrobić:
-```Rust
-use chrono::{NaiveDate, ParseError};
 
-fn parse_date_from_string(date_str: &str) -> Result<NaiveDate, ParseError> {
-    NaiveDate::parse_from_str(date_str, "%Y-%m-%d")
-}
+### Używając standardowej biblioteki Rusta (`chrono` Crate)
+Standardowa biblioteka Rusta bezpośrednio nie obejmuje parsowania daty, ale szeroko używany `chrono` crate jest solidnym rozwiązaniem do manipulacji datą i czasem. Najpierw dodaj `chrono` do swojego `Cargo.toml`:
+
+```toml
+[dependencies]
+chrono = "0.4"
+```
+
+Następnie użyj `chrono` do sparsowania ciągu znaków daty na obiekt `NaiveDate`:
+
+```rust
+extern crate chrono;
+use chrono::NaiveDate;
 
 fn main() {
-    let date_input = "2023-04-05";
-    match parse_date_from_string(date_input) {
-        Ok(date) => println!("Parsed date: {}", date),
-        Err(e) => println!("Error parsing date: {}", e),
-    }
+    let date_str = "2023-04-01";
+    let date = NaiveDate::parse_from_str(date_str, "%Y-%m-%d")
+        .expect("Nie udało się sparsować daty");
+
+    println!("Sparsowana data: {}", date);
 }
-```
-Przykładowy wynik:
-```
-Parsed date: 2023-04-05
+
+// Przykładowe wyjście:
+// Sparsowana data: 2023-04-01
 ```
 
-## Więcej szczegółów:
-Historia parsowania dat w informatyce jest ściśle związana z potrzebą standardizacji i lokalizacji formatu dat. Biblioteki takie jak `chrono` w Rust zapewniają elastyczne i wydajne narzędzia do parsowania dat w różnych formatach. Alternatywy obejmują używanie standardowej biblioteki Rust `time`, ale `chrono` jest szerszy w zastosowaniach i bardziej popularny. Implementacja parsowania opiera się na precyzyjnym określeniu wzorców, którymi są formaty dat i godzin (np. `%Y-%m-%d` dla `YYYY-MM-DD`).
+### Używając zaawansowanej obsługi daty-czasu Rusta (`time` Crate)
+Dla bardziej zaawansowanej obsługi daty-czasu, w tym bardziej ergonomicznego parsowania, rozważ użycie crate'a `time`. Najpierw dołącz go do swojego `Cargo.toml`:
 
-## Zobacz również:
-- Dokumentacja Chrono: https://docs.rs/chrono/
-- Rust API Guidelines o czasie i datach: https://rust-lang.github.io/api-guidelines/about.html
-- Klub Rusta (Polska społeczność Rust): https://rust-lang.pl/
+```toml
+[dependencies]
+time = "0.3"
+```
+
+Następnie sparsuj ciąg znaków daty używając typu `Date` i `PrimitiveDateTime`:
+
+```rust
+use time::{Date, PrimitiveDateTime, macros::datetime};
+
+fn main() {
+    let date_str = "2023-04-01 12:34:56";
+    let parsed_date = PrimitiveDateTime::parse(
+        date_str, 
+        &datetime!("%Y-%m-%d %H:%M:%S")
+    ).expect("Nie udało się sparsować daty i czasu");
+
+    println!("Sparsowany datetime: {}", parsed_date);
+}
+
+// Przykładowe wyjście:
+// Sparsowany datetime: 2023-04-01 12:34:56
+```
+
+Oba przykłady pokazują, jak Rust przy pomocy zewnętrznych crate'ów ułatwia parsowanie ciągów znaków daty na manipulowalne obiekty daty, co czyni go potężnym narzędziem do tworzenia oprogramowania pracującego z danymi czasowymi.

@@ -1,54 +1,91 @@
 ---
-title:                "处理 YAML 文件"
-date:                  2024-01-19
-simple_title:         "处理 YAML 文件"
-
+title:                "使用YAML工作"
+date:                  2024-02-03T19:25:11.326988-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "使用YAML工作"
 tag:                  "Data Formats and Serialization"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/elixir/working-with-yaml.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? 什麼和為什麼？
-YAML是一種方便的數據序列化格式，常用於配置文件。程序員使用YAML是因為它易於閱讀，簡單，並且能夠很好地與多種編程語言配合。
+## 什么 & 为什么？
 
-## How to: 如何進行
-Elixir處理YAML需要用到第三方庫，例如`yaml_elixir`。首先，在`mix.exs`文件添加依賴：
+YAML，全称是YAML Ain't Markup Language（YAML不是标记语言），是一种人类可读的数据序列化标准，通常用于配置文件和在具有不同数据结构的语言之间的数据交换。程序员之所以使用它，是因为它的简单性以及它能够轻松表示复杂的层次数据。
+
+## 如何操作：
+
+Elixir默认不包含内建的YAML支持。然而，你可以使用第三方库，如`yamerl`或`yaml_elixir`来处理YAML。这里，我们将重点关注`yaml_elixir`，因为它的易用性和全面的特性。
+
+首先，将`yaml_elixir`添加到你的mix.exs依赖中：
 
 ```elixir
-def deps do
+defp deps do
   [
-    {:yaml_elixir, "~> 2.0"}
+    {:yaml_elixir, "~> 2.9"}
   ]
 end
 ```
 
-然後在終端執行`mix deps.get`。
+然后，运行`mix deps.get`来获取新的依赖。
 
-讀取YAML文件：
+### 读取 YAML
 
-```elixir
-yaml_content = """
-name: Zhang San
-age: 30
-"""
+给定一个简单的YAML文件，`config.yaml`，内容如下：
 
-{:ok, data} = YamlElixir.read_from_string(yaml_content)
-IO.inspect(data)
+```yaml
+database:
+  adapter: postgres
+  username: user
+  password: pass
 ```
 
-預期輸出將是Elixir的Map格式：
+你可以这样读取这个YAML文件并将其转换为Elixir map：
 
 ```elixir
-%{"name" => "Zhang San", "age" => 30}
+defmodule Config do
+  def read do
+    {:ok, content} = YamlElixir.read_from_file("config.yaml")
+    content
+  end
+end
+
+# 示例使用
+Config.read()
+# 输出: 
+# %{
+#   "database" => %{
+#     "adapter" => "postgres",
+#     "username" => "user",
+#     "password" => "pass"
+#   }
+# }
 ```
 
-## Deep Dive 深入探索
-YAML，代表“YAML Ain't Markup Language”，原先為“Yet Another Markup Language”，強調輕量級和易於人類閱讀。儘管JSON是另一個受歡迎的選擇，但YAML在需要多行字符串和注釋的情景下更受青睞。在Elixir中，解析YAML需要轉接C語言庫如`libyaml`，通過NIF（Native Implemented Functions）或Port與虛擬機溝通。
+### 写入 YAML
 
-## See Also 相關資源
-- YAML官方網站: https://yaml.org
-- yaml_elixir GitHub頁面: https://github.com/KamilLelonek/yaml_elixir
-- Hex.pm的YamlElixir: https://hex.pm/packages/yaml_elixir
-- Elixir官方文檔: https://elixir-lang.org/docs.html
+要将一个map写回YAML文件：
+
+```elixir
+defmodule ConfigWriter do
+  def write do
+    content = %{
+      database: %{
+        adapter: "mysql",
+        username: "root",
+        password: "s3cret"
+      }
+    }
+    
+    YamlElixir.write_to_file("new_config.yaml", content)
+  end
+end
+
+# 示例使用
+ConfigWriter.write()
+# 这将创建或覆盖`new_config.yaml`，内容为指定的内容
+```
+
+注意，`yaml_elixir`允许在YAML文件和Elixir数据结构之间直接转换，这使它成为需要处理YAML数据的Elixir程序员的绝佳选择。

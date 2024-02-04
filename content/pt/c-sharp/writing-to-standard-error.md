@@ -1,44 +1,56 @@
 ---
-title:                "Escrevendo no erro padrão"
-date:                  2024-01-19
-simple_title:         "Escrevendo no erro padrão"
-
+title:                "Escrevendo para o erro padrão"
+date:                  2024-02-03T19:32:42.001160-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Escrevendo para o erro padrão"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/c-sharp/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## O Que & Porquê?
-Escrever no erro padrão significa mandar mensagens de erro pro fluxo de saída específico pra erros, diferente do fluxo de saída padrão. Programadores fazem isso para separar erros dos dados normais de saída, facilitando diagnósticos e logging.
+Escrever no erro padrão (stderr) em C# envolve direcionar mensagens de erro e diagnósticos separadamente da saída regular (stdout) para ajudar usuários e desenvolvedores a distinguir entre a saída normal do programa e notificações de erro. Os programadores fazem isso para tornar a depuração e o registro mais eficientes, permitindo uma operação e manutenção mais suaves das aplicações.
 
 ## Como fazer:
-Vamos escrever uma mensagem simples para o erro padrão e uma para a saída padrão, pra ver a diferença.
+Em C#, escrever no erro padrão pode ser alcançado usando o stream `Console.Error`. Este stream é usado especificamente para mensagens de erro e diagnósticos. Aqui está um exemplo básico:
 
-```C#
-using System;
-
-class Program
-{
-    static void Main()
-    {
-        Console.WriteLine("Olá, mundo!"); // Saída padrão
-        Console.Error.WriteLine("Ops, ocorreu um erro!"); // Erro padrão
-    }
-}
+```csharp
+Console.Error.WriteLine("Erro: Falha ao processar a solicitação.");
 ```
 
-Quando executar isso, "Olá, mundo!" vai para a saída padrão e "Ops, ocorreu um erro!" para o erro padrão. Se tu redirecionar esses fluxos para arquivos, vais ver claramente a separação:
-
-```shell
-dotnet run > saida.txt 2> erro.txt
+Saída de exemplo (para stderr):
+```
+Erro: Falha ao processar a solicitação.
 ```
 
-## Aprofundando
-Historicamente, fluxos de saída e erro padrão vêm do UNIX, permitindo que mensagens de erro sejam separadas dos dados de saída. Alternativas incluem logging frameworks como log4net e NLog, que oferecem mais controle e opções. Na implementação, `Console.Error` é um `TextWriter` - o mesmo tipo de `Console.Out`, mas aponta para o fluxo de erro padrão.
+Para cenários onde você pode estar usando uma biblioteca de terceiros que oferece capacidades avançadas de registro, como `Serilog` ou `NLog`, você pode configurar essas bibliotecas para escrever registros de erro no stderr. Enquanto estes exemplos focam na simples redireção do console, lembre-se que em aplicações de produção, frameworks de registro oferecem opções muito mais robustas de tratamento de erro e saída. Aqui está um exemplo simples com `Serilog`:
 
-## Veja também
-- Documentação do .NET sobre a classe Console: [Console Class (System)](https://docs.microsoft.com/en-us/dotnet/api/system.console?view=net-6.0)
-- Um artigo sobre a diferença entre saída padrão e erro padrão: [Standard Streams](https://en.wikipedia.org/wiki/Standard_streams)
-- Documentação sobre o log4net: [Apache log4net - Apache Logging Services](https://logging.apache.org/log4net/)
-- Documentação do NLog: [NLog - Advanced and Structured Logging for Various .NET Platforms](https://nlog-project.org/documentation)
+Primeiro, instale o pacote Serilog e seu sink de Console:
+
+```
+Install-Package Serilog
+Install-Package Serilog.Sinks.Console
+```
+
+Em seguida, configure o Serilog para escrever no stderr:
+
+```csharp
+using Serilog;
+
+Log.Logger = new LoggerConfiguration()
+    .WriteTo.Console(standardErrorFromLevel: Serilog.Events.LogEventLevel.Error)
+    .CreateLogger();
+
+Log.Information("Esta é uma mensagem normal.");
+Log.Error("Esta é uma mensagem de erro.");
+```
+
+Saída de exemplo (para stderr para a mensagem de erro):
+```
+[15:04:20 ERR] Esta é uma mensagem de erro.
+```
+
+Nota: A configuração `standardErrorFromLevel` no sink de console do Serilog redireciona todos os eventos de log no nível especificado (Erro, neste caso) ou mais alto para o stream de erro padrão, enquanto mensagens de níveis inferiores como Informação são escritas no stream de saída padrão.

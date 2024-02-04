@@ -1,41 +1,78 @@
 ---
-title:                "मानक त्रुटि में लिखना"
-date:                  2024-01-19
-simple_title:         "मानक त्रुटि में लिखना"
-
+title:                "मानक त्रुटि के लिए लिखना"
+date:                  2024-02-03T19:34:33.205741-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "मानक त्रुटि के लिए लिखना"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/java/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (क्या और क्यों?)
-जावा में, स्टैंडर्ड एरर (System.err) का इस्तेमाल एरर मैसेजेज दिखाने के लिए होता है। यह डेवलपर्स को कंसोल पर सिस्टम आउटपुट से एरर्स को अलग करके आसानी से डीबग करने में मदद करता है। 
+## क्या और क्यों?
+मानक त्रुटि (stderr) में लिखना यानी कंसोल या टर्मिनल पर त्रुटि सन्देशों और नैदानिक जानकारी को आउटपुट करना शामिल है। प्रोग्रामर इसे मानक आउटपुट (stdout) से त्रुटि जानकारी को अलग करने के लिए करते हैं, जिससे डीबगिंग और लॉग विश्लेषण में सहायता मिलती है।
 
-## How to: (कैसे करें:)
-यहां जावा में स्टैंडर्ड एरर में लिखने का उदाहरण है:
+## कैसे करें:
+
+### जावा में मूल Stderr आउटपुट
+जावा में `System.err.print()` या `System.err.println()` का उपयोग करके stderr में लिखने का एक सीधा तरीका प्रदान करता है। आप इसे कैसे करते हैं वह यहाँ है:
 
 ```java
 public class StdErrExample {
     public static void main(String[] args) {
-        // मानक आउटपुट पर मैसेज लिखना
-        System.out.println("सब ठीक है");
-
-        // मानक एरर पर एरर मैसेज लिखना
-        System.err.println("यह एक एरर है");
+        try {
+            int division = 10 / 0;
+        } catch (ArithmeticException e) {
+            System.err.println("त्रुटि: शून्य से भाग नहीं किया जा सकता।");
+        }
     }
 }
 ```
 
-सैंपल आउटपुट:
+नमूना आउटपुट:
+
 ```
-सब ठीक है
-यह एक एरर है
+त्रुटि: शून्य से भाग नहीं किया जा सकता।
 ```
 
-## Deep Dive (आधिक जानकारी)
-पारंपरिक रूप से, स्टैंडर्ड एरर और स्टैंडर्ड आउटपुट दो अलग-अलग आउटपुट स्ट्रीम होते हैं। यह अलगाव आपको लॉगिंग और एरर मैसेजेस के लिए उन्हें अलग से हैंडल करने का मौका देता है। विकल्प के रूप में, लॉगिंग फ्रेमवर्क्स जैसे कि Log4j या SLF4J भी होते हैं जो लॉगिंग की ज्यादा सुविधाएं और नियंत्रण उपलब्ध कराते हैं। स्टैंडर्ड एरर सीधे ऑपरेटिंग सिस्टम के एरर हैंडलिंग मैकेनिज्म से जुड़ा हुआ है, जिससे इसे कंसोल, फाइल, या अन्य डेस्टिनेशंस पर पाइप किया जा सकता है।
+यह सीधे मानक त्रुटि धारा में त्रुटि सन्देश प्रिंट करेगा।
 
-## See Also (और देखें)
-- Java's `System` class documentation: [Oracle Java Docs](https://docs.oracle.com/javase/8/docs/api/java/lang/System.html)
-- Effective Java Logging with Log4j: [Log4j Tutorial](https://logging.apache.org/log4j/2.x/manual/)
+### उन्नत त्रुटि हैंडलिंग के लिए लॉगर का उपयोग
+जिन अनुप्रयोगों को अधिक सोफिस्टिकेटेड त्रुटि हैंडलिंग और लॉगिंग की आवश्यकता होती है, वे SLF4J के साथ Logback या Log4J2 जैसे लॉगिंग लाइब्रेरी का उपयोग करना आम है। यह त्रुटि आउटपुट को प्रबंधित करने में अधिक लचीलापन प्रदान करता है, जिसमें फाइल रीडायरेक्शन, फिल्टरिंग, और फॉर्मेटिंग शामिल है।
+
+#### Logback के साथ उदाहरण
+
+पहले, अपनी `pom.xml` (मेवन) या `build.gradle` (ग्रेडल) फाइल में Logback के लिए निर्भरता जोड़ें। मेवन के लिए:
+
+```xml
+<dependency>
+    <groupId>ch.qos.logback</groupId>
+    <artifactId>logback-classic</artifactId>
+    <version>1.2.3</version>
+</dependency>
+```
+
+फिर, आप गलतियों को लॉग करने के लिए निम्नलिखित कोड का उपयोग कर सकते हैं:
+
+```java
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+public class LoggerExample {
+    private static final Logger logger = LoggerFactory.getLogger(LoggerExample.class);
+    
+    public static void main(String[] args) {
+        try {
+            int result = 10 / 0;
+        } catch (ArithmeticException e) {
+            logger.error("त्रुटि: शून्य से भाग नहीं किया जा सकता।", e);
+        }
+    }
+}
+```
+
+यह कॉन्सोल या फाइल में, Logback कॉन्फ़िगरेशन के आधार पर, त्रुटि सन्देश के साथ स्टैक ट्रेस आउटपुट करेगा।
+
+Logback जैसे लॉगिंग फ्रेमवर्क का उपयोग करके त्रुटि हैंडलिंग पर अधिक नियंत्रण प्रदान करता है, जिससे बड़े अनुप्रयोगों और प्रणालियों को प्रबंधित करना आसान हो जाता है।

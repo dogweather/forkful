@@ -1,51 +1,63 @@
 ---
-title:                "HTML:n jäsentäminen"
-date:                  2024-01-20T15:31:05.395564-07:00
-simple_title:         "HTML:n jäsentäminen"
-
+title:                "HTML:n jäsennys"
+date:                  2024-02-03T19:12:08.672307-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "HTML:n jäsennys"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/elm/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? - Mikä ja Miksi?
-HTML:n jäsentäminen on tapahtuma, jossa HTML-koodi muutetaan rakenteelliseen muotoon, jota ohjelmat voivat helpommin käsitellä. Ohjelmoijat tekevät sen sisällön käsittelyn, datan louhinnan ja sovellusten toiminnallisuuden lisäämisen takia.
+## Mikä ja miksi?
+HTML:n jäsentäminen Elm-kielessä tarkoittaa tietojen poimimista HTML-dokumenteista. Ohjelmoijat tekevät näin, jotta he voivat käyttää web-sisältöä tai käyttöliittymiä, jotka palauttavat HTML-muotoista tietoa. Tämä mahdollistaa interaktiivisempien ja dynaamisempien web-sovellusten luomisen.
 
-## How to: - Kuinka:
-```Elm
-import Html exposing (text)
-import Html.Parser exposing (run, textTag)
+## Kuinka tehdään:
+Elmissä ei ole suoraan HTML:n jäsentämiseen sisäänrakennettua kirjastoa samalla tavalla kuin JavaScriptissä tai Pythonissa, johtuen sen korostuksesta tyypiturvallisuudesta ja ajonaikaisten virheiden välttämisestä. Voit kuitenkin käyttää `Http`-pyyntöjä sisällön noutamiseen ja sitten käyttää säännöllisiä lausekkeita tai palvelinpuolen käsittelyä tarvittavien tietojen poimimiseen. Monimutkaisempaan HTML:n jäsentämiseen yleinen lähestymistapa on käyttää omistettua taustapalvelua HTML:n jäsentämiseen ja datan palauttamiseen muodossa, jonka Elm voi suoraan käsitellä, kuten JSON.
 
-sampleHtml : String
-sampleHtml = "<p>Tervetuloa Elm-maailmaan!</p>"
+Tässä on esimerkki HTML-sisällön noutamisesta (olettaen, että palvelimen vastaus on selkeässä muodossa tai erityisen tagin sisältö):
 
-parseHtml : String -> String
-parseHtml html =
-    case run textTag html of
-        Ok parsedText ->
-            parsedText
+```elm
+import Browser
+import Html exposing (Html, text)
+import Http
 
-        Err error ->
-            "Parsing failed: " ++ Debug.toString(error)
+type alias Model =
+    { content : String }
 
-main =
-    text (parseHtml sampleHtml)
+initialModel : Model
+initialModel =
+    { content = "" }
+
+type Msg
+    = Fetch
+    | ReceiveContent String
+
+update : Msg -> Model -> (Model, Cmd Msg)
+update msg model =
+    case msg of
+        Fetch ->
+            ( model
+            , Http.get
+                { url = "https://example.com"
+                , expect = Http.expectString ReceiveContent
+                }
+            )
+
+        ReceiveContent content ->
+            ( { model | content = content }
+            , Cmd.none
+            )
+
+view : Model -> Html Msg
+view model =
+    text model.content
+
+-- Oletetaan, että pääfunktio ja tilausten määrittelyt noudattavat Elmin standardin sovellusrakennetta.
 ```
 
-Kun ajat tämän koodin, saat:
-```
-"Tervetuloa Elm-maailmaan!"
-```
+Vastauksen käsittelyyn todellisen elementtien tai tietojen jäsentämiseksi saatat harkita HTML-sisällön lähettämistä hallinnoimallesi palvelinpäätepisteelle, jossa voit käyttää kielissä kuten JavaScript (Cheerio, Jsdom) tai Python (BeautifulSoup, lxml) saatavilla olevia kirjastoja jäsentämiseen, ja sitten palauttaa rakenteellista dataa (kuten JSON) takaisin Elm-sovellukseesi.
 
-## Deep Dive - Sukellus Syvemmälle:
-Elm, toisin kuin monet muut kielet, on suunniteltu selkeästi front-end kehitystä varten, ja sen lähteet juontavat funktionaalisen ohjelmoinnin periaatteista. Elm omaksuu myös omintakeisen tapansa käsitellä HTML:ää.
-
-Kun HTML:ää jäsentävät kirjastot muissa kielissä, kuten JavaScript, ovat valtavirran, Elm tarjoaa oman standardikirjaston `Html.Parser`-moduulin. Se on tyyppiturvallinen ja puhtaasti funktionaalinen tapa jäsentää HTML. Elm ei sisällä perinteistä DOM käsittelyä, vaan käyttää Virtual Domia, mikä tekee HTML:n jäsentämisestä mutkikkaampaa mutta tehokkaampaa.
-
-Vaihtoehtoisesti, voit turvautua kolmannen osapuolen kirjastoihin kuten `elm-xml` jäsentämiseen, jos tarvitset monipuolisempia työkaluja.
-
-## See Also - Katso Myös:
-- Elm’s official `Html.Parser` module documentation: https://package.elm-lang.org/packages/elm/html/latest/Html-Parser
-- "Elm in Action" by Richard Feldman: https://www.manning.com/books/elm-in-action
-- Elm community forums for discussions and questions: https://discourse.elm-lang.org/
+Muista, että HTML:n suora jäsentäminen client-side Elm-koodissa ei ole tyypillistä johtuen kielirajoituksista ja filosofiasta, joka kannustaa selkeään eroon sisällön noudon ja sisällön käsittelyn välillä. Elmin arkkitehtuuri suosii datan käsittelyä turvallisemmassa, ennustettavammassa muodossa, kuten JSON.

@@ -1,8 +1,8 @@
 ---
 title:                "Working with YAML"
-date:                  2024-01-19
+date:                  2024-02-03T19:03:21.023196-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Working with YAML"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/php/working-with-yaml.md"
 ---
@@ -11,73 +11,117 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-YAML is a human-friendly data serialization format. Programmers use it for configuration files, data exchange, and storage due to its readability and simplicity.
+YAML, which stands for "YAML Ain't Markup Language", is a human-readable data serialization format that is commonly used for configuration files. Programmers opt to utilize YAML due to its simplicity and readability, making it an excellent choice for storing settings, parameters, and even complex data structures in an easily manageable form.
 
 ## How to:
 
-To play with YAML in PHP, you need the `yaml` extension. Here's a quick spin-up:
+PHP, as of its current iterations, does not support parsing YAML as part of its standard library. The most straightforward way to work with YAML in PHP is by using the Symfony YAML component or the `yaml` PECL extension.
 
-**Install YAML extension** (if not installed):
+### Using Symfony YAML Component
+
+First, install the Symfony YAML component via Composer:
+
+```bash
+composer require symfony/yaml
+```
+
+Then, you can parse and dump YAML content as follows:
+
+```php
+<?php
+require_once __DIR__.'/vendor/autoload.php';
+
+use Symfony\Component\Yaml\Yaml;
+
+// Parsing YAML
+$yamlString = <<<YAML
+greet: Hello, World!
+framework:
+  name: Symfony
+  language: PHP
+YAML;
+
+$array = Yaml::parse($yamlString);
+print_r($array);
+
+// Creating YAML from an array
+$array = [
+    'greet' => 'Hello, YAML!',
+    'framework' => [
+        'name' => 'Symfony',
+        'language' => 'PHP',
+    ],
+];
+
+$yaml = Yaml::dump($array);
+echo $yaml;
+```
+
+Sample output when parsing:
+
+```
+Array
+(
+    [greet] => Hello, World!
+    [framework] => Array
+        (
+            [name] => Symfony
+            [language] => PHP
+        )
+
+)
+```
+
+Sample output when dumping:
+
+```
+greet: Hello, YAML!
+framework:
+    name: Symfony
+    language: PHP
+```
+
+### Using `yaml` PECL Extension
+
+If you prefer, or if your project requirements allow, the PECL extension can be another efficient way to work with YAML. First, ensure the extension is installed:
+
 ```bash
 pecl install yaml
 ```
 
-**Load Extension**:
-Ensure your `php.ini` includes:
+Then, enable it in your `php.ini` configuration:
+
 ```ini
-extension=yaml
+extension=yaml.so
 ```
 
-**Parsing YAML**: 
+Here's how to parse and emit YAML:
+
 ```php
 <?php
-$yamlString = "
-settings:
-  database: MySQL
-  host: localhost";
+
+// Parsing YAML
+$yamlString = <<<YAML
+greet: Hello, World!
+framework:
+  name: Symfony
+  language: PHP
+YAML;
 
 $array = yaml_parse($yamlString);
-
 print_r($array);
-```
-**Sample Output**:
-```
-Array
-(
-    [settings] => Array
-        (
-            [database] => MySQL
-            [host] => localhost
-        )
-)
-```
 
-**Creating YAML**:
-```php
-<?php
+// Creating YAML from an array
 $array = [
-  'settings' => [
-    'database' => 'MySQL',
-    'host' => 'localhost'
-  ]
+    'greet' => 'Hello, YAML!',
+    'framework' => [
+        'name' => 'Symfony',
+        'language' => 'PHP',
+    ],
 ];
 
-$yamlString = yaml_emit($array);
-echo $yamlString;
-```
-**Sample Output**:
-```
-settings:
-  database: MySQL
-  host: localhost
+$yaml = yaml_emit($array);
+echo $yaml;
 ```
 
-## Deep Dive:
-
-YAML, which stands for "YAML Ain't Markup Language," focuses on data and data structures, and it excels where languages like XML might be overly complex. It was first released in 2001. Alternatives include JSON and XML; YAML is often preferred for its human readability. PHP's `yaml` extension hooks into the `libyaml` library, ensuring fast parsing and emitting.
-
-## See Also:
-
-- PHP Official YAML Extension Docs: https://www.php.net/manual/en/book.yaml.php
-- YAML Official Site: https://yaml.org
-- Comparison of data serialization formats: https://en.wikipedia.org/wiki/Comparison_of_data_serialization_formats
+The output will be similar to the Symfony component's, illustrating YAML's role as a bridge between human-readable format and PHP array structures, facilitating easier configuration and data handling.

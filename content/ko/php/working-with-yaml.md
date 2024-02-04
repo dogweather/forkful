@@ -1,79 +1,129 @@
 ---
-title:                "YAML 다루기"
-date:                  2024-01-19
-simple_title:         "YAML 다루기"
-
+title:                "YAML로 작업하기"
+date:                  2024-02-03T19:26:27.210403-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "YAML로 작업하기"
 tag:                  "Data Formats and Serialization"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/php/working-with-yaml.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-YAML은 데이터를 표현하기 위한 형식입니다. 코드에서 설정, 환경 변수를 다루거나 데이터를 저장하고 읽기 위해 YAML을 사용합니다. 간결하고 읽기 쉬워서 인기가 있죠.
+## 무엇 & 왜?
 
-## How to:
-PHP에서 YAML을 다루려면 `yaml` 확장 기능을 설치해야 합니다. `yaml_parse`로 YAML을 PHP 배열로, `yaml_emit`으로 배열을 YAML로 바꿀 수 있어요.
+YAML은 "YAML Ain't Markup Language"의 약자로, 사람이 읽을 수 있는 데이터 직렬화 형식입니다. 이는 일반적으로 구성 파일에 사용되며, 프로그래머들은 YAML을 그 단순성과 가독성 때문에 선호합니다. 이는 설정, 파라미터, 심지어 복잡한 데이터 구조를 쉽게 관리할 수 있는 형태로 저장하는 데에 탁월한 선택입니다.
 
-```PHP
+## 방법:
+
+PHP는 현재 버전에서 표준 라이브러리의 일부로 YAML을 파싱하는 것을 지원하지 않습니다. PHP에서 YAML을 사용하는 가장 간단한 방법은 Symfony YAML 컴포넌트나 `yaml` PECL 확장을 사용하는 것입니다.
+
+### Symfony YAML 컴포넌트 사용하기
+
+먼저, Composer를 통해 Symfony YAML 컴포넌트를 설치하세요:
+
+```bash
+composer require symfony/yaml
+```
+
+그런 다음, 다음과 같이 YAML 콘텐츠를 파싱하고 덤프할 수 있습니다:
+
+```php
 <?php
-// YAML 문자열 파싱
-$yamlString = "
-user: john_doe
-age: 35
-children:
-  - name: Jane
-    age: 12
-  - name: Bob
-    age: 8
-";
+require_once __DIR__.'/vendor/autoload.php';
+
+use Symfony\Component\Yaml\Yaml;
+
+// YAML 파싱
+$yamlString = <<<YAML
+greet: Hello, World!
+framework:
+  name: Symfony
+  language: PHP
+YAML;
+
+$array = Yaml::parse($yamlString);
+print_r($array);
+
+// 배열에서 YAML 생성하기
+$array = [
+    'greet' => 'Hello, YAML!',
+    'framework' => [
+        'name' => 'Symfony',
+        'language' => 'PHP',
+    ],
+];
+
+$yaml = Yaml::dump($array);
+echo $yaml;
+```
+
+파싱 시 샘플 출력:
+
+```
+Array
+(
+    [greet] => Hello, World!
+    [framework] => Array
+        (
+            [name] => Symfony
+            [language] => PHP
+        )
+
+)
+```
+
+덤프 시 샘플 출력:
+
+```
+greet: Hello, YAML!
+framework:
+    name: Symfony
+    language: PHP
+```
+
+### `yaml` PECL 확장 사용하기
+
+원한다면, 또는 프로젝트 요구 사항이 허용한다면, PECL 확장은 YAML을 다루는 또 다른 효율적인 방법일 수 있습니다. 우선, 확장 프로그램이 설치되어 있는지 확인하세요:
+
+```bash
+pecl install yaml
+```
+
+그런 다음, `php.ini` 설정에서 활성화하세요:
+
+```ini
+extension=yaml.so
+```
+
+다음은 YAML을 파싱하고 내보내는 방법입니다:
+
+```php
+<?php
+
+// YAML 파싱
+$yamlString = <<<YAML
+greet: Hello, World!
+framework:
+  name: Symfony
+  language: PHP
+YAML;
 
 $array = yaml_parse($yamlString);
 print_r($array);
 
-// PHP 배열을 YAML 문자열로 변환
-$arrayToYaml = [
-  'user' => 'john_doe',
-  'age' => 40,
-  'children' => [
-    ['name' => 'Jane', 'age' => 15],
-    ['name' => 'Bob', 'age' => 11],
-  ],
+// 배열에서 YAML 생성하기
+$array = [
+    'greet' => 'Hello, YAML!',
+    'framework' => [
+        'name' => 'Symfony',
+        'language' => 'PHP',
+    ],
 ];
 
-$yaml = yaml_emit($arrayToYaml);
+$yaml = yaml_emit($array);
 echo $yaml;
-?>
 ```
 
-Sample output:
-```
-Array
-(
-    [user] => john_doe
-    [age] => 35
-    [children] => Array
-        (
-            [0] => Array
-                (
-                    [name] => Jane
-                    [age] => 12
-                )
-            [1] => Array
-                (
-                    [name] => Bob
-                    [age] => 8
-                )
-        )
-)
-...
-```
-
-## Deep Dive:
-YAML은 "YAML Ain't Markup Language"의 재귀 약어로 2001년 개발되었습니다. JSON이나 XML 같은 다른 데이터 형식과 비교됩니다. YAML은 구조가 명확하고, 덜 복잡해서 설정 파일에 적합합니다. PHP에서 `symfony/yaml` 라이브러리를 통해 YAML을 다룰 수도 있습니다.
-
-## See Also:
-- Official YAML website: [https://yaml.org](https://yaml.org)
-- PHP.net YAML functions: [https://www.php.net/manual/en/book.yaml.php](https://www.php.net/manual/en/book.yaml.php)
-- Symfony YAML component: [https://symfony.com/doc/current/components/yaml.html](https://symfony.com/doc/current/components/yaml.html)
+출력 결과는 Symfony 컴포넌트의 것과 비슷할 것이며, YAML이 사람이 읽을 수 있는 형식과 PHP 배열 구조 사이의 다리 역할을 함으로써, 구성 및 데이터 처리를 더 쉽게 만듦을 보여줍니다.

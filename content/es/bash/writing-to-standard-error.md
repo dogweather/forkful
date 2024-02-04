@@ -1,45 +1,52 @@
 ---
 title:                "Escribiendo en el error estándar"
-date:                  2024-01-19
+date:                  2024-02-03T19:32:09.597875-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Escribiendo en el error estándar"
-
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/bash/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Qué es y Por Qué?
-
-Escribir en el error estándar permite mostrar mensajes de error y diagnóstico sin mezclarlos con la salida de datos del programa. Es útil para depurar y para que otros programas o usuarios perciban problemas sin confusión.
+## ¿Qué y Por Qué?
+Escribir en el error estándar (stderr) en Bash se trata de dirigir mensajes de error o cualquier salida de diagnóstico importante, separándola de la salida estándar (stdout). Los programadores hacen esto para asegurarse de que los mensajes de error puedan ser fácilmente identificados, registrados o incluso ignorados, ayudando en los procesos de depuración y registro.
 
 ## Cómo hacerlo:
+En Bash, se utiliza `>&2` para redirigir la salida hacia stderr. Aquí hay un ejemplo básico:
 
-```Bash
-# Escribir un mensaje simple en error estándar
-echo "Error: archivo no encontrado" >&2
-
-# Ejemplo de uso con un condicional
-if [[ ! -f "archivo.txt" ]]; then
-   echo "Error: 'archivo.txt' no existe" >&2
-else
-   echo "Archivo encontrado: procediendo..."
-fi
-
-# Redirigir la salida de error estándar a un archivo
-comando_que_falla 2> errores.log
-
-# Ejemplo de salida
-# En la consola solo veremos "Archivo encontrado: procediendo..."
-# Si 'archivo.txt' no existe, "Error: 'archivo.txt' no existe" se escribirá en errores.log
+```bash
+echo "Este es un mensaje normal"
+echo "Este es un mensaje de error" >&2
 ```
 
-## Deep Dive
+Ejecutar este script mostrará ambos mensajes en la consola, pero si los rediriges, puedes separar el stdout del stderr. Por ejemplo:
 
-Históricamente, la separación entre salida estándar y error estándar viene de las convenciones de Unix y ayuda a manejar ambos flujos independientemente. Alternativas incluyen el uso de herramientas como `logger` para el manejo de registros o el uso de sistemas como `systemd` para manejar servicios y sus salidas de error. Detalles de implementación incluyen redirecciones en Bash (`2>` para STDERR).
+```bash
+bash script.sh > output.txt 2> error.txt
+```
 
-## Ver También
+`output.txt` contendrá `"Este es un mensaje normal"`, mientras que `error.txt` capturará `"Este es un mensaje de error"`.
 
-- Bash Redirections: https://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO-3.html
-- Advanced Bash-Scripting Guide: https://www.tldp.org/LDP/abs/html/
-- Bash Manual: https://www.gnu.org/software/bash/manual/
+Para un caso de uso práctico, considera un script que procesa archivos e informa un error si un archivo no existe:
+
+```bash
+filename="ejemplo.txt"
+
+if [ ! -f "$filename" ]; then
+    echo "$filename no existe!" >&2
+    exit 1
+else
+    echo "Procesando $filename"
+fi
+```
+
+Salida de muestra directamente en la consola cuando `ejemplo.txt` no existe:
+
+```
+ejemplo.txt no existe!
+```
+
+No hay bibliotecas de terceros directas en Bash para manejar stderr, ya que la redirección cuenta con soporte nativo y generalmente es suficiente. Sin embargo, para aplicaciones complejas, se pueden incorporar marcos de registro o herramientas de registro externas como `syslog` o `log4bash` para gestionar tanto stdout como stderr de manera más efectiva.

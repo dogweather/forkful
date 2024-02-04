@@ -1,53 +1,65 @@
 ---
 title:                "Nykyisen päivämäärän hankkiminen"
-date:                  2024-01-20T15:14:52.828407-07:00
+date:                  2024-02-03T19:09:51.519459-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Nykyisen päivämäärän hankkiminen"
-
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/java/getting-the-current-date.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Mikä ja Miksi?)
-Päivämäärän haaliminen ohjelmallisesti Java-kielessä tarkoittaa nykyhetken päivämäärän ja ajan selvittämistä. Sitä tehdään esimerkiksi logitiedostojen aikaleimoja varten tai kun käyttäjille näytetään päivän dataa.
+## Mikä & Miksi?
+Nykyisen päivämäärän hankkiminen Javassa on perustoiminto, jonka avulla ohjelmoijat voivat käsitellä päivämääräobjekteja toiminnoissa, kuten lokitukset, päivämäärälaskelmat ja aikaan perustuvat ehdot. Se on elintärkeää sovelluksissa, joissa seuranta, aikataulutus ja ajallinen datan analyysi ovat olennaisia.
 
-## How to: (Miten tehdään:)
+## Miten:
+Java tarjoaa useita tapoja hankkia nykyinen päivämäärä käyttäen sekä vanhaa `java.util.Date` -luokkaa että uudempaa `java.time` -pakettia (julkaistu Javassa 8), joka on monipuolisempi ja intuitiivisempi.
+
+### Käyttäen `java.time.LocalDate`
 ```java
 import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 
 public class CurrentDateExample {
     public static void main(String[] args) {
-        // Päivämäärä ilman kellonaikaa
-        LocalDate date = LocalDate.now();
-        System.out.println("Päivämäärä: " + date);
-
-        // Päivämäärä kellonajalla
-        LocalDateTime dateTime = LocalDateTime.now();
-        System.out.println("Päivämäärä ja aika: " + dateTime);
-
-        // Muotoiltu päivämäärä
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm:ss");
-        String formattedDateTime = dateTime.format(formatter);
-        System.out.println("Muotoiltu päivämäärä ja aika: " + formattedDateTime);
+        LocalDate currentDate = LocalDate.now();
+        System.out.println(currentDate); // Esimerkkituloste: 2023-04-01
     }
 }
 ```
-### Näyte ulostulosta:
+### Käyttäen `java.time.LocalDateTime`
+```java
+import java.time.LocalDateTime;
+
+public class CurrentDateExample {
+    public static void main(String[] args) {
+        LocalDateTime currentDateTime = LocalDateTime.now();
+        System.out.println(currentDateTime); // Esimerkkituloste: 2023-04-01T12:34:56.789
+    }
+}
 ```
-Päivämäärä: 2023-04-05
-Päivämäärä ja aika: 2023-04-05T15:24:33.648
-Muotoiltu päivämäärä ja aika: 05.04.2023 15:24:33
+### Käyttäen `java.util.Date` (Vanha)
+```java
+import java.util.Date;
+
+public class CurrentDateExample {
+    public static void main(String[] args) {
+        Date currentDate = new Date();
+        System.out.println(currentDate); // Esimerkkituloste: Lau Apr 01 12:34:56 BST 2023
+    }
+}
 ```
+### Kolmannen osapuolen kirjaston käyttäminen: Joda-Time
+Ennen Java 8:aa Joda-Time oli de facto -standardi Java-datassa ja -ajassa. Jos työskentelet vanhojen järjestelmien parissa tai sinulla on mieltymys Joda-Timeen, tässä on miten voit käyttää sitä nykyisen päivämäärän hankkimiseen:
+```java
+import org.joda.time.LocalDate;
 
-## Deep Dive (Syväsukellus):
-Päivämäärän hakeminen Javassa on selvempää `java.time` -pakettia käytettäessä, joka tuli osaksi standardia Java 8 -versiossa (maaliskuu 2014). Ennen Java 8:aa käytettiin `java.util.Date` luokkaa, joka oli sekava ja epäjohdonmukainen. `java.time` -paketti, joka on myös tunnettu nimellä JSR-310, tuo mukanaan helpompaa APIa ja selkeämmän mallin päivämäärän käsittelyyn. Huomattavaa on, että paketti tukee myös aikavyöhykkeitä ja tarkkoja aikaleimoja, jotka ovat välttämättömiä globaaleissa sovelluksissa.
-
-Vaihtoehtoja `LocalDate` ja `LocalDateTime` ovat esimerkiksi `ZonedDateTime` aikavyöhykkeellisen ajan käsittelyyn ja `Instant` tarkan hetkellisen aikaleiman saamiseksi.
-
-## See Also (Katso Myös):
-- [Oracle Java Documentation for java.time Package](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
-- [Baeldung Guide on Java 8 Date and Time](https://www.baeldung.com/java-8-date-time-intro)
-- [Oracle Tutorial – Date Time explaining how to use java.time](https://docs.oracle.com/javase/tutorial/datetime/)
+public class CurrentDateExample {
+    public static void main(String[] args) {
+        LocalDate currentDate = LocalDate.now();
+        System.out.println(currentDate); // Esimerkkituloste: 2023-04-01
+    }
+}
+```
+**Huom:** Vaikka `java.util.Date` ja Joda-Timea käytetään yhä, uusiin projekteihin suositellaan `java.time` -pakettia sen muuttumattomuuden ja kattavan API:n ansiosta päivämäärien ja aikojen käsittelyyn.

@@ -1,78 +1,33 @@
 ---
 title:                "Merkkijonon muuttaminen isoiksi kirjaimiksi"
-date:                  2024-01-19
+date:                  2024-02-03T19:05:02.466354-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Merkkijonon muuttaminen isoiksi kirjaimiksi"
-
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/clojure/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
+## Mikä & Miksi?
+Merkkijonon alkukirjaimen muuttaminen isoksi muuttaa merkkijonon niin, että sen ensimmäinen merkki on isolla ja loput merkkijonosta pysyvät muuttumattomina. Ohjelmoijat suorittavat usein merkkijonojen alkukirjaimen muuttamisen varmistaakseen tietojen johdonmukaisuuden, erityisesti nimien ja paikkojen osalta tai noudattaakseen kieliopillisia sääntöjä käyttöliittymissä.
 
-Isoskirjaimiksi muuntaminen tarkoittaa tekstijonon muuttamista niin, että jokainen sana alkaa suurella alkukirjaimella. Ohjelmoijat käyttävät tätä tekstin ulkoasun parantamiseen ja johdonmukaisuuden ylläpitämiseen.
+## Kuinka:
+Clojure, ollessaan JVM-kieli, mahdollistaa Java String -metodien suoran käytön. Tässä on perusesimerkki kuinka muuttaa merkkijonon alkukirjaimen isoksi Clojurella:
 
-## How to:
+```clojure
+(defn capitalize-string [s]
+  (if (empty? s)
+    s
+    (str (clojure.string/upper-case (subs s 0 1)) (subs s 1))))
 
-Clojuren `clojure.string` -kirjasto sisältää funktioita merkkijonojen käsittelyyn. `capitalize` ja `join` yhdistelmällä saamme jokaisen sanan alkamaan isolla alkukirjaimella.
-
-```Clojure
-(require '[clojure.string :as str])
-
-(defn capitalize-words [s]
-  (str/join " " (map str/capitalize (str/split s #" "))))
-
-(println (capitalize-words "clojure taitaa olla paras!"))
+(capitalize-string "hello world!") ; => "Hello world!"
 ```
 
-Tulostus:
-```
-"Clojure Taitaa Olla Paras!"
-```
+Clojure ei sisällä sisäänrakennettua funktiota nimenomaan merkkijonojen alkukirjaimen muuttamiseen isoksi, mutta kuten näytetty, tämän voi helposti saavuttaa yhdistämällä `clojure.string/upper-case`, `subs`, ja `str` funktiot.
 
-Tämä funktionaalisesti ketjuttaen:
+Monimutkaisempien merkkijonojen käsittelyä varten saatat kääntyä kolmannen osapuolen kirjaston puoleen. Yksi tällainen suosittu kirjasto Clojure-ekosysteemissä on `clojure.string`. Kuitenkaan, viimeisimmän päivitykseni mukaan, se ei tarjoa suoraa `capitalize` funktiota yli sen, mitä on esitetty perus Clojure-toiminnallisuuksilla, joten yllä näytetty menetelmä on suoraviivainen lähestymistapa ilman, että tarvitsee vetää mukaan lisäkirjastoja pelkästään alkukirjaimen muuttamista varten.
 
-```Clojure
-(->> "clojure taitaa olla paras!"
-     (str/split #" ")
-     (map str/capitalize)
-     (str/join " ")
-     (println))
-
-```
-
-Tulostus edelleen:
-```
-"Clojure Taitaa Olla Paras!"
-```
-
-## Deep Dive
-
-Ennen nykyaikaisten ohjelmointikielten kuten Clojuren esiintuloa, merkkijonojen käsittely oli usein melko karkeaa. Vanhemmissa kielissä, kuten C:ssä, jouduttiin käsittelemään merkkejä ja merkkijonoja manuaalisesti, joka saattoi olla työlästä ja virhealtista.
-
-Clojuren tapaan toimivia vaihtoehtoja on monia, esimerkiksi JavaScriptin `toLowerCase()` ja `toUpperCase()` kombinaation avulla. Clojuren etu on, että sen funktiot ovat puhtaita ja se käyttää funktionaalista lähestymistapaa, mikä tekee koodista lyhyempää ja helpommin ymmärrettävää.
-
-Clojuren `capitalize` on melko suoraviivainen. Se ottaa merkkijonon ja muuttaa ainoastaan ensimmäisen merkin isoksi, loput jäävät alkuperäisen kaltaisiksi. Tämä saattaa aiheuttaa ongelmia, jos haluamme varmistaa, että loput sanasta ovat pienellä (esim. nimenmuotoilussa). Silloin saattaa tarvita yhdistelmää `capitalize` ja `lower-case` funktioita.
-
-```Clojure
-(defn proper-name [s]
-  (str/capitalize (str/lower-case s)))
-
-(println (proper-name "sUOMI"))
-```
-
-Tulostus:
-```
-"Suomi"
-```
-
-## See Also
-
-Clojure `capitalize`: https://clojuredocs.org/clojure.string/capitalize
-
-Clojure `lower-case`: https://clojuredocs.org/clojure.string/lower-case
-
-Clojure `map`: https://clojuredocs.org/clojure.core/map
-
-String manipulation in Clojure: https://www.braveclojure.com/strings/
+Muista, kun työskentelet Clojuressa merkkijonojen kanssa, jotka vuorovaikuttavat Java-metodien kanssa, käytät käytännössä Java-merkkijonoja. Tämä mahdollistaa sinun hyödyntää koko Java String -metodien arsenaalia suoraan Clojure-koodissasi tarvittaessa.

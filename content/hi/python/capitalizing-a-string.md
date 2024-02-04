@@ -1,46 +1,68 @@
 ---
-title:                "स्ट्रिंग को कैपिटलाइज़ करना"
-date:                  2024-01-19
-simple_title:         "स्ट्रिंग को कैपिटलाइज़ करना"
-
+title:                "स्ट्रिंग को कैपिटलाइज करना"
+date:                  2024-02-03T19:07:25.227431-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "स्ट्रिंग को कैपिटलाइज करना"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/python/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## क्या और क्यों?
-स्ट्रिंग को कैपिटलाइज़ करना मतलब हर वर्ड के पहले अक्षर को बड़ा करना होता है। प्रोग्रामर इसे डेटा को मानक स्वरूप देने के लिए और पठनीयता बढ़ाने के लिए करते हैं।
+एक स्ट्रिंग को बड़े अक्षरों में परिवर्तित करना मतलब है कि एक स्ट्रिंग के पहले अक्षर को ऊपरी मामले (uppercase) में और बाकी को नीचे के मामले (lowercase) में बदलना। यह क्रिया आमतौर पर इनपुट को सामान्यीकृत करने या शीर्षकों, नामों और ऐसी चीजों की पठनीयता बढ़ाने के लिए डेटा प्रसंस्करण में उपयोग की जाती है।
 
-## कैसे करें:
-जानिए एक स्ट्रिंग को कैसे कैपिटलाइज़ करें:
+## कैसे:
 
-```Python
-# .title() का उपयोग करके
-text = "मेरा नाम अजय है"
-capitalized_text = text.title()
-print(capitalized_text)
+### पायथन के अंतर्निहित विधि का उपयोग करना:
+पायथन में स्ट्रिंग्स के लिए इस कार्य को आसानी से पूरा करने के लिए एक अंतर्निहित विधि `.capitalize()` है।
 
-# Output: मेरा नाम अजय है
+```python
+my_string = "hello world"
+capitalized_string = my_string.capitalize()
+print(capitalized_string)
+```
+**आउटपुट:**
+```
+Hello world
 ```
 
-```Python
-# स्ट्रिंग मेथड्स का कॉम्बिनेशन
-def capitalize_words(string):
-    return ' '.join(word.capitalize() for word in string.split())
+### एकाधिक शब्दों को संभालना:
+जहां आप चाहते हैं कि एक स्ट्रिंग में प्रत्येक शब्द एक बड़े अक्षर से शुरू हो (जैसे कि शीर्षकों में), `.title()` विधि लागू की जा सकती है।
 
-example_text = "मेरा नाम अजय है"
-print(capitalize_words(example_text))
-
-# Output: मेरा नाम अजय है
+```python
+my_title = "python programming essentials"
+title_case = my_title.title()
+print(title_case)
+```
+**आउटपुट:**
+```
+Python Programming Essentials
 ```
 
-## गहराई से जानकारी:
-स्ट्रिंग्स को कैपिटलाइज़ करना बहुत साधारण परंतु उपयोगी कार्य है। `.title()` पायथन की बिल्ट-इन फंक्शन है, जो 1980 के दशक में पायथन की शुरुआत के समय से ही है। यह फंक्शन हर शब्द के पहले अक्षर को बड़ा कर देता है परंतु इसमें कुछ सीमायें हैं, जैसे कि यह सिर्फ अल्फान्युमैरिक शब्दों के लिए काम करता है और नॉन-लैटिन अक्षरों पे भिन्न परिणाम हो सकता है।
+### तृतीय-पक्ष पुस्तकालयों का उपयोग करना:
+जबकि पायथन की मानक पुस्तकालय मूल स्ट्रिंग कैपिटलिज़ेशन हेतु युक्त है, `textblob` जैसे पुस्तकालय प्राकृतिक भाषा प्रसंस्करण के लिए विशेष रूप से अधिक सूक्ष्म नियंत्रण प्रदान कर सकते हैं।
 
-इसलिए अक्सर प्रोग्रामर अपने कस्टम फंक्शन लिखते हैं जैसे कि `capitalize_words`. यह फ़ंक्शन `.split()` से स्ट्रिंग को शब्दों में बांटता है, फिर `.capitalize()` से हर शब्द को कैपिटलाइज़ करता है, और अंत में `' '.join()` से सबको वापस एक साथ जोड़ता है।
+पहले, सुनिश्चित करें कि आपके पास `textblob` स्थापित है:
+```bash
+pip install textblob
+```
 
-## देखिये भी:
-- [Python’s str.capitalize() method](https://docs.python.org/3/library/stdtypes.html#str.capitalize)
-- [Python’s str.title() method](https://docs.python.org/3/library/stdtypes.html#str.title)
-- [Python’s Official Documentation](https://docs.python.org/3/)
+फिर, इसका उपयोग करके स्ट्रिंग को बड़े अक्षरों में बदलें, ध्यान रहे कि `textblob` का कैपिटलाइज़ उपयोग के संदर्भ के आधार पर विभिन्न रूप से काम कर सकता है:
+
+```python
+from textblob import TextBlob
+
+my_sentence = "this is a test sentence"
+blob = TextBlob(my_sentence)
+capitalized_blob = TextBlob(blob.string.capitalize())
+print(capitalized_blob)
+```
+**आउटपुट:**
+```
+This is a test sentence
+```
+
+याद रखें, जबकि `capitalize()` और `title()` विधियां सर्वव्यापी रूप से उपयोगी हैं, `textblob` जैसे पुस्तकालयों का उपयोग विशिष्ट अनुप्रयोगों के लिए अतिरिक्त लचीलापन प्रदान कर सकता है।

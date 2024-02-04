@@ -1,37 +1,46 @@
 ---
-title:                "文字列の先頭を大文字にする"
-date:                  2024-01-19
-simple_title:         "文字列の先頭を大文字にする"
-
+title:                "文字列を大文字にする"
+date:                  2024-02-03T19:06:35.668817-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "文字列を大文字にする"
 tag:                  "Strings"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/swift/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (何となぜ？)
-文字列を大文字にするっていうのは、例えば「hello」を「HELLO」に変換することだよ。これをする理由は、タイトルやユーザー入力の正規化、そして視認性の向上のためだね。
+## 何となぜ？
 
-## How to: (方法)
-```Swift
-// Swiftでの文字列を大文字に変換する方法
-let lowercaseString = "hello, japan!"
-let uppercaseString = lowercaseString.uppercased()
+Swiftで文字列を大文字化するとは、与えられた文字列の最初の文字を大文字にし、残りの文字を小文字に変更することを指します。プログラマーは、文法ルールやユーザーインターフェース基準に従って名前や文を整形する目的などのためにこれを行います。
 
-print(uppercaseString)  // 出力: "HELLO, JAPAN!"
+## 方法：
+
+Swiftの`String`構造体には、文字列の大文字と小文字を操作するための組み込みメソッドがいくつかあります。ここでは、Swiftで文字列を大文字化する方法について、標準メソッドの使用と必要に応じてサードパーティーライブラリの使用を含むいくつかのアプローチを紹介します。
+
+### 組み込みメソッドを使用
+
+文字列の最初の文字を大文字にし、残りを小文字にするには：
+
+```swift
+let myString = "hello, world"
+let capitalizedString = myString.prefix(1).uppercased() + myString.dropFirst().lowercased()
+print(capitalizedString) // 出力: "Hello, world"
 ```
 
-## Deep Dive (掘り下げ)
-文字列を大文字に変換するのは、プログラミングにおいてよく使用される操作の一つ。Swift では `uppercased()` 関数を使うことでこれを簡単に行うことができる。
+文中の各単語の最初の文字を大文字にするには、`capitalized`プロパティを使用できます：
 
-歴史的には、古いコンピューターシステムやプログラミング言語では大文字と小文字を区別しないことが多かった。しかし、今日では大文字と小文字を明確に区別し、それぞれが異なる意味を持つことが一般的だ。
+```swift
+let sentence = "hello, world"
+let capitalizedSentence = sentence.capitalized
+print(capitalizedSentence) // 出力: "Hello, World"
+```
 
-Swift以外にも、他の言語で似たような機能がある。例えば、JavaScript では `toUpperCase()`、Python では `upper()` と書く。違いはあるけど、基本的なアイデアは同じだね。
+### サードパーティーライブラリを使用
 
-実装の詳細としては、`uppercased()` 関数はUnicodeをサポートしている。だから、様々な言語の特殊な文字も正しく大文字に変換されるよ。
+Swiftの標準ライブラリは非常に包括的ですが、特定の大文字化フォーマットにはより複雑な操作が必要になる場合や、サードパーティーライブラリを使用することで単純化できる場合があります。文字列操作に人気のあるライブラリの一つにSwiftRichStringがあります。（注：サードパーティーライブラリをSwift Package Manager、CocoaPods、またはCarthageを通して追加し、ファイルにインポートすることを常に確認してください。）
 
-## See Also (関連情報)
-- Swiftの公式ドキュメント: [String](https://developer.apple.com/documentation/swift/string)
-- Unicodeについての詳細: [Unicode.org](http://unicode.org/)
-- 他言語の文字列大文字化機能比較: [Wikipedia - Case Conversion](https://en.wikipedia.org/wiki/Letter_case#Case_conversion)
+まず、プロジェクトに`SwiftRichString`を追加する必要があります。インストールされたら、特定の大文字化の必要性を含むさまざまな文字列操作を行うことができます。しかし、現在のところ、Swiftの組み込みメソッドだけで文字列を大文字化するほとんどのユースケースを十分にカバーしており、外部ライブラリを使う必要はほとんどありません。
+
+ライブラリの最新のドキュメンテーションを常に参照し、メソッドの更新や変更について確認してください。

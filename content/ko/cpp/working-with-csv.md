@@ -1,91 +1,112 @@
 ---
-title:                "CSV 파일 다루기"
-date:                  2024-01-19
-simple_title:         "CSV 파일 다루기"
-
+title:                "CSV와 함께 작업하기"
+date:                  2024-02-03T19:19:19.175186-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "CSV와 함께 작업하기"
 tag:                  "Data Formats and Serialization"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/cpp/working-with-csv.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (무엇인가요? 왜 사용하나요?)
-CSV(Comma-Separated Values)는 자료를 쉼표로 구분해 저장하는 파일 형식이에요. 프로그래머들이 데이터를 쉽고 호환성 높게 주고받을 수 있어서 자주 쓰지요.
+## 무엇 & 왜?
 
-## How to: (사용 방법)
-```C++
-#include <iostream>
+CSV (쉼표로 구분된 값) 파일 작업은 간단한 텍스트 형식으로 저장된 데이터를 처리하고 조작하는 것에 관한 것입니다. 여기서 텍스트의 각 라인이 테이블의 행을 나타내고 쉼표가 개별 열을 구분합니다. 프로그래머들은 CSV가 가진 가벼우면서 사람이 읽을 수 있는 데이터 교환 형식으로서의 넓은 수용성 때문에 데이터를 다른 시스템 간에 가져오거나 내보내고 관리하기 위해 이를 활용합니다.
+
+## 방법:
+
+### C++ 표준 라이브러리를 사용하여 CSV 파일 읽기:
+
+```cpp
 #include <fstream>
-#include <vector>
-#include <string>
+#include <iostream>
 #include <sstream>
-
-// CSV 한 줄 읽기
-std::vector<std::string> readCSVRow(const std::string &row) {
-    std::stringstream ss(row);
-    std::vector<std::string> result;
-    std::string cell;
-
-    while (std::getline(ss, cell, ',')) {
-        result.push_back(cell);
-    }
-
-    return result;
-}
-
-// CSV 파일 읽기
-std::vector<std::vector<std::string>> readCSVFile(const std::string &filename) {
-    std::vector<std::vector<std::string>> data;
-    std::ifstream file(filename);
-    std::string row;
-
-    while (std::getline(file, row)) {
-        data.push_back(readCSVRow(row));
-    }
-
-    return data;
-}
-
-// CSV 파일 쓰기
-void writeCSVFile(const std::string &filename, const std::vector<std::vector<std::string>> &data) {
-    std::ofstream file(filename);
-
-    for (const auto &row : data) {
-        for (size_t i = 0; i < row.size(); ++i) {
-            file << row[i];
-            if (i < row.size() - 1) file << ',';
-        }
-        file << '\n';
-    }
-}
+#include <vector>
 
 int main() {
-    // 파일 읽기
-    std::vector<std::vector<std::string>> data = readCSVFile("example.csv");
-
-    // 읽은 데이터 출력
-    for (const auto &row : data) {
-        for (const auto &cell : row) {
-            std::cout << cell << " ";
+    std::ifstream file("data.csv");
+    std::string line;
+    
+    while (std::getline(file, line)) {
+        std::stringstream lineStream(line);
+        std::string cell;
+        std::vector<std::string> parsedRow;
+        
+        while (std::getline(lineStream, cell, ',')) {
+            parsedRow.push_back(cell);
+        }
+        
+        // 여기에서 parsedRow를 처리
+        for (const auto& val : parsedRow) {
+            std::cout << val << "\t";
         }
         std::cout << std::endl;
     }
-
-    // 파일 쓰기
-    data.push_back({"새", "줄"});
-    writeCSVFile("example.csv", data);
     
     return 0;
 }
 ```
 
-다음은 간단한 CSV 파일에서 데이터를 읽고, 추가한 뒤 파일에 다시 쓰는 코드 예제입니다.
+### CSV 파일 쓰기:
 
-## Deep Dive (심층 분석)
-CSV는 유닉스 시대부터 시작해 지금까지 쓰이고 있는 오래된 형식입니다. Excel 같은 툴이 CSV를 쉽게 다룰 수 있어 널리 퍼졌죠. JSON이나 XML과 같은 현대적인 양식도 있지만, CSV는 단순함과 가독성에서 강점이 있어요. C++에서는 `<fstream>` 라이브러리로 파일을 다루는데, CSV 형식은 파싱하기 쉽기 때문에 문자열 조작 함수와 효율적으로 결합할 수 있습니다.
+```cpp
+#include <fstream>
+#include <vector>
 
-## See Also (참고자료)
-- CSV 관련 C++ 라이브러리: [https://github.com/ben-strasser/fast-cpp-csv-parser](https://github.com/ben-strasser/fast-cpp-csv-parser)
-- C++ 파일 입출력 가이드: [http://www.cplusplus.com/doc/tutorial/files/](http://www.cplusplus.com/doc/tutorial/files/)
-- C++ 표준 라이브러리 레퍼런스: [https://en.cppreference.com/w/](https://en.cppreference.com/w/)
+int main() {
+    std::ofstream file("output.csv");
+    std::vector<std::vector<std::string>> data = {
+        {"Name", "Age", "City"},
+        {"John Doe", "29", "New York"},
+        {"Jane Smith", "34", "Los Angeles"}
+    };
+    
+    for (const auto& row : data) {
+        for (size_t i = 0; i < row.size(); i++) {
+            file << row[i];
+            if (i < row.size() - 1) file << ",";
+        }
+        file << "\n";
+    }
+    
+    return 0;
+}
+```
+
+### 서드파티 라이브러리 사용하기: `csv2`:
+
+C++ 표준 라이브러리가 파일 및 문자열 작업을 위한 기본 도구를 제공하는 동안, 서드파티 라이브러리를 활용하면 CSV 처리를 단순화할 수 있습니다. 이런 라이브러리 중 하나가 사용의 용이성과 효율성으로 알려진 `csv2` 입니다.
+
+- 설치: 일반적으로 Conan 또는 GitHub 리포지토리에서 직접 설치합니다.
+
+`csv2`를 사용하여 CSV 파일 읽기 예:
+
+```cpp
+#include <csv2/reader.hpp>
+#include <iostream>
+
+int main() {
+    csv2::Reader<csv2::delimiter<','>, csv2::quote_character<'"'>, csv2::first_row_is_header<true>> csv;
+    if (csv.mmap("data.csv")) {
+        const auto header = csv.header();
+        for (const auto row : csv) {
+            for (const auto cell : row) {
+                std::cout << cell.second << "\t"; // 각 셀 값 출력
+            }
+            std::cout << std::endl;
+        }
+    }
+    return 0;
+}
+```
+
+읽기 작업에 대한 샘플 출력은 아래와 같을 수 있습니다 (간단한 세 열짜리 CSV 파일을 가정):
+
+```
+John    29    New York    
+Jane    34    Los Angeles
+```
+
+이 예제들은 C++에서 기본적인 CSV 작업을 다루기 위한 것입니다. 대용량 파일을 다루거나 복잡한 데이터 변환과 같은 더 복잡한 시나리오의 경우, 전문 라이브러리나 도구로 더 깊이 탐색할 필요가 있을 수 있습니다.

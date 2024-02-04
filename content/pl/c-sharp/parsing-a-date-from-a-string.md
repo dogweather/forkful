@@ -1,57 +1,88 @@
 ---
-title:                "Przetwarzanie daty ze łańcucha znaków"
-date:                  2024-01-20T15:35:48.173074-07:00
-simple_title:         "Przetwarzanie daty ze łańcucha znaków"
-
+title:                "Analiza składniowa daty z łańcucha znaków"
+date:                  2024-02-03T19:13:49.071516-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Analiza składniowa daty z łańcucha znaków"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/c-sharp/parsing-a-date-from-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Co i Dlaczego?)
-Zamiana ciągu znaków na datę to proces przekształcenia tekstu zawierającego datę w strukturalny format daty/czasu. Programiści robią to, aby łatwiej zarządzać i manipulować datami w aplikacjach.
+## Co i dlaczego?
+Przetwarzanie daty z ciągu znaków w C# polega na konwertowaniu tekstowych reprezentacji dat i czasów na obiekt `DateTime`. Jest to kluczowe dla aplikacji, które potrzebują manipulować, przechowywać lub wyświetlać daty i czasy w różnych formatach, takich jak aplikacje do planowania, procesory logów lub dowolny system obsługujący wprowadzanie dat przez użytkowników lub z zewnętrznych źródeł.
 
-## How to: (Jak to zrobić:)
-```C#
-using System;
+## Jak to zrobić:
+
+**Podstawowe przetwarzanie:**
+
+Metody `DateTime.Parse` i `DateTime.TryParse` to podstawowe opcje do konwertowania ciągu znaków na `DateTime`. Oto szybki przykład:
+
+```csharp
+string dateString = "2023-04-12";
+DateTime parsedDate;
+
+if (DateTime.TryParse(dateString, out parsedDate))
+{
+    Console.WriteLine($"Pomyślnie przetworzono: {parsedDate}");
+}
+else
+{
+    Console.WriteLine("Nie udało się przetworzyć.");
+}
+// Wyjście: Pomyślnie przetworzono: 4/12/2023 12:00:00 AM
+```
+
+**Określanie kultury:**
+
+Czasami konieczne jest przetworzenie ciągu daty, który jest w określonym formacie kulturowym. Można to osiągnąć za pomocą klasy `CultureInfo`:
+
+```csharp
 using System.Globalization;
 
-class Program
-{
-    static void Main()
-    {
-        string dateString = "2023-04-01";
-        DateTime convertedDate;
-        
-        // Użycie domyślnych ustawień systemowych
-        convertedDate = DateTime.Parse(dateString);
-        Console.WriteLine($"Domyślne ustawienia: {convertedDate}");
+string dateString = "12 avril 2023";
+var cultureInfo = new CultureInfo("fr-FR");
+DateTime parsedDate = DateTime.Parse(dateString, cultureInfo);
 
-        // Użycie konkretnego formatu
-        string format = "yyyy-MM-dd";
-        CultureInfo provider = CultureInfo.InvariantCulture;
-        convertedDate = DateTime.ParseExact(dateString, format, provider);
-        Console.WriteLine($"Format wybrany: {convertedDate}");
-    }
+Console.WriteLine(parsedDate);
+// Wyjście: 4/12/2023 12:00:00 AM
+```
+
+**Dokładne przetwarzanie z określonym formatem:**
+
+W scenariuszach, gdy daty są podane w określonym formacie, który może nie być standardowy, przydaje się `DateTime.ParseExact`:
+
+```csharp
+string dateString = "Wednesday, 12 April 2023";
+string format = "dddd, d MMMM yyyy";
+DateTime parsedDate = DateTime.ParseExact(dateString, format, CultureInfo.InvariantCulture);
+
+Console.WriteLine(parsedDate);
+// Wyjście: 4/12/2023 12:00:00 AM
+```
+
+**Korzystanie z NodaTime:**
+
+Do jeszcze bardziej zaawansowanego przetwarzania dat i czasów rozważ użycie popularnej biblioteki stron trzecich NodaTime. Zapewnia ona szerszy zakres możliwości obsługi dat/czasu:
+
+```csharp
+using NodaTime;
+using NodaTime.Text;
+
+var pattern = LocalDatePattern.CreateWithInvariantCulture("yyyy-MM-dd");
+var parseResult = pattern.Parse("2023-04-12");
+
+if(parseResult.Success)
+{
+    LocalDate localDate = parseResult.Value;
+    Console.WriteLine(localDate); // 2023-04-12
+}
+else
+{
+    Console.WriteLine("Nie udało się przetworzyć.");
 }
 ```
 
-Sample output (Przykładowe wyjście):
-```
-Domyślne ustawienia: 2023-04-01 00:00:00
-Format wybrany: 2023-04-01 00:00:00
-```
-
-## Deep Dive (Dogłębna analiza):
-Historia: W C# od wczesnych wersji istnieje możliwość parsowania dat. `DateTime.Parse` i `DateTime.ParseExact` to metody, które ewoluowały, ale ich podstawowa funkcjonalność pozostała niezmieniona.
-
-Alternatywa: Poza standardowym `DateTime` jest `DateTimeOffset`, które dodatkowo uwzględnia strefę czasową, oraz nowszy `System.Globalization.CultureInfo` do obsługi różnych formatów regionalnych.
-
-Szczegóły implementacyjne: `DateTime.ParseExact` wymaga określenia konkretnego wzorca daty, co daje kontrolę nad formatem. `CultureInfo.InvariantCulture` pozwala uniknąć problemów z różnicami regionalnymi.
-
-## See Also (Zobacz również):
-- [Dokumentacja DateTime.Parse](https://docs.microsoft.com/pl-pl/dotnet/api/system.datetime.parse?view=netframework-4.8)
-- [Dokumentacja DateTime.ParseExact](https://docs.microsoft.com/pl-pl/dotnet/api/system.datetime.parseexact?view=netframework-4.8)
-- [Przewodnik po formatach daty i czasu w .NET](https://docs.microsoft.com/pl-pl/dotnet/standard/base-types/standard-date-and-time-format-strings)
-- [Różnice pomiędzy DateTime a DateTimeOffset](https://docs.microsoft.com/pl-pl/dotnet/standard/datetime/choosing-between-datetime)
+NodaTime oferuje obszerną pomoc w zakresie stref czasowych, koncepcji okresów i trwania, oraz wielu różnych systemów kalendarzowych, co czyni go potężnym wyborem dla złożonej manipulacji datą i czasem w aplikacjach .NET.

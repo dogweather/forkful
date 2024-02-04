@@ -1,53 +1,52 @@
 ---
 title:                "Capitalizando uma string"
-date:                  2024-01-19
+date:                  2024-02-03T19:05:17.789713-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Capitalizando uma string"
-
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/elm/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## O Que & Por Quê?
 
-Capitalizar uma string significa converter todos os caracteres da string para maiúsculas. Programadores fazem isso para normalizar dados para comparação ou para fins estéticos, como em títulos ou cabeçalhos.
+Capitalizar uma string envolve transformar o caractere inicial de uma dada string para maiúsculo enquanto mantém o resto em minúsculo, frequentemente para fins de formatação padronizada ou legibilidade. Programadores frequentemente realizam essa tarefa para garantir que os dados sejam apresentados de forma consistente, especialmente em interfaces de usuário ou ao processar e exibir entradas de usuários.
 
-## Como Fazer:
+## Como fazer:
 
-Elm não possui uma função embutida para capitalizar todas as letras de uma string, mas podemos criar uma função para isso:
+No Elm, não há uma função integrada específica para capitalizar strings. No entanto, você pode alcançar isso facilmente usando as funções do módulo `String` integrado como `toUpper`, `toLower`, `left` e `dropLeft`.
 
-```Elm
-import String exposing (toUpper)
-
+```elm
 capitalize : String -> String
 capitalize str =
-    toUpper str
+    if String.isEmpty str then
+        ""
+    else
+        String.toUpper (String.left 1 str) ++ String.toLower (String.dropLeft 1 str)
 
--- Exemplo de uso:
+-- Exemplo de uso
 main =
-    String.words "olá, mundo!"
-        |> List.map capitalize
-        |> String.join " "
-        |> Html.text
+    String.toList "hello world" |> List.map capitalize |> String.join " "
+    -- Saída: "Hello World"
 ```
 
-Saída esperada:
+Para cenários mais complexos ou se você prefere usar uma biblioteca que forneça uma maneira direta de capitalizar strings, você pode considerar um pacote de terceiros, como `elm-community/string-extra`. No entanto, conforme minha última atualização, o ecossistema do Elm incentiva lidar com tais tarefas usando funções integradas para manter a linguagem e os projetos enxutos.
+
+```elm
+import String.Extra as StringExtra
+
+-- Caso haja uma função de `capitalize` em uma biblioteca de terceiros
+capitalizeWithLibrary : String -> String
+capitalizeWithLibrary str =
+    StringExtra.capitalize str
+
+-- Exemplo de uso com função hipotética de biblioteca
+main =
+    "this is elm" |> capitalizeWithLibrary
+    -- Saída hipotética: "This is elm"
 ```
-"OLÁ, MUNDO!"
-```
 
-## Mergulho Profundo:
-
-Em alguns contextos, capitalizar strings é simples como no exemplo acima. No entanto, linguagens diferentes têm casos especiais (como caracteres acentuados ou cedilha), e a função `toUpper` pode não cobrir todos esses casos se baseando unicamente nas regras do idioma inglês.
-
-Uma alternativa é usar bibliotecas que entendem a localização para garantir uma capitalização apropriada em diversos idiomas. A implementação de capitalizar strings geralmente envolve mapear cada caractere para sua forma maiúscula de acordo com uma tabela de caracteres, como a Unicode.
-
-Na história da programação, funções de manipulação de strings sempre foram essenciais. Em linguagens de mais baixo nível, essas operações podiam ser mais complexas, exigindo manipulação direta de bytes. Em Elm, graças a funções de alto nível como `toUpper`, o processo é muito mais direto.
-
-## Veja Também:
-
-- [Elm String Documentation](https://package.elm-lang.org/packages/elm/core/latest/String)
-- [Unicode Character Table](https://www.unicode.org/charts/)
-
-Lembre-se de verificar a documentação oficial do Elm para qualquer atualização em métodos de manipulação de strings e considere explorar pacotes adicionais para suporte avançado a localização se suas necessidades de capitalização forem além dos exemplos simples.
+Sempre verifique o repositório de pacotes do Elm para as bibliotecas mais recentes e mais preferidas para manipulação de strings se você estiver procurando por funcionalidades adicionais além da biblioteca padrão.

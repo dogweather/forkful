@@ -1,60 +1,83 @@
 ---
 title:                "Vérifier si un répertoire existe"
-date:                  2024-01-20T14:58:40.003744-07:00
+date:                  2024-02-03T19:08:49.183859-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Vérifier si un répertoire existe"
-
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/typescript/checking-if-a-directory-exists.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
+## Quoi & Pourquoi ?
+Vérifier si un répertoire existe en TypeScript est essentiel pour les tâches de gestion de fichiers, telles que lire ou écrire des données dans des fichiers, en s'assurant que les opérations sont effectuées uniquement sur des répertoires valides. Cette opération est cruciale pour éviter les erreurs découlant de la tentative d'accès ou de manipulation de répertoires inexistants.
 
-Vérifier l'existence d'un dossier, c'est chercher si un certain chemin sur le disque mène à un dossier réel. Les développeurs font ça pour éviter des erreurs en écriture/lecture ou pour créer des dossiers manquants.
+## Comment faire :
 
-## How to:
+TypeScript, lorsqu'exécuté dans un environnement Node.js, vous permet de vérifier si un répertoire existe en utilisant le module `fs`, qui fournit la fonction `existsSync()` ou la fonction asynchrone `access()` combinée à `constants.F_OK`.
 
-```TypeScript
-import { promises as fs } from 'fs';
+### Utiliser `fs.existsSync()` :
 
-async function checkDirectoryExists(path: string): Promise<boolean> {
-    try {
-        await fs.access(path);
-        return true;
-    } catch {
-        return false;
-    }
+```typescript
+import { existsSync } from 'fs';
+
+const directoryPath = './chemin/vers/repertoire';
+
+if (existsSync(directoryPath)) {
+  console.log('Le répertoire existe.');
+} else {
+  console.log('Le répertoire n'existe pas.');
 }
-
-// Utilisation:
-const pathToCheck = '/chemin/vers/le/dossier';
-checkDirectoryExists(pathToCheck)
-    .then(exists => console.log(`Le dossier existe: ${exists}`))
-    .catch(error => console.error('Erreur:', error));
 ```
 
-Résultat possible:
+### Utiliser `fs.access()` avec `fs.constants.F_OK` :
 
+```typescript
+import { access, constants } from 'fs';
+
+const directoryPath = './chemin/vers/repertoire';
+
+access(directoryPath, constants.F_OK, (err) => {
+  if (err) {
+    console.log('Le répertoire n'existe pas.');
+    return;
+  }
+  console.log('Le répertoire existe.');
+});
 ```
-Le dossier existe: true
-```
-ou en cas d'absence:
 
+**Exemple de sortie** pour les deux méthodes, en supposant que le répertoire existe :
 ```
-Le dossier existe: false
+Le répertoire existe.
 ```
 
-## Deep Dive
+Et s'il n'existe pas :
+```
+Le répertoire n'existe pas.
+```
 
-Historiquement, la vérification de l'existence d'un fichier ou d'un dossier se faisait via des modules comme `fs` de Node.js. Avant, on utilisait `fs.existsSync()`, mais cette méthode est bloquante et n'est pas recommandée dans un contexte asynchrone.
+### Utiliser une librairie tierce - `fs-extra` :
 
-Alternatives: on pourrait utiliser `fs.stat()` ou `fs.readdir()` pour obtenir plus d'informations, mais ceci ajoute de la complexité.
+`fs-extra` est une librairie tierce populaire qui améliore le module `fs` intégré et offre des fonctions plus pratiques.
 
-Détails d'implémentation: `fs.access()` vérifie les permissions, ce qui suffit pour tester l'existence d'un dossier. Utiliser `promises as fs` permet d'avoir accès aux versions asynchrones et basées sur les promesses des méthodes de `fs`.
+```typescript
+import { pathExists } from 'fs-extra';
 
-## See Also
+const directoryPath = './chemin/vers/repertoire';
 
-- Documentation Node.js sur `fs` : [https://nodejs.org/api/fs.html](https://nodejs.org/api/fs.html)
-- Article MDN sur les promesses : [https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Promise](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Promise)
-- Guide sur async/await : [https://javascript.info/async-await](https://javascript.info/async-await)
+pathExists(directoryPath).then(exists => {
+  console.log(`Le répertoire existe : ${exists}`);
+});
+```
+
+**Exemple de sortie** lorsque le répertoire existe :
+```
+Le répertoire existe : vrai
+```
+
+Et s'il n'existe pas :
+```
+Le répertoire existe : faux
+```

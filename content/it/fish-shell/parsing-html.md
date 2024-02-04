@@ -1,37 +1,81 @@
 ---
-title:                "Analisi dell'HTML"
-date:                  2024-01-20T15:31:17.849235-07:00
-simple_title:         "Analisi dell'HTML"
-
+title:                "Analisi del HTML"
+date:                  2024-02-03T19:12:05.874360-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Analisi del HTML"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/fish-shell/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Il parsing HTML consiste nell'analizzare il codice HTML per estrarre dati o comprendere la struttura della pagina. I programmatori lo fanno per automatizzare l'interazione con i siti web, raccogliere informazioni o testare il contenuto.
+## Che cosa & Perché?
 
-## How to:
-Fish non è il linguaggio ideale per il parsing HTML, ma potete usare strumenti di riga di comando come `pup`, un parser HTML che si integra bene con Fish. Installiamo `pup` e proviamolo.
+Il parsing di HTML si riferisce all'estrazione di dati o informazioni da contenuti HTML, un compito comune quando si gestiscono dati web. I programmatori fanno ciò per automatizzare l'estrazione di informazioni dai siti web, per compiti come il web scraping, il data mining o il testing automatizzato.
 
-```Fish Shell
-# Installazione di pup su sistemi basati su Debian
-sudo apt install pup
+## Come fare:
 
-# Utilizzando pup per estrarre titoli da un file HTML
-cat index.html | pup 'h1 text{}'
+La shell Fish, prevalentemente, non è progettata per il parsing HTML direttamente. Tuttavia, eccelle nel collegare insieme strumenti Unix come `curl`, `grep`, `sed`, `awk`, o nell'utilizzo di strumenti specializzati come `pup` o `beautifulsoup` in uno script Python. Di seguito sono riportati esempi che illustrano come sfruttare questi strumenti all'interno della shell Fish per fare il parsing di HTML.
+
+### Utilizzando `curl` e `grep`:
+Recuperare contenuti HTML ed estrarre le righe che contengono link:
+
+```fish
+curl -s https://example.com | grep -oP '(?<=href=")[^"]*'
 ```
 
 Output:
 ```
-Il mio titolo di pagina
+/page1.html
+/page2.html
+...
 ```
 
-## Deep Dive
-Fish Shell non è stato progettato per il parsing HTML; è ottimizzato per la gestione di compiti di shell e pipeline. In passato, i programmatori usavano espressioni regolari per il parsing HTML, ma questo approccio è notoriamente fragile e complicato. Strumenti come `pup`, `beautifulsoup` (Python) o `nokogiri` (Ruby) sono ora preferiti perché analizzano HTML in modo più strutturato e sicuro, rispettando la complessità del linguaggio HTML. `pup` si ispira a `jq` per il JSON, offrendo una sintassi dichiarativa per navigare e manipolare HTML.
+### Utilizzando `pup` (uno strumento da riga di comando per il parsing di HTML):
 
-## See Also:
-- Documentazione di `pup`: https://github.com/ericchiang/pup
-- Tutorial su BeautifulSoup per Python: https://www.crummy.com/software/BeautifulSoup/bs4/doc/
-- Documentazione di `nokogiri` per Ruby: https://nokogiri.org/
+Prima, assicurati che `pup` sia installato. Poi puoi usarlo per estrarre elementi tramite i loro tag, id, classi, ecc.
+
+```fish
+curl -s https://example.com | pup 'a attr{href}'
+```
+
+Output, simile all'esempio `grep`, elencherà gli attributi href dei tag `<a>`.
+
+### Con uno script Python e `beautifulsoup`:
+
+Anche se Fish di per sé non può fare il parsing di HTML nativamente, si integra perfettamente con gli script Python. Di seguito è riportato un esempio conciso che utilizza Python con `BeautifulSoup` per fare il parsing ed estrarre titoli da HTML. Assicurati di avere `beautifulsoup4` e `requests` installati nel tuo ambiente Python.
+
+**parse_html.fish**
+
+```fish
+function parse_html -a url
+    python -c "
+import sys
+import requests
+from bs4 import BeautifulSoup
+
+response = requests.get(sys.argv[1])
+soup = BeautifulSoup(response.text, 'html.parser')
+
+titles = soup.find_all('title')
+
+for title in titles:
+    print(title.get_text())
+" $url
+end
+```
+
+Utilizzo:
+
+```fish
+parse_html 'https://example.com'
+```
+
+Output:
+```
+Esempio di dominio
+```
+
+Ciascuno di questi metodi serve casi d'uso e scale di complessità diverse, dalla semplice manipolazione di testo da riga di comando al pieno potere di parsing di `beautifulsoup` negli script Python. A seconda delle tue esigenze e della complessità della struttura HTML, potresti scegliere un semplice pipeline Unix o un approccio di scripting più potente.

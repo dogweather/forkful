@@ -1,66 +1,71 @@
 ---
 title:                "테스트 작성하기"
-date:                  2024-01-19
+date:                  2024-02-03T19:29:46.786599-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "테스트 작성하기"
-
 tag:                  "Testing and Debugging"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/bash/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (무엇과 왜?)
-테스트 작성은 코드가 예상한 대로 작동하는지 확인하는 과정입니다. 프로그래머는 버그를 사전에 발견하고, 소프트웨어의 품질을 향상시키기 위해 테스트를 작성합니다.
+## 무엇이며 왜인가?
+Bash에서 테스트를 작성하는 것은 Bash 스크립트의 기능을 검증하기 위해 테스트 케이스를 스크립팅하는 것을 포함합니다. 프로그래머는 다양한 조건에서 스크립트가 예상대로 작동하는지 확인하기 위해 테스트를 수행하여, 배포 전에 오류와 버그를 잡습니다.
 
-## How to: (방법)
-Bash에서 간단한 테스트를 작성하는 법을 배워봅시다. `test` 명령어와 `[ ]` 조건식을 이용할 거예요.
+## 방법:
+Bash에는 내장된 테스트 프레임워크가 없지만, 간단한 테스트 함수를 작성할 수 있습니다. 보다 정교한 테스트를 위해서는 `bats-core`와 같은 서드파티 도구가 인기 있습니다.
 
-```Bash
-#!/bin/bash
-# 숫자 비교 테스트
-num1=10
-num2=20
+### 순수 Bash에서의 기본 테스트 예제:
+```bash
+function test_example_function {
+  result=$(your_function 'test_input')
+  expected_output="expected_output"
 
-if [ $num1 -eq $num2 ]; then
-  echo "Numbers are equal"
-else
-  echo "Numbers are not equal"
-fi
+  if [[ "$result" == "$expected_output" ]]; then
+    echo "테스트 통과."
+    return 0
+  else
+    echo "테스트 실패. '$expected_output'을(를) 기대했으나, '$result'을(를) 받음"
+    return 1
+  fi
+}
+
+# 테스트 함수 호출
+test_example_function
+```
+샘플 출력:
+```
+테스트 통과.
 ```
 
-출력 예시:
+### 테스트를 위한 `bats-core` 사용하기:
+먼저, `bats-core`를 설치합니다. 이는 보통 패키지 관리자를 통하거나 리포지토리를 클로닝해서 할 수 있습니다.
+
+그다음, 별도의 `.bats` 파일에 테스트를 작성합니다.
+
+```bash
+# 파일: example_function.bats
+
+#!/usr/bin/env bats
+
+@test "예제 함수 테스트" {
+  result="$(your_function 'test_input')"
+  expected_output="expected_output"
+
+  [ "$result" == "$expected_output" ]
+}
 ```
-Numbers are not equal
+테스트를 실행하기 위해, 단순히 `.bats` 파일을 실행하십시오:
+```bash
+bats example_function.bats
+```
+샘플 출력:
+```
+ ✓ 예제 함수 테스트
+
+1 테스트, 0 실패
 ```
 
-문자열을 비교해봅시다:
-
-```Bash
-#!/bin/bash
-# 문자열 비교 테스트
-str1="Hello"
-str2="World"
-
-if [ "$str1" == "$str2" ]; then
-  echo "Strings are identical"
-else
-  echo "Strings are not identical"
-fi
-```
-
-출력 예시:
-```
-Strings are not identical
-```
-
-## Deep Dive (심층 분석)
-테스트는 소프트웨어 개발 초기부터 있어왔으며, 시간이 흘러 다양한 테스트 방법론이 개발되었습니다. 예를 들어, TDD(Test-Driven Development)는 테스트를 먼저 작성하고 코드를 작성하는 방식입니다. Bash에서는 `shunit2`, `Bats`와 같은 테스팅 프레임워크를 사용해 테스트를 더 체계적으로 할 수 있습니다. 이러한 도구들은 Bash 스크립트의 함수 또는 명령어를 테스트하기 위한 기능을 제공합니다.
-
-## See Also (더 보기)
-- Bash manual: https://www.gnu.org/software/bash/manual/
-- shunit2: https://github.com/kward/shunit2
-- Bats: https://github.com/bats-core/bats-core
-- Test-Driven Development: https://en.wikipedia.org/wiki/Test-driven_development
-
-이 문서들은 Bash 테스팅에 대한 더 깊은 이해와 프레임워크 사용법을 배울 수 있는 좋은 출발점입니다.
+이 접근법을 통해 개발 워크플로우에 테스트를 쉽게 통합함으로써, Bash 스크립트의 신뢰성과 안정성을 보장할 수 있습니다.

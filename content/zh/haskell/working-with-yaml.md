@@ -1,73 +1,87 @@
 ---
-title:                "处理 YAML 文件"
-date:                  2024-01-19
-simple_title:         "处理 YAML 文件"
-
+title:                "使用YAML工作"
+date:                  2024-02-03T19:25:26.997217-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "使用YAML工作"
 tag:                  "Data Formats and Serialization"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/haskell/working-with-yaml.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-## 什么是YAML编程，为什么要用？
+## 什么和为什么？
 
-Haskell中使用YAML常见于配置文件解析和数据交换。它易于阅读，支持复杂结构，能让程序更灵活。
+YAML，全称为“YAML Ain't Markup Language”（YAML不是标记语言），是一种对人类友好的数据序列化标准，可用于所有编程语言。程序员通常在配置文件和语言间的数据交换中使用YAML，因为它的可读性好和结构简单。
 
-## How to:
-## 如何实现:
+## 如何操作：
+
+Haskell 没有内置对 YAML 处理的支持，但你可以使用第三方库，如 `yaml` 和 `aeson`，来解析和生成 YAML 数据。以下是你可以开始的方法：
+
+### 读取 YAML
+首先，将 `yaml` 包添加到项目的依赖中。然后，你可以使用下面的例子来解析一个简单的 YAML 文档：
 
 ```haskell
 {-# LANGUAGE OverloadedStrings #-}
 
-import Data.Yaml
+import Data.YAML
+import Data.ByteString (ByteString)
+import Control.Monad.IO.Class (liftIO)
 
--- 假设我们有一个YAML文件：config.yaml
--- 内容如下：
--- name: "Zhang San"
--- age: 30
--- skills:
---   - Haskell
---   - Java
+-- 示例 YAML 数据
+yamlData :: ByteString
+yamlData = "
+name: John Doe
+age: 30
+"
 
--- 定义对应YAML结构的Haskell类型
-data Person = Person 
+-- 定义一个与 YAML 文档匹配的数据结构
+data Person = Person
   { name :: String
   , age :: Int
-  , skills :: [String]
   } deriving (Show)
 
-instance FromJSON Person where
-  parseJSON (Object v) =
-    Person <$> v .: "name"
-           <*> v .: "age"
-           <*> v .: "skills"
-  parseJSON _ = fail "Expected an Object for Person"
+instance FromYAML Person where
+  parseYAML = withMap "Person" $ \m -> Person
+    <$> m .: "name"
+    <*> m .: "age"
 
--- 解析YAML文件
 main :: IO ()
 main = do
-  eitherPerson <- decodeFileEither "config.yaml" :: IO (Either ParseException Person)
-  case eitherPerson of
-    Left err -> putStrLn $ "Error parsing YAML file: " ++ show err
+  let parsed = decode1 yamlData :: Either (Pos,String) Person
+  case parsed of
+    Left err -> putStrLn $ "解析 YAML 时出错：" ++ show err
     Right person -> print person
 ```
-
-输出样例：
-
+上述代码的示例输出可能看起来像：
 ```
-Person {name = "Zhang San", age = 30, skills = ["Haskell","Java"]}
+Person {name = "John Doe", age = 30}
 ```
 
-## Deep Dive:
-## 深入探索:
+### 写入 YAML
+要从 Haskell 数据结构生成 YAML，你可以使用 `yaml` 包的编码功能，如下所示：
 
-YAML诞生于2001年，它比JSON更适合复杂环境。Haskell社区使用`yaml`包处理YAML格式。其他格式，如JSON和XML, 在某些场景更受欢迎。YAML在Haskell中和`aeson`包类似，利用了类型类（Typeclasses）来实现解析和生成YAML数据。
+```haskell
+{-# LANGUAGE OverloadedStrings #-}
 
-## See Also:
-## 更多信息:
+import Data.YAML
+import Data.ByteString.Lazy.Char8 (unpack)
 
-- Haskell `yaml` package: https://hackage.haskell.org/package/yaml
-- YAML 官方网站: https://yaml.org
-- Aeson: 对比YAML在Haskell中的JSON实现: https://hackage.haskell.org/package/aeson
+-- 使用前一个例子中的 Person 数据结构
+
+person :: Person
+person = Person "Jane Doe" 25
+
+main :: IO ()
+main = do
+  let yamlData = encode1 person
+  putStrLn $ unpack yamlData
+```
+这个程序的输出将是一个 YAML 格式化的字符串：
+```
+name: Jane Doe
+age: 25
+```
+
+这些例子应该作为使用 Haskell 处理 YAML 的起点。根据你的需要，你可能想探索这些库提供的更高级的功能和选项。

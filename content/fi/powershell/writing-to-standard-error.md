@@ -1,47 +1,65 @@
 ---
-title:                "Kirjoittaminen vakiovirheeseen"
-date:                  2024-01-19
-simple_title:         "Kirjoittaminen vakiovirheeseen"
-
+title:                "Kirjoittaminen standardivirheeseen"
+date:                  2024-02-03T19:34:36.484239-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Kirjoittaminen standardivirheeseen"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/powershell/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Mikä on standard error (stderr) ja miksi siihen kirjoitetaan? Stderr on erillinen tulostevirta ohjelman virheilmoituksille. Ohjelmoijat käyttävät stderr:ää erottamaan normaalin ohjelmantulosteen ja virheilmoitukset, mikä helpottaa virheiden käsittelyä ja lokien seurantaa.
+## Mikä & Miksi?
 
-## How to:
-Kirjoita stderr:iin PowerShellissa käyttäen `Write-Error`-komentoa tai ohjaamalla tulostus `Write-Host`-komennolla stderr:iin `-ForegroundColor`-parametrilla.
+Standardivirheeseen (stderr) kirjoittaminen PowerShellissa tarkoittaa virhesanomien tai diagnostiikkatietojen lähettämistä suoraan stderr-virtaan, joka on erillinen standarditulostevirrasta (stdout). Tämä erottelu mahdollistaa tarkemman hallinnan skriptin tulosteen suhteen, mahdollistaen kehittäjille normaalien ja virhesanomien ohjaamisen eri kohteisiin, mikä on olennaista virheenkäsittelyssä ja lokitiedostojen kirjaamisessa.
 
-```PowerShell
-# Stderr:iin kirjoittaminen Write-Errorin avulla
-Write-Error "Tämä on virheilmoitus"
+## Kuinka:
 
-#Stderr:iin kirjoittaminen Write-Hostin avulla
-Write-Host "Tämä on myös virheilmoitus" -ForegroundColor Red 1>&2
+PowerShell yksinkertaistaa stderriin kirjoittamisen prosessia käyttäen `Write-Error` cmdlet-komentoa tai ohjaamalla tulosteen `$host.ui.WriteErrorLine()` metodiin. Kuitenkin suoraa stderr-ohjausta varten saatat mieluummin käyttää .NET-menetelmiä tai PowerShellin itsensä tarjoamaa tiedostosuuntaimen uudelleenohjausta.
+
+**Esimerkki 1:** `Write-Error` käyttö virhesanoman kirjoittamiseen stderriin.
+
+```powershell
+Write-Error "Tämä on virhesanoma."
 ```
 
-Esimerkkien tulostus:
-
+Tuloste stderriin:
 ```
-Write-Error : Tämä on virheilmoitus
-At line:1 char:1
-+ Write-Error "Tämä on virheilmoitus"
-+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : NotSpecified: (:) [Write-Error], WriteErrorException
-    + FullyQualifiedErrorId : Microsoft.PowerShell.Commands.WriteErrorException
-
-Tämä on myös virheilmoitus
+Write-Error: Tämä on virhesanoma.
 ```
 
-## Deep Dive:
-PowerShellin ensimmäisistä versioista lähtien, stderr sallii virheiden ohjaamisen erilliseen virtaan, mikä tekee virheiden hallinnasta selkeämpää. Vaihtoehtoisen menetelmänä virhetiedon kirjoittamiseen on `$host.ui.WriteErrorLine("Virheilmoitus")`, mutta `Write-Error` ja `Write-Host` ovat yleisempiä. Käyttöympäristöstä riippuen, stderr:iin kirjoittaminen voi aktivoida erilaisia hälytyksiä tai toimintoja.
+**Esimerkki 2:** `$host.ui.WriteErrorLine()` käyttö suoraan stderr-kirjoitukseen.
 
-## See Also:
-Powershellin dokumentaatio virheiden käsittelystä:
-- [About Automatic Variables](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_automatic_variables?view=powershell-7.1#success-and-error-streams)
+```powershell
+$host.ui.WriteErrorLine("Suora stderr-kirjoitus.")
+```
 
-StackOverflow-keskusteluja stderr:n käytöstä PowerShellissa:
-- [How do I write standard error output in PowerShell?](https://stackoverflow.com/questions/4995733/how-do-i-write-standard-error-output-in-powershell)
+Tuloste stderriin:
+```
+Suora stderr-kirjoitus.
+```
+
+**Esimerkki 3:** .NET-menetelmien käyttö kirjoittaessa stderriin.
+
+```powershell
+[Console]::Error.WriteLine("Käytetään .NET-menetelmää stderrille")
+```
+
+Tämän menetelmän tuloste:
+```
+Käytetään .NET-menetelmää stderrille
+```
+
+**Esimerkki 4:** Virhetulosteen uudelleenohjaus käyttämällä tiedostosuunnainta `2>`.
+
+PowerShellissa tiedostosuuntimet voivat ohjata erilaisia virtoja. Stderrille tiedostosuunnain on `2`. Tässä on esimerkki, jossa stderr uudelleenohjataan tiedostoon nimeltä `error.log` suorittaessa komentoa, joka generoi virheen.
+
+```powershell
+Get-Item NonExistentFile.txt 2> error.log
+```
+
+Tämä esimerkki ei tuota konsolitulostetta, mutta generoi nykyiseen hakemistoon tiedoston `error.log`, joka sisältää virhesanoman yrittäessäsi käyttää olematonta tiedostoa.
+
+Yhteenvetona, PowerShell tarjoaa useita menetelmiä virhetulosteen tehokkaaseen kirjaamiseen ja hallintaan, mahdollistaen kehittyneet virheenkäsittely- ja lokitiedostojen kirjausstrategiat skripteissä ja sovelluksissa.

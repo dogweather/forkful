@@ -1,8 +1,8 @@
 ---
 title:                "Using regular expressions"
-date:                  2024-01-19
+date:                  2024-02-03T19:02:42.902269-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Using regular expressions"
-
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/fish-shell/using-regular-expressions.md"
 ---
@@ -10,60 +10,65 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Regular expressions, or regex, are patterns that describe sets of strings. Programmers use them to search, match, and manipulate text — super handy for finding needles in data haystacks.
+
+Regular expressions (regex) in Fish Shell allow you to search, match, and manipulate strings based on specific patterns. Programmers utilize regex for tasks like input validation, parsing, and text processing because it offers a compact and powerful way to specify complex text patterns.
 
 ## How to:
-The Fish Shell has built-in regex support in commands like `string`. Let's dive into some examples:
 
-**Basic Search:**
+While Fish Shell itself does not have a built-in command for regex, it effectively uses external commands like `grep`, `sed`, and `awk` that support regex, allowing you to incorporate regex operations in your scripts.
 
-Find if "fish" is in the string:
-
-```fish
-echo "I love to fish for fish in my fish tank" | string match -r "fish"
-```
-
-Output:
-
-```
-fish
-fish
-fish
-```
-
-**Capture Groups:**
-
-Extract matched groups using parentheses:
+### Basic Pattern Matching with `grep`
+Search for lines in a file that match a pattern:
 
 ```fish
-echo "Color: Blue, Code: #0000FF" | string match -r "Color: (\w+)"
+grep '^[0-9]+' myfile.txt
 ```
 
-Output:
+This command finds lines starting with one or more digits in `myfile.txt`.
 
-```
-Color: Blue
-Blue
-```
-
-**Replace Text:**
-
-Swap "fish" with "shark":
+### Extracting & Replacing with `sed`
+Extract phone numbers from a file:
 
 ```fish
-echo "One fish, two fish, red fish, blue fish" | string replace -ar "fish" "shark"
+sed -n '/\([0-9]\{3\}\)-\([0-9]\{3\}\)-\([0-9]\{4\}\)/p' contacts.txt
 ```
 
+Replace all occurrences of "foo" with "bar" in `data.txt`:
+
+```fish
+sed 's/foo/bar/g' data.txt
+```
+
+### Using `string` for Basic Regex
+Fish Shell's `string` command supports simple regex operations like match and replace:
+
+Match a pattern in a string:
+
+```fish
+echo "fish 3.1.2" | string match -r '3\.[0-9]+\.[0-9]+'
+```
 Output:
-
 ```
-One shark, two shark, red shark, blue shark
+3.1.2
 ```
 
-## Deep Dive:
-Regular expressions hail from theoretical computer science, concocted in the 1950s. Alternatives? Sure, you've got simple string searches or parsers for more structure, but regex is sweet for quick and dirty tasks. The Fish Shell uses PCRE (Perl Compatible Regular Expressions) under the hood, ensuring a robust set of features for pattern matching.
+Replace digits following 'fish' with 'X.X.X':
 
-## See Also:
-- Official Fish Shell documentation: [The string Command](https://fishshell.com/docs/current/cmds/string.html)
-- Regex tutorial for beginners: [Regular Expressions 101](https://regex101.com/)
-- In-depth understanding: [Mastering Regular Expressions by Jeffrey Friedl](http://shop.oreilly.com/product/9780596528126.do)
+```fish
+echo "Welcome to fish 3.1.2" | string replace -ra '([fish]+\s)[0-9\.]+' '$1X.X.X'
+```
+Output:
+```
+Welcome to fish X.X.X
+```
+
+### Advanced Matching with `awk`
+Print the second column of data where the first column matches a specific pattern:
+
+```fish
+awk '$1 ~ /^a[0-9]+$/ {print $2}' datafile
+```
+
+This command looks for lines in `datafile` where the first column starts with an "a" followed by one or more digits and prints the second column.
+
+By integrating these external commands, Fish Shell programmers can harness the full power of regular expressions for complex text manipulation tasks, enhancing the shell's native capabilities.

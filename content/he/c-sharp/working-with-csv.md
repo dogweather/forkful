@@ -1,77 +1,151 @@
 ---
-title:                "עבודה עם קבצי CSV"
-date:                  2024-01-19
-simple_title:         "עבודה עם קבצי CSV"
-
+title:                "עובדים עם CSV"
+date:                  2024-02-03T19:19:51.212513-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "עובדים עם CSV"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/c-sharp/working-with-csv.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-CSV (Comma-Separated Values) זה פורמט קובץ טקסט פשוט שמשמש לאחסון נתונים. מתכנתים עובדים איתו כי הוא קריא, נגיש וקל לעיבוד.
+## מה ולמה?
+קבצי CSV (ערכים מופרדים בפסיק) הם פורמט נפוץ להחלפת נתונים שמייצגים נתונים טבלאיים בטקסט רגיל, תוך שימוש בפסיקים להפרדת הערכים היחידים. מתכנתים עוסקים בקבצי CSV כדי לייבא, לייצא, ולעבד נתונים בקלות בין שירותים ואפליקציות שונות, מאחר שמדובר בפורמט פשוט, נתמך ברחבי, התואם לאפליקציות נתונים טבלאיים, מסדי נתונים, ושפות תכנות.
 
-## How to:
-קריאה מ-CSV:
-```C#
+## איך לעשות:
+עבודה עם קבצי CSV ב-C# יכולה להתבצע דרך המרחב השם `System.IO` לפעולות בסיסיות, ולמניפולציות מורכבות יותר או לטיפול בקבצים גדולים ללא תקלות, כדאי לשקול להשתמש בספריות צד שלישי כמו `CsvHelper`. להלן דוגמאות לקריאה מקבצי CSV וכתיבה אליהם בשתי הדרכים.
+
+### קריאת קובץ CSV באמצעות System.IO
+```csharp
 using System;
 using System.IO;
 
-class Program
+class ReadCSV
 {
     static void Main()
     {
-        var filePath = @"path\to\your\file.csv";
-        var lines = File.ReadAllLines(filePath);
-
-        foreach (var line in lines)
+        string filePath = @"path\to\your\file.csv";
+        // קריאת כל השורות של קובץ ה-CSV
+        string[] csvLines = File.ReadAllLines(filePath);
+        
+        foreach (string line in csvLines)
         {
-            var values = line.Split(',');
-            Console.WriteLine($"{values[0]} {values[1]}");
+            string[] rowData = line.Split(',');
+            Console.WriteLine($"עמודה ראשונה: {rowData[0]}, עמודה שנייה: {rowData[1]}");
         }
     }
 }
 ```
-פלט דוגמא:
+
+**פלט לדוגמה:**
 ```
-שם ראשון שם אחרון
-ישראל ישראלי
+עמודה ראשונה: שם, עמודה שנייה: גיל
+עמודה ראשונה: ג'ון דו, עמודה שנייה: 30
 ```
 
-כתיבה ל-CSV:
-```C#
+### כתיבה לקובץ CSV באמצעות System.IO
+```csharp
 using System;
 using System.Collections.Generic;
 using System.IO;
 
-class Program
+class WriteCSV
 {
     static void Main()
     {
-        var data = new List<string[]>
+        string filePath = @"path\to\your\output.csv";
+        var lines = new List<string>
         {
-            new string[] {"שם ראשון", "שם אחרון"},
-            new string[] {"ישראל", "ישראלי"}
+            "שם,גיל",
+            "ג'ון דו,30",
+            "ג'יין סמית',25"
         };
         
-        var filePath = @"path\to\new\file.csv";
-        
-        using (var sw = new StreamWriter(filePath))
+        File.WriteAllLines(filePath, lines);
+        Console.WriteLine("קובץ CSV נכתב.");
+    }
+}
+```
+
+**פלט לדוגמה:**
+```
+קובץ CSV נכתב.
+```
+
+### שימוש ב-CsvHelper לקריאת CSV
+לשימוש ב-CsvHelper, ראשית, הוסף את חבילת `CsvHelper` לפרויקט שלך באמצעות ניהול חבילות NuGet.
+
+```csharp
+using CsvHelper;
+using System.Globalization;
+using System.IO;
+using System.Linq;
+using CsvHelper.Configuration;
+
+class ReadCSVWithCsvHelper
+{
+    static void Main()
+    {
+        string filePath = @"path\to\your\file.csv";
+
+        using (var reader = new StreamReader(filePath))
+        using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
         {
-            foreach (var line in data)
+            var records = csv.GetRecords<dynamic>().ToList();
+            foreach (var record in records)
             {
-                sw.WriteLine(string.Join(",", line));
+                Console.WriteLine($"עמודה ראשונה: {record.Name}, עמודה שנייה: {record.Age}");
             }
         }
     }
 }
 ```
 
-## Deep Dive:
-CSV הוא פורמט עתיק שנוצר בשנות ה-70. הוא בר-שימוש גבוה גם היום בזכות פשטותו. ישנם חלופות כמו XML ו-JSON, אבל ל-CSV יתרונות במהירות ופשטות. פרסר CSV מובנה אינו קיים ב-C#, אבל ניתן להשתמש בפונקציות קריאה וכתיבה סטנדרטיות או להשתמש בספריות צד שלישי.
+**פלט לדוגמה:**
+```
+עמודה ראשונה: ג'ון דו, עמודה שנייה: 30
+עמודה ראשונה: ג'יין סמית', עמודה שנייה: 25
+```
 
-## See Also:
-- [Microsoft Documentation on File I/O](https://docs.microsoft.com/en-us/dotnet/standard/io/)
-- [CsvHelper library](https://joshclose.github.io/CsvHelper/)
-- [RFC 4180 - Common Format and MIME Type for CSV Files](https://tools.ietf.org/html/rfc4180)
+### שימוש ב-CsvHelper לכתיבת CSV
+```csharp
+using CsvHelper;
+using System.Globalization;
+using System.IO;
+using System.Collections.Generic;
+using CsvHelper.Configuration;
+
+class WriteCSVWithCsvHelper
+{
+    public class Person
+    {
+        public string Name { get; set; }
+        public int Age { get; set; }
+    }
+
+    static void Main()
+    {
+        string filePath = @"path\to\your\output.csv";
+        var records = new List<Person>
+        {
+            new Person { Name = "ג'ון דו", Age = 30 },
+            new Person { Name = "ג'יין סמית'", Age = 25 }
+        };
+
+        using (var writer = new StreamWriter(filePath))
+        using (var csv = new CsvWriter(writer, CultureInfo.InvariantCulture))
+        {
+            csv.WriteRecords(records);
+        }
+        
+        Console.WriteLine("קובץ CSV נכתב עם CsvHelper.");
+    }
+}
+```
+
+**פלט לדוגמה:**
+```
+קובץ CSV נכתב עם CsvHelper.
+```

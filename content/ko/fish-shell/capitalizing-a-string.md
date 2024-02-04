@@ -1,42 +1,57 @@
 ---
-title:                "문자열 대문자로 변환하기"
-date:                  2024-01-19
-simple_title:         "문자열 대문자로 변환하기"
-
+title:                "문자열 대문자화"
+date:                  2024-02-03T19:05:23.412968-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "문자열 대문자화"
 tag:                  "Strings"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/fish-shell/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (무엇이며, 왜 사용하나요?)
-문자열 대문자화는 문자열의 모든 문자를 대문자로 바꾸는 것입니다. 이를 통해 로봇이 아닌 사람이 읽기 쉬운 텍스트로 변환할 수 있거나, 데이터 정규화에 활용됩니다.
+## 무엇이며 왜?
 
-## How to (어떻게 하나요?)
-Fish Shell에서 문자열을 대문자로 만드는 방법을 아래 코드 블록에서 확인할 수 있습니다.
+문자열을 대문자화한다는 것은 첫 글자를 대문자로, 나머지 문자열은 소문자로 수정하는 것을 의미합니다. 이는 텍스트 처리, 사용자 입력 정규화, 데이터 포맷팅 등에서 일관성을 확보하거나 특정 포맷팅 기준을 충족시키기 위해 흔히 수행되는 작업입니다.
 
-```Fish Shell
-function capitalize_string
-    set -l str $argv
-    echo $str | string to-upper
-end
+## 어떻게 하나요:
 
-set my_string "fish shell은 재미있습니다."
-capitalize_string $my_string
+Fish Shell에서는 외부 도구나 라이브러리 없이 내장 함수만을 이용해 직접 문자열을 조작할 수 있습니다. 문자열을 대문자화하기 위해서는 `string` 명령과 서브커맨드들을 결합할 수 있습니다.
+
+```fish
+# 샘플 문자열
+set sample_string "hello world"
+
+# 첫 글자 대문자화
+set capitalized_string (string sub -l 1 -- $sample_string | string upper)(string sub -s 2 -- $sample_string)
+
+echo $capitalized_string
 ```
 
-출력 결과:
+출력:
 ```
-FISH SHELL은 재미있습니다.
+Hello world
 ```
 
-## Deep Dive (심층 분석)
-문자열 대문자화는 오래된 컴퓨팅 개념입니다. 초기 프로그래밍 언어부터 사용자의 입력을 일관된 형태로 처리하기 위해 쓰여왔죠. Fish Shell은 여러 내장 명령어로 대문자화를 쉽게 만들어줍니다. `string` 명령어는 Fish 2.3.0부터 추가되었으며 문자열 조작을 위한 강력한 도구입니다. Fish에서 대문자화 이외에도, `string to-lower`, `string trim`, `string replace` 등 다양한 문자열 조작을 지원합니다.
+문자열 내 여러 단어를 대문자화해야 하는 시나리오(예: "hello world"를 "Hello World"로 변환)의 경우, 각 단어에 대해 대문자화 로직을 적용하면서 반복하게 됩니다:
 
-대안으로는 `awk`, `tr`, `sed` 같은 유닉스 표준 도구를 이용할 수 있지만, Fish 내장 기능이 더 간결하고 사용하기 쉽습니다. 특히 `string to-upper`는 유니코드 문자를 올바르게 처리하며, 이는 다국어를 지원하는 현대 애플리케이션에서 중요한 특징입니다.
+```fish
+# 샘플 문장
+set sentence "hello fish shell programming"
 
-## See Also (참고자료)
-- Fish Shell 공식 문서(`string` 명령어): https://fishshell.com/docs/current/cmds/string.html
-- Fish Shell GitHub 페이지: https://github.com/fish-shell/fish-shell
-- 유닉스 문자 조작에 대한 더 넓은 배경 지식: https://en.wikipedia.org/wiki/String_(computer_science)
+# 각 단어 대문자화
+set capitalized_words (string split " " -- $sentence | while read -l word; string sub -l 1 -- $word | string upper; and string sub -s 2 -- $word; end)
+
+# 대문자화된 단어들을 합치기
+set capitalized_sentence (string join " " -- $capitalized_words)
+
+echo $capitalized_sentence
+```
+
+출력:
+```
+Hello Fish Shell Programming
+```
+
+Fish Shell은 일부 프로그래밍 언어가 그들의 문자열 메서드를 사용하여 제공하는 것처럼 전체 문장 대문자화를 위한 단일 명령어 접근 방식을 직접 제공하지 않습니다. 따라서, `string split`, `string sub`, `string upper`을 결합한 후 다시 조합하는 것은 이를 달성하기 위한 Fish Shell에서의 관례적인 접근법을 나타냅니다.

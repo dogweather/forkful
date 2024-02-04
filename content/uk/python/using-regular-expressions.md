@@ -1,51 +1,97 @@
 ---
 title:                "Використання регулярних виразів"
-date:                  2024-01-19
+date:                  2024-02-03T19:18:15.563233-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Використання регулярних виразів"
-
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/python/using-regular-expressions.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-(## Що та Чому?)
-Regular expressions (regexes) are patterns used to match character combinations in text strings. Programmers use regexes for searching, editing, or validating text because they're fast and versatile.
+## Що і чому?
+Регулярні вирази (regex) – це шаблони, що використовуються для пошуку комбінацій символів у рядках. Програмісти використовують їх для пошуку, редагування чи маніпуляції текстом на основі визначених шаблонів, що робить їх незамінними для завдань, як-от валідація даних, парсинг або трансформація.
 
-## How to:
-(## Як це зробити:)
-```Python
+## Як використовувати:
+Використання regex у Python передбачає модуль `re`, який надає набір функцій для обробки тексту за допомогою регулярних виразів.
+
+### Базове співставлення шаблонів
+Щоб шукати шаблон у рядку, використовуйте `re.search()`. Це повертає об’єкт збігу, коли знайдено шаблон, інакше `None`.
+```python
 import re
 
-# Example 1: Finding email addresses
-text = "Send your feedback to hello@example.com or contact@example.org"
-emails = re.findall(r'[\w\.-]+@[\w\.-]+', text)
-print(emails)
+text = "Вивчаємо програмування на Python"
+match = re.search("Python", text)
+if match:
+    print("Шаблон знайдено!")
+else:
+    print("Шаблон не знайдено.")
+```
+Вивід:
+```
+Шаблон знайдено!
+```
 
-# Example 2: Replacing all digits in a string with a dash
-text_with_numbers = "My phone number is 123-456-7890"
-replaced_text = re.sub(r'\d', '-', text_with_numbers)
+### Компілювання регулярних виразів
+Для повторного використання одного й того ж шаблону спочатку скомпілюйте його за допомогою `re.compile()` для кращої продуктивності.
+```python
+pattern = re.compile("Python")
+match = pattern.search("Вивчаємо програмування на Python")
+if match:
+    print("Скомпільований шаблон знайдено!")
+```
+Вивід:
+```
+Скомпільований шаблон знайдено!
+```
+
+### Розбиття рядків
+Щоб розібрати рядок на кожен збіг за шаблоном regex, використовуйте `re.split()`.
+```python
+result = re.split("\s", "Python це весело")
+print(result)
+```
+Вивід:
+```
+['Python', 'це', 'весело']
+```
+
+### Знаходження всіх збігів
+Щоб знайти всі неперекриваючі збіги шаблону, використовуйте `re.findall()`.
+```python
+matches = re.findall("n", "Програмування на Python")
+print(matches)
+```
+Вивід:
+```
+['n', 'n']
+```
+
+### Заміна тексту
+Використовуйте `re.sub()` для заміни збігів патерну на новий рядок.
+```python
+replaced_text = re.sub("весело", "чудово", "Python це весело")
 print(replaced_text)
-
-# Example 3: Validating a password strength
-password = "StrongPassw0rd!"
-is_strong = bool(re.fullmatch(r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$', password))
-print(is_strong)
 ```
-_Output:_
+Вивід:
 ```
-['hello@example.com', 'contact@example.org']
-My phone number is ---_---_----
-True
+Python це чудово
 ```
 
-## Deep Dive:
-(## Поглиблений Розгляд:)
-Regular expressions originated in the 1950s with formal language theory. Alternatives to regex include string methods like `find()` or `replace()`, or using parsers for complex text structure. Python implements regex via the `re` module, which uses a backtracking algorithm, meaning it can get slow for complex patterns.
+### Сторонні бібліотеки
+Хоча вбудований модуль `re` в Python є потужним, сторонні бібліотеки, такі як `regex`, пропонують більше функцій та покращену продуктивність. Щоб використовувати `regex`, встановіть його через pip (`pip install regex`) і імпортуйте у свій код.
 
-## See Also:
-(## Додатково:)
-- Python's `re` module documentation: https://docs.python.org/3/library/re.html
-- Regex101 (for testing regex patterns): https://regex101.com/
-- Automate the Boring Stuff with Python (Chapter on regex): https://automatetheboringstuff.com/chapter7/
+```python
+import regex
+
+text = "Вивчення Python 3.8"
+match = regex.search(r"Python\s(\d+\.\d+)", text)
+if match:
+    print(f"Знайдена версія: {match.group(1)}")
+```
+Вивід:
+```
+Знайдена версія: 3.8
+```

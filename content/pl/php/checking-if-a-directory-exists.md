@@ -1,52 +1,73 @@
 ---
 title:                "Sprawdzanie, czy katalog istnieje"
-date:                  2024-01-20T14:57:47.511534-07:00
+date:                  2024-02-03T19:08:26.047038-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Sprawdzanie, czy katalog istnieje"
-
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/php/checking-if-a-directory-exists.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-"Co i Dlaczego?"
+## Co i dlaczego?
 
-Sprawdzanie, czy katalog istnieje w PHP, to sprawdzanie obecności danego folderu na serwerze. Robimy to, żeby uniknąć błędów podczas tworzenia plików, zapisywania danych czy też ładowania zasobów z katalogów, które mogłyby nie istnieć.
+Sprawdzanie, czy katalog istnieje, jest podstawowym zadaniem w programowaniu PHP, ponieważ pozwala na weryfikację obecności katalogu przed wykonaniem operacji takich jak odczyt z plików w nim zawartych lub zapis do nich. Ta operacja pomaga zapobiegać błędom, które mogłyby wyniknąć z próby dostępu do nieistniejących katalogów i jest niezbędna dla dynamicznego zarządzania plikami w twoich aplikacjach.
 
-## How to:
-"Jak to zrobić:"
+## Jak to zrobić:
 
-Sprawdzanie, czy katalog istnieje, jest proste. Używamy funkcji `is_dir()` do sprawdzenia, a `mkdir()` do stworzenia katalogu, jeśli nie istnieje.
+Natywnym sposobem na sprawdzenie, czy katalog istnieje w PHP, jest użycie funkcji `is_dir()`. Funkcja ta przyjmuje ścieżkę do katalogu jako argument i zwraca `true`, jeśli katalog istnieje i jest katalogiem, lub `false` w przeciwnym razie.
 
-```PHP
-<?php
-$directory = "/some/path/to/directory";
+```php
+$directoryPath = "/ścieżka/do/twojego/katalogu";
 
-if (is_dir($directory)) {
-    echo "Katalog już istnieje.";
+if(is_dir($directoryPath)) {
+    echo "Katalog istnieje.";
 } else {
-    mkdir($directory, 0777, true);
-    echo "Katalog został stworzony.";
+    echo "Katalog nie istnieje.";
 }
-?>
 ```
-Wynik działania:
-Jeśli katalog istnieje: `Katalog już istnieje.`
-Jeśli katalog nie istnieje: `Katalog został stworzony.`
 
-## Deep Dive
-"Dogłębna analiza"
+Przykładowe Wyjście:
+```
+Katalog istnieje.
+```
+Lub, jeśli katalog nie istnieje:
+```
+Katalog nie istnieje.
+```
 
-Sprawdzanie istnienia katalogu nie zawsze było tak proste. W starszych wersjach PHP, przed wprowadzeniem `is_dir()`, programiści musieli korzystać z innych funkcji, jak `file_exists()`, co nie zawsze dawało pewność. Alternatywnie, można użyć `file_exists()` do sprawdzania zarówno plików, jak i katalogów, ale `is_dir()` jest specyficzne dla katalogów, co czyni kod bardziej zrozumiałym.
+Chociaż standardowa biblioteka PHP jest wystarczająco rozbudowana dla większości zadań związanych z manipulacją katalogami i plikami, czasami możesz potrzebować bardziej kompleksowego rozwiązania. W takich przypadkach popularną biblioteką zewnętrzną jest komponent Filesystem od Symfony. Oferuje on szeroki zakres narzędzi do pracy z systemem plików, w tym prosty sposób na sprawdzenie, czy katalog istnieje.
 
-Kiedy `mkdir()` tworzy katalog, drugi parametr określa prawa dostępu (w Unixowych systemach), a trzeci, ustawiony na `true`, pozwala na rekursywne tworzenie struktury katalogów.
+Najpierw musisz zainstalować komponent Filesystem od Symfony. Jeśli używasz Composer (menedżera zależności dla PHP), możesz uruchomić następujące polecenie w katalogu swojego projektu:
 
-Przy implementacji zawsze warto zastanowić się nad obsługą wyjątków i błędów, na przykład co zrobić, jeśli stworzenie katalogu się nie powiedzie.
+```
+composer require symfony/filesystem
+```
 
-## See Also
-"Zobacz również"
+Po zainstalowaniu komponentu Filesystem od Symfony, możesz użyć go do sprawdzenia, czy katalog istnieje, w następujący sposób:
 
-- Oficjalna dokumentacja PHP na `is_dir()`: https://www.php.net/manual/en/function.is-dir.php
-- Oficjalna dokumentacja PHP na `mkdir()`: https://www.php.net/manual/en/function.mkdir.php
-- Wskazówki na temat praw dostępu do plików w PHP: https://www.php.net/manual/en/function.chmod.php
+```php
+use Symfony\Component\Filesystem\Filesystem;
+
+$filesystem = new Filesystem();
+$directoryPath = '/ścieżka/do/twojego/katalogu';
+
+if($filesystem->exists($directoryPath)) {
+    echo "Katalog istnieje.";
+} else {
+    echo "Katalog nie istnieje.";
+}
+```
+
+Przykładowe Wyjście:
+```
+Katalog istnieje.
+```
+Lub, jeśli katalog nie istnieje:
+```
+Katalog nie istnieje.
+```
+
+Obie metody zapewniają wiarygodny sposób na sprawdzenie istnienia katalogu w PHP. Wybór między używaniem wbudowanych funkcji PHP a biblioteką zewnętrzną jak komponent Filesystem od Symfony zależy od konkretnych potrzeb twojego projektu i tego, czy wymagasz dodatkowych manipulacji systemem plików, które mogą być efektywniej obsłużone przez bibliotekę.

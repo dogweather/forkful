@@ -1,53 +1,69 @@
 ---
 title:                "Tekstitiedoston kirjoittaminen"
-date:                  2024-01-19
+date:                  2024-02-03T19:28:30.211979-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Tekstitiedoston kirjoittaminen"
-
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/javascript/writing-a-text-file.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Kirjoittaa tekstitiedosto tarkoittaa tiedon tallentamista tekstimuodossa tiedostoon. Koodarit tekevät tätä datan pysyvään säilytykseen, asetusten tallennukseen tai lokitiedostojen luomiseen.
+## Mikä ja miksi?
+Tekstitiedoston kirjoittaminen JavaScriptillä liittyy usein datan luomiseen ja tallentamiseen yksinkertaisessa, luettavassa muodossa lokitusta, käyttäjäsyötteen viemistä tai konfiguraatiotarkoituksia varten. Tämä toiminnallisuus on kriittistä sovelluksille, jotka tarvitsevat säilyttää tietoa sovellusprosessin elinkaaren yli, tarjoten tavan varastoida ja myöhemmin noutaa tai jakaa tietoa.
 
-## How to:
+## Kuinka:
+Node.js-ympäristössä voit käyttää sisäänrakennettua `fs` (File System) moduulia tekstitiedostojen kirjoittamiseen. Tämä esimerkki demonstroi tekstin kirjoittamista tiedostoon asynkronisesti:
 
-Node.js:lla tallennetaan tiedosto `fs`-moduulin avulla:
-
-```Javascript
+```javascript
 const fs = require('fs');
 
-let data = "Terve maailma!";
+const data = 'Hello, World! This is text to be written into a file.';
 
-fs.writeFile('tervetuloa.txt', data, (err) => {
-    if (err) throw err;
-    console.log('Tiedosto tallennettu!');
+fs.writeFile('example.txt', data, (err) => {
+  if (err) {
+    throw err;
+  }
+  console.log('Tiedosto on kirjoitettu.');
 });
 ```
 
-Selaimessa käytä `Blob`-objektia ja tallenna tiedosto `a`-elementin `href`-ominaisuuden kautta:
-
-```Javascript
-let data = "Terve selainmaailma!";
-let blob = new Blob([data], { type: 'text/plain' });
-
-let a = document.createElement('a');
-a.download = 'terveiset.txt';
-a.href = window.URL.createObjectURL(blob);
-a.style.display = 'none';
-document.body.appendChild(a);
-a.click();
-document.body.removeChild(a);
+Esimerkkituloste:
+```
+Tiedosto on kirjoitettu.
 ```
 
-## Deep Dive
+Synkronista tiedoston kirjoittamista varten käytä `writeFileSync`:
+```javascript
+try {
+  fs.writeFileSync('example.txt', data);
+  console.log('Tiedosto on kirjoitettu.');
+} catch (error) {
+  console.error('Tiedoston kirjoittamisvirhe:', error);
+}
+```
 
-Kirjoittaminen tekstitiedostoon on ollut tärkeä osa ohjelmointia alusta alkaen. Erityisesti palvelimella Node.js:n `fs`-moduuli on standardityökalu tähän, kun taas selaimessa tiedoston kirjoitusominaisuudet ovat rajatumpia turvallisuussyistä. Vaihtoehtoisesti voit käyttää tietokantoja tai pilvipalveluita pysyvään datan tallennukseen. Implementaatiotiedot vaihtelevat alustoittain, kuten tiedostonkäsittelyssä käytettävät käyttöoikeudet tai prosessit.
+Nykyisissä verkkoselaimissa File System Access API tuo mahdollisuuden lukea ja kirjoittaa tiedostoja. Sen käyttö on kuitenkin käyttäjän lupien alaista. Tässä on esimerkki, kuinka luoda ja kirjoittaa tiedostoon:
 
-## See Also
+```javascript
+if ('showSaveFilePicker' in window) {
+  const handle = await window.showSaveFilePicker();
+  const writable = await handle.createWritable();
+  await writable.write('Hello, World! This is browser text file writing.');
+  await writable.close();
+}
+```
 
-- Node.js FileSystem Documentation: [https://nodejs.org/api/fs.html](https://nodejs.org/api/fs.html)
-- MDN Web Docs Blob-käyttö: [https://developer.mozilla.org/en-US/docs/Web/API/Blob](https://developer.mozilla.org/en-US/docs/Web/API/Blob)
-- HTML Living Standard for a.download: [https://html.spec.whatwg.org/#the-a-element](https://html.spec.whatwg.org/#the-a-element)
+Monimutkaisemmissa skenaarioissa tai suurten tiedostojen kanssa työskennellessä saatat valita kolmannen osapuolen kirjastoja, kuten `FileSaver.js` selaimille:
+
+```html
+<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.2/FileSaver.min.js"></script>
+<script>
+  const blob = new Blob(["Hello, World! This is text from FileSaver.js."], {type: "text/plain;charset=utf-8"});
+  saveAs(blob, "example.txt");
+</script>
+```
+
+Muista, että tiedostojen kirjoittaminen asiakaspuolella (selaimissa) on rajoitettua turvallisuussyistä, ja kaikki toiminnot, jotka edellyttävät tallentamista käyttäjän paikalliselle levylle, vaativat yleensä heidän nimenomaisen luvansa.

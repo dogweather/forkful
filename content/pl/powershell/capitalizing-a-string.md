@@ -1,63 +1,45 @@
 ---
-title:                "Zamiana liter na wielkie w ciągu znaków"
-date:                  2024-01-19
-simple_title:         "Zamiana liter na wielkie w ciągu znaków"
-
+title:                "Zamiana liter na wielkie w łańcuchu znaków"
+date:                  2024-02-03T19:06:07.094884-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Zamiana liter na wielkie w łańcuchu znaków"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/powershell/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Capitalizing a string means changing the first letter of each word to uppercase. Programmers do this to format text data consistently or for aesthetic reasons in user interfaces.
+## Co i dlaczego?
+Użycie wielkiej litery w ciągu znaków w PowerShellu polega na przekształceniu pierwszego znaku danego ciągu na wielką literę, pozostawiając resztę ciągu niezmienioną. Programiści często wykonują to zadanie w celach formatowania, takich jak przygotowanie tekstu do wyświetlenia w interfejsach użytkownika lub przestrzeganie reguł gramatycznych w generowanych dokumentach.
 
-## How to:
-PowerShell ma wbudowany sposób na zamianę stringów na formę z wielkimi literami. Użyj `ToTitleCase` z `TextInfo`:
+## Jak to zrobić:
+PowerShell, będąc wszechstronnym narzędziem, pozwala na użycie wielkiej litery w ciągu znaków za pomocą prostych metod, bez konieczności korzystania z bibliotek firm trzecich. Oto jak możesz to zrobić:
 
-```PowerShell
-$text = "oto przykład tekstu"
-$culture = [System.Globalization.CultureInfo]::CurrentCulture
-$textInfo = $culture.TextInfo
-$titleCasedText = $textInfo.ToTitleCase($text)
-$titleCasedText
+```powershell
+# Korzystanie z wbudowanej metody .Net 'ToTitleCase' z CultureInfo
+$text = "hello world"
+$culture = [System.Globalization.CultureInfo]::InvariantCulture
+$capitalizedText = $culture.TextInfo.ToTitleCase($text.ToLower())
+Write-Output $capitalizedText
 ```
-Output:
+Wynik:
 ```
-Oto Przykład Tekstu
-```
-
-Możesz też użyć metody `.ToUpper()` i `.ToLower()` do manipulacji całością:
-
-```PowerShell
-$lowerText = "oto inny przykład"
-$upperText = $lowerText.ToUpper()
-$upperText
-```
-Output:
-```
-OTO INNY PRZYKŁAD
+Hello world
 ```
 
-## Deep Dive
-Capitalizing strings nie jest nowością. W językach programowania takich jak C# czy JavaScript, operacje na capitalization są standardem. PowerShell korzysta z .NET, więc możemy używać tych samych metod.
+Uwaga: Ta metoda zmienia na wielką literę pierwszą literę każdego słowa. Jeśli chcesz wyraźnie zmienić tylko pierwszą literę ciągu i pozostawić resztę bez zmian, możesz zrobić coś takiego:
 
-Inną opcją jest manualne przejście przez string i zmiana liter. Jest to bardziej skomplikowane i mniej wydajne, ale pokazuje, jak działa proces:
-
-```PowerShell
-function Convert-ToTitleCase($inputString) {
-    $words = $inputString -split ' '
-    $titleCasedWords = $words | ForEach-Object { $_.Substring(0,1).ToUpper() + $_.Substring(1).ToLower() }
-    return $titleCasedWords -join ' '
-}
-
-Convert-ToTitleCase "kolejny przykład do pokazania"
+```powershell
+# Użycie wielkiej litery tylko dla pierwszego znaku ciągu
+$text = "hello world"
+$capitalizedText = $text.Substring(0,1).ToUpper() + $text.Substring(1)
+Write-Output $capitalizedText
+```
+Wynik:
+```
+Hello world
 ```
 
-Alternatywnie, istnieją gotowe narzędzia i biblioteki pomocnicze, takie jak Humanizer, które można zintegrować z PowerShell, aby ułatwić różne manipulacje stringami.
-
-Gdy mowa o implementacji, ważne jest, aby pamiętać o różnych konwencjach pisowni związanych z językiem, kulturą czy specjalnymi przypadkami, jak skróty czy akronimy.
-
-## See Also
-- Microsoft Documentation on `ToTitleCase`: [Link](https://docs.microsoft.com/en-us/dotnet/api/system.globalization.textinfo.totitlecase)
-- Humanizer Library: [Link](https://github.com/Humanizr/Humanizer)
+PowerShell bezpośrednio nie zawiera prostej funkcji do używania wielkiej litery tylko dla pierwszej litery ciągu, ale łącząc podstawowe metody manipulacji ciągiem, takie jak `Substring(0,1).ToUpper()` i konkatenację, możemy łatwo osiągnąć pożądany rezultat.

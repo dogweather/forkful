@@ -1,40 +1,62 @@
 ---
 title:                "Scrivere sull'errore standard"
-date:                  2024-01-19
+date:                  2024-02-03T19:32:34.167431-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Scrivere sull'errore standard"
-
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/cpp/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-La scrittura su _standard error_ (stderr) è l'output di errore standard del tuo programma. I programmatori lo usano per segnalare messaggi di errore, separati dagli output normali (stdout), permettendo una migliore gestione e debug.
+## Cosa e Perché?
 
-## How to:
-Uso di cerr per scrivere su stderr:
-```C++
+Scrivere su standard error (`stderr`) in C++ implica l'output di messaggi di errore o diagnostici che sono separati dall'output principale del programma. I programmatori fanno ciò per indirizzare gli errori a un flusso diverso, permettendo così un debugging e una gestione degli errori più semplici distinguendo l'output normale dai messaggi di errore.
+
+## Come fare:
+
+In C++, scrivere su standard error può essere realizzato utilizzando il flusso `cerr`, che fa parte della libreria standard. Ecco un esempio base:
+
+```cpp
 #include <iostream>
 
 int main() {
+    // Scrivere su standard output
+    std::cout << "Questo è un messaggio normale." << std::endl;
+    
+    // Scrivere su standard error
     std::cerr << "Questo è un messaggio di errore." << std::endl;
+    
     return 0;
 }
 ```
-Output:
+
+Output di esempio:
 ```
+Questo è un messaggio normale.
 Questo è un messaggio di errore.
 ```
 
-Redirezione dell'output di stderr a un file in terminale (shell):
-```shell
-./your_program 2> error_log.txt
+In questo caso, entrambi i messaggi appariranno tipicamente sul tuo terminale, ma puoi reindirizzarli separatamente in una shell. Ad esempio, puoi inviare l'output standard a un file mentre permetti agli errori di essere visualizzati sullo schermo.
+
+Per una gestione degli errori e un logging più avanzati, si possono impiegare librerie di terze parti come `spdlog` o `boost.log`. Queste librerie offrono funzionalità avanzate per il logging, inclusi formattazione, livelli di log e output su file.
+
+Ecco come potresti usare `spdlog` per scrivere un messaggio di errore:
+
+```cpp
+#include "spdlog/spdlog.h"
+
+int main() {
+    // Inizializzare spdlog
+    spdlog::info("Questo è un messaggio normale.");
+    spdlog::error("Questo è un messaggio di errore.");
+    
+    return 0;
+}
 ```
 
-## Deep Dive
-Stderr è una pratica che risale ai primi giorni dell'informatica, introdotta per aiutare a distinguere l'output normale dagli errori. Alcune alternative includono l'uso di log files e librerie di logging dedicate per applicazioni più complesse. In C++, stderr è implementato come uno stream precaricato pronto all'uso.
+Nota: Per utilizzare `spdlog`, è necessario aggiungerlo al tuo progetto. Puoi farlo clonando il repository da GitHub o utilizzando un gestore di pacchetti come `vcpkg` o `conan`.
 
-## See Also
-- [Standard streams - cppreference.com](https://en.cppreference.com/w/cpp/io/c)
-- [Logging in C++](https://stackoverflow.com/questions/7963763/what-is-the-best-logging-library-for-c)
+Ricorda, la scelta tra l'uso diretto dei flussi standard o di una libreria come `spdlog` dipende dalla complessità della tua applicazione e dalle tue esigenze specifiche riguardo la gestione degli errori e il logging.

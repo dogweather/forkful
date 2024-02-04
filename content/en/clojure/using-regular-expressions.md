@@ -1,8 +1,8 @@
 ---
 title:                "Using regular expressions"
-date:                  2024-01-19
+date:                  2024-02-03T19:02:47.953382-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Using regular expressions"
-
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/clojure/using-regular-expressions.md"
 ---
@@ -10,30 +10,64 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Regular expressions (regex) search, match, and manipulate strings. They're used for their flexibility and efficiency in text processing tasks.
+Regular expressions, a powerful tool for pattern matching and data manipulation, are essential in text processing tasks such as validating input, searching, and replacing text. Programmers use them extensively for handling complex string parsing and data validation tasks efficiently and succinctly.
 
 ## How to:
+Clojure, staying true to its roots in the Lisp family, offers a rich set of functions that interface seamlessly with Java's regular expression capabilities. Here's how you can leverage them:
+
+### Basic Matching
+To check if a string matches a pattern, use `re-matches`. It returns the entire match if successful or `nil` otherwise.
 
 ```clojure
-(require '[clojure.string :as str])
-
-;; 1. Matching
-(re-matches #"\d+" "123")               ;; => "123"
-(re-matches #"\d+" "abc")               ;; => nil
-
-;; 2. Searching
-(re-find #"\d+" "Order 100 apples")     ;; => "100"
-
-;; 3. Replacing
-(str/replace "2023-03-15" #"\d{4}" "YYYY") ;; => "YYYY-03-15"
-
-;; 4. Splitting
-(str/split "one,two,three" #",")       ;; => ["one" "two" "three"]
+(re-matches #"\d+" "123")  ;=> "123"
+(re-matches #"\d+" "abc")  ;=> nil
 ```
 
-## Deep Dive
-Regular expressions have a rich history, going back to the 1950s theoretical work by Stephen Cole Kleene. Alternatives to regex include string functions like `indexOf`, `substring`, and parsing libraries; however, regex often provides a more concise solution. Clojure's regex capabilities are built-in Java's `Pattern` class, providing powerful pattern matching directly in the language.
+### Searching for Patterns
+To find the first occurrence of a pattern, `re-find` is your go-to function:
 
-## See Also
-- [ClojureDocs on Regular Expressions](https://clojuredocs.org/clojure.core/re-find)
-- [Java Pattern class](https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html)
+```clojure
+(re-find #"\d+" "Order 123")  ;=> "123"
+```
+
+### Capturing Groups
+Use `re-find` along with parentheses in your pattern to capture groups:
+
+```clojure
+(let [[_ area code] (re-find #"(1)?(\d{3})" "Phone: 123-4567")]
+  (println "Area Code:" area "Code:" code))
+;; Output: Area Code: nil Code: 123
+```
+
+### Global Search (Find All Matches)
+Clojure doesn’t have a built-in global search like some languages. Instead, use `re-seq` to get a lazy sequence of all matches:
+
+```clojure
+(re-seq #"\d+" "id: 123, qty: 456")  ;=> ("123" "456")
+```
+
+### Splitting Strings
+To split a string based on a pattern, use `clojure.string/split`:
+
+```clojure
+(clojure.string/split "John,Doe,30" #",")  ;=> ["John" "Doe" "30"]
+```
+
+### Replacing
+Replace parts of a string matching a pattern with `clojure.string/replace`:
+
+```clojure
+(clojure.string/replace "2023-04-01" #"\d{4}" "YYYY")  ;=> "YYYY-04-01"
+```
+
+### Third-party Libraries
+Though Clojure’s built-in support suffices for most cases, for more complex scenarios, consider using libraries such as `clojure.spec` for robust data validation and `reagent` for reactive DOM manipulation in web applications with regex-based routing and input validation.
+
+```clojure
+;; Example using clojure.spec for validating an email
+(require '[clojure.spec.alpha :as s])
+(s/def ::email (s/and string? #(re-matches #".+@.+\..+" %)))
+(s/valid? ::email "test@example.com")  ;=> true
+```
+
+Remember, while regular expressions are powerful, they can also make code hard to read and maintain. Use them judiciously and always consider simpler string manipulation functions where possible.

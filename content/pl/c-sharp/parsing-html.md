@@ -1,64 +1,102 @@
 ---
-title:                "Przetwarzanie HTML"
-date:                  2024-01-20T15:31:06.728712-07:00
-simple_title:         "Przetwarzanie HTML"
-
+title:                "Analiza składniowa HTML"
+date:                  2024-02-03T19:11:57.411408-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Analiza składniowa HTML"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/c-sharp/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
-"**Parsing HTML** – to proces przekształcania kodu HTML w strukturę, którą można łatwiej przetworzyć w innym języku programowania, np. C#. Robimy to, aby odnaleźć, przeczytać lub zmodyfikować konkretne elementy strony, takie jak tekst, linki czy inne dane, bez konieczności ręcznej obróbki surowego kodu.
+## Co & Dlaczego?
 
-## Jak to zrobić?
-Do parsowania HTML w C# wykorzystamy bibliotekę **HtmlAgilityPack**. Jest ona dość lekka, a zarazem potężna i prosta w użyciu.
+Parsowanie HTML w programowaniu polega na analizie struktury dokumentu HTML, co pozwala na ekstrakcję, manipulację i interakcję z jego zawartością programowo. Programiści robią to, aby automatyzować web scraping, ekstrakcję danych, a nawet modyfikować strony internetowe lub dokumenty HTML dynamicznie dla różnych aplikacji, co czyni to kluczową umiejętnością w rozwoju stron internetowych, analizie danych i scenariuszach automatycznych testów.
 
-```C#
-using HtmlAgilityPack;
-using System;
-using System.Linq;
+## Jak to zrobić:
 
-class Program
-{
-    static void Main()
-    {
-        // Ładowanie dokumentu HTML z URL
-        var url = "http://przykladowa-strona.pl";
-        var web = new HtmlWeb();
-        var doc = web.Load(url);
+Chociaż .NET oferuje podstawowe wsparcie dla pracy z HTML, takie jak `HttpClient` do pobierania stron internetowych, brakuje mu wbudowanego, kompleksowego parsera HTML. Dlatego większość programistów C# zwraca się do popularnych bibliotek stron trzecich, takich jak HtmlAgilityPack lub AngleSharp, dla solidnych możliwości parsowania HTML. Obie biblioteki umożliwiają łatwe zapytania, manipulację i przeglądanie obiektowego modelu dokumentu (DOM) HTML.
 
-        // Wyszukanie elementu po tagu
-        var nodes = doc.DocumentNode.SelectNodes("//p");
-        
-        foreach (var node in nodes)
-        {
-            Console.WriteLine(node.InnerText);
-        }
+### Korzystanie z HtmlAgilityPack
 
-        // Wyszukiwanie elementu po klasie
-        var classNode = doc.DocumentNode.SelectNodes("//div[@class='klasa-przykladowa']");
-        
-        foreach (var node in classNode)
-        {
-            Console.WriteLine(node.InnerHtml);
-        }
-    }
-}
-```
+1. **Zainstaluj HtmlAgilityPack**: Najpierw dodaj pakiet HtmlAgilityPack do swojego projektu za pomocą NuGet.
+   ```
+   Install-Package HtmlAgilityPack
+   ```
 
-Powinniśmy zobaczyć wydrukowany tekst z paragrafów (p), oraz zawartość diva o klasie „klasa-przykladowa”.
+2. **Przykładowy kod**: Zanalizuj ciąg HTML i wydobyj tytuły wszystkich elementów `<h1>`.
 
-## Deep Dive
-**HtmlAgilityPack** pojawił się, gdy deweloperzy zaczęli potrzebować sposobów na manipulowanie i ekstrakcję danych z HTML po stronie serwera. Alternatywnie, można użyć wyrażeń regularnych (regex), ale to z reguły trudniejsze i mniej niezawodne dla złożonych dokumentów HTML.
+   ```csharp
+   using HtmlAgilityPack;
+   using System;
+   using System.Linq;
 
-Inną opcją jest użycie **AngleSharp**, nowoczesnej biblioteki .NET, która oferuje jeszcze lepsze wsparcie dla nowych standardów HTML i CSS.
+   class Program
+   {
+       static void Main(string[] args)
+       {
+           var html = @"<html>
+                         <body>
+                             <h1>Tytuł 1</h1>
+                             <h1>Tytuł 2</h1>
+                         </body>
+                        </html>";
+           var htmlDoc = new HtmlDocument();
+           htmlDoc.LoadHtml(html);
 
-Implementacja parserów HTML powinna zarządzać zarówno poprawnym kodem, jak i tymi z błędami (których w prawdziwym świecie HTML jest sporo). HtmlAgilityPack dobrze radzi sobie z takimi przypadkami, działając podobnie do przeglądarek internetowych, które interpretują nawet nieco „zepsuty” HTML.
+           var h1Tags = htmlDoc.DocumentNode.SelectNodes("//h1").Select(node => node.InnerText);
+           foreach (var title in h1Tags)
+           {
+               Console.WriteLine(title);
+           }
+       }
+   }
+   ```
 
-## Zobacz także
-- HtmlAgilityPack na NuGet: https://www.nuget.org/packages/HtmlAgilityPack/
-- Dokumentacja HtmlAgilityPack: https://html-agility-pack.net/
-- Projekt AngleSharp na GitHub: https://github.com/AngleSharp/AngleSharp
-- Tutorial wideo do HtmlAgilityPack: [Link do odpowiedniego tutorialu na YouTube lub innym serwisie wideo]
+   **Przykładowe wyjście:**
+   ```
+   Tytuł 1
+   Tytuł 2
+   ```
+
+### Korzystanie z AngleSharp
+
+1. **Zainstaluj AngleSharp**: Dodaj bibliotekę AngleSharp do swojego projektu za pomocą NuGet.
+   ```
+   Install-Package AngleSharp
+   ```
+
+2. **Przykładowy kod**: Załaduj dokument HTML i wyszukaj elementy `div` z określoną klasą.
+
+   ```csharp
+   using AngleSharp;
+   using AngleSharp.Dom;
+   using System;
+   using System.Linq;
+   using System.Threading.Tasks;
+
+   class Program
+   {
+       static async Task Main(string[] args)
+       {
+           var context = BrowsingContext.New(Configuration.Default);
+           var document = await context.OpenAsync(req => req.Content("<div class='item'>Przedmiot 1</div><div class='item'>Przedmiot 2</div>"));
+
+           var items = document.QuerySelectorAll(".item").Select(element => element.TextContent);
+           foreach (var item in items)
+           {
+               Console.WriteLine(item);
+           }
+       }
+   }
+   ```
+
+   **Przykładowe wyjście:**
+   ```
+   Przedmiot 1
+   Przedmiot 2
+   ```
+
+Zarówno HTMLAgilityPack, jak i AngleSharp, to potężne narzędzia do parsowania HTML, ale wybór między nimi może zależeć od konkretnych wymagań projektowych, względów wydajnościowych lub osobistych preferencji w zakresie projektowania API.

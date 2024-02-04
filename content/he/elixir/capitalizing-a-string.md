@@ -1,35 +1,52 @@
 ---
-title:                "הפיכת מחרוזת לאותיות רישיות"
-date:                  2024-01-19
-simple_title:         "הפיכת מחרוזת לאותיות רישיות"
-
+title:                "הגדלת אותיות במחרוזת"
+date:                  2024-02-03T19:05:16.679680-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "הגדלת אותיות במחרוזת"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/elixir/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## מה ולמה?
-קיבוע אותיות ראשיות היא שיטה שבה האות הראשונה במחרוזת הופכת לאות רישית (גדולה) ושאר האותיות לקטנות. תוכניתנים משתמשים בה לתקן טקסט לתצוגה נקיה וקונסיסטנטית, לדוגמה, שמות אנשים או כותרות.
+
+הופכים מחרוזת לאות ראשית כאשר ממירים את האות הראשונה של המחרוזת לאות גדולה, תוך הבטחה ששאר האותיות יהיו באות קטנה. פעולה זו נחוצה לעיתים קרובות לעיצוב קלט משתמש או הצגת טקסט בממשקי משתמש, שם עקביות וניתנות לקריאה חשובות.
 
 ## איך לעשות:
+
+Elixir מספקת דרך ישירה להפוך מחרוזות לאות ראשית באמצעות הפונקציות המובנות שלה ללא הצורך בספריות צד שלישי. הנה דוגמה פשוטה:
+
 ```elixir
-defmodule StringTools do
-  def capitalize(string) do
-    string
-    |> String.downcase()
-    |> String.capitalize()
-  end
-end
-
-IO.puts StringTools.capitalize("שלום עולם") # Outputs: "שלום עולם"
-IO.puts StringTools.capitalize("HELLO") # Outputs: "Hello"
+string = "elixir programming"
+capitalized_string = String.capitalize(string)
+IO.puts capitalized_string
 ```
-הערה: באליקסיר אין שינוי עבור אותיות ראשיות בעברית.
 
-## נחפור עמוק יותר
-לקיבוע אות ראשית יש תולדות ארוכות בתכנות מחשבים, שמתחילות עם צורך בתקנון ערכים שמכילים טקסט, כמו שמות פרטיים ועסקיים. באליקסיר, `String.capitalize/1` ידאג לזה שהאות הראשונה תהיה רישית ושאר המחרוזת באותיות קטנות. ישנם גם דרכים חלופיות לביצוע המשימה הזו, כמו לשלב פונקציות כמו `String.slice/2` ו-`String.upcase/1`, אבל הפתרונות המובנים הם הבחירה הנקייה והיעילה ביותר. הקפד לבדוק שהמחרוזת לא תתחיל בסימן שאינו אות אם התוצאה חשובה לך.
+פלט:
 
-## ראו גם
-- [Elixir String Module Documentation](https://hexdocs.pm/elixir/String.html)
-- [Unicode Normalization Forms](https://unicode.org/reports/tr15/)
+```
+Elixir programming
+```
+
+למקרים בהם נדרש שליטה רבה יותר או לוגיקת הופכת לאות ראשית מורכבת יותר, תוכלו לשלב פונקציות String שונות. למשל, אם אתם רוצים להפוך כל מילה במשפט לאות ראשית, תוכלו לפצל את המשפט למילים, להפוך כל אחת לאות ראשית, ולאחר מכן לחבר אותם חזרה יחד:
+
+```elixir
+sentence = "elixir is fun"
+capitalized_sentence = sentence 
+                        |> String.split() 
+                        |> Enum.map(&String.capitalize/1) 
+                        |> Enum.join(" ")
+
+IO.puts capitalized_sentence
+```
+
+פלט:
+
+```
+Elixir Is Fun
+```
+
+למרות שספריית הסטנדרט של Elixir מספקת מענה לרוב הצרכים, למניפולציה טקסטואלית עדינה יותר, כולל הופכן מורכבת של מחרוזות, ייתכן ותחקרו ספריות צד שלישי כמו Cldr לבינלאומיות, המספקת התנהגויות הופכן תלויות אזור.

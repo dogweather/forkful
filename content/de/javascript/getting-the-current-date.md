@@ -1,46 +1,49 @@
 ---
-title:                "Aktuelles Datum abrufen"
-date:                  2024-01-20T15:15:03.080568-07:00
-simple_title:         "Aktuelles Datum abrufen"
-
+title:                "Den aktuellen Datum abrufen"
+date:                  2024-02-03T19:09:57.084444-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Den aktuellen Datum abrufen"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/javascript/getting-the-current-date.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Was & Warum?
+Das aktuelle Datum in JavaScript zu erhalten, ist eine grundlegende Aufgabe, die das Abrufen und möglicherweise Manipulieren des heutigen Datums und der Uhrzeit umfasst. Programmierer führen dies durch, um Datumsangaben auf Websites, in Applikationen anzuzeigen, Benutzerinteraktionen zu verfolgen oder zeitkritische Daten zu verarbeiten.
 
-JavaScript ermöglicht es, das aktuelle Datum und die Uhrzeit zu ermitteln, was in vielen Anwendungen nützlich ist - etwa für Zeitstempel, Kalenderfunktionen oder einfach nur, um die lokale Uhrzeit eines Benutzers anzuzeigen.
-
-## So geht's:
-
-Um das aktuelle Datum zu bekommen, verwenden wir das `Date`-Objekt. Hier ist ein schneller Überblick:
+## Wie:
+In reinem JavaScript wird das `Date`-Objekt verwendet, um mit Datums- und Zeitangaben zu arbeiten. Hier ist, wie Sie das aktuelle Datum und die Uhrzeit erhalten können:
 
 ```javascript
-// Aktuelles Datum und Uhrzeit
-const jetzt = new Date();
-console.log(jetzt); // z.B. Wed Mar 31 2021 14:05:32 GMT+0200 (Mitteleuropäische Sommerzeit)
-
-// Zu einzelnen Komponenten zugreifen
-console.log(jetzt.getFullYear());    // z.B. 2021
-console.log(jetzt.getMonth() + 1);   // z.B. 4 (Januar ist 0!)
-console.log(jetzt.getDate());        // z.B. 31
-console.log(jetzt.getHours());       // z.B. 14
-console.log(jetzt.getMinutes());     // z.B. 5
-console.log(jetzt.getSeconds());     // z.B. 32
+const currentDate = new Date();
+console.log(currentDate); // Beispiel-Ausgabe: Fr Apr 14 2023 12:34:56 GMT+0100 (Britische Sommerzeit)
 ```
 
-## Deep Dive:
+Um nur das Datum in einem benutzerfreundlicheren Format anzuzeigen, können Sie Methoden wie `toLocaleDateString()` verwenden:
 
-Das `Date`-Objekt in JavaScript existiert schon seit den Anfangstagen der Sprache. Es ist basiert auf der Zeit in Millisekunden seit dem UNIX-Epoch (1. Januar 1970 00:00:00 UTC). Es gibt verschiedene Methoden, um mit Zeit in JS zu arbeiten und spezifische Informationen zu erhalten.
+```javascript
+console.log(currentDate.toLocaleDateString()); // Beispiel-Ausgabe: 14.4.2023
+```
 
-Alternativen zu `new Date()` beinhalten Bibliotheken wie Moment.js, Date-fns oder day.js, die zusätzliche Funktionalitäten und einfacheres Parsing von Daten bieten, wobei native Funktionen in modernen Browsern meistens ausreichen.
+Für mehr Kontrolle über das Format sind Drittanbieter-Bibliotheken wie *Moment.js* oder *date-fns* sehr beliebt, obwohl man sich bewusst sein sollte, dass Moment.js mittlerweile als Legacy-Projekt im Wartungsmodus gilt.
 
-Wichtig ist zu verstehen, dass `getMonth()` Monate von 0 bis 11 zählt, also muss man immer 1 hinzufügen. Zeitzonen können auch Probleme darstellen; `Date` arbeitet standardmäßig mit der lokalen Zeit des Benutzers. Für UTC-Zeit verwendet man entsprechende UTC-Methoden, z.B. `getUTCHours()`.
+Mit *Moment.js*:
 
-## Siehe auch:
+```javascript
+const moment = require('moment'); // unter der Annahme von Node.js oder Verwendung eines Modulbündlers
+const formattedDate = moment().format('YYYY-MM-DD');
+console.log(formattedDate); // Beispiel-Ausgabe: 2023-04-14
+```
 
-- MDN Web Docs zu Date: [MDN Date](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- Zeitbibliotheken für kompliziertere Aufgaben: [Moment.js](https://momentjs.com/), [Date-fns](https://date-fns.org/), [Day.js](https://day.js.org/)
-- Unterschiede zwischen UTC und lokaler Zeit: [UTC vs Local Time](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Date#UTC_and_local_time)
+Bei *date-fns*, das Modularisierung betont und es Ihnen erlaubt, nur das zu importieren, was Sie benötigen:
+
+```javascript
+const { format } = require('date-fns');
+const formattedDate = format(new Date(), 'yyyy-MM-dd');
+console.log(formattedDate); // Beispiel-Ausgabe: 2023-04-14
+```
+
+Jeder Ansatz bietet unterschiedliche Grade an Bequemlichkeit und Flexibilität beim Arbeiten mit Daten in JavaScript, vom integrierten `Date`-Objekt bis hin zu anspruchsvolleren Formatierungs- und Manipulationsmöglichkeiten, die durch Bibliotheken verfügbar sind.

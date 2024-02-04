@@ -1,43 +1,54 @@
 ---
 title:                "Escribiendo en el error estándar"
-date:                  2024-01-19
+date:                  2024-02-03T19:34:11.733505-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Escribiendo en el error estándar"
-
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/ruby/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Escribir en el error estándar es mostrar mensajes de error en la consola. Los programadores hacen esto para separar los errores del flujo de salida normal, facilitando el debugging y la gestión de logs.
+## Qué y por qué?
+Escribir en el error estándar (stderr) en Ruby trata sobre dirigir mensajes de error o diagnósticos a un flujo de salida separado, distinto de la salida estándar (stdout). Los programadores hacen esto para diferenciar la salida regular del programa de los errores y la información de depuración, facilitando así el diagnóstico de problemas y el análisis de registros.
 
-## How to:
-Para escribir en el error estándar en Ruby, usa `$stderr.puts`. Ejemplo:
+## Cómo hacerlo:
+La biblioteca estándar de Ruby proporciona una manera sencilla de escribir en stderr usando `$stderr` o `STDERR`. No necesitas bibliotecas de terceros para esta operación básica.
 
-```Ruby
-$stderr.puts "Error: Operación inválida."
+### Escribiendo un mensaje simple a stderr:
+```ruby
+$stderr.puts "Error: Archivo no encontrado."
+# O de manera equivalente
+STDERR.puts "Error: Archivo no encontrado."
+```
+Salida de muestra (a stderr):
+```
+Error: Archivo no encontrado.
 ```
 
-Salida al ejecutarlo:
-
+### Redirigiendo stderr a un archivo:
+```ruby
+File.open('error.log', 'w') do |file|
+  STDERR.reopen(file)
+  STDERR.puts "Fallo al abrir configuración."
+end
 ```
-Error: Operación inválida.
+Este fragmento de código redirige stderr a un archivo llamado `error.log`, y todos los errores escritos subsiguientes serán dirigidos allí hasta que el programa restablezca la redirección de stderr o termine.
+
+### Usando stderr con manejo de excepciones:
+```ruby
+begin
+  # Simulando una operación que podría fallar, por ejemplo, abrir un archivo
+  File.open('archivo_inexistente.txt')
+rescue Exception => e
+  STDERR.puts "Ocurrió una excepción: #{e.message}"
+end
+```
+Salida de muestra (a stderr):
+```
+Ocurrió una excepción: No such file or directory @ rb_sysopen - archivo_inexistente.txt
 ```
 
-Puedes redirigir la salida a un archivo:
-
-```Ruby
-$stderr.reopen("errores.log", "w")
-$stderr.puts "Failed to open file."
-```
-
-Ahora el mensaje está en `errores.log`, no en la pantalla.
-
-## Deep Dive
-Históricamente, la distinción entre salida estándar y error estándar viene de UNIX. `$stdout` es para resultados normales, `$stderr` para errores y diagnostic messages. Existen otras formas como `STDERR.puts` o `warn`. En cuanto a detalles de implementación, `$stderr` es un global predefinido que representa una instancia de `IO` dirigida al error estándar.
-
-## See Also
-- Documentación de Ruby IO: https://ruby-doc.org/core/IO.html
-- Guía sobre STDERR, STDOUT y STDIN: https://www.jstorimer.com/blogs/workingwithcode/7766119-when-to-use-stderr-instead-of-stdout
-- Explicación sobre la salida estándar y de error en UNIX: http://www.tldp.org/LDP/abs/html/io-redirection.html
+Aunque los métodos integrados de Ruby para escribir en stderr son suficientes para muchas aplicaciones, para necesidades de registro más complejas, podrías considerar la biblioteca estándar `logger` o gemas externas como `Log4r`. Estas proporcionan mecanismos de registro configurables, incluyendo niveles de severidad, formatos, y la capacidad de escribir en varias salidas, incluyendo archivos, correo electrónico, y más.

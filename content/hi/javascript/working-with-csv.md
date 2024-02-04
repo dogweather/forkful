@@ -1,48 +1,132 @@
 ---
 title:                "CSV के साथ काम करना"
-date:                  2024-01-19
+date:                  2024-02-03T19:21:14.641385-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "CSV के साथ काम करना"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/javascript/working-with-csv.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (क्या और क्यों?)
-JavaScript में CSV का मतलब है 'Comma-Separated Values' - एक सरल फ़ाइल फॉर्मेट, जिसमें डाटा अल्पविराम से अलग होते हैं। प्रोग्रामर्स इसे इसलिए इस्तेमाल करते हैं क्योंकि यह स्प्रेडशीट और डेटाबेस की जानकारी को आसानी से स्टोर और शेयर करने का एक साधारण तरीका है।
+## क्या और क्यों?
+JavaScript में CSV (Comma-Separated Values) के साथ काम करना का अर्थ है CSV फाइलों को पार्स करना या उत्पन्न करना ताकि बाहरी स्रोतों से तालिका डेटा प्राप्त किया जा सके या अन्य प्रोग्रामों में उपयोग के लिए डेटा निर्यात किया जा सके। प्रोग्रामर इसे इसलिए करते हैं क्योंकि यह एप्लीकेशनों, डाटाबेसों, और सिस्टमों के बीच आसान, हल्के डेटा आदान-प्रदान को सक्षम बनाता है जहाँ JSON जैसे अधिक जटिल प्रारूपों की आवश्यकता नहीं होती है।
 
-## How to: (कैसे करें:)
-```Javascript
-// इस कोड के जरिए हम CSV स्ट्रिंग को पार्स करके जावास्क्रिप्ट ऑब्जेक्ट्स में बदलेंगे।
+## कैसे करें:
+JavaScript में बिल्ट-इन CSV पार्सिंग या स्ट्रिंगिफाई करने की कार्यक्षमता नहीं है, जैसा कि इसमें JSON के साथ है। हालांकि, आप या तो कच्ची JavaScript का उपयोग करके सरल कार्यों के लिए या `PapaParse` जैसे शक्तिशाली पुस्तकालयों का लाभ उठाकर जटिल परिदृश्यों के लिए CSV डेटा को आसानी से प्रबंधित कर सकते हैं।
 
-const csv = 'name,age\nAlice,23\nBob,34';
+### कच्ची JavaScript के साथ बुनियादी पार्सिंग
+एक सरल CSV स्ट्रिंग को ऑब्जेक्ट्स की एक एरे में पार्स करने के लिए:
 
-function csvToJSON(csv) {
-  const lines = csv.split('\n');
-  const headers = lines[0].split(',');
-  return lines.slice(1).map(line => {
-    const data = line.split(',');
-    return headers.reduce((obj, nextKey, index) => {
-      obj[nextKey] = data[index];
-      return obj;
-    }, {});
-  });
-};
+```javascript
+const csv = `name,age,city
+John,23,New York
+Jane,28,Los Angeles`;
 
-console.log(csvToJSON(csv));
+function parseCSV(csv) {
+  const lines = csv.split("\n");
+  const result = [];
+  const headers = lines[0].split(",");
+
+  for (let i = 1; i < lines.length; i++) {
+    const obj = {};
+    const currentline = lines[i].split(",");
+    
+    for (let j = 0; j < headers.length; j++) {
+      obj[headers[j]] = currentline[j];
+    }
+    result.push(obj);
+  }
+  
+  return result;
+}
+
+console.log(parseCSV(csv));
 ```
+आउटपुट:
 
-Sample Output:
 ```
 [
-  { name: 'Alice', age: '23' },
-  { name: 'Bob', age: '34' }
+  { name: 'John', age: '23', city: 'New York' },
+  { name: 'Jane', age: '28', city: 'Los Angeles' }
 ]
 ```
 
-## Deep Dive (गहराई से जानकारी):
-CSV फॉर्मेट की खोज सन 1970s में हुई थी। ये JSON जैसे नए फॉर्मेट्स का विकल्प है लेकिन इसका सरल होना आज भी इसे फायदेमंद बनाता है। हालांकि, CSV में कॉम्प्लेक्स डाटा स्ट्रक्चर्स को स्टोर करना मुश्किल है। JavaScript में CSV का इस्तेमाल प्राय: फाइल्स को पार्स करने, API से डाटा फेच करने, या फाइल सिस्टम के ऑपरेशन्स के लिए होता है। 
+### कच्ची JavaScript के साथ CSV में बुनियादी उत्पादन
+ऑब्जेक्ट्स की एक एरे को CSV स्ट्रिंग में परिवर्तित करने के लिए:
 
-## See Also (और भी जानकारी):
-- [Papaparse](https://www.papaparse.com/): एक शक्तिशाली जावास्क्रिप्ट पार्सर के लिए वेबसाइट, जिससे बड़े CSV फाइल्स को पार्स करना आसान होता है।
+```javascript
+const data = [
+  { name: 'John', age: 23, city: 'New York' },
+  { name: 'Jane', age: 28, city: 'Los Angeles' }
+];
+
+function arrayToCSV(arr) {
+  const csv = arr.map(row => 
+    Object.values(row).join(',')
+  ).join('\n');
+  
+  return csv;
+}
+
+console.log(arrayToCSV(data));
+```
+
+आउटपुट:
+
+```
+John,23,New York
+Jane,28,Los Angeles
+```
+
+### जटिल CSV कार्यों के लिए PapaParse का उपयोग
+अधिक जटिल परिदृश्यों के लिए, `PapaParse` एक दृढ़ पुस्तकालय है जो स्ट्रीम्स, वर्कर्स, और विशाल फाइलों को संभालने के विकल्पों के साथ CSV फाइलों को पार्स करने और स्ट्रिंगिफाई करने के लिए उपयुक्त है।
+
+PapaParse के साथ CSV फाइल या स्ट्रिंग को पार्स करना:
+
+```javascript
+// अपने प्रोजेक्ट में PapaParse जोड़ने के बाद
+const Papa = require('papaparse');
+const csv = `name,age,city
+John,23,New York
+Jane,28,Los Angeles`;
+
+Papa.parse(csv, {
+  complete: function(results) {
+    console.log("Parsed:", results.data);
+  }
+});
+```
+
+उत्पन्न करता है:
+
+```
+Parsed: [
+  ["name", "age", "city"],
+  ["John", "23", "New York"],
+  ["Jane", "28", "Los Angeles"]
+]
+```
+
+PapaParse के साथ एक एरे को CSV स्ट्रिंग में परिवर्तित करना:
+
+```javascript
+const data = [
+  { name: 'John', age: 23, city: 'New York' },
+  { name: 'Jane', age: 28, city: 'Los Angeles' }
+];
+
+console.log(Papa.unparse(data));
+```
+
+उत्पन्न करता है:
+
+```
+name,age,city
+John,23,New York
+Jane,28,Los Angeles
+```
+
+ये उदाहरण JavaScript में बुनियादी और उन्नत CSV हैंडलिंग को दर्शाते हैं, वेब अप्लिकेशनों और उससे आगे में आसान डेटा एक्सचेंज को सक्षम बनाते हैं।

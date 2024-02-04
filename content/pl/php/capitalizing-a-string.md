@@ -1,42 +1,56 @@
 ---
-title:                "Zamiana liter na wielkie w ciągu znaków"
-date:                  2024-01-19
-simple_title:         "Zamiana liter na wielkie w ciągu znaków"
-
+title:                "Zamiana liter na wielkie w łańcuchu znaków"
+date:                  2024-02-03T19:06:00.346637-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Zamiana liter na wielkie w łańcuchu znaków"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/php/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Co to jest Wielka Litera i po co to robimy? Capitalizing a string oznacza zmianę pierwszych liter słów na wielkie, co przydaje się przy formatowaniu tekstów jak tytuły czy nagłówki. Programiści używają tego do uporządkowania danych i poprawienia czytelności.
+## Co i dlaczego?
+Duża litera na początku ciągu znaków polega na zmodyfikowaniu pierwszego znaku danego tekstu na wielką literę, zapewniając, że zdania, tytuły lub nazwy własne zaczynają się poprawnie w zbiorze danych. Programiści często wykonują kapitalizację ciągu znaków w celu normalizacji danych, poprawy czytelności lub zapewnienia spójności w danych wejściowych użytkownika lub przetwarzaniu danych tekstowych.
 
-## How to:
-Tu masz przykłady jak to zrobić:
+## Jak to zrobić:
+PHP natywnie obsługuje różne funkcje do kapitalizacji ciągów znaków, z których każda służy innemu celowi. Oto jak możesz ich używać:
 
-```PHP
-<?php
-// Pierwsza litera na wielką.
-$greeting = 'witaj świecie!';
-$capitalizedGreeting = ucfirst($greeting);
-echo $capitalizedGreeting; // Wyjdzie: "Witaj świecie!"
+### Kapitalizacja pierwszej litery ciągu:
 
-// Wszystkie słowa na wielką literę.
-$title = 'przykład kapitalizacji tytułu';
-$capitalizedTitle = ucwords($title);
-echo $capitalizedTitle; // Wyjdzie: "Przykład Kapitalizacji Tytułu"
-?>
+```php
+$string = "cześć, świecie!";
+$capitalizedString = ucfirst($string);
+echo $capitalizedString; // Wyświetla: Cześć, świecie!
 ```
 
-## Deep Dive
-Historia: Pierwsze funkcje do kapitalizacji w PHP pojawiły się lata temu i stały się standardem w manipulacji tekstem.
+### Kapitalizacja pierwszej litery każdego słowa:
 
-Alternatywy: Oprócz `ucfirst()` i `ucwords()`, możesz użyć `strtoupper()` żeby wszystko było WIELKIMI literami lub `mb_convert_case()` dla wielojęzycznej obsługi.
+```php
+$string = "cześć, świecie!";
+$capitalizedWords = ucwords($string);
+echo $capitalizedWords; // Wyświetla: Cześć, Świecie!
+```
 
-Implementacja: `ucfirst()` zmienia tylko pierwszą literę. `ucwords()` idzie przez cały string i szuka spacji, żeby zmieniać następujące po nich litery na wielkie. Uważaj na języki z multibajtowymi znakami – standardowe funkcje mogą nie zadziałać poprawnie.
+### Konwersja całego ciągu na wielkie litery:
 
-## See Also:
-- Oficjalna dokumentacja PHP na ucwords: https://www.php.net/manual/en/function.ucwords.php
-- Oficjalna dokumentacja PHP na ucfirst: https://www.php.net/manual/en/function.ucfirst.php
-- Multibajtowa alternatywa, mb_convert_case: https://www.php.net/manual/en/function.mb-convert-case.php
+```php
+$string = "cześć, świecie!";
+$upperCaseString = strtoupper($string);
+echo $upperCaseString; // Wyświetla: CZEŚĆ, ŚWIECIE!
+```
+
+W scenariuszach wymagających większej personalizacji lub rozwiązań stron trzecich, można wykorzystać biblioteki takie jak `mbstring` (dla ciągów wielobajtowych), szczególnie przy pracy z internacjonalizacją, gdzie znaki mogą wykraczać poza podstawowy zestaw ASCII.
+
+### Użycie mbstring do kapitalizacji ciągów UTF-8:
+
+Upewnij się, że masz włączone rozszerzenie `mbstring` w konfiguracji PHP, a następnie:
+
+```php
+$string = "élégant";
+$capitalizedString = mb_convert_case($string, MB_CASE_TITLE, "UTF-8");
+echo $capitalizedString; // Wyświetla: Élégant
+```
+
+To podejście pomaga dokładnie kapitalizować ciągi zawierające znaki nie-ASCII, przestrzegając niuansów różnych języków.

@@ -1,44 +1,64 @@
 ---
-title:                "परीक्षण लिखना"
-date:                  2024-01-19
-simple_title:         "परीक्षण लिखना"
-
+title:                "टेस्ट लिखना"
+date:                  2024-02-03T19:30:57.293657-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "टेस्ट लिखना"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/clojure/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## क्या और क्यों?
-टेस्ट लिखना यानी अपने कोड का परीक्षण करना, ताकि बग्स को ढूंढा जा सके और फ़्यूचर में कोड में बदलाव करते समय सुरक्षा की गारंटी हो। प्रोग्रामर इसे इसलिए करते हैं ताकि उन्हें विश्वास हो सके कि उनका कोड सही तरीके से काम कर रहा है।
+Clojure में परीक्षण लेखन, अन्य प्रोग्रामिंग भाषाओं की तरह, आपके मुख्य कोडबेस के अपेक्षित रूप से काम करने की पुष्टि करने के लिए समर्पित कोड बनाने को शामिल करता है। यह सहीपन, पुनर्गठन में सहायता, और कोड स्थिरता में वृद्धि में मदद करता है।
 
-## कैसे करें:
-```Clojure
+## कैसे:
+Clojure, JVM का उपयोग करते हुए, विभिन्न परीक्षण फ्रेमवर्क का समर्थन करता है। हालांकि, आमतौर पर उपयोग किया जाने वाला एक बिल्ट-इन लाइब्रेरी `clojure.test` है। यहाँ एक साधारण उदाहरण है:
+
+```clojure
 (ns example.test
   (:require [clojure.test :refer :all]
             [example.core :refer :all]))
 
-(deftest a-test-function
-  (testing "साधारण जोड़"
-    (is (= 4 (add 2 2)))))
+(deftest test-addition
+  (testing "अंकगणित का परिक्षण"
+    (is (= 4 (add 2 2)))
+    (is (= 7 (add 3 4)))))
 
 (run-tests)
-
 ```
-ऊपर दिया गया कोड, `example.core` नामक नेमस्पेस में `add` फ़ंक्शन का टेस्ट करता है। अगर टेस्ट पास होता है, तो आउटपुट दिखाएगा:
+इस परीक्षण को चलाने के बाद, आपको इसी तरह का आउटपुट दिखेगा:
 
 ```
 Testing example.test
 
-Ran 1 tests containing 1 assertions.
+Ran 2 tests containing 2 assertions.
 0 failures, 0 errors.
 ```
 
-## गहराई से समझ:
-टेस्ट लिखने का चलन 1950 के दशक से शुरू हुआ था। जैसे-जैसे कंप्यूटर प्रोग्राम्स पेचीदा हुए, टेस्टिंग की अहमियत भी बढ़ी। Clojure में, `clojure.test` लाइब्रेरी ज्यादा इस्तिमाल की जाती है, पर विकल्प के रूप में Midje और Expectations जैसे टूल्स भी मौजूद हैं। डेटेल्स जैसे कि fixtures और mock ऑब्जेक्ट्स का इस्तेमाल करके टेस्टिंग को और गहरा बनाया जा सकता है।
+जो लोग अधिक सुविधा-समृद्ध विकल्प चाहते हैं, वे `Midje` या `test.check` जैसे तीसरे पक्ष की लाइब्रेरीज का उपयोग कर सकते हैं। ऐसा परीक्षण Midje के साथ कैसे करें, यह यहाँ दिया गया है:
 
-## देखें भी:
-- Clojure की आधिकारिक टेस्टिंग गाइड: https://clojure.org/guides/deps_and_cli#_testing
-- `clojure.test` लाइब्रेरी डॉक्स: https://clojuredocs.org/clojure.test
-- Midje का GitHub पेज: https://github.com/marick/Midje
-- Expectations लाइब्रेरी का GitHub पेज: https://github.com/clojure-expectations/expectations
+पहले, अपनी project.clj निर्भरताओं में Midje जोड़ें:
+```clojure
+[midje "1.9.9"]
+```
+
+तब, Midje के साथ आपका परीक्षण इस प्रकार दिखेगा:
+
+```clojure
+(ns example.test
+  (:require [midje.sweet :refer :all]
+            [example.core :refer :all]))
+
+(fact "अंकगणित का परिक्षण"
+  (add 2 2) => 4
+  (add 3 4) => 7)
+```
+
+`lein midje` के साथ परीक्षण चलाने पर, आउटपुट कुछ इस प्रकार दिखाई देगा:
+
+```
+All checks (2) succeeded.
+```

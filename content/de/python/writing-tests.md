@@ -1,48 +1,63 @@
 ---
-title:                "Tests schreiben"
-date:                  2024-01-19
-simple_title:         "Tests schreiben"
-
+title:                "Tests Schreiben"
+date:                  2024-02-03T19:31:27.935182-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Tests Schreiben"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/python/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Tests schreiben bedeutet, Code zu erstellen, der deinen Hauptcode automatisch ausführt und überprüft, ob alles wie erwartet funktioniert. Programmierer machen das, um Fehler zu vermeiden, sicherzustellen, dass alles reibungslos läuft, und um die Qualität ihrer Software zu gewährleisten. 
+Das Schreiben von Tests in Python beinhaltet das Erstellen automatisierter Skripte, um die Korrektheit Ihres Codes zu validieren. Programmierer tun dies, um sicherzustellen, dass ihre Funktionen oder Klassen unter verschiedenen Bedingungen wie erwartet funktionieren, was hilft, Fehler frühzeitig zu erkennen und die Wartung sowie das Refactoring zu erleichtern.
 
-## How to:
-Ein einfacher Python-Test mit `unittest`, einer integrierten Testbibliothek:
+## Wie geht das:
+Python kommt mit einem integrierten Modul zum Schreiben von Tests namens `unittest`. So können Sie es verwenden, um eine einfache Funktion zu testen:
 
 ```python
 import unittest
 
-def summe(a, b):
+def add(a, b):
     return a + b
 
-class TestSumme(unittest.TestCase):
-    def test_funktion_summe(self):
-        self.assertEqual(summe(3, 4), 7)
+class TestAddFunction(unittest.TestCase):
+    def test_add(self):
+        self.assertEqual(add(1, 2), 3)
+        self.assertEqual(add(-1, 1), 0)
+        self.assertNotEqual(add(10, 2), 12, "Sollte 12 sein")
 
 if __name__ == '__main__':
     unittest.main()
 ```
 
-Ausgabe beim Ausführen der Tests:
+Wenn Sie dieses Testsript ausführen, sollten Sie eine Ausgabe sehen, die darauf hinweist, dass Ihre Tests bestanden haben (oder fehlgeschlagen sind).
 
-```
-.
-----------------------------------------------------------------------
-Ran 1 test in 0.001s
+Für modernere und aussagekräftigere Tests können Sie eine Drittanbieter-Bibliothek wie `pytest` verwenden. Zuerst müssen Sie es mit pip installieren:
 
-OK
+```shell
+pip install pytest
 ```
 
-## Deep Dive
-Unit-Tests, wie im Beispiel, sind schon seit den Anfängen der Softwareentwicklung im Einsatz. Alternativen zu `unittest` sind zum Beispiel `pytest` und `nose`, die flexiblere Ansätze und Syntax bieten können. Wichtig ist, Tests isoliert und reproduzierbar zu gestalten, damit sie verlässlich die Funktionsfähigkeit des Codes sichern.
+Dann können Sie Ihre Tests auf eine einfachere Weise schreiben, ohne etwas ableiten zu müssen:
 
-## See Also
-- Die offizielle `unittest` Dokumentation: https://docs.python.org/3/library/unittest.html
-- `pytest`, eine mächtige, Drittanbieter-Testbibliothek: https://pytest.org/
-- Artikel über Test-Driven Development: https://realpython.com/tdd-start-to-finish/
+```python
+# Speichern Sie dies in einer Datei namens test_with_pytest.py
+def add(a, b):
+    return a + b
+
+def test_add():
+    assert add(1, 2) == 3
+    assert add(-1, 1) == 0
+    assert add(10, 2) != 12, "Sollte 12 sein"
+```
+
+Um Ihre Tests mit `pytest` auszuführen, führen Sie einfach aus:
+
+```shell
+pytest test_with_pytest.py
+```
+
+Sie sollten eine Ausgabe von pytest sehen, die Ihre Testergebnisse anzeigt.

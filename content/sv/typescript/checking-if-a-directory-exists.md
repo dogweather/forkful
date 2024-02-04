@@ -1,65 +1,83 @@
 ---
-title:                "Kontrollera om en katalog finns"
-date:                  2024-01-20T14:58:48.142757-07:00
-simple_title:         "Kontrollera om en katalog finns"
-
+title:                "Kontrollera om en katalog existerar"
+date:                  2024-02-03T19:08:45.468259-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Kontrollera om en katalog existerar"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/typescript/checking-if-a-directory-exists.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Att kontrollera om en mapp finns handlar om att se till att en angiven sökväg leder till en existerande mapp innan man jobbar med den. Programmerare gör det för att undvika fel när filsysteminteraktioner kräver att mappen finns.
+## Vad & Varför?
+Att kontrollera om en mapp finns i TypeScript är nödvändigt för filhanteringsuppgifter, såsom att läsa från eller skriva data till filer, för att säkerställa att operationer endast utförs på giltiga mappar. Denna operation är avgörande för att undvika fel som uppstår vid försök att komma åt eller manipulera icke-existerande mappar.
 
-## How to:
-Använd `fs`-modulen för att kontrollera om en mapp finns. Jag visar standard och asynkront sätt.
+## Hur:
 
-```TypeScript
-import * as fs from 'fs';
+TypeScript, när det körs i en Node.js-miljö, tillåter dig att kontrollera om en mapp finns genom att använda `fs`-modulen, som erbjuder funktionen `existsSync()` eller den asynkrona funktionen `access()` kombinerat med `constants.F_OK`.
 
-// Synkront exempel
-const dirPath: string = 'path/to/directory';
+### Använda `fs.existsSync()`:
 
-if (fs.existsSync(dirPath)) {
-  console.log('Mappen finns!');
+```typescript
+import { existsSync } from 'fs';
+
+const directoryPath = './path/to/directory';
+
+if (existsSync(directoryPath)) {
+  console.log('Mappen finns.');
 } else {
   console.log('Mappen finns inte.');
 }
+```
 
-// Asynkront exempel med Promises
-import { promises as fsPromises } from 'fs';
+### Använda `fs.access()` med `fs.constants.F_OK`:
 
-const checkDirectoryExists = async (path: string): Promise<void> => {
-  try {
-    await fsPromises.access(path, fs.constants.F_OK);
-    console.log('Mappen finns!');
-  } catch {
+```typescript
+import { access, constants } from 'fs';
+
+const directoryPath = './path/to/directory';
+
+access(directoryPath, constants.F_OK, (err) => {
+  if (err) {
     console.log('Mappen finns inte.');
+    return;
   }
-}
-
-checkDirectoryExists(dirPath);
+  console.log('Mappen finns.');
+});
 ```
 
-Sample output:
-
+**Exempelutskrift** för båda metoderna, med antagandet att mappen finns:
 ```
-Mappen finns!
+Mappen finns.
 ```
 
-eller
-
+Och om den inte gör det:
 ```
 Mappen finns inte.
 ```
 
-## Deep Dive
-Förr använde vi `fs.exists`, men den är inaktuell på grund av dess oklara callback-hantering. `fs.existsSync` och `fs.promises.access` är pålitligare. Asynkron kontroll med `fs.promises.access` är att föredra i I/O-intensiva applikationer då den inte blockerar event-loopen.
+### Använda ett tredjepartsbibliotek - `fs-extra`:
 
-Att använda `constants.F_OK` med `fs.promises.access` kontrollerar filsystemets tillgänglighet och är ett robust sätt att försäkra sig om mappens existens.
+`fs-extra` är ett populärt tredjepartsbibliotek som förbättrar den inbyggda `fs`-modulen och tillhandahåller mer bekväma funktioner.
 
-## See Also
-- Node.js fs Documentation: https://nodejs.org/api/fs.html
-- TypeScript Handbook: https://www.typescriptlang.org/docs/handbook/intro.html
-- Async/Await i TypeScript: https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-1.html
+```typescript
+import { pathExists } from 'fs-extra';
+
+const directoryPath = './path/to/directory';
+
+pathExists(directoryPath).then(exists => {
+  console.log(`Mappen finns: ${exists}`);
+});
+```
+
+**Exempelutskrift** när mappen finns:
+```
+Mappen finns: true
+```
+
+Och om den inte gör det:
+```
+Mappen finns: false
+```

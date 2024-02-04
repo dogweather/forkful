@@ -1,51 +1,104 @@
 ---
-title:                "Zapisywanie pliku tekstowego"
-date:                  2024-01-19
-simple_title:         "Zapisywanie pliku tekstowego"
-
+title:                "Pisanie pliku tekstowego"
+date:                  2024-02-03T19:29:57.814832-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Pisanie pliku tekstowego"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/swift/writing-a-text-file.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
+## Co i Dlaczego?
 
-Zapisywanie pliku tekstowego to proces, w którym dane są zapisywane w pliku o formacie tekstowym. Programiści robią to, aby przechowywać dane konfiguracyjne, logować informacje lub wyeksportować wyniki pracy programu.
+Pisanie plików tekstowych w języku Swift pozwala na trwałe przechowywanie danych tekstowych w systemie plików, co jest niezbędne do zadań takich jak zapisywanie ustawień konfiguracyjnych, danych użytkownika czy logów. Programiści często robią to, aby utrzymać dane między uruchomieniami aplikacji, dzielić dane pomiędzy różnymi częściami aplikacji lub eksportować dane do użytku przez inne programy.
 
-## Jak to zrobić?
+## Jak to zrobić:
 
-```Swift
+### Korzystając z Biblioteki Standardowej Swifta
+
+Biblioteka standardowa Swifta zawiera wszystkie narzędzia potrzebne do pisania plików tekstowych. Oto podstawowe podejście:
+
+```swift
 import Foundation
 
-let str = "Witaj świecie!"
-let filename = getDocumentsDirectory().appendingPathComponent("output.txt")
+let tresc = "Witajcie, czytelnicy Wired! Uczenie się Swifta jest zabawne."
+let sciezkaPliku = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String
+let nazwaPliku = "\(sciezkaPliku)/przyklad.txt"
 
 do {
-    try str.write(to: filename, atomically: true, encoding: String.Encoding.utf8)
-    print("Plik został zapisany.")
+    try tresc.write(toFile: nazwaPliku, atomically: false, encoding: String.Encoding.utf8)
+    print("Plik został pomyślnie zapisany")
+} catch let error as NSError {
+    print("Błąd zapisu do URL: \(nazwaPliku), Błąd: " + error.localizedDescription)
+}
+```
+
+Ten fragment kodu zapisuje ciąg znaków do pliku o nazwie `przyklad.txt` w katalogu dokumentów. Obsługuje potencjalne błędy za pomocą mechanizmu obsługi błędów do-try-catch Swifta.
+
+### Korzystając z FileManagera dla Większej Kontroli
+
+Dla większej kontroli nad atrybutami plików lub aby sprawdzić, czy plik już istnieje, można użyć `FileManagera`:
+
+```swift
+import Foundation
+
+let fileManager = FileManager.default
+let katalogi = fileManager.urls(for: .documentDirectory, in: .userDomainMask)
+if let katalogDokumentow = katalogi.first {
+    let URLPliku = katalogDokumentow.appendingPathComponent("przyklad.txt")
+    let tresc = "Eksploracja Swifta do zarządzania plikami jest pouczająca."
+
+    if fileManager.fileExists(atPath: URLPliku.path) {
+        print("Plik już istnieje")
+    } else {
+        do {
+            try tresc.write(to: URLPliku, atomically: true, encoding: .utf8)
+            print("Plik został utworzony i pomyślnie zapisany")
+        } catch {
+            print("Błąd zapisu pliku: \(error)")
+        }
+    }
+}
+```
+
+### Korzystając z Bibliotek Trzecich
+
+Jedną z popularnych bibliotek trzecich do operacji na systemie plików w Swift jest `Files` autorstwa Johna Sundella:
+
+Najpierw dodaj Files do swojego projektu, zazwyczaj za pomocą Swift Package Manager.
+
+```swift
+// swift-tools-version:5.3
+import PackageDescription
+
+let pakiet = Package(
+    name: "NazwaTwojegoPakietu",
+    dependencies: [
+        .package(url: "https://github.com/JohnSundell/Files", from: "4.0.0"),
+    ],
+    targets: [
+        .target(
+            name: "NazwaTwojegoCel",
+            dependencies: ["Files"]),
+    ]
+)
+```
+
+Następnie użyj jej do zapisu do pliku:
+
+```swift
+import Files
+
+do {
+    let plik = try File(path: "/sciezka/do/twojego/katalogu/przyklad.txt")
+    try plik.write(string: "Swift i biblioteka Files stanowią potężne połączenie.")
+    print("Plik został pomyślnie zapisany przy użyciu biblioteki Files.")
 } catch {
-    print("Wystąpił błąd podczas zapisu pliku: \(error).")
-}
-
-// Pomocnicza funkcja do znalezienia katalogu dokumentów
-func getDocumentsDirectory() -> URL {
-    let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-    return paths[0]
+    print("Wystąpił błąd: \(error)")
 }
 ```
 
-**Przykładowy wynik:**
-```
-Plik został zapisany.
-```
-
-## Deep Dive
-
-Zapisywanie plików tekstowych w Swift zaczęło się od wersji Swift 1.0 i ewoluowało na przestrzeni lat. Alternatywą może być użycie `FileHandle` czy strumieni danych (`OutputStream`). Dane w pliku tekstowym są zapisywane jako ciąg znaków w wybranym kodowaniu, najczęściej UTF-8.
-
-## Zobacz też
-
-- [Dokumentacja Apple o pracy z systemem plików](https://developer.apple.com/documentation/foundation/file_system)
-- [Dokumentacja Apple o klasie `FileManager`](https://developer.apple.com/documentation/foundation/filemanager)
-- [Tutorial o obsłudze plików w Swift](https://www.hackingwithswift.com/read/26/overview)
+Dzięki bibliotece `Files`, obsługa plików staje się bardziej bezpośrednia, co pozwala skupić się na logice biznesowej aplikacji, a nie na zawiłościach zarządzania plikami.

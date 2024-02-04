@@ -1,36 +1,70 @@
 ---
-title:                "Utilizando expressões regulares"
-date:                  2024-01-19
-simple_title:         "Utilizando expressões regulares"
-
+title:                "Usando expressões regulares"
+date:                  2024-02-03T19:17:33.193945-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Usando expressões regulares"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/php/using-regular-expressions.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (O Que & Por Quê?)
-Regular expressions, ou regex, são uma ferramenta para busca e manipulação de texto usando padrões definidos. Programadores usam regex para validação de dados, busca, substituição e parsing de textos de forma eficiente e concisa.
+## O Que & Por Quê?
 
-## How to: (Como Fazer:)
-```PHP
-<?php
-$texto = 'O email do contato é contato@exemplo.com';
-$padrao = '/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}/';
+Expressões regulares (regex) em PHP são padrões usados para combinar combinações de caracteres em strings, permitindo operações sofisticadas de busca e substituição e validação de dados. Programadores utilizam regex pela sua potência e flexibilidade na análise de texto, validação de formulários ou raspagem de dados da web, tornando-o uma ferramenta indispensável no arsenal de um desenvolvedor.
 
-if (preg_match($padrao, $texto, $matches)) {
-    echo "Email encontrado: " . $matches[0];
+## Como Fazer:
+
+O PHP suporta expressões regulares através da biblioteca PCRE (Perl Compatible Regular Expressions), oferecendo um rico conjunto de funções. Veja como usá-las:
+
+### Correspondência de um padrão:
+
+Para verificar se um padrão existe dentro de uma string, use `preg_match()`. Esta função retorna 1 se o padrão foi encontrado na string e 0 se não.
+
+```php
+if (preg_match("/\bweb\b/i", "PHP é uma linguagem de script para web")) {
+    echo "Uma correspondência foi encontrada.";
 } else {
-    echo "Nenhum email válido encontrado.";
+    echo "Uma correspondência não foi encontrada.";
 }
-?>
+// Saída: Uma correspondência foi encontrada.
 ```
-Saída: Email encontrado: contato@exemplo.com
 
-## Deep Dive (Mergulho Profundo)
-As expressões regulares originaram-se na década de 1950. Alternativas incluem métodos de string como strpos() e strstr() no PHP, mas eles não oferecem a mesma flexibilidade. Quanto à implementação, o PHP usa a biblioteca PCRE (Perl Compatible Regular Expressions) para processar regex, o que proporciona uma rica variedade de opções e sintaxe.
+### Encontrando todas as correspondências:
 
-## See Also (Veja Também)
-- Documentação oficial do PHP sobre regex: [PHP PCRE](https://www.php.net/manual/pt_BR/book.pcre.php)
-- Tutorial interativo de regex: [Regex101](https://regex101.com/)
-- Artigo sobre expressões regulares: [Regular Expressions in PHP](https://www.phpliveregex.com/)
+`preg_match_all()` é usado quando você precisa encontrar todas as ocorrências de um padrão dentro de uma string.
+
+```php
+$text = "gatos e cachorros";
+$padrão = "/\b([a-z]+)\b/i";
+preg_match_all($padrão, $text, $matches);
+print_r($matches[0]);
+// Saída: Array ( [0] => gatos [1] => e [2] => cachorros )
+```
+
+### Substituindo texto:
+
+Para substituir o texto que corresponde a uma expressão regular, `preg_replace()` é usado. É incrivelmente poderoso para formatar e limpar dados.
+
+```php
+$textoOriginal = "15 de abril de 2003";
+$padrão = "/(\w+) (\d+), (\d+)/i";
+$substituição = '${1}1,$3';
+echo preg_replace($padrão, substituição, $textoOriginal);
+// Saída: 15 de abril1,2003
+```
+
+### Dividindo strings:
+
+Você pode dividir uma string em um array usando `preg_split()`, especificando um padrão para o delimitador.
+
+```php
+$text = "PHP é, extremamente popular, linguagem de script";
+$partes = preg_split("/,\s*/", $text);
+print_r($partes);
+// Saída: Array ( [0] => PHP é [1] => extremamente popular [2] => linguagem de script )
+```
+
+Além disso, para padrões de regex complexos e tarefas, frameworks e bibliotecas como o componente `Finder` do Symfony ou a coleção de funções auxiliares do Laravel podem oferecer uma camada de abstração mais conveniente. No entanto, compreender e utilizar as funções PCRE integradas do PHP é crucial para o processamento de texto eficiente e validação diretamente nos scripts PHP.

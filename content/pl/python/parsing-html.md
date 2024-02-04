@@ -1,41 +1,63 @@
 ---
-title:                "Przetwarzanie HTML"
-date:                  2024-01-20T15:33:27.853083-07:00
-simple_title:         "Przetwarzanie HTML"
-
+title:                "Analiza składniowa HTML"
+date:                  2024-02-03T19:12:50.370614-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Analiza składniowa HTML"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/python/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Co i dlaczego?
-Parsing HTML to proces wydobywania danych ze struktur HTML. Programiści to robią, by manipulować zawartością stron internetowych lub scrapować informacje.
+Parsowanie HTML-a polega na analizowaniu kodu HTML strony internetowej w celu wyodrębnienia określonych informacji lub elementów, co jest powszechnym zadaniem przy web scrapingu, wydobywaniu danych lub automatyzowaniu interakcji ze stronami internetowymi. Programiści wykonują to, aby programistycznie wchodzić w interakcje z witrynami internetowymi, automatyzować zadania lub testować aplikacje internetowe.
 
 ## Jak to zrobić:
-Użyjemy biblioteki `BeautifulSoup`, aby zeskrapować tytuł strony.
+Python oferuje potężne biblioteki takie jak BeautifulSoup i requests do web scrapingu i parsowania HTML-a. Aby zacząć, musisz zainstalować te biblioteki, jeśli jeszcze tego nie zrobiłeś:
 
-```Python
-from bs4 import BeautifulSoup
+```bash
+pip install beautifulsoup4 requests
+```
+
+Oto podstawowy przykład użycia `requests` do pobrania zawartości HTML strony internetowej oraz `BeautifulSoup` do jej analizy:
+
+```python
 import requests
+from bs4 import BeautifulSoup
 
-url = "http://example.com"
-response = requests.get(url)
-soup = BeautifulSoup(response.text, 'html.parser')
+# Pobierz zawartość strony internetowej
+URL = 'https://example.com'
+page = requests.get(URL)
 
-title = soup.find('title').get_text()
-print(f"Tytuł strony to: '{title}'")
+# Analizuj zawartość HTML
+soup = BeautifulSoup(page.content, 'html.parser')
+
+# Przykład wyodrębnienia tytułu strony internetowej
+title = soup.find('title').text
+print(f'Tytuł strony internetowej: {title}')
 ```
 
-Wynik:
+**Przykładowy wynik**:
 ```
-Tytuł strony to: 'Example Domain'
+Tytuł strony internetowej: Domena przykładowa
 ```
 
-## Głębsze spojrzenie:
-Parsing HTML nie jest nowym tematem. W latach '90, kiedy internet zaczął się rozwijać, potrzeba analizowania HTML-a rosła. W Pythonie, poza `BeautifulSoup`, mamy też `lxml` i wbudowany moduł `html.parser`. Każda z nich ma swoje plusy i minusy: `lxml` jest szybszy, ale wymaga dodatkowych zależności C, a `html.parser` jest częścią standardowej biblioteki Pythona, ale jest wolniejszy i mniej elastyczny.
+W przypadku bardziej złożonych zapytań, takich jak wyodrębnienie wszystkich linków ze strony internetowej, możesz użyć różnych metod BeautifulSoup do nawigowania i przeszukiwania drzewa struktury:
 
-## Zobacz również:
-- Dokumentacja `BeautifulSoup`: https://www.crummy.com/software/BeautifulSoup/bs4/doc/
-- Porównanie parserów HTML w Pythonie: https://www.crummy.com/software/BeautifulSoup/bs4/doc/#installing-a-parser
-- Tutorial Web Scraping w Pythonie: https://realpython.com/beautiful-soup-web-scraper-python/
+```python
+# Wyodrębnij wszystkie linki w znacznikach <a>
+links = soup.find_all('a')
+
+for link in links:
+    href = link.get('href')
+    print(href)
+```
+
+**Przykładowy wynik**:
+```
+https://www.iana.org/domains/example
+```
+
+Elastyczność BeautifulSoup pozwala na dostosowanie wyszukiwania do dokładnie potrzebnych danych, co czyni parsowanie HTML potężnym narzędziem dla programistów pracujących z treściami internetowymi.

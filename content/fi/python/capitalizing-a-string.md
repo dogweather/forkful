@@ -1,47 +1,68 @@
 ---
 title:                "Merkkijonon muuttaminen isoiksi kirjaimiksi"
-date:                  2024-01-19
+date:                  2024-02-03T19:06:19.749392-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Merkkijonon muuttaminen isoiksi kirjaimiksi"
-
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/python/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? - Mitä & Miksi?
-Stringin pääkirjaimet tarkoittaa tekstijonon muuttamista niin, että kirjaimet ovat isoina - kuten otsikoissa tai nimissä. Koodarit käyttävät sitä parantaakseen luettavuutta ja standardoimaan datan ulkoasua.
+## Mikä ja miksi?
+Merkkijonon alkukirjaimen suurentaminen tarkoittaa merkkijonon ensimmäisen merkin muuttamista isoksi kirjaimeksi ja lopun pieniksi kirjaimiksi. Tätä toimintoa käytetään yleisesti datan käsittelyssä syötteiden normalisointiin tai otsikoiden, nimien yms. luettavuuden parantamiseen.
 
-## How to - Näin teet:
-Pythonissa stringin saa isolla käyttäen `upper()`-metodia. Pienillä kirjaimilla `lower()` ja alkukirjain isoksi `capitalize()`. Katsotaanpa esimerkkejä.
+## Kuinka:
 
-```Python
-# Tekstin muuttaminen kokonaan suuraakkosiksi
-text = "tervetuloa ohjelmointimaailmaan"
-print(text.upper())
-# Output: TERVETULOA OHJELMOINTIMAAILMAAN
+### Käyttäen Pythonin sisäänrakennettua metodia:
+Pythonissa on merkkijonoille sisäänrakennettu metodi `.capitalize()`, jolla tämä tehtävä on helppo suorittaa.
 
-# Jokaisen sanan alkukirjaimen muuttaminen isoksi
-title = "python ohjelmoinnin perusteet"
-print(title.title())
-# Output: Python Ohjelmoinnin Perusteet
-
-# Vain ensimmäisen kirjaimen muuttaminen isoksi
-greeting = "moi kaikille"
-print(greeting.capitalize())
-# Output: Moi kaikille
+```python
+my_string = "hello world"
+capitalized_string = my_string.capitalize()
+print(capitalized_string)
+```
+**Tuloste:**
+```
+Hello world
 ```
 
-## Deep Dive - Syväsukellus
-Stringien pääkirjainten historia juontaa juurensa kirjoituskoneista ja varhaisesta tietojenkäsittelystä, jossa erottelu isoilla kirjaimilla oli tarpeen. Myös nykypäivänä esimerkiksi osoitteet ja henkilönimet standardoidaan usein pääkirjaimin.
+### Käsiteltäessä useita sanoja:
+Skenaarioissa, joissa haluat jokaisen merkkijonon sanan alkavan isolla kirjaimella (kuten otsikoissa), voidaan käyttää `.title()`-metodia.
 
-Kielitieteilijät puhuvat "title casesta", joka on iso alkukirjain jokaisessa merkittävässä sanassa. Pythonissa tämä toimii `title()`-metodilla. Jotkut käyttävät myös `str.capitalize()`-metodia, joka kuitenkin suurentaa vain ensimmäisen kirjaimen.
+```python
+my_title = "python programming essentials"
+title_case = my_title.title()
+print(title_case)
+```
+**Tuloste:**
+```
+Python Programming Essentials
+```
 
-Alkuperäiset funktiot `upper()`, `lower()` ja `capitalize()` ovat osa Pythonin standardikirjastoa, ja niiden tehtävä on tekstikäsittely. Ne toimivat Unicode-merkkijonoihin, jossa kirjaimet voivat olla monimutkaisempia ja isot/pienet kirjaimet eivät aina määräydy yksiselitteisesti.
+### Käyttäen kolmannen osapuolen kirjastoja:
+Vaikka Pythonin vakio kirjasto on varustettu perus merkkijonojen alkukirjaimen suurentamiseen, kirjastot kuten `textblob` voivat tarjota hienostuneempaa hallintaa, erityisesti luonnollisen kielen käsittelyssä.
 
-Python-koodareille on tarjolla myös kolmansien osapuolten kirjastoja, kuten `stringcase`, joka sisältää lisää tapoja muokata merkkijonoja eri tapauksiin.
+Varmentaaksesi että sinulla on `textblob` asennettu:
+```bash
+pip install textblob
+```
 
-## See Also - Katso Myös
-- Pythonin virallinen dokumentaatio string-metodeista: [Python 3 string methods](https://docs.python.org/3/library/stdtypes.html#string-methods)
-- Unicode ja python: [Unicode HOWTO](https://docs.python.org/3/howto/unicode.html)
-- String formatting in Python: [PyFormat](https://pyformat.info/)
+Sen jälkeen voit käyttää sitä merkkijonojen alkukirjaimen suurentamiseen, pitäen mielessä, että `textblob`in capitalize voi toimia eri tavalla käyttökontekstista riippuen:
+
+```python
+from textblob import TextBlob
+
+my_sentence = "this is a test sentence"
+blob = TextBlob(my_sentence)
+capitalized_blob = TextBlob(blob.string.capitalize())
+print(capitalized_blob)
+```
+**Tuloste:**
+```
+This is a test sentence
+```
+
+Muista, että vaikka `capitalize()`- ja `title()`-menetelmät ovat yleisesti hyödyllisiä, kirjastoja kuten `textblob` käyttämällä voidaan saada lisää joustavuutta tietyissä sovelluksissa.

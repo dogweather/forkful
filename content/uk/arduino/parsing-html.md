@@ -1,68 +1,82 @@
 ---
-title:                "Парсинг HTML"
-date:                  2024-01-20T15:29:51.417835-07:00
-simple_title:         "Парсинг HTML"
-
+title:                "Аналіз HTML"
+date:                  2024-02-03T19:12:11.592458-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Аналіз HTML"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/arduino/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Що та Чому?)
-Parsing HTML means dissecting a string of HTML code to extract data. Programmers do this to interact with web content in their applications.
+## Що і чому?
 
-## How to: (Як це зробити:)
-```Arduino
-#include <Ethernet.h>
-#include <HttpClient.h>
+Розбір HTML у проектах Arduino полягає у витягуванні інформації з веб-сторінок. Програмісти роблять це, щоб дати можливість своїм пристроям Arduino взаємодіяти з Інтернетом, збираючи дані з вебсайтів для цілей, що варіюються від домашньої автоматизації до моніторингу навколишнього середовища.
 
-EthernetClient ethClient;
-HttpClient httpClient = HttpClient(ethClient);
+## Як робити:
 
-const String webPageUrl = "http://example.com";
+Розбір HTML на Arduino зазвичай вимагає бібліотек із мінімальним використанням ресурсів через обмежені можливості пристрою. Популярним вибором для веб-скрапінгу та розбору є використання бібліотек `ESP8266HTTPClient` та `ESP8266WiFi` для ESP8266 або їх аналогів для ESP32, зважаючи на їх вроджену підтримку можливостей Wi-Fi та протоколів HTTP. Ось базовий приклад завантаження та розбору HTML, виходячи з того, що ви працюєте з ESP8266 чи ESP32:
 
+Спершу підключіть необхідні бібліотеки:
+```cpp
+#include <ESP8266WiFi.h> // Для ESP8266
+#include <ESP8266HTTPClient.h>
+#include <WiFiClient.h>
+// Використовуйте аналогічні бібліотеки ESP32, якщо користуєтесь ESP32
+
+const char* ssid = "yourSSID";
+const char* password = "yourPASSWORD";
+```
+
+Підключіться до вашої Wi-Fi мережі:
+```cpp
 void setup() {
-  Serial.begin(9600);
-  // Initialize Ethernet
-  if (Ethernet.begin(mac) == 0) {
-    Serial.println("Failed to configure Ethernet using DHCP");
-    for (;;);
-  }
-  // Fetch the web page
-  httpClient.beginRequest();
-  httpClient.get(webPageUrl);
-  httpClient.endRequest();
+    Serial.begin(115200);
+    WiFi.begin(ssid, password);
 
-  // Reading the response and parsing
-  int statusCode = httpClient.responseStatusCode();
-  String response = httpClient.responseBody();
-  
-  // Simple parsing for a tag
-  int index = response.indexOf("<title>");
-  if(index >= 0) {
-    int endIdx = response.indexOf("</title>", index);
-    String title = response.substring(index + 7, endIdx);
-    Serial.print("Title: ");
-    Serial.println(title);
-  }
+    while (WiFi.status() != WL_CONNECTED) {
+        delay(1000);
+        Serial.println("Підключення...");
+    }
 }
+```
 
+Зробіть HTTP запит та розберіть простий шматочок HTML:
+```cpp
 void loop() {
-  // This sketch runs setup once and exits, nothing needed here
+    if (WiFi.status() == WL_CONNECTED) { //Перевіряємо стан підключення Wi-Fi
+        HTTPClient http;  //Оголошуємо об'єкт класу HTTPClient
+
+        http.begin("http://example.com");  //Вказуємо призначення запиту
+        int httpCode = http.GET();  //Надсилаємо запит
+
+        if (httpCode > 0) { //Перевіряємо код, що повернувся
+            String payload = http.getString();   //Отримуємо відповідь запиту
+            Serial.println(payload);             //Друкуємо отримані дані
+
+            // Розбираємо конкретну частину, наприклад, витягуючи заголовок з даних
+            int titleStart = payload.indexOf("<title>") + 7; // +7, щоб перескочити "<title>" тег
+            int titleEnd = payload.indexOf("</title>", titleStart);
+            String pageTitle = payload.substring(titleStart, titleEnd);
+
+            Serial.print("Заголовок сторінки: ");
+            Serial.println(pageTitle);
+        }
+
+        http.end();   //Закриваємо з'єднання
+    }
+
+    delay(10000); //Робимо запит кожні 10 секунд
 }
 ```
-Sample output:
+
+Приклад виводу (виходячи з припущення, що http://example.com має просту структуру HTML):
 ```
-Title: Example Domain
+Підключення...
+...
+Заголовок сторінки: Example Domain
 ```
 
-## Deep Dive (Поглиблений Аналіз):
-Parsing HTML on Arduino comes with constraints due to limited memory and CPU. Historically, people would opt for server-side parsing and send processed data to Arduino. Alternatives include using regular expressions, String functions or dedicated libraries like `ArduinoJson` for JSON data. However, HTML is parse-agnostic which makes it tricky—no guaranteed structure (unlike JSON/XML). This calls for careful string manipulation and conservative use of precious Arduino memory.
-
-## See Also (Дивіться також):
-- ArduinoJson Library: https://arduinojson.org/
-- Arduino Ethernet library: https://www.arduino.cc/en/Reference/Ethernet
-- HTTPClient Library: https://www.arduino.cc/en/Tutorial/LibraryExamples/HttpClient
-- Regular Expressions in C++ (Arduino): https://www.cplusplus.com/reference/regex/
-- Arduino String Reference: https://www.arduino.cc/reference/en/language/variables/data-types/string/
+Цей приклад демонструє завантаження HTML-сторінки та витягування змісту тега `<title>`. Для більш складного розбору HTML розгляньте використання регулярних виразів (обережно через обмеження пам'яті) або функцій маніпуляції рядками для навігації через структуру HTML. Більш складний розбір може вимагати більш витончених підходів, включаючи специфічні алгоритми розбору, адаптовані до конкретної структури HTML, з якою ви працюєте, оскільки стандартне середовище Arduino не включає вбудованої бібліотеки для розбору HTML.

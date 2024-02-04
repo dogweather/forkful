@@ -1,34 +1,58 @@
 ---
-title:                "כתיבה לפלט השגיאה הסטנדרטי"
-date:                  2024-01-19
-simple_title:         "כתיבה לפלט השגיאה הסטנדרטי"
-
+title:                "כתיבה לשגיאה התקנית"
+date:                  2024-02-03T19:34:19.276282-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "כתיבה לשגיאה התקנית"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/javascript/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## מה ולמה?
-כתיבה ל-stderr היא דרך להדפיס הודעות שגיאה או אינפורמציה דיאגנוסטית לסטרים 'שגיאה סטנדרטית'. תכניתנים עושים זאת כדי לנתק את הפלט הרגיל מההודעות האלו.
+כתיבה לשגיאה סטנדרטית (stderr) ב-JavaScript מדוברת על הכוונת הודעות שגיאה או מידע קריטי לזרם נפרד מסוים, מה שמאוד שימושי בסביבות דמויות-Unix לצורכי תיעוד וניפוי שגיאות. מתכנתים עושים זאת כדי להבחין בין פלט תוכנית רגיל לבין הודעות שגיאה, מה שמאפשר ניהול פלט נקי יותר וניטור שגיאות קל יותר.
 
-## איך לעשות:
+## איך לעשות זאת:
+ב-Node.js, ניתן לכתוב ל-stderr באמצעות השיטה `console.error()` או על ידי כתיבה ישירה ל-`process.stderr`. הנה דוגמאות המדגימות את שתי הגישות:
+
 ```javascript
-// כיצד להדפיס ל stderr
-console.error('זו שגיאה!');
+// באמצעות console.error()
+console.error('זוהי הודעת שגיאה.');
 
-// איך להפנות את הפלט של stderr לקובץ:
-process.stderr.write('זו גם שגיאה!\n');
-```
-הפלט המתקבל:
-```
-זו שגיאה!
-זו גם שגיאה!
+// כתיבה ישירה ל-process.stderr
+process.stderr.write('זוהי הודעת שגיאה נוספת.\n');
 ```
 
-## הצלילה לעומק
-בימים של מערכות UNIX, הפרדת פלטים ל-stdout ו-stderr אפשרה למשתמשים להפריד בין מידע רגיל לבין הודעות שגיאה. חלופות לכתיבה ל-stderr כוללות יומני אירועים או רישום לקובץ לוג. ההפרדה בין stdout ל-stderr בג'אווהסקריפט באה לידי ביטוי באמצעות `console.log` לפלט רגיל ו`console.error` או `process.stderr.write` לפלט שגיאות.
+פלט לדוגמה עבור שתי השיטות יופיע בזרם ה-stderr, ללא ערבוב עם stdout:
+```
+זוהי הודעת שגיאה.
+זוהי הודעת שגיאה נוספת.
+```
 
-## ראו גם
-- [מסמך Node.js לעבודה עם stdout ו stderr](https://nodejs.org/api/process.html#process_process_stdout)
-- [מדריך MDN לאובייקט ה-console](https://developer.mozilla.org/en-US/docs/Web/API/Console)
+לצורכי תיעוד יותר מתוחכם או ספציפי ליישום, מפתחי JavaScript רבים משתמשים בספריות צד שלישי כמו `winston` או `bunyan`. הנה דוגמה מהירה באמצעות `winston`:
+
+תחילה, התקן את `winston` דרך npm:
+```shell
+npm install winston
+```
+
+לאחר מכן, קבע את `winston` לתעד שגיאות ל-stderr:
+```javascript
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  levels: winston.config.syslog.levels,
+  transports: [
+    new winston.transports.Console({
+      stderrLevels: ['error']
+    })
+  ]
+});
+
+// תיעוד הודעת שגיאה
+logger.error('שגיאה תועדה דרך winston.');
+```
+
+הגדרה זו מבטיחה שכאשר אתה מתעד שגיאה באמצעות `winston`, היא מופנית ל-stderr, מה שעוזר לשמור על הפרדה ברורה בין פלט סטנדרטי לבין פלט שגיאות.

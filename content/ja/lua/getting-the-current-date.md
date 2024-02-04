@@ -1,40 +1,50 @@
 ---
-title:                "現在の日付を取得する"
-date:                  2024-01-20T15:15:50.297297-07:00
-simple_title:         "現在の日付を取得する"
-
+title:                "現在の日付の取得"
+date:                  2024-02-03T19:10:33.638148-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "現在の日付の取得"
 tag:                  "Dates and Times"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/lua/getting-the-current-date.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (何と何故？)
-現在の日付を取得することは、文字通りシステムの今の日付と時刻を得ることです。プログラマーはログのタイムスタンプ、有効期限、日付計算などにこれを使います。
+## 何となぜ？
 
-## How to: (やり方)
-```Lua
--- 現在の日付と時刻を取得
-local current_time = os.date("*t")  -- テーブル形式で日付と時刻を取得
+プログラミングにおいて現在の日付を取得することは、ログ記録、イベントのタイムスタンプ付け、タスクのスケジューリングなど、多数のアプリケーションにとって重要な作業です。Luaでは、この機能によりプログラマーは日付や時間の操作をアプリケーション内でシームレスに扱うことができ、ソフトウェアがリアルタイムデータと効果的に対話できるようにします。
 
--- 様々なフォーマットで出力
-print("今日の日付:", os.date("%Y-%m-%d"))  -- yyyy-mm-dd 形式
-print("時刻:", os.date("%H:%M:%S"))  -- hh:mm:ss 形式
+## 使い方:
+
+Luaは現在の日付と時間を取得するために `os.date` 関数を提供しています。この関数は、整形された文字列を取得するために引数なしで使用することも、出力をカスタマイズするためにフォーマット指定子を使用することもできます。使用方法は以下の通りです：
+
+```lua
+-- 整形された文字列としての現在の日付と時間を取得
+print(os.date())  -- 例, Thu Mar  3 14:02:03 2022
+
+-- 出力フォーマットをカスタマイズ
+-- %Y は年, %m は月, %d は日, %H は時間, %M は分
+print(os.date("%Y-%m-%d %H:%M"))  -- 例, 2022-03-03 14:02
 ```
 
-サンプル出力:
+より高度な日付や時間の操作については、Luaには他のプログラミング言語ほど豊富な組み込みライブラリはありません。しかし、`lua-date` (https://github.com/Tieske/date) などのサードパーティライブラリを使用することができます。このライブラリは日付や時間を操作するためのより包括的な機能を提供します。使用方法は以下のようになります：
+
+まず、`lua-date` ライブラリがインストールされていることを確認します。通常、LuaRocksを使用して以下のコマンドでインストールできます：
+
+```bash
+luarocks install lua-date
 ```
-今日の日付: 2023-04-01
-時刻: 15:42:07
+
+その後、次のようにLuaスクリプトで使用することができます：
+
+```lua
+local date = require("date")
+
+-- 現在の日付と時間の日付オブジェクトを作成
+local now = date()
+
+print(now:fmt("%Y-%m-%d %H:%M:%S"))  -- 例, 2022-03-03 14:02:03
 ```
 
-## Deep Dive (探求)
-Luaの`os.date`関数は、C言語の`strftime`関数に影響を受けています。パフォーマンスへの影響が最小限であるために、多くのLuaプログラムで使われています。`os.date("*t")`は、ローカル時間で日時のテーブルを返しますが、`os.date("!%X")`は世界協定時刻（UTC）を使います。
-
-他の言語やフレームワークでは、日付取得に特専のライブラリやモジュールを提供することがありますが、Luaでは`os`モジュールがその役割を果たします。Luaを組み込んでいるアプリケーションでは、この機能がサンドボックス化されている場合があるので注意が必要です。
-
-## See Also (参考文献)
-- Lua 5.4 Reference Manual: https://www.lua.org/manual/5.4/manual.html#6.9
-- strftime (C言語の時間関数): https://www.cplusplus.com/reference/ctime/strftime/
-- Lua-users wiki (日付と時刻): http://lua-users.org/wiki/DateAndTime
+この例では、現在時刻を表す `date` オブジェクトの作成を示し、`os.date` 関数に似ていますが、`lua-date` ライブラリによって提供される追加の柔軟性とオプションを使用して同様にフォーマットすることができます。

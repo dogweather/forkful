@@ -1,38 +1,90 @@
 ---
-title:                "Wykorzystanie wyrażeń regularnych"
-date:                  2024-01-19
-simple_title:         "Wykorzystanie wyrażeń regularnych"
-
+title:                "Korzystanie z wyrażeń regularnych"
+date:                  2024-02-03T19:17:27.387209-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Korzystanie z wyrażeń regularnych"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/javascript/using-regular-expressions.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Co i dlaczego?)
-Wyrażenia regularne to wzorce służące do wyszukiwania i manipulacji tekstami. Programiści używają ich, by łatwo znajdować, porządkować i edytować dane tekstowe, szczególnie przy dużych objętościach lub złożonych strukturach danych.
+## Co i dlaczego?
 
-## How to: (Jak to zrobić?)
+Wyrażenia regularne (regex) w JavaScript są wzorcami używanymi do dopasowywania kombinacji znaków w ciągach tekstowych. Programiści używają ich do wyszukiwania, ekstrakcji i manipulowania tekstem, co pozwala na potężne operacje przetwarzania ciągów znaków za pomocą zwięzłego kodu.
+
+## Jak to zrobić:
+
+### Podstawowe Dopasowanie
+
+Na początek możesz stworzyć prosty wzór regex i użyć go do znalezienia dopasowań w ciągu tekstowym. Tutaj znajdziemy słowo "kod":
+
 ```javascript
-// Znalezienie numerów w tekście
-let tekst = "Zamówienie 123, pozycja 456.";
-let regExpNumer = /\d+/g;
-console.log(tekst.match(regExpNumer)); // Output: ['123', '456']
-
-// Zamiana danych w tekście
-let maskownieEmaili = (email) => email.replace(/(\w+)@(\w+)\.(\w+)/g, '***@***.***');
-console.log(maskownieEmaili("jan.kowalski@example.com")); // Output: '***@***.***'
-
-// Weryfikacja formatu kodu pocztowego
-let kodPocztowy = '00-700';
-let regExpKod = /^\d{2}-\d{3}$/;
-console.log(regExpKod.test(kodPocztowy)); // Output: true
+const str = "Uwielbiam programować w JavaScript.";
+const pattern = /kod/;
+const result = pattern.test(str);
+console.log(result); // true
 ```
 
-## Deep Dive (Głębsze spojrzenie)
-Wyrażenia regularne, znane jako regex, sięgają lat 50. XX wieku. Były częścią składnika teoretycznej informatyki - teorii automatów i języków formalnych. W JavaScript, wyrażenia regularne są obiektami klasy `RegExp`. Istnieją alternatywy do regexów, takie jak funkcje `indexOf` czy `includes`, ale żadna z nich nie oferuje takiej elastyczności. Wyrażenia regularne obrabiają stringi na niskim poziomie, co może wpłynąć na wydajność; wartość rozpoznać potrzebę ich używania.
+### Użycie `String.prototype.match()`
 
-## See Also (Zobacz także)
-- MDN Web Docs na temat wyrażeń regularnych: [MDN RegExp](https://developer.mozilla.org/pl/docs/Web/JavaScript/Reference/Global_Objects/RegExp)
-- Tutorial do wyrażeń regularnych w JavaScript: [JavaScript RegExp Tutorial](https://www.regular-expressions.info/javascript.html)
-- Interaktywny tester wyrażeń regularnych: [RegExr](https://regexr.com/)
+Aby otrzymać tablicę dopasowań:
+
+```javascript
+const matches = str.match(/kod/);
+console.log(matches[0]); // "kod"
+console.log(matches.index); // 10
+```
+
+### Globalne Wyszukiwanie
+
+Aby znaleźć wszystkie dopasowania, użyj flagi `g`:
+
+```javascript
+const globalMatches = str.match(/o/g);
+console.log(globalMatches); // ["o", "o", "o"]
+```
+
+### Dopasowanie Niezależne od Wielkości Liter
+
+Flaga `i` ignoruje wielkość liter:
+
+```javascript
+const caseInsensitiveMatch = "JavaScript jest fajny".match(/javascript/i);
+console.log(caseInsensitiveMatch[0]); // "JavaScript"
+```
+
+### Zastępowanie Tekstu
+
+Użyj `String.prototype.replace()`, aby zastąpić części ciągu tekstowego:
+
+```javascript
+const newStr = "JavaScript jest fajny".replace(/fajny/, "niesamowity");
+console.log(newStr); // "JavaScript jest niesamowity"
+```
+
+### Użycie Grup
+
+Grupy mogą przechwytywać części wzorca:
+
+```javascript
+const groupedPattern = /(\w+) jest (\w+)/;
+const replaceWithGroups = "JavaScript jest fajny".replace(groupedPattern, "$2 jest $1");
+console.log(replaceWithGroups); // "fajny jest JavaScript"
+```
+
+### Biblioteki Stron Trzecich
+
+Chociaż wbudowane możliwości regex JavaScript są potężne, niektóre zadania mogą być uproszczone za pomocą bibliotek takich jak `XRegExp`. Oferuje dodatkową składnię i flagi, dzięki czemu skomplikowane wzorce są bardziej czytelne:
+
+```javascript
+// Przykład użycia biblioteki XRegExp
+const XRegExp = require('xregexp');
+const str = "Koty są fantastyczne.";
+const unicodeWordMatch = XRegExp.match(str, XRegExp('\\p{L}+'), 'all');
+console.log(unicodeWordMatch); // ["Koty", "są", "fantastyczne"]
+```
+
+Ten fragment kodu demonstruje użycie `XRegExp` do dopasowania wszystkich słów Unicode w ciągu tekstowym, prezentując zdolność biblioteki do obsługi rozszerzonych zestawów znaków, wykraczających poza wbudowane możliwości JavaScript.

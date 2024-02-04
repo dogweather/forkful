@@ -1,37 +1,52 @@
 ---
-title:                "Kirjoittaminen vakiovirheeseen"
-date:                  2024-01-19
-simple_title:         "Kirjoittaminen vakiovirheeseen"
-
+title:                "Kirjoittaminen standardivirheeseen"
+date:                  2024-02-03T19:32:20.433142-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Kirjoittaminen standardivirheeseen"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/bash/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? - Mikä ja miksi?
-Kirjoittaminen standard erroriin (stderr) ohjaa virheilmoitukset tai varoitukset erilliseen virtaan. Ohjelmoijat käyttävät tätä erotellakseen normaalin tulosteen (stdout) ja virhetilanteiden raportoinnin, mikä helpottaa debuggausta ja lokien käsittelyä.
+## Mikä ja miksi?
+Kirjoittaminen vakiovirheeseen (stderr) Bashissa tarkoittaa virheviestien tai muiden tärkeiden diagnostisten tulosteiden ohjaamista erilleen vakiotulosteesta (stdout). Ohjelmoijat tekevät näin varmistaakseen, että virheviestit voidaan helposti tunnistaa, lokittaa tai jopa ohittaa, mikä auttaa vianetsintä- ja lokitusprosesseissa.
 
-## How to: - Näin teet:
-```Bash
-# Kirjoittaminen stderr-virtaan
-echo "Tämä on virheilmoitus" >&2
+## Kuinka:
+Bashissa käytät `>&2` uudelleenohjataksesi tulosteen stderr:iin. Tässä on perusesimerkki:
 
-# Esimerkki ohjelmasta, joka tulostaa viestin stderriin ja stdoutiin
-#!/bin/bash
-echo "Tämä menee tavalliseen tulosteeseen"
-echo "Tämä on virheilmoitus" >&2
-```
-Esimerkkitulostus:
-```
-Tämä menee tavalliseen tulosteeseen
-Tämä on virheilmoitus
+```bash
+echo "Tämä on normaali viesti"
+echo "Tämä on virheviesti" >&2
 ```
 
-## Deep Dive - Syväsukellus:
-Stderr luotiin Unix-järjestelmissä erottamaan virhetulostus ohjelman muusta tulosteesta. Vaihtoehtona stderrille voisi käyttää lokitiedostoja, mutta stderr on standardisoitu ja välitön tapa raportoida ongelmat. Stderriin kirjoittaminen käyttää tiedostopiirrettä 2 (`2>`), kun taas stdout käyttää tiedostopiirrettä 1.
+Tämän skriptin suorittaminen näyttää molemmat viestit konsolissa, mutta jos ohjaat ne uudelleen, voit erottaa stdout:n stderr:stä. Esimerkiksi:
 
-## See Also - Katso myös:
-- Bashin virallinen dokumentaatio: https://www.gnu.org/software/bash/manual/bash.html
-- Advanced Bash-Scripting Guide: https://tldp.org/LDP/abs/html/
-- Unix & Linux Stack Exchange: https://unix.stackexchange.com/
+```bash
+bash script.sh > output.txt 2> error.txt
+```
+
+`output.txt` sisältää `"Tämä on normaali viesti"`, kun taas `error.txt` sisältää `"Tämä on virheviesti"`.
+
+Käytännön esimerkissä katsotaan skriptiä, joka käsittelee tiedostoja ja raportoi virheen, jos tiedostoa ei ole olemassa:
+
+```bash
+filename="example.txt"
+
+if [ ! -f "$filename" ]; then
+    echo "$filename ei ole olemassa!" >&2
+    exit 1
+else
+    echo "Käsitellään $filename"
+fi
+```
+
+Esimerkkituloste suoraan konsolissa, kun `example.txt` ei ole olemassa:
+
+```
+example.txt ei ole olemassa!
+```
+
+Bashissa ei ole suoria kolmannen osapuolen kirjastoja stderr:n käsittelyyn, sillä uudelleenohjaus on natiivisti tuettu ja yleensä riittävä. Kuitenkin monimutkaisissa sovelluksissa voidaan käyttää lokituskehyksiä tai ulkoisia lokitusvälineitä, kuten `syslog` tai `log4bash`, jotta sekä stdout että stderr voidaan hallita tehokkaammin.

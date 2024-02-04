@@ -1,50 +1,71 @@
 ---
 title:                "Schreiben auf Standardfehler"
-date:                  2024-01-19
+date:                  2024-02-03T19:34:03.820693-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Schreiben auf Standardfehler"
-
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/php/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-"Was & Warum?"
+## Was & Warum?
 
-Standardfehler (stderr) ist ein Ausgabekanal, der für die Protokollierung von Fehlern genutzt wird, während Standardausgabe (stdout) für normale Programmoutput steht. Programmierer nutzen stderr, um Fehlermeldungen von anderen Ausgaben zu trennen, was das Debugging und die Logfile-Analyse erleichtert.
+Das Schreiben auf den Standardfehler (stderr) in PHP bedeutet, Fehlermeldungen oder Diagnosen getrennt von der Standardausgabe (stdout) zu leiten, was Entwicklern hilft, ihre Ausgabeströme für das Debugging und Protokollieren besser zu verwalten. Programmierer nutzen diese Technik, um sicherzustellen, dass Fehlermeldungen nicht mit der Ausgabe des Programms interferieren, was die Überwachung und Fehlersuche in Anwendungen erleichtert.
 
-## How to:
-"Wie geht's?"
+## Wie geht das:
 
-PHP ermöglicht das Schreiben auf stderr mit dem `fwrite()`-Funktion oder dem `file_put_contents()`-Funktion, zusammen mit der Konstante `STDERR`. Hier ein Beispiel, wie man eine einfache Fehlermeldung schreibt:
+In PHP kann das Schreiben auf stderr mit der Funktion `fwrite()` in Verbindung mit der vordefinierten Konstante `STDERR`, die den Fehlerausgabestrom repräsentiert, erreicht werden.
 
 ```php
 <?php
-// Schreiben auf Standardfehler
-fwrite(STDERR, "Ein Fehler ist aufgetreten.\n");
-
-// Alternativer Weg mit file_put_contents()
-file_put_contents('php://stderr', "Ein alternativer Fehler.\n");
+// Eine einfache Nachricht auf stderr schreiben.
+fwrite(STDERR, "Das ist eine Fehlermeldung.\n");
 ```
 
-Ausgabe könnte so aussehen (je nach Umgebung eventuell nur im Fehlerlogs sichtbar):
-
+Beispielausgabe, wenn das Skript von der Kommandozeile ausgeführt wird:
 ```
-Ein Fehler ist aufgetreten.
-Ein alternativer Fehler.
+Das ist eine Fehlermeldung.
 ```
 
-## Deep Dive
-"Deep Dive"
+Um eine praxisnähere Anwendung zu demonstrieren, betrachten Sie ein Szenario, in dem Sie Benutzereingaben parsen und auf unerwartete Daten stoßen:
+```php
+<?php
+$input = 'unerwartete Daten';
 
-Früher war es üblich, stderr über Shell-Umleitungen oder separate Error-Log-Dateien zu verwenden. In PHP gibt es `STDERR` seit Version 4.3.0, und es ist ein vordefinierter Dateihandle, der ohne Öffnung direkt verwendet werden kann. Die Alternativen zum stderr wie Logging-Bibliotheken (z.B. Monolog) bieten mehr Flexibilität und Funktionen, sind aber für komplexe Anwendungen überdimensioniert, wenn man einfach nur schnelle Fehlermeldungen ausgeben möchte.
+// Simulation eines Fehlers bei der Verarbeitung der Benutzereingabe.
+if ($input === 'unerwartete Daten') {
+    fwrite(STDERR, "Fehler: Unerwartete Eingabe erhalten.\n");
+    exit(1); // Beenden mit einem Nicht-Null-Wert um einen Fehler anzuzeigen.
+}
+```
 
-## See Also
-"Siehe auch"
+Obwohl die in PHP eingebauten Funktionen zur Behandlung von stderr in der Regel ausreichend sind, können bei komplexeren Anwendungen oder dem Wunsch, die stderr-Protokollierung mit externen Systemen zu integrieren, Drittanbieterbibliotheken wie Monolog ein mächtiger Verbündeter sein. Monolog ist eine Protokollierungsbibliothek, die stderr unter vielen anderen Zielen (Dateien, Sockets usw.) verarbeiten kann.
 
-Für weiterführende Informationen:
+Verwendung von Monolog, um auf stderr zu schreiben:
 
-- PHP.net on Standard Predefined Constants: https://www.php.net/manual/en/reserved.constants.php
-- Stack Overflow on When to use STDERR instead of STDOUT: https://stackoverflow.com/questions/1430956/when-to-use-stderr-instead-of-stdout
-- PHP The Right Way on Error Reporting: http://www.phptherightway.com/#error_reporting
+Zuerst stellen Sie sicher, dass Sie Monolog über Composer installiert haben:
+```
+composer require monolog/monolog
+```
+
+Dann können Sie Monolog so konfigurieren, dass es den `StreamHandler` verwendet, der auf `php://stderr` ausgerichtet ist:
+
+```php
+<?php
+require 'vendor/autoload.php';
+
+use Monolog\Logger;
+use Monolog\Handler\StreamHandler;
+
+// Erstellen eines Log-Kanals
+$log = new Logger('name');
+$log->pushHandler(new StreamHandler('php://stderr', Logger::WARNING));
+
+// Eine Log-Nachricht zu stderr hinzufügen
+$log->warning('Das ist eine Warnmeldung.');
+```
+
+Der obige Code verwendet Monolog, um eine Warnmeldung an stderr zu senden, was insbesondere für Anwendungen nützlich ist, die detaillierte Protokollierungskonfigurationen oder externe Protokollüberwachungen benötigen.

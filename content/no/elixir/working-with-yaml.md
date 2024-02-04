@@ -1,78 +1,91 @@
 ---
-title:                "Arbeid med YAML"
-date:                  2024-01-19
-simple_title:         "Arbeid med YAML"
-
+title:                "Arbeider med YAML"
+date:                  2024-02-03T19:25:14.860067-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Arbeider med YAML"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/elixir/working-with-yaml.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-YAML er et dataformat for serialisering av data, lik JSON og XML. Programmerere bruker YAML fordi det er lett å lese for mennesker, det spiller godt med komplekse datastrukturer og passer ypperlig for konfigurasjonsfiler.
 
-## Slik gjør du:
-For å jobbe med YAML i Elixir, trenger vi en YAML-bibliotek. `yamerl` er en populær ett. Først, legg til `yamerl` i `mix.exs`:
+YAML, som er en forkortelse for YAML Ain't Markup Language, er en menneskelesbar data-serialiseringsstandard som ofte brukes for konfigurasjonsfiler og datautveksling mellom språk med forskjellige datastrukturer. Programmerere bruker det på grunn av dets enkelhet og evnen til lett å representere komplekse hierarkiske data.
+
+## Hvordan:
+
+Elixir inkluderer ikke innebygd støtte for YAML. Imidlertid kan du bruke tredjepartsbiblioteker som `yamerl` eller `yaml_elixir` for å arbeide med YAML. Her vil vi fokusere på `yaml_elixir` for dets brukervennlighet og omfattende funksjoner.
+
+Først, legg til `yaml_elixir` i avhengighetene dine i mix.exs:
 
 ```elixir
 defp deps do
   [
-    {:yamerl, "~> 0.8.0"}
+    {:yaml_elixir, "~> 2.9"}
   ]
 end
 ```
 
-Kjør deretter `mix deps.get` for å hente den nye avhengigheten.
+Deretter kjør `mix deps.get` for å hente den nye avhengigheten.
 
-Når vi har `yamerl`, kan vi serialisere Elixir-strukturer til YAML og parse YAML til Elixir-strukturer. 
+### Lese YAML
 
-Slik parser du YAML-tekst:
-```elixir
-yaml_to_parse = """
-name: John Doe
-age: 30
-list_of_hobbies:
-  - programming
-  - cycling
-"""
+Gitt en enkel YAML-fil, `config.yaml`, som ser slik ut:
 
-{:ok, parsed_yaml} = :yamerl_constr.string(yaml_to_parse)
-IO.inspect(parsed_yaml)
+```yaml
+database:
+  adapter: postgres
+  brukernavn: bruker
+  passord: pass
 ```
 
-For å konvertere Elixir-struktur til YAML-string:
-```elixir
-data_to_convert = %{
-  name: "Jane Smith",
-  age: 25,
-  list_of_hobbies: ["reading", "hiking"]
-}
+Du kan lese denne YAML-filen og konvertere den til et Elixir-kart slik:
 
-yaml_string = :yamerl_encode.encode(data_to_convert)
-IO.puts(yaml_string)
+```elixir
+defmodule Config do
+  def read do
+    {:ok, innhold} = YamlElixir.read_from_file("config.yaml")
+    innhold
+  end
+end
+
+# Eksempel på bruk
+Config.read()
+# Utdata: 
+# %{
+#   "database" => %{
+#     "adapter" => "postgres",
+#     "brukernavn" => "bruker",
+#     "passord" => "pass"
+#   }
+# }
 ```
 
-Eksempeloutput:
+### Skrive YAML
+
+For å skrive et kart tilbake til en YAML-fil:
+
 ```elixir
-%{
-  "age" => 30,
-  "list_of_hobbies" => ["programming", "cycling"],
-  "name" => "John Doe"
-}
-name: Jane Smith
-age: 25
-list_of_hobbies:
-  - reading
-  - hiking
+defmodule ConfigWriter do
+  def write do
+    innhold = %{
+      database: %{
+        adapter: "mysql",
+        brukernavn: "root",
+        passord: "s3cret"
+      }
+    }
+    
+    YamlElixir.write_to_file("new_config.yaml", innhold)
+  end
+end
+
+# Eksempel på bruk
+ConfigWriter.write()
+# Dette vil opprette eller overskrive `new_config.yaml` med det spesifiserte innholdet
 ```
 
-## Dypdykk
-YAML startet i 2001, inspirert av XML og JSON. YAML står for "YAML Ain't Markup Language" og er laget for å være enkel å forstå. Alternativer som JSON og TOML finnes, men YAML er fortsatt foretrukket i mange tilfeller, spesielt for konfigurasjonsfiler. I Elixir, håndterer YAML-biblioteker parsing gjennom Erlang-biblioteker som `yamerl`. Disse bibliotekene gjør Erlang/Elixir-kompatibel manipulasjon av YAML-data mulig.
-
-## Se Også
-- YAML offisielle side: https://yaml.org
-- `yamerl` biblioteket på Hex: https://hex.pm/packages/yamerl 
-- Elixir's offisielle dokumentasjon: https://elixir-lang.org/docs.html 
-- JSON i Elixir: https://hexdocs.pm/poison/readme.html
-- TOML i Elixir: https://hex.pm/packages/toml
+Legg merke til hvordan `yaml_elixir` tillater en enkel oversettelse mellom YAML-filer og Elixir-datastrukturer, noe som gjør det til et utmerket valg for Elixir-programmerere som trenger å arbeide med YAML-data.

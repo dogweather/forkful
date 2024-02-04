@@ -1,41 +1,71 @@
 ---
 title:                "Testien kirjoittaminen"
-date:                  2024-01-19
+date:                  2024-02-03T19:29:41.161254-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Testien kirjoittaminen"
-
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/bash/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? - Mitä & Miksi?
-Testaus on ohjelmiston kehitysvaihe, jossa koodi lähetetään läpi sarjan testejä vikojen löytämiseksi ja korjaamiseksi. Koodaajat testaavat, koska se parantaa ohjelmiston laatua ja vakautta, ja varmistaa, että uudet ominaisuudet eivät riko olemassaolevaa toiminnallisuutta.
+## Mikä ja miksi?
+Testien kirjoittaminen Bashissa käsittää testitapausten skriptaamisen Bash-skriptien toiminnallisuuden varmistamiseksi. Ohjelmoijat suorittavat testejä varmistaakseen, että heidän skriptinsä toimivat odotetusti erilaisissa olosuhteissa, ja nappaamaan virheet ja bugit ennen käyttöönottoa.
 
-## How to: - Kuinka:
-```Bash
-# Tarkista onko tiedosto olemassa
-test_file_existence() {
-    [[ -f $1 ]] && echo "Tiedosto löytyy." || echo "Tiedostoa ei löydy."
+## Kuinka:
+Bashissa ei ole sisäänrakennettua testauskehystä, mutta voit kirjoittaa yksinkertaisia testifunktioita. Monimutkaisempia testejä varten suosittuja ovat kolmansien osapuolien työkalut kuten `bats-core`.
+
+### Perustestiesimerkki Puhtaalla Bashilla:
+```bash
+function test_example_function {
+  result=$(your_function 'test_input')
+  expected_output="expected_output"
+  
+  if [[ "$result" == "$expected_output" ]]; then
+    echo "Testi läpäisty."
+    return 0
+  else
+    echo "Testi epäonnistui. Odotettiin '$expected_output', saatiin '$result'"
+    return 1
+  fi
 }
 
-# Testaa funktiota
-test_file_existence /path/to/your/file.txt
+# Testifunktion kutsuminen
+test_example_function
+```
+Esimerkkituloste:
+```
+Testi läpäisty.
 ```
 
-Esimerkkituloste jos tiedosto löytyy:
+### `bats-core`-työkalun käyttö testauksessa:
+Asenna ensin `bats-core`. Tämä voidaan yleensä tehdä paketinhallintasi kautta tai kloonaamalla sen repository.
+
+Kirjoita sitten testisi erillisiin `.bats`-tiedostoihin.
+
+```bash
+# Tiedosto: example_function.bats
+
+#!/usr/bin/env bats
+
+@test "testaa esimerkkifunktiota" {
+  result="$(your_function 'test_input')"
+  expected_output="expected_output"
+  
+  [ "$result" == "$expected_output" ]
+}
 ```
-Tiedosto löytyy.
+Ajaaksesi testisi, suorita yksinkertaisesti `.bats`-tiedosto:
+```bash
+bats example_function.bats
+```
+Esimerkkituloste:
+```
+ ✓ testaa esimerkkifunktiota
+
+1 testi, 0 epäonnistumista
 ```
 
-Esimerkkituloste jos tiedostoa ei löydy:
-```
-Tiedostoa ei löydy.
-```
-
-## Deep Dive - Syväsukellus:
-Testien kirjoittaminen Unix-ja Linux-ympäristöissä alkaa perinteisesti `test`-komennolla, joka tunnetaan myös `[ ]`-syntaksina. Nykyään on olemassa monia vaihtoehtoja kuten Bats (Bash Automated Testing System), joka tarjoaa edistyneempiä ominaisuuksia kuten testitapausten järjestämisen ja setup/teardown-toiminnallisuuden. Skriptitestauksen tarkkuus ja tehokkuus riippuvat oikeista asseritioista ja hyvästä testitapausten kattavuudesta.
-
-## See Also - Katso Myös:
-- Bash-hakemisto [Bash Manual](https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html)
-- Bash-skriptitestaus [Bash Automated Testing System (Bats)](https://github.com/bats-core/bats-core)
+Tämä lähestymistapa mahdollistaa testauksen helposti integroinnin kehitystyönkulkuusi, varmistamalla Bash-skriptiesi luotettavuuden ja vakauden.

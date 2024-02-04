@@ -1,45 +1,50 @@
 ---
-title:                "Aktuelles Datum abrufen"
-date:                  2024-01-20T15:15:24.945568-07:00
-simple_title:         "Aktuelles Datum abrufen"
-
+title:                "Den aktuellen Datum abrufen"
+date:                  2024-02-03T19:10:06.697703-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Den aktuellen Datum abrufen"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/lua/getting-the-current-date.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Das Abrufen des aktuellen Datums ist das Lesen des gegenwärtigen Tages, Monats und Jahres vom System. Programmierer nutzen es, um zeitgesteuerte Funktionen, Protokollierungen oder Datumsstempel für Ereignisse zu realisieren.
 
-## So geht's:
-Du kannst das aktuelle Datum in Lua mit der `os.date()`-Funktion erhalten. Hier ein paar Beispiele:
+Das Abrufen des aktuellen Datums in der Programmierung ist eine entscheidende Aufgabe für eine Vielzahl von Anwendungen, einschließlich Logging, Zeitstempelung von Ereignissen oder Planen von Aufgaben. In Lua ermöglicht diese Funktionalität es Programmierern, Datums- und Zeitoperationen nahtlos in ihre Anwendungen zu integrieren, um sicherzustellen, dass ihre Software effektiv mit Echtzeitdaten interagieren kann.
 
-```Lua
--- Vollständiges Datum und Uhrzeit
-print(os.date())
+## Wie:
 
--- Nur das aktuelle Jahr
-print("Jahr: " .. os.date("%Y"))
+Lua stellt die Funktion `os.date` bereit, um das aktuelle Datum und die Uhrzeit zu erhalten. Die Funktion kann ohne Argumente verwendet werden, um eine formatierte Zeichenkette zu erhalten, oder mit Formatierungsspezifikatoren, um die Ausgabe anzupassen. So verwenden Sie es:
 
--- Nur der aktuelle Monat
-print("Monat: " .. os.date("%m"))
+```lua
+-- Das aktuelle Datum und die Uhrzeit als formatierte Zeichenkette erhalten
+print(os.date())  -- z.B. Thu Mar  3 14:02:03 2022
 
--- Nur der aktuelle Tag
-print("Tag: " .. os.date("%d"))
+-- Anpassen des Ausgabeformats
+-- %Y für Jahr, %m für Monat, %d für Tag, %H für Stunde, %M für Minuten
+print(os.date("%Y-%m-%d %H:%M"))  -- z.B. 2022-03-03 14:02
 ```
 
-Beispielausgabe:
-```
-Thu Mar 12 23:22:48 2023
-Jahr: 2023
-Monat: 03
-Tag: 12
+Für ausgefeiltere Datums- und Zeitmanipulationen hat Lua keine so umfangreichen eingebauten Bibliotheken wie einige andere Programmiersprachen. Sie können jedoch Drittanbieterbibliotheken wie `lua-date` (https://github.com/Tieske/date) verwenden. Diese Bibliothek bietet umfassendere Funktionen zur Manipulation von Daten und Zeiten. So könnten Sie sie verwenden:
+
+Zuerst stellen Sie sicher, dass Sie die `lua-date` Bibliothek installiert haben. Typischerweise können Sie sie mit dem folgenden Befehl über LuaRocks installieren:
+
+```bash
+luarocks install lua-date
 ```
 
-## Tiefere Einblicke:
-`os.date()` gibt es schon eine Weile in Lua und lehnt sich an die C Standardbibliothek an. Alternativen umfassen das os.time() zur Ermittlung von Unix-Zeitstempeln und das nutzerdefinierte Parsing von `os.date()` für spezifische Formate. Die Implementierung verwendet die Systemzeit des Host-Rechners, was bedeutet, dass sie von den Systemeinstellungen für Zeitzone und Lokalisierung abhängt. Lua selbst bietet keine Zeitzonenberechnungen; dafür müssen externe Bibliotheken genutzt werden. 
+Dann können Sie sie in Ihrem Lua-Skript wie folgt verwenden:
 
-## Siehe Auch:
-- Lua-Handbuch: [https://www.lua.org/manual/5.4/](https://www.lua.org/manual/5.4/)
-- os.date() Referenz: [https://www.lua.org/manual/5.4/manual.html#pdf-os.date](https://www.lua.org/manual/5.4/manual.html#pdf-os.date)
+```lua
+local date = require("date")
+
+-- Ein Date-Objekt für das aktuelle Datum und die Uhrzeit erstellen
+local now = date()
+
+print(now:fmt("%Y-%m-%d %H:%M:%S"))  -- z.B. 2022-03-03 14:02:03
+```
+
+Dieses Beispiel demonstriert die Erstellung eines `date`-Objekts, das den aktuellen Moment repräsentiert, den Sie dann ähnlich wie die Funktion `os.date` formatieren können, jedoch mit zusätzlicher Flexibilität und Optionen, die durch die `lua-date` Bibliothek bereitgestellt werden.

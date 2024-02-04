@@ -1,40 +1,67 @@
 ---
-title:                "रेगुलर एक्सप्रेशन का उपयोग"
-date:                  2024-01-19
-simple_title:         "रेगुलर एक्सप्रेशन का उपयोग"
-
+title:                "रेगुलर एक्सप्रेशन्स का उपयोग करना"
+date:                  2024-02-03T19:19:24.215826-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "रेगुलर एक्सप्रेशन्स का उपयोग करना"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/swift/using-regular-expressions.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (क्या और क्यों?)
-रेगुलर एक्सप्रेशन्स (Regular expressions) पैटर्न मैचिंग का एक तरीका हैं, जो टेक्स्ट को सर्च और मैनिप्युलेट करने के लिए इस्तेमाल होते हैं। प्रोग्रामर्स इसका इस्तेमाल डाटा वेलिडेशन, पार्सिंग, और टेक्स्ट एनालिसिस के लिए करते हैं क्योंकि ये शक्तिशाली और फ्लेक्सिबल होते हैं।
+## क्या और क्यों?
+नियमित अभिव्यक्तियाँ, या regex, वे वर्णों के अनुक्रम होते हैं, जो एक खोज पैटर्न बनाते हैं, जिनका उपयोग अक्सर स्ट्रिंग मिलान या हेरफेर कार्यों के लिए किया जाता है। प्रोग्रामर डेटा मान्यता और पार्सिंग से लेकर रूपांतरणों तक, विभिन्न प्रोग्रामिंग भाषाओं में, स्विफ्ट सहित, पाठ संसाधन और हेरफेर कार्यों में इनका उपयोग करते हैं, जिससे ये एक अनिवार्य उपकरण बन जाते हैं।
 
-## How to (कैसे करें):
-```Swift
+## कैसे करें:
+स्विफ्ट नेटिव समर्थन के लिए regex `NSRegularExpression` क्लास का उपयोग करता है, स्ट्रिंग क्लास के रेंज और प्रतिस्थापन विधियों के साथ। नीचे एक उदाहरण है, जो एक पाठ ब्लॉक के भीतर ईमेल पतों को खोजने और हाइलाइट करने के लिए regex का उपयोग करता है:
+
+```swift
 import Foundation
 
-let input = "मेरा ईमेल user@example.com पर है।"
-let pattern = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
-let regex = try! NSRegularExpression(pattern: pattern, options: [])
+let text = "हमसे संपर्क करें support@example.com या feedback@example.org पर अधिक जानकारी के लिए।"
+let regexPattern = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
 
-let matches = regex.matches(in: input, options: [], range: NSRange(location: 0, length: input.utf16.count))
+do {
+    let regex = try NSRegularExpression(pattern: regexPattern)
+    let matches = regex.matches(in: text, range: NSRange(text.startIndex..., in: text))
 
-if let match = matches.first {
-    let range = Range(match.range, in: input)!
-    let found = input[range]
-    print("मिला ईमेल: \(found)")
+    if !matches.isEmpty {
+        for match in matches {
+            let range = Range(match.range, in: text)!
+            print("पाया गया: \(text[range])")
+        }
+    } else {
+        print("कोई मेल नहीं मिले।")
+    }
+} catch {
+    print("Regex त्रुटि: \(error.localizedDescription)")
 }
+
+// नमूना आउटपुट:
+// पाया गया: support@example.com
+// पाया गया: feedback@example.org
 ```
-आउटपुट:
-`मिला ईमेल: user@example.com`
 
-## Deep Dive (गहराई से जानकारी):
-रेगुलर एक्सप्रेशन्स 1950 के दशक में थ्योरेटिक कंप्यूटर साइंस में आए थे। उनका मैचिंग पैटर्न्स शुरू में टेक्स्ट एडिटर्स और Unix टूल्स में इस्तेमाल हुआ। स्विफ्ट में, `NSRegularExpression` एपीआई का इस्तेमाल इनके लिए होता है। विकल्प के रूप में, `String` मेथड्स भी सरल पैटर्न्स को मैनेज कर सकते हैं। परफॉरमेंस के लिहाज से, जितना संभव हो सके पैटर्न सिम्पल रखना चाहिए।
+अधिक जटिल या सुविधा-केंद्रित परिदृश्यों के लिए, आप स्विफ्टरेगेक्स जैसे तृतीय-पक्ष पुस्तकालयों का उपयोग कर सकते हैं, जो सिंटैक्स को सरल बनाता है और संभावनाओं को बढ़ाता है। हालांकि स्विफ्ट की मानक लाइब्रेरी शक्तिशाली है, कुछ डेवलपर्स उनके संक्षिप्त सिंटैक्स और अतिरिक्त सुविधाओं के लिए इन पुस्तकालयों को पसंद करते हैं। यहाँ कैसे आप एक समान कार्य को एक परिकल्पित तृतीय-पक्ष पुस्तकालय का उपयोग कर कर सकते हैं:
 
-## See Also (देखें भी):
-- Swift की ऑफिशियल दस्तावेज़ पर NSRegularExpression: https://developer.apple.com/documentation/foundation/nsregularexpression
-- रेगुलर एक्सप्रेशन्स के ट्यूटोरियल: https://www.regular-expressions.info/
-- रेगुलर एक्सप्रेशन्स की किताबें और संसाधन: https://www.regexbuddy.com/regex.html
+```swift
+// मान लीजिए कि एक पुस्तकालय को स्विफ्टरेगेक्स कहा जाता है और यह आयातित है
+let text = "हमसे संपर्क करें hello@world.com पर या हमारी वेबसाइट पर जाएँ।"
+let emailPattern = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
+
+let emails = text.matches(for: emailPattern) // स्विफ्टरेगेक्स द्वारा प्रदानित परिकल्पना विधि
+if emails.isEmpty {
+    print("कोई ईमेल पते नहीं मिले।")
+} else {
+    emails.forEach { email in
+        print("पाया गया: \(email)")
+    }
+}
+
+// परिकल्पित आउटपुट मानते हुए `matches(for:)` विधि स्विफ्टरेगेक्स में मौजूद है:
+// पाया गया: hello@world.com
+```
+
+यह उदाहरण एक स्ट्रिंग के भीतर मेल खोजने को सरल बनाने के लिए एक तृतीय-पक्ष नियमित अभिव्यक्ति पैकेज का उपयोग करता है, मान कर कि `matches(for:)` जैसे सुविधा विधियाँ मौजूद हैं। सही सिंटैक्स और विधि उपलब्धता के लिए संबंधित तृतीय-पक्ष पुस्तकालय दस्तावेज़ का संदर्भ लेना महत्वपूर्ण है।

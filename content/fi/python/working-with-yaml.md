@@ -1,38 +1,100 @@
 ---
-title:                "YAML-tiedostojen käsittely"
-date:                  2024-01-19
-simple_title:         "YAML-tiedostojen käsittely"
-
+title:                "Työskentely YAML:n kanssa"
+date:                  2024-02-03T19:26:37.492190-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Työskentely YAML:n kanssa"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/python/working-with-yaml.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? | Mitä & Miksi?
-YAML on dataformaatti, joka on helppo lukea ja kirjoittaa. Ohjelmoijat käyttävät YAMLia konfiguraatiotiedostoihin ja datan välittämiseen, koska se on selkeä ja yhteensopiva monien ohjelmointikielien kanssa.
+## Mikä & Miksi?
+YAML, joka tulee sanoista YAML Ain't Markup Language, on ihmisen luettavissa oleva tiedon sarjallistamismuoto. Ohjelmoijat käyttävät YAMLia konfiguraatiotiedostoihin, prosessien väliseen viestintään ja datan tallennukseen sen yksinkertaisen syntaksin ja helposti luettavuuden vuoksi verrattuna muihin muotoihin kuten XML tai JSON.
 
-## How to: | Miten:
-Python-koodilla YAML-tiedoston käsittely onnistuu näin. Tarvitaan `pyyaml`-kirjasto, joka asennetaan komennolla `pip install pyyaml`.
+## Kuinka:
+YAMLin lukeminen ja kirjoittaminen Pythonissa tyypillisesti sisältää kolmannen osapuolen kirjaston käytön, `PyYAML` ollessa suosituin. Aloittaaksesi sinun täytyy asentaa PyYAML suorittamalla `pip install PyYAML`.
 
-```Python
+**Esimerkki: Kirjoittaminen YAML-tiedostoon**
+
+```python
 import yaml
 
-# Luetaan YAML-tiedosto
-with open('esimerkki.yaml', 'r') as file:
-    data = yaml.load(file, Loader=yaml.FullLoader)
-    print(data)
+data = {'lista': [1, 42, 3.141, 1337, 'apua', u'€'],
+        'merkkijono': 'boo!',
+        'toinen sanakirja': {'foo': 'bar', 'avain': 'arvo', 'vastaus': 42}}
 
-# Kirjoitetaan YAML-tiedostoon
-uusi_data = {'Osa': 'Ohjelmointi', 'Kieli': 'Python'}
-with open('uusi_esimerkki.yaml', 'w') as file:
-    yaml.dump(uusi_data, file)
+with open('esimerkki.yaml', 'w') as f:
+    yaml.dump(data, f, default_flow_style=False)
+
+# Tämä luo `esimerkki.yaml` tiedoston datalla rakenteistettuna YAML-muotoon.
 ```
 
-## Deep Dive | Syväsukellus:
-YAML (YAML Ain't Markup Language) julkaistiin 2001 ja on suunniteltu olemaan ihmisluettava ja yksinkertainen. Sen rakenne on JSON:in ja XML:n vaihtoehto. YAMLin käyttö Pythonissa perustuu `pyyaml`-kirjastoon, joka puolestaan käyttää LibYAML:ää, C-kirjastoa YAMLin parsi- ja luontitoimintoihin.
+**Esimerkki: Lukeminen YAML-tiedostosta**
 
-## See Also | Katso Myös:
-- YAML-formaatin virallinen sivusto: https://yaml.org
-- `pyyaml`-kirjaston dokumentaatio: https://pyyaml.org/wiki/PyYAMLDocumentation
-- Pythonin viralliset ohjeet tehty helposti ymmärrettäviksi: https://docs.python.org/3/
+```python
+import yaml
+
+with open('esimerkki.yaml', 'r') as f:
+    datan_ladattu = yaml.safe_load(f)
+
+print(datan_ladattu)
+
+# Tuloste: 
+# {'lista': [1, 42, 3.141, 1337, 'apua', '€'],
+#  'merkkijono': 'boo!',
+#  'toinen sanakirja': {'foo': 'bar', 'avain': 'arvo', 'vastaus': 42}}
+```
+
+**YAMLin käyttö konfiguraatiossa**
+
+Monet ohjelmoijat käyttävät YAMLia sovellusten konfiguraatioiden hallintaan. Tässä on esimerkki siitä, kuinka yksi voisi rakentaa konfiguraatiotiedoston ja lukea sen:
+
+config.yaml:
+```yaml
+tietokanta:
+  isäntä: localhost
+  portti: 5432
+  käyttäjätunnus: admin
+  salasana: salaisuus
+```
+
+Konfiguraatiotiedoston lukeminen Pythonissa:
+```python
+import yaml
+
+with open('config.yaml', 'r') as f:
+    config = yaml.safe_load(f)
+
+print(config['tietokanta']['isäntä'])  # Tuloste: localhost
+```
+
+**Monimutkaisten rakenteiden käsittely**
+
+Monimutkaisia rakenteita varten PyYAML mahdollistaa mukautettujen Python-objektien määrittelyn. Kuitenkin, varmista turvallisuuden noudattaminen käyttämällä `safe_load` välttääksesi mielivaltaisten funktioiden tai objektien suorittamisen.
+
+```python
+import yaml
+
+# Määritellään Python-objekti
+class Esimerkki:
+    def __init__(self, arvo):
+        self.arvo = arvo
+
+# Mukautettu konstruktori
+def konstruktori_esimerkki(loader, node):
+    arvo = loader.construct_scalar(node)
+    return Esimerkki(arvo)
+
+# Lisää konstruktori tagille "!esimerkki"
+yaml.add_constructor('!esimerkki', konstruktori_esimerkki)
+
+yaml_str = "!esimerkki 'data'"
+ladattu = yaml.load(yaml_str, Loader=yaml.FullLoader)
+
+print(ladattu.arvo)  # Tuloste: data
+```
+
+Tässä katkelmassa `!esimerkki` on mukautettu tagi, jota käytetään instansioimaan `Esimerkki` objekti arvolla 'data' YAML-merkkijonosta. Mukautetut laturit kuten tämä laajentavat PyYAMLin joustavuutta, mahdollistaen monimutkaisempien datarakenteiden ja tyyppien käsittelyn.

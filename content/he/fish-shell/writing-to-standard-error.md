@@ -1,41 +1,53 @@
 ---
-title:                "כתיבה לפלט השגיאה הסטנדרטי"
-date:                  2024-01-19
-simple_title:         "כתיבה לפלט השגיאה הסטנדרטי"
-
+title:                "כתיבה לשגיאה התקנית"
+date:                  2024-02-03T19:33:56.092569-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "כתיבה לשגיאה התקנית"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/fish-shell/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## מה ולמה?
-כתיבה ל-Standard Error (stderr) היא אופן שבו תכניות מדווחות על שגיאות. תוכניתאים עושים זאת כדי להפריד בין פלט רגיל לבין הודעות שגיאה, וכך לאפשר ניתוח שגיאות יעיל ומהיר יותר.
+
+כתיבה לשגיאה סטנדרטית (stderr) ב-Fish Shell היא על מנת להכווין הודעות שגיאה או עקיבות בנפרד מהפלט הסטנדרטי (stdout). תכנתים עושים זאת כדי לוודא שניתן לזהות בקלות, לנהל או להפנות את מידע השגיאה, מה שמקל על תהליכים של ניפוי באגים ורישום.
 
 ## איך לעשות:
-ב-Fish Shell, תוכלו להשתמש בסימן המעיין `^` או ב-`stderr` כדי לכתוב ל-Standard Error.
 
-```Fish Shell
-echo "This is regular output"
+ב-Fish Shell, תוכלו לכתוב ל-stderr על ידי הפניית הפלט שלכם באמצעות `>&2`. הנה דוגמה בסיסית:
+
+```fish
 echo "This is an error message" >&2
 ```
 
-פלט דוגמה:
+פקודה זו פשוט מדפיסה הודעה ל-stderr במקום ל-stdout. אם הייתם כותבים סקריפט שמוציא הודעות רגילות וגם הודעות שגיאה, אולי הייתם עושים משהו כזה:
+
+```fish
+echo "Starting the process"
+echo "An error occurred" >&2
+echo "Process completed"
+```
+
+פלט לדוגמה אם תריצו את הסקריפט ותפנו את stderr לקובץ:
 
 ```
-This is regular output
+Starting the process
+Process completed
 ```
 
-ההודעה `"This is an error message"` תופיע ב-Standard Error, ולא תוצג בפלט הרגיל.
+ההודעה על השגיאה לא הייתה מופיעה בפלט הסטנדרטי אלא תמצא בקובץ אליו הפניתם את ה-stderr.
 
-## שיטה מעמיקה:
-בהיסטוריה, תוכניות Unix מפלהו פלט לשלושה ערוצים עיקריים: Standard Input (stdin), Standard Output (stdout), ו-Standard Error (stderr). Standard Error נועד במקור להציג הודעות שגיאה בנפרד מפלט רגיל, מבלי להפריע לזרימת הנתונים. ב-Fish Shell, העברה עם `>&2` מקבילה לבשל (Bash) שבו משתמשים ב- `2>`. Fish מציע גם תמיכה בסינטקס יפה יותר עם המילה 'stderr'.
+בסצנריות הדורשות טיפול בשגיאות או רישום מתוחכם יותר, Fish אינו מגיע עם ספריות מובנות שתוכננו במפורש לכך. עם זאת, תוכלו לנצל כלים חיצוניים או לכתוב פונקציות שיסייעו. לדוגמה, יצירת פונקציית רישום פשוטה עשויה להיראות כך:
 
-אלטרנטיבות כוללות כתיבה לקובץ לוג ייעודי או שימוש בכלים כמו `tee` לניתוב פלטים בו זמנית למספר יעדים.
+```fish
+function log_error
+    echo $argv >&2
+end
 
-## ראה גם:
-[דוקומנטציה רשמית של Fish Shell](https://fishshell.com/docs/current/index.html)
+log_error "This is an advanced error message"
+```
 
-[מדריך לניתובים ב-Fish Shell](https://fishshell.com/docs/current/tutorial.html#tut_redirection)
-
-[תיעוד על שגיאות ב-Unix](https://www.gnu.org/software/libc/manual/html_node/Error-Messages.html)
+פונקציה זו `log_error` תקח כל מחרוזת שתיתנו לה ותכתוב אותה ל-stderr. שימוש בפונקציות כמו זו יכול לעזור לשמור על טיפול השגיאות שלכם נקי ועקבי ברחבי הסקריפטים שלכם.

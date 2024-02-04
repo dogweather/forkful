@@ -1,55 +1,63 @@
 ---
 title:                "HTML 파싱"
-date:                  2024-01-20T15:31:30.207892-07:00
+date:                  2024-02-03T19:12:12.425325-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "HTML 파싱"
-
 tag:                  "HTML and the Web"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/elm/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (무엇과 왜?)
-HTML 파싱은 웹 페이지의 마크업을 분석해서 구조적인 데이터로 변환하는 과정입니다. 프로그래머들은 이 과정을 통해 HTML의 내용을 조작, 접근 또는 웹 스크래핑을 하기 위해 사용합니다.
+## 무엇 & 왜?
+Elm에서 HTML 파싱은 HTML 문서로부터 정보를 추출하는 것을 의미합니다. 웹 콘텐츠나 HTML을 반환하는 API와 인터페이스하기 위해 프로그래머들이 이 작업을 수행하면, 더 상호작용적이고 동적인 웹 애플리케이션을 만들 수 있습니다.
 
-## How to: (어떻게 하나요?)
-Elm에서 HTML을 파싱하려면 `html-parser` 패키지를 사용합니다. 간단한 예제로 시작해 봅시다.
+## 방법:
+Elm은 타입 안정성과 런타임 오류를 피하는 것에 중점을 두기 때문에, JavaScript나 Python의 라이브러리와 같이 직접 HTML을 파싱하기 위한 내장 라이브러리가 없습니다. 하지만, `Http` 요청을 사용하여 콘텐츠를 가져온 다음 정규 표현식이나 서버 측 처리를 사용해 필요한 정보를 추출할 수 있습니다. 더 복잡한 HTML 파싱을 위해 일반적으로 사용되는 방법은 전용 백엔드 서비스를 사용하여 HTML을 파싱하고 Elm이 직접 작업할 수 있는 형식, 예를 들어 JSON으로 데이터를 반환하는 것입니다.
 
-```Elm
-import Html.Parser exposing (parse)
-import Html.Parser.Node exposing (Node(..))
+HTML 콘텐츠를 가져오는 예시입니다(서버 응답이 깨끗한 형식이거나 특정 태그 콘텐츠인 경우를 가정합니다):
 
-parseHtml : String -> List Node
-parseHtml htmlString =
-  parse htmlString
+```elm
+import Browser
+import Html exposing (Html, text)
+import Http
 
--- 사용 예제
-main =
-  let
-    htmlString = "<div>Hello, Elm!</div>"
-    parsedHtml = parseHtml htmlString
-  in
-  -- 결과를 출력합니다.
-  text (Debug.toString parsedHtml)
+type alias Model =
+    { content : String }
+
+initialModel : Model
+initialModel =
+    { content = "" }
+
+type Msg
+    = Fetch
+    | ReceiveContent String
+
+update : Msg -> Model -> (Model, Cmd Msg)
+update msg model =
+    case msg of
+        Fetch ->
+            ( model
+            , Http.get
+                { url = "https://example.com"
+                , expect = Http.expectString ReceiveContent
+                }
+            )
+
+        ReceiveContent content ->
+            ( { model | content = content }
+            , Cmd.none
+            )
+
+view : Model -> Html Msg
+view model =
+    text model.content
+
+-- 메인 함수와 구독 정의는 Elm의 표준 애플리케이션 구조를 따른다고 가정하십시오.
 ```
 
-이 코드는 주어진 HTML 문자열을 파싱하고 결과를 출력합니다. 출력은 다음과 같아야 합니다:
+응답을 처리하여 특정 요소나 데이터를 실제로 파싱하려면, 제어하는 서버 엔드포인트로 HTML 콘텐츠를 전송하여 JavaScript(Cheerio, Jsdom) 또는 Python(BeautifulSoup, lxml)과 같은 언어에서 사용 가능한 라이브러리로 파싱한 다음, 구조화된 데이터(예: JSON)를 Elm 애플리케이션으로 다시 반환하는 것을 고려해 볼 수 있습니다.
 
-```Elm
-[Element "div" [] [Text "Hello, Elm!"]]
-```
-
-## Deep Dive (심층 분석)
-`html-parser`는 Elm 0.19 버전부터 사용 가능한 패키지로, 클라이언트 사이드 Elm 애플리케이션에서 서버의 응답 또는 정적 HTML을 파싱할 때 유용합니다. 비교적 새로운 Elm 에코시스템 내에서, 이전에는 서드파티 JavaScript 라이브러리를 많이 의존했지만, `html-parser`를 사용하면 Elm 코드만으로 HTML 파싱을 처리할 수 있습니다.
-
-`html-parser`는 태그, 속성, 텍스트 노드 등 HTML 요소를 Elm 데이터 구조로 변환합니다. 이를 이용하면 Elm에서 안전하고 성능 좋은 HTML 파싱이 가능합니다.
-
-Elm은 함수형 언어의 특성을 살려 부수 효과(side effects)를 관리하는 강력한 시스템을 갖추고 있습니다. 이를 통해 HTML 파싱 같은 작업도 예측 가능하고 관리하기 쉬운 코드로 구성할 수 있어, 더 안정적인 애플리케이션을 만들 수 있습니다.
-
-대안으로는 `elm-explorations/parse` 같은 낮은 수준(low-level)의 파서 빌더를 사용하여 더 세밀한 제어가 필요한 상황에서 사용할 수 있습니다.
-
-## See Also (관련 자료)
-2. Elm 문서: [guide.elm-lang.org](https://guide.elm-lang.org)
-3. Elm 커뮤니티 포럼: [discourse.elm-lang.org](https://discourse.elm-lang.org)
-4. Elm 파서 빌더 패키지: [packages.elm-lang.org/packages/elm/parser/latest](https://package.elm-lang.org/packages/elm/parser/latest)
+클라이언트 측 Elm 코드에서 직접 HTML을 파싱하는 것은 언어 제약과 콘텐츠 가져오기와 콘텐츠 처리 사이의 명확한 분리를 장려하는 철학 때문에 일반적인 패턴이 아님을 기억하세요. Elm 아키텍처는 JSON과 같은 더 안전하고 예측 가능한 형식으로 데이터를 처리하는 쪽으로 기울어져 있습니다.

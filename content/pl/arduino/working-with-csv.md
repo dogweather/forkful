@@ -1,86 +1,130 @@
 ---
 title:                "Praca z plikami CSV"
-date:                  2024-01-19
+date:                  2024-02-03T19:18:59.003271-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Praca z plikami CSV"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/arduino/working-with-csv.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
-CSV to format pliku służący do przechowywania danych w formie tabelarycznej. Programiści używają go, by ułatwić wymianę danych między różnymi programami lub urządzeniami, dzięki jego prostocie i wszechstronności.
+## Co i dlaczego?
+Praca z plikami CSV (Comma-Separated Values - wartości oddzielone przecinkami) w Arduino wiąże się z odczytem z plików CSV i zapisywaniem do nich, zazwyczaj przechowywanych na karcie SD, co umożliwia rejestrowanie danych, ustawienia konfiguracyjne i wiele więcej. Programiści często obsługują pliki CSV do zbierania danych z czujników, przechowywania parametrów konfiguracyjnych lub interfejsów z innymi systemami, ze względu na jego prostotę i szerokie przyjęcie na różnych platformach.
 
 ## Jak to zrobić:
-Praca z CSV na Arduino zwykle obejmuje odczyt lub zapis danych przy użyciu karty SD. Oto przykład odczytu:
+Arduino nie posiada wbudowanej biblioteki specjalnie do obsługi plików CSV, ale możesz użyć bibliotek `SD` i `SPI` do dostępu do plików na karcie SD, a następnie przetwarzać lub generować dane CSV za pomocą podstawowych technik manipulacji ciągami znaków. Kiedy zajmujesz się bardziej złożoną manipulacją plikami CSV, biblioteka firm trzecich `ArduinoCSV` może być wykorzystana do łatwiejszego parsowania i zapisywania.
 
-```Arduino
+**Odczytywanie danych CSV z karty SD:**
+```cpp
 #include <SPI.h>
 #include <SD.h>
 
-File myFile;
-
 void setup() {
   Serial.begin(9600);
-  if (!SD.begin(10)) {
-    Serial.println("Inicjalizacja karty SD nieudana!");
+  if (!SD.begin(4)) {
+    Serial.println("Inicjalizacja nie powiodła się!");
     return;
   }
-  myFile = SD.open("dane.csv");
-
-  if (myFile) {
-    while (myFile.available()) {
-      String data = myFile.readStringUntil('\n');
-      Serial.println(data);
+  File dataFile = SD.open("data.csv");
+  if (dataFile) {
+    while (dataFile.available()) {
+      String dataLine = dataFile.readStringUntil('\n');
+      Serial.println(dataLine); // Wyświetla linię CSV
     }
-    myFile.close();
+    dataFile.close();
   } else {
-    Serial.println("Otwarcie pliku nieudane.");
+    Serial.println("Błąd otwierania data.csv");
   }
 }
 
 void loop() {
-  // Nie potrzebujemy nic w pętli.
+  // Nie używane w tym przykładzie
 }
 ```
+*Przykładowe wyjście:*
+```
+SensorID, Timestamp, Value
+1, 1597840923, 23.5
+2, 1597840987, 22.4
+```
 
-Przykład zapisu danych do pliku CSV:
-
-```Arduino
+**Zapisywanie danych CSV na karcie SD:**
+```cpp
 #include <SPI.h>
 #include <SD.h>
 
-File myFile;
-
 void setup() {
   Serial.begin(9600);
-  if (!SD.begin(10)) {
-    Serial.println("Inicjalizacja karty SD nieudana!");
+  if (!SD.begin(4)) {
+    Serial.println("Inicjalizacja nie powiodła się!");
     return;
   }
-
-  myFile = SD.open("dane.csv", FILE_WRITE);
-  if (myFile) {
-    myFile.println("temperatura, wilgotnosc");
-    myFile.println("23.5, 60");
-    myFile.println("24.0, 58");
-    myFile.close();
-    Serial.println("Dane zapisane.");
+  File dataFile = SD.open("output.csv", FILE_WRITE);
+  if (dataFile) {
+    dataFile.println("SensorID, Timestamp, Value"); // Nagłówek CSV
+    dataFile.println("1, 1597840923, 23.5"); // Przykładowy wiersz danych
+    dataFile.close();
+    Serial.println("Dane zapisane");
   } else {
-    Serial.println("Otwarcie pliku nieudane.");
+    Serial.println("Błąd otwierania output.csv");
   }
 }
 
 void loop() {
-  // Nie potrzebujemy nic w pętli.
+  // Nie używane w tym przykładzie
 }
 ```
+*Przykładowe wyjście:*
+```
+Dane zapisane
+```
 
-## Dogłębniej:
-CSV pojawił się w latach 70-tych XX wieku. Jest proste: wartości oddzielone są przecinkami, a każdy wiersz to rekord danych. Alternatywą może być JSON czy XML, szczególnie gdy struktura danych jest bardziej złożona. Na poziomie implementacji pamiętaj, że Arduino ma ograniczone zasoby, więc trzymaj pliki małe i skoncentruj się na efektywnej manipulacji łańcuchami znaków.
+**Użycie ArduinoCSV do parsowania:**
+Jeśli zajmujesz się skomplikowanymi plikami CSV, biblioteka `ArduinoCSV` może znacznie uproszczyć prace związane z parsowaniem. Ten przykład zakłada, że zainstalowałeś już bibliotekę `ArduinoCSV`.
 
-## Zobacz również:
-- Dokumentacja Arduino SD: https://www.arduino.cc/en/reference/SD
-- Tutorial dotyczący pracy z CSV i Arduino: https://www.arduino.cc/en/Tutorial/LibraryExamples/ReadWrite
-- Porównanie formatów danych (CSV, JSON, XML): https://www.arduino.cc/en/Tutorial/LibraryExamples/ReadWrite
+```cpp
+#include <SPI.h>
+#include <SD.h>
+#include <ArduinoCSV.h>
+
+void setup() {
+  Serial.begin(9600);
+  if (!SD.begin(4)) {
+    Serial.println("Inicjalizacja nie powiodła się!");
+    return;
+  }
+  File dataFile = SD.open("data.csv");
+  if (dataFile) {
+    CSVParser parser;
+    while (dataFile.available()) {
+      String dataLine = dataFile.readStringUntil('\n');
+      if (parser.parseLine(dataLine)) {
+        for (int i = 0; i < parser.count(); i++) {
+          Serial.print(parser.getField(i)); // Wyświetl każde pole
+          if (i < parser.count() - 1) {
+            Serial.print(", ");
+          }
+        }
+        Serial.println();
+      }
+    }
+    dataFile.close();
+  } else {
+    Serial.println("Błąd otwierania data.csv");
+  }
+}
+
+void loop() {
+  // Nie używane w tym przykładzie
+}
+```
+*Przykładowe wyjście:*
+```
+SensorID,  Timestamp,  Value
+1,  1597840923,  23.5
+2,  1597840987,  22.4
+```
+W tych przykładach, poprzez odczytywanie z plików CSV i zapisywanie do nich na karcie SD, projekty Arduino mogą łatwo zbierać dane, przechowywać ustawienia konfiguracyjne lub wymieniać dane z innymi aplikacjami w uniwersalnie dostępnym formacie.

@@ -1,53 +1,83 @@
 ---
 title:                "Obteniendo la fecha actual"
-date:                  2024-01-20T15:13:22.433323-07:00
+date:                  2024-02-03T19:09:06.106143-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Obteniendo la fecha actual"
-
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/cpp/getting-the-current-date.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Qué & Por Qué?
-Obtener la fecha actual en un programa es conocer el día presente según el calendario. Los programadores lo hacen para registrar eventos, comparar fechas o simplemente mostrar información relevante al usuario.
+## Qué y Por Qué
+Obtener la fecha actual en C++ es una tarea fundamental para programas que necesitan procesar o mostrar fechas basadas en el reloj del sistema. Es esencial para el registro (logging), estampado de tiempo (time-stamping), la programación de tareas y cualquier funcionalidad que dependa de fechas y hora.
 
 ## Cómo hacerlo:
-En C++, puedes usar `<chrono>` y `<iostream>` para obtener y mostrar la fecha actual:
+C++ ofrece varias maneras de obtener la fecha actual, incluyendo la biblioteca estándar de C++ y bibliotecas de terceros como Boost. Los siguientes ejemplos demuestran cómo lograr esta tarea.
 
-```C++
+### Usando `<chrono>` (C++20 y posteriores)
+C++20 introdujo más funcionalidades en la biblioteca `<chrono>`, haciendo sencillo obtener la fecha actual:
+```cpp
 #include <iostream>
 #include <chrono>
-#include <iomanip>
-#include <ctime>
+#include <format> // Para std::format (C++20)
 
 int main() {
-    auto now = std::chrono::system_clock::now(); // Obtiene el tiempo actual
-    std::time_t now_time = std::chrono::system_clock::to_time_t(now); 
+    auto current_time_point = std::chrono::system_clock::now(); // Captura el tiempo actual
+    auto current_time_t = std::chrono::system_clock::to_time_t(current_time_point); // Convertir a time_t
 
-    // Usa `std::localtime` para convertir a estructura `tm`
-    std::tm *ptm = std::localtime(&now_time);
-    
-    // Imprime la fecha con formato yyyy-mm-dd
-    std::cout << std::put_time(ptm, "%Y-%m-%d") << std::endl;
+    // Formatear el tiempo a un formato legible
+    std::cout << "Fecha Actual: " << std::format("{:%Y-%m-%d}", std::chrono::system_clock::to_time_t(current_time_point)) << std::endl;
 
     return 0;
 }
 ```
-
-Salida de muestra:
+**Salida de Ejemplo:**
+```plaintext
+Fecha Actual: 2023-03-15
 ```
-2023-04-01
+
+### Usando `<ctime>`
+Para programadores trabajando con versiones más antiguas de C++ o aquellos que prefieren la biblioteca tradicional de C:
+```cpp
+#include <iostream>
+#include <ctime>
+
+int main() {
+    std::time_t t = std::time(0); // Obtener el tiempo actual
+    std::tm* now = std::localtime(&t);
+    std::cout << "Fecha Actual: " 
+              << (now->tm_year + 1900) << '-' 
+              << (now->tm_mon + 1) << '-'
+              <<  now->tm_mday
+              << std::endl;
+
+    return 0;
+}
+```
+**Salida de Ejemplo:**
+```plaintext
+Fecha Actual: 2023-03-15
 ```
 
-## Análisis Profundo:
-Históricamente, C++ manejaba fechas y tiempos usando las funciones de C como `time()` y `localtime()`. Desde C++11, el manejo del tiempo se ha modernizado con la biblioteca `<chrono>`, permitiendo alta precisión y operaciones con duraciones.
+### Usando Boost Date_Time
+Para proyectos que utilizan las bibliotecas Boost, la biblioteca Boost Date_Time ofrece un método alternativo para obtener la fecha actual:
+```cpp
+#include <iostream>
+#include <boost/date_time.hpp>
 
-Alternativas para manejar fechas incluyen bibliotecas de terceros como Boost.DateTime, que ofrece aún más funciones.
+int main() {
+    // Obtener el día actual usando el calendario gregoriano de Boost
+    boost::gregorian::date today = boost::gregorian::day_clock::local_day();
+    std::cout << "Fecha Actual: " << today << std::endl;
 
-La implementación usando `<chrono>` es segura y preferida en C++ moderno. Al trabajar con `std::chrono::system_clock`, generalmente obtenemos la hora en UTC, pero `std::localtime` la ajusta a la zona horaria local del sistema.
-
-## Ver También:
-- Documentación de `<chrono>`: https://en.cppreference.com/w/cpp/header/chrono
-- Time in C++ (Artículo sobre tiempo en C++): https://www.cplusplus.com/reference/ctime/
-- Boost.DateTime: https://www.boost.org/doc/libs/release/libs/date_time/
+    return 0;
+}
+```
+**Salida de Ejemplo:**
+```plaintext
+Fecha Actual: 2023-Mar-15
+```
+Estos ejemplos proporcionan una base sólida para trabajar con fechas en C++, crucial para una amplia gama de aplicaciones.

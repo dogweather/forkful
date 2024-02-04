@@ -1,49 +1,64 @@
 ---
-title:                "Skriving av tester"
-date:                  2024-01-19
-simple_title:         "Skriving av tester"
-
+title:                "Skrive tester"
+date:                  2024-02-03T19:29:54.903424-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Skrive tester"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/arduino/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Tester sjekker at koden din gjør det den skal, hver gang du gjør endringer. Det reduserer bugs og gir deg trygghet ved utvikling.
 
-## Hvordan gjøre det:
-Arduino støtter ikke enhetstesting ut av boksen, så vi bruker et bibliotek, for eksempel `ArduinoUnit`. Installer via bibliotekshåndterer og skriv testene dine.
+Å skrive tester i Arduino-miljøet refererer til prosessen med å lage automatiserte tester som validerer funksjonaliteten til koden din på Arduino-enheter. Programmerere gjør dette for å forsikre seg om at koden deres fungerer som forventet, reduserer feil og forbedrer kvaliteten på prosjektene deres, spesielt viktig i innebygde systemer hvor feilsøking kan være mer utfordrende.
 
-```Arduino
-#include <ArduinoUnit.h>
+## Hvordan:
 
-test(ledBlink) {
-  const int LED_PIN = 13;
-  pinMode(LED_PIN, OUTPUT);
-  digitalWrite(LED_PIN, HIGH);
-  assertTrue(digitalRead(LED_PIN));
-  digitalWrite(LED_PIN, LOW);
-  assertFalse(digitalRead(LED_PIN));
+Arduino har ikke et innebygd testrammeverk som noen andre programmeringsmiljøer. Imidlertid kan du bruke tredjepartsbiblioteker som `AUnit` for enhetstesting av Arduino-kode. AUnit er inspirert av Arduinos innebygde bibliotek, `ArduinoUnit`, og Googles testframework, `Google Test`.
+
+### Eksempel med AUnit:
+
+Først, installer AUnit via Bibliotekbehandleren i Arduino IDE: gå til Skisse > Inkluder bibliotek > Behandle biblioteker... > søk etter AUnit og installer det.
+
+Deretter kan du skrive tester slik:
+
+```cpp
+#include <AUnit.h>
+
+test(ledPinHigh) {
+  const int ledPin = 13;
+  pinMode(ledPin, OUTPUT);
+  digitalWrite(ledPin, HIGH);
+  assertTrue(digitalRead(ledPin));
+}
+
+test(ledPinLow) {
+  const int ledPin = 13;
+  pinMode(ledPin, OUTPUT);
+  digitalWrite(ledPin, LOW);
+  assertFalse(digitalRead(ledPin));
 }
 
 void setup() {
   Serial.begin(9600);
-  Test::run();
+  aunit::TestRunner::run();
 }
 
-void loop() {}
+void loop() {
+  // Tom
+}
 ```
-Kjør koden, og du ser resultatene i Serial Monitor:
+Etter å ha lastet opp denne testen til Arduino-kortet ditt, åpne Seriell Monitor for å se testresultatene. Du bør se en utskrift som indikerer om hver test ble bestått eller feilet:
+
 ```
-Test ledBlink passed.
-Test summary: 1 passed, 0 failed, and 0 skipped, out of 1 test(s).
+TestRunner startet med 2 test(er).
+Test ledPinHigh bestått.
+Test ledPinLow bestått.
+TestRunner varighet: 0.002 sekunder.
+TestRunner sammendrag: 2 bestått, 0 feilet, 0 hoppet over, 0 tidsavbrutt, av totalt 2 test(er).
 ```
 
-## Dybdeinformasjon:
-Testing på microcontrollere, som Arduino, startet mye senere enn i softwareutvikling. Alternativer inkluderer `AUnit`, `ArduinoTestSuite`, `CppUTest`. Disse bibliotekene simulerer enhetstester og krever at du skriver tester som verifiserer koden din uten å laste den på en faktisk mikrokontroller hver gang.
-
-## Se også:
-- [ArduinoUnit GitHub side](https://github.com/mmurdoch/arduinounit)
-- [AUnit GitHub side](https://github.com/bxparks/AUnit)
-- [Offisiell Arduino Testing Guide](https://www.arduino.cc/en/Guide/Environment#testing-libraries)
+Dette enkle eksemplet demonstrerer bruk av AUnit for å teste tilstanden til en LED-pin. Ved å lage tester, bekrefter du at din Arduino oppfører seg som forventet under forskjellige forhold. Med AUnit, kan du skrive mer komplekse tester, testpakker og nyte funksjoner som test tidsavbrudd og oppsett/nedrivningsprosedyrer for mer avanserte scenarioer.

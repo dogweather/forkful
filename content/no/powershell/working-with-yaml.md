@@ -1,58 +1,65 @@
 ---
-title:                "Arbeid med YAML"
-date:                  2024-01-19
-simple_title:         "Arbeid med YAML"
-
+title:                "Arbeider med YAML"
+date:                  2024-02-03T19:26:17.310866-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Arbeider med YAML"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/powershell/working-with-yaml.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Hva & Hvorfor?
-YAML er et format for data serialisering, enkelt for mennesker å lese og skrive. Programmerere bruker YAML for konfigurasjonsfiler og datautveksling, fordi det er lett å forstå og integrere i moderne utviklingsstacks.
+## Hva og hvorfor?
+YAML, eller YAML Ain't Markup Language, er et menneskelesbart serialiseringsspråk for data. Programmerere bruker det ofte for konfigurasjonsfiler og dataoverføring mellom språk. Dets enkelhet og lesbarhet gjør det spesielt populært for oppgaver som involverer oppsett av miljøer, applikasjoner eller tjenester der konfigurasjoner er avgjørende og bør være lett å forstå og redigere.
 
-## How to:
-Installere `powershell-yaml` modulen:
+## Hvordan:
+PowerShell kommer som standard ikke med en innebygd cmdlet for å tolke YAML, men det fungerer sømløst med YAML når du bruker `powershell-yaml`-modulen eller konverterer YAML til et PowerShell-objekt ved hjelp av `ConvertFrom-Json` i kombinasjon med et verktøy som `yq`.
+
+### Bruke `powershell-yaml`-modulen:
+Først, installer modulen:
 ```PowerShell
 Install-Module -Name powershell-yaml
 ```
 
-Laste YAML innhold i en PowerShell-variabel:
+For å lese en YAML-fil:
 ```PowerShell
 Import-Module powershell-yaml
-$configData = @"
-name: Ola Nordmann
-occupation: Programmer
-languages:
-  - Norwegian
-  - English
-"@
-$yamlObject = ConvertFrom-Yaml $configData
-$yamlObject
+$content = Get-Content -Path 'config.yml' -Raw
+$yamlObject = ConvertFrom-Yaml -Yaml $content
+Write-Output $yamlObject
 ```
 
-Output vil se slik ut:
-```
-name       : Ola Nordmann
-occupation : Programmer
-languages  : {Norwegian, English}
-```
-
-Lagre PowerShell objekt til en YAML-fil:
+For å skrive et PowerShell-objekt til en YAML-fil:
 ```PowerShell
-$person = @{
-  name = 'Kari Nordmann'
-  occupation = 'Programmer'
-  languages = @('Norwegian', 'English')
+$myObject = @{
+    name = "John Doe"
+    age = 30
+    languages = @("PowerShell", "Python")
 }
-$person | ConvertTo-Yaml | Out-File -FilePath 'person.yaml'
+$yamlContent = ConvertTo-Yaml -Data $myObject
+$yamlContent | Out-File -FilePath 'output.yml'
 ```
 
-## Deep Dive
-YAML, som står for "YAML Ain't Markup Language", ble introdusert i starten av 2000-tallet som et enklere alternativ til XML. Json er et annet alternativ, men YAML er ofte foretrukket for sin leslighet. I PowerShell, krever arbeid med YAML en ekstern modul fordi det ikke er innebygget støtte, slik som med Json.
+Eksempel på `output.yml`:
+```yaml
+name: John Doe
+age: 30
+languages:
+- PowerShell
+- Python
+```
 
-## See Also
-- PowerShell-Yaml modul: https://github.com/cloudbase/powershell-yaml
-- YAML offisielle hjemmeside: https://yaml.org
-- Lære mer om YAML syntaks: https://learnxinyminutes.com/docs/yaml/
+### Tolke YAML med `yq` og `ConvertFrom-Json`:
+En annen tilnærming innebærer å bruke `yq`, en lett og bærbar kommandolinje-YAML-prosessor. `yq` kan konvertere YAML til JSON, som PowerShell kan tolke naturlig.
+
+Først, sørg for at `yq` er installert på systemet ditt.
+Deretter kjør:
+```PowerShell
+$yamlToJson = yq e -o=json ./config.yml
+$jsonObject = $yamlToJson | ConvertFrom-Json
+Write-Output $jsonObject
+```
+
+Denne metoden er spesielt nyttig for brukere som arbeider i plattformuavhengige miljøer eller foretrekker å bruke JSON i PowerShell.

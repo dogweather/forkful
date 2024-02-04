@@ -1,47 +1,53 @@
 ---
-title:                "文字列の先頭を大文字にする"
-date:                  2024-01-19
-simple_title:         "文字列の先頭を大文字にする"
-
+title:                "文字列を大文字にする"
+date:                  2024-02-03T19:05:35.358467-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "文字列を大文字にする"
 tag:                  "Strings"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/arduino/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (何となぜ？)
-文字列の大文字化とは、文字列内の全ての小文字を大文字に変換することです。プログラマーは可読性を高めたり、固有名詞やアクロニムを表現するためによく使います。
+## 何となぜ？
+文字列の先頭を大文字にする操作は、文字列の各単語の最初の文字を大文字に変換し、残りを小文字にすることを指します。この操作は、データのフォーマットやユーザー入力の正規化において一般的であり、一貫性を保ち、可読性を向上させるために行われます。
 
-## How to: (方法)
-```Arduino
-void setup() {
-  Serial.begin(9600); // シリアル通信の開始
-  String message = "こんにちは、Arduino!";
-  Serial.println(capitalizeString(message)); // 大文字化した文字列を出力
-}
+## 方法：
+Arduinoは主にハードウェアとのやり取りで知られていますが、`String`オブジェクトを通じて基本的な文字列操作機能も備えています。しかし、上位レベルの言語に見られる直接的な`capitalize`関数は存在しません。したがって、文字列を反復処理してケース変換を適用することで、大文字化を実装します。
 
-void loop() {
-  // このサンプルではloop内は不要です。
-}
+ここに、サードパーティーのライブラリを使用せずに基本的な例を示します：
 
+```cpp
 String capitalizeString(String input) {
-  input.toUpperCase(); // 文字列を全て大文字に
+  if (input.length() == 0) {
+    return ""; // 入力が空の場合は空の文字列を返す
+  }
+  input.toLowerCase(); // 最初に文字列全体を小文字に変換
+  input.setCharAt(0, input.charAt(0) - 32); // 最初の文字を大文字に
+  
+  // スペースの後に続く文字を大文字に
+  for (int i = 1; i < input.length(); i++) {
+    if (input.charAt(i - 1) == ' ') {
+      input.setCharAt(i, input.charAt(i) - 32);
+    }
+  }
   return input;
 }
 
-/* 出力:
- KONNICHIHA、ARDUINO!
-*/
+void setup() {
+  Serial.begin(9600);
+  String testStr = "hello arduino world";
+  String capitalizedStr = capitalizeString(testStr);
+  Serial.println(capitalizedStr); // 出力: "Hello Arduino World"
+}
+
+void loop() {
+  // 空のループ
+}
 ```
 
-## Deep Dive (掘り下げ)
-文字列の大文字化は初期のコンピュータ・システムにおける制限から発展しました。古いシステムは大文字のみをサポートしていたため、大文字がデフォルトになりました。書式設定オプションとして使われるようになった今も、慣例や強調のために用いられます。
+このコードスニペットは、`capitalizeString`関数を定義しており、最初に文字列全体を小文字に変換してケースを標準化します。次に、最初の文字とスペースの後に続く任意の文字を大文字にし、入力文字列の各単語を効果的に大文字化します。この基本的な実装はASCII文字コードを前提としており、完全なUnicodeサポートには調整が必要とされることに注意してください。
 
-選択肢としては`toUpperCase()`関数を使う他に、`for`ループで各文字を大文字に変換する手動の方法もあります。しかし、`toUpperCase()`は効率的でエラーが少なく、Arduino において最も一般的な方法です。
-
-実装については、`toUpperCase()`メソッドは内部でASCII値を操作して大文字への変換を効率的に行っている点が重要です。Unicode文字に対応する場合は別途ライブラリや追加のコードが必要になることもあります。
-
-## See Also (参照)
-- Arduinoの公式リファレンスで`String`クラスを更に学ぶ: [Arduino Reference](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/)
-- 文字コードについて詳しく知る: [ASCII Table and Description](https://www.asciitable.com/)
+現在、Arduinoのエコシステムで文字列操作に特化した広く採用されたサードパーティーのライブラリはほとんどありません。主に、ハードウェアとのやり取りと効率に焦点を当てているためです。しかし、提供された例は、Arduinoのプログラミング環境内で文字列の大文字化を実現するための直接的な方法です。

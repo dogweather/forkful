@@ -1,45 +1,144 @@
 ---
-title:                "Arbeid med CSV"
-date:                  2024-01-19
-simple_title:         "Arbeid med CSV"
-
+title:                "Arbeide med CSV"
+date:                  2024-02-03T19:20:32.093244-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Arbeide med CSV"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/kotlin/working-with-csv.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-CSV (Comma Separated Values) er et enkelt filformat for tabellinformasjon. Programmerere bruker CSV for å enkelt eksportere og importere data, som kan leses av nesten hvilken som helst programvare, inkludert regneark og databaser.
 
-## Hvordan gjøre det:
-For å jobbe med CSV i Kotlin, kan du bruke standard I/O klasser eller biblioteker som `kotlin-csv`.
+Arbeid med CSV (kommaseparerte verdier) innebærer lesing fra og skriving til CSV-filer, et vanlig format for lagring av tabulære data i ren tekst. Programmerere manipulerer CSV-filer for å enkelt utveksle data mellom forskjellige applikasjoner, databaser, eller for å lette oppgaver knyttet til databehandling og analyse.
 
-```Kotlin
-import com.github.doyaaaaaken.kotlincsv.dsl.csvReader
+## Hvordan:
 
-fun lesCsvFil(filbane: String) {
-    val rader = csvReader().readAll(File(filbane))
-    for (rad in rader) {
-        println(rad.joinToString(", "))
-    }
-}
+Kotlin, som er et statisk typet programmeringsspråk som kjører på JVM, inkluderer ikke et innebygd bibliotek for håndtering av CSV-filer. Du kan imidlertid bruke Java-klassene `BufferedReader` og `FileWriter` for grunnleggende operasjoner, eller utnytte populære tredjepartsbiblioteker som `kotlinx.serialization` og `opencsv` for mer avansert funksjonalitet.
+
+### Lese en CSV-fil ved hjelp av BufferedReader:
+
+```kotlin
+import java.io.BufferedReader
+import java.io.FileReader
 
 fun main() {
-    lesCsvFil("data.csv")
+    val path = "data.csv"
+    val br = BufferedReader(FileReader(path))
+    br.useLines { lines ->
+        lines.forEach { line ->
+            val cols = line.split(',')
+            println(cols)
+        }
+    }
 }
 ```
 
-Forventet utskrift for en CSV-fil med navn `data.csv`:
+_Eksempel på utdata:_
+
 ```
-Navn, Alder, By
-Ola, 25, Oslo
-Kari, 30, Bergen
+[Name, Age, City]
+[John Doe, 30, New York]
+[Jane Smith, 25, London]
 ```
 
-## Dypdykk
-CSV-formatet stammer fra tidlig datamaskinbruk (1970-tallet) og har siden vært en enkel måte å utveksle data på. Til tross for mangel på standardisering, er filformatet populært grunnet sin enkelhet. Alternativer inkluderer JSON og XML, som begge tillater mer kompleks datastrukturer. Detaljer rundt implementering i Kotlin kan variere, men mange bruker biblioteker som `kotlin-csv` for å forenkle prosessen.
+### Skrive til en CSV-fil ved hjelp av FileWriter:
 
-## Se også
-- [kotlin-csv GitHub-side](https://github.com/doyaaaaaken/kotlin-csv)
-- [Offisiell Kotlin-dokumentasjon](https://kotlinlang.org/docs/home.html)
+```kotlin
+import java.io.FileWriter
+
+fun main() {
+    val data = listOf(
+        listOf("Name", "Age", "City"),
+        listOf("John Doe", "30", "New York"),
+        listOf("Jane Smith", "25", "London")
+    )
+
+    FileWriter("output.csv").use { writer ->
+        data.forEach { row ->
+            writer.write(row.joinToString(",") + "\n")
+        }
+    }
+}
+```
+
+Dette vil opprette eller overskrive `output.csv` med de oppgitte dataene.
+
+### Bruke kotlinx.serialization for CSV-serialisering:
+
+Først, legg til avhengigheten til din `build.gradle.kts`:
+
+```kotlin
+implementation("org.jetbrains.kotlinx:kotlinx-serialization-csv:0.3.0")
+```
+
+_Notat: Sørg for at du har riktig versjon og konfigurasjon av oppbevaringssted._
+
+Deretter, definér din dataklasse og bruk `Csv`-format for serialisering:
+
+```kotlin
+import kotlinx.serialization.Serializable
+import kotlinx.serialization.csv.Csv
+import kotlinx.serialization.encodeToString
+
+@Serializable
+data class Person(val name: String, val age: Int, val city: String)
+
+fun main() {
+    val csvFormat = Csv { delimiter = ',' }
+    val data = listOf(
+        Person("John Doe", 30, "New York"),
+        Person("Jane Smith", 25, "London")
+    )
+
+    val csvData = csvFormat.encodeToString(data)
+    println(csvData)
+}
+```
+
+_Eksempel på utdata:_
+
+```
+John Doe,30,New York
+Jane Smith,25,London
+```
+
+### Bruke OpenCSV for avanserte operasjoner:
+
+Legg til OpenCSV i prosjektets avhengigheter:
+
+```kotlin
+implementation("com.opencsv:opencsv:5.6")
+```
+
+Lese og skrive med OpenCSV:
+
+```kotlin
+import com.opencsv.CSVReader
+import com.opencsv.CSVWriter
+import java.io.FileReader
+import java.io.FileWriter
+
+fun main() {
+    // Lese CSV
+    CSVReader(FileReader("data.csv")).use { csvReader ->
+        val entries = csvReader.readAll()
+        entries.forEach { println(it.toList()) }
+    }
+
+    // Skrive CSV
+    CSVWriter(FileWriter("output.csv")).use { csvWriter ->
+        val entries = listOf(
+            arrayOf("Name", "Age", "City"),
+            arrayOf("John Doe", "30", "New York"),
+            arrayOf("Jane Smith", "25", "London")
+        )
+        csvWriter.writeAll(entries)
+    }
+}
+```
+
+Disse kodestykkene demonstrerer fleksibiliteten Kotlin tilbyr når du arbeider med CSV-filer, og lar deg velge metoden som best passer dine prosjektbehov.

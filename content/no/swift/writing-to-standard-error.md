@@ -1,56 +1,104 @@
 ---
-title:                "Skrive til standardfeil"
-date:                  2024-01-19
-simple_title:         "Skrive til standardfeil"
-
+title:                "Skriving til standardfeil"
+date:                  2024-02-03T19:34:49.154571-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Skriving til standardfeil"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/swift/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Standard error (stderr) er en stream for å skrive ut feilmeldinger. Vi bruker det for å skille vanlig output (stdout) fra feil og loggmeldinger, noe som hjelper i debugging og loggføring.
+## Hva & Hvorfor?
 
-## How to:
+Skriving til standardfeil (stderr) handler om å lede programmets feilmeldinger eller diagnostiske utdata til en separat strøm, forskjellig fra standardutdata (stdout). Dette er avgjørende for feilsøking og logging av feil uten å rote til standardutdata, noe som letter både utvikleres og brukeres forståelse av programmets tilstand og problemer.
 
-```Swift
+## Hvordan:
+
+I Swift kan skriving til standardfeil gjøres ved å bruke `FileHandle`-klassen for direkte tilgang til stderr. Her er et enkelt eksempel:
+
+```swift
 import Foundation
 
-// Skrive en enkel feilmelding til stderr.
-func writeToStdErr(message: String) {
-    fputs("\(message)\n", stderr)
+// Definer en melding
+let errorMessage = "En feil oppstod.\n"
+
+// Konverter meldingen til data
+if let data = errorMessage.data(using: .utf8) {
+    // Skriv feilmeldingen til stderr
+    FileHandle.standardError.write(data)
+}
+```
+
+Utdata til stderr (vanligvis sett i en konsoll eller terminal):
+```
+En feil oppstod.
+```
+
+For mer kompleks logging eller når du jobber med eksterne biblioteker, kan man vurdere å bruke et tredjepartsbibliotek som **SwiftLog**. Selv om **SwiftLog** ikke skriver til stderr direkte ut av boksen, kan du implementere et tilpasset loggingsbakstykke for å oppnå dette. Her er et forenklet eksempel på å definere en tilpasset logghandler som skriver til stderr:
+
+Først, legg til **SwiftLog** i prosjektets avhengigheter i `Package.swift`:
+```swift
+// swift-tools-version:5.3
+
+import PackageDescription
+
+let package = Package(
+    name: "DittPakkeNavn",
+    dependencies: [
+        .package(url: "https://github.com/apple/swift-log.git", from: "1.0.0"),
+    ],
+    targets: [
+        .target(
+            name: "DittMålNavn",
+            dependencies: [
+                .product(name: "Logging", package: "swift-log"),
+            ]),
+    ]
+)
+```
+
+Deretter, implementer en tilpasset logghandler som skriver til stderr:
+
+```swift
+import Logging
+import Foundation
+
+struct StderrLogHandler: LogHandler {
+    let label: String
+    
+    var logLevel: Logger.Level = .info
+    
+    func log(level: Logger.Level, message: Logger.Message, metadata: Logger.Metadata?, source: String, file: String, function: String, line: UInt) {
+        let output = "\(message)\n"
+        if let data = output.data(using: .utf8) {
+            FileHandle.standardError.write(data)
+        }
+    }
+    
+    subscript(metadataKey metadataKey: String) -> Logger.Metadata.Value? {
+        get { return nil }
+        set(newValue) { }
+    }
+    
+    var metadata: Logger.Metadata {
+        get { return [:] }
+        set(newMetadata) { }
+    }
 }
 
-// Bruk den:
-writeToStdErr(message: "En feilmelding har oppstått.")
+// Bruk
+LoggingSystem.bootstrap(StderrLogHandler.init)
+let logger = Logger(label: "com.example.dittapp")
 
-// Eksempel på logging av feil med en datostempel
-let dateFormatter = DateFormatter()
-dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-let currentDateTime = dateFormatter.string(from: Date())
-
-let errorMsg = "Kritisk feil: Databasen er ikke tilgjengelig."
-writeToStdErr(message: "\(currentDateTime) - \(errorMsg)")
-
+logger.error("Dette er en feilmelding")
 ```
 
-Forventet output i konsollen:
+Utdata til stderr:
 ```
-En feilmelding har oppstått.
-2023-03-23 18:45:12 - Kritisk feil: Databasen er ikke tilgjengelig.
+Dette er en feilmelding
 ```
 
-## Deep Dive
-
-Historisk sett, i Unix og Unix-lignende operativsystemer, er det tre hoved datastrømmer: standard input (stdin), standard output (stdout), og standard error (stderr). De var en del av original designen av Unix shell. Å skille stderr fra stdout lar oss omdirigere dem separat i shell, noe som kan være nyttig for automatisk prosessering av logger eller feil.
-
-Som alternativ for `fputs`, kan du også bruke `FileHandle.standardError.write`. Mer avansert logging kan kreve bruk av loggerbiblioteker som `os.log` eller tredjepartsbiblioteker som gir mer funksjonalitet og konfigurasjonsmuligheter.
-
-Implementeringsdetaljer involverer å forstå forskjellige streams og hvordan de håndteres av operativsystemet og Shell. Skrive til stderr er direkte i Swift og krever ingen ekstra biblioteker.
-
-## See Also
-
-- Swift's FileHandle Documentation: https://developer.apple.com/documentation/foundation/filehandle
-- Apple's Unified Logging System: https://developer.apple.com/documentation/os/logging
-- Redirecting Output in Shell: https://www.gnu.org/software/bash/manual/html_node/Redirections.html
+Denne tilpassede handleren lar deg rute dine SwiftLog-feilmeldinger direkte til standardfeil, og integrerer sømløst med andre loggmeldinger applikasjonen din kan generere.

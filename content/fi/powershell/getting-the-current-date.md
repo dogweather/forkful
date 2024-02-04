@@ -1,46 +1,85 @@
 ---
 title:                "Nykyisen päivämäärän hankkiminen"
-date:                  2024-01-20T15:15:53.264059-07:00
+date:                  2024-02-03T19:10:50.152616-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Nykyisen päivämäärän hankkiminen"
-
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/powershell/getting-the-current-date.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Mikä ja miksi?)
-Nykyisen päivämäärän haku on ajan tietojen saamista järjestelmästä. Ohjelmoijat käyttävät sitä, kun tarvitaan aikaleimoja, päivämäärien validointia tai ajastettuja toimintoja.
+## Mikä ja Miksi?
 
-## How to: (Kuinka tehdä:)
-```PowerShell
+Nykyisen päivämäärän hakeminen PowerShellissä tarkoittaa järjestelmän nykyisen päivämäärän ja ajan noutamista. Tämä toiminto on perustavaa laatua oleva tehtävissä, kuten lokitusten, ajoitustoimintojen tai päivämääriin perustuvien päätösten tekemisessä. Ohjelmoijat käyttävät tätä kykyä tapahtumien seurantaan, tehtävien aikatauluttamiseen ja päivämääräsääntöihin perustuvan logiikan käsittelyyn skripteissä ja sovelluksissa.
+
+## Kuinka:
+
+PowerShell tarjoaa suoraviivaisia cmdlet-komentoja päivämäärän ja ajan saamiseksi. `Get-Date` cmdlet-komento on ensisijainen työkalu tähän tarkoitukseen. Se voi palauttaa täydellisen päivämäärän ja ajan, jonka voit muotoilla tai manipuloida tarpeidesi mukaan.
+
+```powershell
 # Hae nykyinen päivämäärä ja aika
-$nyt = Get-Date
-Write-Output $nyt
-
-# Tulostaa esimerkiksi: sunnuntai 9. huhtikuuta 2023 14:56:35
+Get-Date
 ```
 
-```PowerShell
-# Hae nykyinen päivämäärä ilman aikaa
-$paivamaara = (Get-Date).Date
-Write-Output $paivamaara
+**Esimerkkituloste:**
 
-# Tulostaa esimerkiksi: 9.4.2023 0:00:00
+```
+tiistai, syyskuu 5, 2023 9:46:02 AM
 ```
 
-```PowerShell
-# Muotoile päivämäärä haluamallasi tavalla
-$muotoiltu = Get-Date -Format "dd.MM.yyyy"
-Write-Output $muotoiltu
+Voit myös muotoilla tulosteen näyttämään vain tarvitsemasi tiedot, kuten vain päivämäärän tai vain ajan.
 
-# Tulostaa esimerkiksi: 09.04.2023
+```powershell
+# Hae vain nykyinen päivämäärä tietyssä muodossa
+Get-Date -Format "yyyy-MM-dd"
 ```
 
-## Deep Dive (Syväsukellus)
-PowerShellin `Get-Date` cmdlet on ollut käytössä alusta alkaen, ja se on yleinen tapa hakea koneen paikallinen aika. Vaihtoehtoisia tapoja sisältävät .NET-luokat, kuten `[System.DateTime]`, mutta `Get-Date` on yksinkertaisempi PowerShellissa. Haku perustuu käyttöjärjestelmän kelloon, ja tulokseen vaikuttavat käyttäjän alueasetukset. Cmdlet mahdollistaa päivämäärän muotoilun ja parsimisen, jolloin pystyt luomaan juuri tarvitsemasi esitystavan aikatiedoille.
+**Esimerkkituloste:**
 
-## See Also (Katso myös)
-- Microsoftin dokumentaatio `Get-Date`-cmdletistä: [PowerShell Get-Date](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-date?view=powershell-7.2)
-- Tietoa .NET:n `System.DateTime` luokasta: [DateTime Struct](https://docs.microsoft.com/en-us/dotnet/api/system.datetime?view=net-6.0)
-- Lisää muotoilumerkkijonoja päivämäärien esitystapaan: [Standard DateTime Format Strings](https://docs.microsoft.com/en-us/dotnet/standard/base-types/standard-date-and-time-format-strings)
+```
+2023-09-05
+```
+
+```powershell
+# Hae vain nykyinen aika
+Get-Date -Format "HH:mm:ss"
+```
+
+**Esimerkkituloste:**
+
+```
+09:46:02
+```
+
+### Käyttäen .NET-luokkaa
+
+PowerShell sallii suoran pääsyn .NET-luokkiin, tarjoten vaihtoehtoisen tavan työskennellä päivämäärien ja aikojen kanssa.
+
+```powershell
+# Käyttäen .NET DateTime-luokkaa nykyisen päivämäärän ja ajan saamiseksi
+[System.DateTime]::Now
+```
+
+**Esimerkkituloste:**
+
+```
+tiistai, syyskuu 5, 2023 9:46:02 AM
+```
+
+UTC-ajalle:
+
+```powershell
+# Käyttäen .NET DateTime-luokkaa nykyisen UTC-päivämäärän ja ajan saamiseksi
+[System.DateTime]::UtcNow
+```
+
+**Esimerkkituloste:**
+
+```
+tiistai, syyskuu 5, 2023 1:46:02 PM
+```
+
+Nämä komennot ja luokat tarjoavat tehokkaita ja joustavia vaihtoehtoja työskennellä päivämäärien ja aikojen kanssa PowerShellissä, jotka ovat olennaisia monissa skriptauksessa ja automatisoinnissa.

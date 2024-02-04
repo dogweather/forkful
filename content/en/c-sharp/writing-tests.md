@@ -1,8 +1,8 @@
 ---
 title:                "Writing tests"
-date:                  2024-01-19
+date:                  2024-02-03T19:03:30.729590-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Writing tests"
-
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/c-sharp/writing-tests.md"
 ---
@@ -10,54 +10,108 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Writing tests in programming means creating mini-programs to check if your code works as expected. Programmers do it to catch bugs, ensure quality, and save time fixing issues later.
+
+Writing tests in C# involves creating automated scripts to validate the functionality of your code, ensuring it behaves as expected. Programmers do it to catch bugs early, facilitate code refactoring, and ensure new changes don't break existing functions, thereby boosting software quality and reliability.
 
 ## How to:
-Let's dive into some C# code using NUnit, a popular testing framework:
 
-1. Set up your testing framework - typically included as a NuGet package.
-2. Write a test for a simple function.
+C# developers primarily use the NUnit or xUnit frameworks for writing tests due to their flexibility and extensive feature set. Here’s a basic example using NUnit to test a simple addition function:
 
-Here's a quick example of a test for a `Sum` method:
+1. **Install NUnit and NUnit3TestAdapter** via NuGet Package Manager or the .NET CLI:
+```powershell
+dotnet add package NUnit
+dotnet add package NUnit3TestAdapter
+```
 
-```C#
+2. **Create a C# class library** project if you haven't done so already.
+
+3. **Write a simple function** to test. For example, an addition method in a class named `Calculator`:
+```csharp
+public class Calculator
+{
+    public int Add(int a, int b)
+    {
+        return a + b;
+    }
+}
+```
+
+4. **Write a test class** using NUnit:
+```csharp
 using NUnit.Framework;
 
-namespace CalculatorTests {
-    public class Calculator {
-        public int Sum(int a, int b) {
-            return a + b;
-        }
-    }
-
+namespace CalculatorTests
+{
     [TestFixture]
-    public class CalculatorTests {
+    public class CalculatorTests
+    {
         [Test]
-        public void TestSum() {
+        public void Add_AddsTwoIntegers_ReturnsCorrectSum()
+        {
+            // Arrange
             var calculator = new Calculator();
-            var result = calculator.Sum(2, 3);
-            Assert.AreEqual(5, result);
+            int expected = 5;
+
+            // Act
+            int actual = calculator.Add(2, 3);
+
+            // Assert
+            Assert.AreEqual(expected, actual);
         }
     }
 }
 ```
 
-Run the test. If it passes, you'll see:
-
+5. **Run the test** using your IDE's test runner or the .NET CLI:
+```powershell
+dotnet test
 ```
-Test Passed
+
+### Sample Output:
+
+Assuming your test passes, you should see output similar to this:
+```
+Test Run Successful.
+Total tests: 1
+     Passed: 1
+ Total time: 1.2345 Seconds
 ```
 
-Otherwise, you'll get details on why it failed.
+### Using xUnit:
 
-## Deep Dive
-Unit testing has evolved since the 1970s. Notable advances include test-driven development and automated testing frameworks. For C#, MSTest and xUnit are solid alternatives to NUnit. Key points include:
+If you prefer xUnit, the setup is similar to NUnit. Here's how you'd rewrite the test example for the `Calculator` class using xUnit:
 
-1. **Historical Context**: Kent Beck, among others, developed the xUnit architecture that underpins many frameworks.
-2. **Alternatives**: MSTest is Microsoft's native test framework, while xUnit is a free, open-source tool.
-3. **Implementation Details**: Tests should be isolated, repeatable, and fast. Run them as part of your build process.
+1. **Install xUnit and xUnit.runner.visualstudio**:
+```powershell
+dotnet add package xUnit
+dotnet add package xUnit.runner.visualstudio
+```
 
-## See Also
-- [NUnit Documentation](https://docs.nunit.org/)
-- [Microsoft Testing Overview](https://docs.microsoft.com/en-us/dotnet/core/testing/)
-- [xUnit GitHub](https://github.com/xunit/xunit)
+2. **Write a test class using xUnit**:
+```csharp
+using Xunit;
+
+namespace CalculatorTests
+{
+    public class CalculatorTests
+    {
+        [Fact]
+        public void Add_AddsTwoIntegers_ReturnsCorrectSum()
+        {
+            // Arrange
+            var calculator = new Calculator();
+            int expected = 5;
+
+            // Act
+            int actual = calculator.Add(2, 3);
+
+            // Assert
+            Assert.Equal(expected, actual);
+        }
+    }
+}
+```
+
+3. **Run the test using the .NET CLI** or your IDE’s integrated test runner.
+
+Both NUnit and xUnit provide powerful features for parameterized testing, setup/teardown operations, and organizing tests into categories, making them indispensable tools in the C# programmer’s toolkit for ensuring code quality and functionality.

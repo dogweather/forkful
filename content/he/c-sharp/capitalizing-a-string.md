@@ -1,39 +1,76 @@
 ---
-title:                "הפיכת מחרוזת לאותיות רישיות"
-date:                  2024-01-19
-simple_title:         "הפיכת מחרוזת לאותיות רישיות"
-
+title:                "הגדלת אותיות במחרוזת"
+date:                  2024-02-03T19:06:04.956682-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "הגדלת אותיות במחרוזת"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/c-sharp/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (מה ולמה?)
-מיידע הוא להגדיל כל תו במחרוזת לאות גדולה. תוכניתנים עושים זאת לצורך עקביות, קריאות ולעיתים לציית לסטנדרטים של עיצוב טקסט.
+## מה ולמה?
+הגדלת אות ראשית של מחרוזת ב-C# כוללת המרה של התו הראשון של מחרוזת לאות רישית אם היא כבר לא כזו. שינוי זה יכול להיות קריטי לעיצוב פלטים, אכיפת סטנדרטים בקידוד, או הפיכת טקסטים בממשק המשתמש לקריאים יותר.
 
-## How to: (איך לעשות:)
-ב-C#, התהליך של הפיכת מחרוזת לאותיות גדולות הוא פשוט. הנה דוגמה:
+## איך לעשות זאת:
+C# מציעה גישה ישירה להגדלת אותיות במחרוזות באמצעות שיטות מובנות. הדרך הפשוטה ביותר לבצע זאת היא על ידי שינוי המחרוזת ישירות באמצעות שיטות אלה. עבור כללי הגדלה מורכבים או ספציפיים יותר (למשל, הגדלת כל מילה), עשויים להיות נחוצים ספריות חיצוניות או שיטות ידניות. להלן דוגמאות המדגימות איך להגדיל אותיות במחרוזת בדרכים שונות ב-C#.
 
-```C#
-string message = "שלום עולם";
-string capitalizedMessage = message.ToUpper(); // המרת כל האותיות לאותיות גדולות
-Console.WriteLine(capitalizedMessage);
+### הגדלת אות ראשונה בסיסית:
+להגדלת האות הראשונה של מילה אחת או משפט:
+
+```csharp
+string originalString = "hello world";
+string capitalizedString = char.ToUpper(originalString[0]) + originalString.Substring(1);
+Console.WriteLine(capitalizedString); // פלט: "Hello world"
 ```
 
-פלט דוגמה:
+### הגדלת כל מילה:
+להגדלת האות הראשונה של כל מילה במחרוזת, ניתן להשתמש בשיטת `TextInfo.ToTitleCase` הנמצאת במרחב השמות `System.Globalization`:
+
+```csharp
+using System;
+using System.Globalization;
+
+string originalString = "hello world";
+TextInfo textInfo = CultureInfo.CurrentCulture.TextInfo;
+string capitalizedString = textInfo.ToTitleCase(originalString);
+Console.WriteLine(capitalizedString); // פלט: "Hello World"
 ```
-שלום עולם
+
+שימו לב: `ToTitleCase` לא מורידה את רמת האותיות של שאר האותיות; היא רק משנה לאות רישית את האות הראשונה של כל מילה. כמו כן, מילים מסוימות בכללי כתיבת שם פרטי (כמו "and", "or", "of") עשויות לא להיכלל בתלות בהגדרות התרבות.
+
+### שימוש בשיטות הרחבה לשימוש חוזר:
+ניתן ליצור שיטת הרחבה עבור המחלקה `string` כדי לפשט את תהליך ההגדלה, הופך את הקוד שלכם נקי ונוח יותר לשימוש חוזר. הנה איך ליצור ולהשתמש בשיטה כזו:
+
+```csharp
+using System;
+
+public static class StringExtensions
+{
+    public static string Capitalize(this string input)
+    {
+        if (string.IsNullOrEmpty(input))
+        {
+            return input;
+        }
+        return char.ToUpper(input[0]) + input.Substring(1);
+    }
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        string originalString = "hello world";
+        string capitalizedString = originalString.Capitalize();
+        Console.WriteLine(capitalizedString); // פלט: "Hello world"
+    }
+}
 ```
 
-## Deep Dive (עיון מעמיק)
-הפונקציה `ToUpper()` ב-C# משתמשת בהגדרות התרבותיות (Culture) של המערכת כדי לקבוע אילו המרות לבצע. למשל, באנגלית, 'i' תתומר ל-'I', אבל בתורכית, יש אות גדולה נפרדת ל-'i' ללא נקודה.
+שיטת ההרחבה `Capitalize` יכולה להיקרא על כל אובייקט מחרוזת במרחב השמות, מציעה גישה אינטואיטיבית ומונחית-עצמים יותר לניהול מחרוזות ב-C#.
 
-אלטרנטיבה פופולארית ל- `ToUpper()` היא `ToLower()`, שהופכת את האותיות לקטנות.
-
-ביצוע ההמרה נעשה על-פי קודי Unicode של התווים. מאחורי הקלעים, המערכת מוצאת את הקוד המתאים לאות הגדולה ומחליפה אותו במקום התו המקורי במחרוזת.
-
-## See Also (ראה גם)
-- [String.ToUpper Method in C#](https://docs.microsoft.com/en-us/dotnet/api/system.string.toupper)
-- [Microsoft Docs on CultureInfo Class](https://docs.microsoft.com/en-us/dotnet/api/system.globalization.cultureinfo)
-- [Unicode Character Table](https://unicode-table.com/)
+### ספריות צד שלישי:
+למרות שספריית הסטנדרט של C# מכסה את רוב הצרכים להגדלת מחרוזות, משימות מתמחות מסוימות עשויות להרוויח מספריות צד שלישי, כמו Humanizer. עם זאת, למשימה של הגדלת מחרוזות בפשטות או כל מילה במחרוזת, שיטות C# הסטנדרטיות הן נאותות ויעילות, מבטלות את הצורך בתלות חיצוניות.

@@ -1,53 +1,72 @@
 ---
 title:                "Tolka HTML"
-date:                  2024-01-20T15:33:11.110045-07:00
+date:                  2024-02-03T19:13:00.178103-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Tolka HTML"
-
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/powershell/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Parsing av HTML innebär att man analyserar HTML-kod för att extrahera specifik data — som att hitta text inuti vissa taggar. Programmerare gör det för att automatisera datainsamling från webbsidor och bearbeta innehållet.
+Att analysera HTML med PowerShell handlar om att dissekera HTML-innehåll för att extrahera specifika data eller automatisera webbrelaterade uppgifter. Programmerare gör det för att interagera med webbsidor, skrapa webbinnehåll, eller automatisera formulärinlämningar och andra webbinteraktioner utan att behöva en webbläsare.
 
-## Hur gör man:
-För att köra kodexemplen, se till att du har `Invoke-WebRequest` och `HtmlAgilityPack` tillgängliga i din PowerShell-session. `HtmlAgilityPack` är en .NET-bibliotek som gör det enklare att hantera HTML.
+## Hur:
 
-```PowerShell
-# Installera HtmlAgilityPack
-Install-Package HtmlAgilityPack -Scope CurrentUser
+PowerShell har inte från början en dedikerad HTML-parser, men du kan använda `Invoke-WebRequest`-cmdleten för att komma åt och analysera HTML-innehåll. För mer komplex analys och manipulation kan HtmlAgilityPack, ett populärt .NET-bibliotek, användas.
 
-# Anropa en webbsida
-$response = Invoke-WebRequest -Uri 'https://example.com'
+### Använda `Invoke-WebRequest`:
 
-# Ladda HTML in i ett HtmlDocument-objekt med HtmlAgilityPack
-$html = New-Object HtmlAgilityPack.HtmlDocument
-$html.LoadHtml($response.Content)
-
-# Hitta alla element med en specifik klass
-$nodes = $html.DocumentNode.SelectNodes("//div[@class='min-klass']")
-
-# Skriv ut texten för varje node
-$nodes | ForEach-Object { $_.InnerText }
-```
-Exempelutmatning:
-
-```
-Detta är den första texten i klassen 'min-klass'.
-Här är lite mer text i en annan element med samma klass.
+```powershell
+# Enkelt exempel för att hämta titlar från en webbsida
+$response = Invoke-WebRequest -Uri 'http://example.com'
+# Använd egenskapen ParsedHtml för att komma åt DOM-element
+$title = $response.ParsedHtml.title
+Write-Output $title
 ```
 
-## Fördjupning
-Att parse HTML är inte något nytt. Sedan webben blev mainstream på 90-talet har behovet av att bearbeta HTML-data vuxit. Tillbaka i tiden använde vi enklare regex-metoder, men de är ökända för att vara opålitliga för komplex HTML. HtmlAgilityPack är ett bättre verktyg för .NET och PowerShell, som hanterar HTML effektivt och på ett strukturerat sätt.
+Exempel på utdata:
 
-Alternativen till HtmlAgilityPack inkluderar andra bibliotek som AngleSharp för C# eller cheerio för JavaScript. De har liknande funktioner men skiljer sig åt i syntax och integration.
+```
+Example Domain
+```
 
-När du parse HTML, tänk på att webbsidors struktur kan ändras. Din kod kan behöva uppdateras om målwebbplatsen gör ändringar i sin HTML.
+### Använda HtmlAgilityPack:
 
-## Se även:
-- [HtmlAgilityPack på GitHub](https://github.com/zzzprojects/html-agility-pack)
-- [PowerShell Documentation - Invoke-WebRequest](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/invoke-webrequest)
-- [AngleSharp GitHub](https://github.com/AngleSharp/AngleSharp)
-- [cheerio GitHub](https://github.com/cheeriojs/cheerio)
+Först måste du installera HtmlAgilityPack. Detta kan du göra via NuGet Package Manager:
+
+```powershell
+Install-Package HtmlAgilityPack -ProviderName NuGet
+```
+
+Sedan kan du använda det i PowerShell för att analysera HTML:
+
+```powershell
+# Ladda HtmlAgilityPack-assembly
+Add-Type -Path "path\to\HtmlAgilityPack.dll"
+
+# Skapa ett HtmlDocument-objekt
+$doc = New-Object HtmlAgilityPack.HtmlDocument
+
+# Ladda HTML från en fil eller en webbförfrågan
+$htmlContent = (Invoke-WebRequest -Uri "http://example.com").Content
+$doc.LoadHtml($htmlContent)
+
+# Använd XPath eller andra frågemetoder för att extrahera element
+$node = $doc.DocumentNode.SelectSingleNode("//h1")
+
+if ($node -ne $null) {
+    Write-Output $node.InnerText
+}
+```
+
+Exempel på utdata:
+
+```
+Välkommen till Example.com!
+```
+
+I dessa exempel är `Invoke-WebRequest` bäst för enkla uppgifter, medan HtmlAgilityPack erbjuder ett mycket rikare funktionssätt för komplex HTML-analys och manipulation.

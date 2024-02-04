@@ -1,44 +1,52 @@
 ---
-title:                "Kirjoittaminen vakiovirheeseen"
-date:                  2024-01-19
-simple_title:         "Kirjoittaminen vakiovirheeseen"
-
+title:                "Kirjoittaminen standardivirheeseen"
+date:                  2024-02-03T19:33:59.300059-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Kirjoittaminen standardivirheeseen"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/lua/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Mikä & Miksi?)
-Kirjoittaminen standardivirheeseen (stderr) on tapa tulostaa virheviestit ohjelmastasi. Ohjelmoijat käyttävät sitä erotellakseen normaalin tulosteen (stdout) ja virhetiedot, mikä auttaa virheiden diagnosoinnissa.
+## Mikä ja Miksi?
+Kirjoittaminen standardivirheeseen (stderr) tarkoittaa virheviestien ja diagnostiikkatulosteiden ohjaamista erilliseen kanavaan, eroon standarditulosteesta (stdout). Ohjelmoijat tekevät näin erottaakseen tavalliset ohjelman tulokset virhetiedoista, mikä tekee vianetsinnästä ja lokien kirjaamisesta sujuvampaa.
 
-## How to: (Kuinka tehdä:)
-```Lua
--- Kirjoitetaan virhe stderr:iin
-io.stderr:write("Tapahtui virhe!\n")
+## Miten:
+Luassa virheiden kirjoittaminen stderr:iin on mahdollista `io.stderr:write()`-funktion avulla. Tässä on miten voit kirjoittaa yksinkertaisen virheviestin standardivirheeseen:
 
--- Jos haluat käyttää print-funktiota, ohjaa se stderr:iin
-local old_print = print
-print = function(...)
-    old_print(...)
-    io.stderr:write("Virhe: ", ...)
-    io.stderr:write("\n")
-end
-
--- Käytetään muokattua print-funktiota virheen näyttämiseen
-print("Tämä on virheviesti")
+```lua
+io.stderr:write("Virhe: Virheellinen syöte.\n")
 ```
 
-Tuloste (esimerkki):
+Jos tarvitset tulostaa muuttujan tai yhdistää useita datan kappaleita, yhdistä ne kirjoitusfunktion sisällä:
+
+```lua
+local virheViesti = "Virheellinen syöte."
+io.stderr:write("Virhe: " .. virheViesti .. "\n")
+```
+
+**Esimerkkituloste stderr:ssä:**
+```
+Virhe: Virheellinen syöte.
+```
+
+Monimutkaisemmissa tilanteissa, tai työskenneltäessä suurempien sovellusten kanssa, saattaa olla aiheellista harkita kolmannen osapuolen lokituskirjastoja, kuten LuaLogging. LuaLoggingin avulla voit ohjata lokit eri kohteisiin, mukaan lukien stderr. Tässä on lyhyt esimerkki:
+
+Ensinnäkin, varmista että LuaLogging on asennettu käyttäen LuaRocks:
 
 ```
-Tämä on virheviesti
+luarocks install lualogging
 ```
 
-## Deep Dive (Syvä sukellus)
-Alusta asti, stderr on ollut yksi kolmesta Unix-standardivirrasta, muiden ollessa stdin (standardisyöte) ja stdout (standardituloste). Kun tulostat stderr:iin, viestisi menevät yleensä komentoriville tai virhelokiin, sen sijaan että ne sekoittuisivat normaaliin tulosteeseen. Lua käyttää `io`-kirjastoa tähän, ja `io.stderr:write()` on suorin tapa kirjoittaa virhetulostus. Lua:ssa voit myös ohjata `print`-funktiota kirjoittamaan stderr:iin, kuten yllä olevassa esimerkissä.
+Sitten, kirjoittaaksesi virheviestin stderr:iin käyttäen LuaLoggingia:
 
-## See Also (Katso myös)
-- Lua 5.4 Reference Manual `io` library: https://www.lua.org/manual/5.4/manual.html#6.8
-- Unix Standard Streams: https://en.wikipedia.org/wiki/Standard_streams
-- Effective Lua Debugging Techniques: https://www.lua.org/pil/21.3.html
+```lua
+local logging = require("logging")
+local logger = logging.stderr()
+logger:error("Virhe: Virheellinen syöte.")
+```
+
+Tämä lähestymistapa tarjoaa etuna standardoidun lokituksen sovelluksessasi, lisäten joustavuutta asettaessasi lokitasoja (esim. ERROR, WARN, INFO) yksinkertaisen API:n kautta.

@@ -1,46 +1,58 @@
 ---
 title:                "写入标准错误"
-date:                  2024-01-19
+date:                  2024-02-03T19:33:43.615065-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "写入标准错误"
-
 tag:                  "Files and I/O"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/javascript/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? 什麼和為什麼？
-写入标准错误（stderr）用于输出错误信息和日志。程序员这么做是为了分离正常输出和错误信息，便于调试和日志记录。
+## 什么 & 为什么？
+在JavaScript中写入标准错误（stderr）是指将错误消息或任何关键信息引导至一个特定的、独立的流中，这在Unix类环境中对于日志记录和调试目的尤其有用。程序员这样做是为了将正常程序输出与错误消息区分开，从而实现更清晰的输出管理和更容易的错误监控。
 
-## How to: 如何操作：
-在JavaScript中，你可以使用`console.error()`写入标准错误：
+## 如何操作：
+在Node.js中，可以使用`console.error()`方法或直接写入`process.stderr`来实现写入stderr。以下是展示这两种方法的示例：
 
-```Javascript
-console.error("这是一个错误信息。");
+```javascript
+// 使用console.error()
+console.error('这是一个错误消息。');
+
+// 直接写入process.stderr
+process.stderr.write('这是另一个错误消息。\n');
 ```
 
-样例输出：
-
+这两种方法的示例输出将会出现在stderr流中，不会与stdout混合：
 ```
-这是一个错误信息。
-```
-
-你也可以使用`process.stderr.write()`在Node.js里直接写入标准错误：
-
-```Javascript
-process.stderr.write("直接写入标准错误。\n");
+这是一个错误消息。
+这是另一个错误消息。
 ```
 
-样例输出：
+对于更复杂或特定于应用程序的日志记录，许多JavaScript程序员使用第三方库，如`winston`或`bunyan`。这里有一个使用`winston`的快速示例：
 
+首先，通过npm安装`winston`：
+```shell
+npm install winston
 ```
-直接写入标准错误。
+
+然后，配置`winston`以将错误记录到stderr：
+```javascript
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  levels: winston.config.syslog.levels,
+  transports: [
+    new winston.transports.Console({
+      stderrLevels: ['error']
+    })
+  ]
+});
+
+// 记录一个错误消息
+logger.error('通过winston记录的错误。');
 ```
 
-## Deep Dive 深入探究
-历史上，stderr是UNIX中的标准流概念之一，用于帮助区分正常输出和错误信息。虽然`console.error()`和`process.stderr.write()`都可以用来写入错误信息，但`console.error()`在输出前会先格式化信息，而`process.stderr.write()`则可以直接写入，没有格式化。Node.js遵循这一标准，提供了这些方法来帮助开发者管理输出。
-
-## See Also 参考链接
-- Node.js官方文档关于`process`对象: [Node.js Process](https://nodejs.org/api/process.html#process_process_stderr)
-- MDN Web Docs 关于`console.error()`的说明: [console.error()](https://developer.mozilla.org/en-US/docs/Web/API/Console/error)
+这个设置确保当你使用`winston`记录错误时，它会将错误定向到stderr，帮助维护标准输出和错误输出之间的清晰分离。

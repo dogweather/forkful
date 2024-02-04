@@ -1,36 +1,53 @@
 ---
-title:                "字符串首字母大写"
-date:                  2024-01-19
-simple_title:         "字符串首字母大写"
-
+title:                "字符串大写化"
+date:                  2024-02-03T19:05:02.888296-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "字符串大写化"
 tag:                  "Strings"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/arduino/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (是什么？为什么？)
-大写转换是将字符串中的所有字母改为大写形式。程序员这么做通常是为了标准化文本输入，或创建视觉上的突出显示。
+## 什么 & 为什么？
+将字符串中每个单词的第一个字符转换为大写，同时确保其余字符保持小写，这个操作称为字符串首字母大写。这种操作在数据格式化和用户输入标准化中很常见，以保持一致性和提高可读性。
 
-## How to: (如何实现：)
-```Arduino
+## 如何实现：
+Arduino，主要用于与硬件交互，也通过其 `String` 对象包含了基本的字符串操作能力。然而，它缺乏在高级语言中看到的直接的 `capitalize` 函数。因此，我们通过迭代字符串并应用大小写转换来实现首字母大写。
+
+这里有一个不使用第三方库的基本示例：
+
+```cpp
+String capitalizeString(String input) {
+  if (input.length() == 0) {
+    return ""; // 如果输入为空，则返回一个空字符串
+  }
+  input.toLowerCase(); // 首先将整个字符串转换为小写
+  input.setCharAt(0, input.charAt(0) - 32); // 将第一个字符转换为大写
+  
+  // 将跟随空格后的字母转换为大写
+  for (int i = 1; i < input.length(); i++) {
+    if (input.charAt(i - 1) == ' ') {
+      input.setCharAt(i, input.charAt(i) - 32);
+    }
+  }
+  return input;
+}
+
 void setup() {
   Serial.begin(9600);
-  String message = "Hello, World!";
-  message.toUpperCase();
-  Serial.println(message);  // 输出: HELLO, WORLD!
+  String testStr = "hello arduino world";
+  String capitalizedStr = capitalizeString(testStr);
+  Serial.println(capitalizedStr); // 输出： "Hello Arduino World"
 }
 
 void loop() {
-  // 这里不需要代码，因为大写转换只在setup()中执行一次。
+  // 空循环
 }
 ```
 
-## Deep Dive (深入了解)
-在早期编程语言中，大写转换往往更为复杂，需要对每个字符手动处理。在 Arduino 中，`String` 类为这提供了 `toUpperCase()` 方法，简化了转换。但有一点，使用 `String` 类可能会导致内存碎片化。如果内存管理是关键，可以考虑用字符数组和`strlwr()`函数替代。
+这段代码片段定义了一个 `capitalizeString` 函数，首先将整个字符串转换为小写以标准化其大小写。然后，它将第一个字符和任何跟随空格的字符都转换为大写，有效地将输入字符串中的每个单词首字母大写。请注意，这个初级实现假设 ASCII 字符编码，并可能需要调整以完全支持 Unicode。
 
-## See Also (另请参阅)
-- Arduino `String` 类参考: https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/
-- ASCII表和字符编码：https://www.arduino.cc/reference/en/language/functions/communication/serial/print/
-- 关于内存管理：https://www.arduino.cc/en/Tutorial/Memory
+目前，由于Arduino生态系统主要关注硬件交互和效率，因此尚无广泛采用的专门用于字符串操作的第三方库。然而，提供的示例是在Arduino编程环境内实现字符串首字母大写的一种简单方法。

@@ -1,76 +1,104 @@
 ---
-title:                "यामल के साथ काम करना"
-date:                  2024-01-19
-simple_title:         "यामल के साथ काम करना"
-
+title:                "YAML के साथ काम करना"
+date:                  2024-02-03T19:27:48.930190-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "YAML के साथ काम करना"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/swift/working-with-yaml.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (क्या और क्यों?)
-YAML एक डेटा सीरियलाइजेशन फॉर्मेट है जो कॉन्फ़िगरेशन फ़ाइलों और डेटा को संग्रहीत करने में उपयोगी है। प्रोग्रामर इसका इस्तेमाल इसलिए करते हैं क्योंकि यह पढ़ने में आसान होता है और बहुत सारी प्रोग्रामिंग भाषाओं के साथ सहजता से मिल जाता है।
+## क्या और क्यों?
+YAML, जिसका पूरा नाम YAML Ain't Markup Language है, सभी प्रोग्रामिंग भाषाओं के लिए एक मानव-हितैषी डेटा सीरियलाइजेशन मानक है। प्रोग्रामर इसे कॉन्फ़िगरेशन फाइलों, अंतर-प्रक्रिया संदेशवाहन, और डेटा स्टोरेज के लिए उपयोग करते हैं क्योंकि इसकी पठनीयता अन्य डेटा प्रारूपों जैसे कि XML या JSON की तुलना में व्यावहारिक अंग्रेजी के बहुत करीब है, जिससे इसे समझना और लिखना आसान हो जाता है।
 
-## How to: (कैसे करें:)
-Swift में YAML के साथ काम करने के लिए हमें आमतौर पर किसी लाइब्रेरी की ज़रूरत होती है, क्योंकि स्टैंडर्ड लाइब्रेरी में YAML के लिए डायरेक्ट सपोर्ट नहीं है। इस उदाहरण में हम `Yams` लाइब्रेरी का इस्तेमाल करेंगे।
+## कैसे करें:
+Swift में YAML पार्सिंग और सीरियलाइजेशन के लिए बिल्ट-इन सपोर्ट शामिल नहीं है, इसलिए तीसरे पक्ष की लाइब्रेरीज का उपयोग आवश्यकता होती है। एक लोकप्रिय विकल्प `Yams` है, जो Swift में YAML के साथ काम करने के लिए एक पुस्तकालय है।
 
-सबसे पहले, `Yams` इंस्टॉल करें:
+पहले, आपको अपने प्रोजेक्ट में `Yams` जोड़ने की आवश्यकता है। यदि आप Swift Package Manager का उपयोग कर रहे हैं, तो आप इसे अपनी `Package.swift` फ़ाइल में एक निर्भरता के रूप में जोड़ सकते हैं:
+
 ```swift
-// Swift Package Manager के जरिये
 dependencies: [
     .package(url: "https://github.com/jpsim/Yams.git", from: "4.0.0")
 ]
 ```
 
-अब सिंपल YAML स्ट्रिंग पार्स करें:
+### Swift में YAML पार्स करना
+मान लें कि आपके पास एक सरल ऐप के लिए निम्नलिखित YAML कॉन्फ़िगरेशन है:
+
+```yaml
+name: MyApp
+version: 1.0
+environment: development
+features:
+  - login
+  - notifications
+```
+
+`Yams` का उपयोग करके Swift में इस YAML स्ट्रिंग को कैसे पार्स करें, यहाँ देखें:
+
 ```swift
 import Yams
 
-let yaml = """
-name: John Doe
-age: 30
-isEmployed: true
+let yamlString = """
+name: MyApp
+version: 1.0
+environment: development
+features:
+  - login
+  - notifications
 """
 
 do {
-    let data = try Yams.load(yaml: yaml) as? [String: Any]
-    print(data?["name"] as? String ?? "") // Output: John Doe
+    if let data = try Yams.load(yaml: yamlString) as? [String: Any] {
+        print(data)
+        // पार्स किए गए डेटा तक पहुँचने का उदाहरण
+        if let name = data["name"] as? String {
+            print("App Name: \(name)")
+        }
+    }
 } catch {
-    print(error)
+    print("YAML पार्स करने में त्रुटि: \(error)")
 }
 ```
 
-पार्स की गई डेटा स्ट्रक्चर्स को YAML स्ट्रिंग में डंप करना:
+नमूना आउटपुट:
+
+```
+["name": MyApp, "version": 1.0, "environment": "development", "features": ["login", "notifications"]]
+App Name: MyApp
+```
+
+### Swift ऑब्जेक्ट्स को YAML में सीरियलाइज करना
+`Yams` के साथ Swift ऑब्जेक्ट को वापस एक YAML स्ट्रिंग में परिवर्तित करना भी सीधा है। मान लें आपके पास वही डेटा संरचना है जिसे सीरियलाइज किया जाना है:
 
 ```swift
-import Yams
-
-let data: [String: Any] = [
-    "name": "John Doe",
-    "age": 30,
-    "isEmployed": true
-]
+let appInfo = [
+    "name": "MyApp",
+    "version": 1.0,
+    "environment": "development",
+    "features": ["login", "notifications"]
+] as [String : Any]
 
 do {
-    let yamlString = try Yams.dump(object: data)
+    let yamlString = try Yams.dump(object: appInfo)
     print(yamlString)
-    /*
-    age: 30
-    isEmployed: true
-    name: John Doe
-    */
 } catch {
-    print(error)
+    print("YAML में सीरियलाइज करने में त्रुटि: \(error)")
 }
 ```
 
-## Deep Dive (गहन जानकारी)
-YAML का मतलब है "YAML Ain't Markup Language" जिसे रिकर्सिव बैक्रोनिम कहते हैं। यह XML और JSON का एक विकल्प है और अक्सर कॉन्फ़िगरेशन और डेटा स्टोरेज में इस्तेमाल होता है। YAML के डेटा स्ट्रक्चर्स में लिस्ट्स, मैप्स, और स्कलर्स शामिल हैं।
+यह एक YAML-फॉर्मेटेड स्ट्रिंग उत्पन्न करेगा:
 
-प्रोग्रामर JSON या XML के बजाय YAML का इस्तेमाल करते हैं क्योंकि यह अधिक पढ़ने में सरल और इंडेंटेशन आधारित होता है। इसके अलावा, YAML में कमेंट्स और कॉम्प्लेक्स डेटा स्ट्रक्चर्स को रेप्रेजेंट करना आसान होता है।
+```yaml
+environment: development
+features:
+  - login
+  - notifications
+name: MyApp
+version: 1.0
+```
 
-## See Also (और जानिये)
-- YAML स्पेसिफ़िकेशन: https://yaml.org/spec/1.2/spec.html
-- `Yams` GitHub रेपोज़िटरी: https://github.com/jpsim/Yams
-- Swift Package Manager का इस्तेमाल: https://swift.org/package-manager/
+ये उदाहरण Swift एप्लिकेशन्स में YAML के साथ काम करने के बुनियादी ऑपरेशन दिखाते हैं। याद रखें, जबकि YAML मानव पढ़ाई और उपयोग में आसानी में उत्कृष्ट है, अपने एप्लिकेशन की विशिष्ट आवश्यकताओं का विशेष रूप से प्रदर्शन और जटिलता के संबंध में चुनाव करते समय हमेशा ध्यान में रखें, जब आप अपना डेटा सीरियलाइजेशन प्रारूप चुनें।

@@ -1,66 +1,87 @@
 ---
-title:                "YAML 다루기"
-date:                  2024-01-19
-simple_title:         "YAML 다루기"
-
+title:                "YAML로 작업하기"
+date:                  2024-02-03T19:25:44.423204-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "YAML로 작업하기"
 tag:                  "Data Formats and Serialization"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/haskell/working-with-yaml.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## 무엇 & 왜?
 
-YAML은 구성 파일, 메시지 교환과 같은 인간이 읽을 수 있는 데이터 직렬화 표준입니다. 프로그래머들은 설정, 프로젝트 메타데이터 관리, 데이터 저장 등을 위해 사용합니다.
+YAML은 "YAML Ain't Markup Language"의 약자로, 모든 프로그래밍 언어에 사용할 수 있는 사람이 읽기 편한 데이터 직렬화 표준입니다. 프로그래머들은 그것의 가독성과 간단한 구조 때문에 종종 YAML을 구성 파일과 언어 간 데이터 교환에 사용합니다.
 
-## How to:
+## 어떻게 하나:
 
-Haskell에서 YAML 작업을 시작하기 위해 `yaml` 패키지를 사용합시다. `stack install yaml`로 설치할 수 있습니다.
+Haskell은 YAML 처리를 위한 내장 지원이 없지만, `yaml`과 `aeson`과 같은 제3자 라이브러리를 사용하여 YAML 데이터를 파싱하고 생성할 수 있습니다. 여기 YAML 데이터를 시작하는 방법이 있습니다:
 
-```Haskell
-import Data.Yaml
-import qualified Data.ByteString.Char8 as BS
+### YAML 읽기
+우선, `yaml` 패키지를 프로젝트의 의존성에 추가하세요. 그런 다음, 다음 예제를 사용하여 간단한 YAML 문서를 파싱할 수 있습니다:
 
--- YAML 데이터를 파싱합니다.
-exampleYAML :: BS.ByteString
-exampleYAML = "name: John Doe\nage: 30\n"
+```haskell
+{-# LANGUAGE OverloadedStrings #-}
 
--- Haskell 타입으로 매핑하기 위한 사용자 정의 타입
+import Data.YAML
+import Data.ByteString (ByteString)
+import Control.Monad.IO.Class (liftIO)
+
+-- 예시 YAML 데이터
+yamlData :: ByteString
+yamlData = "
+name: John Doe
+age: 30
+"
+
+-- YAML 문서와 일치하는 데이터 구조를 정의
 data Person = Person
   { name :: String
   , age :: Int
-  } deriving (Show, Eq)
+  } deriving (Show)
 
-instance FromJSON Person where
-  parseJSON (Object v) = Person
-    <$> v .: "name"
-    <*> v .: "age"
-  parseJSON _ = fail "Expected an object for Person"
+instance FromYAML Person where
+  parseYAML = withMap "Person" $ \m -> Person
+    <$> m .: "name"
+    <*> m .: "age"
 
 main :: IO ()
 main = do
-  let personResult = decode exampleYAML :: Maybe Person
-  case personResult of
-    Just person -> print person
-    Nothing -> putStrLn "Failed to parse YAML."
+  let parsed = decode1 yamlData :: Either (Pos,String) Person
+  case parsed of
+    Left err -> putStrLn $ "Error parsing YAML: " ++ show err
+    Right person -> print person
 ```
-
-출력 예시:
-```Haskell
+위 코드의 예시 출력은 다음과 같을 것입니다:
+```
 Person {name = "John Doe", age = 30}
 ```
 
-## Deep Dive
+### YAML 쓰기
+Haskell 데이터 구조에서 YAML을 생성하기 위해, 아래에 표시된 것처럼 `yaml` 패키지의 인코딩 기능을 사용할 수 있습니다:
 
-YAML(YAML Ain't Markup Language)은 2001년에 첫 출시되었으며 XML, JSON의 대안으로 개발되었습니다. 데이터를 트리 구조로 표현 가능하며, 주석과 보조 데이터 형식을 지원합니다.
+```haskell
+{-# LANGUAGE OverloadedStrings #-}
 
-YAML을 대처하는 다른 데이터 직렬화 포맷에는 JSON과 XML이 있습니다. 각각 성능, 전송 크기 등에서 장단점이 있습니다.
+import Data.YAML
+import Data.ByteString.Lazy.Char8 (unpack)
 
-Haskell의 `yaml` 라이브러리는 libyaml C 라이브러리에 바인딩하여 성능을 향상시킵니다. `Data.Yaml` 모듈은 YAML 데이터를 쉽게 파싱 및 생성할 수 있는 인터페이스를 제공합니다.
+-- 이전 예제에서 사용된 Person 데이터 구조 이용
 
-## See Also
+person :: Person
+person = Person "Jane Doe" 25
 
-- YAML 공식 웹사이트: [https://yaml.org/](https://yaml.org/)
-- yaml 라이브러리 Hackage 페이지: [https://hackage.haskell.org/package/yaml](https://hackage.haskell.org/package/yaml)
-- Aeson으로 JSON 처리 배우기: [https://hackage.haskell.org/package/aeson](https://hackage.haskell.org/package/aeson)
+main :: IO ()
+main = do
+  let yamlData = encode1 person
+  putStrLn $ unpack yamlData
+```
+이 프로그램의 출력물은 YAML 형식의 문자열이 될 것입니다:
+```
+name: Jane Doe
+age: 25
+```
+
+이 예제들은 Haskell에서 YAML을 작업하기 위한 출발점으로 사용되어야 합니다. 당신의 필요에 따라, 이러한 라이브러리들이 제공하는 더 발전된 기능과 옵션들을 탐색하고 싶을 수도 있습니다.

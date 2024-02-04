@@ -1,58 +1,83 @@
 ---
-title:                "YAMLを扱う"
-date:                  2024-01-19
-simple_title:         "YAMLを扱う"
-
+title:                "YAML を操作する"
+date:                  2024-02-03T19:24:47.984817-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "YAML を操作する"
 tag:                  "Data Formats and Serialization"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/arduino/working-with-yaml.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (何となぜ？)
-YAMLはデータを表すためのフォーマットです。読みやすく、人間が書きやすいため、設定やデータの保存に使われます。
+## 何となく？
 
-## How to: (やり方)
-Arduinoでは、YAMLファイルを直接扱う標準ライブラリはありませんが、独自のパーサーを実装するか、既存のライブラリを探す必要があります。以下は簡単な仮想の例です。
+YAML（YAML Ain't Markup Language）は、設定ファイル、プログラム間通信、データストレージに使用できる、人間が読みやすいデータシリアライズ標準です。プログラマーは、アプリケーションの設定プロセスを合理化し、コードを深く掘り下げることなくパラメータを変更しやすくするため、読みやすさを向上させ、設定の共有を簡単にするためにArduinoプロジェクトでYAMLを使用します。
 
-```Arduino
-#include <YAML.h>
+## 方法：
+
+Arduinoで直接YAMLを扱うことは、メモリ制約とネイティブYAML処理ライブラリの不在のため、高級プログラミング環境での操作ほど簡単ではありません。しかし、YAMLの解析または生成が必要なプロジェクトの場合、一般的なアプローチには、コンパニオンコンピュータ（例：Raspberry Pi）を使用するか、外部スクリプトを使用してYAMLファイルをよりArduinoフレンドリーな形式（例：JSON）に変換する方法が含まれます。デモンストレーション用に、後者のアプローチを人気のあるライブラリー、ArduinoJsonを使用して焦点を当てましょう。
+
+**ステップ1:** YAML設定をJSONに変換します。オンラインツールやコマンドラインユーティリティ`yq`などを使用できます。
+
+YAMLファイル（`config.yaml`）:
+```yaml
+wifi:
+  ssid: "YourSSID"
+  password: "YourPassword"
+```
+
+JSONに変換（`config.json`）:
+```json
+{
+  "wifi": {
+    "ssid": "YourSSID",
+    "password": "YourPassword"
+  }
+}
+```
+
+**ステップ2:** ArduinoJsonライブラリを使用して、ArduinoスケッチでJSONファイルを解析します。まず、Arduino IDEのライブラリマネージャーを介してArduinoJsonライブラリをインストールする必要があります。
+
+**ステップ3:** コード内でJSONを読み込み、解析します。Arduinoのストレージの制限のため、JSON文字列が変数に格納されているか、SDカードから読み出されると想像してください。
+
+サンプルのArduinoスケッチ:
+```cpp
+#include <ArduinoJson.h>
+
+const char* jsonConfig = "{\"wifi\":{\"ssid\":\"YourSSID\",\"password\":\"YourPassword\"}}";
 
 void setup() {
   Serial.begin(9600);
-  // YAML文字列
-  String yamlString = "title: 'Arduino YAML'\nversion: 1.0";
 
-  // YAML文字列のパース
-  YAML::Node config = YAML::Load(yamlString.c_str());
+  StaticJsonDocument<200> doc;
+  DeserializationError error = deserializeJson(doc, jsonConfig);
 
-  // データの使用
-  if (config["title"]) {
-    Serial.println(config["title"].as<String>());
+  if (error) {
+    Serial.print(F("deserializeJson() failed: "));
+    Serial.println(error.f_str());
+    return;
   }
 
-  if (config["version"]) {
-    Serial.println(config["version"].as<float>());
-  }
+  const char* ssid = doc["wifi"]["ssid"]; // "YourSSID"
+  const char* password = doc["wifi"]["password"]; // "YourPassword"
+
+  Serial.print("SSID: ");
+  Serial.println(ssid);
+  Serial.print("Password: ");
+  Serial.println(password);
 }
 
 void loop() {
-  // ここで何かのループ処理
+  // この例ではここには何もありません
 }
 ```
 
-サンプル出力:
+スケッチを実行すると出力：
 ```
-Arduino YAML
-1.0
+SSID: YourSSID
+Password: YourPassword
 ```
 
-## Deep Dive (詳細情報)
-YAMLは"YAML Ain't Markup Language"（再帰的頭字語）で、設定ファイルやデータ交換に適しています。JSONやXMLと比べて、YAMLは人間が読みやすい形式です。しかし、Arduinoにはメモリが限られているため、大きなデータ構造の扱いは難しいです。YAMLファイルの解析には、外部ライブラリが必要で、Arduinoの場合それらの中にはメモリ使用を最適化したものもあります。
-
-## See Also (関連リンク)
-
-- YAML公式ウェブサイト: https://yaml.org
-- Arduino用のYAMLパーサーライブラリの例: https://github.com/jimmiebergmann/mini-yaml
-- YAMLと他のデータフォーマットとの比較: https://en.wikipedia.org/wiki/YAML#Comparison_with_JSON
+このアプローチは、JSONへの変換とArduinoJsonライブラリの利用を含み、Arduinoプロジェクト内での扱いやすいYAML設定の処理を可能にし、マイクロコントローラー上での直接的なYAML解析を回避します。

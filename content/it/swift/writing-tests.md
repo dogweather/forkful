@@ -1,51 +1,64 @@
 ---
 title:                "Scrivere test"
-date:                  2024-01-19
+date:                  2024-02-03T19:32:02.171963-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Scrivere test"
-
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/swift/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Scrivere test è l'atto di creare mini programmi che controllano se il codice principale funziona correttamente. I programmatori li usano per assicurarsi che il codice faccia esattamente quello che si aspettano, riducendo errori e bug.
+## Cosa e Perché?
+Scrivere test in Swift comporta la creazione e l'esecuzione di codice che verifica la correttezza di altre unità di codice nella tua applicazione. I programmatori lo fanno per garantire affidabilità, rilevare bug all'inizio del ciclo di sviluppo e facilitare il futuro refactoring del codice senza conseguenze non intenzionali.
 
-## How to:
-Installa XCTest e crea un caso di test. Ecco un esempio semplice:
+## Come fare:
+Swift supporta i test attraverso il suo framework XCTest, che è integrato in Xcode. Puoi scrivere test unitari per verificare singole parti del tuo codice, per esempio, una funzione che calcola la somma di due numeri.
 
-```Swift
+```swift
 import XCTest
+@testable import TuaApp
 
-// Codice da testare
-func somma(a: Int, b: Int) -> Int {
-    return a + b
-}
+class TestTuaApp: XCTestCase {
 
-// Caso di test
-class TestMatematico: XCTestCase {
-    func testSomma() {
-        XCTAssertEqual(somma(a: 2, b: 3), 5, "La somma di 2 e 3 dovrebbe essere 5")
+    func testaSomma() {
+        let risultato = Calcolatrice().somma(a: 1, b: 2)
+        XCTAssertEqual(risultato, 3, "La funzione somma non ha restituito il valore atteso.")
     }
 }
-
-// Esegui i test
-TestMatematico.defaultTestSuite.run()
 ```
 
-Output di esempio:
+Per eseguire questo test, in genere premi Command-U in Xcode. L'output nel navigatore di test di Xcode ti dirà se il test è passato o fallito.
 
+Per esempio, un output di test riuscito:
 ```
-Test Suite 'TestMatematico' started at 2023-04-01 18:45:23.123
-Test Case '-[TestMatematico testSomma]' started.
-Test Case '-[TestMatematico testSomma]' passed (0.001 seconds).
-Test Suite 'TestMatematico' finished at 2023-04-01 18:45:23.124.
+Caso di Test '-[TestTuaApp testaSomma]' superato (0.005 secondi).
 ```
 
-## Deep Dive:
-XCTest è il framework usato in Swift per scrivere test unitari ed è integrato in Xcode dal 2013. Prima si usava OCUnit, ma XCTest è diventato standard per la compatibilità e facilità d'uso. Oltre ai test unitari, ci sono anche i test di UI con XCUITest e il test-driven development (TDD) dove si scrivono i test prima del codice.
+Per scenari di test più avanzati, potresti adottare librerie di terze parti come Quick/Nimble, che offrono una sintassi più espressiva per scrivere test.
 
-## See Also:
-- [Testing with Xcode](https://developer.apple.com/documentation/xctest)
-- [Ray Wenderlich - Unit Testing Tutorial](https://www.raywenderlich.com/960290-ios-unit-testing-and-ui-testing-tutorial)
+Con Quick/Nimble, potresti scrivere lo stesso test così:
+
+```swift
+// Aggiungi Quick e Nimble al tuo gestore di pacchetti Swift o usa CocoaPods/Carthage per installarli
+import Quick
+import Nimble
+@testable import TuaApp
+
+class SpecificaCalcolatrice: QuickSpec {
+    override func spec() {
+        describe("Calcolatrice") {
+            context("quando somma numeri") {
+                it("dovrebbe restituire la somma corretta") {
+                    let calcolatrice = Calcolatrice()
+                    expect(calcolatrice.somma(a: 1, b: 2)).to(equal(3))
+                }
+            }
+        }
+    }
+}
+```
+
+L'esecuzione di questo test ti darebbe un output simile nel tuo console di test o nel log dello strumento CI/CD, indicando se il test è riuscito o fallito, con un formato più leggibile per descrivere test ed aspettative.

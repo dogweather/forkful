@@ -1,35 +1,58 @@
 ---
-title:                "String in Großbuchstaben umwandeln"
-date:                  2024-01-19
-simple_title:         "String in Großbuchstaben umwandeln"
-
+title:                "Einen String großschreiben"
+date:                  2024-02-03T19:05:16.950022-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Einen String großschreiben"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/haskell/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Großschreibung eines Strings bedeutet, alle Buchstaben in Großbuchstaben umzuwandeln. Programmierer nutzen sie, um Konsistenz für Datenvergleiche oder Benutzeroberflächen zu gewährleisten.
+Das Großschreiben eines Strings beinhaltet die Umwandlung des ersten Buchstabens eines gegebenen Strings in einen Großbuchstaben, während sichergestellt wird, dass die restlichen Buchstaben klein bleiben. Programmierer tun dies, um Ausgaben zu formatieren, die Grammatik in Texten einzuhalten oder die Lesbarkeit generierter Daten zu verbessern.
 
-## How to:
-```Haskell
-import Data.Char(toUpper)
+## Wie:
+In Haskell können Sie einen String mit der Standardbibliothek großschreiben, ohne dass Sie irgendwelche Drittanbieter-Bibliotheken benötigen.
+
+```haskell
+import Data.Char (toUpper, toLower)
 
 capitalize :: String -> String
-capitalize = map toUpper
+capitalize "" = ""
+capitalize (head:tail) = toUpper head : map toLower tail
 
--- Beispielnutzung:
-main = putStrLn (capitalize "Haskell ist toll!")
-```
-Output:
-```Haskell
-HASKELL IST TOLL!
+-- Beispielverwendung:
+main = putStrLn $ capitalize "hello world"
 ```
 
-## Deep Dive
-Die Großschreibung von Zeichenketten ist keine neue Idee. In den ersten Tagen der Computer gab es nur Großbuchstaben! Die Funktion `toUpper` in Haskell setzt diese Tradition fort, adaptiert sie aber für die moderne, vielschichtige Welt der Textverarbeitung. Alternativ könnten Programmierer auch externen Bibliotheken wie `text` für verbesserte Performance bei großen Textmengen nutzen. Die Implementierung der `toUpper`-Funktion berücksichtigt Unicode, sodass sie auch mit nicht-ASCII-Zeichen funktioniert.
+Ausgabe:
+```
+Hello world
+```
 
-## See Also
-- Haskell `Data.Char` Modul: https://hackage.haskell.org/package/base-4.16.0.0/docs/Data-Char.html
-- `text` Paket für effiziente Stringverarbeitung: https://hackage.haskell.org/package/text
+Für komplexere Szenarien oder zur Vereinfachung der Verwendung möchten Sie möglicherweise eine Drittanbieter-Bibliothek wie `text` verwenden, die für effiziente String-Manipulation in Haskell beliebt ist.
+
+Zuerst müssen Sie `text` zu den Abhängigkeiten Ihres Projekts hinzufügen. Dann können Sie seine Funktionen verwenden, um einen String wie folgt großzuschreiben:
+
+```haskell
+import qualified Data.Text as T
+import Data.Char (toUpper)
+
+capitalizeText :: T.Text -> T.Text
+capitalizeText text = case T.uncons text of
+    Nothing -> T.empty
+    Just (first, rest) -> T.cons (toUpper first) (T.toLower rest)
+
+-- Beispielverwendung mit der Textbibliothek:
+main = putStrLn $ T.unpack $ capitalizeText (T.pack "hello world")
+```
+
+Ausgabe:
+```
+Hello world
+```
+
+Beide Beispiele demonstrieren einfache, aber effektive Wege, einen String in Haskell großzuschreiben, mit oder ohne Drittanbieter-Bibliotheken.

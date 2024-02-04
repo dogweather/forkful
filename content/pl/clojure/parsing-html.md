@@ -1,42 +1,75 @@
 ---
-title:                "Przetwarzanie HTML"
-date:                  2024-01-20T15:30:58.339960-07:00
-simple_title:         "Przetwarzanie HTML"
-
+title:                "Analiza składniowa HTML"
+date:                  2024-02-03T19:11:50.248374-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Analiza składniowa HTML"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/clojure/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why - Co i Dlaczego?
-Parsing HTML to proces ekstrakcji danych ze struktur dokumentu HTML. Programiści robią to, aby manipulować zawartością, wydobywać informacje i integrować aplikacje z webowymi interfejsami użytkownika.
+## Co i dlaczego?
 
-## How to - Jak to zrobić?
-W Clojure do parsowania HTML używamy biblioteki [enlive](https://github.com/cgrand/enlive). Oto prosty przykład:
+Parsowanie HTML w Clojure wiąże się z programowym ekstrahowaniem informacji z dokumentów HTML. Programiści robią to, aby uzyskać dostęp, manipulować lub monitorować zawartość sieci dynamicznie, automatyzując zadania lub dostarczając dane do aplikacji.
+
+## Jak to zrobić:
+
+Clojure nie posiada wbudowanych możliwości parsowania HTML, ale możesz użyć bibliotek Java lub wrapperów Clojure, takich jak `enlive` lub `hickory`. Oto jak używać obu:
+
+### Używając Enlive:
+
+Enlive to popularny wybór do parsowania HTML i skrobania stron internetowych. Najpierw dołącz go do zależności swojego projektu:
+
+```clojure
+[net.cgrand/enlive "1.1.6"]
+```
+
+Następnie możesz parsować i nawigować po HTML w następujący sposób:
 
 ```clojure
 (require '[net.cgrand.enlive-html :as html])
 
-(defn parse-html [html-content]
-  (html/select (html/html-resource (java.io.StringReader. html-content))
-               [:div.example-class]))
-
-(let [html-str "<div class='example-class'>Witaj, Clojure!</div>"]
-  (println (parse-html html-str)))
+(let [doc (html/html-resource (java.net.URL. "http://example.com"))]
+  (html/select doc [:div.some-class]))
 ```
 
-Output:
+Ten fragment kodu pobiera stronę HTML i wybiera wszystkie elementy `<div>` z klasą `some-class`.
+
+Wynik może wyglądać tak:
+
+```clojure
+({:tag :div, :attrs {:class "some-class"}, :content ["Oto jakaś treść."]})
 ```
-([{:tag :div, :attrs {:class "example-class"}, :content ["Witaj, Clojure!"]}])
+
+### Używając Hickory:
+
+Hickory zapewnia sposób na parsowanie HTML do formatu, który jest łatwiejszy do pracy w Clojure. Dodaj Hickory do zależności swojego projektu:
+
+```clojure
+[hickory "0.7.1"]
 ```
 
-## Deep Dive - W Głębię
-Parsing HTML w Clojure via `enlive` jest mocny w historycznym kontekście. Przełomowy, bo łączy deklaratywność z programowaniem funkcyjnym. Alternatywą jest użycie `jsoup` za pośrednictwem interopu Java. Jednakże, `enlive` jest "idiomatic Clojure", wykorzystuje sekwencyjne przetwarzanie - co jest naturalne dla tego języka.
+Oto prosty przykład:
 
-Enlive rozdziela proces parsowania i manipulacji. Piersz parsujesz HTML, potem definiujesz "transformacje" do aplikowania na strukturę DOM. To częściowa odwrotność typowego podejścia, gdzie modyfikujesz DOM w locie.
+```clojure
+(require '[hickory.core :as hickory]
+         '[hickory.select :as select])
 
-## See Also - Zobacz Również
-- Enlive Tutorial: https://github.com/swannodette/enlive-tutorial
-- Oficjalna dokumentacja `enlive`: https://github.com/cgrand/enlive
-- `jsoup`: https://jsoup.org
+;; Parsuj HTML do formatu Hickory
+(let [doc (hickory/parse "<html><body><div id='main'>Witaj, świecie!</div></body></html>")]
+  ;; Wybierz div z id 'main'
+  (select/select (select/id "main") doc))
+```
+
+Ten kod parsuje prosty ciąg HTML i używa selektora CSS, aby znaleźć `div` z ID `main`.
+
+Przykładowy wynik:
+
+```clojure
+[{:type :element, :tag :div, :attrs {:id "main"}, :content ["Witaj, świecie!"]}]
+```
+
+Zarówno `enlive`, jak i `hickory` oferują solidne rozwiązania do parsowania HTML w Clojure, przy czym `enlive` skupia się bardziej na szablonach, a `hickory` podkreśla transformację danych.

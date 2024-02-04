@@ -1,40 +1,52 @@
 ---
 title:                "Nykyisen päivämäärän hankkiminen"
-date:                  2024-01-20T15:14:45.560251-07:00
+date:                  2024-02-03T19:09:36.707747-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Nykyisen päivämäärän hankkiminen"
-
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/haskell/getting-the-current-date.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Mitä ja miksi? Kellonaika ja päiväys, me kaikki tiedämme ne. Ohjelmointimaailmassa niitä tarvitaan lokien kirjoittamiseen, aikaleimojen luontiin ja moniin muihin. Sen tietäminen on työkalu, jonka haluat vyöllesi.
+## Mikä & Miksi?
+Nykyisen päivämäärän noutaminen Haskellissa käsittää järjestelmän nykyisen ajan hankkimisen ja sen muuntamisen luettavaan päivämäärämuotoon. Ohjelmoijat tekevät tämän suorittaakseen toimintoja päivämäärän perusteella, kuten lokitusta, tehtävien ajoitusta tai tapahtumien aikaleimausta sovelluksissa.
 
-## How to:
-Miten:
+## Kuinka:
+Haskellin vakiokirjasto, `base`, tarjoaa `Data.Time` -moduulin, joka tarjoaa toiminnallisuuden työskentelyyn päivämäärien ja aikojen kanssa. Tässä on miten sitä käytetään nykyisen päivämäärän saamiseen:
 
-```Haskell
-import Data.Time
+```haskell
+import Data.Time (getCurrentTime, utctDay)
 
--- Näin saat nykyisen päiväyksen
 main :: IO ()
 main = do
-  currentDay <- getCurrentTime
-  print $ utctDay currentDay
+    now <- getCurrentTime
+    let today = utctDay now
+    print today
 ```
 
-Tulostus voisi näyttää tältä:
-
+Esimerkkitulostus:
 ```
-2023-03-15
+2023-04-12
 ```
 
-## Deep Dive
-Syvä sukellus: `Data.Time` on moduuli, joka on osa `time`-kirjastoa. Se julkaistiin osana GHC:n standardikirjastoa aika päiviä sitten. Vaihtoehtoja? Vanhemmissa ohjelmissa on käytetty `old-time`-kirjastoa, mutta nykyaikana `time` on se juttu. Implementaatio? `getCurrentTime` hakee UTC-aikaleiman järjestelmästä. 
+Lisäjoustavuuden saamiseksi, kuten päivämäärän muotoiluun tai työskentelyyn eri aikavyöhykkeiden kanssa, `time`-kirjasto on korvaamaton. Tässä on miten saatat muotoilla nykyisen päivämäärän:
 
-## See Also
-Katso myös:
+```haskell
+import Data.Time
 
-- Haskell `time` library documentation: [https://hackage.haskell.org/package/time/docs/Data-Time.html](https://hackage.haskell.org/package/time/docs/Data-Time.html)
+main :: IO ()
+main = do
+    now <- getCurrentTime
+    timezone <- getCurrentTimeZone
+    let zoneNow = utcToLocalTime timezone now
+    putStrLn $ formatTime defaultTimeLocale "%Y-%m-%d" zoneNow
+```
+
+Tämä tulostaa nykyisen päivämäärän `YYYY-MM-DD`-muodossa, mukautettuna paikalliseen aikavyöhykkeeseen.
+
+Lisäksi kolmannen osapuolen kirjastotuen saamiseksi, `time`-kirjastoa suositellaan erittäin ja sitä käytetään usein Haskell-yhteisössä sen laajojen päivämäärän ja ajan käsittelykykyjen vuoksi. Yllä olevat esimerkit hyödyntävät tätä kirjastoa.
+
+Jos tarvitset kattavampaa päivämäärän käsittelyä, mukaan lukien jäsentäminen merkkijonoista tai aritmeettiset operaatiot päivämäärien ja aikojen kanssa, `Data.Time`-moduulin lisätoimintoihin tutustuminen on hyödyllistä.

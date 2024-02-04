@@ -1,43 +1,64 @@
 ---
 title:                "Obteniendo la fecha actual"
-date:                  2024-01-20T15:16:26.420829-07:00
+date:                  2024-02-03T19:10:39.282115-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Obteniendo la fecha actual"
-
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/rust/getting-the-current-date.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Qué & Por Qué?
+## ¿Qué y por qué?
 
-Obtener la fecha actual en Rust significa acceder al momento presente en el sistema. Los programadores lo hacen para registros, medidas de tiempo, o funciones que dependen de la fecha.
+Recuperar la fecha actual en Rust es una tarea común para acciones como registrar, operaciones basadas en tiempo o simplemente mostrar la fecha. A diferencia de algunos lenguajes que incluyen la funcionalidad de fecha y hora en su biblioteca estándar, Rust fomenta el uso de una biblioteca de terceros robusta, chrono, para una manipulación de fecha y hora exhaustiva debido a su funcionalidad superior y facilidad de uso.
 
-## Cómo:
+## Cómo hacerlo:
 
-```Rust
+### Usando la Biblioteca Estándar de Rust
+La biblioteca estándar de Rust ofrece una forma limitada pero rápida de obtener la hora actual, aunque no directamente la fecha actual en un formato de calendario. Así es cómo hacerlo:
+
+```rust
+use std::time::{SystemTime, UNIX_EPOCH};
+
+fn main() {
+    match SystemTime::now().duration_since(UNIX_EPOCH) {
+        Ok(n) => println!("Hora actual: {} segundos desde la Época Unix.", n.as_secs()),
+        Err(_) => panic!("¡SystemTime antes de la Época Unix!"),
+    }
+}
+```
+
+Salida:
+```
+Hora actual: 1615390665 segundos desde la Época Unix.
+```
+
+### Usando la Biblioteca Chrono
+Para una funcionalidad de fecha y hora más completa, incluyendo obtener la fecha actual, deberías usar la biblioteca `chrono`. Primero, añade `chrono` a tu `Cargo.toml`:
+
+```toml
+[dependencies]
+chrono = "0.4"
+```
+
+Luego, puedes usar `chrono` para obtener la fecha actual:
+
+```rust
+extern crate chrono;
 use chrono::{Local, Datelike};
 
 fn main() {
-    let hoy = Local::today();
-    println!("Hoy es: {}", hoy.format("%Y-%m-%d"));  // Formato: Año-Mes-Día
+    let ahora = Local::now();
+    println!("Fecha actual: {}-{}-{}", ahora.year(), ahora.month(), ahora.day());
 }
-
-// Salida esperada (varía según el día en que ejecutes el código):
-// Hoy es: 2023-04-07
 ```
 
-## Análisis Profundo
+Salida:
+```
+Fecha actual: 2023-4-20
+```
 
-Históricamente, Rust siempre ha valorado la seguridad y la precisión en el manejo del tiempo, y la biblioteca `chrono` es el estándar de facto para trabajar con fechas y horas. Aunque la biblioteca estándar de Rust incluye funcionalidades básicas para manejar el tiempo a través del módulo `std::time`, `chrono` ofrece abstracciones más ricas y fáciles de usar.
-
-Alternativas incluyen el uso de la biblioteca `time`, que también tiene funciones para manejar tiempo y fechas, pero puede tener diferencias en la API y en cómo se manejan las zonas horarias.
-
-En cuanto a implementación, `chrono` maneja fechas con tipos robustos como `DateTime` para fechas y horas, y `Date` para solo fechas, cada uno con asociaciones a zonas horarias específicas o al horario universal coordinado (UTC). Es importante tener en cuenta la zona horaria; `Local::today()` devuelve la fecha actual en la zona horaria local de la máquina donde se ejecuta el código.
-
-## Ver También
-
-- Documentación oficial de `chrono`: https://docs.rs/chrono/
-- Crates.io, donde puedes encontrar la biblioteca `chrono`: https://crates.io/crates/chrono
-- Módulo oficial de Rust para el tiempo: https://doc.rust-lang.org/std/time/index.html
-- Documentación alternativa para la biblioteca `time`: https://docs.rs/time/
+La biblioteca `chrono` facilita el trabajo con fechas y horas, ofreciendo una amplia gama de funcionalidades más allá de solo recuperar la fecha actual, incluyendo el análisis, la formateación y operaciones aritméticas sobre fechas y horas.

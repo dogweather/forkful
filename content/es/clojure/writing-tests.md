@@ -1,49 +1,64 @@
 ---
 title:                "Escribiendo pruebas"
-date:                  2024-01-19
+date:                  2024-02-03T19:29:57.963990-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Escribiendo pruebas"
-
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/clojure/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## ¿Qué & Por Qué?
-Escribir pruebas es crear casos automáticos para validar que tu código hace lo que esperas. Los programadores prueban para evitar errores, garantizar calidad y facilitar mantenimiento.
+## Qué y Por Qué?
+Escribir pruebas en Clojure, al igual que en otros lenguajes de programación, implica crear código dedicado para verificar que tu código principal funciona como se espera. Ayuda a asegurar la corrección, facilita la refactorización y mejora la estabilidad del código.
 
 ## Cómo hacerlo:
-Clojure usa la biblioteca `clojure.test` para pruebas. Un ejemplo sencillo:
+Clojure, aprovechando la JVM, soporta varios marcos de pruebas. Sin embargo, una biblioteca integrada comúnmente utilizada es `clojure.test`. Aquí hay un ejemplo simple:
 
 ```clojure
-(ns mi-proyecto.core-test
+(ns example.test
   (:require [clojure.test :refer :all]
-            [mi-proyecto.core :refer :all]))
+            [example.core :refer :all]))
 
-(deftest prueba-suma
-  (testing "Probar suma de dos números"
-    (is (= 4 (sumar 2 2)))))
+(deftest test-addition
+  (testing "Funcionalidad de adición"
+    (is (= 4 (add 2 2)))
+    (is (= 7 (add 3 4)))))
 
 (run-tests)
+```
+Después de ejecutar esta prueba, verías una salida similar a:
 
 ```
+Probando example.test
 
-La salida de la prueba sería algo así:
+Se ejecutaron 2 pruebas que contienen 2 afirmaciones.
+0 fallos, 0 errores.
+```
+
+Para aquellos que buscan opciones más ricas en características, se pueden utilizar bibliotecas de terceros como `Midje` o `test.check`. Así es como podrías usar Midje para una prueba similar:
+
+Primero, añade Midje a las dependencias de tu project.clj:
+```clojure
+[midje "1.9.9"]
+```
+
+Luego, tu prueba con Midje podría lucir así:
 
 ```clojure
-Testing mi-proyecto.core-test
+(ns example.test
+  (:require [midje.sweet :refer :all]
+            [example.core :refer :all]))
 
-Ran 1 tests containing 1 assertions.
-0 failures, 0 errors.
+(fact "Probando adicion"
+  (add 2 2) => 4
+  (add 3 4) => 7)
 ```
 
-## Profundización
-Las pruebas en Clojure vienen de la tradición de TDD (Test-Driven Development) en Smalltalk y han sido populares desde los años 90. Alternativas a `clojure.test` incluyen `Midje` y `Speclj`, ofreciendo una experiencia más rica y DSL (Domain-Specific Languages). Para implementar pruebas, se sigue el ciclo rojo-verde-refactor: escribes una prueba que falla, escribes código que hace que la prueba pase, y luego refinas el código manteniendo las pruebas pasando.
+Al ejecutar la prueba a través de Midje con `lein midje`, la salida mostraría algo parecido a:
 
-## Ver Además
-Para más recursos de pruebas en Clojure, puedes visitar:
-
-- La [Página oficial de clojure.test](https://clojure.github.io/clojure/clojure.test-api.html)
-- Un [tutorial de `Midje`](https://github.com/marick/Midje/)
-- Documentación de [`Speclj`](http://speclj.com/)
-- [Blog de Martin Fowler](https://martinfowler.com/bliki/TestDrivenDevelopment.html) sobre TDD.
+```
+Todas las comprobaciones (2) tuvieron éxito.
+```

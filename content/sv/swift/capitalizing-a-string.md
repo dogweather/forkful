@@ -1,44 +1,46 @@
 ---
-title:                "Att göra en sträng versal"
-date:                  2024-01-19
-simple_title:         "Att göra en sträng versal"
-
+title:                "Gör om en sträng till versaler"
+date:                  2024-02-03T19:06:34.692445-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Gör om en sträng till versaler"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/swift/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att kapitalisera en sträng innebär att göra varje bokstav i strängen till en stor bokstav. Programmerare gör detta för att standardisera textdata, förbättra läsbarheten eller för estetiska skäl, till exempel att börja varje ord i en rubrik med stor bokstav.
+
+Att göra första bokstaven i en sträng stor i Swift innebär att man modifierar den givna strängen så att dess första tecken är versalt, och de återstående tecknen är gemener. Programmerare gör detta i syften som att formatera namn eller meningar enligt grammatiska regler eller användargränssnittsstandarder.
 
 ## Hur man gör:
-Swift har inbyggda metoder för att jobba med text. Där ingår `uppercased()` för att göra alla bokstäver stora och `capitalized` för att storstil varje ord. Här är några exempel:
 
-```Swift
-let smallText = "jag älskar programmering."
-let uppercasedText = smallText.uppercased() // "JAG ÄLSKAR PROGRAMMERING."
-print(uppercasedText)
+Swifts `String`-strukturer kommer med ett par inbyggda metoder för att manipulera strängars versalisering. Här är några tillvägagångssätt för att göra första bokstaven i en sträng stor i Swift, inklusive användning av standardmetoder och tredjepartsbibliotek om nödvändigt.
 
-let title = "detta är en titel"
-let capitalizedTitle = title.capitalized // "Detta Är En Titel"
-print(capitalizedTitle)
+### Använda inbyggda metoder
+
+För att göra första bokstaven i en sträng stor och göra resten gemena:
+
+```swift
+let myString = "hej, världen"
+let capitalizedString = myString.prefix(1).uppercased() + myString.dropFirst().lowercased()
+print(capitalizedString) // Utdata: "Hej, världen"
 ```
 
-Sample output:
+För att göra första bokstaven i varje ord i en mening stor, kan du använda egenskapen `capitalized`:
 
+```swift
+let sentence = "hej, världen"
+let capitalizedSentence = sentence.capitalized
+print(capitalizedSentence) // Utdata: "Hej, Världen"
 ```
-JAG ÄLSKAR PROGRAMMERING.
-Detta Är En Titel
-```
 
-## Fördjupning
-Att ändra storlek på bokstäver har varit viktigt ända sedan tryckpressens dagar. Det gör text enhetlig och förbättrar läsbarheten. `uppercased()` och `capitalized` är Swifts verktyg för detta. Historiskt har andra språk som Python och Java liknande metoder, som `.upper()` eller `.toUpperCase()`.
+### Använda ett tredjepartsbibliotek
 
-Swifts `capitalized` är smart. Den kapitaliserar inte bara första bokstaven i ett ord, utan tar hänsyn till punktuering och andra skiljetecken. Det är bra för korrekt formattering av meningar. Men vara medveten, den hanterar inte lokala regler, som speciella regler för svenska språket.
+Även om Swifts standardbibliotek är ganska omfattande, kan vissa specifika versaliseringar kräva mer komplexa operationer eller kan förenklas med hjälp av tredjepartsbibliotek. Ett av de populära för strängmanipulation är SwiftRichString. (Notera: Se alltid till att inkludera tredjepartsbibliotek genom Swift Package Manager, CocoaPods eller Carthage, och importera dem i din fil.)
 
-Det finns alternativ som `localizedUppercaseString` i Swift som kan hantera lokala regler bättre, om det behövs för specifika användningsfall.
+Först behöver du lägga till `SwiftRichString` i ditt projekt. När det är installerat kan du använda det för att utföra olika strängoperationer, inklusive specifika behov av versalisering. Dock, som det är nu, täcker Swifts inbyggda metoder adekvat de flesta fall av versalisering utan behovet av externa bibliotek endast för att göra bokstäver stora.
 
-## Se även
-- Swifts officiella dokumentation om Strings: [https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
-- En guide till Swifts `String` API: [https://www.hackingwithswift.com/articles/141/8-swift-string-functions](https://www.hackingwithswift.com/articles/141/8-swift-string-functions)
+Referera alltid till det senaste dokumentationen av biblioteket för eventuella uppdateringar eller ändringar i metoder.

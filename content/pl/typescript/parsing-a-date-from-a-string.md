@@ -1,38 +1,53 @@
 ---
-title:                "Przetwarzanie daty ze łańcucha znaków"
-date:                  2024-01-20T15:38:50.753970-07:00
-simple_title:         "Przetwarzanie daty ze łańcucha znaków"
-
+title:                "Analiza składniowa daty z łańcucha znaków"
+date:                  2024-02-03T19:16:00.926835-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Analiza składniowa daty z łańcucha znaków"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/typescript/parsing-a-date-from-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
-Parsowanie daty z ciągu znaków to przekształcenie tekstu na format daty, który rozumie komputer. Robimy to, żeby łatwiej manipulować datami i godzinami - porównywać je, składować w bazie danych, wyświetlać w różnych formatach.
+## Co i dlaczego?
+Parsowanie daty z ciągu znaków polega na konwertowaniu tekstowych reprezentacji dat i czasów na format, który może być przetwarzany i analizowany przez program. Jest to częste zadanie w programowaniu, ponieważ pozwala na obsługę danych wejściowych od użytkownika, przechowywanie danych z czasem oraz interakcje z API, co prowadzi do tworzenia bardziej funkcjonalnych i przyjaznych dla użytkownika aplikacji.
 
 ## Jak to zrobić:
-```TypeScript
-// Zaimportuj funkcję parseISO z date-fns
-import { parseISO } from 'date-fns';
+TypeScript, będąc nadzbiorem JavaScript, polega na obiekcie Date do parsowania dat z ciągów znaków. Jednak praca z datami w JS/TS może stać się rozwlekła lub nieprecyzyjna z powodu dziwactw obiektu Date. Oto podstawowy przykład, po którym następuje podejście z użyciem popularnej biblioteki, `date-fns`, dla bardziej solidnych rozwiązań.
 
-// Przykładowy ciąg znaków z datą
-const dateString: string = '2023-04-05T14:30:00.000Z';
-
-// Parsowanie ciągu znaków do obiektu Date
-const parsedDate: Date = parseISO(dateString);
-
-// Wyświetlenie przeparsowanej daty
-console.log(parsedDate);
-// Output: 2023-04-05T14:30:00.000Z (data w formacie UTC)
+### Korzystanie z obiektu Date JavaScript
+```typescript
+// Podstawowe parsowanie przy użyciu konstruktora Date
+const dateFromString = new Date("2023-04-21T15:00:00Z");
+console.log(dateFromString.toString()); 
+// Wyjście dla GMT: "Fri Apr 21 2023 15:00:00 GMT+0000 (Coordinated Universal Time)"
 ```
-Date-fns to biblioteka pomagająca w operacjach na datach. W powyższym przykładzie wykorzystujemy `parseISO` do parsowania daty w formacie ISO 8601.
 
-## Deep Dive
-W JavaScript i TypeScript przetwarzanie dat nie zawsze było proste. Wcześniej, trzeba było polegać na wbudowanym obiekcie Date, który bywał problematyczny. Formaty dat były interpretowane różnie w zależności od przeglądarki. Biblioteki takie jak moment.js czy date-fns pojawiły się aby ułatwić i ustandardyzować pracę z datami. Alternatywą dla zewnętrznych bibliotek jest `Date.parse()` z JavaScript, ale często preferowane są biblioteki ze względu na większą elastyczność i lepsze zarządzanie strefami czasowymi. Przy implementacji ważne jest uwzględnienie strefy czasowej oraz formatu daty, który czasami może wymagać specyficznego wzorca.
+Ta metoda działa dla ciągów w formacie ISO i niektórych innych formatów dat, ale może dawać niespójne wyniki dla niejednoznacznych formatów w różnych przeglądarkach i lokalizacjach.
 
-## Zobacz również
-- [date-fns Documentation](https://date-fns.org/v2.28.0/docs/parseISO) - dokumentacja funkcji parseISO z date-fns.
-- [MDN Web Docs - Date.parse()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/parse) - szczegóły na temat Date.parse() w JavaScript.
-- [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) - więcej o standardzie ISO 8601 dla formatowania dat i czasu.
+### Korzystanie z date-fns
+Biblioteka `date-fns` zapewnia proste i spójne obsługiwanie dat. Jest to biblioteka modułowa, co pozwala na dołączenie tylko tych części, które są potrzebne, redukując rozmiar pakietu.
+
+Pierwsze, zainstaluj `date-fns`: 
+
+```sh
+npm install date-fns
+```
+
+Następnie, użyj jej do parsowania ciągu daty:
+
+```typescript
+import { parseISO, format } from 'date-fns';
+
+// Parsowanie ciągu w formacie ISO
+const dateString = "2023-04-21T15:00:00Z";
+const parsedDate = parseISO(dateString);
+
+// Formatowanie daty (np. na formę czytelną dla człowieka)
+console.log(format(parsedDate, "PPPpp")); 
+// Wyjście: "21 kwietnia 2023 o 15:00" (wynik może się różnić w zależności od lokalizacji)
+```
+
+`date-fns` obsługuje szeroką gamę formatów i lokalizacji, co czyni go solidnym wyborem dla aplikacji wymagających precyzyjnego parsowania i formatowania dat w różnych regionach użytkowników.

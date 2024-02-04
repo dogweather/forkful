@@ -1,45 +1,73 @@
 ---
-title:                "Datum aus einem String parsen"
-date:                  2024-01-20T15:38:35.478403-07:00
-simple_title:         "Datum aus einem String parsen"
-
+title:                "Einen Datum aus einem String analysieren"
+date:                  2024-02-03T19:15:32.801096-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Einen Datum aus einem String analysieren"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/rust/parsing-a-date-from-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Das Parsen eines Datums aus einem String verwandelt Text in ein Datum-Objekt. Das brauchen Programmierer, um mit Datumsangaben leichter rechnen und sie in verschiedenen Formaten bearbeiten zu können.
 
-## How to:
-```Rust
-use chrono::{DateTime, NaiveDateTime, Utc, Local, TimeZone};
+Das Parsen eines Datums aus einem String ist eine gängige Aufgabe, wenn es um die Verarbeitung von Benutzereingaben oder das Lesen von Daten aus Dateien geht. Dabei wird die String-Daten in ein vom Programmiersystem erkanntes Datumsformat umgewandelt. In Rust ist dies essenziell für Operationen mit Daten, wie Vergleichen, Arithmetik oder Formatierung, und es verbessert die Datenvalidierung und -integrität in Anwendungen.
+
+## Wie geht das:
+
+### Verwendung der Standardbibliothek von Rust (`chrono` Crate)
+Die Standardbibliothek von Rust enthält keine direkte Datumsverarbeitung, aber das weit verbreitete `chrono` Crate ist eine robuste Lösung für die Manipulation von Datum und Uhrzeit. Zuerst fügen Sie `chrono` zu Ihrer `Cargo.toml` hinzu:
+
+```toml
+[dependencies]
+chrono = "0.4"
+```
+
+Verwenden Sie dann `chrono`, um einen Datumsstring in ein `NaiveDate`-Objekt zu parsen:
+
+```rust
+extern crate chrono;
+use chrono::NaiveDate;
 
 fn main() {
-    let date_string = "2023-04-02T17:00:00Z";
-    let parsed_date = DateTime::parse_from_rfc3339(date_string).unwrap();
+    let date_str = "2023-04-01";
+    let date = NaiveDate::parse_from_str(date_str, "%Y-%m-%d")
+        .expect("Fehler beim Parsen des Datums");
 
-    println!("{}", parsed_date); // 2023-04-02 17:00:00 UTC
-
-    // Falls man keine Zeitzone hat:
-    let naive_date_string = "2023-04-02T17:00:00";
-    let naive_parsed_date = NaiveDateTime::parse_from_str(naive_date_string, "%Y-%m-%dT%H:%M:%S").unwrap();
-
-    // In lokale Zeit umwandeln:
-    let local_date = Local.from_utc_datetime(&naive_parsed_date);
-    
-    println!("{}", local_date); // Lokale Zeit, z.B.: 2023-04-02 19:00:00 +02:00
+    println!("Geparstes Datum: {}", date);
 }
+
+// Beispiel Ausgabe:
+// Geparstes Datum: 2023-04-01
 ```
-## Deep Dive
-Früher griffen Rust-Entwickler oft zur `time`-Crate für Zeitoperationen, aber mit der `chrono`-Crate haben wir nun eine mächtigere Bibliothek. `chrono` unterstützt verschiedene Kalender und ist auch für komplexe Aufgaben wie Zeitberechnungen oder Formatwandlungen besser geeignet. Das obige Beispiel nutzt `chrono` für Parsing-Aufgaben. Für `NaiveDateTime` ist kein Bewusstsein der Zeitzone notwendig, was für bestimmte Anwendungen nützlich sein kann. Andererseits, wenn 'Time Zone'-Informationen relevant sind, kommt `DateTime` ins Spiel.
 
-Eine beachtenswerte Alternative ist die Standardbibliotheks-Funktion `strptime()`, die direkt mit formatierten Strings arbeitet. `chrono` allerdings bietet strengere Fehlerprüfungen und ist flexibler.
+### Verwendung von Rusts fortgeschrittener Datum-Zeit-Verarbeitung (`time` Crate)
+Für eine fortgeschrittenere Datum-Zeit-Verarbeitung, einschließlich einer ergonomischeren Verarbeitung, sollten Sie das `time` Crate in Betracht ziehen. Zuerst nehmen Sie es in Ihre `Cargo.toml` auf:
 
-Die Implementierungsdetails sind wichtig, weil falsches Parsen zu Fehlern führen kann - denk an Schaltsekunden oder Zeitzone-Anomalien. Ein solides Verständnis von `chrono` und dessen Parsing-Funktionen kann viele Kopfschmerzen ersparen.
+```toml
+[dependencies]
+time = "0.3"
+```
 
-## See Also
-- Die `chrono`-Crate-Dokumentation: https://docs.rs/chrono/0.4.19/chrono/
-- Rusts Modul für Systemzeit (wenn keine `chrono` erforderlich): https://doc.rust-lang.org/std/time/index.html
-- Rust-Date-Handling-Diskussion auf users.rust-lang.org: https://users.rust-lang.org/t/how-to-deal-with-dates-in-rust/2928
+Parsen Sie dann einen Datumsstring unter Verwendung des `Date`-Typs und `PrimitiveDateTime`:
+
+```rust
+use time::{Date, PrimitiveDateTime, macros::datetime};
+
+fn main() {
+    let date_str = "2023-04-01 12:34:56";
+    let parsed_date = PrimitiveDateTime::parse(
+        date_str, 
+        &datetime!("%Y-%m-%d %H:%M:%S")
+    ).expect("Fehler beim Parsen von Datum und Uhrzeit");
+
+    println!("Geparstes Datum-Uhrzeit: {}", parsed_date);
+}
+
+// Beispiel Ausgabe:
+// Geparstes Datum-Uhrzeit: 2023-04-01 12:34:56
+```
+
+Beide Beispiele zeigen, wie Rust mit Hilfe von Drittanbieter-Crates das Parsen von Datumsstrings in manipulierbare Datum-Objekte erleichtert, was es zu einem mächtigen Werkzeug für die Softwareentwicklung mit zeitbezogenen Daten macht.

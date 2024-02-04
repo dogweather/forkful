@@ -1,49 +1,67 @@
 ---
-title:                "Zamiana liter na wielkie w ciągu znaków"
-date:                  2024-01-19
-simple_title:         "Zamiana liter na wielkie w ciągu znaków"
-
+title:                "Zamiana liter na wielkie w łańcuchu znaków"
+date:                  2024-02-03T19:05:50.938122-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Zamiana liter na wielkie w łańcuchu znaków"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/java/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Co i dlaczego?)
-Zmiana na wielkie litery (ang. capitalizing) to przekształcenie pierwszej litery każdego słowa w łańcuchu znaków na wielką. Robimy to dla poprawy estetyki tekstu, nagłówków lub do zastosowań, gdzie konwencja wymaga użycia wielkich liter, jak w tytułach.
+## Co i dlaczego?
+Wielką literą nazywamy zmodyfikowanie pierwszej litery każdego słowa w ciągu na wielką literę, zapewniając jednocześnie, że reszta liter pozostaje mała. To powszechne zadanie manipulacji ciągiem jest przydatne do formatowania tekstu w aplikacjach, takich jak przygotowywanie nazw użytkowników czy tytułów do wyświetlenia zgodnie z konwencją lub poprawnością gramatyczną.
 
-## How to: (Jak to zrobić:)
+## Jak to zrobić:
+Standardowa biblioteka Java nie oferuje bezpośredniej metody na kapitalizację całych ciągów za jednym razem, ale można to osiągnąć, łącząc wbudowane metody. Dla bardziej zaawansowanych potrzeb, biblioteki stron trzecich takie jak Apache Commons Lang oferują proste rozwiązania.
+
+### Używając wbudowanych metod Javy
+Aby skapitalizować ciąg bez zewnętrznych bibliotek, możesz podzielić ciąg na słowa, skapitalizować pierwszą literę każdego z nich, a następnie połączyć je z powrotem. Oto proste podejście:
+
 ```java
-public class CapitalizeExample {
+public class CapitalizeString {
     public static void main(String[] args) {
-        String text = "tu jest przykład tekstu";
-        String capitalizedText = capitalizeString(text);
-        System.out.println(capitalizedText); // Wyjście: Tu Jest Przykład Tekstu
+        String text = "hello, world!";
+        String capitalizedText = capitalizeWords(text);
+        System.out.println(capitalizedText); // Wyświetla: "Hello, World!"
     }
 
-    public static String capitalizeString(String str) {
-        String words[] = str.split("\\s");
-        StringBuilder capitalizedStr = new StringBuilder();
-
-        for(String word : words){
-            String firstLetter = word.substring(0, 1).toUpperCase();
-            String remainingLetters = word.substring(1);
-            capitalizedStr.append(firstLetter).append(remainingLetters).append(" ");
+    public static String capitalizeWords(String str) {
+        char[] chars = str.toLowerCase().toCharArray();
+        boolean found = false;
+        for (int i = 0; i < chars.length; i++) {
+            if (!found && Character.isLetter(chars[i])) {
+                chars[i] = Character.toUpperCase(chars[i]);
+                found = true;
+            } else if (Character.isWhitespace(chars[i]) || chars[i]=='.' || chars[i]=='\'') { 
+                found = false;
+            }
         }
-
-        return capitalizedStr.toString().trim();
+        return String.valueOf(chars);
     }
 }
 ```
 
-## Deep Dive (Zagłębienie się)
-Kapitalizacja łańcuchów znaków ma długi rodowód, sięgający maszyn do pisania i wczesnych systemów komputerowych, gdzie wszystkie litery były wielkie z braku innych opcji. Współcześnie mamy biblioteki i metody wbudowane w języki, jak `toUpperCase()` w Javie, jednak one zmieniają wszystkie litery na wielkie, a nie tylko pierwsze w słowie.
+Ten fragment kodu konwertuje cały ciąg na małe litery, a następnie iteruje przez każdy znak, kapitalizując pierwszą literę każdego słowa. Uznaje spacje, kropki i apostrofy za separator słów.
 
-Alternatywami są wykorzystanie `StringTokenizer`, biblioteki Apache `StringUtils.capitalize` lub `WordUtils.capitalizeFully`, a także wyrażeń regularnych. Każda metoda ma swoje plusy i minusy, dotyczące czytelności kodu i wydajności. Na przykład, wyrażenia regularne mogą być trudne do zrozumienia, ale świetne, gdy zależy nam na szybkości.
+### Używając Apache Commons Lang
 
-Implementacja zakłada, że tekst jest rozdzielony białymi znakami (spacjami, tabulatorami itd.), co jest typowym rozróżnikiem słów. Warto pamiętać, że metoda `split("\\s")` nie uwzględni kolejnych spacji i może nie działać poprawnie z niektórymi znakami diakrytycznymi we wszystkich kulturach.
+Biblioteka Apache Commons Lang oferuje bardziej eleganckie rozwiązanie za pomocą metody `WordUtils.capitalizeFully()`, która obsługuje dla ciebie różne przypadki brzegowe i separatory:
 
-## See Also (Zobacz także)
-- Java String Documentation: https://docs.oracle.com/javase/7/docs/api/java/lang/String.html
-- Apache Commons Lang StringUtils: https://commons.apache.org/proper/commons-lang/apidocs/org/apache/commons/lang3/StringUtils.html
-- Regular Expressions in Java: https://docs.oracle.com/javase/tutorial/essential/regex/
+```java
+// Dodaj zależność: org.apache.commons:commons-lang3:3.12.0
+
+import org.apache.commons.text.WordUtils;
+
+public class CapitalizeString {
+    public static void main(String[] args) {
+        String text = "hello, world!";
+        String capitalizedText = WordUtils.capitalizeFully(text);
+        System.out.println(capitalizedText); // Wyświetla: "Hello, World!"
+    }
+}
+```
+
+Aby użyć tej metody, musisz dodać bibliotekę Apache Commons Lang do swojego projektu. Ta metoda biblioteczna nie tylko kapitalizuje pierwszą literę każdego słowa, ale także konwertuje resztę liter w każdym słowie na małe litery, zapewniając spójny wzór kapitalizacji w całym ciągu.

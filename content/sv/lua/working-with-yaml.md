@@ -1,53 +1,93 @@
 ---
-title:                "Arbete med YAML"
-date:                  2024-01-19
-simple_title:         "Arbete med YAML"
-
+title:                "Att Arbeta med YAML"
+date:                  2024-02-03T19:26:22.212337-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Att Arbeta med YAML"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/lua/working-with-yaml.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-YAML är ett dataformat lätt för människor att läsa och skriva, ofta använd för konfigurationsfiler. Programmerare använder det för dess klarhet och portabilitet mellan olika språk och verktyg.
 
-## Hur gör man:
-För att hantera YAML i Lua behöver du ett bibliotek som `lyaml`. Installera det via luarocks:
+YAML, en förkortning för "YAML Ain't Markup Language," är en människoläsbar standard för serialisering av data som ofta används för konfigurationsfiler och datautbyte mellan språk. Programmerare använder YAML på grund av dess enkelhet och läsbarhet, vilket gör det till ett föredraget val för inställningar, diverse applikationskonfigurationer eller innehåll som ska kunna redigeras av icke-programmerare.
+
+## Hur man gör:
+
+Lua har inte inbyggt stöd för YAML, men du kan arbeta med YAML-filer genom att använda tredjepartsbibliotek såsom `lyaml`. Detta bibliotek möjliggör kodning och avkodning av YAML-data med Lua. Först behöver du installera `lyaml` via LuaRocks, Luas pakethanterare:
 
 ```bash
 luarocks install lyaml
 ```
 
-Använd biblioteket för att tolka en YAML-sträng:
+### Avkoda YAML:
 
-```Lua
-local lyaml = require('lyaml')
+Anta att du har följande YAML-innehåll i en fil som heter `config.yaml`:
 
-local yaml_data = [[
-- Husdjur: Katt
-  Ålder: 3
-- Husdjur: Hund
-  Ålder: 5
-]]
+```yaml
+database:
+  host: localhost
+  port: 3306
+  username: user
+  password: pass
+```
 
-local table_from_yaml = lyaml.load(yaml_data)
-for _, pet in ipairs(table_from_yaml) do
-  print(pet.Husdjur .. " är " .. pet.Ålder .. " år gammal.")
+Du kan avkoda denna YAML-fil till en Lua-tabell med följande kod:
+
+```lua
+local yaml = require('lyaml')
+local file = io.open("config.yaml", "r")
+local content = file:read("*all")
+file:close()
+
+local data = yaml.load(content)
+for k,v in pairs(data.database) do
+  print(k .. ": " .. v)
 end
 ```
 
-Exempel på utskrift:
+När du kör detta skript bör det ge följande utskrift:
 
-```text
-Katt är 3 år gammal.
-Hund är 5 år gammal.
+```output
+host: localhost
+port: 3306
+username: user
+password: pass
 ```
 
-## På djupet
-YAML, som står för "YAML Ain't Markup Language", introducerades i början av 2000-talet som ett enklare alternativ till XML och JSON. Alternativ inkluderar just dessa, samt TOML. Lua stöder inte YAML direkt, men bibliotek som `lyaml` ger tillgång till parsing och generering.
+### Koda YAML:
 
-## Se även
-- YAML officiell webbsida: [yaml.org](https://yaml.org)
-- `lyaml` biblioteket på Github: [github.com/gvvaughan/lyaml](https://github.com/gvvaughan/lyaml)
-- LuaRocks: [luarocks.org](https://luarocks.org/)
+För att koda Lua-tabeller till YAML-format använder du funktionen `dump` som tillhandahålls av `lyaml`. Antag att du vill skapa en YAML-representation av följande Lua-tabell:
+
+```lua
+local data = {
+  website = {
+    name = "Example",
+    owner = "Jane Doe",
+    metadata = {
+      creation_date = "2023-01-01",
+      tags = {"blog", "personal", "lua"}
+    }
+  }
+}
+
+local yaml = require('lyaml')
+local yaml_data = yaml.dump({data})
+print(yaml_data)
+```
+
+Den resulterande YAML blir:
+
+```yaml
+- website:
+    metadata:
+      creation_date: '2023-01-01'
+      tags: [blog, personal, lua]
+    name: Example
+    owner: Jane Doe
+```
+
+Genom att följa dessa mönster kan Lua-programmerare effektivt hantera YAML-data för en mängd olika applikationer. Dessa operationer med YAML är avgörande för att utveckla flexibla Lua-applikationer som interagerar smidigt med andra delar av ett system eller direkt med andra system.

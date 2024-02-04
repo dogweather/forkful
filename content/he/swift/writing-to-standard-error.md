@@ -1,39 +1,104 @@
 ---
-title:                "כתיבה לפלט השגיאה הסטנדרטי"
-date:                  2024-01-19
-simple_title:         "כתיבה לפלט השגיאה הסטנדרטי"
-
+title:                "כתיבה לשגיאה התקנית"
+date:                  2024-02-03T19:35:15.067738-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "כתיבה לשגיאה התקנית"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/swift/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-מה זה כתיבה לשגיאה סטנדרטית, ולמה זה נחוץ? במילים פשוטות, זה עניין של כתיבה לפלט שמיועד לשגיאות ולא לפלט רגיל. זה עוזר לפרק בין הודעות שגיאה לבין פלט תקני, במיוחד כשאתה משתמש בפלט של תוכנה בסקריפטים או ביצירת לוגים.
+## מה ולמה?
 
-## How to:
-```Swift
+כתיבה לשגיאת פלט סטנדרטית (stderr) עוסקת בהפניית הודעות השגיאה או הפלט הדיאגנוסטי של התוכנית שלך לזרם נפרד, שונה מהפלט הסטנדרטי (stdout). זה קריטי לניפוי באגים ולתיעוד שגיאות מבלי לטעון את הפלט הסטנדרטי, מקל על הבנת המפתחים והמשתמשים של מצב התוכנית והבעיות שלה.
+
+## איך לעשות:
+
+ב-Swift, ניתן לכתוב לשגיאת פלט סטנדרטית באמצעות המחלקה `FileHandle` לגישה ישירה ל-stderr. הנה דוגמה פשוטה:
+
+```swift
 import Foundation
 
-// דוגמה של כתיבה ל-stderr
-let stderr = FileHandle.standardError
-if let data = "שגיאה: משהו השתבש.\n".data(using: .utf8) {
-    stderr.write(data)
+// הגדרת הודעה
+let errorMessage = "אירעה שגיאה.\n"
+
+// המרת ההודעה לנתונים
+if let data = errorMessage.data(using: .utf8) {
+    // כתיבת הודעת השגיאה ל-stderr
+    FileHandle.standardError.write(data)
+}
+```
+
+פלט ל-stderr (שנצפה לרוב בקונסולה או בטרמינל):
+```
+אירעה שגיאה.
+```
+
+לצורך תיעוד מורכב יותר או כאשר עובדים עם ספריות חיצוניות, קיים האפשרות לשקול שימוש בספריית צד שלישי כמו **SwiftLog**. למרות ש-**SwiftLog** לא כותב ל-stderr באופן ישיר מחוץ לקופסה, ניתן ליישם backend לוגים מותאם אישית כדי להשיג זאת. הנה דוגמה פשוטה להגדרת מטפל בלוגים מותאם אישית שכותב ל-stderr:
+
+תחילה, הוסף את **SwiftLog** לתלות הפרויקט שלך ב-`Package.swift`:
+```swift
+// swift-tools-version:5.3
+
+import PackageDescription
+
+let package = Package(
+    name: "YourPackageName",
+    dependencies: [
+        .package(url: "https://github.com/apple/swift-log.git", from: "1.0.0"),
+    ],
+    targets: [
+        .target(
+            name: "YourTargetName",
+            dependencies: [
+                .product(name: "Logging", package: "swift-log"),
+            ]),
+    ]
+)
+```
+
+לאחר מכן, יש ליישם מטפל לוגים מותאם אישית שכותב ל-stderr:
+
+```swift
+import Logging
+import Foundation
+
+struct StderrLogHandler: LogHandler {
+    let label: String
+    
+    var logLevel: Logger.Level = .info
+    
+    func log(level: Logger.Level, message: Logger.Message, metadata: Logger.Metadata?, source: String, file: String, function: String, line: UInt) {
+        let output = "\(message)\n"
+        if let data = output.data(using: .utf8) {
+            FileHandle.standardError.write(data)
+        }
+    }
+    
+    subscript(metadataKey metadataKey: String) -> Logger.Metadata.Value? {
+        get { return nil }
+        set(newValue) { }
+    }
+    
+    var metadata: Logger.Metadata {
+        get { return [:] }
+        set(newMetadata) { }
+    }
 }
 
-// דוגמה של כתיבה ל-stdout להשוואה
-print("פלט רגיל: הפעולה הצליחה.")
+// שימוש
+LoggingSystem.bootstrap(StderrLogHandler.init)
+let logger = Logger(label: "com.example.yourapp")
 
-// הדפסה של ההפרדה בשימוש בפקודות בשל
-// swift myScript.swift > stdout.txt 2> stderr.txt
+logger.error("זו הודעת שגיאה")
 ```
-אם נריץ את הקוד הזה, "שגיאה: משהו השתבש." יופיע בקובץ stderr.txt ו-"פלט רגיל: הפעולה הצליחה." בstdout.txt.
 
-## Deep Dive:
-מאז ימי UNIX, שימוש בפלט שגיאה סטנדרטית זה דרך להפריד בין ההודעות השונות של התכנית. בעולמות אחרים, כמו Windows, גם יש תמיכה בפלט שגיאה סטנדרטית. אלטרנטיבות כוללות כתיבה לקובץ לוג או שימוש בספריות של יומן אירועים. פרטי המימוש בSwift משתמשים ב-api של UNIX כדי להתעסק עם ה- file handles.
+פלט ל-stderr:
+```
+זו הודעת שגיאה
+```
 
-## See Also:
-- [Apple Developer Documentation on FileHandle](https://developer.apple.com/documentation/foundation/filehandle)
-- [Swift.org Documentation](https://www.swift.org/documentation/)
-- [GNU Error Reporting Documentation](https://www.gnu.org/software/libc/manual/html_node/Error-Messages.html)
+מטפל המותאם אישית הזה מאפשר לך למסר הודעות שגיאה של SwiftLog ישירות לשגיאת פלט סטנדרטית, משתלב בצורה חלקה עם הודעות לוג אחרות שהיישום שלך עשוי לייצר.

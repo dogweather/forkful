@@ -1,8 +1,8 @@
 ---
 title:                "Writing tests"
-date:                  2024-01-19
+date:                  2024-02-03T19:03:20.256456-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Writing tests"
-
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/arduino/writing-tests.md"
 ---
@@ -10,52 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Writing tests means creating a set of conditions to check if your code behaves as expected. Programmers do it to catch bugs early, ensure software quality, and save the headache when adding new features.
+
+Writing tests in the Arduino environment refers to the process of creating automated tests that validate the functionality of your code on Arduino devices. Programmers do it to ensure their code works as expected, reduces bugs, and improves the quality of their projects, especially crucial in embedded systems where debugging can be more challenging.
 
 ## How to:
-```Arduino
-#include <Arduino.h>
-#include <unity.h>
 
-void setUp(void) {
-// set stuff up here
+Arduino does not have a built-in testing framework like some other programming environments. However, you can use third-party libraries such as `AUnit` for unit testing Arduino code. AUnit is inspired by Arduino's built-in library, `ArduinoUnit`, and Google's testing framework, `Google Test`.
+
+### Example with AUnit:
+
+First, install AUnit via the Library Manager in the Arduino IDE: go to Sketch > Include Library > Manage Libraries... > search for AUnit and install it.
+
+Then, you can write tests like so:
+
+```cpp
+#include <AUnit.h>
+
+test(ledPinHigh) {
+  const int ledPin = 13;
+  pinMode(ledPin, OUTPUT);
+  digitalWrite(ledPin, HIGH);
+  assertTrue(digitalRead(ledPin));
 }
 
-void tearDown(void) {
-// clean up here
-}
-
-void test_led_builtin_pin_number(void) {
-    TEST_ASSERT_EQUAL(13, LED_BUILTIN);
-}
-
-void test_led_state_high(void) {
-    digitalWrite(LED_BUILTIN, HIGH);
-    TEST_ASSERT_EQUAL(digitalRead(LED_BUILTIN), HIGH);
+test(ledPinLow) {
+  const int ledPin = 13;
+  pinMode(ledPin, OUTPUT);
+  digitalWrite(ledPin, LOW);
+  assertFalse(digitalRead(ledPin));
 }
 
 void setup() {
-    UNITY_BEGIN();
-    RUN_TEST(test_led_builtin_pin_number);
-    RUN_TEST(test_led_state_high);
-    UNITY_END();
+  Serial.begin(9600);
+  aunit::TestRunner::run();
 }
 
 void loop() {
-    // Usually empty in testing
+  // Empty
 }
 ```
-Output:
+After uploading this test to your Arduino board, open the Serial Monitor to view the test results. You should see output indicating whether each test passed or failed:
+
 ```
-.
-.
-OK
+TestRunner started on 2 test(s).
+Test ledPinHigh passed.
+Test ledPinLow passed.
+TestRunner duration: 0.002 seconds.
+TestRunner summary: 2 passed, 0 failed, 0 skipped, 0 timed out, out of 2 test(s).
 ```
 
-## Deep Dive
-Historical context: Testing in Arduino came later than in software dev and was less common due to hardware interaction. Alternatives: Manual testing, or more complex test frameworks like Google Test. Implementation details: Typically we use a library like ArduinoUnit or AUnit. Place tests in `setup()` and keep `loop()` empty as tests run once.
-
-## See Also
-- ArduinoUnit library: https://github.com/mmurdoch/arduinounit
-- AUnit library: https://github.com/bxparks/AUnit
-- Introduction to Unit Testing: https://www.arduino.cc/en/Guide/UnitTesting
+This simple example demonstrates using AUnit for testing the state of an LED pin. By creating tests, you confirm that your Arduino behaves as expected in different conditions. With AUnit, you can write more complex tests, test suites, and enjoy features like test timeouts and setup/teardown procedures for more advanced scenarios.

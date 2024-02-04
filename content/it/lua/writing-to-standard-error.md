@@ -1,38 +1,52 @@
 ---
 title:                "Scrivere sull'errore standard"
-date:                  2024-01-19
+date:                  2024-02-03T19:33:50.941189-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Scrivere sull'errore standard"
-
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/lua/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Scrivere su standard error permette di separare l'output normale da quello degli errori. I programmatori lo fanno per facilitare il debugging e la gestione degli errori.
+## Cosa e Perché?
+Scrivere su standard error (stderr) consiste nel dirigere messaggi di errore e output diagnostici su un canale separato, distinto dallo standard output (stdout). I programmatori fanno ciò per differenziare i risultati regolari del programma dalle informazioni di errore, razionalizzando i processi di debug e registrazione.
 
-## How to:
-In Lua, `io.stderr:write()` scrive su standard error.
+## Come fare:
+In Lua, scrivere su stderr può essere realizzato utilizzando la funzione `io.stderr:write()`. Ecco come è possibile scrivere un semplice messaggio di errore su stderr:
 
-```Lua
--- Invio di un messaggio di errore a stderr
-io.stderr:write("Errore: non è possibile elaborare il file.\n")
-
--- Visualizzando l'output usando os.execute() per simulare il redirezionamento
-os.execute("echo 'Messaggio normale'")  -- Output su stdout
-os.execute("lua script.lua 1>&2")  -- Redirezione di stdout a stderr
-```
-Output di esempio:
-```
-Messaggio normale
-Errore: non è possibile elaborare il file.
+```lua
+io.stderr:write("Errore: Input non valido.\n")
 ```
 
-## Deep Dive
-Lua non fa distinzioni tra stdout e stderr nativamente come altri linguaggi; `io.stderr` è uno stream separato fornito per convenzione. Alternativamente, puoi usare `print` o `io.write` per stdout e redirigere da terminale. Da un punto di vista storico, la distinzione tra stdout e stderr risale ai primi sistemi Unix, permettendo agli utenti di differenziare tra output ordinario e messaggi di errore.
+Se è necessario produrre in output una variabile o combinare più pezzi di dati, concatenarli all'interno della funzione write:
 
-## See Also
-- Lua 5.4 Reference Manual: https://www.lua.org/manual/5.4/
-- Programming in Lua (4th edition): https://www.lua.org/pil/contents.html
-- Unix Standard Streams - Wikipedia: https://en.wikipedia.org/wiki/Standard_streams
+```lua
+local errorMessage = "Input non valido."
+io.stderr:write("Errore: " .. errorMessage .. "\n")
+```
+
+**Esempio di Output su stderr:**
+```
+Errore: Input non valido.
+```
+
+Per scenari più complessi, o quando si lavora con applicazioni di maggiori dimensioni, potreste considerare l'uso di librerie di logging di terze parti come LuaLogging. Con LuaLogging, è possibile indirizzare i log verso destinazioni differenti, inclusa stderr. Ecco un breve esempio:
+
+Prima, assicurarsi che LuaLogging sia installato usando LuaRocks:
+
+```
+luarocks install lualogging
+```
+
+Poi, per scrivere un messaggio di errore su stderr usando LuaLogging:
+
+```lua
+local logging = require("logging")
+local logger = logging.stderr()
+logger:error("Errore: Input non valido.")
+```
+
+Questo approccio offre il vantaggio di una registrazione standardizzata in tutta l'applicazione, con la flessibilità aggiuntiva di impostare livelli di log (ad es., ERROR, WARN, INFO) tramite un'API semplice.

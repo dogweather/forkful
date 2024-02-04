@@ -1,34 +1,59 @@
 ---
-title:                "Écrire dans l'erreur standard"
-date:                  2024-01-19
-simple_title:         "Écrire dans l'erreur standard"
-
+title:                "Écrire sur l'erreur standard"
+date:                  2024-02-03T19:32:41.088451-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Écrire sur l'erreur standard"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/clojure/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Quoi et Pourquoi ?
-Écrire sur l'erreur standard (`stderr`) permet de séparer les messages d'erreur des sorties normales du programme (`stdout`). Les programmeurs font cela pour diagnostiquer les problèmes sans perturber le flux de données principal du programme.
+## Quoi et pourquoi ?
+Écrire sur l'erreur standard (stderr) consiste à diriger les messages d'erreur et les diagnostics vers le flux stderr, séparément de la sortie standard (stdout). Les programmeurs font cela pour différencier la sortie régulière du programme des messages d'erreur, permettant ainsi un débogage et un journalisation plus efficaces.
 
 ## Comment faire :
-```Clojure
-; Afficher du texte sur stdout
-(println "Ceci est un message sur le flux de sortie standard (stdout).")
+En Clojure, vous pouvez écrire sur stderr en utilisant le flux `*err*`. Voici un exemple simple :
 
-; Afficher du texte sur stderr
-(binding [*err* *out*]
-  (println "Ceci est un message sur le flux d'erreur standard (stderr)."))
-```
-Sortie attendue sur `stderr` :
-```
-Ceci est un message sur le flux d'erreur standard (stderr).
+```clojure
+(.write *err* "Ceci est un message d'erreur.\n")
 ```
 
-## Plongée en profondeur
-Historiquement, la distinction entre `stdout` et `stderr` provient des premiers terminaux Unix. `stdout` est utilisé pour les données de sortie "normales" tandis que `stderr` est réservé aux messages d’erreur ou de diagnostic. Alternativement, on peut écrire sur `stderr` avec Java interop, mais en Clojure, `binding` est plus idiomatique. La redirection de `*err*` vers `*out*`, comme indiqué dans l'exemple, change la destination de la sortie d'erreur pour le corps du `binding` seulement.
+Notez qu'après avoir écrit un message, vous devriez vider le flux pour garantir que le message est immédiatement sorti :
 
-## Voir également
-- [Documentation officielle Clojure sur le flux d'erreur standard](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/*err*)
-- [Comparaison des flux stdout et stderr](https://unix.stackexchange.com/questions/331611/do-stdout-and-stderr-need-to-be-explicitly-closed)
+```clojure
+(flush)
+```
+
+Exemple de sortie sur stderr :
+```
+Ceci est un message d'erreur.
+```
+
+Si vous gérez des exceptions, vous voudrez peut-être imprimer les traces de pile sur stderr. Utilisez `printStackTrace` pour cela :
+
+```clojure
+(try
+  ;; Code qui pourrait lancer une exception
+  (/ 1 0)
+  (catch Exception e
+    (.printStackTrace e *err*)))
+```
+
+Pour une journalisation d'erreur plus structurée, des bibliothèques tierces comme `timbre` peuvent être configurées pour enregistrer sur stderr. Voici une configuration et utilisation basiques :
+
+D'abord, ajoutez `timbre` à vos dépendances. Puis configurez-le pour utiliser stderr :
+
+```clojure
+(require '[taoensso.timbre :as timbre])
+
+(timbre/set-config! [:appenders :standard-out :enabled?] false) ;; Désactivation de la journalisation stdout
+(timbre/set-config! [:appenders :spit :enabled?] false) ;; Désactivation de la journalisation sur fichier
+(timbre/set-config! [:appenders :stderr :min-level] :error) ;; Activation de stderr pour les erreurs
+
+(timbre/error "Une erreur s'est produite lors du traitement de votre demande.")
+```
+
+Cela dirigera les messages de niveau d'erreur vers stderr, les rendant distincts de la sortie standard de l'application.

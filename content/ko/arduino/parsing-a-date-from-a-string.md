@@ -1,53 +1,91 @@
 ---
-title:                "문자열에서 날짜 파싱하기"
-date:                  2024-01-20T15:34:34.431721-07:00
-simple_title:         "문자열에서 날짜 파싱하기"
-
+title:                "문자열에서 날짜 분석하기"
+date:                  2024-02-03T19:13:29.267114-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "문자열에서 날짜 분석하기"
 tag:                  "Dates and Times"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/arduino/parsing-a-date-from-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (무엇과 왜?)
-문자열에서 날짜를 파싱한다는 것은, 날짜와 시간 정보를 담은 텍스트를 구조화된 데이터로 변환하는 과정입니다. 프로그래머들은 데이터 처리와 시간 관리를 위해 이 작업을 수행합니다.
+## 무엇 & 왜?
 
-## How to: (어떻게 하나요?)
-Arduino에서는 표준 라이브러리로 제공되는 `String` 클래스와 C++의 함수들을 이용해 문자열에서 날짜를 파싱할 수 있습니다. 예를 들어, "2023-04-05"와 같은 날짜 문자열을 연(year), 월(month), 일(day)로 분리할 수 있습니다.
+아두이노에서 문자열로부터 날짜를 파싱한다는 것은 텍스트 표현으로부터 날짜 구성요소(년, 월, 일)를 추출하고 변환하여 스케치 내에서 시간 유지, 비교 또는 조작에 사용할 수 있는 형식으로 만드는 것을 말합니다. 프로그래머들은 실시간 시계, 로거 또는 웹 API와 사용자 인터페이스로부터 입력을 처리할 때 이 작업을 자주 수행하며, 날짜가 읽을 수 있는 형식으로 제시될 수 있습니다.
 
-```c++
-String dateStr = "2023-04-05"; // 날짜 문자열
-int year, month, day;
+## 방법:
+
+서드파티 라이브러리 없이 직접 접근:
+
+```cpp
+#include <Wire.h>
+#include <RTClib.h>
 
 void setup() {
   Serial.begin(9600);
-  parseDate(dateStr, year, month, day);
-  Serial.print("Year: ");
-  Serial.println(year);   // Year: 2023
-  Serial.print("Month: ");
-  Serial.println(month);  // Month: 4
-  Serial.print("Day: ");
-  Serial.println(day);    // Day: 5
+  // YYYY-MM-DD 형식의 예제 날짜 문자열
+  String dateString = "2023-04-01"; 
+
+  int year = dateString.substring(0, 4).toInt();
+  int month = dateString.substring(5, 7).toInt();
+  int day = dateString.substring(8, 10).toInt();
+
+  // 파싱된 구성요소로 DateTime 객체 초기화
+  DateTime parsedDate(year, month, day);
+  
+  Serial.print("파싱된 날짜: ");
+  Serial.print(parsedDate.year(), DEC);
+  Serial.print("/");
+  Serial.print(parsedDate.month(), DEC);
+  Serial.print("/");
+  Serial.println(parsedDate.day(), DEC);
 }
 
-void loop() {
-  // 여기서는 아무 작업도 수행하지 않습니다.
-}
-
-void parseDate(String date, int &y, int &m, int &d) {
-  y = date.substring(0, 4).toInt();
-  m = date.substring(5, 7).toInt();
-  d = date.substring(8, 10).toInt();
-}
+void loop() {}
 ```
 
-## Deep Dive (심층 분석)
-문자열에서 날짜 파싱은 일반적으로 C++의 표준 라이브러리 또는 Arduino용으로 개발된 타사 라이브러리를 사용합니다. 이 예에서는 `String` 클래스의 `substring()`과 `toInt()` 메서드를 통해 구현합니다. `substring()`은 문자열의 특정 부분을 추출하고, `toInt()`는 해당 문자열을 정수로 변환합니다.
+샘플 출력:
+```
+파싱된 날짜: 2023/4/1
+```
 
-과거엔 C언어의 `sscanf()`나 `strtok()`과 같은 함수를 사용한 파싱 방법이 많았으나, Arduino에서는 `String` 클래스의 메서드들이 그 역할을 대신하고 있습니다. 다만, `String` 객체 사용 시 메모리를 많이 요구하고, 메모리 파편화를 일으킬 수 있어 큰 프로젝트에서는 더 효율적인 자료 구조를 고려하는 것이 좋습니다.
+서드파티 라이브러리 사용 (*ArduinoJson* - JSON 응답에서 날짜를 얻는 것과 같은 더 복잡한 파싱 시나리오의 경우):
 
-## See Also (더보기)
-- Arduino `String` 클래스: https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/
-- C++ `std::stoi` 컨버팅 함수: https://en.cppreference.com/w/cpp/string/basic_string/stol
-- 시간 관련 프로젝트에 사용되는 타사 라이브러리인 `TimeLib.h`: https://github.com/PaulStoffregen/Time
+먼저, 아두이노 라이브러리 관리자를 통해 ArduinoJson 라이브러리를 설치합니다.
+
+```cpp
+#include <ArduinoJson.h>
+
+void setup() {
+  Serial.begin(9600);
+
+  // JSON 응답 시뮬레이션
+  String jsonResponse = "{\"date\":\"2023-07-19\"}";
+  StaticJsonDocument<200> doc;
+  deserializeJson(doc, jsonResponse);
+
+  // 날짜 문자열 추출
+  const char* date = doc["date"];
+
+  // 이전과 같이 문자열에서 날짜 파싱
+  int year = String(date).substring(0, 4).toInt();
+  int month = String(date).substring(5, 7).toInt();
+  int day = String(date).substring(8, 10).toInt();
+  
+  Serial.print("JSON에서 파싱된 날짜: ");
+  Serial.print(year);
+  Serial.print("/");
+  Serial.print(month);
+  Serial.print("/");
+  Serial.println(day);
+}
+
+void loop() {}
+```
+
+샘플 출력:
+```
+JSON에서 파싱된 날짜: 2023/7/19
+```

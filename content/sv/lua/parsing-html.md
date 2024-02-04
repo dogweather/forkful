@@ -1,53 +1,67 @@
 ---
 title:                "Tolka HTML"
-date:                  2024-01-20T15:32:45.998359-07:00
+date:                  2024-02-03T19:12:39.391548-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Tolka HTML"
-
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/lua/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Vad & Varför?
+Att tolka HTML innebär att extrahera data och information från HTML-dokument, vilket är avgörande för webskrapning, dataanalys och automatiseringsuppgifter. Programmerare utför detta för att samla, analysera eller manipulera webbinnehåll programmatiskt, vilket möjliggör automatisering av vad som annars skulle vara manuell extraktion av data från webbplatser.
 
-Parsing HTML betyder att du läser och tolkar HTML-kod så att du kan manipulera eller extrahera specifik data från den. Programmerare parser HTML för att automatisera webbskrapning, databearbetning, eller för att integrera externa webbinnehåll i sina applikationer.
+## Hur man gör:
+Lua har inte ett inbyggt bibliotek för att tolka HTML, men du kan använda dig av tredjepartsbibliotek som `LuaHTML` eller utnyttja bindningar för `libxml2` genom `LuaXML`. En populär metod är att använda biblioteket `lua-gumbo` för att tolka HTML, vilket ger en enkel, HTML5-kompatibel tolkningsförmåga.
 
-## Hur gör man:
+### Installera lua-gumbo:
+Först, se till att `lua-gumbo` är installerat. Du kan vanligtvis installera det med luarocks:
 
-För att parse HTML i Lua, kan vi använda `lua-html` biblioteket. Här är ett grundläggande exempel:
+```sh
+luarocks install lua-gumbo
+```
+
+### Grundläggande tolkning med lua-gumbo:
+Så här kan du tolka en enkel HTML-snutt och extrahera data från den med `lua-gumbo`:
 
 ```lua
-local html = require("html")
+local gumbo = require "gumbo"
+local dokument = gumbo.parse[[<html><body><p>Hej, världen!</p></body></html>]]
 
-local code = [[
-<!DOCTYPE html>
+local p = dokument:getElementsByTagName("p")[1]
+print(p.textContent)  -- Utmatning: Hej, världen!
+```
+
+### Avancerat exempel - Extrahera länkar:
+För att extrahera `href`-attribut från alla ankartaggar (`<a>`-element) i ett HTML-dokument:
+
+```lua
+local gumbo = require "gumbo"
+local dokument = gumbo.parse([[
 <html>
-<head>
-    <title>Test Page</title>
-</head>
+<head><title>Exempelsida</title></head>
 <body>
-    <h1>Welcome to my website</h1>
-    <p>This is a test paragraph.</p>
+  <a href="http://example.com/1">Länk 1</a>
+  <a href="http://example.com/2">Länk 2</a>
+  <a href="http://example.com/3">Länk 3</a>
 </body>
 </html>
-]]
+]])
 
-local parsed = html.parse(code)
-for _, element in ipairs(parsed:select("p")) do
-    print(element:getcontent())
+for _, element in ipairs(dokument.links) do
+    if element.getAttribute then  -- Försäkra att det är ett Element och har attribut
+        local href = element:getAttribute("href")
+        if href then print(href) end
+    end
 end
+
+-- Exempel på utmatning:
+-- http://example.com/1
+-- http://example.com/2
+-- http://example.com/3
 ```
 
-Sample output:
-```
-This is a test paragraph.
-```
-
-## Djupdykning
-
-HTML-parsing har funnits ända sedan webben blev populär. Tidiga verktyg var ofta skräddarsydda och bräckliga. Numera finns det robusta bibliotek som `lua-html`. Alternativa bibliotek som `luasoup` eller inbyggda funktioner i web frameworks kan också användas. När du parser HTML är det viktigt att hantera illa formaterad HTML, vilket är vanligt. `lua-html` hanterar detta fint genom sin förmåga att korrigera och tolka oregelbunden HTML.
-
-## Se även:
-
-För mer om Lua och HTML-parsing, kolla in följande resurser:
+Denna kodsnutt itererar igenom alla länkar i dokumentet och skriver ut deras `href`-attribut. `lua-gumbo`-bibliotekets förmåga att tolka och förstå strukturen på ett HTML-dokument förenklar processen att extrahera specifika element baserat på deras taggar eller attribut.

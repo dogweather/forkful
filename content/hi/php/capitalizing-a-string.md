@@ -1,44 +1,56 @@
 ---
-title:                "स्ट्रिंग को कैपिटलाइज़ करना"
-date:                  2024-01-19
-simple_title:         "स्ट्रिंग को कैपिटलाइज़ करना"
-
+title:                "स्ट्रिंग को कैपिटलाइज करना"
+date:                  2024-02-03T19:06:40.171578-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "स्ट्रिंग को कैपिटलाइज करना"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/php/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (क्या और क्यों?)
+## क्या और क्यों?
+एक स्ट्रिंग को केपिटलाइज़ (पूंजीय) बनाना इसमें दिए गए पाठ के पहले अक्षर को अपरकेस में बदलने की प्रक्रिया है, यह सुनिश्चित करता है कि वाक्य, शीर्षक, या सही नाम डेटासेट में सही तरीके से शुरू हों। प्रोग्रामर अक्सर डेटा सामान्यीकरण के लिए, पठनीयता में सुधार या उपयोगकर्ता इनपुट या टेक्स्चुअल डेटा प्रोसेसिंग में संगति सुनिश्चित करने के लिए स्ट्रिंग कैपिटलाइज़ेशन को निष्पादित करते हैं।
 
-पूंजीकरण का मतलब है एक स्ट्रिंग के अक्षरों को बड़ा (capital) करना। प्रोग्रामर इस तरह करते हैं ताकि डेटा को साफ-सुथरा और एकरूपता से प्रस्तुत कर सकें, जैसे कि पहला नाम या किसी शीर्षक को सुधारना।
+## कैसे करें:
+PHP विभिन्न फंक्शन्स का सहज समर्थन करता है जो स्ट्रिंग्स को कैपिटलाइज़ करने का काम करते हैं, प्रत्येक एक विभिन्न उद्देश्य सेवा करता है। यहाँ आप उनका उपयोग कैसे कर सकते हैं:
 
-## How to: (कैसे करें?)
+### एक स्ट्रिंग के पहले अक्षर को कैपिटलाइज़ करना:
 
-PHP में स्ट्रिंग को कैपिटलाइज़ करना बहुत सरल है। नीचे दिए गए कोड में कुछ फ़ंक्शन के उदाहरण हैं:
-
-```PHP
-<?php
-// सभी अक्षरों को ऊपरी मामले में बदलना
-$upperCaseString = strtoupper("namaste duniya!");
-echo $upperCaseString; // Output: NAMASTE DUNIYA!
-
-// केवल पहले अक्षर को ऊपरी मामले में बदलना
-$capitalizedString = ucfirst("namaste duniya!");
-echo $capitalizedString; // Output: Namaste duniya!
-
-// हर शब्द के पहले अक्षर को ऊपरी मामले में बदलना
-$titleCaseString = ucwords("namaste duniya!");
-echo $titleCaseString; // Output: Namaste Duniya!
-?>
+```php
+$string = "हेलो, वर्ल्ड!";
+$capitalizedString = ucfirst($string);
+echo $capitalizedString; // आउटपुट: हेलो, वर्ल्ड!
 ```
 
-## Deep Dive (गहराई से समझें)
+### प्रत्येक शब्द के पहले अक्षर को कैपिटलाइज़ करना:
 
-स्ट्रिंग को कैपिटलाइज़ करने की ज़रूरत तब देखी गई जब डेटा प्रदर्शन में एकरूपता महत्वपूर्ण हो गई। `strtoupper()`, `ucfirst()`, और `ucwords()` PHP के बुनियादी फ़ंक्शन हैं जो अलग-अलग केसिंग जरूरतों के लिए हैं। ये फ़ंक्शन मल्टीबाइट चरित्र से तालमेल नहीं रखते (जैसे यूनिकोड), ऐसे में `mb_strtoupper()`, `mb_convert_case()` आदि मल्टीबाइट फ़ंक्शन का इस्तेमाल कर सकते हैं। इसी तरह के कार्यों के लिए, जैसा कि स्ट्रिंग को कम मामले में बदलना, संबंधित फंक्शंस `strtolower()` और `mb_strtolower()` भी हैं।
+```php
+$string = "हेलो, वर्ल्ड!";
+$capitalizedWords = ucwords($string);
+echo $capitalizedWords; // आउटपुट: हेलो, वर्ल्ड!
+```
 
-## See Also (और देखें)
+### पूरी स्ट्रिंग को अपरकेस में बदलना:
 
-- PHP String Functions - [PHP.net Manual](https://www.php.net/manual/en/ref.strings.php)
-- Multibyte String Functions - [PHP.net Manual](https://www.php.net/manual/en/ref.mbstring.php)
-- PHP ucwords() Function - [W3Schools](https://www.w3schools.com/php/func_string_ucwords.asp)
+```php
+$string = "हेलो, वर्ल्ड!";
+$upperCaseString = strtoupper($string);
+echo $upperCaseString; // आउटपुट: हेलो, वर्ल्ड!
+```
+
+अधिक अनुकूलन या तीसरे पक्ष के समाधानों की आवश्यकता वाली परिस्थितियों के लिए, जैसे `mbstring` (मल्टीबाइट स्ट्रिंग्स के लिए) जैसे पुस्तकालयों का उपयोग किया जा सकता है, विशेषकर जब अंतरराष्ट्रीयकरण से निपटने की बात आती है जहाँ अक्षर मूल ASCII सेट से परे जा सकते हैं।
+
+### UTF-8 स्ट्रिंग्स को कैपिटलाइज़ करने के लिए mbstring का उपयोग करना:
+
+सुनिश्चित करें कि आपके PHP कॉन्फ़िगरेशन में `mbstring` एक्सटेंशन सक्षम है, फिर:
+
+```php
+$string = "élégant";
+$capitalizedString = mb_convert_case($string, MB_CASE_TITLE, "UTF-8");
+echo $capitalizedString; // आउटपुट: Élégant
+```
+
+यह दृष्टिकोण उन स्ट्रिंग्स को सटीक रूप से कैपिटलाइज़ करने में मदद करता है जिनमें नॉन-ASCII अक्षर शामिल होते हैं, विभिन्न भाषाओं की सूक्ष्मताओं का पालन करते हुए।

@@ -1,41 +1,52 @@
 ---
-title:                "Écrire dans l'erreur standard"
-date:                  2024-01-19
-simple_title:         "Écrire dans l'erreur standard"
-
+title:                "Écrire sur l'erreur standard"
+date:                  2024-02-03T19:33:45.687361-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Écrire sur l'erreur standard"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/lua/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Écrire sur l'erreur standard (stderr) permet d'envoyer des messages d'erreur ou des diagnostics séparément des données normales (stdout). Les programmeurs utilisent stderr pour signaler des problèmes sans perturber le flux principal des données.
+## Quoi & Pourquoi ?
+Écrire dans l'erreur standard (stderr) consiste à diriger les messages d'erreur et les sorties de diagnostic vers un canal distinct, différent de la sortie standard (stdout). Les programmeurs font cela pour différencier les résultats réguliers du programme des informations d'erreur, rationalisant ainsi le débogage et les processus de journalisation.
 
-## How to:
-Lua simplifie l'écriture sur stderr. Utilisez `io.stderr:write()` pour envoyer des messages d'erreur.
+## Comment faire :
+En Lua, l'écriture dans stderr peut être réalisée en utilisant la fonction `io.stderr:write()`. Voici comment vous pouvez écrire un simple message d'erreur dans l'erreur standard :
 
 ```lua
--- Envoyer un message simple à stderr
-io.stderr:write("Erreur trouvée!\n")
-
--- Exemple avec une condition
-local fichier = io.open("fichier_inexistant.txt", "r")
-if fichier == nil then
-    io.stderr:write("Impossible d'ouvrir le fichier.\n")
-end
+io.stderr:write("Erreur : Entrée invalide.\n")
 ```
 
-Sortie possible sur stderr :
-```
-Erreur trouvée!
-Impossible d'ouvrir le fichier.
+Si vous avez besoin de sortir une variable ou de combiner plusieurs morceaux de données, concaténez-les à l'intérieur de la fonction d'écriture :
+
+```lua
+local errorMessage = "Entrée invalide."
+io.stderr:write("Erreur : " .. errorMessage .. "\n")
 ```
 
-## Deep Dive
-Historiquement, séparer stdout et stderr permet aux systèmes Unix de rediriger les flux indépendamment. En Lua, `io.stderr` est un objet de fichier déjà ouvert, toujours disponible pour écrire les erreurs. Des alternatives comme le logging dans un fichier spécifique existent, mais l'usage de stderr est un standard sous Unix.
+**Exemple de sortie sur stderr :**
+```
+Erreur : Entrée invalide.
+```
 
-## See Also
-- Documentation Lua pour `io.stderr`: http://www.lua.org/manual/5.4/manual.html#6.8
-- Pourquoi stderr est utile : https://en.wikipedia.org/wiki/Standard_streams#Standard_error_(stderr)
-- Guide Unix sur la redirection des flux : https://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO-3.html
+Pour des scénarios plus complexes, ou lorsqu'on travaille avec des applications plus larges, vous pourriez envisager des bibliothèques de journalisation tierces telles que LuaLogging. Avec LuaLogging, vous pouvez diriger les journaux vers différentes destinations, y compris stderr. Voici un bref exemple :
+
+D'abord, assurez-vous que LuaLogging est installé en utilisant LuaRocks :
+
+```
+luarocks install lualogging
+```
+
+Ensuite, pour écrire un message d'erreur dans stderr en utilisant LuaLogging :
+
+```lua
+local logging = require("logging")
+local logger = logging.stderr()
+logger:error("Erreur : Entrée invalide.")
+```
+
+Cette approche offre l'avantage d'une journalisation standardisée à travers votre application, avec la flexibilité ajoutée de définir les niveaux de log (par exemple, ERREUR, AVERTISSEMENT, INFO) grâce à une API simple.

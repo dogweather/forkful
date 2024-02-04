@@ -1,50 +1,76 @@
 ---
-title:                "Написання тестів"
-date:                  2024-01-19
-simple_title:         "Написання тестів"
-
+title:                "Письмо тестів"
+date:                  2024-02-03T19:31:54.174033-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Письмо тестів"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/powershell/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Що та чому?
-Тестування коду — це процес перевірки правильності роботи скриптів. Програмісти пишуть тести, щоб запевнитися у надійності програм та запобігти помилкам у майбутньому.
+## Що і чому?
 
-## Як робити:
-Для автоматизованого тестування коду у PowerShell використовують модуль Pester. Ось базовий приклад:
+Написання тестів у PowerShell передбачає створення скриптів, які автоматично перевіряють функціональність вашого коду PowerShell, забезпечуючи його очікувану поведінку. Програмісти роблять це для того, щоб якомога раніше виявити помилки, спростити обслуговування коду та забезпечити, щоб модифікації коду не порушували вже існуючу функціональність.
 
-```PowerShell
-# Встановлення модуля Pester
-Install-Module -Name Pester -Force -SkipPublisherCheck
+## Як це зробити:
 
-# Створення тесту
-Describe "Тестування функції 'Add-Numbers'" {
-    function Add-Numbers {
-        param([int]$x, [int]$y)
-        return $x + $y
-    }
+PowerShell не має вбудованого фреймворку для тестування, але Pester, популярний сторонній модуль, широко використовується для написання та виконання тестів. Ось як почати використовувати Pester для тестування ваших функцій PowerShell.
 
-    It "додає число 2 до 2" {
-        Add-Numbers 2 2 | Should -Be 4
-    }
+Спочатку встановіть Pester, якщо ви ще цього не зробили:
 
-    It "додає від'ємні числа" {
-        Add-Numbers -1 -1 | Should -Be -2
-    }
-}
-
-# Запуск тесту
-Invoke-Pester
+```powershell
+Install-Module -Name Pester -Scope CurrentUser -Force
 ```
 
-При запуску цього коду в консолі видасться звіт про результати тестів.
+Далі, припустимо, що у вас є проста функція PowerShell, яку ви хочете протестувати, збережена як `MyFunction.ps1`:
 
-## Поглиблений розгляд:
-Pester — це модуль для PowerShell з 2009 року. Це найпопулярніша у спільноті фреймворк для тестування. Є альтернативи типу PSUnit, але Pester вважається "золотим стандартом". Пестер дозволяє писати unit-tests, integration tests та mock objects.
+```powershell
+function Get-MultipliedNumber {
+    param (
+        [int]$Number,
+        [int]$Multiplier = 2
+    )
 
-## Ще ресурси:
-- [Офіційна документація Pester](https://pester.dev/docs/quick-start)
-- [Книга "The Pester Book" за авторством Дона Джонса](https://leanpub.com/pesterbook)
-- [PowerShell.org форум для обміну досвідом](https://powershell.org/forums/)
+    return $Number * $Multiplier
+}
+```
+
+Для тестування цієї функції за допомогою Pester, створіть тестовий скрипт під назвою `MyFunction.Tests.ps1`. У цьому скрипті використовуйте блоки `Describe` та `It` в Pester, щоб визначити тестові випадки:
+
+```powershell
+# Імпортуйте функцію для тестування
+. .\MyFunction.ps1
+
+Describe "Тести Get-MultipliedNumber" {
+    It "Множить число на 2, коли множник не заданий" {
+        $result = Get-MultipliedNumber -Number 3
+        $result | Should -Be 6
+    }
+
+    It "Коректно множить число на заданий множник" {
+        $result = Get-MultipliedNumber -Number 3 -Multiplier 3
+        $result | Should -Be 9
+    }
+}
+```
+
+Щоб запустити тести, відкрийте PowerShell, перейдіть до каталогу з вашим тестовим скриптом та використайте команду `Invoke-Pester`:
+
+```powershell
+Invoke-Pester .\MyFunction.Tests.ps1
+```
+
+Результати виглядатимуть так, вказуючи, чи пройшли ваші тести або вони зазнали невдачі:
+
+```
+Початок відкриття в 1 файлах.
+Відкриття завершено за 152ms.
+[+] C:\шлях\до\MyFunction.Tests.ps1 204ms (182ms|16ms)
+Тести завершено за 204ms
+Тести Пройдено: 2, Провалено: 0, Пропущено: 0 Не Виконано: 0
+```
+
+Ці результати показують, що обидва тести пройшли, даючи вам впевненість в тому, що ваша функція `Get-MultipliedNumber` поводиться як очікується у сценаріях, які ви тестували.

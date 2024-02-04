@@ -1,34 +1,78 @@
 ---
-title:                "Skrive til standardfeil"
-date:                  2024-01-19
-simple_title:         "Skrive til standardfeil"
-
+title:                "Skriving til standardfeil"
+date:                  2024-02-03T19:33:38.901649-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Skriving til standardfeil"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/java/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Å skrive til standard error (stderr) betyr å sende feilmeldinger og diagnostikk til en spesifikk utkanal. Programmerere gjør dette for å skille vanlig programdata fra feil og logger, noe som hjelper med feilsøking og logging.
+Å skrive til standard feil (stderr) innebærer å sende ut feilmeldinger og diagnostikk til konsollen eller terminalen. Programmerere gjør dette for å skille feilinformasjon fra standard utgang (stdout), noe som letter feilsøking og logganalyse.
 
-## Slik gjør du:
-Java har allerede en innebygd måte å håndtere stderr på, som er `System.err`. Her er et enkelt eksempel:
+## Hvordan:
+
+### Grunnleggende stderr-utskrift i Java
+Java gir en grei måte å skrive til stderr på ved bruk av `System.err.print()` eller `System.err.println()`. Slik gjør du det:
 
 ```java
 public class StdErrExample {
     public static void main(String[] args) {
-        System.out.println("Dette er en normal melding til stdout.");
-        System.err.println("Dette er en feilmelding sendt til stderr.");
+        try {
+            int divisjon = 10 / 0;
+        } catch (ArithmeticException e) {
+            System.err.println("Feil: Kan ikke dele på null.");
+        }
     }
 }
 ```
 
-Kjører du dette, vil du se begge meldingene, men feilmeldingen er kanskje i rødt eller annen farge, avhengig av konsollet.
+Eksempel på utskrift:
 
-## Dypdykk
-Historisk har skille mellom stdout og stderr latt utviklere og brukere av terminalen omadressere disse strømmene separat. Dette kan være nyttig i skripting og når output fra programmer skal i ulike loggfiler. En alternativ måte å håndtere feil på kunne være å kaste unntak, men stderr er nyttig fordi det ikke forstyrrer programflyten. Implisitt bruker `System.err` `PrintStream`-klassen, som har flere metoder for å formatere og skrive data.
+```
+Feil: Kan ikke dele på null.
+```
 
-## Se Også
-- [Oracle Java Docs - System.err](https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/System.html#err)
-- [Stack Overflow - When to use System.out, System.err, and System.in](https://stackoverflow.com/questions/3131865/when-to-use-system-out-system-err-and-system-in)
+Dette vil direkte skrive ut feilmeldingen til standard feilstrømmen.
+
+### Bruk av en Logger for Avansert Feilhåndtering
+For applikasjoner som trenger mer sofistikert feilhåndtering og logging, er det vanlig å bruke et loggingbibliotek som SLF4J med Logback eller Log4J2. Dette tillater mer fleksibilitet i håndteringen av feilutskrifter, inkludert filomdirigering, filtrering og formatering.
+
+#### Eksempel med Logback
+
+Først, legg til avhengigheten for Logback i din `pom.xml` (Maven) eller `build.gradle` (Gradle) fil. For Maven:
+
+```xml
+<dependency>
+    <groupId>ch.qos.logback</groupId>
+    <artifactId>logback-classic</artifactId>
+    <version>1.2.3</version>
+</dependency>
+```
+
+Deretter kan du bruke følgende kode for å logge feil:
+
+```java
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+public class LoggerExample {
+    private static final Logger logger = LoggerFactory.getLogger(LoggerExample.class);
+    
+    public static void main(String[] args) {
+        try {
+            int resultat = 10 / 0;
+        } catch (ArithmeticException e) {
+            logger.error("Feil: Kan ikke dele på null.", e);
+        }
+    }
+}
+```
+
+Dette vil skrive ut feilmeldingen sammen med en stakksporing til konsollen eller en fil, avhengig av Logback-konfigurasjonen.
+
+Å bruke loggingsrammeverk som Logback gir mer kontroll over feilhåndtering, noe som gjør det enklere å håndtere store applikasjoner og systemer.

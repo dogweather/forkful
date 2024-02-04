@@ -1,45 +1,79 @@
 ---
-title:                "Utilizando expressões regulares"
-date:                  2024-01-19
-simple_title:         "Utilizando expressões regulares"
-
+title:                "Usando expressões regulares"
+date:                  2024-02-03T19:18:07.664577-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Usando expressões regulares"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/ruby/using-regular-expressions.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## O Que é & Por Que Usar?
-Expressões regulares são padrões usados para encontrar uma determinada combinação de caracteres dentro de uma string. Programadores utilizam-nas para validar, extrair ou substituir essas sequências de forma flexível e eficiente em diversas situações.
+## O Que & Por Quê?
+Expressões regulares (regex) em Ruby são padrões usados para combinar sequências de caracteres em strings, permitindo que desenvolvedores pesquisem, correspondam e manipulem texto de maneira eficiente. Programadores utilizam regex para tarefas como validação, análise (parsing) e manipulação de strings, tornando-o uma ferramenta indispensável para o processamento de texto.
 
-## Como Fazer:
-```Ruby
-texto = "Meu email é contato@exemplo.com.br"
+## Como fazer:
+### Correspondência Básica
+Para combinar uma string com um padrão simples, você pode usar o método `match`. Abaixo, estamos verificando se a palavra "Ruby" existe em uma string dada.
 
-# Encontrar o padrão de e-mail
-email_regex = /\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b/i
-puts texto.match(email_regex)
-```
-Output:
-```
-contato@exemplo.com.br
+```ruby
+if /Ruby/.match("Olá, Ruby!")
+  puts "Combinação encontrada!"
+end
+# Saída: Combinação encontrada!
 ```
 
-```Ruby
-frase = "Ruby é incrível! Ruby é divertido!"
+### Correspondência de Padrões com Variáveis
+Você pode interpolar variáveis em sua regex usando a sintaxe `#{}`, tornando seus padrões dinâmicos.
 
-# Substituir todas as ocorrências de 'Ruby' por 'Python'
-puts frase.gsub(/Ruby/, 'Python')
-```
-Output:
-```
-Python é incrível! Python é divertido!
+```ruby
+language = "Ruby"
+if /#{language}/.match("Programar em Ruby é divertido.")
+  puts "Falando sobre Ruby!"
+end
+# Saída: Falando sobre Ruby!
 ```
 
-## Mergulho Profundo
-Expressões regulares foram introduzidas na década de 1950 pelo matemático americano Stephen Kleene. Existem alternativas para manipulação de strings, como métodos de pesquisa e substituição embutidos, mas eles não oferecem a mesma flexibilidade. No Ruby, as expressões regulares são implementadas através do padrão da biblioteca Onigmo (uma evolução do Oniguruma), permitindo uma ampla gama de funcionalidades.
+### Usando Regex para Substituição
+O método `gsub` permite substituir toda ocorrência de um padrão por uma string de substituição especificada.
 
-## Veja Também
-- [Documentação oficial do Ruby sobre expressões regulares](https://ruby-doc.org/core-2.7.0/Regexp.html)
-- [Rubular: um editor de expressões regulares em Ruby](http://rubular.com/)
-- [Livro "Expressões Regulares Cookbook" por Jan Goyvaerts e Steven Levithan](https://www.oreilly.com/library/view/regular-expressions-cookbook/9781449327453/)
+```ruby
+puts "foobarfoo".gsub(/foo/, "bar")
+# Saída: barbarbar
+```
+
+### Captura
+Parênteses em uma regex são usados para capturar partes de uma combinação. O método `match` retorna um objeto `MatchData`, que você pode usar para acessar as capturas.
+
+```ruby
+match_data = /(\w+): (\d+)/.match("Idade: 30")
+puts match_data[1] # Rótulo capturado
+puts match_data[2] # Valor capturado
+# Saída:
+# Idade
+# 30
+```
+
+### Usando Bibliotecas de Terceiros
+Embora a biblioteca padrão do Ruby seja poderosa, às vezes você pode precisar de funcionalidades mais especializadas. Uma gem popular para trabalhar com regex é `Oniguruma`, que fornece recursos adicionais de regex além do motor de regex integrado ao Ruby.
+
+Instale-a usando:
+```bash
+gem install oniguruma
+```
+
+Um exemplo de uso poderia ser assim (assumindo que você tenha feito o require de `oniguruma` após instalá-la):
+
+```ruby
+# Este é um exemplo mais avançado e pode requerer configuração adicional
+require 'oniguruma'
+
+padrão = Oniguruma::ORegexp.new('(\d+)')
+dados_da_combinação = padrão.match("O número é 42.")
+puts dados_da_combinação[1]
+# Saída: 42
+```
+
+Lembre-se, embora poderosas, expressões regulares podem se tornar complexas e difíceis de gerenciar para padrões mais complicados. Vise a legibilidade e considere métodos alternativos se sua regex se tornar muito intrincada.

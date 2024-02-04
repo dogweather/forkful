@@ -1,41 +1,99 @@
 ---
-title:                "रेगुलर एक्सप्रेशन का उपयोग"
-date:                  2024-01-19
-simple_title:         "रेगुलर एक्सप्रेशन का उपयोग"
-
+title:                "रेगुलर एक्सप्रेशन्स का उपयोग करना"
+date:                  2024-02-03T19:19:16.333102-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "रेगुलर एक्सप्रेशन्स का उपयोग करना"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/rust/using-regular-expressions.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (क्या और क्यों?)
-Regular expressions, जिन्हें regex भी कहते हैं, टेक्स्ट को मैच, ढूंढ और मैनिप्युलेट करने के लिए प्रयोग किए जाने वाले पैटर्न होते हैं। Programmers इनका इस्तेमाल डेटा वैलिडेशन, पार्सिंग और ट्रांसफॉर्मेशन के लिए करते हैं।
+## क्या और क्यों?
 
-## How to: (कैसे करें:)
-```Rust
-// regex crate को शामिल करें
+रेग्युलर एक्सप्रेशन, या रेजेक्स, डेवलपरों को उन्नत पैटर्न-मैचिंग तकनीकों के साथ स्ट्रिंग्स को खोजने, मिलान करने और मैनीपुलेट करने की अनुमति देते हैं। Rust में, रेजेक्स का उपयोग करने से टेक्स्ट डाटा को कुशलतापूर्वक पार्स और हैंडल करने में मदद मिलती है, जिससे डाटा वैलिडेशन, खोज और टेक्स्ट ट्रांसफॉर्मेशन जैसे कार्य अधिक सरलीकृत और बनाए रखने योग्य हो जाते हैं।
+
+## कैसे करें:
+
+रस्ट की `regex` लाइब्रेरी रेग्युलर एक्सप्रेशन्स के साथ काम करने के लिए एक जाने-माने समाधान है। इसका उपयोग करने के लिए, आपको पहले इसे अपने `Cargo.toml` में जोड़ना होगा:
+
+```toml
+[dependencies]
+regex = "1"
+```
+
+फिर, आप अपने Rust कोड में रेजेक्स कार्यक्षमताओं को लागू कर सकते हैं। यहाँ कुछ सामान्य ऑपरेशंस को करने का तरीका बताया गया है:
+
+### एक स्ट्रिंग में पैटर्न की मिलान
+
+```rust
 use regex::Regex;
 
 fn main() {
-    // Email regex पैटर्न बनाएं
-    let email_re = Regex::new(r"^\w+@\w+\.\w+$").unwrap();
-    
-    // टेक्स्ट की जांच करें
-    let is_valid = email_re.is_match("someone@example.com");
-    
-    // परिणाम छापें
-    println!("Is the email valid? {}", is_valid);
-}
+    let re = Regex::new(r"^\d{4}-\d{2}-\d{2}$").unwrap();
+    let date = "2023-04-15";
 
-// सैंपल आउटपुट:
-// Is the email valid? true
+    println!("क्या टेक्स्ट डेट पैटर्न से मेल खाता है? {}", re.is_match(date));
+    // उत्पादन: क्या टेक्स्ट डेट पैटर्न से मेल खाता है? सच
+}
 ```
 
-## Deep Dive (गहन जानकारी)
-Regular expressions की शुरुआत 1950 के दशक में हुई और आज के अधिकांश programming languages में इस्तेमाल होते हैं। Alternatives के रूप में String searching algorithms जैसे KMP (Knuth-Morris-Pratt) हैं, लेकिन regex अधिक वर्सेटाइल हैं। Rust में Regex library efficient और सुरक्षित ढंग से implemented है, जिसमें compile-time और runtime errors का बहुत ही कम चांस होता है।
+### मैचों का पता लगाना और उन्हें एक्सेस करना
 
-## See Also (अधिक जानकारी के लिए)
-- Rust `regex` crate documentation: [docs.rs/regex](https://docs.rs/regex/)
-- Regular Expressions को गहराई से सीखने के लिए: [regexone.com](https://regexone.com/)
-- Regular Expression के टेस्ट/डिबग के लिए: [regex101.com](https://regex101.com/)
+```rust
+use regex::Regex;
+
+fn main() {
+    let text = "Rust 2023, C++ 2022, Python 2021";
+    let re = Regex::new(r"\b(\w+)\s(\d{4})").unwrap();
+
+    for cap in re.captures_iter(text) {
+        println!("भाषा: {}, वर्ष: {}", &cap[1], &cap[2]);
+    }
+    // उत्पादन:
+    // भाषा: Rust, वर्ष: 2023
+    // भाषा: C++, वर्ष: 2022
+    // भाषा: Python, वर्ष: 2021
+}
+```
+
+### टेक्स्ट बदलना
+
+```rust
+use regex::Regex;
+
+fn main() {
+    let re = Regex::new(r"\b(\w+)\s(\d{4})").unwrap();
+    let text = "Rust 2023, C++ 2022, Python 2021";
+    let replaced = re.replace_all(text, "$1 को $2 में अपडेट किया गया");
+
+    println!("अपडेटेड टेक्स्ट: {}", replaced);
+    // उत्पादन: अपडेटेड टेक्स्ट: Rust को 2023 में अपडेट किया गया, C++ को 2022 में अपडेट किया गया, Python को 2021 में अपडेट किया गया
+}
+```
+
+### एक रेजेक्स का उपयोग करके टेक्स्ट विभाजित करना
+
+```rust
+use regex::Regex;
+
+fn main() {
+    let re = Regex::new(r"\W+").unwrap(); // किसी भी गैर-शब्द वर्ण पर विभाजित
+    let text = "Rust-C++-Python-Go";
+
+    let fields: Vec<&str> = re.split(text).collect();
+
+    for field in fields {
+        println!("भाषा: {}", field);
+    }
+    // उत्पादन:
+    // भाषा: Rust
+    // भाषा: C++
+    // भाषा: Python
+    // भाषा: Go
+}
+```
+
+रस्ट में रेग्युलर एक्सप्रेशन के साथ शुरुआत करने के लिए ये उदाहरण एक बुनियादी मार्गदर्शिका प्रदान करते हैं। जैसे-जैसे आपकी आवश्यकताएं अधिक जटिल होती जाती हैं, `regex` क्रेट जटिल पैटर्न मिलान और टेक्स्ट मैनिपुलेशन कार्यों के लिए एक धन की कार्यक्षमता प्रदान करता है।

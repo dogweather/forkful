@@ -1,52 +1,65 @@
 ---
 title:                "Отримання поточної дати"
-date:                  2024-01-20T15:15:31.978937-07:00
+date:                  2024-02-03T19:10:07.544189-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Отримання поточної дати"
-
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/java/getting-the-current-date.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Що і Чому?)
-Отримання поточної дати в Java – це як глянути на годинник. Ми робимо це, щоб маркувати час подій, логувати дії, міряти проміжки часу та багато іншого.
+## Що та Чому?
+Отримання поточної дати в Java є основною операцією, яка дозволяє програмістам маніпулювати об'єктами дати для операций, таких як логування, розрахунки дат і умови, засновані на часі. Це життєво важливо в додатках, де відстеження, планування та аналіз тимчасових даних є критичними.
 
-## How to: (Як зробити:)
+## Як:
+Java пропонує кілька способів отримання поточної дати, використовуючи як старий клас `java.util.Date`, так і новіший пакет `java.time` (введений у Java 8), який є більш універсальним і інтуїтивно зрозумілим.
+
+### Використання `java.time.LocalDate`
 ```java
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 
-public class GetCurrentDate {
+public class CurrentDateExample {
     public static void main(String[] args) {
-        // Стандартний спосіб отримання поточної дати
         LocalDate currentDate = LocalDate.now();
-        System.out.println("Current Date: " + currentDate);
-
-        // Форматування дати
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
-        String formattedDate = currentDate.format(formatter);
-        System.out.println("Formatted Date: " + formattedDate);
+        System.out.println(currentDate); // Приклад виводу: 2023-04-01
     }
 }
 ```
-Sample Output:
+### Використання `java.time.LocalDateTime`
+```java
+import java.time.LocalDateTime;
+
+public class CurrentDateExample {
+    public static void main(String[] args) {
+        LocalDateTime currentDateTime = LocalDateTime.now();
+        System.out.println(currentDateTime); // Приклад виводу: 2023-04-01T12:34:56.789
+    }
+}
 ```
-Current Date: 2023-03-15
-Formatted Date: 15-03-2023
+### Використання `java.util.Date` (Застарілий)
+```java
+import java.util.Date;
+
+public class CurrentDateExample {
+    public static void main(String[] args) {
+        Date currentDate = new Date();
+        System.out.println(currentDate); // Приклад виводу: Сбт Апр 01 12:34:56 BST 2023
+    }
+}
 ```
+### Використання сторонньої бібліотеки: Joda-Time
+До Java 8 Joda-Time була де-факто стандартом для дати та часу в Java. Якщо ви працюєте над застарілими системами або віддаєте перевагу Joda-Time, ось як ви можете використовувати її для отримання поточної дати:
+```java
+import org.joda.time.LocalDate;
 
-## Deep Dive (Поглиблений огляд):
-Once upon a time in Java, we were limited to `java.util.Date`, but it was troublesome, particularly with timezone quirks. Java 8 introduced `java.time`, the more robust and intuitive date and time API. 
-
-Alternatives? Of course, there's `Calendar`, but it's a bit clunky. Libraries like Joda-Time were the go-to before Java 8 but are now somewhat obsolete. 
-
-Internals? `LocalDate.now()` grabs the system clock from the default time-zone. Under the hood, it ultimately calls `Clock.systemDefaultZone().instant()` to get the current instant in time, which it converts to a date. 
-
-Note that `LocalDate` doesn't contain time or timezone data. If you need those, look into `LocalDateTime` or `ZonedDateTime`.
-
-## See Also (Дивіться також):
-- Official Oracle tutorials: [Date Time](https://docs.oracle.com/javase/tutorial/datetime/)
-- JavaDoc for `LocalDate`: [LocalDate](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/time/LocalDate.html)
-- Want timezone management? [ZonedDateTime](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/time/ZonedDateTime.html)
-- Compare with old: [Date](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html) vs [Calendar](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Calendar.html)
+public class CurrentDateExample {
+    public static void main(String[] args) {
+        LocalDate currentDate = LocalDate.now();
+        System.out.println(currentDate); // Приклад виводу: 2023-04-01
+    }
+}
+```
+**Примітка:** Хоча `java.util.Date` і Joda-Time все ще використовуються, для нових проектів рекомендується пакет `java.time` через його незмінність і всебічний API для обробки дат і часів.

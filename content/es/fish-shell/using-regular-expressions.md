@@ -1,42 +1,76 @@
 ---
-title:                "Uso de expresiones regulares"
-date:                  2024-01-19
-simple_title:         "Uso de expresiones regulares"
-
+title:                "Usando expresiones regulares"
+date:                  2024-02-03T19:16:37.073119-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Usando expresiones regulares"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/fish-shell/using-regular-expressions.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
-Las expresiones regulares son patrones usados para encontrar coincidencias en cadenas de texto. Los programadores las utilizan para buscar, validar, o manipular datos de manera eficiente y con pocas líneas de código.
 
-## Cómo Hacerlo:
-El uso de expresiones regulares en Fish se realiza principalmente a través de comandos externos como `grep`, `sed`, o `awk`, ya que Fish no tiene un soporte integrado para ellos. Aquí algunos ejemplos:
+Las expresiones regulares (regex) en Fish Shell te permiten buscar, coincidir y manipular cadenas basadas en patrones específicos. Los programadores utilizan regex para tareas como validación de entrada, análisis y procesamiento de texto porque ofrece una forma compacta y poderosa de especificar patrones de texto complejos.
 
-```Fish Shell
-# Buscar coincidencia de "foo" en un archivo
-grep "foo" archivo.txt
+## Cómo hacerlo:
 
-# Reemplazar todas las instancias de "foo" por "bar" en un archivo
-sed "s/foo/bar/g" archivo.txt
+Aunque Fish Shell en sí no tiene un comando incorporado para regex, utiliza efectivamente comandos externos como `grep`, `sed` y `awk` que admiten regex, lo que te permite incorporar operaciones regex en tus scripts.
 
-# Extraer líneas que contengan dígitos
-grep "[0-9]" archivo.txt 
+### Coincidencia de Patrones Básicos con `grep`
+Buscar líneas en un archivo que coincidan con un patrón:
+
+```fish
+grep '^[0-9]+' myfile.txt
 ```
 
-Resultado de `grep "foo" archivo.txt` si `foo` está en el texto:
-```
-foo está aquí
+Este comando encuentra líneas que comienzan con uno o más dígitos en `myfile.txt`.
+
+### Extrayendo y Reemplazando con `sed`
+Extrae números de teléfono de un archivo:
+
+```fish
+sed -n '/\([0-9]\{3\}\)-\([0-9]\{3\}\)-\([0-9]\{4\}\)/p' contacts.txt
 ```
 
-## Profundización
-Las expresiones regulares se originaron en la década de 1950, con notables contribuciones posteriores de Ken Thompson en el contexto de herramientas de línea de comandos de Unix. Aunque el shell Fish no viene con soporte nativo para regex, se integra sin problemas con herramientas de terceros que son estándar en sistemas Unix-like. Alternativas modernas para trabajar con texto incluyen lenguajes de programación como Python, con su potente módulo `re`, o herramientas como `ripgrep` que son más rápidas que `grep`.
+Reemplaza todas las ocurrencias de "foo" con "bar" en `data.txt`:
 
-## Ver También
-- GNU Grep: https://www.gnu.org/software/grep/manual/grep.html
-- Sed - an Introduction and Tutorial: https://www.grymoire.com/Unix/Sed.html
-- AWK: A Tutorial and Introduction: https://www.grymoire.com/Unix/Awk.html
-- Regular-Expressions.info: https://www.regular-expressions.info/
-- ripgrep: https://github.com/BurntSushi/ripgrep
+```fish
+sed 's/foo/bar/g' data.txt
+```
+
+### Usando `string` para Regex Básicos
+El comando `string` de Fish Shell admite operaciones simples de regex como coincidencia y reemplazo:
+
+Coincidir un patrón en una cadena:
+
+```fish
+echo "fish 3.1.2" | string match -r '3\.[0-9]+\.[0-9]+'
+```
+Salida:
+```
+3.1.2
+```
+
+Reemplazar dígitos siguientes a 'fish' con 'X.X.X':
+
+```fish
+echo "Welcome to fish 3.1.2" | string replace -ra '([fish]+\s)[0-9\.]+' '$1X.X.X'
+```
+Salida:
+```
+Welcome to fish X.X.X
+```
+
+### Coincidencia Avanzada con `awk`
+Imprimir la segunda columna de datos donde la primera columna coincide con un patrón específico:
+
+```fish
+awk '$1 ~ /^a[0-9]+$/ {print $2}' datafile
+```
+
+Este comando busca líneas en `datafile` donde la primera columna comienza con una "a" seguida de uno o más dígitos e imprime la segunda columna.
+
+Al integrar estos comandos externos, los programadores de Fish Shell pueden aprovechar toda la potencia de las expresiones regulares para tareas complejas de manipulación de texto, mejorando las capacidades nativas de la shell.

@@ -1,45 +1,83 @@
 ---
-title:                "Zapisywanie pliku tekstowego"
-date:                  2024-01-19
-simple_title:         "Zapisywanie pliku tekstowego"
-
+title:                "Pisanie pliku tekstowego"
+date:                  2024-02-03T19:29:22.215750-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Pisanie pliku tekstowego"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/python/writing-a-text-file.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
-Zapisywanie do pliku tekstowego to zapisywanie danych w formie tekstowej na dysku. Programiści robią to, by trwale zapisywać stan aplikacji, logi, konfiguracje czy wymieniać dane między programami.
+## Co i dlaczego?
+Zapis do pliku tekstowego w Pythonie to podstawowe zadanie, które obejmuje tworzenie lub otwieranie pliku, a następnie dodawanie do niego tekstu lub nadpisywanie tekstu. Ta funkcjonalność jest kluczowa dla rejestrowania danych, zarządzania konfiguracją i przechowywania wyników generowanych przez programy, co czyni ją podstawowym, ale niezbędnym narzędziem w arsenale programisty.
 
 ## Jak to zrobić:
-```Python
-# Otwarcie pliku do zapisu (jeśli plik nie istnieje, zostanie utworzony)
-with open('przykladowy_plik.txt', 'w', encoding='utf-8') as plik:
-    plik.write("Cześć, to jest tekst w pliku!\n")
-    plik.write("Dodajemy kolejną linię tekstu.")
+### Korzystając z wbudowanej funkcji `open()`
+Wbudowana funkcja `open()` w Pythonie jest najczęstszą metodą zapisu do plików. Funkcja pozwala na określenie trybu, w jakim plik jest otwierany - 'w' dla zapisu (nadpisywania), 'a' dla dodawania do końca i 'w+' dla zapisu+odczytu.
 
-# Otwierając plik w trybie 'a', dopisujemy do istniejącego pliku
-with open('przykladowy_plik.txt', 'a', encoding='utf-8') as plik:
-    plik.write("\nA tutaj tekst dopisany.")
- 
-# Weryfikacja zawartości pliku
-with open('przykladowy_plik.txt', 'r', encoding='utf-8') as plik:
-    zawartosc = plik.read()
-    print(zawartosc)
+```python
+# Zapis do nowego pliku lub zamiana istniejącego pliku
+with open('example.txt', 'w') as file:
+    file.write("Witaj, świecie!\n")
 
-"""
-Cześć, to jest tekst w pliku!
-Dodajemy kolejną linię tekstu.
-A tutaj tekst dopisany.
-"""
+# Dodawanie do pliku
+with open('example.txt', 'a') as file:
+    file.write("Dodaję więcej tekstu.\n")
+
+# Odczyt pliku do weryfikacji
+with open('example.txt', 'r') as file:
+    print(file.read())
+```
+**Przykładowy wynik:**
+```
+Witaj, świecie!
+Dodaję więcej tekstu.
+```
+### Korzystając z `pathlib.Path`
+Dla bardziej zorientowanego obiektowo podejścia, klasa `Path` z modułu `pathlib` oferuje metodę zapisu do plików. Jest to popularna metoda w nowszych bazach kodu Pythona.
+
+```python
+from pathlib import Path
+
+# Zapis/Zamiana pliku
+Path('example2.txt').write_text("To jest przykład 2.\n")
+
+# Odczyt pliku do weryfikacji
+print(Path('example2.txt').read_text())
+
+# Uwaga: `Path.write_text` zawsze nadpisuje zawartość pliku.
+# Do dodawania, należy otworzyć plik jak pokazano w poprzedniej sekcji.
+```
+**Przykładowy wynik:**
+```
+To jest przykład 2.
 ```
 
-## W głąb tematu:
-Koncepcja plików istnieje od początków informatyki. W Pythonie zapis do pliku jest prosty dzięki wbudowanym metodą `write()`. Alternatywami są moduły jak `pickle` (do obiektów Pythona), `json` (do danych typu JSON) czy `csv` (do plików CSV). Implementacja zapisu zmieniała się, ale design Pythona zachowuje prostotę operacji z plikami.
+### Biblioteki stron trzecich
+Do złożonych operacji na plikach, biblioteki stron trzecich, takie jak `pandas` (dla plików CSV, Excel), mogą być świetnym atutem. Oto krótki przykład zapisu DataFrame do pliku CSV za pomocą `pandas`, demonstrujący jego użyteczność poza prostymi plikami tekstowymi.
 
-## Zobacz również:
-- [Dokumentacja Pythona na temat I/O](https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files)
-- [Moduł `json`](https://docs.python.org/3/library/json.html)
-- [Moduł `csv`](https://docs.python.org/3/library/csv.html)
-- [Praca z plikami w Pythonie - tutorial](https://realpython.com/read-write-files-python/)
+```python
+# Ten przykład wymaga pandas: pip install pandas
+import pandas as pd
+
+# Tworzenie prostego DataFrame
+data = pd.DataFrame({'Kolumna1': [1, 2, 3], 'Kolumna2': ['A', 'B', 'C']})
+
+# Zapis DataFrame do pliku CSV
+data.to_csv('przyklad.csv', index=False)
+
+# Odczyt CSV do weryfikacji
+print(pd.read_csv('przyklad.csv'))
+```
+**Przykładowy wynik:**
+```
+   Kolumna1 Kolumna2
+0         1        A
+1         2        B
+2         3        C
+```
+
+Korzystając z tych metod, programiści Python mogą skutecznie zarządzać operacjami na plikach, zaspokajając potrzeby zarówno proste, jak i złożone przetwarzania danych.

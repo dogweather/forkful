@@ -1,42 +1,61 @@
 ---
 title:                "Praca z JSON"
-date:                  2024-01-19
+date:                  2024-02-03T19:22:11.647091-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Praca z JSON"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/clojure/working-with-json.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Praca z JSON to zarządzanie danymi w formacie, który łatwo się czyta i pisze dla ludzi oraz jest maszynowo przetwarzalny. Programiści używają JSON do wymiany danych między serwerami i aplikacjami, przechowywania konfiguracji, ustawień i stanu aplikacji.
+## Co i dlaczego?
+Praca z JSON (JavaScript Object Notation) w Clojure polega na parsowaniu ciągów JSON do struktur danych Clojure (mapy, wektory) i odwrotnie. To zadanie jest fundamentalne dla usług sieciowych, API oraz aplikacji, które muszą komunikować dane w strukturalnym, tekstowym formacie, ponieważ JSON jest uniwersalnie rozpoznawany i wspierany w różnych środowiskach programistycznych.
 
-## How to:
-Clojure używa biblioteki Cheshire do pracy z JSON. Oto jak to zrobić:
+## Jak to zrobić:
+Clojure nie zawiera wbudowanych funkcji do pracy z JSON, więc typowo używa się bibliotek firm trzecich. `cheshire` i `jsonista` to popularne wybory ze względu na ich łatwość użycia i wydajność.
 
-```Clojure
-;; Dodaj zależność do projektu
+### Korzystanie z Cheshire
+Pierwsze, dodaj Cheshire do zależności swojego projektu w `project.clj`:
+```clj
+[com.fasterxml.jackson.core/jackson-core "2.12.0"]
 [cheshire "5.10.1"]
-
-;; Zaimportuj bibliotekę
-(require '[cheshire.core :as json])
-
-;; Parsowanie JSON do mapy Clojure
-(def json-str "{\"name\":\"Kotek\",\"likes\":[\"mleko\",\"drapanie\"]}")
-(def clojure-map (json/parse-string json-str))
-;; => {"name" "Kotek", "likes" ["mleko" "drapanie"]}
-
-;; Kodowanie mapy Clojure do ciągu JSON
-(def clojure-data {"type" "Kot", "age" 3})
-(def json-output (json/generate-string clojure-data))
-;; => "{\"type\":\"Kot\",\"age\":3}"
 ```
 
-## Deep Dive
-JSON, skrót od JavaScript Object Notation, zyskał popularność na początku lat 2000 jako alternatywa dla XML. Cheshire to powszechnie stosowana biblioteka Clojure do JSON, ale istnieją też inne, jak `data.json`. Wartość Cheshire to szybkość działania dzięki wykorzystaniu Jackson, niskopoziomowej biblioteki Javy do obsługi JSON.
+Aby sparsować ciąg JSON do mapy Clojure i przekształcić mapę w ciąg JSON:
 
-## See Also
-- Oficjalna strona JSON: [json.org](https://json.org)
-- Repozytorium GitHub biblioteki Cheshire: [Cheshire on GitHub](https://github.com/dakrone/cheshire)
-- Dokumentacja Clojure: [clojure.org](https://clojure.org)
+```clj
+(require '[cheshire.core :as json])
+
+;; Parsowanie ciągu JSON do mapy Clojure
+(let [json-input "{\"name\":\"John\", \"age\":30}"]
+  (json/parse-string json-input true)) ; => {"name" "John", "age" 30}
+
+;; Konwersja mapy Clojure do ciągu JSON
+(let [clj-map {"name" "John", "age" 30}]
+  (json/generate-string clj-map)) ; => "{\"name\":\"John\",\"age\":30}"
+```
+
+### Korzystanie z Jsonista
+Dodaj Jsonista do swojego projektu `project.clj`:
+```clj
+[jsonista "0.3.2"]
+```
+
+Podobne operacje z Jsonista:
+
+```clj
+(require '[jsonista.core :as j])
+
+;; Parsowanie ciągu JSON do Clojure
+(let [json-input "{\"name\":\"Emily\", \"age\":25}"]
+  (j/read-value json-input)) ; => {"name" "Emily", "age" 25}
+
+;; Konwersja mapy Clojure do ciągu JSON
+(let [clj-map {"name" "Emily", "age" 25}]
+  (j/write-value-as-string clj-map)) ; => "{\"name\":\"Emily\",\"age\":25}"
+```
+
+W obu bibliotekach masz możliwość kodowania i dekodowania bardziej złożonych struktur danych, a także są dostępne dodatkowe funkcje i parametry, które pozwalają na dostosowanie procesów serializacji i deserializacji. Dla większości aplikacji, przedstawiona funkcjonalność zapewnia solidną podstawę do pracy z JSON w aplikacjach Clojure.

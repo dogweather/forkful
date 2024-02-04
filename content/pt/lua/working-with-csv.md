@@ -1,54 +1,120 @@
 ---
 title:                "Trabalhando com CSV"
-date:                  2024-01-19
+date:                  2024-02-03T19:20:29.529406-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Trabalhando com CSV"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/lua/working-with-csv.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-CSV, ou "valores separados por vírgula", é um formato de arquivo usado para armazenar dados tabulares. Programadores utilizam CSV pela facilidade de importação e exportação de dados em várias linguagens e plataformas.
+## O que & Por quê?
 
-## How to:
-Para manipular arquivos CSV em Lua, você pode ler linha por linha e usar a função `string.gmatch` para iterar pelos valores separados por vírgula.
+Trabalhar com arquivos CSV (Valores Separados por Vírgula) envolve analisar e gerar dados de texto organizados em linhas e colunas, usando vírgulas para separar valores individuais. Programadores frequentemente se engajam nesse processo para facilitar a troca de dados entre diferentes aplicações, bancos de dados, ou para tarefas de processamento e análise de dados, devido ao amplo suporte e simplicidade do CSV.
 
-```Lua
--- Lendo um arquivo CSV em Lua
-local arquivo = io.open("dados.csv", "r")
+## Como fazer:
 
-for linha in arquivo:lines() do
-    for valor in string.gmatch(linha, '([^,]+)') do
-        print(valor)
+Em Lua, trabalhar com arquivos CSV pode ser abordado usando operações básicas de IO (Entrada/Saída) de arquivos fornecidas pela linguagem, sem a necessidade de bibliotecas externas para tarefas simples. Para operações mais complexas, como lidar com casos especiais (ex.: vírgulas dentro dos valores), pode ser benéfico usar bibliotecas de terceiros como `lua-csv`.
+
+### Lendo um arquivo CSV
+Aqui está um exemplo simples para ler um arquivo CSV linha por linha, dividindo cada linha em valores baseados no separador de vírgula.
+
+```lua
+function parseCSVLine(line)
+    local result = {}
+    local from = 1
+    local sep = ","
+    local field
+    while true do
+        local start, finish = string.find(line, sep, from)
+        if not start then
+            table.insert(result, string.sub(line, from))
+            break
+        end
+        field = string.sub(line, from, start - 1)
+        table.insert(result, field)
+        from = finish + 1
     end
+    return result
 end
 
-arquivo:close()
+local file = io.open("example.csv", "r")
+for line in file:lines() do
+    local values = parseCSVLine(line)
+    for i, v in ipairs(values) do
+        print(i, v)
+    end
+end
+file:close()
 ```
 
-Saída de exemplo:
+**Saída de exemplo** (para um `example.csv` com conteúdo "name,age\newlineJohn Doe,30\newlineJane Doe,32"):
 ```
-Nome
-Idade
-Cidade
-Alice
-30
-São Paulo
-Bob
-25
-Rio de Janeiro
+1	name
+2	age
+1	John Doe
+2	30
+1	Jane Doe
+2	32
 ```
 
-## Deep Dive
-Arquivos CSV têm sido utilizados desde o início dos anos 70, proporcionando uma forma simples de representar tabelas de dados antes do advento de sistemas de banco de dados modernos. Alternativas incluem JSON e XML, que oferecem estruturas mais complexas e metadados. A implementação de leitura de CSV em Lua é facilitada devido às poderosas funções de manipulação de strings do idioma; no entanto, casos com formatos mais complexos de CSV podem exigir bibliotecas especializadas.
+### Escrevendo um arquivo CSV
+Para gerar um arquivo CSV, você simplesmente constrói strings com valores separados por vírgulas e os escreve em um arquivo linha por linha.
 
-## See Also
-Para mais informações sobre manipulação de CSV em Lua e bibliotecas disponíveis, confira:
+```lua
+local data = {
+    {"name", "age"},
+    {"John Doe", "30"},
+    {"Jane Doe", "32"}
+}
 
-- The Lua Users Wiki CSV: http://lua-users.org/wiki/CommaSeparatedValues
-- A biblioteca `LuaCSV`: https://github.com/geoffleyland/lua-csv
-- Documentação de Lua `string.gmatch`: https://www.lua.org/manual/5.4/manual.html#pdf-string.gmatch
+local file = io.open("output.csv", "w")
+for _, v in ipairs(data) do
+    file:write(table.concat(v, ","), "\n")
+end
+file:close()
+```
 
-Ao explorar esses recursos, você poderá trabalhar com CSVs de forma mais eficiente e expandir suas habilidades em Lua.
+Isso criaria (ou sobrescreveria) um arquivo `output.csv` com os dados especificados.
+
+### Usando lua-csv
+Para um tratamento mais avançado de CSV, incluindo suporte para aspas e caracteres de escape, a biblioteca `lua-csv` é uma escolha robusta.
+
+Primeiro, instale-a usando LuaRocks:
+```shell
+luarocks install lua-csv
+```
+
+Então, ler um arquivo CSV fica tão simples quanto:
+
+```lua
+local csv = require("csv")
+
+-- Lendo de um arquivo
+for fields in csv.open("example.csv") do
+    for i, v in ipairs(fields) do
+        print(i, v)
+    end
+end
+```
+
+E escrevendo em um CSV com aspas e escaping adequados:
+
+```lua
+local file = csv.open("output.csv", {write=true})
+
+local data = {
+    {"name", "profession", "location"},
+    {"John Doe", "Software Engineer", "New York, NY"},
+    {"Jane Doe", "Data Scientist", "\"San Francisco, CA\""}
+}
+
+for _, v in ipairs(data) do
+    file:write(v)
+end
+```
+
+Essa abordagem lida automaticamente com complexidades como vírgulas e aspas dentro dos valores.

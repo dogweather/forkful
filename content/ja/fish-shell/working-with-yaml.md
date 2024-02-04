@@ -1,49 +1,82 @@
 ---
-title:                "YAMLを扱う"
-date:                  2024-01-19
-simple_title:         "YAMLを扱う"
-
+title:                "YAML を操作する"
+date:                  2024-02-03T19:25:41.306129-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "YAML を操作する"
 tag:                  "Data Formats and Serialization"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/fish-shell/working-with-yaml.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (何となぜ？)
+## 何となぜ？
+YAMLを操作するとは、設定ファイル用のデータ直列化フォーマットであるYAML（YAML Ain't Markup Language）ファイルをパーシングし、Fish Shell内で操作することを意味します。プログラマーはこれを行うことで、シェル環境の文脈内でアプリケーションやサービスを効率よく自動化、設定することができ、構成管理やリソースのプロビジョニングといったタスクを容易にします。
 
-YAMLは設定ファイルなどによく使われるデータ形式です。シンプルで人間にも読みやすく、多くの言語で簡単にパースできるため、プログラマーにとって重宝しています。
+## どのようにして：
+Fish ShellにはYAMLをパーシングするための組み込みサポートはありませんが、`yq`（軽量でポータブルなコマンドラインYAMLプロセッサ）といったサードパーティツールを利用することでYAMLデータを扱うことができます。
 
-## How to: (方法)
-
-YAMLファイルを操作する基本的なコマンドをいくつか紹介します。
-
-```Fish Shell
-# YAMLファイルをパースして変数に入れる
-set config (yaml2json config.yaml | jq .)
-
-# 特定のキーの値を出力
-yaml2json config.yaml | jq '.database.host'
-
-# 出力例: "localhost"
-
-# YAML配列の一覧を出力
-yaml2json config.yaml | jq '.users[]'
-
-# 出力例: 
-# "alice"
-# "bob"
-# "charlie"
+**yqのインストール（まだインストールされていない場合）：**
+```fish
+sudo apt-get install yq
 ```
-※ `yaml2json`と`jq`コマンドをインストールして使用します。
 
-## Deep Dive (深堀り)
+**YAMLファイルから値を読み取る：**
+次の内容を持つYAMLファイル`config.yaml`があるとします：
+```yaml
+database:
+  host: localhost
+  port: 3306
+```
 
-YAMLは"YAML Ain't Markup Language" (元々は"Yet Another Markup Language") の略で、インデントを使ってデータの階層を表現する形式です。JSONやXMLと比べても読みやすいですが、タブ文字を使ってはならず、スペースを使います。`yaml2json`や`jq`はYAMLデータを扱う際の強力なツールで、YAMLをJSONへ変換することで、豊富なJSON操作ツールを利用できるようになります。
+データベースホストを読み取るには、次を使用します：
+```fish
+set host (yq e '.database.host' config.yaml)
+echo $host
+```
+**サンプル出力：**
+```
+localhost
+```
 
-## See Also (関連情報)
+**YAMLファイル内の値を更新する：**
+`port`を`5432`に更新するには、次を使用します：
+```fish
+yq e '.database.port = 5432' -i config.yaml
+```
+**更新を確認する：**
+```fish
+yq e '.database.port' config.yaml
+```
+**サンプル出力：**
+```
+5432
+```
 
-- YAML公式サイト: [https://yaml.org](https://yaml.org)
-- `jq`コマンドマニュアル: [https://stedolan.github.io/jq/manual/](https://stedolan.github.io/jq/manual/)
-- Fish Shell公式ドキュメンテーション: [https://fishshell.com/docs/current/index.html](https://fishshell.com/docs/current/index.html)
-- `yaml2json`ソース: [https://github.com/bronze1man/yaml2json](https://github.com/bronze1man/yaml2json)
+**新しいYAMLファイルを書き込む：**
+事前定義された内容で新しい`new_config.yaml`を作成するには：
+```fish
+echo "webserver:
+  host: '127.0.0.1'
+  port: 8080" | yq e -P - > new_config.yaml
+```
+この操作は`yq`を使用して、文字列を新しいYAMLファイルに処理し、きれいに印刷（-Pフラグ）します。
+
+**複雑な構造をパーシングする：**
+より複雑なYAMLファイルを扱い、ネストされた配列やオブジェクトを取得する必要がある場合、次を実行できます：
+```fish
+echo "servers:
+  - name: server1
+    ip: 192.168.1.101
+  - name: server2
+    ip: 192.168.1.102" > servers.yaml
+
+yq e '.servers[].name' servers.yaml
+```
+**サンプル出力：**
+```
+server1
+server2
+```
+`yq`を使用して、Fish ShellはYAMLドキュメントを通して効率的にナビゲートし、さまざまな自動化や設定タスクのためにそれらを操作することを簡単にします。

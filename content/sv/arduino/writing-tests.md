@@ -1,55 +1,64 @@
 ---
 title:                "Skriva tester"
-date:                  2024-01-19
+date:                  2024-02-03T19:29:44.023548-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Skriva tester"
-
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/arduino/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Skriva tester innebär att koda checks som verifierar att din kod fungerar som förväntat. Programmerare gör detta för att hitta buggar tidigt, förbättra kodkvaliteten och försäkra sig om att framtida ändringar inte bryter funktionalitet.
 
-## Steg för steg:
-Arduino saknar ett inbyggt testramverk, men vi kan ändå implementera enkla tester. Här är ett exempellösning:
+Att skriva tester i Arduino-miljön hänvisar till processen att skapa automatiserade tester som validerar funktionaliteten hos din kod på Arduino-enheter. Programmerare gör detta för att säkerställa att deras kod fungerar som förväntat, reducerar buggar och förbättrar kvaliteten på deras projekt, vilket är särskilt viktigt i inbyggda system där felsökning kan vara mer utmanande.
+
+## Hur man gör:
+
+Arduino har inte ett inbyggt testramverk som vissa andra programmeringsmiljöer. Däremot kan du använda tredjepartsbibliotek såsom `AUnit` för enhetstestning av Arduino-kod. AUnit är inspirerad av Arduinos inbyggda bibliotek, `ArduinoUnit`, och Googles testramverk, `Google Test`.
+
+### Exempel med AUnit:
+
+Först, installera AUnit via Bibliotekshanteraren i Arduino IDE: gå till Sketch > Lägg till Bibliotek > Hantera Bibliotek... > sök efter AUnit och installera det.
+
+Därefter kan du skriva tester på följande sätt:
 
 ```cpp
+#include <AUnit.h>
+
+test(ledPinHigh) {
+  const int ledPin = 13;
+  pinMode(ledPin, OUTPUT);
+  digitalWrite(ledPin, HIGH);
+  assertTrue(digitalRead(ledPin));
+}
+
+test(ledPinLow) {
+  const int ledPin = 13;
+  pinMode(ledPin, OUTPUT);
+  digitalWrite(ledPin, LOW);
+  assertFalse(digitalRead(ledPin));
+}
+
 void setup() {
   Serial.begin(9600);
-  testFunction();
+  aunit::TestRunner::run();
 }
 
 void loop() {
-  // Normala loop-aktiviteter här.
-}
-
-void testFunction() {
-  int resultat = addera(5, 10);
-  if (resultat == 15) {
-    Serial.println("Test passed!");
-  } else {
-    Serial.println("Test failed!");
-  }
-}
-
-int addera(int a, int b) {
-  return a + b;
+  // Tom
 }
 ```
+Efter att ha laddat upp detta test till ditt Arduino-kort, öppna seriemonitorn för att visa testresultaten. Du bör se utdata som indikerar om varje test passerade eller misslyckades:
 
-Förväntad utskrift:
 ```
-Test passed!
+TestRunner startade på 2 test(er).
+Test ledPinHigh passerade.
+Test ledPinLow passerade.
+TestRunner duration: 0.002 sekunder.
+TestRunner sammanfattning: 2 passerade, 0 misslyckades, 0 hoppades över, 0 fick timeout, av 2 test(er).
 ```
 
-## Djupdykning:
-Arduino är mer känt för dess hårdvarunära programmering än för testdriven utveckling. På senare tid har dock intresset för att skriva tester för Arduino-kod ökat, och communityn har skapat egna verktyg och bibliotek som till exempel `ArduinoUnit` för att underlätta detta. Historiskt sett var tester mer manuell kontroll av fysisk hårdvara, men nu kan vi testa logik direkt i mjukvaran. Andra alternativ för inbyggda system inkluderar hårdvarusimulering och modulbaserade tester.
-
-## Se även:
-- ArduinoUnit på GitHub: https://github.com/mmurdoch/arduinounit
-- Officiell Arduino's början på testning: https://www.arduino.cc/en/Guide/Environment#toc8
-- Testdriven utveckling (TDD) introduktion: https://en.wikipedia.org/wiki/Test-driven_development
-
-Observera att länkarna är till engelskspråkiga resurser då mycket av den djupgående informationen om Arduino fortfarande är på engelska.
+Detta enkla exempel demonstrerar användningen av AUnit för att testa tillståndet på en LED-pinne. Genom att skapa tester bekräftar du att din Arduino beter sig som förväntat under olika förhållanden. Med AUnit kan du skriva mer komplexa tester, testsamlingar, och njuta av funktioner som testtimeout och uppstarts/nedstängningsprocedurer för mer avancerade scenarier.

@@ -1,30 +1,58 @@
 ---
 title:                "標準エラーへの書き込み"
-date:                  2024-01-19
+date:                  2024-02-03T19:33:39.756639-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "標準エラーへの書き込み"
-
 tag:                  "Files and I/O"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/javascript/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (何となぜ？)
-標準エラーへの書き出しは、プログラムのエラーメッセージを出力する方法です。デバックやログとしてエラー情報を分けておくと、問題解析がしやすくなるから使います。
+## 何となぜ？
+JavaScriptで標準エラー(stderr)への書き込みは、エラーメッセージや重要な情報を特定の別のストリームに向けることで、ログやデバッグ目的でUnix系環境で特に役立ちます。プログラマーは、通常のプログラム出力とエラーメッセージを区別するためにこれを行い、出力管理をより清潔にし、エラー監視を容易にします。
 
-## How to: (方法)
+## 方法：
+Node.jsでは、stderrへの書き込みは`console.error()`メソッドを使用するか、`process.stderr`に直接書き込むことで達成できます。以下に両方のアプローチを示す例を示します：
+
 ```javascript
-// 標準エラーにメッセージを書き出す例
-console.error('エラー: 不正な操作を検出しました。');
+// console.error()を使用
+console.error('これはエラーメッセージです。');
 
-// 出力例（コンソールに表示されるエラーメッセージ）
-// エラー: 不正な操作を検出しました。
+// process.stderrに直接書き込む
+process.stderr.write('これは別のエラーメッセージです。\n');
 ```
 
-## Deep Dive (詳細情報)
-かつて、コンピュータプログラムはコマンドラインから実行されていたため標準出力（stdout）と標準エラー（stderr）が分けられました。デバッグ情報やエラーメッセージはstderrに出力し、プログラムの通常の出力結果はstdoutに出します。JavaScriptでは`console.error()`を使うことが一般的です。ストリームを直接扱う方法もありますが、`process.stderr.write()`はNode.jsの環境で用いられます。
+両方の方法のサンプル出力は、stdoutと混在せずにstderrストリームに表示されます：
+```
+これはエラーメッセージです。
+これは別のエラーメッセージです。
+```
 
-## See Also (関連情報)
-- MDN Web Docs (`console.error`): https://developer.mozilla.org/en-US/docs/Web/API/Console/error
-- Node.js Documentation (`process.stderr`): https://nodejs.org/api/process.html#process_process_stderr
+より洗練された、またはアプリケーション固有のログ記録のために、多くのJavaScriptプログラマーは`winston`や`bunyan`のようなサードパーティのライブラリを使用します。`winston`を使用した簡単な例を示します：
+
+まず、npm経由で`winston`をインストールします：
+```shell
+npm install winston
+```
+
+次に、`winston`を配置して、エラーをstderrに記録します：
+```javascript
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  levels: winston.config.syslog.levels,
+  transports: [
+    new winston.transports.Console({
+      stderrLevels: ['error']
+    })
+  ]
+});
+
+// エラーメッセージのログ記録
+logger.error('エラーがwinstonを通して記録されました。');
+```
+
+このセットアップにより、`winston`を使用してエラーをログ記録する場合、stderrに向けられ、標準出力とエラー出力の明確な区分を維持するのに役立ちます。

@@ -1,54 +1,65 @@
 ---
-title:                "स्ट्रिंग से दिनांक पार्स करना"
-date:                  2024-01-20T15:37:37.228376-07:00
-simple_title:         "स्ट्रिंग से दिनांक पार्स करना"
-
+title:                "स्ट्रिंग से तारीख पार्स करना"
+date:                  2024-02-03T19:15:23.345279-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "स्ट्रिंग से तारीख पार्स करना"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/haskell/parsing-a-date-from-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-"क्या और क्यों?"
+## क्या और क्यों?
 
-तारीख को स्ट्रिंग से पार्स करना मतलब स्ट्रिंग में लिखी तारीख को पढ़कर उसे किसी विशेष डेटा फॉर्मेट में बदलना। प्रोग्रामर्स यह इसलिए करते हैं क्योंकि अलग-अलग सिस्टम्स तारीख के डेटा को अलग फॉर्मेट में उपयोग और संग्रहित करते हैं।
+हास्केल में एक स्ट्रिंग से तारीख पार्स करना तारीखों के मौखिक प्रतिनिधित्व को एक संरचित प्रारूप में बदलने की प्रक्रिया होती है जिसे कार्यक्रम में बदलाव करना संभव होता है। यह प्रक्रिया कैलेंडरिकल डेटा से निपटने वाले अनुप्रयोगों के लिए मौलिक होती है, जिससे कार्यकाल की गणना, शेड्यूलिंग और डेटा सत्यापन जैसे कार्यों को सक्षम बनाया जाता है।
 
-## How to:
-"कैसे करें:"
+## कैसे:
 
-Haskell में `Data.Time` लाइब्रेरी का उपयोग करके आसानी से तारीख को पार्स कर सकते हैं। नीचे उदाहरण दिया गया है:
+आउट ऑफ द बॉक्स, हास्केल तारीखों को पार्स करने के लिए मूल उपकरण प्रदान करता है, लेकिन `time` जैसे पुस्तकालयों का उपयोग मूल कार्यक्षमता के लिए और `date-parse` या `time-parse` जैसे पुस्तकालयों का उपयोग अधिक लचीले पार्सिंग के लिए कार्य को काफी सरल बना सकता है।
 
-```Haskell
-import Data.Time
+पहले, सुनिश्चित करें कि आपके पास `time` पुस्तकालय उपलब्ध है; यह अक्सर GHC के साथ शामिल होता है, लेकिन अगर आपको इसे निर्भरता के रूप में निर्दिष्ट करने की आवश्यकता हो तो, अपनी परियोजना की कैबल फाइल में `time` जोड़ें या `cabal install time` का उपयोग करके इसे मैन्युअली इंस्टॉल करें।
 
-parseDate :: String -> Maybe Day
-parseDate = parseTimeM True defaultTimeLocale "%Y-%m-%d"
+```haskell
+import Data.Time.Format
+import Data.Time.Clock
+import System.Locale (defaultTimeLocale)
 
+-- समय पुस्तकालय का उपयोग करके एक मानक प्रारूप में तारीख को पार्स करना
+parseBasicDate :: String -> Maybe UTCTime
+parseBasicDate = parseTimeM True defaultTimeLocale "%Y-%m-%d" 
+```
+
+उदाहरण का उपयोग और आउटपुट:
+
+```haskell
 main :: IO ()
-main = do
-  let dateString = "2023-03-28"
-  print $ parseDate dateString
+main = print $ parseBasicDate "2023-04-01"
+
+-- आउटपुट: Just 2023-03-31 22:00:00 UTC
 ```
 
-यह कोड निम्न आउटपुट देगा:
+अधिक जटिल परिस्थितियों के लिए, जहां आपको कई प्रारूपों या स्थानों को संभालने की आवश्यकता है, तृतीय-पक्ष पुस्तकालय जैसे कि `date-parse` अधिक सुविधाजनक हो सकते हैं:
 
+मान लें कि आपने अपनी निर्भरताओं में `date-parse` जोड़ा है और इसे इंस्टॉल किया है, यहाँ आप इसका उपयोग कैसे कर सकते हैं:
+
+```haskell
+import Data.Time.Calendar
+import Text.Date.Parse (parseDate)
+
+-- date-parse पुस्तकालय के साथ एक तारीख स्ट्रिंग को पार्स करना कई प्रारूपों का समर्थन करता है
+parseFlexibleDate :: String -> Maybe Day
+parseFlexibleDate = parseDate
 ```
-Just 2023-03-28
+
+`date-parse` के साथ उदाहरण का उपयोग:
+
+```haskell
+main :: IO ()
+main = print $ parseFlexibleDate "April 1, 2023"
+
+-- आउटपुट: Just 2023-04-01
 ```
 
-## Deep Dive:
-"गहराई से जानकारी:"
-
-तारीख को पार्स करने की आवश्यकता पुराने समय से है, जब से कंप्यूटर्स में तारीख और समय के प्रबंधन की जरूरत पड़ी। `Data.Time` हास्केल की मानक लाइब्रेरी है, पर `time` पैकेज के अलावा भी `chronos`, `thyme` जैसे विकल्प मौजूद हैं। इनपुट स्ट्रिंग को पार्स करने के लिए `parseTimeM` फंक्शन `True` फ्लैग के साथ मोनैडिक कंटेक्स्ट में सेफली पार्स करता है, जिससे गलत फॉर्मेट होने पर `Nothing` रिटर्न होता है। 
-
-फंक्शन के अंदर `"%Y-%m-%d"` एक डेट फॉर्मेट है, जो साल-महीना-दिन का प्रतिनिधित्व करता है। इसका उपयोग करके यह धारणा की जाती है कि इनपुट स्ट्रिंग इसी फॉर्मेट में है।
-
-## See Also:
-"और देखें:"
-
-- Haskell `time` library documentation: https://hackage.haskell.org/package/time
-- Haskell Date and Time tutorial: https://www.schoolofhaskell.com/school/to-infinity-and-beyond/pick-of-the-week/date-and-time
-- Alternative libraries for date and time in Haskell: 
-  - https://hackage.haskell.org/package/chronos
-  - https://hackage.haskell.org/package/thyme
+प्रत्येक उदाहरण हास्केल में एक स्ट्रिंग को उपयोगी तारीख ऑब्जेक्ट में बदलने की मौलिक प्रक्रिया को प्रदर्शित करता है। `time` पुस्तकालय के निर्मित कार्यों का उपयोग करने और `date-parse` जैसे तृतीय-पक्ष समाधान के लिए चयन आपके अनुप्रयोग की विशिष्ट आवश्यकताओं पर निर्भर करता है, जैसे कि आपको संभालने की आवश्यकता वाले इनपुट प्रारूपों की श्रेणी।

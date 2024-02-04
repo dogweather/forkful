@@ -1,40 +1,54 @@
 ---
 title:                "写入标准错误"
-date:                  2024-01-19
+date:                  2024-02-03T19:34:18.863606-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "写入标准错误"
-
 tag:                  "Files and I/O"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/ruby/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (是什么 & 为什么?)
-输出错误信息到标准错误流(stderr)是一种打印日志、调试或报告错误的手段。程序员这么做是为了区分正常输出（stdout）和错误消息，方便调试和日志记录。
+## 什么 & 为什么？
+在 Ruby 中写入标准错误（stderr）是指将错误消息或诊断信息定向到与标准输出（stdout）不同的单独输出流。程序员这样做是为了区分常规程序输出与错误和调试信息，从而便于更容易地诊断问题和解析日志。
 
-## How to: (如何操作)
-在Ruby中，使用`$stderr.puts`或`STDERR.print`输出信息到标准错误。下面是例子：
+## 如何做：
+Ruby 的标准库提供了一种简单的方式来使用 `$stderr` 或 `STDERR` 写入 stderr。对于这个基本操作，你不需要第三方库。
 
-```Ruby
-# 使用puts方法输出到标准错误
-$stderr.puts "发生错误！"
-
-# 使用print方法输出到标准错误
-STDERR.print "警告：操作无效！"
+### 向 stderr 写入一条简单消息：
+```ruby
+$stderr.puts "Error: 文件未找到。"
+# 或等效地
+STDERR.puts "Error: 文件未找到。"
+```
+示例输出（到 stderr）：
+```
+Error: 文件未找到。
 ```
 
-输出示例：
-
+### 将 stderr 重定向到文件：
+```ruby
+File.open('error.log', 'w') do |file|
+  STDERR.reopen(file)
+  STDERR.puts "无法打开配置。"
+end
 ```
-发生错误！
-警告：操作无效！
+这段代码将 stderr 重定向到名为 `error.log` 的文件中，所有随后写入的错误都会输出到那里，直到程序重置 stderr 重定向或终止。
+
+### 在异常处理中使用 stderr：
+```ruby
+begin
+  # 模拟可能失败的操作，例如，打开文件
+  File.open('nonexistent_file.txt')
+rescue Exception => e
+  STDERR.puts "发生异常：#{e.message}"
+end
+```
+示例输出（到 stderr）：
+```
+发生异常：No such file or directory @ rb_sysopen - nonexistent_file.txt
 ```
 
-## Deep Dive (深入探索)
-标准错误（stderr）和标准输出（stdout）是UNIX和类UNIX系统的传统概念。它们将输出分为两个不同的渠道，使得用户能够独立地处理正常日志和错误日志。在Ruby中，你可以使用全局变量`$stderr`或常量`STDERR`写入错误信息。两者实质上是同一个对象的两个不同名称。除了直接写入stderr，Ruby还提供了`warn`方法作为向stderr输出警告信息的简便方式。
-
-## See Also (另请参阅)
-- [Ruby官方的IO文档](https://ruby-doc.org/core/IO.html)
-- [关于标准流的讨论](https://en.wikipedia.org/wiki/Standard_streams)
-- [`warn` 方法的使用](https://ruby-doc.org/core/Kernel.html#method-i-warn)
+虽然 Ruby 的内置方法写入 stderr 对于许多应用程序而言已经足够，但对于更复杂的日志需求，你可能会考虑使用 `logger` 标准库或外部宝石如 `Log4r`。这些提供了可配置的日志机制，包括严重性级别、格式化以及写入各种输出的能力，包括文件、电子邮件等。

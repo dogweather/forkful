@@ -1,47 +1,100 @@
 ---
 title:                "Робота з JSON"
-date:                  2024-01-19
+date:                  2024-02-03T19:23:55.012637-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Робота з JSON"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/php/working-with-json.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Що таке робота з JSON і чому це роблять програмісти? JSON це текстовий формат даних, оптимізований для людського читання та обміну даних між системами. Програмісти використовують JSON через його легкість, стислість та широку підтримку в різних мовах програмування.
+## Що і чому?
+JSON, або JavaScript Object Notation, це легкий формат обміну даними, який легко читати та писати людям, а також легко обробляти та генерувати машинами. Програмісти часто працюють з JSON для обміну даними між серверами та веб-додатками через його простоту та незалежність від мови, що робить його краєугольним каменем сучасної веб-розробки та API.
 
-## How to:
-### Читання JSON
-```PHP
-$json = '{"name": "Олексій", "age": 30}';
-$data = json_decode($json);
-echo $data->name; // Виводить: Олексій
+## Як це робиться:
+Робота з JSON у PHP є простою завдяки вбудованим функціям `json_encode()` та `json_decode()`. Нижче наведено приклади, що демонструють як конвертувати PHP масив у JSON рядок, та навпаки:
+
+### Кодування PHP масиву в JSON рядок
+```php
+// Визначаємо асоціативний масив
+$data = [
+    "name" => "Джон Доу",
+    "age" => 30,
+    "email" => "john.doe@example.com"
+];
+
+// Конвертуємо PHP масив в JSON рядок
+$jsonString = json_encode($data);
+
+// Виводимо JSON рядок
+echo $jsonString;
+```
+**Приклад виводу:**
+```json
+{"name":"Джон Доу","age":30,"email":"john.doe@example.com"}
 ```
 
-### Запис JSON
-```PHP
-$data = ['name' => 'Марія', 'age' => 25];
-echo json_encode($data); // Виводить: {"name":"Марія","age":25}
+### Декодування JSON рядка в PHP масив
+```php
+// JSON рядок
+$jsonString = '{"name":"Джон Доу","age":30,"email":"john.doe@example.com"}';
+
+// Конвертуємо JSON рядок в PHP масив
+$data = json_decode($jsonString, true);
+
+// Виводимо PHP масив
+print_r($data);
+```
+**Приклад виводу:**
+```
+Array
+(
+    [name] => Джон Доу
+    [age] => 30
+    [email] => john.doe@example.com
+)
 ```
 
-### Обробка помилок
-```PHP
-$json = '{"name": "Андрій", "age": "невідомий"}';
-$data = json_decode($json);
+### Робота з сторонньою бібліотекою: GuzzleHttp
+Для складнішої обробки JSON та веб-запитів однією з популярних PHP бібліотек є GuzzleHttp. Вона спрощує HTTP-запити та легко працює з даними у форматі JSON.
 
-if (json_last_error() !== JSON_ERROR_NONE) {
-    echo 'Помилка декодування JSON: ' . json_last_error_msg();
-} else {
-    echo $data->name; // Андрій, якщо немає помилок
-}
+**Встановлення через Composer:**
+```
+composer require guzzlehttp/guzzle
 ```
 
-## Deep Dive
-JSON (JavaScript Object Notation) з'явився у 2000 році як альтернатива XML. Важливі особливості JSON включають пари ключ-значення і масиви. JSON використовується у RESTful API та багатьох веб-додатках. В PHP, `json_encode()` і `json_decode()` — основні функції для роботи з JSON. Після PHP 5.2.0, JSON став частиною стандартного дистрибутива, а у PHP 7 з'явились значні поліпшення ефективності.
+**Приклад запиту:**
+```php
+require 'vendor/autoload.php';
 
-## See Also
-- Офіційна документація PHP для роботи з JSON: https://www.php.net/manual/uk/book.json.php
-- JSON стандарт: https://www.json.org/json-uk.html
-- Уроки з обробки JSON в PHP: https://www.w3schools.com/php/php_ref_json.asp
+use GuzzleHttp\Client;
+
+$client = new Client();
+
+// Відправлення запиту до API, що повертає JSON
+$response = $client->request('GET', 'https://api.example.com/data', [
+    'headers' => [
+        'Accept' => 'application/json',
+    ],
+]);
+
+// Декодування JSON відповіді в PHP масив
+$data = json_decode($response->getBody(), true);
+
+// Вивід даних
+print_r($data);
+```
+
+**Припускаючи, що API повертає схожі JSON дані:**
+```
+Array
+(
+    [name] => Джон Доу
+    [age] => 30
+    [email] => john.doe@example.com
+)
+```
+Це демонструє легкість використання PHP для маніпуляцій з JSON, як з рідними функціями, так і з потужними бібліотеками на зразок GuzzleHttp для складніших завдань.

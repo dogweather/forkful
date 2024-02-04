@@ -1,33 +1,65 @@
 ---
-title:                "Aktuelles Datum abrufen"
-date:                  2024-01-20T15:16:03.919373-07:00
-simple_title:         "Aktuelles Datum abrufen"
-
+title:                "Den aktuellen Datum abrufen"
+date:                  2024-02-03T19:10:30.493722-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Den aktuellen Datum abrufen"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/ruby/getting-the-current-date.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Das Abrufen des aktuellen Datums in Ruby ist ein Weg, das heutige Datum zu bekommen. Programmierer nutzen das für Features wie Datumsstempel, Zeitleisten oder einfach nur, um zu wissen, welcher Tag heute ist.
+Das Abrufen des aktuellen Datums ist eine grundlegende Aufgabe in nahezu jedem Programmierprojekt - vom Protokollieren von Aktivitäten in einer Anwendung bis hin zum Generieren von Berichten mit Datumsstempeln. In Ruby lässt sich dies leicht mit der Standardbibliothek bewerkstelligen, was Operationen, die Daten involvieren, vereinfacht.
 
-## So geht's:
-```Ruby
+## Wie macht man das:
+Rubys Standardbibliothek enthält die Klassen `Date` und `Time` zur Handhabung von Datums- und Zeitangaben. So können Sie das aktuelle Datum abrufen:
+
+```ruby
 require 'date'
 
-# Das aktuelle Datum erhalten
-heute = Date.today
-puts "Heute ist der #{heute}"
-
-# Ausgabe
-# Heute ist der 2023-04-12
+current_date = Date.today
+puts current_date
 ```
 
-## Deep Dive
-Ruby bietet mit der Standardbibliothek 'date' einfache Möglichkeiten für die Arbeit mit Daten. Früher mussten Entwickler oft externe Bibliotheken verwenden oder eigenes Code-Geraffel schreiben, um mit Daten zu hantieren.
+Beispielausgabe: 
+```
+2023-04-12
+```
 
-Es gibt Alternativen wie 'Time.now' oder 'DateTime.now', aber 'Date.today' ist oft die beste Wahl, wenn man nur das Datum ohne Zeitangaben braucht. Unter der Haube verwendet Ruby Methoden, die plattformunabhängig sind, also keine Sorgen, ob Ihr Code auf verschiedenen Systemen gleich läuft.
+Um die Zeit zusammen mit dem Datum einzuschließen, ist Rubys `Time`-Klasse besser geeignet:
 
-## Siehe auch
-- Ruby-Dokumentation für die 'Time'-Klasse: [Ruby Time Class](https://ruby-doc.org/core/Time.html)
+```ruby
+current_time = Time.now
+puts current_time
+```
+
+Beispielausgabe: 
+```
+2023-04-12 14:33:07 +0200
+```
+
+Wenn Sie mehr Funktionalität benötigen, wie z.B. Zeitmanagement für Zeitzonen, möchten Sie vielleicht ein Drittanbieter-Gem wie `ActiveSupport` verwenden (Teil von Rails, kann aber eigenständig genutzt werden).
+
+Fügen Sie zunächst `activesupport` zu Ihrem Gemfile hinzu und führen Sie `bundle install` aus:
+
+```ruby
+gem 'activesupport'
+```
+
+Verwenden Sie es dann, um Zeitzonen zu verwalten:
+
+```ruby
+require 'active_support/time'
+
+Time.zone = 'Eastern Time (US & Canada)'  # Setzen Sie Ihre gewünschte Zeitzone
+current_time_with_zone = Time.zone.now
+puts current_time_with_zone
+```
+
+Beispielausgabe:
+```
+Wed, 12 Apr 2023 08:33:07 EDT -04:00
+```

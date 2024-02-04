@@ -1,58 +1,51 @@
 ---
 title:                "Schreiben auf Standardfehler"
-date:                  2024-01-19
+date:                  2024-02-03T19:33:16.677103-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Schreiben auf Standardfehler"
-
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/haskell/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-In der Programmierung ist das Schreiben auf den Standard Error (stderr) wichtig zum Melden von Fehlern und Diagnostik, ohne die Standardausgabe (stdout) zu stören. Das hilft dabei, Fehlermeldungen von normalen Ausgaben in Logs oder Dateien zu trennen.
+## Was & Warum?
+Das Schreiben auf Standard Error (stderr) in Haskell ermöglicht es Programmen, ihre Ausgabe zwischen normalen Ergebnissen und Fehlermeldungen zu differenzieren. Dies ist entscheidend für die Signalisierung von Problemen und die Fehlersuche, ohne den Standardausgang (stdout) zu überladen, der oft die primären Daten oder das Ergebnis des Programms trägt.
 
-## How to:
-In Haskell, du benutzt `hPutStrLn` von `System.IO`, um auf stderr zu schreiben:
+## Wie geht das:
+In Haskell ist das Schreiben auf stderr unkompliziert mit dem `System.IO` Modul der Basisbibliothek möglich. Unten ist ein einfaches Beispiel zur Demonstration:
 
-```Haskell
-import System.IO
-
-main :: IO ()
-main = hPutStrLn stderr "Das ist ein Fehler!"
-```
-
-Ausgabe im stderr-Stream:
-
-```
-Das ist ein Fehler!
-```
-
-Schreiben von regularer Ausgabe und Fehler in unterschiedliche Streams:
-
-```Haskell
+```haskell
 import System.IO
 
 main :: IO ()
 main = do
-  hPutStrLn stdout "Normale Ausgabe"
-  hPutStrLn stderr "Dies wurde auf stderr ausgegeben"
+  hPutStrLn stderr "Dies ist eine Fehlermeldung."
 ```
 
-Sample output:
+Die Ausgabe dieses Programms auf stderr wäre:
 
 ```
-Normale Ausgabe
-Dies wurde auf stderr ausgegeben
+Dies ist eine Fehlermeldung.
 ```
 
-## Deep Dive
-Stderr wurde mit Unix eingeführt und ist heutzutage Standard. Alternativ zu `hPutStrLn` gibt's `io.stderr:write` und `System.Log.Logger`, um Fehlern zu loggen. Haskell's Typsystem und reine Funktionen reduzieren die Notwendigkeit von stderr-Einsatz, aber es ist immer noch nützlich bei IO-Operationen und für Command-Line Tools.
+Wenn Sie an einer komplexeren Anwendung arbeiten oder eine bessere Kontrolle über das Logging (einschließlich Fehler) benötigen, könnten Sie sich für eine Drittanbieterbibliothek entscheiden. Eine beliebte Wahl ist `monad-logger`, das sich in den `mtl` Stil der Haskell-Programmierung integriert. Hier ist ein kleiner Ausschnitt unter Verwendung von `monad-logger`:
 
-In Haskell ist die Implementierung bequem, da `stderr` bereits ein Handle in der `System.IO` Bibliothek ist. Kein manuelles Erstellen von Handles nötig – du schreibst direkt auf das vorhandene Handle.
+```haskell
+{-# LANGUAGE OverloadedStrings #-}
+import Control.Monad.Logger
 
-## See Also
-Für mehr Details sieh dir die offizielle Dokumentation an:
-- Haskell's `System.IO` Modul: [https://hackage.haskell.org/package/base/docs/System-IO.html](https://hackage.haskell.org/package/base/docs/System-IO.html)
+main :: IO ()
+main = runStderrLoggingT $ do
+  logErrorN "Dies ist eine Fehlermeldung unter Verwendung von monad-logger."
+```
 
-Entdecke weitere Funktionen von `System.IO` für erweiterte IO-Operationen.
+Beim Ausführen gibt die Version von `monad-logger` ähnlich eine Fehlermeldung aus, aber sie ist mit mehr Kontext wie Zeitstempeln oder Protokollebenen ausgestattet, abhängig von der Konfiguration:
+
+```
+[Error] Dies ist eine Fehlermeldung unter Verwendung von monad-logger.
+```
+
+Beide Methoden dienen dem Zweck, auf stderr zu schreiben, wobei die Wahl weitgehend von der Komplexität und den Anforderungen Ihrer Anwendung abhängt.

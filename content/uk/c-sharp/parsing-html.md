@@ -1,63 +1,102 @@
 ---
-title:                "Парсинг HTML"
-date:                  2024-01-20T15:30:55.331384-07:00
-simple_title:         "Парсинг HTML"
-
+title:                "Аналіз HTML"
+date:                  2024-02-03T19:12:09.897557-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Аналіз HTML"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/c-sharp/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Що і Чому?)
-Parsing HTML means you're extracting useful info from a web page's HTML code. We do it to automate data collection or to interact with websites programmatically.
+## Що і чому?
 
-## How to: (Як це зробити:)
-**Installing HtmlAgilityPack:**
+Синтаксичний аналіз HTML у програмуванні включає аналіз структури HTML-документа, що дозволяє вам вилучати, маніпулювати та взаємодіяти з його вмістом програмно. Програмісти роблять це, щоб автоматизувати веб-скрапінг, екстракцію даних або навіть динамічно модифікувати веб-сторінки або HTML-документи для різних застосувань, що робить це суттєвою навичкою в розробці вебу, аналізі даних і сценаріях автоматизованого тестування.
 
-```csharp
-// Use NuGet to install the HtmlAgilityPack package.
-// Run this command in your Package Manager Console.
-Install-Package HtmlAgilityPack
-```
+## Як:
 
-**Basic parsing example:**
+Хоча .NET надає базову підтримку для роботи з HTML, наприклад, `HttpClient` для отримання веб-сторінок, він не має вбудованого, всеосяжного HTML-парсера. Тому більшість розробників на C# звертаються до популярних сторонніх бібліотек, як-от HtmlAgilityPack або AngleSharp, для надійних можливостей синтаксичного аналізу HTML. Обидві бібліотеки дозволяють легко виконувати запити, маніпуляції та обходження DOM HTML.
 
-```csharp
-using System;
-using HtmlAgilityPack;
+### Використання HtmlAgilityPack
 
-class Program
-{
-    static void Main()
-    {
-        // Load the HTML document
-        var web = new HtmlWeb();
-        var doc = web.Load("http://example.com");
+1. **Встановіть HtmlAgilityPack**: Спочатку додайте пакет HtmlAgilityPack до свого проекту через NuGet.
+   ```
+   Install-Package HtmlAgilityPack
+   ```
 
-        // Parse the titles from the website
-        foreach (var node in doc.DocumentNode.SelectNodes("//title"))
-        {
-            Console.WriteLine("Title: " + node.InnerText);
-        }
-    }
-}
-```
+2. **Приклад коду**: Розберіть HTML-рядок та витягніть заголовки всіх елементів `<h1>`.
 
-**Sample output:**
+   ```csharp
+   using HtmlAgilityPack;
+   using System;
+   using System.Linq;
 
-```
-Title: Example Domain
-```
+   class Program
+   {
+       static void Main(string[] args)
+       {
+           var html = @"<html>
+                         <body>
+                             <h1>Заголовок 1</h1>
+                             <h1>Заголовок 2</h1>
+                         </body>
+                        </html>";
+           var htmlDoc = new HtmlDocument();
+           htmlDoc.LoadHtml(html);
 
-## Deep Dive (Поглиблений аналіз):
-**Historical Context:** Initially, HTML parsing relied on regular expressions and custom parsers. Tools like HtmlAgilityPack provide a DOM-like interface making it more robust against malformed HTML.
+           var h1Tags = htmlDoc.DocumentNode.SelectNodes("//h1").Select(node => node.InnerText);
+           foreach (var title in h1Tags)
+           {
+               Console.WriteLine(title);
+           }
+       }
+   }
+   ```
 
-**Alternatives:** Besides HtmlAgilityPack, you can use AngleSharp or even regular expressions for simpler tasks. Some prefer using browser automation tools like Selenium for more complex scenarios.
+   **Приклад результату:**
+   ```
+   Заголовок 1
+   Заголовок 2
+   ```
 
-**Implementation Details:** HtmlAgilityPack allows you to perform standard DOM operations, like selecting nodes via XPath or CSS Selectors. It's crucial to manage errors properly, as real-world HTML can often be quite far from standards compliant.
+### Використання AngleSharp
 
-## See Also (Дивіться також):
-- HtmlAgilityPack GitHub Repository: [https://github.com/zzzprojects/html-agility-pack](https://github.com/zzzprojects/html-agility-pack)
-- AngleSharp GitHub Repository: [https://github.com/AngleSharp/AngleSharp](https://github.com/AngleSharp/AngleSharp)
-- Introduction to XPath: [https://www.w3schools.com/xml/xpath_intro.asp](https://www.w3schools.com/xml/xpath_intro.asp)
+1. **Встановіть AngleSharp**: Додайте бібліотеку AngleSharp до свого проекту через NuGet.
+   ```
+   Install-Package AngleSharp
+   ```
+
+2. **Приклад коду**: Завантажте HTML-документ і запитайте `div` елементи з певним класом.
+
+   ```csharp
+   using AngleSharp;
+   using AngleSharp.Dom;
+   using System;
+   using System.Linq;
+   using System.Threading.Tasks;
+
+   class Program
+   {
+       static async Task Main(string[] args)
+       {
+           var context = BrowsingContext.New(Configuration.Default);
+           var document = await context.OpenAsync(req => req.Content("<div class='item'>Елемент 1</div><div class='item'>Елемент 2</div>"));
+
+           var items = document.QuerySelectorAll(".item").Select(element => element.TextContent);
+           foreach (var item in items)
+           {
+               Console.WriteLine(item);
+           }
+       }
+   }
+   ```
+
+   **Приклад результату:**
+   ```
+   Елемент 1
+   Елемент 2
+   ```
+
+Як HtmlAgilityPack, так і AngleSharp є потужними інструментами для синтаксичного аналізу HTML, але ваш вибір між ними може залежати від конкретних вимог проекту, міркувань щодо продуктивності або особистих переваг у дизайні API.

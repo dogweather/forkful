@@ -1,8 +1,8 @@
 ---
 title:                "Writing to standard error"
-date:                  2024-01-19
+date:                  2024-02-03T19:03:49.305565-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Writing to standard error"
-
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/swift/writing-to-standard-error.md"
 ---
@@ -10,36 +10,93 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Writing to standard error (`stderr`) channels critical messages to a special output stream reserved for errors, separate from the main output (`stdout`). Programmers use it for logging errors and diagnostic messages so they don't jumble up regular program data and can be easily tracked or redirected.
+
+Writing to standard error (stderr) is about directing your program's error messages or diagnostics output to a separate stream, distinct from the standard output (stdout). This is crucial for debugging and logging errors without cluttering the standard output, facilitating both developers' and users' understanding of the program's state and issues.
 
 ## How to:
-Swift makes writing to `stderr` straightforward. See the example below:
 
-```Swift
+In Swift, writing to standard error can be done using the `FileHandle` class for direct stderr access. Here's a simple example:
+
+```swift
 import Foundation
 
-// Writing to standard error
-func writeToStdErr(_ message: String) {
-    if let data = "\(message)\n".data(using: .utf8) {
-        FileHandle.standardError.write(data)
+// Define a message
+let errorMessage = "An error occurred.\n"
+
+// Convert the message to data
+if let data = errorMessage.data(using: .utf8) {
+    // Write the error message to stderr
+    FileHandle.standardError.write(data)
+}
+```
+
+Output to stderr (typically viewed in a console or terminal):
+```
+An error occurred.
+```
+
+For more complex logging or when working with external libraries, one might consider using a third-party library like **SwiftLog**. Although **SwiftLog** doesn't write to stderr directly out of the box, you can implement a custom logging backend to achieve this. Here's a simplified example of defining a custom log handler that writes to stderr:
+
+First, add **SwiftLog** to your project dependencies in `Package.swift`:
+```swift
+// swift-tools-version:5.3
+
+import PackageDescription
+
+let package = Package(
+    name: "YourPackageName",
+    dependencies: [
+        .package(url: "https://github.com/apple/swift-log.git", from: "1.0.0"),
+    ],
+    targets: [
+        .target(
+            name: "YourTargetName",
+            dependencies: [
+                .product(name: "Logging", package: "swift-log"),
+            ]),
+    ]
+)
+```
+
+Then, implement a custom log handler that writes to stderr:
+
+```swift
+import Logging
+import Foundation
+
+struct StderrLogHandler: LogHandler {
+    let label: String
+    
+    var logLevel: Logger.Level = .info
+    
+    func log(level: Logger.Level, message: Logger.Message, metadata: Logger.Metadata?, source: String, file: String, function: String, line: UInt) {
+        let output = "\(message)\n"
+        if let data = output.data(using: .utf8) {
+            FileHandle.standardError.write(data)
+        }
+    }
+    
+    subscript(metadataKey metadataKey: String) -> Logger.Metadata.Value? {
+        get { return nil }
+        set(newValue) { }
+    }
+    
+    var metadata: Logger.Metadata {
+        get { return [:] }
+        set(newMetadata) { }
     }
 }
 
-// Example usage
-writeToStdErr("Oops! Something went wrong.")
+// Usage
+LoggingSystem.bootstrap(StderrLogHandler.init)
+let logger = Logger(label: "com.example.yourapp")
 
-// Output when run in a console could look like this
-// (although this won't be visible in Xcode's console):
-// Oops! Something went wrong.
+logger.error("This is an error message")
 ```
 
-## Deep Dive
-In earlier programming days, distinguishing between `stdout` (standard output) and `stderr` (standard error) was vital for parsing command output and handling errors. Other languages offer similar constructs, and in Unix-based systems, these streams relate directly to the terminal. Implementing this in Swift taps into the same underlying principles, where `stderr` serves as an unbuffered stream, meaning it immediately flushes the output. This behavior is crucial for real-time error reporting. 
+Output to stderr:
+```
+This is an error message
+```
 
-Alternatives include logging frameworks that can offer more features, like log levels and message formats. Swift's own standard libraries are rather minimalistic; if you need sophistication, you'll likely look at third-party libraries or the Apple-unified logging system.
-
-## See Also
-For a deeper understanding and additional context, check out these resources:
-
-- [Apple's Unified Logging documentation](https://developer.apple.com/documentation/os/logging)
-- [Swift’s Standard Library reference for FileHandle](https://developer.apple.com/documentation/foundation/filehandle)
+This custom handler allows you to route your SwiftLog error messages directly to standard error, integrating seamlessly with other log messages your application might generate.

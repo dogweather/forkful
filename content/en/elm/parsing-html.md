@@ -1,8 +1,8 @@
 ---
 title:                "Parsing HTML"
-date:                  2024-01-20T15:31:27.703931-07:00
+date:                  2024-02-03T19:02:39.515187-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Parsing HTML"
-
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/elm/parsing-html.md"
 ---
@@ -10,77 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Parsing HTML means converting HTML text into a data structure your program can work with. Programmers do this to manipulate, extract, and interact with the content of web pages programmatically.
+Parsing HTML in Elm involves extracting information from HTML documents. Programmers do it to interface with web content or APIs that return HTML, allowing for the creation of more interactive and dynamic web applications.
 
 ## How to:
-Elm doesn't parse raw HTML on its own out of the box; instead, it focuses on rendering views with its own `Html` module. To parse HTML, you'll typically use a server-side service or an external JavaScript library, then pass the data to Elm. Here's a basic Elm setup for dealing with parsed HTML data:
+Elm doesn't have a built-in library for parsing HTML directly akin to libraries in JavaScript or Python due to its emphasis on type safety and avoiding runtime errors. However, you can use `Http` requests to fetch content and then use regular expressions or server-side processing to extract needed information. For more complex HTML parsing, a common approach involves using a dedicated backend service to parse the HTML and return the data in a format Elm can work with directly, like JSON.
 
-```Elm
-module Main exposing (main)
+Here's an example of fetching HTML content (assuming the server response is in a clean format or a specific tag content):
 
+```elm
+import Browser
 import Html exposing (Html, text)
-import Json.Decode as Decode
+import Http
 
-type alias HtmlData =
-    { tag : String
-    , attributes : List (String, String)
-    , content : String
-    }
+type alias Model =
+    { content : String }
 
--- Assuming you have a JSON object that represents your HTML data
-htmlDataDecoder : Decode.Decoder HtmlData
-htmlDataDecoder =
-    Decode.map3 HtmlData
-        (Decode.field "tag" Decode.string)
-        (Decode.field "attributes" (Decode.list (Decode.tuple Decode.string Decode.string)))
-        (Decode.field "content" Decode.string)
+initialModel : Model
+initialModel =
+    { content = "" }
 
--- Replace with the actual JSON from a server or external JS library
-sampleJson : String
-sampleJson = 
-    """
-    {"tag":"div", "attributes": [["class", "container"]], "content": "Hello, Elm!"}
-    """
+type Msg
+    = Fetch
+    | ReceiveContent String
 
--- Decoding the sample JSON to HtmlData
-decodedHtmlData : Result Decode.Error HtmlData
-decodedHtmlData =
-    Decode.decodeString htmlDataDecoder sampleJson
+update : Msg -> Model -> (Model, Cmd Msg)
+update msg model =
+    case msg of
+        Fetch ->
+            ( model
+            , Http.get
+                { url = "https://example.com"
+                , expect = Http.expectString ReceiveContent
+                }
+            )
 
--- Rendering a view from our HtmlData
-view : HtmlData -> Html msg
-view htmlData =
-    Html.text (htmlData.content)
+        ReceiveContent content ->
+            ( { model | content = content }
+            , Cmd.none
+            )
 
-main : Html msg
-main =
-    case decodedHtmlData of
-        Ok data ->
-            view data
-        
-        Err error ->
-            text "Failed to parse HTML data"
+view : Model -> Html Msg
+view model =
+    text model.content
 
+-- Assume the main function and subscriptions definitions follow Elm's standard application structure.
 ```
 
-This dummy setup shows you how you'd start to work with parsed HTML data within Elm.
+For processing the response to actually parse specific elements or data, you might consider sending the HTML content to a server endpoint you control, where you can use libraries available in languages like JavaScript (Cheerio, Jsdom) or Python (BeautifulSoup, lxml) for parsing, and then return structured data (like JSON) back to your Elm application.
 
-## Deep Dive
-Historically, Elm's strong emphasis on type safety and a solid architecture means direct HTML parsing isn't its strong suit. Elm shines in building reliable web apps with minimal runtime errors.
-
-For HTML parsing, you'd usually lean on JavaScript, which has mature libraries like `DOMParser` and jQuery's `$.parseHTML`. You'd do the heavy lifting in JavaScript, then ship the parse tree to Elm as Serialized JSON. You can turn to ports (Elm's way of communicating with JavaScript) or web services for that.
-
-Once in Elm, JSON decoders turn serialized data into structured Elm types. With the JSON decode approach, you enjoy Elm's type safety and can keep messy HTML parsing logic outside your Elm codebase.
-
-Alternatives? If you absolutely must parse HTML within Elm, you'll likely need a custom solution. It might involve using a server-side parser that exposes an API or an Elm package—if you find one that fits your needs, though choices are currently limited.
-
-## See Also
-For more on JSON decoding in Elm:
-- The official Elm guide on JSON: https://guide.elm-lang.org/effects/json.html
-
-Elm ports for JavaScript interop:
-- Elm's guide on ports: https://guide.elm-lang.org/interop/ports.html
-
-Community discussions and insights:
-- Elm Discourse: https://discourse.elm-lang.org/
-- Elm Slack channel, where you can ask for help and discuss: https://elmlang.herokuapp.com/
+Remember, directly parsing HTML in client-side Elm code is not the typical pattern due to language constraints and the philosophy of encouraging a clear separation between content fetching and content processing. The Elm architecture leans towards processing data in a safer, more predictable format like JSON.

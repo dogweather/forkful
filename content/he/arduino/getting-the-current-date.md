@@ -1,68 +1,65 @@
 ---
 title:                "קבלת התאריך הנוכחי"
-date:                  2024-01-20T15:13:25.153599-07:00
+date:                  2024-02-03T19:09:21.015888-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "קבלת התאריך הנוכחי"
-
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/arduino/getting-the-current-date.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## מה ולמה?
-קבלת התאריך הנוכחי בארדואינו היא פעולה שמאפשרת לתוכנית שלך לדעת איזה יום ושעה עכשיו. זה שימושי ללוחות זמנים, תיעוד אירועים, ולשליטה בפעילויות תלויות זמן.
+קבלת התאריך הנוכחי בפרויקטים של ארדואינו כוללת את השגת מידע בזמן אמת, אשר יכול להיות קריטי לתיעוד, הצמדת זמן או לתזמון משימות. למתכנתים לעיתים קרובות יש צורך ביכולת זו כדי לשפר פונקציונליות, להבטיח רלוונטיות נתונים, ולהקל על פעולות רגישות לזמן בפרויקטים המשובצים וב-IoT שלהם.
 
-## איך לעשות:
-כדי להשיג את התאריך הנוכחי בארדואינו, תצטרך להשתמש במודול RTC (Real-Time Clock). המודול DS3231 הוא דוגמה פופולרית:
+## איך לעשות זאת:
+הארדואינו עצמו אינו מכיל שיטה מובנית לצורך קבלת התאריך הנוכחי באופן ישיר, מכיוון שאין לו שעון אמת (RTC). עם זאת, ניתן להשיג זאת באמצעות מודולים חיצוניים של RTC כמו ה-DS3231, וספריות כמו `RTClib`, שפותחה על ידי Adafruit, אשר הופכת את הממשק עם מודולים אלו לפשוט.
 
-```Arduino
+ראשית, ודאו שספריית ה-`RTClib` מותקנת בסביבת הפיתוח Arduino IDE שלכם. לאחר מכן, חברו את מודול ה-RTC לארדואינו שלכם על פי ההוראות בתיעוד.
+
+הנה דוגמה פשוטה להתחלה:
+
+```cpp
 #include <Wire.h>
-#include <RTClib.h>
+#include "RTClib.h"
 
 RTC_DS3231 rtc;
 
 void setup() {
+  Serial.begin(9600);
+
   if (!rtc.begin()) {
     Serial.println("Couldn't find RTC");
     while (1);
   }
+
   if (rtc.lostPower()) {
     Serial.println("RTC lost power, let's set the time!");
-    // כאשר השעון מאבד זיכרון או חשמל בפעם הראשונה, יש לקבוע את התאריך והשעה ידנית:
-    rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
+    // כאשר יש צורך לקבוע את הזמן במכשיר חדש או לאחר אובדן כוח, אפשר לעשות זאת כאן.
+    // rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
   }
 }
 
 void loop() {
   DateTime now = rtc.now();
-  Serial.print("Current Date & Time: ");
+
+  Serial.print("תאריך נוכחי: ");
   Serial.print(now.year(), DEC);
   Serial.print('/');
   Serial.print(now.month(), DEC);
   Serial.print('/');
-  Serial.print(now.day(), DEC);
-  Serial.print(" ");
-  Serial.print(now.hour(), DEC);
-  Serial.print(':');
-  Serial.print(now.minute(), DEC);
-  Serial.print(':');
-  Serial.print(now.second(), DEC);
-  Serial.println();
-  delay(1000);
+  Serial.println(now.day(), DEC);
+
+  delay(3000); // השהייה של 3 שניות כדי להפחית ספאם בממשק הסריאלי
 }
 ```
 
-פלט דוגמה:
+פלט לדוגמה (בהנחה שה-RTC שלכם כבר הוגדר):
+
 ```
-Current Date & Time: 2023/4/3 15:45:30
+תאריך נוכחי: 2023/4/15
 ```
 
-## עיון נוסף:
-ה-DS3231 הוא מודול RTC שנותן שעה דיוקית ומחזיק בזמן בזמן שהמערכת מופעלת וגם כאשר היא לא. בעבר, היו טכניקות פחות מדויקות כמו שימוש בזמני פינג (ping) ובדיקת פולסים. אלטרנטיבות נוספות קיימות כמו NTP (Network Time Protocol), אבל הן דורשות חיבור לרשת.
-
-עדכון אוטומטי של השעון יכול להיעשות על ידי חיבור ל-GPS או לאינטרנט, אבל זה יכול להיות מסובך יותר וזקוק לחומרה נוספת. המודול DS3231 מתכתב עם ארדואינו דרך I2C, וקל לתכנת ולהשתמש.
-
-## ראה גם:
-- [DS3231 datasheet](https://datasheets.maximintegrated.com/en/ds/DS3231.pdf)
-- [RTClib library on GitHub](https://github.com/adafruit/RTClib)
-- [איך לסנכרן שעון RTC עם NTP](https://lastminuteengineers.com/esp32-ntp-server-date-time-tutorial/)
+הקוד הזה מאתחל את מודול ה-RTC ולאחר מכן, בלולאה, משיג ומדפיס את התאריך הנוכחי למוניטור הסריאלי כל 3 שניות. זכרו, אפשר לבטל את ההערה ולשנות את שורת ה-`rtc.adjust(...)` כדי לקבוע תחילה את תאריך והזמן של RTC או לאחר שהוא איבד כוח.

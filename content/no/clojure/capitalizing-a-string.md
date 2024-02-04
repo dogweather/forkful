@@ -1,45 +1,33 @@
 ---
-title:                "Sette streng til store bokstaver"
-date:                  2024-01-19
-simple_title:         "Sette streng til store bokstaver"
-
+title:                "Sette stor bokstav i en streng"
+date:                  2024-02-03T19:04:53.738362-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Sette stor bokstav i en streng"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/clojure/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Hva & Hvorfor?)
-Kapitalisering av en streng betyr å gjøre første bokstav i hvert ord til en stor bokstav. Programmerere kapitaliserer strenger for å følge språkregler, forbedre lesbarhet eller formatere tekstdata etter standarder.
+## Hva & Hvorfor?
+Å sette stor bokstav i en streng innebærer å endre strengen slik at dens første tegn er en stor bokstav, mens resten av strengen forblir uendret. Programmerere utfører ofte stor bokstavsetting av strenger for å sikre datakonsistens, spesielt for navn og steder, eller for å overholde grammatiske regler i brukergrensesnitt.
 
-## How to (Hvordan gjøre det)
-I Clojure, for å kapitalisere hver ord i en streng, bruker vi ikke en innebygd funksjon, men du kan kombinere flere funksjoner for å oppnå dette. Her er et eksempel:
+## Hvordan:
+Clojure, som er et JVM-språk, lar deg bruke Java String-metoder direkte. Her er et grunnleggende eksempel på hvordan du setter stor bokstav i en streng i Clojure:
 
-```Clojure
+```clojure
 (defn capitalize-string [s]
-  (clojure.string/join " " (map clojure.string/capitalize (clojure.string/split s #"\s+"))))
-  
-(capitalize-string "hei verden, dette er clojure!")
-```
-Output:
-```
-"Hei Verden, Dette Er Clojure!"
+  (if (empty? s)
+    s
+    (str (clojure.string/upper-case (subs s 0 1)) (subs s 1))))
+
+(capitalize-string "hello world!") ; => "Hello world!"
 ```
 
-## Deep Dive (Dypdykk)
-Clojure har ikke en innebygd funksjon for å kapitalisere alle ord i en streng direkte, til forskjell fra noen andre språk. Dette skyldes Clojures fokus på funksjonell programmering og komponerbare funksjoner. 
+Clojure inkluderer ikke en innebygd funksjon spesifikt for å sette stor bokstav i strenger, men som vist, kan du enkelt oppnå dette ved å kombinere `clojure.string/upper-case`, `subs` og `str` funksjoner.
 
-Alternativet vist over er å splitte strengen ved whitespace med `clojure.string/split`, kapitalisere hvert ord med `clojure.string/capitalize`, og så sette sammen ordene igjen med `clojure.string/join`. Dette er en komposisjon av funksjoner.
+For en mer kortfattet løsning og håndtering av mer komplekse strengmanipulasjoner, kan det hende du vender deg til et tredjepartsbibliotek. Et slikt populært bibliotek i Clojure-økosystemet er `clojure.string`. Imidlertid, per min siste oppdatering, tilbyr det ikke en direkte `capitalize`-funksjon utover det som er demonstrert med Clojures kjernefunksjonaliteter, så metoden vist ovenfor er din direkte tilnærming uten å trekke inn ekstra biblioteker spesifikt for stor bokstavsetting.
 
-Implementasjonsdetaljer for `clojure.string/capitalize` inkluderer at den bare gjør første bokstav stor, om bokstaven er lav. Resten av ordet påvirkes ikke. Om du vil ha streng konvertering hvor kun første bokstav er stor og resten små, må du selv definere en ny funksjon eller komponere eksisterende på en annen måte.
-
-Siden Clojure opererer på en Java Virtual Machine (JVM), kan du som alternativ også bruke Java sine strengmetoder direkte i Clojure.
-
-## See Also (Se Også)
-Kode og dokumentasjon:
-- [Clojure Strings](https://clojuredocs.org/clojure.string)
-- [ClojureDocs](https://clojuredocs.org)
-
-Relaterte emner:
-- [Functional Programming](https://clojure.org/about/functional_programming)
-- [Clojure - Java Interop](https://clojure.org/reference/java_interop)
+Husk, når du jobber med strenger i Clojure som samhandler med Java-metoder, jobber du effektivt med Java-strenger, noe som gjør at du kan utnytte hele arsenalt av Javas String-metoder direkte i Clojure-koden din om nødvendig.

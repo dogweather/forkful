@@ -1,46 +1,65 @@
 ---
-title:                "Запис в стандартний потік помилок"
-date:                  2024-01-19
-simple_title:         "Запис в стандартний потік помилок"
-
+title:                "Запис до стандартної помилки"
+date:                  2024-02-03T19:34:35.542864-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Запис до стандартної помилки"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/powershell/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Стандартна помилка (stderr) – це окремий потік, де програми записують повідомлення про помилки. Використовують її, аби виділяти помилки зі стандартного виводу (stdout) для зручнішої обробки та діагностики.
+## Що та чому?
 
-## How to:
-Вивести повідомлення в stderr:
+Запис в стандартну помилку (stderr) в PowerShell полягає у відправленні повідомлень про помилки або діагностичних повідомлень безпосередньо до потоку stderr, який є відмінним від потоку стандартного виведення (stdout). Таке розділення дозволяє досягти більш точного контролю над виведенням скрипта, даючи розробникам можливість направляти нормальні та повідомлення про помилки в різні місця призначення, що є основою для обробки помилок та ведення журналів.
 
-```PowerShell
-Write-Error "Це повідомлення про помилку"
+## Як:
+
+PowerShell спрощує процес запису в stderr за допомогою використання командлета `Write-Error` або шляхом направлення виводу до методу `$host.ui.WriteErrorLine()`. Однак, для безпосереднього перенаправлення stderr, вам може бути більше до вподоби використання методів .NET або перенаправлення дескриптора файлів, яке пропонує сам PowerShell.
+
+**Приклад 1:** Використання `Write-Error` для запису повідомлення про помилку в stderr.
+
+```powershell
+Write-Error "Це повідомлення про помилку."
 ```
 
-Перехоплення stderr у файл:
-
-```PowerShell
-Some-Command 2> errors.txt
+Вивід в stderr:
+```
+Write-Error: Це повідомлення про помилку.
 ```
 
-Вивід об’єкта у stderr:
+**Приклад 2:** Використання `$host.ui.WriteErrorLine()` для безпосереднього запису в stderr.
 
-```PowerShell
-$ErrorObj = [System.Management.Automation.ErrorRecord]::new(
-    [Exception]::new("Помилка"),
-    "ErrorId",
-    [System.Management.Automation.ErrorCategory]::NotSpecified,
-    $null
-)
-$PSCmdlet.WriteError($ErrorObj)
+```powershell
+$host.ui.WriteErrorLine("Безпосередній запис в stderr.")
 ```
 
-## Deep Dive
-`Write-Error` в PowerShell існує з самого початку. Це один із способів взаємодії з stderr. Існують інші, наприклад, `[Console]::Error.WriteLine()`. Запис у stderr не зупинить виконання скрипта, на відміну від `throw`.
+Вивід в stderr:
+```
+Безпосередній запис в stderr.
+```
 
-## See Also
-1. [about_Redirection](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_Redirection)
-2. [about_Throw](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_Throw)
-3. [Console.Error](https://docs.microsoft.com/dotnet/api/system.console.error)
+**Приклад 3:** Використання методів .NET для запису в stderr.
+
+```powershell
+[Console]::Error.WriteLine("Використання методу .NET для stderr")
+```
+
+Вихідні дані цього методу:
+```
+Використання методу .NET для stderr
+```
+
+**Приклад 4:** Перенаправлення виводу помилок за допомогою дескриптора файлу `2>`.
+
+Дескриптори файлів у PowerShell можуть перенаправляти різні потоки. Для stderr дескриптором є `2`. Ось приклад перенаправлення stderr до файлу під назвою `error.log` під час виконання команди, що генерує помилку.
+
+```powershell
+Get-Item NonExistentFile.txt 2> error.log
+```
+
+Цей приклад не продукує вивід у консолі, але створює файл `error.log` у поточному каталозі, що містить повідомлення про помилку через спробу доступу до файлу, якого не існує.
+
+На завершення, PowerShell забезпечує декілька методів для ефективного запису та управління виводом помилок, дозволяючи розробляти складні стратегії обробки помилок та ведення журналів у скриптах та додатках.

@@ -1,48 +1,53 @@
 ---
-title:                "Sette streng til store bokstaver"
-date:                  2024-01-19
-simple_title:         "Sette streng til store bokstaver"
-
+title:                "Sette stor bokstav i en streng"
+date:                  2024-02-03T19:05:01.868856-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Sette stor bokstav i en streng"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/arduino/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Å sette store bokstaver i en streng betyr å endre alle bokstavene til versaler (store bokstaver). Programmerere gjør dette for å standardisere tekstdata, for eksempel for å vise navn og titler konsekvent.
+Å sette stor bokstav i en streng innebærer å konvertere det første tegnet i hvert ord i en streng til stor bokstav mens resten forblir små bokstaver. Denne operasjonen er vanlig i dataformatering og normalisering av brukerinndata for å opprettholde konsistens og bedre lesbarhet.
 
-## Slik gjør du:
-Husk at Arduino ikke har innebygd strengbehandling som andre programmeringsspråk. Vi må selv lage en funksjon for dette:
+## Hvordan:
+Arduino, primært kjent for å samhandle med maskinvare, inkluderer også grunnleggende funksjoner for manipulering av strenger gjennom sitt `String`-objekt. Det mangler imidlertid en direkte `capitalize`-funksjon sett i høyere nivåspråk. Derfor implementerer vi kapitalisering ved å iterere over en streng og anvende transformasjoner av bokstavstørrelse.
 
-```arduino
+Her er et grunnleggende eksempel uten å bruke tredjepartsbibliotek:
+
+```cpp
+String capitalizeString(String input) {
+  if (input.length() == 0) {
+    return ""; // Returner en tom streng hvis input er tom
+  }
+  input.toLowerCase(); // Konverter hele strengen til små bokstaver først
+  input.setCharAt(0, input.charAt(0) - 32); // Gjør første tegn til stor bokstav
+  
+  // Gjør bokstaver til store bokstaver som følger etter et mellomrom
+  for (int i = 1; i < input.length(); i++) {
+    if (input.charAt(i - 1) == ' ') {
+      input.setCharAt(i, input.charAt(i) - 32);
+    }
+  }
+  return input;
+}
+
 void setup() {
   Serial.begin(9600);
-  char tekst[] = "Arduino er gøy!";
-  kapitaliserStreng(tekst);
-  Serial.println(tekst);
+  String testStr = "hello arduino world";
+  String capitalizedStr = capitalizeString(testStr);
+  Serial.println(capitalizedStr); // Utdata: "Hello Arduino World"
 }
 
 void loop() {
-  // Ingenting her
-}
-
-void kapitaliserStreng(char* linje) {
-  for (int i = 0; linje[i] != '\0'; i++) {
-    linje[i] = toupper(linje[i]);
-  }
+  // Tom løkke
 }
 ```
 
-Kjører du koden, ser du dette i Serial Monitor:
-```
-ARDUINO ER GØY!
-```
+Denne kodesnutten definerer en `capitalizeString`-funksjon som først konverterer hele strengen til små bokstaver for å standardisere dens tilfelle. Deretter gjør den det første tegnet og ethvert tegn som følger etter et mellomrom til store bokstaver, noe som effektivt kapitaliserer hvert ord i inndatastrengen. Merk at denne grunnleggende implementeringen antar ASCII-tegnkoding og kan trenge justeringer for full Unicode-støtte.
 
-## Dypdykk
-Historisk sett kommer behovet for å kapitalisere fra tidlige datamaskiner og brukergrensesnitt som hadde begrenset grafikk, der store bokstaver skilte seg mer ut. Et alternativ til vår `kapitaliserStreng`-funksjon er å bruke String-objekter som inkluderer `.toUpperCase()`-metoden, men disse kan føre til minnelekkasje på minnebegrensede systemer som Arduinoer. Detaljert, streng-kapitalisering i Arduino krever manuell iterasjon over hver karakter i et array og å bruke `toupper()` funksjonen fra `ctype.h`-biblioteket.
-
-## Se Også
-- Arduino String Reference: https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/
-- ASCII Table and Description: http://www.asciitable.com/
-- `ctype.h` library documentation: https://www.cplusplus.com/reference/cctype/
+For tiden er det ikke bredt aksepterte tredjepartsbibliotek spesifikt for strengmanipulering i Arduino-økosystemet, hovedsakelig på grunn av dets fokus på maskinvareinteraksjon og effektivitet. Imidlertid er det gitte eksemplet en grei måte å oppnå kapitalisering av strenger innenfor Arduinos programmeringsmiljø.

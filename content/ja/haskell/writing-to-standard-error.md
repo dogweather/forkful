@@ -1,34 +1,51 @@
 ---
 title:                "標準エラーへの書き込み"
-date:                  2024-01-19
+date:                  2024-02-03T19:33:32.541998-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "標準エラーへの書き込み"
-
 tag:                  "Files and I/O"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/haskell/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-標準エラー (stderr) への書き込みは、エラーメッセージや警告をログに出力する手法です。これにより、正常な出力と診断メッセージを分離し、デバッグやログ監視を効率的に行えます。
+## 何となぜ？
+Haskellで標準エラー（stderr）に書き込むことは、プログラムが通常の結果とエラーメッセージを区別できるようにすることを可能にします。これは、問題のシグナリングとデバッグに不可欠であり、プログラムの主要なデータや結果をしばしば持つ標準出力（stdout）をごちゃごちゃにしないようにします。
 
-## How to:
+## 方法:
+Haskellでstderrに書き込むことは、基本ライブラリの`System.IO`モジュールを使って簡単に行えます。以下に基本例を示します：
 
-```Haskell
-import System.IO (hPutStrLn, stderr)
+```haskell
+import System.IO
 
 main :: IO ()
 main = do
-  hPutStrLn stderr "エラー: 不明なコマンド"
+  hPutStrLn stderr "これはエラーメッセージです。"
 ```
 
-実行結果: 標準エラーへ「エラー: 不明なコマンド」と表示されます。
+このプログラムのstderrへの出力は以下の通りです：
 
-## Deep Dive
-Haskellの`Stdlib`では、`System.IO` モジュールが標準出力(stdout)と標準エラー(stderr)の両方を扱います。初期のUnixシステムで採用されて以来、stderrはエラーメッセージの標準的な出力先です。代替手段として日誌ファイセルへ直接記録することもありますが、標準エラーへの書き込みはデバッグ時の標準プラクティスです。実装上、`hPutStrLn` 関数を使用し、第一引数に `stderr`ハンドルを指定することで標準エラーに情報を出力できます。
+```
+これはエラーメッセージです。
+```
 
-## See Also
-- [Hackage Haskell Library documentation for System.IO](https://hackage.haskell.org/package/base/docs/System-IO.html)
-- [Haskell Wiki on IO](https://wiki.haskell.org/IO_inside)
-- [Real World Haskell: Chapter 7 - I/O](http://book.realworldhaskell.org/read/io.html)
+もし、より複雑なアプリケーションで作業している場合、またはログ（エラーを含む）に対してより良い制御が必要な場合は、サードパーティのライブラリを選択するかもしれません。一つの人気な選択肢は、Haskellプログラミングの`mtl`スタイルと統合する`monad-logger`です。こちらは`monad-logger`を使用した小さなスニペットです：
+
+```haskell
+{-# LANGUAGE OverloadedStrings #-}
+import Control.Monad.Logger
+
+main :: IO ()
+main = runStderrLoggingT $ do
+  logErrorN "これはmonad-loggerを使ったエラーメッセージです。"
+```
+
+実行時に、`monad-logger`バージョンも同様にエラーメッセージを出力しますが、設定に応じて、タイムスタンプやログレベルなどのより多くのコンテキストが装備されています：
+
+```
+[Error] これはmonad-loggerを使ったエラーメッセージです。
+```
+
+両方の方法はstderrに書き込む目的を果たしますが、選択は大きくアプリケーションの複雑さとニーズに依存します。

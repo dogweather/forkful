@@ -1,40 +1,69 @@
 ---
 title:                "Obtendo a data atual"
-date:                  2024-01-20T15:16:44.897402-07:00
+date:                  2024-02-03T19:10:57.401982-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Obtendo a data atual"
-
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/swift/getting-the-current-date.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## O que é & Porquê?
-Obter a data atual é pegar o dia, mês, ano, e hora em que um código está sendo executado. Programadores fazem isso para registros de log, funcionalidades de datas e várias outras operações dependentes do tempo atual.
+## O que & Por quê?
+Obter a data atual em Swift envolve o uso da classe `Date` para acessar a data e a hora em que o aplicativo está sendo executado. Os programadores precisam buscar a data atual por uma miríade de razões, que vão desde marcar eventos com timestamp, realizar cálculos de datas, até exibir datas e horários em uma interface de usuário.
 
 ## Como fazer:
-```Swift
+O framework `Foundation` do Swift fornece a classe `Date`, facilitando a obtenção da data e hora atuais. Aqui está um exemplo básico de como obter a data atual:
+
+```swift
 import Foundation
 
-// Obtendo a data e hora atuais
-let agora = Date()
-
-// Formatando e exibindo a data e hora
-let formatador = DateFormatter()
-formatador.dateFormat = "dd/MM/yyyy HH:mm:ss"
-let dataFormatada = formatador.string(from: agora)
-print(dataFormatada) // Saída: a data e hora atuais, por exemplo: "31/03/2023 14:55:37"
+let currentDate = Date()
+print(currentDate)
 ```
 
-## Mergulho Profundo
-Antes de termos dispositivos com relógios internos, obter a data e a hora atual era mais complicado, muitas vezes dependendo de fontes externas. Hoje, em Swift, usamos a classe `Date` para capturar o instante atual, que conta os segundos desde o Unix Epoch (1 de janeiro de 1970). Alternativas incluem usar `Calendar` para lidar com fusos horários e localizações, ou `DateComponents` para acessar partes específicas da data.
+Isso irá produzir algo como:
 
-Há uma coisa importante a se notar sobre o uso do `DateFormatter`: configurá-lo é considerado uma operação custosa. Portanto, se você estiver formatando muitas datas, é ideal reutilizar o mesmo `DateFormatter`, em vez de criar um novo a cada vez.
+```
+2023-04-12 07:46:23 +0000
+```
 
-O horário de verão e diferentes calendários (gregoriano, budista, etc.) podem afetar como as datas são calculadas e exibidas, então, dependendo da sua aplicação, é preciso considerar esses fatores.
+O formato de saída segue o padrão ISO 8601, usando o fuso horário UTC. No entanto, você pode querer formatar essa data para fins de exibição. A classe `DateFormatter` do Swift vem em socorro:
 
-## Veja Também
-- [Documentação oficial da classe Date](https://developer.apple.com/documentation/foundation/date)
-- [Tutorial da Apple para trabalhar com datas e horas](https://developer.apple.com/documentation/foundation/datecomponents)
-- [Guia rápido para DateFormatter](https://www.hackingwithswift.com/articles/140/the-complete-guide-to-dateformatter)
-- [Stack Overflow: Exemplos de manipulação de data e hora em Swift](https://stackoverflow.com/questions/tagged/swift+date)
+```swift
+let formatter = DateFormatter()
+formatter.dateStyle = .long
+formatter.timeStyle = .medium
+let formattedDate = formatter.string(from: currentDate)
+print(formattedDate)
+```
+
+Um exemplo de saída poderia ser:
+
+```
+12 de abril de 2023 às 10:46:23
+```
+
+Note que o formato de saída irá variar dependendo do local onde o dispositivo executando o código se encontra.
+
+Para projetos que requerem manipulações de datas mais complexas, muitos desenvolvedores Swift recorrem a bibliotecas de terceiros, como a `SwiftDate`. Veja como você pode usar a `SwiftDate` para obter a data atual em um fuso horário e formato específicos:
+
+Primeiro, adicione `SwiftDate` ao seu projeto usando SPM, CocoaPods, ou Carthage. Então:
+
+```swift
+import SwiftDate
+
+let rome = Region(calendar: .gregorian, zone: .europeRome, locale: .current)
+let currentDateInRome = DateInRegion(Date(), region: rome)
+print(currentDateInRome.toFormat("yyyy-MM-dd HH:mm:ss"))
+```
+
+Isso poderia produzir:
+
+```
+2023-04-12 09:46:23
+```
+
+Usando `SwiftDate`, você pode facilmente manipular datas e horários para diferentes fusos horários e locais, simplificando tarefas complexas de tratamento de datas em suas aplicações Swift.

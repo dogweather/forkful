@@ -1,49 +1,72 @@
 ---
 title:                "Utilizzo delle espressioni regolari"
-date:                  2024-01-19
+date:                  2024-02-03T19:16:37.997085-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Utilizzo delle espressioni regolari"
-
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/elm/using-regular-expressions.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Le espressioni regolari sono strumenti per trovar corrispondenze in stringhe di testo. Le usiamo perché sono efficienti per la validazione, la ricerca e la manipolazione di testo.
+## Cosa & Perché?
+Le espressioni regolari (regex) nella programmazione sono schemi utilizzati per corrispondere combinazioni di caratteri nelle stringhe. In Elm, come in altri linguaggi, i programmatori utilizzano le regex per compiti come la validazione dell'input, la ricerca e la sostituzione del testo all'interno delle stringhe, grazie alla loro flessibilità ed efficienza.
 
-## How to:
-Elm usa il pacchetto `regex` per gestire le espressioni regolari. Ecco come usarlo:
+## Come fare:
+Elm non possiede funzioni regex integrate nella sua libreria di base, richiedendo l'uso di librerie di terze parti per queste operazioni. Una delle scelte popolari per lavorare con le regex è `elm/regex`. Puoi aggiungerlo al tuo progetto usando `elm install elm/regex`.
 
-```elm
-import Regex exposing (fromString, contains)
+Ecco come puoi utilizzare `elm/regex` per alcuni compiti comuni:
 
-main =
-    let
-        regex = fromString "^[a-zA-Z0-9]*$"
-        isMatch = contains regex
-    in
-    isMatch "ContenutoValido123" -- True
-```
-
-Esempio con sostituzione:
+### 1. Corrispondenza di un modello
+Per verificare se una stringa corrisponde a un modello, puoi usare `Regex.contains`.
 
 ```elm
-import Regex exposing (replace, All, regex)
+import Regex
 
-main =
-    let
-        pattern = regex "\\s+"
-        replacement = "_"
-        cleanString = replace All pattern (\_ -> replacement)
-    in
-    cleanString "Sostituisci   spazi   con underscore." -- "Sostituisci_spazi_con_underscore."
+pattern : Regex.Regex
+pattern = Regex.fromString "^[a-zA-Z0-9]+$" |> Maybe.withDefault Regex.never
+
+isAlphanumeric : String -> Bool
+isAlphanumeric input = Regex.contains pattern input
+
+-- Esempio di utilizzo:
+isAlphanumeric "Elm2023"     -- Output: True
+isAlphanumeric "Elm 2023!"   -- Output: False
 ```
 
-## Deep Dive
-Elm richiede una virgola di escape aggiuntiva quando si usano espressioni regolari. Prima dell'avvento dei pacchetti dedicati le alternative erano limitate, ma ora il pacchetto `regex` è robusto e ben integrato. Funziona convertendo le espressioni regolari in motori di ricerca interni ottimizzati per Elm.
+### 2. Trovare tutte le corrispondenze
+Per trovare tutte le occorrenze di un modello all'interno di una stringa, puoi usare `Regex.find`.
 
-## See Also
-- Documentazione Elm [`Regex` package](https://package.elm-lang.org/packages/elm/regex/latest/).
-- [elm-community/string-extra](https://package.elm-lang.org/packages/elm-community/string-extra/latest/): offre funzioni di manipolazione delle stringhe che possono essere usate insieme alle espressioni regolari.
-- Tutorial su espressioni regolari: [RegexOne](https://regexone.com/).
+```elm
+matches : Regex.Regex
+matches = Regex.fromString "\\b\\w+\\b" |> Maybe.withDefault Regex.never
+
+getWords : String -> List String
+getWords input = 
+    input
+        |> Regex.find matches
+        |> List.map (.match)
+
+-- Esempio di utilizzo:
+getWords "Elm è divertente!"  -- Output: ["Elm", "è", "divertente"]
+```
+
+### 3. Sostituire il testo
+Per sostituire parti di una stringa che corrispondono a un modello, si usa `Regex.replace`.
+
+```elm
+replacePattern : Regex.Regex
+replacePattern = Regex.fromString "Elm" |> Maybe.withDefault Regex.never
+
+replaceElmWithHaskell : String -> String
+replaceElmWithHaskell input = 
+    Regex.replace replacePattern (\_ -> "Haskell") input
+
+-- Esempio di utilizzo:
+replaceElmWithHaskell "Imparare Elm è divertente!"  
+-- Output: "Imparare Haskell è divertente!"
+```
+
+In questi esempi, `Regex.fromString` viene utilizzato per compilare un modello regex, dove `\b` corrisponde ai limiti delle parole, e `\w` corrisponde a qualsiasi carattere di parola. Gestisci sempre il risultato `Maybe` di `Regex.fromString` per salvaguardarti contro modelli regex non validi, tipicamente usando `Maybe.withDefault`.

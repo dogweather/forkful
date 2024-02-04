@@ -1,37 +1,62 @@
 ---
-title:                "JSON 다루기"
-date:                  2024-01-19
-simple_title:         "JSON 다루기"
-
+title:                "JSON과 함께 일하기"
+date:                  2024-02-03T19:23:34.414430-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "JSON과 함께 일하기"
 tag:                  "Data Formats and Serialization"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/powershell/working-with-json.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-JSON은 데이터 저장 및 교환 포맷입니다. 프로그래머들은 이해하기 쉽고, 다양한 언어에서 쉽게 다룰 수 있어서 JSON을 자주 사용합니다.
+## 무엇인가 & 왜인가?
 
-## How to:
-JSON 데이터 읽기, 쓰기, 변환을 PowerShell에서 쉽게 할 수 있습니다. 아래는 예제입니다:
+PowerShell이 JSON(JavaScript Object Notation)과 통합되는 것은 JSON 데이터를 파싱(읽기)하고 생성(쓰기)하는 것과 관련이 있습니다. 이는 웹상의 데이터 교환을 위한 일반적인 형식입니다. 프로그래머들은 가벼운 특성과 언어 독립적인 성격 때문에, 웹 API와 상호 작용하거나 설정 파일을 다루거나, 다양한 언어 및 플랫폼 간 데이터 교환을 용이하게 하기 위해 JSON을 사용합니다.
 
-```PowerShell
-# JSON 문자열을 오브젝트로 변환하기
-$jsonString = '{"name": "Kim", "age": 30}'
-$userObject = $jsonString | ConvertFrom-Json
-$userObject.name  # Kim 출력
+## 방법:
 
-# 오브젝트를 JSON으로 변환하기
-$userObject = [PSCustomObject]@{ name = "Lee"; age = 25 }
-$jsonString = $userObject | ConvertTo-Json
-$jsonString  # {"name":"Lee","age":25} 출력
+### JSON 파싱
+
+PowerShell에서 JSON을 읽거나 파싱하기 위해서는 `ConvertFrom-Json` cmdlet을 사용할 수 있습니다. 주어진 JSON 문자열에 대해, 이 cmdlet은 PowerShell 객체로 변환합니다.
+
+```powershell
+$json = '{"name": "John Doe", "age": 30, "city": "New York"}'
+$person = $json | ConvertFrom-Json
+$person.name
 ```
 
-## Deep Dive
-JSON (JavaScript Object Notation)은 2001년부터 웹에서 데이터 교환 포맷으로 널리 사용되었습니다. XML과 같은 대안들도 있지만, JSON이 더 가볍고, 코드 가독성이 높습니다. PowerShell에서는 `ConvertFrom-Json`과 `ConvertTo-Json` cmdlet을 통해 JSON 작업을 할 수 있고, 처리 속도도 빠릅니다.
+샘플 출력:
 
-## See Also
-- [ConvertFrom-Json](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/convertfrom-json)
-- [ConvertTo-Json](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/convertto-json)
-- [PowerShell Gallery JSON modules](https://www.powershellgallery.com/packages?q=JSON)
+```
+John Doe
+```
+
+이 예제는 단순한 JSON 문자열을 파싱하여 결과 객체의 속성에 접근하는 방법을 보여줍니다.
+
+### JSON 생성
+
+PowerShell 객체에서 JSON을 생성하기 위해서는 `ConvertTo-Json` cmdlet을 사용할 수 있습니다. 이는 웹 서비스로 데이터를 보내거나 설정 파일에 저장하기 위한 준비과정에서 유용합니다.
+
+```powershell
+$person = [PSCustomObject]@{
+    name = "Jane Doe"
+    age = 25
+    city = "Los Angeles"
+}
+$json = $person | ConvertTo-Json
+Write-Output $json
+```
+
+샘플 출력:
+
+```json
+{
+    "name":  "Jane Doe",
+    "age":  25,
+    "city":  "Los Angeles"
+}
+```
+
+이 코드 스니펫은 PowerShell 객체를 생성한 다음 JSON 문자열로 변환합니다.

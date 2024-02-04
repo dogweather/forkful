@@ -1,60 +1,82 @@
 ---
-title:                "YAML-tiedostojen käsittely"
-date:                  2024-01-19
-simple_title:         "YAML-tiedostojen käsittely"
-
+title:                "Työskentely YAML:n kanssa"
+date:                  2024-02-03T19:25:31.388613-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Työskentely YAML:n kanssa"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/fish-shell/working-with-yaml.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-"Mikä & Miksi?"
+## Mikä & Miksi?
+YAML-tiedostojen käsittelyyn kuuluu YAML-tiedostojen (YAML Ain't Markup Language) jäsentäminen ja manipulointi, jotka ovat konfiguraatiotiedostoissa käytettyä datan sarjallistamismuotoa, Fish Shellissä. Ohjelmoijat tekevät tätä automatisoidakseen ja konfiguroidakseen sovelluksia tai palveluita tehokkaasti shell-ympäristöjen kontekstissa, helpottaen tehtäviä kuten konfiguraatioiden hallinta ja resurssien varaus.
 
-YAML on datan esittämiseen käytetty formaatti, selkeästi luettava ja ymmärrettävä. Käytämme YAMLia, koska se on ihmisystävällinen, ja soveltuu hyvin asetusten, konfiguraatioiden sekä tiedon tallentamiseen ja siirtämiseen.
+## Kuinka:
+Fish Shellillä ei ole sisäänrakennettua tukea YAML:n jäsentämiseen, mutta voit käyttää kolmannen osapuolen työkaluja, kuten `yq` (kevyt ja kannettava komentorivin YAML-prosessori) käsittelemään YAML-dataa.
 
-## How to:
-"Miten tehdään:"
-
-YAML-tiedostojen käsittely Fish Shell:ssä vaatii ulkoisen työkalun, kuten 'yq'. Asenna ensin 'yq' käyttäen esim. 'brew':
-
-```Fish Shell
-brew install yq
+**yq:n asennus (jos ei vielä asennettu):**
+```fish
+sudo apt-get install yq
 ```
 
-Lue YAML-tiedosto ja muuta sisältöä:
-
-```Fish Shell
-# Lue arvo
-yq e '.someKey' config.yaml
-
-# Muuta arvoa ja tallenna
-yq e '.someKey = "new value"' -i config.yaml
+**Arvon lukeminen YAML-tiedostosta:**
+Oletetaan, että sinulla on `config.yaml` YAML-tiedosto seuraavalla sisällöllä:
+```yaml
+database:
+  host: localhost
+  port: 3306
 ```
 
-Lisää uusi avain-arvopari:
-
-```Fish Shell
-yq e '.newKey = "new value"' -i config.yaml
+Lukeaksesi tietokannan hostin, käyttäisit:
+```fish
+set host (yq e '.database.host' config.yaml)
+echo $host
+```
+**Esimerkkituloste:**
+```
+localhost
 ```
 
-Tulostus tulee olemaan YAML-muodossa, eli esimerkiksi:
-
+**Arvon päivittäminen YAML-tiedostossa:**
+Päivittääksesi `port` arvon `5432`ksi, käytä:
+```fish
+yq e '.database.port = 5432' -i config.yaml
 ```
-someKey: new value
-newKey: new value
+**Vahvista päivitys:**
+```fish
+yq e '.database.port' config.yaml
+```
+**Esimerkkituloste:**
+```
+5432
 ```
 
-## Deep Dive
-"Sukellus syvemmälle"
+**Uuden YAML-tiedoston kirjoittaminen:**
+Luodaksesi uuden `new_config.yaml` määritellyllä sisällöllä:
+```fish
+echo "webserver:
+  host: '127.0.0.1'
+  port: 8080" | yq e -P - > new_config.yaml
+```
+Tämä käyttää `yq`:ta käsittelemään ja kauniisti tulostamaan (-P lippu) merkkijonon uuteen YAML-tiedostoon.
 
-YAML (YAML Ain't Markup Language) on luotu alun perin 2001, ja on kehittynyt yleisesti käytetyksi konfiguraatiokielenä. 'yq' on suosittu komentorivityökalu, joka käyttää 'jq':n (JSON-tiedostoille) tapaan laajaa kysely- ja muokkausominaisuutta YAML-tiedostoille. Vaihtoehtoja 'yq':lle ovat esimerkiksi 'Pyyaml' Pythonille tai 'RbYAML' Rubylle. Tehokkuus syntyy 'yq':n kyvystä lukea ja kirjoittaa YAML-dataa suoraviivaisesti komentoriviltä.
+**Monimutkaisten rakenteiden jäsentäminen:**
+Jos sinulla on monimutkaisempi YAML-tiedosto ja tarvitset haettavan sisäkkäisiä taulukoita tai objekteja, voit:
+```fish
+echo "servers:
+  - name: server1
+    ip: 192.168.1.101
+  - name: server2
+    ip: 192.168.1.102" > servers.yaml
 
-## See Also
-"Katso myös"
-
-- YAML:n kotisivu: [https://yaml.org/](https://yaml.org/)
-- 'yq' GitHub-sivu: [https://github.com/mikefarah/yq](https://github.com/mikefarah/yq)
-- Fish Shell dokumentaatio: [https://fishshell.com/docs/current/](https://fishshell.com/docs/current/)
-- YAML validatori (Verkko-työkalu YAML-tiedostojen validoimiseksi): [http://www.yamllint.com/](http://www.yamllint.com/)
+yq e '.servers[].name' servers.yaml
+```
+**Esimerkkituloste:**
+```
+server1
+server2
+```
+`yq`:n avulla Fish Shell tekee YAML-dokumenttien halki navigoinnista ja niiden manipuloinnista suoraviivaista erilaisia automaatio- ja konfiguraatiotehtäviä varten.

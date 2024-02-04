@@ -1,40 +1,52 @@
 ---
-title:                "Att hämta aktuellt datum"
-date:                  2024-01-20T15:14:40.214104-07:00
-simple_title:         "Att hämta aktuellt datum"
-
+title:                "Få det aktuella datumet"
+date:                  2024-02-03T19:09:39.184184-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Få det aktuella datumet"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/haskell/getting-the-current-date.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att hämta aktuellt datum innebär att ta reda på vad det är för dag just nu. Programmerare använder detta för att logga händelser, sätta tidsstämplar, eller hantera agenda-funktioner.
+Att hämta det aktuella datumet i Haskell innebär att få systemets nuvarande tid och omvandla den till ett läsbart datumformat. Programmerare gör detta för att utföra operationer baserade på datumet, såsom loggning, schemaläggning av uppgifter eller tidstämpling av händelser i applikationer.
 
 ## Hur man gör:
-```Haskell
-import Data.Time
+Haskells standardbibliotek, `base`, tillhandahåller `Data.Time`-modulen som erbjuder funktionalitet för att arbeta med datum och tider. Så här använder du den för att få det aktuella datumet:
 
-getCurrentDate :: IO Day
-getCurrentDate = utctDay <$> getCurrentTime
+```haskell
+import Data.Time (getCurrentTime, utctDay)
 
 main :: IO ()
 main = do
-    currentDate <- getCurrentDate
-    putStrLn $ "Dagens datum är: " ++ show currentDate
+    now <- getCurrentTime
+    let today = utctDay now
+    print today
 ```
 
-Kör programmet och utdatan blir något i stil med:
-
+Exempelutdata:
 ```
-Dagens datum är: 2023-04-12
+2023-04-12
 ```
 
-## Djupdykning
-I Haskell används `Data.Time` biblioteket, en del av `time` paketet skrivet av Ashley Yakeley. Det lanserades först på 2000-talet och är etablerat som standard för tidsberäkning. Alternativ som `old-time` är föråldrade och bör undvikas. När man hämtar det aktuella datumet, anropar vi `getCurrentTime` som ger oss en `UTCTime`, och sedan använder vi `utctDay` för att omvandla detta till ett `Day` objekt.
+För mer flexibilitet, som att formatera datumet eller arbeta med olika tidszoner, är `time`-biblioteket ovärderligt. Så här kan du formatera det aktuella datumet:
 
-## Se även
-- Haskell `time` biblioteket: http://hackage.haskell.org/package/time
-- Data.Time modul: https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time.html
-- UTCTime i Haskell: https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time-Clock.html#t:UTCTime
+```haskell
+import Data.Time
+
+main :: IO ()
+main = do
+    now <- getCurrentTime
+    timezone <- getCurrentTimeZone
+    let zoneNow = utcToLocalTime timezone now
+    putStrLn $ formatTime defaultTimeLocale "%Y-%m-%d" zoneNow
+```
+
+Detta skriver ut det aktuella datumet i formatet `ÅÅÅÅ-MM-DD`, justerat till den lokala tidszonen.
+
+Dessutom, för stöd från tredjepartsbibliotek, rekommenderas `time` starkt och används ofta inom Haskell-gemenskapen för dess omfattande möjligheter till datum- och tidshantering. Exemplen ovan använder detta bibliotek.
+
+Om du behöver mer omfattande datumhantering, inklusive tolkning från strängar eller aritmetiska operationer med datum och tider, kommer utforskning av ytterligare funktioner inom `Data.Time` att vara fördelaktigt.

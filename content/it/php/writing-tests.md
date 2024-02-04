@@ -1,51 +1,86 @@
 ---
 title:                "Scrivere test"
-date:                  2024-01-19
+date:                  2024-02-03T19:31:17.809549-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Scrivere test"
-
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/php/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Scrivere test è il processo di creazione di script che verificano il corretto funzionamento del codice. I programmatori scrivono test per assicurarsi che il loro codice funzioni come previsto e per prevenire regressioni.
+## Cosa e Perché?
+Scrivere test nella programmazione implica la creazione e l'esecuzione di script che verificano il comportamento del codice come previsto in varie condizioni. I programmatori lo fanno per garantire la qualità, prevenire regressioni e facilitare il rifattorizzamento sicuro, che è cruciale per mantenere una base di codice sana, scalabile e priva di bug.
 
-## How to:
-PHP utilizza PHPUnit come framework standard per il testing. Ecco un esempio di test semplice:
+## Come fare:
+### PHP Nativo - PHPUnit
+Uno strumento ampiamente utilizzato per i test in PHP è PHPUnit. Installalo tramite Composer:
+```bash
+composer require --dev phpunit/phpunit ^9
+```
 
+#### Scrivere un test semplice:
+Crea un file `CalculatorTest.php` in una directory `tests`:
 ```php
-<?php
 use PHPUnit\Framework\TestCase;
 
-class StackTest extends TestCase
+// Assumendo che tu abbia una classe Calculator che somma numeri
+class CalculatorTest extends TestCase
 {
-    public function testPushAndPop()
+    public function testAdd()
     {
-        $stack = [];
-        $this->assertSame(0, count($stack));
-
-        array_push($stack, 'foo');
-        $this->assertSame('foo', $stack[count($stack)-1]);
-        $this->assertSame(1, count($stack));
-
-        $this->assertSame('foo', array_pop($stack));
-        $this->assertSame(0, count($stack));
+        $calculator = new Calculator();
+        $this->assertEquals(4, $calculator->add(2, 2));
     }
 }
 ```
-
-Esecuzione del test con output di esempio:
+Esegui i test con:
 ```bash
-$ ./vendor/bin/phpunit StackTest
-OK (1 test, 3 assertions)
+./vendor/bin/phpunit tests
 ```
 
-## Deep Dive
-PHPUnit è stato introdotto da Sebastian Bergmann ed è diventato il framework di test più popolare per PHP. Come alternativa, si può usare Behat per test di comportamento o PHPSpec per spec-based testing. Per scrivere test affidabili, si utilizzano assertion che confrontano i risultati attesi con quelli effettivi.
+#### Esempio di output:
+```
+PHPUnit 9.5.10 di Sebastian Bergmann e contributori.
 
-## See Also
-- [PHPUnit Manual](https://phpunit.de/manual/current/en/index.html)
-- [Behat, BDD framework for PHP](https://docs.behat.org/en/latest/)
-- [PHPSpec, spec-based testing framework](http://www.phpspec.net/en/stable/)
+.                                                                   1 / 1 (100%)
+
+Tempo: 00:00.005, Memoria: 6.00 MB
+
+OK (1 test, 1 asserzione)
+```
+
+### Librerie di Terze Parti – Mockery
+Per test complessi, inclusi gli oggetti mock, Mockery è una scelta popolare.
+
+```bash
+composer require --dev mockery/mockery
+```
+
+#### Integrare Mockery con PHPUnit:
+```php
+use PHPUnit\Framework\TestCase;
+use Mockery as m;
+
+class ServiceTest extends TestCase
+{
+    public function tearDown(): void
+    {
+        m::close();
+    }
+
+    public function testServiceCallsExternalService()
+    {
+        $externalServiceMock = m::mock(ExternalService::class);
+        $externalServiceMock->shouldReceive('process')->una volta()->eRitorna('risultato simulato');
+
+        $service = new Service($externalServiceMock);
+        $result = $service->execute();
+
+        $this->assertEquals('risultato simulato', $result);
+    }
+}
+```
+Per eseguire, utilizza lo stesso comando PHPUnit di sopra. Mockery consente oggetti mock espressivi e flessibili, facilitando il test delle interazioni complesse all'interno della tua applicazione.

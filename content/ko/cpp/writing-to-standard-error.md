@@ -1,42 +1,62 @@
 ---
-title:                "표준 오류로 쓰기"
-date:                  2024-01-19
-simple_title:         "표준 오류로 쓰기"
-
+title:                "표준 에러에 쓰기"
+date:                  2024-02-03T19:32:45.171292-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "표준 에러에 쓰기"
 tag:                  "Files and I/O"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/cpp/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (무엇이며 왜 사용할까?)
-표준 에러는 프로그램 실행 도중 발생하는 오류 메시지를 출력하기 위해 사용되는 출력 스트림입니다. 프로그래머들은 오류를 다른 출력과 분리하여 더 쉽게 문제를 진단하고 로깅하기 위해 이를 사용합니다.
+## 무엇 & 왜?
 
-## How to: (어떻게 사용할까?)
+C++에서 표준 오류(`stderr`)로 작성하기란 메인 프로그램 출력과 분리된 오류 메시지나 진단 정보를 출력하는 것을 말합니다. 프로그래머들은 이를 통해 오류를 다른 스트림으로 직접 보내어, 일반 출력과 오류 메시지를 구별함으로써 디버깅과 오류 처리를 쉽게 할 수 있습니다.
+
+## 방법:
+
+C++에서 표준 오류에 작성하는 것은 표준 라이브러리의 일부인 `cerr` 스트림을 사용하여 달성할 수 있습니다. 기본 예시는 다음과 같습니다:
+
 ```cpp
 #include <iostream>
 
 int main() {
-    // 정상 출력
-    std::cout << "Hello, World!" << std::endl;
-
-    // 에러 출력
-    std::cerr << "An error has occurred!" << std::endl;
-
+    // 표준 출력으로 작성
+    std::cout << "이것은 일반 메시지입니다." << std::endl;
+    
+    // 표준 오류로 작성
+    std::cerr << "이것은 오류 메시지입니다." << std::endl;
+    
     return 0;
 }
 ```
-**샘플 출력**
+
+샘플 출력:
 ```
-Hello, World!
-An error has occurred!
+이것은 일반 메시지입니다.
+이것은 오류 메시지입니다.
 ```
 
-## Deep Dive (심층 분석)
-표준 에러(`stderr`)는 UNIX 시스템의 초기부터 사용되어오고 있습니다. `stdout`과 구분하여 사용함으로써 오류 메시지와 일반 출력을 분리할 수 있어 유용합니다. 대안으로는 파일로 로깅을 하거나 시스템 로그를 사용하는 방법이 있습니다. C++에서 `std::cerr` 는 내부적으로 `std::ostream` 클래스의 인스턴스로 구현되어 있으며 버퍼링되지 않아 즉시 출력됩니다.
+이 경우, 두 메시지 모두 당신의 터미널에 보통 나타납니다만, 셸에서 별도로 리디렉션할 수 있습니다. 예를 들어, 표준 출력을 파일로 보내면서 오류는 화면에 표시되도록 할 수 있습니다.
 
-## See Also (관련 자료)
-- [cppreference.com: std::cerr](https://en.cppreference.com/w/cpp/io/cerr)
-- [cppreference.com: I/O Stream Library](https://en.cppreference.com/w/cpp/io)
-- [GNU C Library: Standard Streams](https://www.gnu.org/software/libc/manual/html_node/Standard-Streams.html)
+보다 고급 로깅 및 오류 처리를 위해, `spdlog` 또는 `boost.log` 같은 제3자 라이브러리를 사용할 수 있습니다. 이들 라이브러리는 로깅을 위한 형식 지정, 로그 레벨, 파일 출력을 포함한 향상된 기능을 제공합니다.
+
+오류 메시지를 작성하기 위해 `spdlog`를 사용하는 방법은 여기에 있습니다:
+
+```cpp
+#include "spdlog/spdlog.h"
+
+int main() {
+    // spdlog 초기화
+    spdlog::info("이것은 일반 메시지입니다.");
+    spdlog::error("이것은 오류 메시지입니다.");
+    
+    return 0;
+}
+```
+
+참고: `spdlog`를 사용하기 위해서는 프로젝트에 추가해야 합니다. GitHub에서 저장소를 클론하거나 `vcpkg` 또는 `conan`과 같은 패키지 매니저를 사용하여 할 수 있습니다.
+
+표준 스트림을 직접 사용하거나 `spdlog` 같은 라이브러리를 사용하는 선택은 어플리케이션의 복잡성과 오류 처리 및 로깅에 대한 특정 요구 사항에 따라 달라집니다.

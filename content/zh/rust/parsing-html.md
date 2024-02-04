@@ -1,59 +1,63 @@
 ---
 title:                "解析HTML"
-date:                  2024-01-20T15:33:53.417419-07:00
+date:                  2024-02-03T19:12:57.137642-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "解析HTML"
-
 tag:                  "HTML and the Web"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/rust/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? 什么以及为什么？
-解析HTML是指将HTML文本转换成可由程序理解的数据结构。程序员这么做是为了从网页中抓取数据，或操作和生成动态HTML内容。
+## 什么 & 为什么？
 
-## How to: 怎么做？
-在Rust中，我们可以使用`html5ever`这个库来解析HTML。以下是如何使用的一个简单示例。
+在 Rust 中解析 HTML 意味着从 HTML 文档中抽取数据，这对于网页抓取、数据提取或构建网页爬虫至关重要。程序员这样做是为了自动化从网络收集信息、分析网络内容或将内容从一个平台迁移到另一个平台。
 
-```Rust
-extern crate html5ever;
+## 如何做：
 
-use html5ever::{parse_document};
-use html5ever::rcdom::{RcDom, Handle};
-use html5ever::tendril::TendrilSink;
+要在 Rust 中解析 HTML，你通常会使用 `scraper` 库，它提供了一个高级接口来遍历和操作 HTML 文档。
 
-fn walk(node: &Handle) {
-    // 基于节点类型进行逻辑处理
-}
+首先，将 `scraper` 添加到你的 `Cargo.toml` 中：
+
+```toml
+[dependencies]
+scraper = "0.12.0"
+```
+
+接下来，这里有一个简单的示例，它从给定的 HTML 字符串中提取所有链接 URL：
+
+```rust
+extern crate scraper;
+
+use scraper::{Html, Selector};
 
 fn main() {
-    let html_content = r#"
-        <!DOCTYPE html>
-        <html>
-        <head>
-            <title>This is a title.</title>
-        </head>
-        <body>
-            <h1>Hello, world!</h1>
-        </body>
-        </html>
+    let html = r#"
+    <html>
+    <body>
+        <a href="http://example.com/1">链接 1</a>
+        <a href="http://example.com/2">链接 2</a>
+    </body>
+    </html>
     "#;
 
-    let dom = parse_document(RcDom::default(), Default::default())
-                  .from_utf8()
-                  .read_from(&mut html_content.as_bytes())
-                  .unwrap();
+    let document = Html::parse_document(html);
+    let selector = Selector::parse("a").unwrap();
 
-    // 遍历DOM树
-    walk(&dom.document);
+    for element in document.select(&selector) {
+        let link = element.value().attr("href").unwrap();
+        println!("找到链接: {}", link);
+    }
 }
 ```
 
-这段代码没有输出。它只是演示了如何构建DOM树。
+输出：
 
-## Deep Dive 深入研究
-HTML解析的历史很长。最初，HTML解析器必须处理极其不规则的标记，而现代解析器则必须严格遵守HTML5规范。Rust语言中的`html5ever`库就是为了高效和安全地解析HTML5而设计的。其他解析HTML的替代库包括`scraper`和`select.rs`，它们提供了类似于jQuery的选择器操作。`html5ever`的实现细节涉及到复杂的状态机和解析算法，但这可以让Rust程序员高效地处理HTML文档。
+```
+找到链接: http://example.com/1
+找到链接: http://example.com/2
+```
 
-## See Also 另请参阅
-- [html5ever repository](https://github.com/servo/html5ever)
+在这个示例中，我们解析了一个简单的 HTML 文档，找到所有的 `<a>` 元素并提取它们的 `href` 属性，有效地打印出文档中所有链接的 URL。`scraper` 库简化了 HTML 解析和使用 CSS 选择器选择特定元素的过程，使其成为 Rust 中进行网页抓取任务的首选。

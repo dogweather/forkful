@@ -1,46 +1,44 @@
 ---
-title:                "Mettre une chaîne de caractères en majuscules"
-date:                  2024-01-19
-simple_title:         "Mettre une chaîne de caractères en majuscules"
-
+title:                "Mettre en majuscule une chaîne"
+date:                  2024-02-03T19:06:08.630539-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Mettre en majuscule une chaîne"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/ruby/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? / Quoi et Pourquoi ?
+## Quoi et pourquoi ?
+Capitaliser une chaîne de caractères en programmation fait souvent référence à la conversion du premier caractère d'une chaîne en majuscule et le reste en minuscule. Les programmeurs font cela pour des raisons telles que se conformer aux conventions de nommage, rendre les sorties plus lisibles ou assurer la cohérence des données pour les comparaisons et le stockage.
 
-Capitaliser une chaîne de caractères, c'est transformer sa première lettre en majuscule. On le fait pour respecter les règles de grammaire, par exemple, au début des phrases ou pour les noms propres.
+## Comment faire :
+Ruby fournit des méthodes simples pour la manipulation des chaînes de caractères, y compris la capitalisation. Voici comment vous pouvez capitaliser une chaîne de caractères en Ruby :
 
-## How to / Comment faire :
-
-En Ruby, plusieurs méthodes permettent de capitaliser une chaîne. Voici les plus courantes :
-
-```Ruby
-# Utilisation de la méthode `capitalize`
-prenom = "jean"
-prenom_capitalise = prenom.capitalize
-puts prenom_capitalise
-# => Jean
-
-# Capitaliser toutes les initiales avec `split` et `map`
-titre = "le seigneur des anneaux"
-titre_maj = titre.split.map(&:capitalize).join(' ')
-puts titre_maj
-# => Le Seigneur Des Anneaux
+```ruby
+# Méthode intégrée de Ruby
+string = "hello world"
+capitalized_string = string.capitalize
+puts capitalized_string # => "Hello world"
 ```
 
-## Deep Dive / Plongée en Profondeur :
+La méthode `.capitalize` de Ruby est pratique mais n'affecte que la première lettre. Pour plus de contrôle ou pour capitaliser chaque mot dans une chaîne (connu sous le nom de casse de titre), vous pourriez vouloir utiliser la méthode `titleize` de l'extension Rails ActiveSupport, ou l'implémenter vous-même :
 
-Historiquement, la méthode `capitalize` et d'autres méthodes de traitement des chaînes viennent de langages plus anciens comme Perl. Ruby les a adoptées et simplifiées.
+```ruby
+# Utilisation de 'titleize' d'ActiveSupport dans Rails
+require 'active_support/core_ext/string/inflections'
+string = "hello world"
+puts string.titleize # => "Hello World"
+```
 
-Il y a des alternatives si on veut plus de contrôle, comme utiliser des expressions régulières (RegEx).
+Si vous n'utilisez pas Rails ou préférez une solution purement Ruby, voici comment vous pourriez capitaliser chaque mot dans une chaîne de caractères :
 
-Pour le fonctionnement interne, `capitalize` modifie le code ASCII de la première lettre. L'ASCII majuscule est différent de l'ASCII minuscule, et `capitalize` ajuste correctement la valeur.
+```ruby
+string = "hello world"
+capitalized_each_word = string.split.map(&:capitalize).join(' ')
+puts capitalized_each_word # => "Hello World"
+```
 
-## See Also / Voir Aussi :
-
-- La documentation de Ruby sur les Strings : https://ruby-doc.org/core/String.html
-- Un bon tuto sur les expressions régulières en Ruby : https://www.rubyguides.com/2015/06/ruby-regex/ 
-- 'String#upcase' et 'String#downcase' pour d'autres transformations des chaînes : https://ruby-doc.org/core-3.0.0/String.html#method-i-upcase
+Cette méthode divise la chaîne en un tableau de mots, met en majuscule chacun d'eux, puis les joint à nouveau ensemble avec un espace.

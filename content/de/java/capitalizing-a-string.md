@@ -1,47 +1,67 @@
 ---
-title:                "String in Großbuchstaben umwandeln"
-date:                  2024-01-19
-simple_title:         "String in Großbuchstaben umwandeln"
-
+title:                "Einen String großschreiben"
+date:                  2024-02-03T19:05:34.897001-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Einen String großschreiben"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/java/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Was & Warum?
-Das Kapitalisieren eines Strings bedeutet, alle Buchstaben darin in Großbuchstaben umzuwandeln. Programmierer nutzen das, um Konsistenz in Nutzereingaben zu gewährleisten oder um Bedeutungen hervorzuheben.
+## Was und Warum?
+Das Großschreiben eines Strings bedeutet, den ersten Buchstaben jedes Wortes im String in Großbuchstaben umzuwandeln, während die restlichen Buchstaben klein bleiben. Diese häufige Manipulation von Zeichenketten ist nützlich, um Text in Anwendungen zu formatieren, beispielsweise um Benutzernamen oder Titel gemäß Konvention oder grammatischer Richtigkeit darzustellen.
 
-## Wie geht das?
-Java macht das Kapitalisieren dank der `toUpperCase()`-Methode der `String`-Klasse einfach. Hier ein kurzes Beispiel:
+## Wie:
+Die Standardbibliothek von Java bietet keine direkte Methode, um ganze Strings auf einmal großzuschreiben, aber Sie können dies mit einer Kombination von integrierten Methoden erreichen. Für anspruchsvollere Bedürfnisse bieten Drittanbieterbibliotheken wie Apache Commons Lang einfache Lösungen.
+
+### Nutzung der integrierten Methoden von Java
+Um einen String ohne externe Bibliotheken großzuschreiben, können Sie den String in Wörter aufteilen, den ersten Buchstaben jedes Wortes großschreiben und sie dann wieder zusammenfügen. Hier ist ein einfacher Ansatz:
 
 ```java
-public class CapitalizeExample {
+public class CapitalizeString {
     public static void main(String[] args) {
-        String lowerCaseString = "das ist ein beispiel.";
-        String capitalizedString = lowerCaseString.toUpperCase();
+        String text = "hello, world!";
+        String capitalizedText = capitalizeWords(text);
+        System.out.println(capitalizedText); // Ausgabe: "Hello, World!"
+    }
 
-        System.out.println(capitalizedString); // Output: DAS IST EIN BEISPIEL.
+    public static String capitalizeWords(String str) {
+        char[] chars = str.toLowerCase().toCharArray();
+        boolean found = false;
+        for (int i = 0; i < chars.length; i++) {
+            if (!found && Character.isLetter(chars[i])) {
+                chars[i] = Character.toUpperCase(chars[i]);
+                found = true;
+            } else if (Character.isWhitespace(chars[i]) || chars[i]=='.' || chars[i]=='\'') { 
+                found = false;
+            }
+        }
+        return String.valueOf(chars);
     }
 }
 ```
-Ruf einfach `toUpperCase()` auf und dein String erstrahlt in Großbuchstaben – so simpel ist das.
 
-## Tiefgehende Einblicke
-Historisch gesehen existieren Großbuchstaben seit den Tagen der Römischen Reiches. In digitalen Zeiten nutzen wir Kapitalisierung aus praktischen Gründen: Suchoperationen, Textvergleiche oder Gestaltung von Benutzeroberflächen. Andererseits gibt es Alternativen wie die `toLowerCase()`-Methode, wenn man alles klein haben möchte. Und wenn du spezielle Regeln für die Kapitalisierung, wie beispielsweise Titel in einem Buch, umsetzen möchtest, brauchst du speziellere Methoden als `toUpperCase()`. Dabei kann es knifflig werden, da Sprachen wie Deutsch mit Umlauten oder dem ß arbeiten, die besondere Regeln bei der Umwandlung in Großbuchstaben haben.
+Dieser Codeausschnitt wandelt den gesamten String in Kleinbuchstaben um und iteriert dann durch jeden Charakter, um den ersten Buchstaben jedes Wortes großzuschreiben. Er betrachtet Leerzeichen, Punkte und Apostrophe als Worttrenner.
 
-Du solltest wissen, dass `toUpperCase()` die Groß- und Kleinschreibung gemäß den Regeln der Standardlokalität (Standard locale) des Systems umwandelt. In manchen Fällen willst du vielleicht eine spezifische Locale verwenden, um sicherzustellen, dass deine Umwandlung kulturellen und sprachlichen Standards entspricht:
+### Nutzung von Apache Commons Lang
+
+Die Bibliothek Apache Commons Lang bietet mit der Methode `WordUtils.capitalizeFully()` eine elegantere Lösung, die verschiedene Sonderfälle und Trennzeichen für Sie behandelt:
 
 ```java
-String lowerCaseStringWithUmlaut = "straße";
-String capitalizedStringWithUmlaut = lowerCaseStringWithUmlaut.toUpperCase(Locale.GERMANY); // Output: STRASSE
+// Abhängigkeit hinzufügen: org.apache.commons:commons-lang3:3.12.0
+
+import org.apache.commons.text.WordUtils;
+
+public class CapitalizeString {
+    public static void main(String[] args) {
+        String text = "hello, world!";
+        String capitalizedText = WordUtils.capitalizeFully(text);
+        System.out.println(capitalizedText); // Ausgabe: "Hello, World!"
+    }
+}
 ```
 
-Beachte, dass `ß` zu `SS` in Großbuchstaben mit der deutschen Locale wird.
-
-## Siehe auch
-- [Java String Documentation](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html)
-- [Locale Class in Java](https://docs.oracle.com/javase/8/docs/api/java/util/Locale.html)
-- [Understanding Java String](https://www.baeldung.com/java-string)
-  
-Mit diesen Links kannst du tiefer in die Welt der Java-Strings eintauchen. Frohes Codieren!
+Um diese Methode zu verwenden, müssen Sie die Bibliothek Apache Commons Lang zu Ihrem Projekt hinzufügen. Diese Bibliotheksmethode macht nicht nur den ersten Buchstaben jedes Wortes groß, sondern wandelt auch die restlichen Buchstaben in jedem Wort in Kleinbuchstaben um und sorgt so für ein konsistentes Muster der Groß- und Kleinschreibung im ganzen String.

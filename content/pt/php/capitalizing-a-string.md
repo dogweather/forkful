@@ -1,42 +1,56 @@
 ---
 title:                "Capitalizando uma string"
-date:                  2024-01-19
+date:                  2024-02-03T19:05:55.318998-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Capitalizando uma string"
-
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/php/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## O Que & Porquê?
-Capitalizar uma string significa transformar todas as letras de um texto para maiúsculas. Programadores fazem isso para padronizar dados, melhorar a legibilidade ou atender a certas especificações técnicas.
+## O Quê & Por Quê?
+Capitalizar uma string envolve modificar o primeiro caractere de um texto dado para maiúsculo, garantindo que frases, títulos ou nomes próprios comecem corretamente em um conjunto de dados. Programadores frequentemente executam a capitalização de strings para a normalização de dados, melhorando a legibilidade ou garantindo consistência na entrada de usuário ou no processamento de dados textuais.
 
-## Como Fazer:
-Capitalizar uma string em PHP é simples. Use a função `strtoupper()` para converter todas as letras para maiúsculas, ou `ucfirst()` para capitalizar apenas a primeira letra. Aqui estão alguns exemplos:
+## Como fazer:
+O PHP suporta nativamente várias funções para capitalizar strings, cada uma servindo a um propósito diferente. Veja como você pode usá-las:
 
-```PHP
-<?php
-// Capitalizando toda a string
-$texto = "olá, mundo!";
-$textoMaiusculo = strtoupper($texto);
-echo $textoMaiusculo; // Saída: OLÁ, MUNDO!
+### Capitalizando a primeira letra de uma string:
 
-// Capitalizando apenas a primeira letra
-$textoPrimeiraMaiuscula = ucfirst($texto);
-echo $textoPrimeiraMaiuscula; // Saída: Olá, mundo!
-?>
+```php
+$string = "hello, world!";
+$capitalizedString = ucfirst($string);
+echo $capitalizedString; // Exibe: Hello, world!
 ```
 
-## Mergulho Profundo
-Historicamente, capitalizar texto tem suas raízes na era das máquinas de escrever e nos primeiros dias da computação, onde diferenciar informações importantes era feito com letras maiúsculas. Em PHP, a função `strtoupper()` tem sido utilizada desde as primeiras versões do idioma para converter uma string para todas maiúsculas.
+### Capitalizando a primeira letra de cada palavra:
 
-Existem alternativas para diferentes casos de uso, como `ucwords()` para capitalizar a primeira letra de cada palavra em uma string, útil para nomes próprios ou títulos. A função `mb_strtoupper()` é uma alternativa que suporta múltiplos encodings de caracteres, sendo vital para strings com caracteres multibyte como em idiomas asiáticos ou acentuações.
+```php
+$string = "hello, world!";
+$capitalizedWords = ucwords($string);
+echo $capitalizedWords; // Exibe: Hello, World!
+```
 
-Quanto à implementação, o PHP internamente faz uso de tabelas de caracteres e encodings específicos para transformar cada letra minúscula em sua equivalente maiúscula, levando em consideração o locale (configuração regional) quando necessário.
+### Convertendo toda a string para maiúsculo:
 
-## Veja Também
+```php
+$string = "hello, world!";
+$upperCaseString = strtoupper($string);
+echo $upperCaseString; // Exibe: HELLO, WORLD!
+```
 
-- A documentação oficial das funções de manipulação de strings no PHP: https://www.php.net/manual/pt_BR/ref.strings.php
-- Sobre encodings e o PHP: https://www.php.net/manual/pt_BR/mbstring.php
-- Guia de estilo e práticas recomendadas para PHP: https://www.php-fig.org/psr/
+Para cenários que requerem mais personalização ou soluções de terceiros, bibliotecas como `mbstring` (para strings multibyte) podem ser utilizadas, especialmente quando lidando com internacionalização onde caracteres podem se estender além do conjunto básico ASCII.
+
+### Usando mbstring para capitalizar strings UTF-8:
+
+Certifique-se de ter a extensão `mbstring` habilitada na sua configuração PHP, então:
+
+```php
+$string = "élégant";
+$capitalizedString = mb_convert_case($string, MB_CASE_TITLE, "UTF-8");
+echo $capitalizedString; // Exibe: Élégant
+```
+
+Esta abordagem ajuda a capitalizar com precisão strings que incluem caracteres não-ASCII, aderindo às nuances de várias línguas.

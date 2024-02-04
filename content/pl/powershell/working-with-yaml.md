@@ -1,44 +1,65 @@
 ---
-title:                "Praca z yaml"
-date:                  2024-01-19
-simple_title:         "Praca z yaml"
-
+title:                "Praca z YAML"
+date:                  2024-02-03T19:26:20.837517-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Praca z YAML"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/powershell/working-with-yaml.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Co i dlaczego?)
-Praca z YAML to zarządzanie danymi w formacie, który jest prosty dla człowieka i maszyny. Programiści używają go, gdy potrzebują konfiguracji, serializacji danych lub komunikacji między usługami.
+## Co i dlaczego?
+YAML, czyli YAML Ain't Markup Language, to język seryalizacji danych czytelny dla człowieka. Programiści często używają go do plików konfiguracyjnych i transmisji danych między językami. Jego prostota i czytelność sprawiają, że jest szczególnie popularny do zadań związanych z konfiguracją środowisk, aplikacji lub usług, gdzie konfiguracje są kluczowe i powinny być łatwo zrozumiałe i edytowalne.
 
-## How to: (Jak to zrobić:)
-PowerShell umożliwia pracę z YAML za pomocą modułów, takich jak 'powershell-yaml'. Oto przykład wczytania i zapisu danych YAML.
+## Jak:
+PowerShell domyślnie nie posiada wbudowanego polecenia cmdlet do analizy YAML, ale działa bezproblemowo z YAML, gdy wykorzystuje się moduł `powershell-yaml` lub konwertuje YAML na obiekt PowerShell za pomocą `ConvertFrom-Json` w połączeniu z narzędziem takim jak `yq`.
 
+### Korzystając z modułu `powershell-yaml`:
+Najpierw zainstaluj moduł:
 ```PowerShell
-# Instalacja modułu PowerShell-Yaml
 Install-Module -Name powershell-yaml
-
-# Wczytanie zawartości YAML z pliku
-$yamlContent = Get-Content -Path 'example.yaml' | Out-String
-$yamlObject = ConvertFrom-Yaml -InputObject $yamlContent
-$yamlObject
-
-# Tworzenie nowego obiektu YAML
-$newYamlObject = @{
-    "hello" = "world"
-    "count" = 42
-    "items" = @("item1", "item2")
-}
-
-# Zapis obiektu do pliku YAML
-$newYamlObject | ConvertTo-Yaml | Set-Content -Path 'newExample.yaml'
 ```
 
-## Deep Dive (Głębsze spojrzenie)
-YAML, czyli "YAML Ain't Markup Language", powstał w 2001 roku jako alternatywa dla XML i JSON. Charakteryzuje się czytelnością i składnią opartą o wcięcia. W PowerShellu trzeba użyć zewnętrznych modułów, bo nie ma wbudowanego wsparcia dla YAML. PowerShell-yaml to popularny wybór, ale są też inne jak PYYaml czy YamlDotNet.
+Aby odczytać plik YAML:
+```PowerShell
+Import-Module powershell-yaml
+$content = Get-Content -Path 'config.yml' -Raw
+$yamlObject = ConvertFrom-Yaml -Yaml $content
+Write-Output $yamlObject
+```
 
-## See Also (Zobacz także)
-- Oficjalna strona YAML: [https://yaml.org](https://yaml.org)
-- Repozytorium modułu PowerShell-Yaml na GitHubie: [https://github.com/cloudbase/powershell-yaml](https://github.com/cloudbase/powershell-yaml)
-- Dokumentacja PowerShell: [https://docs.microsoft.com/en-us/powershell/](https://docs.microsoft.com/en-us/powershell/)
+Aby zapisać obiekt PowerShell do pliku YAML:
+```PowerShell
+$myObject = @{
+    name = "John Doe"
+    age = 30
+    languages = @("PowerShell", "Python")
+}
+$yamlContent = ConvertTo-Yaml -Data $myObject
+$yamlContent | Out-File -FilePath 'output.yml'
+```
+
+Przykładowy `output.yml`:
+```yaml
+name: John Doe
+age: 30
+languages:
+- PowerShell
+- Python
+```
+
+### Analiza YAML za pomocą `yq` i `ConvertFrom-Json`:
+Inne podejście polega na użyciu `yq`, lekkiego i przenośnego procesora wiersza poleceń YAML. `yq` może konwertować YAML na JSON, który PowerShell może natywnie analizować.
+
+Najpierw upewnij się, że `yq` jest zainstalowane na twoim systemie.
+Następnie uruchom:
+```PowerShell
+$yamlToJson = yq e -o=json ./config.yml
+$jsonObject = $yamlToJson | ConvertFrom-Json
+Write-Output $jsonObject
+```
+
+Ta metoda jest szczególnie użyteczna dla użytkowników, którzy pracują w środowiskach wieloplatformowych lub preferują używanie JSON w PowerShell.

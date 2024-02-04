@@ -1,32 +1,65 @@
 ---
-title:                "כתיבה לפלט השגיאה הסטנדרטי"
-date:                  2024-01-19
-simple_title:         "כתיבה לפלט השגיאה הסטנדרטי"
-
+title:                "כתיבה לשגיאה התקנית"
+date:                  2024-02-03T19:35:07.757995-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "כתיבה לשגיאה התקנית"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/powershell/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## מה ולמה?
-כתיבה אל `standard error` (stderr) משמשת לדיווח על שגיאות בתוכנית. זה נעשה כדי להפריד הודעות שגיאה מפלט רגיל, כך שיוכלו להיזרם לקובץ או כלי אחר ללא הפרעה.
+
+כתיבה לשגיאת סטנדרט (stderr) ב-PowerShell כוללת שליחת הודעות שגיאה או דיאגנוסטיקה ישירות לזרם stderr, שונה מזרם הפלט הסטנדרטי (stdout). ההפרדה הזו מאפשרת שליטה מדויקת יותר בפלט של סקריפט, מה שמאפשר למפתחים להכווין הודעות רגילות והודעות שגיאה ליעדים שונים, הכרחי לטיפול בשגיאות ולוגינג.
 
 ## איך לעשות:
-```PowerShell
-# כתיבת שגיאה פשוטה
-Write-Error "הודעת שגיאה כאן"
 
-# כתיבת טקסט ל-stderr ישירות
-Write-Host "הודעת שגיאה ישירה" -ForegroundColor Red -BackgroundColor Black 1>&2
+PowerShell מפשטת את התהליך של כתיבה ל-stderr באמצעות שימוש ב-cmdlet `Write-Error` או על ידי הכוונת פלט לשיטה `$host.ui.WriteErrorLine()`. עם זאת, לניתוב stderr ישיר, ייתכן שתעדיף שימוש בשיטות .NET או בניתוב מזהה קובץ ש-PowerShell עצמו מציע.
 
-# דוגמת פלט
-הודעת שגיאה כאן
-הודעת שגיאה ישירה
+**דוגמה 1:** שימוש ב-`Write-Error`לכתיבת הודעת שגיאה ל-stderr.
+
+```powershell
+Write-Error "This is an error message."
 ```
 
-## עיון מעמיק
-כתיבה ל-standard error ב-PowerShell היא חלק מתקן POSIX, אשר מוגדר משנות ה-60. האלטרנטיבות כוללות כתיבה ללוגים, שימוש במשתני מערכת, ועוד. יש לציין שב-PowerShell, לעיתים נכתבות שגיאות באופן אוטומטי ל-stderr על ידי cmdlets מתאימים, כמו `Write-Error`.
+פלט ל-stderr:
+```
+Write-Error: This is an error message.
+```
 
-## לקריאה נוספת
-- [תיעוד Microsoft ל-Write-Error](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/write-error)
+**דוגמה 2:** שימוש ב-`$host.ui.WriteErrorLine()` לכתיבת stderr ישירה.
+
+```powershell
+$host.ui.WriteErrorLine("Direct stderr write.")
+```
+
+פלט ל-stderr:
+```
+Direct stderr write.
+```
+
+**דוגמה 3:** שימוש בשיטות .NET לכתיבה ל-stderr.
+
+```powershell
+[Console]::Error.WriteLine("Using .NET method for stderr")
+```
+
+פלט של שיטה זו:
+```
+Using .NET method for stderr
+```
+
+**דוגמה 4:** ניתוב פלט שגיאה באמצעות מזהה קובץ `2>`.
+
+מזהי קובצים ב-PowerShell יכולים לנתב זרמים שונים. עבור stderr, מזהה הקובץ הוא `2`.הנה דוגמה לניתוב stderr לקובץ בשם `error.log` בעת ביצוע פקודה שיוצרת שגיאה.
+
+```powershell
+Get-Item NonExistentFile.txt 2> error.log
+```
+
+דוגמה זו לא מייצרת פלט לקונסול, אבל יוצרת קובץ `error.log` בתיקייה הנוכחית המכילה את הודעת השגיאה מנסיון הגישה לקובץ שלא קיים.
+
+כמסקנה, PowerShell מספקת מגוון שיטות לכתיבה וניהול יעיל של פלט שגיאה, מה שמאפשר אסטרטגיות מתקדמות לטיפול בשגיאות ולוגינג בסקריפטים וביישומים.

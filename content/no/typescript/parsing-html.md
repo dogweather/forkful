@@ -1,44 +1,63 @@
 ---
-title:                "Analyse av HTML"
-date:                  2024-01-20T15:34:26.946021-07:00
-simple_title:         "Analyse av HTML"
-
+title:                "Analysering av HTML"
+date:                  2024-02-03T19:13:08.801948-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Analysering av HTML"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/typescript/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Hva & Hvorfor?)
-Parsing HTML betyr å omforme HTML-kode til et format en applikasjon eller et bibliotek kan forstå og manipulere. Programmerere parser HTML for å trekke ut data, manipulere innhold, eller migrere innhold til nye plattformer.
+## Hva & Hvorfor?
 
-## How to: (Slik gjør du:)
-I TypeScript kan biblioteket `node-html-parser` brukes for enkel HTML-parsing. Her er et eksempel:
+Å parse HTML betyr å sile gjennom HTML-kode for å finne, hente ut, eller manipulere informasjon. Programmerere gjør dette for å samhandle med webinnhold – kanskje skrape data eller automatisere nettlesere.
 
-```typescript
-import { parse } from 'node-html-parser';
+## Hvordan:
 
-const rawHTML = '<div><p>Hei, verden!</p></div>';
-const root = parse(rawHTML);
-
-console.log(root.querySelector('p').textContent); // Output: "Hei, verden!"
-```
-
-For å installere `node-html-parser`:
+For å komme i gang, installer et bibliotek som `node-html-parser`. Her er terminalkommandoen:
 
 ```bash
 npm install node-html-parser
 ```
 
-## Deep Dive (Dypdykk)
-Historisk sett har HTML-parsing vært utfordrende på grunn av 'tag soup' - HTML-sider som ikke følger standarder. Biblioteker som jQuery ble populære på grunn av evnen til å håndtere denne suppa. I dag finnes det moderne biblioteker som `node-html-parser` som er raskere og mer forutsigbare.
+Nå, la oss parse noe grunnleggende HTML i TypeScript:
 
-Alternativer inkluderer `cheerio`, som ligner på jQuery, eller `jsdom`, som etterligner en webbrowsermiljø i Node.js. Valg av bibliotek kan avhenge av behov for ytelse, funksjonalitet og hvordan HTML-en skal brukes etter parsing.
+```typescript
+import { parse } from 'node-html-parser';
 
-Detaljer om implementasjonen av `node-html-parser` inkluderer hvordan det håndterer DOM-trær og trekk som lynrask parsing og støtte for CSS-selektorer for å hente ut elementer fra HTML-strukturen.
+const html = `<ul class="fruits">
+                <li>Eple</li>
+                <li>Banan</li>
+              </ul>`;
 
-## See Also (Se Også)
-- [node-html-parser GitHub](https://github.com/taoqf/node-html-parser)
-- [cheerio GitHub](https://github.com/cheeriojs/cheerio)
-- [jsdom GitHub](https://github.com/jsdom/jsdom)
-- [Mozilla Web Docs - Parsing and serializing HTML](https://developer.mozilla.org/en-US/docs/Web/API/DOMParser)
+const root = parse(html);
+console.log(root.querySelector('.fruits').textContent);  // "Eple Banan"
+```
+
+Og hvis du vil gripe bare bananene:
+
+```typescript
+const bananas = root.querySelectorAll('li')[1].textContent;
+console.log(bananas);  // "Banan"
+```
+
+## Dypdykk
+
+Å parse HTML er ikke nytt – det har vært rundt siden webens tidlige dager. I begynnelsen kan utviklere ha brukt regulære uttrykk, men det ble fort rotete. Så kom DOM Parser: stabil, men begrenset til nettlesere.
+
+Biblioteker som `node-html-parser` abstraherer bort smerten. De lar deg forespørre HTML som du ville med jQuery, men server-side med Node.js. Det er raskt, tolerant til skitten HTML, og DOM-vennlig.
+
+Det er også `jsdom`, som simulerer et helt nettlesermiljø. Det er tyngre, men mer grundig, og skaper en fullblåst Document Object Model (DOM) for manipulering og interaksjon.
+
+Vi må heller ikke glemme Cheerio. Det blander hastighet med en jQuery-lignende syntaks og mindre fotavtrykk, og sitter lykkelig mellom de to.
+
+## Se Også
+
+Hvis du er tørst etter mer, dykk inn i disse:
+- [DOM Parsing og Serialisering W3C Spesifikasjon](https://www.w3.org/TR/DOM-Parsing/)
+- [node-html-parser på GitHub](https://github.com/taoqf/node-html-parser)
+- [jsdom GitHub Repository](https://github.com/jsdom/jsdom)
+- [Cheerio Nettsted](https://cheerio.js.org/)

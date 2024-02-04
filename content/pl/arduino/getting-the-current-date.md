@@ -1,63 +1,65 @@
 ---
 title:                "Pobieranie aktualnej daty"
-date:                  2024-01-20T15:13:01.334060-07:00
+date:                  2024-02-03T19:09:04.269480-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Pobieranie aktualnej daty"
-
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/arduino/getting-the-current-date.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-(Co i Dlaczego?)
-W Arduino chodzi o dostanie aktualnej daty z czasu rzeczywistego. Programiści robią to, by śledzić zdarzenia czasowe i synchronizować działania urządzeń.
+## Co i dlaczego?
+Pobieranie aktualnej daty w projektach Arduino polega na uzyskiwaniu informacji w czasie rzeczywistym, co może być kluczowe do logowania, stemplowania czasowego czy planowania zadań. Programiści często potrzebują tej funkcjonalności, by zwiększyć użyteczność, zapewnić aktualność danych i ułatwić operacje zależne od czasu w ich projektach IoT i wbudowanych.
 
-## How to:
-(Jak to zrobić:)
-Potrzebujesz modułu RTC (Real Time Clock), jak DS3231. Poniżej kod inicjujący RTC i wyświetlający datę:
+## Jak to zrobić:
+Arduino samo w sobie nie ma wbudowanej metody bezpośredniego pobierania aktualnej daty, ponieważ brakuje mu zegara czasu rzeczywistego (RTC). Można to jednak osiągnąć, używając zewnętrznych modułów RTC, takich jak DS3231, oraz bibliotek, np. `RTClib`, opracowanej przez Adafruit, która ułatwia współpracę z tymi modułami.
 
-```Arduino
+Najpierw upewnij się, że biblioteka `RTClib` jest zainstalowana w twoim środowisku Arduino IDE. Następnie podłącz moduł RTC do swojego Arduino zgodnie z jego dokumentacją.
+
+Oto prosty przykład, żeby zacząć:
+
+```cpp
 #include <Wire.h>
-#include <RTClib.h>
+#include "RTClib.h"
 
 RTC_DS3231 rtc;
 
 void setup() {
   Serial.begin(9600);
+
   if (!rtc.begin()) {
-    Serial.println("Nie znaleziono modułu RTC!");
+    Serial.println("Nie znaleziono RTC");
     while (1);
   }
 
   if (rtc.lostPower()) {
-    Serial.println("RTC utracił zasilanie, ustawiamy czas!");
-    rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
+    Serial.println("RTC stracił zasilanie, ustawmy czas!");
+    // Gdy potrzeba ustawić czas na nowym urządzeniu lub po utracie zasilania, możesz to zrobić tutaj.
+    // rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
   }
 }
 
 void loop() {
   DateTime now = rtc.now();
-  
+
+  Serial.print("Aktualna data: ");
   Serial.print(now.year(), DEC);
   Serial.print('/');
   Serial.print(now.month(), DEC);
   Serial.print('/');
   Serial.println(now.day(), DEC);
-  delay(1000);  // Odczyt co sekundę
+
+  delay(3000); // Opóźnienie o 3 sekundy, aby ograniczyć zalew danych serialowych
 }
 ```
-Wynik w Serial Monitor:
+
+Przykładowe wyjście (zakładając, że twój RTC został wcześniej ustawiony):
+
 ```
-2023/3/15
+Aktualna data: 2023/4/15
 ```
 
-## Deep Dive:
-(Głębszy Wgląd:)
-RTC, jak DS3231, zyskał popularność w projektach Arduino za precyzję i pamięć na baterii. Alternatywy to GPS czy Internet Time Protocol, ale są droższe lub trudniejsze w implementacji. RTC służy też do budzenia Arduino z trybu uśpienia.
-
-## See Also:
-(Zobacz Również:)
-- Dokumentacja RTClib: https://github.com/adafruit/RTClib
-- Arduino Time Library: https://www.arduino.cc/reference/en/libraries/time/
-- Poradnik do modułu RTC DS3231: http://www.rinkydinkelectronics.com/library.php?id=73
+Ten kod inicjalizuje moduł RTC, a następnie w pętli pobiera i wyświetla aktualną datę na Monitorze Szeregowym co 3 sekundy. Pamiętaj, że linię `rtc.adjust(...)` można odkomentować i zmodyfikować, aby początkowo ustawić datę i godzinę RTC lub po tym, jak stracił zasilanie.

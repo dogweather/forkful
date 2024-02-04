@@ -1,48 +1,67 @@
 ---
-title:                "文字列の先頭を大文字にする"
-date:                  2024-01-19
-simple_title:         "文字列の先頭を大文字にする"
-
+title:                "文字列を大文字にする"
+date:                  2024-02-03T19:05:55.829288-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "文字列を大文字にする"
 tag:                  "Strings"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/java/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (何となぜ？)
-文字列を大文字にすることは、文字列の各単語の最初の文字を大文字に変換することです。プログラマは一貫性ある表示を保ったり、タイトルや見出しを適切にフォーマットしたりするためにこれを行います。
+## 何となぜ？
+文字列の最初の文字を大文字に変更し、残りを小文字に保つことで文字列を大文字にすることを指します。この一般的な文字列操作タスクは、慣習や文法的な正確さに従ってユーザー名やタイトルを表示用に準備するなど、アプリケーションでテキストをフォーマットするのに役立ちます。
 
-## How to: (方法)
-Javaで文字列を大文字にする一般的な方法は、`toUpperCase()` メソッドもしくは Apache Commons Lang の `WordUtils.capitalize()` を使用することです。以下に例を示します。
+## 方法
+Javaの標準ライブラリは、一度に文字列全体を大文字にする直接的な方法を提供していませんが、組み込みのメソッドを組み合わせることでこれを実現できます。もっと洗練されたニーズのために、Apache Commons Langのようなサードパーティーライブラリは、直接的な解決策を提供します。
+
+### Javaの組み込みメソッドを使用する
+外部ライブラリなしで文字列を大文字化するには、文字列を単語に分割し、各単語の最初の文字を大文字にしてから再結合します。ここに簡単なアプローチがあります：
 
 ```java
-public class CapitalizeExample {
+public class CapitalizeString {
     public static void main(String[] args) {
-        // Using String.toUpperCase() to capitalize the entire string
-        String message = "hello world";
-        String capitalized = message.toUpperCase();
-        System.out.println(capitalized); // Output: HELLO WORLD
+        String text = "hello, world!";
+        String capitalizedText = capitalizeWords(text);
+        System.out.println(capitalizedText); // 出力: "Hello, World!"
+    }
 
-        // Using WordUtils.capitalize() from Apache Commons Lang to capitalize each word
-        // Add the dependency: org.apache.commons:commons-lang3:3.12.0
-        String title = "the lord of the rings";
-        String bookTitle = org.apache.commons.text.WordUtils.capitalize(title);
-        System.out.println(bookTitle); // Output: The Lord Of The Rings
+    public static String capitalizeWords(String str) {
+        char[] chars = str.toLowerCase().toCharArray();
+        boolean found = false;
+        for (int i = 0; i < chars.length; i++) {
+            if (!found && Character.isLetter(chars[i])) {
+                chars[i] = Character.toUpperCase(chars[i]);
+                found = true;
+            } else if (Character.isWhitespace(chars[i]) || chars[i]=='.' || chars[i]=='\'') { 
+                found = false;
+            }
+        }
+        return String.valueOf(chars);
     }
 }
 ```
 
-## Deep Dive (掘り下げ)
-歴史的には、Javaは文字列操作の基本機能を提供してきました。`toUpperCase()` はその一例で、全ての文字を大文字にします。しかし、各単語の先頭文字だけを大文字にするには、外部ライブラリを使ったり、独自のロジックを書いたりする必要があります。
+このコードスニペットは、文字列全体を小文字に変換し、各文字を繰り返し処理して、各単語の最初の文字を大文字に変換します。空白、ピリオド、アポストロフィを単語のセパレーターとして考慮しています。
 
-Apache Commons Langライブラリの `WordUtils.capitalize()` は、この特定のタスクを簡単にこなすためによく使われます。これは内部的に文字列を走査し、単語の区切りを認識した後に該当する文字を大文字に変換します。
+### Apache Commons Langを使用する
 
-実装の詳細では、大文字化の対象となる言語や地域特有の規則、Unicode文字の大文字/小文字の対応を考慮に入れる必要があります。Javaはこれらを `Locale` クラスを通じてサポートしており、多言語対応のアプリケーションに有益です。
+Apache Commons Langライブラリは、さまざまなエッジケースやデリミターを処理する`WordUtils.capitalizeFully()`メソッドで、よりエレガントな解決策を提供します：
 
-また、パフォーマンスが懸念される場合は、`StringBuilder` や `StringBuffer` を使って大文字化のロジックを最適化できる場合があります。大規模な文字列操作を行う時には重要な観点です。
+```java
+// 依存関係を追加: org.apache.commons:commons-lang3:3.12.0
 
-## See Also (関連情報)
-- Java String Documentation: https://docs.oracle.com/javase/7/docs/api/java/lang/String.html
-- Apache Commons Lang - WordUtils: https://commons.apache.org/proper/commons-lang/apidocs/org/apache/commons/lang3/text/WordUtils.html
-- Stack Overflow discussion on string capitalization in Java: https://stackoverflow.com/questions/1892765/how-to-capitalize-the-first-character-of-each-word-in-a-string
+import org.apache.commons.text.WordUtils;
+
+public class CapitalizeString {
+    public static void main(String[] args) {
+        String text = "hello, world!";
+        String capitalizedText = WordUtils.capitalizeFully(text);
+        System.out.println(capitalizedText); // 出力: "Hello, World!"
+    }
+}
+```
+
+このメソッドを使用するには、Apache Commons Langライブラリをプロジェクトに追加する必要があります。このライブラリの方法は、各単語の最初の文字を大文字化するだけでなく、各単語の残りの文字を小文字に変換し、文字列全体で一貫した大文字化パターンを保証します。

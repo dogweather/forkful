@@ -1,57 +1,67 @@
 ---
 title:                "Робота з JSON"
-date:                  2024-01-19
+date:                  2024-02-03T19:22:56.415111-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Робота з JSON"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/elixir/working-with-json.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Що та чому?
-JSON - формат обміну даними. Програмісти використовують JSON, тому що він легкий, читабельний та широко підтримується мовами програмування, у тому числі Elixir.
+
+Робота з JSON передбачає парсинг рядків у форматі JSON до структур даних, які Elixir може маніпулювати, та серіалізацію структур даних Elixir назад у рядки JSON. Це невід'ємно для веб-розробки, API та файлів конфігурації, оскільки JSON є легковісним, текстовим, незалежним від мови форматом обміну даними, який широко використовується за свою простоту та зручність для людського сприйняття.
 
 ## Як це зробити:
-Встановлюємо бібліотеку `jason`:
+
+У Elixir ви можете використовувати бібліотеку `Jason`, популярний вибір для парсингу та генерації JSON. Спочатку додайте `Jason` до залежностей вашого проекту в `mix.exs`:
 
 ```elixir
-# Додайте в mix.exs
 defp deps do
   [
-    {:jason, "~> 1.2"}
+    {:jason, "~> 1.3"}
   ]
 end
 ```
 
-Серіалізація (з Elixir у JSON):
+Потім запустіть `mix deps.get` для отримання залежності.
+
+### Парсинг JSON:
+Для конвертації рядка JSON у структури даних Elixir:
 
 ```elixir
-# Код
-map = %{name: "Олексій", age: 28}
-json = Jason.encode!(map)
-IO.puts json
-
-# Вивід
-{"age":28,"name":"Олексій"}
+json_string = "{\"name\":\"Іван\", \"age\":30}"
+{:ok, person} = Jason.decode(json_string)
+IO.inspect(person)
+# Вивід: %{"name" => "Іван", "age" => 30}
 ```
 
-Десеріалізація (з JSON у Elixir):
+### Генерація JSON:
+Для конвертації мапи Elixir у рядок JSON:
 
 ```elixir
-# Код
-json = "{\"name\":\"Олексій\",\"age\":28}"
-map = Jason.decode!(json)
-IO.inspect map
-
-# Вивід
-%{"age" => 28, "name" => "Олексій"}
+person_map = %{"name" => "Олена", "age" => 25}
+{:ok, json_string} = Jason.encode(person_map)
+IO.puts(json_string)
+# Вивід: {"age":25,"name":"Олена"}
 ```
 
-## Поглиблене занурення:
-Historically, JSON (JavaScript Object Notation) evolved from the need for a stateless, easy-to-parse data interchange format. It replaced XML in many applications for its simplicity. In Elixir, the `jason` library is a popular choice, though alternatives like `poison` and `jsx` exist. While `jason` prioritizes performance and compliance with the JSON standards, alternatives might offer different trade-offs.
+### Робота зі структурами:
+Для кодування структури Elixir необхідно реалізувати протокол `Jason.Encoder` для вашої структури. Ось приклад:
 
-Технічно, працюючи з JSON в Elixir, ми маємо справу з трансформацією еліксирських структур даних в строки JSON та назад. Elixir використовує протоколи, як `Jason.Encoder`, для серіалізації структур, і подає красиві помилки, коли не може серіалізувати невідомі типи.
+```elixir
+defmodule Person do
+  @derive {Jason.Encoder, only: [:name, :age]}
+  defstruct name: nil, age: nil
+end
 
-## Дивіться також:
-- [HexDocs Jason Library](https://hexdocs.pm/jason/Jason.html)
+person_struct = %Person{name: "Михайло", age: 28}
+{:ok, json_string} = Jason.encode(person_struct)
+IO.puts(json_string)
+# Вивід: {"age":28,"name":"Михайло"}
+```
+
+Цей простий підхід допоможе вам розпочати інтеграцію обробки JSON у ваші застосунки Elixir, сприяючи обміну даними у різноманітних програмних середовищах.

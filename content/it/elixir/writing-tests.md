@@ -1,60 +1,82 @@
 ---
 title:                "Scrivere test"
-date:                  2024-01-19
+date:                  2024-02-03T19:30:33.401052-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Scrivere test"
-
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/elixir/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Scrivere test significa automatizzare il controllo di parti di codice per assicurarsi che funzionino come previsto. I programmatori fanno ciò per prevenire bug, facilitare manutenzione e migliorare la qualità del codice.
+## Cosa & Perché?
+Scrivere test in Elixir comporta la creazione di script automatizzati per convalidare il comportamento del tuo codice. I programmatori lo fanno per garantire la qualità, prevenire le regressioni e facilitare il refactoring del codice, rendendo il processo di sviluppo più affidabile ed efficiente.
 
-## How to:
-Installazione di ExUnit:
-```elixir
-# Nel mix.exs, assicurati che ExUnit sia nella sezione 'deps'
-defp deps do
-  [
-    {:ex_unit, "~> 1.12", only: :test}
-  ]
-end
-```
+## Come fare:
+Elixir utilizza ExUnit come framework di test incorporato, che è estremamente potente e facile da usare. Ecco un esempio di base:
 
-Creiamo un test semplice:
+1. Crea un nuovo file di test nella directory `test` del tuo progetto Elixir. Ad esempio, se stai testando un modulo chiamato `MathOperations`, il tuo file di test potrebbe essere `test/math_operations_test.exs`.
+
 ```elixir
-# file: test/example_test.exs
-defmodule ExampleTest do
+# test/math_operations_test.exs
+defmodule MathOperationsTest do
   use ExUnit.Case
 
-  test "la somma di 1 e 2 è 3" do
-    assert 1 + 2 == 3
+  # Questo è un semplice caso di test per verificare la funzione di addizione
+  test "l'addizione di due numeri" do
+    assert MathOperations.add(1, 2) == 3
   end
 end
 ```
 
-Eseguiamo i test:
-```shell
-$ mix test
+Per eseguire i tuoi test, usa il comando `mix test` nel tuo terminale. Se la funzione `MathOperations.add/2` aggiunge correttamente due numeri, vedrai un output simile a:
+
+```
+..
+
+Completato in 0.03 secondi
+1 test, 0 fallimenti
 ```
 
-Output previsto:
+Per i test che coinvolgono servizi esterni o API, potresti voler utilizzare librerie di mock, come `mox`, per evitare di colpire i servizi reali:
+
+1. Aggiungi `mox` alle tue dipendenze in `mix.exs`:
+
+```elixir
+defp deps do
+  [
+    {:mox, "~> 1.0.0", only: :test},
+    # altre dipendenze...
+  ]
+end
 ```
-Compiling 1 file (.ex)
-.
 
-Finished in 0.03 seconds (0.03s async, 0.00s sync)
-1 test, 0 failures
+2. Definisci un modulo mock nel tuo helper di test (`test/test_helper.exs`):
 
-Randomized with seed 54321
+```elixir
+Mox.defmock(HTTPClientMock, per: HTTPClientBehaviour)
 ```
 
-## Deep Dive
-ExUnit è il framework di test integrato in Elixir sin dalla sua creazione da José Valim; si ispira a Ruby's MiniTest. Alternativamente, si possono usare strumenti come ESpec per un approccio ispirato a RSpec, o Common Test per compatibilità con Erlang. Implementando i test, viene sfruttata la concorrenza fornita dalla macchina virtuale Erlang per accelerare l'esecuzione.
+3. Usa il mock nel tuo caso di test:
 
-## See Also
-- [Elixir School Testing](https://elixirschool.com/en/lessons/basics/testing/)
-- [Documentation for ExUnit](https://hexdocs.pm/ex_unit/ExUnit.html)
-- [Awesome Elixir - A collection of awesome Elixir libraries](https://github.com/h4cc/awesome-elixir#testing)
+```elixir
+# test/some_api_client_test.exs
+defmodule SomeAPIClientTest do
+  use ExUnit.Case
+  import Mox
+
+  # Questo indica a Mox di verificare che questo mock sia stato chiamato come previsto
+  setup :verify_on_exit!
+
+  test "ottiene dati dall'API" do
+    # Imposta la risposta del mock
+    expect(HTTPClientMock, :get, fn _url -> {:ok, "Risposta simulata"} end)
+    
+    assert SomeAPIClient.get_data() == "Risposta simulata"
+  end
+end
+```
+
+Quando esegui `mix test`, questo setup ti permette di isolare i tuoi test unitari dalle vere dipendenze esterne, concentrandoti sul comportamento del tuo codice. Questo modello assicura che i tuoi test vengano eseguiti rapidamente e rimangano affidabili, indipendentemente dallo stato del servizio esterno o dalla connettività internet.

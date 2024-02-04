@@ -1,51 +1,56 @@
 ---
 title:                "Escribiendo en el error estándar"
-date:                  2024-01-19
+date:                  2024-02-03T19:32:39.996785-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Escribiendo en el error estándar"
-
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/c-sharp/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
+Escribir en el error estándar (stderr) en C# implica dirigir los mensajes de error y los diagnósticos de forma separada del salida regular (stdout) para ayudar a los usuarios y desarrolladores a distinguir entre la salida normal del programa y las notificaciones de error. Los programadores hacen esto para hacer la depuración y el registro más eficientes, permitiendo una operación y mantenimiento más suaves de las aplicaciones.
 
-Escribir en el error estándar permite que tus programas comuniquen problemas y diagnósticos separando estos mensajes del contenido principal de salida. Los programadores hacen esto para facilitar el monitoreo y manejo de errores.
+## Cómo:
+En C#, escribir en el error estándar se puede lograr utilizando el flujo `Console.Error`. Este flujo se utiliza específicamente para mensajes de error y diagnósticos. Aquí hay un ejemplo básico:
 
-## ¿Cómo Hacerlo?
-
-```C#
-using System;
-
-class ErrorStd
-{
-    static void Main()
-    {
-        Console.Error.WriteLine("Ha ocurrido un error.");
-        
-        // Código regular aquí
-        Console.WriteLine("Esta es una salida estándar.");
-    }
-}
+```csharp
+Console.Error.WriteLine("Error: No se pudo procesar la solicitud.");
 ```
 
-Salida de muestra:
-
+Salida de ejemplo (a stderr):
 ```
-Esta es una salida estándar.
-Ha ocurrido un error.
+Error: No se pudo procesar la solicitud.
 ```
 
-Nota que el mensaje de error puede aparecer después en la salida de la consola debido a diferencias en el buffering, pero estarán claramente en flujos separados al redirigirlos en un entorno de producción.
+Para escenarios en los que podrías estar utilizando una biblioteca de terceros que ofrece capacidades avanzadas de registro, como `Serilog` o `NLog`, puedes configurar estas bibliotecas para escribir registros de error en stderr. Si bien estos ejemplos se centran en la simple redirección de la consola, recuerda que en aplicaciones de producción, los marcos de registro ofrecen opciones de manejo y salida de errores mucho más robustas. Aquí hay un ejemplo simple con `Serilog`:
 
-## Profundización
+Primero, instala el paquete Serilog y su destino de Consola:
 
-Históricamente, separar la salida estándar de la salida de error ha sido clave en Unix y sistemas similares para el procesamiento y análisis de datos de programas (pipelines). C# y .NET permiten esta tarea a través de `Console.Error`, que escribe en el flujo de error estándar, diferenciándose de `Console.Out` que escribe en la salida estándar. Alternativas incluyen el uso de logging frameworks que proporcionan más control y flexibilidad, como NLog o log4net. Internamente, `Console.Error` usa un `StreamWriter` que escribe en el flujo de error estándar del proceso.
+```
+Install-Package Serilog
+Install-Package Serilog.Sinks.Console
+```
 
-## Ver También
+Luego, configura Serilog para escribir en stderr:
 
-- Documentación de Microsoft sobre `Console.Error`: [https://docs.microsoft.com/en-us/dotnet/api/system.console.error](https://docs.microsoft.com/en-us/dotnet/api/system.console.error)
-- Tutorial de Microsoft sobre cómo depurar aplicaciones de C#: [https://docs.microsoft.com/en-us/visualstudio/debugger/debugging-absolute-beginners](https://docs.microsoft.com/en-us/visualstudio/debugger/debugging-absolute-beginners)
-- Una introducción a NLog: [https://nlog-project.org](https://nlog-project.org)
-- Información sobre log4net: [https://logging.apache.org/log4net/](https://logging.apache.org/log4net/)
+```csharp
+using Serilog;
+
+Log.Logger = new LoggerConfiguration()
+    .WriteTo.Console(standardErrorFromLevel: Serilog.Events.LogEventLevel.Error)
+    .CreateLogger();
+
+Log.Information("Este es un mensaje normal.");
+Log.Error("Este es un mensaje de error.");
+```
+
+Salida de ejemplo (a stderr para el mensaje de error):
+```
+[15:04:20 ERR] Este es un mensaje de error.
+```
+
+Nota: La configuración `standardErrorFromLevel` en el destino de consola de Serilog redirige todos los eventos de registro en el nivel especificado (Error, en este caso) o superior al flujo de error estándar, mientras que mensajes de nivel inferior como Información se escriben en el flujo de salida estándar.

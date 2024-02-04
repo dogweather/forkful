@@ -1,61 +1,43 @@
 ---
 title:                "检查目录是否存在"
-date:                  2024-01-20T14:56:27.143671-07:00
+date:                  2024-02-03T19:07:20.667548-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "检查目录是否存在"
-
 tag:                  "Files and I/O"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/fish-shell/checking-if-a-directory-exists.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-什么以及为什么？
+## 是什么 & 为什么？
+在 Fish Shell 中检查目录是否存在允许脚本基于目录结构的存在或缺失做出决策，使得像条件文件操作、日志记录或环境设置这样的任务成为可能。这个技巧对于编写与文件系统以可预测的方式交互的健壮脚本至关重要。
 
-在Fish Shell中检查目录是否存在是探测给定路径是否指向一个实际的文件夹。程序员这样做是为了确保文件操作正确，例如读取、写入或更改目录内容前，避免错误。
+## 如何操作：
+Fish Shell 使用 `test` 命令来检查文件类型和特性，包括目标是否为目录。这里有一个检查目录是否存在的基本模式：
 
-## How to:
-如何操作：
-
-检查目录是否存在的基本命令很简单。下面是一些示例和输出。
-
-```Fish Shell
-if test -d /path/to/directory
-    echo "Directory exists"
+```fish
+if test -d /path/to/dir
+    echo "目录存在"
 else
-    echo "Directory does not exist"
+    echo "目录不存在"
+end
+```
+示例输出：
+```
+目录存在
+```
+
+为了更流畅的文件和目录操作，人们可能会转向像 `fd` 这样的外部工具，尽管它更常用于查找文件和目录而不仅仅是检查存在性。然而，将其与 Fish 脚本结合起来可以获得便捷的结果：
+
+```fish
+set dir "/path/to/search"
+if fd . $dir --type directory --max-depth 1 | grep -q $dir
+    echo "目录存在"
+else
+    echo "目录不存在"
 end
 ```
 
-如果目录存在，你会看到：
-
-```
-Directory exists
-```
-
-如果不存在，输出则为：
-
-```
-Directory does not exist
-```
-
-记得替换 `/path/to/directory` 为你要检查的目录路径。
-
-## Deep Dive
-深入了解：
-
-历史上，大多数Unix-like系统都使用 `test` 命令（也可以简写为 `[` 和 `]`）来检查文件和目录的存在性。在Fish Shell中，`test` 命令与其他shell保持一致，是检查文件系统中对象存在与否的核心工具。
-
-除了 `test -d`，还有其他命令和方法可以达到同样的目的，例如使用 `stat` 命令或者在其他编程环境中调用文件系统相关的API。
-
-具体到实施细节，`-d` 选项用于判断提供的路径是否为目录。它的运作是通过调用操作系统的系统调用，如 `stat`，来获取文件或目录的元数据，然后检查它是否具有目录属性。
-
-在脚本编写实践中，检查目录存在性确保了后续操作的有效性，有助于减少运行时错误和异常处理，也让脚本更健壮、可靠。
-
-## See Also
-参考链接：
-
-- Fish官方文档：[https://fishshell.com/docs/current/index.html](https://fishshell.com/docs/current/index.html)
-- Unix `test` 命令：[https://man7.org/linux/man-pages/man1/test.1.html](https://man7.org/linux/man-pages/man1/test.1.html)
-- 关于文件系统操作的更多信息: [https://en.wikipedia.org/wiki/File_system_permissions](https://en.wikipedia.org/wiki/File_system_permissions)
+这个 `fd` 示例在指定深度搜索目录，而 `grep` 用于检查匹配，使它适用于细致的检查。然而，为了直接检查存在性，坚持使用 Fish 内置的 `test` 既高效又直接。

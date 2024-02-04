@@ -1,57 +1,70 @@
 ---
-title:                "रेगुलर एक्सप्रेशन का उपयोग"
-date:                  2024-01-19
-simple_title:         "रेगुलर एक्सप्रेशन का उपयोग"
-
+title:                "रेगुलर एक्सप्रेशन्स का उपयोग करना"
+date:                  2024-02-03T19:18:30.662294-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "रेगुलर एक्सप्रेशन्स का उपयोग करना"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/powershell/using-regular-expressions.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (क्या और क्यों?)
-रेगुलर एक्सप्रेशन्स (regular expressions) पैटर्न मैचिंग टूल्स हैं, जो टेक्स्ट में विशिष्ट डेटा ढूँढने या मैनिपुलेट करने के लिए इस्तेमाल होते हैं. प्रोग्रामर्स इनका इस्तेमाल इसलिए करते हैं, क्योंकि ये कम्पलेक्स सर्च और रिप्लेसमेंट टास्क्स को आसान और एफिसिएंट बनाते हैं.
+## क्या और क्यों?
 
-## How to: (कैसे करें)
-PowerShell में रेगुलर एक्सप्रेशन्स का इस्तेमाल करके टेक्स्ट मैच और रिप्लेस करने के उदाहरण:
+नियमित व्यंजक (regex) वर्णों की एक श्रृंखला होती है जो एक खोज पैटर्न तैयार करती है, जिसका मुख्य रूप से तार खोजने और संशोधन के लिए उपयोग किया जाता है। कार्यक्रमकर्ता PowerShell में डेटा मान्यता, पार्सिंग, और रूपांतरण जैसे कार्यों के लिए इसका लाभ उठाते हैं, क्योंकि इसमें जटिल पैटर्नों को संभालने में कुशलता और लचीलापन होता है।
 
-```PowerShell
-# मैचिंग ईमेल एड्रेस
-$emails = "test@example.com", "hello@world.net", "noemailatall"
-$pattern = '^\S+@\S+\.\S+$'
-$emails -match $pattern
+## कैसे करें:
 
-# स्ट्रिंग की शुरुआत में 'h' वाले शब्द
-$words = "hello", "hey", "goodbye", "hi"
-$words -match '^h'
+PowerShell में, आप `-match`, `-replace`, और `-split` ऑपरेटरों का उपयोग करके, दूसरों के बीच, नियमित व्यंजकों के साथ कार्य कर सकते हैं। आइए कुछ उदाहरणों का अन्वेषण करें:
 
-# फाइल्स की लिस्ट से .txt एक्सटेंशन वाली फाइल्स खोजना
-$files = Get-ChildItem
-$txtFiles = $files -match '\.txt$'
-$txtFiles
+### पैटर्न से मेल खाते हुए तार की जाँच करने के लिए `-match` का उपयोग
+यदि पैटर्न तार में पाया जाता है तो यह ऑपरेटर `$true` लौटाता है, अन्यथा `$false`।
+
+```powershell
+"hello world" -match "\w+orld"
+# उत्पादन: सच
 ```
 
-सैंपल आउटपुट:
-```
-true
-true
-false
+### मिलानों को निकालना
+आप स्वतः वैरिएबल `$matches` को एक्सेस करके मिलान मान को निकाल सकते हैं।
 
-hello
-hey
-
-file1.txt
-notes.txt
+```powershell
+if ("I have 100 apples" -match "\d+") {
+    "संख्या मिली: " + $matches[0]
+}
+# उत्पादन: संख्या मिली: 100
 ```
 
-## Deep Dive (गहराई में जानकारी)
-रेगुलर एक्सप्रेशन्स की शुरुआत 1950s में हुई थी. ये अनेकों प्रोग्रामिंग भाषाओं में इम्प्लीमेंट किए गए हैं. PowerShell में, ये .NET के System.Text.RegularExpressions नेमस्पेस का इस्तेमाल करते हैं.
+### प्रतिस्थापन के लिए `-replace` का उपयोग
+`-replace` ऑपरेटर एक निर्दिष्ट प्रतिस्थापन स्ट्रिंग के साथ पैटर्न के सभी उदाहरणों को बदल देता है।
 
-अल्टरनेटिव्स में 'like' ऑपरेटर या वाइल्डकार्ड पैटर्न्स शामिल हैं, लेकिन ये रेगुलर एक्सप्रेशन्स की तरह शक्तिशाली नहीं होते. 
+```powershell
+"foo bar baz" -replace "ba[rz]", "qux"
+# उत्पादन: foo qux qux
+```
 
-परफॉरमेंस के लिहाज से, पैटर्न्स को सिंपल रखने और बैकट्रैकिंग कम से कम करने पर ध्यान देना चाहिए.
+### `-split` के साथ स्ट्रिंगों को विभाजित करना
+एक रेगेक्स पैटर्न के आधार पर एक स्ट्रिंग को सबस्ट्रिंगों की एक सरणी में विभाजित करना।
 
-## See Also (और भी देखें)
-- Microsoft की आधिकारिक PowerShell डॉक्युमेंटेशन साईट पर रेगुलर एक्सप्रेशन्स का विस्तृत अध्यायन: [about_Regular_Expressions](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_regular_expressions)
-- .NET रेगुलर एक्सप्रेशन्स के लिए संदर्भ गाईड: [System.Text.RegularExpressions Namespace](https://docs.microsoft.com/en-us/dotnet/api/system.text.regularexpressions?view=netframework-4.8)
-- रेगुलर एक्सप्रेशन टेस्टिंग और एक्सपेरिमेंटेशन के लिए ऑनलाइन टूल: [Regex101](https://regex101.com/)
+```powershell
+"The quick-brown_fox jumps" -split "[-_ ]"
+# उत्पादन: The quick brown fox jumps
+```
+
+### उन्नत पैटर्न मैचिंग
+PowerShell `[regex]` क्लास के माध्यम से अधिक जटिल regex कार्य संचालित करने का समर्थन करता है, जो आपको `Matches()`, `Replace()`, और `Split()` जैसे विधियों तक पहुंच प्रदान करता है।
+
+```powershell
+[regex]::Matches("June 24, August 9, Dec 12", "\b[A-Za-z]+\b").Value
+# उत्पादन: June August Dec
+
+[regex]::Replace("100,000", "\B(?=(?:\d{3})+(?!\d))", ",")
+# उत्पादन: 100,000
+
+[regex]::Split("one,two;three four", ",|;| ")
+# उत्पादन: one two three four
+```
+
+ये उदाहरण PowerShell में डेटा मैनिपुलेशन और पैटर्न मैचिंग के लिए नियमित व्यंजकों की शक्ति और बहुमुखी प्रतिभा को दर्शाते हैं। Regex का उपयोग करके, कार्यक्रमकर्ता कुशलतापूर्वक जटिल पाठ प्रसंस्करण को प्रदर्शन कर सकते हैं।

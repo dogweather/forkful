@@ -1,44 +1,72 @@
 ---
-title:                "Analisi dell'HTML"
-date:                  2024-01-20T15:33:11.276961-07:00
-simple_title:         "Analisi dell'HTML"
-
+title:                "Analisi del HTML"
+date:                  2024-02-03T19:12:42.232453-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Analisi del HTML"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/powershell/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Cosa & Perché?)
-Il parsing di HTML consiste nell'estrarre dati da una pagina web. I programmatori lo fanno per automatizzare il recupero di informazioni, integrare contenuti esterni nelle app o per analisi di dati web.
+## Cosa & Perché?
+Il parsing di HTML in PowerShell riguarda l'analisi del contenuto HTML per estrarre dati specifici o per automatizzare compiti relativi al web. I programmatori lo fanno per interagire con pagine web, raschiare contenuti web, o automatizzare invii di form e altre interazioni web senza la necessità di un browser web.
 
-## How to: (Come fare:)
-Per fare il parsing di HTML in PowerShell, puoi utilizzare il cmdlet `Invoke-WebRequest` e il pacchetto HtmlAgilityPack. Esempio:
+## Come fare:
 
-```PowerShell
-# Installa il pacchetto HtmlAgilityPack se non presente
-# Install-Package HtmlAgilityPack
+PowerShell non ha nativamente un parser HTML dedicato, ma è possibile utilizzare il cmdlet `Invoke-WebRequest` per accedere e analizzare il contenuto HTML. Per un parsing e una manipolazione più complessi, si può impiegare HtmlAgilityPack, una popolare libreria .NET.
 
-# Usa Invoke-WebRequest e seleziona elementi HTML
+### Utilizzando `Invoke-WebRequest`:
+
+```powershell
+# Esempio semplice per recuperare i titoli da una pagina web
 $response = Invoke-WebRequest -Uri 'http://example.com'
-$html = New-Object -TypeName HtmlAgilityPack.HtmlDocument
-$html.LoadHtml($response.Content)
+# Utilizzare la proprietà ParsedHtml per accedere agli elementi del DOM
+$title = $response.ParsedHtml.title
+Write-Output $title
+```
 
-# Estrai dati usando XPath
-$nodes = $html.DocumentNode.SelectNodes('//h1')
-foreach ($node in $nodes) {
+Output di esempio:
+
+```
+Example Domain
+```
+
+### Utilizzando HtmlAgilityPack:
+
+Prima, è necessario installare l'HtmlAgilityPack. È possibile farlo tramite NuGet Package Manager:
+
+```powershell
+Install-Package HtmlAgilityPack -ProviderName NuGet
+```
+
+Poi, è possibile utilizzarlo in PowerShell per analizzare l'HTML:
+
+```powershell
+# Caricare l'assembly di HtmlAgilityPack
+Add-Type -Path "path\to\HtmlAgilityPack.dll"
+
+# Creare un oggetto HtmlDocument
+$doc = New-Object HtmlAgilityPack.HtmlDocument
+
+# Caricare HTML da un file o da una richiesta web
+$htmlContent = (Invoke-WebRequest -Uri "http://example.com").Content
+$doc.LoadHtml($htmlContent)
+
+# Utilizzare XPath o altri metodi di query per estrarre elementi
+$node = $doc.DocumentNode.SelectSingleNode("//h1")
+
+if ($node -ne $null) {
     Write-Output $node.InnerText
 }
 ```
+
 Output di esempio:
+
 ```
-Titolo della Pagina
+Benvenuti su Example.com!
 ```
 
-## Deep Dive (Analisi Approfondita)
-Il parsing di HTML risale agli albori del web per l'analisi dei contenuti. PowerShell supporta varie tecniche incluse regex e packages come HtmlAgilityPack. Regex è rapido ma può essere impreciso. HtmlAgilityPack è uno standard de facto, affidabile e flessibile, che imita il DOM e comprende XPath e CSS selectors.
-
-## See Also (Vedi Anche)
-- [HtmlAgilityPack su GitHub](https://github.com/zzzprojects/html-agility-pack)
-- [Documentazione ufficiale PowerShell](https://docs.microsoft.com/it-it/powershell/)
-- [XPath Tutorial](https://www.w3schools.com/xml/xpath_intro.asp)
+In questi esempi, `Invoke-WebRequest` è migliore per compiti semplici, mentre HtmlAgilityPack offre un insieme di funzionalità molto più ricco per parsing e manipolazione HTML complessi.

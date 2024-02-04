@@ -1,61 +1,63 @@
 ---
-title:                "Análisis de HTML"
-date:                  2024-01-20T15:33:24.886906-07:00
-simple_title:         "Análisis de HTML"
-
+title:                "Analizando HTML"
+date:                  2024-02-03T19:12:42.977064-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Analizando HTML"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/python/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
+Parsear HTML implica analizar el código HTML de una página web para extraer información o elementos específicos, una tarea común para el web scraping, la minería de datos o la automatización de interacciones con sitios web. Los programadores lo hacen para interactuar programáticamente con sitios web o extraer datos de ellos, automatizar tareas o probar aplicaciones web.
 
-Parsear HTML es el proceso de convertir el código HTML en una estructura de datos que un programa puede entender y manipular. Los programadores lo hacen para extraer información, automatizar interacciones web o incluso para probar aplicaciones web.
+## Cómo hacerlo:
+Python ofrece bibliotecas potentes como BeautifulSoup y requests para el web scraping y el análisis de HTML. Para comenzar, necesitas instalar estas bibliotecas si aún no lo has hecho:
 
-## Cómo Hacerlo:
-
-Para parsear HTML en Python, una herramienta popular es BeautifulSoup. Asegúrate de tenerla instalada (`pip install beautifulsoup4`). Aquí tienes un ejemplo simple:
-
-```Python
-from bs4 import BeautifulSoup
-
-# HTML de ejemplo
-html_doc = """
-<html><head><title>El Documento</title></head>
-<body>
-<p class="titulo"><b>El Párrafo Principal</b></p>
-<p class="story">Una vez había tres osos...</p>
-</body></html>
-"""
-
-# Parsear el documento HTML
-soup = BeautifulSoup(html_doc, 'html.parser')
-
-# Aceder al título del documento
-titulo = soup.title.string
-print(titulo)  # El Documento
-
-# Encontrar todos los párrafos con la clase 'story'
-parrafos_story = soup.find_all('p', class_='story')
-for parrafo in parrafos_story:
-    print(parrafo.get_text())  # Una vez había tres osos...
+```bash
+pip install beautifulsoup4 requests
 ```
 
-El código imprime el título del documento y el texto del párrafo con la clase `story`.
+Aquí tienes un ejemplo básico usando `requests` para obtener el contenido HTML de una página web y `BeautifulSoup` para analizarlo:
 
-## Profundización:
+```python
+import requests
+from bs4 import BeautifulSoup
 
-Este ejemplo usa BeautifulSoup pero, antes, opciones como la biblioteca estándar `html.parser` de Python eran comunes. BeautifulSoup ofrece una interfaz más amigable y herramientas potentes para navegar y buscar en el árbol del documento.
+# Obtener el contenido de una página web
+URL = 'https://example.com'
+page = requests.get(URL)
 
-Los programadores también utilizan otras bibliotecas como `lxml` y `html5lib` para parsear HTML. `lxml` es muy rápido y `html5lib` se adhiere muy bien a los estándares web, pero BeautifulSoup logra un buen equilibrio entre velocidad y flexibilidad.
+# Analizar el contenido HTML
+soup = BeautifulSoup(page.content, 'html.parser')
 
-Históricamente, mucho del parseo HTML se hacía con expresiones regulares, pero esta práctica es propensa a errores debido a la complejidad y variabilidad del HTML en la web moderna. BeautifulSoup y herramientas similares utilizan parseadores robustos que entienden la estructura del HTML, lo que resulta en una experiencia más predecible y menos frustrante para el desarrollador.
+# Ejemplo de extracción del título de la página web
+title = soup.find('title').text
+print(f'Título de la Página Web: {title}')
+```
 
-Cuando se parsea HTML para web scraping (extracción de datos), es importante ser consciente de los términos de servicio del sitio web y las leyes de derechos de autor.
+**Salida de muestra**:
+```
+Título de la Página Web: Dominio de Ejemplo
+```
 
-## Ver También:
+Para consultas más complejas, como extraer todos los enlaces de una página web, puedes usar los diversos métodos de BeautifulSoup para navegar y buscar en el árbol de análisis:
 
-- Documentación de BeautifulSoup: https://www.crummy.com/software/BeautifulSoup/bs4/doc/
-- Comparación de parseadores HTML en Python: https://www.ianbicking.org/blog/2008/03/python-html-parser-performance.html
-- Guía para elegir una biblioteca de parseo HTML: https://realpython.com/beautiful-soup-web-scraper-python/
+```python
+# Extraer todos los enlaces dentro de las etiquetas <a>
+links = soup.find_all('a')
+
+for link in links:
+    href = link.get('href')
+    print(href)
+```
+
+**Salida de muestra**:
+```
+https://www.iana.org/domains/example
+```
+
+La flexibilidad de BeautifulSoup te permite personalizar tu búsqueda para obtener exactamente los datos necesitados, haciendo del análisis de HTML una herramienta poderosa para los programadores que trabajan con contenido web.

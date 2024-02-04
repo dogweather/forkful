@@ -1,55 +1,50 @@
 ---
-title:                "Парсинг HTML"
-date:                  2024-01-20T15:33:05.522378-07:00
-simple_title:         "Парсинг HTML"
-
+title:                "Аналіз HTML"
+date:                  2024-02-03T19:12:47.468649-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Аналіз HTML"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/kotlin/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? 
-## Що та Чому?
+## Що і чому?
+Розбір HTML означає декомпозицію розмітки веб-сторінки на щось, що програма може розуміти та маніпулювати. Програмісти аналізують HTML, щоб витягувати дані, автоматизувати веб-взаємодії або мігрувати контент між системами.
 
-Parsing HTML – це процес аналізу HTML-коду та перетворення його в структуровані дані. Програмісти роблять це, щоб витягти інформацію з веб-сторінок та працювати з нею як зі звичайними даними.
-
-## How to:
 ## Як це зробити:
-
-Kotlin, завдяки своїй бібліотеці Jsoup, робить парсинг HTML простим. Нижче наведено приклад коду та його виведення.
+Kotlin робить розбір HTML простим завдяки бібліотекам на кшталт Jsoup. Ось як це робиться:
 
 ```Kotlin
 import org.jsoup.Jsoup
 
 fun main() {
-    val html = "<html><head><title>First parse</title></head>" +
-               "<body><p>Parsed HTML into a doc.</p></body></html>"
+    val html = "<html><head><title>Зразок сторінки</title></head><body><p>Це тест.</p></body></html>"
     val doc = Jsoup.parse(html)
+
     val title = doc.title()
-    val p = doc.select("p").first().ownText()
+    println("Назва: $title")  // Вивід: Назва: Зразок сторінки
 
-    println("Title: $title")
-    println("First paragraph: $p")
+    val pText = doc.select("p").first()?.text()
+    println("Абзац: $pText")  // Вивід: Абзац: Це тест.
 }
-
-// Output:
-// Title: First parse
-// First paragraph: Parsed HTML into a doc.
 ```
 
-## Deep Dive:
-## Поглиблено:
+Ми витягуємо назву та текст абзацу, що є лише вершиною айсберга того, що може зробити Jsoup. Але це хороший початок.
 
-Jsoup – це зручна бібліотека Java для роботи з HTML, і вона без проблем використовується у Kotlin. Історично, парсинг HTML був складнішим через неконсистентність HTML-коду на різних сайтах. Jsoup допомагає обробляти неправильно сформульований HTML, створюючи DOM-структуру, яка легко маніпулюється.
+## Поглиблений аналіз:
+До Kotlin, Java була основним інструментом для цього, часто незграбно. Jsoup змінив правила гри, надаючи підхід на кшталт jQuery. Проте розбір HTML не обмежується лише Jsoup; існують й інші бібліотеки на кшталт HtmlUnit або навіть регулярні вирази (хоча це не рекомендується). З Jsoup ви забезпечуєте, що ваш розбір поважає структуру документа. Вона використовує модель DOM, що дозволяє вибирати та маніпулювати елементами. Вона також стійка - може розбирати навіть найбільш заплутаний HTML.
 
-Альтернативою Jsoup є інші бібліотеки, наприклад HtmlUnit чи TagSoup. Проте Jsoup вважається однією з найзручніших для Kotlin/Java через свою виразну "fluent" API та здатність обробляти реальні сценарії веб-скрапінгу.
+## Дивіться також:
+Зануртесь глибше у Jsoup:
 
-Деталі реалізації Jsoup включають можливість чуттєво вибирати елементи за допомогою CSS-селекторів, поводження з формами, а також багато чого іншого, що спрощує роботу з даними HTML.
+- Офіційна документація Jsoup: https://jsoup.org/
+- Книга "Kotlin для розробників Android": https://antonioleiva.com/kotlin-android-developers-book/
+- Офіційний сайт мови програмування Kotlin: https://kotlinlang.org/
 
-## See Also:
-## Додатково:
+Для більш широких обговорень та туторіалів на тему веб-скрапінгу та розбору:
 
-- [Jsoup Official Website](https://jsoup.org/)
-- [Jsoup GitHub Repository](https://github.com/jhy/jsoup/)
-- [Kotlin Programming Language Website](https://kotlinlang.org/)
+- Веб-скрапінг з Kotlin та Jsoup: https://medium.com/@hadiyarajesh/web-scraping-with-kotlin-and-jsoup-8b5b6c31c5a5
+- Розбір HTML на Android з Kotlin та Jsoup: https://proandroiddev.com/parsing-html-on-android-1b766658be6a

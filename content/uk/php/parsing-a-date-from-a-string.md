@@ -1,47 +1,64 @@
 ---
-title:                "Аналіз дати з рядка"
-date:                  2024-01-20T15:37:44.072922-07:00
-simple_title:         "Аналіз дати з рядка"
-
+title:                "Розбір дати з рядка"
+date:                  2024-02-03T19:15:24.864139-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Розбір дати з рядка"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/php/parsing-a-date-from-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Що та Чому?
+## Що і чому?
 
-Парсинг дати - це процес конвертації текстової строки у дату, яку розуміє PHP. Програмісти роблять це, щоб можна було легко зберігати, порівнювати та обробляти дати.
+Розбір дати з рядка у PHP полягає в перетворенні тексту, який представляє дату та/або час, на об'єкт `DateTime` PHP або інші формати дати/часу. Це критично важливо для цілей валідації, маніпуляції, зберігання і представлення даних, особливо при роботі з даними користувача або даними з зовнішніх джерел.
 
 ## Як це зробити:
 
-```php
-<?php
-$dateString = "2023-04-01 14:00:00";
-$dateObject = new DateTime($dateString);
-echo $dateObject->format('Y-m-d H:i:s'); // Виведення: 2023-04-01 14:00:00
+Вбудований клас `DateTime` у PHP надає потужний набір функцій для розбору та роботи з датами. Ви можете створити екземпляр `DateTime` з рядка дати, використовуючи конструктор, а потім відформатувати його за потребою. Ось як:
 
-// Якщо формат дати невідомий або складний
-$dateStringComplex = "April 1st, 2023, 2:00 PM";
-$dateObjectComplex = DateTime::createFromFormat('F jS, Y, g:i A', $dateStringComplex);
-echo $dateObjectComplex->format('Y-m-d H:i:s'); // Виведення: 2023-04-01 14:00:00
-?>
+```php
+$dateString = "2023-04-25 15:30:00";
+$dateObject = new DateTime($dateString);
+
+echo $dateObject->format('Y-m-d H:i:s');
+// Виведення: 2023-04-25 15:30:00
 ```
 
-## Поглиблений Розбір:
+Для обробки рядків, які слідують нестандартним форматам, ви можете використати метод `createFromFormat`, який дозволяє вказати точний формат вхідної дати:
 
-Дати в текстовому форматі не завжди легко обробити. Скажімо, у ранніх версіях PHP парсинг дат був складніший і призводив до помилок через обмежене розуміння форматів. Функція `strtotime()` була одним з перших рішень, але вона не ідеально працювала з нетиповими форматами.
+```php
+$dateString = "25-04-2023 3:30 PM";
+$dateObject = DateTime::createFromFormat('d-m-Y g:i A', $dateString);
 
-Спільнота PHP відповіла на це створенням об'єктно-орієнтованого класу `DateTime`, який надав розробникам більш гнучкі можливості. З `DateTime::createFromFormat`, ви можете вказати точний формат дати, а PHP правильно її обробить.
+echo $dateObject->format('Y-m-d H:i:s');
+// Виведення: 2023-04-25 15:30:00
+```
 
-Але навіщо все це? Уявіть, вам треба працювати з користувацькими датами у різних форматах, зі сторонніх API, або просто перетворювати строки у дати для збереження в базі даних. Тут `DateTime` стане у нагоді.
+Для більш складного розбору, який може не підтримуватися безпосередньо `DateTime`, PHP пропонує функцію `strtotime`, яка намагається розібрати будь-який англомовний текстовий опис дати/часу у Unix часову мітку:
 
-Ще однією альтернативою є використання функцій `date_parse()` або `date_parse_from_format()`, які повертають масив із компонентами дати, натомість створення об'єкту `DateTime`.
+```php
+$timestamp = strtotime("next Thursday");
+echo date('Y-m-d', $timestamp);
+// Виведення змінюватиметься залежно від поточної дати, наприклад, "2023-05-04"
+```
 
-## Дивіться Ще:
+**Використання сторонніх бібліотек:**
 
-- Офіційна документація по класу `DateTime`: [php.net/manual/en/class.datetime.php](https://www.php.net/manual/en/class.datetime.php)
-- Функція `strtotime()`: [php.net/manual/en/function.strtotime.php](https://www.php.net/manual/en/function.strtotime.php)
-- Функція `date_parse()`: [php.net/manual/en/function.date-parse.php](https://www.php.net/manual/en/function.date-parse.php)
-- Функція `date_parse_from_format()`: [php.net/manual/en/function.date-parse-from-format.php](https://www.php.net/manual/en/function.date-parse-from-format.php)
-- Порівняння різних методів парсингу дат у PHP: [stackoverflow.com/questions](https://stackoverflow.com/questions) (шукайте "PHP date parsing" або "PHP DateTime vs strtotime").
+Хоча вбудовані функції PHP охоплюють широкий спектр випадків використання, іноді вам може знадобитися більш складний функціонал розбору. Бібліотека Carbon, розширення класу DateTime PHP, надає багатий набір можливостей для маніпуляції з датою/часом:
+
+```php
+require 'vendor/autoload.php';
+
+use Carbon\Carbon;
+
+$dateString = "Tomorrow";
+$date = Carbon::parse($dateString);
+
+echo $date->toDateTimeString();
+// Виведення змінюватиметься, наприклад, "2023-04-26 00:00:00"
+```
+
+Метод `parse` в Carbon розумно обробляє багато форматів дати та часу, роблячи його незамінним інструментом для додатків, що вимагають гнучкої функціональності розбору дат.

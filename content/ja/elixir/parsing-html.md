@@ -1,69 +1,84 @@
 ---
 title:                "HTMLの解析"
-date:                  2024-01-20T15:31:18.851109-07:00
+date:                  2024-02-03T19:12:00.721455-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "HTMLの解析"
-
 tag:                  "HTML and the Web"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/elixir/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (何とその理由?)
-HTMLのパースとは、HTMLドキュメントから情報を抽出するプロセスです。Webスクレイピングや自動化のため、プログラマーは構造化されたデータが必要で、そのために行います。
+## 何となぜ？
 
-## How to: (やり方:)
-ElixirにはHTMLをパースするためのライブラリがいくつかあります。ここでは`Floki`を使って基本的なパースを行う方法を見ていきましょう。まず、`Floki`をmix.exsに追加してインストールします。
+Elixir での HTML の解析は、HTML ドキュメントから情報を抽出することを意味します。プログラマーは、これを行うことで、プログラムでウェブページと対話したり、データをスクレイピングしたり、ウェブの操作を自動化したりでき、アプリケーションがウェブコンテンツを動的に理解して利用できるようにします。
+
+## 方法：
+
+Elixir は、堅牢な並行性モデルおよび関数型プログラミングパラダイムを持っていますが、組み込みの HTML 解析機能は含まれていません。しかし、この目的のために `Floki` のような人気のあるサードパーティ製ライブラリを使用できます。Floki は、Elixir のパターンマッチングとパイピング機能を活用して、HTML 解析を直感的かつ効率的に行えるようにします。
+
+まず、mix.exs の依存関係に Floki を追加します:
 
 ```elixir
 defp deps do
   [
-    {:floki, "~> 0.30.0"}
+    {:floki, "~> 0.31.0"}
   ]
 end
 ```
 
-そして、HTMLドキュメントをパースしてみましょう。
+次に、`mix deps.get` を実行して新しい依存関係をインストールします。
+
+さて、簡単な HTML 文字列を解析してデータを抽出してみましょう。`<h1>` タグの中のタイトルを探します:
 
 ```elixir
-html = """
+html_content = """
 <html>
   <body>
-    <div class="content">
-      <p>Hello, Elixir!</p>
-      <p>Enjoy parsing.</p>
-    </div>
+    <h1>Hello, Elixir!</h1>
+    <h1>Another Title</h1>
   </body>
 </html>
 """
 
-{:ok, document} = Floki.parse_document(html)
-paragraphs = Floki.find(document, ".content p")
+titles = html_content
+         |> Floki.find("h1")
+         |> Floki.text()
 
-IO.inspect paragraphs
+IO.inspect(titles)
 ```
 
-出力は次のようになります。
+**サンプル出力:**
 
-```
-[
-  {"p", [], ["Hello, Elixir!"]},
-  {"p", [], ["Enjoy parsing."]}
-]
+```elixir
+["Hello, Elixir!", "Another Title"]
 ```
 
-この例では、`.content`クラス内にある`<p>`タグのテキストを取得しました。
+さらに深く掘り下げると、リンク (`<a>` タグ) とその href 属性を抽出したいとしましょう。これを達成する方法はこちらです:
 
-## Deep Dive (深掘り)
-HTMLパースの必要性は1990年代初頭にさかのぼります。その頃、ウェブが急成長し、情報の自動取得が必要になりました。`Floki`のようなライブラリは、`HTML5ever`という耐久性のあるパースアルゴリズムを使い、Elixirでパイプライン操作をサポートします。そうすることで、HTMLのノード選択や属性の抽出が簡単になります。
+```elixir
+html_content = """
+<html>
+  <body>
+    <a href="https://elixir-lang.org/">Elixir の公式ウェブサイト</a>
+    <a href="https://hexdocs.pm/">HexDocs</a>
+  </body>
+</html>
+"""
 
-別の選択肢としては、`MochiWeb`や`html5ever`のElixirバインディングがあります。これらは異なるアプローチや性能を提供することがありますが、`Floki`はその使いやすさと直感的なAPIで人気があります。
+links = html_content
+        |> Floki.find("a")
+        |> Enum.map(fn({_, attrs, [text]}) -> {text, List.keyfind(attrs, "href", 0)} end)
+        
+IO.inspect(links)
+```
 
-実際のHTMLのパースでは、ドキュメントがどのような構造をしているか、どの要素が必要かを熟知することが求められます。パフォーマンスも考慮しなければならず、巨大なHTMLドキュメントや複雑なセレクタでは効率が重要になります。
+**サンプル出力:**
 
-## See Also (関連情報)
-- [Floki GitHub repository](https://github.com/philss/floki)
-- [HexDocs for Floki](https://hexdocs.pm/floki/Floki.html)
-- [Web scraping with Elixir](https://elixir-lang.org/getting-started/mix-otp/introduction-to-mix.html)
-- [Selectorgadget – CSS Selector tool](http://selectorgadget.com/)
+```elixir
+[{"Elixir の公式ウェブサイト", {"href", "https://elixir-lang.org/"}}, {"HexDocs", {"href", "https://hexdocs.pm/"}}]
+```
+
+このアプローチを用いることで、Elixir アプリケーションでウェブデータの抽出や操作タスクを効率的に行い、HTML ドキュメントをナビゲートして解析することができます。

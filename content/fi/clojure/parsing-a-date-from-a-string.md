@@ -1,40 +1,49 @@
 ---
-title:                "Merkkijonosta päivämäärän jäsentäminen"
-date:                  2024-01-20T15:35:23.466682-07:00
-simple_title:         "Merkkijonosta päivämäärän jäsentäminen"
-
+title:                "Päivämäärän jäsennys merkkijonosta"
+date:                  2024-02-03T19:13:59.337998-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Päivämäärän jäsennys merkkijonosta"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/clojure/parsing-a-date-from-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? / Mikä ja Miksi?
-Päivämäärän jäsentäminen merkkijonosta tarkoittaa päivämäärä-tiedon erottelemista ja muuttamista ymmärrettävään muotoon. Ohjelmoijat tekevät tätä datan validoinnin, tallennuksen ja käsittelemisen helpottamiseksi.
+## Mikä ja miksi?
+Päivämäärän jäsentäminen merkkijonosta Clojuressa on tekstuaalisten päivämäärä- ja aikailmaisujen muuntamista käyttökelpoisempaan muotoon (esim. Clojuren DateTime-objekti). Tämä prosessi on olennainen datakäsittelylle, lokitiedostoille tai mille tahansa sovellukselle, joka käsittelee ajallista dataa, mahdollistaen ohjelmoijien suorittaa operaatioita, vertailuja tai manipulaatioita päivämäärillä tehokkaasti.
 
-## How to / Kuinka tehdä:
-```Clojure
-(require '[java.time.format :as dtf])
-(require '[java.time.LocalDate :as ld])
+## Kuinka:
+Clojure, ollessaan JVM-kieli, mahdollistaa Javan päivämäärä- ja aikalukkastojen suoran käytön. Aloittakaamme sisäänrakennetulla Java-yhteistyöllä ja tutkikaamme sitten, kuinka hyödyntää suosittua kolmannen osapuolen kirjastoa, clj-timea, idiomaattisempien Clojure-ratkaisujen saavuttamiseksi.
 
-;; Määritellään päivämäärän formaatti ja jäsentäjä
-(def date-format (dtf/DateTimeFormatter/ofPattern "dd.MM.yyyy"))
-(defn parse-date [date-string]
-  (ld/parse date-string date-format))
+### Käyttäen Java-yhteistyötä
+Clojure voi suoraan hyödyntää Javan `java.time.LocalDate` -luokkaa päivämäärien jäsentämiseen merkkijonoista:
+```clojure
+(require '[clojure.java.io :as io])
 
-;; Esimerkki päivämäärän jäsentämisestä
-(parse-date "01.05.2023")
-;; => #object[java.time.LocalDate "2023-05-01"]
+; Päivämäärän jäsentäminen käyttäen Java-yhteistyötä
+(let [date-str "2023-04-01"
+      date (java.time.LocalDate/parse date-str)]
+  (println date))
+; Tuloste: 2023-04-01
 ```
 
-Esimerkki kertoo, kuinka luodaan päivämäärän jäsentäjä halutulla formaatilla ja jäsentää merkkijono päivämääräksi Clojuressa käyttäen java.time-kirjastoa.
+### Käyttäen clj-timea
+Idiomaattisempi Clojure-kirjasto päivämäärien ja aikojen käsittelyyn on `clj-time`. Se käärii Joda-Timen, kattavan kirjaston päivämäärä- ja aikaoperaatioille. Sinun täytyy ensin lisätä `clj-time` projektisi riippuvuuksiin. Näin jäsenät päivämäärämerkkijonon käyttäen `clj-time`a:
 
-## Deep Dive / Syväsukellus
-Päivämäärän jäsentämisen historia ulottuu ohjelmoinnin alkuaikoihin, kun tiedon standardoitu esitysmuoto oli tarpeen. Vaihtoehtoja `java.time`-kirjastolle ovat muun muassa Joda-Time ja `clj-time`-kirjasto, mutta `java.time` on nykyisin standardi Clojuressa, sillä se on suorituskykyinen ja monipuolinen.
+```clojure
+; Varmista että lisäät [clj-time "0.15.2"] projekti.clj-tiedostoosi kohtaan :dependencies
 
-Clojure on suunniteltu toimimaan tehokkaasti Javan ekosysteemissä, joten hyödynnämme tässä nativiisti Javan `java.time`-kirjaston luokkia päivämäärän käsittelyyn. `java.time.LocalDate`-luokka kuvaa päivämäärää ilman kellonaikaa, joten se on ihanteellinen pelkän päivämäärän käsittelyyn.
+(require '[clj-time.format :as fmt]
+         '[clj-time.core :as time])
 
-## See Also / Katso Myös
-- Official Java `java.time` documentation: [https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
-- Clojure for the Brave and True (a book with Clojure programming basics): [https://www.braveclojure.com](https://www.braveclojure.com)
-- ClojureDocs, a community-powered documentation and examples repository: [https://clojuredocs.org](https://clojuredocs.org)
+; Määrittele formaatteri
+(let [formatter (fmt/formatter "yyyy-MM-dd")
+      date-str "2023-04-01"
+      parsed-date (fmt/parse formatter date-str)]
+  (println parsed-date))
+; Tuloste: #object[org.joda.time.DateTime 0x76eccb5d "2023-04-01T00:00:00.000Z"]
+```
+
+Nämä esimerkit esittävät perus päivämäärän jäsentämistä. Molemmat menetelmät ovat hyödyllisiä, mutta `clj-time` voi tarjota Clojure-keskeisemmän lähestymistavan lisätoiminnallisuuksilla monimutkaisia vaatimuksia varten.

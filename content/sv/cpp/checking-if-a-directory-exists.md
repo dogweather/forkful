@@ -1,28 +1,32 @@
 ---
-title:                "Kontrollera om en katalog finns"
-date:                  2024-01-19
-simple_title:         "Kontrollera om en katalog finns"
-
+title:                "Kontrollera om en katalog existerar"
+date:                  2024-02-03T19:07:13.438456-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Kontrollera om en katalog existerar"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/cpp/checking-if-a-directory-exists.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att kontrollera om en katalog (directory) finns innebär att du i din kod ser efter om en viss filväg leder till en existerande katalog. Det är användbart för att säkerställa att dina filoperationer, som läsning och skrivning, inte misslyckas på grund av att katalogen inte finns.
+Att kontrollera om en katalog finns handlar om att avgöra närvaron av en katalog på en specificerad sökväg innan man utför operationer som att läsa från eller skriva till filer inuti den. Programmerare gör detta för att undvika fel relaterade till filoperationer, vilket säkerställer en smidigare och mer tillförlitlig utförande av uppgifter för filhantering i sina applikationer.
 
-## How to: Så här gör du:
-Här är ett kort exempel som använder `<filesystem>` för att kolla om en katalog finns:
+## Hur:
+I modern C++ (C++17 och senare) kan du använda filsystembiblioteket för att kontrollera om en katalog finns. Det erbjuder ett enkelt och standardiserat sätt att utföra filsystemoperationer, inklusive att kontrollera existensen av en katalog.
 
-```C++
+```cpp
 #include <iostream>
 #include <filesystem>
 
-int main() {
-    std::filesystem::path dir = "/path/to/directory";
+namespace fs = std::filesystem;
 
-    if(std::filesystem::exists(dir) && std::filesystem::is_directory(dir)) {
+int main() {
+    const fs::path dirPath = "/path/to/directory";
+
+    if (fs::exists(dirPath) && fs::is_directory(dirPath)) {
         std::cout << "Katalogen finns." << std::endl;
     } else {
         std::cout << "Katalogen finns inte." << std::endl;
@@ -31,28 +35,34 @@ int main() {
     return 0;
 }
 ```
-
-Körningssvar beroende på om `/path/to/directory` finns:
+Exempelutskrift om katalogen finns:
 ```
 Katalogen finns.
 ```
-eller
+
+Exempelutskrift om katalogen inte finns:
 ```
 Katalogen finns inte.
 ```
 
-## Deep Dive: Fördjupning
-I gamla tider, före `<filesystem>` blev en del av standardbiblioteket i C++17, var vi hänvisade till plattformsspecifika API:er eller tredjepartsbibliotek som `boost::filesystem` för att utföra systemoperationer. `<filesystem>` abstraherar bort många av de plattformsspecifika detaljerna och ger en enhetlig gränssnitt för att arbeta med filer och kataloger. 
-Alternativ för att kontrollera om en katalog finns inkluderar:
+För projekt som ännu inte använder C++17 eller för ytterligare funktioner är Boost Filesystem-biblioteket ett populärt tredjepartsval som erbjuder liknande funktionalitet.
 
-- Användning av `stat` på UNIX-liknande system.
-- Användning av `GetFileAttributes` på Windows.
+```cpp
+#include <iostream>
+#include <boost/filesystem.hpp>
 
-Dessa metoder kräver mer plattformsberoende kod och är mindre intuitiva att använda. Med `<filesystem>`, blir denna operation enkel och portabel.
+namespace fs = boost::filesystem;
 
-Implementationen av `<filesystem>` är trogen det övergripande paradigmet i standardbiblioteket, vilket är att ge starka garantier, såsom undantagshantering och resurshantering.
+int main() {
+    const fs::path dirPath = "/path/to/directory";
 
-## See Also: Se Även
-- [Filesystem library](https://en.cppreference.com/w/cpp/filesystem)
-- [Boost.Filesystem](https://www.boost.org/doc/libs/1_75_0/libs/filesystem/doc/index.htm)
-- Tutorial for legacy methods: [POSIX `stat`](https://pubs.opengroup.org/onlinepubs/9699919799/functions/stat.html), [Windows `GetFileAttributes`](https://docs.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-getfileattributesa)
+    if (fs::exists(dirPath) && fs::is_directory(dirPath)) {
+        std::cout << "Katalogen finns." << std::endl;
+    } else {
+        std::cout << "Katalogen finns inte." << std::endl;
+    }
+
+    return 0;
+}
+```
+Med Boost Filesystem skulle utskriften vara identisk med exemplet för C++17 filsystem, beroende på om katalogen finns på den specificerade sökvägen.

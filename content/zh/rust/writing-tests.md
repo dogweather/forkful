@@ -1,51 +1,100 @@
 ---
-title:                "编写测试代码"
-date:                  2024-01-19
-simple_title:         "编写测试代码"
-
+title:                "编写测试"
+date:                  2024-02-03T19:32:22.687623-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "编写测试"
 tag:                  "Testing and Debugging"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/rust/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? 什么和为什么?
-测试是检查代码功能是否按预期工作的方法。通过编写测试，开发者可以验证代码质量，预防未来的错误，确保软件的健壮性和可靠性。
+## 什么与为什么？
 
-## How to: 如何进行
-```Rust
+用 Rust 编写测试是指创建自动检查，以确保你的代码按预期执行。程序员这样做是为了尽早捕捉到 bug，促进重构，并随着时间的推移保持代码质量。
+
+## 如何：
+
+Rust 的内置测试框架支持单元测试、集成测试和文档测试，无需外部库。测试使用 `#[test]` 注释，任何这样注释的函数都会被编译为测试。
+
+### 编写单元测试：
+
+使用 `#[cfg(test)]` 标记的 `tests` 子模块将单元测试放在它们正在测试的模块中，以确保它们只在测试时编译。
+
+```rust
+// lib.rs 或 main.rs
+pub fn add(a: i32, b: i32) -> i32 {
+    a + b
+}
+
 #[cfg(test)]
 mod tests {
-    #[test]
-    fn it_works() {
-        assert_eq!(2 + 2, 4);
-    }
+    use super::*;
 
     #[test]
-    #[should_panic(expected = "assertion failed")]
-    fn it_panics() {
-        assert!(false, "This should panic!");
+    fn it_adds_two() {
+        assert_eq!(add(2, 2), 4);
     }
 }
+```
 
-fn main() {
-    println!("If you see this, tests are not being run!");
+运行测试：
+```shell
+$ cargo test
+```
+
+输出：
+```shell
+   Compiling your_package_name v0.1.0 (/path/to/your_package)
+    Finished test [unoptimized + debuginfo] target(s) in 0.00 secs
+     Running unittests src/lib.rs (或 src/main.rs)
+
+running 1 test
+test tests::it_adds_two ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out
+```
+
+### 编写集成测试：
+
+集成测试位于项目顶层的 tests 目录中，与 `src` 并列。`tests` 中的每个 `.rs` 文件都被编译为它自己的单独的箱子（crate）。
+
+```rust
+// tests/integration_test.rs
+use your_package_name;
+
+#[test]
+fn it_adds_two() {
+    assert_eq!(your_package_name::add(2, 2), 4);
 }
 ```
-运行 `cargo test`，你会看到：
+
+### 使用流行的第三方库进行测试：
+
+为了获得更广泛的测试能力，`proptest` 库可以生成广泛的输入来测试函数。
+
+在 `Cargo.toml` 中将 `proptest` 添加为开发依赖：
+
+```toml
+[dev-dependencies]
+proptest = "1.0"
 ```
-running 2 tests
-test tests::it_works ... ok
-test tests::it_panics ... ok
 
-test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out
+使用 `proptest` 对许多自动生成的输入运行相同的测试：
+
+```rust
+// 在 tests/integration_test.rs 或一个模块的 #[cfg(test)] 内部
+
+use proptest::prelude::*;
+
+proptest! {
+    #[test]
+    fn doesnt_crash(a: i32, b:i32) {
+        your_package_name::add(a, b);
+    }
+}
 ```
 
-## Deep Dive 深入探讨
-Rust的测试起源于软件工程的早期实践，它体现了极限编程(XP)中的测试驱动开发(TDD)原则。与其他语言相比，Rust内置的测试框架简单易用，不需要额外库。除了单元测试，还有集成测试和文档测试。在复杂项目中，可以使用外部测试框架如`proptest`或`quickcheck`进行属性测试。
-
-## See Also 参考链接
-- [Rust Book's Testing Chapter](https://doc.rust-lang.org/book/ch11-00-testing.html)
-- [Rust by Example - Testing](https://doc.rust-lang.org/stable/rust-by-example/testing.html)
-- [API documentation for `assert!` macro](https://doc.rust-lang.org/std/macro.assert.html)
+这检查了 `add` 对于广泛的 `i32` 输入不会导致恐慌。

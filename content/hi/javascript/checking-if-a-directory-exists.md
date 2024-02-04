@@ -1,39 +1,75 @@
 ---
-title:                "डायरेक्टरी का अस्तित्व जाँचना"
-date:                  2024-01-20T14:57:34.683191-07:00
-simple_title:         "डायरेक्टरी का अस्तित्व जाँचना"
-
+title:                "डायरेक्टरी मौजूद है या नहीं जाँचना"
+date:                  2024-02-03T19:08:38.441605-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "डायरेक्टरी मौजूद है या नहीं जाँचना"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/javascript/checking-if-a-directory-exists.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (क्या और क्यों?)
-डायरेक्टरी का वजूद चेक करना मतलब है पता लगाना कि कोई फोल्डर मौजूद है या नहीं। प्रोग्रामर्स इसे इसलिए करते हैं क्योंकि कोड को सही से चलाने के लिए जरूरी है कि संबंधित फोल्डर्स मौजूद हों।
+## क्या और क्यों?
+JavaScript में एक डायरेक्टरी के अस्तित्व की जांच करना फाइल संचालन कार्यों के लिए आवश्यक है, जो स्क्रिप्ट्स को उससे पढ़ने या उसमें लिखने से पहले डायरेक्टरी की उपस्थिति की पुष्टि करने में सक्षम बनाता है। यह क्रिया त्रुटियों को रोकती है और विशेषकर उन अप्लिकेशंस में कार्यक्रम का सुचारू संचालन सुनिश्चित करती है जो उपयोगकर्ता इनपुट या बाह्य डेटा स्रोतों के आधार पर फाइलों या डायरेक्टरीज़ को गतिशील रूप से संभालते हैं।
 
-## How to: (कैसे करें:)
-```Javascript
+## कैसे:
+
+Node.js में, चूंकि JavaScript स्वयं फाइल सिस्टम तक सीधी पहुंच नहीं रखता, इसलिए ऐसे संचालनों के लिए `fs` मॉड्यूल का आमतौर पर उपयोग किया जाता है। `fs.existsSync()` का उपयोग करके डायरेक्टरी के अस्तित्व की जांच करने का एक सरल तरीका यह है:
+
+```javascript
 const fs = require('fs');
 
-// डायरेक्टरी के वजूद को चेक करने का सिंक्रोनस तरीका
-let directoryExists = fs.existsSync('/path/to/directory');
-console.log(directoryExists); // अगर डायरेक्टरी है, तो true, नहीं तो false
+const directoryPath = './sample-directory';
 
-// डायरेक्टरी को असिंक्रोनस तरीके से चेक करना
-fs.stat('/path/to/directory', (err, stats) => {
-  if(err && err.code === 'ENOENT') {
-      console.log(false); // डायरेक्टरी नहीं मिली
-  } else {
-      console.log(stats.isDirectory()); // अगर डायरेक्टरी है, तो true
+// जांचें कि डायरेक्टरी मौजूद है या नहीं
+if (fs.existsSync(directoryPath)) {
+  console.log('डायरेक्टरी मौजूद है।');
+} else {
+  console.log('डायरेक्टरी मौजूद नहीं है।');
+}
+```
+**नमूना आउटपुट:**
+```
+डायरेक्टरी मौजूद है।
+```
+या, गैर-बाधा रहित असिंक्रोनस दृष्टिकोण के लिए, `fs.promises` का उपयोग `async/await` के साथ करें:
+
+```javascript
+const fs = require('fs').promises;
+
+async function checkDirectory(directoryPath) {
+  try {
+    await fs.access(directoryPath);
+    console.log('डायरेक्टरी मौजूद है।');
+  } catch (error) {
+    console.log('डायरेक्टरी मौजूद नहीं है।');
   }
-});
+}
+
+checkDirectory('./sample-directory');
+```
+**नमूना आउटपुट:**
+```
+डायरेक्टरी मौजूद है।
 ```
 
-## Deep Dive (गहराई से जानकारी)
-नोड.जेएस में `fs` मॉड्यूल का उपयोग करके हमें फाइल सिस्टम का एक्सेस मिलता है। `fs.existsSync` और `fs.stat` दो मेथड्स हैं जो डायरेक्टरी के वजूद को चेक करते हैं। `fs.existsSync` सिंक्रोनस है, जिससे कोड ब्लॉक हो सकता है, इसलिए जहां परफॉर्मेंस महत्वपूर्ण हो, वहां `fs.stat` का असिंक्रोनस वर्जन बेहतर रहता है। बीते सालों में, इस फीचर का इस्तेमाल फाइल सिस्टम की सुरक्षा और इंटेग्रिटी को बनाए रखने के लिए किया जाता रहा है। विकल्प के रूप में, लाइब्रेरीज जैसे कि `fs-extra` और `fs-promise` भी मौजूद हैं जो अधिक उन्नत फंक्शनालिटी और प्रोमिस बेस्ड एपीआई प्रदान करते हैं।
+फाइल और डायरेक्टरी संचालनों का भारी उपयोग करने वाली परियोजनाओं के लिए, `fs-extra` पैकेज, मूल `fs` मॉड्यूल का एक विस्तार, सुविधाजनक अतिरिक्त तरीके उपलब्ध कराता है। `fs-extra` के साथ वही हासिल करने का एक तरीका यह है:
 
-## See Also (और देखें)
-- [Node.js fs Docs](https://nodejs.org/api/fs.html)
-- [fs-extra npm Package](https://www.npmjs.com/package/fs-extra)
-- [fs-promise npm Package](https://www.npmjs.com/package/fs-promise)
+```javascript
+const fs = require('fs-extra');
+
+const directoryPath = './sample-directory';
+
+// जांचें कि डायरेक्टरी मौजूद है या नहीं
+fs.pathExists(directoryPath)
+  .then(exists => console.log(exists ? 'डायरेक्टरी मौजूद है।' : 'डायरेक्टरी मौजूद नहीं है।'))
+  .catch(err => console.error(err));
+```
+**नमूना आउटपुट:**
+```
+डायरेक्टरी मौजूद है।
+```
+
+यह दृष्टिकोण साफ, पठनीय कोड को सक्षम बनाता है जो आधुनिक JavaScript प्रक्रियाओं के साथ सहजता से एकीकृत करता है।

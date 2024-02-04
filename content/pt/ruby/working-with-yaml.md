@@ -1,56 +1,81 @@
 ---
 title:                "Trabalhando com YAML"
-date:                  2024-01-19
+date:                  2024-02-03T19:26:36.423382-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Trabalhando com YAML"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/ruby/working-with-yaml.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## O Que & Porquê?
+## O que & Por quê?
+YAML, que significa YAML Ain't Markup Language (YAML Não é Uma Linguagem de Marcação), é amplamente utilizado em Ruby para arquivos de configuração e serialização de dados devido ao seu formato legível por humanos. Os programadores gravitam em torno do YAML quando precisam armazenar ou transmitir objetos de dados de maneira legível, porém estruturada, simplificando tarefas como gerenciamento de configuração, armazenamento de dados e compartilhamento de dados entre linguagens.
 
-YAML, que significa "YAML Ain't Markup Language", é um formato de serialização de dados legível para humanos, usado frequentemente para configurações de projeto e transmissão de dados entre linguagens. Programadores usam YAML pela sua simplicidade e legibilidade, facilitando a modificação e compreensão de estruturas de dados complexas sem a complexidade de outros formatos como XML.
+## Como fazer:
+Ruby vem com uma biblioteca integrada chamada Psych para análise e geração de YAML. Para utilizá-la, você primeiro precisa requerer a biblioteca padrão YAML. Aqui está um exemplo básico para começar:
 
-## Como Fazer:
-
-Para trabalhar com YAML em Ruby, use a gem 'yaml'. Primeiro, instale-a com `gem install yaml`. Depois, veja como carregar um YAML, alterar e salvar:
-
-```Ruby
+```ruby
 require 'yaml'
 
-# Carregar YAML de um arquivo
-config = YAML.load_file('config.yml')
+# Hash a ser serializado
+person = { name: "John Doe", age: 30, skills: ["Ruby", "JavaScript"] }
 
-# Acesso e manipulação de dados
-config['setting1'] = 'Novo valor'
+# Convertendo o hash para YAML
+yaml_data = person.to_yaml
 
-# Salvar em YAML
-File.open('config.yml', 'w') { |file| file.write(config.to_yaml) }
+puts yaml_data
 ```
 
-Se o `config.yml` for assim:
-```yaml
-setting1: valor1
-setting2: valor2
-```
+**Saída de Exemplo:**
 
-A saída será o arquivo `config.yml` atualizado:
 ```yaml
 ---
-setting1: Novo valor
-setting2: valor2
+:name: John Doe
+:age: 30
+:skills:
+- Ruby
+- JavaScript
 ```
 
-## Mergulho Profundo:
+Para carregar dados YAML de volta em um objeto Ruby:
 
-YAML foi introduzido em 2001, projetado para ser mais legível e simples que o XML. Várias linguagens têm bibliotecas para trabalhar com YAML, como PyYAML para Python e go-yaml para Go. Em Ruby, a biblioteca padrão Psych é a implementação mais comum e está incluso por padrão desde a versão 1.9.3. Psych é baseado na libyaml, uma biblioteca em C para parsing e emissão de YAML, garantindo rapidez e eficiência no processamento dos dados.
+```ruby
+loaded_person = YAML.load(yaml_data)
 
-## Veja Também:
+puts loaded_person
+```
 
-- Documentação oficial do Psych em Ruby: https://ruby-doc.org/stdlib/libdoc/psych/rdoc/Psych.html
-- YAML: http://yaml.org/
-- Tutorial de YAML com exemplos: https://learnxinyminutes.com/docs/yaml/
-- Ruby Gems para trabalhar com YAML: https://rubygems.org/gems/yaml
-- Especificação YAML: https://yaml.org/spec/1.2/spec.html
+**Saída de Exemplo:**
+
+```ruby
+{name: "John Doe", age: 30, skills: ["Ruby", "JavaScript"]}
+```
+
+### Usando Bibliotecas de Terceiros:
+
+Embora a biblioteca padrão seja suficiente para tarefas básicas, para necessidades complexas você pode procurar gems de terceiros como 'safe_yaml'. Para usar essas bibliotecas, você deve primeiro instalar a gem:
+
+```bash
+gem install safe_yaml
+```
+
+Depois, você pode usá-la para carregar dados YAML de forma segura, mitigando riscos como instanciação de objetos a partir de fontes controladas pelo usuário:
+
+```ruby
+require 'safe_yaml'
+
+safe_loaded_person = SafeYAML.load(yaml_data)
+
+puts safe_loaded_person
+```
+
+**Saída de Exemplo:**
+
+```ruby
+{name: "John Doe", age: 30, skills: ["Ruby", "JavaScript"]}
+```
+
+Essa abordagem aprimora a segurança do seu manuseio de YAML, tornando-a uma boa escolha para aplicações que carregam YAML de fontes não confiáveis.

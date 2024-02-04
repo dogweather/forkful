@@ -1,40 +1,33 @@
 ---
-title:                "文字列の先頭を大文字にする"
-date:                  2024-01-19
-simple_title:         "文字列の先頭を大文字にする"
-
+title:                "文字列を大文字にする"
+date:                  2024-02-03T19:04:59.835683-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "文字列を大文字にする"
 tag:                  "Strings"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/clojure/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (何となぜ？)
-文字列の大文字化とは、その文字列の中の文字を大文字に変換することです。プログラマーはデータの一貫性を保つためや、ユーザーインターフェイスの表示を改善するためにこれを行います。
+## 何となぜ？
+文字列を大文字化するとは、その文字列の最初の文字を大文字に変更し、残りの文字列は変更しないことを意味します。プログラマーは、特に名前や場所のデータを一貫性を持たせるため、またはユーザーインターフェースの文法規則に準拠するために、文字列の大文字化を頻繁に行います。
 
-## How to: (方法)
-```Clojure
-;; `clojure.string` ライブラリを使って文字列を大文字に変換する
-(require '[clojure.string :as str])
+## 方法：
+ClojureはJVM言語であるため、JavaのStringメソッドを直接利用できます。ここにClojureで文字列を大文字化する基本的な例を示します：
 
-;; 文字列 "hello world" を大文字に変換
-(str/capitalize "hello world")
-;; 出力: "Hello world"
+```clojure
+(defn capitalize-string [s]
+  (if (empty? s)
+    s
+    (str (clojure.string/upper-case (subs s 0 1)) (subs s 1))))
 
-;; 文字列全体を大文字に変換
-(str/upper-case "hello world")
-;; 出力: "HELLO WORLD"
+(capitalize-string "hello world!") ; => "Hello world!"
 ```
 
-## Deep Dive (深掘り)
-Clojureでの文字列大文字化は、主に `clojure.string` ライブラリを使用し実行されます。このライブラリはClojureコアリーブラリの中に存在し、多くの標準的な文字列操作を提供します。
+Clojureには文字列を大文字化するための組み込み関数は含まれていませんが、示されているように、`clojure.string/upper-case`、`subs`、`str`関数を組み合わせることで、容易にこれを達成することができます。
 
-過去には、Javaのメソッドを直接Clojureから呼び出すことで大文字化を実現することもありました（例：`.toUpperCase`）。これは、ClojureがJVMの上に構築された言語であるためです。ただし、`clojure.string` ライブラリの関数を使用する方がClojureらしい方法です。
+もっと簡潔な解決策や、もっと複雑な文字列操作を扱う場合は、サードパーティーのライブラリに頼ることになるかもしれません。Clojureエコシステムで人気のあるライブラリの一つに`clojure.string`があります。しかし、私の最後の更新時点で、これはコアClojure機能で示されているものを超えて直接`capitalize`関数を提供していませんので、特に大文字化のために追加のライブラリを導入することなく、上記の方法が直接的なアプローチです。
 
-`str/capitalize` 関数と `str/upper-case` 関数は微妙に異なります。`str/capitalize` は最初の文字のみを大文字にし、残りの文字はそのままにするのに対し、`str/upper-case` は文字列内の全ての文字を大文字に変換します。状況に応じて適切な関数を選択することが重要です。
-
-## See Also (参照)
-- Clojureの公式ドキュメント: [clojure.string API](https://clojure.github.io/clojure/clojure.string-api.html)
-- JavaとClojureの比較:[ClojureからJavaを呼び出す](https://clojure.org/reference/java_interop)
-- より深い文字列操作のためのライブラリ: [clojure.string](https://github.com/clojure/clojure/blob/master/src/clj/clojure/string.clj)
+Clojureで文字列を扱う際にJavaメソッドと交流がある場合、実際にはJavaの文字列を扱っており、必要に応じてJavaのStringメソッドの全範囲をClojureコードで直接活用できることを忘れないでください。

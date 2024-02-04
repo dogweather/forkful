@@ -1,40 +1,62 @@
 ---
 title:                "Praca z JSON"
-date:                  2024-01-19
+date:                  2024-02-03T19:23:34.599150-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Praca z JSON"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/powershell/working-with-json.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
+## Co i dlaczego?
 
-JSON, czyli JavaScript Object Notation, to łatwy do odczytania format wymiany danych. Programiści używają go do komunikacji między serwerami i aplikacjami webowymi oraz do zapisu konfiguracji.
+Integracja PowerShell z JSON (JavaScript Object Notation) dotyczy parsowania (odczytu) oraz generowania (zapisu) danych JSON, co jest powszechnym formatem wymiany danych w sieci. Programiści pracują z JSON, by współdziałać z interfejsami API sieciowymi, plikami konfiguracyjnymi, lub by ułatwić wymianę danych pomiędzy różnymi językami i platformami ze względu na jego lekkość i niezależność od języka.
 
 ## Jak to zrobić:
 
-```PowerShell
-# Zapisywanie obiektu do JSON
-$user = @{
-    Name     = 'Jan'
-    Surname  = 'Nowak'
-    Email    = 'jan.nowak@poczta.pl'
-}
-$user | ConvertTo-Json | Set-Content -Path 'user.json'
+### Parsowanie JSON
 
-# Wczytywanie JSON z pliku
-$content = Get-Content -Path 'user.json' | ConvertFrom-Json
-Write-Output $content.Name  # Wypisze 'Jan'
+Aby odczytać lub sparsować JSON w PowerShell, można użyć polecenia `ConvertFrom-Json`. Dla danego ciągu JSON, to polecenie przekształca go w obiekt PowerShell. 
+
+```powershell
+$json = '{"name": "John Doe", "age": 30, "city": "New York"}'
+$person = $json | ConvertFrom-Json
+$person.name
 ```
 
-## Deep Dive
+Przykładowe wyjście:
 
-JSON w świecie IT pojawił się w latach 2000 i szybko stał się popularny jako prostsza alternatywa dla XML. PowerShell natywnie obsługuje JSON poprzez cmdlety `ConvertTo-Json` i `ConvertFrom-Json`. Chociaż są inne formacje jak YAML czy TOML, JSON pozostaje liderem ze względu na uniwersalność i szerokie wsparcie w różnych językach programowania.
+```
+John Doe
+```
 
-## Zobacz także:
+Ten przykład pokazuje, jak sparsować prosty ciąg JSON, aby uzyskać dostęp do właściwości wynikowego obiektu.
 
-- Oficjalna strona JSON: [json.org](https://www.json.org/json-pl.html)
-- Dokumentacja PowerShell dla `ConvertTo-Json`: [Microsoft Docs ConvertTo-Json](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/convertto-json)
-- Dokumentacja PowerShell dla `ConvertFrom-Json`: [Microsoft Docs ConvertFrom-Json](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/convertfrom-json)
+### Generowanie JSON
+
+Aby wygenerować JSON z obiektu PowerShell, można użyć polecenia `ConvertTo-Json`. Jest to przydatne do przygotowania danych do wysłania do usługi sieciowej lub zapisania do pliku konfiguracyjnego.
+
+```powershell
+$person = [PSCustomObject]@{
+    name = "Jane Doe"
+    age = 25
+    city = "Los Angeles"
+}
+$json = $person | ConvertTo-Json
+Write-Output $json
+```
+
+Przykładowe wyjście:
+
+```json
+{
+    "name":  "Jane Doe",
+    "age":  25,
+    "city":  "Los Angeles"
+}
+```
+
+Ten fragment kodu tworzy obiekt PowerShell, a następnie przekształca go na ciąg JSON.

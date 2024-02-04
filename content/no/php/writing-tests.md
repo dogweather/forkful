@@ -1,52 +1,86 @@
 ---
-title:                "Skriving av tester"
-date:                  2024-01-19
-simple_title:         "Skriving av tester"
-
+title:                "Skrive tester"
+date:                  2024-02-03T19:31:19.975870-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Skrive tester"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/php/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Skrive tester betyr å lage skript som sjekker om koden virker som forventet. Programmerere gjør dette for å avdekke feil, sikre kvalitet og lette fremtidige endringer.
+Å skrive tester i programmering innebærer å lage og kjøre skript som verifiserer at koden oppfører seg som forventet under ulike forhold. Programmerere gjør dette for å sikre kvalitet, forhindre regresjoner og legge til rette for sikker refaktorering, noe som er avgjørende for å opprettholde en sunn, skalerbar og feilfri kodebase.
 
 ## Hvordan:
-```PHP
-<?php
+### Nativ PHP – PHPUnit
+Et mye brukt verktøy for testing i PHP er PHPUnit. Installer det via Composer:
+```bash
+composer require --dev phpunit/phpunit ^9
+```
+
+#### Skrive en enkel test:
+Opprett en `CalculatorTest.php`-fil i en `tests`-mappe:
+```php
 use PHPUnit\Framework\TestCase;
 
-class StackTest extends TestCase
+// Anta at du har en Calculator-klasse som legger sammen tall
+class CalculatorTest extends TestCase
 {
-    public function testPushAndPop()
+    public function testAdd()
     {
-        $stack = [];
-        $this->assertEquals(0, count($stack));
-
-        array_push($stack, 'foo');
-        $this->assertEquals('foo', $stack[count($stack) - 1]);
-        $this->assertEquals(1, count($stack));
-
-        $this->assertEquals('foo', array_pop($stack));
-        $this->assertEquals(0, count($stack));
+        $calculator = new Calculator();
+        $this->assertEquals(4, $calculator->add(2, 2));
     }
 }
-?>
 ```
-Kjøre test:
-```
-$ ./vendor/bin/phpunit StackTest
-```
-Forventet resultat:
-```
-OK (1 test, 3 assertions)
+Kjør testene med:
+```bash
+./vendor/bin/phpunit tests
 ```
 
-## Dypdykk:
-PHP Unit er standarden for enhetstesting i PHP og ble først utgitt i 1997. Alternativer inkluderer Codeception og PHPSpec, men PHP Unit er fortsatt mest brukt. Det bruker asserjoner for å sjekke at kode oppfører seg som forventet og sørger for at endringer ikke bryter eksisterende funksjonalitet.
+#### Eksempel på output:
+```
+PHPUnit 9.5.10 av Sebastian Bergmann og bidragsytere.
 
-## Se Også:
-- [PHPUnit Manual](https://phpunit.de/manual/current/en/)
-- [PHP: The Right Way - Testing](https://phptherightway.com/#testing)
-- [Martin Fowler - TestPyramid](https://martinfowler.com/articles/practical-test-pyramid.html)
+.                                                                   1 / 1 (100%)
+
+Tid: 00:00.005, Minne: 6.00 MB
+
+OK (1 test, 1 påstand)
+```
+
+### Tredjepartsbiblioteker – Mockery
+For kompleks testing, inkludert å lage mock-objekter, er Mockery et populært valg.
+
+```bash
+composer require --dev mockery/mockery
+```
+
+#### Integrere Mockery med PHPUnit:
+```php
+use PHPUnit\Framework\TestCase;
+use Mockery as m;
+
+class ServiceTest extends TestCase
+{
+    public function tearDown(): void
+    {
+        m::close();
+    }
+
+    public function testServiceCallsExternalService()
+    {
+        $externalServiceMock = m::mock(ExternalService::class);
+        $externalServiceMock->shouldReceive('process')->once()->andReturn('mocked result');
+
+        $service = new Service($externalServiceMock);
+        $resultat = $service->execute();
+
+        $this->assertEquals('mocked result', $resultat);
+    }
+}
+```
+For å kjøre, bruk samme PHPUnit-kommando som ovenfor. Mockery tillater ekspressive og fleksible mock-objekter, noe som letter testing av komplekse interaksjoner innen applikasjonen din.

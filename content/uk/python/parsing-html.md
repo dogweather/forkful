@@ -1,52 +1,63 @@
 ---
-title:                "Парсинг HTML"
-date:                  2024-01-20T15:33:35.284486-07:00
-simple_title:         "Парсинг HTML"
-
+title:                "Аналіз HTML"
+date:                  2024-02-03T19:13:03.975300-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Аналіз HTML"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/python/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Що та чому?)
-Parsing HTML means you're extracting useful info from web pages. Programmers parse HTML to automate data collection or interact with websites programmatically.
+## Що і чому?
+Парсинг HTML полягає у аналізі HTML-коду вебсторінки для вилучення специфічної інформації або елементів, що є поширеною задачею для веб-скрапінгу, майнінгу даних або автоматизації взаємодії з вебсайтами. Програмісти роблять це для програмного взаємодії з вебсайтами або вилучення даних із них, автоматизації задач або тестування веб-аплікацій.
 
-## How to: (Як зробити:)
-To parse HTML in Python, `BeautifulSoup` from `bs4` is a great tool. You'll also need `requests` to fetch webpage content. If you haven't installed these, do it with: `pip install beautifulsoup4 requests`.
+## Як це зробити:
+Python надає потужні бібліотеки, такі як BeautifulSoup та requests, для веб-скрапінгу та парсингу HTML. Для початку, вам потрібно встановити ці бібліотеки, якщо ви ще цього не зробили:
 
-```Python
-from bs4 import BeautifulSoup
+```bash
+pip install beautifulsoup4 requests
+```
+
+Ось базовий приклад використання `requests` для отримання HTML-вмісту вебсторінки та `BeautifulSoup` для його парсингу:
+
+```python
 import requests
+from bs4 import BeautifulSoup
 
-# Fetch the webpage
-response = requests.get('http://example.com')
-html_doc = response.text
+# Отримати вміст вебсторінки
+URL = 'https://example.com'
+page = requests.get(URL)
 
-# Parse the HTML
-soup = BeautifulSoup(html_doc, 'html.parser')
+# Парсити HTML-вміст
+soup = BeautifulSoup(page.content, 'html.parser')
 
-# Find data within the HTML
-title = soup.find('title').get_text()
-print(f'Page Title: {title}')
-# Find all links
-links = [a['href'] for a in soup.find_all('a', href=True)]
-print(f'Links: {links}')
+# Приклад вилучення заголовку вебсторінки
+title = soup.find('title').text
+print(f'Назва вебсторінки: {title}')
 ```
 
-Sample output might be:
-
+**Приклад виведення**:
 ```
-Page Title: Example Domain
-Links: ['https://www.iana.org/domains/example']
+Назва вебсторінки: Example Domain
 ```
 
-## Deep Dive (Поглиблений аналіз)
-HTML (HyperText Markup Language) structures content on the web. Parsing HTML has been a thing since early web days, manually at first, then via various libraries. `BeautifulSoup` stands out due to its ease of use and powerful features. It handles different parsers, like `html.parser` for simple cases, or `lxml` for speed. 
+Для більш складних запитів, як-от вилучення всіх посилань із вебсторінки, ви можете використовувати різноманітні методи BeautifulSoup для навігації та пошуку у дереві аналізу:
 
-Alternatives to `BeautifulSoup` include `lxml` directly, or even `PyQuery` if you prefer a jQuery-like syntax. Implementation-wise, remember that web pages can change – your parsing code might break if the structure of the HTML it relies on changes.
+```python
+# Вилучити всі посилання в межах тегів <a>
+links = soup.find_all('a')
 
-## See Also (Дивіться також)
-- BeautifulSoup documentation: https://beautiful-soup-4.readthedocs.io/en/latest/
-- Requests library documentation: https://requests.readthedocs.io/en/master/
-- Web scraping guide with Python: https://realpython.com/beautiful-soup-web-scraper-python/
+for link in links:
+    href = link.get('href')
+    print(href)
+```
+
+**Приклад виведення**:
+```
+https://www.iana.org/domains/example
+```
+
+Гнучкість BeautifulSoup дозволяє налаштувати ваш пошук для точних даних, які вам потрібні, роблячи парсинг HTML потужним інструментом для програмістів, які працюють з веб-вмістом.

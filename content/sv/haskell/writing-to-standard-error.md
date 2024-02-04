@@ -1,43 +1,51 @@
 ---
 title:                "Skriva till standardfel"
-date:                  2024-01-19
+date:                  2024-02-03T19:33:25.262073-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Skriva till standardfel"
-
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/haskell/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att skriva till standardfel (stderr) är att skicka felmeddelanden och diagnostik separat från huvudprogrammets output (stdout). Det är viktigt för att kunna spåra fel smidigt och hantera loggar effektivt.
+Att skriva till standardfel (stderr) i Haskell gör det möjligt för program att skilja sin utdata mellan normala resultat och felmeddelanden. Detta är avgörande för att signalera problem och felsöka, utan att förväxla den standardutdata (stdout) som ofta bär programmets huvuddata eller resultat.
 
-## Hur gör man:
-Haskell kod använder `System.IO`-modulen för att hantera stderr. Använd `hPutStrLn` tillsammans med `stderr`.
+## Hur man gör:
+I Haskell är det enkelt att skriva till stderr med basbibliotekets `System.IO`-modul. Nedan följer ett grundläggande exempel för att demonstrera:
 
-```Haskell
-import System.IO (stderr, hPutStrLn)
+```haskell
+import System.IO
 
+main :: IO ()
 main = do
-  -- Skriv ut ett normalt meddelande till stdout
-  putStrLn "Detta är ett meddelande till standard output."
-
-  -- Skriv ut ett felmeddelande till stderr
-  hPutStrLn stderr "Detta är ett felmeddelande till standard error."
+  hPutStrLn stderr "Detta är ett felmeddelande."
 ```
 
-Testa genom att omdirigera output i terminalen:
+Utdata från detta program till stderr skulle vara:
 
-```bash
-runhaskell dittprogram.hs > output.txt 2> error.log
+```
+Detta är ett felmeddelande.
 ```
 
-`output.txt` kommer innehålla "Detta är ett meddelande till standard output." och `error.log` kommer ha "Detta är ett felmeddelande till standard error."
+Om du arbetar med en mer komplex applikation, eller om du behöver bättre kontroll över loggning (inklusive fel), kan du överväga att använda ett tredjepartsbibliotek. Ett populärt alternativ är `monad-logger` som integreras med Haskell-programmeringsstilen `mtl`. Här är ett litet kodsnutt som använder `monad-logger`:
 
-## Djupdykning
-Historiskt sätt separeras stdout och stderr för att erbjuda en ren output-ström för data och en annan för fel. Alternativ inkluderar att logga till en fil eller använda externa bibliotek för avancerad logghantering. Intern implementation i Haskell använder de lågnivåfunktioner som operativsystemet tillhandahåller för att skriva till dessa strömmar.
+```haskell
+{-# LANGUAGE OverloadedStrings #-}
+import Control.Monad.Logger
 
-## Se även
-- Haskell-dokumentationen för `System.IO`: https://hackage.haskell.org/package/base-4.16.1.0/docs/System-IO.html
-- Bra genomgång av stdout vs stderr: https://www.jstorimer.com/blogs/workingwithcode/7766119-when-to-use-stderr-instead-of-stdout
-- Detaljerad guide till loggning i Haskell: https://ocharles.org.uk/posts/2012-12-04-24-days-of-hackage-hslogger.html
+main :: IO ()
+main = runStderrLoggingT $ do
+  logErrorN "Detta är ett felmeddelande som använder monad-logger."
+```
+
+När den körs, ger `monad-logger`-versionen liknande ut en felmeddelande, men den är utrustad med mer sammanhang som tidsstämplar eller loggnivåer, beroende på konfigurationen:
+
+```
+[Error] Detta är ett felmeddelande som använder monad-logger.
+```
+
+Båda metoderna tjänar syftet att skriva till stderr, med valet som i stor utsträckning beror på din applikations komplexitet och behov.

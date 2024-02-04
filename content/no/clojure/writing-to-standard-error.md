@@ -1,53 +1,59 @@
 ---
-title:                "Skrive til standardfeil"
-date:                  2024-01-19
-simple_title:         "Skrive til standardfeil"
-
+title:                "Skriving til standardfeil"
+date:                  2024-02-03T19:32:47.330594-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Skriving til standardfeil"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/clojure/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Hva & Hvorfor?
-Å skrive til standard feil (`stderr`) er hvordan programmer melder fra om feil og advarsler. Det holder disse meldingene separate fra hoveddataflyten, og gjør det lettere å debugge og overvåke applikasjoner.
+## Hva & hvorfor?
+Å skrive til standardfeil (stderr) handler om å styre feilmeldinger og diagnostikk til stderr-strømmen, separat fra standard utgang (stdout). Programmerere gjør dette for å skille vanlig programutgang fra feilmeldinger, noe som tillater mer effektiv feilsøking og logging.
 
-## How to:
-Clojure bruker Java sin `System/err` for å skrive til `stderr`. Her er hvordan du gjør det:
+## Hvordan:
+I Clojure kan du skrive til stderr ved å bruke `*err*`-strømmen. Her er et grunnleggende eksempel:
 
-```Clojure
-(.println System/err "Dette er en feilmelding til stderr.")
+```clojure
+(.write *err* "Dette er en feilmelding.\n")
 ```
 
-Kjører du dette, får du:
+Merk at etter å ha skrevet en melding, bør du tømme strømmen for å sikre at meldingen blir umiddelbart utgitt:
 
-```
-Dette er en feilmelding til stderr.
-```
-
-En mer idiomatic måte å håndtere dette i Clojure:
-
-```Clojure
-(defn log-to-stderr [message]
-  (.println System/err message))
-
-(log-to-stderr "Oops, noe gikk galt!")
+```clojure
+(flush)
 ```
 
-Dette vil også skrive til stderr:
-
+Eksempelutskrift til stderr:
 ```
-Oops, noe gikk galt!
+Dette er en feilmelding.
 ```
 
-## Deep Dive
-Før operativsystemene skilte standard utdata (`stdout`) og `stderr`, gikk all tekstutdata fra programmer til samme sted. Separasjonen tillater oss å omdirigere disse uavhengig av hverandre, for eksempel for å filtrere ut feilmeldinger til en loggfil.
+Hvis du håndterer unntak, kan du ønske å skrive ut stackspor til stderr. Bruk `printStackTrace` for dette:
 
-I Clojure er det vanligere å bruke logging-biblioteker som `timbre` eller `log4j` istedenfor direkte kall til `System/err`, fordi bibliotekene gir mer fleksibilitet og formattering.
+```clojure
+(try
+  ;; Kode som kan kaste et unntak
+  (/ 1 0)
+  (catch Exception e
+    (.printStackTrace e *err*)))
+```
 
-I bunnlinjen er skriving til `stderr` implementert av underliggende operativsystem- og språkinfrastruktur (i dette tilfellet Java), og Clojure-koden kaller bare disse funksjonene gjennom Java interoperabilitet.
+For mer strukturert feillogging, kan tredjepartsbiblioteker som `timbre` konfigureres for å logge til stderr. Her er en grunnleggende oppsett og bruk:
 
-## See Also
-- Clojure's `timbre` logging bibliotek: [https://github.com/ptaoussanis/timbre](https://github.com/ptaoussanis/timbre)
-- Oracle's Java dokumentasjon om `System/err`: [https://docs.oracle.com/javase/7/docs/api/java/lang/System.html#err](https://docs.oracle.com/javase/7/docs/api/java/lang/System.html#err)
-- Clojure's officielle guide til Java interoperabilitet: [https://clojure.org/reference/java_interop](https://clojure.org/reference/java_interop)
+Først, legg til `timbre` i dine avhengigheter. Deretter konfigurerer du det til å bruke stderr:
+
+```clojure
+(require '[taoensso.timbre :as timbre])
+
+(timbre/set-config! [:appenders :standard-out :enabled?] false) ;; Deaktiver stdout-logging
+(timbre/set-config! [:appenders :spit :enabled?] false) ;; Deaktiver fillogg
+(timbre/set-config! [:appenders :stderr :min-level] :error) ;; Aktiver stderr for feil
+
+(timbre/error "En feil oppsto under behandlingen av forespørselen din.")
+```
+
+Dette vil dirigere meldinger på feilnivå til stderr, og gjøre dem ulik standard programutgang.

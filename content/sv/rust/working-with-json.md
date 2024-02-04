@@ -1,61 +1,89 @@
 ---
 title:                "Arbeta med JSON"
-date:                  2024-01-19
+date:                  2024-02-03T19:24:05.488051-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Arbeta med JSON"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/rust/working-with-json.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-JSON, eller JavaScript Object Notation, är ett textbaserat dataformat som används för att lagra och utbyta data. Programmerare använder JSON för att hantera data mellan olika system på ett enkelt och lättläst sätt.
 
-## Hur gör man:
-Rust använder `serde`-krate för att serialisera och deserialisera JSON-data. Nedan en exempelkod:
+Att arbeta med JSON (JavaScript Object Notation) i Rust handlar om att tolka JSON-data till Rusts datastrukturer och serialisera Rusts datastrukturer tillbaka till JSON. Programmerare gör detta för att interagera med webb-APIer, konfigurationsfiler eller något datautbytesformat där JSON används på grund av dess lätta och lättlästa format.
+
+## Hur man gör:
+
+För att arbeta med JSON i Rust används `serde`-craten tillsammans med `serde_json` för serialisering och deserialisering flitigt. Börja med att inkludera dessa i din `Cargo.toml`:
+
+```toml
+[dependencies]
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+```
+
+### Exempel 1: Deserialisera JSON till en Rust-struktur
+
+Definiera en Rust-struktur och använd makron för `Deserialize` och `Serialize`:
 
 ```rust
 use serde::{Deserialize, Serialize};
-use serde_json::Result;
 
-// Define en struktur som motsvarar din data
 #[derive(Serialize, Deserialize)]
-struct Användare {
-    namn: String,
-    ålder: u8,
-    epost: String,
+struct User {
+    id: u32,
+    name: String,
+    email: String,
 }
 
-fn main() -> Result<()> {
-    // Skapa ett användarobjekt
-    let användare = Användare {
-        namn: "Anna Svensson".to_string(),
-        ålder: 30,
-        epost: "anna.svensson@example.com".to_string(),
-    };
+fn main() {
+    let json_data = r#"
+        {
+            "id": 1,
+            "name": "Jane Doe",
+            "email": "jane.doe@example.com"
+        }
+    "#;
 
-    // Serialisera det till en JSON-sträng
-    let serialiserad = serde_json::to_string(&användare)?;
-    println!("Serialiserad: {}", serialiserad);
+    let user: User = serde_json::from_str(json_data).unwrap();
 
-    // Deserialisera strängen tillbaka till en Användare
-    let deserialiserad: Användare = serde_json::from_str(&serialiserad)?;
-    println!("Deserialiserad: {} {}", deserialiserad.namn, deserialiserad.ålder);
-
-    Ok(())
+    println!("Användar-ID: {}", user.id);
+    println!("Användarnamn: {}", user.name);
+    println!("Användaremail: {}", user.email);
 }
 ```
-Resultatet blir:
+
+**Utskrift:**
+
 ```
-Serialiserad: {"namn":"Anna Svensson","ålder":30,"epost":"anna.svensson@example.com"}
-Deserialiserad: Anna Svensson 30
+Användar-ID: 1
+Användarnamn: Jane Doe
+Användaremail: jane.doe@example.com
 ```
 
-## Djupdykning
-JSON skapades i början av 2000-talet och blev en del av ECMAScript-standard 2013. Alternativ till JSON är till exempel XML och YAML. JSON används ofta för webbaserade API:er tack vare sin kompakthet och läsbarhet. Rust hanterar JSON effektivt genom `serde`-krate, som erbjuder kraftfull serialisering och deserialisering med minimal prestandapåverkan.
+### Exempel 2: Serialisera en Rust-struktur till JSON
 
-## Se även
-- Serde officiella dokumentation: [https://serde.rs/](https://serde.rs/)
-- Serde JSON krate dokumentation: [https://docs.serde.rs/serde_json/](https://docs.serde.rs/serde_json/)
-- Mer om JSON-formatet: [https://www.json.org/json-sv.html](https://www.json.org/json-sv.html)
+Med samma `User`-struktur:
+
+```rust
+let user = User {
+    id: 1,
+    name: "Jane Doe".to_string(),
+    email: "jane.doe@example.com".to_string(),
+};
+
+let json_data = serde_json::to_string(&user).unwrap();
+
+println!("{}", json_data);
+```
+
+**Utskrift:**
+
+```json
+{"id":1,"name":"Jane Doe","email":"jane.doe@example.com"}
+```
+
+Dessa exempel demonstrerar det grundläggande flödet av deserialisering av JSON till Rust-strukturer och serialisering av Rust-strukturer tillbaka till JSON-strängar. Serde erbjuder en rik uppsättning verktyg för att arbeta med JSON, inklusive hantering av valfria fält, komplex nästling och typer som inte direkt stöds av JSON.

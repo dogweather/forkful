@@ -1,39 +1,51 @@
 ---
-title:                "Kirjoittaminen vakiovirheeseen"
-date:                  2024-01-19
-simple_title:         "Kirjoittaminen vakiovirheeseen"
-
+title:                "Kirjoittaminen standardivirheeseen"
+date:                  2024-02-03T19:33:20.131458-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Kirjoittaminen standardivirheeseen"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/haskell/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Vakiostandardivirhe (stderr) on erillinen tulostusväylä, joka on suunniteltu virheviestien käsittelyyn. Ohjelmoijat käyttävät sitä erottamaan normaalin tulostuksen virheviesteistä ja debuggausinformaatiosta.
+## Mikä & Miksi?
+Standardivirheeseen (stderr) kirjoittaminen Haskellissa mahdollistaa ohjelmien tulosteiden erottamisen normaalien tulosten ja virheilmoitusten välillä. Tämä on ratkaisevan tärkeää ongelmien signaloimiseksi ja vianmääritykseksi, ilman että se sotkee standarditulostetta (stdout), joka usein sisältää ohjelman päädatan tai tuloksen.
 
-## How to:
-Haskellissa `hPutStrLn` ja `stderr` toimivat yhdessä virhetekstien kirjoittamiseen. Käytä `System.IO`-moduulia.
+## Kuinka:
+Haskellissa stderriin kirjoittaminen on suoraviivaista peruskirjaston `System.IO`-moduulin avulla. Alla on perusesimerkki esittelynä:
 
-```Haskell
+```haskell
 import System.IO
 
 main :: IO ()
 main = do
-  hPutStrLn stderr "Tämä on virheviesti"
+  hPutStrLn stderr "Tämä on virheilmoitus."
 ```
 
-Kun suoritat ohjelman, näet:
+Tämän ohjelman tuloste stderriin olisi:
 
 ```
-Tämä on virheviesti
+Tämä on virheilmoitus.
 ```
 
-Voit ohjata vain virheviestit tiedostoon komennolla `./ohjelma 2> virheet.log`.
+Jos työskentelet monimutkaisemmassa sovelluksessa tai tarvitset parempaa hallintaa lokitukseen (mukaan lukien virheet), saatat valita kolmannen osapuolen kirjaston. Yksi suosittu vaihtoehto on `monad-logger`, joka integroituu Haskell-ohjelmoinnin `mtl`-tyyliin. Tässä on pieni pätkä käyttäen `monad-logger`ia:
 
-## Deep Dive
-Stderr juontaa juurensa Unix-järjestelmistä, jossa prosessilla on aina kolme perustiedostovirtaa: standardituloste (stdout), standardivirhe (stderr) ja standardisyöte (stdin). Haskellin `System.IO`-moduuli tarjoaa funktiot virrille kirjoittamiseen ja lukemiseen. Käytön helppous ja virheraportoinnin selkeys ovat keskeisiä syitä stderr:n käytölle. Vaihtoehtoisesti voi käyttää kirjastoa `System.Log.Logger`, jolloin saa enemmän lokitusvaihtoehtoja.
+```haskell
+{-# LANGUAGE OverloadedStrings #-}
+import Control.Monad.Logger
 
-## See Also
-- Hoogle `System.IO`: https://hoogle.haskell.org/?hoogle=System.IO
-- Understand `stdin`, `stdout`, `stderr`: https://en.wikipedia.org/wiki/Standard_streams
+main :: IO ()
+main = runStderrLoggingT $ do
+  logErrorN "Tämä on virheilmoitus käyttäen monad-loggeria."
+```
+
+Kun ajetaan, `monad-logger`-versio tuottaa samoin virheilmoituksen, mutta se on varustettu enemmän kontekstilla kuten aikaleimoilla tai lokitasoilla, riippuen konfiguraatiosta:
+
+```
+[Error] Tämä on virheilmoitus käyttäen monad-loggeria.
+```
+
+Molemmat menetelmät palvelevat stderriin kirjoittamisen tarkoitusta, ja valinta riippuu suurelta osin sovelluksesi monimutkaisuudesta ja tarpeista.

@@ -1,58 +1,87 @@
 ---
-title:                "JSON-tiedostojen käsittely"
-date:                  2024-01-19
-simple_title:         "JSON-tiedostojen käsittely"
-
+title:                "Työskentely JSON:n kanssa"
+date:                  2024-02-03T19:21:59.772358-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Työskentely JSON:n kanssa"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/cpp/working-with-json.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
-JSON on kevyt dataformaatti tiedon vaihtoon. Ohjelmoijat käyttävät JSONia koska se on helppolukuinen sekä ihmisille että koneille, ja yhteensopiva useiden ohjelmointikielien kanssa.
+## Mikä & Miksi?
+
+JSON (JavaScript Object Notation) on kevyt muoto datan tallentamiseen ja siirtämiseen, mikä tekee siitä erinomaisen välineen datan vaihtoon palvelimien ja web-sovellusten välillä. Ohjelmoijat käyttävät JSONia sen helpon luettavuuden ihmisten toimesta ja suoraviivaisen jäsentämisen koneiden toimesta, erityisesti työskennellessään sovellusten parissa, jotka vaativat datan vaihtoa internetin yli tai konfiguraatioasetuksia.
 
 ## Miten:
-```C++
+
+C++:ssa ei ole natiivia tukea JSONille, mutta kolmannen osapuolen kirjastot, kuten nlohmann/json, tekevät siitä suoraviivaista. Näin voit käyttää sitä perustehtäviin:
+
+Ensiksi, varmista, että sinulla on kirjasto asennettuna. Jos käytät paketinhallintajärjestelmää, kuten vcpkg tai Conan, voit helposti lisätä `nlohmann/json` projektisi.
+
+### JSONin jäsentäminen merkkijonosta
+
+```cpp
 #include <iostream>
-#include <nlohmann/json.hpp> // Kirjasto JSONin käsittelyyn
+#include <nlohmann/json.hpp>
 
 int main() {
-    // JSON-objektin luominen
-    nlohmann::json j;
-    j["nimi"] = "Maija";
-    j["ikä"] = 30;
-    j["kielitaito"] = {"suomi", "englanti", "ruotsi"};
+    // JSON data merkkijonona
+    std::string jsonData = "{\"name\":\"John\", \"age\":30, \"city\":\"New York\"}";
 
-    // JSONin tulostus
-    std::cout << j.dump(2) << std::endl;
-    
-    // JSONista datan lukeminen
-    std::string nimi = j["nimi"];
-    int ikä = j["ikä"];
-    std::cout << "Nimi: " << nimi << ", Ikä: " << ikä << std::endl;
+    // Jäsentä JSON merkkijono
+    auto jsonObject = nlohmann::json::parse(jsonData);
+
+    // Datan käyttö
+    std::cout << "Nimi: " << jsonObject["name"] << "\n"
+              << "Ikä: " << jsonObject["age"] << "\n"
+              << "Kaupunki: " << jsonObject["city"] << std::endl;
 
     return 0;
 }
 ```
-Output:
-```json
-{
-  "ikä": 30,
-  "kielitaito": [
-    "suomi",
-    "englanti",
-    "ruotsi"
-  ],
-  "nimi": "Maija"
-}
-Nimi: Maija, Ikä: 30
+
+**Esimerkkitulostus:**
+
+```
+Nimi: John
+Ikä: 30
+Kaupunki: New York
 ```
 
-## Syvemmälle:
-JSON, lyhenne Java Script Object Notation, kehitettiin alun perin JavaScriptille, mutta on nykyään kieliriippumaton. XML oli ennen JSONin suosion kasvua yleisin valinta datan välittämiseen, mutta sen raskas syntaksi on johtanut monien siirtymiseen käyttämään JSONia. JSONia käsitteleviä kirjastoja on monia, tässä artikkelissa käytetty `nlohmann/json` on yksi suosituimmista C++-kielellä.
+### JSONin generointi
 
-## Katso Myös:
-- JSON-standardi: https://www.json.org/json-fi.html
-- nlohmann/json GitHub-sivu: https://github.com/nlohmann/json
-- C++ JSON-kirjastojen vertailu: https://en.cppreference.com/w/cpp/links/libs/json
+JSON datan luominen on yhtä suoraviivaista; sinun tarvitsee vain antaa arvoja `nlohmann/json` objektille.
+
+```cpp
+#include <nlohmann/json.hpp>
+#include <iostream>
+
+int main() {
+    // JSON objektin luominen
+    nlohmann::json jsonObject;
+    jsonObject["name"] = "Jane";
+    jsonObject["age"] = 25;
+    jsonObject["city"] = "Los Angeles";
+
+    // Muunna JSON objekti merkkijonoksi ja tulosta
+    std::string jsonString = jsonObject.dump(4); // Argumentti 4 kauniiseen tulostukseen
+    std::cout << jsonString << std::endl;
+
+    return 0;
+}
+```
+
+**Esimerkkitulostus:**
+
+```
+{
+    "name": "Jane",
+    "age": 25,
+    "city": "Los Angeles"
+}
+```
+
+Nämä esimerkit osoittavat ydintoiminnot työskentelyyn JSONin kanssa C++:ssa käyttäen `nlohmann/json` kirjastoa. Näiden perusteiden avulla voit jäsentää ja luoda JSONia erilaisiin sovelluksiin, konfiguraatiotiedostoista datan vaihtoon verkkosovelluksissa.

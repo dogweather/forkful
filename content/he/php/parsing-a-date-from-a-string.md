@@ -1,38 +1,64 @@
 ---
-title:                "ניתוח תאריך ממחרוזת"
-date:                  2024-01-20T15:38:02.355646-07:00
-simple_title:         "ניתוח תאריך ממחרוזת"
-
+title:                "פרסום תאריך ממחרוזת"
+date:                  2024-02-03T19:15:31.419781-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "פרסום תאריך ממחרוזת"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/php/parsing-a-date-from-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## מה ולמה?
-פענוח תאריך ממחרוזת הוא התהליך שבו אנחנו הופכים טקסט לפורמט תאריך שה-PHP יכול להבין ולעבוד איתו. תכנתים עושים את זה כי מבחינת הקוד, תאריך הוא לא רק מחרוזת - זה מאפשר לנו למנוע שגיאות, להשוות בין תאריכים, ולהפעיל פונקציות תאריך ושעה.
+
+לעבד תאריך ממחרוזת ב-PHP משמעו להמיר טקסט שמייצג תאריך ו/או שעה לאובייקט `DateTime` של PHP או פורמטים אחרים של תאריך/זמן. זה קריטי לצורך אימות נתונים, מניפולציה, אחסון והצגה, במיוחד כאשר עובדים עם קלט מהמשתמש או נתונים ממקורות חיצוניים.
 
 ## איך לעשות:
-כדי לפענח תאריך, אפשר להשתמש בפונקציית `strtotime` או במחלקת `DateTime`.
 
-```PHP
-<?php
-$dateString = "2023-04-01 14:00:00";
+הכיתה המובנית `DateTime` של PHP מספקת סט חזק של פונקציות לעיבוד ועבודה עם תאריכים. ניתן ליצור מופע של `DateTime` ממחרוזת תאריך באמצעות הבנאי, ואז לעצב אותו כפי שנדרש. כך זה נעשה:
 
-// עם strtotime:
-$timestamp = strtotime($dateString);
-echo date("Y-m-d H:i:s", $timestamp); // יוצא "2023-04-01 14:00:00"
+```php
+$dateString = "2023-04-25 15:30:00";
+$dateObject = new DateTime($dateString);
 
-// עם DateTime:
-$dateTime = new DateTime($dateString);
-echo $dateTime->format("Y-m-d H:i:s"); // יוצא "2023-04-01 14:00:00"
-?>
+echo $dateObject->format('Y-m-d H:i:s');
+// פלט: 2023-04-25 15:30:00
 ```
 
-## צלילה לעומק:
-בעבר, `strtotime` הייתה הדרך הנפוצה ביותר לפענח תאריכים ממחרוזות. מאז ש- PHP 5.2 יצא לאוויר, המחלקה `DateTime` הפכה לנפוצה יותר מכיוון שהיא מציעה גמישות רבה יותר וטיפול טוב יותר באזורים זמנים. יתר על כן, כשמשתמשים ב-`DateTime`, אפשר להתעסק עם חריגים, אובייקטים immutable ואפשרויות אחרות שיכולות להיות שימושיות ביישומים מורכבים.
+כדי לטפל במחרוזות שמתארות פורמטים לא סטנדרטיים, ניתן להשתמש בשיטה `createFromFormat`, המאפשרת לך לציין את הפורמט המדויק של תאריך הקלט:
 
-## ראו גם:
-- [תיעוד ה-PHP על strtotime](https://www.php.net/manual/en/function.strtotime.php)
-- [תיעוד ה-PHP על מחלקת DateTime](https://www.php.net/manual/en/class.datetime.php)
-- [מדריך על אזורים זמניים ב-PHP](https://www.php.net/manual/en/timezones.php)
+```php
+$dateString = "25-04-2023 3:30 PM";
+$dateObject = DateTime::createFromFormat('d-m-Y g:i A', $dateString);
+
+echo $dateObject->format('Y-m-d H:i:s');
+// פלט: 2023-04-25 15:30:00
+```
+
+לעיבוד מורכב יותר שאולי לא נתמך ישירות על ידי `DateTime`, PHP מציעה את הפונקציה `strtotime`, המנסה לעבד כל תיאור טקסטואלי זמן באנגלית לחותם זמן אוניקס:
+
+```php
+$timestamp = strtotime("next Thursday");
+echo date('Y-m-d', $timestamp);
+// הפלט ישתנה בהתאם לתאריך הנוכחי, למשל, "2023-05-04"
+```
+
+**שימוש בספריות צד שלישי:**
+
+למרות שפונקציות המובנות של PHP מכסות מגוון רחב של תרחישי שימוש, לפעמים ייתכן שתזדקקו ליכולות עיבוד מתוחכמות יותר. הספרייה Carbon, המרחיבה את כיתת ה-DateTime של PHP, מספקת סט עשיר של תכונות למניפולציה של תאריך/זמן:
+
+```php
+require 'vendor/autoload.php';
+
+use Carbon\Carbon;
+
+$dateString = "Tomorrow";
+$date = Carbon::parse($dateString);
+
+echo $date->toDateTimeString();
+// הפלט ישתנה, למשל, "2023-04-26 00:00:00"
+```
+
+השיטה `parse` של Carbon יכולה לטפל בחכמה במגוון רחב של פורמטים של תאריכים וזמנים, מה שהופך אותה לכלי חשוב עבור אפליקציות הדורשות פונקציונליות גמישה של עיבוד תאריכים.

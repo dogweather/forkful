@@ -1,8 +1,8 @@
 ---
 title:                "Working with JSON"
-date:                  2024-01-19
+date:                  2024-02-03T19:03:12.908663-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Working with JSON"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/clojure/working-with-json.md"
 ---
@@ -10,47 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-JSON (JavaScript Object Notation) is a data format used to store and transport data. Programmers use JSON because of its ease of use with web APIs and its language-independent text format which makes it super handy for data interchange.
+Working with JSON (JavaScript Object Notation) in Clojure involves parsing JSON strings into Clojure data structures (maps, vectors) and vice versa. This task is fundamental for web services, APIs, and applications that need to communicate data in a structured, text-based format because JSON is universally recognized and supported across different programming environments.
 
 ## How to:
-Let's play with JSON in Clojure. You'll need `Cheshire`, a popular library for JSON encoding/decoding.
+Clojure does not include built-in functions for working with JSON, so you will typically use third-party libraries. `cheshire` and `jsonista` are popular choices due to their ease of use and performance.
 
-First, add Cheshire to your `project.clj` dependencies:
-```clojure
+### Using Cheshire
+First, add Cheshire to your project dependencies in `project.clj`:
+```clj
+[com.fasterxml.jackson.core/jackson-core "2.12.0"]
 [cheshire "5.10.1"]
 ```
 
-Reading JSON from a string and converting it into a Clojure map:
-```clojure
+To parse a JSON string into a Clojure map and convert a map to a JSON string:
+
+```clj
 (require '[cheshire.core :as json])
 
-(def json-str "{\"name\":\"Clojure\"}")
-(def clojure-map (json/parse-string json-str))
+;; Parse JSON string to Clojure map
+(let [json-input "{\"name\":\"John\", \"age\":30}"]
+  (json/parse-string json-input true)) ; => {"name" "John", "age" 30}
 
-(println clojure-map)  ;; => {"name" "Clojure"}
+;; Convert Clojure map to JSON string
+(let [clj-map {"name" "John", "age" 30}]
+  (json/generate-string clj-map)) ; => "{\"name\":\"John\",\"age\":30}"
 ```
 
-Turning a Clojure map into a JSON string:
-```clojure
-(def clojure-data {:language "Clojure" :cool true})
-(def json-output (json/generate-string clojure-data))
-
-(println json-output)  ;; => {"language":"Clojure","cool":true}
+### Using Jsonista
+Add Jsonista to your project `project.clj`:
+```clj
+[jsonista "0.3.2"]
 ```
 
-Parsing JSON from a file:
-```clojure
-(slurp "data.json")  ;; contents: {"message": "Hello, JSON!"}
-(def file-content (slurp "data.json"))
-(def message-data (json/parse-string file-content true))
+Similar operations with Jsonista:
 
-(println message-data)  ;; => {"message" "Hello, JSON!"}
+```clj
+(require '[jsonista.core :as j])
+
+;; Parse JSON string to Clojure
+(let [json-input "{\"name\":\"Emily\", \"age\":25}"]
+  (j/read-value json-input)) ; => {"name" "Emily", "age" 25}
+
+;; Convert Clojure map to JSON string
+(let [clj-map {"name" "Emily", "age" 25}]
+  (j/write-value-as-string clj-map)) ; => "{\"name\":\"Emily\",\"age\":25}"
 ```
 
-## Deep Dive
-JSON's history starts with JavaScript, but now it's everywhere, not dependent on its parent language. Alternatives? XML was the go-to before, more verbose though. YAML's simpler, human-friendlier but not as universal for APIs. Implementation-wise: Clojure's not JavaScript, so libraries like Cheshire are essential. They bridge the gap by using Java libraries underneath to handle the parsing and generation efficiently.
-
-## See Also
-- [Cheshire GitHub Repo](https://github.com/dakrone/cheshire): For library details and updates.
-- [JSON.org](https://www.json.org): JSON specs and details.
-- [Clojure from the ground up: JSON](https://aphyr.com/posts/305-clojure-from-the-ground-up-json): A detailed guide on handling JSON with Clojure.
+In both libraries, you have the option to encode and decode more complex data structures, and there are additional functions and parameters that allow for customization of the serialization and deserialization processes. For most applications, the demonstrated functionality provides a solid foundation for working with JSON in Clojure applications.

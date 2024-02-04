@@ -1,39 +1,83 @@
 ---
-title:                "टेक्स्ट फाइल लिखना"
-date:                  2024-01-19
-simple_title:         "टेक्स्ट फाइल लिखना"
-
+title:                "एक टेक्स्ट फ़ाइल लिखना"
+date:                  2024-02-03T19:30:48.226262-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "एक टेक्स्ट फ़ाइल लिखना"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/typescript/writing-a-text-file.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (क्या और क्यों?)
-लिखना एक टेक्स्ट फाइल में डेटा स्टोर करने का तरीका है. प्रोग्रामर्स लॉग्स, कॉन्फ़िगरेशन्स, डेटा एक्सपोर्ट करने के लिए इसका उपयोग करते हैं.
+## क्या और क्यों?
+TypeScript में एक टेक्स्ट फाइल लिखना डेटा संरक्षण, कॉन्फ़िगरेशन, या लॉग जेनरेशन के लिए एक महत्वपूर्ण कौशल है। प्रोग्रामर अक्सर इस कार्य को डेटा विश्लेषण, रिपोर्टिंग, या केवल सत्रों भर में उपयोगकर्ता सेटिंग्स को बचाने जैसे कारणों के लिए एप्लिकेशन मेमोरी के बाहर डेटा संग्रहित और संभालने के लिए करते हैं।
 
-## How to: (कैसे करें:)
-```TypeScript
-import { writeFile } from 'fs';
+## कैसे करें:
+TypeScript स्वयं सीधे फ़ाइल ऑपरेशन्स को संभाल नहीं पाता क्योंकि यह JavaScript में कंपाइल होता है, जो पारंपरिक रूप से ब्राउज़र में चलता है जिसमें फ़ाइल सिस्टम तक सीमित पहुंच होती है। हालांकि, जब इसका उपयोग Node.js वातावरण में किया जाता है, तो `fs` मॉड्यूल (File System) फ़ाइलें लिखने की कार्यक्षमता प्रदान करता है।
 
-// टेक्स्ट फाइल में लिखें
-const data: string = 'Hello, this is a test';
+### Node.js fs मॉड्यूल का प्रयोग 
+पहले, सुनिश्चित करें कि आप Node.js वातावरण में काम कर रहे हैं। फिर, टेक्स्ट फाइलें लिखने के लिए `fs` मॉड्यूल का उपयोग करें। यहां एक बुनियादी उदाहरण है:
 
-writeFile('example.txt', data, (err) => {
-  if (err) throw err;
-  console.log('File written successfully!');
+```typescript
+import * as fs from 'fs';
+
+const data = 'हेलो, वर्ल्ड!';
+const filePath = './message.txt';
+
+fs.writeFile(filePath, data, 'utf8', (err) => {
+    if (err) throw err;
+    console.log('फ़ाइल सहेजी गई है!');
 });
 ```
 
-आउटपुट:
-```
-File written successfully!
+यह "हेलो, वर्ल्ड!" को `message.txt` में विलंबित रूप से लिखेगा। यदि फ़ाइल मौजूद नहीं है, तो Node.js इसे बना देता है; यदि यह है, तो Node.js इसे ओवरराइट कर देता है।
+
+सिंक्रोनस फ़ाइल लिखने के लिए, `writeFileSync` का प्रयोग करें:
+
+```typescript
+import * as fs from 'fs';
+
+const data = 'हेलो फिर से, वर्ल्ड!';
+const filePath = './message.txt';
+
+try {
+    fs.writeFileSync(filePath, data, 'utf8');
+    console.log('फ़ाइल सहेजी गई है!');
+} catch (err) {
+    console.error(err);
+}
 ```
 
-## Deep Dive (गहराई में जानकारी)
-टेक्स्ट फाइल्स को स्टोर करने का तरीका DOS और UNIX सिस्टम्स से है. बदलाव के लिए `appendFile`, या लाइब्रेरीज जैसे की `fs-extra` या `axios` का उपयोग कर सकते हैं. `fs` प्रॉमिस-बेस्ड वर्जन `fs.promises.writeFile` के साथ भी आता है जो async/await के साथ उपयोग किया जा सकता है.
+### लोकप्रिय थर्ड-पार्टी लाइब्रेरीज का प्रयोग
+जबकि मूल `fs`मॉड्यूल शक्तिशाली है, कुछ डेवलपर्स अतिरिक्त सुविधा और कार्यक्षमता के लिए थर्ड-पार्टी लाइब्रेरीज का उपयोग करना पसंद करते हैं। `fs-extra` एक लोकप्रिय विकल्प है जो `fs` का विस्तार करता है और फ़ाइल ऑपरेशनों को अधिक सरल बना देता है।
 
-## See Also (और भी देखें)
-- Node.js `fs` मॉड्यूल डॉक्यूमेंटेशन: https://nodejs.org/api/fs.html
-- `fs-extra` मॉड्यूल: https://www.npmjs.com/package/fs-extra
-- `axios`: https://axios-http.com/docs/intro
+सबसे पहले, आपको `fs-extra` इंस्टॉल करने की आवश्यकता होगी:
+
+```
+npm install fs-extra
+```
+
+फिर, आप इसे अपनी TypeScript फाइल में टेक्स्ट सामग्री लिखने के लिए उपयोग कर सकते हैं:
+
+```typescript
+import * as fs from 'fs-extra';
+
+const data = 'यह fs-extra है!';
+const filePath = './extraMessage.txt';
+
+// एसिंक/अवेट का उपयोग करते हुए
+async function writeFile() {
+    try {
+        await fs.writeFile(filePath, data, 'utf8');
+        console.log('फाइल fs-extra के साथ सहेजी गई है!');
+    } catch (err) {
+        console.error(err);
+    }
+}
+
+writeFile();
+```
+
+यह कोड स्निपेट पहले के `fs` उदाहरणों की तरह ही काम करता है लेकिन `fs-extra` पुस्तकालय का उपयोग करता है, प्रॉमिसों को संभालने के लिए साफ़ सिंटैक्स पेश करता है।

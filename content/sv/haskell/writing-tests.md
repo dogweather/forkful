@@ -1,42 +1,79 @@
 ---
 title:                "Skriva tester"
-date:                  2024-01-19
+date:                  2024-02-03T19:30:53.156310-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Skriva tester"
-
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/haskell/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Skriva tester handlar om att bekräfta att kod gör vad den ska. Programmerare gör det för att snabbt hitta buggar, förbättra design och säkerställa kodkvaliteten över tid.
 
-## Hur gör man?:
-I Haskell kan vi använda `Hspec`, ett testbibliotek som underlättar beteendedriven utveckling (BDD). Här är ett enkelt exempel:
+Att skriva tester i Haskell handlar om att säkerställa att dina funktioner fungerar som förväntat genom automatiserade kontroller. Programmerare gör det för att upptäcka buggar tidigt, underlätta refaktorering, och dokumentera beteende, vilket gör kodbasen mer underhållbar och skalbar.
 
-```Haskell
+## Hur gör man:
+
+Haskell stöder olika testramverk, men två populära är `Hspec` och `QuickCheck`. Hspec låter dig definiera människoläsbara specifikationer för din kod, medan QuickCheck låter dig generera tester automatiskt genom att beskriva egenskaper som din kod bör uppfylla.
+
+### Använda Hspec
+
+Först, lägg till `hspec` i din byggverktygskonfiguration (t.ex. `stack.yaml` eller `cabal`-fil). Importera sedan `Test.Hspec` och skriv tester som specifikationer:
+
+```haskell
+-- fil: spec/MyLibSpec.hs
 import Test.Hspec
+import MyLib (add)
 
 main :: IO ()
-main = hspec $ do
-  describe "addition" $ do
-    it "correctly adds two numbers" $ do
-      (1 + 1) `shouldBe` 2
+main = hspec $ describe "MyLib.add" $ do
+  it "lägger till två nummer" $
+    add 1 2 `shouldBe` 3
+
+  it "returnerar det första numret när noll läggs till" $
+    add 5 0 `shouldBe` 5
 ```
 
-Kör testet och få detta resultat:
+Kör sedan dina tester med ditt byggverktyg, vilket resulterar i en output som kan se ut så här:
+
 ```
-addition
-  correctly adds two numbers
-Finished in 0.0001 seconds
-1 example, 0 failures
+MyLib.add
+  - lägger till två nummer
+  - returnerar det första numret när noll läggs till
+
+Avslutad på 0.0001 sekunder
+2 exempel, 0 fel
 ```
 
-## Djupdykning
-Testning i Haskell startade tidigt med `QuickCheck` som skapades runt 2000. Alternativ till `Hspec` inkluderar `QuickCheck` för egenskapstester och `Tasty` för en modulär testsvit. `Hspec` bygger på `HUnit` och lägger till en BDD-liknande syntax. `Hspec` kan kombineras med `QuickCheck` för att få fördelarna med båda.
+### Använda QuickCheck
 
-## Se också
-- Hspec dokumentation: http://hspec.github.io/
-- QuickCheck på Hackage: https://hackage.haskell.org/package/QuickCheck
-- Tasty testramverk: https://hackage.haskell.org/package/tasty
+Med QuickCheck uttrycker du egenskaper som dina funktioner bör uppfylla. Lägg till `QuickCheck` i din projektinställning, importera den sedan:
+
+```haskell
+-- fil: test/MyLibProperties.hs
+import Test.QuickCheck
+import MyLib (add)
+
+prop_addAssociative :: Int -> Int -> Int -> Bool
+prop_addAssociative x y z = x + (y + z) == (x + y) + z
+
+prop_addCommutative :: Int -> Int -> Bool
+prop_addCommutative x y = x + y == y + x
+
+main :: IO ()
+main = do
+  quickCheck prop_addAssociative
+  quickCheck prop_addCommutative
+```
+
+När du kör dessa tester kommer ingångarna att genereras automatiskt för att kontrollera de specificerade egenskaperna:
+
+```
++++ OK, godkända 100 tester.
++++ OK, godkända 100 tester.
+```
+
+I både Hspec- och QuickCheck-exemplen tjänar testsuiterna som exekverbar dokumentation som automatiskt kan verifiera korrektheten i din kod.

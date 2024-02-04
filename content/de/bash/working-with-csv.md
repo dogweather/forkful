@@ -1,47 +1,75 @@
 ---
-title:                "Arbeiten mit CSV-Dateien"
-date:                  2024-01-19
-simple_title:         "Arbeiten mit CSV-Dateien"
-
+title:                "Arbeiten mit CSV"
+date:                  2024-02-03T19:18:31.181748-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Arbeiten mit CSV"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/bash/working-with-csv.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Was & Warum?
-CSV steht für "Comma-Separated Values" – Daten durch Kommas getrennt. Programmierer nutzen CSV, weil es ein einfaches Format ist, um tabellarische Daten zwischen Programmen und Systemen auszutauschen.
+Die Arbeit mit CSV-Dateien (Comma-Separated Values) in Bash dreht sich um die Verarbeitung und Manipulation von tabellarischen Daten, die im Klartextformat gespeichert sind. Dies ist für Programmierer wesentlich, da es die Automatisierung von Datenumwandlungs-, Analyse- und Integrationstasks direkt über die Befehlszeile ermöglicht, ohne dass schwerfälligere Tools oder Programmierumgebungen erforderlich sind.
 
-## How to:
-Bash bietet native Tools für CSV-Operationen. Hier ein paar Beispiele:
+## Wie geht das:
 
-```Bash
-# Zeilen zählen
-wc -l daten.csv
+**Lesen einer CSV-Datei Zeile für Zeile**
 
-# Erste Spalte anzeigen
-cut -d ',' -f 1 daten.csv
-
-# Zeilen filtern, die "Muster" enthalten
-grep "Muster" daten.csv
-
-# Eine neue CSV-Datei aus der ersten und dritten Spalte erstellen
-cut -d ',' -f 1,3 daten.csv > neue_daten.csv
-
-# Summe einer numerischen Spalte berechnen (hier Spalte 2)
-awk -F',' '{sum += $2} END {print sum}' daten.csv
+```bash
+while IFS=, read -r spalte1 spalte2 spalte3
+do
+  echo "Spalte 1: $spalte1, Spalte 2: $spalte2, Spalte 3: $spalte3"
+done < beispiel.csv
 ```
 
-Beispielausgabe für `wc -l daten.csv`:
+*Beispielausgabe:*
 
-```Bash
-42 daten.csv
+```
+Spalte 1: id, Spalte 2: name, Spalte 3: email
+...
 ```
 
-## Deep Dive
-CSV wurde in den frühen 70ern populär. Es ist nicht standardisiert, was Probleme mit Zeichenkodierung und Datenformaten bringen kann. Alternativen sind JSON oder XML, die strukturierter sind. Bei der Arbeit mit CSV in Bash muss man auf Textverarbeitungstools wie `cut`, `awk`, `grep`, `sort`, etc. zurückgreifen, die flexibel aber nicht fehlerverzeihend sind.
+**Filtern von CSV-Zeilen basierend auf einer Bedingung**
 
-## See Also
-- GNU Coreutils Dokumentation: https://www.gnu.org/software/coreutils/manual/coreutils.html
-- AWK Benutzerhandbuch: https://www.gnu.org/software/gawk/manual/gawk.html
-- Einführung in sed: https://www.gnu.org/software/sed/manual/sed.html
+Mit `awk` können Sie einfach Zeilen filtern. Um zum Beispiel Zeilen zu finden, in denen die zweite Spalte "Alice" entspricht:
+
+```bash
+awk -F, '$2 == "Alice" { print $0 }' beispiel.csv
+```
+
+**Ändern eines Spaltenwerts**
+
+Um die zweite Spalte in Großbuchstaben zu ändern:
+
+```bash
+awk -F, 'BEGIN {OFS=",";} { $2 = toupper($2); print $0; }' beispiel.csv
+```
+
+**Sortieren einer CSV-Datei basierend auf einer Spalte**
+
+Sie können eine CSV-Datei basierend auf, sagen wir, der dritten Spalte (numerisch) sortieren:
+
+```bash
+sort -t, -k3,3n beispiel.csv
+```
+
+**Verwenden von `csvkit` für komplexere Aufgaben**
+
+`csvkit` ist eine Sammlung von Befehlszeilen-Tools zum Konvertieren und Arbeiten mit CSV. Es kann über pip installiert werden.
+
+Zum Konvertieren einer JSON-Datei in CSV:
+
+```bash
+in2csv data.json > data.csv
+```
+
+Um eine CSV-Datei mit SQL abzufragen:
+
+```bash
+csvsql --query "SELECT name FROM sample WHERE id = 10" beispiel.csv
+```
+
+*Hinweis: Die Installation von `csvkit` benötigt Python und kann über `pip install csvkit` erfolgen.*

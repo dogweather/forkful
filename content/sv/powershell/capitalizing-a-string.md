@@ -1,43 +1,45 @@
 ---
-title:                "Att göra en sträng versal"
-date:                  2024-01-19
-simple_title:         "Att göra en sträng versal"
-
+title:                "Gör om en sträng till versaler"
+date:                  2024-02-03T19:06:04.451254-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Gör om en sträng till versaler"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/powershell/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att kapitalisera en sträng innebär att omvandla första tecknet i ordet till versal (stort bokstav), detta kan vara viktigt för att standardisera data eller för presentationssyften.
+Att skriva med stor bokstav i PowerShell innebär att man omvandlar det första tecknet i en given sträng till versal medan resten av strängen lämnas oförändrad. Programmerare utför ofta denna uppgift för formateringssyften, såsom att förbereda text för visning i användargränssnitt eller följa grammatiska regler i genererade dokument.
 
-## Hur man gör:
-Använd `.ToUpper()` för att göra hela strängen versal eller `.ToLower()` följt av `.Substring()` och `+` operatorn för att kapitalisera bara det första tecknet.
+## Hur gör man:
+PowerShell, som är ett mångsidigt verktyg, låter dig skriva med stor bokstav i en sträng på enkla sätt utan att behöva tredjepartsbibliotek. Så här kan du göra det:
 
-```PowerShell
-$text = "välkommen till PowerShell"
-$text.ToUpper() # Gör hela strängen versal
-$text.Substring(0,1).ToUpper() + $text.Substring(1) # Gör första tecknet versalt
+```powershell
+# Använder den inbyggda .Net-metoden 'ToTitleCase' från CultureInfo
+$text = "hej värld"
+$culture = [System.Globalization.CultureInfo]::InvariantCulture
+$capitalizedText = $culture.TextInfo.ToTitleCase($text.ToLower())
+Write-Output $capitalizedText
 ```
-Sample Output:
+Utskrift:
 ```
-VÄLKOMMEN TILL POWERSHELL
-Välkommen till PowerShell
-```
-
-## Fördjupning
-Historiskt sett användes stora bokstäver i början av meningar för att förbättra läsbarheten. I PowerShell, precis som i många andra programmeringsspråk, kan strängmanipulation vara en del av programmets logik för att till exempel ordna data eller ändra utseendet i användargränssnitt.
-
-Det finns alternativ till att använda `.Substring()` som att använda `-creplace '^.', {$_.Value.ToUpper()}` för att kapitalisera första tecknet med regular expressions.
-
-```PowerShell
-$text = "välkommen"
-$text -creplace '^.', {$_.Value.ToUpper()}
+Hej värld
 ```
 
-I omständigheter där prestanda är kritisk, är det värt att komma ihåg att konkatenering med '+' kan vara mindre effektivt än att använda en StringBuilder-klass i .NET om det handlar om stora eller många strängmanipulationer.
+Notera: Denna metod gör den första bokstaven i varje ord versal. Om du strikt vill göra endast det första tecknet i strängen versalt och lämna resten som det är, kan du göra något i den här stilen:
 
-## Se också
-- Regular expression stöd i PowerShell: [about_Regular_Expressions](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_regular_expressions)
-- En guide till .NET:s StringBuilder-klass: [StringBuilder Class](https://docs.microsoft.com/dotnet/api/system.text.stringbuilder)
+```powershell
+# Gör endast det första tecknet i en sträng till versal
+$text = "hej värld"
+$capitalizedText = $text.Substring(0,1).ToUpper() + $text.Substring(1)
+Write-Output $capitalizedText
+```
+Utskrift:
+```
+Hej värld
+```
+
+PowerShell inkluderar inte direkt en enkel funktion för att göra endast det första bokstaven i en sträng versal, men genom att kombinera grundläggande strängmanipulationsmetoder såsom `Substring(0,1).ToUpper()` och sammanfogning kan vi lätt uppnå det önskade resultatet.

@@ -1,31 +1,54 @@
 ---
-title:                "Aktuelles Datum abrufen"
-date:                  2024-01-20T15:14:23.718036-07:00
-simple_title:         "Aktuelles Datum abrufen"
-
+title:                "Den aktuellen Datum abrufen"
+date:                  2024-02-03T19:09:19.502778-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Den aktuellen Datum abrufen"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/fish-shell/getting-the-current-date.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Das Abrufen des aktuellen Datums ist die Methode, mit der du das heutige Datum in deine Shell-Skripte holst. Programmierer nutzen es für Logs, Zeitstempel und zeitabhängige Funktionen.
+Das Abrufen des aktuellen Datums in der Programmierung ist eine grundlegende Aufgabe, die es Ihnen ermöglicht, das Datum und die Zeitdaten des Systems abzurufen und zu manipulieren. Bei Skripten und Automatisierungsaufgaben ist es unerlässlich für die Generierung von Zeitstempeln, das Planen von Aufgaben und das Erstellen von Protokollen.
 
-## So Geht's:
-```Fish Shell
-set datum (date '+%Y-%m-%d')
-echo $datum
-```
-Ausgabe:
-```
-2023-04-02
+## Wie geht das:
+Fish Shell verwendet externe Befehle wie `date`, um das aktuelle Datum zu erhalten, und bietet Flexibilität, das Ausgabeformat nach Bedarf zu formatieren. So verwenden Sie es:
+
+```fish
+# Das aktuelle Datum im Standardformat anzeigen
+echo (date)
+
+# Ausgabebeispiel: Wed 25 Oct 2023 15:42:03 BST
 ```
 
-## Tiefergehend:
-Das `date`-Kommando existiert schon seit den Anfängen der Unix-Ära und ist aus der täglichen Programmierung kaum wegzudenken. In Fish Shell wird es oft in verketteten Befehlen oder Shell-Skripten verwendet, um dynamisch mit dem Datum zu arbeiten. Alternative Wege das Datum abzurufen gibt es durch diverse externe Tools oder Programmiersprachen, doch `date` bleibt wegen seiner Einfachheit und universellen Verfügbarkeit oft die erste Wahl. Die Formatierung des Datums erfolgt über Standard-Zeichenketten, wobei `%Y-%m-%d` ein verbreitetes ISO 8601-Format darstellt.
+Um das Format des Datums anzupassen, können Sie die Option `+` gefolgt von Formatspezifikatoren verwenden:
 
-## Siehe auch:
-- [Fish Shell Dokumentation](https://fishshell.com/docs/current/index.html)
-- [GNU Coreutils 'date'](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html)
-- [ISO 8601 Standard](https://www.iso.org/iso-8601-date-and-time-format.html)
+```fish
+# Das aktuelle Datum im YYYY-MM-DD-Format anzeigen
+echo (date "+%Y-%m-%d")
+
+# Ausgabebeispiel: 2023-10-25
+```
+
+Für komplexere Aufgaben, wie das Arbeiten mit Zeitstempeln oder das Ausführen von Datumsrechnungen, verlässt sich Fish Shell auf externe Werkzeuge wie `date` wegen seiner Skriptnatur. Hier ist ein Beispiel dafür, wie der aktuelle UNIX-Zeitstempel abgerufen wird:
+
+```fish
+# Den aktuellen UNIX-Zeitstempel abrufen
+echo (date "+%s")
+
+# Ausgabebeispiel: 1666710123
+```
+
+Und um einen Tag zum aktuellen Datum hinzuzufügen mit `date`:
+
+```fish
+# Einen Tag zum aktuellen Datum hinzufügen
+echo (date -d "+1 day" "+%Y-%m-%d")
+
+# Ausgabebeispiel: 2023-10-26
+```
+
+Hinweis: Die Beispiele verwenden die `date`-Befehlsoptionen, die mit den GNU-Coreutils funktionieren. Optionen können sich in anderen Umgebungen wie macOS, das standardmäßig den BSD-Date-Befehl verwendet, unterscheiden. Beziehen Sie sich immer auf `date --help` oder die Man-Seite für Details, die spezifisch für Ihre Umgebung sind.

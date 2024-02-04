@@ -1,50 +1,86 @@
 ---
-title:                "Написання тестів"
-date:                  2024-01-19
-simple_title:         "Написання тестів"
-
+title:                "Письмо тестів"
+date:                  2024-02-03T19:31:35.660230-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Письмо тестів"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/php/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Що це таке & навіщо?
-Тестування коду – це процес перевірки, що ваш код працює, як задумано. Програмісти тестують, щоб запобігти помилкам, забезпечити якість та спростити майбутнє оновлення коду.
+## Що та Чому?
+Написання тестів у програмуванні передбачає створення та запуск скриптів, які перевіряють, що код працює так, як очікується, в різних умовах. Програмісти роблять це, щоб забезпечити якість, запобігти регресам і полегшити безпечний рефакторинг, що є важливим для підтримки здорового, масштабованого та безбагового коду.
 
-## Як це робити:
-У PHP для написання тестів часто використовують бібліотеку PHPUnit. Давайте створимо простий тест.
+## Як робити:
+### Рідний PHP – PHPUnit
+Популярним інструментом для тестування в PHP є PHPUnit. Встановіть його через Composer:
+```bash
+composer require --dev phpunit/phpunit ^9
+```
 
-```PHP
-<?php
+#### Написання простого тесту:
+Створіть файл `CalculatorTest.php` у директорії `tests`:
+```php
 use PHPUnit\Framework\TestCase;
 
-class SampleTest extends TestCase
+// Припустимо, у вас є клас Calculator, який додає числа
+class CalculatorTest extends TestCase
 {
-    public function testTrueAssertsToTrue()
+    public function testAdd()
     {
-        $this->assertTrue(true);
+        $calculator = new Calculator();
+        $this->assertEquals(4, $calculator->add(2, 2));
     }
 }
 ```
+Запустіть тести за допомогою:
+```bash
+./vendor/bin/phpunit tests
+```
 
-Команда для запуску тесту:
+#### Приклад виводу:
+```
+PHPUnit 9.5.10 від Sebastian Bergmann та співавторів.
+
+.                                                                   1 / 1 (100%)
+
+Час: 00:00.005, Пам'ять: 6.00 MB
+
+OK (1 тест, 1 справдження)
+```
+
+### Сторонні бібліотеки – Mockery
+Для складних тестувань, включно з макетуванням об'єктів, популярним вибором є Mockery.
 
 ```bash
-./vendor/bin/phpunit --filter SampleTest
+composer require --dev mockery/mockery
 ```
 
-Запуск видасть такий результат:
+#### Інтеграція Mockery з PHPUnit:
+```php
+use PHPUnit\Framework\TestCase;
+use Mockery as m;
 
+class ServiceTest extends TestCase
+{
+    public function tearDown(): void
+    {
+        m::close();
+    }
+
+    public function testServiceCallsExternalService()
+    {
+        $externalServiceMock = m::mock(ExternalService::class);
+        $externalServiceMock->shouldReceive('process')->once()->andReturn('mocked result');
+
+        $service = new Service($externalServiceMock);
+        $result = $service->execute();
+
+        $this->assertEquals('mocked result', $result);
+    }
+}
 ```
-OK (1 test, 1 assertion)
-```
-
-## Глибоке занурення
-Тестування в PHP йде ще з початку 2000-х, з PHPUnit як де-факто стандартом. Є альтернативи: PHPSpec, Behat, Codeception. При написанні тестів використовують принципи TDD (Test-Driven Development), де спочатку створюють тест, а вже потім – код.
-
-## Більше інформації
-- [Офіційна документація PHPUnit](https://phpunit.de/)
-- [PHPSpec](http://www.phpspec.net/en/stable/)
-- [Behat](https://docs.behat.org/en/latest/)
-- [Codeception](https://codeception.com/)
+Для запуску використовуйте ту саму команду PHPUnit, що й вище. Mockery дозволяє з легкістю створювати виразні та гнучкі макети об'єктів, полегшуючи тестування складних взаємодій у вашому застосунку.

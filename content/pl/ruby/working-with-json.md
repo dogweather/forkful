@@ -1,37 +1,80 @@
 ---
 title:                "Praca z JSON"
-date:                  2024-01-19
+date:                  2024-02-03T19:24:13.522336-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Praca z JSON"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/ruby/working-with-json.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Co i Dlaczego?)
-Praca z JSON (JavaScript Object Notation) to manipulowanie danymi w formacie używanym do wymiany informacji między systemami. Programiści wykorzystują JSON, bo to lekki, czytelny i elastyczny sposób na przechowywanie i przesyłanie strukturyzowanych danych.
+## Co i dlaczego?
 
-## How to: (Jak to zrobić:)
-```Ruby
+JSON (JavaScript Object Notation) to lekki format wymiany danych, powszechnie stosowany w aplikacjach internetowych do wymiany danych między klientami a serwerami. Programiści pracują z JSON w Ruby, aby parsować dane otrzymywane z zewnętrznych źródeł lub formatować dane dla odpowiedzi API, wykorzystując jego łatwo czytelną strukturę do łatwej manipulacji danymi i przechowywania.
+
+## Jak to zrobić:
+
+Ruby, ze swoją standardową biblioteką, oferuje bezproblemowe sposoby parsowania i generowania JSON. Podstawowym modułem do tych operacji jest `json`, który można łatwo zintegrować z dowolną aplikacją Ruby.
+
+### Parsowanie JSON:
+
+Aby przekonwertować ciąg JSON na hash Ruby, możesz użyć metody `JSON.parse`.
+
+```ruby
 require 'json'
 
-# Przykład konwersji hasha na JSON
-ruby_hash = { name: "Jan", age: 25, city: "Kraków" }
-json_data = ruby_hash.to_json
-puts json_data
-# Output: {"name":"Jan","age":25,"city":"Kraków"}
+json_string = '{"name": "John Doe", "age": 30, "city": "New York"}'
+ruby_hash = JSON.parse(json_string)
 
-# Przykład parsowania JSON na hash
-json_string = '{"name":"Anna","age":28,"city":"Wrocław"}'
-parsed_data = JSON.parse(json_string)
-puts parsed_data
-# Output: {"name"=>"Anna", "age"=>28, "city"=>"Wrocław"}
+puts ruby_hash
+# Wyjście: {"name"=>"John Doe", "age"=>30, "city"=>"New York"}
 ```
 
-## Deep Dive (Dogłębna analiza)
-JSON pojawił się w 2001 roku, wymyślony przez Douglasa Crockforda. Szybko stał się standardem we frontendzie (JavaScript) i backendzie (serwery, API). Alternatywą dla JSON jest XML, który jest bardziej rozbudowany i mniej przejrzysty. W Ruby operacje na JSON wykonywane są przy pomocy modułu `json`, który jest częścią standardowej biblioteki od wersji 1.9. Trzeba pamiętać, że Ruby używa symboli (np. `:name`), których JSON nie obsługuje, więc są one konwertowane na stringi.
+### Generowanie JSON:
 
-## See Also (Zobacz również)
-- JSON Schema: Jak definiować i walidować format JSON - [JSON Schema](https://json-schema.org/)
-- JSON vs XML: Porównanie dwóch formatów - [JSON vs XML](https://www.w3schools.com/js/js_json_xml.asp)
+Odwrotnie, aby przekonwertować hash Ruby na ciąg JSON, używasz metody `JSON.generate` lub metody `to_json` dostępnej w obiektach Ruby po wymaganiu biblioteki `json`.
+
+```ruby
+require 'json'
+
+ruby_hash = { name: "Jane Doe", age: 25, city: "Los Angeles" }
+json_string = ruby_hash.to_json
+
+puts json_string
+# Wyjście: {"name":"Jane Doe","age":25,"city":"Los Angeles"}
+```
+
+### Biblioteki stron trzecich:
+
+Chociaż standardowa biblioteka Ruby obejmuje podstawowe obsługi JSON, wiele projektów polega na bibliotekach stron trzecich dla rozszerzonej funkcjonalności i wydajności. Popularnym wyborem jest `Oj` (Optimized JSON).
+
+#### Parsowanie z Oj:
+
+```ruby
+require 'oj'
+
+json_string = '{"name": "Alex", "age": 40, "city": "Chicago"}'
+ruby_hash = Oj.load(json_string)
+
+puts ruby_hash
+# Wyjście: {"name"=>"Alex", "age"=>40, "city"=>"Chicago"}
+```
+
+#### Generowanie z Oj:
+
+Oj oferuje również szybki sposób na generowanie JSON z obiektów Ruby:
+
+```ruby
+require 'oj'
+
+ruby_hash = { name: "Samantha", age: 35, city: "Miami" }
+json_string = Oj.dump(ruby_hash)
+
+puts json_string
+# Wyjście: {"name":"Samantha","age":35,"city":"Miami"}
+```
+
+Te przykłady ilustrują prostotę pracy z JSON w Ruby, czyniąc ją dostępną dla zadań od prostych manipulacji danymi do skomplikowanych komunikacji API.

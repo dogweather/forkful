@@ -1,31 +1,53 @@
 ---
-title:                "Att göra en sträng versal"
-date:                  2024-01-19
-simple_title:         "Att göra en sträng versal"
-
+title:                "Gör om en sträng till versaler"
+date:                  2024-02-03T19:05:58.912153-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Gör om en sträng till versaler"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/lua/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att kapitalisera en sträng innebär att omvandla den första bokstaven i varje ord till versal, medan resten av bokstäverna blir gemener. Programmerare gör detta för att standardisera textdata, som namn eller titlar, vilket förbättrar läsbarheten och konsistensen.
+Att skriva med stor bokstav innebär att ändra det första tecknet i varje ord i en mening till versal, samtidigt som man ser till att resten är gemener. Denna teknik används ofta för att formatera text för ett mer professionellt eller läsbart utdata, såsom att förbereda titlar eller användarinmatning för visning.
 
-## Hur gör man:
-```Lua
-function capitalize(str)
-    return (str:gsub("(%a)([%w_']*)", function(first, rest) return first:upper()..rest:lower() end))
+## Hur man gör:
+Lua har ingen inbyggd funktion för att göra bokstäver till versaler, men du kan enkelt genomföra denna uppgift med hjälp av grundläggande strängmanipuleringsfunktioner. Här är en enkel funktion för att göra första bokstaven i ett enskilt ord till versal:
+
+```lua
+function capitalize(word)
+    return word:sub(1,1):upper() .. word:sub(2):lower()
 end
 
-print(capitalize("hej världen")) -- Output: Hej Världen
-print(capitalize("lua är kul"))  -- Output: Lua Är Kul
+print(capitalize("hello"))  -- Utdatat: Hello
 ```
 
-## Djupdykning
-Kapitalisering av strängar är inte ett nytt koncept utan har använts i textbehandling länge. I Lua, som inte har inbyggda funktioner för kapitalisering, får man skapa egna lösningar. Alternativen varierar från enkla första-bokstavsomvandlingar till komplexa funktioner som hanterar undantag och lokaliseringsregler. Ovanstående implementering använder Lua:s mönstermatchningsfunktioner för att hitta ord och omvandla tecken, men kan behöva anpassas beroende på språkspecifika regler, som svenska bokstäver.
+För att göra varje ord i en mening med versal, kan du dela upp meningen i ord, göra varje ord med versal, och sedan sammanfoga dem igen:
 
-## Se även
-- Lua Users Wiki om mönstermatchning: http://lua-users.org/wiki/PatternsTutorial
-- Lua 5.4 referensmanual: https://www.lua.org/manual/5.4/manual.html
-- Onlineresurser om textbehandling och algoritmer: https://rosettacode.org/wiki/String_case#Lua
+```lua
+function capitalizeSentence(sentence)
+    local words = {}
+    for word in sentence:gmatch("%S+") do
+        table.insert(words, capitalize(word))
+    end
+    return table.concat(words, " ")
+end
+
+print(capitalizeSentence("hello world from lua"))  -- Utdatat: Hello World From Lua
+```
+
+Om du arbetar med ett projekt där prestanda är avgörande och du finner dig själv i behov av mer avancerade strängmanipuleringsmöjligheter, överväg att använda ett tredjepartsbibliotek som `Penlight`. Penlight förbättrar Lua med mer mångsidiga funktioner för stränghantering, bland andra verktyg:
+
+```lua
+-- Antag att Penlight är installerat:
+local pl = require("pl.stringx")
+local text = "hello lua users"
+text = pl.capitalized(text)
+print(text)  -- Utdatat: Hello lua users
+
+-- Notera: Penlights capitalized-funktion gör bara den första bokstaven till versal.
+-- För att göra varje ord med versal skulle du fortfarande behöva implementera en egen lösning eller utforska andra bibliotek.
+```

@@ -1,42 +1,65 @@
 ---
 title:                "获取当前日期"
-date:                  2024-01-20T15:15:00.629379-07:00
+date:                  2024-02-03T19:09:52.062134-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "获取当前日期"
-
 tag:                  "Dates and Times"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/java/getting-the-current-date.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## 什么 & 为什么？
-获取当前日期意味着让程序能知道现在是什么时候。开发人员需要这样做来记录事件、处理日期相关的逻辑，或是给用户显示当前时间。
+## 什么和为什么？
+在Java中获取当前日期是一个基础操作，它允许程序员操作日期对象以进行日志记录、日期计算和基于时间的条件等操作。在需要追踪、调度和时间数据分析的应用程序中这一点至关重要。
 
 ## 如何操作：
+Java提供了多种方式来获取当前日期，既包括老旧的`java.util.Date`类，也包括在Java 8中引入、更加多功能和直观的新`java.time`包。
+
+### 使用`java.time.LocalDate`
 ```java
 import java.time.LocalDate;
 
-public class Main {
+public class CurrentDateExample {
     public static void main(String[] args) {
         LocalDate currentDate = LocalDate.now();
-        System.out.println("当前日期是：" + currentDate);
+        System.out.println(currentDate); // 示例输出：2023-04-01
     }
 }
 ```
-输出样例：
+### 使用`java.time.LocalDateTime`
+```java
+import java.time.LocalDateTime;
+
+public class CurrentDateExample {
+    public static void main(String[] args) {
+        LocalDateTime currentDateTime = LocalDateTime.now();
+        System.out.println(currentDateTime); // 示例输出：2023-04-01T12:34:56.789
+    }
+}
 ```
-当前日期是：2023-04-05
+### 使用`java.util.Date`（遗留）
+```java
+import java.util.Date;
+
+public class CurrentDateExample {
+    public static void main(String[] args) {
+        Date currentDate = new Date();
+        System.out.println(currentDate); // 示例输出：周六 4月 01 12:34:56 BST 2023
+    }
+}
 ```
+### 使用第三方库：Joda-Time
+在Java 8之前，Joda-Time是Java中日期和时间的事实标准。如果您在处理遗留系统，或者偏好使用Joda-Time，以下是如何使用它来获取当前日期的方法：
+```java
+import org.joda.time.LocalDate;
 
-## 深入探索
-获取当前日期的功能从Java 8开始就大为简化了，推出了java.time包，这是基于Joda-Time库改进的。历史上，程序员需要依赖java.util.Date或java.util.Calendar，这两者都不够直观且容易出错。使用LocalDate等现代API，不仅代码可读性更好，而且线程安全且不可变。
-
-替代方案主要包括使用老旧的java.util.Date和java.util.Calendar类，或者第三方库如Joda-Time。不过，自从java.time的引入，推荐尽可能使用这个库来简化和统一日期时间操作。
-
-如果需要时区支持，可以使用java.time.ZonedDateTime。java.time包下的类准守ISO-8601标准，并且提供了诸多日期和时间的操作方法，例如加减天数、比较日期等。
-
-## 参考连接
-- [Oracle官方教程 - Date Time](https://docs.oracle.com/javase/tutorial/datetime/)
-- [Java 8 java.time包概述](https://www.oracle.com/technical-resources/articles/java/jf14-date-time.html)
-- [Java LocalDate类文档](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)
+public class CurrentDateExample {
+    public static void main(String[] args) {
+        LocalDate currentDate = LocalDate.now();
+        System.out.println(currentDate); // 示例输出：2023-04-01
+    }
+}
+```
+**注意：** 虽然`java.util.Date`和Joda-Time仍在使用，但鉴于其不可变性和全面的API用于处理日期和时间，`java.time`包被推荐用于新项目。

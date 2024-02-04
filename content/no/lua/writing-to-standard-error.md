@@ -1,38 +1,52 @@
 ---
-title:                "Skrive til standardfeil"
-date:                  2024-01-19
-simple_title:         "Skrive til standardfeil"
-
+title:                "Skriving til standardfeil"
+date:                  2024-02-03T19:33:48.257690-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Skriving til standardfeil"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/lua/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Skriving til standard error (stderr) lar programmer rapportere feil uten å forstyrre normal output. Programmerere bruker det for å skille vanlige data fra feilsøkingsinformasjon.
+Å skrive til standardfeil (stderr) handler om å lede feilmeldinger og diagnostiske utdata til en egen kanal, adskilt fra standard utdata (stdout). Programmerere gjør dette for å skille vanlige programresultater fra feilinformasjon, noe som forenkler feilsøking og loggføringsprosesser.
 
-## Hvordan gjøre det:
-```Lua
--- Skriver en enkel feilmelding til stderr
-io.stderr:write("En feil oppstod\n")
+## Hvordan:
+I Lua kan skriving til stderr oppnås ved å bruke funksjonen `io.stderr:write()`. Her er hvordan du kan skrive en enkel feilmelding til standardfeil:
 
--- Håndtere et filåpningsproblem
-local file, err = io.open("ikkeeksisterendefil.txt", "r")
-if not file then
-  io.stderr:write("Feil ved åpning av fil: " .. err .. "\n")
-end
-```
-Sample output:
-```
-En feil oppstod
-Feil ved åpning av fil: ikkeeksisterendefil.txt: No such file or directory
+```lua
+io.stderr:write("Feil: Ugyldig inndata.\n")
 ```
 
-## Dypdykk
-Historisk sett er skille mellom standard output (stdout) og stderr en Unix-konvensjon, designet for å la brukere omdirigere dem separat. I Lua utføres det via `io` biblioteket, som tilbyr lavnivå tilgang til filhåndtering. Et alternativ er å bruke `os.execute` med en shell-kommando for å omdirigere stderr. Implementering i Lua er enkel og krever ikke eksterne biblioteker.
+Skulle du trenge å utvise en variabel eller kombinere flere datadelar, konkatenere dem innenfor skrivefunksjonen:
 
-## Se Også
-- Lua 5.4 reference manual om `io` biblioteket: http://www.lua.org/manual/5.4/manual.html#6.8
-- Lua-users wiki om File I/O: http://lua-users.org/wiki/FileInputOutput
-- Stack Overflow for praktiske bruksmønstre og problemløsning relatert til stderr i Lua: https://stackoverflow.com/search?q=lua+stderr
+```lua
+local feilmelding = "Ugyldig inndata."
+io.stderr:write("Feil: " .. feilmelding .. "\n")
+```
+
+**Eksempel på utdata på stderr:**
+```
+Feil: Ugyldig inndata.
+```
+
+For mer komplekse scenarioer, eller når man arbeider med større applikasjoner, kan du vurdere tredjeparts loggføringsbiblioteker som LuaLogging. Med LuaLogging, kan du dirigere logger til forskjellige destinasjoner, inkludert stderr. Her er et kort eksempel:
+
+Først, sørg for at LuaLogging er installert ved hjelp av LuaRocks:
+
+```
+luarocks install lualogging
+```
+
+Deretter, for å skrive en feilmelding til stderr ved hjelp av LuaLogging:
+
+```lua
+local logging = require("logging")
+local logger = logging.stderr()
+logger:error("Feil: Ugyldig inndata.")
+```
+
+Denne tilnærmingen tilbyr fordelen av standardisert loggføring tvers gjennom applikasjonen din, med den tilleggede fleksibiliteten av å sette loggnivåer (f.eks., ERROR, WARN, INFO) gjennom et enkelt API.

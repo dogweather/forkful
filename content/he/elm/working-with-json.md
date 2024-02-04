@@ -1,69 +1,115 @@
 ---
 title:                "עבודה עם JSON"
-date:                  2024-01-19
+date:                  2024-02-03T19:23:25.517296-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "עבודה עם JSON"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/elm/working-with-json.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (מה ולמה?)
-בעבודה עם JSON אנחנו מתעסקים בתיעוד ופרשנות של נתונים מובנים. זה חשוב בשביל שיתוף נתונים בין שרתים ללקוחות, אפליקציות ומערכות.
+## מה ולמה?
+עבודה עם JSON ב-Elm מדוברת על פענוח נתוני JSON לסוגים ב-Elm וקידוד ערכים מ-Elm חזרה ל-JS‪ON. תהליך זה קריטי לאינטרקציות של אפליקציות אינטרנט עם API-ים ומקורות נתונים חיצוניים, מאפשר החלפה חלקה של נתונים בין הלקוח (Elm) לשרתים או שירותים אחרים.
 
-## How to: (איך לעשות:)
-קוד ב-Elm לעבודה עם JSON:
+## איך לעשות:
 
-```Elm
-import Json.Decode exposing (Decoder, string, int, list, field)
-import Json.Encode exposing (object, string, int)
+Elm מתייחס לטיפול ב-JSO‪N עם מפורשות ובטיחות, בעיקר באמצעות המודולים `Json.Decode` ו`Json.Encode`. כדי להתחיל לעבוד עם JS‪ON, תצטרך להגדיר פענח לסוג הנתונים שלך. בואו נניח שאנו עוסקים באובייקט פרופיל משתמש פשוט.
 
-type alias User =
+ראשית, הגדר את סוג ה-Elm שלך:
+
+```elm
+type alias UserProfile = 
     { id : Int
     , name : String
+    , email : String
     }
+```
 
-userDecoder : Decoder User
-userDecoder =
-    field "id" int
-        |> Json.Decode.andThen (\id ->
-            field "name" string
-                |> Json.Decode.map (\name ->
-                    { id = id, name = name }
-                )
-           )
+### פענוח JS‪ON ל-Elm
 
-encodeUser : User -> Json.Encode.Value
-encodeUser user =
+כדי לפענח מחרוזת JS‪ON לסוג `UserProfile`, צור פענח:
+
+```elm
+import Json.Decode exposing (Decoder, int, string, field, map3)
+
+userProfileDecoder : Decoder UserProfile
+userProfileDecoder =
+    map3 UserProfile
+        (field "id" int)
+        (field "name" string)
+        (field "email" string)
+```
+
+כדי לפענח אובייקט JS‪ON:
+
+```elm
+import Json.Decode exposing (decodeString)
+
+jsonString : String
+jsonString = 
+    """{"id": 1, "name": "John Doe", "email": "john@example.com"}"""
+
+decoded : Result String UserProfile
+decoded =
+    decodeString userProfileDecoder jsonString
+
+{- פלט לדוגמא:
+Result.Ok { id = 1, name = "John Doe", email = "john@example.com" }
+-}
+```
+
+### קידוד Elm ל-JS‪ON
+
+כדי לקודד ערך מ-Elm חזרה ל-JS‪ON, השתמש במודול `Json.Encode`.
+
+```elm
+import Json.Encode exposing (object, int, string)
+
+encodeUserProfile : UserProfile -> String
+encodeUserProfile userProfile =
     object
-        [ ( "id", int user.id )
-        , ( "name", string user.name )
+        [ ("id", int userProfile.id)
+        , ("name", string userProfile.name)
+        , ("email", string userProfile.email)
         ]
+        |> Json.Encode.encode 0
 
--- דוגמא לשימוש
+{-
+שימוש:
+encodeUserProfile { id = 1, name = "John Doe", email = "john@example.com" }
 
-decodedUser : Result String User
-decodedUser = Json.Decode.decodeString userDecoder "{\"id\":1,\"name\":\"Alice\"}"
-
-encodedUser : Json.Encode.Value
-encodedUser = encodeUser { id = 2, name = "Bob" }
+פלט לדוגמא:
+"{"id":1,"name":"John Doe","email":"john@example.com"}"
+-}
 ```
 
-תוצאות דוגמא:
+### ספריות צד שלישי
 
-```Elm
--- פלט של decodedUser
-Ok { id = 1, name = "Alice" }
+חבילות Elm כמו `elm-json-decode-pipeline` יכולות לפשט את יצירת הפענחים באמצעות סגנון צינור, שמאוד נוח לפענוח אובייקטים מורכבים.
 
--- פלט של encodedUser
-{"id":2,"name":"Bob"}
+ראשית, הוסף את הספריה לפרויקט שלך:
+
+```shell
+elm install NoRedInk/elm-json-decode-pipeline
 ```
 
-## Deep Dive (עומק התהום):
-JSON (JavaScript Object Notation) הוא פורמט תקשורת נתונים שהחל את דרכו ב-JavaScript אבל הפך לשפה רחבה בעולם התכנות. ב-Elm, `Json.Decode` ו-`Json.Encode` מאפשרים פרשנות ויצירה של מבנים בפורמט JSON בצורה טיפוסית. חלופות כוללות את עבודה עם XML או בינאריים כמו Protocol Buffers. האימפלמנטציה ב-Elm מבוססת על decoders וencoders שמתרגמים לוקחים ומתרגמים את הנתונים המובנים.
+אז, אתה יכול לפשט את הגדרת הפענח כך:
 
-## See Also (ראה גם):
-- [Elm JSON.Decode Documentation](https://package.elm-lang.org/packages/elm/json/latest/Json-Decode)
-- [Elm JSON.Encode Documentation](https://package.elm-lang.org/packages/elm/json/latest/Json-Encode)
-- [JSON in Elm Guide](https://guide.elm-lang.org/interop/json.html)
+```elm
+import Json.Decode exposing (int, string, succeed)
+import Json.Decode.Pipeline exposing (required, decode)
+
+userProfileDecoder : Decoder UserProfile
+userProfileDecoder =
+    decode UserProfile
+        |> required "id" int
+        |> required "name" string
+        |> required "email" string
+
+{- השתמש בפענח הזה כמו קודם עם decodeString לפענוח מחרוזות JS‪ON. -}
+```
+
+גישה זו מפשטת את הפענח, הופכת את הקוד לנקי יותר וקל יותר לתחזוקה, במיוחד ככל שמבני הנתונים הופכים למורכבים יותר.

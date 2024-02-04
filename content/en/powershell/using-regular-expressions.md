@@ -1,8 +1,8 @@
 ---
 title:                "Using regular expressions"
-date:                  2024-01-19
+date:                  2024-02-03T19:03:01.274172-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Using regular expressions"
-
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/powershell/using-regular-expressions.md"
 ---
@@ -10,31 +10,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Regular expressions (regex) are powerful patterns for matching text strings. Programmers use regex to search, validate, or replace content efficiently.
+
+Regular expressions (regex) are sequences of characters that form a search pattern, primarily used for string searching and manipulation. Programmers leverage regex in PowerShell for tasks like data validation, parsing, and transformation due to its efficiency and flexibility in handling complex patterns.
 
 ## How to:
-```PowerShell
-# Match a pattern beginning with 'S' followed by any characters, ending in 'e'
-$pattern = 'S.*e'
-$text = 'Sample sentence in PowerShell.'
-if ($text -match $pattern) {
-    "Match found: $($matches[0])"
+
+In PowerShell, you can use the `-match`, `-replace`, and `-split` operators, among others, to perform actions with regular expressions. Let's explore a few examples:
+
+### Using `-match` to check if a string matches a pattern
+This operator returns `$true` if the pattern is found within the string, and `$false` otherwise.
+
+```powershell
+"hello world" -match "\w+orld"
+# Output: True
+```
+
+### Extracting matches
+You can extract the matched value by accessing the automatic variable `$matches`.
+
+```powershell
+if ("I have 100 apples" -match "\d+") {
+    "Number found: " + $matches[0]
 }
-
-# Replace all occurrences of 'dog' with 'cat'
-$petStory = 'The quick brown dog jumps over the lazy dog.'
-$petStory -replace 'dog', 'cat'
-```
-Output:
-```
-Match found: Sample sentence in
-The quick brown cat jumps over the lazy cat.
+# Output: Number found: 100
 ```
 
-## Deep Dive
-Regex has been integral to programming since the 1950s. While PowerShell has built-in cmdlets like `-match`, `-replace`, and `Select-String` for regex, alternatives for text manipulation exist – think `string.Contains` or `string.Replace`. PowerShell's regex uses the .NET framework's implementation, hence it's robust and feature-rich.
+### Using `-replace` for substitutions
+The `-replace` operator replaces all occurrences of a pattern with a specified replacement string.
 
-## See Also
-- [Microsoft's official regex reference](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_regular_expressions)
-- [Regular-Expressions.info](https://www.regular-expressions.info/powershell.html)
-- [Regex101: Build and test regex](https://regex101.com/)
+```powershell
+"foo bar baz" -replace "ba[rz]", "qux"
+# Output: foo qux qux
+```
+
+### Splitting strings with `-split`
+Split a string into an array of substrings based on a regex pattern.
+
+```powershell
+"The quick-brown_fox jumps" -split "[-_ ]"
+# Output: The quick brown fox jumps
+```
+
+### Advanced Pattern Matching
+PowerShell also supports more complex regex operations via the `[regex]` class, giving you access to methods like `Matches()`, `Replace()`, and `Split()`.
+
+```powershell
+[regex]::Matches("June 24, August 9, Dec 12", "\b[A-Za-z]+\b").Value
+# Output: June August Dec
+
+[regex]::Replace("100,000", "\B(?=(?:\d{3})+(?!\d))", ",")
+# Output: 100,000
+
+[regex]::Split("one,two;three four", ",|;| ")
+# Output: one two three four
+```
+
+These examples show the power and versatility of regular expressions in PowerShell for data manipulation and pattern matching. By harnessing regex, programmers can perform complex text processing efficiently.

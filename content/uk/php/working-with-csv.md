@@ -1,60 +1,113 @@
 ---
-title:                "Робота з CSV файлами"
-date:                  2024-01-19
-simple_title:         "Робота з CSV файлами"
-
+title:                "Робота з CSV"
+date:                  2024-02-03T19:21:01.453294-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Робота з CSV"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/php/working-with-csv.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Що та чому?
+## Що і чому?
 
-Робота з CSV (Comma-Separated Values) - обробка текстових файлів, що містять дані, розділені комами. Програмісти використовують CSV через його простоту і універсальність для обміну даними між різними програмами і системами.
+Робота з CSV (значення, розділені комами) передбачає читання та запис даних у файли CSV, популярний формат для представлення табличних даних у вигляді простого тексту. Програмісти роблять це для того, щоб легко обмінюватися даними між різними програмами, системами або базами даних, завдяки його простоті та широкій підтримці на різних платформах та мовах програмування.
 
-## Как це зробити:
+## Як це зробити:
 
-Обробка CSV в PHP проста. Щоб читати CSV-файл використовуємо `fgetcsv`, для створення - `fputcsv`.
+PHP надає вбудовані функції для роботи з файлами CSV, що робить читання та запис у ці файли простим, без потреби в сторонніх бібліотеках. Ось приклади, які допоможуть вам розпочати:
 
-Читання CSV файлу:
+### Читання файлу CSV
+
+Ви можете відкрити файл CSV і прочитати його вміст за допомогою `fopen()` у поєднанні з `fgetcsv()`:
+
 ```php
 <?php
 $filename = 'data.csv';
-if (($h = fopen("{$filename}", "r")) !== FALSE) {
-    while (($data = fgetcsv($h, 1000, ",")) !== FALSE) {
-        print_r($data);
+$handle = fopen($filename, "r");
+if ($handle !== FALSE) {
+    while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
+        $num = count($data);
+        echo "Кількість полів у рядку: $num\n";
+        for ($c = 0; $c < $num; $c++) {
+            echo $data[$c] . "\n";
+        }
     }
-    fclose($h);
+    fclose($handle);
 }
 ?>
 ```
 
-Створення CSV файлу:
+Цей скрипт виводить кількість полів у кожному рядку, за якими слідують вміст кожного поля.
+
+### Запис у файл CSV
+
+Щоб записати в файл CSV, використовуйте `fopen()` в режимі запису (`w`) та `fputcsv()`:
+
 ```php
 <?php
-$list = array (
-  array('Name', 'Email', 'Phone'),
-  array('John Doe', 'john@example.com', '1234567890')
-);
+$list = [
+    ['ID', 'Ім\'я', 'Електронна пошта'],
+    [1, 'John Doe', 'john@example.com'],
+    [2, 'Jane Doe', 'jane@example.com']
+];
 
-$fp = fopen('file.csv', 'w');
+$handle = fopen('users.csv', 'w');
 
-foreach ($list as $fields) {
-    fputcsv($fp, $fields);
+foreach ($list as $row) {
+    fputcsv($handle, $row);
 }
 
-fclose($fp);
+fclose($handle);
 ?>
 ```
 
-## Поглиблений аналіз:
+Цей скрипт створює файл під назвою `users.csv` і записує заголовок та два рядки даних до нього.
 
-CSV стандарт не регламентований, що веде до різниці в обробці файлів. Альтернативами є JSON або XML, які мають чіткісінтаксис, але CSV залишається популярним через свою простоту. При реалізації важливо враховувати можливість виникнення розбіжностей у кодуванні символів (наприклад, UTF-8 vs Windows-1251).
+### Використання бібліотеки: League\Csv
 
-## Додатково:
+Для більш розширеної роботи з CSV, бібліотека `League\Csv` пропонує повний набір можливостей. Після її встановлення через Composer (`composer require league/csv`), ви можете використовувати її для більш гнучкого читання та запису даних CSV.
 
-Для більш детального ознайомлення з CSV в PHP:
-- PHP Manual по роботі з файлами: https://www.php.net/manual/en/book.filesystem.php
-- PHP Manual по функціям `fgetcsv` і `fputcsv`: https://www.php.net/manual/en/function.fgetcsv.php, https://www.php.net/manual/en/function.fputcsv.php
-- Розгляд популярних бібліотек для роботи з CSV: https://github.com/thephpleague/csv
+#### Читання за допомогою League\Csv
+
+```php
+<?php
+require 'vendor/autoload.php';
+
+use League\Csv\Reader;
+
+$csv = Reader::createFromPath('data.csv', 'r');
+$csv->setHeaderOffset(0); // Використовується, якщо ви хочете використати перший рядок як заголовок
+
+$results = $csv->getRecords();
+foreach ($results as $row) {
+    print_r($row);
+}
+?>
+```
+
+Цей скрипт читає `data.csv`, вважаючи перший рядок за заголовки стовпців і виводить кожен рядок як асоційований масив.
+
+#### Запис за допомогою League\Csv
+
+```php
+<?php
+require 'vendor/autoload.php';
+
+use League\Csv\Writer;
+
+$csv = Writer::createFromPath('users_new.csv', 'w+');
+
+$csv->insertOne(['ID', 'Ім\'я', 'Електронна пошта']);
+$csv->insertAll([
+    [3, 'Alex Doe', 'alex@example.com'],
+    [4, 'Anna Smith', 'anna@example.com']
+]);
+
+echo "Успішно записано у файл users_new.csv.";
+?>
+```
+
+Це створює `users_new.csv` і записує заголовочний рядок, за яким слідують два рядки даних.

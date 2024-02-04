@@ -1,52 +1,126 @@
 ---
-title:                "Робота з CSV файлами"
-date:                  2024-01-19
-simple_title:         "Робота з CSV файлами"
-
+title:                "Робота з CSV"
+date:                  2024-02-03T19:21:43.376142-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Робота з CSV"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/rust/working-with-csv.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Що це та навіщо?
-Робота з CSV — маніпуляція даними у форматі, де значення розділені комами. Програмісти використовують CSV через простоту обміну даними та широку підтримку у системах і програмах.
+## Що і чому?
+Робота з файлами CSV (значення, розділені комами) полягає в читанні з та запису у прості текстові файли, які зберігають табличні дані. Програмісти роблять це, щоб уможливити обмін даними між різними програмами, системами або для ефективної обробки великих наборів даних у зручному для людини форматі.
 
 ## Як це зробити:
-Для роботи з CSV у Rust використовуємо бібліотеку `csv`. Встановлюємо її, додаючи `csv = "1.1.6"` до `Cargo.toml`.
+Rust, з його акцентом на безпеку та продуктивність, пропонує відмінні крейти (бібліотеки) для роботи з файлами CSV, серед яких найпопулярніший - `csv`. Вам також знадобиться `serde` для серіалізації та десеріалізації даних.
 
-```Rust
-use csv;
+Спочатку додайте залежності до вашого `Cargo.toml`:
+
+```toml
+[dependencies]
+csv = "1.1"
+serde = { version = "1.0", features = ["derive"] }
+```
+
+### Читання CSV
+
+Щоб прочитати файл CSV, визначте структуру, яка представляє ваші дані, і похідніть `Deserialize` від `serde`:
+
+```rust
+use serde::Deserialize;
 use std::error::Error;
+use std::fs::File;
 use std::io;
 use std::process;
 
-fn run() -> Result<(), Box<dyn Error>> {
-    // Читаємо CSV
-    let mut rdr = csv::Reader::from_reader(io::stdin());
-    for result in rdr.records() {
-        let record = result?;
+#[derive(Debug, Deserialize)]
+struct Record {
+    city: String,
+    state: String,
+    population: u64,
+}
+
+fn read_from_csv(file_path: &str) -> Result<(), Box<dyn Error>> {
+    let file = File::open(file_path)?;
+    let mut rdr = csv::Reader::from_reader(file);
+
+    for result in rdr.deserialize() {
+        let record: Record = result?;
         println!("{:?}", record);
     }
     Ok(())
 }
 
 fn main() {
-    if let Err(err) = run() {
-        println!("error running example: {}", err);
+    if let Err(err) = read_from_csv("cities.csv") {
+        println!("помилка при виконанні прикладу: {}", err);
         process::exit(1);
     }
 }
 ```
-Виконання коду з прикладом CSV-даних виведе їх в консолі.
 
-## Поглиблений огляд
-CSV (Comma-Separated Values) — формат зберігання даних, поширений від 1970-х. Альтернативами є JSON, XML, YAML. Важливі деталі роботи з CSV в Rust:
+Приклад виводу для CSV з інформацією про міста може виглядати так:
+```plaintext
+Record { city: "Seattle", state: "WA", population: 744955 }
+Record { city: "New York", state: "NY", population: 8336817 }
+```
 
-- Ручне управління читанням/записом через структури `Reader`/`Writer`;
-- Серіалізація/десеріалізація з/у спеціальні структури за допомогою `serde`.
+### Запис у CSV
 
-## Дивись також
-- Офіційна документація `csv` бібліотеки: [docs.rs/csv](https://docs.rs/csv)
-- Серіалізація/десеріалізація з `serde`: [serde.rs](https://serde.rs)
-- Робота з CSV в інших мовах програмування для порівняння: [Wikipedia](https://en.wikipedia.org/wiki/Comma-separated_values)
+Щоб записати в файл CSV, визначте структуру і похідніть `Serialize`:
+
+```rust
+use serde::Serialize;
+use std::error::Error;
+use std::fs::File;
+
+#[derive(Serialize)]
+struct Record {
+    city: String,
+    state: String,
+    population: u64,
+}
+
+fn write_to_csv(file_path: &str, records: Vec<Record>) -> Result<(), Box<dyn Error>> {
+    let file = File::create(file_path)?;
+    let mut wtr = csv::Writer::from_writer(file);
+
+    for record in records {
+        wtr.serialize(&record)?;
+    }
+    wtr.flush()?;
+    Ok(())
+}
+
+fn main() -> Result<(), Box<dyn Error>> {
+    let records = vec![
+        Record {
+            city: "Los Angeles".into(),
+            state: "CA".into(),
+            population: 3979563,
+        },
+        Record {
+            city: "Chicago".into(),
+            state: "IL".into(),
+            population: 2695598,
+        },
+    ];
+
+    write_to_csv("output.csv", records)?;
+
+    Ok(())
+}
+```
+
+Це створить `output.csv` з даними:
+
+```csv
+city,state,population
+Los Angeles,CA,3979563
+Chicago,IL,2695598
+```
+
+Використовуючи потужну систему типів Rust та надійні крейти екосистеми, робота з даними CSV стає одночасно ефективною та простою, забезпечуючи безпеку та продуктивність ваших завдань з обробки даних.

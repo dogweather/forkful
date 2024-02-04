@@ -1,62 +1,63 @@
 ---
 title:                "HTML 파싱"
-date:                  2024-01-20T15:33:50.704722-07:00
+date:                  2024-02-03T19:12:58.910072-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "HTML 파싱"
-
 tag:                  "HTML and the Web"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/rust/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (무엇이며, 왜?)
-HTML 파싱은 웹 페이지의 구조를 분석하고 정보를 추출하는 과정입니다. 프로그래머들은 데이터를 자동으로 수집하거나 웹 컨텐츠를 조작하기 위해 이를 수행합니다.
+## 무엇 & 왜?
 
-## How to: (방법)
-Rust는 강력한 크레이트(ecosystem)를 통해 쉽게 HTML을 파싱할 수 있도록 해줍니다. `scraper` 크레이트는 이러한 작업을 위한 좋은 시작점입니다.
+Rust에서 HTML 파싱은 HTML 문서로부터 데이터를 추출하는 작업으로, 웹 스크래핑, 데이터 추출 및 웹 크롤러 구축에 필수적입니다. 프로그래머들은 웹으로부터 정보를 자동으로 수집하거나, 웹 콘텐츠를 분석하거나, 한 플랫폼에서 다른 플랫폼으로 콘텐츠를 이전하기 위해 이 작업을 합니다.
 
-```Rust
+## 방법:
+
+Rust에서 HTML을 파싱하기 위해서 종종 `scraper` 크레이트를 사용하게 됩니다. 이는 HTML 문서를 순회하고 조작하는 데 필요한 고수준 인터페이스를 제공합니다.
+
+첫째, `Cargo.toml`에 `scraper`를 추가하세요:
+
+```toml
+[dependencies]
+scraper = "0.12.0"
+```
+
+다음은 주어진 HTML 문자열로부터 모든 링크 URL을 추출하는 간단한 예제입니다:
+
+```rust
+extern crate scraper;
+
 use scraper::{Html, Selector};
 
 fn main() {
-    // HTML 샘플
     let html = r#"
-        <ul>
-            <li>아이템 1</li>
-            <li>아이템 2</li>
-            <li>아이템 3</li>
-        </ul>
+    <html>
+    <body>
+        <a href="http://example.com/1">링크 1</a>
+        <a href="http://example.com/2">링크 2</a>
+    </body>
+    </html>
     "#;
 
-    // 파싱할 HTML 문서
     let document = Html::parse_document(html);
+    let selector = Selector::parse("a").unwrap();
 
-    // li 태그 선택
-    let selector = Selector::parse("li").unwrap();
-
-    // 선택한 태그의 텍스트 추출
     for element in document.select(&selector) {
-        let text = element.text().collect::<Vec<_>>().join("");
-        println!("항목: {}", text);
+        let link = element.value().attr("href").unwrap();
+        println!("링크 발견: {}", link);
     }
 }
 ```
 
-출력 결과:
+출력:
 
 ```
-항목: 아이템 1
-항목: 아이템 2
-항목: 아이템 3
+링크 발견: http://example.com/1
+링크 발견: http://example.com/2
 ```
 
-## Deep Dive (심화 학습)
-HTML 파싱은 웹의 초창기부터 필요한 기능이었습니다. 초기에는 정규 표현식을 사용하여 파싱하곤 했으나, 불완전하고 복잡한 HTML에는 적합하지 않았죠. `BeautifulSoup`, `Nokogiri` 같은 라이브러리는 파이썬과 루비에서 파싱을 용이하게 했습니다. Rust에서는 `scraper`와 `html5ever`와 같은 크레이트가 있어, 효율적이고 타입 안정성을 제공합니다.
-
-Rust의 크레이트들은 HTML의 파싱 속도와 안정성에 중점을 두었습니다. `html5ever`, 예를 들면, HTML Living Standard를 준수하는 파서 파이프라인을 구축함으로써, 웹 브라우저에서 사용하는 것과 유사한 정확도를 제공합니다.
-
-대안으로는 `regex` 크레이트를 사용한 간단한 정규 표현식 접근 방식이 있지만, 복잡한 HTML 문서에는 적합하지 않을 수 있습니다. `scraper`가 제공하는 CSS 선택자 기반 찾기 기능은 웹 개발자에게 익숙한 방법론을 제공하며, 사용하기에 더 쉽습니다.
-
-## See Also (참고 자료)
-- CSS 선택자에 대한 더 깊은 이해: [https://developer.mozilla.org/ko/docs/Learn/CSS/Building_blocks/Selectors](https://developer.mozilla.org/ko/docs/Learn/CSS/Building_blocks/Selectors)
+이 예제에서, 우리는 간단한 HTML 문서를 파싱하여 모든 `<a>` 요소를 찾고 그들의 `href` 속성을 추출하여 문서의 모든 링크 URL을 출력합니다. `scraper` 라이브러리는 CSS 선택자를 사용하여 특정 요소를 선택하고 HTML 파싱을 간소화하여, Rust에서 웹 스크래핑 작업을 위한 선택지가 됩니다.

@@ -1,47 +1,52 @@
 ---
-title:                "Att göra en sträng versal"
-date:                  2024-01-19
-simple_title:         "Att göra en sträng versal"
-
+title:                "Gör om en sträng till versaler"
+date:                  2024-02-03T19:05:19.617947-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Gör om en sträng till versaler"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/elm/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Att sätta stor bokstav ("capitalize") betyder att ändra första bokstaven i en sträng till versal. Programmerare gör detta för att formatera texter, som i titlar eller för att följa språkliga konventioner.
+## Vad & Varför?
 
-## How to:
-Elm har inget inbyggt bibliotek för att göra strängar till versaler. Men vi kan bygga en funktion själva. Här är ett enkelt exempel:
+Att versalisera en sträng innebär att omvandla det inledande tecknet i en given sträng till versal medan resten behålls i gemener, ofta för standardiserad formatering eller läsbarhet. Programmerare utför ofta denna uppgift för att säkerställa att data presenteras konsekvent, särskilt i användargränssnitt eller när man bearbetar och visar användarinmatning.
 
-```Elm
-import String exposing (toUpper, left, dropLeft)
+## Hur gör man:
 
+I Elm finns ingen inbyggd funktion specifikt för att versalisera strängar. Dock kan du enkelt uppnå detta genom att använda de inbyggda funktionerna i `String`-modulen som `toUpper`, `toLower`, `left` och `dropLeft`.
+
+```elm
 capitalize : String -> String
 capitalize str =
-  let
-    firstChar =
-      str
-        |> left 1
-        |> toUpper
-    restOfString =
-      dropLeft 1 str
-  in
-    firstChar ++ restOfString
+    if String.isEmpty str then
+        ""
+    else
+        String.toUpper (String.left 1 str) ++ String.toLower (String.dropLeft 1 str)
 
--- Användning
-capitalize "hej värld"
--- Output: "Hej värld"
+-- Exempelanvändning
+main =
+    String.toList "hello world" |> List.map capitalize |> String.join " "
+    -- Output: "Hello World"
 ```
 
-## Deep Dive
-Elm är byggt för funktionell programmering och sidoeffektsfrihet, därför finns det inga metoder som direkt modifierar strängar; du behöver skapa nya strängar istället.
+För mer komplexa scenarier eller om du föredrar att använda ett bibliotek som erbjuder ett direkt sätt att versalisera strängar, kan du överväga ett tredjepartspaket som `elm-community/string-extra`. Dock uppmuntrar Elm:s ekosystem, enligt min senaste uppdatering, hantering av sådana uppgifter med inbyggda funktioner för att hålla språket och projekten "lean".
 
-Historiskt sett har andra språk som JavaScript haft inbyggda metoder som `.toUpperCase()`, men i Elm föredrar vi rena funktioner för mer förutsägbar kod. Ett alternativ är att använda ett paket som `elm-string-extra`, men att känna till grunderna är alltid användbart.
+```elm
+import String.Extra as StringExtra
 
-Implementationsdetaljer: `toUpper` konverterar alla bokstäver till versaler, vilket är överflödigt om vi bara vill ha första bokstaven i versal. Därför använder vi `left` för att få första tecknet, gör det till versal, och `dropLeft` för att slänga första tecknet och sammanfoga resten utan ändring.
+-- Om det finns en `capitalize` funktion i ett tredjepartsbibliotek
+capitalizeWithLibrary : String -> String
+capitalizeWithLibrary str =
+    StringExtra.capitalize str
 
-## See Also
-- Elm String documentation: https://package.elm-lang.org/packages/elm/core/latest/String
-- Elm package for extra string functions: https://package.elm-lang.org/packages/pzp1997/elm-string-extra/latest/
+-- Exempelanvändning med hypotetisk biblioteksfunktion
+main =
+    "this is elm" |> capitalizeWithLibrary
+    -- Hypotetisk output: "This is elm"
+```
+
+Kontrollera alltid Elm-paketdatabasen för de senaste och mest föredragna biblioteken för strängmanipulering om du letar efter ytterligare funktionalitet bortom standardbiblioteket.

@@ -1,55 +1,102 @@
 ---
 title:                "HTML 파싱"
-date:                  2024-01-20T15:30:30.637254-07:00
+date:                  2024-02-03T19:11:47.309785-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "HTML 파싱"
-
 tag:                  "HTML and the Web"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/c-sharp/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (무엇을 왜?)
-HTML 파싱은 웹페이지의 마크업을 분석해서 데이터를 추출하는 과정입니다. 프로그래머들은 자동화된 방식으로 웹 콘텐츠를 읽고 처리하기 위해 이 작업을 합니다.
+## 무엇인가 & 왜 사용하는가?
 
-## How to: (방법)
-C#에서 HTML을 파싱하려면 HtmlAgilityPack과 같은 라이브러리를 사용하는 것이 편합니다. 아래는 간단한 예시 코드입니다:
+프로그래밍에서 HTML 파싱은 HTML 문서의 구조를 분석하고, 그 내용을 프로그래밍적으로 추출, 조작, 상호작용할 수 있게 하는 것을 말합니다. 프로그래머들은 웹 스크래핑, 데이터 추출 또는 다양한 애플리케이션을 위해 웹 페이지나 HTML 문서를 동적으로 수정하는 등의 작업을 자동화하기 위해 이를 수행합니다. 이는 웹 개발, 데이터 분석 및 자동화된 테스트 시나리오에서 필수적인 기술입니다.
 
-```C#
-using HtmlAgilityPack;
-using System;
-using System.Linq;
+## 어떻게 사용하는가:
 
-class Program
-{
-    static void Main(string[] args)
-    {
-        HtmlWeb web = new HtmlWeb();
-        HtmlDocument doc = web.Load("http://example.com");
+.NET은 웹 페이지를 가져오는 `HttpClient`와 같은 HTML 작업을 위한 기본 지원을 제공하지만, 통합된 포괄적인 HTML 파서는 제공하지 않습니다. 따라서 대부분의 C# 개발자들은 HtmlAgilityPack이나 AngleSharp과 같은 인기 있는 제3자 라이브러리로 전환하여 견고한 HTML 파싱 기능을 활용합니다. 두 라이브러리 모두 HTML DOM의 쉬운 쿼리, 조작 및 순회를 가능하게 합니다.
 
-        foreach (HtmlNode node in doc.DocumentNode.SelectNodes("//a[@href]"))
-        {
-            string hrefValue = node.GetAttributeValue("href", string.Empty);
-            Console.WriteLine(hrefValue);
-        }
-    }
-}
-```
-예시 출력:
-```
-/page1.html
-/page2.html
-/page3.html
-```
-이 코드는 웹페이지를 로드하고 모든 링크를 출력합니다.
+### HtmlAgilityPack 사용하기
 
-## Deep Dive (심층 분석)
-HTML 파싱은 웹 초기부터 필요했습니다. 상대적으로 쉬운 HTML은 파싱하기 적합한 언어입니다만, 종종 복잡한 구조를 가집니다. HtmlAgilityPack은 Microsoft .NET 환경에서 널리 사용되는 파서입니다. XPath 문법을 이용해 특정 노드를 쉽게 선택할 수 있습니다. 대안으로는 AngleSharp 등이 있으며, 각각의 성능과 기능이 다릅니다.
+1. **HtmlAgilityPack 설치하기**: 먼저, NuGet을 통해 프로젝트에 HtmlAgilityPack 패키지를 추가합니다.
+   ```
+   Install-Package HtmlAgilityPack
+   ```
 
-HTML 파싱에서 중요한 이슈는 HTML이 항상 잘 형성되지 않을 수 있다는 것입니다. 현실 세계의 HTML 문서는 종종 규칙을 따르지 않으므로 로버스트한 파서가 중요합니다. HtmlAgilityPack과 같은 도구는 이러한 문제를 해결하고자 잘못 형성된 HTML을 수정하거나 무시하는 기능을 제공합니다.
+2. **예제 코드**: HTML 문자열을 파싱하고 모든 `<h1>` 요소의 제목을 추출합니다.
 
-## See Also (참고할 자료)
-- HtmlAgilityPack GitHub 페이지: https://github.com/zzzprojects/html-agility-pack
-- AngleSharp GitHub 페이지: https://github.com/AngleSharp/AngleSharp
-- C#에서 XPath를 사용한 HTML 파싱 방법: https://www.w3schools.com/xml/xpath_intro.asp
+   ```csharp
+   using HtmlAgilityPack;
+   using System;
+   using System.Linq;
+
+   class Program
+   {
+       static void Main(string[] args)
+       {
+           var html = @"<html>
+                         <body>
+                             <h1>Title 1</h1>
+                             <h1>Title 2</h1>
+                         </body>
+                        </html>";
+           var htmlDoc = new HtmlDocument();
+           htmlDoc.LoadHtml(html);
+
+           var h1Tags = htmlDoc.DocumentNode.SelectNodes("//h1").Select(node => node.InnerText);
+           foreach (var title in h1Tags)
+           {
+               Console.WriteLine(title);
+           }
+       }
+   }
+   ```
+
+   **출력 예시:**
+   ```
+   Title 1
+   Title 2
+   ```
+
+### AngleSharp 사용하기
+
+1. **AngleSharp 설치하기**: NuGet을 통해 프로젝트에 AngleSharp 라이브러리를 추가합니다.
+   ```
+   Install-Package AngleSharp
+   ```
+
+2. **예제 코드**: HTML 문서를 로드하고 특정 클래스를 가진 `div` 요소를 쿼리합니다.
+
+   ```csharp
+   using AngleSharp;
+   using AngleSharp.Dom;
+   using System;
+   using System.Linq;
+   using System.Threading.Tasks;
+
+   class Program
+   {
+       static async Task Main(string[] args)
+       {
+           var context = BrowsingContext.New(Configuration.Default);
+           var document = await context.OpenAsync(req => req.Content("<div class='item'>Item 1</div><div class='item'>Item 2</div>"));
+
+           var items = document.QuerySelectorAll(".item").Select(element => element.TextContent);
+           foreach (var item in items)
+           {
+               Console.WriteLine(item);
+           }
+       }
+   }
+   ```
+
+   **출력 예시:**
+   ```
+   Item 1
+   Item 2
+   ```
+
+HtmlAgilityPack과 AngleSharp 모두 HTML 파싱을 위한 강력한 도구이지만, 이들 중 어느 것을 선택할지는 특정 프로젝트 요구 사항, 성능 고려 사항 또는 API 디자인에 대한 개인적인 선호도에 따라 달라질 수 있습니다.

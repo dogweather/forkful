@@ -1,51 +1,99 @@
 ---
-title:                "Tests schreiben"
-date:                  2024-01-19
-simple_title:         "Tests schreiben"
-
+title:                "Tests Schreiben"
+date:                  2024-02-03T19:31:03.978546-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Tests Schreiben"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/kotlin/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Was & Warum?
 
-Tests schreiben dient dazu, Code auf seine Korrektheit zu überprüfen. Entwickler nutzen Tests, um Fehler früh zu erkennen, die Softwarequalität zu sichern und zukünftige Änderungen abzusichern.
+Das Schreiben von Tests in Kotlin beinhaltet das Erstellen von Code-Snippets, die automatisch die funktionale Korrektheit Ihrer Softwaremodule validieren und sicherstellen, dass sie wie erwartet funktionieren. Programmierer tun dies, um frühzeitig Fehler zu erkennen, die Code-Umstrukturierung zu erleichtern und eine Dokumentation darüber zu bieten, wie die Softwarekomponenten arbeiten sollen.
 
-## How to:
+## Wie geht das:
 
-Kotlin bietet eine gute Integration mit JUnit, einer beliebten Java-Testbibliothek. Hier ein einfaches Beispiel, wie ein Test in Kotlin aussieht:
+Kotlin unterstützt die testgetriebene Entwicklung mit verschiedenen Frameworks, wobei JUnit, Kotest und MockK für das Mocking am beliebtesten sind. Hier ist ein einfaches Beispiel mit JUnit:
 
 ```kotlin
-import org.junit.Assert.assertEquals
-import org.junit.Test
+import org.junit.jupiter.api.Test
+import kotlin.test.assertEquals
 
-class MathUtilsTest {
+class CalculatorTest {
 
     @Test
-    fun testAddition() {
-        assertEquals(4, MathUtils.add(2, 2))
+    fun `fügt zwei Zahlen hinzu`() {
+        val calculator = Calculator()
+        val result = calculator.add(2, 3)
+        assertEquals(5, result)
     }
 }
 
-object MathUtils {
+class Calculator {
     fun add(a: Int, b: Int): Int = a + b
 }
 ```
 
-Dieser Test überprüft die `add` Funktion der `MathUtils` Klasse. Der erwartete Output bei Ausführung des Tests ist:
+**Beispielausgabe**
 
+```text
+Test bestanden.
 ```
-Test passed.
+
+Für einen ausgefeilteren Testansatz mit Kotest, das einen idiomatischeren Kotlin-Test-Schreibstil bietet, siehe das Beispiel unten:
+
+```kotlin
+import io.kotest.core.spec.style.StringSpec
+import io.kotest.matchers.shouldBe
+
+class CalculatorSpec : StringSpec({
+    "Das Hinzufügen von 2 und 3 sollte 5 ergeben" {
+        val calculator = Calculator()
+        calculator.add(2, 3) shouldBe 5
+    }
+})
 ```
 
-## Deep Dive
+Verwendung von MockK für Tests mit Mocks:
 
-Tests in Kotlin nutzen oft JUnit oder spezifische Kotlin-Test-Frameworks wie Spek und Kotest. Historisch kommt Testing aus der Entwicklergemeinschaft um besseren Code zu fördern. Andere Testarten umfassen Integrationstests, Systemtests und Akzeptanztests. Beim Testen geht es nicht nur darum, dass etwas aktuell funktioniert, sondern dass es unter allen erwarteten Bedingungen funktioniert.
+```kotlin
+import io.mockk.every
+import io.mockk.mockk
+import org.junit.jupiter.api.Test
+import kotlin.test.assertEquals
 
-## See Also
+class ServiceTest {
 
-- [JUnit 5 User Guide](https://junit.org/junit5/docs/current/user-guide/)
-- [Spek Framework](https://www.spekframework.org/)
-- [Kotest: Powerful, elegant Kotlin test framework](https://kotest.io/)
+    private val repository = mockk<Repository>()
+    private val service = Service(repository)
+
+    @Test
+    fun `getData gibt gemockte Daten zurück`() {
+        every { repository.getData() } returns "Gemockte Daten"
+
+        val result = service.getData()
+
+        assertEquals("Gemockte Daten", result)
+    }
+}
+
+class Service(private val repository: Repository) {
+    fun getData(): String = repository.getData()
+}
+
+interface Repository {
+    fun getData(): String
+}
+```
+
+**Beispielausgabe**
+
+```text
+Test bestanden.
+```
+
+Diese Beispiele veranschaulichen die Grundlagen des Schreibens von Unit-Tests in Kotlin. Wenn Ihre Anwendung wächst, sollten Sie erwägen, fortgeschrittenere Testtechniken und -tools zu erkunden, die von jedem Framework bereitgestellt werden.

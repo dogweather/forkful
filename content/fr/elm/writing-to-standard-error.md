@@ -1,47 +1,54 @@
 ---
-title:                "Écrire dans l'erreur standard"
-date:                  2024-01-19
-simple_title:         "Écrire dans l'erreur standard"
-
+title:                "Écrire sur l'erreur standard"
+date:                  2024-02-03T19:33:00.326327-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Écrire sur l'erreur standard"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/elm/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-En programmation, écrire sur l'erreur standard (stderr) permet de séparer les messages d'erreurs du flux de sortie normal. On le fait pour diagnostiquer les problèmes sans perturber la sortie attendue du programme.
+## Quoi & Pourquoi ?
 
-## How to:
-Elm tourne dans le navigateur et n'a pas d'accès direct à stderr comme les langages côté serveur. Mais, on peut simuler un comportement semblable en utilisant `Console.error` avec JavaScript interop via ports.
+Écrire dans l'erreur standard (stderr) consiste à rediriger les messages d'erreur et les diagnostics séparément du résultat principal du programme, qui va à la sortie standard (stdout). Les programmeurs le font pour rendre la gestion des erreurs et la journalisation plus gérables, surtout dans les environnements où la distinction des sorties est cruciale pour le débogage et la surveillance.
 
-```Elm
-port module Main exposing (..)
+## Comment faire :
 
--- Port pour envoyer des messages d'erreur à JavaScript
-port error : String -> Cmd msg
+Elm est principalement destiné au développement Web, où le concept d'écriture directe sur stderr ne s'applique pas de la même manière que dans les environnements en ligne de commande traditionnels. Cependant, pour les programmes Elm s'exécutant dans Node.js ou des environnements similaires, l'interopérabilité avec JavaScript en utilisant les ports est l'approche clé pour atteindre une fonctionnalité similaire. Voici comment vous pourriez le configurer :
 
--- Utiliser le port dans votre application Elm
-reportError : String -> Cmd msg
-reportError message =
-    error message
+Code Elm (`Main.elm`) :
+```elm
+port module Main exposing (main)
 
--- Exemple d'utilisation
+import Browser
+
+port errorOut : String -> Cmd msg
+
+-- Exemple de fonction fictive qui envoie un message d'erreur à JS
+generateError : String -> Cmd msg
+generateError message =
+    errorOut message
+
 main =
-    reportError "Une erreur est survenue"
+    generateError "Ceci est un message d'erreur pour stderr"
 ```
 
-Sur le côté JavaScript, vous devrez souscrire au port et l’utiliser pour écrire sur stderr.
-
+Interopérabilité JavaScript (`index.js`) :
 ```javascript
-app.ports.error.subscribe(function (message) {
+const { Elm } = require('./Main.elm');
+
+var app = Elm.Main.init();
+
+app.ports.errorOut.subscribe((message) => {
   console.error(message);
 });
 ```
+Ce code Elm définit un port `errorOut` qui permet d'envoyer des messages hors d'Elm vers JavaScript. Puis, dans le code JavaScript, nous écoutons les messages envoyés à travers ce port et les redirigeons vers stderr en utilisant `console.error()`. De cette façon, vous pouvez effectivement écrire dans stderr dans un environnement qui le prend en charge, en tirant parti des fonctionnalités d'interopérabilité d'Elm avec JavaScript.
 
-## Deep Dive
-Historiquement, Elm est conçu pour la sécurité et la facilité, sans accès direct à stderr ou stdout vu qu'il est exécuté dans un contexte de navigateur. Si vous avez besoin d'une gestion des erreurs côté serveur avec stdout et stderr, envisagez de combiner Elm avec Node.js. Alternativement, utilisez des outils comme `elm-debug-transformer`, qui enrichit les messages de débogage.
-
-## See Also
-- Elm Ports Documentation: [https://guide.elm-lang.org/interop/ports.html](https://guide.elm-lang.org/interop/ports.html)
-- `elm-debug-transformer` pour une expérience améliorée du débogage dans le navigateur: [https://github.com/kraklin/elm-debug-transformer](https://github.com/kraklin/elm-debug-transformer)
+Sortie exemple dans le terminal Node.js (lorsque `index.js` est exécuté) :
+```
+Ceci est un message d'erreur pour stderr
+```

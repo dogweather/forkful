@@ -1,65 +1,51 @@
 ---
 title:                "获取当前日期"
-date:                  2024-01-20T15:15:48.050643-07:00
+date:                  2024-02-03T19:10:10.088924-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "获取当前日期"
-
 tag:                  "Dates and Times"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/php/getting-the-current-date.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? 什么和为什么？
-获取当前日期在编程中是指通过代码取得系统当前的日期时间。程序员经常需要这个功能，原因包括记录日志、用户交互或数据时间戳。
+## 什么 & 为什么？
+在PHP中获取当前日期是一个基本任务，它允许您检索和操作系统的日期和时间。这对于记录、时间戳记帖子、安排事件或在应用程序中执行时间敏感操作等功能至关重要。
 
-## How to: 怎么做？
-```PHP
-<?php
-// 获取当前日期和时间
-echo date('Y-m-d H:i:s');
-?>
+## 如何操作：
+### 原生 PHP
+PHP内置的`date()`函数是获取当前日期最直接的方法。您可以通过指定格式参数以各种方式格式化日期。
+
+```php
+echo date("Y-m-d"); // 输出：2023-04-01（例如）
+echo date("l, F j, Y"); // 输出：Saturday, April 1, 2023
 ```
 
-输出示例：
-```
-2023-03-28 14:45:12
-```
+要获取有时区支持的日期和时间，您可以使用`DateTime`类配合`DateTimeZone`。
 
-```PHP
-<?php
-// 只获取当前日期
-echo date('Y-m-d');
-?>
+```php
+$dateTime = new DateTime('now', new DateTimeZone('America/New_York'));
+echo $dateTime->format('Y-m-d H:i:s'); // 输出：2023-04-01 12:00:00（例如）
 ```
 
-输出示例：
-```
-2023-03-28
-```
+### 使用 Carbon（一个流行的第三方库）
+[Carbon](https://carbon.nesbot.com/) 是一个简单的 `DateTime` API 扩展，为日期和时间的操作提供了更清晰、更流畅的方式。
 
-```PHP
-<?php
-// 获取其他时区的日期和时间
-date_default_timezone_set('Asia/Shanghai');
-echo date('Y-m-d H:i:s');
-?>
+首先，确保通过 Composer 安装了 Carbon：
+```bash
+composer require nesbot/carbon
 ```
 
-输出示例：
+然后，您可以使用它来获取当前日期：
+
+```php
+use Carbon\Carbon;
+
+echo Carbon::now(); // 输出：2023-04-01 12:00:00（例如，默认格式）
+echo Carbon::now()->toDateString(); // 输出：2023-04-01
+echo Carbon::now()->format('l, F j, Y'); // 输出：Saturday, April 1, 2023
 ```
-2023-03-28 14:45:12
-```
 
-## Deep Dive 深入探索
-PHP 自从1995年就开始提供日期时间功能。其中`date()`函数是用来获取当前日期和时间的最基本方式。程序员可通过修改`date()`函数的参数来定制输出格式。
-
-除了`date()`函数，PHP 还有`DateTime`类提供更完整的日期时间功能。例如，可以处理时间区间和不同格式的日期时间。
-
-默认情况下，`date()`函数使用服务器配置的时区。而`date_default_timezone_set()`函数允许改变脚本运行时的时区设置。
-
-## See Also 另请参阅
-- [PHP 官方日期时间文档](https://www.php.net/manual/en/book.datetime.php)
-- [PHP `date()` 函数](https://www.php.net/manual/en/function.date.php)
-- [PHP `DateTime` 类](https://www.php.net/manual/en/class.datetime.php)
-- [PHP 时区设置](https://www.php.net/manual/en/timezones.php)
+Carbon 通过增加可读性和大量时间操作、比较、格式化的功能，丰富了PHP中的日期时间处理。

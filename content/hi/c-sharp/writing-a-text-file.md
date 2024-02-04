@@ -1,21 +1,24 @@
 ---
-title:                "टेक्स्ट फाइल लिखना"
-date:                  2024-01-19
-simple_title:         "टेक्स्ट फाइल लिखना"
-
+title:                "एक टेक्स्ट फ़ाइल लिखना"
+date:                  2024-02-03T19:28:26.126538-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "एक टेक्स्ट फ़ाइल लिखना"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/c-sharp/writing-a-text-file.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## क्या और क्यों?
+C# में टेक्स्ट फाइल लिखना यानी प्रोग्राम के जरिये फाइल सिस्टम पर टेक्स्ट फाइलों को बनाना या मोडिफाई करना शामिल है - यह कई एप्लिकेशन्स के लिए एक मूलभूत कार्य है, जैसे कि लॉगिंग, डेटा निर्यात करना, या कॉन्फ़िगरेशन प्रबंधन। प्रोग्रामर्स इस ऑपरेशन को सत्रों के बीच डेटा संग्रहित करने, सिस्टमों के आर-पार जानकारी साझा करने, या मानव-पठनीय आउटपुट्स संग्रहित करने के लिए करते हैं।
 
-टेक्स्ट फाइल लिखना डेटा को साधारण पाठ रूप में स्टोर करने की प्रक्रिया है। प्रोग्रामर्स इसे लॉग्स, सेटिंग्स, संदेश, या डेटा एक्सचेंज के लिए करते हैं।
+## कैसे:
+C# अपने `System.IO` नेमस्पेस के साथ फाइल ऑपरेशन्स को सरल बनाता है, जो टेक्स्ट फाइलें लिखने के लिए सीधे-सादे तरीके प्रदान करता है। यहाँ एक बुनियादी टेक्स्ट फाइल लिखने और एक मौजूदा फाइल में टेक्स्ट जोड़ने का तरीका है।
 
-## कैसे करें:
-
-```C#
+### शुरू से एक टेक्स्ट फाइल में लिखना
+```csharp
 using System;
 using System.IO;
 
@@ -23,32 +26,74 @@ class Program
 {
     static void Main()
     {
-        string filePath = @"C:\example\test.txt";
-        string textToWrite = "नमस्ते, यह एक उदाहरण टेक्स्ट है।";
+        string filePath = @"C:\example\ExampleFile.txt";
+        string content = "Hello, world!";
 
-        // टेक्स्ट फाइल बनाना और लिखना
-        File.WriteAllText(filePath, textToWrite);
-
-        // जाँच करें कि टेक्स्ट लिखा गया है
-        if (File.Exists(filePath))
-        {
-            Console.WriteLine("फाइल सफलतापूर्वक लिखी गई!");
-        }
+        // नई फाइल में कंटेंट लिखें
+        File.WriteAllText(filePath, content);
+        
+        Console.WriteLine("File सफलतापूर्वक लिखी गई।");
     }
 }
 ```
-
-सैंपल आउटपुट:
-
+**नमूना उत्पादन:**
 ```
-फाइल सफलतापूर्वक लिखी गई!
+File सफलतापूर्वक लिखी गई।
 ```
 
-## गहराई से जानकारी:
+### मौजूदा फाइल में टेक्स्ट जोड़ना
+यदि आप एक मौजूदा फाइल के अंत में टेक्स्ट जोड़ना चाहते हैं, तो आप `File.AppendAllText` मेथड का उपयोग कर सकते हैं।
 
-पाठ फाइलों को लिखने का विधि पहली बार में कमांड लाइन और बैच प्रोसेसिंग सिस्टम्स में उपयोगी थी। अन्य विकल्पों में XML, JSON, या बाइनरी फाइलें शामिल हैं, परन्तु सरलता और पठनीयता के लिए टेक्स्ट फाइलें अभी भी लोकप्रिय हैं। `StreamWriter` और `FileStream` जैसी कक्षाएं अधिक सूक्ष्म नियंत्रण के लिए इस्तेमाल की जाती हैं।
+```csharp
+using System;
+using System.IO;
 
-## देखें भी:
+class Program
+{
+    static void Main()
+    {
+        string filePath = @"C:\example\ExampleFile.txt";
+        string additionalContent = "\nAdding more content.";
 
-- Microsoft का डॉक्युमेंटेशन ऑन `System.IO` namespace: [Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/standard/io/)
-- ट्यूटोरियल वेबसाइट `File Handling in C#`: [Tutorialspoint](https://www.tutorialspoint.com/csharp/csharp_file_io.htm)
+        // फाइल में कंटेंट जोड़ें
+        File.AppendAllText(filePath, additionalContent);
+        
+        Console.WriteLine("कंटेंट सफलतापूर्वक जोड़ा गया।");
+    }
+}
+```
+**नमूना उत्पादन:**
+```
+कंटेंट सफलतापूर्वक जोड़ा गया।
+```
+
+### तीसरे पक्ष की लाइब्रेरीज़ का उपयोग: `StreamWriter`
+लिखावट करते समय, जिसमें स्वचालित फ्लशिंग और एन्कोडिंग चयन शामिल है, अधिक बारीक नियंत्रण के लिए `StreamWriter` का उपयोग करें।
+
+```csharp
+using System;
+using System.IO;
+
+class Program
+{
+    static void Main()
+    {
+        string filePath = @"C:\example\ExampleFile.txt";
+        string content = "This is an example using StreamWriter.";
+
+        // StreamWriter का उपयोग करके फाइल में लिखें
+        using (StreamWriter writer = new StreamWriter(filePath, append: true))
+        {
+            writer.WriteLine(content);
+        }
+        
+        Console.WriteLine("StreamWriter के साथ सफलतापूर्वक फाइल लिखी गई।");
+    }
+}
+```
+**नमूना उत्पादन:**
+```
+StreamWriter के साथ सफलतापूर्वक फाइल लिखी गई।
+```
+
+ये सभी दृष्टिकोण विभिन्न आवश्यकताओं की सेवा करते हैं: त्वरित ऑपरेशन्स के लिए सीधे `File` मेथड्स, और अधिक जटिल लेखन परिदृश्यों के लिए `StreamWriter`. अपनी विशिष्ट आवश्यकताओं के आधार पर चयन करें, प्रदर्शन और फाइल के आकार जैसे कारकों पर विचार करते हुए।

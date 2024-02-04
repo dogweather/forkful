@@ -1,52 +1,67 @@
 ---
-title:                "כתיבה לקובץ טקסט"
-date:                  2024-01-19
-simple_title:         "כתיבה לקובץ טקסט"
-
+title:                "כתיבת קובץ טקסט"
+date:                  2024-02-03T19:27:32.396230-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "כתיבת קובץ טקסט"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/arduino/writing-a-text-file.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## מה ולמה?
-כתיבת קובץ טקסט היא יצירת קבצים אשר מכילים טקסט נקרא. תכניתנים עושים זאת לשמירת נתונים, לוגים, והגדרות.
+כתיבת קובץ טקסט בארדואינו כוללת שמירת נתונים לקובץ על כרטיס SD או מודול אחסון דומה, לעיתים קרובות למטרות רישום נתונים. מתכנתים עושים זאת כדי לרשום קריאות מחיישנים, לשמור הגדרות, או לרשום אירועים ביישום לאורך זמן, דבר ההכרחי לפרויקטים הדורשים ניתוח נתונים או מעקב.
 
 ## איך לעשות:
-```Arduino
+כדי לכתוב לקובץ טקסט על כרטיס SD באמצעות ארדואינו, ראשית עליך לכלול את ספריית ה-`SD.h`, המספקת את הפונקציות הדרושות לאינטרקציה עם כרטיסי SD. ודא שלוח הארדואינו שלך מחובר למודול כרטיס SD.
+
+```cpp
 #include <SPI.h>
 #include <SD.h>
 
 File myFile;
 
 void setup() {
+  // אתחול תקשורת סריאלית ב-9600 סיביות לשנייה:
   Serial.begin(9600);
-
+  
+  // בדוק את אתחול כרטיס ה-SD
   if (!SD.begin(4)) {
-    Serial.println("איתחול כרטיס SD נכשל");
+    Serial.println("Initialization failed!");
     return;
   }
-
+  Serial.println("Initialization done.");
+  
+  // פתח את הקובץ. שים לב שניתן לפתוח קובץ אחד בכל פעם,
+  // לכן עליך לסגור אותו לפני שתפתח אחר.
   myFile = SD.open("test.txt", FILE_WRITE);
-
+  
+  // אם הקובץ נפתח בהצלחה, כתוב אליו:
   if (myFile) {
-    myFile.println("שלום, עולם!");
-    myFile.close(); // אל תשכח לסגור את הקובץ
+    Serial.print("Writing to test.txt...");
+    myFile.println("Testing text file write.");
+    // סגור את הקובץ:
+    myFile.close();
+    Serial.println("done.");
   } else {
-    Serial.println("שגיאה בפתיחת הקובץ");
+    // אם הקובץ לא נפתח, הדפס שגיאה:
+    Serial.println("Error opening test.txt");
   }
 }
 
 void loop() {
-  // לא נדרשת פונקציונליות בלולאה עבור דוגמת זו
+  // לאחר הכנת המערכת לא קורה דבר
 }
 ```
-**תוצאה:** יצירת קובץ `test.txt` על כרטיס SD עם המחרוזת "שלום, עולם!".
 
-## עיון מעמיק
-בהקשר ההיסטורי, כתיבת קובצים הייתה מורכבת יותר לפני חיבוריות SD ו-EEPROM נפוצות עבור ארדואינו. חלופות עומדות לרשותנו כוללות כתיבה ל-EEPROM או שימוש בשרתי ענן. מימוש כתיבת הקובץ דורש התמודדות עם גודל הקובץ ושימור מקום בזיכרון.
+### פלט לדוגמה:
+כאשר אתה מריץ את הקוד הזה, ה Serial Monitor של סביבת הפיתוח של ארדואינו יציג:
+```
+Initialization done.
+Writing to test.txt...done.
+```
+כדי לבדוק אם הנתונים נכתבו באופן תקין, תוכל להוציא את כרטיס ה-SD מהארדואינו, להכניס אותו למחשב, ולפתוח את הקובץ `test.txt` כדי לראות את ההודעה "Testing text file write."
 
-## ראו גם
-- [מדריך למודולים של כרטיסי SD לארדואינו](https://www.arduino.cc/en/Reference/SD)
-- [תיעוד פקודות FILE של Arduino](https://www.arduino.cc/reference/en/language/functions/communication/serial/)
-- [ארדואינו: כתיבה וקריאה מ-EEPROM](https://www.arduino.cc/en/Tutorial/LibraryExamples/EEPROMWrite)
+לפרויקטים הדורשים פעולות קובץ מתקדמות יותר או עיבוד, שקול לחקור ספריות נוספות או לכתוב פונקציות מותאמות אישית המתאימות לצרכים הספציפיים שלך.

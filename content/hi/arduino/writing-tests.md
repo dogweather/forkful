@@ -1,46 +1,64 @@
 ---
-title:                "परीक्षण लिखना"
-date:                  2024-01-19
-simple_title:         "परीक्षण लिखना"
-
+title:                "टेस्ट लिखना"
+date:                  2024-02-03T19:30:14.337310-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "टेस्ट लिखना"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/arduino/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## क्या और क्यों?
 
-कोड लेखन में टेस्टिंग का मतलब है अपनी प्रोग्रामिंग का परीक्षण करना ताकि सुनिश्चित हो कि सब कुछ सही से काम कर रहा है। प्रोग्रामर इसे बग्स को ढूंढकर और फिक्स करके अपने कोड की गुणवत्ता को बढ़ाने के लिए करते हैं।
+Arduino वातावरण में परीक्षण लिखना, आटोमेटेड परीक्षणों की रचना की प्रक्रिया को संदर्भित करता है जो Arduino उपकरणों पर आपके कोड की कार्यक्षमता को मान्य करते हैं। प्रोग्रामर इसे सुनिश्चित करने के लिए करते हैं कि उनका कोड अपेक्षित रूप से कार्य करे, बग्स को कम करे, और उनकी परियोजनाओं की गुणवत्ता में सुधार करे, विशेष रूप से एंबेडेड सिस्टम्स में जहाँ डिबगिंग अधिक चुनौतीपूर्ण हो सकती है।
 
 ## कैसे करें:
 
-अर्डुइनो में टेस्टिंग उपलब्ध नहीं है जैसे दूसरी हाई-लेवल प्रोग्रामिंग लैंग्वेजेस में होता है, लेकिन आप मैन्युअल तरीके से कुछ जांचें कर सकते हैं:
+Arduino में कुछ अन्य प्रोग्रामिंग वातावरणों की तरह एक बिल्ट-इन टेस्टिंग फ्रेमवर्क नहीं है। हालांकि, आप थर्ड पार्टी लाइब्रेरीज जैसे कि `AUnit` का उपयोग कर Arduino कोड की यूनिट टेस्टिंग कर सकते हैं। AUnit, Arduino के बिल्ट-इन लाइब्रेरी, `ArduinoUnit`, और Google के टेस्टिंग फ्रेमवर्क, `Google Test` से प्रेरित है।
 
-```Arduino
+### AUnit के साथ उदाहरण:
+
+सबसे पहले, Arduino IDE में Library Manager के माध्यम से AUnit इंस्टॉल करें: Sketch > Include Library > Manage Libraries... > AUnit के लिए खोज करें और इसे इंस्टॉल करें।
+
+फिर, आप इस तरह से परीक्षण लिख सकते हैं:
+
+```cpp
+#include <AUnit.h>
+
+test(ledPinHigh) {
+  const int ledPin = 13;
+  pinMode(ledPin, OUTPUT);
+  digitalWrite(ledPin, HIGH);
+  assertTrue(digitalRead(ledPin));
+}
+
+test(ledPinLow) {
+  const int ledPin = 13;
+  pinMode(ledPin, OUTPUT);
+  digitalWrite(ledPin, LOW);
+  assertFalse(digitalRead(ledPin));
+}
+
 void setup() {
   Serial.begin(9600);
+  aunit::TestRunner::run();
 }
 
 void loop() {
-  int sensorValue = analogRead(A0);
-  Serial.println(sensorValue);
-  
-  // सेंसर की जांच करें
-  if(sensorValue < 10) {
-    Serial.println("Sensor value is too low!");
-  }
-  delay(1000); // 1 सेकंड का अंतर
+  // खाली
 }
 ```
-इस कोड में, हम A0 पिन से आने वाले एनालॉग मान को पढ़ रहे हैं और उसे सीरियल मॉनिटर पर प्रिंट कर रहे हैं। अगर मान 10 से कम है, तो हम एक चेतावनी संदेश प्रिंट करते हैं।
+इस परीक्षण को अपने Arduino बोर्ड पर अपलोड करने के बाद, परीक्षण परिणाम देखने के लिए Serial Monitor खोलें। आपको परिणाम देखने को मिलेंगे जिससे पता चलेगा कि प्रत्येक परीक्षण पास हुआ या विफल हुआ:
 
-## गहराई से जानकारी:
+```
+TestRunner started on 2 test(s).
+Test ledPinHigh passed.
+Test ledPinLow passed.
+TestRunner duration: 0.002 seconds.
+TestRunner summary: 2 passed, 0 failed, 0 skipped, 0 timed out, out of 2 test(s).
+```
 
-अर्डुइनो में सीधे तरीके से टेस्ट फ्रेमवर्क्स का अभाव है, परंतु हार्डवेयर और फंक्शन्स की मैन्युअल जांच करने का रिवाज पुराना है। ऑल्टर्नेटिव के तौर पर, मॉकिंग और सिमुलेशन उपकरण जैसे कि SimulIDE या MATLAB का उपयोग करके हार्डवेयर और सिस्टम को वर्चुअली टेस्ट किया जा सकता है। इंप्लीमेंटेशन ​की बात करें तो, टेस्ट केसेस और असर्ट्स लिखने से हार्डवेयर की स्थिरता में सुधार किया जा सकता है।
-
-## इसे भी देखें:
-
-- [Arduino Reference](https://www.arduino.cc/reference/en/): अर्डुइनो के लिए आधिकारिक संदर्भ मार्गदर्शिका।
-- [SimulIDE](https://www.simulide.com/): रियल-टाइम इलेक्ट्रॉनिक्स सिमुलेटर।
-- [Arduino Testing GitHub](https://github.com/Arduino-CI/arduino_ci): एक CI प्लेटफॉर्म जो अर्डुइनो कोड के लिए टेस्टिंग सपोर्ट प्रदान करता है।
+यह सरल उदाहरण AUnit का उपयोग कर एक LED पिन की स्थिति का परीक्षण करने का दर्शाता है। परीक्षण बनाकर, आप पुष्टि करते हैं कि आपका Arduino विभिन्न स्थितियों में अपेक्षित रूप से व्यवहार करता है। AUnit के साथ, आप अधिक जटिल परीक्षण, परीक्षण सूट्स लिख सकते हैं, और अधिक उन्नत परिदृश्यों के लिए जैसे कि परीक्षण टाइमआउट और सेटअप/टियरडाउन प्रक्रियाएं का आनंद ले सकते हैं।

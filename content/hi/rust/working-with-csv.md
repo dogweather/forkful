@@ -1,74 +1,126 @@
 ---
 title:                "CSV के साथ काम करना"
-date:                  2024-01-19
+date:                  2024-02-03T19:22:37.425892-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "CSV के साथ काम करना"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/rust/working-with-csv.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (क्या और क्यों?)
-CSV, यानी Comma-Separated Values, एक सरल फॉर्मेट है जो डेटा को टेबल फॉर्म में स्टोर करता है। प्रोग्रामर्स इसका उपयोग डेटा को आसानी से इम्पोर्ट और एक्सपोर्ट करने के लिए करते हैं, खासकर जब डेटाबेस और स्प्रेडशीट्स के साथ काम करते हैं।
+## क्या और क्यों?
+CSV (Comma-Separated Values) फ़ाइलों के साथ काम करना मतलब तालिकात्मक डाटा संग्रहित करने वाली सादा पाठ फाइलों से पढ़ना और उनमें लिखना है। प्रोग्रामर ऐसा विभिन्न प्रोग्रामों, सिस्टमों के बीच डाटा साझा करने या बड़े डाटा सेटों को एक कुशल, मानव-पठनीय प्रारूप में संसाधित करने के लिए करते हैं।
 
-## How to: (कैसे करें:)
-Rust में CSV पढ़ना और लिखना बहुत सीधा है। यहाँ `csv` क्रेट का उपयोग करके एक साधारण उदाहरण दिया गया है:
+## कैसे करें:
+रस्ट, अपने सुरक्षा और प्रदर्शन पर ध्यान केंद्रित करने के साथ, CSV फ़ाइलों के साथ डील करने के लिए उत्कृष्ट क्रेट्स (लाइब्रेरीज़) प्रदान करता है, `csv` सबसे लोकप्रिय होने के साथ। आपको डाटा को सीरियलाइज़ और डीसीरियलाइज़ करने के लिए `serde` की भी आवश्यकता होगी।
 
-```Rust
+पहले, अपने `Cargo.toml` में निर्भरताएं जोड़ें:
+
+```toml
+[dependencies]
+csv = "1.1"
+serde = { version = "1.0", features = ["derive"] }
+```
+
+### CSV पढ़ना
+
+किसी CSV फ़ाइल को पढ़ने के लिए, एक स्ट्रक्चर परिभाषित करें जो आपके डाटा का प्रतिनिधित्व करता है और `serde` से `Deserialize` को व्युत्पन्न करें:
+
+```rust
+use serde::Deserialize;
 use std::error::Error;
 use std::fs::File;
+use std::io;
 use std::process;
 
-use csv::ReaderBuilder;
-use csv::Writer;
+#[derive(Debug, Deserialize)]
+struct Record {
+    city: String,
+    state: String,
+    population: u64,
+}
 
-fn read_csv(file_path: &str) -> Result<(), Box<dyn Error>> {
-    let mut rdr = ReaderBuilder::new().from_path(file_path)?;
-    for result in rdr.records() {
-        let record = result?;
+fn read_from_csv(file_path: &str) -> Result<(), Box<dyn Error>> {
+    let file = File::open(file_path)?;
+    let mut rdr = csv::Reader::from_reader(file);
+
+    for result in rdr.deserialize() {
+        let record: Record = result?;
         println!("{:?}", record);
     }
     Ok(())
 }
 
-fn write_csv(file_path: &str, records: Vec<Vec<String>>) -> Result<(), Box<dyn Error>> {
-    let file = File::create(file_path)?;
-    let mut wtr = Writer::from_writer(file);
-    
-    for record in records {
-        wtr.write_record(&record)?;
-    }
-    wtr.flush()?;
-    Ok(())
-}
-
 fn main() {
-    if let Err(err) = read_csv("data.csv") {
-        println!("Error reading CSV: {}", err);
-        process::exit(1);
-    }
-
-    let records = vec![
-        vec!["Name".to_string(), "Place".to_string(), "ID".to_string()],
-        vec!["Ramesh".to_string(), "Delhi".to_string(), "1".to_string()]
-    ];
-
-    if let Err(err) = write_csv("output.csv", records) {
-        println!("Error writing CSV: {}", err);
+    if let Err(err) = read_from_csv("cities.csv") {
+        println!("उदाहरण चलाने में त्रुटि: {}", err);
         process::exit(1);
     }
 }
 ```
 
-इस कोड के चलने पर, यह `data.csv` से रिकॉर्ड्स को पढ़ेगा और `output.csv` में नए रिकॉर्ड्स को लिखेगा।
+किसी CSV के लिए नमूना आउटपुट जिसमें शहर की जानकारी हो सकती है:
+```plaintext
+Record { city: "Seattle", state: "WA", population: 744955 }
+Record { city: "New York", state: "NY", population: 8336817 }
+```
 
-## Deep Dive (गहराई में जानकारी):
-CSV हैंडलिंग की जरूरत जब से नुमाया हुई, तब से कई लाइब्रेरीज़ और टूल्स डेवलप हो चुके हैं। Rust में `csv` क्रेट इस काम के लिए सबसे लोकप्रिय है, जिसमें सहज पार्सिंग और बेहतर एरर हैंडलिंग शामिल है। विकल्पों में `serde` का इस्तेमाल करके स्ट्रक्चर्ड डेटा में सीरिअलाइज़ और डीसीरिअलाइज़ करना शामिल है। इम्प्लीमेंटेशन डिटेल्स में, स्ट्रीमिंग रीड/राइट ऑपरेशंस और लार्ज डेटा सेट्स के लिए बफ़रिंग पर ध्यान दिया गया है।
+### CSV में लिखना
 
-## See Also (इसे भी देखें):
-- [The Rust Programming Language](https://doc.rust-lang.org/book/)
-- [CSV Crate Documentation](https://docs.rs/csv/latest/csv/)
-- [Serde Crate Documentation](https://serde.rs/)
-- [Rust by Example](https://doc.rust-lang.org/rust-by-example/)
-- [Rust Cookbook](https://rust-lang-nursery.github.io/rust-cookbook/)
+किसी CSV फ़ाइल में लिखने के लिए, एक स्ट्रक्चर परिभाषित करें और `Serialize` को व्युत्पन्न करें:
+
+```rust
+use serde::Serialize;
+use std::error::Error;
+use std::fs::File;
+
+#[derive(Serialize)]
+struct Record {
+    city: String,
+    state: String,
+    population: u64,
+}
+
+fn write_to_csv(file_path: &str, records: Vec<Record>) -> Result<(), Box<dyn Error>> {
+    let file = File::create(file_path)?;
+    let mut wtr = csv::Writer::from_writer(file);
+
+    for record in records {
+        wtr.serialize(&record)?;
+    }
+    wtr.flush()?;
+    Ok(())
+}
+
+fn main() -> Result<(), Box<dyn Error>> {
+    let records = vec![
+        Record {
+            city: "Los Angeles".into(),
+            state: "CA".into(),
+            population: 3979563,
+        },
+        Record {
+            city: "Chicago".into(),
+            state: "IL".into(),
+            population: 2695598,
+        },
+    ];
+
+    write_to_csv("output.csv", records)?;
+
+    Ok(())
+}
+```
+
+इससे `output.csv` फ़ाइल डाटा के साथ बनेगी:
+
+```csv
+city,state,population
+Los Angeles,CA,3979563
+Chicago,IL,2695598
+```
+
+रस्ट की शक्तिशाली प्रकार प्रणाली और इकोसिस्टम के मजबूत क्रेट्स का लाभ उठाकर, CSV डाटा के साथ काम करना दोनों ही कुशल और सरल हो जाता है, अपने डाटा प्रोसेसिंग कार्यों में सुरक्षा और प्रदर्शन सुनिश्चित करता है।

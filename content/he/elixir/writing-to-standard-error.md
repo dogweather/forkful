@@ -1,40 +1,53 @@
 ---
-title:                "כתיבה לפלט השגיאה הסטנדרטי"
-date:                  2024-01-19
-simple_title:         "כתיבה לפלט השגיאה הסטנדרטי"
-
+title:                "כתיבה לשגיאה התקנית"
+date:                  2024-02-03T19:33:38.315609-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "כתיבה לשגיאה התקנית"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/elixir/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-מה זה כתיבה לשגיאה סטנדרטית ולמה זה נחוץ? כתיבה לשגיאה סטנדרטית (stderr) מאפשרת להפריד מידע על שגיאות מהפלט הרגיל של תוכנית. פרוגרמרים עושים את זה כדי לתעד בעיות ולעזור באבחון תקלות בלי לבלבל את הפלט העיקרי.
+## מה ולמה?
 
-## How to:
-הנה דוגמא פשוטה לכתיבה לstderr באליקסיר:
+כתיבה לשגיאה סטנדרטית (stderr) ב-Elixir היא שיטה להפנות הודעות שגיאה ואבחונים בנפרד מהפלט הראשי (stdout). מתכנתים משתמשים ב-stderr כדי לאתר ולטפל בשגיאות מבלי לטעון את הפלט הראשי של התוכנית, דבר המקל על זיהוי וטיפול בבעיות.
+
+## איך לעשות:
+
+ב-Elixir, ניתן להשתמש בפונקציות של מודול `IO` כמו `IO.puts/2` ו-`IO.warn/2` כדי לכתוב הודעות לשגיאה סטנדרטית:
 
 ```elixir
-# כתיבה לstdout
-IO.puts("Hello, stdout!")
+# כתיבת הודעה פשוטה ל-stderr
+IO.puts(:stderr, "שגיאה: משהו השתבש!")
 
-# כתיבה לstderr
-:io.put_chars(:standard_error, "Error: Something went wrong!\n")
+# שימוש ב-IO.warn, שהוא יותר סמנטי לאזהרות/שגיאות
+IO.warn("אזהרה: אתה עומד לחרוג מהמגבלה!")
 ```
 
-פלט לדוגמא:
+פלט לדוגמה בטרמינל עבור `IO.puts/2`:
 ```
-Hello, stdout!
-Error: Something went wrong!
+שגיאה: משהו השתבש!
 ```
 
-כאשר אתה מפעיל את הקוד הזה, תראה את הודעת השגיאה בצבע אחר או בחלון אחר, בהתאם לסביבת העבודה שלך.
+עבור `IO.warn/2`, הפלט יהיה דומה, אך `IO.warn/2` מיועד במיוחד לאזהרות ועשוי לכלול עיצוב או התנהגות נוספים בגרסאות עתידיות של Elixir.
 
-## Deep Dive:
-במערכות יוניקס ודומות, stderr היא אחת משלוש ערוצי תקשורת מובנים לתוכנית (לצד stdout וstdin). כתיבה לstderr מאוד נפוצה בסקריפטים ופקודות של. בשפת אליקסיר, פונקצית :io.put_chars היא דרך נפוצה לכתוב לstderr, אך ישנן גם אלטרנטיבות כגון השימוש במודול Logger לתיעוד מקיף יותר.
+**שימוש בספריות צד שלישי**
 
-## See Also:
-- [Elixir IO Module](https://hexdocs.pm/elixir/IO.html)
-- [Elixir Logger Module](https://hexdocs.pm/logger/Logger.html)
-- [Understanding Shell Script's idiom: 2>&1](https://www.tldp.org/LDP/abs/html/io-redirection.html)
+למרות שספריית התקנים של Elixir בדרך כלל מספקת מספיק פתרונות לטיפול בפלט שגיאה סטנדרטי, ייתכן שתמצאו ספריות כמו `Logger` שימושיות ליישומים מורכבים יותר או לקביעת רמות ופלטי יומן שונים.
+
+דוגמה לשימוש ב-`Logger` לפלט הודעת שגיאה:
+
+```elixir
+require Logger
+
+# קביעת תצורה של Logger לפלט ל-stderr
+Logger.configure_backend(:console, device: :stderr)
+
+# כתיבת הודעת שגיאה
+Logger.error("שגיאה: נכשל בחיבור לבסיס הנתונים.")
+```
+
+הגדרה זו מכוונת את פלט ה-`Logger` באופן ספציפי ל-stderr, דבר שמועיל להפרדת רישום שגיאות מהודעות יומן סטנדרטיות.

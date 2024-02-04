@@ -1,8 +1,8 @@
 ---
 title:                "Writing tests"
-date:                  2024-01-19
+date:                  2024-02-03T19:03:39.537072-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Writing tests"
-
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/rust/writing-tests.md"
 ---
@@ -11,55 +11,88 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Writing tests means crafting code snippets that check if other bits of code work right. Programmers do it to catch bugs early, ensure functionality, and future-proof against new changes messing stuff up.
+Writing tests in Rust involves creating automated checks to ensure your code performs as expected. Programmers do this to catch bugs early, facilitate refactoring, and maintain code quality over time.
 
 ## How to:
 
-Rust makes testing straightforward. Let's write a function and a test for it.
+Rust's built-in test framework supports unit, integration, and documentation tests without the need for external libraries. Tests are annotated with `#[test]`, and any function annotated as such is compiled as a test.
 
-The function:
+### Writing a Unit Test:
 
-```Rust
-fn add_two(a: i32) -> i32 {
-    a + 2
+Place unit tests in the module they're testing using a `tests` sub-module marked with `#[cfg(test)]` to ensure they're only compiled when testing.
+
+```rust
+// lib.rs or main.rs
+pub fn add(a: i32, b: i32) -> i32 {
+    a + b
 }
-```
 
-The test:
-
-```Rust
 #[cfg(test)]
 mod tests {
     use super::*;
 
     #[test]
     fn it_adds_two() {
-        assert_eq!(4, add_two(2));
+        assert_eq!(add(2, 2), 4);
     }
 }
 ```
 
-Run tests with `cargo test`. Expected output:
+Running tests:
+```shell
+$ cargo test
+```
 
-```plaintext
-   Compiling my_crate v0.1.0 (/path/to/my_crate)
-    Finished test [unoptimized + debuginfo] target(s) in 0.31 secs
-     Running unittests (target/debug/deps/my_crate-abc123)
+Output:
+```shell
+   Compiling your_package_name v0.1.0 (/path/to/your_package)
+    Finished test [unoptimized + debuginfo] target(s) in 0.00 secs
+     Running unittests src/lib.rs (or src/main.rs)
 
 running 1 test
 test tests::it_adds_two ... ok
 
-test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out
 ```
 
-## Deep Dive
+### Writing Integration Tests:
 
-Historically, tests are written after the code (post-hoc testing). Rust encourages writing tests alongside or before your code (test-driven development, TDD). There are other forms of testing - integration tests, doc tests, etc. - each with unique implementation details.
+Integration tests go in a tests directory at the top level of your project, next to `src`. Each `.rs` file in `tests` is compiled as its own separate crate.
 
-Tests in Rust are typically written in the same file or a `tests/` directory. They can be unit tests (like the `it_adds_two` example), integration tests (in separate files), or documentation tests (embedded in doc comments). The Rust compiler knows to treat functions with `#[test]` as tests to run with `cargo test`.
+```rust
+// tests/integration_test.rs
+use your_package_name;
 
-## See Also
+#[test]
+fn it_adds_two() {
+    assert_eq!(your_package_name::add(2, 2), 4);
+}
+```
 
-- The Rust Book on testing: https://doc.rust-lang.org/book/ch11-00-testing.html
-- Rust by Example's testing section: https://doc.rust-lang.org/stable/rust-by-example/testing.html
-- API guidelines on testing: https://rust-lang.github.io/api-guidelines/documentation.html#crate-provides-docs-including-rustdoc-and-tests-c-dox
+### Testing with Popular Third-party Libraries:
+
+For more extensive testing capabilities, the `proptest` library can generate a wide range of inputs to test functions.
+
+Add `proptest` as a dev dependency in `Cargo.toml`:
+
+```toml
+[dev-dependencies]
+proptest = "1.0"
+```
+
+Use `proptest` to run the same test with many automatically generated inputs:
+
+```rust
+// inside tests/integration_test.rs or a module's #[cfg(test)]
+
+use proptest::prelude::*;
+
+proptest! {
+    #[test]
+    fn doesnt_crash(a: i32, b:i32) {
+        your_package_name::add(a, b);
+    }
+}
+```
+
+This checks that `add` doesn't panic for a wide range of `i32` inputs.

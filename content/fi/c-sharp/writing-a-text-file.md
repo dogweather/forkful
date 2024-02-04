@@ -1,21 +1,24 @@
 ---
 title:                "Tekstitiedoston kirjoittaminen"
-date:                  2024-01-19
+date:                  2024-02-03T19:27:41.525022-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Tekstitiedoston kirjoittaminen"
-
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c-sharp/writing-a-text-file.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Tekstitiedoston kirjoittaminen tarkoittaa merkkijonojen tallentamista tiedostoon. Ohjelmoijat tekevät tätä datan säilömiseksi, siirtämiseksi tai logien luomiseksi.
+## Mikä & Miksi?
+Tekstitiedoston kirjoittaminen C#:ssa käsittää ohjelmallisesti tekstiedostojen luomisen tai muokkaamisen tiedostojärjestelmässä - tämä on perustehtävä monille sovelluksille, kuten lokitiedostojen kirjoittaminen, datan vienti tai konfiguraation hallinta. Ohjelmoijat suorittavat tämän toimenpiteen tallentaakseen dataa istuntojen välillä, jakaakseen tietoa järjestelmien kesken tai tallentaakseen ihmisen luettavaa tulostetta.
 
-## How to:
-Käytä `System.IO` nimiavaruutta.
+## Miten:
+C# yksinkertaistaa tiedosto-operaatioita `System.IO` nimiavaruuden avulla, tarjoten suoraviivaisia metodeja tekstiedostojen kirjoittamiseen. Tässä on, miten kirjoitetaan perustekstitiedosto ja lisätään tekstiä olemassa olevaan tiedostoon.
 
-```C#
+### Kirjoittaminen tyhjästä tekstiedostoon
+```csharp
 using System;
 using System.IO;
 
@@ -23,24 +26,25 @@ class Program
 {
     static void Main()
     {
-        string tiedostonimi = "esimerkki.txt";
-        string teksti = "Hei Suomi!";
+        string filePath = @"C:\example\ExampleFile.txt";
+        string content = "Hei maailma!";
 
-        File.WriteAllText(tiedostonimi, teksti);
-
-        Console.WriteLine("Tiedostoon kirjoitettu.");
+        // Kirjoita sisältö uuteen tiedostoon
+        File.WriteAllText(filePath, content);
+        
+        Console.WriteLine("Tiedosto kirjoitettu onnistuneesti.");
     }
 }
 ```
-
-Sample output:
+**Esimerkkituloste:**
 ```
-Tiedostoon kirjoitettu.
+Tiedosto kirjoitettu onnistuneesti.
 ```
 
-Lisäys:
+### Tekstin lisääminen olemassa olevaan tiedostoon
+Jos haluat lisätä tekstiä olemassa olevan tiedoston loppuun, voit käyttää `File.AppendAllText` -metodia.
 
-```C#
+```csharp
 using System;
 using System.IO;
 
@@ -48,30 +52,48 @@ class Program
 {
     static void Main()
     {
-        string tiedostonimi = "esimerkki.txt";
-        string lisattavaTeksti = "Moikka maailma!";
+        string filePath = @"C:\example\ExampleFile.txt";
+        string lisäsisältö = "\nLisätään lisää sisältöä.";
 
-        using (StreamWriter kirjoittaja = File.AppendText(tiedostonimi))
+        // Lisää sisältöä tiedostoon
+        File.AppendAllText(filePath, lisäsisältö);
+        
+        Console.WriteLine("Sisältö lisätty onnistuneesti.");
+    }
+}
+```
+**Esimerkkituloste:**
+```
+Sisältö lisätty onnistuneesti.
+```
+
+### Kolmannen osapuolen kirjastojen käyttö: `StreamWriter`
+Hienojakoisemman kirjoitusvalvonnan saamiseksi, mukaan lukien automaattinen tyhjennys ja koodausten valinta, käytä `StreamWriter`ia.
+
+```csharp
+using System;
+using System.IO;
+
+class Program
+{
+    static void Main()
+    {
+        string filePath = @"C:\example\ExampleFile.txt";
+        string sisältö = "Tämä on esimerkki käyttäen StreamWriteria.";
+
+        // Käytetään StreamWriteria kirjoittaaksemme tiedostoon
+        using (StreamWriter writer = new StreamWriter(filePath, append: true))
         {
-            kirjoittaja.WriteLine(lisattavaTeksti);
+            writer.WriteLine(sisältö);
         }
-
-        Console.WriteLine("Teksti lisätty tiedostoon.");
+        
+        Console.WriteLine("Tiedosto kirjoitettu StreamWriterin kanssa onnistuneesti.");
     }
 }
 ```
-
-Sample output:
+**Esimerkkituloste:**
 ```
-Teksti lisätty tiedostoon.
+Tiedosto kirjoitettu StreamWriterin kanssa onnistuneesti.
 ```
 
-## Deep Dive
-Tekstitiedostojen kirjoittaminen on ollut osa ohjelmointia alusta asti. `StreamWriter` ja `File`-luokat ovat nykyajan työkaluja, muttet rajattu vain niihin. Vaihtoehtoisesti käytössä olisivat `FileStream`, `MemoryStream`, tai jopa vanhempi `System.IO.StreamWriter`.
-
-Tiedoston kirjoittamisessa pitää huomata kaksi tyyliä: ylikirjoittaminen ja lisääminen. Ylikirjoittaminen (`WriteAllText`) alkaa aina tyhjästä, kun taas lisääminen (`AppendText`) säilyttää olemassaolevan sisällön.
-
-## See Also
-- Microsoft Docs, File.WriteAllText: https://docs.microsoft.com/en-us/dotnet/api/system.io.file.writealltext
-- Microsoft Docs, StreamWriter: https://docs.microsoft.com/en-us/dotnet/api/system.io.streamwriter
-- Stack Overflow haku "C# write to file": https://stackoverflow.com/search?q=c%23+write+to+file
+Jokainen näistä lähestymistavoista palvelee erilaisia tarpeita: suorat `File` metodit nopeisiin operaatioihin ja `StreamWriter` monimutkaisempiin kirjoitusskenaarioihin. Valitse tarpeidesi mukaan, ottaen huomioon tekijöitä kuten suorituskyky ja tiedostokoko.

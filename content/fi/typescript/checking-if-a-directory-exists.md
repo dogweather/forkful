@@ -1,49 +1,83 @@
 ---
-title:                "Onko hakemisto olemassa? Tarkistaminen"
-date:                  2024-01-20T14:58:48.197909-07:00
-simple_title:         "Onko hakemisto olemassa? Tarkistaminen"
-
+title:                "Tarkistetaan, onko hakemisto olemassa"
+date:                  2024-02-03T19:08:53.087265-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Tarkistetaan, onko hakemisto olemassa"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/typescript/checking-if-a-directory-exists.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
-Tarkistamme, onko hakemisto olemassa, ettei sovelluksemme kaadu yrittäessään lukea tai kirjoittaa olemattomaan kansioon. Tämä on tärkeää tiedostojärjestelmän virheiden ehkäisyssä ja tiedonhallinnassa.
+## Mikä ja miksi?
+Hakemiston olemassaolon tarkistaminen TypeScriptillä on oleellinen osa tiedostonhallintatehtäviä, kuten tiedostoista lukemista tai niihin tietojen kirjoittamista, varmistaen, että toimenpiteet suoritetaan ainoastaan validioiden hakemistojen kanssa. Tämä toiminto on kriittinen välttääkseen virheet, jotka syntyvät yrittäessä päästä käsiksi tai manipuloida olemattomia hakemistoja.
 
 ## Kuinka:
-```TypeScript
-import * as fs from 'fs';
-import { promisify } from 'util';
 
-const exists = promisify(fs.exists);
+TypeScript, kun sitä ajetaan Node.js-ympäristössä, mahdollistaa hakemiston olemassaolon tarkistamisen käyttämällä `fs`-moduulia, joka tarjoaa `existsSync()`-funktion tai asynkronisen `access()`-funktion yhdistettynä `constants.F_OK`:n kanssa.
 
-async function checkDirectory(directoryPath: string) {
-  try {
-    const dirExists = await exists(directoryPath);
-    console.log(dirExists ? 'Hakemisto löytyy.' : 'Hakemistoa ei ole olemassa.');
-  } catch (error) {
-    console.error('Virhe tarkistaessa hakemistoa:', error);
-  }
+### Käyttäen `fs.existsSync()`:
+
+```typescript
+import { existsSync } from 'fs';
+
+const directoryPath = './path/to/directory';
+
+if (existsSync(directoryPath)) {
+  console.log('Hakemisto on olemassa.');
+} else {
+  console.log('Hakemistoa ei ole olemassa.');
 }
-
-// Käytä funktiota
-checkDirectory('./polku/hakemistoon');
 ```
-Esimerkkilokissa näkyy joko "Hakemisto löytyy." tai "Hakemistoa ei ole olemassa." sen mukaan, onko hakemisto olemassa.
 
-## Syväsukellus
+### Käyttäen `fs.access()` yhdessä `fs.constants.F_OK` kanssa:
 
-Hakemistojen olemassaolon tarkistus on ollut osa ohjelmistokehitystä tiedostojärjestelmien alkuajoista asti. JavaScript-ympäristössä, kuten Node.js:ssä, tämä tehdään `fs` (FileSystem)-moduulin avulla, joka tarjoaa synkronisia ja asynkronisia funktioita tähän tarkoitukseen.
+```typescript
+import { access, constants } from 'fs';
 
-Historiallisesti `fs.exists` oli tapa tarkistaa kansioita, mutta se on virallisesti katsottu vanhentuneeksi, koska se ei laske virheitä normaaliin Node.js callback -malliin. Nykyään `fs.access` on suositeltavampi tapa, koska se seuraa Node.js:n paradigmaa ja antaa mahdollisuuden tarkistaa myös käyttöoikeuksia.
+const directoryPath = './path/to/directory';
 
-Kuitenkin, kun käytetään TypeScriptiä, joka on JavaScriptin superset, tulee mukana tyypit ja kehittyneemmät abstraktiot virhekäsittelyyn ja asynkronisiin operaatioihin, kuten yllä olevassa esimerkissä nähtiin.
+access(directoryPath, constants.F_OK, (err) => {
+  if (err) {
+    console.log('Hakemistoa ei ole olemassa.');
+    return;
+  }
+  console.log('Hakemisto on olemassa.');
+});
+```
 
-Eri lähestymistapoina voidaan mainita myös käyttö funktioiden `fs.stat` tai `fs.readdir` kautta, jotka antavat enemmän tietoa tiedostojärjestelmästä. Nämä funktiot voivat heittää virheen, jos polku ei ole olemassa, joten ne vaativat virheiden käsittelyä.
+**Esimerkkituloste** molemmille metodeille, olettaen että hakemisto on olemassa:
+```
+Hakemisto on olemassa.
+```
 
-## Katso Myös
-- Node.js FileSystem Documentation: [Node.js fs](https://nodejs.org/api/fs.html)
-- TypeScript Documentation: [TypeScript Lang](https://www.typescriptlang.org/docs/)
-- More on Promises and async/await pattern: [MDN - Using Promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises)
+Ja jos sitä ei ole:
+```
+Hakemistoa ei ole olemassa.
+```
+
+### Käyttäen kolmannen osapuolen kirjastoa - `fs-extra`:
+
+`fs-extra` on suosittu kolmannen osapuolen kirjasto, joka parantaa sisäänrakennettua `fs`-moduulia ja tarjoaa kätevämpiä funktioita.
+
+```typescript
+import { pathExists } from 'fs-extra';
+
+const directoryPath = './path/to/directory';
+
+pathExists(directoryPath).then(exists => {
+  console.log(`Hakemisto on olemassa: ${exists}`);
+});
+```
+
+**Esimerkkituloste** kun hakemisto on olemassa:
+```
+Hakemisto on olemassa: true
+```
+
+Ja jos sitä ei ole:
+```
+Hakemisto on olemassa: false
+```

@@ -1,52 +1,90 @@
 ---
 title:                "כתיבת בדיקות"
-date:                  2024-01-19
+date:                  2024-02-03T19:31:11.988956-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "כתיבת בדיקות"
-
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/java/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (מה ולמה?)
-כתיבת בדיקות היא בניית קוד שמוודא את תקינות קוד אחר. תכנתים כדי לשפר את האיכות, לזהות באגים ולהקל על תחזוקה.
+## מה ולמה?
+כתיבת בדיקות ב-Java היא על מנת לוודא שהקוד שלך מתנהג כצפוי תחת תנאים שונים. מתכנתים כותבים בדיקות כדי למנוע באגים, לוודא שהפונקציונאליות נשארת נכונה לאחר שינויים, ולקדם עקרונות של עיצוב תוכנה טוב.
 
-## How to: (איך לעשות:)
-בואו נראה איך כותבים בדיקה פשוטה עם JUnit. 
+## איך לעשות:
+מפתחי Java משתמשים בעיקר בשני מסגרות לבדיקות: JUnit ו-TestNG. כאן, נתמקד ב-JUnit, הבחירה הפופולרית יותר לכתיבת בדיקות בשל פשטותה והתפוצה הרחבה שלה.
+
+### הבסיס של JUnit
+
+כדי להשתמש ב-JUnit בפרויקט Maven שלך, הוסף את התלות הבאה ל-`pom.xml` שלך:
+
+```xml
+<dependency>
+    <groupId>org.junit.jupiter</groupId>
+    <artifactId>junit-jupiter</artifactId>
+    <version>5.9.0</version>
+    <scope>test</scope>
+</dependency>
+```
+
+בדיקה בסיסית ב-JUnit נראית כך:
 
 ```java
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class CalculatorTest {
+public class CalculatorTest {
+    
+    @Test
+    public void testAdd() {
+        Calculator calculator = new Calculator();
+        assertEquals(5, calculator.add(2, 3), "2 + 3 אמור להשתוות ל-5");
+    }
+}
+```
+
+הרצת בדיקה זו תוכל לעבור, מה שמצביע על כך שהמתודה `add` פועלת כצפוי, או להיכשל, ולהציג הודעת שגיאה.
+
+### מדמה עם Mockito
+
+בתרחישים מהעולם האמיתי, אובייקטים לעיתים תלויים באובייקטים אחרים. Mockito הוא מסגרת מדמה פופולרית שעוזרת ביצירת אובייקטים מדומים למטרות בדיקה.
+
+הוסף את Mockito לפרויקט Maven שלך:
+
+```xml
+<dependency>
+    <groupId>org.mockito</groupId>
+    <artifactId>mockito-core</artifactId>
+    <version>4.5.1</version>
+    <scope>test</scope>
+</dependency>
+```
+
+שימוש בסיסי עם Mockito:
+
+```java
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.*;
+
+public class UserServiceTest {
 
     @Test
-    void testAddition() {
-        Calculator calculator = new Calculator();
-        assertEquals(5, calculator.add(2, 3), "2 + 3 should equal 5");
+    public void testGetUsername() {
+        // יצירת מדמה ל-UserRepository
+        UserRepository mockRepository = mock(UserRepository.class);
+
+        // הגדרת התנהגות עבור אובייקט המדמה
+        when(mockRepository.getUsername(1)).thenReturn("john_doe");
+
+        UserService userService = new UserService(mockRepository);
+        
+        assertEquals("john_doe", userService.getUsername(1), "מזהה המשתמש 1 אמור להיות john_doe");
     }
 }
-
-class Calculator {
-    int add(int a, int b) {
-        return a + b;
-    }
-}
-```
-פלט לדוגמא אם הבדיקה עוברת:
-```
-Test passed.
 ```
 
-או פלט לדוגמא אם היא נכשלת:
-```
-org.junit.ComparisonFailure: 2 + 3 should equal 5 expected:<5> but was:<4>
-```
-
-## Deep Dive (צלילה עמוקה)
-JUnit התחיל כפרויקט ב-1997. הוא הופך לסטנדרט לכתיבת בדיקות ב-Java. ישנם אלטרנטיבות כמו TestNG או Spock. כתיבת בדיקות דורשת שימוש במערכת בניית תוכנה כמו Maven או Gradle ולעיתים הטמעה עם CI/CD.
-
-## See Also (ראה גם)
-- [JUnit 5 User Guide](https://junit.org/junit5/docs/current/user-guide/)
-- [Introduction to CI/CD with GitLab](https://docs.gitlab.com/ee/ci/introduction/)
+המדמה הזה מאפשר לנו לבדוק את `UserService` בלי הצורך ב-`UserRepository` אמיתי, וממקד את הבדיקה בלוגיקה שבתוך `UserService` עצמו.

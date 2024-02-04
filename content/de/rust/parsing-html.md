@@ -1,51 +1,63 @@
 ---
 title:                "HTML parsen"
-date:                  2024-01-20T15:33:48.524713-07:00
+date:                  2024-02-03T19:13:05.342740-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "HTML parsen"
-
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/rust/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Was & Warum?
-HTML-Parser verwandeln HTML-Code in eine Struktur, die von Programmen verarbeitet werden kann. Das ist nötig, wenn man Daten aus Webseiten extrahieren oder die Struktur von Webseiten programmatisch verstehen möchte.
 
-## So geht's:
-```Rust
-extern crate reqwest;
+Das Parsen von HTML in Rust dient dazu, Daten aus HTML-Dokumenten zu extrahieren, was für das Web-Scraping, die Datengewinnung oder den Aufbau von Web-Crawlern unerlässlich ist. Programmierer tun dies, um die Sammlung von Informationen aus dem Web zu automatisieren, Webinhalte zu analysieren oder Inhalte von einer Plattform auf eine andere zu migrieren.
+
+## Wie:
+
+Um HTML in Rust zu parsen, wirst du oft das `scraper`-Crate verwenden, das eine High-Level-Schnittstelle bietet, um HTML-Dokumente zu durchlaufen und zu manipulieren.
+
+Füge zunächst `scraper` deiner `Cargo.toml` hinzu:
+
+```toml
+[dependencies]
+scraper = "0.12.0"
+```
+
+Im Folgenden findest du ein einfaches Beispiel, das alle Link-URLs aus einem gegebenen HTML-String extrahiert:
+
+```rust
 extern crate scraper;
 
 use scraper::{Html, Selector};
 
 fn main() {
-    // HTML von einer Webseite holen
-    let res = reqwest::blocking::get("https://www.rust-lang.org").unwrap();
-    assert!(res.status().is_success());
-    let body = res.text().unwrap();
-    
-    // HTML-Struktur parsen
-    let document = Html::parse_document(&body);
-    
-    // Ein Selector, um z.B. nach h1-Tags zu suchen
-    let selector = Selector::parse("h1").unwrap();
-    
-    // Durch die h1-Tags iterieren und den Textinhalt ausgeben
+    let html = r#"
+    <html>
+    <body>
+        <a href="http://example.com/1">Link 1</a>
+        <a href="http://example.com/2">Link 2</a>
+    </body>
+    </html>
+    "#;
+
+    let document = Html::parse_document(html);
+    let selector = Selector::parse("a").unwrap();
+
     for element in document.select(&selector) {
-        println!("Gefundener Text: {}", element.text().collect::<Vec<_>>().join(""));
+        let link = element.value().attr("href").unwrap();
+        println!("Gefundener Link: {}", link);
     }
 }
 ```
-Ausgabe könnte sein:
+
+Ausgabe:
+
 ```
-Gefundener Text: Empowering everyone to build reliable and efficient software.
+Gefundener Link: http://example.com/1
+Gefundener Link: http://example.com/2
 ```
 
-## Tiefergehende Einblicke
-Das Parsen von HTML ist kein neuer Trick. Seit dem Aufkommen von HTML haben Entwickler Bibliotheken und Tools entwickelt, um diese Aufgabe zu bewältigen. Historisch gesehen haben Programmiersprachen wie Perl und PHP hier Vorreiterarbeit geleistet. In Rust gibt es mehrere Bibliotheken, zum Beispiel `scraper` oder `html5ever`, die auf unterschiedliche Bedürfnisse zugeschnitten sind. `scraper` nutzt Selektoren ähnlich wie in JavaScript, um durch das HTML-Dokument zu navigieren, während `html5ever` einen Parser bietet, der den HTML5-Standard genau implementiert. Alternativen, wie Regex zum Parsen von HTML, werden oft nicht empfohlen, da HTML zu komplex für einfache Regex-Muster ist.
-
-## Siehe auch
-- Rust `scraper` Dokumentation: https://docs.rs/scraper/latest/scraper/
-- `html5ever` GitHub Repository: https://github.com/servo/html5ever
-- Zum weiterlesen: "Why regex is usually not the best choice for HTML parsing": https://stackoverflow.com/a/1732454
+In diesem Beispiel parsen wir ein einfaches HTML-Dokument, um alle `<a>`-Elemente zu finden und deren `href`-Attribute zu extrahieren, wodurch effektiv die URLs aller Links im Dokument ausgegeben werden. Die `scraper`-Bibliothek vereinfacht das Parsen von HTML und das Auswählen spezifischer Elemente mit CSS-Selektoren, was sie zu einer bevorzugten Wahl für Web-Scraping-Aufgaben in Rust macht.

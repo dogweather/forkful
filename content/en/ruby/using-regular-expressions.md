@@ -1,8 +1,8 @@
 ---
 title:                "Using regular expressions"
-date:                  2024-01-19
+date:                  2024-02-03T19:02:59.191386-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Using regular expressions"
-
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/ruby/using-regular-expressions.md"
 ---
@@ -10,34 +10,68 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Regular expressions (regex) are patterns used to match character combinations in strings. Programmers use them for searching, editing, or validating text because they're precise and efficient.
+Regular expressions (regex) in Ruby are patterns used to match character combinations in strings, enabling developers to search for, match, and manipulate text efficiently. Programmers utilize regex for tasks such as validation, parsing, and string manipulation, making it an indispensable tool for text processing.
 
 ## How to:
-Let's run through some Ruby regex basics.
+### Basic Matching
+To match a string against a simple pattern, you can use the `match` method. Below, we're checking if the word "Ruby" exists in a given string.
 
-```Ruby
-# Finding a match
-phrase = "Hello, World!"
-puts phrase.match(/World/) # Output: World
-
-# Replacement
-puts phrase.gsub(/World/, "Ruby") # Output: Hello, Ruby!
-
-# Extracting matches
-email = "contact@example.com"
-puts email.match(/\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/).to_s # Output: contact@example.com
-
-# Iterating over matches
-"Frodo, Gandalf, Arwen".scan(/\w+/) { |name| puts name }
-# Output:
-# Frodo
-# Gandalf
-# Arwen
+```ruby
+if /Ruby/.match("Hello, Ruby!")
+  puts "Match found!"
+end
+# Output: Match found!
 ```
 
-## Deep Dive
-Regular expressions in Ruby have been influenced by Perl's strong regex capabilities. Alternatives to regex include string methods like `#include?`, `#start_with?`, and `#end_with?`, but none offer the same power and flexibility. Ruby implements regex using its own library which is derived from Perl's regex engine, providing features like look-ahead and look-behind, non-greedy matching, and character class shortcuts.
+### Pattern Matching with Variables
+You can interpolate variables into your regex using the `#{}` syntax, making your patterns dynamic.
 
-## See Also
-- [Ruby Regular Expressions](https://ruby-doc.org/core-3.1.0/Regexp.html): Official Ruby documentation for regex.
-- [Rubular](http://rubular.com/): A Ruby-based regular expression editor, good for testing patterns.
+```ruby
+language = "Ruby"
+if /#{language}/.match("Programming in Ruby is fun.")
+  puts "Talking about Ruby!"
+end
+# Output: Talking about Ruby!
+```
+
+### Using Regex for Substitution
+The `gsub` method allows you to replace every occurrence of a pattern with a specified replacement string.
+
+```ruby
+puts "foobarfoo".gsub(/foo/, "bar")
+# Output: barbarbar
+```
+
+### Capturing
+Parentheses in a regex are used for capturing parts of a match. The `match` method returns a `MatchData` object, which you can use to access captures.
+
+```ruby
+match_data = /(\w+): (\d+)/.match("Age: 30")
+puts match_data[1] # Captured label
+puts match_data[2] # Captured value
+# Output:
+# Age
+# 30
+```
+
+### Using Third-Party Libraries
+Although Ruby's standard library is powerful, you might sometimes need more specialized functionality. One popular gem for working with regex is `Oniguruma`, which provides additional regex features beyond the built-in Ruby regex engine.
+
+Install it using:
+```bash
+gem install oniguruma
+```
+
+Example usage could look like this (assuming you have required `oniguruma` after installing it):
+
+```ruby
+# This is a more advanced example and might require additional setup
+require 'oniguruma'
+
+pattern = Oniguruma::ORegexp.new('(\d+)')
+match_data = pattern.match("The number is 42.")
+puts match_data[1]
+# Output: 42
+```
+
+Remember, while powerful, regular expressions can become complex and hard to manage for more complicated patterns. Aim for readability, and consider alternative methods if your regex becomes too convoluted.

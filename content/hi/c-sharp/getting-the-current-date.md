@@ -1,49 +1,64 @@
 ---
 title:                "वर्तमान तारीख प्राप्त करना"
-date:                  2024-01-20T15:14:09.738123-07:00
+date:                  2024-02-03T19:09:58.319108-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "वर्तमान तारीख प्राप्त करना"
-
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/c-sharp/getting-the-current-date.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (क्या और क्यों?)
+## क्या और क्यों?
+C# में वर्तमान दिनांक प्राप्त करना सिस्टम से वर्तमान दिनांक और समय की जानकारी लेने की प्रक्रिया है। प्रोग्रामर्स को अक्सर लॉगिंग, समय चिन्हित करने की क्रियाओं, या एप्लिकेशनों में कार्यों को शेड्यूलिंग के लिए इस जानकारी की आवश्यकता होती है, जिससे यह सुनिश्चित होता है कि कार्य सही समय पर किए जाते हैं और डाटा सटीक समय चिन्हों के साथ चिह्नित होता है।
 
-मौजूदा तारीख को प्राप्त करने का मतलब है वह तिथि जो आज की है। प्रोग्रामर्स इसे लॉगिंग, टाइमस्टैंप्स, फीचर्स को एक्टिवेट या डिएक्टिवेट करने और यूजर्स को समय से संबंधित जानकारी देने के लिए करते हैं। 
+## कैसे करें:
+C# `.NET Framework` के `System` नेमस्पेस का हिस्सा बनी `DateTime` क्लास का उपयोग करके वर्तमान दिनांक प्राप्त करने का एक सरल तरीका प्रदान करता है। नीचे दिया गया उदाहरण वर्तमान दिनांक, और वैकल्पिक रूप से, समय प्राप्त करने का तरीका दिखाता है।
 
-## How to: (कैसे करें?)
-
-```C#
+```csharp
 using System;
 
 class Program
 {
     static void Main()
     {
-        DateTime currentDate = DateTime.Now; // मौजूदा समय और तारीख
-        Console.WriteLine(currentDate.ToShortDateString()); // केवल तारीख दिखाएँ
+        // केवल वर्तमान दिनांक प्राप्त करता है
+        DateTime currentDate = DateTime.Today;
+        Console.WriteLine(currentDate.ToString("d"));  // परिणाम: MM/dd/yyyy
+        
+        // वर्तमान दिनांक और समय प्राप्त करता है
+        DateTime currentDateTime = DateTime.Now;
+        Console.WriteLine(currentDateTime.ToString()); // परिणाम: MM/dd/yyyy HH:mm:ss
+
+        // वर्तमान UTC दिनांक और समय प्राप्त करता है
+        DateTime currentUtcDateTime = DateTime.UtcNow;
+        Console.WriteLine(currentUtcDateTime.ToString()); // परिणाम: MM/dd/yyyy HH:mm:ss
     }
 }
 ```
 
-उपरोक्त कोड को जब चलाएंगे, आउटपुट कुछ इस प्रकार होगा:
+तृतीय-पक्ष पुस्तकालयों के संदर्भ में, NodaTime विभिन्न कैलेंडरों और समय क्षेत्रों में वर्तमान दिनांक प्राप्त करने के लिए तिथि और समय परिवर्तन के लिए एक मजबूत विकल्प प्रदान करता है।
 
+```csharp
+using NodaTime;
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // ISO कैलेंडर में वर्तमान दिनांक प्राप्त करने के लिए NodaTime का उपयोग करता है
+        LocalDate currentDate = SystemClock.Instance.GetCurrentInstant().InUtc().Date;
+        Console.WriteLine(currentDate.ToString()); // परिणाम: yyyy-MM-dd
+
+        // समय क्षेत्र-विशेष दिनांक के लिए
+        DateTimeZone zone = DateTimeZoneProviders.Tzdb["America/New_York"];
+        LocalDate currentZonedDate = SystemClock.Instance.GetCurrentInstant().InZone(zone).Date;
+        Console.WriteLine(currentZonedDate.ToString()); // परिणाम: yyyy-MM-dd
+    }
+}
 ```
-10-04-2023
-```
 
-## Deep Dive (गहराई से समझें)
-
-DateTime.Now प्रॉपर्टी सिस्टम क्लॉक का इस्तेमाल करके मौजूदा तारीख और समय देती है। यह .NET फ्रेमवर्क का हिस्सा है और C# समेत .NET लैंग्वेजेस में बहुप्रचलित है। UtcNow और Today जैसे विकल्प भी हैं जो क्रमशः UTC समय और केवल मौजूदा तारीख (समय के बिना) प्रदान करते हैं।
-
-डेट-टाइम डेटा को संभालना कभी-कभी जटिल हो सकता है, जैसे टाइम ज़ोन के बीच परिवर्तन, डेलाइट सेविंग टाइम एडजस्टमेंट्स, और कैलेंडर सिस्टम की विविधताएं। इन्हें संभालने के लिए, .NET अन्य वर्ग जैसे TimeZoneInfo और DateTimeOffset प्रदान करता है।
-
-इतिहास में जाएं तो, DateTime वर्ग .NET के पहले संस्करण से ही मौजूद है, और इसे समय के साथ सुधारा गया है। हालांकि, DateTime की अपनी सीमाएँ हैं, और कुछ परिस्थितियों में, थर्ड-पार्टी लाइब्रेरीज जैसे कि NodaTime का इस्तेमाल अधिक उपयुक्त हो सकता है।
-
-## See Also (और जानकारी)
-
-- [DateTime Struct (Microsoft Docs)](https://docs.microsoft.com/en-us/dotnet/api/system.datetime?view=net-6.0)
-- [Handling Dates and Times in .NET (Microsoft Docs)](https://docs.microsoft.com/en-us/dotnet/standard/datetime/)
-- [NodaTime Library](https://nodatime.org/)
+यह बिल्ट-इन `DateTime` क्लास के साथ मूलभूत उपयोग और NodaTime द्वारा प्रदान की गई विशेष क्षमताओं को दर्शाता है, विशेष रूप से उन ऍप्लिकेशनों के लिए उपयोगी जिन्हें विभिन्न समय क्षेत्रों या कैलेंडर प्रणालियों को संभालने की आवश्यकता होती है।

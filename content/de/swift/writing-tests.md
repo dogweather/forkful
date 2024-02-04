@@ -1,49 +1,64 @@
 ---
-title:                "Tests schreiben"
-date:                  2024-01-19
-simple_title:         "Tests schreiben"
-
+title:                "Tests Schreiben"
+date:                  2024-02-03T19:32:02.176373-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Tests Schreiben"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/swift/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Das Schreiben von Tests überprüft, ob dein Code wie gewünscht funktioniert. Programmierer testen, um Fehler zu minimieren und die Software-Qualität zu sichern.
+Das Schreiben von Tests in Swift umfasst das Erstellen und Ausführen von Code, der die Korrektheit anderer Codeeinheiten in Ihrer Anwendung überprüft. Programmierer tun dies, um Zuverlässigkeit zu gewährleisten, Fehler früh im Entwicklungszyklus zu erkennen und zukünftiges Code-Refactoring ohne unbeabsichtigte Konsequenzen zu erleichtern.
 
-## Anleitung:
-Das Swift-Framework `XCTest` eignet sich zum Schreiben und Ausführen von Tests. Hier ist ein einfacher Test für eine `add` Funktion in Swift:
+## Wie geht das:
+Swift unterstützt das Testen durch sein XCTest-Framework, das in Xcode integriert ist. Sie können Unit-Tests schreiben, um einzelne Teile Ihres Codes zu überprüfen, zum Beispiel eine Funktion, die die Summe von zwei Zahlen berechnet.
 
-```Swift
+```swift
 import XCTest
+@testable import IhreApp
 
-class MathTests: XCTestCase {
-    func testAdd() {
-        let result = add(2, 3)
-        XCTAssertEqual(result, 5, "Das Ergebnis von 2 + 3 sollte 5 sein.")
-    }
-    
-    func add(_ a: Int, _ b: Int) -> Int {
-        return a + b
+class IhreAppTests: XCTestCase {
+
+    func testSumme() {
+        let ergebnis = Rechner().summe(a: 1, b: 2)
+        XCTAssertEqual(ergebnis, 3, "Die Summenfunktion hat nicht den erwarteten Wert zurückgegeben.")
     }
 }
-
-MathTests.defaultTestSuite.run()
 ```
 
-Wenn du das ausführst, kriegst du etwa folgendes als Ausgabe:
+Um diesen Test auszuführen, würden Sie typischerweise Command-U in Xcode drücken. Die Ausgabe im Xcode-Testnavigator zeigt Ihnen, ob der Test bestanden oder fehlgeschlagen ist.
 
+Zum Beispiel eine erfolgreiche Testausgabe:
 ```
-Test Suite 'MathTests' started at 2023-04-01
-Test Case '-[YourProject.MathTests testAdd]' started.
-Test Case '-[YourProject.MathTests testAdd]' passed (0.001 seconds).
-Test Suite 'MathTests' finished at 2023-04-01.
+Testfall '-[IhreAppTests testSumme]' erfolgreich (0.005 Sekunden).
 ```
 
-## Tiefere Einblicke:
-Tests in Swift gab es schon in Objective-C; da hieß das Framework `SenTestingKit`. `XCTest` ist moderner, schneller, und einfacher zu benutzen. Neben Unit-Tests gibt es auch UI-Tests, bei denen Benutzerinteraktionen simuliert werden. Als Alternative zu `XCTest` kamen Drittanbieter-Tools wie `Quick` und `Nimble` auf, die BDD (Behaviour-Driven Development) unterstützen.
+Für fortgeschrittenere Testszenarien könnten Sie Drittanbieter-Bibliotheken wie Quick/Nimble adoptieren, die eine expressivere Syntax für das Schreiben von Tests bieten.
 
-## Weiterführende Infos:
-- [Apple XCTest Dokumentation](https://developer.apple.com/documentation/xctest)
-- [Artikel zu Behaviour-Driven Development in Swift](https://www.raywenderlich.com/21020457-behavior-driven-development-tutorial-for-ios-with-quick-nimble)
+Mit Quick/Nimble könnten Sie denselben Test so schreiben:
+
+```swift
+// Fügen Sie Quick und Nimble zu Ihrem Swift-Paketmanager hinzu oder verwenden Sie CocoaPods/Carthage, um sie zu installieren
+import Quick
+import Nimble
+@testable import IhreApp
+
+class RechnerSpec: QuickSpec {
+    override func spec() {
+        beschreibe("Rechner") {
+            kontext("beim Addieren von Zahlen") {
+                es("sollte die korrekte Summe zurückgeben") {
+                    let rechner = Rechner()
+                    expect(rechner.summe(a: 1, b: 2)).to(equal(3))
+                }
+            }
+        }
+    }
+}
+```
+
+Die Ausführung dieses Tests würde Ihnen eine ähnliche Ausgabe in Ihrer Testkonsole oder im Protokoll des CI/CD-Tools liefern, die anzeigt, ob der Test erfolgreich war oder fehlgeschlagen ist, mit einem lesbareren Format für die Beschreibung von Tests und Erwartungen.

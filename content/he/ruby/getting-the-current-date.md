@@ -1,48 +1,65 @@
 ---
 title:                "קבלת התאריך הנוכחי"
-date:                  2024-01-20T15:16:34.322023-07:00
+date:                  2024-02-03T19:10:56.746625-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "קבלת התאריך הנוכחי"
-
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/ruby/getting-the-current-date.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## מה ולמה?
-השגת התאריך הנוכחי ב-Ruby זה פשוט לפקודה שמחזירה את התאריך והשעה הנוכחיים. מתכנתים עושים את זה ללוגים, תיעוד, תזמונים, ועוד.
+איסוף התאריך הנוכחי הוא משימה חיונית בכמעט כל מפעל תכנותי, החל מרישום פעולות ביישום וכלה ביצירת דוחות עם חותמות תאריך. בשפת Ruby, ניתן לבצע זאת בקלות באמצעות הספרייה הסטנדרטית, מה שמפשט פעולות הקשורות לתאריכים.
 
 ## איך לעשות:
-קטעי קוד ודוגמאות פלט בתוך בלוקי הקוד ```Ruby ... ```:
+הספרייה הסטנדרטית של Ruby כוללת את המחלקות `Date` ו-`Time` לטיפול בתאריכים ובזמן. הנה איך לקבל את התאריך הנוכחי:
 
-```Ruby
+```ruby
 require 'date'
 
-# השגת התאריך והשעה הנוכחיים
-current_datetime = DateTime.now
-puts current_datetime
-# 2023-04-05T15:27:35+03:00
-
-# רק התאריך הנוכחי
 current_date = Date.today
 puts current_date
-# 2023-04-05
-
-# רק השעה הנוכחית
-current_time = Time.now
-puts current_time.strftime("%H:%M:%S")
-# 15:27:35
 ```
 
-## עיון נוסף:
-פרטים נוספים כגון (1) הקשר ההיסטורי, (2) אלטרנטיבות, ו-(3) פרטי היישום לגבי השגת התאריך הנוכחי.
+פלט לדוגמה:
+```
+2023-04-12
+```
 
-ב-Ruby, המודול `Date` והמחלקה `Time` הן חלק מסטנדרט התכנות של השפה. זה לא תמיד היה ככה; מקודם, תאריכים ושעות היו יותר מסובכים להשיג ולנהל.
+לכלול זמן עם התאריך, המחלקה `Time` של Ruby מתאימה יותר:
 
-אלטרנטיבות כוללות ספריות צד שלישי כמו 'Chronic' לפרסינג טקסט לתאריכים, או 'ActiveSupport' שמקל על עבודה עם תאריכים במיוחד ב-Rails.
+```ruby
+current_time = Time.now
+puts current_time
+```
 
-בקרבת חצות, זהירות עם השימוש ב-`Date.today` מאחר שיכולים להיות מקרים של אי-תאמה עם השעה המדויקת שמחפשים.
+פלט לדוגמה:
+```
+2023-04-12 14:33:07 +0200
+```
 
-## ראה גם:
-- [Ruby Time Documentation](https://ruby-doc.org/core/Time.html)
-- [ActiveSupport Core Extensions](https://guides.rubyonrails.org/active_support_core_extensions.html)
+אם אתם זקוקים לפונקציונליות נוספת, כמו ניהול אזורי זמן, כדאי לכם להשתמש בגמיש צד שלישי כמו `ActiveSupport` (חלק מ-Rails אך ניתן לשימוש עצמאי).
+
+ראשית, הוסיפו את `activesupport` לקובץ ה-Gemfile שלכם והריצו `bundle install`:
+
+```ruby
+gem 'activesupport'
+```
+
+לאחר מכן, השתמשו בו לניהול אזורי זמן:
+
+```ruby
+require 'active_support/time'
+
+Time.zone = 'Eastern Time (US & Canada)'  # קבעו את אזור הזמן המבוקש שלכם
+current_time_with_zone = Time.zone.now
+puts current_time_with_zone
+```
+
+פלט לדוגמה:
+```
+Wed, 12 Apr 2023 08:33:07 EDT -04:00
+```

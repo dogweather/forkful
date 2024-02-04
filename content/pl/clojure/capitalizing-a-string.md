@@ -1,51 +1,33 @@
 ---
-title:                "Zamiana liter na wielkie w ciągu znaków"
-date:                  2024-01-19
-simple_title:         "Zamiana liter na wielkie w ciągu znaków"
-
+title:                "Zamiana liter na wielkie w łańcuchu znaków"
+date:                  2024-02-03T19:05:03.165308-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Zamiana liter na wielkie w łańcuchu znaków"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/clojure/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-(Co i Dlaczego?)
+## Co i dlaczego?
+Kapitalizacja ciągu znaków polega na zmodyfikowaniu ciągu tak, aby jego pierwszy znak był wielką literą, podczas gdy reszta ciągu pozostaje niezmieniona. Programiści często wykonują kapitalizację ciągów, aby zapewnić spójność danych, szczególnie dla nazw i miejsc, lub aby przestrzegać reguł gramatycznych w interfejsach użytkownika.
 
-Capitalizing strings means changing the first letter of each word to uppercase. We do it to standardize data entries, for titles, or just to make text look cleaner and more formal.
+## Jak to zrobić:
+Clojure, jako język JVM, umożliwia bezpośrednie wykorzystanie metod ciągów znaków z Javy. Oto podstawowy przykład, jak skapitalizować ciąg znaków w Clojure:
 
-## How to:
-(Jak to zrobić:)
-
-```Clojure
+```clojure
 (defn capitalize-string [s]
-  (clojure.string/capitalize s))
+  (if (empty? s)
+    s
+    (str (clojure.string/upper-case (subs s 0 1)) (subs s 1))))
 
-;; Example: Capitalizing a single word
-(println (capitalize-string "clojure"))
-
-;; Example: Capitalizing multiple words using split and map
-(println (map capitalize-string (clojure.string/split "hello clojure world" #"\s")))
-
-;; Output for single word:
-;; "Clojure"
-
-;; Output for multiple words:
-;; ("Hello" "Clojure" "World")
+(capitalize-string "witaj świecie!") ; => "Witaj świecie!"
 ```
 
-## Deep Dive
-(Zagłębienie się)
+Clojure nie zawiera wbudowanej funkcji specjalnie do kapitalizacji ciągów znaków, ale jak pokazano, można to łatwo osiągnąć, łącząc funkcje `clojure.string/upper-case`, `subs` i `str`.
 
-Historically, string capitalization isn't novel—it has roots in early typesetting practices. In Clojure, capitalization can be done using built-in functions like `clojure.string/capitalize`, or you can roll your own with `map` and `reduce` for more complex rules. 
+Dla bardziej zwięzłego rozwiązania i radzenia sobie z bardziej złożonymi manipulacjami ciągami znaków, możesz sięgnąć po bibliotekę osób trzecich. Jedną z takich popularnych bibliotek w ekosystemie Clojure jest `clojure.string`. Jednak, jak wynika z mojej ostatniej aktualizacji, nie oferuje ona bezpośredniej funkcji `capitalize` poza tym, co zostało zademonstrowane z funkcjami podstawowymi Clojure, więc metoda pokazana powyżej jest prostym podejściem bez angażowania dodatkowych bibliotek specjalnie dla kapitalizacji.
 
-The default `capitalize` function will only uppercase the first character of the entire string. For titling purposes, where you might want to capitalize each word, you might utilize `split`, `map`, and `capitalize` together, as shown in the example. Be mindful of limitations: this doesn't account for exceptions in titling like 'of', 'and', or 'the'. 
-
-Implementation wise, when you capitalize a string in Clojure, it's usually done in a functional style—transforming the data without changing the original string (immutability). This is different from some languages that allow directly modifying the original string (mutability).
-
-## See Also
-(Zobacz także)
-
-- [ClojureDocs on clojure.string/capitalize](https://clojuredocs.org/clojure.string/capitalize)
-- [The Java Platform toUpperCase method (Clojure runs on the JVM)](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html#toUpperCase())
-- [Clojure Style Guide](https://guide.clojure.style/#capitalize)
+Pamiętaj, pracując z ciągami znaków w Clojure, które współdziałają z metodami Javy, faktycznie pracujesz z ciągami znaków Javy, co umożliwia Ci wykorzystanie całego arsenału metod ciągów znaków Javy bezpośrednio w Twoim kodzie Clojure, jeśli jest to konieczne.

@@ -1,50 +1,83 @@
 ---
-title:                "Aktuelles Datum abrufen"
-date:                  2024-01-20T15:13:26.344006-07:00
-simple_title:         "Aktuelles Datum abrufen"
-
+title:                "Den aktuellen Datum abrufen"
+date:                  2024-02-03T19:09:13.924319-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Den aktuellen Datum abrufen"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/cpp/getting-the-current-date.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Das Aktualdatum zu erhalten bedeutet, das momentane Datum des Systems abzufragen. Programmierer nutzen das, um datumsbezogene Funktionen zu implementieren, von einfachen Zeitstempeln bis zu wiederkehrenden Ereignissen.
+Das Abrufen des aktuellen Datums in C++ ist eine grundlegende Aufgabe für Programme, die Daten verarbeiten oder anzeigen müssen, die auf der Systemuhr basieren. Es ist wesentlich für das Logging, Zeitstempeln, das Planen von Aufgaben und jede Funktionalität, die auf Daten und Zeit angewiesen ist.
 
-## So geht's:
-```C++
+## Wie:
+C++ bietet mehrere Möglichkeiten, das aktuelle Datum zu erhalten, einschließlich der C++-Standardbibliothek und Drittanbieter-Bibliotheken wie Boost. Die folgenden Beispiele zeigen, wie man diese Aufgabe bewältigen kann.
+
+### Verwendung von `<chrono>` (C++20 und später)
+C++20 führte mehr Funktionalitäten in der `<chrono>`-Bibliothek ein, was es unkompliziert macht, das aktuelle Datum zu erhalten:
+```cpp
 #include <iostream>
 #include <chrono>
-#include <iomanip>
+#include <format> // Für std::format (C++20)
+
+int main() {
+    auto aktueller_zeitpunkt = std::chrono::system_clock::now(); // Erfasse die aktuelle Zeit
+    auto aktuelle_zeit_t = std::chrono::system_clock::to_time_t(aktueller_zeitpunkt); // Konvertiere zu time_t
+
+    // Formatieren der Zeit zu einem lesbaren Format
+    std::cout << "Aktuelles Datum: " << std::format("{:%Y-%m-%d}", std::chrono::system_clock::to_time_t(aktueller_zeitpunkt)) << std::endl;
+
+    return 0;
+}
+```
+**Beispielausgabe:**
+```plaintext
+Aktuelles Datum: 2023-03-15
+```
+
+### Verwendung von `<ctime>`
+Für Programmierer, die mit älteren Versionen von C++ arbeiten oder die traditionelle C-Bibliothek bevorzugen:
+```cpp
+#include <iostream>
 #include <ctime>
 
 int main() {
-    // Hol dir die aktuelle Zeit
-    auto jetzt = std::chrono::system_clock::now();
-    
-    // Wandele sie in eine lesbare Form um
-    std::time_t end_time = std::chrono::system_clock::to_time_t(jetzt);
-
-    // Ausgabe im Jahr-Monat-Tag Format
+    std::time_t t = std::time(0); // Hole die aktuelle Zeit
+    std::tm* jetzt = std::localtime(&t);
     std::cout << "Aktuelles Datum: " 
-              << std::put_time(std::localtime(&end_time), "%Y-%m-%d") 
+              << (jetzt->tm_year + 1900) << '-' 
+              << (jetzt->tm_mon + 1) << '-'
+              <<  jetzt->tm_mday
               << std::endl;
 
     return 0;
 }
 ```
-Ausgabe könnte sein:
+**Beispielausgabe:**
+```plaintext
+Aktuelles Datum: 2023-03-15
 ```
-Aktuelles Datum: 2023-04-01
+
+### Verwendung von Boost Date_Time
+Für Projekte, die die Boost-Bibliotheken nutzen, bietet die Boost Date_Time-Bibliothek eine alternative Methode, um das aktuelle Datum zu erhalten:
+```cpp
+#include <iostream>
+#include <boost/date_time.hpp>
+
+int main() {
+    // Hole den aktuellen Tag mit Boosts Gregorianischem Kalender
+    boost::gregorian::date heute = boost::gregorian::day_clock::local_day();
+    std::cout << "Aktuelles Datum: " << heute << std::endl;
+
+    return 0;
+}
 ```
-
-## Tiefgang:
-Früher nutzten viele C++ Programmierer die C Standardbibliothek Funktion `time.h` für Datums- und Zeitfunktionalitäten. Seit C++11 gibt es `std::chrono`, das für Zeitpunkt- und Dauerberechnungen genutzt wird. Alternativen umfassen Bibliotheken wie Boost.DateTime. Die `std::chrono` Bibliothek bietet eine typsichere Schnittstelle und ist vorzuziehen, um Probleme mit Zeitzonen und Sommer-/Winterzeit zu vermeiden. Einstellungen wie Zeitzonen und Lokalisierung werden in `std::put_time` berücksichtigt, um das Datum entsprechend zu formatieren.
-
-## Siehe auch:
-- CPP Reference zu `<chrono>`: https://en.cppreference.com/w/cpp/header/chrono
-- CPP Reference zu `<iomanip>`: https://en.cppreference.com/w/cpp/header/iomanip
-- Informationen zu Boost.DateTime: https://www.boost.org/doc/libs/release/libs/date_time/
-
-Das waren die Grundlagen, um in C++ das aktuelle Datum abzufragen. Etwas einfaches, aber ein essentielles Werkzeug in deiner Programmierkiste.
+**Beispielausgabe:**
+```plaintext
+Aktuelles Datum: 2023-Mar-15
+```
+Diese Beispiele bieten eine grundlegende Basis für die Arbeit mit Daten in C++, was für eine breite Palette von Anwendungen entscheidend ist.

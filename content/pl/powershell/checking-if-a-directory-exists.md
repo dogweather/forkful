@@ -1,51 +1,39 @@
 ---
 title:                "Sprawdzanie, czy katalog istnieje"
-date:                  2024-01-20T14:57:53.539442-07:00
+date:                  2024-02-03T19:08:13.137785-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Sprawdzanie, czy katalog istnieje"
-
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/powershell/checking-if-a-directory-exists.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Co i dlaczego?
-Sprawdzanie, czy katalog istnieje, to proces weryfikacji, czy określona ścieżka w systemie plików prowadzi do katalogu. Programiści robią to, aby zapobiec błędom podczas próby dostępu lub modyfikacji folderów, które nie istnieją.
+W PowerShellu sprawdzanie, czy katalog istnieje, jest częstym zadaniem, które pomaga skryptom podejmować decyzje na podstawie struktury systemu plików - na przykład unikając błędów przez potwierdzenie, że docelowy katalog jest na miejscu przed próbą czytania z niego lub zapisywania do niego. Jest to niezbędne, aby zapewnić niezawodne działanie skryptu w różnorodnych środowiskach.
 
 ## Jak to zrobić:
-Sprawdzenie, czy katalog istnieje w PowerShell, to kwestia jednej linijki. Użyj `Test-Path` z odpowiednią ścieżką, oto jak:
+PowerShell oferuje prosty sposób na sprawdzenie obecności katalogu za pomocą polecenia `Test-Path`. To polecenie zwraca wartość logiczną wskazującą, czy określona ścieżka istnieje. Oto jak możesz tego użyć:
 
-```PowerShell
-# Sprawdza, czy katalog istnieje
-$ścieżka = "C:\PewnyKatalog"
-if (Test-Path $ścieżka) {
-    Write-Host "Katalog istnieje."
-} else {
-    Write-Host "Katalog nie istnieje."
-}
+```powershell
+# Sprawdź, czy katalog istnieje
+$directoryPath = "C:\ExamplePath"
+$directoryExists = Test-Path -Path $directoryPath
+Write-Output "Czy katalog istnieje? $directoryExists"
 ```
 
-### Przykład wyjściowy:
-Jeżeli katalog istnieje:
-``` 
-Katalog istnieje.
+Przykładowe wyjście dla istniejącego katalogu:
+
 ```
-W przeciwnym przypadku:
-```
-Katalog nie istnieje.
+Czy katalog istnieje? True
 ```
 
-## Głębsze spojrzenie:
-Historia:
-`Test-Path` jest poleceniem dostępnym w PowerShell od jego wczesnych wersji. Jego cel pozostaje niezmieniony - zapewnić proste narzędzie do sprawdzania istnienia elementów w systemie plików.
+I dla katalogu, który nie istnieje:
 
-Alternatywy:
-Wcześniejsze skrypty mogły korzystać z cmdletów takich jak `Get-Item` lub `Get-ChildItem`, ale `Test-Path` jest szybszy i bardziej czytelny dla tego konkretnego przypadku użycia.
+```
+Czy katalog istnieje? False
+```
 
-Szczegóły implementacyjne:
-`Test-Path` nie tylko sprawdza folder, ale także pliki i inne typy elementów w systemie plików. Może też badać rejestr Windows za pomocą różnych przełączników, co czyni go wszechstronnym narzędziem na różne sytuacje.
-
-## Zobacz również:
-- [Oficjalna dokumentacja Test-Path](https://docs.microsoft.com/powershell/module/microsoft.powershell.management/test-path)
-- [PowerShell Gallery Script Samples](https://www.powershellgallery.com/)
-- [Poradnik korzystania z Test-Path na poziomie zaawansowanym](https://ss64.com/ps/test-path.html)
+Dla bardziej złożonych skryptów, zwłaszcza tych interaktywnych z udziałami sieciowymi lub przechowywaniem w chmurze, mogą być potrzebne dodatkowe sprawdzenia lub funkcjonalności, które nie są bezpośrednio dostępne przez `Test-Path`. W takich przypadkach korzystanie z zewnętrznych modułów PowerShell lub bibliotek może być korzystne, chociaż większość rutynowych zadań można wykonać przy użyciu wbudowanych poleceń PowerShell. Do ostatniej aktualizacji mojej wiedzy nie pojawiła się szeroko przyjęta biblioteka stron trzecich specjalnie do sprawdzania istnienia katalogu poza tym, co oferuje `Test-Path`, głównie dlatego, że `Test-Path` sam w sobie jest zarówno solidny, jak i efektywny w tym celu.

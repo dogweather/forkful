@@ -1,47 +1,58 @@
 ---
-title:                "Maiuscolizzare una stringa"
-date:                  2024-01-19
-simple_title:         "Maiuscolizzare una stringa"
-
+title:                "Capitalizzare una stringa"
+date:                  2024-02-03T19:05:20.190125-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Capitalizzare una stringa"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/haskell/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
+## Cosa & Perché?
+Trasformare la prima lettera di una stringa in maiuscolo, garantendo che il resto delle lettere rimanga in minuscolo, è ciò che viene definito capitalizzazione di una stringa. I programmatori eseguono questa operazione per formattare gli output, aderire alla correttezza grammaticale nei testi o migliorare la leggibilità dei dati generati.
 
-Capitalizzare una stringa in informatica significa convertire la prima lettera di ogni parola in maiuscolo. I programmatori spesso capitalizzano per migliorare la leggibilità dei titoli o per conformarsi a degli standard stilistici.
+## Come fare:
+In Haskell, puoi capitalizzare una stringa utilizzando la libreria standard senza bisogno di librerie di terze parti.
 
-## How to:
-
-In Haskell, possiamo capitalizzare una stringa usando la funzione `capitalize` che creeremo. Ecco un semplice esempio:
-
-```Haskell
-import Data.Char (toUpper)
+```haskell
+import Data.Char (toUpper, toLower)
 
 capitalize :: String -> String
-capitalize ""     = ""
-capitalize (x:xs) = toUpper x : map toLower xs
+capitalize "" = ""
+capitalize (head:tail) = toUpper head : map toLower tail
 
-main :: IO ()
-main = putStrLn $ capitalize "ciao mondo"
-
--- Output: Ciao mondo
+-- Utilizzo di esempio:
+main = putStrLn $ capitalize "hello world"
 ```
 
-## Deep Dive
+Output:
+```
+Hello world
+```
 
-La capitalizzazione in programmazione ha radici nella tipografia. La convenzione di iniziare i titoli e i nomi con la lettera maiuscola si riflette ora nel codice. In Haskell, capitalizzare non è nativo come in altri linguaggi che hanno metodi integrati, ma è semplice da implementare.
+Per scenari più complessi o per una maggiore facilità d'uso, potresti voler utilizzare una libreria di terze parti come `text`, popolare per la manipolazione efficiente delle stringhe in Haskell.
 
-La funzione `toUpper` da `Data.Char` converte un singolo carattere in maiuscolo. Usiamo la comprensione delle liste o `map` per applicarla alla prima lettera e `toLower` per il resto della stringa.
+Per prima cosa, devi aggiungere `text` alle dipendenze del tuo progetto. Poi, puoi utilizzare le sue funzioni per capitalizzare una stringa nel modo seguente:
 
-Alternative includono librerie come `text` o `Data.Text` che possono gestire stringhe più efficientemente per applicazioni più grandi.
+```haskell
+import qualified Data.Text as T
+import Data.Char (toUpper)
 
-Dettaglio implementativo importante è assicurarsi di gestire bene stringhe vuote e parola dopo spazi per una capitalizzazione corretta.
+capitalizeText :: T.Text -> T.Text
+capitalizeText text = case T.uncons text of
+    Nothing -> T.empty
+    Just (first, rest) -> T.cons (toUpper first) (T.toLower rest)
 
-## See Also
+-- Utilizzo di esempio con la libreria text:
+main = putStrLn $ T.unpack $ capitalizeText (T.pack "hello world")
+```
 
-- Documentazione `Data.Char`: [Hackage Data.Char](https://hackage.haskell.org/package/base-4.16.0.0/docs/Data-Char.html)
-- Documentazione Haskell su `text`: [Hackage Data.Text](https://hackage.haskell.org/package/text)
-- Approfondimenti sulla tipografia e lettere maiuscole: [Capitalization - Wikipedia](https://en.wikipedia.org/wiki/Capitalization)
+Output:
+```
+Hello world
+```
+
+Entrambi questi esempi dimostrano modi semplici ma efficaci per capitalizzare una stringa in Haskell, con o senza librerie di terze parti.

@@ -1,48 +1,76 @@
 ---
 title:                "Praca z plikami CSV"
-date:                  2024-01-19
+date:                  2024-02-03T19:19:51.022036-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Praca z plikami CSV"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/haskell/working-with-csv.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
-Praca z plikami CSV (Comma-Separated Values) to częste zadanie — zarządzamy danymi. W Haskellu robimy to, by łatwo przetwarzać i analizować duże zbiory danych w formacie, który jest czytelny dla człowieka i maszyny.
+## Co i dlaczego?
+
+Praca z CSV (Comma-Separated Values, wartości rozdzielone przecinkami) polega na parsowaniu oraz generowaniu plików, które przechowują dane tabelaryczne w prostym, tekstowym formacie. Programiści często wykonują to zadanie, aby efektywnie importować lub eksportować dane z arkuszy kalkulacyjnych, baz danych, lub ułatwić wymianę danych pomiędzy różnymi programami.
 
 ## Jak to zrobić:
-W Haskellu do obsługi CSV używamy biblioteki `cassava`. Oto prosty przykład:
 
-```Haskell
+W Haskellu obsługę plików CSV można osiągnąć za pomocą biblioteki `cassava`, jednej z popularnych bibliotek stron trzecich do tego celu. Poniżej przedstawiono przykłady pokazujące, jak czytać z plików CSV oraz jak do nich pisać, używając `cassava`.
+
+**1. Odczytywanie pliku CSV:**
+
+Najpierw upewnij się, że masz zainstalowaną `cassava`, dodając ją do pliku cabal Twojego projektu lub używając Stack.
+
+Oto prosty przykład czytania pliku CSV i wyświetlania każdego rekordu. Zakładamy, że plik CSV ma dwie kolumny: nazwa i wiek.
+
+```haskell
+{-# LANGUAGE OverloadedStrings #-}
 import Data.Csv
 import qualified Data.ByteString.Lazy as BL
 import qualified Data.Vector as V
 
--- Zakładamy, że mamy plik `przykladowe_dane.csv' z danymi:
--- imie,nazwisko,wiek
--- Jan,Kowalski,34
--- Anna,Nowak,28
-
 main :: IO ()
 main = do
-    csvData <- BL.readFile "przykladowe_dane.csv"
+    csvData <- BL.readFile "people.csv"
     case decode NoHeader csvData of
         Left err -> putStrLn err
-        Right v -> V.forM_ v $ \(name, surname, age) -> 
-            putStrLn $ name ++ " " ++ surname ++ ", wiek: " ++ show age
+        Right v -> V.forM_ v $ \(name, age) ->
+            putStrLn $ name ++ " ma " ++ show (age :: Int) ++ " lat."
 ```
 
-Przykładowe wyjście:
+Zakładając, że `people.csv` zawiera:
 ```
-Jan Kowalski, wiek: 34
-Anna Nowak, wiek: 28
+John,30
+Jane,25
+```
+Wynik będzie:
+```
+John ma 30 lat.
+Jane ma 25 lat.
 ```
 
-## Głębsze spojrzenie:
-Historia formatu CSV sięga wczesnych lat informatyki — prostota i elastyczność to powody jego popularności. Alternatywy, jak JSON czy XML, oferują więcej funkcji, ale są mniej praktyczne dla prostych danych tabelarycznych. W Haskellu `Data.Csv` przetwarza CSV do i z wektorów; można też użyć strumieniowania dla dużej wydajności.
+**2. Tworzenie pliku CSV:**
 
-## Zobacz też:
-- [Hackage `cassava` package](https://hackage.haskell.org/package/cassava)
-- [HaskellWiki on CSV](https://wiki.haskell.org/CSV)
+Aby stworzyć plik CSV, możesz użyć funkcji `encode` z `cassava`.
+
+Oto jak możesz zapisać listę rekordów do pliku CSV:
+
+```haskell
+{-# LANGUAGE OverloadedStrings #-}
+import Data.Csv
+import qualified Data.ByteString.Lazy as BL
+
+main :: IO ()
+main = BL.writeFile "output.csv" $ encode [("John", 30), ("Jane", 25)]
+```
+
+Po uruchomieniu tego programu, `output.csv` będzie zawierać:
+
+```
+John,30
+Jane,25
+```
+
+To zwięzłe wprowadzenie do pracy z plikami CSV w Haskellu, używając biblioteki `cassava`, demonstruje, jak czytać z plików CSV oraz jak do nich pisać, co czyni zadania manipulacji danymi bardziej przystępnymi dla osób nowych w języku.

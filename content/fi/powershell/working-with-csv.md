@@ -1,45 +1,81 @@
 ---
-title:                "CSV-tiedostojen käsittely"
-date:                  2024-01-19
-simple_title:         "CSV-tiedostojen käsittely"
-
+title:                "Työskentely CSV:n kanssa"
+date:                  2024-02-03T19:20:59.839026-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Työskentely CSV:n kanssa"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/powershell/working-with-csv.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? - Mitä ja miksi?
-CSV on yksinkertainen tiedostomuoto, joka sisältää taulukkomaisia tietoja tekstimuodossa. Ohjelmoijat käyttävät CSV:tä, koska se on helppolukuinen ja sitä tukevat monet ohjelmistot ja kielet, mikä tekee tietojen siirrosta vaivatonta.
+## Mikä & Miksi?
 
-## How to - Kuinka tehdä:
-```PowerShell
-# CSV-tiedoston lukeminen:
-$csvData = Import-Csv -Path "C:\data\esimerkki.csv"
+CSV-tiedostojen (pilkulla erotetut arvot) käsittely on yleinen tehtävä datan hallitsemiseksi ja manipuloimiseksi rakenteellisessa, taulukkomuodossa. Ohjelmoijat suorittavat usein tätä operaatiota tuodakseen, viedäkseen tai käsitelläkseen dataa tehokkaasti erilaisissa sovelluksissa, kuten datan analysointi, raportointi tai jopa web-sovellusten tehostaminen.
 
-# CSV-tiedoston kirjoittaminen:
-$people = @(
-    [PSCustomObject]@{Nimi='Maija'; Ikä=30; Kaupunki='Helsinki'},
-    [PSCustomObject]@{Nimi='Kalle'; Ikä=42; Kaupunki='Espoo'}
+## Kuinka:
+
+### CSV-tiedoston lukeminen
+
+CSV-tiedostosta lukemiseksi käytä `Import-Csv` cmdlet-komentoa. Tämä cmdlet lukee tiedoston ja muuntaa sen mukautetuiksi PowerShell-objekteiksi jokaista riviä varten.
+
+```powershell
+# CSV-tiedoston tuominen
+$data = Import-Csv -Path "C:\Data\users.csv"
+# Sisällön näyttäminen
+$data
+```
+
+**Esimerkkituloste:**
+
+```
+Name    Age    City
+----    ---    ----
+John    23     New York
+Doe     29     Los Angeles
+```
+
+### Kirjoittaminen CSV-tiedostoon
+
+Vastaavasti, kun halutaan kirjoittaa dataa CSV-tiedostoon, käytetään `Export-Csv` cmdlet-komentoa. Tämä cmdlet ottaa syötteeksi objekteja ja muuntaa ne CSV-muotoon.
+
+```powershell
+# Vietävän objektin luominen
+$users = @(
+    [PSCustomObject]@{Name='John'; Age='23'; City='New York'},
+    [PSCustomObject]@{Name='Doe'; Age='29'; City='Los Angeles'}
 )
-$people | Export-Csv -Path "C:\data\uusi_esimerkki.csv" -NoTypeInformation
 
-# Tulostetaan `$csvData`
-$csvData
-```
-Sample output:
-```
-Nimi  Ikä Kaupunki
-----  --- --------
-Maija 30  Helsinki
-Kalle 42  Espoo
+# Vieminen CSV-tiedostoon
+$users | Export-Csv -Path "C:\Data\new_users.csv" -NoTypeInformation
 ```
 
-## Deep Dive - Syvempi katsaus:
-CSV (Comma-Separated Values) on peräisin 1970-luvulta ja oli alun perin tarkoitettu yksinkertaiseen, sarakepohjaiseen datan tallentamiseen. Nykyään on olemassa XML ja JSON, jotka ovat monimutkaisempia mutta myös tehokkaampia vaihtoehtoja. PowerShell käyttää .NET-luokkia kuten `TextFieldParser` tai `OleDb` CSV:n käsittelyyn, mutta `Import-Csv` ja `Export-Csv` ovat yksinkertaisia ja tehokkaita cmdlet-komentoja näihin tarpeisiin.
+Suorituksen jälkeen luodaan tiedosto nimeltä `new_users.csv` annetuilla tiedoilla.
 
-## See Also - Katso myös:
-- PowerShell-dokumentaatio `Import-Csv`: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/import-csv
-- PowerShell-dokumentaatio `Export-Csv`: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/export-csv
-- CSV-tiedostot Wiki: https://fi.wikipedia.org/wiki/CSV-tiedosto
-- Microsoft Excel -tuki CSV-tiedostoille: https://support.microsoft.com/fi-fi/office/csv-tiedostomuodon-tuominen-ja-viennin-ohjeet-3e1d9630-8cc4-4cd2-af6b-5c725ee173c8
+### CSV-sisällön suodattaminen ja muokkaaminen
+
+CSV-tiedoston datan suodattamiseksi tai muokkaamiseksi käytä PowerShellin objektien käsittelykykyjä. Esimerkiksi, valitaksesi vain käyttäjät, jotka ovat tietyn iän yläpuolella ja tietystä kaupungista:
+
+```powershell
+# Datan tuominen ja suodattaminen
+$filteredData = Import-Csv -Path "C:\Data\users.csv" | Where-Object {
+    $_.Age -gt 25 -and $_.City -eq 'Los Angeles'
+}
+
+# Suodatetun datan näyttäminen
+$filteredData
+```
+
+**Esimerkkituloste:**
+
+```
+Name    Age    City
+----    ---    ----
+Doe     29     Los Angeles
+```
+
+### Kolmannen osapuolen kirjastojen käyttäminen
+
+Vaikka PowerShellin natiivit cmdlet-komennot yleensä riittävät yleisiin tehtäviin, monimutkaisemmat operaatiot saattavat hyötyä kolmannen osapuolen kirjastoista tai työkaluista. Kuitenkin, tavallisille CSV-käsittelyille, kuten lukemiselle, kirjoittamiselle, suodattamiselle tai lajittelulle, PowerShellin sisäänrakennetut cmdlet-komennot, kuten `Import-Csv` ja `Export-Csv`, tarjoavat yleensä vankan toiminnallisuuden ilman tarvetta ylimääräisille kirjastoille.

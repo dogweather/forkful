@@ -1,42 +1,69 @@
 ---
-title:                "Datum aus einem String parsen"
-date:                  2024-01-20T15:37:46.834986-07:00
-simple_title:         "Datum aus einem String parsen"
-
+title:                "Einen Datum aus einem String analysieren"
+date:                  2024-02-03T19:15:03.318881-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Einen Datum aus einem String analysieren"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/powershell/parsing-a-date-from-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Das Parsen eines Datums aus einem String bedeutet, Text in ein Datum-Objekt umzuwandeln. Programmierer machen das, um mit Daten zu arbeiten, die in menschenlesbarem Format eingeben oder empfangen werden.
+Das Parsen eines Datums aus einem String bedeutet, geschriebene Daten in Textform zu erkennen und in einen Datentyp umzuwandeln, den PowerShell verstehen und mit dem es arbeiten kann. Programmierer tun dies, um Daten zu manipulieren, zu formatieren, zu vergleichen oder zu berechnen, was bei Skripten, die sich mit Logdateien, Benutzereingaben oder der Datenverarbeitung befassen, häufig vorkommt.
 
-## How to:
-Hier ein paar Beispiele, wie man das anstellt:
+## Wie geht das:
+PowerShell macht das Parsen von Daten aus Strings unkompliziert mit seinem `Get-Date`-Cmdlet und der Typbeschleunigung `[datetime]`, die gut für standardisierte Datumsformate funktionieren. Für komplexere oder nicht standardisierte Datumsstrings kann die Methode `[datetime]::ParseExact` verwendet werden, um das genaue Format festzulegen.
 
-```PowerShell
-# Parsen eines einfachen Datumsformats
-$datumString = "31.12.2023"
-$datumObjekt = [DateTime]::ParseExact($datumString, "dd.MM.yyyy", $null)
-$datumObjekt
-
-# Parsen mit Kulturinformationen (Deutsches Format)
-$deKultur = [Globalization.CultureInfo]::GetCultureInfo("de-DE")
-$datumObjektDe = [DateTime]::ParseExact($datumString, "dd.MM.yyyy", $deKultur)
-$datumObjektDe
+### Verwendung von `Get-Date` und `[datetime]`:
+```powershell
+# Einfache Konvertierung mit Get-Date
+$stringDate = "2023-04-01"
+$date = Get-Date $stringDate
+echo $date
+```
+**Beispielausgabe:**
+```
+Samstag, 1. April 2023 00:00:00
 ```
 
-Ausgabe:
+```powershell
+# Verwendung des Typbeschleunigers [datetime]
+$stringDate = "April 1, 2023"
+$date = [datetime]$stringDate
+echo $date
 ```
-Sonntag, 31. Dezember 2023 00:00:00
-Sonntag, 31. Dezember 2023 00:00:00
+**Beispielausgabe:**
+```
+Samstag, 1. April 2023 00:00:00
 ```
 
-## Deep Dive:
-Das Umwandeln von Strings in Datumsangaben ist nichts Neues. Früher war es komplizierter und fehleranfälliger. Heutzutage bieten Programmiersprachen wie PowerShell integrierte Funktionen dafür. Es gibt Alternativen zum ParseExact, z.B. `Parse`, `TryParse`, und `TryParseExact`, die unterschiedlich rigide mit dem Format umgehen. Wichtig sind auch Kulturinformationen (`CultureInfo`), da Datumsformate weltweit variieren. Ohne spezifische Kulturangaben nutzt PowerShell die Kultur des Betriebssystems.
+### Verwendung von `[datetime]::ParseExact` für nicht standardisierte Formate:
+Für Formate, die nicht automatisch erkannt werden, können Sie das genaue Format definieren, um eine korrekte Analyse sicherzustellen.
+```powershell
+$stringDate = "01-04-2023 14:00"
+$format = "dd-MM-yyyy HH:mm"
+$culture = [Globalization.CultureInfo]::InvariantCulture
+$date = [datetime]::ParseExact($stringDate, $format, $culture)
+echo $date
+```
+**Beispielausgabe:**
+```
+Samstag, 1. April 2023 14:00:00
+```
 
-## See Also:
-- [CultureInfo Class - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/api/system.globalization.cultureinfo?view=net-6.0)
-- [DateTime.ParseExact Method - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/api/system.datetime.parseexact?view=net-6.0)
-- [DateTime.TryParseExact Method - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/api/system.datetime.tryparseexact?view=net-6.0)
+### Einsatz von Drittanbieter-Bibliotheken
+Obwohl PowerShell selbst ziemlich leistungsfähig für das Parsen von Daten ist, könnte man für sehr komplexe Szenarien oder zusätzliche Funktionalitäten .NET-Bibliotheken wie NodaTime erkunden, obwohl PowerShell's native Fähigkeiten für viele typische Anwendungsfälle ausreichen werden.
+
+```powershell
+# Verwendung von NodaTime nur als Illustration, beachten Sie, dass Sie die Bibliothek zu Ihrem Projekt hinzufügen müssen
+# Install-Package NodaTime -Version 3.0.5
+# Verwendung von NodaTime zum Parsen eines Datums
+[string]$stringDate = "2023-04-01T14:00:00Z"
+[NodaTime.Instant]::FromDateTimeUtc([datetime]::UtcNow)
+[NodaTime.LocalDate]$localDate = [NodaTime.LocalDate]::FromDateTime([datetime]::UtcNow)
+echo $localDate
+```
+**Wichtiger Hinweis:** Der obige Code dient nur als konzeptionelle Illustration. In der Praxis stellen Sie sicher, dass NodaTime korrekt zu Ihrem Projekt hinzugefügt wird, damit die Typen und Methoden verfügbar sind.

@@ -1,36 +1,52 @@
 ---
-title:                "Escrevendo no erro padrão"
-date:                  2024-01-19
-simple_title:         "Escrevendo no erro padrão"
-
+title:                "Escrevendo para o erro padrão"
+date:                  2024-02-03T19:32:18.919169-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Escrevendo para o erro padrão"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/bash/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## O Que é & Por Que?
-Escrever no standard error (stderr) é mandar mensagens de erro para um canal de saída específico, separado da saída normal (stdout). Programadores fazem isso para diferenciar a saída comum dos erros e para poder redirecionar e manipular essas mensagens de forma independente.
+## O quê e Por quê?
+Escrever para o erro padrão (stderr) no Bash é sobre direcionar mensagens de erro ou qualquer saída de diagnóstico importante separadamente da saída padrão (stdout). Programadores fazem isso para garantir que mensagens de erro possam ser facilmente identificadas, registradas ou até ignoradas, auxiliando nos processos de depuração e registro.
 
-## Como Fazer:
-```Bash
-# Escrevendo mensagem de erro para stderr
-echo "Erro: Algo deu errado." >&2
+## Como fazer:
+No Bash, você usa `>&2` para redirecionar a saída para stderr. Aqui está um exemplo básico:
 
-# Exemplo de redirecionamento de stderr para um arquivo
-echo "Erro: Falha na operação." >&2 2>erro.log
-
-# Exemplo de redirecionamento de stdout e stderr para diferentes arquivos
-echo "Informação normal." >saida.log
-echo "Erro grave." >&2 2>erro.log
+```bash
+echo "Esta é uma mensagem normal"
+echo "Esta é uma mensagem de erro" >&2
 ```
 
-Nos exemplos acima, as mensagens de erro serão exibidas na tela ou salvas no arquivo `erro.log`, dependendo do redirecionamento.
+Ao executar este script, ambas as mensagens serão exibidas no console, mas se você redirecioná-las, pode separar o stdout do stderr. Por exemplo:
 
-## Deep Dive
-Historicamente, a distinção entre stdout e stderr surgiu em sistemas Unix para ajudar na depuração de programas, permitindo que as mensagens de erro fossem tratadas separadamente. Alternativas para escrever em stderr incluem usar comandos e linguagens de programação que ofereçam manipulação embutida de erro, como `stderr.write()` em Python. No Bash, stderr é representado pelo descritor de arquivo 2, enquanto stdout é o descritor 1, daí o uso de `2>` para redirecionar erros. 
+```bash
+bash script.sh > output.txt 2> error.txt
+```
 
-## Veja Também:
-- Guia sobre redirecionamentos no Bash: https://www.gnu.org/software/bash/manual/bash.html#Redirections
-- Explicações detalhadas sobre stdout e stderr: https://www.tldp.org/LDP/abs/html/io-redirection.html
-- Práticas recomendadas para manipulação de erros em scripts: https://google.github.io/styleguide/shellguide.html#s7.7-separate-stdout-from-stderr
+`output.txt` conterá `"Esta é uma mensagem normal"`, enquanto `error.txt` capturará `"Esta é uma mensagem de erro"`.
+
+Para um caso de uso prático, considere um script que processa arquivos e relata um erro se um arquivo não existir:
+
+```bash
+filename="exemplo.txt"
+
+if [ ! -f "$filename" ]; then
+    echo "$filename não existe!" >&2
+    exit 1
+else
+    echo "Processando $filename"
+fi
+```
+
+Saída de amostra diretamente no console quando `exemplo.txt` não existir:
+
+```
+exemplo.txt não existe!
+```
+
+Não existem bibliotecas de terceiros diretas no Bash para manipulação de stderr, já que o redirecionamento é nativamente suportado e geralmente suficiente. No entanto, para aplicações complexas, frameworks de registro ou ferramentas de registro externas como `syslog` ou `log4bash` podem ser incorporadas para gerenciar tanto o stdout quanto o stderr de forma mais eficaz.

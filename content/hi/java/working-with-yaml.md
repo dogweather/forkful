@@ -1,43 +1,93 @@
 ---
-title:                "यामल के साथ काम करना"
-date:                  2024-01-19
-simple_title:         "यामल के साथ काम करना"
-
+title:                "YAML के साथ काम करना"
+date:                  2024-02-03T19:26:09.690729-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "YAML के साथ काम करना"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/java/working-with-yaml.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (क्या और क्यों?)
-YAML ("यामल") एक डेटा सीरियलाइजेशन फार्मेट है जो ह्यूमन-रीडेबल है। जावा प्रोग्रामर्स विन्यास फाइलें, डाटा इंटरचेंज, और ऐप्लिकेशन सेटिंग्स हेतु YAML का उपयोग करते हैं।
+## क्या और क्यों?
+YAML, जिसे "YAML Ain't Markup Language" के लिए छोटा किया जाता है, एक मानव-पठनीय डेटा सीरियलाइजेशन मानक है जिसे प्रोग्रामर कॉन्फ़िगरेशन फाइलों, डेटा डंपिंग, और भाषाओं के बीच डेटा संचारण के लिए उपयोग करते हैं। इसकी पठनीयता और उपयोग में आसानी के कारण यह लोकप्रिय है, जिससे यह एप्लिकेशन और सेवाओं को कॉन्फ़िगर करने के लिए एक सामान्य विकल्प बन जाता है।
 
-## How to: (कैसे करें:)
-YAML को Java में पढ़ने के लिए, आपको Jackson या SnakeYAML जैसे लाइब्ररी की जरूरत होगी। यहां एक उदाहरण है SnakeYAML का उपयोग करते हुए:
+## कैसे करें:
+Java में, आप YAML फाइलों के साथ तृतीय-पक्ष लाइब्रेरीज़ का उपयोग करके काम कर सकते हैं क्योंकि Java Standard Edition में YAML के लिए निर्मित समर्थन शामिल नहीं है। एक लोकप्रिय लाइब्रेरी SnakeYAML है, जो आसानी से YAML डेटा को पार्स करने और उत्पन्न करने की अनुमति देती है।
 
+### SnakeYAML सेटअप करना
+सबसे पहले, अपने प्रोजेक्ट में SnakeYAML को शामिल करें। यदि आप Maven का उपयोग कर रहे हैं, तो अपनी `pom.xml` में निम्नलिखित निर्भरता जोड़ें:
+
+```xml
+<dependency>
+    <groupId>org.yaml</groupId>
+    <artifactId>snakeyaml</artifactId>
+    <version>1.30</version>
+</dependency>
+```
+
+### YAML पढ़ना
 ```java
 import org.yaml.snakeyaml.Yaml;
 import java.io.InputStream;
 import java.util.Map;
 
-public class YamlExample {
+public class ReadYamlExample {
     public static void main(String[] args) {
         Yaml yaml = new Yaml();
-        InputStream inputStream = YamlExample.class
-          .getClassLoader()
-          .getResourceAsStream("config.yaml");
-        Map<String, Object> data = yaml.load(inputStream);
-        System.out.println(data.get("key"));
+        try (InputStream inputStream = ReadYamlExample.class
+                .getClassLoader()
+                .getResourceAsStream("config.yml")) {
+            Map<String, Object> data = yaml.load(inputStream);
+            System.out.println(data);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
 ```
+मान लें `config.yml` ऐसा दिखता है:
+```yaml
+name: Example
+version: 1.0
+features:
+  - login
+  - signup
+```
+आउटपुट होगा:
+```
+{name=Example, version=1.0, features=[login, signup]}
+```
 
-यह कोड `config.yaml` फाइल से डेटा पढ़ता है और उसमें से "key" वैल्यू प्रिंट करता है।
+### YAML लिखना
+जावा ऑब्जेक्ट्स से एक YAML उत्पन्न करने के लिए, SnakeYAML द्वारा प्रदान की गई `dump` विधि का उपयोग करें:
+```java
+import org.yaml.snakeyaml.Yaml;
+import java.util.Arrays;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
-## Deep Dive (गहराई से जानकारी)
-YAML, "YAML Ain't Markup Language" के लिए है, जो एक रिकर्सिव एक्रोनिम है। YAML की शुरुआत 2001 में हुई थी और यह JSON का एक सुपरसेट है। YAML और JSON में कुछ समानताएँ हैं, लेकिन YAML में कमेंट्स और मल्टी-लाइन स्ट्रिंग्स के लिए बेहतर सपोर्ट होता है। विकल्पों में XML और JSON शामिल हैं, लेकिन YAML का उपयोग सरलता और पढ़ने में आसानी के लिए प्राथमिकता दी जाती है। YAML फ़ाइलों को पार्स करने में कंप्लेक्सिटी होती है, जिसे Java प्रोग्रामिंग लाइब्रेरीज़ का उपयोग करके सरल किया जा सकता है।
+public class WriteYamlExample {
+    public static void main(String[] args) {
+        Map<String, Object> data = new LinkedHashMap<>();
+        data.put("name", "Example");
+        data.put("version", 1.0);
+        data.put("features", Arrays.asList("login", "signup"));
 
-## See Also (संबंधित लिंक्स)
-- YAML विकिपीडिया पेज: [https://en.wikipedia.org/wiki/YAML](https://en.wikipedia.org/wiki/YAML)
-- SnakeYAML गाइड: [https://bitbucket.org/asomov/snakeyaml/wiki/Documentation](https://bitbucket.org/asomov/snakeyaml/wiki/Documentation)
-- Jackson YAML गाइड: [https://github.com/FasterXML/jackson-dataformats-text/tree/master/yaml](https://github.com/FasterXML/jackson-dataformats-text/tree/master/yaml)
+        Yaml yaml = new Yaml();
+        String output = yaml.dump(data);
+        System.out.println(output);
+    }
+}
+```
+यह निम्नलिखित YAML सामग्री उत्पन्न और प्रिंट करेगा:
+```yaml
+name: Example
+version: 1.0
+features:
+- login
+- signup
+```
+SnakeYAML का उपयोग करके, Java डेवलपर्स आसानी से अपने एप्लिकेशनों में YAML पार्सिंग और जनरेशन को एकीकृत कर सकते हैं, YAML की पठनीयता और सादगी का लाभ उठाते हुए कॉन्फ़िगरेशन और डेटा एक्सचेंज उद्देश्यों के लिए।

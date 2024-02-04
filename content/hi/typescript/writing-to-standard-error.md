@@ -1,35 +1,64 @@
 ---
-title:                "मानक त्रुटि में लिखना"
-date:                  2024-01-19
-simple_title:         "मानक त्रुटि में लिखना"
-
+title:                "मानक त्रुटि के लिए लिखना"
+date:                  2024-02-03T19:35:34.434242-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "मानक त्रुटि के लिए लिखना"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/typescript/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (क्या और क्यों?)
-स्टैंडर्ड एरर में लिखना त्रुटी और डायग्नोस्टिक संदेशों के लिए एक स्ट्रीम है। प्रोग्रामर्स इसे डिबगिंग को आसान बनाने और स्टैंडर्ड आउटपुट को सिर्फ वैध डेटा के लिए रखने के लिए इस्तेमाल करते हैं।
+## क्या और क्यों?
+TypeScript में, मानक त्रुटि (stderr) में लिखना एक प्रक्रिया है जिसमें त्रुटि संदेशों या लॉगों को सीधे पर्यावरण के त्रुटि आउटपुट स्ट्रीम में भेजा जाता है (जैसे कि node.js या एक वेब ब्राउज़र में कंसोल)। यह कार्यक्रम डेटा के लिए आमतौर पर प्रयुक्त मानक आउटपुट (stdout) के साथ हस्तक्षेप किए बिना समस्याओं का निदान करने के लिए आवश्यक है, सुनिश्चित करता है कि त्रुटि हैंडलिंग और लॉगिंग कुशलता और सुसंगतता से प्रबंधित की जाती है।
 
-## How to: (कैसे करें:)
-```TypeScript
-// स्टैंडर्ड एरर में एक त्रुटि संदेश लिखें
-process.stderr.write('यह एक त्रुटि संदेश हैं\n');
+## कैसे करें:
+TypeScript, जो कि JavaScript का एक सुपरसेट है, stderr में लिखने के लिए अंतर्निहित JS रनटाइम पर्यावरण (जैसे Node.js) पर निर्भर करता है। यहां बताया गया है कि आप इसे सीधे कैसे कर सकते हैं:
 
-// स्टैंडर्ड आउटपुट और स्टैंडर्ड एरर का इस्तेमाल करते हुए उदाहरण
-console.log('स्टैंडर्ड आउटपुट पर संदेश');
-console.error('स्टैंडर्ड एरर पर संदेश');
-
-// Sample Output:
-// स्टैंडर्ड आउटपुट पर संदेश
-// स्टैंडर्ड एरर पर संदेश
+```typescript
+console.error("This is an error message.");
 ```
 
-## Deep Dive (गहन जानकारी)
-"standard error" (stderr) एक UNIX concept है जो कि लगभग 1980 के दशक से उपयोग में है। इसका उपयोग एरर मैसेजेस और वॉर्निंग को स्टैंडर्ड आउटपुट से अलग रखने के लिए किया जाता है। Node.js में, `process.stderr` एक लिखने योग्य स्ट्रीम है जिसका इस्तेमाल आप सीधे `console.error` के जरिए या `process.stderr.write` का उपयोग करते हुए कर सकते हैं। `console.error` फंक्शन `stderr` स्ट्रीम को और आसानी से उपयोग करने के लिए उपलब्ध करवाता है और इसमें बिल्ट-इन स्ट्रिंग फॉर्मेटिंग भी होती है।
+stderr पर नमूना आउटपुट:
+```
+This is an error message.
+```
 
-## See Also (यह भी देखें)
-- Node.js Documentation on Console: https://nodejs.org/api/console.html
-- Node.js Documentation on process.stderr: https://nodejs.org/api/process.html#process_process_stderr
-- A Guide to Node.js Logging: https://www.twilio.com/blog/guide-node-js-logging
+Node.js पर्यावरण में, आप `process.stderr.write()` मेथड का उपयोग करके और अधिक निम्न स्तरीय लेखन कर सकते हैं:
+
+```typescript
+process.stderr.write("Low level error message.\n");
+```
+
+stderr पर नमूना आउटपुट:
+```
+Low level error message.
+```
+
+अधिक संरचित त्रुटि लॉगिंग के लिए, आप `winston` या `pino` जैसे लोकप्रिय तृतीय-पक्ष लाइब्रेरीज का उपयोग कर सकते हैं। `winston` का उपयोग करके त्रुटियों को लॉग करने का तरीका यहाँ दिया गया है:
+
+पहले, `winston` को स्थापित करें:
+
+```bash
+npm install winston
+```
+
+फिर आपकी TypeScript फ़ाइल में इसका उपयोग करें:
+
+```typescript
+import * as winston from 'winston';
+
+const logger = winston.createLogger({
+  levels: winston.config.syslog.levels,
+  transports: [
+    new winston.transports.Console(),
+    new winston.transports.File({ filename: 'error.log', level: 'error' })
+  ],
+});
+
+logger.error('Error logged using winston.');
+```
+
+यह कंसोल और `error.log` नामक एक फाइल में त्रुटि लिखेगा। याद रखें, फाइलों में लेखन के समय, डिस्क स्पेस के उपयोग से संबंधित समस्याओं को रोकने के लिए फाइल अनुमतियों और रोलओवर का प्रबंधन करना महत्वपूर्ण है।

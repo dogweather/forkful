@@ -1,31 +1,52 @@
 ---
 title:                "Merkkijonon muuttaminen isoiksi kirjaimiksi"
-date:                  2024-01-19
+date:                  2024-02-03T19:04:56.779644-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Merkkijonon muuttaminen isoiksi kirjaimiksi"
-
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/elixir/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
-Kirjamerkkijonon suurentaminen tarkoittaa tekstin ensimmäisen kirjaimen muuttamista suureksi. Ohjelmoijat käyttävät toimintoa esimerkiksi käyttäjän nimen muotoiluun tai lauseiden yhdenmukaistamiseen.
+## Mikä ja miksi?
+
+Merkkijonon alkukirjaimen muuttaminen isoksi tarkoittaa merkkijonon ensimmäisen kirjaimen muuttamista isoksi kirjaimeksi samalla varmistaen, että kaikki muut kirjaimet ovat pieniä. Tämä toimenpide on yleisesti tarpeen käyttäjän syötteen muotoilussa tai tekstiä näytettäessä käyttöliittymissä, joissa johdonmukaisuus ja luettavuus ovat tärkeitä.
 
 ## Kuinka:
-```elixir
-defmodule StringHelpers do
-  def capitalize_string(str) when is_binary(str) do
-    String.capitalize(str)
-  end
-end
 
-IO.puts StringHelpers.capitalize_string("moi, maailma!") # => "Moi, maailma!"
+Elixir tarjoaa suoraviivaisen tavan muuttaa merkkijonot alkukirjaimeltaan isoksi käyttämällä sen sisäänrakennettuja funktioita ilman kolmansien osapuolien kirjastoja. Tässä on yksinkertainen esimerkki:
+
+```elixir
+string = "elixir ohjelmointi"
+capitalized_string = String.capitalize(string)
+IO.puts capitalized_string
 ```
 
-## Syväsukellus
-Kirjamerkkijonon suurentaminen on ollut osa ohjelmistokehitystä alusta lähtien, jolloin tekstinpätkien oikeaoppista esittämistä pidettiin tärkeänä. Elixir mahdollistaa merkkijonojen suurentamisen `String.capitalize/1`-funktiolla. Vaihtoehtoisesti voidaan käyttää `Regex`-kirjastoa, mutta se ei ole useimmiten tarpeen. `String.capitalize/1` komennossa suurennetuksi tulee aina ensimmäinen kirjain eikä esimerkiksi joka sana (kuten joissakin kielissä tehdään).
+Tuloste:
 
-## Katso Myös
-- Elixirin virallinen dokumentaatio String-moduulista: https://hexdocs.pm/elixir/String.html
-- Unicode standardi ja suur-/pienkirjaimet: http://www.unicode.org/reports/tr21/tr21-5.html
+```
+Elixir ohjelmointi
+```
+
+Tapauksissa, joissa tarvitaan enemmän kontrollia tai monimutkaisempaa alkukirjainten muokkauslogiikkaa, saatat yhdistää erilaisia String-funktioita. Esimerkiksi, jos haluat muuttaa jokaisen sanan alkukirjaimen isoksi lauseessa, voit jakaa lauseen sanoiksi, muuttaa jokaisen alkukirjaimen isoksi ja sitten yhdistää ne takaisin yhteen:
+
+```elixir
+sentence = "elixir on hauskaa"
+capitalized_sentence = sentence 
+                        |> String.split() 
+                        |> Enum.map(&String.capitalize/1) 
+                        |> Enum.join(" ")
+
+IO.puts capitalized_sentence
+```
+
+Tuloste:
+
+```
+Elixir On Hauskaa
+```
+
+Vaikka Elixiring peruskirjasto kattaa useimmat tarpeet, tarkempaan tekstin käsittelyyn, mukaan lukien edistyneet merkkijonojen alkukirjaimen muokkaukset, saatat tutkia kolmannen osapuolen kirjastoja, kuten Cldr kansainvälistämistä varten, joka voi tarjota paikkakohtaisia alkukirjaimen muokkauskäyttäytymisiä.

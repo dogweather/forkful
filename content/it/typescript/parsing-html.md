@@ -1,43 +1,63 @@
 ---
-title:                "Analisi dell'HTML"
-date:                  2024-01-20T15:34:17.663870-07:00
-simple_title:         "Analisi dell'HTML"
-
+title:                "Analisi del HTML"
+date:                  2024-02-03T19:13:13.585602-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Analisi del HTML"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/typescript/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Parse HTML significa trasformare codice HTML in strutture dati che JavaScript può capire e manipolare. Lo facciamo per interagire dinamicamente con il contenuto di una pagina web, per esempio per estrarre informazioni o aggiornare la UI.
+## Cosa e Perché?
 
-## How to:
-```TypeScript
+Analizzare l'HTML significa setacciare il codice HTML per trovare, estrarre o manipolare informazioni. I programmatori lo fanno per interagire con i contenuti web—magari per effettuare scraping di dati, o per automatizzare i browser.
+
+## Come fare:
+
+Per iniziare, installa una libreria come `node-html-parser`. Eccoti il comando per il terminale:
+
+```bash
+npm install node-html-parser
+```
+
+Ora, analizziamo un po' di HTML di base in TypeScript:
+
+```typescript
 import { parse } from 'node-html-parser';
 
-const html = `<div>Salve Mondo!</div>`;
+const html = `<ul class="fruits">
+                <li>Mela</li>
+                <li>Banana</li>
+              </ul>`;
+
 const root = parse(html);
-
-// Ottieni il primo div
-const div = root.firstChild;
-console.log(div?.toString()); // Output: <div>Salve Mondo!</div>
-
-// Estrai il testo
-const text = div?.innerText;
-console.log(text); // Output: Salve Mondo!
+console.log(root.querySelector('.fruits').textContent);  // "Mela Banana"
 ```
-Il codice sopra mostra come analizzare un semplice snippet HTML e ottenere il testo da esso.
 
-## Deep Dive
-L'analisi HTML è stata centrale fin dall'inizio del web, quando era necessaria per mostrare le pagine sui browser. Oggi, abbiamo scelto `node-html-parser` per TypeScript, ma ci sono alternative come `jsdom` che simulano un ambiente DOM completo o `cheerio` che lavora con una sintassi simile a jQuery.
+E se vuoi prendere solo le banane:
 
-`node-html-parser` è leggero e veloce, particolarmente adatto quando non è necessario un DOM completo. Utilizza l'AST (Abstract Syntax Tree) per analizzare l'HTML e trasformarlo in nodi accessibili che possiamo manipolare con TypeScript.
+```typescript
+const bananas = root.querySelectorAll('li')[1].textContent;
+console.log(bananas);  // "Banana"
+```
 
-L'implementazione prevede la gestione dell'HTML standard e non standard, correggendo automaticamente gli errori comuni di markup.
+## Approfondimento
 
-## See Also
-- Documentazione `node-html-parser`: https://github.com/taoqf/node-html-parser
-- Alternativa `jsdom`: https://github.com/jsdom/jsdom
-- Alternativa `cheerio`: https://github.com/cheeriojs/cheerio
-- Specifiche del World Wide Web Consortium (W3C) sull'HTML: https://www.w3.org/TR/html52/
+L'analisi dell'HTML non è una novità—esiste da quando sono nati i primi siti web. Inizialmente, gli sviluppatori potrebbero aver usato espressioni regolari, ma la situazione si è complicata rapidamente. Ecco quindi il Parser DOM: stabile, ma legato al browser.
+
+Librerie come `node-html-parser` semplificano la situazione. Ti permettono di interrogare l'HTML come faresti con jQuery, ma lato server con Node.js. Sono veloci, tolleranti all'HTML sporco, e amichevoli con il DOM.
+
+C'è anche `jsdom`, che simula un intero ambiente browser. È più pesante ma più approfondito, creando un Document Object Model (DOM) completo per la manipolazione e l'interazione.
+
+Non dimentichiamoci poi di Cheerio. Combina velocità con una sintassi simile a jQuery e un ingombro minore, collocandosi felicemente tra i due.
+
+## Vedi Anche
+
+Se sei alla ricerca di altro, immergiti in questi:
+- [Specifiche W3C per l'Analisi e la Serializzazione del DOM](https://www.w3.org/TR/DOM-Parsing/)
+- [node-html-parser su GitHub](https://github.com/taoqf/node-html-parser)
+- [Repository GitHub di jsdom](https://github.com/jsdom/jsdom)
+- [Sito Web di Cheerio](https://cheerio.js.org/)

@@ -1,44 +1,58 @@
 ---
 title:                "Capitalizando una cadena de texto"
-date:                  2024-01-19
+date:                  2024-02-03T19:05:18.589695-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Capitalizando una cadena de texto"
-
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/haskell/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Qué es y Por Qué?
-
-Capitalizar una cadena significa convertir la primera letra de cada palabra a mayúscula. Los programadores a menudo lo hacen para garantizar que los nombres propios o títulos se muestren correctamente en una interfaz de usuario o en documentos generados por programas.
+## ¿Qué y por qué?
+Capitalizar una cadena implica transformar la primera letra de una cadena dada a mayúscula mientras se asegura de que el resto de las letras permanezcan en minúscula. Los programadores hacen esto para formatear las salidas, adherirse a la corrección gramatical en los textos o mejorar la legibilidad de los datos generados.
 
 ## Cómo hacerlo:
+En Haskell, puedes capitalizar una cadena usando la biblioteca estándar sin necesidad de bibliotecas de terceros.
 
-```Haskell
-import Data.Char(toUpper)
-import Data.List.Split(splitOn)
+```haskell
+import Data.Char (toUpper, toLower)
 
 capitalize :: String -> String
-capitalize [] = []
-capitalize str = unwords $ map (\(x:xs) -> toUpper x : xs) $ words $ lowerString str
+capitalize "" = ""
+capitalize (head:tail) = toUpper head : map toLower tail
 
-lowerString :: String -> String
-lowerString = map toLower
-
--- Usando la función capitalize
-main :: IO ()
-main = putStrLn $ capitalize "hola, este es un ejemplo en haskell."
-
--- Salida: "Hola, Este Es Un Ejemplo En Haskell."
+-- Uso de muestra:
+main = putStrLn $ capitalize "hello world"
 ```
 
-## Análisis Profundo:
+Salida:
+```
+Hello world
+```
 
-Capitalizar cadenas no es nuevo; es un concepto ya presente en los días de las máquinas de escribir para enfatizar títulos o nombres. En Haskell, se puede hacer funcionalmente con funciones como `map` y `toUpper`. Una alternativa es usar bibliotecas como `Data.Text`, que tiene funciones incorporadas para esto. La implementación manual implica convertir cada palabra a su forma en minúsculas y luego capitalizar la primera letra, asegurando la uniformidad independientemente de la entrada original.
+Para escenarios más complejos o facilidad de uso, es posible que quieras usar una biblioteca de terceros como `text`, que es popular para la manipulación eficiente de cadenas en Haskell.
 
-## Ver También:
+Primero, necesitas agregar `text` a las dependencias de tu proyecto. Luego, puedes usar sus funciones para capitalizar una cadena de la siguiente manera:
 
-- Haskell Documentation for `Data.Char`: https://hackage.haskell.org/package/base-4.16.0.0/docs/Data-Char.html
-- Haskell Documentation for `Data.List.Split`: https://hackage.haskell.org/package/split-0.2.3.4/docs/Data-List-Split.html
-- StackOverflow para preguntas prácticas: https://stackoverflow.com/questions/tagged/haskell
+```haskell
+import qualified Data.Text as T
+import Data.Char (toUpper)
+
+capitalizeText :: T.Text -> T.Text
+capitalizeText text = case T.uncons text of
+    Nothing -> T.empty
+    Just (first, rest) -> T.cons (toUpper first) (T.toLower rest)
+
+-- Uso de muestra con la biblioteca text:
+main = putStrLn $ T.unpack $ capitalizeText (T.pack "hello world")
+```
+
+Salida:
+```
+Hello world
+```
+
+Ambos ejemplos demuestran maneras simples pero efectivas de capitalizar una cadena en Haskell, con o sin bibliotecas de terceros.

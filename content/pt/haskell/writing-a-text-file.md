@@ -1,39 +1,52 @@
 ---
 title:                "Escrevendo um arquivo de texto"
-date:                  2024-01-19
+date:                  2024-02-03T19:28:02.138748-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Escrevendo um arquivo de texto"
-
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/haskell/writing-a-text-file.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## O que é & Por quê?
-Escrever em um arquivo de texto é o processo de salvar dados em um arquivo no disco. Programadores fazem isso para persistir dados, configurar aplicações, ou logar informações.
+## O Que & Por Que?
 
-## Como fazer:
-```Haskell
+Escrever em um arquivo de texto em Haskell trata-se de criar ou atualizar arquivos com conteúdo textual de forma programática. Os programadores fazem isso para persistir dados, como mensagens de log, saída de aplicativos ou para armazenar conteúdo gerado pelo usuário, tornando-a uma tarefa fundamental para aplicativos que requerem persistência de dados ou registro de atividades.
+
+## Como Fazer:
+
+A Prelude padrão do Haskell oferece suporte elementar para escrever em arquivos usando as funções `writeFile` e `appendFile` do módulo `System.IO`. Aqui está um exemplo básico de como criar um novo arquivo (ou sobrescrever um existente) e, em seguida, anexar texto a um arquivo.
+
+```haskell
 import System.IO
 
--- Escrevendo em um arquivo
+-- Escrevendo em um arquivo, sobrescrevendo se existir
 main :: IO ()
 main = do
-    let lista = ["linha 1", "linha 2", "linha 3"]
-    writeFile "arquivo.txt" (unlines lista)
-```
-Saída (conteúdo de "arquivo.txt"):
-```
-linha 1
-linha 2
-linha 3
+  writeFile "example.txt" "Esta é a primeira linha.\n"
+  appendFile "example.txt" "Esta é a segunda linha.\n"
 ```
 
-## Mergulho Profundo
-Haskell vem com suporte embutido para escrita de arquivos desde suas versões iniciais. Alternativas incluem o uso de bibliotecas como `text` e `bytestring` para melhor performance ou funcionalidades adicionais. Detalhes de implementação envolvem tratar de maneira eficiente a escrita no disco e garantir o fechamento adequado dos arquivos após a escrita.
+Quando você executa este programa, ele cria (ou limpa) `example.txt` e escreve "Esta é a primeira linha." seguido por "Esta é a segunda linha." na próxima linha.
 
-## Veja Também
-- Documentação da biblioteca `System.IO` de Haskell para operações de entrada e saída de arquivo: [System.IO - Haskell](https://hackage.haskell.org/package/base/docs/System-IO.html)
-- Um guia para a leitura e escrita de arquivos no Haskell Wiki: [Haskell IO Tutorial](https://wiki.haskell.org/IO_inside)
-- Pacote `text` para trabalhar com texto Unicode em Haskell: [text - Hackage](https://hackage.haskell.org/package/text)
-- Pacote `bytestring` para trabalhar com sequências de bytes: [bytestring - Hackage](https://hackage.haskell.org/package/bytestring)
+Para um tratamento de arquivos mais avançado, os programadores de Haskell costumam recorrer ao pacote `text` para processamento eficiente de strings e ao pacote `bytestring` para manipulação de dados binários. Veja como usar o pacote `text` para E/S de arquivo:
+
+Primeiro, você precisa adicionar `text` às dependências do seu projeto. Então, você pode usá-lo da seguinte forma:
+
+```haskell
+import qualified Data.Text as T
+import qualified Data.Text.IO as TIO
+
+-- Escrevendo em um arquivo usando o pacote text
+main :: IO ()
+main = do
+  let conteúdo = T.pack "Usando o pacote text para melhor desempenho.\n"
+  TIO.writeFile "textExample.txt" conteúdo
+  TIO.appendFile "textExample.txt" $ T.pack "Anexando a segunda linha.\n"
+```
+
+Neste trecho, `T.pack` converte uma `String` regular para o tipo `Text`, que é mais eficiente. `TIO.writeFile` e `TIO.appendFile` são os equivalentes no `text` para escrever e anexar a arquivos, respectivamente.
+
+Executar este código resultará em um arquivo chamado `textExample.txt` com duas linhas de texto, demonstrando capacidades tanto de criação quanto de anexação usando a biblioteca `text` avançada para melhor desempenho e capacidade no manuseio de texto Unicode.

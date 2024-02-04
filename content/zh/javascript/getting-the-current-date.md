@@ -1,39 +1,49 @@
 ---
 title:                "获取当前日期"
-date:                  2024-01-20T15:15:36.848814-07:00
+date:                  2024-02-03T19:09:47.787765-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "获取当前日期"
-
 tag:                  "Dates and Times"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/javascript/getting-the-current-date.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## 什么 & 为什么？
-获取当前日期是读取和表示系统当前日期和时间的过程。编程中这么做是为了记录事件发生的时间点、计算日期差或简单地展示给用户。
+在JavaScript中获取当前日期是一项基本任务，涉及检索和可能操纵今天的日期和时间。程序员执行此操作是为了在网站、应用程序中显示日期，跟踪用户互动，或处理时间敏感数据。
 
-## 如何：
-```Javascript
-// 获取当前日期和时间
-const now = new Date();
-console.log(now.toString()); // 示例输出：Wed Apr 05 2023 21:15:07 GMT+0800 (China Standard Time)
+## 如何实现：
+在原生JavaScript中，使用`Date`对象来处理日期和时间。以下是获取当前日期和时间的方法：
 
-// 获取今天的日期信息
-console.log(now.getDate()); // 示例输出：5
-console.log(now.getMonth() + 1); // 示例输出：4，月份是从0开始计数的
-console.log(now.getFullYear()); // 示例输出：2023
+```javascript
+const currentDate = new Date();
+console.log(currentDate); // 示例输出：Fri Apr 14 2023 12:34:56 GMT+0100 (英国夏令时)
 ```
 
-## 深入了解
-JavaScript 中使用 `Date` 对象来处理日期和时间是从其诞生之初就开始的。简单的 `new Date()` 调用能够给我们系统的当前时间。事实上，你还可以使用 `Date.now()` 获取自1970年1月1日以来的毫秒数，这也是 Unix 时间戳的起点。我们之所以需要注意月份索引从0开始，这是历史悠久的设计决策，1月是0，12月是11。
+如果仅想以更友好的格式显示日期，你可以使用像`toLocaleDateString()`这样的方法：
 
-除了 `Date`，JavaScript 也允许使用库像 Moment.js 或 date-fns 来处理更复杂的日期问题，比如格式化和时区转换。这些库提供了更多功能和更好的兼容性，但随着 `Temporal`—一个现代日期时间API逐渐成熟，我们将享有一个更强大的原生功能。
+```javascript
+console.log(currentDate.toLocaleDateString()); // 示例输出：4/14/2023
+```
 
-`Date` 实现细节方面，JavaScript 的 `Date` 对象是基于时间戳构建的，时间戳表示自Unix纪元以来的毫秒数。这意味着，即使你在代码里没有明确指定时区，`Date` 对象也会依据你的系统时区来展示日期和时间。
+如果想更精确地控制格式，那么像 *Moment.js* 或 *date-fns* 这样的第三方库非常受欢迎，尽管需要知道Moment.js现在被视为处于维护模式的遗留项目。
 
-## 参考链接
-- MDN Web Docs 关于 Date 对象: [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- Moment.js 库: [https://momentjs.com/](https://momentjs.com/)
-- date-fns 库: [https://date-fns.org/](https://date-fns.org/)
-- 提案中的 Temporal API: [https://tc39.es/proposal-temporal/docs/index.html](https://tc39.es/proposal-temporal/docs/index.html)
+使用 *Moment.js*：
+
+```javascript
+const moment = require('moment'); // 假设使用Node.js或使用模块打包器
+const formattedDate = moment().format('YYYY-MM-DD');
+console.log(formattedDate); // 示例输出：2023-04-14
+```
+
+使用 *date-fns*，它强调模块化，允许您仅导入所需内容：
+
+```javascript
+const { format } = require('date-fns');
+const formattedDate = format(new Date(), 'yyyy-MM-dd');
+console.log(formattedDate); // 示例输出：2023-04-14
+```
+
+每种方法都提供了不同级别的方便性和灵活性，用于在JavaScript中处理日期，从内置的`Date`对象到通过库提供的更复杂的格式化和操作能力。

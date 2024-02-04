@@ -1,52 +1,77 @@
 ---
-title:                "Análise de HTML"
-date:                  2024-01-20T15:33:01.790293-07:00
-simple_title:         "Análise de HTML"
-
+title:                "Analisando HTML"
+date:                  2024-02-03T19:12:33.579895-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Analisando HTML"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/php/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## O Que & Por Que?
+## O Que & Porquê?
+Analisar HTML com PHP envolve extrair informações específicas de documentos HTML. Programadores realizam essa tarefa para automatizar a extração de dados, o web scraping, ou para integrar conteúdo de várias páginas da web dentro de suas aplicações, melhorando a funcionalidade sem intervenção manual.
 
-Parsear HTML é o processo de transformar código HTML em algo que um programa possa entender e manipular. Programadores fazem isso para extrair dados, manipular conteúdo ou integrar sistemas.
+## Como fazer:
+Para analisar HTML, programadores PHP podem utilizar funções integradas ou recorrer a bibliotecas robustas como o Simple HTML DOM Parser. Aqui, exploraremos exemplos usando tanto o `DOMDocument` do PHP quanto o Simple HTML DOM Parser.
 
-## Como Fazer:
+### Usando `DOMDocument`:
+A classe `DOMDocument` do PHP é parte de sua extensão DOM, permitindo a análise e manipulação de documentos HTML e XML. Aqui está um exemplo rápido de como usar o `DOMDocument` para encontrar todas as imagens em um documento HTML:
 
-Vamos usar o DOMDocument para parsear HTML em PHP.
+```php
+$html = <<<HTML
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Página de Exemplo</title>
+</head>
+<body>
+    <img src="image1.jpg" alt="Imagem 1">
+    <img src="image2.jpg" alt="Imagem 2">
+</body>
+</html>
+HTML;
 
-```PHP
-<?php
 $doc = new DOMDocument();
-libxml_use_internal_errors(true); // Evita warnings com HTML malformado
-$doc->loadHTML('<html><body><p>Oi, pessoal!</p></body></html>');
-$paragrafos = $doc->getElementsByTagName('p');
+@$doc->loadHTML($html);
+$images = $doc->getElementsByTagName('img');
 
-foreach ($paragrafos as $p) {
-    echo $p->nodeValue . PHP_EOL;
+foreach ($images as $img) {
+    echo $img->getAttribute('src') . "\n";
 }
-?>
 ```
 
-Saída de amostra:
-
+Saída de exemplo:
 ```
-Oi, pessoal!
+image1.jpg
+image2.jpg
 ```
 
-## Aprofundando:
+### Usando o Simple HTML DOM Parser:
+Para tarefas mais complexas ou uma sintaxe mais fácil, você pode preferir usar uma biblioteca de terceiros. O Simple HTML DOM Parser é uma escolha popular, fornecendo uma interface semelhante ao jQuery para navegar e manipular estruturas HTML. Veja como usá-lo:
 
-No passado, parsear HTML era um terreno minado: muita gente usava expressões regulares, que são traiçoeiras para esse fim. O DOMDocument, por outro lado, proporciona uma interface segura e robusta.
+Primeiro, instale a biblioteca usando o Composer:
+```
+composer require simple-html-dom/simple-html-dom
+```
 
-Alternativas incluem SimpleXML para estruturas menos complexas e bibliotecas de terceiros como PHP Simple HTML DOM Parser, que é mais indulgente com HTML imperfeito.
+Então, manipule o HTML para, por exemplo, encontrar todos os links:
 
-A implementação de parseamento utiliza o libxml2, proporcionando uma forma eficaz de trabalhar com HTML e XML. Mesmo que o HTML esteja com tags despareadas ou falhas, o libxml_use_internal_errors(true) nos permite trabalhar sem sermos interrompidos por erros menores.
+```php
+require_once 'vendor/autoload.php';
 
-## Veja Também:
+use simplehtmldom\HtmlWeb;
 
-- [PHP: DOMDocument](https://www.php.net/manual/en/class.domdocument.php)
-- [PHP: SimpleXML](https://www.php.net/manual/en/book.simplexml.php)
-- [PHP Simple HTML DOM Parser](https://simplehtmldom.sourceforge.io/)
-- [W3Schools PHP DOM Parser](https://www.w3schools.com/php/php_xml_dom.asp)
+$client = new HtmlWeb();
+$html = $client->load('http://www.example.com');
+
+foreach($html->find('a') as $element) {
+    echo $element->href . "\n";
+}
+```
+
+Esse trecho de código buscará o conteúdo HTML de 'http://www.example.com', o analisará e imprimirá todos os hiperlinks. Lembre-se de substituir `'http://www.example.com'` pela URL real que deseja analisar.
+
+Utilizando esses métodos, desenvolvedores PHP podem efetivamente analisar conteúdo HTML, personalizar a extração de dados conforme suas necessidades, ou integrar sem problemas o conteúdo web externo em seus projetos.

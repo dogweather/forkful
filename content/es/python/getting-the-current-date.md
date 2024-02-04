@@ -1,40 +1,70 @@
 ---
 title:                "Obteniendo la fecha actual"
-date:                  2024-01-20T15:16:15.345637-07:00
+date:                  2024-02-03T19:10:24.024513-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Obteniendo la fecha actual"
-
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/python/getting-the-current-date.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Qué y Por Qué?
-Obtener la fecha actual en Python significa capturar la fecha del sistema en el momento de la ejecución. Los programadores usan esta funcionalidad para registros de tiempo, funciones de caducidad, y cualquier tarea que necesite sincronización con el calendario real.
+## ¿Qué y Por Qué?
+
+Obtener la fecha actual en Python es una operación básica para muchas aplicaciones, tales como el registro de actividades, análisis de datos y la toma de decisiones basada en tiempo. Se trata de recuperar la fecha actual del sistema, lo cual es crucial para tareas que dependen del contexto temporal.
 
 ## Cómo hacerlo:
-La forma más fácil y común de obtener la fecha actual en Python es usando el módulo `datetime`. Aquí, un ejemplo sencillo:
 
-```Python
+**Usando la librería estándar `datetime`:**
+
+El módulo `datetime` en la librería estándar de Python provee clases para manipular fechas y horas. Para obtener la fecha actual, puedes usar el método `date.today()`.
+
+```python
 from datetime import date
 
-hoy = date.today()
-
-print(f"La fecha de hoy es: {hoy}")
+today = date.today()
+print(today)  # Salida: AAAA-MM-DD (ej., 2023-04-05)
 ```
 
-Ejecútalo y verás algo similar a:
+**Formateo de Tiempo:**
 
+Si requieres la fecha actual en un formato diferente, el método `strftime` permite especificar un formato de fecha personalizado:
+
+```python
+from datetime import date
+
+today = date.today()
+formatted_date = today.strftime('%B %d, %Y')  # Formato de ejemplo: "Abril 05, 2023"
+print(formatted_date)
 ```
-La fecha de hoy es: 2023-04-01
+
+**Usando `pendulum` para más flexibilidad (una librería de terceros popular):**
+
+`Pendulum` es una librería de terceros que ofrece un enfoque más intuitivo para tratar con fechas y horas en Python. Extiende las funcionalidades estándar de datetime y simplifica la gestión de zonas horarias, entre otras características.
+
+Primero, asegúrate de haber instalado `pendulum` via pip:
+
+```shell
+pip install pendulum
 ```
 
-## Inmersión Profunda
-La biblioteca estándar de Python ha incluido `datetime` desde la versión 2.3. Antes de `datetime`, los programadores solían lidiar con el módulo `time`, que era menos intuitivo para manejar fechas. Una alternativa moderna es `arrow`, una librería que simplifica muchas operaciones de tiempo y fecha.
+Luego, para obtener la fecha actual:
 
-Cada objeto de fecha en `datetime` se trata de un objeto inmutable con tres atributos: `year`, `month` y `day`. Python almacena la fecha y hora en UTC internamente, pero con `datetime` puedes fácilmente convertirlas a cualquier zona horaria.
+```python
+import pendulum
 
-## Ver También
-- La documentación oficial de `datetime`: https://docs.python.org/3/library/datetime.html
-- Python `time` module documentation for historical context: https://docs.python.org/3/library/time.html
-- Arrow: A sensible, human-friendly library for dealing with dates and times: https://arrow.readthedocs.io/en/latest/
+today = pendulum.now().date()
+print(today)  # Salida: AAAA-MM-DD (ej., 2023-04-05)
+```
+
+Con `pendulum`, el formateo también es sencillo y similar al enfoque de `strftime`:
+
+```python
+import pendulum
+
+today = pendulum.now()
+formatted_date = today.to_formatted_date_string()  # Formato predeterminado: "Abr 5, 2023"
+print(formatted_date)
+```

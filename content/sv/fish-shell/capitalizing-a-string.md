@@ -1,40 +1,57 @@
 ---
-title:                "Att göra en sträng versal"
-date:                  2024-01-19
-simple_title:         "Att göra en sträng versal"
-
+title:                "Gör om en sträng till versaler"
+date:                  2024-02-03T19:05:24.459065-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Gör om en sträng till versaler"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/fish-shell/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att kapitalisera en sträng innebär att omvandla dess första bokstav i varje ord till versal, eller hela strängen till versaler. Programmerare gör detta för att standardisera textdata, förbättra läsbarheten eller följa konventioner i brukargränssnitt.
+
+Att skriva med stor bokstav innebär att man ändrar den så att den första bokstaven är versal och resten av strängen är gemener. Detta är en vanlig uppgift inom textbehandling, normalisering av användarinmatning och dataformatering för att säkerställa konsekvens eller för att möta specifika formateringskriterier.
 
 ## Hur man gör:
-```Fish Shell
-# För att göra första bokstaven i varje ord till versal:
-echo "hej världen" | string capitalize
 
-# Output
-Hej Världen
+I Fish Shell kan strängar manipuleras direkt med inbyggda funktioner, utan behov av externa verktyg eller bibliotek. För att göra en sträng med stor börjanbokstav kan du kombinera `string`-kommandot med underkommandon.
 
-# För att göra hela strängen till versaler:
-echo "hej världen" | string upper
+```fish
+# Exempelsträng
+set sample_string "hello world"
 
-# Output
-HEJ VÄRLDEN
+# Gör första bokstaven stor
+set capitalized_string (string sub -l 1 -- $sample_string | string upper)(string sub -s 2 -- $sample_string)
+
+echo $capitalized_string
 ```
 
-## Djupdykning
-Kapitalisering i Fish Shell utförs enkelt med inbyggda kommandon som `string capitalize` och `string upper`. Historiskt sett har shell-skripting använt olika externa verktyg som `awk` eller `tr` för textmanipulation, men Fish erbjuder en inbyggd syntax som gör det enklare.
+Utdata:
+```
+Hello world
+```
 
-Alternativ till Fishs inbyggda funktioner inkluderar att använda `awk '{print toupper($0)}'` för att konvertera till versaler eller att implementera en skräddarsydd funktion i Fish som hanterar specifika kapitaliseringsbehov.
+För scenarion som kräver att flera ord i en sträng görs med stor bokstav (t.ex. konvertera "hello world" till "Hello World"), skulle du iterera över varje ord och tillämpa logiken för stor bokstav på varje:
 
-När det gäller genomförandet, använder `string capitalize` Unicode för att korrekt identifiera ordgränser och hantera versaliseringen även för icke-engelska språk. Detta är ett exempel på Fishs förmåga att hantera modern och internationell textbehandling.
+```fish
+# Exempelmening
+set sentence "hello fish shell programming"
 
-## Se även
-- Fish Shell officiella dokumentation om strängar: [https://fishshell.com/docs/current/cmds/string.html](https://fishshell.com/docs/current/cmds/string.html)
-- Unicode standard för textbehandling: [https://home.unicode.org](https://home.unicode.org)
-- AWK handbok för textbehandling: [https://www.gnu.org/software/gawk/manual/gawk.html](https://www.gnu.org/software/gawk/manual/gawk.html)
+# Gör varje ord med stor bokstav
+set capitalized_words (string split " " -- $sentence | while read -l word; string sub -l 1 -- $word | string upper; and string sub -s 2 -- $word; end)
+
+# Sammanfoga de ord med stor bokstav
+set capitalized_sentence (string join " " -- $capitalized_words)
+
+echo $capitalized_sentence
+```
+
+Utdata:
+```
+Hello Fish Shell Programming
+```
+
+Notera att Fish Shell inte direkt erbjuder en strategi med ett enda kommando för att göra en hel mening med stor bokstav på samma sätt som vissa programmeringsspråk gör med sina strängmetoder. Därför representerar kombinationen av `string split`, `string sub`, `string upper`, och sedan återförening ett idiomatiskt tillvägagångssätt i Fish Shell för att uppnå detta.

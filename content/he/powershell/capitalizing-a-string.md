@@ -1,33 +1,45 @@
 ---
-title:                "הפיכת מחרוזת לאותיות רישיות"
-date:                  2024-01-19
-simple_title:         "הפיכת מחרוזת לאותיות רישיות"
-
+title:                "הגדלת אותיות במחרוזת"
+date:                  2024-02-03T19:06:34.230605-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "הגדלת אותיות במחרוזת"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/powershell/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (מה ולמה?)
-קידוד אותיות בגדול הוא ההפיכה של מחרוזת לאותיות ראשיות גדולות. תכניתנים עושים את זה לנורמליזציה של טקסט, לדוגמה, כשמבצעים השוואות או כשכותבים בתבניות עקביות למשתמש.
+## מה ולמה?
+הפיכת מחרוזת לאותיות רישיות ב-PowerShell כוללת המרה של התו הראשון של מחרוזת נתונה לאות גדולה, תוך השארת שאר המחרוזת ללא שינוי. מתכנתים לעיתים קרובות מבצעים משימה זו לצורכי עיצוב, כגון הכנת טקסט להצגה בממשקי משתמש או עמידה בכללים דקדוקיים במסמכים שנוצרו.
 
-## How to (איך לעשות:)
-```PowerShell
-# Capitalizing a single word
-$word = "shalom"
-$capitalizedWord = $word.Substring(0,1).ToUpper() + $word.Substring(1).ToLower()
-$capitalizedWord # Outputs: Shalom
+## איך לעשות זאת:
+PowerShell, הוא כלי גמיש, מאפשר לך להפוך מחרוזת לאותיות ראשיות באמצעות שיטות ישירות ללא הצורך בספריות צד שלישי. כך אתה יכול לעשות זאת:
 
-# Capitalizing each word in a string
-$sentence = "baruch haba l'yerushalayim"
-$capitalizedSentence = $sentence -split ' ' | % { $_.Substring(0,1).ToUpper() + $_.Substring(1).ToLower() } -join ' '
-$capitalizedSentence # Outputs: Baruch Haba L'Yerushalayim
+```powershell
+# באמצעות שיטת ה-.Net המובנית 'ToTitleCase' מ-CultureInfo
+$text = "hello world"
+$culture = [System.Globalization.CultureInfo]::InvariantCulture
+$capitalizedText = $culture.TextInfo.ToTitleCase($text.ToLower())
+Write-Output $capitalizedText
+```
+פלט:
+```
+Hello world
 ```
 
-## Deep Dive (צלילה עמוקה)
-בעבר, פונקציונליות להפיכת טקסט לאותיות ראשיות גדולות הייתה חלק ממערכות עיבוד טקסט ומערכות דואר אלקטרוני בשביל טפלוגרפיה נכונה. ב-PowerShell, אנחנו עושים זאת עם שילוב של מתודות המחלקה String של .NET. אלטרנטיבות כוללות שימוש ב cmdlet `ToUpper()` להפוך את המחרוזת שלמה לאותיות גדולות או cmdlet `ToLower()` לאותיות קטנות, ואז עיבוד נוסף להפיכה של האותיות הראשונות בכל מילה לגדולה. פעולה זו אינה כלולה ב-PowerShell באופן ישיר אך תמיד ניתן לבנות פונקציה מותאמת אישית.
+שימו לב: שיטה זו מפיקה את האות הראשונה של כל מילה לאות ראשית. אם אתה רוצה במפורש לפיקתי רק את האות הראשונה של המחרוזת ולהשאיר את שאר המחרוזת כפי שהיא, תוכל לעשות משהו כזה:
 
-## See Also (ראה גם)
-- [About Automatic Variables](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_automatic_variables) - מידע על משתנים אוטומטיים ב-PowerShell.
-- [.NET String Class](https://docs.microsoft.com/en-us/dotnet/api/system.string) - מידע מעמיק על המחלקה String ב-.NET.
+```powershell
+# פיכתי רק את התו הראשון של מחרוזת לאות רישית
+$text = "hello world"
+$capitalizedText = $text.Substring(0,1).ToUpper() + $text.Substring(1)
+Write-Output $capitalizedText
+```
+פלט:
+```
+Hello world
+```
+
+PowerShell אינו כולל באופן ישיר פונקציה פשוטה לפיכתי רק את האות הראשונה של מחרוזת לאות רישית, אבל על ידי שילוב שיטות יסודיות של עיבוד מחרוזות כמו `Substring(0,1).ToUpper()` ושרשור, אנחנו יכולים להשיג בקלות את התוצאה הרצויה.

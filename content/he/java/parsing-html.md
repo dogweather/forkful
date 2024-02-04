@@ -1,59 +1,79 @@
 ---
-title:                "ניתוח HTML"
-date:                  2024-01-20T15:32:43.180547-07:00
-simple_title:         "ניתוח HTML"
-
+title:                "פיענוח HTML"
+date:                  2024-02-03T19:13:06.839223-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "פיענוח HTML"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/java/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## מה ולמה?
-(Parse HTML: מה זה ולמה עושים את זה?)
-Parsing HTML בג'אווה זה פשוט לקרוא ולהבין קוד HTML באמצעות תוכנה. זה נחוץ למשל כשאתה רוצה למשוך מידע מדפי אינטרנט או לעבוד עם התוכן שלהם בתוך האפליקציה שלך.
 
-## איך לעשות:
-(דוגמאות קוד ופלט דוגמה)
+פענוח HTML משמעו לחפש בעומק הסימון כדי לחלץ נתונים כמו טקסט, קישורים, או אלמנטים אחרים. אנו עושים זאת כדי לאפשר אינטרקציה עם תוכן אינטרנטי או לצרף אותו, לאוטמט פעולות גלישה או לבדוק אפליקציות אינטרנט.
 
-עלינו להשתמש בספרייה שתעזור לנו בפענוח. נבחר ב-jsoup, ספרייה פופולרית לעבודה עם HTML בג'אווה.
-```Java
+## כיצד:
+
+בואו נשתמש ב-Jsoup, ספרייה נוחה לעבודה עם HTML מהעולם האמיתי. קודם כל, הוסיפו את התלות:
+
+```xml
+<dependency>
+    <groupId>org.jsoup</groupId>
+    <artifactId>jsoup</artifactId>
+    <version>1.15.2</version>
+</dependency>
+```
+
+עכשיו לחלק המהנה. הנה איך לתפוס את כותרת הדף של אתר אינטרנט ולהדפיסה:
+
+```java
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
-import org.jsoup.select.Elements;
 
-public class HTMLParser {
-    public static void main(String[] args) {
-        String html = "<html><head><title>First Parse</title></head>"
-                    + "<body><p>Parsed HTML into a doc.</p></body></html>";
-        Document doc = Jsoup.parse(html);
-        Elements paragraphs = doc.select("p");
-        
-        for (Element paragraph : paragraphs) {
-            System.out.println(paragraph.text());
-        }
+public class HtmlParser {
+    public static void main(String[] args) throws IOException {
+        String url = "http://example.com";
+        Document doc = Jsoup.connect(url).get();
+        String title = doc.title();
+        System.out.println("Title: " + title);
     }
 }
 ```
-פלט דוגמה:
+
+פלט:
+
 ```
-Parsed HTML into a doc.
+Title: Example Domain
 ```
 
-## צלילה לעומק:
-(jsoup: פרטים נוספים)
+מה עם חילוץ כל הקישורים?
 
-ב-2006, פרויקט jsoup נולד לחיים, כדי להפוך פענוח HTML לקל ואינטואיטיבי. הוא מאפשר לנו לנתח HTML כפי שהוא מופיע בדפדפן, עם תחביר נוח ופשוט.
+```java
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
 
-חלופות הן לדוגמא: HTMLCleaner, JsoupXpath ועוד.
+// ... בתוך ה-main או שיטה אחרת
+Elements links = doc.select("a[href]");
+for (Element link : links) {
+    System.out.println("Link: " + link.attr("href"));
+}
+```
 
-בחירת ספרייה תלויה בצרכים: jsoup טובה לרוב המקרים, אבל אם יש צורך ב-XML למשל, ייתכן שנבחר בספריה אחרת.
+## צלילה עמוקה
 
-## ראה גם:
-(קישורים למקורות קשורים)
+פעם, HTML היה מנוהל על ידי תבניות regex, שיטה שהייתה מוטעית ומפלצתית עבור מסמכים מורכבים. אז הגיע Jsoup בסוף שנות האפס, והציע ממשק דמוי-jQuery עבור Java לפרסול, ניווט, וניהול HTML.
 
-- [jsoup - הדוקומנטציה הרשמית](https://jsoup.org/)
-- [מתכוני JSOUP](https://jsoup.org/cookbook/)
-- [HTMLCleaner - ספרייה חלופית](http://htmlcleaner.sourceforge.net/)
-- [Tutorial: Web scraping באמצעות Java ו-jsoup](https://www.baeldung.com/java-with-jsoup)
+Jsoup אינו הבחירה היחידה. ישנו HtmlUnit לבדיקות אפליקציות אינטרנט בסדר גודל מלא עם תמיכה ב-JavaScript, אבל הוא כבד יותר ומורכב יותר. למשימות קלות, Apache Commons Validator מעולה רק לחילוץ כתובות URL.
+
+מאחורי הקלעים, Jsoup משתמש במפענח DOM, שמדגם את כל המסמך בזיכרון כעץ. גישה זו הופכת את הבחירה והניווט במבנה ה-HTML לקלים במיוחד. עוד, הוא סובלני עם HTML לא מסודר, תוקן בעיות במהלך העבודה כדי להבטיח פרסול אמין.
+
+זכרו, כשאתם צורפים תוכן, תמיד בדקו את קובץ ה`robots.txt` של האתר ואת תנאי השירות כדי למנוע צרות משפטיות או חסימת כתובת ה-IP שלכם.
+
+## ראו גם
+
+- מסמכי Jsoup הרשמיים: https://jsoup.org/
+- HtmlUnit: http://htmlunit.sourceforge.net/
+- Apache Commons Validator: https://commons.apache.org/proper/commons-validator/

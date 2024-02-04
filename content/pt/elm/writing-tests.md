@@ -1,43 +1,89 @@
 ---
 title:                "Escrevendo testes"
-date:                  2024-01-19
+date:                  2024-02-03T19:30:40.983301-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Escrevendo testes"
-
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/elm/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## O Que é & Por Que?
-Escrever testes é criar um conjunto de procedimentos que verificam se o seu código faz o que é suposto fazer. Programadores fazem isso para garantir qualidade, prevenir erros e facilitar a manutenção do código.
+## O que & Por quê?
 
-## Como Fazer:
-Para escrever testes em Elm, você usufruirá do `elm-test`, que é uma biblioteca padrão para esse fim. Instale com `elm install elm-explorations/test`. Depois, escreva e execute testes simples:
+Escrever testes em Elm envolve a criação de casos de teste para verificar a correção do seu código Elm, garantindo que ele se comporte conforme esperado. Os programadores fazem isso para capturar bugs precocemente, facilitar a manutenção e melhorar a qualidade e confiabilidade de suas aplicações.
 
-```Elm
-import Expect
-import Test exposing (..)
+## Como fazer:
 
-suiteDeTestes : Test
-suiteDeTestes =
-    describe "Exemplo de Testes"
-        [ test "Teste de soma simples" <| 
-            \_ -> Expect.equal 4 (2 + 2)
-        , test "Teste de falha proposital" <| 
-            \_ -> Expect.equal 5 (2 + 2)
-        ]
+Elm utiliza o pacote `elm-explorations/test` para escrever testes unitários e de fuzz. Comece adicionando o pacote ao seu projeto:
 
--- Para correr os testes, execute no terminal:
--- elm-test
+```elm
+elm install elm-explorations/test
 ```
 
-Você verá resultados no terminal apontando se os testes passaram ou falharam.
+Crie um arquivo de teste, digamos `tests/ExampleTest.elm`, e importe os módulos de teste. Aqui está um teste simples que verifica uma função `add : Int -> Int -> Int`:
 
-## Mergulho Profundo
-O Elm foi criado com uma filosofia de facilidade e confiabilidade em mente, e isso inclui a escrita de testes. O `elm-test` fornece uma estrutura para testes unitários e de integração. Historicamente, ele evoluiu junto com a linguagem para tornar a experiência de teste tão agradável quanto o desenvolvimento com Elm. Embora o `elm-test` seja a escolha predominante, outras ferramentas como `elm-check` têm oferecido alternativas para testes de propriedades. A implementação de testes no Elm é direta e a linguagem deixa mais difícil cometer erros, o que torna a dependência em testes um pouco menos crítica que em outras linguagens, mas ainda muito importante.
+```elm
+module ExampleTest exposing (..)
 
-## Veja Também
-- [Elm Test](https://package.elm-lang.org/packages/elm-explorations/test/latest/)
-- [Elm Programming Language](https://elm-lang.org/)
-- [RealWorld example app em Elm](https://github.com/rtfeldman/elm-spa-example) - Um projeto Elm completo com exemplos de testes.
+import Expect
+import Test exposing (..)
+import YourModuleName exposing (add)
+
+suite : Test
+suite =
+    describe "Uma simples função de adição"
+        [ test "Adicionar 2 e 3 resulta em 5" <| 
+            \_ -> add 2 3 |> Expect.equal 5
+        ]
+
+```
+
+Para executar seus testes, você precisará de `elm-test`:
+
+```shell
+npm install -g elm-test
+elm-test
+```
+
+Isso irá compilar seus testes e imprimir os resultados no seu terminal. Para o exemplo acima, a saída deve ser algo como:
+
+```
+CORRIDA DE TESTES APROVADA
+
+Duração: 42 ms
+Passaram:   1
+Falharam:   0
+```
+
+Para um exemplo mais complexo, digamos que você queira fazer um teste de fuzz na função `add` para garantir que ela lide corretamente com uma ampla gama de entradas de inteiros. Você modificaria o seu `ExampleTest.elm` da seguinte forma:
+
+```elm
+module ExampleTest exposing (..)
+
+import Expect
+import Fuzz exposing (int)
+import Test exposing (..)
+import YourModuleName exposing (add)
+
+suite : Test
+suite =
+    describe "Testando add com fuzzing"
+        [ fuzz int "Teste de fuzz em add com inteiros aleatórios" <| 
+            \int1 int2 -> add int1 int2 |> Expect.equal (int1 + int2)
+        ]
+```
+
+Execute `elm-test` novamente para ver os testes de fuzz em ação. A saída variará com a entrada aleatória, mas testes bem-sucedidos indicarão a ausência de falhas:
+
+```
+CORRIDA DE TESTES APROVADA
+
+Duração: 183 ms
+Passaram:   100
+Falharam:   0
+``` 
+
+Estes exemplos mostram como escrever e executar testes unitários e de fuzz simples em Elm, usando o pacote `elm-explorations/test`. Testar é uma parte vital do processo de desenvolvimento, ajudando a garantir que suas aplicações Elm sejam confiáveis e mantenham alta qualidade.

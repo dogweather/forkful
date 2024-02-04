@@ -1,37 +1,71 @@
 ---
 title:                "Перевірка наявності директорії"
-date:                  2024-01-20T14:58:56.478251-07:00
+date:                  2024-02-03T19:09:01.074798-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Перевірка наявності директорії"
-
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/swift/checking-if-a-directory-exists.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Що це таке & Навіщо?
-Перевірка наявності директорії – це процес визначення, чи існує певний каталог у файловій системі. Програмісти роблять це, щоб уникнути помилок при спробі доступу або модифікації файлів в неіснуючій папці.
+## Що та чому?
+Перевірка на наявність директорії у файловій системі є важливою для управління структурами файлів з ваших застосунків на Swift. Це завдання дозволяє розробникам перевіряти наявність директорій перед спробами читання з них або запису в них, таким чином уникаючи можливих помилок під час виконання.
 
 ## Як це зробити:
-Swift надає клас `FileManager` для роботи з файловою системою. Ось як перевірити існування директорії:
+
+Фреймворк Foundation в Swift надає клас `FileManager`, який має методи для управління файловою системою. Ви можете використовувати `FileManager` для перевірки наявності директорії. Ось фрагмент коду, що показує, як це зробити:
 
 ```swift
 import Foundation
 
 let fileManager = FileManager.default
-let path = "/path/to/directory"
+let path = "/шлях/до/вашої/директорії"
 
-if fileManager.fileExists(atPath: path, isDirectory: UnsafeMutablePointer<ObjCBool>.allocate(capacity: 1)) {
-    print("Директорія існує.")
+if fileManager.fileExists(atPath: path, isDirectory: nil) {
+    print("Директорія існує")
 } else {
-    print("Директорії не існує.")
+    print("Директорія не існує")
 }
 ```
 
-## Поглиблений огляд:
-Перевірка наявності папок у Swift використовує `FileManager`, унаслідуваний від попередніх Apple API, таких як NeXTSTEP та Cocoa. Інші мови мають свої інструменти, наприклад, `os.path.exists()` у Python. Попри те, що попередні версії Swift могли вимагати більш складних методів для перевірки існування папок, зараз `FileManager` є стандартним та ефективним рішенням. Також варто зауважити, що `fileExists(atPath:)` може бути використаний для файлів та силок на них, тому перевірка чи об'єкт є директорією важлива.
+Однак, це перевіряє як файли, так і директорії. Якщо ви спеціально хочете перевірити, що директорія існує, вам потрібно передати вказівник на булеве значення в `isDirectory`:
 
-## Ознайомтеся також:
-- [Apple Documentation on FileManager](https://developer.apple.com/documentation/foundation/filemanager)
-- [NSHipster article on File System Operations in Swift](https://nshipster.com/filemanager/)
-- [Ray Wenderlich's guide to working with files in iOS](https://www.raywenderlich.com/1918-beginning-ios-file-system-programming-in-swift)
+```swift
+import Foundation
+
+let fileManager = FileManager.default
+let path = "/шлях/до/вашої/директорії"
+var isDirectory: ObjCBool = false
+
+if fileManager.fileExists(atPath: path, isDirectory: &isDirectory), isDirectory.boolValue {
+    print("Директорія існує")
+} else {
+    print("Директорія не існує")
+}
+```
+
+### Використання сторонньої бібліотеки
+
+Станом на зараз, для перевірки наявності директорії в Swift зазвичай не потрібно використовувати сторонні бібліотеки завдяки міцності класу `FileManager`. Однак, для більш складних маніпуляцій і перевірок файлів, бібліотеки, як-от **Files** від John Sundell, надають більш зручний для Swift API.
+
+Ось як ви могли б це використати:
+
+Спочатку, додайте Files до вашого проекту через Swift Package Manager.
+
+Потім, ви можете перевірити наявність директорії таким чином:
+
+```swift
+import Files
+
+do {
+    _ = try Folder(path: "/шлях/до/вашої/директорії")
+    print("Директорія існує")
+} catch {
+    print("Директорія не існує")
+}
+```
+
+Примітка: Оскільки сторонні бібліотеки можуть змінюватись, завжди консультуйтеся з останньою документацією для інструкцій і кращих практик використання.

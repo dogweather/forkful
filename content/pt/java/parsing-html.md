@@ -1,56 +1,79 @@
 ---
-title:                "Análise de HTML"
-date:                  2024-01-20T15:32:32.203494-07:00
-simple_title:         "Análise de HTML"
-
+title:                "Analisando HTML"
+date:                  2024-02-03T19:12:22.695390-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Analisando HTML"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/java/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## O Que & Porquê?
-Parsing HTML é o processo de análise e conversão de código HTML para um formato que programas de computador possam manipular. Programadores fazem isso para extrair informações, manipular e interagir com conteúdo web de forma automatizada.
+
+Analisar HTML significa vasculhar a marcação para extrair dados como texto, links ou outros elementos. Fazemos isso para interagir com ou raspar conteúdo da web, automatizar tarefas de navegação ou testar aplicativos web.
 
 ## Como Fazer:
-Para parsear HTML em Java, podemos usar a biblioteca jsoup. Essa biblioteca facilita a manipulação de dados HTML com métodos convenientes. Veja um exemplo básico:
+
+Vamos usar o Jsoup, uma biblioteca prática para trabalhar com HTML do mundo real. Primeiro, adicione a dependência:
+
+```xml
+<dependency>
+    <groupId>org.jsoup</groupId>
+    <artifactId>jsoup</artifactId>
+    <version>1.15.2</version>
+</dependency>
+```
+
+Agora, para a parte divertida. Veja como capturar o título de uma página web e imprimi-lo:
 
 ```java
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
-import org.jsoup.select.Elements;
 
-public class HtmlParser {
-    public static void main(String[] args) {
-        String html = "<html><head><title>Meu Teste</title></head>"
-                    + "<body><p>Este é um parágrafo.</p></body></html>";
-        Document doc = Jsoup.parse(html);
-        String title = doc.title();
-        Elements paragraphs = doc.select("p");
-
-        System.out.println("Título: " + title);
-        paragraphs.forEach(paragraph -> System.out.println("Parágrafo: " + paragraph.text()));
+public class AnalisadorHtml {
+    public static void main(String[] args) throws IOException {
+        String url = "http://example.com";
+        Document doc = Jsoup.connect(url).get();
+        String titulo = doc.title();
+        System.out.println("Título: " + titulo);
     }
 }
 ```
 
-Output de exemplo:
+Saída:
 
 ```
-Título: Meu Teste
-Parágrafo: Este é um parágrafo.
+Título: Exemplo de Domínio
 ```
 
-## Mergulho Profundo:
-Parsing HTML remonta aos primeiros dias da web, quando os navegadores precisavam interpretar o HTML para exibir páginas. Com o tempo, as APIs e bibliotecas evoluíram para permitir que o código do lado do servidor fizesse parsing de HTML, não apenas para exibir dados mas também para automatizar a coleta e processamento de informações.
+Que tal extrair todos os links?
 
-Além do jsoup, existem outras ferramentas e bibliotecas, como HTMLCleaner e Java HTML Parser, que são úteis dependendo do cenário. Enquanto o jsoup é ótimo para parsing e scraping devido à sua abstração de seletores estilo jQuery e manipulação fácil de DOM, HTMLCleaner é conhecido por lidar melhor com HTML "sujo" ou malformado.
+```java
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
 
-Ao implementar o parsing HTML, é essencial lidar com exceções e casos de HTML corrompido. Além disso, sempre esteja ciente de questões legais e de políticas de uso ao extrair informações de websites de terceiros.
+// ... dentro do main ou de outro método
+Elements links = doc.select("a[href]");
+for (Element link : links) {
+    System.out.println("Link: " + link.attr("href"));
+}
+```
 
-## Veja Também:
-- Documentação oficial do jsoup: https://jsoup.org/
-- Tutorial Jsoup: https://www.baeldung.com/java-with-jsoup
-- Comparação de parsers HTML em Java: https://www.baeldung.com/java-html-parsers
+## Aprofundamento
 
-Lembre-se que ao parsear HTML, você está lidando com dados estruturados de uma forma que o navegador entende. Entender as sutilezas das ferramentas que você está usando sempre resultará em um código mais robusto e eficiente.
+Houve um tempo em que o HTML era domado por padrões de regex, um método tanto propenso a erros quanto pesadeloso para documentos complexos. Então chegou o Jsoup no final dos anos 2000, fornecendo uma interface semelhante à jQuery para Java para analisar, percorrer e manipular HTML.
+
+O Jsoup não é a única escolha. Há o HtmlUnit para testes completos de aplicativos web com suporte a JavaScript, mas é mais pesado e complexo. Para tarefas leves, o Apache Commons Validator é ótimo apenas para extrair URLs.
+
+Por baixo do capô, o Jsoup usa um parser DOM, que modela todo o documento na memória como uma árvore. Essa abordagem facilita a seleção e navegação na estrutura do HTML. Além disso, é tolerante com HTML desleixado, corrigindo problemas na mosca para garantir uma análise robusta.
+
+Lembre-se, ao raspar, sempre verifique o `robots.txt` do site e os termos de serviço para evitar problemas legais ou ser banido pelo IP.
+
+## Veja Também
+
+- Documentação Oficial do Jsoup: https://jsoup.org/
+- HtmlUnit: http://htmlunit.sourceforge.net/
+- Apache Commons Validator: https://commons.apache.org/proper/commons-validator/

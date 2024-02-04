@@ -1,47 +1,119 @@
 ---
 title:                "Escrevendo testes"
-date:                  2024-01-19
+date:                  2024-02-03T19:30:28.929083-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Escrevendo testes"
-
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/c-sharp/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (O Quê & Por Quê?)
-Escrever testes é a prática de criar scripts automático que verificam se seu código se comporta como esperado. Programadores fazem isso para pegar bugs cedo, melhorar a qualidade do código e facilitar manutenções futuras.
+## O Que & Por Que?
 
-## How to: (Como fazer:)
-```C#
-using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+Escrever testes em C# envolve criar scripts automatizados para validar a funcionalidade do seu código, assegurando que ele se comporte conforme o esperado. Os programadores fazem isso para capturar bugs precocemente, facilitar a refatoração do código e garantir que novas alterações não quebrem funções existentes, aumentando assim a qualidade e a confiabilidade do software.
 
-namespace MeuAppDeTestes {
-    [TestClass]
-    public class CalculadoraTestes {
-        [TestMethod]
-        public void TestaSoma() {
-            var calculadora = new Calculadora();
-            Assert.AreEqual(5, calculadora.Soma(2, 3));
-        }
+## Como fazer:
+
+Desenvolvedores C# usam principalmente os frameworks NUnit ou xUnit para escrever testes devido à sua flexibilidade e conjunto extensivo de recursos. Aqui está um exemplo básico usando o NUnit para testar uma simples função de adição:
+
+1. **Instale o NUnit e o NUnit3TestAdapter** via Gerenciador de Pacotes NuGet ou o CLI .NET:
+```powershell
+dotnet add package NUnit
+dotnet add package NUnit3TestAdapter
+```
+
+2. **Crie um projeto de biblioteca de classes C#** se você ainda não o fez.
+
+3. **Escreva uma função simples** para testar. Por exemplo, um método de adição em uma classe chamada `Calculator`:
+```csharp
+public class Calculator
+{
+    public int Add(int a, int b)
+    {
+        return a + b;
     }
+}
+```
 
-    public class Calculadora {
-        public int Soma(int a, int b) {
-            return a + b;
+4. **Escreva uma classe de teste** usando NUnit:
+```csharp
+using NUnit.Framework;
+
+namespace CalculatorTests
+{
+    [TestFixture]
+    public class CalculatorTests
+    {
+        [Test]
+        public void Add_SomaDoisInteiros_RetornaSomaCorreta()
+        {
+            // Arrange (Preparação)
+            var calculator = new Calculator();
+            int esperado = 5;
+
+            // Act (Ação)
+            int atual = calculator.Add(2, 3);
+
+            // Assert (Verificação)
+            Assert.AreEqual(esperado, atual);
         }
     }
 }
-
-// Saída esperada ao executar o teste:
-// TestaSoma passou
 ```
 
-## Deep Dive (Mergulho Profundo)
-Os testes automáticos na programação começaram na década de 1950, mas só ganharam destaque nos anos 90 com o desenvolvimento de metodologias ágeis. Existem alternativas ao MSTest, como NUnit e xUnit, cada uma com suas especificidades. A escolha de uma depende de fatores como a familiaridade do time e recursos necessários. Implementar testes envolve seguir padrões como Arrange-Act-Assert (AAA) para estruturar o código de teste de forma clara.
+5. **Execute o teste** usando o executor de testes da sua IDE ou o CLI .NET:
+```powershell
+dotnet test
+```
 
-## See Also (Veja Também)
-- [Documentação do MSTest](https://docs.microsoft.com/en-us/dotnet/core/testing/unit-testing-with-mstest)
-- [Guia xUnit](https://xunit.net/docs/getting-started/netfx/visual-studio)
-- [Princípios do teste de software ágil](https://www.agilealliance.org/glossary/tdd/)
+### Saída de Exemplo:
+
+Assumindo que seu teste passe, você deverá ver uma saída semelhante a esta:
+```
+Execução de Testes Bem-Sucedida.
+Testes totais: 1
+     Aprovados: 1
+ Tempo total: 1.2345 Segundos
+```
+
+### Usando xUnit:
+
+Se você prefere o xUnit, a configuração é semelhante ao NUnit. Aqui está como você reescreveria o exemplo de teste para a classe `Calculator` usando o xUnit:
+
+1. **Instale o xUnit e o xUnit.runner.visualstudio**:
+```powershell
+dotnet add package xUnit
+dotnet add package xUnit.runner.visualstudio
+```
+
+2. **Escreva uma classe de teste usando o xUnit**:
+```csharp
+using Xunit;
+
+namespace CalculatorTests
+{
+    public class CalculatorTests
+    {
+        [Fact]
+        public void Add_SomaDoisInteiros_RetornaSomaCorreta()
+        {
+            // Arrange (Preparação)
+            var calculator = new Calculator();
+            int esperado = 5;
+
+            // Act (Ação)
+            int atual = calculator.Add(2, 3);
+
+            // Assert (Verificação)
+            Assert.Equal(esperado, atual);
+        }
+    }
+}
+```
+
+3. **Execute o teste usando o CLI .NET** ou o executor de testes integrado da sua IDE.
+
+Tanto o NUnit quanto o xUnit oferecem recursos poderosos para testes parametrizados, operações de configuração/encerramento e organização de testes em categorias, tornando-se ferramentas indispensáveis no kit de ferramentas do programador C# para garantir a qualidade e funcionalidade do código.

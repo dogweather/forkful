@@ -1,39 +1,54 @@
 ---
-title:                "Робота з CSV файлами"
-date:                  2024-01-19
-simple_title:         "Робота з CSV файлами"
-
+title:                "Робота з CSV"
+date:                  2024-02-03T19:19:25.980743-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Робота з CSV"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/clojure/working-with-csv.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Що і навіщо?
-Працювати з CSV — це значить маніпулювати даними у форматі, де значення відокремлені комами. Програмісти це роблять для обробки та аналізу великих масивів даних, зручного експорту та імпорту між різними програмами.
+## Що і Чому?
 
-## Як це робити:
+Робота з файлами CSV (Comma-Separated Values - значення, розділені комами) включає парсинг та генерацію текстових даних, структурованих у вигляді рядків та колонок, подібно до даних електронних таблиць. Цей процес є важливим для обміну даними між програмами, базами даних, а також для завдань трансформації даних, завдяки широкому прийняттю CSV як легкого, інтероперабельного формату.
+
+## Як це зробити:
+
+### Читання файлу CSV
+Clojure стандартно не має вбудованого парсингу CSV, але ви можете використовувати бібліотеку `clojure.data.csv` для цієї мети. Спочатку додайте бібліотеку до залежностей вашого проекту.
+
+У вашому `project.clj` додайте таку залежність:
 ```clojure
-;; Підключаємо бібліотеку
-(require '[clojure.data.csv :as csv])
-(require '[clojure.java.io :as io])
+[clojure.data.csv "1.0.0"]
+```
+Для того, щоб прочитати файл CSV і вивести кожен рядок:
+```clojure
+(require '[clojure.data.csv :as csv]
+         '[clojure.java.io :as io])
 
-;; Читання CSV файлу
-(with-open [reader (io/reader "data.csv")]
-  (doall (csv/read-csv reader)))
+(with-open [reader (io/reader "шлях/до/вашогогофайлу.csv")]
+  (doall
+   (map println (csv/read-csv reader))))
+```
+Це виведе кожен рядок CSV як вектор Clojure.
 
-;; Запис у CSV файл
-(let [data [["name" "age" "city"]
-            ["Alice" "30" "Kyiv"]
-            ["Bob" "35" "Lviv"]]]
-  (with-open [writer (io/writer "output.csv")]
+### Запис в файл CSV
+Для запису даних у файл CSV ви можете використовувати ту саму бібліотеку `clojure.data.csv`:
+```clojure
+(require '[clojure.data.csv :as csv]
+         '[clojure.java.io :as io])
+
+(let [data [["id" "name" "age"]
+            ["1" "John Doe" "28"]
+            ["2" "Jane Doe" "31"]]]
+  (with-open [writer (io/writer "шлях/до/outputfile.csv")]
     (csv/write-csv writer data)))
 ```
+Це створить або перезапише `outputfile.csv`, заповнюючи його вказаними даними.
 
-## Поглиблений розгляд
-CSV, або Comma-Separated Values, з'явився ще у 1970-их для збереження табличних даних. Є альтернативи як JSON, XML, але CSV досі популярний за простоту та широку підтримку. В Clojure, обробка CSV вимагає зазвичай зовнішньої бібліотеки, такої як `clojure.data.csv`, яка використовує lazy sequence для ефективності.
+### Використання бібліотеки стороннього розробника: `clojure.data.csv`
 
-## Додатково:
-- Clojure документація: https://clojure.org/
-- Бібліотека `clojure.data.csv`: https://github.com/clojure/data.csv
-- Робота з IO у Clojure: https://clojure.github.io/clojure/clojure.java.io-api.html
+Хоча `clojure.data.csv` можна вважати найпростішою бібліотекою для обробки CSV у Clojure, для складніших завдань, таких як обробка CSV зі спеціальними символами або нестандартними роздільниками, ви можете розглянути додаткові варіанти в екосистемі або навіть розглянути можливість Java інтероперації з бібліотеками, такими як Apache Commons CSV. Однак, для більшості стандартних завдань обробки CSV у Clojure, `clojure.data.csv` забезпечує простий та ефективний набір інструментів.

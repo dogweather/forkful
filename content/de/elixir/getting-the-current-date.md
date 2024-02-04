@@ -1,42 +1,70 @@
 ---
-title:                "Aktuelles Datum abrufen"
-date:                  2024-01-20T15:13:42.402599-07:00
-simple_title:         "Aktuelles Datum abrufen"
-
+title:                "Den aktuellen Datum abrufen"
+date:                  2024-02-03T19:09:23.043432-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Den aktuellen Datum abrufen"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/elixir/getting-the-current-date.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Das Abrufen des aktuellen Datums bedeutet, dass wir den heutigen Tag gemäß dem Systemkalender ermitteln. Programmierer nutzen das heutige Datum, um Zeitstempel zu erstellen, Berichte zu datieren oder zeitabhängige Funktionen auszuführen.
+Das Abrufen des aktuellen Datums in Elixir umfasst den Zugriff auf die Datums- und Zeitinformationen des Systems, eine allgemeine Aufgabe für das Logging, Datumsstempel oder jede Funktionalität, die Kenntnisse über das aktuelle Datum erfordert. Diese Operation ist wesentlich für die Erstellung zeitbewusster Anwendungen und für Aufgaben wie das Generieren von Berichten oder Zeitstempeln in einer Webanwendung.
 
-## So geht's:
+## Wie:
+Die Standardbibliothek von Elixir ermöglicht über das `DateTime`-Modul das Abrufen des aktuellen Datums und der aktuellen Uhrzeit. Da Elixir auf der Erlang VM (BEAM) läuft, nutzt es die zugrundeliegenden Erlang-Funktionalitäten für Zeitoperationen.
+
+### Verwendung der Standardbibliothek von Elixir
+Elixir stellt die Funktion `DateTime.utc_now/0` zur Verfügung, um das aktuelle Datum und Uhrzeit in UTC zu erhalten.
+
 ```elixir
-# Aktuelles Datum in Elixir mit der DateTime-Modul:
-datum = Date.utc_today()
-IO.puts("Heute ist: #{datum}")
-
-# Beispiel Ausgabe
-"2023-04-01"
+current_datetime_utc = DateTime.utc_now()
+IO.inspect(current_datetime_utc)
 ```
 
-Wenn du zusätzlich die aktuelle Uhrzeit benötigst, kannst du das so machen:
-```elixir
-# Aktuelles Datum und Uhrzeit:
-jetzt = DateTime.utc_now()
-IO.puts("Aktuelles Datum und Uhrzeit UTC: #{jetzt}")
-
-# Beispiel Ausgabe:
-"2023-04-01 12:34:56Z"
+**Beispielausgabe:**
+```
+#DateTime<2023-05-04 15:00:00Z>
 ```
 
-## Tiefergehendes
-Elixir's `Date` und `DateTime` Module verwenden die Kalenderfunktionen von Erlang und bieten eine präzise Zeitberechnung. Historisch gesehen basiert Elixir auf Erlang's robustem System, das perfekt für zeitkritische Anwendungen ist. Vor der Einführung von `DateTime` in Elixir 1.3 mussten Entwickler externe Bibliotheken verwenden oder manuell Zeit in Elixir berechnen. Alternative Libraries wie "Timex" bieten zusätzliche Funktionen und Formatoptionen, bleiben aber meist für komplexere Szenarien reserviert. Wichtig zu wissen: Elixir behandelt Zeitangaben standardmäßig als UTC, für andere Zeitzonen muss man die Umrechnung selbst durchführen oder eine entsprechende Bibliothek einbinden.
+Um nur das aktuelle Datum zu erhalten, könnten die Komponenten für Jahr, Monat und Tag extrahiert werden:
 
-## Siehe auch
-- Elixir's offizielle Dokumentation zu `Date`: https://hexdocs.pm/elixir/Date.html
-- Elixir's offizielle Dokumentation zu `DateTime`: https://hexdocs.pm/elixir/DateTime.html
-- Erlang's Kalender-Dokumentation: https://erlang.org/doc/man/calendar.html
-- Die "Timex" Bibliothek für komplexere Zeitberechnungen: https://hex.pm/packages/timex
+```elixir
+{:ok, current_date} = Date.new(current_datetime_utc.year, current_datetime_utc.month, current_datetime_utc.day)
+IO.inspect(current_date)
+```
+
+**Beispielausgabe:**
+```
+~D[2023-05-04]
+```
+
+### Verwendung der Timex-Bibliothek
+Für komplexere Datums- und Zeitbedürfnisse kann eine beliebte Drittanbieterbibliothek namens Timex genutzt werden. Zuerst füge `Timex` zu deinen mix.exs-Abhängigkeiten hinzu:
+
+```elixir
+defp deps do
+  [
+    {:timex, "~> 3.7"}
+  ]
+end
+```
+
+Nachdem die Abhängigkeit installiert wurde (`mix deps.get`), kannst du Timex verwenden, um das aktuelle Datum zu erhalten:
+
+```elixir
+current_date = Timex.today()
+IO.inspect(current_date)
+```
+
+**Beispielausgabe:**
+```
+~D[2023-05-04]
+```
+
+Timex bietet umfassende Funktionalitäten für die Manipulation von Datums- und Zeitangaben und ist somit eine mächtige Ergänzung für deine Elixir-Anwendungen, insbesondere wenn es um Zeitzonen, Formatierung und das Parsen von Daten und Zeiten geht.
+
+Durch das Verstehen und Nutzen der integrierten Fähigkeiten von Elixir und der Timex-Bibliothek kannst du einfach mit Daten und Zeiten in deinen Elixir-Anwendungen arbeiten, die Erfahrung entsprechend den Bedürfnissen deiner Anwendung mit Präzision und Leichtigkeit anpassen.

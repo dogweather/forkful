@@ -1,48 +1,64 @@
 ---
 title:                "Ottenere la data corrente"
-date:                  2024-01-20T15:16:26.709354-07:00
+date:                  2024-02-03T19:10:48.111940-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Ottenere la data corrente"
-
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/rust/getting-the-current-date.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Ottenere la data corrente è una funzione che ti consente di scoprire quale giorno è oggi nel formato che desideri. I programmatori la usano per log, scadenze, features legate al tempo e per tenere traccia degli eventi.
+## Cosa & Perché?
 
-## How to:
+Il recupero della data corrente in Rust è un compito comune per attività come la registrazione, operazioni basate sul tempo o semplicemente per visualizzare la data. A differenza di alcuni linguaggi che includono la funzionalità di data e ora nella loro libreria standard, Rust incoraggia l'uso di una libreria di terze parti robusta, chrono, per una manipolazione completa di data e ora, data la sua superiorità funzionale e facilità di uso.
 
-Per ottenere la data corrente in Rust, devi usare il crate `chrono`. Aggiungi `chrono` come dipendenza nel tuo file `Cargo.toml`. Ecco un esempio:
+## Come fare:
 
-```Rust
-// Aggiungi nel tuo Cargo.toml: chrono = "0.4"
+### Utilizzando la Libreria Standard di Rust
+La libreria standard di Rust fornisce un modo limitato ma rapido per ottenere il tempo corrente, anche se non direttamente la data corrente in un formato calendario. Ecco come si fa:
 
+```rust
+use std::time::{SystemTime, UNIX_EPOCH};
+
+fn main() {
+    match SystemTime::now().duration_since(UNIX_EPOCH) {
+        Ok(n) => println!("Tempo attuale: {} secondi dall'epoca Unix.", n.as_secs()),
+        Err(_) => panic!("SystemTime prima dell'epoca Unix!"),
+    }
+}
+```
+
+Output:
+```
+Tempo attuale: 1615390665 secondi dall'epoca Unix.
+```
+
+### Utilizzando la Libreria Chrono
+Per una funzionalità di data e ora più completa, inclusa l'ottenimento della data corrente, dovresti usare la libreria `chrono`. Prima, aggiungi `chrono` al tuo `Cargo.toml`:
+
+```toml
+[dependencies]
+chrono = "0.4"
+```
+
+Poi, puoi usare `chrono` per ottenere la data corrente:
+
+```rust
 extern crate chrono;
 use chrono::{Local, Datelike};
 
 fn main() {
-    let oggi = Local::now();
-    println!("Data corrente: {}", oggi.format("%d/%m/%Y").to_string());
+    let now = Local::now();
+    println!("Data corrente: {}-{}-{}", now.year(), now.month(), now.day());
 }
 ```
 
-Output di esempio:
+Output:
 ```
-Data corrente: 28/03/2023
+Data corrente: 2023-4-20
 ```
 
-## Deep Dive
-
-Alla base del sistema di gestione delle date e del tempo in Rust c’è il crate `chrono`. Prima di `chrono`, i programmatori usavano il modulo `time` della libreria standard, ma `chrono` ha portato maggiore precisions e funzioni.
-
-`chrono` offre diversi tipi di data e ora, come `NaiveDateTime` per l'ora UTC e `DateTime` per il tempo con fuso orario. L’uso di `Local::now()` restituisce l’istante attuale nel fuso orario locale. Ci sono anche altre funzioni, come `Utc::now()` per l'ora UTC.
-
-Per formati di data personalizzati, `chrono` si appoggia sulle specifiche del C `strftime` per un controllo granulare della formattazione della data.
-
-## See Also
-
-- Documentazione `chrono`: [https://docs.rs/chrono/0.4.19/chrono/](https://docs.rs/chrono/0.4.19/chrono/)
-- Repo GitHub `chrono`: [https://github.com/chronotope/chrono](https://github.com/chronotope/chrono)
-- Formattazione datari `strftime` in Rust: [https://docs.rs/chrono/0.4.19/chrono/format/strftime/index.html](https://docs.rs/chrono/0.4.19/chrono/format/strftime/index.html)
+La libreria `chrono` rende semplice lavorare con date e orari, offrendo una vasta gamma di funzionalità oltre al semplice recupero della data corrente, inclusa l'analisi, la formattazione e le operazioni aritmetiche su date e orari.

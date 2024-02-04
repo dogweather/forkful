@@ -1,47 +1,51 @@
 ---
-title:                "Przetwarzanie daty ze łańcucha znaków"
-date:                  2024-01-20T15:38:04.391091-07:00
-simple_title:         "Przetwarzanie daty ze łańcucha znaków"
-
+title:                "Analiza składniowa daty z łańcucha znaków"
+date:                  2024-02-03T19:15:30.045190-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Analiza składniowa daty z łańcucha znaków"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/python/parsing-a-date-from-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Co i Dlaczego?)
-Parsing daty z ciągu znaków to proces zamieniania tekstu na obiekt daty, którym można łatwo manipulować w kodzie. Programiści robią to, aby obsługiwać różne formaty datasowe i umożliwić automatyczne przetwarzanie dat w aplikacjach.
+## Co i dlaczego?
+Przetwarzanie daty z ciągu znaków polega na konwersji tekstowej informacji o dacie i czasie na obiekt datetime lub równoważny, uporządkowany format. Czynność ta jest powszechnie wykonywana, aby umożliwić operacje na datach, takie jak arytmetyka, porównania i formatowanie, w sposób niezależny od języka i regionu. Programiści robią to, aby efektywnie obsługiwać i manipulować danymi czasowymi pozyskanymi z logów, danych wprowadzonych przez użytkowników lub źródeł zewnętrznych.
 
-## How to: (Jak to zrobić:)
-```Python
+## Jak to zrobić:
+Standardowa biblioteka Pythona dostarcza moduł `datetime`, który zawiera metodę `strptime` przeznaczoną do tego celu. Metoda ta wymaga dwóch argumentów: ciągu znaków z datą oraz dyrektywy formatującej, która określa wzór ciągu wejściowego.
+
+```python
 from datetime import datetime
 
-# Parsowanie daty ze standardowego formatu YYYY-MM-DD
-date_string = "2022-03-15"
-parsed_date = datetime.strptime(date_string, "%Y-%m-%d")
-print(f"Parsed date: {parsed_date}")
+# Przykładowy ciąg znaków
+data_string = "2023-04-01 14:30:00"
+# Przetwarzanie ciągu znaków na obiekt datetime
+przetworzona_data = datetime.strptime(data_string, "%Y-%m-%d %H:%M:%S")
 
-# Parsowanie niestandardowego formatu daty, np. DD/MM/YYYY
-custom_date_string = "15/03/2022"
-parsed_custom_date = datetime.strptime(custom_date_string, "%d/%m/%Y")
-print(f"Parsed custom date: {parsed_custom_date}")
+print(przetworzona_data)
+# Wyjście: 2023-04-01 14:30:00
 ```
 
-Output:
+Dla bardziej zniuansowanego przetwarzania dat, szczególnie przy obchodzeniu się z wieloma formatami lub ustawieniami lokalnymi, bardzo przydatna może być biblioteka stron trzecich `dateutil`. Dostarcza ona moduł analizatora, który potrafi przetwarzać daty w niemal każdym formacie ciągu znaków.
+
+```python
+from dateutil import parser
+
+# Przykładowe ciągi znaków
+data_string1 = "April 1, 2023 2:30 PM"
+data_string2 = "1st April 2023 14:30"
+
+# Użycie analizatora z dateutil
+przetworzona_data1 = parser.parse(data_string1)
+przetworzona_data2 = parser.parse(data_string2)
+
+print(przetworzona_data1)
+# Wyjście: 2023-04-01 14:30:00
+print(przetworzona_data2)
+# Wyjście: 2023-04-01 14:30:00
 ```
-Parsed date: 2022-03-15 00:00:00
-Parsed custom date: 2022-03-15 00:00:00
-```
 
-## Deep Dive (Dogłębna analiza)
-Parsing daty z ciągu znaków nie zawsze jest proste, bo formaty dat mogą się różnić. Python używa modułu `datetime`, który przekształca stringi w obiekty daty. Wcześniej ludzie bazowali na modułach takich jak `time`, ale `datetime` dostarcza większej elastyczności i łatwiejszej obsługi. 
-
-Jednym z dostępnych w Pythonie alternatyw jest moduł `dateutil`, który lepiej radzi sobie z rozbudowanymi formatami dat bez potrzeby określania ich ręcznie. Innym rozwiązaniem jest użycie biblioteki `pandas`, która jest szczególnie pomocna przy analizie danych i automatycznie rozpoznaje wiele formatów.
-
-Przy parsingu warto pamiętać o uwzględnieniu różnych stref czasowych oraz lokalizacji, bo to często źródło błędów. Dlatego istotne jest testowanie parsera z różnymi formatami dat i czasów, aby zapewnić jego poprawne działanie.
-
-## See Also (Zobacz także)
-- Dokumentacja `datetime`: https://docs.python.org/3/library/datetime.html
-- Dokumentacja `dateutil`: https://dateutil.readthedocs.io
-- Tutorial Pandas – Praca z datami: https://pandas.pydata.org/pandas-docs/stable/user_guide/timeseries.html
-- PEP 3101 – Advanced String Formatting: https://www.python.org/dev/peps/pep-3101/
+`dateutil` jest biegły w obsłudze większości formatów dat bez potrzeby jawnego określania łańcuchów formatujących, co czyni go uniwersalnym wyborem dla aplikacji radzących sobie z różnorodnymi reprezentacjami dat.

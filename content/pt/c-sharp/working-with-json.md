@@ -1,61 +1,118 @@
 ---
 title:                "Trabalhando com JSON"
-date:                  2024-01-19
+date:                  2024-02-03T19:22:10.596502-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Trabalhando com JSON"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/c-sharp/working-with-json.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## O Que é & Porquê?
+## O Que & Por Que?
 
-Trabalhar com JSON envolve manipular dados em um formato leve de troca, que é fácil para os humanos lerem e escreverem, e fácil para as máquinas analisarem e gerarem. Programadores usam JSON para interoperabilidade entre serviços de web, APIs e para armazenar configurações e dados de forma simples.
+Trabalhar com JSON (JavaScript Object Notation) envolve analisar, gerar e consultar dados JSON, tornando-se uma habilidade crítica para a programação moderna. Esse formato de troca de dados é extremamente usado em serviços web e APIs devido à sua fácil legibilidade e independência de linguagem, o que o torna essencial para programadores C# que trabalham com aplicações em rede ou interagindo com dados baseados na web.
 
 ## Como Fazer:
 
-Para manipular JSON em C#, a biblioteca mais comum é o `System.Text.Json`, introduzido no .NET Core 3.0. Aqui está como deserializar um JSON para um objeto e serializar um objeto de volta para JSON:
+### Analisando Cadeia de Caracteres JSON para um Objeto
 
-```C#
+C# fornece o namespace `System.Text.Json` para processamento eficiente de JSON. Para analisar uma cadeia de caracteres JSON para um objeto C#, defina uma classe que corresponda à estrutura JSON e use o método `JsonSerializer.Deserialize`.
+
+```csharp
 using System;
 using System.Text.Json;
 
-public class Produto
+public class Person
 {
-    public string Nome { get; set; }
-    public decimal Preco { get; set; }
+    public string Name { get; set; }
+    public int Age { get; set; }
 }
 
-public class ExemploJson
+public class Program
 {
     public static void Main()
     {
-        string json = "{\"Nome\":\"Caneta\",\"Preco\":1.99}";
+        string jsonString = "{\"Name\":\"John\", \"Age\":30}";
+        Person person = JsonSerializer.Deserialize<Person>(jsonString);
 
-        // Deserializar o JSON para um objeto
-        Produto produto = JsonSerializer.Deserialize<Produto>(json);
-        Console.WriteLine($"Nome: {produto.Nome}, Preço: {produto.Preco}");
-
-        // Serializar o objeto de volta para JSON
-        string novoJson = JsonSerializer.Serialize(produto);
-        Console.WriteLine(novoJson);
+        Console.WriteLine($"Name: {person.Name}, Age: {person.Age}");
+        // Saída: Name: John, Age: 30
     }
 }
 ```
 
-Output:
+### Gerando JSON a partir de um Objeto
+
+Para converter um objeto C# de volta para uma cadeia de caracteres JSON, use o método `JsonSerializer.Serialize`.
+
+```csharp
+using System;
+using System.Text.Json;
+
+public class Program
+{
+    public static void Main()
+    {
+        Person person = new Person
+        {
+            Name = "Jane",
+            Age = 25
+        };
+
+        string jsonString = JsonSerializer.Serialize(person);
+        Console.WriteLine(jsonString);
+        // Saída: {"Name":"Jane","Age":25}
+    }
+}
 ```
-Nome: Caneta, Preço: 1.99
-{"Nome":"Caneta","Preco":1.99}
+
+### Usando Newtonsoft.Json
+
+`Newtonsoft.Json` (ou Json.NET) é uma biblioteca de terceiros popular que oferece mais flexibilidade e opções para serialização e desserialização JSON.
+
+Para usar Json.NET, você deve primeiro instalar o pacote `Newtonsoft.Json` via NuGet. Então, você pode desserializar uma cadeia de caracteres JSON assim:
+
+```csharp
+using System;
+using Newtonsoft.Json;
+
+public class Program
+{
+    public static void Main()
+    {
+        string jsonString = "{\"Name\":\"Mike\", \"Age\":22}";
+        Person person = JsonConvert.DeserializeObject<Person>(jsonString);
+
+        Console.WriteLine($"Name: {person.Name}, Age: {person.Age}");
+        // Saída: Name: Mike, Age: 22
+    }
+}
 ```
 
-## Mergulho Profundo:
+Para gerar JSON a partir de um objeto com Json.NET:
 
-JSON, sigla de JavaScript Object Notation, foi introduzido por Douglas Crockford em 2001, ganhando popularidade como uma alternativa mais enxuta ao XML. Alternativas incluem YAML, um formato ainda mais orientado para a legibilidade humana, e Protocol Buffers, otimizado para a eficiência na comunicação máquina a máquina. No C#, além do `System.Text.Json`, existe a biblioteca `Newtonsoft.Json`, amplamente usada em versões anteriores do .NET. O `System.Text.Json` foi otimizado para melhor desempenho e utilização reduzida de memória, mas possivelmente menos recursos que `Newtonsoft.Json`.
+```csharp
+using System;
+using Newtonsoft.Json;
 
-## Veja Também:
+public class Program
+{
+    public static void Main()
+    {
+        Person person = new Person
+        {
+            Name = "Ella",
+            Age = 28
+        };
 
-- Documentação oficial do System.Text.Json: [https://docs.microsoft.com/pt-br/dotnet/standard/serialization/system-text-json-overview](https://docs.microsoft.com/pt-br/dotnet/standard/serialization/system-text-json-overview)
-- Guia de migração de Newtonsoft.Json para System.Text.Json: [https://docs.microsoft.com/pt-br/dotnet/standard/serialization/system-text-json-migrate-from-newtonsoft-how-to](https://docs.microsoft.com/pt-br/dotnet/standard/serialization/system-text-json-migrate-from-newtonsoft-how-to)
-- JSON.org, para uma exploração mais profunda do formato JSON: [https://www.json.org/json-pt.html](https://www.json.org/json-pt.html)
+        string jsonString = JsonConvert.SerializeObject(person);
+        Console.WriteLine(jsonString);
+        // Saída: {"Name":"Ella","Age":28}
+    }
+}
+```
+
+Esses trechos oferecem um rápido início para o manuseio de JSON em C#, demonstrando tanto as capacidades incorporadas do `System.Text.Json` quanto os recursos extensivos do `Newtonsoft.Json`.

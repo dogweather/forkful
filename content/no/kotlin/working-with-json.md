@@ -1,56 +1,80 @@
 ---
-title:                "Arbeid med JSON"
-date:                  2024-01-19
-simple_title:         "Arbeid med JSON"
-
+title:                "Arbeider med JSON"
+date:                  2024-02-03T19:23:12.322101-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Arbeider med JSON"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/kotlin/working-with-json.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Hva & Hvorfor?
-Jobbing med JSON (JavaScript Object Notation) handler om datautveksling. Programmerere bruker JSON for å lagre og utveksle data på en lettleselig måte for både mennesker og maskiner.
+## Hva og hvorfor?
+Arbeid med JSON (JavaScript Object Notation) i Kotlin involverer parsing og generering av JSON-data. Programmerere gjør dette for å enkelt utveksle data mellom ulike lag i en applikasjon, eller for å kommunisere med webtjenester, på grunn av JSONs lette og menneskelesbare format.
 
 ## Hvordan:
-I Kotlin kan du enkelt parse og generere JSON ved hjelp av biblioteket kotlinx.serialization. Først må du legge til avhengighet i `build.gradle.kts`:
+Kotlin inkluderer ikke innebygd støtte for JSON, men benytter seg av kraftige funksjoner fra tredjepartsbiblioteker som `Gson` fra Google og `Kotlinx.serialization` fra JetBrains. Her er hvordan du kan bruke begge til å arbeide med JSON.
 
+### Bruke Gson
+Legg til Gson-avhengigheten i din `build.gradle`-fil:
 ```kotlin
-dependencies {
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.2")
+implementation 'com.google.code.gson:gson:2.8.9'
+```
+
+Parse en JSON-streng til et objekt og omvendt:
+```kotlin
+import com.google.gson.Gson
+
+// Definer en dataklasse
+data class User(val name: String, val age: Int)
+
+fun main() {
+    val gson = Gson()
+
+    // Serialisere
+    val json = gson.toJson(User("John Doe", 30))
+    println(json)  // Utdata: {"name":"John Doe","age":30}
+
+    // Deserialisere
+    val user: User = gson.fromJson(json, User::class.java)
+    println(user)  // Utdata: User(name=John Doe, age=30)
 }
 ```
 
-Så kan du parse JSON til en Kotlin-klasse og omvendt:
+### Bruke Kotlinx.serialization
+Først, inkluder avhengigheten i din `build.gradle`:
+```kotlin
+implementation "org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.3"
+```
 
+Deretter, bruk `kotlinx-serialization`-pluginen øverst i byggscriptet ditt:
+```kotlin
+plugins {
+    kotlin("jvm") version "1.6.10"
+    kotlin("plugin.serialization") version "1.6.10"
+}
+```
+
+Serialisering og deserialisering med Kotlinx.serialization:
 ```kotlin
 import kotlinx.serialization.*
 import kotlinx.serialization.json.*
 
-// Definer en dataklasse
+// Definer en serialiserbar dataklasse
 @Serializable
-data class Bruker(val navn: String, val alder: Int)
+data class User(val name: String, val age: Int)
 
 fun main() {
-    // JSON-tekst
-    val jsonStr = """{"navn": "Ola", "alder": 30}"""
+    // Serialisere
+    val json = Json.encodeToString(User("Jane Doe", 28))
+    println(json)  // Utdata: {"name":"Jane Doe","age":28}
 
-    // Parse JSON til Kotlin-objekt
-    val bruker = Json.decodeFromString<Bruker>(jsonStr)
-    println(bruker) // Output: Bruker(navn=Ola, alder=30)
-
-    // Generer JSON fra Kotlin-objekt
-    val jsonOut = Json.encodeToString(bruker)
-    println(jsonOut) // Output: {"navn":"Ola","alder":30}
+    // Deserialisere
+    val user = Json.decodeFromString<User>(json)
+    println(user)  // Utdata: User(name=Jane Doe, age=28)
 }
 ```
 
-## Deep Dive
-JSON ble introdusert i 2001 og har raskt blitt standard for nettapplikasjoner. Alternativer til JSON inkluderer XML og YAML, men disse er ofte mer verbøse. kotlinx.serialization er laget for Kotlin og integrerer sømløst med Kotlin korutiner og andre språkfunksjoner, som dataklasser og immutabilitet.
-
-## Se Også
-For mer om JSON og Kotlin serialisering:
-
-- kotlinx.serialization GitHub: https://github.com/Kotlin/kotlinx.serialization
-- Offisiell Kotlin serialization guide: https://kotlinlang.org/docs/serialization.html
-- JSON format spesifikasjon: https://www.json.org/json-en.html
+Både Gson og Kotlinx.serialization forenkler arbeid med JSON i Kotlin-applikasjoner, å velge den ene over den andre avhenger av dine spesifikke prosjektkrav og personlige preferanser.

@@ -1,38 +1,65 @@
 ---
 title:                "Scrivere sull'errore standard"
-date:                  2024-01-19
+date:                  2024-02-03T19:34:17.880777-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Scrivere sull'errore standard"
-
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/powershell/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Cosa & Perché?)
-Scrivere su standard error (stderr) significa inviare messaggi di errore o diagnostici separati dall'output standard. I programmatori lo fanno per isolare gli errori dall'output utile, semplificando il debugging e la gestione degli errori.
+## Cosa & Perché?
 
-## How to: (Come fare:)
-Usa `Write-Host` con il parametro `-ForegroundColor`. Aggiungi `>&2` per reindirizzare a stderr.
+Scrivere su standard error (stderr) in PowerShell implica l'invio di messaggi di errore o diagnostici direttamente allo stream stderr, distinto dallo stream di output standard (stdout). Questa separazione consente un controllo più preciso sull'output di uno script, abilitando gli sviluppatori a dirigere messaggi normali ed errori verso destinazioni diverse, il che è fondamentale per la gestione degli errori e il logging.
 
-```PowerShell
-# Scrivi un messaggio di errore in rosso
-Write-Host "Errore: File non trovato!" -ForegroundColor Red >&2
+## Come fare:
 
-# Reindirizza un errore da cmdlet a stderr
-Get-Item "non_esiste.txt" 2>&1
+PowerShell semplifica il processo di scrittura su stderr mediante l'uso del cmdlet `Write-Error` o indirizzando l'output al metodo `$host.ui.WriteErrorLine()`. Tuttavia, per la reindirizzazione diretta di stderr, potresti preferire l'uso di metodi .NET o la reindirizzazione dei descrittori di file offerta da PowerShell stesso.
+
+**Esempio 1:** Utilizzo di `Write-Error` per scrivere un messaggio di errore su stderr.
+
+```powershell
+Write-Error "Questo è un messaggio di errore."
 ```
 
-Output d'esempio:
+Output su stderr:
 ```
-Errore: File non trovato!
-Get-Item: Impossibile trovare il percorso 'C:\...\non_esiste.txt' perché non esiste.
+Write-Error: Questo è un messaggio di errore.
 ```
 
-## Deep Dive (Approfondimento)
-Historically, i sistemi operativi differenziano fra stdout e stderr per permettere un'elaborazione separata. PowerShell supporta questo standard UNIX. Alternativamente, puoi usare `Write-Error` o `[Console]::Error.WriteLine()` per stderr. L'implementazione si basa sulla redirection interna dei flussi del sistema operativo.
+**Esempio 2:** Utilizzo di `$host.ui.WriteErrorLine()` per una scrittura diretta su stderr.
 
-## See Also (Vedi Anche)
-- Microsoft Docs su Write-Host: [https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/write-host](https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/write-host)
-- Redirection in PowerShell: [https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_redirection](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_redirection)
-- StackOverflow discussions on stderr: [https://stackoverflow.com/questions/tagged/powershell+stderr](https://stackoverflow.com/questions/tagged/powershell+stderr)
+```powershell
+$host.ui.WriteErrorLine("Scrittura diretta su stderr.")
+```
+
+Output su stderr:
+```
+Scrittura diretta su stderr.
+```
+
+**Esempio 3:** Utilizzo di metodi .NET per scrivere su stderr.
+
+```powershell
+[Console]::Error.WriteLine("Utilizzo di metodo .NET per stderr")
+```
+
+Output di questo metodo:
+```
+Utilizzo di metodo .NET per stderr
+```
+
+**Esempio 4:** Reindirizzamento dell'output di errore usando il descrittore di file `2>`.
+
+I descrittori di file in PowerShell possono reindirizzare diversi stream. Per stderr, il descrittore di file è `2`. Ecco un esempio di reindirizzamento di stderr su un file chiamato `error.log` mentre si esegue un comando che genera un errore.
+
+```powershell
+Get-Item FileInesistente.txt 2> error.log
+```
+
+Questo esempio non produce output sulla console, ma genera un file `error.log` nella directory corrente contenente il messaggio di errore dal tentativo di accedere a un file che non esiste.
+
+In conclusione, PowerShell fornisce molteplici metodi per scrivere e gestire efficacemente l'output di errore, consentendo strategie sofisticate di gestione degli errori e logging in script e applicazioni.

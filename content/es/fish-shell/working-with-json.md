@@ -1,46 +1,65 @@
 ---
 title:                "Trabajando con JSON"
-date:                  2024-01-19
+date:                  2024-02-03T19:22:34.043756-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Trabajando con JSON"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/fish-shell/working-with-json.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Qué es y Por Qué?
-Trabajar con JSON significa manipular datos en un formato ligero de intercambio, común en APIs y configuraciones. Los programadores lo usan por su simplicidad, facilidad de lectura y amplia adopción en distintas plataformas.
+## ¿Qué y por qué?
+
+Trabajar con JSON en Fish Shell implica analizar y generar datos JSON, una tarea común para configurar aplicaciones, interacción con API y optimizar flujos de trabajo en la línea de comandos. Dada la ubicuidad de JSON en el desarrollo web y de aplicaciones, dominar su manipulación directamente en la shell puede mejorar significativamente la eficiencia en automatización y manejo de datos para los programadores.
 
 ## Cómo hacerlo:
 
-Manipular JSON en Fish Shell es sencillo gracias a herramientas como `jq`. Aquí unos ejemplos:
+Fish Shell, por sí mismo, no tiene utilidades incorporadas para analizar y generar JSON. Sin embargo, se integra sin problemas con herramientas de terceros como `jq` para el procesamiento de JSON. `jq` es un procesador de JSON de línea de comandos potente y versátil que te permite cortar, filtrar, mapear y transformar datos estructurados con un lenguaje simple y expresivo.
 
-```Fish Shell
-# Obtén un valor de un JSON simple
-echo '{"nombre": "Juan", "edad": 30}' | jq '.nombre'
-# Salida: "Juan"
+### Analizando JSON con jq
+Para analizar un archivo JSON y extraer datos usando `jq`:
 
-# Asigna valor a variable en Fish
-set user_edad (echo '{"nombre": "Juan", "edad": 30}' | jq '.edad')
-echo $user_edad
-# Salida: 30
-
-# Modifica un JSON
-echo '{"nombre": "Juan", "edad": 30}' | jq '.edad += 1'
-# Salida: 
-# {
-#   "nombre": "Juan",
-#   "edad": 31
-# }
+```fish
+# Asumiendo que tienes un archivo JSON llamado 'data.json' con el contenido: {"name":"Fish Shell","version":"3.4.0"}
+cat data.json | jq '.name'
+# Salida de muestra
+"Fish Shell"
 ```
 
-## Análisis en Profundidad
+### Generando JSON con jq
+Crear contenido JSON a partir de variables de shell o salidas:
 
-JSON (JavaScript Object Notation) se originó a partir de la necesidad de un formato de datos simple y legible para humanos, naciendo como una convención dentro de JavaScript pero adoptado universalmente más allá de este. Herramientas como `jq` han surgido para facilitar la manipulación de JSON en la línea de comandos, convirtiéndose en la opción estándar en la mayoría de entornos Unix-like. Al ser Fish Shell un intérprete de comandos moderno, aprovecha estas utilidades externas para operar con JSON, pero no incluye una herramienta integrada nativa para ello, a diferencia de otros datos como variables o listas.
+```fish
+# Crear objeto JSON a partir de variables
+set name "Fish Shell"
+set version "3.4.0"
+jq -n --arg name "$name" --arg version "$version" '{name: $name, version: $version}'
+# Salida de muestra
+{
+  "name": "Fish Shell",
+  "version": "3.4.0"
+}
+```
 
-## Ver También
+### Filtrando Colecciones JSON
+Supongamos que tenemos un arreglo JSON de objetos en un archivo llamado `versions.json`:
+```json
+[
+  {"version": "3.1.2", "stable": true},
+  {"version": "3.2.0", "stable": false},
+  {"version": "3.4.0", "stable": true}
+]
+```
+Para filtrar este arreglo solo por versiones estables:
 
-- Documentación de `jq`: https://stedolan.github.io/jq/manual/
-- Tutorial de Fish Shell sobre cómo trabajar con variables: https://fishshell.com/docs/current/index.html#variables-lists
-- Guía oficial de JSON: https://www.json.org/json-es.html
+```fish
+cat versions.json | jq '.[] | select(.stable == true) | .version'
+# Salida de muestra
+"3.1.2"
+"3.4.0"
+```
+
+Los ejemplos proporcionados demuestran el poder de integrar `jq` con Fish Shell para operaciones JSON. Aprovechar tales herramientas enriquece la experiencia en la shell, haciéndola un entorno formidable para manejar formatos de datos modernos.

@@ -1,34 +1,53 @@
 ---
 title:                "현재 날짜 가져오기"
-date:                  2024-01-20T15:13:11.366999-07:00
+date:                  2024-02-03T19:08:58.513182-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "현재 날짜 가져오기"
-
 tag:                  "Dates and Times"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/bash/getting-the-current-date.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (무엇과 왜?)
-현재 날짜 가져오기는 시스템의 현재 날짜와 시간을 찾는 것입니다. 로그 파일 작성, 백업 스크립트 실행 또는 타임스탬프 생성 등의 목적으로 프로그래머들이 사용합니다.
+## 무엇 & 왜?
+Bash에서 현재 날짜를 검색하는 것은 다양한 형식으로 날짜와 시간을 표시하는 내장 명령을 사용하는 것을 포함합니다. 프로그래머들은 이 기능을 로그 타임스탬핑, 작업 예약 또는 수행된 동작을 추적하기 위해 시스템 정보 스크립트의 일부로 사용합니다.
 
-## How to: (방법)
-```Bash
-# 현재 날짜와 시간 출력
+## 방법:
+Bash에서 현재 날짜와 시간을 얻기 위한 주요 도구는 `date` 명령입니다. 다음은 이를 사용하는 몇 가지 예시입니다:
+
+1. **기본 형식으로 현재 날짜와 시간 얻기:**
+
+```bash
 date
-
-# 형식을 지정하여 날짜 출력
-date +"%Y-%m-%d %H:%M:%S"
-
-# 예제 출력
-2023-04-01 12:34:56
 ```
 
-## Deep Dive (심층 분석)
-쉘 프로그래밍에서 날짜는 중요한 역할을 합니다. `date` 명령은 UNIX 시스템에서 시작되어 리눅스 배포판까지 이어져 왔습니다. 대체 방법으로는 `printf` 내장 명령을 사용하거나 Perl이나 Python과 같은 스크립팅 언어를 활용할 수 있습니다. `date`의 활용은 스크립트 효율성과 가독성을 향상시킵니다. 단순한 명령이지만 시스템의 타임존 설정이나 여름시간제(Daylight Saving Time) 같은 요소에 영향을 받습니다.
+*출력 예시:*
+```
+Wed Apr 5 14:22:04 PDT 2023
+```
 
-## See Also (참고 자료)
-- GNU Coreutils `date`: https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html
-- Bash Scripting Guide: https://www.tldp.org/LDP/abs/html/
-- Advanced Bash-Scripting Guide: https://www.tldp.org/LDP/abs/html/datetime.html
+2. **출력 형식 사용자 정의:** 출력 형식을 지정하려면 `+%` 형식 지정자를 사용할 수 있습니다. 예를 들어, YYYY-MM-DD 형식으로 날짜를 표시하려면:
+
+```bash
+date "+%Y-%m-%d"
+```
+
+*출력 예시:*
+```
+2023-04-05
+```
+
+3. **현재 UNIX 타임스탬프 얻기:** UNIX 타임스탬프는 Unix Epoch(1970년 1월 1일) 이후의 초 수입니다. 이는 시간 차이를 기반으로 계산을 수행하는 스크립트에 유용합니다.
+
+```bash
+date "+%s"
+```
+
+*출력 예시:*
+```
+1672877344
+```
+
+Bash에서 이 기본 작업에 대해 일반적으로 사용되는 인기 있는 제3자 라이브러리는 없습니다. 왜냐하면 내장된 `date` 명령이 포괄적인 기능을 제공하기 때문입니다. 그러나 보다 고급 날짜 및 시간 조작을 위해, 프로그래머들은 날짜 산술 및 파싱을 위한 라이브러리를 제공하는 다른 프로그래밍 언어나 도구, 예를 들어 Python의 `datetime` 모듈을 사용할 수 있습니다.

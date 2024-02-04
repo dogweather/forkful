@@ -1,47 +1,52 @@
 ---
-title:                "रेगुलर एक्सप्रेशन का उपयोग"
-date:                  2024-01-19
-simple_title:         "रेगुलर एक्सप्रेशन का उपयोग"
-
+title:                "रेगुलर एक्सप्रेशन्स का उपयोग करना"
+date:                  2024-02-03T19:19:27.671469-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "रेगुलर एक्सप्रेशन्स का उपयोग करना"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/typescript/using-regular-expressions.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (क्या और क्यों?)
-रेग्युलर एक्सप्रेशन (Regular Expressions) पैटर्न से टेक्स्ट को ढूंढने और मैनेज करने की एक तकनीक है। प्रोग्रामर्स इसका इस्तेमाल डाटा वैलिडेशन, पार्सिंग या टेक्स्ट रिप्लेसमेन्ट के लिए करते हैं क्योंकि यह शक्तिशाली और फ्लेक्सिबल होता है।
+## क्या और क्यों?
+रेगुलर एक्सप्रेशन, या रेगेक्स, प्रोग्रामिंग में एक शक्तिशाली पैटर्न मिलान और खोजने का उपकरण है। प्रोग्रामर यूज़र इनपुट की जांच, टेक्स्ट खोजना, या स्ट्रिंग्स को संशोधित करने जैसे कार्यों के लिए रेगेक्स का उपयोग करते हैं क्योंकि यह कुशल और बहुमुखी होता है।
 
-## How to: (कैसे करें:)
-```typescript
-// TypeScript में RegEx का उपयोग करके ईमेल वैलिडेशन करना:
-function validateEmail(email: string): boolean {
-  const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  return regex.test(email);
-}
+## कैसे:
 
-// ईमेल वैलिड है या नहीं चेक करें:
-console.log(validateEmail('example@domain.com')); // true
-console.log(validateEmail('wrong-email@')); // false
+आइए TypeScript में कूदें और देखें कि सामान्य कार्यों के लिए रेगेक्स का उपयोग कैसे किया जाता है।
+
+```TypeScript
+// ईमेल पते के लिए एक रेगेक्स पैटर्न परिभाषित करें
+const emailPattern = /\S+@\S+\.\S+/;
+
+// जाँचें कि क्या एक स्ट्रिंग ईमेल पैटर्न से मेल खाती है
+const email = "user@example.com";
+console.log(emailPattern.test(email)); // आउटपुट: true
+
+// एक स्ट्रिंग में अंकों को खोजना और बदलना
+const replaceDigits = "Item 25 costs $30".replace(/\d+/g, '#');
+console.log(replaceDigits); // आउटपुट: "Item # costs $#"
+
+// कैप्चर ग्रुप्स का उपयोग करके एक स्ट्रिंग से विशिष्ट भागों को निकालना
+const data = "April 10, 2021";
+const datePattern = /(\w+) (\d+), (\d+)/;
+const [, month, day, year] = datePattern.exec(data) || [];
+console.log(month, day, year); // आउटपुट: "April" "10" "2021"
 ```
 
-```typescript
-// TypeScript में RegEx का उपयोग करके स्ट्रिंग से नंबर्स निकालना:
-function extractNumbers(text: string): number[] {
-  const regex = /\d+/g;
-  const matches = text.match(regex);
-  return matches ? matches.map(Number) : [];
-}
+## गहराई में
 
-// परिणाम देखें:
-console.log(extractNumbers('abc123def45')); // [123, 45]
-console.log(extractNumbers('no numbers')); // []
-```
+1950 के दशक में, गणितज्ञ स्टीफन क्लेन ने रेगुलर एक्सप्रेशन को एक मॉडल के रूप में वर्णित किया था जो नियमित भाषाओं को प्रस्तुत करता है, जो बाद में कंप्यूटर विज्ञान में आवश्यक बन गया। समय को आगे बढ़ाएं, रेगेक्स प्रोग्रामिंग में टेक्स्ट से निपटने के लिए सर्वव्यापी है।
 
-## Deep Dive (गहराई से जानकारी)
-रेग्युलर एक्सप्रेशन्स साइंटिस्ट (Scientist) स्टीफेन क्लेन (Stephen Kleene) ने 1950s में बनाए थे। यह तब से प्रोग्रामिंग, टेक्स्ट एडिटिंग और थ्योरेटिकल कंप्यूटर साइंस में एक महत्वपूर्ण उपकरण बन गया है। विकल्प के रूप में पार्सर जनरेटर्स जैसे ANTLR या लेक्सिकल एनालाइज़र होते हैं, लेकिन उनका उपयोग जटिल होता है। TypeScript में, रेग्युलर एक्सप्रेशन्स का इंप्लीमेंटेशन जावास्क्रिप्ट (JavaScript) की तरह ही है क्योंकि TypeScript जावास्क्रिप्ट में ट्रांसपाइल हो जाता है।
+जबकि रेगेक्स स्ट्रिंग ऑपरेशनों के लिए एक स्विस आर्मी नाइफ है, इसके विकल्पों के बिना नहीं हैं। कार्य की जटिलता के आधार पर, कभी-कभी स्ट्रिंग मेथड्स जैसे `includes()`, `startsWith()`, `endsWith()`, या यहां तक कि एक लाइब्रेरी के साथ पार्सिंग बेहतर हो सकती है। उदाहरण के लिए, एक जटिल JSON स्ट्रिंग को रेगेक्स के साथ पार्स करना एक बुरा सपना हो सकता है—इसके बजाय एक JSON पार्सर का उपयोग करें।
 
-## See Also (देखें भी)
-- [MDN Regular Expressions Guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
-- [RegExr: ऑनलाइन RegEx टेस्टर और डीबगर](https://regexr.com/)
-- [TypeScript Official Documentation](https://www.typescriptlang.org/docs/)
+कार्यान्वयन के संबंध में, जावास्क्रिप्ट और टाइपस्क्रिप्ट में रेगेक्स, ECMAScript भाषा विनिर्देशन पर आधारित है। इंजन, पैटर्नों का प्रभावी ढंग से मिलान करने के लिए आंतरिक रूप से स्थिति मशीनों का उपयोग करते हैं। यह ध्यान देने योग्य है कि रेगेक्स ऑपरेशन प्रदर्शन की दृष्टि से महंगे हो सकते हैं, विशेष रूप से खराब लिखित पैटर्नों के साथ—"विनाशकारी बैकट्रैकिंग" के लिए देखें।
+
+## और देखें
+
+- रेगुलर एक्सप्रेशन पर MDN वेब डॉक्स: [MDN रेगुलर एक्सप्रेशन](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
+- रेगेक्स पैटर्न को परीक्षण और डिबग करने का उपकरण Regex101: [Regex101](https://regex101.com/)
+- गहरी समझ के लिए "मास्टरिंग रेगुलर एक्सप्रेशन" पुस्तक: [O'Reilly](https://www.oreilly.com/library/view/mastering-regular-expressions/0596528124/)

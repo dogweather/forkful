@@ -1,8 +1,8 @@
 ---
 title:                "Parsing HTML"
-date:                  2024-01-20T15:31:49.800254-07:00
+date:                  2024-02-03T19:02:38.300946-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Parsing HTML"
-
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/haskell/parsing-html.md"
 ---
@@ -11,48 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Parsing HTML means extracting data from HTML documents—HTML is the scaffolding of the web, after all. Programmers parse HTML to automate data scraping, to migrate content, or to transform it into different formats.
+Parsing HTML in Haskell allows you to extract data, manipulate HTML content, or interact with web pages programmatically. This operation is essential for tasks such as web scraping, automated testing of web applications, and data mining from websites - leveraging Haskell's strong type system and functional programming paradigms to ensure robust and concise code.
 
 ## How to:
 
-Let's get our hands dirty with some code, using the `tagsoup` library to parse a simple HTML snippet. First, make sure to install the package from Hackage via `cabal install tagsoup`.
+For parsing HTML in Haskell, we'll use the `tagsoup` library for its simplicity and flexibility. First, make sure to install the library by adding `tagsoup` to your project's cabal file or by running `cabal install tagsoup`. 
 
-```Haskell
+```haskell
+{-# LANGUAGE OverloadedStrings #-}
+
 import Text.HTML.TagSoup
 
--- Let's parse a simple HTML snippet
-let html = "<html><body><p>Hello, Haskell!</p></body></html>"
+-- Sample HTML for demonstration
+let sampleHtml = "<html><body><p>Learn Haskell!</p><a href='http://example.com'>Click Here</a></body></html>"
 
--- Parse it
-let parsedHtml = parseTags html
+-- Parse HTML and filter for links (a tags)
+let tags = parseTags sampleHtml
+let links = [fromAttrib "href" tag | tag <- tags, isTagOpenName "a" tag]
 
--- Find paragraphs
-let paragraphs = partitions (~== "<p>") parsedHtml
-
--- Get the text from the first paragraph
-let firstParagraphText = innerText $ head paragraphs
-
--- Voila!
-print firstParagraphText
+-- Print extracted links
+print links
 ```
 
 Sample output:
+```plaintext
+["http://example.com"]
 ```
-"Hello, Haskell!"
+
+For more sophisticated HTML parsing needs, consider using the `pandoc` library, especially if you're working with document conversion. It's exceptionally versatile but comes with more complexity:
+
+```haskell
+import Text.Pandoc
+
+-- Assuming you have a Pandoc document (doc) loaded, e.g., from reading a file
+let doc = ... -- Your Pandoc document goes here
+
+-- Convert the document to HTML string
+let htmlString = writeHtmlString def doc
+
+-- Now, you would parse `htmlString` as above or proceed as per your requirements.
 ```
-This snippet parses an HTML string, hunts down paragraph tags, and prints the text contained within the first paragraph. Neat and sweet.
-
-## Deep Dive
-
-Parsing HTML in Haskell hasn't always been as streamlined as it is today. Once upon a time, folks rolled their own parsers or wrestled with lower-level libraries, parsing HTML like it was the Wild West.
-
-These days, you've got options. `tagsoup`, as we've used, is great for when HTML structure is more suggestion than rule—it's tolerant of real-world messy HTML. If you're looking for more rigor, `html-conduit` combined with `xml-conduit` from the `conduit` package might be your jam. They use a streaming approach and are pickier about structure.
-
-Under the hood, these libraries convert HTML into a tree or a soup of tags. They provide handy functions to query and manipulate this data, making HTML parsing less of a headache. Think of them as a treasure map, where X marks the paragraph tag.
-
-## See Also
-
-- [`tagsoup` on Hackage](https://hackage.haskell.org/package/tagsoup)
-- [`html-conduit` on Hackage](https://hackage.haskell.org/package/html-conduit)
-- [Beautiful Soup documentation](https://www.crummy.com/software/BeautifulSoup/) - While not Haskell, Beautiful Soup's approach to 'tag soup' has influenced similar libraries in the Haskell world.
-- [XPath and XQuery Functions and Operators on W3C](https://www.w3.org/TR/xpath-functions/) - Deep dive into standards can inform about the structure and querying of XML/HTML documents, useful for understanding the parsing strategies in the background.
+Keep in mind that `pandoc` is a much larger library focusing on conversion between numerous markup formats, so use it if you need those extra capabilities or if you're already dealing with document formats in your application.

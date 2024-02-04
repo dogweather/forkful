@@ -1,42 +1,63 @@
 ---
 title:                "解析HTML"
-date:                  2024-01-20T15:34:06.284140-07:00
+date:                  2024-02-03T19:13:17.060490-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "解析HTML"
-
 tag:                  "HTML and the Web"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/typescript/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? 什么以及为什么？
-解析HTML是指将HTML字符串转换成可以编程操作的对象。程序员这么做是为了从网页中提取数据或者操作DOM。
+## 什么 & 为什么?
 
-## How to: 怎么做
-首先，安装一个第三方库，如`node-html-parser`。然后使用TypeScript解析HTML：
+解析HTML意味着仔细检查HTML代码，以查找、提取或操作信息。程序员这样做是为了与网页内容互动——可能是爬取数据，或自动化浏览器。
+
+## 如何进行:
+
+首先，安装像`node-html-parser`这样的库。这是终端命令：
+
+```bash
+npm install node-html-parser
+```
+
+现在，让我们用TypeScript来解析一些基本的HTML：
 
 ```typescript
 import { parse } from 'node-html-parser';
 
-const html = `
-  <div>
-    <h1>Title</h1>
-    <p>Description here</p>
-  </div>
-`;
+const html = `<ul class="fruits">
+                <li>Apple</li>
+                <li>Banana</li>
+              </ul>`;
 
 const root = parse(html);
-console.log(root.querySelector('h1').textContent); // 输出: Title
+console.log(root.querySelector('.fruits').textContent);  // "Apple Banana"
 ```
 
-## Deep Dive 深度探索
-在1990年代，HTML主要是静态的，简单的字符串操作足以处理。现代开发中，HTML变得复杂，存在大量动态内容。因此，出现了各种HTML解析库，如`cheerio`, `jsdom`, 和刚才提到的`node-html-parser`。这些库使用不同的技术来解析和操作HTML文档。
+如果你只想抓住香蕉：
 
-比起正则表达式，这些库更准确，它们通过DOM树的结构来分析文档，而不是简单地搜索字符串模式。选择哪个库取决于你的具体需求：性能、易用性、功能的全面性等。
+```typescript
+const bananas = root.querySelectorAll('li')[1].textContent;
+console.log(bananas);  // "Banana"
+```
 
-## See Also 相关资源
-- [MDN Web Docs on HTML](https://developer.mozilla.org/zh-CN/docs/Web/HTML)
-- [node-html-parser on npm](https://www.npmjs.com/package/node-html-parser)
-- [cheerio GitHub repository](https://github.com/cheeriojs/cheerio)
-- [jsdom GitHub repository](https://github.com/jsdom/jsdom)
+## 深入了解
+
+解析HTML并不是新事物——自网络早期以来就已存在。起初，开发者可能使用了正则表达式，但很快就变得混乱。然后呈现了DOM解析器：稳定，但受限于浏览器。
+
+像`node-html-parser`这样的库抽象化了这种痛苦。它们让您能够像使用jQuery一样查询HTML，但是在Node.js的服务器端。它快速，对脏HTML有容忍度，并且对DOM友好。
+
+还有`jsdom`，模拟了一个完整的浏览器环境。它更重一些，但更彻底，为操作和交互创建了一个完整的文档对象模型（DOM）。
+
+也不要忘记Cheerio。它将速度与类jQuery语法和更小的占用空间相结合，愉快地坐在两者之间。
+
+## 另请参阅
+
+如果你渴望了解更多，请深入这些资料：
+- [DOM解析和序列化W3C规范](https://www.w3.org/TR/DOM-Parsing/)
+- [node-html-parser的GitHub页面](https://github.com/taoqf/node-html-parser)
+- [jsdom的GitHub仓库](https://github.com/jsdom/jsdom)
+- [Cheerio网站](https://cheerio.js.org/)

@@ -1,37 +1,99 @@
 ---
 title:                "כתיבת בדיקות"
-date:                  2024-01-19
+date:                  2024-02-03T19:31:33.855934-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "כתיבת בדיקות"
-
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/kotlin/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## מה ולמה?
-כתיבת בדיקות זה פרקטיקה שבה תוכניתנים יוצרים טסטים לקוד שלהם כדי לוודא שהכל עובד כשורה. זה נעשה כדי למנוע באגים, לשפר את איכות הקוד, ולהקל על שינויים בעתיד.
+
+כתיבת מבחנים ב-Kotlin כוללת יצירת קטעי קוד שמאמתים באופן אוטומטי את נכונות התפקוד של מודולי התוכנה שלך, ומבטיחים שהם פועלים כצפוי. מתכנתים עושים את זה כדי לתפוס תקלות בשלב מוקדם, להקל על שיפוט קוד, ולספק תיעוד על איך מרכיבי התוכנה אמורים לפעול.
 
 ## איך לעשות:
-```Kotlin
-import org.junit.Test
-import org.junit.Assert.*
 
-class ExampleUnitTest {
+Kotlin תומך בפיתוח מונחה טסטים עם מסגרות שונות, הפופולריות ביותר הן JUnit, Kotest, ו-MockK למוקים. הנה דוגמה פשוטה באמצעות JUnit:
+
+```kotlin
+import org.junit.jupiter.api.Test
+import kotlin.test.assertEquals
+
+class CalculatorTest {
+
     @Test
-    fun addition_isCorrect() {
-        assertEquals(4, 2 + 2)
+    fun `adds two numbers`() {
+        val calculator = Calculator()
+        val result = calculator.add(2, 3)
+        assertEquals(5, result)
     }
 }
-```
-פלט לדוגמה:
-```
-Test passed: addition_isCorrect
+
+class Calculator {
+    fun add(a: Int, b: Int): Int = a + b
+}
 ```
 
-## צלילה עמוקה:
-כבר מהשנים הראשונות של תכנות, מובן הייתה החשיבות של בדיקות קוד. יש כלים וספריות רבות לבדיקות - JUnit הוא רק דוגמה אחת. מימוש הבדיקות עשוי להשתנות, אך העיקרון נשאר: ודא שהתוכנה עובדת כשורה.
+**פלט לדוגמה**
 
-## ראו גם:
-- [JUnit 5 User Guide](https://junit.org/junit5/docs/current/user-guide/)
-- [Test-Driven Development (TDD)](https://en.wikipedia.org/wiki/Test-driven_development)
+```text
+המבחן עבר.
+```
+
+לגישה מתקדמת יותר לטסטים באמצעות Kotest, שמציע סגנון כתיבת טסטים יותר אידיומטי ב-Kotlin, ראו את הדוגמה למטה:
+
+```kotlin
+import io.kotest.core.spec.style.StringSpec
+import io.kotest.matchers.shouldBe
+
+class CalculatorSpec : StringSpec({
+    "adding 2 and 3 should return 5" {
+        val calculator = Calculator()
+        calculator.add(2, 3) shouldBe 5
+    }
+})
+```
+
+השימוש ב-MockK לבדיקות עם מוקים:
+
+```kotlin
+import io.mockk.every
+import io.mockk.mockk
+import org.junit.jupiter.api.Test
+import kotlin.test.assertEquals
+
+class ServiceTest {
+
+    private val repository = mockk<Repository>()
+    private val service = Service(repository)
+
+    @Test
+    fun `get data returns mocked data`() {
+        every { repository.getData() } returns "Mocked Data"
+
+        val result = service.getData()
+
+        assertEquals("Mocked Data", result)
+    }
+}
+
+class Service(private val repository: Repository) {
+    fun getData(): String = repository.getData()
+}
+
+interface Repository {
+    fun getData(): String
+}
+```
+
+**פלט לדוגמה**
+
+```text
+המבחן עבר.
+```
+
+הדוגמאות הללו ממחישות את היסודות של כתיבת מבחני יחידה ב-Kotlin. ככל שהאפליקציה שלך גדלה, שקול לחקור טכניקות וכלים מתקדמים יותר לבדיקות, שמסופקים על ידי כל מסגרת.

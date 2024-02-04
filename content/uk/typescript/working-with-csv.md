@@ -1,49 +1,100 @@
 ---
-title:                "Робота з CSV файлами"
-date:                  2024-01-19
-simple_title:         "Робота з CSV файлами"
-
+title:                "Робота з CSV"
+date:                  2024-02-03T19:21:49.226104-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Робота з CSV"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/typescript/working-with-csv.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Що таке & Чому?
-Робота з CSV (Comma-Separated Values) полягає в організації та обробці даних, які зберігаються у текстовому форматі з комами як роздільниками. Програмісти використовують CSV через його простоту та широку підтримку різними інструментами й платформами.
+## Що та Чому?
+
+Робота з CSV (Comma-Separated Values, значення, розділені комами) включає читання з і запис у файли CSV, які є поширеним форматом обміну даними, що використовується через їх простоту та широку підтримку на різних платформах та мовах. Програмісти займаються файлами CSV для імпорту або експорту даних з програм, баз даних і сервісів, що дає змогу легко маніпулювати даними та ділитися ними.
 
 ## Як це зробити:
-```TypeScript
-import * as fs from 'fs';
-import * as csv from 'fast-csv';
 
-// Читання CSV файлу
+У TypeScript ви можете працювати з файлами CSV за допомогою нативного коду або використовуючи сторонні бібліотеки, як-от `csv-parser` для читання та `csv-writer` для запису файлів CSV.
+
+### Читання CSV за допомогою `csv-parser`
+
+Спочатку встановіть `csv-parser` через npm:
+
+```
+npm install csv-parser
+```
+
+Потім прочитайте файл CSV таким чином:
+
+```typescript
+import fs from 'fs';
+import csv from 'csv-parser';
+
+const results = [];
+
 fs.createReadStream('data.csv')
-  .pipe(csv.parse({ headers: true }))
-  .on('data', (row) => console.log(row))
-  .on('end', () => console.log('CSV файл успішно оброблений.'));
+  .pipe(csv())
+  .on('data', (data) => results.push(data))
+  .on('end', () => {
+    console.log(results);
+    // Вивід: Масив об'єктів, кожен з яких представляє рядок у файлі CSV
+  });
+```
 
-// Запис у CSV файл
+Припустимо, `data.csv` містить:
+
+```
+name,age
+Alice,30
+Bob,25
+```
+
+Вивід буде:
+
+```
+[ { name: 'Alice', age: '30' }, { name: 'Bob', age: '25' } ]
+```
+
+### Запис CSV за допомогою `csv-writer`
+
+Щоб записати у файл CSV, спочатку встановіть `csv-writer`:
+
+```
+npm install csv-writer
+```
+
+Потім використовуйте його так:
+
+```typescript
+import { createObjectCsvWriter as createCsvWriter } from 'csv-writer';
+
+const csvWriter = createCsvWriter({
+  path: 'out.csv',
+  header: [
+    {id: 'name', title: 'ІМ'Я'},
+    {id: 'age', title: 'ВІК'}
+  ]
+});
+
 const data = [
-  { name: 'Іван', age: 34 },
-  { name: 'Олена', age: 28 }
+  { name: 'Alice', age: 30 },
+  { name: 'Bob', age: 25 }
 ];
 
-fs.createWriteStream('output.csv')
-  .pipe(csv.format({ headers: true }))
-  .write(data)
-  .end();
-```
-**Вивід:**
-```
-CSV файл успішно оброблений.
+csvWriter
+  .writeRecords(data)
+  .then(() => console.log('Файл CSV було успішно записано'));
 ```
 
-## Поглиблений аналіз
-CSV дебютував у 1970-х, як спосіб обміну даними між різними комп'ютерними системами. Є альтернативи як JSON або XML, але CSV залишається популярним через свою простоту. Розбір і запис CSV у TypeScript часто потребують сторонніх бібліотек, як-от ‘fast-csv’ для ефективного управління даними.
+Цей код записує наступне у `out.csv`:
 
-## Дивіться також
-- [fast-csv documentation](https://c2fo.io/fast-csv/docs/introduction/getting-started)
-- [Node.js fs module documentation](https://nodejs.org/api/fs.html)
-- [RFC 4180](https://tools.ietf.org/html/rfc4180): CSV формат стандарт
-- [Papaparse](https://www.papaparse.com/): Ще одна популярна бібліотека для парсингу CSV у веб-застосунках
+```
+ІМ'Я,ВІК
+Alice,30
+Bob,25
+```
+
+Ці приклади показують, як ефективно інтегрувати обробку даних CSV у ваші проекти на TypeScript, чи то для аналізу даних, чи для зберігання даних програми зовні.

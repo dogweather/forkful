@@ -1,35 +1,67 @@
 ---
-title:                "Einsatz von regulären Ausdrücken"
-date:                  2024-01-19
-simple_title:         "Einsatz von regulären Ausdrücken"
-
+title:                "Reguläre Ausdrücke verwenden"
+date:                  2024-02-03T19:15:58.614392-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Reguläre Ausdrücke verwenden"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/bash/using-regular-expressions.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Reguläre Ausdrücke (RegEx) sind Muster zur Textsuche und -bearbeitung. Programmierer nutzen sie, weil sie mächtige Werkzeuge sind, um komplexe Textaufgaben effizient zu lösen.
 
-## How to:
-Hier sind einfache Beispiele für die Nutzung von RegEx in Bash:
+Reguläre Ausdrücke (regex) in Bash ermöglichen es Ihnen, nach bestimmten Mustern in Zeichenketten und Dateien zu suchen, diese zu manipulieren und zu verarbeiten. Programmierer nutzen regex für Aufgaben wie Eingabevalidierung, das Parsen von Log-Dateien und das Extrahieren von Daten, weil es eine flexible und leistungsfähige Möglichkeit bietet, Muster für komplexe Textverarbeitungsbedürfnisse zu spezifizieren.
 
-```Bash
-echo "Die PLZ 10115 gehört zu Berlin." | grep -oP '\b\d{5}\b'
-# Ausgabe: 10115
+## Wie geht das:
 
-echo "Kontakt: max@beispiel.de" | grep -oP '\S+@\S+'
-# Ausgabe: max@beispiel.de
+### Grundlegende Musterabgleiche
+Um zu finden, ob eine Zeichenkette einem Muster entspricht, können Sie `grep` verwenden, ein Befehlszeilenprogramm zur Suche in reinen Textdatensätzen nach Zeilen, die mit einem regulären Ausdruck übereinstimmen:
 
-# Dateinamen ausgeben, die mit 'log' enden und eine Nummer enthalten
-ls | grep -P 'log\-\d+'
+```bash
+echo "Hallo, Welt!" | grep -o "Welt"
+# Ausgabe: Welt
 ```
 
-## Deep Dive
-Reguläre Ausdrücke kamen in den 1950er Jahren auf und wurden im Unix-Tool 'grep' populär. Alternativen zu Bash-RegEx sind Tools wie 'awk' und 'sed'. Beim Implementieren von RegEx sollte man jedoch auf Effizienz achten, da komplexe Muster rechenintensiv sein können.
+### Spezifische Daten extrahieren
+Um Teile von Daten zu extrahieren, die Ihren regex-Mustern entsprechen, können Sie `-o` zusammen mit `grep` verwenden:
 
-## See Also
-Offizielle GNU-Bash-Dokumentation zu RegEx: https://www.gnu.org/software/bash/manual/
-Interaktiver RegEx-Tester: https://regex101.com/
-Tutorial zum Umgang mit RegEx in Bash: https://www.tldp.org/LDP/abs/html/regexps.html
+```bash
+echo "Fehler: Datei nicht gefunden" | grep -oE "[A-Za-z]+:"
+# Ausgabe: Fehler:
+```
+
+### Verwendung von Regex mit `sed`
+`sed` (Stream-Editor) ist ein leistungsfähiges Dienstprogramm zur Analyse und Umwandlung von Text. So verwenden Sie `sed` mit regex, um Text zu ersetzen:
+
+```bash
+echo "Bash ist großartig" | sed -e 's/großartig/fantastisch/'
+# Ausgabe: Bash ist fantastisch
+```
+
+### Musterabgleich in bedingten Anweisungen
+Bash unterstützt auch direkt regex in bedingten Anweisungen:
+
+```bash
+[[ "https://beispiel.com" =~ ^https?:// ]] && echo "URL ist gültig" || echo "URL ist ungültig"
+# Ausgabe: URL ist gültig
+```
+
+### Fortgeschrittene Musterabgleiche und -manipulationen mit `awk`
+`awk` ist ein weiteres Textverarbeitungswerkzeug, das komplexere Datenextraktionen und -manipulationen unterstützt. Es kann besonders nützlich sein, wenn Sie mit strukturierten Textdaten, wie CSVs, arbeiten:
+
+```bash
+echo -e "ID,Name,Alter\n1,John,22\n2,Jane,24" | awk -F, '$3 > 22 {print $2 " ist älter als 22."}'
+# Ausgabe: Jane ist älter als 22.
+```
+
+Obwohl die in Bash integrierten Regex-Funktionen viele Anwendungsfälle abdecken, könnten Sie für sehr fortgeschrittene Regex-Operationen eine Kombination aus Bash-Skripten mit `perl` oder `python` Skripten in Erwägung ziehen, da diese Sprachen leistungsfähige Regex-Bibliotheken bieten (z.B. `re` in Python). Ein einfaches Beispiel mit Python:
+
+```bash
+echo "Erfasse das 123" | python3 -c "import sys; import re; print(re.search('(\d+)', sys.stdin.read()).group(0))"
+# Ausgabe: 123
+```
+
+Das Einbeziehen dieser Programmiersprachen bei Bedarf kann Ihnen helfen, die volle Leistungsfähigkeit von regex in Ihren Bash-Skripten zu nutzen.

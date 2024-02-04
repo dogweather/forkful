@@ -1,79 +1,72 @@
 ---
-title:                "Arbeiten mit CSV-Dateien"
-date:                  2024-01-19
-simple_title:         "Arbeiten mit CSV-Dateien"
-
+title:                "Arbeiten mit CSV"
+date:                  2024-02-03T19:21:32.422500-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Arbeiten mit CSV"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/swift/working-with-csv.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-CSV, kurz für "Comma-Separated Values", ist ein einfaches Dateiformat zum Speichern tabellarischer Daten. Programmierer nutzen CSV, weil es weit verbreitet, menschenlesbar und einfach zu importieren sowie zu exportieren ist.
+## Was & Warum?
 
-## How to:
-Swift macht das Lesen und Schreiben von CSV-Dateien unkompliziert. Hier ein Beispiel, wie man eine CSV-Datei einliest, verarbeitet und wieder schreibt:
+Die Arbeit mit CSV-Dateien (Comma-Separated Values, Werte getrennt durch Kommas) beinhaltet das Parsen und Generieren strukturierter Daten aus Textdateien, bei denen jede Zeile einen Datensatz repräsentiert und jeder Datensatz aus durch Kommas getrennten Feldern besteht. Programmierer beschäftigen sich oft mit dieser Tätigkeit, um tabellarische Daten leicht zu importieren, exportieren und zu manipulieren, da das Format aufgrund seiner Einfachheit und Lesbarkeit plattform- und sprachenübergreifend breit unterstützt wird.
 
-```Swift
-import Foundation
+## Wie:
 
-// Angenommen, wir haben eine String-Variable `csvContent`, die unsere CSV-Daten enthält
-let csvContent = """
-Name,Alter,Beruf
-Max Mustermann,42,Entwickler
-Erika Mustermann,36,Designerin
+In Swift gibt es keine native Unterstützung für das direkte Parsen von CSV-Dateien, aber man kann CSV-Daten verarbeiten, indem man die `String`-Methoden zum Teilen der Inhalte verwendet oder auf Drittanbieter-Bibliotheken wie SwiftCSV für einen einfacheren Ansatz zurückgreift. Hier sind beide Methoden:
+
+### Manuelles Parsen ohne externe Bibliotheken
+```swift
+// Betrachten Sie einen einfachen CSV-String
+let csvString = """
+name,age,city
+John Doe,29,New York
+Jane Smith,34,Los Angeles
 """
 
-// Parsing der CSV Daten
-func parseCSV(content: String) -> [[String]] {
-    var result: [[String]] = []
-    let rows = content.components(separatedBy: "\n")
-    
-    for row in rows {
-        let columns = row.components(separatedBy: ",")
-        result.append(columns)
-    }
-    
-    // Der erste Eintrag enthält die Spaltennamen, könnte je nach Bedarf entfernt werden
-    return result
+// Teilen Sie den CSV-String in Zeilen
+let rows = csvString.components(separatedBy: "\n")
+
+// Extrahieren Sie die Schlüssel aus der ersten Zeile
+let keys = rows.first?.components(separatedBy: ",")
+
+// Iterieren Sie über die Zeilen, beginnend mit der zweiten
+var result: [[String: String]] = []
+for row in rows.dropFirst() {
+    let values = row.components(separatedBy: ",")
+    let dict = Dictionary(uniqueKeysWithValues: zip(keys!, values))
+    result.append(dict)
 }
 
-// CSV-String in ein Array von Arrays konvertieren
-let parsedCSV = parseCSV(content: csvContent)
-print(parsedCSV)
-
-// CSV-Daten schreiben
-func writeCSV(data: [[String]]) -> String {
-    var content = ""
-    
-    for (index, row) in data.enumerated() {
-        let rowString = row.joined(separator: ",")
-        
-        content += rowString
-        // Zeilenumbruch, außer nach der letzten Zeile
-        if index < data.count - 1 {
-            content += "\n"
-        }
-    }
-    
-    return content
-}
-
-// Erzeugten CSV-String für die Ausgabe oder Speicherung
-let csvOutput = writeCSV(data: parsedCSV)
-print(csvOutput)
+// Beispiel-Ausgabe
+print(result)
+// Gibt aus: [{"city": "New York", "age": "29", "name": "John Doe"}, {"city": "Los Angeles", "age": "34", "name": "Jane Smith"}]
 ```
+Dieser Ansatz ist unkompliziert, mangelt es jedoch an Robustheit, besonders bei CSV-Dateien, die Spezialfälle wie Kommas in Werten, Zeilenumbrüche innerhalb von Feldern usw. enthalten.
 
-Ausgabe beim Einlesen und Schreiben der CSV-Daten zeigt identischen Inhalt wie `csvContent`.
+### Verwendung der SwiftCSV-Bibliothek
+Fügen Sie zuerst SwiftCSV Ihrem Projekt hinzu, indem Sie es in Ihre `Package.swift`-Abhängigkeiten einschließen:
+```swift
+.package(url: "https://github.com/swiftcsv/SwiftCSV.git", from: "0.5.6")
+```
+Dann importieren und verwenden Sie es wie folgt:
+```swift
+import SwiftCSV
 
-## Deep Dive
-CSV ist seit den frühen Computerjahren in Verwendung. Es gibt zwar modernere Alternativen wie JSON oder XML, die mehr Datenstruktur und Meta-Informationen bieten, doch CSV bleibt wegen seiner Einfachheit beliebt. Bei der Implementierung in Swift ist zu beachten, dass das Handling von Komplikationen, wie Zitate oder Kommas innerhalb von Zellen, zusätzliche Logik erfordert.
+// Nehmen Sie an, `csvString` ist wie oben definiert
 
-## See Also
-Weitere Infos und Tutorials für Swift-Programmierung und CSV-Handhabung:
-
-- Offizielle Swift-Dokumentation: [swift.org/documentation/](https://swift.org/documentation/)
-- CSV-Spezifikation von RFC 4180: [tools.ietf.org/html/rfc4180](https://tools.ietf.org/html/rfc4180)
-- Swift-Standardbibliothek: [developer.apple.com/documentation/swift](https://developer.apple.com/documentation/swift)
-- Tutorial zu Swift und CSV mit Bibliotheken: [raywenderlich.com/567-urlsession-tutorial-getting-started](https://www.raywenderlich.com/567-urlsession-tutorial-getting-started)
+// Erstellen Sie ein CSV-Objekt
+if let csv = try? CSV(string: csvString) {
+    // Greifen Sie auf die Zeilen als Wörterbücher zu
+    let rows = csv.namedRows
+    
+    // Beispiel-Ausgabe
+    print(rows)
+    // Gibt aus: [{"city": "New York", "age": "29", "name": "John Doe"}, {"city": "Los Angeles", "age": "34", "name": "Jane Smith"}]
+}
+```
+SwiftCSV vereinfacht das Parsen, indem es automatisch mit Nuancen wie eingekapselten Kommas, Zeilenumbrüchen in Feldern und Zeichenkodierungen umgeht. Denken Sie jedoch daran, mögliche Fehler in realen Anwendungen zu behandeln, insbesondere beim Umgang mit externen Datenquellen.

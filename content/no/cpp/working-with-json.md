@@ -1,53 +1,87 @@
 ---
-title:                "Arbeid med JSON"
-date:                  2024-01-19
-simple_title:         "Arbeid med JSON"
-
+title:                "Arbeider med JSON"
+date:                  2024-02-03T19:21:54.271567-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Arbeider med JSON"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/cpp/working-with-json.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-JSON, JavaScript Object Notation, er et dataformat for strukturert info. Programmerere bruker JSON for å lagre og utveksle data enkelt mellom servere og apps.
+## Hva & Hvorfor?
 
-## How to:
-For å jobbe med JSON i C++, trenger du et bibliotek som `nlohmann/json`. Her er en enkel kode:
+JSON (JavaScript Object Notation) er et lettvektsformat for lagring og transport av data, noe som gjør det til et utmerket medium for datautveksling mellom servere og webapplikasjoner. Programmerere bruker JSON på grunn av dets enkle lesbarhet for mennesker og ukompliserte parseevne for maskiner, spesielt når man arbeider med applikasjoner som krever datautveksling over internett eller konfigurasjonsinnstillinger.
 
-```C++
+## Hvordan:
+
+I C++ er det ingen innebygd støtte for JSON, men tredjepartsbiblioteker som nlohmann/json gjør det enkelt. Slik bruker du det for grunnleggende oppgaver:
+
+Først, sørg for at du har biblioteket installert. Hvis du bruker en pakkebehandler som vcpkg eller Conan, kan du enkelt legge til `nlohmann/json` til prosjektet ditt.
+
+### Parse JSON fra en streng
+
+```cpp
 #include <iostream>
 #include <nlohmann/json.hpp>
 
 int main() {
-    // Parse JSON string
-    std::string jsonString = R"({"name":"Ola","age":30,"city":"Oslo"})";
-    nlohmann::json jsonObj = nlohmann::json::parse(jsonString);
+    // JSON-data som en streng
+    std::string jsonData = "{\"name\":\"John\", \"age\":30, \"city\":\"New York\"}";
 
-    // Endre verdier
-    jsonObj["city"] = "Bergen";
+    // Parse JSON-strengen
+    auto jsonObject = nlohmann::json::parse(jsonData);
 
-    // Skriv ut endret JSON
-    std::cout << jsonObj.dump(2) << std::endl;
+    // Tilgang til data
+    std::cout << "Navn: " << jsonObject["name"] << "\n"
+              << "Alder: " << jsonObject["age"] << "\n"
+              << "By: " << jsonObject["city"] << std::endl;
+
     return 0;
 }
 ```
 
-Sample output:
+**Eksempel på utdata:**
+
 ```
-{
-  "age": 30,
-  "city": "Bergen",
-  "name": "Ola"
+Navn: John
+Alder: 30
+By: New York
+```
+
+### Generere JSON
+
+Å opprette JSON-data er like rett frem; du tildeler rett og slett verdier til et `nlohmann::json`-objekt.
+
+```cpp
+#include <nlohmann/json.hpp>
+#include <iostream>
+
+int main() {
+    // Opprette et JSON-objekt
+    nlohmann::json jsonObject;
+    jsonObject["name"] = "Jane";
+    jsonObject["age"] = 25;
+    jsonObject["city"] = "Los Angeles";
+
+    // Konvertere JSON-objekt til streng og skrive ut
+    std::string jsonString = jsonObject.dump(4); // Argument 4 for pen utskrift
+    std::cout << jsonString << std::endl;
+
+    return 0;
 }
 ```
 
-## Deep Dive:
-JSON dukket opp tidlig på 2000-tallet, raskt adoptert som et enklere alternativ til XML. Andre alternativer inkluderer YAML og TOML. I C++, bruker mange `nlohmann/json` fordi det er enkelt og effektivt, men det er også andre biblioteker som `jsoncpp` og `rapidjson`. Biblioteker innfører overhead, men de gjør JSON-håndtering enkel og feilsikker.
+**Eksempel på utdata:**
 
-## See Also:
-- Offisiell `nlohmann/json` GitHub-side: https://github.com/nlohmann/json
-- JSON standard spesifikasjon: https://www.json.org/json-en.html
-- `jsoncpp` GitHub-side: https://github.com/open-source-parsers/jsoncpp
-- `rapidjson` GitHub-side: https://github.com/Tencent/rapidjson
-- TutorialsPoint JSON tutorial: https://www.tutorialspoint.com/json/index.htm
+```
+{
+    "name": "Jane",
+    "age": 25,
+    "city": "Los Angeles"
+}
+```
+
+Disse eksemplene demonstrerer kjernefunksjonalitet for å arbeide med JSON i C++ ved bruk av `nlohmann/json`-biblioteket. Med disse grunnleggende prinsippene kan du parse og generere JSON for ulike applikasjoner, fra konfigurasjonsfiler til datautveksling i nettverksapplikasjoner.

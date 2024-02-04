@@ -1,61 +1,56 @@
 ---
-title:                "HTML पार्स करना"
-date:                  2024-01-20T15:32:12.746622-07:00
-simple_title:         "HTML पार्स करना"
-
+title:                "HTML विश्लेषण"
+date:                  2024-02-03T19:13:20.182343-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "HTML विश्लेषण"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/haskell/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? क्या और क्यों?
-HTML पार्सिंग है वैब पेज के HTML कोड को समझकर उसकी संरचना को पहचानना। प्रोग्रामर्स इसे डेटा निकालने, वेब स्क्रेपिंग, या कंटेंट मॉडिफिकेशन के लिए करते हैं।
+## क्या और क्यों?
 
-## How to: कैसे करें?
-Haskell में HTML पार्सिंग के लिए, हम `tagsoup` लाइब्रेरी का इस्तेमाल करेंगे।
+Haskell में HTML पार्स करना आपको डेटा निकालने, HTML सामग्री को संशोधित करने, या प्रोग्राम माध्यम से वेब पृष्ठों के साथ इंटरैक्ट करने की अनुमति देता है। वेब स्क्रैपिंग, वेब अप्लिकेशंस की स्वचालित परीक्षण, और वेबसाइटों से डेटा माइनिंग जैसे कार्यों के लिए यह संचालन अत्यावश्यक है - Haskell की मजबूत प्रकार प्रणाली और कार्यात्मक प्रोग्रामिंग पैराडाइम का लाभ उठाकर मजबूत और संक्षिप्त कोड सुनिश्चित करना।
 
-```Haskell
+## कैसे:
+
+Haskell में HTML पार्स करने के लिए, हम इसकी साधारणता और लचीलेपन के लिए `tagsoup` लाइब्रेरी का उपयोग करेंगे। सबसे पहले, अपनी परियोजना की cabal फाइल में `tagsoup` जोड़कर या `cabal install tagsoup` चलाकर लाइब्रेरी को इंस्टॉल करना सुनिश्चित करें।
+
+```haskell
+{-# LANGUAGE OverloadedStrings #-}
+
 import Text.HTML.TagSoup
 
--- HTML डॉक्युमेंट को पार्स करने का फंक्शन
-parseHtml :: String -> [Tag String]
-parseHtml = parseTags
+-- प्रदर्शन के लिए नमूना HTML
+let sampleHtml = "<html><body><p>Learn Haskell!</p><a href='http://example.com'>Click Here</a></body></html>"
 
--- मुख्य फंक्शन जहाँ पार्सिंग होगी
-main :: IO ()
-main = do
-    htmlContent <- readFile "example.html"
-    let parsedHtml = parseHtml htmlContent
-    print parsedHtml
+-- HTML पार्स करें और लिंक्स (a tags) के लिए फ़िल्टर करें
+let tags = parseTags sampleHtml
+let links = [fromAttrib "href" tag | tag <- tags, isTagOpenName "a" tag]
+
+-- निकाले गए लिंक्स प्रिंट करें
+print links
 ```
 
-सेम्पल `example.html` फाइल:
-
-```html
-<!DOCTYPE html>
-<html>
-<head>
-    <title>मेरा टाइटल</title>
-</head>
-<body>
-    <p>मेरा पैरा</p>
-</body>
-</html>
-```
-
-सेम्पल आउटपुट:
-
+नमूना आउटपुट:
 ```plaintext
-[TagOpen "!DOCTYPE" [("html","")],TagOpen "html" [],TagOpen "head" [],TagOpen "title" [],TagText "मेरा टाइटल",TagClose "title",TagClose "head",TagOpen "body" [],TagOpen "p" [],TagText "मेरा पैरा",TagClose "p",TagClose "body",TagClose "html"]
+["http://example.com"]
 ```
 
-## Deep Dive: गहरी जानकारी
-HTML पार्सिंग जरूरत होती है क्योंकि HTML डॉक्युमेंट अक्सर जटिल होते हैं और डेटा को मैन्युअली निकालना कठिन हो सकता है। ऐतिहासिक रूप से, पार्सर्स जैसे कि `tagsoup` ने इसे सरल बनाया है जो बहुत सारे स्ट्रक्चर के साथ काम कर सकता है, भले ही वे मानकों से पूरी तरह मेल न खाते हों। 
+अधिक जटिल HTML पार्सिंग आवश्यकताओं के लिए, विशेष रूप से यदि आप दस्तावेज़ परिवर्तन के साथ काम कर रहे हैं, तो `pandoc` लाइब्रेरी का उपयोग करने पर विचार करें। यह असाधारण रूप से बहुमुखी है लेकिन अधिक जटिलता के साथ आता है:
 
-`tagsoup` के अलावा, प्रोग्रामर्स अक्सर `pandoc`, `hxt` या शायद `jsoup` (जो कि जावा के लिए है) जैसे अल्टरनेटिव्स का भी इस्तेमाल कर सकते हैं। महत्वपूर्ण बात यह है कि पार्सिंग लाइब्रेरी का चुनाव HTML द्वारा निर्धारित टास्क पर निर्भर करेगा। 
+```haskell
+import Text.Pandoc
 
-`tagsoup` गैर-सख्त पार्सिंग की प्रक्रिया अपनाता है, इसलिए यह त्रुटियों और अनुपालन की कमी वाले HTML के साथ भी काम कर सकता है। यह अक्सर वैब स्क्रैपिंग के लिए उपयोगी होता है जहाँ स्रोत कोड अनियमित हो सकता है।
+-- मान लें कि आपके पास एक Pandoc दस्तावेज़ (doc) लोड है, उदाहरण के लिए, एक फ़ाइल पढ़ने से
+let doc = ... -- आपका Pandoc दस्तावेज़ यहाँ जाता है
 
-## See Also: यह भी देखें
-- `tagsoup` हैस्कल पैकेज: [Tagsoup on Hackage](https://hackage.haskell.org/package/tagsoup)
+-- दस्तावेज़ को HTML स्ट्रिंग में परिवर्तित करें
+let htmlString = writeHtmlString def doc
+
+-- अब, आप उपरोक्त के रूप में `htmlString` को पार्स करेंगे या अपनी आवश्यकताओं के अनुसार आगे बढ़ेंगे।
+```
+`pandoc` को ध्यान में रखें कि यह एक काफी बड़ी लाइब्रेरी है जो कई मार्कअप प्रारूपों के बीच परिवर्तन पर केंद्रित है, तो इसका उपयोग करें अगर आपको उन अतिरिक्त क्षमताओं की आवश्यकता है या यदि आप पहले से ही अपने एप्लिकेशन में दस्तावेज़ प्रारूपों से निपट रहे हैं।

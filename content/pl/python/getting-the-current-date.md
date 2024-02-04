@@ -1,62 +1,70 @@
 ---
 title:                "Pobieranie aktualnej daty"
-date:                  2024-01-20T15:16:08.887424-07:00
+date:                  2024-02-03T19:10:41.383441-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Pobieranie aktualnej daty"
-
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/python/getting-the-current-date.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Co to jest i dlaczego?
+## Co i dlaczego?
 
-W programowaniu często potrzebujemy aktualnej daty, aby zarządzać wydarzeniami, logować zdarzenia czy ustawiać ważność danych. To tak, jakby mieć zawsze pod ręką kalendarz - niezbędny do organizacji.
+Pobieranie bieżącej daty w Pythonie to podstawowa operacja dla wielu aplikacji, takich jak logowanie, analiza danych i podejmowanie decyzji opartych na czasie. Chodzi o uzyskanie bieżącej daty systemu, co jest kluczowe dla zadań zależnych od kontekstu czasowego.
 
-## How to:
-Jak to zrobić:
+## Jak to zrobić:
 
-Python oferuje moduł `datetime` do łatwego zarządzania datami i czasem. Oto jak szybko uzyskać dzisiejszą datę:
+**Korzystając z biblioteki standardowej `datetime`:**
+
+Moduł `datetime` w standardowej bibliotece Pythona dostarcza klasy do manipulowania datami i czasem. Aby uzyskać bieżącą datę, możesz użyć metody `date.today()`.
 
 ```python
 from datetime import date
 
-dzisiejsza_data = date.today()
-print(f"Dzisiejsza data to: {dzisiejsza_data}")
+today = date.today()
+print(today)  # Wynik: RRRR-MM-DD (np. 2023-04-05)
 ```
 
-Sample output:
-```
-Dzisiejsza data to: 2023-03-16
-```
+**Formatowanie czasu:**
 
-Możesz też dostać datę i czas razem:
+Jeśli potrzebujesz bieżącej daty w innym formacie, metoda `strftime` pozwala określić niestandardowe formatowanie daty:
 
 ```python
-from datetime import datetime
+from datetime import date
 
-obecny_moment = datetime.now()
-print(f"Obecny czas to: {obecny_moment}")
+today = date.today()
+formatted_date = today.strftime('%B %d, %Y')  # Przykładowy format: "Kwiecień 05, 2023"
+print(formatted_date)
 ```
 
-Sample output:
+**Korzystanie z `pendulum` dla większej elastyczności (popularna biblioteka innych firm):**
+
+`Pendulum` to biblioteka innych firm, która oferuje bardziej intuicyjne podejście do obsługi dat i czasu w Pythonie. Rozszerza ona standardowe funkcjonalności datetime i upraszcza zarządzanie strefami czasowymi, wśród innych funkcji.
+
+Najpierw upewnij się, że zainstalowałeś `pendulum` za pomocą pip:
+
+```shell
+pip install pendulum
 ```
-Obecny czas to: 2023-03-16 15:42:08.582030
+
+Następnie, aby uzyskać bieżącą datę:
+
+```python
+import pendulum
+
+today = pendulum.now().date()
+print(today)  # Wynik: RRRR-MM-DD (np. 2023-04-05)
 ```
 
-## Deep Dive:
-Pogłębione informacje:
+Z `pendulum` formatowanie jest również proste i podobne do podejścia `strftime`:
 
-Moduł `datetime` w Pythonie pochodzi z wczesnych lat języka, jednak jest regularnie aktualizowany. Daje on wiele możliwości - od prostych (jak powyżej) do skomplikowanych (np. operacje z strefami czasowymi).
+```python
+import pendulum
 
-Alternatywowym rozwiazaniem jest użycie modułów zewnętrznych jak `pendulum` lub `arrow`, które oferują dodatkową funkcjonalność i prostszą obsługę stref czasowych.
-
-Szczegół implementacji `datetime` obejmuje `C`-type struktury do efektywnego zarządzania czasem, co jest istotne w przypadkach gdzie wydajność ma kluczowe znaczenie.
-
-## See Also:
-Zobacz także:
-
-- [Python's datetime module documentation](https://docs.python.org/3/library/datetime.html)
-- [PyPI page for Pendulum](https://pypi.org/project/pendulum/)
-- [PyPI page for Arrow](https://pypi.org/project/arrow/)
+today = pendulum.now()
+formatted_date = today.to_formatted_date_string()  # Domyślny format: "Kwi 5, 2023"
+print(formatted_date)
+```

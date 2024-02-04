@@ -1,45 +1,84 @@
 ---
-title:                "ניתוח HTML"
-date:                  2024-01-20T15:31:00.510449-07:00
-simple_title:         "ניתוח HTML"
-
+title:                "פיענוח HTML"
+date:                  2024-02-03T19:12:15.056108-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "פיענוח HTML"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/elixir/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (מה ולמה?)
-פיענוח HTML מתייחס לתהליך שבו מתוכנת מנתחת מסמך HTML ומשיגה ממנו מידע סטרוקטורי. תוכניתנים עושים זאת כדי לשלוף נתונים, לאוטומט פעולות באינטרנט ולעבד דפי ווב.
+## מה ולמה?
 
-## How to: (איך לעשות:)
-ב-Elixir, אתה יכול להשתמש בספריה כמו Floki לפיענוח HTML בקלות. דוגמא לקוד:
+פענוח HTML באליקסיר כולל את חילוץ המידע ממסמכי HTML. תכנתים עושים זאת כדי לאפשר אינטראקציה תכנותית עם דפי אינטרנט, לגרד נתונים, או לאוטמט פעולות באינטרנט, מה שמאפשר ליישומים להבין ולנצל תוכן ברשת באופן דינמי.
+
+## איך לעשות:
+
+אליקסיר, עם מודל הבזמניות הנחושה ופרדיגמת התכנות הפונקציונלית שלו, אינה כוללת יכולות פענוח HTML מובנות. עם זאת, ניתן להשתמש בספריות צד שלישי פופולריות כמו `Floki` למטרה זו. Floki הופכת פענוח HTML לאינטואיטיבי ויעיל, תוך ניצול תכונות התאמת הדפוסים וההעברה של אליקסיר.
+
+ראשית, הוסף את Floki לתלויות mix.exs שלך:
 
 ```elixir
-defmodule HTMLParser do
-  def parse_html(html) do
-    {:ok, document} = Floki.parse(html)
-    Floki.find(document, "a")
-    |> Enum.map(fn({_, attrs, _}) -> attrs end)
-    |> Enum.map(&List.keyfind(&1, "href", 0))
-  end
+defp deps do
+  [
+    {:floki, "~> 0.31.0"}
+  ]
 end
+```
 
-html_content = "<html><body><a href='https://example.com'>Link</a></body></html>"
-links = HTMLParser.parse_html(html_content)
+לאחר מכן, הרץ את `mix deps.get` כדי להתקין את התלות החדשה.
+
+עכשיו, בואו נפרס אכוח רטט פשוט לחילוץ נתונים. נחפש את הכותרות בתוך תגיות `<h1>`:
+
+```elixir
+html_content = """
+<html>
+  <body>
+    <h1>שלום, אליקסיר!</h1>
+    <h1>כותרת נוספת</h1>
+  </body>
+</html>
+"""
+
+titles = html_content
+         |> Floki.find("h1")
+         |> Floki.text()
+
+IO.inspect(titles)
+```
+
+**פלט לדוגמא:**
+
+```elixir
+["שלום, אליקסיר!", "כותרת נוספת"]
+```
+
+להעמקה נוספת, נניח שאתם רוצים לחלץ קישורים (תגיות `<a>`) יחד עם האטריביוטים שלהם. הנה איך אפשר לעשות זאת:
+
+```elixir
+html_content = """
+<html>
+  <body>
+    <a href="https://elixir-lang.org/">האתר הרשמי של אליקסיר</a>
+    <a href="https://hexdocs.pm/">HexDocs</a>
+  </body>
+</html>
+"""
+
+links = html_content
+        |> Floki.find("a")
+        |> Enum.map(fn({_, attrs, [text]}) -> {text, List.keyfind(attrs, "href", 0)} end)
+        
 IO.inspect(links)
 ```
 
-פלט לדוגמא:
+**פלט לדוגמא:**
 
+```elixir
+[{"האתר הרשמי של אליקסיר", {"href", "https://elixir-lang.org/"}}, {"HexDocs", {"href", "https://hexdocs.pm/"}}]
 ```
-[{"href", "https://example.com"}]
-```
 
-## Deep Dive (צלילה לעומק):
-פעם, פענוח HTML היה אתגר גדול יותר עם ספריות מסורבלות ואי-הצמדות לתקנים של יצרני דפדפנים. היום, ספריות כמו Floki ב-Elixir נשענות על XPath וCSS selectors לשליפת נתונים ביעילות. אלטרנטיבות כוללות Nokogiri ב-Ruby וBeautifulSoup ב-Python. בחירת ספרייה תלויה בשפת התכנות ובדרישות הפרויקט.
-
-## See Also (ראו גם):
-* [Floki on Hex](https://hex.pm/packages/floki) - מידע על ספריית Floki, כולל מדריכים.
-* [Programming Phoenix ≥ 1.4](https://pragprog.com/titles/phoenix14/programming-phoenix-1-4/) - פרקים על טיפול בHTML באמצעות Elixir וPhoenix.
-* [Elixir Forum](https://elixirforum.com) - לשאלות וקהילה של מתכנתי Elixir.
+גישה זו מאפשרת לכם לנווט ולפרס מסמכי HTML ביעילות, והופכת משימות של חילוץ ומניפולציה של נתונים מהאינטרנט לפשוטות ביישומי אליקסיר.

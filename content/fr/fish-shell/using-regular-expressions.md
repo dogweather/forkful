@@ -1,38 +1,76 @@
 ---
 title:                "Utilisation des expressions régulières"
-date:                  2024-01-19
+date:                  2024-02-03T19:16:48.974513-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Utilisation des expressions régulières"
-
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/fish-shell/using-regular-expressions.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Quoi et Pourquoi ?
-Les expressions régulières sont des séquences de caractères formant un modèle de recherche, utilisées pour manipuler du texte : chercher, remplacer, extraire des informations. Les programmeurs s'en servent pour gagner en efficacité et en précision lorsqu'ils travaillent avec du texte.
+## Quoi & Pourquoi ?
+
+Les expressions régulières (regex) dans Fish Shell permettent de rechercher, d'apparier et de manipuler des chaînes de caractères basées sur des motifs spécifiques. Les programmeurs utilisent les regex pour des tâches telles que la validation d'entrée, l'analyse syntaxique et le traitement de texte, car cela offre un moyen compact et puissant de spécifier des motifs de texte complexes.
 
 ## Comment faire :
-Nous allons matcher des patterns dans du texte. Prenons quelques exemples :
 
-```Fish Shell
-# Rechercher si un mot existe dans une chaîne
-echo "Le poisson nage dans l'eau" | string match -r "poisson"
-# Output: poisson
+Bien que Fish Shell lui-même ne dispose pas d'une commande intégrée pour les regex, il utilise efficacement des commandes externes comme `grep`, `sed` et `awk` qui prennent en charge les regex, vous permettant d'incorporer des opérations regex dans vos scripts.
 
-# Trouver tous les chiffres dans une chaîne
-echo "Il y a 42 façons d'utiliser fish" | string match -r "[0-9]+"
-# Output: 42
+### Appariement de motifs basique avec `grep`
+Recherchez des lignes dans un fichier qui correspondent à un motif :
 
-# Remplacer un mot par un autre
-echo "Fish est meilleur que Bash" | string replace -r "meilleur" "plus rapide"
-# Output: Fish est plus rapide que Bash
+```fish
+grep '^[0-9]+' myfile.txt
 ```
 
-## Plongée en profondeur :
-Les expressions régulières existent depuis les années 1950, liées au formalisme mathématique. En programmation, on les utilise depuis les outils Unix des années 70. En Fish, `string match` et `string replace` sont intégrés et proposent une syntaxe simplifiée pour manipuler des chaînes de caractères, sans devoir recourir à `sed` ou `grep` comme dans d'autres shells. Fish utilise d'ailleurs une regex engine compatible avec Perl-Compatible Regular Expressions (PCRE), qui est assez puissante.
+Cette commande trouve les lignes commençant par un ou plusieurs chiffres dans `myfile.txt`.
 
-## Voir également :
-- Documentation officielle de Fish sur la manipulation de chaînes de caractères : [https://fishshell.com/docs/current/cmds/string.html]
-- Tutoriel sur les expressions régulières : [https://www.regular-expressions.info/tutorial.html]
-- Outil en ligne pour tester les expressions régulières : [https://regex101.com]
+### Extraction et remplacement avec `sed`
+Extrayez les numéros de téléphone d'un fichier :
+
+```fish
+sed -n '/\([0-9]\{3\}\)-\([0-9]\{3\}\)-\([0-9]\{4\}\)/p' contacts.txt
+```
+
+Remplacez toutes les occurrences de "foo" par "bar" dans `data.txt` :
+
+```fish
+sed 's/foo/bar/g' data.txt
+```
+
+### Utilisation de `string` pour les Regex basiques
+La commande `string` de Fish Shell prend en charge les opérations regex simples comme l'appariement et le remplacement :
+
+Appariez un motif dans une chaîne :
+
+```fish
+echo "fish 3.1.2" | string match -r '3\.[0-9]+\.[0-9]+'
+```
+Sortie :
+```
+3.1.2
+```
+
+Remplacez les chiffres suivant 'fish' par 'X.X.X' :
+
+```fish
+echo "Bienvenue dans fish 3.1.2" | string replace -ra '([fish]+\s)[0-9\.]+' '$1X.X.X'
+```
+Sortie :
+```
+Bienvenue dans fish X.X.X
+```
+
+### Appariement avancé avec `awk`
+Imprimez la deuxième colonne de données où la première colonne correspond à un motif spécifique :
+
+```fish
+awk '$1 ~ /^a[0-9]+$/ {print $2}' datafile
+```
+
+Cette commande recherche dans `datafile` les lignes où la première colonne commence par un "a" suivi d'un ou plusieurs chiffres et imprime la deuxième colonne.
+
+En intégrant ces commandes externes, les programmeurs de Fish Shell peuvent exploiter toute la puissance des expressions régulières pour des tâches complexes de manipulation de texte, améliorant ainsi les capacités natives du shell.

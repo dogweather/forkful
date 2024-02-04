@@ -1,40 +1,75 @@
 ---
-title:                "Einsatz von regulären Ausdrücken"
-date:                  2024-01-19
-simple_title:         "Einsatz von regulären Ausdrücken"
-
+title:                "Reguläre Ausdrücke verwenden"
+date:                  2024-02-03T19:16:29.189690-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Reguläre Ausdrücke verwenden"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/clojure/using-regular-expressions.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Reguläre Ausdrücke sind Muster, die zum Suchen und Ersetzen von Text dienen. Programmierer verwenden sie, um Daten zu analysieren und zu manipulieren, da sie leistungsstark und flexibel sind.
+Reguläre Ausdrücke, ein mächtiges Werkzeug zur Mustervergleichung und Datenmanipulation, sind unverzichtbar bei Textverarbeitungsaufgaben wie Validierung der Eingabe, Suche und Ersetzung von Text. Programmierer nutzen sie umfangreich für komplexe String-Parsing- und Datenvalidierungsaufgaben auf effiziente und prägnante Weise.
 
-## How to:
-```Clojure
-;; Matching a pattern
-(re-find #"\bClojure\b" "I love programming in Clojure!")
-; => "Clojure"
+## Wie geht das:
+Clojure, seiner Wurzeln in der Lisp-Familie treu bleibend, bietet einen reichen Satz an Funktionen, die nahtlos mit den Fähigkeiten von Java in Bezug auf reguläre Ausdrücke interagieren. Hier ist, wie Sie diese nutzen können:
 
-;; Splitting a string at each whitespace
-(re-seq #"\s+" "Split this string at spaces")
-; => (" " " " " " " ")
+### Einfache Übereinstimmung
+Um zu überprüfen, ob ein String einem Muster entspricht, verwenden Sie `re-matches`. Es gibt die gesamte Übereinstimmung zurück, wenn erfolgreich, oder `nil` andernfalls.
 
-;; Replacing all occurrences of a pattern
-(clojure.string/replace "Replace dashes-with spaces" #"-+" " ")
-; => "Replace dashes with spaces"
-
-;; Extracting all words from a string
-(re-seq #"\w+" "Find all words in 2023!")
-; => ("Find" "all" "words" "in" "2023")
+```clojure
+(re-matches #"\d+" "123")  ;=> "123"
+(re-matches #"\d+" "abc")  ;=> nil
 ```
 
-## Deep Dive
-Reguläre Ausdrücke entstanden in den 1950ern und wurden durch Tools wie grep in Unix populär. Alternativen wie String-Manipulationsfunktionen oder Parsers bieten oft mehr Lesbarkeit und Wartbarkeit. Clojure's `re-find`, `re-seq`, und Funktionen des `clojure.string` Namespaces implementieren reguläre Ausdrücke effizient, indem sie auf Java's `java.util.regex` API aufbauen.
+### Nach Mustern suchen
+Um das erste Vorkommen eines Musters zu finden, ist `re-find` Ihre Funktion der Wahl:
 
-## See Also
-- ClojureDocs zu regulären Ausdrücken: https://clojuredocs.org/clojure.core/re-find
-- Java Pattern Klasse Dokumentation: https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html
-- Online Regex Tester und Debugger: https://regex101.com/
+```clojure
+(re-find #"\d+" "Bestellung 123")  ;=> "123"
+```
+
+### Erfassungsgruppen
+Verwenden Sie `re-find` zusammen mit Klammern in Ihrem Muster, um Gruppen zu erfassen:
+
+```clojure
+(let [[_ area code] (re-find #"(1)?(\d{3})" "Telefon: 123-4567")]
+  (println "Vorwahl:" area "Code:" code))
+;; Ausgabe: Vorwahl: nil Code: 123
+```
+
+### Globale Suche (Alle Übereinstimmungen finden)
+Clojure hat keine eingebaute globale Suche wie einige Sprachen. Verwenden Sie stattdessen `re-seq`, um eine faule Sequenz aller Übereinstimmungen zu erhalten:
+
+```clojure
+(re-seq #"\d+" "id: 123, Menge: 456")  ;=> ("123" "456")
+```
+
+### Strings teilen
+Um einen String basierend auf einem Muster zu teilen, verwenden Sie `clojure.string/split`:
+
+```clojure
+(clojure.string/split "John,Doe,30" #",")  ;=> ["John" "Doe" "30"]
+```
+
+### Ersetzen
+Ersetzen Sie Teile eines Strings, die einem Muster entsprechen, mit `clojure.string/replace`:
+
+```clojure
+(clojure.string/replace "2023-04-01" #"\d{4}" "JJJJ")  ;=> "JJJJ-04-01"
+```
+
+### Drittanbieter-Bibliotheken
+Obwohl Clojure's eingebaute Unterstützung in den meisten Fällen ausreicht, sollten Sie für komplexere Szenarien Bibliotheken wie `clojure.spec` für robuste Datenvalidierung und `reagent` für reaktive DOM-Manipulation in Webanwendungen mit regex-basierter Routing- und Eingabevalidierung in Erwägung ziehen.
+
+```clojure
+;; Beispiel mit clojure.spec für die Validierung einer E-Mail
+(require '[clojure.spec.alpha :as s])
+(s/def ::email (s/and string? #(re-matches #".+@.+\..+" %)))
+(s/valid? ::email "test@example.com")  ;=> wahr
+```
+
+Denken Sie daran, obwohl reguläre Ausdrücke mächtig sind, können sie auch den Code schwer lesbar und wartbar machen. Verwenden Sie sie mit Bedacht und ziehen Sie immer einfachere String-Manipulationsfunktionen wo möglich in Betracht.

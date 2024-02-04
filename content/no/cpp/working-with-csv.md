@@ -1,72 +1,112 @@
 ---
-title:                "Arbeid med CSV"
-date:                  2024-01-19
-simple_title:         "Arbeid med CSV"
-
+title:                "Arbeide med CSV"
+date:                  2024-02-03T19:19:17.270913-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Arbeide med CSV"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/cpp/working-with-csv.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Arbeid med CSV (Comma Separated Values) involverer lesing og skriving av data i en tekstformat delt med komma. Programmerere bruker CSV fordi det er enkelt, universelt, og kan brukes på tvers av forskjellige programmer.
+## Hva & Hvorfor?
 
-## How to:
-```C++
-#include <iostream>
+Arbeid med CSV (Comma Separated Values)-filer handler om å behandle og manipulere data lagret i et enkelt tekstformat, der hver linje i teksten representerer en rad i en tabell, og kommaer skiller individuelle kolonner. Programmerere utnytter dette for å importere, eksportere og håndtere data på tvers av forskjellige systemer på grunn av CSVs brede aksept som et lettvekts, menneskelesbart datautvekslingsformat.
+
+## Hvordan:
+
+### Lese en CSV-fil ved hjelp av C++ Standardbiblioteket:
+
+```cpp
 #include <fstream>
-#include <vector>
+#include <iostream>
 #include <sstream>
-
-// Enkel funksjon for å lese CSV
-std::vector<std::vector<std::string>> readCSV(const std::string& filename) {
-    std::vector<std::vector<std::string>> data;
-    std::ifstream file(filename);
-    
-    std::string line;
-    while (std::getline(file, line)) {
-        std::istringstream s(line);
-        std::string field;
-        std::vector<std::string> row;
-        
-        while (getline(s, field, ',')) {
-            row.push_back(field);
-        }
-        data.push_back(row);
-    }
-    
-    return data;
-}
-
-// Enkel funksjon for å skrive til CSV
-void writeCSV(const std::string& filename, const std::vector<std::vector<std::string>>& data) {
-    std::ofstream file(filename);
-    
-    for (const auto& row : data) {
-        for (size_t i = 0; i < row.size(); ++i) {
-            file << row[i];
-            if (i < row.size() - 1) file << ",";
-        }
-        file << "\n";
-    }
-}
+#include <vector>
 
 int main() {
-    // Engangskjøring av lese og skrive funksjonene
-    const std::string filename = "example.csv";
-    std::vector<std::vector<std::string>> data = readCSV(filename);
-    writeCSV("output.csv", data);
+    std::ifstream file("data.csv");
+    std::string line;
+    
+    while (std::getline(file, line)) {
+        std::stringstream lineStream(line);
+        std::string cell;
+        std::vector<std::string> parsedRow;
+        
+        while (std::getline(lineStream, cell, ',')) {
+            parsedRow.push_back(cell);
+        }
+        
+        // Behandle analyzedRow her
+        for (const auto& val : parsedRow) {
+            std::cout << val << "\t";
+        }
+        std::cout << std::endl;
+    }
     
     return 0;
 }
 ```
-Sample output (innholdet av `output.csv` vil være identisk med `example.csv`).
 
-## Deep Dive:
-CSV oppstod på 1970-tallet som et enkelt tekstformat for datautveksling. Alternativer til CSV inkluderer JSON, XML, og databaser som SQL. Implementeringsdetaljer i C++ kan inkludere bruk av bibliotek som `<fstream>` for filhåndtering, string streams for parsing av rader, og feilhåndtering.
+### Skrive til en CSV-fil:
 
-## See Also:
-- [C++ filhåndtering (cplusplus.com)](https://www.cplusplus.com/reference/fstream/)
-- [RFC 4180 - Standard for CSV files (ietf.org)](https://tools.ietf.org/html/rfc4180)
-- [Modern C++: arbeid med JSON (nlohmann json)](https://github.com/nlohmann/json)
+```cpp
+#include <fstream>
+#include <vector>
+
+int main() {
+    std::ofstream file("output.csv");
+    std::vector<std::vector<std::string>> data = {
+        {"Navn", "Alder", "By"},
+        {"John Doe", "29", "New York"},
+        {"Jane Smith", "34", "Los Angeles"}
+    };
+    
+    for (const auto& rad : data) {
+        for (size_t i = 0; i < rad.size(); i++) {
+            file << rad[i];
+            if (i < rad.size() - 1) file << ",";
+        }
+        file << "\n";
+    }
+    
+    return 0;
+}
+```
+
+### Bruk av et tredjepartsbibliotek: `csv2`:
+
+Mens C++ Standardbiblioteket gir grunnleggende verktøy for arbeid med filer og strenger, kan bruk av tredjepartsbiblioteker forenkle CSV-behandling. Et slikt bibliotek er `csv2`, kjent for sin brukervennlighet og effektivitet.
+
+- Installasjon: Vanligvis installert via pakkehåndterere som Conan eller direkte fra GitHub-repositoriet.
+
+Eksempel på bruk av `csv2` til å lese en CSV-fil:
+
+```cpp
+#include <csv2/reader.hpp>
+#include <iostream>
+
+int main() {
+    csv2::Reader<csv2::delimiter<','>, csv2::quote_character<'"'>, csv2::first_row_is_header<true>> csv;
+    if (csv.mmap("data.csv")) {
+        const auto header = csv.header();
+        for (const auto row : csv) {
+            for (const auto cell : row) {
+                std::cout << cell.second << "\t"; // Skriv ut hver celleverdi
+            }
+            std::cout << std::endl;
+        }
+    }
+    return 0;
+}
+```
+
+Eksempelutdata for leseoperasjoner kan se slik ut (med forbehold om en enkel CSV-fil med tre kolonner):
+
+```
+John    29    New York    
+Jane    34    Los Angeles
+```
+
+Disse eksemplene har som mål å dekke grunnleggende CSV-operasjoner i C++. For mer komplekse scenarioer, som å håndtere store filer eller komplekse datatransformasjoner, kan ytterligere utforskning inn i spesialiserte biblioteker eller verktøy være nødvendig.

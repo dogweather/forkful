@@ -1,33 +1,53 @@
 ---
 title:                "写入标准错误"
-date:                  2024-01-19
+date:                  2024-02-03T19:33:08.929601-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "写入标准错误"
-
 tag:                  "Files and I/O"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/fish-shell/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## 什么 & 为什么？
-标准错误（stderr）是用于记录错误和诊断信息的特殊输出流。程序员这么做以便将错误信息与主要输出分开，方便调试和日志记录。
 
-## 如何：
-```Fish Shell
-# 写入标准错误的基本方法
-echo "This is an error" >&2
+在 Fish Shell 中写入标准错误（stderr）是关于将错误信息或诊断信息与标准输出（stdout）分开指导的。程序员这样做是为了确保可以轻松识别、管理或重定向错误信息，从而促进调试和日志记录过程的顺利进行。
 
-# 演示输出
-## 正常情况下看不到效果，但如果重定向标准错误流，则会显示：
-$ echo "This is an error" >&2 2> error_log.txt
-$ cat error_log.txt
-This is an error
+## 如何操作：
+
+在 Fish Shell 中，您可以通过使用 `>&2` 重定向输出来写入 stderr。这里有一个基本例子：
+
+```fish
+echo "这是一条错误信息" >&2
 ```
 
-## 深入探讨
-在Unix和类Unix系统中，stderr是1970年代以来的一个标准概念。Fish Shell和其他现代shell语言中，通过`>&2`重定向符号可以简便地把输出写入标准错误流。相比之下，你也可以用其他语言实现，例如Bash或是Python，但是Fish的语法更加简洁明了。Fish Shell支持函数、变量和控制流的错误处理策略，这提供了灵活的错误管理方法。
+此命令简单地将消息回显至 stderr 而非 stdout。如果您要编写一个同时输出常规消息和错误消息的脚本，您可能会这样做：
 
-## 参考链接
-- [Fish Shell 官方文档](https://fishshell.com/docs/current/index.html)
-- [UNIX Standard Streams](https://en.wikipedia.org/wiki/Standard_streams)
+```fish
+echo "开始处理"
+echo "发生错误" >&2
+echo "处理完成"
+```
+
+如果您运行脚本并将 stderr 重定向到文件的示例输出：
+
+```
+开始处理
+处理完成
+```
+
+错误消息不会出现在标准输出中，但会出现在您重定向 stderr 的文件中。
+
+在需要更复杂的错误处理或日志记录的场景中，Fish 没有内置专门为此设计的库。然而，您可以利用外部工具或编写函数来协助。例如，创建一个简单的日志记录函数可能如下所示：
+
+```fish
+function log_error
+    echo $argv >&2
+end
+
+log_error "这是一条高级错误信息"
+```
+
+这个函数 `log_error` 将接受您给出的任何字符串并将其写入 stderr。使用此类函数可以帮助保持您的错误处理在脚本中清晰且一致。

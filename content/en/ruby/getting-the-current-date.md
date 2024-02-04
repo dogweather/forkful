@@ -1,8 +1,8 @@
 ---
 title:                "Getting the current date"
-date:                  2024-01-20T15:16:20.667739-07:00
+date:                  2024-02-03T19:02:28.432475-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Getting the current date"
-
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/ruby/getting-the-current-date.md"
 ---
@@ -10,51 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Grabbing the current date in Ruby is as simple as it sounds: retrieving today's date. Programmers need it for tasks ranging from logging and timestamping to scheduling and validity checks.
+Fetching the current date is an essential task in almost any programming endeavor, from logging activities in an application to generating reports with date stamps. In Ruby, this can be easily accomplished using the standard library, simplifying operations that involve dates.
 
 ## How to:
-Ruby makes it easy-peasy to get the current date. Here’s how:
+Ruby's standard library includes the `Date` and `Time` classes for handling dates and time. Here's how to get the current date:
 
 ```ruby
 require 'date'
 
-# Get the current date
 current_date = Date.today
 puts current_date
 ```
 
-Running this snippet will print something like this (depending on the day you run it):
-
+Sample output: 
 ```
-2023-04-07
+2023-04-12
 ```
 
-Want the time too? Here's the code:
+For including time with the date, Ruby's `Time` class is more suitable:
 
 ```ruby
-require 'time'
-
-# Get the current date and time
-current_datetime = Time.now
-puts current_datetime
+current_time = Time.now
+puts current_time
 ```
 
-And the output will include the timestamp:
-
+Sample output: 
 ```
-2023-04-07 12:34:56 +0900
+2023-04-12 14:33:07 +0200
 ```
 
-## Deep Dive
-Once upon a time, Rubyists needed external libraries to manage dates and times. Enter the standard Ruby library with `Date` and `Time` classes, and the need for extras was mostly history.
+If you need more functionality, such as time zone management, you might want to use a third-party gem like `ActiveSupport` (part of Rails but can be used standalone).
 
-`Date` handles, well, dates - day, month, and year. For more precision, `DateTime` combines date and time, but if you need just the time or more granular details like seconds or time zones, `Time` has your back.
+First, add `activesupport` to your Gemfile and run `bundle install`:
 
-Alternatives to Ruby's built-in classes include gems like 'timecop' for testing time-dependent code, and 'chronic' for parsing natural language dates.
+```ruby
+gem 'activesupport'
+```
 
-Under the hood, `Date.today` pulls your system's date. It keeps things simple but ignores time zones. `Time.now` goes farther, accounting for time zones with a default offset from Coordinated Universal Time (UTC).
+Then, use it to handle time zones:
 
-## See Also
-* Ruby's docs on the Time class: [https://ruby-doc.org/core-2.7.0/Time.html](https://ruby-doc.org/core-2.7.0/Time.html)
-* The 'timecop' gem for mocking with time: [https://github.com/travisjeffery/timecop](https://github.com/travisjeffery/timecop)
-* The 'chronic' gem for natural language date parsing: [https://github.com/mojombo/chronic](https://github.com/mojombo/chronic)
+```ruby
+require 'active_support/time'
+
+Time.zone = 'Eastern Time (US & Canada)'  # Set your desired time zone
+current_time_with_zone = Time.zone.now
+puts current_time_with_zone
+```
+
+Sample output:
+```
+Wed, 12 Apr 2023 08:33:07 EDT -04:00
+```

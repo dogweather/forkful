@@ -1,44 +1,53 @@
 ---
 title:                "Obteniendo la fecha actual"
-date:                  2024-01-20T15:12:57.985215-07:00
+date:                  2024-02-03T19:08:42.056527-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Obteniendo la fecha actual"
-
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/bash/getting-the-current-date.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Qué & Por qué?
-Obtener la fecha actual en Bash es leer el momento presente del sistema. Los programadores lo usan para registros, scripts cronometrados y funciones que dependen del tiempo.
+## Qué y Por Qué?
+Recuperar la fecha actual en Bash implica usar comandos integrados para mostrar la fecha y la hora en varios formatos. Los programadores utilizan esta funcionalidad para tareas como poner marcas de tiempo en registros, programar tareas o simplemente como parte de sus scripts de información del sistema para rastrear cuándo se realizaron las acciones.
 
 ## Cómo hacerlo:
-Sencillo y directo. Usa `date` para obtener la información que necesitas.
+En Bash, el comando `date` es tu herramienta principal para obtener la fecha y hora actuales. Aquí hay algunos ejemplos de cómo usarlo:
 
-```Bash
-# Simple uso para obtener la fecha y hora actual
-echo $(date)
+1. **Obtener la fecha y hora actuales en el formato predeterminado:**
 
-# Formato personalizado para fecha: YYYY-MM-DD
-echo $(date '+%Y-%m-%d')
-
-# Guardar fecha en una variable
-current_date=$(date)
-echo $current_date
+```bash
+date
 ```
 
-Ejemplo de salida:
-
-```Bash
-Mon Mar 22 14:21:42 PDT 2023
-2023-03-22
-Mon Mar 22 14:21:42 PDT 2023
+*Ejemplo de salida:*
+```
+Wed Apr 5 14:22:04 PDT 2023
 ```
 
-## Inmersión Profunda:
-`date` es parte del GNU coreutils y existe desde las primeras versiones de Unix, lo que significa que es bastante estándar en sistemas Unix-like. Existen comandos alternativos como `hwclock` para hardware clocks y utilidades de terceros, pero `date` suele ser suficiente para la mayoría de las necesidades. La belleza está en la flexibilidad: `date` permite formatos personalizados con ‘+’ seguido de directivas de formato, tales como `%Y` para el año, `%m` para el mes y `%d` para el día.
+2. **Personalizar el formato de salida:** Puedes especificar el formato de salida usando los especificadores de formato `+%`. Por ejemplo, para mostrar la fecha en formato YYYY-MM-DD:
 
-## Ver También:
-- Para más información sobre formateo de fecha en Bash, chequea el manual con `man date` en tu terminal.
-- Si necesitas ejemplos más complejos y explicaciones, GNU tiene buenos recursos: https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html
-- ¿Buscas trabajar con fechas en scripts? Este tutorial es útil: https://www.cyberciti.biz/faq/linux-unix-formatting-dates-for-display/
+```bash
+date "+%Y-%m-%d"
+```
+
+*Ejemplo de salida:*
+```
+2023-04-05
+```
+
+3. **Obtener el sello de tiempo UNIX actual:** El sello de tiempo UNIX es el número de segundos desde la Época Unix (1 de enero de 1970). Esto es útil para scripts que realizan cálculos basados en diferencias de tiempo.
+
+```bash
+date "+%s"
+```
+
+*Ejemplo de salida:*
+```
+1672877344
+```
+
+No se suelen utilizar bibliotecas de terceros populares para esta operación básica en Bash ya que el comando `date` integrado proporciona una funcionalidad completa. Sin embargo, para manipulaciones de fecha y hora más avanzadas, los programadores podrían usar otros lenguajes de programación o herramientas que ofrecen bibliotecas para aritmética y análisis de fechas, como el módulo `datetime` de Python.

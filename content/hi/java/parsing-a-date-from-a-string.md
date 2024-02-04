@@ -1,46 +1,70 @@
 ---
-title:                "स्ट्रिंग से दिनांक पार्स करना"
-date:                  2024-01-20T15:37:20.040481-07:00
-simple_title:         "स्ट्रिंग से दिनांक पार्स करना"
-
+title:                "स्ट्रिंग से तारीख पार्स करना"
+date:                  2024-02-03T19:15:14.580505-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "स्ट्रिंग से तारीख पार्स करना"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/java/parsing-a-date-from-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (क्या और क्यों?)
-तारीख को स्ट्रिंग से पार्स करने का मतलब है स्ट्रिंग फॉर्मेट में दी गई तारीख को Java की Date ऑब्जेक्ट में बदलना। यह जरूरी है क्योंकि यूज़र से मिली इनपुट या डेटाबेस से आंकड़े स्ट्रिंग फॉर्मेट में हो सकते हैं, जिन्हें हमें तारीखों के रूप में प्रोसेस करना होता है।
+## क्या और क्यों?
+एक स्ट्रिंग से दिनांक पार्स करना यह सुनिश्चित करता है कि दिनांक और समय का पाठ्य प्रतिनिधित्व `Date` ऑब्जेक्ट या एक अधिक आधुनिक `LocalDateTime` ऑब्जेक्ट में परिवर्तित हो। प्रोग्रामर इसे दिनांकों को संशोधित करने, प्रारूपित करने, तुलना करने या एक मानकीकृत प्रारूप में संग्रहीत करने के लिए करते हैं, जो दिनांक गणना, मान्यता, या सुसंगत अंतरराष्ट्रीयता की आवश्यकता वाले अनुप्रयोगों के लिए महत्वपूर्ण है।
 
-## How to: (कैसे करें:)
-```Java
+## कैसे करें:
+
+### `java.time` पैकेज का उपयोग करते हुए (जावा 8 और बाद में सिफारिशी):
+```java
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+
+public class DateParser {
+    public static void main(String[] args) {
+        String dateString = "2023-04-30";
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        LocalDate date = LocalDate.parse(dateString, formatter);
+        System.out.println(date); // आउटपुट: 2023-04-30
+    }
+}
+```
+
+### `SimpleDateFormat` का उपयोग करते हुए (पुरानी विधि):
+```java
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class DateParsingExample {
+public class DateParser {
     public static void main(String[] args) {
-        String dateString = "25-03-2023";
-        SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
-       
+        String dateString = "30/04/2023";
+        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
         try {
             Date date = formatter.parse(dateString);
-            System.out.println("Date is: " + date);
+            System.out.println(date); // आउटपुट प्रारूप आपके सिस्टम के डिफ़ॉल्ट प्रारूप पर निर्भर करता है
         } catch (ParseException e) {
-            System.out.println("Invalid format");
+            e.printStackTrace();
         }
     }
 }
 ```
-**Sample Output:**
-```
-Date is: Sat Mar 25 00:00:00 IST 2023
-```
 
-## Deep Dive (गहराई से जानकारी):
-तारीख पार्सिंग का उपयोग Java में बहुत पहले से होता आ रहा है। `SimpleDateFormat` क्लास इस कार्य के लिए लंबे समय से इस्तेमाल हो रही है और अब Java 8 और उसके बाद के वर्ज़न में `java.time` पैकेज ने कई आसान और लचीले तरीके प्रस्तुत किए हैं। `DateTimeFormatter` और `LocalDate` जैसी क्लासेस के साथ, डेवेलपर्स को ज़्यादा पावरफुल और थ्रेड-सेफ ऑप्शंस मिलते हैं। पार्सिंग में गलतियों से बचने के लिए `try-catch` ब्लॉक का प्रयोग करना चाहिए।
+### तृतीय-पक्ष पुस्तकालयों का उपयोग करते हुए (उदाहरण के लिए, Joda-Time):
+Joda-Time एक महत्वपूर्ण तृतीय-पक्ष पुस्तकालय रहा है, लेकिन जावा 8 में `java.time` पैकेज के परिचय के बाद अब रख-रखाव मोड में है। हालांकि, 8 से पहले के जावा संस्करणों का उपयोग करने वालों के लिए, Joda-Time एक अच्छा विकल्प है।
+```java
+import org.joda.time.LocalDate;
+import org.joda.time.format.DateTimeFormat;
+import org.joda.time.format.DateTimeFormatter;
 
-## See Also (और जानकारी के लिए):
-- [Date and Time Classes in Java 8](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
-- [SimpleDateFormat Documentation](https://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html)
-- [Date to LocalDate Conversion](https://www.baeldung.com/java-date-to-localdate-and-localdatetime)
+public class DateParser {
+    public static void main(String[] args) {
+        String dateString = "2023-04-30";
+        DateTimeFormatter formatter = DateTimeFormat.forPattern("yyyy-MM-dd");
+        LocalDate date = LocalDate.parse(dateString, formatter);
+        System.out.println(date); // आउटपुट: 2023-04-30
+    }
+}
+```
+ध्यान दें कि जब दिनांकों के साथ काम करते हैं, तो हमेशा समय क्षेत्र की सेटिंग्स के प्रति सचेत रहें, यदि आप केवल दिनांकों के बजाय दिनांक-समयों को पार्स या प्रारूपित कर रहे हैं।

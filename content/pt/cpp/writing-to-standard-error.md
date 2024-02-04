@@ -1,44 +1,62 @@
 ---
-title:                "Escrevendo no erro padrão"
-date:                  2024-01-19
-simple_title:         "Escrevendo no erro padrão"
-
+title:                "Escrevendo para o erro padrão"
+date:                  2024-02-03T19:32:37.556752-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Escrevendo para o erro padrão"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/cpp/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## O Que é & Por Que?
+## O Que & Por Quê?
 
-Escrever no erro padrão (stderr) permite que mensagens de erro e diagnósticos sejam separados da saída padrão (stdout). Programadores usam isso para facilitar a depuração e permitir que usuários roteiem mensagens de erro de forma diferente da saída regular.
+Escrever para o erro padrão (`stderr`) em C++ envolve a saída de mensagens de erro ou diagnósticos que são separados da saída principal do programa. Os programadores fazem isso para direcionar os erros para um fluxo diferente, permitindo uma depuração e um tratamento de erros mais fáceis, distinguindo a saída normal das mensagens de erro.
 
-## Como Fazer:
+## Como fazer:
 
-Você pode escrever no stderr em C++ usando o objeto `cerr` da biblioteca iostream. Veja como:
+Em C++, escrever para o erro padrão pode ser alcançado usando o fluxo `cerr`, que faz parte da biblioteca padrão. Aqui está um exemplo básico:
 
-```C++
+```cpp
 #include <iostream>
 
 int main() {
-    std::cout << "Esta é a saída padrão." << std::endl;
-    std::cerr << "Isto é uma mensagem de erro." << std::endl;
+    // Escrevendo para a saída padrão
+    std::cout << "Esta é uma mensagem normal." << std::endl;
+    
+    // Escrevendo para o erro padrão
+    std::cerr << "Esta é uma mensagem de erro." << std::endl;
+    
     return 0;
 }
 ```
 
-Saída esperada:
+Saída de Amostra:
 ```
-Esta é a saída padrão.
-Isto é uma mensagem de erro.
+Esta é uma mensagem normal.
+Esta é uma mensagem de erro.
 ```
 
-## Mergulho Profundo:
+Neste caso, ambas as mensagens normalmente aparecerão no seu terminal, mas você pode redirecioná-las separadamente em um shell. Por exemplo, você pode enviar a saída padrão para um arquivo enquanto permite que os erros sejam exibidos na tela.
 
-Historicamente, a distinção entre stdout e stderr vem dos tempos dos primeiros terminais Unix, onde era útil separar as saídas. Alternativas incluem escrever em arquivos de log ou usar bibliotecas de log customizadas. Internamente, stderr é um stream desbufferizado, isso significa que as mensagens são enviadas imediatamente r para o destino de saída.
+Para um registro e tratamento de erros mais avançados, bibliotecas de terceiros como `spdlog` ou `boost.log` podem ser empregadas. Essas bibliotecas oferecem recursos aprimorados para registro, incluindo formatação, níveis de log e saída de arquivo.
 
-## Veja Também:
+Aqui está como você pode usar o `spdlog` para escrever uma mensagem de erro:
 
-- Documentação do C++ para `<iostream>`: http://www.cplusplus.com/reference/iostream/
-- Tutorial do C++ sobre manipulação de arquivos e streams: http://www.cplusplus.com/doc/tutorial/files/
-- A especificação do C++ atualizada: https://isocpp.org/std/the-standard
+```cpp
+#include "spdlog/spdlog.h"
+
+int main() {
+    // Inicializando o spdlog
+    spdlog::info("Esta é uma mensagem normal.");
+    spdlog::error("Esta é uma mensagem de erro.");
+    
+    return 0;
+}
+```
+
+Nota: Para usar o `spdlog`, você precisa adicioná-lo ao seu projeto. Você pode fazer isso clonando o repositório do GitHub ou usando um gerenciador de pacotes como `vcpkg` ou `conan`.
+
+Lembre-se, a escolha entre usar fluxos padrão diretamente ou uma biblioteca como `spdlog` depende da complexidade da sua aplicação e das suas necessidades específicas em relação ao tratamento e registro de erros.

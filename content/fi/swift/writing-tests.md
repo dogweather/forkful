@@ -1,47 +1,64 @@
 ---
 title:                "Testien kirjoittaminen"
-date:                  2024-01-19
+date:                  2024-02-03T19:32:01.656260-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Testien kirjoittaminen"
-
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/swift/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Testaus tarkoittaa koodin automaattista tarkistamista virheiden varalta. Testit auttavat löytämään ja korjaamaan ongelmia ennen kuin ne päätyvät tuotantoon, minkä ansiosta koodi on luotettavampaa.
+## Mikä & Miksi?
+Testien kirjoittaminen Swiftillä sisältää koodin luomista ja suorittamista, joka varmistaa muiden sovelluksesi koodiyksiköiden oikeellisuuden. Ohjelmoijat tekevät sen varmistaakseen luotettavuuden, havaitakseen virheet varhaisessa kehitysvaiheessa ja helpottaakseen tulevia koodin uudelleenjärjestelyjä ilman tahattomia seurauksia.
 
-## How to:
-Swiftissä testejä voidaan kirjoittaa käyttämällä XCTest-kirjaston ominaisuuksia. Tässä esimerkissä luodaan yksinkertainen funktio ja testi sille.
+## Kuinka:
+Swift tukee testausta XCTest-kehikon kautta, joka on integroitu Xcodeen. Voit kirjoittaa yksikkötestejä tarkistamaan koodisi yksittäisiä osia, esimerkiksi funktion, joka laskee kahden luvun summan.
 
-```Swift
-// SimpleFunction.swift
-func addNumbers(a: Int, b: Int) -> Int {
-    return a + b
-}
-
-// SimpleFunctionTests.swift
+```swift
 import XCTest
 @testable import YourApp
 
-class SimpleFunctionTests: XCTestCase {
-    func testAddNumbers() {
-        XCTAssertEqual(addNumbers(a: 2, b: 3), 5, "Should add two numbers correctly")
+class YourAppTests: XCTestCase {
+
+    func testSum() {
+        let result = Calculator().sum(a: 1, b: 2)
+        XCTAssertEqual(result, 3, "Summa-funktio ei palauttanut odotettua arvoa.")
     }
 }
-
-// Test output in the console
-Test Suite 'All tests' started at 2023-03-10 18:25:54.052
-Test Suite 'YourAppTests.xctest' started at 2023-03-10 18:25:54.053
-Test Suite 'SimpleFunctionTests' started at 2023-03-10 18:25:54.054
-Test Case '-[YourAppTests.SimpleFunctionTests testAddNumbers]' passed (0.001 seconds).
 ```
 
-## Deep Dive
-Swiftin testaustuki on kehittynyt vuosien varrella ja nykyisin XCTest tarjoaa kattavat työkalut eritasoiseen testaukseen. Vaihtoehtoisia testaustyökaluja ovat esimerkiksi Quick ja Nimble, mutta XCTest on Applen virallisesti tukema ja tyypillisesti ensisijainen valinta. Testien kirjoittaminen vaatii ymmärrystä siitä, mitä koodin osia tulee testata ja miten testitulokset interpretoidaan.
+Tämän testin suorittamiseen painaisit tyypillisesti Command-U:tä Xcodessa. Xcoden testinavigaattorin tulos kertoo, menikö testi läpi vai ei.
 
-## See Also
-- Apple's XCTest Documentation: [XCTest](https://developer.apple.com/documentation/xctest)
-- Test Driven Development in Swift: [TDD](https://www.raywenderlich.com/21020457-test-driven-development-tutorial-for-ios-getting-started)
-- Ray Wenderlich's iOS Unit Testing by Example: [iOS Unit Testing](https://www.raywenderlich.com/960290-ios-unit-testing-and-ui-testing-tutorial)
+Esimerkiksi onnistuneen testin tulos:
+```
+Testitapaus '-[YourAppTests testSum]' meni läpi (0.005 sekuntia).
+```
+
+Edistyneemmissä testausskenaarioissa saatat ottaa käyttöön kolmannen osapuolen kirjastoja, kuten Quick/Nimble, jotka tarjoavat ilmaisuvoimaisempaa syntaksia testien kirjoittamiseen.
+
+Quick/Nimblen avulla saatat kirjoittaa saman testin näin:
+
+```swift
+// Lisää Quick ja Nimble Swift-paketinhallintaasi tai käytä CocoaPodseja/Carthagea asentaaksesi ne
+import Quick
+import Nimble
+@testable import YourApp
+
+class CalculatorSpec: QuickSpec {
+    override func spec() {
+        describe("Laskin") {
+            context("kun lasketaan numeroiden summaa") {
+                it("pitäisi palauttaa oikea summa") {
+                    let laskin = Calculator()
+                    expect(laskin.sum(a: 1, b: 2)).to(equal(3))
+                }
+            }
+        }
+    }
+}
+```
+
+Tämän testin suorittaminen antaisi sinulle samankaltaisen tuloksen testikonsolissasi tai CI/CD-työkalusi lokissa, ilmoittaen, menikö testi läpi vai ei, luettavammassa muodossa testien ja odotusten kuvaamiseksi.

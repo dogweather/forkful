@@ -1,40 +1,51 @@
 ---
-title:                "Att hämta aktuellt datum"
-date:                  2024-01-20T15:15:57.481453-07:00
-simple_title:         "Att hämta aktuellt datum"
-
+title:                "Få det aktuella datumet"
+date:                  2024-02-03T19:10:19.849335-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Få det aktuella datumet"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/php/getting-the-current-date.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Hämta det aktuella datumet i PHP innebär att få information om just nu. Programmerare använder detta för att logga händelser, användardata, eller för att visa tidsspecifik information till användare.
+Att få det aktuella datumet i PHP är en grundläggande uppgift som gör det möjligt för dig att hämta och manipulera systemets datum och tid. Detta är avgörande för funktioner som loggning, tidstämpling av inlägg, schemaläggning av händelser eller utförande av tidskänsliga operationer i dina applikationer.
 
-## Hur man gör:
-För att få det aktuella datumet och tiden i PHP, använd `date()`-funktionen. Här är ett enkelt exempel:
+## Hur gör man:
+### Inbyggd PHP
+PHP:s inbyggda `date()`-funktion är det mest direkta sättet att få det aktuella datumet. Du kan formatera datumet på olika sätt genom att specificera formatparametern.
 
-```PHP
-<?php
-echo "Idag är det " . date("Y-m-d") . "<br>";
-echo "Klockan är " . date("H:i:s");
-?>
+```php
+echo date("Y-m-d"); // Ger ut: 2023-04-01 (till exempel)
+echo date("l, F j, Y"); // Ger ut: lördag, april 1, 2023
 ```
 
-Exempel på utskrift:
+För att få datum och tid med tidszonsstöd kan du använda `DateTime`-klassen tillsammans med `DateTimeZone`.
+
+```php
+$dateTime = new DateTime('now', new DateTimeZone('America/New_York'));
+echo $dateTime->format('Y-m-d H:i:s'); // Ger ut: 2023-04-01 12:00:00 (till exempel)
 ```
-Idag är det 2023-04-01
-Klockan är 12:15:03
+
+### Använda Carbon (Ett populärt tredjepartsbibliotek)
+[Carbon](https://carbon.nesbot.com/) är en enkel API-förlängning för `DateTime` som erbjuder ett renare och mer flytande sätt att arbeta med datum och tider.
+
+Se först till att du har Carbon installerat via Composer:
+```bash
+composer require nesbot/carbon
 ```
 
-## Fördjupning:
-Funktionen `date()` har funnits sedan PHPs födelse. Från PHP 5.2.0, introducerades klassen `DateTime` som ett mer objektorienterat alternativ. Det finns också `time()` som returnerar en UNIX-tidsstämpel, vilket är antalet sekunder sedan 1970-01-01 00:00:00 UTC.
+Sedan kan du använda det för att få det aktuella datumet:
 
-Implementationsdetaljer kan innehålla arbete med tidszoner, där `date_default_timezone_set()` använder sig av PHPs tidszonsdatabas för att ange relevant tidszon. Alternativa format kan inkludera RFC 2822 eller ISO 8601 datumformat, beroende på behov. 
+```php
+use Carbon\Carbon;
 
-## Se även:
-- PHPs officiella dokumentation om `date()`-funktionen: [php.net/manual/en/function.date.php](https://www.php.net/manual/en/function.date.php)
-- PHP `DateTime` klass: [php.net/manual/en/class.datetime.php](https://www.php.net/manual/en/class.datetime.php)
-- PHP tidszonsinställningar: [php.net/manual/en/function.date-default-timezone-set.php](https://www.php.net/manual/en/function.date-default-timezone-set.php)
-- W3Schools PHP date() funktion: [w3schools.com/php/func_date_date.asp](https://www.w3schools.com/php/func_date_date.asp)
+echo Carbon::now(); // Ger ut: 2023-04-01 12:00:00 (till exempel, i det förinställda formatet)
+echo Carbon::now()->toDateString(); // Ger ut: 2023-04-01
+echo Carbon::now()->format('l, F j, Y'); // Ger ut: lördag, april 1, 2023
+```
+
+Carbon berikar hanteringen av datum-tid i PHP genom att lägga till läsbarhet och en skattkista av funktionalitet för tidsmanipulering, jämförelse och formatering.

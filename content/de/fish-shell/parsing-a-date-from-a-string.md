@@ -1,45 +1,48 @@
 ---
-title:                "Datum aus einem String parsen"
-date:                  2024-01-20T15:35:51.070035-07:00
-simple_title:         "Datum aus einem String parsen"
-
+title:                "Einen Datum aus einem String analysieren"
+date:                  2024-02-03T19:14:09.719117-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Einen Datum aus einem String analysieren"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/fish-shell/parsing-a-date-from-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Das Parsen eines Datums aus einem String ist der Prozess, bei dem Datumswerte aus Textformaten extrahiert werden. Programmierer machen das, um Datumsangaben zu verarbeiten und manipulieren, oft für Anwendungen wie Kalender, Logfiles oder User-Input.
+Das Parsen eines Datums aus einem String beinhaltet das Extrahieren von Datumsinformationen, die innerhalb von Strings kodiert sind, und die Umwandlung in ein strukturiertes Format, das von Programmierumgebungen erkannt und manipuliert werden kann. Programmierer tun dies, um Operationen wie Datumsvergleich, Arithmetik, Formatierung und Lokalisierung zu ermöglichen, die für die effiziente Handhabung von Zeitplänen, Zeitstempeln und historischen Daten in Software unerlässlich sind.
 
-## How to:
-```Fish Shell
-# Datum aus String parsen
-set date_string "2023-04-02"
+## Wie:
+In Fish Shell gibt es keine eingebauten Befehle, die speziell für das Parsen von Daten aus Strings entwickelt wurden. Stattdessen verlässt man sich auf externe Dienstprogramme wie `date` (verfügbar unter Linux und macOS) oder nutzt beliebte Drittanbieter-Tools wie `GNU date` für komplexeres Parsen. So geht man vor:
 
-# Fish verwendet 'string match' und 'date' für einfaches Parsing
-set year (string match -r "\d{4}" $date_string)[1]
-set month_day (string match -r "\d{2}-\d{2}" $date_string)[1]
+**Verwendung von `date` mit Fish:**
 
-# Ausgabe der Ergebnisse
-echo "Jahr: $year"
-echo "Monat und Tag: $month_day"
+Um einen Datumsstring im Format "JJJJ-MM-TT" zu parsen, können Sie den `date`-Befehl mit der Option `-d` (oder `--date` für GNU date) gefolgt von dem String verwenden. Die Option `+` wird verwendet, um das Ausgabeformat zu bestimmen.
 
-# Datum mit 'date' Kommando konvertieren
-set full_date (date -j -f "%Y-%m-%d" $date_string +"%A, %d %B %Y")
-echo "Vollständiges Datum: $full_date"
-```
-Sample Output:
-```
-Jahr: 2023
-Monat und Tag: 04-02
-Vollständiges Datum: Sunday, 02 April 2023
+```fish
+set date_str "2023-04-01"
+date -d $date_str +"%A, %d %B %Y"
+# Ausgabe: Samstag, 01 April 2023
 ```
 
-## Deep Dive
-Früher mussten Datumswerte oft mühsam per Hand zerlegt werden, bis Werkzeuge wie reguläre Ausdrücke und spezielle Funktionen in Programmiersprachen dies vereinfachten. In Fish Shell bietet das `date` Kommando diverse Möglichkeiten, mit Datums- und Zeitangaben umzugehen, was Fish neben seiner Scripting-Funktionalität nützlich für Dateioperationen und -verwaltung macht. Alternativen in anderen Shells oder Sprachen können komplexer sein, wie zum Beispiel Date-Parsing in Bash, das oft auf externe Tools wie `date` und `awk` angewiesen ist. Fishs Ansatz bleibt einfach: `string match` für das Pattern-Matching und Kombinationen mit `date` für die Formatierung.
+Für macOS (das ein anderes Format für die Flags `-j` und `-f` benötigt):
 
-## See Also
-- Fish Shell Dokumentation: https://fishshell.com/docs/current/index.html
-- GNU Coreutils 'date': https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html
-- POSIX Shell Command Language: https://pubs.opengroup.org/onlinepubs/9699919799/utilities/V3_chap02.html
+```fish
+set date_str "2023-04-01"
+date -j -f "%Y-%m-%d" $date_str +"%A, %d %B %Y"
+# Ausgabe: Samstag, 01 April 2023
+```
+
+**Verwendung von GNU `date` für komplexes Parsen:**
+
+GNU `date` ist flexibler in Bezug auf Stringformate. Es kann viele gängige Datumsstringformate automatisch erkennen, ohne dass das Eingabeformat explizit angegeben werden muss:
+
+```fish
+set complex_date_str "1. April 2023 14:00"
+date -d "$complex_date_str" '+%Y-%m-%d %H:%M:%S'
+# Ausgabe: 2023-04-01 14:00:00
+```
+
+Wenn jedoch mit Datumsstrings gearbeitet wird, die möglicherweise nicht automatisch erkannt werden oder wenn eine präzise Kontrolle über das Eingabeformat benötigt wird, wird die Angabe des Eingabeformats mit GNU `date` nicht direkt unterstützt. In solchen Fällen sollten Sie die Vorverarbeitung des Strings in Betracht ziehen oder ein anderes Tool verwenden, das für komplexere Datums-Parsing-Routinen konzipiert ist.

@@ -1,39 +1,61 @@
 ---
-title:                "Att göra en sträng versal"
-date:                  2024-01-19
-simple_title:         "Att göra en sträng versal"
-
+title:                "Gör om en sträng till versaler"
+date:                  2024-02-03T19:04:51.974936-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Gör om en sträng till versaler"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/bash/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att göra en textsträng versal innebär att konvertera alla bokstäver till stora bokstäver. Programmerare gör detta för att standardisera textdata, förbättra läslighet eller uppfylla tekniska krav.
+Att göra det första tecknet i en sträng till versal i Bash involverar att omvandla det första tecknet av strängen till stort bokstav medan resten av strängen lämnas oförändrad. Denna teknik används ofta för att formatera utdata eller för att följa kodkonventioner som kräver att vissa strängar börjar med en stor bokstav för läsbarhet eller stilistiska preferenser.
 
-## Hur gör man:
-```Bash
-# Kapitalisera en sträng med tr-kommandot
-echo "hej världen" | tr '[:lower:]' '[:upper:]'
+## Hur man gör:
+
+Bash har inte en inbyggd funktion specifikt för att göra bokstäver till versaler i strängar, men du kan åstadkomma detta med hjälp av parameterexpansion eller externa verktyg som `awk`. Här är några sätt att skriva det första tecknet i en sträng med stor bokstav i Bash:
+
+**Använda Parameter Expansion:**
+
+Denna metod manipulerar strängen direkt i skalet.
+
+```bash
+str="hello world"
+capitalized="${str^}"
+echo "$capitalized"
 ```
-Output: HEJ VÄRLDEN
-
-```Bash
-# Använda Bash inbyggda funktioner för att kapitalisera en sträng
-str="hej världen"
-echo "${str^^}"
+Utdata:
 ```
-Output: HEJ VÄRLDEN
+Hello world
+```
 
-## Fördjupning
-Från jokertecken i UNIX till dagens Bash har textmanipulering alltid varit centralt. `tr` är ett äldre kommando som står för "translate" och modifierar strömmar av text. Bash introducerade senare inbyggda funktioner för strängmanipulering, som `${str^^}`, som gör koden enklare och snabbare.
+**Använda `awk`:**
 
-Alternativ kan vara att använda `awk`, `sed`, eller till och med Perl och Python för komplex bearbetning. Varje verktyg har sina för- och nackdelar, beroende på behov och miljö.
+`awk` är ett kraftfullt verktyg för textbearbetning som är tillgängligt på de flesta Unix-liknande operativsystem, vilket kan användas för att skriva strängar med stor bokstav.
 
-Implementationen av strängkapitalisering skiljer sig i skalkriptning. Det beror på vilket skal som används och dess version. I Bash 4.0 och senare är ${str^^} och ${str,,} inbyggda för att respektive konvertera till versaler eller gemener.
+```bash
+str="hello world"
+echo "$str" | awk '{print toupper(substr($0, 1, 1)) tolower(substr($0, 2))}'
+```
+Utdata:
+```
+Hello world
+```
 
-## Se även
-- Bash manualen: https://www.gnu.org/software/bash/manual/
-- Advanced Bash-Scripting Guide: https://www.tldp.org/LDP/abs/html/
-- POSIX specifikationen för `tr`: https://pubs.opengroup.org/onlinepubs/9699919799/utilities/tr.html
+**Använda `sed`:**
+
+För en mer traditionell ansats kan `sed` användas för att göra det första tecknet i en sträng till stor bokstav. Dock är det lite mer komplext jämfört med de tidigare metoderna.
+
+```bash
+str="hello world"
+echo "$str" | sed 's/./\u&/'
+```
+Utdata:
+```
+Hello world
+```
+
+Dessa kodsnuttar demonstrerar hur man gör det första tecknet i en sträng till versal i Bash, vilket belyser flexibiliteten i shellskriptning när det gäller textmanipulering.

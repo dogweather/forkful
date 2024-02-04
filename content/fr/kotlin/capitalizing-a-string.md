@@ -1,49 +1,44 @@
 ---
-title:                "Mettre une chaîne de caractères en majuscules"
-date:                  2024-01-19
-simple_title:         "Mettre une chaîne de caractères en majuscules"
-
+title:                "Mettre en majuscule une chaîne"
+date:                  2024-02-03T19:05:38.354320-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Mettre en majuscule une chaîne"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/kotlin/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-La capitalisation d'une chaîne de caractères convertit la première lettre en majuscule. Les programmeurs l'utilisent pour normaliser les entrées des utilisateurs ou pour suivre les conventions de formatage, comme les noms propres ou les titres.
+## Quoi et pourquoi ?
 
-## How to:
-Kotlin simplifie la capitalisation avec la fonction `replaceFirstChar`. Voici comment ça marche :
+En programmation, mettre en majuscule une chaîne de caractères consiste à convertir son premier caractère en majuscule s'il ne l'est pas déjà, ce qui est utile pour formater les entrées des utilisateurs ou afficher du texte dans une interface utilisateur de manière plus standardisée ou conviviale. Les programmeurs effectuent cette opération pour garantir la cohérence des données ou pour répondre à des exigences de formatage spécifiques au sein de leurs applications logicielles.
 
-```kotlin
-fun main() {
-    val phrase = "voici un exemple."
-    val phraseCapitalizee = phrase.replaceFirstChar { if (it.isLowerCase()) it.titlecase() else it.toString() }
+## Comment faire :
 
-    println(phraseCapitalizee) // Affiche: Voici un exemple.
-}
-```
+En Kotlin, les chaînes de caractères peuvent être mises en majuscules en utilisant les fonctions de la bibliothèque standard sans nécessiter de bibliothèques tierces. L'approche de Kotlin pour manipuler les chaînes rend ces opérations simples et concises.
 
-Si vous avez un texte entier à transformer :
+### Mettre toute la chaîne en majuscules :
 
 ```kotlin
-fun String.capitalizeEachWord(): String =
-    split(" ").joinToString(" ") { it.replaceFirstChar { char -> if (char.isLowerCase()) char.titlecase() else char.toString() } }
+val message = "hello, world!"
+val capitalizedMessage = message.uppercase()
 
-fun main() {
-    val texte = "un autre exemple de texte."
-    println(texte.capitalizeEachWord()) // Affiche: Un Autre Exemple De Texte.
-}
+println(capitalizedMessage) // Sortie : HELLO, WORLD!
 ```
 
-## Deep Dive
-Historiquement, Kotlin utilisait `capitalize()` pour majusculer le premier caractère, mais cette fonction a été dépréciée à partir de Kotlin 1.5 au profit de `replaceFirstChar` pour une meilleure gestion des cas spécifiques comme les caractères unicode.
+### Mettre en majuscule uniquement le premier caractère :
 
-Il y a des alternatives, comme `toUpperCase()` ou `toLowerCase()` sur tous les caractères, pas juste le premier. Mais attention, ces méthodes affectent toute la chaîne et pas uniquement la première lettre.
+Depuis Kotlin 1.5, la fonction `capitalize()` est obsolète et remplacée par une combinaison de `replaceFirstChar` et d'une lambda qui vérifie s'il s'agit d'une lettre minuscule pour la transformer en majuscule.
 
-Niveau réalisation, `replaceFirstChar` est intelligent. Il vérifie si le premier caractère a besoin d'être changé avant de procéder, ce qui en fait une solution efficace pour ne pas créer inutilement de nouvel objet `String`.
+```kotlin
+val greeting = "hello, world!"
+val capitalizedGreeting = greeting.replaceFirstChar {
+    if (it.isLowerCase()) it.titlecase() else it.toString()
+}
 
-## See Also
-- Kotlin Documentation: [Text](https://kotlinlang.org/docs/basic-types.html#string-literals)
-- Article sur la dépréciation de `capitalize`: [Restrictive String Capitalization](https://blog.jetbrains.com/kotlin/2021/05/kotlin-1-5-0-released/#restrictive_string_capitalization)
-- Guide du style Kotlin: [Coding Conventions](https://kotlinlang.org/docs/coding-conventions.html#functions-vs-properties)
+println(capitalizedGreeting) // Sortie : Hello, world!
+```
+
+Cette approche maintient le reste de la phrase dans sa forme originale tout en changeant uniquement la première lettre en majuscule.

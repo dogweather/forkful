@@ -1,50 +1,65 @@
 ---
-title:                "現在の日付を取得する"
-date:                  2024-01-20T15:16:13.668866-07:00
-simple_title:         "現在の日付を取得する"
-
+title:                "現在の日付の取得"
+date:                  2024-02-03T19:10:40.768202-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "現在の日付の取得"
 tag:                  "Dates and Times"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/ruby/getting-the-current-date.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (何となぜ？)
-プログラマが現在の日付を取得することは、データにタイムスタンプを付けたり、特定の日付に基づいた処理を行うためです。シンプルですが、多くのアプリケーションには不可欠です。
+## 何となぜ？
+ほとんどのプログラミングの取り組みにおいて、アプリケーションでの活動のログ取りから、日付印のあるレポートの生成まで、現在の日付を取得することは基本的なタスクです。Rubyでは、標準ライブラリを使用してこれを容易に実行でき、日付に関わる操作をシンプルにします。
 
-## How to: (方法)
-```Ruby
+## 方法：
+Rubyの標準ライブラリには、日付と時間を扱うための`Date`クラスと`Time`クラスが含まれています。以下が現在の日付を取得する方法です：
+
+```ruby
 require 'date'
 
-# 現在の日付を取得する
 current_date = Date.today
 puts current_date
 ```
-サンプル出力:
+
+サンプル出力：
 ```
-2023-04-15
-```
-
-## Deep Dive (掘り下げ)
-Rubyでは`Date`クラスを使って日付を扱います。`Date.today`で今日の日付を取得できます。これは単純ですが、Rubyの歴史的背景では、`Time`クラスやライブラリを利用することも多かったです。`DateTime`や`ActiveSupport`のようなライブラリ提供のメソッドも使われることがあります。ただし、必要とする機能が`Date`クラスで完結するなら、組み込みのクラスを利用する方がシンプルです。
-
-Rubyが成熟してくると、多くの開発者が`Time`より`Date`を選ぶようになりました。それは、日付だけを扱う場合には`Time`クラスのインスタンスは多くの情報を持ちすぎており、メモリ効率が良くないためです。
-
-しかし、時刻も扱いたい場合、`DateTime`を使うことが勧められます。現在の日付と時刻を取得するには、以下のようにします。
-
-```Ruby
-current_datetime = DateTime.now
-puts current_datetime
+2023-04-12
 ```
 
-サンプル出力:
-```
-2023-04-15T14:33:20+09:00
+日付に時刻を含める場合、Rubyの`Time`クラスが適しています：
+
+```ruby
+current_time = Time.now
+puts current_time
 ```
 
-このように、Rubyでは現在の日付や時刻を取得する方法が幾つもありますが、状況に応じて最も適切なものを選びましょう。
+サンプル出力：
+```
+2023-04-12 14:33:07 +0200
+```
 
-## See Also (関連情報)
-- RubyのTimeクラスのドキュメント：[Ruby-Doc Time](https://ruby-doc.org/core/Time.html)
-- ActiveSupportの時間拡張について：[API Dock ActiveSupport::Time](https://apidock.com/rails/ActiveSupport/Time)
+タイムゾーンの管理など、より多くの機能が必要な場合は、`ActiveSupport`のようなサードパーティ製のgemを使用することが望ましいかもしれません（Railsの一部ですが、単独で使用できます）。
+
+まず、Gemfileに`activesupport`を追加し、`bundle install`を実行します：
+
+```ruby
+gem 'activesupport'
+```
+
+そして、タイムゾーンを扱うには：
+
+```ruby
+require 'active_support/time'
+
+Time.zone = 'Eastern Time (US & Canada)'  # 希望のタイムゾーンを設定
+current_time_with_zone = Time.zone.now
+puts current_time_with_zone
+```
+
+サンプル出力：
+```
+Wed, 12 Apr 2023 08:33:07 EDT -04:00
+```

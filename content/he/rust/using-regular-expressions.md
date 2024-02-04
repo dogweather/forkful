@@ -1,43 +1,99 @@
 ---
 title:                "שימוש בביטויים רגולריים"
-date:                  2024-01-19
+date:                  2024-02-03T19:18:56.081586-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "שימוש בביטויים רגולריים"
-
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/rust/using-regular-expressions.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## מה ולמה?
-בעזרת ביטויים רגולריים, אנחנו מסננים ומעבדים טקסט בצורה מדויקת. תכניתנים משתמשים בהם כדי לחסוך זמן ולבצע משימות מורכבות בקלות.
+
+ביטויים רגולריים, או regex, מאפשרים למפתחים לחפש, להתאים ולעבד מחרוזות עם שיטות מתקדמות של התאמת תבניות. ב-Rust, שימוש ב-regex עוזר לפרסר ולטפל יעילות בנתוני טקסט, מה שהופך משימות כמו אימות נתונים, חיפושים, והמרות טקסט ליותר זרימים וקלים לתחזוק.
 
 ## איך לעשות:
-```Rust
+
+הספרייה `regex` ב-Rust היא המקום הראשון לפנות אליו לעבודה עם ביטויים רגולריים. לשימוש בה, תצטרך להוסיף אותה תחילה לקובץ `Cargo.toml` שלך:
+
+```toml
+[dependencies]
+regex = "1"
+```
+
+לאחר מכן, תוכל להתחיל ליישם פונקציונליות של regex בקוד Rust שלך. הנה איך לבצע כמה פעולות נפוצות:
+
+### התאמת תבנית למחרוזת
+
+```rust
 use regex::Regex;
 
 fn main() {
-    let text = "מצא את המספרים: 123, 456, 789";
-    let re = Regex::new(r"\d+").unwrap();
-    
-    for number in re.find_iter(text) {
-        println!("מספר נמצא: {}", number.as_str());
-    }
+    let re = Regex::new(r"^\d{4}-\d{2}-\d{2}$").unwrap();
+    let date = "2023-04-15";
+
+    println!("האם הטקסט תואם את תבנית התאריך? {}", re.is_match(date));
+    // פלט: האם הטקסט תואם את תבנית התאריך? true
 }
 ```
 
-פלט:
+### מציאה וגישה להתאמות
 
+```rust
+use regex::Regex;
+
+fn main() {
+    let text = "Rust 2023, C++ 2022, Python 2021";
+    let re = Regex::new(r"\b(\w+)\s(\d{4})").unwrap();
+
+    for cap in re.captures_iter(text) {
+        println!("שפה: {}, שנה: {}", &cap[1], &cap[2]);
+    }
+    // פלט:
+    // שפה: Rust, שנה: 2023
+    // שפה: C++, שנה: 2022
+    // שפה: Python, שנה: 2021
+}
 ```
-מספר נמצא: 123
-מספר נמצא: 456
-מספר נמצא: 789
+
+### החלפת טקסט
+
+```rust
+use regex::Regex;
+
+fn main() {
+    let re = Regex::new(r"\b(\w+)\s(\d{4})").unwrap();
+    let text = "Rust 2023, C++ 2022, Python 2021";
+    let replaced = re.replace_all(text, "$1 עודכן ב-$2");
+
+    println!("הטקסט שעודכן: {}", replaced);
+    // פלט: הטקסט שעודכן: Rust עודכן ב-2023, C++ עודכן ב-2022, Python עודכן ב-2021
+}
 ```
 
-## צלילה עמוקה:
-ביטויים רגולריים קיימים משנות ה-50 והשפיעו על שפות רבות. חלופות להם כוללות ניתוח סינטקטי מותאם או ביבליות ספציפיות לטיפול בטקסט. ב-Rust, הספרייה `regex` פותחה להיות מהירה ובטוחת זיכרון.
+### פיצול טקסט באמצעות Regex
 
-## ראו גם:
-- [מדריך הביטויים הרגולריים של Rust](https://docs.rs/regex/)
-- [מדריכים ומאמרים באתר rust-lang.org](https://www.rust-lang.org/learn)
-- [פורום דיונים של Rust לשאלות ותמיכה](https://users.rust-lang.org/)
+```rust
+use regex::Regex;
+
+fn main() {
+    let re = Regex::new(r"\W+").unwrap(); // פיצול לפי כל תו שאינו מילה
+    let text = "Rust-C++-Python-Go";
+
+    let fields: Vec<&str> = re.split(text).collect();
+
+    for field in fields {
+        println!("שפה: {}", field);
+    }
+    // פלט:
+    // שפה: Rust
+    // שפה: C++
+    // שפה: Python
+    // שפה: Go
+}
+```
+
+הדוגמאות האלה מספקות מדריך בסיסי להתחלה עם ביטויים רגולריים ב-Rust. ככל שהצרכים שלך הופכים למתוחכמים יותר, הספרייה `regex` מציעה שפע של פונקציונליות לטפל במשימות מורכבות של התאמת תבניות ועיבוד טקסט.

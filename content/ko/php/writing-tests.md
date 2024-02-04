@@ -1,43 +1,86 @@
 ---
 title:                "테스트 작성하기"
-date:                  2024-01-19
+date:                  2024-02-03T19:31:29.867020-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "테스트 작성하기"
-
 tag:                  "Testing and Debugging"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/php/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (무엇과 왜?)
-테스트 작성은 코드가 예상대로 작동하는지 확인하기 위한 과정입니다. 이를 통해 버그를 예방하고, 소프트웨어 품질을 향상시키며, 나중에 코드 변경에 자신감을 가질 수 있습니다.
+## 무엇을, 왜?
+프로그래밍에서 테스트를 작성하는 것은 다양한 조건에서 코드가 예상대로 동작하는지 확인하기 위해 스크립트를 만들고 실행하는 과정을 말합니다. 프로그래머들은 이를 통해 품질을 보장하고, 회귀를 방지하며, 안전한 리팩토링을 용이하게 하여 건강하고, 확장 가능하며, 버그가 없는 코드베이스를 유지하는 데 중요합니다.
 
-## How to: (방법)
-PHP에서는 PHPUnit 같은 테스트 프레임워크를 사용해 유닛 테스트를 작성합니다. 아래는 간단한 PHP 유닛 테스트의 예시입니다.
+## 어떻게:
+### 네이티브 PHP – PHPUnit
+PHP에서 테스트를 위해 널리 사용되는 도구는 PHPUnit입니다. Composer를 통해 설치하세요:
+```bash
+composer require --dev phpunit/phpunit ^9
+```
 
-```PHP
-<?php
+#### 간단한 테스트 작성하기:
+`tests` 디렉토리에 `CalculatorTest.php` 파일을 생성하세요:
+```php
 use PHPUnit\Framework\TestCase;
 
-class SampleTest extends TestCase
+// 숫자를 더하는 Calculator 클래스가 있다고 가정
+class CalculatorTest extends TestCase
 {
-    public function testAddingTwoPlusTwoResultsInFour()
+    public function testAdd()
     {
-        $this->assertEquals(4, 2 + 2);
+        $calculator = new Calculator();
+        $this->assertEquals(4, $calculator->add(2, 2));
     }
 }
 ```
-샘플 출력:
-
+다음으로 테스트를 실행하세요:
+```bash
+./vendor/bin/phpunit tests
 ```
+
+#### 샘플 출력:
+```
+PHPUnit 9.5.10 by Sebastian Bergmann and contributors.
+
+.                                                                   1 / 1 (100%)
+
+Time: 00:00.005, Memory: 6.00 MB
+
 OK (1 test, 1 assertion)
 ```
 
-## Deep Dive (심층 분석)
-테스트 작성은 TDD(Test-Driven Development) 같은 소프트웨어 개발 방법론에서 중요한 역할을 합니다. PHPUnit은 2000년대 초반에 만들어졌고 PHP에서 가장 인기 있는 테스팅 도구입니다. 대안으로는 PHPSpec, Behat 등이 있으며, 프로젝트의 요구에 따라 선택합니다. PHPUnit는 다양한 assertion 메소드를 제공하여 다양한 조건의 테스트가 가능합니다.
+### 제3자 라이브러리 – Mockery
+모킹 객체를 포함한 복잡한 테스트의 경우, Mockery가 인기 있는 선택입니다.
 
-## See Also (함께 보기)
-- [PHPUnit 공식 문서](https://phpunit.de/documentation.html)
-- [PHP The Right Way의 테스팅](https://phptherightway.com/#testing)
-- [TDD란 무엇인가?](https://en.wikipedia.org/wiki/Test-driven_development)
+```bash
+composer require --dev mockery/mockery
+```
+
+#### Mockery를 PHPUnit과 통합하기:
+```php
+use PHPUnit\Framework\TestCase;
+use Mockery as m;
+
+class ServiceTest extends TestCase
+{
+    public function tearDown(): void
+    {
+        m::close();
+    }
+
+    public function testServiceCallsExternalService()
+    {
+        $externalServiceMock = m::mock(ExternalService::class);
+        $externalServiceMock->shouldReceive('process')->once()->andReturn('mocked result');
+
+        $service = new Service($externalServiceMock);
+        $result = $service->execute();
+
+        $this->assertEquals('mocked result', $result);
+    }
+}
+```
+실행할 때는 위의 PHPUnit 명령과 같이 사용하세요. Mockery는 표현력이 뛰어나고 유연한 모킹 객체를 가능하게 하여 애플리케이션 내 복잡한 상호작용을 테스트하는 데 도움을 줍니다.

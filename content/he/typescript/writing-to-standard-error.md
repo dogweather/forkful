@@ -1,40 +1,64 @@
 ---
-title:                "כתיבה לפלט השגיאה הסטנדרטי"
-date:                  2024-01-19
-simple_title:         "כתיבה לפלט השגיאה הסטנדרטי"
-
+title:                "כתיבה לשגיאה התקנית"
+date:                  2024-02-03T19:35:08.240892-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "כתיבה לשגיאה התקנית"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/typescript/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## מה ולמה?
-כתיבה ל-Standard Error (stderr) היא דרך להדפיס הודעות שגיאה או דיאגנוסטיקה. תכניתנים עושים זאת כדי להבחין בין פלט רגיל לבין הודעות על תקלות ובעיות בזמן ריצה.
+ב-TypeScript, כתיבה לשגיאה סטנדרטית (stderr) היא תהליך של שליחת הודעות שגיאה או יומני רישום ישירות לזרם הפלט של השגיאה של הסביבה (למשל, הקונסול ב-node.js או בדפדפן אינטרנט). זה חיוני לאבחון בעיות מבלי להתערב בפלט הסטנדרטי (stdout) המשמש בדרך כלל לנתוני תוכנית, ומבטיח שטיפול בשגיאות ותיעוד מתבצעים באופן יעיל ומקושר.
 
-## איך לעשות:
-```TypeScript
-// דוגמא לכתיבה ל-standard error ב-TypeScript
-console.error('זוהי הודעת שגיאה.');
+## איך לעשות זאת:
+TypeScript, בהיותו על-קבוצה של JavaScript, מסתמך על סביבת הזמן הרץ הבסיסית של JS (כמו Node.js) לכתיבה ל-stderr. הנה איך אפשר לעשות זאת באופן ישיר:
 
-// ייצוא פונקציה שמדפיסה שגיאה מותאמת אישית ל-standard error
-function reportError(errorMessage: string): void {
-    console.error(`שגיאה: ${errorMessage}`);
-}
-
-reportError('משהו השתבש!');  // זה ידפיס "שגיאה: משהו השתבש!"
-```
-פלט הדוגמה:
-```
-זוהי הודעת שגיאה.
-שגיאה: משהו השתבש!
+```typescript
+console.error("זהו הודעת שגיאה.");
 ```
 
-## עיון מעמיק:
-בהיסטוריה, הבחנה בין פלט רגיל ל-stderr הייתה חשובה בסביבות Unix, כדי לאפשר הפניית שגיאות לקבצים או למסופים אחרים. ב-TypeScript, אנחנו משתמשים ב-`console.error` כברירת מחדל, אבל יש גם אלטרנטיבות כמו ייצוא לקבצי לוג דרך ספריות חיצוניות. הכתיבה ל-stderr מתבצעת דרך ה-API של סביבת הריצה, למשל Node.js.
+דוגמה לפלט ל-stderr:
+```
+זהו הודעת שגיאה.
+```
 
-## ראה גם:
-- [Console.error() – MDN web docs](https://developer.mozilla.org/en-US/docs/Web/API/Console/error)
-- [Node.js process.stderr – Node.js Documentation](https://nodejs.org/api/process.html#processstderr)
+בסביבת Node.js, ניתן גם להשתמש בשיטת `process.stderr.write()` לכתיבה ברמה נמוכה יותר:
 
-טיפים ושימושים נוספים ב-stderr ב-TypeScript ניתן למצוא במסמכים ובפורומים המוקדשים לפיתוח תוכנה.
+```typescript
+process.stderr.write("הודעת שגיאה ברמה נמוכה.\n");
+```
+
+דוגמה לפלט ל-stderr:
+```
+הודעת שגיאה ברמה נמוכה.
+```
+
+עבור תיעוד של שגיאות מובנה יותר, ייתכן שתשתמש בספריות צד שלישי פופולריות כמו `winston` או `pino`. הנה איך לרשום שגיאות באמצעות `winston`:
+
+ראשית, התקן את `winston`:
+
+```bash
+npm install winston
+```
+
+לאחר מכן, השתמש בו בקובץ ה-TypeScript שלך:
+
+```typescript
+import * as winston from 'winston';
+
+const logger = winston.createLogger({
+  levels: winston.config.syslog.levels,
+  transports: [
+    new winston.transports.Console(),
+    new winston.transports.File({ filename: 'error.log', level: 'error' })
+  ],
+});
+
+logger.error('שגיאה נרשמה באמצעות winston.');
+```
+
+זה יכתוב את השגיאה גם לקונסול וגם לקובץ בשם `error.log`. זכור, כאשר כותבים לקבצים, חשוב לנהל הרשאות קובץ ומעבר לקובץ חדש כדי למנוע בעיות הקשורות לשימוש בשטח הדיסק.

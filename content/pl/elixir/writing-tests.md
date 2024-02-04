@@ -1,43 +1,82 @@
 ---
 title:                "Pisanie testów"
-date:                  2024-01-19
+date:                  2024-02-03T19:30:31.347116-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Pisanie testów"
-
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/elixir/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Testowanie to sprawdzanie czy kod robi to co powinien. Robimy to by zapobiec błędom, ułatwić zmiany i podnieść jakość kodu.
+## Co i dlaczego?
+Pisanie testów w Elixirze polega na tworzeniu zautomatyzowanych skryptów w celu weryfikacji zachowania Twojego kodu. Programiści robią to, aby zapewnić jakość, zapobiec regresji i ułatwić refaktoryzację kodu, czyniąc proces rozwoju bardziej niezawodnym i efektywnym.
 
-## How to:
+## Jak to zrobić:
+Elixir używa ExUnit jako wbudowanego frameworka do testów, który jest niezwykle potężny i łatwy w użyciu. Oto podstawowy przykład:
+
+1. Utwórz nowy plik testowy w katalogu `test` Twojego projektu Elixir. Na przykład, jeśli testujesz moduł o nazwie `MathOperations`, Twój plik testowy może być `test/math_operations_test.exs`.
+
 ```elixir
-defmodule ExampleTest do
-  use ExUnit.Case, async: true
+# test/math_operations_test.exs
+defmodule MathOperationsTest do
+  use ExUnit.Case
 
-  test "the truth" do
-    assert 1 + 1 == 2
-  end
-
-  test "list operations" do
-    assert Enum.reverse([1, 2, 3]) == [3, 2, 1]
+  # To jest prosty przypadek testowy do sprawdzenia funkcji dodawania
+  test "dodawanie dwóch liczb" do
+    assert MathOperations.add(1, 2) == 3
   end
 end
 ```
-Przykładowy wynik:
+
+Aby uruchomić swoje testy, użyj komendy `mix test` w terminalu. Jeśli funkcja `MathOperations.add/2` poprawnie dodaje dwie liczby, zobaczysz wyjście podobne do:
+
 ```
 ..
 
 Finished in 0.03 seconds
-2 tests, 0 failures
+1 test, 0 failures
 ```
 
-## Deep Dive
-Testowanie w Elixirze zaczęło się od ExUnit, wbudowanego frameworka. Opcje to między innymi ESpec – wzorowany na RSpec, czy StreamData do property-based testing. W ExUnit każdy `test` to oddzielna funkcja z własnym stanem, używając `assert` sprawdzamy wyniki.
+Dla testów obejmujących zewnętrzne usługi lub API, możesz chcieć używać bibliotek do mockowania, takich jak `mox`, aby unikać uderzania w rzeczywiste usługi:
 
-## See Also
-- [ExUnit - Elixir School](https://elixirschool.com/pl/lessons/basics/testing/)
-- [Elixir testing - HexDocs](https://hexdocs.pm/ex_unit/ExUnit.html)
-- [Property-based testing - HexDocs](https://hexdocs.pm/stream_data/StreamData.html)
+1. Dodaj `mox` do swoich zależności w `mix.exs`:
+
+```elixir
+defp deps do
+  [
+    {:mox, "~> 1.0.0", only: :test},
+    # inne zależności...
+  ]
+end
+```
+
+2. Zdefiniuj moduł mockujący w swoim pomocniku testowym (`test/test_helper.exs`):
+
+```elixir
+Mox.defmock(HTTPClientMock, for: HTTPClientBehaviour)
+```
+
+3. Użyj mocka w swoim przypadku testowym:
+
+```elixir
+# test/some_api_client_test.exs
+defmodule SomeAPIClientTest do
+  use ExUnit.Case
+  import Mox
+
+  # To mówi Mox'owi, aby zweryfikował, że ten mock został wywołany zgodnie z oczekiwaniami
+  setup :verify_on_exit!
+
+  test "otrzymuje dane z API" do
+    # Przygotuj odpowiedź mocka
+    expect(HTTPClientMock, :get, fn _url -> {:ok, "Zmockowana odpowiedź"} end)
+    
+    assert SomeAPIClient.get_data() == "Zmockowana odpowiedź"
+  end
+end
+```
+
+Podczas uruchamiania `mix test`, ta konfiguracja pozwala izolować twoje testy jednostkowe od rzeczywistych zewnętrznych zależności, skupiając się na zachowaniu własnego kodu. Ten wzorzec zapewnia, że twoje testy działają szybko i pozostają niezawodne, niezależnie od statusu zewnętrznych usług czy łączności internetowej.

@@ -1,38 +1,65 @@
 ---
 title:                "標準エラーへの書き込み"
-date:                  2024-01-19
+date:                  2024-02-03T19:34:31.546558-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "標準エラーへの書き込み"
-
 tag:                  "Files and I/O"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/powershell/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-標準エラーに書き込むって？プログラマーはなぜそれをするの？
-標準エラーへの書き込みは、エラーメッセージや警告を出力するプログラムの機能です。これは、通常の出力とエラー出力を分離しやすくするためや、ログ記録、デバッグで役立ちます。
+## 何となぜ？
 
-## How to:
-```PowerShell
-# 標準エラーへの書き込み例
-Write-Error "これはエラーメッセージです。"
+PowerShell での標準エラー（stderr）への書き込みは、エラーメッセージや診断情報を標準出力（stdout）ストリームとは別の stderr ストリームに直接送信することを意味します。この分離により、スクリプトの出力をより正確に制御でき、開発者は通常のメッセージとエラーメッセージを異なる先に向けることが可能になり、これはエラー処理やログ記録にとって基本的です。
 
-# 標準出力と標準エラーの両方への書き込み例
-Write-Output "これは通常の出力です。"
-Write-Error "そしてこれがエラー出力です。" 2>&1
-```
-サンプル出力:
-```
-これは通常の出力です。
-Write-Error : そしてこれがエラー出力です。
+## 方法:
+
+PowerShell は `Write-Error` コマンドレットを使用するか、出力を `$host.ui.WriteErrorLine()` メソッドに向けることによって、stderr への書き込みプロセスを簡素化します。ただし、直接の stderr リダイレクトには、.NET メソッドや PowerShell 自体が提供するファイルディスクリプタのリダイレクションを好むかもしれません。
+
+**例 1:** `Write-Error` を使用してエラーメッセージを stderr に書き込む。
+
+```powershell
+Write-Error "This is an error message."
 ```
 
-## Deep Dive:
-歴史的背景において、標準エラーはUNIXシステムにおける初期のコンセプトで、プログラムには標準入力、標準出力、標準エラーの3つのストリームがあります。PowerShellもこの原則を踏襲しています。選択肢として、`$ErrorActionPreference` や `Try/Catch` ブロックを使用してエラーをより細かく制御できる。実装の詳細では、エラーは `Write-Error` コマンドレットによって `ErrorRecord` オブジェクトとして扱われ、これによりスクリプトのエラーハンドリングが容易になります。
+stderr への出力:
+```
+Write-Error: This is an error message.
+```
 
-## See Also:
-- [about_Redirection](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_redirection)
-- [Write-Error](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/write-error)
-- [about_Try_Catch_Finally](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_try_catch_finally)
+**例 2:** `$host.ui.WriteErrorLine()` を使用して stderr に直接書き込む。
+
+```powershell
+$host.ui.WriteErrorLine("Direct stderr write.")
+```
+
+stderr への出力:
+```
+Direct stderr write.
+```
+
+**例 3:** .NET メソッドを使用して stderr に書き込む。
+
+```powershell
+[Console]::Error.WriteLine("Using .NET method for stderr")
+```
+
+このメソッドの出力:
+```
+Using .NET method for stderr
+```
+
+**例 4:** ファイルディスクリプタ `2>` を使用してエラー出力をリダイレクトする。
+
+PowerShellのファイルディスクリプタは、異なるストリームをリダイレクトできます。stderr の場合、ファイルディスクリプタは `2` です。ここにエラーを生成するコマンドを実行しながら、stderr を `error.log` という名前のファイルにリダイレクトする例を示します。
+
+```powershell
+Get-Item NonExistentFile.txt 2> error.log
+```
+
+この例はコンソール出力を生成しませんが、存在しないファイルへのアクセスを試みる際のエラーメッセージを含む `error.log` というファイルを現在のディレクトリに生成します。
+
+結論として、PowerShell はエラー出力の効果的な書き込みと管理のための複数の方法を提供し、スクリプトやアプリケーションでの洗練されたエラー処理とログ記録戦略を可能にします。

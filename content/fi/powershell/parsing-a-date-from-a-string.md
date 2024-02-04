@@ -1,44 +1,69 @@
 ---
-title:                "Merkkijonosta päivämäärän jäsentäminen"
-date:                  2024-01-20T15:37:59.441410-07:00
-simple_title:         "Merkkijonosta päivämäärän jäsentäminen"
-
+title:                "Päivämäärän jäsennys merkkijonosta"
+date:                  2024-02-03T19:15:26.213083-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Päivämäärän jäsennys merkkijonosta"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/powershell/parsing-a-date-from-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Mitä & Miksi?)
-Muunnetaan päivämäärät merkkijonoista ymmärrettävään muotoon. Taklataan käyttäjän syötteitä, tiedostojen logimerkintöjä ja päivämäärämuotojen epäjohdonmukaisuutta. Se on välttämätöntä tiedonhallinnassa ja automaatiossa.
+## Mikä & Miksi?
+Päivämäärän jäsentäminen merkkijonosta tarkoittaa tekstissä kirjoitettujen päivämäärien tunnistamista ja muuntamista päivämäärätyypiksi, jonka PowerShell ymmärtää ja jolla se voi työskennellä. Ohjelmoijat tekevät tämän manipuloidakseen, muotoillakseen, vertailakseen tai lasketakseen päivämääriä, mikä on yleinen tehtävä skripteissä, jotka käsittelevät lokitiedostoja, käyttäjän syötteitä tai datan prosessointia.
 
-## How to: (Kuinka tehdä:)
-```PowerShell
-# Yksinkertainen päivämäärän jäsentäminen
-$pvmMerkkijono = "25.03.2023"
-$pvmObjekti = [datetime]::ParseExact($pvmMerkkijono, "dd.MM.yyyy", $null)
-Write-Output $pvmObjekti
+## Kuinka:
+PowerShell tekee päivämäärän jäsentämisen merkkijonoista suoraviivaista `Get-Date` cmdlet:llä ja `[datetime]` tyypin kiihdyttimellä, jotka toimivat hyvin standardimuotoisille päivämäärille. Monimutkaisempia tai ei-standardimuotoisia päivämäärämerkkijonoja varten voidaan käyttää `[datetime]::ParseExact` metodia määrittelemään tarkka muoto.
 
-# Tulostaa: 25. maaliskuuta 2023 0.00.00
-
-# Monimuotoista syötettä käsittelevä jäsentäminen
-$useitaMuotoja = @("25-03-2023", "2023/03/25", "March 25, 2023")
-$kulttuuri = [System.Globalization.CultureInfo]::InvariantCulture
-foreach ($muoto in $useitaMuotoja) {
-    $pvmObjekti = [datetime]::Parse($muoto, $kulttuuri)
-    Write-Output $pvmObjekti
-}
-
-# Tulostaa:
-# 25. maaliskuuta 2023 0.00.00
-# 25. maaliskuuta 2023 0.00.00
-# 25. maaliskuuta 2023 0.00.00
+### Käyttäen `Get-Date` ja `[datetime]`:
+```powershell
+# Yksinkertainen muunnos käyttäen Get-Datea
+$stringDate = "2023-04-01"
+$date = Get-Date $stringDate
+echo $date
+```
+**Esimerkkituloste:**
+```
+Lauantai, huhtikuu 1, 2023 00:00:00
 ```
 
-## Deep Dive (Syväluotaus)
-Päivämäärien jäsentäminen merkkijonosta on ollut tarpeen päivämäärätietojen alkukausista lähtien, kun eri formaatteja käytettiin eri järjestelmissä. Historiallisesti se on ollut yksi yleisimmistä mutta haastavimmista ohjelmoinnin tehtävistä. TypeScript- ja JavaScript-kehittäjät käyttävät kirjastoja kuten Moment.js, kun taas Pythonissa on `datetime`-moduuli. PowerShellissä `[datetime]`-tyyppimuunnos ja `ParseExact`-metodit ovat kaksi tapaa tehdä töitä päivämäärien kanssa. Täsmällinen parsinta vaatii tiedon datan formaatista, kun taas enemmän jouston salliva `Parse` hoitaa useita formaatteja. Kulttuurin määrittäminen on tärkeää, sillä päivämääräformaatti voi vaihdella alueittain.
+```powershell
+# Käyttäen tyypin kiihdytintä [datetime]
+$stringDate = "huhtikuu 1, 2023"
+$date = [datetime]$stringDate
+echo $date
+```
+**Esimerkkituloste:**
+```
+Lauantai, huhtikuu 1, 2023 00:00:00
+```
 
-## See Also (Katso Myös)
-- .NET:n dokumentaatio `DateTime`-luokasta: [DateTime Struct (System)](https://docs.microsoft.com/en-us/dotnet/api/system.datetime?view=net-6.0)
-- Lisätietoa kulttuurikohtaisista muotoiluista: [CultureInfo Class (System.Globalization)](https://docs.microsoft.com/en-us/dotnet/api/system.globalization.cultureinfo?view=net-6.0)
-- Microsoftin PowerShell-käsikirja: [PowerShell Documentation](https://docs.microsoft.com/en-us/powershell/)
+### Käyttäen `[datetime]::ParseExact` ei-standardimuotoille:
+Muodoille, joita ei automaattisesti tunnisteta, voit määritellä tarkan muodon varmistaaksesi oikean jäsentämisen.
+```powershell
+$stringDate = "01-04-2023 14:00"
+$format = "dd-MM-yyyy HH:mm"
+$culture = [Globalization.CultureInfo]::InvariantCulture
+$date = [datetime]::ParseExact($stringDate, $format, $culture)
+echo $date
+```
+**Esimerkkituloste:**
+```
+Lauantai, huhtikuu 1, 2023 14:00:00
+```
+
+### Hyödyntäen kolmannen osapuolen kirjastoja
+Vaikka PowerShell itsessään on melko tehokas päivämäärien jäsentämiseen, erittäin monimutkaisissa skenaarioissa tai lisätoiminnoissa saatat tutkia .NET-kirjastoja, kuten NodaTime, vaikka monille tyypillisille käyttötapauksille PowerShellin omat kyvyt riittävät.
+
+```powershell
+# Käyttäen NodaTimea vain havainnollistuksena, huomaa että sinun tulee lisätä kirjasto projektiisi
+# Install-Package NodaTime -Version 3.0.5
+# Käyttäen NodaTimea päivämäärän jäsentämiseen
+[string]$stringDate = "2023-04-01T14:00:00Z"
+[NodaTime.Instant]::FromDateTimeUtc([datetime]::UtcNow)
+[NodaTime.LocalDate]$localDate = [NodaTime.LocalDate]::FromDateTime([datetime]::UtcNow)
+echo $localDate
+```
+**Huomautus esimerkistä:** Yllä oleva koodi on käsitteellinen havainnollistus. Käytännössä varmista, että NodaTime on oikein lisätty projektiisi, jotta tyypit ja metodit ovat käytettävissä.

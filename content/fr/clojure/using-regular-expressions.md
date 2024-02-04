@@ -1,43 +1,75 @@
 ---
 title:                "Utilisation des expressions régulières"
-date:                  2024-01-19
+date:                  2024-02-03T19:16:30.099619-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Utilisation des expressions régulières"
-
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/clojure/using-regular-expressions.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
-Les expressions régulières permettent de chercher et manipuler du texte selon des motifs. Les programmeurs s’en servent pour valider, chercher, et éditer des données textuelles rapidement.
+Les expressions régulières, un outil puissant pour la correspondance de motifs et la manipulation de données, sont essentielles dans les tâches de traitement de texte telles que la validation d'entrée, la recherche et le remplacement de texte. Les programmeurs les utilisent largement pour gérer de manière efficace et succincte les tâches complexes d'analyse de chaînes et de validation de données.
 
 ## Comment faire :
-```Clojure
-;; Recherche d'une correspondance
-(re-find #"\b[Cc]lojure\b" "J'adore programmer en Clojure.")
-;; => "Clojure"
+Clojure, restant fidèle à ses racines dans la famille Lisp, offre un riche ensemble de fonctions qui s'interface de manière transparente avec les capacités des expressions régulières de Java. Voici comment vous pouvez les utiliser :
 
-;; Vérification de format pour un numéro de téléphone en France
-(defn valide-numero? [numero]
-  (re-matches #"\+33\s?(\d{1,2}\s?){4}" numero))
+### Correspondance de Base
+Pour vérifier si une chaîne correspond à un motif, utilisez `re-matches`. Il renvoie la correspondance complète si réussi ou `nil` sinon.
 
-(valide-numero? "+33 1 23 45 67 89")
-;; => "+33 1 23 45 67 89"
-
-;; Division d'une chaîne en utilisant une virgule comme séparateur
-(clojure.string/split "a,b,c" #",")
-;; => ["a" "b" "c"]
-
-;; Remplacement de toutes les occurrences de "chat" par "chien"
-(clojure.string/replace "Le chat mange. Le chat dort." #"\bchat\b" "chien")
-;; => "Le chien mange. Le chien dort."
+```clojure
+(re-matches #"\d+" "123")  ;=> "123"
+(re-matches #"\d+" "abc")  ;=> nil
 ```
 
-## Exploration en profondeur
-Les expressions régulières ont été inventées dans les années 1950 par le mathématicien Stephen Kleene. Clojure, un langage moderne sur la JVM, les utilise via l'interopérabilité Java. Des alternatives existent, comme `clojure.spec`, mais les expressions régulières sont souvent plus rapides pour les besoins simples. L'utilisation sous Clojure passe par deux éléments clés : des littéraux regex (`#"..."`) et des fonctions de la bibliothèque comme `re-find`, `re-matches`, etc.
+### Recherche de Motifs
+Pour trouver la première occurrence d'un motif, `re-find` est votre fonction de prédilection :
 
-## Voir Aussi
-- La documentation officielle de Clojure sur les patterns regex : [clojure.org](https://clojure.org/guides/learn/functions#_regex)
-- "Mastering Clojure Strings", pour une étude plus approfondie des opérations sur les chaînes : [Clojure for the Brave and True](https://www.braveclojure.com/clojure-for-the-brave-and-true/)
-- Un tutoriel interactif pour apprendre les regex : [RegexOne](https://regexone.com/)
+```clojure
+(re-find #"\d+" "Commande 123")  ;=> "123"
+```
+
+### Groupes de Capture
+Utilisez `re-find` avec des parenthèses dans votre motif pour capturer des groupes :
+
+```clojure
+(let [[_ zone code] (re-find #"(1)?(\d{3})" "Téléphone : 123-4567")]
+  (println "Code Régional:" zone "Code:" code))
+;; Sortie : Code Régional: nil Code: 123
+```
+
+### Recherche Globale (Trouver Tous les Correspondances)
+Clojure n’a pas de recherche globale intégrée comme certains langages. À la place, utilisez `re-seq` pour obtenir une séquence paresseuse de toutes les correspondances :
+
+```clojure
+(re-seq #"\d+" "id : 123, qté : 456")  ;=> ("123" "456")
+```
+
+### Fractionnement de Chaînes
+Pour fractionner une chaîne basée sur un motif, utilisez `clojure.string/split` :
+
+```clojure
+(clojure.string/split "John,Doe,30" #",")  ;=> ["John" "Doe" "30"]
+```
+
+### Remplacement
+Remplacez des parties d'une chaîne correspondant à un motif avec `clojure.string/replace` :
+
+```clojure
+(clojure.string/replace "2023-04-01" #"\d{4}" "AAAA")  ;=> "AAAA-04-01"
+```
+
+### Bibliothèques tierces
+Bien que le support intégré de Clojure suffise dans la plupart des cas, pour des scénarios plus complexes, envisagez d'utiliser des bibliothèques telles que `clojure.spec` pour une validation de données robuste et `reagent` pour la manipulation réactive du DOM dans des applications web avec routage basé sur des regex et validation d'entrée.
+
+```clojure
+;; Exemple d'utilisation de clojure.spec pour valider un email
+(require '[clojure.spec.alpha :as s])
+(s/def ::email (s/and string? #(re-matches #".+@.+\..+" %)))
+(s/valide? ::email "test@example.com")  ;=> vrai
+```
+
+Rappelez-vous, bien que les expressions régulières soient puissantes, elles peuvent aussi rendre le code difficile à lire et à maintenir. Utilisez-les judicieusement et envisagez toujours des fonctions de manipulation de chaînes plus simples lorsque c'est possible.

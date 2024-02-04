@@ -1,44 +1,67 @@
 ---
-title:                "Przetwarzanie HTML"
-date:                  2024-01-20T15:30:01.443421-07:00
-simple_title:         "Przetwarzanie HTML"
-
+title:                "Analiza składniowa HTML"
+date:                  2024-02-03T19:11:40.226667-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Analiza składniowa HTML"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/bash/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Co i Dlaczego?)
-Parsing HTML, czyli analiza kodu HTML, pozwala programistom wydobyć dane z dokumentów HTML. Robimy to, by przetworzyć strukturyzowaną zawartość internetową na użyteczne informacje, czy to w celu indeksowania, scrapingu danych czy innych operacji.
+## Co i dlaczego?
 
-## How to: (Jak to zrobić:)
-Bash nie jest idealny do parsowania HTML, ale w razie potrzeby możesz użyć narzędzi jak `grep`, `sed`, `awk`, a najlepiej `xmllint` czy `pup`.
+Parsowanie HTML oznacza przeszukiwanie struktury i zawartości pliku HTML w celu wydobycia informacji. Programiści robią to, aby uzyskać dostęp do danych, manipulować treścią lub scrapować strony internetowe.
 
-```Bash
-# Pobierz tytuł strony za pomocą xmllint
-curl -s http://example.com | xmllint --html --xpath '//title/text()' 2>/dev/null
+## Jak to zrobić:
 
-# Użycie pup do wydobycia linków
-curl -s http://example.com | pup 'a attr{href}'
+Bash nie jest pierwszym wyborem do parsowania HTML, ale można to zrobić przy użyciu narzędzi takich jak `grep`, `awk`, `sed` lub zewnętrznych narzędzi takich jak `lynx`. Dla większej niezawodności użyjemy `xmllint` z pakietu `libxml2`.
+
+```bash
+# Zainstaluj xmllint, jeśli jest to konieczne
+sudo apt-get install libxml2-utils
+
+# Przykładowy HTML
+cat > sample.html <<EOF
+<html>
+<head>
+  <title>Przykładowa strona</title>
+</head>
+<body>
+  <h1>Witaj, Bash!</h1>
+  <p id="myPara">Bash może mnie przeczytać.</p>
+</body>
+</html>
+EOF
+
+# Parsuj tytuł
+title=$(xmllint --html --xpath '//title/text()' sample.html 2>/dev/null)
+echo "Tytuł to: $title"
+
+# Wyciągnij akapit po ID
+para=$(xmllint --html --xpath '//*[@id="myPara"]/text()' sample.html 2>/dev/null)
+echo "Zawartość akapitu to: $para"
 ```
 
-Wyjście może wyglądać następująco:
+Wyjście:
 ```
-Strona Przykładowa
-http://example.com/link1
-http://example.com/link2
+Tytuł to: Przykładowa strona
+Zawartość akapitu to: Bash może mnie przeczytać.
 ```
 
-## Deep Dive (Dogłębna analiza)
-Historia parsowania HTML jest tak stara jak i samo HTML. Początkowo polegała na prostych skryptach i narzędziach typu `grep`. Obecnie, lepsze do tego są specjalnie zaprojektowane języki i biblioteki, jak Beautiful Soup dla Pythona czy Nokogiri dla Ruby.
+## Głębsze zanurzenie
 
-Alternatywy dla Bash-a to wspomniane już Python, Ruby, czy nawet Node.js z różnorodnymi i efektywnymi parserami.
+W przeszłości programiści używali narzędzi opartych na regex, takich jak `grep`, do skanowania HTML, ale było to nieporęczne. HTML nie jest regularny - jest kontekstowy. Tradycyjne narzędzia nie zauważają tego i mogą być podatne na błędy.
 
-Parsowanie HTML w Bashu to przeważnie kombinowanie z wyrażeniami regularnymi i narzędziami tekstowymi. Nie jest to idealne, bo HTML nie jest regularnym językiem i może prowadzić do błędów, ale w prostych przypadkach może się sprawdzić. Ważne jest, aby używać narzędzi, które respektują strukturę XML, jak `xmllint`.
+Alternatywy? Sporo. Python z Beautiful Soup, PHP z DOMDocument, JavaScript z parserami DOM - języki z bibliotekami zaprojektowanymi, aby rozumieć strukturę HTML.
 
-## See Also (Zobacz również)
-- `[Beautiful Soup Documentation](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)` - dokumentacja do parsera dla Pythona.
-- `[Nokogiri Website](https://nokogiri.org/)` - strona główna parsera dla Ruby.
-- `[pup GitHub Repo](https://github.com/EricChiang/pup)` - projekt pup na GitHubie, dla narzędzia działającego z linii komend.
-- `[xmllint Manual](http://xmlsoft.org/xmllint.html)` - manual do xmllint, narzędzia do XML i HTML.
+Użycie `xmllint` w skryptach bash jest solidne do prostych zadań. Rozumie XML, a przez rozszerzenie XHTML. Regularny HTML może być jednak nieprzewidywalny. Nie zawsze podąża za ścisłymi zasadami XML. `xmllint` zmusza HTML do działania w modelu XML, co dobrze sprawdza się dla dobrze sformułowanego HTML, ale może mieć problemy z bałaganem.
+
+## Zobacz też
+
+- [W3Schools - Parsowanie DOM HTML](https://www.w3schools.com/xml/dom_intro.asp): Demistyfikacja DOM HTML.
+- [MDN Web Docs - Parsowanie i serializacja XML](https://developer.mozilla.org/en-US/docs/Web/Guide/Parsing_and_serializing_XML): Dla zasad parsowania XML, które mają zastosowanie do XHTML.
+- [Dokumentacja Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/): Biblioteka Pythona do parsowania HTML.
+- [Dokumentacja libxml2](http://xmlsoft.org/): Szczegóły na temat `xmllint` i pokrewnych narzędzi XML.

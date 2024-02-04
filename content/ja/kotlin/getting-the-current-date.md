@@ -1,42 +1,109 @@
 ---
-title:                "現在の日付を取得する"
-date:                  2024-01-20T15:15:31.067205-07:00
-simple_title:         "現在の日付を取得する"
-
+title:                "現在の日付の取得"
+date:                  2024-02-03T19:10:22.454499-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "現在の日付の取得"
 tag:                  "Dates and Times"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/kotlin/getting-the-current-date.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-現在の日付の取得とは、プログラム内で今日の日付を取得するプロセスです。時刻を記録したり、日付に基づいた機能を実行するために、プログラマーはこれを行います。
+## 何となぜ？
+プログラミングにおいて、現在の日付を取得することは、開発者がアプリケーション内で現在の日付にアクセスし、表示したり、操作したりすることを可能にする基本的な作業です。この機能性は、ログ記録やタイムスタンピングイベントから日付に基づく計算まで、あらゆることにとって重要です。
 
-## How to:
-Kotlinでは、現在の日付を取得するのは簡単です。ここでは標準ライブラリを使用した方法を紹介します。
+## 方法：
 
-```Kotlin
+### 標準的なKotlinの使用
+Kotlinには独自の日付と時間のAPIはなく、この機能のためにJava 標準ライブラリに依存しています。ここでは、現在の日付を取得する方法を示します：
+
+```kotlin
 import java.time.LocalDate
 
 fun main() {
     val today = LocalDate.now()
-    println("Today's date: $today")
+    println("今日の日付: $today")
 }
-
-// Sample Output:
-// Today's date: 2023-04-05
 ```
 
-## Deep Dive
-Kotlinでは、`java.time`パッケージが現在の日付や時刻を取得する標準手段です。Java 8から導入されたこのパッケージは、古い`java.util.Date`よりも改善されたAPIを提供します。異なるタイムゾーンやカレンダーシステムへの対応も強化されています。`LocalDate`クラスは日付を表し、`LocalTime`や`LocalDateTime`は時刻や日付と時刻の組み合わせを表すために使用されます。
+**サンプル出力：**
+```
+今日の日付: 2023-04-05
+```
 
-代替手段としては、`Calendar`クラスや`Date`クラスを使用する方法がありますが、非推奨であり、`java.time`の使用が推奨されます。
+### java.util.Dateの使用
+日付と時間の両方が必要な操作の場合、`java.util.Date`が好ましいかもしれません。
 
-実装の詳細を見ると、`LocalDate.now()`メソッドはシステムクロックとデフォルトタイムゾーンを利用して現在の日付を取得します。タイムゾーンを指定したい場合は`now(ZoneId)`を使用します。
+```kotlin
+import java.util.Date
 
-## See Also
-- `java.time.LocalDate`のドキュメント: [Oracle Docs](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)
-- タイムゾーンの管理: [TimeZone](https://docs.oracle.com/javase/8/docs/api/java/time/ZoneId.html)
-- Kotlin公式ドキュメント: [Kotlinlang](https://kotlinlang.org/docs/reference/)
-- 日付と時刻に関するより高度な操作: [ThreeTen-Extra](http://www.threeten.org/threeten-extra/)
+fun main() {
+    val currentDate = Date()
+    println("現在の日付と時刻: $currentDate")
+}
+```
+
+**サンプル出力：**
+```
+現在の日付と時刻: Wed Apr 05 15:20:45 GMT 2023
+```
+
+### Joda-Time ライブラリの使用
+Java 8が新しい日付と時間のAPIを導入する前、Joda-TimeはJavaとKotlinで日時操作の事実上の標準でした。多くのプロジェクトではもはや必要ないとはいえ、レガシーな理由や個人的な好みで使用されていることもあります。
+
+プロジェクトのbuild.gradleファイルにJoda-Timeライブラリを追加します：
+```
+implementation 'joda-time:joda-time:2.10.10'
+```
+
+```kotlin
+import org.joda.time.LocalDate
+
+fun main() {
+    val today = LocalDate.now()
+    println("今日の日付: $today")
+}
+```
+
+**サンプル出力：**
+```
+今日の日付: 2023-04-05
+```
+
+### ThreeTenABPのAndroidでの使用
+Android開発においては、Android API Level 26より前のバージョンに対して、Java Time APIのバックポートをThreeTen Android Backport Projectを通じて使用することを推奨します。
+
+アプリのbuild.gradleファイルに依存関係を追加します：
+```
+implementation 'com.jakewharton.threetenabp:threetenabp:1.3.1'
+```
+
+Applicationクラスで初期化します：
+```kotlin
+import android.app.Application
+import com.jakewharton.threetenabp.AndroidThreeTen
+
+class MyApp : Application() {
+    override fun onCreate() {
+        super.onCreate()
+        AndroidThreeTen.init(this)
+    }
+}
+```
+
+それから、このように使用できます：
+```kotlin
+import org.threeten.bp.LocalDate
+
+fun main() {
+    val today = LocalDate.now()
+    println("今日の日付: $today")
+}
+```
+
+**サンプル出力：**
+```
+今日の日付: 2023-04-05
+```

@@ -1,62 +1,94 @@
 ---
-title:                "Praca z yaml"
-date:                  2024-01-19
-simple_title:         "Praca z yaml"
-
+title:                "Praca z YAML"
+date:                  2024-02-03T19:25:41.605910-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Praca z YAML"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/javascript/working-with-yaml.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Co i dlaczego?
-YAML to format zapisu danych, podobny do JSON, ale bardziej czytelny dla człowieka. Programiści używają go często do konfiguracji aplikacji i wdrażania infrastruktury, szczególnie w projektach związanych z DevOps i konteneryzacją.
+
+YAML, będący skrótem od "YAML Ain't Markup Language", to format serializacji danych, który jest czytelny dla człowieka. Programiści często używają go do plików konfiguracyjnych oraz wymiany danych pomiędzy językami ze względu na jego prostotę i czytelność w porównaniu z JSON lub XML.
 
 ## Jak to zrobić:
+
+W JavaScript praca z YAML zazwyczaj wiąże się z użyciem biblioteki firm trzecich, ponieważ język ten nie zawiera wbudowanego parsera dla YAML. Jedną z najpopularniejszych bibliotek do tego celu jest `js-yaml`. Możesz użyć `js-yaml`, aby przetworzyć YAML na obiekty JavaScript i odwrotnie.
+
+Najpierw musisz zainstalować `js-yaml`:
+
+```bash
+npm install js-yaml
 ```
-// Do pracy z YAML w JavaScript potrzebujemy biblioteki js-yaml.
-// Instalujemy ją używając npm: npm install js-yaml
 
+Następnie możesz jej użyć w swoich projektach. Oto jak możesz załadować plik YAML i przetworzyć go na obiekt JavaScriptowy:
+
+```javascript
+// Wymagany moduł js-yaml
 const yaml = require('js-yaml');
-const fs = require('fs');
+const fs   = require('fs');
 
-// Odczytanie pliku YAML i zamiana na obiekt JavaScript.
+// Wczytanie YAML z pliku
 try {
-  const doc = yaml.load(fs.readFileSync('config.yaml', 'utf8'));
+  const doc = yaml.load(fs.readFileSync('./config.yaml', 'utf8'));
   console.log(doc);
 } catch (e) {
   console.error(e);
 }
+```
 
-// Przykładowy plik 'config.yaml':
-// imie: "Jan"
-// praca:
-//   pozycja: "Programista"
-//   jezyk: "JavaScript"
+Jeśli twój plik `config.yaml` wygląda tak:
 
-// Zapis obiektu JavaScript do pliku YAML.
-const dataToSave = {
-  name: "Kasia",
-  hobby: {
-    type: "Sztuki walki",
-    level: "Początkujący"
+```yaml
+version: 1
+services:
+  web:
+    image: "myapp/web:latest"
+    ports:
+      - "5000:5000"
+```
+
+Wynik będzie następujący:
+
+```javascript
+{ version: 1,
+  services: 
+   { web: 
+      { image: 'myapp/web:latest',
+        ports: [ '5000:5000' ] } } }
+```
+
+Aby zrobić odwrotnie, czyli przekształcić obiekt JavaScriptowy na ciąg YAML:
+
+```javascript
+const yaml = require('js-yaml');
+const obj = {
+  version: 1,
+  services: {
+    web: {
+      image: "myapp/web:latest",
+      ports: ["5000:5000"]
+    }
   }
 };
 
-try {
-  const yamlStr = yaml.dump(dataToSave);
-  fs.writeFileSync('user.yaml', yamlStr, 'utf8');
-  console.log('Zapisano!');
-} catch (e) {
-  console.error(e);
-}
+const yamlStr = yaml.dump(obj);
+console.log(yamlStr);
 ```
 
-## Deep Dive:
-YAML, który oznacza "YAML Ain't Markup Language", powstał na początku XXI wieku jako łatwiejsza w ludzkiej percepcji alternatywa dla XML. Format YAML jest szeroko stosowany w aplikacjach do zarządzania konfiguracją oraz w systemach orkiestracji kontenerów, takich jak Kubernetes. YAML jest formatem niezależnym od języka i może być używany w wielu językach programowania, przy czym najpopularniejsze biblioteki do obsługi YAML w JavaScript to `js-yaml` i `yamljs`.
+Ten kod wyprodukuje:
 
-## Zobacz też:
-- Dokumentacja `js-yaml`: https://github.com/nodeca/js-yaml
-- Specyfikacja YAML: https://yaml.org/spec/1.2/spec.html
-- Wprowadzenie do YAML dla początkujących: https://www.codeproject.com/Articles/1214409/Learn-YAML-in-five-minutes
-- YAML w kontekście Kubernetes: https://kubernetes.io/docs/concepts/configuration/overview/#general-configuration-tips
+```yaml
+version: 1
+services:
+  web:
+    image: myapp/web:latest
+    ports:
+      - '5000:5000'
+```
+
+Używając `js-yaml`, możesz łatwo zintegrować parsowanie i serializację YAML w swoich projektach JavaScriptowych, zwiększając wymienialność danych i zarządzanie konfiguracją.

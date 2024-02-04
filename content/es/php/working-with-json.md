@@ -1,48 +1,100 @@
 ---
 title:                "Trabajando con JSON"
-date:                  2024-01-19
+date:                  2024-02-03T19:24:02.551400-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Trabajando con JSON"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/php/working-with-json.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## ¿Qué & Por Qué?
-
-Trabajar con JSON (JavaScript Object Notation) significa manejar datos estructurados en un formato ligero y fácil de entender. Los programadores lo usan porque es ampliamente aceptado en web APIs y servicios, facilitando el intercambio de datos entre distintos lenguajes de programación.
+## ¿Qué y Por Qué?
+JSON, o Notación de Objetos de JavaScript, es un formato ligero de intercambio de datos que es fácil de leer y escribir para los humanos, y fácil de analizar y generar para las máquinas. Los programadores a menudo trabajan con JSON para intercambiar datos entre servidores y aplicaciones web debido a su simplicidad e independencia de lenguaje, lo que lo convierte en una piedra angular en el desarrollo web moderno y en las APIs.
 
 ## Cómo hacerlo:
+Trabajar con JSON en PHP es sencillo gracias a las funciones incorporadas `json_encode()` y `json_decode()`. A continuación, se muestran ejemplos que destacan cómo convertir un array de PHP en una cadena JSON, y viceversa:
 
-### Codificar un array a JSON:
-```PHP
-$array = ['nombre' => 'Juan', 'edad' => 30, 'ciudad' => 'Madrid'];
-$json = json_encode($array);
-echo $json;
+### Codificar un Array de PHP en una Cadena JSON
+```php
+// Definir un array asociativo
+$data = [
+    "name" => "John Doe",
+    "age" => 30,
+    "email" => "john.doe@example.com"
+];
+
+// Convertir el array de PHP a una cadena JSON
+$jsonString = json_encode($data);
+
+// Mostrar la cadena JSON
+echo $jsonString;
 ```
-Salida:
-```
-{"nombre":"Juan","edad":30,"ciudad":"Madrid"}
+**Salida de Muestra:**
+```json
+{"name":"John Doe","age":30,"email":"john.doe@example.com"}
 ```
 
-### Decodificar JSON a PHP:
-```PHP
-$json = '{"nombre":"Juan","edad":30,"ciudad":"Madrid"}';
-$array = json_decode($json, true);
-print_r($array);
+### Decodificar una Cadena JSON a un Array de PHP
+```php
+// Cadena JSON
+$jsonString = '{"name":"John Doe","age":30,"email":"john.doe@example.com"}';
+
+// Convertir la cadena JSON a un array de PHP
+$data = json_decode($jsonString, true);
+
+// Mostrar el array de PHP
+print_r($data);
 ```
-Salida:
+**Salida de Muestra:**
 ```
-Array ( [nombre] => Juan [edad] => 30 [ciudad] => Madrid )
+Array
+(
+    [name] => John Doe
+    [age] => 30
+    [email] => john.doe@example.com
+)
 ```
 
-## Profundizar:
+### Trabajar con una Biblioteca de Terceros: GuzzleHttp
+Para el manejo complejo de JSON y solicitudes web, una biblioteca PHP popular es GuzzleHttp. Simplifica las solicitudes HTTP y trabaja fácilmente con datos JSON.
 
-JSON, que significa Notación de Objeto de JavaScript, ha existido desde principios de los años 2000 y se ha vuelto casi indispensable en el desarrollo moderno de aplicaciones web, desplazando formatos como XML por su simplicidad. Alternativas como YAML o BSON existen, pero JSON prevalece por su capacidad de ser interpretado fácilmente en muchos lenguajes y su soporte nativo en JavaScript. En PHP, `json_encode()` y `json_decode()` son las funciones principales para trabajar con JSON, manejando conversiones entre arrays/objetos PHP y cadenas JSON.
+**Instalación vía Composer:**
+```
+composer require guzzlehttp/guzzle
+```
 
-## Ver También:
+**Ejemplo de Solicitud:**
+```php
+require 'vendor/autoload.php';
 
-- Documentación oficial de PHP para JSON: [php.net/manual/es/book.json.php](https://www.php.net/manual/es/book.json.php)
-- JSON.org, con recursos y especificaciones: [json.org](https://json.org/)
-- Consejos sobre buenas prácticas con JSON: [jsonapi.org](https://jsonapi.org/)
+use GuzzleHttp\Client;
+
+$client = new Client();
+
+// Enviar una solicitud a una API que devuelve JSON
+$response = $client->request('GET', 'https://api.example.com/data', [
+    'headers' => [
+        'Accept' => 'application/json',
+    ],
+]);
+
+// Decodificar la respuesta JSON a un array de PHP
+$data = json_decode($response->getBody(), true);
+
+// Mostrar los datos
+print_r($data);
+```
+
+**Suponiendo que la API devuelve datos JSON similares:**
+```
+Array
+(
+    [name] => John Doe
+    [age] => 30
+    [email] => john.doe@example.com
+)
+```
+Esto muestra la facilidad de usar PHP para manipulación de JSON, tanto con funciones nativas como con bibliotecas robustas como GuzzleHttp para tareas más complejas.

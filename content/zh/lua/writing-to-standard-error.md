@@ -1,44 +1,52 @@
 ---
 title:                "写入标准错误"
-date:                  2024-01-19
+date:                  2024-02-03T19:33:48.565840-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "写入标准错误"
-
 tag:                  "Files and I/O"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/lua/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## 什么 & 为什么？
-标准错误（stderr）是特殊的输出流，用于记录错误信息而非常规数据。程序员这样做可以分离错误日志，便于调试和日志分析。
+将错误信息和诊断输出写入标准错误（stderr）是指将这些信息定向到一个与标准输出（stdout）不同的独立通道。程序员这样做是为了将常规程序结果和错误信息区分开来，从而简化调试和日志记录过程。
 
-## 如何：
-```Lua
--- 打印到标准错误
-io.stderr:write("发生错误!\n")
+## 如何操作：
+在Lua中，可以通过使用`io.stderr:write()`函数来实现向stderr写入内容。以下是如何向标准错误写入一个简单错误消息的方法：
 
--- assert 函数在遇到错误时也会写入到标准错误
-assert(nil, "这是一个错误信息\n")
-
--- 使用 os.execute 在错误时捕获程序返回
-os.execute("ls /nonexistent-directory 2>/dev/null")
-```
-输出：
-```
-发生错误!
-lua: main.lua:4: 这是一个错误信息
-stack traceback:
-	main.lua:4: in main chunk
-	[C]: in ?
+```lua
+io.stderr:write("错误：输入无效。\n")
 ```
 
-## 深入：
-1. 历史背景：Unix 系统设计时引入了标准错误概念，旨在与标准输出（stdout）分离。
-2. 替代方案：可以将错误信息写入文件或使用日志库进行管理。
-3. 实现细节：Lua 使用 io 库直接操作 stderr。在底层，stderr 通常对应文件描述符2。
+如果您需要输出一个变量或组合多个数据片段，可以在write函数内部连接它们：
 
-## 参考资料：
-- [Lua 5.4 参考手册](https://www.lua.org/manual/5.4/)
-- [Programming in Lua](https://www.lua.org/pil/)
-- [Unix 标准流](https://en.wikipedia.org/wiki/Standard_streams)
+```lua
+local errorMessage = "输入无效。"
+io.stderr:write("错误：" .. errorMessage .. "\n")
+```
+
+**stderr 上的示例输出：**
+```
+错误：输入无效。
+```
+
+对于更复杂的场景，或在处理较大的应用程序时，您可能会考虑使用第三方日志库，如LuaLogging。通过LuaLogging，您可以将日志定向到不同的目的地，包括stderr。这里有一个简短的例子：
+
+首先，使用LuaRocks确保LuaLogging已安装：
+
+```
+luarocks install lualogging
+```
+
+然后，使用LuaLogging向stderr写入一条错误消息：
+
+```lua
+local logging = require("logging")
+local logger = logging.stderr()
+logger:error("错误：输入无效。")
+```
+
+这种方法提供了在您的应用程序中进行标准化日志记录的优势，同时通过一个简单的API增加了设置日志级别（例如，错误、警告、信息）的灵活性。

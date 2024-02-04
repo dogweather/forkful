@@ -1,56 +1,70 @@
 ---
 title:                "שימוש בביטויים רגולריים"
-date:                  2024-01-19
+date:                  2024-02-03T19:18:08.417635-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "שימוש בביטויים רגולריים"
-
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/powershell/using-regular-expressions.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## מה ולמה?
-משתמשים בביטויים רגולריים (Regular Expressions) כדי לחפש טקסט, לאתר תבניות או להחליף מחרוזות במחרוזות אחרות. תוכניתנים משתמשים בהם מכיוון שהם כלי חזק לניתוח טקסטים, אוטומציה ובדיקות.
 
-## איך לעשות:
-חיפוש תווים פשוט במחרוזת:
-```PowerShell
-$text = "היי, איך הולך?"
-if ($text -match "היי") {
-  "מצאתי את התווים!"
-} else {
-  "לא מצאתי כלום."
+ביטויים רגולריים (regex) הם סדרות של תווים המהווים דפוס חיפוש, המשמשים בעיקר לחיפוש וניהול מחרוזות. מתכנתים מנצלים את regex ב-PowerShell למשימות כמו אימות נתונים, ניתוח והמרה בשל יעילותם וגמישותם בטיפול בדפוסים מורכבים.
+
+## איך ל:
+
+ב-PowerShell, אתה יכול להשתמש באופרטורים `-match`, `-replace`, ו`-split`, בין היתר, לביצוע פעולות עם ביטויים רגולריים. בואו נחקור כמה דוגמאות:
+
+### שימוש ב`-match` לבדיקה אם מחרוזת תואמת דפוס
+האופרטור הזה מחזיר `$true` אם הדפוס נמצא בתוך המחרוזת, ו`$false` אחרת.
+
+```powershell
+"hello world" -match "\w+orld"
+# פלט: True
+```
+
+### חילוץ תוצאות שהתאימו
+ניתן לחלץ את הערך שהתאים על ידי גישה למשתנה האוטומטי `$matches`.
+
+```powershell
+if ("I have 100 apples" -match "\d+") {
+    "Number found: " + $matches[0]
 }
+# פלט: מספר שנמצא: 100
 ```
-לדוגמה זו תהיה הפלט: `מצאתי את התווים!`
 
-חיפוש עם ביטוי רגולרי:
+### שימוש ב`-replace` להחלפות
+האופרטור `-replace` מחליף את כל המופעים של דפוס עם מחרוזת החלפה מסוימת.
 
-```PowerShell
-$text = "שלח לדואר@domein.com את המייל"
-$pattern = "\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z]{2,6}\b"
-if ($text -match $pattern) {
-  "נמצא כתובת מייל: $matches[0]"
-} else {
-  "לא מצאתי כתובת מייל"
-}
+```powershell
+"foo bar baz" -replace "ba[rz]", "qux"
+# פלט: foo qux qux
 ```
-פלט: `נמצא כתובת מייל: דואר@domein.com`
 
-החלפת מחרוזת באמצעות ביטוי רגולרי:
+### פיצול מחרוזות עם `-split`
+פצל מחרוזת למערך של תת-מחרוזות בהתבסס על דפוס regex.
 
-```PowerShell
-$text = "יש לי 100 דולר"
-$pattern = "\d+"
-$replacement = '300'
-$newText = $text -replace $pattern, $replacement
-$newText
+```powershell
+"The quick-brown_fox jumps" -split "[-_ ]"
+# פלט: The quick brown fox jumps
 ```
-פלט: `יש לי 300 דולר`
 
-## צלילה עמוקה
-ביטויים רגולריים החלו להתפתח בשנות ה-50 ומאז הם התמקדסו רבות. ישנם אלטרנטיבות כמו חיפוש טקסט ידני או שימוש בפונקציות מובנות לחיפוש מחרוזות אבל הם לא גמישים כמו ביטויים רגולריים. ב-PowerShell, ביטויים רגולריים ממומשים דרך ה .NET Framework, שלמעשה מאפשרת שימוש בהם גם בשפות תכנות אחרות.
+### תיאום דפוסים מתקדם
+PowerShell תומך גם בפעולות regex מורכבות יותר באמצעות המחלקה `[regex]`, תוך נתינת גישה לשיטות כמו `Matches()`, `Replace()`, ו`Split()`.
 
-## גם כדאי לראות
-- [Learn Regex](https://regexr.com/) - מדריך אינטראקטיבי ואתר לבדיקת ביטויים רגולריים.
-- [Regular-Expressions.info](https://www.regular-expressions.info/) - משאב המסביר בפירוט רב על ביטויים רגולריים.
+```powershell
+[regex]::Matches("June 24, August 9, Dec 12", "\b[A-Za-z]+\b").Value
+# פלט: June August Dec
+
+[regex]::Replace("100,000", "\B(?=(?:\d{3})+(?!\d))", ",")
+# פלט: 100,000
+
+[regex]::Split("one,two;three four", ",|;| ")
+# פלט: one two three four
+```
+
+דוגמאות אלו מראות את הכוח והגמישות של ביטויים רגולריים ב-PowerShell לניהול נתונים ותיאום דפוסים. באמצעות ניצול regex, מתכנתים יכולים לבצע עיבוד טקסט מורכב ביעילות.

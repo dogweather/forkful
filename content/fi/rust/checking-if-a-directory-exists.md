@@ -1,60 +1,73 @@
 ---
-title:                "Onko hakemisto olemassa? Tarkistaminen"
-date:                  2024-01-20T14:58:21.538652-07:00
-simple_title:         "Onko hakemisto olemassa? Tarkistaminen"
-
+title:                "Tarkistetaan, onko hakemisto olemassa"
+date:                  2024-02-03T19:08:42.176575-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Tarkistetaan, onko hakemisto olemassa"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/rust/checking-if-a-directory-exists.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-"Mikä & Miksi?"
+## Mikä & Miksi?
+Ohjelmistokehityksessä on usein tarpeen tarkistaa, olemassaoko hakemisto, välttääkseen virheitä yrittäessä päästä käsiksi, lukea tai kirjoittaa tiedostoja. Rust, ollessaan järjestelmäohjelmoinnin kieli, tarjoaa vankkoja menetelmiä tämän tehtävän suorittamiseen, varmistaen ohjelmasi voivan käsitellä tiedostoja ja hakemistoja turvallisesti ja tehokkaasti.
 
-Tarkistetaan, onko hakemisto olemassa, jotta vältetään virheitä tiedostopohjaisessa I/O-toiminnassa. Tämä on välttämätöntä tiedostojen luomisen, lukemisen tai kirjoittamisen yhteydessä.
-
-## How to:
-"Kuinka tehdä:"
-
-Rustissa hakemiston olemassaolon voi tarkistaa käyttämällä `std::path::Path` -tyyppiä ja `exists`-metodia. Tässä on esimerkki:
+## Kuinka:
+Rustin standardikirjasto (`std`) sisältää toiminnallisuuden hakemiston olemassaolon tarkistamiseksi `std::path::Path` ja `std::fs` moduulien kautta. Tässä on yksinkertainen esimerkki käyttäen Rustin standardimenetelmää:
 
 ```rust
 use std::path::Path;
 
 fn main() {
-    let path = Path::new("./example_dir");
-
-    if path.exists() {
-        println!("Hakemisto löytyy!");
+    let path = Path::new("/polku/hakemistoon");
+    if path.exists() && path.is_dir() {
+        println!("Hakemisto on olemassa.");
     } else {
         println!("Hakemistoa ei ole olemassa.");
     }
 }
 ```
 
-Jos `example_dir` on olemassa, tuloste:
+Esimerkkilähtö, olettaen että hakemisto on olemassa:
 ```
-Hakemisto löytyy!
+Hakemisto on olemassa.
 ```
 
-Jos hakemistoa ei ole, tuloste:
+Monimutkaisemmissa skenaarioissa tai laajennetuissa ominaisuuksissa (kuten asynkroninen tiedostojärjestelmän toiminnot) saatat harkita kolmannen osapuolen kirjaston, kuten `tokio`n, käyttämistä sen asynkronisen `fs`-moduulin kanssa, erityisesti jos työskentelet asynkronisessa ympäristössä. Näin voisit saavuttaa saman `tokio`n kanssa:
+
+Lisää ensin `tokio` `Cargo.toml`-tiedostoosi:
+
+```toml
+[dependencies]
+tokio = { version = "1.0", features = ["full"] }
+```
+
+Käytä sitten `tokio::fs`:ää tarkistaaksesi hakemiston olemassaolon asynkronisesti:
+
+```rust
+use tokio::fs;
+
+#[tokio::main]
+async fn main() {
+    let path = "/polku/hakemistoon";
+    match fs::metadata(path).await {
+        Ok(metadata) => {
+            if metadata.is_dir() {
+                println!("Hakemisto on olemassa.");
+            } else {
+                println!("Polku on olemassa, mutta se ei ole hakemisto.");
+            }
+        },
+        Err(_) => println!("Hakemistoa ei ole olemassa."),
+    }
+}
+```
+
+Esimerkkilähtö, olettaen että hakemistoa ei ole olemassa:
 ```
 Hakemistoa ei ole olemassa.
 ```
 
-## Deep Dive:
-"Syväsukellus:"
-
-Ennen Rustia, kielet kuten C tai Python tarjosivat monimutkaisempia tapoja hakemiston olemassaolon tarkistamiseen. Rustin standardikirjasto tarjoaa suoran ja tyypin turvallisen tavan.
-
-Vaihtoehtoisesti, voimme käyttää `std::fs` -moduulin `metadata`-funktiota, joka antaa lisätietoa tallennusmedian kohteesta. Se on tehokkampi, mutta yksinkertaista tarkistusta varten `Path::exists` on suositeltava.
-
-Hakemiston olemassaolon tarkistusta käytetään usein konfiguraatio- ja väliaikaishakemistojen käsittelyssä. Performance-vaikutukset ovat vähäisiä, mutta turhat tiedostosysteemioperaatiot vältetään.
-
-## See Also:
-"Katso myös:"
-
-- Rustin dokumentaatio `std::path::Path`: https://doc.rust-lang.org/std/path/struct.Path.html
-- Rustin dokumentaatio `std::fs`: https://doc.rust-lang.org/std/fs/index.html
-- Filesystem operations in Rust: https://doc.rust-lang.org/book/ch12-00-an-io-project.html
+Nämä esimerkit korostavat, kuinka Rust ja sen ekosysteemi tarjoavat sekä synkronisia että asynkronisia lähestymistapoja hakemiston olemassaolon tarkistuksiin, palvelemalla laajaa valikoimaa ohjelmistokehityksen tarpeita.

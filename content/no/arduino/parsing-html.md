@@ -1,42 +1,82 @@
 ---
-title:                "Analyse av HTML"
-date:                  2024-01-20T15:29:55.427269-07:00
-simple_title:         "Analyse av HTML"
-
+title:                "Analysering av HTML"
+date:                  2024-02-03T19:11:38.987176-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Analysering av HTML"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/arduino/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Parsing av HTML betyr å tolke og bearbeide koden som nettlesere bruker for å vise websider. Programmere gjør dette for å trekke ut data, interagere med nettsider eller integrere webinnhold i egne applikasjoner.
 
-## Slik gjør du:
-Arduino har ikke innebygd støtte for HTML-parsing, men du kan bruke tekstbehandlingsteknikker for å hente ut informasjon. Her er et enkelt eksempel:
+Parsing av HTML i Arduino-prosjekter handler om å trekke ut informasjon fra nettsider. Programmerere gjør dette for å muliggjøre interaksjon mellom deres Arduino-enheter og internett, ved å samle data fra nettsteder for formål som spenner fra hjemmeautomasjon til miljøovervåking.
 
-```Arduino
-String html = "<h1>Title</h1><p>This is a paragraph.</p>";
-String title = html.substring(html.indexOf("<h1>") + 4, html.indexOf("</h1>"));
-String paragraph = html.substring(html.indexOf("<p>") + 3, html.indexOf("</p>"));
+## Hvordan:
 
+Parsing av HTML på Arduino krever vanligvis biblioteker med minimalt fotavtrykk på grunn av begrensede enhetsressurser. Et populært valg for webskraping og parsing er å bruke `ESP8266HTTPClient`- og `ESP8266WiFi`-bibliotekene for ESP8266, eller tilsvarende biblioteker for ESP32, gitt deres innebygde støtte for Wi-Fi-egenskaper og HTTP-protokoller. Her er et grunnleggende eksempel for å hente og parse HTML, under forutsetning av at du arbeider med en ESP8266 eller ESP32:
+
+Først, inkluder de nødvendige bibliotekene:
+```cpp
+#include <ESP8266WiFi.h> // For ESP8266
+#include <ESP8266HTTPClient.h>
+#include <WiFiClient.h>
+// Bruk tilsvarende ESP32-biblioteker hvis du bruker en ESP32
+
+const char* ssid = "yourSSID";
+const char* password = "yourPASSWORD";
+```
+
+Koble til Wi-Fi-nettverket ditt:
+```cpp
 void setup() {
-  Serial.begin(9600);
-  while (!Serial) continue; // vent på seriell port
-  Serial.println("Tittel: " + title);
-  Serial.println("Avsnitt: " + paragraph);
-}
+    Serial.begin(115200);
+    WiFi.begin(ssid, password);
 
-void loop() {
-  // Ikke nødvendig for dette eksemplet.
+    while (WiFi.status() != WL_CONNECTED) {
+        delay(1000);
+        Serial.println("Kobler til...");
+    }
 }
 ```
 
-## Dypdykk
-HTML-parsing på enheter som Arduino har historisk vært begrenset på grunn av begrenset minne og prosesseringskraft. Programmerere har tradisjonelt brukt server-side språk som Python eller PHP for slike oppgaver. Biblioteket `String` på Arduino kan brukes for enkel tekstmanipulasjon, men for kompleks HTML kan det være bedre å bruke en dedikert mikrokontroller med en nettverksstack som ESP8266 eller ESP32 som kan kjøre kraftigere parsingbiblioteker. 
+Gjør en HTTP-forespørsel og parse et enkelt stykke HTML:
+```cpp
+void loop() {
+    if (WiFi.status() == WL_CONNECTED) { //Sjekk WiFi-tilkoblingsstatus
+        HTTPClient http;  //Deklarer et objekt av klassen HTTPClient
 
-Det finnes grunnleggende alternativer som regex (regulære uttrykk), selvom det ikke anbefales for kompleks HTML-parsing på grunn av HTMLs ofte uregelmessige natur. En mer robust tilnærming involverer bruk av en ekstern tjeneste eller API for å sende HTML og motta strukturert data tilbake, ta av belastningen fra Arduino.
+        http.begin("http://example.com");  //Spesifisere forespørselsdestinasjon
+        int httpCode = http.GET();  //Send forespørselen
 
-## Se Også:
-- [Arduino String Reference](https://www.arduino.cc/reference/en/language/variables/data-types/string/)
-- [ESP8266 NodeMCU HTTP Client](https://randomnerdtutorials.com/esp8266-nodemcu-http-get-post-arduino/)
+        if (httpCode > 0) { //Sjekk returkoden
+            String payload = http.getString();   //Hent forespørselresponsens nyttelast
+            Serial.println(payload);             //Skriv ut responsens nyttelast
+
+            // Parse en bestemt del, f.eks. ekstrahere tittel fra nyttelast
+            int titleStart = payload.indexOf("<title>") + 7; // +7 for å flytte forbi "<title>"-taggen
+            int titleEnd = payload.indexOf("</title>", titleStart);
+            String pageTitle = payload.substring(titleStart, titleEnd);
+
+            Serial.print("Sidetittel: ");
+            Serial.println(pageTitle);
+        }
+
+        http.end();   //Lukk tilkoblingen
+    }
+
+    delay(10000); //Gjør en forespørsel hvert 10. sekund
+}
+```
+
+Eksempel på utdata (med utgangspunkt i at http://example.com har en enkel HTML-struktur):
+```
+Kobler til...
+...
+Sidetittel: Example Domain
+```
+
+Dette eksemplet demonstrerer hvordan man henter en HTML-side og ekstraherer innholdet i `<title>`-taggen. For mer kompleks HTML-parsing kan det vurderes å bruke regulære uttrykk (med forsiktighet på grunn av minnebegrensninger) eller strengmanipuleringsfunksjoner for å navigere gjennom HTML-strukturen. Avansert parsing kan kreve mer sofistikerte tilnærminger, inkludert egendefinerte parsingalgoritmer skreddersydd for den spesifikke strukturen av HTML du har med å gjøre, ettersom standard Arduino-miljøet ikke inkluderer et innebygget HTML-parsingbibliotek.

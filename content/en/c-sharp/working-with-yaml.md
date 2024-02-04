@@ -1,8 +1,8 @@
 ---
 title:                "Working with YAML"
-date:                  2024-01-19
+date:                  2024-02-03T19:03:15.985684-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Working with YAML"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/c-sharp/working-with-yaml.md"
 ---
@@ -10,91 +10,99 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-YAML is a human-friendly data serialization standard used in programming for config files, data storage, and more. Programmers use it for its readability and simplicity in complex applications and systems.
+YAML, which stands for YAML Ain't Markup Language, is a human-readable data serialization format. Programmers often use it for configuration files, inter-process messaging, and data storage because of its simplicity and readability compared to other data formats like XML or JSON.
 
 ## How to:
-To work with YAML in C#, you'll need the YamlDotNet library. You can install it via NuGet: `Install-Package YamlDotNet`.
+C# doesn't have built-in support for YAML, but you can easily work with YAML by using third-party libraries such as *YamlDotNet*. First, you need to install the YamlDotNet package:
 
-First, let's serialize an object to a YAML string:
-
-```C#
-using System;
-using YamlDotNet.Serialization;
-using YamlDotNet.Serialization.NamingConventions;
-
-public class Person {
-    public string FirstName { get; set; }
-    public string LastName { get; set; }
-    public int Age { get; set; }
-}
-
-class Program {
-    static void Main(string[] args) {
-        var person = new Person {
-            FirstName = "Jamie",
-            LastName = "Smith",
-            Age = 35
-        };
-
-        var serializer = new SerializerBuilder()
-            .WithNamingConvention(CamelCaseNamingConvention.Instance)
-            .Build();
-
-        string yaml = serializer.Serialize(person);
-        Console.WriteLine(yaml);
-    }
-}
+```bash
+Install-Package YamlDotNet -Version 11.2.1
 ```
 
-Output:
+### Reading YAML:
+Imagine you have a YAML file `config.yaml` with the following content:
 ```yaml
-firstName: Jamie
-lastName: Smith
-age: 35
+appSettings:
+  name: MyApp
+  version: 1.0.0
 ```
 
-Next, let's read a YAML file and deserialize it:
-
-```C#
+You can read and parse this YAML file in C# like this:
+```csharp
 using System;
 using System.IO;
 using YamlDotNet.Serialization;
 using YamlDotNet.Serialization.NamingConventions;
 
-class Program {
-    static void Main(string[] args) {
-        var yaml = @"
-firstName: Jamie
-lastName: Smith
-age: 35
-";
-        
+public class AppConfig
+{
+    public AppSettings appSettings { get; set; }
+}
+
+public class AppSettings
+{
+    public string name { get; set; }
+    public string version { get; set; }
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        var yaml = File.ReadAllText("config.yaml");
         var deserializer = new DeserializerBuilder()
-            .WithNamingConvention(CamelCaseNamingConvention.Instance)
+            .WithNamingConvention(UnderscoredNamingConvention.Instance) // Adjust the naming convention accordingly
             .Build();
-        
-        Person person = deserializer.Deserialize<Person>(yaml);
-        
-        Console.WriteLine($"Hello, {person.FirstName} {person.LastName}!");
+
+        var config = deserializer.Deserialize<AppConfig>(yaml);
+
+        Console.WriteLine($"Name: {config.appSettings.name}, Version: {config.appSettings.version}");
     }
 }
+```
+**Sample Output:**
+```
+Name: MyApp, Version: 1.0.0
+```
 
-public class Person {
-    public string FirstName { get; set; }
-    public string LastName { get; set; }
-    public int Age { get; set; }
+### Writing YAML:
+To write data to a YAML file, use the `Serializer` class from YamlDotNet. Here is how you serialize an object back to YAML:
+
+```csharp
+using System;
+using System.IO;
+using YamlDotNet.Serialization;
+using YamlDotNet.Serialization.NamingConventions;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        var config = new AppConfig
+        {
+            appSettings = new AppSettings
+            {
+                name = "MyApp",
+                version = "2.0.0"
+            }
+        };
+
+        var serializer = new SerializerBuilder()
+            .WithNamingConvention(UnderscoredNamingConvention.Instance) // Adjust the naming convention accordingly
+            .Build();
+
+        var yaml = serializer.Serialize(config);
+        File.WriteAllText("updatedConfig.yaml", yaml);
+
+        Console.WriteLine(yaml);
+    }
 }
 ```
-
-Output:
+**Sample Output:**
+```yaml
+appSettings:
+  name: MyApp
+  version: 2.0.0
 ```
-Hello, Jamie Smith!
-```
 
-## Deep Dive
-YAML, meaning "YAML Ain't Markup Language," was first proposed in 2001 to be more human-readable than XML. It's widely used in DevOps for CI/CD pipeline configurations, like in Docker Compose files or Kubernetes deployment manifests. JSON is a YAML superset, meaning JSON files are also valid YAML. Implementation-wise, parsing YAML in C# requires a library like YamlDotNet because there's no native support.
-
-## See Also
-- [YamlDotNet GitHub Repository](https://github.com/aaubry/YamlDotNet)
-- [Official YAML website](https://yaml.org)
-- [YAML Specification](https://yaml.org/spec/1.2/spec.html)
+This straightforward approach demonstrates how to efficiently work with YAML in your C# projects, making it simple to read from and write to YAML files using the YamlDotNet library.

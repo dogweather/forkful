@@ -1,40 +1,65 @@
 ---
-title:                "JSONを扱う方法"
-date:                  2024-01-19
-simple_title:         "JSONを扱う方法"
-
+title:                "JSONを活用する"
+date:                  2024-02-03T19:22:41.312490-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "JSONを活用する"
 tag:                  "Data Formats and Serialization"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/fish-shell/working-with-json.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (何となぜ？)
-JSONはデータをやり取りするためのフォーマットです。Web APIからデータを受け取る時や設定ファイルを書く時に使います。シンプルで軽量だからプログラマーに人気です。
+## 何となぜ？
 
-## How to: (やり方)
-```Fish Shell
-# jqを使ってJSONから値を取得する
-echo '{"name": "Taro", "age": 30}' | jq '.name'
+Fish ShellでJSONを扱うことは、アプリケーションの設定、APIとのやり取り、コマンドラインワークフローの合理化など、一般的なタスクにおいてJSONデータの解析と生成を含みます。ウェブとアプリケーション開発でのJSONの普遍性を考えると、シェル内で直接その操作をマスターすることは、プログラマーの自動化とデータ処理効率を大幅に高めることができます。
 
-# 出力: "Taro"
+## どのようにして：
 
-# JSONの配列に新しいオブジェクトを追加する
-echo '[{"name": "Taro"}]' | jq '. += [{"name": "Hanako"}]'
+Fish Shell自体には、JSONを解析および生成するための組み込みユーティリティはありません。しかし、`jq`のようなサードパーティ製のツールとシームレスに統合され、JSON処理が可能です。`jq`は強力で多機能なコマンドラインJSONプロセッサであり、簡単かつ表現力豊かな言語で構造化データをスライス、フィルタ、マップ、変換することができます。
 
-# 出力: [{"name": "Taro"}, {"name": "Hanako"}]
+### jqを使ってJSONを解析する
+`jq`を使ってJSONファイルを解析し、データを抽出するには：
 
-# JSONファイルを読み込んで加工する
-jq '.users[] | select(.age > 20)' users.json
-
-# 出力: 各ユーザーオブジェクトが一行ずつ、20歳超えのユーザーのみ表示
+```fish
+# 'data.json'という名前のJSONファイルがあり、その内容が {"name":"Fish Shell","version":"3.4.0"} だと仮定します
+cat data.json | jq '.name'
+# サンプル出力
+"Fish Shell"
 ```
 
-## Deep Dive (深掘り)
-JSONジャンプ(Jasonettes Quiz Jonquil)は90年代後半に登場したデータ形式です。XMLより読みやすく、解析が速いのが特徴。`jq`はその流行りに乗って作られたコマンドラインツールで、JSONを簡単に加工できます。Fish shellでは`jq`を使いJSON操作を行います。しかし、Fishのようなスクリプト言語の中にはPythonやJavaScriptといったJSONネイティブサポート言語もあります。
+### jqを使ってJSONを生成する
+シェル変数や出力からJSONコンテンツを作成する：
 
-## See Also (関連情報)
-- Official jq manual: [https://stedolan.github.io/jq/manual/](https://stedolan.github.io/jq/manual/)
-- jq tutorial in Japanese: [https://qiita.com/takeshinoda@github/items/2dec7a72930ec1f658af](https://qiita.com/takeshinoda@github/items/2dec7a72930ec1f658af)
-- JSON specification: [https://www.json.org/json-en.html](https://www.json.org/json-en.html)
+```fish
+# 変数からJSONオブジェクトを作成する
+set name "Fish Shell"
+set version "3.4.0"
+jq -n --arg name "$name" --arg version "$version" '{name: $name, version: $version}'
+# サンプル出力
+{
+  "name": "Fish Shell",
+  "version": "3.4.0"
+}
+```
+
+### JSONコレクションをフィルタリングする
+`versions.json`というファイルにオブジェクトのJSON配列があるとします：
+```json
+[
+  {"version": "3.1.2", "stable": true},
+  {"version": "3.2.0", "stable": false},
+  {"version": "3.4.0", "stable": true}
+]
+```
+この配列から安定版のみをフィルタリングするには：
+
+```fish
+cat versions.json | jq '.[] | select(.stable == true) | .version'
+# サンプル出力
+"3.1.2"
+"3.4.0"
+```
+
+提供された例は、Fish Shellでの`jq`の統合によるJSON操作の力を示しています。このようなツールを活用することで、現代のデータフォーマットを扱うための強力な環境として、シェル体験が豊かになります。

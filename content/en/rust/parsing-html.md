@@ -1,8 +1,8 @@
 ---
 title:                "Parsing HTML"
-date:                  2024-01-20T15:33:53.407056-07:00
+date:                  2024-02-03T19:02:37.703546-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Parsing HTML"
-
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/rust/parsing-html.md"
 ---
@@ -11,59 +11,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Parsing HTML is the act of taking a string of HTML and breaking it down into a data structure your program can understand and manipulate. Programmers do this to interact with web content, extract information, and automate web-related tasks.
+Parsing HTML in Rust is about extracting data from HTML documents, which is essential for web scraping, data extraction, or building web crawlers. Programmers do this to automate the collection of information from the web, analyze web content, or migrate content from one platform to another.
 
 ## How to:
 
-To parse HTML in Rust, you'll likely want to use a crate like `scraper` or `select`. Here's a quick example using `scraper`:
+To parse HTML in Rust, you'll often use the `scraper` crate, which provides a high-level interface to traverse and manipulate HTML documents.
 
-```Rust
+First, add `scraper` to your `Cargo.toml`:
+
+```toml
+[dependencies]
+scraper = "0.12.0"
+```
+
+Next, here's a simple example that extracts all link URLs from a given HTML string:
+
+```rust
+extern crate scraper;
+
 use scraper::{Html, Selector};
 
 fn main() {
-    // The HTML input as a string
     let html = r#"
-        <html>
-            <body>
-                <p>Hello, world!</p>
-            </body>
-        </html>
+    <html>
+    <body>
+        <a href="http://example.com/1">Link 1</a>
+        <a href="http://example.com/2">Link 2</a>
+    </body>
+    </html>
     "#;
 
-    // Parse the HTML string
     let document = Html::parse_document(html);
-    
-    // Create a selector to find all <p> tags
-    let selector = Selector::parse("p").unwrap();
+    let selector = Selector::parse("a").unwrap();
 
-    // Iterate over elements matching the selector
     for element in document.select(&selector) {
-        // Print the text inside each <p> tag
-        println!("{}", element.text().collect::<Vec<_>>().concat());
+        let link = element.value().attr("href").unwrap();
+        println!("Found link: {}", link);
     }
 }
 ```
 
 Output:
+
 ```
-Hello, world!
+Found link: http://example.com/1
+Found link: http://example.com/2
 ```
 
-## Deep Dive
-
-Way back, parsing HTML was a messy affair. Libraries varied, standards were a moving target, and languages differed in their approaches. Today, Rust's ecosystem offers sturdy crates for parsing, like `scraper` which leans on `html5ever` and `selectors` libraries. `html5ever` is particularly interesting; it's based on the HTML parsing algorithm specified by the WHATWG, making it on par with how modern browsers parse HTML.
-
-Alternatives to `scraper` include `select`, which offers similar functionality but different ergonomics. Low-level parsing is possible with `html5ever` itself if you need more control.
-
-Often, parsing HTML is part of web scraping, where you extract data from websites. It's important (and ethical) to respect a site's `robots.txt` and terms of service when scraping.
-
-Implementation-wise, always remember parsing is just the starting point. Sanitization and validation are key to avoiding security issues like XSS (Cross-Site Scripting) attacks, especially if you plan to display or store parsed data.
-
-## See Also
-
-- The `scraper` crate: https://crates.io/crates/scraper
-- The `select` crate: https://crates.io/crates/select
-- The `html5ever` GitHub repo: https://github.com/servo/html5ever
-- The Rust Cookbook's "Web scraping" section: https://rust-lang-nursery.github.io/rust-cookbook/web/scraping.html
-- WHATWG HTML parsing spec: https://html.spec.whatwg.org/multipage/parsing.html
-- Rust's guide on error handling: https://doc.rust-lang.org/book/ch09-00-error-handling.html (to deal with potential `unwrap` panics)
+In this example, we parse a simple HTML document to find all `<a>` elements and extract their `href` attributes, effectively printing the URLs of all the links in the document. The `scraper` library simplifies HTML parsing and selecting specific elements using CSS selectors, making it a go-to for web scraping tasks in Rust.

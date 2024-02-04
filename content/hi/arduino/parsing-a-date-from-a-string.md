@@ -1,53 +1,91 @@
 ---
-title:                "स्ट्रिंग से दिनांक पार्स करना"
-date:                  2024-01-20T15:34:38.153424-07:00
-simple_title:         "स्ट्रिंग से दिनांक पार्स करना"
-
+title:                "स्ट्रिंग से तारीख पार्स करना"
+date:                  2024-02-03T19:14:01.435760-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "स्ट्रिंग से तारीख पार्स करना"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/arduino/parsing-a-date-from-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (क्या और क्यों?)
-तारीख को स्ट्रिंग से पार्स करना मतलब है कि आप टेक्स्ट फॉर्मेट में तारीख को पढ़कर उसे ऐसे ढांचे में बदलना जहाँ अर्दुइनो इसे समझ और प्रयोग कर सके। प्रोग्रामर्स इस प्रक्रिया का प्रयोग आंकड़ों को संग्रह करने, छांटने और अन्य कार्यों के लिए करते हैं।
+## क्या और क्यों?
 
-## How to: (कैसे करें:)
-```Arduino
-// पहले उदाहरण के लिए निचे कोड देखें:
-String dateString = "2023-03-15"; // YYYY-MM-DD format
-int year, month, day;
+Arduino में एक स्ट्रिंग से तारीख पार्स करना समयसीमा के घटकों (वर्ष, महीना, दिन) को एक पाठ रूपांतरण से निकालकर उन्हें ऐसे प्रारूप में परिवर्तित करना शामिल है जिसका उपयोग स्केचेस में समय रखने, तुलना करने या हेरफेर के लिए किया जा सके। प्रोग्रामर्स अक्सर इस कार्य को वास्तविक समय घड़ियों, लॉगर्स के साथ इंटरफ़ेस करने या वेब एपीआई और यूजर इंटरफेसेज से इनपुट प्रोसेस करने के लिए करते हैं जहाँ तारीखें पठनीय प्रारूप में प्रस्तुत की जा सकती हैं।
+
+## कैसे:
+
+तृतीय-पक्ष पुस्तकालय के बिना प्रत्यक्ष दृष्टिकोण:
+
+```cpp
+#include <Wire.h>
+#include <RTClib.h>
 
 void setup() {
-  Serial.begin(9600); // सीरियल पोर्ट का आरंभ करें
-  parseDate(dateString, year, month, day);
-  Serial.print("Day: ");
-  Serial.print(day);
-  Serial.print(", Month: ");
-  Serial.print(month);
-  Serial.print(", Year: ");
-  Serial.println(year);
+  Serial.begin(9600);
+  // उदाहरण तारीख स्ट्रिंग YYYY-MM-DD प्रारूप में
+  String dateString = "2023-04-01"; 
+
+  int year = dateString.substring(0, 4).toInt();
+  int month = dateString.substring(5, 7).toInt();
+  int day = dateString.substring(8, 10).toInt();
+
+  // पार्स किए गए घटकों के साथ एक DateTime ऑब्जेक्ट को प्रारम्भ करना
+  DateTime parsedDate(year, month, day);
+  
+  Serial.print("पार्स की गई तारीख: ");
+  Serial.print(parsedDate.year(), DEC);
+  Serial.print("/");
+  Serial.print(parsedDate.month(), DEC);
+  Serial.print("/");
+  Serial.println(parsedDate.day(), DEC);
 }
 
-void parseDate(String data, int &y, int &m, int &d) {
-  y = data.substring(0, 4).toInt();
-  m = data.substring(5, 7).toInt();
-  d = data.substring(8, 10).toInt();
-}
-
-void loop() {
-  // यहां कुछ नहीं करना है
-}
-
-// उदाहरण का आउटपुट यह होगा:
-// Day: 15, Month: 3, Year: 2023
+void loop() {}
 ```
 
-## Deep Dive (गहराई से जानकारी)
-तारीख को पार्स करने का तरीका साधारण तो है, पर इसके विकास में अनेक परिष्कार शामिल हैं। पहले, डेटा प्रोसेसिंग में ASCII कोड्स और मैन्युअल पार्सिंग का इस्तेमाल होता था। आजकल, अधिकांश प्रोग्रामिंग भाषाओं में बिल्ट-इन फंक्शन्स और लाइब्रेरीज होती हैं जो यह काम सरल बनाते हैं। अर्दुइनो में स्ट्रिंग मेथड `substring()` और `toInt()` का प्रयोग करके इस तारीख को पार्स किया जा सकता है। वैकल्पिक रूप में, तारीख-विशिष्ट लाइब्रेरीज भी हैं जो इसे और भी आसान बना देते हैं, जैसे कि `TimeLib.h` या `DateTime.h`। 
+नमूना आउटपुट:
+```
+पार्स की गई तारीख: 2023/4/1
+```
 
-प्रयोग में, विशेष ध्यान `delimiter` पर होना चाहिए, जैसा कि हाइफन (`-`) का उपयोग हमने यहाँ किया है। एक सही `delimiter` का चुनाव आपके डेटा फॉर्मेट पर निर्भर करेगा। हमेशा ऐसे फॉर्मेट का इस्तेमाल करें जो अंतर्राष्ट्रीय मानकों (ISO) के अनुरूप हों।
+अधिक जटिल पार्सिंग परिदृश्यों के लिए तृतीय-पक्ष पुस्तकालय का उपयोग (*ArduinoJson* जैसे एक JSON प्रतिक्रिया से तारीख प्राप्त करने के लिए):
 
-## See Also (और भी देखें)
-- [Arduino Time Library](https://www.pjrc.com/teensy/td_libs_Time.html)
-- [Adafruit RTClib (Real Time Clock Library)](https://github.com/adafruit/RTClib)
+सबसे पहले, Arduino लाइब्रेरी मैनेजर के माध्यम से ArduinoJson लाइब्रेरी इंस्टॉल करें।
+
+```cpp
+#include <ArduinoJson.h>
+
+void setup() {
+  Serial.begin(9600);
+
+  // JSON प्रतिक्रिया का अनुकरण
+  String jsonResponse = "{\"date\":\"2023-07-19\"}";
+  StaticJsonDocument<200> doc;
+  deserializeJson(doc, jsonResponse);
+
+  // तारीख स्ट्रिंग निकालना
+  const char* date = doc["date"];
+
+  // पहले की तरह स्ट्रिंग से तारीख पार्स करें
+  int year = String(date).substring(0, 4).toInt();
+  int month = String(date).substring(5, 7).toInt();
+  int day = String(date).substring(8, 10).toInt();
+  
+  Serial.print("JSON से पार्स की गई तारीख: ");
+  Serial.print(year);
+  Serial.print("/");
+  Serial.print(month);
+  Serial.print("/");
+  Serial.println(day);
+}
+
+void loop() {}
+```
+
+नमूना आउटपुट:
+```
+JSON से पार्स की गई तारीख: 2023/7/19
+```

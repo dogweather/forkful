@@ -1,19 +1,21 @@
 ---
-title:                "Skriving av tester"
-date:                  2024-01-19
-simple_title:         "Skriving av tester"
-
+title:                "Skrive tester"
+date:                  2024-02-03T19:31:41.847028-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Skrive tester"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/python/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Skriving av tester handler om å lage automatiserte kontroller som sikrer at koden fungerer som forventet. Programmerere gjør dette for å avdekke feil tidlig, forbedre kodekvaliteten og unngå fremtidige problemer.
+Å skrive tester i Python innebærer å lage automatiserte skript for å validere korrektheten av koden din. Programmerere gjør dette for å sikre at deres funksjoner eller klasser fungerer som forventet under ulike forhold, noe som bidrar til å fange opp feil tidlig og letter vedlikehold og refaktorering.
 
 ## Hvordan:
-Python har et innebygd modul kalt `unittest` for å skrive og kjøre tester. Her er et eksempel på en enkel test:
+Python kommer med en innebygd modul for å skrive tester kalt `unittest`. Slik kan du bruke den til å teste en enkel funksjon:
 
 ```python
 import unittest
@@ -21,22 +23,41 @@ import unittest
 def add(a, b):
     return a + b
 
-class TestMathFunctions(unittest.TestCase):
+class TestAddFunction(unittest.TestCase):
     def test_add(self):
-        self.assertEqual(add(3, 4), 7)
+        self.assertEqual(add(1, 2), 3)
         self.assertEqual(add(-1, 1), 0)
-        self.assertEqual(add(-1, -1), -2)
+        self.assertNotEqual(add(10, 2), 12, "Skulle vært 12")
 
 if __name__ == '__main__':
     unittest.main()
 ```
 
-Kjør testen, og du får en output som bekrefter om testene er vellykkede eller ikke.
+Når du kjører dette testskriptet, bør du se output som indikerer at testene dine bestod (eller feilet).
 
-## Dypdykk:
-Før `unittest` var det vanligere å skrive tester uten et standard rammeverk, eller å bruke tredjepartsbiblioteker som `nose` eller `pytest`. Disse bibliotekene gir flere funksjoner og enklere syntax, men `unittest` er fortsatt populært fordi det er en del av Python's standardbibliotek. Testene blir skrevet i klasser som arver fra `unittest.TestCase`, og hver testmetode starter med ordet `test`.
+For mer moderne og uttrykksfulle tester, kan du bruke et tredjepartsbibliotek som `pytest`. Først må du installere det ved hjelp av pip:
 
-## Se Også:
-- Pythons offisielle dokumentasjon om testing: https://docs.python.org/3/library/unittest.html
-- Pytest, et populært testing rammeverk: https://pytest.org
-- Artikkel om fordelene med testdrevet utvikling (TDD): https://realpython.com/test-driven-development-of-a-django-restful-api/
+```shell
+pip install pytest
+```
+
+Deretter kan du skrive testene dine på en enklere måte uten å måtte arve fra noe:
+
+```python
+# Lagre dette i en fil kalt test_with_pytest.py
+def add(a, b):
+    return a + b
+
+def test_add():
+    assert add(1, 2) == 3
+    assert add(-1, 1) == 0
+    assert add(10, 2) != 12, "Skulle vært 12"
+```
+
+For å kjøre testene dine med `pytest`, utfører du ganske enkelt:
+
+```shell
+pytest test_with_pytest.py
+```
+
+Du bør se output fra pytest som viser resultatene dine.

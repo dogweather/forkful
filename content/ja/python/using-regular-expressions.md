@@ -1,74 +1,97 @@
 ---
 title:                "正規表現の使用"
-date:                  2024-01-19
+date:                  2024-02-03T19:18:17.735890-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "正規表現の使用"
-
 tag:                  "Strings"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/python/using-regular-expressions.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
 ## 何となぜ？
+正規表現（regex）は、文字列内の文字の組み合わせに一致するために使用されるパターンです。プログラマーは、定義されたパターンに基づいてテキストを検索、編集、または操作するためにこれを利用し、データ検証、パースまたは変換のようなタスクに不可欠です。
 
-Regular expressions (regex) allow you to search for patterns in text. Programmers use them for tasks like validity checking, searching, and text processing because of their power to work with strings effectively.
+## 使い方：
+Pythonでregexを使用するには、正規表現を使用してテキストを処理するための一連の関数を提供する`re`モジュールを使用します。
 
-## How to:
-## 方法：
-
-Let's search for dates in the format 'YYYY-MM-DD'.
-
+### 基本的なパターンマッチング
+文字列内でパターンを検索するには、`re.search()`を使用します。パターンが見つかると、マッチオブジェクトを返し、そうでなければ`None`を返します。
 ```python
 import re
 
-text = 'Important dates are 2023-04-01 and 2024-08-21.'
-pattern = r'\d{4}-\d{2}-\d{2}'
+text = "Learn Python programming"
+match = re.search("Python", text)
+if match:
+    print("パターンが見つかりました！")
+else:
+    print("パターンが見つかりませんでした。")
+```
+出力：
+```
+パターンが見つかりました！
+```
 
-matches = re.findall(pattern, text)
+### 正規表現のコンパイル
+同じパターンを繰り返し使用する場合は、`re.compile()`で先にコンパイルして、パフォーマンスを向上させます。
+```python
+pattern = re.compile("Python")
+match = pattern.search("Learn Python programming")
+if match:
+    print("コンパイルされたパターンが見つかりました！")
+```
+出力：
+```
+コンパイルされたパターンが見つかりました！
+```
+
+### 文字列の分割
+正規表現パターンの各マッチで文字列を分割するには、`re.split()`を使用します。
+```python
+result = re.split("\s", "Python is fun")
+print(result)
+```
+出力：
+```
+['Python', 'is', 'fun']
+```
+
+### すべてのマッチを探す
+パターンの重なり合わない全ての発生を見つけるには、`re.findall()`を使用します。
+```python
+matches = re.findall("n", "Python programming")
 print(matches)
 ```
-
-Output:
-
+出力：
 ```
-['2023-04-01', '2024-08-21']
+['n', 'n']
 ```
 
-Now, let's extract the year, month, and day separately.
+### テキストの置換
+`re.sub()`を使用して、パターンの発生を新しい文字列で置き換えます。
+```python
+replaced_text = re.sub("fun", "awesome", "Python is fun")
+print(replaced_text)
+```
+出力：
+```
+Python is awesome
+```
+
+### サードパーティライブラリ
+Pythonの組み込み`re`モジュールはパワフルですが、`regex`のようなサードパーティライブラリはより多くの機能と強化されたパフォーマンスを提供します。 `regex`を使用するには、pip（`pip install regex`）経由でインストールし、コードでインポートします。
 
 ```python
-match = re.search(pattern, text)
-year, month, day = match.groups()
-print(f"Year: {year}, Month: {month}, Day: {day}")
-```
+import regex
 
-Error – No group in pattern. Let's revise the pattern to include groups.
-
-```python
-pattern = r'(\d{4})-(\d{2})-(\d{2})'
-match = re.search(pattern, text)
-
+text = "Learning Python 3.8"
+match = regex.search(r"Python\s(\d+\.\d+)", text)
 if match:
-    year, month, day = match.groups()
-    print(f"Year: {year}, Month: {month}, Day: {day}")
+    print(f"バージョンが見つかりました: {match.group(1)}")
 ```
-
-Output:
-
+出力：
 ```
-Year: 2023, Month: 04, Day: 01
+バージョンが見つかりました: 3.8
 ```
-
-## Deep Dive:
-## 徹底解説：
-
-Regular expressions originated in the 1950s with mathematician Stephen Kleene. They've become integral in text processing in Unix, and by extension, in modern programming languages. Alternatives include string methods like `str.find()` or `str.split()`, but these lack pattern matching capabilities. Python uses a library called `re`, which implements regex according to the Perl standard, known for its flexibility and speed.
-
-## See Also:
-## 参照：
-
-- Python's re module documentation: https://docs.python.org/3/library/re.html
-- Regular expression basics: https://www.regular-expressions.info/
-- Regex testing tool: https://regex101.com/

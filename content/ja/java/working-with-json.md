@@ -1,53 +1,103 @@
 ---
-title:                "JSONを扱う方法"
-date:                  2024-01-19
-simple_title:         "JSONを扱う方法"
-
+title:                "JSONを活用する"
+date:                  2024-02-03T19:23:24.529015-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "JSONを活用する"
 tag:                  "Data Formats and Serialization"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/java/working-with-json.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-JSONはデータを保存・転送するフォーマット。軽く、読み書きしやすく、多言語対応で人気。
+## 何となぜ？
+Javaアプリケーション内でのJSON（JavaScript Object Notation）の取り扱いは、この軽量なデータ交換フォーマットを扱うことを意味します。プログラマーは、JSONを使って構造化されたデータをネットワーク越しにシリアライズ（直列化）し転送したり、データを簡単に設定・保存したりするために採用しています。それは、JSONが人間にとって読みやすく言語に依存しないからです。
 
-## How to:
-JavaでJSONを扱うには`org.json`か`com.google.gson`ライブラリ使うのが定番。例を見よう。
+## 方法：
+それでは、JavaでJSONを使ってコーディングを始めましょう。
+
+まず、`Jackson`や`Google Gson`のようなJSON処理ライブラリが必要です。ここでは`Jackson`を使いますので、以下の依存関係を`pom.xml`に追加してください：
+
+```xml
+<dependency>
+    <groupId>com.fasterxml.jackson.core</groupId>
+    <artifactId>jackson-databind</artifactId>
+    <version>2.13.1</version>
+</dependency>
+```
+
+さて、単純なJavaオブジェクトをJSONにシリアライズ（書き込み）しましょう：
 
 ```java
-import org.json.JSONObject;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class JsonExample {
     public static void main(String[] args) {
-        // JSONオブジェクトを作成
-        JSONObject obj = new JSONObject();
-        obj.put("name", "Yamada");
-        obj.put("age", 25);
+        try {
+            ObjectMapper mapper = new ObjectMapper();
+            Person person = new Person("Alex", 30);
+            String json = mapper.writeValueAsString(person);
+            System.out.println(json);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
 
-        // JSON文字列に変換
-        String jsonStr = obj.toString();
-        System.out.println(jsonStr);
-        
-        // JSON文字列からオブジェクトを読み込む
-        JSONObject obj2 = new JSONObject(jsonStr);
-        System.out.println("Name: " + obj2.getString("name"));
-        System.out.println("Age: " + obj2.getInt("age"));
+class Person {
+    public String name;
+    public int age;
+
+    public Person(String name, int age) {
+        this.name = name;
+        this.age = age;
     }
 }
 ```
-出力:
-```
-{"name":"Yamada","age":25}
-Name: Yamada
-Age: 25
+
+出力は次のようになります：
+
+```json
+{"name":"Alex","age":30}
 ```
 
-## Deep Dive
-JSON（JavaScript Object Notation）は、2001年にJavaScript内のオブジェクト表記法から派生。REST APIや設定ファイルで定番。XMLやYAMLが代替えとしてあるが、JSONはパースが速く、書式がシンプル。Javaでは`javax.json`やJacksonなど、さまざまな実装があります。
+次に、JSONをJavaオブジェクトにデシリアライズ（読み込み）するには：
 
-## See Also
-- JSON.org（概要と文法）: [http://json.org/](http://json.org/)
-- Google Gson GitHubページ（ドキュメントとダウンロード）: [https://github.com/google/gson](https://github.com/google/gson)
-- JSON in Java（org.jsonライブラリのリファレンス）: [https://stleary.github.io/JSON-java/](https://stleary.github.io/JSON-java/)
+```java
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+public class JsonExample {
+    public static void main(String[] args) {
+        String json = "{\"name\":\"Alex\",\"age\":30}";
+        try {
+            ObjectMapper mapper = new ObjectMapper();
+            Person person = mapper.readValue(json, Person.class);
+            System.out.println(person.name + " is " + person.age + " years old.");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+出力は次のようになります：
+
+```
+Alex is 30 years old.
+```
+
+## 深堀り
+JSONのシンプルさと有効性が、ウェブ上のデータ交換のための事実上の標準となり、XMLをその玉座から引きずり下ろしました。JSONは2000年代初頭に導入され、JavaScriptから派生しましたが、現在ではほとんどの言語でサポートされています。
+
+JSONに代わるものには、より冗長なXMLや、サイズと速度ではより効率的ですが、人間には読みにくいバイナリ形式のProtocol BuffersやMessagePackなどがあります。それぞれに使用されるケースがあり、選択は特定のデータニーズとコンテキストに依存します。
+
+Javaでは、`Jackson`や`Gson`のほかに、JSONを扱うための`JsonB`や`org.json`といったライブラリがあります。Jacksonはストリームベースの処理を提供し、その速さで知られています。一方、Gsonは使いやすさで高い評価を受けています。JsonBはJakarta EEの一部で、より標準化されたアプローチを提供します。
+
+JSONを実装する際は、適切に例外を処理することを忘れないでください - あなたのコードは悪い入力に対しても堅牢であるべきです。また、自動データバインディングのセキュリティへの影響を考慮し、常に入力を検証してください！
+
+## 参照
+- [Jackson Project](https://github.com/FasterXML/jackson)
+- [Gson Project](https://github.com/google/gson)
+- [JSON Specification](https://www.json.org/json-en.html)
+- [JsonB Specification](https://jakarta.ee/specifications/jsonb/)

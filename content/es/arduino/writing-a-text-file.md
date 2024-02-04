@@ -1,60 +1,67 @@
 ---
-title:                "Escritura de un archivo de texto"
-date:                  2024-01-19
-simple_title:         "Escritura de un archivo de texto"
-
+title:                "Escribiendo un archivo de texto"
+date:                  2024-02-03T19:26:51.881896-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Escribiendo un archivo de texto"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/arduino/writing-a-text-file.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## ¿Qué y Por Qué?
-Escribir un archivo de texto en Arduino significa almacenar datos en una tarjeta SD o memoria. Los programadores lo hacen para registrar información, como datos de sensores o eventos del sistema.
+## Qué y Por Qué?
+Escribir un archivo de texto en Arduino implica guardar datos en un archivo en una tarjeta SD o un módulo de almacenamiento similar, a menudo para fines de registro de datos. Los programadores hacen esto para registrar lecturas de sensores, guardar configuraciones o registrar eventos de aplicaciones a lo largo del tiempo, lo que lo hace crucial para proyectos que requieren análisis de datos o seguimiento.
 
-## Cómo Hacerlo:
-Para escribir en un archivo de texto necesitas un módulo SD y la librería `SD.h`.
+## Cómo:
+Para escribir en un archivo de texto en una tarjeta SD usando Arduino, primero necesitas incluir la biblioteca `SD.h`, que proporciona las funciones necesarias para interactuar con tarjetas SD. Asegúrate de que tu placa Arduino esté conectada a un módulo de tarjeta SD.
 
-```Arduino
+```cpp
 #include <SPI.h>
 #include <SD.h>
 
-File miArchivo;
+File myFile;
+
 void setup() {
+  // Inicia la comunicación serial a 9600 bits por segundo:
   Serial.begin(9600);
-  // Comprueba si la tarjeta está presente y se puede inicializar:
-  if (!SD.begin(10)) {
-    Serial.println("Fallo al iniciar la SD");
+  
+  // Verifica la inicialización de la tarjeta SD
+  if (!SD.begin(4)) {
+    Serial.println("¡Inicialización fallida!");
     return;
   }
-
-  // Abre el archivo, si no existe lo crea:
-  miArchivo = SD.open("prueba.txt", FILE_WRITE);
+  Serial.println("Inicialización completada.");
+  
+  // Abre el archivo. Nota que solo se puede abrir un archivo a la vez,
+  // así que tienes que cerrar este antes de abrir otro.
+  myFile = SD.open("test.txt", FILE_WRITE);
+  
   // Si el archivo se abrió correctamente, escribe en él:
-  if (miArchivo) {
-    miArchivo.println("Hola Mundo!");
-    miArchivo.close(); // Cierra el archivo
+  if (myFile) {
+    Serial.print("Escribiendo en test.txt...");
+    myFile.println("Probando escritura de archivo de texto.");
+    // Cierra el archivo:
+    myFile.close();
+    Serial.println("hecho.");
   } else {
-    // si el archivo no se abre, imprime un error:
-    Serial.println("Error al abrir el archivo");
+    // Si el archivo no se abrió, imprime un error:
+    Serial.println("Error al abrir test.txt");
   }
 }
 
 void loop() {
-  // Nada que hacer aquí
+  // Nada sucede después del setup
 }
 ```
 
-Salida esperada al abrir `prueba.txt`:
-
+### Salida de Ejemplo:
+Cuando ejecutas este código, el Monitor Serie de Arduino IDE mostrará:
 ```
-Hola Mundo!
+Inicialización completada.
+Escribiendo en test.txt...hecho.
 ```
+Para verificar si los datos se escribieron correctamente, puedes quitar la tarjeta SD del Arduino, insertarla en una computadora y abrir el archivo `test.txt` para ver el mensaje "Probando escritura de archivo de texto."
 
-## Inmersión Profunda:
-La librería `SD.h` viene desde Arduino 1.0, permitiendo escritura/lectura de tarjetas SD utilizando el SPI. Alternativas incluyen EEPROM para guardar pequeñas cantidades de datos sin necesidad de hardware externo. Los detalles de implementación involucran gestionar correctamente la apertura y cierre de archivos para evitar corrupción de datos.
-
-## Ver También:
-- Documentación oficial de la librería SD: https://www.arduino.cc/en/Reference/SD
-- Guía para el módulo de tarjeta SD: https://www.arduino.cc/en/Guide/MKRSD
-- Tutorial sobre EEPROM en Arduino: https://www.arduino.cc/en/Tutorial/LibraryExamples/EEPROMReadWrite
+Para proyectos que requieren operaciones de archivos más avanzadas o procesamiento, considera explorar bibliotecas adicionales o escribir funciones personalizadas adaptadas a tus necesidades específicas.

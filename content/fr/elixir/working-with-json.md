@@ -1,54 +1,67 @@
 ---
-title:                "Manipulation de JSON"
-date:                  2024-01-19
-simple_title:         "Manipulation de JSON"
-
+title:                "Travailler avec JSON"
+date:                  2024-02-03T19:22:08.275751-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Travailler avec JSON"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/elixir/working-with-json.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-(Quoi et Pourquoi ?)
+## Quoi et pourquoi ?
 
-Travailler avec JSON, c'est manipuler des données structurées comme un texte. Les programmeurs utilisent JSON pour échanger facilement des informations entre différents langages de programmation et services.
+Travailler avec JSON implique l'analyse de chaînes formatées JSON en structures de données que Elixir peut manipuler, et la sérialisation de structures de données Elixir de retour en chaînes JSON. Cela est essentiel pour le développement web, les API et les fichiers de configuration, car JSON est un format d'échange de données léger, basé sur le texte, indépendant de la langue, largement utilisé pour sa simplicité et sa lisibilité humaine.
 
-## How to:
-(Comment faire :)
+## Comment faire :
 
-Pour travailler avec JSON en Elixir, on utilise la librairie `Jason`. D'abord, ajoutez `Jason` à vos dépendances dans `mix.exs` :
+Dans Elixir, vous pouvez utiliser la bibliothèque `Jason`, un choix populaire pour l'analyse et la génération JSON. Tout d'abord, ajoutez `Jason` aux dépendances de votre projet dans `mix.exs` :
 
 ```elixir
 defp deps do
   [
-    {:jason, "~> 1.2"}
+    {:jason, "~> 1.3"}
   ]
 end
 ```
 
-Ensuite, parsez et générez du JSON avec :
+Ensuite, exécutez `mix deps.get` pour récupérer la dépendance.
+
+### Analyse de JSON :
+Pour convertir une chaîne JSON en structures de données Elixir :
 
 ```elixir
-# Parsez du JSON
-json_string = "{\"key\": \"value\"}"
-{:ok, parsed} = Jason.decode(json_string)
-# parsed est maintenant %{“key” => “value”}
-
-# Générez du JSON
-map = %{"key" => "value"}
-{:ok, json} = Jason.encode(map)
-# json est maintenant "{\"key\":\"value\"}"
+json_string = "{\"name\":\"John\", \"age\":30}"
+{:ok, person} = Jason.decode(json_string)
+IO.inspect(person)
+# Sortie : %{"name" => "John", "age" => 30}
 ```
 
-Si vous exécutez ce code, vous obtenez un map pour le parsing, et une string pour la génération.
-## Deep Dive:
-(Exploration Détaillée :)
+### Génération de JSON :
+Pour convertir une map Elixir en une chaîne JSON :
 
-`Jason` est une bibliothèque JSON performante pour Elixir, prenant la relève d'options plus anciennes comme `Poison`. Elle se distingue par sa simplicité et sa conformité aux spécifications JSON. Par rapport à XML, l'alternative historique, JSON est moins verbeux et plus rapide à parser. De plus, il est devenu le format de choix dans les API REST et services web modernes.
+```elixir
+person_map = %{"name" => "Jane", "age" => 25}
+{:ok, json_string} = Jason.encode(person_map)
+IO.puts(json_string)
+# Sortie : {"age":25,"name":"Jane"}
+```
 
-## See Also:
-(Voir aussi :)
+### Travailler avec des Structs :
+Pour coder une struct Elixir, vous devez implémenter le protocole `Jason.Encoder` pour votre struct. Voici un exemple :
 
-- [Jason Repository on GitHub](https://github.com/michalmuskala/jason) - pour les instructions d'installation et la documentation complète.
-- [JSON Specification (RFC 8259)](https://tools.ietf.org/html/rfc8259) - pour comprendre les règles et les standards de JSON.
+```elixir
+defmodule Person do
+  @derive {Jason.Encoder, only: [:name, :age]}
+  defstruct name: nil, age: nil
+end
+
+person_struct = %Person{name: "Mike", age: 28}
+{:ok, json_string} = Jason.encode(person_struct)
+IO.puts(json_string)
+# Sortie : {"age":28,"name":"Mike"}
+```
+
+Cette approche simple vous permettra de commencer à intégrer le traitement JSON dans vos applications Elixir, facilitant l'échange de données dans divers environnements de programmation.

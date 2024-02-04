@@ -1,52 +1,67 @@
 ---
 title:                "解析HTML"
-date:                  2024-01-20T15:32:47.776379-07:00
+date:                  2024-02-03T19:12:59.588697-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "解析HTML"
-
 tag:                  "HTML and the Web"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/lua/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## 什么 & 为什么？
-解析HTML即是指让程序去读懂并操作HTML代码的过程。它是程序员获取网页数据和内容时必不可少的一部分，特别是做网络爬虫或数据挖掘时。
+## 什么与为什么？
+解析HTML涉及从HTML文档中提取数据和信息，这对于网页抓取、数据分析和自动化任务至关重要。程序员执行此操作以通过编程方式收集、分析或操作网络内容，实现自动化地从网站中提取数据，而这些任务否则需要手动完成。
 
-## 如何：
-```Lua
--- 需要安装html-parser库
-local htmlparser = require "htmlparser"
+## 如何操作：
+Lua没有内置的HTML解析库，但你可以利用第三方库如`LuaHTML`，或通过`LuaXML`利用`libxml2`的绑定。一个流行的方法是使用`lua-gumbo`库来解析HTML，它提供了一个直接、符合HTML5标准的解析能力。
 
--- 解析HTML字符串
-local html = [[
-<!DOCTYPE html>
+### 安装lua-gumbo:
+首先，确保安装了`lua-gumbo`。你通常可以使用luarocks来安装它：
+
+```sh
+luarocks install lua-gumbo
+```
+
+### 使用lua-gumbo进行基本解析：
+这里展示了如何使用`lua-gumbo`解析一个简单的HTML片段并从中提取数据：
+
+```lua
+local gumbo = require "gumbo"
+local document = gumbo.parse[[<html><body><p>你好，世界！</p></body></html>]]
+
+local p = document:getElementsByTagName("p")[1]
+print(p.textContent)  -- 输出：你好，世界！
+```
+
+### 进阶示例 - 提取链接：
+要从HTML文档中提取所有锚标签（`<a>`元素）的`href`属性：
+
+```lua
+local gumbo = require "gumbo"
+local document = gumbo.parse([[
 <html>
-<head>
-  <title>示例页面</title>
-</head>
+<head><title>示例页面</title></head>
 <body>
-  <h1>欢迎访问</h1>
-  <p>这是一个简单的HTML页面。</p>
+  <a href="http://example.com/1">链接1</a>
+  <a href="http://example.com/2">链接2</a>
+  <a href="http://example.com/3">链接3</a>
 </body>
 </html>
-]]
+]])
 
-local root = htmlparser.parse(html)
-local h1s = root:select("h1")
-
-for _, h1 in ipairs(h1s) do
-    print(h1:getcontent()) -- 输出所有<h1>标签的内容
+for _, element in ipairs(document.links) do
+    if element.getAttribute then  -- 确保它是一个元素并且具有属性
+        local href = element:getAttribute("href")
+        if href then print(href) end
+    end
 end
-```
-输出：
-```
-欢迎访问
+
+-- 样例输出：
+-- http://example.com/1
+-- http://example.com/2
+-- http://example.com/3
 ```
 
-## 深入探讨
-最初，HTML被设计成了一个相对简单的结构，方便人们读写和解析。但随着网站功能的复杂化，HTML解析变得越来越重要且复杂。除了Lua的解析器外，还有Python的BeautifulSoup、JavaScript的Cheerio等替代品。在实现细节方面，解析一个HTML通常涉及DOM树的构建、字符编码的处理以及错误处理机制。
-
-## 参见
-- [Lua html-parser GitHub](https://github.com/msva/lua-htmlparser)
-- [Lua 5.4 Reference Manual](https://www.lua.org/manual/5.4/)
+这段代码片段遍历文档中的所有链接并打印它们的`href`属性。`lua-gumbo`库解析并理解HTML文档的结构的能力简化了基于标签或属性提取特定元素的过程。

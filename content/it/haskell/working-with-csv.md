@@ -1,51 +1,76 @@
 ---
-title:                "Lavorare con i file CSV"
-date:                  2024-01-19
-simple_title:         "Lavorare con i file CSV"
-
+title:                "Lavorare con i CSV"
+date:                  2024-02-03T19:19:47.127903-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Lavorare con i CSV"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/haskell/working-with-csv.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Il CSV, ovvero Comma-Separated Values, è un formato di file usato per memorizzare i dati in forma tabellare semplice. I programmatori lo usano spesso per importare ed esportare dati da database, fogli elettronici o servizi web per la sua leggibilità e semplicità.
+## Cosa & Perché?
 
-## How to:
-In Haskell, usiamo librerie come `cassava` per lavorare con CSV. Ecco un esempio semplice per leggere un file CSV.
+Lavorare con i CSV (Valori Separati da Virgola) implica l'analisi e la generazione di file che memorizzano dati tabellari in un formato semplice e basato su testo. I programmatori si impegnano spesso in questo compito per importare o esportare dati in modo efficiente da fogli di calcolo, database, o per facilitare lo scambio di dati tra diversi programmi.
 
-```Haskell
+## Come fare:
+
+In Haskell, la gestione dei file CSV può essere realizzata utilizzando la libreria `cassava`, una delle più popolari librerie di terze parti per questo scopo. Di seguito sono riportati esempi che mostrano come leggere e scrivere file CSV utilizzando `cassava`.
+
+**1. Leggere un file CSV:**
+
+Prima di tutto, assicurati di avere `cassava` installato aggiungendolo al file cabal del tuo progetto o utilizzando Stack.
+
+Ecco un semplice esempio per leggere un file CSV e stampare ogni record. Si assume che il file CSV abbia due colonne: nome e età.
+
+```haskell
+{-# LANGUAGE OverloadedStrings #-}
+import Data.Csv
 import qualified Data.ByteString.Lazy as BL
 import qualified Data.Vector as V
-import Data.Csv
 
 main :: IO ()
 main = do
-    csvData <- BL.readFile "dati.csv"
+    csvData <- BL.readFile "people.csv"
     case decode NoHeader csvData of
         Left err -> putStrLn err
-        Right v -> V.forM_ v $ \ (nome, eta) ->
-            putStrLn $ nome ++ " ha " ++ show eta ++ " anni"
+        Right v -> V.forM_ v $ \(name, age) ->
+            putStrLn $ name ++ " ha " ++ show (age :: Int) ++ " anni."
 ```
 
-Assumendo `dati.csv` sia:
-
+Assumendo che `people.csv` contenga:
 ```
-Giovanni,30
-Francesca,28
+John,30
+Jane,25
 ```
-
 L'output sarà:
+```
+John ha 30 anni.
+Jane ha 25 anni.
+```
+
+**2. Scrivere un file CSV:**
+
+Per creare un file CSV, puoi usare la funzione `encode` di `cassava`.
+
+Ecco come potresti scrivere una lista di record in un file CSV:
+
+```haskell
+{-# LANGUAGE OverloadedStrings #-}
+import Data.Csv
+import qualified Data.ByteString.Lazy as BL
+
+main :: IO ()
+main = BL.writeFile "output.csv" $ encode [("John", 30), ("Jane", 25)]
+```
+
+Dopo aver eseguito questo programma, `output.csv` conterrà:
 
 ```
-Giovanni ha 30 anni
-Francesca ha 28 anni
+John,30
+Jane,25
 ```
 
-## Deep Dive
-Il CSV non è un formato standardizzato, cosa che può portare a variazioni di implementazione. Nasce negli anni ‘70 come soluzione semplice per database. Alternativamente, ci sono formati come JSON o XML, più strutturati ma meno leggibili dall’uomo. In Haskell, lavorare con CSV si appoggia al laziness del linguaggio per gestire grandi quantità di dati in modo efficiente.
-
-## See Also
-- Documentazione di `cassava`: [http://hackage.haskell.org/package/cassava](http://hackage.haskell.org/package/cassava)
-- Haskell Programming from first principles: [http://haskellbook.com](http://haskellbook.com)
+Questa breve introduzione al lavoro con file CSV in Haskell utilizzando la libreria `cassava` dimostra come leggere e scrivere file CSV, rendendo i compiti di manipolazione dei dati più accessibili per chi è nuovo al linguaggio.

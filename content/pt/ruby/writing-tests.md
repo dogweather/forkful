@@ -1,60 +1,89 @@
 ---
 title:                "Escrevendo testes"
-date:                  2024-01-19
+date:                  2024-02-03T19:31:58.996269-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Escrevendo testes"
-
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/ruby/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## O Que & Porquê?
+## O Que & Por Quê?
+Testar em Ruby é verificar se o seu código se comporta como esperado sob várias condições. Os programadores escrevem testes para garantir correção, prevenir regressões e facilitar o refatoramento, com o objetivo de ter aplicações robustas e mantíveis.
 
-Escrever testes é criar cenários que verificam se peças do código funcionam como esperado. Programadores testam para garantir qualidade, prevenir bugs e facilitar manutenção.
+## Como fazer:
+Ruby vem com uma biblioteca embutida chamada `Test::Unit` para escrever testes unitários, encapsulando práticas de teste dentro de estruturas simples. No entanto, a comunidade Ruby frequentemente prefere bibliotecas de terceiros como RSpec e Minitest devido à sua expressividade e flexibilidade aprimoradas.
 
-## Como Fazer:
+### Usando `Test::Unit`:
+```ruby
+require 'test/unit'
 
-Para testar em Ruby, geralmente se usa a gem `RSpec`. Instale com `gem install rspec` e crie um arquivo de teste assim:
-
-```Ruby
-# spec/calculadora_spec.rb
-require_relative '../calculadora'
-
-describe Calculadora do
-  it 'soma dois números' do
-    expect(Calculadora.soma(5, 3)).to eq(8)
+class CalculatorTest < Test::Unit::TestCase
+  def test_addition
+    result = 2 + 2
+    assert_equal 4, result
   end
 end
 ```
+Execute seu arquivo de teste a partir do terminal, e você deve obter uma saída indicando sucesso ou falha dos testes:
+```
+Loaded suite test_calculator
+Started
+.
+Finished in 0.001288 seconds.
+1 tests, 1 assertions, 0 failures, 0 errors, 0 pendings, 0 omissions, 0 notifications
+100% passed
+```
 
-No seu código principal:
+### Usando RSpec:
+RSpec é um framework popular de BDD (Desenvolvimento Guiado por Comportamento) para Ruby. Instale a gem com `gem install rspec`, depois inicialize-a no seu projeto com `rspec --init`.
 
-```Ruby
-# calculadora.rb
-class Calculadora
-  def self.soma(a, b)
-    a + b
+```ruby
+# calculator_spec.rb
+require_relative '../calculator'
+
+describe Calculator do
+  it 'adiciona corretamente dois números' do
+    expect(Calculator.add(2, 2)).to eq(4)
   end
 end
 ```
-
-Para rodar o teste, use: `rspec spec/calculadora_spec.rb`
-
-A saída esperada é:
-
+Execute testes com o comando `rspec`. Exemplo de saída:
 ```
 .
 
-Finished in 0.00276 seconds (files took 0.15707 seconds to load)
+Finished in 0.002 seconds (files took 0.1 seconds to load)
 1 example, 0 failures
 ```
 
-## Aprofundamento
+### Usando Minitest:
+Minitest oferece uma suíte completa de facilidades de teste que suportam TDD, BDD, mocks e benchmarking. Instale-a com `gem install minitest` e use da seguinte forma:
 
-Testes em Ruby vêm desde a versão 1.8 com o `Test::Unit`, que depois evoluiu para o `MiniTest`. RSpec é popular pela sua linguagem mais natural e recursos poderosos. Ao implementar testes, use TDD (Test-Driven Development) para melhorar a estrutura do código e refatoração.
+```ruby
+# test_calculator.rb
+require 'minitest/autorun'
+require_relative '../calculator'
 
-## Veja Também
+class CalculatorTest < Minitest::Test
+  def test_addition
+    assert_equal 4, Calculator.add(2, 2)
+  end
+end
+```
 
-- [Ruby Testing Guidelines](https://github.com/rubocop/ruby-style-guide#testing)
-- [Test-Driven Development: By Example](http://www.oreilly.com/catalog/9780321146533) de Kent Beck
+Execute seu arquivo de teste direto ou através da tarefa `rake` configurada para minitest. Exemplo de saída:
+```
+Run options: --seed 33407
+
+# Running:
+
+.
+
+Finished in 0.001027s, 974.5922 runs/s, 974.5922 assertions/s.
+1 runs, 1 assertions, 0 failures, 0 errors, 0 skips
+```
+
+Implementando testes nos seus projetos Ruby usando essas bibliotecas, você adere às melhores práticas, levando a bases de código mais confiáveis e mantíveis.

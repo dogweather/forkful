@@ -1,52 +1,87 @@
 ---
 title:                "Arbeiten mit JSON"
-date:                  2024-01-19
+date:                  2024-02-03T19:21:43.250188-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Arbeiten mit JSON"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/cpp/working-with-json.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Was & Warum?
-JSON, kurz für JavaScript Object Notation, ist ein Datenformat zum Austausch von Daten. Programmierer nutzen JSON, weil es leicht lesbar und weit verbreitet ist, insbesondere für Web APIs.
 
-## How to:
-Um mit JSON in C++ zu arbeiten, kannst du Libraries wie `nlohmann::json` benutzen. Hier ist ein schnelles Beispiel:
+JSON (JavaScript Object Notation) ist ein leichtgewichtiges Format zum Speichern und Transportieren von Daten und damit ein hervorragendes Medium für den Datenaustausch zwischen Servern und Webanwendungen. Programmierer nutzen JSON aufgrund seiner leichten Lesbarkeit für Menschen und der unkomplizierten Parsierbarkeit durch Maschinen, besonders wenn es um Anwendungen geht, die einen Datenaustausch über das Internet oder Konfigurationseinstellungen erfordern.
+
+## Wie geht das:
+
+In C++ gibt es keine native Unterstützung für JSON, aber Drittanbieter-Bibliotheken wie nlohmann/json machen es unkompliziert. So verwenden Sie es für grundlegende Aufgaben:
+
+Zuerst stellen Sie sicher, dass Sie die Bibliothek installiert haben. Wenn Sie einen Paketmanager wie vcpkg oder Conan verwenden, können Sie `nlohmann/json` leicht zu Ihrem Projekt hinzufügen.
+
+### JSON aus einem String parsen
 
 ```cpp
 #include <iostream>
 #include <nlohmann/json.hpp>
 
 int main() {
-    // Erstellen eines JSON-Objekts
-    nlohmann::json obj;
-    obj["name"] = "Fritz";
-    obj["age"] = 30;
-    obj["is_programmer"] = true;
+    // JSON-Daten als String
+    std::string jsonData = "{\"name\":\"John\", \"age\":30, \"city\":\"New York\"}";
 
-    // Convertieren des Objekts in einen String
-    std::string json_string = obj.dump();
-    std::cout << json_string << std::endl;
+    // JSON-String parsen
+    auto jsonObject = nlohmann::json::parse(jsonData);
 
-    // Lesen der Daten aus einem JSON-String
-    auto parsed = nlohmann::json::parse(R"({"name": "Klaus", "hobbies": ["Schach", "Klettern"]})");
-    std::cout << parsed["name"] << std::endl;
+    // Auf Daten zugreifen
+    std::cout << "Name: " << jsonObject["name"] << "\n"
+              << "Alter: " << jsonObject["age"] << "\n"
+              << "Stadt: " << jsonObject["city"] << std::endl;
 
     return 0;
 }
 ```
 
-Ausgabe wäre:
+**Beispielausgabe:**
+
 ```
-{"age":30,"is_programmer":true,"name":"Fritz"}
-Klaus
+Name: John
+Alter: 30
+Stadt: New York
 ```
 
-## Deep Dive
-JSON wurde Anfang der 2000er Jahre entwickelt und hat XML als bevorzugtes Format für den Datenverkehr im Web abgelöst. Alternativen zu JSON sind u.a. YAML und BSON, wobei JSON wegen seiner Einfachheit und Geschwindigkeit oft bevorzugt wird. Beim Arbeiten mit C++ und JSON ist wichtig zu wissen, dass die Standardbibliothek keine native Unterstützung bietet und deshalb Libraries wie `nlohmann::json` oder `jsoncpp` weit verbreitet sind. Diese Libraries vereinfachen das Parsen und Schreiben von JSON-Daten.
+### JSON erzeugen
 
-## See Also
-- [nlohmann/json GitHub Repository](https://github.com/nlohmann/json)
-- [JSON offizielle Website](https://www.json.org/json-de.html)
+JSON-Daten zu erstellen, ist genauso unkompliziert; man weist einfach Werte einem `nlohmann::json`-Objekt zu.
+
+```cpp
+#include <nlohmann/json.hpp>
+#include <iostream>
+
+int main() {
+    // Ein JSON-Objekt erstellen
+    nlohmann::json jsonObject;
+    jsonObject["name"] = "Jane";
+    jsonObject["age"] = 25;
+    jsonObject["city"] = "Los Angeles";
+
+    // JSON-Objekt in String konvertieren und ausgeben
+    std::string jsonString = jsonObject.dump(4); // Argument 4 für hübsches Drucken
+    std::cout << jsonString << std::endl;
+
+    return 0;
+}
+```
+
+**Beispielausgabe:**
+
+```
+{
+    "name": "Jane",
+    "age": 25,
+    "stadt": "Los Angeles"
+}
+```
+
+Diese Beispiele demonstrieren die Kernfunktionalitäten für die Arbeit mit JSON in C++ unter Verwendung der `nlohmann/json`-Bibliothek. Mit diesen Grundlagen können Sie JSON für verschiedene Anwendungen parsen und generieren, von Konfigurationsdateien bis hin zum Datenaustausch in vernetzten Anwendungen.

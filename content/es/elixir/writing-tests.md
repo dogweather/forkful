@@ -1,44 +1,82 @@
 ---
 title:                "Escribiendo pruebas"
-date:                  2024-01-19
+date:                  2024-02-03T19:30:13.266890-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Escribiendo pruebas"
-
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/elixir/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
-Escribir tests es crear código que verifica que tu código hace lo que esperas. Los programadores escriben tests para prevenir errores, facilitar la actualización de código y mejorar la calidad del software.
+Escribir pruebas en Elixir implica crear scripts automatizados para validar el comportamiento de tu código. Los programadores hacen esto para asegurar la calidad, prevenir regresiones y facilitar la refactorización del código, haciendo el proceso de desarrollo más confiable y eficiente.
 
-## Cómo hacerlo:
-En Elixir, usamos ExUnit para escribir tests. Instálalo añadiendo `{:ex_unit, "~> 1.6", only: :test}` a tus dependencias en `mix.exs` y ejecuta `mix test` para correr tus pruebas. Aquí tienes un ejemplo:
+## Cómo:
+Elixir utiliza ExUnit como su marco de pruebas integrado, el cual es extremadamente poderoso y fácil de usar. Aquí hay un ejemplo básico:
+
+1. Crea un nuevo archivo de prueba en el directorio `test` de tu proyecto Elixir. Por ejemplo, si estás probando un módulo llamado `MathOperations`, tu archivo de prueba podría ser `test/math_operations_test.exs`.
 
 ```elixir
-defmodule MathTest do
+# test/math_operations_test.exs
+defmodule MathOperationsTest do
   use ExUnit.Case
-  doctest Math
 
-  test "sums two numbers" do
-    assert Math.add(1, 2) == 3
+  # Este es un caso de prueba simple para verificar la función de adición
+  test "la adición de dos números" do
+    assert MathOperations.add(1, 2) == 3
   end
 end
 ```
 
-Resultado de ejecución:
+Para ejecutar tus pruebas, usa el comando `mix test` en tu terminal. Si la función `MathOperations.add/2` suma correctamente dos números, verás una salida similar a:
 
 ```
-.
+..
 
-Finished in 0.04 seconds
-1 test, 0 failures
+Finalizado en 0.03 segundos
+1 prueba, 0 fallos
 ```
 
-## Deep Dive
-Los tests en Elixir datan desde el inicio del lenguaje, inherente con el framework ExUnit. Alternativas como ESpec existen, aportando un estilo más de RSpec. Para testear hay que entender las aserciones (`assert`), las refutaciones (`refute`) y cómo organizar el código con `setup` y `context`. Mocks se usan con moderación en Elixir por su naturaleza funcional.
+Para pruebas que involucren servicios externos o APIs, podrías querer usar bibliotecas de simulación, como `mox`, para evitar impactar servicios reales:
 
-## Ver También
-* [Documentación de ExUnit](https://hexdocs.pm/ex_unit/ExUnit.html)
-* Guía [Getting Started](https://elixir-lang.org/getting-started/mix-otp/introduction-to-mix.html) de Elixir
-* ESpec para un framework de testing al estilo RSpec: [https://github.com/antonmi/espec](https://github.com/antonmi/espec)
+1. Agrega `mox` a tus dependencias en `mix.exs`:
+
+```elixir
+defp deps do
+  [
+    {:mox, "~> 1.0.0", only: :test},
+    # otras deps...
+  ]
+end
+```
+
+2. Define un módulo de simulación en tu ayudante de pruebas (`test/test_helper.exs`):
+
+```elixir
+Mox.defmock(MockDelClienteHTTP, for: ComportamientoDelClienteHTTP)
+```
+
+3. Usa la simulación en tu caso de prueba:
+
+```elixir
+# test/some_api_client_test.exs
+defmodule PruebaDeAlgunClienteAPI do
+  use ExUnit.Case
+  import Mox
+
+  # Esto le dice a Mox que verifique si esta simulación fue llamada como se esperaba
+  setup :verify_on_exit!
+
+  test "obtiene datos de la API" do
+    # Prepara la respuesta de la simulación
+    expect(MockDelClienteHTTP, :get, fn _url -> {:ok, "Respuesta simulada"} end)
+    
+    assert AlgunClienteAPI.get_data() == "Respuesta simulada"
+  end
+end
+```
+
+Cuando ejecutas `mix test`, esta configuración te permite aislar tus pruebas unitarias de dependencias externas reales, enfocándote en el comportamiento de tu propio código. Este patrón asegura que tus pruebas se ejecuten rápidamente y permanezcan confiables, independientemente del estado del servicio externo o la conectividad a Internet.

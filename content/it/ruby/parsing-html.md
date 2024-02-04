@@ -1,48 +1,48 @@
 ---
-title:                "Analisi dell'HTML"
-date:                  2024-01-20T15:33:42.179981-07:00
-simple_title:         "Analisi dell'HTML"
-
+title:                "Analisi del HTML"
+date:                  2024-02-03T19:12:59.740001-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Analisi del HTML"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/ruby/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Il parsing di HTML consiste nel trasformare il codice HTML in una struttura comprensibile per il programma che lo legge. I programmatori lo fanno per estrarre dati, automatizzare il controllo dei contenuti o manipolare pagine web.
+## Cosa e perché?
+Analizzare l'HTML significa smontare un pezzo di codice HTML per comprenderne la struttura e il contenuto. I programmatori lo fanno per estrarre dati, manipolare contenuti o migrare informazioni tra formati e sistemi.
 
-## How to:
-In Ruby, useremo Nokogiri, una gemma popolare per il parsing HTML.
+## Come fare:
+Per analizzare l'HTML in Ruby, installa la gemma 'Nokogiri' con `gem install nokogiri`. Nokogiri è come un coltellino svizzero per lavorare con HTML e XML in Ruby. Ecco un esempio rapido:
 
-```Ruby
+```ruby
 require 'nokogiri'
 require 'open-uri'
 
-# Carichiamo un documento HTML da un URL
+# Carica il contenuto HTML da un sito web
 html_content = URI.open('http://example.com').read
-document = Nokogiri::HTML(html_content)
 
-# Otteniamo il titolo della pagina
-title = document.css('title').text
-puts "Il titolo della pagina è: '#{title}'"
+# Analizza l'HTML
+doc = Nokogiri::HTML(html_content)
 
-# Cerchiamo tutti i link presenti nella pagina
-document.css('a').each do |link|
-  puts "Testo: #{link.text}, URL: #{link['href']}"
-end
+# Estrai il titolo
+title = doc.xpath('//title').text
+puts "Il titolo della pagina è: #{title}"
 ```
 
-Esempio di output:
-```
-Il titolo della pagina è: 'Example Domain'
-Testo: More information, URL: https://www.iana.org/domains/example
-```
+Questo produrrà qualcosa del tipo: `Il titolo della pagina è: Dominio di esempio`.
 
-## Deep Dive:
-Nokogiri non è l'unico modo per fare parsing di HTML in Ruby, ma è tra i più popolari. Emerse nei primi anni 2000 permettendo un accesso più facile e veloce al DOM HTML, rispetto ad altre gemme come Hpricot (ora non più mantenuta). Nokogiri sfrutta le librerie come libxml2 per offrire parsing veloce e ben supportato.
+## Approfondimento
+Nei primi tempi di Ruby, le opzioni per l'analisi dell'HTML erano limitate. REXML era integrato ma lento. Poi è arrivato Hpricot, ma si è rapidamente esaurito. Nokogiri ha debuttato nel 2008, combinando la facilità di Hpricot con la velocità e la potenza di libxml, un toolkit XML collaudato.
 
-Altre opzioni includono Oga e Loofah, ma Nokogiri rimane la scelta prediletta per molti grazie alla sua robustezza e alla ricca documentazione. Il parsing è anche un'attività soggetta a problemi di sicurezza: è importante pulire i dati HTML per evitare vulnerabilità come gli attacchi XSS.
+Nel mondo dell'analisi, ci sono sempre alternative. Alcuni giurano sulla libreria integrata 'rexml' o su 'oga', un altro parser XML/HTML per Ruby. Ma Nokogiri rimane il preferito per la sua robustezza e velocità, per non parlare della sua vasta gamma di funzionalità.
 
-## See Also:
-- [Nokogiri Official Site](https://nokogiri.org/)
+Sotto il cofano, Nokogiri converte l'HTML in un Document Object Model (DOM)—una struttura ad albero. Questo rende facile navigare e manipolare gli elementi. Utilizzando XPath e i selettori CSS, puoi individuare qualsiasi informazione di cui hai bisogno.
+
+## Vedi anche
+- Gemma Nokogiri: [https://nokogiri.org/](https://nokogiri.org/)
+- Documentazione di rexml di Ruby: [https://ruby-doc.org/stdlib-2.6.3/libdoc/rexml/rdoc/REXML/Document.html](https://ruby-doc.org/stdlib-2.6.3/libdoc/rexml/rdoc/REXML/Document.html)
+- Parser alternativo 'oga': [https://github.com/YorickPeterse/oga](https://github.com/YorickPeterse/oga)
+- Scopri XPath: [https://www.w3schools.com/xml/xpath_intro.asp](https://www.w3schools.com/xml/xpath_intro.asp)

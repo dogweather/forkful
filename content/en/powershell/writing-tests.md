@@ -1,8 +1,8 @@
 ---
 title:                "Writing tests"
-date:                  2024-01-19
+date:                  2024-02-03T19:03:32.163002-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Writing tests"
-
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/powershell/writing-tests.md"
 ---
@@ -10,51 +10,65 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Writing tests in programming means crafting scripts that check if your code runs correctly. Programmers do this to catch bugs early, ensure reliability, and prevent future changes from breaking existing features.
+
+Writing tests in PowerShell involves creating scripts that automatically validate the functionality of your PowerShell code, ensuring it behaves as expected. Programmers do this to catch bugs early, simplify code maintenance, and ensure that code modifications don't inadvertently break existing functionality.
 
 ## How to:
-Here's a quick test for a function that adds numbers using Pester, PowerShell's testing framework. You'd typically save this script as `Add.Tests.ps1`.
 
-```PowerShell
-# Sample function to test
-function Add ($a, $b) {
-    return $a + $b
+PowerShell does not have a built-in testing framework, but Pester, a popular third-party module, is widely used for writing and running tests. Here's how to get started with Pester for testing your PowerShell functions.
+
+First, install Pester if you haven't already:
+
+```powershell
+Install-Module -Name Pester -Scope CurrentUser -Force
+```
+
+Next, consider you have a simple PowerShell function you want to test, saved as `MyFunction.ps1`:
+
+```powershell
+function Get-MultipliedNumber {
+    param (
+        [int]$Number,
+        [int]$Multiplier = 2
+    )
+
+    return $Number * $Multiplier
 }
+```
 
-# Import Pester module
-Import-Module Pester
+To test this function with Pester, create a test script named `MyFunction.Tests.ps1`. In this script, use Pester's `Describe` and `It` blocks to define the test cases:
 
-# Define the test
-Describe "Add-Function" {
-    It "adds two numbers" {
-        # Arrange
-        $num1 = 10
-        $num2 = 20
-        $expected = 30
+```powershell
+# Import the function to test
+. .\MyFunction.ps1
 
-        # Act
-        $result = Add $num1 $num2
+Describe "Get-MultipliedNumber tests" {
+    It "Multiplies number by 2 when no multiplier is provided" {
+        $result = Get-MultipliedNumber -Number 3
+        $result | Should -Be 6
+    }
 
-        # Assert
-        $result | Should -Be $expected
+    It "Correctly multiplies number by given multiplier" {
+        $result = Get-MultipliedNumber -Number 3 -Multiplier 3
+        $result | Should -Be 9
     }
 }
-
-# Run the test
-Invoke-Pester
 ```
 
-After running the script, you'd see output like:
+To run the tests, open PowerShell, navigate to the directory containing your test script, and use the `Invoke-Pester` command:
 
-```
-Describing Add-Function
-    [+] adds two numbers 75ms
-Tests completed in 75ms
-Tests Passed: 1, Failed: 0, Skipped: 0 NotRun: 0
+```powershell
+Invoke-Pester .\MyFunction.Tests.ps1
 ```
 
-## Deep Dive:
-Historically, testing in PowerShell was much more manual before Pester was introduced. It changed the game by providing a powerful yet simple syntax for automated testing, borrowing concepts from testing frameworks in other languages. Alternatives to Pester include PSUnit and PSTest, but Pester is the most widely used and integrated directly into PowerShell Core for cross-platform support. Detailed implementation of tests involves a cycle typically called "Red, Green, Refactor", where tests are written to fail first (Red), then code is written to pass tests (Green), followed by a cleanup phase without changing behavior (Refactor).
+Sample output will look like this, indicating whether your tests passed or failed:
 
-## See Also:
-- Pester's GitHub Repository: [https://github.com/pester/Pester](https://github.com/pester/Pester)
+```
+Starting discovery in 1 files.
+Discovery finished in 152ms.
+[+] C:\path\to\MyFunction.Tests.ps1 204ms (182ms|16ms)
+Tests completed in 204ms
+Tests Passed: 2, Failed: 0, Skipped: 0 NotRun: 0
+```
+
+This output shows that both tests have passed, giving you confidence that your `Get-MultipliedNumber` function behaves as expected under the scenarios you've tested.

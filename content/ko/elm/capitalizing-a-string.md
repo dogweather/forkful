@@ -1,52 +1,52 @@
 ---
-title:                "문자열 대문자로 변환하기"
-date:                  2024-01-19
-simple_title:         "문자열 대문자로 변환하기"
-
+title:                "문자열 대문자화"
+date:                  2024-02-03T19:05:02.477568-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "문자열 대문자화"
 tag:                  "Strings"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/elm/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (무엇인가요? 왜 사용하죠?)
-문자열의 첫 글자를 대문자로 만드는 것을 말해요. 주로 문장을 시작할 때나 제목, 중요 단어를 강조할 때 사용하죠.
+## 무엇인가 & 왜인가?
 
-## How to:
-Elm에선 기본적으로 문자열을 대문자로 만드는 함수가 없어요. 직접 만들어 볼까요?
+문자열의 첫 글자를 대문자로 변환하고 나머지는 소문자로 유지하는 작업을 말합니다. 이는 표준화된 형식이나 가독성 목적으로 자주 사용됩니다. 특히 사용자 인터페이스나 사용자 입력을 처리하고 표시할 때 데이터가 일관되게 표시되도록 보장하기 위해 프로그래머는 이 작업을 자주 수행합니다.
 
-```Elm
-import String exposing (toList, cons, fromList, toUpper)
+## 어떻게:
 
+Elm에서는 문자열을 대문자로 만드는 특별한 내장 함수가 없습니다. 그러나 `toUpper`, `toLower`, `left`, `dropLeft`과 같은 내장 `String` 모듈 함수를 사용하여 쉽게 이를 달성할 수 있습니다.
+
+```elm
 capitalize : String -> String
-capitalize string =
-    string
-        |> toList
-        |> List.head
-        |> Maybe.map toUpper
-        |> Maybe.withDefault ' '
-        |> (\upperCaseHead -> cons upperCaseHead (String.dropLeft 1 string))
-        |> fromList
+capitalize str =
+    if String.isEmpty str then
+        ""
+    else
+        String.toUpper (String.left 1 str) ++ String.toLower (String.dropLeft 1 str)
 
--- 사용 예시
+-- 예제 사용
 main =
-    String.words "hello elm world"
-        |> List.map capitalize
-        |> String.join " "
-        |> Debug.toString
-        |> text
--- 출력: "Hello Elm World"
+    String.toList "hello world" |> List.map capitalize |> String.join " "
+    -- 출력: "Hello World"
 ```
 
-## Deep Dive (심층 분석)
-Elm에서 문자열을 대문자로 만드는 기본 함수는 없어요. 이는 Elm이 가능한 단순함을 유지하고자 하는 철학 때문이죠. 문자열을 대문자로 만드는 다른 언어의 메소드들과는 달리, 직접 함수를 구현해야 해요.
+더 복잡한 시나리오에 직면했거나 문자열을 대문자로 만드는 직접적인 방법을 제공하는 라이브러리를 사용하는 것을 선호한다면, `elm-community/string-extra`와 같은 타사 패키지를 고려해볼 수 있습니다. 그러나 마지막 업데이트 시점까지 Elm의 생태계는 언어와 프로젝트를 간결하게 유지하기 위해 이러한 작업을 내장 함수를 사용하여 처리할 것을 권장합니다.
 
-JavaScript 같은 경우엔 `toUpperCase()` 메소드를 사용하면 되지만, Elm에서는 리스트 변환과 몇 가지 함수 조합을 이용해야 해요.
+```elm
+import String.Extra as StringExtra
 
-함수 내부에서는 문자열을 리스트로 바꿔 첫 글자를 추출한 후 대문자로 만듭니다. 그 다음, 원래 문자열에서 첫 글자를 제외한 나머지 문자열과 합쳐요.
+-- 타사 라이브러리에 `capitalize` 함수가 있는 경우
+capitalizeWithLibrary : String -> String
+capitalizeWithLibrary str =
+    StringExtra.capitalize str
 
-## See Also (추가 정보)
-- Elm `String` 패키지: https://package.elm-lang.org/packages/elm/core/latest/String
-- Elm `Char` 패키지: https://package.elm-lang.org/packages/elm/core/latest/Char
-- Elm 커뮤니티 토론: https://discourse.elm-lang.org/
+-- 가상 라이브러리 함수와 함께 사용하는 예제
+main =
+    "this is elm" |> capitalizeWithLibrary
+    -- 가상 출력: "This is elm"
+```
+
+표준 라이브러리를 넘어서 추가 기능을 찾고 있다면, 문자열 조작을 위한 최신이며 가장 선호되는 라이브러리를 확인하기 위해 Elm 패키지 저장소를 항상 확인하세요.

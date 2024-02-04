@@ -1,45 +1,43 @@
 ---
 title:                "ディレクトリが存在するかどうかの確認"
-date:                  2024-01-20T14:56:25.489175-07:00
+date:                  2024-02-03T19:07:29.459544-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "ディレクトリが存在するかどうかの確認"
-
 tag:                  "Files and I/O"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/fish-shell/checking-if-a-directory-exists.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (何となぜ？)
-ディレクトリが存在するかチェックすることとは、ファイルシステム上の特定の場所に特定のフォルダがあるかどうかを確認するプロセスです。このチェックはスクリプトがエラーなく動作するため、または必要なリソースが利用可能かを保証するために行われます。
+## 何となぜ？
+Fish Shellでディレクトリが存在するかを確認することは、ディレクトリ構造の存在や不在に基づいてスクリプトが判断を行うことを可能にし、条件付きファイル操作、ログ記録、または環境設定のようなタスクを可能にします。この技術は、ファイルシステムと予測可能な方法でやり取りする堅牢なスクリプトを書くためには欠かせません。
 
-## How to: (やり方)
-Fish Shellでディレクトリの存在を確認するには `test` コマンドを使います。以下の例と出力をご覧ください。
+## 方法：
+Fish Shellは`test`コマンドを使ってファイルタイプや特性をチェックします。これには、対象がディレクトリかどうかを含みます。ディレクトリが存在するかを確認する基本的な方法は以下のとおりです：
 
-```Fish Shell
-if test -d /path/to/directory
-    echo "存在する"
+```fish
+if test -d /path/to/dir
+    echo "ディレクトリは存在します"
 else
-    echo "存在しない"
+    echo "ディレクトリは存在しません"
+end
+```
+サンプル出力：
+```
+ディレクトリは存在します
+```
+
+より合理化されたファイルやディレクトリ操作には、`fd`のような外部ツールを使うこともありますが、これは存在を単にチェックするよりも、ファイルやディレクトリを見つけるためによく使われます。しかし、Fishスクリプティングと組み合わせることで便利な結果が得られます：
+
+```fish
+set dir "/path/to/search"
+if fd . $dir --type directory --max-depth 1 | grep -q $dir
+    echo "ディレクトリは存在します"
+else
+    echo "ディレクトリは存在しません"
 end
 ```
 
-サンプル出力:
-
-```
-存在する
-```
-
-または、ディレクトリが存在しない場合:
-
-```
-存在しない
-```
-
-## Deep Dive (深掘り)
-Fish Shellでは、他のシェル同様に`test`コマンドを使ってファイルやディレクトリの状態をチェックすることができます。 `-d` オプションはディレクトリ専用です。Fishの歴史の中で、`[ ]`や`[[ ]]`の代わりに`test`が好まれるようになりました。これは、`test`が組み込みコマンドとして提供されており、POSIX準拠であるためです。また、`and` や `or` を使って複雑な条件を構成することも可能です。他に `stat` コマンドを用いても同様のチェックを行うことができますが、`test`の方が一般的にはシンプルで広く使われています。
-
-## See Also (関連情報)
-- [Fish Shellのドキュメント](https://fishshell.com/docs/current/index.html)
-- [POSIX test コマンド](https://pubs.opengroup.org/onlinepubs/009695399/utilities/test.html)
-- [Filesystem Hierarchy Standard](https://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard)
+この`fd`の例では、指定した深さでディレクトリを検索し、`grep`が一致をチェックします。これは洗練されたチェックに対して多用途です。しかし、存在を直接確認する目的には、Fishのビルトイン`test`を使うことが、効率的で明快です。

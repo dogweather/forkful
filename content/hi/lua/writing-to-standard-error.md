@@ -1,34 +1,52 @@
 ---
-title:                "मानक त्रुटि में लिखना"
-date:                  2024-01-19
-simple_title:         "मानक त्रुटि में लिखना"
-
+title:                "मानक त्रुटि के लिए लिखना"
+date:                  2024-02-03T19:34:26.814324-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "मानक त्रुटि के लिए लिखना"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/lua/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (क्या और क्यों?)
-Standard error (stderr) एक output stream होता है जो errors और diagnostic messages को display करता है. Programmers इसका इस्तेमाल करते हैं ताकि वे errors को user को सही ढंग से दिखा सकें और log files को clean रख सकें.
+## क्या और क्यों?
+मानक त्रुटि (stderr) में लिखना त्रुटि संदेशों और नैदानिक आउटपुटों को मानक आउटपुट (stdout) से अलग, एक पृथक चैनल में निर्देशित करने के बारे में है। प्रोग्रामर इसे त्रुटि जानकारी से नियमित प्रोग्राम परिणामों को अलग करने, डिबगिंग और लॉगिंग प्रक्रियाओं को स्ट्रीमलाइन करने के लिए करते हैं।
 
-## How to: (कैसे करें:)
-```Lua
--- Lua में standard error में लिखने का बेसिक उदाहरण
-io.stderr:write("यह एक error message है.\n")
+## कैसे करें:
+Lua में, stderr पर लिखना `io.stderr:write()` फ़ंक्शन का उपयोग करके हासिल किया जा सकता है। यहाँ आप मानक त्रुटि पर एक सरल त्रुटि संदेश कैसे लिख सकते हैं:
 
--- प्रोग्राम को एक error के साथ terminate करना
-os.exit(1)
+```lua
+io.stderr:write("Error: Invalid input.\n")
 ```
 
-Sample Output:
-```
-यह एक error message है.
+यदि आपको एक चर या कई डेटा टुकड़ों को आउटपुट करने की आवश्यकता है, तो उन्हें लिखने के फ़ंक्शन के भीतर जोड़ें:
+
+```lua
+local errorMessage = "Invalid input."
+io.stderr:write("Error: " .. errorMessage .. "\n")
 ```
 
-## Deep Dive (गहराई में जानकारी)
-Lua में, `io.stderr` का इस्तेमाल कर standard error stream में लिखा जा सकता है. यह परंपरा UNIX systems से आई है जहां stdout (standard output), stderr (standard error), और stdin (standard input) मुख्य communication channels हैं. Alternatives में error handling libraries और logging frameworks शामिल हैं, जो advanced features प्रदान करते हैं. Implementing writing to stderr बहुत straightforward है और Lua runtime द्वारा manage किया जाता है.
+**stderr पर नमूना आउटपुट:**
+```
+Error: Invalid input.
+```
 
-## See Also (और जानकारी के लिए)
-- [Lua 5.4 Reference Manual](https://www.lua.org/manual/5.4/)
-- [Programming in Lua (first edition)](https://www.lua.org/pil/contents.html)
+अधिक जटिल परिदृश्यों के लिए, या बड़े अनुप्रयोगों के साथ काम करते समय, आप LuaLogging जैसी तृतीय-पक्ष लॉगिंग लाइब्रेरियों पर विचार कर सकते हैं। LuaLogging के साथ, आप विभिन्न गंतव्यों, सहित stderr पर लॉग्स को निर्देशित कर सकते हैं। यहाँ एक संक्षिप्त उदाहरण है:
+
+सबसे पहले, LuaRocks का उपयोग करके LuaLogging इंस्टॉल करना सुनिश्चित करें:
+
+```
+luarocks install lualogging
+```
+
+फिर, LuaLogging का उपयोग करके stderr पर एक त्रुटि संदेश लिखने के लिए:
+
+```lua
+local logging = require("logging")
+local logger = logging.stderr()
+logger:error("Error: Invalid input.")
+```
+
+इस दृष्टिकोण में आपके अप्लिकेशन में मानकीकृत लॉगिंग का लाभ है, साथ ही एक सरल API के माध्यम से लॉग स्तरों (जैसे ERROR, WARN, INFO) को सेट करने की अतिरिक्त लचीलापन के साथ।

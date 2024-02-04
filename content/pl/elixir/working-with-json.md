@@ -1,53 +1,67 @@
 ---
 title:                "Praca z JSON"
-date:                  2024-01-19
+date:                  2024-02-03T19:22:08.876975-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Praca z JSON"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/elixir/working-with-json.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Co i dlaczego?
-Praca z JSON polega na przetwarzaniu struktur danych w formacie JSON, czyli lekkim formacie wymiany danych. Programiści robią to, żeby łatwiej komunikować się z API i wymieniać dane między różnymi systemami oraz językami programowania.
+
+Praca z JSON polega na parsowaniu ciągów znaków w formacie JSON na struktury danych, które Elixir może manipulować, oraz na serializacji struktur danych Elixir z powrotem na ciągi znaków JSON. Jest to niezbędne do rozwoju stron internetowych, API i plików konfiguracyjnych, ponieważ JSON jest lekkim, tekstowym, niezależnym od języka formatem wymiany danych, szeroko stosowanym ze względu na swoją prostotę i czytelność dla człowieka.
 
 ## Jak to zrobić:
-Do obsługi JSON w Elixir używamy bibliotek, takich jak Jason. Poniżej przykład instalacji i użycia Jason:
+
+W Elixirze możesz użyć biblioteki `Jason`, popularnego wyboru do parsowania i generowania JSON. Najpierw dodaj `Jason` do zależności Twojego projektu w `mix.exs`:
 
 ```elixir
-# Dodaj Jason do twojego mix.exs
 defp deps do
   [
-    {:jason, "~> 1.2"}
+    {:jason, "~> 1.3"}
   ]
 end
-
-# Użycie Jason do kodowania i dekodowania JSON
-defmodule JSONExample do
-  def encode_to_json do
-    data = %{name: "Alicja", age: 30}
-    Jason.encode!(data)
-  end
-
-  def decode_from_json do
-    json = ~S({"name": "Alicja", "age": 30})
-    Jason.decode!(json)
-  end
-end
-
-# Wypróbuj w iex:
-iex> JSONExample.encode_to_json()
-"{\"name\":\"Alicja\",\"age\":30}"
-iex> JSONExample.decode_from_json()
-%{"age" => 30, "name" => "Alicja"}
 ```
 
-## Deep Dive:
-Praca z JSON w Elixirze sięga czasów, gdy pierwsze wersje języka oferowały proste mechanizmy przetwarzania tekstów. Biblioteki takie jak Poison były powszechnie używane przed pojawieniem się Jason, który stał się standardem ze względu na swoją wydajność. Alternatywy dla Jason to m.in. Poison i JSX, ale Jason jest zalecany przez twórców Phoenix, popularnego frameworka Elixir. Implementacja Jason jest oparta na szybkim dekodowaniu i kodowaniu, minimalizując narzut pamięci.
+Następnie uruchom `mix deps.get`, aby pobrać zależność.
 
-## Zobacz również:
-- Oficjalna dokumentacja Jason: https://hexdocs.pm/jason/readme.html
-- Elixir School - Lekcje o JSON z Elixir: https://elixirschool.com/pl/lessons/serializations/json
-- Poison - alternatywna biblioteka JSON dla Elixir: https://hexdocs.pm/poison/Poison.html
-- Phoenix Framework - Użycie JSON w Phoenix: https://www.phoenixframework.org
+### Parsowanie JSON:
+Aby przekonwertować ciąg znaków JSON na struktury danych Elixir:
+
+```elixir
+json_string = "{\"name\":\"John\", \"age\":30}"
+{:ok, person} = Jason.decode(json_string)
+IO.inspect(person)
+# Wynik: %{"name" => "John", "age" => 30}
+```
+
+### Generowanie JSON:
+Aby przekonwertować mapę Elixir na ciąg znaków JSON:
+
+```elixir
+person_map = %{"name" => "Jane", "age" => 25}
+{:ok, json_string} = Jason.encode(person_map)
+IO.puts(json_string)
+# Wynik: {"age":25,"name":"Jane"}
+```
+
+### Praca ze strukturami:
+Aby zakodować strukturę Elixir, musisz zaimplementować protokół `Jason.Encoder` dla swojej struktury. Oto przykład:
+
+```elixir
+defmodule Person do
+  @derive {Jason.Encoder, only: [:name, :age]}
+  defstruct name: nil, age: nil
+end
+
+person_struct = %Person{name: "Mike", age: 28}
+{:ok, json_string} = Jason.encode(person_struct)
+IO.puts(json_string)
+# Wynik: {"age":28,"name":"Mike"}
+```
+
+To proste podejście pozwoli Ci zacząć integrować przetwarzanie JSON do Twoich aplikacji Elixir, ułatwiając wymianę danych w różnych środowiskach programistycznych.

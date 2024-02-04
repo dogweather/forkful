@@ -1,66 +1,89 @@
 ---
 title:                "כתיבת בדיקות"
-date:                  2024-01-19
+date:                  2024-02-03T19:32:40.812179-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "כתיבת בדיקות"
-
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/ruby/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## מה ולמה?
-כתיבת בדיקות היא תהליך שבו מתכנתים בודקים את הקוד שלהם כדי לוודא שהוא פועל כראוי. הם עושים זאת כדי לתפוס באגים מוקדם, למנוע שגיאות עתידיות, ולשפר את איכות הקוד.
+בדיקות ברובי מתייחסות לאימות שהקוד שלך מתנהג כצפוי תחת תנאים שונים. תכנתים כותבים בדיקות כדי להבטיח נכונות, למנוע רגרסיות ולהקל על שיפוצים, שואפים ליצירת יישומים חזקים וקלים לתחזוקה.
 
-## איך לעשות:
-רובי מספקת מספר ספריות לבדיקת קוד. אהובה במיוחד היא RSpec. קודם כל, התקינו את RSpec:
+## כיצד:
+רובי מגיעה עם ספרייה מובנית בשם `Test::Unit` לכתיבת בדיקות יחידה, המכסה תרגולי בדיקה במבנים פשוטים. עם זאת, קהילת רובי לעיתים קרובות נוטה לספריות צד שלישי כמו RSpec ו-Minitest בשל הביטוייות והגמישות המוגברות שלהן.
 
-```Ruby
-gem install rspec
+### שימוש ב-`Test::Unit`:
+```ruby
+require 'test/unit'
+
+class CalculatorTest < Test::Unit::TestCase
+  def test_addition
+    result = 2 + 2
+    assert_equal 4, result
+  end
+end
+```
+הרץ את קובץ הבדיקה מהטרמינל, ואתה אמור לקבל פלט המציין הצלחה או כישלון של הבדיקות:
+```
+Loaded suite test_calculator
+Started
+.
+Finished in 0.001288 seconds.
+1 tests, 1 assertions, 0 failures, 0 errors, 0 pendings, 0 omissions, 0 notifications
+100% passed
 ```
 
-לאחר מכן, צרו קובץ בדיקה:
+### שימוש ב-RSpec:
+RSpec הוא פריימוורק פופולרי ל-BDD (Behavior-Driven Development) עבור רובי. התקן את ה-gem עם `gem install rspec`, אז אתחל אותו בפרויקט שלך עם `rspec --init`.
 
-```Ruby
+```ruby
 # calculator_spec.rb
-require 'rspec'
-require_relative 'calculator'
+require_relative '../calculator'
 
 describe Calculator do
-  it "adds two numbers correctly" do
-    expect(Calculator.add(5, 3)).to eq(8)
+  it 'מוסיף בצורה נכונה שני מספרים' do
+    expect(Calculator.add(2, 2)).to eq(4)
   end
 end
 ```
-
-וקובץ המחלקה:
-
-```Ruby
-# calculator.rb
-class Calculator
-  def self.add(a, b)
-    a + b
-  end
-end
-```
-
-הפעלת הבדיקות:
-
-```bash
-rspec calculator_spec.rb
-```
-
-פלט לדוגמא:
-
+הרץ בדיקות עם הפקודה `rspec`. דוגמה לפלט:
 ```
 .
 
-Finished in 0.00276 seconds (files took 0.10107 seconds to load)
+Finished in 0.002 seconds (files took 0.1 seconds to load)
 1 example, 0 failures
 ```
 
-## עיון מעמיק
-בדיקת קוד התחילה בשנות ה-70 כדי לתת מענה לצורך של התעשייה באיכות קוד גבוהה. היום, ישנם מגוון גישות וכלים לבדיקת קוד, כגון מיני-טסט (Minitest), קפיבארה (Capybara) לבדיקות פונקציונליות, ו- Cucumber לבדיקת תכונה. יש להבדיל בין בדיקות יחידה, אשר בודקות חלקים קטנים של הקוד, לבין בדיקות אינטגרציה הבודקות תהליכים מלאים או יישומים.
+### שימוש ב-Minitest:
+Minitest מספקת מערכת בדיקות מלאה שתומכת ב-TDD, BDD, מזיוף ובנצ'מרקינג. התקן אותה עם `gem install minitest` והשתמש כך:
 
-## ראו גם:
-- [Minitest Documentation](http://docs.seattlerb.org/minitest/)
+```ruby
+# test_calculator.rb
+require 'minitest/autorun'
+require_relative '../calculator'
+
+class CalculatorTest < Minitest::Test
+  def test_addition
+    assert_equal 4, Calculator.add(2, 2)
+  end
+end
+```
+
+הרץ את קובץ הבדיקה ישירות או דרך משימת ה-`rake` שהוגדרה עבור minitest. דוגמה לפלט:
+```
+Run options: --seed 33407
+
+# Running:
+
+.
+
+Finished in 0.001027s, 974.5922 runs/s, 974.5922 assertions/s.
+1 runs, 1 assertions, 0 failures, 0 errors, 0 skips
+```
+
+על ידי יישום בדיקות בפרויקטים של רובי שלך באמצעות ספריות אלו, אתה מקפיד על התרגולים הטובים ביותר, מה שמוביל לבסיסי קוד יותר אמינים ונתמכים.

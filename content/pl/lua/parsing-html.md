@@ -1,57 +1,67 @@
 ---
-title:                "Przetwarzanie HTML"
-date:                  2024-01-20T15:33:01.254344-07:00
-simple_title:         "Przetwarzanie HTML"
-
+title:                "Analiza składniowa HTML"
+date:                  2024-02-03T19:12:46.917383-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Analiza składniowa HTML"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/lua/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Co i dlaczego?
-Parsing HTML to proces ekstrahowania danych z dokumentów HTML. Programiści to robią, aby uzyskać dostęp do treści i struktury stron internetowych, które zwykle są wyświetlane w przeglądarkach.
+Przetwarzanie HTML polega na wydobywaniu danych i informacji z dokumentów HTML, co jest kluczowe dla takich zadań jak scraping internetowy, analiza danych oraz automatyzacja. Programiści wykonują to w celu zbierania, analizowania lub manipulowania zawartością sieciową programowo, umożliwiając automatyzację tego, co w przeciwnym razie byłoby ręcznym wydobyciem danych ze stron internetowych.
 
 ## Jak to zrobić:
-Świetnym narzędziem do parsowania HTML w Lua jest biblioteka `lua-htmlparser`. Zaczynamy od jej instalacji:
+Lua nie posiada wbudowanej biblioteki do przetwarzania HTML, ale można wykorzystać biblioteki stron trzecich takie jak `LuaHTML` lub korzystać z powiązań z `libxml2` przez `LuaXML`. Popularnym podejściem jest użycie biblioteki `lua-gumbo` do przetwarzania HTML, która zapewnia proste w użyciu, zgodne z HTML5 możliwości przetwarzania.
 
-```Lua
-luarocks install lua-htmlparser
+### Instalacja lua-gumbo:
+Najpierw upewnij się, że `lua-gumbo` jest zainstalowane. Zazwyczaj można je zainstalować za pomocą luarocks:
+
+```sh
+luarocks install lua-gumbo
 ```
 
-Następnie, możesz użyć poniższego kodu, aby wyodrębnić elementy z przykładowego HTML:
+### Podstawowe przetwarzanie z lua-gumbo:
+Oto jak możesz przetworzyć prosty fragment HTML i wydobyć z niego dane za pomocą `lua-gumbo`:
 
-```Lua
-local HtmlParser = require "htmlparser"
+```lua
+local gumbo = require "gumbo"
+local document = gumbo.parse([[<html><body><p>Witaj, świecie!</p></body></html>]]
 
-local html = [[
-<!DOCTYPE html>
+local p = document:getElementsByTagName("p")[1]
+print(p.textContent)  -- Wyjście: Witaj, świecie!
+```
+
+### Zaawansowany przykład - wydobycie linków:
+Aby wydobyć atrybuty `href` ze wszystkich znaczników kotwicy (`<a>`) w dokumencie HTML:
+
+```lua
+local gumbo = require "gumbo"
+local document = gumbo.parse([[
 <html>
-<head>
-    <title>Nasz przykładowy tytuł</title>
-</head>
+<head><title>Przykładowa strona</title></head>
 <body>
-    <h1>Witaj świecie!</h1>
-    <p>To jest przykładowy akapit.</p>
+  <a href="http://przyklad.com/1">Link 1</a>
+  <a href="http://przyklad.com/2">Link 2</a>
+  <a href="http://przyklad.com/3">Link 3</a>
 </body>
 </html>
-]]
+]])
 
-local parser = HtmlParser.parse(html)
-local body = parser:select('body')[1]
-print(body:getcontent())
+for _, element in ipairs(document.links) do
+    if element.getAttribute then  -- Upewnij się, że to Element i ma atrybuty
+        local href = element:getAttribute("href")
+        if href then print(href) end
+    end
+end
+
+-- Przykładowe wyjście:
+-- http://przyklad.com/1
+-- http://przyklad.com/2
+-- http://przyklad.com/3
 ```
 
-Wyjście będzie wyglądać tak:
-```
-    <h1>Witaj świecie!</h1>
-    <p>To jest przykładowy akapit.</p>
-```
-
-## Deep Dive
-Parsowanie HTML jest starym problemem - od kiedy tylko strony internetowe stały się popularne. W Lua, używamy bibliotek jak `lua-htmlparser`, dlatego że sam język nie ma wbudowanego wsparcia dla tej funkcjonalności. Alternatywy to użycie wyrażeń regularnych (ale to złe praktyki) lub narzędzia w stylu `luasoup`, które przenosi wygodę BeautifulSoup z Pythona. Implementacja parsowania polega na przechodzeniu przez drzewo DOM dokumentu HTML i wyodrębnianiu interesujących nas informacji.
-
-## Zobacz też
-- [lua-htmlparser na GitHubie](https://github.com/msva/lua-htmlparser)
-- [Dokumentacja Lua](https://www.lua.org/docs.html)
-- [Beautiful Soup, inspiracja dla luasoup](https://www.crummy.com/software/BeautifulSoup/)
+Ten fragment kodu iteruje przez wszystkie linki w dokumencie i wyświetla ich atrybuty `href`. Możliwość przetwarzania przez bibliotekę `lua-gumbo` i zrozumienie struktury dokumentu HTML upraszcza proces wydobywania konkretnych elementów na podstawie ich znaczników lub atrybutów.

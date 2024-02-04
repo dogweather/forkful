@@ -1,41 +1,118 @@
 ---
-title:                "处理JSON数据"
-date:                  2024-01-19
-simple_title:         "处理JSON数据"
-
+title:                "使用JSON进行编程"
+date:                  2024-02-03T19:22:08.654248-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "使用JSON进行编程"
 tag:                  "Data Formats and Serialization"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/c-sharp/working-with-json.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (什么是JSON以及为什么使用)
-JSON，即JavaScript对象表示法，是轻量级的数据交换格式。程序员用JSON来传输和存储数据，简单，易读写，易于转换成代码对象。
+## 什么 & 为什么？
 
-## How to: (如何操作)
-你可以使用`System.Text.Json`处理JSON。先添加：
+使用 JSON (JavaScript 对象表示法) 包括解析、生成和查询 JSON 数据，这是现代编程的一项关键技能。这种数据交换格式在 Web 服务和 API 中的使用极为广泛，因为它易于阅读且与语言无关，这使得它对于处理网络应用或与基于 Web 的数据交互的 C# 程序员来说至关重要。
+
+## 如何操作：
+
+### 将 JSON 字符串解析为对象
+
+C# 提供了 `System.Text.Json` 命名空间来高效处理 JSON。要将 JSON 字符串解析为 C# 对象，定义一个与 JSON 结构匹配的类并使用 `JsonSerializer.Deserialize` 方法。
+
 ```csharp
+using System;
 using System.Text.Json;
-```
-要序列化对象，写：
-```csharp
-var player = new { Name = "Alice", Score = 100 };
-string json = JsonSerializer.Serialize(player);
-Console.WriteLine(json);
-// 输出: {"Name":"Alice","Score":100}
-```
-反序列化JSON，这样：
-```csharp
-var json = "{\"Name\":\"Alice\",\"Score\":100}";
-var player = JsonSerializer.Deserialize<dynamic>(json);
-Console.WriteLine(player.Name); // 输出: Alice
+
+public class Person
+{
+    public string Name { get; set; }
+    public int Age { get; set; }
+}
+
+public class Program
+{
+    public static void Main()
+    {
+        string jsonString = "{\"Name\":\"John\", \"Age\":30}";
+        Person person = JsonSerializer.Deserialize<Person>(jsonString);
+
+        Console.WriteLine($"Name: {person.Name}, Age: {person.Age}");
+        // 输出：Name: John, Age: 30
+    }
+}
 ```
 
-## Deep Dive (深入探讨)
-JSON自2001年诞生，已成为XML的现代替代品。`.NET`之前主要用`Newtonsoft.Json`，即Json.NET。`System.Text.Json`是.NET Core 3.0后的新选项，性能更好，内存使用更低。深入了解时，考虑性能、扩展性和安全性。
+### 从对象生成 JSON
 
-## See Also (另请参阅)
-- 官方`System.Text.Json`文档：[docs.microsoft.com](https://docs.microsoft.com/zh-cn/dotnet/standard/serialization/system-text-json-overview)
-- JSON介绍及其语法：[json.org/json-zh.html](http://json.org/json-zh.html)
-- Json.NET官方网站：[newtonsoft.com/json](https://www.newtonsoft.com/json)
+要将 C# 对象转换回 JSON 字符串，请使用 `JsonSerializer.Serialize` 方法。
+
+```csharp
+using System;
+using System.Text.Json;
+
+public class Program
+{
+    public static void Main()
+    {
+        Person person = new Person
+        {
+            Name = "Jane",
+            Age = 25
+        };
+
+        string jsonString = JsonSerializer.Serialize(person);
+        Console.WriteLine(jsonString);
+        // 输出：{"Name":"Jane","Age":25}
+    }
+}
+```
+
+### 使用 Newtonsoft.Json
+
+`Newtonsoft.Json`（或 Json.NET）是一个流行的第三方库，为 JSON 的序列化和反序列化提供了更多的灵活性和选项。
+
+要使用 Json.NET，首先必须通过 NuGet 安装 `Newtonsoft.Json` 包。然后，您可以这样反序列化 JSON 字符串：
+
+```csharp
+using System;
+using Newtonsoft.Json;
+
+public class Program
+{
+    public static void Main()
+    {
+        string jsonString = "{\"Name\":\"Mike\", \"Age\":22}";
+        Person person = JsonConvert.DeserializeObject<Person>(jsonString);
+
+        Console.WriteLine($"Name: {person.Name}, Age: {person.Age}");
+        // 输出：Name: Mike, Age: 22
+    }
+}
+```
+
+使用 Json.NET 从对象生成 JSON：
+
+```csharp
+using System;
+using Newtonsoft.Json;
+
+public class Program
+{
+    public static void Main()
+    {
+        Person person = new Person
+        {
+            Name = "Ella",
+            Age = 28
+        };
+
+        string jsonString = JsonConvert.SerializeObject(person);
+        Console.WriteLine(jsonString);
+        // 输出：{"Name":"Ella","Age":28}
+    }
+}
+```
+
+这些代码片段为 C# 中的 JSON 处理提供了一个快速入门，演示了内置的 `System.Text.Json` 功能和 `Newtonsoft.Json` 的广泛功能。

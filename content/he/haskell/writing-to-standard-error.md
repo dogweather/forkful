@@ -1,36 +1,51 @@
 ---
-title:                "כתיבה לפלט השגיאה הסטנדרטי"
-date:                  2024-01-19
-simple_title:         "כתיבה לפלט השגיאה הסטנדרטי"
-
+title:                "כתיבה לשגיאה התקנית"
+date:                  2024-02-03T19:33:46.605846-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "כתיבה לשגיאה התקנית"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/haskell/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## מה ולמה?
-כתיבה לשגיאה סטנדרטית (standard error) משמשת לדיווח על בעיות ושגיאות במהלך ריצת התכנית. תוכניתיים משתמשים בה כדי להפריד בין הפלט הרגיל לבין הודעות על שגיאות, מה שמאפשר איתור בעיות יותר קל בזמן דיבאג או כאשר התוכנה כבר בשימוש.
+כתיבה לשגיאת סטנדרט (stderr) בהאסקל מאפשרת לתכניות להבדיל בין התוצאות הרגילות לבין הודעות השגיאה. זה קריטי לצורך איתות בעיות וניפוי שגיאות, ללא שיבוש הפלט הסטנדרטי (stdout) שלעיתים נושא את נתוני התוכנית העיקריים או התוצאה.
 
 ## איך לעשות:
-Haskell משתמש בפונקציות בסיסיות לכתיבת פלט לשגיאה סטנדרטית. דוגמה:
+בהאסקל, כתיבה ל-stderr היא פשוטה באמצעות מודול `System.IO` של הספרייה הבסיסית. להלן דוגמה בסיסית להדגמה:
 
-```Haskell
+```haskell
 import System.IO
 
 main :: IO ()
 main = do
-    hPutStrLn stderr "משהו השתבש!"
-```
-פלט דוגמה:
-```
-משהו השתבש!
+  hPutStrLn stderr "This is an error message."
 ```
 
-## צלילה עמוקה:
-בעבר, כתיבה לשגיאה סטנדרטית הייתה מורכבת יותר ודרשה ידע של ניהול זרמים במערכת ההפעלה. ב-Haskell, `stderr` זהו Handle (מזהה זרם) מובנה המייצג את השגיאה הסטנדרטית. חלופות נפוצות הן כתיבה לקובץ לוג או שימוש במנגנונים מורכבים יותר כמו מונדות לניהול רשומות שגיאה. פנימית, `stderr` ב-Haskell משתמשת ב-APIs של מערכת ההפעלה התחתונה, כך שכתיבה לשגיאה סטנדרטית תתנהג באופן שונה בהתאם לפלטפורמה.
+פלט התכנית הזו ל-stderr יהיה:
 
-## ראה גם:
-- [Haskell System.IO documentation](https://hackage.haskell.org/package/base-4.16.0.0/docs/System-IO.html): מידע על הפונקציות והטיפוסים שעוסקים בקלט/פלט ב-Haskell.
-- [The Haskell Programming Language book](http://book.realworldhaskell.org/): ספר שמסביר את יסודות השפה, כולל נושאים של קלט/פלט.
-- [Haskell Wiki on IO](https://wiki.haskell.org/IO_inside): הסברים נוספים על תוכנות קלט/פלט ב-Haskell, שבהן השתמשנו בדוגמה.
+```
+This is an error message.
+```
+
+אם אתה עובד ביישום מורכב יותר, או שאתה זקוק לשליטה טובה יותר על רישום הלוגים (כולל השגיאות), ייתכן שתבחר בספרייה מצד שלישי. בחירה פופולרית היא `monad-logger` שמשתלבת עם סגנון התכנות של `mtl` בהאסקל. הנה קטע קטן באמצעות `monad-logger`:
+
+```haskell
+{-# LANGUAGE OverloadedStrings #-}
+import Control.Monad.Logger
+
+main :: IO ()
+main = runStderrLoggingT $ do
+  logErrorN "This is an error message using monad-logger."
+```
+
+כאשר מריצים, גרסת ה-`monad-logger` מוציאה באופן דומה הודעת שגיאה, אך היא מצוידת ביותר הקשר כמו חותמות זמן או רמות לוג, בהתאם לתצורה:
+
+```
+[Error] This is an error message using monad-logger.
+```
+
+שני השיטות משרתות את המטרה של כתיבה ל-stderr, כאשר הבחירה תלויה ברובה במורכבות ובצרכים של היישום שלך.

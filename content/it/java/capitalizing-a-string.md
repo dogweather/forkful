@@ -1,40 +1,67 @@
 ---
-title:                "Maiuscolizzare una stringa"
-date:                  2024-01-19
-simple_title:         "Maiuscolizzare una stringa"
-
+title:                "Capitalizzare una stringa"
+date:                  2024-02-03T19:05:41.241533-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Capitalizzare una stringa"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/java/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Capitalizzare una stringa significa trasformare tutte le lettere in maiuscole. Lo facciamo per uniformità nei testi, per enfatizzare o per rispettare certi standard (es. codici).
+## Cosa & Perché?
+Capitalizzare una stringa implica modificare la prima lettera di ogni parola nella stringa in maiuscolo, assicurandosi che il resto rimanga in minuscolo. Questo compito comune di manipolazione delle stringhe è utile per formattare il testo nelle applicazioni, come preparare nomi utente o titoli per la visualizzazione secondo convenzioni o correttezza grammaticale.
 
-## How to:
-Ecco come farlo in Java:
+## Come fare:
+La libreria standard di Java non fornisce un metodo diretto per capitalizzare intere stringhe in un'unica soluzione, ma è possibile ottenere questo risultato combinando metodi integrati. Per esigenze più sofisticate, librerie di terze parti come Apache Commons Lang offrono soluzioni semplici.
+
+### Utilizzando i Metodi Integrati di Java
+Per capitalizzare una stringa senza librerie esterne, è possibile dividere la stringa in parole, capitalizzare la prima lettera di ciascuna e poi unirle nuovamente. Ecco un approccio semplice:
 
 ```java
-public class Capitalizer {
+public class CapitalizeString {
     public static void main(String[] args) {
-        String myString = "ciao mondo!";
-        String capitalizedString = myString.toUpperCase();
-        System.out.println(capitalizedString); // Output: CIAO MONDO!
+        String text = "ciao, mondo!";
+        String capitalizedText = capitalizeWords(text);
+        System.out.println(capitalizedText); // Outputs: "Ciao, Mondo!"
+    }
+
+    public static String capitalizeWords(String str) {
+        char[] chars = str.toLowerCase().toCharArray();
+        boolean trovato = false;
+        for (int i = 0; i < chars.length; i++) {
+            if (!trovato && Character.isLetter(chars[i])) {
+                chars[i] = Character.toUpperCase(chars[i]);
+                trovato = true;
+            } else if (Character.isWhitespace(chars[i]) || chars[i]=='.' || chars[i]=='\'') { 
+                trovato = false;
+            }
+        }
+        return String.valueOf(chars);
     }
 }
 ```
 
-Facile, no?
+Questo frammento di codice converte l'intera stringa in minuscolo, quindi itera attraverso ogni carattere, capitalizzando la prima lettera di ogni parola. Considera spazi, punti e apostrofi come separatori di parole.
 
-## Deep Dive
-La capitalizzazione delle stringhe esiste da quando abbiamo avuto bisogno di standardizzare dati per confronti o visualizzazioni. In Java, il metodo `toUpperCase()` è disponibile fin dalla versione 1.0, semplice e diretto. Ma attenzione: bisogna gestire la localizzazione, perché alcuni caratteri cambiano in maiuscolo in modo diverso a seconda della lingua. Alternativa? Apache Commons Lang e la classe `StringUtils` con metodi come `capitalize()` o `upperCase()` che considerano già questi aspetti.
+### Utilizzando Apache Commons Lang
 
-Implementazione:
-- `toUpperCase()` utilizza la classe `Character` per convertire ogni carattere.
-- Locale-sensitive: `toUpperCase(Locale locale)` per rispettare regole linguistiche specifiche.
+La libreria Apache Commons Lang fornisce una soluzione più elegante con il metodo `WordUtils.capitalizeFully()`, che gestisce vari casi limite e delimitatori per te:
 
-## See Also:
-- [String documentation](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html)
-- [Apache Commons Lang – StringUtils](https://commons.apache.org/proper/commons-lang/apidocs/org/apache/commons/lang3/StringUtils.html)
-- [Locale Class in Java](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Locale.html)
+```java
+// Aggiungi dipendenza: org.apache.commons:commons-lang3:3.12.0
+
+import org.apache.commons.text.WordUtils;
+
+public class CapitalizeString {
+    public static void main(String[] args) {
+        String text = "ciao, mondo!";
+        String capitalizedText = WordUtils.capitalizeFully(text);
+        System.out.println(capitalizedText); // Outputs: "Ciao, Mondo!"
+    }
+}
+```
+
+Per utilizzare questo metodo, sarà necessario aggiungere la libreria Apache Commons Lang al proprio progetto. Questo metodo della libreria non solo capitalizza la prima lettera di ogni parola, ma converte anche il resto delle lettere di ogni parola in minuscolo, garantendo un modello di capitalizzazione coerente in tutta la stringa.

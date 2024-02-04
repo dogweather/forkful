@@ -1,50 +1,55 @@
 ---
 title:                "写入标准错误"
-date:                  2024-01-19
+date:                  2024-02-03T19:33:15.512845-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "写入标准错误"
-
 tag:                  "Files and I/O"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/elm/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (是什么？为什么？)
-写入标准错误（stderr）是输出警告或错误消息的方式，不会干扰正常输出（stdout）。这样，开发者能清晰地分辨程序输出的不同类型信息，方便调试和日志记录。
+## 什么以及为什么？
 
-## How to: (如何操作：)
-Elm 目前没有内建的写入标准错误的功能。但是，你可以用 Ports 和 JavaScript 交互来实现。下面是个例子：
+将错误信息和诊断输出到标准错误（stderr）是指将这些信息从主程序输出（标准输出，stdout）中分离出来的一种做法。程序员这样做是为了使错误处理和日志记录更加易于管理，尤其是在输出区分对于调试和监控至关重要的环境中。
 
-```Elm
-port module Main exposing (..)
+## 如何操作：
 
--- 定义一个 Port 来发送错误信息
-port stderr : String -> Cmd msg
+Elm 主要针对的是 web 开发，在这个领域中，直接写入 stderr 的概念并不像在传统命令行环境中那样适用。然而，对于在 Node.js 或类似环境中运行的 Elm 程序来说，使用端口与 JavaScript 互操作是实现类似功能的关键方法。以下是你可能会设置的方式：
 
--- 触发一个错误消息
-sendError : String -> Cmd msg
-sendError message =
-  stderr message
+Elm 代码（`Main.elm`）:
+```elm
+port module Main exposing (main)
+
+import Browser
+
+port errorOut : String -> Cmd msg
+
+-- 向 JS 发送错误信息的示例函数
+generateError : String -> Cmd msg
+generateError message =
+    errorOut message
+
+main =
+    generateError "This is an error message for stderr"
 ```
 
-在 JavaScript 中接收并处理：
+JavaScript 互操作（`index.js`）:
+```javascript
+const { Elm } = require('./Main.elm');
 
-```JavaScript
-app.ports.stderr.subscribe((message) => {
+var app = Elm.Main.init();
+
+app.ports.errorOut.subscribe((message) => {
   console.error(message);
 });
 ```
 
-现在 Elm 发送到 `stderr` 的任何消息都会在 JavaScript 控制台以错误形式显示。
+这段 Elm 代码定义了一个端口 `errorOut`，允许将消息从 Elm 发送到 JavaScript。然后在 JavaScript 代码中，我们监听通过此端口发送的消息，并使用 `console.error()` 将它们重定向到 stderr。通过这种方式，你可以有效地在支持的环境中写入 stderr，利用 Elm 与 JavaScript 的互操作功能。
 
-## Deep Dive (深入探讨)
-传统上，编程语言区分标准输出（stdout）和标准错误（stderr）来帮助开发者识别程序流程和问题。Elm 更注重前端开发，STDOUT/STDERR的概念在浏览器中并不常见。因此，Elm 中通常通过 Ports 来实现类似功能。
-
-备选方案包括自己实现简化的日志系统，或者使用第三方服务。在某些情况下，你也可以选择简单地抛出运行时错误来代替写入stderr。
-
-而实现这一功能的具体细节，主要涉及 Elm 和 JavaScript 之间的交互，以及浏览器的控制台 API。
-
-## See Also (另请参阅)
-- Elm 官方指南中的 Ports 说明：[官方Ports指南](https://guide.elm-lang.org/interop/ports.html)
-- JavaScript `console.error` 方法: [MDN console.error](https://developer.mozilla.org/en-US/docs/Web/API/Console/error)
+在 Node.js 终端中运行 `index.js` 时的示例输出：
+```
+This is an error message for stderr
+```

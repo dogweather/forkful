@@ -1,19 +1,29 @@
 ---
-title:                "עבודה עם קבצי CSV"
-date:                  2024-01-19
-simple_title:         "עבודה עם קבצי CSV"
-
+title:                "עובדים עם CSV"
+date:                  2024-02-03T19:20:34.231441-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "עובדים עם CSV"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/haskell/working-with-csv.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## מה ולמה?
-עבודה עם קבצי CSV (ערכים מופרדים בפסיקים) נעשית לצורך קריאה וכתיבה של נתונים בפורמט פשוט ונפוץ. תכנתים עושים זאת כדי לשתף נתונים עם מערכות אחרות בקלות ולעבד נתונים בצורה אוניברסלית.
+
+עבודה עם קבצי CSV (ערכים מופרדי פסיקים) כוללת ניתוח ויצירת קבצים אשר שומרים נתונים טבלאיים בפורמט טקסטואלי פשוט. תכנתים מתעסקים לעיתים קרובות במשימה זו כדי לייבא או לייצא נתונים ביעילות מגליונות אלקטרוניים, מסדי נתונים, או כדי לקדם החלפת נתונים בין תוכנות שונות.
 
 ## איך לעשות:
-בעבודה עם הספרייה `cassava`, תעזרו בפונקציות `encode` ו`decode` לעיבוד נתונים:
+
+בהסקל, טיפול בקבצי CSV ניתן להשגה באמצעות הספרייה `cassava`, אחת מהספריות הצד שלישי הפופולריות למטרה זו. להלן דוגמאות המדגימות איך לקרוא מקובץ CSV וכיצד לכתוב אליו באמצעות `cassava`.
+
+**1. קריאת קובץ CSV:**
+
+ראשית, וודאו ש-`cassava` מותקן על ידי הוספתו לקובץ ה-cabal של הפרויקט או שימוש ב-Stack.
+
+להלן דוגמה פשוטה לקרוא קובץ CSV ולהדפיס כל רשומה. אנו מניחים כי בקובץ ה-CSV יש שני עמודות: שם וגיל.
 
 ```haskell
 {-# LANGUAGE OverloadedStrings #-}
@@ -21,33 +31,46 @@ import Data.Csv
 import qualified Data.ByteString.Lazy as BL
 import qualified Data.Vector as V
 
--- טיפול בנתונים נכנסים
-decodeCSV :: BL.ByteString -> Either String (V.Vector (String, Int, String))
-decodeCSV input = decode NoHeader input
-
--- ייצור נתונים לקובץ CSV
-encodeCSV :: V.Vector (String, Int, String) -> BL.ByteString
-encodeCSV = encode
-
--- פלט לדוגמה:
--- נניח קובץ 'data.csv' עם התוכן הבא:
--- name,age,city
--- John,30,New York
--- Jane,25,Boston
-
--- השימוש בפונקציות
 main :: IO ()
 main = do
-  csvData <- BL.readFile "data.csv"
-  case decodeCSV csvData of
-    Left err -> putStrLn err
-    Right rows -> BL.writeFile "new_data.csv" $ encodeCSV rows
+    csvData <- BL.readFile "people.csv"
+    case decode NoHeader csvData of
+        Left err -> putStrLn err
+        Right v -> V.forM_ v $ \(name, age) ->
+            putStrLn $ name ++ " בן " ++ show (age :: Int) ++ " שנים."
 ```
 
-## עיון מעמיק:
-קבצי CSV נמצאים בשימוש מראשית המחשוב כמעט. נוחותם בגלל פשטותם וקלות הקריאה בעיני ראייה אנושית ובמערכת מחשב. ישנן חלופות רבות, כמו JSON או XML, אך לעיתים CSV הוא הבחירה מסיבות של תאימות או ביצועים. ב-Haskell, `cassava` היא הספרייה הנפוצה ביותר לעבודה עם CSV, מציעה פונקציונליות גמישה והמרה אוטומטית של טיפוסי נתונים.
+בהנחה ש-`people.csv` מכיל:
+```
+John,30
+Jane,25
+```
+הפלט יהיה:
+```
+John בן 30 שנים.
+Jane בת 25 שנים.
+```
 
-## ראה גם:
-- [Cassava on Hackage](https://hackage.haskell.org/package/cassava)
-- [Haskell CSV tutorial](https://www.stackbuilders.com/tutorials/haskell/csv-encoding-decoding/)
-- [More about CSV on Wikipedia](https://en.wikipedia.org/wiki/Comma-separated_values)
+**2. כתיבת קובץ CSV:**
+
+ליצירת קובץ CSV, ניתן להשתמש בפונקציה `encode` מ-`cassava`.
+
+הנה איך תוכלו לכתוב רשימת רשומות לקובץ CSV:
+
+```haskell
+{-# LANGUAGE OverloadedStrings #-}
+import Data.Csv
+import qualified Data.ByteString.Lazy as BL
+
+main :: IO ()
+main = BL.writeFile "output.csv" $ encode [("John", 30), ("Jane", 25)]
+```
+
+לאחר הרצת התוכנית הזו, `output.csv` יכיל:
+
+```
+John,30
+Jane,25
+```
+
+הקדמה מקוצרת זו לעבודה עם קבצי CSV בהסקל באמצעות הספרייה `cassava` מדגימה כיצד לקרוא מקבצי CSV ולכתוב אליהם, מה שהופך משימות של מניפולציה של נתונים לנגישות יותר למי שחדש לשפה.

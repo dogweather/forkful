@@ -1,45 +1,64 @@
 ---
-title:                "परीक्षण लिखना"
-date:                  2024-01-19
-simple_title:         "परीक्षण लिखना"
-
+title:                "टेस्ट लिखना"
+date:                  2024-02-03T19:33:09.676532-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "टेस्ट लिखना"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/swift/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (क्या और क्यों?)
-टेस्ट्स लिखने का मतलब है कोड के छोटे हिस्सों (यूनिट्स) की जाँच करना ताकि सुनिश्चित कर सकें कि वो सही ढंग से काम कर रहे हैं। प्रोग्रामर्स इसलिए टेस्ट्स लिखते हैं ताकि बग्स को पहले ही पकड़ सकें और बाद में कोड में बदलाव करते समय विश्वास के साथ कर सकें। 
+## क्या और क्यों?
+Swift में टेस्ट लिखना ऐसे कोड को बनाने और चलाने की प्रक्रिया है जो आपके एप्लिकेशन में अन्य कोड यूनिट्स की सहीता की पुष्टि करता है। प्रोग्रामर इसे विश्वसनीयता सुनिश्चित करने, विकास चक्र में जल्दी बग का पता लगाने, और भविष्य में कोड रीफॅक्टरिंग को बिना अनइच्छित परिणामों के सुविधाजनक बनाने के लिए करते हैं।
 
-## How to: (किस प्रकार:)
-Swift में टेस्ट केस लिखने के लिए XCTest फ्रेमवर्क का इस्तेमाल किया जाता है। पहले हम एक साधारण फंक्शन बनाएंगे, फिर उसके लिए टेस्ट केस।
+## कैसे करें:
+Swift, Xcode में एकीकृत XCTest फ्रेमवर्क के माध्यम से परीक्षण का समर्थन करता है। आप अपने कोड के व्यक्तिगत भागों की जांच के लिए यूनिट टेस्ट लिख सकते हैं, उदाहरण के लिए, दो संख्याओं का योग करने वाले एक फंक्शन का।
 
-```Swift
-// साधारण फंक्शन जो दो संख्याओं को जोड़ता है
-func addNumbers(num1: Int, num2: Int) -> Int {
-    return num1 + num2
-}
-
-// XCTest का इस्तेमाल करके टेस्ट केस लिखना
+```swift
 import XCTest
+@testable import YourApp
 
-class MathTests: XCTestCase {
-    func testAddNumbers() {
-        XCTAssertEqual(addNumbers(num1: 2, num2: 3), 5)
+class YourAppTests: XCTestCase {
+
+    func testSum() {
+        let result = Calculator().sum(a: 1, b: 2)
+        XCTAssertEqual(result, 3, "योग फंक्शन ने अपेक्षित मूल्य वापस नहीं किया।")
     }
 }
-
-// XCTest का उपयोग करके टेस्ट्स को रन करना और परिणाम देखना
-XCTMain([testCase(MathTests.allTests)])
 ```
 
-जब आप उपरोक्त टेस्ट को रन करेंगे, तो कंसोल आउटपुट पर आपको सफल परीक्षण का मैसेज मिलेगा।
+इस टेस्ट को चलाने के लिए, आप आमतौर पर Xcode में Command-U दबाएँगे। Xcode टेस्ट नेविगेटर में आउटपुट आपको बताएगा कि टेस्ट पास हुआ या फेल।
 
-## Deep Dive (गहन अध्ययन)
-टेस्टिंग की शुरुआत डेवलोपमेंट की प्रक्रिया के जितनी जल्दी हो सके उतनी जल्दी करना चाहिए (टेस्ट-ड्रिवेन डेवलपमेंट या TDD). XCTest के अलावा, कुछ अन्य फ्रेमवर्क जैसे Quick और Nimble भी हैं जो बीहेवियर-ड्रिवेन डेवलपमेंट (BDD) के लिए उपयोगी हैं। टेस्ट केस लिखने से ना केवल बग्स की पहचान होती है बल्कि कोड डिज़ाइन में भी सुधार होता है क्योंकि यह डेवलपर को रिफैक्टरिंग और मोड्यूलराइज़ेशन के लिए प्रोत्साहित करता है। 
+उदाहरण के लिए, एक सफल टेस्ट आउटपुट:
+```
+टेस्ट केस '-[YourAppTests testSum]' पास हुआ (0.005 सेकंड)।
+```
 
-## See Also (और भी देखें)
-- एप्पल का XCTest टेस्टिंग फ्रेमवर्क: [XCTest Documentation](https://developer.apple.com/documentation/xctest)
-- Swift के लिए पॉप्युलर BDD फ्रेम्वर्क Quick और Nimble: [Quick GitHub](https://github.com/Quick/Quick)
-- टेस्ट-ड्राइवन डेवलपमेंट (TDD) के बारे में ज्यादा जानकारी: [TDD Tutorial](https://www.raywenderlich.com/709-ios-unit-testing-and-ui-testing-tutorial)
+अधिक उन्नत परीक्षण परिदृश्यों के लिए, आप तीसरे पक्ष की लाइब्रेरीज जैसे कि Quick/Nimble का उपयोग कर सकते हैं, जो टेस्ट लिखने के लिए एक अधिक व्यक्तिगत सिंटैक्स प्रदान करती हैं।
+
+Quick/Nimble के साथ, आप इसी तरह का टेस्ट ऐसे लिख सकते हैं:
+
+```swift
+// अपने Swift पैकेज मैनेजर में Quick और Nimble जोड़ें या उन्हें इंस्टॉल करने के लिए CocoaPods/Carthage का उपयोग करें
+import Quick
+import Nimble
+@testable import YourApp
+
+class CalculatorSpec: QuickSpec {
+    override func spec() {
+        describe("Calculator") {
+            context("when summing numbers") {
+                it("should return the correct sum") {
+                    let calculator = Calculator()
+                    expect(calculator.sum(a: 1, b: 2)).to(equal(3))
+                }
+            }
+        }
+    }
+}
+```
+
+इस टेस्ट को चलाने पर आपके टेस्ट कंसोल या CI/CD टूल के लॉग में समान आउटपुट मिलेगा, जो इंगित करेगा कि टेस्ट सफल रहा या असफल, टेस्ट और अपेक्षाओं का विवरण देने के लिए एक अधिक पठनीय प्रारूप के साथ।

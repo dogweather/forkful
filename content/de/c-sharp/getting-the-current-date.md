@@ -1,46 +1,64 @@
 ---
-title:                "Aktuelles Datum abrufen"
-date:                  2024-01-20T15:13:45.866240-07:00
-simple_title:         "Aktuelles Datum abrufen"
-
+title:                "Den aktuellen Datum abrufen"
+date:                  2024-02-03T19:09:08.783435-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Den aktuellen Datum abrufen"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/c-sharp/getting-the-current-date.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Das Abrufen des aktuellen Datums ist eine Basics. Ob du nun einen Zeitstempel setzen, eine Zeitspanne berechnen oder den Nutzer wissen lassen willst, was heute für ein Tag ist – das Datum verrät es dir.
+Das Abrufen des aktuellen Datums in C# beinhaltet das Abrufen der aktuellen Datums- und Uhrzeitangaben vom System. Programmierer müssen oft auf diese Informationen zugreifen, um Vorgänge zu protokollieren, Aktionen zu zeitstempeln oder Aufgaben innerhalb von Anwendungen zu planen, um sicherzustellen, dass Handlungen genau getimt und Daten mit präzisen Zeitstempeln versehen werden.
 
-## How to:
-Um das aktuelle Datum in C# zu holen, nutzt du `DateTime.Now`. Hier ist der schnelle Weg:
+## Wie:
+C# bietet eine unkomplizierte Methode, um das aktuelle Datum mittels der `DateTime` Klasse zu erhalten, die Teil des System-Namensraums des .NET-Frameworks ist. Das folgende Beispiel demonstriert, wie man das aktuelle Datum und optional die Uhrzeit erhält.
 
-```C#
+```csharp
 using System;
 
-public class CurrentDateExample
+class Program
 {
-    static void Main(string[] args)
+    static void Main()
     {
-        DateTime currentDate = DateTime.Now;
-        Console.WriteLine(currentDate.ToString("d")); // Kurzes Datum
-        Console.WriteLine(currentDate.ToString("g")); // Datum mit Uhrzeit
+        // Holt nur das aktuelle Datum
+        DateTime currentDate = DateTime.Today;
+        Console.WriteLine(currentDate.ToString("d"));  // Ausgabe: MM/dd/yyyy
+        
+        // Holt das aktuelle Datum und die Uhrzeit
+        DateTime currentDateTime = DateTime.Now;
+        Console.WriteLine(currentDateTime.ToString()); // Ausgabe: MM/dd/yyyy HH:mm:ss
+
+        // Holt das aktuelle UTC-Datum und die Uhrzeit
+        DateTime currentUtcDateTime = DateTime.UtcNow;
+        Console.WriteLine(currentUtcDateTime.ToString()); // Ausgabe: MM/dd/yyyy HH:mm:ss
     }
 }
 ```
-Das gibt dir sowas hier aus:
 
+Was Drittanbieter-Bibliotheken betrifft, bietet NodaTime eine robuste Alternative für die Manipulation von Datum und Uhrzeit, einschließlich des Abrufens des aktuellen Datums in verschiedenen Kalendern und Zeitzonen.
+
+```csharp
+using NodaTime;
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Verwendung von NodaTime, um das aktuelle Datum im ISO-Kalender zu erhalten
+        LocalDate currentDate = SystemClock.Instance.GetCurrentInstant().InUtc().Date;
+        Console.WriteLine(currentDate.ToString()); // Ausgabe: yyyy-MM-dd
+
+        // Für zeitzonenspezifische Daten
+        DateTimeZone zone = DateTimeZoneProviders.Tzdb["America/New_York"];
+        LocalDate currentZonedDate = SystemClock.Instance.GetCurrentInstant().InZone(zone).Date;
+        Console.WriteLine(currentZonedDate.ToString()); // Ausgabe: yyyy-MM-dd
+    }
+}
 ```
-31.03.2023
-31.03.2023 14:07
-```
 
-## Deep Dive:
-`DateTime.Now` gehört zum .NET Framework seit Version 1.0 – ein echter Dinosaurier also. Es zieht die Systemuhr heran, um dir Datum und Uhrzeit zu liefern. Früher waren Alternativen wie `DateTime.UtcNow` für Weltzeit (UTC) wichtig, um Zeitzone-Durcheinander zu vermeiden. Mit .NET 6 kam `DateOnly` dazu, wenn du echt nur das Datum brauchst, ohne die Zeit.
-
-Die Implementierung nutzt die systemeigenen APIs deines Betriebssystems. Das ist normalerweise superpräzise, kann sich aber verzetteln, wenn der Nutzer die Systemzeit manipuliert. Für kritische Anwendungen, wo Zuverlässigkeit ein Muss ist, solltest du eine vertrauenswürdige Zeitquelle einbinden – etwa einen NTP-Server.
-
-## See Also:
-- Microsoft-Doku für `DateTime`: [https://docs.microsoft.com/dotnet/api/system.datetime](https://docs.microsoft.com/dotnet/api/system.datetime)
-- Überlegungen zur Zeitzone: [https://docs.microsoft.com/dotnet/standard/datetime/choosing-between-datetime](https://docs.microsoft.com/dotnet/standard/datetime/choosing-between-datetime)
-- Infos zu `DateOnly` und `TimeOnly`: [https://devblogs.microsoft.com/dotnet/date-time-and-time-zone-enhancements-in-net-6/](https://devblogs.microsoft.com/dotnet/date-time-and-time-zone-enhancements-in-net-6/)
+Dies veranschaulicht die grundlegende Verwendung mit der integrierten `DateTime` Klasse und die erweiterten Fähigkeiten, die durch NodaTime bereitgestellt werden, besonders nützlich für Anwendungen, die die Verwaltung verschiedener Zeitzonen oder Kalendersysteme erfordern.

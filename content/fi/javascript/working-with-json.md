@@ -1,33 +1,75 @@
 ---
-title:                "JSON-tiedostojen käsittely"
-date:                  2024-01-19
-simple_title:         "JSON-tiedostojen käsittely"
-
+title:                "Työskentely JSON:n kanssa"
+date:                  2024-02-03T19:23:19.325133-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Työskentely JSON:n kanssa"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/javascript/working-with-json.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Mitä ja Miksi?)
-JSON eli JavaScript Object Notation on dataformaatti, jota käytetään tiedon tallentamiseen ja verkon kautta siirtämiseen. Ohjelmoijat käyttävät sitä siksi, että se on kevyt, helppolukuinen ja -kirjoitettava, ja useimmat ohjelmointikielet tukevat sitä, mikä tekee tiedon jakamisesta eri järjestelmien välillä vaivatonta.
+## Mikä & Miksi?
 
-## How to: (Kuinka tehdä:)
-```Javascript
-// JSON:in jäsentäminen
-const jsonString = '{"name": "Koodari", "age": 25}';
-const userObject = JSON.parse(jsonString);
-console.log(userObject.name); // Tulostaa: Koodari
+JSON (JavaScript Object Notation) on kevyt datanvaihtoformaatti, joka on ihmisten luettavissa ja kirjoitettavissa sekä koneiden jäsentämässä ja generoimassa helposti. Ohjelmoijat käyttävät sitä datan tallentamiseen ja kuljettamiseen web-sovelluksissa, tehden siitä nykyaikaisten APIen ja web-palveluiden kommunikaation selkärangan.
 
-// JSON:ksi muuntaminen
-const userDetail = { name: "Ohjelmoija", language: "JavaScript" };
-const userJson = JSON.stringify(userDetail);
-console.log(userJson); // Tulostaa: {"name":"Ohjelmoija","language":"JavaScript"}
+## Kuinka:
+
+### JSONin jäsentäminen
+JSON-merkkijonon muuntamiseksi JavaScript-objektiksi, käytä `JSON.parse()`.
+
+```javascript
+const jsonString = '{"name":"John", "age":30, "city":"New York"}';
+const obj = JSON.parse(jsonString);
+console.log(obj.name); // Tuloste: John
 ```
 
-## Deep Dive (Syväsukellus)
-JSON juontuu JavaScript-maailmasta 2000-luvun alusta, mutta nykyään se on itsenäinen standardi. Vaihtoehtoina ovat esimerkiksi XML tai YAML, mutta JSON voittaa niitä keveydellään ja paremmalla luettavuudellaan. JSON:n käyttö on yksinkertaista: `parse` metodia käytetään merkkijonon muuntamisessa JS-objektiksi ja `stringify` JS-objektin muuntamisessa merkkijonoksi. Tämä tekee JSON:sta loistavan valinnan dataobjektien siirtämiseen esimerkiksi selaimen ja palvelimen välillä.
+### JavaScript-objektien merkkijonoksi muuntaminen
+JavaScript-objektin muuntamiseksi takaisin JSON-merkkijonoksi, käytä `JSON.stringify()`.
 
-## See Also (Katso myös)
-- Mozilla Developer Networkin JSON-ohjeet: [MDN JSON](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON)
-- JSON-syntaksin yleiskatsaus: [JSON.org](http://json.org/)
+```javascript
+const user = { name: "Jane", age: 25, city: "London" };
+const jsonString = JSON.stringify(user);
+console.log(jsonString); // Tuloste: {"name":"Jane","age":25,"city":"London"}
+```
+
+### Tiedostojen käsittely Node.js:ssä
+JSON-tiedoston lukemiseksi ja sen muuntamiseksi objektiksi Node.js-ympäristössä, voit käyttää `fs`-moduulia. Tässä esimerkissä oletetaan, että sinulla on tiedosto nimeltä `data.json`.
+
+```javascript
+const fs = require('fs');
+
+fs.readFile('data.json', 'utf-8', (err, data) => {
+    if (err) heitä err;
+    const obj = JSON.parse(data);
+    console.log(obj);
+});
+```
+
+Objektin kirjoittamiseksi JSON-tiedostoon:
+
+```javascript
+const fs = require('fs');
+const user = { name: "Mike", age: 22, city: "Berlin" };
+
+fs.writeFile('user.json', JSON.stringify(user, null, 2), (err) => {
+    if (err) heitä err;
+    console.log('Data kirjoitettu tiedostoon');
+});
+```
+
+### Kolmannen osapuolen kirjastot
+Monimutkaisiin JSON-operaatioihin, kehykset ja kirjastot kuten `lodash` voivat yksinkertaistaa tehtäviä, mutta perusoperaatioihin, natiivit JavaScript-funktiot ovat usein riittäviä. Suurille tai suorituskyvyltään kriittisille sovelluksille, voit harkita kirjastoja kuten `fast-json-stringify` nopeampaan JSON-merkkijonoksi muuntamiseen tai `json5` joustavammassa JSON-formaatissa jäsentämiseen ja merkkijonoksi muuntamiseen.
+
+Jäsentäminen `json5` avulla:
+```javascript
+const JSON5 = require('json5');
+
+const jsonString = '{name:"John", age:30, city:"New York"}';
+const obj = JSON5.parse(jsonString);
+console.log(obj.name); // Tuloste: John
+```
+
+Nämä esimerkit kattavat perusoperaatiot JSONin kanssa JavaScriptissä, täydellisiä aloittelijoille, jotka siirtyvät toisista kielistä ja haluavat käsitellä tietoja web-sovelluksissa tehokkaasti.

@@ -1,54 +1,44 @@
 ---
-title:                "Maiuscolizzare una stringa"
-date:                  2024-01-19
-simple_title:         "Maiuscolizzare una stringa"
-
+title:                "Capitalizzare una stringa"
+date:                  2024-02-03T19:06:13.688577-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Capitalizzare una stringa"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/ruby/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Cosa & Perché?)
-Capitalizzare una stringa significa trasformare la prima lettera di ogni parola in maiuscolo. I programmatori lo fanno per questioni di formattazione, come l'inizio di una frase o nomi propri.
+## Cosa & Perché?
+Capitalizzare una stringa nella programmazione spesso si riferisce alla conversione del primo carattere di una stringa in maiuscolo e il resto in minuscolo. I programmatori fanno ciò per motivi quali aderire a convenzioni di denominazione, rendere gli output più leggibili o garantire la coerenza dei dati per comparazioni e memorizzazione.
 
-## How to: (Come fare:)
-```Ruby
-# Metodo `capitalize` su una singola parola
-parola = "ruby"
-puts parola.capitalize  # => "Ruby"
+## Come Fare:
+Ruby offre metodi semplici per la manipolazione delle stringhe, inclusa la capitalizzazione. Ecco come puoi capitalizzare una stringa in Ruby:
 
-# Metodo `titleize` in Rails (non in Ruby standard)
+```ruby
+# Metodo integrato di Ruby
+stringa = "ciao mondo"
+stringa_capitalizzata = stringa.capitalize
+puts stringa_capitalizzata # => "Ciao mondo"
+```
+
+Il metodo `.capitalize` di Ruby è comodo ma influisce solo sulla prima lettera. Per avere più controllo o per capitalizzare ogni parola in una stringa (noto come maiuscoletto), potresti voler usare il metodo `titleize` dall'estensione ActiveSupport di Rails, o implementarlo tu stesso:
+
+```ruby
+# Utilizzando 'titleize' di ActiveSupport in Rails
 require 'active_support/core_ext/string/inflections'
-frase = "benvenuti al tutorial di ruby"
-puts frase.titleize     # => "Benvenuti Al Tutorial Di Ruby"
-
-# Utilizzando `split` e `map` in Ruby puro
-def capitalizza_frase(frase)
-  frase.split.map(&:capitalize).join(' ')
-end
-
-puts capitalizza_frase("ciao mondo")  # => "Ciao Mondo"
+stringa = "ciao mondo"
+puts stringa.titleize # => "Ciao Mondo"
 ```
 
-## Deep Dive (Approfondimento)
-Capitalizzare le stringhe non è sempre stato così semplice; nelle prime versioni di Ruby, dovevamo scrivere metodi manualmente. Oggi, con metodi come `capitalize` e `titleize` (quest'ultimo introdotto da Rails), il processo è automatizzato.
+Se non stai utilizzando Rails o preferisci una soluzione puramente Ruby, ecco come potresti capitalizzare ogni parola in una stringa:
 
-Sotto il cofano, `capitalize` cambia la prima lettera in maiuscolo e il resto in minuscolo. Se si necessita un controllo più granulare, si possono usare i metodi `upcase` e `downcase` per trasformare le lettere come si desidera. A partire da Ruby 2.4, abbiamo anche `capitalize!` e `upcase!`, che modificano la stringa sul posto senza creare un nuovo oggetto.
-
-Un'alternativa è l'utilizzo di espressioni regolari e il metodo `gsub` per raggiungere lo stesso scopo, ma con più controllo sulle regole di capitalizzazione.
-
-```Ruby
-# Capitalizzazione con `gsub` e regex
-def capitalizza_custom(frase)
-  frase.gsub(/\b\w/) { |lettera| lettera.upcase }
-end
-
-puts capitalizza_custom("ruby è divertente")  # => "Ruby È Divertente"
+```ruby
+stringa = "ciao mondo"
+capitalizzata_ogni_parola = stringa.split.map(&:capitalize).join(' ')
+puts capitalizzata_ogni_parola # => "Ciao Mondo"
 ```
 
-## See Also (Vedi Anche)
-- Documentazione Ruby [capitalize](https://ruby-doc.org/core-2.7.0/String.html#method-i-capitalize)
-- ActiveSupport [`titleize`](https://api.rubyonrails.org/classes/String.html#method-i-titleize)
-- Ruby [gsub](https://ruby-doc.org/core-2.7.0/String.html#method-i-gsub) e [Regular Expressions](https://ruby-doc.org/core-2.7.0/Regexp.html)
-- Stack Overflow: [How to capitalize the first letter in Ruby](https://stackoverflow.com/questions/13520162/how-to-capitalize-the-first-letter-in-ruby)
+Questo metodo divide la stringa in un array di parole, capitalizza ognuna di esse, quindi le unisce nuovamente insieme con uno spazio.

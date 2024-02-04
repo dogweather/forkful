@@ -1,57 +1,64 @@
 ---
 title:                "현재 날짜 가져오기"
-date:                  2024-01-20T15:13:47.561772-07:00
+date:                  2024-02-03T19:09:19.426333-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "현재 날짜 가져오기"
-
 tag:                  "Dates and Times"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/c-sharp/getting-the-current-date.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (무엇과 왜?)
-C#에서 현재 날짜를 가져오는 것은 DateTime 객체를 사용해서 시스템의 현재 날짜와 시간을 얻는 과정입니다. 이 정보는 로깅, 사용자 인터페이스, 날짜 계산에서 중요하게 사용됩니다.
+## 무엇 & 왜?
+C#에서 현재 날짜를 가져오는 것은 시스템에서 현재 날짜와 시간 세부 정보를 가져오는 것을 포함합니다. 프로그래머들은 종종 이 정보에 액세스해야 할 필요가 있는데, 이는 로깅, 타임스탬프 작업 또는 애플리케이션 내 작업을 예약하고, 행동이 정확하게 시간을 맞추고 데이터가 정확한 타임스탬프를 가지도록 보장하기 위함입니다.
 
-## How to: (어떻게 하나요?)
-C#에서 현재 날짜를 얻는 방법은 간단합니다. 다음 예시를 확인해보세요.
+## 어떻게:
+C#은 .NET Framework의 System 네임스페이스 일부인 `DateTime` 클래스를 사용하여 현재 날짜를 가져오는 간단한 방법을 제공합니다. 아래 예제는 현재 날짜를 가져오는 방법을 보여주며, 선택적으로 시간도 함께 가져옵니다.
 
-```C#
+```csharp
 using System;
 
 class Program
 {
     static void Main()
     {
-        DateTime currentDate = DateTime.Now;
-        Console.WriteLine(currentDate.ToString("yyyy-MM-dd HH:mm:ss"));
+        // 현재 날짜만 가져옴
+        DateTime currentDate = DateTime.Today;
+        Console.WriteLine(currentDate.ToString("d"));  // 출력: MM/dd/yyyy
         
-        // 오직 날짜만.
-        DateTime justDate = currentDate.Date;
-        Console.WriteLine(justDate.ToString("yyyy-MM-dd"));
-        
-        // 오직 시간만.
-        TimeSpan currentTime = currentDate.TimeOfDay;
-        Console.WriteLine(currentTime.ToString("hh\\:mm\\:ss"));
+        // 현재 날짜 및 시간을 가져옴
+        DateTime currentDateTime = DateTime.Now;
+        Console.WriteLine(currentDateTime.ToString()); // 출력: MM/dd/yyyy HH:mm:ss
+
+        // 현재 UTC 날짜 및 시간을 가져옴
+        DateTime currentUtcDateTime = DateTime.UtcNow;
+        Console.WriteLine(currentUtcDateTime.ToString()); // 출력: MM/dd/yyyy HH:mm:ss
     }
 }
 ```
 
-출력:
+제 3자 라이브러리에 관해서는, NodaTime은 다양한 달력과 타임존에서 현재 날짜를 가져올 수 있도록 하는 강력한 대안을 제공합니다.
+
+```csharp
+using NodaTime;
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // ISO 달력에서 현재 날짜를 가져오기 위해 NodaTime 사용
+        LocalDate currentDate = SystemClock.Instance.GetCurrentInstant().InUtc().Date;
+        Console.WriteLine(currentDate.ToString()); // 출력: yyyy-MM-dd
+
+        // 타임존 특정 날짜를 위해
+        DateTimeZone zone = DateTimeZoneProviders.Tzdb["America/New_York"];
+        LocalDate currentZonedDate = SystemClock.Instance.GetCurrentInstant().InZone(zone).Date;
+        Console.WriteLine(currentZonedDate.ToString()); // 출력: yyyy-MM-dd
+    }
+}
 ```
-2023-03-15 15:42:10
-2023-03-15
-15:42:10
-```
 
-## Deep Dive (심층 분석)
-`DateTime.Now`는 .NET이 시작될 때부터 있었습니다. 또 다른 옵션은 `DateTime.UtcNow`로, UTC 시간을 가져옵니다. `DateTime`은 날짜와 시간 모두를 가지고 있는데, 날짜만 필요하면 `.Date` 프로퍼티를, 시간만 필요하면 `.TimeOfDay` 프로퍼티를 사용할 수 있습니다.
-
-시간대를 다룰 때 `DateTimeOffset`를 사용하는 것이 좋습니다. 이 타입은 시간대 오프셋 정보를 포함하고 있어서 더욱 정확한 날짜/시간 표현을 가능하게 합니다. `DateTime` 타입은 시간대를 알 수 없으므로 `DateTimeOffset`이 선호되는 경우가 많습니다.
-
-성능에 민감한 상황에서 `DateTime.UtcNow`가 `DateTime.Now`보다 빠르다는 점도 알아둘 것입니다. `DateTime.Now`는 `DateTime.UtcNow`에 시간대 변환을 추가로 수행하기 때문입니다.
-
-## See Also (참고 자료)
-- [`DateTime` Class Documentation](https://docs.microsoft.com/en-us/dotnet/api/system.datetime?view=net-7.0)
-- [Choosing between DateTime, DateTimeOffset, TimeSpan, and TimeZoneInfo](https://docs.microsoft.com/en-us/dotnet/standard/datetime/choosing-between-datetime)
-- [Formatting Date and Time for .NET](https://docs.microsoft.com/en-us/dotnet/standard/base-types/custom-date-and-time-format-strings)
+이는 내장된 `DateTime` 클래스의 기본 사용과 다른 타임존 또는 달력 시스템을 처리할 필요가 있는 애플리케이션에 특히 유용한 NodaTime에 의해 제공되는 향상된 기능을 보여줍니다.

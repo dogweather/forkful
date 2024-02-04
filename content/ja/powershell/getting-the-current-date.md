@@ -1,56 +1,85 @@
 ---
-title:                "現在の日付を取得する"
-date:                  2024-01-20T15:16:14.768293-07:00
-simple_title:         "現在の日付を取得する"
-
+title:                "現在の日付の取得"
+date:                  2024-02-03T19:10:39.361199-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "現在の日付の取得"
 tag:                  "Dates and Times"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/powershell/getting-the-current-date.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (何とその理由？)
+## 何となぜ？
 
-PowerShellで現在の日付を取得するのは、システムのタイムスタンプが必要な時、すなわちログの記録やスケジュールされたタスクの実行などに使います。
+PowerShellで現在の日付を取得することは、システムの現在の日付と時刻を取得することについてです。この操作は、ログ取り、タイミング操作、または日付に基づいて意思決定を行うなどのタスクにとって基本的なものです。プログラマーは、イベントを追跡し、タスクをスケジュールし、スクリプトやアプリケーションで日付固有のロジックを扱うためにこの機能を使用します。
 
-## How to: (方法：)
+## 方法:
 
-```PowerShell
+PowerShellは、日付と時刻を取得するための直感的なコマンドレットを提供しています。`Get-Date` コマンドレットは、この目的のための主要なツールです。必要に応じてフォーマットや操作を行うことができる、完全な日付と時刻を返します。
+
+```powershell
 # 現在の日付と時刻を取得
 Get-Date
-
-# 出力例
-Wednesday, March 31, 2023 14:23:45
 ```
 
-```PowerShell
-# 異なるフォーマットで日付を取得
-Get-Date -Format "yyyy/MM/dd HH:mm:ss"
+**サンプル出力:**
 
-# 出力例
-2023/03/31 14:23:45
+```
+2023年9月5日 火曜日 9:46:02 AM
 ```
 
-```PowerShell
-# 一部の日付要素だけを取得
-$date = Get-Date
-$date.DayOfWeek
+出力をフォーマットして、必要な情報のみを表示することもできます。例えば、日付のみや時間のみです。
 
-# 出力例
-Wednesday
+```powershell
+# 特定のフォーマットで現在の日付のみを取得
+Get-Date -Format "yyyy-MM-dd"
 ```
 
-## Deep Dive (深掘り)
+**サンプル出力:**
 
-PowerShellにおける`Get-Date`コマンドは、.NETの`DateTime`クラスをベースにしています。これはWindows PowerShellが初登場した2006年から存在しています。リニューアルされたPowerShell Coreでもその役割は変わりません。
+```
+2023-09-05
+```
 
-`Get-Date`の提供するオプションを使えば、様々なフォーマットで日付を表示できます。`-Format`パラメータは、カスタムの日付と時刻の文字列を定義するのに使えます。これはログファイルの名前や、ユーザーに対する日付の表示など、特定のフォーマットが求められる局面で便利です。
+```powershell
+# 現在の時刻のみを取得
+Get-Date -Format "HH:mm:ss"
+```
 
-他の言語やシステムでは、UNIXタイムスタンプやdateコマンドを利用して現在の日付や時刻を取得する方法があります。しかし、PowerShellはWindows環境での作業に特化しており、`Get-Date`はその簡易性からよく使われます。
+**サンプル出力:**
 
-## See Also (関連情報)
+```
+09:46:02
+```
 
-- [PowerShell Documentation - `Get-Date`](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-date?view=powershell-7.3)
-- [.NET API Browser - `DateTime` Class](https://docs.microsoft.com/en-us/dotnet/api/system.datetime?view=net-7.0)
-- [Microsoft's PowerShell Scripting](https://docs.microsoft.com/en-us/powershell/scripting/overview?view=powershell-7.3)
+### .NETクラスの使用
+
+PowerShellは.NETクラスに直接アクセスを許可し、日付と時刻を扱う別の方法を提供します。
+
+```powershell
+# .NET DateTimeクラスを使用して現在の日付と時刻を取得
+[System.DateTime]::Now
+```
+
+**サンプル出力:**
+
+```
+2023年9月5日 火曜日 9:46:02 AM
+```
+
+UTC時刻の場合:
+
+```powershell
+# .NET DateTimeクラスを使用して現在のUTC日付と時刻を取得
+[System.DateTime]::UtcNow
+```
+
+**サンプル出力:**
+
+```
+2023年9月5日 火曜日 1:46:02 PM
+```
+
+これらのコマンドとクラスは、PowerShellでの日付と時刻の操作を強力かつ柔軟に行うためのものであり、多くのスクリプティングや自動化タスクに不可欠です。

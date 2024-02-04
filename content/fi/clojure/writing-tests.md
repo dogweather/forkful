@@ -1,48 +1,64 @@
 ---
 title:                "Testien kirjoittaminen"
-date:                  2024-01-19
+date:                  2024-02-03T19:30:09.011324-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Testien kirjoittaminen"
-
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/clojure/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Mikä & Miksi? Testaus varmistaa koodin toimivuuden. Kehittäjät kirjoittavat testejä ennakoidakseen virheitä ja säilyttääkseen ohjelmiston laadun.
+## Mikä ja miksi?
+Testien kirjoittaminen Clojurella, kuten muillakin ohjelmointikielillä, sisältää omistautuneen koodin luomisen pääkoodikannan toimivuuden varmistamiseksi. Se auttaa tarkkuuden varmistamisessa, refaktoroinnin helpottamisessa ja koodin vakauden parantamisessa.
 
-## How to:
-Testien kirjoittaminen Clojuressa:
+## Kuinka:
+Clojure, hyödyntäen JVM:ää, tukee erilaisia testauskehyksiä. Kuitenkin yleisesti käytetty sisäänrakennettu kirjasto on `clojure.test`. Tässä on yksinkertainen esimerkki:
 
-```Clojure
-;; Add `clojure.test` to your namespace
+```clojure
 (ns example.test
-  (:require [clojure.test :refer :all]))
+  (:require [clojure.test :refer :all]
+            [example.core :refer :all]))
 
-;; Define a test case
-(deftest test-my-function
-  (testing "Function output"
-    (is (= 42 (my-function 40 2)))))
+(deftest test-addition
+  (testing "Lisäysfunktio"
+    (is (= 4 (add 2 2)))
+    (is (= 7 (add 3 4)))))
 
-;; Run the tests
 (run-tests)
 ```
-
-Odotettu tulos:
+Tämän testin suorittamisen jälkeen näkisit tulosteen, joka muistuttaisi:
 
 ```
 Testing example.test
 
-Ran 1 tests containing 1 assertions.
+Ran 2 tests containing 2 assertions.
 0 failures, 0 errors.
 ```
 
-## Deep Dive
-Syväsukellus: Clojuressa testien kirjoittaminen juontaa juurensa LISP:n ajoista, joissa koodikokeilu oli peruskäytäntö. Vaihtoehtoina on muun muassa generatiiviset testikirjastot, kuten `test.check`. Testien toteutuksessa käytetään usein `deftest` ja `is` makroja sekä testipuitteita, esimerkiksi `Midje` tai `Kaocha`.
+Niille, jotka etsivät ominaisuuksiltaan rikkaampia vaihtoehtoja, voi käyttää kolmannen osapuolen kirjastoja, kuten `Midje` tai `test.check`. Tässä on, miten voisit käyttää Midjeä vastaavaan testiin:
 
-## See Also
-Kurkkaa myös:
-- [Clojure Testing](https://clojure.github.io/clojure/clojure.test-api.html)
-- [Introduction to Midje](https://github.com/marick/Midje/wiki)
-- [Clojure generative testing with test.check](https://github.com/clojure/test.check)
+Lisää ensin Midje projektisi clj-riippuvuuksiin:
+```clojure
+[midje "1.9.9"]
+```
+
+Sitten testisi Midjen kanssa saattaisi näyttää tältä:
+
+```clojure
+(ns example.test
+  (:require [midje.sweet :refer :all]
+            [example.core :refer :all]))
+
+(fact "Testataan lisäystä"
+  (add 2 2) => 4
+  (add 3 4) => 7)
+```
+
+Testin suorittamisen jälkeen Midjen kautta komennolla `lein midje`, tuloste näyttäisi jotakin vastaavaa:
+
+```
+Kaikki tarkistukset (2) onnistuivat.
+```

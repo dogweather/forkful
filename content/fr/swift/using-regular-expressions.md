@@ -1,43 +1,67 @@
 ---
 title:                "Utilisation des expressions régulières"
-date:                  2024-01-19
+date:                  2024-02-03T19:18:22.109846-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Utilisation des expressions régulières"
-
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/swift/using-regular-expressions.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Quoi et Pourquoi ?
-Les expressions régulières (regex) permettent de chercher et de manipuler du texte selon des motifs définis. Les développeurs s'en servent pour la validation des données, le scrapping ou encore le traitement de chaînes de caractères complexes.
+## Quoi & Pourquoi ?
+Les expressions régulières, ou regex, sont des séquences de caractères qui forment un motif de recherche, souvent utilisé pour des tâches de correspondance ou de manipulation de chaînes. Les programmeurs les utilisent pour tout, de la validation de données et l'analyse au transformations, les rendant un outil indispensable dans les tâches de traitement et de manipulation du texte à travers divers langages de programmation, y compris Swift.
 
 ## Comment faire :
-```Swift
+La prise en charge native de Swift pour les regex utilise la classe `NSRegularExpression`, ainsi que les méthodes de plage et de remplacement de la classe String. Voici un exemple d'utilisation des regex pour trouver et mettre en évidence des adresses e-mail dans un bloc de texte :
+
+```swift
 import Foundation
 
-let regex = try! NSRegularExpression(pattern: "\\b(\\w+)\\b")
-let testString = "Ce sont des exemples simples."
-let matches = regex.matches(in: testString, range: NSRange(testString.startIndex..., in: testString))
+let text = "Contactez-nous à support@example.com ou feedback@example.org pour plus d'informations."
+let regexPattern = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
 
-for match in matches {
-    if let range = Range(match.range, in: testString) {
-        print(testString[range])
+do {
+    let regex = try NSRegularExpression(pattern: regexPattern)
+    let matches = regex.matches(dans: text, plage: NSRange(text.startIndex..., dans: text))
+
+    if !matches.isEmpty {
+        for match in matches {
+            let range = Range(match.range, dans: text)!
+            print("Trouvé : \(text[range])")
+        }
+    } else {
+        print("Aucune correspondance trouvée.")
+    }
+} catch {
+    print("Erreur de regex : \(error.localizedDescription)")
+}
+
+// Sortie d'exemple :
+// Trouvé : support@example.com
+// Trouvé : feedback@example.org
+```
+
+Pour des scénarios plus complexes ou axés sur la commodité, vous pouvez utiliser des bibliothèques tierces telles que SwiftRegex, qui simplifie la syntaxe et étend les possibilités. Bien que la bibliothèque standard de Swift soit puissante, certains développeurs favorisent ces bibliothèques pour leur syntaxe concise et leurs fonctionnalités supplémentaires. Voici comment vous pourriez effectuer une tâche similaire en utilisant une bibliothèque tierce hypothétique :
+
+```swift
+// En supposant qu'une bibliothèque appelée SwiftRegex existe et est importée
+let text = "Contactez à hello@world.com ou visitez notre site Web."
+let emailPattern = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
+
+let emails = text.matches(pour: emailPattern) // Méthode hypothétique fournie par SwiftRegex
+if emails.isEmpty {
+    print("Aucune adresse e-mail trouvée.")
+} else {
+    emails.forEach { email in
+        print("Trouvé : \(email)")
     }
 }
-```
-Sortie :
-```
-Ce
-sont
-des
-exemples
-simples
+
+// Sortie hypothétique en supposant que la méthode `matches(pour:)` existe dans SwiftRegex :
+// Trouvé : hello@world.com
 ```
 
-## Plongée Profonde
-Historiquement, les regex viennent des sciences théoriques de l'informatique et de la théorie des formalismes. En Swift, on utilise `NSRegularExpression` qui vient d'Objective-C. Comme alternative, on peut utiliser des bibliothèques comme RegexKitLite, mais `NSRegularExpression` est puissant et intégré. L'implantation se base sur ICU, une norme puissante pour les expressions régulières.
-
-## Voir Aussi
-- Documentation Apple sur `NSRegularExpression`: [Lien](https://developer.apple.com/documentation/foundation/nsregularexpression)
-- Guide ICU pour les expressions régulières : [Lien](https://unicode-org.github.io/icu/userguide/strings/regexp.html)
+Cet exemple illustre l'utilisation d'un package d'expression régulière tiers pour simplifier la recherche de correspondances dans une chaîne, en supposant que des méthodes de commodité comme `matches(pour:)` existent. Il est important de consulter la documentation de la bibliothèque tierce respective pour une syntaxe précise et la disponibilité des méthodes.

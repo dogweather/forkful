@@ -1,53 +1,99 @@
 ---
-title:                "Uso de expresiones regulares"
-date:                  2024-01-19
-simple_title:         "Uso de expresiones regulares"
-
+title:                "Usando expresiones regulares"
+date:                  2024-02-03T19:17:06.284738-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Usando expresiones regulares"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/java/using-regular-expressions.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Qué y Por Qué?
+## ¿Qué y por qué?
 
-Las expresiones regulares, o regex, son secuencias de caracteres que forman un patrón de búsqueda. Los programadores las usan para encontrar, reemplazar o manipular texto de manera eficiente y precisa.
+Las expresiones regulares (regex) en Java te permiten definir patrones específicos para buscar, manipular o validar cadenas en tu código. Los programadores las usan para tareas como el análisis de archivos de registro, la validación de entradas de usuario o la búsqueda de patrones específicos dentro del texto, permitiendo un procesamiento sofisticado de cadenas con un esfuerzo mínimo.
 
-## Cómo usar:
+## Cómo hacerlo:
 
-```Java
+El soporte integrado de Java para regex se proporciona principalmente a través de las clases `Pattern` y `Matcher` en el paquete `java.util.regex`. Aquí hay un ejemplo simple para encontrar e imprimir todas las ocurrencias de una palabra en una cadena, sin distinguir entre mayúsculas y minúsculas:
+
+```java
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class RegexExample {
     public static void main(String[] args) {
-        String texto = "El número de contacto es 123-456-7890.";
-        String regex = "\\d{3}-\\d{3}-\\d{4}";
+        String text = "Regex es genial para analizar. Analizar con regex es poderoso.";
+        String palabraABuscar = "analizar";
         
-        Pattern pattern = Pattern.compile(regex);
-        Matcher matcher = pattern.matcher(texto);
-
-        if (matcher.find()) {
-            System.out.println("Número encontrado: " + matcher.group());
+        Pattern pattern = Pattern.compile(palabraABuscar, Pattern.CASE_INSENSITIVE);
+        Matcher matcher = pattern.matcher(text);
+        
+        while (matcher.find()) {
+            System.out.println("Encontrado '" + matcher.group() + "' en la posición " + matcher.start());
         }
     }
 }
 ```
 
-Salida de muestra:
-
+Salida:
 ```
-Número encontrado: 123-456-7890
+Encontrado 'analizar' en la posición 16
+Encontrado 'Analizar' en la posición 31
 ```
 
-## Inmersión Profunda:
+Para tareas como dividir cadenas, puedes usar el método `split()` de la clase `String` con un regex:
 
-Históricamente, las expresiones regulares nacen en la década de 1950 y se popularizan en los '70 con el lenguaje Perl. Alternativas a regex incluyen el procesamiento manual de strings (menos eficiente) y bibliotecas de análisis (parsing) especializadas (más complejas). Internamente, Java utiliza DFA (autómatas finitos deterministas) y NFA (no deterministas) para implementar regex, lo cual afecta el rendimiento y capacidades de las expresiones.
+```java
+public class SplitExample {
+    public static void main(String[] args) {
+        String text = "Java,Python,Ruby,JavaScript";
+        String[] lenguajes = text.split(",");
+        
+        for (String lenguaje : lenguajes) {
+            System.out.println(lenguaje);
+        }
+    }
+}
+```
 
-## Ver También:
+Salida:
+```
+Java
+Python
+Ruby
+JavaScript
+```
 
-Para más información echa un vistazo a:
+Cuando trabajas con regex en Java, puede haber casos en los que una biblioteca externa puede simplificar tareas complejas. Una de las bibliotecas de terceros populares para trabajar con regex en Java es `Apache Commons Lang`. Ofrece utilidades como `StringUtils` que hacen que algunas tareas de regex sean más sencillas. Así es como se usa para contar las coincidencias de una subcadena:
 
-- [Documentación oficial de las clases Pattern y Matcher](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/regex/Pattern.html)
-- [Java Regular Expressions Tutorial](https://www.vogella.com/tutorials/JavaRegularExpressions/article.html)
-- [RegexOne](https://regexone.com/) – Aprende con ejercicios interactivos.
+```java
+import org.apache.commons.lang3.StringUtils;
+
+public class CommonsLangExample {
+    public static void main(String[] args) {
+        String text = "Regex hace que el procesamiento de texto sea más fácil. Procesar texto con regex es eficiente.";
+        String subcadena = "procesamiento";
+        
+        int count = StringUtils.countMatches(text, subcadena);
+        System.out.println("'" + subcadena + "' aparece " + count + " veces.");
+    }
+}
+```
+
+Para usar Apache Commons Lang, necesitas incluirlo en tu proyecto. Si estás usando Maven, agrega esta dependencia a tu `pom.xml`:
+
+```xml
+<dependency>
+    <groupId>org.apache.commons</groupId>
+    <artifactId>commons-lang3</artifactId>
+    <version>3.12.0</version> <!-- Verifica la última versión -->
+</dependency>
+```
+
+Salida:
+```
+'procesamiento' aparece 2 veces.
+```

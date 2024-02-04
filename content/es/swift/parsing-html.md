@@ -1,41 +1,72 @@
 ---
-title:                "Análisis de HTML"
-date:                  2024-01-20T15:34:07.974323-07:00
-simple_title:         "Análisis de HTML"
-
+title:                "Analizando HTML"
+date:                  2024-02-03T19:13:19.948999-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Analizando HTML"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/swift/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Qué es y por qué?
-El análisis (parsing) de HTML consiste en transformar el código HTML en estructuras de datos que Swift puede manejar. Lo hacemos para extraer información, manipularla o incluso alterar el HTML de manera programática.
+## ¿Qué y Por Qué?
+El análisis de HTML se refiere al proceso de descomponer e interpretar la estructura del contenido HTML, típicamente para extraer datos específicos o manipular este contenido de manera programática. Los programadores se involucran en el análisis de HTML para el web scraping, minería de datos, pruebas automatizadas y tareas de migración de contenido, permitiendo que las aplicaciones interactúen con y procesen documentos web de manera eficiente.
 
 ## Cómo hacerlo:
-```Swift
-import Foundation
+Swift, por defecto, no incluye una biblioteca integrada para el análisis de HTML, lo que hace necesario el uso de bibliotecas de terceros para manejar esta tarea eficazmente. Una de las opciones más populares es SwiftSoup, una biblioteca pura de Swift que ofrece una sintaxis tipo jQuery para el análisis y manipulación de HTML.
+
+### Instalación
+Primero, necesitas añadir SwiftSoup a tu proyecto. Si estás utilizando el Swift Package Manager, puedes agregarlo a tus dependencias en `Package.swift`:
+
+```swift
+dependencies: [
+    .package(url: "https://github.com/scinfu/SwiftSoup.git", desde: "2.3.2")
+]
+```
+
+### Ejemplo: Extrayendo Enlaces de HTML
+Supón que tienes un documento HTML y deseas extraer todos los enlaces (`<a href="...">`). Con SwiftSoup, puedes lograr esto fácilmente:
+
+```swift
 import SwiftSoup
 
-let htmlString = "<html><head><title>Mi página</title></head><body><p>Hola, mundo!</p></body></html>"
+let html = """
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Página de muestra</title>
+</head>
+<body>
+    <p>Bienvenido a nuestro sitio web</p>
+    <a href="https://ejemplo.com/pagina1">Página 1</a>
+    <a href="https://ejemplo.com/pagina2">Página 2</a>
+</body>
+</html>
+"""
 
 do {
-    let doc: Document = try SwiftSoup.parse(htmlString)
-    let bodyText: Elements = try doc.select("p")
-    if let text = try bodyText.first()?.text() {
-        print(text) // Salida: Hola, mundo!
+    let doc: Document = try SwiftSoup.parse(html)
+    let links: Elements = try doc.select("a")
+    for link in links.array() {
+        let linkHref: String = try link.attr("href")
+        let linkText: String = try link.text()
+        print("\(linkText) - \(linkHref)")
     }
-} catch Exception.Error(let type, let message) {
-    print("Error de tipo \(type) con mensaje: \(message)")
+} catch Exception.Error(let tipo, let mensaje) {
+    print("Tipo de error: \(tipo) Mensaje: \(mensaje)")
 } catch {
-    print("Otro error")
+    print("error")
 }
 ```
 
-## Análisis Profundo
-En los inicios de la web, los navegadores eran menos estrictos con el HTML, haciendo más complicado el parsing correcto. Hoy en día, librerías como SwiftSoup se basan en estándares bien definidos. Alternativas a SwiftSoup podrían ser librerías basadas en NSXMLParser de Apple pero carecen de la simplicidad de SwiftSoup para trabajar con HTML. Al implementar parsing de HTML, es importante manejar errores, ya que el HTML malformado puede causar excepciones inesperadas.
+### Salida de Muestra
+El código anterior extrae las URL y su texto del HTML, mostrando:
 
-## Ver También
-- [SwiftSoup Github Repository](https://github.com/scinfu/SwiftSoup)
-- [World Wide Web Consortium (W3C) HTML Standards](https://www.w3.org/TR/html52/)
-- Documentación de [NSXMLParser](https://developer.apple.com/documentation/foundation/nsxmlparser)
+```
+Página 1 - https://ejemplo.com/pagina1
+Página 2 - https://ejemplo.com/pagina2
+```
+
+Este ejemplo básico demuestra cómo aprovechar SwiftSoup para el análisis de documentos HTML. Explorando más la documentación de SwiftSoup, puedes encontrar numerosos métodos para navegar, buscar y modificar el contenido HTML, capacitando a tus aplicaciones Swift para procesar contenido web complejo con facilidad.

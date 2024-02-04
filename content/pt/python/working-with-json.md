@@ -1,65 +1,149 @@
 ---
 title:                "Trabalhando com JSON"
-date:                  2024-01-19
+date:                  2024-02-03T19:24:05.552077-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Trabalhando com JSON"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/python/working-with-json.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## O Que é & Por Que?
+## O quê & Por quê?
 
-JSON (JavaScript Object Notation) é um formato de troca de dados leve e fácil de ler para humanos. Programadores usam JSON para armazenar e transmitir dados entre servidores e clientes web e para configurações de aplicações devido à sua simplicidade e interoperabilidade.
+Trabalhar com JSON (JavaScript Object Notation) envolve analisar strings formatadas em JSON para objetos Python e vice-versa. Isso é crucial para o desenvolvimento web e de API, pois o JSON é a língua franca para a troca de dados entre servidores e clientes.
 
-## Como Fazer:
+## Como fazer:
 
-```Python
+A biblioteca integrada `json` do Python simplifica o processo de codificação (converter objetos Python para JSON) e decodificação (converter JSON para objetos Python). Veja como você pode usá-la:
+
+### Codificando objetos Python para JSON:
+
+```python
 import json
 
-# Criando um dicionário Python e convertendo para uma string JSON
-dados = {"nome": "João", "idade": 30, "programador": True}
-json_str = json.dumps(dados)
-print(json_str)
+dados = {
+    "nome": "John Doe",
+    "idade": 30,
+    "eFuncionario": True,
+    "enderecos": [
+        {"cidade": "Nova York", "cep": "10001"},
+        {"cidade": "São Francisco", "cep": "94016"}
+    ]
+}
 
-# Convertendo string JSON de volta para um dicionário Python
-dados_parsed = json.loads(json_str)
-print(dados_parsed)
+json_string = json.dumps(dados, indent=4)
+print(json_string)
 ```
 
-Saída:
-```
-{"nome": "João", "idade": 30, "programador": true}
-{'nome': 'João', 'idade': 30, 'programador': True}
-```
+**Saída:**
 
-Manuseio de arquivos JSON:
-
-```Python
-# Escrevendo JSON para um arquivo
-with open('dados.json', 'w') as f:
-    json.dump(dados, f)
-
-# Lendo JSON a partir de um arquivo
-with open('dados.json', 'r') as f:
-    dados_carregados = json.load(f)
-    print(dados_carregados)
-```
-
-Saída:
-```
-{'nome': 'João', 'idade': 30, 'programador': True}
+```json
+{
+    "nome": "John Doe",
+    "idade": 30,
+    "eFuncionario": true,
+    "enderecos": [
+        {
+            "cidade": "Nova York",
+            "cep": "10001"
+        },
+        {
+            "cidade": "São Francisco",
+            "cep": "94016"
+        }
+    ]
+}
 ```
 
-## Aprofundamento:
+### Decodificando JSON para objetos Python:
 
-- *Contexto histórico*: JSON foi proposto por Douglas Crockford em 2001, buscando uma alternativa mais enxuta ao XML.
-- *Alternativas*: Além do JSON, existem outros formatos como XML, YAML e BSON para troca de dados.
-- *Detalhes de implementação*: A biblioteca json em Python segue o padrão RFC 7159 e é construída em C, o que a torna bastante eficiente.
+```python
+json_string = '''
+{
+    "nome": "John Doe",
+    "idade": 30,
+    "eFuncionario": true,
+    "enderecos": [
+        {
+            "cidade": "Nova York",
+            "cep": "10001"
+        },
+        {
+            "cidade": "São Francisco",
+            "cep": "94016"
+        }
+    ]
+}
+'''
 
-## Veja Também:
+dados = json.loads(json_string)
+print(dados)
+```
 
-- Documentação oficial do Python para JSON: https://docs.python.org/3/library/json.html
-- Comparação entre JSON e XML: https://www.json.org/json-pt.html
-- RFC 7159 – The JavaScript Object Notation (JSON) Data Interchange Format: https://tools.ietf.org/html/rfc7159
+**Saída:**
+
+```python
+{
+    'nome': 'John Doe', 
+    'idade': 30, 
+    'eFuncionario': True, 
+    'enderecos': [
+        {'cidade': 'Nova York', 'cep': '10001'}, 
+        {'cidade': 'São Francisco', 'cep': '94016'}
+    ]
+}
+```
+
+### Trabalhando com bibliotecas de terceiros:
+
+Para lidar com JSON de forma mais complexa, como validação de esquema ou análise de arquivos JSON diretamente de URLs, bibliotecas como `requests` para solicitações HTTP e `jsonschema` para validação podem ser úteis.
+
+#### Exemplo com `requests` para analisar JSON de uma URL:
+
+```python
+import requests
+
+resposta = requests.get('https://api.exemplo.com/dados')
+dados = resposta.json()
+
+print(dados)
+```
+
+Este trecho busca dados JSON de uma URL dada e os converte diretamente em um objeto Python.
+
+#### Usando `jsonschema` para validar JSON:
+
+Primeiro, instale a biblioteca via pip:
+
+```bash
+pip install jsonschema
+```
+
+Então, use-a da seguinte forma:
+
+```python
+from jsonschema import validate
+import jsonschema
+
+esquema = {
+    "tipo": "object",
+    "propriedades": {
+        "nome": {"tipo": "string"},
+        "idade": {"tipo": "number"},
+        "eFuncionario": {"tipo": "boolean"},
+    },
+    "requeridos": ["nome", "idade", "eFuncionario"]
+}
+
+# Supondo que `dados` seja um dicionário obtido da decodificação de JSON
+try:
+    validate(instance=dados, schema=esquema)
+    print("Dados JSON válidos.")
+except jsonschema.exceptions.ValidationError as err:
+    print("Erro de validação:", err)
+```
+
+Este exemplo valida seu dicionário Python (obtido de dados JSON decodificados) contra um esquema pré-definido, garantindo que os dados estejam em conformidade com os formatos e tipos esperados.

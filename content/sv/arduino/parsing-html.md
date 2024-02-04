@@ -1,71 +1,82 @@
 ---
 title:                "Tolka HTML"
-date:                  2024-01-20T15:29:53.244059-07:00
+date:                  2024-02-03T19:11:31.045771-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Tolka HTML"
-
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/arduino/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Vad & Varför?
 
-Att tolka (parsing) HTML innebär att man analyserar och extraherar data från HTML-kod. Programmerare gör detta för att interagera med webbinnehåll, exempelvis för att hämta information från en webbsida till en mikrokontroller.
+Att tolka HTML i Arduino-projekt handlar om att extrahera information från webbsidor. Programmerare gör detta för att möjliggöra för deras Arduino-enheter att interagera med internet, samla in data från webbplatser för ändamål som sträcker sig från hemautomation till miljöövervakning.
 
-## Hur gör man:
+## Hur man gör:
 
-```Arduino
-#include <Ethernet.h>
-#include <EthernetClient.h>
-#include <SPI.h>
+Att tolka HTML på Arduino kräver vanligtvis bibliotek med minimalt fotavtryck på grund av begränsade enhetsresurser. Ett populärt val för webbskrapning och tolkning är att använda `ESP8266HTTPClient` och `ESP8266WiFi` biblioteken för ESP8266, eller deras motsvarigheter för ESP32, med tanke på deras inbyggda stöd för Wi-Fi-förmågor och HTTP-protokoll. Här är ett grundläggande exempel på att hämta och tolka HTML, med antagandet att du arbetar med en ESP8266 eller ESP32:
 
-EthernetClient client;
+Först, inkludera de nödvändiga biblioteken:
+```cpp
+#include <ESP8266WiFi.h> // För ESP8266
+#include <ESP8266HTTPClient.h>
+#include <WiFiClient.h>
+// Använd motsvarande ESP32-bibliotek om du använder en ESP32
 
+const char* ssid = "yourSSID";
+const char* password = "yourPASSWORD";
+```
+
+Anslut till ditt Wi-Fi-nätverk:
+```cpp
 void setup() {
-  Ethernet.begin(/* Din nätverksinfo här */);
-  Serial.begin(9600);
+    Serial.begin(115200);
+    WiFi.begin(ssid, password);
 
-  if (client.connect("example.com", 80)) {
-    client.println("GET /index.html HTTP/1.1");
-    client.println("Host: example.com");
-    client.println("Connection: close");
-    client.println();
-  }
-}
-
-void loop() {
-  while (client.available()) {
-    String line = client.readStringUntil('\n');
-    if (line.indexOf("<title>") != -1) {
-      int start = line.indexOf("<title>") + 7;
-      int end = line.indexOf("</title>");
-      String pageTitle = line.substring(start, end);
-      Serial.println(pageTitle);
-      break;
+    while (WiFi.status() != WL_CONNECTED) {
+        delay(1000);
+        Serial.println("Ansluter...");
     }
-  }
-  
-  if (!client.connected()) {
-    client.stop();
-  }
 }
-
 ```
 
-Sample Output:
+Gör en HTTP-förfrågan och tolka ett enkelt stycke HTML:
+```cpp
+void loop() {
+    if (WiFi.status() == WL_CONNECTED) { //Kontrollera Wi-Fi-anslutningens status
+        HTTPClient http;  //Deklarera ett objekt av klassen HTTPClient
+
+        http.begin("http://example.com");  //Ange förfrågningsdestination
+        int httpCode = http.GET();  //Skicka förfrågan
+
+        if (httpCode > 0) { //Kontrollera returkoden
+            String payload = http.getString();   //Hämta förfrågan responslast
+            Serial.println(payload);             //Skriv ut responslasten
+
+            // Tolka en specifik del, t.ex. extrahera titel från lasten
+            int titleStart = payload.indexOf("<title>") + 7; // +7 för att flytta förbi "<title>"-taggen
+            int titleEnd = payload.indexOf("</title>", titleStart);
+            String pageTitle = payload.substring(titleStart, titleEnd);
+
+            Serial.print("Sidtitel: ");
+            Serial.println(pageTitle);
+        }
+
+        http.end();   //Stäng anslutning
+    }
+
+    delay(10000); //Gör en förfrågan var 10:e sekund
+}
 ```
-Example Domain
+
+Exempel på utdata (med antagandet att http://example.com har en enkel HTML-struktur):
+```
+Ansluter...
+...
+Sidtitel: Exempeldomän
 ```
 
-## Djupdykning
-
-Att behandla HTML-data är inte nytt. 'Web scrapers' har gjort det sedan internets barndom. Ändå har inbyggda system som Arduino ofta begränsade resurser, vilket gör HTML-parsing utmanande. Alternativ till direktparsing med Arduino är att använda en mellanhand i form av en server som kan ta hand om stora delar av datatolkningen och sedan skicka enklare data till Arduinon.
-
-Implementationsdetaljer kan inkludera att hantera oregelbunden HTML och potentiellt stora datamängder som kan överskrida Arduinos begränsade minne. En vanlig strategi är att fokusera på specifika delar av HTML-koden och ignorera resten.
-
-## Se även
-
-- Arduino Ethernet-bibliotek: https://www.arduino.cc/en/Reference/Ethernet
-- String klassen i Arduino: https://www.arduino.cc/reference/en/language/variables/data-types/string/
-- Web scraping med Python som alternativ: https://www.crummy.com/software/BeautifulSoup/bs4/doc/
+Detta exempel demonstrerar hämtning av en HTML-sida och extrahering av innehållet i `<title>`-taggen. För mer komplex HTML-tolkning, överväg att använda reguljära uttryck (med försiktighet på grund av minnesbegränsningar) eller strängmanipuleringsfunktioner för att navigera genom HTML-strukturen. Avancerad tolkning kan kräva mer sofistikerade tillvägagångssätt, inklusive skräddarsydda tolkningsalgoritmer anpassade till den specifika strukturen av HTML du hanterar, eftersom den standard Arduino-miljön inte inkluderar ett inbyggt HTML-tolkningsbibliotek.

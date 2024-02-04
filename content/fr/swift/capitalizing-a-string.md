@@ -1,43 +1,46 @@
 ---
-title:                "Mettre une chaîne de caractères en majuscules"
-date:                  2024-01-19
-simple_title:         "Mettre une chaîne de caractères en majuscules"
-
+title:                "Mettre en majuscule une chaîne"
+date:                  2024-02-03T19:06:30.601140-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Mettre en majuscule une chaîne"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/swift/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
-Capitaliser une chaîne de caractères, c'est transformer toutes les lettres en majuscules. Ça sert à standardiser les textes, pour les titres ou pour s'assurer que les mots-clés soient cohérents malgré la variété des saisies.
+
+Capitaliser une chaîne de caractères en Swift modifie la chaîne donnée de manière que son premier caractère soit en majuscule et les caractères restants en minuscule. Les programmeurs font cela pour des raisons telles que la mise en forme de noms ou de phrases conformément aux règles grammaticales ou aux normes de l'interface utilisateur.
 
 ## Comment faire :
-Voici comment capitaliser une chaîne en Swift :
 
-```Swift
-let smallText = "bonjour, comment ça va?"
-let capitalizedText = smallText.uppercased()
-print(capitalizedText) // "BONJOUR, COMMENT ÇA VA?"
+Les structures `String` de Swift viennent avec quelques méthodes intégrées pour manipuler la casse des chaînes. Voici quelques approches pour capitaliser les chaînes en Swift, y compris l'utilisation de méthodes standards et de bibliothèques tierces si nécessaire.
+
+### Utiliser les méthodes intégrées
+
+Pour capitaliser la première lettre d'une chaîne et mettre le reste en minuscule :
+
+```swift
+let myString = "hello, world"
+let capitalizedString = myString.prefix(1).uppercased() + myString.dropFirst().lowercased()
+print(capitalizedString) // Sortie : "Hello, world"
 ```
 
-Très simple, non ? 
+Pour capitaliser la première lettre de chaque mot dans une phrase, vous pouvez utiliser la propriété `capitalized` :
 
-## Exploration approfondie
-Historiquement, la capitalisation remonte aux manuscrits médiévaux, pour accentuer ou distinguer des sections. Dans les programmes informatiques, on capitalise pour des raisons semblables : lisibilité et conformité.
-
-Alternativement, vous voudrez peut-être seulement mettre en majuscule la première lettre de chaque mot (capitalisation de titre) :
-
-```Swift
-let title = "le seigneur des anneaux"
-let titleCased = title.capitalized // "Le Seigneur Des Anneaux"
+```swift
+let sentence = "hello, world"
+let capitalizedSentence = sentence.capitalized
+print(capitalizedSentence) // Sortie : "Hello, World"
 ```
 
-Il est important de noter que `uppercased()` et `capitalized` tiennent compte de la locale par défaut. Cela peut affecter le comportement des opérations de majuscule dans certaines langues.
+### Utiliser une bibliothèque tierce
 
-Les détails d'implémentation sont ajustés pour être efficaces et insensibles à la casse, mais méfiez-vous des implications de performance sur de très grandes strings.
+Bien que la bibliothèque standard de Swift soit assez complète, certains formats de capitalisation spécifiques peuvent nécessiter des opérations plus complexes ou être simplifiés en utilisant des bibliothèques tierces. L'une des bibliothèques populaires pour la manipulation des chaînes est SwiftRichString. (Note : Assurez-vous toujours d'inclure les bibliothèques tierces via Swift Package Manager, CocoaPods ou Carthage, et de les importer dans votre fichier.)
 
-## Voir également
-- [Documentation Swift sur les strings](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
-- [Guide de style Unicode pour la capitalisation](http://www.unicode.org/versions/Unicode13.0.0/ch03.pdf) 
-- [Stack Overflow : discussion sur les performances de `uppercased()` en Swift](https://stackoverflow.com/questions/28288148/making-my-function-calculate-faster)
+D'abord, vous auriez besoin d'ajouter `SwiftRichString` à votre projet. Une fois installé, vous pouvez l'utiliser pour effectuer diverses opérations sur les chaînes, y compris les besoins spécifiques en matière de capitalisation. Cependant, à ce jour, les méthodes intégrées de Swift couvrent adéquatement la plupart des cas d'utilisation de la capitalisation sans avoir besoin de bibliothèques externes juste pour capitaliser des chaînes.
+
+Référez-vous toujours à la documentation la plus récente de la bibliothèque pour tout mise à jour ou changement dans les méthodes.

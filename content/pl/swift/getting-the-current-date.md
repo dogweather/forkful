@@ -1,60 +1,69 @@
 ---
 title:                "Pobieranie aktualnej daty"
-date:                  2024-01-20T15:16:51.855993-07:00
+date:                  2024-02-03T19:11:19.542755-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Pobieranie aktualnej daty"
-
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/swift/getting-the-current-date.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-(Po co i dlaczego?)
-Pobieranie bieżącej daty pozwala nam reagować na czas rzeczywisty. Używamy tego w logowaniu, w odmierzaniu czasu, w harmonogramach – wszędzie, gdzie czas jest kluczowy.
+## Co i dlaczego?
+Pobieranie aktualnej daty w języku Swift polega na użyciu klasy `Date`, aby uzyskać dostęp do daty i czasu, w którym aplikacja jest uruchamiana. Programiści muszą pobierać aktualną datę z wielu powodów, począwszy od timestampowania zdarzeń, wykonywania obliczeń związanych z datami, po wyświetlanie dat i godzin w interfejsie użytkownika.
 
-## How to:
-(Jak to zrobić:)
-```Swift
+## Jak to zrobić:
+Framework `Foundation` Swifta dostarcza klasę `Date`, co sprawia, że uzyskanie aktualnej daty i godziny jest proste. Oto podstawowy przykład, jak uzyskać aktualną datę:
+
+```swift
 import Foundation
 
-// Pobranie bieżącej daty i czasu
 let currentDate = Date()
-
-// Wydrukowanie bieżącej daty i czasu do konsoli
 print(currentDate)
 ```
-Przykładowe wyjście:
+
+To spowoduje wyświetlenie czegoś takiego:
+
 ```
-2023-04-14 07:38:46 +0000
+2023-04-12 07:46:23 +0000
 ```
 
-## Deep Dive:
-(Zagłębiając się:)
-Pobranie bieżącej daty w Swift jest proste, ale kryje w sobie więcej zaawansowanych możliwości. W roku 1998, poprzednik Swifta, Objective-C, był już wykorzystywany do obsługi dat. Swift przyniósł uproszczenie dzięki typowi `Date`.
+Format wyjściowy odpowiada standardowi ISO 8601, używając strefy czasowej UTC. Jednakże możesz chcieć sformatować tę datę do wyświetlania. W takim przypadku na ratunek przychodzi klasa `DateFormatter`:
 
-W alternatywie, możemy użyć `Calendar` do bardziej złożonych operacji z datami, jak różnice czasowe czy formatowanie. `DateFormatter` pozwala nam konwertować daty na czytelne stringi i odwrotnie, biorąc pod uwagę lokalizacje i preferencje użytkownika.
-
-W praktyce, warto też pamiętać o strefach czasowych (`TimeZone`) i ustawieniach lokalnych (`Locale`), aby czas był właściwie interpretowany na całym świecie.
-
-```Swift
-import Foundation
-
-// Przykład formatowania daty
+```swift
 let formatter = DateFormatter()
-formatter.dateStyle = .medium
+formatter.dateStyle = .long
 formatter.timeStyle = .medium
-
 let formattedDate = formatter.string(from: currentDate)
 print(formattedDate)
 ```
-Przykładowe wyjście dla lokalizacji w USA:
+
+Przykładowe wyjście może wyglądać tak:
+
 ```
-Apr 14, 2023, 7:38:46 AM
+12 kwietnia 2023, 10:46:23
 ```
 
-## See Also:
-(Zobacz też:)
-- Dokumentacja Swift `Date`: https://developer.apple.com/documentation/foundation/date
-- Przewodnik po `DateFormatter`: https://developer.apple.com/documentation/foundation/dateformatter
-- Informacje o `Calendar` w Swift: https://developer.apple.com/documentation/foundation/calendar
+Zwróć uwagę, że format wyjściowy będzie się różnić w zależności od ustawień regionalnych urządzenia, na którym jest uruchamiany kod.
+
+Dla projektów wymagających bardziej skomplikowanej manipulacji datami, wielu programistów Swifta korzysta z bibliotek stron trzecich, takich jak `SwiftDate`. Oto jak możesz użyć `SwiftDate`, żeby uzyskać aktualną datę w określonej strefie czasowej i formacie:
+
+Najpierw dodaj `SwiftDate` do swojego projektu za pomocą SPM, CocoaPods lub Carthage. Następnie:
+
+```swift
+import SwiftDate
+
+let rome = Region(calendar: .gregorian, zone: .europeRome, locale: .current)
+let currentDateInRome = DateInRegion(Date(), region: rome)
+print(currentDateInRome.toFormat("yyyy-MM-dd HH:mm:ss"))
+```
+
+To może wyjść:
+
+```
+2023-04-12 09:46:23
+```
+
+Używając `SwiftDate`, możesz łatwo manipulować datami i godzinami dla różnych stref czasowych i ustawień regionalnych, co sprawia, że skomplikowane zadania związane z obsługą dat w twoich aplikacjach Swift są prostsze.

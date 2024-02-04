@@ -1,43 +1,43 @@
 ---
-title:                "Sjekke om en mappe eksisterer"
-date:                  2024-01-20T14:56:05.766314-07:00
-simple_title:         "Sjekke om en mappe eksisterer"
-
+title:                "Sjekker om en mappe eksisterer"
+date:                  2024-02-03T19:07:21.172837-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Sjekker om en mappe eksisterer"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/fish-shell/checking-if-a-directory-exists.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Å sjekke om en mappe finnes betyr å bekrefte om en bestemt mappe er tilgjengelig på filsystemet. Programmerere gjør dette for å sørge for at scriptene deres ikke krasjer når de prøver å lese fra eller skrive til mapper som ikke eksisterer.
+Å sjekke om en katalog eksisterer i Fish Shell gjør det mulig for skript å ta beslutninger basert på tilstedeværelsen eller fraværet av katalogstrukturer, noe som muliggjør oppgaver som betingede filoperasjoner, logging eller oppsett av miljø. Denne teknikken er avgjørende for å skrive robuste skript som samhandler med filsystemet på en forutsigbar måte.
 
-## Hvordan:
-Inne i Fish Shell, kan du sjekke om en mappe finnes slik:
+## Hvordan gjøre det:
+Fish Shell bruker `test`-kommandoen til å sjekke filtyper og karakteristikker, inkludert om et mål er en katalog. Her er et grunnleggende mønster for å sjekke om en katalog eksisterer:
 
-```Fish Shell
-if test -d /sti/til/mappen
-    echo "Mappen finnes!"
+```fish
+if test -d /sti/til/katalog
+    echo "Katalogen eksisterer"
 else
-    echo "Mappen finnes ikke."
+    echo "Katalogen eksisterer ikke"
+end
+```
+Eksempel på utskrift:
+```
+Katalogen eksisterer
+```
+
+For mer strømlinjeformede fil- og katalogoperasjoner, kan man vende seg til eksterne verktøy som `fd`, selv om det oftere brukes til å finne filer og kataloger fremfor bare å sjekke for eksistens. Men ved å kombinere det med Fish-scripting, kan man oppnå praktiske resultater:
+
+```fish
+set dir "/sti/til/søk"
+if fd . $dir --type directory --max-depth 1 | grep -q $dir
+    echo "Katalogen eksisterer"
+else
+    echo "Katalogen eksisterer ikke"
 end
 ```
 
-Her er et eksempel på output:
-
-```Fish Shell
-Mappen finnes!
-```
-
-eller
-
-```Fish Shell
-Mappen finnes ikke.
-```
-
-## Dypdykk
-Å sjekke om mapper finnes er en vanlig operasjon og har vært en del av Unix-lignende shells helt siden de tidligste dagene av operativsystemer. I Fish Shell brukes `test` kommandoen - som er en bygget-inn kommando - til å utføre denne sjekken. Alternativt kan programmerere bruke `and` og `or` konstruksjoner for å kjede sammen tester, som kan bidra til mer kompakt kode når det kombineres med kondisjonell logikk. På implementeringsnivået bruker `test` systemkall for å innhente informasjon om filsystemet, som `stat` under Linux, som henter filstatus.
-
-## Se Også
-- [Fish Shell Documentation](https://fishshell.com/docs/current/)
-- [Filesystem Hierarchy Standard](https://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard)
+Dette `fd`-eksempelet søker etter katalogen på en spesifisert dybde, og `grep` sjekker for treff, noe som gjør det nyansert for detaljerte sjekker. Men, for det direkte formålet med å sjekke eksistens, er det å holde seg til Fish sin innebygde `test` både effektivt og rett på sak.

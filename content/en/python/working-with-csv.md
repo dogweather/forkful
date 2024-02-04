@@ -1,8 +1,8 @@
 ---
 title:                "Working with CSV"
-date:                  2024-01-19
+date:                  2024-02-03T19:03:15.173777-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Working with CSV"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/python/working-with-csv.md"
 ---
@@ -10,39 +10,84 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Working with CSV (Comma-Separated Values) files means reading from and writing data to plain-text files where each row is a data record. Programmers dig CSVs because they're light, human-readable, and jig with nearly any data-processing tool.
+Working with CSV (Comma-Separated Values) involves reading from and writing data to CSV files, a common format for storing tabular data. Programmers do it to easily exchange and store data in a simple, text-based format that is widely supported across different platforms and languages.
 
 ## How to:
+Python provides the built-in `csv` module to handle CSV files, making it straightforward to read from and write to them. For more robust and complex data manipulation, the third-party library `pandas` is highly popular.
+
+### Using the `csv` module
+
+#### Reading a CSV file
 ```python
-# Import the CSV module
 import csv
 
-# Reading a CSV file
-with open('data.csv', 'r') as file:
-    reader = csv.reader(file)
-    for row in reader:
+with open('sample.csv', mode='r') as file:
+    csv_reader = csv.reader(file)
+    for row in csv_reader:
         print(row)
-
-# Output:
-# ['Name', 'Age', 'City']
-# ['Alice', '30', 'New York']
-# ...
-
-# Writing to a CSV file
-with open('output.csv', 'w', newline='') as file:
-    writer = csv.writer(file)
-    writer.writerow(['Name', 'Age', 'City'])
-    writer.writerow(['Bob', '22', 'Los Angeles'])
-
-# Check output.csv to see results
+```
+*Assuming `sample.csv` contains:*
+```
+name,age,city
+John,22,New York
+Jane,28,Los Angeles
+```
+*Output:*
+```
+['name', 'age', 'city']
+['John', '22', 'New York']
+['Jane', '28', 'Los Angeles']
 ```
 
-## Deep Dive
-Back when data transmission was slower and storage costlier, CSV gained fans for its simplicity and low overhead. Alternatives like JSON and XML provide structure but at the cost of verbosity. For CSV, parsing speed is a win, but it may struggle with complex hierarchies or data types. 
+#### Writing to a CSV file
+```python
+import csv
 
-Libraries like `pandas` can also handle CSVs, offering more power but requiring more resources. Under the hood, csv.reader() is a generator, yielding rows one by one—smart for memory management.
+rows = [['name', 'age', 'city'], ['Jack', '33', 'Chicago'], ['Emily', '41', 'Denver']]
 
-## See Also
-- Python's CSV reading/writing documentation: https://docs.python.org/3/library/csv.html
-- `pandas` library for complex data handling: https://pandas.pydata.org/
-- CSV vs. JSON vs. XML: A comparison of data formats: https://www.datacamp.com/community/tutorials/json-xml-csv
+with open('output.csv', mode='w', newline='') as file:
+    writer = csv.writer(file)
+    writer.writerows(rows)
+```
+*Creates or overwrites `output.csv` with:*
+```
+name,age,city
+Jack,33,Chicago
+Emily,41,Denver
+```
+
+### Using `pandas` for CSV
+`pandas` is a powerful library for data manipulation that simplifies working with CSV files among other data formats.
+
+#### Install pandas
+```shell
+pip install pandas
+```
+
+#### Reading a CSV file with pandas
+```python
+import pandas as pd
+
+df = pd.read_csv('sample.csv')
+print(df)
+```
+*Output:*
+```
+    name  age         city
+0   John   22    New York
+1   Jane   28  Los Angeles
+```
+
+#### Writing to a CSV file with pandas
+```python
+import pandas as pd
+
+df = pd.DataFrame({'name': ['Jack', 'Emily'], 'age': [33, 41], 'city': ['Chicago', 'Denver']})
+df.to_csv('output_pandas.csv', index=False)
+```
+*Creates or overwrites `output_pandas.csv` with:*
+```
+name,age,city
+Jack,33,Chicago
+Emily,41,Denver
+```

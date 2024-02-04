@@ -1,65 +1,91 @@
 ---
 title:                "Lavorare con YAML"
-date:                  2024-01-19
+date:                  2024-02-03T19:25:17.972536-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Lavorare con YAML"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/elm/working-with-yaml.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Cosa & Perché?
-YAML è un formato di serializzazione dati leggibile dagli umani, usato per configurazioni, files di dumping e dati di messaggistica. Lo usiamo perché è semplice, leggibile e facilmente trasformabile in altre strutture di dati come JSON.
+## Cos'è e Perché?
+Elm non supporta nativamente YAML, un formato di serializzazione dei dati spesso utilizzato per file di configurazione o condivisione di dati, a causa del suo forte enfasi sulla sicurezza dei tipi e risultati prevedibili. Tuttavia, i programmatori incontrano frequentemente YAML quando si occupano di API o configurazioni nello sviluppo web, rendendo necessari metodi affidabili per analizzare i dati YAML nell'ecosistema strettamente tipizzato di Elm per una integrazione e manipolazione senza problemi.
 
-## How to:
-Elm non ha una libreria core per analizzare YAML, dunque usiamo `elm-yaml` di `terezka`. Installa con:
+## Come fare:
+Per gestire YAML in Elm, è tipicamente necessario convertire YAML in JSON al di fuori di Elm e poi utilizzare la funzionalità di decodifica JSON integrata in Elm per lavorare con i dati. Sebbene questo approccio richieda un ulteriore passaggio di conversione, sfrutta il robusto sistema di tipi di Elm per garantire l'integrità dei dati. Gli strumenti popolari per la conversione da YAML a JSON includono convertitori online o servizi backend. Una volta che hai JSON, puoi utilizzare il modulo `Json.Decode` di Elm per lavorare con i dati.
 
-```shell
-elm install terezka/yaml
+Prima, assumendo di avere i seguenti dati YAML:
+
+```yaml
+person:
+  name: Jane Doe
+  age: 30
 ```
 
-Codice di esempio per decodificare YAML:
+Convertirli in formato JSON:
+
+```json
+{
+  "person": {
+    "name": "Jane Doe",
+    "age": 30
+  }
+}
+```
+
+Quindi, definisci il tuo modello e decodificatore Elm:
 
 ```elm
-import Yaml.Decode exposing (..)
-import Dict exposing(Dict)
+module Main exposing (..)
 
-type alias Config =
+import Html exposing (text)
+import Json.Decode as Decode
+
+type alias Person =
     { name : String
-    , items : Dict String Int
+    , age : Int
     }
 
-configDecoder : Decoder Config
-configDecoder =
-    map2 Config
-        (field "name" string)
-        (field "items" (dict int))
+decoderPersona : Decode.Decoder Person
+decoderPersona =
+    Decode.map2 Person
+        (Decode.field "name" Decode.string)
+        (Decode.field "age" Decode.int)
 
-configYaml : String
-configYaml =
-    """
-    name: Example
-    items:
-        item1: 5
-        item2: 10
-    """
-
-decodeResult : Result String Config
-decodeResult =
-    Yaml.Decode.fromString configDecoder configYaml
 ```
 
-Output: `Ok { name = "Example", items = Dict.fromList [("item1", 5), ("item2", 10)] }`
+Per utilizzare questo decodificatore per convertire JSON in un tipo Elm:
 
-## Approfondimento
-YAML nasce nel 2001. È stato progettato per essere facile da leggere e supportare molteplici linguaggi di programmazione. JSON e XML sono alternative a YAML, ma sono meno leggibili. In Elm, la gestione di YAML è possibile ma richiede una libreria esterna perché non è inclusa nel nucleo del linguaggio.
+```elm
+import Json.Decode as Decode
 
-## See Also
-Approfondisci con queste risorse:
+jsonString = 
+    """
+    {
+      "person": {
+        "name": "Jane Doe",
+        "age": 30
+      }
+    }
+    """
 
-- `elm-yaml`: https://package.elm-lang.org/packages/terezka/yaml/latest/
-- Specifiche YAML: https://yaml.org/spec/1.2/spec.html
-- Confronto tra JSON e YAML: https://en.wikipedia.org/wiki/YAML#Comparison_with_JSON
+risultatoDecodifica = Decode.decodeString (Decode.field "person" decoderPersona) jsonString
 
-Queste ti daranno una comprensione più approfondita di YAML e come usarlo con Elm.
+main =
+    case risultatoDecodifica of
+        Ok person ->
+            Html.text ("Ciao, " ++ person.name ++ "!")
+            
+        Err _ ->
+            Html.text "Si è verificato un errore durante la decodifica."
+```
+
+Output (renderizzato in un'applicazione Elm):
+```
+Ciao, Jane Doe!
+```
+
+Questo approccio assicura che tu possa lavorare con dati YAML in Elm utilizzando JSON come formato intermediario, sfruttando il solido sistema di tipi di Elm e le capacità di decodifica JSON per manipolare in modo sicuro ed efficace dati esterni.

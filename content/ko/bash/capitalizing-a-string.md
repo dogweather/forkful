@@ -1,49 +1,61 @@
 ---
-title:                "문자열 대문자로 변환하기"
-date:                  2024-01-19
-simple_title:         "문자열 대문자로 변환하기"
-
+title:                "문자열 대문자화"
+date:                  2024-02-03T19:04:56.157338-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "문자열 대문자화"
 tag:                  "Strings"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/bash/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (무엇인가와 왜 사용하는가?)
-문자열을 대문자로 만드는 것은 모든 문자를 대문자 버전으로 변환하는 작업입니다. 가독성을 높이고, 사용자 인터페이스를 일관되게 유지하며, 프로그래밍 상에서는 특정 문자열을 상수로 표현할 때 자주 사용됩니다.
+## 무엇 & 왜?
+Bash에서 문자열의 첫 글자를 대문자로 변환하면서 나머지 문자열은 변경하지 않는 것을 의미합니다. 이 기술은 출력 포맷을 지정하거나, 일부 문자열이 가독성이나 스타일 취향을 위해 대문자로 시작해야 하는 코딩 관례를 준수하는 데 일반적으로 사용됩니다.
 
-## How to: (방법)
-Bash에서 문자열을 대문자로 변환하는 기본적인 명령어는 `tr`, `awk`, `sed`, 그리고 내장된 Bash 기능 등을 사용할 수 있습니다. 각각의 방법으로 "hello, world"를 대문자로 변환해보겠습니다.
+## 어떻게 하나요:
 
-```Bash
-# tr을 사용하여 대문자로 변환
-echo "hello, world" | tr '[:lower:]' '[:upper:]'
+Bash에는 문자열을 대문자화하는 구체적인 내장 함수가 없지만, 파라미터 확장이나 `awk` 같은 외부 도구를 사용하여 이 작업을 수행할 수 있습니다. 다음은 Bash에서 문자열을 대문자화하는 몇 가지 방법입니다:
 
-# awk을 사용하여 대문자로 변환
-echo "hello, world" | awk '{print toupper($0)}'
+**파라미터 확장 사용하기:**
 
-# sed을 사용하여 대문자로 변환
-echo "hello, world" | sed 's/.*/\U&/'
+이 방법은 셸에서 직접 문자열을 조작합니다.
 
-# Bash 내장 기능을 사용하여 대문자로 변환
-str="hello, world"
-echo "${str^^}"
+```bash
+str="hello world"
+capitalized="${str^}"
+echo "$capitalized"
+```
+출력:
+```
+Hello world
 ```
 
-출력은 모든 방법에서 같습니다:
+**`awk` 사용하기:**
+
+`awk`는 대부분의 유닉스 계열 운영 체제에서 사용할 수 있는 강력한 텍스트 처리 도구로, 문자열을 대문자화하는 데 활용할 수 있습니다.
+
+```bash
+str="hello world"
+echo "$str" | awk '{print toupper(substr($0, 1, 1)) tolower(substr($0, 2))}'
 ```
-HELLO, WORLD
+출력:
+```
+Hello world
 ```
 
-## Deep Dive (심층 탐구)
-초창기 유닉스 시스템에서는 문자열 처리가 매우 기본적이었습니다. 그러나 시간이 지나면서 여러 도구들이 개발되었는데, `tr`, `awk`, `sed`는 그 중 대표적인 문자열 처리 도구들입니다. 각 도구는 특정 작업에 최적화되어 있는데, 예를 들어 `tr`은 간단한 문자 변환에, `awk`는 더 복잡한 텍스트 추출과 처리에, 그리고 `sed`는 텍스트 스트림 편집에 적합합니다.
+**`sed` 사용하기:**
 
-Bash 버전 4 이상부터는 문자열 조작이 더 간단해졌고, 파라미터 확장을 통해 대소문자 변경이 가능해졌습니다(`^^`은 대문자로, `,,'는 소문자로 변환).
+전통적인 접근 방식으로, `sed`를 사용하여 문자열의 첫 글자를 대문자로 만들 수 있습니다. 하지만 이전 방법들에 비해 약간 더 복잡합니다.
 
-그런데, 왜 이렇게 많은 방법이 있을까요? 다양한 옵션이 있다는 것은 다양한 문제 상황에 유연하게 대처할 수 있다는 의미입니다. `tr`이나 `awk`등이 설치되어 있지 않은 시스템에서도 Bash 내장 기능을 이용할 수 있으며, 일부 다른 유닉스 계열 시스템에서도 호환성을 제공합니다.
+```bash
+str="hello world"
+echo "$str" | sed 's/./\u&/'
+```
+출력:
+```
+Hello world
+```
 
-## See Also (더 보기)
-- Bash 문자열 조작 가이드: https://www.gnu.org/software/bash/manual/bash.html#Shell-Parameter-Expansion
-- AWK 사용법 가이드: https://www.gnu.org/software/gawk/manual/gawk.html
-- SED 사용자 매뉴얼: https://www.gnu.org/software/sed/manual/sed.html
+이 스니펫들은 Bash에서 문자열의 첫 글자를 대문자로 만드는 방법을 보여주며, 텍스트를 조작할 때 셸 스크립팅의 유연성을 강조합니다.

@@ -1,61 +1,75 @@
 ---
 title:                "解析HTML"
-date:                  2024-01-20T15:31:05.043680-07:00
+date:                  2024-02-03T19:11:46.605276-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "解析HTML"
-
 tag:                  "HTML and the Web"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/clojure/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (是什么以及为什么?)
-解析HTML就是将网页代码转换成可供程序操作的数据结构。程序员这么做是为了抓取、分析网页内容，或实现自动化。
+## 什么以及为什么？
 
-## How to: (如何操作)
-我们将使用`enlive`库来解析HTML。首先，要在项目文件`project.clj`中加入依赖。
+在Clojure中解析HTML涉及到从HTML文档中以编程方式提取信息。程序员这么做是为了动态访问、操作或监控网页内容，自动化任务或将数据输入到应用程序中。
+
+## 如何操作：
+
+Clojure没有内置的HTML解析功能，但你可以利用Java库或Clojure的封装器，例如`enlive`或`hickory`。以下是如何使用这两者的方法：
+
+### 使用Enlive：
+
+Enlive是HTML解析和网页抓取的热门选择。首先，在项目依赖中加入它：
 
 ```clojure
-(defproject your-project "0.1.0"
-  :dependencies [
-                 [net.cgrand/enlive "1.1.6"]
-                 ;; 其他依赖...
-                ])
+[net.cgrand/enlive "1.1.6"]
 ```
 
-接着，我们写一些代码来解析HTML。
+然后，你可以这样解析和导航HTML：
 
 ```clojure
 (require '[net.cgrand.enlive-html :as html])
 
-(defn parse-html [html-str]
-  (html/html-snippet html-str))
-
-(let [parsed-html (parse-html "<p>Hello, world!</p>")]
-  (println (html/select parsed-html [:p])))
+(let [doc (html/html-resource (java.net.URL. "http://example.com"))]
+  (html/select doc [:div.some-class]))
 ```
 
-运行上述代码，我们将得到如下输出:
+这个代码片段获取一个HTML页面，并选择所有带有`some-class`类的`<div>`元素。
+
+输出可能看起来像：
 
 ```clojure
-({:tag :p, :attrs nil, :content ["Hello, world!"]})
+({:tag :div, :attrs {:class "some-class"}, :content ["Here's some content."]})
 ```
 
-这意味着我们成功地解析了HTML，并选中了`<p>`标签。
+### 使用Hickory：
 
-## Deep Dive (深入了解)
-`enlive`是Clojure社区中流行的HTML解析库之一。它最大的特色是"选择器"，允许我们用CSS选择器风格来定位HTML元素。
+Hickory提供了一种将HTML解析成更易于在Clojure中处理的格式的方法。将Hickory加入到你的项目依赖中：
 
-它背后的原理是DOM树转换。最初是用于服务器端渲染，但也可用于爬虫等工具。
+```clojure
+[hickory "0.7.1"]
+```
 
-除了`enlive`，也有`jsoup`、`hickory`等库可用于解析HTML。每个都有其特点，选择哪个取决于具体需求。
+这里有一个简单的例子：
 
-执行解析时，效率和准确性至关重要。因此，选择维护良好、文档清晰的库至关重要。
+```clojure
+(require '[hickory.core :as hickory]
+         '[hickory.select :as select])
 
-## See Also (还可以看看)
-- Enlive 官方文档: https://github.com/cgrand/enlive
-- Jsoup: https://jsoup.org/
-- Hickory: https://github.com/davidsantiago/hickory
+;; 将HTML解析成Hickory格式
+(let [doc (hickory/parse "<html><body><div id='main'>Hello, world!</div></body></html>")]
+  ;; 选择id为'main'的div
+  (select/select (select/id "main") doc))
+```
 
-阅读这些资源可提供更全面的HTML解析技术了解。
+这段代码解析了一个简单的HTML字符串，并使用CSS选择器找到ID为`main`的`div`。
+
+示例输出：
+
+```clojure
+[{:type :element, :tag :div, :attrs {:id "main"}, :content ["Hello, world!"]}]
+```
+
+`enlive`和`hickory`都为Clojure中的HTML解析提供了强大的解决方案，其中`enlive`更侧重于模板化，而`hickory`强调数据转换。

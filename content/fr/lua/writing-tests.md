@@ -1,38 +1,78 @@
 ---
 title:                "Rédaction de tests"
-date:                  2024-01-19
+date:                  2024-02-03T19:31:16.093862-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Rédaction de tests"
-
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/lua/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Écrire des tests consiste à vérifier que votre code fonctionne comme prévu. Les programmeurs testent pour prévenir les bugs, garantir la qualité et faciliter les mises à jour.
+## Quoi & Pourquoi ?
 
-## How to:
-```Lua
--- Example: Simple Lua test using assert
-function add(a, b)
-    return a + b
+Écrire des tests en programmation implique de créer de petits morceaux de code séparés pour vérifier automatiquement que différentes parties de votre application fonctionnent comme prévu. Pour les programmeurs Lua, les tests garantissent la fiabilité et aident à maintenir la qualité du code, accélérant le processus de débogage et rendant les modifications de la base de code plus sûres.
+
+## Comment faire :
+
+Lua, étant un langage de script léger mais puissant, n'inclut pas de framework de test intégré. Cependant, des bibliothèques tierces comme Busted et LuaUnit rendent les tests relativement simples. Ici, nous examinerons des exemples utilisant les deux.
+
+### Utiliser Busted
+
+Busted est un framework de test Lua populaire qui offre une manière flexible d'écrire des tests. Tout d'abord, installez Busted via LuaRocks (le gestionnaire de paquets de Lua) avec `luarocks install busted`. Une fois installé, vous pouvez écrire vos tests. Voici un test simple pour une fonction `add` qui additionne deux nombres :
+
+```lua
+-- add.lua
+local function add(a, b)
+  return a + b
 end
 
--- Test
-local result = add(2, 3)
-assert(result == 5, "Expected 2 + 3 to equal 5")
-
-print("Test passed: 2 + 3 equals " .. result)
-```
-Output:
-```
-Test passed: 2 + 3 equals 5
+return add
 ```
 
-## Deep Dive
-Historiquement, les tests en Lua pouvaient s'appuyer sur des frameworks tels que LuaUnit ou Busted. Les alternatives incluent l'écriture de vérifications manuelles avec `assert` ou l'utilisation de librairies tierces. L'implémentation dépend des besoins spécifiques, de la complexité du projet et des préférences en matière de rapport de test.
+```lua
+-- add_spec.lua
+local add = require('add')
 
-## See Also
-- LuaUnit documentation: [https://luaunit.readthedocs.io/en/latest/](https://luaunit.readthedocs.io/en/latest/)
-- Lua assertion manual: [https://www.lua.org/manual/5.4/manual.html#pdf-assert](https://www.lua.org/manual/5.4/manual.html#pdf-assert)
+describe("La fonction Add", function()
+  it("devrait additionner correctement deux nombres", function()
+    assert.are.equal(5, add(2, 3))
+  end)
+end)
+```
+
+Pour exécuter les tests, tapez `busted` dans votre terminal. Un exemple de sortie pour un test réussi ressemblerait à :
+
+```
+●
+1 succès / 0 échecs / 0 erreurs / 0 en attente : 0,002 secondes
+```
+
+### Utiliser LuaUnit
+
+LuaUnit est un autre framework de test qui suit les conventions xUnit et est facile à configurer. Installez LuaUnit via LuaRocks en utilisant `luarocks install luaunit`. Voici comment vous pourriez écrire un test similaire à celui ci-dessus avec LuaUnit :
+
+```lua
+-- add.lua reste le même
+
+-- test_add.lua
+luaunit = require('luaunit')
+local add = require('add')
+
+function testAdd()
+  luaunit.assertEquals(add(2, 3), 5)
+end
+
+os.exit(luaunit.LuaUnit.run())
+```
+
+Exécuter ce script directement via Lua (`lua test_add.lua`) affichera quelque chose comme :
+
+```
+.
+1 test lancé en 0,001 secondes, 1 succès, 0 échecs
+```
+
+Busted et LuaUnit offrent tous deux de vastes fonctionnalités pour gérer divers scénarios de test, incluant le mocking, l'espionnage et les tests asynchrones. Le choix entre eux repose sur les besoins spécifiques de votre projet et votre préférence personnelle en ce qui concerne la syntaxe et les fonctionnalités.

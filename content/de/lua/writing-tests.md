@@ -1,49 +1,78 @@
 ---
-title:                "Tests schreiben"
-date:                  2024-01-19
-simple_title:         "Tests schreiben"
-
+title:                "Tests Schreiben"
+date:                  2024-02-03T19:31:12.138218-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Tests Schreiben"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/lua/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Beim Testen schreiben geht es darum, Code zu überprüfen, indem man automatisierte Skripte benutzt, die durchspielen, was der Code tun soll. Wir machen das, um Fehler frühzeitig zu erkennen und die Softwarequalität langfristig zu sichern.
 
-## How to:
-Mit Lua kannst du einfache Tests schreiben, indem du eine Testfunktion definierst und `assert` verwendest, um Bedingungen zu prüfen.
+Das Schreiben von Tests in der Programmierung bedeutet, kleine, separate Codeteile zu erstellen, um automatisch zu überprüfen, ob verschiedene Teile Ihrer Anwendung wie erwartet funktionieren. Für Lua-Programmierer sichert das Testen Zuverlässigkeit und hilft dabei, die Codequalität zu erhalten, beschleunigt den Debugging-Prozess und macht Änderungen am Code sicherer.
 
-```Lua
--- Ein einfaches Testbeispiel
+## Wie:
+
+Lua, als leichtgewichtige, aber leistungsstarke Skriptsprache, beinhaltet kein eingebautes Test-Framework. Dritt-Paketbibliotheken wie Busted und LuaUnit machen das Testen jedoch relativ unkompliziert. Hier sehen wir uns Beispiele mit beiden an.
+
+### Busted verwenden
+
+Busted ist ein beliebtes Lua-Test-Framework, das eine flexible Art bietet, Tests zu schreiben. Installieren Sie zuerst Busted über LuaRocks (den Paketmanager von Lua) mit `luarocks install busted`. Nach der Installation können Sie Ihre Tests schreiben. Hier ist ein einfacher Test für eine Funktion `add`, die zwei Zahlen addiert:
+
+```lua
+-- add.lua
 local function add(a, b)
-    return a + b
+  return a + b
 end
 
--- Testfunktion
-local function testAdd()
-    assert(add(1, 2) == 3)
-    assert(add(-1, -2) == -3)
-    assert(add(0, 0) == 0)
-    print("Alle Tests erfolgreich durchgeführt!")
+return add
+```
+
+```lua
+-- add_spec.lua
+local add = require('add')
+
+describe("Add function", function()
+  it("sollte zwei Zahlen korrekt addieren", function()
+    assert.are.equal(5, add(2, 3))
+  end)
+end)
+```
+
+Um die Tests auszuführen, führen Sie `busted` in Ihrem Terminal aus. Eine Beispiel-Ausgabe für einen bestandenen Test könnte so aussehen:
+
+```
+●
+1 Erfolg / 0 Misserfolge / 0 Fehler / 0 ausstehend : 0.002 Sekunden
+```
+
+### LuaUnit verwenden
+
+LuaUnit ist ein weiteres Test-Framework, das den xUnit-Konventionen folgt und einfach einzurichten ist. Installieren Sie LuaUnit über LuaRocks mit `luarocks install luaunit`. So könnten Sie einen ähnlichen Test wie oben mit LuaUnit schreiben:
+
+```lua
+-- add.lua bleibt gleich
+
+-- test_add.lua
+luaunit = require('luaunit')
+local add = require('add')
+
+function testAdd()
+  luaunit.assertEquals(add(2, 3), 5)
 end
 
--- Tests ausführen
-testAdd()
+os.exit(luaunit.LuaUnit.run())
 ```
 
-Sample Output:
+Wenn Sie dieses Skript direkt über Lua ausführen (`lua test_add.lua`), erhalten Sie etwas Ähnliches wie:
+
 ```
-Alle Tests erfolgreich durchgeführt!
+.
+Ran 1 tests in 0.001 Sekunden, 1 Erfolg, 0 Misserfolge
 ```
 
-## Deep Dive
-Die Praxis des Testens in der Programmierung existiert seit den frühen Tagen der Softwareentwicklung. In Lua sind Bibliotheken wie `busted` oder `luassert` beliebt, um umfangreichere Tests wie Unit-Tests oder Behavior-Driven Development (BDD) zu unterstützen. Diese Tools bieten mehr Funktionalitäten als einfache `assert`-Aufrufe, darunter Test-Suites, Mock-Objekte, und detaillierte Ausgabe.
-
-## See Also
-Weiterführende Ressourcen und Links:
-
-- Lua Users Wiki zu automatisierten Tests: http://lua-users.org/wiki/UnitTesting
-- busted Test-Framework: http://olivinelabs.com/busted/
-- Einführung in die Testgesteuerte Entwicklung (TDD) mit Lua: https://www.lua.org/pil/8.html
+Sowohl Busted als auch LuaUnit bieten umfangreiche Funktionen, um verschiedene Testszenarien zu behandeln, einschließlich Mocking, Spying und asynchronem Testen. Die Wahl zwischen ihnen hängt von den spezifischen Bedürfnissen Ihres Projekts und Ihren persönlichen Vorlieben bezüglich Syntax und Funktionalität ab.

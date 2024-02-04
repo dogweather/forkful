@@ -1,66 +1,113 @@
 ---
-title:                "Lavorare con i file CSV"
-date:                  2024-01-19
-simple_title:         "Lavorare con i file CSV"
-
+title:                "Lavorare con i CSV"
+date:                  2024-02-03T19:21:05.523219-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Lavorare con i CSV"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/php/working-with-csv.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-CSV sta per "Comma-Separated Values". Programatori usano formati CSV per trasportare dati: è semplice, universale, e leggibile da umani e macchine.
+## Cosa & Perché?
 
-## How to:
-Leggi CSV:
-```PHP
+Lavorare con CSV (Comma-Separated Values, ovvero valori separati da virgola) comporta la lettura e la scrittura di dati su file CSV, un formato popolare per rappresentare dati tabellari in testo semplice. I programmatori lo fanno per scambiare dati facilmente tra diversi programmi, sistemi o banche dati, grazie alla sua semplicità e al vasto supporto su piattaforme e linguaggi di programmazione.
+
+## Come fare:
+
+PHP fornisce funzioni integrate per gestire file CSV, rendendo semplice leggere da e scrivere su questi file senza la necessità di librerie di terze parti. Ecco alcuni esempi per iniziare:
+
+### Leggere un File CSV
+
+Puoi aprire un file CSV e leggerne il contenuto usando `fopen()` in combinazione con `fgetcsv()`:
+
+```php
 <?php
-if (($handle = fopen("esempio.csv", "r")) !== FALSE) {
+$filename = 'data.csv';
+$handle = fopen($filename, "r");
+if ($handle !== FALSE) {
     while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
-        print_r($data);
+        $num = count($data);
+        echo "Numero di campi nella riga: $num\n";
+        for ($c = 0; $c < $num; $c++) {
+            echo $data[$c] . "\n";
+        }
     }
     fclose($handle);
 }
 ?>
 ```
-Salva CSV:
-```PHP
+
+Questo script stampa il numero di campi di ogni riga seguito dal contenuto di ogni campo.
+
+### Scrivere su un File CSV
+
+Per scrivere su un file CSV, usa `fopen()` in modalità scrittura (`w`) e `fputcsv()`:
+
+```php
 <?php
-$list = array (
-    array('ciao', 'mondo', '2023'),
-    array('php', 'csv', 'esempio')
-);
+$list = [
+    ['ID', 'Nome', 'Email'],
+    [1, 'John Doe', 'john@example.com'],
+    [2, 'Jane Doe', 'jane@example.com']
+];
 
-$fp = fopen('file.csv', 'w');
+$handle = fopen('users.csv', 'w');
 
-foreach ($list as $fields) {
-    fputcsv($fp, $fields);
+foreach ($list as $row) {
+    fputcsv($handle, $row);
 }
 
-fclose($fp);
+fclose($handle);
 ?>
 ```
-Output di lettura potrebbe essere:
-```
-Array
-(
-    [0] => ciao
-    [1] => mondo
-    [2] => 2023
-)
-Array
-(
-    [0] => php
-    [1] => csv
-    [2] => esempio
-)
+
+Questo script crea un file chiamato `users.csv` e scrive l'intestazione e due righe di dati su di esso.
+
+### Uso di una Libreria: League\Csv
+
+Per una gestione CSV più avanzata, la libreria `League\Csv` offre un robusto insieme di funzionalità. Dopo averla installata tramite Composer (`composer require league/csv`), puoi usarla per leggere e scrivere dati CSV con maggiore flessibilità.
+
+#### Leggere con League\Csv
+
+```php
+<?php
+require 'vendor/autoload.php';
+
+use League\Csv\Reader;
+
+$csv = Reader::createFromPath('data.csv', 'r');
+$csv->setHeaderOffset(0); // Imposta se vuoi usare la prima riga come intestazione
+
+$resultati = $csv->getRecords();
+foreach ($resultati as $row) {
+    print_r($row);
+}
+?>
 ```
 
-## Deep Dive
-CSV nasce nei primi anni '70. Alternative includono JSON e XML, ma CSV brilla per la sua semplicità. Quando lavori con CSV in PHP, controlla il locale (funzione `setlocale()`) perché influisce sulla separazione dei decimali.
+Questo script legge `data.csv`, trattando la prima riga come intestazioni di colonna e stampa ogni riga come un array associativo.
 
-## See Also
-- Documentazione PHP su fgetcsv: https://www.php.net/manual/it/function.fgetcsv.php
-- Documentazione PHP su fputcsv: https://www.php.net/manual/it/function.fputcsv.php
-- RFC 4180, il standard del formato CSV: https://tools.ietf.org/html/rfc4180
+#### Scrivere con League\Csv
+
+```php
+<?php
+require 'vendor/autoload.php';
+
+use League\Csv\Writer;
+
+$csv = Writer::createFromPath('users_new.csv', 'w+');
+
+$csv->insertOne(['ID', 'Nome', 'Email']);
+$csv->insertAll([
+    [3, 'Alex Doe', 'alex@example.com'],
+    [4, 'Anna Smith', 'anna@example.com']
+]);
+
+echo "Scritto su users_new.csv con successo.";
+?>
+```
+
+Questo crea `users_new.csv` e scrive una riga di intestazione seguita da due righe di dati.

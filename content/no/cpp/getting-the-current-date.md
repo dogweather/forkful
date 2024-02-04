@@ -1,51 +1,83 @@
 ---
-title:                "Slik får du tak i dagens dato"
-date:                  2024-01-20T15:13:38.234887-07:00
-simple_title:         "Slik får du tak i dagens dato"
-
+title:                "Få dagens dato"
+date:                  2024-02-03T19:09:58.270575-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Få dagens dato"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/cpp/getting-the-current-date.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Hva & Hvorfor?)
-Hente nåværende dato i programmer: enhver funksjon som gir oss dagens dato. Vi gjør dette for å tidsstemple hendelser, opprette rapporter eller sjekke gyldighetsperioder.
+## Hva & Hvorfor?
+Å hente den nåværende datoen i C++ er en grunnleggende oppgave for programmer som trenger å behandle eller vise datoer basert på systemets klokke. Det er essensielt for logging, tidsstempling, planlegging av oppgaver, og enhver funksjonalitet som stoler på datoer og tid.
 
-## How to (Slik gjør du det):
-I C++ bruker vi `<chrono>` biblioteket for å få nåværende dato. Her er et raskt eksempel:
+## Hvordan:
+C++ tilbyr flere måter å få tak i den nåværende datoen på, inkludert C++ standardbiblioteket og tredjeparts biblioteker som Boost. Følgende eksempler demonstrerer hvordan man kan utføre denne oppgaven.
 
-```C++
+### Bruk av `<chrono>` (C++20 og senere)
+C++20 introduserte flere funksjonaliteter i `<chrono>`-biblioteket, noe som gjør det enkelt å få tak i den nåværende datoen:
+```cpp
 #include <iostream>
 #include <chrono>
-#include <ctime>
+#include <format> // For std::format (C++20)
 
 int main() {
-    // Får nåværende tidspunkt som time_point
-    auto nå = std::chrono::system_clock::now();
+    auto current_time_point = std::chrono::system_clock::now(); // Fang opp det nåværende tidspunktet
+    auto current_time_t = std::chrono::system_clock::to_time_t(current_time_point); // Konverter til time_t
 
-    // Konverterer time_point til en time_t objekt for å representere kalendertid
-    std::time_t nå_tid = std::chrono::system_clock::to_time_t(nå);
-
-    // Konverterer time_t til en lesbar streng 
-    std::cout << "Nåværende dato: " << std::ctime(&nå_tid);
+    // Formatter tiden til et lesbart format
+    std::cout << "Nåværende Dato: " << std::format("{:%Y-%m-%d}", std::chrono::system_clock::to_time_t(current_time_point)) << std::endl;
 
     return 0;
 }
 ```
-
-Sample Output:
+**Eksempelutskrift:**
+```plaintext
+Nåværende Dato: 2023-03-15
 ```
-Nåværende dato: Wed Mar 10 11:21:54 2021
+
+### Bruk av `<ctime>`
+For programmerere som arbeider med eldre versjoner av C++ eller de som foretrekker det tradisjonelle C-biblioteket:
+```cpp
+#include <iostream>
+#include <ctime>
+
+int main() {
+    std::time_t t = std::time(0); // Hent nåværende tid
+    std::tm* nå = std::localtime(&t);
+    std::cout << "Nåværende Dato: " 
+              << (nå->tm_year + 1900) << '-' 
+              << (nå->tm_mon + 1) << '-'
+              <<  nå->tm_mday
+              << std::endl;
+
+    return 0;
+}
+```
+**Eksempelutskrift:**
+```plaintext
+Nåværende Dato: 2023-03-15
 ```
 
-## Deep Dive (Dypdykk):
-Historisk sett har C++ brukt `<ctime>` for dato og tid, men dette hadde sine begrensninger og komplikasjoner. Med C++11 introduserte `<chrono>` stor forbedring. Det gir type-sikkerheter og enkel bearbeidelse av tid. Alternativer inkluderer tredjepartsbiblioteker som `Boost` eller operativsystem-spesifikke kall, men `<chrono>` er standard og anbefalt.
+### Bruk av Boost Date_Time
+For prosjekter som benytter Boost-bibliotekene, tilbyr Boost Date_Time-biblioteket en alternativ metode for å få tak i den nåværende datoen:
+```cpp
+#include <iostream>
+#include <boost/date_time.hpp>
 
-Når vi bruker `<chrono>`, er det viktig å forstå `time_point` konseptet, som representerer et punkt i tid, og `duration`, som er en tidsintervall. Ved å konvertere til `time_t`, kan vi bruke familiære tid/dato funksjoner som `std::ctime` for å lage en strengrepresentasjon.
+int main() {
+    // Hent den nåværende dagen ved hjelp av Boosts Gregorianske kalender
+    boost::gregorian::date i dag = boost::gregorian::day_clock::local_day();
+    std::cout << "Nåværende Dato: " << i dag << std::endl;
 
-## See Also (Se også):
-- C++ `<chrono>` documentation: https://en.cppreference.com/w/cpp/header/chrono
-- C++ `<ctime>` documentation: https://en.cppreference.com/w/cpp/header/ctime
-- `Boost` Date Time: https://www.boost.org/doc/libs/release/libs/date_time/
-- For dybdeforståelse, se Howard Hinnant's dato og tid bibliotek som inspirerte deler av `<chrono>`: https://github.com/HowardHinnant/date
+    return 0;
+}
+```
+**Eksempelutskrift:**
+```plaintext
+Nåværende Dato: 2023-Mar-15
+```
+Disse eksemplene gir en grunnleggende basis for arbeid med datoer i C++, avgjørende for et bredt spekter av applikasjoner.

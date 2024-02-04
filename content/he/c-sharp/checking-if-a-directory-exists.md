@@ -1,19 +1,27 @@
 ---
-title:                "בדיקה האם תיקייה קיימת"
-date:                  2024-01-20T14:56:17.062739-07:00
-simple_title:         "בדיקה האם תיקייה קיימת"
-
+title:                "בדיקה אם ספרייה קיימת"
+date:                  2024-02-03T19:07:39.605708-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "בדיקה אם ספרייה קיימת"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/c-sharp/checking-if-a-directory-exists.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## מה ולמה?
-בדיקה אם ספרייה קיימת ב-C# היא תהליך של אימות הקיום וגישה לתיקייה במערכת הקבצים. תוכניתנים עושים זאת כדי למנוע שגיאות בעת ניסיון לקרוא מתיקייה שלא קיימת או לכתוב לתוכה.
+
+בדיקה האם ספרייה קיימת ב-C# כוללת אימות של נוכחות תיקייה בנתיב מסוים במערכת הקבצים. מתכנתים עושים זאת כדי להימנע משגיאות כמו הניסיון לקרוא מאו לכתוב אל ספרייה שאינה קיימת, ובכך להבטיח ניהול קבצים ותיקיות חלק יותר.
 
 ## איך לעשות:
-```C#
+
+### באמצעות System.IO
+
+C# מספקת את ה-namespace של `System.IO` שמכיל את המחלקה `Directory`, המציעה דרך ישירה לבדוק אם ספרייה קיימת באמצעות המתודה `Exists`.
+
+```csharp
 using System;
 using System.IO;
 
@@ -21,31 +29,72 @@ class Program
 {
     static void Main()
     {
-        string pathToCheck = @"C:\example\path";
+        string directoryPath = @"C:\ExampleDirectory";
 
-        if (Directory.Exists(pathToCheck))
-        {
-            Console.WriteLine("The directory exists.");
-        }
-        else
-        {
-            Console.WriteLine("The directory does not exist.");
-        }
+        // בדוק אם הספרייה קיימת
+        bool directoryExists = Directory.Exists(directoryPath);
+
+        // הדפס את התוצאה
+        Console.WriteLine("Directory exists: " + directoryExists);
     }
 }
 ```
 
-פלט לדוגמא:
+**דוגמה לפלט:**
+
 ```
-The directory does not exist.
-```
-או
-```
-The directory exists.
+Directory exists: False
 ```
 
-## עיון נוסף
-בהקשר ההיסטורי, בדיקת קיום תיקייה היא חלק מתכנות מחשבים מאז ומעולם. השפה המודרנית של סי-שארפ מעניקה כלים פשוטים לביצוע הפעולה. לחלופין, אפשר להשתמש בכלים של מערכת ההפעלה, אבל `Directory.Exists` הוא הכי ישר ובטוח. פרטי היישום כוללים קריאה ל-API של חלונות אשר מברר את סטטוס התיקייה.
+במקרה שהספרייה כן קיימת בנתיב `C:\ExampleDirectory`, הפלט יהיה `True`.
 
-## ראה גם
-- [מחלקת Directory במיקרוסופט](https://docs.microsoft.com/en-us/dotnet/api/system.io.directory?view=netcore-3.1)
+### באמצעות System.IO.Abstractions לבדיקות יחידה
+
+כאשר מדובר בהפיכת הקוד שלך לכזה שניתן לבדוקות יחידה, במיוחד כאשר הוא מתקשר עם מערכת הקבצים, החבילה `System.IO.Abstractions` היא בחירה פופולרית. היא מאפשרת לך להפשיט ולהתחזות לפעולות מערכת קבצים בבדיקות שלך. הנה איך אפשר לבדוק אם ספרייה קיימת באמצעות התקרבות זו:
+
+ראשית, וודא שהתקנת את החבילה:
+
+```
+Install-Package System.IO.Abstractions
+```
+
+לאחר מכן, אתה יכול להזריק `IFileSystem` לתוך המחלקה שלך ולהשתמש בו כדי לבדוק אם ספרייה קיימת, מה שמאפשר בדיקות יחידה קלות יותר.
+
+```csharp
+using System;
+using System.IO.Abstractions;
+
+class Program
+{
+    private readonly IFileSystem _fileSystem;
+
+    public Program(IFileSystem fileSystem)
+    {
+        _fileSystem = fileSystem;
+    }
+
+    public bool CheckDirectoryExists(string directoryPath)
+    {
+        return _fileSystem.Directory.Exists(directoryPath);
+    }
+
+    static void Main()
+    {
+        var fileSystem = new FileSystem();
+        var program = new Program(fileSystem);
+
+        string directoryPath = @"C:\ExampleDirectory";
+        bool directoryExists = program.CheckDirectoryExists(directoryPath);
+
+        Console.WriteLine("Directory exists: " + directoryExists);
+    }
+}
+```
+
+**דוגמה לפלט:**
+
+```
+Directory exists: False
+```
+
+התקרבות זו מפרידה בין לוגיקת היישום שלך לבין הגישה הישירה למערכת הקבצים, ובכך הופכת את הקוד שלך ליותר מודולרי, ניתן לבדיקות יחידה ולתחזוקה.

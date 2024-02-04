@@ -1,52 +1,53 @@
 ---
 title:                "עבודה עם YAML"
-date:                  2024-01-19
+date:                  2024-02-03T19:25:12.148276-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "עבודה עם YAML"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/clojure/working-with-yaml.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## מה ולמה?
-YAML הוא פורמט נתונים לקונפיגורציה, פשוט לקריאה וכתיבה. תוכניתנים משתמשים ב-YAML כדי לטעון, לשנות ולשמור הגדרות באפליקציות.
+
+YAML, ראשי תיבות רקורסיביים ל-"YAML Ain't Markup Language", הוא פורמט סידוריות נתונים קריא לאדם המשמש לקבצי תצורה ולהחלפת נתונים בין שפות עם מבני נתונים שונים. מתכנתים מנצלים את YAML בשל פשטותו וקריאותו, הופכים אותו לבחירה אידיאלית לצורך תצורת אפליקציות וקידום תהליכי החלפת נתונים בסביבות תכנות פוליגלוטיות.
 
 ## איך לעשות:
-קודם כל, תוסיפו את תלות `yaml` בקובץ `project.clj`:
+
+Clojure אינה כוללת תמיכה מובנית ל-YAML, אך ניתן להשתמש בספריות צד שלישי כגון `clj-yaml` לניתוח וייצור נתוני YAML. תחילה, הוסף את הספריה לתלותות הפרוייקט שלך:
+
 ```clojure
+;; הוסף זאת לתלותות של project.clj
 [clj-yaml "0.7.0"]
 ```
-אז, תוכלו לטעון קובץ YAML כך:
+
+הנה כיצד ניתן להשתמש ב-`clj-yaml` לניתוח YAML והמרת מפות Clojure ל-YAML.
+
+### ניתוח YAML:
+
 ```clojure
 (require '[clj-yaml.core :as yaml])
 
-(def config (yaml/load-string "
-a: 1
-b: 2
-c:
-  - 3
-  - 4"))
-
-(println config)
+;; ניתוח מחרוזת YAML
+(let [yaml-str "name: John Doe\nage: 30\nlanguages:\n  - Clojure\n  - Python"]
+  (yaml/parse-string yaml-str))
+;; פלט:
+;; => {"name" "John Doe", "age" 30, "languages" ["Clojure" "Python"]}
 ```
-הרצה תפיק:
+
+### ייצור YAML מ-Clojure:
+
 ```clojure
-{:a 1, :b 2, :c [3 4]}
+(require '[clj-yaml.core :as yaml])
+
+;; המרת מפת Clojure למחרוזת YAML
+(let [data-map {:name "Jane Doe" :age 28 :languages ["Java" "Ruby"]}]
+  (yaml/generate-string data-map))
+;; פלט:
+; "age: 28\nlanguages:\n- Java\n- Ruby\nname: Jane Doe\n"
 ```
-שמירת נתונים ל-YAML:
-```clojure
-(def data-to-save {:name "Yonatan" :age 30 :languages ["Clojure" "JavaScript"]})
 
-(spit "output.yaml" (yaml/generate-string data-to-save))
-```
-זה יכתוב בקובץ `output.yaml`.
-
-## טבילה עמוקה
-YAML (YAML Ain't Markup Language) באמת אינו שפת הציון אלא פורמט המנגנון של נתונים, יצא לראשונה ב-2001. חלופות פופולריות הן JSON ו-XML ששונות בעיקר בקריאותיות שלהן ובדרך כתיבת הסינטקס. בשימוש ב-YAML ב-Clojure, clj-yaml עוטף את ספריית SnakeYAML של Java, מה שמאפשר שילוב חלק עם עולם ה-JVM.
-
-## ראו גם:
-- הפרויקט `clj-yaml` ב-GitHub: https://github.com/clj-commons/clj-yaml
-- מסמך המפרט של YAML: https://yaml.org/spec/
-- טוטוריאל ל-Clojure למתחילים: https://www.learn-clojure.com/
-- השוואה בין פורמטים שונים (JSON, YAML, XML): https://blog.logrocket.com/json-vs-xml-vs-yaml-comparison/
+הפעולות הפשוטות האלה עם `clj-yaml` ניתנות לשילוב באפליקציות Clojure לצורך טיפול בקבצי תצורה או קידום תהליכי החלפת נתונים עם שירותים או רכיבים אחרים המשתמשים ב-YAML.

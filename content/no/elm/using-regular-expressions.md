@@ -1,40 +1,72 @@
 ---
-title:                "Bruk av regulære uttrykk"
-date:                  2024-01-19
-simple_title:         "Bruk av regulære uttrykk"
-
+title:                "Bruke regulære uttrykk"
+date:                  2024-02-03T19:16:48.307178-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Bruke regulære uttrykk"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/elm/using-regular-expressions.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Regulære uttrykk lar deg søke og manipulere tekst gjennom mønstergjenkjenning. De er et kraftfullt verktøy for programmerere for å håndtere komplekse tekstbehandlingsoppgaver raskt og effektivt.
+Regulære uttrykk (regex) i programmering er mønstre brukt for å matche kombinasjoner av tegn i strenger. I Elm, akkurat som i andre språk, bruker programmerere regex for oppgaver som å validere inndata, søke etter og erstatte tekst i strenger på grunn av deres fleksibilitet og effektivitet.
 
 ## Hvordan:
-Elm har ikke innebygd støtte for regulære uttrykk direkte, men du kan bruke `elm/regex` pakken for å jobbe med dem. Her er et enkelt eksempel på hvordan du finner e-postadresser i en tekststreng:
+Elm har ikke innebygde regex-funksjoner i sitt kjernelager, noe som krever bruk av tredjepartsbiblioteker for disse operasjonene. Et av de populære valgene for å jobbe med regex er `elm/regex`. Du kan legge det til i prosjektet ditt ved hjelp av `elm install elm/regex`.
 
-```Elm
-import Regex exposing (..)
+Her er hvordan du kan bruke `elm/regex` for noen vanlige oppgaver:
 
-findEmails : String -> List String
-findEmails text =
-    let
-        pattern = "[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}"
-    in
-    Regex.find (Regex.AtMost 1) (Regex.regex pattern) text
-        |> List.map .match
+### 1. Å matche et mønster
+For å sjekke om en streng matcher et mønster, kan du bruke `Regex.contains`.
+
+```elm
+import Regex
+
+pattern : Regex.Regex
+pattern = Regex.fromString "^[a-zA-Z0-9]+$" |> Maybe.withDefault Regex.never
+
+isAlphanumeric : String -> Bool
+isAlphanumeric input = Regex.contains pattern input
+
+-- Eksempel på bruk:
+isAlphanumeric "Elm2023"     -- Utdata: True
+isAlphanumeric "Elm 2023!"   -- Utdata: False
 ```
 
-Når du kjører `findEmails` med en tekststreng som argument, får du en liste av alle funnede e-postadresser.
+### 2. Finne alle treff
+For å finne alle forekomster av et mønster i en streng, kan du bruke `Regex.find`.
 
-## Dybdestudie
-Regulære uttrykk har sin historie tilbake til automata-teori og formell språkteori på 1950-tallet. Alternativer til regulære uttrykk inkluderer string søkealgoritmer som KMP og tekstparsere som kan være mer effektive eller leselige avhengig av oppgaven.
+```elm
+matches : Regex.Regex
+matches = Regex.fromString "\\b\\w+\\b" |> Maybe.withDefault Regex.never
 
-I Elm håndteres regulære uttrykk gjennom `elm/regex` pakken, som kompilerer dine mønstre til JavaScripts regulære uttrykksmotor siden Elm kompilerer til JavaScript.
+getWords : String -> List String
+getWords input = 
+    input
+        |> Regex.find matches
+        |> List.map (.match)
 
-## Se Også
-- Elm Regex Package: [package.elm-lang.org/packages/elm/regex/latest](https://package.elm-lang.org/packages/elm/regex/latest)
-- Intro til Regulære Uttrykk: [regexone.com](https://regexone.com/)
-- Elm Språk Guide: [guide.elm-lang.org](https://guide.elm-lang.org/)
+-- Eksempel på bruk:
+getWords "Elm is fun!"  -- Utdata: ["Elm", "is", "fun"]
+```
+
+### 3. Erstatte tekst
+For å erstatte deler av en streng som matcher et mønster, bruker du `Regex.replace`.
+
+```elm
+replacePattern : Regex.Regex
+replacePattern = Regex.fromString "Elm" |> Maybe.withDefault Regex.never
+
+replaceElmWithHaskell : String -> String
+replaceElmWithHaskell input = 
+    Regex.replace replacePattern (\_ -> "Haskell") input
+
+-- Eksempel på bruk:
+replaceElmWithHaskell "Learning Elm is fun!"  
+-- Utdata: "Learning Haskell is fun!"
+```
+
+I disse eksemplene brukes `Regex.fromString` for å kompilere et regex-mønster, der `\b` matcher ordbegrensninger, og `\w` matcher hvilken som helst ordkarakter. Håndter alltid `Maybe`-resultatet av `Regex.fromString` for å sikre deg mot ugyldige regex-mønstre, typisk ved å bruke `Maybe.withDefault`.

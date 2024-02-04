@@ -1,50 +1,78 @@
 ---
 title:                "Skriva tester"
-date:                  2024-01-19
+date:                  2024-02-03T19:31:37.078534-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Skriva tester"
-
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/lua/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Skriva tester handlar om att verifiera koden. Programmerare gör detta för att undvika buggar och säkerställa att koden uppför sig som förväntat.
+## Vad & Varför?
 
-## How to:
-I Lua använder vi ofta moduler som `busted` eller `luaunit` för att skriva tester. Här är ett exempel:
+Att skriva tester i programmering innebär att skapa små, separata kodstycken för att automatiskt verifiera att olika delar av din applikation fungerar som förväntat. För Lua-programmerare säkerställer testning tillförlitlighet och hjälper till med att underhålla kodkvaliteten, påskyndar felsökningsprocessen och gör ändringar i kodbasen säkrare.
 
-```Lua
--- Först installera busted via luarocks: luarocks install busted
--- fil: addition_spec.lua
-describe("addition function", function()
-  local addition = require "addition"
+## Hur man gör:
 
-  it("sums up two numbers", function()
-    assert.are.equal(5, addition(2, 3))
+Lua, som är ett lättviktigt men kraftfullt skriptspråk, inkluderar inte ett inbyggt testramverk. Dock gör tredjepartsbibliotek som Busted och LuaUnit testning relativt enkel. Här kommer vi att titta på exempel som använder båda.
+
+### Använda Busted
+
+Busted är ett populärt Lua-testramverk som erbjuder ett flexibelt sätt att skriva tester. Först, installera Busted genom LuaRocks (Luas pakethanterare) med `luarocks install busted`. När det är installerat kan du skriva dina tester. Här är ett enkelt test för en funktion `add` som summerar två tal:
+
+```lua
+-- add.lua
+local function add(a, b)
+  return a + b
+end
+
+return add
+```
+
+```lua
+-- add_spec.lua
+local add = require('add')
+
+describe("Addfunktionen", function()
+  it("ska korrekt addera två tal", function()
+    assert.are.equal(5, add(2, 3))
   end)
 end)
 ```
 
-Koden i `addition.lua`:
+För att köra testerna, exekvera `busted` i din terminal. Exempelutmatning för ett lyckat test kan se ut så här:
 
-```Lua
--- fil: addition.lua
-local function addition(a, b)
-  return a + b
-end
-
-return addition
+```
+●
+1 framgång / 0 misslyckanden / 0 fel / 0 väntande : 0.002 sekunder
 ```
 
-Kör dina tester med `busted addition_spec.lua`. Förväntad utdata är att testet passerar.
+### Använda LuaUnit
 
-## Deep Dive
-Testning i Lua har historiskt sett inte varit lika framträdande som i språk som Java eller Ruby, men dess vikt växer. `busted` och `luaunit` är populära testerådgiv kan inbyggda funktioner i Lua för enklare fall, men dessa bibliotek erbjuder mer omfattande funktionalitet. De hanterar allt från grundläggande assertions till mock-objekt och test fixtures.
+LuaUnit är ett annat testramverk som följer xUnit-konventioner och är lätt att sätta upp. Installera LuaUnit via LuaRocks med `luarocks install luaunit`. Så här kan du skriva ett liknande test som ovan med LuaUnit:
 
-## See Also
-Djupare dykning och resurser:
+```lua
+-- add.lua är densamma
 
-- LuaUnit GitHub: [https://github.com/bluebird75/luaunit](https://github.com/bluebird75/luaunit)
-- Allmän guide till testning i programmering: [https://en.wikipedia.org/wiki/Software_testing](https://en.wikipedia.org/wiki/Software_testing)
+-- test_add.lua
+luaunit = require('luaunit')
+local add = require('add')
+
+function testAdd()
+  luaunit.assertEquals(add(2, 3), 5)
+end
+
+os.exit(luaunit.LuaUnit.run())
+```
+
+Att köra detta skript direkt via Lua (`lua test_add.lua`) kommer att producera något som:
+
+```
+.
+Körde 1 test på 0.001 sekunder, 1 framgång, 0 misslyckanden
+```
+
+Både Busted och LuaUnit erbjuder omfattande funktioner för att hantera olika testscenarier, inklusive mockning, spionering och asynkron testning. Valet mellan dem ligger i de specifika behoven av ditt projekt och din personliga preferens gällande syntax och funktionalitet.

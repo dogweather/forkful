@@ -1,54 +1,83 @@
 ---
-title:                "डायरेक्टरी का अस्तित्व जाँचना"
-date:                  2024-01-20T14:59:14.586916-07:00
-simple_title:         "डायरेक्टरी का अस्तित्व जाँचना"
-
+title:                "डायरेक्टरी मौजूद है या नहीं जाँचना"
+date:                  2024-02-03T19:09:27.689764-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "डायरेक्टरी मौजूद है या नहीं जाँचना"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/typescript/checking-if-a-directory-exists.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (क्या और क्यों?)
+## क्या और क्यों?
+TypeScript में यह जांचना कि कोई निर्देशिका मौजूद है या नहीं, फ़ाइल प्रबंधन कार्यों जैसे कि फ़ाइलों से पढ़ना या उनमें डेटा लिखना, के लिए आवश्यक है, यह सुनिश्चित करता है कि कार्यवाहियाँ केवल वैध निर्देशिकाओं पर ही की जाती हैं। यह क्रिया मौजूद न होने वाली निर्देशिकाओं को एक्सेस या मैनिप्युलेट करने का प्रयास करते समय उत्पन्न होने वाली त्रुटियों से बचने के लिए महत्वपूर्ण है।
 
-डायरेक्टरी की जांच करने का मतलब है कि हम कंप्यूटर में एक खास फोल्डर के अस्तित्व की पुष्टि करते हैं। प्रोग्रामर्स इसका उपयोग फाइल सिस्टम में विशेष डेटा के पढ़ने, लिखने या मॉडिफिकेशन से पहले सत्यापन के लिए करते हैं।
+## कैसे करें:
 
-## How to: (कैसे करें:)
+TypeScript को जब Node.js वातावरण में चलाया जाता है, तब यह आपको `fs` मॉड्यूल का उपयोग करके यह जांचने की अनुमति देता है कि कोई निर्देशिका मौजूद है या नहीं, जो `existsSync()` फंक्शन या एसिंक्रोनस `access()` फंक्शन को `constants.F_OK` के साथ संयुक्त करके प्रदान करता है।
 
-TypeScript में `fs` मॉड्यूल का `accessSync` मेथड या `existsSync` मेथड का प्रयोग करके हम जांच सकते हैं कि डायरेक्टरी मौजूद है या नहीं।
-
-```typescript
-import { accessSync, constants } from 'fs';
-
-try {
-  // डायरेक्टरी का पथ दिया गया है
-  accessSync('/path/to/directory', constants.F_OK);
-  
-  console.log('डायरेक्टरी मौजूद है।');
-} catch (error) {
-  console.error('डायरेक्टरी मौजूद नहीं है।');
-}
-```
+### `fs.existsSync()` का उपयोग करते हुए:
 
 ```typescript
 import { existsSync } from 'fs';
 
-// डायरेक्टरी का पथ दिया गया है
-if (existsSync('/path/to/directory')) {
-  console.log('डायरेक्टरी मौजूद है।');
+const directoryPath = './path/to/directory';
+
+if (existsSync(directoryPath)) {
+  console.log('निर्देशिका मौजूद है।');
 } else {
-  console.error('डायरेक्टरी मौजूद नहीं है।');
+  console.log('निर्देशिका मौजूद नहीं है।');
 }
 ```
 
-## Deep Dive (गहन अन्वेषण):
+### `fs.access()` का उपयोग `fs.constants.F_OK` के साथ करते हुए:
 
-Node.js `fs` मॉड्यूल पुराना है और फाइल सिस्टम ऑपरेशंस के साथ शुरुआती दिनों से ही उपयोग में है। `existsSync` मेथड का उपयोग सुविधाजनक होता है, लेकिन यह `deprecate` हो चुका है क्योंकि यह Boolean वापस करता है जो error handling को सीमित करता है। इसकी जगह `accessSync` मेथड का प्रयोग करने की सिफारिश की जाती है, जो कि errors throw करता है और ज्यादा robust error handling की अनुमति देता है।
+```typescript
+import { access, constants } from 'fs';
 
-हालांकि, ये मेथड्स synchronous हैं, और इनका प्रयोग ब्लॉकिंग हो सकता है। इसलिए बड़े एप्लिकेशन में जहाँ परफॉर्मेंस महत्वपूर्ण है, वहाँ एसिंक्रोनस वेरिएंट्स `access` और `exists` (जिन्हें प्रॉमिसेज या कॉलबैक पैटर्न के साथ प्रयोग किया जा सकता है) का उपयोग करना बेहतर होगा।
+const directoryPath = './path/to/directory';
 
-## See Also (देखें भी):
+access(directoryPath, constants.F_OK, (err) => {
+  if (err) {
+    console.log('निर्देशिका मौजूद नहीं है।');
+    return;
+  }
+  console.log('निर्देशिका मौजूद है।');
+});
+```
 
-- Node.js Documentation for the `fs` module: [Node.js fs Module](https://nodejs.org/api/fs.html)
-- TypeScript Documentation: [TypeScript Lang](https://www.typescriptlang.org/docs/)
-- MDN Web Docs on asynchronous programming: [Asynchronous Programming](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous)
+**दोनों तरीकों के लिए नमूना आउटपुट**, यह मानते हुए कि निर्देशिका मौजूद है:
+```
+निर्देशिका मौजूद है।
+```
+
+और अगर नहीं है तो:
+```
+निर्देशिका मौजूद नहीं है।
+```
+
+### तीसरे पक्ष की लाइब्रेरी - `fs-extra` का उपयोग करते हुए:
+
+`fs-extra` एक लोकप्रिय तीसरे पक्ष की लाइब्रेरी है जो निर्मित `fs` मॉड्यूल को बढ़ाती है और अधिक सुविधाजनक फंक्शन्स प्रदान करती है।
+
+```typescript
+import { pathExists } from 'fs-extra';
+
+const directoryPath = './path/to/directory';
+
+pathExists(directoryPath).then(exists => {
+  console.log(`निर्देशिका मौजूद है: ${exists}`);
+});
+```
+
+**नमूना आउटपुट** जब निर्देशिका मौजूद होती है:
+```
+निर्देशिका मौजूद है: सही
+```
+
+और अगर नहीं है तो:
+```
+निर्देशिका मौजूद नहीं है: गलत
+```

@@ -1,72 +1,58 @@
 ---
-title:                "Zamiana liter na wielkie w ciągu znaków"
-date:                  2024-01-19
-simple_title:         "Zamiana liter na wielkie w ciągu znaków"
-
+title:                "Zamiana liter na wielkie w łańcuchu znaków"
+date:                  2024-02-03T19:05:26.277432-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Zamiana liter na wielkie w łańcuchu znaków"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/haskell/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Co i dlaczego?
-Kapitalizacja to proces zmiany pierwszej litery w ciągu na wielką. Programiści to robią, bo w wielu przypadkach takie formatowanie ułatwia czytelnikom rozpoznawanie nazw własnych, początków zdań, tytułów oraz aby spełnić wymogi stylistyczne i gramatyczne.
+Capitalizacja ciągu polega na przekształceniu pierwszej litery danego ciągu na wielką literę, przy jednoczesnym zapewnieniu, że reszta liter pozostanie mała. Programiści robią to w celu formatowania wyjść, przestrzegania poprawności gramatycznej w tekstach lub poprawy czytelności generowanych danych.
 
 ## Jak to zrobić:
-W Haskellu możemy użyć funkcji 'toUpper' z modułu 'Data.Char' do zmiany małych liter na wielkie. Sprawdźmy to w praktyce:
+W Haskellu możesz zrobić capitalizację ciągu używając standardowej biblioteki, bez potrzeby korzystania z bibliotek stron trzecich.
 
-```Haskell
+```haskell
+import Data.Char (toUpper, toLower)
+
+capitalize :: String -> String
+capitalize "" = ""
+capitalize (head:tail) = toUpper head : map toLower tail
+
+-- Przykładowe użycie:
+main = putStrLn $ capitalize "hello world"
+```
+
+Wyjście:
+```
+Hello world
+```
+
+Dla bardziej skomplikowanych scenariuszy lub dla wygody, możesz chcieć użyć biblioteki stron trzecich, takiej jak `text`, która jest popularna ze względu na efektywną manipulację ciągami w Haskellu.
+
+Najpierw musisz dodać `text` do zależności swojego projektu. Następnie możesz użyć jej funkcji do zrobienia capitalizacji ciągu jak poniżej:
+
+```haskell
+import qualified Data.Text as T
 import Data.Char (toUpper)
 
--- Funkcja do kapitalizacji pojedynczego słowa
-capitalize :: String -> String
-capitalize [] = []
-capitalize (head:tail) = toUpper head : tail
+capitalizeText :: T.Text -> T.Text
+capitalizeText text = case T.uncons text of
+    Nothing -> T.empty
+    Just (first, rest) -> T.cons (toUpper first) (T.toLower rest)
 
--- Przykład działania
-main = putStrLn $ capitalize "haskell"
-
--- Output:
--- Haskell
+-- Przykładowe użycie z biblioteką text:
+main = putStrLn $ T.unpack $ capitalizeText (T.pack "hello world")
 ```
 
-Chcesz zmienić pierwsze litery wszystkich słów? Zrób to tak:
-
-```Haskell
-import Data.Char (toUpper, isSpace)
-
--- Funkcja pomocnicza do wykrywania granic słów
-isWordStart :: Char -> Char -> Bool
-isWordStart prev curr = isSpace prev && (not . isSpace) curr
-
--- Funkcja dla całego ciągu
-capitalizeWords :: String -> String
-capitalizeWords [] = []
-capitalizeWords [x] = [toUpper x]
-capitalizeWords (x:y:xs) = toUpper x : go x y xs
-    where go _ current [] = [toUpper current]
-          go previous current (next:rest)
-            | isWordStart previous current = toUpper current : go current next rest
-            | otherwise = current : go current next rest
-
--- Spróbujmy
-main = putStrLn $ capitalizeWords "haskell - funkcjonalny i elegancki"
-
--- Output:
--- Haskell - Funkcjonalny I Elegancki
+Wyjście:
+```
+Hello world
 ```
 
-## Głębsze zanurzenie
-Kapitalizacja to nie nowość - stosujemy ją w typografii od wieków. W Haskellu, jako funkcjonalnym języku, moglibyśmy zastosować inne podejścia, jak leniwa ewaluacja czy inny styl rekurencji.
-
-Jednakże 'Data.Char' to standardowy moduł i jego funkcje 'toUpper' czy 'toLower' są szybkie i niezawodne. W wielu językach kapitalizacja jest podstawową funkcją w bibliotekach stringów. Haskell wymaga nieco więcej pracy, bo jest to język niskiego poziomu z naciskiem na funkcje czyste.
-
-Alternatywą mogłoby być napisanie własnych funkcji, które przetwarzają tekst na poziomie bajtów czy obsługa różnych kodowań tekstu. Ale dla większości potrzeb 'Data.Char' w zupełności wystarczy.
-
-## Zobacz również
-Sprawdź te źródła dla lepszego zrozumienia:
-
-- [Data.Char documentation](https://hackage.haskell.org/package/base-4.16.1.0/docs/Data-Char.html)
-- [Haskell Wiki on strings](https://wiki.haskell.org/Strings)
-
-Te linki prowadzą do dokumentacji oraz stron, które pomogą Ci zgłębić temat obróbki tekstu w Haskellu.
+Oba te przykłady demonstrują proste, ale skuteczne sposoby na zrobienie capitalizacji ciągu w Haskellu, z lub bez użycia bibliotek stron trzecich.

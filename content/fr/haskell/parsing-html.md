@@ -1,53 +1,56 @@
 ---
-title:                "Analyse syntaxique de HTML"
-date:                  2024-01-20T15:32:04.347826-07:00
-simple_title:         "Analyse syntaxique de HTML"
-
+title:                "Analyse Syntaxique du HTML"
+date:                  2024-02-03T19:12:09.960677-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Analyse Syntaxique du HTML"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/haskell/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Quoi & Pourquoi ?
+## Quoi et Pourquoi ?
 
-Le parsing HTML, c'est transformer du code HTML en une structure de données manipulable par le programme. Les programmeurs le font pour extraire des infos, manipuler des contenus, ou simplement pour comprendre la structure d'une page web.
+Parser du HTML en Haskell vous permet d'extraire des données, de manipuler le contenu HTML ou d'interagir avec des pages web de manière programmatique. Cette opération est essentielle pour des tâches telles que le web scraping, le test automatisé d'applications web, et l'extraction de données depuis des sites web - en tirant parti du système de types fort et des paradigmes de programmation fonctionnelle de Haskell pour garantir un code robuste et concis.
 
 ## Comment faire :
 
-En Haskell, on utilise des bibliothèques comme `tagsoup` ou `html-conduit` pour parser le HTML. Voici un petit exemple avec `tagsoup` :
+Pour parser du HTML en Haskell, nous utiliserons la bibliothèque `tagsoup` pour sa simplicité et sa flexibilité. Commencez par installer la bibliothèque en ajoutant `tagsoup` au fichier cabal de votre projet ou en exécutant `cabal install tagsoup`.
 
 ```haskell
+{-# LANGUAGE OverloadedStrings #-}
+
 import Text.HTML.TagSoup
 
--- Fonction pour extraire tous les liens d'une page HTML
-extraireLiens :: String -> [String]
-extraireLiens html = [href | TagOpen "a" attrs <- parseTags html, ("href", href) <- attrs]
+-- Exemple de HTML pour la démonstration
+let sampleHtml = "<html><body><p>Apprenez Haskell !</p><a href='http://example.com'>Cliquez ici</a></body></html>"
 
--- Utilisation sur un morceau de HTML
-main :: IO ()
-main = do
-    let htmlSample = "<html><head></head><body><a href='https://example.com'>Example</a></body></html>"
-    print $ extraireLiens htmlSample
+-- Parser le HTML et filtrer pour les liens (balises a)
+let tags = parseTags sampleHtml
+let links = [fromAttrib "href" tag | tag <- tags, isTagOpenName "a" tag]
+
+-- Imprimer les liens extraits
+print links
 ```
 
-Sortie :
-
+Sortie exemple :
+```plaintext
+["http://example.com"]
 ```
-["https://example.com"]
+
+Pour des besoins de parsing HTML plus sophistiqués, envisagez d'utiliser la bibliothèque `pandoc`, surtout si vous travaillez avec la conversion de documents. Elle est exceptionnellement polyvalente mais vient avec plus de complexité :
+
+```haskell
+import Text.Pandoc
+
+-- En supposant que vous ayez un document Pandoc (doc) chargé, par exemple, en lisant un fichier
+let doc = ... -- Votre document Pandoc va ici
+
+-- Convertir le document en chaîne HTML
+let htmlString = writeHtmlString def doc
+
+-- Maintenant, vous devriez parser `htmlString` comme ci-dessus ou procéder selon vos besoins.
 ```
-
-## Plongée profonde
-
-Le parsing HTML est né de la nécessité de comprendre et manipuler les pages web dynamiquement. Historiquement, des langages comme Perl étaient très utilisés pour le parsing grâce à leur puissance de traitement de texte. En Haskell, le parsing est souvent effectué en utilisant des monades pour gérer les erreurs et les états de manière élégante.
-
-À côté de `tagsoup`, qui est souple et tolère bien le HTML mal formé, il y a `html-conduit` basé sur la librairie plus stricte `xml-conduit`. Pour les applications plus robustes, `html-conduit` offrira une structure plus rigoureuse.
-
-La particularité de l'implémentation en Haskell réside dans son typage fort et sa gestion des effets secondaires, ce qui favorise des parsers fiables et maintenables. Les fonctions comme `parseTags` transforment le HTML en liste de tags que l'on peut facilement interroger, réduire ou transformer.
-
-## Voir aussi
-
-- La documentation de `tagsoup`: http://hackage.haskell.org/package/tagsoup
-- Le package `html-conduit` pour une approche différente: http://hackage.haskell.org/package/html-conduit
-- Un tutoriel complet sur le parsing en Haskell : https://wiki.haskell.org/Parsing_a_document
-- Pour aller plus loin sur les monades, un concept clé en Haskell : https://wiki.haskell.org/Monads
+Gardez à l'esprit que `pandoc` est une bibliothèque beaucoup plus grande qui se concentre sur la conversion entre de nombreux formats de balisage, donc utilisez-la si vous avez besoin de ces capacités supplémentaires ou si vous travaillez déjà avec des formats de documents dans votre application.

@@ -1,42 +1,65 @@
 ---
 title:                "עבודה עם YAML"
-date:                  2024-01-19
+date:                  2024-02-03T19:26:39.906993-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "עבודה עם YAML"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/powershell/working-with-yaml.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## מה ולמה?
-YAML הוא פורמט נתונים מבוסס טקסט שמתאפיין בקריאות לעין האנושית. תכניתנים עובדים עם YAML כדי להגדיר תצורה, יצירת תבניות ונתונים סטטיים באופן נוח ויעיל.
+YAML, או YAML Ain't Markup Language, היא שפת טכנולוגיה לסידורי מידע קריאים לאדם. תכנתנים לעיתים קרובות משתמשים בה לקבצי הגדרות והעברת נתונים בין שפות. הפשטות והנגישות שלה הופכות אותה לפופולרית במיוחד למשימות שקשורות להגדרת סביבות, אפליקציות או שירותים בהם התצורות הן קריטיות וצריכות להיות קלות להבנה ולעריכה.
 
 ## איך לעשות:
+PowerShell, כברירת מחדל, אינה מגיעה עם cmdlet מובנה לפענוח YAML, אך היא עובדת בחלקות עם YAML כאשר אתה מנצל את המודול `powershell-yaml` או ממיר YAML לאובייקט של PowerShell באמצעות `ConvertFrom-Json` בשילוב עם כלי כמו `yq`.
+
+### שימוש במודול `powershell-yaml`:
+ראשית, התקן את המודול:
 ```PowerShell
-# טעינת נתוני YAML מקובץ
-$yamlContent = Get-Content -Path 'config.yaml' -Raw
-$yamlObject = ConvertFrom-Yaml $yamlContent
-
-# עריכת אובייקט
-$yamlObject.database.port = 3307
-
-# ייצוא נתונים לקובץ YAML
-$yamlObject | ConvertTo-Yaml | Set-Content -Path 'updated_config.yaml'
+Install-Module -Name powershell-yaml
 ```
 
-הפלט:
+לקרוא קובץ YAML:
+```PowerShell
+Import-Module powershell-yaml
+$content = Get-Content -Path 'config.yml' -Raw
+$yamlObject = ConvertFrom-Yaml -Yaml $content
+Write-Output $yamlObject
+```
+
+לכתוב אובייקט של PowerShell לקובץ YAML:
+```PowerShell
+$myObject = @{
+    name = "John Doe"
+    age = 30
+    languages = @("PowerShell", "Python")
+}
+$yamlContent = ConvertTo-Yaml -Data $myObject
+$yamlContent | Out-File -FilePath 'output.yml'
+```
+
+דוגמה ל`output.yml`:
 ```yaml
-# updated_config.yaml
-database:
-  host: localhost
-  port: 3307
-  name: my_database
+name: John Doe
+age: 30
+languages:
+- PowerShell
+- Python
 ```
 
-## עיון נוסף
-בעבר, תכניתנים ניזונו בעיקר מ-XML לתצורה. YAML, שהומצא בתחילת שנות ה-2000, הפך לאלטרנטיבה פופולרית בזכות פשטותו. היום, ישנן ספריות רבות ב-PowerShell לעבודה עם YAML, כמו `powershell-yaml` שמייצגת את המימוש הנפוץ ביותר. בחלופה ל-YAML ישנם פורמטים כמו JSON או TOML.
+### פענוח YAML עם `yq` ו`ConvertFrom-Json`:
+דרך נוספת כוללת את השימוש ב`yq`, מעבד שורת פקודה קל ונייד עבור YAML. `yq` יכול להמיר YAML ל-JSON, אותו PowerShell יכול לנתח באופן טבעי.
 
-## ראו גם:
-- [תיעוד ה-PowerShell-Yaml Module](https://github.com/cloudbase/powershell-yaml)
-- [מבוא ל-YAML](https://learnxinyminutes.com/docs/yaml/)
+ראשית, וודא ש`yq` מותקן במערכת שלך.
+אז הרץ:
+```PowerShell
+$yamlToJson = yq e -o=json ./config.yml
+$jsonObject = $yamlToJson | ConvertFrom-Json
+Write-Output $jsonObject
+```
+
+שיטה זו שימושית במיוחד למשתמשים העובדים בסביבות רב-מערכתיות או עדיפים להשתמש ב-JSON בפנים PowerShell.

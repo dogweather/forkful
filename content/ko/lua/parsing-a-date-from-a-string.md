@@ -1,38 +1,56 @@
 ---
-title:                "문자열에서 날짜 파싱하기"
-date:                  2024-01-20T15:37:22.659357-07:00
-simple_title:         "문자열에서 날짜 파싱하기"
-
+title:                "문자열에서 날짜 분석하기"
+date:                  2024-02-03T19:14:58.635872-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "문자열에서 날짜 분석하기"
 tag:                  "Dates and Times"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/lua/parsing-a-date-from-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (무엇과 왜?)
-날짜 파싱은 문자열에서 날짜 정보를 추출하는 과정입니다. 프로그래머들은 데이터를 정렬, 저장, 또는 날짜와 시간 기능을 실행하기 위해 이를 수행합니다.
+## 무엇인가 & 왜인가?
+문자열에서 날짜를 파싱한다는 것은 날짜와 시간의 텍스트 표현을 Lua 프로그램 내에서 쉽게 조작, 저장 또는 비교할 수 있는 형식으로 변환하는 것을 말합니다. 프로그래머들은 일정 관리, 로깅, 시간 계산 등의 작업을 용이하게 하고 인간이 읽을 수 있는 날짜 형식과 컴퓨터가 효율적으로 처리할 수 있는 구조화된 데이터 유형 간의 격차를 메우기 위해 이 작업을 수행합니다.
 
-## How to: (어떻게 하나요?)
-```Lua
--- 날짜 문자열 파싱하기
-local dateString = "2023-04-12 23:20:00"
--- 패턴에 맞추어 연, 월, 일, 시, 분, 초를 추출
-local pattern = "(%d+)%-(%d+)%-(%d+) (%d+):(%d+):(%d+)"
+## 어떻게 하나:
+Lua는 `os.date` 및 `os.time` 함수에 의해 제공되는 제한된 기능 외에 날짜 및 시간 조작을 위한 내장 지원이 없습니다. 그러나 이러한 기능을 기본 파싱을 위해 활용할 수 있으며, 더 복잡한 요구 사항의 경우 외부 라이브러리인 `luadate` 라이브러리를 사용할 수 있습니다.
+
+**`os.date` 및 `os.time` 사용하기:**
+```lua
+-- 인간이 읽을 수 있는 날짜를 타임스탬프로 변환하고 다시 변환하기
+local dateString = "2023-09-21 15:00:00"
+local pattern = "(%d+)-(%d+)-(%d+) (%d+):(%d+):(%d+)"
 local year, month, day, hour, minute, second = dateString:match(pattern)
-print(year, month, day, hour, minute, second)
-```
-출력:
-```
-2023 04 12 23 20 00
+
+local timestamp = os.time({
+  year = year,
+  month = month,
+  day = day,
+  hour = hour,
+  min = minute,
+  sec = second
+})
+
+-- 타임스탬프를 다시 인간이 읽을 수 있는 형식으로 변환
+local formattedDate = os.date("%Y-%m-%d %H:%M:%S", timestamp)
+print(formattedDate)  -- 출력: 2023-09-21 15:00:00
 ```
 
-## Deep Dive (심층 분석)
-날짜 파싱은 초기 프로그래밍 언어 개발 시부터 필요했습니다. Lua에서는 간단한 패턴 매칭을 사용하여 문자열로부터 날짜를 추출할 수 있지만, 복잡한 날짜 처리를 위해서는 `os.date`와 `os.time` 같은 내장 함수나 외부 라이브러리를 활용할 수도 있습니다. 예를 들어, `os.date("*t")`는 현재 날짜와 시간을 테이블로 반환합니다. Lua에서 문자열을 통해 날짜를 파싱하면, 다양한 시간대나 형식의 일관성을 확보하고 에러를 줄일 수 있습니다.
+**`luadate` 사용하기 (서드파티 라이브러리):**
+`luadate`를 사용하기 위해서는 LuaRocks 또는 선택한 패키지 관리자를 통해 설치되어 있어야 합니다. `luadate`는 날짜와 시간의 파싱 및 조작 기능을 대폭 추가합니다.
 
-패턴 매칭을 사용하는 것은 간소화된 방법이며, 애플리케이션의 요구에 따라 더 정교한 파싱 방식이 필요할 수 있습니다. 예를 들어, Lua에서는 POSIX `strptime` 함수에 해당하는 내장 기능이 없으므로, 이를 직접 구현하거나 다른 날짜 파싱 라이브러리를 찾아야 할 수도 있습니다.
+```lua
+local date = require('date')
 
-## See Also (참고 자료)
-- [Lua 5.4 Reference Manual](https://www.lua.org/manual/5.4/) - Lua 언어와 내장 함수에 대한 공식 문서.
-- [LuaDate](https://github.com/Tieske/date) - 복잡한 날짜 계산을 위한 Lua 라이브러리.
-- [LuaRocks](https://luarocks.org/) - Lua 라이브러리를 찾고 관리하는데 도움을 주는 패키지 매니저.
+-- 날짜 문자열을 직접 파싱
+local parsedDate = date.parse("2023-09-21 15:00:00")
+print(parsedDate:fmt("%Y-%m-%d %H:%M:%S"))  -- 출력: 2023-09-21 15:00:00
+
+-- 기간 추가하기
+local oneWeekLater = parsedDate:adddays(7)
+print(oneWeekLater:fmt("%Y-%m-%d %H:%M:%S"))  -- 출력: 2023-09-28 15:00:00
+```
+
+`luadate` 라이브러리는 문자열에서 파싱, 형식 지정, 날짜에 대한 산술 연산 등, 날짜 작업을 훨씬 직관적이고 강력하게 만드는 방법을 제공하여 Lua에서 시간 데이터를 다루는 작업을 상당히 단순화합니다.

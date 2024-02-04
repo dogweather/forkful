@@ -1,43 +1,67 @@
 ---
-title:                "HTML:n jäsentäminen"
-date:                  2024-01-20T15:30:11.823505-07:00
-simple_title:         "HTML:n jäsentäminen"
-
+title:                "HTML:n jäsennys"
+date:                  2024-02-03T19:11:45.806141-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "HTML:n jäsennys"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/bash/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Miksi ja mitä? HTML:n jäsentäminen on prosessi, jossa HTML-dokumentti muunnetaan rakenteellisiksi, käsiteltäviksi tiedoiksi. Ohjelmoijat tekevät tämän, jotta he voivat lukea tai manipuloida web-sivujen sisältöä automatisoidusti.
+## Mikä ja miksi?
 
-## How to:
-```Bash
-# Asenna lynx - komentorivipohjainen selain
-sudo apt-get install lynx
+HTML:n jäsentäminen tarkoittaa HTML-tiedoston rakenteen ja sisällön seulomista tiedon poimimiseksi. Ohjelmoijat tekevät sitä päästäkseen käsiksi tietoihin, manipuloimaan sisältöä tai raapimaan verkkosivustoja.
 
-# Käytä lynx:iä sivun tekstisisällön noutamiseen
-lynx -dump http://esimerkki.fi > esimerkki.txt
+## Kuinka:
 
-# Hae haluttu sisältö sed:in tai grep:in avulla
-grep 'tietty tagi' esimerkki.txt
+Bash ei ole ensisijainen työkalu HTML:n jäsentämiseen, mutta se on mahdollista tehdä työkaluilla kuten `grep`, `awk`, `sed` tai ulkoisilla apuohjelmilla kuten `lynx`. Robustisuuden vuoksi käytämme `xmllint`iä `libxml2`-paketista.
+
+```bash
+# Asenna xmllint tarvittaessa
+sudo apt-get install libxml2-utils
+
+# Esimerkki HTML
+cat > sample.html <<EOF
+<html>
+<head>
+  <title>Esimerkkisivu</title>
+</head>
+<body>
+  <h1>Hei, Bash!</h1>
+  <p id="myPara">Bash voi lukea minut.</p>
+</body>
+</html>
+EOF
+
+# Jäsennä otsikko
+title=$(xmllint --html --xpath '//title/text()' sample.html 2>/dev/null)
+echo "Otsikko on: $title"
+
+# Poimi kappale ID:n perusteella
+para=$(xmllint --html --xpath '//*[@id="myPara"]/text()' sample.html 2>/dev/null)
+echo "Kappaleen sisältö on: $para"
 ```
 
-Esimerkkinosto:
-```Bash
-cat esimerkki.txt | grep 'h1'
-# Tulos voisi näyttää tältä:
-# <h1>Otsikko sivulla</h1>
+Tuloste:
+```
+Otsikko on: Esimerkkisivu
+Kappaleen sisältö on: Bash voi lukea minut.
 ```
 
-## Deep Dive
-Historiallisesti nettisivujen jäsentäminen komentoriviltä on ollut haastavaa, koska HTML:n rakenteelliset standardit ovat välillä löyhät. Nykyään on olemassa työkaluja kuten `lynx`, `wget` ja `curl` jotka helpottavat sisällön noutamista. Koodin jäsentämiseen voi käyttää myös erikoistyökaluja kuten `beautifulsoup` Pythonilla tai `pup` komentorivillä.
-Alternatiiveja ovat esimerkiksi headless-selaimet kuten `puppeteer` JavaScriptillä, jotka suorittavat JavaScriptiä ja käsittelevät dynaamista sisältöä paremmin kuin komentorivityökalut.
-Tärkeää on valita oikea työkalu; staattiselle sisällölle yksinkertaiset komennot riittävät, mutta dynaamisempien sivujen kohdalla kannattaa miettiä monimutkaisempia ratkaisuja.
+## Syväsukellus
 
-## See Also
-- [W3Schools HTML Tutorial](https://www.w3schools.com/html/)
-- [Bash Guide for Beginners](https://tldp.org/LDP/Bash-Beginners-Guide/html/)
-- [The Art of Command Line](https://github.com/jlevy/the-art-of-command-line)
-- [Puppeteer GitHub Repository](https://github.com/puppeteer/puppeteer)
+Aikaisemmin ohjelmoijat käyttivät regex-pohjaisia työkaluja kuten `grep` HTML:n skannaamiseen, mutta se oli kömpelöä. HTML ei ole säännönmukaista - se on kontekstuaalista. Perinteiset työkalut eivät ota tätä huomioon ja voivat olla virhealttiita.
+
+Vaihtoehtoja? Runsain mitoin. Python kauniin keiton (Beautiful Soup) kanssa, PHP DOMDocumentin kanssa, JavaScript DOM-jäsentäjien kanssa - kielet, joilla on kirjastoja, jotka on suunniteltu ymmärtämään HTML:n rakennetta.
+
+`xmllint`in käyttö bash-skripteissä on vankkaa yksinkertaisiin tehtäviin. Se ymmärtää XML:n, ja sitä kautta XHTML:n. Säännöllinen HTML voi olla arvaamatonta, kuitenkin. Se ei aina noudata XML:n tiukkoja sääntöjä. `xmllint` pakottaa HTML:n XML-malliin, joka toimii hyvin muodollisesti oikein muotoillun HTML:n kanssa, mutta voi kompastua sotkuisiin tapauksiin.
+
+## Katso myös
+
+- [W3Schools - HTML DOM Jäsentäjä](https://www.w3schools.com/xml/dom_intro.asp): Avaa HTML DOM:n saloja.
+- [MDN Web Docs - XML:n jäsentäminen ja serialisointi](https://developer.mozilla.org/en-US/docs/Web/Guide/Parsing_and_serializing_XML): XML:n jäsentämisen periaatteita, jotka pätevät XHTML:ssä.
+- [Beautiful Soup -dokumentaatio](https://www.crummy.com/software/BeautifulSoup/bs4/doc/): Python-kirjasto HTML:n jäsentämiseen.
+- [libxml2 -dokumentaatio](http://xmlsoft.org/): Tietoja `xmllint`istä ja liittyvistä XML-työkaluista.

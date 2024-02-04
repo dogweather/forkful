@@ -1,37 +1,52 @@
 ---
-title:                "문자열 대문자로 변환하기"
-date:                  2024-01-19
-simple_title:         "문자열 대문자로 변환하기"
-
+title:                "문자열 대문자화"
+date:                  2024-02-03T19:04:51.766310-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "문자열 대문자화"
 tag:                  "Strings"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/elixir/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (무엇인가요? 왜 사용하나요?)
-문자열의 첫 글자를 대문자로 바꾸는 것을 말합니다. 주로 문장을 시작할 때나 제목, 이름 등을 명확하게 구분하기 위해 사용합니다.
+## 무엇 & 왜?
 
-## How to (어떻게 하나요?)
-Elixir에서 문자열의 첫 글자를 대문자로 바꾸기 위해서는 `String.capitalize/1` 함수를 사용합니다.
+문자열의 첫 글자를 대문자로 변환하고 나머지 글자들은 소문자로 유지하는 작업을 문자열 대문자화라고 합니다. 이 작업은 사용자 입력을 형식화하거나 사용자 인터페이스에 텍스트를 표시할 때 일관성과 가독성이 중요하기 때문에 흔히 필요합니다.
+
+## 방법:
+
+Elixir는 내장 함수를 사용하여 별도의 제3자 라이브러리 없이도 문자열을 대문자화하는 간단한 방법을 제공합니다. 다음은 간단한 예입니다:
 
 ```elixir
-IO.puts String.capitalize("elixir")
-IO.puts String.capitalize("처음 시작하는")
+string = "elixir programming"
+capitalized_string = String.capitalize(string)
+IO.puts capitalized_string
 ```
 
-예상 결과:
+출력:
 
 ```
-Elixir
-처음 시작하는
+Elixir programming
 ```
 
-## Deep Dive (심층 분석)
-Elixir에서의 문자열 대문자화는 `String.capitalize/1` 함수로 처리됩니다. 이 함수는 문자열의 첫 글자를 대문자로, 나머지는 소문자로 변환합니다. 역사적으로는 각 프로그래밍 언어마다 이런 기능을 제공하는데, Elixir는 매우 간단하고 이해하기 쉬운 방법을 제공합니다. 비슷한 기능으로는 `upcase`와 `downcase`가 있으며 각각 문자열을 전부 대문자나 소문자로 변환합니다. 구현면에서는 유니코드 문자열 처리를 위해 Elixir는 내부적으로 `String.Normalize`를 사용합니다.
+보다 복잡한 대문자화 로직이나 더 많은 제어가 필요한 경우에는, 다양한 String 함수를 조합할 수 있습니다. 예를 들어, 문장의 모든 단어를 대문자화하고 싶다면, 문장을 단어로 나누고, 각각을 대문자화한 후 다시 합칠 수 있습니다:
 
-## See Also (관련 링크)
-- Elixir 공식 문서 [`String.capitalize/1`](https://hexdocs.pm/elixir/String.html#capitalize/1)
-- [`String.upcase/1`](https://hexdocs.pm/elixir/String.html#upcase/1)
-- [`String.Normalize`](https://hexdocs.pm/elixir/String.html#normalize/2)
+```elixir
+sentence = "elixir is fun"
+capitalized_sentence = sentence 
+                        |> String.split() 
+                        |> Enum.map(&String.capitalize/1) 
+                        |> Enum.join(" ")
+
+IO.puts capitalized_sentence
+```
+
+출력:
+
+```
+Elixir Is Fun
+```
+
+Elixir의 표준 라이브러리가 대부분의 요구를 충족시키지만, 더 미묘한 텍스트 조작을 포함한 고급 문자열 대문자화가 필요한 경우에는 국제화를 위한 Cldr와 같은 제3자 라이브러리를 탐색할 수 있습니다. 이러한 라이브러리는 지역 특정 대문자화 동작을 제공할 수 있습니다.

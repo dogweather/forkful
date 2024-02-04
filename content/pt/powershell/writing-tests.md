@@ -1,44 +1,76 @@
 ---
 title:                "Escrevendo testes"
-date:                  2024-01-19
+date:                  2024-02-03T19:31:36.328771-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Escrevendo testes"
-
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/powershell/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## O Que é & Por Que?
-Escrever testes é o processo de verificar se o código cumpre o que promete. Programadores fazem isso para garantir qualidade, evitar erros e economizar tempo com manutenção futura.
+## O Que & Porquê?
 
-## Como Fazer:
-Vamos usar o Pester, um framework de testes para PowerShell. Instala e roda com estes comandos:
-```PowerShell
-Install-Module -Name Pester -Force -SkipPublisherCheck
+Escrever testes em PowerShell envolve criar scripts que validam automaticamente a funcionalidade do seu código PowerShell, garantindo que ele se comporte conforme esperado. Programadores fazem isso para pegar bugs mais cedo, simplificar a manutenção do código e garantir que modificações no código não quebrem inadvertidamente a funcionalidade existente.
+
+## Como fazer:
+
+O PowerShell não possui um framework de teste integrado, mas o Pester, um módulo de terceiros popular, é amplamente utilizado para escrever e executar testes. Aqui está como começar com o Pester para testar suas funções PowerShell.
+
+Primeiro, instale o Pester se ainda não o fez:
+
+```powershell
+Install-Module -Name Pester -Scope CurrentUser -Force
 ```
-Exemplo de um teste simples verificando se 2+2 é igual a 4:
-```PowerShell
-Describe "Teste de soma simples" {
-    It "2 + 2 é igual a 4" {
-        $sum = 2 + 2
-        $sum | Should -Be 4
+
+Em seguida, considere que você tem uma função PowerShell simples que deseja testar, salva como `MyFunction.ps1`:
+
+```powershell
+function Get-MultipliedNumber {
+    param (
+        [int]$Number,
+        [int]$Multiplier = 2
+    )
+
+    return $Number * $Multiplier
+}
+```
+
+Para testar esta função com o Pester, crie um script de teste denominado `MyFunction.Tests.ps1`. Neste script, utilize os blocos `Describe` e `It` do Pester para definir os casos de teste:
+
+```powershell
+# Importar a função a ser testada
+. .\MyFunction.ps1
+
+Describe "Testes Get-MultipliedNumber" {
+    It "Multiplica o número por 2 quando nenhum multiplicador é fornecido" {
+        $result = Get-MultipliedNumber -Number 3
+        $result | Should -Be 6
+    }
+
+    It "Multiplica corretamente o número pelo multiplicador dado" {
+        $result = Get-MultipliedNumber -Number 3 -Multiplier 3
+        $result | Should -Be 9
     }
 }
-
-Invoke-Pester
-```
-Se passar, mostra:
-```
-Describing Teste de soma simples
- [+] 2 + 2 é igual a 4 40ms (37ms|3ms)
-Tests completed in 40ms
-Tests Passed: 1, Failed: 0, Skipped: 0 NotRun: 0
 ```
 
-## Aprofundamento:
-Pester surgiu em 2009, virando o padrão de facto para testes no PowerShell. Alternativas incluem psake e NoSQLT, mas Pester destaca-se pela integração profunda com o PowerShell e suporte da comunidade. O framework permite mock objects e tem suporte para TDD (Test-Driven Development).
+Para executar os testes, abra o PowerShell, navegue até o diretório que contém o seu script de teste e use o comando `Invoke-Pester`:
 
-## Veja Também:
-- [Página oficial do Pester](https://pester.dev)
-- [Repositório do Pester no GitHub](https://github.com/pester/Pester)
+```powershell
+Invoke-Pester .\MyFunction.Tests.ps1
+```
+
+A saída de exemplo será assim, indicando se seus testes passaram ou falharam:
+
+```
+Starting discovery in 1 files.
+Discovery finished in 152ms.
+[+] C:\caminho\para\MyFunction.Tests.ps1 204ms (182ms|16ms)
+Tests completed in 204ms
+Tests Passed: 2, Failed: 0, Skipped: 0 NotRun: 0
+```
+
+Esta saída mostra que ambos os testes passaram, dando-lhe confiança de que sua função `Get-MultipliedNumber` se comporta conforme esperado nos cenários que você testou.

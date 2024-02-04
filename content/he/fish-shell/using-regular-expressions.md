@@ -1,30 +1,76 @@
 ---
 title:                "שימוש בביטויים רגולריים"
-date:                  2024-01-19
+date:                  2024-02-03T19:17:16.991855-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "שימוש בביטויים רגולריים"
-
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/fish-shell/using-regular-expressions.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## מה ולמה?
-רגולר אקספרשנז (ביטויים רגולריים) זה כלי לחיפוש והחלפת טקסט לפי תבנית. מתכנתים משתמשים בזה כדי לעבוד עם טקסטים בצורה יעילה ומהירה.
 
-## איך לעשות:
-```Fish Shell
-echo "האם יש מישהו פה?" | grep -oP "מישהו"
-# פלט: מישהו
+ביטויים רגולריים (regex) ב-Fish Shell מאפשרים לך לחפש, להתאים ולעבד מחרוזות על פי תבניות מסוימות. תכנתים משתמשים ב-regex למשימות כמו אימות קלט, ניתוח ועיבוד טקסט, מכיוון שהוא מציע דרך קומפקטית וחזקה לציין תבניות טקסט מורכבות.
 
-echo "דגל התכנות שלי: --regex=^מישהו" | string replace -r -- "מישהו" "אף אחד"
-# פלט: דגל התכנות שלי: --regex=^אף אחד
+## איך לעשות זאת:
+
+למרות ש-Fish Shell עצמו אינו כולל פקודה מובנית ל-regex, הוא משתמש ביעילות בפקודות חיצוניות כמו `grep`, `sed` ו-`awk` שתומכות ב-regex, מה שמאפשר לך לכלול פעולות regex בסקריפטים שלך.
+
+### התאמת תבנית בסיסית עם `grep`
+חיפוש שורות בקובץ שמתאימות לתבנית:
+
+```fish
+grep '^[0-9]+' myfile.txt
 ```
 
-## צלילה עמוקה
-רגולר אקספרשנז התפתחו בשנות ה-50 וה-60 על ידי ווארן טאג וקנ תומפסון. יש אלטרנטיבות כמו globbing שנמצאות בשלל שפות סקריפטינג. Fish משתמש בסינטקס POSIX ERE (Extended Regular Expressions) עבור רגולר אקספרשנז.
+פקודה זו מוצאת שורות שמתחילות בספרה אחת או יותר ב-`myfile.txt`.
 
-## ראו גם
-- הדוקומנטציה הרשמית של Fish בנושא ביטויים רגולריים: [Fish Shell Regular Expressions](https://fishshell.com/docs/current/index.html#syntax-regular-expressions)
-- תיעוד גרפ (grep): [GNU Grep](https://www.gnu.org/software/grep/manual/grep.html)
-- תיעוד אובוינטו על string ב-Fish Shell: [Fish Shell String](https://fishshell.com/docs/current/cmds/string.html)
+### חילוץ והחלפה עם `sed`
+חילוץ מספרי טלפון מקובץ:
+
+```fish
+sed -n '/\([0-9]\{3\}\)-\([0-9]\{3\}\)-\([0-9]\{4\}\)/p' contacts.txt
+```
+
+החלפת כל המופעים של "foo" ב-"bar" ב-`data.txt`:
+
+```fish
+sed 's/foo/bar/g' data.txt
+```
+
+### שימוש ב-`string` לביטויים רגולריים בסיסיים
+פקודת `string` של Fish Shell תומכת בפעולות regex פשוטות כמו התאמה והחלפה:
+
+התאמת תבנית במחרוזת:
+
+```fish
+echo "fish 3.1.2" | string match -r '3\.[0-9]+\.[0-9]+'
+```
+פלט:
+```
+3.1.2
+```
+
+החלפת ספרות שלאחר 'fish' ב-'X.X.X':
+
+```fish
+echo "Welcome to fish 3.1.2" | string replace -ra '([fish]+\s)[0-9\.]+' '$1X.X.X'
+```
+פלט:
+```
+Welcome to fish X.X.X
+```
+
+### התאמה מתקדמת עם `awk`
+הדפסת העמודה השנייה של נתונים בה העמודה הראשונה מתאימה לתבנית מסוימת:
+
+```fish
+awk '$1 ~ /^a[0-9]+$/ {print $2}' datafile
+```
+
+פקודה זו מחפשת שורות ב-`datafile` שבהן העמודה הראשונה מתחילה ב-"a" אחריו ספרה אחת או יותר ומדפיסה את העמודה השנייה.
+
+על ידי שילוב פקודות חיצוניות אלו, תכנתי Fish Shell יכולים לנצל את הכוח המלא של ביטויים רגולריים למשימות עיבוד טקסט מורכבות, מה שמשדרג את היכולות המקוריות של המעטפת.

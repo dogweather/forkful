@@ -1,44 +1,79 @@
 ---
 title:                "Testien kirjoittaminen"
-date:                  2024-01-19
+date:                  2024-02-03T19:30:46.439533-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Testien kirjoittaminen"
-
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/haskell/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Testaaminen tarkoittaa ohjelmasi toiminnan varmistamista automatisoiduilla kokeilla. Ohjelmoijat testaavat koodinsa välttääkseen bugeja ja parantaakseen koodin laatua.
+## Mikä ja miksi?
 
-## How to:
-Haskellissa testit kirjoitetaan usein käyttäen HUnit- tai QuickCheck-kirjastoja. Tässä yksinkertainen esimerkki HUnitilla:
+Testien kirjoittaminen Haskellilla koskee funktioidesi toivottujen tulosten varmistamista automatisoitujen tarkistusten kautta. Ohjelmoijat tekevät sen löytääkseen virheet aikaisin, helpottaakseen refaktorointia ja dokumentoidakseen käyttäytymistä, mikä tekee koodikannasta ylläpidettävämmän ja skaalautuvamman.
 
-```Haskell
-import Test.HUnit
+## Kuinka:
 
--- Funktio, joka kertoo kaksi numeroa
-multiply :: Int -> Int -> Int
-multiply x y = x * y
+Haskell tukee erilaisia testauskehyksiä, mutta kaksi suosittua ovat `Hspec` ja `QuickCheck`. Hspec antaa sinun määritellä ihmislukuisia erittelyjä koodillesi, kun taas QuickCheck antaa sinun automaattisesti generoida testejä kuvailemalla ominaisuuksia, joita koodisi tulisi tyydyttää.
 
--- Testi funktiolle
-testMultiply :: Test
-testMultiply = TestCase (assertEqual "Should multiply two numbers" 20 (multiply 4 5))
+### Käyttäen Hspeciä
 
--- Testien suoritustoiminto
+Ensimmäisenä, lisää `hspec` rakennustyökalusi konfiguraatioon (esim. `stack.yaml` tai `cabal` tiedosto). Sen jälkeen, tuo `Test.Hspec` ja kirjoita testit eritelmiksi:
+
+```haskell
+-- tiedosto: spec/MyLibSpec.hs
+import Test.Hspec
+import MyLib (add)
+
 main :: IO ()
-main = runTestTT testMultiply >>= print
+main = hspec $ describe "MyLib.add" $ do
+  it "lisää kaksi numeroa" $
+    add 1 2 `shouldBe` 3
+
+  it "palauttaa ensimmäisen numeron kun lisätään nolla" $
+    add 5 0 `shouldBe` 5
 ```
 
-Suorita testi komennolla `runhaskell test.hs`. Tulostus kertoo testin tuloksen.
+Tämän jälkeen, aja testisi käyttäen rakennustyökaluasi, jolloin saat tuloksen, joka saattaa näyttää tältä:
 
-## Deep Dive:
-Haskellin testaustyökalut ovat kehittyneet vuosien varrella. Alkuperäisen HUnitin rinnalle ovat nousseet QuickCheck ja hedgehog, jotka mahdollistavat satunnaistetut testit. Näiden avulla voimme luoda kattavampia testejä erilaisille syötteille. Testien ajamisessa yleensä käytetään Stack- tai Cabal-työkaluja, jotka mahdollistavat testien automatisoinnin osana rakennusprosessia.
+```
+MyLib.add
+  - lisää kaksi numeroa
+  - palauttaa ensimmäisen numeron kun lisätään nolla
 
-## See Also:
-- HUnit-kirjaston kotisivu: https://hackage.haskell.org/package/HUnit
-- QuickCheck-kirjasto: https://hackage.haskell.org/package/QuickCheck
-- Hedgehog-kirjasto: https://hackage.haskell.org/package/hedgehog
-- Haskell Stack-dokumentaatio: https://docs.haskellstack.org/en/stable/README/
-- Cabal-käyttöopas: https://www.haskell.org/cabal/users-guide/
+Valmis 0.0001 sekunnissa
+2 esimerkkiä, 0 epäonnistumisia
+```
+
+### Käyttäen QuickCheckiä
+
+QuickCheckin kanssa ilmaiset ominaisuudet, jotka funktiosi tulisi tyydyttää. Lisää `QuickCheck` projektiisi konfiguraatioon, sitten tuo se:
+
+```haskell
+-- tiedosto: test/MyLibProperties.hs
+import Test.QuickCheck
+import MyLib (add)
+
+prop_addAssociative :: Int -> Int -> Int -> Bool
+prop_addAssociative x y z = x + (y + z) == (x + y) + z
+
+prop_addCommutative :: Int -> Int -> Bool
+prop_addCommutative x y = x + y == y + x
+
+main :: IO ()
+main = do
+  quickCheck prop_addAssociative
+  quickCheck prop_addCommutative
+```
+
+Näiden testien ajaminen autogeneroi syötteitä tarkistamaan määritellyt ominaisuudet:
+
+```
++++ OK, läpäisi 100 testiä.
++++ OK, läpäisi 100 testiä.
+```
+
+Sekä Hspec- että QuickCheck-esimerkeissä, testisarjat toimivat suoritettavina dokumentaatioina, jotka voivat automaattisesti varmentaa koodisi oikeellisuuden.

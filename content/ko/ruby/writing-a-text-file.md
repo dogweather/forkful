@@ -1,51 +1,50 @@
 ---
-title:                "텍스트 파일 작성하기"
-date:                  2024-01-19
-simple_title:         "텍스트 파일 작성하기"
-
+title:                "텍스트 파일 쓰기"
+date:                  2024-02-03T19:29:07.828150-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "텍스트 파일 쓰기"
 tag:                  "Files and I/O"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/ruby/writing-a-text-file.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (무엇과 왜?)
-텍스트 파일 쓰기는 데이터를 영구적으로 저장하는 과정입니다. 프로그래머들은 설정, 로그, 데이터 교환 같은 목적으로 이를 활용합니다.
+## 무엇과 왜?
+Ruby에서 텍스트 파일을 쓰는 것은 출력과 데이터를 영구적으로 저장할 수 있게 하여, 나중에 접근하거나 수정할 수 있게 하는 기본적인 작업입니다. 프로그래머들은 로깅, 설정 저장, 사람이 읽을 수 있는 형식으로 데이터를 내보내는 것과 같은 이유로 자주 이 작업을 수행합니다.
 
-## How to: (어떻게:)
-```Ruby
-# 기본적인 텍스트 파일 쓰기
+## 방법:
+Ruby는 파일 작업을 간단하게 만듭니다. 파일에 쓰기 위해, Ruby에 내장된 `File` 클래스를 사용할 수 있습니다. 다음 예제는 파일을 쓰기 모드(`"w"` 모드)와 추가 모드(`"a"` 모드)로 열고, 문자열을 쓴 후, 파일이 이후에 닫히는 것을 보장하는 방법을 보여줍니다:
+
+```ruby
+# 새로운 내용을 파일에 쓰기, 기존 내용을 덮어쓰기
 File.open("example.txt", "w") do |file|
-  file.puts "안녕하세요, Ruby 사용자!"
+  file.puts "Hello, Ruby!"
 end
 
-# 파일 내용 읽기
-puts File.read("example.txt")
-```
-출력:
-```
-안녕하세요, Ruby 사용자!
-```
-
-```Ruby
-# 여러줄 추가하기
+# 파일 끝에 내용 추가하기
 File.open("example.txt", "a") do |file|
-  file.puts "파일에 추가된 내용입니다."
-  file.puts "또 추가했습니다."
+  file.puts "Adding another line."
 end
 ```
-출력:
+두 스니펫을 실행한 후, `example.txt`의 내용은 다음과 같습니다:
 ```
-안녕하세요, Ruby 사용자!
-파일에 추가된 내용입니다.
-또 추가했습니다.
+Hello, Ruby!
+Adding another line.
 ```
 
-## Deep Dive (심층 분석)
-과거에는 데이터를 파일에 저장하기 위해 저수준 언어를 사용하는 경우가 많았지만, Ruby 같은 현대 언어는 직관적인 API를 제공합니다. `IO` 클래스가 이 기능의 핵심이며 `File` 클래스는 `IO`를 상속받아 파일 입출력을 쉽게 합니다. `write`, `puts`, `print` 메소드를 사용해 다양한 방식으로 데이터를 파일에 쓸 수 있고, `"w"`, `"a"` 등 다양한 옵션으로 파일 모드를 설정할 수 있습니다.
+### 제3의 라이브러리 사용하기: FileUtils
+더 복잡한 파일 작업을 위해서, Ruby 표준 라이브러리 `FileUtils`가 유용할 수 있으며, 기본 파일 쓰기를 위해서는 표준 `File` 메소드가 충분합니다. 그러나, 파일 쓰기와 함께 복사, 이동, 제거 또는 다른 파일 시스템 작업을 수행하고자 한다면, `FileUtils`를 탐색해볼 만합니다.
 
-## See Also (참고자료)
-- Ruby 문서의 IO 클래스: [https://ruby-doc.org/core-3.1.0/IO.html](https://ruby-doc.org/core-3.1.0/IO.html)
-- Ruby 문서의 File 클래스: [https://ruby-doc.org/core-3.1.0/File.html](https://ruby-doc.org/core-3.1.0/File.html)
-- 파일 입출력에 관한 Ruby 스타일 가이드: [https://rubystyle.guide/#working-with-files](https://rubystyle.guide/#working-with-files)
+디렉토리를 생성한 다음 해당 디렉토리 안에 파일을 쓰기 위해 `FileUtils`를 사용하는 예:
+```ruby
+require 'fileutils'
+
+FileUtils.mkdir_p 'logs'
+File.open("logs/today.log", "w") do |file|
+  file.puts "Log entry: #{Time.now}"
+end
+```
+
+이것은 이미 존재하지 않는 경우 새로운 디렉토리 `logs`를 생성하고, 그 안에 새 파일 `today.log`에 쓰는 것을 보여주며, 직접적으로 FileUtils로 쓰지 않지만, 디렉토리 처리 능력을 활용하여 디렉토리와 파일 조작을 모두 보여줍니다.

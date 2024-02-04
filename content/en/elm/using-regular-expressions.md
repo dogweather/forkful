@@ -1,8 +1,8 @@
 ---
 title:                "Using regular expressions"
-date:                  2024-01-19
+date:                  2024-02-03T19:02:47.206438-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Using regular expressions"
-
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/elm/using-regular-expressions.md"
 ---
@@ -10,52 +10,61 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Regular expressions (regex) are patterns used to match character combinations in strings. Programmers use them for searching, editing, or manipulating text, simplifying tasks like form validation or parsing data.
+Regular expressions (regex) in programming are patterns used for matching character combinations in strings. In Elm, just like in other languages, programmers use regex for tasks like validating input, searching, and replacing text within strings due to their flexibility and efficiency.
 
 ## How to:
+Elm does not have built-in regex functions in its core library, requiring the use of third-party libraries for these operations. One of the popular choices for working with regex is `elm/regex`. You can add it to your project using `elm install elm/regex`.
 
-Elm doesn't have built-in regex capabilities, but you can use the `elm/regex` package. Here's how to use regex for common tasks:
+Here's how you can use `elm/regex` for a few common tasks:
 
-```Elm
-import Regex exposing (..)
+### 1. Matching a pattern
+To check if a string matches a pattern, you can use `Regex.contains`.
 
--- Examples of regex usages in Elm --
+```elm
+import Regex
 
--- Checking if a string contains "hello"
-checkForHello : String -> Bool
-checkForHello input =
-    let
-        pattern = "hello"
-        regex = Regex.fromString pattern |> Maybe.withDefault (regex ".")
-    in
-    Regex.contains regex input
+pattern : Regex.Regex
+pattern = Regex.fromString "^[a-zA-Z0-9]+$" |> Maybe.withDefault Regex.never
 
--- Sample Output
-checkForHello "hello, world!" -- True
+isAlphanumeric : String -> Bool
+isAlphanumeric input = Regex.contains pattern input
 
--- Extracting digits from a string
-extractDigits : String -> List String
-extractDigits input =
-    let
-        regex = Regex.fromString "\\d+" |> Maybe.withDefault (regex ".")
-    in
-    Regex.find (All) regex input |> List.map .match
-
--- Sample Output
-extractDigits "elm123rocks" -- ["123"]
+-- Example usage:
+isAlphanumeric "Elm2023"     -- Output: True
+isAlphanumeric "Elm 2023!"   -- Output: False
 ```
-Remember, you need to handle Maybe for potential pattern-matching failures when using `Regex.fromString`.
 
-## Deep Dive
+### 2. Finding all matches
+To find all occurrences of a pattern within a string, you can use `Regex.find`.
 
-Regex goes back to the 1950s, with roots in automata theory and formal language theory. Over time, regex became a powerful tool in text processing, integrated into many programming languages and command-line utilities.
+```elm
+matches : Regex.Regex
+matches = Regex.fromString "\\b\\w+\\b" |> Maybe.withDefault Regex.never
 
-Alternatives to regex in Elm include string functions like `String.contains`, `String.startsWith`, `String.split`, etc. While simpler, they're less powerful for complex pattern matching.
+getWords : String -> List String
+getWords input = 
+    input
+        |> Regex.find matches
+        |> List.map (.match)
 
-Implementation-wise, regex in Elm is built on top of JavaScript's regex engine, courtesy of Elm's runtime. This means regex behavior in Elm can mirror JavaScript's capabilities and limitations.
+-- Example usage:
+getWords "Elm is fun!"  -- Output: ["Elm", "is", "fun"]
+```
 
-## See Also
+### 3. Replacing text
+To replace parts of a string that match a pattern, you use `Regex.replace`.
 
-- Elm Regex Package: [package.elm-lang.org/packages/elm/regex/latest](https://package.elm-lang.org/packages/elm/regex/latest)
-- Regular Expressions in JavaScript: [developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
-- Regex Testers and Debuggers: [regex101.com](https://regex101.com)
+```elm
+replacePattern : Regex.Regex
+replacePattern = Regex.fromString "Elm" |> Maybe.withDefault Regex.never
+
+replaceElmWithHaskell : String -> String
+replaceElmWithHaskell input = 
+    Regex.replace replacePattern (\_ -> "Haskell") input
+
+-- Example usage:
+replaceElmWithHaskell "Learning Elm is fun!"  
+-- Output: "Learning Haskell is fun!"
+```
+
+In these examples, `Regex.fromString` is used to compile a regex pattern, where `\b` matches word boundaries, and `\w` matches any word character. Always handle the `Maybe` result of `Regex.fromString` to safeguard against invalid regex patterns, typically using `Maybe.withDefault`.

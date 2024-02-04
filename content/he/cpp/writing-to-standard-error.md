@@ -1,35 +1,62 @@
 ---
-title:                "כתיבה לפלט השגיאה הסטנדרטי"
-date:                  2024-01-19
-simple_title:         "כתיבה לפלט השגיאה הסטנדרטי"
-
+title:                "כתיבה לשגיאה התקנית"
+date:                  2024-02-03T19:33:26.310414-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "כתיבה לשגיאה התקנית"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/cpp/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## מה ולמה?
-כתיבה ל-Standard Error (stderr) משמשת לדיווח על שגיאות בתוך תכנית. זה מאפשר לנו להפריד בין פלט רגיל לבין הודעות שגיאה, כך שאפשר לנתב אותן למקומות שונים ולטפל בהן בנפרד.
+
+כתיבה לזרם שגיאה הסטנדרטי (`stderr`) ב-C++ כוללת הפצת הודעות שגיאה או אבחונים הנפרדים מפלט התוכנית הראשי. מתכנתים עושים זאת כדי להכווין שגיאות לזרם שונה, מה שמאפשר לנפרד בין פלט רגיל לבין הודעות שגיאה, ובכך להקל על ניפוי באגים ועיבוד שגיאות.
 
 ## איך לעשות:
-```C++
+
+ב-C++, ניתן לכתוב לזרם השגיאה הסטנדרטי באמצעות הזרם `cerr`, החלק מהספרייה הסטנדרטית. הנה דוגמה בסיסית:
+
+```cpp
 #include <iostream>
 
 int main() {
-    std::cerr << "שגיאה: הפעולה לא נתמכת" << std::endl;
-    return 1;
+    // כתיבה לזרם הפלט הסטנדרטי
+    std::cout << "This is a normal message." << std::endl;
+    
+    // כתיבה לזרם השגיאה הסטנדרטי
+    std::cerr << "This is an error message." << std::endl;
+    
+    return 0;
 }
 ```
-פלט לדוגמא:
+
+פלט לדוגמה:
 ```
-שגיאה: הפעולה לא נתמכת
+This is a normal message.
+This is an error message.
 ```
 
-## טבילה עמוקה
-`std::cerr` הוא אובייקט גלובלי שמקושר ברירת מחדל ל-Standard Error. בשנות ה-60 וה-70, כאשר UNIX פותח, הבחנה בין Standard Output (stdout) ל-Standard Error הניבה יתרון בטיפול בפלט ושגיאות. תחליפים ל-`std::cerr` כוללים כתיבה לקובץ לוג או שימוש בספריות ניתוח שגיאות. בפנימיות, `std::cerr` אינו מבצע חסימות כמו `std::cout`, הדבר מקטין את העיכוב בהעברת שגיאות.
+במקרה זה, שתי ההודעות בדרך כלל יופיעו במסוף שלך, אך ניתן להכווין אותן בנפרד בשורת הפקודה. למשל, אתה יכול לשלוח פלט רגיל לקובץ בעוד ששגיאות יוצגו על המסך.
 
-## ראה גם
-- [cppreference.com: std::cerr](https://en.cppreference.com/w/cpp/io/cerr)
-- [C++ Super-FAQ: The Standard Streams](https://isocpp.org/wiki/faq/input-output#iostreams-and-stdio)
-- [GNU: Standard Streams](https://www.gnu.org/software/libc/manual/html_node/Standard-Streams.html)
+לניהול רישום ועיבוד שגיאות מתקדם יותר, ניתן להשתמש בספריות צד שלישי כמו `spdlog` או `boost.log`. ספריות אלו מציעות תכונות רבות לרישום, כולל עיצוב, רמות תיעוד, ופלט לקובץ.
+
+הנה איך עשויים להשתמש ב-`spdlog` לכתוב הודעת שגיאה:
+
+```cpp
+#include "spdlog/spdlog.h"
+
+int main() {
+    // הפעלת spdlog
+    spdlog::info("This is a normal message.");
+    spdlog::error("This is an error message.");
+    
+    return 0;
+}
+```
+
+שימו לב: לשימוש ב-`spdlog` יש להוסיף אותו לפרויקט שלכם. ניתן לעשות זאת על ידי שיכפול מאגר ה-GitHub או שימוש במנהל החבילות כמו `vcpkg` או `conan`.
+
+זכרו, הבחירה בין השימוש בזרמים סטנדרטיים ישירות או בספרייה כמו `spdlog` תלויה במורכבות האפליקציה שלכם ובצרכים הספציפיים שלכם לגבי עיבוד שגיאות ורישום.

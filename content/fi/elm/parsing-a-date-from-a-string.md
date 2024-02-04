@@ -1,53 +1,67 @@
 ---
-title:                "Merkkijonosta päivämäärän jäsentäminen"
-date:                  2024-01-20T15:35:58.978280-07:00
-simple_title:         "Merkkijonosta päivämäärän jäsentäminen"
-
+title:                "Päivämäärän jäsennys merkkijonosta"
+date:                  2024-02-03T19:14:24.335405-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Päivämäärän jäsennys merkkijonosta"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/elm/parsing-a-date-from-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? 
-"Mikä ja Miksi?"
+## Mikä & Miksi?
+Päivämäärän jäsentäminen merkkijonosta Elm:ssä tarkoittaa tekstuaalisen tiedon, joka edustaa päivämääriä ja aikoja, muuntamista muotoon, jonka Elm voi ymmärtää ja käsitellä, erityisesti `Date` tyyppiin. Tämä prosessi on ratkaisevan tärkeä käyttäjän syötteen käsittelyssä, päivämäärien oikeaoppisessa lokalisoimisessa näyttämiseksi, sekä päivämäärään liittyvien laskelmien suorittamisessa, varmistaen että Elm-sovelluksesi voivat älykkäästi käsitellä ajallista dataa.
 
-Jäsennämme päivämäärän merkkijonosta, koska tieto on usein vuorovaikutuksessa teksti-muodossa, ja meidän on käsiteltävä sitä ohjelmallisesti. Esimerkiksi kun käyttäjä syöttää päivämäärän tai lataamme dataa palvelimelta.
+## Kuinka:
+Elm:llä ei ole sisäänrakennettua yhtä vahvaa kykyä päivämäärien jäsentämiseen kuin joillakin muilla kielillä, vaan se pääasiassa tukeutuu JavaScript-yhteentoimivuuteen tai kirjastoihin monimutkaisempia operaatioita varten. Kuitenkin voit käyttää `elm/time` pakettia perusjäsentämiseen, ja monimutkaisempia tarpeita varten kolmannen osapuolen `justinmimbs/date` kirjastoa suositellaan laajalti.
 
-## How to:
-"Näin se toimii:"
+### Jäsentäminen käyttäen `elm/time`:
+`elm/time` tarjoaa `Time` moduulin, jonka avulla voit työskennellä aikaleimojen kanssa ihmisen luettavien päivämäärien sijaan. Vaikka se ei suoraan jäsentää päivämääriä merkkijonoista, voit muuntaa ISO 8601 merkkijonon POSIX aikaleimaksi, jonka kanssa sitten voit työskennellä.
 
-Elm tarjoaa puhtaan syntaksin ja type turvallisuuden, mutta se ei sisällä sisäänrakennettua päivämäärän jäsennystä. Käytämme usein `elm/time` kirjastoa yhdessä `justinmimbs/date` kanssa.
+```elm
+import Time exposing (Posix)
 
-```Elm
-import Time
-import Date exposing (Date)
-import Date.Extra.Parse exposing (iso8601)
+-- Oletetaan, että sinulla on ISO 8601 päivämäärämerkkijono
+isoDateStr : String
+isoDateStr = "2023-01-01T00:00:00Z"
 
-parseDate : String -> Result String Date
-parseDate dateStr =
-    dateStr |> iso8601
+-- Muunna se POSIX aikaleimaksi (tämä funktio palauttaa `Result`)
+parsedDate : Result String Posix
+parsedDate = Time.fromIsoString8601 isoDateStr
 
--- Esimerkiksi käytössä:
-case parseDate "2021-04-23T18:25:43.511Z" of
-    Ok date -> 
-        -- jatka päivämäärän kanssa
-    Err errorMessage ->
-        -- käsittele virhettä
+-- Esimerkkituloste: Ok <posix aika-arvo>
 ```
 
-## Deep Dive
-"Syväsukellus:"
+### Jäsentäminen käyttäen `justinmimbs/date`:
+Monimutkaisempiin jäsentämisiin, kuten ei-ISO formaattien käsittelyyn, `justinmimbs/date` kirjasto on erinomainen valinta. Tässä on miten voit käyttää sitä mukautetun päivämäärämerkkijonon jäsentämiseen:
 
-Päivämäärän jäsennys Elm:ssä ei ole niin suoraviivaista kuin joissain muissa kielissä. Alkujaan Elm ei tarjonnut vahvoja päivämääräkäsittelyn työkaluja, joten yhteisö luo kirjastoja, kuten `justinmimbs/date`.
+1. Varmista, että sinulla on kirjasto asennettuna:
 
-Vaihtoehtoja on muitakin, esimerkiksi `ryannhg/date-format`, joka tarjoaa funktioita päivämäärän muotoiluun. Nämä kirjastot nojaavat `elm/time`-pakettiin, mutta laajentavat sen toiminnallisuutta.
+```shell
+elm install justinmimbs/date
+```
 
-Päivämäärien käsittelyssä on myös aikavyöhykkeiden ja lokaalin mukaisten esitystapojen huomioiminen. `justinmimbs/date`-kirjastossa `iso8601`-funktio ymmärtää ISO 8601 -muotoisia merkkijonoja ja palauttaa `Result`-tyypin, mikä auttaa virheenkäsittelyssä.
+2. Käytä `Date.fromString` funktiota mukautettujen päivämääräformaattien jäsentämiseen:
 
-## See Also
-"Katso myös:"
+```elm
+import Date
+import Result exposing (Result(..))
 
-- Elm Time library documentation: [packages.elm-lang.org/packages/elm/time/latest](https://package.elm-lang.org/packages/elm/time/latest)
-- Justin Mimbs's Date library on GitHub: [github.com/justinmimbs/date](https://github.com/justinmimbs/date)
-- Ryan's date-format for string formatting: [github.com/ryannhg/date-format](https://github.com/ryannhg/date-format)
+-- Sanotaan, että sinulla on mukautettu päivämäärämerkkijono formaatti `dd-MM-yyyy`
+customDateStr : String
+customDateStr = "01-01-2023"
+
+-- Funktio mukautetun formaatin jäsentämiseen
+parseDate : String -> Result String Date.Date
+parseDate = Date.fromString "dd-MM-yyyy"
+
+-- Esimerkkikäyttö
+parsedCustomDate : Result String Date.Date
+parsedCustomDate = parseDate customDateStr
+
+-- Esimerkkituloste: Ok (Date.fromCalendarDate 2023 Jan 1)
+```
+
+Näissä esimerkeissä `Result` tyyppi kapseloi joko onnistuneen jäsentämisen, joka tuottaa päivämäärän (`Ok`) tai virheen (`Err`), mahdollistaen vahvan virheenkäsittelyn Elm-sovelluksissasi.

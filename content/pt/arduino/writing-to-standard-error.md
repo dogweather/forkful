@@ -1,54 +1,81 @@
 ---
-title:                "Escrevendo no erro padrão"
-date:                  2024-01-19
-simple_title:         "Escrevendo no erro padrão"
-
+title:                "Escrevendo para o erro padrão"
+date:                  2024-02-03T19:33:00.409067-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Escrevendo para o erro padrão"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/arduino/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## O Que & Por Que?
-Escrever no erro padrão (stderr) é o processo de exibir mensagens de erro em um canal separado da saída padrão (stdout). Programadores usam isso para reportar erros sem interferir com a saída regular do programa.
+## O Que & Porquê?
 
-## Como Fazer:
-Na programação Arduino, não existe um stderr dedicado como em sistemas operacionais completos. Em vez disso, usamos Serial.print ou Serial.println para depuração e envio de erros. Abaixo está um exemplo de como você poderia implementar algo como stderr:
+Escrever para o erro padrão (stderr) na programação Arduino envolve direcionar mensagens de erro e diagnósticos para um canal separado, garantindo que eles não se misturem com a saída padrão (stdout). Programadores fazem isso para diferenciar as saídas normais do programa das mensagens de erro, facilitando a depuração e a análise de logs.
+
+## Como fazer:
+
+O Arduino não diferencia nativamente entre a saída padrão e o erro padrão como os sistemas de computação convencionais. Tanto os métodos `Serial.print()` quanto `Serial.println()` escrevem na mesma saída serial, normalmente visualizada no Monitor Serial da IDE do Arduino. No entanto, podemos emular a escrita em stderr formatando especificamente as mensagens de erro ou direcionando-as para uma saída alternativa, como um arquivo em um cartão SD ou por uma conexão de rede.
+
+Para emular stderr, você pode prefixar mensagens de erro com uma etiqueta como "ERRO:" para diferenciá-las no Monitor Serial:
 
 ```cpp
 void setup() {
-  Serial.begin(9600);
+  Serial.begin(9600); // Inicia a comunicação serial em 9600 baud rate
 }
 
 void loop() {
-  // Simulando um erro
-  if (digitalRead(2) == LOW) {
-    // simulando stderr
-    Serial.println("Erro: Botão pressionado!");
+  int result = someFunction();
+  if (result == -1) {
+    // Emulando stderr prefixando a mensagem de erro
+    Serial.println("ERRO: A função falhou ao executar.");
   } else {
-    // simulando stdout
-    Serial.println("Tudo funcionando corretamente.");
+    Serial.println("A função foi executada com sucesso.");
   }
-  delay(1000);
+  delay(1000); // Espera um segundo antes de reiniciar o loop
+}
+
+int someFunction() {
+  // Uma função fictícia que retorna -1 em caso de erro
+  return -1;
 }
 ```
 
-Saída (considere que o pino 2 está conectado a um botão):
+Um exemplo de saída no Monitor Serial da IDE Arduino pode parecer com isso:
+
 ```
-Tudo funcionando corretamente.
-Erro: Botão pressionado!
+ERRO: A função falhou ao executar.
 ```
-## Mergulho Profundo
-No mundo Arduino, o conceito de stderr é simplificado devido ao ambiente de hardware e software. Historicamente, em sistemas Unix, o stderr é um fluxo independente que programas usam para enviar mensagens de erro enquanto o stdout é para saídas regulares. No Arduino, utilizamos a mesma porta Serial para ambos, mas é uma prática comum separar mensagens de erro de outras saídas para facilitar a depuração. No entanto, a implementação física do stderr não existe no ambiente do Arduino.
 
-Alternativas:
-- Usar LEDs ou displays para indicar tipos diferentes de erro.
-- Implementar uma biblioteca que simula diferentes níveis de log.
+Para projetos que requerem uma abordagem mais sofisticada, incluindo a escrita em diferentes saídas físicas, o uso de bibliotecas de terceiros ou hardware adicional pode ser necessário. Por exemplo, registrar mensagens de erro em um cartão SD requer a biblioteca `SD`:
 
-Detalhes de implementação:
-- Se necessário, criar funções customizadas para erro que incluem informações como o timestamp, tipo do erro, etc.
+```cpp
+#include <SPI.h>
+#include <SD.h>
 
-## Veja Também
-- Documentação da Arduino Serial Library: https://www.arduino.cc/reference/en/language/functions/communication/serial/
-- Artigo sobre boas práticas de depuração em Arduino: https://www.arduino.cc/en/Guide/Troubleshooting
-- Tutorial sobre comunicação Serial com Arduino: https://www.arduino.cc/en/Tutorial/BuiltInExamples/SerialEvent
+File myFile;
+
+void setup() {
+  Serial.begin(9600);
+  if (!SD.begin()) {
+    Serial.println("ERRO: Falha na inicialização do cartão SD!");
+    return;
+  }
+  
+  myFile = SD.open("error.log", FILE_WRITE);
+  if (myFile) {
+    myFile.println("ERRO: A função falhou ao executar.");
+    myFile.close(); // Certifique-se de fechar o arquivo para salvar o conteúdo
+  } else {
+    Serial.println("ERRO: Falha ao abrir error.log!");
+  }
+}
+
+void loop() {
+  // Seu código principal iria aqui
+}
+```
+
+Com esta abordagem, você separa fisicamente a saída normal do programa e as mensagens de erro direcionando estas últimas para um arquivo `error.log` em um cartão SD, permitindo análises post-mortem sem confundir o canal de saída principal.

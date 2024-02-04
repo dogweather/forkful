@@ -1,62 +1,126 @@
 ---
-title:                "Manipulation des fichiers CSV"
-date:                  2024-01-19
-simple_title:         "Manipulation des fichiers CSV"
-
+title:                "Travailler avec CSV"
+date:                  2024-02-03T19:21:17.838296-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Travailler avec CSV"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/rust/working-with-csv.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-CSV, c'est quoi ? Des fichiers avec des données séparées par des virgules. Pourquoi on l'utilise ? Simple et universel pour stocker et échanger des données tabulaires. 
+## Quoi & Pourquoi ?
+Travailler avec des fichiers CSV (Comma-Separated Values, soit valeurs séparées par des virgules) consiste à lire et à écrire dans des fichiers texte simples qui stockent des données tabulaires. Les programmeurs font cela pour permettre le partage de données entre différents programmes, systèmes, ou pour traiter des ensembles de données volumineux de manière efficace et lisible par l'homme.
 
-## How to:
+## Comment faire :
+Rust, avec son accent sur la sécurité et la performance, offre d'excellentes crates (bibliothèques) pour manipuler des fichiers CSV, `csv` étant la plus populaire. Vous aurez également besoin de `serde` pour la sérialisation et la désérialisation des données.
 
-```Rust
-use csv;
+D'abord, ajoutez les dépendances à votre `Cargo.toml` :
+
+```toml
+[dependencies]
+csv = "1.1"
+serde = { version = "1.0", features = ["derive"] }
+```
+
+### Lire un CSV
+
+Pour lire un fichier CSV, définissez une struct qui représente vos données et dérivez `Deserialize` de `serde` :
+
+```rust
+use serde::Deserialize;
 use std::error::Error;
+use std::fs::File;
 use std::io;
 use std::process;
 
-fn main() {
-    if let Err(err) = read_csv() {
-        println!("Erreur lors de la lecture du CSV: {}", err);
-        process::exit(1);
-    }
+#[derive(Debug, Deserialize)]
+struct Record {
+    city: String,
+    state: String,
+    population: u64,
 }
 
-fn read_csv() -> Result<(), Box<dyn Error>> {
-    let mut rdr = csv::Reader::from_reader(io::stdin());
-    for result in rdr.records() {
-        let record = result?;
+fn read_from_csv(file_path: &str) -> Result<(), Box<dyn Error>> {
+    let file = File::open(file_path)?;
+    let mut rdr = csv::Reader::from_reader(file);
+
+    for result in rdr.deserialize() {
+        let record: Record = result?;
         println!("{:?}", record);
     }
     Ok(())
 }
 
-fn write_csv() -> Result<(), Box<dyn Error>> {
-    let mut wtr = csv::Writer::from_writer(io::stdout());
-    wtr.write_record(&["ville", "population", "province"])?;
-    wtr.write_record(&["Paris", "2,148,271", "Île-de-France"])?;
+fn main() {
+    if let Err(err) = read_from_csv("cities.csv") {
+        println!("erreur lors de l'exécution de l'exemple : {}", err);
+        process::exit(1);
+    }
+}
+```
+
+Un exemple de sortie pour un CSV avec des informations sur les villes pourrait ressembler à :
+```plaintext
+Record { city: "Seattle", state: "WA", population: 744955 }
+Record { city: "New York", state: "NY", population: 8336817 }
+```
+
+### Écrire dans un CSV
+
+Pour écrire dans un fichier CSV, définissez une struct et dérivez `Serialize` :
+
+```rust
+use serde::Serialize;
+use std::error::Error;
+use std::fs::File;
+
+#[derive(Serialize)]
+struct Record {
+    city: String,
+    state: String,
+    population: u64,
+}
+
+fn write_to_csv(file_path: &str, records: Vec<Record>) -> Result<(), Box<dyn Error>> {
+    let file = File::create(file_path)?;
+    let mut wtr = csv::Writer::from_writer(file);
+
+    for record in records {
+        wtr.serialize(&record)?;
+    }
     wtr.flush()?;
+    Ok(())
+}
+
+fn main() -> Result<(), Box<dyn Error>> {
+    let records = vec![
+        Record {
+            city: "Los Angeles".into(),
+            state: "CA".into(),
+            population: 3979563,
+        },
+        Record {
+            city: "Chicago".into(),
+            state: "IL".into(),
+            population: 2695598,
+        },
+    ];
+
+    write_to_csv("output.csv", records)?;
+
     Ok(())
 }
 ```
 
-```Shell
-echo "ville,population,province\nParis,2148271,Île-de-France" | cargo run
-["ville", "population", "province"]
-["Paris", "2148271", "Île-de-France"]
+Cela créera `output.csv` avec les données :
+
+```csv
+city,state,population
+Los Angeles,CA,3979563
+Chicago,IL,2695598
 ```
 
-## Deep Dive
-
-Les CSV existent depuis les années 1970, simples mais limités. Alternatives ? JSON, XML, mais plus compliqués. Pour Rust, la bibliothèque `csv` gère bien le parsing, l'écriture et même les données non-UTF-8. Ça utilise `serde` pour la sérialisation/désérialisation, optimisant les performances et la flexibilité.
-
-## See Also
-
-- Documentation officielle de `csv`: [https://docs.rs/csv](https://docs.rs/csv)
-- Serde, pour la sérialisation/désérialisation dans Rust: [https://serde.rs/](https://serde.rs/)
-- Un how-to pour manipuler des structures de données CSV: [https://docs.rs/csv/latest/csv/tutorial/index.html](https://docs.rs/csv/latest/csv/tutorial/index.html)
+En exploitant le système de types puissant de Rust et les crates robustes de l'écosystème, travailler avec des données CSV devient à la fois efficace et simple, garantissant sécurité et performance dans vos tâches de traitement de données.

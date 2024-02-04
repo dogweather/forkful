@@ -1,56 +1,48 @@
 ---
-title:                "Analyse av HTML"
-date:                  2024-01-20T15:33:56.035317-07:00
-simple_title:         "Analyse av HTML"
-
+title:                "Analysering av HTML"
+date:                  2024-02-03T19:13:17.966953-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Analysering av HTML"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/ruby/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Parsing av HTML betyr å lese og forstå HTML-koden slik at vi kan hente ut data eller endre innholdet. Programmerere gjør dette for å skrape nettinnhold, teste nettsider eller automatisere webinteraksjoner.
+Parsing av HTML betyr å rive fra hverandre en bit HTML-kode for å forstå dens struktur og innhold. Programmerere gjør dette for å ekstrahere data, manipulere innhold, eller migrere informasjon mellom formater og systemer.
 
 ## Hvordan:
-Ruby har flere gems som lar oss parse HTML, men vi fokuserer på Nokogiri, et populært og kraftfullt verktøy.
+For å parse HTML i Ruby, installer 'Nokogiri'-gemmen med `gem install nokogiri`. Nokogiri er som en Sveitsisk lommekniv for å jobbe med HTML og XML i Ruby. Her er et kjapt eksempel:
 
-```Ruby
+```ruby
 require 'nokogiri'
 require 'open-uri'
 
-# Last ned og parse en HTML-side
-doc = Nokogiri::HTML(URI.open('https://example.com'))
+# Last inn HTML-innhold fra et nettsted
+html_content = URI.open('http://example.com').read
 
-# Hent ut alle headingene
-headings = doc.css('h1, h2, h3').map(&:text)
-puts headings
+# Parse HTML-en
+doc = Nokogiri::HTML(html_content)
 
-# Finn et spesifikt element med id
-paragraph = doc.at_css('#main-content p').text
-puts paragraph
-
-# Søk etter elementer med en klasse
-products = doc.css('.product-name').map(&:text)
-puts products
+# Ekstraher tittelen
+title = doc.xpath('//title').text
+puts "Tittelen på siden er: #{title}"
 ```
 
-Forventet output:
-```
-["Overskrift 1", "Underoverskrift 2", "Seksjonsoverskrift 3"]
-"Her er et avsnitt fra hovedinnholdet."
-["Produkt 1", "Produkt 2", "Produkt 3"]
-```
+Dette gir ut noe som: `Tittelen på siden er: Eksempeldomene`.
 
-## Dykk dypere:
-Nokogiri er japansk for 'sågøy' og symboliserer gemsens evne til å "så"-gjennom HTML og XML. Det bygger på libxml2, en av de raskeste XML-parsere. Før Nokogiri, brukte Ruby-programmerere REXML, som er ren Ruby, men langsommere. Alternativer til Nokogiri inkluderer Oga og Hpricot, men Nokogiri er ofte foretrukket for sin hastighet og allsidighet.
+## Dypdykk
+Tilbake i de tidlige Ruby-dagene, var alternativene for parsing av HTML begrensede. REXML var innebygd men treg. Så dukket Hpricot opp, men det falmet bort. Nokogiri debuterte i 2008, og blandet enkelheten til Hpricot med hastigheten og kraften til libxml, et bevist XML-verktøy.
 
-Parsing av HTML er ikke bare å finne tags; moderne webapplikasjoner bruker JavaScript for å laste innhold dynamisk. Dette krever verktøy som Selenium eller Watir for å kontrollere en nettleser som kjører JavaScript før parsing.
+I parsing-verdenen er det alltid alternativer. Noen sverger til det innebygde 'rexml'-biblioteket eller 'oga', en annen XML/HTML-parser for Ruby. Men Nokogiri forblir en favoritt for sin robusthet og hastighet, for ikke å nevne dens enorme utvalg av funksjoner.
 
-Når det gjelder parsing, er presisjon viktig. Feil håndtering av HTML kan føre til feil data eller manglende informasjon, spesielt med dårlig strukturerte HTML-dokumenter. Nokogiri kan navigere og rense opp selv i komplekse dokumenter, noe som gjør det til et uunnværlig verktøy for web scraping og dataekstraksjon.
+Under panseret konverterer Nokogiri HTML til et Document Object Model (DOM)—en trestruktur. Dette gjør det enkelt å navigere og manipulere elementer. Ved å bruke XPath og CSS-selektorer, kan du peke ut akkurat den informasjonen du trenger.
 
-## Se Også:
-- Nokogiris offisielle nettsted: [http://nokogiri.org](http://nokogiri.org)
-- Ruby-Doc for Nokogiri: [https://rubydoc.info/github/sparklemotion/nokogiri](https://rubydoc.info/github/sparklemotion/nokogiri)
-- W3C's HTML/XHTML Validator: [https://validator.w3.org](https://validator.w3.org)
-- Selenium WebDriver for automatiserte tester og web scraping: [https://www.selenium.dev/documentation/en/webdriver/](https://www.selenium.dev/documentation/en/webdriver/)
+## Se Også
+- Nokogiri-gem: [https://nokogiri.org/](https://nokogiri.org/)
+- Ruby sin rexml-dokumentasjon: [https://ruby-doc.org/stdlib-2.6.3/libdoc/rexml/rdoc/REXML/Document.html](https://ruby-doc.org/stdlib-2.6.3/libdoc/rexml/rdoc/REXML/Document.html)
+- Alternativ parser 'oga': [https://github.com/YorickPeterse/oga](https://github.com/YorickPeterse/oga)
+- Lær om XPath: [https://www.w3schools.com/xml/xpath_intro.asp](https://www.w3schools.com/xml/xpath_intro.asp)

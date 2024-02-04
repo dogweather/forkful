@@ -1,35 +1,63 @@
 ---
 title:                "Nykyisen päivämäärän hankkiminen"
-date:                  2024-01-20T15:16:59.204376-07:00
+date:                  2024-02-03T19:11:05.156265-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Nykyisen päivämäärän hankkiminen"
-
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/typescript/getting-the-current-date.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Mikä ja Miksi?)
-Koodaajat hakevat nykyistä päivämäärää usein, koska se on tarpeen aikaleimoihin, raportteihin ja käyttäjäkokemuksen räätälöintiin.
+## Mikä & Miksi?
+Nykyisen päivämäärän hankkiminen TypeScriptissä, joka on JavaScript-pohjainen kieli, mahdollistaa nykyisen päivämäärän ja ajan tiedon käyttämisen ja manipuloinnin. Ohjelmoijat tarvitsevat usein tätä toiminnallisuutta luodakseen aikaleimoja, aikataulutusta ja muita aikaan sidottuja piirteitä sovelluksiinsa.
 
-## How to: (Kuinka tehdä:)
+## Kuinka:
+TypeScriptissä voit käyttää `Date`-objektia nykyisen päivämäärän ja ajan saamiseksi. Näin voit tehdä sen:
+
 ```typescript
-// Nykyisen päivämäärän hankkiminen TypeScriptillä
 const currentDate = new Date();
-console.log(currentDate.toISOString()); // Esimerkkitulostus: 2023-03-19T12:45:30.000Z
+console.log(currentDate);
 ```
 
-## Deep Dive (Sukellus syvemmälle)
-### Historiakonteksti
-JavaScript kehittyi 90-luvulla, ja `Date`-olio oli yksi sen alkuperäisistä API-osista. TypeScriptillä, joka on JavaScriptin superset, pääsy päivämääriin on säilynyt samankaltaisena.
+Esimerkkitulostus:
+```
+2023-04-12T07:20:50.52Z
+```
 
-### Vaihtoehdot
-JavaScriptin `Date`-olio tarjoaa perustoiminnot, mutta kirjastot kuten `moment.js` tai `date-fns` tarjoavat laajempia toimintoja ja formaatteja. TypeScriptin tyypitys auttaa pitämään päivämääräkäsittelyn virheet kurissa.
+Tämä koodipätkä luo uuden `Date`-objektin, joka sisältää nykyisen päivämäärän ja ajan, ja tulostaa sen konsoliin. Voit myös muotoilla päivämäärän käyttämällä toLocaleDateString()-metodia saadaksesi luettavampia muotoja:
 
-### Toteutustiedot
-`new Date()` luo uuden `Date`-olion, joka sisältää nykyisen hetken. `toISOString()`-metodi muuntaa tämän standardi ISO 8601 -muotoon, mutta muitakin formaatteja ja manipulointitapoja on.
+```typescript
+const currentDate = new Date();
+console.log(currentDate.toLocaleDateString());
+```
 
-## See Also (Katso myös)
-- MDN Web Docs, Date: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date
-- Date-fns, moderni JavaScript-kirjasto päivämääriin: https://date-fns.org/
-- Moment.js, toinen suosittu päivämääräkirjasto: https://momentjs.com/
+Esimerkkitulostus:
+```
+4/12/2023
+```
+
+### date-fns:n käyttö
+Laajempaan päivämäärien manipulointiin ja muotoiluun `date-fns`-kirjasto on suosittu valinta. Asenna se ensin npm:n kautta:
+
+```bash
+npm install date-fns
+```
+
+Sen jälkeen voit käyttää sitä nykyisen päivämäärän muotoiluun:
+
+```typescript
+import { format } from 'date-fns';
+
+const currentDate = new Date();
+console.log(format(currentDate, 'yyyy-MM-dd'));
+```
+
+Esimerkkitulostus:
+```
+2023-04-12
+```
+
+Tämä `date-fns`-esimerkki muotoilee nykyisen päivämäärän merkkijonoksi "YYYY-MM-DD" -muodossa. Kirjasto tarjoaa lukuisia toimintoja päivämäärien manipulointiin, tehden siitä monipuolisen työkalun kaikille TypeScript-ohjelmoijille, jotka työskentelevät päivämäärien parissa.

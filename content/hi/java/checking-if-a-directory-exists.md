@@ -1,54 +1,123 @@
 ---
-title:                "डायरेक्टरी का अस्तित्व जाँचना"
-date:                  2024-01-20T14:57:37.843258-07:00
-simple_title:         "डायरेक्टरी का अस्तित्व जाँचना"
-
+title:                "डायरेक्टरी मौजूद है या नहीं जाँचना"
+date:                  2024-02-03T19:09:22.945722-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "डायरेक्टरी मौजूद है या नहीं जाँचना"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/java/checking-if-a-directory-exists.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## क्या और क्यों?
-
-डायरेक्टरी की जाँच करने के मतलब है, पता लगाना कि कोई फोल्डर सिस्टम में मौजूद है या नहीं। प्रोग्रामर्स यह इसलिए करते हैं ताकि गलतियों से बच सकें, जैसे कि उस फोल्डर में फाइल सेव करना जो है ही नहीं!
+जावा में यह जांचना कि कोई डायरेक्टरी मौजूद है या नहीं, एक मौलिक कार्य है जो इसे पढ़ने, इसमें लिखने, या उसके अस्तित्व की आवश्यकता वाले किसी भी ऑपरेशन को प्रदर्शन से पहले फाइल सिस्टम निर्देशिका की उपस्थिति की पुष्टि करने की प्रक्रिया है। यह फ़ाइल सिस्टम के साथ बातचीत करने वाले प्रोग्रामों में त्रुटियों या अपवादों से बचने के लिए महत्वपूर्ण है, जिससे समर्थन और बेहतर उपयोगकर्ता अनुभव सुनिश्चित होता है।
 
 ## कैसे करें:
+जावा में, किसी डायरेक्टरी के अस्तित्व की जाँच करने के कई तरीके हैं, मुख्यतः `java.nio.file.Files` और `java.io.File` कक्षाओं का उपयोग करके।
+
+**`java.nio.file.Files` का उपयोग करते हुए**:
+
+यह हाल के जावा संस्करणों में अनुशंसित दृष्टिकोण है।
 
 ```java
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.nio.file.Paths;
 
 public class DirectoryExists {
     public static void main(String[] args) {
-        Path path = Paths.get("यहाँ-आपका-डायरेक्टरी-पथ");
+        // यहाँ डायरेक्टरी का पथ निर्दिष्ट करें
+        String directoryPath = "path/to/directory";
 
-        if (Files.exists(path)) {
-            System.out.println("डायरेक्टरी मौजूद है: " + path);
+        // यह जांचना कि डायरेक्टरी मौजूद है या नहीं
+        if (Files.exists(Paths.get(directoryPath))) {
+            System.out.println("डायरेक्टरी मौजूद है।");
         } else {
-            System.out.println("डायरेक्टरी मौजूद नहीं है: " + path);
+            System.out.println("डायरेक्टरी मौजूद नहीं है।");
         }
     }
 }
 ```
-कोड चलने पर सैंपल आउटपुट होगा:
+**नमूना आउटपुट**:
 ```
-डायरेक्टरी मौजूद है: यहाँ-आपका-डायरेक्टरी-पथ
+डायरेक्टरी मौजूद है।
 ```
 या
 ```
-डायरेक्टरी मौजूद नहीं है: यहाँ-आपका-डायरेक्टरी-पथ
+डायरेक्टरी मौजूद नहीं है।
 ```
 
-## गहराई से जानकारी:
+**`java.io.File` का उपयोग करते हुए**:
 
-पहले, `java.io.File` का इस्तेमाल करके डायरेक्टरी के होने की जाँच की जाती थी। हालांकि, Java NIO (New I/O) आने के बाद से `java.nio.file.Files` और `java.nio.file.Paths` प्रचलन में आ गए हैं क्योंकि इनमें ज्यादा कार्यक्षमता और संवेदनशीलता होती है। `Files.exists()` का उपयोग करके आप यह जान सकते हैं कि फाइल या डायरेक्टरी मौजूद है या नहीं, और यह ध्यान में रखते हुए कि कभी-कभी फाइल सिस्टम की गड़बड़ियों के कारण `exists()` गलत परिणाम दे सकता है, इसके साथ `notExists()` या `isReadable()` जैसे दूसरे चेक्स को भी इस्तेमाल करना चाहिए।
+हालांकि `java.nio.file.Files` की सिफारिश की जाती है, पुरानी `java.io.File` कक्षा का भी उपयोग किया जा सकता है।
 
-## और भी देखें:
+```java
+import java.io.File;
 
-- [Java NIO Files](https://docs.oracle.com/en/java/javase/14/docs/api/java.base/java/nio/file/Files.html)
-- [Java NIO Paths](https://docs.oracle.com/en/java/javase/14/docs/api/java.base/java/nio/file/Paths.html)
-- [Oracle Java Documentation](https://docs.oracle.com/en/java/)
+public class DirectoryExistsLegacy {
+    public static void main(String[] args) {
+        // यहाँ डायरेक्टरी का पथ निर्दिष्ट करें
+        String directoryPath = "path/to/directory";
 
-इस लेख में सिखाई गई तकनीकें आपको फाइल सिस्टम के साथ काम करने में काफी मददगार साबित होंगी। इन लिंक्स की मदद से आप इस विषय में और भी गहराई से जान सकते हैं।
+        // फाइल ऑब्जेक्ट बनाना
+        File directory = new File(directoryPath);
+
+        // यह जांचना कि डायरेक्टरी मौजूद है या नहीं
+        if (directory.exists() && directory.isDirectory()) {
+            System.out.println("डायरेक्टरी मौजूद है।");
+        } else {
+            System.out.println("डायरेक्टरी मौजूद नहीं है।");
+        }
+    }
+}
+```
+**नमूना आउटपुट**:
+```
+डायरेक्टरी मौजूद है।
+```
+या
+```
+डायरेक्टरी मौजूद नहीं है।
+```
+
+**तृतीय-पक्ष पुस्तकालयों का उपयोग करना**:
+
+हालांकि इस कार्य के लिए मानक जावा पुस्तकालय आमतौर पर पर्याप्त होता है, Apache Commons IO जैसे तृतीय-पक्ष पुस्तकालय अधिक जटिल अनुप्रयोगों में उपयोगी हो सकते हैं।
+
+**Apache Commons IO**:
+
+सबसे पहले, अपने प्रोजेक्ट में Apache Commons IO निर्भरता को जोड़ें। फिर, आप एक डायरेक्टरी के अस्तित्व की जाँच करने के लिए इसकी सुविधाओं का उपयोग कर सकते हैं।
+
+```java
+// मान लें कि प्रोजेक्ट में Apache Commons IO जोड़ा गया है
+
+import org.apache.commons.io.FileUtils;
+
+public class DirectoryExistsCommons {
+    public static void main(String[] args) {
+        // यहाँ डायरेक्टरी का पथ निर्दिष्ट करें
+        String directoryPath = "path/to/directory";
+
+        // FileUtils का उपयोग करके जांचना
+        boolean directoryExists = FileUtils.directoryContains(new File(directoryPath), null);
+
+        if (directoryExists) {
+            System.out.println("डायरेक्टरी मौजूद है।");
+        } else {
+            System.out.println("डायरेक्टरी मौजूद नहीं है।");
+        }
+    }
+}
+```
+
+**नोट**: `FileUtils.directoryContains` जांचता है कि कोई डायरेक्टरी विशिष्ट फ़ाइल को समेटे हुए है या नहीं, परन्तु दूसरे तर्क के रूप में `null` पास करके, आप इसे डायरेक्टरी के अस्तित्व की जांच के लिए उपयोग कर सकते हैं। सावधान रहें, क्योंकि यह विधि का सबसे सीधा या इरादा किया गया उपयोग नहीं हो सकता है।
+
+**नमूना आउटपुट**:
+```
+डायरेक्टरी मौजूद है।
+```
+या
+```
+डायरेक्टरी मौजूद नहीं है।
+```

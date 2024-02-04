@@ -1,44 +1,65 @@
 ---
-title:                "Maiuscolizzare una stringa"
-date:                  2024-01-19
-simple_title:         "Maiuscolizzare una stringa"
-
+title:                "Capitalizzare una stringa"
+date:                  2024-02-03T19:06:28.696646-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Capitalizzare una stringa"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/rust/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Capitalizzare una stringa significa trasformare tutte le lettere minuscole in lettere maiuscole. I programmatori lo fanno per standardizzare l'input di testo e migliorare la leggibilità o per scopi specifici di formattazione.
+## Cosa e Perché?
 
-## How to:
+Capitalizzare una stringa in Rust comporta la modifica della stringa in modo che il suo primo carattere sia una lettera maiuscola, lasciando inalterata il resto della stringa. I programmatori spesso eseguono questa operazione per scopi di formattazione, come la preparazione di parole per titoli o per garantire la coerenza nell'input dell'utente.
 
-Rust rende il processo piuttosto diretto con il metodo `to_uppercase()` disponibile sulle stringhe:
+## Come fare:
 
-```Rust
+Per capitalizzare una stringa in Rust, hai due percorsi principali: utilizzare le funzionalità della libreria standard o impiegare crate di terze parti per esigenze più complesse o specifiche. Ecco come puoi fare entrambi.
+
+### Utilizzando la Libreria Standard di Rust
+
+La libreria standard di Rust non fornisce un metodo diretto per capitalizzare le stringhe, ma puoi raggiungere questo scopo manipolando i caratteri della stringa.
+
+```rust
+fn capitalize_first(s: &str) -> String {
+    let mut c = s.chars();
+    match c.next() {
+        None => String::new(),
+        Some(f) => f.to_uppercase().collect::<String>() + c.as_str(),
+    }
+}
+
 fn main() {
-    let saluto = "ciao mondo!";
-    let saluto_maiuscolo = saluto.to_uppercase();
-
-    println!("{}", saluto_maiuscolo); // Output: CIAO MONDO!
+    let my_string = "hello";
+    println!("{}", capitalize_first(my_string)); // Output: Hello
 }
 ```
 
-Questo esempio stampa `CIAO MONDO!`, mostrando la stringa originale totalmente in maiuscolo.
+### Utilizzando il Crate `heck`
 
-## Deep Dive
+Per un approccio più diretto, specialmente quando si lavora in un contesto di elaborazione di testi più ampio, potresti preferire l'uso di librerie di terze parti come `heck`. Il crate `heck` offre varie funzionalità di conversione di case, inclusa una semplice modalità per capitalizzare le stringhe.
 
-Rust gestisce la capitalizzazione rispettando la specifica Unicode per la conversione in maiuscolo, il che significa che funziona oltre i semplici alfabeti ASCII. Storicamente, altre lingue di programmazione hanno avuto approcci più limitati, considerando solo i caratteri inglesi.
+Prima di tutto, aggiungi `heck` al tuo `Cargo.toml`:
 
-Un'alternativa all'uso di `to_uppercase()` è l'iterazione manuale sui caratteri di una stringa e la loro conversione singola con metodi come `to_ascii_uppercase`, ma questo non è raccomandato per i caratteri non ASCII.
+```toml
+[dependencies]
+heck = "0.4.0"
+```
 
-A livello di implementazione, il metodo `to_uppercase()` può allocare più memoria se la versione maiuscola di una stringa richiede più spazio dei caratteri originali, un caso comune con alcuni caratteri Unicode.
+Poi, usalo per capitalizzare la tua stringa:
 
-## See Also
+```rust
+extern crate heck; // Non necessario in Rust edizione 2018 o successive
+use heck::TitleCase;
 
-Per una comprensione più completa delle stringhe in Rust e delle loro funzionalità, assicurati di consultare la documentazione ufficiale:
+fn main() {
+    let my_string = "hello world";
+    let capitalized = my_string.to_title_case();
+    println!("{}", capitalized); // Output: Hello World
+}
+```
 
-- Rust String Docs: https://doc.rust-lang.org/std/string/struct.String.html
-- Rust documentation on `to_uppercase()`: https://doc.rust-lang.org/std/primitive.str.html#method.to_uppercase
-- Unicode Consortium per approfondire le specifiche Unicode: https://unicode.org
+Nota: Il metodo `to_title_case` fornito da `heck` capitalizza ogni parola nella stringa, il che potrebbe essere più di quello che stai cercando se vuoi solo il primo carattere della stringa capitalizzato. Regola il tuo utilizzo in base alle tue esigenze specifiche.

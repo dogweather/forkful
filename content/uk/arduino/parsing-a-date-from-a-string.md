@@ -1,55 +1,91 @@
 ---
-title:                "Аналіз дати з рядка"
-date:                  2024-01-20T15:34:30.318791-07:00
-simple_title:         "Аналіз дати з рядка"
-
+title:                "Розбір дати з рядка"
+date:                  2024-02-03T19:13:34.493444-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Розбір дати з рядка"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/arduino/parsing-a-date-from-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Що і Чому?
-Парсинг дати з рядка – це процес видобування інформації про дату з текстового формату. Програмісти це роблять для обробки і використання дат у програмах, як день народження або термін придатності.
+## Що і чому?
+
+Розбір дати з рядка в Arduino полягає у витягуванні та перетворенні компонентів дати (рік, місяць, день) з текстового представлення у формат, який можна використовувати для ведення часу, порівнянь або маніпуляцій в скетчах. Програмісти часто виконують це завдання для взаємодії з компонентами, такими як годинники в реальному часі, логери, або для обробки вхідних даних з веб-API та інтерфейсів користувача, де дати можуть бути представлені в зрозумілому форматі.
 
 ## Як це зробити:
-```Arduino
+
+Прямий підхід без сторонньої бібліотеки:
+
+```cpp
 #include <Wire.h>
 #include <RTClib.h>
 
-RTC_DS3231 rtc; // Ініціалізація об’єкту реального часу
+void setup() {
+  Serial.begin(9600);
+  // Приклад рядка дати у форматі РРРР-ММ-ДД
+  String dateString = "2023-04-01";
+
+  int year = dateString.substring(0, 4).toInt();
+  int month = dateString.substring(5, 7).toInt();
+  int day = dateString.substring(8, 10).toInt();
+
+  // Ініціалізація об'єкта DateTime з розібраними компонентами
+  DateTime parsedDate(year, month, day);
+  
+  Serial.print("Розібрана Дата: ");
+  Serial.print(parsedDate.year(), DEC);
+  Serial.print("/");
+  Serial.print(parsedDate.month(), DEC);
+  Serial.print("/");
+  Serial.println(parsedDate.day(), DEC);
+}
+
+void loop() {}
+```
+
+Приклад виводу:
+```
+Розібрана Дата: 2023/4/1
+```
+
+Використання сторонньої бібліотеки (*ArduinoJson* для більш складних сценаріїв розбору, наприклад отримання дати з відповіді JSON):
+
+Спочатку встановіть бібліотеку ArduinoJson через Менеджер бібліотек Arduino.
+
+```cpp
+#include <ArduinoJson.h>
 
 void setup() {
   Serial.begin(9600);
-  if (!rtc.begin()) {
-    Serial.println("Couldn't find RTC");
-    while (1);
-  }
 
-  if (rtc.lostPower()) {
-    Serial.println("RTC lost power, let's set the time!");
-    // Наступний рядок налаштовує дату і час при втраті живлення
-    rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
-  }
-}
+  // Симуляція відповіді JSON
+  String jsonResponse = "{\"date\":\"2023-07-19\"}";
+  StaticJsonDocument<200> doc;
+  deserializeJson(doc, jsonResponse);
 
-void loop() {
-  DateTime now = rtc.now(); // Отримання поточного часу і дати
+  // Витягування рядка дати
+  const char* date = doc["date"];
 
-  // Форматування дати в рядок
-  char dateStr[11];
-  sprintf(dateStr, "%02u/%02u/%04u", now.day(), now.month(), now.year());
+  // Розбір дати з рядка як і раніше
+  int year = String(date).substring(0, 4).toInt();
+  int month = String(date).substring(5, 7).toInt();
+  int day = String(date).substring(8, 10).toInt();
   
-  Serial.println(dateStr); // Виведення рядка з датою
-  delay(1000); // Затримка перед наступним виведенням
+  Serial.print("Розібрана Дата з JSON: ");
+  Serial.print(year);
+  Serial.print("/");
+  Serial.print(month);
+  Serial.print("/");
+  Serial.println(day);
 }
+
+void loop() {}
 ```
-Прикладний вивід: `20/04/2023`
 
-## Поглиблення:
-Раніше для парсингу дати були менш зручні бібліотеки або програмісти писали власні функції. Сьогодні ми використовуємо бібліотеку `RTClib`, яка спрощує взаємодію з RTC модулями, такими як DS3231. Парсинг залежить від формату дати, що використовується. У нашому прикладі ми показали `dd/mm/yyyy`. Існують інші формати, як `ISO 8601` (yyyy-mm-dd). Обираєте, що краще для вашого проекту.
-
-## Додатково:
-- Документація по бібліотеці RTClib: https://github.com/adafruit/RTClib
-- Все про RTC модуль DS3231: https://datasheets.maximintegrated.com/en/ds/DS3231.pdf
-- Arduino Time Library для часових функцій: https://www.arduino.cc/en/Reference/Time
+Приклад виводу:
+```
+Розібрана Дата з JSON: 2023/7/19
+```

@@ -1,41 +1,61 @@
 ---
-title:                "JSONを扱う方法"
-date:                  2024-01-19
-simple_title:         "JSONを扱う方法"
-
+title:                "JSONを活用する"
+date:                  2024-02-03T19:22:27.593174-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "JSONを活用する"
 tag:                  "Data Formats and Serialization"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/clojure/working-with-json.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (何となぜ？)
-JSONはデータ交換のフォーマット。ClojureでJSONを扱うことは、ウェブアプリやAPIとのデータ交換が必要な時に重要。
+## 何となく理由
+ClojureでJSON（JavaScript Object Notation）を扱うことは、JSON文字列をClojureのデータ構造（マップ、ベクター）に解析し、その逆を行う作業を含みます。このタスクは、データを構造化されたテキストベースの形式で通信する必要があるWebサービス、API、アプリケーションにとって基本的です。なぜなら、JSONは異なるプログラミング環境全体で普遍的に認識され、サポートされているからです。
 
-## How to: (方法)
-Clojureには`cheshire`というライブラリがよく使われる。JSONのエンコードとデコードが簡単にできる。
+## 方法:
+ClojureにはJSONを扱うための組み込み関数が含まれていないため、通常はサードパーティのライブラリを使用します。`cheshire`と`jsonista`は使いやすさとパフォーマンスのために人気のある選択肢です。
 
-```Clojure
-;; 依存関係の追加
-;; [cheshire "5.10.1"] ;project.cljに追加またはdeps.ednに対応する形で
-
-(require '[cheshire.core :as json])
-
-;; JSONエンコード
-(json/encode {:foo "bar" :num 42})
-;; => "{\"foo\":\"bar\",\"num\":42}"
-
-;; JSONデコード
-(json/decode "{\"foo\":\"bar\",\"num\":42}" true)
-;; => {:foo "bar", :num 42}
+### Cheshireの使用
+まず、`project.clj`のプロジェクト依存関係にCheshireを追加します：
+```clj
+[com.fasterxml.jackson.core/jackson-core "2.12.0"]
+[cheshire "5.10.1"]
 ```
 
-## Deep Dive (掘り下げ)
-1999年にJSONが登場。軽量で読みやすく、JavaScriptとの親和性が高い。ClojureでのJSON処理には`cheshire`以外にも`clojure.data.json`があるが、機能面では`cheshire`の方が一般的に優れているとされる。
+JSON文字列をClojureマップに解析し、マップをJSON文字列に変換するには：
 
-## See Also (関連情報)
-- [Cheshire GitHub](https://github.com/dakrone/cheshire): Cheshireライブラリ
-- [clojure.data.json GitHub](https://github.com/clojure/data.json): clojure.data.jsonライブラリ
-- [Clojure公式サイト](https://clojure.org): Clojureに関するさらなる情報
-- [JSON公式サイト](https://www.json.org/json-en.html): JSONの詳細
+```clj
+(require '[cheshire.core :as json])
+
+;; JSON文字列をClojureマップに解析
+(let [json-input "{\"name\":\"John\", \"age\":30}"]
+  (json/parse-string json-input true)) ; => {"name" "John", "age" 30}
+
+;; ClojureマップをJSON文字列に変換
+(let [clj-map {"name" "John", "age" 30}]
+  (json/generate-string clj-map)) ; => "{\"name\":\"John\",\"age\":30}"
+```
+
+### Jsonistaの使用
+プロジェクトの`project.clj`にJsonistaを追加：
+```clj
+[jsonista "0.3.2"]
+```
+
+Jsonistaでの同様の操作：
+
+```clj
+(require '[jsonista.core :as j])
+
+;; JSON文字列をClojureに解析
+(let [json-input "{\"name\":\"Emily\", \"age\":25}"]
+  (j/read-value json-input)) ; => {"name" "Emily", "age" 25}
+
+;; ClojureマップをJSON文字列に変換
+(let [clj-map {"name" "Emily", "age" 25}]
+  (j/write-value-as-string clj-map)) ; => "{\"name\":\"Emily\",\"age\":25}"
+```
+
+どちらのライブラリも、より複雑なデータ構造のエンコードとデコードのオプションがあり、シリアライゼーションとデシリアライゼーションプロセスのカスタマイズを可能にする追加の関数とパラメーターがあります。ほとんどのアプリケーションにとって、示された機能はClojureアプリケーションでのJSONの扱いのための堅固な基盤を提供します。

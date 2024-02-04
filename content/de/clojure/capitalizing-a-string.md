@@ -1,40 +1,33 @@
 ---
-title:                "String in Großbuchstaben umwandeln"
-date:                  2024-01-19
-simple_title:         "String in Großbuchstaben umwandeln"
-
+title:                "Einen String großschreiben"
+date:                  2024-02-03T19:04:50.247898-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Einen String großschreiben"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/clojure/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Die Großschreibung eines Strings bedeutet, alle Buchstaben in einem String in Großbuchstaben umzuwandeln. Programmierer nutzen diese Methode, um Konsistenz zu gewährleisten, beispielsweise bei Nutzereingaben oder um Text hervorzuheben.
+Das Kapitalisieren eines Strings beinhaltet die Modifikation des Strings, sodass sein erstes Zeichen großgeschrieben wird, während der Rest des Strings unverändert bleibt. Programmierer führen oft die Großschreibung von Strings durch, um die Datenkonsistenz zu gewährleisten, insbesondere bei Namen und Orten oder um grammatikalischen Regeln in Benutzeroberflächen zu entsprechen.
 
-## So geht's:
-Clojure bietet verschiedene Wege, einen String großzuschreiben. Hier ein paar Beispiele:
+## Wie:
+Clojure, als eine JVM-Sprache, ermöglicht es Ihnen, Java-String-Methoden direkt zu nutzen. Hier ist ein grundlegendes Beispiel, wie man einen String in Clojure kapitalisiert:
 
 ```clojure
-;; Einfacher Weg, um einen String komplett großzuschreiben
-(.toUpperCase "Ich bin ein kleiner Satz.")
-;; Ausgabe: "ICH BIN EIN KLEINER SATZ."
+(defn capitalize-string [s]
+  (if (empty? s)
+    s
+    (str (clojure.string/upper-case (subs s 0 1)) (subs s 1))))
 
-;; Benutzung der `clojure.string` Bibliothek
-(require '[clojure.string :as str])
-(str/upper-case "Fuchs springt über den faulen Hund.")
-;; Ausgabe: "FUCHS SPRINGT ÜBER DEN FAULEN HUND."
+(capitalize-string "hello world!") ; => "Hello world!"
 ```
 
-## Tiefgang:
-Ursprünglich kommt die Praxis, Text großzuschreiben, aus der Zeit, als ausschließlich Großbuchstaben genutzt wurden – denken wir an römische Inschriften. In Clojure, wie in vielen modernen Sprachen, gibt es mehrere Wege, Strings zu manipulieren, wobei `.toUpperCase` und `clojure.string/upper-case` am gebräuchlichsten sind.
+Clojure enthält keine eingebaute Funktion speziell für das Kapitalisieren von Strings, aber wie gezeigt, können Sie dies leicht erreichen, indem Sie `clojure.string/upper-case`, `subs` und `str` Funktionen kombinieren.
 
-Beim Umgang mit internationalen Strings ist Vorsicht geboten: bestimmte Sprachen haben spezielle Großschreibregeln. Clojure folgt Java's Methode, um Großschreibung Unicode-kompatibel zu machen, aber es ist wichtig, die kulturellen Besonderheiten zu beachten.
+Für eine prägnantere Lösung und die Handhabung komplexerer String-Manipulationen könnten Sie sich an eine Drittanbieterbibliothek wenden. Eine solch beliebte Bibliothek im Clojure-Ökosystem ist `clojure.string`. Allerdings bietet sie, soweit ich bis zum letzten Update informiert bin, keine direkte `capitalize` Funktion über die mit den Kernfunktionen von Clojure demonstrierten Möglichkeiten hinaus an, sodass die oben gezeigte Methode Ihr direkter Ansatz ist, ohne zusätzliche Bibliotheken speziell für die Kapitalisierung einzubeziehen.
 
-`.toUpperCase` ist eine Methode, die auf Java's `String` Klasse operiert, während `clojure.string/upper-case` Teil von Clojures eigener string manipulation library ist, die auf Clojure's Datenstrukturen zugeschnitten ist. Beide liefern ähnliche Ergebnisse, doch die Wahl hängt oft davon ab, ob man innerhalb einer "Clojure-nativen" Umgebung bleiben oder die Interoperabilität mit Java nutzen möchte.
-
-## Siehe Auch:
-- ClojureDocs zu `clojure.string`: https://clojuredocs.org/clojure.string
-- Ein Guide zu Clojure Strings: https://www.clojure-toolbox.com/
-- Unicode Groß- und Kleinschreibung: https://unicode.org/reports/tr21/
-- Java String Dokumentation: https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html
+Denken Sie daran, wenn Sie mit Strings in Clojure arbeiten, die mit Java-Methoden interagieren, arbeiten Sie effektiv mit Java-Strings, was es Ihnen ermöglicht, das gesamte Arsenal der Java-String-Methoden direkt in Ihrem Clojure-Code zu nutzen, falls notwendig.

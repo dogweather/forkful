@@ -1,8 +1,8 @@
 ---
 title:                "Writing tests"
-date:                  2024-01-19
+date:                  2024-02-03T19:03:31.505464-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Writing tests"
-
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/php/writing-tests.md"
 ---
@@ -10,52 +10,75 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Testing checks if your code does what it's supposed to. It saves time by catching bugs early and ensures code changes don't break stuff.
+Writing tests in programming involves creating and running scripts that verify the code behaves as expected under various conditions. Programmers do it to ensure quality, prevent regressions, and facilitate safe refactoring, which is crucial for maintaining a healthy, scalable, and bug-free codebase.
 
 ## How to:
-We're diving into PHPUnit, a popular PHP testing framework. First, install it with Composer:
-
+### Native PHP – PHPUnit
+A widely-used tool for testing in PHP is PHPUnit. Install it via Composer:
 ```bash
-composer require --dev phpunit/phpunit
+composer require --dev phpunit/phpunit ^9
 ```
 
-Now, let's write a simple test. Imagine you’ve got a class `Calculator` with an `add` method.
-
+#### Writing a simple test:
+Create a `CalculatorTest.php` file in a `tests` directory:
 ```php
-// Calculator.php
-class Calculator {
-    public function add($a, $b) {
-        return $a + $b;
-    }
-}
-```
-
-Here’s how you test it:
-
-```php
-// CalculatorTest.php
 use PHPUnit\Framework\TestCase;
 
-class CalculatorTest extends TestCase {
-    public function testAddition() {
+// Assuming you have a Calculator class that adds numbers
+class CalculatorTest extends TestCase
+{
+    public function testAdd()
+    {
         $calculator = new Calculator();
         $this->assertEquals(4, $calculator->add(2, 2));
     }
 }
 ```
-
-Run the test with:
-
+Run the tests with:
 ```bash
-./vendor/bin/phpunit CalculatorTest
+./vendor/bin/phpunit tests
 ```
 
-Output shows if tests pass or fail.
+#### Sample output:
+```
+PHPUnit 9.5.10 by Sebastian Bergmann and contributors.
 
-## Deep Dive
-Testing wasn't always a big deal in PHP. Originally, many slapped code together and manually checked if it worked. Now, testing is king. PHPUnit started gaining traction in the 2000s and now it's nearly standard. Alternatives? Sure, there’s PHPSpec and Behat, for starters. Under the hood, PHPUnit uses assertions to compare expected and actual results, and test doubles (mocks, stubs, spies) to mimic external dependencies.
+.                                                                   1 / 1 (100%)
 
-## See Also
-- PHPUnit Manual: https://phpunit.de/manual/current/en/index.html
-- PHP The Right Way (Testing): http://www.phptherightway.com/#testing
-- Mockery (mocking framework for PHPUnit): http://docs.mockery.io/en/latest/
+Time: 00:00.005, Memory: 6.00 MB
+
+OK (1 test, 1 assertion)
+```
+
+### Third-party Libraries – Mockery
+For complex testing, including mocking objects, Mockery is a popular choice.
+
+```bash
+composer require --dev mockery/mockery
+```
+
+#### Integrating Mockery with PHPUnit:
+```php
+use PHPUnit\Framework\TestCase;
+use Mockery as m;
+
+class ServiceTest extends TestCase
+{
+    public function tearDown(): void
+    {
+        m::close();
+    }
+
+    public function testServiceCallsExternalService()
+    {
+        $externalServiceMock = m::mock(ExternalService::class);
+        $externalServiceMock->shouldReceive('process')->once()->andReturn('mocked result');
+
+        $service = new Service($externalServiceMock);
+        $result = $service->execute();
+
+        $this->assertEquals('mocked result', $result);
+    }
+}
+```
+To run, use the same PHPUnit command as above. Mockery allows for expressive and flexible mock objects, facilitating testing of complex interactions within your application.

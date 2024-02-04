@@ -1,44 +1,50 @@
 ---
 title:                "HTML parsen"
-date:                  2024-01-20T15:32:37.587235-07:00
+date:                  2024-02-03T19:12:18.603364-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "HTML parsen"
-
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/kotlin/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Was & Warum?
-HTML-Parser lesen und interpretieren den Inhalt von Webseiten, damit Apps und Services die Daten nutzen können. Wir programmieren sowas, um Inhalte automatisch zu verarbeiten, wie z.B. Scraping oder Datenextraktion.
+HTML zu parsen bedeutet, das Markup einer Webseite so zu zergliedern, dass es von einem Programm verstanden und manipuliert werden kann. Programmierer parsen HTML, um Daten zu extrahieren, Web-Interaktionen zu automatisieren oder Inhalte zwischen Systemen zu migrieren.
 
-## Anleitung
-```kotlin
+## Wie geht das:
+Kotlin macht das Parsen von HTML mit Bibliotheken wie Jsoup unkompliziert. So geht's:
+
+```Kotlin
 import org.jsoup.Jsoup
 
 fun main() {
-    val html = "<html><head><title>Beispielseite</title></head>" +
-               "<body><p>Dies ist ein Beispiel</p></body></html>"
+    val html = "<html><head><title>Beispielseite</title></head><body><p>Dies ist ein Test.</p></body></html>"
     val doc = Jsoup.parse(html)
 
     val title = doc.title()
-    val bodyText = doc.body().text()
+    println("Titel: $title")  // Ausgabe: Titel: Beispielseite
 
-    println("Titel der Seite: $title")
-    println("Inhalt des Body: $bodyText")
+    val pText = doc.select("p").first()?.text()
+    println("Absatz: $pText")  // Ausgabe: Absatz: Dies ist ein Test.
 }
-
-// Ausgabe:
-// Titel der Seite: Beispielseite
-// Inhalt des Body: Dies ist ein Beispiel
 ```
-Jsoup ist eine Java-Bibliothek, die auch in Kotlin verwendet werden kann. Sie analysiert den HTML-Code und erlaubt einfachen Zugriff auf die Elemente.
 
-## Tiefgang
-Historisch gesehen wurden für das Parsen von HTML oft reguläre Ausdrücke verwendet, was aber zu fehleranfälligen Lösungen führte. Moderne Bibliotheken wie Jsoup verwenden einen DOM-Parser, der wesentlich robuster und sicherer ist. Alternativen zu Jsoup sind z.B. HtmlCleaner oder jsoup: Java HTML Parser. Beim Parsen sollte man auf Performance und korrekte Fehlerbehandlung achten, gerade bei komplexen oder fehlerhaften HTML-Dokumenten.
+Wir greifen den Titel und den Text des Absatzes ab, um nur an der Oberfläche zu kratzen, was Jsoup alles kann. Aber es ist ein Anfang.
 
-## Siehe auch
-- Jsoup: [Offizielle Webseite](https://jsoup.org/)
-- Jsoup GitHub Repository: [https://github.com/jhy/jsoup](https://github.com/jhy/jsoup)
-- W3C HTML5 Spezifikation: [https://www.w3.org/TR/html5/](https://www.w3.org/TR/html5/)
-- Kotlin Programmierung: [https://kotlinlang.org/](https://kotlinlang.org/)
+## Tiefer gehend:
+Vor Kotlin war Java der Standard dafür, oft umständlich. Jsoup hat das Blatt gewendet, indem es einen jQuery-ähnlichen Ansatz bot. Das Parsen von HTML ist jedoch nicht exklusiv für Jsoup; andere Bibliotheken wie HtmlUnit oder sogar Regex (obwohl davon abgeraten wird) existieren auch. Mit Jsoup stellen Sie sicher, dass Ihr Parsen die Struktur des Dokuments respektiert. Es verwendet ein DOM-Modell, das die Auswahl und Manipulation von Elementen ermöglicht. Es ist auch widerstandsfähig – es kann sogar das unordentlichste HTML parsen.
+
+## Siehe auch:
+Tauchen Sie tiefer in Jsoup ein:
+
+- Jsoup offizielle Dokumentation: https://jsoup.org/
+- Buch "Kotlin for Android Developers": https://antonioleiva.com/kotlin-android-developers-book/
+- Offizielle Website der Kotlin-Programmiersprache: https://kotlinlang.org/
+
+Für breitere Diskussionen und Anleitungen zum Web Scraping und Parsen:
+
+- Web Scraping mit Kotlin und Jsoup: https://medium.com/@hadiyarajesh/web-scraping-with-kotlin-and-jsoup-8b5b6c31c5a5
+- HTML-Parsing auf Android mit Kotlin und Jsoup: https://proandroiddev.com/parsing-html-on-android-1b766658be6a

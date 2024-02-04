@@ -1,76 +1,82 @@
 ---
-title:                "Analyse syntaxique de HTML"
-date:                  2024-01-20T15:30:05.528819-07:00
-simple_title:         "Analyse syntaxique de HTML"
-
+title:                "Analyse Syntaxique du HTML"
+date:                  2024-02-03T19:11:37.913460-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Analyse Syntaxique du HTML"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/arduino/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Quoi et Pourquoi ?
+## Quoi & Pourquoi ?
 
-Le parsing HTML, c'est lire et décortiquer le code HTML pour en extraire des infos. Les programmeurs le font pour interagir avec des pages web depuis leurs applications, récupérer des données ou automatiser des tâches sur internet.
+L'analyse du HTML dans les projets Arduino consiste à extraire des informations des pages Web. Les programmeurs font cela pour permettre à leurs dispositifs Arduino d'interagir avec Internet, collectant des données depuis des sites web pour des objectifs allant de l'automatisation domestique à la surveillance environnementale.
 
 ## Comment faire :
 
-Le parsing HTML sur Arduino est un peu complexe parce qu'on n'a pas accès à des librairies puissantes comme sur un PC. Mais, voici un exemple basique :
+L'analyse du HTML sur Arduino exige généralement des bibliothèques à empreinte minimale en raison des ressources limitées de l'appareil. Un choix populaire pour le web scraping et l'analyse est l'utilisation des bibliothèques `ESP8266HTTPClient` et `ESP8266WiFi` pour ESP8266, ou leurs équivalents ESP32, compte tenu de leur support natif pour les capacités Wi-Fi et les protocoles HTTP. Voici un exemple de base pour récupérer et analyser le HTML, en supposant que vous travaillez avec un ESP8266 ou ESP32 :
 
-```Arduino
-#include <Ethernet.h>
-#include <SPI.h>
+D'abord, incluez les bibliothèques nécessaires :
+```cpp
+#include <ESP8266WiFi.h> // Pour ESP8266
+#include <ESP8266HTTPClient.h>
+#include <WiFiClient.h>
+// Utilisez les bibliothèques analogues pour ESP32 si vous utilisez un ESP32
 
-// Initialisation du client Ethernet
-EthernetClient client;
+const char* ssid = "votreSSID";
+const char* password = "votreMOTDEPASSE";
+```
 
+Connectez-vous à votre réseau Wi-Fi :
+```cpp
 void setup() {
-  // Démarrage de la connexion Ethernet et du port série
-  Ethernet.begin(/* Vos configurations réseau ici */);
-  Serial.begin(9600);
+    Serial.begin(115200);
+    WiFi.begin(ssid, password);
 
-  // Connexion au serveur web
-  if (client.connect("exemple.com", 80)) {
-    client.println("GET /page.html HTTP/1.1");
-    client.println("Host: exemple.com");
-    client.println("Connection: close");
-    client.println();
-  }
-}
-
-void loop() {
-  // Attend que les données soient disponibles
-  if (client.available()) {
-    String line = client.readStringUntil('\n');
-    // Ici le parsing simplifié, cherchant une balise spécifique
-    if (line.indexOf("<title>") >= 0) {
-      int start = line.indexOf("<title>") + 7; 
-      int end = line.indexOf("</title>");
-      Serial.println(line.substring(start, end));
+    while (WiFi.status() != WL_CONNECTED) {
+        delay(1000);
+        Serial.println("Connexion...");
     }
-  }
-
-  // Si la connexion est terminée, fermez-la
-  if (!client.connected()) {
-    Serial.println("Déconnexion");
-    client.stop();
-    while (true);
-  }
 }
 ```
 
-Avec ce code, vous devriez voir le titre de la page HTML s'afficher sur votre moniteur série – et rien d'autre.
+Faites une requête HTTP et analysez un simple morceau de HTML :
+```cpp
+void loop() {
+    if (WiFi.status() == WL_CONNECTED) { //Vérifiez le statut de la connexion WiFi
+        HTTPClient http;  //Déclarez un objet de la classe HTTPClient
 
-## Plongeon profond:
+        http.begin("http://example.com");  //Spécifiez la destination de la requête
+        int httpCode = http.GET();  //Envoyez la requête
 
-Historiquement, les Arduino n'étaient pas vraiment conçus pour le parsing HTML, vu leurs ressources limitées. Armer votre Arduino d'une connexion Ethernet ou WiFi, c'est déjà un gros pas. Pour un vrai parsing, sur un PC, vous utiliseriez des librairies comme BeautifulSoup en Python, bien plus puissantes.
+        if (httpCode > 0) { //Vérifiez le code de retour
+            String payload = http.getString();   //Obtenez le payload de réponse de la requête
+            Serial.println(payload);             //Imprimez le payload de la réponse
 
-Il existe des alternatives comme l'utilisation de services web externes qui prétraitent le HTML et renvoient des données plus digestes pour un microcontrôleur. Ou encore, coder un serveur intermédiaire personnalisé.
+            // Analysez une partie spécifique, par ex., extraction du titre depuis le payload
+            int titleStart = payload.indexOf("<title>") + 7; // +7 pour passer le tag "<title>"
+            int titleEnd = payload.indexOf("</title>", titleStart);
+            String pageTitle = payload.substring(titleStart, titleEnd);
 
-En terme de détails d'implémentation, sur Arduino, il faut garder ça simple. Pas d'arbre DOM ici, mais une recherche de chaînes de caractère qui fonctionne pour des besoins spécifiques et légers.
+            Serial.print("Titre de la page : ");
+            Serial.println(pageTitle);
+        }
 
-## Voir également :
+        http.end();   //Fermez la connexion
+    }
 
-- Documentation sur la librairie Ethernet d'Arduino : https://www.arduino.cc/en/reference/ethernet
-- Un guide sur les requêtes HTTP avec Arduino : https://www.arduino.cc/en/Tutorial/LibraryExamples/WebClient
-- Une discussion sur le parsing HTML avec Arduino sur les forums Arduino : http://forum.arduino.cc/index.php?topic=73816.0
+    delay(10000); //Faites une requête toutes les 10 secondes
+}
+```
+
+Sortie d'exemple (en supposant que http://example.com a une structure HTML simple) :
+```
+Connexion...
+...
+Titre de la page : Domaine Exemple
+```
+
+Cet exemple démontre comment récupérer une page HTML et extraire le contenu de la balise `<title>`. Pour une analyse HTML plus complexe, envisagez d'utiliser des expressions régulières (avec prudence en raison des contraintes de mémoire) ou des fonctions de manipulation de chaînes pour naviguer à travers la structure HTML. Une analyse avancée pourrait nécessiter des approches plus sophistiquées, y compris des algorithmes d'analyse personnalisés adaptés à la structure spécifique du HTML avec lequel vous travaillez, puisque l'environnement Arduino standard ne comprend pas de bibliothèque d'analyse HTML intégrée.

@@ -1,44 +1,76 @@
 ---
-title:                "Перетворення рядка на великі літери"
-date:                  2024-01-19
-simple_title:         "Перетворення рядка на великі літери"
-
+title:                "Зробити першу літеру рядка великою"
+date:                  2024-02-03T19:06:01.435956-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Зробити першу літеру рядка великою"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/c-sharp/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Що це таке та навіщо?
-Коли ми кажемо про великі літери у рядку, ми маємо на увазі перетворення першої букви кожного слова на велику. Програмісти використовують цей прийом для форматування тексту, наприклад, для заголовків або імен.
+## Що і чому?
+Перетворення рядка з великої літери в C# полягає у зміні першого символу рядка на велику літеру, якщо він вже не є таким. Це перетворення може бути критично важливим для форматування виводу, дотримання стандартів кодування або збільшення читабельності текстів інтерфейсу користувача.
 
 ## Як це зробити:
-```C#
+C# пропонує простий підхід до перетворення рядків з великої літери за допомогою вбудованих методів. Найпростіший спосіб досягнення цього - змінити рядок безпосередньо за допомогою цих методів. Для більш складних або специфічних правил капіталізації (наприклад, написання кожного слова з великої літери) можуть знадобитися додаткові бібліотеки або ручні методи. Нижче наведено приклади, які демонструють, як з великої літери перетворити рядок в C# різними способами.
+
+### Базова капіталізація:
+Щоб написати з великої літери першу букву одного слова або речення:
+
+```csharp
+string originalString = "hello world";
+string capitalizedString = char.ToUpper(originalString[0]) + originalString.Substring(1);
+Console.WriteLine(capitalizedString); // Вивід: "Hello world"
+```
+
+### Написання кожного слова з великої літери:
+Для написання з великої літери першої літери кожного слова в рядку, можна скористатися методом `TextInfo.ToTitleCase`, який знаходиться в просторі імен `System.Globalization`:
+
+```csharp
 using System;
 using System.Globalization;
 
-public class Capitalizer
+string originalString = "hello world";
+TextInfo textInfo = CultureInfo.CurrentCulture.TextInfo;
+string capitalizedString = textInfo.ToTitleCase(originalString);
+Console.WriteLine(capitalizedString); // Вивід: "Hello World"
+```
+
+Примітка: `ToTitleCase` не змінює на маленькі букви решту літер; він лише перетворює на велику букву першу літеру кожного слова. Крім того, деякі слова за правилами написання заголовків (наприклад, "and", "or", "of") можуть не бути написані з великої літери в залежності від налаштувань культури.
+
+### Використання методів розширення для можливості повторного використання:
+Ви можете створити метод розширення для класу `string`, щоб спростити процес капіталізації, роблячи ваш код чистішим і більш повторно використовуваним. Ось як створити і використовувати такий метод:
+
+```csharp
+using System;
+
+public static class StringExtensions
 {
-    public static void Main()
+    public static string Capitalize(this string input)
     {
-        string phrase = "привіт, як справи?";
-        string capitalizedPhrase = CapitalizeEachWord(phrase);
-        
-        Console.WriteLine(capitalizedPhrase); // Вивід: "Привіт, Як Справи?"
+        if (string.IsNullOrEmpty(input))
+        {
+            return input;
+        }
+        return char.ToUpper(input[0]) + input.Substring(1);
     }
-    
-    private static string CapitalizeEachWord(string text)
+}
+
+class Program
+{
+    static void Main(string[] args)
     {
-        TextInfo textInfo = CultureInfo.CurrentCulture.TextInfo;
-        return textInfo.ToTitleCase(text);
+        string originalString = "hello world";
+        string capitalizedString = originalString.Capitalize();
+        Console.WriteLine(capitalizedString); // Вивід: "Hello world"
     }
 }
 ```
 
-## Поглиблений аналіз:
-Для великих літер у C# є кілька підходів. В прикладі вище використано `TextInfo.ToTitleCase`, який є частиною `CultureInfo`. Це особливо корисно, оскільки поважає локалізацію. Метод `ToTitleCase` не змінює слова, які вже починаються з великої літери, що може бути як плюс, так і мінус, залежно від ситуації. Альтернативний метод – використання `ToLower()` або `ToUpper()` для перетворення на малий або великий регістри відповідно. Ці методи не розрізняють слова, тому результат може бути не завжди той, який ви очікуєте.
+Цей метод розширення `Capitalize` можна викликати для будь-якого об'єкта рядка в межах простору імен, пропонуючи більш інтуїтивний та об'єктно-орієнтований підхід до маніпуляції з рядками в C#.
 
-## Додатково:
-- Документація Microsoft щодо `TextInfo.ToTitleCase`: https://docs.microsoft.com/en-us/dotnet/api/system.globalization.textinfo.totitlecase
-- Стаття про різні способи форматування строк у C#: https://docs.microsoft.com/en-us/dotnet/standard/base-types/best-practices-strings 
-- Вікіпедія про нотацію у програмуванні: https://en.wikipedia.org/wiki/Letter_case#Title_case
+### Сторонні бібліотеки:
+Поки стандартна бібліотека C# задовольняє більшість потреб у капіталізації рядків, певні спеціалізовані завдання можуть скористатися від сторонніх бібліотек, таких як Humanizer. Однак для завдання простого перетворення рядків або кожного слова в рядку з великої літери, стандартні методи C# є адекватними та ефективними, усуваючи потребу в зовнішніх залежностях.

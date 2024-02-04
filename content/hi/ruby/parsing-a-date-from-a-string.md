@@ -1,56 +1,65 @@
 ---
-title:                "स्ट्रिंग से दिनांक पार्स करना"
-date:                  2024-01-20T15:38:09.329927-07:00
-simple_title:         "स्ट्रिंग से दिनांक पार्स करना"
-
+title:                "स्ट्रिंग से तारीख पार्स करना"
+date:                  2024-02-03T19:16:00.929117-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "स्ट्रिंग से तारीख पार्स करना"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/ruby/parsing-a-date-from-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (क्या और क्यों?)
-String se date parse karna matlab ek text format mein likhe gaye date ko Ruby ke `Date` object mein badalna hota hai. Programmers isliye karte hain kyunki data har jagah standard format mein nahi milta aur usse process karne ke liye hume usse samajhne layak format mein convert karna padta hai.
+## क्या और क्यों?
+एक स्ट्रिंग से तारीख पार्स करना इस बारे में है कि कैसे एक तारीख का प्रतिनिधित्व करने वाले पाठ को रूबी द्वारा समझे जाने वाले `Date` या `DateTime` ऑब्जेक्ट में बदला जाए। प्रोग्रामर यह काम तारीखों पर तुलना, गणना या प्रारूपण जैसे कार्य करने के लिए करते हैं, जो कि शेड्यूलिंग, विश्लेषण या डेटा प्रोसेसिंग के साथ काम करने वाले एप्लिकेशनों में सामान्य कार्य होते हैं।
 
-## How to: (कैसे करें:)
-```Ruby
+## कैसे:
+रूबी में, मानक लाइब्रेरी `Date` और `DateTime` क्लासों का उपयोग करके स्ट्रिंग्स से तारीखें पार्स करने के लिए सीधे तरीके प्रदान करती है। यहाँ रूबी के निर्मित तरीकों का उपयोग करके आप यह कार्य कैसे करें:
+
+```ruby
 require 'date'
 
-# Ek simple string jo date ko represent karta hai
-date_string = "2023-03-14"
-# String ko parse karke Date object mein convert karna
+# एक स्ट्रिंग से तारीख पार्स करना
+date_string = "2023-04-01"
 parsed_date = Date.parse(date_string)
 puts parsed_date
-# Output: 2023-03-14
+# => 2023-04-01
 
-# Custom date format ke saath parse karna
-custom_date_string = "14-03-2023"
-custom_format_date = Date.strptime(custom_date_string, '%d-%m-%Y')
-puts custom_format_date
-# Output: 2023-03-14
+# अधिक विस्तृत समय प्रतिनिधित्व के लिए DateTime
+datetime_string = "2023-04-01T15:30:45+00:00"
+parsed_datetime = DateTime.parse(datetime_string)
+puts parsed_datetime
+# => 2023-04-01T15:30:45+00:00
 ```
 
-## Deep Dive (गहराई से जानकारी):
-### Historical Context (ऐतिहासिक संदर्भ)
-Ruby mein date parsing ka concept bahut pehle se hai. Ruby 1.9 ke release ke baad se `Date` aur `Time` classes kaafi improve ho chuki hain. Pehle custom parsing thoda tough tha, lekin ab Ruby's built-in `date` library ke `parse` aur `strptime` methods se ye kaafi easy ho gaya hai.
+अधिक नियंत्रण के लिए या `parse` के द्वारा सीधे समझ में न आने वाले प्रारूपों को संभालने के लिए, आप `strptime` (स्ट्रिंग पार्स समय) का उपयोग कर सकते हैं, प्रारूप को स्पष्ट रूप से निर्दिष्ट करते हुए:
 
-### Alternatives (विकल्प)
-Date parsing ke aur bhi methods hain jaise `time` library ka use karke. Wahi `strptime` method `Time` class mein bhi available hota hai, lekin thoda alag context mein.
-
-```Ruby
-require 'time'
-
-time_string = "2023-03-14 05:23:17"
-parsed_time = Time.strptime(time_string, '%Y-%m-%d %H:%M:%S')
-puts parsed_time
-# Output: 2023-03-14 05:23:17 +0000
+```ruby
+# कस्टम प्रारूपों के लिए strptime का उपयोग करना
+custom_date_string = "01-04-2023"
+parsed_date_custom = Date.strptime(custom_date_string, '%d-%m-%Y')
+puts parsed_date_custom
+# => 2023-04-01
 ```
 
-### Implementation Details (कार्यान्वयन विवरण)
-Ruby ke `Date.parse` method automatically common formats ko pehchanta hai lekin `Date.strptime` ka use karke hum custom formats define kar sakte hain. Ye flexibility tab kaam aati hai jab hum non-standard date formats se deal kar rahe ho.
+### तृतीय-पक्ष लाइब्रेरी का उपयोग:
 
-## See Also (यह भी देखें):
-- Ruby's official Date class documentation: [https://ruby-doc.org/stdlib-3.0.0/libdoc/date/rdoc/Date.html](https://ruby-doc.org/stdlib-3.0.0/libdoc/date/rdoc/Date.html)
-- Ruby's Time class documentation: [https://ruby-doc.org/core-3.0.0/Time.html](https://ruby-doc.org/core-3.0.0/Time.html)
-- Ruby's official programming tutorials: [https://www.ruby-lang.org/en/documentation/](https://www.ruby-lang.org/en/documentation/)
-- Stack Overflow, for any specific questions about date parsing in Ruby: [https://stackoverflow.com/questions/tagged/ruby+date](https://stackoverflow.com/questions/tagged/ruby+date)
+जबकि रूबी की निर्मित क्षमताएँ शक्तिशाली होती हैं, कभी-कभी आप अतिरिक्त विशेषताओं या सरल वाक्य-विन्यास के लिए तृतीय-पक्ष लाइब्रेरी को पसंद कर सकते हैं। एक लोकप्रिय विकल्प प्राकृतिक भाषा पार्सिंग के लिए `Chronic` जेम है:
+
+1. सबसे पहले, अपनी Gemfile में Chronic को जोड़ें और `bundle install` चलाएँ:
+```ruby
+gem 'chronic'
+```
+
+2. फिर, इसे इस प्रकार उपयोग करें:
+```ruby
+require 'chronic'
+
+parsed_chronic = Chronic.parse('next Tuesday')
+puts parsed_chronic
+# आउटपुट वर्तमान तारीख पर निर्भर करेगा; 2023-04-01 को पार्स करने की मान्यता लेते हुए
+# => 2023-04-04 12:00:00 +0000
+```
+
+`Chronic` उपयोगकर्ता इनपुट के लिए बहुत उपयोगी है क्योंकि यह प्राकृतिक भाषा तिथि प्रारूपों की एक व्यापक श�र्णी को समझ सकता है, जिससे यह लचीली तारीख प्रविष्टि की आवश्यकता वाले अनुप्रयोगों के लिए एक शक्तिशाली उपकरण बन जाता है।

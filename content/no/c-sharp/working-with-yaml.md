@@ -1,63 +1,110 @@
 ---
-title:                "Arbeid med YAML"
-date:                  2024-01-19
-simple_title:         "Arbeid med YAML"
-
+title:                "Arbeider med YAML"
+date:                  2024-02-03T19:24:53.780222-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Arbeider med YAML"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/c-sharp/working-with-yaml.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Hva og Hvorfor?
-
-YAML, "YAML Ain't Markup Language", er et dataformat brukt for konfigurasjonsfiler og datautveksling. Programmerere bruker YAML for sin lesbarhet og enkelhet, noe som gjør det ideelt for innstillinger, deploy-script og å definere infrastruktur som kode.
+## Hva & Hvorfor?
+YAML, som står for YAML Ain't Markup Language, er et menneskelesbart data serialiseringsformat. Programmerere bruker det ofte for konfigurasjonsfiler, mellomprosessmeldinger, og datalagring på grunn av dets enkelhet og lesbarhet sammenlignet med andre dataformater som XML eller JSON.
 
 ## Hvordan:
-
-For å jobbe med YAML i C#, trenger vi `YamlDotNet` biblioteket. Installer via NuGet:
+C# har ikke innebygd støtte for YAML, men du kan enkelt arbeide med YAML ved å bruke tredjepartsbiblioteker som *YamlDotNet*. Først må du installere YamlDotNet-pakken:
 
 ```bash
-Install-Package YamlDotNet
+Install-Package YamlDotNet -Version 11.2.1
 ```
 
-For å lese YAML:
-
-```csharp
-using YamlDotNet.Serialization;
-using System.IO;
-
-var deserializer = new DeserializerBuilder().Build();
-var yamlStr = File.ReadAllText("config.yaml");
-var config = deserializer.Deserialize<Dictionary<string, string>>(yamlStr);
-Console.WriteLine(config["setting"]);
+### Lesing av YAML:
+Forestille deg at du har en YAML-fil `config.yaml` med følgende innhold:
+```yaml
+appSettings:
+  name: MyApp
+  version: 1.0.0
 ```
 
-For å skrive til YAML:
-
+Du kan lese og analysere denne YAML-filen i C# slik:
 ```csharp
-using YamlDotNet.Serialization;
+using System;
 using System.IO;
+using YamlDotNet.Serialization;
+using YamlDotNet.Serialization.NamingConventions;
 
-var serializer = new SerializerBuilder().Build();
-var configToWrite = new Dictionary<string, string> {{"setting", "value"}};
-using (var writer = File.CreateText("config.yaml"))
+public class AppConfig
 {
-    serializer.Serialize(writer, configToWrite);
+    public AppSettings appSettings { get; set; }
+}
+
+public class AppSettings
+{
+    public string name { get; set; }
+    public string version { get; set; }
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        var yaml = File.ReadAllText("config.yaml");
+        var deserializer = new DeserializerBuilder()
+            .WithNamingConvention(UnderscoredNamingConvention.Instance) // Juster navnekonvensjonen deretter
+            .Build();
+
+        var config = deserializer.Deserialize<AppConfig>(yaml);
+
+        Console.WriteLine($"Name: {config.appSettings.name}, Version: {config.appSettings.version}");
+    }
 }
 ```
-
-Eksempel `config.yaml` etter å ha kjørt koden:
-
-```yaml
-setting: value
+**Eksempel på utdata:**
+```
+Name: MyApp, Version: 1.0.0
 ```
 
-## Dypdykk:
+### Skriving av YAML:
+For å skrive data til en YAML-fil, bruk `Serializer`-klassen fra YamlDotNet. Her er hvordan du serialiserer et objekt tilbake til YAML:
 
-YAML ble introdusert i 2001 som et brukervennlig alternativ til XML. Det er også ofte sammenlignet med JSON, men er mer lesevennlig og skalerbart for komplekse konfigurasjoner. Mange verktøy som Docker, Kubernetes og Ansible bruker YAML. C# implementasjonen via YamlDotNet støtter både serialisering og deserialisering, og tilbyr fleksible API-er for å tilpasse prosessen.
+```csharp
+using System;
+using System.IO;
+using YamlDotNet.Serialization;
+using YamlDotNet.Serialization.NamingConventions;
 
-## Se Også:
+class Program
+{
+    static void Main(string[] args)
+    {
+        var config = new AppConfig
+        {
+            appSettings = new AppSettings
+            {
+                name = "MyApp",
+                version = "2.0.0"
+            }
+        };
 
-- YAML offisiell side: [https://yaml.org/](https://yaml.org/)
-- Microsofts dokumentasjon om NuGet pakkebehandling: [https://docs.microsoft.com/en-us/nuget/](https://docs.microsoft.com/en-us/nuget/)
+        var serializer = new SerializerBuilder()
+            .WithNamingConvention(UnderscoredNamingConvention.Instance) // Juster navnekonvensjonen deretter
+            .Build();
+
+        var yaml = serializer.Serialize(config);
+        File.WriteAllText("updatedConfig.yaml", yaml);
+
+        Console.WriteLine(yaml);
+    }
+}
+```
+**Eksempel på utdata:**
+```yaml
+appSettings:
+  name: MyApp
+  version: 2.0.0
+```
+
+Denne enkle tilnærmingen demonstrerer hvordan du kan arbeide effektivt med YAML i dine C#-prosjekter, og gjør det enkelt å lese fra og skrive til YAML-filer ved å bruke YamlDotNet-biblioteket.

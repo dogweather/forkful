@@ -1,41 +1,64 @@
 ---
-title:                "Kirjoittaminen vakiovirheeseen"
-date:                  2024-01-19
-simple_title:         "Kirjoittaminen vakiovirheeseen"
-
+title:                "Kirjoittaminen standardivirheeseen"
+date:                  2024-02-03T19:34:46.924887-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Kirjoittaminen standardivirheeseen"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/typescript/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Mitä ja miksi? Standard error (stderr) on stream, johon ohjelmat kirjoittavat virheviestit. Ohjelmoijat käyttävät sitä, koska virheet on hyvä erottaa normaalista tulosteesta (stdout), jolloin logit ja debuggaus helpottuvat.
+## Mikä & Miksi?
+TypeScriptissä standardivirheeseen (stderr) kirjoittaminen tarkoittaa virheviestien tai lokien suoraan lähettämistä ympäristön virhetulostevirtaan (esim. node.js:n konsoli tai web-selain). Tämä on olennaista ongelmien diagnosoinnissa häiritsemättä standarditulostetta (stdout), jota käytetään tyypillisesti ohjelman datan esittämiseen, varmistaen, että virheenkäsittely ja lokitus hoidetaan tehokkaasti ja yhtenäisesti.
 
-## How to:
-Koodiesimerkit ja näytetulostukset.
+## Kuinka:
+TypeScript, ollessaan JavaScriptin yläjoukko, nojautuu alla olevaan JS-ajoaikaympäristöön (kuten Node.js) kirjoittaessaan stderr:iin. Tässä on miten voit tehdä sen suoraan:
 
-```TypeScript
-// Kirjoitus standard erroriin
-process.stderr.write('Tämä on virheviesti.\n');
-
-// Konsolilogitus standard erroriin
-console.error('Tämä on toinen virheviesti.');
+```typescript
+console.error("Tämä on virheviesti.");
 ```
 
-Sample output:
-
+Esimerkkitulostus stderriin:
 ```
 Tämä on virheviesti.
-Tämä on toinen virheviesti.
 ```
 
-## Deep Dive:
-Syväsukellus. Alun perin Unix-järjestelmissä oli käytössä kolme standardivirtaa: input (stdin), output (stdout) ja error (stderr). Ne mahdollistivat tiedon suuntaamisen ja käsittelyn ohjelmien välillä. Vaihtoehtoisia tapoja kirjoittaa virheviestejä ovat esim. lokeihin kirjoittaminen tiedostoihin tai kaukokirjautumispalveluihin. TypeScriptissä stderr-käsittelyn yksityiskohdat pohjautuvat Node.js:n `process`-objektin toimintoihin.
+Node.js-ympäristössä voit myös käyttää `process.stderr.write()` -metodia matalamman tason kirjoittamiseen:
 
-## See Also:
-Katso myös.
+```typescript
+process.stderr.write("Matalan tason virheviesti.\n");
+```
 
-- Node.js documentation on `process.stderr`: https://nodejs.org/api/process.html#process_process_stderr
-- Understanding streams in Node.js: https://nodejs.dev/learn/nodejs-streams
-- Effective logging in TypeScript: https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-1.html#logging
+Esimerkkitulostus stderriin:
+```
+Matalan tason virheviesti.
+```
+
+Rakenteellisempaan virhelokitus käyttöön saatat haluta käyttää suosittuja kolmannen osapuolen kirjastoja kuten `winston` tai `pino`. Tässä on miten kirjaat virheitä käyttäen `winstonia`:
+
+Ensiksi, asenna `winston`:
+
+```bash
+npm install winston
+```
+
+Sitten käytä sitä TypeScript-tiedostossasi:
+
+```typescript
+import * as winston from 'winston';
+
+const logger = winston.createLogger({
+  levels: winston.config.syslog.levels,
+  transports: [
+    new winston.transports.Console(),
+    new winston.transports.File({ filename: 'error.log', level: 'error' })
+  ],
+});
+
+logger.error('Winstonilla kirjattu virhe.');
+```
+
+Tämä kirjoittaa virheen sekä konsoliin että tiedostoon nimeltä `error.log`. Muista, että tiedostoihin kirjoitettaessa on tärkeää hallita tiedostojen oikeuksia ja rolloveria välttääksesi ongelmat, jotka liittyvät levytilan käyttöön.

@@ -1,54 +1,71 @@
 ---
-title:                "Tests schreiben"
-date:                  2024-01-19
-simple_title:         "Tests schreiben"
-
+title:                "Tests Schreiben"
+date:                  2024-02-03T19:29:29.592467-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Tests Schreiben"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/bash/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Was & Warum?
+Testen in Bash bedeutet, Testfälle zu scripten, um die Funktionalität Ihrer Bash-Skripte zu validieren. Programmierer führen Tests durch, um sicherzustellen, dass ihre Skripte unter verschiedenen Bedingungen wie erwartet funktionieren und um Fehler sowie Bugs vor der Bereitstellung zu finden.
 
-Das Schreiben von Tests bedeutet, Skripte zu erstellen, die Code auf korrekte Funktion überprüfen. Programmierer tun dies, um Fehler frühzeitig zu erkennen und die Softwarequalität sicherzustellen.
+## Wie geht das:
+Bash verfügt nicht über ein integriertes Testframework, aber Sie können einfache Testfunktionen schreiben. Für anspruchsvolleres Testen sind Drittanbieter-Tools wie `bats-core` beliebt.
 
-## How to:
-
-```Bash
-#!/bin/bash
-
-# Funktion, die getestet wird.
-addNumbers() {
-    echo $(($1 + $2))
+### Grundlegendes Testbeispiel in reinem Bash:
+```bash
+function test_example_function {
+  result=$(your_function 'test_input')
+  expected_output="expected_output"
+  
+  if [[ "$result" == "$expected_output" ]]; then
+    echo "Test bestanden."
+    return 0
+  else
+    echo "Test fehlgeschlagen. Erwartet wurde '$expected_output', erhalten '$result'"
+    return 1
+  fi
 }
 
-# Test der addNumbers Funktion.
-testAddNumbers() {
-    result=$(addNumbers 3 4)
-    if [ "$result" -eq 7 ]; then
-        echo "Test erfolgreich: 3 + 4 ist gleich $result"
-    else
-        echo "Test fehlgeschlagen: 3 + 4 sollte 7 sein, aber wir haben $result"
-    fi
-}
-
-# Test ausführen.
-testAddNumbers
+# Aufrufen der Testfunktion
+test_example_function
 ```
-
 Beispielausgabe:
-
 ```
-Test erfolgreich: 3 + 4 ist gleich 7
+Test bestanden.
 ```
 
-## Deep Dive
+### Verwenden von `bats-core` zum Testen:
+Installieren Sie zuerst `bats-core`. Dies kann normalerweise über Ihren Paketmanager oder durch Klonen seines Repositories geschehen.
 
-Historischer Kontext: Das Konzept des Testens von Software entstand in den 1950er Jahren, parallel zur Entwicklung komplexer Systeme. Damals wie heute sind Tests unverzichtbar zur Qualitätssicherung. Alternativen zum Bash-Skript-Testen umfassen Frameworks wie shUnit2 oder Bats, die speziellere Funktionalitäten bieten. Bei der Implementierung ist wichtig, dass Tests isoliert, wiederholbar und aussagekräftig gestaltet werden.
+Dann schreiben Sie Ihre Tests in separate `.bats`-Dateien.
 
-## See Also
+```bash
+# Datei: example_function.bats
 
-- [Bats-core: Bash Automated Testing System](https://github.com/bats-core/bats-core)
-- [shUnit2: Unit testing framework for shell scripts](https://github.com/kward/shunit2)
-- Artikel zu "Best Practices" im Bash-Testing: [Advanced Bash-Scripting Guide: Testing](https://tldp.org/LDP/abs/html/testing.html)
+#!/usr/bin/env bats
+
+@test "test example function" {
+  result="$(your_function 'test_input')"
+  expected_output="expected_output"
+  
+  [ "$result" == "$expected_output" ]
+}
+```
+Um Ihre Tests auszuführen, führen Sie einfach die `.bats`-Datei aus:
+```bash
+bats example_function.bats
+```
+Beispielausgabe:
+```
+ ✓ test example function
+
+1 Test, 0 Fehler
+```
+
+Dieser Ansatz ermöglicht es Ihnen, Tests einfach in Ihren Entwicklungsworkflow zu integrieren und somit die Zuverlässigkeit und Stabilität Ihrer Bash-Skripte zu gewährleisten.

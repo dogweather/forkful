@@ -1,47 +1,125 @@
 ---
 title:                "Pisanie testów"
-date:                  2024-01-19
+date:                  2024-02-03T19:31:40.492830-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Pisanie testów"
-
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/javascript/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Co i dlaczego?
-Testowanie kodu to sprawdzanie, czy nasz program działa jak oczekujemy. Robimy to, aby uniknąć błędów i zagwarantować jakość kodu na każdym etapie rozwoju.
 
-## Jak to zrobić?
-W JavaScript używamy frameworków do testowania, np. Jest. Oto prosty przykład testu funkcji sumującej dwie liczby:
+Pisanie testów w JavaScript odnosi się do praktyki tworzenia automatycznych skryptów, które uruchamiają twój kod, aby upewnić się, że działa on zgodnie z oczekiwaniami, co może znacznie poprawić niezawodność i możliwość utrzymania aplikacji. Programiści robią to, aby wychwycić błędy na wczesnym etapie, ułatwić refaktoryzację kodu i zapewnić, że nowe funkcje nie zakłócą istniejącej funkcjonalności.
+
+## Jak to zrobić:
+
+### Natywne podejście (używając Jest)
+
+Jest to popularne narzędzie do testowania, które dostarcza przyjazne API do pisania testów jednostkowych w JavaScript. Wymaga minimalnej konfiguracji i oferuje funkcje takie jak atrapy funkcji, timery i testowanie migawek.
+
+1. **Instalacja**:
+
+```bash
+npm install --save-dev jest
+```
+
+2. **Pisanie prostego testu**:
+
+Utwórz plik o nazwie `sum.test.js`:
 
 ```javascript
-// sum.js
-function sum(a, b) {
-  return a + b;
-}
-module.exports = sum;
+const sum = require('./sum'); // Zakładamy, że ta funkcja po prostu dodaje dwie liczby
 
-// sum.test.js
-const sum = require('./sum');
-
-test('dodaje 1 + 2 dając wynik 3', () => {
+test('dodaje 1 + 2, żeby otrzymać 3', () => {
   expect(sum(1, 2)).toBe(3);
 });
 ```
 
-Uruchamiamy testy komendą `npm test`. Otrzymujemy wynik:
+3. **Uruchamianie testu**:
 
-```plaintext
-PASS ./sum.test.js
-✓ dodaje 1 + 2 dając wynik 3 (5ms)
+```bash
+npx jest
 ```
 
-## Głębsze spojrzenie
-Testowanie kodu w JavaScript zaczęło nabierać na znaczeniu w ostatnich latach, szczególnie z trendem na rozwój aplikacji webowych. Oprócz Jest, popularne są też Mocha, Jasmine oraz QUnit. Każde narzędzie ma swoje specyfiki, ale podstawowa idea pozostaje ta sama – wykonanie kodu w kontrolowanych warunkach i sprawdzenie rezultatów działania. W przypadku Jest, zyskujemy dodatkowe korzyści jak m.in. mockowanie zależności i snapshot testing.
+**Przykładowe wyjście:**
 
-## Zobacz również
-- [Jest](https://jestjs.io/) – oficjalna strona Jest, z dokumentacją i poradnikami.
-- [Mocha](https://mochajs.org/) – strona Mocha, z przykładami użycia.
-- [Jasmine](https://jasmine.github.io/) – dokumentacja Jasmin.
-- [QUnit](https://qunitjs.com/) – strona QUnit dla testowania kodu JavaScript.
+```plaintext
+PASS  ./sum.test.js
+✓ dodaje 1 + 2, żeby otrzymać 3 (5ms)
+```
+
+### Testowanie kodu asynchronicznego
+
+Jest ułatwia testowanie obietnic i składni async/await:
+
+```javascript
+// asyncSum.js
+async function asyncSum(a, b) {
+  return Promise.resolve(a + b);
+}
+
+// asyncSum.test.js
+test('asynchroniczne dodawanie działa', async () => {
+  await expect(asyncSum(1, 2)).resolves.toBe(3);
+});
+
+```
+
+### Użycie bibliotek stron trzecich (Mocha & Chai)
+
+Mocha to kolejne popularne narzędzie do testowania, często używane z biblioteką asercji Chai dla bardziej ekspresyjnych testów.
+
+1. **Instalacja**:
+
+```bash
+npm install --save-dev mocha chai
+```
+
+2. **Pisanie testu z wykorzystaniem Mochy i Chai**:
+
+Utwórz `calculate.test.js`:
+
+```javascript
+const chai = require('chai');
+const expect = chai.expect;
+
+const calculate = require('./calculate'); // Prosty moduł kalkulacyjny
+
+describe('Calculate', function() {
+  it('powinien sumować dwie wartości', function() {
+    expect(calculate.sum(5, 2)).to.equal(7);
+  });
+});
+```
+
+3. **Uruchamianie testów z Mocha**:
+
+Dodaj skrypt w swoim pliku `package.json`:
+
+```json
+"scripts": {
+  "test": "mocha"
+}
+```
+
+Następnie wykonaj:
+
+```bash
+npm test
+```
+
+**Przykładowe wyjście:**
+
+```plaintext
+  Calculate
+    ✓ powinien sumować dwie wartości
+
+
+  1 passing (8ms)
+```
+
+Te przykłady ilustrują podstawy pisania i wykonywania testów w JavaScript. Przyjęcie ramy do testowania takiej jak Jest czy Mocha z Chai może zapewnić solidną podstawę do solidnego testowania aplikacji, pomagając zapewnić, że twój kod funkcjonuje zgodnie z zamierzeniami przez aktualizacje i refaktoryzacje.

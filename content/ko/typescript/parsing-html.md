@@ -1,58 +1,63 @@
 ---
 title:                "HTML 파싱"
-date:                  2024-01-20T15:34:14.077934-07:00
+date:                  2024-02-03T19:13:21.484658-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "HTML 파싱"
-
 tag:                  "HTML and the Web"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/typescript/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (무엇과 왜?)
-HTML 파싱은 웹 페이지의 구조와 내용을 분석해서 데이터를 추출하는 과정입니다. 프로그래머들은 일반적으로 자동화된 데이터 수집, 웹 스크레이핑, 내용 검증을 위해 파싱을 합니다.
+## 무엇 & 왜?
 
-## How to: (어떻게:)
-```TypeScript
-// TypeScript에서 HTML 파싱하기 예제
+HTML 파싱은 HTML 코드를 살펴보아 정보를 찾아내거나 추출하거나 조작하는 것을 말합니다. 프로그래머들은 데이터를 스크래핑하거나, 브라우저를 자동화하는 등 웹 콘텐츠와 상호작용하기 위해 이 작업을 수행합니다.
 
-import axios from 'axios';
-import { JSDOM } from 'jsdom';
+## 방법:
 
-// 웹 페이지를 가져오는 비동기 함수
-async function fetchHTML(url: string): Promise<string> {
-  const response = await axios.get(url);
-  return response.data;
-}
+시작하려면 `node-html-parser`와 같은 라이브러리를 설치하십시오. 다음은 터미널 명령입니다:
 
-// HTML 내용을 파싱하는 함수
-function parseHTML(html: string) {
-  const dom = new JSDOM(html);
-  const document = dom.window.document;
-
-  // 예를 들어 title 태그의 내용을 출력
-  const title = document.querySelector('title')?.textContent;
-  console.log(title);
-}
-
-// 실행
-fetchHTML('https://www.example.com').then(html => parseHTML(html));
-```
-콘솔 출력 예제:
-```
-'Example Domain'
+```bash
+npm install node-html-parser
 ```
 
-## Deep Dive (심층 분석)
-HTML 파싱은 웹의 초창기부터 중요했습니다. 초기에는 정적 HTML 문서에서 데이터를 추출하는 단순한 작업이었지만, 현재는 동적으로 생성되는 콘텐츠를 다루는 복잡성이 있습니다.
+이제 TypeScript에서 기본 HTML을 파싱해 봅시다:
 
-대안으로는 정규 표현식(REGEX), HTML 파서 라이브러리 등이 있습니다. 그러나 정규 표현식은 복잡한 HTML에 적합하지 않고, 에러를 유발할 여지가 많습니다. HTML 파서(예: JSDOM, Cheerio 등)는 DOM을 제대로 구성하고 더 안정적으로 데이터를 추출할 수 있게 해줍니다.
+```typescript
+import { parse } from 'node-html-parser';
 
-TypeScript에서 JSDOM 같은 라이브러리를 사용하면 노드 환경에서 DOM API에 접근할 수 있어서, 브라우저에서만 가능했던 작업들도 서버 측이나 스크립트에서 수행할 수 있습니다.
+const html = `<ul class="fruits">
+                <li>Apple</li>
+                <li>Banana</li>
+              </ul>`;
 
-## See Also (참조)
-- [JSDOM GitHub page](https://github.com/jsdom/jsdom)
-- [axios GitHub page](https://github.com/axios/axios)
-- [Mozilla Developer Network - Parsing and serializing XML](https://developer.mozilla.org/en-US/docs/Web/API/DOMParser)
-- [Cheerio GitHub page](https://github.com/cheeriojs/cheerio)
+const root = parse(html);
+console.log(root.querySelector('.fruits').textContent);  // "Apple Banana"
+```
+
+그리고 바나나만 추출하고 싶다면:
+
+```typescript
+const bananas = root.querySelectorAll('li')[1].textContent;
+console.log(bananas);  // "Banana"
+```
+
+## 심층 탐구
+
+HTML 파싱은 새로운 것이 아니며 웹 초기부터 존재했습니다. 처음에 개발자들은 정규 표현식을 사용했을 수 있지만, 그것은 금방 복잡해졌습니다. 여기서 DOM 파서가 등장했습니다: 안정적이지만 브라우저 제한이 있습니다.
+
+`node-html-parser`와 같은 라이브러리는 고통을 추상화해 줍니다. jQuery처럼 HTML을 쿼리 할 수 있게 하지만, Node.js로 서버 측에서 작동합니다. 이것은 빠르며, 잘못된 HTML에 대해 관대하고, DOM 친화적입니다.
+
+`jsdom`도 있습니다, 이것은 전체 브라우저 환경을 시뮬레이션 합니다. 더 무겁지만 더 철저하며, 조작 및 상호작용을 위한 완전한 Document Object Model (DOM)을 생성합니다.
+
+Cheerio도 잊지 마십시오. 이것은 속도와 jQuery와 유사한 문법 및 더 작은 발자국을 결합하여 두 세계 사이에서 행복하게 자리 잡고 있습니다.
+
+## 참고
+
+더 알고 싶으시다면 이것들을 둘러보십시오:
+- [DOM 파싱 및 직렬화 W3C 사양](https://www.w3.org/TR/DOM-Parsing/)
+- [GitHub에서 node-html-parser](https://github.com/taoqf/node-html-parser)
+- [GitHub에서 jsdom 저장소](https://github.com/jsdom/jsdom)
+- [Cheerio 웹사이트](https://cheerio.js.org/)

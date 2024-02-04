@@ -1,40 +1,58 @@
 ---
-title:                "Mettre une chaîne de caractères en majuscules"
-date:                  2024-01-19
-simple_title:         "Mettre une chaîne de caractères en majuscules"
-
+title:                "Mettre en majuscule une chaîne"
+date:                  2024-02-03T19:05:20.716714-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Mettre en majuscule une chaîne"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/haskell/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
-Capitaliser une chaîne, c'est convertir les premières lettres de chaque mot en majuscules. Les programmeurs utilisent cette technique pour uniformiser les données textuelles ou pour respecter les conventions typographiques.
+Mettre une chaîne en capitale implique de transformer la première lettre d'une chaîne donnée en majuscule tout en s'assurant que les autres lettres restent en minuscule. Les programmeurs font cela pour formater les sorties, adhérer à la correction grammaticale dans les textes, ou améliorer la lisibilité des données générées.
 
-## Comment ça marche :
+## Comment faire :
+En Haskell, vous pouvez mettre une chaîne en capitale en utilisant la bibliothèque standard sans avoir besoin de bibliothèques tierces.
 
-```Haskell
-import Data.Char(toUpper)
+```haskell
+import Data.Char (toUpper, toLower)
 
--- Capitalize the first letter of each word
 capitalize :: String -> String
-capitalize = unwords . map (\(x:xs) -> toUpper x : xs) . words
+capitalize "" = ""
+capitalize (head:tail) = toUpper head : map toLower tail
 
--- Usage
-main = putStrLn $ capitalize "bonjour, comment ça va ?"
-
--- Output:
--- "Bonjour, Comment ça Va ?"
+-- Exemple d'utilisation :
+main = putStrLn $ capitalize "hello world"
 ```
 
-## Plongée en profondeur
-Capitaliser des chaînes est un concept qui remonte à l'époque des premières machines à écrire et de la typographie, servant à mettre en avant des noms propres et des début de phrases. En Haskell, l'approche typique comprend la fonction `words` pour découper la chaîne en mots, et `map` pour appliquer la capitalisation à chaque mot. La fonction `toUpper` de `Data.Char` est standard pour la conversion en majuscule. 
+Sortie :
+```
+Hello world
+```
 
-Des alternatives incluent l'utilisation de bibliothèques telles que `text` ou `bytestring` pour gérer de grands volumes de données plus efficacement. Au sujet de l'implémentation, `toUpper` gère déjà les caractères accentués en conformité avec les standards Unicode, ce qui est crucial pour les langues comme le français.
+Pour des scénarios plus complexes ou pour plus de facilité d'usage, vous pourriez vouloir utiliser une bibliothèque tierce comme `text`, qui est populaire pour la manipulation efficace de chaînes de caractères en Haskell.
 
-## Voir également
+D'abord, vous devez ajouter `text` aux dépendances de votre projet. Ensuite, vous pouvez utiliser ses fonctions pour mettre en capitale une chaîne de caractères comme suit :
 
-- Haskell `Data.Char` documentation: https://hackage.haskell.org/package/base/docs/Data-Char.html
-- Article sur Unicode et Haskell: https://wiki.haskell.org/Unicode_input
-- Documentation de la bibliothèque `text`: https://hackage.haskell.org/package/text
+```haskell
+import qualified Data.Text as T
+import Data.Char (toUpper)
+
+capitalizeText :: T.Text -> T.Text
+capitalizeText text = case T.uncons text of
+    Nothing -> T.empty
+    Just (first, rest) -> T.cons (toUpper first) (T.toLower rest)
+
+-- Exemple d'utilisation avec la bibliothèque text :
+main = putStrLn $ T.unpack $ capitalizeText (T.pack "hello world")
+```
+
+Sortie :
+```
+Hello world
+```
+
+Ces deux exemples montrent des moyens simples mais efficaces de mettre une chaîne en capitale en Haskell, avec ou sans bibliothèques tierces.

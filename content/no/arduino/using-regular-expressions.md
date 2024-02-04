@@ -1,68 +1,75 @@
 ---
-title:                "Bruk av regulære uttrykk"
-date:                  2024-01-19
-simple_title:         "Bruk av regulære uttrykk"
-
+title:                "Bruke regulære uttrykk"
+date:                  2024-02-03T19:15:55.440404-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Bruke regulære uttrykk"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/arduino/using-regular-expressions.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Regulære uttrykk (regex) er mønstre brukt for å matche tegnsekvenser i tekst. Programmerere bruker det for å finne, erstatte eller validere data raskt og effektivt.
+Regulære uttrykk (regex) er sekvenser av tegn som definerer søkemønstre, primært brukt for strengsammenligning og manipulering. Programmerere utnytter regex i Arduino-prosjekter for å analysere serielle innganger, validere brukerinndata, eller ekstrahere data fra strenger, noe som øker effektiviteten og fleksibiliteten i databehandlingen.
 
 ## Hvordan:
-Arduino støtter ikke regulære uttrykk nativt, men du kan bruke String-funksjonene for enkel mønstermatching. Her er et eksempel:
+Arduino har ikke innebygd støtte for regex direkte i sitt standardbibliotek. Imidlertid kan du oppnå regex-lignende funksjonalitet for enkle mønstre ved å bruke grunnleggende strengfunksjoner, eller for mer komplekse behov, integrere et tredjeparts bibliotek som `regex`.
 
-```Arduino
-String input = "Arduino123";
-if (input.indexOf("Arduino") != -1) {
-  Serial.println("Fant ordet 'Arduino'");
-} else {
-  Serial.println("Finner ikke ordet 'Arduino'");
+### Grunnleggende Strengsammenligning uten Regex
+For grunnleggende behov, som å finne en delstreng, kan du bruke `String.indexOf()`-funksjonen:
+```cpp
+String data = "Sensorverdi: 12345";
+int index = data.indexOf("verdi:");
+if (index != -1) {
+  String verdi = data.substring(index + 6).trim();
+  Serial.println(verdi); // Utganger: 12345
 }
 ```
-Eksempeloutput:
-```
-Fant ordet 'Arduino'
-```
 
-For komplekse mønstre, må du bruke et ekstern bibliotek som `regex.h`. Legg dette til i koden ved å inkludere biblioteket og bruk det slik:
+### Bruk av Et Tredjeparts Bibliotek for Regex
+For å håndtere mer komplekse mønstre, kan du vurdere et bibliotek som `regex`. Etter å ha installert biblioteket, kan du bruke det som følger:
 
-```Arduino
+1. **Installasjon**: `regex`-biblioteket er kanskje ikke umiddelbart tilgjengelig i Arduino Library Manager, så du kan trenge å manuelt installere det ved å laste det ned fra en pålitelig kilde og legge det til i Arduino-bibliotekene dine.
+
+2. **Eksempel På Bruk**:
+Forutsatt at biblioteket gir funksjonalitet lik standard regex-implementeringer, kan du bruke det som følger:
+
+```cpp
 #include <regex.h>
 
 void setup() {
+  Serial.begin(9600);
+  while (!Serial); // Vent på at Serial skal være klar
+  
   regex_t reg;
-  const char * str = "Arduino123";
-  const char * pattern = "^[A-Za-z]+\\d+$";
-
-  regcomp(&reg, pattern, REG_EXTENDED);
-  if (regexec(&reg, str, 0, NULL, 0) == 0) {
-    Serial.println("Mønster funnet");
+  const char* mønster = "[0-9]+"; // Matcher en sekvens av sifre
+  regcomp(&reg, mønster, REG_EXTENDED);
+  
+  const char* test_str = "Sensorverdi: 12345";
+  
+  regmatch_t matcher[1];
+  if (regexec(&reg, test_str, 1, matcher, 0) == 0) {
+    // Ekstraher og skriv ut den matchende delen
+    int start = matcher[0].rm_so;
+    int slutt = matcher[0].rm_eo;
+    char match[slutt-start+1];
+    strncpy(match, test_str + start, slutt-start);
+    match[slutt-start] = '\0';
+    
+    Serial.print("Fant match: ");
+    Serial.println(match); // Utganger: 12345
   } else {
-    Serial.println("Mønster ikke funnet");
+    Serial.println("Ingen match funnet");
   }
   
-  regfree(&reg);
+  regfree(&reg); // Frigjør den allokerte minne for regex
 }
 
 void loop() {
-  
+  // sett din hovedkode her, for å kjøre gjentatte ganger:
 }
 ```
-Eksempeloutput:
-```
-Mønster funnet
-```
 
-**Merk:** Eksempler over krever at du har konfigurert Serial.begin() i setup-funksjonen.
-
-## Dykk dypere:
-Regulære uttrykk har vært et kraftig verktøy siden 1950-tallet, utviklet fra teoretisk arbeid av Stephen Kleene. I moderne programmering er det hovedsakelig innebygd i alle programmeringsspråk, selv om det varierer i implementasjon og effektivitet. På Arduino kan du bruke String-klassen for enkle oppgaver, men for komplekse regex-operasjoner må du ty til eksterne biblioteker som `regex.h`. Dette gir ikke like rik funksjonalitet som i språk som Perl eller Python, men kan hjelpe når mønstermatching er nødvendig.
-
-## Se også:
-- Arduino String Class Reference: https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/
-- regex.h Library Documentation: https://github.com/nickgammon/Regexp
-- "Mastering Regular Expressions" av Jeffrey Friedl for dypere forståelse om regex.
+**Merk**: Syntaksen og de spesifikke funksjonene brukt her er til illustrative formål og kan variere basert på de faktiske implementasjonsdetaljene til `regex`-biblioteket du velger. Referer alltid til bibliotekets dokumentasjon for nøyaktig og oppdatert informasjon.

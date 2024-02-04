@@ -1,57 +1,67 @@
 ---
-title:                "Arbeid med JSON"
-date:                  2024-01-19
-simple_title:         "Arbeid med JSON"
-
+title:                "Arbeider med JSON"
+date:                  2024-02-03T19:22:10.149634-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Arbeider med JSON"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/elixir/working-with-json.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 
-Jobber med JSON innebærer å parse (gjøre om) og generere JSON (JavaScript Object Notation) data, et lett-å-bruke dataformat. Programmerere bruker JSON fordi det er enkelt å lese og skrive for mennesker, og lett å parse og generere for maskiner, noe som gjør det ideelt for datautveksling.
+Å jobbe med JSON innebærer å analysere JSON-formaterte strenger til datastrukturer som Elixir kan manipulere, og serialisere Elixir-datastrukturer tilbake til JSON-strenger. Dette er essensielt for webutvikling, API-er og konfigurasjonsfiler, siden JSON er et lettvekts, tekstbasert, språkuavhengig datautvekslingsformat som er mye brukt for sin enkelhet og menneskelesbarhet.
 
 ## Hvordan:
 
-Elixir bruker ofte `Jason`, et pakke for JSON manipulasjon. Her er rask guide:
-
-For å starte, legg `jason` til din `mix.exs`:
+I Elixir kan du bruke `Jason`-biblioteket, et populært valg for JSON-analysering og generering. Først, legg til `Jason` i prosjektets avhengigheter i `mix.exs`:
 
 ```elixir
 defp deps do
   [
-    {:jason, "~> 1.2"}
+    {:jason, "~> 1.3"}
   ]
 end
 ```
 
-Kjør `mix deps.get` for å installere.
+Deretter kjører du `mix deps.get` for å hente avhengigheten.
 
-Parse en JSON-streng:
-
-```elixir
-{:ok, data} = Jason.decode("{\"key\": \"value\"}")
-IO.inspect(data) # => %{"key" => "value"}
-```
-
-Lage en JSON-streng fra Elixir data:
+### Parse JSON:
+For å konvertere en JSON-streng til Elixir-datastrukturer:
 
 ```elixir
-json_string = Jason.encode!(%{"key" => "value"})
-IO.puts(json_string) # => {"key":"value"}
+json_string = "{\"name\":\"John\", \"age\":30}"
+{:ok, person} = Jason.decode(json_string)
+IO.inspect(person)
+# Utdata: %{"name" => "John", "age" => 30}
 ```
 
-## Dypdykk:
+### Generere JSON:
+For å konvertere en Elixir-map til en JSON-streng:
 
-Historisk sett, overtok JSON popularitet fra XML på grunn av sin enkelhet. Noen alternativer inkluderer `Poison` og `Oj` for Elixir, men `Jason` er kjent for sin hastighet og enkelhet.
+```elixir
+person_map = %{"name" => "Jane", "age" => 25}
+{:ok, json_string} = Jason.encode(person_map)
+IO.puts(json_string)
+# Utdata: {"age":25,"name":"Jane"}
+```
 
-Implementeringsdetaljer: `Jason` konverterer data mellom Elixir-strukturer og JSON-strenger. Det er nøkkelfokusert på ytelse og sikkerhet, så det kan trygt brukes selv med uventet input.
+### Arbeide med Structs:
+For å kode en Elixir-struct, må du implementere `Jason.Encoder`-protokollen for din struct. Her er et eksempel:
 
-## Se Også:
+```elixir
+defmodule Person do
+  @derive {Jason.Encoder, only: [:name, :age]}
+  defstruct name: nil, age: nil
+end
 
-- Elixir's offisielle dokumentasjon for `Jason`: https://hexdocs.pm/jason/Jason.html
-- JSON spesifikasjon: https://www.json.org/json-en.html
-- Introduksjon til Elixir: https://elixir-lang.org/getting-started/introduction.html
-- Elixir Forum for diskusjoner relateret til `Jason`: https://elixirforum.com
+person_struct = %Person{name: "Mike", age: 28}
+{:ok, json_string} = Jason.encode(person_struct)
+IO.puts(json_string)
+# Utdata: {"age":28,"name":"Mike"}
+```
+
+Denne enkle tilnærmingen vil hjelpe deg å komme i gang med å integrere JSON-behandling i dine Elixir-applikasjoner, og lette datautveksling i ulike programmeringsmiljøer.

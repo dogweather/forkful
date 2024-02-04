@@ -1,42 +1,44 @@
 ---
 title:                "Capitalizando una cadena de texto"
-date:                  2024-01-19
+date:                  2024-02-03T19:06:07.376032-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Capitalizando una cadena de texto"
-
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/ruby/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## ¿Qué & Por Qué?
+## ¿Qué y Por Qué?
+Capitalizar una cadena en programación a menudo se refiere a convertir el primer carácter de una cadena a mayúscula y el resto a minúscula. Los programadores hacen esto por razones como adherirse a convenciones de nombres, hacer que las salidas sean más legibles o asegurar la consistencia de los datos para comparaciones y almacenamiento.
 
-Capitalizar una cadena en Ruby significa convertir la primera letra de cada palabra a mayúscula. Los programadores hacen esto para estandarizar datos, mejorar la legibilidad o cumplir con requisitos de formato de texto en aplicaciones.
+## Cómo:
+Ruby proporciona métodos directos para la manipulación de cadenas, incluida la capitalización. Así es cómo puedes capitalizar una cadena en Ruby:
 
-## Cómo hacerlo:
-
-Ruby facilita capitalizar cadenas con el método `capitalize`. Pero si quieres capitalizar todas las palabras en una cadena, tendrás que dividir la cadena en palabras y capitalizar cada una. 
-
-```Ruby
-# Capitaliza solo la primera palabra de una cadena
-puts "hola mundo".capitalize    #=> "Hola mundo"
-
-# Capitaliza todas las palabras de una cadena
-puts "hola mundo".split.map(&:capitalize).join(' ')   #=> "Hola Mundo"
-
-# O usando el método titleize de ActiveSupport (Rails)
-require 'active_support/core_ext/string/inflections'
-puts "hola mundo".titleize      #=> "Hola Mundo"
+```ruby
+# Método incorporado de Ruby
+string = "hello world"
+capitalized_string = string.capitalize
+puts capitalized_string # => "Hello world"
 ```
 
-## Profundizando:
+El método `.capitalize` de Ruby es conveniente pero solo afecta a la primera letra. Para tener más control o para capitalizar cada palabra en una cadena (conocido como caso de título), podrías querer usar el método `titleize` de la extensión ActiveSupport de Rails, o implementarlo tú mismo:
 
-Antes de que Ruby ofreciera métodos convenientes para capitalizar, los programadores tenían que manipular cadenas manualmente, lo cual era propenso a errores y no muy eficiente. Además de `capitalize`, ahora también tenemos métodos como `upcase`, `downcase`, y `swapcase`, útiles para diferentes necesidades.
+```ruby
+# Usando 'titleize' de ActiveSupport en Rails
+require 'active_support/core_ext/string/inflections'
+string = "hello world"
+puts string.titleize # => "Hello World"
+```
 
-La capitalización automática puede no ser perfecta para todos los idiomas o casos (por ejemplo, no maneja bien las abreviaturas o acrónimos). En entornos como Rails, ActiveSupport agrega el método `titleize`, que es más completo y configurado para lidiar con los casos más comunes en titulación de palabras.
+Si no estás utilizando Rails o prefieres una solución puramente en Ruby, así es cómo podrías capitalizar cada palabra en una cadena:
 
-Es importante mencionar que la capitalización es dependiente del contexto y de las reglas de cada idioma. Ruby maneja bastante bien la mayoría de las reglas de capitalización en inglés, pero para otros idiomas pueden ser necesarias soluciones personalizadas.
+```ruby
+string = "hello world"
+capitalized_each_word = string.split.map(&:capitalize).join(' ')
+puts capitalized_each_word # => "Hello World"
+```
 
-## Ver También:
-
-Para más información, puedes consultar la documentación oficial de Ruby sobre los métodos de [String](https://ruby-doc.org/core-2.7.0/String.html), así como la [guía de ActiveSupport sobre inflections](https://api.rubyonrails.org/classes/ActiveSupport/Inflector.html). Si estás interesado en el manejo más avanzado de cadenas y capitalización en diferentes idiomas, podrías explorar gemas como [Rails i18n](https://github.com/svenfuchs/rails-i18n).
+Este método divide la cadena en un arreglo de palabras, capitaliza cada una, luego las une nuevamente con un espacio.

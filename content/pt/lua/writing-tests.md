@@ -1,50 +1,78 @@
 ---
 title:                "Escrevendo testes"
-date:                  2024-01-19
+date:                  2024-02-03T19:31:24.067493-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Escrevendo testes"
-
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/lua/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## O Que é & Por Que?
-Escrever testes é o processo de criar scripts que automaticamente testam seu código para checar a integridade e corretude das funcionalidades. Programadores fazem isso para garantir que novas mudanças não quebrem funcionalidades existentes e para facilitar a manutenção do código ao longo do tempo.
+## O Que & Por Quê?
 
-## Como Fazer:
-```Lua
--- Instale o Lua com um gerenciador de pacotes como luarocks
--- luarocks install luaunit
+Escrever testes em programação envolve criar pequenas peças separadas de código para verificar automaticamente se diferentes partes da sua aplicação funcionam conforme esperado. Para programadores Lua, testar garante a confiabilidade e auxilia na manutenção da qualidade do código, acelerando o processo de depuração e tornando as modificações no código-base mais seguras.
 
-local luaunit = require('luaunit')
-local Calculadora = {}
+## Como fazer:
 
-function Calculadora.soma(a, b)
-    return a + b
+Lua, sendo uma linguagem de script leve, porém poderosa, não inclui um framework de teste integrado. No entanto, bibliotecas de terceiros como Busted e LuaUnit tornam o teste relativamente direto. Aqui, vamos olhar para exemplos usando ambos.
+
+### Usando Busted
+
+Busted é um framework de teste Lua popular que oferece uma maneira flexível de escrever testes. Primeiramente, instale o Busted através do LuaRocks (gerenciador de pacotes do Lua) com `luarocks install busted`. Uma vez instalado, você pode escrever seus testes. Aqui está um teste simples para uma função `add` que soma dois números:
+
+```lua
+-- add.lua
+local function add(a, b)
+  return a + b
 end
 
--- Definição de teste
-function testSoma()
-    luaunit.assertEquals(Calculadora.soma(2, 2), 4)
+return add
+```
+
+```lua
+-- add_spec.lua
+local add = require('add')
+
+describe("Função de adição", function()
+  it("deve adicionar dois números corretamente", function()
+    assert.are.equal(5, add(2, 3))
+  end)
+end)
+```
+
+Para executar os testes, execute `busted` no seu terminal. A saída de exemplo para um teste que passou deveria ser assim:
+
+```
+●
+1 sucesso / 0 falhas / 0 erros / 0 pendentes : 0,002 segundos
+```
+
+### Usando LuaUnit
+
+LuaUnit é outro framework de teste que segue as convenções xUnit e é fácil de configurar. Instale o LuaUnit via LuaRocks usando `luarocks install luaunit`. Aqui está como você poderia escrever um teste semelhante ao de cima com LuaUnit:
+
+```lua
+-- add.lua continua o mesmo
+
+-- test_add.lua
+luaunit = require('luaunit')
+local add = require('add')
+
+function testAdd()
+  luaunit.assertEquals(add(2, 3), 5)
 end
 
--- Rodando os testes
 os.exit(luaunit.LuaUnit.run())
 ```
 
-Saída do exemplo:
+Executando este script diretamente via Lua (`lua test_add.lua`) produzirá algo como:
+
 ```
 .
-Ran 1 tests in 0.001 seconds, 1 success, 0 failures
+Executou 1 teste em 0.001 segundos, 1 sucesso, 0 falhas
 ```
 
-## Mergulho Profundo
-1. **Contexto Histórico**: Testes automatizados têm suas raízes na prática de "debugging" do software, que começou logo após os primeiros programas terem sido escritos.
-
-2. **Alternativas**: Existem outras frameworks de teste no Lua, como o Busted e o TestMore, que oferecem diferentes funcionalidades e sintaxes.
-
-3. **Detalhes da Implementação**: Ao escrever testes, considere práticas como TDD (Test-Driven Development), onde os testes são escritos antes do código ser implementado, conduzindo o processo de desenvolvimento.
-
-## Veja Também
-- [LuaUnit no GitHub](https://github.com/bluebird75/luaunit)
+Tanto Busted quanto LuaUnit oferecem recursos extensivos para lidar com vários cenários de teste, incluindo mock, espionagem e teste assíncrono. A escolha entre eles reside nas necessidades específicas do seu projeto e na sua preferência pessoal em relação à sintaxe e funcionalidade.

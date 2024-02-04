@@ -1,53 +1,84 @@
 ---
 title:                "Tolka HTML"
-date:                  2024-01-20T15:30:59.980594-07:00
+date:                  2024-02-03T19:11:54.514226-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Tolka HTML"
-
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/elixir/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att parsa HTML innebär att vi läser och tolkar HTML-kod för att förstå dess struktur och innehåll. Programmörer gör detta för att extrahera specifik data, manipulera innehållet, eller för att integrera det med andra applikationer.
 
-## Hur gör man:
-Elixir erbjuder inte inbyggt stöd för HTML-parsing, så vi använder biblioteket `Floki` som underlättar processen. Installera Floki med `mix deps.get`.
+Att tolka HTML i Elixir innebär att extrahera information från HTML-dokument. Programmerare gör detta för att programmatiskt interagera med webbsidor, skrapa data eller automatisera webbinteraktioner, vilket möjliggör att applikationer dynamiskt kan förstå och utnyttja webbinnehåll.
+
+## Hur man gör:
+
+Elixir, med dess robusta modell för samtidighet och paradigmet för funktionell programmering, inkluderar inte inbyggd kapacitet för att tolka HTML. Du kan dock använda populära tredjepartsbibliotek som `Floki` för detta ändamål. Floki gör HTML-tolkning intuitiv och effektiv, genom att utnyttja Elixirs mönstermatchning och pipningsfunktioner.
+
+Först, lägg till Floki i dina beroenden i mix.exs:
 
 ```elixir
-# Lägg till i mix.exs:
 defp deps do
   [
-    {:floki, "~> 0.30.0"}
+    {:floki, "~> 0.31.0"}
   ]
 end
+```
 
-# Exempel på att använda Floki för att hämta titeln från en HTML-sida
+Kör sedan `mix deps.get` för att installera det nya beroendet.
 
-html = """
-<!DOCTYPE html>
+Nu ska vi tolka en enkel HTML-sträng för att extrahera data. Vi kommer att leta efter titlar inuti `<h1>`-taggar:
+
+```elixir
+html_content = """
 <html>
-<head>
-    <title>Exempelsida</title>
-</head>
-<body>
-    <h1>Välkommen till exempelsidan!</h1>
-    <p>Det här är en paragraph.</p>
-</body>
+  <body>
+    <h1>Hej, Elixir!</h1>
+    <h1>En Annan Titel</h1>
+  </body>
 </html>
 """
 
-{:ok, document} = Floki.parse_document(html)
-title = Floki.find(document, "title")
-              |> Floki.raw_text()
+titles = html_content
+         |> Floki.find("h1")
+         |> Floki.text()
 
-IO.puts title # Skriver ut "Exempelsida"
+IO.inspect(titles)
 ```
 
-## Djupdykning:
-Parsing av HTML är inte en ny idé. I tidiga webbutvecklingsdagar fick man ofta använda regex för att hantera HTML, vilket var opålitligt och svårt. Alternativet till libraries som Floki för Elixir är att bygga en egen parser, vilket ofta inte är värt mödan då det är tidskrävande och kräver sträng uppmärksamhet på specifikationer och felhantering. Floki bygger på `mochiweb's HTML parser` och omvandlar HTML-strängar till tupler som är lätta att navigera och söka igenom.
+**Exempel på utdata:**
 
-## Se även:
-- Floki on Hex: [https://hex.pm/packages/floki](https://hex.pm/packages/floki)
-- Dokumentation för mochiweb HTML parser: [https://github.com/mochi/mochiweb](https://github.com/mochi/mochiweb)
+```elixir
+["Hej, Elixir!", "En Annan Titel"]
+```
+
+För att gå djupare, säg att du vill extrahera länkar (`<a>`-taggar) tillsammans med deras href-attribut. Så här kan du uppnå det:
+
+```elixir
+html_content = """
+<html>
+  <body>
+    <a href="https://elixir-lang.org/">Elixirs Officiella Webbplats</a>
+    <a href="https://hexdocs.pm/">HexDocs</a>
+  </body>
+</html>
+"""
+
+links = html_content
+        |> Floki.find("a")
+        |> Enum.map(fn({_, attrs, [text]}) -> {text, List.keyfind(attrs, "href", 0)} end)
+
+IO.inspect(links)
+```
+
+**Exempel på utdata:**
+
+```elixir
+[{"Elixirs Officiella Webbplats", {"href", "https://elixir-lang.org/"}}, {"HexDocs", {"href", "https://hexdocs.pm/"}}]
+```
+
+Detta tillvägagångssätt gör det möjligt för dig att navigera och tolka HTML-dokument effektivt, vilket gör uppgifter för extraktion och manipulation av webbdata enkla i Elixir-applikationer.

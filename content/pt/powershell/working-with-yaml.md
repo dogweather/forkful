@@ -1,67 +1,65 @@
 ---
 title:                "Trabalhando com YAML"
-date:                  2024-01-19
+date:                  2024-02-03T19:26:22.901371-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Trabalhando com YAML"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/powershell/working-with-yaml.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Trabalhar com YAML significa manipular dados estruturados similares ao JSON, mas com ênfase na legibilidade por humanos. Programadores utilizam YAML frequentemente para configuração de aplicações, automação e integração contínua devido à sua clareza e simplicidade.
+## O Que & Por Quê?
+YAML, ou YAML Ain't Markup Language, é uma linguagem de serialização de dados legível por humanos. Programadores frequentemente a utilizam para arquivos de configuração e transmissão de dados entre linguagens. Sua simplicidade e legibilidade a tornam particularmente popular para tarefas que envolvem a configuração de ambientes, aplicações ou serviços onde as configurações são cruciais e devem ser facilmente compreendidas e editadas.
 
-## How to:
+## Como:
+Por padrão, o PowerShell não vem com um cmdlet integrado para analisar YAML, mas funciona sem problemas com YAML quando você utiliza o módulo `powershell-yaml` ou converte YAML em um objeto do PowerShell usando `ConvertFrom-Json` em combinação com uma ferramenta como `yq`.
 
-### Ler um arquivo YAML:
+### Usando o Módulo `powershell-yaml`:
+Primeiro, instale o módulo:
 ```PowerShell
-# Instale o módulo necessário
 Install-Module -Name powershell-yaml
-
-# Importe o módulo
-Import-Module powershell-yaml
-
-# Carregue o conteúdo do arquivo
-$conteudoYaml = Get-Content -Path 'caminho/do/arquivo.yaml' -Raw
-
-# Converta o conteúdo para um objeto PowerShell
-$objetoYaml = ConvertFrom-Yaml -Yaml $conteudoYaml
-
-# Acesse os dados
-$objetoYaml.chave
 ```
 
-### Escrever um arquivo YAML:
+Para ler um arquivo YAML:
 ```PowerShell
-# Crie um objeto
-$info = @{
-   nome = "João"
-   idade = 27
+Import-Module powershell-yaml
+$content = Get-Content -Path 'config.yml' -Raw
+$yamlObject = ConvertFrom-Yaml -Yaml $content
+Write-Output $yamlObject
+```
+
+Para escrever um objeto do PowerShell em um arquivo YAML:
+```PowerShell
+$myObject = @{
+    name = "John Doe"
+    age = 30
+    languages = @("PowerShell", "Python")
 }
-
-# Converta o objeto para YAML
-$conteudoYaml = ConvertTo-Yaml -Data $info
-
-# Salve o YAML em um arquivo
-$conteudoYaml | Out-File -FilePath 'caminho/do/arquivo.yaml'
+$yamlContent = ConvertTo-Yaml -Data $myObject
+$yamlContent | Out-File -FilePath 'output.yml'
 ```
 
-### Output de exemplo (arquivo 'configuracoes.yaml'):
+Exemplo de `output.yml`:
 ```yaml
-nome: João
-idade: 27
+name: John Doe
+age: 30
+languages:
+- PowerShell
+- Python
 ```
 
-## Deep Dive
+### Analisando YAML com `yq` e `ConvertFrom-Json`:
+Outra abordagem envolve usar `yq`, um processador de YAML de linha de comando leve e portátil. `yq` pode converter YAML em JSON, o qual o PowerShell pode analisar nativamente.
 
-YAML, que significa "YAML Ain't Markup Language", é uma linguagem de serialização de dados humanamente legível, ideal para configuração de software e transmissão de dados entre diferentes linguagens de programação. Surgiu em 2001 como uma alternativa ao XML e seu nome original era "Yet Another Markup Language", mudando depois para destacar seu design legível por humanos. Alguns formatos alternativos são o JSON, mais conciso e frequentemente usado em APIs web, e o TOML, projetado como um formato de configuração mínima.
+Primeiro, garanta que `yq` esteja instalado em seu sistema.
+Então execute:
+```PowerShell
+$yamlToJson = yq e -o=json ./config.yml
+$jsonObject = $yamlToJson | ConvertFrom-Json
+Write-Output $jsonObject
+```
 
-Como detalhes de implementação, ao trabalhar com YAML no PowerShell, o módulo `powershell-yaml` é amplamente usado, pois fornece funcionalidades de conversão entre YAML e objetos do PowerShell. É importante manter a indentação correta ao escrever YAML, visto que a estrutura é baseada nessa indentação e não no uso de delimitadores como chaves ou colchetes.
-
-## See Also
-
-Para aprimorar suas habilidades com YAML e PowerShell, consulte:
-
-- Documentação oficial do módulo `powershell-yaml`: [PowerShell Gallery | powershell-yaml](https://www.powershellgallery.com/packages/powershell-yaml)
-- Guia de sintaxe YAML: [YAML Syntax](https://learnxinyminutes.com/docs/yaml/)
+Este método é particularmente útil para usuários que trabalham em ambientes multiplataforma ou preferem usar JSON dentro do PowerShell.

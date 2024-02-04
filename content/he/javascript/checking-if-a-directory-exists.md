@@ -1,47 +1,74 @@
 ---
-title:                "בדיקה האם תיקייה קיימת"
-date:                  2024-01-20T14:57:34.512034-07:00
-simple_title:         "בדיקה האם תיקייה קיימת"
-
+title:                "בדיקה אם ספרייה קיימת"
+date:                  2024-02-03T19:08:12.462012-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "בדיקה אם ספרייה קיימת"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/javascript/checking-if-a-directory-exists.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## מה ולמה?
-בדיקה אם תיקייה קיימת ב-JavaScript היא עניין של קריאה למערכת הפעלה כדי לזהות אם נתיב מסוים הוא באמת תיקייה. פרוגרמרים עושים זאת לפני פעולות כמו קריאה, כתיבה או יצירת קבצים כדי למנוע שגיאות.
+בדיקה אם ספריה קיימת ב-JavaScript חשובה למשימות של עיבוד קבצים, מאפשרת לסקריפטים לוודא את נוכחות הספריה לפני הקריאה ממנה או הכתיבה אליה. פעולה זו מונעת שגיאות ומבטיחה ביצוע חלק יותר של התוכנית, במיוחד ביישומים המטפלים בצורה דינמית בקבצים או בספריות בהתבסס על קלט מהמשתמש או ממקורות נתונים חיצוניים.
 
-## איך לעשות:
-כדי לבדוק אם תיקייה קיימת, אתה יכול להשתמש במודול `fs` של Node.js, עם הפונקציה `fs.existsSync()` או באופן אסינכרוני עם `fs.promises.stat()`:
+## איך לעשות זאת:
+ב-Node.js, מאחר של-JavaScript עצמו אין גישה ישירה למערכת הקבצים, מודול ה-`fs` משמש לרוב לפעולות מסוג זה. הנה דרך פשוטה לבדוק אם ספריה קיימת באמצעות `fs.existsSync()`:
 
-```Javascript
+```javascript
 const fs = require('fs');
 
-// בדיקה סינכרונית
-const directoryExistsSync = fs.existsSync('/path/to/directory');
-console.log(directoryExistsSync); // ידפיס true או false
+const directoryPath = './sample-directory';
 
-// בדיקה אסינכרונית
-const checkDirectoryExists = async (path) => {
+// בדיקה אם הספריה קיימת
+if (fs.existsSync(directoryPath)) {
+  console.log('הספריה קיימת.');
+} else {
+  console.log('הספריה לא קיימת.');
+}
+```
+**פלט לדוגמה:**
+```
+הספריה קיימת.
+```
+או, לגישה אסינכרונית ללא חסימה, השתמשו ב-`fs.promises` עם `async/await`:
+
+```javascript
+const fs = require('fs').promises;
+
+async function checkDirectory(directoryPath) {
   try {
-    const stat = await fs.promises.stat(path);
-    return stat.isDirectory();
+    await fs.access(directoryPath);
+    console.log('הספריה קיימת.');
   } catch (error) {
-    if (error.code === 'ENOENT') { // תיקייה לא נמצאה
-      return false;
-    }
-    throw error; // שגיאה אחרת
+    console.log('הספריה לא קיימת.');
   }
-};
+}
 
-checkDirectoryExists('/path/to/directory').then(console.log); // ידפיס true או false
+checkDirectory('./sample-directory');
+```
+**פלט לדוגמה:**
+```
+הספריה קיימת.
 ```
 
-## צלילה עמוקה:
-בגרסאות ישנות יותר של Node.js, היו רק אפשרויות סינכרוניות כמו `fs.existsSync()`. היום יש נטייה להשתמש בפונקציות אסינכרוניות כדי לא לחסום את הלולאה הראשית. אפשר לעשות את זה עם `fs.promises.stat()` או עם `fs.promises.access()` ולבדוק את הפרמטר `fs.constants.F_OK`. זהירות עם שגיאות בשימוש במודול fs, שכן הן יכולות להשפיע על זרימת הקוד שלך.
+לפרויקטים המשתמשים בצורה נרחבת בפעולות של קבצים וספריות, החבילה `fs-extra`, שהיא הרחבה של מודול ה-`fs` המקורי, מציעה שיטות נוספות נוחות. הנה איך אפשר לעשות את אותו הדבר עם `fs-extra`:
 
-## ראה גם:
-- דוקומנטציה של Node.js למודול `fs`: https://nodejs.org/api/fs.html
-- מדריך לעבודה עם מערכת הקבצים ב-Node.js: https://nodejs.dev/learn/the-nodejs-fs-module
-- דוקומנטציה של JavaScript promises: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises
+```javascript
+const fs = require('fs-extra');
+
+const directoryPath = './sample-directory';
+
+// בדיקה אם הספריה קיימת
+fs.pathExists(directoryPath)
+  .then(exists => console.log(exists ? 'הספריה קיימת.' : 'הספריה לא קיימת.'))
+  .catch(err => console.error(err));
+```
+**פלט לדוגמה:**
+```
+הספריה קיימת.
+```
+
+גישה זו מאפשרת קוד נקי, קריא שמשתלב בצורה חלקה עם המתודות המודרניות של JavaScript.

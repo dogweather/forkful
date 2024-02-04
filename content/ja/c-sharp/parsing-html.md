@@ -1,51 +1,102 @@
 ---
 title:                "HTMLの解析"
-date:                  2024-01-20T15:30:30.580495-07:00
+date:                  2024-02-03T19:11:53.566745-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "HTMLの解析"
-
 tag:                  "HTML and the Web"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/c-sharp/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (何となぜ？)
+## 何となく理由？
 
-HTMLパースとは、HTMLマークアップからデータを抽出するプロセスです。プログラマは通常、ウェブスクレイピングやコンテンツ抽出、ウェブデータの解析のためにこれを実行します。
+プログラミングにおけるHTMLの解析とは、HTMLドキュメントの構造を分析し、その内容をプログラムで抽出、操作、かつ対話することを可能にします。プログラマーは、ウェブスクレイピング、データの抽出、あるいはさまざまなアプリケーション用にウェブページやHTMLドキュメントを動的に変更するためにこれを行います。これはウェブ開発、データ分析、自動化テストシナリオにおいて重要なスキルとなります。
 
-## How to: (方法)
+## 方法：
 
-C#では、`HtmlAgilityPack`というライブラリを使うことで簡単にHTMLをパースできます。以下に基本的な使用例を示します。
+.NETは`HttpClient`でウェブページをフェッチするなど、HTML作業のための基本的なサポートを提供しますが、組み込みの総合的なHTMLパーサーを欠いています。そのため、ほとんどのC#開発者は、HtmlAgilityPackやAngleSharpのような人気の第三者ライブラリに頼ります。これらのライブラリはHTMLDOMの簡単なクエリ、操作、およびトラバーサルを可能にします。
 
-```C#
-using HtmlAgilityPack;
+### HtmlAgilityPackを使用する
 
-var htmlDoc = new HtmlDocument();
-htmlDoc.LoadHtml("<html><body><p>こんにちは、世界！</p></body></html>");
+1. **HtmlAgilityPackのインストール**: まず、NuGetを通じてプロジェクトにHtmlAgilityPackパッケージを追加します。
+   ```
+   Install-Package HtmlAgilityPack
+   ```
 
-var paragraph = htmlDoc.DocumentNode.SelectSingleNode("//p");
-System.Console.WriteLine(paragraph.InnerText);
-```
+2. **サンプルコード**: HTML文字列を解析し、すべての`<h1>`要素のタイトルを抽出します。
 
-これでコンソールに以下のテキストが表示されます:
+   ```csharp
+   using HtmlAgilityPack;
+   using System;
+   using System.Linq;
 
-```
-こんにちは、世界！
-```
+   class Program
+   {
+       static void Main(string[] args)
+       {
+           var html = @"<html>
+                         <body>
+                             <h1>Title 1</h1>
+                             <h1>Title 2</h1>
+                         </body>
+                        </html>";
+           var htmlDoc = new HtmlDocument();
+           htmlDoc.LoadHtml(html);
 
-## Deep Dive (深い潜入)
+           var h1Tags = htmlDoc.DocumentNode.SelectNodes("//h1").Select(node => node.InnerText);
+           foreach (var title in h1Tags)
+           {
+               Console.WriteLine(title);
+           }
+       }
+   }
+   ```
 
-HTMLパースの必要性はウェブの黎明期にさかのぼります。初期のインターネットでは、データ交換のための標準フォーマットが少なく、HTMLがその役割を果たすことが多かったです。
+   **サンプル出力:**
+   ```
+   Title 1
+   Title 2
+   ```
 
-代替方法には、正規表現やビルトインのXMLパーサーを使った手法がありますが、`HtmlAgilityPack`のような専用ライブラリが使われることが多いです。これは、HTMLがしばしば正しいXMLの規則に従っていないこと、すなわち「壊れた」HTMLであることが多いためです。
+### AngleSharpの使用
 
-実装の詳細については、`HtmlAgilityPack`はXPathやCSSセレクタを使って特定のノードにアクセスする機能を提供し、パフォーマンスと柔軟性のバランスを取っています。
+1. **AngleSharpのインストール**: NuGetを通じてプロジェクトにAngleSharpライブラリを追加します。
+   ```
+   Install-Package AngleSharp
+   ```
 
-## See Also (関連事項)
+2. **サンプルコード**: HTMLドキュメントを読み込み、特定のクラスを持つ`div`要素をクエリします。
 
-- HtmlAgilityPack NuGet package: https://www.nuget.org/packages/HtmlAgilityPack
-- XPath syntax: https://www.w3schools.com/xml/xpath_syntax.asp
-- CSS selectors reference: https://www.w3schools.com/cssref/css_selectors.asp
+   ```csharp
+   using AngleSharp;
+   using AngleSharp.Dom;
+   using System;
+   using System.Linq;
+   using System.Threading.Tasks;
 
-これらのリンクは、HTMLパーサーやそれに関連するテクノロジーについての更なる情報を提供します。
+   class Program
+   {
+       static async Task Main(string[] args)
+       {
+           var context = BrowsingContext.New(Configuration.Default);
+           var document = await context.OpenAsync(req => req.Content("<div class='item'>Item 1</div><div class='item'>Item 2</div>"));
+
+           var items = document.QuerySelectorAll(".item").Select(element => element.TextContent);
+           foreach (var item in items)
+           {
+               Console.WriteLine(item);
+           }
+       }
+   }
+   ```
+
+   **サンプル出力:**
+   ```
+   Item 1
+   Item 2
+   ```
+
+HTMLAgilityPackとAngleSharpはどちらもHTMLを解析するための強力なツールですが、特定のプロジェクト要件、パフォーマンスへの考慮、またはAPIデザインに対する個人的な好みに応じて選択が変わる場合があります。

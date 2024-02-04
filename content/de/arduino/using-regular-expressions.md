@@ -1,64 +1,75 @@
 ---
-title:                "Verwendung von regulären Ausdrücken"
-date:                  2024-01-19
-simple_title:         "Verwendung von regulären Ausdrücken"
-
+title:                "Reguläre Ausdrücke verwenden"
+date:                  2024-02-03T19:15:57.859873-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Reguläre Ausdrücke verwenden"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/arduino/using-regular-expressions.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Reguläre Ausdrücke (Regex) sind Muster zur Textsuche und -manipulation. Programmierer nutzen sie, um Textdaten effizient zu durchsuchen, zu validieren oder zu bearbeiten.
+Reguläre Ausdrücke (regex) sind Zeichenfolgen, die Suchmuster definieren, die hauptsächlich für die Zeichenkettenabgleichung und -manipulation verwendet werden. Programmierer nutzen regex in Arduino-Projekten, um serielle Eingaben zu parsen, Benutzereingaben zu validieren oder Daten aus Zeichenketten zu extrahieren, was die Effizienz und Flexibilität der Datenverarbeitung steigert.
 
-## How to:
-Arduino unterstützt reguläre Ausdrücke nicht standardmäßig. Abhilfe schafft die Einbindung von Bibliotheken wie `Regexp`. Hier ein Beispiel:
+## Wie:
+Arduino hat keine eingebaute Unterstützung für regex direkt in seiner Standardbibliothek. Sie können jedoch regex-ähnliche Funktionalitäten für einfache Muster mit grundlegenden Zeichenkettenfunktionen erreichen oder für komplexere Bedürfnisse eine Drittanbieterbibliothek wie `regex` integrieren.
 
-```Arduino
-#include <Regexp.h>
+### Grundlegende Zeichenkettenabgleichung ohne Regex
+Für grundlegende Bedürfnisse, wie das Finden einer Teilzeichenkette, können Sie die Funktion `String.indexOf()` verwenden:
+```cpp
+String data = "Sensorwert: 12345";
+int index = data.indexOf("Wert:");
+if (index != -1) {
+  String value = data.substring(index + 6).trim();
+  Serial.println(value); // Gibt aus: 12345
+}
+```
+
+### Verwendung einer Drittanbieterbibliothek für Regex
+Um komplexere Muster zu behandeln, könnten Sie eine Bibliothek wie `regex` in Betracht ziehen. Nach der Installation der Bibliothek können Sie sie wie folgt verwenden:
+
+1. **Installation**: Die `regex`-Bibliothek ist möglicherweise nicht direkt im Arduino-Bibliotheksmanager verfügbar, daher müssen Sie sie möglicherweise manuell installieren, indem Sie sie von einer seriösen Quelle herunterladen und zu Ihrem Arduino-Bibliotheksordner hinzufügen.
+
+2. **Beispielverwendung**:
+Angenommen, die Bibliothek bietet Funktionen ähnlich den Standard-regex-Implementierungen, könnten Sie sie wie folgt verwenden:
+
+```cpp
+#include <regex.h>
 
 void setup() {
-    Serial.begin(9600);
-    while (!Serial);
-
-    MatchState ms;
-    ms.Target ("Das ist ein Test 123.");
-    
-    char result = ms.Match ("(\\w+)\\s(\\w+)");
+  Serial.begin(9600);
+  while (!Serial); // Warten, bis Serial bereit ist
   
-    if (result == REGEXP_MATCHED) {
-        char buf[100];
-
-        ms.GetCapture (buf, 0);
-        Serial.println (buf); // "ist"
-        
-        ms.GetCapture (buf, 1);
-        Serial.println (buf); // "ein"
-    }
+  regex_t reg;
+  const char* pattern = "[0-9]+"; // Passt auf eine Folge von Ziffern
+  regcomp(&reg, pattern, REG_EXTENDED);
+  
+  const char* test_str = "Sensorwert: 12345";
+  
+  regmatch_t matches[1];
+  if (regexec(&reg, test_str, 1, matches, 0) == 0) {
+    // Extrahieren und ausgeben des passenden Teils
+    int start = matches[0].rm_so;
+    int end = matches[0].rm_eo;
+    char match[end-start+1];
+    strncpy(match, test_str + start, end-start);
+    match[end-start] = '\0';
+    
+    Serial.print("Passende Übereinstimmung gefunden: ");
+    Serial.println(match); // Gibt aus: 12345
+  } else {
+    Serial.println("Keine Übereinstimmung gefunden");
+  }
+  
+  regfree(&reg); // Den für regex allokierten Speicher freigeben
 }
 
 void loop() {
-    // Nichts zu tun hier.
+  // setze hier deinen Hauptcode ein, um ihn wiederholt auszuführen:
 }
 ```
 
-Ausgabe:
-```
-ist
-ein
-```
-
-## Deep Dive
-
-Reguläre Ausdrücke wurden in den 1950er Jahren konzipiert und sind seitdem fester Bestandteil vieler Programmiersprachen. Arduino hingegen bietet nativ keine Regex-Unterstützung, doch Bibliotheken wie `Regexp` füllen diese Lücke. Diese Bibliotheken bieten meist eine reduzierte Funktionalität im Vergleich zu vollausgestatteten Regex-Engines in Sprachen wie Python oder Java.
-
-Alternativen zu Regex sind gezielte String-Operationen und -Suchfunktionen, die in Arduino selbst eingebaut sind. Diese können einfacher sein, sind aber weniger mächtig und flexibel.
-
-Bei der Implementierung von Regex in Arduino-Projekten muss der begrenzte Speicherplatz berücksichtigt werden. Reguläre Ausdrücke können schnell komplex und ressourcenintensiv werden.
-
-## See Also
-
-- Arduino String Library: https://www.arduino.cc/reference/en/language/variables/data-types/string/
-- Regexp-Bibliothek für Arduino: https://github.com/nickgammon/Regexp
-- RegexOne – Lernen von Regex mit interaktiven Übungen: https://regexone.com/
+**Hinweis**: Die Syntax und spezifischen Funktionen, die hier verwendet werden, dienen nur zu Veranschaulichungszwecken und können je nach den tatsächlichen Implementierungsdetails der `regex`-Bibliothek, die Sie wählen, variieren. Beziehen Sie sich immer auf die Dokumentation der Bibliothek für genaue und aktuelle Informationen.

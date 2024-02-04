@@ -1,34 +1,35 @@
 ---
 title:                "テストの作成"
-date:                  2024-01-19
+date:                  2024-02-03T19:30:06.251652-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "テストの作成"
-
 tag:                  "Testing and Debugging"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/cpp/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (何となぜ？)
-テストコードとは、プログラムが期待通りに動くことを保証するためのコードです。バグを早期に発見し、品質を確保するためにプログラマーはテストを書きます。
+## 何となぜ?
 
-## How to: (やり方)
-C++では、Google Testフレームワークを使ったテストが一般的です。以下に例を示します。
+C++でテストを書くとは、コードベースのセクションの動作を自動的に検証する小さな、自己完結型のプログラムを作成することを指します。プログラマーはこれを行うことで、コードが期待通りに動作することを確認し、リグレッション（つまり、新しい変更が既存の機能を壊すこと）を防ぎ、時間をかけて保守可能なコードベースを促進します。
 
-```C++
+## 方法:
+
+### Google Test フレームワークを使用する
+
+C++でテストを書くための最も人気のあるサードパーティライブラリの1つはGoogle Testです。まず、Google Testをインストールし、プロジェクトとリンクする必要があります。セットアップが完了したら、テストケースの記述を開始できます。
+
+```cpp
 #include <gtest/gtest.h>
 
-int Add(int a, int b) {
+int add(int a, int b) {
     return a + b;
 }
 
-TEST(MathTest, PositiveNumbers) {
-    EXPECT_EQ(7, Add(3, 4));
-}
-
-TEST(MathTest, NegativeNumbers) {
-    EXPECT_EQ(-5, Add(-2, -3));
+TEST(TestSuiteName, TestName) {
+    EXPECT_EQ(3, add(1, 2));
 }
 
 int main(int argc, char **argv) {
@@ -37,34 +38,42 @@ int main(int argc, char **argv) {
 }
 ```
 
-実行結果:
+コードをファイルに保存し、g++コンパイラを使用してコンパイルし、Google Testライブラリとリンクします。すべてが正しく設定されていれば、生成された実行可能ファイルを実行するとテストが実行され、`add`関数が期待どおりに動作する場合は、次のようなものが表示されます:
+
 ```
-[==========] Running 2 tests from 1 test case.
+[==========] Running 1 test from 1 test suite.
 [----------] Global test environment set-up.
-[----------] 2 tests from MathTest
-[ RUN      ] MathTest.PositiveNumbers
-[       OK ] MathTest.PositiveNumbers (0 ms)
-[ RUN      ] MathTest.NegativeNumbers
-[       OK ] MathTest.NegativeNumbers (0 ms)
-[----------] 2 tests from MathTest (0 ms total)
+[----------] 1 test from TestSuiteName
+[ RUN      ] TestSuiteName.TestName
+[       OK ] TestSuiteName.TestName (0 ms)
+[----------] 1 test from TestSuiteName (0 ms total)
 
-[----------] Global test environment tear-down
-[==========] 2 tests from 1 test case ran. (0 ms total)
-[  PASSED  ] 2 tests.
+[==========] 1 test from 1 test suite ran. (1 ms total)
+[  PASSED  ] 1 test.
 ```
 
-## Deep Dive (深掘り)
-テストコードの歴史は1990年代まで遡ります。Kent Beckらがテスト駆動開発(TDD)を提唱しました。代替としては、Boost.TestやCatch2などがあります。Google Testはテストケースや検証を簡単に書くためのマクロやユーティリティを提供します。
+### Catch2の使用
 
-## See Also (関連情報)
-Google Test公式ドキュメント:
-https://github.com/google/googletest/blob/master/googletest/docs/primer.md
+C++のもう1つの人気のあるテストフレームワークはCatch2です。よりシンプルな構文を持っており、通常はライブラリに対してリンクする必要がありません（ヘッダーのみ）。Catch2でシンプルなテストを書く方法の例をこちらに示します:
 
-テスト駆動開発についてのさらなる情報:
-http://agiledata.org/essays/tdd.html
+```cpp
+#define CATCH_CONFIG_MAIN  // これはCatchにmain()を提供するように指示する - これは1つのcppファイルでのみ行う
+#include <catch.hpp>
 
-Boost.Testドキュメント:
-https://www.boost.org/doc/libs/release/libs/test/
+int multiply(int a, int b) {
+    return a * b;
+}
 
-Catch2 GitHubレポジトリ:
-https://github.com/catchorg/Catch2
+TEST_CASE( "Integers are multiplied", "[multiply]" ) {
+    REQUIRE( multiply(2, 3) == 6 );
+}
+```
+
+このテストをコンパイルして実行すると、Catch2はテストが合格したか失敗したかを明確に指示する出力を提供し、失敗をデバッグするために必要な情報を提供します:
+
+```
+===============================================================================
+All tests passed (1 assertion in 1 test case)
+```
+
+これらの例は、テストフレームワークをC++開発ワークフローに統合することで、コードの信頼性と保守性を大幅に向上させることができることを示しています。

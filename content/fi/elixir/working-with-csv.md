@@ -1,65 +1,95 @@
 ---
-title:                "CSV-tiedostojen käsittely"
-date:                  2024-01-19
-simple_title:         "CSV-tiedostojen käsittely"
-
+title:                "Työskentely CSV:n kanssa"
+date:                  2024-02-03T19:19:53.069348-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Työskentely CSV:n kanssa"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/elixir/working-with-csv.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Mikä & Miksi?
 
-CSV (Comma-Separated Values) on yksinkertainen tiedostomuoto datan tallentamiseen. Ohjelmoijat käyttävät CSV:tä, koska se on helppolukuinen ja yhteensopiva useiden ohjelmistojen ja kielten kanssa.
+CSV-tiedostojen (pilkuilla erotettujen arvojen) käsittelyyn kuuluu tietojen lukemista ja kirjoittamista näihin tiedostoihin, mikä on yleinen tarve tehtävissä, jotka vaativat datan tuontia/vientiä tai yksinkertaisia tallennusratkaisuja. Ohjelmoijat hyödyntävät tätä toiminnallisuutta datan vaihtoon järjestelmien välillä, nopeaan datan muokkaukseen, tai tilanteissa, joissa kevyt ja helposti muokattava datamuoto on edullinen.
 
-## Miten:
+## Kuinka:
 
-Elixirissä CSV-tiedostojen käsittelyyn voi käyttää CSV-kirjastoa, joka helpottaa rivien lukemista ja kirjoittamista.
+Elixir, tehokkaan kuviohakunsa ja putkituensa ansiosta, pystyy käsittelemään CSV-tiedostoja tehokkaasti, jopa ilman kolmannen osapuolen kirjastoja. Kuitenkin, edistyneempiin tarpeisiin `nimble_csv`-kirjasto on nopea ja suoraviivainen valinta.
+
+### CSV-tiedoston lukeminen ilman ulkoisia kirjastoja
+
+Voit lukea ja jäsentää CSV-tiedoston käyttämällä Elixiring sisäänrakennettuja funktioita:
 
 ```elixir
-# Lisää csv-kirjasto mix.exs-tiedostoon
+defmodule CSVReader do
+  def read_file(file_path) do
+    File.stream!(file_path)
+    |> Stream.map(&String.trim_trailing/1)
+    |> Stream.map(&String.split(&1, ","))
+    |> Enum.to_list()
+  end
+end
+
+# Esimerkkikäyttö
+CSVReader.read_file("data.csv")
+# Tuloste: [["Otsikko1", "Otsikko2"], ["Rivi1Arvo1", "Rivi1Arvo2"], ["Rivi2Arvo1", "Rivi2Arvo2"]]
+```
+
+### Kirjoittaminen CSV-tiedostoon
+
+Samankaltaisesti, jos haluat kirjoittaa tietoja CSV-tiedostoon:
+
+```elixir
+defmodule CSVWriter do
+  def write_to_file(file_path, data) do
+    File.open(file_path, [:write], fn file ->
+      Enum.each(data, fn row ->
+        IO.write(file, Enum.join(row, ",") <> "\n")
+      end)
+    end)
+  end
+end
+
+# Esimerkkikäyttö
+data = [["Otsikko1", "Otsikko2"], ["Arvo1", "Arvo2"], ["Arvo3", "Arvo4"]]
+CSVWriter.write_to_file("output.csv", data)
+# Luo output.csv:n datalla muotoiltuna CSV:ksi
+```
+
+### Käyttäen `nimble_csv`:tä
+
+Monimutkaisempiin CSV-käsittelyihin, `nimble_csv` tarjoaa tehokkaan ja joustavan tavan työskennellä CSV-datan kanssa. Lisää ensin `nimble_csv` riippuvuuksiisi `mix.exs`-tiedostossa ja suorita `mix deps.get`:
+
+```elixir
 defp deps do
   [
-    {:csv, "~> 2.4"}
+    {:nimble_csv, "~> 1.2"}
   ]
 end
-
-# Lue CSV-tiedostoa
-def read_csv(file_path) do
-  File.stream!(file_path)
-  |> CSV.decode(separator: ?;)
-  |> Enum.each(&process_row/1)
-end
-
-# Prosessoi jokaista CSV-riviä
-defp process_row(row), do: IO.inspect(row)
-
-# Kirjoita CSV-tiedostoon
-def write_csv(file_path, data) do
-  CSV.encode_to_iodata(data, separator: ?;)
-  |> :file.write(file_path)
-end
 ```
 
-Esimerkki lähdöstä:
+CSV-datan jäsentäminen `nimble_csv`:llä:
 
 ```elixir
-read_csv("path/to/your/file.csv")
-# Tulostaisi jokaisen rivin, esim.
-# ["ID", "Nimi", "Sähköposti"]
-# ["1", "Matti Meikäläinen", "matti@example.com"]
+defmodule MyCSVParser do
+  NimbleCSV.define(MyParser, separator: ",", escape: "\\")
 
-write_csv("path/to/your/new_file.csv", [["ID", "Nimi", "Sähköposti"], ["2", "Liisa Virtanen", "liisa@example.com"]])
-# Luo uuden CSV-tiedoston rivillä ID, Nimi, Sähköposti ja toisella rivillä tiedot 2, Liisa Virtanen, liisa@example.com
+  def parse(file_path) do
+    file_path
+    |> File.stream!()
+    |> MyParser.parse_stream()
+    |> Enum.to_list()
+  end
+end
+
+# Esimerkkikäyttö
+MyCSVParser.parse("data.csv")
+# Tuloste `nimble_csv`:n kanssa voidaan mukauttaa määritelmän mukaan, mutta yleensä se näyttää listalta listoja tai tupleja riippuen siitä, kuinka olet asettanut jäsentimesi.
 ```
 
-## Syväsukellus:
+CSV-datan kirjoittaminen `nimble_csv`:llä vaatii manuaalista datasi muuntamista asianmukaiseen muotoon ja sitten sen kirjoittamista tiedostoon, paljon kuten pelkässä Elixirin esimerkissä mutta hyödyntäen `nimble_csv`:tä oikein muotoiltujen CSV-rivien tuottamiseen.
 
-CSV-muoto on ollut käytössä jo vuosikymmeniä, tehden siitä lähes universaalin vaihtoehdon tabulaarisen datan jakamiseen. Json ja XML ovat moderneja vaihtoehtoja, mutta niiden rakenne on monimutkaisempi. Elixir käyttää pattern matching -ominaisuutta, joka tekee CSV-tiedostojen käsittelystä joustavampaa; voit esimerkiksi erottaa otsikkorivet helposti datasta.
-
-## Katso Myös:
-
-- Elixirin viralliset dokumentit: https://elixir-lang.org/docs.html
-- CSV-kirjasto Elixirissä: https://hex.pm/packages/csv
-- Ecto, Elixirin tietokanta-apuohjelma, joka tukee myös CSV: https://hexdocs.pm/ecto/Ecto.html
+Valitsemalla sopivan lähestymistavan tehtäväsi monimutkaisuuden mukaan, voit käsitellä CSV-tiedostoja Elixirissa suurella joustavuudella ja voimalla.

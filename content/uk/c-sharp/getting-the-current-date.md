@@ -1,73 +1,64 @@
 ---
 title:                "Отримання поточної дати"
-date:                  2024-01-20T15:13:46.337863-07:00
+date:                  2024-02-03T19:09:38.493604-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Отримання поточної дати"
-
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/c-sharp/getting-the-current-date.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Що та навіщо?
+## Що і чому?
+Отримання поточної дати в C# передбачає отримання даних про поточну дату та час від системи. Програмісти часто потребують доступу до цієї інформації для ведення журналів, створення міток часу операцій або планування завдань у додатках, гарантуючи, що дії здійснюються у точно визначений час та дані маркуються точними мітками часу.
 
-Getting the current date means accessing the system's clock to find out today's date. Programmers use it for logging, timestamping events, or displaying dates in applications.
+## Як:
+C# надає простий спосіб отримання поточної дати за допомогою класу `DateTime`, який є частиною простору імен System .NET Framework. Приклад нижче демонструє, як отримати поточну дату, і за бажанням, час.
 
-## How to:
-Як це робити:
-
-Get the current date using `DateTime.Now`:
-
-```C#
+```csharp
 using System;
 
 class Program
 {
     static void Main()
     {
-        DateTime currentDate = DateTime.Now;
-        Console.WriteLine(currentDate.ToString("d")); // виводить у форматі MM/dd/yyyy
+        // Отримує лише поточну дату
+        DateTime currentDate = DateTime.Today;
+        Console.WriteLine(currentDate.ToString("d"));  // Вивід: MM/dd/yyyy
+        
+        // Отримує поточну дату та час
+        DateTime currentDateTime = DateTime.Now;
+        Console.WriteLine(currentDateTime.ToString()); // Вивід: MM/dd/yyyy HH:mm:ss
+
+        // Отрімує поточную дату та час у UTC
+        DateTime currentUtcDateTime = DateTime.UtcNow;
+        Console.WriteLine(currentUtcDateTime.ToString()); // Вивід: MM/dd/yyyy HH:mm:ss
     }
 }
 ```
-Sample output if run on April 1, 2023:
 
-```
-04/01/2023
-```
+Що стосується бібліотек третіх сторін, NodaTime пропонує надійну альтернативу для маніпуляції датою та часом, включаючи отримання поточної дати в різних календарях і часових зонах.
 
-Use `DateTime.UtcNow` for a timezone-independent Universal Time Coordinate (UTC):
-
-```C#
+```csharp
+using NodaTime;
 using System;
 
 class Program
 {
     static void Main()
     {
-        DateTime currentDateUtc = DateTime.UtcNow;
-        Console.WriteLine(currentDateUtc.ToString("d")); // виводить у форматі MM/dd/yyyy
+        // Використання NodaTime для отримання поточної дати в ISO календарі
+        LocalDate currentDate = SystemClock.Instance.GetCurrentInstant().InUtc().Date;
+        Console.WriteLine(currentDate.ToString()); // Вивід: yyyy-MM-dd
+
+        // Для дат, специфічних для часової зони
+        DateTimeZone zone = DateTimeZoneProviders.Tzdb["America/New_York"];
+        LocalDate currentZonedDate = SystemClock.Instance.GetCurrentInstant().InZone(zone).Date;
+        Console.WriteLine(currentZonedDate.ToString()); // Вивід: yyyy-MM-dd
     }
 }
 ```
 
-## Deep Dive
-Поглиблений огляд:
-
-The `System.DateTime` type has been around since .NET Framework 1.0, reflecting the computer's system clock. Alternatives like `DateTimeOffset` contain time zone info for more precision. For .NET 6 and later, consider using `DateOnly` if you need just the date with no time.  
-
-Historically, `DateTime` could be problematic across time zones, leading to the introduction of `DateTimeOffset` in .NET Framework 2.0. 
-
-For calendar calculations, customize `CultureInfo` if you need support for non-Gregorian calendars. 
-
-Implementation-wise, the system's clock can be influenced by time synchronization services and might not be monotonic.
-
-## See Also
-Дивіться також:
-
-- Microsoft Docs on `DateTime`: [https://docs.microsoft.com/en-us/dotnet/api/system.datetime](https://docs.microsoft.com/en-us/dotnet/api/system.datetime)
-- Microsoft Docs on `DateTimeOffset`: [https://docs.microsoft.com/en-us/dotnet/api/system.datetimeoffset](https://docs.microsoft.com/en-us/dotnet/api/system.datetimeoffset)
-- A comparison of different DateTime representations in .NET: [https://docs.microsoft.com/en-us/dotnet/standard/datetime/choosing-between-datetime](https://docs.microsoft.com/en-us/dotnet/standard/datetime/choosing-between-datetime)
-
-Remember to check the TimeZone part of the documentation if you're working in a global context. Keep it precise and happy coding!
+Це демонструє базове використання вбудованого класу `DateTime` та розширені можливості, які надає NodaTime, особливо корисні для додатків, які потребують обробки різних часових зон або систем календарів.

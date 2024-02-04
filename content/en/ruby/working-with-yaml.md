@@ -1,8 +1,8 @@
 ---
 title:                "Working with YAML"
-date:                  2024-01-19
+date:                  2024-02-03T19:03:11.899120-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Working with YAML"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/ruby/working-with-yaml.md"
 ---
@@ -10,73 +10,70 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-YAML stands for "YAML Ain't Markup Language." It's a human-readable data serialization format. Programmers use it for config files, data exchange between languages, and because it's more readable than JSON or XML for complex data structures.
+YAML, which stands for YAML Ain't Markup Language, is extensively used in Ruby for configuration files and data serialization due to its human-readable format. Programmers gravitate towards YAML when they need to store or transmit data objects in a readable yet structured manner, simplifying tasks like configuration management, data storage, and inter-language data sharing.
 
 ## How to:
-
-To work with YAML in Ruby you need the `yaml` library. It's part of Ruby's standard library, so just require it:
-
-```ruby
-require 'yaml'
-```
-
-To dump a Ruby hash to a YAML string:
+Ruby comes with a built-in library called Psych for parsing and emitting YAML. To utilize it, you first need to require the YAML standard library. Here’s a basic example to get you started:
 
 ```ruby
 require 'yaml'
 
-my_hash = { name: 'Sam', occupation: 'Developer', hobbies: ['coding', 'chess'] }
+# Hash to be serialized
+person = { name: "John Doe", age: 30, skills: ["Ruby", "JavaScript"] }
 
-yaml_string = my_hash.to_yaml
-puts yaml_string
+# Converting the hash to YAML
+yaml_data = person.to_yaml
+
+puts yaml_data
 ```
 
-Output will be a YAML-formatted string:
+**Sample Output:**
 
-```
+```yaml
 ---
-:name: Sam
-:occupation: Developer
-:hobbies:
-- coding
-- chess
+:name: John Doe
+:age: 30
+:skills:
+- Ruby
+- JavaScript
 ```
 
-To load a YAML string into Ruby:
+To load YAML data back into a Ruby object:
 
 ```ruby
-require 'yaml'
+loaded_person = YAML.load(yaml_data)
 
-yaml_string = "
-name: Sam
-occupation: Developer
-hobbies:
-  - coding
-  - chess
-"
-
-ruby_hash = YAML.load(yaml_string)
-puts ruby_hash
+puts loaded_person
 ```
 
-Output is a Ruby hash:
+**Sample Output:**
 
+```ruby
+{name: "John Doe", age: 30, skills: ["Ruby", "JavaScript"]}
 ```
-{name: 'Sam', occupation: 'Developer', hobbies: ['coding', 'chess']}
+
+### Using Third-Party Libraries:
+
+Although the standard library is sufficient for basic tasks, for complex needs you might look into third-party gems like 'safe_yaml'. To use such libraries, you must first install the gem:
+
+```bash
+gem install safe_yaml
 ```
 
-## Deep Dive
+Then, you can use it to safely load YAML data, mitigating risks like object instantiation from user-controlled sources:
 
-YAML emerged in the early 2000s as a human-friendly alternative to XML for config files and data serialization. Its design allows easy mapping to native data structures in many languages, having implementations in Python, Ruby, Java, PHP, and others.
+```ruby
+require 'safe_yaml'
 
-Alternatives to YAML include JSON and TOML. JSON is more common for web APIs due to its direct compatibility with JavaScript. TOML aims to be more readable as a config file while offering a similar feature set as YAML.
+safe_loaded_person = SafeYAML.load(yaml_data)
 
-In Ruby, YAML is implemented by the Psych library, which has been the default YAML parser since Ruby 1.9.3. Psych interacts with libyaml, a C library for YAML parsing and emitting.
+puts safe_loaded_person
+```
 
-## See Also
+**Sample Output:**
 
-- [The Official YAML Website](https://yaml.org/)
-- [Psych Library Documentation](https://ruby-doc.org/stdlib-3.0.0/libdoc/psych/rdoc/Psych.html)
-- [Ruby YAML Module Documentation](https://ruby-doc.org/stdlib-2.5.1/libdoc/yaml/rdoc/YAML.html)
-- [JSON (JavaScript Object Notation) Official Site](https://www.json.org/)
-- [TOML (Tom's Obvious, Minimal Language) GitHub Repository](https://github.com/toml-lang/toml)
+```ruby
+{name: "John Doe", age: 30, skills: ["Ruby", "JavaScript"]}
+```
+
+This approach enhances the security of your YAML handling, making it a good choice for applications that load YAML from untrusted sources.

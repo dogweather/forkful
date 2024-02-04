@@ -1,53 +1,58 @@
 ---
-title:                "Sjekke om en mappe eksisterer"
-date:                  2024-01-20T14:57:40.343460-07:00
-simple_title:         "Sjekke om en mappe eksisterer"
-
+title:                "Sjekker om en mappe eksisterer"
+date:                  2024-02-03T19:07:51.870876-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Sjekker om en mappe eksisterer"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/lua/checking-if-a-directory-exists.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Å sjekke om en mappe finnes er prosessen med å verifisere om en bestemt mappe eksisterer på filsystemet. Programmere gjør dette for å unngå feil som kan oppstå når programmet forsøker å lese fra eller skrive til en mappe som ikke finnes.
 
-## Hvordan Gjøre:
+Å sjekke om en mappe eksisterer er en grunnleggende operasjon når man skriver skript som samhandler med filsystemet, og sørger for at programmet ditt opererer på gyldige baner og forhindrer feil relatert til ikke-eksisterende mapper. Denne oppgaven er avgjørende for å opprette nye filer i mapper, lese fra dem, eller utføre katalogspesifikke operasjoner på en trygg måte.
 
-```Lua
-local lfs = require('lfs')
+## Hvordan:
 
-local function is_directory_exists(path)
-    local attr = lfs.attributes(path)
+I Lua har du ikke en innebygd funksjon for direkte å sjekke om en mappe eksisterer, så du er ofte avhengig av Lua File System (lfs)-biblioteket, et populært tredjepartsbibliotek for filoperasjoner.
+
+Først, sørg for at du har Lua File System installert. Hvis ikke, kan du vanligvis installere det med LuaRocks:
+
+```sh
+luarocks install luafilesystem
+```
+
+Deretter kan du bruke følgende eksempel for å sjekke om en mappe eksisterer:
+
+```lua
+local lfs = require "lfs"
+
+function directoryExists(directory)
+    local attr = lfs.attributes(directory)
     return attr and attr.mode == "directory"
 end
 
--- Bruk funksjonen for å sjekke om en mappe finnes
-if is_directory_exists("/min/eksisterende/mappe") then
-    print("Mappen finnes!")
+-- Sjekk om en spesifikk mappe eksisterer
+if directoryExists("/path/to/your/directory") then
+    print("Mappen eksisterer.")
 else
-    print("Mappen finnes ikke.")
+    print("Mappen eksisterer ikke.")
 end
 ```
 
-Eksempel på utdata:
-```
-Mappen finnes!
-```
-
-eller hvis mappen ikke finnes:
+Dette vil gi utskrift:
 
 ```
-Mappen finnes ikke.
+Mappen eksisterer.
 ```
 
-## Dypdykk
-Før Lua 5.1, var det ingen innebygd støtte for filsystemoperasjoner. `lfs` (Lua File System) ble introdusert som et eksternt bibliotek for å tilføre denne funksjonaliteten. Å sjekke om en mappe eksisterer er viktig for filhåndtering og kan utelukke mange vanlige feilkilder. Alternativer til `lfs` inkluderer OS-spesifikke kommandoer via `os.execute`, men disse er mindre portable og kan introdusere sikkerhetshull. `lfs` tilbyr en mer robust og portabel måte å håndtere filsystemet.
+Eller, hvis mappen ikke eksisterer:
 
-Når man sjekker om en mappe eksisterer, er "attributes"-funksjonen i `lfs` brukt for å hente metadata om en fil eller mappe. Dette inkluderer informasjon som endringstidspunkt, størrelse, og viktigst, filmodusen. Ved å sjekke modusen, kan vi avgjøre om stien representerer en mappe, en fil, en socket, osv.
+```
+Mappen eksisterer ikke.
+```
 
-## Se Også
-
-- Lua File System (LFS) dokumentasjon: https://keplerproject.github.io/luafilesystem/
-- Lua 5.4 referansemanual: https://www.lua.org/manual/5.4/
-- 'Programming in Lua' for en omfattende veiledning i Lua: https://www.lua.org/pil/
+Denne tilnærmingen bruker `lfs.attributes`-funksjonen for å få attributtene til banen. Hvis banen eksisterer og dens `mode`-attributt er `directory`, bekrefter dette mappens eksistens.

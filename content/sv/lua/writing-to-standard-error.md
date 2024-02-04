@@ -1,37 +1,52 @@
 ---
 title:                "Skriva till standardfel"
-date:                  2024-01-19
+date:                  2024-02-03T19:33:50.608196-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Skriva till standardfel"
-
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/lua/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Skriva till standard error ("stderr") är att dirigera felmeddelanden och annan diagnostisk information till en separat kanal som standard. Det gör det enklare att skilja normalt utdata från felrapporter och att hantera loggar effektivare.
+Att skriva till standardfel (stderr) handlar om att rikta felmeddelanden och diagnostisk utdata till en separat kanal, skild från standardutdata (stdout). Programmerare gör detta för att skilja vanliga programresultat från felinformation, vilket förenklar felsökning och loggningsprocesser.
 
-## Hur gör man:
-Att skriva till stderr i Lua är enkelt. Använd `io.stderr:write()` för att skicka text till felströmmen:
+## Hur man gör:
+I Lua kan skrivning till stderr uppnås genom att använda funktionen `io.stderr:write()`. Så här kan du skriva ett enkelt felmeddelande till standardfel:
 
-```Lua
--- Skriver till standard error
-io.stderr:write("Det här är ett felmeddelande!\n")
+```lua
+io.stderr:write("Fel: Ogiltig inmatning.\n")
 ```
 
-Om du kör det här skriptet är utskriften inte på stdout utan på stderr, vilket du märker om du omdirigerar det i en terminal:
+Om du behöver mata ut en variabel eller kombinera flera datapunkter, konkateniera dem inom write-funktionen:
 
-```Bash
-lua dittskript.lua 2> error.log
+```lua
+local felmeddelande = "Ogiltig inmatning."
+io.stderr:write("Fel: " .. felmeddelande .. "\n")
 ```
 
-`error.log` kommer att innehålla "Det här är ett felmeddelande!"
+**Exempelutdata på stderr:**
+```
+Fel: Ogiltig inmatning.
+```
 
-## Djupdykning:
-Historiskt har felhantering och loggning implementerats på många sätt, men konventionen att separera normal utdata (stdout) från fel (stderr) har varit standard sedan Unix-tiden. Alternativ till `io.stderr:write()` inkluderar att använda ett loggningsbibliotek eller skriva till filer. Både filer och stderr är strömmar i Lua, men skrivning till stderr verkställs direkt och kan inte buffras, vilket är kritiskt för att rapportera fel i realtid.
+För mer komplexa scenarier, eller när man arbetar med större applikationer, kan man överväga tredjeparts loggningsbibliotek såsom LuaLogging. Med LuaLogging kan du rikta loggar till olika destinationer, inklusive stderr. Här är ett kort exempel:
 
-## Se också:
-- Lua's `io` biblioteket: [https://www.lua.org/manual/5.4/manual.html#6.8](https://www.lua.org/manual/5.4/manual.html#6.8)
-- Mer om felhantering i Lua: [https://www.lua.org/pil/8.4.html](https://www.lua.org/pil/8.4.html)
-- Unix filsystemets standardströmmar: [https://en.wikipedia.org/wiki/Standard_streams](https://en.wikipedia.org/wiki/Standard_streams)
+Först, se till att LuaLogging är installerat med LuaRocks:
+
+```
+luarocks install lualogging
+```
+
+Sedan, för att skriva ett felmeddelande till stderr med LuaLogging:
+
+```lua
+local logging = require("logging")
+local logger = logging.stderr()
+logger:error("Fel: Ogiltig inmatning.")
+```
+
+Detta tillvägagångssätt erbjuder fördelen av standardiserad loggning över hela din applikation, med tillagd flexibilitet att sätta loggningsnivåer (t.ex. ERROR, WARN, INFO) genom ett enkelt API.

@@ -1,36 +1,65 @@
 ---
 title:                "写入标准错误"
-date:                  2024-01-19
+date:                  2024-02-03T19:34:13.962941-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "写入标准错误"
-
 tag:                  "Files and I/O"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/powershell/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## 什么 & 为什么？
-标准错误流（Standard Error）是用来输出错误信息和诊断信息的特殊输出流。程序员使用它来将错误信息与常规输出分离，以方便调试和错误日志记录。
+## 什么和为什么？
 
-## 如何做：
-```PowerShell
-# 向标准错误输出写入信息
-Write-Error "这是一个错误消息"
+在 PowerShell 中写入标准错误（stderr）涉及将错误信息或诊断信息直接发送到 stderr 流，与标准输出（stdout）流明确区分。这种分离允许对脚本的输出进行更精确的控制，使开发人员能够将正常和错误消息定向到不同的目的地，这对于错误处理和日志记录至关重要。
 
-# 使用流重定向操作符将错误信息重定向到文件
-Write-Error "这是另一个错误消息" 2> errorlog.txt
+## 如何操作：
 
-# 示例输出（显示于控制台）
-Write-Error : 这是一个错误消息
-+ CategoryInfo          : NotSpecified: (:) [Write-Error], WriteErrorException
-+ FullyQualifiedErrorId : Microsoft.PowerShell.Commands.WriteErrorException
+PowerShell 通过使用 `Write-Error` cmdlet 或将输出定向到 `$host.ui.WriteErrorLine()` 方法来简化写入 stderr 的过程。然而，对于直接的 stderr 重定向，你可能更倾向于使用 .NET 方法或 PowerShell 本身提供的文件描述符重定向。
+
+**示例 1:** 使用 `Write-Error` 将错误消息写入 stderr。
+
+```powershell
+Write-Error "这是一个错误消息。"
 ```
 
-## 深入探讨
-PowerShell最初是作为Windows环境的自动化和配置工具。它从经典的命令行和Unix shell获得灵感，实现了标准输入输出流的概念。与输出到控制台（Standard Output）不同，输出到标准错误（Standard Error）的实践允许开发者分离错误信息，有利于日志管理和自动化处理。在 PowerShell 里，使用 `Write-Error` 命令是最直观的方式，但还可以使用 `.NET` 类库或 `2>` 流重定向来实现高级功能和错误处理。
+输出到 stderr:
+```
+Write-Error: 这是一个错误消息。
+```
 
-## 相关资源
-- [about_Redirection](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_redirection)
-- [about_Throw](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_throw)
-- [about_Try_Catch_Finally](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_try_catch_finally)
+**示例 2:** 使用 `$host.ui.WriteErrorLine()` 直接写入 stderr。
+
+```powershell
+$host.ui.WriteErrorLine("直接写入 stderr。")
+```
+
+输出到 stderr:
+```
+直接写入 stderr。
+```
+
+**示例 3:** 使用 .NET 方法写入 stderr。
+
+```powershell
+[Console]::Error.WriteLine("使用 .NET 方法写入 stderr")
+```
+
+此方法的输出:
+```
+使用 .NET 方法写入 stderr
+```
+
+**示例 4:** 使用文件描述符 `2>` 重定向错误输出。
+
+PowerShell 中的文件描述符可以重定向不同的流。对于 stderr，文件描述符是 `2`。这是一个例子，展示了在执行生成错误的命令时将 stderr 重定向到名为 `error.log` 的文件。
+
+```powershell
+Get-Item NonExistentFile.txt 2> error.log
+```
+
+这个示例没有产生控制台输出，但在当前目录生成了一个包含尝试访问不存在的文件的错误消息的 `error.log` 文件。
+
+总之，PowerShell 提供了多种方法来有效地编写和管理错误输出，允许在脚本和应用程序中采用复杂的错误处理和日志记录策略。

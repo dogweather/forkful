@@ -1,33 +1,62 @@
 ---
-title:                "रेगुलर एक्सप्रेशन का उपयोग"
-date:                  2024-01-19
-simple_title:         "रेगुलर एक्सप्रेशन का उपयोग"
-
+title:                "रेगुलर एक्सप्रेशन्स का उपयोग करना"
+date:                  2024-02-03T19:17:16.374111-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "रेगुलर एक्सप्रेशन्स का उपयोग करना"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/elixir/using-regular-expressions.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (क्या और क्यों?)
-रेगुलर एक्सप्रेशन्स (Regular Expressions) पैटर्न मैचिंग के लिए उपयोग किए जाते हैं। ये प्रोग्रामर्स को टेक्स्ट सर्च, डेटा वैलिडेशन, और क्लीनिंग में सहायता करते हैं।
+## क्या और क्यों?
 
-## How to: (कैसे करें:)
+एलिक्सिर में नियमित अभिव्यक्तियाँ (regex) विशिष्ट पैटर्न के आधार पर स्ट्रिंग्स की खोज, मिलान, और हेरफेर के लिए प्रयोग की जाती हैं। प्रोग्रामर स्ट्रिंग हैंडलिंग में इसकी कुशलता और बहुउपयोगिता का लाभ उठाते हैं, जैसे कि प्रारूपों का सत्यापन (ईमेल, यूआरएल), लॉग्स या डेटा निष्कर्षण के लिए।
+
+## कैसे:
+
+एलिक्सिर `Regex` मॉड्यूल का उपयोग करता है, जो एर्लैंग की regex लाइब्रेरी का लाभ उठाता है, regex ऑपरेशनों के लिए। यहाँ मूल उपयोग हैं:
+
 ```elixir
-# टेक्स्ट में 'Elixir' शब्द की खोज
-regex = ~r/Elixir/
-String.match?("I love programming in Elixir!", regex)
-# आउटपुट: true
+# एक पैटर्न का मिलान - पहले मैच को लौटाता है
+match_result = Regex.run(~r/hello/, "hello world")
+IO.inspect(match_result) # आउटपुट: ["hello"]
 
-# पैटर्न के साथ कैप्चर ग्रुप बनाना
-regex_captures = ~r/(\d{4})-(\d{2})-(\d{2})/
-String.scan("2023-04-12", regex_captures)
-# आउटपुट: [["2023", "04", "12"]]
+# सभी मैचों को ढूँढना
+all_matches = Regex.scan(~r/\d/, "There are 2 apples and 5 oranges.")
+IO.inspect(all_matches) # आउटपुट: [["2"], ["5"]]
+
+# एक स्ट्रिंग के हिस्सों को बदलना
+replaced_string = Regex.replace(~r/\s+/, "Elixir is fun", "_")
+IO.inspect(replaced_string) # आउटपुट: "Elixir_is_fun"
 ```
 
-## Deep Dive (गहन जानकारी)
-रेगुलर एक्सप्रेशन्स की उत्पत्ति सैद्धांतिक कंप्यूटर विज्ञान और औपचारिक भाषा सिद्धांत से हुई है। एलिक्सर में `Regex` मॉड्यूल इनका प्रयोग करता है। एल्टरनेटिव्स में स्ट्रिंग पैटर्न मैचिंग के अन्य तरीके शामिल हैं, जैसे कि `String.contains?` या स्ट्रिंग फ़ंक्शन्स के अन्य ऑप्शन्स। `Regex` मॉड्यूल अंडरलाइंग ERTS (Erlang Runtime System) का प्रयोग करता है।
+अधिक जटिल पैटर्न और कार्यक्षमताओं के लिए, आप तृतीय-पक्ष पुस्तकालयों का उपयोग करने पर विचार कर सकते हैं, हालाँकि अधिकांश मुख्य स्ट्रिंग और पैटर्न मिलान कार्यों के लिए, एलिक्सिर का निर्मित `Regex` मॉड्यूल काफी शक्तिशाली है।
 
-## See Also (और जानकारी के लिए)
-- [Elixir Regex Module](https://hexdocs.pm/elixir/Regex.html)
-- [Erlang's documentation on regex](https://erlang.org/doc/man/re.html)
+एक केस-असंवेदनशील मैच निष्पादित करने के लिए, `i` विकल्प का उपयोग करें:
+
+```elixir
+case_insensitive_match = Regex.run(~r/hello/i, "Hello World")
+IO.inspect(case_insensitive_match) # आउटपुट: ["Hello"]
+```
+
+कुशलता के लिए, Regex अभिव्यक्तियों को बार-बार उपयोग किए जाने पर पूर्व-संकलित किया जा सकता है:
+
+```elixir
+precompiled_regex = Regex.compile!("hello")
+match_result_precompiled = Regex.run(precompiled_regex, "hello world")
+IO.inspect(match_result_precompiled) # आउटपुट: ["hello"]
+```
+
+एलिक्सिर नामित कैप्चर्स का समर्थन भी करता है, जो एक स्ट्रिंग के विशिष्ट भागों को निकालने के लिए बहुत उपयोगी हो सकता है, जबकि आपके कोड को अधिक पठनीय बनाता है:
+
+```elixir
+date_string = "2023-04-15"
+pattern = ~r/(?<year>\d{4})-(?<month>\d{2})-(?<day>\d{2})/
+{:ok, captures} = Regex.run(pattern, date_string, capture: :all_names)
+IO.inspect(captures) # आउटपुट: %{"year" => "2023", "month" => "04", "day" => "15"}
+```
+
+यह संक्षिप्त अवलोकन एलिक्सिर द्वारा नियमित अभिव्यक्तियों से निपटने की सुविधा को रेखांकित करता है, जिससे शक्तिशाली स्ट्रिंग हेरफेर और डेटा निष्कर्षण तकनीकों को सक्षम किया जा सकता है।

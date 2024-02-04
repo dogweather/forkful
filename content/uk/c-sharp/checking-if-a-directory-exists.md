@@ -1,48 +1,100 @@
 ---
 title:                "Перевірка наявності директорії"
-date:                  2024-01-20T14:56:13.716704-07:00
+date:                  2024-02-03T19:08:22.853851-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Перевірка наявності директорії"
-
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/c-sharp/checking-if-a-directory-exists.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? / Що та Чому?
-Перевірка існування директорії – це процес, що дозволяє визначити, чи фактично існує папка на файловій системі. Програмісти роблять це для уникнення помилок під час спроби доступу або модифікації файлів у неіснуючій директорії.
+## Що і Чому?
 
-## How to: / Як це зробити:
-```C#
+Перевірка наявності директорії в C# полягає у верифікації присутності папки за вказаним шляхом у файловій системі. Програмісти роблять це, щоб уникнути помилок, таких як спроби читання з або запису в неіснуючу директорію, забезпечуючи більш гладке маніпулювання файлами та директоріями.
+
+## Як це зробити:
+
+### Використовуючи System.IO
+
+C# надає простір імен `System.IO`, який містить клас `Directory`, що пропонує прямий спосіб перевірки існування директорії через метод `Exists`.
+
+```csharp
 using System;
 using System.IO;
 
-class Program {
-    static void Main() {
-        string path = @"C:\MyFolder";
+class Program
+{
+    static void Main()
+    {
+        string directoryPath = @"C:\ExampleDirectory";
 
-        if (Directory.Exists(path)) {
-            Console.WriteLine("Directory exists.");
-        } else {
-            Console.WriteLine("Directory does not exist.");
-        }
+        // Перевіряємо, чи існує директорія
+        bool directoryExists = Directory.Exists(directoryPath);
+
+        // Виводимо результат
+        Console.WriteLine("Directory exists: " + directoryExists);
     }
 }
 ```
-Sample Output:
-```
-Directory exists.
-```
-or
-```
-Directory does not exist.
-```
-Above code checks if `MyFolder` exists in the `C:` drive.
 
-## Deep Dive / Поглиблений Розділ:
-Checking if a directory exists in C# can be traced back to the .NET Framework days, using the `System.IO` namespace. Alternatives include creating a directory if it doesn't exist with `Directory.CreateDirectory(path)` or trying to access the directory and handling exceptions. The check is implemented using native Windows API calls or system calls on other operating systems, abstracted by .NET's runtime environment to work across platforms.
+**Приклад виводу:**
 
-## See Also / Див. також:
-- MSDN System.IO.Directory.Exists method: https://learn.microsoft.com/en-us/dotnet/api/system.io.directory.exists
-- Microsoft's guide to file system IO: https://learn.microsoft.com/en-us/dotnet/standard/io/file-system
-- Stack Overflow discussions on directory checking in C#: https://stackoverflow.com/search?q=C%23+check+if+directory+exists
+```
+Directory exists: False
+```
+
+У випадку, якщо директорія дійсно існує за шляхом `C:\ExampleDirectory`, вивід буде `True`.
+
+### Використання System.IO.Abstractions для модульного тестування
+
+Коли справа доходить до того, щоб зробити ваш код придатним для модульного тестування, особливо коли він взаємодіє з файловою системою, пакет `System.IO.Abstractions` є популярним вибором. Він дозволяє вам абстрагуватися та імітувати операції з файловою системою у ваших тестах. Ось як ви могли б перевірити існування директорії, використовуючи цей підхід:
+
+Спочатку, переконайтеся, що ви встановили пакет:
+
+```
+Install-Package System.IO.Abstractions
+```
+
+Після цього, ви можете інжектити `IFileSystem` у ваш клас та використовувати його для перевірки існування директорії, що дозволяє легше проводити модульне тестування.
+
+```csharp
+using System;
+using System.IO.Abstractions;
+
+class Program
+{
+    private readonly IFileSystem _fileSystem;
+
+    public Program(IFileSystem fileSystem)
+    {
+        _fileSystem = fileSystem;
+    }
+
+    public bool CheckDirectoryExists(string directoryPath)
+    {
+        return _fileSystem.Directory.Exists(directoryPath);
+    }
+
+    static void Main()
+    {
+        var fileSystem = new FileSystem();
+        var program = new Program(fileSystem);
+
+        string directoryPath = @"C:\ExampleDirectory";
+        bool directoryExists = program.CheckDirectoryExists(directoryPath);
+
+        Console.WriteLine("Directory exists: " + directoryExists);
+    }
+}
+```
+
+**Приклад виводу:**
+
+```
+Directory exists: False
+```
+
+Цей підхід розв'язує вашу програмну логіку від прямого доступу до файлової системи, роблячи ваш код більш модульним, придатним для тестування та підтримуваним.

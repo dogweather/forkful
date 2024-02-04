@@ -1,61 +1,64 @@
 ---
 title:                "Робота з JSON"
-date:                  2024-01-19
+date:                  2024-02-03T19:24:27.997983-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Робота з JSON"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/swift/working-with-json.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Що це таке та навіщо?
+## Що і чому?
 
-JSON (JavaScript Object Notation) — це формат обміну даними. Програмісти використовують його через його простоту та широку підтримку у різних мовах програмування, включаючи Swift, для зберігання даних та взаємодії з серверами.
+Робота з JSON у Swift означає роботу з легковісним форматом даних для обміну даними. Програмісти використовують JSON для передачі даних між сервером і веб-додатком, оскільки він зрозумілий і легко аналізується людьми та машинами.
 
-## Як це зробити:
+## Як це робити:
+
+Swift робить аналіз JSON прямолінійним із використанням протоколу `Codable`. Ось як можна декодувати JSON до об'єкта Swift:
 
 ```Swift
 import Foundation
 
-// Дані JSON в форматі строки
-let jsonString = """
-{
-    "name": "Володимир",
-    "age": 30,
-    "isDeveloper": true
-}
-"""
-
-// Структура для відображення даних JSON
+// Визначаємо модель, яка відповідає протоколу Codable
 struct User: Codable {
     var name: String
     var age: Int
-    var isDeveloper: Bool
 }
 
-// Парсинг JSON
+// Рядок JSON
+let jsonString = """
+{
+    "name": "Джон Доу",
+    "age": 30
+}
+"""
+
+// Перетворюємо рядок JSON на Data
 if let jsonData = jsonString.data(using: .utf8) {
+    // Декодуємо дані JSON до об'єкта User
     do {
         let user = try JSONDecoder().decode(User.self, from: jsonData)
-        print("Ім'я: \(user.name), Вік: \(user.age), Розробник: \(user.isDeveloper)")
+        print("Ім'я: \(user.name), Вік: \(user.age)")
     } catch {
-        print("Помилка при парсингу: \(error)")
+        print("Помилка декодування JSON: \(error)")
     }
 }
 ```
 
-Вивід:
+Приклад виводу:
 ```
-Ім'я: Володимир, Вік: 30, Розробник: true
+Ім'я: Джон Доу, Вік: 30
 ```
 
-## Глибинне занурення:
+## Глибше занурення
 
-JSON вперше був представлений Дугласом Крокфордом у 2001 році. Його легкість та зрозумілість зробили його популярним варіантом для взаємодії між клієнтом та сервером, а також для зберігання даних. Альтернативами JSON є XML та YAML, але вони помітно важчі для читання та написання. В Swift з використанням `Codable` протоколу реалізовано зручну серіалізацію та десеріалізацію JSON, що робить його обробку ефективною та інтуїтивною.
+JSON (JavaScript Object Notation) широко використовується з початку 2000-х років, після того як Дуглас Крокфорд його визначив. Він замінив XML у багатьох випадках завдяки своєму простішому синтаксису та кращій продуктивності. Хоча `Codable` в Swift є головним для роботи з JSON, існують альтернативи, такі як `JSONSerialization`, коли потрібно працювати з типами, що не підпадають під протокол Codable. За лаштунками `Codable` абстрагує низькорівневий аналіз і робить серіалізацію/десеріалізацію безшовною.
 
-## Ще трохи інформації:
+## Дивіться також
 
-- [raywenderlich.com - повне керівництво по Codable у Swift](https://www.raywenderlich.com/3418439-encoding-and-decoding-in-swift)
-- [Apple Developer - Foundation's JSONSerialization](https://developer.apple.com/documentation/foundation/jsonserialization)
-- [JSON.org - специфікація JSON](http://json.org/json-uk.html)
+- Дізнайтеся більше про JSON і Swift на офіційному блозі Swift: [Swift.org](https://swift.org/blog/)
+- Ознайомтеся з документацією `Codable`: [Swift Codable](https://developer.apple.com/documentation/swift/codable)
+- Для складних структур JSON розгляньте можливість використання сторонніх бібліотек, таких як SwiftyJSON, доступних на [GitHub](https://github.com/SwiftyJSON/SwiftyJSON).

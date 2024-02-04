@@ -1,39 +1,70 @@
 ---
-title:                "Einsatz von regulären Ausdrücken"
-date:                  2024-01-19
-simple_title:         "Einsatz von regulären Ausdrücken"
-
+title:                "Reguläre Ausdrücke verwenden"
+date:                  2024-02-03T19:17:47.116903-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Reguläre Ausdrücke verwenden"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/php/using-regular-expressions.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Reguläre Ausdrücke (Regex) sind Muster, welche zum Suchen und Ersetzen in Strings verwendet werden. Sie sind extrem leistungsstark und flexibel, um präzise Textmanipulationen und komplexe Suchvorgänge durchzuführen.
 
-## How to:
-Regex in PHP nutzt die `preg_*` Funktionen. Hier sind einfache Beispiele:
+Reguläre Ausdrücke (regex) in PHP sind Muster, die verwendet werden, um Zeichenkombinationen in Zeichenketten abzugleichen, wodurch komplexe Such- und Ersetzungsoperationen und Datenvalidierung ermöglicht werden. Programmierer nutzen regex wegen seiner Stärke und Flexibilität beim Parsen von Texten, Validieren von Formularen oder Extrahieren von Webdaten, was es zu einem unverzichtbaren Werkzeug im Arsenal eines Entwicklers macht.
 
-```PHP
-// Prüfen, ob ein String eine E-Mail-Adresse enthält
-$emailPattern = '/[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}/';
-$text = "Meine E-Mail ist beispiel@example.com.";
-if (preg_match($emailPattern, $text, $matches)) {
-    echo "Gefunden: " . $matches[0]; // Output: Gefunden: beispiel@example.com
+## Wie man es benutzt:
+
+PHP unterstützt reguläre Ausdrücke durch die PCRE-Bibliothek (Perl Compatible Regular Expressions), die einen reichen Satz von Funktionen bietet. So verwendet man sie:
+
+### Ein Muster abgleichen:
+
+Um zu überprüfen, ob ein Muster innerhalb einer Zeichenkette existiert, verwendet man `preg_match()`. Diese Funktion gibt 1 zurück, wenn das Muster in der Zeichenkette gefunden wurde, und 0, wenn nicht.
+
+```php
+if (preg_match("/\bweb\b/i", "PHP ist eine Skriptsprache für das Web")) {
+    echo "Ein Treffer wurde gefunden.";
+} else {
+    echo "Es wurde kein Treffer gefunden.";
 }
-
-// Ersetzen aller Zahlen durch '#'
-$numberPattern = '/\d+/';
-$string = "Ich habe 100 Äpfel und 10 Bananen.";
-$replacement = preg_replace($numberPattern, '#', $string);
-echo $replacement; // Output: Ich habe # Äpfel und # Bananen.
+// Ausgabe: Ein Treffer wurde gefunden.
 ```
 
-## Deep Dive
-Regex gibt es seit den 1950er Jahren und wurde in den 60ern durch Ken Thompson in Texteditoren eingeführt. Alternativen zu Regex sind String-Funktionen wie `strpos` oder `str_replace`, die schneller sein können, aber weniger mächtig. Reguläre Ausdrücke in PHP verwenden die PCRE (Perl Compatible Regular Expressions) Bibliothek, die komplexere Pattern erlaubt als POSIX Regex.
+### Alle Treffer finden:
 
-## See Also
-- PHP Manual on PCRE: https://www.php.net/manual/en/book.pcre.php
-- Regex Tester Online: https://regex101.com/
-- Regex Crash-Kurs: https://www.regular-expressions.info/tutorial.html
+`preg_match_all()` wird verwendet, wenn man alle Vorkommen eines Musters in einer Zeichenkette finden muss.
+
+```php
+$text = "Katzen und Hunde";
+$pattern = "/\b([a-z]+)\b/i";
+preg_match_all($pattern, $text, $matches);
+print_r($matches[0]);
+// Ausgabe: Array ( [0] => Katzen [1] => und [2] => Hunde )
+```
+
+### Text ersetzen:
+
+Um Text zu ersetzen, der einem regulären Ausdruck entspricht, wird `preg_replace()` verwendet. Es ist unglaublich mächtig für die Formatierung und Bereinigung von Daten.
+
+```php
+$originalText = "15. April 2003";
+$pattern = "/(\w+) (\d+), (\d+)/i";
+$replacement = '${1}1,$3';
+echo preg_replace($pattern, $replacement, $originalText);
+// Ausgabe: April1,2003
+```
+
+### Zeichenketten aufteilen:
+
+Man kann eine Zeichenkette in ein Array aufteilen, indem man `preg_split()` verwendet und ein Muster für den Trenner angibt.
+
+```php
+$text = "PHP ist eine, extrem beliebte, Skriptsprache";
+$parts = preg_split("/,\s*/", $text);
+print_r($parts);
+// Ausgabe: Array ( [0] => PHP ist [1] => eine extrem beliebte [2] => Skriptsprache )
+```
+
+Darüber hinaus können Rahmenwerke und Bibliotheken wie Symfony’s `Finder`-Komponente oder Laravels Sammlung von Hilfsfunktionen für komplexe regex-Muster und Aufgaben eine bequemere Abstraktionsebene bieten. Das Verständnis und die Nutzung der integrierten PCRE-Funktionen von PHP sind jedoch entscheidend für eine effiziente Textverarbeitung und Validierung direkt in PHP-Skripten.

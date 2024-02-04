@@ -1,48 +1,82 @@
 ---
-title:                "编写测试代码"
-date:                  2024-01-19
-simple_title:         "编写测试代码"
-
+title:                "编写测试"
+date:                  2024-02-03T19:30:19.288186-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "编写测试"
 tag:                  "Testing and Debugging"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/elixir/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? 什么 & 为什么？
-编写测试是创建用于自动验证代码功能的脚本。程序员这样做是为了确保程序按预期运行，并在未来的开发中防止回归错误。
+## 什么 & 为什么?
+在Elixir中编写测试涉及创建自动化脚本来验证您的代码的行为。程序员这样做是为了保证质量，防止回归，并促进代码重构，使开发过程更加可靠和高效。
 
-## How to: 怎么做
-以 Elixir 中的 ExUnit 为例，这是它的主要测试框架。你可以创建一个测试文件，并使用 `test` 宏来编写测试用例。
+## 如何操作:
+Elixir使用ExUnit作为其内置测试框架，它既强大又易于使用。这里有一个基本例子：
+
+1. 在你的Elixir项目的`test`目录中创建一个新的测试文件。例如，如果您正在测试一个名为`MathOperations`的模块，您的测试文件可以是`test/math_operations_test.exs`。
 
 ```elixir
-# test/my_app_test.exs
-
-ExUnit.start()
-
-defmodule MyAppTest do
+# test/math_operations_test.exs
+defmodule MathOperationsTest do
   use ExUnit.Case
 
-  test "the truth" do
-    assert 1 + 1 == 2
+  # 这是一个简单的测试案例，以检查加法函数
+  test "两个数字的加法" do
+    assert MathOperations.add(1, 2) == 3
   end
 end
 ```
 
-运行测试后的输出：
+要运行你的测试，请在终端中使用`mix test`命令。如果`MathOperations.add/2`函数正确地加了两个数字，你将看到类似以下的输出：
 
-```shell
+```
 ..
 
-Finished in 0.04 seconds
-1 test, 0 failures
+完成于0.03秒
+1个测试, 0个失败
 ```
 
-## Deep Dive 深入探索
-ExUnit 是 Elixir 语言自带的测试库，由 José Valim 和其他贡献者开发，以确保 Elixir 程序的可靠性和健壮性。在 Elixir 圈里，还有如 `Espec` 的替代框架，它受 RSpec 启发。ExUnit 采用了一个模块化的设计，让开发人员可以灵活地添加自定义功能。
+对于涉及外部服务或API的测试，你可能想使用模拟库，例如`mox`，以避免实际触及服务：
 
-## See Also 另请参阅
-- Elixir 官网的测试指南: [Elixir Testing Introduction](https://elixir-lang.org/getting-started/mix-otp/introduction-to-mix.html#testing)
-- ExUnit 文档: [ExUnit Documentation](https://hexdocs.pm/ex_unit/ExUnit.html)
-- Espec GitHub: [Espec on GitHub](https://github.com/antonmi/espec)
+1. 在`mix.exs`中将`mox`添加到你的依赖项：
+
+```elixir
+defp deps do
+  [
+    {:mox, "~> 1.0.0", only: :test},
+    # 其他依赖...
+  ]
+end
+```
+
+2. 在你的测试助手中定义一个模拟模块(`test/test_helper.exs`):
+
+```elixir
+Mox.defmock(HTTPClientMock, for: HTTPClientBehaviour)
+```
+
+3. 在你的测试案例中使用模拟：
+
+```elixir
+# test/some_api_client_test.exs
+defmodule SomeAPIClientTest do
+  use ExUnit.Case
+  import Mox
+
+  # 这告诉Mox验证此模拟是否如预期般被调用
+  setup :verify_on_exit!
+
+  test "从API获取数据" do
+    # 设置模拟响应
+    expect(HTTPClientMock, :get, fn _url -> {:ok, "模拟响应"} end)
+    
+    assert SomeAPIClient.get_data() == "模拟响应"
+  end
+end
+```
+
+当运行`mix test`时，此设置允许你将单元测试与真实的外部依赖隔离，专注于你自己代码的行为。这种模式确保你的测试运行迅速并保持可靠，无论外部服务状态或互联网连接如何。

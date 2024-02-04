@@ -1,68 +1,104 @@
 ---
 title:                "עבודה עם YAML"
-date:                  2024-01-19
+date:                  2024-02-03T19:27:31.568694-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "עבודה עם YAML"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/swift/working-with-yaml.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-מה זה ולמה? עבודה עם YAML בשפת Swift מאפשרת לקרוא ולכתוב קבצי YAML, תסדיר נפוץ להגדרות תצורה. תכניתנים עושים זאת משום שזה פשוט לקריאה ונוח לשיתוף קונפיגורציות.
+## מה ולמה?
+YAML, שמשמעותו "YAML Ain't Markup Language" (YAML אינו שפת סימון), הוא תקן סידור נתונים ידידותי לאדם לכל שפות התכנות. תכנתיים נוהגים להשתמש בו לקבצי תצורה, הודעות בין-תהליכיות ואחסון נתונים מכיוון שהתמצאותו הרבה יותר קרובה לאנגלית פשוטה בהשוואה לפורמטים אחרים כמו XML או JSON, מה שהופך אותו לפשוט יותר להבנה ולכתיבה.
 
-## How to:
-איך לעשות:
-קודם, ידרש מודול חיצוני כי Swift לא מספק פונקציונליות קריאת YAML ישירות. נוכל להשתמש ב-Yams, למשל. תקינו דרך Swift Package Manager (SPM). אחרי הגדרת התלות, ניתן לקרוא ולכתוב YAML כך:
+## איך לעשות:
+Swift לא כוללת תמיכה מובנית לפענוח והסרה פלטת נתונים ב-YAML, מה שמחייב שימוש בספריות צד שלישי. בחירה פופולרית היא `Yams`, ספרייה לעבודה עם YAML ב-Swift.
 
-```Swift
+ראשית, אתה צריך להוסיף `Yams` לפרויקט שלך. אם אתה משתמש ב-Swift Package Manager, תוכל להוסיף אותו כתלות בקובץ `Package.swift` שלך:
+
+```swift
+dependencies: [
+    .package(url: "https://github.com/jpsim/Yams.git", from: "4.0.0")
+]
+```
+
+### פענוח YAML ל-Swift
+נניח שיש לך את התצורה YAML הבאה לאפליקציה פשוטה:
+
+```yaml
+name: MyApp
+version: 1.0
+environment: development
+features:
+  - login
+  - notifications
+```
+
+הנה איך תוכל לפענח מחרוזת YAML זו ב-Swift באמצעות `Yams`:
+
+```swift
 import Yams
 
-// קריאת YAML
 let yamlString = """
-name: Yosef
-job: Developer
-skills:
-  - Swift
-  - SwiftUI
+name: MyApp
+version: 1.0
+environment: development
+features:
+  - login
+  - notifications
 """
 
-if let person = try? Yams.load(yaml: yamlString) {
-    print(person)
-}
-
-// כתיבת YAML
-let personDict: [String: Any] = [
-  "name": "Yosef",
-  "job": "Developer",
-  "skills": ["Swift", "SwiftUI"]
-]
-
-if let yamlOutput = try? Yams.dump(object: personDict) {
-    print(yamlOutput)
+do {
+    if let data = try Yams.load(yaml: yamlString) as? [String: Any] {
+        print(data)
+        // דוגמה לגישה לנתונים שנפענחו
+        if let name = data["name"] as? String {
+            print("שם האפליקציה: \(name)")
+        }
+    }
+} catch {
+    print("שגיאה בפענוח YAML: \(error)")
 }
 ```
 
-פלט לדוגמא:
-```
-// פלט קריאת YAML
-["name": Yosef, "job": Developer, "skills": [Swift, SwiftUI]]
+פלט לדוגמה:
 
-// פלט כתיבת YAML
-name: Yosef
-job: Developer
-skills:
-  - Swift
-  - SwiftUI
+```
+["name": MyApp, "version": 1.0, "environment": "development", "features": ["login", "notifications"]]
+שם האפליקציה: MyApp
 ```
 
-## Deep Dive
-טבילה עמוקה:
-YAML ("YAML Ain't Markup Language") מקורו משנת 2001, כאלטרנטיבה ל-XML ול-TOML. תכונותיו של שפת הסימונים הזו כוללות אנושיות ונוחות עיבוד על ידי מחשב. ב-Swift, חוסר היכולת לקרוא ישירות YAML דורש שימוש בספריות כמו Yams. Yams מספקת API שמאפשר לנו לעבוד עם YAML באופן ידידותי ל-Swift.
+### הסרה פלטת של אובייקטי Swift ל-YAML
+המרת אובייקט של Swift חזרה למחרוזת YAML היא גם קלה עם `Yams`. נניח שיש לך את אותה מבנה נתונים שצריך להיות מוסר פלט:
 
-## See Also
-ראה גם:
-- דוקומנטציה של Yams בגיטהאב: [Yams GitHub](https://github.com/jpsim/Yams)
-- מורה ל-YAML: [Learn YAML in Y minutes](https://learnxinyminutes.com/docs/yaml/)
-- דוקומנטציה של YAML: [The Official YAML Website](https://yaml.org)
+```swift
+let appInfo = [
+    "name": "MyApp",
+    "version": 1.0,
+    "environment": "development",
+    "features": ["login", "notifications"]
+] as [String : Any]
+
+do {
+    let yamlString = try Yams.dump(object: appInfo)
+    print(yamlString)
+} catch {
+    print("שגיאה בהסרה פלטת ל-YAML: \(error)")
+}
+```
+
+זה יפיק מחרוזת בפורמט YAML:
+
+```yaml
+environment: development
+features:
+  - login
+  - notifications
+name: MyApp
+version: 1.0
+```
+
+דוגמאות אלה מדגימות פעולות בסיסיות לעבודה עם YAML ביישומי Swift. זכור, בעוד ש-YAML מצטיין בקריאות לאדם ובנוחות שימוש, תמיד שקול את הצרכים הספציפיים של היישום שלך, במיוחד לגבי ביצועים ומורכבות, כאשר אתה בוחר את פורמט הסידור הנתונים שלך.

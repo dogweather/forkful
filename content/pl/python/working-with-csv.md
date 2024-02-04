@@ -1,39 +1,95 @@
 ---
 title:                "Praca z plikami CSV"
-date:                  2024-01-19
+date:                  2024-02-03T19:21:03.767104-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Praca z plikami CSV"
-
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/python/working-with-csv.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
-Praca z plikami CSV (ang. Comma-Separated Values) to obsługa danych tabelarycznych w plikach tekstowych, gdzie wartości są rozdzielane przecinkami. Programiści używają tego formatu ze względu na jego prostotę i uniwersalność – łatwość wymiany danych między różnymi programami i językami programowania.
+## Co i dlaczego?
+Praca z plikami CSV (Comma-Separated Values), czyli z wartościami rozdzielanymi przecinkami, polega na odczycie z plików CSV oraz zapisywaniu do nich danych, co jest powszechnym formatem przechowywania danych tabelarycznych. Programiści robią to, aby łatwo wymieniać i przechowywać dane w prostym formacie tekstowym, który jest szeroko obsługiwany na różnych platformach i językach.
 
-## Jak to zrobić:
+## Jak to robić:
+Python oferuje wbudowany moduł `csv`, który pozwala na obsługę plików CSV, co sprawia, że odczyt z nich i zapisywanie do nich jest prostsze. Dla bardziej zaawansowanych i złożonych manipulacji danymi, popularna jest biblioteka zewnętrzna `pandas`.
+
+### Korzystanie z modułu `csv`
+
+#### Odczyt pliku CSV
 ```python
 import csv
 
-# Odczyt danych z pliku CSV
-with open('dane.csv', newline='', encoding='utf-8') as plik:
-    czytacz = csv.reader(plik)
-    for wiersz in czytacz:
-        print(wiersz)
-
-# Zapis danych do pliku CSV
-dane = [['imię', 'nazwisko'], ['Jan', 'Kowalski'], ['Anna', 'Nowak']]
-with open('wyniki.csv', mode='w', newline='', encoding='utf-8') as plik:
-    pisarz = csv.writer(plik)
-    for rekord in dane:
-        pisarz.writerow(rekord)
+with open('sample.csv', mode='r') as file:
+    csv_reader = csv.reader(file)
+    for row in csv_reader:
+        print(row)
+```
+*Zakładając, że `sample.csv` zawiera:*
+```
+name,age,city
+John,22,New York
+Jane,28,Los Angeles
+```
+*Wynik:*
+```
+['name', 'age', 'city']
+['John', '22', 'New York']
+['Jane', '28', 'Los Angeles']
 ```
 
-## Głębsze spojrzenie:
-CSV to format znany od lat 70., gdy po raz pierwszy został użyty w ramach systemu operacyjnego Unix. Alternatywą dla CSV są formaty jak JSON czy XML, które pozwalają na bardziej skomplikowaną strukturę danych. Implementacja obsługi CSV w Pythonie jest prosta dzięki wbudowanemu modułowi `csv`. Warto jednak pamiętać o odpowiednim kodowaniu pliku tekstowego (np. UTF-8), aby uniknąć problemów z polskimi znakami.
+#### Zapis do pliku CSV
+```python
+import csv
 
-## Zobacz również:
-- Dokumentacja Pythona dla modułu csv: https://docs.python.org/3/library/csv.html
-- Porównanie formatów danych CSV, JSON, XML: https://www.datacamp.com/community/tutorials/csv-json-xml-difference
-- Porady dotyczące kodowania UTF-8 w Pythonie: https://docs.python.org/3/howto/unicode.html
+rows = [['name', 'age', 'city'], ['Jack', '33', 'Chicago'], ['Emily', '41', 'Denver']]
+
+with open('output.csv', mode='w', newline='') as file:
+    writer = csv.writer(file)
+    writer.writerows(rows)
+```
+*Tworzy lub nadpisuje `output.csv` z:*
+```
+name,age,city
+Jack,33,Chicago
+Emily,41,Denver
+```
+
+### Korzystanie z `pandas` dla CSV
+`pandas` to potężna biblioteka do manipulowania danymi, która upraszcza pracę z plikami CSV między innymi formatami danych.
+
+#### Instalacja pandas
+```shell
+pip install pandas
+```
+
+#### Odczyt pliku CSV z użyciem pandas
+```python
+import pandas as pd
+
+df = pd.read_csv('sample.csv')
+print(df)
+```
+*Wynik:*
+```
+    name  age         city
+0   John   22    New York
+1   Jane   28  Los Angeles
+```
+
+#### Zapis do pliku CSV z użyciem pandas
+```python
+import pandas as pd
+
+df = pd.DataFrame({'name': ['Jack', 'Emily'], 'age': [33, 41], 'city': ['Chicago', 'Denver']})
+df.to_csv('output_pandas.csv', index=False)
+```
+*Tworzy lub nadpisuje `output_pandas.csv` z:*
+```
+name,age,city
+Jack,33,Chicago
+Emily,41,Denver
+```

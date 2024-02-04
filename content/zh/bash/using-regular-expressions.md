@@ -1,53 +1,67 @@
 ---
 title:                "使用正则表达式"
-date:                  2024-01-19
+date:                  2024-02-03T19:15:58.662935-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "使用正则表达式"
-
 tag:                  "Strings"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/bash/using-regular-expressions.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (是什么？为什么？)
-正则表达式是文本搜索、替换和格式化的强大工具。程序员使用它进行复杂的文本操作，快速而准确。
+## 什么 & 为什么？
 
-## How to (如何操作？)
-### 搜索文本
-```Bash
-echo "找找 'bash' 在不在这句话里。" | grep -Eo 'bash'
-```
-输出：
-```
-bash
-```
+在 Bash 中使用正则表达式（regex）允许你根据特定模式来搜索、操作和处理字符串与文件。程序员使用 regex 来进行输入验证、解析日志文件和数据提取等任务，因为它提供了一种灵活而强大的方式来指定复杂文本处理需求的模式。
 
-### 文件中替换字符串
-```Bash
-echo -e "老王\n老李\n老赵" | sed 's/老/小/g'
-```
-输出：
-```
-小王
-小李
-小赵
+## 如何操作：
+
+### 基本模式匹配
+要找出一个字符串是否符合一个模式，你可以使用 `grep`，这是一个命令行实用程序，用于搜索纯文本数据集中匹配正则表达式的行：
+
+```bash
+echo "Hello, World!" | grep -o "World"
+# 输出：World
 ```
 
-### 校验格式
-```Bash
-[[ "example@domain.com" =~ ^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$ ]] && echo "有效的邮箱地址" || echo "无效的邮箱地址"
-```
-输出：
-```
-有效的邮箱地址
+### 提取特定数据
+要提取与你的 regex 模式匹配的数据部分，你可以使用 `grep` 的 `-o` 选项：
+
+```bash
+echo "Error: File not found" | grep -oE "[A-Za-z]+:"
+# 输出：Error:
 ```
 
-## Deep Dive (深入了解)
-正则表达式起源于1950年代的理论计算机科学。与通配符不同，它允许非常特定的字符串搜索模式。在各种编程语言和文本处理工具中有实现，但有细微差别。除了标准的Unix工具如grep和sed，现代编程语言如Python、Perl和Java均内建有强大的正则表达式库。
+### 用 `sed` 使用 Regex
+`sed`（流编辑器）是一种强大的用于解析和转换文本的工具。以下是如何结合 `sed` 使用 regex 来替换文本：
 
-## See Also (另请参阅)
-- [GNU Bash 文档](https://www.gnu.org/software/bash/manual/bash.html)
-- [grep 手册页面](https://www.gnu.org/software/grep/manual/grep.html)
-- [sed 手册页面](https://www.gnu.org/software/sed/manual/sed.html)
-- [正则表达式教程](https://www.regular-expressions.info/tutorial.html)
+```bash
+echo "Bash is great" | sed -e 's/great/awesome/'
+# 输出：Bash is awesome
+```
+
+### 条件语句中的模式匹配
+Bash 直接支持在条件语句中使用 regex：
+
+```bash
+[[ "https://example.com" =~ ^https?:// ]] && echo "URL is valid" || echo "URL is invalid"
+# 输出：URL is valid
+```
+
+### 用 `awk` 进行高级模式匹配和操作
+`awk` 是另一个支持更复杂的数据提取和操作的文本处理工具。它在处理结构化文本数据（如 CSV）时非常有用：
+
+```bash
+echo -e "ID,Name,Age\n1,John,22\n2,Jane,24" | awk -F, '$3 > 22 {print $2 " is older than 22."}'
+# 输出：Jane is older than 22.
+```
+
+虽然 Bash 的内置 regex 功能能覆盖许多用例，但对于非常高级的 regex 操作，你可能会考虑使用 Bash 脚本与 `perl` 或 `python` 脚本的组合，因为这些语言提供了强大的 regex 库（例如 Python 的 `re`）。以下是一个简单的 Python 示例：
+
+```bash
+echo "Capture this 123" | python3 -c "import sys; import re; print(re.search('(\d+)', sys.stdin.read()).group(0))"
+# 输出：123
+```
+
+在必要时结合使用这些编程语言可以帮助你充分利用 Bash 脚本中的 regex 功能。

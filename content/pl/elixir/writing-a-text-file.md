@@ -1,40 +1,59 @@
 ---
-title:                "Zapisywanie pliku tekstowego"
-date:                  2024-01-19
-simple_title:         "Zapisywanie pliku tekstowego"
-
+title:                "Pisanie pliku tekstowego"
+date:                  2024-02-03T19:27:44.245813-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Pisanie pliku tekstowego"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/elixir/writing-a-text-file.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Co to jest i dlaczego?
+## Co i dlaczego?
 
-Pisanie do pliku tekstowego to zapisywanie danych w formie czytelnej dla człowieka na dysku. Programiści robią to, by trwale zachować wyniki, konfiguracje czy logi.
+Zapisywanie do pliku tekstowego w Elixirze to podstawowa umiejętność dla programistów, pozwalająca na trwałość danych, logowanie lub eksportowanie treści czytelnych dla człowieka. Programiści wykonują to, aby zapisać stan aplikacji, informacje do debugowania, konfiguracje lub jakiekolwiek wymianę danych pomiędzy systemami, które preferują wszechobecny format, jakim jest tekst.
 
 ## Jak to zrobić:
 
-```elixir
-# Otworzenie (lub utworzenie) pliku do zapisu:
-File.write!("hello.txt", "Witaj, Elixir!")
+Elixir ułatwia pracę z plikami dzięki wbudowanym modułom. Podstawowym sposobem na zapis do pliku jest użycie funkcji `File.write/2` lub `File.write!/2`, gdzie pierwsza zwraca krotkę `:ok` lub `:error`, a druga zgłasza błąd w przypadku niepowodzenia.
 
-# Sprawdzenie zawartości pliku:
-File.read!("hello.txt")
-```
-
-Wynik:
+Oto prosty przykład:
 
 ```elixir
-"Witaj, Elixir!"
+# Zapisywanie do pliku, prosta wiadomość
+File.write("hello.txt", "Witaj, Świecie!")
+
+# Po uruchomieniu kodu, tworzy plik 'hello.txt' z treścią "Witaj, Świecie!"
 ```
 
-## W głębi tematu:
+Do dopisywania do plików używa się `File.open/3` z opcjami `[:write, :append]`, a następnie `IO.binwrite/2`, aby dopisać treść:
 
-Pisanie do pliku w Elixirze opiera się na modułach BEAM (Erlang VM), zapewniających efektywność i skalowalność. Alternatywą jest użycie funkcji `Stream`, która pozwala na operacje na plikach w sposób leniwy (lazy evaluation). Szczegóły implementacji w Elixirze ułatwiają obłsugę błędów i zapewniają czysty, funkcjonalny styl kodu.
+```elixir
+# Dopisywanie do pliku
+{:ok, file} = File.open("hello.txt", [:write, :append])
+IO.binwrite(file, "\nDodajmy kolejną linię.")
+File.close(file)
 
-## Zobacz też:
+# Teraz 'hello.txt' zawiera drugą linię "Dodajmy kolejną linię."
+```
 
-- [Elixir Documentation on File Module](https://hexdocs.pm/elixir/File.html)
-- [Erlang's :file module used by Elixir](http://erlang.org/doc/man/file.html)
-- [Learn Elixir - Working with Files (tutorial)](https://elixirschool.com/en/lessons/basics/collections/)
+Jeśli pracujesz z dużymi danymi lub potrzebujesz większej kontroli nad procesem zapisu, możesz użyć modułu `Stream`, aby leniwie zapisywać dane do pliku:
+
+```elixir
+# Leniwe zapisywanie dużego zbioru danych
+stream_data = Stream.iterate(0, &(&1 + 1))
+            |> Stream.map(&("Numer: #{&1}\n"))
+            |> Stream.take(10)
+
+File.open!("numbers.txt", [:write], fn file ->
+  Enum.each(stream_data, fn line ->
+    IO.write(file, line)
+  end)
+end)
+
+# Tworzy to 'numbers.txt', zapisując liczby od 0 do 9, każdą w nowej linii.
+```
+
+W projektach wymagających bardziej zaawansowanej obsługi plików, można również sięgnąć po biblioteki stron trzecich, takie jak `CSV`, które oferują dostosowane funkcjonalności do manipulacji plikami CSV, ale pamiętaj, dla wielu zastosowań, wbudowane możliwości Elixira są więcej niż wystarczające.

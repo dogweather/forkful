@@ -1,53 +1,39 @@
 ---
-title:                "Onko hakemisto olemassa? Tarkistaminen"
-date:                  2024-01-20T14:58:03.283462-07:00
-simple_title:         "Onko hakemisto olemassa? Tarkistaminen"
-
+title:                "Tarkistetaan, onko hakemisto olemassa"
+date:                  2024-02-03T19:08:15.949984-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Tarkistetaan, onko hakemisto olemassa"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/powershell/checking-if-a-directory-exists.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Tarkistetaan, onko hakemisto olemassa, jotta vältämme virheitä, kun yritämme käsitellä tiedostoja ja hakemistoja, jotka eivät ole olemassa. Se on järkevää, koska se säästää aikaa ja päänvaivaa.
+## Mikä & Miksi?
+PowerShellissa hakemiston olemassaolon tarkistaminen on yleinen tehtävä, joka auttaa skriptejä tekemään päätöksiä tiedostojärjestelmän rakenteeseen perustuen—kuten välttämään virheitä vahvistamalla, että kohdehakemisto on paikallaan ennen luku- tai kirjoitusyritystä. Se on olennaista varmistaaksesi, että skriptisi toimii luotettavasti monenlaisissa ympäristöissä.
 
-## How to:
-PowerShellin `Test-Path` komento kertoo, onko hakemisto olemassa.
+## Miten:
+PowerShell tarjoaa suoraviivaisen tavan tarkistaa hakemiston läsnäolo käyttämällä `Test-Path`-cmdletia. Tämä cmdlet palauttaa Boolean-arvon, joka ilmaisee, onko määritetty polku olemassa. Näin voit käyttää sitä:
 
-```PowerShell
-# Tarkistetaan onko hakemisto olemassa
-$directoryPath = "C:\Example\MyFolder"
-
-if (Test-Path $directoryPath) {
-    Write-Host "Hakemisto löytyy."
-} else {
-    Write-Host "Hakemistoa ei ole olemassa."
-}
+```powershell
+# Tarkista, onko hakemisto olemassa
+$directoryPath = "C:\ExamplePath"
+$directoryExists = Test-Path -Path $directoryPath
+Write-Output "Onko hakemisto olemassa? $directoryExists"
 ```
 
-Sample output, jos hakemisto on olemassa:
+Esimerkkituloste olemassa olevalle hakemistolle:
 
 ```
-Hakemisto löytyy.
+Onko hakemisto olemassa? True
 ```
 
-Jos hakemistoa ei ole, saat seuraavan:
+Ja hakemistolle, jota ei ole olemassa:
 
 ```
-Hakemistoa ei ole olemassa.
+Onko hakemisto olemassa? False
 ```
 
-## Deep Dive
-`Test-Path` on ollut osa PowerShellia sen alkupäivistä lähtien. Se toimii hyvin, koska on nopeaa ja helppoa tarkistaa, onko polku validi ja olemassa. Lisäksi `-PathType` parametrin avulla voimme spesifioida, etsimmekö tiedostoa vai hakemistoa.
-
-Alternatiiveja, kuten [System.IO.Directory]::Exists($path) .NET-metodin käyttö, on olemassa, mutta ne ovat melko byrokraattisia PowerShell-skriptien kontekstissa.  
-
-PowerShellin versiopäivitykset säilyttävät yleensä `Test-Path` komennon suorituskyvyn ja käyttäytymisen, joten ajan myötä ei ole tarvinnut huolehtia yhteensopivuusongelmista.
-
-## See Also
-PowerShellin dokumentaatio `Test-Path`-komennosta: [Test-Path](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/test-path)
-
-PowerShellin skriptausoppaat: [PowerShell Scripting](https://docs.microsoft.com/en-us/powershell/scripting/overview)
-
-.Net API -dokumentaatio [Directory.Exists](https://docs.microsoft.com/en-us/dotnet/api/system.io.directory.exists) metodista.
+Monimutkaisempia skriptejä varten, erityisesti niitä, jotka vuorovaikuttavat verkon jaossa tai pilvitallennustilassa, saattaa tarvita lisätarkistuksia tai toiminnallisuuksia, joita ei suoraan ole saatavilla `Test-Path`-kautta. Tällaisissa tapauksissa kolmansien osapuolten PowerShell-moduulien tai kirjastojen hyödyntäminen voi olla hyödyllistä, vaikkakin useimmat rutiinitehtävät voidaan suorittaa PowerShellin sisäänrakennetuilla cmdleteillä. Viimeisimmän tietoni mukaan, laajalti hyväksyttyä kolmannen osapuolen kirjastoa tarkistamaan hakemiston olemassaoloa sen yli mitä `Test-Path` tarjoaa, ei ole ollut, pääasiassa koska `Test-Path` itsessään on sekä robusti että tehokas tähän tarkoitukseen.

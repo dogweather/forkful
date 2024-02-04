@@ -1,39 +1,46 @@
 ---
-title:                "Zamiana liter na wielkie w ciągu znaków"
-date:                  2024-01-19
-simple_title:         "Zamiana liter na wielkie w ciągu znaków"
-
+title:                "Zamiana liter na wielkie w łańcuchu znaków"
+date:                  2024-02-03T19:06:33.346792-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Zamiana liter na wielkie w łańcuchu znaków"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/swift/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
-W Swift kapitalizacja stringów to po prostu zmiana pierwszych liter słów na wielkie. Robisz to, by ujednolicić wygląd danych lub przygotować tekst do wyświetlenia użytkownikowi.
+## Co i dlaczego?
+
+Zmiana pierwszej litery ciągu na wielką w Swift polega na modyfikacji danego ciągu znaków, tak aby jego pierwsza litera była wielka, a pozostałe małe. Programiści robią to w celach takich jak formatowanie imion lub zdań zgodnie z zasadami gramatyki lub standardami interfejsu użytkownika.
 
 ## Jak to zrobić:
-```Swift
-let smallTalk = "witaj, jak się masz?"
-let capitalizedTalk = smallTalk.capitalized
 
-print(capitalizedTalk) // Wydruk: "Witaj, Jak Się Masz?"
+Struktury `String` w Swifcie zawierają kilka wbudowanych metod do manipulowania wielkością liter w ciągach. Oto kilka sposobów na zmianę ciągów na wielkie litery w Swift, w tym użycie standardowych metod i bibliotek stron trzecich, jeśli jest to konieczne.
+
+### Korzystanie z wbudowanych metod
+
+Aby zamienić pierwszą literę ciągu na wielką, a resztę na małe:
+
+```swift
+let myString = "hello, world"
+let capitalizedString = myString.prefix(1).uppercased() + myString.dropFirst().lowercased()
+print(capitalizedString) // Wynik: "Hello, world"
 ```
 
-## W Głąb Tematu
-Kapitalizacja stringów w programowaniu nie jest nowością. We wcześniejszych językach też to robiliśmy, ale każdy język ma własne zasady i funkcje. W Swift kapitalizacja jest prosta dzięki wbudowanej funkcji `.capitalized`, która działa na każdym `String`. Alternatywnie, możesz używać `Locale` do precyzyjnej kontroli nad kapitalizacją zgodnie z konkretnymi ustawieniami lokalnymi.
+Aby zamienić pierwszą literę każdego słowa w zdaniu, można użyć właściwości `capitalized`:
 
-Najważniejsze to pamiętać, że metoda `.capitalized` Swifta zachowuje się inaczej niż np. `toUpperCase()` w Java. Swift bierze pod uwagę punktacyjne granice słowa, zamiast tylko białych znaków. To oznacza, że każde "słowo" w zdaniu zostanie zmienione na wersję z dużą literą na początku.
-
-```Swift
-let greetingsFromDifferentLanguages = "cześć! hello! ¡hola! こんにちは!"
-let titlesCase = greetingsFromDifferentLanguages.capitalized(with: Locale.current)
-
-print(titlesCase) // Wydruk: "Cześć! Hello! ¡Hola! こんにちは!"
+```swift
+let sentence = "hello, world"
+let capitalizedSentence = sentence.capitalized
+print(capitalizedSentence) // Wynik: "Hello, World"
 ```
 
-Przykład powyżej pokazuje, jak w Swift zrobić string każdego przywitania z dużych liter, zachowując przy tym oryginalne środki interpunkcyjne.
+### Korzystanie z biblioteki strony trzeciej
 
-## Zobacz jeszcze
-- Swift String Handling Guide: [https://www.swiftbysundell.com/basics/strings/](https://www.swiftbysundell.com/basics/strings/)
-- Locale-specific capitalization: [https://developer.apple.com/documentation/foundation/nslocale](https://developer.apple.com/documentation/foundation/nslocale)
+Chociaż standardowa biblioteka Swifta jest dość obszerna, niektóre specyficzne formaty kapitalizacji mogą wymagać bardziej skomplikowanych operacji lub mogą być uproszczone za pomocą bibliotek stron trzecich. Jedną z popularnych do manipulacji ciągami znaków jest SwiftRichString. (Uwaga: Zawsze upewnij się, że dołączasz biblioteki stron trzecich za pomocą Swift Package Manager, CocoaPods lub Carthage i importujesz je do swojego pliku.)
+
+Najpierw musisz dodać `SwiftRichString` do swojego projektu. Po zainstalowaniu możesz go użyć do wykonania różnych operacji na ciągach znaków, w tym specyficznych potrzeb kapitalizacji. Jednakże, jak dotąd, wbudowane metody Swifta adekwatnie pokrywają większość przypadków użycia kapitalizacji bez konieczności używania zewnętrznych bibliotek tylko dla zmiany wielkości liter w ciągach.
+
+Zawsze odwołuj się do najnowszej dokumentacji biblioteki w poszukiwaniu jakichkolwiek aktualizacji lub zmian w metodach.

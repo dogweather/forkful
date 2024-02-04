@@ -1,53 +1,76 @@
 ---
-title:                "Estrarre una data da una stringa"
-date:                  2024-01-20T15:35:12.350305-07:00
-simple_title:         "Estrarre una data da una stringa"
-
+title:                "Analisi di una data da una stringa"
+date:                  2024-02-03T19:13:45.751827-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Analisi di una data da una stringa"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/cpp/parsing-a-date-from-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-(E cosa & Perché?)
-Il "parsing" di una data significa trasformarla da stringa a una struttura che il programma può manipolare. Lo facciamo per elaborare, validare e confrontare le date in maniera efficiente.
+## Cos'è e Perché?
+Analizzare una data da una stringa implica interpretare il formato della stringa per estrarre componenti della data come giorno, mese e anno. I programmatori fanno ciò per gestire l'input dell'utente, leggere file di dati o interagire con API che comunicano date in formati di stringhe. È essenziale per la elaborazione dei dati, la validazione e l'esecuzione di operazioni aritmetiche con le date nelle applicazioni.
 
-## How to:
-(Come fare:)
-```C++
+## Come fare:
+Nel C++ moderno, è possibile utilizzare la libreria `<chrono>` per gestire date e orari nativamente, ma questa non supporta direttamente l'analisi da stringhe senza un parsing manuale per formati più complessi. Tuttavia, per i formati di data ISO 8601 e formati personalizzati semplici, ecco come è possibile eseguire il parsing.
+
+**Utilizzando `<chrono>` e `<sstream>`:**
+```cpp
 #include <iostream>
 #include <sstream>
+#include <chrono>
 #include <iomanip>
-#include <ctime>
 
 int main() {
-    std::string date_str = "20/04/2023";
-    std::tm tm = {};
-    std::istringstream ss(date_str);
-    ss >> std::get_time(&tm, "%d/%m/%Y");  // Formato europeo per le date DD/MM/YYYY
-
-    if (ss.fail()) {
-        std::cout << "Parsing fallito!";
+    std::string date_str = "2023-04-15"; // formato ISO 8601
+    std::istringstream iss(date_str);
+    
+    std::chrono::year_month_day parsed_date;
+    iss >> std::chrono::parse("%F", parsed_date);
+    
+    if (!iss.fail()) {
+        std::cout << "Data analizzata: " << parsed_date << std::endl;
     } else {
-        std::cout << "Giorno: " << tm.tm_mday << ", Mese: " << (tm.tm_mon + 1) << ", Anno: " << (1900 + tm.tm_year);
+        std::cout << "Analisi della data fallita." << std::endl;
+    }
+    
+    return 0;
+}
+```
+Esempio di output:
+```
+Data analizzata: 2023-04-15
+```
+
+Per formati più complessi o quando si lavora con versioni più vecchie di C++, le librerie di terze parti come `date.h` (la libreria di date di Howard Hinnant) sono popolari. Ecco come è possibile analizzare vari formati con essa:
+
+**Utilizzando la Libreria `date.h`:**
+Assicurati di avere la libreria installata. Puoi trovarla [qui](https://github.com/HowardHinnant/date).
+
+```cpp
+#include "date/date.h"
+#include <iostream>
+
+int main() {
+    std::string date_str = "April 15, 2023";
+    
+    std::istringstream iss(date_str);
+    date::sys_days parsed_date;
+    iss >> date::parse("%B %d, %Y", parsed_date);
+    
+    if (!iss.fail()) {
+        std::cout << "Data analizzata: " << parsed_date << std::endl;
+    } else {
+        std::cout << "Analisi della data da stringa fallita." << std::endl;
     }
 
     return 0;
 }
 ```
-Output:
+Esempio di output (può variare a seconda delle impostazioni locali e della data del tuo sistema):
 ```
-Giorno: 20, Mese: 4, Anno: 2023
+Data analizzata: 2023-04-15
 ```
-
-## Deep Dive:
-(Analisi Approfondita:)
-Il parsing di date da stringhe è una pratica antica, nata insieme alla necessità di leggere e scrivere dati in forma umanamente leggibile. C++ ha visto varie librerie nel tempo per questa operazione: `<ctime>` è una di quelle, diretta discendente del C standard. Alternativamente, la libreria `<chrono>` più moderna di C++ (introdotto con C++11 e migliorato successivamente) offre approcci più robusti ed estensibili. Per implementare il parsing, `<iomanip>` fornisce funzionalità per la manipolazione dei flussi di input/output, come `std::get_time`, per interpretare stringhe come date.
-
-## See Also:
-(Vedi Anche:)
-
-- Documentazione di `<chrono>`: https://en.cppreference.com/w/cpp/header/chrono
-- Documentazione di `<iomanip>`: https://en.cppreference.com/w/cpp/header/iomanip
-- Esempi di parsing di date con `<chrono>`: https://en.cppreference.com/w/cpp/io/manip/get_time

@@ -1,59 +1,67 @@
 ---
-title:                "Przetwarzanie daty ze łańcucha znaków"
-date:                  2024-01-20T15:35:44.372902-07:00
-simple_title:         "Przetwarzanie daty ze łańcucha znaków"
-
+title:                "Analiza składniowa daty z łańcucha znaków"
+date:                  2024-02-03T19:14:26.516638-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Analiza składniowa daty z łańcucha znaków"
 tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/elm/parsing-a-date-from-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-## Co i Dlaczego?
-Parsing a date from a string means converting text like "2023-04-01" to a date format that a program can understand and manipulate. Programmers do this because dates in text form need to be turned into date types for sorting, comparisons, and other operations.
+## Co i dlaczego?
+Analiza daty z ciągu znaków w Elm polega na konwertowaniu informacji tekstowych przedstawiających daty i czasy na format, który Elm może zrozumieć i manipulować, a konkretnie na typ `Date`. Ten proces jest kluczowy do obsługi danych wejściowych użytkownika, poprawnego lokalizowanego wyświetlania dat oraz wykonywania obliczeń związanych z datami, zapewniając, że aplikacje Elm mogą inteligentnie przetwarzać dane czasowe.
 
-## How to:
 ## Jak to zrobić:
-```Elm
-import Date exposing (Date)
-import Date.Extra.Parse exposing (isoString)
+Elm nie posiada wbudowanych możliwości tak rozbudowanych jak niektóre inne języki do analizy dat, głównie polegając na interopie z Javascriptem lub bibliotekach do bardziej złożonych operacji. Jednak można użyć pakietu `elm/time` do podstawowej analizy, a dla bardziej skomplikowanych potrzeb, szeroko polecana jest biblioteka stron trzecich `justinmimbs/date`.
 
-parseDate : String -> Result String Date
-parseDate str =
-    case isoString str of
-        Ok date ->
-            Ok date
+### Analiza przy użyciu `elm/time`:
+`elm/time` udostępnia moduł `Time`, który pozwala pracować ze znacznikami czasu zamiast z datami czytelnymi dla człowieka. Chociaż nie analizuje bezpośrednio dat z ciągów znaków, można przekształcić ciąg ISO 8601 na znacznik czasu POSIX, z którym można następnie pracować.
 
-        Err error ->
-            Err "Date parse error"
+```elm
+import Time exposing (Posix)
 
-sampleDateStr : String
-sampleDateStr = "2023-04-01"
+-- Zakładając, że masz ciąg daty ISO 8601
+isoDateStr : String
+isoDateStr = "2023-01-01T00:00:00Z"
 
--- Usage
-main =
-  let
-    parsedDate = parseDate sampleDateStr
-  in
-  case parsedDate of
-    Ok date -> 
-      -- Do something with the `date` (it's now a Date type!)
-    Err errorMessage -> 
-      -- Handle the error
+-- Konwertuj go na znacznik czasu POSIX (ta funkcja zwraca `Result`)
+parsedDate : Result String Posix
+parsedDate = Time.fromIsoString8601 isoDateStr
+
+-- Przykładowe wyjście: Ok <wartość czasu posix>
 ```
-Sample output for `parseDate "2023-04-01"` will be `Ok <date_representation>`.
 
-## Deep Dive:
-## W Głąb Tematu:
-Historically, parsing dates in Elm has evolved with the language and its type safety features. It's focused on correctness and avoiding runtime errors common in JavaScript. Alternatives to native Elm libraries for parsing dates include using JavaScript interop with ports, but this compromises type safety.
+### Analiza przy użyciu `justinmimbs/date`:
+Dla bardziej złożonej analizy, jak radzenie sobie z formatami nie-ISO, biblioteka `justinmimbs/date` jest świetnym wyborem. Oto jak można jej użyć do analizy niestandardowego ciągu daty:
 
-Implementation in Elm involves `Result` types to handle potential parsing errors gracefully, a pattern that preserves Elm's guarantees about runtime exceptions. Elm's standard libraries don't include date parsing, so third-party libraries like `justinmimbs/date-extra` are necessary.
+1. Upewnij się, że masz zainstalowaną bibliotekę:
 
-When implementing date parsing, consider time zones and locales, which can make parsing non-trivial. Rely on libraries that handle these complexities.
+```shell
+elm install justinmimbs/date
+```
 
-## See Also:
-## Zobacz Również:
-- Elm Date documentation: https://package.elm-lang.org/packages/justinmimbs/date/latest/
-- Elm `Date.Extra.Parse` module: https://package.elm-lang.org/packages/justinmimbs/date-extra/latest/Date-Extra-Parse
-- Elm time zone handling: https://package.elm-lang.org/packages/justinmimbs/timezone-data/latest/
+2. Użyj funkcji `Date.fromString` do analizy niestandardowych formatów dat:
+
+```elm
+import Date
+import Result exposing (Result(..))
+
+-- Powiedzmy, że masz niestandardowy ciąg formatu daty `dd-MM-yyyy`
+customDateStr : String
+customDateStr = "01-01-2023"
+
+-- Funkcja do analizy niestandardowego formatu
+parseDate : String -> Result String Date.Date
+parseDate = Date.fromString "dd-MM-yyyy"
+
+-- Przykładowe użycie
+parsedCustomDate : Result String Date.Date
+parsedCustomDate = parseDate customDateStr
+
+-- Przykładowe wyjście: Ok (Date.fromCalendarDate 2023 Jan 1)
+```
+
+W tych przykładach typ `Result` zawiera albo udaną analizę, która daje datę (`Ok`), albo błąd (`Err`), umożliwiając solidne obsługiwanie błędów w aplikacjach Elm.

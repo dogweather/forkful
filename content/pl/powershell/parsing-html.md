@@ -1,53 +1,72 @@
 ---
-title:                "Przetwarzanie HTML"
-date:                  2024-01-20T15:33:26.727780-07:00
-simple_title:         "Przetwarzanie HTML"
-
+title:                "Analiza składniowa HTML"
+date:                  2024-02-03T19:12:46.992939-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Analiza składniowa HTML"
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/powershell/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-(## Co i dlaczego?)
-Parsowanie HTML to proces wydobywania danych ze struktur stron internetowych. Programiści robią to, żeby automatycznie pobierać informacje, przetwarzać treści lub monitorować zmiany na stronach.
+## Co i dlaczego?
+Parsowanie HTML w PowerShell to proces analizowania zawartości HTML w celu wyodrębnienia konkretnych danych lub automatyzacji zadań związanych z siecią. Programiści robią to, aby wchodzić w interakcje ze stronami internetowymi, pobierać zawartość sieciową lub automatyzować wysyłanie formularzy oraz inne interakcje sieciowe bez potrzeby korzystania z przeglądarki internetowej.
 
-## How to:
-(## Jak to zrobić:)
-Do parsowania HTML w PowerShell możemy użyć Invoke-WebRequest i HtmlAgilityPack. Oto przykład:
+## Jak to zrobić:
 
-```PowerShell
-# Należy pamiętać, że HtmlAgilityPack wymaga instalacji z NuGet
-# Install-Package HtmlAgilityPack
+PowerShell nie posiada natywnie dedykowanego analizatora HTML, ale można wykorzystać cmdlet `Invoke-WebRequest` do dostępu i analizowania treści HTML. Dla bardziej złożonego parsowania i manipulacji, można zastosować HtmlAgilityPack, popularną bibliotekę .NET.
 
-# Pobranie strony
+### Korzystanie z `Invoke-WebRequest`:
+
+```powershell
+# Prosty przykład pobierania tytułów ze strony internetowej
 $response = Invoke-WebRequest -Uri 'http://example.com'
+# Wykorzystanie właściwości ParsedHtml do dostępu do elementów DOM
+$title = $response.ParsedHtml.title
+Write-Output $title
+```
 
-# Załadowanie HTML do HtmlAgilityPack
-$htmlDoc = New-Object HtmlAgilityPack.HtmlDocument
-$htmlDoc.LoadHtml($response.Content)
+Przykładowe wyjście:
 
-# Wydobycie danych
-# Załóżmy, że chcemy wszystkie nagłówki h1 ze strony
-$headers = $htmlDoc.DocumentNode.SelectNodes('//h1')
-foreach($header in $headers) {
-    Write-Output $header.InnerText
+```
+Przykładowa domena
+```
+
+### Korzystanie z HtmlAgilityPack:
+
+Najpierw musisz zainstalować HtmlAgilityPack. Można to zrobić przez Menedżera Pakietów NuGet:
+
+```powershell
+Install-Package HtmlAgilityPack -ProviderName NuGet
+```
+
+Następnie możesz użyć go w PowerShell do analizowania HTML:
+
+```powershell
+# Załaduj zestaw HtmlAgilityPack
+Add-Type -Path "ścieżka\do\HtmlAgilityPack.dll"
+
+# Stwórz obiekt HtmlDocument
+$doc = New-Object HtmlAgilityPack.HtmlDocument
+
+# Wczytaj HTML z pliku lub zapytania sieciowego
+$htmlContent = (Invoke-WebRequest -Uri "http://example.com").Content
+$doc.LoadHtml($htmlContent)
+
+# Użyj XPath lub innych metod zapytań do wyodrębnienia elementów
+$node = $doc.DocumentNode.SelectSingleNode("//h1")
+
+if ($node -ne $null) {
+    Write-Output $node.InnerText
 }
 ```
-Przykładowa odpowiedź:
+
+Przykładowe wyjście:
+
 ```
 Witaj na Example.com!
-Inny przykładowy nagłówek
 ```
 
-## Deep Dive:
-(## Szczegółowe informacje:)
-W przeszłości dane często scrapowano za pomocą wyrażeń regularnych, ale to ryzykowna i niewystarczająco elastyczna metoda. HtmlAgilityPack, biblioteka .NET pozwalająca na skomplikowane zapytania XPath i manipulacje DOM, jest lepszym wyborem. Alternatywą jest AngleSharp, kolejna biblioteka .NET, która świetnie radzi sobie z parsingiem HTML5. Mimo że PowerShell natywnie nie ma mocnych narzędzi do parsowania HTML, korzystając z tych bibliotek, można łatwo przetwarzać strony i wydobywać potrzebne dane.
-
-## See Also:
-(## Zobacz też:)
-- Dokumentacja HtmlAgilityPack: https://html-agility-pack.net/
-- Informacje o poleceniu Invoke-WebRequest: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/invoke-webrequest
-- AngleSharp GitHub Repo: https://github.com/AngleSharp/AngleSharp
-- Poradnik do XPath: https://www.w3schools.com/xml/xpath_intro.asp
+W tych przykładach, `Invoke-WebRequest` najlepiej nadaje się do prostych zadań, podczas gdy HtmlAgilityPack oferuje znacznie bogatszy zestaw funkcji do złożonego analizowania i manipulowania kodem HTML.

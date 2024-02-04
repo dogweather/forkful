@@ -1,61 +1,76 @@
 ---
-title:                "Skriving av tester"
-date:                  2024-01-19
-simple_title:         "Skriving av tester"
-
+title:                "Skrive tester"
+date:                  2024-02-03T19:31:45.511524-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Skrive tester"
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/powershell/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Skrive tester betyr å lage scripts som sjekker at kode fungerer som forventet. Programmere gjør dette for å sikre kvalitet og forebygge feil.
 
-## How to:
-For å skrive tester i PowerShell kan Pester, et rammeverk for testing, brukes. Her er et eksempel på en enkel test:
+Å skrive tester i PowerShell involverer å lage skript som automatisk validerer funksjonaliteten til PowerShell-koden din, for å sikre at den oppfører seg som forventet. Programmerere gjør dette for å oppdage feil tidlig, forenkle kodevedlikehold, og sikre at kodeendringer ikke utilsiktet bryter eksisterende funksjonalitet.
 
-```PowerShell
-# Installer Pester hvis det ikke allerede er installert
-Install-Module -Name Pester -Force -SkipPublisherCheck
+## Hvordan:
 
-# Importer Pester-modulet
-Import-Module Pester
+PowerShell har ikke et innebygd testrammeverk, men Pester, en populær tredjepartsmodul, brukes mye til å skrive og kjøre tester. Her er hvordan du kommer i gang med Pester for å teste dine PowerShell-funksjoner.
 
-# Skriv en enkel funksjon
-function Get-MultiplyResult($x, $y) {
-    return $x * $y
+Først, installer Pester hvis du ikke allerede har gjort det:
+
+```powershell
+Install-Module -Name Pester -Scope CurrentUser -Force
+```
+
+Deretter, anta at du har en enkel PowerShell-funksjon du vil teste, lagret som `MyFunction.ps1`:
+
+```powershell
+function Get-MultipliedNumber {
+    param (
+        [int]$Number,
+        [int]$Multiplier = 2
+    )
+
+    return $Number * $Multiplier
 }
+```
 
-# Definer test
-Describe "Get-MultiplyResult Tests" {
-    It "multiplies two numbers" {
-        Get-MultiplyResult -x 2 -y 3 | Should -Be 6
+For å teste denne funksjonen med Pester, opprett et testsikript med navnet `MyFunction.Tests.ps1`. I dette skriptet, bruk Pesters `Describe` og `It` blokker for å definere testtilfellene:
+
+```powershell
+# Importer funksjonen som skal testes
+. .\MyFunction.ps1
+
+Describe "Get-MultipliedNumber tester" {
+    It "Multipliserer tall med 2 når ingen multiplikator er oppgitt" {
+        $result = Get-MultipliedNumber -Number 3
+        $result | Should -Be 6
+    }
+
+    It "Multipliserer korrekt tall med gitt multiplikator" {
+        $result = Get-MultipliedNumber -Number 3 -Multiplier 3
+        $result | Should -Be 9
     }
 }
-
-# Kjør testen
-Invoke-Pester
 ```
 
-Forventet output:
+For å kjøre testene, åpne PowerShell, naviger til katalogen som inneholder testskriptet ditt, og bruk kommandoen `Invoke-Pester`:
 
-```
-Starting discovery in 1 files.
-Discovering in C:\path\to\your\tests.tests.ps1.
-Found 1 tests. 143ms
-Discovery finished in 191ms.
-
-Running tests from 'C:\path\to\your\tests.tests.ps1'
-Describing Get-MultiplyResult Tests
- [+] multiplies two numbers 82ms (77ms|5ms)
-Tests completed in 273ms
-Tests Passed: 1, Failed: 0, Skipped: 0 NotRun: 0
+```powershell
+Invoke-Pester .\MyFunction.Tests.ps1
 ```
 
-## Deep Dive
-Pester ble introdusert i 2014 og ble raskt standard for PowerShell testing, delvis fordi det følger med i Windows 10 og nyere. Alternativer inkluderer PSUnit og PowerShell xUnit, men Pester er mest brukt. Pester tillater mocking, testdekning og BDD-stil testing og følger PowerShell skriptkonvensjoner, noe som gjør det til en naturlig del av PowerShell-utviklers verktøykasse.
+Eksempelutdata vil se slik ut, og indikerer om testene dine besto eller feilet:
 
-## See Also
-- [Pester, PowerShell testing framework](https://pester.dev/)
-- [PowerShell Testing Integration med Visual Studio Code](https://code.visualstudio.com/docs/languages/powershell#_testing-powershell)
+```
+Starter oppdagelse i 1 filer.
+Oppdagelse fullført på 152ms.
+[+] C:\sti\til\MyFunction.Tests.ps1 204ms (182ms|16ms)
+Tester fullført på 204ms
+Tester Bestått: 2, Feilet: 0, Hoppet over: 0 IkkeKjørt: 0
+```
+
+Denne utdataen viser at begge testene ble bestått, noe som gir deg tillit til at din `Get-MultipliedNumber` funksjon oppfører seg som forventet under scenariene du har testet.

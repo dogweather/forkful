@@ -1,47 +1,68 @@
 ---
 title:                "Sprawdzanie, czy katalog istnieje"
-date:                  2024-01-19
+date:                  2024-02-03T19:06:53.687805-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Sprawdzanie, czy katalog istnieje"
-
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/cpp/checking-if-a-directory-exists.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Po co sprawdzać, czy katalog istnieje? Niektóre operacje wymagają pewności, że miejsce docelowe jest dostępne przed zapisaniem plików czy danych. Sprawdzanie obecności katalogu unika błędów i pomaga w zarządzaniu plikami.
+## Co i dlaczego?
+Sprawdzanie, czy katalog istnieje, polega na określeniu obecności katalogu pod określoną ścieżką przed wykonaniem operacji takich jak czytanie z plików lub zapisywanie do nich. Programiści robią to, aby uniknąć błędów związanych z operacjami na plikach, zapewniając płynniejsze i bardziej niezawodne wykonanie zadań związanych z obsługą plików w ich aplikacjach.
 
-## How to:
-```C++
-#include <filesystem>
+## Jak to zrobić:
+W nowoczesnym C++ (C++17 i nowsze) można użyć biblioteki filesystem do sprawdzenia, czy katalog istnieje. Zapewnia ona prosty i ustandaryzowany sposób na wykonanie operacji na systemie plików, w tym sprawdzenie istnienia katalogu.
+
+```cpp
 #include <iostream>
+#include <filesystem>
+
+namespace fs = std::filesystem;
 
 int main() {
-    std::filesystem::path dir_to_check{"./some_directory"};
+    const fs::path dirPath = "/ścieżka/do/katalogu";
 
-    if (std::filesystem::exists(dir_to_check)) {
-        std::cout << "Directory exists." << std::endl;
+    if (fs::exists(dirPath) && fs::is_directory(dirPath)) {
+        std::cout << "Katalog istnieje." << std::endl;
     } else {
-        std::cout << "Directory does not exist." << std::endl;
+        std::cout << "Katalog nie istnieje." << std::endl;
     }
 
     return 0;
 }
 ```
-Output, depending on your directory:
+Przykładowe wyjście, jeśli katalog istnieje:
 ```
-Directory exists.
-```
-or
-```
-Directory does not exist.
+Katalog istnieje.
 ```
 
-## Deep Dive
-Stosujemy `<filesystem>`, nowość od C++17, który uprościł pracę z systemem plików. Historycznie, programiści używali różnych metod, jak `stat` w POSIX czy `GetFileAttributes` w WinAPI, które były mniej przenośne i wymagały więcej kodu. Opcje są różne: `boost::filesystem` dla starszych projektów, czy systemowe wywołania dla lepszego dostosowania. W implementacji, `exists()` korzysta z wywołań systemowych, więc jej wydajność i zachowanie mogą zależeć od systemu operacyjnego.
+Przykładowe wyjście, jeśli katalog nie istnieje:
+```
+Katalog nie istnieje.
+```
 
-## See Also
-- Dokumentacja `std::filesystem::exists`: https://en.cppreference.com/w/cpp/filesystem/exists
-- Moduł `<filesystem>`: https://en.cppreference.com/w/cpp/header/filesystem
-- Porównanie `boost::filesystem` i `std::filesystem`: https://www.boost.org/doc/libs/1_75_0/libs/filesystem/doc/index.htm
+Dla projektów, które jeszcze nie korzystają z C++17, lub dla dodatkowych funkcji, biblioteka Boost Filesystem jest popularnym wyborem stron trzecich, który oferuje podobną funkcjonalność.
+
+```cpp
+#include <iostream>
+#include <boost/filesystem.hpp>
+
+namespace fs = boost::filesystem;
+
+int main() {
+    const fs::path dirPath = "/ścieżka/do/katalogu";
+
+    if (fs::exists(dirPath) && fs::is_directory(dirPath)) {
+        std::cout << "Katalog istnieje." << std::endl;
+    } else {
+        std::cout << "Katalog nie istnieje." << std::endl;
+    }
+
+    return 0;
+}
+```
+Korzystając z Boost Filesystem, wyjście byłoby identyczne jak w przykładzie z filesystem C++17, w zależności od istnienia katalogu pod określoną ścieżką.

@@ -1,64 +1,84 @@
 ---
 title:                "HTML parsen"
-date:                  2024-01-20T15:31:15.080254-07:00
+date:                  2024-02-03T19:11:42.251444-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "HTML parsen"
-
 tag:                  "HTML and the Web"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/elixir/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Was & Warum?)
-HTML zu parsen bedeutet, die Struktur und den Inhalt von Webseiten zu analysieren. Programmierer machen das, um Informationen zu extrahieren, automatisiert Inhalte zu verarbeiten oder Web-Scraping durchzuführen.
+## Was & Warum?
 
-## How to: (Wie geht das?)
-Du kannst in Elixir mit der Floki-Bibliothek HTML parsen. Hier ist ein Beispiel, das zeigt, wie man Überschriften aus einer HTML-Datei extrahiert.
+HTML in Elixir zu parsen, umfasst das Extrahieren von Informationen aus HTML-Dokumenten. Programmierer tun dies, um programmatisch mit Webseiten zu interagieren, Daten zu scrapen oder Webinteraktionen zu automatisieren, wodurch Anwendungen Webinhalte dynamisch verstehen und nutzen können.
+
+## Wie geht das:
+
+Elixir, mit seinem robusten Nebenläufigkeitsmodell und dem Paradigma der funktionalen Programmierung, enthält keine integrierten HTML-Parsing-Funktionen. Sie können jedoch beliebte Drittanbieter-Bibliotheken wie `Floki` für diesen Zweck verwenden. Floki macht HTML-Parsing intuitiv und effizient und nutzt dabei Elixirs Musterabgleich und Pipe-Funktionen.
+
+Fügen Sie zunächst Floki zu Ihren Abhängigkeiten in mix.exs hinzu:
 
 ```elixir
-# Zuerst füge Floki zu deinen Abhängigkeiten in mix.exs hinzu:
-# defp deps do
-#   [
-#     {:floki, "~> 0.27"}
-#   ]
-# end
-# Dann führe mix deps.get aus, um Floki zu installieren.
-
-defmodule HTMLParser do
-  def parse_html(html) do
-    html
-    |> Floki.parse()
-    |> Floki.find("h1")
-    |> Enum.map(fn {_, attributes, inner_html} -> {attributes, inner_html} end)
-  end
+defp deps do
+  [
+    {:floki, "~> 0.31.0"}
+  ]
 end
+```
 
-# Beispiel-HTML
-html = """
+Führen Sie dann `mix deps.get` aus, um die neue Abhängigkeit zu installieren.
+
+Jetzt werden wir einen einfachen HTML-String parsen, um Daten zu extrahieren. Wir suchen nach den Titeln in `<h1>`-Tags:
+
+```elixir
+html_content = """
 <html>
   <body>
-    <h1>Willkommen</h1>
-    <p>Das ist ein Elixir-Beispiel.</p>
+    <h1>Hallo, Elixir!</h1>
+    <h1>Ein weiterer Titel</h1>
   </body>
 </html>
 """
 
-# Parsing und Ausgabe
-result = HTMLParser.parse_html(html)
-IO.inspect(result)
+titles = html_content
+         |> Floki.find("h1")
+         |> Floki.text()
+
+IO.inspect(titles)
 ```
 
-Beispiel-Ausgabe:
-```
-[
-  {[{"class", "headline"}], ["Willkommen"]}
-]
-```
-Dies zeigt eine Liste von Tupeln mit den Attributen und Inhalten jeder `h1`-Überschrift.
+**Beispielausgabe:**
 
-## Deep Dive (Tiefergehender Einblick)
-Früher waren reguläre Ausdrücke (Regex) zur HTML-Analyse gängig, aber problematisch aufgrund der Komplexität von HTML. Floki basiert auf der html5ever-Bibliothek, welche die HTML5-Parsing-Regeln nutzt. Alternativen zu Floki sind z.B. `Mechanize` oder `Scrapy` in anderen Sprachen (Python). Floki bietet eine jQuery-ähnliche Schnittstelle, die es einfach macht, bestimmte Knoten zu finden und Inhalte zu extrahieren. Es ist effizient und fehlertolerant.
+```elixir
+["Hallo, Elixir!", "Ein weiterer Titel"]
+```
 
-## See Also (Siehe auch)
-- Floki-Dokumentation: [https://hexdocs.pm/floki](https://hexdocs.pm/floki)
-- html5ever GitHub-Repository: [https://github.com/servo/html5ever](https://github.com/servo/html5ever)
+Um tiefer einzutauchen, sagen wir, Sie möchten Links (`<a>`-Tags) zusammen mit ihren href-Attributen extrahieren. So können Sie das erreichen:
+
+```elixir
+html_content = """
+<html>
+  <body>
+    <a href="https://elixir-lang.org/">Offizielle Website von Elixir</a>
+    <a href="https://hexdocs.pm/">HexDocs</a>
+  </body>
+</html>
+"""
+
+links = html_content
+        |> Floki.find("a")
+        |> Enum.map(fn({_, attrs, [text]}) -> {text, List.keyfind(attrs, "href", 0)} end)
+        
+IO.inspect(links)
+```
+
+**Beispielausgabe:**
+
+```elixir
+[{"Offizielle Website von Elixir", {"href", "https://elixir-lang.org/"}}, {"HexDocs", {"href", "https://hexdocs.pm/"}}]
+```
+
+Dieser Ansatz ermöglicht es Ihnen, HTML-Dokumente effizient zu navigieren und zu parsen, wodurch Aufgaben der Webdatenextraktion und -manipulation in Elixir-Anwendungen unkompliziert werden.

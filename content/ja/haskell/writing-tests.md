@@ -1,40 +1,79 @@
 ---
 title:                "テストの作成"
-date:                  2024-01-19
+date:                  2024-02-03T19:30:53.298196-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "テストの作成"
-
 tag:                  "Testing and Debugging"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/haskell/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (テストを書くこととその理由)
-テストを書くとは、コードの正しさを自動で検証する手段です。これにより、バグを減らし、コード改良時の信頼性を高めることができます。
+## 何となぜ？
 
-## How to: (やり方)
-Haskellでのテストは`Hspec`ライブラリが一般的。下記は`stack test`で実行可能なサンプルコード。
+Haskellでテストを書くことは、自動化されたチェックを通じて関数が期待どおりに機能することを確認することについてです。プログラマーは、早期にバグを捕捉し、リファクタリングを容易にし、振る舞いを文書化することで、コードベースをより保守しやすく、スケーラブルにするためにこれを行います。
 
-```Haskell
+## 方法:
+
+Haskellはさまざまなテストフレームワークをサポートしていますが、`Hspec`と`QuickCheck`の二つが人気です。Hspecでは、コードのための人間が読める仕様を定義できる一方で、QuickCheckでは、コードが満たすべき性質を説明することによりテストを自動的に生成させることができます。
+
+### Hspecの使用
+
+まず、ビルドツール設定（例えば、`stack.yaml`や`cabal`ファイル）に`hspec`を追加します。そして、`Test.Hspec`をインポートし、仕様としてテストを書きます：
+
+```haskell
+-- file: spec/MyLibSpec.hs
 import Test.Hspec
+import MyLib (add)
 
 main :: IO ()
-main = hspec $ do
-  describe "length" $ do
-    it "returns the number of elements in a list" $ do
-      length [1, 2, 3] `shouldBe` 3
+main = hspec $ describe "MyLib.add" $ do
+  it "二つの数値を加算する" $
+    add 1 2 `shouldBe` 3
 
--- サンプル出力
--- length
---   returns the number of elements in a list
+  it "ゼロを加算した場合は、最初の数値を返す" $
+    add 5 0 `shouldBe` 5
 ```
 
-## Deep Dive (深掘り)
-Haskellのテストは、QuickCheckのようなプロパティベーステストツールから始まりました。HspecはBDDにインスピレーションを受けたライブラリです。`hspec-discover`はテストを自動検出する機能を提供。代替として、`doctest`や`Tasty`がありますが、Hspecが一番普及しています。
+次に、ビルドツールを使ってテストを実行し、次のような出力が得られるかもしれません：
 
-## See Also (参考情報)
-- Hspec公式ドキュメント: [http://hspec.github.io/](http://hspec.github.io/)
-- QuickCheck: [https://hackage.haskell.org/package/QuickCheck](https://hackage.haskell.org/package/QuickCheck)
-- Tasty: [https://hackage.haskell.org/package/tasty](https://hackage.haskell.org/package/tasty)
-- Doctest: [https://hackage.haskell.org/package/doctest](https://hackage.haskell.org/package/doctest)
+```
+MyLib.add
+  - 二つの数値を加算する
+  - ゼロを加算した場合は、最初の数値を返す
+
+0.0001秒で終了
+2例、0失敗
+```
+
+### QuickCheckの使用
+
+QuickCheckでは、関数が満たすべき性質を表現します。プロジェクト設定に`QuickCheck`を追加し、それをインポートします：
+
+```haskell
+-- file: test/MyLibProperties.hs
+import Test.QuickCheck
+import MyLib (add)
+
+prop_addAssociative :: Int -> Int -> Int -> Bool
+prop_addAssociative x y z = x + (y + z) == (x + y) + z
+
+prop_addCommutative :: Int -> Int -> Bool
+prop_addCommutative x y = x + y == y + x
+
+main :: IO ()
+main = do
+  quickCheck prop_addAssociative
+  quickCheck prop_addCommutative
+```
+
+これらのテストを実行すると、指定された性質をチェックするための入力が自動生成されます：
+
+```
++++ OK, 100回のテストをパスしました。
++++ OK, 100回のテストをパスしました。
+```
+
+HspecとQuickCheckの両方の例では、テストスイートは実行可能な文書として機能し、コードの正確さを自動的に検証できます。

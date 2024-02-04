@@ -1,40 +1,62 @@
 ---
-title:                "Skrive til standardfeil"
-date:                  2024-01-19
-simple_title:         "Skrive til standardfeil"
-
+title:                "Skriving til standardfeil"
+date:                  2024-02-03T19:32:40.280168-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Skriving til standardfeil"
 tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/cpp/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why?
-Skriving til standardfeil (`stderr`) handler om å sende feilmeldinger og diagnostikk uavhengig av vanlig output. Programmerere bruker dette for å skille vanlig dataflyt fra feilinformasjon, noe som er essensielt for feilsøking og loggføring.
+## Hva & Hvorfor?
 
-## How to:
-For å skrive til `stderr` i C++, bruk `std::cerr` eller `std::clog`. Veldig likt `std::cout`, men for feil og logger.
+Å skrive til standard feil (`stderr`) i C++ innebærer å utgi feilmeldinger eller diagnostikk som er adskilt fra hovedprogrammets utdata. Programmerere gjør dette for å dirigere feilene til en annen strøm, noe som gjør det lettere å feilsøke og håndtere feil ved å skille normal utdata fra feilmeldinger.
 
-```C++
+## Hvordan:
+
+I C++ kan man skrive til standard feil ved å bruke `cerr`-strømmen, som er en del av standardbiblioteket. Her er et grunnleggende eksempel:
+
+```cpp
 #include <iostream>
 
 int main() {
-    std::cerr << "Dette er en feilmelding til stderr." << std::endl;
-    std::clog << "Dette er logginformasjon til stderr." << std::endl;
+    // Skrive til standard utdata
+    std::cout << "Dette er en normal melding." << std::endl;
+    
+    // Skrive til standard feil
+    std::cerr << "Dette er en feilmelding." << std::endl;
+    
     return 0;
 }
 ```
 
-Forventing av output:
+Eksempel på utdata:
 ```
-Dette er en feilmelding til stderr.
-Dette er logginformasjon til stderr.
+Dette er en normal melding.
+Dette er en feilmelding.
 ```
 
-## Deep Dive:
-`stderr` ble introdusert sammen med `stdin` og `stdout` i C for å håndtere I/O. Det har blitt beholdt i C++ for kompatibilitet og fordeling av ulike datastrømmer. Alternativt kan man bruke fillogging eller andre loggbiblioteker. Implementeringsmessig er `std::cerr` og `std::clog` globalt definert som instanser av `std::ostream` og er knyttet til standard error-strømmen av operativsystemet.
+I dette tilfellet vil begge meldingene vanligvis vises i terminalen din, men du kan omdirigere dem separat i et skall. For eksempel kan du sende standard utdata til en fil mens du tillater at feil vises på skjermen.
 
-## See Also:
-- C++ standard bibliotekdokumentasjon: https://en.cppreference.com/w/cpp/io/cerr
-- Lær mer om I/O-strømmer i C++: https://www.learncpp.com/cpp-tutorial/basic-inputoutput-in-c/
-- For en dypere forståelse av I/O i C og C++: http://www.cplusplus.com/reference/cstdio/
+For mer avansert loggføring og feilhåndtering kan tredjepartsbiblioteker som `spdlog` eller `boost.log` benyttes. Disse bibliotekene tilbyr forbedrede funksjoner for loggføring, inkludert formatering, loggnivåer og filutdata.
+
+Slik kan du bruke `spdlog` for å skrive en feilmelding:
+
+```cpp
+#include "spdlog/spdlog.h"
+
+int main() {
+    // Initialiser spdlog
+    spdlog::info("Dette er en normal melding.");
+    spdlog::error("Dette er en feilmelding.");
+    
+    return 0;
+}
+```
+
+Merk: For å bruke `spdlog`, må du legge det til i prosjektet ditt. Dette kan du gjøre ved å klone repositoriet fra GitHub eller bruke en pakkebehandler som `vcpkg` eller `conan`.
+
+Husk, valget mellom å direkte bruke standardstrømmer eller et bibliotek som `spdlog` avhenger av kompleksiteten i applikasjonen din og dine spesifikke behov med hensyn til feilhåndtering og loggføring.

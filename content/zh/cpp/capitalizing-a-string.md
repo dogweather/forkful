@@ -1,38 +1,80 @@
 ---
-title:                "字符串首字母大写"
-date:                  2024-01-19
-simple_title:         "字符串首字母大写"
-
+title:                "字符串大写化"
+date:                  2024-02-03T19:05:08.506685-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "字符串大写化"
 tag:                  "Strings"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/cpp/capitalizing-a-string.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (什么及为何？)
-字符串大写是把字母转换为大写格式。程序员这样做主要为了标准化文本输入输出，比如人名、地点或编程中的常量。
+## 什么 & 为什么？
+大写化字符串涉及将字符串中每个单词的初始字符（如果它是小写的）转换为大写，同时保持其余字符不变。程序员经常执行此任务，用于格式化输出、用户输入或数据处理，以确保文本的呈现或处理方式保持一致性，特别是在用户界面或数据规范化任务中。
 
-## How to: (如何操作：)
-```C++
+## 如何做：
+在 C++ 中，你可以使用标准库来大写化字符串，无需第三方库。然而，对于更复杂或特定的大写化行为，像 Boost 这样的库可能非常有帮助。下面的示例说明了两种方法。
+
+### 使用标准 C++ 库：
+
+```cpp
 #include <iostream>
-#include <algorithm>
-#include <cctype>
+#include <cctype> // 用于 std::tolower 和 std::toupper
+#include <string>
+
+std::string capitalizeString(const std::string& input) {
+    std::string result;
+    bool capitalizeNext = true;
+
+    for (char ch : input) {
+        if (std::isspace(ch)) {
+            capitalizeNext = true;
+        } else if (capitalizeNext) {
+            ch = std::toupper(ch);
+            capitalizeNext = false;
+        }
+        result += ch;
+    }
+
+    return result;
+}
 
 int main() {
-    std::string str = "welcome to C++ programming!";
-    std::transform(str.begin(), str.end(), str.begin(),
-                   [](unsigned char c){ return std::toupper(c); });
-    
-    std::cout << str << std::endl; // 输出：WELCOME TO C++ PROGRAMMING!
-    return 0;
+    std::string text = "hello world from c++";
+    std::string capitalizedText = capitalizeString(text);
+    std::cout << capitalizedText << std::endl; // 输出："Hello World From C++"
 }
 ```
 
-## Deep Dive (深入了解)
-过去，大写字符串对于旧式打印机和计算机显示器很有必要，以免混淆小写字母。替代方法包括手动遍历字符串逐个字符转换，或者使用库函数如 `boost::to_upper`。在实际实现时，考虑到不同语言的大写规则，正确大写化可能需要更复杂的库，比如`locale`。
+### 使用 Boost 库：
 
-## See Also (另请参阅)
-- [cplusplus.com - std::toupper](http://www.cplusplus.com/reference/cctype/toupper/)
-- [cppreference.com - std::transform](https://en.cppreference.com/w/cpp/algorithm/transform)
-- [boost.org - String Algorithms](https://www.boost.org/doc/libs/1_75_0/doc/html/string_algo.html)
+对于更高级的字符串操作，包括考虑语言环境的大写化，你可能想使用 Boost String Algo 库。
+
+首先，确保你已经在项目中安装并配置了 Boost 库。然后你可以包含必要的头文件，并按下面所示使用其功能。
+
+```cpp
+#include <boost/algorithm/string.hpp>
+#include <iostream>
+#include <string>
+
+int main() {
+    std::string text = "hello world from c++";
+    std::string capitalizedText = text;
+
+    // 大写化每个单词的第一个字母
+    boost::algorithm::to_lower(capitalizedText); // 确保字符串处于小写状态
+    capitalizedText[0] = std::toupper(capitalizedText[0]); // 大写化第一个字符
+
+    for (std::size_t i = 1; i < capitalizedText.length(); ++i) {
+        if (isspace(capitalizedText[i - 1])) { // 在空格后大写化
+            capitalizedText[i] = std::toupper(capitalizedText[i]);
+        }
+    }
+
+    std::cout << capitalizedText << std::endl; // 输出："Hello World From C++"
+}
+```
+
+在这个例子中，Boost 简化了一些字符串操作任务，但仍然需要自定义方法来实现真正的大写化，因为它主要提供转换和大小写转换工具。

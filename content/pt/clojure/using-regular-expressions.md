@@ -1,33 +1,76 @@
 ---
-title:                "Utilizando expressões regulares"
-date:                  2024-01-19
-simple_title:         "Utilizando expressões regulares"
-
+title:                "Usando expressões regulares"
+date:                  2024-02-03T19:16:29.378046-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Usando expressões regulares"
 tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/clojure/using-regular-expressions.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## O Que é & Porquê?
-Usar expressões regulares é como brincar de detetive com texto: você define padrões para encontrar ou manipular pedaços específicos de strings. Programadores utilizam porque é uma ferramenta poderosa para validação, extração e substituição de informações em textos complexos com precisão e eficiência.
+## O Que & Por Quê?
+Expressões regulares, uma ferramenta poderosa para correspondência de padrões e manipulação de dados, são essenciais em tarefas de processamento de texto como validar entrada, pesquisar e substituir texto. Programadores as usam extensivamente para lidar com análise de strings complexas e tarefas de validação de dados de forma eficiente e sucinta.
 
-## Como Fazer:
-```Clojure
-;; Verificar se um string atende a uma expressão regular
-(re-matches #"\d+" "123") ; => "123"
+## Como:
 
-;; Encontrar todas as ocorrências de um padrão em um texto
-(re-seq #"\w+" "Olá mundo 123!") ; => ("Olá" "mundo" "123")
+Clojure, fiel às suas raízes na família Lisp, oferece um rico conjunto de funções que se integram perfeitamente com as capacidades de expressão regular do Java. Veja como você pode aproveitá-las:
 
-;; Substituir partes de um string que atendam a um padrão
-(clojure.string/replace "15/04/2023" #"\d{2}/\d{2}/" "01/01/") ; => "01/01/2023"
+### Correspondência Básica
+Para verificar se uma string corresponde a um padrão, use `re-matches`. Ele retorna a correspondência completa se for bem-sucedido ou `nil` caso contrário.
+
+```clojure
+(re-matches #"\d+" "123")  ;=> "123"
+(re-matches #"\d+" "abc")  ;=> nil
 ```
 
-## Aprofundando
-Expressões regulares não são uma invenção recente; surgiram na década de 1950 com o trabalho do matemático Stephen Kleene. Como alternativas, linguagens oferecem a busca de strings e funções de parse, mas nada supera a expressão regular em flexibilidade. A implementação em Clojure usa o Java `java.util.regex`, que é parte do Java Standard Library, garantindo bom desempenho e confiabilidade.
+### Pesquisando por Padrões
+Para encontrar a primeira ocorrência de um padrão, `re-find` é sua função de escolha:
 
-## Veja Também
-- [ClojureDocs - Regular Expressions](https://clojuredocs.org/clojure.string/replace)
-- [Clojure from the ground up: regex](https://aphyr.com/posts/305-clojure-from-the-ground-up-regex)
-- [Java Pattern Class](https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html)
+```clojure
+(re-find #"\d+" "Pedido 123")  ;=> "123"
+```
+
+### Capturando Grupos
+Use `re-find` junto com parênteses em seu padrão para capturar grupos:
+
+```clojure
+(let [[_ área código] (re-find #"(1)?(\d{3})" "Telefone: 123-4567")]
+  (println "Código de Área:" área "Código:" código))
+;; Saída: Código de Área: nil Código: 123
+```
+
+### Pesquisa Global (Encontrar Todas as Correspondências)
+Clojure não tem uma pesquisa global embutida como algumas linguagens. Em vez disso, use `re-seq` para obter uma sequência preguiçosa de todas as correspondências:
+
+```clojure
+(re-seq #"\d+" "id: 123, qty: 456")  ;=> ("123" "456")
+```
+
+### Dividindo Strings
+Para dividir uma string com base em um padrão, use `clojure.string/split`:
+
+```clojure
+(clojure.string/split "João,Doe,30" #",")  ;=> ["João" "Doe" "30"]
+```
+
+### Substituição
+Substitua partes de uma string que correspondem a um padrão com `clojure.string/replace`:
+
+```clojure
+(clojure.string/replace "2023-04-01" #"\d{4}" "AAAA")  ;=> "AAAA-04-01"
+```
+
+### Bibliotecas de Terceiros
+Embora o suporte interno de Clojure seja suficiente na maioria dos casos, para cenários mais complexos, considere usar bibliotecas como `clojure.spec` para validação robusta de dados e `reagent` para manipulação reativa do DOM em aplicações web com roteamento baseado em regex e validação de entrada.
+
+```clojure
+;; Exemplo usando clojure.spec para validar um email
+(require '[clojure.spec.alpha :as s])
+(s/def ::email (s/and string? #(re-matches #".+@.+\..+" %)))
+(s/valid? ::email "teste@example.com")  ;=> true
+```
+
+Lembre-se, embora as expressões regulares sejam poderosas, elas também podem tornar o código difícil de ler e manter. Use-as com parcimônia e sempre considere funções de manipulação de string mais simples quando possível.

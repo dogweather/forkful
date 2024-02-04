@@ -1,38 +1,75 @@
 ---
-title:                "Manipulation des fichiers CSV"
-date:                  2024-01-19
-simple_title:         "Manipulation des fichiers CSV"
-
+title:                "Travailler avec CSV"
+date:                  2024-02-03T19:18:42.615807-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Travailler avec CSV"
 tag:                  "Data Formats and Serialization"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/bash/working-with-csv.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (Quoi et Pourquoi ?)
-Les fichiers CSV (valeurs séparées par des virgules) stockent des données tabulaires sous une forme texte simple, ce qui en fait un format commun pour échanger des données entre applications. Les programmeurs utilisent souvent des scripts Bash pour manipuler ces fichiers car c'est rapide et efficace pour des tâches de manipulation de texte.
+## Quoi & Pourquoi ?
+Travailler avec des fichiers CSV (Valeurs Séparées par des Virgules) dans Bash consiste à traiter et manipuler des données tabulaires stockées au format texte brut. C'est essentiel pour les programmeurs car cela permet l'automatisation des tâches de transformation, d'analyse et d'intégration des données directement depuis la ligne de commande, sans nécessité d'utiliser des outils plus lourds ou des environnements de programmation.
 
-## How to: (Comment faire :) 
-```Bash
-# Lire un fichier CSV
-while IFS=, read -r col1 col2 col3; do
-  echo "Colonne 1: $col1 - Colonne 2: $col2 - Colonne 3: $col3"
-done < fichier.csv
+## Comment faire :
 
-# Exemple de sortie:
-# Colonne 1: valeur1 - Colonne 2: valeur2 - Colonne 3: valeur3
+**Lire un fichier CSV ligne par ligne**
 
-# Ajouter une ligne à un fichier CSV
-echo "nouvelle_valeur1,nouvelle_valeur2,nouvelle_valeur3" >> fichier.csv
-
-# Trier un fichier CSV par la deuxième colonne
-sort -t, -k2 fichier.csv
+```bash
+while IFS=, read -r colonne1 colonne2 colonne3
+do
+  echo "Colonne 1 : $colonne1, Colonne 2 : $colonne2, Colonne 3 : $colonne3"
+done < exemple.csv
 ```
 
-## Deep Dive (Plongée Profonde)
-Les fichiers CSV ont été largement adoptés dans les années 1970 comme moyen facile de transférer des tables de données entre différents programmes. Des alternatives, comme le format JSON ou XML, permettent de représenter des données plus complexes, mais le CSV reste populaire en raison de sa simplicité. La manipulation de CSV en Bash est généralement facilitée par les commandes UNIX comme `cut`, `sort`, `awk`, qui offrent une grande flexibilité.
+*Exemple de sortie :*
 
-## See Also (Voir Aussi)
-- [GNU Coreutils](https://www.gnu.org/software/coreutils/coreutils.html): Utilitaires de base pour la manipulation de texte.
-- [Bash Reference Manual](https://www.gnu.org/software/bash/manual/): Manuel de référence pour Bash.
-- [AWK Manual](https://www.gnu.org/software/gawk/manual/): Manuel pour AWK, un langage de traitement de texte.
+```
+Colonne 1 : id, Colonne 2 : nom, Colonne 3 : email
+...
+```
+
+**Filtrer les lignes CSV sur la base d'une condition**
+
+Utilisant `awk`, vous pouvez facilement filtrer les lignes. Par exemple, pour trouver les lignes où la deuxième colonne est égale à "Alice" :
+
+```bash
+awk -F, '$2 == "Alice" { print $0 }' exemple.csv
+```
+
+**Modifier la valeur d'une colonne**
+
+Pour changer la deuxième colonne en majuscules :
+
+```bash
+awk -F, 'BEGIN {OFS=",";} { $2 = toupper($2); print $0; }' exemple.csv
+```
+
+**Trier un fichier CSV basé sur une colonne**
+
+Vous pouvez trier un fichier CSV en se basant, disons, sur la troisième colonne (numériquement) :
+
+```bash
+sort -t, -k3,3n exemple.csv
+```
+
+**Utiliser `csvkit` pour des tâches plus complexes**
+
+`csvkit` est un ensemble d'outils en ligne de commande pour convertir et travailler avec des CSV. Il peut être installé via pip.
+
+Pour convertir un fichier JSON en CSV :
+
+```bash
+in2csv donnees.json > donnees.csv
+```
+
+Pour interroger un fichier CSV en utilisant SQL :
+
+```bash
+csvsql --query "SELECT nom FROM exemple WHERE id = 10" exemple.csv
+```
+
+*Note : L'installation de `csvkit` nécessite Python et peut être réalisée en utilisant `pip install csvkit`.*

@@ -1,43 +1,56 @@
 ---
 title:                "標準エラーへの書き込み"
-date:                  2024-01-19
+date:                  2024-02-03T19:33:03.819593-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "標準エラーへの書き込み"
-
 tag:                  "Files and I/O"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/c-sharp/writing-to-standard-error.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? / 何となぜ？
-標準エラーへの書き込みは、エラーメッセージや警告を出力する手段だ。これを使う理由は、標準出力（プログラムのメインの出力）と分けることで、ログの整理やデバッグをしやすくするためだ。
+## 何となぜ？
+C#で標準エラー（stderr）に書き込むことは、エラーメッセージや診断を通常の出力（stdout）から別にし、使い手や開発者が通常のプログラム出力とエラー通知を区別できるようにすることを意味します。プログラマーはこれを行うことで、デバッグやログ記録をより効率的にし、アプリケーションのスムーズな運用と保守を可能にします。
 
-## How to: / 方法
+## 方法：
+C#で標準エラーに書き込むには、`Console.Error`ストリームを使用できます。このストリームは、エラーメッセージと診断のために特別に使用されます。基本的な例を以下に示します。
+
 ```csharp
-using System;
-
-class Program
-{
-    static void Main()
-    {
-        Console.Error.WriteLine("エラー: 何か問題が発生しました。");
-        Console.WriteLine("通常の出力");
-    }
-}
+Console.Error.WriteLine("Error: Failed to process the request.");
 ```
-出力例:
-```
-> dotnet run
-エラー: 何か問題が発生しました。
-通常の出力
-```
-標準エラー出力が先に表示されることもあるが、実際は出力の順番は実行環境によって変わる点に注意。
 
-## Deep Dive / 詳細な情報
-コマンドラインツールが始まった頃、標準出力と標準エラーを別々にし、エラーメッセージをフィルタリングする利点が見つかった。C#では、`System.Console.Error`は`TextWriter`オブジェクトであり、`Console.WriteLine`と同じ使い方ができる。ただ、`Error`を使うと、エラーメッセージは標準エラーストリームに流れる。これにより、ログファイルやコンソールでエラーを分けて扱える。別の方法として、`System.Diagnostics.Trace`やロギングフレームワークの使用も考えられるが、シンプルなスクリプトや小規模アプリでは`Console.Error`で十分だ。
+標準エラーへのサンプル出力：
+```
+Error: Failed to process the request.
+```
 
-## See Also / 参照
-- .NET API Documentation: [Console.Error Property](https://docs.microsoft.com/dotnet/api/system.console.error)
-- Microsoft C# Guide: [Console Class](https://docs.microsoft.com/dotnet/csharp/programming-guide/main-and-command-args/)
-- Stack Overflow: [Differences between Console.WriteLine and Console.Error.WriteLine](https://stackoverflow.com/questions/138052/difference-between-console-write-and-console-error-write)
+`Serilog` や `NLog` のように、高度なログ機能を提供するサードパーティのライブラリを使用している場面では、これらのライブラリを構成してエラーログをstderrに書き出すことができます。これらの例は単純なコンソールリダイレクションに焦点を当てていますが、本番アプリケーションでは、ログフレームワークがより堅牢なエラー処理と出力オプションを提供することを覚えておいてください。`Serilog`を使用した簡単な例を以下に示します。
+
+まず、SerilogパッケージとそのConsoleシンクをインストールします：
+
+```
+Install-Package Serilog
+Install-Package Serilog.Sinks.Console
+```
+
+次に、Serilogを標準エラーに書き込むように構成します：
+
+```csharp
+using Serilog;
+
+Log.Logger = new LoggerConfiguration()
+    .WriteTo.Console(standardErrorFromLevel: Serilog.Events.LogEventLevel.Error)
+    .CreateLogger();
+
+Log.Information("This is a normal message.");
+Log.Error("This is an error message.");
+```
+
+エラーメッセージの標準エラーへのサンプル出力：
+```
+[15:04:20 ERR] This is an error message.
+```
+
+注：SerilogのConsoleシンクでの`standardErrorFromLevel`の設定は、指定されたレベル（この場合はError）またはそれ以上のすべてのログイベントを標準エラーストリームにリダイレクトし、情報のような低レベルのメッセージは標準出力ストリームに書き込まれます。

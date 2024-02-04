@@ -1,64 +1,72 @@
 ---
 title:                "解析HTML"
-date:                  2024-01-20T15:33:30.436730-07:00
+date:                  2024-02-03T19:12:39.550825-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "解析HTML"
-
 tag:                  "HTML and the Web"
-isCJKLanguage:        true
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/powershell/parsing-html.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
-## What & Why? (是什么？为什么？)
-解析HTML就是提取网页的结构化内容。程序员这么做是为了自动化地处理网页数据，比如数据挖掘或内容迁移。
+## 什么 & 为什么？
+在 PowerShell 中解析 HTML 意味着解析 HTML 内容以提取特定数据或自动化与网络相关的任务。程序员这样做是为了与网页交互、抓取网页内容，或者自动化表单提交和其他网络交互，而不需要网络浏览器。
 
-## How to: (如何实现：)
-使用PowerShell解析HTML，可以借助`HtmlAgilityPack`库。首先，安装该库：
+## 如何操作：
 
-```PowerShell
-Install-Package HtmlAgilityPack
+PowerShell 没有原生支持的专 dedicated 的 HTML 解析器，但你可以使用 `Invoke-WebRequest` cmdlet 来访问和解析 HTML 内容。对于更复杂的解析和操作，可以使用 HtmlAgilityPack，这是一个流行的 .NET 库。
+
+### 使用 `Invoke-WebRequest`：
+
+```powershell
+# 简单示例，从网页获取标题
+$response = Invoke-WebRequest -Uri 'http://example.com'
+# 使用 ParsedHtml 属性访问 DOM 元素
+$title = $response.ParsedHtml.title
+Write-Output $title
 ```
 
-然后，加载HTML，提取信息：
+示例输出：
 
-```PowerShell
-# 加载HtmlAgilityPack
-Add-Type -Path "path/to/HtmlAgilityPack.dll"
+```
+Example Domain
+```
 
-# 读取HTML文件
-$html = New-Object HtmlAgilityPack.HtmlDocument
-$html.Load('path/to/yourfile.html')
+### 使用 HtmlAgilityPack：
 
-# 选择并输出所有<h1>标签的内容
-$h1Tags = $html.DocumentNode.SelectNodes('//h1')
-foreach ($tag in $h1Tags) {
-    Write-Output $tag.InnerText
+首先，你需要安装 HtmlAgilityPack。你可以通过 NuGet 包管理器进行安装：
+
+```powershell
+Install-Package HtmlAgilityPack -ProviderName NuGet
+```
+
+然后，你可以在 PowerShell 中使用它来解析 HTML：
+
+```powershell
+# 加载 HtmlAgilityPack 程序集
+Add-Type -Path "path\to\HtmlAgilityPack.dll"
+
+# 创建 HtmlDocument 对象
+$doc = New-Object HtmlAgilityPack.HtmlDocument
+
+# 从文件或网络请求加载 HTML
+$htmlContent = (Invoke-WebRequest -Uri "http://example.com").Content
+$doc.LoadHtml($htmlContent)
+
+# 使用 XPath 或其他查询方法提取元素
+$node = $doc.DocumentNode.SelectSingleNode("//h1")
+
+if ($node -ne $null) {
+    Write-Output $node.InnerText
 }
 ```
 
-如果你的HTML是网络上的，可以这样：
+示例输出：
 
-```PowerShell
-# 使用WebClient下载HTML
-$webClient = New-Object System.Net.WebClient
-$htmlContent = $webClient.DownloadString('http://example.com')
-
-# 加载内容到HtmlDocument
-$html.LoadHtml($htmlContent)
-
-# 同样提取<h1>
-$h1Tags = $html.DocumentNode.SelectNodes('//h1')
-$h1Tags | ForEach-Object { Write-Output $_.InnerText }
+```
+Welcome to Example.com!
 ```
 
-## Deep Dive (深入了解)
-HTML解析不是个新话题。长期以来，人们一直在寻找更高效、准确的方法解析网页。`HtmlAgilityPack`是目前用于.NET环境的解析库中较受欢迎的一个。它处理不规则标记，并提供XPath或CSS选择器来查找元素。
-
-其他方式比如使用正则表达式，但这通常不推荐，因为它对于复杂的HTML结构不够灵活和可靠。PowerShell本身没有内建的HTML解析库，所以使用外部库是常见选择。
-
-在实际的应用中，除了提取文本，我们还可以通过解析HTML来修改元素、删除节点或添加新的内容，使其成为强大的自动化工具。
-
-## See Also (另请参阅)
-- HtmlAgilityPack官方文档: [https://html-agility-pack.net/](https://html-agility-pack.net/)
-- XPath教程: [https://www.w3schools.com/xml/xpath_intro.asp](https://www.w3schools.com/xml/xpath_intro.asp)
+在这些示例中，`Invoke-WebRequest` 最适合简单任务，而 HtmlAgilityPack 为复杂的 HTML 解析和操作提供了更丰富的功能集。

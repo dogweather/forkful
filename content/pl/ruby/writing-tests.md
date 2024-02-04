@@ -1,56 +1,89 @@
 ---
 title:                "Pisanie testów"
-date:                  2024-01-19
+date:                  2024-02-03T19:32:09.934883-07:00
+model:                 gpt-4-0125-preview
 simple_title:         "Pisanie testów"
-
 tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/ruby/writing-tests.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
 ---
 
 {{< edit_this_page >}}
 
 ## Co i dlaczego?
+Testowanie w Ruby polega na weryfikacji, czy Twój kod zachowuje się zgodnie z oczekiwaniami w różnych warunkach. Programiści piszą testy, aby zapewnić poprawność, zapobiegać regresji i ułatwić refaktoryzację, dążąc do stworzenia solidnych i łatwych w utrzymaniu aplikacji.
 
-Testy pozwalają sprawdzić, czy kod robi to co powinien. Dzięki nim możemy szybko wykryć błędy i zabezpieczyć aplikację przed przyszłymi problemami.
+## Jak to zrobić:
+Ruby jest wyposażony w wbudowaną bibliotekę o nazwie `Test::Unit` do pisania testów jednostkowych, zawierającą praktyki testowe w prostych strukturach. Jednak społeczność Ruby często skłania się ku bibliotekom stron trzecich, takim jak RSpec i Minitest, ze względu na ich zwiększoną ekspresywność i elastyczność.
 
-## Jak to zrobić?
+### Używanie `Test::Unit`:
+```ruby
+require 'test/unit'
 
-```Ruby
-# Zainstaluj gem 'rspec'
-# W terminalu: gem install rspec
-
-# test_spec.rb
-require_relative 'twoj_kod'
-
-RSpec.describe "An example of a test" do
-  it "checks if method returns correct value" do
-    expect(metoda_testowa(3)).to eq(9)
+class CalculatorTest < Test::Unit::TestCase
+  def test_addition
+    result = 2 + 2
+    assert_equal 4, result
   end
 end
-
-# twoj_kod.rb
-def metoda_testowa(x)
-  x * x
-end
-
-# Uruchom test w terminalu:
-# rspec test_spec.rb
-
-# Oczekiwany wynik:
-# .
-
-# Finished in 0.00276 seconds (files took 0.15743 seconds to load)
-# 1 example, 0 failures
+```
+Uruchom swój plik testowy z terminala, a powinieneś otrzymać wynik wskazujący na sukces lub niepowodzenie testów:
+```
+Loaded suite test_calculator
+Started
+.
+Finished in 0.001288 seconds.
+1 tests, 1 assertions, 0 failures, 0 errors, 0 pendings, 0 omissions, 0 notifications
+100% passed
 ```
 
-## Głębsze spojrzenie
+### Używanie RSpec:
+RSpec jest popularnym frameworkiem BDD (Behavior-Driven Development) dla Ruby. Zainstaluj gem za pomocą `gem install rspec`, a następnie zainicjalizuj go w swoim projekcie za pomocą `rspec --init`.
 
-Testy w Ruby zaczęły być popularne po wydaniu narzędzia RSpec około 2005 roku. Alternatywy to Minitest czy Test::Unit. RSpec wykorzystuje składnię typu DSL (Domain Specific Language), co sprawia, że testy są bardziej czytelne. Implementacja testów wymaga znajomości asercji i metod 'expect', które pozwalają określić oczekiwane zachowania testowanej funkcji.
+```ruby
+# calculator_spec.rb
+require_relative '../calculator'
 
-## Zobacz również
+describe Calculator do
+  it 'poprawnie dodaje dwie liczby' do
+    expect(Calculator.add(2, 2)).to eq(4)
+  end
+end
+```
+Uruchom testy za pomocą polecenia `rspec`. Przykładowy wynik:
+```
+.
 
-- RSpec documentation: https://rspec.info/documentation/
-- RubyGuides testing tutorial: https://www.rubyguides.com/2018/07/rspec-tutorial/
-- Better Specs {RSpec best practices}: http://www.betterspecs.org/
+Finished in 0.002 seconds (files took 0.1 seconds to load)
+1 example, 0 failures
+```
 
-Pamiętaj, że regularna praktyka i eksploracja możliwości jest najlepszą metodą nauki pisania testów.
+### Używanie Minitest:
+Minitest oferuje kompletny zestaw narzędzi do testowania wspierających TDD, BDD, mocking i benchmarking. Zainstaluj go za pomocą `gem install minitest` i używaj w następujący sposób:
+
+```ruby
+# test_calculator.rb
+require 'minitest/autorun'
+require_relative '../calculator'
+
+class CalculatorTest < Minitest::Test
+  def test_addition
+    assert_equal 4, Calculator.add(2, 2)
+  end
+end
+```
+
+Uruchom swój plik testowy bezpośrednio lub przez zadanie `rake` ustawione dla minitest. Przykładowy wynik:
+```
+Run options: --seed 33407
+
+# Running:
+
+.
+
+Finished in 0.001027s, 974.5922 runs/s, 974.5922 assertions/s.
+1 runs, 1 assertions, 0 failures, 0 errors, 0 skips
+```
+
+Implementując testy w swoich projektach Ruby z użyciem tych bibliotek, stosujesz najlepsze praktyki, co prowadzi do bardziej niezawodnych i łatwiejszych w utrzymaniu baz kodów.
