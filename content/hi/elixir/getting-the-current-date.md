@@ -7,6 +7,8 @@ tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/elixir/getting-the-current-date.md"
 changelog:
   - 2024-02-03, gpt-4-0125-preview, translated from English
+  - 2024-02-05, dogweather, reviewed and corrected
+lastmod:              2024-02-05
 ---
 
 {{< edit_this_page >}}
@@ -27,7 +29,7 @@ IO.inspect(current_datetime_utc)
 
 **नमूना आउटपुट:**
 ```
-#DateTime<2023-05-04 15:00:00Z>
+~U[2024-02-05 19:58:40.925931Z]
 ```
 
 केवल वर्तमान तारीख प्राप्त करने के लिए, आप वर्ष, महीना, और दिन के घटकों को निकाल सकते हैं:
