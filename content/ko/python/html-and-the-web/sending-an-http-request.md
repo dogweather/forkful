@@ -1,0 +1,65 @@
+---
+title:                "HTTP 요청 보내기"
+aliases:
+- /ko/python/sending-an-http-request/
+date:                  2024-01-20T18:00:44.489022-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "HTTP 요청 보내기"
+
+tag:                  "HTML and the Web"
+isCJKLanguage:        true
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/python/sending-an-http-request.md"
+---
+
+{{< edit_this_page >}}
+
+## What & Why? (무엇과 왜?)
+HTTP 요청을 보낸다는 것은 웹 서버에 정보를 요청하거나 데이터를 전송하는 것입니다. 프로그래머들은 API와 상호 작용하거나, 웹 콘텐츠를 가져오고, 웹 기반 서비스에 데이터를 전송하기 위해 이를 사용합니다.
+
+## How to: (어떻게 하나요?)
+Python에서 HTTP 요청을 보내려면 `requests` 라이브러리를 사용하는 것이 일반적입니다. 다음은 간단한 GET 요청의 예입니다.
+
+```Python
+import requests
+
+response = requests.get('https://api.github.com')
+print(response.status_code)
+print(response.json())
+```
+
+실행 결과는 다음과 같습니다.
+
+```
+200
+{'current_user_url': 'https://api.github.com/user', 'current_user_authorizations_html_url': 'https://github.com/settings/connections/applications{/client_id}', ... }
+```
+
+POST 요청을 보내는 예제:
+
+```Python
+import requests
+
+data = {'key': 'value'}
+response = requests.post('https://httpbin.org/post', data=data)
+print(response.status_code)
+print(response.json())
+```
+
+실행 결과는 다음과 같습니다.
+
+```
+200
+{'args': {}, 'data': '', 'files': {}, 'form': {'key': 'value'}, ... }
+```
+
+## Deep Dive (심층 분석)
+HTTP 요청은 웹의 기본적인 동작 중 하나입니다. 1991년에 개발된 HTTP는 타이밍과 컨텍스트에 따라 여러 버전(HTTP/1.0, HTTP/1.1, HTTP/2, 그리고 최근의 HTTP/3)이 있습니다. `requests`는 사용하기 쉽고, 많은 내장 기능이 있어 Python에서 가장 인기 있는 HTTP 클라이언트 라이브러리 중 하나입니다.
+
+대안으로는 `http.client`가 내장되어 있으며, 비동기 처리를 위한 `aiohttp` 같은 라이브러리도 있습니다. 각 라이브러리는 구현 세부 사항과 지원하는 기능면에서 차이가 있어, 프로젝트의 요구에 맞게 선택해야 합니다.
+
+## See Also (함께 보기)
+- `requests` 문서: https://requests.readthedocs.io
+- Python 공식 `http.client` 문서: https://docs.python.org/3/library/http.client.html
+- `aiohttp` 문서: https://docs.aiohttp.org
+
+이 기사를 통해 HTTP 요청에 대한 기본적인 이해를 얻기를 바랍니다. 더 깊이 탐구하고 싶다면 상기 링크된 문서들에서 추가 정보를 찾아볼 수 있습니다.

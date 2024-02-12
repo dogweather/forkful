@@ -1,0 +1,78 @@
+---
+title:                "Arbeta med CSV"
+aliases:
+- /sv/haskell/working-with-csv/
+date:                  2024-02-03T19:20:04.591923-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Arbeta med CSV"
+tag:                  "Data Formats and Serialization"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/haskell/working-with-csv.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
+---
+
+{{< edit_this_page >}}
+
+## Vad & Varför?
+
+Att arbeta med CSV-filer (Comma-Separated Values eller komma-separerade värden) innebär att tolka och generera filer som lagrar tabulär data i ett enkelt, textbaserat format. Programmerare sysslar ofta med denna uppgift för att effektivt importera eller exportera data från kalkylark, databaser, eller för att underlätta datautbyte mellan olika program.
+
+## Hur:
+
+I Haskell kan hantering av CSV-filer uppnås med hjälp av `cassava`-biblioteket, ett av de populära tredjepartsbiblioteken för detta ändamål. Nedan finns exempel som visar hur man läser från och skriver till CSV-filer med `cassava`.
+
+**1. Läsa en CSV-fil:**
+
+Se först till att du har `cassava` installerat genom att lägga till det i ditt projekts cabal-fil eller använda Stack.
+
+Här är ett enkelt exempel på att läsa en CSV-fil och skriva ut varje post. Vi antar att CSV-filen har två kolumner: namn och ålder.
+
+```haskell
+{-# LANGUAGE OverloadedStrings #-}
+import Data.Csv
+import qualified Data.ByteString.Lazy as BL
+import qualified Data.Vector as V
+
+main :: IO ()
+main = do
+    csvData <- BL.readFile "people.csv"
+    case decode NoHeader csvData of
+        Left err -> putStrLn err
+        Right v -> V.forM_ v $ \(namn, ålder) ->
+            putStrLn $ namn ++ " är " ++ show (ålder :: Int) ++ " år gammal."
+```
+
+Antag att `people.csv` innehåller:
+```
+John,30
+Jane,25
+```
+Utmatningen blir:
+```
+John är 30 år gammal.
+Jane är 25 år gammal.
+```
+
+**2. Skriva en CSV-fil:**
+
+För att skapa en CSV-fil kan du använda `encode`-funktionen från `cassava`.
+
+Så här kan du skriva en lista med poster till en CSV-fil:
+
+```haskell
+{-# LANGUAGE OverloadedStrings #-}
+import Data.Csv
+import qualified Data.ByteString.Lazy as BL
+
+main :: IO ()
+main = BL.writeFile "output.csv" $ encode [("John", 30), ("Jane", 25)]
+```
+
+Efter att ha kört detta program kommer `output.csv` att innehålla:
+
+```
+John,30
+Jane,25
+```
+
+Denna kortfattade introduktion till att arbeta med CSV-filer i Haskell med hjälp av `cassava`-biblioteket demonstrerar hur man både läser från och skriver till CSV-filer, vilket gör datamanipuleringsuppgifter mer tillgängliga för de som är nya till språket.

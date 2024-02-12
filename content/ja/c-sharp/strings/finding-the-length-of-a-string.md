@@ -1,0 +1,56 @@
+---
+title:                "文字列の長さを求める"
+aliases:
+- /ja/c-sharp/finding-the-length-of-a-string/
+date:                  2024-01-20T17:47:01.839401-07:00
+model:                 gpt-4-1106-preview
+simple_title:         "文字列の長さを求める"
+
+tag:                  "Strings"
+isCJKLanguage:        true
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/c-sharp/finding-the-length-of-a-string.md"
+---
+
+{{< edit_this_page >}}
+
+## What & Why?
+## 何となぜ？
+文字列の長さを見つけるというのは、単純に文字列が何文字から成っているかを数えることです。この操作は、入力の検証、データの整形、ループでの処理など、さまざまな状況で役立ちます。
+
+## How to:
+## 方法：
+```C#
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        string example = "こんにちは";
+        int length = example.Length;
+
+        Console.WriteLine("String length: " + length);
+    }
+}
+```
+Sample Output:
+```
+String length: 5
+```
+文字列の`Length`プロパティを使って、文字数を簡単に取得できます。
+
+## Deep Dive
+## 詳細な解説：
+C#では、`string`クラスには`.Length`プロパティが備わっている。これは文字列に含まれる文字の数を返す。
+
+歴史的に見ると、C言語などでは文字列は文字の配列として扱われ、ヌル文字('\0')で終わる。そのため、文字列の長さを見つけるには配列をループし、ヌル文字に到達するまでカウントする必要があった。C#では`.Length`がシンプルにその仕事をしてくれる。
+
+代替方法として、LINQ拡張メソッド`Count()`も持つことができるが、`Length`プロパティの方が直接的で効率的である。
+
+実装の詳細として、`.Length`プロパティは内部的には文字列オブジェクトのメタデータを参照し、そこに保存されている長さの値を返します。これは計算されるのではなく、文字列オブジェクトが作成される時点で設定されます。
+
+## See Also
+## 関連情報：
+- Microsoft documentation on the String.Length Property: [https://docs.microsoft.com/en-us/dotnet/api/system.string.length](https://docs.microsoft.com/en-us/dotnet/api/system.string.length)
+- An overview of strings in C#: [https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/strings/](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/strings/)
+- Using LINQ in C#: [https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/)

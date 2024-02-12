@@ -1,0 +1,102 @@
+---
+title:                "Työskentely CSV:n kanssa"
+aliases:
+- /fi/typescript/working-with-csv/
+date:                  2024-02-03T19:21:32.185715-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Työskentely CSV:n kanssa"
+tag:                  "Data Formats and Serialization"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/typescript/working-with-csv.md"
+changelog:
+  - 2024-02-03, gpt-4-0125-preview, translated from English
+---
+
+{{< edit_this_page >}}
+
+## Mikä & Miksi?
+
+CSV:n (pilkulla erotetut arvot) käsittelyyn kuuluu CSV-tiedostojen lukemista ja niihin kirjoittamista, mikä on yleinen tiedonvaihtomuoto sen yksinkertaisuuden ja laajan tuen ansiosta eri alustoilla ja kielillä. Ohjelmoijat käsittelevät CSV-tiedostoja tuodakseen tai viedäkseen tietoa sovelluksista, tietokannoista ja palveluista, mikä mahdollistaa helpon tiedon manipuloinnin ja jakamisen.
+
+## Kuinka:
+
+TypeScriptissä voit työskennellä CSV-tiedostojen kanssa natiivikoodin tai kolmansien osapuolten kirjastojen, kuten `csv-parser` lukemiseen ja `csv-writer` kirjoittamiseen, avulla.
+
+### CSV:n lukeminen `csv-parser` avulla
+
+Asenna ensin `csv-parser` npm:n kautta:
+
+```
+npm install csv-parser
+```
+
+Lue sitten CSV-tiedosto näin:
+
+```typescript
+import fs from 'fs';
+import csv from 'csv-parser';
+
+const results = [];
+
+fs.createReadStream('data.csv')
+  .pipe(csv())
+  .on('data', (data) => results.push(data))
+  .on('end', () => {
+    console.log(results);
+    // Tuloste: Olioiden taulukko, kukin edustaa yhtä CSV:n riviä
+  });
+```
+
+Olettaen, että `data.csv` sisältää:
+
+```
+name,age
+Alice,30
+Bob,25
+```
+
+Tuloste on:
+
+```
+[ { name: 'Alice', age: '30' }, { name: 'Bob', age: '25' } ]
+```
+
+### CSV:n kirjoittaminen `csv-writer` avulla
+
+CSV-tiedostoon kirjoittaaksesi asenna ensin `csv-writer`:
+
+```
+npm install csv-writer
+```
+
+Käytä sitä sitten seuraavasti:
+
+```typescript
+import { createObjectCsvWriter as createCsvWriter } from 'csv-writer';
+
+const csvWriter = createCsvWriter({
+  path: 'out.csv',
+  header: [
+    {id: 'name', title: 'NIMI'},
+    {id: 'age', title: 'IKÄ'}
+  ]
+});
+
+const data = [
+  { name: 'Alice', age: 30 },
+  { name: 'Bob', age: 25 }
+];
+
+csvWriter
+  .writeRecords(data)
+  .then(() => console.log('CSV-tiedosto kirjoitettiin onnistuneesti'));
+```
+
+Tämä koodi kirjoittaa seuraavaa `out.csv`-tiedostoon:
+
+```
+NIMI,IKÄ
+Alice,30
+Bob,25
+```
+
+Nämä esimerkit näyttävät, kuinka integroida CSV:n käsittely tehokkaasti TypeScript-projekteihisi, oli kyseessä sitten tiedon lukeminen analyysiä varten tai sovellustiedon tallentaminen ulkoisesti.

@@ -1,0 +1,42 @@
+---
+title:                "Використання інтерактивної оболонки (REPL)"
+aliases:
+- /uk/lua/using-an-interactive-shell-repl/
+date:                  2024-01-26T04:16:59.013252-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Використання інтерактивної оболонки (REPL)"
+
+tag:                  "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/lua/using-an-interactive-shell-repl.md"
+---
+
+{{< edit_this_page >}}
+
+## Що та Чому?
+REPL означає Read-Eval-Print Loop (Цикл Читання-Виконання-Друкування), інтерактивне середовище, де можна швидко тестувати код. Програмісти використовують його для експериментування, налагодження та вивчення особливостей мови.
+
+## Як:
+Щоб увійти до REPL Lua, просто введіть `lua` у своєму терміналі. Ось приклад сесії:
+
+```Lua
+> x = 10
+> print(x * 2)
+20
+> t = {'apple', 'banana', 'cherry'}
+> table.insert(t, 'date')
+> for i, fruit in ipairs(t) do print(i, fruit) end
+1	apple
+2	banana
+3	cherry
+4	date
+>
+```
+У цій сесії ми оголошуємо змінну, виконуємо базові арифметичні операції, маніпулюємо таблицею та проходимося циклом по її елементах.
+
+## Поглиблено
+Легковажна природа Lua робить її REPL ідеальним для прототипування. Це існує з моменту створення Lua на початку 1990-х, натхненне попередніми інтерактивними оболонками для мов, таких як Lisp. Альтернативи в інших мовах включають `irb` для Ruby та `python` для Python, кожна з яких має власний набір можливостей. REPL Lua - мінімалістичний; отже, в ньому може бракувати розширених можливостей, які є в інших, наприклад, складних інструментів налагодження. Для більш повноцінного досвіду інструменти, такі як ZeroBrane Studio або LuaDist's LuaRocks, пропонують більше, ніж базовий REPL.
+
+## Див. також
+- [Посібник користувача Lua 5.4 - Стандартний інтерпретатор Lua](https://www.lua.org/manual/5.4/manual.html#6)
+- [ZeroBrane Studio](https://studio.zerobrane.com/)
+- [LuaRocks](https://luarocks.org/)

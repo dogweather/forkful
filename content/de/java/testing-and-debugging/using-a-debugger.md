@@ -1,0 +1,57 @@
+---
+title:                "Einsatz eines Debuggers"
+aliases:
+- /de/java/using-a-debugger/
+date:                  2024-01-26T03:49:30.157433-07:00
+model:                 gpt-4-0125-preview
+simple_title:         "Einsatz eines Debuggers"
+
+tag:                  "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/java/using-a-debugger.md"
+---
+
+{{< edit_this_page >}}
+
+## Was & Warum?
+Ein Debugger wird verwendet, um ein Werkzeug zum Testen und Beheben von Fehlern im Code einzusetzen. Programmierer tun dies, um den Ablauf ihrer Anwendungen zu verstehen, die Ursachen von Fehlern zu ermitteln und die Logik während der Ausführung zu überprüfen.
+
+## Wie geht das:
+Angenommen, Sie haben ein einfaches Java-Programm, das Probleme macht, und Sie können nicht herausfinden, warum. So würden Sie einen Debugger mit Eclipse starten, einer der beliebten IDEs für die Java-Entwicklung:
+
+Zuerst stellen Sie sicher, dass Sie einen Haltepunkt gesetzt haben. Klicken Sie dann mit der rechten Maustaste auf die Datei, wählen Sie 'Debuggen als' und klicken Sie auf 'Java-Anwendung'.
+
+```Java
+public class DebugExample {
+    public static void main(String[] args) {
+        int a = 5;
+        int b = 0;
+        // Setzen Sie hier einen Haltepunkt
+        int result = divide(a, b);
+        System.out.println("Das Ergebnis ist: " + result);
+    }
+
+    private static int divide(int numerator, int denominator) {
+        // Ein weiterer guter Ort für einen Haltepunkt
+        return numerator / denominator;
+    }
+}
+```
+
+Dadurch wird Ihr Programm am Haltepunkt pausiert, und Sie können Variablen inspizieren, den Code Zeile für Zeile durchgehen und beobachten, wie sich Ihr Programm verhält.
+
+Beispielausgabe (in einer Debugger-Konsole):
+```
+Haltepunkt erreicht bei Zeile: int result = divide(a, b);
+```
+
+## Vertiefung
+Das Konzept des Debuggings gibt es schon seit den frühen Tagen der Programmierung. Der Legende nach stammt der Begriff "Bug" (Englisch für Fehler) tatsächlich von einem echten mottenähnlichen Käfer, der von Grace Hopper, einer Pionierin auf dem Gebiet, in einem Computer gefunden wurde. Bis heute haben wir ausgefeilte IDEs wie IntelliJ IDEA, Eclipse und NetBeans, die leistungsstarke Debugger integrieren.
+
+Alternativen zu IDE-Debuggern umfassen Logging, Print-Befehle (Arme-Leute-Debugger), Assertions und eigenständige Debugging-Tools wie jdb (Java Debugger), der Teil des Java Development Kit (JDK) ist.
+
+Ein Debugger funktioniert, indem er dem Programmierer ermöglicht, die Ausführung zu pausieren (Haltepunkte), den Code Schritt für Schritt durchzugehen, Variablenwerte zu inspizieren, diese Werte spontan zu ändern und sogar Code blockweise auszuführen. Die Verwendung eines Debuggers wird oft als unschätzbare Technik für die Entwicklung komplexer Anwendungen angesehen, bei denen das Auffinden der genauen Codezeile, die ein Problem verursacht, mit der Suche nach einer Nadel im Heuhaufen verglichen werden kann.
+
+## Siehe auch
+- Die offizielle Oracle-Dokumentation zum Debuggen: [Oracle Java SE Debugging](https://docs.oracle.com/javase/8/docs/technotes/tools/windows/jdb.html)
+- Der Leitfaden von Eclipse zum Debuggen: [Eclipse Debugging Tipps](https://www.eclipse.org/community/eclipse_newsletter/2017/june/article4.php)
+- VisualVM, ein visuelles Werkzeug, das mehrere Befehlszeilen-JDK-Tools und leichte Profilierungsfähigkeiten integriert: [VisualVM](https://visualvm.github.io/)
