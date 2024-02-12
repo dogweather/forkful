@@ -1,5 +1,7 @@
 ---
 title:                "Enviando uma requisição HTTP com autenticação básica"
+aliases:
+- /pt/go/sending-an-http-request-with-basic-authentication.md
 date:                  2024-02-03T18:09:08.332707-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Enviando uma requisição HTTP com autenticação básica"

@@ -1,5 +1,7 @@
 ---
 title:                "テストの作成"
+aliases:
+- /ja/elixir/writing-tests.md
 date:                  2024-02-03T19:30:44.748329-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "テストの作成"

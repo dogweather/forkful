@@ -1,5 +1,7 @@
 ---
 title:                "Получение текущей даты"
+aliases:
+- /ru/c-sharp/getting-the-current-date.md
 date:                  2024-01-28T23:58:13.404807-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Получение текущей даты"

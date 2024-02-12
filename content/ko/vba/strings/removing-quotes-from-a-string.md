@@ -1,5 +1,7 @@
 ---
 title:                "문자열에서 따옴표 제거하기"
+aliases:
+- /ko/vba/removing-quotes-from-a-string.md
 date:                  2024-02-01T22:00:33.092116-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "문자열에서 따옴표 제거하기"

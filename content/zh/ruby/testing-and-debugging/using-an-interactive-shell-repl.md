@@ -1,5 +1,7 @@
 ---
 title:                "在编程中使用交互式Shell（REPL）"
+aliases:
+- /zh/ruby/using-an-interactive-shell-repl.md
 date:                  2024-01-26T04:17:21.557381-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "在编程中使用交互式Shell（REPL）"

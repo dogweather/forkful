@@ -1,5 +1,7 @@
 ---
 title:                "디버그 출력 출력하기"
+aliases:
+- /ko/google-apps-script/printing-debug-output.md
 date:                  2024-02-01T21:58:13.284859-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "디버그 출력 출력하기"

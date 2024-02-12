@@ -1,5 +1,7 @@
 ---
 title:                "Удаление символов, соответствующих шаблону"
+aliases:
+- /ru/go/deleting-characters-matching-a-pattern.md
 date:                  2024-02-03T17:56:34.066646-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Удаление символов, соответствующих шаблону"

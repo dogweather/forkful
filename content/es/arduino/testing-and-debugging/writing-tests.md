@@ -1,5 +1,7 @@
 ---
 title:                "Escribiendo pruebas"
+aliases:
+- /es/arduino/writing-tests.md
 date:                  2024-02-03T19:29:29.588196-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Escribiendo pruebas"

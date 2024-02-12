@@ -1,5 +1,7 @@
 ---
 title:                "Округлення чисел"
+aliases:
+- /uk/lua/rounding-numbers.md
 date:                  2024-01-26T03:46:31.572011-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Округлення чисел"

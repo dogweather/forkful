@@ -1,5 +1,7 @@
 ---
 title:                "स्ट्रिंग्स को जोड़ना"
+aliases:
+- /hi/c/concatenating-strings.md
 date:                  2024-02-03T17:55:27.224316-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "स्ट्रिंग्स को जोड़ना"

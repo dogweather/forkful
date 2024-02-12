@@ -1,5 +1,7 @@
 ---
 title:                "Obsługa błędów"
+aliases:
+- /pl/c/handling-errors.md
 date:                  2024-02-03T17:58:17.723308-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Obsługa błędów"

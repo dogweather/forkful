@@ -1,5 +1,7 @@
 ---
 title:                "Manipulering av filer med CLI-enkeltkommandoer"
+aliases:
+- /no/fish-shell/manipulating-files-with-cli-one-liners.md
 date:                  2024-01-27T16:20:59.095345-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Manipulering av filer med CLI-enkeltkommandoer"

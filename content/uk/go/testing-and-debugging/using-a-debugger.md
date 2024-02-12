@@ -1,5 +1,7 @@
 ---
 title:                "Використання відлагоджувача"
+aliases:
+- /uk/go/using-a-debugger.md
 date:                  2024-02-03T18:10:40.935928-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Використання відлагоджувача"

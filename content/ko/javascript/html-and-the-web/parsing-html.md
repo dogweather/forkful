@@ -1,5 +1,7 @@
 ---
 title:                "HTML 파싱"
+aliases:
+- /ko/javascript/parsing-html.md
 date:                  2024-01-28T03:00:40.517504-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "HTML 파싱"

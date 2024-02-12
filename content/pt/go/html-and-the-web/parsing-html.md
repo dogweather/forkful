@@ -1,5 +1,7 @@
 ---
 title:                "Analisando HTML"
+aliases:
+- /pt/go/parsing-html.md
 date:                  2024-02-03T18:00:01.372714-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Analisando HTML"

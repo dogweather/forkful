@@ -1,5 +1,7 @@
 ---
 title:                "Обчислення дати у майбутньому чи минулому"
+aliases:
+- /uk/bash/calculating-a-date-in-the-future-or-past.md
 date:                  2024-01-20T17:28:31.922931-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Обчислення дати у майбутньому чи минулому"

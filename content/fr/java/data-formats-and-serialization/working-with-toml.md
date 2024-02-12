@@ -1,5 +1,7 @@
 ---
 title:                "Travailler avec TOML"
+aliases:
+- /fr/java/working-with-toml.md
 date:                  2024-01-26T04:23:02.865909-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Travailler avec TOML"

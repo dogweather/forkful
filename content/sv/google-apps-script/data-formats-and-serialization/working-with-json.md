@@ -1,5 +1,7 @@
 ---
 title:                "Arbeta med JSON"
+aliases:
+- /sv/google-apps-script/working-with-json.md
 date:                  2024-02-01T22:05:53.019390-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Arbeta med JSON"

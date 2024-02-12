@@ -1,5 +1,7 @@
 ---
 title:                "Manejo de errores"
+aliases:
+- /es/cpp/handling-errors.md
 date:                  2024-01-26T00:49:52.602267-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Manejo de errores"

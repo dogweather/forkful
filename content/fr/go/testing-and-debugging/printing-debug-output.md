@@ -1,5 +1,7 @@
 ---
 title:                "Impression de sortie de débogage"
+aliases:
+- /fr/go/printing-debug-output.md
 date:                  2024-02-03T18:05:09.294631-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Impression de sortie de débogage"

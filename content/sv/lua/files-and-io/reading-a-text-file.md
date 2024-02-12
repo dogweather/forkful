@@ -1,5 +1,7 @@
 ---
 title:                "Läsa en textfil"
+aliases:
+- /sv/lua/reading-a-text-file.md
 date:                  2024-01-20T17:54:46.014268-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Läsa en textfil"

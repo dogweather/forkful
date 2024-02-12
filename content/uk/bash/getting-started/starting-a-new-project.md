@@ -1,5 +1,7 @@
 ---
 title:                "Починаємо новий проект"
+aliases:
+- /uk/bash/starting-a-new-project.md
 date:                  2024-01-20T18:03:05.661238-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Починаємо новий проект"

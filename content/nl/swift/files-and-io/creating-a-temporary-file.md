@@ -1,5 +1,7 @@
 ---
 title:                "Een tijdelijk bestand aanmaken"
+aliases:
+- /nl/swift/creating-a-temporary-file.md
 date:                  2024-01-28T21:58:52.706474-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een tijdelijk bestand aanmaken"

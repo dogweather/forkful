@@ -1,5 +1,7 @@
 ---
 title:                "Рефакторинг"
+aliases:
+- /ru/vba/refactoring.md
 date:                  2024-02-01T22:00:19.268127-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Рефакторинг"

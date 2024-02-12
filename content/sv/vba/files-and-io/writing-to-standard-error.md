@@ -1,5 +1,7 @@
 ---
 title:                "Skriva till standardfel"
+aliases:
+- /sv/vba/writing-to-standard-error.md
 date:                  2024-02-01T22:09:21.716832-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Skriva till standardfel"

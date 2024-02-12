@@ -1,5 +1,7 @@
 ---
 title:                "Конкатенация строк"
+aliases:
+- /ru/google-apps-script/concatenating-strings.md
 date:                  2024-02-01T21:50:37.096207-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Конкатенация строк"

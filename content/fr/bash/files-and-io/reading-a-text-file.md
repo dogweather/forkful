@@ -1,5 +1,7 @@
 ---
 title:                "Lecture d'un fichier texte"
+aliases:
+- /fr/bash/reading-a-text-file.md
 date:                  2024-01-20T17:53:39.725483-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Lecture d'un fichier texte"

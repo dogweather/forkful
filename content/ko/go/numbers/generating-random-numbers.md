@@ -1,5 +1,7 @@
 ---
 title:                "랜덤 숫자 생성하기"
+aliases:
+- /ko/go/generating-random-numbers.md
 date:                  2024-02-03T17:57:26.830281-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "랜덤 숫자 생성하기"

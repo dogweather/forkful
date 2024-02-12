@@ -1,5 +1,7 @@
 ---
 title:                "רישום פעולות (לוגים)"
+aliases:
+- /he/powershell/logging.md
 date:                  2024-01-26T01:08:24.412367-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "רישום פעולות (לוגים)"

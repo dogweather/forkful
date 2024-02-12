@@ -1,5 +1,7 @@
 ---
 title:                "CSV와 함께 작업하기"
+aliases:
+- /ko/arduino/working-with-csv.md
 date:                  2024-02-03T19:19:39.346424-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "CSV와 함께 작업하기"

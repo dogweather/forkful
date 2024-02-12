@@ -1,5 +1,7 @@
 ---
 title:                "基本認証を用いたHTTPリクエストの送信"
+aliases:
+- /ja/go/sending-an-http-request-with-basic-authentication.md
 date:                  2024-02-03T18:09:39.540859-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "基本認証を用いたHTTPリクエストの送信"

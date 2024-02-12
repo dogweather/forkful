@@ -1,5 +1,7 @@
 ---
 title:                "Utiliser un débogueur"
+aliases:
+- /fr/vba/using-a-debugger.md
 date:                  2024-02-01T22:04:20.480102-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Utiliser un débogueur"

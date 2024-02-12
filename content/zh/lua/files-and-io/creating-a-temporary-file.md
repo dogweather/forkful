@@ -1,5 +1,7 @@
 ---
 title:                "创建临时文件"
+aliases:
+- /zh/lua/creating-a-temporary-file.md
 date:                  2024-01-20T17:40:43.004681-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "创建临时文件"

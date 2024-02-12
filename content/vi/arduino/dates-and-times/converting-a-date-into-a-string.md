@@ -1,5 +1,7 @@
 ---
 title:                "Chuyển đổi một ngày thành chuỗi"
+aliases:
+- /vi/arduino/converting-a-date-into-a-string.md
 date:                  2024-01-28T21:57:24.957930-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Chuyển đổi một ngày thành chuỗi"

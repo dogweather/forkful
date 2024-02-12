@@ -1,5 +1,7 @@
 ---
 title:                "Trích xuất chuỗi con"
+aliases:
+- /vi/swift/extracting-substrings.md
 date:                  2024-01-28T22:00:53.966960-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Trích xuất chuỗi con"

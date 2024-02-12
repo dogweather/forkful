@@ -1,5 +1,7 @@
 ---
 title:                "获取当前日期"
+aliases:
+- /zh/google-apps-script/getting-the-current-date.md
 date:                  2024-02-01T21:54:38.327929-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "获取当前日期"

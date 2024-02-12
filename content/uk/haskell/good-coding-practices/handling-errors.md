@@ -1,5 +1,7 @@
 ---
 title:                "Обробка помилок"
+aliases:
+- /uk/haskell/handling-errors.md
 date:                  2024-01-26T00:53:30.452321-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Обробка помилок"

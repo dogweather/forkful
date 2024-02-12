@@ -1,5 +1,7 @@
 ---
 title:                "Herunterladen einer Webseite"
+aliases:
+- /de/vba/downloading-a-web-page.md
 date:                  2024-02-01T21:53:27.711655-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Herunterladen einer Webseite"

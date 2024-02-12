@@ -1,5 +1,7 @@
 ---
 title:                "Отримання поточної дати"
+aliases:
+- /uk/elm/getting-the-current-date.md
 date:                  2024-01-20T15:14:26.320874-07:00
 simple_title:         "Отримання поточної дати"
 

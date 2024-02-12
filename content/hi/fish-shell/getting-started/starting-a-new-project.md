@@ -1,5 +1,7 @@
 ---
 title:                "नई परियोजना शुरू करना"
+aliases:
+- /hi/fish-shell/starting-a-new-project.md
 date:                  2024-01-20T18:04:47.695103-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "नई परियोजना शुरू करना"

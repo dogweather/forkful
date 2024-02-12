@@ -1,5 +1,7 @@
 ---
 title:                "עבודה עם קובצי CSV"
+aliases:
+- /he/c/working-with-csv.md
 date:                  2024-02-03T18:12:28.043608-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "עבודה עם קובצי CSV"

@@ -1,5 +1,7 @@
 ---
 title:                "HTTPリクエストの送信"
+aliases:
+- /ja/powershell/sending-an-http-request.md
 date:                  2024-01-20T18:00:24.427296-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "HTTPリクエストの送信"

@@ -1,5 +1,7 @@
 ---
 title:                "Видалення лапок з рядка"
+aliases:
+- /uk/google-apps-script/removing-quotes-from-a-string.md
 date:                  2024-02-01T22:00:58.457886-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Видалення лапок з рядка"

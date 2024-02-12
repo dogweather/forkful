@@ -1,5 +1,7 @@
 ---
 title:                "디버거 사용하기"
+aliases:
+- /ko/clojure/using-a-debugger.md
 date:                  2024-01-26T03:48:28.819744-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "디버거 사용하기"

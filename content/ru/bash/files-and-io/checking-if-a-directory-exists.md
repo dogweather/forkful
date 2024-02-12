@@ -1,5 +1,7 @@
 ---
 title:                "Проверка существования директории"
+aliases:
+- /ru/bash/checking-if-a-directory-exists.md
 date:                  2024-01-28T23:55:40.935707-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Проверка существования директории"

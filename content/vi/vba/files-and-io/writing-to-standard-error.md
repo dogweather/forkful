@@ -1,5 +1,7 @@
 ---
 title:                "Ghi vào lỗi chuẩn"
+aliases:
+- /vi/vba/writing-to-standard-error.md
 date:                  2024-02-01T22:09:25.932372-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Ghi vào lỗi chuẩn"

@@ -1,5 +1,7 @@
 ---
 title:                "Eine HTTP-Anfrage mit Basisauthentifizierung senden"
+aliases:
+- /de/go/sending-an-http-request-with-basic-authentication.md
 date:                  2024-02-03T18:08:57.833563-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Eine HTTP-Anfrage mit Basisauthentifizierung senden"

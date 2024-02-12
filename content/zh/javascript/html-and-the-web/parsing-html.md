@@ -1,5 +1,7 @@
 ---
 title:                "解析HTML"
+aliases:
+- /zh/javascript/parsing-html.md
 date:                  2024-01-28T03:01:15.913826-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "解析HTML"

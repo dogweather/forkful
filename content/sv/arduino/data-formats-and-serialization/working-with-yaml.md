@@ -1,5 +1,7 @@
 ---
 title:                "Att Arbeta med YAML"
+aliases:
+- /sv/arduino/working-with-yaml.md
 date:                  2024-02-03T19:25:01.159986-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Att Arbeta med YAML"

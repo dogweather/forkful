@@ -1,5 +1,7 @@
 ---
 title:                "Een tekstbestand schrijven"
+aliases:
+- /nl/bash/writing-a-text-file.md
 date:                  2024-01-28T22:12:22.944482-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een tekstbestand schrijven"

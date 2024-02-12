@@ -1,5 +1,7 @@
 ---
 title:                "将字符串转换为小写"
+aliases:
+- /zh/google-apps-script/converting-a-string-to-lower-case.md
 date:                  2024-02-01T21:51:21.973433-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "将字符串转换为小写"

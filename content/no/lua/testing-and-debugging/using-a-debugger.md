@@ -1,5 +1,7 @@
 ---
 title:                "Å bruke en feilsøker"
+aliases:
+- /no/lua/using-a-debugger.md
 date:                  2024-01-26T03:50:18.805776-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Å bruke en feilsøker"

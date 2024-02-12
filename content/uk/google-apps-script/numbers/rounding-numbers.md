@@ -1,5 +1,7 @@
 ---
 title:                "Округлення чисел"
+aliases:
+- /uk/google-apps-script/rounding-numbers.md
 date:                  2024-02-01T22:01:16.070799-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Округлення чисел"

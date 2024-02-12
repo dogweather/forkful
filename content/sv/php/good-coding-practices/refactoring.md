@@ -1,5 +1,7 @@
 ---
 title:                "Refaktorisering"
+aliases:
+- /sv/php/refactoring.md
 date:                  2024-01-26T01:55:11.952605-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Refaktorisering"

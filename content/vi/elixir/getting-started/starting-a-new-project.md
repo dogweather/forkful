@@ -1,5 +1,7 @@
 ---
 title:                "Bắt đầu một dự án mới"
+aliases:
+- /vi/elixir/starting-a-new-project.md
 date:                  2024-01-28T22:08:33.536831-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Bắt đầu một dự án mới"

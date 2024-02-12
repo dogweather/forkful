@@ -1,5 +1,7 @@
 ---
 title:                "Refaktorering"
+aliases:
+- /no/ruby/refactoring.md
 date:                  2024-01-26T03:36:51.439399-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Refaktorering"

@@ -1,5 +1,7 @@
 ---
 title:                "使用关联数组"
+aliases:
+- /zh/vba/using-associative-arrays.md
 date:                  2024-02-01T22:04:38.764807-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "使用关联数组"

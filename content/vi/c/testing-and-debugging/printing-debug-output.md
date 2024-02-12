@@ -1,5 +1,7 @@
 ---
 title:                "In đầu ra debug"
+aliases:
+- /vi/c/printing-debug-output.md
 date:                  2024-02-03T18:06:32.670977-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "In đầu ra debug"

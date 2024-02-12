@@ -1,5 +1,7 @@
 ---
 title:                "Sende en HTTP-forespørsel med grunnleggende autentisering"
+aliases:
+- /no/go/sending-an-http-request-with-basic-authentication.md
 date:                  2024-02-03T18:09:13.801135-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Sende en HTTP-forespørsel med grunnleggende autentisering"

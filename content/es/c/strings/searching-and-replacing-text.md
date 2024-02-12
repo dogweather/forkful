@@ -1,5 +1,7 @@
 ---
 title:                "Buscando y reemplazando texto"
+aliases:
+- /es/c/searching-and-replacing-text.md
 date:                  2024-02-03T18:08:17.796189-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Buscando y reemplazando texto"

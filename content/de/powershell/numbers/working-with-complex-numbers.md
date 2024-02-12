@@ -1,5 +1,7 @@
 ---
 title:                "Umgang mit komplexen Zahlen"
+aliases:
+- /de/powershell/working-with-complex-numbers.md
 date:                  2024-01-26T04:44:08.341768-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Umgang mit komplexen Zahlen"

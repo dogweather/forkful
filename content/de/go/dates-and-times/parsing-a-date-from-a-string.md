@@ -1,5 +1,7 @@
 ---
 title:                "Ein Datum aus einem String interpretieren"
+aliases:
+- /de/go/parsing-a-date-from-a-string.md
 date:                  2024-02-03T18:00:08.143027-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Ein Datum aus einem String interpretieren"

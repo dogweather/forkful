@@ -1,5 +1,7 @@
 ---
 title:                "डीबगर का उपयोग करना"
+aliases:
+- /hi/rust/using-a-debugger.md
 date:                  2024-01-26T04:11:24.009774-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "डीबगर का उपयोग करना"

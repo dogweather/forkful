@@ -1,5 +1,7 @@
 ---
 title:                "Textdatei einlesen"
+aliases:
+- /de/python/reading-a-text-file.md
 date:                  2024-01-20T17:54:56.193566-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Textdatei einlesen"

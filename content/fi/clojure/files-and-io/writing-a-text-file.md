@@ -1,5 +1,7 @@
 ---
 title:                "Tekstitiedoston kirjoittaminen"
+aliases:
+- /fi/clojure/writing-a-text-file.md
 date:                  2024-02-03T19:27:39.098128-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Tekstitiedoston kirjoittaminen"

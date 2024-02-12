@@ -1,5 +1,7 @@
 ---
 title:                "Sử dụng vỏ tương tác (REPL)"
+aliases:
+- /vi/vba/using-an-interactive-shell-repl.md
 date:                  2024-02-01T22:04:24.780742-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Sử dụng vỏ tương tác (REPL)"

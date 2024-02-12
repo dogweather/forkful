@@ -1,5 +1,7 @@
 ---
 title:                "पैटर्न मिलने पर संवर्णों को हटाना"
+aliases:
+- /hi/vba/deleting-characters-matching-a-pattern.md
 date:                  2024-02-01T21:53:41.962744-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "पैटर्न मिलने पर संवर्णों को हटाना"

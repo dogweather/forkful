@@ -1,5 +1,7 @@
 ---
 title:                "Envoi d'une requête HTTP avec authentification de base"
+aliases:
+- /fr/rust/sending-an-http-request-with-basic-authentication.md
 date:                  2024-01-20T18:02:44.643420-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Envoi d'une requête HTTP avec authentification de base"

@@ -1,5 +1,7 @@
 ---
 title:                "Видалення символів, що відповідають патерну"
+aliases:
+- /uk/vba/deleting-characters-matching-a-pattern.md
 date:                  2024-02-01T21:53:01.279858-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Видалення символів, що відповідають патерну"

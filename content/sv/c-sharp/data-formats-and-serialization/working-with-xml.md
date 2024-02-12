@@ -1,5 +1,7 @@
 ---
 title:                "Att arbeta med XML"
+aliases:
+- /sv/c-sharp/working-with-xml.md
 date:                  2024-01-26T04:29:10.377899-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Att arbeta med XML"

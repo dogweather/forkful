@@ -1,5 +1,7 @@
 ---
 title:                "Создание временного файла"
+aliases:
+- /ru/cpp/creating-a-temporary-file.md
 date:                  2024-01-28T23:57:05.272743-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Создание временного файла"

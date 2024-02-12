@@ -1,5 +1,7 @@
 ---
 title:                "संख्याओं को पूर्णांक बनाना"
+aliases:
+- /hi/elixir/rounding-numbers.md
 date:                  2024-01-26T03:45:11.840227-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "संख्याओं को पूर्णांक बनाना"

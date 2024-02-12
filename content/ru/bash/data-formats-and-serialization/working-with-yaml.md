@@ -1,5 +1,7 @@
 ---
 title:                "Работа с YAML"
+aliases:
+- /ru/bash/working-with-yaml.md
 date:                  2024-01-29T00:04:44.751106-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Работа с YAML"

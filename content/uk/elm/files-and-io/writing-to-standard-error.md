@@ -1,5 +1,7 @@
 ---
 title:                "Запис до стандартної помилки"
+aliases:
+- /uk/elm/writing-to-standard-error.md
 date:                  2024-02-03T19:33:30.027780-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Запис до стандартної помилки"

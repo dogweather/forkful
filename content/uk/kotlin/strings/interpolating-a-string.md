@@ -1,5 +1,7 @@
 ---
 title:                "Інтерполяція рядків"
+aliases:
+- /uk/kotlin/interpolating-a-string.md
 date:                  2024-01-20T17:51:30.803856-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Інтерполяція рядків"

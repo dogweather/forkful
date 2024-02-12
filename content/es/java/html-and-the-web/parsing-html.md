@@ -1,5 +1,7 @@
 ---
 title:                "Análisis de HTML"
+aliases:
+- /es/java/parsing-html.md
 date:                  2024-01-20T15:32:30.888958-07:00
 simple_title:         "Análisis de HTML"
 

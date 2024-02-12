@@ -1,5 +1,7 @@
 ---
 title:                "Quotes verwijderen uit een string"
+aliases:
+- /nl/haskell/removing-quotes-from-a-string.md
 date:                  2024-01-28T22:06:10.607518-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Quotes verwijderen uit een string"

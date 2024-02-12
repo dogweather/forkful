@@ -1,5 +1,7 @@
 ---
 title:                "Nội suy chuỗi ký tự"
+aliases:
+- /vi/ruby/interpolating-a-string.md
 date:                  2024-01-28T22:02:52.137934-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Nội suy chuỗi ký tự"

@@ -1,5 +1,7 @@
 ---
 title:                "שימוש במנתח שגיאות"
+aliases:
+- /he/go/using-a-debugger.md
 date:                  2024-02-03T18:11:30.142461-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "שימוש במנתח שגיאות"

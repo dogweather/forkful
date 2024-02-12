@@ -1,5 +1,7 @@
 ---
 title:                "Extraction de sous-chaînes"
+aliases:
+- /fr/bash/extracting-substrings.md
 date:                  2024-01-20T17:45:05.679203-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Extraction de sous-chaînes"

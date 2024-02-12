@@ -1,5 +1,7 @@
 ---
 title:                "Reguliere expressies gebruiken"
+aliases:
+- /nl/google-apps-script/using-regular-expressions.md
 date:                  2024-02-01T22:04:43.012975-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Reguliere expressies gebruiken"

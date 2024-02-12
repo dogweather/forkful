@@ -1,5 +1,7 @@
 ---
 title:                "Відправлення HTTP-запиту з базовою аутентифікацією"
+aliases:
+- /uk/google-apps-script/sending-an-http-request-with-basic-authentication.md
 date:                  2024-02-01T22:02:42.420883-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Відправлення HTTP-запиту з базовою аутентифікацією"

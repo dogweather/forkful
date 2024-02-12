@@ -1,5 +1,7 @@
 ---
 title:                "Working with CSV"
+aliases:
+- /en/cpp/working-with-csv.md
 date:                  2024-02-03T19:03:14.488221-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Working with CSV"

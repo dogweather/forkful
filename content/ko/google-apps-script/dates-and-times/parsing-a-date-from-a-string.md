@@ -1,5 +1,7 @@
 ---
 title:                "문자열에서 날짜 분석하기"
+aliases:
+- /ko/google-apps-script/parsing-a-date-from-a-string.md
 date:                  2024-02-01T21:57:52.401073-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "문자열에서 날짜 분석하기"

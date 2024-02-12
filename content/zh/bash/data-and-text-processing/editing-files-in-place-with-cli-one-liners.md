@@ -1,5 +1,7 @@
 ---
 title:                "使用命令行一行命令就地编辑文件"
+aliases:
+- /zh/bash/editing-files-in-place-with-cli-one-liners.md
 date:                  2024-01-27T16:20:54.722501-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "使用命令行一行命令就地编辑文件"

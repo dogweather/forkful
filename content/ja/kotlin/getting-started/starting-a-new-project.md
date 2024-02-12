@@ -1,5 +1,7 @@
 ---
 title:                "新しいプロジェクトを始める"
+aliases:
+- /ja/kotlin/starting-a-new-project.md
 date:                  2024-01-20T18:04:18.221463-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "新しいプロジェクトを始める"

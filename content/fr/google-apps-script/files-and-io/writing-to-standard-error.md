@@ -1,5 +1,7 @@
 ---
 title:                "Écrire sur l'erreur standard"
+aliases:
+- /fr/google-apps-script/writing-to-standard-error.md
 date:                  2024-02-01T22:08:48.869090-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Écrire sur l'erreur standard"

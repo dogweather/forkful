@@ -1,5 +1,7 @@
 ---
 title:                "Lese en tekstfil"
+aliases:
+- /no/elm/reading-a-text-file.md
 date:                  2024-01-20T17:54:24.222556-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Lese en tekstfil"

@@ -1,5 +1,7 @@
 ---
 title:                "JSON과 함께 일하기"
+aliases:
+- /ko/arduino/working-with-json.md
 date:                  2024-02-03T19:21:48.268836-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "JSON과 함께 일하기"

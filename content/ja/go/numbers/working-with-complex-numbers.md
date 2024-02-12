@@ -1,5 +1,7 @@
 ---
 title:                "複素数を操作する"
+aliases:
+- /ja/go/working-with-complex-numbers.md
 date:                  2024-02-03T18:14:20.877567-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "複素数を操作する"

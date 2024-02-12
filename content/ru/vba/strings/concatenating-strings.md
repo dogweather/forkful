@@ -1,5 +1,7 @@
 ---
 title:                "Конкатенация строк"
+aliases:
+- /ru/vba/concatenating-strings.md
 date:                  2024-02-01T21:51:04.886924-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Конкатенация строк"

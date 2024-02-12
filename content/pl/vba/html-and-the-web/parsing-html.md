@@ -1,5 +1,7 @@
 ---
 title:                "Analiza Składniowa HTML"
+aliases:
+- /pl/vba/parsing-html.md
 date:                  2024-02-01T21:58:02.903772-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Analiza Składniowa HTML"

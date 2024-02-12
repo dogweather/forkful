@@ -1,5 +1,7 @@
 ---
 title:                "Registro de Información"
+aliases:
+- /es/vba/logging.md
 date:                  2024-02-01T21:55:38.315921-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Registro de Información"

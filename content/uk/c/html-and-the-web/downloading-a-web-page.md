@@ -1,5 +1,7 @@
 ---
 title:                "Завантаження веб-сторінки"
+aliases:
+- /uk/c/downloading-a-web-page.md
 date:                  2024-02-03T17:56:27.531379-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Завантаження веб-сторінки"

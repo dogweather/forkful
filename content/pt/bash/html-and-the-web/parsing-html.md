@@ -1,5 +1,7 @@
 ---
 title:                "Analisando HTML"
+aliases:
+- /pt/bash/parsing-html.md
 date:                  2024-02-03T19:11:29.093603-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Analisando HTML"

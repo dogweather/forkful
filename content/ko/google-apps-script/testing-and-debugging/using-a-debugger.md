@@ -1,5 +1,7 @@
 ---
 title:                "디버거 사용하기"
+aliases:
+- /ko/google-apps-script/using-a-debugger.md
 date:                  2024-02-01T22:03:40.781937-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "디버거 사용하기"

@@ -1,5 +1,7 @@
 ---
 title:                "Gửi yêu cầu HTTP"
+aliases:
+- /vi/vba/sending-an-http-request.md
 date:                  2024-02-01T22:02:04.308442-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Gửi yêu cầu HTTP"

@@ -1,5 +1,7 @@
 ---
 title:                "Redondeo de números"
+aliases:
+- /es/ruby/rounding-numbers.md
 date:                  2024-01-26T03:46:45.605535-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Redondeo de números"

@@ -1,5 +1,7 @@
 ---
 title:                "Eliminando comillas de una cadena"
+aliases:
+- /es/vba/removing-quotes-from-a-string.md
 date:                  2024-02-01T22:00:18.978096-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Eliminando comillas de una cadena"

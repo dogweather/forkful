@@ -1,5 +1,7 @@
 ---
 title:                "Создание текстового файла"
+aliases:
+- /ru/cpp/writing-a-text-file.md
 date:                  2024-01-29T00:05:34.591481-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Создание текстового файла"

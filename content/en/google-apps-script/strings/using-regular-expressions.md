@@ -1,5 +1,7 @@
 ---
 title:                "Using regular expressions"
+aliases:
+- /en/google-apps-script/using-regular-expressions.md
 date:                  2024-02-01T21:12:17.926556-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Using regular expressions"

@@ -1,5 +1,7 @@
 ---
 title:                "一時ファイルの作成"
+aliases:
+- /ja/powershell/creating-a-temporary-file.md
 date:                  2024-01-20T17:41:17.282907-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "一時ファイルの作成"

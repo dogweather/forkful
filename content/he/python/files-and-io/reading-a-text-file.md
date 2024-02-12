@@ -1,5 +1,7 @@
 ---
 title:                "קריאת קובץ טקסט"
+aliases:
+- /he/python/reading-a-text-file.md
 date:                  2024-01-20T17:55:18.294916-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "קריאת קובץ טקסט"

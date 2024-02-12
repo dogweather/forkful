@@ -1,5 +1,7 @@
 ---
 title:                "Verifica dell'esistenza di una directory"
+aliases:
+- /it/elm/checking-if-a-directory-exists.md
 date:                  2024-01-19
 simple_title:         "Verifica dell'esistenza di una directory"
 

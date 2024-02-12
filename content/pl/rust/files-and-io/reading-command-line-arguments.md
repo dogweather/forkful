@@ -1,5 +1,7 @@
 ---
 title:                "Odczytywanie argumentów linii poleceń"
+aliases:
+- /pl/rust/reading-command-line-arguments.md
 date:                  2024-01-20T17:57:06.134737-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Odczytywanie argumentów linii poleceń"

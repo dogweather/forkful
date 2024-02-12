@@ -1,5 +1,7 @@
 ---
 title:                "Redondeo de números"
+aliases:
+- /es/go/rounding-numbers.md
 date:                  2024-02-03T18:07:34.066458-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Redondeo de números"

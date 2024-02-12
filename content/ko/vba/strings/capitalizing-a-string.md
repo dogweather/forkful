@@ -1,5 +1,7 @@
 ---
 title:                "문자열 대문자화"
+aliases:
+- /ko/vba/capitalizing-a-string.md
 date:                  2024-02-01T21:49:07.022888-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "문자열 대문자화"

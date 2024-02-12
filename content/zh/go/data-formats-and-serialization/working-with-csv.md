@@ -1,5 +1,7 @@
 ---
 title:                "处理CSV的工作"
+aliases:
+- /zh/go/working-with-csv.md
 date:                  2024-02-03T18:11:40.675323-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "处理CSV的工作"

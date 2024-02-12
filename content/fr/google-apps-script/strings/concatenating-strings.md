@@ -1,5 +1,7 @@
 ---
 title:                "Concaténation de chaînes"
+aliases:
+- /fr/google-apps-script/concatenating-strings.md
 date:                  2024-02-01T21:50:05.549309-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Concaténation de chaînes"

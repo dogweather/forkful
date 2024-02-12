@@ -1,5 +1,7 @@
 ---
 title:                "Työskentely YAML:n kanssa"
+aliases:
+- /fi/c/working-with-yaml.md
 date:                  2024-02-03T18:13:45.374978-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Työskentely YAML:n kanssa"

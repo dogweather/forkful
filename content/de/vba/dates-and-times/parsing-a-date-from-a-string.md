@@ -1,5 +1,7 @@
 ---
 title:                "Einen Datum aus einem String auslesen"
+aliases:
+- /de/vba/parsing-a-date-from-a-string.md
 date:                  2024-02-01T21:57:36.322861-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Einen Datum aus einem String auslesen"

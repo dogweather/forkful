@@ -1,5 +1,7 @@
 ---
 title:                "Tải trang web về"
+aliases:
+- /vi/c/downloading-a-web-page.md
 date:                  2024-02-03T17:56:23.794694-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Tải trang web về"

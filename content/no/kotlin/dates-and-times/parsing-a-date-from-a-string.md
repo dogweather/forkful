@@ -1,5 +1,7 @@
 ---
 title:                "Tolke en dato fra en streng"
+aliases:
+- /no/kotlin/parsing-a-date-from-a-string.md
 date:                  2024-01-20T15:37:14.737512-07:00
 simple_title:         "Tolke en dato fra en streng"
 

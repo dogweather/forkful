@@ -1,5 +1,7 @@
 ---
 title:                "Organizando o código em funções"
+aliases:
+- /pt/lua/organizing-code-into-functions.md
 date:                  2024-01-26T01:11:29.392040-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Organizando o código em funções"

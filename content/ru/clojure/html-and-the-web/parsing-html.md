@@ -1,5 +1,7 @@
 ---
 title:                "Разбор HTML"
+aliases:
+- /ru/clojure/parsing-html.md
 date:                  2024-01-29T00:00:03.849912-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Разбор HTML"

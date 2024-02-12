@@ -1,5 +1,7 @@
 ---
 title:                "Viết kiểm thử"
+aliases:
+- /vi/google-apps-script/writing-tests.md
 date:                  2024-02-01T22:09:24.553353-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Viết kiểm thử"

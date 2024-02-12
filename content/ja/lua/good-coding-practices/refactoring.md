@@ -1,5 +1,7 @@
 ---
 title:                "リファクタリング"
+aliases:
+- /ja/lua/refactoring.md
 date:                  2024-01-26T01:46:57.614399-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "リファクタリング"

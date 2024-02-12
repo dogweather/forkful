@@ -1,5 +1,7 @@
 ---
 title:                "CSVファイルの操作"
+aliases:
+- /ja/rust/working-with-csv.md
 date:                  2024-01-19
 simple_title:         "CSVファイルの操作"
 

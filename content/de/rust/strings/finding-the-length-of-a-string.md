@@ -1,5 +1,7 @@
 ---
 title:                "Ermittlung der Zeichenkettenlänge"
+aliases:
+- /de/rust/finding-the-length-of-a-string.md
 date:                  2024-01-20T17:48:15.593816-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Ermittlung der Zeichenkettenlänge"

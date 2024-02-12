@@ -1,5 +1,7 @@
 ---
 title:                "Sử dụng bộ gỡ lỗi"
+aliases:
+- /vi/cpp/using-a-debugger.md
 date:                  2024-01-28T22:09:21.678599-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Sử dụng bộ gỡ lỗi"

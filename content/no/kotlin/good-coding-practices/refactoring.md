@@ -1,5 +1,7 @@
 ---
 title:                "Refaktorering"
+aliases:
+- /no/kotlin/refactoring.md
 date:                  2024-01-26T01:44:02.586424-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Refaktorering"

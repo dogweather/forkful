@@ -1,5 +1,7 @@
 ---
 title:                "XML:n käsittely"
+aliases:
+- /fi/fish-shell/working-with-xml.md
 date:                  2024-01-26T04:30:26.617499-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "XML:n käsittely"

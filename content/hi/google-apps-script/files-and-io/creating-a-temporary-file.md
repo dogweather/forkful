@@ -1,5 +1,7 @@
 ---
 title:                "अस्थायी फ़ाइल बनाना"
+aliases:
+- /hi/google-apps-script/creating-a-temporary-file.md
 date:                  2024-02-01T21:53:30.667711-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "अस्थायी फ़ाइल बनाना"

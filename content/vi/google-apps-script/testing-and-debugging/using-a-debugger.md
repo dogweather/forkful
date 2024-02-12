@@ -1,5 +1,7 @@
 ---
 title:                "Sử dụng trình gỡ lỗi"
+aliases:
+- /vi/google-apps-script/using-a-debugger.md
 date:                  2024-02-01T22:03:47.487104-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Sử dụng trình gỡ lỗi"

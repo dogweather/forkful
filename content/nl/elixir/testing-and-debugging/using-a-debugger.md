@@ -1,5 +1,7 @@
 ---
 title:                "Een debugger gebruiken"
+aliases:
+- /nl/elixir/using-a-debugger.md
 date:                  2024-01-28T22:08:49.355180-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een debugger gebruiken"

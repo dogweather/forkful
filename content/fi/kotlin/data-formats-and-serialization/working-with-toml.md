@@ -1,5 +1,7 @@
 ---
 title:                "Työskentely TOML:n kanssa"
+aliases:
+- /fi/kotlin/working-with-toml.md
 date:                  2024-01-26T04:23:42.916722-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Työskentely TOML:n kanssa"

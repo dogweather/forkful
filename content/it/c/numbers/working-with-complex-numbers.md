@@ -1,5 +1,7 @@
 ---
 title:                "Lavorare con i numeri complessi"
+aliases:
+- /it/c/working-with-complex-numbers.md
 date:                  2024-02-03T18:13:51.855289-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Lavorare con i numeri complessi"

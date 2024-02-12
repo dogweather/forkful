@@ -1,5 +1,7 @@
 ---
 title:                "Konwersja daty na ciąg znaków"
+aliases:
+- /pl/go/converting-a-date-into-a-string.md
 date:                  2024-02-03T17:54:33.501451-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Konwersja daty na ciąg znaków"

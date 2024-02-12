@@ -1,5 +1,7 @@
 ---
 title:                "Utilisation d'une console interactive (REPL)"
+aliases:
+- /fr/swift/using-an-interactive-shell-repl.md
 date:                  2024-01-26T04:17:57.607268-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Utilisation d'une console interactive (REPL)"

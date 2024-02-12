@@ -1,5 +1,7 @@
 ---
 title:                "コードを関数に整理する"
+aliases:
+- /ja/ruby/organizing-code-into-functions.md
 date:                  2024-01-26T01:16:19.047883-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "コードを関数に整理する"

@@ -1,5 +1,7 @@
 ---
 title:                "स्ट्रिंग को लोअर केस में बदलना"
+aliases:
+- /hi/vba/converting-a-string-to-lower-case.md
 date:                  2024-02-01T21:51:49.195407-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "स्ट्रिंग को लोअर केस में बदलना"

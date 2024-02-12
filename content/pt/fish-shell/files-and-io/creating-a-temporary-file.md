@@ -1,5 +1,7 @@
 ---
 title:                "Criando um arquivo temporário"
+aliases:
+- /pt/fish-shell/creating-a-temporary-file.md
 date:                  2024-01-20T17:40:00.934827-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Criando um arquivo temporário"

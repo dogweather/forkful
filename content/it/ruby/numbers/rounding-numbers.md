@@ -1,5 +1,7 @@
 ---
 title:                "Arrotondamento dei numeri"
+aliases:
+- /it/ruby/rounding-numbers.md
 date:                  2024-01-26T03:47:38.120938-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Arrotondamento dei numeri"

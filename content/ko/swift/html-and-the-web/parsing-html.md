@@ -1,5 +1,7 @@
 ---
 title:                "HTML 파싱"
+aliases:
+- /ko/swift/parsing-html.md
 date:                  2024-01-20T15:33:59.091245-07:00
 simple_title:         "HTML 파싱"
 

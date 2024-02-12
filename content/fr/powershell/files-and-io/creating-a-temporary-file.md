@@ -1,5 +1,7 @@
 ---
 title:                "Création d'un fichier temporaire"
+aliases:
+- /fr/powershell/creating-a-temporary-file.md
 date:                  2024-01-20T17:41:07.232622-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Création d'un fichier temporaire"

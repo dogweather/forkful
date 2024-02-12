@@ -1,5 +1,7 @@
 ---
 title:                "Analysera ett datum från en sträng"
+aliases:
+- /sv/go/parsing-a-date-from-a-string.md
 date:                  2024-02-03T18:05:06.229345-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Analysera ett datum från en sträng"

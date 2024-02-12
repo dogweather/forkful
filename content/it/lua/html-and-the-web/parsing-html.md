@@ -1,5 +1,7 @@
 ---
 title:                "Analisi del HTML"
+aliases:
+- /it/lua/parsing-html.md
 date:                  2024-02-03T19:12:34.984319-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Analisi del HTML"

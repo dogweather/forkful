@@ -1,5 +1,7 @@
 ---
 title:                "Работа с комплексными числами"
+aliases:
+- /ru/swift/working-with-complex-numbers.md
 date:                  2024-01-29T00:05:26.212738-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Работа с комплексными числами"

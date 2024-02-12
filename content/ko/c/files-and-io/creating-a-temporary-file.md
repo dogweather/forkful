@@ -1,5 +1,7 @@
 ---
 title:                "임시 파일 생성하기"
+aliases:
+- /ko/c/creating-a-temporary-file.md
 date:                  2024-02-03T17:55:32.262726-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "임시 파일 생성하기"

@@ -1,5 +1,7 @@
 ---
 title:                "Wycinanie podłańcuchów"
+aliases:
+- /pl/fish-shell/extracting-substrings.md
 date:                  2024-01-20T17:45:39.277809-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Wycinanie podłańcuchów"

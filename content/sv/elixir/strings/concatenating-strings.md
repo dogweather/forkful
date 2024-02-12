@@ -1,5 +1,7 @@
 ---
 title:                "Konkatenering av strängar"
+aliases:
+- /sv/elixir/concatenating-strings.md
 date:                  2024-01-27T10:42:47.554258-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Konkatenering av strängar"

@@ -1,5 +1,7 @@
 ---
 title:                "CSVとの作業"
+aliases:
+- /ja/google-apps-script/working-with-csv.md
 date:                  2024-02-01T22:05:35.004830-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "CSVとの作業"

@@ -1,5 +1,7 @@
 ---
 title:                "कोड सुधार"
+aliases:
+- /hi/python/refactoring.md
 date:                  2024-01-26T03:38:14.042386-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "कोड सुधार"

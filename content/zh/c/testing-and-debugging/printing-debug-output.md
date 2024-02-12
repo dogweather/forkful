@@ -1,5 +1,7 @@
 ---
 title:                "打印调试输出"
+aliases:
+- /zh/c/printing-debug-output.md
 date:                  2024-02-03T18:05:08.284922-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "打印调试输出"

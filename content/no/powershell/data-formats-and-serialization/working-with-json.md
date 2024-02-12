@@ -1,5 +1,7 @@
 ---
 title:                "Arbeider med JSON"
+aliases:
+- /no/powershell/working-with-json.md
 date:                  2024-02-03T19:23:37.316881-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Arbeider med JSON"

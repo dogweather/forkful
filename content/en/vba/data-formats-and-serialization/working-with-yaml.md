@@ -1,5 +1,7 @@
 ---
 title:                "Working with YAML"
+aliases:
+- /en/vba/working-with-yaml.md
 date:                  2024-02-01T21:30:21.733754-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Working with YAML"

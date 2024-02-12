@@ -1,5 +1,7 @@
 ---
 title:                "二つの日付を比較する"
+aliases:
+- /ja/go/comparing-two-dates.md
 date:                  2024-02-03T17:55:35.039175-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "二つの日付を比較する"

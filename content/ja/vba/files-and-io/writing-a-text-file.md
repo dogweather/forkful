@@ -1,5 +1,7 @@
 ---
 title:                "テキストファイルの作成"
+aliases:
+- /ja/vba/writing-a-text-file.md
 date:                  2024-02-01T22:08:43.921905-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "テキストファイルの作成"

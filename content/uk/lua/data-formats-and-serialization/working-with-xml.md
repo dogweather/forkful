@@ -1,5 +1,7 @@
 ---
 title:                "Робота з XML"
+aliases:
+- /uk/lua/working-with-xml.md
 date:                  2024-01-26T04:34:11.306152-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Робота з XML"

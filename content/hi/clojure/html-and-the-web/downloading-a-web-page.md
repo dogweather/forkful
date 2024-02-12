@@ -1,5 +1,7 @@
 ---
 title:                "वेब पेज डाउनलोड करना"
+aliases:
+- /hi/clojure/downloading-a-web-page.md
 date:                  2024-01-20T17:44:00.847994-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "वेब पेज डाउनलोड करना"

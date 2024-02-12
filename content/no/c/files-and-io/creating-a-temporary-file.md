@@ -1,5 +1,7 @@
 ---
 title:                "Oppretting av en midlertidig fil"
+aliases:
+- /no/c/creating-a-temporary-file.md
 date:                  2024-02-03T17:55:20.133674-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Oppretting av en midlertidig fil"

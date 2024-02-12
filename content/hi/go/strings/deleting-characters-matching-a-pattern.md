@@ -1,5 +1,7 @@
 ---
 title:                "एक पैटर्न से मेल खाते वर्णों को हटाना"
+aliases:
+- /hi/go/deleting-characters-matching-a-pattern.md
 date:                  2024-02-03T17:56:45.293801-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "एक पैटर्न से मेल खाते वर्णों को हटाना"

@@ -1,5 +1,7 @@
 ---
 title:                "Pobieranie strony internetowej"
+aliases:
+- /pl/google-apps-script/downloading-a-web-page.md
 date:                  2024-02-01T21:52:44.835765-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Pobieranie strony internetowej"

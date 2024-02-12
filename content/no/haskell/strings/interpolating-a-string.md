@@ -1,5 +1,7 @@
 ---
 title:                "Interpolering av en streng"
+aliases:
+- /no/haskell/interpolating-a-string.md
 date:                  2024-01-20T17:51:06.431996-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Interpolering av en streng"

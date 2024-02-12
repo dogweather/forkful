@@ -1,5 +1,7 @@
 ---
 title:                "Lấy ngày hiện tại"
+aliases:
+- /vi/c-sharp/getting-the-current-date.md
 date:                  2024-01-28T22:01:30.803332-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Lấy ngày hiện tại"

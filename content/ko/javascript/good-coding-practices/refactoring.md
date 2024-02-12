@@ -1,5 +1,7 @@
 ---
 title:                "리팩터링"
+aliases:
+- /ko/javascript/refactoring.md
 date:                  2024-01-26T01:41:59.066380-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "리팩터링"

@@ -1,5 +1,7 @@
 ---
 title:                "Mettre en majuscule une chaîne"
+aliases:
+- /fr/lua/capitalizing-a-string.md
 date:                  2024-02-03T19:05:46.817853-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Mettre en majuscule une chaîne"

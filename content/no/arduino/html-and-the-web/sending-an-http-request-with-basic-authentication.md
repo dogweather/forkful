@@ -1,5 +1,7 @@
 ---
 title:                "Å sende en HTTP-forespørsel med grunnleggende autentisering"
+aliases:
+- /no/arduino/sending-an-http-request-with-basic-authentication.md
 date:                  2024-01-20T18:00:46.388908-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Å sende en HTTP-forespørsel med grunnleggende autentisering"

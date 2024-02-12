@@ -1,5 +1,7 @@
 ---
 title:                "Обробка помилок"
+aliases:
+- /uk/powershell/handling-errors.md
 date:                  2024-01-26T00:56:55.676626-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Обробка помилок"

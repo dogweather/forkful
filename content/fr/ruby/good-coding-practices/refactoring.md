@@ -1,5 +1,7 @@
 ---
 title:                "Remaniement de code"
+aliases:
+- /fr/ruby/refactoring.md
 date:                  2024-01-26T03:36:35.637450-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Remaniement de code"

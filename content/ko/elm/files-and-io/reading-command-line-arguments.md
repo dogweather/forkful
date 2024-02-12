@@ -1,5 +1,7 @@
 ---
 title:                "명령줄 인수 읽기"
+aliases:
+- /ko/elm/reading-command-line-arguments.md
 date:                  2024-01-20T17:56:32.818204-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "명령줄 인수 읽기"

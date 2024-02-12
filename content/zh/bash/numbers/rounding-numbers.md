@@ -1,5 +1,7 @@
 ---
 title:                "数字取整"
+aliases:
+- /zh/bash/rounding-numbers.md
 date:                  2024-01-26T03:42:58.164300-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "数字取整"

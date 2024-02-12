@@ -1,5 +1,7 @@
 ---
 title:                "Textdatei einlesen"
+aliases:
+- /de/lua/reading-a-text-file.md
 date:                  2024-01-20T17:54:43.621305-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Textdatei einlesen"

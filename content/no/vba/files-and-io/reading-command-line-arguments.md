@@ -1,5 +1,7 @@
 ---
 title:                "Lese kommandolinje-argumenter"
+aliases:
+- /no/vba/reading-command-line-arguments.md
 date:                  2024-02-01T21:59:30.494620-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Lese kommandolinje-argumenter"

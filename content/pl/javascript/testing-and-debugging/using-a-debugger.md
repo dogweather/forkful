@@ -1,5 +1,7 @@
 ---
 title:                "Korzystanie z debugera"
+aliases:
+- /pl/javascript/using-a-debugger.md
 date:                  2024-01-26T03:50:22.616368-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Korzystanie z debugera"

@@ -1,5 +1,7 @@
 ---
 title:                "HTML पार्स करना"
+aliases:
+- /hi/swift/parsing-html.md
 date:                  2024-01-20T15:34:42.377782-07:00
 simple_title:         "HTML पार्स करना"
 

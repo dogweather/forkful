@@ -1,5 +1,7 @@
 ---
 title:                "删除匹配模式的字符"
+aliases:
+- /zh/vba/deleting-characters-matching-a-pattern.md
 date:                  2024-02-01T21:52:49.904890-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "删除匹配模式的字符"

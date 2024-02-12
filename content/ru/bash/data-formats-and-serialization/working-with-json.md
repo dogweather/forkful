@@ -1,5 +1,7 @@
 ---
 title:                "Работа с JSON"
+aliases:
+- /ru/bash/working-with-json.md
 date:                  2024-01-29T00:04:12.047020-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Работа с JSON"

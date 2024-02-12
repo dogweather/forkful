@@ -1,5 +1,7 @@
 ---
 title:                "Fouten afhandelen"
+aliases:
+- /nl/java/handling-errors.md
 date:                  2024-01-28T22:01:40.812406-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Fouten afhandelen"

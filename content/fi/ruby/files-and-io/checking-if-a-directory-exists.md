@@ -1,5 +1,7 @@
 ---
 title:                "Tarkistetaan, onko hakemisto olemassa"
+aliases:
+- /fi/ruby/checking-if-a-directory-exists.md
 date:                  2024-02-03T19:08:15.570706-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Tarkistetaan, onko hakemisto olemassa"

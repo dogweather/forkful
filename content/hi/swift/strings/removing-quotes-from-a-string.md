@@ -1,5 +1,7 @@
 ---
 title:                "स्ट्रिंग से उद्धरण चिह्न हटाना"
+aliases:
+- /hi/swift/removing-quotes-from-a-string.md
 date:                  2024-01-26T03:43:23.922866-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "स्ट्रिंग से उद्धरण चिह्न हटाना"

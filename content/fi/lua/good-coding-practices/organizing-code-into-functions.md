@@ -1,5 +1,7 @@
 ---
 title:                "Koodin järjestäminen funktioihin"
+aliases:
+- /fi/lua/organizing-code-into-functions.md
 date:                  2024-01-26T01:11:34.374469-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Koodin järjestäminen funktioihin"

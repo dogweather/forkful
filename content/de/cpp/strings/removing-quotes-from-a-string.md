@@ -1,5 +1,7 @@
 ---
 title:                "Anführungszeichen aus einem String entfernen"
+aliases:
+- /de/cpp/removing-quotes-from-a-string.md
 date:                  2024-01-26T03:37:49.058970-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Anführungszeichen aus einem String entfernen"

@@ -1,5 +1,7 @@
 ---
 title:                "Suppression de caractères correspondant à un motif"
+aliases:
+- /fr/cpp/deleting-characters-matching-a-pattern.md
 date:                  2024-01-20T17:41:48.811914-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Suppression de caractères correspondant à un motif"

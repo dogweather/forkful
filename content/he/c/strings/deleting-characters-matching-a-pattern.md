@@ -1,5 +1,7 @@
 ---
 title:                "מחיקת תווים שמתאימים לתבנית"
+aliases:
+- /he/c/deleting-characters-matching-a-pattern.md
 date:                  2024-02-03T17:56:02.854114-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "מחיקת תווים שמתאימים לתבנית"

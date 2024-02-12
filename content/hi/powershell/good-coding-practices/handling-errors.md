@@ -1,5 +1,7 @@
 ---
 title:                "एरर्स को हैंडल करना"
+aliases:
+- /hi/powershell/handling-errors.md
 date:                  2024-01-26T00:57:24.832310-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "एरर्स को हैंडल करना"

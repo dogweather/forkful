@@ -1,5 +1,7 @@
 ---
 title:                "Korzystanie z tablic asocjacyjnych"
+aliases:
+- /pl/google-apps-script/using-associative-arrays.md
 date:                  2024-02-01T22:04:22.869553-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Korzystanie z tablic asocjacyjnych"

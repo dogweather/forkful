@@ -1,5 +1,7 @@
 ---
 title:                "המרת תאריך למחרוזת"
+aliases:
+- /he/google-apps-script/converting-a-date-into-a-string.md
 date:                  2024-02-01T21:51:57.693739-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "המרת תאריך למחרוזת"

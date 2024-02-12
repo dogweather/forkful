@@ -1,5 +1,7 @@
 ---
 title:                "Eliminando caracteres que coinciden con un patrón"
+aliases:
+- /es/vba/deleting-characters-matching-a-pattern.md
 date:                  2024-02-01T21:52:15.352199-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Eliminando caracteres que coinciden con un patrón"

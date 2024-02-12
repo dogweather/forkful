@@ -1,5 +1,7 @@
 ---
 title:                "计算未来或过去的日期"
+aliases:
+- /zh/google-apps-script/calculating-a-date-in-the-future-or-past.md
 date:                  2024-02-01T21:48:51.690516-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "计算未来或过去的日期"

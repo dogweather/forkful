@@ -1,5 +1,7 @@
 ---
 title:                "Arbeiten mit XML"
+aliases:
+- /de/php/working-with-xml.md
 date:                  2024-01-26T04:33:36.498239-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Arbeiten mit XML"

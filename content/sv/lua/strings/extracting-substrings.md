@@ -1,5 +1,7 @@
 ---
 title:                "Extrahera delsträngar"
+aliases:
+- /sv/lua/extracting-substrings.md
 date:                  2024-01-20T17:46:24.114316-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Extrahera delsträngar"

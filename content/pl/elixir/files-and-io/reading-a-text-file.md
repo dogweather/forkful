@@ -1,5 +1,7 @@
 ---
 title:                "Odczytywanie pliku tekstowego"
+aliases:
+- /pl/elixir/reading-a-text-file.md
 date:                  2024-01-20T17:54:07.059783-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Odczytywanie pliku tekstowego"

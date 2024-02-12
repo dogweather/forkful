@@ -1,5 +1,7 @@
 ---
 title:                "Edycja plików w miejscu przy użyciu jednolinijkowców CLI"
+aliases:
+- /pl/powershell/editing-files-in-place-with-cli-one-liners.md
 date:                  2024-01-27T16:20:55.275241-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Edycja plików w miejscu przy użyciu jednolinijkowców CLI"

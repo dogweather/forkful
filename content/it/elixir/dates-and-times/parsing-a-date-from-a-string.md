@@ -1,5 +1,7 @@
 ---
 title:                "Analisi di una data da una stringa"
+aliases:
+- /it/elixir/parsing-a-date-from-a-string.md
 date:                  2024-01-28T02:05:09.518663-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Analisi di una data da una stringa"

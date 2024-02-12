@@ -1,5 +1,7 @@
 ---
 title:                "Calculer une date dans le futur ou le passé"
+aliases:
+- /fr/vba/calculating-a-date-in-the-future-or-past.md
 date:                  2024-02-01T21:49:06.976600-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Calculer une date dans le futur ou le passé"

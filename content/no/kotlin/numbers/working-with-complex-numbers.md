@@ -1,5 +1,7 @@
 ---
 title:                "Å jobbe med komplekse tall"
+aliases:
+- /no/kotlin/working-with-complex-numbers.md
 date:                  2024-01-26T04:42:52.970110-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Å jobbe med komplekse tall"

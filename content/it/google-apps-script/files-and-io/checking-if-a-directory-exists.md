@@ -1,5 +1,7 @@
 ---
 title:                "Verifica se una directory esiste"
+aliases:
+- /it/google-apps-script/checking-if-a-directory-exists.md
 date:                  2024-02-01T21:48:48.475052-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Verifica se una directory esiste"

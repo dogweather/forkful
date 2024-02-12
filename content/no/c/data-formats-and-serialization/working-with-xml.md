@@ -1,5 +1,7 @@
 ---
 title:                "Arbeider med XML"
+aliases:
+- /no/c/working-with-xml.md
 date:                  2024-02-03T18:13:00.467844-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Arbeider med XML"

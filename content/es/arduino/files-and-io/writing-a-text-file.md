@@ -1,5 +1,7 @@
 ---
 title:                "Escribiendo un archivo de texto"
+aliases:
+- /es/arduino/writing-a-text-file.md
 date:                  2024-02-03T19:26:51.881896-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Escribiendo un archivo de texto"

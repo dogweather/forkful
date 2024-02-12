@@ -1,5 +1,7 @@
 ---
 title:                "Comparando duas datas"
+aliases:
+- /pt/kotlin/comparing-two-dates.md
 date:                  2024-01-20T17:33:19.994850-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Comparando duas datas"

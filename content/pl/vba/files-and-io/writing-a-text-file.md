@@ -1,5 +1,7 @@
 ---
 title:                "Pisanie pliku tekstowego"
+aliases:
+- /pl/vba/writing-a-text-file.md
 date:                  2024-02-01T22:08:13.829313-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Pisanie pliku tekstowego"

@@ -1,5 +1,7 @@
 ---
 title:                "Робота з YAML"
+aliases:
+- /uk/clojure/working-with-yaml.md
 date:                  2024-02-03T19:25:20.746260-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Робота з YAML"

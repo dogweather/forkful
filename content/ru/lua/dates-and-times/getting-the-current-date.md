@@ -1,5 +1,7 @@
 ---
 title:                "Получение текущей даты"
+aliases:
+- /ru/lua/getting-the-current-date.md
 date:                  2024-01-28T23:58:51.609851-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Получение текущей даты"

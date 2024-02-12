@@ -1,5 +1,7 @@
 ---
 title:                "Використання регулярних виразів"
+aliases:
+- /uk/powershell/using-regular-expressions.md
 date:                  2024-02-03T19:18:03.840619-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Використання регулярних виразів"

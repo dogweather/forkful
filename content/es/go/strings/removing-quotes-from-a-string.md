@@ -1,5 +1,7 @@
 ---
 title:                "Eliminando comillas de una cadena"
+aliases:
+- /es/go/removing-quotes-from-a-string.md
 date:                  2024-02-03T18:07:08.037713-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Eliminando comillas de una cadena"

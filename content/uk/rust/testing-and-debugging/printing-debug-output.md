@@ -1,5 +1,7 @@
 ---
 title:                "Виведення налагоджувальної інформації"
+aliases:
+- /uk/rust/printing-debug-output.md
 date:                  2024-01-20T17:53:22.254910-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Виведення налагоджувальної інформації"

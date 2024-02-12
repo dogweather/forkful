@@ -1,5 +1,7 @@
 ---
 title:                "Работа с CSV"
+aliases:
+- /ru/ruby/working-with-csv.md
 date:                  2024-01-29T00:03:51.692891-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Работа с CSV"

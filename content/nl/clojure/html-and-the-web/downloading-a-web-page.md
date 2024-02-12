@@ -1,5 +1,7 @@
 ---
 title:                "Een webpagina downloaden"
+aliases:
+- /nl/clojure/downloading-a-web-page.md
 date:                  2024-01-28T21:59:08.468900-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een webpagina downloaden"

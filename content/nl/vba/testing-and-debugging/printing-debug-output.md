@@ -1,5 +1,7 @@
 ---
 title:                "Afdrukken van debug output"
+aliases:
+- /nl/vba/printing-debug-output.md
 date:                  2024-02-01T21:58:45.231882-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Afdrukken van debug output"

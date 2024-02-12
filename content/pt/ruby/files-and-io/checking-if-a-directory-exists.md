@@ -1,5 +1,7 @@
 ---
 title:                "Verificando se um diretório existe"
+aliases:
+- /pt/ruby/checking-if-a-directory-exists.md
 date:                  2024-02-03T19:08:14.014719-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Verificando se um diretório existe"

@@ -1,5 +1,7 @@
 ---
 title:                "Einen HTTP-Request senden"
+aliases:
+- /de/clojure/sending-an-http-request.md
 date:                  2024-01-20T17:59:17.918755-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Einen HTTP-Request senden"

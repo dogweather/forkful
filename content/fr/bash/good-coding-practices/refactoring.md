@@ -1,5 +1,7 @@
 ---
 title:                "Refactoring"
+aliases:
+- /fr/bash/refactoring.md
 date:                  2024-01-26T01:16:29.756507-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Refactoring"

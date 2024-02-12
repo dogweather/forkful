@@ -1,5 +1,7 @@
 ---
 title:                "Arbeta med JSON"
+aliases:
+- /sv/ruby/working-with-json.md
 date:                  2024-02-03T19:24:02.752073-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Arbeta med JSON"

@@ -1,5 +1,7 @@
 ---
 title:                "현재 날짜 얻기"
+aliases:
+- /ko/c/getting-the-current-date.md
 date:                  2024-02-03T17:57:51.710127-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "현재 날짜 얻기"

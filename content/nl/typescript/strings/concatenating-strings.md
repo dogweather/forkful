@@ -1,5 +1,7 @@
 ---
 title:                "Samenvoegen van strings"
+aliases:
+- /nl/typescript/concatenating-strings.md
 date:                  2024-01-28T21:57:05.282795-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Samenvoegen van strings"

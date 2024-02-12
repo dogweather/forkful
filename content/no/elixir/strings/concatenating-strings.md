@@ -1,5 +1,7 @@
 ---
 title:                "Sammenslåing av strenger"
+aliases:
+- /no/elixir/concatenating-strings.md
 date:                  2024-01-27T10:42:41.231494-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Sammenslåing av strenger"

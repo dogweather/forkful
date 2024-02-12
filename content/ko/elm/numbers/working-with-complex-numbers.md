@@ -1,5 +1,7 @@
 ---
 title:                "복소수 다루기"
+aliases:
+- /ko/elm/working-with-complex-numbers.md
 date:                  2024-01-26T04:39:37.392387-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "복소수 다루기"

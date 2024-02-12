@@ -1,5 +1,7 @@
 ---
 title:                "Merkkijonosta lainausmerkkien poistaminen"
+aliases:
+- /fi/c-sharp/removing-quotes-from-a-string.md
 date:                  2024-01-26T03:38:27.288244-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Merkkijonosta lainausmerkkien poistaminen"

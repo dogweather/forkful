@@ -1,5 +1,7 @@
 ---
 title:                "Avrunding av tall"
+aliases:
+- /no/java/rounding-numbers.md
 date:                  2024-01-26T03:45:00.207331-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Avrunding av tall"

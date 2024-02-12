@@ -1,5 +1,7 @@
 ---
 title:                "创建临时文件"
+aliases:
+- /zh/vba/creating-a-temporary-file.md
 date:                  2024-02-01T21:52:17.560205-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "创建临时文件"

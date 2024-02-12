@@ -1,5 +1,7 @@
 ---
 title:                "Bruke assosiative tabeller"
+aliases:
+- /no/google-apps-script/using-associative-arrays.md
 date:                  2024-02-01T22:04:18.663470-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Bruke assosiative tabeller"

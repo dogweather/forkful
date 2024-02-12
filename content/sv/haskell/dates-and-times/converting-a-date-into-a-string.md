@@ -1,5 +1,7 @@
 ---
 title:                "Omvandla ett datum till en sträng"
+aliases:
+- /sv/haskell/converting-a-date-into-a-string.md
 date:                  2024-01-20T17:37:04.615224-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Omvandla ett datum till en sträng"

@@ -1,5 +1,7 @@
 ---
 title:                "Merkkien poistaminen hakemalla osumia kaavaan"
+aliases:
+- /fi/c-sharp/deleting-characters-matching-a-pattern.md
 date:                  2024-01-20T17:41:43.713822-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Merkkien poistaminen hakemalla osumia kaavaan"

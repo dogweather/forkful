@@ -1,5 +1,7 @@
 ---
 title:                "从字符串解析日期"
+aliases:
+- /zh/lua/parsing-a-date-from-a-string.md
 date:                  2024-02-03T19:14:57.645115-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "从字符串解析日期"

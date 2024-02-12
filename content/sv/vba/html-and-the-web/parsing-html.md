@@ -1,5 +1,7 @@
 ---
 title:                "Att Tolka HTML"
+aliases:
+- /sv/vba/parsing-html.md
 date:                  2024-02-01T21:57:00.780914-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Att Tolka HTML"

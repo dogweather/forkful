@@ -1,5 +1,7 @@
 ---
 title:                "Virheenjäljitystulosteiden tulostaminen"
+aliases:
+- /fi/c-sharp/printing-debug-output.md
 date:                  2024-01-20T17:52:05.835018-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Virheenjäljitystulosteiden tulostaminen"

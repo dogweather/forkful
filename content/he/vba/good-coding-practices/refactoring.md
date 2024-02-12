@@ -1,5 +1,7 @@
 ---
 title:                "שיפור קוד"
+aliases:
+- /he/vba/refactoring.md
 date:                  2024-02-01T22:01:02.709896-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "שיפור קוד"

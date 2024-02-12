@@ -1,5 +1,7 @@
 ---
 title:                "检查目录是否存在"
+aliases:
+- /zh/vba/checking-if-a-directory-exists.md
 date:                  2024-02-01T21:49:39.102222-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "检查目录是否存在"

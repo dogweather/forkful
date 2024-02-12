@@ -1,5 +1,7 @@
 ---
 title:                "Interpolation einer Zeichenkette"
+aliases:
+- /de/vba/interpolating-a-string.md
 date:                  2024-02-01T21:55:26.669784-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Interpolation einer Zeichenkette"

@@ -1,5 +1,7 @@
 ---
 title:                "Manipulowanie plikami za pomocą jednolinijkowców CLI"
+aliases:
+- /pl/fish-shell/manipulating-files-with-cli-one-liners.md
 date:                  2024-01-27T16:21:07.968693-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Manipulowanie plikami za pomocą jednolinijkowców CLI"

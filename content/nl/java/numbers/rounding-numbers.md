@@ -1,5 +1,7 @@
 ---
 title:                "Afronden van getallen"
+aliases:
+- /nl/java/rounding-numbers.md
 date:                  2024-01-28T22:06:53.655956-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Afronden van getallen"

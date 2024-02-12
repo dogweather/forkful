@@ -1,5 +1,7 @@
 ---
 title:                "Pisanie pliku tekstowego"
+aliases:
+- /pl/lua/writing-a-text-file.md
 date:                  2024-02-03T19:28:51.325773-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Pisanie pliku tekstowego"

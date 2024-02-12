@@ -1,5 +1,7 @@
 ---
 title:                "שליחת בקשת HTTP"
+aliases:
+- /he/fish-shell/sending-an-http-request.md
 date:                  2024-01-20T17:59:54.851151-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "שליחת בקשת HTTP"

@@ -1,5 +1,7 @@
 ---
 title:                "Проверка существования директории"
+aliases:
+- /ru/lua/checking-if-a-directory-exists.md
 date:                  2024-01-28T23:55:56.135801-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Проверка существования директории"

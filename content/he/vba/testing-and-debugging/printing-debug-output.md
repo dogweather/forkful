@@ -1,5 +1,7 @@
 ---
 title:                "הדפסת פלט לניפוי שגיאות"
+aliases:
+- /he/vba/printing-debug-output.md
 date:                  2024-02-01T21:59:58.117948-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "הדפסת פלט לניפוי שגיאות"

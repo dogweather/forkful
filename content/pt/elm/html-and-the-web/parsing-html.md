@@ -1,5 +1,7 @@
 ---
 title:                "Análise de HTML"
+aliases:
+- /pt/elm/parsing-html.md
 date:                  2024-01-20T15:31:15.808761-07:00
 simple_title:         "Análise de HTML"
 

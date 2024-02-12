@@ -1,5 +1,7 @@
 ---
 title:                "Gerenciando erros"
+aliases:
+- /pt/c/handling-errors.md
 date:                  2024-02-03T17:57:54.046209-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Gerenciando erros"

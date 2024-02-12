@@ -1,5 +1,7 @@
 ---
 title:                "Å sende en HTTP-forespørsel"
+aliases:
+- /no/powershell/sending-an-http-request.md
 date:                  2024-01-20T18:00:21.709792-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Å sende en HTTP-forespørsel"

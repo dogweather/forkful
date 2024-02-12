@@ -1,5 +1,7 @@
 ---
 title:                "Merkkijonon muuntaminen pieniksi kirjaimiksi"
+aliases:
+- /fi/go/converting-a-string-to-lower-case.md
 date:                  2024-02-03T17:55:04.735038-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Merkkijonon muuntaminen pieniksi kirjaimiksi"

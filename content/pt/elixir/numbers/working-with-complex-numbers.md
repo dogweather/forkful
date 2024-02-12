@@ -1,5 +1,7 @@
 ---
 title:                "Trabalhando com números complexos"
+aliases:
+- /pt/elixir/working-with-complex-numbers.md
 date:                  2024-01-26T04:39:14.856685-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Trabalhando com números complexos"

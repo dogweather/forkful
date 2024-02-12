@@ -1,5 +1,7 @@
 ---
 title:                "Làm việc với số phức"
+aliases:
+- /vi/php/working-with-complex-numbers.md
 date:                  2024-01-28T22:13:00.374971-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Làm việc với số phức"

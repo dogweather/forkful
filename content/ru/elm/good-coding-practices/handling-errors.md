@@ -1,5 +1,7 @@
 ---
 title:                "Обработка ошибок"
+aliases:
+- /ru/elm/handling-errors.md
 date:                  2024-01-28T23:58:44.804146-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Обработка ошибок"

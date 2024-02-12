@@ -1,5 +1,7 @@
 ---
 title:                "删除匹配模式的字符"
+aliases:
+- /zh/c/deleting-characters-matching-a-pattern.md
 date:                  2024-02-03T17:55:23.007683-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "删除匹配模式的字符"

@@ -1,5 +1,7 @@
 ---
 title:                "Удаление символов, соответствующих шаблону"
+aliases:
+- /ru/powershell/deleting-characters-matching-a-pattern.md
 date:                  2024-01-28T23:57:24.902259-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Удаление символов, соответствующих шаблону"

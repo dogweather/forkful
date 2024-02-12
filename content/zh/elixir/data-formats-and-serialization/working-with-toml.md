@@ -1,5 +1,7 @@
 ---
 title:                "使用TOML"
+aliases:
+- /zh/elixir/working-with-toml.md
 date:                  2024-01-26T04:21:06.370461-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "使用TOML"

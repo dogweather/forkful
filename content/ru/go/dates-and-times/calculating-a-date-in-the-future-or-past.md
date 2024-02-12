@@ -1,5 +1,7 @@
 ---
 title:                "Расчет даты в будущем или прошлом"
+aliases:
+- /ru/go/calculating-a-date-in-the-future-or-past.md
 date:                  2024-02-03T17:53:27.991489-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Расчет даты в будущем или прошлом"

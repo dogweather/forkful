@@ -1,5 +1,7 @@
 ---
 title:                "Edycja plików w miejscu przy użyciu jednolinijkowców CLI"
+aliases:
+- /pl/bash/editing-files-in-place-with-cli-one-liners.md
 date:                  2024-01-27T16:21:39.062889-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Edycja plików w miejscu przy użyciu jednolinijkowców CLI"

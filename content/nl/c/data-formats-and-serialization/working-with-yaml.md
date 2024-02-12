@@ -1,5 +1,7 @@
 ---
 title:                "Werken met YAML"
+aliases:
+- /nl/c/working-with-yaml.md
 date:                  2024-02-03T18:13:38.715801-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Werken met YAML"

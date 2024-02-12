@@ -1,5 +1,7 @@
 ---
 title:                "Lectura de argumentos de línea de comandos"
+aliases:
+- /es/c-sharp/reading-command-line-arguments.md
 date:                  2024-01-20T17:55:37.612528-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Lectura de argumentos de línea de comandos"

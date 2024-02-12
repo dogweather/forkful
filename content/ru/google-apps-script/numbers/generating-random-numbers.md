@@ -1,5 +1,7 @@
 ---
 title:                "Генерация случайных чисел"
+aliases:
+- /ru/google-apps-script/generating-random-numbers.md
 date:                  2024-02-01T21:54:21.602894-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Генерация случайных чисел"

@@ -1,5 +1,7 @@
 ---
 title:                "Att Arbeta med JSON"
+aliases:
+- /sv/go/working-with-json.md
 date:                  2024-02-03T18:12:11.366892-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Att Arbeta med JSON"

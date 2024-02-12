@@ -1,5 +1,7 @@
 ---
 title:                "Merkkijonon suuraakkostaminen"
+aliases:
+- /fi/c/capitalizing-a-string.md
 date:                  2024-02-03T17:53:11.308479-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Merkkijonon suuraakkostaminen"

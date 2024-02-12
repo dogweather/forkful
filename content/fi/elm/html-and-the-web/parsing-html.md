@@ -1,5 +1,7 @@
 ---
 title:                "HTML:n jäsennys"
+aliases:
+- /fi/elm/parsing-html.md
 date:                  2024-02-03T19:12:08.672307-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "HTML:n jäsennys"

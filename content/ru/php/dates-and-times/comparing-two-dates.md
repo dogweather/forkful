@@ -1,5 +1,7 @@
 ---
 title:                "Сравнение двух дат"
+aliases:
+- /ru/php/comparing-two-dates.md
 date:                  2024-01-28T23:55:29.210390-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Сравнение двух дат"

@@ -1,5 +1,7 @@
 ---
 title:                "Interaktiivisen komentotulkin (REPL) käyttö"
+aliases:
+- /fi/bash/using-an-interactive-shell-repl.md
 date:                  2024-01-26T04:11:16.702791-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Interaktiivisen komentotulkin (REPL) käyttö"

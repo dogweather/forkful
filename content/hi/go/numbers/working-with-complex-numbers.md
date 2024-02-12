@@ -1,5 +1,7 @@
 ---
 title:                "जटिल संख्याओं के साथ काम करना"
+aliases:
+- /hi/go/working-with-complex-numbers.md
 date:                  2024-02-03T18:15:58.808987-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "जटिल संख्याओं के साथ काम करना"

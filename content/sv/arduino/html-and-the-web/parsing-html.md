@@ -1,5 +1,7 @@
 ---
 title:                "Tolka HTML"
+aliases:
+- /sv/arduino/parsing-html.md
 date:                  2024-02-03T19:11:31.045771-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Tolka HTML"

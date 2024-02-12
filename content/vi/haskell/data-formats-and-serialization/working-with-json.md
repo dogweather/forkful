@@ -1,5 +1,7 @@
 ---
 title:                "Làm việc với JSON"
+aliases:
+- /vi/haskell/working-with-json.md
 date:                  2024-01-28T22:10:58.293213-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Làm việc với JSON"

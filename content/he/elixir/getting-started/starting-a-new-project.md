@@ -1,5 +1,7 @@
 ---
 title:                "התחלת פרויקט חדש"
+aliases:
+- /he/elixir/starting-a-new-project.md
 date:                  2024-01-20T18:04:00.889055-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "התחלת פרויקט חדש"

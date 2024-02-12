@@ -1,5 +1,7 @@
 ---
 title:                "Karakters verwijderen die overeenkomen met een patroon"
+aliases:
+- /nl/c-sharp/deleting-characters-matching-a-pattern.md
 date:                  2024-01-28T21:58:24.800564-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Karakters verwijderen die overeenkomen met een patroon"

@@ -1,5 +1,7 @@
 ---
 title:                "Viết một tệp văn bản"
+aliases:
+- /vi/elixir/writing-a-text-file.md
 date:                  2024-01-28T22:12:22.004834-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Viết một tệp văn bản"

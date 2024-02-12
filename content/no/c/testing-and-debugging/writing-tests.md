@@ -1,5 +1,7 @@
 ---
 title:                "Skrive tester"
+aliases:
+- /no/c/writing-tests.md
 date:                  2024-02-03T18:14:19.432774-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Skrive tester"

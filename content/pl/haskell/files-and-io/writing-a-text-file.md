@@ -1,5 +1,7 @@
 ---
 title:                "Zapisywanie pliku tekstowego"
+aliases:
+- /pl/haskell/writing-a-text-file.md
 date:                  2024-01-19
 simple_title:         "Zapisywanie pliku tekstowego"
 

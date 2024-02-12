@@ -1,5 +1,7 @@
 ---
 title:                "Converting a string to lower case"
+aliases:
+- /en/cpp/converting-a-string-to-lower-case.md
 date:                  2024-01-20T17:38:15.389607-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Converting a string to lower case"

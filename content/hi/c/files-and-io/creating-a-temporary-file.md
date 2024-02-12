@@ -1,5 +1,7 @@
 ---
 title:                "एक अस्थायी फ़ाइल बनाना"
+aliases:
+- /hi/c/creating-a-temporary-file.md
 date:                  2024-02-03T17:57:03.226168-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "एक अस्थायी फ़ाइल बनाना"

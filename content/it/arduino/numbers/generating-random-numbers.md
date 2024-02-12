@@ -1,5 +1,7 @@
 ---
 title:                "Generazione di numeri casuali"
+aliases:
+- /it/arduino/generating-random-numbers.md
 date:                  2024-01-27T20:32:33.107677-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Generazione di numeri casuali"

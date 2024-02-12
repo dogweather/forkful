@@ -1,5 +1,7 @@
 ---
 title:                "HTMLの解析"
+aliases:
+- /ja/java/parsing-html.md
 date:                  2024-01-20T15:32:19.606894-07:00
 simple_title:         "HTMLの解析"
 

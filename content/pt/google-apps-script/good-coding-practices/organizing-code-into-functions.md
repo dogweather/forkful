@@ -1,5 +1,7 @@
 ---
 title:                "Organizando código em funções"
+aliases:
+- /pt/google-apps-script/organizing-code-into-functions.md
 date:                  2024-02-01T21:56:21.676432-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Organizando código em funções"

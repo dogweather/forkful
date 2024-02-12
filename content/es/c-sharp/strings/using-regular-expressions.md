@@ -1,5 +1,7 @@
 ---
 title:                "Usando expresiones regulares"
+aliases:
+- /es/c-sharp/using-regular-expressions.md
 date:                  2024-02-03T19:16:11.608543-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Usando expresiones regulares"

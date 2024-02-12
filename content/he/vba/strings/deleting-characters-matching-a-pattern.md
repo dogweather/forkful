@@ -1,5 +1,7 @@
 ---
 title:                "מחיקת תווים שמתאימים לדפוס"
+aliases:
+- /he/vba/deleting-characters-matching-a-pattern.md
 date:                  2024-02-01T21:52:38.385142-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "מחיקת תווים שמתאימים לדפוס"

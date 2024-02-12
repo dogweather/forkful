@@ -1,5 +1,7 @@
 ---
 title:                "YAML 다루기"
+aliases:
+- /ko/elm/working-with-yaml.md
 date:                  2024-01-19
 simple_title:         "YAML 다루기"
 

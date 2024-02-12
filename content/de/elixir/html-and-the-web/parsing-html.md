@@ -1,5 +1,7 @@
 ---
 title:                "HTML parsen"
+aliases:
+- /de/elixir/parsing-html.md
 date:                  2024-02-03T19:11:42.251444-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "HTML parsen"

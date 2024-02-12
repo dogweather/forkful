@@ -1,5 +1,7 @@
 ---
 title:                "Sjekke om en katalog eksisterer"
+aliases:
+- /no/google-apps-script/checking-if-a-directory-exists.md
 date:                  2024-02-01T21:49:02.481398-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Sjekke om en katalog eksisterer"

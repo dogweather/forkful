@@ -1,5 +1,7 @@
 ---
 title:                "Controleren of een directory bestaat"
+aliases:
+- /nl/google-apps-script/checking-if-a-directory-exists.md
 date:                  2024-02-01T21:49:07.865728-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Controleren of een directory bestaat"

@@ -1,5 +1,7 @@
 ---
 title:                "Використання асоціативних масивів"
+aliases:
+- /uk/google-apps-script/using-associative-arrays.md
 date:                  2024-02-01T22:05:08.644922-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Використання асоціативних масивів"

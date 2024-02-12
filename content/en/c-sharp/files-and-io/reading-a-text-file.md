@@ -1,5 +1,7 @@
 ---
 title:                "Reading a text file"
+aliases:
+- /en/c-sharp/reading-a-text-file.md
 date:                  2024-01-20T17:53:50.228158-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Reading a text file"

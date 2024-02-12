@@ -1,5 +1,7 @@
 ---
 title:                "עובדים עם TOML"
+aliases:
+- /he/go/working-with-toml.md
 date:                  2024-02-03T18:13:37.934215-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "עובדים עם TOML"

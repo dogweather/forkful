@@ -1,5 +1,7 @@
 ---
 title:                "Code organiseren in functies"
+aliases:
+- /nl/lua/organizing-code-into-functions.md
 date:                  2024-01-28T22:03:06.815827-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Code organiseren in functies"

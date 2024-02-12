@@ -1,5 +1,7 @@
 ---
 title:                "テキストファイルの作成"
+aliases:
+- /ja/rust/writing-a-text-file.md
 date:                  2024-02-03T19:29:20.313693-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "テキストファイルの作成"

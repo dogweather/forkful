@@ -1,5 +1,7 @@
 ---
 title:                "Rédaction de tests"
+aliases:
+- /fr/c-sharp/writing-tests.md
 date:                  2024-02-03T19:30:37.525125-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Rédaction de tests"

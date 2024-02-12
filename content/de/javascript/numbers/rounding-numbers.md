@@ -1,5 +1,7 @@
 ---
 title:                "Zahlen runden"
+aliases:
+- /de/javascript/rounding-numbers.md
 date:                  2024-01-26T03:45:09.969000-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Zahlen runden"

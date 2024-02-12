@@ -1,5 +1,7 @@
 ---
 title:                "Een string omzetten naar kleine letters"
+aliases:
+- /nl/haskell/converting-a-string-to-lower-case.md
 date:                  2024-01-28T21:57:48.216931-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een string omzetten naar kleine letters"

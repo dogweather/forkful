@@ -1,5 +1,7 @@
 ---
 title:                "복잡한 숫자로 작업하기"
+aliases:
+- /ko/go/working-with-complex-numbers.md
 date:                  2024-02-03T18:14:15.507195-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "복잡한 숫자로 작업하기"

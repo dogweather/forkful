@@ -1,5 +1,7 @@
 ---
 title:                "Å jobbe med XML"
+aliases:
+- /no/elixir/working-with-xml.md
 date:                  2024-01-26T04:29:38.453443-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Å jobbe med XML"

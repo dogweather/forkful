@@ -1,5 +1,7 @@
 ---
 title:                "Sắp xếp mã thành các hàm"
+aliases:
+- /vi/kotlin/organizing-code-into-functions.md
 date:                  2024-01-28T22:04:10.580299-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Sắp xếp mã thành các hàm"

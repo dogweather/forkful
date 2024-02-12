@@ -1,5 +1,7 @@
 ---
 title:                "Merkkijonojen yhdistäminen"
+aliases:
+- /fi/google-apps-script/concatenating-strings.md
 date:                  2024-02-01T21:50:22.075818-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Merkkijonojen yhdistäminen"

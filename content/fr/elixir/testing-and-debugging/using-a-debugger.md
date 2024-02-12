@@ -1,5 +1,7 @@
 ---
 title:                "Utilisation d'un débogueur"
+aliases:
+- /fr/elixir/using-a-debugger.md
 date:                  2024-01-26T03:48:20.046588-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Utilisation d'un débogueur"

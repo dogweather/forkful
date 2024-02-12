@@ -1,5 +1,7 @@
 ---
 title:                "Organizando código em funções"
+aliases:
+- /pt/c/organizing-code-into-functions.md
 date:                  2024-02-03T17:59:03.725241-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Organizando código em funções"

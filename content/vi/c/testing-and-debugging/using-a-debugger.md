@@ -1,5 +1,7 @@
 ---
 title:                "Sử dụng trình gỡ lỗi"
+aliases:
+- /vi/c/using-a-debugger.md
 date:                  2024-02-03T18:10:25.896433-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Sử dụng trình gỡ lỗi"

@@ -1,5 +1,7 @@
 ---
 title:                "Een string interpoleren"
+aliases:
+- /nl/rust/interpolating-a-string.md
 date:                  2024-01-28T22:02:10.904229-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een string interpoleren"

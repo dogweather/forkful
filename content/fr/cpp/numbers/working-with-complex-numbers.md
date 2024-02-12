@@ -1,5 +1,7 @@
 ---
 title:                "Manipulation des nombres complexes"
+aliases:
+- /fr/cpp/working-with-complex-numbers.md
 date:                  2024-01-26T04:37:47.304130-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Manipulation des nombres complexes"

@@ -1,5 +1,7 @@
 ---
 title:                "Печать отладочного вывода"
+aliases:
+- /ru/cpp/printing-debug-output.md
 date:                  2024-01-29T00:00:21.458344-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Печать отладочного вывода"

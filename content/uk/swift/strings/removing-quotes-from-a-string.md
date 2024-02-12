@@ -1,5 +1,7 @@
 ---
 title:                "Видалення лапок зі строки"
+aliases:
+- /uk/swift/removing-quotes-from-a-string.md
 date:                  2024-01-26T03:44:03.207941-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Видалення лапок зі строки"

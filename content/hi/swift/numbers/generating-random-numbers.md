@@ -1,5 +1,7 @@
 ---
 title:                "यादृच्छिक संख्याएँ उत्पन्न करना"
+aliases:
+- /hi/swift/generating-random-numbers.md
 date:                  2024-01-27T20:37:06.595806-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "यादृच्छिक संख्याएँ उत्पन्न करना"

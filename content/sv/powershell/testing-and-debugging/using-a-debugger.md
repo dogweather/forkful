@@ -1,5 +1,7 @@
 ---
 title:                "Att använda en debugger"
+aliases:
+- /sv/powershell/using-a-debugger.md
 date:                  2024-01-26T04:08:54.836044-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Att använda en debugger"

@@ -1,5 +1,7 @@
 ---
 title:                "Att arbeta med komplexa tal"
+aliases:
+- /sv/vba/working-with-complex-numbers.md
 date:                  2024-02-01T22:08:14.575869-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Att arbeta med komplexa tal"

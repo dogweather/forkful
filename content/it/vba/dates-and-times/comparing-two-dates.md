@@ -1,5 +1,7 @@
 ---
 title:                "Confrontare due date"
+aliases:
+- /it/vba/comparing-two-dates.md
 date:                  2024-02-01T21:50:06.461109-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Confrontare due date"

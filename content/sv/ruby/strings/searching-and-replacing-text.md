@@ -1,5 +1,7 @@
 ---
 title:                "Sökning och ersättning av text"
+aliases:
+- /sv/ruby/searching-and-replacing-text.md
 date:                  2024-01-20T17:58:41.697270-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Sökning och ersättning av text"

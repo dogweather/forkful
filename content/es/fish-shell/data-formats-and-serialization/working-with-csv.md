@@ -1,5 +1,7 @@
 ---
 title:                "Trabajando con CSV"
+aliases:
+- /es/fish-shell/working-with-csv.md
 date:                  2024-02-03T19:19:32.176436-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Trabajando con CSV"

@@ -1,5 +1,7 @@
 ---
 title:                "XML के साथ काम करना"
+aliases:
+- /hi/kotlin/working-with-xml.md
 date:                  2024-01-26T04:34:07.635085-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "XML के साथ काम करना"

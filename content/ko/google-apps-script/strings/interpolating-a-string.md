@@ -1,5 +1,7 @@
 ---
 title:                "문자열 보간하기"
+aliases:
+- /ko/google-apps-script/interpolating-a-string.md
 date:                  2024-02-01T21:55:20.550535-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "문자열 보간하기"

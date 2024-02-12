@@ -1,5 +1,7 @@
 ---
 title:                "读取命令行参数"
+aliases:
+- /zh/c/reading-command-line-arguments.md
 date:                  2024-02-03T18:06:09.145575-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "读取命令行参数"

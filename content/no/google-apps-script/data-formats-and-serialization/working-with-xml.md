@@ -1,5 +1,7 @@
 ---
 title:                "Arbeide med XML"
+aliases:
+- /no/google-apps-script/working-with-xml.md
 date:                  2024-02-01T22:06:49.162853-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Arbeide med XML"

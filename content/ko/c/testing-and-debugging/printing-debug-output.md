@@ -1,5 +1,7 @@
 ---
 title:                "디버그 출력물 출력하기"
+aliases:
+- /ko/c/printing-debug-output.md
 date:                  2024-02-03T18:05:25.017791-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "디버그 출력물 출력하기"

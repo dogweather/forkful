@@ -1,5 +1,7 @@
 ---
 title:                "Rifattorizzazione"
+aliases:
+- /it/cpp/refactoring.md
 date:                  2024-01-26T01:17:04.364876-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Rifattorizzazione"

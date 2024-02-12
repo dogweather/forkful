@@ -1,5 +1,7 @@
 ---
 title:                "इंटरैक्टिव शेल (REPL) का उपयोग"
+aliases:
+- /hi/c-sharp/using-an-interactive-shell-repl.md
 date:                  2024-01-26T04:13:28.258862-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "इंटरैक्टिव शेल (REPL) का उपयोग"

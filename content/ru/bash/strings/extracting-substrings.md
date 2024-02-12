@@ -1,5 +1,7 @@
 ---
 title:                "Извлечение подстрок"
+aliases:
+- /ru/bash/extracting-substrings.md
 date:                  2024-01-28T23:57:54.059259-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Извлечение подстрок"

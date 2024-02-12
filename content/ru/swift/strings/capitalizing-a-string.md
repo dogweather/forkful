@@ -1,5 +1,7 @@
 ---
 title:                "Преобразование строки в верхний регистр"
+aliases:
+- /ru/swift/capitalizing-a-string.md
 date:                  2024-01-28T23:55:44.740913-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Преобразование строки в верхний регистр"

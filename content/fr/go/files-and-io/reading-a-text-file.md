@@ -1,5 +1,7 @@
 ---
 title:                "Lire un fichier texte"
+aliases:
+- /fr/go/reading-a-text-file.md
 date:                  2024-02-03T18:05:37.703598-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Lire un fichier texte"

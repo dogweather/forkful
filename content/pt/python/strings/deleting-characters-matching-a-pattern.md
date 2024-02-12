@@ -1,5 +1,7 @@
 ---
 title:                "Excluindo caracteres que correspondem a um padrão"
+aliases:
+- /pt/python/deleting-characters-matching-a-pattern.md
 date:                  2024-01-20T17:42:47.654872-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Excluindo caracteres que correspondem a um padrão"

@@ -1,5 +1,7 @@
 ---
 title:                "Escribir en el error estándar"
+aliases:
+- /es/vba/writing-to-standard-error.md
 date:                  2024-02-01T22:09:07.731731-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Escribir en el error estándar"

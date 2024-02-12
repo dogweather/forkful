@@ -1,5 +1,7 @@
 ---
 title:                "Lähettäminen HTTP-pyyntö perustodennuksella"
+aliases:
+- /fi/go/sending-an-http-request-with-basic-authentication.md
 date:                  2024-02-03T18:09:11.928836-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Lähettäminen HTTP-pyyntö perustodennuksella"

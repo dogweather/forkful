@@ -1,5 +1,7 @@
 ---
 title:                "डीबगर का उपयोग"
+aliases:
+- /hi/fish-shell/using-a-debugger.md
 date:                  2024-01-26T03:50:22.843744-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "डीबगर का उपयोग"

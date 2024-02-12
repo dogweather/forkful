@@ -1,5 +1,7 @@
 ---
 title:                "패턴에 일치하는 문자 삭제하기"
+aliases:
+- /ko/vba/deleting-characters-matching-a-pattern.md
 date:                  2024-02-01T21:52:58.452294-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "패턴에 일치하는 문자 삭제하기"

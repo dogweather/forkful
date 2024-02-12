@@ -1,5 +1,7 @@
 ---
 title:                "Sử dụng mảng liên kết"
+aliases:
+- /vi/kotlin/using-associative-arrays.md
 date:                  2024-01-30T19:12:18.156107-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Sử dụng mảng liên kết"

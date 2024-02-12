@@ -1,5 +1,7 @@
 ---
 title:                "Gestion des erreurs"
+aliases:
+- /fr/c/handling-errors.md
 date:                  2024-02-03T17:57:47.461359-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Gestion des erreurs"

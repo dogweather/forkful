@@ -1,5 +1,7 @@
 ---
 title:                "Écriture sur l'erreur standard"
+aliases:
+- /fr/go/writing-to-standard-error.md
 date:                  2024-02-03T18:15:13.782899-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Écriture sur l'erreur standard"

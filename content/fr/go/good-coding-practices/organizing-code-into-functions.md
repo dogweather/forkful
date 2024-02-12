@@ -1,5 +1,7 @@
 ---
 title:                "Organiser le code en fonctions"
+aliases:
+- /fr/go/organizing-code-into-functions.md
 date:                  2024-02-03T17:59:31.779228-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Organiser le code en fonctions"

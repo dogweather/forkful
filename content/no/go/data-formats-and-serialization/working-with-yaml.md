@@ -1,5 +1,7 @@
 ---
 title:                "Å Arbeide med YAML"
+aliases:
+- /no/go/working-with-yaml.md
 date:                  2024-02-03T18:13:45.965929-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Å Arbeide med YAML"

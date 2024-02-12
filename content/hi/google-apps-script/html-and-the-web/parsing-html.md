@@ -1,5 +1,7 @@
 ---
 title:                "HTML पार्स करना"
+aliases:
+- /hi/google-apps-script/parsing-html.md
 date:                  2024-02-01T21:58:49.937709-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "HTML पार्स करना"

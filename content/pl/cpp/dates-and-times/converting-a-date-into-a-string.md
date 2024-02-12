@@ -1,5 +1,7 @@
 ---
 title:                "Konwersja daty na łańcuch znaków"
+aliases:
+- /pl/cpp/converting-a-date-into-a-string.md
 date:                  2024-01-20T17:36:02.997106-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Konwersja daty na łańcuch znaków"
