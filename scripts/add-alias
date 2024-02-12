@@ -1,0 +1,50 @@
+#!/usr/bin/env ruby
+
+# This script will add an alias entry to the frontmatter.
+
+require 'date'
+
+# Check for proper usage
+if ARGV.length != 1
+  puts "Usage: #{$PROGRAM_NAME} <filename>"
+  exit 1
+end
+
+file_list = ARGV[0]
+
+# Ensure the file exists
+unless File.file?(file_list)
+  puts "File not found: #{file_list}"
+  exit 1
+end
+
+begin
+  open(file_list, 'r').readlines.each do |raw_filename|
+    puts("got filelist entry: #{raw_filename}")
+    # Read the file content
+    filename = raw_filename.strip
+
+    parts = filename.split('/')
+    old_filename = File.join(parts[1], parts[2], parts[4])
+
+
+    puts "Processing #{filename}"
+    puts "  Aliasing #{old_filename}"
+    content = File.read(filename)
+
+    # Define your regex pattern and replacement text
+    # Example: Replace 'old_text' with 'new_text'
+    pattern     = /(title:.+?\n)/m
+    replacement = "\\1aliases:\n- #{old_filename}\n"
+
+    # Perform the regex replacement
+    new_content = content.sub(pattern, replacement)
+
+    # Write the changes back to the file
+    File.open(filename, 'w') { |file| file.write(new_content) }
+
+    puts "#{filename} updated successfully."
+  end
+rescue => e
+  puts "An error occurred: #{e.message}"
+end
