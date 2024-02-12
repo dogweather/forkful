@@ -24,7 +24,7 @@ begin
 
     filename = raw_filename.strip
     parts    = filename.split('/')
-    old_path = '/' + File.join(parts[2], parts[3], parts[5])
+    old_path = '/' + File.join(parts[2], parts[3], parts[5]).delete_suffix('.md') + '/'
 
     puts "Processing #{filename}"
     puts "Aliasing from #{old_path}"
