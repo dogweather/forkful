@@ -1,5 +1,7 @@
 ---
 title:                "读取命令行参数"
+aliases:
+- /zh/vba/reading-command-line-arguments/
 date:                  2024-02-01T21:59:29.368794-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "读取命令行参数"

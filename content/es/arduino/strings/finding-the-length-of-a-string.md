@@ -1,5 +1,7 @@
 ---
 title:                "Calculando la longitud de una cadena"
+aliases:
+- /es/arduino/finding-the-length-of-a-string/
 date:                  2024-01-20T17:46:44.369600-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Calculando la longitud de una cadena"

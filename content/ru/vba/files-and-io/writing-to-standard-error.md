@@ -1,5 +1,7 @@
 ---
 title:                "Запись в стандартный поток ошибок"
+aliases:
+- /ru/vba/writing-to-standard-error/
 date:                  2024-02-01T22:09:44.645116-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Запись в стандартный поток ошибок"

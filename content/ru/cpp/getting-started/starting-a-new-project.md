@@ -1,5 +1,7 @@
 ---
 title:                "Начало нового проекта"
+aliases:
+- /ru/cpp/starting-a-new-project/
 date:                  2024-01-29T00:02:43.763683-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Начало нового проекта"

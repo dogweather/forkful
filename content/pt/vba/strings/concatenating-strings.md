@@ -1,5 +1,7 @@
 ---
 title:                "Concatenando strings"
+aliases:
+- /pt/vba/concatenating-strings/
 date:                  2024-02-01T21:50:30.513813-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Concatenando strings"

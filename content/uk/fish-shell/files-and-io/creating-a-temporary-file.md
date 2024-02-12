@@ -1,5 +1,7 @@
 ---
 title:                "Створення тимчасового файлу"
+aliases:
+- /uk/fish-shell/creating-a-temporary-file/
 date:                  2024-01-20T17:40:36.321038-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Створення тимчасового файлу"

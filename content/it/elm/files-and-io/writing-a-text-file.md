@@ -1,5 +1,7 @@
 ---
 title:                "Scrivere un file di testo"
+aliases:
+- /it/elm/writing-a-text-file/
 date:                  2024-02-03T19:27:54.979915-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Scrivere un file di testo"

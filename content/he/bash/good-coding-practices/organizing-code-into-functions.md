@@ -1,5 +1,7 @@
 ---
 title:                "סידור קוד לתוך פונקציות"
+aliases:
+- /he/bash/organizing-code-into-functions/
 date:                  2024-01-26T01:10:00.876406-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "סידור קוד לתוך פונקציות"

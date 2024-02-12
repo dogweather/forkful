@@ -1,5 +1,7 @@
 ---
 title:                "Utilizzo di array associativi"
+aliases:
+- /it/javascript/using-associative-arrays/
 date:                  2024-01-30T19:11:44.879743-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Utilizzo di array associativi"

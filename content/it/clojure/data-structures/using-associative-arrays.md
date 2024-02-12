@@ -1,5 +1,7 @@
 ---
 title:                "Utilizzo di array associativi"
+aliases:
+- /it/clojure/using-associative-arrays/
 date:                  2024-01-30T19:10:20.015855-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Utilizzo di array associativi"

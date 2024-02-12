@@ -1,5 +1,7 @@
 ---
 title:                "स्ट्रिंग की लंबाई पता करना"
+aliases:
+- /hi/vba/finding-the-length-of-a-string/
 date:                  2024-02-01T21:54:27.900606-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "स्ट्रिंग की लंबाई पता करना"

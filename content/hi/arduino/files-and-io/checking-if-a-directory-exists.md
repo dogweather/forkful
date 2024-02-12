@@ -1,5 +1,7 @@
 ---
 title:                "डायरेक्टरी मौजूद है या नहीं, कैसे जांचें"
+aliases:
+- /hi/arduino/checking-if-a-directory-exists/
 date:                  2024-02-03T19:07:42.613962-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "डायरेक्टरी मौजूद है या नहीं, कैसे जांचें"

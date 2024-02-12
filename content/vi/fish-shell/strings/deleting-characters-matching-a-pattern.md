@@ -1,5 +1,7 @@
 ---
 title:                "Xóa các ký tự phù hợp với một mẫu"
+aliases:
+- /vi/fish-shell/deleting-characters-matching-a-pattern/
 date:                  2024-01-28T21:59:17.580075-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Xóa các ký tự phù hợp với một mẫu"

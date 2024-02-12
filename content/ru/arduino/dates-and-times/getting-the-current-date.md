@@ -1,5 +1,7 @@
 ---
 title:                "Получение текущей даты"
+aliases:
+- /ru/arduino/getting-the-current-date/
 date:                  2024-01-28T23:58:50.255500-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Получение текущей даты"

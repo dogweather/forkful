@@ -1,5 +1,7 @@
 ---
 title:                "המרת מחרוזת לאותיות קטנות"
+aliases:
+- /he/elixir/converting-a-string-to-lower-case/
 date:                  2024-01-20T17:38:11.247241-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "המרת מחרוזת לאותיות קטנות"

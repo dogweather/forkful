@@ -1,5 +1,7 @@
 ---
 title:                "Convertire una data in una stringa"
+aliases:
+- /it/google-apps-script/converting-a-date-into-a-string/
 date:                  2024-02-01T21:50:56.455155-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Convertire una data in una stringa"

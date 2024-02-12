@@ -1,5 +1,7 @@
 ---
 title:                "Ghi vào lỗi chuẩn"
+aliases:
+- /vi/google-apps-script/writing-to-standard-error/
 date:                  2024-02-01T22:09:14.371973-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Ghi vào lỗi chuẩn"

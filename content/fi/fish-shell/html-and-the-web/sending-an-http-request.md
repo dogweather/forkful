@@ -1,5 +1,7 @@
 ---
 title:                "HTTP-pyynnön lähettäminen"
+aliases:
+- /fi/fish-shell/sending-an-http-request/
 date:                  2024-01-20T17:59:57.707271-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "HTTP-pyynnön lähettäminen"

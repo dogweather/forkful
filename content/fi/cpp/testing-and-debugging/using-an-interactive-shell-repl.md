@@ -1,5 +1,7 @@
 ---
 title:                "Interaktiivisen komentotulkin (REPL) käyttö"
+aliases:
+- /fi/cpp/using-an-interactive-shell-repl/
 date:                  2024-01-26T04:12:13.102310-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Interaktiivisen komentotulkin (REPL) käyttö"

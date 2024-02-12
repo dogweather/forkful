@@ -1,5 +1,7 @@
 ---
 title:                "날짜를 문자열로 변환하기"
+aliases:
+- /ko/go/converting-a-date-into-a-string/
 date:                  2024-02-03T17:54:36.832173-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "날짜를 문자열로 변환하기"

@@ -1,5 +1,7 @@
 ---
 title:                "YAML के साथ काम करना"
+aliases:
+- /hi/go/working-with-yaml/
 date:                  2024-02-03T18:15:12.427277-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "YAML के साथ काम करना"

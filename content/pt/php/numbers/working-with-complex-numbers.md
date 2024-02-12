@@ -1,5 +1,7 @@
 ---
 title:                "Trabalhando com números complexos"
+aliases:
+- /pt/php/working-with-complex-numbers/
 date:                  2024-01-26T04:44:06.874603-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Trabalhando com números complexos"

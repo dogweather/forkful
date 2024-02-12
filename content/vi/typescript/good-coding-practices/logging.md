@@ -1,5 +1,7 @@
 ---
 title:                "Ghi log"
+aliases:
+- /vi/typescript/logging/
 date:                  2024-01-28T22:03:18.621551-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Ghi log"

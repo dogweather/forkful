@@ -1,5 +1,7 @@
 ---
 title:                "Obtenir la date actuelle"
+aliases:
+- /fr/elm/getting-the-current-date/
 date:                  2024-01-20T15:14:08.905113-07:00
 simple_title:         "Obtenir la date actuelle"
 

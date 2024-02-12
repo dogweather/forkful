@@ -1,5 +1,7 @@
 ---
 title:                "Vérifier si un répertoire existe"
+aliases:
+- /fr/google-apps-script/checking-if-a-directory-exists/
 date:                  2024-02-01T21:49:04.897226-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Vérifier si un répertoire existe"

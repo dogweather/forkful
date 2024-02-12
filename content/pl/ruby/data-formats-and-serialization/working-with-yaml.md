@@ -1,5 +1,7 @@
 ---
 title:                "Praca z YAML"
+aliases:
+- /pl/ruby/working-with-yaml/
 date:                  2024-02-03T19:26:32.647378-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Praca z YAML"

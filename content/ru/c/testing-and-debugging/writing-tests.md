@@ -1,5 +1,7 @@
 ---
 title:                "Написание тестов"
+aliases:
+- /ru/c/writing-tests/
 date:                  2024-02-03T18:15:51.434028-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Написание тестов"

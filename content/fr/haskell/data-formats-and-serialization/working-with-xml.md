@@ -1,5 +1,7 @@
 ---
 title:                "Travailler avec XML"
+aliases:
+- /fr/haskell/working-with-xml/
 date:                  2024-01-26T04:31:36.890410-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Travailler avec XML"

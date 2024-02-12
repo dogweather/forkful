@@ -1,5 +1,7 @@
 ---
 title:                "Avrunding av tall"
+aliases:
+- /no/powershell/rounding-numbers/
 date:                  2024-01-26T03:46:24.910441-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Avrunding av tall"

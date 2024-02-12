@@ -1,5 +1,7 @@
 ---
 title:                "Writing a text file"
+aliases:
+- /en/rust/writing-a-text-file/
 date:                  2024-02-03T19:03:20.005037-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Writing a text file"

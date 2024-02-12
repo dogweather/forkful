@@ -1,5 +1,7 @@
 ---
 title:                "发出 HTTP 请求"
+aliases:
+- /zh/typescript/sending-an-http-request/
 date:                  2024-01-20T18:00:50.027062-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "发出 HTTP 请求"

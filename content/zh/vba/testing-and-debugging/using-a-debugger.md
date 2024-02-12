@@ -1,5 +1,7 @@
 ---
 title:                "使用调试器"
+aliases:
+- /zh/vba/using-a-debugger/
 date:                  2024-02-01T22:03:34.600469-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "使用调试器"

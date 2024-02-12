@@ -1,5 +1,7 @@
 ---
 title:                "Arbeide med CSV"
+aliases:
+- /no/vba/working-with-csv/
 date:                  2024-02-01T22:05:18.041201-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Arbeide med CSV"

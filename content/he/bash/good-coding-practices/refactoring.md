@@ -1,5 +1,7 @@
 ---
 title:                "רפקטורינג"
+aliases:
+- /he/bash/refactoring/
 date:                  2024-01-26T01:17:43.185702-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "רפקטורינג"

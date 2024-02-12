@@ -1,5 +1,7 @@
 ---
 title:                "Het huidige datum ophalen"
+aliases:
+- /nl/elixir/getting-the-current-date/
 date:                  2024-01-28T22:01:03.421014-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Het huidige datum ophalen"

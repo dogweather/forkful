@@ -1,5 +1,7 @@
 ---
 title:                "Refatoração"
+aliases:
+- /pt/google-apps-script/refactoring/
 date:                  2024-02-01T21:59:38.585469-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Refatoração"

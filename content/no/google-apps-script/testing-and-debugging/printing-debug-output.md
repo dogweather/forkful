@@ -1,5 +1,7 @@
 ---
 title:                "Utskrift av feilsøkingsdata"
+aliases:
+- /no/google-apps-script/printing-debug-output/
 date:                  2024-02-01T21:58:27.039199-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Utskrift av feilsøkingsdata"

@@ -1,5 +1,7 @@
 ---
 title:                "Leggere un file di testo"
+aliases:
+- /it/c/reading-a-text-file/
 date:                  2024-02-03T18:05:10.596532-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Leggere un file di testo"

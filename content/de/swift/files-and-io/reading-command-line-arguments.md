@@ -1,5 +1,7 @@
 ---
 title:                "Lesen von Kommandozeilenargumenten"
+aliases:
+- /de/swift/reading-command-line-arguments/
 date:                  2024-01-20T17:57:04.755367-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Lesen von Kommandozeilenargumenten"

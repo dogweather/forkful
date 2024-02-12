@@ -1,5 +1,7 @@
 ---
 title:                "Een datum uit een string parsen"
+aliases:
+- /nl/haskell/parsing-a-date-from-a-string/
 date:                  2024-01-28T22:04:15.906524-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een datum uit een string parsen"

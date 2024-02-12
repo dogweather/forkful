@@ -1,5 +1,7 @@
 ---
 title:                "Utilizzare un shell interattivo (REPL)"
+aliases:
+- /it/google-apps-script/using-an-interactive-shell-repl/
 date:                  2024-02-01T22:03:39.630592-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Utilizzare un shell interattivo (REPL)"

@@ -1,5 +1,7 @@
 ---
 title:                "Tạo một tệp tạm thời"
+aliases:
+- /vi/c/creating-a-temporary-file/
 date:                  2024-02-03T17:56:15.625637-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Tạo một tệp tạm thời"

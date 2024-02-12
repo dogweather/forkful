@@ -1,5 +1,7 @@
 ---
 title:                "Å sende en HTTP-forespørsel"
+aliases:
+- /no/haskell/sending-an-http-request/
 date:                  2024-01-20T17:59:58.335257-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Å sende en HTTP-forespørsel"

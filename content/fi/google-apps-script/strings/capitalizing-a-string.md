@@ -1,5 +1,7 @@
 ---
 title:                "Merkkijonon alkukirjaimen suurentaminen"
+aliases:
+- /fi/google-apps-script/capitalizing-a-string/
 date:                  2024-02-01T21:49:23.265549-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Merkkijonon alkukirjaimen suurentaminen"

@@ -1,5 +1,7 @@
 ---
 title:                "Wycinanie podłańcuchów"
+aliases:
+- /pl/python/extracting-substrings/
 date:                  2024-01-20T17:46:30.645907-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Wycinanie podłańcuchów"

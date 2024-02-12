@@ -1,5 +1,7 @@
 ---
 title:                "Arbeta med JSON"
+aliases:
+- /sv/vba/working-with-json/
 date:                  2024-02-01T22:05:53.580669-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Arbeta med JSON"

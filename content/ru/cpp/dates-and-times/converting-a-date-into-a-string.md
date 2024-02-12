@@ -1,5 +1,7 @@
 ---
 title:                "Преобразование даты в строку"
+aliases:
+- /ru/cpp/converting-a-date-into-a-string/
 date:                  2024-01-28T23:56:14.569548-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Преобразование даты в строку"

@@ -1,5 +1,7 @@
 ---
 title:                "Beregning av en dato i fremtiden eller fortiden"
+aliases:
+- /no/arduino/calculating-a-date-in-the-future-or-past/
 date:                  2024-01-20T17:28:33.266953-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Beregning av en dato i fremtiden eller fortiden"

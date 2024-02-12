@@ -1,5 +1,7 @@
 ---
 title:                "Een datum converteren naar een string"
+aliases:
+- /nl/python/converting-a-date-into-a-string/
 date:                  2024-01-28T21:57:25.041199-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een datum converteren naar een string"

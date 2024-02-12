@@ -1,5 +1,7 @@
 ---
 title:                "Работа с комплексными числами"
+aliases:
+- /ru/elm/working-with-complex-numbers/
 date:                  2024-01-29T00:05:14.854723-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Работа с комплексными числами"

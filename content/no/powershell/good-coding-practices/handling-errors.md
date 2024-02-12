@@ -1,5 +1,7 @@
 ---
 title:                "Feilhåndtering"
+aliases:
+- /no/powershell/handling-errors/
 date:                  2024-01-26T00:55:55.369307-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Feilhåndtering"

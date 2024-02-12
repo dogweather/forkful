@@ -1,5 +1,7 @@
 ---
 title:                "Utilizzo di un debugger"
+aliases:
+- /it/java/using-a-debugger/
 date:                  2024-01-26T03:49:35.919940-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Utilizzo di un debugger"

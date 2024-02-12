@@ -1,5 +1,7 @@
 ---
 title:                "Початок нового проекту"
+aliases:
+- /uk/go/starting-a-new-project/
 date:                  2024-02-03T18:10:05.291490-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Початок нового проекту"

@@ -1,5 +1,7 @@
 ---
 title:                "Sattumanvaraisten numeroiden generointi"
+aliases:
+- /fi/vba/generating-random-numbers/
 date:                  2024-02-01T21:54:28.218677-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Sattumanvaraisten numeroiden generointi"

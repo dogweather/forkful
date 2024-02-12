@@ -1,5 +1,7 @@
 ---
 title:                "Sử dụng giao diện dòng lệnh tương tác (REPL)"
+aliases:
+- /vi/google-apps-script/using-an-interactive-shell-repl/
 date:                  2024-02-01T22:04:24.168361-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Sử dụng giao diện dòng lệnh tương tác (REPL)"

@@ -1,5 +1,7 @@
 ---
 title:                "Använda en interaktiv skal (REPL)"
+aliases:
+- /sv/php/using-an-interactive-shell-repl/
 date:                  2024-01-26T04:17:05.962961-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Använda en interaktiv skal (REPL)"

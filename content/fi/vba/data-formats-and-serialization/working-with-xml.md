@@ -1,5 +1,7 @@
 ---
 title:                "Työskentely XML:n kanssa"
+aliases:
+- /fi/vba/working-with-xml/
 date:                  2024-02-01T22:06:51.862755-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Työskentely XML:n kanssa"

@@ -1,5 +1,7 @@
 ---
 title:                "使用JSON进行编程"
+aliases:
+- /zh/elixir/working-with-json/
 date:                  2024-02-03T19:22:16.841176-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "使用JSON进行编程"

@@ -1,5 +1,7 @@
 ---
 title:                "Karakters die overeenkomen met een patroon verwijderen"
+aliases:
+- /nl/elm/deleting-characters-matching-a-pattern/
 date:                  2024-01-28T21:58:22.076204-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Karakters die overeenkomen met een patroon verwijderen"

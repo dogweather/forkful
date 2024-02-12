@@ -1,5 +1,7 @@
 ---
 title:                "Usando um depurador"
+aliases:
+- /pt/rust/using-a-debugger/
 date:                  2024-01-26T04:10:20.053395-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Usando um depurador"

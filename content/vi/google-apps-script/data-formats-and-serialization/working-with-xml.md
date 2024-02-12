@@ -1,5 +1,7 @@
 ---
 title:                "Làm việc với XML"
+aliases:
+- /vi/google-apps-script/working-with-xml/
 date:                  2024-02-01T22:07:01.552507-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Làm việc với XML"

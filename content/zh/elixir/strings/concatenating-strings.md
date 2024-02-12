@@ -1,5 +1,7 @@
 ---
 title:                "字符串连接"
+aliases:
+- /zh/elixir/concatenating-strings/
 date:                  2024-01-27T10:42:37.988876-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "字符串连接"

@@ -1,5 +1,7 @@
 ---
 title:                "Getting the current date"
+aliases:
+- /en/java/getting-the-current-date/
 date:                  2024-02-03T19:03:03.288829-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Getting the current date"

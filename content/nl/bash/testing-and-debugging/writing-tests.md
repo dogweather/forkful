@@ -1,5 +1,7 @@
 ---
 title:                "Tests Schrijven"
+aliases:
+- /nl/bash/writing-tests/
 date:                  2024-01-28T22:12:45.097598-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Tests Schrijven"

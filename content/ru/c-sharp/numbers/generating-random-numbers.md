@@ -1,5 +1,7 @@
 ---
 title:                "Генерация случайных чисел"
+aliases:
+- /ru/c-sharp/generating-random-numbers/
 date:                  2024-01-28T23:58:23.598263-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Генерация случайных чисел"

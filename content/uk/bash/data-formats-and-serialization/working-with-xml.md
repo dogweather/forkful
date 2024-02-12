@@ -1,5 +1,7 @@
 ---
 title:                "Робота з XML"
+aliases:
+- /uk/bash/working-with-xml/
 date:                  2024-01-26T04:28:12.767523-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Робота з XML"

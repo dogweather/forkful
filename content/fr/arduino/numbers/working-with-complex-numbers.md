@@ -1,5 +1,7 @@
 ---
 title:                "Manipulation des nombres complexes"
+aliases:
+- /fr/arduino/working-with-complex-numbers/
 date:                  2024-01-26T04:36:37.615153-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Manipulation des nombres complexes"

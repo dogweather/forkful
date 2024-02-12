@@ -1,5 +1,7 @@
 ---
 title:                "Calcular una fecha en el futuro o pasado"
+aliases:
+- /es/ruby/calculating-a-date-in-the-future-or-past/
 date:                  2024-01-20T17:31:58.137512-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Calcular una fecha en el futuro o pasado"

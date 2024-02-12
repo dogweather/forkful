@@ -1,5 +1,7 @@
 ---
 title:                "स्ट्रिंग को जोड़ना"
+aliases:
+- /hi/rust/concatenating-strings/
 date:                  2024-01-20T17:36:24.453542-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "स्ट्रिंग को जोड़ना"

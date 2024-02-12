@@ -1,5 +1,7 @@
 ---
 title:                "वर्तमान तारीख प्राप्त करना"
+aliases:
+- /hi/c/getting-the-current-date/
 date:                  2024-02-03T17:58:36.297476-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "वर्तमान तारीख प्राप्त करना"

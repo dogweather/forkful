@@ -1,5 +1,7 @@
 ---
 title:                "디렉토리가 존재하는지 확인하기"
+aliases:
+- /ko/vba/checking-if-a-directory-exists/
 date:                  2024-02-01T21:49:10.665224-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "디렉토리가 존재하는지 확인하기"

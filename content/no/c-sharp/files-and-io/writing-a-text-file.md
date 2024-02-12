@@ -1,5 +1,7 @@
 ---
 title:                "Skrive en tekstfil"
+aliases:
+- /no/c-sharp/writing-a-text-file/
 date:                  2024-02-03T19:27:49.654045-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Skrive en tekstfil"

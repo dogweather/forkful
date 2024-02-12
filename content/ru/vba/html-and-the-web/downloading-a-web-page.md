@@ -1,5 +1,7 @@
 ---
 title:                "Загрузка веб-страницы"
+aliases:
+- /ru/vba/downloading-a-web-page/
 date:                  2024-02-01T21:52:56.803269-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Загрузка веб-страницы"

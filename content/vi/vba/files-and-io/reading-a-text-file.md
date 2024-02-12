@@ -1,5 +1,7 @@
 ---
 title:                "Đọc một tệp văn bản"
+aliases:
+- /vi/vba/reading-a-text-file/
 date:                  2024-02-01T21:59:19.639587-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Đọc một tệp văn bản"

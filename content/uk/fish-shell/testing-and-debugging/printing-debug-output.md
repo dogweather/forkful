@@ -1,5 +1,7 @@
 ---
 title:                "Виведення налагоджувальної інформації"
+aliases:
+- /uk/fish-shell/printing-debug-output/
 date:                  2024-01-20T17:52:46.387345-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Виведення налагоджувальної інформації"

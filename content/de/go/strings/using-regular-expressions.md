@@ -1,5 +1,7 @@
 ---
 title:                "Reguläre Ausdrücke verwenden"
+aliases:
+- /de/go/using-regular-expressions/
 date:                  2024-02-03T18:11:11.270779-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Reguläre Ausdrücke verwenden"

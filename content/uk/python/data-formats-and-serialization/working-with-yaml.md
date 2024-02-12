@@ -1,5 +1,7 @@
 ---
 title:                "Робота з YAML"
+aliases:
+- /uk/python/working-with-yaml/
 date:                  2024-02-03T19:27:21.279295-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Робота з YAML"

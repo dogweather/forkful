@@ -1,5 +1,7 @@
 ---
 title:                "Kontrollera om en katalog finns"
+aliases:
+- /sv/elm/checking-if-a-directory-exists/
 date:                  2024-01-20T14:56:20.679011-07:00
 simple_title:         "Kontrollera om en katalog finns"
 

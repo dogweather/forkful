@@ -1,5 +1,7 @@
 ---
 title:                "Генерация случайных чисел"
+aliases:
+- /ru/elm/generating-random-numbers/
 date:                  2024-01-28T23:58:58.443552-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Генерация случайных чисел"

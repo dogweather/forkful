@@ -1,5 +1,7 @@
 ---
 title:                "Fjerner anførselstegn fra en streng"
+aliases:
+- /no/go/removing-quotes-from-a-string/
 date:                  2024-02-03T18:07:12.180245-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Fjerner anførselstegn fra en streng"

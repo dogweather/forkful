@@ -1,5 +1,7 @@
 ---
 title:                "XML के साथ काम करना"
+aliases:
+- /hi/javascript/working-with-xml/
 date:                  2024-01-26T04:33:44.729635-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "XML के साथ काम करना"

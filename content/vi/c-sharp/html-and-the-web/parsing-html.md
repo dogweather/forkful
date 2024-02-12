@@ -1,5 +1,7 @@
 ---
 title:                "Phân Tích Cú Pháp HTML"
+aliases:
+- /vi/c-sharp/parsing-html/
 date:                  2024-01-28T22:04:20.003186-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Phân Tích Cú Pháp HTML"

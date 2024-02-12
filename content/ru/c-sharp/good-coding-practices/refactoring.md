@@ -1,5 +1,7 @@
 ---
 title:                "Рефакторинг"
+aliases:
+- /ru/c-sharp/refactoring/
 date:                  2024-01-29T00:01:30.066711-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Рефакторинг"

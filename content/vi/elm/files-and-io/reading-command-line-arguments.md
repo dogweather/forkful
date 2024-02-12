@@ -1,5 +1,7 @@
 ---
 title:                "Đọc các đối số dòng lệnh"
+aliases:
+- /vi/elm/reading-command-line-arguments/
 date:                  2024-01-28T22:05:39.961251-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Đọc các đối số dòng lệnh"

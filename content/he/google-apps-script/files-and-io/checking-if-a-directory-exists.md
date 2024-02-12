@@ -1,5 +1,7 @@
 ---
 title:                "בדיקה אם ספרייה קיימת"
+aliases:
+- /he/google-apps-script/checking-if-a-directory-exists/
 date:                  2024-02-01T21:50:07.572417-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "בדיקה אם ספרייה קיימת"

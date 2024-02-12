@@ -1,5 +1,7 @@
 ---
 title:                "Tạo một tệp tạm thời"
+aliases:
+- /vi/fish-shell/creating-a-temporary-file/
 date:                  2024-01-28T21:58:24.959713-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Tạo một tệp tạm thời"

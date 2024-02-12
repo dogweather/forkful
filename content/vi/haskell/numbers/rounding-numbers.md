@@ -1,5 +1,7 @@
 ---
 title:                "Làm tròn số"
+aliases:
+- /vi/haskell/rounding-numbers/
 date:                  2024-01-28T22:07:02.206298-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Làm tròn số"

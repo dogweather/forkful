@@ -1,5 +1,7 @@
 ---
 title:                "Zeichenketten verketten"
+aliases:
+- /de/elixir/concatenating-strings/
 date:                  2024-01-27T10:42:51.247593-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Zeichenketten verketten"

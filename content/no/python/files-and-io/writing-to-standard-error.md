@@ -1,5 +1,7 @@
 ---
 title:                "Skrive til standardfeil"
+aliases:
+- /no/python/writing-to-standard-error/
 date:                  2024-01-19
 simple_title:         "Skrive til standardfeil"
 

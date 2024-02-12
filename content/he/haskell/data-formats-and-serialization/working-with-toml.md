@@ -1,5 +1,7 @@
 ---
 title:                "עבודה עם TOML"
+aliases:
+- /he/haskell/working-with-toml/
 date:                  2024-01-26T04:23:45.669764-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "עבודה עם TOML"

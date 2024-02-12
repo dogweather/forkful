@@ -1,5 +1,7 @@
 ---
 title:                "Organisation du code en fonctions"
+aliases:
+- /fr/powershell/organizing-code-into-functions/
 date:                  2024-01-26T01:11:41.458153-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Organisation du code en fonctions"

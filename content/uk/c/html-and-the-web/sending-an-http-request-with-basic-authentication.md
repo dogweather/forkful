@@ -1,5 +1,7 @@
 ---
 title:                "Надсилання HTTP-запиту з базовою автентифікацією"
+aliases:
+- /uk/c/sending-an-http-request-with-basic-authentication/
 date:                  2024-02-03T18:09:57.844472-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Надсилання HTTP-запиту з базовою автентифікацією"

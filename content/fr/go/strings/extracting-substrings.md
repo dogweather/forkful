@@ -1,5 +1,7 @@
 ---
 title:                "Extraction de sous-chaînes"
+aliases:
+- /fr/go/extracting-substrings/
 date:                  2024-02-03T17:56:21.617718-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Extraction de sous-chaînes"

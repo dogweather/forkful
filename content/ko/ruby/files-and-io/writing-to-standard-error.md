@@ -1,5 +1,7 @@
 ---
 title:                "표준 에러에 쓰기"
+aliases:
+- /ko/ruby/writing-to-standard-error/
 date:                  2024-02-03T19:34:41.767548-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "표준 에러에 쓰기"

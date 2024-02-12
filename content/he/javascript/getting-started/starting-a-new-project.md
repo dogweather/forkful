@@ -1,5 +1,7 @@
 ---
 title:                "התחלת פרויקט חדש"
+aliases:
+- /he/javascript/starting-a-new-project/
 date:                  2024-01-20T18:04:45.253477-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "התחלת פרויקט חדש"

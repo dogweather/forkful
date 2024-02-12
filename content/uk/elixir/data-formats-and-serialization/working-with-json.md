@@ -1,5 +1,7 @@
 ---
 title:                "Робота з JSON"
+aliases:
+- /uk/elixir/working-with-json/
 date:                  2024-02-03T19:22:56.415111-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Робота з JSON"

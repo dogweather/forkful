@@ -1,5 +1,7 @@
 ---
 title:                "एक स्ट्रिंग से तारीख पार्स करना"
+aliases:
+- /hi/go/parsing-a-date-from-a-string/
 date:                  2024-02-03T18:07:58.510961-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "एक स्ट्रिंग से तारीख पार्स करना"

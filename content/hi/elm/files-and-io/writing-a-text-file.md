@@ -1,5 +1,7 @@
 ---
 title:                "टेक्स्ट फाइल लिखना"
+aliases:
+- /hi/elm/writing-a-text-file/
 date:                  2024-01-19
 simple_title:         "टेक्स्ट फाइल लिखना"
 

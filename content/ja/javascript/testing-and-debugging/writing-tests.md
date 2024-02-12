@@ -1,5 +1,7 @@
 ---
 title:                "テストの作成"
+aliases:
+- /ja/javascript/writing-tests/
 date:                  2024-02-03T19:31:27.794387-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "テストの作成"

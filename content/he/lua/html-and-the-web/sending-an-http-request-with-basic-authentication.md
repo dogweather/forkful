@@ -1,5 +1,7 @@
 ---
 title:                "שליחת בקשת HTTP עם אימות בסיסי"
+aliases:
+- /he/lua/sending-an-http-request-with-basic-authentication/
 date:                  2024-01-20T18:02:10.472033-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "שליחת בקשת HTTP עם אימות בסיסי"

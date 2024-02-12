@@ -1,5 +1,7 @@
 ---
 title:                "使用JSON进行编程"
+aliases:
+- /zh/rust/working-with-json/
 date:                  2024-02-03T19:24:11.320885-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "使用JSON进行编程"

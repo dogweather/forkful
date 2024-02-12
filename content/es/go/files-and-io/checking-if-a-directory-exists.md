@@ -1,5 +1,7 @@
 ---
 title:                "Verificando si un directorio existe"
+aliases:
+- /es/go/checking-if-a-directory-exists/
 date:                  2024-02-03T17:52:26.648378-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Verificando si un directorio existe"

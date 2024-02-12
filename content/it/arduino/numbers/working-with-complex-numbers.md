@@ -1,5 +1,7 @@
 ---
 title:                "Lavorare con i numeri complessi"
+aliases:
+- /it/arduino/working-with-complex-numbers/
 date:                  2024-01-26T04:36:58.626099-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Lavorare con i numeri complessi"

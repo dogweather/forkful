@@ -1,5 +1,7 @@
 ---
 title:                "Excluindo caracteres correspondentes a um padrão"
+aliases:
+- /pt/google-apps-script/deleting-characters-matching-a-pattern/
 date:                  2024-02-01T21:52:02.378480-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Excluindo caracteres correspondentes a um padrão"

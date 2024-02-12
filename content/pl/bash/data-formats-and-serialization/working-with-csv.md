@@ -1,5 +1,7 @@
 ---
 title:                "Praca z plikami CSV"
+aliases:
+- /pl/bash/working-with-csv/
 date:                  2024-02-03T19:18:45.511560-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Praca z plikami CSV"

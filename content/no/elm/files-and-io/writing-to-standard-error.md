@@ -1,5 +1,7 @@
 ---
 title:                "Skrive til standardfeil"
+aliases:
+- /no/elm/writing-to-standard-error/
 date:                  2024-01-19
 simple_title:         "Skrive til standardfeil"
 

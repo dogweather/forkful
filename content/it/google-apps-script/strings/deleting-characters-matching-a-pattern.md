@@ -1,5 +1,7 @@
 ---
 title:                "Eliminare i caratteri corrispondenti a un modello"
+aliases:
+- /it/google-apps-script/deleting-characters-matching-a-pattern/
 date:                  2024-02-01T21:51:59.106322-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Eliminare i caratteri corrispondenti a un modello"

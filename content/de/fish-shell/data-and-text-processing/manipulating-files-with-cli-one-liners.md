@@ -1,5 +1,7 @@
 ---
 title:                "Dateimanipulation mit CLI-One-Linern"
+aliases:
+- /de/fish-shell/manipulating-files-with-cli-one-liners/
 date:                  2024-01-27T16:21:03.416741-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Dateimanipulation mit CLI-One-Linern"

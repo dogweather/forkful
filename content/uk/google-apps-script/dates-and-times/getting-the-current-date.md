@@ -1,5 +1,7 @@
 ---
 title:                "Отримання поточної дати"
+aliases:
+- /uk/google-apps-script/getting-the-current-date/
 date:                  2024-02-01T21:55:06.002249-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Отримання поточної дати"

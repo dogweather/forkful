@@ -1,5 +1,7 @@
 ---
 title:                "Skrive ut feilsøkingsdata"
+aliases:
+- /no/python/printing-debug-output/
 date:                  2024-01-20T17:53:21.492516-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Skrive ut feilsøkingsdata"

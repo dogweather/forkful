@@ -1,5 +1,7 @@
 ---
 title:                "Использование регулярных выражений"
+aliases:
+- /ru/kotlin/using-regular-expressions/
 date:                  2024-01-29T00:04:03.771241-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Использование регулярных выражений"

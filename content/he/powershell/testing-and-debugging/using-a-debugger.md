@@ -1,5 +1,7 @@
 ---
 title:                "שימוש בדיבאגר"
+aliases:
+- /he/powershell/using-a-debugger/
 date:                  2024-01-26T04:10:14.430082-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "שימוש בדיבאגר"

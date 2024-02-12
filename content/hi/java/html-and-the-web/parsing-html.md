@@ -1,5 +1,7 @@
 ---
 title:                "HTML पार्स करना"
+aliases:
+- /hi/java/parsing-html/
 date:                  2024-01-20T15:33:03.842761-07:00
 simple_title:         "HTML पार्स करना"
 

@@ -1,5 +1,7 @@
 ---
 title:                "Parsing HTML"
+aliases:
+- /en/javascript/parsing-html/
 date:                  2024-01-20T15:32:10.298214-07:00
 simple_title:         "Parsing HTML"
 

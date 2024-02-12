@@ -1,5 +1,7 @@
 ---
 title:                "Поиск длины строки"
+aliases:
+- /ru/javascript/finding-the-length-of-a-string/
 date:                  2024-01-28T23:57:55.152210-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Поиск длины строки"

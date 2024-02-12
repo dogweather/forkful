@@ -1,5 +1,7 @@
 ---
 title:                "標準エラーへの書き込み"
+aliases:
+- /ja/cpp/writing-to-standard-error/
 date:                  2024-02-03T19:32:54.380592-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "標準エラーへの書き込み"

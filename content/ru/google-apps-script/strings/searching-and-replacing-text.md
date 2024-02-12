@@ -1,5 +1,7 @@
 ---
 title:                "Поиск и замена текста"
+aliases:
+- /ru/google-apps-script/searching-and-replacing-text/
 date:                  2024-02-01T22:01:43.093884-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Поиск и замена текста"

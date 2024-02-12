@@ -1,5 +1,7 @@
 ---
 title:                "Gửi một yêu cầu HTTP"
+aliases:
+- /vi/swift/sending-an-http-request/
 date:                  2024-01-28T22:08:30.989014-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Gửi một yêu cầu HTTP"

@@ -1,5 +1,7 @@
 ---
 title:                "在编程中使用交互式Shell（REPL）"
+aliases:
+- /zh/java/using-an-interactive-shell-repl/
 date:                  2024-01-26T04:15:26.036549-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "在编程中使用交互式Shell（REPL）"

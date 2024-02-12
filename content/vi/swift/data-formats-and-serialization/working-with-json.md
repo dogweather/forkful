@@ -1,5 +1,7 @@
 ---
 title:                "Làm việc với JSON"
+aliases:
+- /vi/swift/working-with-json/
 date:                  2024-01-28T22:10:42.851699-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Làm việc với JSON"

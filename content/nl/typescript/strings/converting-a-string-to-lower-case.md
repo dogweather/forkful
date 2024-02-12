@@ -1,5 +1,7 @@
 ---
 title:                "Een string omzetten naar kleine letters"
+aliases:
+- /nl/typescript/converting-a-string-to-lower-case/
 date:                  2024-01-28T21:57:58.533843-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een string omzetten naar kleine letters"

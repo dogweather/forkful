@@ -1,5 +1,7 @@
 ---
 title:                "פרסום תאריך ממחרוזת"
+aliases:
+- /he/fish-shell/parsing-a-date-from-a-string/
 date:                  2024-02-03T19:14:56.854163-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "פרסום תאריך ממחרוזת"

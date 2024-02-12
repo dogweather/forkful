@@ -1,5 +1,7 @@
 ---
 title:                "Å starte et nytt prosjekt"
+aliases:
+- /no/haskell/starting-a-new-project/
 date:                  2024-01-20T18:04:14.762933-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Å starte et nytt prosjekt"

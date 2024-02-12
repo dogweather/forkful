@@ -1,5 +1,7 @@
 ---
 title:                "Merkkijonosta lainausmerkkien poistaminen"
+aliases:
+- /fi/php/removing-quotes-from-a-string/
 date:                  2024-01-26T03:40:53.425198-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Merkkijonosta lainausmerkkien poistaminen"

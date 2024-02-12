@@ -1,5 +1,7 @@
 ---
 title:                "Создание текстового файла"
+aliases:
+- /ru/vba/writing-a-text-file/
 date:                  2024-02-01T22:08:29.613966-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Создание текстового файла"

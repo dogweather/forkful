@@ -1,5 +1,7 @@
 ---
 title:                "Het huidige datum ophalen"
+aliases:
+- /nl/arduino/getting-the-current-date/
 date:                  2024-01-28T22:01:15.574406-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Het huidige datum ophalen"

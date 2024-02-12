@@ -1,5 +1,7 @@
 ---
 title:                "ランダム数の生成"
+aliases:
+- /ja/vba/generating-random-numbers/
 date:                  2024-02-01T21:55:09.552052-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "ランダム数の生成"

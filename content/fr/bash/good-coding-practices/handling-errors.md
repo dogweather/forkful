@@ -1,5 +1,7 @@
 ---
 title:                "Gestion des erreurs"
+aliases:
+- /fr/bash/handling-errors/
 date:                  2024-01-26T00:49:29.212956-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Gestion des erreurs"

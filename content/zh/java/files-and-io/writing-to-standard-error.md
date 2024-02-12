@@ -1,5 +1,7 @@
 ---
 title:                "写入标准错误"
+aliases:
+- /zh/java/writing-to-standard-error/
 date:                  2024-02-03T19:33:32.558323-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "写入标准错误"

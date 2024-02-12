@@ -1,5 +1,7 @@
 ---
 title:                "重构"
+aliases:
+- /zh/vba/refactoring/
 date:                  2024-02-01T22:00:07.478605-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "重构"

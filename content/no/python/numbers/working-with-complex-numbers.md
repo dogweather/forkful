@@ -1,5 +1,7 @@
 ---
 title:                "Å jobbe med komplekse tall"
+aliases:
+- /no/python/working-with-complex-numbers/
 date:                  2024-01-26T04:45:31.371734-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Å jobbe med komplekse tall"

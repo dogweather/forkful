@@ -1,5 +1,7 @@
 ---
 title:                "Використання регулярних виразів"
+aliases:
+- /uk/fish-shell/using-regular-expressions/
 date:                  2024-02-03T19:17:11.754873-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Використання регулярних виразів"

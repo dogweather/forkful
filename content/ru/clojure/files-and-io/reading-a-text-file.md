@@ -1,5 +1,7 @@
 ---
 title:                "Чтение текстового файла"
+aliases:
+- /ru/clojure/reading-a-text-file/
 date:                  2024-01-29T00:01:08.787484-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Чтение текстового файла"

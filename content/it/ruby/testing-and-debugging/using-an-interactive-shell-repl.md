@@ -1,5 +1,7 @@
 ---
 title:                "Utilizzo di un interprete interattivo (REPL)"
+aliases:
+- /it/ruby/using-an-interactive-shell-repl/
 date:                  2024-01-26T04:17:19.044288-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Utilizzo di un interprete interattivo (REPL)"

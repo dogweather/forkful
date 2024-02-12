@@ -1,5 +1,7 @@
 ---
 title:                "Geração de números aleatórios"
+aliases:
+- /pt/ruby/generating-random-numbers/
 date:                  2024-01-27T20:34:54.698927-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Geração de números aleatórios"

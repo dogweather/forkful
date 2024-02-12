@@ -1,5 +1,7 @@
 ---
 title:                "डायरेक्टरी मौजूद है या नहीं, जांचना"
+aliases:
+- /hi/c/checking-if-a-directory-exists/
 date:                  2024-02-03T17:53:55.227476-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "डायरेक्टरी मौजूद है या नहीं, जांचना"

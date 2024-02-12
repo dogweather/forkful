@@ -1,5 +1,7 @@
 ---
 title:                "Refaktorisering"
+aliases:
+- /sv/cpp/refactoring/
 date:                  2024-01-26T01:17:45.154748-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Refaktorisering"

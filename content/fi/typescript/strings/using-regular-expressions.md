@@ -1,5 +1,7 @@
 ---
 title:                "Säännöllisten lausekkeiden käyttö"
+aliases:
+- /fi/typescript/using-regular-expressions/
 date:                  2024-02-03T19:18:43.594163-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Säännöllisten lausekkeiden käyttö"

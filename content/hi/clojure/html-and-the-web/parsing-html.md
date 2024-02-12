@@ -1,5 +1,7 @@
 ---
 title:                "HTML विश्लेषण"
+aliases:
+- /hi/clojure/parsing-html/
 date:                  2024-02-03T19:13:23.275738-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "HTML विश्लेषण"

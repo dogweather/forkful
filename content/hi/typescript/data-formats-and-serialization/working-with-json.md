@@ -1,5 +1,7 @@
 ---
 title:                "JSON के साथ काम करना"
+aliases:
+- /hi/typescript/working-with-json/
 date:                  2024-02-03T19:25:38.682419-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "JSON के साथ काम करना"

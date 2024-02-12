@@ -1,5 +1,7 @@
 ---
 title:                "Надсилання HTTP-запиту"
+aliases:
+- /uk/lua/sending-an-http-request/
 date:                  2024-01-20T18:00:26.962788-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Надсилання HTTP-запиту"

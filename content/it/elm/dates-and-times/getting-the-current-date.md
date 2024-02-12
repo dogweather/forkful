@@ -1,5 +1,7 @@
 ---
 title:                "Ottenere la data corrente"
+aliases:
+- /it/elm/getting-the-current-date/
 date:                  2024-01-20T15:14:19.510193-07:00
 simple_title:         "Ottenere la data corrente"
 

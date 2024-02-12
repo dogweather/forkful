@@ -1,5 +1,7 @@
 ---
 title:                "Twee datums vergelijken"
+aliases:
+- /nl/ruby/comparing-two-dates/
 date:                  2024-01-28T21:56:57.151866-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Twee datums vergelijken"

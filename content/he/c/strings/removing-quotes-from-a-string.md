@@ -1,5 +1,7 @@
 ---
 title:                "הסרת מרכאות מתוך מחרוזת"
+aliases:
+- /he/c/removing-quotes-from-a-string/
 date:                  2024-02-03T18:07:50.392501-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "הסרת מרכאות מתוך מחרוזת"

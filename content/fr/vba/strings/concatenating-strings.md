@@ -1,5 +1,7 @@
 ---
 title:                "Concaténation de chaînes"
+aliases:
+- /fr/vba/concatenating-strings/
 date:                  2024-02-01T21:51:18.947942-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Concaténation de chaînes"

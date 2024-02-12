@@ -1,5 +1,7 @@
 ---
 title:                "Envoyer une requête HTTP"
+aliases:
+- /fr/go/sending-an-http-request/
 date:                  2024-02-03T18:08:42.539707-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Envoyer une requête HTTP"

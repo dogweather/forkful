@@ -1,5 +1,7 @@
 ---
 title:                "Einen Datum aus einem String analysieren"
+aliases:
+- /de/typescript/parsing-a-date-from-a-string/
 date:                  2024-02-03T19:15:35.761771-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Einen Datum aus einem String analysieren"

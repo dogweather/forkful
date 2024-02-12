@@ -1,5 +1,7 @@
 ---
 title:                "Debuggerin käyttö"
+aliases:
+- /fi/rust/using-a-debugger/
 date:                  2024-01-26T04:10:11.665004-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Debuggerin käyttö"

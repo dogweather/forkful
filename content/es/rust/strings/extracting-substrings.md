@@ -1,5 +1,7 @@
 ---
 title:                "Extracción de subcadenas"
+aliases:
+- /es/rust/extracting-substrings/
 date:                  2024-01-20T17:46:29.554901-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Extracción de subcadenas"

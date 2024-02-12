@@ -1,5 +1,7 @@
 ---
 title:                "Slette tegn som matcher et mønster"
+aliases:
+- /no/ruby/deleting-characters-matching-a-pattern/
 date:                  2024-01-20T17:42:52.951576-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Slette tegn som matcher et mønster"

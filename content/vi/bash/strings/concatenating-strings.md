@@ -1,5 +1,7 @@
 ---
 title:                "Nối chuỗi ký tự"
+aliases:
+- /vi/bash/concatenating-strings/
 date:                  2024-01-28T21:57:10.382100-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Nối chuỗi ký tự"

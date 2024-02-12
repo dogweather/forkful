@@ -1,5 +1,7 @@
 ---
 title:                "Преобразование строки в верхний регистр"
+aliases:
+- /ru/rust/capitalizing-a-string/
 date:                  2024-01-28T23:55:55.670592-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Преобразование строки в верхний регистр"

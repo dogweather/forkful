@@ -1,5 +1,7 @@
 ---
 title:                "Vérification de l'existence d'un répertoire"
+aliases:
+- /fr/elm/checking-if-a-directory-exists/
 date:                  2024-01-19
 simple_title:         "Vérification de l'existence d'un répertoire"
 

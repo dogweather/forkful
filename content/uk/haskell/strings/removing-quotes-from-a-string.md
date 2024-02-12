@@ -1,5 +1,7 @@
 ---
 title:                "Видалення лапок зі строки"
+aliases:
+- /uk/haskell/removing-quotes-from-a-string/
 date:                  2024-01-26T03:40:15.518274-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Видалення лапок зі строки"

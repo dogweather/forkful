@@ -1,5 +1,7 @@
 ---
 title:                "Praca z liczbami zespolonymi"
+aliases:
+- /pl/fish-shell/working-with-complex-numbers/
 date:                  2024-01-26T04:40:10.764379-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Praca z liczbami zespolonymi"

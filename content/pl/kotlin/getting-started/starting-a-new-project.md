@@ -1,5 +1,7 @@
 ---
 title:                "Rozpoczynanie nowego projektu"
+aliases:
+- /pl/kotlin/starting-a-new-project/
 date:                  2024-01-20T18:03:50.627179-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Rozpoczynanie nowego projektu"

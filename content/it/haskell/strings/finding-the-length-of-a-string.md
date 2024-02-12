@@ -1,5 +1,7 @@
 ---
 title:                "Trovare la lunghezza di una stringa"
+aliases:
+- /it/haskell/finding-the-length-of-a-string/
 date:                  2024-01-20T17:47:31.256558-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Trovare la lunghezza di una stringa"

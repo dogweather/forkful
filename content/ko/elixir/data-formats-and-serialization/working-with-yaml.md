@@ -1,5 +1,7 @@
 ---
 title:                "YAML로 작업하기"
+aliases:
+- /ko/elixir/working-with-yaml/
 date:                  2024-02-03T19:25:14.567152-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "YAML로 작업하기"

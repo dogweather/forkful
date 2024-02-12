@@ -1,5 +1,7 @@
 ---
 title:                "Debug-Ausgabe drucken"
+aliases:
+- /de/google-apps-script/printing-debug-output/
 date:                  2024-02-01T21:58:17.600768-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Debug-Ausgabe drucken"

@@ -1,5 +1,7 @@
 ---
 title:                "Interpolacja łańcuchów znaków"
+aliases:
+- /pl/javascript/interpolating-a-string/
 date:                  2024-01-20T17:51:04.776000-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Interpolacja łańcuchów znaków"

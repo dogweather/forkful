@@ -1,5 +1,7 @@
 ---
 title:                "Handling errors"
+aliases:
+- /en/typescript/handling-errors/
 date:                  2024-01-21T21:19:19.875424-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Handling errors"

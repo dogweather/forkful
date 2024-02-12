@@ -1,5 +1,7 @@
 ---
 title:                "HTTP 요청 보내기"
+aliases:
+- /ko/ruby/sending-an-http-request/
 date:                  2024-01-20T18:00:44.036075-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "HTTP 요청 보내기"

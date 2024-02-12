@@ -1,5 +1,7 @@
 ---
 title:                "Schreiben auf Standardfehler"
+aliases:
+- /de/clojure/writing-to-standard-error/
 date:                  2024-02-03T19:32:48.040040-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Schreiben auf Standardfehler"

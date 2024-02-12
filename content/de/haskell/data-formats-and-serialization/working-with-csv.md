@@ -1,5 +1,7 @@
 ---
 title:                "Arbeiten mit CSV-Dateien"
+aliases:
+- /de/haskell/working-with-csv/
 date:                  2024-01-19
 simple_title:         "Arbeiten mit CSV-Dateien"
 

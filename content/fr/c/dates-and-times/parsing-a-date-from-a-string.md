@@ -1,5 +1,7 @@
 ---
 title:                "Analyser une date à partir d'une chaîne de caractères"
+aliases:
+- /fr/c/parsing-a-date-from-a-string/
 date:                  2024-02-03T17:59:56.696295-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Analyser une date à partir d'une chaîne de caractères"

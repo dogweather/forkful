@@ -1,5 +1,7 @@
 ---
 title:                "写入标准错误"
+aliases:
+- /zh/ruby/writing-to-standard-error/
 date:                  2024-02-03T19:34:18.863606-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "写入标准错误"

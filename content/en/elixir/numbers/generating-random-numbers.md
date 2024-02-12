@@ -1,5 +1,7 @@
 ---
 title:                "Generating random numbers"
+aliases:
+- /en/elixir/generating-random-numbers/
 date:                  2024-01-27T20:26:18.067755-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Generating random numbers"

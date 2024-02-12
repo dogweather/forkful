@@ -1,5 +1,7 @@
 ---
 title:                "Працюємо з TOML"
+aliases:
+- /uk/vba/working-with-toml/
 date:                  2024-02-01T22:07:25.719401-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Працюємо з TOML"

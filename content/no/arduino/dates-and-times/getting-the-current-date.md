@@ -1,5 +1,7 @@
 ---
 title:                "Få den gjeldende datoen"
+aliases:
+- /no/arduino/getting-the-current-date/
 date:                  2024-02-03T19:08:46.849050-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Få den gjeldende datoen"

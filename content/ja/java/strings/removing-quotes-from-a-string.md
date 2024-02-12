@@ -1,5 +1,7 @@
 ---
 title:                "文字列から引用符を削除する"
+aliases:
+- /ja/java/removing-quotes-from-a-string/
 date:                  2024-01-26T03:40:13.201222-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "文字列から引用符を削除する"

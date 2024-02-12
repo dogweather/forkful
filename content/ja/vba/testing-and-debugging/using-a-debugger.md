@@ -1,5 +1,7 @@
 ---
 title:                "デバッガの使用"
+aliases:
+- /ja/vba/using-a-debugger/
 date:                  2024-02-01T22:04:31.668420-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "デバッガの使用"

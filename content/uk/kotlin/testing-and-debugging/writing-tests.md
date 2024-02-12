@@ -1,5 +1,7 @@
 ---
 title:                "Письмо тестів"
+aliases:
+- /uk/kotlin/writing-tests/
 date:                  2024-02-03T19:31:31.927994-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Письмо тестів"

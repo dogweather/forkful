@@ -1,5 +1,7 @@
 ---
 title:                "문자열에서 날짜 분석하기"
+aliases:
+- /ko/kotlin/parsing-a-date-from-a-string/
 date:                  2024-02-03T19:14:43.031475-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "문자열에서 날짜 분석하기"

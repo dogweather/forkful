@@ -1,5 +1,7 @@
 ---
 title:                "Redigering av filer på stedet med CLI-enlinjerskommandoer"
+aliases:
+- /no/fish-shell/editing-files-in-place-with-cli-one-liners/
 date:                  2024-01-27T16:21:06.558328-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Redigering av filer på stedet med CLI-enlinjerskommandoer"

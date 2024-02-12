@@ -1,5 +1,7 @@
 ---
 title:                "Väliaikaistiedoston luominen"
+aliases:
+- /fi/elixir/creating-a-temporary-file/
 date:                  2024-01-20T17:40:25.530357-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Väliaikaistiedoston luominen"

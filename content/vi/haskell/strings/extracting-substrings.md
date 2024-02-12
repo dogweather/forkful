@@ -1,5 +1,7 @@
 ---
 title:                "Trích xuất chuỗi con"
+aliases:
+- /vi/haskell/extracting-substrings/
 date:                  2024-01-28T22:00:12.198681-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Trích xuất chuỗi con"

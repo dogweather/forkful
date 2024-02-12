@@ -1,5 +1,7 @@
 ---
 title:                "복소수 다루기"
+aliases:
+- /ko/elixir/working-with-complex-numbers/
 date:                  2024-01-26T04:39:28.806754-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "복소수 다루기"

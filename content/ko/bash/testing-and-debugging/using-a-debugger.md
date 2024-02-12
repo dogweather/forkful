@@ -1,5 +1,7 @@
 ---
 title:                "디버거 사용하기"
+aliases:
+- /ko/bash/using-a-debugger/
 date:                  2024-01-26T03:47:42.952480-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "디버거 사용하기"

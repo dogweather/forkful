@@ -1,5 +1,7 @@
 ---
 title:                "Lấy ngày hiện tại"
+aliases:
+- /vi/cpp/getting-the-current-date/
 date:                  2024-01-28T22:01:01.138180-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Lấy ngày hiện tại"

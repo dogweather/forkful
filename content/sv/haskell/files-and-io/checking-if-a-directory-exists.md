@@ -1,5 +1,7 @@
 ---
 title:                "Kontrollera om en katalog existerar"
+aliases:
+- /sv/haskell/checking-if-a-directory-exists/
 date:                  2024-02-03T19:07:27.103418-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Kontrollera om en katalog existerar"

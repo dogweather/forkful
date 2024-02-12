@@ -1,5 +1,7 @@
 ---
 title:                "Konwersja łańcucha znaków na małe litery"
+aliases:
+- /pl/go/converting-a-string-to-lower-case/
 date:                  2024-02-03T17:54:58.121122-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Konwersja łańcucha znaków na małe litery"

@@ -1,5 +1,7 @@
 ---
 title:                "Interpolando uma string"
+aliases:
+- /pt/c-sharp/interpolating-a-string/
 date:                  2024-01-20T17:50:28.260077-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Interpolando uma string"

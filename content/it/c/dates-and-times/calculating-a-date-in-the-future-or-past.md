@@ -1,5 +1,7 @@
 ---
 title:                "Calcolo di una data futura o passata"
+aliases:
+- /it/c/calculating-a-date-in-the-future-or-past/
 date:                  2024-02-03T17:52:47.486041-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Calcolo di una data futura o passata"

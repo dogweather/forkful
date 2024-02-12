@@ -1,5 +1,7 @@
 ---
 title:                "Gerando números aleatórios"
+aliases:
+- /pt/go/generating-random-numbers/
 date:                  2024-02-03T17:57:21.362678-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Gerando números aleatórios"

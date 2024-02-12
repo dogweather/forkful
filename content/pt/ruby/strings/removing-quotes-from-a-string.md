@@ -1,5 +1,7 @@
 ---
 title:                "Removendo aspas de uma string"
+aliases:
+- /pt/ruby/removing-quotes-from-a-string/
 date:                  2024-01-26T03:41:24.163245-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Removendo aspas de uma string"

@@ -1,5 +1,7 @@
 ---
 title:                "연관 배열 사용하기"
+aliases:
+- /ko/vba/using-associative-arrays/
 date:                  2024-02-01T22:04:45.658330-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "연관 배열 사용하기"

@@ -1,5 +1,7 @@
 ---
 title:                "Sắp xếp mã lập trình vào trong hàm"
+aliases:
+- /vi/go/organizing-code-into-functions/
 date:                  2024-02-03T18:00:06.999144-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Sắp xếp mã lập trình vào trong hàm"

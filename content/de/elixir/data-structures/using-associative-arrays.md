@@ -1,5 +1,7 @@
 ---
 title:                "Verwendung von assoziativen Arrays"
+aliases:
+- /de/elixir/using-associative-arrays/
 date:                  2024-01-30T19:10:32.042983-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Verwendung von assoziativen Arrays"

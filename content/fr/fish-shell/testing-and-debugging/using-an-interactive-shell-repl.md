@@ -1,5 +1,7 @@
 ---
 title:                "Utilisation d'une console interactive (REPL)"
+aliases:
+- /fr/fish-shell/using-an-interactive-shell-repl/
 date:                  2024-01-26T04:14:07.624169-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Utilisation d'une console interactive (REPL)"

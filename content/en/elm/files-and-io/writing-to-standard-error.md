@@ -1,5 +1,7 @@
 ---
 title:                "Writing to standard error"
+aliases:
+- /en/elm/writing-to-standard-error/
 date:                  2024-02-03T19:03:26.066148-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Writing to standard error"

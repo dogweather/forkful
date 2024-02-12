@@ -1,5 +1,7 @@
 ---
 title:                "Видалення символів за зразком"
+aliases:
+- /uk/go/deleting-characters-matching-a-pattern/
 date:                  2024-02-03T17:56:48.176015-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Видалення символів за зразком"

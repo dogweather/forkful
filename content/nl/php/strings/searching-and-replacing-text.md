@@ -1,5 +1,7 @@
 ---
 title:                "Tekst zoeken en vervangen"
+aliases:
+- /nl/php/searching-and-replacing-text/
 date:                  2024-01-28T22:07:32.615746-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Tekst zoeken en vervangen"

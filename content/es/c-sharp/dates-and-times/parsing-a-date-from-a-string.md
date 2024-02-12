@@ -1,5 +1,7 @@
 ---
 title:                "Analizando una fecha a partir de una cadena de texto"
+aliases:
+- /es/c-sharp/parsing-a-date-from-a-string/
 date:                  2024-02-03T19:13:52.574322-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Analizando una fecha a partir de una cadena de texto"

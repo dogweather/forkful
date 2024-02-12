@@ -1,5 +1,7 @@
 ---
 title:                "Commandoregelargumenten lezen"
+aliases:
+- /nl/powershell/reading-command-line-arguments/
 date:                  2024-01-28T22:05:12.895532-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Commandoregelargumenten lezen"

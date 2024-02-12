@@ -1,5 +1,7 @@
 ---
 title:                "Uuden projektin aloittaminen"
+aliases:
+- /fi/vba/starting-a-new-project/
 date:                  2024-02-01T22:03:19.327658-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Uuden projektin aloittaminen"

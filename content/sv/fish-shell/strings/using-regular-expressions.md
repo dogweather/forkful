@@ -1,5 +1,7 @@
 ---
 title:                "Att använda reguljära uttryck"
+aliases:
+- /sv/fish-shell/using-regular-expressions/
 date:                  2024-02-03T19:16:57.465657-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Att använda reguljära uttryck"

@@ -1,5 +1,7 @@
 ---
 title:                "XML के साथ काम करना"
+aliases:
+- /hi/php/working-with-xml/
 date:                  2024-01-26T04:35:11.118732-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "XML के साथ काम करना"

@@ -1,5 +1,7 @@
 ---
 title:                "Отправка HTTP-запроса"
+aliases:
+- /ru/clojure/sending-an-http-request/
 date:                  2024-01-29T00:02:31.868766-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Отправка HTTP-запроса"

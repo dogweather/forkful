@@ -1,5 +1,7 @@
 ---
 title:                "Concaténation de chaînes"
+aliases:
+- /fr/c/concatenating-strings/
 date:                  2024-02-03T17:53:42.557057-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Concaténation de chaînes"

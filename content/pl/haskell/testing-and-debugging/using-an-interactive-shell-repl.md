@@ -1,5 +1,7 @@
 ---
 title:                "Korzystanie z interaktywnego shella (REPL)"
+aliases:
+- /pl/haskell/using-an-interactive-shell-repl/
 date:                  2024-01-26T04:15:06.923329-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Korzystanie z interaktywnego shella (REPL)"

@@ -1,5 +1,7 @@
 ---
 title:                "文字列から日付を解析する"
+aliases:
+- /ja/google-apps-script/parsing-a-date-from-a-string/
 date:                  2024-02-01T21:57:36.324237-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "文字列から日付を解析する"

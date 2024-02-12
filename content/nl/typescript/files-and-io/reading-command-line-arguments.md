@@ -1,5 +1,7 @@
 ---
 title:                "Commandoregelargumenten lezen"
+aliases:
+- /nl/typescript/reading-command-line-arguments/
 date:                  2024-01-28T22:05:25.508968-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Commandoregelargumenten lezen"

@@ -1,5 +1,7 @@
 ---
 title:                "Gebruik van associatieve arrays"
+aliases:
+- /nl/c/using-associative-arrays/
 date:                  2024-02-03T18:10:44.093572-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Gebruik van associatieve arrays"

@@ -1,5 +1,7 @@
 ---
 title:                "कोड को फंक्शन्स में व्यवस्थित करना"
+aliases:
+- /hi/c/organizing-code-into-functions/
 date:                  2024-02-03T18:06:32.007757-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "कोड को फंक्शन्स में व्यवस्थित करना"

@@ -1,5 +1,7 @@
 ---
 title:                "Comparer deux dates"
+aliases:
+- /fr/clojure/comparing-two-dates/
 date:                  2024-01-20T17:32:26.165810-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Comparer deux dates"

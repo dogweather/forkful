@@ -1,5 +1,7 @@
 ---
 title:                "Gửi một yêu cầu HTTP"
+aliases:
+- /vi/go/sending-an-http-request/
 date:                  2024-02-03T18:09:15.936698-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Gửi một yêu cầu HTTP"

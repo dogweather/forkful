@@ -1,5 +1,7 @@
 ---
 title:                "Att hitta längden på en sträng"
+aliases:
+- /sv/google-apps-script/finding-the-length-of-a-string/
 date:                  2024-02-01T21:54:17.662520-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Att hitta längden på en sträng"

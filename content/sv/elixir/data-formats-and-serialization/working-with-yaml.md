@@ -1,5 +1,7 @@
 ---
 title:                "Att Arbeta med YAML"
+aliases:
+- /sv/elixir/working-with-yaml/
 date:                  2024-02-03T19:25:22.332085-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Att Arbeta med YAML"

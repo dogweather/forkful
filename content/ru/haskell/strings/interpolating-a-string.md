@@ -1,5 +1,7 @@
 ---
 title:                "Интерполяция строки"
+aliases:
+- /ru/haskell/interpolating-a-string/
 date:                  2024-01-28T23:58:56.239575-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Интерполяция строки"

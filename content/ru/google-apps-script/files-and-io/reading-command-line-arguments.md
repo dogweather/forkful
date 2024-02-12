@@ -1,5 +1,7 @@
 ---
 title:                "Чтение аргументов командной строки"
+aliases:
+- /ru/google-apps-script/reading-command-line-arguments/
 date:                  2024-02-01T22:00:29.210581-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Чтение аргументов командной строки"

@@ -1,5 +1,7 @@
 ---
 title:                "TOMLを扱う方法"
+aliases:
+- /ja/c-sharp/working-with-toml/
 date:                  2024-01-26T04:20:32.055725-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "TOMLを扱う方法"

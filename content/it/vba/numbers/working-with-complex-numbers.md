@@ -1,5 +1,7 @@
 ---
 title:                "Lavorare con i numeri complessi"
+aliases:
+- /it/vba/working-with-complex-numbers/
 date:                  2024-02-01T22:07:54.250174-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Lavorare con i numeri complessi"

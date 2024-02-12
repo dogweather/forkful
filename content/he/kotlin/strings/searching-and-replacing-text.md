@@ -1,5 +1,7 @@
 ---
 title:                "חיפוש והחלפת טקסט"
+aliases:
+- /he/kotlin/searching-and-replacing-text/
 date:                  2024-01-20T17:58:48.223945-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "חיפוש והחלפת טקסט"

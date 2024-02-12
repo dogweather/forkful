@@ -1,5 +1,7 @@
 ---
 title:                "הסרת מרכאות ממחרוזת"
+aliases:
+- /he/java/removing-quotes-from-a-string/
 date:                  2024-01-26T03:41:01.422546-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "הסרת מרכאות ממחרוזת"

@@ -1,5 +1,7 @@
 ---
 title:                "HTML पार्स करना"
+aliases:
+- /hi/typescript/parsing-html/
 date:                  2024-01-20T15:35:07.424069-07:00
 simple_title:         "HTML पार्स करना"
 

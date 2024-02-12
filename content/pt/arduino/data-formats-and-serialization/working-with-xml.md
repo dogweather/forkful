@@ -1,5 +1,7 @@
 ---
 title:                "Trabalhando com XML"
+aliases:
+- /pt/arduino/working-with-xml/
 date:                  2024-01-26T04:27:23.265478-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Trabalhando com XML"

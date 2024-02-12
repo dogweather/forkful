@@ -1,5 +1,7 @@
 ---
 title:                "標準エラーへの書き込み"
+aliases:
+- /ja/vba/writing-to-standard-error/
 date:                  2024-02-01T22:10:00.553250-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "標準エラーへの書き込み"

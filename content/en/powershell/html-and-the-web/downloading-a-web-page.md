@@ -1,5 +1,7 @@
 ---
 title:                "Downloading a web page"
+aliases:
+- /en/powershell/downloading-a-web-page/
 date:                  2024-01-20T17:44:41.290845-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Downloading a web page"

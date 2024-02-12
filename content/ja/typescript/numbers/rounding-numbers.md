@@ -1,5 +1,7 @@
 ---
 title:                "数値の丸め処理"
+aliases:
+- /ja/typescript/rounding-numbers/
 date:                  2024-01-26T03:47:12.006620-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "数値の丸め処理"

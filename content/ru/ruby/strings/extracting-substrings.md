@@ -1,5 +1,7 @@
 ---
 title:                "Извлечение подстрок"
+aliases:
+- /ru/ruby/extracting-substrings/
 date:                  2024-01-28T23:57:57.481989-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Извлечение подстрок"

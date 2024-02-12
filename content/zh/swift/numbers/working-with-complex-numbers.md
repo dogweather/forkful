@@ -1,5 +1,7 @@
 ---
 title:                "处理复数"
+aliases:
+- /zh/swift/working-with-complex-numbers/
 date:                  2024-01-26T04:45:55.737441-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "处理复数"

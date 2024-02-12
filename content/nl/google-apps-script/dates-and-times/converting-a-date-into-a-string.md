@@ -1,5 +1,7 @@
 ---
 title:                "Een datum omzetten naar een string"
+aliases:
+- /nl/google-apps-script/converting-a-date-into-a-string/
 date:                  2024-02-01T21:51:33.980320-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een datum omzetten naar een string"

@@ -1,5 +1,7 @@
 ---
 title:                "Округление чисел"
+aliases:
+- /ru/cpp/rounding-numbers/
 date:                  2024-01-29T00:03:08.472238-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Округление чисел"

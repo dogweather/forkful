@@ -1,5 +1,7 @@
 ---
 title:                "文字列から引用符を削除する"
+aliases:
+- /ja/kotlin/removing-quotes-from-a-string/
 date:                  2024-01-26T03:40:48.513682-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "文字列から引用符を削除する"

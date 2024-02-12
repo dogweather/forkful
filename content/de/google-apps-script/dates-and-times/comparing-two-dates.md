@@ -1,5 +1,7 @@
 ---
 title:                "Zwei Daten vergleichen"
+aliases:
+- /de/google-apps-script/comparing-two-dates/
 date:                  2024-02-01T21:49:43.646904-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Zwei Daten vergleichen"

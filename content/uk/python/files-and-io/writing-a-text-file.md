@@ -1,5 +1,7 @@
 ---
 title:                "Написання текстового файлу"
+aliases:
+- /uk/python/writing-a-text-file/
 date:                  2024-02-03T19:29:31.911228-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Написання текстового файлу"

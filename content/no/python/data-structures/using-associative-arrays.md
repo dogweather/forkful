@@ -1,5 +1,7 @@
 ---
 title:                "Bruke associative tabeller"
+aliases:
+- /no/python/using-associative-arrays/
 date:                  2024-01-30T19:12:47.661948-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Bruke associative tabeller"

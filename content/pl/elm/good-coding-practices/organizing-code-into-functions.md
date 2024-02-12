@@ -1,5 +1,7 @@
 ---
 title:                "Organizacja kodu w funkcje"
+aliases:
+- /pl/elm/organizing-code-into-functions/
 date:                  2024-01-26T01:10:02.367190-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Organizacja kodu w funkcje"

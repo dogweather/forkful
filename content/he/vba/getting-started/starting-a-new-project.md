@@ -1,5 +1,7 @@
 ---
 title:                "התחלת פרויקט חדש"
+aliases:
+- /he/vba/starting-a-new-project/
 date:                  2024-02-01T22:04:00.929065-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "התחלת פרויקט חדש"

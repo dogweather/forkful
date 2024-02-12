@@ -1,5 +1,7 @@
 ---
 title:                "Usuwanie cudzysłowów z ciągu znaków"
+aliases:
+- /pl/elixir/removing-quotes-from-a-string/
 date:                  2024-01-26T03:39:32.856242-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Usuwanie cudzysłowów z ciągu znaków"

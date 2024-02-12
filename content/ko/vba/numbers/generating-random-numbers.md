@@ -1,5 +1,7 @@
 ---
 title:                "난수 생성하기"
+aliases:
+- /ko/vba/generating-random-numbers/
 date:                  2024-02-01T21:54:25.283571-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "난수 생성하기"

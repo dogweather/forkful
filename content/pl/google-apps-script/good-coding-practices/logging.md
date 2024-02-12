@@ -1,5 +1,7 @@
 ---
 title:                "Rejestrowanie"
+aliases:
+- /pl/google-apps-script/logging/
 date:                  2024-02-01T21:56:15.760202-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Rejestrowanie"

@@ -1,5 +1,7 @@
 ---
 title:                "Obtendo a data atual"
+aliases:
+- /pt/google-apps-script/getting-the-current-date/
 date:                  2024-02-01T21:54:21.840341-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Obtendo a data atual"

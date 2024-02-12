@@ -1,5 +1,7 @@
 ---
 title:                "Làm việc với YAML"
+aliases:
+- /vi/swift/working-with-yaml/
 date:                  2024-01-28T22:12:43.606792-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Làm việc với YAML"

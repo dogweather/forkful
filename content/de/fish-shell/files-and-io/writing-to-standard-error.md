@@ -1,5 +1,7 @@
 ---
 title:                "Schreiben auf Standardfehler"
+aliases:
+- /de/fish-shell/writing-to-standard-error/
 date:                  2024-02-03T19:33:13.424864-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Schreiben auf Standardfehler"

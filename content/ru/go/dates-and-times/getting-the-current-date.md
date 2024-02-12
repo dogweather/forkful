@@ -1,5 +1,7 @@
 ---
 title:                "Получение текущей даты"
+aliases:
+- /ru/go/getting-the-current-date/
 date:                  2024-02-03T17:58:06.516605-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Получение текущей даты"

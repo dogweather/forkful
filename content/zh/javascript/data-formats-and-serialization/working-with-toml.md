@@ -1,5 +1,7 @@
 ---
 title:                "使用TOML"
+aliases:
+- /zh/javascript/working-with-toml/
 date:                  2024-01-26T04:23:41.944145-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "使用TOML"

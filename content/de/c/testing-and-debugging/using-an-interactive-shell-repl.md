@@ -1,5 +1,7 @@
 ---
 title:                "Mit einer interaktiven Shell (REPL) arbeiten"
+aliases:
+- /de/c/using-an-interactive-shell-repl/
 date:                  2024-02-03T18:10:10.058812-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Mit einer interaktiven Shell (REPL) arbeiten"

@@ -1,5 +1,7 @@
 ---
 title:                "Använda associativa arrayer"
+aliases:
+- /sv/vba/using-associative-arrays/
 date:                  2024-02-01T22:04:38.218821-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Använda associativa arrayer"

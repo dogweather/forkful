@@ -1,5 +1,7 @@
 ---
 title:                "Lettura degli argomenti della riga di comando"
+aliases:
+- /it/cpp/reading-command-line-arguments/
 date:                  2024-01-20T17:55:45.927454-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Lettura degli argomenti della riga di comando"

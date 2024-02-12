@@ -1,5 +1,7 @@
 ---
 title:                "Logboekregistratie"
+aliases:
+- /nl/kotlin/logging/
 date:                  2024-01-28T22:03:16.225747-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Logboekregistratie"

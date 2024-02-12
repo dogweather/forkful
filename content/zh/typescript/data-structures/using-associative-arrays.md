@@ -1,5 +1,7 @@
 ---
 title:                "使用关联数组"
+aliases:
+- /zh/typescript/using-associative-arrays/
 date:                  2024-01-30T19:13:22.877086-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "使用关联数组"

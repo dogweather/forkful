@@ -1,5 +1,7 @@
 ---
 title:                "Überprüfung, ob ein Verzeichnis existiert"
+aliases:
+- /de/ruby/checking-if-a-directory-exists/
 date:                  2024-02-03T19:08:13.542914-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Überprüfung, ob ein Verzeichnis existiert"

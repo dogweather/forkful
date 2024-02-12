@@ -1,5 +1,7 @@
 ---
 title:                "HTTP अनुरोध भेजना"
+aliases:
+- /hi/fish-shell/sending-an-http-request/
 date:                  2024-01-20T17:59:37.222721-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "HTTP अनुरोध भेजना"

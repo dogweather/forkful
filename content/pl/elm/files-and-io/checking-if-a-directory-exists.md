@@ -1,5 +1,7 @@
 ---
 title:                "Sprawdzanie, czy katalog istnieje"
+aliases:
+- /pl/elm/checking-if-a-directory-exists/
 date:                  2024-01-19
 simple_title:         "Sprawdzanie, czy katalog istnieje"
 

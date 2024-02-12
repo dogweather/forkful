@@ -1,5 +1,7 @@
 ---
 title:                "Преобразование строки в нижний регистр"
+aliases:
+- /ru/swift/converting-a-string-to-lower-case/
 date:                  2024-01-28T23:57:21.837101-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Преобразование строки в нижний регистр"

@@ -1,5 +1,7 @@
 ---
 title:                "השוואת שני תאריכים"
+aliases:
+- /he/c/comparing-two-dates/
 date:                  2024-02-03T17:54:42.110672-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "השוואת שני תאריכים"

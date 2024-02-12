@@ -1,5 +1,7 @@
 ---
 title:                "कोड को फ़ंक्शन्स में व्यवस्थित करना"
+aliases:
+- /hi/vba/organizing-code-into-functions/
 date:                  2024-02-01T21:58:41.854783-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "कोड को फ़ंक्शन्स में व्यवस्थित करना"

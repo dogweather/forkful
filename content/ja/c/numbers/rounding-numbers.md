@@ -1,5 +1,7 @@
 ---
 title:                "数値の丸め込み"
+aliases:
+- /ja/c/rounding-numbers/
 date:                  2024-02-03T18:07:38.534383-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "数値の丸め込み"

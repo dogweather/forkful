@@ -1,5 +1,7 @@
 ---
 title:                "दो तारीखों की तुलना"
+aliases:
+- /hi/google-apps-script/comparing-two-dates/
 date:                  2024-02-01T21:51:00.743920-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "दो तारीखों की तुलना"

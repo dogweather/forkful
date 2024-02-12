@@ -1,5 +1,7 @@
 ---
 title:                "Arbeiten mit CSV"
+aliases:
+- /de/rust/working-with-csv/
 date:                  2024-02-03T19:21:23.488824-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Arbeiten mit CSV"

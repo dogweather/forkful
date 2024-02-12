@@ -1,5 +1,7 @@
 ---
 title:                "भविष्य या अतीत में तारीख की गणना"
+aliases:
+- /hi/kotlin/calculating-a-date-in-the-future-or-past/
 date:                  2024-01-20T17:32:12.214652-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "भविष्य या अतीत में तारीख की गणना"

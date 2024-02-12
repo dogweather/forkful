@@ -1,5 +1,7 @@
 ---
 title:                "乱数の生成"
+aliases:
+- /ja/rust/generating-random-numbers/
 date:                  2024-01-27T20:35:37.064250-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "乱数の生成"

@@ -1,5 +1,7 @@
 ---
 title:                "פיענוח תאריך ממחרוזת"
+aliases:
+- /he/google-apps-script/parsing-a-date-from-a-string/
 date:                  2024-02-01T21:59:03.769785-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "פיענוח תאריך ממחרוזת"

@@ -1,5 +1,7 @@
 ---
 title:                "כתיבה לשגיאה התקנית"
+aliases:
+- /he/lua/writing-to-standard-error/
 date:                  2024-02-03T19:34:16.514510-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "כתיבה לשגיאה התקנית"

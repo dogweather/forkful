@@ -1,5 +1,7 @@
 ---
 title:                "Leggere gli argomenti della riga di comando"
+aliases:
+- /it/google-apps-script/reading-command-line-arguments/
 date:                  2024-02-01T21:59:51.591440-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Leggere gli argomenti della riga di comando"

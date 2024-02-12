@@ -1,5 +1,7 @@
 ---
 title:                "Интерполяция строки"
+aliases:
+- /ru/cpp/interpolating-a-string/
 date:                  2024-01-28T23:59:04.020363-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Интерполяция строки"

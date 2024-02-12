@@ -1,5 +1,7 @@
 ---
 title:                "Округление чисел"
+aliases:
+- /ru/bash/rounding-numbers/
 date:                  2024-01-29T00:01:42.291805-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Округление чисел"

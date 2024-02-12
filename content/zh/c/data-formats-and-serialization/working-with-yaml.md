@@ -1,5 +1,7 @@
 ---
 title:                "使用YAML进行编程"
+aliases:
+- /zh/c/working-with-yaml/
 date:                  2024-02-03T18:13:36.826884-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "使用YAML进行编程"

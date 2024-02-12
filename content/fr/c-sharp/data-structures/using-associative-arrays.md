@@ -1,5 +1,7 @@
 ---
 title:                "Utilisation des tableaux associatifs"
+aliases:
+- /fr/c-sharp/using-associative-arrays/
 date:                  2024-01-30T19:10:13.451681-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Utilisation des tableaux associatifs"

@@ -1,5 +1,7 @@
 ---
 title:                "Interpolera en sträng"
+aliases:
+- /sv/go/interpolating-a-string/
 date:                  2024-02-03T17:58:36.667599-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Interpolera en sträng"

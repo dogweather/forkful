@@ -1,5 +1,7 @@
 ---
 title:                "Nykyisen päivämäärän hankkiminen"
+aliases:
+- /fi/vba/getting-the-current-date/
 date:                  2024-02-01T21:55:02.513900-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Nykyisen päivämäärän hankkiminen"

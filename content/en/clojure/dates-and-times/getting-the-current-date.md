@@ -1,5 +1,7 @@
 ---
 title:                "Getting the current date"
+aliases:
+- /en/clojure/getting-the-current-date/
 date:                  2024-02-03T19:02:56.530577-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Getting the current date"

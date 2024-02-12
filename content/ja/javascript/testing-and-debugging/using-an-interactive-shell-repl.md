@@ -1,5 +1,7 @@
 ---
 title:                "インタラクティブシェル（REPL）の使用"
+aliases:
+- /ja/javascript/using-an-interactive-shell-repl/
 date:                  2024-01-26T04:15:54.366658-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "インタラクティブシェル（REPL）の使用"

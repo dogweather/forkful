@@ -1,5 +1,7 @@
 ---
 title:                "Drukowanie informacji wyjściowych debugowania"
+aliases:
+- /pl/vba/printing-debug-output/
 date:                  2024-02-01T21:58:40.783238-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Drukowanie informacji wyjściowych debugowania"

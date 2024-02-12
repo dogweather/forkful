@@ -1,5 +1,7 @@
 ---
 title:                "In ấn thông tin gỡ lỗi"
+aliases:
+- /vi/bash/printing-debug-output/
 date:                  2024-01-28T22:04:23.643823-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "In ấn thông tin gỡ lỗi"

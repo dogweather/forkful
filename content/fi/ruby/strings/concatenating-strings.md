@@ -1,5 +1,7 @@
 ---
 title:                "Merkkijonojen yhdistäminen"
+aliases:
+- /fi/ruby/concatenating-strings/
 date:                  2024-01-20T17:35:51.522305-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Merkkijonojen yhdistäminen"

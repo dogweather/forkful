@@ -1,5 +1,7 @@
 ---
 title:                "Modification de fichiers sur place avec des lignes de commande en une seule étape"
+aliases:
+- /fr/bash/editing-files-in-place-with-cli-one-liners/
 date:                  2024-01-27T16:21:18.345278-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Modification de fichiers sur place avec des lignes de commande en une seule étape"

@@ -1,5 +1,7 @@
 ---
 title:                "Analizando una fecha a partir de una cadena de texto"
+aliases:
+- /es/elm/parsing-a-date-from-a-string/
 date:                  2024-02-03T19:14:01.758356-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Analizando una fecha a partir de una cadena de texto"

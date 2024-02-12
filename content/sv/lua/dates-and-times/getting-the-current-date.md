@@ -1,5 +1,7 @@
 ---
 title:                "Få det aktuella datumet"
+aliases:
+- /sv/lua/getting-the-current-date/
 date:                  2024-02-03T19:10:21.943436-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Få det aktuella datumet"

@@ -1,5 +1,7 @@
 ---
 title:                "Tekstin etsiminen ja korvaaminen"
+aliases:
+- /fi/swift/searching-and-replacing-text/
 date:                  2024-01-20T17:58:54.829623-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Tekstin etsiminen ja korvaaminen"

@@ -1,5 +1,7 @@
 ---
 title:                "Merkkijonojen yhdistäminen"
+aliases:
+- /fi/arduino/concatenating-strings/
 date:                  2024-01-20T17:33:52.760012-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Merkkijonojen yhdistäminen"

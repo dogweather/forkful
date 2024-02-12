@@ -1,5 +1,7 @@
 ---
 title:                "इंटरैक्टिव शेल (REPL) का उपयोग"
+aliases:
+- /hi/fish-shell/using-an-interactive-shell-repl/
 date:                  2024-01-26T04:15:17.339441-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "इंटरैक्टिव शेल (REPL) का उपयोग"

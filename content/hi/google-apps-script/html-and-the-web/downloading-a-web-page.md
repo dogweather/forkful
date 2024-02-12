@@ -1,5 +1,7 @@
 ---
 title:                "वेब पेज डाउनलोड करना"
+aliases:
+- /hi/google-apps-script/downloading-a-web-page/
 date:                  2024-02-01T21:54:24.785577-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "वेब पेज डाउनलोड करना"

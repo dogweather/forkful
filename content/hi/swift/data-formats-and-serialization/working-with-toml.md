@@ -1,5 +1,7 @@
 ---
 title:                "TOML के साथ काम करना"
+aliases:
+- /hi/swift/working-with-toml/
 date:                  2024-01-26T04:27:42.821546-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "TOML के साथ काम करना"

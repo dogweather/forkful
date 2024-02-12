@@ -1,5 +1,7 @@
 ---
 title:                "Een string omzetten naar kleine letters"
+aliases:
+- /nl/google-apps-script/converting-a-string-to-lower-case/
 date:                  2024-02-01T21:51:25.398796-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een string omzetten naar kleine letters"

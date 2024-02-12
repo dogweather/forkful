@@ -1,5 +1,7 @@
 ---
 title:                "Zaokrąglanie liczb"
+aliases:
+- /pl/c/rounding-numbers/
 date:                  2024-02-03T18:07:45.330322-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Zaokrąglanie liczb"

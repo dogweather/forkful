@@ -1,5 +1,7 @@
 ---
 title:                "Generación de números aleatorios"
+aliases:
+- /es/bash/generating-random-numbers/
 date:                  2024-01-27T20:32:33.969953-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Generación de números aleatorios"

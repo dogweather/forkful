@@ -1,5 +1,7 @@
 ---
 title:                "CLIワンライナーでのファイル操作"
+aliases:
+- /ja/fish-shell/manipulating-files-with-cli-one-liners/
 date:                  2024-01-27T16:21:38.020309-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "CLIワンライナーでのファイル操作"

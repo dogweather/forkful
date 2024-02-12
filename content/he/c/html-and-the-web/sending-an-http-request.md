@@ -1,5 +1,7 @@
 ---
 title:                "שליחת בקשת HTTP"
+aliases:
+- /he/c/sending-an-http-request/
 date:                  2024-02-03T18:09:32.339137-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "שליחת בקשת HTTP"

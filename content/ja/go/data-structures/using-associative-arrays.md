@@ -1,5 +1,7 @@
 ---
 title:                "連想配列の使用"
+aliases:
+- /ja/go/using-associative-arrays/
 date:                  2024-02-03T18:11:05.988553-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "連想配列の使用"

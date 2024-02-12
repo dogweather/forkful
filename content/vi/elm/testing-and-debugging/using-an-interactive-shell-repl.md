@@ -1,5 +1,7 @@
 ---
 title:                "Sử dụng vỏ tương tác (REPL)"
+aliases:
+- /vi/elm/using-an-interactive-shell-repl/
 date:                  2024-01-28T22:09:31.422852-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Sử dụng vỏ tương tác (REPL)"

@@ -1,5 +1,7 @@
 ---
 title:                "Tarkistetaan, onko hakemisto olemassa"
+aliases:
+- /fi/vba/checking-if-a-directory-exists/
 date:                  2024-02-01T21:49:11.993379-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Tarkistetaan, onko hakemisto olemassa"

@@ -1,5 +1,7 @@
 ---
 title:                "Usuwanie cudzysłowów z ciągu znaków"
+aliases:
+- /pl/c/removing-quotes-from-a-string/
 date:                  2024-02-03T18:07:19.319527-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Usuwanie cudzysłowów z ciągu znaków"

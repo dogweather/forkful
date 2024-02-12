@@ -1,5 +1,7 @@
 ---
 title:                "Sending an HTTP request with basic authentication"
+aliases:
+- /en/powershell/sending-an-http-request-with-basic-authentication/
 date:                  2024-01-20T18:02:23.036437-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Sending an HTTP request with basic authentication"

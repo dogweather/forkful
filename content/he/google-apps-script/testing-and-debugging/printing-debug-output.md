@@ -1,5 +1,7 @@
 ---
 title:                "הדפסת פלט לניפוי שגיאות"
+aliases:
+- /he/google-apps-script/printing-debug-output/
 date:                  2024-02-01T21:59:04.778597-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "הדפסת פלט לניפוי שגיאות"

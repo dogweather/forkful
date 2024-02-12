@@ -1,5 +1,7 @@
 ---
 title:                "עובדים עם CSV"
+aliases:
+- /he/cpp/working-with-csv/
 date:                  2024-02-03T19:19:43.980140-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "עובדים עם CSV"

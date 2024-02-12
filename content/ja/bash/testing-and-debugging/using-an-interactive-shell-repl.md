@@ -1,5 +1,7 @@
 ---
 title:                "インタラクティブシェル（REPL）の使用"
+aliases:
+- /ja/bash/using-an-interactive-shell-repl/
 date:                  2024-01-26T04:11:33.721424-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "インタラクティブシェル（REPL）の使用"

@@ -1,5 +1,7 @@
 ---
 title:                "Использование интерактивной оболочки (REPL)"
+aliases:
+- /ru/google-apps-script/using-an-interactive-shell-repl/
 date:                  2024-02-01T22:04:01.782795-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Использование интерактивной оболочки (REPL)"

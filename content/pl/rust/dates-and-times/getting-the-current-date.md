@@ -1,5 +1,7 @@
 ---
 title:                "Pobieranie aktualnej daty"
+aliases:
+- /pl/rust/getting-the-current-date/
 date:                  2024-02-03T19:10:50.754375-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Pobieranie aktualnej daty"

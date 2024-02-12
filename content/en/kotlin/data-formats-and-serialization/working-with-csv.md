@@ -1,5 +1,7 @@
 ---
 title:                "Working with CSV"
+aliases:
+- /en/kotlin/working-with-csv/
 date:                  2024-02-03T19:03:21.344898-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Working with CSV"

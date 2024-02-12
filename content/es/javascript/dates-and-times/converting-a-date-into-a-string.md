@@ -1,5 +1,7 @@
 ---
 title:                "Convirtiendo una fecha en una cadena de texto"
+aliases:
+- /es/javascript/converting-a-date-into-a-string/
 date:                  2024-01-20T17:37:01.513026-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Convirtiendo una fecha en una cadena de texto"

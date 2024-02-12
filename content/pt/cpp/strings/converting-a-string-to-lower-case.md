@@ -1,5 +1,7 @@
 ---
 title:                "Convertendo uma string para minúsculas"
+aliases:
+- /pt/cpp/converting-a-string-to-lower-case/
 date:                  2024-01-20T17:38:08.085325-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Convertendo uma string para minúsculas"

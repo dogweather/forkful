@@ -1,5 +1,7 @@
 ---
 title:                "Concatenando strings"
+aliases:
+- /pt/google-apps-script/concatenating-strings/
 date:                  2024-02-01T21:50:08.108299-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Concatenando strings"

@@ -1,5 +1,7 @@
 ---
 title:                "Xóa các ký tự khớp với một mô hình"
+aliases:
+- /vi/go/deleting-characters-matching-a-pattern/
 date:                  2024-02-03T17:55:58.645173-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Xóa các ký tự khớp với một mô hình"

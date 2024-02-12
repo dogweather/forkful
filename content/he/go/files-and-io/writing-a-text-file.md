@@ -1,5 +1,7 @@
 ---
 title:                "כתיבת קובץ טקסט"
+aliases:
+- /he/go/writing-a-text-file/
 date:                  2024-02-03T18:15:54.372174-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "כתיבת קובץ טקסט"

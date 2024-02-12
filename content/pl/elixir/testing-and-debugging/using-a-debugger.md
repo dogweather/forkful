@@ -1,5 +1,7 @@
 ---
 title:                "Korzystanie z debugera"
+aliases:
+- /pl/elixir/using-a-debugger/
 date:                  2024-01-26T03:49:18.798157-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Korzystanie z debugera"

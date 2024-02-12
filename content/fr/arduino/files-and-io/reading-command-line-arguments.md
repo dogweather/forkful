@@ -1,5 +1,7 @@
 ---
 title:                "Lecture des arguments de ligne de commande"
+aliases:
+- /fr/arduino/reading-command-line-arguments/
 date:                  2024-01-20T17:55:28.080384-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Lecture des arguments de ligne de commande"

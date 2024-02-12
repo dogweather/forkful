@@ -1,5 +1,7 @@
 ---
 title:                "Afronden van getallen"
+aliases:
+- /nl/vba/rounding-numbers/
 date:                  2024-02-01T22:01:14.240737-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Afronden van getallen"

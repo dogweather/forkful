@@ -1,5 +1,7 @@
 ---
 title:                "将代码组织成函数"
+aliases:
+- /zh/google-apps-script/organizing-code-into-functions/
 date:                  2024-02-01T21:56:30.705237-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "将代码组织成函数"

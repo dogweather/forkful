@@ -1,5 +1,7 @@
 ---
 title:                "Korzystanie z tablic asocjacyjnych"
+aliases:
+- /pl/elixir/using-associative-arrays/
 date:                  2024-01-30T19:10:49.334125-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Korzystanie z tablic asocjacyjnych"

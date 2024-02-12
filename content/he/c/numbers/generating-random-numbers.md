@@ -1,5 +1,7 @@
 ---
 title:                "גירוד מספרים אקראיים"
+aliases:
+- /he/c/generating-random-numbers/
 date:                  2024-02-03T17:58:32.337017-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "גירוד מספרים אקראיים"

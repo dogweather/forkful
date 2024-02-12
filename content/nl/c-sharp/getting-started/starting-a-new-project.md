@@ -1,5 +1,7 @@
 ---
 title:                "Een nieuw project starten"
+aliases:
+- /nl/c-sharp/starting-a-new-project/
 date:                  2024-01-28T22:08:13.690683-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een nieuw project starten"

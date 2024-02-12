@@ -1,5 +1,7 @@
 ---
 title:                "Kontroll om en katalog existerar"
+aliases:
+- /sv/google-apps-script/checking-if-a-directory-exists/
 date:                  2024-02-01T21:48:48.533187-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Kontroll om en katalog existerar"

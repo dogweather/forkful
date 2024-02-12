@@ -1,5 +1,7 @@
 ---
 title:                "문자열의 길이 찾기"
+aliases:
+- /ko/google-apps-script/finding-the-length-of-a-string/
 date:                  2024-02-01T21:54:03.327089-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "문자열의 길이 찾기"

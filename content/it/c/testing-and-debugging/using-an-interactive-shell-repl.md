@@ -1,5 +1,7 @@
 ---
 title:                "Utilizzo di un guscio interattivo (REPL)"
+aliases:
+- /it/c/using-an-interactive-shell-repl/
 date:                  2024-02-03T18:10:03.073905-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Utilizzo di un guscio interattivo (REPL)"

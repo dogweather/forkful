@@ -1,5 +1,7 @@
 ---
 title:                "Usando um depurador"
+aliases:
+- /pt/google-apps-script/using-a-debugger/
 date:                  2024-02-01T22:03:05.981210-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Usando um depurador"

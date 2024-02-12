@@ -1,5 +1,7 @@
 ---
 title:                "Debuggerin käyttö"
+aliases:
+- /fi/cpp/using-a-debugger/
 date:                  2024-01-26T03:48:00.348649-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Debuggerin käyttö"

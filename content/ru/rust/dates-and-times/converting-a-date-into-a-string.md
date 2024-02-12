@@ -1,5 +1,7 @@
 ---
 title:                "Преобразование даты в строку"
+aliases:
+- /ru/rust/converting-a-date-into-a-string/
 date:                  2024-01-28T23:56:41.382313-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Преобразование даты в строку"

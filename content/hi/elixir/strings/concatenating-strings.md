@@ -1,5 +1,7 @@
 ---
 title:                "स्ट्रिंग्स को जोड़ना"
+aliases:
+- /hi/elixir/concatenating-strings/
 date:                  2024-01-27T10:44:27.973738-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "स्ट्रिंग्स को जोड़ना"

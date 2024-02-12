@@ -1,5 +1,7 @@
 ---
 title:                "Làm tròn số"
+aliases:
+- /vi/google-apps-script/rounding-numbers/
 date:                  2024-02-01T22:01:29.986468-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Làm tròn số"

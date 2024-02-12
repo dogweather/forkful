@@ -1,5 +1,7 @@
 ---
 title:                "Đọc đối số từ dòng lệnh"
+aliases:
+- /vi/google-apps-script/reading-command-line-arguments/
 date:                  2024-02-01T22:00:25.179189-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Đọc đối số từ dòng lệnh"

@@ -1,5 +1,7 @@
 ---
 title:                "正規表現の使用"
+aliases:
+- /ja/powershell/using-regular-expressions/
 date:                  2024-02-03T19:17:53.264094-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "正規表現の使用"

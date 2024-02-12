@@ -1,5 +1,7 @@
 ---
 title:                "חיפוש והחלפת טקסט"
+aliases:
+- /he/elm/searching-and-replacing-text/
 date:                  2024-01-20T17:58:15.629358-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "חיפוש והחלפת טקסט"

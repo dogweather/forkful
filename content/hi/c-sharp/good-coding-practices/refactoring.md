@@ -1,5 +1,7 @@
 ---
 title:                "रिफैक्टरिंग"
+aliases:
+- /hi/c-sharp/refactoring/
 date:                  2024-01-26T01:29:12.559687-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "रिफैक्टरिंग"

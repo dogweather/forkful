@@ -1,5 +1,7 @@
 ---
 title:                "에러 처리하기"
+aliases:
+- /ko/ruby/handling-errors/
 date:                  2024-01-26T00:56:51.775580-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "에러 처리하기"

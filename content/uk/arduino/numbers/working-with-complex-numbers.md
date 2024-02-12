@@ -1,5 +1,7 @@
 ---
 title:                "Робота з комплексними числами"
+aliases:
+- /uk/arduino/working-with-complex-numbers/
 date:                  2024-01-26T04:37:10.399812-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Робота з комплексними числами"

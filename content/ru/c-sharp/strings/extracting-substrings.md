@@ -1,5 +1,7 @@
 ---
 title:                "Извлечение подстрок"
+aliases:
+- /ru/c-sharp/extracting-substrings/
 date:                  2024-01-28T23:57:46.800589-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Извлечение подстрок"

@@ -1,5 +1,7 @@
 ---
 title:                "Drukowanie komunikatów debugowania"
+aliases:
+- /pl/arduino/printing-debug-output/
 date:                  2024-01-20T17:51:48.082105-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Drukowanie komunikatów debugowania"

@@ -1,5 +1,7 @@
 ---
 title:                "Журналирование"
+aliases:
+- /ru/java/logging/
 date:                  2024-01-28T23:59:36.727454-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Журналирование"

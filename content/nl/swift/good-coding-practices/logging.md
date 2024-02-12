@@ -1,5 +1,7 @@
 ---
 title:                "Logboekregistratie"
+aliases:
+- /nl/swift/logging/
 date:                  2024-01-28T22:02:56.051492-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Logboekregistratie"

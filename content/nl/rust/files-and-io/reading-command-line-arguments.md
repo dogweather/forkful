@@ -1,5 +1,7 @@
 ---
 title:                "Commandoregelargumenten lezen"
+aliases:
+- /nl/rust/reading-command-line-arguments/
 date:                  2024-01-28T22:05:19.510539-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Commandoregelargumenten lezen"

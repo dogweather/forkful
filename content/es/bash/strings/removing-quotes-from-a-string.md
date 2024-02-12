@@ -1,5 +1,7 @@
 ---
 title:                "Eliminando comillas de una cadena"
+aliases:
+- /es/bash/removing-quotes-from-a-string/
 date:                  2024-01-26T03:37:24.655752-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Eliminando comillas de una cadena"

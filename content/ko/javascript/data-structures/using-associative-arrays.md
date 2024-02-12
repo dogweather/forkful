@@ -1,5 +1,7 @@
 ---
 title:                "연관 배열 사용하기"
+aliases:
+- /ko/javascript/using-associative-arrays/
 date:                  2024-01-30T19:11:32.798122-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "연관 배열 사용하기"

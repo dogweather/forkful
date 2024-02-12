@@ -1,5 +1,7 @@
 ---
 title:                "Att påbörja ett nytt projekt"
+aliases:
+- /sv/python/starting-a-new-project/
 date:                  2024-01-20T18:04:28.668383-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Att påbörja ett nytt projekt"

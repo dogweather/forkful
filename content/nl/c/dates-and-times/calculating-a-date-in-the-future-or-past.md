@@ -1,5 +1,7 @@
 ---
 title:                "Een datum in de toekomst of verleden berekenen"
+aliases:
+- /nl/c/calculating-a-date-in-the-future-or-past/
 date:                  2024-02-03T17:52:57.583830-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een datum in de toekomst of verleden berekenen"

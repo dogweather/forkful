@@ -1,5 +1,7 @@
 ---
 title:                "문자열 대문자화"
+aliases:
+- /ko/arduino/capitalizing-a-string/
 date:                  2024-02-03T19:05:09.341909-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "문자열 대문자화"

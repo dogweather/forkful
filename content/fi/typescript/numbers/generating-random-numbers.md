@@ -1,5 +1,7 @@
 ---
 title:                "Satunnaislukujen generointi"
+aliases:
+- /fi/typescript/generating-random-numbers/
 date:                  2024-01-27T20:35:50.828627-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Satunnaislukujen generointi"

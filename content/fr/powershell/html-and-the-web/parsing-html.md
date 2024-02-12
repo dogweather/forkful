@@ -1,5 +1,7 @@
 ---
 title:                "Analyse Syntaxique du HTML"
+aliases:
+- /fr/powershell/parsing-html/
 date:                  2024-02-03T19:12:39.867489-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Analyse Syntaxique du HTML"

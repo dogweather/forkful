@@ -1,5 +1,7 @@
 ---
 title:                "Sử dụng biểu thức chính quy"
+aliases:
+- /vi/c-sharp/using-regular-expressions/
 date:                  2024-01-28T22:10:12.052119-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Sử dụng biểu thức chính quy"

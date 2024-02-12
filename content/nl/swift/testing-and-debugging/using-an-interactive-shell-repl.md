@@ -1,5 +1,7 @@
 ---
 title:                "Het gebruik van een interactieve shell (REPL)"
+aliases:
+- /nl/swift/using-an-interactive-shell-repl/
 date:                  2024-01-28T22:09:07.465236-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Het gebruik van een interactieve shell (REPL)"

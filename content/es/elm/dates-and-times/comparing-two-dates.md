@@ -1,5 +1,7 @@
 ---
 title:                "Comparación de dos fechas"
+aliases:
+- /es/elm/comparing-two-dates/
 date:                  2024-01-20T17:32:53.065919-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Comparación de dos fechas"

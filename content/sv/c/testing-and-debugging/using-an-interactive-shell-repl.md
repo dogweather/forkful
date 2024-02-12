@@ -1,5 +1,7 @@
 ---
 title:                "Att använda ett interaktivt skal (REPL)"
+aliases:
+- /sv/c/using-an-interactive-shell-repl/
 date:                  2024-02-03T18:10:24.413032-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Att använda ett interaktivt skal (REPL)"

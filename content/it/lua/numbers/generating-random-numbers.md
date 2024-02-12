@@ -1,5 +1,7 @@
 ---
 title:                "Generazione di numeri casuali"
+aliases:
+- /it/lua/generating-random-numbers/
 date:                  2024-01-27T20:34:40.838596-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Generazione di numeri casuali"

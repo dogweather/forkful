@@ -1,5 +1,7 @@
 ---
 title:                "Tái cấu trúc mã"
+aliases:
+- /vi/lua/refactoring/
 date:                  2024-01-28T22:06:29.744015-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Tái cấu trúc mã"

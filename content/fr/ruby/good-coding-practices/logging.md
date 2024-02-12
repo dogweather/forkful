@@ -1,5 +1,7 @@
 ---
 title:                "Journalisation"
+aliases:
+- /fr/ruby/logging/
 date:                  2024-01-26T01:08:25.572424-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Journalisation"

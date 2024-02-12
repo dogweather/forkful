@@ -1,5 +1,7 @@
 ---
 title:                "Склеивание строк"
+aliases:
+- /ru/arduino/concatenating-strings/
 date:                  2024-01-28T23:55:43.339035-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Склеивание строк"

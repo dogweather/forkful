@@ -1,5 +1,7 @@
 ---
 title:                "Análisis de HTML"
+aliases:
+- /es/haskell/parsing-html/
 date:                  2024-01-20T15:32:11.698577-07:00
 simple_title:         "Análisis de HTML"
 

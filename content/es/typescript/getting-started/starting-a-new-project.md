@@ -1,5 +1,7 @@
 ---
 title:                "Iniciando un nuevo proyecto"
+aliases:
+- /es/typescript/starting-a-new-project/
 date:                  2024-01-20T18:04:26.627277-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Iniciando un nuevo proyecto"

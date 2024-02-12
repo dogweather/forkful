@@ -1,5 +1,7 @@
 ---
 title:                "Assosiatiivisten taulukoiden käyttö"
+aliases:
+- /fi/php/using-associative-arrays/
 date:                  2024-01-30T19:12:22.965836-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Assosiatiivisten taulukoiden käyttö"

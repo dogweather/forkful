@@ -1,5 +1,7 @@
 ---
 title:                "Karakters Verwijderen die Overeenkomen met een Patroon"
+aliases:
+- /nl/google-apps-script/deleting-characters-matching-a-pattern/
 date:                  2024-02-01T21:52:15.080749-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Karakters Verwijderen die Overeenkomen met een Patroon"

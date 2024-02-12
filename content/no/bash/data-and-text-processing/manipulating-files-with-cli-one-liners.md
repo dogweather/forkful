@@ -1,5 +1,7 @@
 ---
 title:                "Manipulering av filer med CLI-enkeltkommandoer"
+aliases:
+- /no/bash/manipulating-files-with-cli-one-liners/
 date:                  2024-01-27T16:20:59.504230-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Manipulering av filer med CLI-enkeltkommandoer"

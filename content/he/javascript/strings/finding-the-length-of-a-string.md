@@ -1,5 +1,7 @@
 ---
 title:                "מציאת אורך מחרוזת"
+aliases:
+- /he/javascript/finding-the-length-of-a-string/
 date:                  2024-01-20T17:48:12.191560-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "מציאת אורך מחרוזת"

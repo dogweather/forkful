@@ -1,5 +1,7 @@
 ---
 title:                "Kiểm tra xem thư mục có tồn tại không"
+aliases:
+- /vi/fish-shell/checking-if-a-directory-exists/
 date:                  2024-01-28T21:56:44.696696-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Kiểm tra xem thư mục có tồn tại không"

@@ -1,5 +1,7 @@
 ---
 title:                "重构"
+aliases:
+- /zh/rust/refactoring/
 date:                  2024-01-26T03:36:41.069584-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "重构"

@@ -1,5 +1,7 @@
 ---
 title:                "Analiza składniowa HTML"
+aliases:
+- /pl/elixir/parsing-html/
 date:                  2024-02-03T19:11:59.130046-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Analiza składniowa HTML"

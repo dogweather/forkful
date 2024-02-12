@@ -1,5 +1,7 @@
 ---
 title:                "Anführungszeichen aus einem String entfernen"
+aliases:
+- /de/google-apps-script/removing-quotes-from-a-string/
 date:                  2024-02-01T22:00:18.536276-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Anführungszeichen aus einem String entfernen"

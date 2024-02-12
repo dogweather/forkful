@@ -1,5 +1,7 @@
 ---
 title:                "Написання тестів"
+aliases:
+- /uk/go/writing-tests/
 date:                  2024-02-03T18:16:00.374581-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Написання тестів"

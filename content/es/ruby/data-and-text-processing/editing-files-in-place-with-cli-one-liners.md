@@ -1,5 +1,7 @@
 ---
 title:                "Editando archivos directamente con líneas de comandos"
+aliases:
+- /es/ruby/editing-files-in-place-with-cli-one-liners/
 date:                  2024-01-27T16:20:43.381394-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Editando archivos directamente con líneas de comandos"

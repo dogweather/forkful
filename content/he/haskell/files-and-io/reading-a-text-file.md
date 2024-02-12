@@ -1,5 +1,7 @@
 ---
 title:                "קריאת קובץ טקסט"
+aliases:
+- /he/haskell/reading-a-text-file/
 date:                  2024-01-20T17:54:29.070996-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "קריאת קובץ טקסט"

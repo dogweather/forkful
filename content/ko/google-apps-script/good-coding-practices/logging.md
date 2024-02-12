@@ -1,5 +1,7 @@
 ---
 title:                "로깅"
+aliases:
+- /ko/google-apps-script/logging/
 date:                  2024-02-01T21:55:49.900099-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "로깅"

@@ -1,5 +1,7 @@
 ---
 title:                "Mettre une chaîne en majuscules"
+aliases:
+- /fr/google-apps-script/capitalizing-a-string/
 date:                  2024-02-01T21:48:55.485052-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Mettre une chaîne en majuscules"

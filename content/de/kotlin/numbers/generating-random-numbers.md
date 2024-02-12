@@ -1,5 +1,7 @@
 ---
 title:                "Generierung von Zufallszahlen"
+aliases:
+- /de/kotlin/generating-random-numbers/
 date:                  2024-01-27T20:34:25.182879-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Generierung von Zufallszahlen"

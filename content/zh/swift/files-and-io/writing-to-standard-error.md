@@ -1,5 +1,7 @@
 ---
 title:                "写入标准错误"
+aliases:
+- /zh/swift/writing-to-standard-error/
 date:                  2024-02-03T19:34:50.088754-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "写入标准错误"

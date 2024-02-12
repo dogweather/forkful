@@ -1,5 +1,7 @@
 ---
 title:                "Hantering av fel"
+aliases:
+- /sv/java/handling-errors/
 date:                  2024-01-26T00:53:51.771429-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Hantering av fel"

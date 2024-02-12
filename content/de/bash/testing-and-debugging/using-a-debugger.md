@@ -1,5 +1,7 @@
 ---
 title:                "Einsatz eines Debuggers"
+aliases:
+- /de/bash/using-a-debugger/
 date:                  2024-01-26T03:47:35.372668-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Einsatz eines Debuggers"

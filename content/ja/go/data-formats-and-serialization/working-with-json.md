@@ -1,5 +1,7 @@
 ---
 title:                "JSONを利用する"
+aliases:
+- /ja/go/working-with-json/
 date:                  2024-02-03T18:12:25.158533-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "JSONを利用する"

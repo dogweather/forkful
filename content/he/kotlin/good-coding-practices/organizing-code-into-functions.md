@@ -1,5 +1,7 @@
 ---
 title:                "ארגון קוד לתוך פונקציות"
+aliases:
+- /he/kotlin/organizing-code-into-functions/
 date:                  2024-01-26T01:16:57.366681-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "ארגון קוד לתוך פונקציות"

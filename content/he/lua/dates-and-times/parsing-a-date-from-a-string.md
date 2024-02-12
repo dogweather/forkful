@@ -1,5 +1,7 @@
 ---
 title:                "פרסום תאריך ממחרוזת"
+aliases:
+- /he/lua/parsing-a-date-from-a-string/
 date:                  2024-02-03T19:15:21.095187-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "פרסום תאריך ממחרוזת"

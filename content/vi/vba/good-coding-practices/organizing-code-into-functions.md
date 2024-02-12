@@ -1,5 +1,7 @@
 ---
 title:                "Sắp xếp mã lập trình vào hàm số"
+aliases:
+- /vi/vba/organizing-code-into-functions/
 date:                  2024-02-01T21:57:15.426751-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Sắp xếp mã lập trình vào hàm số"

@@ -1,5 +1,7 @@
 ---
 title:                "एक टेक्स्ट फ़ाइल लिखना"
+aliases:
+- /hi/rust/writing-a-text-file/
 date:                  2024-02-03T19:30:26.214044-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "एक टेक्स्ट फ़ाइल लिखना"

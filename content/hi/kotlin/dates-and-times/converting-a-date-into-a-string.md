@@ -1,5 +1,7 @@
 ---
 title:                "तारीख को स्ट्रिंग में बदलना"
+aliases:
+- /hi/kotlin/converting-a-date-into-a-string/
 date:                  2024-01-20T17:37:35.434539-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "तारीख को स्ट्रिंग में बदलना"

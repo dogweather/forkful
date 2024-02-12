@@ -1,5 +1,7 @@
 ---
 title:                "Conversione di una stringa in minuscolo"
+aliases:
+- /it/cpp/converting-a-string-to-lower-case/
 date:                  2024-01-20T17:38:00.222280-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Conversione di una stringa in minuscolo"

@@ -1,5 +1,7 @@
 ---
 title:                "कमांड लाइन तर्कों को पढ़ना"
+aliases:
+- /hi/c/reading-command-line-arguments/
 date:                  2024-02-03T18:07:24.239339-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "कमांड लाइन तर्कों को पढ़ना"

@@ -1,5 +1,7 @@
 ---
 title:                "Scrivere test"
+aliases:
+- /it/python/writing-tests/
 date:                  2024-02-03T19:31:25.413069-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Scrivere test"

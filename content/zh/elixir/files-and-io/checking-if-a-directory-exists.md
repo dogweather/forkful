@@ -1,5 +1,7 @@
 ---
 title:                "检查目录是否存在"
+aliases:
+- /zh/elixir/checking-if-a-directory-exists/
 date:                  2024-02-03T19:07:05.172678-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "检查目录是否存在"

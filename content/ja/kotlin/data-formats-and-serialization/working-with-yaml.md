@@ -1,5 +1,7 @@
 ---
 title:                "YAML を操作する"
+aliases:
+- /ja/kotlin/working-with-yaml/
 date:                  2024-02-03T19:26:08.701295-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "YAML を操作する"

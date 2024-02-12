@@ -1,5 +1,7 @@
 ---
 title:                "एक टेक्स्ट फ़ाइल लिखना"
+aliases:
+- /hi/go/writing-a-text-file/
 date:                  2024-02-03T18:16:34.188504-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "एक टेक्स्ट फ़ाइल लिखना"

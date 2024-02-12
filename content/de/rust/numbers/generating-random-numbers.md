@@ -1,5 +1,7 @@
 ---
 title:                "Generierung von Zufallszahlen"
+aliases:
+- /de/rust/generating-random-numbers/
 date:                  2024-01-27T20:35:04.953061-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Generierung von Zufallszahlen"

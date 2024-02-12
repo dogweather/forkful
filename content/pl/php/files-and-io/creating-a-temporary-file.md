@@ -1,5 +1,7 @@
 ---
 title:                "Tworzenie pliku tymczasowego"
+aliases:
+- /pl/php/creating-a-temporary-file/
 date:                  2024-01-20T17:41:21.884177-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Tworzenie pliku tymczasowego"

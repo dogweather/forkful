@@ -1,5 +1,7 @@
 ---
 title:                "Kontrollera om en katalog existerar"
+aliases:
+- /sv/clojure/checking-if-a-directory-exists/
 date:                  2024-02-03T19:07:13.140196-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Kontrollera om en katalog existerar"

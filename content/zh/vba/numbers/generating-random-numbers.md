@@ -1,5 +1,7 @@
 ---
 title:                "生成随机数"
+aliases:
+- /zh/vba/generating-random-numbers/
 date:                  2024-02-01T21:54:15.045451-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "生成随机数"

@@ -1,5 +1,7 @@
 ---
 title:                "Een webpagina downloaden"
+aliases:
+- /nl/cpp/downloading-a-web-page/
 date:                  2024-01-28T21:59:19.028817-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een webpagina downloaden"

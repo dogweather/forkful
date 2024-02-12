@@ -1,5 +1,7 @@
 ---
 title:                "संख्याओं को पूर्णांक बनाना"
+aliases:
+- /hi/powershell/rounding-numbers/
 date:                  2024-01-26T03:47:04.107536-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "संख्याओं को पूर्णांक बनाना"

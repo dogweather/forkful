@@ -1,5 +1,7 @@
 ---
 title:                "エラー処理"
+aliases:
+- /ja/arduino/handling-errors/
 date:                  2024-01-26T00:50:49.537900-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "エラー処理"

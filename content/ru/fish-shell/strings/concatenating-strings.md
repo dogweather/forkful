@@ -1,5 +1,7 @@
 ---
 title:                "Склеивание строк"
+aliases:
+- /ru/fish-shell/concatenating-strings/
 date:                  2024-01-28T23:56:24.401571-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Склеивание строк"

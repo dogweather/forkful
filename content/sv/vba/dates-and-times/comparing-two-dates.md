@@ -1,5 +1,7 @@
 ---
 title:                "Jämföra två datum"
+aliases:
+- /sv/vba/comparing-two-dates/
 date:                  2024-02-01T21:50:16.315792-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Jämföra två datum"

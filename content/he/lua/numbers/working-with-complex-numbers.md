@@ -1,5 +1,7 @@
 ---
 title:                "עבודה עם מספרים מרוכבים"
+aliases:
+- /he/lua/working-with-complex-numbers/
 date:                  2024-01-26T04:44:13.831306-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "עבודה עם מספרים מרוכבים"

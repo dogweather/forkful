@@ -1,5 +1,7 @@
 ---
 title:                "वर्तमान दिनांक प्राप्त करना"
+aliases:
+- /hi/vba/getting-the-current-date/
 date:                  2024-02-01T21:56:30.446347-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "वर्तमान दिनांक प्राप्त करना"

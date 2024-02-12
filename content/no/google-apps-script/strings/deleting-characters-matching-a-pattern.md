@@ -1,5 +1,7 @@
 ---
 title:                "Slette tegn som samsvarer med et mønster"
+aliases:
+- /no/google-apps-script/deleting-characters-matching-a-pattern/
 date:                  2024-02-01T21:52:07.408735-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Slette tegn som samsvarer med et mønster"

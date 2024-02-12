@@ -1,5 +1,7 @@
 ---
 title:                "CLIワンライナーでのファイルのインプレース編集"
+aliases:
+- /ja/bash/editing-files-in-place-with-cli-one-liners/
 date:                  2024-01-27T16:21:51.519868-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "CLIワンライナーでのファイルのインプレース編集"

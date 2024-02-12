@@ -1,5 +1,7 @@
 ---
 title:                "Calculando la longitud de una cadena"
+aliases:
+- /es/elixir/finding-the-length-of-a-string/
 date:                  2024-01-20T17:47:06.021980-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Calculando la longitud de una cadena"

@@ -1,5 +1,7 @@
 ---
 title:                "Praca z plikami CSV"
+aliases:
+- /pl/php/working-with-csv/
 date:                  2024-02-03T19:20:45.548710-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Praca z plikami CSV"

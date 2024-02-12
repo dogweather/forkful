@@ -1,5 +1,7 @@
 ---
 title:                "Geração de números aleatórios"
+aliases:
+- /pt/javascript/generating-random-numbers/
 date:                  2024-01-27T20:34:34.615838-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Geração de números aleatórios"

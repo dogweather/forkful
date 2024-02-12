@@ -1,5 +1,7 @@
 ---
 title:                "Аналіз HTML"
+aliases:
+- /uk/lua/parsing-html/
 date:                  2024-02-03T19:12:53.690471-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Аналіз HTML"

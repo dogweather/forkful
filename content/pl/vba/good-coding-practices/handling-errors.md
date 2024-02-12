@@ -1,5 +1,7 @@
 ---
 title:                "Obsługa błędów"
+aliases:
+- /pl/vba/handling-errors/
 date:                  2024-02-01T21:55:21.561575-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Obsługa błędów"

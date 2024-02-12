@@ -1,5 +1,7 @@
 ---
 title:                "Читання текстового файлу"
+aliases:
+- /uk/python/reading-a-text-file/
 date:                  2024-01-20T17:54:54.288791-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Читання текстового файлу"

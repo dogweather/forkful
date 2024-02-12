@@ -1,5 +1,7 @@
 ---
 title:                "Rozpoczynanie nowego projektu"
+aliases:
+- /pl/c-sharp/starting-a-new-project/
 date:                  2024-01-20T18:03:05.413806-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Rozpoczynanie nowego projektu"

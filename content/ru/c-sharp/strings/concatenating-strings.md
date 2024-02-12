@@ -1,5 +1,7 @@
 ---
 title:                "Склеивание строк"
+aliases:
+- /ru/c-sharp/concatenating-strings/
 date:                  2024-01-28T23:55:53.508855-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Склеивание строк"

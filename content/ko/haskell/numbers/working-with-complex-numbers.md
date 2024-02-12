@@ -1,5 +1,7 @@
 ---
 title:                "복소수 다루기"
+aliases:
+- /ko/haskell/working-with-complex-numbers/
 date:                  2024-01-26T04:41:44.371616-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "복소수 다루기"

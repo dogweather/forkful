@@ -1,5 +1,7 @@
 ---
 title:                "Arbeider med JSON"
+aliases:
+- /no/haskell/working-with-json/
 date:                  2024-02-03T19:22:52.319734-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Arbeider med JSON"

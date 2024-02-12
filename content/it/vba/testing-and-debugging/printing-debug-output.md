@@ -1,5 +1,7 @@
 ---
 title:                "Stampa dell'output di debug"
+aliases:
+- /it/vba/printing-debug-output/
 date:                  2024-02-01T21:58:11.957240-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Stampa dell'output di debug"

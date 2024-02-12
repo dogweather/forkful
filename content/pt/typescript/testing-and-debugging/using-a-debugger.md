@@ -1,5 +1,7 @@
 ---
 title:                "Usando um depurador"
+aliases:
+- /pt/typescript/using-a-debugger/
 date:                  2024-01-26T04:11:08.800109-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Usando um depurador"

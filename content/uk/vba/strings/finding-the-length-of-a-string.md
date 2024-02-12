@@ -1,5 +1,7 @@
 ---
 title:                "Знаходження довжини рядка"
+aliases:
+- /uk/vba/finding-the-length-of-a-string/
 date:                  2024-02-01T21:55:59.119168-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Знаходження довжини рядка"

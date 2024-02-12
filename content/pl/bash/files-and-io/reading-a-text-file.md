@@ -1,5 +1,7 @@
 ---
 title:                "Odczytywanie pliku tekstowego"
+aliases:
+- /pl/bash/reading-a-text-file/
 date:                  2024-01-20T17:53:47.529705-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Odczytywanie pliku tekstowego"

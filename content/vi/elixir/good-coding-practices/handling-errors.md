@@ -1,5 +1,7 @@
 ---
 title:                "Xử lý lỗi"
+aliases:
+- /vi/elixir/handling-errors/
 date:                  2024-01-28T22:02:10.695090-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Xử lý lỗi"

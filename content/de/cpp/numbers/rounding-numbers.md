@@ -1,5 +1,7 @@
 ---
 title:                "Zahlen runden"
+aliases:
+- /de/cpp/rounding-numbers/
 date:                  2024-01-26T03:43:12.419869-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Zahlen runden"

@@ -1,5 +1,7 @@
 ---
 title:                "Обробка помилок"
+aliases:
+- /uk/c/handling-errors/
 date:                  2024-02-03T17:59:04.748784-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Обробка помилок"

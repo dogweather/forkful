@@ -1,5 +1,7 @@
 ---
 title:                "使用TOML"
+aliases:
+- /zh/haskell/working-with-toml/
 date:                  2024-01-26T04:22:46.368152-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "使用TOML"

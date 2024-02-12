@@ -1,5 +1,7 @@
 ---
 title:                "Kahden päivämäärän vertailu"
+aliases:
+- /fi/typescript/comparing-two-dates/
 date:                  2024-01-20T17:34:06.542770-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Kahden päivämäärän vertailu"

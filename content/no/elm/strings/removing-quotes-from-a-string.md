@@ -1,5 +1,7 @@
 ---
 title:                "Fjerne anførselstegn fra en streng"
+aliases:
+- /no/elm/removing-quotes-from-a-string/
 date:                  2024-01-26T03:38:44.810184-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Fjerne anførselstegn fra en streng"

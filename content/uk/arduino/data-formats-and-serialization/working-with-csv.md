@@ -1,5 +1,7 @@
 ---
 title:                "Робота з CSV"
+aliases:
+- /uk/arduino/working-with-csv/
 date:                  2024-02-03T19:19:33.204642-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Робота з CSV"

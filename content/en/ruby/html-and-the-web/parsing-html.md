@@ -1,5 +1,7 @@
 ---
 title:                "Parsing HTML"
+aliases:
+- /en/ruby/parsing-html/
 date:                  2024-01-20T15:33:38.456428-07:00
 simple_title:         "Parsing HTML"
 

@@ -1,5 +1,7 @@
 ---
 title:                "XML:n käsittely"
+aliases:
+- /fi/arduino/working-with-xml/
 date:                  2024-01-26T04:27:22.157068-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "XML:n käsittely"

@@ -1,5 +1,7 @@
 ---
 title:                "Korzystanie z wyrażeń regularnych"
+aliases:
+- /pl/rust/using-regular-expressions/
 date:                  2024-02-03T19:18:52.039532-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Korzystanie z wyrażeń regularnych"

@@ -1,5 +1,7 @@
 ---
 title:                "处理CSV文件"
+aliases:
+- /zh/clojure/working-with-csv/
 date:                  2024-02-03T19:19:10.061534-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "处理CSV文件"

@@ -1,5 +1,7 @@
 ---
 title:                "Mettere in Maiuscolo una Stringa"
+aliases:
+- /it/vba/capitalizing-a-string/
 date:                  2024-02-01T21:49:30.516454-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Mettere in Maiuscolo una Stringa"

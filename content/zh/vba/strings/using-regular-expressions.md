@@ -1,5 +1,7 @@
 ---
 title:                "使用正则表达式"
+aliases:
+- /zh/vba/using-regular-expressions/
 date:                  2024-02-01T22:05:13.574788-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "使用正则表达式"

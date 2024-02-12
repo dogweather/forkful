@@ -1,5 +1,7 @@
 ---
 title:                "Поиск длины строки"
+aliases:
+- /ru/c-sharp/finding-the-length-of-a-string/
 date:                  2024-01-28T23:58:25.537266-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Поиск длины строки"

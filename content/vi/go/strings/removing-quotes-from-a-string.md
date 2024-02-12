@@ -1,5 +1,7 @@
 ---
 title:                "Loại bỏ dấu ngoặc kép khỏi chuỗi"
+aliases:
+- /vi/go/removing-quotes-from-a-string/
 date:                  2024-02-03T18:07:49.356145-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Loại bỏ dấu ngoặc kép khỏi chuỗi"

@@ -1,5 +1,7 @@
 ---
 title:                "Bruke et interaktivt skall (REPL)"
+aliases:
+- /no/python/using-an-interactive-shell-repl/
 date:                  2024-01-26T04:17:09.593979-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Bruke et interaktivt skall (REPL)"

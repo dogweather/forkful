@@ -1,5 +1,7 @@
 ---
 title:                "Sending an HTTP request"
+aliases:
+- /en/rust/sending-an-http-request/
 date:                  2024-01-20T18:00:43.269461-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Sending an HTTP request"

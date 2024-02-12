@@ -1,5 +1,7 @@
 ---
 title:                "Чтение текстового файла"
+aliases:
+- /ru/kotlin/reading-a-text-file/
 date:                  2024-01-29T00:00:47.877377-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Чтение текстового файла"

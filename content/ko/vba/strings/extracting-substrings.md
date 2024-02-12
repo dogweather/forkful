@@ -1,5 +1,7 @@
 ---
 title:                "부분 문자열 추출하기"
+aliases:
+- /ko/vba/extracting-substrings/
 date:                  2024-02-01T21:53:18.909668-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "부분 문자열 추출하기"

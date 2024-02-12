@@ -1,5 +1,7 @@
 ---
 title:                "텍스트 파일 읽기"
+aliases:
+- /ko/go/reading-a-text-file/
 date:                  2024-02-03T18:06:07.028599-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "텍스트 파일 읽기"

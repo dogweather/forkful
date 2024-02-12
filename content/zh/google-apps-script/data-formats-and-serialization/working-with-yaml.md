@@ -1,5 +1,7 @@
 ---
 title:                "使用YAML工作"
+aliases:
+- /zh/google-apps-script/working-with-yaml/
 date:                  2024-02-01T22:07:31.784270-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "使用YAML工作"

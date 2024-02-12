@@ -1,5 +1,7 @@
 ---
 title:                "Checking if a directory exists"
+aliases:
+- /en/vba/checking-if-a-directory-exists/
 date:                  2024-02-01T21:30:02.426774-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Checking if a directory exists"

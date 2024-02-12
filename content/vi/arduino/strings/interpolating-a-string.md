@@ -1,5 +1,7 @@
 ---
 title:                "Nội suy chuỗi ký tự"
+aliases:
+- /vi/arduino/interpolating-a-string/
 date:                  2024-01-28T22:02:20.293035-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Nội suy chuỗi ký tự"

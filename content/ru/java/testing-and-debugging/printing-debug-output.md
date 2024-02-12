@@ -1,5 +1,7 @@
 ---
 title:                "Вывод отладочной информации"
+aliases:
+- /ru/java/printing-debug-output/
 date:                  2024-01-29T00:01:05.932576-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Вывод отладочной информации"

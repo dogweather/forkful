@@ -1,5 +1,7 @@
 ---
 title:                "Å bruke en feilsøker"
+aliases:
+- /no/c-sharp/using-a-debugger/
 date:                  2024-01-26T03:48:24.443494-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Å bruke en feilsøker"

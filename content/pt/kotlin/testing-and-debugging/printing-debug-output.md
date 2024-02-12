@@ -1,5 +1,7 @@
 ---
 title:                "Exibindo saídas de depuração"
+aliases:
+- /pt/kotlin/printing-debug-output/
 date:                  2024-01-20T17:53:02.557226-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Exibindo saídas de depuração"

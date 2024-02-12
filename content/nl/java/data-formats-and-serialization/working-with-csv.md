@@ -1,5 +1,7 @@
 ---
 title:                "Werken met CSV"
+aliases:
+- /nl/java/working-with-csv/
 date:                  2024-01-28T22:10:21.488753-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Werken met CSV"

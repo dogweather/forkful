@@ -1,5 +1,7 @@
 ---
 title:                "文字列から引用符を削除する"
+aliases:
+- /ja/google-apps-script/removing-quotes-from-a-string/
 date:                  2024-02-01T22:01:11.567756-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "文字列から引用符を削除する"

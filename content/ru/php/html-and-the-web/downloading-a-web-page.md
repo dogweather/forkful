@@ -1,5 +1,7 @@
 ---
 title:                "Загрузка веб-страницы"
+aliases:
+- /ru/php/downloading-a-web-page/
 date:                  2024-01-28T23:57:58.466139-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Загрузка веб-страницы"

@@ -1,5 +1,7 @@
 ---
 title:                "Удаление кавычек из строки"
+aliases:
+- /ru/java/removing-quotes-from-a-string/
 date:                  2024-01-29T00:01:42.060824-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Удаление кавычек из строки"

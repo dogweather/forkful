@@ -1,5 +1,7 @@
 ---
 title:                "Перетворення рядка в нижній регістр"
+aliases:
+- /uk/vba/converting-a-string-to-lower-case/
 date:                  2024-02-01T21:51:59.289137-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Перетворення рядка в нижній регістр"

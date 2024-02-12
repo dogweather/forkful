@@ -1,5 +1,7 @@
 ---
 title:                "एक इंटरैक्टिव शैल (REPL) का उपयोग करना"
+aliases:
+- /hi/google-apps-script/using-an-interactive-shell-repl/
 date:                  2024-02-01T22:05:15.155906-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "एक इंटरैक्टिव शैल (REPL) का उपयोग करना"

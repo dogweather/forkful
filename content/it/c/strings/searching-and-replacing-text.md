@@ -1,5 +1,7 @@
 ---
 title:                "Ricerca e sostituzione del testo"
+aliases:
+- /it/c/searching-and-replacing-text/
 date:                  2024-02-03T18:08:13.873478-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Ricerca e sostituzione del testo"

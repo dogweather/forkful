@@ -1,5 +1,7 @@
 ---
 title:                "Generazione di numeri casuali"
+aliases:
+- /it/cpp/generating-random-numbers/
 date:                  2024-01-27T20:33:27.611396-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Generazione di numeri casuali"

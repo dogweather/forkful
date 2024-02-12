@@ -1,5 +1,7 @@
 ---
 title:                "Робота з CSV"
+aliases:
+- /uk/google-apps-script/working-with-csv/
 date:                  2024-02-01T22:06:12.913538-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Робота з CSV"

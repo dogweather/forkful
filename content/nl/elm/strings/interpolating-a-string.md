@@ -1,5 +1,7 @@
 ---
 title:                "Een string interpoleren"
+aliases:
+- /nl/elm/interpolating-a-string/
 date:                  2024-01-28T22:02:01.239378-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een string interpoleren"

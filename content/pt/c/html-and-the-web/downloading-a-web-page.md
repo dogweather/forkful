@@ -1,5 +1,7 @@
 ---
 title:                "Baixando uma página da web"
+aliases:
+- /pt/c/downloading-a-web-page/
 date:                  2024-02-03T17:55:49.745769-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Baixando uma página da web"

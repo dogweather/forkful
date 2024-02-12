@@ -1,5 +1,7 @@
 ---
 title:                "Lectura de un archivo de texto"
+aliases:
+- /es/bash/reading-a-text-file/
 date:                  2024-01-20T17:53:50.132238-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Lectura de un archivo de texto"

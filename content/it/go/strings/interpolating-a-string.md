@@ -1,5 +1,7 @@
 ---
 title:                "Interpolazione di una stringa"
+aliases:
+- /it/go/interpolating-a-string/
 date:                  2024-02-03T17:59:20.081776-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Interpolazione di una stringa"

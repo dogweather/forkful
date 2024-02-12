@@ -1,5 +1,7 @@
 ---
 title:                "Trabalhando com XML"
+aliases:
+- /pt/ruby/working-with-xml/
 date:                  2024-01-26T04:35:15.556873-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Trabalhando com XML"

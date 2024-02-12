@@ -1,5 +1,7 @@
 ---
 title:                "Assosiatiivisten taulukoiden käyttö"
+aliases:
+- /fi/fish-shell/using-associative-arrays/
 date:                  2024-01-30T19:11:11.133810-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Assosiatiivisten taulukoiden käyttö"

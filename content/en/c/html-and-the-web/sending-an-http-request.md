@@ -1,5 +1,7 @@
 ---
 title:                "Sending an HTTP request"
+aliases:
+- /en/c/sending-an-http-request/
 date:                  2024-02-03T17:50:08.096430-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Sending an HTTP request"

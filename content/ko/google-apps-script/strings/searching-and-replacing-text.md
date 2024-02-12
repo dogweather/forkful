@@ -1,5 +1,7 @@
 ---
 title:                "텍스트 검색 및 교체"
+aliases:
+- /ko/google-apps-script/searching-and-replacing-text/
 date:                  2024-02-01T22:01:17.135077-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "텍스트 검색 및 교체"

@@ -1,5 +1,7 @@
 ---
 title:                "Lokitus"
+aliases:
+- /fi/cpp/logging/
 date:                  2024-01-26T01:01:40.649673-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Lokitus"

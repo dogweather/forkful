@@ -1,5 +1,7 @@
 ---
 title:                "Einen String großschreiben"
+aliases:
+- /de/c-sharp/capitalizing-a-string/
 date:                  2024-02-03T19:05:17.875196-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Einen String großschreiben"

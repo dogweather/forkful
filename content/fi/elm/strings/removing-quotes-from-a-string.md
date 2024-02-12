@@ -1,5 +1,7 @@
 ---
 title:                "Merkkijonosta lainausmerkkien poistaminen"
+aliases:
+- /fi/elm/removing-quotes-from-a-string/
 date:                  2024-01-26T03:38:53.995088-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Merkkijonosta lainausmerkkien poistaminen"

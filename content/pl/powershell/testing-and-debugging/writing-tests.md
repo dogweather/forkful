@@ -1,5 +1,7 @@
 ---
 title:                "Pisanie testów"
+aliases:
+- /pl/powershell/writing-tests/
 date:                  2024-02-03T19:31:44.241871-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Pisanie testów"

@@ -1,5 +1,7 @@
 ---
 title:                "Å sende en HTTP-forespørsel med grunnleggende autentisering"
+aliases:
+- /no/powershell/sending-an-http-request-with-basic-authentication/
 date:                  2024-01-20T18:02:33.143450-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Å sende en HTTP-forespørsel med grunnleggende autentisering"

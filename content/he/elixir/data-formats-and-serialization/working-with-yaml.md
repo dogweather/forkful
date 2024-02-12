@@ -1,5 +1,7 @@
 ---
 title:                "עבודה עם YAML"
+aliases:
+- /he/elixir/working-with-yaml/
 date:                  2024-02-03T19:25:32.578686-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "עבודה עם YAML"

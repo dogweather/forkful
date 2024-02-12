@@ -1,5 +1,7 @@
 ---
 title:                "Supprimer les guillemets d'une chaîne de caractères"
+aliases:
+- /fr/c/removing-quotes-from-a-string/
 date:                  2024-02-03T18:07:15.329838-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Supprimer les guillemets d'une chaîne de caractères"

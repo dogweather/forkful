@@ -1,5 +1,7 @@
 ---
 title:                "Làm việc với TOML"
+aliases:
+- /vi/bash/working-with-toml/
 date:                  2024-01-28T22:11:28.860791-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Làm việc với TOML"

@@ -1,5 +1,7 @@
 ---
 title:                "Trabalhando com JSON"
+aliases:
+- /pt/php/working-with-json/
 date:                  2024-02-03T19:23:43.358131-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Trabalhando com JSON"

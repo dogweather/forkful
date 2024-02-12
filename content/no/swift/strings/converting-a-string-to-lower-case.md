@@ -1,5 +1,7 @@
 ---
 title:                "Konvertere en streng til små bokstaver"
+aliases:
+- /no/swift/converting-a-string-to-lower-case/
 date:                  2024-01-20T17:39:19.733796-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Konvertere en streng til små bokstaver"

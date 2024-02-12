@@ -1,5 +1,7 @@
 ---
 title:                "Работа с XML"
+aliases:
+- /ru/google-apps-script/working-with-xml/
 date:                  2024-02-01T22:06:53.338987-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Работа с XML"

@@ -1,5 +1,7 @@
 ---
 title:                "Een tijdelijk bestand aanmaken"
+aliases:
+- /nl/python/creating-a-temporary-file/
 date:                  2024-01-28T21:58:38.671149-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een tijdelijk bestand aanmaken"

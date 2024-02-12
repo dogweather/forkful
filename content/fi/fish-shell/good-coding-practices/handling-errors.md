@@ -1,5 +1,7 @@
 ---
 title:                "Virheiden käsittely"
+aliases:
+- /fi/fish-shell/handling-errors/
 date:                  2024-01-26T00:52:39.955148-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Virheiden käsittely"

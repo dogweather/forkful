@@ -1,5 +1,7 @@
 ---
 title:                "Parsing HTML"
+aliases:
+- /en/c-sharp/parsing-html/
 date:                  2024-02-03T19:02:47.855631-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Parsing HTML"

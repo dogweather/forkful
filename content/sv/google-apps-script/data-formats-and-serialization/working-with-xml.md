@@ -1,5 +1,7 @@
 ---
 title:                "Arbeta med XML"
+aliases:
+- /sv/google-apps-script/working-with-xml/
 date:                  2024-02-01T22:06:41.589733-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Arbeta med XML"

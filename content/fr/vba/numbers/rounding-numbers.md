@@ -1,5 +1,7 @@
 ---
 title:                "Arrondissement des nombres"
+aliases:
+- /fr/vba/rounding-numbers/
 date:                  2024-02-01T22:01:06.082414-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Arrondissement des nombres"

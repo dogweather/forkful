@@ -1,5 +1,7 @@
 ---
 title:                "Работа с XML"
+aliases:
+- /ru/python/working-with-xml/
 date:                  2024-01-29T00:05:15.528440-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Работа с XML"

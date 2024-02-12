@@ -1,5 +1,7 @@
 ---
 title:                "Tìm kiếm và thay thế văn bản"
+aliases:
+- /vi/c-sharp/searching-and-replacing-text/
 date:                  2024-01-28T22:07:15.417735-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Tìm kiếm và thay thế văn bản"

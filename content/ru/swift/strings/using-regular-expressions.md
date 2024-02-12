@@ -1,5 +1,7 @@
 ---
 title:                "Использование регулярных выражений"
+aliases:
+- /ru/swift/using-regular-expressions/
 date:                  2024-01-29T00:03:42.158061-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Использование регулярных выражений"

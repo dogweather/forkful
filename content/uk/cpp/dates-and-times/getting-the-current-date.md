@@ -1,5 +1,7 @@
 ---
 title:                "Отримання поточної дати"
+aliases:
+- /uk/cpp/getting-the-current-date/
 date:                  2024-02-03T19:09:34.384221-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Отримання поточної дати"

@@ -1,5 +1,7 @@
 ---
 title:                "Använda en interaktiv skal (REPL)"
+aliases:
+- /sv/elixir/using-an-interactive-shell-repl/
 date:                  2024-01-26T04:13:09.969061-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Använda en interaktiv skal (REPL)"

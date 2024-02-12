@@ -1,5 +1,7 @@
 ---
 title:                "עבודה עם YAML"
+aliases:
+- /he/kotlin/working-with-yaml/
 date:                  2024-02-03T19:26:32.636087-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "עבודה עם YAML"

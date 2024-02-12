@@ -1,5 +1,7 @@
 ---
 title:                "Scrivere test"
+aliases:
+- /it/google-apps-script/writing-tests/
 date:                  2024-02-01T22:08:32.747751-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Scrivere test"

@@ -1,5 +1,7 @@
 ---
 title:                "Een datum ontleden uit een string"
+aliases:
+- /nl/go/parsing-a-date-from-a-string/
 date:                  2024-02-03T18:00:17.743137-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een datum ontleden uit een string"

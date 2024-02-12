@@ -1,5 +1,7 @@
 ---
 title:                "Использование интерактивной оболочки (REPL)"
+aliases:
+- /ru/lua/using-an-interactive-shell-repl/
 date:                  2024-01-29T00:03:50.670617-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Использование интерактивной оболочки (REPL)"

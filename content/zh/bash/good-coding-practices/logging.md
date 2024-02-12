@@ -1,5 +1,7 @@
 ---
 title:                "日志记录"
+aliases:
+- /zh/bash/logging/
 date:                  2024-01-26T00:59:23.509964-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "日志记录"

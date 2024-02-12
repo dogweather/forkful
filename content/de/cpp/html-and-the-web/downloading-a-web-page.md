@@ -1,5 +1,7 @@
 ---
 title:                "Webseite herunterladen"
+aliases:
+- /de/cpp/downloading-a-web-page/
 date:                  2024-01-20T17:43:32.434171-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Webseite herunterladen"

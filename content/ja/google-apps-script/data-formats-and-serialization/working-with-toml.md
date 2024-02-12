@@ -1,5 +1,7 @@
 ---
 title:                "TOMLを活用する"
+aliases:
+- /ja/google-apps-script/working-with-toml/
 date:                  2024-02-01T22:06:33.652354-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "TOMLを活用する"

@@ -1,5 +1,7 @@
 ---
 title:                "Convertendo uma data em uma string"
+aliases:
+- /pt/haskell/converting-a-date-into-a-string/
 date:                  2024-01-20T17:36:43.690529-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Convertendo uma data em uma string"

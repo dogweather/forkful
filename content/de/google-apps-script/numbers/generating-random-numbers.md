@@ -1,5 +1,7 @@
 ---
 title:                "Zufallszahlen generieren"
+aliases:
+- /de/google-apps-script/generating-random-numbers/
 date:                  2024-02-01T21:53:49.071660-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Zufallszahlen generieren"

@@ -1,5 +1,7 @@
 ---
 title:                "CSV के साथ काम करना"
+aliases:
+- /hi/python/working-with-csv/
 date:                  2024-02-03T19:21:32.196382-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "CSV के साथ काम करना"

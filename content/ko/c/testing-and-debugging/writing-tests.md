@@ -1,5 +1,7 @@
 ---
 title:                "테스트 작성하기"
+aliases:
+- /ko/c/writing-tests/
 date:                  2024-02-03T18:14:56.335688-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "테스트 작성하기"

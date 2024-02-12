@@ -1,5 +1,7 @@
 ---
 title:                "קבלת התאריך הנוכחי"
+aliases:
+- /he/typescript/getting-the-current-date/
 date:                  2024-02-03T19:11:54.424833-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "קבלת התאריך הנוכחי"

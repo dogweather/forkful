@@ -1,5 +1,7 @@
 ---
 title:                "Skicka en HTTP-förfrågan med Basic-autentisering"
+aliases:
+- /sv/bash/sending-an-http-request-with-basic-authentication/
 date:                  2024-01-20T18:00:46.339040-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Skicka en HTTP-förfrågan med Basic-autentisering"

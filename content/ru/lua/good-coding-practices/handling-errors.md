@@ -1,5 +1,7 @@
 ---
 title:                "Обработка ошибок"
+aliases:
+- /ru/lua/handling-errors/
 date:                  2024-01-28T23:58:41.515511-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Обработка ошибок"

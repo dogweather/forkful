@@ -1,5 +1,7 @@
 ---
 title:                "Trabalhando com JSON"
+aliases:
+- /pt/javascript/working-with-json/
 date:                  2024-01-19
 simple_title:         "Trabalhando com JSON"
 

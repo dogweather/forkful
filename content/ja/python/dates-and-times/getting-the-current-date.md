@@ -1,5 +1,7 @@
 ---
 title:                "現在の日付の取得"
+aliases:
+- /ja/python/getting-the-current-date/
 date:                  2024-02-03T19:10:49.614694-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "現在の日付の取得"

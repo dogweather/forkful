@@ -1,5 +1,7 @@
 ---
 title:                "Generowanie liczb losowych"
+aliases:
+- /pl/clojure/generating-random-numbers/
 date:                  2024-01-27T20:33:08.803763-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Generowanie liczb losowych"

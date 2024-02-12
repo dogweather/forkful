@@ -1,5 +1,7 @@
 ---
 title:                "Làm việc với TOML"
+aliases:
+- /vi/go/working-with-toml/
 date:                  2024-02-03T18:14:35.241328-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Làm việc với TOML"

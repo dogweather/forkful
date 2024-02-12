@@ -1,5 +1,7 @@
 ---
 title:                "Eliminando caracteres que coinciden con un patrón"
+aliases:
+- /es/go/deleting-characters-matching-a-pattern/
 date:                  2024-02-03T17:55:35.124580-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Eliminando caracteres que coinciden con un patrón"

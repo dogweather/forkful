@@ -1,5 +1,7 @@
 ---
 title:                "Trabajando con JSON"
+aliases:
+- /es/javascript/working-with-json/
 date:                  2024-02-03T19:23:18.444890-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Trabajando con JSON"

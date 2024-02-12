@@ -1,5 +1,7 @@
 ---
 title:                "HTTP अनुरोध भेजना"
+aliases:
+- /hi/go/sending-an-http-request/
 date:                  2024-02-03T18:09:43.216600-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "HTTP अनुरोध भेजना"

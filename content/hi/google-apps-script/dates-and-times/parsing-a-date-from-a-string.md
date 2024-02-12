@@ -1,5 +1,7 @@
 ---
 title:                "स्ट्रिंग से एक तारीख पार्स करना"
+aliases:
+- /hi/google-apps-script/parsing-a-date-from-a-string/
 date:                  2024-02-01T22:00:01.709579-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "स्ट्रिंग से एक तारीख पार्स करना"

@@ -1,5 +1,7 @@
 ---
 title:                "Tái cấu trúc"
+aliases:
+- /vi/go/refactoring/
 date:                  2024-02-03T18:07:54.750937-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Tái cấu trúc"

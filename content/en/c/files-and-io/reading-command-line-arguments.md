@@ -1,5 +1,7 @@
 ---
 title:                "Reading command line arguments"
+aliases:
+- /en/c/reading-command-line-arguments/
 date:                  2024-02-03T17:50:02.171992-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Reading command line arguments"

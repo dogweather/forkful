@@ -1,5 +1,7 @@
 ---
 title:                "Logboekregistratie"
+aliases:
+- /nl/clojure/logging/
 date:                  2024-01-28T22:03:03.938405-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Logboekregistratie"

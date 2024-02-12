@@ -1,5 +1,7 @@
 ---
 title:                "Utilizzo delle espressioni regolari"
+aliases:
+- /it/clojure/using-regular-expressions/
 date:                  2024-01-19
 simple_title:         "Utilizzo delle espressioni regolari"
 

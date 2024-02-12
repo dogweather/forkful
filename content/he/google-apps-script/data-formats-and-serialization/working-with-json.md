@@ -1,5 +1,7 @@
 ---
 title:                "עבודה עם JSON"
+aliases:
+- /he/google-apps-script/working-with-json/
 date:                  2024-02-01T22:05:57.670761-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "עבודה עם JSON"

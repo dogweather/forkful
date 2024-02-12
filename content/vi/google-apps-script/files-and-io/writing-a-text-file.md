@@ -1,5 +1,7 @@
 ---
 title:                "Viết một tệp văn bản"
+aliases:
+- /vi/google-apps-script/writing-a-text-file/
 date:                  2024-02-01T22:08:45.699974-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Viết một tệp văn bản"

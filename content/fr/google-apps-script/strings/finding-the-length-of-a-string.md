@@ -1,5 +1,7 @@
 ---
 title:                "Trouver la longueur d'une chaîne"
+aliases:
+- /fr/google-apps-script/finding-the-length-of-a-string/
 date:                  2024-02-01T21:53:25.748322-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Trouver la longueur d'une chaîne"

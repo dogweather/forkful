@@ -1,5 +1,7 @@
 ---
 title:                "Buscando y reemplazando texto"
+aliases:
+- /es/google-apps-script/searching-and-replacing-text/
 date:                  2024-02-01T22:00:59.863044-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Buscando y reemplazando texto"

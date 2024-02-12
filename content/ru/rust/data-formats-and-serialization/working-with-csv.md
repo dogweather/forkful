@@ -1,5 +1,7 @@
 ---
 title:                "Работа с CSV"
+aliases:
+- /ru/rust/working-with-csv/
 date:                  2024-01-29T00:04:19.748144-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Работа с CSV"

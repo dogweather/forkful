@@ -1,5 +1,7 @@
 ---
 title:                "Recherche et remplacement de texte"
+aliases:
+- /fr/elixir/searching-and-replacing-text/
 date:                  2024-01-20T17:57:26.684591-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Recherche et remplacement de texte"

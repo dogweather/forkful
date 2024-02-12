@@ -1,5 +1,7 @@
 ---
 title:                "HTTP-Anfragen mit Basisauthentifizierung senden"
+aliases:
+- /de/swift/sending-an-http-request-with-basic-authentication/
 date:                  2024-01-20T18:02:54.481387-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "HTTP-Anfragen mit Basisauthentifizierung senden"

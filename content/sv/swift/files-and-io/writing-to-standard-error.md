@@ -1,5 +1,7 @@
 ---
 title:                "Skriva till standardfel"
+aliases:
+- /sv/swift/writing-to-standard-error/
 date:                  2024-02-03T19:34:50.467067-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Skriva till standardfel"

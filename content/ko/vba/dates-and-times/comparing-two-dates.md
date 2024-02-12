@@ -1,5 +1,7 @@
 ---
 title:                "두 날짜 비교하기"
+aliases:
+- /ko/vba/comparing-two-dates/
 date:                  2024-02-01T21:50:09.270632-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "두 날짜 비교하기"

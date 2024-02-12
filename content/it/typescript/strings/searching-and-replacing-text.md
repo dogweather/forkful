@@ -1,5 +1,7 @@
 ---
 title:                "Ricerca e sostituzione del testo"
+aliases:
+- /it/typescript/searching-and-replacing-text/
 date:                  2024-01-20T17:58:50.218861-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Ricerca e sostituzione del testo"

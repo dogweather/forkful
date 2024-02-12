@@ -1,5 +1,7 @@
 ---
 title:                "Att arbeta med komplexa tal"
+aliases:
+- /sv/swift/working-with-complex-numbers/
 date:                  2024-01-26T04:45:43.380668-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Att arbeta med komplexa tal"

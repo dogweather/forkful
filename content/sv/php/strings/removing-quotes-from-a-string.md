@@ -1,5 +1,7 @@
 ---
 title:                "Ta bort citattecken från en sträng"
+aliases:
+- /sv/php/removing-quotes-from-a-string/
 date:                  2024-01-26T03:40:42.256316-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Ta bort citattecken från en sträng"

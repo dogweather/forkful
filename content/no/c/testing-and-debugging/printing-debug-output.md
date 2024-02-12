@@ -1,5 +1,7 @@
 ---
 title:                "Utskrift av feilsøkingsdata"
+aliases:
+- /no/c/printing-debug-output/
 date:                  2024-02-03T18:05:15.680010-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Utskrift av feilsøkingsdata"

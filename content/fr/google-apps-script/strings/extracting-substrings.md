@@ -1,5 +1,7 @@
 ---
 title:                "Extraction de sous-chaînes"
+aliases:
+- /fr/google-apps-script/extracting-substrings/
 date:                  2024-02-01T21:52:48.339093-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Extraction de sous-chaînes"

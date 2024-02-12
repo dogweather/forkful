@@ -1,5 +1,7 @@
 ---
 title:                "Rozpoczynanie nowego projektu"
+aliases:
+- /pl/rust/starting-a-new-project/
 date:                  2024-01-20T18:04:22.817555-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Rozpoczynanie nowego projektu"

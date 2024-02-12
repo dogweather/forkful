@@ -1,5 +1,7 @@
 ---
 title:                "Odczytywanie pliku tekstowego"
+aliases:
+- /pl/swift/reading-a-text-file/
 date:                  2024-01-20T17:55:33.977595-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Odczytywanie pliku tekstowego"

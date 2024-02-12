@@ -1,5 +1,7 @@
 ---
 title:                "Gửi một yêu cầu HTTP với xác thực cơ bản"
+aliases:
+- /vi/clojure/sending-an-http-request-with-basic-authentication/
 date:                  2024-01-28T22:08:13.084190-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Gửi một yêu cầu HTTP với xác thực cơ bản"

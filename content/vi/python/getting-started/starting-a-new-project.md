@@ -1,5 +1,7 @@
 ---
 title:                "Bắt đầu một dự án mới"
+aliases:
+- /vi/python/starting-a-new-project/
 date:                  2024-01-28T22:09:05.698888-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Bắt đầu một dự án mới"

@@ -1,5 +1,7 @@
 ---
 title:                "Capitalizzare una stringa"
+aliases:
+- /it/javascript/capitalizing-a-string/
 date:                  2024-02-03T19:05:43.024366-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Capitalizzare una stringa"

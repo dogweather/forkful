@@ -1,5 +1,7 @@
 ---
 title:                "Utilizando arrays associativos"
+aliases:
+- /pt/c/using-associative-arrays/
 date:                  2024-02-03T18:10:44.658219-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Utilizando arrays associativos"

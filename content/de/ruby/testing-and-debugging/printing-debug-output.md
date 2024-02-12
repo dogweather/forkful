@@ -1,5 +1,7 @@
 ---
 title:                "Debug-Ausgaben drucken"
+aliases:
+- /de/ruby/printing-debug-output/
 date:                  2024-01-20T17:53:11.693928-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Debug-Ausgaben drucken"

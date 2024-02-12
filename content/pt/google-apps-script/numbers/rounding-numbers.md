@@ -1,5 +1,7 @@
 ---
 title:                "Arredondamento de números"
+aliases:
+- /pt/google-apps-script/rounding-numbers/
 date:                  2024-02-01T22:00:21.113822-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Arredondamento de números"

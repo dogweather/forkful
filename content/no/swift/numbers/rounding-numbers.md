@@ -1,5 +1,7 @@
 ---
 title:                "Avrunding av tall"
+aliases:
+- /no/swift/rounding-numbers/
 date:                  2024-01-26T03:46:38.331734-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Avrunding av tall"

@@ -1,5 +1,7 @@
 ---
 title:                "Trabajando con TOML"
+aliases:
+- /es/cpp/working-with-toml/
 date:                  2024-01-26T04:19:31.050141-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Trabajando con TOML"

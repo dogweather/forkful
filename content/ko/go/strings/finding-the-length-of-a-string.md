@@ -1,5 +1,7 @@
 ---
 title:                "문자열의 길이 찾기"
+aliases:
+- /ko/go/finding-the-length-of-a-string/
 date:                  2024-02-03T17:56:58.569391-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "문자열의 길이 찾기"

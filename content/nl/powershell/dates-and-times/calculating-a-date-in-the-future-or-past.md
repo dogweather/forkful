@@ -1,5 +1,7 @@
 ---
 title:                "Een datum in de toekomst of het verleden berekenen"
+aliases:
+- /nl/powershell/calculating-a-date-in-the-future-or-past/
 date:                  2024-01-28T21:56:14.861509-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een datum in de toekomst of het verleden berekenen"

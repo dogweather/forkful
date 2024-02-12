@@ -1,5 +1,7 @@
 ---
 title:                "YAML로 작업하기"
+aliases:
+- /ko/fish-shell/working-with-yaml/
 date:                  2024-02-03T19:25:28.021229-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "YAML로 작업하기"

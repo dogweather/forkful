@@ -1,5 +1,7 @@
 ---
 title:                "Estrazione di sottosequenze"
+aliases:
+- /it/c/extracting-substrings/
 date:                  2024-02-03T17:56:24.544712-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Estrazione di sottosequenze"

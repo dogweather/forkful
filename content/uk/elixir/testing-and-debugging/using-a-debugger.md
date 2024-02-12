@@ -1,5 +1,7 @@
 ---
 title:                "Використання дебагера"
+aliases:
+- /uk/elixir/using-a-debugger/
 date:                  2024-01-26T03:48:51.884978-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Використання дебагера"

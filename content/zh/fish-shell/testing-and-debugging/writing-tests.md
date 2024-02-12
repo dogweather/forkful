@@ -1,5 +1,7 @@
 ---
 title:                "编写测试"
+aliases:
+- /zh/fish-shell/writing-tests/
 date:                  2024-02-03T19:30:34.274664-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "编写测试"

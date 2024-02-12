@@ -1,5 +1,7 @@
 ---
 title:                "המרת תאריך למחרוזת"
+aliases:
+- /he/ruby/converting-a-date-into-a-string/
 date:                  2024-01-20T17:37:26.744783-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "המרת תאריך למחרוזת"

@@ -1,5 +1,7 @@
 ---
 title:                "सहयोगी अरेज़ का उपयोग करना"
+aliases:
+- /hi/php/using-associative-arrays/
 date:                  2024-01-30T19:13:36.390503-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "सहयोगी अरेज़ का उपयोग करना"

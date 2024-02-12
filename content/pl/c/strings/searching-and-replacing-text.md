@@ -1,5 +1,7 @@
 ---
 title:                "Wyszukiwanie i zamienianie tekstu"
+aliases:
+- /pl/c/searching-and-replacing-text/
 date:                  2024-02-03T18:08:37.751488-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Wyszukiwanie i zamienianie tekstu"

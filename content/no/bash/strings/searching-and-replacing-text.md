@@ -1,5 +1,7 @@
 ---
 title:                "Søking og erstatting av tekst"
+aliases:
+- /no/bash/searching-and-replacing-text/
 date:                  2024-01-20T17:57:29.248051-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Søking og erstatting av tekst"

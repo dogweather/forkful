@@ -1,5 +1,7 @@
 ---
 title:                "Merkkijonojen yhdistäminen"
+aliases:
+- /fi/elixir/concatenating-strings/
 date:                  2024-01-27T10:43:51.256076-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Merkkijonojen yhdistäminen"

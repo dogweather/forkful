@@ -1,5 +1,7 @@
 ---
 title:                "Hitta längden på en sträng"
+aliases:
+- /sv/typescript/finding-the-length-of-a-string/
 date:                  2024-01-20T17:48:33.764544-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Hitta längden på en sträng"

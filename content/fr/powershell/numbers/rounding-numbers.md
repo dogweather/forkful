@@ -1,5 +1,7 @@
 ---
 title:                "Arrondir les nombres"
+aliases:
+- /fr/powershell/rounding-numbers/
 date:                  2024-01-26T03:46:19.473332-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Arrondir les nombres"

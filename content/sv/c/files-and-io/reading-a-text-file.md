@@ -1,5 +1,7 @@
 ---
 title:                "Läsa en textfil"
+aliases:
+- /sv/c/reading-a-text-file/
 date:                  2024-02-03T18:05:13.567896-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Läsa en textfil"

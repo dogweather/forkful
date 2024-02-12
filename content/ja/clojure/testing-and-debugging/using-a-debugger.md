@@ -1,5 +1,7 @@
 ---
 title:                "デバッガーの使い方"
+aliases:
+- /ja/clojure/using-a-debugger/
 date:                  2024-01-26T03:48:29.507864-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "デバッガーの使い方"

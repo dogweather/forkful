@@ -1,5 +1,7 @@
 ---
 title:                "Análise de HTML"
+aliases:
+- /pt/kotlin/parsing-html/
 date:                  2024-01-20T15:32:56.837266-07:00
 simple_title:         "Análise de HTML"
 

@@ -1,5 +1,7 @@
 ---
 title:                "Zeichenketten interpolieren"
+aliases:
+- /de/arduino/interpolating-a-string/
 date:                  2024-01-20T17:49:59.973310-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Zeichenketten interpolieren"

@@ -1,5 +1,7 @@
 ---
 title:                "Å bruke en debugger"
+aliases:
+- /no/swift/using-a-debugger/
 date:                  2024-01-26T04:10:55.172891-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Å bruke en debugger"

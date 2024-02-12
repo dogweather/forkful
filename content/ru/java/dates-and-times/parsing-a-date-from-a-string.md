@@ -1,5 +1,7 @@
 ---
 title:                "Анализ даты из строки"
+aliases:
+- /ru/java/parsing-a-date-from-a-string/
 date:                  2024-01-29T00:00:12.058015-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Анализ даты из строки"

@@ -1,5 +1,7 @@
 ---
 title:                "Fjerne sitatmerker fra en streng"
+aliases:
+- /no/vba/removing-quotes-from-a-string/
 date:                  2024-02-01T22:01:00.046372-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Fjerne sitatmerker fra en streng"

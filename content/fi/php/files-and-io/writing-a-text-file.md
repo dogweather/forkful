@@ -1,5 +1,7 @@
 ---
 title:                "Tekstitiedoston kirjoittaminen"
+aliases:
+- /fi/php/writing-a-text-file/
 date:                  2024-02-03T19:28:42.905363-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Tekstitiedoston kirjoittaminen"

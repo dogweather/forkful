@@ -1,5 +1,7 @@
 ---
 title:                "문자열 대문자화"
+aliases:
+- /ko/lua/capitalizing-a-string/
 date:                  2024-02-03T19:05:59.996446-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "문자열 대문자화"

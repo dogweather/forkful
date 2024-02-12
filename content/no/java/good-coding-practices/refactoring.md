@@ -1,5 +1,7 @@
 ---
 title:                "Refaktorering"
+aliases:
+- /no/java/refactoring/
 date:                  2024-01-26T01:18:50.944324-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Refaktorering"

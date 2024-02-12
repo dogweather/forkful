@@ -1,5 +1,7 @@
 ---
 title:                "קריאת קובץ טקסט"
+aliases:
+- /he/google-apps-script/reading-a-text-file/
 date:                  2024-02-01T21:59:11.138043-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "קריאת קובץ טקסט"

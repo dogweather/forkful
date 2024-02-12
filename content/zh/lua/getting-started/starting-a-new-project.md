@@ -1,5 +1,7 @@
 ---
 title:                "开始一个新项目"
+aliases:
+- /zh/lua/starting-a-new-project/
 date:                  2024-01-20T18:04:06.560293-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "开始一个新项目"

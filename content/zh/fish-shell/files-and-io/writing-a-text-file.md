@@ -1,5 +1,7 @@
 ---
 title:                "编写文本文件"
+aliases:
+- /zh/fish-shell/writing-a-text-file/
 date:                  2024-02-03T19:27:45.299688-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "编写文本文件"

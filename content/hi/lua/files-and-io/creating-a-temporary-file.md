@@ -1,5 +1,7 @@
 ---
 title:                "अस्थायी फाइल बनाना"
+aliases:
+- /hi/lua/creating-a-temporary-file/
 date:                  2024-01-20T17:40:49.543621-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "अस्थायी फाइल बनाना"

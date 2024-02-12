@@ -1,5 +1,7 @@
 ---
 title:                "Vérifier si un répertoire existe"
+aliases:
+- /fr/python/checking-if-a-directory-exists/
 date:                  2024-02-03T19:08:11.560208-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Vérifier si un répertoire existe"

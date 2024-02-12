@@ -1,5 +1,7 @@
 ---
 title:                "Phân Tích Cú Pháp HTML"
+aliases:
+- /vi/arduino/parsing-html/
 date:                  2024-01-28T22:03:58.903387-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Phân Tích Cú Pháp HTML"

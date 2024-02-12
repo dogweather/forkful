@@ -1,5 +1,7 @@
 ---
 title:                "Analiza składniowa daty z łańcucha znaków"
+aliases:
+- /pl/bash/parsing-a-date-from-a-string/
 date:                  2024-02-03T19:14:11.225821-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Analiza składniowa daty z łańcucha znaków"

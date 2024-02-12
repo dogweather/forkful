@@ -1,5 +1,7 @@
 ---
 title:                "Lavorare con YAML"
+aliases:
+- /it/javascript/working-with-yaml/
 date:                  2024-02-03T19:25:35.761279-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Lavorare con YAML"

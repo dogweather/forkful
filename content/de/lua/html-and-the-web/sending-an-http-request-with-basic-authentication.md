@@ -1,5 +1,7 @@
 ---
 title:                "HTTP-Anfragen mit Basisauthentifizierung senden"
+aliases:
+- /de/lua/sending-an-http-request-with-basic-authentication/
 date:                  2024-01-20T18:02:07.297607-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "HTTP-Anfragen mit Basisauthentifizierung senden"

@@ -1,5 +1,7 @@
 ---
 title:                "Bruke regulære uttrykk"
+aliases:
+- /no/c/using-regular-expressions/
 date:                  2024-02-03T18:10:50.566384-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Bruke regulære uttrykk"

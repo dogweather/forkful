@@ -1,5 +1,7 @@
 ---
 title:                "Usando expresiones regulares"
+aliases:
+- /es/haskell/using-regular-expressions/
 date:                  2024-02-03T19:16:53.851895-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Usando expresiones regulares"

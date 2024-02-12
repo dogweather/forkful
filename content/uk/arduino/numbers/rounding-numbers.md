@@ -1,5 +1,7 @@
 ---
 title:                "Округлення чисел"
+aliases:
+- /uk/arduino/rounding-numbers/
 date:                  2024-01-26T03:43:06.164287-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Округлення чисел"

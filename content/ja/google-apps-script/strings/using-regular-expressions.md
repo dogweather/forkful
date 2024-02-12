@@ -1,5 +1,7 @@
 ---
 title:                "正規表現の使用"
+aliases:
+- /ja/google-apps-script/using-regular-expressions/
 date:                  2024-02-01T22:04:58.045725-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "正規表現の使用"

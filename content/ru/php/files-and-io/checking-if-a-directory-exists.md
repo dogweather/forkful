@@ -1,5 +1,7 @@
 ---
 title:                "Проверка существования директории"
+aliases:
+- /ru/php/checking-if-a-directory-exists/
 date:                  2024-01-28T23:56:07.777976-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Проверка существования директории"

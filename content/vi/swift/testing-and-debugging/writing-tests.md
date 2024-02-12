@@ -1,5 +1,7 @@
 ---
 title:                "Viết các bài kiểm tra"
+aliases:
+- /vi/swift/writing-tests/
 date:                  2024-01-28T22:13:22.312274-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Viết các bài kiểm tra"

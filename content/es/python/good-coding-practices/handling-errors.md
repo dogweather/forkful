@@ -1,5 +1,7 @@
 ---
 title:                "Manejo de errores"
+aliases:
+- /es/python/handling-errors/
 date:                  2024-01-26T00:56:32.380225-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Manejo de errores"

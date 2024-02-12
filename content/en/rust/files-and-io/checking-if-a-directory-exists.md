@@ -1,5 +1,7 @@
 ---
 title:                "Checking if a directory exists"
+aliases:
+- /en/rust/checking-if-a-directory-exists/
 date:                  2024-02-03T19:02:53.046161-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Checking if a directory exists"

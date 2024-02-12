@@ -1,5 +1,7 @@
 ---
 title:                "HTMLの解析"
+aliases:
+- /ja/swift/parsing-html/
 date:                  2024-01-20T15:34:33.144115-07:00
 simple_title:         "HTMLの解析"
 

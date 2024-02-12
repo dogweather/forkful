@@ -1,5 +1,7 @@
 ---
 title:                "जटिल संख्याओं के साथ काम करना"
+aliases:
+- /hi/php/working-with-complex-numbers/
 date:                  2024-01-26T04:46:09.021987-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "जटिल संख्याओं के साथ काम करना"

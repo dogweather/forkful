@@ -1,5 +1,7 @@
 ---
 title:                "Lavorare con YAML"
+aliases:
+- /it/cpp/working-with-yaml/
 date:                  2024-01-19
 simple_title:         "Lavorare con YAML"
 

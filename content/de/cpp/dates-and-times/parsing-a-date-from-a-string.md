@@ -1,5 +1,7 @@
 ---
 title:                "Einen Datum aus einem String analysieren"
+aliases:
+- /de/cpp/parsing-a-date-from-a-string/
 date:                  2024-02-03T19:13:33.202127-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Einen Datum aus einem String analysieren"

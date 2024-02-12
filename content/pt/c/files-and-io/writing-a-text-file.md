@@ -1,5 +1,7 @@
 ---
 title:                "Escrevendo um arquivo de texto"
+aliases:
+- /pt/c/writing-a-text-file/
 date:                  2024-02-03T18:14:37.226691-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Escrevendo um arquivo de texto"

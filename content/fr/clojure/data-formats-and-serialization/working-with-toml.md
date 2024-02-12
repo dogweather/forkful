@@ -1,5 +1,7 @@
 ---
 title:                "Travailler avec TOML"
+aliases:
+- /fr/clojure/working-with-toml/
 date:                  2024-01-26T04:20:25.463370-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Travailler avec TOML"

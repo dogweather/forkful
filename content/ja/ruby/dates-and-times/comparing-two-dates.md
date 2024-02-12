@@ -1,5 +1,7 @@
 ---
 title:                "日付を比較する"
+aliases:
+- /ja/ruby/comparing-two-dates/
 date:                  2024-01-20T17:33:42.972963-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "日付を比較する"

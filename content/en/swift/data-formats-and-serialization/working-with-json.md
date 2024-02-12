@@ -1,5 +1,7 @@
 ---
 title:                "Working with JSON"
+aliases:
+- /en/swift/working-with-json/
 date:                  2024-01-19
 simple_title:         "Working with JSON"
 

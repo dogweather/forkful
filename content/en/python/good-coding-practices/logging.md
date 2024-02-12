@@ -1,5 +1,7 @@
 ---
 title:                "Logging"
+aliases:
+- /en/python/logging/
 date:                  2024-01-25T02:03:41.790707-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Logging"

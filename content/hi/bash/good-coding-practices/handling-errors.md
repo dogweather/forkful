@@ -1,5 +1,7 @@
 ---
 title:                "एरर्स को हैंडल करना"
+aliases:
+- /hi/bash/handling-errors/
 date:                  2024-01-26T00:50:22.811105-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "एरर्स को हैंडल करना"

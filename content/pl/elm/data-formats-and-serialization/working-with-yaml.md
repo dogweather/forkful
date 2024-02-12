@@ -1,5 +1,7 @@
 ---
 title:                "Praca z yaml"
+aliases:
+- /pl/elm/working-with-yaml/
 date:                  2024-01-19
 simple_title:         "Praca z yaml"
 

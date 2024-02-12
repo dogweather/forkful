@@ -1,5 +1,7 @@
 ---
 title:                "Analisi di una data da una stringa"
+aliases:
+- /it/php/parsing-a-date-from-a-string/
 date:                  2024-02-03T19:14:59.590839-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Analisi di una data da una stringa"

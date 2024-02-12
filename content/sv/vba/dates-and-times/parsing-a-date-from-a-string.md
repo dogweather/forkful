@@ -1,5 +1,7 @@
 ---
 title:                "Analysera ett datum från en sträng"
+aliases:
+- /sv/vba/parsing-a-date-from-a-string/
 date:                  2024-02-01T21:57:43.165925-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Analysera ett datum från en sträng"

@@ -1,5 +1,7 @@
 ---
 title:                "HTML Parsen"
+aliases:
+- /nl/clojure/parsing-html/
 date:                  2024-01-28T22:03:38.535061-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "HTML Parsen"

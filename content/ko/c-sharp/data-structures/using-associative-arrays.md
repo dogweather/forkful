@@ -1,5 +1,7 @@
 ---
 title:                "연관 배열 사용하기"
+aliases:
+- /ko/c-sharp/using-associative-arrays/
 date:                  2024-01-30T19:10:25.192856-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "연관 배열 사용하기"

@@ -1,5 +1,7 @@
 ---
 title:                "Manipulating files with CLI one-liners"
+aliases:
+- /en/powershell/manipulating-files-with-cli-one-liners/
 date:                  2024-01-27T16:10:03.494906-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Manipulating files with CLI one-liners"

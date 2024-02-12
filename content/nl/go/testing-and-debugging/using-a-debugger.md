@@ -1,5 +1,7 @@
 ---
 title:                "Een debugger gebruiken"
+aliases:
+- /nl/go/using-a-debugger/
 date:                  2024-02-03T18:10:12.372901-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een debugger gebruiken"

@@ -1,5 +1,7 @@
 ---
 title:                "Escrevendo no erro padrão"
+aliases:
+- /pt/c/writing-to-standard-error/
 date:                  2024-02-03T18:15:10.326828-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Escrevendo no erro padrão"

@@ -1,5 +1,7 @@
 ---
 title:                "Розбір дати з рядка"
+aliases:
+- /uk/clojure/parsing-a-date-from-a-string/
 date:                  2024-02-03T19:14:08.182286-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Розбір дати з рядка"

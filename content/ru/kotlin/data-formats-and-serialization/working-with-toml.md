@@ -1,5 +1,7 @@
 ---
 title:                "Работа с TOML"
+aliases:
+- /ru/kotlin/working-with-toml/
 date:                  2024-01-29T00:04:39.487419-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Работа с TOML"

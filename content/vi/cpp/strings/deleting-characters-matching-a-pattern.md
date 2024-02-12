@@ -1,5 +1,7 @@
 ---
 title:                "Xóa các ký tự phù hợp với một mẫu"
+aliases:
+- /vi/cpp/deleting-characters-matching-a-pattern/
 date:                  2024-01-28T21:58:37.205326-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Xóa các ký tự phù hợp với một mẫu"

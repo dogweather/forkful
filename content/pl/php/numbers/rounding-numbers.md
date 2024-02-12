@@ -1,5 +1,7 @@
 ---
 title:                "Zaokrąglanie liczb"
+aliases:
+- /pl/php/rounding-numbers/
 date:                  2024-01-26T03:46:10.530588-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Zaokrąglanie liczb"

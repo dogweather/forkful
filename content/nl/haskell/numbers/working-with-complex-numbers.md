@@ -1,5 +1,7 @@
 ---
 title:                "Werken met complexe getallen"
+aliases:
+- /nl/haskell/working-with-complex-numbers/
 date:                  2024-01-28T22:12:35.512437-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Werken met complexe getallen"

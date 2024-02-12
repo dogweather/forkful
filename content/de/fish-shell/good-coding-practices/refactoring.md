@@ -1,5 +1,7 @@
 ---
 title:                "Refactoring"
+aliases:
+- /de/fish-shell/refactoring/
 date:                  2024-01-26T01:18:05.732178-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Refactoring"

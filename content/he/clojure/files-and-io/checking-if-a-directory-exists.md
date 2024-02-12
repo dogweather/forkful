@@ -1,5 +1,7 @@
 ---
 title:                "בדיקה אם ספרייה קיימת"
+aliases:
+- /he/clojure/checking-if-a-directory-exists/
 date:                  2024-02-03T19:08:03.448127-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "בדיקה אם ספרייה קיימת"

@@ -1,5 +1,7 @@
 ---
 title:                "Поиск и замена текста"
+aliases:
+- /ru/haskell/searching-and-replacing-text/
 date:                  2024-01-29T00:02:27.690304-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Поиск и замена текста"

@@ -1,5 +1,7 @@
 ---
 title:                "编写测试"
+aliases:
+- /zh/go/writing-tests/
 date:                  2024-02-03T18:15:23.199668-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "编写测试"

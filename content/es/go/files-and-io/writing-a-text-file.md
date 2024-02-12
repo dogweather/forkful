@@ -1,5 +1,7 @@
 ---
 title:                "Escribiendo un archivo de texto"
+aliases:
+- /es/go/writing-a-text-file/
 date:                  2024-02-03T18:14:37.192585-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Escribiendo un archivo de texto"

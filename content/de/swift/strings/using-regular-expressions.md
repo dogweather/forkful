@@ -1,5 +1,7 @@
 ---
 title:                "Reguläre Ausdrücke verwenden"
+aliases:
+- /de/swift/using-regular-expressions/
 date:                  2024-02-03T19:18:35.370076-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Reguläre Ausdrücke verwenden"

@@ -1,5 +1,7 @@
 ---
 title:                "HTTP अनुरोध भेजना"
+aliases:
+- /hi/powershell/sending-an-http-request/
 date:                  2024-01-20T18:00:22.385752-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "HTTP अनुरोध भेजना"

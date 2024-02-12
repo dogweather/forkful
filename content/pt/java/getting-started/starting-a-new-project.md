@@ -1,5 +1,7 @@
 ---
 title:                "Iniciando um novo projeto"
+aliases:
+- /pt/java/starting-a-new-project/
 date:                  2024-01-20T18:03:57.787759-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Iniciando um novo projeto"

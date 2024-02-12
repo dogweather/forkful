@@ -1,5 +1,7 @@
 ---
 title:                "Omgjøring av en dato til en streng"
+aliases:
+- /no/c/converting-a-date-into-a-string/
 date:                  2024-02-03T17:54:03.664893-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Omgjøring av en dato til en streng"

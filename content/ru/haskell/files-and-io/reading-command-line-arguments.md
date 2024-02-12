@@ -1,5 +1,7 @@
 ---
 title:                "Чтение аргументов командной строки"
+aliases:
+- /ru/haskell/reading-command-line-arguments/
 date:                  2024-01-29T00:01:00.683963-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Чтение аргументов командной строки"

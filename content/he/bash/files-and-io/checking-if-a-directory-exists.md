@@ -1,5 +1,7 @@
 ---
 title:                "בדיקה אם ספרייה קיימת"
+aliases:
+- /he/bash/checking-if-a-directory-exists/
 date:                  2024-02-03T19:07:17.263965-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "בדיקה אם ספרייה קיימת"

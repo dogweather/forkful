@@ -1,5 +1,7 @@
 ---
 title:                "Використання інтерактивної оболонки (REPL)"
+aliases:
+- /uk/fish-shell/using-an-interactive-shell-repl/
 date:                  2024-01-26T04:14:57.388028-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Використання інтерактивної оболонки (REPL)"

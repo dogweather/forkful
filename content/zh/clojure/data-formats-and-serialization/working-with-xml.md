@@ -1,5 +1,7 @@
 ---
 title:                "处理XML"
+aliases:
+- /zh/clojure/working-with-xml/
 date:                  2024-01-26T04:29:18.762955-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "处理XML"

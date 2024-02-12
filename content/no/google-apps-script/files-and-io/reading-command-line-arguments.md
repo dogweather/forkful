@@ -1,5 +1,7 @@
 ---
 title:                "Lese kommandolinje-argumenter"
+aliases:
+- /no/google-apps-script/reading-command-line-arguments/
 date:                  2024-02-01T21:59:22.623263-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Lese kommandolinje-argumenter"

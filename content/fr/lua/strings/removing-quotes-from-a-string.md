@@ -1,5 +1,7 @@
 ---
 title:                "Retirer les guillemets d'une chaîne"
+aliases:
+- /fr/lua/removing-quotes-from-a-string/
 date:                  2024-01-26T03:40:29.117268-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Retirer les guillemets d'une chaîne"

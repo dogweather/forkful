@@ -1,5 +1,7 @@
 ---
 title:                "Téléchargement d'une page web"
+aliases:
+- /fr/java/downloading-a-web-page/
 date:                  2024-01-20T17:44:18.791304-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Téléchargement d'une page web"

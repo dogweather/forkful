@@ -1,5 +1,7 @@
 ---
 title:                "현재 날짜 가져오기"
+aliases:
+- /ko/ruby/getting-the-current-date/
 date:                  2024-02-03T19:10:47.005461-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "현재 날짜 가져오기"

@@ -1,5 +1,7 @@
 ---
 title:                "Расчет даты в будущем или прошлом"
+aliases:
+- /ru/python/calculating-a-date-in-the-future-or-past/
 date:                  2024-01-28T23:55:47.747970-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Расчет даты в будущем или прошлом"

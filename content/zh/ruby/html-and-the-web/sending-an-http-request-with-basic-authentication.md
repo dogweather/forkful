@@ -1,5 +1,7 @@
 ---
 title:                "使用基本认证发送 HTTP 请求"
+aliases:
+- /zh/ruby/sending-an-http-request-with-basic-authentication/
 date:                  2024-01-20T18:02:33.023213-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "使用基本认证发送 HTTP 请求"

@@ -1,5 +1,7 @@
 ---
 title:                "Sử dụng biểu thức chính quy"
+aliases:
+- /vi/lua/using-regular-expressions/
 date:                  2024-01-28T22:09:54.397032-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Sử dụng biểu thức chính quy"

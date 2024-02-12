@@ -1,5 +1,7 @@
 ---
 title:                "Porównywanie dwóch dat"
+aliases:
+- /pl/python/comparing-two-dates/
 date:                  2024-01-20T17:33:31.971848-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Porównywanie dwóch dat"

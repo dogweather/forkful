@@ -1,5 +1,7 @@
 ---
 title:                "Rédaction de tests"
+aliases:
+- /fr/javascript/writing-tests/
 date:                  2024-02-03T19:31:16.105872-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Rédaction de tests"

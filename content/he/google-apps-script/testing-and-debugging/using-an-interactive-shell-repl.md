@@ -1,5 +1,7 @@
 ---
 title:                "שימוש במעטפת אינטראקטיבית (REPL)"
+aliases:
+- /he/google-apps-script/using-an-interactive-shell-repl/
 date:                  2024-02-01T22:04:52.024692-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "שימוש במעטפת אינטראקטיבית (REPL)"

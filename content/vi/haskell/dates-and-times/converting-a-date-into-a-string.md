@@ -1,5 +1,7 @@
 ---
 title:                "Chuyển đổi một ngày thành chuỗi"
+aliases:
+- /vi/haskell/converting-a-date-into-a-string/
 date:                  2024-01-28T21:57:49.213514-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Chuyển đổi một ngày thành chuỗi"

@@ -1,5 +1,7 @@
 ---
 title:                "Làm việc với số phức"
+aliases:
+- /vi/c-sharp/working-with-complex-numbers/
 date:                  2024-01-28T22:12:29.271107-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Làm việc với số phức"

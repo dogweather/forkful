@@ -1,5 +1,7 @@
 ---
 title:                "Arbeiten mit TOML"
+aliases:
+- /de/lua/working-with-toml/
 date:                  2024-01-26T04:24:02.645470-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Arbeiten mit TOML"

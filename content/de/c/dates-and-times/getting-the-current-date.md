@@ -1,5 +1,7 @@
 ---
 title:                "Das aktuelle Datum abrufen"
+aliases:
+- /de/c/getting-the-current-date/
 date:                  2024-02-03T17:57:38.863862-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Das aktuelle Datum abrufen"

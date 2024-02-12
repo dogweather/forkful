@@ -1,5 +1,7 @@
 ---
 title:                "Registro de Logs"
+aliases:
+- /pt/kotlin/logging/
 date:                  2024-01-26T01:06:47.356703-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Registro de Logs"

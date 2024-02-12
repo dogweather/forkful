@@ -1,5 +1,7 @@
 ---
 title:                "Tiedostojen käsittely komentorivin yksirivisillä komennoilla"
+aliases:
+- /fi/bash/manipulating-files-with-cli-one-liners/
 date:                  2024-01-27T16:21:19.902608-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Tiedostojen käsittely komentorivin yksirivisillä komennoilla"

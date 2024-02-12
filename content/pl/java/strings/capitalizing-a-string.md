@@ -1,5 +1,7 @@
 ---
 title:                "Zamiana liter na wielkie w łańcuchu znaków"
+aliases:
+- /pl/java/capitalizing-a-string/
 date:                  2024-02-03T19:05:50.938122-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Zamiana liter na wielkie w łańcuchu znaków"

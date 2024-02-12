@@ -1,5 +1,7 @@
 ---
 title:                "Rimuovere le virgolette da una stringa"
+aliases:
+- /it/cpp/removing-quotes-from-a-string/
 date:                  2024-01-26T03:37:54.795009-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Rimuovere le virgolette da una stringa"

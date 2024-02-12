@@ -1,5 +1,7 @@
 ---
 title:                "Deleting characters matching a pattern"
+aliases:
+- /en/google-apps-script/deleting-characters-matching-a-pattern/
 date:                  2024-02-01T21:12:15.582559-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Deleting characters matching a pattern"

@@ -1,5 +1,7 @@
 ---
 title:                "Lendo argumentos da linha de comando"
+aliases:
+- /pt/kotlin/reading-command-line-arguments/
 date:                  2024-01-20T17:56:27.077350-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Lendo argumentos da linha de comando"

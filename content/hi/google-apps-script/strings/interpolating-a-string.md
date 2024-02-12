@@ -1,5 +1,7 @@
 ---
 title:                "स्ट्रिंग का अंतर्कलन"
+aliases:
+- /hi/google-apps-script/interpolating-a-string/
 date:                  2024-02-01T21:57:37.090147-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "स्ट्रिंग का अंतर्कलन"

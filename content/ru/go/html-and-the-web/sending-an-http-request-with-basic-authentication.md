@@ -1,5 +1,7 @@
 ---
 title:                "Отправка HTTP-запроса с базовой аутентификацией"
+aliases:
+- /ru/go/sending-an-http-request-with-basic-authentication/
 date:                  2024-02-03T18:09:24.887999-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Отправка HTTP-запроса с базовой аутентификацией"

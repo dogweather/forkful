@@ -1,5 +1,7 @@
 ---
 title:                "TOML के साथ काम करना"
+aliases:
+- /hi/haskell/working-with-toml/
 date:                  2024-01-26T04:23:44.145417-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "TOML के साथ काम करना"

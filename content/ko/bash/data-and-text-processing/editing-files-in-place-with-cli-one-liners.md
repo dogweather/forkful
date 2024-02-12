@@ -1,5 +1,7 @@
 ---
 title:                "CLI 한 줄 명령어로 파일을 제자리에서 편집하기"
+aliases:
+- /ko/bash/editing-files-in-place-with-cli-one-liners/
 date:                  2024-01-27T16:21:42.084490-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "CLI 한 줄 명령어로 파일을 제자리에서 편집하기"

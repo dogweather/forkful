@@ -1,5 +1,7 @@
 ---
 title:                "Een tekstbestand schrijven"
+aliases:
+- /nl/fish-shell/writing-a-text-file/
 date:                  2024-01-28T22:12:39.584022-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een tekstbestand schrijven"

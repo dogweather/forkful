@@ -1,5 +1,7 @@
 ---
 title:                "Substrings extraheren"
+aliases:
+- /nl/ruby/extracting-substrings/
 date:                  2024-01-28T22:00:05.193051-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Substrings extraheren"

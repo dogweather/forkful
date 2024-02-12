@@ -1,5 +1,7 @@
 ---
 title:                "Baixando uma página da web"
+aliases:
+- /pt/arduino/downloading-a-web-page/
 date:                  2024-01-20T17:43:31.196047-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Baixando uma página da web"

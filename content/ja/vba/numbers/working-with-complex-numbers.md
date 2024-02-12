@@ -1,5 +1,7 @@
 ---
 title:                "複素数を操作する"
+aliases:
+- /ja/vba/working-with-complex-numbers/
 date:                  2024-02-01T22:08:16.922177-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "複素数を操作する"

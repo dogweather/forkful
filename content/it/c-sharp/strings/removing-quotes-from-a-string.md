@@ -1,5 +1,7 @@
 ---
 title:                "Rimuovere le virgolette da una stringa"
+aliases:
+- /it/c-sharp/removing-quotes-from-a-string/
 date:                  2024-01-26T03:38:13.664364-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Rimuovere le virgolette da una stringa"

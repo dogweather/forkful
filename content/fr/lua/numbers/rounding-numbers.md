@@ -1,5 +1,7 @@
 ---
 title:                "Arrondir les nombres"
+aliases:
+- /fr/lua/rounding-numbers/
 date:                  2024-01-26T03:45:32.320720-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Arrondir les nombres"

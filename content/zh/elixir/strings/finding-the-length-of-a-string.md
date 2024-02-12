@@ -1,5 +1,7 @@
 ---
 title:                "获取字符串的长度"
+aliases:
+- /zh/elixir/finding-the-length-of-a-string/
 date:                  2024-01-20T17:47:24.150339-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "获取字符串的长度"

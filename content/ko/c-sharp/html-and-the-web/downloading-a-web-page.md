@@ -1,5 +1,7 @@
 ---
 title:                "웹 페이지 다운로드하기"
+aliases:
+- /ko/c-sharp/downloading-a-web-page/
 date:                  2024-01-20T17:43:49.715012-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "웹 페이지 다운로드하기"

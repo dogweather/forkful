@@ -1,5 +1,7 @@
 ---
 title:                "Een debugger gebruiken"
+aliases:
+- /nl/vba/using-a-debugger/
 date:                  2024-02-01T22:04:24.294701-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een debugger gebruiken"

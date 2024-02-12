@@ -1,5 +1,7 @@
 ---
 title:                "Sjekke om en katalog eksisterer"
+aliases:
+- /no/vba/checking-if-a-directory-exists/
 date:                  2024-02-01T21:50:54.016266-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Sjekke om en katalog eksisterer"

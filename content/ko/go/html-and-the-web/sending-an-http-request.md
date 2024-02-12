@@ -1,5 +1,7 @@
 ---
 title:                "HTTP 요청 보내기"
+aliases:
+- /ko/go/sending-an-http-request/
 date:                  2024-02-03T18:08:56.412887-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "HTTP 요청 보내기"

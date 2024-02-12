@@ -1,5 +1,7 @@
 ---
 title:                "Scrivere test"
+aliases:
+- /it/vba/writing-tests/
 date:                  2024-02-01T22:09:07.632262-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Scrivere test"

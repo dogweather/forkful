@@ -1,5 +1,7 @@
 ---
 title:                "שימוש בדיבאגר"
+aliases:
+- /he/rust/using-a-debugger/
 date:                  2024-01-26T04:10:48.890213-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "שימוש בדיבאגר"

@@ -1,5 +1,7 @@
 ---
 title:                "המרת מחרוזת לאותיות קטנות"
+aliases:
+- /he/c/converting-a-string-to-lower-case/
 date:                  2024-02-03T17:56:23.197392-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "המרת מחרוזת לאותיות קטנות"

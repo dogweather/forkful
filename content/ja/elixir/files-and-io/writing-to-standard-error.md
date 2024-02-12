@@ -1,5 +1,7 @@
 ---
 title:                "標準エラーへの書き込み"
+aliases:
+- /ja/elixir/writing-to-standard-error/
 date:                  2024-02-03T19:33:07.289705-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "標準エラーへの書き込み"

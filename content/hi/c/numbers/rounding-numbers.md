@@ -1,5 +1,7 @@
 ---
 title:                "संख्याओं का पूर्णांकरण"
+aliases:
+- /hi/c/rounding-numbers/
 date:                  2024-02-03T18:08:24.198840-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "संख्याओं का पूर्णांकरण"

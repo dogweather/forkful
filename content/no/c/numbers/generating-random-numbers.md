@@ -1,5 +1,7 @@
 ---
 title:                "Genererer tilfeldige tall"
+aliases:
+- /no/c/generating-random-numbers/
 date:                  2024-02-03T17:57:29.467098-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Genererer tilfeldige tall"

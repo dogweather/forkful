@@ -1,5 +1,7 @@
 ---
 title:                "पाठ खोजना और बदलना"
+aliases:
+- /hi/haskell/searching-and-replacing-text/
 date:                  2024-01-20T17:58:13.456278-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "पाठ खोजना और बदलना"

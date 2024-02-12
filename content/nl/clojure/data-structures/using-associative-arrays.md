@@ -1,5 +1,7 @@
 ---
 title:                "Gebruik van associatieve arrays"
+aliases:
+- /nl/clojure/using-associative-arrays/
 date:                  2024-01-30T19:10:10.912667-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Gebruik van associatieve arrays"

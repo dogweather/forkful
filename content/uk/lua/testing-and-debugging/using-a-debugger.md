@@ -1,5 +1,7 @@
 ---
 title:                "Використання дебагера"
+aliases:
+- /uk/lua/using-a-debugger/
 date:                  2024-01-26T04:09:14.621973-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Використання дебагера"

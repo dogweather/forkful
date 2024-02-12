@@ -1,5 +1,7 @@
 ---
 title:                "Använda reguljära uttryck"
+aliases:
+- /sv/c/using-regular-expressions/
 date:                  2024-02-03T18:10:57.705225-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Använda reguljära uttryck"

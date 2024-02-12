@@ -1,5 +1,7 @@
 ---
 title:                "Refatoração"
+aliases:
+- /pt/fish-shell/refactoring/
 date:                  2024-01-26T01:17:59.547396-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Refatoração"

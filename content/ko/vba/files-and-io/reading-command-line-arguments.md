@@ -1,5 +1,7 @@
 ---
 title:                "명령 줄 인수 읽기"
+aliases:
+- /ko/vba/reading-command-line-arguments/
 date:                  2024-02-01T21:59:28.450876-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "명령 줄 인수 읽기"

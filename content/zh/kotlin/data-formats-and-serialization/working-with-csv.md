@@ -1,5 +1,7 @@
 ---
 title:                "处理CSV文件"
+aliases:
+- /zh/kotlin/working-with-csv/
 date:                  2024-02-03T19:20:49.286010-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "处理CSV文件"

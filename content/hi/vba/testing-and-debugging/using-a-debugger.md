@@ -1,5 +1,7 @@
 ---
 title:                "डीबगर का उपयोग करना"
+aliases:
+- /hi/vba/using-a-debugger/
 date:                  2024-02-01T22:06:14.180899-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "डीबगर का उपयोग करना"

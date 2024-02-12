@@ -1,5 +1,7 @@
 ---
 title:                "Использование отладчика"
+aliases:
+- /ru/php/using-a-debugger/
 date:                  2024-01-29T00:03:27.741917-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Использование отладчика"

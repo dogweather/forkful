@@ -1,5 +1,7 @@
 ---
 title:                "Working with YAML"
+aliases:
+- /en/php/working-with-yaml/
 date:                  2024-02-03T19:03:21.023196-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Working with YAML"

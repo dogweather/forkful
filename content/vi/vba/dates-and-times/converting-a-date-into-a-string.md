@@ -1,5 +1,7 @@
 ---
 title:                "Chuyển đổi một ngày thành chuỗi"
+aliases:
+- /vi/vba/converting-a-date-into-a-string/
 date:                  2024-02-01T21:51:34.775866-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Chuyển đổi một ngày thành chuỗi"

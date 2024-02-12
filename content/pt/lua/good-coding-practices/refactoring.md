@@ -1,5 +1,7 @@
 ---
 title:                "Refatoração"
+aliases:
+- /pt/lua/refactoring/
 date:                  2024-01-26T01:46:58.572681-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Refatoração"

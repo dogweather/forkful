@@ -1,5 +1,7 @@
 ---
 title:                "Loại bỏ dấu ngoặc kép khỏi chuỗi ký tự"
+aliases:
+- /vi/google-apps-script/removing-quotes-from-a-string/
 date:                  2024-02-01T22:01:01.609498-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Loại bỏ dấu ngoặc kép khỏi chuỗi ký tự"

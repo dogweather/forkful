@@ -1,5 +1,7 @@
 ---
 title:                "Utilisation des tableaux associatifs"
+aliases:
+- /fr/typescript/using-associative-arrays/
 date:                  2024-01-30T19:13:16.607957-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Utilisation des tableaux associatifs"

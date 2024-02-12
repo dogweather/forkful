@@ -1,5 +1,7 @@
 ---
 title:                "Загрузка веб-страницы"
+aliases:
+- /ru/haskell/downloading-a-web-page/
 date:                  2024-01-28T23:57:29.220170-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Загрузка веб-страницы"

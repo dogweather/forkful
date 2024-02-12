@@ -1,5 +1,7 @@
 ---
 title:                "パターンに一致する文字を削除する"
+aliases:
+- /ja/python/deleting-characters-matching-a-pattern/
 date:                  2024-01-20T17:43:19.656117-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "パターンに一致する文字を削除する"

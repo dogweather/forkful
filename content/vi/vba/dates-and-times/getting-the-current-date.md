@@ -1,5 +1,7 @@
 ---
 title:                "Lấy ngày hiện tại"
+aliases:
+- /vi/vba/getting-the-current-date/
 date:                  2024-02-01T21:54:58.223770-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Lấy ngày hiện tại"

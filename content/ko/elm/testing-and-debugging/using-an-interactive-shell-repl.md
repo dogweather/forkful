@@ -1,5 +1,7 @@
 ---
 title:                "인터랙티브 셸 (REPL) 사용하기"
+aliases:
+- /ko/elm/using-an-interactive-shell-repl/
 date:                  2024-01-26T04:13:53.587428-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "인터랙티브 셸 (REPL) 사용하기"

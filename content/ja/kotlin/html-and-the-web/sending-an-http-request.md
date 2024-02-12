@@ -1,5 +1,7 @@
 ---
 title:                "HTTPリクエストの送信"
+aliases:
+- /ja/kotlin/sending-an-http-request/
 date:                  2024-01-20T17:59:56.443224-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "HTTPリクエストの送信"

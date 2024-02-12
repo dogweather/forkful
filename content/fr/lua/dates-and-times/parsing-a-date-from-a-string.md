@@ -1,5 +1,7 @@
 ---
 title:                "Analyser une date depuis une chaîne de caractères"
+aliases:
+- /fr/lua/parsing-a-date-from-a-string/
 date:                  2024-02-03T19:14:49.186479-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Analyser une date depuis une chaîne de caractères"

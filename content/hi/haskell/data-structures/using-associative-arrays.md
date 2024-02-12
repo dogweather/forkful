@@ -1,5 +1,7 @@
 ---
 title:                "सहयोगी अरेज़ का उपयोग करना"
+aliases:
+- /hi/haskell/using-associative-arrays/
 date:                  2024-01-30T19:12:51.221504-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "सहयोगी अरेज़ का उपयोग करना"

@@ -1,5 +1,7 @@
 ---
 title:                "Att använda en debugger"
+aliases:
+- /sv/ruby/using-a-debugger/
 date:                  2024-01-26T04:09:53.031444-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Att använda en debugger"

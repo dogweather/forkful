@@ -1,5 +1,7 @@
 ---
 title:                "Debuggerin käyttö"
+aliases:
+- /fi/lua/using-a-debugger/
 date:                  2024-01-26T03:50:47.916716-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Debuggerin käyttö"

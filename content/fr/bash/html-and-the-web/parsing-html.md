@@ -1,5 +1,7 @@
 ---
 title:                "Analyse Syntaxique du HTML"
+aliases:
+- /fr/bash/parsing-html/
 date:                  2024-02-03T19:11:35.591596-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Analyse Syntaxique du HTML"

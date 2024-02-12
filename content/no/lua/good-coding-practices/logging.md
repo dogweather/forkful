@@ -1,5 +1,7 @@
 ---
 title:                "Loggføring"
+aliases:
+- /no/lua/logging/
 date:                  2024-01-26T01:07:09.105212-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Loggføring"

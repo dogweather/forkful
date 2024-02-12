@@ -1,5 +1,7 @@
 ---
 title:                "新しいプロジェクトを始める"
+aliases:
+- /ja/go/starting-a-new-project/
 date:                  2024-02-03T18:09:52.640473-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "新しいプロジェクトを始める"

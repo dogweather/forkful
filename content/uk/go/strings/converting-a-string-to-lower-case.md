@@ -1,5 +1,7 @@
 ---
 title:                "Перетворення рядка в нижній регістр"
+aliases:
+- /uk/go/converting-a-string-to-lower-case/
 date:                  2024-02-03T17:55:39.410237-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Перетворення рядка в нижній регістр"

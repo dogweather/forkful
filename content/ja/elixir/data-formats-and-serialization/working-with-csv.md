@@ -1,5 +1,7 @@
 ---
 title:                "CSVとの作業"
+aliases:
+- /ja/elixir/working-with-csv/
 date:                  2024-02-03T19:19:44.213202-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "CSVとの作業"

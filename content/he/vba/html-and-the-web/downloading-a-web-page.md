@@ -1,5 +1,7 @@
 ---
 title:                "הורדת עמוד אינטרנט"
+aliases:
+- /he/vba/downloading-a-web-page/
 date:                  2024-02-01T21:53:37.727320-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "הורדת עמוד אינטרנט"

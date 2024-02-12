@@ -1,5 +1,7 @@
 ---
 title:                "כתיבה לשגיאה התקנית"
+aliases:
+- /he/ruby/writing-to-standard-error/
 date:                  2024-02-03T19:35:01.991421-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "כתיבה לשגיאה התקנית"

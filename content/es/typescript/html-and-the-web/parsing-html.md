@@ -1,5 +1,7 @@
 ---
 title:                "Análisis de HTML"
+aliases:
+- /es/typescript/parsing-html/
 date:                  2024-01-20T15:34:10.927158-07:00
 simple_title:         "Análisis de HTML"
 

@@ -1,5 +1,7 @@
 ---
 title:                "שימוש במערכים אסוציאטיביים"
+aliases:
+- /he/c/using-associative-arrays/
 date:                  2024-02-03T18:11:23.383165-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "שימוש במערכים אסוציאטיביים"

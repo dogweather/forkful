@@ -1,5 +1,7 @@
 ---
 title:                "文字列の長さを求める"
+aliases:
+- /ja/java/finding-the-length-of-a-string/
 date:                  2024-01-20T17:47:43.107852-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "文字列の長さを求める"

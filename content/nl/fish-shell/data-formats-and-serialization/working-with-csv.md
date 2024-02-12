@@ -1,5 +1,7 @@
 ---
 title:                "Werken met CSV"
+aliases:
+- /nl/fish-shell/working-with-csv/
 date:                  2024-01-28T22:10:08.261235-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Werken met CSV"

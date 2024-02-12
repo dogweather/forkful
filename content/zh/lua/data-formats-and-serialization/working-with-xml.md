@@ -1,5 +1,7 @@
 ---
 title:                "处理XML"
+aliases:
+- /zh/lua/working-with-xml/
 date:                  2024-01-26T04:33:41.021611-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "处理XML"

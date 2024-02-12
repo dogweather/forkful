@@ -1,5 +1,7 @@
 ---
 title:                "Skicka en HTTP-förfrågan"
+aliases:
+- /sv/google-apps-script/sending-an-http-request/
 date:                  2024-02-01T22:01:30.864722-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Skicka en HTTP-förfrågan"

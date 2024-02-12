@@ -1,5 +1,7 @@
 ---
 title:                "处理复数的工作"
+aliases:
+- /zh/vba/working-with-complex-numbers/
 date:                  2024-02-01T22:07:41.912430-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "处理复数的工作"
