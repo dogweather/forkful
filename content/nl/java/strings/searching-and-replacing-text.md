@@ -1,5 +1,6 @@
 ---
 title:                "Tekst zoeken en vervangen"
+aliases: - /nl/java/searching-and-replacing-text.md
 date:                  2024-01-28T22:08:40.452854-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Tekst zoeken en vervangen"

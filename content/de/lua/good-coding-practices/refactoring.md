@@ -1,5 +1,6 @@
 ---
 title:                "Refactoring"
+aliases: - /de/lua/refactoring.md
 date:                  2024-01-26T01:46:05.847630-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Refactoring"

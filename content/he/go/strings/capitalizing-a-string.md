@@ -1,5 +1,6 @@
 ---
 title:                "הפיכת מחרוזת לאותיות ראשיות"
+aliases: - /he/go/capitalizing-a-string.md
 date:                  2024-02-03T17:53:24.844501-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "הפיכת מחרוזת לאותיות ראשיות"

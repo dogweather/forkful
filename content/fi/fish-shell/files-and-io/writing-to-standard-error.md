@@ -1,5 +1,6 @@
 ---
 title:                "Kirjoittaminen standardivirheeseen"
+aliases: - /fi/fish-shell/writing-to-standard-error.md
 date:                  2024-02-03T19:33:25.109127-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Kirjoittaminen standardivirheeseen"

@@ -1,5 +1,6 @@
 ---
 title:                "Working with CSV"
+aliases: - /en/clojure/working-with-csv.md
 date:                  2024-02-03T19:03:00.222394-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Working with CSV"

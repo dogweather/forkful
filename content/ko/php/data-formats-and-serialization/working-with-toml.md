@@ -1,5 +1,6 @@
 ---
 title:                "프로그래머를 위한 TOML 다루기"
+aliases: - /ko/php/working-with-toml.md
 date:                  2024-01-26T04:24:47.265754-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "프로그래머를 위한 TOML 다루기"

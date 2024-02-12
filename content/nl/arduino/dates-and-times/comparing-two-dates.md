@@ -1,5 +1,6 @@
 ---
 title:                "Twee data vergelijken"
+aliases: - /nl/arduino/comparing-two-dates.md
 date:                  2024-01-28T21:56:17.895644-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Twee data vergelijken"

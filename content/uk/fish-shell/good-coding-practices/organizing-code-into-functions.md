@@ -1,5 +1,6 @@
 ---
 title:                "Організація коду у функції"
+aliases: - /uk/fish-shell/organizing-code-into-functions.md
 date:                  2024-01-28T23:02:01.509562-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Організація коду у функції"

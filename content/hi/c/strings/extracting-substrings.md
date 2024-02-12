@@ -1,5 +1,6 @@
 ---
 title:                "उपवाक्यांश निष्कर्षित करना"
+aliases: - /hi/c/extracting-substrings.md
 date:                  2024-02-03T17:58:02.436096-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "उपवाक्यांश निष्कर्षित करना"

@@ -1,5 +1,6 @@
 ---
 title:                "लॉगिंग"
+aliases: - /hi/clojure/logging.md
 date:                  2024-01-26T01:09:48.279703-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "लॉगिंग"

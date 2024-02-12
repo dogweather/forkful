@@ -1,5 +1,6 @@
 ---
 title:                "Een string met hoofdletters maken"
+aliases: - /nl/python/capitalizing-a-string.md
 date:                  2024-01-28T21:56:00.534153-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een string met hoofdletters maken"

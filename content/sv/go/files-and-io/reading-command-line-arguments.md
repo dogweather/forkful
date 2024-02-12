@@ -1,5 +1,6 @@
 ---
 title:                "Läser in kommandoradsargument"
+aliases: - /sv/go/reading-command-line-arguments.md
 date:                  2024-02-03T18:06:33.526259-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Läser in kommandoradsargument"

@@ -1,5 +1,6 @@
 ---
 title:                "Konwersja łańcucha znaków na małe litery"
+aliases: - /pl/google-apps-script/converting-a-string-to-lower-case.md
 date:                  2024-02-01T21:52:43.201249-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Konwersja łańcucha znaków na małe litery"

@@ -1,5 +1,6 @@
 ---
 title:                "Att organisera kod i funktioner"
+aliases: - /sv/java/organizing-code-into-functions.md
 date:                  2024-01-26T01:10:25.068697-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Att organisera kod i funktioner"

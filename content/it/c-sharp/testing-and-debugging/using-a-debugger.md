@@ -1,5 +1,6 @@
 ---
 title:                "Utilizzo di un debugger"
+aliases: - /it/c-sharp/using-a-debugger.md
 date:                  2024-01-26T03:47:55.367337-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Utilizzo di un debugger"

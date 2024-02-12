@@ -1,5 +1,6 @@
 ---
 title:                "Kahden päivämäärän vertailu"
+aliases: - /fi/vba/comparing-two-dates.md
 date:                  2024-02-01T21:49:53.875549-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Kahden päivämäärän vertailu"

@@ -1,5 +1,6 @@
 ---
 title:                "编写文本文件"
+aliases: - /zh/php/writing-a-text-file.md
 date:                  2024-02-03T19:28:45.026444-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "编写文本文件"

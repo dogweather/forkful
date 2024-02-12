@@ -1,5 +1,6 @@
 ---
 title:                "인터랙티브 셸(REPL) 사용하기"
+aliases: - /ko/vba/using-an-interactive-shell-repl.md
 date:                  2024-02-01T22:04:04.079744-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "인터랙티브 셸(REPL) 사용하기"

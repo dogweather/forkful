@@ -1,5 +1,6 @@
 ---
 title:                "Escrevendo um arquivo de texto"
+aliases: - /pt/elm/writing-a-text-file.md
 date:                  2024-01-19
 simple_title:         "Escrevendo um arquivo de texto"
 

@@ -1,5 +1,6 @@
 ---
 title:                "检查目录是否存在"
+aliases: - /zh/google-apps-script/checking-if-a-directory-exists.md
 date:                  2024-02-01T21:48:44.822650-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "检查目录是否存在"

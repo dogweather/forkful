@@ -1,5 +1,6 @@
 ---
 title:                "Analyse Syntaxique de HTML"
+aliases: - /fr/go/parsing-html.md
 date:                  2024-02-03T17:59:51.113839-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Analyse Syntaxique de HTML"

@@ -1,5 +1,6 @@
 ---
 title:                "טיפול בשגיאות"
+aliases: - /he/c/handling-errors.md
 date:                  2024-02-03T17:59:04.045204-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "טיפול בשגיאות"

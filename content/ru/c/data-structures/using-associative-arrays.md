@@ -1,5 +1,6 @@
 ---
 title:                "Использование ассоциативных массивов"
+aliases: - /ru/c/using-associative-arrays.md
 date:                  2024-02-03T18:11:45.053394-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Использование ассоциативных массивов"

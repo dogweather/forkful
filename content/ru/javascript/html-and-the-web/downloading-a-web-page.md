@@ -1,5 +1,6 @@
 ---
 title:                "Загрузка веб-страницы"
+aliases: - /ru/javascript/downloading-a-web-page.md
 date:                  2024-01-28T23:57:22.477685-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Загрузка веб-страницы"

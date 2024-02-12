@@ -1,5 +1,6 @@
 ---
 title:                "Praca z XML"
+aliases: - /pl/swift/working-with-xml.md
 date:                  2024-01-26T04:36:01.119861-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Praca z XML"

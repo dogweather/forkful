@@ -1,5 +1,6 @@
 ---
 title:                "Робота з комплексними числами"
+aliases: - /uk/go/working-with-complex-numbers.md
 date:                  2024-02-03T18:14:43.853625-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Робота з комплексними числами"

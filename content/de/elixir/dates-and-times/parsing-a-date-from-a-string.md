@@ -1,5 +1,6 @@
 ---
 title:                "Eine Datumsauswertung aus einem String"
+aliases: - /de/elixir/parsing-a-date-from-a-string.md
 date:                  2024-01-28T01:59:23.503759-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Eine Datumsauswertung aus einem String"

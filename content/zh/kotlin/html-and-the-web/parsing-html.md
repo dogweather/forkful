@@ -1,5 +1,6 @@
 ---
 title:                "解析HTML"
+aliases: - /zh/kotlin/parsing-html.md
 date:                  2024-01-20T15:32:34.351161-07:00
 simple_title:         "解析HTML"
 

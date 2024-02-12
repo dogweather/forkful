@@ -1,5 +1,6 @@
 ---
 title:                "HTML parsen"
+aliases: - /de/typescript/parsing-html.md
 date:                  2024-02-03T19:13:12.985819-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "HTML parsen"

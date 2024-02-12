@@ -1,5 +1,6 @@
 ---
 title:                "Hitta längden på en sträng"
+aliases: - /sv/go/finding-the-length-of-a-string.md
 date:                  2024-02-03T17:56:59.179943-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Hitta längden på en sträng"

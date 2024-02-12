@@ -1,5 +1,6 @@
 ---
 title:                "Đọc một tệp văn bản"
+aliases: - /vi/elm/reading-a-text-file.md
 date:                  2024-01-28T22:04:59.326658-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Đọc một tệp văn bản"

@@ -1,5 +1,6 @@
 ---
 title:                "पाठ को खोजना और बदलना"
+aliases: - /hi/go/searching-and-replacing-text.md
 date:                  2024-02-03T18:09:13.783375-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "पाठ को खोजना और बदलना"

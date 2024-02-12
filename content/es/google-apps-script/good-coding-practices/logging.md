@@ -1,5 +1,6 @@
 ---
 title:                "Registro de Información"
+aliases: - /es/google-apps-script/logging.md
 date:                  2024-02-01T21:55:50.041102-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Registro de Información"

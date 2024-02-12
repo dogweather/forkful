@@ -1,5 +1,6 @@
 ---
 title:                "Verkkosivun lataaminen"
+aliases: - /fi/powershell/downloading-a-web-page.md
 date:                  2024-01-20T17:44:36.922313-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Verkkosivun lataaminen"

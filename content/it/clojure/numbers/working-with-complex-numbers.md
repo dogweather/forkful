@@ -1,5 +1,6 @@
 ---
 title:                "Lavorare con i numeri complessi"
+aliases: - /it/clojure/working-with-complex-numbers.md
 date:                  2024-01-26T04:39:10.955177-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Lavorare con i numeri complessi"

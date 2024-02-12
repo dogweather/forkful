@@ -1,5 +1,6 @@
 ---
 title:                "Tratamento de erros"
+aliases: - /pt/kotlin/handling-errors.md
 date:                  2024-01-26T00:54:21.325281-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Tratamento de erros"

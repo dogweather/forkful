@@ -1,5 +1,6 @@
 ---
 title:                "קבלת התאריך הנוכחי"
+aliases: - /he/fish-shell/getting-the-current-date.md
 date:                  2024-02-03T19:10:05.489031-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "קבלת התאריך הנוכחי"

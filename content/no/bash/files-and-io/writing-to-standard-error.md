@@ -1,5 +1,6 @@
 ---
 title:                "Skriving til standardfeil"
+aliases: - /no/bash/writing-to-standard-error.md
 date:                  2024-02-03T19:32:27.762491-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Skriving til standardfeil"

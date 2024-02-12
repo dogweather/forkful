@@ -1,5 +1,6 @@
 ---
 title:                "난수 생성"
+aliases: - /ko/php/generating-random-numbers.md
 date:                  2024-01-27T20:34:56.292817-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "난수 생성"

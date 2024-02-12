@@ -1,5 +1,6 @@
 ---
 title:                "Einen neuen Projektstart"
+aliases: - /de/vba/starting-a-new-project.md
 date:                  2024-02-01T22:02:56.686231-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Einen neuen Projektstart"

@@ -1,5 +1,6 @@
 ---
 title:                "नई परियोजना शुरू करना"
+aliases: - /hi/bash/starting-a-new-project.md
 date:                  2024-01-20T18:03:40.334862-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "नई परियोजना शुरू करना"

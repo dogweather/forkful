@@ -1,5 +1,6 @@
 ---
 title:                "使用调试器"
+aliases: - /zh/bash/using-a-debugger.md
 date:                  2024-01-26T03:47:34.543449-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "使用调试器"

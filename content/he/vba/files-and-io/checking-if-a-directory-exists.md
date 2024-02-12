@@ -1,5 +1,6 @@
 ---
 title:                "בדיקה אם ספרייה קיימת"
+aliases: - /he/vba/checking-if-a-directory-exists.md
 date:                  2024-02-01T21:52:09.546334-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "בדיקה אם ספרייה קיימת"

@@ -1,5 +1,6 @@
 ---
 title:                "עבודה עם YAML"
+aliases: - /he/arduino/working-with-yaml.md
 date:                  2024-02-03T19:25:37.447984-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "עבודה עם YAML"

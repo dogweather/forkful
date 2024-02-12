@@ -1,5 +1,6 @@
 ---
 title:                "Преобразование строки в верхний регистр"
+aliases: - /ru/c-sharp/capitalizing-a-string.md
 date:                  2024-01-28T23:56:03.579455-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Преобразование строки в верхний регистр"

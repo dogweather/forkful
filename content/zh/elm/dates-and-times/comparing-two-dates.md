@@ -1,5 +1,6 @@
 ---
 title:                "比较两个日期"
+aliases: - /zh/elm/comparing-two-dates.md
 date:                  2024-01-20T17:32:44.435092-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "比较两个日期"

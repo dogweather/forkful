@@ -1,5 +1,6 @@
 ---
 title:                "स्ट्रिंग को कैपिटलाइज करना"
+aliases: - /hi/rust/capitalizing-a-string.md
 date:                  2024-02-03T19:07:32.294251-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "स्ट्रिंग को कैपिटलाइज करना"

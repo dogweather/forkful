@@ -1,5 +1,6 @@
 ---
 title:                "Scrivere test"
+aliases: - /it/java/writing-tests.md
 date:                  2024-02-03T19:30:52.141548-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Scrivere test"

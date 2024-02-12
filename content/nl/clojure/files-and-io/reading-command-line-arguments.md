@@ -1,5 +1,6 @@
 ---
 title:                "Commandoregelargumenten lezen"
+aliases: - /nl/clojure/reading-command-line-arguments.md
 date:                  2024-01-28T22:04:57.659603-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Commandoregelargumenten lezen"

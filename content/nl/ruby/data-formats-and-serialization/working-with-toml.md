@@ -1,5 +1,6 @@
 ---
 title:                "Werken met TOML"
+aliases: - /nl/ruby/working-with-toml.md
 date:                  2024-01-28T22:11:07.244802-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Werken met TOML"

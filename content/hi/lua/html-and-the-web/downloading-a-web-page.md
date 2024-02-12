@@ -1,5 +1,6 @@
 ---
 title:                "वेब पेज डाउनलोड करना"
+aliases: - /hi/lua/downloading-a-web-page.md
 date:                  2024-01-20T17:44:39.578512-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "वेब पेज डाउनलोड करना"

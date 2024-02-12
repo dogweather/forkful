@@ -1,5 +1,6 @@
 ---
 title:                "使用交互式Shell（REPL）"
+aliases: - /zh/c/using-an-interactive-shell-repl.md
 date:                  2024-02-03T18:10:10.572326-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "使用交互式Shell（REPL）"

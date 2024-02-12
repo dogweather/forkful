@@ -1,5 +1,6 @@
 ---
 title:                "Trabajando con YAML"
+aliases: - /es/elm/working-with-yaml.md
 date:                  2024-02-03T19:25:19.013433-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Trabajando con YAML"

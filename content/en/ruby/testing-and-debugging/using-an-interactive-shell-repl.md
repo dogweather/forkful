@@ -1,5 +1,6 @@
 ---
 title:                "Using an interactive shell (REPL)"
+aliases: - /en/ruby/using-an-interactive-shell-repl.md
 date:                  2024-01-25T03:39:37.470710-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Using an interactive shell (REPL)"

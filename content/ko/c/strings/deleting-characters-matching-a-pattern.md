@@ -1,5 +1,6 @@
 ---
 title:                "패턴에 일치하는 문자 삭제하기"
+aliases: - /ko/c/deleting-characters-matching-a-pattern.md
 date:                  2024-02-03T17:56:00.902634-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "패턴에 일치하는 문자 삭제하기"

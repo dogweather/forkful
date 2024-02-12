@@ -1,5 +1,6 @@
 ---
 title:                "Een tijdelijk bestand aanmaken"
+aliases: - /nl/c/creating-a-temporary-file.md
 date:                  2024-02-03T17:55:25.757161-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een tijdelijk bestand aanmaken"

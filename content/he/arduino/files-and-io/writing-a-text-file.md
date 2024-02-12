@@ -1,5 +1,6 @@
 ---
 title:                "כתיבת קובץ טקסט"
+aliases: - /he/arduino/writing-a-text-file.md
 date:                  2024-02-03T19:27:32.396230-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "כתיבת קובץ טקסט"

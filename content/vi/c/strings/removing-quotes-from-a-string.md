@@ -1,5 +1,6 @@
 ---
 title:                "Loại bỏ dấu ngoặc kép khỏi chuỗi"
+aliases: - /vi/c/removing-quotes-from-a-string.md
 date:                  2024-02-03T18:07:33.310842-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Loại bỏ dấu ngoặc kép khỏi chuỗi"

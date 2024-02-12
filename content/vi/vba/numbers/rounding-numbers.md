@@ -1,5 +1,6 @@
 ---
 title:                "Làm tròn số"
+aliases: - /vi/vba/rounding-numbers.md
 date:                  2024-02-01T22:01:01.707208-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Làm tròn số"

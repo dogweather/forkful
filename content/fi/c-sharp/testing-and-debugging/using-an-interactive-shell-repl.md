@@ -1,5 +1,6 @@
 ---
 title:                "Interaktiivisen komentotulkin (REPL) käyttö"
+aliases: - /fi/c-sharp/using-an-interactive-shell-repl.md
 date:                  2024-01-26T04:12:22.205288-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Interaktiivisen komentotulkin (REPL) käyttö"

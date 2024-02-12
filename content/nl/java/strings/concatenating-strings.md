@@ -1,5 +1,6 @@
 ---
 title:                "Samenvoegen van strings"
+aliases: - /nl/java/concatenating-strings.md
 date:                  2024-01-28T21:57:10.553545-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Samenvoegen van strings"

@@ -1,5 +1,6 @@
 ---
 title:                "Een datum in de toekomst of het verleden berekenen"
+aliases: - /nl/google-apps-script/calculating-a-date-in-the-future-or-past.md
 date:                  2024-02-01T21:48:51.979194-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een datum in de toekomst of het verleden berekenen"

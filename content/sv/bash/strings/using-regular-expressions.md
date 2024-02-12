@@ -1,5 +1,6 @@
 ---
 title:                "Att använda reguljära uttryck"
+aliases: - /sv/bash/using-regular-expressions.md
 date:                  2024-02-03T19:15:59.286454-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Att använda reguljära uttryck"

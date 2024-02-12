@@ -1,5 +1,6 @@
 ---
 title:                "Organizzare il codice in funzioni"
+aliases: - /it/typescript/organizing-code-into-functions.md
 date:                  2024-01-26T01:16:20.914380-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Organizzare il codice in funzioni"

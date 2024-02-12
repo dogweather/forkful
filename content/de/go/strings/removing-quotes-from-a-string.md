@@ -1,5 +1,6 @@
 ---
 title:                "Anführungszeichen aus einem String entfernen"
+aliases: - /de/go/removing-quotes-from-a-string.md
 date:                  2024-02-03T18:07:15.503289-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Anführungszeichen aus einem String entfernen"

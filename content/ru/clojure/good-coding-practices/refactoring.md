@@ -1,5 +1,6 @@
 ---
 title:                "Рефакторинг"
+aliases: - /ru/clojure/refactoring.md
 date:                  2024-01-29T00:01:22.086969-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Рефакторинг"

@@ -1,5 +1,6 @@
 ---
 title:                "로깅"
+aliases: - /ko/powershell/logging.md
 date:                  2024-01-26T01:08:31.821530-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "로깅"

@@ -1,5 +1,6 @@
 ---
 title:                "Generowanie liczb losowych"
+aliases: - /pl/google-apps-script/generating-random-numbers.md
 date:                  2024-02-01T21:54:47.713194-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Generowanie liczb losowych"

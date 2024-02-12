@@ -1,5 +1,6 @@
 ---
 title:                "Att använda en debugger"
+aliases: - /sv/php/using-a-debugger.md
 date:                  2024-01-26T03:50:37.644178-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Att använda en debugger"

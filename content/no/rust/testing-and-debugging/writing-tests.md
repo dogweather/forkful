@@ -1,5 +1,6 @@
 ---
 title:                "Skrive tester"
+aliases: - /no/rust/writing-tests.md
 date:                  2024-02-03T19:32:04.838521-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Skrive tester"

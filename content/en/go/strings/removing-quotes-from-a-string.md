@@ -1,5 +1,6 @@
 ---
 title:                "Removing quotes from a string"
+aliases: - /en/go/removing-quotes-from-a-string.md
 date:                  2024-02-03T17:50:13.634424-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Removing quotes from a string"

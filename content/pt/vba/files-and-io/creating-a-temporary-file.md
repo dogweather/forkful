@@ -1,5 +1,6 @@
 ---
 title:                "Criando um arquivo temporário"
+aliases: - /pt/vba/creating-a-temporary-file.md
 date:                  2024-02-01T21:52:02.205436-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Criando um arquivo temporário"

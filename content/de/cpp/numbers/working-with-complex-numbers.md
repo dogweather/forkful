@@ -1,5 +1,6 @@
 ---
 title:                "Umgang mit komplexen Zahlen"
+aliases: - /de/cpp/working-with-complex-numbers.md
 date:                  2024-01-26T04:37:39.725072-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Umgang mit komplexen Zahlen"

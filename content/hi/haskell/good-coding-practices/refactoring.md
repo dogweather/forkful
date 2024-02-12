@@ -1,5 +1,6 @@
 ---
 title:                "कोड की सफाई"
+aliases: - /hi/haskell/refactoring.md
 date:                  2024-01-26T01:39:23.086692-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "कोड की सफाई"

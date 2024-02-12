@@ -1,5 +1,6 @@
 ---
 title:                "Capitalizando uma string"
+aliases: - /pt/bash/capitalizing-a-string.md
 date:                  2024-02-03T19:05:02.277461-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Capitalizando uma string"

@@ -1,5 +1,6 @@
 ---
 title:                "Ladda ner en webbsida"
+aliases: - /sv/go/downloading-a-web-page.md
 date:                  2024-02-03T17:56:15.307881-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Ladda ner en webbsida"

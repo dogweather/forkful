@@ -1,5 +1,6 @@
 ---
 title:                "Использование интерактивной оболочки (REPL)"
+aliases: - /ru/typescript/using-an-interactive-shell-repl.md
 date:                  2024-01-29T00:04:34.386349-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Использование интерактивной оболочки (REPL)"

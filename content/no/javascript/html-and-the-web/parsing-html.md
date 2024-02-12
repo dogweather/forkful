@@ -1,5 +1,6 @@
 ---
 title:                "Analysering av HTML"
+aliases: - /no/javascript/parsing-html.md
 date:                  2024-01-28T03:00:44.896374-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Analysering av HTML"

@@ -1,5 +1,6 @@
 ---
 title:                "Trovare la lunghezza di una stringa"
+aliases: - /it/google-apps-script/finding-the-length-of-a-string.md
 date:                  2024-02-01T21:53:26.978596-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Trovare la lunghezza di una stringa"

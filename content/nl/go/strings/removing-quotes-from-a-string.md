@@ -1,5 +1,6 @@
 ---
 title:                "Quotes uit een string verwijderen"
+aliases: - /nl/go/removing-quotes-from-a-string.md
 date:                  2024-02-03T18:07:06.916991-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Quotes uit een string verwijderen"

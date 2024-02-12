@@ -1,5 +1,6 @@
 ---
 title:                "표준 에러에 쓰기"
+aliases: - /ko/fish-shell/writing-to-standard-error.md
 date:                  2024-02-03T19:33:19.791839-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "표준 에러에 쓰기"

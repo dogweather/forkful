@@ -1,5 +1,6 @@
 ---
 title:                "צירוף מחרוזות"
+aliases: - /he/vba/concatenating-strings.md
 date:                  2024-02-01T21:51:39.110802-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "צירוף מחרוזות"

@@ -1,5 +1,6 @@
 ---
 title:                "TOML के साथ काम करना"
+aliases: - /hi/php/working-with-toml.md
 date:                  2024-01-26T04:26:17.441615-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "TOML के साथ काम करना"

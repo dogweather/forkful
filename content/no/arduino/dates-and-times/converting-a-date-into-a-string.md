@@ -1,5 +1,6 @@
 ---
 title:                "Konvertere en dato til en streng"
+aliases: - /no/arduino/converting-a-date-into-a-string.md
 date:                  2024-01-20T17:35:49.791070-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Konvertere en dato til en streng"

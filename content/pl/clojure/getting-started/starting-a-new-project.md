@@ -1,5 +1,6 @@
 ---
 title:                "Rozpoczynanie nowego projektu"
+aliases: - /pl/clojure/starting-a-new-project.md
 date:                  2024-01-20T18:03:18.761321-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Rozpoczynanie nowego projektu"

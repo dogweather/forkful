@@ -1,5 +1,6 @@
 ---
 title:                "数字取整"
+aliases: - /zh/typescript/rounding-numbers.md
 date:                  2024-01-26T03:47:10.707340-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "数字取整"

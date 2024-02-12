@@ -1,5 +1,6 @@
 ---
 title:                "현재 날짜 가져오기"
+aliases: - /ko/fish-shell/getting-the-current-date.md
 date:                  2024-02-03T19:09:34.352563-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "현재 날짜 가져오기"

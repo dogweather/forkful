@@ -1,5 +1,6 @@
 ---
 title:                "Textdatei einlesen"
+aliases: - /de/php/reading-a-text-file.md
 date:                  2024-01-20T17:55:05.030177-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Textdatei einlesen"

@@ -1,5 +1,6 @@
 ---
 title:                "Поиск и замена текста"
+aliases: - /ru/c-sharp/searching-and-replacing-text.md
 date:                  2024-01-29T00:01:49.317010-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Поиск и замена текста"

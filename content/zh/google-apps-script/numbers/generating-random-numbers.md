@@ -1,5 +1,6 @@
 ---
 title:                "生成随机数"
+aliases: - /zh/google-apps-script/generating-random-numbers.md
 date:                  2024-02-01T21:54:11.962863-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "生成随机数"

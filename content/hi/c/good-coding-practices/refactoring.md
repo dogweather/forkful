@@ -1,5 +1,6 @@
 ---
 title:                "रीफैक्टरिंग"
+aliases: - /hi/c/refactoring.md
 date:                  2024-02-03T18:08:39.525151-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "रीफैक्टरिंग"

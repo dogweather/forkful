@@ -1,5 +1,6 @@
 ---
 title:                "디버거 사용하기"
+aliases: - /ko/typescript/using-a-debugger.md
 date:                  2024-01-26T04:11:23.665698-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "디버거 사용하기"

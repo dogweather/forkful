@@ -1,5 +1,6 @@
 ---
 title:                "רפקטורינג"
+aliases: - /he/python/refactoring.md
 date:                  2024-01-26T03:38:14.189782-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "רפקטורינג"

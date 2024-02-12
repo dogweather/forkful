@@ -1,5 +1,6 @@
 ---
 title:                "Usando um depurador"
+aliases: - /pt/ruby/using-a-debugger.md
 date:                  2024-01-26T04:09:50.906949-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Usando um depurador"

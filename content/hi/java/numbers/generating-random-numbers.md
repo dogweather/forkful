@@ -1,5 +1,6 @@
 ---
 title:                "यादृच्छिक संख्याएँ उत्पन्न करना"
+aliases: - /hi/java/generating-random-numbers.md
 date:                  2024-01-27T20:35:45.590451-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "यादृच्छिक संख्याएँ उत्पन्न करना"

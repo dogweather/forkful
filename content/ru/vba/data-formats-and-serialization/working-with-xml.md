@@ -1,5 +1,6 @@
 ---
 title:                "Работа с XML"
+aliases: - /ru/vba/working-with-xml.md
 date:                  2024-02-01T22:07:04.419728-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Работа с XML"

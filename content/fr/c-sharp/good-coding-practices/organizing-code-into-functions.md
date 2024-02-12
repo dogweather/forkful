@@ -1,5 +1,6 @@
 ---
 title:                "Organisation du code en fonctions"
+aliases: - /fr/c-sharp/organizing-code-into-functions.md
 date:                  2024-01-26T01:09:41.385527-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Organisation du code en fonctions"

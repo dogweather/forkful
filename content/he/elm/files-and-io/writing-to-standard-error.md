@@ -1,5 +1,6 @@
 ---
 title:                "כתיבה לפלט השגיאה הסטנדרטי"
+aliases: - /he/elm/writing-to-standard-error.md
 date:                  2024-01-19
 simple_title:         "כתיבה לפלט השגיאה הסטנדרטי"
 

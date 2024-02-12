@@ -1,5 +1,6 @@
 ---
 title:                "Использование ассоциативных массивов"
+aliases: - /ru/java/using-associative-arrays.md
 date:                  2024-01-30T19:12:04.424773-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Использование ассоциативных массивов"

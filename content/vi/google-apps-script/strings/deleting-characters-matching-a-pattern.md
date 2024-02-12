@@ -1,5 +1,6 @@
 ---
 title:                "Xóa các ký tự phù hợp với một mẫu"
+aliases: - /vi/google-apps-script/deleting-characters-matching-a-pattern.md
 date:                  2024-02-01T21:52:35.584252-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Xóa các ký tự phù hợp với một mẫu"

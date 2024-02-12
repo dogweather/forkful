@@ -1,5 +1,6 @@
 ---
 title:                "난수 생성"
+aliases: - /ko/swift/generating-random-numbers.md
 date:                  2024-01-27T20:35:33.167862-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "난수 생성"

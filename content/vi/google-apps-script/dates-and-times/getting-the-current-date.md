@@ -1,5 +1,6 @@
 ---
 title:                "Lấy ngày hiện tại"
+aliases: - /vi/google-apps-script/getting-the-current-date.md
 date:                  2024-02-01T21:55:04.459691-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Lấy ngày hiện tại"

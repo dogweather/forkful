@@ -1,5 +1,6 @@
 ---
 title:                "Lendo um arquivo de texto"
+aliases: - /pt/google-apps-script/reading-a-text-file.md
 date:                  2024-02-01T21:58:12.466959-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Lendo um arquivo de texto"

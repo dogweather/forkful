@@ -1,5 +1,6 @@
 ---
 title:                "デバッガの使用"
+aliases: - /ja/c/using-a-debugger.md
 date:                  2024-02-03T18:10:07.387208-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "デバッガの使用"

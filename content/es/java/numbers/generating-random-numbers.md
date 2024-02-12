@@ -1,5 +1,6 @@
 ---
 title:                "Generación de números aleatorios"
+aliases: - /es/java/generating-random-numbers.md
 date:                  2024-01-27T20:34:03.190611-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Generación de números aleatorios"

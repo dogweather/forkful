@@ -1,5 +1,6 @@
 ---
 title:                "检查目录是否存在"
+aliases: - /zh/elm/checking-if-a-directory-exists.md
 date:                  2024-01-19
 simple_title:         "检查目录是否存在"
 

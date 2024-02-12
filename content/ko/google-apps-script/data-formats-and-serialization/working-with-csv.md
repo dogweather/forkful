@@ -1,5 +1,6 @@
 ---
 title:                "CSV 파일로 작업하기"
+aliases: - /ko/google-apps-script/working-with-csv.md
 date:                  2024-02-01T22:05:45.264145-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "CSV 파일로 작업하기"

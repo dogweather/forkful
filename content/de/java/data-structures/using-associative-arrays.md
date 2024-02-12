@@ -1,5 +1,6 @@
 ---
 title:                "Verwendung von assoziativen Arrays"
+aliases: - /de/java/using-associative-arrays.md
 date:                  2024-01-30T19:11:41.047999-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Verwendung von assoziativen Arrays"

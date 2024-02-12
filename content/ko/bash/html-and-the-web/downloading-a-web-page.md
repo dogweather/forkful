@@ -1,5 +1,6 @@
 ---
 title:                "웹 페이지 다운로드하기"
+aliases: - /ko/bash/downloading-a-web-page.md
 date:                  2024-01-20T17:43:37.772706-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "웹 페이지 다운로드하기"

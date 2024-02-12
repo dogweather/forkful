@@ -1,5 +1,6 @@
 ---
 title:                "स्ट्रिंग से एक तारीख पार्स करना"
+aliases: - /hi/vba/parsing-a-date-from-a-string.md
 date:                  2024-02-01T21:59:05.507406-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "स्ट्रिंग से एक तारीख पार्स करना"

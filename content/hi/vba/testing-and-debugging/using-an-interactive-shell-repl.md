@@ -1,5 +1,6 @@
 ---
 title:                "एक इंटरैक्टिव शैल (REPL) का उपयोग करना"
+aliases: - /hi/vba/using-an-interactive-shell-repl.md
 date:                  2024-02-01T22:05:36.658066-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "एक इंटरैक्टिव शैल (REPL) का उपयोग करना"

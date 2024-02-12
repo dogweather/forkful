@@ -1,5 +1,6 @@
 ---
 title:                "Usando expresiones regulares"
+aliases: - /es/google-apps-script/using-regular-expressions.md
 date:                  2024-02-01T22:04:19.664601-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Usando expresiones regulares"

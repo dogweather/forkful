@@ -1,5 +1,6 @@
 ---
 title:                "Reading command line arguments"
+aliases: - /en/google-apps-script/reading-command-line-arguments.md
 date:                  2024-02-01T21:12:11.076997-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Reading command line arguments"

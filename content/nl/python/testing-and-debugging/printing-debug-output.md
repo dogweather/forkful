@@ -1,5 +1,6 @@
 ---
 title:                "Debug-output afdrukken"
+aliases: - /nl/python/printing-debug-output.md
 date:                  2024-01-28T22:05:04.743713-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Debug-output afdrukken"

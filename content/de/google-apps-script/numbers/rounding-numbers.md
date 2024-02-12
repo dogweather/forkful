@@ -1,5 +1,6 @@
 ---
 title:                "Runden von Zahlen"
+aliases: - /de/google-apps-script/rounding-numbers.md
 date:                  2024-02-01T22:02:45.565432-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Runden von Zahlen"

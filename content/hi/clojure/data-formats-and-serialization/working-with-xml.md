@@ -1,5 +1,6 @@
 ---
 title:                "XML के साथ काम करना"
+aliases: - /hi/clojure/working-with-xml.md
 date:                  2024-01-26T04:30:41.072909-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "XML के साथ काम करना"

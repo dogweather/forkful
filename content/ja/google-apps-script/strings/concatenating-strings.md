@@ -1,5 +1,6 @@
 ---
 title:                "文字列の連結"
+aliases: - /ja/google-apps-script/concatenating-strings.md
 date:                  2024-02-01T21:50:17.932776-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "文字列の連結"

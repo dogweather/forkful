@@ -1,5 +1,6 @@
 ---
 title:                "Een datum uit een string parsen"
+aliases: - /nl/python/parsing-a-date-from-a-string.md
 date:                  2024-01-28T22:04:03.966091-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een datum uit een string parsen"

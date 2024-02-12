@@ -1,5 +1,6 @@
 ---
 title:                "Substrings extraheren"
+aliases: - /nl/python/extracting-substrings.md
 date:                  2024-01-28T21:59:49.328173-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Substrings extraheren"

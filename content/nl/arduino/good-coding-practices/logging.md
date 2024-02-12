@@ -1,5 +1,6 @@
 ---
 title:                "Logboekregistratie"
+aliases: - /nl/arduino/logging.md
 date:                  2024-01-28T22:02:36.678485-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Logboekregistratie"

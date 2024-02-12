@@ -1,5 +1,6 @@
 ---
 title:                "Zeichenketten verknüpfen"
+aliases: - /de/javascript/concatenating-strings.md
 date:                  2024-01-20T17:35:06.461991-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Zeichenketten verknüpfen"

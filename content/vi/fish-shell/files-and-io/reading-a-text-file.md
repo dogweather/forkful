@@ -1,5 +1,6 @@
 ---
 title:                "Đọc một tệp văn bản"
+aliases: - /vi/fish-shell/reading-a-text-file.md
 date:                  2024-01-28T22:05:47.966017-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Đọc một tệp văn bản"

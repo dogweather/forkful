@@ -1,5 +1,6 @@
 ---
 title:                "Organizacja kodu w funkcje"
+aliases: - /pl/arduino/organizing-code-into-functions.md
 date:                  2024-01-26T01:08:39.068763-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Organizacja kodu w funkcje"

@@ -1,5 +1,6 @@
 ---
 title:                "Lendo um arquivo de texto"
+aliases: - /pt/vba/reading-a-text-file.md
 date:                  2024-02-01T21:58:35.176483-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Lendo um arquivo de texto"

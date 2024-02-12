@@ -1,5 +1,6 @@
 ---
 title:                "Запись в стандартный поток ошибок"
+aliases: - /ru/arduino/writing-to-standard-error.md
 date:                  2024-01-29T00:06:29.591462-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Запись в стандартный поток ошибок"

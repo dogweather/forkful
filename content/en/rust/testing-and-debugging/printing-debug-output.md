@@ -1,5 +1,6 @@
 ---
 title:                "Printing debug output"
+aliases: - /en/rust/printing-debug-output.md
 date:                  2024-01-20T17:53:24.504452-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Printing debug output"

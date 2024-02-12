@@ -1,5 +1,6 @@
 ---
 title:                "下载网页"
+aliases: - /zh/go/downloading-a-web-page.md
 date:                  2024-02-03T17:56:12.181763-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "下载网页"

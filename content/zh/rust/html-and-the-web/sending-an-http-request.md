@@ -1,5 +1,6 @@
 ---
 title:                "发出 HTTP 请求"
+aliases: - /zh/rust/sending-an-http-request.md
 date:                  2024-01-20T18:00:27.162829-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "发出 HTTP 请求"

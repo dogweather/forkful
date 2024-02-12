@@ -1,5 +1,6 @@
 ---
 title:                "基本認証を用いたHTTPリクエストの送信"
+aliases: - /ja/vba/sending-an-http-request-with-basic-authentication.md
 date:                  2024-02-01T22:02:51.315074-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "基本認証を用いたHTTPリクエストの送信"

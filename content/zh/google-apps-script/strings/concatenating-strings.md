@@ -1,5 +1,6 @@
 ---
 title:                "字符串拼接"
+aliases: - /zh/google-apps-script/concatenating-strings.md
 date:                  2024-02-01T21:50:18.849415-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "字符串拼接"

@@ -1,5 +1,6 @@
 ---
 title:                "Merkkijonojen osien poimiminen"
+aliases: - /fi/cpp/extracting-substrings.md
 date:                  2024-01-20T17:45:06.144602-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Merkkijonojen osien poimiminen"

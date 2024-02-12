@@ -1,5 +1,6 @@
 ---
 title:                "Jobbe med TOML"
+aliases: - /no/powershell/working-with-toml.md
 date:                  2024-01-26T04:25:01.192071-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Jobbe med TOML"

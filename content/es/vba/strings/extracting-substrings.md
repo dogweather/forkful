@@ -1,5 +1,6 @@
 ---
 title:                "Extracción de subcadenas"
+aliases: - /es/vba/extracting-substrings.md
 date:                  2024-02-01T21:53:20.790562-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Extracción de subcadenas"

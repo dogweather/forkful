@@ -1,5 +1,6 @@
 ---
 title:                "删除匹配模式的字符"
+aliases: - /zh/google-apps-script/deleting-characters-matching-a-pattern.md
 date:                  2024-02-01T21:52:19.988095-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "删除匹配模式的字符"

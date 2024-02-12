@@ -1,5 +1,6 @@
 ---
 title:                "Debug-output afdrukken"
+aliases: - /nl/powershell/printing-debug-output.md
 date:                  2024-01-28T22:05:06.976620-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Debug-output afdrukken"

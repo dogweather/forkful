@@ -1,5 +1,6 @@
 ---
 title:                "Att organisera kod i funktioner"
+aliases: - /sv/php/organizing-code-into-functions.md
 date:                  2024-01-26T01:11:40.201558-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Att organisera kod i funktioner"

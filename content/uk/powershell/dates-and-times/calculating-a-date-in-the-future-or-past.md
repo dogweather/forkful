@@ -1,5 +1,6 @@
 ---
 title:                "Обчислення дати у майбутньому або минулому"
+aliases: - /uk/powershell/calculating-a-date-in-the-future-or-past.md
 date:                  2024-01-20T17:32:20.542708-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Обчислення дати у майбутньому або минулому"

@@ -1,5 +1,6 @@
 ---
 title:                "ディレクトリが存在するかどうかの確認"
+aliases: - /ja/vba/checking-if-a-directory-exists.md
 date:                  2024-02-01T21:49:14.620435-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "ディレクトリが存在するかどうかの確認"

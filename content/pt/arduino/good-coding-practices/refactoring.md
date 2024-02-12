@@ -1,5 +1,6 @@
 ---
 title:                "Refatoração"
+aliases: - /pt/arduino/refactoring.md
 date:                  2024-01-26T01:16:27.752628-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Refatoração"

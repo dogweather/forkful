@@ -1,5 +1,6 @@
 ---
 title:                "Удаление символов, соответствующих шаблону"
+aliases: - /ru/google-apps-script/deleting-characters-matching-a-pattern.md
 date:                  2024-02-01T21:52:28.094753-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Удаление символов, соответствующих шаблону"

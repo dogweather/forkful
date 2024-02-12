@@ -1,5 +1,6 @@
 ---
 title:                "乱数の生成"
+aliases: - /ja/java/generating-random-numbers.md
 date:                  2024-01-27T20:34:41.201371-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "乱数の生成"

@@ -1,5 +1,6 @@
 ---
 title:                "Analizando una fecha a partir de una cadena de texto"
+aliases: - /es/google-apps-script/parsing-a-date-from-a-string.md
 date:                  2024-02-01T21:57:27.099416-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Analizando una fecha a partir de una cadena de texto"

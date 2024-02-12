@@ -1,5 +1,6 @@
 ---
 title:                "एक स्ट्रिंग को लोअर केस में परिवर्तित करना"
+aliases: - /hi/c/converting-a-string-to-lower-case.md
 date:                  2024-02-03T17:55:56.765911-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "एक स्ट्रिंग को लोअर केस में परिवर्तित करना"

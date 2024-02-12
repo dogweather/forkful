@@ -1,5 +1,6 @@
 ---
 title:                "חילוץ תת-מחרוזות"
+aliases: - /he/arduino/extracting-substrings.md
 date:                  2024-01-20T17:45:03.101783-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "חילוץ תת-מחרוזות"

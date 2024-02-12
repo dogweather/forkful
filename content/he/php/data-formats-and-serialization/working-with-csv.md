@@ -1,5 +1,6 @@
 ---
 title:                "עובדים עם CSV"
+aliases: - /he/php/working-with-csv.md
 date:                  2024-02-03T19:21:07.719721-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "עובדים עם CSV"

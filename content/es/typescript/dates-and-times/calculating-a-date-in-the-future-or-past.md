@@ -1,5 +1,6 @@
 ---
 title:                "Calcular una fecha en el futuro o pasado"
+aliases: - /es/typescript/calculating-a-date-in-the-future-or-past.md
 date:                  2024-01-20T17:32:12.450417-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Calcular una fecha en el futuro o pasado"

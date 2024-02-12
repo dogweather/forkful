@@ -1,5 +1,6 @@
 ---
 title:                "TOMLを操作する"
+aliases: - /ja/c/working-with-toml.md
 date:                  2024-02-03T18:12:45.945263-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "TOMLを操作する"

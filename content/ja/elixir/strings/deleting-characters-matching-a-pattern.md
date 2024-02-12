@@ -1,5 +1,6 @@
 ---
 title:                "パターンに一致する文字を削除する"
+aliases: - /ja/elixir/deleting-characters-matching-a-pattern.md
 date:                  2024-01-20T17:41:57.063406-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "パターンに一致する文字を削除する"

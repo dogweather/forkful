@@ -1,5 +1,6 @@
 ---
 title:                "Viết hoa một chuỗi"
+aliases: - /vi/google-apps-script/capitalizing-a-string.md
 date:                  2024-02-01T21:49:51.528118-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Viết hoa một chuỗi"

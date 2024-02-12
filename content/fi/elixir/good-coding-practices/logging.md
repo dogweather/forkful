@@ -1,5 +1,6 @@
 ---
 title:                "Lokitus"
+aliases: - /fi/elixir/logging.md
 date:                  2024-01-26T01:02:40.962528-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Lokitus"

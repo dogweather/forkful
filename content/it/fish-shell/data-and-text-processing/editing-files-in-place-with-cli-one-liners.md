@@ -1,5 +1,6 @@
 ---
 title:                "Modifica dei file sul posto con righe di comando CLI"
+aliases: - /it/fish-shell/editing-files-in-place-with-cli-one-liners.md
 date:                  2024-01-27T16:20:47.378695-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Modifica dei file sul posto con righe di comando CLI"

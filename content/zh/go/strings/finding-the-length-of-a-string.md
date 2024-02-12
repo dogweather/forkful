@@ -1,5 +1,6 @@
 ---
 title:                "查找字符串的长度"
+aliases: - /zh/go/finding-the-length-of-a-string.md
 date:                  2024-02-03T17:57:21.197982-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "查找字符串的长度"

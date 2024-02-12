@@ -1,5 +1,6 @@
 ---
 title:                "JSON과 함께 일하기"
+aliases: - /ko/cpp/working-with-json.md
 date:                  2024-02-03T19:22:08.807630-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "JSON과 함께 일하기"

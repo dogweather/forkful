@@ -1,5 +1,6 @@
 ---
 title:                "הדפסת פלט ניפוי שגיאות"
+aliases: - /he/c/printing-debug-output.md
 date:                  2024-02-03T18:06:20.287610-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "הדפסת פלט ניפוי שגיאות"

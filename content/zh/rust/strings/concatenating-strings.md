@@ -1,5 +1,6 @@
 ---
 title:                "字符串拼接"
+aliases: - /zh/rust/concatenating-strings.md
 date:                  2024-01-20T17:35:42.085746-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "字符串拼接"

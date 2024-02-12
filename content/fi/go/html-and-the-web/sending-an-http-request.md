@@ -1,5 +1,6 @@
 ---
 title:                "HTTP-pyynnön lähettäminen"
+aliases: - /fi/go/sending-an-http-request.md
 date:                  2024-02-03T18:08:40.363062-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "HTTP-pyynnön lähettäminen"

@@ -1,5 +1,6 @@
 ---
 title:                "Finn lengden på en streng"
+aliases: - /no/c-sharp/finding-the-length-of-a-string.md
 date:                  2024-01-20T17:47:22.666813-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Finn lengden på en streng"

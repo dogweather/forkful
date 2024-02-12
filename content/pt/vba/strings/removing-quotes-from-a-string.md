@@ -1,5 +1,6 @@
 ---
 title:                "Removendo aspas de uma string"
+aliases: - /pt/vba/removing-quotes-from-a-string.md
 date:                  2024-02-01T22:00:11.520973-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Removendo aspas de uma string"

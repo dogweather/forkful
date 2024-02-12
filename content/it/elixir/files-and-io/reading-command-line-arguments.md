@@ -1,5 +1,6 @@
 ---
 title:                "Lettura degli argomenti della riga di comando"
+aliases: - /it/elixir/reading-command-line-arguments.md
 date:                  2024-01-20T17:55:35.941248-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Lettura degli argomenti della riga di comando"

@@ -1,5 +1,6 @@
 ---
 title:                "Parsing HTML"
+aliases: - /en/typescript/parsing-html.md
 date:                  2024-01-20T15:33:59.686760-07:00
 simple_title:         "Parsing HTML"
 

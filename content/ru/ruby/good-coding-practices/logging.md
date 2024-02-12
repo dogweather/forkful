@@ -1,5 +1,6 @@
 ---
 title:                "Журналирование"
+aliases: - /ru/ruby/logging.md
 date:                  2024-01-28T23:59:56.168042-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Журналирование"

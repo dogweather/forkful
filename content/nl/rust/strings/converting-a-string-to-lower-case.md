@@ -1,5 +1,6 @@
 ---
 title:                "Een string omzetten naar kleine letters"
+aliases: - /nl/rust/converting-a-string-to-lower-case.md
 date:                  2024-01-28T21:57:37.760875-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een string omzetten naar kleine letters"

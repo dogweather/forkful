@@ -1,5 +1,6 @@
 ---
 title:                "Using a debugger"
+aliases: - /en/java/using-a-debugger.md
 date:                  2024-01-25T20:50:33.901208-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Using a debugger"

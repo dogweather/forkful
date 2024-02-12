@@ -1,5 +1,6 @@
 ---
 title:                "Debuggerin käyttö"
+aliases: - /fi/python/using-a-debugger.md
 date:                  2024-01-26T04:09:00.655890-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Debuggerin käyttö"

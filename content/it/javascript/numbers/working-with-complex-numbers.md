@@ -1,5 +1,6 @@
 ---
 title:                "Lavorare con i numeri complessi"
+aliases: - /it/javascript/working-with-complex-numbers.md
 date:                  2024-01-26T04:42:38.272858-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Lavorare con i numeri complessi"

@@ -1,5 +1,6 @@
 ---
 title:                "कोड को फ़ंक्शन्स में व्यवस्थित करना"
+aliases: - /hi/fish-shell/organizing-code-into-functions.md
 date:                  2024-01-28T23:02:50.956450-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "कोड को फ़ंक्शन्स में व्यवस्थित करना"

@@ -1,5 +1,6 @@
 ---
 title:                "Analisi di una data da una stringa"
+aliases: - /it/google-apps-script/parsing-a-date-from-a-string.md
 date:                  2024-02-01T21:58:16.357183-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Analisi di una data da una stringa"

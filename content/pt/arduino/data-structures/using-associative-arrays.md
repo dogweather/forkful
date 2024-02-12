@@ -1,5 +1,6 @@
 ---
 title:                "Usando arrays associativos"
+aliases: - /pt/arduino/using-associative-arrays.md
 date:                  2024-01-30T19:09:58.986336-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Usando arrays associativos"

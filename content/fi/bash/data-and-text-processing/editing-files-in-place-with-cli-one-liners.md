@@ -1,5 +1,6 @@
 ---
 title:                "Tiedostojen muokkaaminen paikan päällä komentorivin yhden rivin komennoilla"
+aliases: - /fi/bash/editing-files-in-place-with-cli-one-liners.md
 date:                  2024-01-27T16:21:24.978556-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Tiedostojen muokkaaminen paikan päällä komentorivin yhden rivin komennoilla"

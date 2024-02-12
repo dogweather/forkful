@@ -1,5 +1,6 @@
 ---
 title:                "基本認証を使用したHTTPリクエストの送信"
+aliases: - /ja/php/sending-an-http-request-with-basic-authentication.md
 date:                  2024-01-20T18:02:18.596952-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "基本認証を使用したHTTPリクエストの送信"

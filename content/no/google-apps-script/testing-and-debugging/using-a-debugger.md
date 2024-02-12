@@ -1,5 +1,6 @@
 ---
 title:                "Bruker en debugger"
+aliases: - /no/google-apps-script/using-a-debugger.md
 date:                  2024-02-01T22:03:17.586174-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Bruker en debugger"

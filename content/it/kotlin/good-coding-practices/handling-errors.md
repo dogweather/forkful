@@ -1,5 +1,6 @@
 ---
 title:                "Gestione degli errori"
+aliases: - /it/kotlin/handling-errors.md
 date:                  2024-01-26T00:54:58.086191-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Gestione degli errori"

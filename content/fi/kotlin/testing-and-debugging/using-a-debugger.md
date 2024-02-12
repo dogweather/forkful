@@ -1,5 +1,6 @@
 ---
 title:                "Debuggerin käyttö"
+aliases: - /fi/kotlin/using-a-debugger.md
 date:                  2024-01-26T03:50:23.101377-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Debuggerin käyttö"

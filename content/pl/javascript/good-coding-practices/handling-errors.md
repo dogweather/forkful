@@ -1,5 +1,6 @@
 ---
 title:                "Obsługa błędów"
+aliases: - /pl/javascript/handling-errors.md
 date:                  2024-01-26T00:54:39.654739-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Obsługa błędów"

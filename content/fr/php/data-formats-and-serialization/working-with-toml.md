@@ -1,5 +1,6 @@
 ---
 title:                "Travailler avec TOML"
+aliases: - /fr/php/working-with-toml.md
 date:                  2024-01-26T04:24:32.114954-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Travailler avec TOML"

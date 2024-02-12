@@ -1,5 +1,6 @@
 ---
 title:                "Obliczanie daty w przyszłości lub przeszłości"
+aliases: - /pl/vba/calculating-a-date-in-the-future-or-past.md
 date:                  2024-02-01T21:49:31.039455-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Obliczanie daty w przyszłości lub przeszłości"

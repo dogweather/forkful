@@ -1,5 +1,6 @@
 ---
 title:                "테스트 작성하기"
+aliases: - /ko/swift/writing-tests.md
 date:                  2024-02-03T19:32:05.546152-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "테스트 작성하기"

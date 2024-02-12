@@ -1,5 +1,6 @@
 ---
 title:                "Å bruke en debugger"
+aliases: - /no/rust/using-a-debugger.md
 date:                  2024-01-26T04:10:23.734989-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Å bruke en debugger"

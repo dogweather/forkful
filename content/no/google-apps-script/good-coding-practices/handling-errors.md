@@ -1,5 +1,6 @@
 ---
 title:                "Håndtering av feil"
+aliases: - /no/google-apps-script/handling-errors.md
 date:                  2024-02-01T21:55:02.798996-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Håndtering av feil"

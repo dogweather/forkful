@@ -1,5 +1,6 @@
 ---
 title:                "שימוש במעטפת אינטראקטיבית (REPL)"
+aliases: - /he/elixir/using-an-interactive-shell-repl.md
 date:                  2024-01-26T04:13:33.725768-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "שימוש במעטפת אינטראקטיבית (REPL)"

@@ -1,5 +1,6 @@
 ---
 title:                "Generating random numbers"
+aliases: - /en/c-sharp/generating-random-numbers.md
 date:                  2024-01-27T20:26:21.009989-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Generating random numbers"

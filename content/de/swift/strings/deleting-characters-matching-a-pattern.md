@@ -1,5 +1,6 @@
 ---
 title:                "Löschen von Zeichen, die einem Muster entsprechen"
+aliases: - /de/swift/deleting-characters-matching-a-pattern.md
 date:                  2024-01-20T17:43:05.150936-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Löschen von Zeichen, die einem Muster entsprechen"

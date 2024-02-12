@@ -1,5 +1,6 @@
 ---
 title:                "Створення текстового файлу"
+aliases: - /uk/elm/writing-a-text-file.md
 date:                  2024-01-19
 simple_title:         "Створення текстового файлу"
 

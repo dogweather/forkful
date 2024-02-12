@@ -1,5 +1,6 @@
 ---
 title:                "Tulevaisuuden tai menneisyyden päivämäärän laskeminen"
+aliases: - /fi/cpp/calculating-a-date-in-the-future-or-past.md
 date:                  2024-01-20T17:28:36.793597-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Tulevaisuuden tai menneisyyden päivämäärän laskeminen"

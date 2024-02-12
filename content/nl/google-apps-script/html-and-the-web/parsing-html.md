@@ -1,5 +1,6 @@
 ---
 title:                "HTML Parsen"
+aliases: - /nl/google-apps-script/parsing-html.md
 date:                  2024-02-01T21:57:20.435928-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "HTML Parsen"

@@ -1,5 +1,6 @@
 ---
 title:                "Использование регулярных выражений"
+aliases: - /ru/clojure/using-regular-expressions.md
 date:                  2024-01-29T00:03:20.644683-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Использование регулярных выражений"

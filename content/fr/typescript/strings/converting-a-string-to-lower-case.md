@@ -1,5 +1,6 @@
 ---
 title:                "Conversion d'une chaîne de caractères en minuscules"
+aliases: - /fr/typescript/converting-a-string-to-lower-case.md
 date:                  2024-01-20T17:39:25.300864-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Conversion d'une chaîne de caractères en minuscules"

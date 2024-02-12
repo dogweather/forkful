@@ -1,5 +1,6 @@
 ---
 title:                "Slette tegn som samsvarer med et mønster"
+aliases: - /no/vba/deleting-characters-matching-a-pattern.md
 date:                  2024-02-01T21:52:22.415154-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Slette tegn som samsvarer med et mønster"

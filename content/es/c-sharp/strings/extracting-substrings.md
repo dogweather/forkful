@@ -1,5 +1,6 @@
 ---
 title:                "Extracción de subcadenas"
+aliases: - /es/c-sharp/extracting-substrings.md
 date:                  2024-01-20T17:45:19.003405-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Extracción de subcadenas"

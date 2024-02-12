@@ -1,5 +1,6 @@
 ---
 title:                "Zoeken en vervangen van tekst"
+aliases: - /nl/fish-shell/searching-and-replacing-text.md
 date:                  2024-01-28T22:06:59.744270-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Zoeken en vervangen van tekst"

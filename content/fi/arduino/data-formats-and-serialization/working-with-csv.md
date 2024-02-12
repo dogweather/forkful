@@ -1,5 +1,6 @@
 ---
 title:                "Työskentely CSV:n kanssa"
+aliases: - /fi/arduino/working-with-csv.md
 date:                  2024-02-03T19:19:08.375240-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Työskentely CSV:n kanssa"

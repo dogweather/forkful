@@ -1,5 +1,6 @@
 ---
 title:                "Obtendo a data atual"
+aliases: - /pt/bash/getting-the-current-date.md
 date:                  2024-02-03T19:08:47.385974-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Obtendo a data atual"

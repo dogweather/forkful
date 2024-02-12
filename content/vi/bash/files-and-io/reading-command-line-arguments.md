@@ -1,5 +1,6 @@
 ---
 title:                "Đọc các đối số dòng lệnh"
+aliases: - /vi/bash/reading-command-line-arguments.md
 date:                  2024-01-28T22:05:22.981989-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Đọc các đối số dòng lệnh"

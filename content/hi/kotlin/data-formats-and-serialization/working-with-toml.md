@@ -1,5 +1,6 @@
 ---
 title:                "TOML के साथ काम करना"
+aliases: - /hi/kotlin/working-with-toml.md
 date:                  2024-01-26T04:24:35.134946-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "TOML के साथ काम करना"

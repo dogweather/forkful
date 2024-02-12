@@ -1,5 +1,6 @@
 ---
 title:                "Tekstitiedoston kirjoittaminen"
+aliases: - /fi/lua/writing-a-text-file.md
 date:                  2024-02-03T19:28:56.205256-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Tekstitiedoston kirjoittaminen"

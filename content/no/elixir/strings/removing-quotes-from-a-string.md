@@ -1,5 +1,6 @@
 ---
 title:                "Fjerne anførselstegn fra en streng"
+aliases: - /no/elixir/removing-quotes-from-a-string.md
 date:                  2024-01-26T03:38:39.543946-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Fjerne anførselstegn fra en streng"

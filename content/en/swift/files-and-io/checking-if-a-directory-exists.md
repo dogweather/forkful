@@ -1,5 +1,6 @@
 ---
 title:                "Checking if a directory exists"
+aliases: - /en/swift/checking-if-a-directory-exists.md
 date:                  2024-02-03T19:02:41.389086-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Checking if a directory exists"

@@ -1,5 +1,6 @@
 ---
 title:                "Écrire un fichier texte"
+aliases: - /fr/go/writing-a-text-file.md
 date:                  2024-02-03T18:14:41.715386-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Écrire un fichier texte"

@@ -1,5 +1,6 @@
 ---
 title:                "文字列の補間"
+aliases: - /ja/google-apps-script/interpolating-a-string.md
 date:                  2024-02-01T21:55:32.031295-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "文字列の補間"

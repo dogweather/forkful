@@ -1,5 +1,6 @@
 ---
 title:                "Преобразование даты в строку"
+aliases: - /ru/ruby/converting-a-date-into-a-string.md
 date:                  2024-01-28T23:56:52.499728-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Преобразование даты в строку"

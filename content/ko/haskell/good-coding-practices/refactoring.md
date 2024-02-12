@@ -1,5 +1,6 @@
 ---
 title:                "리팩토링"
+aliases: - /ko/haskell/refactoring.md
 date:                  2024-01-26T01:18:48.891605-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "리팩토링"

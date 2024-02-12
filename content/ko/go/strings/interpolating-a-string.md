@@ -1,5 +1,6 @@
 ---
 title:                "문자열 보간하기"
+aliases: - /ko/go/interpolating-a-string.md
 date:                  2024-02-03T17:58:39.603739-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "문자열 보간하기"

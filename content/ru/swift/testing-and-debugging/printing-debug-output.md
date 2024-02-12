@@ -1,5 +1,6 @@
 ---
 title:                "Вывод отладочной информации"
+aliases: - /ru/swift/printing-debug-output.md
 date:                  2024-01-29T00:01:06.931134-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Вывод отладочной информации"

@@ -1,5 +1,6 @@
 ---
 title:                "Twee datums vergelijken"
+aliases: - /nl/swift/comparing-two-dates.md
 date:                  2024-01-28T21:56:49.517361-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Twee datums vergelijken"

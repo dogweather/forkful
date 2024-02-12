@@ -1,5 +1,6 @@
 ---
 title:                "עבודה עם XML"
+aliases: - /he/rust/working-with-xml.md
 date:                  2024-01-26T04:36:06.786893-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "עבודה עם XML"

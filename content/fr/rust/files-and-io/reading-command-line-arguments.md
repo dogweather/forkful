@@ -1,5 +1,6 @@
 ---
 title:                "Lecture des arguments de ligne de commande"
+aliases: - /fr/rust/reading-command-line-arguments.md
 date:                  2024-01-20T17:57:02.773083-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Lecture des arguments de ligne de commande"

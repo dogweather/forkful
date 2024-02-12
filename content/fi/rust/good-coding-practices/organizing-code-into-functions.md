@@ -1,5 +1,6 @@
 ---
 title:                "Koodin järjestäminen funktioihin"
+aliases: - /fi/rust/organizing-code-into-functions.md
 date:                  2024-01-26T01:16:17.280527-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Koodin järjestäminen funktioihin"

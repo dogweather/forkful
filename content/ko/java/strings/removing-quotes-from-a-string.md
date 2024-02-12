@@ -1,5 +1,6 @@
 ---
 title:                "문자열에서 따옴표 제거하기"
+aliases: - /ko/java/removing-quotes-from-a-string.md
 date:                  2024-01-26T03:40:12.541978-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "문자열에서 따옴표 제거하기"

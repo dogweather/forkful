@@ -1,5 +1,6 @@
 ---
 title:                "רישום"
+aliases: - /he/google-apps-script/logging.md
 date:                  2024-02-01T21:59:45.040821-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "רישום"

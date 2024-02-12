@@ -1,5 +1,6 @@
 ---
 title:                "Kahden päivämäärän vertailu"
+aliases: - /fi/bash/comparing-two-dates.md
 date:                  2024-01-20T17:32:12.845879-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Kahden päivämäärän vertailu"

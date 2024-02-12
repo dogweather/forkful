@@ -1,5 +1,6 @@
 ---
 title:                "Een HTTP-verzoek verzenden"
+aliases: - /nl/vba/sending-an-http-request.md
 date:                  2024-02-01T22:02:03.289938-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een HTTP-verzoek verzenden"

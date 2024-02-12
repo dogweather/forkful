@@ -1,5 +1,6 @@
 ---
 title:                "将代码组织成函数"
+aliases: - /zh/c-sharp/organizing-code-into-functions.md
 date:                  2024-01-26T01:10:14.468997-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "将代码组织成函数"

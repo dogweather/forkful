@@ -1,5 +1,6 @@
 ---
 title:                "搜索和替换文本"
+aliases: - /zh/google-apps-script/searching-and-replacing-text.md
 date:                  2024-02-01T22:01:10.965839-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "搜索和替换文本"

@@ -1,5 +1,6 @@
 ---
 title:                "Gửi một yêu cầu HTTP"
+aliases: - /vi/bash/sending-an-http-request.md
 date:                  2024-01-28T22:07:30.762761-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Gửi một yêu cầu HTTP"

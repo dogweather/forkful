@@ -1,5 +1,6 @@
 ---
 title:                "Aktuelles Datum abrufen"
+aliases: - /de/elm/getting-the-current-date.md
 date:                  2024-01-20T15:14:15.658251-07:00
 simple_title:         "Aktuelles Datum abrufen"
 

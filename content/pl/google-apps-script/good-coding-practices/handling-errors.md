@@ -1,5 +1,6 @@
 ---
 title:                "Obsługa błędów"
+aliases: - /pl/google-apps-script/handling-errors.md
 date:                  2024-02-01T21:55:03.249739-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Obsługa błędów"

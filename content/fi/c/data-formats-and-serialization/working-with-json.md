@@ -1,5 +1,6 @@
 ---
 title:                "Työskentely JSONin kanssa"
+aliases: - /fi/c/working-with-json.md
 date:                  2024-02-03T18:11:57.197941-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Työskentely JSONin kanssa"

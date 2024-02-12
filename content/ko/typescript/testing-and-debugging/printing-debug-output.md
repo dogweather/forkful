@@ -1,5 +1,6 @@
 ---
 title:                "디버그 출력을 찍어보기"
+aliases: - /ko/typescript/printing-debug-output.md
 date:                  2024-01-20T17:53:54.326117-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "디버그 출력을 찍어보기"

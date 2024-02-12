@@ -1,5 +1,6 @@
 ---
 title:                "重构"
+aliases: - /zh/google-apps-script/refactoring.md
 date:                  2024-02-01T21:59:59.558214-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "重构"

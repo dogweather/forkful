@@ -1,5 +1,6 @@
 ---
 title:                "Concatenación de cadenas de texto"
+aliases: - /es/lua/concatenating-strings.md
 date:                  2024-01-20T17:35:09.347259-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Concatenación de cadenas de texto"

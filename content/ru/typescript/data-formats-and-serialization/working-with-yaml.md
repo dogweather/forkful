@@ -1,5 +1,6 @@
 ---
 title:                "Работа с YAML"
+aliases: - /ru/typescript/working-with-yaml.md
 date:                  2024-01-29T00:05:51.959324-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Работа с YAML"

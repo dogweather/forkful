@@ -1,5 +1,6 @@
 ---
 title:                "Manejo de errores"
+aliases: - /es/google-apps-script/handling-errors.md
 date:                  2024-02-01T21:54:54.078176-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Manejo de errores"

@@ -1,5 +1,6 @@
 ---
 title:                "מחיקת תווים שמתאימים לדפוס"
+aliases: - /he/google-apps-script/deleting-characters-matching-a-pattern.md
 date:                  2024-02-01T21:53:15.037852-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "מחיקת תווים שמתאימים לדפוס"

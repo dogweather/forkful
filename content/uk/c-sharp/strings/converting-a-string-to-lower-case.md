@@ -1,5 +1,6 @@
 ---
 title:                "Перетворення рядка у нижній регістр"
+aliases: - /uk/c-sharp/converting-a-string-to-lower-case.md
 date:                  2024-01-20T17:38:11.397890-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Перетворення рядка у нижній регістр"

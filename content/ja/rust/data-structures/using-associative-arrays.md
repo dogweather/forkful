@@ -1,5 +1,6 @@
 ---
 title:                "連想配列の使用"
+aliases: - /ja/rust/using-associative-arrays.md
 date:                  2024-01-30T19:13:09.155085-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "連想配列の使用"

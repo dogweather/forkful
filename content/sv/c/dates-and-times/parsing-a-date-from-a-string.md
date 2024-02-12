@@ -1,5 +1,6 @@
 ---
 title:                "Omtolkning av ett datum från en sträng"
+aliases: - /sv/c/parsing-a-date-from-a-string.md
 date:                  2024-02-03T18:00:05.246922-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Omtolkning av ett datum från en sträng"

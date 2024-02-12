@@ -1,5 +1,6 @@
 ---
 title:                "कमांड लाइन तर्कों को पढ़ना"
+aliases: - /hi/vba/reading-command-line-arguments.md
 date:                  2024-02-01T22:00:56.030102-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "कमांड लाइन तर्कों को पढ़ना"

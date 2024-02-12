@@ -1,5 +1,6 @@
 ---
 title:                "ウェブページのダウンロード"
+aliases: - /ja/javascript/downloading-a-web-page.md
 date:                  2024-01-20T17:44:50.418874-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "ウェブページのダウンロード"

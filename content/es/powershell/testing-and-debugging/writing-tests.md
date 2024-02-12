@@ -1,5 +1,6 @@
 ---
 title:                "Escribiendo pruebas"
+aliases: - /es/powershell/writing-tests.md
 date:                  2024-02-03T19:31:26.328063-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Escribiendo pruebas"

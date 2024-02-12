@@ -1,5 +1,6 @@
 ---
 title:                "Bắt đầu một dự án mới"
+aliases: - /vi/powershell/starting-a-new-project.md
 date:                  2024-01-28T22:08:56.583998-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Bắt đầu một dự án mới"

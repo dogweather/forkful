@@ -1,5 +1,6 @@
 ---
 title:                "Working with TOML"
+aliases: - /en/fish-shell/working-with-toml.md
 date:                  2024-01-25T03:39:31.938698-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Working with TOML"

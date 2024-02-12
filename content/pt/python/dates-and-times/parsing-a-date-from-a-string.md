@@ -1,5 +1,6 @@
 ---
 title:                "Analisando uma data a partir de uma string"
+aliases: - /pt/python/parsing-a-date-from-a-string.md
 date:                  2024-02-03T19:15:00.565448-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Analisando uma data a partir de uma string"

@@ -1,5 +1,6 @@
 ---
 title:                "חיפוש והחלפה של טקסט"
+aliases: - /he/vba/searching-and-replacing-text.md
 date:                  2024-02-01T22:02:03.356470-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "חיפוש והחלפה של טקסט"

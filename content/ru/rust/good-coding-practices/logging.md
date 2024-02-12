@@ -1,5 +1,6 @@
 ---
 title:                "Журналирование"
+aliases: - /ru/rust/logging.md
 date:                  2024-01-29T00:00:58.631532-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Журналирование"

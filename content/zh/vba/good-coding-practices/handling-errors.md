@@ -1,5 +1,6 @@
 ---
 title:                "处理错误"
+aliases: - /zh/vba/handling-errors.md
 date:                  2024-02-01T21:55:05.586122-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "处理错误"

@@ -1,5 +1,6 @@
 ---
 title:                "リファクタリング"
+aliases: - /ja/powershell/refactoring.md
 date:                  2024-01-26T03:37:30.491811-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "リファクタリング"

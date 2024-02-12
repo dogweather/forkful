@@ -1,5 +1,6 @@
 ---
 title:                "Redondeo de números"
+aliases: - /es/javascript/rounding-numbers.md
 date:                  2024-01-26T03:46:00.448057-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Redondeo de números"

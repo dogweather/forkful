@@ -1,5 +1,6 @@
 ---
 title:                "Skicka en HTTP-begäran med grundläggande autentisering"
+aliases: - /sv/google-apps-script/sending-an-http-request-with-basic-authentication.md
 date:                  2024-02-01T22:02:25.718611-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Skicka en HTTP-begäran med grundläggande autentisering"

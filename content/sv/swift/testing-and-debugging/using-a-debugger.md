@@ -1,5 +1,6 @@
 ---
 title:                "Att använda en debugger"
+aliases: - /sv/swift/using-a-debugger.md
 date:                  2024-01-26T04:10:48.646727-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Att använda en debugger"

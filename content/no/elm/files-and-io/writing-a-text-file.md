@@ -1,5 +1,6 @@
 ---
 title:                "Skriving av en tekstfil"
+aliases: - /no/elm/writing-a-text-file.md
 date:                  2024-01-19
 simple_title:         "Skriving av en tekstfil"
 

@@ -1,5 +1,6 @@
 ---
 title:                "एक स्ट्रिंग से तारीख पार्स करना"
+aliases: - /hi/c/parsing-a-date-from-a-string.md
 date:                  2024-02-03T18:06:51.862018-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "एक स्ट्रिंग से तारीख पार्स करना"

@@ -1,5 +1,6 @@
 ---
 title:                "Handling errors"
+aliases: - /en/google-apps-script/handling-errors.md
 date:                  2024-02-01T21:12:56.065519-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Handling errors"

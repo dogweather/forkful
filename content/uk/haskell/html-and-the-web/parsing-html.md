@@ -1,5 +1,6 @@
 ---
 title:                "Аналіз HTML"
+aliases: - /uk/haskell/parsing-html.md
 date:                  2024-02-03T19:12:36.316105-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Аналіз HTML"

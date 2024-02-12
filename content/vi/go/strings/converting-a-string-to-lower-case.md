@@ -1,5 +1,6 @@
 ---
 title:                "Chuyển đổi chuỗi thành chữ thường"
+aliases: - /vi/go/converting-a-string-to-lower-case.md
 date:                  2024-02-03T17:55:40.481418-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Chuyển đổi chuỗi thành chữ thường"

@@ -1,5 +1,6 @@
 ---
 title:                "Розбір дати з рядка"
+aliases: - /uk/php/parsing-a-date-from-a-string.md
 date:                  2024-02-03T19:15:24.864139-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Розбір дати з рядка"

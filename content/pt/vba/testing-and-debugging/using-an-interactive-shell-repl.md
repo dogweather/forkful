@@ -1,5 +1,6 @@
 ---
 title:                "Usando uma shell interativa (REPL)"
+aliases: - /pt/vba/using-an-interactive-shell-repl.md
 date:                  2024-02-01T22:04:03.254487-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Usando uma shell interativa (REPL)"

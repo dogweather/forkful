@@ -1,5 +1,6 @@
 ---
 title:                "Обработка ошибок"
+aliases: - /ru/javascript/handling-errors.md
 date:                  2024-01-28T23:59:07.323803-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Обработка ошибок"

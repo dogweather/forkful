@@ -1,5 +1,6 @@
 ---
 title:                "Удаление кавычек из строки"
+aliases: - /ru/haskell/removing-quotes-from-a-string.md
 date:                  2024-01-29T00:02:27.623347-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Удаление кавычек из строки"

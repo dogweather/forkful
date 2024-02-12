@@ -1,5 +1,6 @@
 ---
 title:                "Att använda reguljära uttryck"
+aliases: - /sv/php/using-regular-expressions.md
 date:                  2024-02-03T19:17:45.583477-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Att använda reguljära uttryck"

@@ -1,5 +1,6 @@
 ---
 title:                "Een tekstbestand schrijven"
+aliases: - /nl/go/writing-a-text-file.md
 date:                  2024-02-03T18:14:49.741520-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een tekstbestand schrijven"

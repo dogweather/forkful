@@ -1,5 +1,6 @@
 ---
 title:                "새 프로젝트 시작하기"
+aliases: - /ko/c/starting-a-new-project.md
 date:                  2024-02-03T18:09:25.945077-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "새 프로젝트 시작하기"

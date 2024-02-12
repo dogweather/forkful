@@ -1,5 +1,6 @@
 ---
 title:                "Wykorzystanie wyrażeń regularnych"
+aliases: - /pl/fish-shell/using-regular-expressions.md
 date:                  2024-01-19
 simple_title:         "Wykorzystanie wyrażeń regularnych"
 

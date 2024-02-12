@@ -1,5 +1,6 @@
 ---
 title:                "שליחת בקשת HTTP עם אימות בסיסי"
+aliases: - /he/haskell/sending-an-http-request-with-basic-authentication.md
 date:                  2024-01-20T18:01:58.956717-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "שליחת בקשת HTTP עם אימות בסיסי"

@@ -1,5 +1,6 @@
 ---
 title:                "Handling errors"
+aliases: - /en/ruby/handling-errors.md
 date:                  2024-01-21T21:19:07.187007-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Handling errors"

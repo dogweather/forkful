@@ -1,5 +1,6 @@
 ---
 title:                "Запис до стандартної помилки"
+aliases: - /uk/kotlin/writing-to-standard-error.md
 date:                  2024-02-03T19:34:22.038807-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Запис до стандартної помилки"

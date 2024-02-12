@@ -1,5 +1,6 @@
 ---
 title:                "Sending an HTTP request with basic authentication"
+aliases: - /en/vba/sending-an-http-request-with-basic-authentication.md
 date:                  2024-02-01T21:31:06.379954-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Sending an HTTP request with basic authentication"

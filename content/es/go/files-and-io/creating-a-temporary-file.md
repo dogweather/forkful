@@ -1,5 +1,6 @@
 ---
 title:                "Creando un archivo temporal"
+aliases: - /es/go/creating-a-temporary-file.md
 date:                  2024-02-03T17:55:03.749342-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Creando un archivo temporal"

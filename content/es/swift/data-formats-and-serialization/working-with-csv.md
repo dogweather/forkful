@@ -1,5 +1,6 @@
 ---
 title:                "Trabajando con CSV"
+aliases: - /es/swift/working-with-csv.md
 date:                  2024-02-03T19:21:22.743644-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Trabajando con CSV"

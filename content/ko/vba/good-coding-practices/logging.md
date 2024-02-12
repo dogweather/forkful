@@ -1,5 +1,6 @@
 ---
 title:                "로깅"
+aliases: - /ko/vba/logging.md
 date:                  2024-02-01T21:56:04.548731-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "로깅"

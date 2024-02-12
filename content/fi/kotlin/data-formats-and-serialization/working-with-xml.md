@@ -1,5 +1,6 @@
 ---
 title:                "XML:n käsittely"
+aliases: - /fi/kotlin/working-with-xml.md
 date:                  2024-01-26T04:33:00.303210-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "XML:n käsittely"

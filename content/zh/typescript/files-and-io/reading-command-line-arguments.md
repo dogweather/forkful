@@ -1,5 +1,6 @@
 ---
 title:                "读取命令行参数"
+aliases: - /zh/typescript/reading-command-line-arguments.md
 date:                  2024-01-20T17:56:55.846822-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "读取命令行参数"

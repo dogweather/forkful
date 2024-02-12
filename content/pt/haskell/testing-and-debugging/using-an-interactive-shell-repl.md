@@ -1,5 +1,6 @@
 ---
 title:                "Usando um shell interativo (REPL)"
+aliases: - /pt/haskell/using-an-interactive-shell-repl.md
 date:                  2024-01-26T04:14:57.902357-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Usando um shell interativo (REPL)"

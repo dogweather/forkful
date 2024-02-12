@@ -1,5 +1,6 @@
 ---
 title:                "Tolka HTML"
+aliases: - /sv/haskell/parsing-html.md
 date:                  2024-01-20T15:31:59.808672-07:00
 simple_title:         "Tolka HTML"
 

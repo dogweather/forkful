@@ -1,5 +1,6 @@
 ---
 title:                "Розбір дати з рядка"
+aliases: - /uk/go/parsing-a-date-from-a-string.md
 date:                  2024-02-03T18:05:46.337649-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Розбір дати з рядка"

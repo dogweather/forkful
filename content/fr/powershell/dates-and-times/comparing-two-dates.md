@@ -1,5 +1,6 @@
 ---
 title:                "Comparer deux dates"
+aliases: - /fr/powershell/comparing-two-dates.md
 date:                  2024-01-20T17:33:45.281460-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Comparer deux dates"

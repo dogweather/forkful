@@ -1,5 +1,6 @@
 ---
 title:                "Verwendung von assoziativen Arrays"
+aliases: - /de/kotlin/using-associative-arrays.md
 date:                  2024-01-30T19:11:45.311584-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Verwendung von assoziativen Arrays"

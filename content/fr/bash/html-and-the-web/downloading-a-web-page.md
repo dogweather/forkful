@@ -1,5 +1,6 @@
 ---
 title:                "Téléchargement d'une page web"
+aliases: - /fr/bash/downloading-a-web-page.md
 date:                  2024-01-20T17:43:35.916974-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Téléchargement d'une page web"

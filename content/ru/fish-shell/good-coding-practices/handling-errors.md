@@ -1,5 +1,6 @@
 ---
 title:                "Обработка ошибок"
+aliases: - /ru/fish-shell/handling-errors.md
 date:                  2024-01-28T23:59:09.548541-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Обработка ошибок"

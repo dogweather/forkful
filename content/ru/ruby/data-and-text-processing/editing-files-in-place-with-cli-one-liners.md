@@ -1,5 +1,6 @@
 ---
 title:                "Редактирование файлов на месте с помощью однострочников CLI"
+aliases: - /ru/ruby/editing-files-in-place-with-cli-one-liners.md
 date:                  2024-01-28T23:58:24.320722-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Редактирование файлов на месте с помощью однострочников CLI"

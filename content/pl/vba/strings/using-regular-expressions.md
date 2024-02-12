@@ -1,5 +1,6 @@
 ---
 title:                "Korzystanie z wyrażeń regularnych"
+aliases: - /pl/vba/using-regular-expressions.md
 date:                  2024-02-01T22:04:58.465212-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Korzystanie z wyrażeń regularnych"

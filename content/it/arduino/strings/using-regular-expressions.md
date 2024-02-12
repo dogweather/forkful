@@ -1,5 +1,6 @@
 ---
 title:                "Utilizzo delle espressioni regolari"
+aliases: - /it/arduino/using-regular-expressions.md
 date:                  2024-01-19
 simple_title:         "Utilizzo delle espressioni regolari"
 

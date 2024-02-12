@@ -1,5 +1,6 @@
 ---
 title:                "Printing debug output"
+aliases: - /en/fish-shell/printing-debug-output.md
 date:                  2024-01-20T17:52:28.158859-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Printing debug output"

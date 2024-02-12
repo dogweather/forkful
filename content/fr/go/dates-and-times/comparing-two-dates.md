@@ -1,5 +1,6 @@
 ---
 title:                "Comparer deux dates"
+aliases: - /fr/go/comparing-two-dates.md
 date:                  2024-02-03T17:53:39.842263-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Comparer deux dates"

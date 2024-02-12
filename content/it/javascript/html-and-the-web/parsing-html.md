@@ -1,5 +1,6 @@
 ---
 title:                "Analisi sintattica HTML"
+aliases: - /it/javascript/parsing-html.md
 date:                  2024-01-28T03:00:42.922727-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Analisi sintattica HTML"

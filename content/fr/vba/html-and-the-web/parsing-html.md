@@ -1,5 +1,6 @@
 ---
 title:                "Analyse Syntaxique de HTML"
+aliases: - /fr/vba/parsing-html.md
 date:                  2024-02-01T21:57:12.879172-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Analyse Syntaxique de HTML"

@@ -1,5 +1,6 @@
 ---
 title:                "Начало нового проекта"
+aliases: - /ru/powershell/starting-a-new-project.md
 date:                  2024-01-29T00:03:44.832703-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Начало нового проекта"

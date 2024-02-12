@@ -1,5 +1,6 @@
 ---
 title:                "Tính toán một ngày trong tương lai hoặc quá khứ"
+aliases: - /vi/vba/calculating-a-date-in-the-future-or-past.md
 date:                  2024-02-01T21:49:31.448356-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Tính toán một ngày trong tương lai hoặc quá khứ"

@@ -1,5 +1,6 @@
 ---
 title:                "הורדת דף אינטרנט"
+aliases: - /he/swift/downloading-a-web-page.md
 date:                  2024-01-20T17:45:05.291430-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "הורדת דף אינטרנט"

@@ -1,5 +1,6 @@
 ---
 title:                "Gebruik van associatieve arrays"
+aliases: - /nl/c-sharp/using-associative-arrays.md
 date:                  2024-01-30T19:10:09.070086-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Gebruik van associatieve arrays"

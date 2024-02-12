@@ -1,5 +1,6 @@
 ---
 title:                "Starting a new project"
+aliases: - /en/php/starting-a-new-project.md
 date:                  2024-01-25T02:54:33.067718-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Starting a new project"

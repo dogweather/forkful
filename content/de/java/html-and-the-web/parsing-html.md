@@ -1,5 +1,6 @@
 ---
 title:                "HTML parsen"
+aliases: - /de/java/parsing-html.md
 date:                  2024-02-03T19:12:20.109303-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "HTML parsen"

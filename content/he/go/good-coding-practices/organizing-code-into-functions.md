@@ -1,5 +1,6 @@
 ---
 title:                "ארגון קוד לתוך פונקציות"
+aliases: - /he/go/organizing-code-into-functions.md
 date:                  2024-02-03T18:06:45.525743-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "ארגון קוד לתוך פונקציות"

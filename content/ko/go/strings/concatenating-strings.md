@@ -1,5 +1,6 @@
 ---
 title:                "문자열 연결하기"
+aliases: - /ko/go/concatenating-strings.md
 date:                  2024-02-03T17:54:09.893340-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "문자열 연결하기"

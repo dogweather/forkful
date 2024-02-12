@@ -1,5 +1,6 @@
 ---
 title:                "Usando um shell interativo (REPL)"
+aliases: - /pt/php/using-an-interactive-shell-repl.md
 date:                  2024-01-26T04:16:25.458328-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Usando um shell interativo (REPL)"

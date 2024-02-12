@@ -1,5 +1,6 @@
 ---
 title:                "Sända en HTTP-förfrågan med grundläggande autentisering"
+aliases: - /sv/c/sending-an-http-request-with-basic-authentication.md
 date:                  2024-02-03T18:09:19.741445-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Sända en HTTP-förfrågan med grundläggande autentisering"

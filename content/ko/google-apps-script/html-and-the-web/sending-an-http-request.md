@@ -1,5 +1,6 @@
 ---
 title:                "HTTP 요청 보내기"
+aliases: - /ko/google-apps-script/sending-an-http-request.md
 date:                  2024-02-01T22:03:40.426368-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "HTTP 요청 보내기"

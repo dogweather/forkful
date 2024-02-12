@@ -1,5 +1,6 @@
 ---
 title:                "बेसिक ऑथेंटिकेशन के साथ HTTP अनुरोध भेजना"
+aliases: - /hi/vba/sending-an-http-request-with-basic-authentication.md
 date:                  2024-02-01T22:04:04.914628-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "बेसिक ऑथेंटिकेशन के साथ HTTP अनुरोध भेजना"

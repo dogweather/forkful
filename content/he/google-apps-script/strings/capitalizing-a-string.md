@@ -1,5 +1,6 @@
 ---
 title:                "הגדלת אותיות במחרוזת"
+aliases: - /he/google-apps-script/capitalizing-a-string.md
 date:                  2024-02-01T21:49:45.533054-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "הגדלת אותיות במחרוזת"

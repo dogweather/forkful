@@ -1,5 +1,6 @@
 ---
 title:                "编写测试"
+aliases: - /zh/rust/writing-tests.md
 date:                  2024-02-03T19:32:22.687623-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "编写测试"

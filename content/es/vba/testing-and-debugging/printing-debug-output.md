@@ -1,5 +1,6 @@
 ---
 title:                "Imprimiendo salida de depuración"
+aliases: - /es/vba/printing-debug-output.md
 date:                  2024-02-01T21:58:23.486510-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Imprimiendo salida de depuración"

@@ -1,5 +1,6 @@
 ---
 title:                "Великі літери в рядку"
+aliases: - /uk/go/capitalizing-a-string.md
 date:                  2024-02-03T17:53:04.032710-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Великі літери в рядку"

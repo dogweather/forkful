@@ -1,5 +1,6 @@
 ---
 title:                "Reguliere expressies gebruiken"
+aliases: - /nl/c/using-regular-expressions.md
 date:                  2024-02-03T18:10:49.880931-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Reguliere expressies gebruiken"

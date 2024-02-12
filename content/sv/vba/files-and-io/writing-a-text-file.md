@@ -1,5 +1,6 @@
 ---
 title:                "Skriva en textfil"
+aliases: - /sv/vba/writing-a-text-file.md
 date:                  2024-02-01T22:08:30.673710-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Skriva en textfil"

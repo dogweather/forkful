@@ -1,5 +1,6 @@
 ---
 title:                "Lendo argumentos da linha de comando"
+aliases: - /pt/vba/reading-command-line-arguments.md
 date:                  2024-02-01T21:59:12.473652-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Lendo argumentos da linha de comando"

@@ -1,5 +1,6 @@
 ---
 title:                "Маніпулювання файлами за допомогою однорядкових команд CLI"
+aliases: - /uk/fish-shell/manipulating-files-with-cli-one-liners.md
 date:                  2024-01-27T16:22:01.608174-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Маніпулювання файлами за допомогою однорядкових команд CLI"

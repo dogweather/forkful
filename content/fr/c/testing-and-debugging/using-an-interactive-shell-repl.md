@@ -1,5 +1,6 @@
 ---
 title:                "Utilisation d'un interpréteur de commandes interactif (REPL)"
+aliases: - /fr/c/using-an-interactive-shell-repl.md
 date:                  2024-02-03T18:10:03.556129-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Utilisation d'un interpréteur de commandes interactif (REPL)"

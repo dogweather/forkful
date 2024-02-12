@@ -1,5 +1,6 @@
 ---
 title:                "Tekstitiedoston lukeminen"
+aliases: - /fi/php/reading-a-text-file.md
 date:                  2024-01-20T17:55:07.792215-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Tekstitiedoston lukeminen"

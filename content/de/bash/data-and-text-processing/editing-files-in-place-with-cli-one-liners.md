@@ -1,5 +1,6 @@
 ---
 title:                "Bearbeiten von Dateien im Place mit CLI-Einzeilern"
+aliases: - /de/bash/editing-files-in-place-with-cli-one-liners.md
 date:                  2024-01-27T16:21:12.913995-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Bearbeiten von Dateien im Place mit CLI-Einzeilern"

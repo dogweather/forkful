@@ -1,5 +1,6 @@
 ---
 title:                "Lancement d'un nouveau projet"
+aliases: - /fr/ruby/starting-a-new-project.md
 date:                  2024-01-20T18:04:17.199205-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Lancement d'un nouveau projet"

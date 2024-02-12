@@ -1,5 +1,6 @@
 ---
 title:                "Lavorare con TOML"
+aliases: - /it/powershell/working-with-toml.md
 date:                  2024-01-26T04:24:58.369723-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Lavorare con TOML"

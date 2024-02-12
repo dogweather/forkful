@@ -1,5 +1,6 @@
 ---
 title:                "संख्याओं को पूर्णांक बनाना"
+aliases: - /hi/fish-shell/rounding-numbers.md
 date:                  2024-01-26T03:44:54.580811-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "संख्याओं को पूर्णांक बनाना"

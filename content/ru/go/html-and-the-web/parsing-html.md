@@ -1,5 +1,6 @@
 ---
 title:                "Разбор HTML"
+aliases: - /ru/go/parsing-html.md
 date:                  2024-02-03T18:05:30.973089-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Разбор HTML"

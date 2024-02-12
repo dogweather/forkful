@@ -1,5 +1,6 @@
 ---
 title:                "Pobieranie strony internetowej"
+aliases: - /pl/c-sharp/downloading-a-web-page.md
 date:                  2024-01-20T17:43:31.177875-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Pobieranie strony internetowej"

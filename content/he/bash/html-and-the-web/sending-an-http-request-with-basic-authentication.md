@@ -1,5 +1,6 @@
 ---
 title:                "שליחת בקשת HTTP עם אימות בסיסי"
+aliases: - /he/bash/sending-an-http-request-with-basic-authentication.md
 date:                  2024-01-20T18:01:20.547658-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "שליחת בקשת HTTP עם אימות בסיסי"

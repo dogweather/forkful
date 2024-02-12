@@ -1,5 +1,6 @@
 ---
 title:                "Lesen von Kommandozeilenargumenten"
+aliases: - /de/clojure/reading-command-line-arguments.md
 date:                  2024-01-20T17:55:38.396030-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Lesen von Kommandozeilenargumenten"

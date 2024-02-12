@@ -1,5 +1,6 @@
 ---
 title:                "HTML 분석하기"
+aliases: - /ko/google-apps-script/parsing-html.md
 date:                  2024-02-01T21:57:33.348924-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "HTML 분석하기"

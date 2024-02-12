@@ -1,5 +1,6 @@
 ---
 title:                "Trabalhando com CSV"
+aliases: - /pt/typescript/working-with-csv.md
 date:                  2024-02-03T19:21:24.788856-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Trabalhando com CSV"

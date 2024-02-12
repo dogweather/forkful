@@ -1,5 +1,6 @@
 ---
 title:                "比较两个日期"
+aliases: - /zh/rust/comparing-two-dates.md
 date:                  2024-01-20T17:33:41.390453-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "比较两个日期"

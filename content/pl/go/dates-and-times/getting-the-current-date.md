@@ -1,5 +1,6 @@
 ---
 title:                "Pobieranie bieżącej daty"
+aliases: - /pl/go/getting-the-current-date.md
 date:                  2024-02-03T17:58:03.629527-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Pobieranie bieżącej daty"

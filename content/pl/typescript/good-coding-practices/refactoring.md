@@ -1,5 +1,6 @@
 ---
 title:                "Refaktoryzacja"
+aliases: - /pl/typescript/refactoring.md
 date:                  2024-01-26T03:36:38.728545-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Refaktoryzacja"

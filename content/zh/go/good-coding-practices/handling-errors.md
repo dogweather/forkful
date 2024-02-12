@@ -1,5 +1,6 @@
 ---
 title:                "处理错误"
+aliases: - /zh/go/handling-errors.md
 date:                  2024-02-03T17:58:05.857459-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "处理错误"

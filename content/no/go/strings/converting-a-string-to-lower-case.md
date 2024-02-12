@@ -1,5 +1,6 @@
 ---
 title:                "Konvertering av en streng til små bokstaver"
+aliases: - /no/go/converting-a-string-to-lower-case.md
 date:                  2024-02-03T17:55:04.417003-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Konvertering av en streng til små bokstaver"

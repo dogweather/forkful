@@ -1,5 +1,6 @@
 ---
 title:                "Организация кода в функции"
+aliases: - /ru/python/organizing-code-into-functions.md
 date:                  2024-01-29T00:00:13.984893-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Организация кода в функции"

@@ -1,5 +1,6 @@
 ---
 title:                "Manipulering av filer med CLI-enkeltkommandoer"
+aliases: - /no/powershell/manipulating-files-with-cli-one-liners.md
 date:                  2024-01-27T16:20:40.431759-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Manipulering av filer med CLI-enkeltkommandoer"

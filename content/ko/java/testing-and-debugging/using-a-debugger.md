@@ -1,5 +1,6 @@
 ---
 title:                "디버거 사용하기"
+aliases: - /ko/java/using-a-debugger.md
 date:                  2024-01-26T03:50:13.544497-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "디버거 사용하기"

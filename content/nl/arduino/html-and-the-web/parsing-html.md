@@ -1,5 +1,6 @@
 ---
 title:                "HTML Parsen"
+aliases: - /nl/arduino/parsing-html.md
 date:                  2024-01-28T22:03:26.234218-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "HTML Parsen"

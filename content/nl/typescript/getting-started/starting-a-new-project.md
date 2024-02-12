@@ -1,5 +1,6 @@
 ---
 title:                "Een nieuw project starten"
+aliases: - /nl/typescript/starting-a-new-project.md
 date:                  2024-01-28T22:08:53.221031-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een nieuw project starten"

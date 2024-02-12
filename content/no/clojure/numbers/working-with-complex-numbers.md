@@ -1,5 +1,6 @@
 ---
 title:                "Å jobbe med komplekse tall"
+aliases: - /no/clojure/working-with-complex-numbers.md
 date:                  2024-01-26T04:38:41.961889-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Å jobbe med komplekse tall"

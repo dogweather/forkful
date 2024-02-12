@@ -1,5 +1,6 @@
 ---
 title:                "עבודה עם קבצי CSV"
+aliases: - /he/google-apps-script/working-with-csv.md
 date:                  2024-02-01T22:06:48.597524-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "עבודה עם קבצי CSV"

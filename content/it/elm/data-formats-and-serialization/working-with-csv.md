@@ -1,5 +1,6 @@
 ---
 title:                "Lavorare con i CSV"
+aliases: - /it/elm/working-with-csv.md
 date:                  2024-02-03T19:19:19.178343-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Lavorare con i CSV"

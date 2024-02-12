@@ -1,5 +1,6 @@
 ---
 title:                "Refactoring"
+aliases: - /en/google-apps-script/refactoring.md
 date:                  2024-02-01T21:12:12.931066-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Refactoring"

@@ -1,5 +1,6 @@
 ---
 title:                "Trabalhando com JSON"
+aliases: - /pt/vba/working-with-json.md
 date:                  2024-02-01T22:05:55.806538-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Trabalhando com JSON"

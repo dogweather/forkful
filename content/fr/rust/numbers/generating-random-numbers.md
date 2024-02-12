@@ -1,5 +1,6 @@
 ---
 title:                "Génération de nombres aléatoires"
+aliases: - /fr/rust/generating-random-numbers.md
 date:                  2024-01-27T20:35:02.857658-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Génération de nombres aléatoires"

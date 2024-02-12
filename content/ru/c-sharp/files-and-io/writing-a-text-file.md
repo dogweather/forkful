@@ -1,5 +1,6 @@
 ---
 title:                "Создание текстового файла"
+aliases: - /ru/c-sharp/writing-a-text-file.md
 date:                  2024-01-29T00:05:40.029337-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Создание текстового файла"

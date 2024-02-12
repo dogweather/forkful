@@ -1,5 +1,6 @@
 ---
 title:                "सहयोगी अरे का उपयोग करना"
+aliases: - /hi/google-apps-script/using-associative-arrays.md
 date:                  2024-02-01T22:05:52.945032-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "सहयोगी अरे का उपयोग करना"

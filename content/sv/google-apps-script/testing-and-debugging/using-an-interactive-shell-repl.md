@@ -1,5 +1,6 @@
 ---
 title:                "Använda en interaktiv skal (REPL)"
+aliases: - /sv/google-apps-script/using-an-interactive-shell-repl.md
 date:                  2024-02-01T22:04:19.922474-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Använda en interaktiv skal (REPL)"

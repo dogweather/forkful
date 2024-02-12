@@ -1,5 +1,6 @@
 ---
 title:                "Redigera filer på plats med kommandoradsenradare"
+aliases: - /sv/bash/editing-files-in-place-with-cli-one-liners.md
 date:                  2024-01-27T16:21:57.611676-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Redigera filer på plats med kommandoradsenradare"

@@ -1,5 +1,6 @@
 ---
 title:                "Korzystanie z tablic asocjacyjnych"
+aliases: - /pl/vba/using-associative-arrays.md
 date:                  2024-02-01T22:04:45.753915-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Korzystanie z tablic asocjacyjnych"

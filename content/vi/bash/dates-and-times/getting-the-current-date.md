@@ -1,5 +1,6 @@
 ---
 title:                "Lấy ngày hiện tại"
+aliases: - /vi/bash/getting-the-current-date.md
 date:                  2024-01-28T22:01:41.450135-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Lấy ngày hiện tại"

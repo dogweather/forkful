@@ -1,5 +1,6 @@
 ---
 title:                "Konvertera en sträng till gemener"
+aliases: - /sv/swift/converting-a-string-to-lower-case.md
 date:                  2024-01-20T17:39:10.145203-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Konvertera en sträng till gemener"

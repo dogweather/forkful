@@ -1,5 +1,6 @@
 ---
 title:                "Interpolation d'une chaîne de caractères"
+aliases: - /fr/c/interpolating-a-string.md
 date:                  2024-02-03T17:58:19.558373-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Interpolation d'une chaîne de caractères"

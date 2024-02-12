@@ -1,5 +1,6 @@
 ---
 title:                "Nối chuỗi ký tự"
+aliases: - /vi/go/concatenating-strings.md
 date:                  2024-02-03T17:54:35.411661-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Nối chuỗi ký tự"

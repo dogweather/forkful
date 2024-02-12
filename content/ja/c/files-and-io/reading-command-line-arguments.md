@@ -1,5 +1,6 @@
 ---
 title:                "コマンドライン引数の読み取り"
+aliases: - /ja/c/reading-command-line-arguments.md
 date:                  2024-02-03T18:06:32.478846-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "コマンドライン引数の読み取り"

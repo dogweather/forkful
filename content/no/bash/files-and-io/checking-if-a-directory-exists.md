@@ -1,5 +1,6 @@
 ---
 title:                "Sjekker om en mappe eksisterer"
+aliases: - /no/bash/checking-if-a-directory-exists.md
 date:                  2024-02-03T19:06:50.514844-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Sjekker om en mappe eksisterer"

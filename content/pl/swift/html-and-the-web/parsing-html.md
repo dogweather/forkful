@@ -1,5 +1,6 @@
 ---
 title:                "Przetwarzanie HTML"
+aliases: - /pl/swift/parsing-html.md
 date:                  2024-01-20T15:33:59.514523-07:00
 simple_title:         "Przetwarzanie HTML"
 

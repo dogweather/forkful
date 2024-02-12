@@ -1,5 +1,6 @@
 ---
 title:                "Koodin refaktorointi"
+aliases: - /fi/lua/refactoring.md
 date:                  2024-01-26T01:46:03.973591-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Koodin refaktorointi"

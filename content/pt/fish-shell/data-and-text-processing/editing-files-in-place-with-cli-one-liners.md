@@ -1,5 +1,6 @@
 ---
 title:                "Editando arquivos in loco com linhas de comando"
+aliases: - /pt/fish-shell/editing-files-in-place-with-cli-one-liners.md
 date:                  2024-01-27T16:20:56.437097-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Editando arquivos in loco com linhas de comando"

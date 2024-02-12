@@ -1,5 +1,6 @@
 ---
 title:                "Kontrollera om en katalog existerar"
+aliases: - /sv/go/checking-if-a-directory-exists.md
 date:                  2024-02-03T17:53:23.406072-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Kontrollera om en katalog existerar"

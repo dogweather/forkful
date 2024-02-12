@@ -1,5 +1,6 @@
 ---
 title:                "Работа с CSV"
+aliases: - /ru/bash/working-with-csv.md
 date:                  2024-01-29T00:04:07.206353-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Работа с CSV"

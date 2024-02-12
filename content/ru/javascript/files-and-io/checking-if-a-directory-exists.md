@@ -1,5 +1,6 @@
 ---
 title:                "Проверка существования директории"
+aliases: - /ru/javascript/checking-if-a-directory-exists.md
 date:                  2024-01-28T23:55:22.353136-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Проверка существования директории"

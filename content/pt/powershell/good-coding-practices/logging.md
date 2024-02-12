@@ -1,5 +1,6 @@
 ---
 title:                "Registro de Logs"
+aliases: - /pt/powershell/logging.md
 date:                  2024-01-26T01:07:17.980953-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Registro de Logs"

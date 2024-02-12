@@ -1,5 +1,6 @@
 ---
 title:                "Écrire sur l'erreur standard"
+aliases: - /fr/swift/writing-to-standard-error.md
 date:                  2024-02-03T19:35:01.384095-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Écrire sur l'erreur standard"

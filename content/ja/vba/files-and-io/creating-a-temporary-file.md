@@ -1,5 +1,6 @@
 ---
 title:                "一時ファイルの作成"
+aliases: - /ja/vba/creating-a-temporary-file.md
 date:                  2024-02-01T21:51:56.152340-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "一時ファイルの作成"

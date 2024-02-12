@@ -1,5 +1,6 @@
 ---
 title:                "Utilizzo di un debugger"
+aliases: - /it/vba/using-a-debugger.md
 date:                  2024-02-01T22:03:27.706751-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Utilizzo di un debugger"

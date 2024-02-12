@@ -1,5 +1,6 @@
 ---
 title:                "新しいプロジェクトを始める"
+aliases: - /ja/python/starting-a-new-project.md
 date:                  2024-01-20T18:04:44.894331-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "新しいプロジェクトを始める"

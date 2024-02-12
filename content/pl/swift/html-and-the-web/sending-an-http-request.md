@@ -1,5 +1,6 @@
 ---
 title:                "Wysyłanie żądania HTTP"
+aliases: - /pl/swift/sending-an-http-request.md
 date:                  2024-01-20T18:00:55.288046-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Wysyłanie żądania HTTP"

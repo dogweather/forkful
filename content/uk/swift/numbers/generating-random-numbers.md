@@ -1,5 +1,6 @@
 ---
 title:                "Генерація випадкових чисел"
+aliases: - /uk/swift/generating-random-numbers.md
 date:                  2024-01-27T20:35:34.839307-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Генерація випадкових чисел"

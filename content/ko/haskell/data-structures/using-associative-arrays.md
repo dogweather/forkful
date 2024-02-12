@@ -1,5 +1,6 @@
 ---
 title:                "연관 배열 사용하기"
+aliases: - /ko/haskell/using-associative-arrays.md
 date:                  2024-01-30T19:11:21.685334-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "연관 배열 사용하기"

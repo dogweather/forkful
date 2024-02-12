@@ -1,5 +1,6 @@
 ---
 title:                "מחיקת תווים התואמים לתבנית"
+aliases: - /he/elixir/deleting-characters-matching-a-pattern.md
 date:                  2024-01-20T17:42:21.030061-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "מחיקת תווים התואמים לתבנית"

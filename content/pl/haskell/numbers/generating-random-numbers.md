@@ -1,5 +1,6 @@
 ---
 title:                "Generowanie liczb losowych"
+aliases: - /pl/haskell/generating-random-numbers.md
 date:                  2024-01-27T20:34:09.917010-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Generowanie liczb losowych"

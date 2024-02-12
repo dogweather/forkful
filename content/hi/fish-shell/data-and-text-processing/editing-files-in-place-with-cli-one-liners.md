@@ -1,5 +1,6 @@
 ---
 title:                "CLI वन-लाइनर्स के साथ फाइलों में स्थल पर संपादन"
+aliases: - /hi/fish-shell/editing-files-in-place-with-cli-one-liners.md
 date:                  2024-01-27T16:23:00.855316-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "CLI वन-लाइनर्स के साथ फाइलों में स्थल पर संपादन"

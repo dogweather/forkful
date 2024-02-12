@@ -1,5 +1,6 @@
 ---
 title:                "CSV와 함께 작업하기"
+aliases: - /ko/clojure/working-with-csv.md
 date:                  2024-02-03T19:19:14.030668-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "CSV와 함께 작업하기"

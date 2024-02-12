@@ -1,5 +1,6 @@
 ---
 title:                "날짜를 문자열로 변환하기"
+aliases: - /ko/javascript/converting-a-date-into-a-string.md
 date:                  2024-01-20T17:36:47.298909-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "날짜를 문자열로 변환하기"

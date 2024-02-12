@@ -1,5 +1,6 @@
 ---
 title:                "比较两个日期"
+aliases: - /zh/google-apps-script/comparing-two-dates.md
 date:                  2024-02-01T21:50:04.866093-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "比较两个日期"

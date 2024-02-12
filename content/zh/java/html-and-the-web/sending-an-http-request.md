@@ -1,5 +1,6 @@
 ---
 title:                "发出 HTTP 请求"
+aliases: - /zh/java/sending-an-http-request.md
 date:                  2024-01-20T18:00:02.910583-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "发出 HTTP 请求"

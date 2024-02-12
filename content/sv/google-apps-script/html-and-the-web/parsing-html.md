@@ -1,5 +1,6 @@
 ---
 title:                "Att Tolka HTML"
+aliases: - /sv/google-apps-script/parsing-html.md
 date:                  2024-02-01T21:57:19.631777-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Att Tolka HTML"

@@ -1,5 +1,6 @@
 ---
 title:                "Een HTTP-verzoek verzenden met basisauthenticatie"
+aliases: - /nl/c/sending-an-http-request-with-basic-authentication.md
 date:                  2024-02-03T18:09:09.308651-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een HTTP-verzoek verzenden met basisauthenticatie"

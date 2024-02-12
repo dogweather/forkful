@@ -1,5 +1,6 @@
 ---
 title:                "표준 오류에 쓰기"
+aliases: - /ko/vba/writing-to-standard-error.md
 date:                  2024-02-01T22:09:11.217438-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "표준 오류에 쓰기"

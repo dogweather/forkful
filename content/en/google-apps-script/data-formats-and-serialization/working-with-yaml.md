@@ -1,5 +1,6 @@
 ---
 title:                "Working with YAML"
+aliases: - /en/google-apps-script/working-with-yaml.md
 date:                  2024-02-01T21:11:59.655738-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Working with YAML"

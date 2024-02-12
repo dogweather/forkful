@@ -1,5 +1,6 @@
 ---
 title:                "Tilapäisen tiedoston luominen"
+aliases: - /fi/go/creating-a-temporary-file.md
 date:                  2024-02-03T17:56:04.799561-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Tilapäisen tiedoston luominen"

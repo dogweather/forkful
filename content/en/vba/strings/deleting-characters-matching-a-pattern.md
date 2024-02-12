@@ -1,5 +1,6 @@
 ---
 title:                "Deleting characters matching a pattern"
+aliases: - /en/vba/deleting-characters-matching-a-pattern.md
 date:                  2024-02-01T21:30:25.216747-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Deleting characters matching a pattern"

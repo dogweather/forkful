@@ -1,5 +1,6 @@
 ---
 title:                "Hämta aktuellt datum"
+aliases: - /sv/google-apps-script/getting-the-current-date.md
 date:                  2024-02-01T21:54:48.584747-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Hämta aktuellt datum"

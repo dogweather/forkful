@@ -1,5 +1,6 @@
 ---
 title:                "Using a debugger"
+aliases: - /en/c/using-a-debugger.md
 date:                  2024-02-03T17:50:08.776489-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Using a debugger"

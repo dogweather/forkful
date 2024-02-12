@@ -1,5 +1,6 @@
 ---
 title:                "Uso de matrices asociativas"
+aliases: - /es/elixir/using-associative-arrays.md
 date:                  2024-01-30T19:10:42.375616-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Uso de matrices asociativas"

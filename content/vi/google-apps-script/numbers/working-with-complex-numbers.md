@@ -1,5 +1,6 @@
 ---
 title:                "Làm việc với số phức"
+aliases: - /vi/google-apps-script/working-with-complex-numbers.md
 date:                  2024-02-01T22:07:41.835603-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Làm việc với số phức"

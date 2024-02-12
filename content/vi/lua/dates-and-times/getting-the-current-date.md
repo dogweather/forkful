@@ -1,5 +1,6 @@
 ---
 title:                "Lấy ngày hiện tại"
+aliases: - /vi/lua/getting-the-current-date.md
 date:                  2024-01-28T22:01:49.717218-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Lấy ngày hiện tại"
