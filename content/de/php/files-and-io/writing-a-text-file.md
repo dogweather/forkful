@@ -1,7 +1,5 @@
 ---
 title:                "Eine Textdatei schreiben"
-aliases:
-- /de/php/writing-a-text-file.md
 date:                  2024-02-03T19:28:37.051940-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Eine Textdatei schreiben"

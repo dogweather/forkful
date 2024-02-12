@@ -1,7 +1,5 @@
 ---
 title:                "Analisi dell'HTML"
-aliases:
-- /it/swift/parsing-html.md
 date:                  2024-01-20T15:34:07.510905-07:00
 simple_title:         "Analisi dell'HTML"
 

@@ -1,7 +1,5 @@
 ---
 title:                "Het verkrijgen van de huidige datum"
-aliases:
-- /nl/vba/getting-the-current-date.md
 date:                  2024-02-01T21:54:35.628910-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Het verkrijgen van de huidige datum"

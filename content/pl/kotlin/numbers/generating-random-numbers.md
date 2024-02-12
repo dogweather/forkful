@@ -1,7 +1,5 @@
 ---
 title:                "Generowanie liczb losowych"
-aliases:
-- /pl/kotlin/generating-random-numbers.md
 date:                  2024-01-27T20:34:17.772647-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Generowanie liczb losowych"

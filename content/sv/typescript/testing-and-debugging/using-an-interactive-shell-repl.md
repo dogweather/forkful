@@ -1,7 +1,5 @@
 ---
 title:                "Använda en interaktiv skal (REPL)"
-aliases:
-- /sv/typescript/using-an-interactive-shell-repl.md
 date:                  2024-01-26T04:18:45.538609-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Använda en interaktiv skal (REPL)"

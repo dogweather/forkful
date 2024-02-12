@@ -1,7 +1,5 @@
 ---
 title:                "Affichage des sorties de débogage"
-aliases:
-- /fr/powershell/printing-debug-output.md
 date:                  2024-01-20T17:53:25.946819-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Affichage des sorties de débogage"

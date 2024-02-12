@@ -1,7 +1,5 @@
 ---
 title:                "XML 다루기"
-aliases:
-- /ko/powershell/working-with-xml.md
 date:                  2024-01-26T04:34:17.250134-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "XML 다루기"

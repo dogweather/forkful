@@ -1,7 +1,5 @@
 ---
 title:                "Logboekregistratie"
-aliases:
-- /nl/bash/logging.md
 date:                  2024-01-28T22:02:39.138761-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Logboekregistratie"

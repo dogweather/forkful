@@ -1,7 +1,5 @@
 ---
 title:                "获取当前日期"
-aliases:
-- /zh/elm/getting-the-current-date.md
 date:                  2024-01-20T15:14:08.177241-07:00
 simple_title:         "获取当前日期"
 

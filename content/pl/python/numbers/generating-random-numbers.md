@@ -1,7 +1,5 @@
 ---
 title:                "Generowanie liczb losowych"
-aliases:
-- /pl/python/generating-random-numbers.md
 date:                  2024-01-27T20:35:29.409198-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Generowanie liczb losowych"

@@ -1,7 +1,5 @@
 ---
 title:                "Chuyển đổi chuỗi thành chữ thường"
-aliases:
-- /vi/ruby/converting-a-string-to-lower-case.md
 date:                  2024-01-28T21:58:28.223225-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Chuyển đổi chuỗi thành chữ thường"

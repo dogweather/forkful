@@ -1,7 +1,5 @@
 ---
 title:                "写入标准错误"
-aliases:
-- /zh/google-apps-script/writing-to-standard-error.md
 date:                  2024-02-01T22:09:09.344277-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "写入标准错误"

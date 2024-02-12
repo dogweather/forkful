@@ -1,7 +1,5 @@
 ---
 title:                "Viết hoa một chuỗi"
-aliases:
-- /vi/vba/capitalizing-a-string.md
 date:                  2024-02-01T21:49:37.494948-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Viết hoa một chuỗi"

@@ -1,7 +1,5 @@
 ---
 title:                "Utilizzo di un debugger"
-aliases:
-- /it/typescript/using-a-debugger.md
 date:                  2024-01-26T04:11:08.537166-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Utilizzo di un debugger"

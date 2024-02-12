@@ -1,7 +1,5 @@
 ---
 title:                "Analisi del HTML"
-aliases:
-- /it/vba/parsing-html.md
 date:                  2024-02-01T21:57:10.842688-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Analisi del HTML"

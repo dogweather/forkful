@@ -1,7 +1,5 @@
 ---
 title:                "テキストの検索と置換"
-aliases:
-- /ja/elm/searching-and-replacing-text.md
 date:                  2024-01-20T17:57:51.606494-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "テキストの検索と置換"

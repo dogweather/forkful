@@ -1,7 +1,5 @@
 ---
 title:                "Пошук та заміна тексту"
-aliases:
-- /uk/google-apps-script/searching-and-replacing-text.md
 date:                  2024-02-01T22:01:50.491011-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Пошук та заміна тексту"

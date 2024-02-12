@@ -1,7 +1,5 @@
 ---
 title:                "Інтерполяція рядка"
-aliases:
-- /uk/python/interpolating-a-string.md
 date:                  2024-01-28T21:24:16.516821-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Інтерполяція рядка"

@@ -1,7 +1,5 @@
 ---
 title:                "Organisering av kode i funksjoner"
-aliases:
-- /no/google-apps-script/organizing-code-into-functions.md
 date:                  2024-02-01T21:56:57.574102-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Organisering av kode i funksjoner"

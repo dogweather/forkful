@@ -1,7 +1,5 @@
 ---
 title:                "HTTP-Anfragen mit Basisauthentifizierung senden"
-aliases:
-- /de/arduino/sending-an-http-request-with-basic-authentication.md
 date:                  2024-01-20T18:01:05.490156-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "HTTP-Anfragen mit Basisauthentifizierung senden"

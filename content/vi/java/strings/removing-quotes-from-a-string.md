@@ -1,7 +1,5 @@
 ---
 title:                "Loại bỏ dấu ngoặc kép khỏi chuỗi"
-aliases:
-- /vi/java/removing-quotes-from-a-string.md
 date:                  2024-01-28T22:06:34.195432-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Loại bỏ dấu ngoặc kép khỏi chuỗi"

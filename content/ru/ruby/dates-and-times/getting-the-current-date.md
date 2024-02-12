@@ -1,7 +1,5 @@
 ---
 title:                "Получение текущей даты"
-aliases:
-- /ru/ruby/getting-the-current-date.md
 date:                  2024-01-28T23:58:57.261385-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Получение текущей даты"

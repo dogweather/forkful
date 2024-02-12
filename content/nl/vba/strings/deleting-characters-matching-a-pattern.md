@@ -1,7 +1,5 @@
 ---
 title:                "Karakters Verwijderen die Overeenkomen met een Patroon"
-aliases:
-- /nl/vba/deleting-characters-matching-a-pattern.md
 date:                  2024-02-01T21:52:39.277239-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Karakters Verwijderen die Overeenkomen met een Patroon"

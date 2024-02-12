@@ -1,7 +1,5 @@
 ---
 title:                "Запись в стандартный поток ошибок"
-aliases:
-- /ru/c-sharp/writing-to-standard-error.md
 date:                  2024-01-29T00:05:54.775306-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Запись в стандартный поток ошибок"

@@ -1,7 +1,5 @@
 ---
 title:                "Praca z JSON"
-aliases:
-- /pl/go/working-with-json.md
 date:                  2024-02-03T18:12:09.750006-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Praca z JSON"

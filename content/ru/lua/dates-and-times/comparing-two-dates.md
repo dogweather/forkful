@@ -1,7 +1,5 @@
 ---
 title:                "Сравнение двух дат"
-aliases:
-- /ru/lua/comparing-two-dates.md
 date:                  2024-01-28T23:55:22.961132-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Сравнение двух дат"

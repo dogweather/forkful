@@ -1,7 +1,5 @@
 ---
 title:                "Interpolating a string"
-aliases:
-- /en/vba/interpolating-a-string.md
 date:                  2024-02-01T21:30:14.729179-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Interpolating a string"

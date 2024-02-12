@@ -1,7 +1,5 @@
 ---
 title:                "Parsing HTML"
-aliases:
-- /en/bash/parsing-html.md
 date:                  2024-01-20T15:29:51.232707-07:00
 simple_title:         "Parsing HTML"
 

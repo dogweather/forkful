@@ -1,7 +1,5 @@
 ---
 title:                "Viết các bài kiểm tra"
-aliases:
-- /vi/java/writing-tests.md
 date:                  2024-01-28T22:13:09.025684-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Viết các bài kiểm tra"

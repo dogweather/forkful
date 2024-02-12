@@ -1,7 +1,5 @@
 ---
 title:                "Verifica se una directory esiste"
-aliases:
-- /it/lua/checking-if-a-directory-exists.md
 date:                  2024-02-03T19:07:50.968236-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Verifica se una directory esiste"

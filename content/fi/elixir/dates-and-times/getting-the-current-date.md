@@ -1,7 +1,5 @@
 ---
 title:                "Nykyisen päivämäärän hankkiminen"
-aliases:
-- /fi/elixir/getting-the-current-date.md
 date:                  2024-02-03T19:09:36.803762-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Nykyisen päivämäärän hankkiminen"

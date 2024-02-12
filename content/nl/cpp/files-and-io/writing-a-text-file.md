@@ -1,7 +1,5 @@
 ---
 title:                "Een tekstbestand schrijven"
-aliases:
-- /nl/cpp/writing-a-text-file.md
 date:                  2024-01-28T22:12:16.981770-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een tekstbestand schrijven"

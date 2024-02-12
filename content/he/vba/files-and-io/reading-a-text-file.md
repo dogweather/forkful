@@ -1,7 +1,5 @@
 ---
 title:                "קריאת קובץ טקסט"
-aliases:
-- /he/vba/reading-a-text-file.md
 date:                  2024-02-01T22:00:53.705560-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "קריאת קובץ טקסט"

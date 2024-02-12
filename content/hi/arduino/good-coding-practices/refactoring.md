@@ -1,7 +1,5 @@
 ---
 title:                "कोड सुधार"
-aliases:
-- /hi/arduino/refactoring.md
 date:                  2024-01-26T01:18:19.851253-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "कोड सुधार"

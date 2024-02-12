@@ -1,7 +1,5 @@
 ---
 title:                "Concatenando cadenas de texto"
-aliases:
-- /es/google-apps-script/concatenating-strings.md
 date:                  2024-02-01T21:49:48.139581-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Concatenando cadenas de texto"

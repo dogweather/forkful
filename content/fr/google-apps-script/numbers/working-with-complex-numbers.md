@@ -1,7 +1,5 @@
 ---
 title:                "Travailler avec des nombres complexes"
-aliases:
-- /fr/google-apps-script/working-with-complex-numbers.md
 date:                  2024-02-01T22:07:38.530232-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Travailler avec des nombres complexes"

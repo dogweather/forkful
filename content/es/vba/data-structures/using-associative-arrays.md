@@ -1,7 +1,5 @@
 ---
 title:                "Utilizando arreglos asociativos"
-aliases:
-- /es/vba/using-associative-arrays.md
 date:                  2024-02-01T22:04:20.649805-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Utilizando arreglos asociativos"

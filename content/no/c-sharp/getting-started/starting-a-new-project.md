@@ -1,7 +1,5 @@
 ---
 title:                "Å starte et nytt prosjekt"
-aliases:
-- /no/c-sharp/starting-a-new-project.md
 date:                  2024-01-20T18:03:21.458660-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Å starte et nytt prosjekt"

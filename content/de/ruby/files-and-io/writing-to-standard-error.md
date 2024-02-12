@@ -1,7 +1,5 @@
 ---
 title:                "Schreiben auf Standardfehler"
-aliases:
-- /de/ruby/writing-to-standard-error.md
 date:                  2024-02-03T19:34:45.851299-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Schreiben auf Standardfehler"

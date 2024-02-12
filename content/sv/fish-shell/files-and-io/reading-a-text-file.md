@@ -1,7 +1,5 @@
 ---
 title:                "Läsa en textfil"
-aliases:
-- /sv/fish-shell/reading-a-text-file.md
 date:                  2024-01-20T17:54:27.664942-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Läsa en textfil"

@@ -1,7 +1,5 @@
 ---
 title:                "Logboekregistratie"
-aliases:
-- /nl/google-apps-script/logging.md
 date:                  2024-02-01T21:55:59.373288-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Logboekregistratie"

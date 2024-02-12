@@ -1,7 +1,5 @@
 ---
 title:                "Analysering av HTML"
-aliases:
-- /no/c-sharp/parsing-html.md
 date:                  2024-02-03T19:11:52.140839-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Analysering av HTML"

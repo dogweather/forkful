@@ -1,7 +1,5 @@
 ---
 title:                "Generowanie liczb losowych"
-aliases:
-- /pl/fish-shell/generating-random-numbers.md
 date:                  2024-01-27T20:33:56.363464-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Generowanie liczb losowych"

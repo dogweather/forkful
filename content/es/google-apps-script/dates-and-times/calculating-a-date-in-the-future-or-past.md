@@ -1,7 +1,5 @@
 ---
 title:                "Cálculo de una fecha en el futuro o el pasado"
-aliases:
-- /es/google-apps-script/calculating-a-date-in-the-future-or-past.md
 date:                  2024-02-01T21:48:57.453320-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Cálculo de una fecha en el futuro o el pasado"

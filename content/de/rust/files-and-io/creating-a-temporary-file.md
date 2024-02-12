@@ -1,7 +1,5 @@
 ---
 title:                "Erstellung einer temporären Datei"
-aliases:
-- /de/rust/creating-a-temporary-file.md
 date:                  2024-01-20T17:41:07.153656-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Erstellung einer temporären Datei"

@@ -1,7 +1,5 @@
 ---
 title:                "디렉토리가 존재하는지 확인하기"
-aliases:
-- /ko/go/checking-if-a-directory-exists.md
 date:                  2024-02-03T17:52:44.069708-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "디렉토리가 존재하는지 확인하기"

@@ -1,7 +1,5 @@
 ---
 title:                "Refaktorisering"
-aliases:
-- /sv/rust/refactoring.md
 date:                  2024-01-26T03:37:17.978527-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Refaktorisering"

@@ -1,7 +1,5 @@
 ---
 title:                "Drukowanie informacji wyjściowych debugowania"
-aliases:
-- /pl/google-apps-script/printing-debug-output.md
 date:                  2024-02-01T21:58:08.294092-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Drukowanie informacji wyjściowych debugowania"

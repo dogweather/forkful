@@ -1,7 +1,5 @@
 ---
 title:                "Fehlerbehandlung"
-aliases:
-- /de/c/handling-errors.md
 date:                  2024-02-03T17:58:04.012275-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Fehlerbehandlung"

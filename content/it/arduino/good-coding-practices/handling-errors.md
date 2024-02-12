@@ -1,7 +1,5 @@
 ---
 title:                "Gestione degli errori"
-aliases:
-- /it/arduino/handling-errors.md
 date:                  2024-01-26T00:36:47.059117-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Gestione degli errori"

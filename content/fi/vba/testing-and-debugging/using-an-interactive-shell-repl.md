@@ -1,7 +1,5 @@
 ---
 title:                "Interaktiivisen kuoren (REPL) käyttö"
-aliases:
-- /fi/vba/using-an-interactive-shell-repl.md
 date:                  2024-02-01T22:04:19.172452-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Interaktiivisen kuoren (REPL) käyttö"

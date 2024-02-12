@@ -1,7 +1,5 @@
 ---
 title:                "Redondeo de números"
-aliases:
-- /es/php/rounding-numbers.md
 date:                  2024-01-26T03:45:54.905166-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Redondeo de números"

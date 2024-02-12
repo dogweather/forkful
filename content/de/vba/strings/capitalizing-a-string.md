@@ -1,7 +1,5 @@
 ---
 title:                "Einen String großschreiben"
-aliases:
-- /de/vba/capitalizing-a-string.md
 date:                  2024-02-01T21:50:22.379011-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Einen String großschreiben"

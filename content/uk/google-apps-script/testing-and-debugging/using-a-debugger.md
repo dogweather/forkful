@@ -1,7 +1,5 @@
 ---
 title:                "Використання дебагера"
-aliases:
-- /uk/google-apps-script/using-a-debugger.md
 date:                  2024-02-01T22:04:01.952511-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Використання дебагера"

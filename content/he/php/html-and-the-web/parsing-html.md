@@ -1,7 +1,5 @@
 ---
 title:                "פיענוח HTML"
-aliases:
-- /he/php/parsing-html.md
 date:                  2024-02-03T19:13:15.859184-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "פיענוח HTML"

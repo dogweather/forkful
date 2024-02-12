@@ -1,7 +1,5 @@
 ---
 title:                "리팩터링"
-aliases:
-- /ko/kotlin/refactoring.md
 date:                  2024-01-26T01:44:27.447475-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "리팩터링"

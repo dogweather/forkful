@@ -1,7 +1,5 @@
 ---
 title:                "Tratamento de erros"
-aliases:
-- /pt/powershell/handling-errors.md
 date:                  2024-01-26T00:56:40.804817-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Tratamento de erros"

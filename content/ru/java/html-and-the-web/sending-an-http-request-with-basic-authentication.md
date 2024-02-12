@@ -1,7 +1,5 @@
 ---
 title:                "Отправка HTTP-запроса с базовой аутентификацией"
-aliases:
-- /ru/java/sending-an-http-request-with-basic-authentication.md
 date:                  2024-01-29T00:03:09.092662-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Отправка HTTP-запроса с базовой аутентификацией"

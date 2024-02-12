@@ -1,7 +1,5 @@
 ---
 title:                "Arbeta med CSV"
-aliases:
-- /sv/clojure/working-with-csv.md
 date:                  2024-02-03T19:19:11.303957-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Arbeta med CSV"

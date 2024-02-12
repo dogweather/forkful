@@ -1,7 +1,5 @@
 ---
 title:                "将来または過去の日付を計算する"
-aliases:
-- /ja/typescript/calculating-a-date-in-the-future-or-past.md
 date:                  2024-01-20T17:32:26.395264-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "将来または過去の日付を計算する"

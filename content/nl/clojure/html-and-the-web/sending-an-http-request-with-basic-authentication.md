@@ -1,7 +1,5 @@
 ---
 title:                "Een HTTP-verzoek verzenden met basisauthenticatie"
-aliases:
-- /nl/clojure/sending-an-http-request-with-basic-authentication.md
 date:                  2024-01-28T22:07:54.684564-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een HTTP-verzoek verzenden met basisauthenticatie"

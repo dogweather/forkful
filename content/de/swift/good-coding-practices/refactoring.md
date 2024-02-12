@@ -1,7 +1,5 @@
 ---
 title:                "Refactoring"
-aliases:
-- /de/swift/refactoring.md
 date:                  2024-01-26T03:36:37.835050-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Refactoring"

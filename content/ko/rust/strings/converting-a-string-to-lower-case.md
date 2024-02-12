@@ -1,7 +1,5 @@
 ---
 title:                "문자열을 소문자로 변환하기"
-aliases:
-- /ko/rust/converting-a-string-to-lower-case.md
 date:                  2024-01-20T17:39:24.739796-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "문자열을 소문자로 변환하기"

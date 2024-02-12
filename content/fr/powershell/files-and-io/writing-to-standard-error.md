@@ -1,7 +1,5 @@
 ---
 title:                "Écrire sur l'erreur standard"
-aliases:
-- /fr/powershell/writing-to-standard-error.md
 date:                  2024-02-03T19:34:08.625383-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Écrire sur l'erreur standard"

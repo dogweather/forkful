@@ -1,7 +1,5 @@
 ---
 title:                "处理错误"
-aliases:
-- /zh/rust/handling-errors.md
 date:                  2024-01-26T00:57:21.237992-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "处理错误"

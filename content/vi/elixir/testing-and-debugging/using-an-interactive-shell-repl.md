@@ -1,7 +1,5 @@
 ---
 title:                "Sử dụng vỏ tương tác (REPL)"
-aliases:
-- /vi/elixir/using-an-interactive-shell-repl.md
 date:                  2024-01-28T22:09:34.267576-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Sử dụng vỏ tương tác (REPL)"

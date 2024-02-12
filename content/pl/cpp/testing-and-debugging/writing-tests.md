@@ -1,7 +1,5 @@
 ---
 title:                "Pisanie testów"
-aliases:
-- /pl/cpp/writing-tests.md
 date:                  2024-02-03T19:30:06.853562-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Pisanie testów"

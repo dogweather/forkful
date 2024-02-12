@@ -1,7 +1,5 @@
 ---
 title:                "Att arbeta med komplexa tal"
-aliases:
-- /sv/javascript/working-with-complex-numbers.md
 date:                  2024-01-26T04:42:27.788166-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Att arbeta med komplexa tal"

@@ -1,7 +1,5 @@
 ---
 title:                "使用调试器"
-aliases:
-- /zh/python/using-a-debugger.md
 date:                  2024-01-26T04:09:21.337755-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "使用调试器"

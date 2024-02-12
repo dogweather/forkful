@@ -1,7 +1,5 @@
 ---
 title:                "将日期转换为字符串"
-aliases:
-- /zh/clojure/converting-a-date-into-a-string.md
 date:                  2024-01-20T17:36:03.315927-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "将日期转换为字符串"

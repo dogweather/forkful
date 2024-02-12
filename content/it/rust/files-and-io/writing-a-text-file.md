@@ -1,7 +1,5 @@
 ---
 title:                "Scrivere un file di testo"
-aliases:
-- /it/rust/writing-a-text-file.md
 date:                  2024-02-03T19:29:16.188032-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Scrivere un file di testo"

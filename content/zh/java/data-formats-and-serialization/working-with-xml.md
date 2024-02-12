@@ -1,7 +1,5 @@
 ---
 title:                "处理XML"
-aliases:
-- /zh/java/working-with-xml.md
 date:                  2024-01-26T04:32:39.557927-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "处理XML"

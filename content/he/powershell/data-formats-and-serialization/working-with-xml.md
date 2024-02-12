@@ -1,7 +1,5 @@
 ---
 title:                "עבודה עם XML"
-aliases:
-- /he/powershell/working-with-xml.md
 date:                  2024-01-26T04:35:08.453018-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "עבודה עם XML"

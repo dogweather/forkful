@@ -1,7 +1,5 @@
 ---
 title:                "Suchen und Ersetzen von Text"
-aliases:
-- /de/go/searching-and-replacing-text.md
 date:                  2024-02-03T18:08:25.520436-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Suchen und Ersetzen von Text"

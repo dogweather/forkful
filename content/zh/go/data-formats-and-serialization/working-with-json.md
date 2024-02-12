@@ -1,7 +1,5 @@
 ---
 title:                "处理JSON数据"
-aliases:
-- /zh/go/working-with-json.md
 date:                  2024-02-03T18:12:06.048671-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "处理JSON数据"

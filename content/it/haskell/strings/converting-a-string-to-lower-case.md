@@ -1,7 +1,5 @@
 ---
 title:                "Conversione di una stringa in minuscolo"
-aliases:
-- /it/haskell/converting-a-string-to-lower-case.md
 date:                  2024-01-20T17:38:41.355565-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Conversione di una stringa in minuscolo"

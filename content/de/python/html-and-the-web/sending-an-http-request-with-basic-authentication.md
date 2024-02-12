@@ -1,7 +1,5 @@
 ---
 title:                "HTTP-Anfragen mit Basisauthentifizierung senden"
-aliases:
-- /de/python/sending-an-http-request-with-basic-authentication.md
 date:                  2024-01-20T18:02:27.566128-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "HTTP-Anfragen mit Basisauthentifizierung senden"

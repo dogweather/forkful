@@ -1,7 +1,5 @@
 ---
 title:                "פירוק HTML"
-aliases:
-- /he/javascript/parsing-html.md
 date:                  2024-01-28T03:02:03.154606-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "פירוק HTML"

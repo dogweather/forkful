@@ -1,7 +1,5 @@
 ---
 title:                "Manipulation de fichiers avec des commandes en une ligne en CLI"
-aliases:
-- /fr/powershell/manipulating-files-with-cli-one-liners.md
 date:                  2024-01-27T16:20:55.315479-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Manipulation de fichiers avec des commandes en une ligne en CLI"

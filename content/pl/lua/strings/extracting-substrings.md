@@ -1,7 +1,5 @@
 ---
 title:                "Wycinanie podłańcuchów"
-aliases:
-- /pl/lua/extracting-substrings.md
 date:                  2024-01-20T17:46:09.645550-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Wycinanie podłańcuchów"

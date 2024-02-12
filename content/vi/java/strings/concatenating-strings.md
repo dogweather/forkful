@@ -1,7 +1,5 @@
 ---
 title:                "Nối chuỗi ký tự"
-aliases:
-- /vi/java/concatenating-strings.md
 date:                  2024-01-28T21:57:35.229393-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Nối chuỗi ký tự"

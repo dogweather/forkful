@@ -1,7 +1,5 @@
 ---
 title:                "文字列を小文字に変換する"
-aliases:
-- /ja/go/converting-a-string-to-lower-case.md
 date:                  2024-02-03T17:55:02.551108-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "文字列を小文字に変換する"

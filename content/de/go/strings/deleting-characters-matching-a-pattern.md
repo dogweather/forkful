@@ -1,7 +1,5 @@
 ---
 title:                "Zeichen löschen, die einem Muster entsprechen"
-aliases:
-- /de/go/deleting-characters-matching-a-pattern.md
 date:                  2024-02-03T17:55:31.213254-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Zeichen löschen, die einem Muster entsprechen"

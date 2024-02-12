@@ -1,7 +1,5 @@
 ---
 title:                "So sánh hai ngày"
-aliases:
-- /vi/rust/comparing-two-dates.md
 date:                  2024-01-28T21:57:15.085956-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "So sánh hai ngày"

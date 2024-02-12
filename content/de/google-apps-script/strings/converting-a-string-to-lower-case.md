@@ -1,7 +1,5 @@
 ---
 title:                "Einen String in Kleinbuchstaben umwandeln"
-aliases:
-- /de/google-apps-script/converting-a-string-to-lower-case.md
 date:                  2024-02-01T21:51:09.049923-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Einen String in Kleinbuchstaben umwandeln"

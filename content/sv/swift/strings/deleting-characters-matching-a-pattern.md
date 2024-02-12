@@ -1,7 +1,5 @@
 ---
 title:                "Ta bort tecken som matchar ett mönster"
-aliases:
-- /sv/swift/deleting-characters-matching-a-pattern.md
 date:                  2024-01-20T17:43:04.326707-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Ta bort tecken som matchar ett mönster"

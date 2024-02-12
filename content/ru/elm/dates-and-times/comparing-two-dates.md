@@ -1,7 +1,5 @@
 ---
 title:                "Сравнение двух дат"
-aliases:
-- /ru/elm/comparing-two-dates.md
 date:                  2024-01-28T23:55:52.963944-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Сравнение двух дат"

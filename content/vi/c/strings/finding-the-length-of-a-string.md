@@ -1,7 +1,5 @@
 ---
 title:                "Tìm kiếm độ dài của một chuỗi"
-aliases:
-- /vi/c/finding-the-length-of-a-string.md
 date:                  2024-02-03T17:57:02.729104-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Tìm kiếm độ dài của một chuỗi"

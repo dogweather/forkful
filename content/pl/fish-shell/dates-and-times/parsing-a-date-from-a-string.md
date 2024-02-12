@@ -1,7 +1,5 @@
 ---
 title:                "Analiza składniowa daty z łańcucha znaków"
-aliases:
-- /pl/fish-shell/parsing-a-date-from-a-string.md
 date:                  2024-02-03T19:14:25.591683-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Analiza składniowa daty z łańcucha znaków"

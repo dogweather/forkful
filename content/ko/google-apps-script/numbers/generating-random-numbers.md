@@ -1,7 +1,5 @@
 ---
 title:                "난수 생성하기"
-aliases:
-- /ko/google-apps-script/generating-random-numbers.md
 date:                  2024-02-01T21:54:12.689194-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "난수 생성하기"

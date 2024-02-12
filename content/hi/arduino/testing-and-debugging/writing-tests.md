@@ -1,7 +1,5 @@
 ---
 title:                "टेस्ट लिखना"
-aliases:
-- /hi/arduino/writing-tests.md
 date:                  2024-02-03T19:30:14.337310-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "टेस्ट लिखना"

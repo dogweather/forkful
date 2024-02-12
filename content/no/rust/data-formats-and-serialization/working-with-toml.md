@@ -1,7 +1,5 @@
 ---
 title:                "Jobbe med TOML"
-aliases:
-- /no/rust/working-with-toml.md
 date:                  2024-01-26T04:26:13.785024-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Jobbe med TOML"

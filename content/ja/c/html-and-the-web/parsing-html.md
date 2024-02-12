@@ -1,7 +1,5 @@
 ---
 title:                "HTMLの解析"
-aliases:
-- /ja/c/parsing-html.md
 date:                  2024-02-03T18:00:11.512161-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "HTMLの解析"

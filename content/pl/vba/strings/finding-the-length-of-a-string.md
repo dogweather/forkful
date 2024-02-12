@@ -1,7 +1,5 @@
 ---
 title:                "Znajdowanie długości łańcucha znaków"
-aliases:
-- /pl/vba/finding-the-length-of-a-string.md
 date:                  2024-02-01T21:54:01.742452-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Znajdowanie długości łańcucha znaków"

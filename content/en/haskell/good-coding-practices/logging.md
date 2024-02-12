@@ -1,7 +1,5 @@
 ---
 title:                "Logging"
-aliases:
-- /en/haskell/logging.md
 date:                  2024-01-25T02:03:40.217197-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Logging"

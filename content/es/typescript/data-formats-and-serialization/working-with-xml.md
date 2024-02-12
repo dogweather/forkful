@@ -1,7 +1,5 @@
 ---
 title:                "Trabajando con XML"
-aliases:
-- /es/typescript/working-with-xml.md
 date:                  2024-01-26T04:36:06.547868-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Trabajando con XML"

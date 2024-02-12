@@ -1,7 +1,5 @@
 ---
 title:                "Ottenere la data corrente"
-aliases:
-- /it/cpp/getting-the-current-date.md
 date:                  2024-02-03T19:09:08.832595-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Ottenere la data corrente"

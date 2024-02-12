@@ -1,7 +1,5 @@
 ---
 title:                "Làm tròn số"
-aliases:
-- /vi/lua/rounding-numbers.md
 date:                  2024-01-28T22:07:05.933603-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Làm tròn số"

@@ -1,7 +1,5 @@
 ---
 title:                "HTTP-pyynnön lähettäminen perusautentikoinnilla"
-aliases:
-- /fi/python/sending-an-http-request-with-basic-authentication.md
 date:                  2024-01-20T18:02:18.211429-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "HTTP-pyynnön lähettäminen perusautentikoinnilla"

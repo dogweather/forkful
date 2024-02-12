@@ -1,7 +1,5 @@
 ---
 title:                "Tolka HTML"
-aliases:
-- /sv/c/parsing-html.md
 date:                  2024-02-03T17:59:49.273955-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Tolka HTML"

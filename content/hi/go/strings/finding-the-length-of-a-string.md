@@ -1,7 +1,5 @@
 ---
 title:                "स्ट्रिंग की लंबाई का पता लगाना"
-aliases:
-- /hi/go/finding-the-length-of-a-string.md
 date:                  2024-02-03T17:58:32.561680-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "स्ट्रिंग की लंबाई का पता लगाना"

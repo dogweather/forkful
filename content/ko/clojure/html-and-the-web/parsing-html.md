@@ -1,7 +1,5 @@
 ---
 title:                "HTML 파싱"
-aliases:
-- /ko/clojure/parsing-html.md
 date:                  2024-02-03T19:11:43.253014-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "HTML 파싱"

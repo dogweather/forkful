@@ -1,7 +1,5 @@
 ---
 title:                "Att arbeta med XML"
-aliases:
-- /sv/clojure/working-with-xml.md
 date:                  2024-01-26T04:29:18.403170-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Att arbeta med XML"

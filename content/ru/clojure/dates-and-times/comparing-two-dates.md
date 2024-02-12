@@ -1,7 +1,5 @@
 ---
 title:                "Сравнение двух дат"
-aliases:
-- /ru/clojure/comparing-two-dates.md
 date:                  2024-01-29T00:05:57.489276-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Сравнение двух дат"

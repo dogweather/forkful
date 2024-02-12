@@ -1,7 +1,5 @@
 ---
 title:                "Запись в стандартный поток ошибок"
-aliases:
-- /ru/fish-shell/writing-to-standard-error.md
 date:                  2024-01-29T00:05:50.163575-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Запись в стандартный поток ошибок"

@@ -1,7 +1,5 @@
 ---
 title:                "XMLの扱い方"
-aliases:
-- /ja/ruby/working-with-xml.md
 date:                  2024-01-26T04:35:29.174145-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "XMLの扱い方"

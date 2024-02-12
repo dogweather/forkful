@@ -1,7 +1,5 @@
 ---
 title:                "Slette tegn som matcher et mønster"
-aliases:
-- /no/c/deleting-characters-matching-a-pattern.md
 date:                  2024-02-03T17:55:32.246542-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Slette tegn som matcher et mønster"

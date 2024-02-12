@@ -1,7 +1,5 @@
 ---
 title:                "Convertir une chaîne en minuscules"
-aliases:
-- /fr/google-apps-script/converting-a-string-to-lower-case.md
 date:                  2024-02-01T21:50:49.586224-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Convertir une chaîne en minuscules"

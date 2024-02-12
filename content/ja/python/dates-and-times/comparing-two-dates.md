@@ -1,7 +1,5 @@
 ---
 title:                "日付を比較する"
-aliases:
-- /ja/python/comparing-two-dates.md
 date:                  2024-01-20T17:33:33.436783-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "日付を比較する"

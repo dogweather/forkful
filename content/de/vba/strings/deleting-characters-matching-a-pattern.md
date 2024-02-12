@@ -1,7 +1,5 @@
 ---
 title:                "Zeichen, die einem Muster entsprechen, löschen"
-aliases:
-- /de/vba/deleting-characters-matching-a-pattern.md
 date:                  2024-02-01T21:52:13.045554-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Zeichen, die einem Muster entsprechen, löschen"

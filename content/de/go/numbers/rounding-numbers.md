@@ -1,7 +1,5 @@
 ---
 title:                "Zahlen runden"
-aliases:
-- /de/go/rounding-numbers.md
 date:                  2024-02-03T18:07:43.280775-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Zahlen runden"

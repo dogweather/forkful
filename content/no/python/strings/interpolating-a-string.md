@@ -1,7 +1,5 @@
 ---
 title:                "Interpolering av en streng"
-aliases:
-- /no/python/interpolating-a-string.md
 date:                  2024-01-28T21:23:40.105231-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Interpolering av en streng"

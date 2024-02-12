@@ -1,7 +1,5 @@
 ---
 title:                "Een tekstbestand lezen"
-aliases:
-- /nl/typescript/reading-a-text-file.md
 date:                  2024-01-28T22:04:55.663560-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een tekstbestand lezen"

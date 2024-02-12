@@ -1,7 +1,5 @@
 ---
 title:                "Writing to standard error"
-aliases:
-- /en/swift/writing-to-standard-error.md
 date:                  2024-02-03T19:03:49.305565-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Writing to standard error"

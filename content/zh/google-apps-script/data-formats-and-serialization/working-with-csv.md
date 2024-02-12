@@ -1,7 +1,5 @@
 ---
 title:                "处理CSV文件"
-aliases:
-- /zh/google-apps-script/working-with-csv.md
 date:                  2024-02-01T22:05:04.727161-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "处理CSV文件"

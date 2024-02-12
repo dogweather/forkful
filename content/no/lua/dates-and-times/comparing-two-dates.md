@@ -1,7 +1,5 @@
 ---
 title:                "Sammenlikning av to datoer"
-aliases:
-- /no/lua/comparing-two-dates.md
 date:                  2024-01-20T17:33:34.028017-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Sammenlikning av to datoer"

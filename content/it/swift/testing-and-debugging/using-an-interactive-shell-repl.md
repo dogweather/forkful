@@ -1,7 +1,5 @@
 ---
 title:                "Utilizzo di un interprete interattivo (REPL)"
-aliases:
-- /it/swift/using-an-interactive-shell-repl.md
 date:                  2024-01-26T04:18:02.495180-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Utilizzo di un interprete interattivo (REPL)"

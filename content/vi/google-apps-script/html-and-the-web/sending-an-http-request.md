@@ -1,7 +1,5 @@
 ---
 title:                "Gửi yêu cầu HTTP"
-aliases:
-- /vi/google-apps-script/sending-an-http-request.md
 date:                  2024-02-01T22:02:05.307098-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Gửi yêu cầu HTTP"

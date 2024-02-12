@@ -1,7 +1,5 @@
 ---
 title:                "Отправка HTTP-запроса"
-aliases:
-- /ru/vba/sending-an-http-request.md
 date:                  2024-02-01T22:02:18.553214-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Отправка HTTP-запроса"

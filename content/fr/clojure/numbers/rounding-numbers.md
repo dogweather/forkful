@@ -1,7 +1,5 @@
 ---
 title:                "Arrondir les nombres"
-aliases:
-- /fr/clojure/rounding-numbers.md
 date:                  2024-01-26T03:44:38.241383-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Arrondir les nombres"

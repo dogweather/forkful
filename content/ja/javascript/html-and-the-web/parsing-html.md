@@ -1,7 +1,5 @@
 ---
 title:                "HTMLのパース"
-aliases:
-- /ja/javascript/parsing-html.md
 date:                  2024-01-28T03:00:57.304411-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "HTMLのパース"

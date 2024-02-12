@@ -1,7 +1,5 @@
 ---
 title:                "Lavorare con i numeri complessi"
-aliases:
-- /it/rust/working-with-complex-numbers.md
 date:                  2024-01-26T04:45:19.054577-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Lavorare con i numeri complessi"

@@ -1,7 +1,5 @@
 ---
 title:                "Arbeta med csv"
-aliases:
-- /sv/swift/working-with-csv.md
 date:                  2024-01-19
 simple_title:         "Arbeta med csv"
 

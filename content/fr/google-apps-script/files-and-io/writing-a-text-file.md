@@ -1,7 +1,5 @@
 ---
 title:                "Rédaction d'un fichier texte"
-aliases:
-- /fr/google-apps-script/writing-a-text-file.md
 date:                  2024-02-01T22:07:55.831980-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Rédaction d'un fichier texte"

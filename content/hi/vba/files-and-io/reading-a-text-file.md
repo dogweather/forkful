@@ -1,7 +1,5 @@
 ---
 title:                "एक टेक्स्ट फ़ाइल पढ़ना"
-aliases:
-- /hi/vba/reading-a-text-file.md
 date:                  2024-02-01T22:00:23.566034-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "एक टेक्स्ट फ़ाइल पढ़ना"

@@ -1,7 +1,5 @@
 ---
 title:                "Tests Schrijven"
-aliases:
-- /nl/fish-shell/writing-tests.md
 date:                  2024-01-28T22:13:21.700379-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Tests Schrijven"

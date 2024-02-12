@@ -1,7 +1,5 @@
 ---
 title:                "搜索和替换文本"
-aliases:
-- /zh/go/searching-and-replacing-text.md
 date:                  2024-02-03T18:08:12.597993-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "搜索和替换文本"

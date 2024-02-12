@@ -1,7 +1,5 @@
 ---
 title:                "Kompleksilukujen käsittely"
-aliases:
-- /fi/arduino/working-with-complex-numbers.md
 date:                  2024-01-26T04:36:48.404629-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Kompleksilukujen käsittely"

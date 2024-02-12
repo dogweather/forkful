@@ -1,7 +1,5 @@
 ---
 title:                "Quotes uit een string verwijderen"
-aliases:
-- /nl/google-apps-script/removing-quotes-from-a-string.md
 date:                  2024-02-01T22:00:05.835365-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Quotes uit een string verwijderen"

@@ -1,7 +1,5 @@
 ---
 title:                "Commandoregelargumenten lezen"
-aliases:
-- /nl/lua/reading-command-line-arguments.md
 date:                  2024-01-28T22:05:11.817112-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Commandoregelargumenten lezen"

@@ -1,7 +1,5 @@
 ---
 title:                "Herunterladen einer Webseite"
-aliases:
-- /de/google-apps-script/downloading-a-web-page.md
 date:                  2024-02-01T21:52:45.024696-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Herunterladen einer Webseite"

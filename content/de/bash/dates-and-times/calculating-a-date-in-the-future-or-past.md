@@ -1,7 +1,5 @@
 ---
 title:                "Berechnung eines zukünftigen oder vergangenen Datums"
-aliases:
-- /de/bash/calculating-a-date-in-the-future-or-past.md
 date:                  2024-01-20T17:28:36.215661-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Berechnung eines zukünftigen oder vergangenen Datums"

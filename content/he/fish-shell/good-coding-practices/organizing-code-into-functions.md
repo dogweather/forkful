@@ -1,7 +1,5 @@
 ---
 title:                "ארגון הקוד לתוך פונקציות"
-aliases:
-- /he/fish-shell/organizing-code-into-functions.md
 date:                  2024-01-28T23:03:56.102558-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "ארגון הקוד לתוך פונקציות"

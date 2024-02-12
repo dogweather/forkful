@@ -1,7 +1,5 @@
 ---
 title:                "तारीख को स्ट्रिंग में बदलना"
-aliases:
-- /hi/fish-shell/converting-a-date-into-a-string.md
 date:                  2024-01-20T17:36:34.021356-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "तारीख को स्ट्रिंग में बदलना"

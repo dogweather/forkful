@@ -1,7 +1,5 @@
 ---
 title:                "정규 표현식 사용하기"
-aliases:
-- /ko/php/using-regular-expressions.md
 date:                  2024-02-03T19:17:59.968008-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "정규 표현식 사용하기"

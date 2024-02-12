@@ -1,7 +1,5 @@
 ---
 title:                "Registro de Logs"
-aliases:
-- /pt/go/logging.md
 date:                  2024-02-03T17:59:16.752202-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Registro de Logs"

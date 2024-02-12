@@ -1,7 +1,5 @@
 ---
 title:                "코드를 함수로 구성하는 방법"
-aliases:
-- /ko/fish-shell/organizing-code-into-functions.md
 date:                  2024-01-28T23:01:54.005907-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "코드를 함수로 구성하는 방법"

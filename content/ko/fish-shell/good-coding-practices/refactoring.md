@@ -1,7 +1,5 @@
 ---
 title:                "리팩토링"
-aliases:
-- /ko/fish-shell/refactoring.md
 date:                  2024-01-26T01:18:18.277430-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "리팩토링"

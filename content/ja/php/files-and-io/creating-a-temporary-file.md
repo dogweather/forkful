@@ -1,7 +1,5 @@
 ---
 title:                "一時ファイルの作成"
-aliases:
-- /ja/php/creating-a-temporary-file.md
 date:                  2024-01-20T17:41:07.485039-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "一時ファイルの作成"

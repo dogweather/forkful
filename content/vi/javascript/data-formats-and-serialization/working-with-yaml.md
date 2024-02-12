@@ -1,7 +1,5 @@
 ---
 title:                "Làm việc với YAML"
-aliases:
-- /vi/javascript/working-with-yaml.md
 date:                  2024-01-28T22:12:11.479201-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Làm việc với YAML"

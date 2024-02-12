@@ -1,7 +1,5 @@
 ---
 title:                "Alimerkkijonojen erottaminen"
-aliases:
-- /fi/vba/extracting-substrings.md
 date:                  2024-02-01T21:53:44.625538-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Alimerkkijonojen erottaminen"

@@ -1,7 +1,5 @@
 ---
 title:                "Надсилання HTTP-запиту"
-aliases:
-- /uk/google-apps-script/sending-an-http-request.md
 date:                  2024-02-01T22:02:15.103997-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Надсилання HTTP-запиту"

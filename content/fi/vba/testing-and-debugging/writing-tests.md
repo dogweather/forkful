@@ -1,7 +1,5 @@
 ---
 title:                "Testien kirjoittaminen"
-aliases:
-- /fi/vba/writing-tests.md
 date:                  2024-02-01T22:08:51.491594-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Testien kirjoittaminen"

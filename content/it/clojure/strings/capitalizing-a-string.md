@@ -1,7 +1,5 @@
 ---
 title:                "Capitalizzare una stringa"
-aliases:
-- /it/clojure/capitalizing-a-string.md
 date:                  2024-02-03T19:04:51.037331-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Capitalizzare una stringa"

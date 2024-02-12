@@ -1,7 +1,5 @@
 ---
 title:                "使用TOML工作"
-aliases:
-- /zh/vba/working-with-toml.md
 date:                  2024-02-01T22:06:54.673491-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "使用TOML工作"

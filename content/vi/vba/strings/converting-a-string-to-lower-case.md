@@ -1,7 +1,5 @@
 ---
 title:                "Chuyển đổi chuỗi thành chữ thường"
-aliases:
-- /vi/vba/converting-a-string-to-lower-case.md
 date:                  2024-02-01T21:51:42.528476-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Chuyển đổi chuỗi thành chữ thường"

@@ -1,7 +1,5 @@
 ---
 title:                "새 프로젝트 시작하기"
-aliases:
-- /ko/clojure/starting-a-new-project.md
 date:                  2024-01-20T18:03:29.139390-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "새 프로젝트 시작하기"

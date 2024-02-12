@@ -1,7 +1,5 @@
 ---
 title:                "Написание тестов"
-aliases:
-- /ru/haskell/writing-tests.md
 date:                  2024-01-29T00:06:11.773292-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Написание тестов"

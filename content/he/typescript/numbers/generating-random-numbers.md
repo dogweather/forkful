@@ -1,7 +1,5 @@
 ---
 title:                "גילוי מספרים אקראיים"
-aliases:
-- /he/typescript/generating-random-numbers.md
 date:                  2024-01-27T20:36:15.727308-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "גילוי מספרים אקראיים"

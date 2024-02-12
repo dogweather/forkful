@@ -1,7 +1,5 @@
 ---
 title:                "YAML로 작업하기"
-aliases:
-- /ko/google-apps-script/working-with-yaml.md
 date:                  2024-02-01T22:07:14.248154-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "YAML로 작업하기"

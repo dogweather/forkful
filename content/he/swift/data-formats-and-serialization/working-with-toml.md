@@ -1,7 +1,5 @@
 ---
 title:                "עבודה עם TOML"
-aliases:
-- /he/swift/working-with-toml.md
 date:                  2024-01-26T04:27:13.465910-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "עבודה עם TOML"

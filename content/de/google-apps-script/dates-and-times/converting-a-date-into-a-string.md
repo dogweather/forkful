@@ -1,7 +1,5 @@
 ---
 title:                "Ein Datum in einen String umwandeln"
-aliases:
-- /de/google-apps-script/converting-a-date-into-a-string.md
 date:                  2024-02-01T21:50:53.303250-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Ein Datum in einen String umwandeln"

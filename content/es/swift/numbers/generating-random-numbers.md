@@ -1,7 +1,5 @@
 ---
 title:                "Generación de números aleatorios"
-aliases:
-- /es/swift/generating-random-numbers.md
 date:                  2024-01-27T20:35:13.338643-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Generación de números aleatorios"

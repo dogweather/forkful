@@ -1,7 +1,5 @@
 ---
 title:                "문자열 연결하기"
-aliases:
-- /ko/vba/concatenating-strings.md
 date:                  2024-02-01T21:50:49.453870-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "문자열 연결하기"

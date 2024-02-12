@@ -1,7 +1,5 @@
 ---
 title:                "读取文本文件"
-aliases:
-- /zh/google-apps-script/reading-a-text-file.md
 date:                  2024-02-01T21:58:47.620882-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "读取文本文件"

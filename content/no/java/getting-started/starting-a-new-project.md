@@ -1,7 +1,5 @@
 ---
 title:                "Å starte et nytt prosjekt"
-aliases:
-- /no/java/starting-a-new-project.md
 date:                  2024-01-20T18:03:49.865769-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Å starte et nytt prosjekt"

@@ -1,7 +1,5 @@
 ---
 title:                "שימוש במערכים אסוציאטיביים"
-aliases:
-- /he/vba/using-associative-arrays.md
 date:                  2024-02-01T22:05:26.871444-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "שימוש במערכים אסוציאטיביים"

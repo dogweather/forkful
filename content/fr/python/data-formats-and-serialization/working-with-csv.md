@@ -1,7 +1,5 @@
 ---
 title:                "Travailler avec CSV"
-aliases:
-- /fr/python/working-with-csv.md
 date:                  2024-02-03T19:20:52.487284-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Travailler avec CSV"

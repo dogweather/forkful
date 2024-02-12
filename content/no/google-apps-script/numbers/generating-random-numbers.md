@@ -1,7 +1,5 @@
 ---
 title:                "Generere tilfeldige tall"
-aliases:
-- /no/google-apps-script/generating-random-numbers.md
 date:                  2024-02-01T21:54:07.667695-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Generere tilfeldige tall"

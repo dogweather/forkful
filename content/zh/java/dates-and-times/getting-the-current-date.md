@@ -1,7 +1,5 @@
 ---
 title:                "获取当前日期"
-aliases:
-- /zh/java/getting-the-current-date.md
 date:                  2024-02-03T19:09:52.062134-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "获取当前日期"

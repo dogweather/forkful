@@ -1,7 +1,5 @@
 ---
 title:                "שימוש במנפה שגיאות"
-aliases:
-- /he/clojure/using-a-debugger.md
 date:                  2024-01-26T03:49:19.150137-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "שימוש במנפה שגיאות"

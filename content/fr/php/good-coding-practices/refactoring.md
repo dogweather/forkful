@@ -1,7 +1,5 @@
 ---
 title:                "Refactoring : Mode d'emploi"
-aliases:
-- /fr/php/refactoring.md
 date:                  2024-01-26T01:47:50.361082-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Refactoring : Mode d'emploi"

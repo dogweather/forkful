@@ -1,7 +1,5 @@
 ---
 title:                "Virheiden käsittely"
-aliases:
-- /fi/c/handling-errors.md
 date:                  2024-02-03T17:58:06.289960-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Virheiden käsittely"

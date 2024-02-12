@@ -1,7 +1,5 @@
 ---
 title:                "Å jobbe med komplekse tall"
-aliases:
-- /no/rust/working-with-complex-numbers.md
 date:                  2024-01-26T04:45:28.128978-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Å jobbe med komplekse tall"

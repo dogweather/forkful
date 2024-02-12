@@ -1,7 +1,5 @@
 ---
 title:                "Đọc một tệp văn bản"
-aliases:
-- /vi/swift/reading-a-text-file.md
 date:                  2024-01-28T22:05:18.674562-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Đọc một tệp văn bản"

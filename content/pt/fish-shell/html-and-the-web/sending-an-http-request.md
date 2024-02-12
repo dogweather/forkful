@@ -1,7 +1,5 @@
 ---
 title:                "Enviando uma requisição HTTP"
-aliases:
-- /pt/fish-shell/sending-an-http-request.md
 date:                  2024-01-20T17:59:33.247990-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Enviando uma requisição HTTP"

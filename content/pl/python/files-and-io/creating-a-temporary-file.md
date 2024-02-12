@@ -1,7 +1,5 @@
 ---
 title:                "Tworzenie pliku tymczasowego"
-aliases:
-- /pl/python/creating-a-temporary-file.md
 date:                  2024-01-20T17:41:08.926298-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Tworzenie pliku tymczasowego"

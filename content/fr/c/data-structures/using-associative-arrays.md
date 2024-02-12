@@ -1,7 +1,5 @@
 ---
 title:                "Utilisation des tableaux associatifs"
-aliases:
-- /fr/c/using-associative-arrays.md
 date:                  2024-02-03T18:10:43.132448-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Utilisation des tableaux associatifs"

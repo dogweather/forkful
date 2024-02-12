@@ -1,7 +1,5 @@
 ---
 title:                "Đọc một tệp văn bản"
-aliases:
-- /vi/elixir/reading-a-text-file.md
 date:                  2024-01-28T22:04:54.435614-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Đọc một tệp văn bản"

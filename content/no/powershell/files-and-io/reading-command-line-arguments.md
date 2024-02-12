@@ -1,7 +1,5 @@
 ---
 title:                "Lese kommandolinjeargumenter"
-aliases:
-- /no/powershell/reading-command-line-arguments.md
 date:                  2024-01-20T17:56:27.305696-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Lese kommandolinjeargumenter"

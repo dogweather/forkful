@@ -1,7 +1,5 @@
 ---
 title:                "Reguläre Ausdrücke verwenden"
-aliases:
-- /de/c/using-regular-expressions.md
 date:                  2024-02-03T18:10:48.252436-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Reguläre Ausdrücke verwenden"

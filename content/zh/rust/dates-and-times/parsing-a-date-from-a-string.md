@@ -1,7 +1,5 @@
 ---
 title:                "从字符串解析日期"
-aliases:
-- /zh/rust/parsing-a-date-from-a-string.md
 date:                  2024-02-03T19:15:21.986781-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "从字符串解析日期"

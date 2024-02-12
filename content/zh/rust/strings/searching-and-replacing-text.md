@@ -1,7 +1,5 @@
 ---
 title:                "搜索和替换文本"
-aliases:
-- /zh/rust/searching-and-replacing-text.md
 date:                  2024-01-20T17:58:41.208571-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "搜索和替换文本"

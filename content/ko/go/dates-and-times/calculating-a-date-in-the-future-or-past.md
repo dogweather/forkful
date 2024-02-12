@@ -1,7 +1,5 @@
 ---
 title:                "미래 또는 과거의 날짜 계산하기"
-aliases:
-- /ko/go/calculating-a-date-in-the-future-or-past.md
 date:                  2024-02-03T17:53:05.767217-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "미래 또는 과거의 날짜 계산하기"

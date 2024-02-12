@@ -1,7 +1,5 @@
 ---
 title:                "Editando archivos directamente con líneas de comandos"
-aliases:
-- /es/bash/editing-files-in-place-with-cli-one-liners.md
 date:                  2024-01-27T16:20:58.296820-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Editando archivos directamente con líneas de comandos"

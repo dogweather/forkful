@@ -1,7 +1,5 @@
 ---
 title:                "नया प्रोजेक्ट शुरू करना"
-aliases:
-- /hi/c/starting-a-new-project.md
 date:                  2024-02-03T18:09:50.976391-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "नया प्रोजेक्ट शुरू करना"

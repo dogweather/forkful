@@ -1,7 +1,5 @@
 ---
 title:                "테스트 작성하기"
-aliases:
-- /ko/javascript/writing-tests.md
 date:                  2024-02-03T19:31:16.075158-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "테스트 작성하기"

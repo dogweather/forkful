@@ -1,7 +1,5 @@
 ---
 title:                "코드를 함수로 구성하기"
-aliases:
-- /ko/c/organizing-code-into-functions.md
 date:                  2024-02-03T17:59:17.444720-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "코드를 함수로 구성하기"

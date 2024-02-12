@@ -1,7 +1,5 @@
 ---
 title:                "Analizando una fecha a partir de una cadena de texto"
-aliases:
-- /es/php/parsing-a-date-from-a-string.md
 date:                  2024-02-03T19:14:58.865798-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Analizando una fecha a partir de una cadena de texto"

@@ -1,7 +1,5 @@
 ---
 title:                "Друк відлагоджувального виводу"
-aliases:
-- /uk/google-apps-script/printing-debug-output.md
 date:                  2024-02-01T21:59:05.783813-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Друк відлагоджувального виводу"

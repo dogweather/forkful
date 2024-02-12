@@ -1,7 +1,5 @@
 ---
 title:                "重构代码"
-aliases:
-- /zh/javascript/refactoring.md
 date:                  2024-01-26T01:43:00.486571-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "重构代码"

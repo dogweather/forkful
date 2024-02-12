@@ -1,7 +1,5 @@
 ---
 title:                "部分文字列の抽出"
-aliases:
-- /ja/vba/extracting-substrings.md
 date:                  2024-02-01T21:53:18.673221-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "部分文字列の抽出"

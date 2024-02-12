@@ -1,7 +1,5 @@
 ---
 title:                "Handling errors"
-aliases:
-- /en/vba/handling-errors.md
 date:                  2024-02-01T21:30:53.785212-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Handling errors"

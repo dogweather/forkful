@@ -1,7 +1,5 @@
 ---
 title:                "स्ट्रिंग से कोट्स हटाना"
-aliases:
-- /hi/c/removing-quotes-from-a-string.md
 date:                  2024-02-03T18:08:14.961480-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "स्ट्रिंग से कोट्स हटाना"

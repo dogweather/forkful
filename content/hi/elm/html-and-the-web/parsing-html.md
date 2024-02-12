@@ -1,7 +1,5 @@
 ---
 title:                "HTML विश्लेषण"
-aliases:
-- /hi/elm/parsing-html.md
 date:                  2024-02-03T19:13:25.797574-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "HTML विश्लेषण"

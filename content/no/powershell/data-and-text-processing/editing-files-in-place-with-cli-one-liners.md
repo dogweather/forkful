@@ -1,7 +1,5 @@
 ---
 title:                "Redigering av filer på stedet med CLI-enlinjerskommandoer"
-aliases:
-- /no/powershell/editing-files-in-place-with-cli-one-liners.md
 date:                  2024-01-27T16:20:46.274650-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Redigering av filer på stedet med CLI-enlinjerskommandoer"

@@ -1,7 +1,5 @@
 ---
 title:                "ארגון קוד לתוך פונקציות"
-aliases:
-- /he/rust/organizing-code-into-functions.md
 date:                  2024-01-26T01:16:56.496769-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "ארגון קוד לתוך פונקציות"

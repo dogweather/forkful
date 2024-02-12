@@ -1,7 +1,5 @@
 ---
 title:                "Tìm độ dài của chuỗi"
-aliases:
-- /vi/google-apps-script/finding-the-length-of-a-string.md
 date:                  2024-02-01T21:54:25.972053-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Tìm độ dài của chuỗi"

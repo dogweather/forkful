@@ -1,7 +1,5 @@
 ---
 title:                "Làm việc với số phức"
-aliases:
-- /vi/go/working-with-complex-numbers.md
 date:                  2024-02-03T18:14:37.768197-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Làm việc với số phức"

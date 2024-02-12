@@ -1,7 +1,5 @@
 ---
 title:                "Travailler avec TOML"
-aliases:
-- /fr/vba/working-with-toml.md
 date:                  2024-02-01T22:05:55.705180-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Travailler avec TOML"

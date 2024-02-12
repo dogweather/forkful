@@ -1,7 +1,5 @@
 ---
 title:                "Usuwanie znaków pasujących do wzorca"
-aliases:
-- /pl/haskell/deleting-characters-matching-a-pattern.md
 date:                  2024-01-20T17:42:31.299202-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Usuwanie znaków pasujących do wzorca"

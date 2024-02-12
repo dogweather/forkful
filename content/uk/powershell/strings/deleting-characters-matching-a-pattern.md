@@ -1,7 +1,5 @@
 ---
 title:                "Видалення символів за візерунком"
-aliases:
-- /uk/powershell/deleting-characters-matching-a-pattern.md
 date:                  2024-01-20T17:43:06.886460-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Видалення символів за візерунком"

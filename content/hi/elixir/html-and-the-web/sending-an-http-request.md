@@ -1,7 +1,5 @@
 ---
 title:                "HTTP अनुरोध भेजना"
-aliases:
-- /hi/elixir/sending-an-http-request.md
 date:                  2024-01-20T18:00:10.787370-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "HTTP अनुरोध भेजना"

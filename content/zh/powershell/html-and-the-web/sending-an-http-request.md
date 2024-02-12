@@ -1,7 +1,5 @@
 ---
 title:                "发出 HTTP 请求"
-aliases:
-- /zh/powershell/sending-an-http-request.md
 date:                  2024-01-20T18:00:12.593869-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "发出 HTTP 请求"

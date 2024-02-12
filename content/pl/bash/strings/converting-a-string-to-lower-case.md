@@ -1,7 +1,5 @@
 ---
 title:                "Konwersja ciągu znaków na małe litery"
-aliases:
-- /pl/bash/converting-a-string-to-lower-case.md
 date:                  2024-01-20T17:37:44.556610-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Konwersja ciągu znaków na małe litery"

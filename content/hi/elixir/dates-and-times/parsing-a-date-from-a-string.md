@@ -1,7 +1,5 @@
 ---
 title:                "स्ट्रिंग से दिनांक पार्स करना"
-aliases:
-- /hi/elixir/parsing-a-date-from-a-string.md
 date:                  2024-01-28T02:06:08.275477-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "स्ट्रिंग से दिनांक पार्स करना"

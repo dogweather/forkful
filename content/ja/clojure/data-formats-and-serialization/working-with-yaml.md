@@ -1,7 +1,5 @@
 ---
 title:                "YAML を操作する"
-aliases:
-- /ja/clojure/working-with-yaml.md
 date:                  2024-02-03T19:25:01.677774-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "YAML を操作する"

@@ -1,7 +1,5 @@
 ---
 title:                "Beräkna ett datum i framtiden eller förflutet"
-aliases:
-- /sv/c/calculating-a-date-in-the-future-or-past.md
 date:                  2024-02-03T17:52:56.623750-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Beräkna ett datum i framtiden eller förflutet"

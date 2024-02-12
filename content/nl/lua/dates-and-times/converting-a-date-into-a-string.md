@@ -1,7 +1,5 @@
 ---
 title:                "Een datum converteren naar een string"
-aliases:
-- /nl/lua/converting-a-date-into-a-string.md
 date:                  2024-01-28T21:57:21.407453-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een datum converteren naar een string"

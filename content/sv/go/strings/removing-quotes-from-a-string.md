@@ -1,7 +1,5 @@
 ---
 title:                "Ta bort citattecken från en sträng"
-aliases:
-- /sv/go/removing-quotes-from-a-string.md
 date:                  2024-02-03T18:07:29.555727-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Ta bort citattecken från en sträng"

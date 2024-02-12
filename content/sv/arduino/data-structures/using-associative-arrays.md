@@ -1,7 +1,5 @@
 ---
 title:                "Att använda associativa arrayer"
-aliases:
-- /sv/arduino/using-associative-arrays.md
 date:                  2024-01-30T19:09:55.187301-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Att använda associativa arrayer"

@@ -1,7 +1,5 @@
 ---
 title:                "Перетворення дати в рядок"
-aliases:
-- /uk/powershell/converting-a-date-into-a-string.md
 date:                  2024-01-20T17:37:37.926172-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Перетворення дати в рядок"

@@ -1,7 +1,5 @@
 ---
 title:                "解析HTML"
-aliases:
-- /zh/swift/parsing-html.md
 date:                  2024-02-03T19:13:18.979024-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "解析HTML"

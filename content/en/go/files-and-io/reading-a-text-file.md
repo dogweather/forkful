@@ -1,7 +1,5 @@
 ---
 title:                "Reading a text file"
-aliases:
-- /en/go/reading-a-text-file.md
 date:                  2024-02-03T17:50:07.560349-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Reading a text file"

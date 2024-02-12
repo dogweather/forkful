@@ -1,7 +1,5 @@
 ---
 title:                "HTML 파싱"
-aliases:
-- /ko/kotlin/parsing-html.md
 date:                  2024-02-03T19:12:41.250459-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "HTML 파싱"

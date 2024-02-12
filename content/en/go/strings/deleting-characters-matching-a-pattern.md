@@ -1,7 +1,5 @@
 ---
 title:                "Deleting characters matching a pattern"
-aliases:
-- /en/go/deleting-characters-matching-a-pattern.md
 date:                  2024-02-03T17:50:03.810142-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Deleting characters matching a pattern"

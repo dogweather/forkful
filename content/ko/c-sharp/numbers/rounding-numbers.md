@@ -1,7 +1,5 @@
 ---
 title:                "숫자 반올림하기"
-aliases:
-- /ko/c-sharp/rounding-numbers.md
 date:                  2024-01-26T03:43:30.516858-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "숫자 반올림하기"

@@ -1,7 +1,5 @@
 ---
 title:                "Bruke assosiative tabeller"
-aliases:
-- /no/vba/using-associative-arrays.md
 date:                  2024-02-01T22:04:30.332870-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Bruke assosiative tabeller"

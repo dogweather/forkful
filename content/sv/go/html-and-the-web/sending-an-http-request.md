@@ -1,7 +1,5 @@
 ---
 title:                "Att skicka en HTTP-begäran"
-aliases:
-- /sv/go/sending-an-http-request.md
 date:                  2024-02-03T18:08:38.975129-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Att skicka en HTTP-begäran"

@@ -1,7 +1,5 @@
 ---
 title:                "Bắt đầu một dự án mới"
-aliases:
-- /vi/bash/starting-a-new-project.md
 date:                  2024-01-28T22:08:48.186954-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Bắt đầu một dự án mới"

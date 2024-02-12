@@ -1,7 +1,5 @@
 ---
 title:                "TOML과 함께 일하기"
-aliases:
-- /ko/google-apps-script/working-with-toml.md
 date:                  2024-02-01T22:06:18.689879-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "TOML과 함께 일하기"

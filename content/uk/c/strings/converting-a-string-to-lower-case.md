@@ -1,7 +1,5 @@
 ---
 title:                "Перетворення рядка в нижній регістр"
-aliases:
-- /uk/c/converting-a-string-to-lower-case.md
 date:                  2024-02-03T17:55:07.329187-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Перетворення рядка в нижній регістр"

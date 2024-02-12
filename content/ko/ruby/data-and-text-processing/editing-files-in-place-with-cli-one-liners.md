@@ -1,7 +1,5 @@
 ---
 title:                "CLI 한 줄 명령어로 파일을 제자리에서 편집하기"
-aliases:
-- /ko/ruby/editing-files-in-place-with-cli-one-liners.md
 date:                  2024-01-27T16:21:02.007821-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "CLI 한 줄 명령어로 파일을 제자리에서 편집하기"

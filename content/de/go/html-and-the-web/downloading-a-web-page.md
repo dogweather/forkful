@@ -1,7 +1,5 @@
 ---
 title:                "Herunterladen einer Webseite"
-aliases:
-- /de/go/downloading-a-web-page.md
 date:                  2024-02-03T17:55:56.781110-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Herunterladen einer Webseite"

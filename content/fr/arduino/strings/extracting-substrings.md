@@ -1,7 +1,5 @@
 ---
 title:                "Extraction de sous-chaînes"
-aliases:
-- /fr/arduino/extracting-substrings.md
 date:                  2024-01-20T17:44:54.760178-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Extraction de sous-chaînes"

@@ -1,7 +1,5 @@
 ---
 title:                "З'єднання рядків"
-aliases:
-- /uk/vba/concatenating-strings.md
 date:                  2024-02-01T21:52:51.976486-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "З'єднання рядків"

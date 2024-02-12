@@ -1,7 +1,5 @@
 ---
 title:                "連想配列の使用"
-aliases:
-- /ja/google-apps-script/using-associative-arrays.md
 date:                  2024-02-01T22:04:18.248544-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "連想配列の使用"

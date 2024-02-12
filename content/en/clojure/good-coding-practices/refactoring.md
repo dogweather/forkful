@@ -1,7 +1,5 @@
 ---
 title:                "Refactoring"
-aliases:
-- /en/clojure/refactoring.md
 date:                  2024-01-25T02:12:13.409305-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Refactoring"

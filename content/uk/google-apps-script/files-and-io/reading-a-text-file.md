@@ -1,7 +1,5 @@
 ---
 title:                "Читання текстового файлу"
-aliases:
-- /uk/google-apps-script/reading-a-text-file.md
 date:                  2024-02-01T21:58:43.798629-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Читання текстового файлу"

@@ -1,7 +1,5 @@
 ---
 title:                "디렉토리 존재 여부 확인하기"
-aliases:
-- /ko/elm/checking-if-a-directory-exists.md
 date:                  2024-01-20T14:56:19.724168-07:00
 simple_title:         "디렉토리 존재 여부 확인하기"
 

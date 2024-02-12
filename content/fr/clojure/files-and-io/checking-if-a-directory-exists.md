@@ -1,7 +1,5 @@
 ---
 title:                "Vérifier si un répertoire existe"
-aliases:
-- /fr/clojure/checking-if-a-directory-exists.md
 date:                  2024-02-03T19:07:02.483152-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Vérifier si un répertoire existe"

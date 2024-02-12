@@ -1,7 +1,5 @@
 ---
 title:                "Schrijven naar standaardfout"
-aliases:
-- /nl/lua/writing-to-standard-error.md
 date:                  2024-01-28T22:13:32.557068-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Schrijven naar standaardfout"

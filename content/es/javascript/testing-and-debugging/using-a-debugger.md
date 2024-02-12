@@ -1,7 +1,5 @@
 ---
 title:                "Usando un depurador"
-aliases:
-- /es/javascript/using-a-debugger.md
 date:                  2024-01-26T03:50:04.836379-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Usando un depurador"

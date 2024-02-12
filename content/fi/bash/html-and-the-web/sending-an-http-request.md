@@ -1,7 +1,5 @@
 ---
 title:                "HTTP-pyynnön lähettäminen"
-aliases:
-- /fi/bash/sending-an-http-request.md
 date:                  2024-01-20T17:59:15.006325-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "HTTP-pyynnön lähettäminen"

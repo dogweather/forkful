@@ -1,7 +1,5 @@
 ---
 title:                "Робота з XML"
-aliases:
-- /uk/clojure/working-with-xml.md
 date:                  2024-01-26T04:29:32.926515-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Робота з XML"

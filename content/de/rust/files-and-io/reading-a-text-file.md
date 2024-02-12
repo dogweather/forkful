@@ -1,7 +1,5 @@
 ---
 title:                "Textdatei einlesen"
-aliases:
-- /de/rust/reading-a-text-file.md
 date:                  2024-01-20T17:55:15.482764-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Textdatei einlesen"

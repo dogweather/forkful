@@ -1,7 +1,5 @@
 ---
 title:                "JSONを利用する"
-aliases:
-- /ja/c/working-with-json.md
 date:                  2024-02-03T18:12:32.269210-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "JSONを利用する"

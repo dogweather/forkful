@@ -1,7 +1,5 @@
 ---
 title:                "המרת מחרוזת לאותיות קטנות"
-aliases:
-- /he/swift/converting-a-string-to-lower-case.md
 date:                  2024-01-20T17:39:41.872228-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "המרת מחרוזת לאותיות קטנות"

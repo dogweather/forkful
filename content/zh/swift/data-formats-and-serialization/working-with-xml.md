@@ -1,7 +1,5 @@
 ---
 title:                "处理XML"
-aliases:
-- /zh/swift/working-with-xml.md
 date:                  2024-01-26T04:36:10.513673-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "处理XML"

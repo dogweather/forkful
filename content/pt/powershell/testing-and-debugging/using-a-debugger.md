@@ -1,7 +1,5 @@
 ---
 title:                "Usando um depurador"
-aliases:
-- /pt/powershell/using-a-debugger.md
 date:                  2024-01-26T04:08:48.394903-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Usando um depurador"

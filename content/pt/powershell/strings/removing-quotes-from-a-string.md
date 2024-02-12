@@ -1,7 +1,5 @@
 ---
 title:                "Removendo aspas de uma string"
-aliases:
-- /pt/powershell/removing-quotes-from-a-string.md
 date:                  2024-01-26T03:41:37.946398-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Removendo aspas de uma string"

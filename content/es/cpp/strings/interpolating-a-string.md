@@ -1,7 +1,5 @@
 ---
 title:                "Interpolación de cadenas de texto"
-aliases:
-- /es/cpp/interpolating-a-string.md
 date:                  2024-01-20T17:50:33.681689-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Interpolación de cadenas de texto"

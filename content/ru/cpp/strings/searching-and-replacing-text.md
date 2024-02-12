@@ -1,7 +1,5 @@
 ---
 title:                "Поиск и замена текста"
-aliases:
-- /ru/cpp/searching-and-replacing-text.md
 date:                  2024-01-29T00:02:08.937581-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Поиск и замена текста"

@@ -1,7 +1,5 @@
 ---
 title:                "Einen neuen Projekt starten"
-aliases:
-- /de/cpp/starting-a-new-project.md
 date:                  2024-01-20T18:02:57.317472-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Einen neuen Projekt starten"

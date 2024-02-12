@@ -1,7 +1,5 @@
 ---
 title:                "Разбор даты из строки"
-aliases:
-- /ru/vba/parsing-a-date-from-a-string.md
 date:                  2024-02-01T21:58:04.685930-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Разбор даты из строки"

@@ -1,7 +1,5 @@
 ---
 title:                "字符串大写化"
-aliases:
-- /zh/google-apps-script/capitalizing-a-string.md
 date:                  2024-02-01T21:48:52.783846-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "字符串大写化"

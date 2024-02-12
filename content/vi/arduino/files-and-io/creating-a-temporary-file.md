@@ -1,7 +1,5 @@
 ---
 title:                "Tạo một tập tin tạm thời"
-aliases:
-- /vi/arduino/creating-a-temporary-file.md
 date:                  2024-01-28T21:59:24.773603-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Tạo một tập tin tạm thời"

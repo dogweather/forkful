@@ -1,7 +1,5 @@
 ---
 title:                "Työskentely YAML:n kanssa"
-aliases:
-- /fi/bash/working-with-yaml.md
 date:                  2024-02-03T19:24:48.391143-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Työskentely YAML:n kanssa"

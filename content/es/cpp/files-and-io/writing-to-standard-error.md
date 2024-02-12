@@ -1,7 +1,5 @@
 ---
 title:                "Escribiendo en el error estándar"
-aliases:
-- /es/cpp/writing-to-standard-error.md
 date:                  2024-02-03T19:32:34.625519-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Escribiendo en el error estándar"

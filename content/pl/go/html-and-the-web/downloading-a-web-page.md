@@ -1,7 +1,5 @@
 ---
 title:                "Pobieranie strony internetowej"
-aliases:
-- /pl/go/downloading-a-web-page.md
 date:                  2024-02-03T17:56:11.579804-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Pobieranie strony internetowej"

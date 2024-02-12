@@ -1,7 +1,5 @@
 ---
 title:                "Trouver la longueur d'une chaîne"
-aliases:
-- /fr/go/finding-the-length-of-a-string.md
 date:                  2024-02-03T17:56:56.212131-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Trouver la longueur d'une chaîne"

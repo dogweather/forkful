@@ -1,7 +1,5 @@
 ---
 title:                "Refaktorering"
-aliases:
-- /no/elixir/refactoring.md
 date:                  2024-01-26T01:18:23.770597-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Refaktorering"

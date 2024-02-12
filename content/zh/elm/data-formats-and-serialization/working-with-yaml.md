@@ -1,7 +1,5 @@
 ---
 title:                "处理 YAML 文件"
-aliases:
-- /zh/elm/working-with-yaml.md
 date:                  2024-01-19
 simple_title:         "处理 YAML 文件"
 

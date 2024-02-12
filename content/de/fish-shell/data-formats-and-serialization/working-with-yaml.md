@@ -1,7 +1,5 @@
 ---
 title:                "Arbeiten mit YAML"
-aliases:
-- /de/fish-shell/working-with-yaml.md
 date:                  2024-02-03T19:25:51.884164-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Arbeiten mit YAML"

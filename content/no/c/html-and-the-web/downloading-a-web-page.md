@@ -1,7 +1,5 @@
 ---
 title:                "Laste ned en nettside"
-aliases:
-- /no/c/downloading-a-web-page.md
 date:                  2024-02-03T17:56:01.166716-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Laste ned en nettside"

@@ -1,7 +1,5 @@
 ---
 title:                "打印调试输出"
-aliases:
-- /zh/vba/printing-debug-output.md
 date:                  2024-02-01T21:58:47.894178-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "打印调试输出"

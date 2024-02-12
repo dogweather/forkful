@@ -1,7 +1,5 @@
 ---
 title:                "Refatoração"
-aliases:
-- /pt/kotlin/refactoring.md
 date:                  2024-01-26T01:44:01.959580-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Refatoração"

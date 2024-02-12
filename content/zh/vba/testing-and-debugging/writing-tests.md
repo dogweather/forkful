@@ -1,7 +1,5 @@
 ---
 title:                "编写测试"
-aliases:
-- /zh/vba/writing-tests.md
 date:                  2024-02-01T22:08:42.824955-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "编写测试"

@@ -1,7 +1,5 @@
 ---
 title:                "Korzystanie z tablic asocjacyjnych"
-aliases:
-- /pl/powershell/using-associative-arrays.md
 date:                  2024-01-30T19:12:38.636232-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Korzystanie z tablic asocjacyjnych"

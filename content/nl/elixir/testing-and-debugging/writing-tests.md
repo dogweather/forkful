@@ -1,7 +1,5 @@
 ---
 title:                "Tests Schrijven"
-aliases:
-- /nl/elixir/writing-tests.md
 date:                  2024-01-28T22:13:02.198259-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Tests Schrijven"

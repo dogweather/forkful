@@ -1,7 +1,5 @@
 ---
 title:                "Att arbeta med TOML"
-aliases:
-- /sv/typescript/working-with-toml.md
 date:                  2024-01-26T04:27:24.753960-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Att arbeta med TOML"

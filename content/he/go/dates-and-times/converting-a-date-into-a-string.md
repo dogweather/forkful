@@ -1,7 +1,5 @@
 ---
 title:                "המרת תאריך למחרוזת"
-aliases:
-- /he/go/converting-a-date-into-a-string.md
 date:                  2024-02-03T17:55:12.332693-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "המרת תאריך למחרוזת"

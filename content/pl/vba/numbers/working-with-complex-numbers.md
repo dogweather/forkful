@@ -1,7 +1,5 @@
 ---
 title:                "Praca z liczbami zespolonymi"
-aliases:
-- /pl/vba/working-with-complex-numbers.md
 date:                  2024-02-01T22:08:01.647764-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Praca z liczbami zespolonymi"

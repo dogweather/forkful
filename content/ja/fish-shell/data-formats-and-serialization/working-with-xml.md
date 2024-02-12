@@ -1,7 +1,5 @@
 ---
 title:                "XMLの扱い方"
-aliases:
-- /ja/fish-shell/working-with-xml.md
 date:                  2024-01-26T04:30:45.137847-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "XMLの扱い方"

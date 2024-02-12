@@ -1,7 +1,5 @@
 ---
 title:                "Enviando una solicitud HTTP"
-aliases:
-- /es/vba/sending-an-http-request.md
 date:                  2024-02-01T22:01:44.562961-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Enviando una solicitud HTTP"

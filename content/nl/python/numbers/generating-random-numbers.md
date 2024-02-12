@@ -1,7 +1,5 @@
 ---
 title:                "Willekeurige getallen genereren"
-aliases:
-- /nl/python/generating-random-numbers.md
 date:                  2024-01-28T22:01:21.595202-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Willekeurige getallen genereren"

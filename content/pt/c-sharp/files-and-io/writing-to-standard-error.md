@@ -1,7 +1,5 @@
 ---
 title:                "Escrevendo para o erro padrão"
-aliases:
-- /pt/c-sharp/writing-to-standard-error.md
 date:                  2024-02-03T19:32:42.001160-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Escrevendo para o erro padrão"

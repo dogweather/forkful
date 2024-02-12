@@ -1,7 +1,5 @@
 ---
 title:                "Логування"
-aliases:
-- /uk/go/logging.md
 date:                  2024-02-03T17:59:45.078742-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Логування"

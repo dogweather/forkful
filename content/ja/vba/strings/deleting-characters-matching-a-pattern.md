@@ -1,7 +1,5 @@
 ---
 title:                "パターンに一致する文字の削除"
-aliases:
-- /ja/vba/deleting-characters-matching-a-pattern.md
 date:                  2024-02-01T21:52:41.202597-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "パターンに一致する文字の削除"

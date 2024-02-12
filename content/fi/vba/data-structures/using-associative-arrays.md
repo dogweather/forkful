@@ -1,7 +1,5 @@
 ---
 title:                "Assosiatiivisten taulukoiden käyttö"
-aliases:
-- /fi/vba/using-associative-arrays.md
 date:                  2024-02-01T22:04:36.615463-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Assosiatiivisten taulukoiden käyttö"

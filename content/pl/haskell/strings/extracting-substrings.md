@@ -1,7 +1,5 @@
 ---
 title:                "Wycinanie podłańcuchów"
-aliases:
-- /pl/haskell/extracting-substrings.md
 date:                  2024-01-20T17:45:52.690580-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Wycinanie podłańcuchów"

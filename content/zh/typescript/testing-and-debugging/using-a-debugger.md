@@ -1,7 +1,5 @@
 ---
 title:                "使用调试器"
-aliases:
-- /zh/typescript/using-a-debugger.md
 date:                  2024-01-26T04:11:31.911706-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "使用调试器"

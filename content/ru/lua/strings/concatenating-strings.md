@@ -1,7 +1,5 @@
 ---
 title:                "Склеивание строк"
-aliases:
-- /ru/lua/concatenating-strings.md
 date:                  2024-01-28T23:56:42.172767-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Склеивание строк"

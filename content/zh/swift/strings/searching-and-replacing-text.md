@@ -1,7 +1,5 @@
 ---
 title:                "搜索和替换文本"
-aliases:
-- /zh/swift/searching-and-replacing-text.md
 date:                  2024-01-20T17:58:50.671069-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "搜索和替换文本"

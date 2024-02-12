@@ -1,7 +1,5 @@
 ---
 title:                "字符串拼接"
-aliases:
-- /zh/arduino/concatenating-strings.md
 date:                  2024-01-20T17:33:54.603255-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "字符串拼接"

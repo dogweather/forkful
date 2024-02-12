@@ -1,7 +1,5 @@
 ---
 title:                "Phân Tích Cú Pháp HTML"
-aliases:
-- /vi/python/parsing-html.md
 date:                  2024-01-28T22:04:25.047008-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Phân Tích Cú Pháp HTML"

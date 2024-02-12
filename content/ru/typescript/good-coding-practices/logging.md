@@ -1,7 +1,5 @@
 ---
 title:                "Журналирование"
-aliases:
-- /ru/typescript/logging.md
 date:                  2024-01-29T00:00:02.133588-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Журналирование"

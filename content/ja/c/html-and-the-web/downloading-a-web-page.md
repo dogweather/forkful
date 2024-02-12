@@ -1,7 +1,5 @@
 ---
 title:                "ウェブページのダウンロード"
-aliases:
-- /ja/c/downloading-a-web-page.md
 date:                  2024-02-03T17:56:06.033726-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "ウェブページのダウンロード"

@@ -1,7 +1,5 @@
 ---
 title:                "Робота з комплексними числами"
-aliases:
-- /uk/haskell/working-with-complex-numbers.md
 date:                  2024-01-26T04:42:14.159297-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Робота з комплексними числами"

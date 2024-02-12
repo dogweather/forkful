@@ -1,7 +1,5 @@
 ---
 title:                "Removendo aspas de uma string"
-aliases:
-- /pt/google-apps-script/removing-quotes-from-a-string.md
 date:                  2024-02-01T22:00:05.316402-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Removendo aspas de uma string"

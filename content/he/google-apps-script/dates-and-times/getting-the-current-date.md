@@ -1,7 +1,5 @@
 ---
 title:                "קבלת התאריך הנוכחי"
-aliases:
-- /he/google-apps-script/getting-the-current-date.md
 date:                  2024-02-01T21:55:41.287690-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "קבלת התאריך הנוכחי"

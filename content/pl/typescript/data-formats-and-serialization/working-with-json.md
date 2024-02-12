@@ -1,7 +1,5 @@
 ---
 title:                "Praca z JSON"
-aliases:
-- /pl/typescript/working-with-json.md
 date:                  2024-02-03T19:24:40.722998-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Praca z JSON"

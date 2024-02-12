@@ -1,7 +1,5 @@
 ---
 title:                "문자열을 소문자로 변환하기"
-aliases:
-- /ko/go/converting-a-string-to-lower-case.md
 date:                  2024-02-03T17:55:10.387653-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "문자열을 소문자로 변환하기"

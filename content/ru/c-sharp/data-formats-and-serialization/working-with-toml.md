@@ -1,7 +1,5 @@
 ---
 title:                "Работа с TOML"
-aliases:
-- /ru/c-sharp/working-with-toml.md
 date:                  2024-01-29T00:05:10.773708-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Работа с TOML"

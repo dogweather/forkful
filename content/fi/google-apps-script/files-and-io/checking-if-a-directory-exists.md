@@ -1,7 +1,5 @@
 ---
 title:                "Tarkistetaan, onko hakemisto olemassa"
-aliases:
-- /fi/google-apps-script/checking-if-a-directory-exists.md
 date:                  2024-02-01T21:48:53.557304-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Tarkistetaan, onko hakemisto olemassa"

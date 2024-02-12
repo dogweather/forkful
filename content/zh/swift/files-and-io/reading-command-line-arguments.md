@@ -1,7 +1,5 @@
 ---
 title:                "读取命令行参数"
-aliases:
-- /zh/swift/reading-command-line-arguments.md
 date:                  2024-01-20T17:57:00.146107-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "读取命令行参数"

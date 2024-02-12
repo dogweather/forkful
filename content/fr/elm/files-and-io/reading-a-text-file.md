@@ -1,7 +1,5 @@
 ---
 title:                "Lecture d'un fichier texte"
-aliases:
-- /fr/elm/reading-a-text-file.md
 date:                  2024-01-20T17:54:43.380497-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Lecture d'un fichier texte"

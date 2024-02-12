@@ -1,7 +1,5 @@
 ---
 title:                "Удаление кавычек из строки"
-aliases:
-- /ru/typescript/removing-quotes-from-a-string.md
 date:                  2024-01-29T00:02:44.251900-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Удаление кавычек из строки"

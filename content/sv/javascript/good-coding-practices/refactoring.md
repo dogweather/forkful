@@ -1,7 +1,5 @@
 ---
 title:                "Omskrivning av kod"
-aliases:
-- /sv/javascript/refactoring.md
 date:                  2024-01-26T01:42:10.939875-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Omskrivning av kod"

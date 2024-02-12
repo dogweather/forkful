@@ -1,7 +1,5 @@
 ---
 title:                "日志记录"
-aliases:
-- /zh/typescript/logging.md
 date:                  2024-01-26T01:09:09.798454-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "日志记录"

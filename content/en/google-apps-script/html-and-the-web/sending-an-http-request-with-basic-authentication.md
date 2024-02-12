@@ -1,7 +1,5 @@
 ---
 title:                "Sending an HTTP request with basic authentication"
-aliases:
-- /en/google-apps-script/sending-an-http-request-with-basic-authentication.md
 date:                  2024-02-01T21:12:38.601621-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Sending an HTTP request with basic authentication"

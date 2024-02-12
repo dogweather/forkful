@@ -1,7 +1,5 @@
 ---
 title:                "Drukowanie komunikatów debugowania"
-aliases:
-- /pl/c/printing-debug-output.md
 date:                  2024-02-03T18:05:19.134146-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Drukowanie komunikatów debugowania"

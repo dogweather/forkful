@@ -1,7 +1,5 @@
 ---
 title:                "Getting the current date"
-aliases:
-- /en/python/getting-the-current-date.md
 date:                  2024-02-03T19:02:38.431289-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Getting the current date"

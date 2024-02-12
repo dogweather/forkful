@@ -1,7 +1,5 @@
 ---
 title:                "Quotes uit een string verwijderen"
-aliases:
-- /nl/vba/removing-quotes-from-a-string.md
 date:                  2024-02-01T22:00:13.000506-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Quotes uit een string verwijderen"

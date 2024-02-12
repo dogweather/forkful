@@ -1,7 +1,5 @@
 ---
 title:                "Debug-output afdrukken"
-aliases:
-- /nl/fish-shell/printing-debug-output.md
 date:                  2024-01-28T22:04:24.862576-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Debug-output afdrukken"

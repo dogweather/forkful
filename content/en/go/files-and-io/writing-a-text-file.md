@@ -1,7 +1,5 @@
 ---
 title:                "Writing a text file"
-aliases:
-- /en/go/writing-a-text-file.md
 date:                  2024-02-03T17:50:11.072930-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Writing a text file"

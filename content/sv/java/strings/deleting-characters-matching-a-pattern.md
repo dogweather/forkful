@@ -1,7 +1,5 @@
 ---
 title:                "Ta bort tecken som matchar ett mönster"
-aliases:
-- /sv/java/deleting-characters-matching-a-pattern.md
 date:                  2024-01-20T17:42:31.165420-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Ta bort tecken som matchar ett mönster"

@@ -1,7 +1,5 @@
 ---
 title:                "Ghi vào lỗi chuẩn"
-aliases:
-- /vi/powershell/writing-to-standard-error.md
 date:                  2024-01-28T22:13:48.660130-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Ghi vào lỗi chuẩn"

@@ -1,7 +1,5 @@
 ---
 title:                "Att starta ett nytt projekt"
-aliases:
-- /sv/vba/starting-a-new-project.md
 date:                  2024-02-01T22:03:02.462655-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Att starta ett nytt projekt"

@@ -1,7 +1,5 @@
 ---
 title:                "Análisis de HTML"
-aliases:
-- /es/powershell/parsing-html.md
 date:                  2024-01-20T15:33:21.585946-07:00
 simple_title:         "Análisis de HTML"
 

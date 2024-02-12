@@ -1,7 +1,5 @@
 ---
 title:                "Создание текстового файла"
-aliases:
-- /ru/go/writing-a-text-file.md
 date:                  2024-02-03T18:14:57.863240-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Создание текстового файла"

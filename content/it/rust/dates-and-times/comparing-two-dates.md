@@ -1,7 +1,5 @@
 ---
 title:                "Confronto tra due date"
-aliases:
-- /it/rust/comparing-two-dates.md
 date:                  2024-01-20T17:33:55.888336-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Confronto tra due date"

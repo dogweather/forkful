@@ -1,7 +1,5 @@
 ---
 title:                "Написание тестов"
-aliases:
-- /ru/ruby/writing-tests.md
 date:                  2024-01-29T00:06:17.811754-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Написание тестов"

@@ -1,7 +1,5 @@
 ---
 title:                "Использование ассоциативных массивов"
-aliases:
-- /ru/rust/using-associative-arrays.md
 date:                  2024-01-30T19:13:01.271199-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Использование ассоциативных массивов"

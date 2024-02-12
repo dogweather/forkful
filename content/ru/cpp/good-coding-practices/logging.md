@@ -1,7 +1,5 @@
 ---
 title:                "Журналирование"
-aliases:
-- /ru/cpp/logging.md
 date:                  2024-01-29T00:00:21.872263-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Журналирование"

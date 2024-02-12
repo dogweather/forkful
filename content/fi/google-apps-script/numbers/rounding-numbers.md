@@ -1,7 +1,5 @@
 ---
 title:                "Lukujen pyöristäminen"
-aliases:
-- /fi/google-apps-script/rounding-numbers.md
 date:                  2024-02-01T22:03:14.762723-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Lukujen pyöristäminen"

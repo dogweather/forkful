@@ -1,7 +1,5 @@
 ---
 title:                "一時ファイルの作成"
-aliases:
-- /ja/bash/creating-a-temporary-file.md
 date:                  2024-01-20T17:39:45.235534-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "一時ファイルの作成"

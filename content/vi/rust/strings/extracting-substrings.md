@@ -1,7 +1,5 @@
 ---
 title:                "Trích xuất chuỗi con"
-aliases:
-- /vi/rust/extracting-substrings.md
 date:                  2024-01-28T22:00:19.747816-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Trích xuất chuỗi con"

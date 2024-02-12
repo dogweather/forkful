@@ -1,7 +1,5 @@
 ---
 title:                "Refactoring"
-aliases:
-- /nl/php/refactoring.md
 date:                  2024-01-28T22:06:01.697187-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Refactoring"

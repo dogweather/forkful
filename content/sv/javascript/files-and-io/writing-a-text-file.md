@@ -1,7 +1,5 @@
 ---
 title:                "Att skriva en textfil"
-aliases:
-- /sv/javascript/writing-a-text-file.md
 date:                  2024-02-03T19:28:15.708907-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Att skriva en textfil"

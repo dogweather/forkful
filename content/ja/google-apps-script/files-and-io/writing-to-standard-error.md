@@ -1,7 +1,5 @@
 ---
 title:                "標準エラーへの書き込み"
-aliases:
-- /ja/google-apps-script/writing-to-standard-error.md
 date:                  2024-02-01T22:09:24.493539-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "標準エラーへの書き込み"

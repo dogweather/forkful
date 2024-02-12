@@ -1,7 +1,5 @@
 ---
 title:                "编写文本文件"
-aliases:
-- /zh/vba/writing-a-text-file.md
 date:                  2024-02-01T22:08:13.439524-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "编写文本文件"

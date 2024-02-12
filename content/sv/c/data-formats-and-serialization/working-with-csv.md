@@ -1,7 +1,5 @@
 ---
 title:                "Arbeta med CSV"
-aliases:
-- /sv/c/working-with-csv.md
 date:                  2024-02-03T18:11:46.372285-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Arbeta med CSV"

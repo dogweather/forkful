@@ -1,7 +1,5 @@
 ---
 title:                "CSV와 함께 작업하기"
-aliases:
-- /ko/c/working-with-csv.md
 date:                  2024-02-03T18:11:51.084661-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "CSV와 함께 작업하기"

@@ -1,7 +1,5 @@
 ---
 title:                "कमांड लाइन आर्गुमेंट्स पढ़ना"
-aliases:
-- /hi/elm/reading-command-line-arguments.md
 date:                  2024-01-20T17:56:07.654721-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "कमांड लाइन आर्गुमेंट्स पढ़ना"

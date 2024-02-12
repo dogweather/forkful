@@ -1,7 +1,5 @@
 ---
 title:                "Werken met XML"
-aliases:
-- /nl/java/working-with-xml.md
 date:                  2024-01-28T22:11:28.858512-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Werken met XML"

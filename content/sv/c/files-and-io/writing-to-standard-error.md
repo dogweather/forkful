@@ -1,7 +1,5 @@
 ---
 title:                "Skriva till standardfel"
-aliases:
-- /sv/c/writing-to-standard-error.md
 date:                  2024-02-03T18:15:14.110246-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Skriva till standardfel"

@@ -1,7 +1,5 @@
 ---
 title:                "Работа с JSON"
-aliases:
-- /ru/haskell/working-with-json.md
 date:                  2024-01-29T00:04:01.830348-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Работа с JSON"

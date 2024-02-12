@@ -1,7 +1,5 @@
 ---
 title:                "Arbeider med JSON"
-aliases:
-- /no/arduino/working-with-json.md
 date:                  2024-02-03T19:21:44.475412-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Arbeider med JSON"

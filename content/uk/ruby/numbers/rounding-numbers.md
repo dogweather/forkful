@@ -1,7 +1,5 @@
 ---
 title:                "Округлення чисел"
-aliases:
-- /uk/ruby/rounding-numbers.md
 date:                  2024-01-26T03:47:42.962833-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Округлення чисел"

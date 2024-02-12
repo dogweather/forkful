@@ -1,7 +1,5 @@
 ---
 title:                "디렉토리가 존재하는지 확인하기"
-aliases:
-- /ko/swift/checking-if-a-directory-exists.md
 date:                  2024-02-03T19:08:49.788391-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "디렉토리가 존재하는지 확인하기"

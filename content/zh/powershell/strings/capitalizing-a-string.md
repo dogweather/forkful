@@ -1,7 +1,5 @@
 ---
 title:                "字符串大写化"
-aliases:
-- /zh/powershell/capitalizing-a-string.md
 date:                  2024-02-03T19:06:02.241237-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "字符串大写化"

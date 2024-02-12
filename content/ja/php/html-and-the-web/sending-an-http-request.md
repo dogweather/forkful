@@ -1,7 +1,5 @@
 ---
 title:                "HTTPリクエストの送信"
-aliases:
-- /ja/php/sending-an-http-request.md
 date:                  2024-01-20T18:00:05.324690-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "HTTPリクエストの送信"

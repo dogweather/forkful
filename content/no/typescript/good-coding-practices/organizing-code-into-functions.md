@@ -1,7 +1,5 @@
 ---
 title:                "Organisering av kode i funksjoner"
-aliases:
-- /no/typescript/organizing-code-into-functions.md
 date:                  2024-01-26T01:16:22.474002-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Organisering av kode i funksjoner"

@@ -1,7 +1,5 @@
 ---
 title:                "Scrivere test"
-aliases:
-- /it/c/writing-tests.md
 date:                  2024-02-03T18:14:44.763602-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Scrivere test"

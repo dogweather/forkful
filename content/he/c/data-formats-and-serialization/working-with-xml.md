@@ -1,7 +1,5 @@
 ---
 title:                "עבודה עם XML"
-aliases:
-- /he/c/working-with-xml.md
 date:                  2024-02-03T18:13:54.895667-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "עבודה עם XML"

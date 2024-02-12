@@ -1,7 +1,5 @@
 ---
 title:                "Virheenjäljitystulosteiden tulostaminen"
-aliases:
-- /fi/php/printing-debug-output.md
 date:                  2024-01-20T17:53:07.984803-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Virheenjäljitystulosteiden tulostaminen"

@@ -1,7 +1,5 @@
 ---
 title:                "Konvertera en sträng till gemener"
-aliases:
-- /sv/typescript/converting-a-string-to-lower-case.md
 date:                  2024-01-20T17:39:27.043380-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Konvertera en sträng till gemener"

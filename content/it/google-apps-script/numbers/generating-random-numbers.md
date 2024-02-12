@@ -1,7 +1,5 @@
 ---
 title:                "Generare numeri casuali"
-aliases:
-- /it/google-apps-script/generating-random-numbers.md
 date:                  2024-02-01T21:54:00.152317-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Generare numeri casuali"

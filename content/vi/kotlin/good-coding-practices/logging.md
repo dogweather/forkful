@@ -1,7 +1,5 @@
 ---
 title:                "Ghi log"
-aliases:
-- /vi/kotlin/logging.md
 date:                  2024-01-28T22:04:10.689371-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Ghi log"

@@ -1,7 +1,5 @@
 ---
 title:                "生成随机数"
-aliases:
-- /zh/c-sharp/generating-random-numbers.md
 date:                  2024-01-27T20:33:08.078113-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "生成随机数"

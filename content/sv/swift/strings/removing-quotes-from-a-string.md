@@ -1,7 +1,5 @@
 ---
 title:                "Ta bort citattecken från en sträng"
-aliases:
-- /sv/swift/removing-quotes-from-a-string.md
 date:                  2024-01-26T03:42:02.072834-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Ta bort citattecken från en sträng"

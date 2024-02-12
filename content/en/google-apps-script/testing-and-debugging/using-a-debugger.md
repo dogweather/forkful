@@ -1,7 +1,5 @@
 ---
 title:                "Using a debugger"
-aliases:
-- /en/google-apps-script/using-a-debugger.md
 date:                  2024-02-01T21:11:59.606220-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Using a debugger"

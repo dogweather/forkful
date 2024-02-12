@@ -1,7 +1,5 @@
 ---
 title:                "Refaktoryzacja"
-aliases:
-- /pl/fish-shell/refactoring.md
 date:                  2024-01-26T01:18:23.912725-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Refaktoryzacja"

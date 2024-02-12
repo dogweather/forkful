@@ -1,7 +1,5 @@
 ---
 title:                "Checking if a directory exists"
-aliases:
-- /en/elm/checking-if-a-directory-exists.md
 date:                  2024-01-20T14:56:09.311344-07:00
 simple_title:         "Checking if a directory exists"
 

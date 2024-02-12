@@ -1,7 +1,5 @@
 ---
 title:                "एक टेक्स्ट फ़ाइल लिखना"
-aliases:
-- /hi/java/writing-a-text-file.md
 date:                  2024-02-03T19:29:19.513901-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "एक टेक्स्ट फ़ाइल लिखना"

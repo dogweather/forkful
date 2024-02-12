@@ -1,7 +1,5 @@
 ---
 title:                "从字符串中解析日期"
-aliases:
-- /zh/google-apps-script/parsing-a-date-from-a-string.md
 date:                  2024-02-01T21:57:20.527198-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "从字符串中解析日期"

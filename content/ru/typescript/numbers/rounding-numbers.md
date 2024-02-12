@@ -1,7 +1,5 @@
 ---
 title:                "Округление чисел"
-aliases:
-- /ru/typescript/rounding-numbers.md
 date:                  2024-01-29T00:03:18.121131-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Округление чисел"

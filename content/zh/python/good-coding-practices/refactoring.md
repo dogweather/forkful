@@ -1,7 +1,5 @@
 ---
 title:                "重构"
-aliases:
-- /zh/python/refactoring.md
 date:                  2024-01-26T03:36:59.087763-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "重构"

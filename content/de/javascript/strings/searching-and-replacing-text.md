@@ -1,7 +1,5 @@
 ---
 title:                "Suchen und Ersetzen von Text"
-aliases:
-- /de/javascript/searching-and-replacing-text.md
 date:                  2024-01-20T17:58:14.153702-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Suchen und Ersetzen von Text"

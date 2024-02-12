@@ -1,7 +1,5 @@
 ---
 title:                "テストの作成"
-aliases:
-- /ja/go/writing-tests.md
 date:                  2024-02-03T18:15:24.046423-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "テストの作成"

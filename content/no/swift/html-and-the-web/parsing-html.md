@@ -1,7 +1,5 @@
 ---
 title:                "Analyse av HTML"
-aliases:
-- /no/swift/parsing-html.md
 date:                  2024-01-20T15:34:06.387643-07:00
 simple_title:         "Analyse av HTML"
 

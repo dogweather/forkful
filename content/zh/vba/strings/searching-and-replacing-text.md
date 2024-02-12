@@ -1,7 +1,5 @@
 ---
 title:                "搜索和替换文本"
-aliases:
-- /zh/vba/searching-and-replacing-text.md
 date:                  2024-02-01T22:01:18.746397-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "搜索和替换文本"

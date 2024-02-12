@@ -1,7 +1,5 @@
 ---
 title:                "Xóa các ký tự phù hợp với một mẫu"
-aliases:
-- /vi/vba/deleting-characters-matching-a-pattern.md
 date:                  2024-02-01T21:54:18.895797-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Xóa các ký tự phù hợp với một mẫu"

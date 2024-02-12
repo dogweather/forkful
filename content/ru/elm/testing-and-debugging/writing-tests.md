@@ -1,7 +1,5 @@
 ---
 title:                "Написание тестов"
-aliases:
-- /ru/elm/writing-tests.md
 date:                  2024-01-29T00:05:43.557804-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Написание тестов"

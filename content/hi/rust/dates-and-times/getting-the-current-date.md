@@ -1,7 +1,5 @@
 ---
 title:                "वर्तमान तारीख प्राप्त करना"
-aliases:
-- /hi/rust/getting-the-current-date.md
 date:                  2024-02-03T19:11:39.548498-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "वर्तमान तारीख प्राप्त करना"

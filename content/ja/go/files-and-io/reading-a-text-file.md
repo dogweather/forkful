@@ -1,7 +1,5 @@
 ---
 title:                "テキストファイルの読み込み"
-aliases:
-- /ja/go/reading-a-text-file.md
 date:                  2024-02-03T18:06:13.476245-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "テキストファイルの読み込み"

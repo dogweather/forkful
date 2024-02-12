@@ -1,7 +1,5 @@
 ---
 title:                "Utilizzo di array associativi"
-aliases:
-- /it/go/using-associative-arrays.md
 date:                  2024-02-03T18:10:56.616038-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Utilizzo di array associativi"

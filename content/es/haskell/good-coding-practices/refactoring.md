@@ -1,7 +1,5 @@
 ---
 title:                "Refactorización"
-aliases:
-- /es/haskell/refactoring.md
 date:                  2024-01-26T01:37:21.580167-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Refactorización"

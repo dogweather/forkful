@@ -1,7 +1,5 @@
 ---
 title:                "Analizando una fecha a partir de una cadena de texto"
-aliases:
-- /es/bash/parsing-a-date-from-a-string.md
 date:                  2024-02-03T19:13:40.739814-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Analizando una fecha a partir de una cadena de texto"

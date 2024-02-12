@@ -1,7 +1,5 @@
 ---
 title:                "Написання текстового файлу"
-aliases:
-- /uk/vba/writing-a-text-file.md
 date:                  2024-02-01T22:09:19.499376-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Написання текстового файлу"

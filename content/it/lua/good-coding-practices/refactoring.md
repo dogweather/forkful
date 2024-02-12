@@ -1,7 +1,5 @@
 ---
 title:                "Rifattorizzazione"
-aliases:
-- /it/lua/refactoring.md
 date:                  2024-01-26T01:45:47.415614-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Rifattorizzazione"

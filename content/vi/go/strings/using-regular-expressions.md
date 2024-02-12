@@ -1,7 +1,5 @@
 ---
 title:                "Sử dụng biểu thức chính quy"
-aliases:
-- /vi/go/using-regular-expressions.md
 date:                  2024-02-03T18:11:38.037501-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Sử dụng biểu thức chính quy"

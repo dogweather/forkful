@@ -1,7 +1,5 @@
 ---
 title:                "כתיבה לשגיאת סטנדרט"
-aliases:
-- /he/c/writing-to-standard-error.md
 date:                  2024-02-03T18:15:43.858027-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "כתיבה לשגיאת סטנדרט"

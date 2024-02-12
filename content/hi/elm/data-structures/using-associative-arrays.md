@@ -1,7 +1,5 @@
 ---
 title:                "सहयोगी अरेज़ का उपयोग करना"
-aliases:
-- /hi/elm/using-associative-arrays.md
 date:                  2024-01-30T19:11:58.610783-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "सहयोगी अरेज़ का उपयोग करना"

@@ -1,7 +1,5 @@
 ---
 title:                "Å konvertere en dato til en streng"
-aliases:
-- /no/google-apps-script/converting-a-date-into-a-string.md
 date:                  2024-02-01T21:50:57.856992-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Å konvertere en dato til en streng"

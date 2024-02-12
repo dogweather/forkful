@@ -1,7 +1,5 @@
 ---
 title:                "Konvertere en streng til små bokstaver"
-aliases:
-- /no/java/converting-a-string-to-lower-case.md
 date:                  2024-01-20T17:38:44.996398-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Konvertere en streng til små bokstaver"

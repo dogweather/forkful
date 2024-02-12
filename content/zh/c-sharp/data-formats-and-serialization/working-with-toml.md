@@ -1,7 +1,5 @@
 ---
 title:                "使用TOML"
-aliases:
-- /zh/c-sharp/working-with-toml.md
 date:                  2024-01-26T04:20:23.582566-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "使用TOML"

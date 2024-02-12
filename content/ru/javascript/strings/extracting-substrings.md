@@ -1,7 +1,5 @@
 ---
 title:                "Извлечение подстрок"
-aliases:
-- /ru/javascript/extracting-substrings.md
 date:                  2024-01-28T23:57:50.211976-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Извлечение подстрок"

@@ -1,7 +1,5 @@
 ---
 title:                "Substrings extraheren"
-aliases:
-- /nl/bash/extracting-substrings.md
 date:                  2024-01-28T21:59:28.114197-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Substrings extraheren"

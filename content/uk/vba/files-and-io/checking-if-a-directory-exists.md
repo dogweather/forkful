@@ -1,7 +1,5 @@
 ---
 title:                "Перевірка наявності директорії"
-aliases:
-- /uk/vba/checking-if-a-directory-exists.md
 date:                  2024-02-01T21:50:08.453939-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Перевірка наявності директорії"

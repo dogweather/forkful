@@ -1,7 +1,5 @@
 ---
 title:                "Generowanie liczb losowych"
-aliases:
-- /pl/elixir/generating-random-numbers.md
 date:                  2024-01-27T20:33:18.574106-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Generowanie liczb losowych"

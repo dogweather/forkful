@@ -1,7 +1,5 @@
 ---
 title:                "Написання текстового файлу"
-aliases:
-- /uk/javascript/writing-a-text-file.md
 date:                  2024-02-03T19:28:51.797115-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Написання текстового файлу"

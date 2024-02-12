@@ -1,7 +1,5 @@
 ---
 title:                "Generering av tilfeldige tall"
-aliases:
-- /no/rust/generating-random-numbers.md
 date:                  2024-01-27T20:35:12.817430-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Generering av tilfeldige tall"

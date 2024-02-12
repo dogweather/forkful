@@ -1,7 +1,5 @@
 ---
 title:                "YAML के साथ काम करना"
-aliases:
-- /hi/javascript/working-with-yaml.md
 date:                  2024-02-03T19:26:26.079113-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "YAML के साथ काम करना"

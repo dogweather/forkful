@@ -1,7 +1,5 @@
 ---
 title:                "YAML로 작업하기"
-aliases:
-- /ko/cpp/working-with-yaml.md
 date:                  2024-02-03T19:24:40.745219-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "YAML로 작업하기"

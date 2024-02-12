@@ -1,7 +1,5 @@
 ---
 title:                "Khởi đầu một dự án mới"
-aliases:
-- /vi/google-apps-script/starting-a-new-project.md
 date:                  2024-02-01T22:03:15.184757-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Khởi đầu một dự án mới"

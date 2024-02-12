@@ -1,7 +1,5 @@
 ---
 title:                "Использование регулярных выражений"
-aliases:
-- /ru/vba/using-regular-expressions.md
 date:                  2024-02-01T22:05:31.151079-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Использование регулярных выражений"

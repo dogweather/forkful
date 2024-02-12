@@ -1,7 +1,5 @@
 ---
 title:                "Extracting substrings"
-aliases:
-- /en/vba/extracting-substrings.md
 date:                  2024-02-01T21:30:17.130436-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Extracting substrings"

@@ -1,7 +1,5 @@
 ---
 title:                "Pobieranie strony internetowej"
-aliases:
-- /pl/lua/downloading-a-web-page.md
 date:                  2024-01-20T17:44:43.679360-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Pobieranie strony internetowej"

@@ -1,7 +1,5 @@
 ---
 title:                "テストの作成"
-aliases:
-- /ja/fish-shell/writing-tests.md
 date:                  2024-02-03T19:30:42.321070-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "テストの作成"

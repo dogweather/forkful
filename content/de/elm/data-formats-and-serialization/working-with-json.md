@@ -1,7 +1,5 @@
 ---
 title:                "Arbeiten mit JSON"
-aliases:
-- /de/elm/working-with-json.md
 date:                  2024-02-03T19:22:57.583005-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Arbeiten mit JSON"

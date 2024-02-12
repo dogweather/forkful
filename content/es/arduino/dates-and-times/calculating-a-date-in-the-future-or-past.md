@@ -1,7 +1,5 @@
 ---
 title:                "Cálculo de una fecha en el futuro o el pasado"
-aliases:
-- /es/arduino/calculating-a-date-in-the-future-or-past.md
 date:                  2024-01-20T17:28:31.254804-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Cálculo de una fecha en el futuro o el pasado"

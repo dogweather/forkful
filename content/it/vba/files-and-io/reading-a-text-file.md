@@ -1,7 +1,5 @@
 ---
 title:                "Leggere un file di testo"
-aliases:
-- /it/vba/reading-a-text-file.md
 date:                  2024-02-01T21:58:56.701694-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Leggere un file di testo"

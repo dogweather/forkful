@@ -1,7 +1,5 @@
 ---
 title:                "乱数の生成"
-aliases:
-- /ja/bash/generating-random-numbers.md
 date:                  2024-01-27T20:33:13.527981-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "乱数の生成"

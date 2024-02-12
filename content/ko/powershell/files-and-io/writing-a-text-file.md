@@ -1,7 +1,5 @@
 ---
 title:                "텍스트 파일 쓰기"
-aliases:
-- /ko/powershell/writing-a-text-file.md
 date:                  2024-02-03T19:29:09.794151-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "텍스트 파일 쓰기"

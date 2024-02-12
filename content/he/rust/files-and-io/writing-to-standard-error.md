@@ -1,7 +1,5 @@
 ---
 title:                "כתיבה לשגיאה התקנית"
-aliases:
-- /he/rust/writing-to-standard-error.md
 date:                  2024-02-03T19:35:01.510778-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "כתיבה לשגיאה התקנית"

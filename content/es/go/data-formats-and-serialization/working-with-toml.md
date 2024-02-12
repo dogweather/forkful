@@ -1,7 +1,5 @@
 ---
 title:                "Trabajando con TOML"
-aliases:
-- /es/go/working-with-toml.md
 date:                  2024-02-03T18:12:38.709675-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Trabajando con TOML"
