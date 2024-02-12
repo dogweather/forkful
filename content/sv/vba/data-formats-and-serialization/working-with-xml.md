@@ -1,5 +1,7 @@
 ---
 title:                "Arbeta med XML"
+aliases:
+- sv/vba/working-with-xml.md
 date:                  2024-02-01T22:06:54.381527-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Arbeta med XML"

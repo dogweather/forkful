@@ -1,5 +1,7 @@
 ---
 title:                "Scrivere un file di testo"
+aliases:
+- it/c/writing-a-text-file.md
 date:                  2024-02-03T18:14:27.878052-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Scrivere un file di testo"

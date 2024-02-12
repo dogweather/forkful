@@ -1,5 +1,7 @@
 ---
 title:                "Интерполяция строки"
+aliases:
+- ru/fish-shell/interpolating-a-string.md
 date:                  2024-01-28T23:59:00.086292-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Интерполяция строки"

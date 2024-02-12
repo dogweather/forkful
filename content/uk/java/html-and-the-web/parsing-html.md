@@ -1,5 +1,7 @@
 ---
 title:                "Парсинг HTML"
+aliases:
+- uk/java/parsing-html.md
 date:                  2024-01-20T15:32:11.518269-07:00
 simple_title:         "Парсинг HTML"
 

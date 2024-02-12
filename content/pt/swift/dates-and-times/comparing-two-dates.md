@@ -1,5 +1,7 @@
 ---
 title:                "Comparando duas datas"
+aliases:
+- pt/swift/comparing-two-dates.md
 date:                  2024-01-20T17:34:00.578172-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Comparando duas datas"

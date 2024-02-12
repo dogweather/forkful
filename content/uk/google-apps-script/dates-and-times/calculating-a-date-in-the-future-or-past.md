@@ -1,5 +1,7 @@
 ---
 title:                "Розрахунок дати в майбутньому чи минулому"
+aliases:
+- uk/google-apps-script/calculating-a-date-in-the-future-or-past.md
 date:                  2024-02-01T21:49:38.309234-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Розрахунок дати в майбутньому чи минулому"

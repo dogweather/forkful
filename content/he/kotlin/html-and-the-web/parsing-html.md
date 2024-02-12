@@ -1,5 +1,7 @@
 ---
 title:                "ניתוח HTML"
+aliases:
+- he/kotlin/parsing-html.md
 date:                  2024-01-20T15:32:36.546745-07:00
 simple_title:         "ניתוח HTML"
 

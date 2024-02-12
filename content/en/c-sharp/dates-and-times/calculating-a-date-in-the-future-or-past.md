@@ -1,5 +1,7 @@
 ---
 title:                "Calculating a date in the future or past"
+aliases:
+- en/c-sharp/calculating-a-date-in-the-future-or-past.md
 date:                  2024-01-20T17:28:30.879408-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Calculating a date in the future or past"

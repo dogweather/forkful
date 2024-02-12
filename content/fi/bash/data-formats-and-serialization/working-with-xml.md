@@ -1,5 +1,7 @@
 ---
 title:                "XML:n käsittely"
+aliases:
+- fi/bash/working-with-xml.md
 date:                  2024-01-26T04:27:34.691183-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "XML:n käsittely"

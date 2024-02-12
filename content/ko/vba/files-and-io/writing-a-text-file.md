@@ -1,5 +1,7 @@
 ---
 title:                "텍스트 파일 작성하기"
+aliases:
+- ko/vba/writing-a-text-file.md
 date:                  2024-02-01T22:08:55.287655-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "텍스트 파일 작성하기"

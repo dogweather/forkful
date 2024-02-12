@@ -1,5 +1,7 @@
 ---
 title:                "Avrunding av tall"
+aliases:
+- no/vba/rounding-numbers.md
 date:                  2024-02-01T22:01:10.278545-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Avrunding av tall"

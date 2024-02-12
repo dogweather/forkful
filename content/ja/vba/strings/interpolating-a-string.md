@@ -1,5 +1,7 @@
 ---
 title:                "文字列の補間"
+aliases:
+- ja/vba/interpolating-a-string.md
 date:                  2024-02-01T21:55:51.371803-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "文字列の補間"

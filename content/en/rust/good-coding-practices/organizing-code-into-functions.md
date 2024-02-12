@@ -1,5 +1,7 @@
 ---
 title:                "Organizing code into functions"
+aliases:
+- en/rust/organizing-code-into-functions.md
 date:                  2024-01-25T02:59:56.448373-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Organizing code into functions"

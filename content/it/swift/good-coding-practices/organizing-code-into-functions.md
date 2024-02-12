@@ -1,5 +1,7 @@
 ---
 title:                "Organizzare il codice in funzioni"
+aliases:
+- it/swift/organizing-code-into-functions.md
 date:                  2024-01-26T01:16:11.258966-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Organizzare il codice in funzioni"

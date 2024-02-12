@@ -1,5 +1,7 @@
 ---
 title:                "Sammenlikning av to datoer"
+aliases:
+- no/typescript/comparing-two-dates.md
 date:                  2024-01-20T17:34:16.164284-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Sammenlikning av to datoer"

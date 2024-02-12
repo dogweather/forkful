@@ -1,5 +1,7 @@
 ---
 title:                "Mettre en majuscule une chaîne"
+aliases:
+- fr/rust/capitalizing-a-string.md
 date:                  2024-02-03T19:06:23.170611-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Mettre en majuscule une chaîne"

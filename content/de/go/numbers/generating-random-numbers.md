@@ -1,5 +1,7 @@
 ---
 title:                "Zufallszahlen generieren"
+aliases:
+- de/go/generating-random-numbers.md
 date:                  2024-02-03T17:57:32.605170-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Zufallszahlen generieren"

@@ -1,5 +1,7 @@
 ---
 title:                "Rounding numbers"
+aliases:
+- en/google-apps-script/rounding-numbers.md
 date:                  2024-02-01T21:12:07.080129-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Rounding numbers"

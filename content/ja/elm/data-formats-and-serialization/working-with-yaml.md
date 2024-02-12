@@ -1,5 +1,7 @@
 ---
 title:                "YAMLを扱う"
+aliases:
+- ja/elm/working-with-yaml.md
 date:                  2024-01-19
 simple_title:         "YAMLを扱う"
 

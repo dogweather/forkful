@@ -1,5 +1,7 @@
 ---
 title:                "Geração de números aleatórios"
+aliases:
+- pt/haskell/generating-random-numbers.md
 date:                  2024-01-27T20:33:56.708979-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Geração de números aleatórios"

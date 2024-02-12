@@ -1,5 +1,7 @@
 ---
 title:                "डीबगर का उपयोग"
+aliases:
+- hi/bash/using-a-debugger.md
 date:                  2024-01-26T03:50:12.458852-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "डीबगर का उपयोग"

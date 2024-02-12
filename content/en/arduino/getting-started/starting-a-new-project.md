@@ -1,5 +1,7 @@
 ---
 title:                "Starting a new project"
+aliases:
+- en/arduino/starting-a-new-project.md
 date:                  2024-01-20T18:02:33.167744-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Starting a new project"

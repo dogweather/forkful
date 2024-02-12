@@ -1,5 +1,7 @@
 ---
 title:                "Schrijven naar standaardfout"
+aliases:
+- nl/google-apps-script/writing-to-standard-error.md
 date:                  2024-02-01T22:09:38.210439-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Schrijven naar standaardfout"

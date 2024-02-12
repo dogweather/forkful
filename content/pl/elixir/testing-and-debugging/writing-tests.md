@@ -1,5 +1,7 @@
 ---
 title:                "Pisanie testów"
+aliases:
+- pl/elixir/writing-tests.md
 date:                  2024-02-03T19:30:31.347116-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Pisanie testów"

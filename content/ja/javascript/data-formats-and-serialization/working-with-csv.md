@@ -1,5 +1,7 @@
 ---
 title:                "CSVとの作業"
+aliases:
+- ja/javascript/working-with-csv.md
 date:                  2024-02-03T19:21:05.065478-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "CSVとの作業"

@@ -1,5 +1,7 @@
 ---
 title:                "Nutzung einer interaktiven Shell (REPL)"
+aliases:
+- de/kotlin/using-an-interactive-shell-repl.md
 date:                  2024-01-26T04:15:33.148867-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Nutzung einer interaktiven Shell (REPL)"

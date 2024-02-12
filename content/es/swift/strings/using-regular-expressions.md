@@ -1,5 +1,7 @@
 ---
 title:                "Usando expresiones regulares"
+aliases:
+- es/swift/using-regular-expressions.md
 date:                  2024-02-03T19:18:12.385484-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Usando expresiones regulares"

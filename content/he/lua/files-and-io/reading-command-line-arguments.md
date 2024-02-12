@@ -1,5 +1,7 @@
 ---
 title:                "קריאת פרמטרים משורת הפקודה"
+aliases:
+- he/lua/reading-command-line-arguments.md
 date:                  2024-01-20T17:56:37.814860-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "קריאת פרמטרים משורת הפקודה"

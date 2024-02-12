@@ -1,5 +1,7 @@
 ---
 title:                "Avrundning av nummer"
+aliases:
+- sv/c/rounding-numbers.md
 date:                  2024-02-03T18:07:52.650120-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Avrundning av nummer"

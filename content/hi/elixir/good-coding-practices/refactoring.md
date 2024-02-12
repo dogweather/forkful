@@ -1,5 +1,7 @@
 ---
 title:                "रिफैक्टरिंग"
+aliases:
+- hi/elixir/refactoring.md
 date:                  2024-01-26T01:30:01.832863-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "रिफैक्टरिंग"

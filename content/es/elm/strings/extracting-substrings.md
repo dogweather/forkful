@@ -1,5 +1,7 @@
 ---
 title:                "Extracción de subcadenas"
+aliases:
+- es/elm/extracting-substrings.md
 date:                  2024-01-20T17:45:37.460353-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Extracción de subcadenas"

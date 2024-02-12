@@ -1,5 +1,7 @@
 ---
 title:                "Використання асоціативних масивів"
+aliases:
+- uk/vba/using-associative-arrays.md
 date:                  2024-02-01T22:04:58.146452-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Використання асоціативних масивів"

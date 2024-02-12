@@ -1,5 +1,7 @@
 ---
 title:                "Làm việc với JSON"
+aliases:
+- vi/rust/working-with-json.md
 date:                  2024-01-28T22:11:07.154309-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Làm việc với JSON"

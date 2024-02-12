@@ -1,5 +1,7 @@
 ---
 title:                "使用关联数组"
+aliases:
+- zh/c/using-associative-arrays.md
 date:                  2024-02-03T18:10:45.792168-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "使用关联数组"

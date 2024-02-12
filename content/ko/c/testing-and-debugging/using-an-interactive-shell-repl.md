@@ -1,5 +1,7 @@
 ---
 title:                "대화형 셸(REPL) 사용하기"
+aliases:
+- ko/c/using-an-interactive-shell-repl.md
 date:                  2024-02-03T18:10:27.718385-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "대화형 셸(REPL) 사용하기"

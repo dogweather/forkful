@@ -1,5 +1,7 @@
 ---
 title:                "Scaricare una pagina web"
+aliases:
+- it/kotlin/downloading-a-web-page.md
 date:                  2024-01-20T17:44:27.188031-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Scaricare una pagina web"

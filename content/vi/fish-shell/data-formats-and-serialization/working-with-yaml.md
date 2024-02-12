@@ -1,5 +1,7 @@
 ---
 title:                "Làm việc với YAML"
+aliases:
+- vi/fish-shell/working-with-yaml.md
 date:                  2024-01-28T22:12:07.756559-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Làm việc với YAML"

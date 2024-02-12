@@ -1,5 +1,7 @@
 ---
 title:                "Zoeken en vervangen van tekst"
+aliases:
+- nl/google-apps-script/searching-and-replacing-text.md
 date:                  2024-02-01T22:01:07.605776-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Zoeken en vervangen van tekst"

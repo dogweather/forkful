@@ -1,5 +1,7 @@
 ---
 title:                "Загрузка веб-страницы"
+aliases:
+- ru/swift/downloading-a-web-page.md
 date:                  2024-01-28T23:57:32.143706-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Загрузка веб-страницы"

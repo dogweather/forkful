@@ -1,5 +1,7 @@
 ---
 title:                "删除字符串中的引号"
+aliases:
+- zh/go/removing-quotes-from-a-string.md
 date:                  2024-02-03T18:07:26.647024-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "删除字符串中的引号"

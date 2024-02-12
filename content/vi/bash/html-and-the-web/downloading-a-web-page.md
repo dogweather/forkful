@@ -1,5 +1,7 @@
 ---
 title:                "Tải trang web"
+aliases:
+- vi/bash/downloading-a-web-page.md
 date:                  2024-01-28T21:59:21.946145-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Tải trang web"

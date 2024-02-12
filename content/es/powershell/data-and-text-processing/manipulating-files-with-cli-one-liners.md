@@ -1,5 +1,7 @@
 ---
 title:                "Manipulando archivos con comandos de línea de una sola línea"
+aliases:
+- es/powershell/manipulating-files-with-cli-one-liners.md
 date:                  2024-01-27T16:21:03.729322-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Manipulando archivos con comandos de línea de una sola línea"

@@ -1,5 +1,7 @@
 ---
 title:                "Viết một tệp văn bản"
+aliases:
+- vi/vba/writing-a-text-file.md
 date:                  2024-02-01T22:08:54.949225-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Viết một tệp văn bản"

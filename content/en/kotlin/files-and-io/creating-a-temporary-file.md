@@ -1,5 +1,7 @@
 ---
 title:                "Creating a temporary file"
+aliases:
+- en/kotlin/creating-a-temporary-file.md
 date:                  2024-01-20T17:40:42.355551-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Creating a temporary file"

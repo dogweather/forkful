@@ -1,5 +1,7 @@
 ---
 title:                "XMLの扱い方"
+aliases:
+- ja/php/working-with-xml.md
 date:                  2024-01-26T04:34:14.688342-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "XMLの扱い方"

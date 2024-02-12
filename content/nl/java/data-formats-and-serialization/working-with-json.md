@@ -1,5 +1,7 @@
 ---
 title:                "Werken met JSON"
+aliases:
+- nl/java/working-with-json.md
 date:                  2024-01-28T22:10:47.483863-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Werken met JSON"

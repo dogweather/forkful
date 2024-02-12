@@ -1,5 +1,7 @@
 ---
 title:                "Een tijdelijk bestand aanmaken"
+aliases:
+- nl/google-apps-script/creating-a-temporary-file.md
 date:                  2024-02-01T21:51:58.644457-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een tijdelijk bestand aanmaken"

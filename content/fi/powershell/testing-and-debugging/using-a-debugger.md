@@ -1,5 +1,7 @@
 ---
 title:                "Debuggerin käyttö"
+aliases:
+- fi/powershell/using-a-debugger.md
 date:                  2024-01-26T04:09:01.050958-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Debuggerin käyttö"

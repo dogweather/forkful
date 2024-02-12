@@ -1,5 +1,7 @@
 ---
 title:                "Starting a new project"
+aliases:
+- en/google-apps-script/starting-a-new-project.md
 date:                  2024-02-01T21:12:08.207343-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Starting a new project"

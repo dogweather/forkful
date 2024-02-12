@@ -1,5 +1,7 @@
 ---
 title:                "Организация кода в функции"
+aliases:
+- ru/clojure/organizing-code-into-functions.md
 date:                  2024-01-28T23:59:46.131726-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Организация кода в функции"

@@ -1,5 +1,7 @@
 ---
 title:                "Refaktorisering"
+aliases:
+- sv/fish-shell/refactoring.md
 date:                  2024-01-26T01:18:06.456649-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Refaktorisering"

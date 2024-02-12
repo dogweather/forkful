@@ -1,5 +1,7 @@
 ---
 title:                "Arbeiten mit XML"
+aliases:
+- de/python/working-with-xml.md
 date:                  2024-01-26T04:34:31.753434-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Arbeiten mit XML"

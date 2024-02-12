@@ -1,5 +1,7 @@
 ---
 title:                "Tolka HTML"
+aliases:
+- sv/elm/parsing-html.md
 date:                  2024-01-20T15:31:08.369871-07:00
 simple_title:         "Tolka HTML"
 

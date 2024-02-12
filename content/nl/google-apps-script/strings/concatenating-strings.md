@@ -1,5 +1,7 @@
 ---
 title:                "Strings samenvoegen"
+aliases:
+- nl/google-apps-script/concatenating-strings.md
 date:                  2024-02-01T21:50:09.482019-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Strings samenvoegen"

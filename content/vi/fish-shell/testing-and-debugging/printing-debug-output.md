@@ -1,5 +1,7 @@
 ---
 title:                "In ra thông tin gỡ lỗi"
+aliases:
+- vi/fish-shell/printing-debug-output.md
 date:                  2024-01-28T22:05:00.912368-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "In ra thông tin gỡ lỗi"

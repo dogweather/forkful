@@ -1,5 +1,7 @@
 ---
 title:                "संख्याओं को पूर्णकरण"
+aliases:
+- hi/google-apps-script/rounding-numbers.md
 date:                  2024-02-01T22:02:14.895427-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "संख्याओं को पूर्णकरण"

@@ -1,5 +1,7 @@
 ---
 title:                "Een debugger gebruiken"
+aliases:
+- nl/clojure/using-a-debugger.md
 date:                  2024-01-28T22:08:51.727157-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een debugger gebruiken"

@@ -1,5 +1,7 @@
 ---
 title:                "Преобразование строки в верхний регистр"
+aliases:
+- ru/haskell/capitalizing-a-string.md
 date:                  2024-01-28T23:55:49.990678-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Преобразование строки в верхний регистр"

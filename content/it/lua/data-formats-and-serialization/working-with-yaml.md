@@ -1,5 +1,7 @@
 ---
 title:                "Lavorare con YAML"
+aliases:
+- it/lua/working-with-yaml.md
 date:                  2024-02-03T19:26:01.101883-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Lavorare con YAML"

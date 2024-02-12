@@ -1,5 +1,7 @@
 ---
 title:                "HTML Parsen"
+aliases:
+- nl/powershell/parsing-html.md
 date:                  2024-01-28T22:03:36.383935-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "HTML Parsen"

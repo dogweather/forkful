@@ -1,5 +1,7 @@
 ---
 title:                "Arbeta med TOML"
+aliases:
+- sv/google-apps-script/working-with-toml.md
 date:                  2024-02-01T22:06:12.884155-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Arbeta med TOML"

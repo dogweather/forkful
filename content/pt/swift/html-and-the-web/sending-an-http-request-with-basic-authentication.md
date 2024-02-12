@@ -1,5 +1,7 @@
 ---
 title:                "Enviando uma requisição HTTP com autenticação básica"
+aliases:
+- pt/swift/sending-an-http-request-with-basic-authentication.md
 date:                  2024-01-20T18:02:45.784615-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Enviando uma requisição HTTP com autenticação básica"

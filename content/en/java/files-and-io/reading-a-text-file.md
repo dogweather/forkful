@@ -1,5 +1,7 @@
 ---
 title:                "Reading a text file"
+aliases:
+- en/java/reading-a-text-file.md
 date:                  2024-01-20T17:54:34.386436-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Reading a text file"

@@ -1,5 +1,7 @@
 ---
 title:                "Interpolation eines Strings"
+aliases:
+- de/python/interpolating-a-string.md
 date:                  2024-01-28T21:23:41.871760-07:00
 lastmod:               2024-01-29
 model:                 gpt-4-0125-preview

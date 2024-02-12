@@ -1,5 +1,7 @@
 ---
 title:                "字符串插值"
+aliases:
+- zh/clojure/interpolating-a-string.md
 date:                  2024-01-20T17:50:47.582103-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "字符串插值"

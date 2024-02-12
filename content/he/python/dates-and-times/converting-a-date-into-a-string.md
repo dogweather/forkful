@@ -1,5 +1,7 @@
 ---
 title:                "המרת תאריך למחרוזת"
+aliases:
+- he/python/converting-a-date-into-a-string.md
 date:                  2024-01-20T17:38:29.800976-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "המרת תאריך למחרוזת"

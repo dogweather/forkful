@@ -1,5 +1,7 @@
 ---
 title:                "Tests Schreiben"
+aliases:
+- de/java/writing-tests.md
 date:                  2024-02-03T19:30:50.255026-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Tests Schreiben"

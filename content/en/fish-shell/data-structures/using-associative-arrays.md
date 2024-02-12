@@ -1,5 +1,7 @@
 ---
 title:                "Using associative arrays"
+aliases:
+- en/fish-shell/using-associative-arrays.md
 date:                  2024-01-30T18:57:10.590524-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Using associative arrays"

@@ -1,5 +1,7 @@
 ---
 title:                "Travailler avec XML"
+aliases:
+- fr/javascript/working-with-xml.md
 date:                  2024-01-26T04:32:32.326243-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Travailler avec XML"

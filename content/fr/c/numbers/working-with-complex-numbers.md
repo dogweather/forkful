@@ -1,5 +1,7 @@
 ---
 title:                "Travailler avec des nombres complexes"
+aliases:
+- fr/c/working-with-complex-numbers.md
 date:                  2024-02-03T18:14:35.759511-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Travailler avec des nombres complexes"

@@ -1,5 +1,7 @@
 ---
 title:                "Gestione degli errori"
+aliases:
+- it/clojure/handling-errors.md
 date:                  2024-01-26T00:50:41.678251-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Gestione degli errori"

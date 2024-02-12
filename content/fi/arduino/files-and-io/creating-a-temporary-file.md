@@ -1,5 +1,7 @@
 ---
 title:                "Väliaikaistiedoston luominen"
+aliases:
+- fi/arduino/creating-a-temporary-file.md
 date:                  2024-01-20T17:39:47.594551-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Väliaikaistiedoston luominen"

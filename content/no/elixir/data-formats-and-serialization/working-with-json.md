@@ -1,5 +1,7 @@
 ---
 title:                "Arbeider med JSON"
+aliases:
+- no/elixir/working-with-json.md
 date:                  2024-02-03T19:22:10.149634-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Arbeider med JSON"

@@ -1,5 +1,7 @@
 ---
 title:                "Lese en tekstfil"
+aliases:
+- no/javascript/reading-a-text-file.md
 date:                  2024-01-20T17:54:32.991132-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Lese en tekstfil"

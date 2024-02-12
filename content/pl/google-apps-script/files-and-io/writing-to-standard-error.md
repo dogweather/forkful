@@ -1,5 +1,7 @@
 ---
 title:                "Pisanie do standardowego błędu"
+aliases:
+- pl/google-apps-script/writing-to-standard-error.md
 date:                  2024-02-01T22:08:57.402354-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Pisanie do standardowego błędu"

@@ -1,5 +1,7 @@
 ---
 title:                "Parsing a date from a string"
+aliases:
+- en/vba/parsing-a-date-from-a-string.md
 date:                  2024-02-01T21:30:26.750010-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Parsing a date from a string"

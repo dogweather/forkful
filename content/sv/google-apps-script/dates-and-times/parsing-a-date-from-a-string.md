@@ -1,5 +1,7 @@
 ---
 title:                "Analysera ett datum från en sträng"
+aliases:
+- sv/google-apps-script/parsing-a-date-from-a-string.md
 date:                  2024-02-01T21:58:37.760770-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Analysera ett datum från en sträng"

@@ -1,5 +1,7 @@
 ---
 title:                "Создание текстового файла"
+aliases:
+- ru/google-apps-script/writing-a-text-file.md
 date:                  2024-02-01T22:08:29.104412-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Создание текстового файла"

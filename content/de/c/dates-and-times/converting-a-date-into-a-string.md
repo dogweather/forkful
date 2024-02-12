@@ -1,5 +1,7 @@
 ---
 title:                "Ein Datum in einen String umwandeln"
+aliases:
+- de/c/converting-a-date-into-a-string.md
 date:                  2024-02-03T17:53:50.811772-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Ein Datum in einen String umwandeln"

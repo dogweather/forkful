@@ -1,5 +1,7 @@
 ---
 title:                "Interpolando uma string"
+aliases:
+- pt/fish-shell/interpolating-a-string.md
 date:                  2024-01-20T17:50:58.052055-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Interpolando uma string"

@@ -1,5 +1,7 @@
 ---
 title:                "रेगुलर एक्सप्रेशन का उपयोग करना"
+aliases:
+- hi/c/using-regular-expressions.md
 date:                  2024-02-03T18:11:55.648435-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "रेगुलर एक्सप्रेशन का उपयोग करना"

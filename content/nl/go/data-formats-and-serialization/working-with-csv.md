@@ -1,5 +1,7 @@
 ---
 title:                "Werken met CSV"
+aliases:
+- nl/go/working-with-csv.md
 date:                  2024-02-03T18:11:57.759704-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Werken met CSV"

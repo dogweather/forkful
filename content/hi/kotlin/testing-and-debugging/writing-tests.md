@@ -1,5 +1,7 @@
 ---
 title:                "टेस्ट लिखना"
+aliases:
+- hi/kotlin/writing-tests.md
 date:                  2024-02-03T19:31:50.902257-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "टेस्ट लिखना"

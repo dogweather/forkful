@@ -1,5 +1,7 @@
 ---
 title:                "Leggere gli argomenti della riga di comando"
+aliases:
+- it/vba/reading-command-line-arguments.md
 date:                  2024-02-01T21:59:24.044188-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Leggere gli argomenti della riga di comando"

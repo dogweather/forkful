@@ -1,5 +1,7 @@
 ---
 title:                "XML 다루기"
+aliases:
+- ko/typescript/working-with-xml.md
 date:                  2024-01-26T04:36:28.666757-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "XML 다루기"

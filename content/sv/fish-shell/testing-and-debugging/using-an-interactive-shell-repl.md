@@ -1,5 +1,7 @@
 ---
 title:                "Använda en interaktiv skal (REPL)"
+aliases:
+- sv/fish-shell/using-an-interactive-shell-repl.md
 date:                  2024-01-26T04:14:06.185524-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Använda en interaktiv skal (REPL)"

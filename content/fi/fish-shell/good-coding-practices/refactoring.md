@@ -1,5 +1,7 @@
 ---
 title:                "Koodin refaktorointi"
+aliases:
+- fi/fish-shell/refactoring.md
 date:                  2024-01-26T01:18:52.162536-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Koodin refaktorointi"

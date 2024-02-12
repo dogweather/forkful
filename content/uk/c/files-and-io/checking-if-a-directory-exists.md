@@ -1,5 +1,7 @@
 ---
 title:                "Перевірка існування директорії"
+aliases:
+- uk/c/checking-if-a-directory-exists.md
 date:                  2024-02-03T17:53:08.507021-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Перевірка існування директорії"

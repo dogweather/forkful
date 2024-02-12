@@ -1,5 +1,7 @@
 ---
 title:                "Bestanden ter plekke bewerken met CLI one-liners"
+aliases:
+- nl/ruby/editing-files-in-place-with-cli-one-liners.md
 date:                  2024-01-28T21:59:53.300909-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Bestanden ter plekke bewerken met CLI one-liners"

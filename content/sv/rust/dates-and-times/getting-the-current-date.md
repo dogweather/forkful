@@ -1,5 +1,7 @@
 ---
 title:                "Få det aktuella datumet"
+aliases:
+- sv/rust/getting-the-current-date.md
 date:                  2024-02-03T19:10:56.687492-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Få det aktuella datumet"

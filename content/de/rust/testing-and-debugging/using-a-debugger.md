@@ -1,5 +1,7 @@
 ---
 title:                "Einsatz eines Debuggers"
+aliases:
+- de/rust/using-a-debugger.md
 date:                  2024-01-26T04:10:03.292124-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Einsatz eines Debuggers"

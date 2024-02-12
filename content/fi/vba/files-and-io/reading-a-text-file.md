@@ -1,5 +1,7 @@
 ---
 title:                "Tekstitiedoston lukeminen"
+aliases:
+- fi/vba/reading-a-text-file.md
 date:                  2024-02-01T21:58:51.058893-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Tekstitiedoston lukeminen"

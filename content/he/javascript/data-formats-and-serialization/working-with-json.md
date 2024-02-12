@@ -1,5 +1,7 @@
 ---
 title:                "עבודה עם JSON"
+aliases:
+- he/javascript/working-with-json.md
 date:                  2024-02-03T19:23:36.814193-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "עבודה עם JSON"

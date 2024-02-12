@@ -1,5 +1,7 @@
 ---
 title:                "Преобразование строки в нижний регистр"
+aliases:
+- ru/vba/converting-a-string-to-lower-case.md
 date:                  2024-02-01T21:51:41.502518-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Преобразование строки в нижний регистр"

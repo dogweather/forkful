@@ -1,5 +1,7 @@
 ---
 title:                "Usando um depurador"
+aliases:
+- pt/elm/using-a-debugger.md
 date:                  2024-01-26T03:48:51.660544-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Usando um depurador"

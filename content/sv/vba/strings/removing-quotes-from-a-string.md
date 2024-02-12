@@ -1,5 +1,7 @@
 ---
 title:                "Ta bort citattecken från en sträng"
+aliases:
+- sv/vba/removing-quotes-from-a-string.md
 date:                  2024-02-01T22:00:33.126710-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Ta bort citattecken från en sträng"

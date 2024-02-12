@@ -1,5 +1,7 @@
 ---
 title:                "Deletando caracteres que correspondem a um padrão"
+aliases:
+- pt/c/deleting-characters-matching-a-pattern.md
 date:                  2024-02-03T17:55:22.258942-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Deletando caracteres que correspondem a um padrão"

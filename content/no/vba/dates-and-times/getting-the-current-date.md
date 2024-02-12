@@ -1,5 +1,7 @@
 ---
 title:                "Få den gjeldende datoen"
+aliases:
+- no/vba/getting-the-current-date.md
 date:                  2024-02-01T21:54:39.984767-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Få den gjeldende datoen"

@@ -1,5 +1,7 @@
 ---
 title:                "Usuwanie znaków pasujących do wzorca"
+aliases:
+- pl/google-apps-script/deleting-characters-matching-a-pattern.md
 date:                  2024-02-01T21:51:55.431163-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Usuwanie znaków pasujących do wzorca"

@@ -1,5 +1,7 @@
 ---
 title:                "Lavorare con i numeri complessi"
+aliases:
+- it/bash/working-with-complex-numbers.md
 date:                  2024-01-26T04:37:02.945670-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Lavorare con i numeri complessi"

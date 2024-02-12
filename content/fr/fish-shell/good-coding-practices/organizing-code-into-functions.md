@@ -1,5 +1,7 @@
 ---
 title:                "Organiser le code en fonctions"
+aliases:
+- fr/fish-shell/organizing-code-into-functions.md
 date:                  2024-01-28T23:01:33.191826-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Organiser le code en fonctions"

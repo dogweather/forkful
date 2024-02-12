@@ -1,5 +1,7 @@
 ---
 title:                "त्रुटियों का समाधान"
+aliases:
+- hi/go/handling-errors.md
 date:                  2024-02-03T17:59:29.101524-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "त्रुटियों का समाधान"

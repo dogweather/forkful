@@ -1,5 +1,7 @@
 ---
 title:                "Đọc một tệp văn bản"
+aliases:
+- vi/cpp/reading-a-text-file.md
 date:                  2024-01-28T22:05:34.837298-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Đọc một tệp văn bản"

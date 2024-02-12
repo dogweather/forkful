@@ -1,5 +1,7 @@
 ---
 title:                "Calculando uma data no futuro ou no passado"
+aliases:
+- pt/vba/calculating-a-date-in-the-future-or-past.md
 date:                  2024-02-01T21:48:41.513791-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Calculando uma data no futuro ou no passado"

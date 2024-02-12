@@ -1,5 +1,7 @@
 ---
 title:                "डीबग आउटपुट प्रिंट करना"
+aliases:
+- hi/cpp/printing-debug-output.md
 date:                  2024-01-20T17:52:33.346412-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "डीबग आउटपुट प्रिंट करना"

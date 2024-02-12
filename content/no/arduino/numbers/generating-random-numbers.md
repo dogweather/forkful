@@ -1,5 +1,7 @@
 ---
 title:                "Generering av tilfeldige tall"
+aliases:
+- no/arduino/generating-random-numbers.md
 date:                  2024-01-27T20:32:47.071157-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Generering av tilfeldige tall"

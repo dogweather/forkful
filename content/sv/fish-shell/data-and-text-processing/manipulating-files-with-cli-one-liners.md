@@ -1,5 +1,7 @@
 ---
 title:                "Hantera filer med CLI-engreppskommandon"
+aliases:
+- sv/fish-shell/manipulating-files-with-cli-one-liners.md
 date:                  2024-01-27T16:21:04.985539-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Hantera filer med CLI-engreppskommandon"

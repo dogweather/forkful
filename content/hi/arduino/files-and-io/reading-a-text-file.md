@@ -1,5 +1,7 @@
 ---
 title:                "टेक्स्ट फ़ाइल पढ़ना"
+aliases:
+- hi/arduino/reading-a-text-file.md
 date:                  2024-01-20T17:54:04.863336-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "टेक्स्ट फ़ाइल पढ़ना"

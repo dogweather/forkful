@@ -1,5 +1,7 @@
 ---
 title:                "Manipulando arquivos com one-liners de CLI"
+aliases:
+- pt/fish-shell/manipulating-files-with-cli-one-liners.md
 date:                  2024-01-27T16:21:08.488922-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Manipulando arquivos com one-liners de CLI"

@@ -1,5 +1,7 @@
 ---
 title:                "Konvertere en dato til en streng"
+aliases:
+- no/javascript/converting-a-date-into-a-string.md
 date:                  2024-01-20T17:37:05.330262-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Konvertere en dato til en streng"

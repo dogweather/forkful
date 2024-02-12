@@ -1,5 +1,7 @@
 ---
 title:                "Omskrivning av kod"
+aliases:
+- sv/kotlin/refactoring.md
 date:                  2024-01-26T01:44:16.511826-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Omskrivning av kod"

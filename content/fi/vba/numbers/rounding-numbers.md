@@ -1,5 +1,7 @@
 ---
 title:                "Lukujen pyöristäminen"
+aliases:
+- fi/vba/rounding-numbers.md
 date:                  2024-02-01T22:02:17.890727-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Lukujen pyöristäminen"

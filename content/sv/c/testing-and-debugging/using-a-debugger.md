@@ -1,5 +1,7 @@
 ---
 title:                "Att använda en debugger"
+aliases:
+- sv/c/using-a-debugger.md
 date:                  2024-02-03T18:10:13.500535-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Att använda en debugger"

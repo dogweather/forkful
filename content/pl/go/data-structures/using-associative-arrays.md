@@ -1,5 +1,7 @@
 ---
 title:                "Używanie tablic asocjacyjnych"
+aliases:
+- pl/go/using-associative-arrays.md
 date:                  2024-02-03T18:10:57.459625-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Używanie tablic asocjacyjnych"

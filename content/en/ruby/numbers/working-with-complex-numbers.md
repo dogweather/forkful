@@ -1,5 +1,7 @@
 ---
 title:                "Working with complex numbers"
+aliases:
+- en/ruby/working-with-complex-numbers.md
 date:                  2024-01-25T02:59:41.349298-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Working with complex numbers"

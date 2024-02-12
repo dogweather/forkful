@@ -1,5 +1,7 @@
 ---
 title:                "Generating random numbers"
+aliases:
+- en/python/generating-random-numbers.md
 date:                  2024-01-27T20:26:11.845598-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Generating random numbers"

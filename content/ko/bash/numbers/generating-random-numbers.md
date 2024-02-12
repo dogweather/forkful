@@ -1,5 +1,7 @@
 ---
 title:                "난수 생성"
+aliases:
+- ko/bash/generating-random-numbers.md
 date:                  2024-01-27T20:32:59.495795-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "난수 생성"

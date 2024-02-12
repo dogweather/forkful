@@ -1,5 +1,7 @@
 ---
 title:                "Registrazione delle Attività (Logging)"
+aliases:
+- it/php/logging.md
 date:                  2024-01-26T01:06:31.626052-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Registrazione delle Attività (Logging)"

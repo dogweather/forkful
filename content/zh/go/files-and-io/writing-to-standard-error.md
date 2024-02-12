@@ -1,5 +1,7 @@
 ---
 title:                "写入标准错误"
+aliases:
+- zh/go/writing-to-standard-error.md
 date:                  2024-02-03T18:15:14.077210-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "写入标准错误"

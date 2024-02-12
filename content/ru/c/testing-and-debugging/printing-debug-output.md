@@ -1,5 +1,7 @@
 ---
 title:                "Вывод отладочной информации на печать"
+aliases:
+- ru/c/printing-debug-output.md
 date:                  2024-02-03T18:05:28.007731-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Вывод отладочной информации на печать"

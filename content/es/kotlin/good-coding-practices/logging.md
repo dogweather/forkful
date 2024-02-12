@@ -1,5 +1,7 @@
 ---
 title:                "Registro de Actividades"
+aliases:
+- es/kotlin/logging.md
 date:                  2024-01-26T01:06:48.729910-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Registro de Actividades"

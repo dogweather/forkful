@@ -1,5 +1,7 @@
 ---
 title:                "Tính toán ngày trong tương lai hoặc quá khứ"
+aliases:
+- vi/python/calculating-a-date-in-the-future-or-past.md
 date:                  2024-01-28T21:56:31.705717-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Tính toán ngày trong tương lai hoặc quá khứ"

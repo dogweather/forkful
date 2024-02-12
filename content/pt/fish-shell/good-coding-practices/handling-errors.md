@@ -1,5 +1,7 @@
 ---
 title:                "Tratamento de erros"
+aliases:
+- pt/fish-shell/handling-errors.md
 date:                  2024-01-26T00:52:24.550950-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Tratamento de erros"

@@ -1,5 +1,7 @@
 ---
 title:                "Buscando y reemplazando texto"
+aliases:
+- es/vba/searching-and-replacing-text.md
 date:                  2024-02-01T22:01:15.359840-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Buscando y reemplazando texto"

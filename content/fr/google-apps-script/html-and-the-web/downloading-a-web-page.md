@@ -1,5 +1,7 @@
 ---
 title:                "Télécharger une page web"
+aliases:
+- fr/google-apps-script/downloading-a-web-page.md
 date:                  2024-02-01T21:52:34.001905-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Télécharger une page web"

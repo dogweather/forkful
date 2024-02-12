@@ -1,5 +1,7 @@
 ---
 title:                "Đọc các đối số dòng lệnh"
+aliases:
+- vi/ruby/reading-command-line-arguments.md
 date:                  2024-01-28T22:06:29.781501-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Đọc các đối số dòng lệnh"

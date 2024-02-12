@@ -1,5 +1,7 @@
 ---
 title:                "字符串拼接"
+aliases:
+- zh/vba/concatenating-strings.md
 date:                  2024-02-01T21:50:41.146895-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "字符串拼接"

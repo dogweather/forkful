@@ -1,5 +1,7 @@
 ---
 title:                "Використання інтерактивної оболонки (REPL)"
+aliases:
+- uk/powershell/using-an-interactive-shell-repl.md
 date:                  2024-01-26T04:17:37.824439-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Використання інтерактивної оболонки (REPL)"

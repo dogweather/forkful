@@ -1,5 +1,7 @@
 ---
 title:                "Willekeurige getallen genereren"
+aliases:
+- nl/elixir/generating-random-numbers.md
 date:                  2024-01-28T22:01:04.688043-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Willekeurige getallen genereren"

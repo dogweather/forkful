@@ -1,5 +1,7 @@
 ---
 title:                "Enviando una solicitud http con autenticación básica"
+aliases:
+- es/cpp/sending-an-http-request-with-basic-authentication.md
 date:                  2024-01-20T18:01:17.534269-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Enviando una solicitud http con autenticación básica"

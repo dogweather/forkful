@@ -1,5 +1,7 @@
 ---
 title:                "Virheenjäljitystulosteiden tulostaminen"
+aliases:
+- fi/lua/printing-debug-output.md
 date:                  2024-01-20T17:53:13.586530-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Virheenjäljitystulosteiden tulostaminen"

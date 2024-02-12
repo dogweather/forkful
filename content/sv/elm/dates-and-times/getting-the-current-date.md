@@ -1,5 +1,7 @@
 ---
 title:                "Att hämta aktuellt datum"
+aliases:
+- sv/elm/getting-the-current-date.md
 date:                  2024-01-20T15:14:10.019563-07:00
 simple_title:         "Att hämta aktuellt datum"
 

@@ -1,5 +1,7 @@
 ---
 title:                "Hantering av fel"
+aliases:
+- sv/kotlin/handling-errors.md
 date:                  2024-01-26T00:54:53.285051-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Hantering av fel"

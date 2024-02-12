@@ -1,5 +1,7 @@
 ---
 title:                "Skriva tester"
+aliases:
+- sv/javascript/writing-tests.md
 date:                  2024-02-03T19:31:17.969039-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Skriva tester"

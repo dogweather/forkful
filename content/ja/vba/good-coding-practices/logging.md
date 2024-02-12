@@ -1,5 +1,7 @@
 ---
 title:                "ロギング"
+aliases:
+- ja/vba/logging.md
 date:                  2024-02-01T21:56:16.557912-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "ロギング"

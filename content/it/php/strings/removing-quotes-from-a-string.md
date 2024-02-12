@@ -1,5 +1,7 @@
 ---
 title:                "Rimuovere le virgolette da una stringa"
+aliases:
+- it/php/removing-quotes-from-a-string.md
 date:                  2024-01-26T03:40:37.177260-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Rimuovere le virgolette da una stringa"

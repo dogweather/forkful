@@ -1,5 +1,7 @@
 ---
 title:                "Wydobywanie podciągów"
+aliases:
+- pl/c/extracting-substrings.md
 date:                  2024-02-03T17:56:36.015924-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Wydobywanie podciągów"

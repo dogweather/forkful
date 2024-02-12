@@ -1,5 +1,7 @@
 ---
 title:                "Att använda associativa arrayer"
+aliases:
+- sv/c-sharp/using-associative-arrays.md
 date:                  2024-01-30T19:10:16.994809-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Att använda associativa arrayer"

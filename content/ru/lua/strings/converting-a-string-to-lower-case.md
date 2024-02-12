@@ -1,5 +1,7 @@
 ---
 title:                "Преобразование строки в нижний регистр"
+aliases:
+- ru/lua/converting-a-string-to-lower-case.md
 date:                  2024-01-28T23:57:23.287345-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Преобразование строки в нижний регистр"

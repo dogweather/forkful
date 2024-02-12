@@ -25,7 +25,7 @@ begin
     filename = raw_filename.strip
 
     parts = filename.split('/')
-    old_filename = File.join(parts[1], parts[2], parts[4])
+    old_filename = File.join(parts[2], parts[3], parts[5])
 
 
     puts "Processing #{filename}"

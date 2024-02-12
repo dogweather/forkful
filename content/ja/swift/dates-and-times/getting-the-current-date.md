@@ -1,5 +1,7 @@
 ---
 title:                "現在の日付の取得"
+aliases:
+- ja/swift/getting-the-current-date.md
 date:                  2024-02-03T19:11:11.117290-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "現在の日付の取得"

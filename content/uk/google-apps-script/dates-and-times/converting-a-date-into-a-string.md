@@ -1,5 +1,7 @@
 ---
 title:                "Перетворення дати в рядок"
+aliases:
+- uk/google-apps-script/converting-a-date-into-a-string.md
 date:                  2024-02-01T21:51:37.816360-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Перетворення дати в рядок"

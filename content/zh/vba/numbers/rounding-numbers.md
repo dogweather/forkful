@@ -1,5 +1,7 @@
 ---
 title:                "四舍五入数字"
+aliases:
+- zh/vba/rounding-numbers.md
 date:                  2024-02-01T22:01:09.343081-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "四舍五入数字"

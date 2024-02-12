@@ -1,5 +1,7 @@
 ---
 title:                "处理错误"
+aliases:
+- zh/google-apps-script/handling-errors.md
 date:                  2024-02-01T21:54:58.212416-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "处理错误"

@@ -1,5 +1,7 @@
 ---
 title:                "जटिल संख्याओं के साथ काम करना"
+aliases:
+- hi/google-apps-script/working-with-complex-numbers.md
 date:                  2024-02-01T22:09:08.702056-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "जटिल संख्याओं के साथ काम करना"

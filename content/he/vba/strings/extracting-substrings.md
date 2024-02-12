@@ -1,5 +1,7 @@
 ---
 title:                "חילוץ תת-מחרוזות"
+aliases:
+- he/vba/extracting-substrings.md
 date:                  2024-02-01T21:53:54.416366-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "חילוץ תת-מחרוזות"

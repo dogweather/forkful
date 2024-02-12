@@ -1,5 +1,7 @@
 ---
 title:                "Porównywanie dwóch dat"
+aliases:
+- pl/c/comparing-two-dates.md
 date:                  2024-02-03T17:53:37.521180-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Porównywanie dwóch dat"

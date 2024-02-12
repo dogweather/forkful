@@ -1,5 +1,7 @@
 ---
 title:                "将日期转换为字符串"
+aliases:
+- zh/vba/converting-a-date-into-a-string.md
 date:                  2024-02-01T21:51:09.803682-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "将日期转换为字符串"

@@ -1,5 +1,7 @@
 ---
 title:                "Організація коду у функції"
+aliases:
+- uk/vba/organizing-code-into-functions.md
 date:                  2024-02-01T21:59:01.493673-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Організація коду у функції"

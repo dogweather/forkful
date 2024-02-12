@@ -1,5 +1,7 @@
 ---
 title:                "문자열을 소문자로 변환하기"
+aliases:
+- ko/google-apps-script/converting-a-string-to-lower-case.md
 date:                  2024-02-01T21:51:20.479369-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "문자열을 소문자로 변환하기"

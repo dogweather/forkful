@@ -1,5 +1,7 @@
 ---
 title:                "Lấy ngày hiện tại"
+aliases:
+- vi/arduino/getting-the-current-date.md
 date:                  2024-01-28T22:01:42.886527-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Lấy ngày hiện tại"

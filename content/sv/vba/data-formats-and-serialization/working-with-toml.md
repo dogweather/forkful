@@ -1,5 +1,7 @@
 ---
 title:                "Arbeta med TOML"
+aliases:
+- sv/vba/working-with-toml.md
 date:                  2024-02-01T22:06:27.253492-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Arbeta med TOML"

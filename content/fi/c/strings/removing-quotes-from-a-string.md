@@ -1,5 +1,7 @@
 ---
 title:                "Lainausmerkkien poistaminen merkkijonosta"
+aliases:
+- fi/c/removing-quotes-from-a-string.md
 date:                  2024-02-03T18:07:22.781400-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Lainausmerkkien poistaminen merkkijonosta"

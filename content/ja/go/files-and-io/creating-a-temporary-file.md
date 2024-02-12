@@ -1,5 +1,7 @@
 ---
 title:                "一時ファイルの作成"
+aliases:
+- ja/go/creating-a-temporary-file.md
 date:                  2024-02-03T17:55:41.050644-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "一時ファイルの作成"

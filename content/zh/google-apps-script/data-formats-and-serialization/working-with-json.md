@@ -1,5 +1,7 @@
 ---
 title:                "使用JSON工作"
+aliases:
+- zh/google-apps-script/working-with-json.md
 date:                  2024-02-01T22:05:55.716976-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "使用JSON工作"

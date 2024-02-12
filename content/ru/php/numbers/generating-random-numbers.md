@@ -1,5 +1,7 @@
 ---
 title:                "Генерация случайных чисел"
+aliases:
+- ru/php/generating-random-numbers.md
 date:                  2024-01-28T23:58:32.043681-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Генерация случайных чисел"

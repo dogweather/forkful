@@ -1,5 +1,7 @@
 ---
 title:                "Chuyển đổi chuỗi thành chữ thường"
+aliases:
+- vi/cpp/converting-a-string-to-lower-case.md
 date:                  2024-01-28T21:57:55.521084-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Chuyển đổi chuỗi thành chữ thường"

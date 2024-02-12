@@ -1,5 +1,7 @@
 ---
 title:                "Merkkijonon muuttaminen isoiksi kirjaimiksi"
+aliases:
+- fi/typescript/capitalizing-a-string.md
 date:                  2024-02-03T19:07:04.336516-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Merkkijonon muuttaminen isoiksi kirjaimiksi"

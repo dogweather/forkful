@@ -1,5 +1,7 @@
 ---
 title:                "Retirer les guillemets d'une chaîne"
+aliases:
+- fr/typescript/removing-quotes-from-a-string.md
 date:                  2024-01-26T03:42:22.120580-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Retirer les guillemets d'une chaîne"

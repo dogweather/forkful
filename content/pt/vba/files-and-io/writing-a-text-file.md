@@ -1,5 +1,7 @@
 ---
 title:                "Escrevendo um arquivo de texto"
+aliases:
+- pt/vba/writing-a-text-file.md
 date:                  2024-02-01T22:08:20.091395-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Escrevendo um arquivo de texto"

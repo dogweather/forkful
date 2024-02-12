@@ -1,5 +1,7 @@
 ---
 title:                "Lavorare con XML"
+aliases:
+- it/elixir/working-with-xml.md
 date:                  2024-01-26T04:29:30.299372-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Lavorare con XML"

@@ -1,5 +1,7 @@
 ---
 title:                "Utilisation des expressions régulières"
+aliases:
+- fr/cpp/using-regular-expressions.md
 date:                  2024-02-03T19:16:18.232717-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Utilisation des expressions régulières"

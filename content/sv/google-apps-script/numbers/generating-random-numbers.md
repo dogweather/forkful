@@ -1,5 +1,7 @@
 ---
 title:                "Generera slumpmässiga nummer"
+aliases:
+- sv/google-apps-script/generating-random-numbers.md
 date:                  2024-02-01T21:54:07.542056-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Generera slumpmässiga nummer"

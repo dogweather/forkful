@@ -1,5 +1,7 @@
 ---
 title:                "Interpolando una cadena de texto"
+aliases:
+- es/google-apps-script/interpolating-a-string.md
 date:                  2024-02-01T21:55:13.857282-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Interpolando una cadena de texto"

@@ -1,5 +1,7 @@
 ---
 title:                "字符串拼接"
+aliases:
+- zh/c/concatenating-strings.md
 date:                  2024-02-03T17:54:03.643262-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "字符串拼接"

@@ -1,5 +1,7 @@
 ---
 title:                "Å gjøre om en streng til store bokstaver"
+aliases:
+- no/vba/capitalizing-a-string.md
 date:                  2024-02-01T21:49:14.572989-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Å gjøre om en streng til store bokstaver"

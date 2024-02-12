@@ -1,5 +1,7 @@
 ---
 title:                "Imprimiendo salida de depuración"
+aliases:
+- es/c/printing-debug-output.md
 date:                  2024-02-03T18:05:07.741540-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Imprimiendo salida de depuración"

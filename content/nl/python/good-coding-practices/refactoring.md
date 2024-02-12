@@ -1,5 +1,7 @@
 ---
 title:                "Refactoring"
+aliases:
+- nl/python/refactoring.md
 date:                  2024-01-28T22:06:26.585422-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Refactoring"

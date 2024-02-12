@@ -1,5 +1,7 @@
 ---
 title:                "Confronto tra due date"
+aliases:
+- it/lua/comparing-two-dates.md
 date:                  2024-01-20T17:33:46.797489-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Confronto tra due date"

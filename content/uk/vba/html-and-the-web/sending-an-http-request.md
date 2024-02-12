@@ -1,5 +1,7 @@
 ---
 title:                "Надсилання HTTP-запиту"
+aliases:
+- uk/vba/sending-an-http-request.md
 date:                  2024-02-01T22:02:38.807085-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Надсилання HTTP-запиту"

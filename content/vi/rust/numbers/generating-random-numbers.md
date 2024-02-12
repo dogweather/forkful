@@ -1,5 +1,7 @@
 ---
 title:                "Sinh số ngẫu nhiên"
+aliases:
+- vi/rust/generating-random-numbers.md
 date:                  2024-01-28T22:01:41.909350-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Sinh số ngẫu nhiên"

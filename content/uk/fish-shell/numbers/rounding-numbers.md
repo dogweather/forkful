@@ -1,5 +1,7 @@
 ---
 title:                "Округлення чисел"
+aliases:
+- uk/fish-shell/rounding-numbers.md
 date:                  2024-01-26T03:44:25.259219-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Округлення чисел"

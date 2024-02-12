@@ -1,5 +1,7 @@
 ---
 title:                "웹 페이지 다운로드하기"
+aliases:
+- ko/c/downloading-a-web-page.md
 date:                  2024-02-03T17:56:03.129355-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "웹 페이지 다운로드하기"

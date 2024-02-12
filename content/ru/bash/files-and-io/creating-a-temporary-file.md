@@ -1,5 +1,7 @@
 ---
 title:                "Создание временного файла"
+aliases:
+- ru/bash/creating-a-temporary-file.md
 date:                  2024-01-28T23:56:52.259717-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Создание временного файла"
