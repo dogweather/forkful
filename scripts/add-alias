@@ -34,7 +34,7 @@ begin
     # Define your regex pattern and replacement text
     # Example: Replace 'old_text' with 'new_text'
     pattern     = /(title:.+?\n)/m
-    replacement = "\\1aliases:\n - #{old_path}\n"
+    replacement = "\\1aliases:\n- #{old_path}\n"
 
     # Perform the regex replacement
     new_content = content.sub(pattern, replacement)
