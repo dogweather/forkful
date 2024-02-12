@@ -1,6 +1,5 @@
 ---
 title:                "Travailler avec CSV"
-aliases: - /fr/powershell/working-with-csv.md
 date:                  2024-02-03T19:20:47.149600-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Travailler avec CSV"

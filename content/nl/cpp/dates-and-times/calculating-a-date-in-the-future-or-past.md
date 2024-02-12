@@ -1,6 +1,5 @@
 ---
 title:                "Een datum in de toekomst of het verleden berekenen"
-aliases: - /nl/cpp/calculating-a-date-in-the-future-or-past.md
 date:                  2024-01-28T21:56:25.582162-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een datum in de toekomst of het verleden berekenen"

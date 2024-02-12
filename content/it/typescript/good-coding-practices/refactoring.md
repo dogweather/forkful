@@ -1,6 +1,5 @@
 ---
 title:                "Rifattorizzazione"
-aliases: - /it/typescript/refactoring.md
 date:                  2024-01-26T03:36:27.030503-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Rifattorizzazione"

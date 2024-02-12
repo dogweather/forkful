@@ -1,6 +1,5 @@
 ---
 title:                "Escrevendo um arquivo de texto"
-aliases: - /pt/typescript/writing-a-text-file.md
 date:                  2024-02-03T19:29:31.282845-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Escrevendo um arquivo de texto"

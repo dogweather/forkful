@@ -1,6 +1,5 @@
 ---
 title:                "Å bruke en feilsøker"
-aliases: - /no/elm/using-a-debugger.md
 date:                  2024-01-26T03:49:06.311494-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Å bruke en feilsøker"

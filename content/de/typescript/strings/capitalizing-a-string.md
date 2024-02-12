@@ -1,6 +1,5 @@
 ---
 title:                "Einen String großschreiben"
-aliases: - /de/typescript/capitalizing-a-string.md
 date:                  2024-02-03T19:06:40.189136-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Einen String großschreiben"

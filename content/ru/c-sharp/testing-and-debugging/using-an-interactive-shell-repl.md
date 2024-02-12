@@ -1,6 +1,5 @@
 ---
 title:                "Использование интерактивной оболочки (REPL)"
-aliases: - /ru/c-sharp/using-an-interactive-shell-repl.md
 date:                  2024-01-29T00:03:22.613917-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Использование интерактивной оболочки (REPL)"

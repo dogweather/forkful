@@ -1,6 +1,5 @@
 ---
 title:                "Creazione di un file temporaneo"
-aliases: - /it/bash/creating-a-temporary-file.md
 date:                  2024-01-20T17:39:27.124025-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Creazione di un file temporaneo"

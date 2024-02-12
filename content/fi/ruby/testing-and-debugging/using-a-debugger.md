@@ -1,6 +1,5 @@
 ---
 title:                "Debuggerin käyttö"
-aliases: - /fi/ruby/using-a-debugger.md
 date:                  2024-01-26T04:09:50.159908-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Debuggerin käyttö"

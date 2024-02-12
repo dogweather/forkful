@@ -1,6 +1,5 @@
 ---
 title:                "Avrundning av tal"
-aliases: - /sv/elm/rounding-numbers.md
 date:                  2024-01-26T03:45:31.616300-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Avrundning av tal"

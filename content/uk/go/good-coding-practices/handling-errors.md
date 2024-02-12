@@ -1,6 +1,5 @@
 ---
 title:                "Обробка помилок"
-aliases: - /uk/go/handling-errors.md
 date:                  2024-02-03T17:58:44.039944-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Обробка помилок"

@@ -1,6 +1,5 @@
 ---
 title:                "Parsing HTML"
-aliases: - /en/lua/parsing-html.md
 date:                  2024-02-03T19:02:44.853028-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Parsing HTML"

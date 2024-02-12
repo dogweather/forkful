@@ -1,6 +1,5 @@
 ---
 title:                "数値の丸め処理"
-aliases: - /ja/java/rounding-numbers.md
 date:                  2024-01-26T03:46:17.318195-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "数値の丸め処理"

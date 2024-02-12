@@ -1,6 +1,5 @@
 ---
 title:                "Assosiatiivisten taulukoiden käyttö"
-aliases: - /fi/c/using-associative-arrays.md
 date:                  2024-02-03T18:10:46.620358-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Assosiatiivisten taulukoiden käyttö"

@@ -1,6 +1,5 @@
 ---
 title:                "Парсинг HTML"
-aliases: - /uk/powershell/parsing-html.md
 date:                  2024-01-20T15:33:14.281024-07:00
 simple_title:         "Парсинг HTML"
 

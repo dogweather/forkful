@@ -1,6 +1,5 @@
 ---
 title:                "Zamiana liter na wielkie w łańcuchu znaków"
-aliases: - /pl/lua/capitalizing-a-string.md
 date:                  2024-02-03T19:05:57.350233-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Zamiana liter na wielkie w łańcuchu znaków"

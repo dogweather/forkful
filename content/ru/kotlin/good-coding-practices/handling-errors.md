@@ -1,6 +1,5 @@
 ---
 title:                "Обработка ошибок"
-aliases: - /ru/kotlin/handling-errors.md
 date:                  2024-01-28T23:59:04.309300-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Обработка ошибок"

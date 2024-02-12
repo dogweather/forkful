@@ -1,6 +1,5 @@
 ---
 title:                "Округление чисел"
-aliases: - /ru/elm/rounding-numbers.md
 date:                  2024-01-29T00:02:03.858717-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Округление чисел"

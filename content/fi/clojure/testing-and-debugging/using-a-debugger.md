@@ -1,6 +1,5 @@
 ---
 title:                "Debuggerin käyttö"
-aliases: - /fi/clojure/using-a-debugger.md
 date:                  2024-01-26T03:48:23.573625-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Debuggerin käyttö"

@@ -1,6 +1,5 @@
 ---
 title:                "Manipulation des nombres complexes"
-aliases: - /fr/rust/working-with-complex-numbers.md
 date:                  2024-01-26T04:45:14.502187-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Manipulation des nombres complexes"

@@ -1,6 +1,5 @@
 ---
 title:                "Usando un depurador"
-aliases: - /es/fish-shell/using-a-debugger.md
 date:                  2024-01-26T03:48:34.192288-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Usando un depurador"

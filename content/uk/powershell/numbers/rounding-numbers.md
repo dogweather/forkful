@@ -1,6 +1,5 @@
 ---
 title:                "Округлення чисел"
-aliases: - /uk/powershell/rounding-numbers.md
 date:                  2024-01-26T03:46:49.421671-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Округлення чисел"

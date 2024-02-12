@@ -1,6 +1,5 @@
 ---
 title:                "Rejestrowanie zdarzeń"
-aliases: - /pl/javascript/logging.md
 date:                  2024-01-26T01:07:36.402883-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Rejestrowanie zdarzeń"

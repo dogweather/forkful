@@ -1,6 +1,5 @@
 ---
 title:                "Interaktiivisen kuoren (REPL) käyttäminen"
-aliases: - /fi/c/using-an-interactive-shell-repl.md
 date:                  2024-02-03T18:10:37.537744-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Interaktiivisen kuoren (REPL) käyttäminen"

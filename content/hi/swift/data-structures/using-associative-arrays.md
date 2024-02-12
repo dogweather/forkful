@@ -1,6 +1,5 @@
 ---
 title:                "सहयोगी अरेज़ का उपयोग करना"
-aliases: - /hi/swift/using-associative-arrays.md
 date:                  2024-01-30T19:14:35.785901-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "सहयोगी अरेज़ का उपयोग करना"

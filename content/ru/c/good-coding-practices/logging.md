@@ -1,6 +1,5 @@
 ---
 title:                "Логирование"
-aliases: - /ru/c/logging.md
 date:                  2024-02-03T17:59:09.968601-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Логирование"

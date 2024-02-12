@@ -1,6 +1,5 @@
 ---
 title:                "Phân tích ngày tháng từ một chuỗi"
-aliases: - /vi/c/parsing-a-date-from-a-string.md
 date:                  2024-02-03T18:05:44.325563-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Phân tích ngày tháng từ một chuỗi"

@@ -1,6 +1,5 @@
 ---
 title:                "Analiza składniowa HTML"
-aliases: - /pl/clojure/parsing-html.md
 date:                  2024-02-03T19:11:50.248374-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Analiza składniowa HTML"

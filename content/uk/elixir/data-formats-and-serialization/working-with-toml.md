@@ -1,6 +1,5 @@
 ---
 title:                "Робота з TOML"
-aliases: - /uk/elixir/working-with-toml.md
 date:                  2024-01-26T04:21:18.105676-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Робота з TOML"

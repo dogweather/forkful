@@ -1,6 +1,5 @@
 ---
 title:                "Interpolering av en sträng"
-aliases: - /sv/vba/interpolating-a-string.md
 date:                  2024-02-01T21:55:46.097648-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Interpolering av en sträng"

@@ -1,6 +1,5 @@
 ---
 title:                "XML 다루기"
-aliases: - /ko/fish-shell/working-with-xml.md
 date:                  2024-01-26T04:30:36.879567-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "XML 다루기"

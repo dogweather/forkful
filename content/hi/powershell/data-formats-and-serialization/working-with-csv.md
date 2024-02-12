@@ -1,6 +1,5 @@
 ---
 title:                "CSV के साथ काम करना"
-aliases: - /hi/powershell/working-with-csv.md
 date:                  2024-02-03T19:22:00.251481-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "CSV के साथ काम करना"

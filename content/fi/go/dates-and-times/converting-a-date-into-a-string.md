@@ -1,6 +1,5 @@
 ---
 title:                "Päivämäärän muuttaminen merkkijonoksi"
-aliases: - /fi/go/converting-a-date-into-a-string.md
 date:                  2024-02-03T17:54:29.060091-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Päivämäärän muuttaminen merkkijonoksi"

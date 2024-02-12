@@ -1,6 +1,5 @@
 ---
 title:                "Komennoriviparametrien lukeminen"
-aliases: - /fi/elm/reading-command-line-arguments.md
 date:                  2024-01-20T17:55:53.139027-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Komennoriviparametrien lukeminen"

@@ -1,6 +1,5 @@
 ---
 title:                "Làm việc với TOML"
-aliases: - /vi/google-apps-script/working-with-toml.md
 date:                  2024-02-01T22:06:46.704426-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Làm việc với TOML"

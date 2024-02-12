@@ -1,6 +1,5 @@
 ---
 title:                "Organizando o código em funções"
-aliases: - /pt/javascript/organizing-code-into-functions.md
 date:                  2024-01-26T01:11:01.780022-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Organizando o código em funções"

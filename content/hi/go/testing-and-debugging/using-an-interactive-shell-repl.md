@@ -1,6 +1,5 @@
 ---
 title:                "इंटरैक्टिव शेल (REPL) का उपयोग करना"
-aliases: - /hi/go/using-an-interactive-shell-repl.md
 date:                  2024-02-03T18:11:31.522628-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "इंटरैक्टिव शेल (REPL) का उपयोग करना"

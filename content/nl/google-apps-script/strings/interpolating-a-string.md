@@ -1,6 +1,5 @@
 ---
 title:                "Een string interpoleren"
-aliases: - /nl/google-apps-script/interpolating-a-string.md
 date:                  2024-02-01T21:55:15.789393-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een string interpoleren"

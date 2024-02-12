@@ -1,6 +1,5 @@
 ---
 title:                "Analisando HTML"
-aliases: - /pt/fish-shell/parsing-html.md
 date:                  2024-02-03T19:12:13.600128-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Analisando HTML"

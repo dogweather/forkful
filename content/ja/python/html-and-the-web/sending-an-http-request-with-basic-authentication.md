@@ -1,6 +1,5 @@
 ---
 title:                "基本認証を使用したHTTPリクエストの送信"
-aliases: - /ja/python/sending-an-http-request-with-basic-authentication.md
 date:                  2024-01-20T18:02:49.440428-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "基本認証を使用したHTTPリクエストの送信"

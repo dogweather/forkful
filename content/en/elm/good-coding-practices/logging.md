@@ -1,6 +1,5 @@
 ---
 title:                "Logging"
-aliases: - /en/elm/logging.md
 date:                  2024-01-25T02:03:50.226321-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Logging"

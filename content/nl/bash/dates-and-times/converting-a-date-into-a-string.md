@@ -1,6 +1,5 @@
 ---
 title:                "Een datum converteren naar een string"
-aliases: - /nl/bash/converting-a-date-into-a-string.md
 date:                  2024-01-28T21:57:14.483466-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een datum converteren naar een string"

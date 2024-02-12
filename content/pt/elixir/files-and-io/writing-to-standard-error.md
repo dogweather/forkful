@@ -1,6 +1,5 @@
 ---
 title:                "Escrevendo para o erro padrão"
-aliases: - /pt/elixir/writing-to-standard-error.md
 date:                  2024-02-03T19:32:59.824597-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Escrevendo para o erro padrão"

@@ -1,6 +1,5 @@
 ---
 title:                "代码重构"
-aliases: - /zh/c-sharp/refactoring.md
 date:                  2024-01-26T01:17:35.384732-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "代码重构"

@@ -1,6 +1,5 @@
 ---
 title:                "处理XML"
-aliases: - /zh/go/working-with-xml.md
 date:                  2024-02-03T18:13:11.274201-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "处理XML"

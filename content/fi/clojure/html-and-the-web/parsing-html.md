@@ -1,6 +1,5 @@
 ---
 title:                "HTML:n jäsentäminen"
-aliases: - /fi/clojure/parsing-html.md
 date:                  2024-01-20T15:30:45.707879-07:00
 simple_title:         "HTML:n jäsentäminen"
 

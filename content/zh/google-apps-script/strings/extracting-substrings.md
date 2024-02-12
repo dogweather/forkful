@@ -1,6 +1,5 @@
 ---
 title:                "提取子字符串"
-aliases: - /zh/google-apps-script/extracting-substrings.md
 date:                  2024-02-01T21:52:57.235455-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "提取子字符串"

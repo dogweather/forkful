@@ -1,6 +1,5 @@
 ---
 title:                "Kompleksilukujen käsittely"
-aliases: - /fi/powershell/working-with-complex-numbers.md
 date:                  2024-01-26T04:44:03.285383-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Kompleksilukujen käsittely"

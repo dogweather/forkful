@@ -1,6 +1,5 @@
 ---
 title:                "Using an interactive shell (REPL)"
-aliases: - /en/typescript/using-an-interactive-shell-repl.md
 date:                  2024-01-25T03:40:13.920163-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Using an interactive shell (REPL)"

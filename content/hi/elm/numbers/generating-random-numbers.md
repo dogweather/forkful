@@ -1,6 +1,5 @@
 ---
 title:                "यादृच्छिक संख्याएँ उत्पन्न करना"
-aliases: - /hi/elm/generating-random-numbers.md
 date:                  2024-01-27T20:34:19.597165-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "यादृच्छिक संख्याएँ उत्पन्न करना"

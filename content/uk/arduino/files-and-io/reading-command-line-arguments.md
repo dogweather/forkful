@@ -1,6 +1,5 @@
 ---
 title:                "Читання аргументів командного рядка"
-aliases: - /uk/arduino/reading-command-line-arguments.md
 date:                  2024-01-20T17:55:52.064145-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Читання аргументів командного рядка"

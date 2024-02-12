@@ -1,6 +1,5 @@
 ---
 title:                "Viết một tệp văn bản"
-aliases: - /vi/lua/writing-a-text-file.md
 date:                  2024-01-28T22:13:06.812963-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Viết một tệp văn bản"

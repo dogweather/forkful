@@ -1,6 +1,5 @@
 ---
 title:                "Skicka en HTTP-förfrågan med Basic-autentisering"
-aliases: - /sv/elm/sending-an-http-request-with-basic-authentication.md
 date:                  2024-01-20T18:01:34.896501-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Skicka en HTTP-förfrågan med Basic-autentisering"

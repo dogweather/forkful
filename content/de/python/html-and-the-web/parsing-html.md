@@ -1,6 +1,5 @@
 ---
 title:                "HTML parsen"
-aliases: - /de/python/parsing-html.md
 date:                  2024-02-03T19:12:39.581886-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "HTML parsen"

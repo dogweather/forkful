@@ -1,6 +1,5 @@
 ---
 title:                "텍스트 파일 읽기"
-aliases: - /ko/bash/reading-a-text-file.md
 date:                  2024-01-20T17:53:43.703029-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "텍스트 파일 읽기"

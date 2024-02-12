@@ -1,6 +1,5 @@
 ---
 title:                "YAML로 작업하기"
-aliases: - /ko/go/working-with-yaml.md
 date:                  2024-02-03T18:13:49.264038-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "YAML로 작업하기"

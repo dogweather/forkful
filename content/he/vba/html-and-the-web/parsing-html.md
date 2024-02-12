@@ -1,6 +1,5 @@
 ---
 title:                "פיענוח HTML"
-aliases: - /he/vba/parsing-html.md
 date:                  2024-02-01T21:57:40.103780-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "פיענוח HTML"

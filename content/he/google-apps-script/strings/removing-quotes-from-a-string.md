@@ -1,6 +1,5 @@
 ---
 title:                "הסרת מרכאות ממחרוזת"
-aliases: - /he/google-apps-script/removing-quotes-from-a-string.md
 date:                  2024-02-01T22:01:28.409371-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "הסרת מרכאות ממחרוזת"

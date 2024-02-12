@@ -1,6 +1,5 @@
 ---
 title:                "복소수 다루기"
-aliases: - /ko/clojure/working-with-complex-numbers.md
 date:                  2024-01-26T04:39:25.077274-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "복소수 다루기"

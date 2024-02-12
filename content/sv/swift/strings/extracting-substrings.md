@@ -1,6 +1,5 @@
 ---
 title:                "Extrahera delsträngar"
-aliases: - /sv/swift/extracting-substrings.md
 date:                  2024-01-20T17:46:44.439511-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Extrahera delsträngar"

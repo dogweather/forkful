@@ -1,6 +1,5 @@
 ---
 title:                "Skriva en textfil"
-aliases: - /sv/google-apps-script/writing-a-text-file.md
 date:                  2024-02-01T22:08:15.701884-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Skriva en textfil"

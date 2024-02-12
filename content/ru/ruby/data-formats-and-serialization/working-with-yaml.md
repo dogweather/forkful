@@ -1,6 +1,5 @@
 ---
 title:                "Работа с YAML"
-aliases: - /ru/ruby/working-with-yaml.md
 date:                  2024-01-29T00:05:31.316715-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Работа с YAML"

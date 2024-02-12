@@ -1,6 +1,5 @@
 ---
 title:                "इंटरैक्टिव शेल (REPL) का उपयोग"
-aliases: - /hi/swift/using-an-interactive-shell-repl.md
 date:                  2024-01-26T04:19:10.423645-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "इंटरैक्टिव शेल (REPL) का उपयोग"

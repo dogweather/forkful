@@ -1,6 +1,5 @@
 ---
 title:                "In ra thông tin debug"
-aliases: - /vi/google-apps-script/printing-debug-output.md
 date:                  2024-02-01T21:59:00.754850-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "In ra thông tin debug"

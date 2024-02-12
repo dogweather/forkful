@@ -1,6 +1,5 @@
 ---
 title:                "Вывод отладочной информации"
-aliases: - /ru/typescript/printing-debug-output.md
 date:                  2024-01-29T00:01:02.798941-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Вывод отладочной информации"

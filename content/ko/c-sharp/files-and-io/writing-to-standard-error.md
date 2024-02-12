@@ -1,6 +1,5 @@
 ---
 title:                "표준 에러에 쓰기"
-aliases: - /ko/c-sharp/writing-to-standard-error.md
 date:                  2024-02-03T19:32:55.417355-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "표준 에러에 쓰기"

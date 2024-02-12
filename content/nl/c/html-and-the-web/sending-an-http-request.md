@@ -1,6 +1,5 @@
 ---
 title:                "Een HTTP-verzoek verzenden"
-aliases: - /nl/c/sending-an-http-request.md
 date:                  2024-02-03T18:08:23.427753-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een HTTP-verzoek verzenden"

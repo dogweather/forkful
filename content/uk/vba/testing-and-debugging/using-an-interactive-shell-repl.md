@@ -1,6 +1,5 @@
 ---
 title:                "Використання інтерактивної оболонки (REPL)"
-aliases: - /uk/vba/using-an-interactive-shell-repl.md
 date:                  2024-02-01T22:04:49.649270-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Використання інтерактивної оболонки (REPL)"

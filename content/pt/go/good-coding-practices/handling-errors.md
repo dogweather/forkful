@@ -1,6 +1,5 @@
 ---
 title:                "Gerenciando erros"
-aliases: - /pt/go/handling-errors.md
 date:                  2024-02-03T17:58:21.906718-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Gerenciando erros"

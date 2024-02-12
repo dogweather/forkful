@@ -1,6 +1,5 @@
 ---
 title:                "Suppression de caractères correspondant à un motif"
-aliases: - /fr/clojure/deleting-characters-matching-a-pattern.md
 date:                  2024-01-20T17:42:06.420847-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Suppression de caractères correspondant à un motif"

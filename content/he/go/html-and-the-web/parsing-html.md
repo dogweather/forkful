@@ -1,6 +1,5 @@
 ---
 title:                "פיענוח HTML"
-aliases: - /he/go/parsing-html.md
 date:                  2024-02-03T18:06:29.662213-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "פיענוח HTML"

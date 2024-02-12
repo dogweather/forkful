@@ -1,6 +1,5 @@
 ---
 title:                "Usando expresiones regulares"
-aliases: - /es/go/using-regular-expressions.md
 date:                  2024-02-03T18:11:08.047393-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Usando expresiones regulares"

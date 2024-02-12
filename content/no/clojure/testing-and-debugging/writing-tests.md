@@ -1,6 +1,5 @@
 ---
 title:                "Skrive tester"
-aliases: - /no/clojure/writing-tests.md
 date:                  2024-02-03T19:30:02.482478-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Skrive tester"

@@ -1,6 +1,5 @@
 ---
 title:                "Hantera fel"
-aliases: - /sv/vba/handling-errors.md
 date:                  2024-02-01T21:55:13.374719-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Hantera fel"

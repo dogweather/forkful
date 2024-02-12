@@ -1,6 +1,5 @@
 ---
 title:                "Удаление символов, соответствующих шаблону"
-aliases: - /ru/rust/deleting-characters-matching-a-pattern.md
 date:                  2024-01-28T23:57:06.764332-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Удаление символов, соответствующих шаблону"

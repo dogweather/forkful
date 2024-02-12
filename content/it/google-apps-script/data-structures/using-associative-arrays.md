@@ -1,6 +1,5 @@
 ---
 title:                "Utilizzo di array associativi"
-aliases: - /it/google-apps-script/using-associative-arrays.md
 date:                  2024-02-01T22:04:08.108194-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Utilizzo di array associativi"

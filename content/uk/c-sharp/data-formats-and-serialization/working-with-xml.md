@@ -1,6 +1,5 @@
 ---
 title:                "Робота з XML"
-aliases: - /uk/c-sharp/working-with-xml.md
 date:                  2024-01-26T04:29:55.223384-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Робота з XML"

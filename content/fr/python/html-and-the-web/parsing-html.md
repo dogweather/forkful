@@ -1,6 +1,5 @@
 ---
 title:                "Analyse Syntaxique du HTML"
-aliases: - /fr/python/parsing-html.md
 date:                  2024-02-03T19:12:44.099667-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Analyse Syntaxique du HTML"

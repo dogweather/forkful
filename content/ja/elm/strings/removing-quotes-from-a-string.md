@@ -1,6 +1,5 @@
 ---
 title:                "文字列から引用符を削除する"
-aliases: - /ja/elm/removing-quotes-from-a-string.md
 date:                  2024-01-26T03:39:51.630720-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "文字列から引用符を削除する"

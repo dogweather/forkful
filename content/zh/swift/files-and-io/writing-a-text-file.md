@@ -1,6 +1,5 @@
 ---
 title:                "编写文本文件"
-aliases: - /zh/swift/writing-a-text-file.md
 date:                  2024-02-03T19:29:32.300544-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "编写文本文件"

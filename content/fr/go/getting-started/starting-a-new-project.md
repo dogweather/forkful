@@ -1,6 +1,5 @@
 ---
 title:                "Démarrer un nouveau projet"
-aliases: - /fr/go/starting-a-new-project.md
 date:                  2024-02-03T18:09:25.888371-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Démarrer un nouveau projet"

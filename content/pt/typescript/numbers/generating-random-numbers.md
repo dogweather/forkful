@@ -1,6 +1,5 @@
 ---
 title:                "Geração de números aleatórios"
-aliases: - /pt/typescript/generating-random-numbers.md
 date:                  2024-01-27T20:35:28.258848-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Geração de números aleatórios"

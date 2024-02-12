@@ -1,6 +1,5 @@
 ---
 title:                "Writing tests"
-aliases: - /en/go/writing-tests.md
 date:                  2024-02-03T17:50:27.458019-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Writing tests"

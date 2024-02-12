@@ -1,6 +1,5 @@
 ---
 title:                "코드를 함수로 구성하기"
-aliases: - /ko/swift/organizing-code-into-functions.md
 date:                  2024-01-26T01:11:59.617865-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "코드를 함수로 구성하기"

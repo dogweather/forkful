@@ -1,6 +1,5 @@
 ---
 title:                "Pisanie pliku tekstowego"
-aliases: - /pl/javascript/writing-a-text-file.md
 date:                  2024-02-03T19:28:23.947725-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Pisanie pliku tekstowego"

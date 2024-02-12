@@ -1,6 +1,5 @@
 ---
 title:                "Praca z TOML"
-aliases: - /pl/bash/working-with-toml.md
 date:                  2024-01-26T04:19:03.513881-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Praca z TOML"

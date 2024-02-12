@@ -1,6 +1,5 @@
 ---
 title:                "인터랙티브 셸 (REPL) 사용하기"
-aliases: - /ko/php/using-an-interactive-shell-repl.md
 date:                  2024-01-26T04:16:28.633424-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "인터랙티브 셸 (REPL) 사용하기"

@@ -1,6 +1,5 @@
 ---
 title:                "डीबगर का उपयोग करना"
-aliases: - /hi/haskell/using-a-debugger.md
 date:                  2024-01-26T04:10:16.924447-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "डीबगर का उपयोग करना"

@@ -1,6 +1,5 @@
 ---
 title:                "Comparer deux dates"
-aliases: - /fr/c-sharp/comparing-two-dates.md
 date:                  2024-01-20T17:32:32.758925-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Comparer deux dates"

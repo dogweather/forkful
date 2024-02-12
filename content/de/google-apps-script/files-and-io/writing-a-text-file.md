@@ -1,6 +1,5 @@
 ---
 title:                "Eine Textdatei schreiben"
-aliases: - /de/google-apps-script/writing-a-text-file.md
 date:                  2024-02-01T22:07:50.660039-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Eine Textdatei schreiben"

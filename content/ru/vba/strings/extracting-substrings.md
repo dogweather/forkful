@@ -1,6 +1,5 @@
 ---
 title:                "Извлечение подстрок"
-aliases: - /ru/vba/extracting-substrings.md
 date:                  2024-02-01T21:53:34.724522-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Извлечение подстрок"

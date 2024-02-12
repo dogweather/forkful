@@ -1,6 +1,5 @@
 ---
 title:                "Trích xuất chuỗi con"
-aliases: - /vi/c/extracting-substrings.md
 date:                  2024-02-03T17:58:26.327898-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Trích xuất chuỗi con"

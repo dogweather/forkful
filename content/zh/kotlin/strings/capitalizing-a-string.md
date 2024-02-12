@@ -1,6 +1,5 @@
 ---
 title:                "字符串大写化"
-aliases: - /zh/kotlin/capitalizing-a-string.md
 date:                  2024-02-03T19:05:38.425452-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "字符串大写化"

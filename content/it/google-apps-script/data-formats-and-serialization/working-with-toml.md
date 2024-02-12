@@ -1,6 +1,5 @@
 ---
 title:                "Lavorare con TOML"
-aliases: - /it/google-apps-script/working-with-toml.md
 date:                  2024-02-01T22:06:16.165275-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Lavorare con TOML"

@@ -1,6 +1,5 @@
 ---
 title:                "XML:n käsittely"
-aliases: - /fi/c-sharp/working-with-xml.md
 date:                  2024-01-26T04:28:57.506935-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "XML:n käsittely"

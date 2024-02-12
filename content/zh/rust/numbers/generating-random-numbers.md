@@ -1,6 +1,5 @@
 ---
 title:                "生成随机数"
-aliases: - /zh/rust/generating-random-numbers.md
 date:                  2024-01-27T20:35:17.534438-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "生成随机数"

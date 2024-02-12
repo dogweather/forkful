@@ -1,6 +1,5 @@
 ---
 title:                "Scrivere un file di testo"
-aliases: - /it/vba/writing-a-text-file.md
 date:                  2024-02-01T22:08:10.670784-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Scrivere un file di testo"

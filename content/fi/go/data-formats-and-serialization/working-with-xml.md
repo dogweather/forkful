@@ -1,6 +1,5 @@
 ---
 title:                "Työskentely XML:n kanssa"
-aliases: - /fi/go/working-with-xml.md
 date:                  2024-02-03T18:13:18.646173-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Työskentely XML:n kanssa"

@@ -1,6 +1,5 @@
 ---
 title:                "Printing debug output"
-aliases: - /en/c/printing-debug-output.md
 date:                  2024-02-03T17:50:04.807127-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Printing debug output"

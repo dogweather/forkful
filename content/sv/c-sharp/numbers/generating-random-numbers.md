@@ -1,6 +1,5 @@
 ---
 title:                "Generera slumptal"
-aliases: - /sv/c-sharp/generating-random-numbers.md
 date:                  2024-01-27T20:33:08.568637-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Generera slumptal"

@@ -1,6 +1,5 @@
 ---
 title:                "De huidige datum krijgen"
-aliases: - /nl/c/getting-the-current-date.md
 date:                  2024-02-03T17:57:24.626092-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "De huidige datum krijgen"

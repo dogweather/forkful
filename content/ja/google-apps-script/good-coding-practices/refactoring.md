@@ -1,6 +1,5 @@
 ---
 title:                "リファクタリング"
-aliases: - /ja/google-apps-script/refactoring.md
 date:                  2024-02-01T22:00:08.576651-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "リファクタリング"

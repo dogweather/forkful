@@ -1,6 +1,5 @@
 ---
 title:                "Concatenando strings"
-aliases: - /pt/elixir/concatenating-strings.md
 date:                  2024-01-27T10:43:11.660520-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Concatenando strings"

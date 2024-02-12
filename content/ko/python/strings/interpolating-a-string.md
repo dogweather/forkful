@@ -1,6 +1,5 @@
 ---
 title:                "문자열 보간하기"
-aliases: - /ko/python/interpolating-a-string.md
 date:                  2024-01-28T21:24:26.117921-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "문자열 보간하기"

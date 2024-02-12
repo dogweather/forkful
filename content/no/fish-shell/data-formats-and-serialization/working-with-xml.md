@@ -1,6 +1,5 @@
 ---
 title:                "Å jobbe med XML"
-aliases: - /no/fish-shell/working-with-xml.md
 date:                  2024-01-26T04:30:32.955696-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Å jobbe med XML"

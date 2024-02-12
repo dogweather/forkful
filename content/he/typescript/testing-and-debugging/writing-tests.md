@@ -1,6 +1,5 @@
 ---
 title:                "כתיבת בדיקות"
-aliases: - /he/typescript/writing-tests.md
 date:                  2024-02-03T19:32:51.653439-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "כתיבת בדיקות"

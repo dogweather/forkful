@@ -1,6 +1,5 @@
 ---
 title:                "Удаление кавычек из строки"
-aliases: - /ru/fish-shell/removing-quotes-from-a-string.md
 date:                  2024-01-29T00:01:42.918446-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Удаление кавычек из строки"

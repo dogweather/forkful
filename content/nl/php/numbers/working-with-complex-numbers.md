@@ -1,6 +1,5 @@
 ---
 title:                "Werken met complexe getallen"
-aliases: - /nl/php/working-with-complex-numbers.md
 date:                  2024-01-28T22:12:57.448499-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Werken met complexe getallen"

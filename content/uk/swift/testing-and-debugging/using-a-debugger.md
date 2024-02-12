@@ -1,6 +1,5 @@
 ---
 title:                "Використання дебагера"
-aliases: - /uk/swift/using-a-debugger.md
 date:                  2024-01-26T04:11:08.551186-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Використання дебагера"

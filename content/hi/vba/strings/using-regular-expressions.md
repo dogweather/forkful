@@ -1,6 +1,5 @@
 ---
 title:                "रेगुलर एक्सप्रेशन्स का उपयोग करना"
-aliases: - /hi/vba/using-regular-expressions.md
 date:                  2024-02-01T22:06:12.924680-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "रेगुलर एक्सप्रेशन्स का उपयोग करना"

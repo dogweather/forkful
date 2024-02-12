@@ -1,6 +1,5 @@
 ---
 title:                "Werken met complexe getallen"
-aliases: - /nl/vba/working-with-complex-numbers.md
 date:                  2024-02-01T22:08:05.450973-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Werken met complexe getallen"

@@ -1,6 +1,5 @@
 ---
 title:                "Koodin järjestäminen funktioiksi"
-aliases: - /fi/fish-shell/organizing-code-into-functions.md
 date:                  2024-01-28T23:02:32.082544-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Koodin järjestäminen funktioiksi"

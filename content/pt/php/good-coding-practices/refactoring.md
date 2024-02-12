@@ -1,6 +1,5 @@
 ---
 title:                "Refatoração"
-aliases: - /pt/php/refactoring.md
 date:                  2024-01-26T01:50:43.364274-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Refatoração"

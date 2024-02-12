@@ -1,6 +1,5 @@
 ---
 title:                "גילוי מספרים אקראיים"
-aliases: - /he/lua/generating-random-numbers.md
 date:                  2024-01-27T20:35:41.650818-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "גילוי מספרים אקראיים"

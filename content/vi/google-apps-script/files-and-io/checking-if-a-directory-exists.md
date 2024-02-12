@@ -1,6 +1,5 @@
 ---
 title:                "Kiểm tra nếu một thư mục tồn tại"
-aliases: - /vi/google-apps-script/checking-if-a-directory-exists.md
 date:                  2024-02-01T21:49:28.478214-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Kiểm tra nếu một thư mục tồn tại"

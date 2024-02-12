@@ -1,6 +1,5 @@
 ---
 title:                "कोड सुधार"
-aliases: - /hi/powershell/refactoring.md
 date:                  2024-01-26T03:42:24.006157-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "कोड सुधार"

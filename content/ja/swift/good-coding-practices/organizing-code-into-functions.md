@@ -1,6 +1,5 @@
 ---
 title:                "コードを関数に整理する"
-aliases: - /ja/swift/organizing-code-into-functions.md
 date:                  2024-01-26T01:16:26.101645-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "コードを関数に整理する"

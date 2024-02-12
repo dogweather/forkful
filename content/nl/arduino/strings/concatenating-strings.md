@@ -1,6 +1,5 @@
 ---
 title:                "Samenvoegen van strings"
-aliases: - /nl/arduino/concatenating-strings.md
 date:                  2024-01-28T21:56:37.755504-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Samenvoegen van strings"

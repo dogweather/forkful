@@ -1,6 +1,5 @@
 ---
 title:                "Convertire una data in una stringa"
-aliases: - /it/vba/converting-a-date-into-a-string.md
 date:                  2024-02-01T21:50:53.654368-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Convertire una data in una stringa"

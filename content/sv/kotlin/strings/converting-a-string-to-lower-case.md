@@ -1,6 +1,5 @@
 ---
 title:                "Konvertera en sträng till gemener"
-aliases: - /sv/kotlin/converting-a-string-to-lower-case.md
 date:                  2024-01-20T17:39:00.018751-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Konvertera en sträng till gemener"

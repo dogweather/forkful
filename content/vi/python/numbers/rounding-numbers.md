@@ -1,6 +1,5 @@
 ---
 title:                "Làm tròn số"
-aliases: - /vi/python/rounding-numbers.md
 date:                  2024-01-28T22:06:57.340341-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Làm tròn số"

@@ -1,6 +1,5 @@
 ---
 title:                "Phân tích ngày từ chuỗi kí tự"
-aliases: - /vi/haskell/parsing-a-date-from-a-string.md
 date:                  2024-01-28T22:04:47.039160-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Phân tích ngày từ chuỗi kí tự"

@@ -1,6 +1,5 @@
 ---
 title:                "Nội suy chuỗi ký tự"
-aliases: - /vi/google-apps-script/interpolating-a-string.md
 date:                  2024-02-01T21:57:17.683306-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Nội suy chuỗi ký tự"

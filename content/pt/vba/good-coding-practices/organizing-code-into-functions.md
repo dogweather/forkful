@@ -1,6 +1,5 @@
 ---
 title:                "Organizando código em funções"
-aliases: - /pt/vba/organizing-code-into-functions.md
 date:                  2024-02-01T21:56:22.229806-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Organizando código em funções"

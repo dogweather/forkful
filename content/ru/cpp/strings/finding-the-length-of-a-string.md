@@ -1,6 +1,5 @@
 ---
 title:                "Поиск длины строки"
-aliases: - /ru/cpp/finding-the-length-of-a-string.md
 date:                  2024-01-28T23:58:03.529889-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Поиск длины строки"

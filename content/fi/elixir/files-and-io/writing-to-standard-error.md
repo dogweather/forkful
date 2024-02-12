@@ -1,6 +1,5 @@
 ---
 title:                "Kirjoittaminen standardivirheeseen"
-aliases: - /fi/elixir/writing-to-standard-error.md
 date:                  2024-02-03T19:33:05.563852-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Kirjoittaminen standardivirheeseen"

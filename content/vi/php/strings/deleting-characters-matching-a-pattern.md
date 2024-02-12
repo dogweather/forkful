@@ -1,6 +1,5 @@
 ---
 title:                "Xóa các ký tự phù hợp với một mẫu"
-aliases: - /vi/php/deleting-characters-matching-a-pattern.md
 date:                  2024-01-28T21:59:36.728391-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Xóa các ký tự phù hợp với một mẫu"

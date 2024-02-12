@@ -1,6 +1,5 @@
 ---
 title:                "Een debugger gebruiken"
-aliases: - /nl/javascript/using-a-debugger.md
 date:                  2024-01-28T22:08:45.299623-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een debugger gebruiken"

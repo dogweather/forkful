@@ -1,6 +1,5 @@
 ---
 title:                "Чтение текстового файла"
-aliases: - /ru/fish-shell/reading-a-text-file.md
 date:                  2024-01-29T00:00:46.448177-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Чтение текстового файла"

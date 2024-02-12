@@ -1,6 +1,5 @@
 ---
 title:                "Utilisation des expressions régulières"
-aliases: - /fr/rust/using-regular-expressions.md
 date:                  2024-02-03T19:18:08.419765-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Utilisation des expressions régulières"

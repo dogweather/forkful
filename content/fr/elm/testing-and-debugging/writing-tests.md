@@ -1,6 +1,5 @@
 ---
 title:                "Rédaction de tests"
-aliases: - /fr/elm/writing-tests.md
 date:                  2024-02-03T19:30:24.784643-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Rédaction de tests"

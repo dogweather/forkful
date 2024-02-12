@@ -1,6 +1,5 @@
 ---
 title:                "处理复数"
-aliases: - /zh/bash/working-with-complex-numbers.md
 date:                  2024-01-26T04:37:17.420454-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "处理复数"

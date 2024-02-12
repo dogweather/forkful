@@ -1,6 +1,5 @@
 ---
 title:                "使用调试器"
-aliases: - /zh/powershell/using-a-debugger.md
 date:                  2024-01-26T04:09:01.005413-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "使用调试器"

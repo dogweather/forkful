@@ -1,6 +1,5 @@
 ---
 title:                "Tworzenie tymczasowego pliku"
-aliases: - /pl/google-apps-script/creating-a-temporary-file.md
 date:                  2024-02-01T21:52:01.783838-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Tworzenie tymczasowego pliku"

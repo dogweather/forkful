@@ -1,6 +1,5 @@
 ---
 title:                "XMLの扱い方"
-aliases: - /ja/rust/working-with-xml.md
 date:                  2024-01-26T04:36:11.431000-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "XMLの扱い方"

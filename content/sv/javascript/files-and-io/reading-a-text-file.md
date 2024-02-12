@@ -1,6 +1,5 @@
 ---
 title:                "Läsa en textfil"
-aliases: - /sv/javascript/reading-a-text-file.md
 date:                  2024-01-20T17:54:31.156112-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Läsa en textfil"

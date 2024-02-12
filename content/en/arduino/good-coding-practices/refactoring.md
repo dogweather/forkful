@@ -1,6 +1,5 @@
 ---
 title:                "Refactoring"
-aliases: - /en/arduino/refactoring.md
 date:                  2024-01-25T02:12:18.877401-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Refactoring"

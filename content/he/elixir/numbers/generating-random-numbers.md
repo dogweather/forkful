@@ -1,6 +1,5 @@
 ---
 title:                "גילוי מספרים אקראיים"
-aliases: - /he/elixir/generating-random-numbers.md
 date:                  2024-01-27T20:33:56.820995-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "גילוי מספרים אקראיים"

@@ -1,6 +1,5 @@
 ---
 title:                "Working with complex numbers"
-aliases: - /en/google-apps-script/working-with-complex-numbers.md
 date:                  2024-02-01T21:12:06.181398-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Working with complex numbers"

@@ -1,6 +1,5 @@
 ---
 title:                "Arredondamento de números"
-aliases: - /pt/elixir/rounding-numbers.md
 date:                  2024-01-26T03:43:59.579896-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Arredondamento de números"

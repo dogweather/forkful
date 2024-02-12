@@ -1,6 +1,5 @@
 ---
 title:                "Samenvoegen van strings"
-aliases: - /nl/ruby/concatenating-strings.md
 date:                  2024-01-28T21:57:09.277637-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Samenvoegen van strings"

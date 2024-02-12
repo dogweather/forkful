@@ -1,6 +1,5 @@
 ---
 title:                "使用调试器"
-aliases: - /zh/c-sharp/using-a-debugger.md
 date:                  2024-01-26T03:48:06.300830-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "使用调试器"

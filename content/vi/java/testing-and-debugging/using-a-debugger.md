@@ -1,6 +1,5 @@
 ---
 title:                "Sử dụng bộ gỡ lỗi"
-aliases: - /vi/java/using-a-debugger.md
 date:                  2024-01-28T22:09:48.709262-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Sử dụng bộ gỡ lỗi"

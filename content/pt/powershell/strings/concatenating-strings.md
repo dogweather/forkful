@@ -1,6 +1,5 @@
 ---
 title:                "Concatenando strings"
-aliases: - /pt/powershell/concatenating-strings.md
 date:                  2024-01-20T17:35:19.330805-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Concatenando strings"

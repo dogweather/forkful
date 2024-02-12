@@ -1,6 +1,5 @@
 ---
 title:                "Berechnung eines zukünftigen oder vergangenen Datums"
-aliases: - /de/go/calculating-a-date-in-the-future-or-past.md
 date:                  2024-02-03T17:52:48.747295-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Berechnung eines zukünftigen oder vergangenen Datums"

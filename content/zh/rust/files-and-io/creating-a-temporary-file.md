@@ -1,6 +1,5 @@
 ---
 title:                "创建临时文件"
-aliases: - /zh/rust/creating-a-temporary-file.md
 date:                  2024-01-20T17:41:08.205305-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "创建临时文件"

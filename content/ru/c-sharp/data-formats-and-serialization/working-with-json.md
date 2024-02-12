@@ -1,6 +1,5 @@
 ---
 title:                "Работа с JSON"
-aliases: - /ru/c-sharp/working-with-json.md
 date:                  2024-01-29T00:04:50.699299-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Работа с JSON"

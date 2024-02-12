@@ -1,6 +1,5 @@
 ---
 title:                "创建临时文件"
-aliases: - /zh/haskell/creating-a-temporary-file.md
 date:                  2024-01-20T17:40:35.796330-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "创建临时文件"

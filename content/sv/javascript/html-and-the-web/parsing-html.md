@@ -1,6 +1,5 @@
 ---
 title:                "Analysera HTML"
-aliases: - /sv/javascript/parsing-html.md
 date:                  2024-01-28T03:01:14.207115-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Analysera HTML"

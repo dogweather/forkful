@@ -1,6 +1,5 @@
 ---
 title:                "Väliaikaistiedoston luominen"
-aliases: - /fi/python/creating-a-temporary-file.md
 date:                  2024-01-20T17:41:15.152469-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Väliaikaistiedoston luominen"

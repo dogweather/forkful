@@ -1,6 +1,5 @@
 ---
 title:                "Zaokrąglanie liczb"
-aliases: - /pl/java/rounding-numbers.md
 date:                  2024-01-26T03:46:12.526973-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Zaokrąglanie liczb"

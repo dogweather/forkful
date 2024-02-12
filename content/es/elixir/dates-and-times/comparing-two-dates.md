@@ -1,6 +1,5 @@
 ---
 title:                "Comparación de dos fechas"
-aliases: - /es/elixir/comparing-two-dates.md
 date:                  2024-01-20T17:32:32.301829-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Comparación de dos fechas"

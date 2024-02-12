@@ -1,6 +1,5 @@
 ---
 title:                "Quotes verwijderen uit een string"
-aliases: - /nl/swift/removing-quotes-from-a-string.md
 date:                  2024-01-28T22:06:17.348434-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Quotes verwijderen uit een string"

@@ -1,6 +1,5 @@
 ---
 title:                "Обчислення дати у майбутньому або минулому"
-aliases: - /uk/swift/calculating-a-date-in-the-future-or-past.md
 date:                  2024-01-20T17:32:35.280184-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Обчислення дати у майбутньому або минулому"

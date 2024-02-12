@@ -1,6 +1,5 @@
 ---
 title:                "Phân tích ngày từ chuỗi kí tự"
-aliases: - /vi/kotlin/parsing-a-date-from-a-string.md
 date:                  2024-01-28T22:04:24.969044-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Phân tích ngày từ chuỗi kí tự"

@@ -1,6 +1,5 @@
 ---
 title:                "YAML로 작업하기"
-aliases: - /ko/typescript/working-with-yaml.md
 date:                  2024-02-03T19:27:12.661125-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "YAML로 작업하기"

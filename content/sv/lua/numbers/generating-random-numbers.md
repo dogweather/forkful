@@ -1,6 +1,5 @@
 ---
 title:                "Generera slumptal"
-aliases: - /sv/lua/generating-random-numbers.md
 date:                  2024-01-27T20:35:01.275542-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Generera slumptal"

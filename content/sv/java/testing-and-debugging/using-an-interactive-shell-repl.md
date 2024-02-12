@@ -1,6 +1,5 @@
 ---
 title:                "Använda en interaktiv skal (REPL)"
-aliases: - /sv/java/using-an-interactive-shell-repl.md
 date:                  2024-01-26T04:15:25.843954-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Använda en interaktiv skal (REPL)"

@@ -1,6 +1,5 @@
 ---
 title:                "Arbeiten mit YAML"
-aliases: - /de/kotlin/working-with-yaml.md
 date:                  2024-01-19
 simple_title:         "Arbeiten mit YAML"
 

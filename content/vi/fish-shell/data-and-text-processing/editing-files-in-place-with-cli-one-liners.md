@@ -1,6 +1,5 @@
 ---
 title:                "Chỉnh sửa file tại chỗ với câu lệnh CLI ngắn gọn"
-aliases: - /vi/fish-shell/editing-files-in-place-with-cli-one-liners.md
 date:                  2024-01-28T22:00:55.952857-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Chỉnh sửa file tại chỗ với câu lệnh CLI ngắn gọn"

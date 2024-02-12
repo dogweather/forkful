@@ -1,6 +1,5 @@
 ---
 title:                "स्ट्रिंग की लंबाई ज्ञात करना"
-aliases: - /hi/typescript/finding-the-length-of-a-string.md
 date:                  2024-01-20T17:48:33.976788-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "स्ट्रिंग की लंबाई ज्ञात करना"

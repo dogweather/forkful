@@ -1,6 +1,5 @@
 ---
 title:                "문자열 보간하기"
-aliases: - /ko/vba/interpolating-a-string.md
 date:                  2024-02-01T21:56:03.138938-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "문자열 보간하기"

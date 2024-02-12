@@ -1,6 +1,5 @@
 ---
 title:                "Lese en tekstfil"
-aliases: - /no/arduino/reading-a-text-file.md
 date:                  2024-01-20T17:53:51.432702-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Lese en tekstfil"

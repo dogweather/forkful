@@ -1,6 +1,5 @@
 ---
 title:                "Analyse Syntaxique du HTML"
-aliases: - /fr/arduino/parsing-html.md
 date:                  2024-02-03T19:11:37.913460-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Analyse Syntaxique du HTML"

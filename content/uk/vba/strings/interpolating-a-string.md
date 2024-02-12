@@ -1,6 +1,5 @@
 ---
 title:                "Інтерполяція рядка"
-aliases: - /uk/vba/interpolating-a-string.md
 date:                  2024-02-01T21:56:25.437207-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Інтерполяція рядка"

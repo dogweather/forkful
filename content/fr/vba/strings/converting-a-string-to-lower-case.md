@@ -1,6 +1,5 @@
 ---
 title:                "Convertir une chaîne en minuscules"
-aliases: - /fr/vba/converting-a-string-to-lower-case.md
 date:                  2024-02-01T21:51:06.951748-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Convertir une chaîne en minuscules"

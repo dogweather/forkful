@@ -1,6 +1,5 @@
 ---
 title:                "CLIワンライナーでのファイルのインプレース編集"
-aliases: - /ja/powershell/editing-files-in-place-with-cli-one-liners.md
 date:                  2024-01-27T16:21:16.583429-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "CLIワンライナーでのファイルのインプレース編集"

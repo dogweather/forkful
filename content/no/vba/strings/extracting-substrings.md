@@ -1,6 +1,5 @@
 ---
 title:                "Uttrekking av delstrenger"
-aliases: - /no/vba/extracting-substrings.md
 date:                  2024-02-01T21:53:28.117074-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Uttrekking av delstrenger"

@@ -1,6 +1,5 @@
 ---
 title:                "Viết kiểm thử"
-aliases: - /vi/elm/writing-tests.md
 date:                  2024-01-28T22:12:53.129827-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Viết kiểm thử"

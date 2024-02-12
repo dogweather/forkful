@@ -1,6 +1,5 @@
 ---
 title:                "חישוב תאריך בעתיד או בעבר"
-aliases: - /he/arduino/calculating-a-date-in-the-future-or-past.md
 date:                  2024-01-20T17:31:26.213511-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "חישוב תאריך בעתיד או בעבר"

@@ -1,6 +1,5 @@
 ---
 title:                "Fouten afhandelen"
-aliases: - /nl/ruby/handling-errors.md
 date:                  2024-01-28T22:01:36.860258-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Fouten afhandelen"

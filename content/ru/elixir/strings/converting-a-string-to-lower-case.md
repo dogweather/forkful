@@ -1,6 +1,5 @@
 ---
 title:                "Преобразование строки в нижний регистр"
-aliases: - /ru/elixir/converting-a-string-to-lower-case.md
 date:                  2024-01-28T23:56:55.352806-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Преобразование строки в нижний регистр"

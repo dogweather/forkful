@@ -1,6 +1,5 @@
 ---
 title:                "Lendo um arquivo de texto"
-aliases: - /pt/c/reading-a-text-file.md
 date:                  2024-02-03T18:05:09.066272-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Lendo um arquivo de texto"

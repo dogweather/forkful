@@ -1,6 +1,5 @@
 ---
 title:                "Datum in einen String umwandeln"
-aliases: - /de/elixir/converting-a-date-into-a-string.md
 date:                  2024-01-20T17:36:02.668344-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Datum in einen String umwandeln"

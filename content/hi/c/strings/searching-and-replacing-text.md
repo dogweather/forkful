@@ -1,6 +1,5 @@
 ---
 title:                "पाठ की खोज और प्रतिस्थापन"
-aliases: - /hi/c/searching-and-replacing-text.md
 date:                  2024-02-03T18:09:13.750670-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "पाठ की खोज और प्रतिस्थापन"

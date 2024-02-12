@@ -1,6 +1,5 @@
 ---
 title:                "שימוש בביטויים רגילים"
-aliases: - /he/google-apps-script/using-regular-expressions.md
 date:                  2024-02-01T22:05:50.740352-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "שימוש בביטויים רגילים"

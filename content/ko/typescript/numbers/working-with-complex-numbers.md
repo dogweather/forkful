@@ -1,6 +1,5 @@
 ---
 title:                "복소수 다루기"
-aliases: - /ko/typescript/working-with-complex-numbers.md
 date:                  2024-01-26T04:46:31.327741-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "복소수 다루기"

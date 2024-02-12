@@ -1,6 +1,5 @@
 ---
 title:                "Видалення символів, що відповідають патерну"
-aliases: - /uk/google-apps-script/deleting-characters-matching-a-pattern.md
 date:                  2024-02-01T21:52:44.815028-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Видалення символів, що відповідають патерну"

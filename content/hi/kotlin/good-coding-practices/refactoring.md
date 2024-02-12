@@ -1,6 +1,5 @@
 ---
 title:                "कोड की सफाई"
-aliases: - /hi/kotlin/refactoring.md
 date:                  2024-01-26T01:43:48.703373-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "कोड की सफाई"

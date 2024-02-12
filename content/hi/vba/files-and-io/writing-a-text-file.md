@@ -1,6 +1,5 @@
 ---
 title:                "टेक्स्ट फ़ाइल लिखना"
-aliases: - /hi/vba/writing-a-text-file.md
 date:                  2024-02-01T22:09:45.799476-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "टेक्स्ट फ़ाइल लिखना"

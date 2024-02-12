@@ -1,6 +1,5 @@
 ---
 title:                "HTTP-pyynnön lähettäminen"
-aliases: - /fi/arduino/sending-an-http-request.md
 date:                  2024-01-20T17:58:49.102790-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "HTTP-pyynnön lähettäminen"

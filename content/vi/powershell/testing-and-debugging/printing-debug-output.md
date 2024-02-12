@@ -1,6 +1,5 @@
 ---
 title:                "In ra thông tin gỡ lỗi"
-aliases: - /vi/powershell/printing-debug-output.md
 date:                  2024-01-28T22:04:45.199938-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "In ra thông tin gỡ lỗi"

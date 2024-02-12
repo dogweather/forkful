@@ -1,6 +1,5 @@
 ---
 title:                "Registro de Logs"
-aliases: - /pt/ruby/logging.md
 date:                  2024-01-26T01:07:49.007916-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Registro de Logs"

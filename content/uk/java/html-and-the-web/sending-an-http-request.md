@@ -1,6 +1,5 @@
 ---
 title:                "Надсилання HTTP-запиту"
-aliases: - /uk/java/sending-an-http-request.md
 date:                  2024-01-20T18:00:23.801248-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Надсилання HTTP-запиту"

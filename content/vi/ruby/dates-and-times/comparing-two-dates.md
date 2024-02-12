@@ -1,6 +1,5 @@
 ---
 title:                "So sánh hai ngày"
-aliases: - /vi/ruby/comparing-two-dates.md
 date:                  2024-01-28T21:57:19.890693-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "So sánh hai ngày"

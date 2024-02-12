@@ -1,6 +1,5 @@
 ---
 title:                "Werken met complexe getallen"
-aliases: - /nl/elixir/working-with-complex-numbers.md
 date:                  2024-01-28T22:12:13.669953-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Werken met complexe getallen"

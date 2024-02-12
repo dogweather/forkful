@@ -1,6 +1,5 @@
 ---
 title:                "Sprawdzanie, czy katalog istnieje"
-aliases: - /pl/arduino/checking-if-a-directory-exists.md
 date:                  2024-02-03T19:06:59.119314-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Sprawdzanie, czy katalog istnieje"

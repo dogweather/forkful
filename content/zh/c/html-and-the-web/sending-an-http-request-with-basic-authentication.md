@@ -1,6 +1,5 @@
 ---
 title:                "使用基本认证发送HTTP请求"
-aliases: - /zh/c/sending-an-http-request-with-basic-authentication.md
 date:                  2024-02-03T18:10:01.117926-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "使用基本认证发送HTTP请求"

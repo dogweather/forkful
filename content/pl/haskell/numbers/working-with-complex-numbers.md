@@ -1,6 +1,5 @@
 ---
 title:                "Praca z liczbami zespolonymi"
-aliases: - /pl/haskell/working-with-complex-numbers.md
 date:                  2024-01-26T04:41:52.666286-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Praca z liczbami zespolonymi"

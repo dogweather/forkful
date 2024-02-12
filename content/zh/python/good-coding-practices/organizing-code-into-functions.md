@@ -1,6 +1,5 @@
 ---
 title:                "将代码组织成函数"
-aliases: - /zh/python/organizing-code-into-functions.md
 date:                  2024-01-26T01:16:14.030072-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "将代码组织成函数"

@@ -1,6 +1,5 @@
 ---
 title:                "Parsing HTML"
-aliases: - /en/cpp/parsing-html.md
 date:                  2024-01-20T15:30:08.873905-07:00
 simple_title:         "Parsing HTML"
 

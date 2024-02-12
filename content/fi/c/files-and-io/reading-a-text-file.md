@@ -1,6 +1,5 @@
 ---
 title:                "Tekstitiedoston lukeminen"
-aliases: - /fi/c/reading-a-text-file.md
 date:                  2024-02-03T18:05:36.100839-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Tekstitiedoston lukeminen"

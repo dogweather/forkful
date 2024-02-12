@@ -1,6 +1,5 @@
 ---
 title:                "Розбір HTML"
-aliases: - /uk/javascript/parsing-html.md
 date:                  2024-01-28T03:01:03.758184-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Розбір HTML"

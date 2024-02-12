@@ -1,6 +1,5 @@
 ---
 title:                "Khởi đầu một dự án mới"
-aliases: - /vi/c/starting-a-new-project.md
 date:                  2024-02-03T18:09:43.817358-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Khởi đầu một dự án mới"

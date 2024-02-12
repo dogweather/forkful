@@ -1,6 +1,5 @@
 ---
 title:                "Xử lý lỗi"
-aliases: - /vi/rust/handling-errors.md
 date:                  2024-01-28T22:02:22.327505-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Xử lý lỗi"

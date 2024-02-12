@@ -1,6 +1,5 @@
 ---
 title:                "Interpolazione di una stringa"
-aliases: - /it/c/interpolating-a-string.md
 date:                  2024-02-03T17:58:20.473105-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Interpolazione di una stringa"

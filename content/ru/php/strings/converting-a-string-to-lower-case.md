@@ -1,6 +1,5 @@
 ---
 title:                "Преобразование строки в нижний регистр"
-aliases: - /ru/php/converting-a-string-to-lower-case.md
 date:                  2024-01-28T23:56:41.061071-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Преобразование строки в нижний регистр"

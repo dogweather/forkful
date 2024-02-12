@@ -1,6 +1,5 @@
 ---
 title:                "Työskentely XML:n kanssa"
-aliases: - /fi/google-apps-script/working-with-xml.md
 date:                  2024-02-01T22:06:48.441875-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Työskentely XML:n kanssa"

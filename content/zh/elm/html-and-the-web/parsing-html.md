@@ -1,6 +1,5 @@
 ---
 title:                "解析HTML"
-aliases: - /zh/elm/parsing-html.md
 date:                  2024-02-03T19:12:04.831794-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "解析HTML"

@@ -1,6 +1,5 @@
 ---
 title:                "Tarkistetaan, onko hakemisto olemassa"
-aliases: - /fi/lua/checking-if-a-directory-exists.md
 date:                  2024-02-03T19:07:55.183791-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Tarkistetaan, onko hakemisto olemassa"

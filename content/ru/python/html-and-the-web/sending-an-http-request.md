@@ -1,6 +1,5 @@
 ---
 title:                "Отправка HTTP-запроса"
-aliases: - /ru/python/sending-an-http-request.md
 date:                  2024-01-29T00:02:37.254928-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Отправка HTTP-запроса"

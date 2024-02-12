@@ -1,6 +1,5 @@
 ---
 title:                "Exibindo saídas de depuração"
-aliases: - /pt/arduino/printing-debug-output.md
 date:                  2024-01-20T17:51:46.623163-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Exibindo saídas de depuração"

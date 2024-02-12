@@ -1,6 +1,5 @@
 ---
 title:                "Tái cấu trúc mã"
-aliases: - /vi/arduino/refactoring.md
 date:                  2024-01-28T22:05:54.229591-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Tái cấu trúc mã"

@@ -1,6 +1,5 @@
 ---
 title:                "Sending an HTTP request"
-aliases: - /en/kotlin/sending-an-http-request.md
 date:                  2024-01-20T17:59:59.071111-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Sending an HTTP request"

@@ -1,6 +1,5 @@
 ---
 title:                "Отправка HTTP-запроса"
-aliases: - /ru/arduino/sending-an-http-request.md
 date:                  2024-01-29T00:02:48.919771-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Отправка HTTP-запроса"

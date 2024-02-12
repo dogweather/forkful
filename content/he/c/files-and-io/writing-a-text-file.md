@@ -1,6 +1,5 @@
 ---
 title:                "כתיבת קובץ טקסט"
-aliases: - /he/c/writing-a-text-file.md
 date:                  2024-02-03T18:15:45.891348-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "כתיבת קובץ טקסט"

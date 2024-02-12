@@ -1,6 +1,5 @@
 ---
 title:                "Concatenación de cadenas de texto"
-aliases: - /es/arduino/concatenating-strings.md
 date:                  2024-01-20T17:34:06.997156-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Concatenación de cadenas de texto"

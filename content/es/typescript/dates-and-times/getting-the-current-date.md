@@ -1,6 +1,5 @@
 ---
 title:                "Obteniendo la fecha actual"
-aliases: - /es/typescript/getting-the-current-date.md
 date:                  2024-02-03T19:10:54.323474-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Obteniendo la fecha actual"

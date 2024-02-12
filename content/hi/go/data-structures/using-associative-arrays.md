@@ -1,6 +1,5 @@
 ---
 title:                "संघटक अरेज़ का उपयोग"
-aliases: - /hi/go/using-associative-arrays.md
 date:                  2024-02-03T18:12:34.424887-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "संघटक अरेज़ का उपयोग"

@@ -1,6 +1,5 @@
 ---
 title:                "Rifattorizzazione"
-aliases: - /it/php/refactoring.md
 date:                  2024-01-26T01:48:19.887057-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Rifattorizzazione"

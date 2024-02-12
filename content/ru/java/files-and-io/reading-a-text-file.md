@@ -1,6 +1,5 @@
 ---
 title:                "Чтение текстового файла"
-aliases: - /ru/java/reading-a-text-file.md
 date:                  2024-01-29T00:01:34.346501-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Чтение текстового файла"

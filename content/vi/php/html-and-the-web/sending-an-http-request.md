@@ -1,6 +1,5 @@
 ---
 title:                "Gửi một yêu cầu HTTP"
-aliases: - /vi/php/sending-an-http-request.md
 date:                  2024-01-28T22:09:27.205311-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Gửi một yêu cầu HTTP"

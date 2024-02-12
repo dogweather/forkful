@@ -1,6 +1,5 @@
 ---
 title:                "Protokollierung"
-aliases: - /de/c/logging.md
 date:                  2024-02-03T17:59:03.561730-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Protokollierung"

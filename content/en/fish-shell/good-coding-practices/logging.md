@@ -1,6 +1,5 @@
 ---
 title:                "Logging"
-aliases: - /en/fish-shell/logging.md
 date:                  2024-01-25T02:04:12.450554-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Logging"

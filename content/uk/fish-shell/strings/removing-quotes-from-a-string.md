@@ -1,6 +1,5 @@
 ---
 title:                "Видалення лапок зі строки"
-aliases: - /uk/fish-shell/removing-quotes-from-a-string.md
 date:                  2024-01-26T03:39:18.446922-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Видалення лапок зі строки"

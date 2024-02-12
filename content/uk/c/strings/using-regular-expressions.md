@@ -1,6 +1,5 @@
 ---
 title:                "Використання регулярних виразів"
-aliases: - /uk/c/using-regular-expressions.md
 date:                  2024-02-03T18:11:20.372528-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Використання регулярних виразів"

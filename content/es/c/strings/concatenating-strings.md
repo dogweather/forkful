@@ -1,6 +1,5 @@
 ---
 title:                "Concatenando cadenas de texto"
-aliases: - /es/c/concatenating-strings.md
 date:                  2024-02-03T17:53:44.813933-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Concatenando cadenas de texto"

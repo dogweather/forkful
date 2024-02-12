@@ -1,6 +1,5 @@
 ---
 title:                "Chuyển đổi một ngày thành chuỗi"
-aliases: - /vi/elm/converting-a-date-into-a-string.md
 date:                  2024-01-28T21:57:36.871157-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Chuyển đổi một ngày thành chuỗi"

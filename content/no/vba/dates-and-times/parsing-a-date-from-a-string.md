@@ -1,6 +1,5 @@
 ---
 title:                "Analysering av en dato fra en streng"
-aliases: - /no/vba/parsing-a-date-from-a-string.md
 date:                  2024-02-01T21:57:44.514908-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Analysering av en dato fra en streng"

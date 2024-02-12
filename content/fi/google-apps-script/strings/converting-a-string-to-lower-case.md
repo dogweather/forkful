@@ -1,6 +1,5 @@
 ---
 title:                "Merkkijonon muuttaminen pieniksi kirjaimiksi"
-aliases: - /fi/google-apps-script/converting-a-string-to-lower-case.md
 date:                  2024-02-01T21:51:32.289781-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Merkkijonon muuttaminen pieniksi kirjaimiksi"

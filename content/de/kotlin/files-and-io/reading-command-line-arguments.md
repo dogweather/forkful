@@ -1,6 +1,5 @@
 ---
 title:                "Lesen von Kommandozeilenargumenten"
-aliases: - /de/kotlin/reading-command-line-arguments.md
 date:                  2024-01-20T17:56:26.674346-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Lesen von Kommandozeilenargumenten"

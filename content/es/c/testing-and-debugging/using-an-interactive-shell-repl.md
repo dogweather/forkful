@@ -1,6 +1,5 @@
 ---
 title:                "Utilizando un shell interactivo (REPL)"
-aliases: - /es/c/using-an-interactive-shell-repl.md
 date:                  2024-02-03T18:10:06.147087-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Utilizando un shell interactivo (REPL)"

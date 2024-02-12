@@ -1,6 +1,5 @@
 ---
 title:                "Werken met complexe getallen"
-aliases: - /nl/google-apps-script/working-with-complex-numbers.md
 date:                  2024-02-01T22:07:38.793153-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Werken met complexe getallen"

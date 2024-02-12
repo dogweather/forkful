@@ -1,6 +1,5 @@
 ---
 title:                "日付を比較する"
-aliases: - /ja/c-sharp/comparing-two-dates.md
 date:                  2024-01-20T17:32:53.045255-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "日付を比較する"

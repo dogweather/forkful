@@ -1,6 +1,5 @@
 ---
 title:                "עבודה עם JSON"
-aliases: - /he/clojure/working-with-json.md
 date:                  2024-02-03T19:23:07.651172-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "עבודה עם JSON"

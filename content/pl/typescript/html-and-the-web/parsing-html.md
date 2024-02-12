@@ -1,6 +1,5 @@
 ---
 title:                "Przetwarzanie HTML"
-aliases: - /pl/typescript/parsing-html.md
 date:                  2024-01-20T15:34:39.122013-07:00
 simple_title:         "Przetwarzanie HTML"
 

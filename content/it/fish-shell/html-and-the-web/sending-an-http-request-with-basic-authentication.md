@@ -1,6 +1,5 @@
 ---
 title:                "Inviare una richiesta http con autenticazione di base"
-aliases: - /it/fish-shell/sending-an-http-request-with-basic-authentication.md
 date:                  2024-01-20T18:01:27.758107-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Inviare una richiesta http con autenticazione di base"

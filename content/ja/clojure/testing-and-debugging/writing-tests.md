@@ -1,6 +1,5 @@
 ---
 title:                "テストの作成"
-aliases: - /ja/clojure/writing-tests.md
 date:                  2024-02-03T19:30:06.227556-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "テストの作成"

@@ -1,6 +1,5 @@
 ---
 title:                "אינטרפולציה של מחרוזת"
-aliases: - /he/python/interpolating-a-string.md
 date:                  2024-01-28T21:24:55.866722-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "אינטרפולציה של מחרוזת"

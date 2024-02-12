@@ -1,6 +1,5 @@
 ---
 title:                "연관 배열 사용하기"
-aliases: - /ko/ruby/using-associative-arrays.md
 date:                  2024-01-30T19:13:13.865041-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "연관 배열 사용하기"

@@ -1,6 +1,5 @@
 ---
 title:                "Zamiana liter w ciągu na wielkie"
-aliases: - /pl/google-apps-script/capitalizing-a-string.md
 date:                  2024-02-01T21:49:03.289636-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Zamiana liter w ciągu na wielkie"

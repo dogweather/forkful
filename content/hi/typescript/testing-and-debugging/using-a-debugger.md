@@ -1,6 +1,5 @@
 ---
 title:                "डीबगर का उपयोग करना"
-aliases: - /hi/typescript/using-a-debugger.md
 date:                  2024-01-26T04:12:59.536583-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "डीबगर का उपयोग करना"

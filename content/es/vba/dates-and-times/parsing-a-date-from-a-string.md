@@ -1,6 +1,5 @@
 ---
 title:                "Analizando una fecha a partir de una cadena de texto"
-aliases: - /es/vba/parsing-a-date-from-a-string.md
 date:                  2024-02-01T21:57:44.512768-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Analizando una fecha a partir de una cadena de texto"

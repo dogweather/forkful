@@ -1,6 +1,5 @@
 ---
 title:                "Koodin uudelleenjärjestely"
-aliases: - /fi/kotlin/refactoring.md
 date:                  2024-01-26T01:43:15.352121-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Koodin uudelleenjärjestely"

@@ -1,6 +1,5 @@
 ---
 title:                "Sắp xếp mã thành các hàm"
-aliases: - /vi/arduino/organizing-code-into-functions.md
 date:                  2024-01-28T22:03:23.404633-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Sắp xếp mã thành các hàm"

@@ -1,6 +1,5 @@
 ---
 title:                "Een HTTP-verzoek verzenden"
-aliases: - /nl/elixir/sending-an-http-request.md
 date:                  2024-01-28T22:07:27.086770-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een HTTP-verzoek verzenden"

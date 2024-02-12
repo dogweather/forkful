@@ -1,6 +1,5 @@
 ---
 title:                "コマンドライン引数の読み取り"
-aliases: - /ja/arduino/reading-command-line-arguments.md
 date:                  2024-01-20T17:55:52.851001-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "コマンドライン引数の読み取り"

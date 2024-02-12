@@ -1,6 +1,5 @@
 ---
 title:                "文字列を大文字にする"
-aliases: - /ja/google-apps-script/capitalizing-a-string.md
 date:                  2024-02-01T21:49:08.306099-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "文字列を大文字にする"

@@ -1,6 +1,5 @@
 ---
 title:                "Визначення довжини рядка"
-aliases: - /uk/c-sharp/finding-the-length-of-a-string.md
 date:                  2024-01-20T17:46:55.844354-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Визначення довжини рядка"

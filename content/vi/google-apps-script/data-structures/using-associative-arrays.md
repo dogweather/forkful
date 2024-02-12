@@ -1,6 +1,5 @@
 ---
 title:                "Sử dụng mảng liên kết"
-aliases: - /vi/google-apps-script/using-associative-arrays.md
 date:                  2024-02-01T22:04:43.394982-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Sử dụng mảng liên kết"

@@ -1,6 +1,5 @@
 ---
 title:                "Analisi dell'HTML"
-aliases: - /it/elixir/parsing-html.md
 date:                  2024-01-20T15:31:09.248361-07:00
 simple_title:         "Analisi dell'HTML"
 

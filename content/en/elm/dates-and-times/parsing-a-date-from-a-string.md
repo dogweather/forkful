@@ -1,6 +1,5 @@
 ---
 title:                "Parsing a date from a string"
-aliases: - /en/elm/parsing-a-date-from-a-string.md
 date:                  2024-02-03T19:02:42.664106-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Parsing a date from a string"

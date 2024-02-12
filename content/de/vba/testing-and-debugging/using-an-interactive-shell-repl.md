@@ -1,6 +1,5 @@
 ---
 title:                "Verwendung einer interaktiven Shell (REPL)"
-aliases: - /de/vba/using-an-interactive-shell-repl.md
 date:                  2024-02-01T22:03:51.235100-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Verwendung einer interaktiven Shell (REPL)"

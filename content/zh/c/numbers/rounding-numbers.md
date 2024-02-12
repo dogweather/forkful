@@ -1,6 +1,5 @@
 ---
 title:                "四舍五入数字"
-aliases: - /zh/c/rounding-numbers.md
 date:                  2024-02-03T18:07:41.615080-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "四舍五入数字"

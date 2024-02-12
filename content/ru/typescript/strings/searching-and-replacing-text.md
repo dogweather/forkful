@@ -1,6 +1,5 @@
 ---
 title:                "Поиск и замена текста"
-aliases: - /ru/typescript/searching-and-replacing-text.md
 date:                  2024-01-29T00:02:12.363137-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Поиск и замена текста"

@@ -1,6 +1,5 @@
 ---
 title:                "Sinh số ngẫu nhiên"
-aliases: - /vi/elm/generating-random-numbers.md
 date:                  2024-01-28T22:01:41.739583-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Sinh số ngẫu nhiên"

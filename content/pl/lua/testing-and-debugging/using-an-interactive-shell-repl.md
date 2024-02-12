@@ -1,6 +1,5 @@
 ---
 title:                "Korzystanie z interaktywnego shella (REPL)"
-aliases: - /pl/lua/using-an-interactive-shell-repl.md
 date:                  2024-01-26T04:16:12.385001-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Korzystanie z interaktywnego shella (REPL)"

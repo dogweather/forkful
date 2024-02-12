@@ -1,6 +1,5 @@
 ---
 title:                "Rifattorizzazione"
-aliases: - /it/fish-shell/refactoring.md
 date:                  2024-01-26T01:17:59.406526-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Rifattorizzazione"

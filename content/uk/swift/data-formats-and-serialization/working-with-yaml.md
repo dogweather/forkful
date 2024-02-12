@@ -1,6 +1,5 @@
 ---
 title:                "Робота з YAML"
-aliases: - /uk/swift/working-with-yaml.md
 date:                  2024-02-03T19:27:20.100598-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Робота з YAML"

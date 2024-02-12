@@ -1,6 +1,5 @@
 ---
 title:                "Проверка существования директории"
-aliases: - /ru/powershell/checking-if-a-directory-exists.md
 date:                  2024-01-28T23:55:44.931152-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Проверка существования директории"

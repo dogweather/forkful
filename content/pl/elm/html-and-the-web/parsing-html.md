@@ -1,6 +1,5 @@
 ---
 title:                "Przetwarzanie HTML"
-aliases: - /pl/elm/parsing-html.md
 date:                  2024-01-20T15:32:09.180890-07:00
 simple_title:         "Przetwarzanie HTML"
 

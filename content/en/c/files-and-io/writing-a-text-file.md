@@ -1,6 +1,5 @@
 ---
 title:                "Writing a text file"
-aliases: - /en/c/writing-a-text-file.md
 date:                  2024-02-03T17:50:12.857742-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Writing a text file"

@@ -1,6 +1,5 @@
 ---
 title:                "Praca z JSON"
-aliases: - /pl/java/working-with-json.md
 date:                  2024-01-19
 simple_title:         "Praca z JSON"
 

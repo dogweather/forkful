@@ -1,6 +1,5 @@
 ---
 title:                "שרבוב מחרוזת"
-aliases: - /he/kotlin/interpolating-a-string.md
 date:                  2024-01-20T17:51:35.544874-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "שרבוב מחרוזת"

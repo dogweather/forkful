@@ -1,6 +1,5 @@
 ---
 title:                "Сравнение двух дат"
-aliases: - /ru/vba/comparing-two-dates.md
 date:                  2024-02-01T21:49:56.048665-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Сравнение двух дат"

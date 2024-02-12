@@ -1,6 +1,5 @@
 ---
 title:                "Estrazione di sottostringhe"
-aliases: - /it/google-apps-script/extracting-substrings.md
 date:                  2024-02-01T21:52:54.882865-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Estrazione di sottostringhe"

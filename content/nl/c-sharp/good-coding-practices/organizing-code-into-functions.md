@@ -1,6 +1,5 @@
 ---
 title:                "Code organiseren in functies"
-aliases: - /nl/c-sharp/organizing-code-into-functions.md
 date:                  2024-01-28T22:02:51.565220-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Code organiseren in functies"

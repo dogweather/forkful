@@ -1,6 +1,5 @@
 ---
 title:                "Интерполяция строки"
-aliases: - /ru/google-apps-script/interpolating-a-string.md
 date:                  2024-02-01T21:55:37.228267-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Интерполяция строки"

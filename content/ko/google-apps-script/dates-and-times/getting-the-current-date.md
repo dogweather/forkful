@@ -1,6 +1,5 @@
 ---
 title:                "현재 날짜 얻기"
-aliases: - /ko/google-apps-script/getting-the-current-date.md
 date:                  2024-02-01T21:54:43.564737-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "현재 날짜 얻기"

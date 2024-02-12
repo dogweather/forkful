@@ -1,6 +1,5 @@
 ---
 title:                "Utilizzare un debugger"
-aliases: - /it/go/using-a-debugger.md
 date:                  2024-02-03T18:10:06.553876-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Utilizzare un debugger"

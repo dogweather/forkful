@@ -1,6 +1,5 @@
 ---
 title:                "文字列から日付をパースする"
-aliases: - /ja/javascript/parsing-a-date-from-a-string.md
 date:                  2024-02-03T19:15:00.306501-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "文字列から日付をパースする"

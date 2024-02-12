@@ -1,6 +1,5 @@
 ---
 title:                "बेसिक प्रमाणीकरण के साथ HTTP अनुरोध भेजना"
-aliases: - /hi/rust/sending-an-http-request-with-basic-authentication.md
 date:                  2024-01-20T18:03:10.755321-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "बेसिक प्रमाणीकरण के साथ HTTP अनुरोध भेजना"

@@ -1,6 +1,5 @@
 ---
 title:                "Sammanslagning av strängar"
-aliases: - /sv/vba/concatenating-strings.md
 date:                  2024-02-01T21:50:25.403615-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Sammanslagning av strängar"

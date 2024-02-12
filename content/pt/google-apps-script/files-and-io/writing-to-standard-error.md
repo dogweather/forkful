@@ -1,6 +1,5 @@
 ---
 title:                "Escrevendo no erro padrão"
-aliases: - /pt/google-apps-script/writing-to-standard-error.md
 date:                  2024-02-01T22:09:03.486770-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Escrevendo no erro padrão"

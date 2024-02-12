@@ -1,6 +1,5 @@
 ---
 title:                "Pesquisando e substituindo texto"
-aliases: - /pt/python/searching-and-replacing-text.md
 date:                  2024-01-20T17:59:00.053528-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Pesquisando e substituindo texto"

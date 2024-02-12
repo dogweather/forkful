@@ -1,6 +1,5 @@
 ---
 title:                "テキストファイルの読み込み"
-aliases: - /ja/google-apps-script/reading-a-text-file.md
 date:                  2024-02-01T21:58:26.082369-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "テキストファイルの読み込み"

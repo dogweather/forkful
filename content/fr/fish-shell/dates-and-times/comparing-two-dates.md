@@ -1,6 +1,5 @@
 ---
 title:                "Comparer deux dates"
-aliases: - /fr/fish-shell/comparing-two-dates.md
 date:                  2024-01-20T17:32:54.639722-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Comparer deux dates"

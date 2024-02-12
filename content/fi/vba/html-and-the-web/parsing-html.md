@@ -1,6 +1,5 @@
 ---
 title:                "HTML:n jäsentäminen"
-aliases: - /fi/vba/parsing-html.md
 date:                  2024-02-01T21:58:02.752208-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "HTML:n jäsentäminen"

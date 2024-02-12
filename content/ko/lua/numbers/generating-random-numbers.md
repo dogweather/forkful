@@ -1,6 +1,5 @@
 ---
 title:                "난수 생성"
-aliases: - /ko/lua/generating-random-numbers.md
 date:                  2024-01-27T20:34:49.221764-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "난수 생성"

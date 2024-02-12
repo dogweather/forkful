@@ -1,6 +1,5 @@
 ---
 title:                "Capitalizando una cadena de caracteres"
-aliases: - /es/vba/capitalizing-a-string.md
 date:                  2024-02-01T21:49:16.387912-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Capitalizando una cadena de caracteres"

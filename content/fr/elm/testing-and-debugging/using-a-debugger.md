@@ -1,6 +1,5 @@
 ---
 title:                "Utilisation d'un débogueur"
-aliases: - /fr/elm/using-a-debugger.md
 date:                  2024-01-26T03:49:32.324341-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Utilisation d'un débogueur"

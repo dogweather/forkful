@@ -1,6 +1,5 @@
 ---
 title:                "Lancement d'un nouveau projet"
-aliases: - /fr/haskell/starting-a-new-project.md
 date:                  2024-01-20T18:03:29.838667-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Lancement d'un nouveau projet"

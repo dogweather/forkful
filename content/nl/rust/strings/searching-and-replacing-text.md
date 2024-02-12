@@ -1,6 +1,5 @@
 ---
 title:                "Tekst zoeken en vervangen"
-aliases: - /nl/rust/searching-and-replacing-text.md
 date:                  2024-01-28T22:07:08.041509-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Tekst zoeken en vervangen"

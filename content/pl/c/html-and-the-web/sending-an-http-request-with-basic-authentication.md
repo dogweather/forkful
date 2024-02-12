@@ -1,6 +1,5 @@
 ---
 title:                "Wysyłanie żądania HTTP z podstawowym uwierzytelnianiem"
-aliases: - /pl/c/sending-an-http-request-with-basic-authentication.md
 date:                  2024-02-03T18:09:53.920973-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Wysyłanie żądania HTTP z podstawowym uwierzytelnianiem"

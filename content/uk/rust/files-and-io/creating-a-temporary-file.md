@@ -1,6 +1,5 @@
 ---
 title:                "Створення тимчасового файлу"
-aliases: - /uk/rust/creating-a-temporary-file.md
 date:                  2024-01-20T17:41:20.775409-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Створення тимчасового файлу"

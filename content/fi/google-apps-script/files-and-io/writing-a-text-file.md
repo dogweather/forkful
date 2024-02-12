@@ -1,6 +1,5 @@
 ---
 title:                "Tekstitiedoston kirjoittaminen"
-aliases: - /fi/google-apps-script/writing-a-text-file.md
 date:                  2024-02-01T22:08:09.088845-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Tekstitiedoston kirjoittaminen"

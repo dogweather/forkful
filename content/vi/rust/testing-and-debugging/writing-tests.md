@@ -1,6 +1,5 @@
 ---
 title:                "Viết các bài kiểm tra"
-aliases: - /vi/rust/writing-tests.md
 date:                  2024-01-28T22:13:20.367966-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Viết các bài kiểm tra"

@@ -1,6 +1,5 @@
 ---
 title:                "टेस्ट लिखना"
-aliases: - /hi/php/writing-tests.md
 date:                  2024-02-03T19:31:56.377925-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "टेस्ट लिखना"

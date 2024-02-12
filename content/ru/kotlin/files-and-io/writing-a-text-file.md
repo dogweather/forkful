@@ -1,6 +1,5 @@
 ---
 title:                "Создание текстового файла"
-aliases: - /ru/kotlin/writing-a-text-file.md
 date:                  2024-01-29T00:05:47.428285-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Создание текстового файла"

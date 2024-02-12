@@ -1,6 +1,5 @@
 ---
 title:                "Redondeo de números"
-aliases: - /es/arduino/rounding-numbers.md
 date:                  2024-01-26T03:42:28.484005-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Redondeo de números"

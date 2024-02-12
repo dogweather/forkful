@@ -1,6 +1,5 @@
 ---
 title:                "日志记录"
-aliases: - /zh/vba/logging.md
 date:                  2024-02-01T21:55:59.516111-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "日志记录"

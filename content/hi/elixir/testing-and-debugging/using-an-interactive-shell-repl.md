@@ -1,6 +1,5 @@
 ---
 title:                "इंटरैक्टिव शेल (REPL) का उपयोग"
-aliases: - /hi/elixir/using-an-interactive-shell-repl.md
 date:                  2024-01-26T04:14:03.436753-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "इंटरैक्टिव शेल (REPL) का उपयोग"

@@ -1,6 +1,5 @@
 ---
 title:                "Generación de números aleatorios"
-aliases: - /es/clojure/generating-random-numbers.md
 date:                  2024-01-27T20:33:03.540409-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Generación de números aleatorios"

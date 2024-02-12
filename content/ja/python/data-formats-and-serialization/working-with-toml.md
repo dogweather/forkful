@@ -1,6 +1,5 @@
 ---
 title:                "TOMLを扱う方法"
-aliases: - /ja/python/working-with-toml.md
 date:                  2024-01-26T04:25:42.813247-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "TOMLを扱う方法"

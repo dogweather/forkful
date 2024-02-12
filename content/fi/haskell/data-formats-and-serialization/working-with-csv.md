@@ -1,6 +1,5 @@
 ---
 title:                "Työskentely CSV:n kanssa"
-aliases: - /fi/haskell/working-with-csv.md
 date:                  2024-02-03T19:19:53.199380-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Työskentely CSV:n kanssa"

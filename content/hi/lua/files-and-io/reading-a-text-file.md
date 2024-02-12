@@ -1,6 +1,5 @@
 ---
 title:                "टेक्स्ट फ़ाइल पढ़ना"
-aliases: - /hi/lua/reading-a-text-file.md
 date:                  2024-01-20T17:55:27.142041-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "टेक्स्ट फ़ाइल पढ़ना"

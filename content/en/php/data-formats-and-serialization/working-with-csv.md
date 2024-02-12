@@ -1,6 +1,5 @@
 ---
 title:                "Working with CSV"
-aliases: - /en/php/working-with-csv.md
 date:                  2024-02-03T19:03:26.357603-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Working with CSV"

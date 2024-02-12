@@ -1,6 +1,5 @@
 ---
 title:                "Reguliere expressies gebruiken"
-aliases: - /nl/arduino/using-regular-expressions.md
 date:                  2024-01-28T22:09:33.004354-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Reguliere expressies gebruiken"

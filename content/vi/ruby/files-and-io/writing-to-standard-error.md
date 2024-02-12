@@ -1,6 +1,5 @@
 ---
 title:                "Ghi vào lỗi chuẩn"
-aliases: - /vi/ruby/writing-to-standard-error.md
 date:                  2024-01-28T22:14:06.452399-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Ghi vào lỗi chuẩn"

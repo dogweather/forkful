@@ -1,6 +1,5 @@
 ---
 title:                "Een string omzetten naar kleine letters"
-aliases: - /nl/vba/converting-a-string-to-lower-case.md
 date:                  2024-02-01T21:51:21.770445-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een string omzetten naar kleine letters"

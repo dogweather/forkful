@@ -1,6 +1,5 @@
 ---
 title:                "עבודה עם JSON"
-aliases: - /he/swift/working-with-json.md
 date:                  2024-02-03T19:24:35.814430-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "עבודה עם JSON"

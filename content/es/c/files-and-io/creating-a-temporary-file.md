@@ -1,6 +1,5 @@
 ---
 title:                "Creando un archivo temporal"
-aliases: - /es/c/creating-a-temporary-file.md
 date:                  2024-02-03T17:54:55.885572-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Creando un archivo temporal"

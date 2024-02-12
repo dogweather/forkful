@@ -1,6 +1,5 @@
 ---
 title:                "Análise de HTML"
-aliases: - /pt/lua/parsing-html.md
 date:                  2024-01-20T15:32:53.283993-07:00
 simple_title:         "Análise de HTML"
 

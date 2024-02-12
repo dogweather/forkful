@@ -1,6 +1,5 @@
 ---
 title:                "CSV와 함께 작업하기"
-aliases: - /ko/fish-shell/working-with-csv.md
 date:                  2024-02-03T19:19:53.311092-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "CSV와 함께 작업하기"

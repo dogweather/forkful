@@ -1,6 +1,5 @@
 ---
 title:                "कोड सुधार"
-aliases: - /hi/bash/refactoring.md
 date:                  2024-01-26T01:17:57.991972-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "कोड सुधार"

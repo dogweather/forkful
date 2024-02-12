@@ -1,6 +1,5 @@
 ---
 title:                "JSON 작업하기"
-aliases: - /ko/c/working-with-json.md
 date:                  2024-02-03T18:12:37.998741-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "JSON 작업하기"

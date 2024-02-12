@@ -1,6 +1,5 @@
 ---
 title:                "处理CSV文件"
-aliases: - /zh/arduino/working-with-csv.md
 date:                  2024-02-03T19:19:22.359482-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "处理CSV文件"

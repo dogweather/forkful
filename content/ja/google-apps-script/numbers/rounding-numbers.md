@@ -1,6 +1,5 @@
 ---
 title:                "数値の四捨五入"
-aliases: - /ja/google-apps-script/rounding-numbers.md
 date:                  2024-02-01T22:01:01.365728-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "数値の四捨五入"

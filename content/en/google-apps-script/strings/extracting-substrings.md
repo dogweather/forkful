@@ -1,6 +1,5 @@
 ---
 title:                "Extracting substrings"
-aliases: - /en/google-apps-script/extracting-substrings.md
 date:                  2024-02-01T21:11:56.433402-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Extracting substrings"

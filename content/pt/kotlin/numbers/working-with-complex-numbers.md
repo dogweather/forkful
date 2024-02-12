@@ -1,6 +1,5 @@
 ---
 title:                "Trabalhando com números complexos"
-aliases: - /pt/kotlin/working-with-complex-numbers.md
 date:                  2024-01-26T04:42:52.821052-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Trabalhando com números complexos"

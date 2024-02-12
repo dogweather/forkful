@@ -1,6 +1,5 @@
 ---
 title:                "HTTP अनुरोध भेजना"
-aliases: - /hi/rust/sending-an-http-request.md
 date:                  2024-01-20T18:21:45.486699-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "HTTP अनुरोध भेजना"

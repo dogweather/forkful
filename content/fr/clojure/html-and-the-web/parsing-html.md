@@ -1,6 +1,5 @@
 ---
 title:                "Analyse syntaxique de HTML"
-aliases: - /fr/clojure/parsing-html.md
 date:                  2024-01-20T15:30:39.019288-07:00
 simple_title:         "Analyse syntaxique de HTML"
 

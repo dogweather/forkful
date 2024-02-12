@@ -1,6 +1,5 @@
 ---
 title:                "Werken met CSV"
-aliases: - /nl/lua/working-with-csv.md
 date:                  2024-01-28T22:10:08.177258-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Werken met CSV"

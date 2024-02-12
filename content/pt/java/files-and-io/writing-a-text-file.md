@@ -1,6 +1,5 @@
 ---
 title:                "Escrevendo um arquivo de texto"
-aliases: - /pt/java/writing-a-text-file.md
 date:                  2024-02-03T19:28:10.590064-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Escrevendo um arquivo de texto"

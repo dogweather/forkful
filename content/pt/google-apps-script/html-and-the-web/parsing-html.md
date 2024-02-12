@@ -1,6 +1,5 @@
 ---
 title:                "Analisando HTML"
-aliases: - /pt/google-apps-script/parsing-html.md
 date:                  2024-02-01T21:56:58.737010-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Analisando HTML"

@@ -1,6 +1,5 @@
 ---
 title:                "HTTP-pyynnön lähettäminen perusautentikoinnilla"
-aliases: - /fi/google-apps-script/sending-an-http-request-with-basic-authentication.md
 date:                  2024-02-01T22:02:28.045815-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "HTTP-pyynnön lähettäminen perusautentikoinnilla"

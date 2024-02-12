@@ -1,6 +1,5 @@
 ---
 title:                "Sprawdzanie, czy katalog istnieje"
-aliases: - /pl/kotlin/checking-if-a-directory-exists.md
 date:                  2024-02-03T19:07:42.416439-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Sprawdzanie, czy katalog istnieje"

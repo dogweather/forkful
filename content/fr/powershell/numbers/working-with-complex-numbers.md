@@ -1,6 +1,5 @@
 ---
 title:                "Manipulation des nombres complexes"
-aliases: - /fr/powershell/working-with-complex-numbers.md
 date:                  2024-01-26T04:44:02.681944-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Manipulation des nombres complexes"

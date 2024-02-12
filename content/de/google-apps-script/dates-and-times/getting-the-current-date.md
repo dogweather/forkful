@@ -1,6 +1,5 @@
 ---
 title:                "Das aktuelle Datum abrufen"
-aliases: - /de/google-apps-script/getting-the-current-date.md
 date:                  2024-02-01T21:54:30.517120-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Das aktuelle Datum abrufen"

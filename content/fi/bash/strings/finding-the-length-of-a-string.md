@@ -1,6 +1,5 @@
 ---
 title:                "Merkkijonon pituuden selvittäminen"
-aliases: - /fi/bash/finding-the-length-of-a-string.md
 date:                  2024-01-20T17:46:59.868967-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Merkkijonon pituuden selvittäminen"

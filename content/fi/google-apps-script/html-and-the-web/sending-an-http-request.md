@@ -1,6 +1,5 @@
 ---
 title:                "HTTP-pyynnön lähettäminen"
-aliases: - /fi/google-apps-script/sending-an-http-request.md
 date:                  2024-02-01T22:01:19.033902-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "HTTP-pyynnön lähettäminen"

@@ -1,6 +1,5 @@
 ---
 title:                "標準エラーへの書き込み"
-aliases: - /ja/haskell/writing-to-standard-error.md
 date:                  2024-02-03T19:33:32.541998-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "標準エラーへの書き込み"

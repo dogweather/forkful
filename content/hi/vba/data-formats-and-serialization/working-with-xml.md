@@ -1,6 +1,5 @@
 ---
 title:                "XML के साथ काम करना"
-aliases: - /hi/vba/working-with-xml.md
 date:                  2024-02-01T22:08:49.287764-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "XML के साथ काम करना"

@@ -1,6 +1,5 @@
 ---
 title:                "Analyse av HTML"
-aliases: - /no/elm/parsing-html.md
 date:                  2024-01-20T15:31:47.530728-07:00
 simple_title:         "Analyse av HTML"
 

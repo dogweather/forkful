@@ -1,6 +1,5 @@
 ---
 title:                "Merkkien poistaminen vastaavan mallin mukaan"
-aliases: - /fi/go/deleting-characters-matching-a-pattern.md
 date:                  2024-02-03T17:55:40.472743-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Merkkien poistaminen vastaavan mallin mukaan"

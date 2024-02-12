@@ -1,6 +1,5 @@
 ---
 title:                "Работа с XML"
-aliases: - /ru/cpp/working-with-xml.md
 date:                  2024-01-29T00:04:59.588552-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Работа с XML"

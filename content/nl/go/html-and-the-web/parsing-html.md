@@ -1,6 +1,5 @@
 ---
 title:                "HTML Parsen"
-aliases: - /nl/go/parsing-html.md
 date:                  2024-02-03T17:59:57.433822-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "HTML Parsen"

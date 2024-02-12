@@ -1,6 +1,5 @@
 ---
 title:                "Trabajando con números complejos"
-aliases: - /es/lua/working-with-complex-numbers.md
 date:                  2024-01-26T04:43:19.175257-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Trabajando con números complejos"

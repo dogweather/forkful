@@ -1,6 +1,5 @@
 ---
 title:                "重构代码"
-aliases: - /zh/php/refactoring.md
 date:                  2024-01-26T01:57:55.872748-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "重构代码"

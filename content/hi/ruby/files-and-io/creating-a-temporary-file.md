@@ -1,6 +1,5 @@
 ---
 title:                "अस्थायी फाइल बनाना"
-aliases: - /hi/ruby/creating-a-temporary-file.md
 date:                  2024-01-20T17:41:54.819424-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "अस्थायी फाइल बनाना"

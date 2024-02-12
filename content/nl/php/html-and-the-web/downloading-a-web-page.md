@@ -1,6 +1,5 @@
 ---
 title:                "Een webpagina downloaden"
-aliases: - /nl/php/downloading-a-web-page.md
 date:                  2024-01-28T21:59:28.287773-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een webpagina downloaden"

@@ -1,6 +1,5 @@
 ---
 title:                "Ghi nhật ký"
-aliases: - /vi/vba/logging.md
 date:                  2024-02-01T21:56:21.667356-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Ghi nhật ký"

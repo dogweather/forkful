@@ -1,6 +1,5 @@
 ---
 title:                "日志记录"
-aliases: - /zh/haskell/logging.md
 date:                  2024-01-26T01:07:28.058659-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "日志记录"

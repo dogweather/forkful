@@ -1,6 +1,5 @@
 ---
 title:                "Anführungszeichen aus einem String entfernen"
-aliases: - /de/typescript/removing-quotes-from-a-string.md
 date:                  2024-01-26T03:42:24.697049-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Anführungszeichen aus einem String entfernen"

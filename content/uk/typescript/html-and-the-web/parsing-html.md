@@ -1,6 +1,5 @@
 ---
 title:                "Аналіз HTML"
-aliases: - /uk/typescript/parsing-html.md
 date:                  2024-02-03T19:13:35.618714-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Аналіз HTML"

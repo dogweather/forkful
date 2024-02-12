@@ -1,6 +1,5 @@
 ---
 title:                "Verificare se una directory esiste"
-aliases: - /it/c/checking-if-a-directory-exists.md
 date:                  2024-02-03T17:52:29.307418-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Verificare se una directory esiste"

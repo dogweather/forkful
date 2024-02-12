@@ -1,6 +1,5 @@
 ---
 title:                "Het gebruik van een interactieve shell (REPL)"
-aliases: - /nl/java/using-an-interactive-shell-repl.md
 date:                  2024-01-28T22:09:28.207931-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Het gebruik van een interactieve shell (REPL)"

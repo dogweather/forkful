@@ -1,6 +1,5 @@
 ---
 title:                "Inviare una richiesta http"
-aliases: - /it/swift/sending-an-http-request.md
 date:                  2024-01-20T18:00:31.510584-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Inviare una richiesta http"

@@ -1,6 +1,5 @@
 ---
 title:                "Надсилання HTTP-запиту з базовою автентифікацією"
-aliases: - /uk/lua/sending-an-http-request-with-basic-authentication.md
 date:                  2024-01-20T18:02:10.161830-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Надсилання HTTP-запиту з базовою автентифікацією"

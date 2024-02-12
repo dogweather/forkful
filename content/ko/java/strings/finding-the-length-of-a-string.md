@@ -1,6 +1,5 @@
 ---
 title:                "문자열의 길이 찾기"
-aliases: - /ko/java/finding-the-length-of-a-string.md
 date:                  2024-01-20T17:47:44.670279-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "문자열의 길이 찾기"

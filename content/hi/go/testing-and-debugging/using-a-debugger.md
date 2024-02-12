@@ -1,6 +1,5 @@
 ---
 title:                "डीबगर का उपयोग करना"
-aliases: - /hi/go/using-a-debugger.md
 date:                  2024-02-03T18:11:15.340143-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "डीबगर का उपयोग करना"

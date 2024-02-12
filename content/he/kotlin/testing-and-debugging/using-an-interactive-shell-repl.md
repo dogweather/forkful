@@ -1,6 +1,5 @@
 ---
 title:                "שימוש במעטפת אינטראקטיבית (REPL)"
-aliases: - /he/kotlin/using-an-interactive-shell-repl.md
 date:                  2024-01-26T04:16:00.817414-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "שימוש במעטפת אינטראקטיבית (REPL)"

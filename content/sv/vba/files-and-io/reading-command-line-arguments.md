@@ -1,6 +1,5 @@
 ---
 title:                "Läsa kommandoradsargument"
-aliases: - /sv/vba/reading-command-line-arguments.md
 date:                  2024-02-01T21:59:18.111736-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Läsa kommandoradsargument"

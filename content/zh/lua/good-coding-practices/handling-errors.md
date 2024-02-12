@@ -1,6 +1,5 @@
 ---
 title:                "处理错误"
-aliases: - /zh/lua/handling-errors.md
 date:                  2024-01-26T00:56:01.161101-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "处理错误"

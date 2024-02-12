@@ -1,6 +1,5 @@
 ---
 title:                "计算未来或过去的日期"
-aliases: - /zh/vba/calculating-a-date-in-the-future-or-past.md
 date:                  2024-02-01T21:48:48.857672-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "计算未来或过去的日期"

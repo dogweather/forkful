@@ -1,6 +1,5 @@
 ---
 title:                "Sjekker om en mappe eksisterer"
-aliases: - /no/powershell/checking-if-a-directory-exists.md
 date:                  2024-02-03T19:08:10.284376-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Sjekker om en mappe eksisterer"

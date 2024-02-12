@@ -1,6 +1,5 @@
 ---
 title:                "Loại bỏ dấu ngoặc kép khỏi chuỗi"
-aliases: - /vi/powershell/removing-quotes-from-a-string.md
 date:                  2024-01-28T22:06:21.315141-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Loại bỏ dấu ngoặc kép khỏi chuỗi"

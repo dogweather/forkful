@@ -1,6 +1,5 @@
 ---
 title:                "Lettura di un file di testo"
-aliases: - /it/powershell/reading-a-text-file.md
 date:                  2024-01-20T17:54:57.815673-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Lettura di un file di testo"

@@ -1,6 +1,5 @@
 ---
 title:                "З'єднання рядків"
-aliases: - /uk/google-apps-script/concatenating-strings.md
 date:                  2024-02-01T21:51:01.745029-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "З'єднання рядків"

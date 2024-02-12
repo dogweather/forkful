@@ -1,6 +1,5 @@
 ---
 title:                "HTMLの解析"
-aliases: - /ja/kotlin/parsing-html.md
 date:                  2024-01-20T15:32:27.916405-07:00
 simple_title:         "HTMLの解析"
 

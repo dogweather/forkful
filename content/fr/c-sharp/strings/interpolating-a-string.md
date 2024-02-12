@@ -1,6 +1,5 @@
 ---
 title:                "Interpolation de chaînes de caractères"
-aliases: - /fr/c-sharp/interpolating-a-string.md
 date:                  2024-01-20T17:50:28.295690-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Interpolation de chaînes de caractères"

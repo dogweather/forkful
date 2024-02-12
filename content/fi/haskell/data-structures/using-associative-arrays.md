@@ -1,6 +1,5 @@
 ---
 title:                "Assosiatiivisten taulukoiden käyttö"
-aliases: - /fi/haskell/using-associative-arrays.md
 date:                  2024-01-30T19:11:38.791760-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Assosiatiivisten taulukoiden käyttö"

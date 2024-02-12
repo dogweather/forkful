@@ -1,6 +1,5 @@
 ---
 title:                "Пошук та заміна тексту"
-aliases: - /uk/go/searching-and-replacing-text.md
 date:                  2024-02-03T18:08:35.095221-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Пошук та заміна тексту"

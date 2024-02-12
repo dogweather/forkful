@@ -1,6 +1,5 @@
 ---
 title:                "חילוץ תת-מחרוזות"
-aliases: - /he/swift/extracting-substrings.md
 date:                  2024-01-20T17:46:33.697880-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "חילוץ תת-מחרוזות"

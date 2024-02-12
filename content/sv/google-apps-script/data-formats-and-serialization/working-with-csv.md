@@ -1,6 +1,5 @@
 ---
 title:                "Att Arbeta med CSV"
-aliases: - /sv/google-apps-script/working-with-csv.md
 date:                  2024-02-01T22:05:23.713105-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Att Arbeta med CSV"

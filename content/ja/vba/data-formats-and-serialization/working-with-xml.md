@@ -1,6 +1,5 @@
 ---
 title:                "XMLとの作業"
-aliases: - /ja/vba/working-with-xml.md
 date:                  2024-02-01T22:07:15.479344-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "XMLとの作業"

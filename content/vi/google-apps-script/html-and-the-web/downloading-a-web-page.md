@@ -1,6 +1,5 @@
 ---
 title:                "Tải về một trang web"
-aliases: - /vi/google-apps-script/downloading-a-web-page.md
 date:                  2024-02-01T21:53:08.040374-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Tải về một trang web"

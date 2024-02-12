@@ -1,6 +1,5 @@
 ---
 title:                "Willekeurige getallen genereren"
-aliases: - /nl/go/generating-random-numbers.md
 date:                  2024-02-03T17:57:20.293324-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Willekeurige getallen genereren"

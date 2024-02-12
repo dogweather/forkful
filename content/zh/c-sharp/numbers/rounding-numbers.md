@@ -1,6 +1,5 @@
 ---
 title:                "数字取整"
-aliases: - /zh/c-sharp/rounding-numbers.md
 date:                  2024-01-26T03:43:24.578715-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "数字取整"

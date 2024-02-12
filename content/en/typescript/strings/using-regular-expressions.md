@@ -1,6 +1,5 @@
 ---
 title:                "Using regular expressions"
-aliases: - /en/typescript/using-regular-expressions.md
 date:                  2024-01-19
 simple_title:         "Using regular expressions"
 

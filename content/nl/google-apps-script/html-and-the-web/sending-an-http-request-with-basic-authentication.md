@@ -1,6 +1,5 @@
 ---
 title:                "Een HTTP-verzoek verzenden met basisauthenticatie"
-aliases: - /nl/google-apps-script/sending-an-http-request-with-basic-authentication.md
 date:                  2024-02-01T22:02:49.045284-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een HTTP-verzoek verzenden met basisauthenticatie"

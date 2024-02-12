@@ -1,6 +1,5 @@
 ---
 title:                "Arredondando números"
-aliases: - /pt/go/rounding-numbers.md
 date:                  2024-02-03T18:07:40.210715-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Arredondando números"

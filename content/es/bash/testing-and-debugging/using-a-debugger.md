@@ -1,6 +1,5 @@
 ---
 title:                "Usando un depurador"
-aliases: - /es/bash/using-a-debugger.md
 date:                  2024-01-26T03:47:23.601844-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Usando un depurador"

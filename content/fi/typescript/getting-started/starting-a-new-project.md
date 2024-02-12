@@ -1,6 +1,5 @@
 ---
 title:                "Uuden projektin aloittaminen"
-aliases: - /fi/typescript/starting-a-new-project.md
 date:                  2024-01-20T18:05:04.507924-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Uuden projektin aloittaminen"

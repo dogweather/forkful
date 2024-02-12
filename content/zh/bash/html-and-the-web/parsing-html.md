@@ -1,6 +1,5 @@
 ---
 title:                "解析HTML"
-aliases: - /zh/bash/parsing-html.md
 date:                  2024-02-03T19:11:28.325215-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "解析HTML"

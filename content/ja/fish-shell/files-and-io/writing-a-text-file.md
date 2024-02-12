@@ -1,6 +1,5 @@
 ---
 title:                "テキストファイルの作成"
-aliases: - /ja/fish-shell/writing-a-text-file.md
 date:                  2024-02-03T19:27:59.794609-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "テキストファイルの作成"

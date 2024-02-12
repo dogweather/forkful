@@ -1,6 +1,5 @@
 ---
 title:                "קריאת קובץ טקסט"
-aliases: - /he/c/reading-a-text-file.md
 date:                  2024-02-03T18:06:28.680535-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "קריאת קובץ טקסט"

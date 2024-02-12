@@ -1,6 +1,5 @@
 ---
 title:                "使用关联数组"
-aliases: - /zh/clojure/using-associative-arrays.md
 date:                  2024-01-30T19:10:50.453708-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "使用关联数组"

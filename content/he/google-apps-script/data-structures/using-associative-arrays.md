@@ -1,6 +1,5 @@
 ---
 title:                "שימוש במערכים אסוציאטיביים"
-aliases: - /he/google-apps-script/using-associative-arrays.md
 date:                  2024-02-01T22:05:02.979567-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "שימוש במערכים אסוציאטיביים"

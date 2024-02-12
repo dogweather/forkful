@@ -1,6 +1,5 @@
 ---
 title:                "テキストファイルの作成"
-aliases: - /ja/ruby/writing-a-text-file.md
 date:                  2024-02-03T19:29:09.891689-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "テキストファイルの作成"

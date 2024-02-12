@@ -1,6 +1,5 @@
 ---
 title:                "Väliaikaistiedoston luominen"
-aliases: - /fi/java/creating-a-temporary-file.md
 date:                  2024-01-20T17:40:41.887926-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Väliaikaistiedoston luominen"

@@ -1,6 +1,5 @@
 ---
 title:                "Tìm chiều dài của một chuỗi ký tự"
-aliases: - /vi/javascript/finding-the-length-of-a-string.md
 date:                  2024-01-28T22:00:20.488413-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Tìm chiều dài của một chuỗi ký tự"

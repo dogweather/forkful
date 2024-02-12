@@ -1,6 +1,5 @@
 ---
 title:                "Kommandozeilenargumente lesen"
-aliases: - /de/c/reading-command-line-arguments.md
 date:                  2024-02-03T18:05:58.013267-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Kommandozeilenargumente lesen"

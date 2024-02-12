@@ -1,6 +1,5 @@
 ---
 title:                "Tolka HTML"
-aliases: - /sv/python/parsing-html.md
 date:                  2024-01-20T15:33:14.375537-07:00
 simple_title:         "Tolka HTML"
 

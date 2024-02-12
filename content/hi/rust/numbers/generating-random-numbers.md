@@ -1,6 +1,5 @@
 ---
 title:                "यादृच्छिक संख्याएँ उत्पन्न करना"
-aliases: - /hi/rust/generating-random-numbers.md
 date:                  2024-01-27T20:35:58.132131-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "यादृच्छिक संख्याएँ उत्पन्न करना"

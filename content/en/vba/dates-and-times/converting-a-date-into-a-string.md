@@ -1,6 +1,5 @@
 ---
 title:                "Converting a date into a string"
-aliases: - /en/vba/converting-a-date-into-a-string.md
 date:                  2024-02-01T21:30:19.679520-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Converting a date into a string"

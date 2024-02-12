@@ -1,6 +1,5 @@
 ---
 title:                "כתיבת בדיקות"
-aliases: - /he/javascript/writing-tests.md
 date:                  2024-02-03T19:31:52.492095-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "כתיבת בדיקות"

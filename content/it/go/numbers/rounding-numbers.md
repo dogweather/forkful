@@ -1,6 +1,5 @@
 ---
 title:                "Arrotondamento dei numeri"
-aliases: - /it/go/rounding-numbers.md
 date:                  2024-02-03T18:08:08.678966-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Arrotondamento dei numeri"

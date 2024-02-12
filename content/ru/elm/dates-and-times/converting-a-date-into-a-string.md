@@ -1,6 +1,5 @@
 ---
 title:                "Преобразование даты в строку"
-aliases: - /ru/elm/converting-a-date-into-a-string.md
 date:                  2024-01-28T23:56:37.104346-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Преобразование даты в строку"
