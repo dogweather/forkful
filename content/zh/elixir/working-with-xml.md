@@ -1,5 +1,7 @@
 ---
 title:                "处理XML"
+aliases:
+- zh/elixir/working-with-xml.md
 date:                  2024-01-26T04:29:50.982177-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "处理XML"

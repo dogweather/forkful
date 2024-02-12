@@ -1,5 +1,7 @@
 ---
 title:                "Excluindo caracteres correspondentes a um padrão"
+aliases:
+- pt/vba/deleting-characters-matching-a-pattern.md
 date:                  2024-02-01T21:52:28.334033-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Excluindo caracteres correspondentes a um padrão"

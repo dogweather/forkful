@@ -1,5 +1,7 @@
 ---
 title:                "Загрузка веб-страницы"
+aliases:
+- ru/lua/downloading-a-web-page.md
 date:                  2024-01-28T23:57:19.670819-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Загрузка веб-страницы"

@@ -1,5 +1,7 @@
 ---
 title:                "복잡한 숫자를 다루기"
+aliases:
+- ko/vba/working-with-complex-numbers.md
 date:                  2024-02-01T22:08:02.485306-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "복잡한 숫자를 다루기"

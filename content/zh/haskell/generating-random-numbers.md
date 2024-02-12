@@ -1,5 +1,7 @@
 ---
 title:                "生成随机数"
+aliases:
+- zh/haskell/generating-random-numbers.md
 date:                  2024-01-27T20:34:15.268069-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "生成随机数"

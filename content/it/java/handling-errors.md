@@ -1,5 +1,7 @@
 ---
 title:                "Gestione degli errori"
+aliases:
+- it/java/handling-errors.md
 date:                  2024-01-26T00:53:36.234682-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Gestione degli errori"

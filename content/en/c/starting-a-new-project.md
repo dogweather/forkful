@@ -1,5 +1,7 @@
 ---
 title:                "Starting a new project"
+aliases:
+- en/c/starting-a-new-project.md
 date:                  2024-02-03T17:50:02.320628-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Starting a new project"

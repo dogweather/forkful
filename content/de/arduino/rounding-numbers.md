@@ -1,5 +1,7 @@
 ---
 title:                "Zahlen runden"
+aliases:
+- de/arduino/rounding-numbers.md
 date:                  2024-01-26T03:42:33.761940-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Zahlen runden"

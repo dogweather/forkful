@@ -1,5 +1,7 @@
 ---
 title:                "Generazione di numeri casuali"
+aliases:
+- it/fish-shell/generating-random-numbers.md
 date:                  2024-01-27T20:33:17.284888-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Generazione di numeri casuali"

@@ -1,5 +1,7 @@
 ---
 title:                "Slik får du tak i dagens dato"
+aliases:
+- no/elm/getting-the-current-date.md
 date:                  2024-01-20T15:14:18.979784-07:00
 simple_title:         "Slik får du tak i dagens dato"
 

@@ -1,5 +1,7 @@
 ---
 title:                "Een HTTP-verzoek verzenden met basisauthenticatie"
+aliases:
+- nl/powershell/sending-an-http-request-with-basic-authentication.md
 date:                  2024-01-28T22:08:16.438387-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een HTTP-verzoek verzenden met basisauthenticatie"

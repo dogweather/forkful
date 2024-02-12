@@ -1,5 +1,7 @@
 ---
 title:                "Generierung von Zufallszahlen"
+aliases:
+- de/ruby/generating-random-numbers.md
 date:                  2024-01-27T20:34:50.289217-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Generierung von Zufallszahlen"

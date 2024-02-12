@@ -1,5 +1,7 @@
 ---
 title:                "Concatenación de cadenas"
+aliases:
+- es/elixir/concatenating-strings.md
 date:                  2024-01-27T10:42:28.298638-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Concatenación de cadenas"

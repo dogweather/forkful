@@ -1,5 +1,7 @@
 ---
 title:                "Työskentely YAML:n kanssa"
+aliases:
+- fi/elixir/working-with-yaml.md
 date:                  2024-02-03T19:25:15.424696-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Työskentely YAML:n kanssa"

@@ -1,5 +1,7 @@
 ---
 title:                "Een tekstbestand lezen"
+aliases:
+- nl/vba/reading-a-text-file.md
 date:                  2024-02-01T21:58:38.268810-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Een tekstbestand lezen"

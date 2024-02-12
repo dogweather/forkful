@@ -1,5 +1,7 @@
 ---
 title:                "Commandoregelargumenten lezen"
+aliases:
+- nl/swift/reading-command-line-arguments.md
 date:                  2024-01-28T22:05:35.075274-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Commandoregelargumenten lezen"

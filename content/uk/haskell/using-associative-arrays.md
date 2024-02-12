@@ -1,5 +1,7 @@
 ---
 title:                "Використання асоціативних масивів"
+aliases:
+- uk/haskell/using-associative-arrays.md
 date:                  2024-01-30T19:12:10.566699-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Використання асоціативних масивів"

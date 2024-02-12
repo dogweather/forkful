@@ -1,5 +1,7 @@
 ---
 title:                "生成随机数"
+aliases:
+- zh/clojure/generating-random-numbers.md
 date:                  2024-01-27T20:32:43.522821-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "生成随机数"

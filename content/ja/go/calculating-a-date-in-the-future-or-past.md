@@ -1,5 +1,7 @@
 ---
 title:                "「未来または過去の日付の計算」"
+aliases:
+- ja/go/calculating-a-date-in-the-future-or-past.md
 date:                  2024-02-03T17:53:00.173651-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "「未来または過去の日付の計算」"

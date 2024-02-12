@@ -1,5 +1,7 @@
 ---
 title:                "Päivämäärän muuntaminen merkkijonoksi"
+aliases:
+- fi/php/converting-a-date-into-a-string.md
 date:                  2024-01-20T17:37:18.857011-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Päivämäärän muuntaminen merkkijonoksi"

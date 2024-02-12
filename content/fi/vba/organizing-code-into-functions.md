@@ -1,5 +1,7 @@
 ---
 title:                "Koodin järjestäminen funktioihin"
+aliases:
+- fi/vba/organizing-code-into-functions.md
 date:                  2024-02-01T21:56:48.087391-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Koodin järjestäminen funktioihin"

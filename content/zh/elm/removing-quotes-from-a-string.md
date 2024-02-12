@@ -1,5 +1,7 @@
 ---
 title:                "从字符串中移除引号"
+aliases:
+- zh/elm/removing-quotes-from-a-string.md
 date:                  2024-01-26T03:38:49.257132-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "从字符串中移除引号"

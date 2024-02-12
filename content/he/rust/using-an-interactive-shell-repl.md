@@ -1,5 +1,7 @@
 ---
 title:                "שימוש במעטפת אינטראקטיבית (REPL)"
+aliases:
+- he/rust/using-an-interactive-shell-repl.md
 date:                  2024-01-26T04:18:55.572082-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "שימוש במעטפת אינטראקטיבית (REPL)"

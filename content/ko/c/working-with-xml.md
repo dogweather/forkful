@@ -1,5 +1,7 @@
 ---
 title:                "XML로 작업하기"
+aliases:
+- ko/c/working-with-xml.md
 date:                  2024-02-03T18:13:29.773466-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "XML로 작업하기"

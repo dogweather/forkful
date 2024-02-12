@@ -1,5 +1,7 @@
 ---
 title:                "ランダム数の生成"
+aliases:
+- ja/google-apps-script/generating-random-numbers.md
 date:                  2024-02-01T21:54:05.577769-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "ランダム数の生成"

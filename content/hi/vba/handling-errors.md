@@ -1,5 +1,7 @@
 ---
 title:                "त्रुटियों का संभालन"
+aliases:
+- hi/vba/handling-errors.md
 date:                  2024-02-01T21:56:59.289717-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "त्रुटियों का संभालन"

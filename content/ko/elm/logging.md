@@ -1,5 +1,7 @@
 ---
 title:                "로깅"
+aliases:
+- ko/elm/logging.md
 date:                  2024-01-26T01:03:49.083948-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "로깅"

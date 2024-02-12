@@ -1,5 +1,7 @@
 ---
 title:                "स्ट्रिंग से तारीख पार्स करना"
+aliases:
+- hi/cpp/parsing-a-date-from-a-string.md
 date:                  2024-02-03T19:14:33.271759-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "स्ट्रिंग से तारीख पार्स करना"

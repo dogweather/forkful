@@ -1,5 +1,7 @@
 ---
 title:                "Convirtiendo una fecha en una cadena de caracteres"
+aliases:
+- es/google-apps-script/converting-a-date-into-a-string.md
 date:                  2024-02-01T21:50:45.671748-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Convirtiendo una fecha en una cadena de caracteres"

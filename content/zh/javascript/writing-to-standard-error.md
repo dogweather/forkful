@@ -1,5 +1,7 @@
 ---
 title:                "写入标准错误"
+aliases:
+- zh/javascript/writing-to-standard-error.md
 date:                  2024-02-03T19:33:43.615065-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "写入标准错误"

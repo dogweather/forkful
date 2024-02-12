@@ -1,5 +1,7 @@
 ---
 title:                "インタラクティブシェル（REPL）の使用"
+aliases:
+- ja/haskell/using-an-interactive-shell-repl.md
 date:                  2024-01-26T04:14:54.902218-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "インタラクティブシェル（REPL）の使用"

@@ -1,5 +1,7 @@
 ---
 title:                "Scrivere un file di testo"
+aliases:
+- it/javascript/writing-a-text-file.md
 date:                  2024-02-03T19:28:35.569646-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Scrivere un file di testo"

@@ -1,5 +1,7 @@
 ---
 title:                "Kontroll om en katalog existerar"
+aliases:
+- sv/vba/checking-if-a-directory-exists.md
 date:                  2024-02-01T21:50:55.116090-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Kontroll om en katalog existerar"

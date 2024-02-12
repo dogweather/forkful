@@ -1,5 +1,7 @@
 ---
 title:                "डीबगर का उपयोग करना"
+aliases:
+- hi/google-apps-script/using-a-debugger.md
 date:                  2024-02-01T22:04:48.670653-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "डीबगर का उपयोग करना"

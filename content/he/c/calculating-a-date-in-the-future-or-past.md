@@ -1,5 +1,7 @@
 ---
 title:                "חישוב תאריך בעתיד או בעבר"
+aliases:
+- he/c/calculating-a-date-in-the-future-or-past.md
 date:                  2024-02-03T17:53:57.885244-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "חישוב תאריך בעתיד או בעבר"

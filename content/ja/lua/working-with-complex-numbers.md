@@ -1,5 +1,7 @@
 ---
 title:                "複素数の扱い方"
+aliases:
+- ja/lua/working-with-complex-numbers.md
 date:                  2024-01-26T04:43:35.099469-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "複素数の扱い方"

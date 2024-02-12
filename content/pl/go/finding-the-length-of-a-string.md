@@ -1,5 +1,7 @@
 ---
 title:                "Znajdowanie długości łańcucha"
+aliases:
+- pl/go/finding-the-length-of-a-string.md
 date:                  2024-02-03T17:57:04.445716-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Znajdowanie długości łańcucha"

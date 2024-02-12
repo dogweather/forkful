@@ -1,5 +1,7 @@
 ---
 title:                "Using regular expressions"
+aliases:
+- en/haskell/using-regular-expressions.md
 date:                  2024-02-03T19:02:43.421953-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Using regular expressions"

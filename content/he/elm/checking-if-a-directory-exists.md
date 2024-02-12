@@ -1,5 +1,7 @@
 ---
 title:                "בדיקה האם תיקייה קיימת"
+aliases:
+- he/elm/checking-if-a-directory-exists.md
 date:                  2024-01-20T14:56:41.388272-07:00
 simple_title:         "בדיקה האם תיקייה קיימת"
 

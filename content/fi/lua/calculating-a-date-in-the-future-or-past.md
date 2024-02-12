@@ -1,5 +1,7 @@
 ---
 title:                "Tulevan tai menneen päivämäärän laskeminen"
+aliases:
+- fi/lua/calculating-a-date-in-the-future-or-past.md
 date:                  2024-01-20T17:31:24.723669-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Tulevan tai menneen päivämäärän laskeminen"

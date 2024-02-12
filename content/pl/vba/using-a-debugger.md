@@ -1,5 +1,7 @@
 ---
 title:                "Korzystanie z debuggera"
+aliases:
+- pl/vba/using-a-debugger.md
 date:                  2024-02-01T22:03:30.504801-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Korzystanie z debuggera"

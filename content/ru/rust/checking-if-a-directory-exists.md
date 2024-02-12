@@ -1,5 +1,7 @@
 ---
 title:                "Проверка существования директории"
+aliases:
+- ru/rust/checking-if-a-directory-exists.md
 date:                  2024-01-28T23:55:24.287571-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Проверка существования директории"

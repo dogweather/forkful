@@ -1,5 +1,7 @@
 ---
 title:                "Code organiseren in functies"
+aliases:
+- nl/bash/organizing-code-into-functions.md
 date:                  2024-01-28T22:02:53.168649-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Code organiseren in functies"

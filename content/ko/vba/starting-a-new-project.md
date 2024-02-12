@@ -1,5 +1,7 @@
 ---
 title:                "새 프로젝트 시작하기"
+aliases:
+- ko/vba/starting-a-new-project.md
 date:                  2024-02-01T22:03:07.075859-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "새 프로젝트 시작하기"

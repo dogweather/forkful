@@ -1,5 +1,7 @@
 ---
 title:                "कोड की सफाई"
+aliases:
+- hi/elm/refactoring.md
 date:                  2024-01-26T01:36:06.903268-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "कोड की सफाई"

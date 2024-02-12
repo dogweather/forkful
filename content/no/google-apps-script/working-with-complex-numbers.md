@@ -1,5 +1,7 @@
 ---
 title:                "Arbeide med komplekse tall"
+aliases:
+- no/google-apps-script/working-with-complex-numbers.md
 date:                  2024-02-01T22:07:42.909564-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Arbeide med komplekse tall"

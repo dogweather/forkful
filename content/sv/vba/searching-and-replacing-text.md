@@ -1,5 +1,7 @@
 ---
 title:                "Söka och ersätta text"
+aliases:
+- sv/vba/searching-and-replacing-text.md
 date:                  2024-02-01T22:01:21.402020-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Söka och ersätta text"

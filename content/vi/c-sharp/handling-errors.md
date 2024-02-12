@@ -1,5 +1,7 @@
 ---
 title:                "Xử lý lỗi"
+aliases:
+- vi/c-sharp/handling-errors.md
 date:                  2024-01-28T22:02:31.869478-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Xử lý lỗi"

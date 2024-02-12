@@ -1,5 +1,7 @@
 ---
 title:                "Tái cấu trúc mã"
+aliases:
+- vi/python/refactoring.md
 date:                  2024-01-28T22:07:01.033921-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Tái cấu trúc mã"

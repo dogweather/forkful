@@ -1,5 +1,7 @@
 ---
 title:                "Sprawdzanie, czy katalog istnieje"
+aliases:
+- pl/google-apps-script/checking-if-a-directory-exists.md
 date:                  2024-02-01T21:50:33.094944-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Sprawdzanie, czy katalog istnieje"

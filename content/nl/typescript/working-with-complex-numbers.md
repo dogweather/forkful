@@ -1,5 +1,7 @@
 ---
 title:                "Werken met complexe getallen"
+aliases:
+- nl/typescript/working-with-complex-numbers.md
 date:                  2024-01-28T22:12:57.796549-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Werken met complexe getallen"

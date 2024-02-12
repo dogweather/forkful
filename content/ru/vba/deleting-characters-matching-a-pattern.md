@@ -1,5 +1,7 @@
 ---
 title:                "Удаление символов, соответствующих шаблону"
+aliases:
+- ru/vba/deleting-characters-matching-a-pattern.md
 date:                  2024-02-01T21:53:07.287114-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Удаление символов, соответствующих шаблону"

@@ -1,5 +1,7 @@
 ---
 title:                "Å sende en HTTP-forespørsel med grunnleggende autentisering"
+aliases:
+- no/vba/sending-an-http-request-with-basic-authentication.md
 date:                  2024-02-01T22:03:14.144203-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Å sende en HTTP-forespørsel med grunnleggende autentisering"

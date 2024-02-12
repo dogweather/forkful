@@ -1,5 +1,7 @@
 ---
 title:                "Enviando uma solicitação HTTP"
+aliases:
+- pt/google-apps-script/sending-an-http-request.md
 date:                  2024-02-01T22:01:46.959666-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Enviando uma solicitação HTTP"

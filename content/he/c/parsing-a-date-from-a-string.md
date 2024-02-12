@@ -1,5 +1,7 @@
 ---
 title:                "ניתוח תאריך ממחרוזת"
+aliases:
+- he/c/parsing-a-date-from-a-string.md
 date:                  2024-02-03T18:06:05.632405-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "ניתוח תאריך ממחרוזת"

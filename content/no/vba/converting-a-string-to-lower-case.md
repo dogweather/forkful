@@ -1,5 +1,7 @@
 ---
 title:                "Konvertere en streng til små bokstaver"
+aliases:
+- no/vba/converting-a-string-to-lower-case.md
 date:                  2024-02-01T21:51:17.848297-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Konvertere en streng til små bokstaver"

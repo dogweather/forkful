@@ -1,5 +1,7 @@
 ---
 title:                "Перетворення рядка в нижній регістр"
+aliases:
+- uk/google-apps-script/converting-a-string-to-lower-case.md
 date:                  2024-02-01T21:52:03.623573-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Перетворення рядка в нижній регістр"

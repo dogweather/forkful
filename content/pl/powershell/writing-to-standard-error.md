@@ -1,5 +1,7 @@
 ---
 title:                "Pisanie do standardowego błędu"
+aliases:
+- pl/powershell/writing-to-standard-error.md
 date:                  2024-01-19
 simple_title:         "Pisanie do standardowego błędu"
 

@@ -1,5 +1,7 @@
 ---
 title:                "Tìm chiều dài của một chuỗi ký tự"
+aliases:
+- vi/arduino/finding-the-length-of-a-string.md
 date:                  2024-01-28T22:00:23.580348-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Tìm chiều dài của một chuỗi ký tự"

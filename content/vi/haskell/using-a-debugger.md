@@ -1,5 +1,7 @@
 ---
 title:                "Sử dụng bộ gỡ lỗi"
+aliases:
+- vi/haskell/using-a-debugger.md
 date:                  2024-01-28T22:09:23.963742-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Sử dụng bộ gỡ lỗi"

@@ -1,5 +1,7 @@
 ---
 title:                "Beregning av en dato i fremtiden eller fortiden"
+aliases:
+- no/google-apps-script/calculating-a-date-in-the-future-or-past.md
 date:                  2024-02-01T21:49:07.588375-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Beregning av en dato i fremtiden eller fortiden"

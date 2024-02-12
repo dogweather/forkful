@@ -1,5 +1,7 @@
 ---
 title:                "Convirtiendo una cadena de texto a minúsculas"
+aliases:
+- es/go/converting-a-string-to-lower-case.md
 date:                  2024-02-03T17:54:33.477030-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Convirtiendo una cadena de texto a minúsculas"

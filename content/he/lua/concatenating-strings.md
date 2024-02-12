@@ -1,5 +1,7 @@
 ---
 title:                "שרשור מחרוזות"
+aliases:
+- he/lua/concatenating-strings.md
 date:                  2024-01-20T17:35:14.696616-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "שרשור מחרוזות"

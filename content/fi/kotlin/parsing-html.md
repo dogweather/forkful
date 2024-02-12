@@ -1,5 +1,7 @@
 ---
 title:                "HTML:n jäsentäminen"
+aliases:
+- fi/kotlin/parsing-html.md
 date:                  2024-01-20T15:32:28.787617-07:00
 simple_title:         "HTML:n jäsentäminen"
 

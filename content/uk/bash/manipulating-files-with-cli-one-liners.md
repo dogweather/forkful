@@ -1,5 +1,7 @@
 ---
 title:                "Маніпулювання файлами за допомогою однорядкових команд CLI"
+aliases:
+- uk/bash/manipulating-files-with-cli-one-liners.md
 date:                  2024-01-27T16:21:28.873984-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Маніпулювання файлами за допомогою однорядкових команд CLI"

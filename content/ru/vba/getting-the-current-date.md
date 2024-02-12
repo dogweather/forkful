@@ -1,5 +1,7 @@
 ---
 title:                "Получение текущей даты"
+aliases:
+- ru/vba/getting-the-current-date.md
 date:                  2024-02-01T21:54:53.298692-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Получение текущей даты"

@@ -1,5 +1,7 @@
 ---
 title:                "Перевірка наявності директорії"
+aliases:
+- uk/google-apps-script/checking-if-a-directory-exists.md
 date:                  2024-02-01T21:49:50.809410-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Перевірка наявності директорії"

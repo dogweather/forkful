@@ -1,5 +1,7 @@
 ---
 title:                "Arrondissement des nombres"
+aliases:
+- fr/google-apps-script/rounding-numbers.md
 date:                  2024-02-01T22:00:43.642408-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Arrondissement des nombres"

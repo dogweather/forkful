@@ -1,5 +1,7 @@
 ---
 title:                "Controleren of een directory bestaat"
+aliases:
+- nl/fish-shell/checking-if-a-directory-exists.md
 date:                  2024-01-28T21:56:25.775440-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Controleren of een directory bestaat"

@@ -1,5 +1,7 @@
 ---
 title:                "Scrivere sull'errore standard"
+aliases:
+- it/php/writing-to-standard-error.md
 date:                  2024-02-03T19:34:08.705130-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Scrivere sull'errore standard"

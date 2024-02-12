@@ -1,5 +1,7 @@
 ---
 title:                "CSV के साथ काम करना"
+aliases:
+- hi/fish-shell/working-with-csv.md
 date:                  2024-02-03T19:20:47.232756-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "CSV के साथ काम करना"

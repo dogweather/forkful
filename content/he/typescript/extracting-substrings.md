@@ -1,5 +1,7 @@
 ---
 title:                "חילוץ תת-מחרוזות"
+aliases:
+- he/typescript/extracting-substrings.md
 date:                  2024-01-20T17:46:50.611366-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "חילוץ תת-מחרוזות"

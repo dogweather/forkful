@@ -1,5 +1,7 @@
 ---
 title:                "त्रुटियों का संभालन"
+aliases:
+- hi/google-apps-script/handling-errors.md
 date:                  2024-02-01T21:57:22.086549-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "त्रुटियों का संभालन"

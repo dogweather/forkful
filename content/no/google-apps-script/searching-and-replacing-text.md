@@ -1,5 +1,7 @@
 ---
 title:                "Søke og erstatte tekst"
+aliases:
+- no/google-apps-script/searching-and-replacing-text.md
 date:                  2024-02-01T22:01:12.690197-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Søke og erstatte tekst"

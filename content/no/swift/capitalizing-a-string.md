@@ -1,5 +1,7 @@
 ---
 title:                "Sette stor bokstav i en streng"
+aliases:
+- no/swift/capitalizing-a-string.md
 date:                  2024-02-03T19:06:29.518801-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Sette stor bokstav i en streng"

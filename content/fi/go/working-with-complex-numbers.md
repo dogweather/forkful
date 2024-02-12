@@ -1,5 +1,7 @@
 ---
 title:                "Työskenteleminen kompleksilukujen kanssa"
+aliases:
+- fi/go/working-with-complex-numbers.md
 date:                  2024-02-03T18:14:14.145333-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Työskenteleminen kompleksilukujen kanssa"

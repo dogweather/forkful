@@ -1,5 +1,7 @@
 ---
 title:                "Аналіз HTML"
+aliases:
+- uk/c-sharp/parsing-html.md
 date:                  2024-02-03T19:12:09.897557-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Аналіз HTML"

@@ -1,5 +1,7 @@
 ---
 title:                "Интерполяция строки"
+aliases:
+- ru/javascript/interpolating-a-string.md
 date:                  2024-01-28T23:58:54.835257-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Интерполяция строки"

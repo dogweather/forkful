@@ -1,5 +1,7 @@
 ---
 title:                "एरर्स को हैंडल करना"
+aliases:
+- hi/javascript/handling-errors.md
 date:                  2024-01-26T00:55:18.732187-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "एरर्स को हैंडल करना"

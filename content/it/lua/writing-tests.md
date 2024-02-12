@@ -1,5 +1,7 @@
 ---
 title:                "Scrivere test"
+aliases:
+- it/lua/writing-tests.md
 date:                  2024-02-03T19:31:18.950037-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Scrivere test"

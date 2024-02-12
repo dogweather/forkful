@@ -1,5 +1,7 @@
 ---
 title:                "Lendo um arquivo de texto"
+aliases:
+- pt/arduino/reading-a-text-file.md
 date:                  2024-01-20T17:53:43.684854-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Lendo um arquivo de texto"

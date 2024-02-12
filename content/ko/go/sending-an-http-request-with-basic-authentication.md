@@ -1,5 +1,7 @@
 ---
 title:                "기본 인증을 사용하여 HTTP 요청 보내기"
+aliases:
+- ko/go/sending-an-http-request-with-basic-authentication.md
 date:                  2024-02-03T18:09:27.915898-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "기본 인증을 사용하여 HTTP 요청 보내기"

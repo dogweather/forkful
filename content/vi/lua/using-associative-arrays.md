@@ -1,5 +1,7 @@
 ---
 title:                "Sử dụng mảng liên kết"
+aliases:
+- vi/lua/using-associative-arrays.md
 date:                  2024-01-30T19:12:01.104064-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Sử dụng mảng liên kết"

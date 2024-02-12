@@ -1,5 +1,7 @@
 ---
 title:                "Lettura di un file di testo"
+aliases:
+- it/elixir/reading-a-text-file.md
 date:                  2024-01-20T17:54:02.427029-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Lettura di un file di testo"

@@ -1,5 +1,7 @@
 ---
 title:                "Kontrollera om en katalog existerar"
+aliases:
+- sv/powershell/checking-if-a-directory-exists.md
 date:                  2024-02-03T19:08:13.191332-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Kontrollera om en katalog existerar"

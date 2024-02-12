@@ -1,5 +1,7 @@
 ---
 title:                "Sammenligning av to datoer"
+aliases:
+- no/vba/comparing-two-dates.md
 date:                  2024-02-01T21:50:05.731220-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Sammenligning av to datoer"

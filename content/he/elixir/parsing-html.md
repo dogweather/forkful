@@ -1,5 +1,7 @@
 ---
 title:                "פיענוח HTML"
+aliases:
+- he/elixir/parsing-html.md
 date:                  2024-02-03T19:12:15.056108-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "פיענוח HTML"

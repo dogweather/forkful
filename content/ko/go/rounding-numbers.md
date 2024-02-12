@@ -1,5 +1,7 @@
 ---
 title:                "숫자 반올림"
+aliases:
+- ko/go/rounding-numbers.md
 date:                  2024-02-03T18:08:10.761502-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "숫자 반올림"

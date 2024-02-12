@@ -1,5 +1,7 @@
 ---
 title:                "רפאקטורינג"
+aliases:
+- he/c/refactoring.md
 date:                  2024-02-03T18:08:25.649099-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "רפאקטורינג"

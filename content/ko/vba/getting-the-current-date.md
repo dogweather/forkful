@@ -1,5 +1,7 @@
 ---
 title:                "현재 날짜 얻기"
+aliases:
+- ko/vba/getting-the-current-date.md
 date:                  2024-02-01T21:54:44.125433-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "현재 날짜 얻기"

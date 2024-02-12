@@ -1,5 +1,7 @@
 ---
 title:                "Att använda associativa arrayer"
+aliases:
+- sv/fish-shell/using-associative-arrays.md
 date:                  2024-01-30T19:10:59.211907-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Att använda associativa arrayer"

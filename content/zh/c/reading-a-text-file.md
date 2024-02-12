@@ -1,5 +1,7 @@
 ---
 title:                "读取文本文件"
+aliases:
+- zh/c/reading-a-text-file.md
 date:                  2024-02-03T18:05:12.038557-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "读取文本文件"

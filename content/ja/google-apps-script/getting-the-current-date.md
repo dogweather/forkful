@@ -1,5 +1,7 @@
 ---
 title:                "現在の日付の取得"
+aliases:
+- ja/google-apps-script/getting-the-current-date.md
 date:                  2024-02-01T21:55:09.340930-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "現在の日付の取得"

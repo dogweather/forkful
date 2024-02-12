@@ -1,5 +1,7 @@
 ---
 title:                "Логирование"
+aliases:
+- ru/vba/logging.md
 date:                  2024-02-01T21:56:27.341301-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Логирование"

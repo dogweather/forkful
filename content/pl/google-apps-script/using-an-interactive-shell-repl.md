@@ -1,5 +1,7 @@
 ---
 title:                "Korzystanie z interaktywnej powłoki (REPL)"
+aliases:
+- pl/google-apps-script/using-an-interactive-shell-repl.md
 date:                  2024-02-01T22:04:09.681795-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Korzystanie z interaktywnej powłoki (REPL)"

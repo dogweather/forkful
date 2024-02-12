@@ -1,5 +1,7 @@
 ---
 title:                "복소수 다루기"
+aliases:
+- ko/arduino/working-with-complex-numbers.md
 date:                  2024-01-26T04:37:23.782156-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "복소수 다루기"

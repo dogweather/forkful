@@ -1,5 +1,7 @@
 ---
 title:                "Tests Schrijven"
+aliases:
+- nl/kotlin/writing-tests.md
 date:                  2024-01-28T22:13:11.932403-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Tests Schrijven"

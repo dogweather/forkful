@@ -1,5 +1,7 @@
 ---
 title:                "Analysera ett datum från en sträng"
+aliases:
+- sv/cpp/parsing-a-date-from-a-string.md
 date:                  2024-02-03T19:13:39.512332-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Analysera ett datum från en sträng"

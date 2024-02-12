@@ -1,5 +1,7 @@
 ---
 title:                "वेब पेज डाउनलोड करना"
+aliases:
+- hi/vba/downloading-a-web-page.md
 date:                  2024-02-01T21:54:07.587717-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "वेब पेज डाउनलोड करना"

@@ -1,5 +1,7 @@
 ---
 title:                "테스트 작성하기"
+aliases:
+- ko/vba/writing-tests.md
 date:                  2024-02-01T22:08:43.133098-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "테스트 작성하기"

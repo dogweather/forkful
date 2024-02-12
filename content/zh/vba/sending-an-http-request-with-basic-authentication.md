@@ -1,5 +1,7 @@
 ---
 title:                "使用基本认证发送HTTP请求"
+aliases:
+- zh/vba/sending-an-http-request-with-basic-authentication.md
 date:                  2024-02-01T22:04:00.725036-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "使用基本认证发送HTTP请求"

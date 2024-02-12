@@ -1,5 +1,7 @@
 ---
 title:                "インタラクティブシェル（REPL）の使用方法"
+aliases:
+- ja/go/using-an-interactive-shell-repl.md
 date:                  2024-02-03T18:10:26.774137-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "インタラクティブシェル（REPL）の使用方法"

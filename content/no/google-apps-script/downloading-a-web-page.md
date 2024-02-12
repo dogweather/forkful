@@ -1,5 +1,7 @@
 ---
 title:                "Nedlasting av en nettside"
+aliases:
+- no/google-apps-script/downloading-a-web-page.md
 date:                  2024-02-01T21:52:36.303703-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Nedlasting av en nettside"

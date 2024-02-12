@@ -1,5 +1,7 @@
 ---
 title:                "Einen HTTP-Request senden"
+aliases:
+- de/java/sending-an-http-request.md
 date:                  2024-01-20T18:00:07.247634-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Einen HTTP-Request senden"

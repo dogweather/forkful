@@ -1,5 +1,7 @@
 ---
 title:                "Envoyer une requête HTTP avec une authentification de base"
+aliases:
+- fr/google-apps-script/sending-an-http-request-with-basic-authentication.md
 date:                  2024-02-01T22:02:01.336403-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Envoyer une requête HTTP avec une authentification de base"

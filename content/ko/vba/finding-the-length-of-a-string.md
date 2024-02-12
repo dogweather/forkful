@@ -1,5 +1,7 @@
 ---
 title:                "문자열의 길이 찾기"
+aliases:
+- ko/vba/finding-the-length-of-a-string.md
 date:                  2024-02-01T21:53:56.261188-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "문자열의 길이 찾기"

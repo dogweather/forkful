@@ -1,5 +1,7 @@
 ---
 title:                "XML 다루기"
+aliases:
+- ko/kotlin/working-with-xml.md
 date:                  2024-01-26T04:33:44.060438-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "XML 다루기"

@@ -1,5 +1,7 @@
 ---
 title:                "打印调试信息"
+aliases:
+- zh/cpp/printing-debug-output.md
 date:                  2024-01-20T17:51:59.288699-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "打印调试信息"

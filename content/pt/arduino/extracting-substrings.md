@@ -1,5 +1,7 @@
 ---
 title:                "Extraindo substrings"
+aliases:
+- pt/arduino/extracting-substrings.md
 date:                  2024-01-20T17:44:54.134333-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Extraindo substrings"

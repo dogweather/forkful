@@ -1,5 +1,7 @@
 ---
 title:                "미래 또는 과거의 날짜 계산하기"
+aliases:
+- ko/google-apps-script/calculating-a-date-in-the-future-or-past.md
 date:                  2024-02-01T21:49:25.620325-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "미래 또는 과거의 날짜 계산하기"

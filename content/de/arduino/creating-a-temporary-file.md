@@ -1,5 +1,7 @@
 ---
 title:                "Erstellung einer temporären Datei"
+aliases:
+- de/arduino/creating-a-temporary-file.md
 date:                  2024-01-20T17:39:38.412972-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Erstellung einer temporären Datei"

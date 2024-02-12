@@ -1,5 +1,7 @@
 ---
 title:                "वर्तमान दिनांक प्राप्त करना"
+aliases:
+- hi/google-apps-script/getting-the-current-date.md
 date:                  2024-02-01T21:56:19.518968-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "वर्तमान दिनांक प्राप्त करना"

@@ -1,5 +1,7 @@
 ---
 title:                "Extrahera delsträngar"
+aliases:
+- sv/google-apps-script/extracting-substrings.md
 date:                  2024-02-01T21:53:07.739278-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Extrahera delsträngar"

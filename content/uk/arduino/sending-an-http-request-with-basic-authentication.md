@@ -1,5 +1,7 @@
 ---
 title:                "Надсилання HTTP-запиту з базовою автентифікацією"
+aliases:
+- uk/arduino/sending-an-http-request-with-basic-authentication.md
 date:                  2024-01-20T18:00:58.993152-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Надсилання HTTP-запиту з базовою автентифікацією"

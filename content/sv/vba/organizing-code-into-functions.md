@@ -1,5 +1,7 @@
 ---
 title:                "Att organisera kod i funktioner"
+aliases:
+- sv/vba/organizing-code-into-functions.md
 date:                  2024-02-01T21:56:41.696549-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Att organisera kod i funktioner"

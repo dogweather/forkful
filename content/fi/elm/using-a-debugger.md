@@ -1,5 +1,7 @@
 ---
 title:                "Debuggerin käyttö"
+aliases:
+- fi/elm/using-a-debugger.md
 date:                  2024-01-26T03:49:17.623503-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Debuggerin käyttö"

@@ -1,5 +1,7 @@
 ---
 title:                "Editing files in-place with CLI one-liners"
+aliases:
+- en/fish-shell/editing-files-in-place-with-cli-one-liners.md
 date:                  2024-01-27T16:14:16.677583-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Editing files in-place with CLI one-liners"

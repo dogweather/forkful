@@ -1,5 +1,7 @@
 ---
 title:                "Alimerkkijonojen erottaminen"
+aliases:
+- fi/google-apps-script/extracting-substrings.md
 date:                  2024-02-01T21:53:01.989144-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Alimerkkijonojen erottaminen"

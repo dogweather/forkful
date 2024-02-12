@@ -1,5 +1,7 @@
 ---
 title:                "Praca z JSON"
+aliases:
+- pl/swift/working-with-json.md
 date:                  2024-01-19
 simple_title:         "Praca z JSON"
 

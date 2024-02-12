@@ -1,5 +1,7 @@
 ---
 title:                "अस्थायी फाइल बनाना"
+aliases:
+- hi/c-sharp/creating-a-temporary-file.md
 date:                  2024-01-20T17:40:54.364479-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "अस्थायी फाइल बनाना"

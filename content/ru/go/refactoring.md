@@ -1,5 +1,7 @@
 ---
 title:                "Рефакторинг"
+aliases:
+- ru/go/refactoring.md
 date:                  2024-02-03T18:07:31.260146-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Рефакторинг"

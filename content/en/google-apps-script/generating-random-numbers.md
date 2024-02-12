@@ -1,5 +1,7 @@
 ---
 title:                "Generating random numbers"
+aliases:
+- en/google-apps-script/generating-random-numbers.md
 date:                  2024-02-01T21:12:05.345639-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Generating random numbers"

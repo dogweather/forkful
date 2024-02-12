@@ -1,5 +1,7 @@
 ---
 title:                "Työskentely TOML:n kanssa"
+aliases:
+- fi/cpp/working-with-toml.md
 date:                  2024-01-26T04:19:48.386676-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Työskentely TOML:n kanssa"

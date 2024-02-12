@@ -1,5 +1,7 @@
 ---
 title:                "Рефакторинг"
+aliases:
+- uk/elixir/refactoring.md
 date:                  2024-01-26T01:30:43.774317-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Рефакторинг"

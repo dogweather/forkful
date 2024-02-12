@@ -1,5 +1,7 @@
 ---
 title:                "테스트 작성하기"
+aliases:
+- ko/go/writing-tests.md
 date:                  2024-02-03T18:15:14.873761-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "테스트 작성하기"

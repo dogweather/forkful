@@ -1,5 +1,7 @@
 ---
 title:                "Аналіз HTML"
+aliases:
+- uk/php/parsing-html.md
 date:                  2024-02-03T19:13:11.451836-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Аналіз HTML"

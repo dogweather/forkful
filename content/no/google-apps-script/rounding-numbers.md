@@ -1,5 +1,7 @@
 ---
 title:                "Avrunding av tall"
+aliases:
+- no/google-apps-script/rounding-numbers.md
 date:                  2024-02-01T22:00:42.422121-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Avrunding av tall"

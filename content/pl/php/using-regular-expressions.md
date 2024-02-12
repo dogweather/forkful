@@ -1,5 +1,7 @@
 ---
 title:                "Korzystanie z wyrażeń regularnych"
+aliases:
+- pl/php/using-regular-expressions.md
 date:                  2024-02-03T19:17:40.363259-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Korzystanie z wyrażeń regularnych"

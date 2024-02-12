@@ -1,5 +1,7 @@
 ---
 title:                "Arbeider med JSON"
+aliases:
+- no/rust/working-with-json.md
 date:                  2024-02-03T19:24:09.788065-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Arbeider med JSON"

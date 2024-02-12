@@ -1,5 +1,7 @@
 ---
 title:                "Nutzung einer interaktiven Shell (REPL)"
+aliases:
+- de/elixir/using-an-interactive-shell-repl.md
 date:                  2024-01-26T04:12:55.634469-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Nutzung einer interaktiven Shell (REPL)"

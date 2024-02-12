@@ -1,5 +1,7 @@
 ---
 title:                "Поиск и замена текста"
+aliases:
+- ru/swift/searching-and-replacing-text.md
 date:                  2024-01-29T00:03:13.130484-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Поиск и замена текста"

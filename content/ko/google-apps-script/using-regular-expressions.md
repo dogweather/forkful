@@ -1,5 +1,7 @@
 ---
 title:                "정규 표현식을 사용하는 방법"
+aliases:
+- ko/google-apps-script/using-regular-expressions.md
 date:                  2024-02-01T22:05:10.457755-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "정규 표현식을 사용하는 방법"

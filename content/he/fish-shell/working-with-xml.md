@@ -1,5 +1,7 @@
 ---
 title:                "עבודה עם XML"
+aliases:
+- he/fish-shell/working-with-xml.md
 date:                  2024-01-26T04:30:51.569145-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "עבודה עם XML"

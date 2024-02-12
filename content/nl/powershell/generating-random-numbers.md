@@ -1,5 +1,7 @@
 ---
 title:                "Willekeurige getallen genereren"
+aliases:
+- nl/powershell/generating-random-numbers.md
 date:                  2024-01-28T22:00:51.826556-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Willekeurige getallen genereren"

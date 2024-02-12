@@ -1,5 +1,7 @@
 ---
 title:                "Capitalizando uma string"
+aliases:
+- pt/haskell/capitalizing-a-string.md
 date:                  2024-02-03T19:05:17.825846-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Capitalizando uma string"

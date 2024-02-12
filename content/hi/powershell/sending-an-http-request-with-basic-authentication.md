@@ -1,5 +1,7 @@
 ---
 title:                "बेसिक प्रमाणीकरण के साथ HTTP अनुरोध भेजना"
+aliases:
+- hi/powershell/sending-an-http-request-with-basic-authentication.md
 date:                  2024-01-20T18:03:01.114697-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "बेसिक प्रमाणीकरण के साथ HTTP अनुरोध भेजना"

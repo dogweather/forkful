@@ -1,5 +1,7 @@
 ---
 title:                "Sử dụng bộ gỡ lỗi"
+aliases:
+- vi/swift/using-a-debugger.md
 date:                  2024-01-28T22:09:05.940464-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Sử dụng bộ gỡ lỗi"

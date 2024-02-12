@@ -1,5 +1,7 @@
 ---
 title:                "כתיבת קובץ טקסט"
+aliases:
+- he/elixir/writing-a-text-file.md
 date:                  2024-02-03T19:28:19.759924-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "כתיבת קובץ טקסט"

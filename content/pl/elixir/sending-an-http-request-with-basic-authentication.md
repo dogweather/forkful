@@ -1,5 +1,7 @@
 ---
 title:                "Wysyłanie zapytania http z podstawową autoryzacją"
+aliases:
+- pl/elixir/sending-an-http-request-with-basic-authentication.md
 date:                  2024-01-20T18:01:36.128761-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Wysyłanie zapytania http z podstawową autoryzacją"

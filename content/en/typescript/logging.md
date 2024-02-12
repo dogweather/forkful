@@ -1,5 +1,7 @@
 ---
 title:                "Logging"
+aliases:
+- en/typescript/logging.md
 date:                  2024-01-25T02:03:12.954798-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Logging"

@@ -1,5 +1,7 @@
 ---
 title:                "קריאת קובץ טקסט"
+aliases:
+- he/php/reading-a-text-file.md
 date:                  2024-01-20T17:55:13.744765-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "קריאת קובץ טקסט"

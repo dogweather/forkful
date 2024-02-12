@@ -1,5 +1,7 @@
 ---
 title:                "Bestanden manipuleren met CLI one-liners"
+aliases:
+- nl/ruby/manipulating-files-with-cli-one-liners.md
 date:                  2024-01-28T22:03:28.313919-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Bestanden manipuleren met CLI one-liners"

@@ -1,5 +1,7 @@
 ---
 title:                "Comprobando si un directorio existe"
+aliases:
+- es/php/checking-if-a-directory-exists.md
 date:                  2024-02-03T19:08:23.286826-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Comprobando si un directorio existe"

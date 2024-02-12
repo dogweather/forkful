@@ -1,5 +1,7 @@
 ---
 title:                "Organizowanie kodu w funkcje"
+aliases:
+- pl/rust/organizing-code-into-functions.md
 date:                  2024-01-26T01:16:15.506147-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Organizowanie kodu w funkcje"

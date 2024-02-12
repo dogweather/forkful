@@ -1,5 +1,7 @@
 ---
 title:                "Calculando la longitud de una cadena"
+aliases:
+- es/rust/finding-the-length-of-a-string.md
 date:                  2024-01-20T17:48:19.021037-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Calculando la longitud de una cadena"

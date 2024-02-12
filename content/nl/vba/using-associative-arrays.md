@@ -1,5 +1,7 @@
 ---
 title:                "Gebruik van associatieve arrays"
+aliases:
+- nl/vba/using-associative-arrays.md
 date:                  2024-02-01T22:04:35.251687-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Gebruik van associatieve arrays"

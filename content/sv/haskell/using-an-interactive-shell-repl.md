@@ -1,5 +1,7 @@
 ---
 title:                "Använda en interaktiv skal (REPL)"
+aliases:
+- sv/haskell/using-an-interactive-shell-repl.md
 date:                  2024-01-26T04:14:55.960533-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Använda en interaktiv skal (REPL)"

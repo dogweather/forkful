@@ -1,5 +1,7 @@
 ---
 title:                "Handling errors"
+aliases:
+- en/lua/handling-errors.md
 date:                  2024-01-21T21:19:09.020887-07:00
 model:                 gpt-4-1106-preview
 simple_title:         "Handling errors"

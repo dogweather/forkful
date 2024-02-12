@@ -1,5 +1,7 @@
 ---
 title:                "Removing quotes from a string"
+aliases:
+- en/vba/removing-quotes-from-a-string.md
 date:                  2024-02-01T21:30:20.300431-07:00
 model:                 gpt-4-0125-preview
 simple_title:         "Removing quotes from a string"
